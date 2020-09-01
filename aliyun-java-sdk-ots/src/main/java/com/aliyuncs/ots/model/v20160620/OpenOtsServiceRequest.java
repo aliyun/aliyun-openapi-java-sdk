@@ -12,18 +12,25 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.ots.transform.v20160620;
+package com.aliyuncs.ots.model.v20160620;
 
-import com.aliyuncs.ots.model.v20160620.UnbindInstance2VpcResponse;
-import com.aliyuncs.transform.UnmarshallerContext;
+import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
-
-public class UnbindInstance2VpcResponseUnmarshaller {
-
-	public static UnbindInstance2VpcResponse unmarshall(UnbindInstance2VpcResponse unbindInstance2VpcResponse, UnmarshallerContext _ctx) {
-		
-		unbindInstance2VpcResponse.setRequestId(_ctx.stringValue("UnbindInstance2VpcResponse.RequestId"));
-	 
-	 	return unbindInstance2VpcResponse;
+/**
+ * @author auto create
+ * @version 
+ */
+public class OpenOtsServiceRequest extends RpcAcsRequest<OpenOtsServiceResponse> {
+	   
+	public OpenOtsServiceRequest() {
+		super("Ots", "2016-06-20", "OpenOtsService", "ots");
+		setMethod(MethodType.POST);
 	}
+
+	@Override
+	public Class<OpenOtsServiceResponse> getResponseClass() {
+		return OpenOtsServiceResponse.class;
+	}
+
 }

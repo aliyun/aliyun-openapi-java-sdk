@@ -23,34 +23,54 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class InsertInstanceRequest extends RpcAcsRequest<InsertInstanceResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String description;
+
+	private String network;
+
+	private String clusterType;
+
+	private String instanceName;
+
+	private List<TagInfo> tagInfos;
 	public InsertInstanceRequest() {
 		super("Ots", "2016-06-20", "InsertInstance", "ots");
 		setMethod(MethodType.POST);
 	}
 
-	private String access_key_id;
-
-	private String clusterType;
-
-	private Long resourceOwnerId;
-
-	private String instanceName;
-
-	private String description;
-
-	private List<TagInfo> tagInfos;
-
-	private String network;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getNetwork() {
+		return this.network;
+	}
+
+	public void setNetwork(String network) {
+		this.network = network;
+		if(network != null){
+			putQueryParameter("Network", network);
 		}
 	}
 
@@ -65,17 +85,6 @@ public class InsertInstanceRequest extends RpcAcsRequest<InsertInstanceResponse>
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -84,17 +93,6 @@ public class InsertInstanceRequest extends RpcAcsRequest<InsertInstanceResponse>
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -110,17 +108,6 @@ public class InsertInstanceRequest extends RpcAcsRequest<InsertInstanceResponse>
 				putQueryParameter("TagInfo." + (depth1 + 1) + ".TagKey" , tagInfos.get(depth1).getTagKey());
 			}
 		}	
-	}
-
-	public String getNetwork() {
-		return this.network;
-	}
-
-	public void setNetwork(String network) {
-		this.network = network;
-		if(network != null){
-			putQueryParameter("Network", network);
-		}
 	}
 
 	public static class TagInfo {

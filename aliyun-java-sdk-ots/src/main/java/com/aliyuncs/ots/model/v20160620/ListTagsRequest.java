@@ -23,33 +23,20 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
-	
-	public ListTagsRequest() {
-		super("Ots", "2016-06-20", "ListTags", "ots");
-		setMethod(MethodType.POST);
-	}
-
-	private String access_key_id;
+	   
 
 	private Long resourceOwnerId;
+
+	private Long pageNum;
 
 	private String instanceName;
 
 	private Long pageSize;
 
-	private Long pageNum;
-
 	private List<TagInfo> tagInfos;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
+	public ListTagsRequest() {
+		super("Ots", "2016-06-20", "ListTags", "ots");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getResourceOwnerId() {
@@ -60,6 +47,17 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Long getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -82,17 +80,6 @@ public class ListTagsRequest extends RpcAcsRequest<ListTagsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Long pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

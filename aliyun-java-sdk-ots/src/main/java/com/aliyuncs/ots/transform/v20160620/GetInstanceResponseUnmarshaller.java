@@ -26,30 +26,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetInstanceResponseUnmarshaller {
 
-	public static GetInstanceResponse unmarshall(GetInstanceResponse getInstanceResponse, UnmarshallerContext context) {
+	public static GetInstanceResponse unmarshall(GetInstanceResponse getInstanceResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceResponse.setRequestId(context.stringValue("GetInstanceResponse.RequestId"));
+		getInstanceResponse.setRequestId(_ctx.stringValue("GetInstanceResponse.RequestId"));
 
 		InstanceInfo instanceInfo = new InstanceInfo();
-		instanceInfo.setInstanceName(context.stringValue("GetInstanceResponse.InstanceInfo.InstanceName"));
-		instanceInfo.setUserId(context.stringValue("GetInstanceResponse.InstanceInfo.UserId"));
-		instanceInfo.setNetwork(context.stringValue("GetInstanceResponse.InstanceInfo.Network"));
-		instanceInfo.setStatus(context.integerValue("GetInstanceResponse.InstanceInfo.Status"));
-		instanceInfo.setWriteCapacity(context.integerValue("GetInstanceResponse.InstanceInfo.WriteCapacity"));
-		instanceInfo.setReadCapacity(context.integerValue("GetInstanceResponse.InstanceInfo.ReadCapacity"));
-		instanceInfo.setDescription(context.stringValue("GetInstanceResponse.InstanceInfo.Description"));
-		instanceInfo.setCreateTime(context.stringValue("GetInstanceResponse.InstanceInfo.CreateTime"));
-		instanceInfo.setClusterType(context.stringValue("GetInstanceResponse.InstanceInfo.ClusterType"));
+		instanceInfo.setInstanceName(_ctx.stringValue("GetInstanceResponse.InstanceInfo.InstanceName"));
+		instanceInfo.setUserId(_ctx.stringValue("GetInstanceResponse.InstanceInfo.UserId"));
+		instanceInfo.setNetwork(_ctx.stringValue("GetInstanceResponse.InstanceInfo.Network"));
+		instanceInfo.setStatus(_ctx.integerValue("GetInstanceResponse.InstanceInfo.Status"));
+		instanceInfo.setWriteCapacity(_ctx.integerValue("GetInstanceResponse.InstanceInfo.WriteCapacity"));
+		instanceInfo.setReadCapacity(_ctx.integerValue("GetInstanceResponse.InstanceInfo.ReadCapacity"));
+		instanceInfo.setDescription(_ctx.stringValue("GetInstanceResponse.InstanceInfo.Description"));
+		instanceInfo.setCreateTime(_ctx.stringValue("GetInstanceResponse.InstanceInfo.CreateTime"));
+		instanceInfo.setClusterType(_ctx.stringValue("GetInstanceResponse.InstanceInfo.ClusterType"));
 
 		Quota quota = new Quota();
-		quota.setEntityQuota(context.integerValue("GetInstanceResponse.InstanceInfo.Quota.EntityQuota"));
+		quota.setEntityQuota(_ctx.integerValue("GetInstanceResponse.InstanceInfo.Quota.EntityQuota"));
 		instanceInfo.setQuota(quota);
 
 		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
-		for (int i = 0; i < context.lengthValue("GetInstanceResponse.InstanceInfo.TagInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.InstanceInfo.TagInfos.Length"); i++) {
 			TagInfo tagInfo = new TagInfo();
-			tagInfo.setTagKey(context.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagKey"));
-			tagInfo.setTagValue(context.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagValue"));
+			tagInfo.setTagKey(_ctx.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagKey"));
+			tagInfo.setTagValue(_ctx.stringValue("GetInstanceResponse.InstanceInfo.TagInfos["+ i +"].TagValue"));
 
 			tagInfos.add(tagInfo);
 		}

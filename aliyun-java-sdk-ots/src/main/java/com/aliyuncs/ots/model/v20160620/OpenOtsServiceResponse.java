@@ -15,20 +15,18 @@
 package com.aliyuncs.ots.model.v20160620;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ots.transform.v20160620.BindInstance2VpcResponseUnmarshaller;
+import com.aliyuncs.ots.transform.v20160620.OpenOtsServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindInstance2VpcResponse extends AcsResponse {
+public class OpenOtsServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String endpoint;
-
-	private String domain;
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,21 @@ public class BindInstance2VpcResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getEndpoint() {
-		return this.endpoint;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setEndpoint(String endpoint) {
-		this.endpoint = endpoint;
-	}
-
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public BindInstance2VpcResponse getInstance(UnmarshallerContext context) {
-		return	BindInstance2VpcResponseUnmarshaller.unmarshall(this, context);
+	public OpenOtsServiceResponse getInstance(UnmarshallerContext context) {
+		return	OpenOtsServiceResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

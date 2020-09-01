@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListInstanceResponseUnmarshaller {
 
-	public static ListInstanceResponse unmarshall(ListInstanceResponse listInstanceResponse, UnmarshallerContext context) {
+	public static ListInstanceResponse unmarshall(ListInstanceResponse listInstanceResponse, UnmarshallerContext _ctx) {
 		
-		listInstanceResponse.setRequestId(context.stringValue("ListInstanceResponse.RequestId"));
-		listInstanceResponse.setTotalCount(context.longValue("ListInstanceResponse.TotalCount"));
-		listInstanceResponse.setPageNum(context.longValue("ListInstanceResponse.PageNum"));
-		listInstanceResponse.setPageSize(context.longValue("ListInstanceResponse.PageSize"));
+		listInstanceResponse.setRequestId(_ctx.stringValue("ListInstanceResponse.RequestId"));
+		listInstanceResponse.setTotalCount(_ctx.longValue("ListInstanceResponse.TotalCount"));
+		listInstanceResponse.setPageNum(_ctx.longValue("ListInstanceResponse.PageNum"));
+		listInstanceResponse.setPageSize(_ctx.longValue("ListInstanceResponse.PageSize"));
 
 		List<InstanceInfo> instanceInfos = new ArrayList<InstanceInfo>();
-		for (int i = 0; i < context.lengthValue("ListInstanceResponse.InstanceInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListInstanceResponse.InstanceInfos.Length"); i++) {
 			InstanceInfo instanceInfo = new InstanceInfo();
-			instanceInfo.setInstanceName(context.stringValue("ListInstanceResponse.InstanceInfos["+ i +"].InstanceName"));
-			instanceInfo.setTimestamp(context.stringValue("ListInstanceResponse.InstanceInfos["+ i +"].Timestamp"));
+			instanceInfo.setInstanceName(_ctx.stringValue("ListInstanceResponse.InstanceInfos["+ i +"].InstanceName"));
+			instanceInfo.setTimestamp(_ctx.stringValue("ListInstanceResponse.InstanceInfos["+ i +"].Timestamp"));
 
 			instanceInfos.add(instanceInfo);
 		}

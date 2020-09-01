@@ -22,21 +22,9 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class BindInstance2VpcRequest extends RpcAcsRequest<BindInstance2VpcResponse> {
-	
-	public BindInstance2VpcRequest() {
-		super("Ots", "2016-06-20", "BindInstance2Vpc", "ots");
-		setMethod(MethodType.POST);
-	}
-
-	private String access_key_id;
-
-	private String instanceVpcName;
+	   
 
 	private Long resourceOwnerId;
-
-	private String instanceName;
-
-	private String vpcId;
 
 	private String virtualSwitchId;
 
@@ -44,26 +32,14 @@ public class BindInstance2VpcRequest extends RpcAcsRequest<BindInstance2VpcRespo
 
 	private String network;
 
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
+	private String instanceVpcName;
 
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
-	}
+	private String instanceName;
 
-	public String getInstanceVpcName() {
-		return this.instanceVpcName;
-	}
-
-	public void setInstanceVpcName(String instanceVpcName) {
-		this.instanceVpcName = instanceVpcName;
-		if(instanceVpcName != null){
-			putQueryParameter("InstanceVpcName", instanceVpcName);
-		}
+	private String vpcId;
+	public BindInstance2VpcRequest() {
+		super("Ots", "2016-06-20", "BindInstance2Vpc", "ots");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getResourceOwnerId() {
@@ -74,28 +50,6 @@ public class BindInstance2VpcRequest extends RpcAcsRequest<BindInstance2VpcRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -129,6 +83,39 @@ public class BindInstance2VpcRequest extends RpcAcsRequest<BindInstance2VpcRespo
 		this.network = network;
 		if(network != null){
 			putQueryParameter("Network", network);
+		}
+	}
+
+	public String getInstanceVpcName() {
+		return this.instanceVpcName;
+	}
+
+	public void setInstanceVpcName(String instanceVpcName) {
+		this.instanceVpcName = instanceVpcName;
+		if(instanceVpcName != null){
+			putQueryParameter("InstanceVpcName", instanceVpcName);
+		}
+	}
+
+	public String getInstanceName() {
+		return this.instanceName;
+	}
+
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

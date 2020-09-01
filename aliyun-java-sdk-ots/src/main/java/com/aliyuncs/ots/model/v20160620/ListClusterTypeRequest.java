@@ -15,30 +15,19 @@
 package com.aliyuncs.ots.model.v20160620;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListClusterTypeRequest extends RpcAcsRequest<ListClusterTypeResponse> {
-	
-	public ListClusterTypeRequest() {
-		super("Ots", "2016-06-20", "ListClusterType", "ots");
-	}
-
-	private String access_key_id;
+	   
 
 	private Long resourceOwnerId;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
+	public ListClusterTypeRequest() {
+		super("Ots", "2016-06-20", "ListClusterType", "ots");
+		setMethod(MethodType.GET);
 	}
 
 	public Long getResourceOwnerId() {

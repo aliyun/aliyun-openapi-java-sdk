@@ -22,27 +22,14 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
-	
-	public DeleteInstanceRequest() {
-		super("Ots", "2016-06-20", "DeleteInstance", "ots");
-		setMethod(MethodType.POST);
-	}
-
-	private String access_key_id;
+	   
 
 	private Long resourceOwnerId;
 
 	private String instanceName;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
-	}
-
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
-		}
+	public DeleteInstanceRequest() {
+		super("Ots", "2016-06-20", "DeleteInstance", "ots");
+		setMethod(MethodType.POST);
 	}
 
 	public Long getResourceOwnerId() {

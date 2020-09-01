@@ -22,30 +22,39 @@ import com.aliyuncs.http.MethodType;
  * @version 
  */
 public class UnbindInstance2VpcRequest extends RpcAcsRequest<UnbindInstance2VpcResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String regionNo;
+
+	private String instanceVpcName;
+
+	private String instanceName;
 	public UnbindInstance2VpcRequest() {
 		super("Ots", "2016-06-20", "UnbindInstance2Vpc", "ots");
 		setMethod(MethodType.POST);
 	}
 
-	private String access_key_id;
-
-	private String instanceVpcName;
-
-	private Long resourceOwnerId;
-
-	private String instanceName;
-
-	private String regionNo;
-
-	public String getAccess_key_id() {
-		return this.access_key_id;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
 	}
 
-	public void setAccess_key_id(String access_key_id) {
-		this.access_key_id = access_key_id;
-		if(access_key_id != null){
-			putQueryParameter("access_key_id", access_key_id);
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRegionNo() {
+		return this.regionNo;
+	}
+
+	public void setRegionNo(String regionNo) {
+		this.regionNo = regionNo;
+		if(regionNo != null){
+			putQueryParameter("RegionNo", regionNo);
 		}
 	}
 
@@ -60,17 +69,6 @@ public class UnbindInstance2VpcRequest extends RpcAcsRequest<UnbindInstance2VpcR
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
-
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -79,17 +77,6 @@ public class UnbindInstance2VpcRequest extends RpcAcsRequest<UnbindInstance2VpcR
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getRegionNo() {
-		return this.regionNo;
-	}
-
-	public void setRegionNo(String regionNo) {
-		this.regionNo = regionNo;
-		if(regionNo != null){
-			putQueryParameter("RegionNo", regionNo);
 		}
 	}
 

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListVpcInfoByInstanceResponseUnmarshaller {
 
-	public static ListVpcInfoByInstanceResponse unmarshall(ListVpcInfoByInstanceResponse listVpcInfoByInstanceResponse, UnmarshallerContext context) {
+	public static ListVpcInfoByInstanceResponse unmarshall(ListVpcInfoByInstanceResponse listVpcInfoByInstanceResponse, UnmarshallerContext _ctx) {
 		
-		listVpcInfoByInstanceResponse.setRequestId(context.stringValue("ListVpcInfoByInstanceResponse.RequestId"));
-		listVpcInfoByInstanceResponse.setInstanceName(context.stringValue("ListVpcInfoByInstanceResponse.InstanceName"));
-		listVpcInfoByInstanceResponse.setTotalCount(context.longValue("ListVpcInfoByInstanceResponse.TotalCount"));
-		listVpcInfoByInstanceResponse.setPageNum(context.longValue("ListVpcInfoByInstanceResponse.PageNum"));
-		listVpcInfoByInstanceResponse.setPageSize(context.longValue("ListVpcInfoByInstanceResponse.PageSize"));
+		listVpcInfoByInstanceResponse.setRequestId(_ctx.stringValue("ListVpcInfoByInstanceResponse.RequestId"));
+		listVpcInfoByInstanceResponse.setInstanceName(_ctx.stringValue("ListVpcInfoByInstanceResponse.InstanceName"));
+		listVpcInfoByInstanceResponse.setTotalCount(_ctx.longValue("ListVpcInfoByInstanceResponse.TotalCount"));
+		listVpcInfoByInstanceResponse.setPageNum(_ctx.longValue("ListVpcInfoByInstanceResponse.PageNum"));
+		listVpcInfoByInstanceResponse.setPageSize(_ctx.longValue("ListVpcInfoByInstanceResponse.PageSize"));
 
 		List<VpcInfo> vpcInfos = new ArrayList<VpcInfo>();
-		for (int i = 0; i < context.lengthValue("ListVpcInfoByInstanceResponse.VpcInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListVpcInfoByInstanceResponse.VpcInfos.Length"); i++) {
 			VpcInfo vpcInfo = new VpcInfo();
-			vpcInfo.setInstanceVpcName(context.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].InstanceVpcName"));
-			vpcInfo.setVpcId(context.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].VpcId"));
-			vpcInfo.setEndpoint(context.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].Endpoint"));
-			vpcInfo.setDomain(context.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].Domain"));
-			vpcInfo.setRegionNo(context.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].RegionNo"));
+			vpcInfo.setInstanceVpcName(_ctx.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].InstanceVpcName"));
+			vpcInfo.setVpcId(_ctx.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].VpcId"));
+			vpcInfo.setEndpoint(_ctx.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].Endpoint"));
+			vpcInfo.setDomain(_ctx.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].Domain"));
+			vpcInfo.setRegionNo(_ctx.stringValue("ListVpcInfoByInstanceResponse.VpcInfos["+ i +"].RegionNo"));
 
 			vpcInfos.add(vpcInfo);
 		}

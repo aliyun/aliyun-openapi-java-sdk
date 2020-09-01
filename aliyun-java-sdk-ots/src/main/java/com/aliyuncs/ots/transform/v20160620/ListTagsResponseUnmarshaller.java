@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListTagsResponseUnmarshaller {
 
-	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext context) {
+	public static ListTagsResponse unmarshall(ListTagsResponse listTagsResponse, UnmarshallerContext _ctx) {
 		
-		listTagsResponse.setRequestId(context.stringValue("ListTagsResponse.RequestId"));
-		listTagsResponse.setTotalCount(context.longValue("ListTagsResponse.TotalCount"));
-		listTagsResponse.setPageNum(context.longValue("ListTagsResponse.PageNum"));
-		listTagsResponse.setPageSize(context.longValue("ListTagsResponse.PageSize"));
+		listTagsResponse.setRequestId(_ctx.stringValue("ListTagsResponse.RequestId"));
+		listTagsResponse.setTotalCount(_ctx.longValue("ListTagsResponse.TotalCount"));
+		listTagsResponse.setPageNum(_ctx.longValue("ListTagsResponse.PageNum"));
+		listTagsResponse.setPageSize(_ctx.longValue("ListTagsResponse.PageSize"));
 
 		List<TagInfo> tagInfos = new ArrayList<TagInfo>();
-		for (int i = 0; i < context.lengthValue("ListTagsResponse.TagInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListTagsResponse.TagInfos.Length"); i++) {
 			TagInfo tagInfo = new TagInfo();
-			tagInfo.setTagKey(context.stringValue("ListTagsResponse.TagInfos["+ i +"].TagKey"));
-			tagInfo.setTagValue(context.stringValue("ListTagsResponse.TagInfos["+ i +"].TagValue"));
+			tagInfo.setTagKey(_ctx.stringValue("ListTagsResponse.TagInfos["+ i +"].TagKey"));
+			tagInfo.setTagValue(_ctx.stringValue("ListTagsResponse.TagInfos["+ i +"].TagValue"));
 
 			tagInfos.add(tagInfo);
 		}

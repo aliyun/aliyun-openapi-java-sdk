@@ -14,16 +14,17 @@
 
 package com.aliyuncs.ots.transform.v20160620;
 
-import com.aliyuncs.ots.model.v20160620.UnbindInstance2VpcResponse;
+import com.aliyuncs.ots.model.v20160620.OpenOtsServiceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UnbindInstance2VpcResponseUnmarshaller {
+public class OpenOtsServiceResponseUnmarshaller {
 
-	public static UnbindInstance2VpcResponse unmarshall(UnbindInstance2VpcResponse unbindInstance2VpcResponse, UnmarshallerContext _ctx) {
+	public static OpenOtsServiceResponse unmarshall(OpenOtsServiceResponse openOtsServiceResponse, UnmarshallerContext _ctx) {
 		
-		unbindInstance2VpcResponse.setRequestId(_ctx.stringValue("UnbindInstance2VpcResponse.RequestId"));
+		openOtsServiceResponse.setRequestId(_ctx.stringValue("OpenOtsServiceResponse.RequestId"));
+		openOtsServiceResponse.setOrderId(_ctx.stringValue("OpenOtsServiceResponse.OrderId"));
 	 
-	 	return unbindInstance2VpcResponse;
+	 	return openOtsServiceResponse;
 	}
 }
