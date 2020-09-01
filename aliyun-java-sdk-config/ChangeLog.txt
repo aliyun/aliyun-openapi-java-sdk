@@ -1,3 +1,6 @@
+2020-09-01 Version: 1.0.0
+- Support region route.
+
 2020-08-31 Version: 1.0.0
 - Support config resource recorder deliverychannel rule.
 

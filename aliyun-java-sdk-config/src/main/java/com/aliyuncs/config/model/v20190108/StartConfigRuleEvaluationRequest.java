@@ -16,6 +16,7 @@ package com.aliyuncs.config.model.v20190108;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.config.Endpoint;
 
 /**
  * @author auto create
@@ -32,6 +33,10 @@ public class StartConfigRuleEvaluationRequest extends RpcAcsRequest<StartConfigR
 	public StartConfigRuleEvaluationRequest() {
 		super("Config", "2019-01-08", "StartConfigRuleEvaluation", "config");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getConfigRuleId() {
