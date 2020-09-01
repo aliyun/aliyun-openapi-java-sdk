@@ -27,11 +27,15 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 
 	private String ip;
 
+	private String certName;
+
 	private String mobile;
 
 	private String userId;
 
 	private String mode;
+
+	private String certNo;
 
 	private String outerOrderNo;
 
@@ -40,6 +44,8 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 	private Long sceneId;
 
 	private String metaInfo;
+
+	private String ocr;
 	public InitSmartVerifyRequest() {
 		super("Cloudauth", "2020-06-18", "InitSmartVerify", "cloudauth");
 		setMethod(MethodType.POST);
@@ -57,6 +63,17 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.ip = ip;
 		if(ip != null){
 			putBodyParameter("Ip", ip);
+		}
+	}
+
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+		if(certName != null){
+			putBodyParameter("CertName", certName);
 		}
 	}
 
@@ -90,6 +107,17 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.mode = mode;
 		if(mode != null){
 			putBodyParameter("Mode", mode);
+		}
+	}
+
+	public String getCertNo() {
+		return this.certNo;
+	}
+
+	public void setCertNo(String certNo) {
+		this.certNo = certNo;
+		if(certNo != null){
+			putBodyParameter("CertNo", certNo);
 		}
 	}
 
@@ -134,6 +162,17 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.metaInfo = metaInfo;
 		if(metaInfo != null){
 			putBodyParameter("MetaInfo", metaInfo);
+		}
+	}
+
+	public String getOcr() {
+		return this.ocr;
+	}
+
+	public void setOcr(String ocr) {
+		this.ocr = ocr;
+		if(ocr != null){
+			putBodyParameter("Ocr", ocr);
 		}
 	}
 

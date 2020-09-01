@@ -31,6 +31,7 @@ public class DescribeSmartVerifyResponseUnmarshaller {
 		resultObject.setPassed(_ctx.stringValue("DescribeSmartVerifyResponse.ResultObject.Passed"));
 		resultObject.setSubCode(_ctx.stringValue("DescribeSmartVerifyResponse.ResultObject.SubCode"));
 		resultObject.setMaterialInfo(_ctx.stringValue("DescribeSmartVerifyResponse.ResultObject.MaterialInfo"));
+		resultObject.setPassedScore(_ctx.floatValue("DescribeSmartVerifyResponse.ResultObject.PassedScore"));
 		describeSmartVerifyResponse.setResultObject(resultObject);
 	 
 	 	return describeSmartVerifyResponse;

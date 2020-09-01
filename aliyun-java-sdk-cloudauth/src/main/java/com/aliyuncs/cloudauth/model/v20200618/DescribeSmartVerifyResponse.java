@@ -72,6 +72,8 @@ public class DescribeSmartVerifyResponse extends AcsResponse {
 
 		private String materialInfo;
 
+		private Float passedScore;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -94,6 +96,14 @@ public class DescribeSmartVerifyResponse extends AcsResponse {
 
 		public void setMaterialInfo(String materialInfo) {
 			this.materialInfo = materialInfo;
+		}
+
+		public Float getPassedScore() {
+			return this.passedScore;
+		}
+
+		public void setPassedScore(Float passedScore) {
+			this.passedScore = passedScore;
 		}
 	}
 
