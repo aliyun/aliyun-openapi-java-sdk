@@ -29,7 +29,13 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 
 	private String templateBodyParams;
 
+	private String link;
+
+	private String caption;
+
 	private String type;
+
+	private String body;
 
 	private String channelType;
 
@@ -42,6 +48,8 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	private String to;
 
 	private String templateCode;
+
+	private String mediaType;
 	public SendMessageRequest() {
 		super("cams", "2020-06-06", "SendMessage", "cams");
 		setMethod(MethodType.POST);
@@ -69,7 +77,29 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public void setTemplateBodyParams(String templateBodyParams) {
 		this.templateBodyParams = templateBodyParams;
 		if(templateBodyParams != null){
-			putQueryParameter("TemplateBodyParams", templateBodyParams);
+			putBodyParameter("TemplateBodyParams", templateBodyParams);
+		}
+	}
+
+	public String getLink() {
+		return this.link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+		if(link != null){
+			putBodyParameter("Link", link);
+		}
+	}
+
+	public String getCaption() {
+		return this.caption;
+	}
+
+	public void setCaption(String caption) {
+		this.caption = caption;
+		if(caption != null){
+			putBodyParameter("Caption", caption);
 		}
 	}
 
@@ -80,7 +110,18 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public void setType(String type) {
 		this.type = type;
 		if(type != null){
-			putQueryParameter("Type", type);
+			putBodyParameter("Type", type);
+		}
+	}
+
+	public String getBody() {
+		return this.body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putBodyParameter("Body", body);
 		}
 	}
 
@@ -91,7 +132,7 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public void setChannelType(String channelType) {
 		this.channelType = channelType;
 		if(channelType != null){
-			putQueryParameter("ChannelType", channelType);
+			putBodyParameter("ChannelType", channelType);
 		}
 	}
 
@@ -102,7 +143,7 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public void setFrom(String from) {
 		this.from = from;
 		if(from != null){
-			putQueryParameter("From", from);
+			putBodyParameter("From", from);
 		}
 	}
 
@@ -135,7 +176,7 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public void setTo(String to) {
 		this.to = to;
 		if(to != null){
-			putQueryParameter("To", to);
+			putBodyParameter("To", to);
 		}
 	}
 
@@ -146,7 +187,18 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 	public void setTemplateCode(String templateCode) {
 		this.templateCode = templateCode;
 		if(templateCode != null){
-			putQueryParameter("TemplateCode", templateCode);
+			putBodyParameter("TemplateCode", templateCode);
+		}
+	}
+
+	public String getMediaType() {
+		return this.mediaType;
+	}
+
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+		if(mediaType != null){
+			putBodyParameter("MediaType", mediaType);
 		}
 	}
 

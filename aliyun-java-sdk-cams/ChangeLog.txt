@@ -1,3 +1,7 @@
+2020-09-02 Version: 1.0.2
+- ChatApp second version.
+- Support new message fomat.
+
 2020-07-30 Version: 1.0.1
 - Supported ChatApp for SDK.
 
