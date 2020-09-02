@@ -1,3 +1,6 @@
+2020-09-02 Version: 3.13.4
+- Supported AndroidNotificationHuaweiChannel for Push and MassPush.
+
 2020-06-11 Version: 3.13.3
 - Supported AndroidNotificationVivoChannel for Push and MassPush.
 
