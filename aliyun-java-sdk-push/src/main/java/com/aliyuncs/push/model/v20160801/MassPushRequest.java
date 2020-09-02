@@ -56,6 +56,7 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".DeviceType" , pushTasks.get(depth1).getDeviceType());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".PushTime" , pushTasks.get(depth1).getPushTime());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".SendSpeed" , pushTasks.get(depth1).getSendSpeed());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationHuaweiChannel" , pushTasks.get(depth1).getAndroidNotificationHuaweiChannel());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidPopupActivity" , pushTasks.get(depth1).getAndroidPopupActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemindBody" , pushTasks.get(depth1).getIOSRemindBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSExtParameters" , pushTasks.get(depth1).getIOSExtParameters());
@@ -122,6 +123,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String pushTime;
 
 		private Integer sendSpeed;
+
+		private String androidNotificationHuaweiChannel;
 
 		private String androidPopupActivity;
 
@@ -261,6 +264,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setSendSpeed(Integer sendSpeed) {
 			this.sendSpeed = sendSpeed;
+		}
+
+		public String getAndroidNotificationHuaweiChannel() {
+			return this.androidNotificationHuaweiChannel;
+		}
+
+		public void setAndroidNotificationHuaweiChannel(String androidNotificationHuaweiChannel) {
+			this.androidNotificationHuaweiChannel = androidNotificationHuaweiChannel;
 		}
 
 		public String getAndroidPopupActivity() {

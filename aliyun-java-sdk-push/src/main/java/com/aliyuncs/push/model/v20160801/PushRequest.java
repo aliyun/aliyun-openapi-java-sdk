@@ -37,6 +37,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private Integer sendSpeed;
 
+	private String androidNotificationHuaweiChannel;
+
 	private String androidPopupActivity;
 
 	private String iOSRemindBody;
@@ -188,6 +190,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.sendSpeed = sendSpeed;
 		if(sendSpeed != null){
 			putQueryParameter("SendSpeed", sendSpeed.toString());
+		}
+	}
+
+	public String getAndroidNotificationHuaweiChannel() {
+		return this.androidNotificationHuaweiChannel;
+	}
+
+	public void setAndroidNotificationHuaweiChannel(String androidNotificationHuaweiChannel) {
+		this.androidNotificationHuaweiChannel = androidNotificationHuaweiChannel;
+		if(androidNotificationHuaweiChannel != null){
+			putQueryParameter("AndroidNotificationHuaweiChannel", androidNotificationHuaweiChannel);
 		}
 	}
 
