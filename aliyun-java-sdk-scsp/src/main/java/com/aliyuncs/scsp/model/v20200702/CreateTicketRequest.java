@@ -51,7 +51,7 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 
 	private String formData;
 	public CreateTicketRequest() {
-		super("scsp", "2020-07-02", "CreateTicket");
+		super("scsp", "2020-07-02", "CreateTicket", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class StartHotlineServiceRequest extends RpcAcsRequest<StartHotlineServic
 
 	private String accountName;
 	public StartHotlineServiceRequest() {
-		super("scsp", "2020-07-02", "StartHotlineService");
+		super("scsp", "2020-07-02", "StartHotlineService", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

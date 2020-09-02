@@ -45,7 +45,7 @@ public class TransferCallToPhoneRequest extends RpcAcsRequest<TransferCallToPhon
 
 	private Boolean isSingleTransfer;
 	public TransferCallToPhoneRequest() {
-		super("scsp", "2020-07-02", "TransferCallToPhone");
+		super("scsp", "2020-07-02", "TransferCallToPhone", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
