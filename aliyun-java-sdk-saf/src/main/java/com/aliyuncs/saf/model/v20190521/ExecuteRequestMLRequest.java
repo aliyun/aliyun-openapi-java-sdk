@@ -15,6 +15,7 @@
 package com.aliyuncs.saf.model.v20190521;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.saf.Endpoint;
 
@@ -30,6 +31,7 @@ public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLRespo
 	private String service;
 	public ExecuteRequestMLRequest() {
 		super("saf", "2019-05-21", "ExecuteRequestML", "saf");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,7 +46,7 @@ public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLRespo
 	public void setServiceParameters(String serviceParameters) {
 		this.serviceParameters = serviceParameters;
 		if(serviceParameters != null){
-			putBodyParameter("ServiceParameters", serviceParameters);
+			putQueryParameter("ServiceParameters", serviceParameters);
 		}
 	}
 
@@ -55,7 +57,7 @@ public class ExecuteRequestMLRequest extends RpcAcsRequest<ExecuteRequestMLRespo
 	public void setService(String service) {
 		this.service = service;
 		if(service != null){
-			putBodyParameter("Service", service);
+			putQueryParameter("Service", service);
 		}
 	}
 
