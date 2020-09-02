@@ -15,7 +15,6 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.retailcloud.Endpoint;
 
@@ -23,14 +22,16 @@ import com.aliyuncs.retailcloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddClusterNodeRequest extends RpcAcsRequest<AddClusterNodeResponse> {
+public class AllocatePodConfigRequest extends RpcAcsRequest<AllocatePodConfigResponse> {
 	   
 
-	private List<String> ecsInstanceIdLists;
+	private String requestId;
 
-	private String clusterInstanceId;
-	public AddClusterNodeRequest() {
-		super("retailcloud", "2018-03-13", "AddClusterNode");
+	private Long appId;
+
+	private Long envId;
+	public AllocatePodConfigRequest() {
+		super("retailcloud", "2018-03-13", "AllocatePodConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,33 +39,42 @@ public class AddClusterNodeRequest extends RpcAcsRequest<AddClusterNodeResponse>
 		} catch (Exception e) {}
 	}
 
-	public List<String> getEcsInstanceIdLists() {
-		return this.ecsInstanceIdLists;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEcsInstanceIdLists(List<String> ecsInstanceIdLists) {
-		this.ecsInstanceIdLists = ecsInstanceIdLists;	
-		if (ecsInstanceIdLists != null) {
-			for (int i = 0; i < ecsInstanceIdLists.size(); i++) {
-				putQueryParameter("EcsInstanceIdList." + (i + 1) , ecsInstanceIdLists.get(i));
-			}
-		}	
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+		if(requestId != null){
+			putQueryParameter("RequestId", requestId);
+		}
 	}
 
-	public String getClusterInstanceId() {
-		return this.clusterInstanceId;
+	public Long getAppId() {
+		return this.appId;
 	}
 
-	public void setClusterInstanceId(String clusterInstanceId) {
-		this.clusterInstanceId = clusterInstanceId;
-		if(clusterInstanceId != null){
-			putQueryParameter("ClusterInstanceId", clusterInstanceId);
+	public void setAppId(Long appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId.toString());
+		}
+	}
+
+	public Long getEnvId() {
+		return this.envId;
+	}
+
+	public void setEnvId(Long envId) {
+		this.envId = envId;
+		if(envId != null){
+			putQueryParameter("EnvId", envId.toString());
 		}
 	}
 
 	@Override
-	public Class<AddClusterNodeResponse> getResponseClass() {
-		return AddClusterNodeResponse.class;
+	public Class<AllocatePodConfigResponse> getResponseClass() {
+		return AllocatePodConfigResponse.class;
 	}
 
 }

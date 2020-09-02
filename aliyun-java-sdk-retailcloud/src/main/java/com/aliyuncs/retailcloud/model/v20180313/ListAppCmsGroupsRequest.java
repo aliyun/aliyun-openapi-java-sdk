@@ -33,7 +33,7 @@ public class ListAppCmsGroupsRequest extends RpcAcsRequest<ListAppCmsGroupsRespo
 
 	private Integer pageNumber;
 	public ListAppCmsGroupsRequest() {
-		super("retailcloud", "2018-03-13", "ListAppCmsGroups", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListAppCmsGroups");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

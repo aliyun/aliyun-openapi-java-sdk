@@ -31,7 +31,7 @@ public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse>
 
 	private Long envId;
 	public DescribeJobLogRequest() {
-		super("retailcloud", "2018-03-13", "DescribeJobLog", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribeJobLog");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RebuildAppInstanceRequest extends RpcAcsRequest<RebuildAppInstanceR
 
 	private String appInstanceId;
 	public RebuildAppInstanceRequest() {
-		super("retailcloud", "2018-03-13", "RebuildAppInstance", "retailcloud");
+		super("retailcloud", "2018-03-13", "RebuildAppInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ListPersistentVolumeRequest extends RpcAcsRequest<ListPersistentVol
 
 	private String clusterInstanceId;
 	public ListPersistentVolumeRequest() {
-		super("retailcloud", "2018-03-13", "ListPersistentVolume", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListPersistentVolume");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

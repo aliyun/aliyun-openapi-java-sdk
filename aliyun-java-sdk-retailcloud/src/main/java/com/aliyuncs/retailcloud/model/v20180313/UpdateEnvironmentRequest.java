@@ -33,7 +33,7 @@ public class UpdateEnvironmentRequest extends RpcAcsRequest<UpdateEnvironmentRes
 
 	private Long appEnvId;
 	public UpdateEnvironmentRequest() {
-		super("retailcloud", "2018-03-13", "UpdateEnvironment", "retailcloud");
+		super("retailcloud", "2018-03-13", "UpdateEnvironment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
