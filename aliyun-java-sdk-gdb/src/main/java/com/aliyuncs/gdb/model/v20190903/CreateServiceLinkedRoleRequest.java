@@ -22,20 +22,24 @@ import com.aliyuncs.gdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResourceUsageResponse> {
+public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceLinkedRoleResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String dBInstanceId;
+	private String clientToken;
+
+	private String securityToken;
+
+	private String serviceName;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeResourceUsageRequest() {
-		super("gdb", "2019-09-03", "DescribeResourceUsage", "gds");
+	public CreateServiceLinkedRoleRequest() {
+		super("gdb", "2019-09-03", "CreateServiceLinkedRole", "gds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +58,36 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
@@ -99,8 +125,8 @@ public class DescribeResourceUsageRequest extends RpcAcsRequest<DescribeResource
 	}
 
 	@Override
-	public Class<DescribeResourceUsageResponse> getResponseClass() {
-		return DescribeResourceUsageResponse.class;
+	public Class<CreateServiceLinkedRoleResponse> getResponseClass() {
+		return CreateServiceLinkedRoleResponse.class;
 	}
 
 }

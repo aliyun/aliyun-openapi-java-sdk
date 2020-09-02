@@ -16,6 +16,7 @@ package com.aliyuncs.gdb.model.v20190903;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.gdb.Endpoint;
 
 /**
  * @author auto create
@@ -40,6 +41,10 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 	public UpgradeDBInstanceKernelVersionRequest() {
 		super("gdb", "2019-09-03", "UpgradeDBInstanceKernelVersion", "gds");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {

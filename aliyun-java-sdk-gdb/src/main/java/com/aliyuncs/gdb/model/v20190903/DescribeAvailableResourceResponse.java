@@ -133,17 +133,9 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 				public static class SupportedStorageSize {
 
-					private String storageSize;
-
 					private String storageType;
 
-					public String getStorageSize() {
-						return this.storageSize;
-					}
-
-					public void setStorageSize(String storageSize) {
-						this.storageSize = storageSize;
-					}
+					private StorageSize storageSize;
 
 					public String getStorageType() {
 						return this.storageType;
@@ -151,6 +143,47 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public void setStorageType(String storageType) {
 						this.storageType = storageType;
+					}
+
+					public StorageSize getStorageSize() {
+						return this.storageSize;
+					}
+
+					public void setStorageSize(StorageSize storageSize) {
+						this.storageSize = storageSize;
+					}
+
+					public static class StorageSize {
+
+						private Integer max;
+
+						private Integer min;
+
+						private Integer step;
+
+						public Integer getMax() {
+							return this.max;
+						}
+
+						public void setMax(Integer max) {
+							this.max = max;
+						}
+
+						public Integer getMin() {
+							return this.min;
+						}
+
+						public void setMin(Integer min) {
+							this.min = min;
+						}
+
+						public Integer getStep() {
+							return this.step;
+						}
+
+						public void setStep(Integer step) {
+							this.step = step;
+						}
 					}
 				}
 			}
@@ -160,10 +193,5 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 	@Override
 	public DescribeAvailableResourceResponse getInstance(UnmarshallerContext context) {
 		return	DescribeAvailableResourceResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
 	}
 }
