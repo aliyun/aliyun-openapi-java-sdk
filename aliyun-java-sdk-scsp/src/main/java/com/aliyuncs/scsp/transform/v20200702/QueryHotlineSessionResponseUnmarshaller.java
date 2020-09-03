@@ -61,8 +61,9 @@ public class QueryHotlineSessionResponseUnmarshaller {
 			callDetailRecordItem.setCallContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallContinueTime"));
 			callDetailRecordItem.setEvaluationLevel(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].EvaluationLevel"));
 			callDetailRecordItem.setEvaluationScore(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].EvaluationScore"));
-			callDetailRecordItem.setCallEndReason(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallEndReason"));
+			callDetailRecordItem.setCallResult(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallResult"));
 			callDetailRecordItem.setHangUpRole(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].HangUpRole"));
+			callDetailRecordItem.setCreateTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CreateTime"));
 
 			callDetailRecord.add(callDetailRecordItem);
 		}

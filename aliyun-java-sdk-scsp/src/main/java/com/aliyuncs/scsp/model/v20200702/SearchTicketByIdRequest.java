@@ -31,7 +31,7 @@ public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdRespo
 
 	private Long ticketId;
 	public SearchTicketByIdRequest() {
-		super("scsp", "2020-07-02", "SearchTicketById", "scsp");
+		super("scsp", "2020-07-02", "SearchTicketById");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,7 +46,7 @@ public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdRespo
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdRespo
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdRespo
 	public void setTicketId(Long ticketId) {
 		this.ticketId = ticketId;
 		if(ticketId != null){
-			putBodyParameter("TicketId", ticketId.toString());
+			putQueryParameter("TicketId", ticketId.toString());
 		}
 	}
 

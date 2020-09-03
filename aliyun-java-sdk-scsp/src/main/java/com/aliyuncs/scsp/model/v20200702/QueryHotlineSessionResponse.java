@@ -161,9 +161,11 @@ public class QueryHotlineSessionResponse extends AcsResponse {
 
 			private Integer evaluationScore;
 
-			private String callEndReason;
+			private String callResult;
 
 			private String hangUpRole;
+
+			private String createTime;
 
 			public String getAcid() {
 				return this.acid;
@@ -333,12 +335,12 @@ public class QueryHotlineSessionResponse extends AcsResponse {
 				this.evaluationScore = evaluationScore;
 			}
 
-			public String getCallEndReason() {
-				return this.callEndReason;
+			public String getCallResult() {
+				return this.callResult;
 			}
 
-			public void setCallEndReason(String callEndReason) {
-				this.callEndReason = callEndReason;
+			public void setCallResult(String callResult) {
+				this.callResult = callResult;
 			}
 
 			public String getHangUpRole() {
@@ -347,6 +349,14 @@ public class QueryHotlineSessionResponse extends AcsResponse {
 
 			public void setHangUpRole(String hangUpRole) {
 				this.hangUpRole = hangUpRole;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 		}
 	}

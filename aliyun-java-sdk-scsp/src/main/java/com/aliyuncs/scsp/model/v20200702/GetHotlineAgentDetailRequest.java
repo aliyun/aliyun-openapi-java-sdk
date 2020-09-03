@@ -31,7 +31,7 @@ public class GetHotlineAgentDetailRequest extends RpcAcsRequest<GetHotlineAgentD
 
 	private String accountName;
 	public GetHotlineAgentDetailRequest() {
-		super("scsp", "2020-07-02", "GetHotlineAgentDetail", "scsp");
+		super("scsp", "2020-07-02", "GetHotlineAgentDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

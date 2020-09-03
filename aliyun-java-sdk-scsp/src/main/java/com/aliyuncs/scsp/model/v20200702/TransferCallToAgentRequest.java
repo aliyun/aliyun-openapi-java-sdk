@@ -43,7 +43,7 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 
 	private String isSingleTransfer;
 	public TransferCallToAgentRequest() {
-		super("scsp", "2020-07-02", "TransferCallToAgent", "scsp");
+		super("scsp", "2020-07-02", "TransferCallToAgent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

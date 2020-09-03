@@ -31,7 +31,7 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 
 	private Long templateId;
 	public GetTicketTemplateSchemaRequest() {
-		super("scsp", "2020-07-02", "GetTicketTemplateSchema", "scsp");
+		super("scsp", "2020-07-02", "GetTicketTemplateSchema");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,7 +46,7 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -68,7 +68,7 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 	public void setTemplateId(Long templateId) {
 		this.templateId = templateId;
 		if(templateId != null){
-			putBodyParameter("TemplateId", templateId.toString());
+			putQueryParameter("TemplateId", templateId.toString());
 		}
 	}
 

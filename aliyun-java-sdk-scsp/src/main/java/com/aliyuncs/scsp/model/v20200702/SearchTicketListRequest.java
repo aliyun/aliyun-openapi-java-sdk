@@ -37,7 +37,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 
 	private Integer pageSize;
 	public SearchTicketListRequest() {
-		super("scsp", "2020-07-02", "SearchTicketList", "scsp");
+		super("scsp", "2020-07-02", "SearchTicketList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,7 +52,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -63,7 +63,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -74,7 +74,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	public void setOperatorId(Long operatorId) {
 		this.operatorId = operatorId;
 		if(operatorId != null){
-			putBodyParameter("OperatorId", operatorId.toString());
+			putQueryParameter("OperatorId", operatorId.toString());
 		}
 	}
 
@@ -85,7 +85,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	public void setTicketStatus(String ticketStatus) {
 		this.ticketStatus = ticketStatus;
 		if(ticketStatus != null){
-			putBodyParameter("TicketStatus", ticketStatus);
+			putQueryParameter("TicketStatus", ticketStatus);
 		}
 	}
 
@@ -96,7 +96,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	public void setPageNo(Integer pageNo) {
 		this.pageNo = pageNo;
 		if(pageNo != null){
-			putBodyParameter("PageNo", pageNo.toString());
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
@@ -107,7 +107,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
