@@ -2,6 +2,10 @@
 - Upgrade hotline session API.
 - Support sub ram account.
 
+2020-09-03 Version: 1.0.5
+- Upgrade hotline session API.
+- Support sub ram account.
+
 2020-09-02 Version: 1.0.4
 - Upgrade hotline session API.
 
