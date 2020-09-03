@@ -41,7 +41,7 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 
 	private String status;
 	public ImportSpecialPersonnelRequest() {
-		super("reid", "2019-09-28", "ImportSpecialPersonnel", "1.1.8.3");
+		super("reid", "2019-09-28", "ImportSpecialPersonnel", "1.1.8.4");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

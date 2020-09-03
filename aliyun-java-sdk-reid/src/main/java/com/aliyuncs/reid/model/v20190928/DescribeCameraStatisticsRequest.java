@@ -30,8 +30,10 @@ public class DescribeCameraStatisticsRequest extends RpcAcsRequest<DescribeCamer
 	private Long storeId;
 
 	private Long endTimestamp;
+
+	private Long locationId;
 	public DescribeCameraStatisticsRequest() {
-		super("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.8.3");
+		super("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.8.4");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class DescribeCameraStatisticsRequest extends RpcAcsRequest<DescribeCamer
 		this.endTimestamp = endTimestamp;
 		if(endTimestamp != null){
 			putBodyParameter("EndTimestamp", endTimestamp.toString());
+		}
+	}
+
+	public Long getLocationId() {
+		return this.locationId;
+	}
+
+	public void setLocationId(Long locationId) {
+		this.locationId = locationId;
+		if(locationId != null){
+			putBodyParameter("LocationId", locationId.toString());
 		}
 	}
 
