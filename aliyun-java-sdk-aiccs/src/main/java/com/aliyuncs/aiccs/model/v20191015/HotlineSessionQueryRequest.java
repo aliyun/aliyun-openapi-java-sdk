@@ -27,8 +27,6 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 
 	private Long groupId;
 
-	private String callEndReason;
-
 	private String servicerId;
 
 	private String params;
@@ -55,6 +53,8 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 
 	private Integer pageSize;
 
+	private String callResult;
+
 	private Integer callType;
 
 	private String memberName;
@@ -77,17 +77,6 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId.toString());
-		}
-	}
-
-	public String getCallEndReason() {
-		return this.callEndReason;
-	}
-
-	public void setCallEndReason(String callEndReason) {
-		this.callEndReason = callEndReason;
-		if(callEndReason != null){
-			putQueryParameter("CallEndReason", callEndReason);
 		}
 	}
 
@@ -231,6 +220,17 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getCallResult() {
+		return this.callResult;
+	}
+
+	public void setCallResult(String callResult) {
+		this.callResult = callResult;
+		if(callResult != null){
+			putQueryParameter("CallResult", callResult);
 		}
 	}
 
