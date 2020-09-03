@@ -1,6 +1,9 @@
 2020-09-03 Version: 1.1.0
 - Generated 2020-07-02 for `scsp`.
 
+2020-09-03 Version: 1.1.0
+- Generated 2020-07-02 for `scsp`.
+
 2020-09-02 Version: 1.0.9
 - Support QueryHotlineSession in SDK.
 
