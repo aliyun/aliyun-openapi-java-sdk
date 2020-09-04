@@ -33,6 +33,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 	private Integer pageSize;
 
+	private String nextToken;
+
 	private List<Disk> disks;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Disk> getDisks() {

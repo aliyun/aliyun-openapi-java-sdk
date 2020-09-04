@@ -72,6 +72,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String spotInterruptionBehavior;
 
+	private Integer networkInterfaceQueueNumber;
+
 	private String ioOptimized;
 
 	private String securityGroupId;
@@ -428,6 +430,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.spotInterruptionBehavior = spotInterruptionBehavior;
 		if(spotInterruptionBehavior != null){
 			putQueryParameter("SpotInterruptionBehavior", spotInterruptionBehavior);
+		}
+	}
+
+	public Integer getNetworkInterfaceQueueNumber() {
+		return this.networkInterfaceQueueNumber;
+	}
+
+	public void setNetworkInterfaceQueueNumber(Integer networkInterfaceQueueNumber) {
+		this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+		if(networkInterfaceQueueNumber != null){
+			putQueryParameter("NetworkInterfaceQueueNumber", networkInterfaceQueueNumber.toString());
 		}
 	}
 
@@ -856,6 +869,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 				}
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
+				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".QueueNumber" , networkInterfaces.get(depth1).getQueueNumber());
 			}
 		}	
 	}
@@ -1075,6 +1089,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		private String description;
 
+		private Integer queueNumber;
+
 		public String getPrimaryIpAddress() {
 			return this.primaryIpAddress;
 		}
@@ -1121,6 +1137,14 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Integer getQueueNumber() {
+			return this.queueNumber;
+		}
+
+		public void setQueueNumber(Integer queueNumber) {
+			this.queueNumber = queueNumber;
 		}
 	}
 

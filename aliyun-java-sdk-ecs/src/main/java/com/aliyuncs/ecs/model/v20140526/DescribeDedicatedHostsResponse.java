@@ -117,6 +117,10 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String dedicatedHostClusterId;
+
+		private Float cpuOverCommitRatio;
+
 		private List<Instance> instances;
 
 		private List<OperationLock> operationLocks;
@@ -291,6 +295,22 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public String getDedicatedHostClusterId() {
+			return this.dedicatedHostClusterId;
+		}
+
+		public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+			this.dedicatedHostClusterId = dedicatedHostClusterId;
+		}
+
+		public Float getCpuOverCommitRatio() {
+			return this.cpuOverCommitRatio;
+		}
+
+		public void setCpuOverCommitRatio(Float cpuOverCommitRatio) {
+			this.cpuOverCommitRatio = cpuOverCommitRatio;
 		}
 
 		public List<Instance> getInstances() {

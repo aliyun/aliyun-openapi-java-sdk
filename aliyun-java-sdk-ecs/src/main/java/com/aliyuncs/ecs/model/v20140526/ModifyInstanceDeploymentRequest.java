@@ -29,6 +29,8 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private Integer deploymentSetGroupNo;
 
+	private String dedicatedHostClusterId;
+
 	private String instanceType;
 
 	private String deploymentSetId;
@@ -78,6 +80,17 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 		this.deploymentSetGroupNo = deploymentSetGroupNo;
 		if(deploymentSetGroupNo != null){
 			putQueryParameter("DeploymentSetGroupNo", deploymentSetGroupNo.toString());
+		}
+	}
+
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
+	}
+
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
+		if(dedicatedHostClusterId != null){
+			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 		}
 	}
 

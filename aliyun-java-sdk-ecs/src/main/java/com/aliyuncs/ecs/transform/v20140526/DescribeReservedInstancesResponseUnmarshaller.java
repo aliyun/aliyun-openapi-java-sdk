@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeReservedInstancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeReservedInstancesResponse.ReservedInstance;
 import com.aliyuncs.ecs.model.v20140526.DescribeReservedInstancesResponse.ReservedInstance.OperationLock;
+import com.aliyuncs.ecs.model.v20140526.DescribeReservedInstancesResponse.ReservedInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -60,6 +61,16 @@ public class DescribeReservedInstancesResponseUnmarshaller {
 				operationLocks.add(operationLock);
 			}
 			reservedInstance.setOperationLocks(operationLocks);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeReservedInstancesResponse.ReservedInstances["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			reservedInstance.setTags(tags);
 
 			reservedInstances.add(reservedInstance);
 		}

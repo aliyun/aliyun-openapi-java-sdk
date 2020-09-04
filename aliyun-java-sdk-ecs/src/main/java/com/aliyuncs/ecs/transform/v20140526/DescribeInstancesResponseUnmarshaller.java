@@ -137,6 +137,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
 			dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostId"));
 			dedicatedHostAttribute.setDedicatedHostName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostName"));
+			dedicatedHostAttribute.setDedicatedHostClusterId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostClusterId"));
 			instance.setDedicatedHostAttribute(dedicatedHostAttribute);
 
 			EcsCapacityReservationAttr ecsCapacityReservationAttr = new EcsCapacityReservationAttr();

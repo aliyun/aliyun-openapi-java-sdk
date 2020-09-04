@@ -30,6 +30,8 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private Boolean recyclable;
 
+	private Integer networkInterfaceQueueNumber;
+
 	private String description;
 
 	private Boolean deletionProtection;
@@ -81,6 +83,17 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 		this.recyclable = recyclable;
 		if(recyclable != null){
 			putQueryParameter("Recyclable", recyclable.toString());
+		}
+	}
+
+	public Integer getNetworkInterfaceQueueNumber() {
+		return this.networkInterfaceQueueNumber;
+	}
+
+	public void setNetworkInterfaceQueueNumber(Integer networkInterfaceQueueNumber) {
+		this.networkInterfaceQueueNumber = networkInterfaceQueueNumber;
+		if(networkInterfaceQueueNumber != null){
+			putQueryParameter("NetworkInterfaceQueueNumber", networkInterfaceQueueNumber.toString());
 		}
 	}
 

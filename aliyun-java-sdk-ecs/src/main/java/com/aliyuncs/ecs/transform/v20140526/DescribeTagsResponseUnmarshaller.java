@@ -50,6 +50,7 @@ public class DescribeTagsResponseUnmarshaller {
 			resourceTypeCount.setDdh(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.Ddh"));
 			resourceTypeCount.setKeyPair(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.KeyPair"));
 			resourceTypeCount.setSnapshotPolicy(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.SnapshotPolicy"));
+			resourceTypeCount.setReservedInstance(_ctx.integerValue("DescribeTagsResponse.Tags["+ i +"].ResourceTypeCount.ReservedInstance"));
 			tag.setResourceTypeCount(resourceTypeCount);
 
 			tags.add(tag);

@@ -91,6 +91,12 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer eniTotalQuantity;
 
+		private Integer maximumQueueNumberPerEni;
+
+		private Integer primaryEniQueueNumber;
+
+		private Integer secondaryEniQueueNumber;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -265,6 +271,30 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setEniTotalQuantity(Integer eniTotalQuantity) {
 			this.eniTotalQuantity = eniTotalQuantity;
+		}
+
+		public Integer getMaximumQueueNumberPerEni() {
+			return this.maximumQueueNumberPerEni;
+		}
+
+		public void setMaximumQueueNumberPerEni(Integer maximumQueueNumberPerEni) {
+			this.maximumQueueNumberPerEni = maximumQueueNumberPerEni;
+		}
+
+		public Integer getPrimaryEniQueueNumber() {
+			return this.primaryEniQueueNumber;
+		}
+
+		public void setPrimaryEniQueueNumber(Integer primaryEniQueueNumber) {
+			this.primaryEniQueueNumber = primaryEniQueueNumber;
+		}
+
+		public Integer getSecondaryEniQueueNumber() {
+			return this.secondaryEniQueueNumber;
+		}
+
+		public void setSecondaryEniQueueNumber(Integer secondaryEniQueueNumber) {
+			this.secondaryEniQueueNumber = secondaryEniQueueNumber;
 		}
 	}
 

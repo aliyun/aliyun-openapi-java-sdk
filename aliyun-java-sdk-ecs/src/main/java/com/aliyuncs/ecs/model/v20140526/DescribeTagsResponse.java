@@ -131,6 +131,8 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			private Integer snapshotPolicy;
 
+			private Integer reservedInstance;
+
 			public Integer getInstance() {
 				return this.instance;
 			}
@@ -217,6 +219,14 @@ public class DescribeTagsResponse extends AcsResponse {
 
 			public void setSnapshotPolicy(Integer snapshotPolicy) {
 				this.snapshotPolicy = snapshotPolicy;
+			}
+
+			public Integer getReservedInstance() {
+				return this.reservedInstance;
+			}
+
+			public void setReservedInstance(Integer reservedInstance) {
+				this.reservedInstance = reservedInstance;
 			}
 		}
 	}

@@ -23,26 +23,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<PurchaseReservedInstancesOfferingResponse> {
+public class DescribeDedicatedHostClustersRequest extends RpcAcsRequest<DescribeDedicatedHostClustersResponse> {
 	   
+
+	private String dedicatedHostClusterName;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String dedicatedHostClusterIds;
 
-	private String description;
-
-	private String platform;
+	private Integer pageNumber;
 
 	private String resourceGroupId;
 
-	private String scope;
+	private String lockReason;
 
-	private String instanceType;
+	private Integer pageSize;
 
 	private List<Tag> tags;
-
-	private Integer period;
 
 	private String resourceOwnerAccount;
 
@@ -50,22 +48,27 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 
 	private Long ownerId;
 
-	private String periodUnit;
-
-	private String offeringType;
-
 	private String zoneId;
 
-	private String reservedInstanceName;
-
-	private Integer instanceAmount;
-	public PurchaseReservedInstancesOfferingRequest() {
-		super("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs");
+	private String status;
+	public DescribeDedicatedHostClustersRequest() {
+		super("Ecs", "2014-05-26", "DescribeDedicatedHostClusters", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDedicatedHostClusterName() {
+		return this.dedicatedHostClusterName;
+	}
+
+	public void setDedicatedHostClusterName(String dedicatedHostClusterName) {
+		this.dedicatedHostClusterName = dedicatedHostClusterName;
+		if(dedicatedHostClusterName != null){
+			putQueryParameter("DedicatedHostClusterName", dedicatedHostClusterName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -79,36 +82,25 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getDedicatedHostClusterIds() {
+		return this.dedicatedHostClusterIds;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setDedicatedHostClusterIds(String dedicatedHostClusterIds) {
+		this.dedicatedHostClusterIds = dedicatedHostClusterIds;
+		if(dedicatedHostClusterIds != null){
+			putQueryParameter("DedicatedHostClusterIds", dedicatedHostClusterIds);
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -123,25 +115,25 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}
 	}
 
-	public String getScope() {
-		return this.scope;
+	public String getLockReason() {
+		return this.lockReason;
 	}
 
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
+	public void setLockReason(String lockReason) {
+		this.lockReason = lockReason;
+		if(lockReason != null){
+			putQueryParameter("LockReason", lockReason);
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -157,17 +149,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
 			}
 		}	
-	}
-
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -203,28 +184,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public String getOfferingType() {
-		return this.offeringType;
-	}
-
-	public void setOfferingType(String offeringType) {
-		this.offeringType = offeringType;
-		if(offeringType != null){
-			putQueryParameter("OfferingType", offeringType);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -236,25 +195,14 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}
 	}
 
-	public String getReservedInstanceName() {
-		return this.reservedInstanceName;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setReservedInstanceName(String reservedInstanceName) {
-		this.reservedInstanceName = reservedInstanceName;
-		if(reservedInstanceName != null){
-			putQueryParameter("ReservedInstanceName", reservedInstanceName);
-		}
-	}
-
-	public Integer getInstanceAmount() {
-		return this.instanceAmount;
-	}
-
-	public void setInstanceAmount(Integer instanceAmount) {
-		this.instanceAmount = instanceAmount;
-		if(instanceAmount != null){
-			putQueryParameter("InstanceAmount", instanceAmount.toString());
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
@@ -282,8 +230,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 	}
 
 	@Override
-	public Class<PurchaseReservedInstancesOfferingResponse> getResponseClass() {
-		return PurchaseReservedInstancesOfferingResponse.class;
+	public Class<DescribeDedicatedHostClustersResponse> getResponseClass() {
+		return DescribeDedicatedHostClustersResponse.class;
 	}
 
 }

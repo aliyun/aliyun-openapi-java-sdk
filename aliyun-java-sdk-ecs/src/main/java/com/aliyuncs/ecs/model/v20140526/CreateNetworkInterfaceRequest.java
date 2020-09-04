@@ -26,6 +26,8 @@ import com.aliyuncs.ecs.Endpoint;
 public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkInterfaceResponse> {
 	   
 
+	private Integer queueNumber;
+
 	private Long resourceOwnerId;
 
 	private String clientToken;
@@ -68,6 +70,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getQueueNumber() {
+		return this.queueNumber;
+	}
+
+	public void setQueueNumber(Integer queueNumber) {
+		this.queueNumber = queueNumber;
+		if(queueNumber != null){
+			putQueryParameter("QueueNumber", queueNumber.toString());
+		}
 	}
 
 	public Long getResourceOwnerId() {

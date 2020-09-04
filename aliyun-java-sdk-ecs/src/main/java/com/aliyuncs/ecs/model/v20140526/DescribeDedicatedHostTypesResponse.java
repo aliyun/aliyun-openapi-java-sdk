@@ -69,6 +69,10 @@ public class DescribeDedicatedHostTypesResponse extends AcsResponse {
 
 		private String gPUSpec;
 
+		private Boolean supportCpuOverCommitRatio;
+
+		private String cpuOverCommitRatioRange;
+
 		private List<String> supportedInstanceTypeFamilies;
 
 		private List<String> supportedInstanceTypesList;
@@ -159,6 +163,22 @@ public class DescribeDedicatedHostTypesResponse extends AcsResponse {
 
 		public void setGPUSpec(String gPUSpec) {
 			this.gPUSpec = gPUSpec;
+		}
+
+		public Boolean getSupportCpuOverCommitRatio() {
+			return this.supportCpuOverCommitRatio;
+		}
+
+		public void setSupportCpuOverCommitRatio(Boolean supportCpuOverCommitRatio) {
+			this.supportCpuOverCommitRatio = supportCpuOverCommitRatio;
+		}
+
+		public String getCpuOverCommitRatioRange() {
+			return this.cpuOverCommitRatioRange;
+		}
+
+		public void setCpuOverCommitRatioRange(String cpuOverCommitRatioRange) {
+			this.cpuOverCommitRatioRange = cpuOverCommitRatioRange;
 		}
 
 		public List<String> getSupportedInstanceTypeFamilies() {

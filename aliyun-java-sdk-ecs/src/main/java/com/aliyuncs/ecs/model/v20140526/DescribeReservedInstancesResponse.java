@@ -111,6 +111,8 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 		private List<OperationLock> operationLocks;
 
+		private List<Tag> tags;
+
 		public String getReservedInstanceId() {
 			return this.reservedInstanceId;
 		}
@@ -247,6 +249,14 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 			this.operationLocks = operationLocks;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public static class OperationLock {
 
 			private String lockReason;
@@ -257,6 +267,29 @@ public class DescribeReservedInstancesResponse extends AcsResponse {
 
 			public void setLockReason(String lockReason) {
 				this.lockReason = lockReason;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

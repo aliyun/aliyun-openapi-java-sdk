@@ -23,26 +23,20 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<PurchaseReservedInstancesOfferingResponse> {
+public class CreateDedicatedHostClusterRequest extends RpcAcsRequest<CreateDedicatedHostClusterResponse> {
 	   
+
+	private String dedicatedHostClusterName;
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
 	private String description;
-
-	private String platform;
 
 	private String resourceGroupId;
 
-	private String scope;
-
-	private String instanceType;
-
 	private List<Tag> tags;
 
-	private Integer period;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
@@ -50,22 +44,25 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 
 	private Long ownerId;
 
-	private String periodUnit;
-
-	private String offeringType;
-
 	private String zoneId;
-
-	private String reservedInstanceName;
-
-	private Integer instanceAmount;
-	public PurchaseReservedInstancesOfferingRequest() {
-		super("Ecs", "2014-05-26", "PurchaseReservedInstancesOffering", "ecs");
+	public CreateDedicatedHostClusterRequest() {
+		super("Ecs", "2014-05-26", "CreateDedicatedHostCluster", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDedicatedHostClusterName() {
+		return this.dedicatedHostClusterName;
+	}
+
+	public void setDedicatedHostClusterName(String dedicatedHostClusterName) {
+		this.dedicatedHostClusterName = dedicatedHostClusterName;
+		if(dedicatedHostClusterName != null){
+			putQueryParameter("DedicatedHostClusterName", dedicatedHostClusterName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -76,17 +73,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -101,17 +87,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}
 	}
 
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -120,28 +95,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getScope() {
-		return this.scope;
-	}
-
-	public void setScope(String scope) {
-		this.scope = scope;
-		if(scope != null){
-			putQueryParameter("Scope", scope);
-		}
-	}
-
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -159,14 +112,14 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}	
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -203,28 +156,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
-	}
-
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
-	}
-
-	public String getOfferingType() {
-		return this.offeringType;
-	}
-
-	public void setOfferingType(String offeringType) {
-		this.offeringType = offeringType;
-		if(offeringType != null){
-			putQueryParameter("OfferingType", offeringType);
-		}
-	}
-
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -233,28 +164,6 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getReservedInstanceName() {
-		return this.reservedInstanceName;
-	}
-
-	public void setReservedInstanceName(String reservedInstanceName) {
-		this.reservedInstanceName = reservedInstanceName;
-		if(reservedInstanceName != null){
-			putQueryParameter("ReservedInstanceName", reservedInstanceName);
-		}
-	}
-
-	public Integer getInstanceAmount() {
-		return this.instanceAmount;
-	}
-
-	public void setInstanceAmount(Integer instanceAmount) {
-		this.instanceAmount = instanceAmount;
-		if(instanceAmount != null){
-			putQueryParameter("InstanceAmount", instanceAmount.toString());
 		}
 	}
 
@@ -282,8 +191,8 @@ public class PurchaseReservedInstancesOfferingRequest extends RpcAcsRequest<Purc
 	}
 
 	@Override
-	public Class<PurchaseReservedInstancesOfferingResponse> getResponseClass() {
-		return PurchaseReservedInstancesOfferingResponse.class;
+	public Class<CreateDedicatedHostClusterResponse> getResponseClass() {
+		return CreateDedicatedHostClusterResponse.class;
 	}
 
 }

@@ -42,6 +42,8 @@ public class DescribeDedicatedHostTypesResponseUnmarshaller {
 			dedicatedHostType.setLocalStorageAmount(_ctx.integerValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageAmount"));
 			dedicatedHostType.setLocalStorageCategory(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].LocalStorageCategory"));
 			dedicatedHostType.setGPUSpec(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].GPUSpec"));
+			dedicatedHostType.setSupportCpuOverCommitRatio(_ctx.booleanValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportCpuOverCommitRatio"));
+			dedicatedHostType.setCpuOverCommitRatioRange(_ctx.stringValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].CpuOverCommitRatioRange"));
 
 			List<String> supportedInstanceTypeFamilies = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostTypesResponse.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {

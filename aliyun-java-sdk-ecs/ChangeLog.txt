@@ -1,3 +1,9 @@
+2020-09-04 Version: 4.19.11
+- Supported QueueNumber for API CreateNetworkInterface.
+- Supported MaximumQueueNumberPerEni, PrimaryEniQueueNumber, SecondaryEniQueueNumber for API DescribeInstanceTypes.
+- Supported NetworkInterfaceQueueNumber for API ModifyInstanceAttribute.
+- Supported NetworkInterfaceQueueNumber for API RunInstances.
+
 2020-08-11 Version: 4.19.10
 - Add ResourceGroup in resource snapshot.
 

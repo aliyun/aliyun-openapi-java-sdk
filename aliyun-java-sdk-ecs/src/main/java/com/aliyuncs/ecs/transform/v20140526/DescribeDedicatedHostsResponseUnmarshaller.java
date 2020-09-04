@@ -59,6 +59,8 @@ public class DescribeDedicatedHostsResponseUnmarshaller {
 			dedicatedHost.setExpiredTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ExpiredTime"));
 			dedicatedHost.setAutoReleaseTime(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].AutoReleaseTime"));
 			dedicatedHost.setResourceGroupId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].ResourceGroupId"));
+			dedicatedHost.setDedicatedHostClusterId(_ctx.stringValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].DedicatedHostClusterId"));
+			dedicatedHost.setCpuOverCommitRatio(_ctx.floatValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].CpuOverCommitRatio"));
 
 			List<String> supportedInstanceTypeFamilies = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostsResponse.DedicatedHosts["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {

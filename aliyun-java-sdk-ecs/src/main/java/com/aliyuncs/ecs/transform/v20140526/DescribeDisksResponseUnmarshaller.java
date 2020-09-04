@@ -33,6 +33,7 @@ public class DescribeDisksResponseUnmarshaller {
 		describeDisksResponse.setTotalCount(_ctx.integerValue("DescribeDisksResponse.TotalCount"));
 		describeDisksResponse.setPageNumber(_ctx.integerValue("DescribeDisksResponse.PageNumber"));
 		describeDisksResponse.setPageSize(_ctx.integerValue("DescribeDisksResponse.PageSize"));
+		describeDisksResponse.setNextToken(_ctx.stringValue("DescribeDisksResponse.NextToken"));
 
 		List<Disk> disks = new ArrayList<Disk>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDisksResponse.Disks.Length"); i++) {

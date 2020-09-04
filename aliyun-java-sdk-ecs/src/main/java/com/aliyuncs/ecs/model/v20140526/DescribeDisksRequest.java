@@ -62,11 +62,15 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private String zoneId;
 
+	private Integer maxResults;
+
 	private String status;
 
 	private String snapshotId;
 
 	private Integer pageNumber;
+
+	private String nextToken;
 
 	private Integer pageSize;
 
@@ -303,6 +307,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		}
 	}
 
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -333,6 +348,17 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 

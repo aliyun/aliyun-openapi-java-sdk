@@ -848,6 +848,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private String dedicatedHostName;
 
+			private String dedicatedHostClusterId;
+
 			public String getDedicatedHostId() {
 				return this.dedicatedHostId;
 			}
@@ -862,6 +864,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setDedicatedHostName(String dedicatedHostName) {
 				this.dedicatedHostName = dedicatedHostName;
+			}
+
+			public String getDedicatedHostClusterId() {
+				return this.dedicatedHostClusterId;
+			}
+
+			public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+				this.dedicatedHostClusterId = dedicatedHostClusterId;
 			}
 		}
 

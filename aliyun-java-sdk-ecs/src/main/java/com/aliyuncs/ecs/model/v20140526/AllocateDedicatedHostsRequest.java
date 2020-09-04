@@ -32,9 +32,13 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private String description;
 
+	private Float cpuOverCommitRatio;
+
 	private String resourceGroupId;
 
 	private String actionOnMaintenance;
+
+	private String dedicatedHostClusterId;
 
 	private List<Tag> tags;
 
@@ -111,6 +115,17 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		}
 	}
 
+	public Float getCpuOverCommitRatio() {
+		return this.cpuOverCommitRatio;
+	}
+
+	public void setCpuOverCommitRatio(Float cpuOverCommitRatio) {
+		this.cpuOverCommitRatio = cpuOverCommitRatio;
+		if(cpuOverCommitRatio != null){
+			putQueryParameter("CpuOverCommitRatio", cpuOverCommitRatio.toString());
+		}
+	}
+
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -130,6 +145,17 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		this.actionOnMaintenance = actionOnMaintenance;
 		if(actionOnMaintenance != null){
 			putQueryParameter("ActionOnMaintenance", actionOnMaintenance);
+		}
+	}
+
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
+	}
+
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
+		if(dedicatedHostClusterId != null){
+			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 		}
 	}
 

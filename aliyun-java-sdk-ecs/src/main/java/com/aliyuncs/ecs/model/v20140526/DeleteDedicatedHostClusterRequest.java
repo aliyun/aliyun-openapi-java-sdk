@@ -22,26 +22,20 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkInterfaceResponse> {
+public class DeleteDedicatedHostClusterRequest extends RpcAcsRequest<DeleteDedicatedHostClusterResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String trunkNetworkInstanceId;
+	private String dedicatedHostClusterId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Boolean waitForNetworkConfigurationReady;
-
 	private Long ownerId;
-
-	private String instanceId;
-
-	private String networkInterfaceId;
-	public AttachNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs");
+	public DeleteDedicatedHostClusterRequest() {
+		super("Ecs", "2014-05-26", "DeleteDedicatedHostCluster", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +54,14 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 		}
 	}
 
-	public String getTrunkNetworkInstanceId() {
-		return this.trunkNetworkInstanceId;
+	public String getDedicatedHostClusterId() {
+		return this.dedicatedHostClusterId;
 	}
 
-	public void setTrunkNetworkInstanceId(String trunkNetworkInstanceId) {
-		this.trunkNetworkInstanceId = trunkNetworkInstanceId;
-		if(trunkNetworkInstanceId != null){
-			putQueryParameter("TrunkNetworkInstanceId", trunkNetworkInstanceId);
+	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
+		this.dedicatedHostClusterId = dedicatedHostClusterId;
+		if(dedicatedHostClusterId != null){
+			putQueryParameter("DedicatedHostClusterId", dedicatedHostClusterId);
 		}
 	}
 
@@ -93,17 +87,6 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 		}
 	}
 
-	public Boolean getWaitForNetworkConfigurationReady() {
-		return this.waitForNetworkConfigurationReady;
-	}
-
-	public void setWaitForNetworkConfigurationReady(Boolean waitForNetworkConfigurationReady) {
-		this.waitForNetworkConfigurationReady = waitForNetworkConfigurationReady;
-		if(waitForNetworkConfigurationReady != null){
-			putQueryParameter("WaitForNetworkConfigurationReady", waitForNetworkConfigurationReady.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -115,31 +98,9 @@ public class AttachNetworkInterfaceRequest extends RpcAcsRequest<AttachNetworkIn
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getNetworkInterfaceId() {
-		return this.networkInterfaceId;
-	}
-
-	public void setNetworkInterfaceId(String networkInterfaceId) {
-		this.networkInterfaceId = networkInterfaceId;
-		if(networkInterfaceId != null){
-			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
-		}
-	}
-
 	@Override
-	public Class<AttachNetworkInterfaceResponse> getResponseClass() {
-		return AttachNetworkInterfaceResponse.class;
+	public Class<DeleteDedicatedHostClusterResponse> getResponseClass() {
+		return DeleteDedicatedHostClusterResponse.class;
 	}
 
 }
