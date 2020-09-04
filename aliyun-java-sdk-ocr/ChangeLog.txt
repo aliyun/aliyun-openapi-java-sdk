@@ -1,3 +1,6 @@
+2020-09-04 Version: 0.0.6
+- Fix ocr-business java sdk bug.
+
 2020-08-04 Version: 1.0.8
 - Update RecognizeTable.
 

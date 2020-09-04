@@ -46,7 +46,7 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String angle;
+		private Float angle;
 
 		private String registerNumber;
 
@@ -74,11 +74,11 @@ public class RecognizeBusinessLicenseResponse extends AcsResponse {
 
 		private QRCode qRCode;
 
-		public String getAngle() {
+		public Float getAngle() {
 			return this.angle;
 		}
 
-		public void setAngle(String angle) {
+		public void setAngle(Float angle) {
 			this.angle = angle;
 		}
 

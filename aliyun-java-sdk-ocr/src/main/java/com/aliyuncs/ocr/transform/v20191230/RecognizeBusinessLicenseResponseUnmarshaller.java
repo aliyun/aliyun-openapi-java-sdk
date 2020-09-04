@@ -30,7 +30,7 @@ public class RecognizeBusinessLicenseResponseUnmarshaller {
 		recognizeBusinessLicenseResponse.setRequestId(_ctx.stringValue("RecognizeBusinessLicenseResponse.RequestId"));
 
 		Data data = new Data();
-		data.setAngle(_ctx.stringValue("RecognizeBusinessLicenseResponse.Data.Angle"));
+		data.setAngle(_ctx.floatValue("RecognizeBusinessLicenseResponse.Data.Angle"));
 		data.setRegisterNumber(_ctx.stringValue("RecognizeBusinessLicenseResponse.Data.RegisterNumber"));
 		data.setName(_ctx.stringValue("RecognizeBusinessLicenseResponse.Data.Name"));
 		data.setType(_ctx.stringValue("RecognizeBusinessLicenseResponse.Data.Type"));
