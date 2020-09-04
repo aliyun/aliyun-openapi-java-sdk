@@ -81,6 +81,32 @@ public class GetVideoResponse extends AcsResponse {
 
 	private String externalId;
 
+	private String videoFacesStatus;
+
+	private String videoFacesFailReason;
+
+	private String videoFacesModifyTime;
+
+	private String videoFrameTagsStatus;
+
+	private String videoFrameTagsFailReason;
+
+	private String videoFrameTagsModifyTime;
+
+	private String videoSTTStatus;
+
+	private String videoSTTFailReason;
+
+	private String videoSTTModifyTime;
+
+	private String videoOCRStatus;
+
+	private String videoOCRFailReason;
+
+	private String videoOCRModifyTime;
+
+	private String videoInfo;
+
 	private List<CelebrityItem> celebrity;
 
 	private List<VideoTagsItem> videoTags;
@@ -311,6 +337,110 @@ public class GetVideoResponse extends AcsResponse {
 		this.externalId = externalId;
 	}
 
+	public String getVideoFacesStatus() {
+		return this.videoFacesStatus;
+	}
+
+	public void setVideoFacesStatus(String videoFacesStatus) {
+		this.videoFacesStatus = videoFacesStatus;
+	}
+
+	public String getVideoFacesFailReason() {
+		return this.videoFacesFailReason;
+	}
+
+	public void setVideoFacesFailReason(String videoFacesFailReason) {
+		this.videoFacesFailReason = videoFacesFailReason;
+	}
+
+	public String getVideoFacesModifyTime() {
+		return this.videoFacesModifyTime;
+	}
+
+	public void setVideoFacesModifyTime(String videoFacesModifyTime) {
+		this.videoFacesModifyTime = videoFacesModifyTime;
+	}
+
+	public String getVideoFrameTagsStatus() {
+		return this.videoFrameTagsStatus;
+	}
+
+	public void setVideoFrameTagsStatus(String videoFrameTagsStatus) {
+		this.videoFrameTagsStatus = videoFrameTagsStatus;
+	}
+
+	public String getVideoFrameTagsFailReason() {
+		return this.videoFrameTagsFailReason;
+	}
+
+	public void setVideoFrameTagsFailReason(String videoFrameTagsFailReason) {
+		this.videoFrameTagsFailReason = videoFrameTagsFailReason;
+	}
+
+	public String getVideoFrameTagsModifyTime() {
+		return this.videoFrameTagsModifyTime;
+	}
+
+	public void setVideoFrameTagsModifyTime(String videoFrameTagsModifyTime) {
+		this.videoFrameTagsModifyTime = videoFrameTagsModifyTime;
+	}
+
+	public String getVideoSTTStatus() {
+		return this.videoSTTStatus;
+	}
+
+	public void setVideoSTTStatus(String videoSTTStatus) {
+		this.videoSTTStatus = videoSTTStatus;
+	}
+
+	public String getVideoSTTFailReason() {
+		return this.videoSTTFailReason;
+	}
+
+	public void setVideoSTTFailReason(String videoSTTFailReason) {
+		this.videoSTTFailReason = videoSTTFailReason;
+	}
+
+	public String getVideoSTTModifyTime() {
+		return this.videoSTTModifyTime;
+	}
+
+	public void setVideoSTTModifyTime(String videoSTTModifyTime) {
+		this.videoSTTModifyTime = videoSTTModifyTime;
+	}
+
+	public String getVideoOCRStatus() {
+		return this.videoOCRStatus;
+	}
+
+	public void setVideoOCRStatus(String videoOCRStatus) {
+		this.videoOCRStatus = videoOCRStatus;
+	}
+
+	public String getVideoOCRFailReason() {
+		return this.videoOCRFailReason;
+	}
+
+	public void setVideoOCRFailReason(String videoOCRFailReason) {
+		this.videoOCRFailReason = videoOCRFailReason;
+	}
+
+	public String getVideoOCRModifyTime() {
+		return this.videoOCRModifyTime;
+	}
+
+	public void setVideoOCRModifyTime(String videoOCRModifyTime) {
+		this.videoOCRModifyTime = videoOCRModifyTime;
+	}
+
+	public String getVideoInfo() {
+		return this.videoInfo;
+	}
+
+	public void setVideoInfo(String videoInfo) {
+		this.videoInfo = videoInfo;
+	}
+
 	public List<CelebrityItem> getCelebrity() {
 		return this.celebrity;
 	}
@@ -376,6 +506,8 @@ public class GetVideoResponse extends AcsResponse {
 
 		private Float videoTagConfidence;
 
+		private Integer videoTagLevel;
+
 		public String getVideoTagName() {
 			return this.videoTagName;
 		}
@@ -398,6 +530,14 @@ public class GetVideoResponse extends AcsResponse {
 
 		public void setVideoTagConfidence(Float videoTagConfidence) {
 			this.videoTagConfidence = videoTagConfidence;
+		}
+
+		public Integer getVideoTagLevel() {
+			return this.videoTagLevel;
+		}
+
+		public void setVideoTagLevel(Integer videoTagLevel) {
+			this.videoTagLevel = videoTagLevel;
 		}
 	}
 

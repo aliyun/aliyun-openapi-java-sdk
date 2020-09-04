@@ -47,6 +47,10 @@ public class ListFaceGroupsResponseUnmarshaller {
 			faceGroupsItem.setRemarksArrayB(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].RemarksArrayB"));
 			faceGroupsItem.setExternalId(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].ExternalId"));
 			faceGroupsItem.setImageCount(_ctx.integerValue("ListFaceGroupsResponse.FaceGroups["+ i +"].ImageCount"));
+			faceGroupsItem.setGender(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].Gender"));
+			faceGroupsItem.setMaxAge(_ctx.floatValue("ListFaceGroupsResponse.FaceGroups["+ i +"].MaxAge"));
+			faceGroupsItem.setAverageAge(_ctx.floatValue("ListFaceGroupsResponse.FaceGroups["+ i +"].AverageAge"));
+			faceGroupsItem.setMinAge(_ctx.floatValue("ListFaceGroupsResponse.FaceGroups["+ i +"].MinAge"));
 
 			GroupCoverFace groupCoverFace = new GroupCoverFace();
 			groupCoverFace.setFaceId(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].GroupCoverFace.FaceId"));

@@ -28,6 +28,10 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 
 	private String externalId;
 
+	private String notifyEndpoint;
+
+	private String notifyTopicName;
+
 	private String remarksB;
 
 	private String remarksA;
@@ -65,6 +69,28 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 		this.externalId = externalId;
 		if(externalId != null){
 			putQueryParameter("ExternalId", externalId);
+		}
+	}
+
+	public String getNotifyEndpoint() {
+		return this.notifyEndpoint;
+	}
+
+	public void setNotifyEndpoint(String notifyEndpoint) {
+		this.notifyEndpoint = notifyEndpoint;
+		if(notifyEndpoint != null){
+			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getNotifyTopicName() {
+		return this.notifyTopicName;
+	}
+
+	public void setNotifyTopicName(String notifyTopicName) {
+		this.notifyTopicName = notifyTopicName;
+		if(notifyTopicName != null){
+			putQueryParameter("NotifyTopicName", notifyTopicName);
 		}
 	}
 

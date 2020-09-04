@@ -56,6 +56,19 @@ public class GetVideoResponseUnmarshaller {
 		getVideoResponse.setRemarksC(_ctx.stringValue("GetVideoResponse.RemarksC"));
 		getVideoResponse.setRemarksD(_ctx.stringValue("GetVideoResponse.RemarksD"));
 		getVideoResponse.setExternalId(_ctx.stringValue("GetVideoResponse.ExternalId"));
+		getVideoResponse.setVideoFacesStatus(_ctx.stringValue("GetVideoResponse.VideoFacesStatus"));
+		getVideoResponse.setVideoFacesFailReason(_ctx.stringValue("GetVideoResponse.VideoFacesFailReason"));
+		getVideoResponse.setVideoFacesModifyTime(_ctx.stringValue("GetVideoResponse.VideoFacesModifyTime"));
+		getVideoResponse.setVideoFrameTagsStatus(_ctx.stringValue("GetVideoResponse.VideoFrameTagsStatus"));
+		getVideoResponse.setVideoFrameTagsFailReason(_ctx.stringValue("GetVideoResponse.VideoFrameTagsFailReason"));
+		getVideoResponse.setVideoFrameTagsModifyTime(_ctx.stringValue("GetVideoResponse.VideoFrameTagsModifyTime"));
+		getVideoResponse.setVideoSTTStatus(_ctx.stringValue("GetVideoResponse.VideoSTTStatus"));
+		getVideoResponse.setVideoSTTFailReason(_ctx.stringValue("GetVideoResponse.VideoSTTFailReason"));
+		getVideoResponse.setVideoSTTModifyTime(_ctx.stringValue("GetVideoResponse.VideoSTTModifyTime"));
+		getVideoResponse.setVideoOCRStatus(_ctx.stringValue("GetVideoResponse.VideoOCRStatus"));
+		getVideoResponse.setVideoOCRFailReason(_ctx.stringValue("GetVideoResponse.VideoOCRFailReason"));
+		getVideoResponse.setVideoOCRModifyTime(_ctx.stringValue("GetVideoResponse.VideoOCRModifyTime"));
+		getVideoResponse.setVideoInfo(_ctx.stringValue("GetVideoResponse.VideoInfo"));
 
 		List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetVideoResponse.Celebrity.Length"); i++) {
@@ -74,6 +87,7 @@ public class GetVideoResponseUnmarshaller {
 			videoTagsItem.setVideoTagName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagName"));
 			videoTagsItem.setVideoTagEnName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagEnName"));
 			videoTagsItem.setVideoTagConfidence(_ctx.floatValue("GetVideoResponse.VideoTags["+ i +"].VideoTagConfidence"));
+			videoTagsItem.setVideoTagLevel(_ctx.integerValue("GetVideoResponse.VideoTags["+ i +"].VideoTagLevel"));
 
 			videoTags.add(videoTagsItem);
 		}

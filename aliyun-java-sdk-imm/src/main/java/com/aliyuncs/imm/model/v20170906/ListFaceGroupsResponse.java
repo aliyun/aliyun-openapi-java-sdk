@@ -83,6 +83,14 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 		private Integer imageCount;
 
+		private String gender;
+
+		private Float maxAge;
+
+		private Float averageAge;
+
+		private Float minAge;
+
 		private GroupCoverFace groupCoverFace;
 
 		public String getGroupId() {
@@ -187,6 +195,38 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 		public void setImageCount(Integer imageCount) {
 			this.imageCount = imageCount;
+		}
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
+
+		public Float getMaxAge() {
+			return this.maxAge;
+		}
+
+		public void setMaxAge(Float maxAge) {
+			this.maxAge = maxAge;
+		}
+
+		public Float getAverageAge() {
+			return this.averageAge;
+		}
+
+		public void setAverageAge(Float averageAge) {
+			this.averageAge = averageAge;
+		}
+
+		public Float getMinAge() {
+			return this.minAge;
+		}
+
+		public void setMinAge(Float minAge) {
+			this.minAge = minAge;
 		}
 
 		public GroupCoverFace getGroupCoverFace() {
