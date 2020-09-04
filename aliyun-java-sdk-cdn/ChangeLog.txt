@@ -1,3 +1,6 @@
+2020-09-04 Version: 3.4.5
+- Update domain API.
+
 2020-08-11 Version: 3.4.3
 - Update DescribeRefreshTask.
 
