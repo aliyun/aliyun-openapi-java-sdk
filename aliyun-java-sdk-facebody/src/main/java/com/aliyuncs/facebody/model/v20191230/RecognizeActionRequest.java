@@ -32,7 +32,7 @@ public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionRespons
 
 	private String videoUrl;
 	public RecognizeActionRequest() {
-		super("facebody", "2019-12-30", "RecognizeAction", "facebody");
+		super("facebody", "2019-12-30", "RecognizeAction");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
