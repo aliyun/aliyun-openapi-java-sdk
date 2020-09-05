@@ -33,7 +33,7 @@ public class InvokeMotorModelRequest extends RpcAcsRequest<InvokeMotorModelRespo
 
 	private String picId;
 	public InvokeMotorModelRequest() {
-		super("Vcs", "2020-05-15", "InvokeMotorModel");
+		super("Vcs", "2020-05-15", "InvokeMotorModel", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetDeviceConfigRequest extends RpcAcsRequest<GetDeviceConfigRespons
 
 	private String deviceSn;
 	public GetDeviceConfigRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceConfig");
+		super("Vcs", "2020-05-15", "GetDeviceConfig", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

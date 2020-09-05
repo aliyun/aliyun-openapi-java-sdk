@@ -25,6 +25,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlResponse> {
 	   
 
+	private String outProtocol;
+
 	private String corpId;
 
 	private String gbId;
@@ -32,13 +34,26 @@ public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlRes
 	private Long endTime;
 
 	private Long startTime;
+
+	private String deviceId;
 	public GetDeviceVideoUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceVideoUrl");
+		super("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOutProtocol() {
+		return this.outProtocol;
+	}
+
+	public void setOutProtocol(String outProtocol) {
+		this.outProtocol = outProtocol;
+		if(outProtocol != null){
+			putBodyParameter("OutProtocol", outProtocol);
+		}
 	}
 
 	public String getCorpId() {
@@ -82,6 +97,17 @@ public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlRes
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putBodyParameter("DeviceId", deviceId);
 		}
 	}
 

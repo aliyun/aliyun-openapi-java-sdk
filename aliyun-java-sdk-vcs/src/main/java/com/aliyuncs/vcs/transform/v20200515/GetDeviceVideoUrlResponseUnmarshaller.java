@@ -26,6 +26,7 @@ public class GetDeviceVideoUrlResponseUnmarshaller {
 		getDeviceVideoUrlResponse.setCode(_ctx.stringValue("GetDeviceVideoUrlResponse.Code"));
 		getDeviceVideoUrlResponse.setMessage(_ctx.stringValue("GetDeviceVideoUrlResponse.Message"));
 		getDeviceVideoUrlResponse.setUrl(_ctx.stringValue("GetDeviceVideoUrlResponse.Url"));
+		getDeviceVideoUrlResponse.setOutProtocol(_ctx.stringValue("GetDeviceVideoUrlResponse.OutProtocol"));
 	 
 	 	return getDeviceVideoUrlResponse;
 	}

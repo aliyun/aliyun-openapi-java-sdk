@@ -32,6 +32,8 @@ public class GetDeviceVideoUrlResponse extends AcsResponse {
 
 	private String url;
 
+	private String outProtocol;
+
 	public String getCode() {
 		return this.code;
 	}
@@ -62,6 +64,14 @@ public class GetDeviceVideoUrlResponse extends AcsResponse {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public String getOutProtocol() {
+		return this.outProtocol;
+	}
+
+	public void setOutProtocol(String outProtocol) {
+		this.outProtocol = outProtocol;
 	}
 
 	@Override

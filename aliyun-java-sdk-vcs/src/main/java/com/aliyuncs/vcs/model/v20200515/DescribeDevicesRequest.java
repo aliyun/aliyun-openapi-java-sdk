@@ -22,16 +22,16 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupResponse> {
+public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesResponse> {
 	   
 
-	private String isvSubId;
+	private Integer pageNum;
 
-	private String corpId;
+	private String corpIdList;
 
-	private String userGroupId;
-	public DeleteUserGroupRequest() {
-		super("Vcs", "2020-05-15", "DeleteUserGroup", "vcs");
+	private Integer pageSize;
+	public DescribeDevicesRequest() {
+		super("Vcs", "2020-05-15", "DescribeDevices", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupRespons
 		} catch (Exception e) {}
 	}
 
-	public String getIsvSubId() {
-		return this.isvSubId;
+	public Integer getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setIsvSubId(String isvSubId) {
-		this.isvSubId = isvSubId;
-		if(isvSubId != null){
-			putBodyParameter("IsvSubId", isvSubId);
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum.toString());
 		}
 	}
 
-	public String getCorpId() {
-		return this.corpId;
+	public String getCorpIdList() {
+		return this.corpIdList;
 	}
 
-	public void setCorpId(String corpId) {
-		this.corpId = corpId;
-		if(corpId != null){
-			putBodyParameter("CorpId", corpId);
+	public void setCorpIdList(String corpIdList) {
+		this.corpIdList = corpIdList;
+		if(corpIdList != null){
+			putBodyParameter("CorpIdList", corpIdList);
 		}
 	}
 
-	public String getUserGroupId() {
-		return this.userGroupId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setUserGroupId(String userGroupId) {
-		this.userGroupId = userGroupId;
-		if(userGroupId != null){
-			putBodyParameter("UserGroupId", userGroupId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteUserGroupResponse> getResponseClass() {
-		return DeleteUserGroupResponse.class;
+	public Class<DescribeDevicesResponse> getResponseClass() {
+		return DescribeDevicesResponse.class;
 	}
 
 }

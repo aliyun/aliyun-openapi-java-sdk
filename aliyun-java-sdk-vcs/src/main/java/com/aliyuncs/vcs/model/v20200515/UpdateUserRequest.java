@@ -55,7 +55,7 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private String userName;
 	public UpdateUserRequest() {
-		super("Vcs", "2020-05-15", "UpdateUser");
+		super("Vcs", "2020-05-15", "UpdateUser", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

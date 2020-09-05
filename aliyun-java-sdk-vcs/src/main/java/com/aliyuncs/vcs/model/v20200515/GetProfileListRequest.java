@@ -39,6 +39,8 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 
 	private Long pageNumber;
 
+	private String faceImageId;
+
 	private String faceUrl;
 
 	private Long pageSize;
@@ -61,7 +63,7 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 
 	private String matchingRateThreshold;
 	public GetProfileListRequest() {
-		super("Vcs", "2020-05-15", "GetProfileList");
+		super("Vcs", "2020-05-15", "GetProfileList", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -132,6 +134,17 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFaceImageId() {
+		return this.faceImageId;
+	}
+
+	public void setFaceImageId(String faceImageId) {
+		this.faceImageId = faceImageId;
+		if(faceImageId != null){
+			putBodyParameter("FaceImageId", faceImageId);
 		}
 	}
 

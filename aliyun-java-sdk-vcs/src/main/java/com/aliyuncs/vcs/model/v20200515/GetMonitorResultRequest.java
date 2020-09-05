@@ -37,7 +37,7 @@ public class GetMonitorResultRequest extends RpcAcsRequest<GetMonitorResultRespo
 
 	private String taskId;
 	public GetMonitorResultRequest() {
-		super("Vcs", "2020-05-15", "GetMonitorResult");
+		super("Vcs", "2020-05-15", "GetMonitorResult", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

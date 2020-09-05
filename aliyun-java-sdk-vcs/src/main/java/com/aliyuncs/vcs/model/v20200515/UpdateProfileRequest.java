@@ -51,7 +51,7 @@ public class UpdateProfileRequest extends RpcAcsRequest<UpdateProfileResponse> {
 
 	private String bizId;
 	public UpdateProfileRequest() {
-		super("Vcs", "2020-05-15", "UpdateProfile");
+		super("Vcs", "2020-05-15", "UpdateProfile", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

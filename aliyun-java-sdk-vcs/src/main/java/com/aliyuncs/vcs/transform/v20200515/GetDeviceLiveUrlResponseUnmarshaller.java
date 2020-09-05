@@ -24,8 +24,10 @@ public class GetDeviceLiveUrlResponseUnmarshaller {
 		
 		getDeviceLiveUrlResponse.setRequestId(_ctx.stringValue("GetDeviceLiveUrlResponse.RequestId"));
 		getDeviceLiveUrlResponse.setCode(_ctx.stringValue("GetDeviceLiveUrlResponse.Code"));
-		getDeviceLiveUrlResponse.setUrl(_ctx.stringValue("GetDeviceLiveUrlResponse.Url"));
 		getDeviceLiveUrlResponse.setMessage(_ctx.stringValue("GetDeviceLiveUrlResponse.Message"));
+		getDeviceLiveUrlResponse.setUrl(_ctx.stringValue("GetDeviceLiveUrlResponse.Url"));
+		getDeviceLiveUrlResponse.setOutProtocol(_ctx.stringValue("GetDeviceLiveUrlResponse.OutProtocol"));
+		getDeviceLiveUrlResponse.setStreamType(_ctx.integerValue("GetDeviceLiveUrlResponse.StreamType"));
 	 
 	 	return getDeviceLiveUrlResponse;
 	}

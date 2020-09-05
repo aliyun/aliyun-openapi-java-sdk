@@ -29,7 +29,7 @@ public class DeleteVideoSummaryTaskRequest extends RpcAcsRequest<DeleteVideoSumm
 
 	private String taskId;
 	public DeleteVideoSummaryTaskRequest() {
-		super("Vcs", "2020-05-15", "DeleteVideoSummaryTask");
+		super("Vcs", "2020-05-15", "DeleteVideoSummaryTask", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

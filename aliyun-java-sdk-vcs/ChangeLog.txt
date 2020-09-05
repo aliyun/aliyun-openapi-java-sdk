@@ -1,3 +1,6 @@
+2020-09-05 Version: 1.2.5
+- Add describes devices API.
+
 2020-09-01 Version: 1.2.3
 - Update Parameter.
 

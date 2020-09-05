@@ -33,7 +33,7 @@ public class UpdateUserGroupRequest extends RpcAcsRequest<UpdateUserGroupRespons
 
 	private String userGroupName;
 	public UpdateUserGroupRequest() {
-		super("Vcs", "2020-05-15", "UpdateUserGroup");
+		super("Vcs", "2020-05-15", "UpdateUserGroup", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
