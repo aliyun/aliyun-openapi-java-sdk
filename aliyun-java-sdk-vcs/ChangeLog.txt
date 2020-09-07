@@ -1,4 +1,7 @@
 2020-09-07 Version: 1.2.5
+- Add describes devices API, change type to string.
+
+2020-09-07 Version: 1.2.5
 - Add describes devices API.
 
 2020-09-07 Version: 1.2.6
