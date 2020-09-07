@@ -29,7 +29,7 @@ public class StopK8sApplicationRequest extends RoaAcsRequest<StopK8sApplicationR
 
 	private Integer timeout;
 	public StopK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "StopK8sApplication", "edas");
+		super("Edas", "2017-08-01", "StopK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/stop_k8s_app");
 		setMethod(MethodType.POST);
 		try {

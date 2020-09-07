@@ -31,7 +31,7 @@ public class StartK8sApplicationRequest extends RoaAcsRequest<StartK8sApplicatio
 
 	private Integer timeout;
 	public StartK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "StartK8sApplication", "edas");
+		super("Edas", "2017-08-01", "StartK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/start_k8s_app");
 		setMethod(MethodType.POST);
 		try {
