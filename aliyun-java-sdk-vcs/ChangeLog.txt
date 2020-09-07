@@ -1,3 +1,6 @@
+2020-09-07 Version: 1.2.6
+- Add describes devices API.
+
 2020-09-07 Version: 1.2.5
 - Add describes devices API.
 
