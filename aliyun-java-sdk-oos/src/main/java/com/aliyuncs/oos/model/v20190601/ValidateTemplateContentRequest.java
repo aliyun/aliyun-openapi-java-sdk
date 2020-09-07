@@ -27,7 +27,7 @@ public class ValidateTemplateContentRequest extends RpcAcsRequest<ValidateTempla
 
 	private String content;
 	public ValidateTemplateContentRequest() {
-		super("oos", "2019-06-01", "ValidateTemplateContent");
+		super("oos", "2019-06-01", "ValidateTemplateContent", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class TriggerExecutionRequest extends RpcAcsRequest<TriggerExecutionRespo
 
 	private String executionId;
 	public TriggerExecutionRequest() {
-		super("oos", "2019-06-01", "TriggerExecution");
+		super("oos", "2019-06-01", "TriggerExecution", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteTemplatesRequest extends RpcAcsRequest<DeleteTemplatesRespons
 
 	private Boolean autoDeleteExecutions;
 	public DeleteTemplatesRequest() {
-		super("oos", "2019-06-01", "DeleteTemplates");
+		super("oos", "2019-06-01", "DeleteTemplates", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

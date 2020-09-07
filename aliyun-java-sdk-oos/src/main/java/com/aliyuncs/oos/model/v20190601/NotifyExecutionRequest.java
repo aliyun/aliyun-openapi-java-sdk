@@ -43,7 +43,7 @@ public class NotifyExecutionRequest extends RpcAcsRequest<NotifyExecutionRespons
 
 	private String parameters;
 	public NotifyExecutionRequest() {
-		super("oos", "2019-06-01", "NotifyExecution");
+		super("oos", "2019-06-01", "NotifyExecution", "oos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
