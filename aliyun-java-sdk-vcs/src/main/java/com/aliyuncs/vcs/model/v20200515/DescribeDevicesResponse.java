@@ -135,7 +135,7 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 			private String longitude;
 
-			private Integer status;
+			private String status;
 
 			private String vendor;
 
@@ -205,11 +205,11 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.longitude = longitude;
 			}
 
-			public Integer getStatus() {
+			public String getStatus() {
 				return this.status;
 			}
 
-			public void setStatus(Integer status) {
+			public void setStatus(String status) {
 				this.status = status;
 			}
 

@@ -48,7 +48,7 @@ public class DescribeDevicesResponseUnmarshaller {
 			record.setDeviceType(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceType"));
 			record.setLatitude(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Latitude"));
 			record.setLongitude(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Longitude"));
-			record.setStatus(_ctx.integerValue("DescribeDevicesResponse.Data.Records["+ i +"].Status"));
+			record.setStatus(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Status"));
 			record.setVendor(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Vendor"));
 			record.setCorpId(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].CorpId"));
 
