@@ -163,6 +163,8 @@ public class GetActivityTaskResponse extends AcsResponse {
 
 		private String taskId;
 
+		private String expId;
+
 		public String getData() {
 			return this.data;
 		}
@@ -225,6 +227,14 @@ public class GetActivityTaskResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getExpId() {
+			return this.expId;
+		}
+
+		public void setExpId(String expId) {
+			this.expId = expId;
 		}
 	}
 

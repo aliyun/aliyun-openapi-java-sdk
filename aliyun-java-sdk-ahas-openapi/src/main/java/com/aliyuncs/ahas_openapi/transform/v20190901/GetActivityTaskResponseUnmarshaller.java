@@ -49,6 +49,7 @@ public class GetActivityTaskResponseUnmarshaller {
 			hostsItem.setStartTime(_ctx.longValue("GetActivityTaskResponse.Hosts["+ i +"].StartTime"));
 			hostsItem.setState(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].State"));
 			hostsItem.setTaskId(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].TaskId"));
+			hostsItem.setExpId(_ctx.stringValue("GetActivityTaskResponse.Hosts["+ i +"].ExpId"));
 
 			hosts.add(hostsItem);
 		}
