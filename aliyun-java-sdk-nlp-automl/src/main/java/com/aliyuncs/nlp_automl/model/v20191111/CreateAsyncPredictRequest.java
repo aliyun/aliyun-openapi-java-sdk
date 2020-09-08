@@ -31,6 +31,8 @@ public class CreateAsyncPredictRequest extends RpcAcsRequest<CreateAsyncPredictR
 
 	private String detailTag;
 
+	private String fetchContent;
+
 	private String content;
 
 	private String fileContent;
@@ -79,6 +81,17 @@ public class CreateAsyncPredictRequest extends RpcAcsRequest<CreateAsyncPredictR
 		this.detailTag = detailTag;
 		if(detailTag != null){
 			putBodyParameter("DetailTag", detailTag);
+		}
+	}
+
+	public String getFetchContent() {
+		return this.fetchContent;
+	}
+
+	public void setFetchContent(String fetchContent) {
+		this.fetchContent = fetchContent;
+		if(fetchContent != null){
+			putBodyParameter("FetchContent", fetchContent);
 		}
 	}
 

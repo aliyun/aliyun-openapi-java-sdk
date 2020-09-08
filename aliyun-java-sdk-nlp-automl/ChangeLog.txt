@@ -1,3 +1,6 @@
+2020-09-08 Version: 0.0.8
+- Modify CreateAsyncPredict add new parameters.
+
 2020-05-26 Version: 0.0.7
 - Add smartcall service api.
 
