@@ -22,16 +22,12 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateFaceEntityRequest extends RpcAcsRequest<UpdateFaceEntityResponse> {
+public class DetectChefCapRequest extends RpcAcsRequest<DetectChefCapResponse> {
 	   
 
-	private String entityId;
-
-	private String labels;
-
-	private String dbName;
-	public UpdateFaceEntityRequest() {
-		super("facebody", "2019-12-30", "UpdateFaceEntity", "facebody");
+	private String imageURL;
+	public DetectChefCapRequest() {
+		super("facebody", "2019-12-30", "DetectChefCap", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class UpdateFaceEntityRequest extends RpcAcsRequest<UpdateFaceEntityRespo
 		} catch (Exception e) {}
 	}
 
-	public String getEntityId() {
-		return this.entityId;
+	public String getImageURL() {
+		return this.imageURL;
 	}
 
-	public void setEntityId(String entityId) {
-		this.entityId = entityId;
-		if(entityId != null){
-			putBodyParameter("EntityId", entityId);
-		}
-	}
-
-	public String getLabels() {
-		return this.labels;
-	}
-
-	public void setLabels(String labels) {
-		this.labels = labels;
-		if(labels != null){
-			putBodyParameter("Labels", labels);
-		}
-	}
-
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putBodyParameter("DbName", dbName);
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 
 	@Override
-	public Class<UpdateFaceEntityResponse> getResponseClass() {
-		return UpdateFaceEntityResponse.class;
+	public Class<DetectChefCapResponse> getResponseClass() {
+		return DetectChefCapResponse.class;
 	}
 
 }

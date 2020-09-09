@@ -27,7 +27,7 @@ public class BlurFaceRequest extends RpcAcsRequest<BlurFaceResponse> {
 
 	private String imageURL;
 	public BlurFaceRequest() {
-		super("facebody", "2019-12-30", "BlurFace");
+		super("facebody", "2019-12-30", "BlurFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
