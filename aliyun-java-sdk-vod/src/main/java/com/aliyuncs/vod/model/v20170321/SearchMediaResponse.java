@@ -191,6 +191,10 @@ public class SearchMediaResponse extends AcsResponse {
 
 			private String appId;
 
+			private String auditAbnormalModules;
+
+			private String auditLabel;
+
 			private List<PlayInfo> playInfoList;
 
 			private List<String> snapshots;
@@ -403,6 +407,22 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setAppId(String appId) {
 				this.appId = appId;
+			}
+
+			public String getAuditAbnormalModules() {
+				return this.auditAbnormalModules;
+			}
+
+			public void setAuditAbnormalModules(String auditAbnormalModules) {
+				this.auditAbnormalModules = auditAbnormalModules;
+			}
+
+			public String getAuditLabel() {
+				return this.auditLabel;
+			}
+
+			public void setAuditLabel(String auditLabel) {
+				this.auditLabel = auditLabel;
 			}
 
 			public List<PlayInfo> getPlayInfoList() {

@@ -71,6 +71,8 @@ public class SearchMediaResponseUnmarshaller {
 			video.setAuditTemplateId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditTemplateId"));
 			video.setCustomMediaInfo(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.CustomMediaInfo"));
 			video.setAppId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AppId"));
+			video.setAuditAbnormalModules(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditAbnormalModules"));
+			video.setAuditLabel(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Video.AuditLabel"));
 
 			List<String> snapshots = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].Video.Snapshots.Length"); j++) {

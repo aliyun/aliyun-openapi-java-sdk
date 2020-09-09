@@ -22,7 +22,6 @@ public class Endpoint {
             put("cn-shanghai-internal-test-1", "vod.aliyuncs.com");
             put("cn-beijing-gov-1", "vod.aliyuncs.com");
             put("cn-shenzhen-su18-b01", "vod.aliyuncs.com");
-            put("cn-beijing", "vod.cn-shanghai.aliyuncs.com");
             put("cn-wulanchabu", "vod.aliyuncs.com");
             put("cn-shanghai-inner", "vod.aliyuncs.com");
             put("cn-shenzhen-st4-d01", "vod.aliyuncs.com");

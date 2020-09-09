@@ -22,26 +22,18 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAuditJobResponse> {
+public class DeleteAIImageInfosRequest extends RpcAcsRequest<DeleteAIImageInfosResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String userData;
-
 	private String resourceOwnerAccount;
 
-	private String ownerId;
+	private Long ownerId;
 
-	private String mediaId;
-
-	private String templateId;
-
-	private String mediaAuditConfiguration;
-
-	private String mediaType;
-	public SubmitAIMediaAuditJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIMediaAuditJob", "vod");
+	private String aIImageInfoIds;
+	public DeleteAIImageInfosRequest() {
+		super("vod", "2017-03-21", "DeleteAIImageInfos", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,17 +52,6 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -82,64 +63,31 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		}
 	}
 
-	public String getOwnerId() {
+	public Long getOwnerId() {
 		return this.ownerId;
 	}
 
-	public void setOwnerId(String ownerId) {
+	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
-	public String getMediaId() {
-		return this.mediaId;
+	public String getAIImageInfoIds() {
+		return this.aIImageInfoIds;
 	}
 
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-		if(mediaId != null){
-			putQueryParameter("MediaId", mediaId);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public String getMediaAuditConfiguration() {
-		return this.mediaAuditConfiguration;
-	}
-
-	public void setMediaAuditConfiguration(String mediaAuditConfiguration) {
-		this.mediaAuditConfiguration = mediaAuditConfiguration;
-		if(mediaAuditConfiguration != null){
-			putQueryParameter("MediaAuditConfiguration", mediaAuditConfiguration);
-		}
-	}
-
-	public String getMediaType() {
-		return this.mediaType;
-	}
-
-	public void setMediaType(String mediaType) {
-		this.mediaType = mediaType;
-		if(mediaType != null){
-			putQueryParameter("MediaType", mediaType);
+	public void setAIImageInfoIds(String aIImageInfoIds) {
+		this.aIImageInfoIds = aIImageInfoIds;
+		if(aIImageInfoIds != null){
+			putQueryParameter("AIImageInfoIds", aIImageInfoIds);
 		}
 	}
 
 	@Override
-	public Class<SubmitAIMediaAuditJobResponse> getResponseClass() {
-		return SubmitAIMediaAuditJobResponse.class;
+	public Class<DeleteAIImageInfosResponse> getResponseClass() {
+		return DeleteAIImageInfosResponse.class;
 	}
 
 }

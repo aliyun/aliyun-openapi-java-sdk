@@ -22,26 +22,26 @@ import com.aliyuncs.vod.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAuditJobResponse> {
+public class SubmitAIImageJobRequest extends RpcAcsRequest<SubmitAIImageJobResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String resourceOwnerId;
+
+	private String aIPipelineId;
 
 	private String userData;
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
+	private String videoId;
+
+	private String aITemplateId;
+
 	private String ownerId;
-
-	private String mediaId;
-
-	private String templateId;
-
-	private String mediaAuditConfiguration;
-
-	private String mediaType;
-	public SubmitAIMediaAuditJobRequest() {
-		super("vod", "2017-03-21", "SubmitAIMediaAuditJob", "vod");
+	public SubmitAIImageJobRequest() {
+		super("vod", "2017-03-21", "SubmitAIImageJob", "vod");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,14 +49,25 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
+	public String getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
+	public void setResourceOwnerId(String resourceOwnerId) {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+			putQueryParameter("ResourceOwnerId", resourceOwnerId);
+		}
+	}
+
+	public String getAIPipelineId() {
+		return this.aIPipelineId;
+	}
+
+	public void setAIPipelineId(String aIPipelineId) {
+		this.aIPipelineId = aIPipelineId;
+		if(aIPipelineId != null){
+			putQueryParameter("AIPipelineId", aIPipelineId);
 		}
 	}
 
@@ -82,6 +93,39 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getVideoId() {
+		return this.videoId;
+	}
+
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+		if(videoId != null){
+			putQueryParameter("VideoId", videoId);
+		}
+	}
+
+	public String getAITemplateId() {
+		return this.aITemplateId;
+	}
+
+	public void setAITemplateId(String aITemplateId) {
+		this.aITemplateId = aITemplateId;
+		if(aITemplateId != null){
+			putQueryParameter("AITemplateId", aITemplateId);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -93,53 +137,9 @@ public class SubmitAIMediaAuditJobRequest extends RpcAcsRequest<SubmitAIMediaAud
 		}
 	}
 
-	public String getMediaId() {
-		return this.mediaId;
-	}
-
-	public void setMediaId(String mediaId) {
-		this.mediaId = mediaId;
-		if(mediaId != null){
-			putQueryParameter("MediaId", mediaId);
-		}
-	}
-
-	public String getTemplateId() {
-		return this.templateId;
-	}
-
-	public void setTemplateId(String templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId);
-		}
-	}
-
-	public String getMediaAuditConfiguration() {
-		return this.mediaAuditConfiguration;
-	}
-
-	public void setMediaAuditConfiguration(String mediaAuditConfiguration) {
-		this.mediaAuditConfiguration = mediaAuditConfiguration;
-		if(mediaAuditConfiguration != null){
-			putQueryParameter("MediaAuditConfiguration", mediaAuditConfiguration);
-		}
-	}
-
-	public String getMediaType() {
-		return this.mediaType;
-	}
-
-	public void setMediaType(String mediaType) {
-		this.mediaType = mediaType;
-		if(mediaType != null){
-			putQueryParameter("MediaType", mediaType);
-		}
-	}
-
 	@Override
-	public Class<SubmitAIMediaAuditJobResponse> getResponseClass() {
-		return SubmitAIMediaAuditJobResponse.class;
+	public Class<SubmitAIImageJobResponse> getResponseClass() {
+		return SubmitAIImageJobResponse.class;
 	}
 
 }
