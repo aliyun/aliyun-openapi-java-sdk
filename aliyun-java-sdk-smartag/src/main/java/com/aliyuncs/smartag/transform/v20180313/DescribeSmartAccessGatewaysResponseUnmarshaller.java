@@ -63,6 +63,7 @@ public class DescribeSmartAccessGatewaysResponseUnmarshaller {
 			smartAccessGateway.setResourceGroupId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].ResourceGroupId"));
 			smartAccessGateway.setVpnStatus(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].VpnStatus"));
 			smartAccessGateway.setIpsecStatus(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].IpsecStatus"));
+			smartAccessGateway.setAccessPointId(_ctx.stringValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].AccessPointId"));
 
 			List<Link> links = new ArrayList<Link>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Links.Length"); j++) {

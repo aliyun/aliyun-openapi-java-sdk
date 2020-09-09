@@ -1,3 +1,6 @@
+2020-09-09 Version: 2.0.0
+- Supported param SmartAGIds for DescribeSmartAccessGateways.
+
 2020-06-17 Version: 1.5.3
 - Fixed bugs for DescribeSmartAccessGatewayAttribute.
 

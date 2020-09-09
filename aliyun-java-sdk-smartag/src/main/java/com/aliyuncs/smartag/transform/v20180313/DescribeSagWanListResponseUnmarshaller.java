@@ -38,6 +38,8 @@ public class DescribeSagWanListResponseUnmarshaller {
 			wan.setMask(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Mask"));
 			wan.setGateway(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Gateway"));
 			wan.setUsername(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].Username"));
+			wan.setTrafficState(_ctx.stringValue("DescribeSagWanListResponse.Wans["+ i +"].TrafficState"));
+			wan.setPriority(_ctx.integerValue("DescribeSagWanListResponse.Wans["+ i +"].Priority"));
 
 			wans.add(wan);
 		}

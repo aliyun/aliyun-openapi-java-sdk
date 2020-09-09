@@ -22,38 +22,22 @@ import com.aliyuncs.smartag.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
+public class DiscribeSmartAccessGatewayDiagnosisReportRequest extends RpcAcsRequest<DiscribeSmartAccessGatewayDiagnosisReportResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String password;
-
-	private String mask;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String iP;
-
 	private Long ownerId;
-
-	private String iPType;
-
-	private Integer priority;
 
 	private String smartAGId;
 
 	private String smartAGSn;
-
-	private String portName;
-
-	private String gateway;
-
-	private String username;
-	public ModifySagWanRequest() {
-		super("Smartag", "2018-03-13", "ModifySagWan", "smartag");
+	public DiscribeSmartAccessGatewayDiagnosisReportRequest() {
+		super("Smartag", "2018-03-13", "DiscribeSmartAccessGatewayDiagnosisReport", "smartag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,28 +53,6 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getPassword() {
-		return this.password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-		if(password != null){
-			putQueryParameter("Password", password);
-		}
-	}
-
-	public String getMask() {
-		return this.mask;
-	}
-
-	public void setMask(String mask) {
-		this.mask = mask;
-		if(mask != null){
-			putQueryParameter("Mask", mask);
 		}
 	}
 
@@ -116,17 +78,6 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		}
 	}
 
-	public String getIP() {
-		return this.iP;
-	}
-
-	public void setIP(String iP) {
-		this.iP = iP;
-		if(iP != null){
-			putQueryParameter("IP", iP);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -135,28 +86,6 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getIPType() {
-		return this.iPType;
-	}
-
-	public void setIPType(String iPType) {
-		this.iPType = iPType;
-		if(iPType != null){
-			putQueryParameter("IPType", iPType);
-		}
-	}
-
-	public Integer getPriority() {
-		return this.priority;
-	}
-
-	public void setPriority(Integer priority) {
-		this.priority = priority;
-		if(priority != null){
-			putQueryParameter("Priority", priority.toString());
 		}
 	}
 
@@ -182,42 +111,9 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		}
 	}
 
-	public String getPortName() {
-		return this.portName;
-	}
-
-	public void setPortName(String portName) {
-		this.portName = portName;
-		if(portName != null){
-			putQueryParameter("PortName", portName);
-		}
-	}
-
-	public String getGateway() {
-		return this.gateway;
-	}
-
-	public void setGateway(String gateway) {
-		this.gateway = gateway;
-		if(gateway != null){
-			putQueryParameter("Gateway", gateway);
-		}
-	}
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-		if(username != null){
-			putQueryParameter("Username", username);
-		}
-	}
-
 	@Override
-	public Class<ModifySagWanResponse> getResponseClass() {
-		return ModifySagWanResponse.class;
+	public Class<DiscribeSmartAccessGatewayDiagnosisReportResponse> getResponseClass() {
+		return DiscribeSmartAccessGatewayDiagnosisReportResponse.class;
 	}
 
 }

@@ -472,6 +472,8 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 
 		private Integer distributeSkStatus;
 
+		private String secretKey;
+
 		public String getSerialNumber() {
 			return this.serialNumber;
 		}
@@ -518,6 +520,14 @@ public class DescribeSmartAccessGatewayAttributeResponse extends AcsResponse {
 
 		public void setDistributeSkStatus(Integer distributeSkStatus) {
 			this.distributeSkStatus = distributeSkStatus;
+		}
+
+		public String getSecretKey() {
+			return this.secretKey;
+		}
+
+		public void setSecretKey(String secretKey) {
+			this.secretKey = secretKey;
 		}
 	}
 

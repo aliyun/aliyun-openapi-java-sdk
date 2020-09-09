@@ -27,6 +27,8 @@ public class DescribeSagWan4GResponseUnmarshaller {
 		describeSagWan4GResponse.setMac(_ctx.stringValue("DescribeSagWan4GResponse.Mac"));
 		describeSagWan4GResponse.setStatus(_ctx.stringValue("DescribeSagWan4GResponse.Status"));
 		describeSagWan4GResponse.setStrength(_ctx.stringValue("DescribeSagWan4GResponse.Strength"));
+		describeSagWan4GResponse.setPriority(_ctx.integerValue("DescribeSagWan4GResponse.Priority"));
+		describeSagWan4GResponse.setTrafficState(_ctx.stringValue("DescribeSagWan4GResponse.TrafficState"));
 	 
 	 	return describeSagWan4GResponse;
 	}

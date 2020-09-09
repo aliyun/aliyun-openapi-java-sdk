@@ -15,6 +15,7 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.smartag.Endpoint;
 
@@ -47,6 +48,8 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 
 	private String hardwareType;
 
+	private List<String> smartAGIdss;
+
 	private String serialNumber;
 
 	private String resourceOwnerAccount;
@@ -60,8 +63,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 	private String businessState;
 
 	private String name;
-
-	private String smartAGId;
 
 	private String status;
 	public DescribeSmartAccessGatewaysRequest() {
@@ -194,6 +195,19 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		}
 	}
 
+	public List<String> getSmartAGIdss() {
+		return this.smartAGIdss;
+	}
+
+	public void setSmartAGIdss(List<String> smartAGIdss) {
+		this.smartAGIdss = smartAGIdss;	
+		if (smartAGIdss != null) {
+			for (int i = 0; i < smartAGIdss.size(); i++) {
+				putQueryParameter("SmartAGIds." + (i + 1) , smartAGIdss.get(i));
+			}
+		}	
+	}
+
 	public String getSerialNumber() {
 		return this.serialNumber;
 	}
@@ -268,17 +282,6 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-		if(smartAGId != null){
-			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

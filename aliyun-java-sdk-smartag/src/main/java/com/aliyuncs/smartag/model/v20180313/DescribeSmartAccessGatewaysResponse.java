@@ -133,6 +133,8 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		private String ipsecStatus;
 
+		private String accessPointId;
+
 		private List<Link> links;
 
 		public String getSmartAGId() {
@@ -357,6 +359,14 @@ public class DescribeSmartAccessGatewaysResponse extends AcsResponse {
 
 		public void setIpsecStatus(String ipsecStatus) {
 			this.ipsecStatus = ipsecStatus;
+		}
+
+		public String getAccessPointId() {
+			return this.accessPointId;
+		}
+
+		public void setAccessPointId(String accessPointId) {
+			this.accessPointId = accessPointId;
 		}
 
 		public List<Link> getLinks() {

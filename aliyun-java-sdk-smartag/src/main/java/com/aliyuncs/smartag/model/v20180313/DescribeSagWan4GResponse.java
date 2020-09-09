@@ -34,6 +34,10 @@ public class DescribeSagWan4GResponse extends AcsResponse {
 
 	private String strength;
 
+	private Integer priority;
+
+	private String trafficState;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -72,6 +76,22 @@ public class DescribeSagWan4GResponse extends AcsResponse {
 
 	public void setStrength(String strength) {
 		this.strength = strength;
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+	}
+
+	public String getTrafficState() {
+		return this.trafficState;
+	}
+
+	public void setTrafficState(String trafficState) {
+		this.trafficState = trafficState;
 	}
 
 	@Override

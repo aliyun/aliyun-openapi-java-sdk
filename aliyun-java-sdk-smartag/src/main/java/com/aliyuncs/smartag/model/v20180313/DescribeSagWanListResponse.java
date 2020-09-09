@@ -69,6 +69,10 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		private String username;
 
+		private String trafficState;
+
+		private Integer priority;
+
 		public String getPortName() {
 			return this.portName;
 		}
@@ -115,6 +119,22 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		public void setUsername(String username) {
 			this.username = username;
+		}
+
+		public String getTrafficState() {
+			return this.trafficState;
+		}
+
+		public void setTrafficState(String trafficState) {
+			this.trafficState = trafficState;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 	}
 

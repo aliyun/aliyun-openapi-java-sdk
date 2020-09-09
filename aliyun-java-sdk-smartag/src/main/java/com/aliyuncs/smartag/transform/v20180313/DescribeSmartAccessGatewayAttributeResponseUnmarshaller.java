@@ -101,6 +101,7 @@ public class DescribeSmartAccessGatewayAttributeResponseUnmarshaller {
 			device.setSoftwareVersion(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].SoftwareVersion"));
 			device.setMonitorVersion(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].MonitorVersion"));
 			device.setDistributeSkStatus(_ctx.integerValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].DistributeSkStatus"));
+			device.setSecretKey(_ctx.stringValue("DescribeSmartAccessGatewayAttributeResponse.Devices["+ i +"].SecretKey"));
 
 			devices.add(device);
 		}
