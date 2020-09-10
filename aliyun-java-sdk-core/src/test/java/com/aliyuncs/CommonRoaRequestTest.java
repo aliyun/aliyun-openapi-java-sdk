@@ -33,20 +33,17 @@ public class CommonRoaRequestTest {
     @Test
     public void testRoaAcsRequestConstructor() {
         RoaAcsRequest request = new CommonRoaRequest("ecs");
-        Assert.assertTrue(FormatType.JSON == request.getSysAcceptFormat());
         Assert.assertEquals("ecs", request.getSysProduct());
 
         Assert.assertNull(request.getSysVersion());
         Assert.assertNull(request.getSysActionName());
         request = new CommonRoaRequest("ecs", "1.0", "action");
-        Assert.assertTrue(FormatType.JSON == request.getSysAcceptFormat());
         Assert.assertEquals("ecs", request.getSysProduct());
         Assert.assertEquals("1.0", request.getSysVersion());
         Assert.assertEquals("action", request.getSysActionName());
 
         Assert.assertNull(request.getLocationProduct());
         request = new CommonRoaRequest("ecs", "1.1", "action", "locationProduct");
-        Assert.assertTrue(FormatType.JSON == request.getSysAcceptFormat());
         Assert.assertEquals("ecs", request.getSysProduct());
         Assert.assertEquals("1.1", request.getSysVersion());
         Assert.assertEquals("action", request.getSysActionName());
@@ -54,7 +51,6 @@ public class CommonRoaRequestTest {
 
         Assert.assertNull(request.getEndpointType());
         request = new CommonRoaRequest("ecs", "1.2", "action", "locationProduct", "endpointType");
-        Assert.assertTrue(FormatType.JSON == request.getSysAcceptFormat());
         Assert.assertEquals("ecs", request.getSysProduct());
         Assert.assertEquals("1.2", request.getSysVersion());
         Assert.assertEquals("action", request.getSysActionName());
