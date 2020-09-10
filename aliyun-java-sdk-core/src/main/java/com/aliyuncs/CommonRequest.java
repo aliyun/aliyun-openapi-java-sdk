@@ -26,6 +26,7 @@ public class CommonRequest {
     private FormatType httpContentType = null;
     private byte[] httpContent = null;
     private String encoding = null;
+    private FormatType accept = FormatType.JSON;
 
     private String uriPattern = null;
     private Map<String, String> pathParameters = new HashMap<String, String>();
@@ -82,9 +83,13 @@ public class CommonRequest {
         if (protocol != null) {
             request.setSysProtocol(protocol);
         }
+        request.setSysAcceptFormat(accept);
         if (domain != null) {
             ProductDomain productDomain = new ProductDomain(product, domain);
             request.setSysProductDomain(productDomain);
+        }
+        if (bodyParameters.size() > 0) {
+            request.setHttpContentType(httpContentType);
         }
         if (httpContent != null) {
             request.setHttpContent(httpContent, encoding, httpContentType);
@@ -319,6 +324,10 @@ public class CommonRequest {
         return httpContentType;
     }
 
+    public void setHttpContentType(FormatType type) {
+        this.httpContentType = type;
+    }
+
     public byte[] getHttpContent() {
         return httpContent;
     }
@@ -489,4 +498,11 @@ public class CommonRequest {
         return pathParameters;
     }
 
+    public void setSysAccept(FormatType type) {
+        this.accept = type;
+    }
+
+    public FormatType getSysAccept() {
+        return this.accept;
+    }
 }

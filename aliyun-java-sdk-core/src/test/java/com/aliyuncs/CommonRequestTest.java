@@ -21,6 +21,11 @@ public class CommonRequestTest {
         request.putPathParameter("test", "test");
         AcsRequest<CommonResponse> acsRequest = request.buildRequest();
         Assert.assertTrue(acsRequest instanceof CommonRoaRequest);
+
+        request.setHttpContentType(FormatType.RAW);
+        request.putBodyParameter("a", "a");
+        acsRequest = request.buildRequest();
+        Assert.assertEquals(FormatType.RAW, acsRequest.getHttpContentType());
     }
 
     @Test
