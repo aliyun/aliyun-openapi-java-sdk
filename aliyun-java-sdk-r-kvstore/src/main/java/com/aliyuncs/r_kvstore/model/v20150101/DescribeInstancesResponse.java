@@ -123,7 +123,7 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String endTime;
 
-		private String hasRenewChangeOrder;
+		private Boolean hasRenewChangeOrder;
 
 		private Boolean isRds;
 
@@ -331,11 +331,11 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getHasRenewChangeOrder() {
+		public Boolean getHasRenewChangeOrder() {
 			return this.hasRenewChangeOrder;
 		}
 
-		public void setHasRenewChangeOrder(String hasRenewChangeOrder) {
+		public void setHasRenewChangeOrder(Boolean hasRenewChangeOrder) {
 			this.hasRenewChangeOrder = hasRenewChangeOrder;
 		}
 

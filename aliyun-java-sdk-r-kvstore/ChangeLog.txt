@@ -1,3 +1,6 @@
+2020-09-10 Version: 2.6.1
+- Update HasRenewChangeOrder type to Boolean in DescribeInstances.
+
 2020-08-20 Version: 2.6.0
 - Added Global Distribute Cache OpenAPIs.
 - Added direct connection OpenAPIs.

@@ -58,7 +58,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			kVStoreInstance.setPrivateIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIp"));
 			kVStoreInstance.setCreateTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreateTime"));
 			kVStoreInstance.setEndTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EndTime"));
-			kVStoreInstance.setHasRenewChangeOrder(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].HasRenewChangeOrder"));
+			kVStoreInstance.setHasRenewChangeOrder(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].HasRenewChangeOrder"));
 			kVStoreInstance.setIsRds(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].IsRds"));
 			kVStoreInstance.setInstanceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceType"));
 			kVStoreInstance.setArchitectureType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ArchitectureType"));

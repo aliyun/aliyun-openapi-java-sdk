@@ -48,6 +48,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String instanceType;
 
+	private String editionType;
+
 	private List<Tag> tags;
 
 	private String instanceStatus;
@@ -198,6 +200,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getEditionType() {
+		return this.editionType;
+	}
+
+	public void setEditionType(String editionType) {
+		this.editionType = editionType;
+		if(editionType != null){
+			putQueryParameter("EditionType", editionType);
 		}
 	}
 
