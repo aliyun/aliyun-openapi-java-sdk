@@ -14,19 +14,19 @@
 
 package com.aliyuncs.aiccs.transform.v20191015;
 
-import com.aliyuncs.aiccs.model.v20191015.HangupCallResponse;
+import com.aliyuncs.aiccs.model.v20191015.HoldCallResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class HangupCallResponseUnmarshaller {
+public class HoldCallResponseUnmarshaller {
 
-	public static HangupCallResponse unmarshall(HangupCallResponse hangupCallResponse, UnmarshallerContext _ctx) {
+	public static HoldCallResponse unmarshall(HoldCallResponse holdCallResponse, UnmarshallerContext _ctx) {
 		
-		hangupCallResponse.setRequestId(_ctx.stringValue("HangupCallResponse.RequestId"));
-		hangupCallResponse.setSuccess(_ctx.booleanValue("HangupCallResponse.Success"));
-		hangupCallResponse.setCode(_ctx.stringValue("HangupCallResponse.Code"));
-		hangupCallResponse.setMessage(_ctx.stringValue("HangupCallResponse.Message"));
+		holdCallResponse.setRequestId(_ctx.stringValue("HoldCallResponse.RequestId"));
+		holdCallResponse.setSuccess(_ctx.booleanValue("HoldCallResponse.Success"));
+		holdCallResponse.setCode(_ctx.stringValue("HoldCallResponse.Code"));
+		holdCallResponse.setMessage(_ctx.stringValue("HoldCallResponse.Message"));
 	 
-	 	return hangupCallResponse;
+	 	return holdCallResponse;
 	}
 }

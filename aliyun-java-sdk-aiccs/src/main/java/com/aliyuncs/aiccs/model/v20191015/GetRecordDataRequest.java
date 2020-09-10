@@ -29,7 +29,7 @@ public class GetRecordDataRequest extends RpcAcsRequest<GetRecordDataResponse> {
 
 	private String acid;
 	public GetRecordDataRequest() {
-		super("aiccs", "2019-10-15", "GetRecordData", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetRecordData", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

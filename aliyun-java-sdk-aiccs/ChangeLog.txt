@@ -1,3 +1,11 @@
+2020-09-10 Version: 1.0.6
+- Support GetHotlineWaitingNumber in SDK.
+- Support TransferCallToSkillGroup.
+- Support JoinThirdCall.
+- Support HangupThirdCall.
+- Support FetchCall.
+- Support HoldCall.
+
 2020-09-03 Version: 1.0.5
 - Upgrade hotline session API.
 - Support sub ram account.

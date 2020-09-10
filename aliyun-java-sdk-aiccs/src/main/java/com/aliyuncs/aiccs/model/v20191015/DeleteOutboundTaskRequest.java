@@ -29,7 +29,7 @@ public class DeleteOutboundTaskRequest extends RpcAcsRequest<DeleteOutboundTaskR
 
 	private Long outboundTaskId;
 	public DeleteOutboundTaskRequest() {
-		super("aiccs", "2019-10-15", "DeleteOutboundTask", "aiccs-service");
+		super("aiccs", "2019-10-15", "DeleteOutboundTask", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

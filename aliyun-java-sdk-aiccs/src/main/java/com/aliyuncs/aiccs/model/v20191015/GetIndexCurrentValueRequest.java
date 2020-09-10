@@ -31,7 +31,7 @@ public class GetIndexCurrentValueRequest extends RpcAcsRequest<GetIndexCurrentVa
 
 	private String groupIds;
 	public GetIndexCurrentValueRequest() {
-		super("aiccs", "2019-10-15", "GetIndexCurrentValue", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetIndexCurrentValue", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

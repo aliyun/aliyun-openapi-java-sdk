@@ -15,14 +15,14 @@
 package com.aliyuncs.aiccs.model.v20191015;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aiccs.transform.v20191015.DeleteAgentResponseUnmarshaller;
+import com.aliyuncs.aiccs.transform.v20191015.JoinThirdCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAgentResponse extends AcsResponse {
+public class JoinThirdCallResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,8 +65,8 @@ public class DeleteAgentResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteAgentResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAgentResponseUnmarshaller.unmarshall(this, context);
+	public JoinThirdCallResponse getInstance(UnmarshallerContext context) {
+		return	JoinThirdCallResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

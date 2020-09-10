@@ -15,22 +15,24 @@
 package com.aliyuncs.aiccs.model.v20191015;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aiccs.transform.v20191015.DeleteAgentResponseUnmarshaller;
+import com.aliyuncs.aiccs.transform.v20191015.GetHotlineWaitingNumberResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAgentResponse extends AcsResponse {
+public class GetHotlineWaitingNumberResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String success;
 
 	private String code;
 
 	private String message;
+
+	private Long data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,11 +42,11 @@ public class DeleteAgentResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
+	public String getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(Boolean success) {
+	public void setSuccess(String success) {
 		this.success = success;
 	}
 
@@ -64,9 +66,17 @@ public class DeleteAgentResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
+	}
+
 	@Override
-	public DeleteAgentResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAgentResponseUnmarshaller.unmarshall(this, context);
+	public GetHotlineWaitingNumberResponse getInstance(UnmarshallerContext context) {
+		return	GetHotlineWaitingNumberResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

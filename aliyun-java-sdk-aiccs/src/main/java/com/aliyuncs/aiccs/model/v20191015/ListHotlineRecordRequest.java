@@ -22,16 +22,16 @@ import com.aliyuncs.aiccs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSkillGroupRequest extends RpcAcsRequest<ListSkillGroupResponse> {
+public class ListHotlineRecordRequest extends RpcAcsRequest<ListHotlineRecordResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private Integer channelType;
-	public ListSkillGroupRequest() {
-		super("aiccs", "2019-10-15", "ListSkillGroup", "aiccs");
+	private String callId;
+	public ListHotlineRecordRequest() {
+		super("aiccs", "2019-10-15", "ListHotlineRecord", "aiccs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +61,20 @@ public class ListSkillGroupRequest extends RpcAcsRequest<ListSkillGroupResponse>
 		}
 	}
 
-	public Integer getChannelType() {
-		return this.channelType;
+	public String getCallId() {
+		return this.callId;
 	}
 
-	public void setChannelType(Integer channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putQueryParameter("ChannelType", channelType.toString());
+	public void setCallId(String callId) {
+		this.callId = callId;
+		if(callId != null){
+			putQueryParameter("CallId", callId);
 		}
 	}
 
 	@Override
-	public Class<ListSkillGroupResponse> getResponseClass() {
-		return ListSkillGroupResponse.class;
+	public Class<ListHotlineRecordResponse> getResponseClass() {
+		return ListHotlineRecordResponse.class;
 	}
 
 }

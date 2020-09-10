@@ -22,16 +22,16 @@ import com.aliyuncs.aiccs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSkillGroupRequest extends RpcAcsRequest<ListSkillGroupResponse> {
+public class GetHotlineWaitingNumberRequest extends RpcAcsRequest<GetHotlineWaitingNumberResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private Integer channelType;
-	public ListSkillGroupRequest() {
-		super("aiccs", "2019-10-15", "ListSkillGroup", "aiccs");
+	private String accountName;
+	public GetHotlineWaitingNumberRequest() {
+		super("aiccs", "2019-10-15", "GetHotlineWaitingNumber", "aiccs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +61,20 @@ public class ListSkillGroupRequest extends RpcAcsRequest<ListSkillGroupResponse>
 		}
 	}
 
-	public Integer getChannelType() {
-		return this.channelType;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setChannelType(Integer channelType) {
-		this.channelType = channelType;
-		if(channelType != null){
-			putQueryParameter("ChannelType", channelType.toString());
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
 	@Override
-	public Class<ListSkillGroupResponse> getResponseClass() {
-		return ListSkillGroupResponse.class;
+	public Class<GetHotlineWaitingNumberResponse> getResponseClass() {
+		return GetHotlineWaitingNumberResponse.class;
 	}
 
 }

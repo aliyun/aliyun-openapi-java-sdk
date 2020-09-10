@@ -22,7 +22,7 @@ import com.aliyuncs.aiccs.Endpoint;
  * @author auto create
  * @version 
  */
-public class FinishHotlineServiceRequest extends RpcAcsRequest<FinishHotlineServiceResponse> {
+public class FetchCallRequest extends RpcAcsRequest<FetchCallResponse> {
 	   
 
 	private String clientToken;
@@ -30,8 +30,16 @@ public class FinishHotlineServiceRequest extends RpcAcsRequest<FinishHotlineServ
 	private String instanceId;
 
 	private String accountName;
-	public FinishHotlineServiceRequest() {
-		super("aiccs", "2019-10-15", "FinishHotlineService", "aiccs");
+
+	private String callId;
+
+	private String jobId;
+
+	private String connectionId;
+
+	private String holdConnectionId;
+	public FetchCallRequest() {
+		super("aiccs", "2019-10-15", "FetchCall", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -72,9 +80,53 @@ public class FinishHotlineServiceRequest extends RpcAcsRequest<FinishHotlineServ
 		}
 	}
 
+	public String getCallId() {
+		return this.callId;
+	}
+
+	public void setCallId(String callId) {
+		this.callId = callId;
+		if(callId != null){
+			putBodyParameter("CallId", callId);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
+		}
+	}
+
+	public String getConnectionId() {
+		return this.connectionId;
+	}
+
+	public void setConnectionId(String connectionId) {
+		this.connectionId = connectionId;
+		if(connectionId != null){
+			putBodyParameter("ConnectionId", connectionId);
+		}
+	}
+
+	public String getHoldConnectionId() {
+		return this.holdConnectionId;
+	}
+
+	public void setHoldConnectionId(String holdConnectionId) {
+		this.holdConnectionId = holdConnectionId;
+		if(holdConnectionId != null){
+			putBodyParameter("HoldConnectionId", holdConnectionId);
+		}
+	}
+
 	@Override
-	public Class<FinishHotlineServiceResponse> getResponseClass() {
-		return FinishHotlineServiceResponse.class;
+	public Class<FetchCallResponse> getResponseClass() {
+		return FetchCallResponse.class;
 	}
 
 }

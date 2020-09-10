@@ -14,15 +14,16 @@
 
 package com.aliyuncs.aiccs.model.v20191015;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aiccs.transform.v20191015.DeleteAgentResponseUnmarshaller;
+import com.aliyuncs.aiccs.transform.v20191015.ListHotlineRecordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAgentResponse extends AcsResponse {
+public class ListHotlineRecordResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +32,8 @@ public class DeleteAgentResponse extends AcsResponse {
 	private String code;
 
 	private String message;
+
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,9 +67,70 @@ public class DeleteAgentResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public List<DataItem> getData() {
+		return this.data;
+	}
+
+	public void setData(List<DataItem> data) {
+		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String callId;
+
+		private String connectionId;
+
+		private String url;
+
+		private Long startTime;
+
+		private Long endTime;
+
+		public String getCallId() {
+			return this.callId;
+		}
+
+		public void setCallId(String callId) {
+			this.callId = callId;
+		}
+
+		public String getConnectionId() {
+			return this.connectionId;
+		}
+
+		public void setConnectionId(String connectionId) {
+			this.connectionId = connectionId;
+		}
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Long getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(Long startTime) {
+			this.startTime = startTime;
+		}
+
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
+	}
+
 	@Override
-	public DeleteAgentResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAgentResponseUnmarshaller.unmarshall(this, context);
+	public ListHotlineRecordResponse getInstance(UnmarshallerContext context) {
+		return	ListHotlineRecordResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

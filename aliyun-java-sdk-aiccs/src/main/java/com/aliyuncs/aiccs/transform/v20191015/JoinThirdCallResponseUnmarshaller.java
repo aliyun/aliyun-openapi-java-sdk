@@ -14,19 +14,19 @@
 
 package com.aliyuncs.aiccs.transform.v20191015;
 
-import com.aliyuncs.aiccs.model.v20191015.HangupCallResponse;
+import com.aliyuncs.aiccs.model.v20191015.JoinThirdCallResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class HangupCallResponseUnmarshaller {
+public class JoinThirdCallResponseUnmarshaller {
 
-	public static HangupCallResponse unmarshall(HangupCallResponse hangupCallResponse, UnmarshallerContext _ctx) {
+	public static JoinThirdCallResponse unmarshall(JoinThirdCallResponse joinThirdCallResponse, UnmarshallerContext _ctx) {
 		
-		hangupCallResponse.setRequestId(_ctx.stringValue("HangupCallResponse.RequestId"));
-		hangupCallResponse.setSuccess(_ctx.booleanValue("HangupCallResponse.Success"));
-		hangupCallResponse.setCode(_ctx.stringValue("HangupCallResponse.Code"));
-		hangupCallResponse.setMessage(_ctx.stringValue("HangupCallResponse.Message"));
+		joinThirdCallResponse.setRequestId(_ctx.stringValue("JoinThirdCallResponse.RequestId"));
+		joinThirdCallResponse.setSuccess(_ctx.booleanValue("JoinThirdCallResponse.Success"));
+		joinThirdCallResponse.setCode(_ctx.stringValue("JoinThirdCallResponse.Code"));
+		joinThirdCallResponse.setMessage(_ctx.stringValue("JoinThirdCallResponse.Message"));
 	 
-	 	return hangupCallResponse;
+	 	return joinThirdCallResponse;
 	}
 }

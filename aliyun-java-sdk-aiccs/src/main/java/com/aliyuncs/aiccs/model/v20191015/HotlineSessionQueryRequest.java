@@ -61,7 +61,7 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 
 	private String memberId;
 	public HotlineSessionQueryRequest() {
-		super("aiccs", "2019-10-15", "HotlineSessionQuery", "aiccs-service");
+		super("aiccs", "2019-10-15", "HotlineSessionQuery", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

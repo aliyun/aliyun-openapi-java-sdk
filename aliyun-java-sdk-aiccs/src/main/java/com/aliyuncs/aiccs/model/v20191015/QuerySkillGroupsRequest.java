@@ -33,7 +33,7 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 
 	private Integer pageSize;
 	public QuerySkillGroupsRequest() {
-		super("aiccs", "2019-10-15", "QuerySkillGroups", "aiccs-service");
+		super("aiccs", "2019-10-15", "QuerySkillGroups", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
