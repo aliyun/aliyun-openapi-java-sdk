@@ -40,6 +40,7 @@ public class DescribeIncrementBackupListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeIncrementBackupListResponse.Items.Length"); i++) {
 			IncrementBackupFile incrementBackupFile = new IncrementBackupFile();
 			incrementBackupFile.setBackupSetId(_ctx.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].BackupSetId"));
+			incrementBackupFile.setBackupSetJobId(_ctx.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].BackupSetJobId"));
 			incrementBackupFile.setSourceEndpointIpPort(_ctx.stringValue("DescribeIncrementBackupListResponse.Items["+ i +"].SourceEndpointIpPort"));
 			incrementBackupFile.setStartTime(_ctx.longValue("DescribeIncrementBackupListResponse.Items["+ i +"].StartTime"));
 			incrementBackupFile.setEndTime(_ctx.longValue("DescribeIncrementBackupListResponse.Items["+ i +"].EndTime"));

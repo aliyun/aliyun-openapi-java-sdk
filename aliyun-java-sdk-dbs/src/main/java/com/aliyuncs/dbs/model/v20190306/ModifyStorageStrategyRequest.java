@@ -22,10 +22,10 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrategyResponse> {
+public class ModifyStorageStrategyRequest extends RpcAcsRequest<ModifyStorageStrategyResponse> {
 	   
 
-	private Integer backupLogIntervalSeconds;
+	private Integer duplicationArchivePeriod;
 
 	private String clientToken;
 
@@ -33,13 +33,11 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 
 	private String ownerId;
 
-	private String backupPeriod;
+	private Integer backupRetentionPeriod;
 
-	private String backupStartTime;
-
-	private String backupStrategyType;
-	public ModifyBackupStrategyRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs");
+	private Integer duplicationInfrequentAccessPeriod;
+	public ModifyStorageStrategyRequest() {
+		super("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +45,14 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		} catch (Exception e) {}
 	}
 
-	public Integer getBackupLogIntervalSeconds() {
-		return this.backupLogIntervalSeconds;
+	public Integer getDuplicationArchivePeriod() {
+		return this.duplicationArchivePeriod;
 	}
 
-	public void setBackupLogIntervalSeconds(Integer backupLogIntervalSeconds) {
-		this.backupLogIntervalSeconds = backupLogIntervalSeconds;
-		if(backupLogIntervalSeconds != null){
-			putQueryParameter("BackupLogIntervalSeconds", backupLogIntervalSeconds.toString());
+	public void setDuplicationArchivePeriod(Integer duplicationArchivePeriod) {
+		this.duplicationArchivePeriod = duplicationArchivePeriod;
+		if(duplicationArchivePeriod != null){
+			putQueryParameter("DuplicationArchivePeriod", duplicationArchivePeriod.toString());
 		}
 	}
 
@@ -91,42 +89,31 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		}
 	}
 
-	public String getBackupPeriod() {
-		return this.backupPeriod;
+	public Integer getBackupRetentionPeriod() {
+		return this.backupRetentionPeriod;
 	}
 
-	public void setBackupPeriod(String backupPeriod) {
-		this.backupPeriod = backupPeriod;
-		if(backupPeriod != null){
-			putQueryParameter("BackupPeriod", backupPeriod);
+	public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+		this.backupRetentionPeriod = backupRetentionPeriod;
+		if(backupRetentionPeriod != null){
+			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod.toString());
 		}
 	}
 
-	public String getBackupStartTime() {
-		return this.backupStartTime;
+	public Integer getDuplicationInfrequentAccessPeriod() {
+		return this.duplicationInfrequentAccessPeriod;
 	}
 
-	public void setBackupStartTime(String backupStartTime) {
-		this.backupStartTime = backupStartTime;
-		if(backupStartTime != null){
-			putQueryParameter("BackupStartTime", backupStartTime);
-		}
-	}
-
-	public String getBackupStrategyType() {
-		return this.backupStrategyType;
-	}
-
-	public void setBackupStrategyType(String backupStrategyType) {
-		this.backupStrategyType = backupStrategyType;
-		if(backupStrategyType != null){
-			putQueryParameter("BackupStrategyType", backupStrategyType);
+	public void setDuplicationInfrequentAccessPeriod(Integer duplicationInfrequentAccessPeriod) {
+		this.duplicationInfrequentAccessPeriod = duplicationInfrequentAccessPeriod;
+		if(duplicationInfrequentAccessPeriod != null){
+			putQueryParameter("DuplicationInfrequentAccessPeriod", duplicationInfrequentAccessPeriod.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyBackupStrategyResponse> getResponseClass() {
-		return ModifyBackupStrategyResponse.class;
+	public Class<ModifyStorageStrategyResponse> getResponseClass() {
+		return ModifyStorageStrategyResponse.class;
 	}
 
 }

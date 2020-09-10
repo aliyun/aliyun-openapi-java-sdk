@@ -129,6 +129,8 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 		private String backupSetId;
 
+		private String backupSetJobId;
+
 		private String sourceEndpointIpPort;
 
 		private Long startTime;
@@ -149,6 +151,14 @@ public class DescribeIncrementBackupListResponse extends AcsResponse {
 
 		public void setBackupSetId(String backupSetId) {
 			this.backupSetId = backupSetId;
+		}
+
+		public String getBackupSetJobId() {
+			return this.backupSetJobId;
+		}
+
+		public void setBackupSetJobId(String backupSetJobId) {
+			this.backupSetJobId = backupSetJobId;
 		}
 
 		public String getSourceEndpointIpPort() {

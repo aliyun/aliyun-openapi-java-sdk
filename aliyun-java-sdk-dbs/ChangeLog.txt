@@ -1,3 +1,11 @@
+2020-09-10 Version: 1.0.27
+- Add DisableBackupLog.
+- Add EnableBackupLog.
+- Add ReleaseBackupPlan.
+- Add ModifyStorageStrategy.
+- Modify ModifyBackupStrategy.
+- Modify ModifyBackupSetDownloadRules.
+
 2020-08-05 Version: 1.0.26
 - Add CreateGetDBListFromAgentTask.
 - Add GetDBListFromAgent.

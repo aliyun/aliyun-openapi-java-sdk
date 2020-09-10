@@ -22,40 +22,21 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrategyResponse> {
+public class DisableBackupLogRequest extends RpcAcsRequest<DisableBackupLogResponse> {
 	   
-
-	private Integer backupLogIntervalSeconds;
 
 	private String clientToken;
 
 	private String backupPlanId;
 
 	private String ownerId;
-
-	private String backupPeriod;
-
-	private String backupStartTime;
-
-	private String backupStrategyType;
-	public ModifyBackupStrategyRequest() {
-		super("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs");
+	public DisableBackupLogRequest() {
+		super("Dbs", "2019-03-06", "DisableBackupLog", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getBackupLogIntervalSeconds() {
-		return this.backupLogIntervalSeconds;
-	}
-
-	public void setBackupLogIntervalSeconds(Integer backupLogIntervalSeconds) {
-		this.backupLogIntervalSeconds = backupLogIntervalSeconds;
-		if(backupLogIntervalSeconds != null){
-			putQueryParameter("BackupLogIntervalSeconds", backupLogIntervalSeconds.toString());
-		}
 	}
 
 	public String getClientToken() {
@@ -91,42 +72,9 @@ public class ModifyBackupStrategyRequest extends RpcAcsRequest<ModifyBackupStrat
 		}
 	}
 
-	public String getBackupPeriod() {
-		return this.backupPeriod;
-	}
-
-	public void setBackupPeriod(String backupPeriod) {
-		this.backupPeriod = backupPeriod;
-		if(backupPeriod != null){
-			putQueryParameter("BackupPeriod", backupPeriod);
-		}
-	}
-
-	public String getBackupStartTime() {
-		return this.backupStartTime;
-	}
-
-	public void setBackupStartTime(String backupStartTime) {
-		this.backupStartTime = backupStartTime;
-		if(backupStartTime != null){
-			putQueryParameter("BackupStartTime", backupStartTime);
-		}
-	}
-
-	public String getBackupStrategyType() {
-		return this.backupStrategyType;
-	}
-
-	public void setBackupStrategyType(String backupStrategyType) {
-		this.backupStrategyType = backupStrategyType;
-		if(backupStrategyType != null){
-			putQueryParameter("BackupStrategyType", backupStrategyType);
-		}
-	}
-
 	@Override
-	public Class<ModifyBackupStrategyResponse> getResponseClass() {
-		return ModifyBackupStrategyResponse.class;
+	public Class<DisableBackupLogResponse> getResponseClass() {
+		return DisableBackupLogResponse.class;
 	}
 
 }

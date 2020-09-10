@@ -41,6 +41,8 @@ public class ModifyBackupSetDownloadRulesRequest extends RpcAcsRequest<ModifyBac
 
 	private String incrementDataFormat;
 
+	private String backupSetDownloadTargetTypeLocation;
+
 	private String backupSetDownloadDir;
 	public ModifyBackupSetDownloadRulesRequest() {
 		super("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules", "cbs");
@@ -136,6 +138,17 @@ public class ModifyBackupSetDownloadRulesRequest extends RpcAcsRequest<ModifyBac
 		this.incrementDataFormat = incrementDataFormat;
 		if(incrementDataFormat != null){
 			putQueryParameter("IncrementDataFormat", incrementDataFormat);
+		}
+	}
+
+	public String getBackupSetDownloadTargetTypeLocation() {
+		return this.backupSetDownloadTargetTypeLocation;
+	}
+
+	public void setBackupSetDownloadTargetTypeLocation(String backupSetDownloadTargetTypeLocation) {
+		this.backupSetDownloadTargetTypeLocation = backupSetDownloadTargetTypeLocation;
+		if(backupSetDownloadTargetTypeLocation != null){
+			putQueryParameter("BackupSetDownloadTargetTypeLocation", backupSetDownloadTargetTypeLocation);
 		}
 	}
 
