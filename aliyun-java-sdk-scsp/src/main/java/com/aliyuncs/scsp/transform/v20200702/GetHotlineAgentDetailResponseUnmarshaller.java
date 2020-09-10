@@ -35,6 +35,7 @@ public class GetHotlineAgentDetailResponseUnmarshaller {
 		data.setAssigned(_ctx.booleanValue("GetHotlineAgentDetailResponse.Data.Assigned"));
 		data.setToken(_ctx.stringValue("GetHotlineAgentDetailResponse.Data.Token"));
 		data.setRestType(_ctx.integerValue("GetHotlineAgentDetailResponse.Data.RestType"));
+		data.setAgentStatusCode(_ctx.stringValue("GetHotlineAgentDetailResponse.Data.AgentStatusCode"));
 		getHotlineAgentDetailResponse.setData(data);
 	 
 	 	return getHotlineAgentDetailResponse;

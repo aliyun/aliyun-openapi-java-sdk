@@ -22,7 +22,7 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgentResponse> {
+public class FetchCallRequest extends RpcAcsRequest<FetchCallResponse> {
 	   
 
 	private String clientToken;
@@ -31,8 +31,6 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 
 	private String accountName;
 
-	private String targetAccountName;
-
 	private String callId;
 
 	private String jobId;
@@ -40,12 +38,8 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 	private String connectionId;
 
 	private String holdConnectionId;
-
-	private Integer type;
-
-	private String isSingleTransfer;
-	public TransferCallToAgentRequest() {
-		super("scsp", "2020-07-02", "TransferCallToAgent", "scsp");
+	public FetchCallRequest() {
+		super("scsp", "2020-07-02", "FetchCall", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -83,17 +77,6 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 		this.accountName = accountName;
 		if(accountName != null){
 			putBodyParameter("AccountName", accountName);
-		}
-	}
-
-	public String getTargetAccountName() {
-		return this.targetAccountName;
-	}
-
-	public void setTargetAccountName(String targetAccountName) {
-		this.targetAccountName = targetAccountName;
-		if(targetAccountName != null){
-			putBodyParameter("TargetAccountName", targetAccountName);
 		}
 	}
 
@@ -141,31 +124,9 @@ public class TransferCallToAgentRequest extends RpcAcsRequest<TransferCallToAgen
 		}
 	}
 
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type.toString());
-		}
-	}
-
-	public String getIsSingleTransfer() {
-		return this.isSingleTransfer;
-	}
-
-	public void setIsSingleTransfer(String isSingleTransfer) {
-		this.isSingleTransfer = isSingleTransfer;
-		if(isSingleTransfer != null){
-			putBodyParameter("IsSingleTransfer", isSingleTransfer);
-		}
-	}
-
 	@Override
-	public Class<TransferCallToAgentResponse> getResponseClass() {
-		return TransferCallToAgentResponse.class;
+	public Class<FetchCallResponse> getResponseClass() {
+		return FetchCallResponse.class;
 	}
 
 }

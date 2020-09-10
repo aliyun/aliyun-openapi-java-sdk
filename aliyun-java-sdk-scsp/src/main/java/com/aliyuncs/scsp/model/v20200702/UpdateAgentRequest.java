@@ -34,9 +34,11 @@ public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 
 	private String displayName;
 
+	private List<Long> skillGroupIds;
+
 	private List<Long> skillGroupIdLists;
 	public UpdateAgentRequest() {
-		super("scsp", "2020-07-02", "UpdateAgent");
+		super("scsp", "2020-07-02", "UpdateAgent", "scsp");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,19 @@ public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 		if(displayName != null){
 			putBodyParameter("DisplayName", displayName);
 		}
+	}
+
+	public List<Long> getSkillGroupIds() {
+		return this.skillGroupIds;
+	}
+
+	public void setSkillGroupIds(List<Long> skillGroupIds) {
+		this.skillGroupIds = skillGroupIds;	
+		if (skillGroupIds != null) {
+			for (int i = 0; i < skillGroupIds.size(); i++) {
+				putBodyParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
+			}
+		}	
 	}
 
 	public List<Long> getSkillGroupIdLists() {

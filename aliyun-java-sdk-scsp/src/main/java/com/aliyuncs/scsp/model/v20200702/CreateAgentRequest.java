@@ -34,9 +34,11 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 
 	private String displayName;
 
+	private List<Long> skillGroupIds;
+
 	private List<Long> skillGroupIdLists;
 	public CreateAgentRequest() {
-		super("scsp", "2020-07-02", "CreateAgent");
+		super("scsp", "2020-07-02", "CreateAgent", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,19 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 		if(displayName != null){
 			putBodyParameter("DisplayName", displayName);
 		}
+	}
+
+	public List<Long> getSkillGroupIds() {
+		return this.skillGroupIds;
+	}
+
+	public void setSkillGroupIds(List<Long> skillGroupIds) {
+		this.skillGroupIds = skillGroupIds;	
+		if (skillGroupIds != null) {
+			for (int i = 0; i < skillGroupIds.size(); i++) {
+				putBodyParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
+			}
+		}	
 	}
 
 	public List<Long> getSkillGroupIdLists() {

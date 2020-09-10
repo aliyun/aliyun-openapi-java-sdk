@@ -15,14 +15,14 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scsp.transform.v20200702.DeleteAgentResponseUnmarshaller;
+import com.aliyuncs.scsp.transform.v20200702.JoinThirdCallResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAgentResponse extends AcsResponse {
+public class JoinThirdCallResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,8 +65,8 @@ public class DeleteAgentResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteAgentResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAgentResponseUnmarshaller.unmarshall(this, context);
+	public JoinThirdCallResponse getInstance(UnmarshallerContext context) {
+		return	JoinThirdCallResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

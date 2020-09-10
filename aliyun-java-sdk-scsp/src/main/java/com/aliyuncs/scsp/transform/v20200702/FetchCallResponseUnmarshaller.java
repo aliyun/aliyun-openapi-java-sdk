@@ -14,19 +14,19 @@
 
 package com.aliyuncs.scsp.transform.v20200702;
 
-import com.aliyuncs.scsp.model.v20200702.DeleteAgentResponse;
+import com.aliyuncs.scsp.model.v20200702.FetchCallResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteAgentResponseUnmarshaller {
+public class FetchCallResponseUnmarshaller {
 
-	public static DeleteAgentResponse unmarshall(DeleteAgentResponse deleteAgentResponse, UnmarshallerContext _ctx) {
+	public static FetchCallResponse unmarshall(FetchCallResponse fetchCallResponse, UnmarshallerContext _ctx) {
 		
-		deleteAgentResponse.setRequestId(_ctx.stringValue("DeleteAgentResponse.RequestId"));
-		deleteAgentResponse.setSuccess(_ctx.booleanValue("DeleteAgentResponse.Success"));
-		deleteAgentResponse.setCode(_ctx.stringValue("DeleteAgentResponse.Code"));
-		deleteAgentResponse.setMessage(_ctx.stringValue("DeleteAgentResponse.Message"));
+		fetchCallResponse.setRequestId(_ctx.stringValue("FetchCallResponse.RequestId"));
+		fetchCallResponse.setSuccess(_ctx.booleanValue("FetchCallResponse.Success"));
+		fetchCallResponse.setCode(_ctx.stringValue("FetchCallResponse.Code"));
+		fetchCallResponse.setMessage(_ctx.stringValue("FetchCallResponse.Message"));
 	 
-	 	return deleteAgentResponse;
+	 	return fetchCallResponse;
 	}
 }

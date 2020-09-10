@@ -88,6 +88,8 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 		private Integer restType;
 
+		private String agentStatusCode;
+
 		public Long getTenantId() {
 			return this.tenantId;
 		}
@@ -134,6 +136,14 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 		public void setRestType(Integer restType) {
 			this.restType = restType;
+		}
+
+		public String getAgentStatusCode() {
+			return this.agentStatusCode;
+		}
+
+		public void setAgentStatusCode(String agentStatusCode) {
+			this.agentStatusCode = agentStatusCode;
 		}
 	}
 

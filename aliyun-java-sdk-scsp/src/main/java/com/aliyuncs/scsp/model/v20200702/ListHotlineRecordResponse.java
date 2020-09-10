@@ -27,7 +27,7 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private Boolean success;
 
 	private String code;
 
@@ -43,11 +43,11 @@ public class ListHotlineRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
@@ -83,9 +83,9 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 		private String url;
 
-		private String startTime;
+		private Boolean startTime;
 
-		private String endTime;
+		private Boolean endTime;
 
 		public String getCallId() {
 			return this.callId;
@@ -111,19 +111,19 @@ public class ListHotlineRecordResponse extends AcsResponse {
 			this.url = url;
 		}
 
-		public String getStartTime() {
+		public Boolean getStartTime() {
 			return this.startTime;
 		}
 
-		public void setStartTime(String startTime) {
+		public void setStartTime(Boolean startTime) {
 			this.startTime = startTime;
 		}
 
-		public String getEndTime() {
+		public Boolean getEndTime() {
 			return this.endTime;
 		}
 
-		public void setEndTime(String endTime) {
+		public void setEndTime(Boolean endTime) {
 			this.endTime = endTime;
 		}
 	}

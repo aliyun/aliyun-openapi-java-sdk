@@ -26,7 +26,7 @@ public class HangupCallResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private Boolean success;
 
 	private String code;
 
@@ -40,11 +40,11 @@ public class HangupCallResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 

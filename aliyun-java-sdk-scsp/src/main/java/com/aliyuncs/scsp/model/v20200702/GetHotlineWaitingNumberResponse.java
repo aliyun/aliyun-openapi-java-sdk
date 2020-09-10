@@ -15,14 +15,14 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scsp.transform.v20200702.DeleteAgentResponseUnmarshaller;
+import com.aliyuncs.scsp.transform.v20200702.GetHotlineWaitingNumberResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteAgentResponse extends AcsResponse {
+public class GetHotlineWaitingNumberResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +31,8 @@ public class DeleteAgentResponse extends AcsResponse {
 	private String code;
 
 	private String message;
+
+	private Long data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,9 +66,17 @@ public class DeleteAgentResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
+	}
+
 	@Override
-	public DeleteAgentResponse getInstance(UnmarshallerContext context) {
-		return	DeleteAgentResponseUnmarshaller.unmarshall(this, context);
+	public GetHotlineWaitingNumberResponse getInstance(UnmarshallerContext context) {
+		return	GetHotlineWaitingNumberResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

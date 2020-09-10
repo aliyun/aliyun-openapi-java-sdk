@@ -22,17 +22,23 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTemplateSchemaResponse> {
+public class HoldCallRequest extends RpcAcsRequest<HoldCallResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private Long templateId;
-	public GetTicketTemplateSchemaRequest() {
-		super("scsp", "2020-07-02", "GetTicketTemplateSchema", "scsp");
-		setMethod(MethodType.GET);
+	private String accountName;
+
+	private String callId;
+
+	private String jobId;
+
+	private String connectionId;
+	public HoldCallRequest() {
+		super("scsp", "2020-07-02", "HoldCall", "scsp");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -46,7 +52,7 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -57,24 +63,57 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getTemplateId() {
-		return this.templateId;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId.toString());
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putBodyParameter("AccountName", accountName);
+		}
+	}
+
+	public String getCallId() {
+		return this.callId;
+	}
+
+	public void setCallId(String callId) {
+		this.callId = callId;
+		if(callId != null){
+			putBodyParameter("CallId", callId);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
+		}
+	}
+
+	public String getConnectionId() {
+		return this.connectionId;
+	}
+
+	public void setConnectionId(String connectionId) {
+		this.connectionId = connectionId;
+		if(connectionId != null){
+			putBodyParameter("ConnectionId", connectionId);
 		}
 	}
 
 	@Override
-	public Class<GetTicketTemplateSchemaResponse> getResponseClass() {
-		return GetTicketTemplateSchemaResponse.class;
+	public Class<HoldCallResponse> getResponseClass() {
+		return HoldCallResponse.class;
 	}
 
 }

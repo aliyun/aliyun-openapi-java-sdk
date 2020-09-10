@@ -14,19 +14,19 @@
 
 package com.aliyuncs.scsp.transform.v20200702;
 
-import com.aliyuncs.scsp.model.v20200702.DeleteAgentResponse;
+import com.aliyuncs.scsp.model.v20200702.JoinThirdCallResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteAgentResponseUnmarshaller {
+public class JoinThirdCallResponseUnmarshaller {
 
-	public static DeleteAgentResponse unmarshall(DeleteAgentResponse deleteAgentResponse, UnmarshallerContext _ctx) {
+	public static JoinThirdCallResponse unmarshall(JoinThirdCallResponse joinThirdCallResponse, UnmarshallerContext _ctx) {
 		
-		deleteAgentResponse.setRequestId(_ctx.stringValue("DeleteAgentResponse.RequestId"));
-		deleteAgentResponse.setSuccess(_ctx.booleanValue("DeleteAgentResponse.Success"));
-		deleteAgentResponse.setCode(_ctx.stringValue("DeleteAgentResponse.Code"));
-		deleteAgentResponse.setMessage(_ctx.stringValue("DeleteAgentResponse.Message"));
+		joinThirdCallResponse.setRequestId(_ctx.stringValue("JoinThirdCallResponse.RequestId"));
+		joinThirdCallResponse.setSuccess(_ctx.booleanValue("JoinThirdCallResponse.Success"));
+		joinThirdCallResponse.setCode(_ctx.stringValue("JoinThirdCallResponse.Code"));
+		joinThirdCallResponse.setMessage(_ctx.stringValue("JoinThirdCallResponse.Message"));
 	 
-	 	return deleteAgentResponse;
+	 	return joinThirdCallResponse;
 	}
 }

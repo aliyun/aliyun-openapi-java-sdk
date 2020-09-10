@@ -35,7 +35,7 @@ public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
 
 	private String callee;
 	public StartCallRequest() {
-		super("scsp", "2020-07-02", "StartCall");
+		super("scsp", "2020-07-02", "StartCall", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

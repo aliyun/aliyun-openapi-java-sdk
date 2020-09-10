@@ -22,16 +22,16 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTemplateSchemaResponse> {
+public class GetHotlineWaitingNumberRequest extends RpcAcsRequest<GetHotlineWaitingNumberResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private Long templateId;
-	public GetTicketTemplateSchemaRequest() {
-		super("scsp", "2020-07-02", "GetTicketTemplateSchema", "scsp");
+	private String accountName;
+	public GetHotlineWaitingNumberRequest() {
+		super("scsp", "2020-07-02", "GetHotlineWaitingNumber", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +61,20 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 		}
 	}
 
-	public Long getTemplateId() {
-		return this.templateId;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId.toString());
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putQueryParameter("AccountName", accountName);
 		}
 	}
 
 	@Override
-	public Class<GetTicketTemplateSchemaResponse> getResponseClass() {
-		return GetTicketTemplateSchemaResponse.class;
+	public Class<GetHotlineWaitingNumberResponse> getResponseClass() {
+		return GetHotlineWaitingNumberResponse.class;
 	}
 
 }

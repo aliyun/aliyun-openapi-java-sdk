@@ -14,19 +14,19 @@
 
 package com.aliyuncs.scsp.transform.v20200702;
 
-import com.aliyuncs.scsp.model.v20200702.DeleteAgentResponse;
+import com.aliyuncs.scsp.model.v20200702.HangupThirdCallResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteAgentResponseUnmarshaller {
+public class HangupThirdCallResponseUnmarshaller {
 
-	public static DeleteAgentResponse unmarshall(DeleteAgentResponse deleteAgentResponse, UnmarshallerContext _ctx) {
+	public static HangupThirdCallResponse unmarshall(HangupThirdCallResponse hangupThirdCallResponse, UnmarshallerContext _ctx) {
 		
-		deleteAgentResponse.setRequestId(_ctx.stringValue("DeleteAgentResponse.RequestId"));
-		deleteAgentResponse.setSuccess(_ctx.booleanValue("DeleteAgentResponse.Success"));
-		deleteAgentResponse.setCode(_ctx.stringValue("DeleteAgentResponse.Code"));
-		deleteAgentResponse.setMessage(_ctx.stringValue("DeleteAgentResponse.Message"));
+		hangupThirdCallResponse.setRequestId(_ctx.stringValue("HangupThirdCallResponse.RequestId"));
+		hangupThirdCallResponse.setSuccess(_ctx.booleanValue("HangupThirdCallResponse.Success"));
+		hangupThirdCallResponse.setCode(_ctx.stringValue("HangupThirdCallResponse.Code"));
+		hangupThirdCallResponse.setMessage(_ctx.stringValue("HangupThirdCallResponse.Message"));
 	 
-	 	return deleteAgentResponse;
+	 	return hangupThirdCallResponse;
 	}
 }

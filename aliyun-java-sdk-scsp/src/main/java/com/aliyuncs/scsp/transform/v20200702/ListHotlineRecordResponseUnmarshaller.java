@@ -27,7 +27,7 @@ public class ListHotlineRecordResponseUnmarshaller {
 	public static ListHotlineRecordResponse unmarshall(ListHotlineRecordResponse listHotlineRecordResponse, UnmarshallerContext _ctx) {
 		
 		listHotlineRecordResponse.setRequestId(_ctx.stringValue("ListHotlineRecordResponse.RequestId"));
-		listHotlineRecordResponse.setSuccess(_ctx.stringValue("ListHotlineRecordResponse.Success"));
+		listHotlineRecordResponse.setSuccess(_ctx.booleanValue("ListHotlineRecordResponse.Success"));
 		listHotlineRecordResponse.setCode(_ctx.stringValue("ListHotlineRecordResponse.Code"));
 		listHotlineRecordResponse.setMessage(_ctx.stringValue("ListHotlineRecordResponse.Message"));
 
@@ -37,8 +37,8 @@ public class ListHotlineRecordResponseUnmarshaller {
 			dataItem.setCallId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].CallId"));
 			dataItem.setConnectionId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].ConnectionId"));
 			dataItem.setUrl(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].Url"));
-			dataItem.setStartTime(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].StartTime"));
-			dataItem.setEndTime(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].EndTime"));
+			dataItem.setStartTime(_ctx.booleanValue("ListHotlineRecordResponse.Data["+ i +"].StartTime"));
+			dataItem.setEndTime(_ctx.booleanValue("ListHotlineRecordResponse.Data["+ i +"].EndTime"));
 
 			data.add(dataItem);
 		}

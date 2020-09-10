@@ -41,9 +41,11 @@ public class TransferCallToSkillGroupRequest extends RpcAcsRequest<TransferCallT
 
 	private String holdConnectionId;
 
+	private Integer type;
+
 	private Boolean isSingleTransfer;
 	public TransferCallToSkillGroupRequest() {
-		super("scsp", "2020-07-02", "TransferCallToSkillGroup");
+		super("scsp", "2020-07-02", "TransferCallToSkillGroup", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -136,6 +138,17 @@ public class TransferCallToSkillGroupRequest extends RpcAcsRequest<TransferCallT
 		this.holdConnectionId = holdConnectionId;
 		if(holdConnectionId != null){
 			putBodyParameter("HoldConnectionId", holdConnectionId);
+		}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type.toString());
 		}
 	}
 

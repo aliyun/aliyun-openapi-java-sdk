@@ -23,7 +23,7 @@ public class HangupCallResponseUnmarshaller {
 	public static HangupCallResponse unmarshall(HangupCallResponse hangupCallResponse, UnmarshallerContext _ctx) {
 		
 		hangupCallResponse.setRequestId(_ctx.stringValue("HangupCallResponse.RequestId"));
-		hangupCallResponse.setSuccess(_ctx.stringValue("HangupCallResponse.Success"));
+		hangupCallResponse.setSuccess(_ctx.booleanValue("HangupCallResponse.Success"));
 		hangupCallResponse.setCode(_ctx.stringValue("HangupCallResponse.Code"));
 		hangupCallResponse.setMessage(_ctx.stringValue("HangupCallResponse.Message"));
 	 
