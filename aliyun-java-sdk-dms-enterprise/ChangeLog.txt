@@ -1,3 +1,6 @@
+2020-09-11 Version: 1.9.0
+- Support execute database script via open api.
+
 2020-04-23 Version: 1.8.1
 - GetUser API return user execute query count information.
 
