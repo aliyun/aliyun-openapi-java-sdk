@@ -33,7 +33,7 @@ public class UpgradeFileSystemRequest extends RpcAcsRequest<UpgradeFileSystemRes
 
 	private Boolean dryRun;
 	public UpgradeFileSystemRequest() {
-		super("NAS", "2017-06-26", "UpgradeFileSystem", "nas");
+		super("NAS", "2017-06-26", "UpgradeFileSystem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

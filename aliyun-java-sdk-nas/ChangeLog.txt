@@ -1,3 +1,6 @@
+2020-09-14 Version: 3.10.0
+- Add Tag API and OpenNasService API.
+
 2020-07-27 Version: 3.9.0
 - Add Lifecycle management APIs for NAS SDK.
 - Add Quota management APIs for NAS SDK.

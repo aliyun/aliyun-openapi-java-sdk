@@ -55,7 +55,7 @@ public class CreateFileSystemRequest extends RpcAcsRequest<CreateFileSystemRespo
 
 	private String chargeType;
 	public CreateFileSystemRequest() {
-		super("NAS", "2017-06-26", "CreateFileSystem", "nas");
+		super("NAS", "2017-06-26", "CreateFileSystem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

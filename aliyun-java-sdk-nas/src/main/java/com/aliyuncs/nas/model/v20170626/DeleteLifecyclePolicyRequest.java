@@ -29,7 +29,7 @@ public class DeleteLifecyclePolicyRequest extends RpcAcsRequest<DeleteLifecycleP
 
 	private String fileSystemId;
 	public DeleteLifecyclePolicyRequest() {
-		super("NAS", "2017-06-26", "DeleteLifecyclePolicy", "nas");
+		super("NAS", "2017-06-26", "DeleteLifecyclePolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

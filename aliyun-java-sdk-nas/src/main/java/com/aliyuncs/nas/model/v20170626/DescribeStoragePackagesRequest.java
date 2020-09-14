@@ -31,7 +31,7 @@ public class DescribeStoragePackagesRequest extends RpcAcsRequest<DescribeStorag
 
 	private Integer pageSize;
 	public DescribeStoragePackagesRequest() {
-		super("NAS", "2017-06-26", "DescribeStoragePackages", "nas");
+		super("NAS", "2017-06-26", "DescribeStoragePackages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

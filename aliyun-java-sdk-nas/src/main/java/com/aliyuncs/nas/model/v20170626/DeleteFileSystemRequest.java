@@ -27,7 +27,7 @@ public class DeleteFileSystemRequest extends RpcAcsRequest<DeleteFileSystemRespo
 
 	private String fileSystemId;
 	public DeleteFileSystemRequest() {
-		super("NAS", "2017-06-26", "DeleteFileSystem", "nas");
+		super("NAS", "2017-06-26", "DeleteFileSystem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

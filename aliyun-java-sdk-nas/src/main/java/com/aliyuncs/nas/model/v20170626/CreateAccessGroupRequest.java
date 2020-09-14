@@ -33,7 +33,7 @@ public class CreateAccessGroupRequest extends RpcAcsRequest<CreateAccessGroupRes
 
 	private String accessGroupName;
 	public CreateAccessGroupRequest() {
-		super("NAS", "2017-06-26", "CreateAccessGroup", "nas");
+		super("NAS", "2017-06-26", "CreateAccessGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

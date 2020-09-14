@@ -29,7 +29,7 @@ public class DeleteAccessGroupRequest extends RpcAcsRequest<DeleteAccessGroupRes
 
 	private String accessGroupName;
 	public DeleteAccessGroupRequest() {
-		super("NAS", "2017-06-26", "DeleteAccessGroup", "nas");
+		super("NAS", "2017-06-26", "DeleteAccessGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

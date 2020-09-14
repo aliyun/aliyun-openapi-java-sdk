@@ -22,6 +22,7 @@ import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Ldap;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.MountTarget.Tag;
+import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem.Tag2;
 import com.aliyuncs.nas.model.v20170626.DescribeFileSystemsResponse.FileSystem._Package;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -82,15 +83,15 @@ public class DescribeFileSystemsResponseUnmarshaller {
 				mountTarget.setAccessGroupName(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName"));
 				mountTarget.setStatus(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Status"));
 
-				List<Tag> tags = new ArrayList<Tag>();
+				List<Tag> tags1 = new ArrayList<Tag>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags.Length"); k++) {
 					Tag tag = new Tag();
 					tag.setKey(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Key"));
 					tag.setValue(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Value"));
 
-					tags.add(tag);
+					tags1.add(tag);
 				}
-				mountTarget.setTags(tags);
+				mountTarget.setTags1(tags1);
 
 				mountTargets.add(mountTarget);
 			}
@@ -108,6 +109,16 @@ public class DescribeFileSystemsResponseUnmarshaller {
 				packages.add(_package);
 			}
 			fileSystem.setPackages(packages);
+
+			List<Tag2> tags = new ArrayList<Tag2>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags.Length"); j++) {
+				Tag2 tag2 = new Tag2();
+				tag2.setKey(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags["+ j +"].Key"));
+				tag2.setValue(_ctx.stringValue("DescribeFileSystemsResponse.FileSystems["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag2);
+			}
+			fileSystem.setTags(tags);
 
 			fileSystems.add(fileSystem);
 		}

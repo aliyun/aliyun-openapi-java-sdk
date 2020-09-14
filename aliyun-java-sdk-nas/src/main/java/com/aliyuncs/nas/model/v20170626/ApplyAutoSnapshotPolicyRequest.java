@@ -29,7 +29,7 @@ public class ApplyAutoSnapshotPolicyRequest extends RpcAcsRequest<ApplyAutoSnaps
 
 	private String fileSystemIds;
 	public ApplyAutoSnapshotPolicyRequest() {
-		super("NAS", "2017-06-26", "ApplyAutoSnapshotPolicy", "nas");
+		super("NAS", "2017-06-26", "ApplyAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

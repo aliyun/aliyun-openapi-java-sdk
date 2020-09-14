@@ -31,7 +31,7 @@ public class DeleteAccessRuleRequest extends RpcAcsRequest<DeleteAccessRuleRespo
 
 	private String accessGroupName;
 	public DeleteAccessRuleRequest() {
-		super("NAS", "2017-06-26", "DeleteAccessRule", "nas");
+		super("NAS", "2017-06-26", "DeleteAccessRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

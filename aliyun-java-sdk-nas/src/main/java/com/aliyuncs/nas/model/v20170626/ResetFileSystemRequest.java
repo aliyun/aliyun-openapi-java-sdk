@@ -29,7 +29,7 @@ public class ResetFileSystemRequest extends RpcAcsRequest<ResetFileSystemRespons
 
 	private String fileSystemId;
 	public ResetFileSystemRequest() {
-		super("NAS", "2017-06-26", "ResetFileSystem", "nas");
+		super("NAS", "2017-06-26", "ResetFileSystem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

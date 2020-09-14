@@ -33,7 +33,7 @@ public class CreateLDAPConfigRequest extends RpcAcsRequest<CreateLDAPConfigRespo
 
 	private String bindDN;
 	public CreateLDAPConfigRequest() {
-		super("NAS", "2017-06-26", "CreateLDAPConfig", "nas");
+		super("NAS", "2017-06-26", "CreateLDAPConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

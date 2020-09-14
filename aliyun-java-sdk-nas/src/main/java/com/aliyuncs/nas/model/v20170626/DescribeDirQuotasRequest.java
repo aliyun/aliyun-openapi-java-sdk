@@ -33,7 +33,7 @@ public class DescribeDirQuotasRequest extends RpcAcsRequest<DescribeDirQuotasRes
 
 	private String fileSystemId;
 	public DescribeDirQuotasRequest() {
-		super("NAS", "2017-06-26", "DescribeDirQuotas", "nas");
+		super("NAS", "2017-06-26", "DescribeDirQuotas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

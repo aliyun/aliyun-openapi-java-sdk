@@ -27,7 +27,7 @@ public class CancelAutoSnapshotPolicyRequest extends RpcAcsRequest<CancelAutoSna
 
 	private String fileSystemIds;
 	public CancelAutoSnapshotPolicyRequest() {
-		super("NAS", "2017-06-26", "CancelAutoSnapshotPolicy", "nas");
+		super("NAS", "2017-06-26", "CancelAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

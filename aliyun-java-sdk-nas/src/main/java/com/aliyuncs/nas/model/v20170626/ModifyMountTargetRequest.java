@@ -33,7 +33,7 @@ public class ModifyMountTargetRequest extends RpcAcsRequest<ModifyMountTargetRes
 
 	private String status;
 	public ModifyMountTargetRequest() {
-		super("NAS", "2017-06-26", "ModifyMountTarget", "nas");
+		super("NAS", "2017-06-26", "ModifyMountTarget");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

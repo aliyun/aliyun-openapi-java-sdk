@@ -35,7 +35,7 @@ public class DescribeAccessRulesRequest extends RpcAcsRequest<DescribeAccessRule
 
 	private String accessGroupName;
 	public DescribeAccessRulesRequest() {
-		super("NAS", "2017-06-26", "DescribeAccessRules", "nas");
+		super("NAS", "2017-06-26", "DescribeAccessRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

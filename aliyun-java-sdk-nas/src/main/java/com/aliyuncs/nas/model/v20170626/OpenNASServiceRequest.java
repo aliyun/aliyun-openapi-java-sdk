@@ -22,14 +22,10 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemResponse> {
+public class OpenNASServiceRequest extends RpcAcsRequest<OpenNASServiceResponse> {
 	   
-
-	private String description;
-
-	private String fileSystemId;
-	public ModifyFileSystemRequest() {
-		super("NAS", "2017-06-26", "ModifyFileSystem");
+	public OpenNASServiceRequest() {
+		super("NAS", "2017-06-26", "OpenNASService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +33,9 @@ public class ModifyFileSystemRequest extends RpcAcsRequest<ModifyFileSystemRespo
 		} catch (Exception e) {}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getFileSystemId() {
-		return this.fileSystemId;
-	}
-
-	public void setFileSystemId(String fileSystemId) {
-		this.fileSystemId = fileSystemId;
-		if(fileSystemId != null){
-			putQueryParameter("FileSystemId", fileSystemId);
-		}
-	}
-
 	@Override
-	public Class<ModifyFileSystemResponse> getResponseClass() {
-		return ModifyFileSystemResponse.class;
+	public Class<OpenNASServiceResponse> getResponseClass() {
+		return OpenNASServiceResponse.class;
 	}
 
 }

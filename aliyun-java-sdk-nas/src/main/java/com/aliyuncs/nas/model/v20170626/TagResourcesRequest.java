@@ -23,60 +23,21 @@ import com.aliyuncs.nas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystemsResponse> {
+public class TagResourcesRequest extends RpcAcsRequest<TagResourcesResponse> {
 	   
-
-	private String fileSystemType;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
 
 	private List<Tag> tags;
 
-	private String fileSystemId;
+	private List<String> resourceIds;
 
-	private String vpcId;
-	public DescribeFileSystemsRequest() {
-		super("NAS", "2017-06-26", "DescribeFileSystems");
+	private String resourceType;
+	public TagResourcesRequest() {
+		super("NAS", "2017-06-26", "TagResources");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFileSystemType() {
-		return this.fileSystemType;
-	}
-
-	public void setFileSystemType(String fileSystemType) {
-		this.fileSystemType = fileSystemType;
-		if(fileSystemType != null){
-			putQueryParameter("FileSystemType", fileSystemType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public List<Tag> getTags() {
@@ -93,25 +54,27 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 		}	
 	}
 
-	public String getFileSystemId() {
-		return this.fileSystemId;
+	public List<String> getResourceIds() {
+		return this.resourceIds;
 	}
 
-	public void setFileSystemId(String fileSystemId) {
-		this.fileSystemId = fileSystemId;
-		if(fileSystemId != null){
-			putQueryParameter("FileSystemId", fileSystemId);
-		}
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
+	public String getResourceType() {
+		return this.resourceType;
 	}
 
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 
@@ -139,8 +102,8 @@ public class DescribeFileSystemsRequest extends RpcAcsRequest<DescribeFileSystem
 	}
 
 	@Override
-	public Class<DescribeFileSystemsResponse> getResponseClass() {
-		return DescribeFileSystemsResponse.class;
+	public Class<TagResourcesResponse> getResponseClass() {
+		return TagResourcesResponse.class;
 	}
 
 }

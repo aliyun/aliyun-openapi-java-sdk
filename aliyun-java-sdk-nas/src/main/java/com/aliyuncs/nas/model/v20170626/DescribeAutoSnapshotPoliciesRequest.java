@@ -33,7 +33,7 @@ public class DescribeAutoSnapshotPoliciesRequest extends RpcAcsRequest<DescribeA
 
 	private Integer pageSize;
 	public DescribeAutoSnapshotPoliciesRequest() {
-		super("NAS", "2017-06-26", "DescribeAutoSnapshotPolicies", "nas");
+		super("NAS", "2017-06-26", "DescribeAutoSnapshotPolicies");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class AddTagsRequest extends RpcAcsRequest<AddTagsResponse> {
 
 	private String fileSystemId;
 	public AddTagsRequest() {
-		super("NAS", "2017-06-26", "AddTags", "nas");
+		super("NAS", "2017-06-26", "AddTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

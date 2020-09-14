@@ -123,6 +123,8 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 		private List<_Package> packages;
 
+		private List<Tag2> tags;
+
 		private List<String> supportedFeatures;
 
 		private Ldap ldap;
@@ -311,6 +313,14 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 			this.packages = packages;
 		}
 
+		public List<Tag2> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag2> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getSupportedFeatures() {
 			return this.supportedFeatures;
 		}
@@ -341,7 +351,7 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			private String status;
 
-			private List<Tag> tags;
+			private List<Tag> tags1;
 
 			public String getMountTargetDomain() {
 				return this.mountTargetDomain;
@@ -391,12 +401,12 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public List<Tag> getTags() {
-				return this.tags;
+			public List<Tag> getTags1() {
+				return this.tags1;
 			}
 
-			public void setTags(List<Tag> tags) {
-				this.tags = tags;
+			public void setTags1(List<Tag> tags1) {
+				this.tags1 = tags1;
 			}
 
 			public static class Tag {
@@ -473,6 +483,29 @@ public class DescribeFileSystemsResponse extends AcsResponse {
 
 			public void setExpiredTime(String expiredTime) {
 				this.expiredTime = expiredTime;
+			}
+		}
+
+		public static class Tag2 {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 

@@ -29,7 +29,7 @@ public class DescribeFileSystemStatisticsRequest extends RpcAcsRequest<DescribeF
 
 	private Integer pageSize;
 	public DescribeFileSystemStatisticsRequest() {
-		super("NAS", "2017-06-26", "DescribeFileSystemStatistics", "nas");
+		super("NAS", "2017-06-26", "DescribeFileSystemStatistics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

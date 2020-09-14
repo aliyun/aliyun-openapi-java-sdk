@@ -33,7 +33,7 @@ public class ModifyLDAPConfigRequest extends RpcAcsRequest<ModifyLDAPConfigRespo
 
 	private String bindDN;
 	public ModifyLDAPConfigRequest() {
-		super("NAS", "2017-06-26", "ModifyLDAPConfig", "nas");
+		super("NAS", "2017-06-26", "ModifyLDAPConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

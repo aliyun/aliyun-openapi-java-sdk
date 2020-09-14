@@ -29,7 +29,7 @@ public class DescribeBlackListClientsRequest extends RpcAcsRequest<DescribeBlack
 
 	private String fileSystemId;
 	public DescribeBlackListClientsRequest() {
-		super("NAS", "2017-06-26", "DescribeBlackListClients", "nas");
+		super("NAS", "2017-06-26", "DescribeBlackListClients");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

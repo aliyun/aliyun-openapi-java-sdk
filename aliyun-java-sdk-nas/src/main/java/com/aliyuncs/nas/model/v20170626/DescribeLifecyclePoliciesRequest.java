@@ -31,7 +31,7 @@ public class DescribeLifecyclePoliciesRequest extends RpcAcsRequest<DescribeLife
 
 	private String fileSystemId;
 	public DescribeLifecyclePoliciesRequest() {
-		super("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas");
+		super("NAS", "2017-06-26", "DescribeLifecyclePolicies");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

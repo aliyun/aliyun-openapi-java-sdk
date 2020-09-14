@@ -35,7 +35,7 @@ public class DescribeMountedClientsRequest extends RpcAcsRequest<DescribeMounted
 
 	private String mountTargetDomain;
 	public DescribeMountedClientsRequest() {
-		super("NAS", "2017-06-26", "DescribeMountedClients", "nas");
+		super("NAS", "2017-06-26", "DescribeMountedClients");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
