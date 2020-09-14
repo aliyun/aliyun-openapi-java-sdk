@@ -54,6 +54,20 @@ public class GetFaceModelResultResponseUnmarshaller {
 			recordsItem.setGlassStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassStyle"));
 			recordsItem.setGlassColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassColor"));
 			recordsItem.setCapColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapColor"));
+			recordsItem.setCapColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapColorReliability"));
+			recordsItem.setRespiratorColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].RespiratorColorReliability"));
+			recordsItem.setEthicCodeReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].EthicCodeReliability"));
+			recordsItem.setGenderCodeReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].GenderCodeReliability"));
+			recordsItem.setGlassColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassColorReliability"));
+			recordsItem.setSkinColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].SkinColorReliability"));
+			recordsItem.setMustacheStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].MustacheStyleReliability"));
+			recordsItem.setCapStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapStyleReliability"));
+			recordsItem.setFaceStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].FaceStyleReliability"));
+			recordsItem.setGlassStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassStyleReliability"));
+			recordsItem.setAgeUpLimitReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeUpLimitReliability"));
+			recordsItem.setHairStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairStyleReliability"));
+			recordsItem.setAgeLowerLimitReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeLowerLimitReliability"));
+			recordsItem.setHairColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairColorReliability"));
 
 			List<Float> featureData = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("GetFaceModelResultResponse.Data.Records["+ i +"].FeatureData.Length"); j++) {

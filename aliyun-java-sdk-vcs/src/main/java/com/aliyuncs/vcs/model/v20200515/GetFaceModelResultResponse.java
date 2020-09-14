@@ -115,6 +115,34 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			private Integer capColor;
 
+			private String capColorReliability;
+
+			private String respiratorColorReliability;
+
+			private String ethicCodeReliability;
+
+			private String genderCodeReliability;
+
+			private String glassColorReliability;
+
+			private String skinColorReliability;
+
+			private String mustacheStyleReliability;
+
+			private String capStyleReliability;
+
+			private String faceStyleReliability;
+
+			private String glassStyleReliability;
+
+			private String ageUpLimitReliability;
+
+			private String hairStyleReliability;
+
+			private String ageLowerLimitReliability;
+
+			private String hairColorReliability;
+
 			private List<Float> featureData;
 
 			public String getMustacheStyle() {
@@ -259,6 +287,118 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			public void setCapColor(Integer capColor) {
 				this.capColor = capColor;
+			}
+
+			public String getCapColorReliability() {
+				return this.capColorReliability;
+			}
+
+			public void setCapColorReliability(String capColorReliability) {
+				this.capColorReliability = capColorReliability;
+			}
+
+			public String getRespiratorColorReliability() {
+				return this.respiratorColorReliability;
+			}
+
+			public void setRespiratorColorReliability(String respiratorColorReliability) {
+				this.respiratorColorReliability = respiratorColorReliability;
+			}
+
+			public String getEthicCodeReliability() {
+				return this.ethicCodeReliability;
+			}
+
+			public void setEthicCodeReliability(String ethicCodeReliability) {
+				this.ethicCodeReliability = ethicCodeReliability;
+			}
+
+			public String getGenderCodeReliability() {
+				return this.genderCodeReliability;
+			}
+
+			public void setGenderCodeReliability(String genderCodeReliability) {
+				this.genderCodeReliability = genderCodeReliability;
+			}
+
+			public String getGlassColorReliability() {
+				return this.glassColorReliability;
+			}
+
+			public void setGlassColorReliability(String glassColorReliability) {
+				this.glassColorReliability = glassColorReliability;
+			}
+
+			public String getSkinColorReliability() {
+				return this.skinColorReliability;
+			}
+
+			public void setSkinColorReliability(String skinColorReliability) {
+				this.skinColorReliability = skinColorReliability;
+			}
+
+			public String getMustacheStyleReliability() {
+				return this.mustacheStyleReliability;
+			}
+
+			public void setMustacheStyleReliability(String mustacheStyleReliability) {
+				this.mustacheStyleReliability = mustacheStyleReliability;
+			}
+
+			public String getCapStyleReliability() {
+				return this.capStyleReliability;
+			}
+
+			public void setCapStyleReliability(String capStyleReliability) {
+				this.capStyleReliability = capStyleReliability;
+			}
+
+			public String getFaceStyleReliability() {
+				return this.faceStyleReliability;
+			}
+
+			public void setFaceStyleReliability(String faceStyleReliability) {
+				this.faceStyleReliability = faceStyleReliability;
+			}
+
+			public String getGlassStyleReliability() {
+				return this.glassStyleReliability;
+			}
+
+			public void setGlassStyleReliability(String glassStyleReliability) {
+				this.glassStyleReliability = glassStyleReliability;
+			}
+
+			public String getAgeUpLimitReliability() {
+				return this.ageUpLimitReliability;
+			}
+
+			public void setAgeUpLimitReliability(String ageUpLimitReliability) {
+				this.ageUpLimitReliability = ageUpLimitReliability;
+			}
+
+			public String getHairStyleReliability() {
+				return this.hairStyleReliability;
+			}
+
+			public void setHairStyleReliability(String hairStyleReliability) {
+				this.hairStyleReliability = hairStyleReliability;
+			}
+
+			public String getAgeLowerLimitReliability() {
+				return this.ageLowerLimitReliability;
+			}
+
+			public void setAgeLowerLimitReliability(String ageLowerLimitReliability) {
+				this.ageLowerLimitReliability = ageLowerLimitReliability;
+			}
+
+			public String getHairColorReliability() {
+				return this.hairColorReliability;
+			}
+
+			public void setHairColorReliability(String hairColorReliability) {
+				this.hairColorReliability = hairColorReliability;
 			}
 
 			public List<Float> getFeatureData() {

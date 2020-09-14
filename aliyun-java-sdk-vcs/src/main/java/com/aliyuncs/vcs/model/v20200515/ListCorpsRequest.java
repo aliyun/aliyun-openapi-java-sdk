@@ -28,6 +28,8 @@ public class ListCorpsRequest extends RpcAcsRequest<ListCorpsResponse> {
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String corpName;
 	public ListCorpsRequest() {
 		super("Vcs", "2020-05-15", "ListCorps", "vcs");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ListCorpsRequest extends RpcAcsRequest<ListCorpsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getCorpName() {
+		return this.corpName;
+	}
+
+	public void setCorpName(String corpName) {
+		this.corpName = corpName;
+		if(corpName != null){
+			putBodyParameter("CorpName", corpName);
 		}
 	}
 
