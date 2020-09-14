@@ -54,6 +54,7 @@ public class SearchTicketListResponseUnmarshaller {
 			dataItem.setFormData(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FormData"));
 			dataItem.setServiceId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ServiceId"));
 			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CaseStatus"));
+			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].TaskStatus"));
 
 			data.add(dataItem);
 		}

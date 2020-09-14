@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse;
 import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse.Data;
 import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse.Data.ActivitiesItem;
+import com.aliyuncs.scsp.model.v20200702.SearchTicketByIdResponse.Data.ActivityRecordsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,6 +60,19 @@ public class SearchTicketByIdResponseUnmarshaller {
 			activities.add(activitiesItem);
 		}
 		data.setActivities(activities);
+
+		List<ActivityRecordsItem> activityRecords = new ArrayList<ActivityRecordsItem>();
+		for (int i = 0; i < _ctx.lengthValue("SearchTicketByIdResponse.Data.ActivityRecords.Length"); i++) {
+			ActivityRecordsItem activityRecordsItem = new ActivityRecordsItem();
+			activityRecordsItem.setOperatorName(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].OperatorName"));
+			activityRecordsItem.setGmtCreate(_ctx.longValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].GmtCreate"));
+			activityRecordsItem.setActionCodeDesc(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].ActionCodeDesc"));
+			activityRecordsItem.setActionCode(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].ActionCode"));
+			activityRecordsItem.setMemo(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].Memo"));
+
+			activityRecords.add(activityRecordsItem);
+		}
+		data.setActivityRecords(activityRecords);
 		searchTicketByIdResponse.setData(data);
 	 
 	 	return searchTicketByIdResponse;

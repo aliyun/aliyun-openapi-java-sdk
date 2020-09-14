@@ -149,6 +149,8 @@ public class SearchTicketListResponse extends AcsResponse {
 
 		private Integer caseStatus;
 
+		private String taskStatus;
+
 		public Long getTicketId() {
 			return this.ticketId;
 		}
@@ -275,6 +277,14 @@ public class SearchTicketListResponse extends AcsResponse {
 
 		public void setCaseStatus(Integer caseStatus) {
 			this.caseStatus = caseStatus;
+		}
+
+		public String getTaskStatus() {
+			return this.taskStatus;
+		}
+
+		public void setTaskStatus(String taskStatus) {
+			this.taskStatus = taskStatus;
 		}
 	}
 

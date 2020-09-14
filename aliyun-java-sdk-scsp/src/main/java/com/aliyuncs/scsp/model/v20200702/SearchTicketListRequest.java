@@ -36,8 +36,12 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 	private Integer pageNo;
 
 	private Integer pageSize;
+
+	private Long startTime;
+
+	private Long endTime;
 	public SearchTicketListRequest() {
-		super("scsp", "2020-07-02", "SearchTicketList", "scsp");
+		super("scsp", "2020-07-02", "SearchTicketList");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -108,6 +112,28 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 

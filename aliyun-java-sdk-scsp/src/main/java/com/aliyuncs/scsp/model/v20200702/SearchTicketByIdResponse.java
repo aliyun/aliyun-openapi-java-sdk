@@ -111,6 +111,8 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 		private List<ActivitiesItem> activities;
 
+		private List<ActivityRecordsItem> activityRecords;
+
 		public Long getTicketId() {
 			return this.ticketId;
 		}
@@ -247,6 +249,14 @@ public class SearchTicketByIdResponse extends AcsResponse {
 			this.activities = activities;
 		}
 
+		public List<ActivityRecordsItem> getActivityRecords() {
+			return this.activityRecords;
+		}
+
+		public void setActivityRecords(List<ActivityRecordsItem> activityRecords) {
+			this.activityRecords = activityRecords;
+		}
+
 		public static class ActivitiesItem {
 
 			private String activityCode;
@@ -267,6 +277,59 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 			public void setActivityFormData(String activityFormData) {
 				this.activityFormData = activityFormData;
+			}
+		}
+
+		public static class ActivityRecordsItem {
+
+			private String operatorName;
+
+			private Long gmtCreate;
+
+			private String actionCodeDesc;
+
+			private String actionCode;
+
+			private String memo;
+
+			public String getOperatorName() {
+				return this.operatorName;
+			}
+
+			public void setOperatorName(String operatorName) {
+				this.operatorName = operatorName;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getActionCodeDesc() {
+				return this.actionCodeDesc;
+			}
+
+			public void setActionCodeDesc(String actionCodeDesc) {
+				this.actionCodeDesc = actionCodeDesc;
+			}
+
+			public String getActionCode() {
+				return this.actionCode;
+			}
+
+			public void setActionCode(String actionCode) {
+				this.actionCode = actionCode;
+			}
+
+			public String getMemo() {
+				return this.memo;
+			}
+
+			public void setMemo(String memo) {
+				this.memo = memo;
 			}
 		}
 	}
