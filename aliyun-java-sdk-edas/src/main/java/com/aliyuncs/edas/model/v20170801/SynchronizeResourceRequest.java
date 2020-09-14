@@ -27,7 +27,7 @@ public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourc
 
 	private String type;
 	public SynchronizeResourceRequest() {
-		super("Edas", "2017-08-01", "SynchronizeResource", "Edas");
+		super("Edas", "2017-08-01", "SynchronizeResource", "edas");
 		setUriPattern("/pop/v5/resource/pop_sync_resource");
 		setMethod(MethodType.GET);
 		try {

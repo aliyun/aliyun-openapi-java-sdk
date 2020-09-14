@@ -27,11 +27,13 @@ public class ImportK8sClusterRequest extends RoaAcsRequest<ImportK8sClusterRespo
 
 	private Integer mode;
 
+	private Boolean enableAsm;
+
 	private String namespaceId;
 
 	private String clusterId;
 	public ImportK8sClusterRequest() {
-		super("Edas", "2017-08-01", "ImportK8sCluster", "Edas");
+		super("Edas", "2017-08-01", "ImportK8sCluster", "edas");
 		setUriPattern("/pop/v5/import_k8s_cluster");
 		setMethod(MethodType.POST);
 		try {
@@ -48,6 +50,17 @@ public class ImportK8sClusterRequest extends RoaAcsRequest<ImportK8sClusterRespo
 		this.mode = mode;
 		if(mode != null){
 			putQueryParameter("Mode", mode.toString());
+		}
+	}
+
+	public Boolean getEnableAsm() {
+		return this.enableAsm;
+	}
+
+	public void setEnableAsm(Boolean enableAsm) {
+		this.enableAsm = enableAsm;
+		if(enableAsm != null){
+			putQueryParameter("EnableAsm", enableAsm.toString());
 		}
 	}
 

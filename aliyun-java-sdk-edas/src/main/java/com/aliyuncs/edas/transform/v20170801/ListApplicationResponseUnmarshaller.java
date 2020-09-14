@@ -36,26 +36,10 @@ public class ListApplicationResponseUnmarshaller {
 			application.setAppId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].AppId"));
 			application.setName(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Name"));
 			application.setRegionId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].RegionId"));
-			application.setDescription(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Description"));
-			application.setOwner(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].Owner"));
-			application.setInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].InstanceCount"));
-			application.setRunningInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
-			application.setPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Port"));
-			application.setUserId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].UserId"));
-			application.setSlbId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbId"));
-			application.setSlbIp(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].SlbIp"));
-			application.setSlbPort(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].SlbPort"));
-			application.setExtSlbId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbId"));
-			application.setExtSlbIp(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ExtSlbIp"));
 			application.setApplicationType(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ApplicationType"));
 			application.setClusterType(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterType"));
 			application.setClusterId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
-			application.setDockerize(_ctx.booleanValue("ListApplicationResponse.ApplicationList["+ i +"].Dockerize"));
-			application.setCpu(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Cpu"));
-			application.setMemory(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].Memory"));
-			application.setHealthCheckUrl(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].HealthCheckUrl"));
 			application.setBuildPackageId(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].BuildPackageId"));
-			application.setCreateTime(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].CreateTime"));
 
 			applicationList.add(application);
 		}

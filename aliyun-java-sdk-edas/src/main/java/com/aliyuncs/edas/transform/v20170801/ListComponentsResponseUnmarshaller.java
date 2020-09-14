@@ -28,6 +28,8 @@ public class ListComponentsResponseUnmarshaller {
 		
 		listComponentsResponse.setCode(_ctx.integerValue("ListComponentsResponse.Code"));
 		listComponentsResponse.setMessage(_ctx.stringValue("ListComponentsResponse.Message"));
+		listComponentsResponse.setComponentKey(_ctx.stringValue("ListComponentsResponse.ComponentKey"));
+		listComponentsResponse.setDesc(_ctx.stringValue("ListComponentsResponse.Desc"));
 
 		List<Component> componentList = new ArrayList<Component>();
 		for (int i = 0; i < _ctx.lengthValue("ListComponentsResponse.ComponentList.Length"); i++) {

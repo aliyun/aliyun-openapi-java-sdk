@@ -27,7 +27,7 @@ public class ListHistoryDeployVersionRequest extends RoaAcsRequest<ListHistoryDe
 
 	private String appId;
 	public ListHistoryDeployVersionRequest() {
-		super("Edas", "2017-08-01", "ListHistoryDeployVersion", "Edas");
+		super("Edas", "2017-08-01", "ListHistoryDeployVersion", "edas");
 		setUriPattern("/pop/v5/app/deploy_history_version_list");
 		setMethod(MethodType.GET);
 		try {

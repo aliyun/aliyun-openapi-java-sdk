@@ -29,7 +29,7 @@ public class UpdateSlsLogStoreRequest extends RoaAcsRequest<UpdateSlsLogStoreRes
 
 	private String appId;
 	public UpdateSlsLogStoreRequest() {
-		super("Edas", "2017-08-01", "UpdateSlsLogStore", "Edas");
+		super("Edas", "2017-08-01", "UpdateSlsLogStore", "edas");
 		setUriPattern("/pop/v5/k8s/sls/update_sls_log_store");
 		setMethod(MethodType.POST);
 		try {

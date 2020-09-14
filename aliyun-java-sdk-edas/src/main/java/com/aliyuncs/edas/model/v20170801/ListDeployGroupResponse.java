@@ -31,6 +31,10 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String vServerGroupId;
+
+	private String vExtServerGroupId;
+
 	private List<DeployGroup> deployGroupList;
 
 	public Integer getCode() {
@@ -55,6 +59,22 @@ public class ListDeployGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getVServerGroupId() {
+		return this.vServerGroupId;
+	}
+
+	public void setVServerGroupId(String vServerGroupId) {
+		this.vServerGroupId = vServerGroupId;
+	}
+
+	public String getVExtServerGroupId() {
+		return this.vExtServerGroupId;
+	}
+
+	public void setVExtServerGroupId(String vExtServerGroupId) {
+		this.vExtServerGroupId = vExtServerGroupId;
 	}
 
 	public List<DeployGroup> getDeployGroupList() {

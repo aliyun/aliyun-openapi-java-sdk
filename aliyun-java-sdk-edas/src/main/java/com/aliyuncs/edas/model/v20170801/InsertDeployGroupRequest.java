@@ -28,8 +28,10 @@ public class InsertDeployGroupRequest extends RoaAcsRequest<InsertDeployGroupRes
 	private String appId;
 
 	private String groupName;
+
+	private String initPackageVersionId;
 	public InsertDeployGroupRequest() {
-		super("Edas", "2017-08-01", "InsertDeployGroup", "Edas");
+		super("Edas", "2017-08-01", "InsertDeployGroup", "edas");
 		setUriPattern("/pop/v5/deploy_group");
 		setMethod(MethodType.POST);
 		try {
@@ -57,6 +59,17 @@ public class InsertDeployGroupRequest extends RoaAcsRequest<InsertDeployGroupRes
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInitPackageVersionId() {
+		return this.initPackageVersionId;
+	}
+
+	public void setInitPackageVersionId(String initPackageVersionId) {
+		this.initPackageVersionId = initPackageVersionId;
+		if(initPackageVersionId != null){
+			putQueryParameter("InitPackageVersionId", initPackageVersionId);
 		}
 	}
 

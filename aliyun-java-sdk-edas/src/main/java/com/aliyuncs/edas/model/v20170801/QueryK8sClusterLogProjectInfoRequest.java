@@ -27,7 +27,7 @@ public class QueryK8sClusterLogProjectInfoRequest extends RoaAcsRequest<QueryK8s
 
 	private String clusterId;
 	public QueryK8sClusterLogProjectInfoRequest() {
-		super("Edas", "2017-08-01", "QueryK8sClusterLogProjectInfo", "Edas");
+		super("Edas", "2017-08-01", "QueryK8sClusterLogProjectInfo", "edas");
 		setUriPattern("/pop/v5/k8s/sls/project");
 		setMethod(MethodType.GET);
 		try {
