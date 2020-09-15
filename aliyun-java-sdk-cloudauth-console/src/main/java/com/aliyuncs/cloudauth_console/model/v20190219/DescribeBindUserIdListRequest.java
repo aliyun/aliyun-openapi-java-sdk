@@ -27,7 +27,7 @@ public class DescribeBindUserIdListRequest extends RpcAcsRequest<DescribeBindUse
 
 	private String projectId;
 	public DescribeBindUserIdListRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeBindUserIdList");
+		super("Cloudauth-console", "2019-02-19", "DescribeBindUserIdList", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

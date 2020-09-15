@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth_console.Endpoint;
 public class DescribeUploadPreSignRequest extends RpcAcsRequest<DescribeUploadPreSignResponse> {
 	   
 	public DescribeUploadPreSignRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeUploadPreSign");
+		super("Cloudauth-console", "2019-02-19", "DescribeUploadPreSign", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

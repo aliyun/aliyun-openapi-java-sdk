@@ -45,7 +45,7 @@ public class DescribeIdentifyRecordListRequest extends RpcAcsRequest<DescribeIde
 
 	private String userName;
 	public DescribeIdentifyRecordListRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeIdentifyRecordList");
+		super("Cloudauth-console", "2019-02-19", "DescribeIdentifyRecordList", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

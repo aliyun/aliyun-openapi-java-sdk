@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth_console.Endpoint;
 public class DescribeAllEndPointRequest extends RpcAcsRequest<DescribeAllEndPointResponse> {
 	   
 	public DescribeAllEndPointRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeAllEndPoint");
+		super("Cloudauth-console", "2019-02-19", "DescribeAllEndPoint", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SaveUserGroupRequest extends RpcAcsRequest<SaveUserGroupResponse> {
 
 	private String projectId;
 	public SaveUserGroupRequest() {
-		super("Cloudauth-console", "2019-02-19", "SaveUserGroup");
+		super("Cloudauth-console", "2019-02-19", "SaveUserGroup", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

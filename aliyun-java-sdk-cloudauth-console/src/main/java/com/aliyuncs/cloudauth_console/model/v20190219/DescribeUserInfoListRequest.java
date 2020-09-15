@@ -39,7 +39,7 @@ public class DescribeUserInfoListRequest extends RpcAcsRequest<DescribeUserInfoL
 
 	private String userName;
 	public DescribeUserInfoListRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeUserInfoList");
+		super("Cloudauth-console", "2019-02-19", "DescribeUserInfoList", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

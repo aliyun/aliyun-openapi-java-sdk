@@ -27,7 +27,7 @@ public class SaveOssServeRequest extends RpcAcsRequest<SaveOssServeResponse> {
 
 	private String projectId;
 	public SaveOssServeRequest() {
-		super("Cloudauth-console", "2019-02-19", "SaveOssServe");
+		super("Cloudauth-console", "2019-02-19", "SaveOssServe", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

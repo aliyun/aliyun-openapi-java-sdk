@@ -49,7 +49,7 @@ public class UpdateUserInfoRequest extends RpcAcsRequest<UpdateUserInfoResponse>
 
 	private String userName;
 	public UpdateUserInfoRequest() {
-		super("Cloudauth-console", "2019-02-19", "UpdateUserInfo");
+		super("Cloudauth-console", "2019-02-19", "UpdateUserInfo", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

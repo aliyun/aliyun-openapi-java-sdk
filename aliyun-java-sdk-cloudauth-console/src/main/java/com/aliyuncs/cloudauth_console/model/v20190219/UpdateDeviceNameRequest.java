@@ -31,7 +31,7 @@ public class UpdateDeviceNameRequest extends RpcAcsRequest<UpdateDeviceNameRespo
 
 	private String projectId;
 	public UpdateDeviceNameRequest() {
-		super("Cloudauth-console", "2019-02-19", "UpdateDeviceName");
+		super("Cloudauth-console", "2019-02-19", "UpdateDeviceName", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

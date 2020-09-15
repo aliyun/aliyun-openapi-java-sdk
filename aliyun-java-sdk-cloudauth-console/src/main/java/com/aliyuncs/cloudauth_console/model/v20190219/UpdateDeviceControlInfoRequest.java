@@ -37,7 +37,7 @@ public class UpdateDeviceControlInfoRequest extends RpcAcsRequest<UpdateDeviceCo
 
 	private Integer multiPerson;
 	public UpdateDeviceControlInfoRequest() {
-		super("Cloudauth-console", "2019-02-19", "UpdateDeviceControlInfo");
+		super("Cloudauth-console", "2019-02-19", "UpdateDeviceControlInfo", "Cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
