@@ -1,3 +1,6 @@
+2020-09-15 Version: 2.0.2
+- Generated 2019-02-19 for `Cloudauth-console`.
+
 2020-09-15 Version: 2.0.1
 - Generated 2019-02-19 for `Cloudauth-console`.
 
