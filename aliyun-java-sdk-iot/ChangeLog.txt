@@ -1,3 +1,6 @@
+2020-09-15 Version: 7.13.0
+- Fix java sdk version.
+
 2020-09-15 Version: 1.8
 - Add OTA API, including GenerateDeviceNameListURL, CreateOTAModule and UpdateOTAModule.
 - Update OTA API, including CreateOTAStaticUpgradeJob,CreateOTADynamicUpgradeJob, QueryOTAJob, ListOTAJobByFirmware, ListOTAJobByDevice, CreateOTAFirmware and Generat.
