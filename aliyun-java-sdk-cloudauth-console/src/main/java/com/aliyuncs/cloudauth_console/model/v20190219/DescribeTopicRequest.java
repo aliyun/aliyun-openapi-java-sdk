@@ -29,7 +29,7 @@ public class DescribeTopicRequest extends RpcAcsRequest<DescribeTopicResponse> {
 
 	private String projectId;
 	public DescribeTopicRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeTopic", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeTopic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

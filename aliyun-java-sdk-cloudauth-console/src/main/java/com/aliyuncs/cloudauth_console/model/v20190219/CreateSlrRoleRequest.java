@@ -29,7 +29,7 @@ public class CreateSlrRoleRequest extends RpcAcsRequest<CreateSlrRoleResponse> {
 
 	private Long durationSeconds;
 	public CreateSlrRoleRequest() {
-		super("Cloudauth-console", "2019-02-19", "CreateSlrRole", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "CreateSlrRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

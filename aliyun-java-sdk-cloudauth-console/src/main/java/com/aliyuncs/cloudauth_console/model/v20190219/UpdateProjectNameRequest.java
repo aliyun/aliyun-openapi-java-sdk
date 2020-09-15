@@ -29,7 +29,7 @@ public class UpdateProjectNameRequest extends RpcAcsRequest<UpdateProjectNameRes
 
 	private String projectId;
 	public UpdateProjectNameRequest() {
-		super("Cloudauth-console", "2019-02-19", "UpdateProjectName", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "UpdateProjectName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

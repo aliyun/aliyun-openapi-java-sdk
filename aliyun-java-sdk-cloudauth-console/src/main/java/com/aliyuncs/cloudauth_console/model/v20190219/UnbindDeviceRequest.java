@@ -29,7 +29,7 @@ public class UnbindDeviceRequest extends RpcAcsRequest<UnbindDeviceResponse> {
 
 	private String projectId;
 	public UnbindDeviceRequest() {
-		super("Cloudauth-console", "2019-02-19", "UnbindDevice", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "UnbindDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

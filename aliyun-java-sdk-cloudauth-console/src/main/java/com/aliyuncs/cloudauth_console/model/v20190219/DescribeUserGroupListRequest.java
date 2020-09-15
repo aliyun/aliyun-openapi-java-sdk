@@ -27,7 +27,7 @@ public class DescribeUserGroupListRequest extends RpcAcsRequest<DescribeUserGrou
 
 	private String projectId;
 	public DescribeUserGroupListRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeUserGroupList", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeUserGroupList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

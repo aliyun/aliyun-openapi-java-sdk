@@ -31,7 +31,7 @@ public class SaveMnsServeRequest extends RpcAcsRequest<SaveMnsServeResponse> {
 
 	private String projectId;
 	public SaveMnsServeRequest() {
-		super("Cloudauth-console", "2019-02-19", "SaveMnsServe", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "SaveMnsServe");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class SaveUserInfoRequest extends RpcAcsRequest<SaveUserInfoResponse> {
 
 	private String userName;
 	public SaveUserInfoRequest() {
-		super("Cloudauth-console", "2019-02-19", "SaveUserInfo", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "SaveUserInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteUserInfoRequest extends RpcAcsRequest<DeleteUserInfoResponse>
 
 	private String projectId;
 	public DeleteUserInfoRequest() {
-		super("Cloudauth-console", "2019-02-19", "DeleteUserInfo", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DeleteUserInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

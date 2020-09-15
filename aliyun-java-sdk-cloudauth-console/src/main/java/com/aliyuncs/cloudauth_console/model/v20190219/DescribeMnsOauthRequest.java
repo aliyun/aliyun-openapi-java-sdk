@@ -27,7 +27,7 @@ public class DescribeMnsOauthRequest extends RpcAcsRequest<DescribeMnsOauthRespo
 
 	private String projectId;
 	public DescribeMnsOauthRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeMnsOauth", "cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeMnsOauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
