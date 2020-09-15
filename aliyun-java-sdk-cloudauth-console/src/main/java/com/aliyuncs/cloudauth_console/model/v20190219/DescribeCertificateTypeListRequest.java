@@ -27,7 +27,7 @@ public class DescribeCertificateTypeListRequest extends RpcAcsRequest<DescribeCe
 
 	private String projectId;
 	public DescribeCertificateTypeListRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeCertificateTypeList", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeCertificateTypeList", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

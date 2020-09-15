@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth_console.Endpoint;
 public class GetAccountProjectRequest extends RpcAcsRequest<GetAccountProjectResponse> {
 	   
 	public GetAccountProjectRequest() {
-		super("Cloudauth-console", "2019-02-19", "GetAccountProject", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "GetAccountProject", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class UpdateUserGroupRequest extends RpcAcsRequest<UpdateUserGroupRespons
 
 	private String projectId;
 	public UpdateUserGroupRequest() {
-		super("Cloudauth-console", "2019-02-19", "UpdateUserGroup", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "UpdateUserGroup", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

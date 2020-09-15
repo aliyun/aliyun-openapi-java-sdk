@@ -27,7 +27,7 @@ public class DeleteMnsServeRequest extends RpcAcsRequest<DeleteMnsServeResponse>
 
 	private String projectId;
 	public DeleteMnsServeRequest() {
-		super("Cloudauth-console", "2019-02-19", "DeleteMnsServe", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DeleteMnsServe", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

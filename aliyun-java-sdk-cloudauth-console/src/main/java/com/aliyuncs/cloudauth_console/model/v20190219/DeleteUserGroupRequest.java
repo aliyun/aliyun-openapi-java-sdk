@@ -29,7 +29,7 @@ public class DeleteUserGroupRequest extends RpcAcsRequest<DeleteUserGroupRespons
 
 	private String projectId;
 	public DeleteUserGroupRequest() {
-		super("Cloudauth-console", "2019-02-19", "DeleteUserGroup", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DeleteUserGroup", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth_console.Endpoint;
 public class VerifyAccountProjectRequest extends RpcAcsRequest<VerifyAccountProjectResponse> {
 	   
 	public VerifyAccountProjectRequest() {
-		super("Cloudauth-console", "2019-02-19", "VerifyAccountProject", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "VerifyAccountProject", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

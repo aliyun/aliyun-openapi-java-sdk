@@ -29,7 +29,7 @@ public class DescribeSignedUrlRequest extends RpcAcsRequest<DescribeSignedUrlRes
 
 	private String key;
 	public DescribeSignedUrlRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeSignedUrl", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeSignedUrl", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

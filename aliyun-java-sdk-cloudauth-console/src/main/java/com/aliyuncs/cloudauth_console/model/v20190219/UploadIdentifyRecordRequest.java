@@ -41,7 +41,7 @@ public class UploadIdentifyRecordRequest extends RpcAcsRequest<UploadIdentifyRec
 
 	private String userName;
 	public UploadIdentifyRecordRequest() {
-		super("Cloudauth-console", "2019-02-19", "UploadIdentifyRecord", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "UploadIdentifyRecord", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeExcelAnalysisResultRequest extends RpcAcsRequest<DescribeEx
 
 	private String key;
 	public DescribeExcelAnalysisResultRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeExcelAnalysisResult", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeExcelAnalysisResult", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

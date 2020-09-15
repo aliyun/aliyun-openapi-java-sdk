@@ -33,7 +33,7 @@ public class DescribeDeviceListRequest extends RpcAcsRequest<DescribeDeviceListR
 
 	private String projectId;
 	public DescribeDeviceListRequest() {
-		super("Cloudauth-console", "2019-02-19", "DescribeDeviceList", "Cloudauth-console");
+		super("Cloudauth-console", "2019-02-19", "DescribeDeviceList", "cloudauth-console");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
