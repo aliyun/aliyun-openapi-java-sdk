@@ -39,6 +39,9 @@ public class QuerySubscribeRelationResponseUnmarshaller {
 		querySubscribeRelationResponse.setOtaEventFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaEventFlag"));
 		querySubscribeRelationResponse.setThingHistoryFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.ThingHistoryFlag"));
 		querySubscribeRelationResponse.setMnsConfiguration(_ctx.stringValue("QuerySubscribeRelationResponse.MnsConfiguration"));
+		querySubscribeRelationResponse.setDeviceTagFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.DeviceTagFlag"));
+		querySubscribeRelationResponse.setOtaVersionFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaVersionFlag"));
+		querySubscribeRelationResponse.setOtaJobFlag(_ctx.booleanValue("QuerySubscribeRelationResponse.OtaJobFlag"));
 
 		List<String> consumerGroupIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySubscribeRelationResponse.ConsumerGroupIds.Length"); i++) {

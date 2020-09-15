@@ -22,30 +22,23 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUploadURLResponse> {
+public class BindRoleToEdgeInstanceRequest extends RpcAcsRequest<BindRoleToEdgeInstanceResponse> {
 	   
 
-	private String fileSuffix;
-
 	private String iotInstanceId;
-	public GenerateOTAUploadURLRequest() {
-		super("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot");
+
+	private String roleName;
+
+	private String instanceId;
+
+	private String roleArn;
+	public BindRoleToEdgeInstanceRequest() {
+		super("Iot", "2018-01-20", "BindRoleToEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFileSuffix() {
-		return this.fileSuffix;
-	}
-
-	public void setFileSuffix(String fileSuffix) {
-		this.fileSuffix = fileSuffix;
-		if(fileSuffix != null){
-			putQueryParameter("FileSuffix", fileSuffix);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -59,9 +52,42 @@ public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUpload
 		}
 	}
 
+	public String getRoleName() {
+		return this.roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+		if(roleName != null){
+			putQueryParameter("RoleName", roleName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
+		}
+	}
+
 	@Override
-	public Class<GenerateOTAUploadURLResponse> getResponseClass() {
-		return GenerateOTAUploadURLResponse.class;
+	public Class<BindRoleToEdgeInstanceResponse> getResponseClass() {
+		return BindRoleToEdgeInstanceResponse.class;
 	}
 
 }

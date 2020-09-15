@@ -36,7 +36,11 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 
 	private Long scheduleFinishTime;
 
+	private List<Tag> tags;
+
 	private String grayPercent;
+
+	private String dnListFileUrl;
 
 	private String firmwareId;
 
@@ -117,6 +121,20 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getGrayPercent() {
 		return this.grayPercent;
 	}
@@ -125,6 +143,17 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 		this.grayPercent = grayPercent;
 		if(grayPercent != null){
 			putQueryParameter("GrayPercent", grayPercent);
+		}
+	}
+
+	public String getDnListFileUrl() {
+		return this.dnListFileUrl;
+	}
+
+	public void setDnListFileUrl(String dnListFileUrl) {
+		this.dnListFileUrl = dnListFileUrl;
+		if(dnListFileUrl != null){
+			putQueryParameter("DnListFileUrl", dnListFileUrl);
 		}
 	}
 
@@ -218,6 +247,29 @@ public class CreateOTAStaticUpgradeJobRequest extends RpcAcsRequest<CreateOTASta
 				putQueryParameter("TargetDeviceName." + (i + 1) , targetDeviceNames.get(i));
 			}
 		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
 	}
 
 	@Override

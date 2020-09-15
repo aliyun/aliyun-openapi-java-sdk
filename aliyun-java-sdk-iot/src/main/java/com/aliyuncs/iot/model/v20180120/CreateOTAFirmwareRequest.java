@@ -27,6 +27,8 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 	private String signMethod;
 
+	private Boolean needToVerify;
+
 	private Integer type;
 
 	private String firmwareUrl;
@@ -65,6 +67,17 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 		this.signMethod = signMethod;
 		if(signMethod != null){
 			putQueryParameter("SignMethod", signMethod);
+		}
+	}
+
+	public Boolean getNeedToVerify() {
+		return this.needToVerify;
+	}
+
+	public void setNeedToVerify(Boolean needToVerify) {
+		this.needToVerify = needToVerify;
+		if(needToVerify != null){
+			putQueryParameter("NeedToVerify", needToVerify.toString());
 		}
 	}
 

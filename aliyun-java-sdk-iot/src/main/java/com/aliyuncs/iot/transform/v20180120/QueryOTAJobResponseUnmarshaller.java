@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryOTAJobResponse;
 import com.aliyuncs.iot.model.v20180120.QueryOTAJobResponse.Data;
+import com.aliyuncs.iot.model.v20180120.QueryOTAJobResponse.Data.OtaTagDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -61,6 +62,16 @@ public class QueryOTAJobResponseUnmarshaller {
 			srcVersions.add(_ctx.stringValue("QueryOTAJobResponse.Data.SrcVersions["+ i +"]"));
 		}
 		data.setSrcVersions(srcVersions);
+
+		List<OtaTagDTO> tags = new ArrayList<OtaTagDTO>();
+		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.Tags.Length"); i++) {
+			OtaTagDTO otaTagDTO = new OtaTagDTO();
+			otaTagDTO.setKey(_ctx.stringValue("QueryOTAJobResponse.Data.Tags["+ i +"].Key"));
+			otaTagDTO.setValue(_ctx.stringValue("QueryOTAJobResponse.Data.Tags["+ i +"].Value"));
+
+			tags.add(otaTagDTO);
+		}
+		data.setTags(tags);
 		queryOTAJobResponse.setData(data);
 	 
 	 	return queryOTAJobResponse;

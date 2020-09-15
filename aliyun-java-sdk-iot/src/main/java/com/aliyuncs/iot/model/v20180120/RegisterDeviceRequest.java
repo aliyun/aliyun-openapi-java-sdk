@@ -25,6 +25,8 @@ import com.aliyuncs.iot.Endpoint;
 public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse> {
 	   
 
+	private String loraNodeType;
+
 	private String iotInstanceId;
 
 	private String nickname;
@@ -35,7 +37,11 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 
 	private String devEui;
 
+	private String joinEui;
+
 	private String deviceName;
+
+	private String appKey;
 	public RegisterDeviceRequest() {
 		super("Iot", "2018-01-20", "RegisterDevice", "iot");
 		setMethod(MethodType.POST);
@@ -43,6 +49,17 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLoraNodeType() {
+		return this.loraNodeType;
+	}
+
+	public void setLoraNodeType(String loraNodeType) {
+		this.loraNodeType = loraNodeType;
+		if(loraNodeType != null){
+			putQueryParameter("LoraNodeType", loraNodeType);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -100,6 +117,17 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		}
 	}
 
+	public String getJoinEui() {
+		return this.joinEui;
+	}
+
+	public void setJoinEui(String joinEui) {
+		this.joinEui = joinEui;
+		if(joinEui != null){
+			putQueryParameter("JoinEui", joinEui);
+		}
+	}
+
 	public String getDeviceName() {
 		return this.deviceName;
 	}
@@ -108,6 +136,17 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
 		}
 	}
 

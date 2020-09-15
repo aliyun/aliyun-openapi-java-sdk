@@ -22,30 +22,19 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUploadURLResponse> {
+public class UnbindRoleFromEdgeInstanceRequest extends RpcAcsRequest<UnbindRoleFromEdgeInstanceResponse> {
 	   
 
-	private String fileSuffix;
-
 	private String iotInstanceId;
-	public GenerateOTAUploadURLRequest() {
-		super("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot");
+
+	private String instanceId;
+	public UnbindRoleFromEdgeInstanceRequest() {
+		super("Iot", "2018-01-20", "UnbindRoleFromEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFileSuffix() {
-		return this.fileSuffix;
-	}
-
-	public void setFileSuffix(String fileSuffix) {
-		this.fileSuffix = fileSuffix;
-		if(fileSuffix != null){
-			putQueryParameter("FileSuffix", fileSuffix);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -59,9 +48,20 @@ public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUpload
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<GenerateOTAUploadURLResponse> getResponseClass() {
-		return GenerateOTAUploadURLResponse.class;
+	public Class<UnbindRoleFromEdgeInstanceResponse> getResponseClass() {
+		return UnbindRoleFromEdgeInstanceResponse.class;
 	}
 
 }

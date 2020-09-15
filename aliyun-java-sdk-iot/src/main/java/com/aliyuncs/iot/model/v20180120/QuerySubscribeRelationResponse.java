@@ -53,6 +53,12 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 
 	private String mnsConfiguration;
 
+	private Boolean deviceTagFlag;
+
+	private Boolean otaVersionFlag;
+
+	private Boolean otaJobFlag;
+
 	private List<String> consumerGroupIds;
 
 	public String getRequestId() {
@@ -165,6 +171,30 @@ public class QuerySubscribeRelationResponse extends AcsResponse {
 
 	public void setMnsConfiguration(String mnsConfiguration) {
 		this.mnsConfiguration = mnsConfiguration;
+	}
+
+	public Boolean getDeviceTagFlag() {
+		return this.deviceTagFlag;
+	}
+
+	public void setDeviceTagFlag(Boolean deviceTagFlag) {
+		this.deviceTagFlag = deviceTagFlag;
+	}
+
+	public Boolean getOtaVersionFlag() {
+		return this.otaVersionFlag;
+	}
+
+	public void setOtaVersionFlag(Boolean otaVersionFlag) {
+		this.otaVersionFlag = otaVersionFlag;
+	}
+
+	public Boolean getOtaJobFlag() {
+		return this.otaJobFlag;
+	}
+
+	public void setOtaJobFlag(Boolean otaJobFlag) {
+		this.otaJobFlag = otaJobFlag;
 	}
 
 	public List<String> getConsumerGroupIds() {

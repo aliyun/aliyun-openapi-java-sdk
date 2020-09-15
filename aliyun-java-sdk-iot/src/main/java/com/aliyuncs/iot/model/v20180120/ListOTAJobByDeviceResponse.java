@@ -139,6 +139,8 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 
 		private String selectionType;
 
+		private List<OtaTagDTO> tags;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -225,6 +227,37 @@ public class ListOTAJobByDeviceResponse extends AcsResponse {
 
 		public void setSelectionType(String selectionType) {
 			this.selectionType = selectionType;
+		}
+
+		public List<OtaTagDTO> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<OtaTagDTO> tags) {
+			this.tags = tags;
+		}
+
+		public static class OtaTagDTO {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

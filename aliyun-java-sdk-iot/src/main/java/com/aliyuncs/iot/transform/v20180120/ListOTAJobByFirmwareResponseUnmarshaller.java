@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.ListOTAJobByFirmwareResponse;
 import com.aliyuncs.iot.model.v20180120.ListOTAJobByFirmwareResponse.SimpleOTAJobInfo;
+import com.aliyuncs.iot.model.v20180120.ListOTAJobByFirmwareResponse.SimpleOTAJobInfo.OtaTagDTO;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +50,16 @@ public class ListOTAJobByFirmwareResponseUnmarshaller {
 			simpleOTAJobInfo.setJobType(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].JobType"));
 			simpleOTAJobInfo.setTargetSelection(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].TargetSelection"));
 			simpleOTAJobInfo.setSelectionType(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].SelectionType"));
+
+			List<OtaTagDTO> tags = new ArrayList<OtaTagDTO>();
+			for (int j = 0; j < _ctx.lengthValue("ListOTAJobByFirmwareResponse.Data["+ i +"].Tags.Length"); j++) {
+				OtaTagDTO otaTagDTO = new OtaTagDTO();
+				otaTagDTO.setKey(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].Tags["+ j +"].Key"));
+				otaTagDTO.setValue(_ctx.stringValue("ListOTAJobByFirmwareResponse.Data["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(otaTagDTO);
+			}
+			simpleOTAJobInfo.setTags(tags);
 
 			data.add(simpleOTAJobInfo);
 		}

@@ -38,6 +38,10 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 
 	private Boolean deviceStatusChangeFlag;
 
+	private Boolean otaVersionFlag;
+
+	private Boolean deviceTagFlag;
+
 	private List<String> consumerGroupIdss;
 
 	private String productKey;
@@ -45,6 +49,8 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 	private Boolean thingHistoryFlag;
 
 	private Boolean foundDeviceListFlag;
+
+	private Boolean otaJobFlag;
 
 	private Boolean deviceDataFlag;
 
@@ -124,6 +130,28 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 		}
 	}
 
+	public Boolean getOtaVersionFlag() {
+		return this.otaVersionFlag;
+	}
+
+	public void setOtaVersionFlag(Boolean otaVersionFlag) {
+		this.otaVersionFlag = otaVersionFlag;
+		if(otaVersionFlag != null){
+			putQueryParameter("OtaVersionFlag", otaVersionFlag.toString());
+		}
+	}
+
+	public Boolean getDeviceTagFlag() {
+		return this.deviceTagFlag;
+	}
+
+	public void setDeviceTagFlag(Boolean deviceTagFlag) {
+		this.deviceTagFlag = deviceTagFlag;
+		if(deviceTagFlag != null){
+			putQueryParameter("DeviceTagFlag", deviceTagFlag.toString());
+		}
+	}
+
 	public List<String> getConsumerGroupIdss() {
 		return this.consumerGroupIdss;
 	}
@@ -167,6 +195,17 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 		this.foundDeviceListFlag = foundDeviceListFlag;
 		if(foundDeviceListFlag != null){
 			putQueryParameter("FoundDeviceListFlag", foundDeviceListFlag.toString());
+		}
+	}
+
+	public Boolean getOtaJobFlag() {
+		return this.otaJobFlag;
+	}
+
+	public void setOtaJobFlag(Boolean otaJobFlag) {
+		this.otaJobFlag = otaJobFlag;
+		if(otaJobFlag != null){
+			putQueryParameter("OtaJobFlag", otaJobFlag.toString());
 		}
 	}
 

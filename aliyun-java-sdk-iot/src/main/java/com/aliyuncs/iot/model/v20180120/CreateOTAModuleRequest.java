@@ -22,30 +22,25 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUploadURLResponse> {
+public class CreateOTAModuleRequest extends RpcAcsRequest<CreateOTAModuleResponse> {
 	   
 
-	private String fileSuffix;
-
 	private String iotInstanceId;
-	public GenerateOTAUploadURLRequest() {
-		super("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot");
+
+	private String moduleName;
+
+	private String productKey;
+
+	private String aliasName;
+
+	private String desc;
+	public CreateOTAModuleRequest() {
+		super("Iot", "2018-01-20", "CreateOTAModule", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getFileSuffix() {
-		return this.fileSuffix;
-	}
-
-	public void setFileSuffix(String fileSuffix) {
-		this.fileSuffix = fileSuffix;
-		if(fileSuffix != null){
-			putQueryParameter("FileSuffix", fileSuffix);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -59,9 +54,53 @@ public class GenerateOTAUploadURLRequest extends RpcAcsRequest<GenerateOTAUpload
 		}
 	}
 
+	public String getModuleName() {
+		return this.moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+		if(moduleName != null){
+			putQueryParameter("ModuleName", moduleName);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public String getDesc() {
+		return this.desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+		if(desc != null){
+			putQueryParameter("Desc", desc);
+		}
+	}
+
 	@Override
-	public Class<GenerateOTAUploadURLResponse> getResponseClass() {
-		return GenerateOTAUploadURLResponse.class;
+	public Class<CreateOTAModuleResponse> getResponseClass() {
+		return CreateOTAModuleResponse.class;
 	}
 
 }
