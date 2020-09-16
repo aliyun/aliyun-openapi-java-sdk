@@ -23,6 +23,8 @@ public class UpdateDeviceControlInfoResponseUnmarshaller {
 	public static UpdateDeviceControlInfoResponse unmarshall(UpdateDeviceControlInfoResponse updateDeviceControlInfoResponse, UnmarshallerContext _ctx) {
 		
 		updateDeviceControlInfoResponse.setRequestId(_ctx.stringValue("UpdateDeviceControlInfoResponse.RequestId"));
+		updateDeviceControlInfoResponse.setSuccess(_ctx.booleanValue("UpdateDeviceControlInfoResponse.Success"));
+		updateDeviceControlInfoResponse.setHttpStatusCode(_ctx.integerValue("UpdateDeviceControlInfoResponse.HttpStatusCode"));
 	 
 	 	return updateDeviceControlInfoResponse;
 	}
