@@ -1,3 +1,6 @@
+2020-09-16 Version: 1.0.7
+- Upgrade hotline session API.
+
 2020-09-10 Version: 1.0.6
 - Support GetHotlineWaitingNumber in SDK.
 - Support TransferCallToSkillGroup.

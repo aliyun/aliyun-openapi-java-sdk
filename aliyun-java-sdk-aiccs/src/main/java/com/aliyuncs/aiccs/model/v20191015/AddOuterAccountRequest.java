@@ -45,7 +45,7 @@ public class AddOuterAccountRequest extends RpcAcsRequest<AddOuterAccountRespons
 
 	private String outerAccountId;
 	public AddOuterAccountRequest() {
-		super("aiccs", "2019-10-15", "AddOuterAccount", "aiccs");
+		super("aiccs", "2019-10-15", "AddOuterAccount", "aiccs-service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class SuspendOutboundTaskRequest extends RpcAcsRequest<SuspendOutboundTas
 
 	private Long outboundTaskId;
 	public SuspendOutboundTaskRequest() {
-		super("aiccs", "2019-10-15", "SuspendOutboundTask", "aiccs");
+		super("aiccs", "2019-10-15", "SuspendOutboundTask", "aiccs-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

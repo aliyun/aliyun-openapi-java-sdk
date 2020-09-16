@@ -31,7 +31,7 @@ public class GetHotlineWaitingNumberRequest extends RpcAcsRequest<GetHotlineWait
 
 	private String accountName;
 	public GetHotlineWaitingNumberRequest() {
-		super("aiccs", "2019-10-15", "GetHotlineWaitingNumber", "aiccs");
+		super("aiccs", "2019-10-15", "GetHotlineWaitingNumber", "aiccs-service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

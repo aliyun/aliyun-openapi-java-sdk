@@ -64,6 +64,10 @@ public class HotlineSessionQueryResponseUnmarshaller {
 			callDetailRecordItem.setCallResult(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].CallResult"));
 			callDetailRecordItem.setHangUpRole(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].HangUpRole"));
 			callDetailRecordItem.setCreateTime(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].CreateTime"));
+			callDetailRecordItem.setActiveTransferId(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].ActiveTransferId"));
+			callDetailRecordItem.setPassiveTransferId(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].PassiveTransferId"));
+			callDetailRecordItem.setPassiveTransferIdType(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].PassiveTransferIdType"));
+			callDetailRecordItem.setTrunkCall(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].TrunkCall"));
 
 			callDetailRecord.add(callDetailRecordItem);
 		}

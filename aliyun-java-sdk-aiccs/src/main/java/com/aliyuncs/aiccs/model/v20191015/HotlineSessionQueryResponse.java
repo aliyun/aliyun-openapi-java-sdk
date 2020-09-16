@@ -167,6 +167,14 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 			private String createTime;
 
+			private String activeTransferId;
+
+			private String passiveTransferId;
+
+			private String passiveTransferIdType;
+
+			private String trunkCall;
+
 			public String getAcid() {
 				return this.acid;
 			}
@@ -357,6 +365,38 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 			public void setCreateTime(String createTime) {
 				this.createTime = createTime;
+			}
+
+			public String getActiveTransferId() {
+				return this.activeTransferId;
+			}
+
+			public void setActiveTransferId(String activeTransferId) {
+				this.activeTransferId = activeTransferId;
+			}
+
+			public String getPassiveTransferId() {
+				return this.passiveTransferId;
+			}
+
+			public void setPassiveTransferId(String passiveTransferId) {
+				this.passiveTransferId = passiveTransferId;
+			}
+
+			public String getPassiveTransferIdType() {
+				return this.passiveTransferIdType;
+			}
+
+			public void setPassiveTransferIdType(String passiveTransferIdType) {
+				this.passiveTransferIdType = passiveTransferIdType;
+			}
+
+			public String getTrunkCall() {
+				return this.trunkCall;
+			}
+
+			public void setTrunkCall(String trunkCall) {
+				this.trunkCall = trunkCall;
 			}
 		}
 	}
