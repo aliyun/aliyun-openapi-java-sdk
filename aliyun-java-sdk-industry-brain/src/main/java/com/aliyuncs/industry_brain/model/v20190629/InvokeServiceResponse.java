@@ -32,6 +32,8 @@ public class InvokeServiceResponse extends AcsResponse {
 
 	private String message;
 
+	private String context;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class InvokeServiceResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getContext() {
+		return this.context;
+	}
+
+	public void setContext(String context) {
+		this.context = context;
 	}
 
 	@Override

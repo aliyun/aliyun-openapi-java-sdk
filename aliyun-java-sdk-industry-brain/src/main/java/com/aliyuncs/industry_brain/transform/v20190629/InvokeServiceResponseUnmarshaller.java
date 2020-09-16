@@ -26,6 +26,7 @@ public class InvokeServiceResponseUnmarshaller {
 		invokeServiceResponse.setData(_ctx.stringValue("InvokeServiceResponse.Data"));
 		invokeServiceResponse.setCode(_ctx.stringValue("InvokeServiceResponse.Code"));
 		invokeServiceResponse.setMessage(_ctx.stringValue("InvokeServiceResponse.Message"));
+		invokeServiceResponse.setContext(_ctx.stringValue("InvokeServiceResponse.Context"));
 	 
 	 	return invokeServiceResponse;
 	}
