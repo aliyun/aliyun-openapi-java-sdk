@@ -1,3 +1,6 @@
+2020-09-16 Version: 1.0.2
+- Sync region endpoint.
+
 2020-09-08 Version: 1.0.1
 - Add Get User License Api.
 - Add List App Api.
