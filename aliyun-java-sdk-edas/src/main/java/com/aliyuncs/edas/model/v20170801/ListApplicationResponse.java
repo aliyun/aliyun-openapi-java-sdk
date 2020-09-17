@@ -81,6 +81,8 @@ public class ListApplicationResponse extends AcsResponse {
 
 		private Long buildPackageId;
 
+		private Integer runningInstanceCount;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -135,6 +137,14 @@ public class ListApplicationResponse extends AcsResponse {
 
 		public void setBuildPackageId(Long buildPackageId) {
 			this.buildPackageId = buildPackageId;
+		}
+
+		public Integer getRunningInstanceCount() {
+			return this.runningInstanceCount;
+		}
+
+		public void setRunningInstanceCount(Integer runningInstanceCount) {
+			this.runningInstanceCount = runningInstanceCount;
 		}
 	}
 

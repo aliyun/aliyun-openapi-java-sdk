@@ -29,8 +29,6 @@ public class ListDeployGroupResponseUnmarshaller {
 		listDeployGroupResponse.setRequestId(_ctx.stringValue("ListDeployGroupResponse.RequestId"));
 		listDeployGroupResponse.setCode(_ctx.integerValue("ListDeployGroupResponse.Code"));
 		listDeployGroupResponse.setMessage(_ctx.stringValue("ListDeployGroupResponse.Message"));
-		listDeployGroupResponse.setVServerGroupId(_ctx.stringValue("ListDeployGroupResponse.VServerGroupId"));
-		listDeployGroupResponse.setVExtServerGroupId(_ctx.stringValue("ListDeployGroupResponse.VExtServerGroupId"));
 
 		List<DeployGroup> deployGroupList = new ArrayList<DeployGroup>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeployGroupResponse.DeployGroupList.Length"); i++) {
@@ -65,6 +63,8 @@ public class ListDeployGroupResponseUnmarshaller {
 			deployGroup.setPackageVersion(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].PackageVersion"));
 			deployGroup.setCpuRequest(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].CpuRequest"));
 			deployGroup.setMemoryRequest(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].MemoryRequest"));
+			deployGroup.setVServerGroupId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].VServerGroupId"));
+			deployGroup.setVExtServerGroupId(_ctx.stringValue("ListDeployGroupResponse.DeployGroupList["+ i +"].VExtServerGroupId"));
 
 			deployGroupList.add(deployGroup);
 		}

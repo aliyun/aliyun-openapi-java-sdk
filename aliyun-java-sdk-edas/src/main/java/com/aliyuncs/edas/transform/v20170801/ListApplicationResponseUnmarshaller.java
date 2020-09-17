@@ -40,6 +40,7 @@ public class ListApplicationResponseUnmarshaller {
 			application.setClusterType(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterType"));
 			application.setClusterId(_ctx.stringValue("ListApplicationResponse.ApplicationList["+ i +"].ClusterId"));
 			application.setBuildPackageId(_ctx.longValue("ListApplicationResponse.ApplicationList["+ i +"].BuildPackageId"));
+			application.setRunningInstanceCount(_ctx.integerValue("ListApplicationResponse.ApplicationList["+ i +"].RunningInstanceCount"));
 
 			applicationList.add(application);
 		}

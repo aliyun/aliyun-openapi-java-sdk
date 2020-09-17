@@ -29,10 +29,6 @@ public class ListComponentsResponse extends AcsResponse {
 
 	private String message;
 
-	private String componentKey;
-
-	private String desc;
-
 	private List<Component> componentList;
 
 	public Integer getCode() {
@@ -49,22 +45,6 @@ public class ListComponentsResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getComponentKey() {
-		return this.componentKey;
-	}
-
-	public void setComponentKey(String componentKey) {
-		this.componentKey = componentKey;
-	}
-
-	public String getDesc() {
-		return this.desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
 	}
 
 	public List<Component> getComponentList() {
@@ -84,6 +64,10 @@ public class ListComponentsResponse extends AcsResponse {
 		private String version;
 
 		private Boolean expired;
+
+		private String componentKey;
+
+		private String desc;
 
 		public String getComponentId() {
 			return this.componentId;
@@ -115,6 +99,22 @@ public class ListComponentsResponse extends AcsResponse {
 
 		public void setExpired(Boolean expired) {
 			this.expired = expired;
+		}
+
+		public String getComponentKey() {
+			return this.componentKey;
+		}
+
+		public void setComponentKey(String componentKey) {
+			this.componentKey = componentKey;
+		}
+
+		public String getDesc() {
+			return this.desc;
+		}
+
+		public void setDesc(String desc) {
+			this.desc = desc;
 		}
 	}
 

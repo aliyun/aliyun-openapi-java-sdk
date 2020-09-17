@@ -1,3 +1,7 @@
+2020-09-17 Version: 3.12.3
+- Fixed bugs for ListComponents.
+- Supported more search condition for ListApplication.
+
 2020-09-14 Version: 3.12.2
 - Fixed bugs for ListComponents.
 - Supported more search condition for ListApplication.
