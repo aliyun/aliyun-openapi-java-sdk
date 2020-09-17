@@ -1,3 +1,6 @@
+2020-09-17 Version: 3.0.23
+- GetTitleIntelligence add interface.
+
 2020-08-13 Version: 3.0.22
 - GetImageTranslate add column orc.
 
