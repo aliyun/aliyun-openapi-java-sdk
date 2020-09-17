@@ -68,6 +68,7 @@ public class HotlineSessionQueryResponseUnmarshaller {
 			callDetailRecordItem.setPassiveTransferId(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].PassiveTransferId"));
 			callDetailRecordItem.setPassiveTransferIdType(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].PassiveTransferIdType"));
 			callDetailRecordItem.setTrunkCall(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].TrunkCall"));
+			callDetailRecordItem.setId(_ctx.stringValue("HotlineSessionQueryResponse.Data.CallDetailRecord["+ i +"].Id"));
 
 			callDetailRecord.add(callDetailRecordItem);
 		}

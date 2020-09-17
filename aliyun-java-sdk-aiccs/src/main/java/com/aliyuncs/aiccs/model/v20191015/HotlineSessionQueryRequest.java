@@ -55,6 +55,8 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 
 	private String callResult;
 
+	private String id;
+
 	private Integer callType;
 
 	private String memberName;
@@ -231,6 +233,17 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		this.callResult = callResult;
 		if(callResult != null){
 			putQueryParameter("CallResult", callResult);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 

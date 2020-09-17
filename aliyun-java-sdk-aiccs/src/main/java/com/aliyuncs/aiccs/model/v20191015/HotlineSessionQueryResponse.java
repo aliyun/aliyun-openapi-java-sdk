@@ -175,6 +175,8 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 			private String trunkCall;
 
+			private String id;
+
 			public String getAcid() {
 				return this.acid;
 			}
@@ -397,6 +399,14 @@ public class HotlineSessionQueryResponse extends AcsResponse {
 
 			public void setTrunkCall(String trunkCall) {
 				this.trunkCall = trunkCall;
+			}
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
 			}
 		}
 	}

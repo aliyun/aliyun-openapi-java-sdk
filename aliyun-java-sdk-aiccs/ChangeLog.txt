@@ -1,3 +1,6 @@
+2020-09-17 Version: 1.0.8
+- Upgrade hotline session API.
+
 2020-09-16 Version: 1.0.7
 - Upgrade hotline session API.
 
