@@ -1,3 +1,6 @@
+2020-09-17 Version: 1.7.5
+- Fix endpoint.
+
 2020-09-08 Version: 1.7.3
 - Add DescribeActiveOperationTask.
 - Add DescribeActiveOperationTaskCount.

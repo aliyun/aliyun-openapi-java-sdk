@@ -43,6 +43,8 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 
 	private String endpointConfig;
 
+	private String dBEndpointDescription;
+
 	private Long ownerId;
 
 	private String nodes;
@@ -151,6 +153,17 @@ public class CreateDBClusterEndpointRequest extends RpcAcsRequest<CreateDBCluste
 		this.endpointConfig = endpointConfig;
 		if(endpointConfig != null){
 			putQueryParameter("EndpointConfig", endpointConfig);
+		}
+	}
+
+	public String getDBEndpointDescription() {
+		return this.dBEndpointDescription;
+	}
+
+	public void setDBEndpointDescription(String dBEndpointDescription) {
+		this.dBEndpointDescription = dBEndpointDescription;
+		if(dBEndpointDescription != null){
+			putQueryParameter("DBEndpointDescription", dBEndpointDescription);
 		}
 	}
 

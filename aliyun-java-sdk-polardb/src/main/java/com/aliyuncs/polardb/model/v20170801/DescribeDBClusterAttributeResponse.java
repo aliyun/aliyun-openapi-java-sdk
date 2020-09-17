@@ -75,6 +75,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private Long dataLevel1BackupChainSize;
 
+	private String category;
+
 	private List<Tag> tags;
 
 	private List<DBNode> dBNodes;
@@ -277,6 +279,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setDataLevel1BackupChainSize(Long dataLevel1BackupChainSize) {
 		this.dataLevel1BackupChainSize = dataLevel1BackupChainSize;
+	}
+
+	public String getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public List<Tag> getTags() {
