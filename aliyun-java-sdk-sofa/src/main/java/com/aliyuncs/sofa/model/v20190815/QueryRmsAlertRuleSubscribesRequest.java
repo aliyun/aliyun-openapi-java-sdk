@@ -29,7 +29,7 @@ public class QueryRmsAlertRuleSubscribesRequest extends RpcAcsRequest<QueryRmsAl
 
 	private String queryJsonStr;
 	public QueryRmsAlertRuleSubscribesRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlertRuleSubscribes", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsAlertRuleSubscribes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

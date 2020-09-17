@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreEnvqueryproducthostRequest extends Rp
 
 	private String tenantId;
 	public QueryLinkedeploycoreDeploycoreEnvqueryproducthostRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreEnvqueryproducthost", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreEnvqueryproducthost", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

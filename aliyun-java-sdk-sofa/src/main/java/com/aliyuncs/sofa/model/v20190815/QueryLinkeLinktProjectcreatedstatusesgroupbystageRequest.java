@@ -27,7 +27,7 @@ public class QueryLinkeLinktProjectcreatedstatusesgroupbystageRequest extends Rp
 
 	private String projectSign;
 	public QueryLinkeLinktProjectcreatedstatusesgroupbystageRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktProjectcreatedstatusesgroupbystage", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktProjectcreatedstatusesgroupbystage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

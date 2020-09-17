@@ -33,7 +33,7 @@ public class CheckLinkeantcodeAntcodeCheckifyamlconfigisvalidRequest extends Rpc
 
 	private String requestGitOperate;
 	public CheckLinkeantcodeAntcodeCheckifyamlconfigisvalidRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeantcodeAntcodeCheckifyamlconfigisvalid", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeantcodeAntcodeCheckifyamlconfigisvalid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

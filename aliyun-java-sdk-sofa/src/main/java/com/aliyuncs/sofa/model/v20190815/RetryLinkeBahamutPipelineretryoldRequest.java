@@ -37,7 +37,7 @@ public class RetryLinkeBahamutPipelineretryoldRequest extends RpcAcsRequest<Retr
 
 	private String stageId;
 	public RetryLinkeBahamutPipelineretryoldRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkeBahamutPipelineretryold", "sofa");
+		super("SOFA", "2019-08-15", "RetryLinkeBahamutPipelineretryold", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

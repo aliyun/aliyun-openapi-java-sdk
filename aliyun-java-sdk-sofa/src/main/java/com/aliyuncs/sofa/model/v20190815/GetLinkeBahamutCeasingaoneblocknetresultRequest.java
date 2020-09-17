@@ -27,7 +27,7 @@ public class GetLinkeBahamutCeasingaoneblocknetresultRequest extends RpcAcsReque
 
 	private String releaseId;
 	public GetLinkeBahamutCeasingaoneblocknetresultRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutCeasingaoneblocknetresult", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutCeasingaoneblocknetresult", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

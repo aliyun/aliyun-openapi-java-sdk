@@ -35,7 +35,7 @@ public class AddMSDdcsDataRequest extends RpcAcsRequest<AddMSDdcsDataResponse> {
 
 	private String instanceId;
 	public AddMSDdcsDataRequest() {
-		super("SOFA", "2019-08-15", "AddMSDdcsData", "sofa");
+		super("SOFA", "2019-08-15", "AddMSDdcsData", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

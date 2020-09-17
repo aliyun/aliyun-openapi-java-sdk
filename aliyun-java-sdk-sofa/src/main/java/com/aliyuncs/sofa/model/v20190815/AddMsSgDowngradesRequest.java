@@ -39,7 +39,7 @@ public class AddMsSgDowngradesRequest extends RpcAcsRequest<AddMsSgDowngradesRes
 
 	private String strategy;
 	public AddMsSgDowngradesRequest() {
-		super("SOFA", "2019-08-15", "AddMsSgDowngrades", "sofa");
+		super("SOFA", "2019-08-15", "AddMsSgDowngrades", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

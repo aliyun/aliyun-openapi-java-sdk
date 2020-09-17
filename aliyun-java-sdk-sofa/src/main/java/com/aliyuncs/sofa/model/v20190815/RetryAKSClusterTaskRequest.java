@@ -31,7 +31,7 @@ public class RetryAKSClusterTaskRequest extends RpcAcsRequest<RetryAKSClusterTas
 
 	private String operatorName;
 	public RetryAKSClusterTaskRequest() {
-		super("SOFA", "2019-08-15", "RetryAKSClusterTask", "sofa");
+		super("SOFA", "2019-08-15", "RetryAKSClusterTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -42,7 +42,7 @@ public class AddLinkeBahamutAdmincreatebasejarRequest extends RpcAcsRequest<AddL
 
 	private String repoName;
 	public AddLinkeBahamutAdmincreatebasejarRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmincreatebasejar", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmincreatebasejar", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

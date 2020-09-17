@@ -27,7 +27,7 @@ public class GetLinkelinkflowLinkflowAttachmentsuploadinfoRequest extends RpcAcs
 
 	private String fileName;
 	public GetLinkelinkflowLinkflowAttachmentsuploadinfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowAttachmentsuploadinfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowAttachmentsuploadinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

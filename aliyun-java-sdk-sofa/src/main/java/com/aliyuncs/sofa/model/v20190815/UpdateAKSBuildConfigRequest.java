@@ -48,7 +48,7 @@ public class UpdateAKSBuildConfigRequest extends RpcAcsRequest<UpdateAKSBuildCon
 
 	private String appId;
 	public UpdateAKSBuildConfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSBuildConfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateAKSBuildConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

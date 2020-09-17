@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeDeletenamespacememberRequest extends RpcAc
 
 	private String requestGitOperate;
 	public DeleteLinkeantcodeAntcodeDeletenamespacememberRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeletenamespacemember", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeletenamespacemember", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

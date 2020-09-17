@@ -29,7 +29,7 @@ public class GetLinkeBahamutApptenantpathappnamecustompipelineRequest extends Rp
 
 	private String tenantPath;
 	public GetLinkeBahamutApptenantpathappnamecustompipelineRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutApptenantpathappnamecustompipeline", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutApptenantpathappnamecustompipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkeLinktBelongtoprojectsbasedonrelevantprojectRequest extends 
 
 	private String relevantProjectSign;
 	public GetLinkeLinktBelongtoprojectsbasedonrelevantprojectRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinktBelongtoprojectsbasedonrelevantproject", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinktBelongtoprojectsbasedonrelevantproject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

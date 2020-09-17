@@ -31,7 +31,7 @@ public class EnableLinkeantcodeAntcodeGroupsidinstallationsRequest extends RpcAc
 
 	private String serviceId;
 	public EnableLinkeantcodeAntcodeGroupsidinstallationsRequest() {
-		super("SOFA", "2019-08-15", "EnableLinkeantcodeAntcodeGroupsidinstallations", "sofa");
+		super("SOFA", "2019-08-15", "EnableLinkeantcodeAntcodeGroupsidinstallations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

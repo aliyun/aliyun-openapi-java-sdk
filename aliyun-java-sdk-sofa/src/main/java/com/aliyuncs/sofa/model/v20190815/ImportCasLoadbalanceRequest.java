@@ -30,7 +30,7 @@ public class ImportCasLoadbalanceRequest extends RpcAcsRequest<ImportCasLoadbala
 
 	private List<String> loadbalanceIdsRepeatLists;
 	public ImportCasLoadbalanceRequest() {
-		super("SOFA", "2019-08-15", "ImportCasLoadbalance", "sofa");
+		super("SOFA", "2019-08-15", "ImportCasLoadbalance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

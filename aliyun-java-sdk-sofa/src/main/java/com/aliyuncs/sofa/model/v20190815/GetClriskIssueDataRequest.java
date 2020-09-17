@@ -27,7 +27,7 @@ public class GetClriskIssueDataRequest extends RpcAcsRequest<GetClriskIssueDataR
 
 	private Long taskId;
 	public GetClriskIssueDataRequest() {
-		super("SOFA", "2019-08-15", "GetClriskIssueData", "sofa");
+		super("SOFA", "2019-08-15", "GetClriskIssueData", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

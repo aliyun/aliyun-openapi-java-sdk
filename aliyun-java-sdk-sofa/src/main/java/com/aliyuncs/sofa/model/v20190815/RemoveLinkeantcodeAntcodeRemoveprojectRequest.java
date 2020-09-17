@@ -29,7 +29,7 @@ public class RemoveLinkeantcodeAntcodeRemoveprojectRequest extends RpcAcsRequest
 
 	private String requestGitOperate;
 	public RemoveLinkeantcodeAntcodeRemoveprojectRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeantcodeAntcodeRemoveproject", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeantcodeAntcodeRemoveproject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

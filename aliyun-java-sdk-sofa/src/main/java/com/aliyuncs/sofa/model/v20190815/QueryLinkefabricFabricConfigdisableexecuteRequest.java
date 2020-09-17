@@ -67,7 +67,7 @@ public class QueryLinkefabricFabricConfigdisableexecuteRequest extends RpcAcsReq
 
 	private String typeName;
 	public QueryLinkefabricFabricConfigdisableexecuteRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricConfigdisableexecute", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricConfigdisableexecute", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

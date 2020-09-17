@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class BatchqueryLinkeBahamutCloudtenantRequest extends RpcAcsRequest<BatchqueryLinkeBahamutCloudtenantResponse> {
 	   
 	public BatchqueryLinkeBahamutCloudtenantRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryLinkeBahamutCloudtenant", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryLinkeBahamutCloudtenant", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

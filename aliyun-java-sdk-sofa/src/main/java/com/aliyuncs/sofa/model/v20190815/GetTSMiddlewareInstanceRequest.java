@@ -29,7 +29,7 @@ public class GetTSMiddlewareInstanceRequest extends RpcAcsRequest<GetTSMiddlewar
 
 	private String workspaceId;
 	public GetTSMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetTSMiddlewareInstance", "sofa");
+		super("SOFA", "2019-08-15", "GetTSMiddlewareInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

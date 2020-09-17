@@ -27,7 +27,7 @@ public class QueryLinkeLinktSubprojectsRequest extends RpcAcsRequest<QueryLinkeL
 
 	private String projectSign;
 	public QueryLinkeLinktSubprojectsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktSubprojects", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktSubprojects", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

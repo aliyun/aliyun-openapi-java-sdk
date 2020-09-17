@@ -41,7 +41,7 @@ public class UpdateLinkeLinktRiskRequest extends RpcAcsRequest<UpdateLinkeLinktR
 
 	private String status;
 	public UpdateLinkeLinktRiskRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktRisk", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktRisk", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class QueryLinkeBahamutZappinfosecarchdomainRequest extends RpcAcsRequest
 
 	private String metaCenterArchDomainId;
 	public QueryLinkeBahamutZappinfosecarchdomainRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutZappinfosecarchdomain", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutZappinfosecarchdomain", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListDTXAppsRecoverydsnameRequest extends RpcAcsRequest<ListDTXAppsR
 
 	private String instanceId;
 	public ListDTXAppsRecoverydsnameRequest() {
-		super("SOFA", "2019-08-15", "ListDTXAppsRecoverydsname", "sofa");
+		super("SOFA", "2019-08-15", "ListDTXAppsRecoverydsname", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

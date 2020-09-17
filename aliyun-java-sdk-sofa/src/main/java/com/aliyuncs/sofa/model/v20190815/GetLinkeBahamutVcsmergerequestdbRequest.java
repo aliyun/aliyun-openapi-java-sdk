@@ -33,7 +33,7 @@ public class GetLinkeBahamutVcsmergerequestdbRequest extends RpcAcsRequest<GetLi
 
 	private String mergeRequestId;
 	public GetLinkeBahamutVcsmergerequestdbRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsmergerequestdb", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsmergerequestdb", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

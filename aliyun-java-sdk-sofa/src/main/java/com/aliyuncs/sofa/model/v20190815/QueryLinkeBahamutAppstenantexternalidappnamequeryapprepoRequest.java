@@ -29,7 +29,7 @@ public class QueryLinkeBahamutAppstenantexternalidappnamequeryapprepoRequest ext
 
 	private String appName;
 	public QueryLinkeBahamutAppstenantexternalidappnamequeryapprepoRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppstenantexternalidappnamequeryapprepo", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppstenantexternalidappnamequeryapprepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

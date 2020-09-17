@@ -33,7 +33,7 @@ public class QueryCasDatabaseImportRequest extends RpcAcsRequest<QueryCasDatabas
 
 	private String iaasType;
 	public QueryCasDatabaseImportRequest() {
-		super("SOFA", "2019-08-15", "QueryCasDatabaseImport", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasDatabaseImport", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

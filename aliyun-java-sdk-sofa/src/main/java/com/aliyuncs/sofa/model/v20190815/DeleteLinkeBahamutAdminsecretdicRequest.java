@@ -27,7 +27,7 @@ public class DeleteLinkeBahamutAdminsecretdicRequest extends RpcAcsRequest<Delet
 
 	private String uniqueKey;
 	public DeleteLinkeBahamutAdminsecretdicRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAdminsecretdic", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAdminsecretdic", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

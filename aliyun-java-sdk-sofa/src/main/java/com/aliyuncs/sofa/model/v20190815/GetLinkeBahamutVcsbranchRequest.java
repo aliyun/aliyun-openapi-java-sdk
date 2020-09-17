@@ -31,7 +31,7 @@ public class GetLinkeBahamutVcsbranchRequest extends RpcAcsRequest<GetLinkeBaham
 
 	private String branchName;
 	public GetLinkeBahamutVcsbranchRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsbranch", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsbranch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

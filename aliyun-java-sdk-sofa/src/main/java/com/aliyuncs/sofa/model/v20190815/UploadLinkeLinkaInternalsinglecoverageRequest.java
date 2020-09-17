@@ -58,7 +58,7 @@ public class UploadLinkeLinkaInternalsinglecoverageRequest extends RpcAcsRequest
 
 	private List<String> excludesRepeatLists;
 	public UploadLinkeLinkaInternalsinglecoverageRequest() {
-		super("SOFA", "2019-08-15", "UploadLinkeLinkaInternalsinglecoverage", "sofa");
+		super("SOFA", "2019-08-15", "UploadLinkeLinkaInternalsinglecoverage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

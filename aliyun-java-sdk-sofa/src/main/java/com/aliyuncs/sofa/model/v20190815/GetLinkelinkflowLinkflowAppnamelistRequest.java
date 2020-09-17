@@ -27,7 +27,7 @@ public class GetLinkelinkflowLinkflowAppnamelistRequest extends RpcAcsRequest<Ge
 
 	private String linkflowTenant;
 	public GetLinkelinkflowLinkflowAppnamelistRequest() {
-		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowAppnamelist", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowAppnamelist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class QueryLinkeBahamutReleaseattachtoreleaseRequest extends RpcAcsReques
 
 	private String overdueMes;
 	public QueryLinkeBahamutReleaseattachtoreleaseRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleaseattachtorelease", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleaseattachtorelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

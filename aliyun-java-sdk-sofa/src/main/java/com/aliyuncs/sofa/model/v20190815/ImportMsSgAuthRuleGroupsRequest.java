@@ -29,7 +29,7 @@ public class ImportMsSgAuthRuleGroupsRequest extends RpcAcsRequest<ImportMsSgAut
 
 	private String authRuleJson;
 	public ImportMsSgAuthRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "ImportMsSgAuthRuleGroups", "sofa");
+		super("SOFA", "2019-08-15", "ImportMsSgAuthRuleGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

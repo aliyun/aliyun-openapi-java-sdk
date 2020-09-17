@@ -33,7 +33,7 @@ public class CreateCASSlsConfigRequest extends RpcAcsRequest<CreateCASSlsConfigR
 
 	private String projectName;
 	public CreateCASSlsConfigRequest() {
-		super("SOFA", "2019-08-15", "CreateCASSlsConfig", "sofa");
+		super("SOFA", "2019-08-15", "CreateCASSlsConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

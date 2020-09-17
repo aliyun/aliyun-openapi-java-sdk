@@ -35,7 +35,7 @@ public class QueryLinkelinkflowLinkflowTaskRequest extends RpcAcsRequest<QueryLi
 
 	private String iterationId;
 	public QueryLinkelinkflowLinkflowTaskRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkelinkflowLinkflowTask", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkelinkflowLinkflowTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

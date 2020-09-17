@@ -27,7 +27,7 @@ public class ListClriskRuleCyclesRequest extends RpcAcsRequest<ListClriskRuleCyc
 
 	private String modelCode;
 	public ListClriskRuleCyclesRequest() {
-		super("SOFA", "2019-08-15", "ListClriskRuleCycles", "sofa");
+		super("SOFA", "2019-08-15", "ListClriskRuleCycles", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

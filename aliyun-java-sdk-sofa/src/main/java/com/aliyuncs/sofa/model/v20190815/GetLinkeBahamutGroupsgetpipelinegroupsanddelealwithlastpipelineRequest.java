@@ -27,7 +27,7 @@ public class GetLinkeBahamutGroupsgetpipelinegroupsanddelealwithlastpipelineRequ
 
 	private String stageId;
 	public GetLinkeBahamutGroupsgetpipelinegroupsanddelealwithlastpipelineRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGroupsgetpipelinegroupsanddelealwithlastpipeline", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGroupsgetpipelinegroupsanddelealwithlastpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

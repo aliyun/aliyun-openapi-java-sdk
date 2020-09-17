@@ -27,7 +27,7 @@ public class CountLinkeLinktRiskRequest extends RpcAcsRequest<CountLinkeLinktRis
 
 	private String projectSign;
 	public CountLinkeLinktRiskRequest() {
-		super("SOFA", "2019-08-15", "CountLinkeLinktRisk", "sofa");
+		super("SOFA", "2019-08-15", "CountLinkeLinktRisk", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

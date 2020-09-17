@@ -41,7 +41,7 @@ public class ExecLinkefabricFabricMsgpretaskRequest extends RpcAcsRequest<ExecLi
 
 	private String releaseId;
 	public ExecLinkefabricFabricMsgpretaskRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkefabricFabricMsgpretask", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkefabricFabricMsgpretask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

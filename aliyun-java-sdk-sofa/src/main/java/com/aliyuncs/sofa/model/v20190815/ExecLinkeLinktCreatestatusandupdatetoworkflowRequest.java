@@ -31,7 +31,7 @@ public class ExecLinkeLinktCreatestatusandupdatetoworkflowRequest extends RpcAcs
 
 	private String formJsonStr;
 	public ExecLinkeLinktCreatestatusandupdatetoworkflowRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatestatusandupdatetoworkflow", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatestatusandupdatetoworkflow", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class BatchqueryODPSchemasInterceptorsRequest extends RpcAcsRequest<Batch
 
 	private String instanceId;
 	public BatchqueryODPSchemasInterceptorsRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryODPSchemasInterceptors", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryODPSchemasInterceptors", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

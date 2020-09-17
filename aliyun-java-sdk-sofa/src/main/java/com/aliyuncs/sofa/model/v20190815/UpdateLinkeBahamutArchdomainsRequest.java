@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutArchdomainsRequest extends RpcAcsRequest<UpdateLi
 
 	private String archDomainMetaJsonStr;
 	public UpdateLinkeBahamutArchdomainsRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutArchdomains", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutArchdomains", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListLinkeLinktProjectusedcustomfieldsRequest extends RpcAcsRequest<
 
 	private String projectSign;
 	public ListLinkeLinktProjectusedcustomfieldsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktProjectusedcustomfields", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktProjectusedcustomfields", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

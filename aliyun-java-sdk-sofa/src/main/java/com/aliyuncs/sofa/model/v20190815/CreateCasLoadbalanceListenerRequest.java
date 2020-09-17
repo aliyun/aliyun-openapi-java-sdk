@@ -61,7 +61,7 @@ public class CreateCasLoadbalanceListenerRequest extends RpcAcsRequest<CreateCas
 
 	private String vComputerGroupId;
 	public CreateCasLoadbalanceListenerRequest() {
-		super("SOFA", "2019-08-15", "CreateCasLoadbalanceListener", "sofa");
+		super("SOFA", "2019-08-15", "CreateCasLoadbalanceListener", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

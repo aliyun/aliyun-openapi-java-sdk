@@ -29,7 +29,7 @@ public class SaveLinkeLinktIterationlockRequest extends RpcAcsRequest<SaveLinkeL
 
 	private String iterationSign;
 	public SaveLinkeLinktIterationlockRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktIterationlock", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktIterationlock", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

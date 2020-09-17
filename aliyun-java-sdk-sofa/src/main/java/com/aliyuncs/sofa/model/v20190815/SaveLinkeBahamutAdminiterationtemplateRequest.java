@@ -48,7 +48,7 @@ public class SaveLinkeBahamutAdminiterationtemplateRequest extends RpcAcsRequest
 
 	private String name;
 	public SaveLinkeBahamutAdminiterationtemplateRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdminiterationtemplate", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdminiterationtemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

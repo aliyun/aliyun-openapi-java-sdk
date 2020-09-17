@@ -35,7 +35,7 @@ public class UpdateLinkeBahamutVcsmergerequestRequest extends RpcAcsRequest<Upda
 
 	private String bahamutCharset;
 	public UpdateLinkeBahamutVcsmergerequestRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutVcsmergerequest", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutVcsmergerequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

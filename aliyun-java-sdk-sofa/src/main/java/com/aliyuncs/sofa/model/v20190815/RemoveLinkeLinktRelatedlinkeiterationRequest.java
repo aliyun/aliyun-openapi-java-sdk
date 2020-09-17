@@ -29,7 +29,7 @@ public class RemoveLinkeLinktRelatedlinkeiterationRequest extends RpcAcsRequest<
 
 	private String linkEIterationKey;
 	public RemoveLinkeLinktRelatedlinkeiterationRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktRelatedlinkeiteration", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktRelatedlinkeiteration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteLinkeBahamutReleaseappRequest extends RpcAcsRequest<DeleteLin
 
 	private String releaseId;
 	public DeleteLinkeBahamutReleaseappRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutReleaseapp", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutReleaseapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetMqSofamqLdcByNamespaceRequest extends RpcAcsRequest<GetMqSofamqL
 
 	private String instanceId;
 	public GetMqSofamqLdcByNamespaceRequest() {
-		super("SOFA", "2019-08-15", "GetMqSofamqLdcByNamespace", "sofa");
+		super("SOFA", "2019-08-15", "GetMqSofamqLdcByNamespace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

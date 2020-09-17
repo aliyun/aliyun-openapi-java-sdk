@@ -34,7 +34,7 @@ public class QueryLinkeBahamutBatchnextstageRequest extends RpcAcsRequest<QueryL
 
 	private List<String> fromStageIdsRepeatLists;
 	public QueryLinkeBahamutBatchnextstageRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutBatchnextstage", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutBatchnextstage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListAKSClusterSecuritygroupRequest extends RpcAcsRequest<ListAKSClu
 
 	private String workspace;
 	public ListAKSClusterSecuritygroupRequest() {
-		super("SOFA", "2019-08-15", "ListAKSClusterSecuritygroup", "sofa");
+		super("SOFA", "2019-08-15", "ListAKSClusterSecuritygroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

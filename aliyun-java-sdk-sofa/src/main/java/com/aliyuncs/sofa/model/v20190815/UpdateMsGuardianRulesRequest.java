@@ -47,7 +47,7 @@ public class UpdateMsGuardianRulesRequest extends RpcAcsRequest<UpdateMsGuardian
 
 	private String name;
 	public UpdateMsGuardianRulesRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsGuardianRules", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsGuardianRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

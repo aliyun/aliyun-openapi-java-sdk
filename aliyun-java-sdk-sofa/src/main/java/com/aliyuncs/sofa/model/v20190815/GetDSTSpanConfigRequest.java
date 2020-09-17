@@ -27,7 +27,7 @@ public class GetDSTSpanConfigRequest extends RpcAcsRequest<GetDSTSpanConfigRespo
 
 	private String instanceId;
 	public GetDSTSpanConfigRequest() {
-		super("SOFA", "2019-08-15", "GetDSTSpanConfig", "sofa");
+		super("SOFA", "2019-08-15", "GetDSTSpanConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

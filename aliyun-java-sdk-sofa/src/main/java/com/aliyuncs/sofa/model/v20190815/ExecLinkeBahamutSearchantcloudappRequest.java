@@ -29,7 +29,7 @@ public class ExecLinkeBahamutSearchantcloudappRequest extends RpcAcsRequest<Exec
 
 	private String tenantId;
 	public ExecLinkeBahamutSearchantcloudappRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeBahamutSearchantcloudapp", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeBahamutSearchantcloudapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

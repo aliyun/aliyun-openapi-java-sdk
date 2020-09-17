@@ -62,7 +62,7 @@ public class DescribeAppServiceEnvParamRequest extends RpcAcsRequest<DescribeApp
 
 	private String workspaceId;
 	public DescribeAppServiceEnvParamRequest() {
-		super("SOFA", "2019-08-15", "DescribeAppServiceEnvParam", "sofa");
+		super("SOFA", "2019-08-15", "DescribeAppServiceEnvParam", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

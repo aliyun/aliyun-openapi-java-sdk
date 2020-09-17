@@ -40,7 +40,7 @@ public class UpdateLinkeantcodeAntcodeUpdatecommitnoteRequest extends RpcAcsRequ
 
 	private String sha;
 	public UpdateLinkeantcodeAntcodeUpdatecommitnoteRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatecommitnote", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatecommitnote", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CancelLinkeantcodeAntcodePipelineRequest extends RpcAcsRequest<Canc
 
 	private String requestGitOperate;
 	public CancelLinkeantcodeAntcodePipelineRequest() {
-		super("SOFA", "2019-08-15", "CancelLinkeantcodeAntcodePipeline", "sofa");
+		super("SOFA", "2019-08-15", "CancelLinkeantcodeAntcodePipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

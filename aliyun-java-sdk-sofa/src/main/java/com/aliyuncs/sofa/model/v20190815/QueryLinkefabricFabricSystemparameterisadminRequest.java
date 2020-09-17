@@ -67,7 +67,7 @@ public class QueryLinkefabricFabricSystemparameterisadminRequest extends RpcAcsR
 
 	private String typeName;
 	public QueryLinkefabricFabricSystemparameterisadminRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSystemparameterisadmin", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSystemparameterisadmin", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class JudgeLinkeBahamutDiffbetweenbranchesRequest extends RpcAcsRequest<J
 
 	private String tenantName;
 	public JudgeLinkeBahamutDiffbetweenbranchesRequest() {
-		super("SOFA", "2019-08-15", "JudgeLinkeBahamutDiffbetweenbranches", "sofa");
+		super("SOFA", "2019-08-15", "JudgeLinkeBahamutDiffbetweenbranches", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

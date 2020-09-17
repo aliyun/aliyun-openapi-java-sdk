@@ -37,7 +37,7 @@ public class QueryMsSgDowngradeGroupsRequest extends RpcAcsRequest<QueryMsSgDown
 
 	private String instanceId;
 	public QueryMsSgDowngradeGroupsRequest() {
-		super("SOFA", "2019-08-15", "QueryMsSgDowngradeGroups", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsSgDowngradeGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

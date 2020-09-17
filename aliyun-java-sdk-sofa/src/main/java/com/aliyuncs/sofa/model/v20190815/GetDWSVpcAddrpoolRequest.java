@@ -27,7 +27,7 @@ public class GetDWSVpcAddrpoolRequest extends RpcAcsRequest<GetDWSVpcAddrpoolRes
 
 	private String instanceId;
 	public GetDWSVpcAddrpoolRequest() {
-		super("SOFA", "2019-08-15", "GetDWSVpcAddrpool", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSVpcAddrpool", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

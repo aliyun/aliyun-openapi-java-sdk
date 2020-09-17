@@ -27,7 +27,7 @@ public class GetLinkeBahamutStagebranchinfoRequest extends RpcAcsRequest<GetLink
 
 	private String unitId;
 	public GetLinkeBahamutStagebranchinfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutStagebranchinfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutStagebranchinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class StartLinkelinkflowLinkflowProcessRequest extends RpcAcsRequest<Star
 
 	private String startUserId;
 	public StartLinkelinkflowLinkflowProcessRequest() {
-		super("SOFA", "2019-08-15", "StartLinkelinkflowLinkflowProcess", "sofa");
+		super("SOFA", "2019-08-15", "StartLinkelinkflowLinkflowProcess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

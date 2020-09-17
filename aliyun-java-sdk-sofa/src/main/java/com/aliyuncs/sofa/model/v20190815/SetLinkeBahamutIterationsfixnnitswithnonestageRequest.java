@@ -33,7 +33,7 @@ public class SetLinkeBahamutIterationsfixnnitswithnonestageRequest extends RpcAc
 
 	private String id;
 	public SetLinkeBahamutIterationsfixnnitswithnonestageRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutIterationsfixnnitswithnonestage", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutIterationsfixnnitswithnonestage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

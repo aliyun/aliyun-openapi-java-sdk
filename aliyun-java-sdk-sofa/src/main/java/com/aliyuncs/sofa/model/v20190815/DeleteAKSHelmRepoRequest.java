@@ -29,7 +29,7 @@ public class DeleteAKSHelmRepoRequest extends RpcAcsRequest<DeleteAKSHelmRepoRes
 
 	private String repoName;
 	public DeleteAKSHelmRepoRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSHelmRepo", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSHelmRepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CreateLinkeantcodeAntcodeProjectsidrepositoryfilesRequest extends R
 
 	private String requestGitOperate;
 	public CreateLinkeantcodeAntcodeProjectsidrepositoryfilesRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectsidrepositoryfiles", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectsidrepositoryfiles", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

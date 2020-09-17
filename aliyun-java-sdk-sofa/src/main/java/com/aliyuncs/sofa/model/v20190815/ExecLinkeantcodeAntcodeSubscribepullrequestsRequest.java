@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeSubscribepullrequestsRequest extends RpcAcsR
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeSubscribepullrequestsRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeSubscribepullrequests", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeSubscribepullrequests", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CallbackMsSpiOmsRequest extends RpcAcsRequest<CallbackMsSpiOmsRespo
 
 	private String data;
 	public CallbackMsSpiOmsRequest() {
-		super("SOFA", "2019-08-15", "CallbackMsSpiOms", "sofa");
+		super("SOFA", "2019-08-15", "CallbackMsSpiOms", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

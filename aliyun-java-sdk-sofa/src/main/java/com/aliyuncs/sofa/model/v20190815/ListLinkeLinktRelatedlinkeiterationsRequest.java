@@ -27,7 +27,7 @@ public class ListLinkeLinktRelatedlinkeiterationsRequest extends RpcAcsRequest<L
 
 	private String iterationSign;
 	public ListLinkeLinktRelatedlinkeiterationsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktRelatedlinkeiterations", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktRelatedlinkeiterations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

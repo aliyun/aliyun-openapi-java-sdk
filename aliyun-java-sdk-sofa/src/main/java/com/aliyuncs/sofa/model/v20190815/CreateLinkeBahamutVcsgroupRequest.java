@@ -29,7 +29,7 @@ public class CreateLinkeBahamutVcsgroupRequest extends RpcAcsRequest<CreateLinke
 
 	private String groupInfoJsonStr;
 	public CreateLinkeBahamutVcsgroupRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutVcsgroup", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutVcsgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

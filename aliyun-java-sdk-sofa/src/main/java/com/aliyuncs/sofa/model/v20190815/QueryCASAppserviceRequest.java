@@ -30,7 +30,7 @@ public class QueryCASAppserviceRequest extends RpcAcsRequest<QueryCASAppserviceR
 
 	private String workspaceId;
 	public QueryCASAppserviceRequest() {
-		super("SOFA", "2019-08-15", "QueryCASAppservice", "sofa");
+		super("SOFA", "2019-08-15", "QueryCASAppservice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

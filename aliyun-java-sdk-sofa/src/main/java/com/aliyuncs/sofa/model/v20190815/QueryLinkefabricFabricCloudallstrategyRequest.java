@@ -41,7 +41,7 @@ public class QueryLinkefabricFabricCloudallstrategyRequest extends RpcAcsRequest
 
 	private Boolean isStandard;
 	public QueryLinkefabricFabricCloudallstrategyRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCloudallstrategy", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCloudallstrategy", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

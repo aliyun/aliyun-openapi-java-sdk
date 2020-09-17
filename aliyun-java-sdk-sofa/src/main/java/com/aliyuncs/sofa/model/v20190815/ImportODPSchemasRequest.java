@@ -29,7 +29,7 @@ public class ImportODPSchemasRequest extends RpcAcsRequest<ImportODPSchemasRespo
 
 	private String schemaAndTableJsonStr;
 	public ImportODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "ImportODPSchemas", "sofa");
+		super("SOFA", "2019-08-15", "ImportODPSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

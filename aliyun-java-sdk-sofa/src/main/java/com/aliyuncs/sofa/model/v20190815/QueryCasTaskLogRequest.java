@@ -29,7 +29,7 @@ public class QueryCasTaskLogRequest extends RpcAcsRequest<QueryCasTaskLogRespons
 
 	private String taskId;
 	public QueryCasTaskLogRequest() {
-		super("SOFA", "2019-08-15", "QueryCasTaskLog", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasTaskLog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListMsSgUndisplayComponentsRequest extends RpcAcsRequest<ListMsSgUn
 
 	private String instanceId;
 	public ListMsSgUndisplayComponentsRequest() {
-		super("SOFA", "2019-08-15", "ListMsSgUndisplayComponents", "sofa");
+		super("SOFA", "2019-08-15", "ListMsSgUndisplayComponents", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

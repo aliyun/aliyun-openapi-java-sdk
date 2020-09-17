@@ -29,7 +29,7 @@ public class CheckRmsRulegroupNameRequest extends RpcAcsRequest<CheckRmsRulegrou
 
 	private String envJsonStr;
 	public CheckRmsRulegroupNameRequest() {
-		super("SOFA", "2019-08-15", "CheckRmsRulegroupName", "sofa");
+		super("SOFA", "2019-08-15", "CheckRmsRulegroupName", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

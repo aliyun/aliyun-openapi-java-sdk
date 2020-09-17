@@ -29,7 +29,7 @@ public class ExecLinkeLinktTemplatecopyRequest extends RpcAcsRequest<ExecLinkeLi
 
 	private String templateId;
 	public ExecLinkeLinktTemplatecopyRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktTemplatecopy", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktTemplatecopy", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

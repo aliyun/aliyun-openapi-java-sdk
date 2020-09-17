@@ -27,7 +27,7 @@ public class ListLinkeLinktProjectmodulesRequest extends RpcAcsRequest<ListLinke
 
 	private String projectSign;
 	public ListLinkeLinktProjectmodulesRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktProjectmodules", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktProjectmodules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

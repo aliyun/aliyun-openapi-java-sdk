@@ -33,7 +33,7 @@ public class TriggerTSJobItemBetaRequest extends RpcAcsRequest<TriggerTSJobItemB
 
 	private String paramMap;
 	public TriggerTSJobItemBetaRequest() {
-		super("SOFA", "2019-08-15", "TriggerTSJobItemBeta", "sofa");
+		super("SOFA", "2019-08-15", "TriggerTSJobItemBeta", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

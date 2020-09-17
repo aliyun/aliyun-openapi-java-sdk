@@ -29,7 +29,7 @@ public class AddDWSUsersRequest extends RpcAcsRequest<AddDWSUsersResponse> {
 
 	private String userJsonStr;
 	public AddDWSUsersRequest() {
-		super("SOFA", "2019-08-15", "AddDWSUsers", "sofa");
+		super("SOFA", "2019-08-15", "AddDWSUsers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeProtectbranchbynameRequest extends RpcAcsReq
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeProtectbranchbynameRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeProtectbranchbyname", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeProtectbranchbyname", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

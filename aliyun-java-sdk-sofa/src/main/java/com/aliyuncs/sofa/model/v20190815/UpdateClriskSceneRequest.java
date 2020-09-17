@@ -33,7 +33,7 @@ public class UpdateClriskSceneRequest extends RpcAcsRequest<UpdateClriskSceneRes
 
 	private String name;
 	public UpdateClriskSceneRequest() {
-		super("SOFA", "2019-08-15", "UpdateClriskScene", "sofa");
+		super("SOFA", "2019-08-15", "UpdateClriskScene", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

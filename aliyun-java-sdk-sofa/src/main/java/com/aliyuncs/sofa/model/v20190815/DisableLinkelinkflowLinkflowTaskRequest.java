@@ -31,7 +31,7 @@ public class DisableLinkelinkflowLinkflowTaskRequest extends RpcAcsRequest<Disab
 
 	private String operatorId;
 	public DisableLinkelinkflowLinkflowTaskRequest() {
-		super("SOFA", "2019-08-15", "DisableLinkelinkflowLinkflowTask", "sofa");
+		super("SOFA", "2019-08-15", "DisableLinkelinkflowLinkflowTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

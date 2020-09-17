@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ExecLinkeLinkaHealthcheckRequest extends RpcAcsRequest<ExecLinkeLinkaHealthcheckResponse> {
 	   
 	public ExecLinkeLinkaHealthcheckRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinkaHealthcheck", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinkaHealthcheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

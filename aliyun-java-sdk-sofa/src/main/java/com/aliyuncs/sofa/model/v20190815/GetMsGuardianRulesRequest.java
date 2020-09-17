@@ -29,7 +29,7 @@ public class GetMsGuardianRulesRequest extends RpcAcsRequest<GetMsGuardianRulesR
 
 	private Long ruleId;
 	public GetMsGuardianRulesRequest() {
-		super("SOFA", "2019-08-15", "GetMsGuardianRules", "sofa");
+		super("SOFA", "2019-08-15", "GetMsGuardianRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

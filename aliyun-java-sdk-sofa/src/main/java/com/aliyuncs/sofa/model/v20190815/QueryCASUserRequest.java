@@ -58,7 +58,7 @@ public class QueryCASUserRequest extends RpcAcsRequest<QueryCASUserResponse> {
 
 	private List<String> typesRepeatLists;
 	public QueryCASUserRequest() {
-		super("SOFA", "2019-08-15", "QueryCASUser", "sofa");
+		super("SOFA", "2019-08-15", "QueryCASUser", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

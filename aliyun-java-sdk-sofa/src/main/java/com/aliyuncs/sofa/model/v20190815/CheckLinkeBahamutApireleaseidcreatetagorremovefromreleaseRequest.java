@@ -27,7 +27,7 @@ public class CheckLinkeBahamutApireleaseidcreatetagorremovefromreleaseRequest ex
 
 	private String id;
 	public CheckLinkeBahamutApireleaseidcreatetagorremovefromreleaseRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutApireleaseidcreatetagorremovefromrelease", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutApireleaseidcreatetagorremovefromrelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

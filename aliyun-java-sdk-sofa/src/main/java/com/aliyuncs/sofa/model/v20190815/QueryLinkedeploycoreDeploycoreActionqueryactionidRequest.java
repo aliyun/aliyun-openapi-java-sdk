@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreActionqueryactionidRequest extends Rp
 
 	private String actionId;
 	public QueryLinkedeploycoreDeploycoreActionqueryactionidRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreActionqueryactionid", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreActionqueryactionid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

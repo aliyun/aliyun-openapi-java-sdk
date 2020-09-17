@@ -31,7 +31,7 @@ public class DisableLinkeantcodeAntcodeGroupsidinstallationsserviceidRequest ext
 
 	private String serviceId;
 	public DisableLinkeantcodeAntcodeGroupsidinstallationsserviceidRequest() {
-		super("SOFA", "2019-08-15", "DisableLinkeantcodeAntcodeGroupsidinstallationsserviceid", "sofa");
+		super("SOFA", "2019-08-15", "DisableLinkeantcodeAntcodeGroupsidinstallationsserviceid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

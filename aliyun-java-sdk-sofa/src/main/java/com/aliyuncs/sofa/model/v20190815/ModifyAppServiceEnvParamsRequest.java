@@ -32,7 +32,7 @@ public class ModifyAppServiceEnvParamsRequest extends RpcAcsRequest<ModifyAppSer
 
 	private List<Params> paramss;
 	public ModifyAppServiceEnvParamsRequest() {
-		super("SOFA", "2019-08-15", "ModifyAppServiceEnvParams", "sofa");
+		super("SOFA", "2019-08-15", "ModifyAppServiceEnvParams", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

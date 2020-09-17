@@ -31,7 +31,7 @@ public class UpdateLinkeBahamutOpenupdateaddmetaRequest extends RpcAcsRequest<Up
 
 	private String appInfo;
 	public UpdateLinkeBahamutOpenupdateaddmetaRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutOpenupdateaddmeta", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutOpenupdateaddmeta", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

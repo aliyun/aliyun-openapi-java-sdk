@@ -31,7 +31,7 @@ public class AuthCasDatabaseAccountRequest extends RpcAcsRequest<AuthCasDatabase
 
 	private String id;
 	public AuthCasDatabaseAccountRequest() {
-		super("SOFA", "2019-08-15", "AuthCasDatabaseAccount", "sofa");
+		super("SOFA", "2019-08-15", "AuthCasDatabaseAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class AddLinkeBahamutAddbasejarmoduleRequest extends RpcAcsRequest<AddLin
 
 	private String iterationUnitId;
 	public AddLinkeBahamutAddbasejarmoduleRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAddbasejarmodule", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAddbasejarmodule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkeBahamutCloudcacheappRequest extends RpcAcsRequest<GetLinkeB
 
 	private String tenantId;
 	public GetLinkeBahamutCloudcacheappRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutCloudcacheapp", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutCloudcacheapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

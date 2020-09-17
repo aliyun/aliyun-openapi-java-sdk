@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeCycleuserpermissionsRequest extends RpcAcs
 
 	private String token;
 	public DeleteLinkeantcodeAntcodeCycleuserpermissionsRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeCycleuserpermissions", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeCycleuserpermissions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

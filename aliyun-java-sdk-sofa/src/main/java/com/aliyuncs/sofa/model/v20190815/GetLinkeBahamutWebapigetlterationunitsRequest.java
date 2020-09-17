@@ -39,7 +39,7 @@ public class GetLinkeBahamutWebapigetlterationunitsRequest extends RpcAcsRequest
 
 	private String showAll;
 	public GetLinkeBahamutWebapigetlterationunitsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetlterationunits", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetlterationunits", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

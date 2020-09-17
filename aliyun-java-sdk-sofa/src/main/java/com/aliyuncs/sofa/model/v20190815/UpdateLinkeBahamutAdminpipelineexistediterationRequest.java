@@ -31,7 +31,7 @@ public class UpdateLinkeBahamutAdminpipelineexistediterationRequest extends RpcA
 
 	private String bahamutTenant;
 	public UpdateLinkeBahamutAdminpipelineexistediterationRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminpipelineexistediteration", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminpipelineexistediteration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

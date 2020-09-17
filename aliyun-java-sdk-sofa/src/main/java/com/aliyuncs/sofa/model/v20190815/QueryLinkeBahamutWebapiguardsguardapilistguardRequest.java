@@ -27,7 +27,7 @@ public class QueryLinkeBahamutWebapiguardsguardapilistguardRequest extends RpcAc
 
 	private String tenantPath;
 	public QueryLinkeBahamutWebapiguardsguardapilistguardRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapiguardsguardapilistguard", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapiguardsguardapilistguard", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

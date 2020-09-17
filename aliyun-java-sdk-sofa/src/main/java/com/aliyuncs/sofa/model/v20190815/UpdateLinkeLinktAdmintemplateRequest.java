@@ -41,7 +41,7 @@ public class UpdateLinkeLinktAdmintemplateRequest extends RpcAcsRequest<UpdateLi
 
 	private String name;
 	public UpdateLinkeLinktAdmintemplateRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktAdmintemplate", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktAdmintemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

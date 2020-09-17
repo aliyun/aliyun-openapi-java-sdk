@@ -33,7 +33,7 @@ public class QueryLinkedeploycoreDeploycoreAppservicequerycomputersRequest exten
 
 	private String tenantName;
 	public QueryLinkedeploycoreDeploycoreAppservicequerycomputersRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppservicequerycomputers", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppservicequerycomputers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

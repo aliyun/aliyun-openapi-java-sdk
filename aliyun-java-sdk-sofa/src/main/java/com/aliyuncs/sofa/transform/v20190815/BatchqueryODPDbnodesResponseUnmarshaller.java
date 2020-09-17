@@ -42,9 +42,12 @@ public class BatchqueryODPDbnodesResponseUnmarshaller {
 			dataItem.setGmtCreate(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].GmtCreate"));
 			dataItem.setGmtModified(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].GmtModified"));
 			dataItem.setId(_ctx.longValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Id"));
+			dataItem.setLastProbeTime(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].LastProbeTime"));
 			dataItem.setNetMode(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].NetMode"));
 			dataItem.setNodeId(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].NodeId"));
+			dataItem.setOverMaxRetryCount(_ctx.booleanValue("BatchqueryODPDbnodesResponse.Data["+ i +"].OverMaxRetryCount"));
 			dataItem.setPassword(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Password"));
+			dataItem.setProbeFailMsg(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].ProbeFailMsg"));
 			dataItem.setStatus(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Status"));
 			dataItem.setUrl(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Url"));
 			dataItem.setUsername(_ctx.stringValue("BatchqueryODPDbnodesResponse.Data["+ i +"].Username"));

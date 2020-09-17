@@ -27,7 +27,7 @@ public class GetLinkeBahamutTenantuseoauthRequest extends RpcAcsRequest<GetLinke
 
 	private String tenantPath;
 	public GetLinkeBahamutTenantuseoauthRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutTenantuseoauth", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutTenantuseoauth", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

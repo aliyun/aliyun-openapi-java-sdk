@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeDeleteprojectbranchbybranchnameRequest exte
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeDeleteprojectbranchbybranchnameRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeDeleteprojectbranchbybranchname", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeDeleteprojectbranchbybranchname", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

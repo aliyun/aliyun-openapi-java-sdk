@@ -39,7 +39,7 @@ public class GetLinkeBahamutReleasebyappgroupRequest extends RpcAcsRequest<GetLi
 
 	private String status;
 	public GetLinkeBahamutReleasebyappgroupRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutReleasebyappgroup", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutReleasebyappgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

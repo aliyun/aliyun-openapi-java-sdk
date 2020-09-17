@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreEnvqueryalldetailRequest extends RpcA
 
 	private String tenantId;
 	public QueryLinkedeploycoreDeploycoreEnvqueryalldetailRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreEnvqueryalldetail", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreEnvqueryalldetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

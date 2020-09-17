@@ -27,7 +27,7 @@ public class DeleteLinkeLinktModuleRequest extends RpcAcsRequest<DeleteLinkeLink
 
 	private String moduleId;
 	public DeleteLinkeLinktModuleRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktModule", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktModule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

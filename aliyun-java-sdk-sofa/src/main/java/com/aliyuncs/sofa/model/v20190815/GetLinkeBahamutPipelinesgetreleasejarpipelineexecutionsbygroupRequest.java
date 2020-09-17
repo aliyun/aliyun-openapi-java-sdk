@@ -27,7 +27,7 @@ public class GetLinkeBahamutPipelinesgetreleasejarpipelineexecutionsbygroupReque
 
 	private String stageId;
 	public GetLinkeBahamutPipelinesgetreleasejarpipelineexecutionsbygroupRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinesgetreleasejarpipelineexecutionsbygroup", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinesgetreleasejarpipelineexecutionsbygroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

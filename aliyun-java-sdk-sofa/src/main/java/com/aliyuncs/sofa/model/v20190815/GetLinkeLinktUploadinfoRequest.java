@@ -29,7 +29,7 @@ public class GetLinkeLinktUploadinfoRequest extends RpcAcsRequest<GetLinkeLinktU
 
 	private String filename;
 	public GetLinkeLinktUploadinfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinktUploadinfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinktUploadinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

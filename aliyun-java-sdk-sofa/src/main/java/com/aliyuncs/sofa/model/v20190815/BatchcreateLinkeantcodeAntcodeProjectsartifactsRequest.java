@@ -31,7 +31,7 @@ public class BatchcreateLinkeantcodeAntcodeProjectsartifactsRequest extends RpcA
 
 	private String createDTOJsonStr;
 	public BatchcreateLinkeantcodeAntcodeProjectsartifactsRequest() {
-		super("SOFA", "2019-08-15", "BatchcreateLinkeantcodeAntcodeProjectsartifacts", "sofa");
+		super("SOFA", "2019-08-15", "BatchcreateLinkeantcodeAntcodeProjectsartifacts", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

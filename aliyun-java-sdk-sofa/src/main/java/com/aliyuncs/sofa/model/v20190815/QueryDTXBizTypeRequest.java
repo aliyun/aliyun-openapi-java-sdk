@@ -33,7 +33,7 @@ public class QueryDTXBizTypeRequest extends RpcAcsRequest<QueryDTXBizTypeRespons
 
 	private String instanceId;
 	public QueryDTXBizTypeRequest() {
-		super("SOFA", "2019-08-15", "QueryDTXBizType", "sofa");
+		super("SOFA", "2019-08-15", "QueryDTXBizType", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

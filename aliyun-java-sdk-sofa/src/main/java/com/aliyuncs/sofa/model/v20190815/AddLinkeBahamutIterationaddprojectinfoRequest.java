@@ -31,7 +31,7 @@ public class AddLinkeBahamutIterationaddprojectinfoRequest extends RpcAcsRequest
 
 	private String projectName;
 	public AddLinkeBahamutIterationaddprojectinfoRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutIterationaddprojectinfo", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutIterationaddprojectinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

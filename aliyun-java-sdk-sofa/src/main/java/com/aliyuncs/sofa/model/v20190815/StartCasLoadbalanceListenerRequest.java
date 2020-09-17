@@ -29,7 +29,7 @@ public class StartCasLoadbalanceListenerRequest extends RpcAcsRequest<StartCasLo
 
 	private String loadBalancerId;
 	public StartCasLoadbalanceListenerRequest() {
-		super("SOFA", "2019-08-15", "StartCasLoadbalanceListener", "sofa");
+		super("SOFA", "2019-08-15", "StartCasLoadbalanceListener", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

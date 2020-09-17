@@ -36,7 +36,7 @@ public class ImportLinkedeploycoreDeploycoreAppserviceRequest extends RpcAcsRequ
 
 	private String iterationId;
 	public ImportLinkedeploycoreDeploycoreAppserviceRequest() {
-		super("SOFA", "2019-08-15", "ImportLinkedeploycoreDeploycoreAppservice", "sofa");
+		super("SOFA", "2019-08-15", "ImportLinkedeploycoreDeploycoreAppservice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

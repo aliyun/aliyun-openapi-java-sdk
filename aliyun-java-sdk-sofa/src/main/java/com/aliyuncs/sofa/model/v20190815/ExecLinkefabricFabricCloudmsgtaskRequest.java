@@ -56,7 +56,7 @@ public class ExecLinkefabricFabricCloudmsgtaskRequest extends RpcAcsRequest<Exec
 
 	private List<String> envListRepeatLists;
 	public ExecLinkefabricFabricCloudmsgtaskRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkefabricFabricCloudmsgtask", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkefabricFabricCloudmsgtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

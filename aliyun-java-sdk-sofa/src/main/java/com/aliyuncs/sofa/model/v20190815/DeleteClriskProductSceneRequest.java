@@ -27,7 +27,7 @@ public class DeleteClriskProductSceneRequest extends RpcAcsRequest<DeleteClriskP
 
 	private Long id;
 	public DeleteClriskProductSceneRequest() {
-		super("SOFA", "2019-08-15", "DeleteClriskProductScene", "sofa");
+		super("SOFA", "2019-08-15", "DeleteClriskProductScene", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

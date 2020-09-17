@@ -31,7 +31,7 @@ public class GetAKSPlanTimeseriesRequest extends RpcAcsRequest<GetAKSPlanTimeser
 
 	private Boolean fullData;
 	public GetAKSPlanTimeseriesRequest() {
-		super("SOFA", "2019-08-15", "GetAKSPlanTimeseries", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSPlanTimeseries", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class AddLinkeantcodeAntcodeAddprojectmemberRequest extends RpcAcsRequest
 
 	private String requestGitOperate;
 	public AddLinkeantcodeAntcodeAddprojectmemberRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeAddprojectmember", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeAddprojectmember", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

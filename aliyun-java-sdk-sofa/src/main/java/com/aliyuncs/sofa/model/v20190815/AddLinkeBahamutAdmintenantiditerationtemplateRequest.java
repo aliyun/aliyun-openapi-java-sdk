@@ -29,7 +29,7 @@ public class AddLinkeBahamutAdmintenantiditerationtemplateRequest extends RpcAcs
 
 	private String tenantId;
 	public AddLinkeBahamutAdmintenantiditerationtemplateRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmintenantiditerationtemplate", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmintenantiditerationtemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

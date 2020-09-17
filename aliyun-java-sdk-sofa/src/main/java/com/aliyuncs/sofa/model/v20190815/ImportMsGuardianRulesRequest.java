@@ -31,7 +31,7 @@ public class ImportMsGuardianRulesRequest extends RpcAcsRequest<ImportMsGuardian
 
 	private String instanceId;
 	public ImportMsGuardianRulesRequest() {
-		super("SOFA", "2019-08-15", "ImportMsGuardianRules", "sofa");
+		super("SOFA", "2019-08-15", "ImportMsGuardianRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

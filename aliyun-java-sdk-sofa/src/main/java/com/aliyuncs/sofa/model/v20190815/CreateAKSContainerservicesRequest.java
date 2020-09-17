@@ -37,7 +37,7 @@ public class CreateAKSContainerservicesRequest extends RpcAcsRequest<CreateAKSCo
 
 	private String operatorName;
 	public CreateAKSContainerservicesRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSContainerservices", "sofa");
+		super("SOFA", "2019-08-15", "CreateAKSContainerservices", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

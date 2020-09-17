@@ -64,7 +64,7 @@ public class CreateBuildpackRequest extends RpcAcsRequest<CreateBuildpackRespons
 
 	private String status;
 	public CreateBuildpackRequest() {
-		super("SOFA", "2019-08-15", "CreateBuildpack", "sofa");
+		super("SOFA", "2019-08-15", "CreateBuildpack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

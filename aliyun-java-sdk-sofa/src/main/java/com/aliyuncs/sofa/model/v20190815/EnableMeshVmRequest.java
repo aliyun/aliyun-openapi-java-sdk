@@ -33,7 +33,7 @@ public class EnableMeshVmRequest extends RpcAcsRequest<EnableMeshVmResponse> {
 
 	private String tenantName;
 	public EnableMeshVmRequest() {
-		super("SOFA", "2019-08-15", "EnableMeshVm", "sofa");
+		super("SOFA", "2019-08-15", "EnableMeshVm", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

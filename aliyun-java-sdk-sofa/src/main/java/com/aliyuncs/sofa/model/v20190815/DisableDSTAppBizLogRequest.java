@@ -29,7 +29,7 @@ public class DisableDSTAppBizLogRequest extends RpcAcsRequest<DisableDSTAppBizLo
 
 	private String instanceId;
 	public DisableDSTAppBizLogRequest() {
-		super("SOFA", "2019-08-15", "DisableDSTAppBizLog", "sofa");
+		super("SOFA", "2019-08-15", "DisableDSTAppBizLog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

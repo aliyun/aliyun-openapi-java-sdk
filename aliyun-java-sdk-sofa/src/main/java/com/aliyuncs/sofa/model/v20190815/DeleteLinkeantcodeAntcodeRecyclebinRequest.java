@@ -29,7 +29,7 @@ public class DeleteLinkeantcodeAntcodeRecyclebinRequest extends RpcAcsRequest<De
 
 	private String requestGitOperate;
 	public DeleteLinkeantcodeAntcodeRecyclebinRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeRecyclebin", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeRecyclebin", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

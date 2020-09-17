@@ -27,7 +27,7 @@ public class QueryLinkeBahamutZappinfoprimarchdomainRequest extends RpcAcsReques
 
 	private String keyWord;
 	public QueryLinkeBahamutZappinfoprimarchdomainRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutZappinfoprimarchdomain", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutZappinfoprimarchdomain", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

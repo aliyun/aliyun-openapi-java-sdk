@@ -33,7 +33,7 @@ public class ResetTSActivityInstanceRequest extends RpcAcsRequest<ResetTSActivit
 
 	private String jobRequestId;
 	public ResetTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "ResetTSActivityInstance", "sofa");
+		super("SOFA", "2019-08-15", "ResetTSActivityInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

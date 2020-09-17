@@ -33,7 +33,7 @@ public class CreateLinkeantcodeAntcodePullrequestissueRequest extends RpcAcsRequ
 
 	private String prId;
 	public CreateLinkeantcodeAntcodePullrequestissueRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodePullrequestissue", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodePullrequestissue", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

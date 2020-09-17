@@ -29,7 +29,7 @@ public class CreateLinkeBahamutAppcreateorimporttaskabortRequest extends RpcAcsR
 
 	private String taskId;
 	public CreateLinkeBahamutAppcreateorimporttaskabortRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutAppcreateorimporttaskabort", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutAppcreateorimporttaskabort", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetLinkeBahamutAllarchdomainsRequest extends RpcAcsRequest<GetLinke
 
 	private String level;
 	public GetLinkeBahamutAllarchdomainsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAllarchdomains", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAllarchdomains", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

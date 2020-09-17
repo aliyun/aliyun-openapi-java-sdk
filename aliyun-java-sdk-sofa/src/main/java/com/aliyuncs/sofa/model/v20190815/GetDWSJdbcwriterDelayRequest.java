@@ -35,7 +35,7 @@ public class GetDWSJdbcwriterDelayRequest extends RpcAcsRequest<GetDWSJdbcwriter
 
 	private String instanceId;
 	public GetDWSJdbcwriterDelayRequest() {
-		super("SOFA", "2019-08-15", "GetDWSJdbcwriterDelay", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSJdbcwriterDelay", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

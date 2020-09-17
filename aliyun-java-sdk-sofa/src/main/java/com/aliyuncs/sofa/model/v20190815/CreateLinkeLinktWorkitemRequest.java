@@ -74,7 +74,7 @@ public class CreateLinkeLinktWorkitemRequest extends RpcAcsRequest<CreateLinkeLi
 
 	private List<String> attachmentVOsRepeatLists;
 	public CreateLinkeLinktWorkitemRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktWorkitem", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktWorkitem", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

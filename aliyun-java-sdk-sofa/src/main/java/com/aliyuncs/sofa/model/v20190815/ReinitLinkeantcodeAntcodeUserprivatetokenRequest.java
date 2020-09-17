@@ -27,7 +27,7 @@ public class ReinitLinkeantcodeAntcodeUserprivatetokenRequest extends RpcAcsRequ
 
 	private String requestGitOperate;
 	public ReinitLinkeantcodeAntcodeUserprivatetokenRequest() {
-		super("SOFA", "2019-08-15", "ReinitLinkeantcodeAntcodeUserprivatetoken", "sofa");
+		super("SOFA", "2019-08-15", "ReinitLinkeantcodeAntcodeUserprivatetoken", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

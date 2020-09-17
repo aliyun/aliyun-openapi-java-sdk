@@ -27,7 +27,7 @@ public class CheckLinkeBahamutAdminworkspacecheckdataRequest extends RpcAcsReque
 
 	private String bahamutTenant;
 	public CheckLinkeBahamutAdminworkspacecheckdataRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutAdminworkspacecheckdata", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutAdminworkspacecheckdata", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

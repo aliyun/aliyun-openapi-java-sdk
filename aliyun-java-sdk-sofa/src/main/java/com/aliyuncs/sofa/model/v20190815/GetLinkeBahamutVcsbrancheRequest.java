@@ -29,7 +29,7 @@ public class GetLinkeBahamutVcsbrancheRequest extends RpcAcsRequest<GetLinkeBaha
 
 	private String tenantId;
 	public GetLinkeBahamutVcsbrancheRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsbranche", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsbranche", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

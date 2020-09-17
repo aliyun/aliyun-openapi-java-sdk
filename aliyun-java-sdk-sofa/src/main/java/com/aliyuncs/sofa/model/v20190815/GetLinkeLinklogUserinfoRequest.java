@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeLinklogUserinfoRequest extends RpcAcsRequest<GetLinkeLinklogUserinfoResponse> {
 	   
 	public GetLinkeLinklogUserinfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinklogUserinfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinklogUserinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

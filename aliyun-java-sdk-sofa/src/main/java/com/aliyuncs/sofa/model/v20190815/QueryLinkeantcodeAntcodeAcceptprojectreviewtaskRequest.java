@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeAcceptprojectreviewtaskRequest extends RpcA
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeAcceptprojectreviewtaskRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAcceptprojectreviewtask", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAcceptprojectreviewtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

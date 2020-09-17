@@ -33,7 +33,7 @@ public class CreateLinkeBahamutUsermenucommonRequest extends RpcAcsRequest<Creat
 
 	private String displayName;
 	public CreateLinkeBahamutUsermenucommonRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutUsermenucommon", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutUsermenucommon", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

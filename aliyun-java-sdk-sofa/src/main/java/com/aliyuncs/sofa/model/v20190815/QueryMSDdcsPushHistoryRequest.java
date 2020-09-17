@@ -37,7 +37,7 @@ public class QueryMSDdcsPushHistoryRequest extends RpcAcsRequest<QueryMSDdcsPush
 
 	private Long startId;
 	public QueryMSDdcsPushHistoryRequest() {
-		super("SOFA", "2019-08-15", "QueryMSDdcsPushHistory", "sofa");
+		super("SOFA", "2019-08-15", "QueryMSDdcsPushHistory", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

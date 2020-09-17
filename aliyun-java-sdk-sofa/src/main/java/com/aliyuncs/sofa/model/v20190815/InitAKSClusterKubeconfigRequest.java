@@ -27,7 +27,7 @@ public class InitAKSClusterKubeconfigRequest extends RpcAcsRequest<InitAKSCluste
 
 	private String workspace;
 	public InitAKSClusterKubeconfigRequest() {
-		super("SOFA", "2019-08-15", "InitAKSClusterKubeconfig", "sofa");
+		super("SOFA", "2019-08-15", "InitAKSClusterKubeconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

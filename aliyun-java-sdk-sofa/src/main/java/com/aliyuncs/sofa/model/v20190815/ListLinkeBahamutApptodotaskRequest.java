@@ -29,7 +29,7 @@ public class ListLinkeBahamutApptodotaskRequest extends RpcAcsRequest<ListLinkeB
 
 	private String tenantId;
 	public ListLinkeBahamutApptodotaskRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutApptodotask", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutApptodotask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

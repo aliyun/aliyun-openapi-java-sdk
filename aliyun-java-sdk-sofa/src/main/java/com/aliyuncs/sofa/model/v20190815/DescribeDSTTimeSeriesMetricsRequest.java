@@ -40,7 +40,7 @@ public class DescribeDSTTimeSeriesMetricsRequest extends RpcAcsRequest<DescribeD
 
 	private List<Metrics> metricss;
 	public DescribeDSTTimeSeriesMetricsRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTTimeSeriesMetrics", "sofa");
+		super("SOFA", "2019-08-15", "DescribeDSTTimeSeriesMetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

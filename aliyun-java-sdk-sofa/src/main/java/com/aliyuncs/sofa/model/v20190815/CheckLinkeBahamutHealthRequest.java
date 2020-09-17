@@ -27,7 +27,7 @@ public class CheckLinkeBahamutHealthRequest extends RpcAcsRequest<CheckLinkeBaha
 
 	private String params;
 	public CheckLinkeBahamutHealthRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutHealth", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutHealth", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

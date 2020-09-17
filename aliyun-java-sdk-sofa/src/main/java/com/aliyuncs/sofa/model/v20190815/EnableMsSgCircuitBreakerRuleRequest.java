@@ -33,7 +33,7 @@ public class EnableMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<EnableMsS
 
 	private Long status;
 	public EnableMsSgCircuitBreakerRuleRequest() {
-		super("SOFA", "2019-08-15", "EnableMsSgCircuitBreakerRule", "sofa");
+		super("SOFA", "2019-08-15", "EnableMsSgCircuitBreakerRule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

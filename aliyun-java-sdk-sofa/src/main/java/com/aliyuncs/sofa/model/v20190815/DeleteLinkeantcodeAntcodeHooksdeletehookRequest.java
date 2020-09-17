@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeHooksdeletehookRequest extends RpcAcsReque
 
 	private String hookId;
 	public DeleteLinkeantcodeAntcodeHooksdeletehookRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeHooksdeletehook", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeHooksdeletehook", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

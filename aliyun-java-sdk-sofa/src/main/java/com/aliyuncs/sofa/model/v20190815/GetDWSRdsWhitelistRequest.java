@@ -27,7 +27,7 @@ public class GetDWSRdsWhitelistRequest extends RpcAcsRequest<GetDWSRdsWhitelistR
 
 	private String instanceId;
 	public GetDWSRdsWhitelistRequest() {
-		super("SOFA", "2019-08-15", "GetDWSRdsWhitelist", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSRdsWhitelist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

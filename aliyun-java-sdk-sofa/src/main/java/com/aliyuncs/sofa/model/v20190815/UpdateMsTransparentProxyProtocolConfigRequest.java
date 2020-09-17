@@ -33,7 +33,7 @@ public class UpdateMsTransparentProxyProtocolConfigRequest extends RpcAcsRequest
 
 	private Long port;
 	public UpdateMsTransparentProxyProtocolConfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsTransparentProxyProtocolConfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsTransparentProxyProtocolConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

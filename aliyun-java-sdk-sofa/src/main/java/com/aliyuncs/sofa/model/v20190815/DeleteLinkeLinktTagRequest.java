@@ -27,7 +27,7 @@ public class DeleteLinkeLinktTagRequest extends RpcAcsRequest<DeleteLinkeLinktTa
 
 	private String tagId;
 	public DeleteLinkeLinktTagRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktTag", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktTag", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetLinkeBahamutIterationunitjarhistrorysummaryRequest extends RpcAc
 
 	private String publishJarEnv;
 	public GetLinkeBahamutIterationunitjarhistrorysummaryRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationunitjarhistrorysummary", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationunitjarhistrorysummary", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

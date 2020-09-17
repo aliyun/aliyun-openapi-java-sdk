@@ -29,7 +29,7 @@ public class ConfirmLinkefabricFabricDockerruleconfigsRequest extends RpcAcsRequ
 
 	private String configFlowInfo;
 	public ConfirmLinkefabricFabricDockerruleconfigsRequest() {
-		super("SOFA", "2019-08-15", "ConfirmLinkefabricFabricDockerruleconfigs", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmLinkefabricFabricDockerruleconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

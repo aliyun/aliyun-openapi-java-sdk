@@ -41,7 +41,7 @@ public class CancelLinkeBahamutPipelineRequest extends RpcAcsRequest<CancelLinke
 
 	private String stageId;
 	public CancelLinkeBahamutPipelineRequest() {
-		super("SOFA", "2019-08-15", "CancelLinkeBahamutPipeline", "sofa");
+		super("SOFA", "2019-08-15", "CancelLinkeBahamutPipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkeBahamutGetexternalqualityRequest extends RpcAcsRequest<GetL
 
 	private String params;
 	public GetLinkeBahamutGetexternalqualityRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGetexternalquality", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGetexternalquality", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

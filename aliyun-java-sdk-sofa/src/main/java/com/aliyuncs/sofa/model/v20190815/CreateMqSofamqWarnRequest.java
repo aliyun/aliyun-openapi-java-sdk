@@ -41,7 +41,7 @@ public class CreateMqSofamqWarnRequest extends RpcAcsRequest<CreateMqSofamqWarnR
 
 	private String contacts;
 	public CreateMqSofamqWarnRequest() {
-		super("SOFA", "2019-08-15", "CreateMqSofamqWarn", "sofa");
+		super("SOFA", "2019-08-15", "CreateMqSofamqWarn", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

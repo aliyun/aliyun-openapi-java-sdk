@@ -29,7 +29,7 @@ public class DeleteRmsResourceGroupRequest extends RpcAcsRequest<DeleteRmsResour
 
 	private String envJsonStr;
 	public DeleteRmsResourceGroupRequest() {
-		super("SOFA", "2019-08-15", "DeleteRmsResourceGroup", "sofa");
+		super("SOFA", "2019-08-15", "DeleteRmsResourceGroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

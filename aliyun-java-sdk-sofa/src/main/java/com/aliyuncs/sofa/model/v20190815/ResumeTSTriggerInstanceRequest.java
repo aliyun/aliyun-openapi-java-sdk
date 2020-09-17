@@ -29,7 +29,7 @@ public class ResumeTSTriggerInstanceRequest extends RpcAcsRequest<ResumeTSTrigge
 
 	private String jobRequestId;
 	public ResumeTSTriggerInstanceRequest() {
-		super("SOFA", "2019-08-15", "ResumeTSTriggerInstance", "sofa");
+		super("SOFA", "2019-08-15", "ResumeTSTriggerInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

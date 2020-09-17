@@ -31,7 +31,7 @@ public class CountDTXAppStatsRequest extends RpcAcsRequest<CountDTXAppStatsRespo
 
 	private String instanceId;
 	public CountDTXAppStatsRequest() {
-		super("SOFA", "2019-08-15", "CountDTXAppStats", "sofa");
+		super("SOFA", "2019-08-15", "CountDTXAppStats", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ConfirmLinkefabricFabricEnvconfigsRequest extends RpcAcsRequest<Con
 
 	private String configFlowInfo;
 	public ConfirmLinkefabricFabricEnvconfigsRequest() {
-		super("SOFA", "2019-08-15", "ConfirmLinkefabricFabricEnvconfigs", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmLinkefabricFabricEnvconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

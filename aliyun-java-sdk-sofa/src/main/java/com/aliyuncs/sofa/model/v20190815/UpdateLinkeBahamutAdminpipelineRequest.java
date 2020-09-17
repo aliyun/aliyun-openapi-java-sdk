@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutAdminpipelineRequest extends RpcAcsRequest<Update
 
 	private String src;
 	public UpdateLinkeBahamutAdminpipelineRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminpipeline", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

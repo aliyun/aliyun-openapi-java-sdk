@@ -37,7 +37,7 @@ public class CreateLinkeantcodeAntcodeSnippetnoteRequest extends RpcAcsRequest<C
 
 	private String discussionId;
 	public CreateLinkeantcodeAntcodeSnippetnoteRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeSnippetnote", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeSnippetnote", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

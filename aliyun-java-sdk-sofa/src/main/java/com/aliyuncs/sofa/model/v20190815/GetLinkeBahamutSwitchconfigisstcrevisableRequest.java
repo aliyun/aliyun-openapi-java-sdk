@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutSwitchconfigisstcrevisableRequest extends RpcAcsRequest<GetLinkeBahamutSwitchconfigisstcrevisableResponse> {
 	   
 	public GetLinkeBahamutSwitchconfigisstcrevisableRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutSwitchconfigisstcrevisable", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutSwitchconfigisstcrevisable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

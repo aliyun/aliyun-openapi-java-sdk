@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeProjectsidrepositorylsifreferencesRequest e
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeProjectsidrepositorylsifreferencesRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsidrepositorylsifreferences", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsidrepositorylsifreferences", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class QueryLinkeantcodeAntcodeProjectsupdateprojectpullrequestconfigReque
 
 	private String onlyAllChecksSucceed;
 	public QueryLinkeantcodeAntcodeProjectsupdateprojectpullrequestconfigRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsupdateprojectpullrequestconfig", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsupdateprojectpullrequestconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

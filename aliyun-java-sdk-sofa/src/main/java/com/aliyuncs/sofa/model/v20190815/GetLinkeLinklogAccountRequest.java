@@ -36,7 +36,7 @@ public class GetLinkeLinklogAccountRequest extends RpcAcsRequest<GetLinkeLinklog
 
 	private String roleName;
 	public GetLinkeLinklogAccountRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinklogAccount", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinklogAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkeLinklogSignRequest extends RpcAcsRequest<GetLinkeLinklogSig
 
 	private String url;
 	public GetLinkeLinklogSignRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinklogSign", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinklogSign", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ListLinkeantcodeAntcodeUsergitauthRequest extends RpcAcsRequest<Lis
 
 	private String externalUserId;
 	public ListLinkeantcodeAntcodeUsergitauthRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeUsergitauth", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeUsergitauth", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

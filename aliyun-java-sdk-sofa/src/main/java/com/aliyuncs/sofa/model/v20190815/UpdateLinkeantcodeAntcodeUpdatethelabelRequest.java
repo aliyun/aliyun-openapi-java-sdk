@@ -37,7 +37,7 @@ public class UpdateLinkeantcodeAntcodeUpdatethelabelRequest extends RpcAcsReques
 
 	private String name;
 	public UpdateLinkeantcodeAntcodeUpdatethelabelRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatethelabel", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatethelabel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

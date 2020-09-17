@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeUserlimitsettingsRequest extends RpcAcsReq
 
 	private String limitRateKbytesPerSec;
 	public UpdateLinkeantcodeAntcodeUserlimitsettingsRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUserlimitsettings", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUserlimitsettings", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

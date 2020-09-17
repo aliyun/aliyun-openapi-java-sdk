@@ -124,7 +124,7 @@ public class ExecLinkeLinktSearchworkitemRequest extends RpcAcsRequest<ExecLinke
 
 	private List<String> projectSignsRepeatLists;
 	public ExecLinkeLinktSearchworkitemRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchworkitem", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchworkitem", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

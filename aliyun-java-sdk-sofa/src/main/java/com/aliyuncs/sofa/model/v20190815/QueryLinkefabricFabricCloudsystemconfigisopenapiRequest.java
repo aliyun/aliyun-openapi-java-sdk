@@ -41,7 +41,7 @@ public class QueryLinkefabricFabricCloudsystemconfigisopenapiRequest extends Rpc
 
 	private Boolean isStandard;
 	public QueryLinkefabricFabricCloudsystemconfigisopenapiRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCloudsystemconfigisopenapi", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCloudsystemconfigisopenapi", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

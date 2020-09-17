@@ -31,7 +31,7 @@ public class QueryLinkeBahamutApptodotaskquerybyreleaseRequest extends RpcAcsReq
 
 	private String releaseExternalId;
 	public QueryLinkeBahamutApptodotaskquerybyreleaseRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutApptodotaskquerybyrelease", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutApptodotaskquerybyrelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

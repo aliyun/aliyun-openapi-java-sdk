@@ -39,7 +39,7 @@ public class ExecLinkeantcodeAntcodeProjectbranchmergeRequest extends RpcAcsRequ
 
 	private String message;
 	public ExecLinkeantcodeAntcodeProjectbranchmergeRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeProjectbranchmerge", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeProjectbranchmerge", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryLinkeLinktIterationRequest extends RpcAcsRequest<QueryLinkeLin
 
 	private String iterationSign;
 	public QueryLinkeLinktIterationRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktIteration", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktIteration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

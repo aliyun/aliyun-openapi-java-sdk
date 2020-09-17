@@ -31,7 +31,7 @@ public class UpdateTSTopologyShardingParallelCountRequest extends RpcAcsRequest<
 
 	private String instanceId;
 	public UpdateTSTopologyShardingParallelCountRequest() {
-		super("SOFA", "2019-08-15", "UpdateTSTopologyShardingParallelCount", "sofa");
+		super("SOFA", "2019-08-15", "UpdateTSTopologyShardingParallelCount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

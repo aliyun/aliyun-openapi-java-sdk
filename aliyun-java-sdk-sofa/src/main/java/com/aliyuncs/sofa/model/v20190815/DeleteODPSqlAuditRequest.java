@@ -27,7 +27,7 @@ public class DeleteODPSqlAuditRequest extends RpcAcsRequest<DeleteODPSqlAuditRes
 
 	private String instanceId;
 	public DeleteODPSqlAuditRequest() {
-		super("SOFA", "2019-08-15", "DeleteODPSqlAudit", "sofa");
+		super("SOFA", "2019-08-15", "DeleteODPSqlAudit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

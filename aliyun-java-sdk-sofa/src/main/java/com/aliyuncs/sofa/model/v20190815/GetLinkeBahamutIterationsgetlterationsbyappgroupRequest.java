@@ -41,7 +41,7 @@ public class GetLinkeBahamutIterationsgetlterationsbyappgroupRequest extends Rpc
 
 	private String showAll;
 	public GetLinkeBahamutIterationsgetlterationsbyappgroupRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationsgetlterationsbyappgroup", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationsgetlterationsbyappgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

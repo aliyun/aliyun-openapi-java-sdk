@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutWebapiupdatelterationunitRequest extends RpcAcsRe
 
 	private String id;
 	public UpdateLinkeBahamutWebapiupdatelterationunitRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutWebapiupdatelterationunit", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutWebapiupdatelterationunit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class QueryLinkeBahamutArchdomainRequest extends RpcAcsRequest<QueryLinke
 
 	private String tenantPath;
 	public QueryLinkeBahamutArchdomainRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutArchdomain", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutArchdomain", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

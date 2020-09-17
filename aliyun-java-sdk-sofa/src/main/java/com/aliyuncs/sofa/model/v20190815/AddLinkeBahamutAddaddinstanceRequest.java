@@ -31,7 +31,7 @@ public class AddLinkeBahamutAddaddinstanceRequest extends RpcAcsRequest<AddLinke
 
 	private String stageId;
 	public AddLinkeBahamutAddaddinstanceRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAddaddinstance", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAddaddinstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

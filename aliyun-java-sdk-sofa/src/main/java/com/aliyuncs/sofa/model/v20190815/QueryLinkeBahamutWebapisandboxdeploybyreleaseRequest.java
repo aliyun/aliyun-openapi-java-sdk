@@ -27,7 +27,7 @@ public class QueryLinkeBahamutWebapisandboxdeploybyreleaseRequest extends RpcAcs
 
 	private String releaseId;
 	public QueryLinkeBahamutWebapisandboxdeploybyreleaseRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapisandboxdeploybyrelease", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapisandboxdeploybyrelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

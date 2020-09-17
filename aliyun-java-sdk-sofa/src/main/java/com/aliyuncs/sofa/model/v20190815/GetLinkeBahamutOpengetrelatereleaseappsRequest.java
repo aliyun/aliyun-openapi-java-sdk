@@ -33,7 +33,7 @@ public class GetLinkeBahamutOpengetrelatereleaseappsRequest extends RpcAcsReques
 
 	private String tenantName;
 	public GetLinkeBahamutOpengetrelatereleaseappsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutOpengetrelatereleaseapps", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutOpengetrelatereleaseapps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

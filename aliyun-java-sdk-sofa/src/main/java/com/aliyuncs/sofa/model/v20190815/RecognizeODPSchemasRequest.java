@@ -34,7 +34,7 @@ public class RecognizeODPSchemasRequest extends RpcAcsRequest<RecognizeODPSchema
 
 	private String instanceId;
 	public RecognizeODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "RecognizeODPSchemas", "sofa");
+		super("SOFA", "2019-08-15", "RecognizeODPSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

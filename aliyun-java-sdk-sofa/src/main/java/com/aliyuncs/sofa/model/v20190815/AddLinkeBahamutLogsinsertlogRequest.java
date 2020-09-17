@@ -27,7 +27,7 @@ public class AddLinkeBahamutLogsinsertlogRequest extends RpcAcsRequest<AddLinkeB
 
 	private String iterationUnitId;
 	public AddLinkeBahamutLogsinsertlogRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutLogsinsertlog", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutLogsinsertlog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

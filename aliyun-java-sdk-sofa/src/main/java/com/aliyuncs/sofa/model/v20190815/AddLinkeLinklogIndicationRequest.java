@@ -32,7 +32,7 @@ public class AddLinkeLinklogIndicationRequest extends RpcAcsRequest<AddLinkeLink
 
 	private Long knowledgeId;
 	public AddLinkeLinklogIndicationRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeLinklogIndication", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeLinklogIndication", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

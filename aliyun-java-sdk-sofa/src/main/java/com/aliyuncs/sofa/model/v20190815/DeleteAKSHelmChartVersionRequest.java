@@ -33,7 +33,7 @@ public class DeleteAKSHelmChartVersionRequest extends RpcAcsRequest<DeleteAKSHel
 
 	private String chartName;
 	public DeleteAKSHelmChartVersionRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSHelmChartVersion", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSHelmChartVersion", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

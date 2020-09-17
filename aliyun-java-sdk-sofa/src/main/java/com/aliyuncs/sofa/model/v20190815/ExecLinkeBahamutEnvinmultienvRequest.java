@@ -31,7 +31,7 @@ public class ExecLinkeBahamutEnvinmultienvRequest extends RpcAcsRequest<ExecLink
 
 	private String releaseExternalId;
 	public ExecLinkeBahamutEnvinmultienvRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeBahamutEnvinmultienv", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeBahamutEnvinmultienv", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

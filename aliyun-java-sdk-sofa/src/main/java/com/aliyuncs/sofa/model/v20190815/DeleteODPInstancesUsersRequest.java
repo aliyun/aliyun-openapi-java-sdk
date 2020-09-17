@@ -31,7 +31,7 @@ public class DeleteODPInstancesUsersRequest extends RpcAcsRequest<DeleteODPInsta
 
 	private String username;
 	public DeleteODPInstancesUsersRequest() {
-		super("SOFA", "2019-08-15", "DeleteODPInstancesUsers", "sofa");
+		super("SOFA", "2019-08-15", "DeleteODPInstancesUsers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

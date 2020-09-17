@@ -67,7 +67,7 @@ public class QueryLinkefabricFabricCiconfigsRequest extends RpcAcsRequest<QueryL
 
 	private String typeName;
 	public QueryLinkefabricFabricCiconfigsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCiconfigs", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCiconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

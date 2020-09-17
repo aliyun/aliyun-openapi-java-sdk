@@ -27,7 +27,7 @@ public class DeleteLinkeLinklogIndicationRequest extends RpcAcsRequest<DeleteLin
 
 	private String indicationId;
 	public DeleteLinkeLinklogIndicationRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinklogIndication", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinklogIndication", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

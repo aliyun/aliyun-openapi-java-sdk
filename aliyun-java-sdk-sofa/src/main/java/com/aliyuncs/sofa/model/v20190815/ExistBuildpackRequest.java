@@ -31,7 +31,7 @@ public class ExistBuildpackRequest extends RpcAcsRequest<ExistBuildpackResponse>
 
 	private Long techstackId;
 	public ExistBuildpackRequest() {
-		super("SOFA", "2019-08-15", "ExistBuildpack", "sofa");
+		super("SOFA", "2019-08-15", "ExistBuildpack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CheckLinkeBahamutReleaseidRequest extends RpcAcsRequest<CheckLinkeB
 
 	private String id;
 	public CheckLinkeBahamutReleaseidRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutReleaseid", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutReleaseid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

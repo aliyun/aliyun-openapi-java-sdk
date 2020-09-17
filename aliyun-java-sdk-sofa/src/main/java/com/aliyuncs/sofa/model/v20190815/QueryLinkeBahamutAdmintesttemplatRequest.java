@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkeBahamutAdmintesttemplatRequest extends RpcAcsRequest<QueryLinkeBahamutAdmintesttemplatResponse> {
 	   
 	public QueryLinkeBahamutAdmintesttemplatRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdmintesttemplat", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdmintesttemplat", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class RetryLinkeBahamutAppcustomciexecutionexecutionidRequest extends Rpc
 
 	private String executionId;
 	public RetryLinkeBahamutAppcustomciexecutionexecutionidRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkeBahamutAppcustomciexecutionexecutionid", "sofa");
+		super("SOFA", "2019-08-15", "RetryLinkeBahamutAppcustomciexecutionexecutionid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetCasLoadbalanceRequest extends RpcAcsRequest<GetCasLoadbalanceRes
 
 	private String id;
 	public GetCasLoadbalanceRequest() {
-		super("SOFA", "2019-08-15", "GetCasLoadbalance", "sofa");
+		super("SOFA", "2019-08-15", "GetCasLoadbalance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ListCASSlsConfigRequest extends RpcAcsRequest<ListCASSlsConfigRespo
 
 	private String projectName;
 	public ListCASSlsConfigRequest() {
-		super("SOFA", "2019-08-15", "ListCASSlsConfig", "sofa");
+		super("SOFA", "2019-08-15", "ListCASSlsConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

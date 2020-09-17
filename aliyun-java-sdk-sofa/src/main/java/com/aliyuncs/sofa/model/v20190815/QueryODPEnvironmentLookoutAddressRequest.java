@@ -27,7 +27,7 @@ public class QueryODPEnvironmentLookoutAddressRequest extends RpcAcsRequest<Quer
 
 	private String instanceId;
 	public QueryODPEnvironmentLookoutAddressRequest() {
-		super("SOFA", "2019-08-15", "QueryODPEnvironmentLookoutAddress", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPEnvironmentLookoutAddress", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

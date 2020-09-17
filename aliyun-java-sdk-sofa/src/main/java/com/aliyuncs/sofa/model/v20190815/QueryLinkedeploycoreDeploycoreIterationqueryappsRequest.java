@@ -31,7 +31,7 @@ public class QueryLinkedeploycoreDeploycoreIterationqueryappsRequest extends Rpc
 
 	private String iterationId;
 	public QueryLinkedeploycoreDeploycoreIterationqueryappsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreIterationqueryapps", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreIterationqueryapps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

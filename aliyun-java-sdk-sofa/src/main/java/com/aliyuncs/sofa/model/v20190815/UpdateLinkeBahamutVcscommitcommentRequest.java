@@ -41,7 +41,7 @@ public class UpdateLinkeBahamutVcscommitcommentRequest extends RpcAcsRequest<Upd
 
 	private String commentStr;
 	public UpdateLinkeBahamutVcscommitcommentRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutVcscommitcomment", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutVcscommitcomment", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

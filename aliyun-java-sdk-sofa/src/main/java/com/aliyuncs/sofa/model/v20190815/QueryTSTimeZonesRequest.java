@@ -27,7 +27,7 @@ public class QueryTSTimeZonesRequest extends RpcAcsRequest<QueryTSTimeZonesRespo
 
 	private String instanceId;
 	public QueryTSTimeZonesRequest() {
-		super("SOFA", "2019-08-15", "QueryTSTimeZones", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSTimeZones", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class QueryLinkeLinktKanbancolumninfoRequest extends RpcAcsRequest<QueryL
 
 	private String iterationSign;
 	public QueryLinkeLinktKanbancolumninfoRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktKanbancolumninfo", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktKanbancolumninfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

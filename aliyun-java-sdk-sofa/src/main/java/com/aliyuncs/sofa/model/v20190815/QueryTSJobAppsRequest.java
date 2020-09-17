@@ -31,7 +31,7 @@ public class QueryTSJobAppsRequest extends RpcAcsRequest<QueryTSJobAppsResponse>
 
 	private String invokeType;
 	public QueryTSJobAppsRequest() {
-		super("SOFA", "2019-08-15", "QueryTSJobApps", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSJobApps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

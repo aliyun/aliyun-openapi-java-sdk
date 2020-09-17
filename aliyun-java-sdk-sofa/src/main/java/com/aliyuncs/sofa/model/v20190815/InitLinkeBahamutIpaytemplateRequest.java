@@ -27,7 +27,7 @@ public class InitLinkeBahamutIpaytemplateRequest extends RpcAcsRequest<InitLinke
 
 	private String appName;
 	public InitLinkeBahamutIpaytemplateRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutIpaytemplate", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutIpaytemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

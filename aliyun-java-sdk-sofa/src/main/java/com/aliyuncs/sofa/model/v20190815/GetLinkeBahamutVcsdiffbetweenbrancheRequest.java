@@ -33,7 +33,7 @@ public class GetLinkeBahamutVcsdiffbetweenbrancheRequest extends RpcAcsRequest<G
 
 	private String mrTargetBranch;
 	public GetLinkeBahamutVcsdiffbetweenbrancheRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsdiffbetweenbranche", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsdiffbetweenbranche", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

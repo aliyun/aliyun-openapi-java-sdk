@@ -33,7 +33,7 @@ public class QueryODPSchemasLogicTablesRequest extends RpcAcsRequest<QueryODPSch
 
 	private String instanceId;
 	public QueryODPSchemasLogicTablesRequest() {
-		super("SOFA", "2019-08-15", "QueryODPSchemasLogicTables", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPSchemasLogicTables", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CallbackLinkefabricFabricConfigtaskRequest extends RpcAcsRequest<Ca
 
 	private Boolean isSuccess;
 	public CallbackLinkefabricFabricConfigtaskRequest() {
-		super("SOFA", "2019-08-15", "CallbackLinkefabricFabricConfigtask", "sofa");
+		super("SOFA", "2019-08-15", "CallbackLinkefabricFabricConfigtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

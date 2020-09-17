@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreAppquerybranchcommitRequest extends R
 
 	private String codeUrl;
 	public QueryLinkedeploycoreDeploycoreAppquerybranchcommitRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppquerybranchcommit", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppquerybranchcommit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

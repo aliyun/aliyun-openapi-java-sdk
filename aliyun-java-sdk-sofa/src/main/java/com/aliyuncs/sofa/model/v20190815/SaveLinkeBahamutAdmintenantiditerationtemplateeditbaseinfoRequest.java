@@ -29,7 +29,7 @@ public class SaveLinkeBahamutAdmintenantiditerationtemplateeditbaseinfoRequest e
 
 	private String formJsonStr;
 	public SaveLinkeBahamutAdmintenantiditerationtemplateeditbaseinfoRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdmintenantiditerationtemplateeditbaseinfo", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdmintenantiditerationtemplateeditbaseinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

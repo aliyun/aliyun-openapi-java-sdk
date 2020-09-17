@@ -27,7 +27,7 @@ public class GetLinkeBahamutComponentexecutionsRequest extends RpcAcsRequest<Get
 
 	private String idList;
 	public GetLinkeBahamutComponentexecutionsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutComponentexecutions", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutComponentexecutions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

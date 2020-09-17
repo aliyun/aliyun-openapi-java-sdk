@@ -37,7 +37,7 @@ public class ExecLinkeLinktRisksearchRequest extends RpcAcsRequest<ExecLinkeLink
 
 	private String assignedTo;
 	public ExecLinkeLinktRisksearchRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktRisksearch", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktRisksearch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

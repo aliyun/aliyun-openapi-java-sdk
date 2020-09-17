@@ -29,7 +29,7 @@ public class QueryLinkeLinkaPmdruleresultsRequest extends RpcAcsRequest<QueryLin
 
 	private String ruleId;
 	public QueryLinkeLinkaPmdruleresultsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaPmdruleresults", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaPmdruleresults", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

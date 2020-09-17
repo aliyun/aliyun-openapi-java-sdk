@@ -33,7 +33,7 @@ public class ExecLinkeBahamutSearchappRequest extends RpcAcsRequest<ExecLinkeBah
 
 	private String page;
 	public ExecLinkeBahamutSearchappRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeBahamutSearchapp", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeBahamutSearchapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryLinkeBahamutSandboxdeployRequest extends RpcAcsRequest<QueryLi
 
 	private String params;
 	public QueryLinkeBahamutSandboxdeployRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutSandboxdeploy", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutSandboxdeploy", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

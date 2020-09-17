@@ -29,7 +29,7 @@ public class ActiveTSJobRequest extends RpcAcsRequest<ActiveTSJobResponse> {
 
 	private String jobIds;
 	public ActiveTSJobRequest() {
-		super("SOFA", "2019-08-15", "ActiveTSJob", "sofa");
+		super("SOFA", "2019-08-15", "ActiveTSJob", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

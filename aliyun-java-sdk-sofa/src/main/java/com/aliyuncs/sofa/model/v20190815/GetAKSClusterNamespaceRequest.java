@@ -29,7 +29,7 @@ public class GetAKSClusterNamespaceRequest extends RpcAcsRequest<GetAKSClusterNa
 
 	private String name;
 	public GetAKSClusterNamespaceRequest() {
-		super("SOFA", "2019-08-15", "GetAKSClusterNamespace", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSClusterNamespace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

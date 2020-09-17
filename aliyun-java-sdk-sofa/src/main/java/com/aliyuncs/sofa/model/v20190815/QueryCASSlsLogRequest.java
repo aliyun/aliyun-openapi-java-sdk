@@ -49,7 +49,7 @@ public class QueryCASSlsLogRequest extends RpcAcsRequest<QueryCASSlsLogResponse>
 
 	private Long to;
 	public QueryCASSlsLogRequest() {
-		super("SOFA", "2019-08-15", "QueryCASSlsLog", "sofa");
+		super("SOFA", "2019-08-15", "QueryCASSlsLog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

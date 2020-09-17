@@ -27,7 +27,7 @@ public class GetLinkelinkflowLinkflowProcessoperationlogRequest extends RpcAcsRe
 
 	private String id;
 	public GetLinkelinkflowLinkflowProcessoperationlogRequest() {
-		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowProcessoperationlog", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowProcessoperationlog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

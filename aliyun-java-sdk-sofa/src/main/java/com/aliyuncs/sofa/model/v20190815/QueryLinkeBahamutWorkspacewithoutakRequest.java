@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkeBahamutWorkspacewithoutakRequest extends RpcAcsRequest<QueryLinkeBahamutWorkspacewithoutakResponse> {
 	   
 	public QueryLinkeBahamutWorkspacewithoutakRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutWorkspacewithoutak", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutWorkspacewithoutak", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateLinkeantcodeAntcodeCreatenewgroupRequest extends RpcAcsReques
 
 	private String name;
 	public CreateLinkeantcodeAntcodeCreatenewgroupRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreatenewgroup", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreatenewgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

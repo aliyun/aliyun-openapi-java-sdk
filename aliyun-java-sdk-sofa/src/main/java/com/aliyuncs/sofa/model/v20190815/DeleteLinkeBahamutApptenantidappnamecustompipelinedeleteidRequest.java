@@ -31,7 +31,7 @@ public class DeleteLinkeBahamutApptenantidappnamecustompipelinedeleteidRequest e
 
 	private String id;
 	public DeleteLinkeBahamutApptenantidappnamecustompipelinedeleteidRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutApptenantidappnamecustompipelinedeleteid", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutApptenantidappnamecustompipelinedeleteid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

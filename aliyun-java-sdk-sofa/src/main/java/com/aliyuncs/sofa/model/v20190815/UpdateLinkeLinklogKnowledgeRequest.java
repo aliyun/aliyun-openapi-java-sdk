@@ -29,7 +29,7 @@ public class UpdateLinkeLinklogKnowledgeRequest extends RpcAcsRequest<UpdateLink
 
 	private String knowledgeJsonStr;
 	public UpdateLinkeLinklogKnowledgeRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinklogKnowledge", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinklogKnowledge", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

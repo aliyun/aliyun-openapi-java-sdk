@@ -27,7 +27,7 @@ public class QueryLinkeBahamutBuildconfigRequest extends RpcAcsRequest<QueryLink
 
 	private String tenantPath;
 	public QueryLinkeBahamutBuildconfigRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutBuildconfig", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutBuildconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

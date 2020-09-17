@@ -29,7 +29,7 @@ public class UpdateODPSchemasLogicTablesRequest extends RpcAcsRequest<UpdateODPS
 
 	private String logicTableJsonStr;
 	public UpdateODPSchemasLogicTablesRequest() {
-		super("SOFA", "2019-08-15", "UpdateODPSchemasLogicTables", "sofa");
+		super("SOFA", "2019-08-15", "UpdateODPSchemasLogicTables", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkelinkflowLinkflowVariabledictionarylistRequest extends RpcAc
 
 	private String taskId;
 	public GetLinkelinkflowLinkflowVariabledictionarylistRequest() {
-		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowVariabledictionarylist", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowVariabledictionarylist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ExistClriskProductSceneRequest extends RpcAcsRequest<ExistClriskPro
 
 	private String name;
 	public ExistClriskProductSceneRequest() {
-		super("SOFA", "2019-08-15", "ExistClriskProductScene", "sofa");
+		super("SOFA", "2019-08-15", "ExistClriskProductScene", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class QueryCasDatabaseAccountRequest extends RpcAcsRequest<QueryCasDataba
 
 	private String databaseId;
 	public QueryCasDatabaseAccountRequest() {
-		super("SOFA", "2019-08-15", "QueryCasDatabaseAccount", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasDatabaseAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

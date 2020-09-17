@@ -29,7 +29,7 @@ public class DeleteMqSofamqWarnRequest extends RpcAcsRequest<DeleteMqSofamqWarnR
 
 	private Long warnId;
 	public DeleteMqSofamqWarnRequest() {
-		super("SOFA", "2019-08-15", "DeleteMqSofamqWarn", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMqSofamqWarn", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

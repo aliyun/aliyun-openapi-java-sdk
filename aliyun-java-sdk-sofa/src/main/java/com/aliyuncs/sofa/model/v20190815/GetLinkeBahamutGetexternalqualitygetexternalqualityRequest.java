@@ -27,7 +27,7 @@ public class GetLinkeBahamutGetexternalqualitygetexternalqualityRequest extends 
 
 	private String params;
 	public GetLinkeBahamutGetexternalqualitygetexternalqualityRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGetexternalqualitygetexternalquality", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGetexternalqualitygetexternalquality", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

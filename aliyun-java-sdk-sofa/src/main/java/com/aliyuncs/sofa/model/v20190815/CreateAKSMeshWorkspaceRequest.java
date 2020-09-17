@@ -33,7 +33,7 @@ public class CreateAKSMeshWorkspaceRequest extends RpcAcsRequest<CreateAKSMeshWo
 
 	private String name;
 	public CreateAKSMeshWorkspaceRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSMeshWorkspace", "sofa");
+		super("SOFA", "2019-08-15", "CreateAKSMeshWorkspace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

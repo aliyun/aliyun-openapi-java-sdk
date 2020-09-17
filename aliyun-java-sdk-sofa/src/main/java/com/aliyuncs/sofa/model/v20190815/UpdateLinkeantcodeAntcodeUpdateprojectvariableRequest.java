@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeUpdateprojectvariableRequest extends RpcAc
 
 	private String variableJsonStr;
 	public UpdateLinkeantcodeAntcodeUpdateprojectvariableRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdateprojectvariable", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdateprojectvariable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

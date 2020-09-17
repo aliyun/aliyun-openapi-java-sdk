@@ -39,7 +39,7 @@ public class GetMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<GetMsSgCircu
 
 	private String orders;
 	public GetMsSgCircuitBreakerRuleRequest() {
-		super("SOFA", "2019-08-15", "GetMsSgCircuitBreakerRule", "sofa");
+		super("SOFA", "2019-08-15", "GetMsSgCircuitBreakerRule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

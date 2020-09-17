@@ -33,7 +33,7 @@ public class SkipTSActivityInstanceRequest extends RpcAcsRequest<SkipTSActivityI
 
 	private String jobRequestId;
 	public SkipTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "SkipTSActivityInstance", "sofa");
+		super("SOFA", "2019-08-15", "SkipTSActivityInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

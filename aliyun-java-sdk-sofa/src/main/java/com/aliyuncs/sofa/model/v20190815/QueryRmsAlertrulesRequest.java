@@ -29,7 +29,7 @@ public class QueryRmsAlertrulesRequest extends RpcAcsRequest<QueryRmsAlertrulesR
 
 	private String queryJsonStr;
 	public QueryRmsAlertrulesRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlertrules", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsAlertrules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

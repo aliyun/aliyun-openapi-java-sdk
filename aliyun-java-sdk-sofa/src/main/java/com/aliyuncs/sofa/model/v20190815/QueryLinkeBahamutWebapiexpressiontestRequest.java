@@ -27,7 +27,7 @@ public class QueryLinkeBahamutWebapiexpressiontestRequest extends RpcAcsRequest<
 
 	private String unitId;
 	public QueryLinkeBahamutWebapiexpressiontestRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapiexpressiontest", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapiexpressiontest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

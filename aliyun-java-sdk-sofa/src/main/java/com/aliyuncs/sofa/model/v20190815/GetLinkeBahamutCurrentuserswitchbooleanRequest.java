@@ -27,7 +27,7 @@ public class GetLinkeBahamutCurrentuserswitchbooleanRequest extends RpcAcsReques
 
 	private String type;
 	public GetLinkeBahamutCurrentuserswitchbooleanRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutCurrentuserswitchboolean", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutCurrentuserswitchboolean", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

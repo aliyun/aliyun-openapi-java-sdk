@@ -43,7 +43,7 @@ public class DeleteMsDrmResourcesRequest extends RpcAcsRequest<DeleteMsDrmResour
 
 	private String region;
 	public DeleteMsDrmResourcesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsDrmResources", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMsDrmResources", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

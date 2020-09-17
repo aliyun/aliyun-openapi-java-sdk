@@ -31,7 +31,7 @@ public class GetLinkeBahamutPipelinesgetpipelineexecutionsbygroupRequest extends
 
 	private String page;
 	public GetLinkeBahamutPipelinesgetpipelineexecutionsbygroupRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinesgetpipelineexecutionsbygroup", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinesgetpipelineexecutionsbygroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

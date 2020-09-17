@@ -31,7 +31,7 @@ public class ExportODPSchemasRequest extends RpcAcsRequest<ExportODPSchemasRespo
 
 	private String instanceId;
 	public ExportODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "ExportODPSchemas", "sofa");
+		super("SOFA", "2019-08-15", "ExportODPSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

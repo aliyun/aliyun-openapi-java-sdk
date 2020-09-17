@@ -43,7 +43,7 @@ public class UpdateMsDrmResourcesRequest extends RpcAcsRequest<UpdateMsDrmResour
 
 	private String region;
 	public UpdateMsDrmResourcesRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsDrmResources", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsDrmResources", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ExecLinkeantcodeAntcodeManualbranchpipelineRequest extends RpcAcsRe
 
 	private String manualPipelineRequestJsonStr;
 	public ExecLinkeantcodeAntcodeManualbranchpipelineRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeManualbranchpipeline", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeManualbranchpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class SaveAKSHelmChartPackageTreeRequest extends RpcAcsRequest<SaveAKSHel
 
 	private String chartName;
 	public SaveAKSHelmChartPackageTreeRequest() {
-		super("SOFA", "2019-08-15", "SaveAKSHelmChartPackageTree", "sofa");
+		super("SOFA", "2019-08-15", "SaveAKSHelmChartPackageTree", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

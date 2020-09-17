@@ -35,7 +35,7 @@ public class QueryMsSgServiceSubscribersRequest extends RpcAcsRequest<QueryMsSgS
 
 	private String dataId;
 	public QueryMsSgServiceSubscribersRequest() {
-		super("SOFA", "2019-08-15", "QueryMsSgServiceSubscribers", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsSgServiceSubscribers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

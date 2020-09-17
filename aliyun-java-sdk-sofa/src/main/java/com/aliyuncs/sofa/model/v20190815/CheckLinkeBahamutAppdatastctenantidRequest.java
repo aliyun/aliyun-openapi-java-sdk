@@ -29,7 +29,7 @@ public class CheckLinkeBahamutAppdatastctenantidRequest extends RpcAcsRequest<Ch
 
 	private String modifyStc;
 	public CheckLinkeBahamutAppdatastctenantidRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutAppdatastctenantid", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutAppdatastctenantid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

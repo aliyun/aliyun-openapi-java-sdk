@@ -29,7 +29,7 @@ public class CheckLinkeLinktRemovetemplatefromprojectRequest extends RpcAcsReque
 
 	private String templateId;
 	public CheckLinkeLinktRemovetemplatefromprojectRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeLinktRemovetemplatefromproject", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeLinktRemovetemplatefromproject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

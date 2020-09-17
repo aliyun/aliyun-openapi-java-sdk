@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateLinkeBahamutTenanttpauthRequest extends RpcAcsRequest<UpdateLinkeBahamutTenanttpauthResponse> {
 	   
 	public UpdateLinkeBahamutTenanttpauthRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutTenanttpauth", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutTenanttpauth", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

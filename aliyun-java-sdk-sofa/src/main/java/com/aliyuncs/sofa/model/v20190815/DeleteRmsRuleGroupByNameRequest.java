@@ -31,7 +31,7 @@ public class DeleteRmsRuleGroupByNameRequest extends RpcAcsRequest<DeleteRmsRule
 
 	private String envJsonStr;
 	public DeleteRmsRuleGroupByNameRequest() {
-		super("SOFA", "2019-08-15", "DeleteRmsRuleGroupByName", "sofa");
+		super("SOFA", "2019-08-15", "DeleteRmsRuleGroupByName", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

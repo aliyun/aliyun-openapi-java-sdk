@@ -67,7 +67,7 @@ public class QueryLinkefabricFabricDockerruleconfigsRequest extends RpcAcsReques
 
 	private String typeName;
 	public QueryLinkefabricFabricDockerruleconfigsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricDockerruleconfigs", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricDockerruleconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

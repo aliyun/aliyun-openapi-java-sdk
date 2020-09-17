@@ -29,7 +29,7 @@ public class GetHelmChartUploadUrlRequest extends RpcAcsRequest<GetHelmChartUplo
 
 	private String chartFileName;
 	public GetHelmChartUploadUrlRequest() {
-		super("SOFA", "2019-08-15", "GetHelmChartUploadUrl", "sofa");
+		super("SOFA", "2019-08-15", "GetHelmChartUploadUrl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

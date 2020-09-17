@@ -29,7 +29,7 @@ public class QueryLinkedeploycoreDeploycoreIterationquerylistRequest extends Rpc
 
 	private String tenantName;
 	public QueryLinkedeploycoreDeploycoreIterationquerylistRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreIterationquerylist", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreIterationquerylist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

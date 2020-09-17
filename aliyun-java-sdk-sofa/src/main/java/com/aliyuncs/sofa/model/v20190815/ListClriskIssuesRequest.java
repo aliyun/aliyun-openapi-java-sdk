@@ -47,7 +47,7 @@ public class ListClriskIssuesRequest extends RpcAcsRequest<ListClriskIssuesRespo
 
 	private String status;
 	public ListClriskIssuesRequest() {
-		super("SOFA", "2019-08-15", "ListClriskIssues", "sofa");
+		super("SOFA", "2019-08-15", "ListClriskIssues", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

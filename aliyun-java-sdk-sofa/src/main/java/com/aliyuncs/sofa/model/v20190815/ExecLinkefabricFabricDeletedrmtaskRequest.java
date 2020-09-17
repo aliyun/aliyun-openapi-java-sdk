@@ -44,7 +44,7 @@ public class ExecLinkefabricFabricDeletedrmtaskRequest extends RpcAcsRequest<Exe
 
 	private Boolean preTaskEnable;
 	public ExecLinkefabricFabricDeletedrmtaskRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkefabricFabricDeletedrmtask", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkefabricFabricDeletedrmtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

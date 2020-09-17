@@ -29,7 +29,7 @@ public class QueryMsDrmHostsRequest extends RpcAcsRequest<QueryMsDrmHostsRespons
 
 	private String dataId;
 	public QueryMsDrmHostsRequest() {
-		super("SOFA", "2019-08-15", "QueryMsDrmHosts", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsDrmHosts", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

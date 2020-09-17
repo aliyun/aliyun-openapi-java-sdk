@@ -31,7 +31,7 @@ public class GetLinkeBahamutStoresgetallappsRequest extends RpcAcsRequest<GetLin
 
 	private String tenantPath;
 	public GetLinkeBahamutStoresgetallappsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutStoresgetallapps", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutStoresgetallapps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

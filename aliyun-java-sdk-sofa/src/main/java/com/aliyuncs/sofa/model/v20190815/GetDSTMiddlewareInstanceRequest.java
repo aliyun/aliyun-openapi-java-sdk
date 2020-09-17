@@ -31,7 +31,7 @@ public class GetDSTMiddlewareInstanceRequest extends RpcAcsRequest<GetDSTMiddlew
 
 	private String tenantName;
 	public GetDSTMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetDSTMiddlewareInstance", "sofa");
+		super("SOFA", "2019-08-15", "GetDSTMiddlewareInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

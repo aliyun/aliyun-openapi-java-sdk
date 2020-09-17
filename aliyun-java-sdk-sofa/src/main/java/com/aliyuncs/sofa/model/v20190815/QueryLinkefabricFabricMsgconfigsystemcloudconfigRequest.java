@@ -27,7 +27,7 @@ public class QueryLinkefabricFabricMsgconfigsystemcloudconfigRequest extends Rpc
 
 	private String tenantId;
 	public QueryLinkefabricFabricMsgconfigsystemcloudconfigRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricMsgconfigsystemcloudconfig", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricMsgconfigsystemcloudconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

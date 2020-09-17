@@ -45,7 +45,7 @@ public class CreateLinkeantcodeAntcodeProjectsidrepositoryfilesfilepathRequest e
 
 	private String startBranch;
 	public CreateLinkeantcodeAntcodeProjectsidrepositoryfilesfilepathRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectsidrepositoryfilesfilepath", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectsidrepositoryfilesfilepath", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

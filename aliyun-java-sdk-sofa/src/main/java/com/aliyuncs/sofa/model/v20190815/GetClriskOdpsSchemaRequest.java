@@ -27,7 +27,7 @@ public class GetClriskOdpsSchemaRequest extends RpcAcsRequest<GetClriskOdpsSchem
 
 	private String modelCode;
 	public GetClriskOdpsSchemaRequest() {
-		super("SOFA", "2019-08-15", "GetClriskOdpsSchema", "sofa");
+		super("SOFA", "2019-08-15", "GetClriskOdpsSchema", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

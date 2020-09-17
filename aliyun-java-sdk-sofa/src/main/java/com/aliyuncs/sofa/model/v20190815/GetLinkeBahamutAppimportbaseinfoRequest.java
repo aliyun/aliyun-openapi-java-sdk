@@ -29,7 +29,7 @@ public class GetLinkeBahamutAppimportbaseinfoRequest extends RpcAcsRequest<GetLi
 
 	private String tenantId;
 	public GetLinkeBahamutAppimportbaseinfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAppimportbaseinfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAppimportbaseinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

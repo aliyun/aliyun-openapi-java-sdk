@@ -33,7 +33,7 @@ public class ListAKSAcrRepoRequest extends RpcAcsRequest<ListAKSAcrRepoResponse>
 
 	private String status;
 	public ListAKSAcrRepoRequest() {
-		super("SOFA", "2019-08-15", "ListAKSAcrRepo", "sofa");
+		super("SOFA", "2019-08-15", "ListAKSAcrRepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

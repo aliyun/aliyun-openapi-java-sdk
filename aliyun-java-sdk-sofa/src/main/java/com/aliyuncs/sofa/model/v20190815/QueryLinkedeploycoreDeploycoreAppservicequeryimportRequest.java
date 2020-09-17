@@ -39,7 +39,7 @@ public class QueryLinkedeploycoreDeploycoreAppservicequeryimportRequest extends 
 
 	private String iterationId;
 	public QueryLinkedeploycoreDeploycoreAppservicequeryimportRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppservicequeryimport", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppservicequeryimport", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

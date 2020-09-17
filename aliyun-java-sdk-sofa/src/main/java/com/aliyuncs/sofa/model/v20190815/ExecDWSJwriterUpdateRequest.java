@@ -33,7 +33,7 @@ public class ExecDWSJwriterUpdateRequest extends RpcAcsRequest<ExecDWSJwriterUpd
 
 	private String instanceId;
 	public ExecDWSJwriterUpdateRequest() {
-		super("SOFA", "2019-08-15", "ExecDWSJwriterUpdate", "sofa");
+		super("SOFA", "2019-08-15", "ExecDWSJwriterUpdate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

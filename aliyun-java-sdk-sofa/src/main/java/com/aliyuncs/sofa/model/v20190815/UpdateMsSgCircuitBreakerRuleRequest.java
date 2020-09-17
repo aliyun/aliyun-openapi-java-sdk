@@ -25,9 +25,23 @@ import com.aliyuncs.sofa.Endpoint;
 public class UpdateMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<UpdateMsSgCircuitBreakerRuleResponse> {
 	   
 
+	private String httpMethod;
+
 	private String mode;
 
 	private Long id;
+
+	private String methodName;
+
+	private String appNames;
+
+	private String circuitBreakerRuleItems;
+
+	private String resource;
+
+	private String httpPath;
+
+	private String resType;
 
 	private String instanceId;
 
@@ -35,16 +49,29 @@ public class UpdateMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<UpdateMsS
 
 	private String name;
 
+	private String trafficType;
+
 	private String conditions;
 
 	private String config;
 	public UpdateMsSgCircuitBreakerRuleRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsSgCircuitBreakerRule", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsSgCircuitBreakerRule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getHttpMethod() {
+		return this.httpMethod;
+	}
+
+	public void setHttpMethod(String httpMethod) {
+		this.httpMethod = httpMethod;
+		if(httpMethod != null){
+			putBodyParameter("HttpMethod", httpMethod);
+		}
 	}
 
 	public String getMode() {
@@ -66,6 +93,72 @@ public class UpdateMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<UpdateMsS
 		this.id = id;
 		if(id != null){
 			putBodyParameter("Id", id.toString());
+		}
+	}
+
+	public String getMethodName() {
+		return this.methodName;
+	}
+
+	public void setMethodName(String methodName) {
+		this.methodName = methodName;
+		if(methodName != null){
+			putBodyParameter("MethodName", methodName);
+		}
+	}
+
+	public String getAppNames() {
+		return this.appNames;
+	}
+
+	public void setAppNames(String appNames) {
+		this.appNames = appNames;
+		if(appNames != null){
+			putBodyParameter("AppNames", appNames);
+		}
+	}
+
+	public String getCircuitBreakerRuleItems() {
+		return this.circuitBreakerRuleItems;
+	}
+
+	public void setCircuitBreakerRuleItems(String circuitBreakerRuleItems) {
+		this.circuitBreakerRuleItems = circuitBreakerRuleItems;
+		if(circuitBreakerRuleItems != null){
+			putBodyParameter("CircuitBreakerRuleItems", circuitBreakerRuleItems);
+		}
+	}
+
+	public String getResource() {
+		return this.resource;
+	}
+
+	public void setResource(String resource) {
+		this.resource = resource;
+		if(resource != null){
+			putBodyParameter("Resource", resource);
+		}
+	}
+
+	public String getHttpPath() {
+		return this.httpPath;
+	}
+
+	public void setHttpPath(String httpPath) {
+		this.httpPath = httpPath;
+		if(httpPath != null){
+			putBodyParameter("HttpPath", httpPath);
+		}
+	}
+
+	public String getResType() {
+		return this.resType;
+	}
+
+	public void setResType(String resType) {
+		this.resType = resType;
+		if(resType != null){
+			putBodyParameter("ResType", resType);
 		}
 	}
 
@@ -99,6 +192,17 @@ public class UpdateMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<UpdateMsS
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getTrafficType() {
+		return this.trafficType;
+	}
+
+	public void setTrafficType(String trafficType) {
+		this.trafficType = trafficType;
+		if(trafficType != null){
+			putBodyParameter("TrafficType", trafficType);
 		}
 	}
 

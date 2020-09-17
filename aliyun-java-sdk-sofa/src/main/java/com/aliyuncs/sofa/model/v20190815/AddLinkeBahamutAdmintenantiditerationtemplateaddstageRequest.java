@@ -29,7 +29,7 @@ public class AddLinkeBahamutAdmintenantiditerationtemplateaddstageRequest extend
 
 	private String tenantId;
 	public AddLinkeBahamutAdmintenantiditerationtemplateaddstageRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmintenantiditerationtemplateaddstage", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmintenantiditerationtemplateaddstage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

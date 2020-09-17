@@ -27,7 +27,7 @@ public class GetClriskUserRequest extends RpcAcsRequest<GetClriskUserResponse> {
 
 	private String originId;
 	public GetClriskUserRequest() {
-		super("SOFA", "2019-08-15", "GetClriskUser", "sofa");
+		super("SOFA", "2019-08-15", "GetClriskUser", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

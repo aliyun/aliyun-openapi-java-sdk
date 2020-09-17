@@ -33,7 +33,7 @@ public class CreateLinkeantcodeAntcodeNewlabelforgivenrepositorywithgivennameand
 
 	private String name;
 	public CreateLinkeantcodeAntcodeNewlabelforgivenrepositorywithgivennameandcolorRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeNewlabelforgivenrepositorywithgivennameandcolor", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeNewlabelforgivenrepositorywithgivennameandcolor", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

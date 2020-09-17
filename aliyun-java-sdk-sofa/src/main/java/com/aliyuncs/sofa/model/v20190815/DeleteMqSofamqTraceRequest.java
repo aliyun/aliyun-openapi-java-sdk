@@ -29,7 +29,7 @@ public class DeleteMqSofamqTraceRequest extends RpcAcsRequest<DeleteMqSofamqTrac
 
 	private String instanceId;
 	public DeleteMqSofamqTraceRequest() {
-		super("SOFA", "2019-08-15", "DeleteMqSofamqTrace", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMqSofamqTrace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

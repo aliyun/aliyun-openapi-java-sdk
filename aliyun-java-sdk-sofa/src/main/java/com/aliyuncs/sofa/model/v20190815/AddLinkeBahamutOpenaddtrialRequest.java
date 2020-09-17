@@ -29,7 +29,7 @@ public class AddLinkeBahamutOpenaddtrialRequest extends RpcAcsRequest<AddLinkeBa
 
 	private String tenantId;
 	public AddLinkeBahamutOpenaddtrialRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutOpenaddtrial", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutOpenaddtrial", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

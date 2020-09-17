@@ -33,7 +33,7 @@ public class UpdateLinkeBahamutQualityupdatecoverageRequest extends RpcAcsReques
 
 	private String iterationUnitId;
 	public UpdateLinkeBahamutQualityupdatecoverageRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutQualityupdatecoverage", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutQualityupdatecoverage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

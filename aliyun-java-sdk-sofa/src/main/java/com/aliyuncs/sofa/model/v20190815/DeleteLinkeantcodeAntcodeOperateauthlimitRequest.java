@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeOperateauthlimitRequest extends RpcAcsRequ
 
 	private String token;
 	public DeleteLinkeantcodeAntcodeOperateauthlimitRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeOperateauthlimit", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeOperateauthlimit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutEnvconfigRequest extends RpcAcsRequest<GetLinkeBahamutEnvconfigResponse> {
 	   
 	public GetLinkeBahamutEnvconfigRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutEnvconfig", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutEnvconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

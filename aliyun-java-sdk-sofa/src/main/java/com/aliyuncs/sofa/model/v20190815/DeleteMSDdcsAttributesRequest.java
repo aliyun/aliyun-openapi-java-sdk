@@ -29,7 +29,7 @@ public class DeleteMSDdcsAttributesRequest extends RpcAcsRequest<DeleteMSDdcsAtt
 
 	private Long id;
 	public DeleteMSDdcsAttributesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMSDdcsAttributes", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMSDdcsAttributes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

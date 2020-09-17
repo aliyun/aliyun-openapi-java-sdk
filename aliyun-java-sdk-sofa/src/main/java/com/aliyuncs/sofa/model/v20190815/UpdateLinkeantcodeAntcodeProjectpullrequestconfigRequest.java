@@ -45,7 +45,7 @@ public class UpdateLinkeantcodeAntcodeProjectpullrequestconfigRequest extends Rp
 
 	private String onlyAllChecksSucceed;
 	public UpdateLinkeantcodeAntcodeProjectpullrequestconfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectpullrequestconfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectpullrequestconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

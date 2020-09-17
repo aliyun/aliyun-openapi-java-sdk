@@ -29,7 +29,7 @@ public class QueryLinkedeploycoreDeploycoreAppserviceunfollowRequest extends Rpc
 
 	private String user;
 	public QueryLinkedeploycoreDeploycoreAppserviceunfollowRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppserviceunfollow", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppserviceunfollow", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetLinkeBahamutGetcloudworkspaceRequest extends RpcAcsRequest<GetLi
 
 	private String iterationUnitId;
 	public GetLinkeBahamutGetcloudworkspaceRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGetcloudworkspace", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGetcloudworkspace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

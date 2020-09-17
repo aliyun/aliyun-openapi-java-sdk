@@ -113,6 +113,8 @@ public class ListMsSgAuthRuleGroupAppsResponse extends AcsResponse {
 
 		private Long blackState;
 
+		private String changeStatus;
+
 		private String dataId;
 
 		private String gmtCreate;
@@ -155,6 +157,14 @@ public class ListMsSgAuthRuleGroupAppsResponse extends AcsResponse {
 
 		public void setBlackState(Long blackState) {
 			this.blackState = blackState;
+		}
+
+		public String getChangeStatus() {
+			return this.changeStatus;
+		}
+
+		public void setChangeStatus(String changeStatus) {
+			this.changeStatus = changeStatus;
 		}
 
 		public String getDataId() {
@@ -239,7 +249,7 @@ public class ListMsSgAuthRuleGroupAppsResponse extends AcsResponse {
 
 		public static class RulesItem {
 
-			private Long authRuleRroupId;
+			private Long authRuleGroupId;
 
 			private Long enabled;
 
@@ -257,12 +267,12 @@ public class ListMsSgAuthRuleGroupAppsResponse extends AcsResponse {
 
 			private List<RuleItemsItem> ruleItems;
 
-			public Long getAuthRuleRroupId() {
-				return this.authRuleRroupId;
+			public Long getAuthRuleGroupId() {
+				return this.authRuleGroupId;
 			}
 
-			public void setAuthRuleRroupId(Long authRuleRroupId) {
-				this.authRuleRroupId = authRuleRroupId;
+			public void setAuthRuleGroupId(Long authRuleGroupId) {
+				this.authRuleGroupId = authRuleGroupId;
 			}
 
 			public Long getEnabled() {

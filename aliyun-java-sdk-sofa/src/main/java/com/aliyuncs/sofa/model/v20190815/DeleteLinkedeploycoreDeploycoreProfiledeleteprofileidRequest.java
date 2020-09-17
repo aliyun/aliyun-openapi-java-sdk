@@ -27,7 +27,7 @@ public class DeleteLinkedeploycoreDeploycoreProfiledeleteprofileidRequest extend
 
 	private String profileId;
 	public DeleteLinkedeploycoreDeploycoreProfiledeleteprofileidRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkedeploycoreDeploycoreProfiledeleteprofileid", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkedeploycoreDeploycoreProfiledeleteprofileid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

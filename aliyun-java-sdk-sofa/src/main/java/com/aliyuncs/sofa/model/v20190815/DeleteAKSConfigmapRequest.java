@@ -31,7 +31,7 @@ public class DeleteAKSConfigmapRequest extends RpcAcsRequest<DeleteAKSConfigmapR
 
 	private String namespace;
 	public DeleteAKSConfigmapRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSConfigmap", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSConfigmap", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

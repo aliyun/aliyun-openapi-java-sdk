@@ -39,7 +39,7 @@ public class UpdateMsDrmAttributesRequest extends RpcAcsRequest<UpdateMsDrmAttri
 
 	private String name;
 	public UpdateMsDrmAttributesRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsDrmAttributes", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsDrmAttributes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

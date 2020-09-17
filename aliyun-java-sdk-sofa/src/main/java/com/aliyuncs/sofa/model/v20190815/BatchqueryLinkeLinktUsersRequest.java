@@ -27,7 +27,7 @@ public class BatchqueryLinkeLinktUsersRequest extends RpcAcsRequest<BatchqueryLi
 
 	private String uids;
 	public BatchqueryLinkeLinktUsersRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryLinkeLinktUsers", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryLinkeLinktUsers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

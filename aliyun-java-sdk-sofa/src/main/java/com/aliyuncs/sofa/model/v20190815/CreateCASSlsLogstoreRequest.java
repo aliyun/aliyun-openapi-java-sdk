@@ -37,7 +37,7 @@ public class CreateCASSlsLogstoreRequest extends RpcAcsRequest<CreateCASSlsLogst
 
 	private Long ttl;
 	public CreateCASSlsLogstoreRequest() {
-		super("SOFA", "2019-08-15", "CreateCASSlsLogstore", "sofa");
+		super("SOFA", "2019-08-15", "CreateCASSlsLogstore", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

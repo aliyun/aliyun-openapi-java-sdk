@@ -33,7 +33,7 @@ public class ApplySidecarCertRequest extends RpcAcsRequest<ApplySidecarCertRespo
 
 	private String tenantName;
 	public ApplySidecarCertRequest() {
-		super("SOFA", "2019-08-15", "ApplySidecarCert", "sofa");
+		super("SOFA", "2019-08-15", "ApplySidecarCert", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

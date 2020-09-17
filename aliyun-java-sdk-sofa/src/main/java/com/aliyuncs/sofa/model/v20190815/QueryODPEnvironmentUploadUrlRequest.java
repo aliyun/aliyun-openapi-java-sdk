@@ -31,7 +31,7 @@ public class QueryODPEnvironmentUploadUrlRequest extends RpcAcsRequest<QueryODPE
 
 	private String instanceId;
 	public QueryODPEnvironmentUploadUrlRequest() {
-		super("SOFA", "2019-08-15", "QueryODPEnvironmentUploadUrl", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPEnvironmentUploadUrl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

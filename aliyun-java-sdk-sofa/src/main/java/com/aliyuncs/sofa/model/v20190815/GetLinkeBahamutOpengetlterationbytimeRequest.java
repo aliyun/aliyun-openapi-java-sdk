@@ -33,7 +33,7 @@ public class GetLinkeBahamutOpengetlterationbytimeRequest extends RpcAcsRequest<
 
 	private String status;
 	public GetLinkeBahamutOpengetlterationbytimeRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutOpengetlterationbytime", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutOpengetlterationbytime", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

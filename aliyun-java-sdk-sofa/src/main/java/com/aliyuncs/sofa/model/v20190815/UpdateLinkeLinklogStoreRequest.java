@@ -53,7 +53,7 @@ public class UpdateLinkeLinklogStoreRequest extends RpcAcsRequest<UpdateLinkeLin
 
 	private Long begin;
 	public UpdateLinkeLinklogStoreRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinklogStore", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinklogStore", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

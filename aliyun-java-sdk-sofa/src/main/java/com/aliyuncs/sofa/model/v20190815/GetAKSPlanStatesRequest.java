@@ -29,7 +29,7 @@ public class GetAKSPlanStatesRequest extends RpcAcsRequest<GetAKSPlanStatesRespo
 
 	private String workspace;
 	public GetAKSPlanStatesRequest() {
-		super("SOFA", "2019-08-15", "GetAKSPlanStates", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSPlanStates", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

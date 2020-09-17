@@ -31,7 +31,7 @@ public class AllDTXZoneRequest extends RpcAcsRequest<AllDTXZoneResponse> {
 
 	private String tenantName;
 	public AllDTXZoneRequest() {
-		super("SOFA", "2019-08-15", "AllDTXZone", "sofa");
+		super("SOFA", "2019-08-15", "AllDTXZone", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class SkipLinkeBahamutIterationunitnextstageRequest extends RpcAcsRequest
 
 	private String iterationUnitId;
 	public SkipLinkeBahamutIterationunitnextstageRequest() {
-		super("SOFA", "2019-08-15", "SkipLinkeBahamutIterationunitnextstage", "sofa");
+		super("SOFA", "2019-08-15", "SkipLinkeBahamutIterationunitnextstage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

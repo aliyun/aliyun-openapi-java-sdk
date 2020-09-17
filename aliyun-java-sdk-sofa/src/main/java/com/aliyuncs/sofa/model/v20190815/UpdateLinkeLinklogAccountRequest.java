@@ -29,7 +29,7 @@ public class UpdateLinkeLinklogAccountRequest extends RpcAcsRequest<UpdateLinkeL
 
 	private String accountVOJsonStr;
 	public UpdateLinkeLinklogAccountRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinklogAccount", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinklogAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

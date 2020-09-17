@@ -29,7 +29,7 @@ public class GetLinkeBahamutMrgroupgetpipelineexecutionsbygroupandmridRequest ex
 
 	private String stageId;
 	public GetLinkeBahamutMrgroupgetpipelineexecutionsbygroupandmridRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutMrgroupgetpipelineexecutionsbygroupandmrid", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutMrgroupgetpipelineexecutionsbygroupandmrid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class GetAKSHelmChartRequest extends RpcAcsRequest<GetAKSHelmChartRespons
 
 	private String chartName;
 	public GetAKSHelmChartRequest() {
-		super("SOFA", "2019-08-15", "GetAKSHelmChart", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSHelmChart", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

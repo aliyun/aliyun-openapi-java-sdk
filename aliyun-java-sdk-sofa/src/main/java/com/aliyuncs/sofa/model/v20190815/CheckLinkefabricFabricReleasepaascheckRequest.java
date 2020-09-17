@@ -66,7 +66,7 @@ public class CheckLinkefabricFabricReleasepaascheckRequest extends RpcAcsRequest
 
 	private Boolean useBaseline;
 	public CheckLinkefabricFabricReleasepaascheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkefabricFabricReleasepaascheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkefabricFabricReleasepaascheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

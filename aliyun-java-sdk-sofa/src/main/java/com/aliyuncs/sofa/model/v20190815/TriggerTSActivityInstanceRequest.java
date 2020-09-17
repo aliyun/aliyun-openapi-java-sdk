@@ -29,7 +29,7 @@ public class TriggerTSActivityInstanceRequest extends RpcAcsRequest<TriggerTSAct
 
 	private String instanceId;
 	public TriggerTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "TriggerTSActivityInstance", "sofa");
+		super("SOFA", "2019-08-15", "TriggerTSActivityInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

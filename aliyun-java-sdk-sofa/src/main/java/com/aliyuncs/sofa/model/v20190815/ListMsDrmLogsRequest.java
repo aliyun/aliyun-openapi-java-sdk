@@ -33,7 +33,7 @@ public class ListMsDrmLogsRequest extends RpcAcsRequest<ListMsDrmLogsResponse> {
 
 	private String dataId;
 	public ListMsDrmLogsRequest() {
-		super("SOFA", "2019-08-15", "ListMsDrmLogs", "sofa");
+		super("SOFA", "2019-08-15", "ListMsDrmLogs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

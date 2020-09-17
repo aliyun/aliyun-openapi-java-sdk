@@ -33,7 +33,7 @@ public class DeleteMsSgAuthRulesRequest extends RpcAcsRequest<DeleteMsSgAuthRule
 
 	private Long ruleId;
 	public DeleteMsSgAuthRulesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsSgAuthRules", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMsSgAuthRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

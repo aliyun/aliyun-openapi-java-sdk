@@ -35,7 +35,7 @@ public class GetDWSCrawlerConnectionRequest extends RpcAcsRequest<GetDWSCrawlerC
 
 	private String instanceId;
 	public GetDWSCrawlerConnectionRequest() {
-		super("SOFA", "2019-08-15", "GetDWSCrawlerConnection", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSCrawlerConnection", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

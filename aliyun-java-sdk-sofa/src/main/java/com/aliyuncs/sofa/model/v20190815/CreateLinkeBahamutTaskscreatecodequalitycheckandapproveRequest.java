@@ -32,7 +32,7 @@ public class CreateLinkeBahamutTaskscreatecodequalitycheckandapproveRequest exte
 
 	private String iterationId;
 	public CreateLinkeBahamutTaskscreatecodequalitycheckandapproveRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutTaskscreatecodequalitycheckandapprove", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutTaskscreatecodequalitycheckandapprove", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

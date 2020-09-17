@@ -29,13 +29,15 @@ public class QueryMsSgServicesRequest extends RpcAcsRequest<QueryMsSgServicesRes
 
 	private Long pageSize;
 
+	private String tenantId;
+
 	private String keyword;
 
 	private Long start;
 
 	private String instanceId;
 	public QueryMsSgServicesRequest() {
-		super("SOFA", "2019-08-15", "QueryMsSgServices", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsSgServices", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +64,17 @@ public class QueryMsSgServicesRequest extends RpcAcsRequest<QueryMsSgServicesRes
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTenantId() {
+		return this.tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+		if(tenantId != null){
+			putBodyParameter("TenantId", tenantId);
 		}
 	}
 

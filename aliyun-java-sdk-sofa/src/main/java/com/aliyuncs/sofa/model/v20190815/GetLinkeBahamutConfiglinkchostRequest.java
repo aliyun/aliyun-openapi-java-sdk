@@ -27,7 +27,7 @@ public class GetLinkeBahamutConfiglinkchostRequest extends RpcAcsRequest<GetLink
 
 	private String tenantId;
 	public GetLinkeBahamutConfiglinkchostRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutConfiglinkchost", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutConfiglinkchost", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

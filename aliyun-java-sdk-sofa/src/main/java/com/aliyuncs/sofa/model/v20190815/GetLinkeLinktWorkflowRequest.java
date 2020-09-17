@@ -27,7 +27,7 @@ public class GetLinkeLinktWorkflowRequest extends RpcAcsRequest<GetLinkeLinktWor
 
 	private String workflowId;
 	public GetLinkeLinktWorkflowRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinktWorkflow", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinktWorkflow", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

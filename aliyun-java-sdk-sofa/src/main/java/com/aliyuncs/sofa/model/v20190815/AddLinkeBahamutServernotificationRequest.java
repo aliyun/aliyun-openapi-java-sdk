@@ -27,7 +27,7 @@ public class AddLinkeBahamutServernotificationRequest extends RpcAcsRequest<AddL
 
 	private String body;
 	public AddLinkeBahamutServernotificationRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutServernotification", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutServernotification", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

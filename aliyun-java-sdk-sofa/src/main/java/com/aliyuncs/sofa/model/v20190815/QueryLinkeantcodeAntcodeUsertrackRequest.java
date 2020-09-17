@@ -29,7 +29,7 @@ public class QueryLinkeantcodeAntcodeUsertrackRequest extends RpcAcsRequest<Quer
 
 	private String trackJsonStr;
 	public QueryLinkeantcodeAntcodeUsertrackRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeUsertrack", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeUsertrack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

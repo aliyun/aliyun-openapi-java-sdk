@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeUserpasswordRequest extends RpcAcsRequest<Q
 
 	private String oldPassword;
 	public QueryLinkeantcodeAntcodeUserpasswordRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeUserpassword", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeUserpassword", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

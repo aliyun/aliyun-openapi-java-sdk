@@ -42,7 +42,7 @@ public class CreateLinkeLinktCustomfieldRequest extends RpcAcsRequest<CreateLink
 
 	private List<String> possibleValuesRepeatLists;
 	public CreateLinkeLinktCustomfieldRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktCustomfield", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktCustomfield", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

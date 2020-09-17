@@ -33,7 +33,7 @@ public class ExecLinkeLinklogKnowledgefeedbackRequest extends RpcAcsRequest<Exec
 
 	private String logId;
 	public ExecLinkeLinklogKnowledgefeedbackRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinklogKnowledgefeedback", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinklogKnowledgefeedback", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

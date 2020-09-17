@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeRerunfailedbypipelineRequest extends RpcAcsR
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeRerunfailedbypipelineRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeRerunfailedbypipeline", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeRerunfailedbypipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

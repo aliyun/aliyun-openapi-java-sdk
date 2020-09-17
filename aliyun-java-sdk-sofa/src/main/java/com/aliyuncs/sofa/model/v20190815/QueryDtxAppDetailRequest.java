@@ -29,7 +29,7 @@ public class QueryDtxAppDetailRequest extends RpcAcsRequest<QueryDtxAppDetailRes
 
 	private Long appId;
 	public QueryDtxAppDetailRequest() {
-		super("SOFA", "2019-08-15", "QueryDtxAppDetail", "sofa");
+		super("SOFA", "2019-08-15", "QueryDtxAppDetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

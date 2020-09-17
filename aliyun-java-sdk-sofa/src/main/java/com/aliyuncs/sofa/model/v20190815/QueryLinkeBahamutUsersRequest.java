@@ -29,7 +29,7 @@ public class QueryLinkeBahamutUsersRequest extends RpcAcsRequest<QueryLinkeBaham
 
 	private String keyword;
 	public QueryLinkeBahamutUsersRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutUsers", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutUsers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

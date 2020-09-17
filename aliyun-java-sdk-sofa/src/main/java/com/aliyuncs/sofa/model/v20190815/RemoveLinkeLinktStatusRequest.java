@@ -29,7 +29,7 @@ public class RemoveLinkeLinktStatusRequest extends RpcAcsRequest<RemoveLinkeLink
 
 	private String statusConvertMap;
 	public RemoveLinkeLinktStatusRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktStatus", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktStatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryLinkeLinkaTasksummaryRequest extends RpcAcsRequest<QueryLinkeL
 
 	private String id;
 	public QueryLinkeLinkaTasksummaryRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaTasksummary", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaTasksummary", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

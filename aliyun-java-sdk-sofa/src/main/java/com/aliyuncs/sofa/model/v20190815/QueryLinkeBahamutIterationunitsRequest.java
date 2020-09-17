@@ -33,7 +33,7 @@ public class QueryLinkeBahamutIterationunitsRequest extends RpcAcsRequest<QueryL
 
 	private String page;
 	public QueryLinkeBahamutIterationunitsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutIterationunits", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutIterationunits", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

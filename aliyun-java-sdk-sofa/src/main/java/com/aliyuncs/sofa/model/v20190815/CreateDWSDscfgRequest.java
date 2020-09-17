@@ -29,7 +29,7 @@ public class CreateDWSDscfgRequest extends RpcAcsRequest<CreateDWSDscfgResponse>
 
 	private String taskModelJsonStr;
 	public CreateDWSDscfgRequest() {
-		super("SOFA", "2019-08-15", "CreateDWSDscfg", "sofa");
+		super("SOFA", "2019-08-15", "CreateDWSDscfg", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

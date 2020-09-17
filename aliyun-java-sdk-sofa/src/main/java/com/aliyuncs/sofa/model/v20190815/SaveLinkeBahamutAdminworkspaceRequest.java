@@ -67,7 +67,7 @@ public class SaveLinkeBahamutAdminworkspaceRequest extends RpcAcsRequest<SaveLin
 
 	private String workspaceId;
 	public SaveLinkeBahamutAdminworkspaceRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdminworkspace", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdminworkspace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

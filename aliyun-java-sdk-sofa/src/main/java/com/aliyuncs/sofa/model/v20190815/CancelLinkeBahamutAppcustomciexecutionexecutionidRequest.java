@@ -27,7 +27,7 @@ public class CancelLinkeBahamutAppcustomciexecutionexecutionidRequest extends Rp
 
 	private String executionId;
 	public CancelLinkeBahamutAppcustomciexecutionexecutionidRequest() {
-		super("SOFA", "2019-08-15", "CancelLinkeBahamutAppcustomciexecutionexecutionid", "sofa");
+		super("SOFA", "2019-08-15", "CancelLinkeBahamutAppcustomciexecutionexecutionid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

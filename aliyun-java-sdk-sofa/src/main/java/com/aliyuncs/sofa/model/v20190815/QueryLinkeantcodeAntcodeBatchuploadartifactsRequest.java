@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeBatchuploadartifactsRequest extends RpcAcsR
 
 	private String createDTOJsonStr;
 	public QueryLinkeantcodeAntcodeBatchuploadartifactsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeBatchuploadartifacts", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeBatchuploadartifacts", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

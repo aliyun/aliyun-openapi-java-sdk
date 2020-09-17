@@ -29,7 +29,7 @@ public class AddLinkeantcodeAntcodeUsergpgkeyRequest extends RpcAcsRequest<AddLi
 
 	private String requestGitOperate;
 	public AddLinkeantcodeAntcodeUsergpgkeyRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeUsergpgkey", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeUsergpgkey", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

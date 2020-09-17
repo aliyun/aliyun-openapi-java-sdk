@@ -31,7 +31,7 @@ public class QueryLinkeLinklogAccountlistRequest extends RpcAcsRequest<QueryLink
 
 	private String currentPage;
 	public QueryLinkeLinklogAccountlistRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinklogAccountlist", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinklogAccountlist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

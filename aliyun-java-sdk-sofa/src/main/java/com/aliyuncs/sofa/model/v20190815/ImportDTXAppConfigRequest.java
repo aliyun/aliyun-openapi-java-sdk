@@ -35,7 +35,7 @@ public class ImportDTXAppConfigRequest extends RpcAcsRequest<ImportDTXAppConfigR
 
 	private String instanceId;
 	public ImportDTXAppConfigRequest() {
-		super("SOFA", "2019-08-15", "ImportDTXAppConfig", "sofa");
+		super("SOFA", "2019-08-15", "ImportDTXAppConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

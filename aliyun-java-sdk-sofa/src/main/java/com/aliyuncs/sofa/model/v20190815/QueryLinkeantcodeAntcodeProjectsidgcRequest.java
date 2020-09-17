@@ -29,7 +29,7 @@ public class QueryLinkeantcodeAntcodeProjectsidgcRequest extends RpcAcsRequest<Q
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeProjectsidgcRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsidgc", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsidgc", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

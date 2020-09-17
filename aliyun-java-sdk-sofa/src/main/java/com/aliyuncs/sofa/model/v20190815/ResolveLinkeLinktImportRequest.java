@@ -31,7 +31,7 @@ public class ResolveLinkeLinktImportRequest extends RpcAcsRequest<ResolveLinkeLi
 
 	private String templateId;
 	public ResolveLinkeLinktImportRequest() {
-		super("SOFA", "2019-08-15", "ResolveLinkeLinktImport", "sofa");
+		super("SOFA", "2019-08-15", "ResolveLinkeLinktImport", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

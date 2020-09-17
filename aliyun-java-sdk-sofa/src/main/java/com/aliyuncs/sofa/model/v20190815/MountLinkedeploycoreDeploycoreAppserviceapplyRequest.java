@@ -82,7 +82,7 @@ public class MountLinkedeploycoreDeploycoreAppserviceapplyRequest extends RpcAcs
 
 	private Long appServiceId;
 	public MountLinkedeploycoreDeploycoreAppserviceapplyRequest() {
-		super("SOFA", "2019-08-15", "MountLinkedeploycoreDeploycoreAppserviceapply", "sofa");
+		super("SOFA", "2019-08-15", "MountLinkedeploycoreDeploycoreAppserviceapply", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

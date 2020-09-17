@@ -29,7 +29,7 @@ public class SyncLinkeBahamutAppdatasyncappmembernamestenantidRequest extends Rp
 
 	private String importApps;
 	public SyncLinkeBahamutAppdatasyncappmembernamestenantidRequest() {
-		super("SOFA", "2019-08-15", "SyncLinkeBahamutAppdatasyncappmembernamestenantid", "sofa");
+		super("SOFA", "2019-08-15", "SyncLinkeBahamutAppdatasyncappmembernamestenantid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

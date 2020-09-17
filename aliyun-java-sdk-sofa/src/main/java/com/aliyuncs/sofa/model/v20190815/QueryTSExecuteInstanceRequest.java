@@ -37,7 +37,7 @@ public class QueryTSExecuteInstanceRequest extends RpcAcsRequest<QueryTSExecuteI
 
 	private String jobRequestId;
 	public QueryTSExecuteInstanceRequest() {
-		super("SOFA", "2019-08-15", "QueryTSExecuteInstance", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSExecuteInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

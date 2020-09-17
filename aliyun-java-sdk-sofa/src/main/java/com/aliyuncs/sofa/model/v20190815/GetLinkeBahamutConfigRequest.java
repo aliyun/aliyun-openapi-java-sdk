@@ -27,7 +27,7 @@ public class GetLinkeBahamutConfigRequest extends RpcAcsRequest<GetLinkeBahamutC
 
 	private String tenantId;
 	public GetLinkeBahamutConfigRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutConfig", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

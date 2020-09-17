@@ -27,7 +27,7 @@ public class QueryLinkeBahamutPaasgetmachinecountRequest extends RpcAcsRequest<Q
 
 	private String account;
 	public QueryLinkeBahamutPaasgetmachinecountRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutPaasgetmachinecount", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutPaasgetmachinecount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

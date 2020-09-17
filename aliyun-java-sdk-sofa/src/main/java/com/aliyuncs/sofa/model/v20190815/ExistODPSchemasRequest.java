@@ -31,7 +31,7 @@ public class ExistODPSchemasRequest extends RpcAcsRequest<ExistODPSchemasRespons
 
 	private String instanceId;
 	public ExistODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "ExistODPSchemas", "sofa");
+		super("SOFA", "2019-08-15", "ExistODPSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

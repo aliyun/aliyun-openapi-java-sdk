@@ -67,7 +67,7 @@ public class ImportLinkefabricFabricCibranchconfigsRequest extends RpcAcsRequest
 
 	private String typeName;
 	public ImportLinkefabricFabricCibranchconfigsRequest() {
-		super("SOFA", "2019-08-15", "ImportLinkefabricFabricCibranchconfigs", "sofa");
+		super("SOFA", "2019-08-15", "ImportLinkefabricFabricCibranchconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

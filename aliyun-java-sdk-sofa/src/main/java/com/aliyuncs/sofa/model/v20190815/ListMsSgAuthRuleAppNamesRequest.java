@@ -29,7 +29,7 @@ public class ListMsSgAuthRuleAppNamesRequest extends RpcAcsRequest<ListMsSgAuthR
 
 	private String instanceId;
 	public ListMsSgAuthRuleAppNamesRequest() {
-		super("SOFA", "2019-08-15", "ListMsSgAuthRuleAppNames", "sofa");
+		super("SOFA", "2019-08-15", "ListMsSgAuthRuleAppNames", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

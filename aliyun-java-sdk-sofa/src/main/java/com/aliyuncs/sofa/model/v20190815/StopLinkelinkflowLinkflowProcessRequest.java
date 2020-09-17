@@ -27,7 +27,7 @@ public class StopLinkelinkflowLinkflowProcessRequest extends RpcAcsRequest<StopL
 
 	private String processInstanceId;
 	public StopLinkelinkflowLinkflowProcessRequest() {
-		super("SOFA", "2019-08-15", "StopLinkelinkflowLinkflowProcess", "sofa");
+		super("SOFA", "2019-08-15", "StopLinkelinkflowLinkflowProcess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

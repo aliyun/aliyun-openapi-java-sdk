@@ -29,7 +29,7 @@ public class GetLinkeBahamutWebapigetallappsRequest extends RpcAcsRequest<GetLin
 
 	private String app;
 	public GetLinkeBahamutWebapigetallappsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetallapps", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetallapps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

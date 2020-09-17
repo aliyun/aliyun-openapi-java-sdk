@@ -41,7 +41,7 @@ public class CreateLinkeLinktMilestoneRequest extends RpcAcsRequest<CreateLinkeL
 
 	private String status;
 	public CreateLinkeLinktMilestoneRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktMilestone", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktMilestone", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

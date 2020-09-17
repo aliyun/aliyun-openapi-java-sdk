@@ -104,7 +104,7 @@ public class UpdateLinkeBahamutReleasemanagerRequest extends RpcAcsRequest<Updat
 
 	private Boolean tagAndMergeMasterWhenEmergency;
 	public UpdateLinkeBahamutReleasemanagerRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutReleasemanager", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutReleasemanager", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

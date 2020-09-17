@@ -29,7 +29,7 @@ public class QueryRmsDataSeriesRequest extends RpcAcsRequest<QueryRmsDataSeriesR
 
 	private String queryJsonStr;
 	public QueryRmsDataSeriesRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsDataSeries", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsDataSeries", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

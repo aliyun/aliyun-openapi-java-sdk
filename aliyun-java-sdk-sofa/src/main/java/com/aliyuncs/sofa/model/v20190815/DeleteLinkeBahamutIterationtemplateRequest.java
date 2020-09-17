@@ -27,7 +27,7 @@ public class DeleteLinkeBahamutIterationtemplateRequest extends RpcAcsRequest<De
 
 	private String id;
 	public DeleteLinkeBahamutIterationtemplateRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutIterationtemplate", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutIterationtemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryLinkeBahamutAdminiterationtemplateidRequest extends RpcAcsRequ
 
 	private String templateId;
 	public QueryLinkeBahamutAdminiterationtemplateidRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdminiterationtemplateid", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdminiterationtemplateid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

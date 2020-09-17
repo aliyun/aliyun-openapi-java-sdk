@@ -29,7 +29,7 @@ public class ExecLinkeantcodeAntcodeUsertrackRequest extends RpcAcsRequest<ExecL
 
 	private String trackJsonStr;
 	public ExecLinkeantcodeAntcodeUsertrackRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeUsertrack", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeUsertrack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

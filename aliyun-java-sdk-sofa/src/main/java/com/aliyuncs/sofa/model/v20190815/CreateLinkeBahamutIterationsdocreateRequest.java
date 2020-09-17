@@ -84,7 +84,7 @@ public class CreateLinkeBahamutIterationsdocreateRequest extends RpcAcsRequest<C
 
 	private Boolean tagAndMergeMasterWhenEmergency;
 	public CreateLinkeBahamutIterationsdocreateRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutIterationsdocreate", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutIterationsdocreate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-09-17 Version: 1.0.0
+- Generated 2019-08-15 for `SOFA`.
+
 2020-09-01 Version: 1.2.3
 - Add BatchQueryRmsMonitorMetrics openAPI.
 

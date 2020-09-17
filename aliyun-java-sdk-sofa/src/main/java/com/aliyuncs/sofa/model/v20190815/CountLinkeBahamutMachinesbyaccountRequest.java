@@ -27,7 +27,7 @@ public class CountLinkeBahamutMachinesbyaccountRequest extends RpcAcsRequest<Cou
 
 	private String account;
 	public CountLinkeBahamutMachinesbyaccountRequest() {
-		super("SOFA", "2019-08-15", "CountLinkeBahamutMachinesbyaccount", "sofa");
+		super("SOFA", "2019-08-15", "CountLinkeBahamutMachinesbyaccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

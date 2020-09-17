@@ -31,7 +31,7 @@ public class RemoveLinkeLinktProjecttemplateRequest extends RpcAcsRequest<Remove
 
 	private String formJsonStr;
 	public RemoveLinkeLinktProjecttemplateRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktProjecttemplate", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktProjecttemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

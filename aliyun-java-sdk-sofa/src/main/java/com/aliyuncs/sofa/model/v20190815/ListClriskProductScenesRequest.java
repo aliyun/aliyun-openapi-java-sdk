@@ -33,7 +33,7 @@ public class ListClriskProductScenesRequest extends RpcAcsRequest<ListClriskProd
 
 	private String queryKey;
 	public ListClriskProductScenesRequest() {
-		super("SOFA", "2019-08-15", "ListClriskProductScenes", "sofa");
+		super("SOFA", "2019-08-15", "ListClriskProductScenes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

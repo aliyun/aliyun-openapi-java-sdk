@@ -29,7 +29,7 @@ public class AddLinkeantcodeAntcodeUserpersonalaccesstokensRequest extends RpcAc
 
 	private String requestGitOperate;
 	public AddLinkeantcodeAntcodeUserpersonalaccesstokensRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeUserpersonalaccesstokens", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeUserpersonalaccesstokens", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

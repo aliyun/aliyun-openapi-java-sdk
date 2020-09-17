@@ -31,7 +31,7 @@ public class UpdateMsGuardianGrayRuleStatusRequest extends RpcAcsRequest<UpdateM
 
 	private Long ruleId;
 	public UpdateMsGuardianGrayRuleStatusRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsGuardianGrayRuleStatus", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsGuardianGrayRuleStatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

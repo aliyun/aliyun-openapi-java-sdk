@@ -31,7 +31,7 @@ public class UpdateTSTriggerInstanceLimitRateRequest extends RpcAcsRequest<Updat
 
 	private String jobRequestId;
 	public UpdateTSTriggerInstanceLimitRateRequest() {
-		super("SOFA", "2019-08-15", "UpdateTSTriggerInstanceLimitRate", "sofa");
+		super("SOFA", "2019-08-15", "UpdateTSTriggerInstanceLimitRate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

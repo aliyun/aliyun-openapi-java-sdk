@@ -33,7 +33,7 @@ public class CreateLinkeLinktProjectRequest extends RpcAcsRequest<CreateLinkeLin
 
 	private String name;
 	public CreateLinkeLinktProjectRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktProject", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktProject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

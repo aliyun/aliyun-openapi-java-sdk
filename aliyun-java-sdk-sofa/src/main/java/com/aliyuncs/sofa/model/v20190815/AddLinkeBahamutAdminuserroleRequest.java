@@ -39,7 +39,7 @@ public class AddLinkeBahamutAdminuserroleRequest extends RpcAcsRequest<AddLinkeB
 
 	private String account;
 	public AddLinkeBahamutAdminuserroleRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAdminuserrole", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAdminuserrole", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class ConfirmAKSOpsContainerServiceRequest extends RpcAcsRequest<ConfirmA
 
 	private String operatorName;
 	public ConfirmAKSOpsContainerServiceRequest() {
-		super("SOFA", "2019-08-15", "ConfirmAKSOpsContainerService", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmAKSOpsContainerService", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

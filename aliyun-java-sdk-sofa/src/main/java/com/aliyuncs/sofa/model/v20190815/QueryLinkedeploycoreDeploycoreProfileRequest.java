@@ -42,7 +42,7 @@ public class QueryLinkedeploycoreDeploycoreProfileRequest extends RpcAcsRequest<
 
 	private List<String> appNamesRepeatLists;
 	public QueryLinkedeploycoreDeploycoreProfileRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreProfile", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreProfile", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

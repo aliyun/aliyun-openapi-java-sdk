@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeDeletepipelinetimingconfigRequest extends 
 
 	private String requestGitOperate;
 	public DeleteLinkeantcodeAntcodeDeletepipelinetimingconfigRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeletepipelinetimingconfig", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeletepipelinetimingconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

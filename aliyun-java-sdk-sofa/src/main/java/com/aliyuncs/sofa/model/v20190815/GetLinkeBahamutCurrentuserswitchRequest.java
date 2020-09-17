@@ -27,7 +27,7 @@ public class GetLinkeBahamutCurrentuserswitchRequest extends RpcAcsRequest<GetLi
 
 	private String type;
 	public GetLinkeBahamutCurrentuserswitchRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutCurrentuserswitch", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutCurrentuserswitch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

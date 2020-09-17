@@ -32,7 +32,7 @@ public class CloseODPSqlAuditRequest extends RpcAcsRequest<CloseODPSqlAuditRespo
 
 	private String instanceId;
 	public CloseODPSqlAuditRequest() {
-		super("SOFA", "2019-08-15", "CloseODPSqlAudit", "sofa");
+		super("SOFA", "2019-08-15", "CloseODPSqlAudit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

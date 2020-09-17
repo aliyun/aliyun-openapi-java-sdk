@@ -29,7 +29,7 @@ public class QueryLinkeBahamutUsersbyacountRequest extends RpcAcsRequest<QueryLi
 
 	private String accounts;
 	public QueryLinkeBahamutUsersbyacountRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutUsersbyacount", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutUsersbyacount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

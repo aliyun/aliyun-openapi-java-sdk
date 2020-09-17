@@ -29,7 +29,7 @@ public class UpdateCasDatabaseAccountRequest extends RpcAcsRequest<UpdateCasData
 
 	private String id;
 	public UpdateCasDatabaseAccountRequest() {
-		super("SOFA", "2019-08-15", "UpdateCasDatabaseAccount", "sofa");
+		super("SOFA", "2019-08-15", "UpdateCasDatabaseAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

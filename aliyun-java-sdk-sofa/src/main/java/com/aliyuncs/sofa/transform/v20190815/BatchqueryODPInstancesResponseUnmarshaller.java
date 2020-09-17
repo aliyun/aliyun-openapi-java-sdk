@@ -34,6 +34,7 @@ public class BatchqueryODPInstancesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchqueryODPInstancesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
+			dataItem.setBizVpcId(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].BizVpcId"));
 			dataItem.setConfigSpecDesc(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].ConfigSpecDesc"));
 			dataItem.setEnvMode(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].EnvMode"));
 			dataItem.setEnvTenant(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].EnvTenant"));
@@ -60,8 +61,11 @@ public class BatchqueryODPInstancesResponseUnmarshaller {
 			List<NodesItem> nodes = new ArrayList<NodesItem>();
 			for (int j = 0; j < _ctx.lengthValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes.Length"); j++) {
 				NodesItem nodesItem = new NodesItem();
+				nodesItem.setBizVpcId(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].BizVpcId"));
+				nodesItem.setBizVswtichId(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].BizVswtichId"));
 				nodesItem.setCellId(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].CellId"));
 				nodesItem.setCellName(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].CellName"));
+				nodesItem.setClusterId(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].ClusterId"));
 				nodesItem.setConfigSpecDesc(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].ConfigSpecDesc"));
 				nodesItem.setCpuCount(_ctx.longValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].CpuCount"));
 				nodesItem.setEnvId(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].EnvId"));
@@ -74,7 +78,10 @@ public class BatchqueryODPInstancesResponseUnmarshaller {
 				nodesItem.setId(_ctx.longValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].Id"));
 				nodesItem.setMachineCount(_ctx.longValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].MachineCount"));
 				nodesItem.setMemoryCount(_ctx.longValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].MemoryCount"));
+				nodesItem.setNodeLanAddress(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].NodeLanAddress"));
 				nodesItem.setNodeStatus(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].NodeStatus"));
+				nodesItem.setNodeWanAddress(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].NodeWanAddress"));
+				nodesItem.setNodeWanPort(_ctx.longValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].NodeWanPort"));
 				nodesItem.setPort(_ctx.longValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].Port"));
 				nodesItem.setVip(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].Vip"));
 				nodesItem.setYunyouDeployUnitUrl(_ctx.stringValue("BatchqueryODPInstancesResponse.Data["+ i +"].Nodes["+ j +"].YunyouDeployUnitUrl"));

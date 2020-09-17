@@ -29,7 +29,7 @@ public class DeleteDSTBizLogConfigRequest extends RpcAcsRequest<DeleteDSTBizLogC
 
 	private Long bizLogConfigId;
 	public DeleteDSTBizLogConfigRequest() {
-		super("SOFA", "2019-08-15", "DeleteDSTBizLogConfig", "sofa");
+		super("SOFA", "2019-08-15", "DeleteDSTBizLogConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

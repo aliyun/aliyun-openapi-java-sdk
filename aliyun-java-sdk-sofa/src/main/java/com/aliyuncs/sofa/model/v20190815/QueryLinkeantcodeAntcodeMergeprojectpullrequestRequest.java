@@ -37,7 +37,7 @@ public class QueryLinkeantcodeAntcodeMergeprojectpullrequestRequest extends RpcA
 
 	private String shouldRemoveSourceBranch;
 	public QueryLinkeantcodeAntcodeMergeprojectpullrequestRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeMergeprojectpullrequest", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeMergeprojectpullrequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

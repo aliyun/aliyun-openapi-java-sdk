@@ -29,7 +29,7 @@ public class AddDWSVpcRequest extends RpcAcsRequest<AddDWSVpcResponse> {
 
 	private String instanceId;
 	public AddDWSVpcRequest() {
-		super("SOFA", "2019-08-15", "AddDWSVpc", "sofa");
+		super("SOFA", "2019-08-15", "AddDWSVpc", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

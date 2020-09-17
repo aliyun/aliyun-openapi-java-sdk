@@ -56,7 +56,7 @@ public class GetLinkeLinklogHitspercentagesRequest extends RpcAcsRequest<GetLink
 
 	private Long begin;
 	public GetLinkeLinklogHitspercentagesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinklogHitspercentages", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinklogHitspercentages", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

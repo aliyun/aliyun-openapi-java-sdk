@@ -43,7 +43,7 @@ public class OpenAKSClusterMeshRequest extends RpcAcsRequest<OpenAKSClusterMeshR
 
 	private String kubeconfig;
 	public OpenAKSClusterMeshRequest() {
-		super("SOFA", "2019-08-15", "OpenAKSClusterMesh", "sofa");
+		super("SOFA", "2019-08-15", "OpenAKSClusterMesh", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

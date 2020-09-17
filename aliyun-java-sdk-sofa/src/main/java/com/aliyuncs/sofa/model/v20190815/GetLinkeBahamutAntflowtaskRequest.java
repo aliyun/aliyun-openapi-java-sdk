@@ -27,7 +27,7 @@ public class GetLinkeBahamutAntflowtaskRequest extends RpcAcsRequest<GetLinkeBah
 
 	private String objectId;
 	public GetLinkeBahamutAntflowtaskRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAntflowtask", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAntflowtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

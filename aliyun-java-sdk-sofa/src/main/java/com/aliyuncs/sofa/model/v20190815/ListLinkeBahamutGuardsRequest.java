@@ -27,7 +27,7 @@ public class ListLinkeBahamutGuardsRequest extends RpcAcsRequest<ListLinkeBahamu
 
 	private String tenantPath;
 	public ListLinkeBahamutGuardsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutGuards", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutGuards", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

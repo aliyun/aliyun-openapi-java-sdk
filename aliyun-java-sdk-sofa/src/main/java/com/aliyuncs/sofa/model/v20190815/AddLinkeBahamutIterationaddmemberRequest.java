@@ -31,7 +31,7 @@ public class AddLinkeBahamutIterationaddmemberRequest extends RpcAcsRequest<AddL
 
 	private String iterationUnitId;
 	public AddLinkeBahamutIterationaddmemberRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutIterationaddmember", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutIterationaddmember", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

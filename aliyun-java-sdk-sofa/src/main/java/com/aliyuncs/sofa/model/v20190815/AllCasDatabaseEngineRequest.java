@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class AllCasDatabaseEngineRequest extends RpcAcsRequest<AllCasDatabaseEngineResponse> {
 	   
 	public AllCasDatabaseEngineRequest() {
-		super("SOFA", "2019-08-15", "AllCasDatabaseEngine", "sofa");
+		super("SOFA", "2019-08-15", "AllCasDatabaseEngine", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

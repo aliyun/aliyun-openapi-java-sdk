@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkeBahamutApppipelinecomponentallallowskipwhichneedconfigRequest extends RpcAcsRequest<QueryLinkeBahamutApppipelinecomponentallallowskipwhichneedconfigResponse> {
 	   
 	public QueryLinkeBahamutApppipelinecomponentallallowskipwhichneedconfigRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutApppipelinecomponentallallowskipwhichneedconfig", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutApppipelinecomponentallallowskipwhichneedconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class AddMSServiceClientRequest extends RpcAcsRequest<AddMSServiceClientR
 
 	private String instanceId;
 	public AddMSServiceClientRequest() {
-		super("SOFA", "2019-08-15", "AddMSServiceClient", "sofa");
+		super("SOFA", "2019-08-15", "AddMSServiceClient", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

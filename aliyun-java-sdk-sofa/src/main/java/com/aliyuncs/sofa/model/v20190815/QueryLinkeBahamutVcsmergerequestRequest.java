@@ -33,7 +33,7 @@ public class QueryLinkeBahamutVcsmergerequestRequest extends RpcAcsRequest<Query
 
 	private String pipelineTag;
 	public QueryLinkeBahamutVcsmergerequestRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutVcsmergerequest", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutVcsmergerequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

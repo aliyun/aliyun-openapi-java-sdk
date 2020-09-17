@@ -29,7 +29,7 @@ public class QueryLinkeBahamutGetmvnrepoRequest extends RpcAcsRequest<QueryLinke
 
 	private String tenantId;
 	public QueryLinkeBahamutGetmvnrepoRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutGetmvnrepo", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutGetmvnrepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

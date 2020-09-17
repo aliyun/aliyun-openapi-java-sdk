@@ -35,7 +35,7 @@ public class AllLinkeantcodeAntcodeProjectsallRequest extends RpcAcsRequest<AllL
 
 	private String page;
 	public AllLinkeantcodeAntcodeProjectsallRequest() {
-		super("SOFA", "2019-08-15", "AllLinkeantcodeAntcodeProjectsall", "sofa");
+		super("SOFA", "2019-08-15", "AllLinkeantcodeAntcodeProjectsall", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class SwitchLinkeBahamutAdminswitchlinkqRequest extends RpcAcsRequest<Swi
 
 	private List<String> appNamesRepeatLists;
 	public SwitchLinkeBahamutAdminswitchlinkqRequest() {
-		super("SOFA", "2019-08-15", "SwitchLinkeBahamutAdminswitchlinkq", "sofa");
+		super("SOFA", "2019-08-15", "SwitchLinkeBahamutAdminswitchlinkq", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

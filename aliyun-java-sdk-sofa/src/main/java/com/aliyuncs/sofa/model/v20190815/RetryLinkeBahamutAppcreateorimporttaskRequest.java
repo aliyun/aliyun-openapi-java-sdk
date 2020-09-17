@@ -29,7 +29,7 @@ public class RetryLinkeBahamutAppcreateorimporttaskRequest extends RpcAcsRequest
 
 	private String taskId;
 	public RetryLinkeBahamutAppcreateorimporttaskRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkeBahamutAppcreateorimporttask", "sofa");
+		super("SOFA", "2019-08-15", "RetryLinkeBahamutAppcreateorimporttask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

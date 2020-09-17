@@ -31,7 +31,7 @@ public class UpdateLinkeLinktTemplatefieldrequiredRequest extends RpcAcsRequest<
 
 	private String templateId;
 	public UpdateLinkeLinktTemplatefieldrequiredRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktTemplatefieldrequired", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktTemplatefieldrequired", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

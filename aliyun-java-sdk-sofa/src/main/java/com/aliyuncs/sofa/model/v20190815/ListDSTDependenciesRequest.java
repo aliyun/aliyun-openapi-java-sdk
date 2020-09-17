@@ -36,7 +36,7 @@ public class ListDSTDependenciesRequest extends RpcAcsRequest<ListDSTDependencie
 
 	private List<Relations> relationss;
 	public ListDSTDependenciesRequest() {
-		super("SOFA", "2019-08-15", "ListDSTDependencies", "sofa");
+		super("SOFA", "2019-08-15", "ListDSTDependencies", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

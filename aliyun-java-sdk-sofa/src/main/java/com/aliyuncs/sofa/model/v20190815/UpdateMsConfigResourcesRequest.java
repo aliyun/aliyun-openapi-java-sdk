@@ -41,7 +41,7 @@ public class UpdateMsConfigResourcesRequest extends RpcAcsRequest<UpdateMsConfig
 
 	private String desc;
 	public UpdateMsConfigResourcesRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsConfigResources", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsConfigResources", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

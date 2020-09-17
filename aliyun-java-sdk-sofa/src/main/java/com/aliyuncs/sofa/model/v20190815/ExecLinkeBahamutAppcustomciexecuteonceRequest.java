@@ -27,7 +27,7 @@ public class ExecLinkeBahamutAppcustomciexecuteonceRequest extends RpcAcsRequest
 
 	private String id;
 	public ExecLinkeBahamutAppcustomciexecuteonceRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeBahamutAppcustomciexecuteonce", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeBahamutAppcustomciexecuteonce", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

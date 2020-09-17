@@ -27,7 +27,7 @@ public class SaveClriskAuthProjectRequest extends RpcAcsRequest<SaveClriskAuthPr
 
 	private String project;
 	public SaveClriskAuthProjectRequest() {
-		super("SOFA", "2019-08-15", "SaveClriskAuthProject", "sofa");
+		super("SOFA", "2019-08-15", "SaveClriskAuthProject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

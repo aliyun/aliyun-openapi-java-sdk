@@ -49,7 +49,7 @@ public class GetLinkeBahamutReleaseswithfastRequest extends RpcAcsRequest<GetLin
 
 	private String status;
 	public GetLinkeBahamutReleaseswithfastRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutReleaseswithfast", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutReleaseswithfast", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

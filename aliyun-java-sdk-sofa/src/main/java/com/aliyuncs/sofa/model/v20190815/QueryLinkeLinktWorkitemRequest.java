@@ -27,7 +27,7 @@ public class QueryLinkeLinktWorkitemRequest extends RpcAcsRequest<QueryLinkeLink
 
 	private String workItemSign;
 	public QueryLinkeLinktWorkitemRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktWorkitem", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktWorkitem", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

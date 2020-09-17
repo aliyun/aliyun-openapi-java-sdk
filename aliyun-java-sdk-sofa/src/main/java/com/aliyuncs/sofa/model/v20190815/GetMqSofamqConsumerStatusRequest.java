@@ -35,7 +35,7 @@ public class GetMqSofamqConsumerStatusRequest extends RpcAcsRequest<GetMqSofamqC
 
 	private Boolean detail;
 	public GetMqSofamqConsumerStatusRequest() {
-		super("SOFA", "2019-08-15", "GetMqSofamqConsumerStatus", "sofa");
+		super("SOFA", "2019-08-15", "GetMqSofamqConsumerStatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

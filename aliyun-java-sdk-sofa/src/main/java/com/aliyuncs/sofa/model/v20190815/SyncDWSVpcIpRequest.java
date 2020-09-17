@@ -29,7 +29,7 @@ public class SyncDWSVpcIpRequest extends RpcAcsRequest<SyncDWSVpcIpResponse> {
 
 	private String instanceId;
 	public SyncDWSVpcIpRequest() {
-		super("SOFA", "2019-08-15", "SyncDWSVpcIp", "sofa");
+		super("SOFA", "2019-08-15", "SyncDWSVpcIp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

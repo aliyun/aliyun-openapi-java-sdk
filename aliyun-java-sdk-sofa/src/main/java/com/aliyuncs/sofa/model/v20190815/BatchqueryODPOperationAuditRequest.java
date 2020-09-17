@@ -37,7 +37,7 @@ public class BatchqueryODPOperationAuditRequest extends RpcAcsRequest<Batchquery
 
 	private Boolean desc;
 	public BatchqueryODPOperationAuditRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryODPOperationAudit", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryODPOperationAudit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

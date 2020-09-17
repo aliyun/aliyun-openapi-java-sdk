@@ -31,7 +31,7 @@ public class GetLinkeBahamutIterationtemplateiterationtemplateRequest extends Rp
 
 	private String fabricBizType;
 	public GetLinkeBahamutIterationtemplateiterationtemplateRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationtemplateiterationtemplate", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationtemplateiterationtemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

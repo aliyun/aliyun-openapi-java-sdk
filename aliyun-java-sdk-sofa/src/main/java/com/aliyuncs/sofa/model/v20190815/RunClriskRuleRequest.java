@@ -33,7 +33,7 @@ public class RunClriskRuleRequest extends RpcAcsRequest<RunClriskRuleResponse> {
 
 	private String modelCode;
 	public RunClriskRuleRequest() {
-		super("SOFA", "2019-08-15", "RunClriskRule", "sofa");
+		super("SOFA", "2019-08-15", "RunClriskRule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetMqSofamqTraceResultRequest extends RpcAcsRequest<GetMqSofamqTrac
 
 	private String instanceId;
 	public GetMqSofamqTraceResultRequest() {
-		super("SOFA", "2019-08-15", "GetMqSofamqTraceResult", "sofa");
+		super("SOFA", "2019-08-15", "GetMqSofamqTraceResult", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteRmsAlertruleRequest extends RpcAcsRequest<DeleteRmsAlertruleR
 
 	private String envJsonStr;
 	public DeleteRmsAlertruleRequest() {
-		super("SOFA", "2019-08-15", "DeleteRmsAlertrule", "sofa");
+		super("SOFA", "2019-08-15", "DeleteRmsAlertrule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -55,7 +55,7 @@ public class CreateDTXAppsActionRequest extends RpcAcsRequest<CreateDTXAppsActio
 
 	private Boolean isZoneRoute;
 	public CreateDTXAppsActionRequest() {
-		super("SOFA", "2019-08-15", "CreateDTXAppsAction", "sofa");
+		super("SOFA", "2019-08-15", "CreateDTXAppsAction", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

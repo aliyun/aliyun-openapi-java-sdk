@@ -31,7 +31,7 @@ public class AddLinkeLinktWorkitemrelationsRequest extends RpcAcsRequest<AddLink
 
 	private String workItemRelationType;
 	public AddLinkeLinktWorkitemrelationsRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeLinktWorkitemrelations", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeLinktWorkitemrelations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

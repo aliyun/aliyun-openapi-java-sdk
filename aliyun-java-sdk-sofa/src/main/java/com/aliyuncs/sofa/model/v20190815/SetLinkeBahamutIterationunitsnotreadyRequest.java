@@ -27,7 +27,7 @@ public class SetLinkeBahamutIterationunitsnotreadyRequest extends RpcAcsRequest<
 
 	private String externalId;
 	public SetLinkeBahamutIterationunitsnotreadyRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutIterationunitsnotready", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutIterationunitsnotready", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

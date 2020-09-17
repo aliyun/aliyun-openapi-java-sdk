@@ -27,7 +27,7 @@ public class SendLinkeBahamutFlowtasknoticeRequest extends RpcAcsRequest<SendLin
 
 	private String objectId;
 	public SendLinkeBahamutFlowtasknoticeRequest() {
-		super("SOFA", "2019-08-15", "SendLinkeBahamutFlowtasknotice", "sofa");
+		super("SOFA", "2019-08-15", "SendLinkeBahamutFlowtasknotice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

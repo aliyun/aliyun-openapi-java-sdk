@@ -29,7 +29,7 @@ public class QueryLinkedeploycoreDeploycoreResourceRequest extends RpcAcsRequest
 
 	private String resourceType;
 	public QueryLinkedeploycoreDeploycoreResourceRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreResource", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreResource", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

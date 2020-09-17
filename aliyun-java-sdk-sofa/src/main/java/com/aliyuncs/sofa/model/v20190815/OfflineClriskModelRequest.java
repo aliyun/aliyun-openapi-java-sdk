@@ -27,7 +27,7 @@ public class OfflineClriskModelRequest extends RpcAcsRequest<OfflineClriskModelR
 
 	private String modelCode;
 	public OfflineClriskModelRequest() {
-		super("SOFA", "2019-08-15", "OfflineClriskModel", "sofa");
+		super("SOFA", "2019-08-15", "OfflineClriskModel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

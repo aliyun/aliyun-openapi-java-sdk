@@ -27,7 +27,7 @@ public class ExistCASApplicationRequest extends RpcAcsRequest<ExistCASApplicatio
 
 	private String appName;
 	public ExistCASApplicationRequest() {
-		super("SOFA", "2019-08-15", "ExistCASApplication", "sofa");
+		super("SOFA", "2019-08-15", "ExistCASApplication", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CheckLinkeBahamutCeasingRequest extends RpcAcsRequest<CheckLinkeBah
 
 	private String releaseId;
 	public CheckLinkeBahamutCeasingRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutCeasing", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutCeasing", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

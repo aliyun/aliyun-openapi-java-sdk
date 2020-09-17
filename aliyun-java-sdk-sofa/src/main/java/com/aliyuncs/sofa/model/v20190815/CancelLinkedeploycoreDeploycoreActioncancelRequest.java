@@ -32,7 +32,7 @@ public class CancelLinkedeploycoreDeploycoreActioncancelRequest extends RpcAcsRe
 
 	private String fromApp;
 	public CancelLinkedeploycoreDeploycoreActioncancelRequest() {
-		super("SOFA", "2019-08-15", "CancelLinkedeploycoreDeploycoreActioncancel", "sofa");
+		super("SOFA", "2019-08-15", "CancelLinkedeploycoreDeploycoreActioncancel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

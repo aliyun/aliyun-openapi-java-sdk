@@ -27,7 +27,7 @@ public class DescribeDSTTraceAgentRequest extends RpcAcsRequest<DescribeDSTTrace
 
 	private String instanceId;
 	public DescribeDSTTraceAgentRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTTraceAgent", "sofa");
+		super("SOFA", "2019-08-15", "DescribeDSTTraceAgent", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class JoinTSJobGroupsRequest extends RpcAcsRequest<JoinTSJobGroupsRespons
 
 	private String instanceId;
 	public JoinTSJobGroupsRequest() {
-		super("SOFA", "2019-08-15", "JoinTSJobGroups", "sofa");
+		super("SOFA", "2019-08-15", "JoinTSJobGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

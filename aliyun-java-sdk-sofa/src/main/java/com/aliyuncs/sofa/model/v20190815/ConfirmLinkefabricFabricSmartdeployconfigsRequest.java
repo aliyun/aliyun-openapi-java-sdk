@@ -32,7 +32,7 @@ public class ConfirmLinkefabricFabricSmartdeployconfigsRequest extends RpcAcsReq
 
 	private List<String> antxConfigsRepeatLists;
 	public ConfirmLinkefabricFabricSmartdeployconfigsRequest() {
-		super("SOFA", "2019-08-15", "ConfirmLinkefabricFabricSmartdeployconfigs", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmLinkefabricFabricSmartdeployconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

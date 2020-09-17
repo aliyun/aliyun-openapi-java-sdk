@@ -31,7 +31,7 @@ public class RetryMsSgAuthRuleGroupsRequest extends RpcAcsRequest<RetryMsSgAuthR
 
 	private String dataId;
 	public RetryMsSgAuthRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "RetryMsSgAuthRuleGroups", "sofa");
+		super("SOFA", "2019-08-15", "RetryMsSgAuthRuleGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

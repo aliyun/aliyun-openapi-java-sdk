@@ -29,7 +29,7 @@ public class CreateLinkeBahamutWebapicreatedeploymentunitRequest extends RpcAcsR
 
 	private String tenantPath;
 	public CreateLinkeBahamutWebapicreatedeploymentunitRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutWebapicreatedeploymentunit", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutWebapicreatedeploymentunit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

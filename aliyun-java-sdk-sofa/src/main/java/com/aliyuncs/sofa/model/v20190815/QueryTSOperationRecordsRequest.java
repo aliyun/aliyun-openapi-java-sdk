@@ -45,7 +45,7 @@ public class QueryTSOperationRecordsRequest extends RpcAcsRequest<QueryTSOperati
 
 	private String operationTarget;
 	public QueryTSOperationRecordsRequest() {
-		super("SOFA", "2019-08-15", "QueryTSOperationRecords", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSOperationRecords", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class QueryCasRequestFinaltaskRequest extends RpcAcsRequest<QueryCasReque
 
 	private String workspaceId;
 	public QueryCasRequestFinaltaskRequest() {
-		super("SOFA", "2019-08-15", "QueryCasRequestFinaltask", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasRequestFinaltask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

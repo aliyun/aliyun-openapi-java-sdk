@@ -37,7 +37,7 @@ public class UpdateLinkeLinklogAddconditionRequest extends RpcAcsRequest<UpdateL
 
 	private Long conditionId;
 	public UpdateLinkeLinklogAddconditionRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinklogAddcondition", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinklogAddcondition", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetLinkeBahamutPipelinegetexecutionsbygroupRequest extends RpcAcsRe
 
 	private String id;
 	public GetLinkeBahamutPipelinegetexecutionsbygroupRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetexecutionsbygroup", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetexecutionsbygroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

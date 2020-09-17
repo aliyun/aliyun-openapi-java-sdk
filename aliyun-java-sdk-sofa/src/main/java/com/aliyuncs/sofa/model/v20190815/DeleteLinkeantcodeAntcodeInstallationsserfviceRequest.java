@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeInstallationsserfviceRequest extends RpcAc
 
 	private String serviceId;
 	public DeleteLinkeantcodeAntcodeInstallationsserfviceRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeInstallationsserfvice", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeInstallationsserfvice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

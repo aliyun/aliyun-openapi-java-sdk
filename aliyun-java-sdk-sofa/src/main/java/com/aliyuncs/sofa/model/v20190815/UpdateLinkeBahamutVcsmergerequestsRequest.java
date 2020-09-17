@@ -41,7 +41,7 @@ public class UpdateLinkeBahamutVcsmergerequestsRequest extends RpcAcsRequest<Upd
 
 	private String assignee;
 	public UpdateLinkeBahamutVcsmergerequestsRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutVcsmergerequests", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutVcsmergerequests", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

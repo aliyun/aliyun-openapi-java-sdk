@@ -29,7 +29,7 @@ public class QueryTSChunkRequest extends RpcAcsRequest<QueryTSChunkResponse> {
 
 	private String instanceId;
 	public QueryTSChunkRequest() {
-		super("SOFA", "2019-08-15", "QueryTSChunk", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSChunk", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

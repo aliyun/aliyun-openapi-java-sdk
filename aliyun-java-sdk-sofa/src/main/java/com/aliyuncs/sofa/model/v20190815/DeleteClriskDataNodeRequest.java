@@ -27,7 +27,7 @@ public class DeleteClriskDataNodeRequest extends RpcAcsRequest<DeleteClriskDataN
 
 	private String id;
 	public DeleteClriskDataNodeRequest() {
-		super("SOFA", "2019-08-15", "DeleteClriskDataNode", "sofa");
+		super("SOFA", "2019-08-15", "DeleteClriskDataNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class SendMqSofamqMessageRequest extends RpcAcsRequest<SendMqSofamqMessag
 
 	private String topic;
 	public SendMqSofamqMessageRequest() {
-		super("SOFA", "2019-08-15", "SendMqSofamqMessage", "sofa");
+		super("SOFA", "2019-08-15", "SendMqSofamqMessage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

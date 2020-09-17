@@ -35,7 +35,7 @@ public class CreateLinkeantcodeAntcodeTenantpusheventsrecoveriesRequest extends 
 
 	private String endTime;
 	public CreateLinkeantcodeAntcodeTenantpusheventsrecoveriesRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeTenantpusheventsrecoveries", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeTenantpusheventsrecoveries", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

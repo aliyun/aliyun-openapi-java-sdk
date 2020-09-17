@@ -60,7 +60,7 @@ public class CreateLinkeantcodeAntcodeCreateprojectpullrequestRequest extends Rp
 
 	private String targetProjectId;
 	public CreateLinkeantcodeAntcodeCreateprojectpullrequestRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreateprojectpullrequest", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreateprojectpullrequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

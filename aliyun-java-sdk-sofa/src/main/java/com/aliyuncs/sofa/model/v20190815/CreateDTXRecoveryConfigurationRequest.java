@@ -45,7 +45,7 @@ public class CreateDTXRecoveryConfigurationRequest extends RpcAcsRequest<CreateD
 
 	private String desc;
 	public CreateDTXRecoveryConfigurationRequest() {
-		super("SOFA", "2019-08-15", "CreateDTXRecoveryConfiguration", "sofa");
+		super("SOFA", "2019-08-15", "CreateDTXRecoveryConfiguration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

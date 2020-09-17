@@ -27,7 +27,7 @@ public class GetLinkeBahamutMiscgetgraylterationRequest extends RpcAcsRequest<Ge
 
 	private String iterationExternalId;
 	public GetLinkeBahamutMiscgetgraylterationRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutMiscgetgraylteration", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutMiscgetgraylteration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

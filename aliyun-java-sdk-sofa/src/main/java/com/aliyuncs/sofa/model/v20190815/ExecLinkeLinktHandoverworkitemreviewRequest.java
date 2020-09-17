@@ -29,7 +29,7 @@ public class ExecLinkeLinktHandoverworkitemreviewRequest extends RpcAcsRequest<E
 
 	private String reviewer;
 	public ExecLinkeLinktHandoverworkitemreviewRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktHandoverworkitemreview", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktHandoverworkitemreview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

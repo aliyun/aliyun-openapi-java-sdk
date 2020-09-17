@@ -124,7 +124,7 @@ public class CountLinkeLinktWorkitemgroupRequest extends RpcAcsRequest<CountLink
 
 	private List<String> projectSignsRepeatLists;
 	public CountLinkeLinktWorkitemgroupRequest() {
-		super("SOFA", "2019-08-15", "CountLinkeLinktWorkitemgroup", "sofa");
+		super("SOFA", "2019-08-15", "CountLinkeLinktWorkitemgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

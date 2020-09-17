@@ -29,7 +29,7 @@ public class AllDTXParticipatorActionNamesRequest extends RpcAcsRequest<AllDTXPa
 
 	private String instanceId;
 	public AllDTXParticipatorActionNamesRequest() {
-		super("SOFA", "2019-08-15", "AllDTXParticipatorActionNames", "sofa");
+		super("SOFA", "2019-08-15", "AllDTXParticipatorActionNames", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

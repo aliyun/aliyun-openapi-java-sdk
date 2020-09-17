@@ -48,7 +48,7 @@ public class ExecLinkefabricFabricSchedulerofflinetaskRequest extends RpcAcsRequ
 
 	private List<String> devStageListRepeatLists;
 	public ExecLinkefabricFabricSchedulerofflinetaskRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkefabricFabricSchedulerofflinetask", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkefabricFabricSchedulerofflinetask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -30,7 +30,7 @@ public class DescribeBuildpackByAppsRequest extends RpcAcsRequest<DescribeBuildp
 
 	private String workspaceId;
 	public DescribeBuildpackByAppsRequest() {
-		super("SOFA", "2019-08-15", "DescribeBuildpackByApps", "sofa");
+		super("SOFA", "2019-08-15", "DescribeBuildpackByApps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

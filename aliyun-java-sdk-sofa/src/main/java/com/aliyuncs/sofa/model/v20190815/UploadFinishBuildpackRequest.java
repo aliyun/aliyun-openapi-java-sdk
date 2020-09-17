@@ -29,7 +29,7 @@ public class UploadFinishBuildpackRequest extends RpcAcsRequest<UploadFinishBuil
 
 	private String buildpackRegionRelationJsonStr;
 	public UploadFinishBuildpackRequest() {
-		super("SOFA", "2019-08-15", "UploadFinishBuildpack", "sofa");
+		super("SOFA", "2019-08-15", "UploadFinishBuildpack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

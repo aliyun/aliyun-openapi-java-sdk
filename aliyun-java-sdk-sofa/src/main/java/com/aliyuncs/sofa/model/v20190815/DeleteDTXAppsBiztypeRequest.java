@@ -29,7 +29,7 @@ public class DeleteDTXAppsBiztypeRequest extends RpcAcsRequest<DeleteDTXAppsBizt
 
 	private String instanceId;
 	public DeleteDTXAppsBiztypeRequest() {
-		super("SOFA", "2019-08-15", "DeleteDTXAppsBiztype", "sofa");
+		super("SOFA", "2019-08-15", "DeleteDTXAppsBiztype", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

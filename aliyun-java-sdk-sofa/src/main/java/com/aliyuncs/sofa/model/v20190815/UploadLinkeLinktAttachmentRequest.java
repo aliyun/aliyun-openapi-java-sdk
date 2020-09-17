@@ -35,7 +35,7 @@ public class UploadLinkeLinktAttachmentRequest extends RpcAcsRequest<UploadLinke
 
 	private String targetResource;
 	public UploadLinkeLinktAttachmentRequest() {
-		super("SOFA", "2019-08-15", "UploadLinkeLinktAttachment", "sofa");
+		super("SOFA", "2019-08-15", "UploadLinkeLinktAttachment", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

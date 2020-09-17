@@ -29,7 +29,7 @@ public class QueryRmsCloudmeshListpodsRequest extends RpcAcsRequest<QueryRmsClou
 
 	private String queryJsonStr;
 	public QueryRmsCloudmeshListpodsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsCloudmeshListpods", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsCloudmeshListpods", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

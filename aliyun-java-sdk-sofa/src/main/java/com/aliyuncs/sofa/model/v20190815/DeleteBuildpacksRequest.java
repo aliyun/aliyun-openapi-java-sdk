@@ -28,7 +28,7 @@ public class DeleteBuildpacksRequest extends RpcAcsRequest<DeleteBuildpacksRespo
 
 	private List<String> idRepeatLists;
 	public DeleteBuildpacksRequest() {
-		super("SOFA", "2019-08-15", "DeleteBuildpacks", "sofa");
+		super("SOFA", "2019-08-15", "DeleteBuildpacks", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

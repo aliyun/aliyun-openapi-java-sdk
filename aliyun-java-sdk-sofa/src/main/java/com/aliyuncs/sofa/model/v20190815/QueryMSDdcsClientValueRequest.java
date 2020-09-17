@@ -31,7 +31,7 @@ public class QueryMSDdcsClientValueRequest extends RpcAcsRequest<QueryMSDdcsClie
 
 	private String instanceId;
 	public QueryMSDdcsClientValueRequest() {
-		super("SOFA", "2019-08-15", "QueryMSDdcsClientValue", "sofa");
+		super("SOFA", "2019-08-15", "QueryMSDdcsClientValue", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class AddMSDdcsGrayDataRequest extends RpcAcsRequest<AddMSDdcsGrayDataRes
 
 	private String instanceId;
 	public AddMSDdcsGrayDataRequest() {
-		super("SOFA", "2019-08-15", "AddMSDdcsGrayData", "sofa");
+		super("SOFA", "2019-08-15", "AddMSDdcsGrayData", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

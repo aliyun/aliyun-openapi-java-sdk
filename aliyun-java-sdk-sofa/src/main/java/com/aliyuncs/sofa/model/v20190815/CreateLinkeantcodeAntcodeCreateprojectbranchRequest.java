@@ -33,7 +33,7 @@ public class CreateLinkeantcodeAntcodeCreateprojectbranchRequest extends RpcAcsR
 
 	private String requestGitOperate;
 	public CreateLinkeantcodeAntcodeCreateprojectbranchRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreateprojectbranch", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreateprojectbranch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

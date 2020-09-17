@@ -33,7 +33,7 @@ public class GetLinkefabricFabricReleaseprodnotifyRequest extends RpcAcsRequest<
 
 	private String tenantName;
 	public GetLinkefabricFabricReleaseprodnotifyRequest() {
-		super("SOFA", "2019-08-15", "GetLinkefabricFabricReleaseprodnotify", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkefabricFabricReleaseprodnotify", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

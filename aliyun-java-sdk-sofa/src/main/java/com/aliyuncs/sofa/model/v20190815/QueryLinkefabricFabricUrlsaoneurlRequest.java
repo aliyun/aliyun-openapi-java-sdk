@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkefabricFabricUrlsaoneurlRequest extends RpcAcsRequest<QueryLinkefabricFabricUrlsaoneurlResponse> {
 	   
 	public QueryLinkefabricFabricUrlsaoneurlRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricUrlsaoneurl", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricUrlsaoneurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

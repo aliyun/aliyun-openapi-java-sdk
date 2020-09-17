@@ -56,7 +56,7 @@ public class QueryLinkefabricFabricCloudmsgtypeinfoRequest extends RpcAcsRequest
 
 	private List<String> envListRepeatLists;
 	public QueryLinkefabricFabricCloudmsgtypeinfoRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCloudmsgtypeinfo", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricCloudmsgtypeinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

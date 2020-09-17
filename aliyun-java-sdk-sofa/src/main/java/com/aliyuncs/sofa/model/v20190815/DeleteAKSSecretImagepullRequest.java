@@ -31,7 +31,7 @@ public class DeleteAKSSecretImagepullRequest extends RpcAcsRequest<DeleteAKSSecr
 
 	private String namespace;
 	public DeleteAKSSecretImagepullRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSSecretImagepull", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSSecretImagepull", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

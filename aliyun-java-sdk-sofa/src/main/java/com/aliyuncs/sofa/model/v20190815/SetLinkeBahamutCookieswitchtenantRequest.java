@@ -33,7 +33,7 @@ public class SetLinkeBahamutCookieswitchtenantRequest extends RpcAcsRequest<SetL
 
 	private String domain;
 	public SetLinkeBahamutCookieswitchtenantRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutCookieswitchtenant", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutCookieswitchtenant", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

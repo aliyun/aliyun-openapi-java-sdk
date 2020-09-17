@@ -27,7 +27,7 @@ public class ListAKSAcrNamespaceRequest extends RpcAcsRequest<ListAKSAcrNamespac
 
 	private String region;
 	public ListAKSAcrNamespaceRequest() {
-		super("SOFA", "2019-08-15", "ListAKSAcrNamespace", "sofa");
+		super("SOFA", "2019-08-15", "ListAKSAcrNamespace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

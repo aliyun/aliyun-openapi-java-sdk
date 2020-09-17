@@ -27,7 +27,7 @@ public class ConfirmAKSProductsEnabledRequest extends RpcAcsRequest<ConfirmAKSPr
 
 	private String workspace;
 	public ConfirmAKSProductsEnabledRequest() {
-		super("SOFA", "2019-08-15", "ConfirmAKSProductsEnabled", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmAKSProductsEnabled", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

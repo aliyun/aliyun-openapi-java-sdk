@@ -29,7 +29,7 @@ public class CheckClriskSceneNameRequest extends RpcAcsRequest<CheckClriskSceneN
 
 	private String newName;
 	public CheckClriskSceneNameRequest() {
-		super("SOFA", "2019-08-15", "CheckClriskSceneName", "sofa");
+		super("SOFA", "2019-08-15", "CheckClriskSceneName", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

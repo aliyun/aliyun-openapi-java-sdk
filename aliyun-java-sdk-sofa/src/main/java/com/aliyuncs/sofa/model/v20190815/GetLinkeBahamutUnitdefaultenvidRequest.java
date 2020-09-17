@@ -27,7 +27,7 @@ public class GetLinkeBahamutUnitdefaultenvidRequest extends RpcAcsRequest<GetLin
 
 	private String unitId;
 	public GetLinkeBahamutUnitdefaultenvidRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutUnitdefaultenvid", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutUnitdefaultenvid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

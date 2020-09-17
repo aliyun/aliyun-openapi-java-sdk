@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetCASAppgrayconfigsRequest extends RpcAcsRequest<GetCASAppgrayconfigsResponse> {
 	   
 	public GetCASAppgrayconfigsRequest() {
-		super("SOFA", "2019-08-15", "GetCASAppgrayconfigs", "sofa");
+		super("SOFA", "2019-08-15", "GetCASAppgrayconfigs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

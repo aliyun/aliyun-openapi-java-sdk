@@ -27,7 +27,7 @@ public class SetLinkeBahamutReviewRequest extends RpcAcsRequest<SetLinkeBahamutR
 
 	private String iterationUnitId;
 	public SetLinkeBahamutReviewRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutReview", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutReview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

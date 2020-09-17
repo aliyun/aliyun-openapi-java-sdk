@@ -40,7 +40,7 @@ public class UpdateLinkeBahamutAppgroupRequest extends RpcAcsRequest<UpdateLinke
 
 	private String name;
 	public UpdateLinkeBahamutAppgroupRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAppgroup", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAppgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

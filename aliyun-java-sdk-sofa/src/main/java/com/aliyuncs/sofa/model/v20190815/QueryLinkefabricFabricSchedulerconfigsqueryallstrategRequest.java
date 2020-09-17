@@ -33,7 +33,7 @@ public class QueryLinkefabricFabricSchedulerconfigsqueryallstrategRequest extend
 
 	private String releaseId;
 	public QueryLinkefabricFabricSchedulerconfigsqueryallstrategRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSchedulerconfigsqueryallstrateg", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSchedulerconfigsqueryallstrateg", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

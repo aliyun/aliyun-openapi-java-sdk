@@ -29,7 +29,7 @@ public class CheckLinkeBahamutCodechangeRequest extends RpcAcsRequest<CheckLinke
 
 	private String iterationUnitId;
 	public CheckLinkeBahamutCodechangeRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutCodechange", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutCodechange", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class RebootLinkeantcodeAntcodeUserpasswordresetRequest extends RpcAcsReq
 
 	private String requestGitOperate;
 	public RebootLinkeantcodeAntcodeUserpasswordresetRequest() {
-		super("SOFA", "2019-08-15", "RebootLinkeantcodeAntcodeUserpasswordreset", "sofa");
+		super("SOFA", "2019-08-15", "RebootLinkeantcodeAntcodeUserpasswordreset", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

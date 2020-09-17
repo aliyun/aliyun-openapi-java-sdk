@@ -30,7 +30,7 @@ public class ExecAKSNodeNoscheduleRequest extends RpcAcsRequest<ExecAKSNodeNosch
 
 	private List<Nodes> nodess;
 	public ExecAKSNodeNoscheduleRequest() {
-		super("SOFA", "2019-08-15", "ExecAKSNodeNoschedule", "sofa");
+		super("SOFA", "2019-08-15", "ExecAKSNodeNoschedule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

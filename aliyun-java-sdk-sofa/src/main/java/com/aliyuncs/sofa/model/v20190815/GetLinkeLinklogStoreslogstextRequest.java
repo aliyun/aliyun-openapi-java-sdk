@@ -29,7 +29,7 @@ public class GetLinkeLinklogStoreslogstextRequest extends RpcAcsRequest<GetLinke
 
 	private String logId;
 	public GetLinkeLinklogStoreslogstextRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinklogStoreslogstext", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinklogStoreslogstext", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

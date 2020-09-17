@@ -29,7 +29,7 @@ public class QueryLinkeLinktDemotwoRequest extends RpcAcsRequest<QueryLinkeLinkt
 
 	private String demoJsonStr;
 	public QueryLinkeLinktDemotwoRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktDemotwo", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktDemotwo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

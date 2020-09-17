@@ -31,7 +31,7 @@ public class CreateLinkeantcodeAntcodeGroupsidservicesRequest extends RpcAcsRequ
 
 	private String createDTOJsonStr;
 	public CreateLinkeantcodeAntcodeGroupsidservicesRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeGroupsidservices", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeGroupsidservices", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

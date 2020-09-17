@@ -31,7 +31,7 @@ public class DisableMsSgAuthRuleGroupsRequest extends RpcAcsRequest<DisableMsSgA
 
 	private String dataId;
 	public DisableMsSgAuthRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "DisableMsSgAuthRuleGroups", "sofa");
+		super("SOFA", "2019-08-15", "DisableMsSgAuthRuleGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

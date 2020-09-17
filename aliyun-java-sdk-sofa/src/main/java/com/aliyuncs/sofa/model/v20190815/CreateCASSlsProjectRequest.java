@@ -31,7 +31,7 @@ public class CreateCASSlsProjectRequest extends RpcAcsRequest<CreateCASSlsProjec
 
 	private String projectName;
 	public CreateCASSlsProjectRequest() {
-		super("SOFA", "2019-08-15", "CreateCASSlsProject", "sofa");
+		super("SOFA", "2019-08-15", "CreateCASSlsProject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

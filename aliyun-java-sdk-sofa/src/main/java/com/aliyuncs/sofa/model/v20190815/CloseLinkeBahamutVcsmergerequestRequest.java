@@ -41,7 +41,7 @@ public class CloseLinkeBahamutVcsmergerequestRequest extends RpcAcsRequest<Close
 
 	private String assignee;
 	public CloseLinkeBahamutVcsmergerequestRequest() {
-		super("SOFA", "2019-08-15", "CloseLinkeBahamutVcsmergerequest", "sofa");
+		super("SOFA", "2019-08-15", "CloseLinkeBahamutVcsmergerequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

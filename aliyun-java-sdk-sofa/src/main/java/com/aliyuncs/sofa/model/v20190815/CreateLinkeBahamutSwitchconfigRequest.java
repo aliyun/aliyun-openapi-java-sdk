@@ -27,7 +27,7 @@ public class CreateLinkeBahamutSwitchconfigRequest extends RpcAcsRequest<CreateL
 
 	private String body;
 	public CreateLinkeBahamutSwitchconfigRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutSwitchconfig", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutSwitchconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

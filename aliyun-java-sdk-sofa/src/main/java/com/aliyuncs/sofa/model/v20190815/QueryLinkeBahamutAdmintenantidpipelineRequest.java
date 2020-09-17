@@ -27,7 +27,7 @@ public class QueryLinkeBahamutAdmintenantidpipelineRequest extends RpcAcsRequest
 
 	private String tenantId;
 	public QueryLinkeBahamutAdmintenantidpipelineRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdmintenantidpipeline", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdmintenantidpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

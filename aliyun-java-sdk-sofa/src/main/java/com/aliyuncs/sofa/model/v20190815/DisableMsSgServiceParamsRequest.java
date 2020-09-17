@@ -31,7 +31,7 @@ public class DisableMsSgServiceParamsRequest extends RpcAcsRequest<DisableMsSgSe
 
 	private String dataId;
 	public DisableMsSgServiceParamsRequest() {
-		super("SOFA", "2019-08-15", "DisableMsSgServiceParams", "sofa");
+		super("SOFA", "2019-08-15", "DisableMsSgServiceParams", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

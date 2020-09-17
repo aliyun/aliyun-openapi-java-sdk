@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeProjectsprojectidartifactsmanagementidRequ
 
 	private String updateDtoJsonStr;
 	public UpdateLinkeantcodeAntcodeProjectsprojectidartifactsmanagementidRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectsprojectidartifactsmanagementid", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectsprojectidartifactsmanagementid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

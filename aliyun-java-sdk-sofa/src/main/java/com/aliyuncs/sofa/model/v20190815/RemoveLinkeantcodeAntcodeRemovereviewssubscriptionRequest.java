@@ -33,7 +33,7 @@ public class RemoveLinkeantcodeAntcodeRemovereviewssubscriptionRequest extends R
 
 	private String requestGitOperate;
 	public RemoveLinkeantcodeAntcodeRemovereviewssubscriptionRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeantcodeAntcodeRemovereviewssubscription", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeantcodeAntcodeRemovereviewssubscription", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

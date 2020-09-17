@@ -27,7 +27,7 @@ public class ListLinkeBahamutAppdatalistmetatenantidRequest extends RpcAcsReques
 
 	private String tenantId;
 	public ListLinkeBahamutAppdatalistmetatenantidRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutAppdatalistmetatenantid", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutAppdatalistmetatenantid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

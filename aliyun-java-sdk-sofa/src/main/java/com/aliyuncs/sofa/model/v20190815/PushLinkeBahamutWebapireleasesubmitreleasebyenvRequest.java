@@ -31,7 +31,7 @@ public class PushLinkeBahamutWebapireleasesubmitreleasebyenvRequest extends RpcA
 
 	private String releaseExternalId;
 	public PushLinkeBahamutWebapireleasesubmitreleasebyenvRequest() {
-		super("SOFA", "2019-08-15", "PushLinkeBahamutWebapireleasesubmitreleasebyenv", "sofa");
+		super("SOFA", "2019-08-15", "PushLinkeBahamutWebapireleasesubmitreleasebyenv", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

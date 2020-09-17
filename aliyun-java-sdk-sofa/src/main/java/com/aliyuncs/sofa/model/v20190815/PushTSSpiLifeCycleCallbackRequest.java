@@ -27,7 +27,7 @@ public class PushTSSpiLifeCycleCallbackRequest extends RpcAcsRequest<PushTSSpiLi
 
 	private String data;
 	public PushTSSpiLifeCycleCallbackRequest() {
-		super("SOFA", "2019-08-15", "PushTSSpiLifeCycleCallback", "sofa");
+		super("SOFA", "2019-08-15", "PushTSSpiLifeCycleCallback", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class InitLinkeBahamutOpeninitprsettingsRequest extends RpcAcsRequest<Ini
 
 	private String tenantId;
 	public InitLinkeBahamutOpeninitprsettingsRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutOpeninitprsettings", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutOpeninitprsettings", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

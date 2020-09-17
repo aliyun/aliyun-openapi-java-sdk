@@ -31,7 +31,7 @@ public class SetLinkeBahamutEditinstanceRequest extends RpcAcsRequest<SetLinkeBa
 
 	private String stageId;
 	public SetLinkeBahamutEditinstanceRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutEditinstance", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutEditinstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

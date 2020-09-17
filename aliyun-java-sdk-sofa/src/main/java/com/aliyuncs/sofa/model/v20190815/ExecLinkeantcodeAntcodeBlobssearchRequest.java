@@ -35,7 +35,7 @@ public class ExecLinkeantcodeAntcodeBlobssearchRequest extends RpcAcsRequest<Exe
 
 	private String refName;
 	public ExecLinkeantcodeAntcodeBlobssearchRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeBlobssearch", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeBlobssearch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

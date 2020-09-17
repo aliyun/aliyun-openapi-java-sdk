@@ -37,7 +37,7 @@ public class QueryLinkeBahamutGlobalappRequest extends RpcAcsRequest<QueryLinkeB
 
 	private String page;
 	public QueryLinkeBahamutGlobalappRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutGlobalapp", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutGlobalapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

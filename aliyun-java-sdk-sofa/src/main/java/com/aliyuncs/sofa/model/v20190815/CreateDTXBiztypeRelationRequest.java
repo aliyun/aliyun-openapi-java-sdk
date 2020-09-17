@@ -38,7 +38,7 @@ public class CreateDTXBiztypeRelationRequest extends RpcAcsRequest<CreateDTXBizt
 
 	private String desc;
 	public CreateDTXBiztypeRelationRequest() {
-		super("SOFA", "2019-08-15", "CreateDTXBiztypeRelation", "sofa");
+		super("SOFA", "2019-08-15", "CreateDTXBiztypeRelation", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

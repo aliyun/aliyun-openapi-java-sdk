@@ -27,7 +27,7 @@ public class QueryLinkeLinktTemplateworkflowRequest extends RpcAcsRequest<QueryL
 
 	private String templateId;
 	public QueryLinkeLinktTemplateworkflowRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktTemplateworkflow", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktTemplateworkflow", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

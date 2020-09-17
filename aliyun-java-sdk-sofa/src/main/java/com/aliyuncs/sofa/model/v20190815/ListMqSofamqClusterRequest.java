@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ListMqSofamqClusterRequest extends RpcAcsRequest<ListMqSofamqClusterResponse> {
 	   
 	public ListMqSofamqClusterRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqCluster", "sofa");
+		super("SOFA", "2019-08-15", "ListMqSofamqCluster", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

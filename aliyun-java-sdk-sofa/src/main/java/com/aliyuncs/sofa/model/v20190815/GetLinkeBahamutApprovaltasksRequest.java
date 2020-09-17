@@ -33,7 +33,7 @@ public class GetLinkeBahamutApprovaltasksRequest extends RpcAcsRequest<GetLinkeB
 
 	private String stageId;
 	public GetLinkeBahamutApprovaltasksRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutApprovaltasks", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutApprovaltasks", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

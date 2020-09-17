@@ -37,7 +37,7 @@ public class UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolo
 
 	private String newName;
 	public UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolorRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolor", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatesanexistinglabelwithnewnameornowcolor", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

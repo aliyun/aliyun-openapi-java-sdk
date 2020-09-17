@@ -29,7 +29,7 @@ public class AddLinkeBahamutAdminproductidaddmenuRequest extends RpcAcsRequest<A
 
 	private String menuJsonStr;
 	public AddLinkeBahamutAdminproductidaddmenuRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAdminproductidaddmenu", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAdminproductidaddmenu", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

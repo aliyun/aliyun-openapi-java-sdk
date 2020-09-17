@@ -30,7 +30,7 @@ public class DeleteLinkeBahamutPaasdeleteserversRequest extends RpcAcsRequest<De
 
 	private String iterationId;
 	public DeleteLinkeBahamutPaasdeleteserversRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutPaasdeleteservers", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutPaasdeleteservers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

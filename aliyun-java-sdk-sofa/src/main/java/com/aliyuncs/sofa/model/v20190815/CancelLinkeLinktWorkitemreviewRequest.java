@@ -27,7 +27,7 @@ public class CancelLinkeLinktWorkitemreviewRequest extends RpcAcsRequest<CancelL
 
 	private String workItemReviewId;
 	public CancelLinkeLinktWorkitemreviewRequest() {
-		super("SOFA", "2019-08-15", "CancelLinkeLinktWorkitemreview", "sofa");
+		super("SOFA", "2019-08-15", "CancelLinkeLinktWorkitemreview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

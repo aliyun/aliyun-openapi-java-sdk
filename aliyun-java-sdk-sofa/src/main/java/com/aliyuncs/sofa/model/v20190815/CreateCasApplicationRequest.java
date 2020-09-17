@@ -53,7 +53,7 @@ public class CreateCasApplicationRequest extends RpcAcsRequest<CreateCasApplicat
 
 	private String codeRepositoryType;
 	public CreateCasApplicationRequest() {
-		super("SOFA", "2019-08-15", "CreateCasApplication", "sofa");
+		super("SOFA", "2019-08-15", "CreateCasApplication", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

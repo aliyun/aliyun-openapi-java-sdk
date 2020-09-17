@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeReturnfailedpipelinejobsRequest extends RpcA
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeReturnfailedpipelinejobsRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeReturnfailedpipelinejobs", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeReturnfailedpipelinejobs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

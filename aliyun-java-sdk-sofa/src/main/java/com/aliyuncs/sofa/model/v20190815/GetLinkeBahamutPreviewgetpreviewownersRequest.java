@@ -31,7 +31,7 @@ public class GetLinkeBahamutPreviewgetpreviewownersRequest extends RpcAcsRequest
 
 	private String iterationUnitId;
 	public GetLinkeBahamutPreviewgetpreviewownersRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPreviewgetpreviewowners", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPreviewgetpreviewowners", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

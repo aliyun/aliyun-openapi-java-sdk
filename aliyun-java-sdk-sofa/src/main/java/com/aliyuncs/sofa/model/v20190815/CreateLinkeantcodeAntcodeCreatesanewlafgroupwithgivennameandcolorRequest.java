@@ -35,7 +35,7 @@ public class CreateLinkeantcodeAntcodeCreatesanewlafgroupwithgivennameandcolorRe
 
 	private String name;
 	public CreateLinkeantcodeAntcodeCreatesanewlafgroupwithgivennameandcolorRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreatesanewlafgroupwithgivennameandcolor", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreatesanewlafgroupwithgivennameandcolor", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

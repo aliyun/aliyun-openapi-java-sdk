@@ -27,7 +27,7 @@ public class GetDWSOpenedscenariosRequest extends RpcAcsRequest<GetDWSOpenedscen
 
 	private String instanceId;
 	public GetDWSOpenedscenariosRequest() {
-		super("SOFA", "2019-08-15", "GetDWSOpenedscenarios", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSOpenedscenarios", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryLinkeBahamutWebapimakeupprepubRequest extends RpcAcsRequest<Qu
 
 	private String iterationUnitId;
 	public QueryLinkeBahamutWebapimakeupprepubRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapimakeupprepub", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutWebapimakeupprepub", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

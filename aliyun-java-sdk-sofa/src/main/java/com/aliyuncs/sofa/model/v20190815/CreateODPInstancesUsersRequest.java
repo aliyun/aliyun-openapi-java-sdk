@@ -29,7 +29,7 @@ public class CreateODPInstancesUsersRequest extends RpcAcsRequest<CreateODPInsta
 
 	private String userJsonStr;
 	public CreateODPInstancesUsersRequest() {
-		super("SOFA", "2019-08-15", "CreateODPInstancesUsers", "sofa");
+		super("SOFA", "2019-08-15", "CreateODPInstancesUsers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class SetLinkeBahamutTenantRequest extends RpcAcsRequest<SetLinkeBahamutT
 
 	private String tenantName;
 	public SetLinkeBahamutTenantRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutTenant", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutTenant", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

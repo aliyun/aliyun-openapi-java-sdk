@@ -37,7 +37,7 @@ public class GetAKSHelmChartReleaseStatusRequest extends RpcAcsRequest<GetAKSHel
 
 	private String namespace;
 	public GetAKSHelmChartReleaseStatusRequest() {
-		super("SOFA", "2019-08-15", "GetAKSHelmChartReleaseStatus", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSHelmChartReleaseStatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

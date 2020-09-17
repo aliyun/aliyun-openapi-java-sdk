@@ -29,7 +29,7 @@ public class GetLinkeBahamutApprovaltasktypesRequest extends RpcAcsRequest<GetLi
 
 	private String tenantPath;
 	public GetLinkeBahamutApprovaltasktypesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutApprovaltasktypes", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutApprovaltasktypes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

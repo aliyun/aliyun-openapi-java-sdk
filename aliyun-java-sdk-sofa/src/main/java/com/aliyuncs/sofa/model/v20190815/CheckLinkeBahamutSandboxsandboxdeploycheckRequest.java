@@ -27,7 +27,7 @@ public class CheckLinkeBahamutSandboxsandboxdeploycheckRequest extends RpcAcsReq
 
 	private String params;
 	public CheckLinkeBahamutSandboxsandboxdeploycheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutSandboxsandboxdeploycheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutSandboxsandboxdeploycheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

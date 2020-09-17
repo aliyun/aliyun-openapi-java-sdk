@@ -27,7 +27,7 @@ public class GetLinkeBahamutUserproductRequest extends RpcAcsRequest<GetLinkeBah
 
 	private String userEmpId;
 	public GetLinkeBahamutUserproductRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutUserproduct", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutUserproduct", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

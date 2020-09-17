@@ -31,7 +31,7 @@ public class CreateLinkelinkflowLinkflowAttachmentsRequest extends RpcAcsRequest
 
 	private String remoteUrl;
 	public CreateLinkelinkflowLinkflowAttachmentsRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkelinkflowLinkflowAttachments", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkelinkflowLinkflowAttachments", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

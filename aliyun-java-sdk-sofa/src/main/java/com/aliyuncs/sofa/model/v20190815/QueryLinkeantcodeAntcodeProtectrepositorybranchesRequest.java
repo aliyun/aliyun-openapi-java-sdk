@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeProtectrepositorybranchesRequest extends Rp
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeProtectrepositorybranchesRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProtectrepositorybranches", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProtectrepositorybranches", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

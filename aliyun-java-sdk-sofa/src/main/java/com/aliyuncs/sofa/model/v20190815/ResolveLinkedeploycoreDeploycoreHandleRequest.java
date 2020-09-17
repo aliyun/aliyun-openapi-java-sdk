@@ -30,7 +30,7 @@ public class ResolveLinkedeploycoreDeploycoreHandleRequest extends RpcAcsRequest
 
 	private String message;
 	public ResolveLinkedeploycoreDeploycoreHandleRequest() {
-		super("SOFA", "2019-08-15", "ResolveLinkedeploycoreDeploycoreHandle", "sofa");
+		super("SOFA", "2019-08-15", "ResolveLinkedeploycoreDeploycoreHandle", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

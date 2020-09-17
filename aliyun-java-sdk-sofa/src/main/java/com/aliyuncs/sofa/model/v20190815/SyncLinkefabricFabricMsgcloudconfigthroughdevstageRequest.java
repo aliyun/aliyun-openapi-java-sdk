@@ -45,7 +45,7 @@ public class SyncLinkefabricFabricMsgcloudconfigthroughdevstageRequest extends R
 
 	private String fromDevStage;
 	public SyncLinkefabricFabricMsgcloudconfigthroughdevstageRequest() {
-		super("SOFA", "2019-08-15", "SyncLinkefabricFabricMsgcloudconfigthroughdevstage", "sofa");
+		super("SOFA", "2019-08-15", "SyncLinkefabricFabricMsgcloudconfigthroughdevstage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

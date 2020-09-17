@@ -31,7 +31,7 @@ public class ListLinkeLinklogStoresRequest extends RpcAcsRequest<ListLinkeLinklo
 
 	private String name;
 	public ListLinkeLinklogStoresRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinklogStores", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinklogStores", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

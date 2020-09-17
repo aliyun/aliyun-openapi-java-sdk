@@ -29,7 +29,7 @@ public class QueryRmsAlarmBlacklistRequest extends RpcAcsRequest<QueryRmsAlarmBl
 
 	private String queryJsonStr;
 	public QueryRmsAlarmBlacklistRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlarmBlacklist", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsAlarmBlacklist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ListClriskDataNodesRequest extends RpcAcsRequest<ListClriskDataNode
 
 	private String sortField;
 	public ListClriskDataNodesRequest() {
-		super("SOFA", "2019-08-15", "ListClriskDataNodes", "sofa");
+		super("SOFA", "2019-08-15", "ListClriskDataNodes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

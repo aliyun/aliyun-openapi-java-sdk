@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeProjectsidpullrequestspullrequestidunsubscr
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeProjectsidpullrequestspullrequestidunsubscribeRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsidpullrequestspullrequestidunsubscribe", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeProjectsidpullrequestspullrequestidunsubscribe", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

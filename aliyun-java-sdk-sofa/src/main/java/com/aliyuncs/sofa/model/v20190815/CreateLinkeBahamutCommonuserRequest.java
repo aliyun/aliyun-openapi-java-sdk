@@ -28,7 +28,7 @@ public class CreateLinkeBahamutCommonuserRequest extends RpcAcsRequest<CreateLin
 
 	private List<String> userCommonUseInfosRepeatLists;
 	public CreateLinkeBahamutCommonuserRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutCommonuser", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutCommonuser", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

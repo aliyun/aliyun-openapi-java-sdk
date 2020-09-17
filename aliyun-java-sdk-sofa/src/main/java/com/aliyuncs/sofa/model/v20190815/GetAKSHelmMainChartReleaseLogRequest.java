@@ -27,7 +27,7 @@ public class GetAKSHelmMainChartReleaseLogRequest extends RpcAcsRequest<GetAKSHe
 
 	private String releaseId;
 	public GetAKSHelmMainChartReleaseLogRequest() {
-		super("SOFA", "2019-08-15", "GetAKSHelmMainChartReleaseLog", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSHelmMainChartReleaseLog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class QueryLinkeBahamutIterationsupdateiterationpersonsRequest extends Rp
 
 	private String iterationId;
 	public QueryLinkeBahamutIterationsupdateiterationpersonsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutIterationsupdateiterationpersons", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutIterationsupdateiterationpersons", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

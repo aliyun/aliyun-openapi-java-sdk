@@ -42,6 +42,7 @@ public class ListMsSgAuthRuleGroupAppsResponseUnmarshaller {
 			authRuleGroupsItem.setAppName(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].AppName"));
 			authRuleGroupsItem.setBlackGroupId(_ctx.longValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].BlackGroupId"));
 			authRuleGroupsItem.setBlackState(_ctx.longValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].BlackState"));
+			authRuleGroupsItem.setChangeStatus(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].ChangeStatus"));
 			authRuleGroupsItem.setDataId(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].DataId"));
 			authRuleGroupsItem.setGmtCreate(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].GmtCreate"));
 			authRuleGroupsItem.setGmtModified(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].GmtModified"));
@@ -55,7 +56,7 @@ public class ListMsSgAuthRuleGroupAppsResponseUnmarshaller {
 			List<RulesItem> rules = new ArrayList<RulesItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].Rules.Length"); j++) {
 				RulesItem rulesItem = new RulesItem();
-				rulesItem.setAuthRuleRroupId(_ctx.longValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].Rules["+ j +"].AuthRuleRroupId"));
+				rulesItem.setAuthRuleGroupId(_ctx.longValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].Rules["+ j +"].AuthRuleGroupId"));
 				rulesItem.setEnabled(_ctx.longValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].Rules["+ j +"].Enabled"));
 				rulesItem.setGmtCreate(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].Rules["+ j +"].GmtCreate"));
 				rulesItem.setGmtModified(_ctx.stringValue("ListMsSgAuthRuleGroupAppsResponse.AuthRuleGroups["+ i +"].Rules["+ j +"].GmtModified"));

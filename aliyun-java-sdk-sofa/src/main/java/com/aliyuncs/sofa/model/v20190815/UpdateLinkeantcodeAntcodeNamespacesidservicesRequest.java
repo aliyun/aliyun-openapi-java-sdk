@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeNamespacesidservicesRequest extends RpcAcs
 
 	private String serviceId;
 	public UpdateLinkeantcodeAntcodeNamespacesidservicesRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeNamespacesidservices", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeNamespacesidservices", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

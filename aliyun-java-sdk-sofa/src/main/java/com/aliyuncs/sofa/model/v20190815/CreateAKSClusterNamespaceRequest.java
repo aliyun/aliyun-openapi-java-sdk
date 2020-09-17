@@ -32,7 +32,7 @@ public class CreateAKSClusterNamespaceRequest extends RpcAcsRequest<CreateAKSClu
 
 	private String name;
 	public CreateAKSClusterNamespaceRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSClusterNamespace", "sofa");
+		super("SOFA", "2019-08-15", "CreateAKSClusterNamespace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class QueryLinkeBahamutAoneinternalworkitemRequest extends RpcAcsRequest<
 
 	private String page;
 	public QueryLinkeBahamutAoneinternalworkitemRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAoneinternalworkitem", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAoneinternalworkitem", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

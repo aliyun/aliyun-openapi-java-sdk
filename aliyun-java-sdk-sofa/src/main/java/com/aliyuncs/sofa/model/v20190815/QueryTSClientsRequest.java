@@ -35,7 +35,7 @@ public class QueryTSClientsRequest extends RpcAcsRequest<QueryTSClientsResponse>
 
 	private String instanceId;
 	public QueryTSClientsRequest() {
-		super("SOFA", "2019-08-15", "QueryTSClients", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSClients", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

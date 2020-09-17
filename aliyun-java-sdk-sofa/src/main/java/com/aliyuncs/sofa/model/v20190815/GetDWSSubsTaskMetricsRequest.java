@@ -29,7 +29,7 @@ public class GetDWSSubsTaskMetricsRequest extends RpcAcsRequest<GetDWSSubsTaskMe
 
 	private String instanceId;
 	public GetDWSSubsTaskMetricsRequest() {
-		super("SOFA", "2019-08-15", "GetDWSSubsTaskMetrics", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSSubsTaskMetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryLinkefabricFabricSystemparameterqueryconfigbycacheRequest exte
 
 	private String configKey;
 	public QueryLinkefabricFabricSystemparameterqueryconfigbycacheRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSystemparameterqueryconfigbycache", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSystemparameterqueryconfigbycache", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

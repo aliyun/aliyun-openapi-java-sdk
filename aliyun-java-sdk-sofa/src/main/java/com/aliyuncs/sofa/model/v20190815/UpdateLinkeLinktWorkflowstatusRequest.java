@@ -35,7 +35,7 @@ public class UpdateLinkeLinktWorkflowstatusRequest extends RpcAcsRequest<UpdateL
 
 	private Long convertStatusId;
 	public UpdateLinkeLinktWorkflowstatusRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktWorkflowstatus", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktWorkflowstatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class CreateLinkeantcodeAntcodeCreatenewfileinrepositoryRequest extends R
 
 	private String encoding;
 	public CreateLinkeantcodeAntcodeCreatenewfileinrepositoryRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreatenewfileinrepository", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreatenewfileinrepository", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

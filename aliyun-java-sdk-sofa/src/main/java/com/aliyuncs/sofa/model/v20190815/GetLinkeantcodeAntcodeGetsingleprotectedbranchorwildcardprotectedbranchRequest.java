@@ -31,7 +31,7 @@ public class GetLinkeantcodeAntcodeGetsingleprotectedbranchorwildcardprotectedbr
 
 	private String requestGitOperate;
 	public GetLinkeantcodeAntcodeGetsingleprotectedbranchorwildcardprotectedbranchRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeantcodeAntcodeGetsingleprotectedbranchorwildcardprotectedbranch", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeantcodeAntcodeGetsingleprotectedbranchorwildcardprotectedbranch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

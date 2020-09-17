@@ -29,7 +29,7 @@ public class GetLinkeBahamutInternaltaskscountRequest extends RpcAcsRequest<GetL
 
 	private String status;
 	public GetLinkeBahamutInternaltaskscountRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutInternaltaskscount", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutInternaltaskscount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

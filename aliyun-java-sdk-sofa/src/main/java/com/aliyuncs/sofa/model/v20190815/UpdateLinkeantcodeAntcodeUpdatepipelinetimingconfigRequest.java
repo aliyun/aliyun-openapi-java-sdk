@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeUpdatepipelinetimingconfigRequest extends 
 
 	private String requestGitOperate;
 	public UpdateLinkeantcodeAntcodeUpdatepipelinetimingconfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatepipelinetimingconfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatepipelinetimingconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

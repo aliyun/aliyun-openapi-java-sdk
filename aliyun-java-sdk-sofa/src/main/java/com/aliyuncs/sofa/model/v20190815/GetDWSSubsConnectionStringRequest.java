@@ -29,7 +29,7 @@ public class GetDWSSubsConnectionStringRequest extends RpcAcsRequest<GetDWSSubsC
 
 	private String instanceId;
 	public GetDWSSubsConnectionStringRequest() {
-		super("SOFA", "2019-08-15", "GetDWSSubsConnectionString", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSSubsConnectionString", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

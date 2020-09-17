@@ -33,7 +33,7 @@ public class UpdateAKSKubernetesResourceRequest extends RpcAcsRequest<UpdateAKSK
 
 	private String path;
 	public UpdateAKSKubernetesResourceRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSKubernetesResource", "sofa");
+		super("SOFA", "2019-08-15", "UpdateAKSKubernetesResource", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

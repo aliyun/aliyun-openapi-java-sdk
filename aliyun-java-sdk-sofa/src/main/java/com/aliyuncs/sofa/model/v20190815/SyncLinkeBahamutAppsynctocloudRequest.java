@@ -33,7 +33,7 @@ public class SyncLinkeBahamutAppsynctocloudRequest extends RpcAcsRequest<SyncLin
 
 	private String account;
 	public SyncLinkeBahamutAppsynctocloudRequest() {
-		super("SOFA", "2019-08-15", "SyncLinkeBahamutAppsynctocloud", "sofa");
+		super("SOFA", "2019-08-15", "SyncLinkeBahamutAppsynctocloud", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

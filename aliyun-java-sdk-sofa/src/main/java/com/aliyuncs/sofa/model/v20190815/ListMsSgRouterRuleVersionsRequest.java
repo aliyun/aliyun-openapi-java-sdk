@@ -31,7 +31,7 @@ public class ListMsSgRouterRuleVersionsRequest extends RpcAcsRequest<ListMsSgRou
 
 	private String dataId;
 	public ListMsSgRouterRuleVersionsRequest() {
-		super("SOFA", "2019-08-15", "ListMsSgRouterRuleVersions", "sofa");
+		super("SOFA", "2019-08-15", "ListMsSgRouterRuleVersions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

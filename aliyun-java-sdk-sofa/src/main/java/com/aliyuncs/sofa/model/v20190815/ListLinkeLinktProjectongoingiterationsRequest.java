@@ -27,7 +27,7 @@ public class ListLinkeLinktProjectongoingiterationsRequest extends RpcAcsRequest
 
 	private String projectSign;
 	public ListLinkeLinktProjectongoingiterationsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktProjectongoingiterations", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktProjectongoingiterations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

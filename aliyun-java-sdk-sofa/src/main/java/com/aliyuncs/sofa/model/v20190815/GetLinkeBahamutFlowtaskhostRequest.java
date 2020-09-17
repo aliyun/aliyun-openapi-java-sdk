@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutFlowtaskhostRequest extends RpcAcsRequest<GetLinkeBahamutFlowtaskhostResponse> {
 	   
 	public GetLinkeBahamutFlowtaskhostRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutFlowtaskhost", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutFlowtaskhost", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

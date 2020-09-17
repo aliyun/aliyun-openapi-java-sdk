@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeAcipipelinewebhooktoantcodeRequest extends 
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeAcipipelinewebhooktoantcodeRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAcipipelinewebhooktoantcode", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAcipipelinewebhooktoantcode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

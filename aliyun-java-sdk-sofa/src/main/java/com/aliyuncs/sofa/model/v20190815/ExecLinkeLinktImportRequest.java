@@ -27,7 +27,7 @@ public class ExecLinkeLinktImportRequest extends RpcAcsRequest<ExecLinkeLinktImp
 
 	private String key;
 	public ExecLinkeLinktImportRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktImport", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktImport", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

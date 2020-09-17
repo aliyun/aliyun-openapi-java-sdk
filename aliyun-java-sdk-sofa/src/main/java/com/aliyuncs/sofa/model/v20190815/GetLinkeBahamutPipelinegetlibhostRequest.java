@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutPipelinegetlibhostRequest extends RpcAcsRequest<GetLinkeBahamutPipelinegetlibhostResponse> {
 	   
 	public GetLinkeBahamutPipelinegetlibhostRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetlibhost", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetlibhost", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

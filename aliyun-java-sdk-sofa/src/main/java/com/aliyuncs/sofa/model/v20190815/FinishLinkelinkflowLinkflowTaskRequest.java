@@ -37,7 +37,7 @@ public class FinishLinkelinkflowLinkflowTaskRequest extends RpcAcsRequest<Finish
 
 	private String operatorId;
 	public FinishLinkelinkflowLinkflowTaskRequest() {
-		super("SOFA", "2019-08-15", "FinishLinkelinkflowLinkflowTask", "sofa");
+		super("SOFA", "2019-08-15", "FinishLinkelinkflowLinkflowTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

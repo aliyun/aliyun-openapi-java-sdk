@@ -31,7 +31,7 @@ public class CheckLinkeBahamutNextstageRequest extends RpcAcsRequest<CheckLinkeB
 
 	private String iterationUnitId;
 	public CheckLinkeBahamutNextstageRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutNextstage", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutNextstage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

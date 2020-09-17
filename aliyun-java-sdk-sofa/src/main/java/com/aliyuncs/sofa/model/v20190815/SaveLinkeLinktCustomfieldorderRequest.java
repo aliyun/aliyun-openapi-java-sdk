@@ -30,7 +30,7 @@ public class SaveLinkeLinktCustomfieldorderRequest extends RpcAcsRequest<SaveLin
 
 	private String templateId;
 	public SaveLinkeLinktCustomfieldorderRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktCustomfieldorder", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktCustomfieldorder", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sofa.model.v20190815.QueryMsSgServiceSubKeysResponse;
 import com.aliyuncs.sofa.model.v20190815.QueryMsSgServiceSubKeysResponse.SimpleServiceInfosItem;
+import com.aliyuncs.sofa.model.v20190815.QueryMsSgServiceSubKeysResponse.SimpleServiceInfosItem.AppInfosItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,16 @@ public class QueryMsSgServiceSubKeysResponseUnmarshaller {
 				pubApp.add(_ctx.stringValue("QueryMsSgServiceSubKeysResponse.SimpleServiceInfos["+ i +"].PubApp["+ j +"]"));
 			}
 			simpleServiceInfosItem.setPubApp(pubApp);
+
+			List<AppInfosItem> appInfos = new ArrayList<AppInfosItem>();
+			for (int j = 0; j < _ctx.lengthValue("QueryMsSgServiceSubKeysResponse.SimpleServiceInfos["+ i +"].AppInfos.Length"); j++) {
+				AppInfosItem appInfosItem = new AppInfosItem();
+				appInfosItem.setAppName(_ctx.stringValue("QueryMsSgServiceSubKeysResponse.SimpleServiceInfos["+ i +"].AppInfos["+ j +"].AppName"));
+				appInfosItem.setUrl(_ctx.stringValue("QueryMsSgServiceSubKeysResponse.SimpleServiceInfos["+ i +"].AppInfos["+ j +"].Url"));
+
+				appInfos.add(appInfosItem);
+			}
+			simpleServiceInfosItem.setAppInfos(appInfos);
 
 			simpleServiceInfos.add(simpleServiceInfosItem);
 		}

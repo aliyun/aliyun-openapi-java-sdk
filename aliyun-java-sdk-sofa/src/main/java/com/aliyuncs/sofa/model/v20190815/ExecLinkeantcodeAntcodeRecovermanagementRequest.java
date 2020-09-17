@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeRecovermanagementRequest extends RpcAcsReque
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeRecovermanagementRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeRecovermanagement", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeRecovermanagement", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

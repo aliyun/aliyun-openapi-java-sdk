@@ -29,7 +29,7 @@ public class GetLinkelinkflowLinkflowVariablesRequest extends RpcAcsRequest<GetL
 
 	private String processInstanceId;
 	public GetLinkelinkflowLinkflowVariablesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowVariables", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowVariables", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

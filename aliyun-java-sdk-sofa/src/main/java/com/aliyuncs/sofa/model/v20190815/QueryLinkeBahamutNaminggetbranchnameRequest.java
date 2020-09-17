@@ -33,7 +33,7 @@ public class QueryLinkeBahamutNaminggetbranchnameRequest extends RpcAcsRequest<Q
 
 	private String iterationId;
 	public QueryLinkeBahamutNaminggetbranchnameRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutNaminggetbranchname", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutNaminggetbranchname", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

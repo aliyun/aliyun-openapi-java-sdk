@@ -29,7 +29,7 @@ public class BatchDisableMsSgAuthRuleGroupsRequest extends RpcAcsRequest<BatchDi
 
 	private String instanceId;
 	public BatchDisableMsSgAuthRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "BatchDisableMsSgAuthRuleGroups", "sofa");
+		super("SOFA", "2019-08-15", "BatchDisableMsSgAuthRuleGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class StopTSTriggerInstanceRequest extends RpcAcsRequest<StopTSTriggerIns
 
 	private String jobRequestId;
 	public StopTSTriggerInstanceRequest() {
-		super("SOFA", "2019-08-15", "StopTSTriggerInstance", "sofa");
+		super("SOFA", "2019-08-15", "StopTSTriggerInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

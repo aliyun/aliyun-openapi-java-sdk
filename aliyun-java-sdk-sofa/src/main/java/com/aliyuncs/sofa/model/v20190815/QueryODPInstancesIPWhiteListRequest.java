@@ -29,7 +29,7 @@ public class QueryODPInstancesIPWhiteListRequest extends RpcAcsRequest<QueryODPI
 
 	private String instanceId;
 	public QueryODPInstancesIPWhiteListRequest() {
-		super("SOFA", "2019-08-15", "QueryODPInstancesIPWhiteList", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPInstancesIPWhiteList", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

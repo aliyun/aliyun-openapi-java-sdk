@@ -29,7 +29,7 @@ public class CheckLinkeBahamutStablerollbackdeploycheckRequest extends RpcAcsReq
 
 	private String releaseExternalId;
 	public CheckLinkeBahamutStablerollbackdeploycheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutStablerollbackdeploycheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutStablerollbackdeploycheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

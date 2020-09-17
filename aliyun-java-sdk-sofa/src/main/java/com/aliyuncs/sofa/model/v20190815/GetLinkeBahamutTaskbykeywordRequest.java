@@ -37,7 +37,7 @@ public class GetLinkeBahamutTaskbykeywordRequest extends RpcAcsRequest<GetLinkeB
 
 	private String page;
 	public GetLinkeBahamutTaskbykeywordRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutTaskbykeyword", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutTaskbykeyword", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

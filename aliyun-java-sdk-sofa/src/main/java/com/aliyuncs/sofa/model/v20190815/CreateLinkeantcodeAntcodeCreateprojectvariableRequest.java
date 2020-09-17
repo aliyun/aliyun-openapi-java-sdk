@@ -31,7 +31,7 @@ public class CreateLinkeantcodeAntcodeCreateprojectvariableRequest extends RpcAc
 
 	private String variableJsonStr;
 	public CreateLinkeantcodeAntcodeCreateprojectvariableRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreateprojectvariable", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeCreateprojectvariable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

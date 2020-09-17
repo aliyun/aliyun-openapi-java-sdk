@@ -35,7 +35,7 @@ public class PushMsConfigDataRequest extends RpcAcsRequest<PushMsConfigDataRespo
 
 	private String instanceId;
 	public PushMsConfigDataRequest() {
-		super("SOFA", "2019-08-15", "PushMsConfigData", "sofa");
+		super("SOFA", "2019-08-15", "PushMsConfigData", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

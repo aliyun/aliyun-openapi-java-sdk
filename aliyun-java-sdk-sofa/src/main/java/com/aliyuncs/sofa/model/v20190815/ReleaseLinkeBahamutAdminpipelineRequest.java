@@ -27,7 +27,7 @@ public class ReleaseLinkeBahamutAdminpipelineRequest extends RpcAcsRequest<Relea
 
 	private String id;
 	public ReleaseLinkeBahamutAdminpipelineRequest() {
-		super("SOFA", "2019-08-15", "ReleaseLinkeBahamutAdminpipeline", "sofa");
+		super("SOFA", "2019-08-15", "ReleaseLinkeBahamutAdminpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

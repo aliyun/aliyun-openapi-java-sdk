@@ -27,7 +27,7 @@ public class UpdateLinkeBahamutAdminsecretdicRequest extends RpcAcsRequest<Updat
 
 	private String body;
 	public UpdateLinkeBahamutAdminsecretdicRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminsecretdic", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminsecretdic", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

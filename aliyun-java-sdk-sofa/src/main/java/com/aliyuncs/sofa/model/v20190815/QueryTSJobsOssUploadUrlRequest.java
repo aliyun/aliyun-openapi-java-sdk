@@ -31,7 +31,7 @@ public class QueryTSJobsOssUploadUrlRequest extends RpcAcsRequest<QueryTSJobsOss
 
 	private String instanceId;
 	public QueryTSJobsOssUploadUrlRequest() {
-		super("SOFA", "2019-08-15", "QueryTSJobsOssUploadUrl", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSJobsOssUploadUrl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

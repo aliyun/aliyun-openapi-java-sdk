@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeTesthookRequest extends RpcAcsRequest<ExecLi
 
 	private String hookId;
 	public ExecLinkeantcodeAntcodeTesthookRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeTesthook", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeTesthook", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

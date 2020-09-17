@@ -32,7 +32,7 @@ public class CreateCasLoadbalanceMountRequest extends RpcAcsRequest<CreateCasLoa
 
 	private List<MountMap> mountMaps;
 	public CreateCasLoadbalanceMountRequest() {
-		super("SOFA", "2019-08-15", "CreateCasLoadbalanceMount", "sofa");
+		super("SOFA", "2019-08-15", "CreateCasLoadbalanceMount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

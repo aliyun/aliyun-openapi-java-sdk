@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class CheckClriskAuthTenantRequest extends RpcAcsRequest<CheckClriskAuthTenantResponse> {
 	   
 	public CheckClriskAuthTenantRequest() {
-		super("SOFA", "2019-08-15", "CheckClriskAuthTenant", "sofa");
+		super("SOFA", "2019-08-15", "CheckClriskAuthTenant", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

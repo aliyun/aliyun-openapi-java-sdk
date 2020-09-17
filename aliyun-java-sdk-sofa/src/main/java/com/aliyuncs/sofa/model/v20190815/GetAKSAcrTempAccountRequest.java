@@ -27,7 +27,7 @@ public class GetAKSAcrTempAccountRequest extends RpcAcsRequest<GetAKSAcrTempAcco
 
 	private String region;
 	public GetAKSAcrTempAccountRequest() {
-		super("SOFA", "2019-08-15", "GetAKSAcrTempAccount", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSAcrTempAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class ImportAKSClusterNodeRequest extends RpcAcsRequest<ImportAKSClusterN
 
 	private String operatorName;
 	public ImportAKSClusterNodeRequest() {
-		super("SOFA", "2019-08-15", "ImportAKSClusterNode", "sofa");
+		super("SOFA", "2019-08-15", "ImportAKSClusterNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

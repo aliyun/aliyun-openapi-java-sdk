@@ -37,7 +37,7 @@ public class ConfirmLinkeBahamutIterationconfigcheckRequest extends RpcAcsReques
 
 	private String fromDevStage;
 	public ConfirmLinkeBahamutIterationconfigcheckRequest() {
-		super("SOFA", "2019-08-15", "ConfirmLinkeBahamutIterationconfigcheck", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmLinkeBahamutIterationconfigcheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

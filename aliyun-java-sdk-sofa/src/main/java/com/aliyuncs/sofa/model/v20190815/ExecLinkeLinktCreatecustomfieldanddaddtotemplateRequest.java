@@ -29,7 +29,7 @@ public class ExecLinkeLinktCreatecustomfieldanddaddtotemplateRequest extends Rpc
 
 	private String formJsonStr;
 	public ExecLinkeLinktCreatecustomfieldanddaddtotemplateRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatecustomfieldanddaddtotemplate", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktCreatecustomfieldanddaddtotemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

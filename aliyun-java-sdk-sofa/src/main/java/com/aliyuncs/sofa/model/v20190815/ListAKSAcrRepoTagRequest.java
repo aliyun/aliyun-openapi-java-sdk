@@ -35,7 +35,7 @@ public class ListAKSAcrRepoTagRequest extends RpcAcsRequest<ListAKSAcrRepoTagRes
 
 	private String region;
 	public ListAKSAcrRepoTagRequest() {
-		super("SOFA", "2019-08-15", "ListAKSAcrRepoTag", "sofa");
+		super("SOFA", "2019-08-15", "ListAKSAcrRepoTag", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

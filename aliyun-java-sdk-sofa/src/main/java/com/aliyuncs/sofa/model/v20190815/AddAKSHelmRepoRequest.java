@@ -31,7 +31,7 @@ public class AddAKSHelmRepoRequest extends RpcAcsRequest<AddAKSHelmRepoResponse>
 
 	private String repoName;
 	public AddAKSHelmRepoRequest() {
-		super("SOFA", "2019-08-15", "AddAKSHelmRepo", "sofa");
+		super("SOFA", "2019-08-15", "AddAKSHelmRepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

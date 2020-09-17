@@ -29,7 +29,7 @@ public class DeleteMsSgDowngradeRequest extends RpcAcsRequest<DeleteMsSgDowngrad
 
 	private String ruleId;
 	public DeleteMsSgDowngradeRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsSgDowngrade", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMsSgDowngrade", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

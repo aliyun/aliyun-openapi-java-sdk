@@ -45,7 +45,7 @@ public class GetLinkeBahamutDeprecateddeprecatedgetallattachableRequest extends 
 
 	private String status;
 	public GetLinkeBahamutDeprecateddeprecatedgetallattachableRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutDeprecateddeprecatedgetallattachable", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutDeprecateddeprecatedgetallattachable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

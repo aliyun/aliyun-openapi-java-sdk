@@ -37,7 +37,7 @@ public class ExecLinkeLinktSearchprojectsRequest extends RpcAcsRequest<ExecLinke
 
 	private String roleControl;
 	public ExecLinkeLinktSearchprojectsRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchprojects", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchprojects", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

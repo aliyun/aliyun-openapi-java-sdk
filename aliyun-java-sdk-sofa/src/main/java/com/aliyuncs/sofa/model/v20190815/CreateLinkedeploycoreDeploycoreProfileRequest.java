@@ -35,7 +35,7 @@ public class CreateLinkedeploycoreDeploycoreProfileRequest extends RpcAcsRequest
 
 	private String detail;
 	public CreateLinkedeploycoreDeploycoreProfileRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkedeploycoreDeploycoreProfile", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkedeploycoreDeploycoreProfile", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

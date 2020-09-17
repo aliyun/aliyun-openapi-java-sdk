@@ -29,7 +29,7 @@ public class StartLinkeBahamutPrepubpipelineRequest extends RpcAcsRequest<StartL
 
 	private String iterationUnitId;
 	public StartLinkeBahamutPrepubpipelineRequest() {
-		super("SOFA", "2019-08-15", "StartLinkeBahamutPrepubpipeline", "sofa");
+		super("SOFA", "2019-08-15", "StartLinkeBahamutPrepubpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

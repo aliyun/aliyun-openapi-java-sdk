@@ -29,7 +29,7 @@ public class DescribeDSTTraceRequest extends RpcAcsRequest<DescribeDSTTraceRespo
 
 	private String instanceId;
 	public DescribeDSTTraceRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTTrace", "sofa");
+		super("SOFA", "2019-08-15", "DescribeDSTTrace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

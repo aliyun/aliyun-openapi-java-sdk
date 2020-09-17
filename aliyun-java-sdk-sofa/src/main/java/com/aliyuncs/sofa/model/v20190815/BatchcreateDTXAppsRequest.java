@@ -50,7 +50,7 @@ public class BatchcreateDTXAppsRequest extends RpcAcsRequest<BatchcreateDTXAppsR
 
 	private String desc;
 	public BatchcreateDTXAppsRequest() {
-		super("SOFA", "2019-08-15", "BatchcreateDTXApps", "sofa");
+		super("SOFA", "2019-08-15", "BatchcreateDTXApps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

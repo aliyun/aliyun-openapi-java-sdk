@@ -27,7 +27,7 @@ public class QueryLinkelinkflowLinkflowGetuserRequest extends RpcAcsRequest<Quer
 
 	private String keyword;
 	public QueryLinkelinkflowLinkflowGetuserRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkelinkflowLinkflowGetuser", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkelinkflowLinkflowGetuser", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

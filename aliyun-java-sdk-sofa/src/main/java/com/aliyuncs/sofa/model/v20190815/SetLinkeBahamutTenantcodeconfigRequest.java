@@ -29,7 +29,7 @@ public class SetLinkeBahamutTenantcodeconfigRequest extends RpcAcsRequest<SetLin
 
 	private String tenantExternalId;
 	public SetLinkeBahamutTenantcodeconfigRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutTenantcodeconfig", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutTenantcodeconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

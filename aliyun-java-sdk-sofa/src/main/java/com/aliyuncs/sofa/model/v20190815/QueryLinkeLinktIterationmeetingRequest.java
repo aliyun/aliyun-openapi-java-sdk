@@ -27,7 +27,7 @@ public class QueryLinkeLinktIterationmeetingRequest extends RpcAcsRequest<QueryL
 
 	private String iterationMeetingId;
 	public QueryLinkeLinktIterationmeetingRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktIterationmeeting", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktIterationmeeting", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

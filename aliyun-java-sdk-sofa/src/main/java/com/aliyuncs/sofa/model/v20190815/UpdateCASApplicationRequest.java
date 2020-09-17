@@ -66,7 +66,7 @@ public class UpdateCASApplicationRequest extends RpcAcsRequest<UpdateCASApplicat
 
 	private String workspaceId;
 	public UpdateCASApplicationRequest() {
-		super("SOFA", "2019-08-15", "UpdateCASApplication", "sofa");
+		super("SOFA", "2019-08-15", "UpdateCASApplication", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

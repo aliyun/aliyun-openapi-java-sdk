@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeGroupsidservicesserviceidRequest extends R
 
 	private String serviceId;
 	public UpdateLinkeantcodeAntcodeGroupsidservicesserviceidRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeGroupsidservicesserviceid", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeGroupsidservicesserviceid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

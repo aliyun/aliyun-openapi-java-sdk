@@ -29,7 +29,7 @@ public class GetLinkeBahamutVcsmrworkitemsRequest extends RpcAcsRequest<GetLinke
 
 	private String mergeRequestId;
 	public GetLinkeBahamutVcsmrworkitemsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsmrworkitems", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsmrworkitems", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

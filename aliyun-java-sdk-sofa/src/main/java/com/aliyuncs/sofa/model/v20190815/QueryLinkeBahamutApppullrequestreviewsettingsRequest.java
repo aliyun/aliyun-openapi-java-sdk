@@ -29,7 +29,7 @@ public class QueryLinkeBahamutApppullrequestreviewsettingsRequest extends RpcAcs
 
 	private String tenantId;
 	public QueryLinkeBahamutApppullrequestreviewsettingsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutApppullrequestreviewsettings", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutApppullrequestreviewsettings", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

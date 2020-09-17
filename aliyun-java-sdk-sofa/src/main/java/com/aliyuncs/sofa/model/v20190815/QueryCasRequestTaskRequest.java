@@ -54,7 +54,7 @@ public class QueryCasRequestTaskRequest extends RpcAcsRequest<QueryCasRequestTas
 
 	private List<String> statusesRepeatLists;
 	public QueryCasRequestTaskRequest() {
-		super("SOFA", "2019-08-15", "QueryCasRequestTask", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasRequestTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

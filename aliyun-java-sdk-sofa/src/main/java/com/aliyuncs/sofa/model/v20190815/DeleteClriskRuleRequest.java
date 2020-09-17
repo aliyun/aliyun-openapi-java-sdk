@@ -29,7 +29,7 @@ public class DeleteClriskRuleRequest extends RpcAcsRequest<DeleteClriskRuleRespo
 
 	private String modelCode;
 	public DeleteClriskRuleRequest() {
-		super("SOFA", "2019-08-15", "DeleteClriskRule", "sofa");
+		super("SOFA", "2019-08-15", "DeleteClriskRule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

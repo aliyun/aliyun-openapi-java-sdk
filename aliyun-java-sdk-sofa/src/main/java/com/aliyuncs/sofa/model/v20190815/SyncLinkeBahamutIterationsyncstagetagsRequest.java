@@ -33,7 +33,7 @@ public class SyncLinkeBahamutIterationsyncstagetagsRequest extends RpcAcsRequest
 
 	private String unitId;
 	public SyncLinkeBahamutIterationsyncstagetagsRequest() {
-		super("SOFA", "2019-08-15", "SyncLinkeBahamutIterationsyncstagetags", "sofa");
+		super("SOFA", "2019-08-15", "SyncLinkeBahamutIterationsyncstagetags", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

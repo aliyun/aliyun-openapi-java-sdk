@@ -35,7 +35,7 @@ public class QueryLinkedeploycoreDeploycoreResourcequerypodlogsRequest extends R
 
 	private String podId;
 	public QueryLinkedeploycoreDeploycoreResourcequerypodlogsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreResourcequerypodlogs", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreResourcequerypodlogs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

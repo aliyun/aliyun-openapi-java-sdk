@@ -27,7 +27,7 @@ public class InitLinkeBahamutTenantinitRequest extends RpcAcsRequest<InitLinkeBa
 
 	private String tenantPath;
 	public InitLinkeBahamutTenantinitRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutTenantinit", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutTenantinit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

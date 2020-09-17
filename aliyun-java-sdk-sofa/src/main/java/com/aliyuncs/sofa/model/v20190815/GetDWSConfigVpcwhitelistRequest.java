@@ -27,7 +27,7 @@ public class GetDWSConfigVpcwhitelistRequest extends RpcAcsRequest<GetDWSConfigV
 
 	private String instanceId;
 	public GetDWSConfigVpcwhitelistRequest() {
-		super("SOFA", "2019-08-15", "GetDWSConfigVpcwhitelist", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSConfigVpcwhitelist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

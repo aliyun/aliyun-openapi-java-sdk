@@ -32,7 +32,7 @@ public class UpdateLinkeBahamutReleasedependencyRequest extends RpcAcsRequest<Up
 
 	private String releaseExternalId;
 	public UpdateLinkeBahamutReleasedependencyRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutReleasedependency", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutReleasedependency", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class AddLinkeantcodeAntcodeGroupmemberRequest extends RpcAcsRequest<AddL
 
 	private String token;
 	public AddLinkeantcodeAntcodeGroupmemberRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeGroupmember", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeGroupmember", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

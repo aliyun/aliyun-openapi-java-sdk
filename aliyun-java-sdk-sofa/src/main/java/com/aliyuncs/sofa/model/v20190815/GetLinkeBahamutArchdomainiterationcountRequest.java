@@ -29,7 +29,7 @@ public class GetLinkeBahamutArchdomainiterationcountRequest extends RpcAcsReques
 
 	private String archDomainId;
 	public GetLinkeBahamutArchdomainiterationcountRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutArchdomainiterationcount", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutArchdomainiterationcount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

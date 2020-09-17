@@ -31,7 +31,7 @@ public class ListLinkeLinktIterationmeetingRequest extends RpcAcsRequest<ListLin
 
 	private String begin;
 	public ListLinkeLinktIterationmeetingRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktIterationmeeting", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktIterationmeeting", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

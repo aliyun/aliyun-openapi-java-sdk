@@ -31,7 +31,7 @@ public class CallbackLinkeantcodeAntcodeAciprojectsidpipelinesjobrerunjobidReque
 
 	private String requestGitOperate;
 	public CallbackLinkeantcodeAntcodeAciprojectsidpipelinesjobrerunjobidRequest() {
-		super("SOFA", "2019-08-15", "CallbackLinkeantcodeAntcodeAciprojectsidpipelinesjobrerunjobid", "sofa");
+		super("SOFA", "2019-08-15", "CallbackLinkeantcodeAntcodeAciprojectsidpipelinesjobrerunjobid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

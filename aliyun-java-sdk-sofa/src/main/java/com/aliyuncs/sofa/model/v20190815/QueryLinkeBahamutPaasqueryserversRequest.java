@@ -27,7 +27,7 @@ public class QueryLinkeBahamutPaasqueryserversRequest extends RpcAcsRequest<Quer
 
 	private String iterationId;
 	public QueryLinkeBahamutPaasqueryserversRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutPaasqueryservers", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutPaasqueryservers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

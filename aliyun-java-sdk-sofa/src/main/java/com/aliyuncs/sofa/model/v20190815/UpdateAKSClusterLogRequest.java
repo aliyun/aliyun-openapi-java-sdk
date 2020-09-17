@@ -31,7 +31,7 @@ public class UpdateAKSClusterLogRequest extends RpcAcsRequest<UpdateAKSClusterLo
 
 	private String alsProjectHowCreate;
 	public UpdateAKSClusterLogRequest() {
-		super("SOFA", "2019-08-15", "UpdateAKSClusterLog", "sofa");
+		super("SOFA", "2019-08-15", "UpdateAKSClusterLog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

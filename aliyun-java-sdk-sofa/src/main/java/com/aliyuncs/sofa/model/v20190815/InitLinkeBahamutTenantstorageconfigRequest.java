@@ -27,7 +27,7 @@ public class InitLinkeBahamutTenantstorageconfigRequest extends RpcAcsRequest<In
 
 	private String tenantPath;
 	public InitLinkeBahamutTenantstorageconfigRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutTenantstorageconfig", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutTenantstorageconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

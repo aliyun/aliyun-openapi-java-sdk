@@ -29,7 +29,7 @@ public class GetDWSTaskLogRequest extends RpcAcsRequest<GetDWSTaskLogResponse> {
 
 	private String instanceId;
 	public GetDWSTaskLogRequest() {
-		super("SOFA", "2019-08-15", "GetDWSTaskLog", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSTaskLog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

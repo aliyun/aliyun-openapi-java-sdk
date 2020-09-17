@@ -27,7 +27,7 @@ public class DeleteLinkeBahamutCloudtenantRequest extends RpcAcsRequest<DeleteLi
 
 	private String id;
 	public DeleteLinkeBahamutCloudtenantRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutCloudtenant", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutCloudtenant", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

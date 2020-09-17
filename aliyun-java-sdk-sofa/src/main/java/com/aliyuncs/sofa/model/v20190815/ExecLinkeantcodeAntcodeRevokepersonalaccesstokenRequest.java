@@ -29,7 +29,7 @@ public class ExecLinkeantcodeAntcodeRevokepersonalaccesstokenRequest extends Rpc
 
 	private String token;
 	public ExecLinkeantcodeAntcodeRevokepersonalaccesstokenRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeRevokepersonalaccesstoken", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeRevokepersonalaccesstoken", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetCASApplicationPackageUploadPolicyRequest extends RpcAcsRequest<G
 
 	private String workspaceId;
 	public GetCASApplicationPackageUploadPolicyRequest() {
-		super("SOFA", "2019-08-15", "GetCASApplicationPackageUploadPolicy", "sofa");
+		super("SOFA", "2019-08-15", "GetCASApplicationPackageUploadPolicy", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

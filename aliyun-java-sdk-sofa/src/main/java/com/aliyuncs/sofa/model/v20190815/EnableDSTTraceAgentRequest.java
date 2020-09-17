@@ -27,7 +27,7 @@ public class EnableDSTTraceAgentRequest extends RpcAcsRequest<EnableDSTTraceAgen
 
 	private String instanceId;
 	public EnableDSTTraceAgentRequest() {
-		super("SOFA", "2019-08-15", "EnableDSTTraceAgent", "sofa");
+		super("SOFA", "2019-08-15", "EnableDSTTraceAgent", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

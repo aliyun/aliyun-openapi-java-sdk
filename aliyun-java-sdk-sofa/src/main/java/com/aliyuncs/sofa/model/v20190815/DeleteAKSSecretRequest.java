@@ -31,7 +31,7 @@ public class DeleteAKSSecretRequest extends RpcAcsRequest<DeleteAKSSecretRespons
 
 	private String namespace;
 	public DeleteAKSSecretRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSSecret", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSSecret", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

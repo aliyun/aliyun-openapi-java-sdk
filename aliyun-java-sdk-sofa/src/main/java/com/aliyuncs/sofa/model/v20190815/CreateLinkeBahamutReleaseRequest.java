@@ -46,7 +46,7 @@ public class CreateLinkeBahamutReleaseRequest extends RpcAcsRequest<CreateLinkeB
 
 	private Long submitDeadline;
 	public CreateLinkeBahamutReleaseRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutRelease", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutRelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

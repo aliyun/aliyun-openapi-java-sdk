@@ -37,7 +37,7 @@ public class ExecLinkeantcodeAntcodeMergepullrequestRequest extends RpcAcsReques
 
 	private String shouldRemoveSourceBranch;
 	public ExecLinkeantcodeAntcodeMergepullrequestRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeMergepullrequest", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeMergepullrequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

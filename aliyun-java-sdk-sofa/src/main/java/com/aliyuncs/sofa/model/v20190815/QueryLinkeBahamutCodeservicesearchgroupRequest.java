@@ -29,7 +29,7 @@ public class QueryLinkeBahamutCodeservicesearchgroupRequest extends RpcAcsReques
 
 	private String tenantId;
 	public QueryLinkeBahamutCodeservicesearchgroupRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutCodeservicesearchgroup", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutCodeservicesearchgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

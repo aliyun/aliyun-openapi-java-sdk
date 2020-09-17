@@ -60,7 +60,7 @@ public class UpdateLinkeantcodeAntcodeUpdateprojectpullrequestRequest extends Rp
 
 	private String stateEvent;
 	public UpdateLinkeantcodeAntcodeUpdateprojectpullrequestRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdateprojectpullrequest", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdateprojectpullrequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

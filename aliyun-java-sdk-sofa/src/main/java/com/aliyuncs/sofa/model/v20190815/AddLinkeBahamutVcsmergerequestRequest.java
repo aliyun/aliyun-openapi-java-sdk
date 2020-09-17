@@ -60,7 +60,7 @@ public class AddLinkeBahamutVcsmergerequestRequest extends RpcAcsRequest<AddLink
 
 	private String stageId;
 	public AddLinkeBahamutVcsmergerequestRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutVcsmergerequest", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutVcsmergerequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

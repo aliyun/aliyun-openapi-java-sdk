@@ -29,7 +29,7 @@ public class CheckLinkeBahamutReleasestablestablerollbackdeploycheckRequest exte
 
 	private String releaseExternalId;
 	public CheckLinkeBahamutReleasestablestablerollbackdeploycheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutReleasestablestablerollbackdeploycheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutReleasestablestablerollbackdeploycheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

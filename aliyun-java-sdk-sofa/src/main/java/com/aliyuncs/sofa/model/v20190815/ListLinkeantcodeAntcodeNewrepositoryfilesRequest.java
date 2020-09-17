@@ -31,7 +31,7 @@ public class ListLinkeantcodeAntcodeNewrepositoryfilesRequest extends RpcAcsRequ
 
 	private String requestGitOperate;
 	public ListLinkeantcodeAntcodeNewrepositoryfilesRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeNewrepositoryfiles", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeNewrepositoryfiles", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListMsSgAuthRuleActiveAppNamesRequest extends RpcAcsRequest<ListMsS
 
 	private String instanceId;
 	public ListMsSgAuthRuleActiveAppNamesRequest() {
-		super("SOFA", "2019-08-15", "ListMsSgAuthRuleActiveAppNames", "sofa");
+		super("SOFA", "2019-08-15", "ListMsSgAuthRuleActiveAppNames", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

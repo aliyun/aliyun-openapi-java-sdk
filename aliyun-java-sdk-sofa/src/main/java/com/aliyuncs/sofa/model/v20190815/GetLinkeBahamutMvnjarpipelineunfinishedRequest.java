@@ -29,7 +29,7 @@ public class GetLinkeBahamutMvnjarpipelineunfinishedRequest extends RpcAcsReques
 
 	private String iterationUnitId;
 	public GetLinkeBahamutMvnjarpipelineunfinishedRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutMvnjarpipelineunfinished", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutMvnjarpipelineunfinished", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

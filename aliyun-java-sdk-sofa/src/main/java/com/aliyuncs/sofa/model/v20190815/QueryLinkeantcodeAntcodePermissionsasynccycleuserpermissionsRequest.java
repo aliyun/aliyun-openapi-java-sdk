@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodePermissionsasynccycleuserpermissionsRequest
 
 	private String token;
 	public QueryLinkeantcodeAntcodePermissionsasynccycleuserpermissionsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodePermissionsasynccycleuserpermissions", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodePermissionsasynccycleuserpermissions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

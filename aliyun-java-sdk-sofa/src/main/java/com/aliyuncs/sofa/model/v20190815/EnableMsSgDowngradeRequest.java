@@ -29,7 +29,7 @@ public class EnableMsSgDowngradeRequest extends RpcAcsRequest<EnableMsSgDowngrad
 
 	private Long ruleId;
 	public EnableMsSgDowngradeRequest() {
-		super("SOFA", "2019-08-15", "EnableMsSgDowngrade", "sofa");
+		super("SOFA", "2019-08-15", "EnableMsSgDowngrade", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

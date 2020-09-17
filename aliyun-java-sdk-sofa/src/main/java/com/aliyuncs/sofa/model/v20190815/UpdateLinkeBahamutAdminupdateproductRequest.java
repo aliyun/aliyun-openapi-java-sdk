@@ -56,7 +56,7 @@ public class UpdateLinkeBahamutAdminupdateproductRequest extends RpcAcsRequest<U
 
 	private Boolean fixed;
 	public UpdateLinkeBahamutAdminupdateproductRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminupdateproduct", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminupdateproduct", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

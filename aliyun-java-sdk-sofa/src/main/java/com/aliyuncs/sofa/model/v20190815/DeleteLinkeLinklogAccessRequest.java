@@ -29,7 +29,7 @@ public class DeleteLinkeLinklogAccessRequest extends RpcAcsRequest<DeleteLinkeLi
 
 	private String key;
 	public DeleteLinkeLinklogAccessRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinklogAccess", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinklogAccess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -38,7 +38,7 @@ public class ListLinkeantcodeAntcodeRepositoryfilesRequest extends RpcAcsRequest
 
 	private List<String> filePathRepeatLists;
 	public ListLinkeantcodeAntcodeRepositoryfilesRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeRepositoryfiles", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeRepositoryfiles", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

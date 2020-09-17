@@ -27,7 +27,7 @@ public class BatchqueryLinkeLinktSimpleprojectsRequest extends RpcAcsRequest<Bat
 
 	private String signs;
 	public BatchqueryLinkeLinktSimpleprojectsRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryLinkeLinktSimpleprojects", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryLinkeLinktSimpleprojects", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CreateLinkeantcodeAntcodeUsergitoperateauthRequest extends RpcAcsRe
 
 	private String token;
 	public CreateLinkeantcodeAntcodeUsergitoperateauthRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeUsergitoperateauth", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeUsergitoperateauth", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

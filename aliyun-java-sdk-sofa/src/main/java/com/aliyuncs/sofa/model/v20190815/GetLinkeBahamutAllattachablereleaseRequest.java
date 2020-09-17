@@ -49,7 +49,7 @@ public class GetLinkeBahamutAllattachablereleaseRequest extends RpcAcsRequest<Ge
 
 	private String status;
 	public GetLinkeBahamutAllattachablereleaseRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAllattachablerelease", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAllattachablerelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

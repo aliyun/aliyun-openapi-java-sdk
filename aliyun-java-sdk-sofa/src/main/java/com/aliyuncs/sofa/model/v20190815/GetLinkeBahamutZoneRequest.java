@@ -29,7 +29,7 @@ public class GetLinkeBahamutZoneRequest extends RpcAcsRequest<GetLinkeBahamutZon
 
 	private String tenantId;
 	public GetLinkeBahamutZoneRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutZone", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutZone", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

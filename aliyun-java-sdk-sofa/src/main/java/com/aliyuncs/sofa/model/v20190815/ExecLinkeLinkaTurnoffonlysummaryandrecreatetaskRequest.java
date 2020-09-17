@@ -29,7 +29,7 @@ public class ExecLinkeLinkaTurnoffonlysummaryandrecreatetaskRequest extends RpcA
 
 	private String taskId;
 	public ExecLinkeLinkaTurnoffonlysummaryandrecreatetaskRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinkaTurnoffonlysummaryandrecreatetask", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinkaTurnoffonlysummaryandrecreatetask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

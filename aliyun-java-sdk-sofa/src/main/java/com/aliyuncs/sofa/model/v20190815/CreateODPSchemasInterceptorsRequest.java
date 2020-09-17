@@ -31,7 +31,7 @@ public class CreateODPSchemasInterceptorsRequest extends RpcAcsRequest<CreateODP
 
 	private String instanceId;
 	public CreateODPSchemasInterceptorsRequest() {
-		super("SOFA", "2019-08-15", "CreateODPSchemasInterceptors", "sofa");
+		super("SOFA", "2019-08-15", "CreateODPSchemasInterceptors", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

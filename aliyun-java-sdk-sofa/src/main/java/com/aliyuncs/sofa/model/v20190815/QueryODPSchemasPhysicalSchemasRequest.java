@@ -31,7 +31,7 @@ public class QueryODPSchemasPhysicalSchemasRequest extends RpcAcsRequest<QueryOD
 
 	private String instanceId;
 	public QueryODPSchemasPhysicalSchemasRequest() {
-		super("SOFA", "2019-08-15", "QueryODPSchemasPhysicalSchemas", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPSchemasPhysicalSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

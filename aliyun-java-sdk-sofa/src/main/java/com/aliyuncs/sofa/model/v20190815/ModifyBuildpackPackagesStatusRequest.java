@@ -34,7 +34,7 @@ public class ModifyBuildpackPackagesStatusRequest extends RpcAcsRequest<ModifyBu
 
 	private String originalFileStatus;
 	public ModifyBuildpackPackagesStatusRequest() {
-		super("SOFA", "2019-08-15", "ModifyBuildpackPackagesStatus", "sofa");
+		super("SOFA", "2019-08-15", "ModifyBuildpackPackagesStatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class UpdateLinkeantcodeAntcodeApiupdateprojectpullrequestnoteRequest ext
 
 	private String requestGitOperate;
 	public UpdateLinkeantcodeAntcodeApiupdateprojectpullrequestnoteRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeApiupdateprojectpullrequestnote", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeApiupdateprojectpullrequestnote", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

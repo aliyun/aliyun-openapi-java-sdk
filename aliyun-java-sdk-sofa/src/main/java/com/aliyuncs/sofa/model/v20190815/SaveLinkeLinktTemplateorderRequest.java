@@ -32,7 +32,7 @@ public class SaveLinkeLinktTemplateorderRequest extends RpcAcsRequest<SaveLinkeL
 
 	private List<Templates> templatess;
 	public SaveLinkeLinktTemplateorderRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeLinktTemplateorder", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeLinktTemplateorder", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

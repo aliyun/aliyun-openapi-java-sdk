@@ -27,7 +27,7 @@ public class CountTSJobTypeRequest extends RpcAcsRequest<CountTSJobTypeResponse>
 
 	private String instanceId;
 	public CountTSJobTypeRequest() {
-		super("SOFA", "2019-08-15", "CountTSJobType", "sofa");
+		super("SOFA", "2019-08-15", "CountTSJobType", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

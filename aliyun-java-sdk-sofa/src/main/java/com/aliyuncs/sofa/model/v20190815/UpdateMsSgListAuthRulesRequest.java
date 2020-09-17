@@ -35,7 +35,7 @@ public class UpdateMsSgListAuthRulesRequest extends RpcAcsRequest<UpdateMsSgList
 
 	private Long ruleId;
 	public UpdateMsSgListAuthRulesRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsSgListAuthRules", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsSgListAuthRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

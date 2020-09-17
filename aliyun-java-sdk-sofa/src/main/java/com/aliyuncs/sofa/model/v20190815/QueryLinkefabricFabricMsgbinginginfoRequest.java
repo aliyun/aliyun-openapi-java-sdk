@@ -54,7 +54,7 @@ public class QueryLinkefabricFabricMsgbinginginfoRequest extends RpcAcsRequest<Q
 
 	private List<String> envListRepeatLists;
 	public QueryLinkefabricFabricMsgbinginginfoRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricMsgbinginginfo", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricMsgbinginginfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

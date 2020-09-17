@@ -45,7 +45,7 @@ public class QueryLinkeantcodeAntcodeAddhookRequest extends RpcAcsRequest<QueryL
 
 	private String issuesEvents;
 	public QueryLinkeantcodeAntcodeAddhookRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAddhook", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAddhook", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

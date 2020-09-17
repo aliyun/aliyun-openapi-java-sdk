@@ -29,7 +29,7 @@ public class QueryLinkeantcodeAntcodeUserkeyskeyidRequest extends RpcAcsRequest<
 
 	private String keyId;
 	public QueryLinkeantcodeAntcodeUserkeyskeyidRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeUserkeyskeyid", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeUserkeyskeyid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

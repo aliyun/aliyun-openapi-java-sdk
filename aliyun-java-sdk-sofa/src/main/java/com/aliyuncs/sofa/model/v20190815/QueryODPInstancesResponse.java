@@ -309,6 +309,12 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 		public static class NodesItem {
 
+			private String aliyunInstanceId;
+
+			private String bizVpcId;
+
+			private String bizVswtichId;
+
 			private String cellId;
 
 			private String cellName;
@@ -339,7 +345,13 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 			private Long memoryCount;
 
+			private String nodeLanAddress;
+
 			private String nodeStatus;
+
+			private String nodeWanAddress;
+
+			private Long nodeWanPort;
 
 			private Long port;
 
@@ -354,6 +366,32 @@ public class QueryODPInstancesResponse extends AcsResponse {
 			private String zdalproxyNodeId;
 
 			private String zone;
+
+			private String zoneDescription;
+
+			public String getAliyunInstanceId() {
+				return this.aliyunInstanceId;
+			}
+
+			public void setAliyunInstanceId(String aliyunInstanceId) {
+				this.aliyunInstanceId = aliyunInstanceId;
+			}
+
+			public String getBizVpcId() {
+				return this.bizVpcId;
+			}
+
+			public void setBizVpcId(String bizVpcId) {
+				this.bizVpcId = bizVpcId;
+			}
+
+			public String getBizVswtichId() {
+				return this.bizVswtichId;
+			}
+
+			public void setBizVswtichId(String bizVswtichId) {
+				this.bizVswtichId = bizVswtichId;
+			}
 
 			public String getCellId() {
 				return this.cellId;
@@ -475,12 +513,36 @@ public class QueryODPInstancesResponse extends AcsResponse {
 				this.memoryCount = memoryCount;
 			}
 
+			public String getNodeLanAddress() {
+				return this.nodeLanAddress;
+			}
+
+			public void setNodeLanAddress(String nodeLanAddress) {
+				this.nodeLanAddress = nodeLanAddress;
+			}
+
 			public String getNodeStatus() {
 				return this.nodeStatus;
 			}
 
 			public void setNodeStatus(String nodeStatus) {
 				this.nodeStatus = nodeStatus;
+			}
+
+			public String getNodeWanAddress() {
+				return this.nodeWanAddress;
+			}
+
+			public void setNodeWanAddress(String nodeWanAddress) {
+				this.nodeWanAddress = nodeWanAddress;
+			}
+
+			public Long getNodeWanPort() {
+				return this.nodeWanPort;
+			}
+
+			public void setNodeWanPort(Long nodeWanPort) {
+				this.nodeWanPort = nodeWanPort;
 			}
 
 			public Long getPort() {
@@ -537,6 +599,14 @@ public class QueryODPInstancesResponse extends AcsResponse {
 
 			public void setZone(String zone) {
 				this.zone = zone;
+			}
+
+			public String getZoneDescription() {
+				return this.zoneDescription;
+			}
+
+			public void setZoneDescription(String zoneDescription) {
+				this.zoneDescription = zoneDescription;
 			}
 		}
 	}

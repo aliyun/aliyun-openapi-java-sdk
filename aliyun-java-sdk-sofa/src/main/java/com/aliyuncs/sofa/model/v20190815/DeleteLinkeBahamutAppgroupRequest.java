@@ -40,7 +40,7 @@ public class DeleteLinkeBahamutAppgroupRequest extends RpcAcsRequest<DeleteLinke
 
 	private String name;
 	public DeleteLinkeBahamutAppgroupRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAppgroup", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAppgroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

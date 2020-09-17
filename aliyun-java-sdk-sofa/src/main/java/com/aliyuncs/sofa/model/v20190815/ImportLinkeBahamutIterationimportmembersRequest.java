@@ -29,7 +29,7 @@ public class ImportLinkeBahamutIterationimportmembersRequest extends RpcAcsReque
 
 	private String appNames;
 	public ImportLinkeBahamutIterationimportmembersRequest() {
-		super("SOFA", "2019-08-15", "ImportLinkeBahamutIterationimportmembers", "sofa");
+		super("SOFA", "2019-08-15", "ImportLinkeBahamutIterationimportmembers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

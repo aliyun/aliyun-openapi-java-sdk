@@ -52,7 +52,7 @@ public class ModifyBuildpackRequest extends RpcAcsRequest<ModifyBuildpackRespons
 
 	private String status;
 	public ModifyBuildpackRequest() {
-		super("SOFA", "2019-08-15", "ModifyBuildpack", "sofa");
+		super("SOFA", "2019-08-15", "ModifyBuildpack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

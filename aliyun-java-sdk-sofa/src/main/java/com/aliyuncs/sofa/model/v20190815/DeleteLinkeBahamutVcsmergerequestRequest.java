@@ -31,7 +31,7 @@ public class DeleteLinkeBahamutVcsmergerequestRequest extends RpcAcsRequest<Dele
 
 	private String mergeRequestId;
 	public DeleteLinkeBahamutVcsmergerequestRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutVcsmergerequest", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutVcsmergerequest", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class QueryMSDdcsAttributesRequest extends RpcAcsRequest<QueryMSDdcsAttri
 
 	private String region;
 	public QueryMSDdcsAttributesRequest() {
-		super("SOFA", "2019-08-15", "QueryMSDdcsAttributes", "sofa");
+		super("SOFA", "2019-08-15", "QueryMSDdcsAttributes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class QueryTSTriggerInstanceRequest extends RpcAcsRequest<QueryTSTriggerI
 
 	private String jobRequestId;
 	public QueryTSTriggerInstanceRequest() {
-		super("SOFA", "2019-08-15", "QueryTSTriggerInstance", "sofa");
+		super("SOFA", "2019-08-15", "QueryTSTriggerInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

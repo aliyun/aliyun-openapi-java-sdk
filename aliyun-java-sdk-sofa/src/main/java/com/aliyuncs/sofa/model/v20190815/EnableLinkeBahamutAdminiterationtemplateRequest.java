@@ -29,7 +29,7 @@ public class EnableLinkeBahamutAdminiterationtemplateRequest extends RpcAcsReque
 
 	private String id;
 	public EnableLinkeBahamutAdminiterationtemplateRequest() {
-		super("SOFA", "2019-08-15", "EnableLinkeBahamutAdminiterationtemplate", "sofa");
+		super("SOFA", "2019-08-15", "EnableLinkeBahamutAdminiterationtemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

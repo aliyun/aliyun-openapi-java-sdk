@@ -33,7 +33,7 @@ public class GetLinkeBahamutMiscgetreleasedunitRequest extends RpcAcsRequest<Get
 
 	private String to;
 	public GetLinkeBahamutMiscgetreleasedunitRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutMiscgetreleasedunit", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutMiscgetreleasedunit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

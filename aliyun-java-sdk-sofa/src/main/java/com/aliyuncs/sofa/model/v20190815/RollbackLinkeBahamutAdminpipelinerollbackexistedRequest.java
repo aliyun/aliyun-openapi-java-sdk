@@ -31,7 +31,7 @@ public class RollbackLinkeBahamutAdminpipelinerollbackexistedRequest extends Rpc
 
 	private String bahamutTenant;
 	public RollbackLinkeBahamutAdminpipelinerollbackexistedRequest() {
-		super("SOFA", "2019-08-15", "RollbackLinkeBahamutAdminpipelinerollbackexisted", "sofa");
+		super("SOFA", "2019-08-15", "RollbackLinkeBahamutAdminpipelinerollbackexisted", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

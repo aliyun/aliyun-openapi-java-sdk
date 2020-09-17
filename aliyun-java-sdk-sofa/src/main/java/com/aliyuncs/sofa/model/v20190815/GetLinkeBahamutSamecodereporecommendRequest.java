@@ -27,7 +27,7 @@ public class GetLinkeBahamutSamecodereporecommendRequest extends RpcAcsRequest<G
 
 	private String unitId;
 	public GetLinkeBahamutSamecodereporecommendRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutSamecodereporecommend", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutSamecodereporecommend", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

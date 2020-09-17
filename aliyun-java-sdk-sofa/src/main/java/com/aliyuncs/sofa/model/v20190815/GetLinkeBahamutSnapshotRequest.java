@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutSnapshotRequest extends RpcAcsRequest<GetLinkeBahamutSnapshotResponse> {
 	   
 	public GetLinkeBahamutSnapshotRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutSnapshot", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutSnapshot", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

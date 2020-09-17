@@ -35,7 +35,7 @@ public class DeleteLinkeantcodeAntcodeDeleteexistingfileinrepositoryRequest exte
 
 	private String commitMessage;
 	public DeleteLinkeantcodeAntcodeDeleteexistingfileinrepositoryRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeleteexistingfileinrepository", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeleteexistingfileinrepository", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

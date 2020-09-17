@@ -29,7 +29,7 @@ public class DeleteDSTTraceCollectionRequest extends RpcAcsRequest<DeleteDSTTrac
 
 	private String instanceId;
 	public DeleteDSTTraceCollectionRequest() {
-		super("SOFA", "2019-08-15", "DeleteDSTTraceCollection", "sofa");
+		super("SOFA", "2019-08-15", "DeleteDSTTraceCollection", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

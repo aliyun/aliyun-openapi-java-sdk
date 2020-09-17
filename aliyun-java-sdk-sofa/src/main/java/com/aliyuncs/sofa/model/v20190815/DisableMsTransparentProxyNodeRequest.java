@@ -31,7 +31,7 @@ public class DisableMsTransparentProxyNodeRequest extends RpcAcsRequest<DisableM
 
 	private String nodeIds;
 	public DisableMsTransparentProxyNodeRequest() {
-		super("SOFA", "2019-08-15", "DisableMsTransparentProxyNode", "sofa");
+		super("SOFA", "2019-08-15", "DisableMsTransparentProxyNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkeBahamutCloudtenantresetcloudaccessRequest extends RpcAcsRequest<QueryLinkeBahamutCloudtenantresetcloudaccessResponse> {
 	   
 	public QueryLinkeBahamutCloudtenantresetcloudaccessRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutCloudtenantresetcloudaccess", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutCloudtenantresetcloudaccess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

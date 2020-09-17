@@ -33,7 +33,7 @@ public class RollbackLinkedeploycoreDeploycoreAppserviceRequest extends RpcAcsRe
 
 	private Long configId;
 	public RollbackLinkedeploycoreDeploycoreAppserviceRequest() {
-		super("SOFA", "2019-08-15", "RollbackLinkedeploycoreDeploycoreAppservice", "sofa");
+		super("SOFA", "2019-08-15", "RollbackLinkedeploycoreDeploycoreAppservice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

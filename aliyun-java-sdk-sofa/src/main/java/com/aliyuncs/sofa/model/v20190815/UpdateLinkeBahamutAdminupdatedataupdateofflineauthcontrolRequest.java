@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutAdminupdatedataupdateofflineauthcontrolRequest ex
 
 	private String tenantPath;
 	public UpdateLinkeBahamutAdminupdatedataupdateofflineauthcontrolRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminupdatedataupdateofflineauthcontrol", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminupdatedataupdateofflineauthcontrol", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

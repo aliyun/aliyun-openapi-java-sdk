@@ -42,7 +42,7 @@ public class UpdateLinkeLinktAdmincustomfieldRequest extends RpcAcsRequest<Updat
 
 	private List<String> possibleValuesRepeatLists;
 	public UpdateLinkeLinktAdmincustomfieldRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktAdmincustomfield", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktAdmincustomfield", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

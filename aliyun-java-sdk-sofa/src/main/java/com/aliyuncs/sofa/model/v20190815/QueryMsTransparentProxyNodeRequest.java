@@ -35,7 +35,7 @@ public class QueryMsTransparentProxyNodeRequest extends RpcAcsRequest<QueryMsTra
 
 	private String instanceId;
 	public QueryMsTransparentProxyNodeRequest() {
-		super("SOFA", "2019-08-15", "QueryMsTransparentProxyNode", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsTransparentProxyNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

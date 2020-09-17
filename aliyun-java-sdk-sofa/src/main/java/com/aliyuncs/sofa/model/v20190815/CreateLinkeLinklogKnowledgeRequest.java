@@ -29,7 +29,7 @@ public class CreateLinkeLinklogKnowledgeRequest extends RpcAcsRequest<CreateLink
 
 	private String knowledgeJsonStr;
 	public CreateLinkeLinklogKnowledgeRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinklogKnowledge", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinklogKnowledge", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

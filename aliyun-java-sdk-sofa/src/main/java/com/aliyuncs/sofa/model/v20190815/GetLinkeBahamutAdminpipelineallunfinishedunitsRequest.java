@@ -31,7 +31,7 @@ public class GetLinkeBahamutAdminpipelineallunfinishedunitsRequest extends RpcAc
 
 	private String bahamutTenant;
 	public GetLinkeBahamutAdminpipelineallunfinishedunitsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAdminpipelineallunfinishedunits", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAdminpipelineallunfinishedunits", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

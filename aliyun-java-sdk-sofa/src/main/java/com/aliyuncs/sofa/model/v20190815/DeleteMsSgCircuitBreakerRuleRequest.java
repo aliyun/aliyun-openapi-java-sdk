@@ -31,7 +31,7 @@ public class DeleteMsSgCircuitBreakerRuleRequest extends RpcAcsRequest<DeleteMsS
 
 	private String dataId;
 	public DeleteMsSgCircuitBreakerRuleRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsSgCircuitBreakerRule", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMsSgCircuitBreakerRule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

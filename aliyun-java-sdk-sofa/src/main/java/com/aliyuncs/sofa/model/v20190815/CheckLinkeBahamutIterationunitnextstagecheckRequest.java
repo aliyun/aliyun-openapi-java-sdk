@@ -33,7 +33,7 @@ public class CheckLinkeBahamutIterationunitnextstagecheckRequest extends RpcAcsR
 
 	private String iterationUnitId;
 	public CheckLinkeBahamutIterationunitnextstagecheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutIterationunitnextstagecheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutIterationunitnextstagecheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

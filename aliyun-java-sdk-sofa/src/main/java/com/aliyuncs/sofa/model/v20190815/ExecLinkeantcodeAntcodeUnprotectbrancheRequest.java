@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeUnprotectbrancheRequest extends RpcAcsReques
 
 	private String protectBranchId;
 	public ExecLinkeantcodeAntcodeUnprotectbrancheRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeUnprotectbranche", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeUnprotectbranche", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

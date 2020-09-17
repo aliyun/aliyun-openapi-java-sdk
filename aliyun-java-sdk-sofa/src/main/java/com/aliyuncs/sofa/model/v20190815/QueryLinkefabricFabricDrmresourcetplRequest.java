@@ -33,7 +33,7 @@ public class QueryLinkefabricFabricDrmresourcetplRequest extends RpcAcsRequest<Q
 
 	private String keyword;
 	public QueryLinkefabricFabricDrmresourcetplRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricDrmresourcetpl", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricDrmresourcetpl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

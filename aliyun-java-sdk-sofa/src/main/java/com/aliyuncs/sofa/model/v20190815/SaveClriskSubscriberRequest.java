@@ -34,7 +34,7 @@ public class SaveClriskSubscriberRequest extends RpcAcsRequest<SaveClriskSubscri
 
 	private List<String> entranceCodesRepeatLists;
 	public SaveClriskSubscriberRequest() {
-		super("SOFA", "2019-08-15", "SaveClriskSubscriber", "sofa");
+		super("SOFA", "2019-08-15", "SaveClriskSubscriber", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

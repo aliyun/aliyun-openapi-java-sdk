@@ -38,7 +38,7 @@ public class CreateAKSConfigmapRequest extends RpcAcsRequest<CreateAKSConfigmapR
 
 	private String namespace;
 	public CreateAKSConfigmapRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSConfigmap", "sofa");
+		super("SOFA", "2019-08-15", "CreateAKSConfigmap", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

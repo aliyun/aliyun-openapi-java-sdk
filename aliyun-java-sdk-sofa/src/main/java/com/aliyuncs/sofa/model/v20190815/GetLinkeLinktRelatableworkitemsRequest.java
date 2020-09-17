@@ -31,7 +31,7 @@ public class GetLinkeLinktRelatableworkitemsRequest extends RpcAcsRequest<GetLin
 
 	private String formJsonStr;
 	public GetLinkeLinktRelatableworkitemsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinktRelatableworkitems", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinktRelatableworkitems", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

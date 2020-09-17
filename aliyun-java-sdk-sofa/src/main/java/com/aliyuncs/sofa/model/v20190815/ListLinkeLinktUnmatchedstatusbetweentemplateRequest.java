@@ -29,7 +29,7 @@ public class ListLinkeLinktUnmatchedstatusbetweentemplateRequest extends RpcAcsR
 
 	private String convertTemplateId;
 	public ListLinkeLinktUnmatchedstatusbetweentemplateRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktUnmatchedstatusbetweentemplate", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktUnmatchedstatusbetweentemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

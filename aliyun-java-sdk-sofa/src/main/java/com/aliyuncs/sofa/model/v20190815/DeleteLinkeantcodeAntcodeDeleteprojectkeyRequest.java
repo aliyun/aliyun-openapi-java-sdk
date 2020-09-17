@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeDeleteprojectkeyRequest extends RpcAcsRequ
 
 	private String keyId;
 	public DeleteLinkeantcodeAntcodeDeleteprojectkeyRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeleteprojectkey", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeleteprojectkey", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

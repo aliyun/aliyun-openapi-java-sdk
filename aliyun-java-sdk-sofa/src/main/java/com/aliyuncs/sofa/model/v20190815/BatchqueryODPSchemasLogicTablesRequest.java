@@ -31,7 +31,7 @@ public class BatchqueryODPSchemasLogicTablesRequest extends RpcAcsRequest<Batchq
 
 	private String instanceId;
 	public BatchqueryODPSchemasLogicTablesRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryODPSchemasLogicTables", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryODPSchemasLogicTables", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

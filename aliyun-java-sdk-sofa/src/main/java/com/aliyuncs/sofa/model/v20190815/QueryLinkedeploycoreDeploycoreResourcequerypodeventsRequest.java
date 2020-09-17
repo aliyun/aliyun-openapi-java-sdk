@@ -35,7 +35,7 @@ public class QueryLinkedeploycoreDeploycoreResourcequerypodeventsRequest extends
 
 	private String podId;
 	public QueryLinkedeploycoreDeploycoreResourcequerypodeventsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreResourcequerypodevents", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreResourcequerypodevents", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

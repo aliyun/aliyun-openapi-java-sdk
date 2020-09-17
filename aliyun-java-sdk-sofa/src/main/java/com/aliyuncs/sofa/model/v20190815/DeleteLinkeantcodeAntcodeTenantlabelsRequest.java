@@ -29,7 +29,7 @@ public class DeleteLinkeantcodeAntcodeTenantlabelsRequest extends RpcAcsRequest<
 
 	private String name;
 	public DeleteLinkeantcodeAntcodeTenantlabelsRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeTenantlabels", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeTenantlabels", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

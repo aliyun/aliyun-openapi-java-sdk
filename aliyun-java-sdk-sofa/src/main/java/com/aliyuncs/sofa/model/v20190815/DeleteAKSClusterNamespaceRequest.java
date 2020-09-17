@@ -29,7 +29,7 @@ public class DeleteAKSClusterNamespaceRequest extends RpcAcsRequest<DeleteAKSClu
 
 	private String name;
 	public DeleteAKSClusterNamespaceRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSClusterNamespace", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSClusterNamespace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

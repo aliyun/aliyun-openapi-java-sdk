@@ -35,7 +35,7 @@ public class QueryAKSBuildPackTechStackVersionsRequest extends RpcAcsRequest<Que
 
 	private Long page;
 	public QueryAKSBuildPackTechStackVersionsRequest() {
-		super("SOFA", "2019-08-15", "QueryAKSBuildPackTechStackVersions", "sofa");
+		super("SOFA", "2019-08-15", "QueryAKSBuildPackTechStackVersions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

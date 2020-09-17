@@ -31,7 +31,7 @@ public class CreateLinkeantcodeAntcodeProjectsprojectidchecksuitesRequest extend
 
 	private String createDTOJsonStr;
 	public CreateLinkeantcodeAntcodeProjectsprojectidchecksuitesRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectsprojectidchecksuites", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectsprojectidchecksuites", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

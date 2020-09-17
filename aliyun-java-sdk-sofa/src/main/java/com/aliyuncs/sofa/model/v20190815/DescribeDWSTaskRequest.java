@@ -27,7 +27,7 @@ public class DescribeDWSTaskRequest extends RpcAcsRequest<DescribeDWSTaskRespons
 
 	private String instanceId;
 	public DescribeDWSTaskRequest() {
-		super("SOFA", "2019-08-15", "DescribeDWSTask", "sofa");
+		super("SOFA", "2019-08-15", "DescribeDWSTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class SetLinkeLinktWorkflowstatusreachableRequest extends RpcAcsRequest<S
 
 	private String reachable;
 	public SetLinkeLinktWorkflowstatusreachableRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeLinktWorkflowstatusreachable", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeLinktWorkflowstatusreachable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

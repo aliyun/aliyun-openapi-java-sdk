@@ -33,7 +33,7 @@ public class QueryLinkeantcodeAntcodeManualbranchpipelineexecRequest extends Rpc
 
 	private String manualPipelineRequestJsonStr;
 	public QueryLinkeantcodeAntcodeManualbranchpipelineexecRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeManualbranchpipelineexec", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeManualbranchpipelineexec", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

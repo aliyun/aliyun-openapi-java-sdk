@@ -44,7 +44,7 @@ public class ExecLinkefabricFabricPutdrmofflinetaskRequest extends RpcAcsRequest
 
 	private Boolean preTaskEnable;
 	public ExecLinkefabricFabricPutdrmofflinetaskRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkefabricFabricPutdrmofflinetask", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkefabricFabricPutdrmofflinetask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

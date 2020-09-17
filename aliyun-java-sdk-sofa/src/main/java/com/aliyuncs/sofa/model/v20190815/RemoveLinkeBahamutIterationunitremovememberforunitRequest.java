@@ -31,7 +31,7 @@ public class RemoveLinkeBahamutIterationunitremovememberforunitRequest extends R
 
 	private String iterationUnitId;
 	public RemoveLinkeBahamutIterationunitremovememberforunitRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeBahamutIterationunitremovememberforunit", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeBahamutIterationunitremovememberforunit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

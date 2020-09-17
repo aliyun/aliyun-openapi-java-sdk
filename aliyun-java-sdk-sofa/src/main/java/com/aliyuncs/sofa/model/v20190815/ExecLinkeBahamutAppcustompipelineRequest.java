@@ -35,7 +35,7 @@ public class ExecLinkeBahamutAppcustompipelineRequest extends RpcAcsRequest<Exec
 
 	private String withExclude;
 	public ExecLinkeBahamutAppcustompipelineRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeBahamutAppcustompipeline", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeBahamutAppcustompipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

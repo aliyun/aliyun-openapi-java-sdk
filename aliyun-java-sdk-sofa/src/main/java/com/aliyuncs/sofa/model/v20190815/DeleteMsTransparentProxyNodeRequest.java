@@ -31,7 +31,7 @@ public class DeleteMsTransparentProxyNodeRequest extends RpcAcsRequest<DeleteMsT
 
 	private String instanceId;
 	public DeleteMsTransparentProxyNodeRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsTransparentProxyNode", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMsTransparentProxyNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

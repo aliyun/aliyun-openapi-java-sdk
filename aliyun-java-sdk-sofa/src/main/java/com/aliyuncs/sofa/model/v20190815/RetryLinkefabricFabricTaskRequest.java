@@ -27,7 +27,7 @@ public class RetryLinkefabricFabricTaskRequest extends RpcAcsRequest<RetryLinkef
 
 	private String taskId;
 	public RetryLinkefabricFabricTaskRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkefabricFabricTask", "sofa");
+		super("SOFA", "2019-08-15", "RetryLinkefabricFabricTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

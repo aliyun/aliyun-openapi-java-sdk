@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkedeploycoreDeploycoreUsercurrentRequest extends RpcAcsRequest<QueryLinkedeploycoreDeploycoreUsercurrentResponse> {
 	   
 	public QueryLinkedeploycoreDeploycoreUsercurrentRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreUsercurrent", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreUsercurrent", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

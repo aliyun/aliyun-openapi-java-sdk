@@ -31,7 +31,7 @@ public class QueryMqSofamqTopicSubDetailRequest extends RpcAcsRequest<QueryMqSof
 
 	private String topic;
 	public QueryMqSofamqTopicSubDetailRequest() {
-		super("SOFA", "2019-08-15", "QueryMqSofamqTopicSubDetail", "sofa");
+		super("SOFA", "2019-08-15", "QueryMqSofamqTopicSubDetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

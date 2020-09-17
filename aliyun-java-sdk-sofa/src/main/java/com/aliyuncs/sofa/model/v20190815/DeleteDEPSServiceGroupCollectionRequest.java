@@ -31,7 +31,7 @@ public class DeleteDEPSServiceGroupCollectionRequest extends RpcAcsRequest<Delet
 
 	private String processDefinitionId;
 	public DeleteDEPSServiceGroupCollectionRequest() {
-		super("SOFA", "2019-08-15", "DeleteDEPSServiceGroupCollection", "sofa");
+		super("SOFA", "2019-08-15", "DeleteDEPSServiceGroupCollection", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

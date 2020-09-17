@@ -31,7 +31,7 @@ public class UpdateLinkeLinktTagRequest extends RpcAcsRequest<UpdateLinkeLinktTa
 
 	private String tagId;
 	public UpdateLinkeLinktTagRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktTag", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktTag", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

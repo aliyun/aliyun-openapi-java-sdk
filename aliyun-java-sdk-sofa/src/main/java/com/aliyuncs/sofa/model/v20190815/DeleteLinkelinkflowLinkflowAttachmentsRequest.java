@@ -27,7 +27,7 @@ public class DeleteLinkelinkflowLinkflowAttachmentsRequest extends RpcAcsRequest
 
 	private String id;
 	public DeleteLinkelinkflowLinkflowAttachmentsRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkelinkflowLinkflowAttachments", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkelinkflowLinkflowAttachments", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class GetLinkeBahamutAppgrayadmininfoRequest extends RpcAcsRequest<GetLinkeBahamutAppgrayadmininfoResponse> {
 	   
 	public GetLinkeBahamutAppgrayadmininfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAppgrayadmininfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAppgrayadmininfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

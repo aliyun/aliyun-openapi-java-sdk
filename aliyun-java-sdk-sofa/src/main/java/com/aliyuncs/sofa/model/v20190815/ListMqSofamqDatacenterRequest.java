@@ -27,7 +27,7 @@ public class ListMqSofamqDatacenterRequest extends RpcAcsRequest<ListMqSofamqDat
 
 	private String instanceId;
 	public ListMqSofamqDatacenterRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqDatacenter", "sofa");
+		super("SOFA", "2019-08-15", "ListMqSofamqDatacenter", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

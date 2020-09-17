@@ -31,7 +31,7 @@ public class DeleteODPSchemasRequest extends RpcAcsRequest<DeleteODPSchemasRespo
 
 	private String instanceId;
 	public DeleteODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "DeleteODPSchemas", "sofa");
+		super("SOFA", "2019-08-15", "DeleteODPSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

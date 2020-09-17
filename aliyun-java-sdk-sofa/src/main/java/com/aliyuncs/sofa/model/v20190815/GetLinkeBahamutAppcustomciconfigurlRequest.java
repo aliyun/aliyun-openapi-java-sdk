@@ -27,7 +27,7 @@ public class GetLinkeBahamutAppcustomciconfigurlRequest extends RpcAcsRequest<Ge
 
 	private String id;
 	public GetLinkeBahamutAppcustomciconfigurlRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAppcustomciconfigurl", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAppcustomciconfigurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

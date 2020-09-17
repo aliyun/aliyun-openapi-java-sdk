@@ -37,7 +37,7 @@ public class CreateLinkeantcodeAntcodeSearchmonitorRequest extends RpcAcsRequest
 
 	private String page;
 	public CreateLinkeantcodeAntcodeSearchmonitorRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeSearchmonitor", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeSearchmonitor", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

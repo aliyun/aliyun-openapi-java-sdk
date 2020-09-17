@@ -50,7 +50,7 @@ public class QueryCasLoadbalanceListenerRequest extends RpcAcsRequest<QueryCasLo
 
 	private List<String> typesRepeatLists;
 	public QueryCasLoadbalanceListenerRequest() {
-		super("SOFA", "2019-08-15", "QueryCasLoadbalanceListener", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasLoadbalanceListener", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

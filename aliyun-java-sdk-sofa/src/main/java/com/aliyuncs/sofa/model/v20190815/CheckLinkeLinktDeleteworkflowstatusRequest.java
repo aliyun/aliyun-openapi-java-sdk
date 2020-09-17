@@ -35,7 +35,7 @@ public class CheckLinkeLinktDeleteworkflowstatusRequest extends RpcAcsRequest<Ch
 
 	private Long convertStatusId;
 	public CheckLinkeLinktDeleteworkflowstatusRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeLinktDeleteworkflowstatus", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeLinktDeleteworkflowstatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

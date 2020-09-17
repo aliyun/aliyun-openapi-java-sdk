@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeRerunfailedpipelinebyexecRequest extends Rp
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeRerunfailedpipelinebyexecRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeRerunfailedpipelinebyexec", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeRerunfailedpipelinebyexec", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

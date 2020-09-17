@@ -29,7 +29,7 @@ public class GetLinkeBahamutPaasgetapplyserverurlRequest extends RpcAcsRequest<G
 
 	private String iterationId;
 	public GetLinkeBahamutPaasgetapplyserverurlRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPaasgetapplyserverurl", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPaasgetapplyserverurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

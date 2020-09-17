@@ -35,7 +35,7 @@ public class UpdateLinkeantcodeAntcodeNamespacememberRequest extends RpcAcsReque
 
 	private String requestGitOperate;
 	public UpdateLinkeantcodeAntcodeNamespacememberRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeNamespacemember", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeNamespacemember", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

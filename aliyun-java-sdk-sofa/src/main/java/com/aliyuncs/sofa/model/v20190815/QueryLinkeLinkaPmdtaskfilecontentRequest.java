@@ -29,7 +29,7 @@ public class QueryLinkeLinkaPmdtaskfilecontentRequest extends RpcAcsRequest<Quer
 
 	private String filename;
 	public QueryLinkeLinkaPmdtaskfilecontentRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaPmdtaskfilecontent", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaPmdtaskfilecontent", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

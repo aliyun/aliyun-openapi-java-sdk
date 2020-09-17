@@ -27,7 +27,7 @@ public class EnableLinkelinkflowLinkflowProcessRequest extends RpcAcsRequest<Ena
 
 	private String processInstanceId;
 	public EnableLinkelinkflowLinkflowProcessRequest() {
-		super("SOFA", "2019-08-15", "EnableLinkelinkflowLinkflowProcess", "sofa");
+		super("SOFA", "2019-08-15", "EnableLinkelinkflowLinkflowProcess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

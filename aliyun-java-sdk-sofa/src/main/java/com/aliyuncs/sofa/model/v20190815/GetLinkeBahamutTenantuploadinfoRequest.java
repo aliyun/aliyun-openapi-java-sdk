@@ -33,7 +33,7 @@ public class GetLinkeBahamutTenantuploadinfoRequest extends RpcAcsRequest<GetLin
 
 	private String folder;
 	public GetLinkeBahamutTenantuploadinfoRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutTenantuploadinfo", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutTenantuploadinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

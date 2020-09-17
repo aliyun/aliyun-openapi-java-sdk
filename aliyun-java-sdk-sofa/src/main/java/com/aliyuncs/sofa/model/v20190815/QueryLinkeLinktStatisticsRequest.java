@@ -33,7 +33,7 @@ public class QueryLinkeLinktStatisticsRequest extends RpcAcsRequest<QueryLinkeLi
 
 	private Long to;
 	public QueryLinkeLinktStatisticsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktStatistics", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktStatistics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

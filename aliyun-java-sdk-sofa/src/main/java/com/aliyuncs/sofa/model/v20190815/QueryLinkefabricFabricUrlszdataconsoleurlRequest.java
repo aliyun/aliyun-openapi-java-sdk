@@ -29,7 +29,7 @@ public class QueryLinkefabricFabricUrlszdataconsoleurlRequest extends RpcAcsRequ
 
 	private String projectId;
 	public QueryLinkefabricFabricUrlszdataconsoleurlRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricUrlszdataconsoleurl", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricUrlszdataconsoleurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

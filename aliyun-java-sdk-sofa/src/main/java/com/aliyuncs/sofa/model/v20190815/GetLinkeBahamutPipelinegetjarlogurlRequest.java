@@ -27,7 +27,7 @@ public class GetLinkeBahamutPipelinegetjarlogurlRequest extends RpcAcsRequest<Ge
 
 	private String id;
 	public GetLinkeBahamutPipelinegetjarlogurlRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetjarlogurl", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetjarlogurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

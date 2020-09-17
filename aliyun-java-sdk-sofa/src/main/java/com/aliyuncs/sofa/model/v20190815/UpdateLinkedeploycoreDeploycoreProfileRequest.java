@@ -31,7 +31,7 @@ public class UpdateLinkedeploycoreDeploycoreProfileRequest extends RpcAcsRequest
 
 	private String detail;
 	public UpdateLinkedeploycoreDeploycoreProfileRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkedeploycoreDeploycoreProfile", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkedeploycoreDeploycoreProfile", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

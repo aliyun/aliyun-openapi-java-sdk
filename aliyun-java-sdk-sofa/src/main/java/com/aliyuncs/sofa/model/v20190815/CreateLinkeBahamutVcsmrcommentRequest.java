@@ -41,7 +41,7 @@ public class CreateLinkeBahamutVcsmrcommentRequest extends RpcAcsRequest<CreateL
 
 	private String commentStr;
 	public CreateLinkeBahamutVcsmrcommentRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutVcsmrcomment", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutVcsmrcomment", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

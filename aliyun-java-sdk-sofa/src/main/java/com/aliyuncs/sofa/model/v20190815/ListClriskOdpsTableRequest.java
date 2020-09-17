@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ListClriskOdpsTableRequest extends RpcAcsRequest<ListClriskOdpsTableResponse> {
 	   
 	public ListClriskOdpsTableRequest() {
-		super("SOFA", "2019-08-15", "ListClriskOdpsTable", "sofa");
+		super("SOFA", "2019-08-15", "ListClriskOdpsTable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

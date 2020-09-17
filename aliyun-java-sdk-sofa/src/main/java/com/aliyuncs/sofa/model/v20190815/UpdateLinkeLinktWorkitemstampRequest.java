@@ -31,7 +31,7 @@ public class UpdateLinkeLinktWorkitemstampRequest extends RpcAcsRequest<UpdateLi
 
 	private String templateId;
 	public UpdateLinkeLinktWorkitemstampRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktWorkitemstamp", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktWorkitemstamp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

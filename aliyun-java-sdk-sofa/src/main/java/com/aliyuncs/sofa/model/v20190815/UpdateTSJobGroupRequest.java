@@ -33,7 +33,7 @@ public class UpdateTSJobGroupRequest extends RpcAcsRequest<UpdateTSJobGroupRespo
 
 	private String name;
 	public UpdateTSJobGroupRequest() {
-		super("SOFA", "2019-08-15", "UpdateTSJobGroup", "sofa");
+		super("SOFA", "2019-08-15", "UpdateTSJobGroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

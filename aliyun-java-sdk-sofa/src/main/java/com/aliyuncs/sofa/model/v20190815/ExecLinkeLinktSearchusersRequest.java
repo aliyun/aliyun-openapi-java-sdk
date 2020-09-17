@@ -27,7 +27,7 @@ public class ExecLinkeLinktSearchusersRequest extends RpcAcsRequest<ExecLinkeLin
 
 	private String query;
 	public ExecLinkeLinktSearchusersRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchusers", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchusers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

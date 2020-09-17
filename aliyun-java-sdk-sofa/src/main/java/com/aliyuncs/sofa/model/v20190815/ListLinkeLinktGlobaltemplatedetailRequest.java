@@ -27,7 +27,7 @@ public class ListLinkeLinktGlobaltemplatedetailRequest extends RpcAcsRequest<Lis
 
 	private String stamp;
 	public ListLinkeLinktGlobaltemplatedetailRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktGlobaltemplatedetail", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktGlobaltemplatedetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

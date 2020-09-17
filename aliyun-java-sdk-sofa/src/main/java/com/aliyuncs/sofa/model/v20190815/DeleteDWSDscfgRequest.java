@@ -29,7 +29,7 @@ public class DeleteDWSDscfgRequest extends RpcAcsRequest<DeleteDWSDscfgResponse>
 
 	private String instanceId;
 	public DeleteDWSDscfgRequest() {
-		super("SOFA", "2019-08-15", "DeleteDWSDscfg", "sofa");
+		super("SOFA", "2019-08-15", "DeleteDWSDscfg", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

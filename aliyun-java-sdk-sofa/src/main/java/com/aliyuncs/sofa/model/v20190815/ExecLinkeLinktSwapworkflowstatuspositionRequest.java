@@ -29,7 +29,7 @@ public class ExecLinkeLinktSwapworkflowstatuspositionRequest extends RpcAcsReque
 
 	private String workflowStatusId2;
 	public ExecLinkeLinktSwapworkflowstatuspositionRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktSwapworkflowstatusposition", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktSwapworkflowstatusposition", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

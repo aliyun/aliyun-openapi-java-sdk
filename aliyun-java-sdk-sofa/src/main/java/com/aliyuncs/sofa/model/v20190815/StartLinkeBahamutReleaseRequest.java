@@ -27,7 +27,7 @@ public class StartLinkeBahamutReleaseRequest extends RpcAcsRequest<StartLinkeBah
 
 	private String id;
 	public StartLinkeBahamutReleaseRequest() {
-		super("SOFA", "2019-08-15", "StartLinkeBahamutRelease", "sofa");
+		super("SOFA", "2019-08-15", "StartLinkeBahamutRelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

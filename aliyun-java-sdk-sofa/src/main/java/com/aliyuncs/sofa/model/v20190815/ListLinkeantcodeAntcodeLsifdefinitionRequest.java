@@ -31,7 +31,7 @@ public class ListLinkeantcodeAntcodeLsifdefinitionRequest extends RpcAcsRequest<
 
 	private String requestGitOperate;
 	public ListLinkeantcodeAntcodeLsifdefinitionRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeLsifdefinition", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeantcodeAntcodeLsifdefinition", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

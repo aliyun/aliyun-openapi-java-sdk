@@ -27,7 +27,7 @@ public class QueryODPBizDbnodesRequest extends RpcAcsRequest<QueryODPBizDbnodesR
 
 	private String instanceId;
 	public QueryODPBizDbnodesRequest() {
-		super("SOFA", "2019-08-15", "QueryODPBizDbnodes", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPBizDbnodes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

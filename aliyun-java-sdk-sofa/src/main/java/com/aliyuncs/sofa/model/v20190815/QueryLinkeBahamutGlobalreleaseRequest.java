@@ -49,7 +49,7 @@ public class QueryLinkeBahamutGlobalreleaseRequest extends RpcAcsRequest<QueryLi
 
 	private String status;
 	public QueryLinkeBahamutGlobalreleaseRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutGlobalrelease", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutGlobalrelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class QueryLinkeantcodeAntcodeApiupdatenamespacememberRequest extends Rpc
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeApiupdatenamespacememberRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeApiupdatenamespacemember", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeApiupdatenamespacemember", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

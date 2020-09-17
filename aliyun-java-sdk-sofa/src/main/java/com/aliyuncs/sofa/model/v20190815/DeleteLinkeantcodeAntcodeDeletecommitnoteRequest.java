@@ -33,7 +33,7 @@ public class DeleteLinkeantcodeAntcodeDeletecommitnoteRequest extends RpcAcsRequ
 
 	private String sha;
 	public DeleteLinkeantcodeAntcodeDeletecommitnoteRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeletecommitnote", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeDeletecommitnote", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

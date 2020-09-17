@@ -37,7 +37,7 @@ public class AddMsRcSyncBucketRequest extends RpcAcsRequest<AddMsRcSyncBucketRes
 
 	private String instanceId;
 	public AddMsRcSyncBucketRequest() {
-		super("SOFA", "2019-08-15", "AddMsRcSyncBucket", "sofa");
+		super("SOFA", "2019-08-15", "AddMsRcSyncBucket", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

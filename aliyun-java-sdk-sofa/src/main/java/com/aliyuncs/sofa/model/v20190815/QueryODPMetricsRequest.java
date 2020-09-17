@@ -33,7 +33,7 @@ public class QueryODPMetricsRequest extends RpcAcsRequest<QueryODPMetricsRespons
 
 	private String metricsType;
 	public QueryODPMetricsRequest() {
-		super("SOFA", "2019-08-15", "QueryODPMetrics", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPMetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

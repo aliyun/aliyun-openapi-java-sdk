@@ -31,7 +31,7 @@ public class ExportJobsOssRequest extends RpcAcsRequest<ExportJobsOssResponse> {
 
 	private Long topologyJobId;
 	public ExportJobsOssRequest() {
-		super("SOFA", "2019-08-15", "ExportJobsOss", "sofa");
+		super("SOFA", "2019-08-15", "ExportJobsOss", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

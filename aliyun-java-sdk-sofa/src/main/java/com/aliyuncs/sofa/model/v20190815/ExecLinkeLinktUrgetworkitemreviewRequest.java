@@ -27,7 +27,7 @@ public class ExecLinkeLinktUrgetworkitemreviewRequest extends RpcAcsRequest<Exec
 
 	private String workItemReviewId;
 	public ExecLinkeLinktUrgetworkitemreviewRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktUrgetworkitemreview", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktUrgetworkitemreview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

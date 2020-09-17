@@ -31,7 +31,7 @@ public class AddLinkeantcodeAntcodeProjectsidinstallationsRequest extends RpcAcs
 
 	private String serviceId;
 	public AddLinkeantcodeAntcodeProjectsidinstallationsRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeProjectsidinstallations", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeProjectsidinstallations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

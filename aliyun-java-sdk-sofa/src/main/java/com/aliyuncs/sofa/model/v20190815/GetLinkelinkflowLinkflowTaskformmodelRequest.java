@@ -29,7 +29,7 @@ public class GetLinkelinkflowLinkflowTaskformmodelRequest extends RpcAcsRequest<
 
 	private String processDefinitionId;
 	public GetLinkelinkflowLinkflowTaskformmodelRequest() {
-		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowTaskformmodel", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkelinkflowLinkflowTaskformmodel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

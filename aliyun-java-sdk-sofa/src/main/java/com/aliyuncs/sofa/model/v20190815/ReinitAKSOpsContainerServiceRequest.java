@@ -37,7 +37,7 @@ public class ReinitAKSOpsContainerServiceRequest extends RpcAcsRequest<ReinitAKS
 
 	private String targetName;
 	public ReinitAKSOpsContainerServiceRequest() {
-		super("SOFA", "2019-08-15", "ReinitAKSOpsContainerService", "sofa");
+		super("SOFA", "2019-08-15", "ReinitAKSOpsContainerService", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class QueryLinkedeploycoreDeploycoreOrderRequest extends RpcAcsRequest<Qu
 
 	private String orderType;
 	public QueryLinkedeploycoreDeploycoreOrderRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreOrder", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreOrder", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

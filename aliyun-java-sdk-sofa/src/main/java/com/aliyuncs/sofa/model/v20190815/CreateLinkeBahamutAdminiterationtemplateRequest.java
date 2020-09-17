@@ -29,7 +29,7 @@ public class CreateLinkeBahamutAdminiterationtemplateRequest extends RpcAcsReque
 
 	private String templateGroup;
 	public CreateLinkeBahamutAdminiterationtemplateRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutAdminiterationtemplate", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutAdminiterationtemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

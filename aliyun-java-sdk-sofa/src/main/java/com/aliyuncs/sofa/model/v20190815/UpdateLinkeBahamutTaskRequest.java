@@ -27,7 +27,7 @@ public class UpdateLinkeBahamutTaskRequest extends RpcAcsRequest<UpdateLinkeBaha
 
 	private String id;
 	public UpdateLinkeBahamutTaskRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutTask", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

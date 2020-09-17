@@ -29,7 +29,7 @@ public class SyncLinkeBahamutCloudapplistsyncRequest extends RpcAcsRequest<SyncL
 
 	private String tenantId;
 	public SyncLinkeBahamutCloudapplistsyncRequest() {
-		super("SOFA", "2019-08-15", "SyncLinkeBahamutCloudapplistsync", "sofa");
+		super("SOFA", "2019-08-15", "SyncLinkeBahamutCloudapplistsync", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

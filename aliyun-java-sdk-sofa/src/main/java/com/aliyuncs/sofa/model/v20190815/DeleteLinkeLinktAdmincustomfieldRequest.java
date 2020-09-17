@@ -27,7 +27,7 @@ public class DeleteLinkeLinktAdmincustomfieldRequest extends RpcAcsRequest<Delet
 
 	private String customFieldId;
 	public DeleteLinkeLinktAdmincustomfieldRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktAdmincustomfield", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktAdmincustomfield", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

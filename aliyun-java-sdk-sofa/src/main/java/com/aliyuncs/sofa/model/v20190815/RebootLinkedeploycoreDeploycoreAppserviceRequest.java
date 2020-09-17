@@ -34,7 +34,7 @@ public class RebootLinkedeploycoreDeploycoreAppserviceRequest extends RpcAcsRequ
 
 	private List<String> podsRepeatLists;
 	public RebootLinkedeploycoreDeploycoreAppserviceRequest() {
-		super("SOFA", "2019-08-15", "RebootLinkedeploycoreDeploycoreAppservice", "sofa");
+		super("SOFA", "2019-08-15", "RebootLinkedeploycoreDeploycoreAppservice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

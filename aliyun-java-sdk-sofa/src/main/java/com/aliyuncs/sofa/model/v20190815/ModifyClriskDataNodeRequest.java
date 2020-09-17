@@ -31,7 +31,7 @@ public class ModifyClriskDataNodeRequest extends RpcAcsRequest<ModifyClriskDataN
 
 	private String name;
 	public ModifyClriskDataNodeRequest() {
-		super("SOFA", "2019-08-15", "ModifyClriskDataNode", "sofa");
+		super("SOFA", "2019-08-15", "ModifyClriskDataNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

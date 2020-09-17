@@ -29,7 +29,7 @@ public class RemoveLinkeLinktTemplatecustomfieldRequest extends RpcAcsRequest<Re
 
 	private String templateId;
 	public RemoveLinkeLinktTemplatecustomfieldRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktTemplatecustomfield", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktTemplatecustomfield", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

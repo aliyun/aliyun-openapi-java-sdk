@@ -27,7 +27,7 @@ public class QueryPLRLegacyAuthRequest extends RpcAcsRequest<QueryPLRLegacyAuthR
 
 	private String tenantId;
 	public QueryPLRLegacyAuthRequest() {
-		super("SOFA", "2019-08-15", "QueryPLRLegacyAuth", "sofa");
+		super("SOFA", "2019-08-15", "QueryPLRLegacyAuth", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

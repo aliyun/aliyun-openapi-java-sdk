@@ -44,7 +44,7 @@ public class QueryCasDatabaseSchemaRequest extends RpcAcsRequest<QueryCasDatabas
 
 	private List<String> statusesRepeatLists;
 	public QueryCasDatabaseSchemaRequest() {
-		super("SOFA", "2019-08-15", "QueryCasDatabaseSchema", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasDatabaseSchema", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

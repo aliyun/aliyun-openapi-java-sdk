@@ -33,7 +33,7 @@ public class GetLinkeBahamutGetiterationmrpipelinegroupsRequest extends RpcAcsRe
 
 	private String stageId;
 	public GetLinkeBahamutGetiterationmrpipelinegroupsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGetiterationmrpipelinegroups", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGetiterationmrpipelinegroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

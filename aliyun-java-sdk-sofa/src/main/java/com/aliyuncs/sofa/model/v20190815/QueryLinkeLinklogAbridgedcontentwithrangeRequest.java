@@ -31,7 +31,7 @@ public class QueryLinkeLinklogAbridgedcontentwithrangeRequest extends RpcAcsRequ
 
 	private String logId;
 	public QueryLinkeLinklogAbridgedcontentwithrangeRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinklogAbridgedcontentwithrange", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinklogAbridgedcontentwithrange", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DeleteLinkeBahamutVcscommitcommentRequest extends RpcAcsRequest<Del
 
 	private String commentStr;
 	public DeleteLinkeBahamutVcscommitcommentRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutVcscommitcomment", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutVcscommitcomment", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

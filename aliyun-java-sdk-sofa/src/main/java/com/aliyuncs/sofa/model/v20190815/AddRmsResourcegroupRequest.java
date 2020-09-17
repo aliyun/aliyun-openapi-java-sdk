@@ -29,7 +29,7 @@ public class AddRmsResourcegroupRequest extends RpcAcsRequest<AddRmsResourcegrou
 
 	private String groupJsonStr;
 	public AddRmsResourcegroupRequest() {
-		super("SOFA", "2019-08-15", "AddRmsResourcegroup", "sofa");
+		super("SOFA", "2019-08-15", "AddRmsResourcegroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

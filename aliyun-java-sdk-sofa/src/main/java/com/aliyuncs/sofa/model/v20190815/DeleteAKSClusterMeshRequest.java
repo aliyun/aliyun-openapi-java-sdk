@@ -33,7 +33,7 @@ public class DeleteAKSClusterMeshRequest extends RpcAcsRequest<DeleteAKSClusterM
 
 	private String clusterId;
 	public DeleteAKSClusterMeshRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSClusterMesh", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSClusterMesh", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class SetCasDatabaseAssignRequest extends RpcAcsRequest<SetCasDatabaseAss
 
 	private List<String> idsRepeatLists;
 	public SetCasDatabaseAssignRequest() {
-		super("SOFA", "2019-08-15", "SetCasDatabaseAssign", "sofa");
+		super("SOFA", "2019-08-15", "SetCasDatabaseAssign", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

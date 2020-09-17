@@ -27,7 +27,7 @@ public class GetLinkeBahamutAppstackstenantidRequest extends RpcAcsRequest<GetLi
 
 	private String tenantId;
 	public GetLinkeBahamutAppstackstenantidRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAppstackstenantid", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAppstackstenantid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

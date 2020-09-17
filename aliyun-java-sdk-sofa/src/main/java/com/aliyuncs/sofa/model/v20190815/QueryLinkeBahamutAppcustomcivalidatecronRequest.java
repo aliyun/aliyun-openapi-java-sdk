@@ -27,7 +27,7 @@ public class QueryLinkeBahamutAppcustomcivalidatecronRequest extends RpcAcsReque
 
 	private String cron;
 	public QueryLinkeBahamutAppcustomcivalidatecronRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppcustomcivalidatecron", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppcustomcivalidatecron", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

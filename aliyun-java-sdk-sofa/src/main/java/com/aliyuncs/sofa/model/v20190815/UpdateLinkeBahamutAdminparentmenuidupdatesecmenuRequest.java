@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutAdminparentmenuidupdatesecmenuRequest extends Rpc
 
 	private String parentMenuId;
 	public UpdateLinkeBahamutAdminparentmenuidupdatesecmenuRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminparentmenuidupdatesecmenu", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdminparentmenuidupdatesecmenu", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

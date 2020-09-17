@@ -29,7 +29,7 @@ public class QueryLinkeBahamutAppqueryappisexistRequest extends RpcAcsRequest<Qu
 
 	private String tenantId;
 	public QueryLinkeBahamutAppqueryappisexistRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppqueryappisexist", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppqueryappisexist", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

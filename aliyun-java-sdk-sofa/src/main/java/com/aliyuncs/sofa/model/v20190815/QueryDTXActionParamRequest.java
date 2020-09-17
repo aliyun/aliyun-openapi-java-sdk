@@ -31,7 +31,7 @@ public class QueryDTXActionParamRequest extends RpcAcsRequest<QueryDTXActionPara
 
 	private String tenantName;
 	public QueryDTXActionParamRequest() {
-		super("SOFA", "2019-08-15", "QueryDTXActionParam", "sofa");
+		super("SOFA", "2019-08-15", "QueryDTXActionParam", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

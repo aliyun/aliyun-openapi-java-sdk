@@ -27,7 +27,7 @@ public class InitLinkeBahamutLpayemplatewhensubdeptpersonisnotemptyRequest exten
 
 	private String appName;
 	public InitLinkeBahamutLpayemplatewhensubdeptpersonisnotemptyRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutLpayemplatewhensubdeptpersonisnotempty", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutLpayemplatewhensubdeptpersonisnotempty", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

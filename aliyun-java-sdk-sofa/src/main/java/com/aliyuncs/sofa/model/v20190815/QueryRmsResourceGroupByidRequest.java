@@ -29,7 +29,7 @@ public class QueryRmsResourceGroupByidRequest extends RpcAcsRequest<QueryRmsReso
 
 	private String envJsonStr;
 	public QueryRmsResourceGroupByidRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsResourceGroupByid", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsResourceGroupByid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

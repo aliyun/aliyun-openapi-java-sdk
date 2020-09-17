@@ -27,7 +27,7 @@ public class QueryLinkeLinkaAllsourcefilenodesRequest extends RpcAcsRequest<Quer
 
 	private String id;
 	public QueryLinkeLinkaAllsourcefilenodesRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaAllsourcefilenodes", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaAllsourcefilenodes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

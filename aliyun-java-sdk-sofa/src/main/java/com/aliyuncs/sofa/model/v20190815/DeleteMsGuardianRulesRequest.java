@@ -47,7 +47,7 @@ public class DeleteMsGuardianRulesRequest extends RpcAcsRequest<DeleteMsGuardian
 
 	private String name;
 	public DeleteMsGuardianRulesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsGuardianRules", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMsGuardianRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

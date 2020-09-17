@@ -35,7 +35,7 @@ public class QueryLinkeantcodeAntcodeSearchblobsRequest extends RpcAcsRequest<Qu
 
 	private String sort;
 	public QueryLinkeantcodeAntcodeSearchblobsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeSearchblobs", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeSearchblobs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

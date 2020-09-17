@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ListLinkeLinktCustomfieldsRequest extends RpcAcsRequest<ListLinkeLinktCustomfieldsResponse> {
 	   
 	public ListLinkeLinktCustomfieldsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktCustomfields", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktCustomfields", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

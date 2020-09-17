@@ -29,7 +29,7 @@ public class DeleteMqSofamqGroupRequest extends RpcAcsRequest<DeleteMqSofamqGrou
 
 	private String instanceId;
 	public DeleteMqSofamqGroupRequest() {
-		super("SOFA", "2019-08-15", "DeleteMqSofamqGroup", "sofa");
+		super("SOFA", "2019-08-15", "DeleteMqSofamqGroup", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class UpdateDWSTaskRequest extends RpcAcsRequest<UpdateDWSTaskResponse> {
 
 	private String taskModelJsonStr;
 	public UpdateDWSTaskRequest() {
-		super("SOFA", "2019-08-15", "UpdateDWSTask", "sofa");
+		super("SOFA", "2019-08-15", "UpdateDWSTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

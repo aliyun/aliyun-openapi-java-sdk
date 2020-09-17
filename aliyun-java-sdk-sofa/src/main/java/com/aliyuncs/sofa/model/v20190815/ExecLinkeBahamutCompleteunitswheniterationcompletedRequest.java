@@ -27,7 +27,7 @@ public class ExecLinkeBahamutCompleteunitswheniterationcompletedRequest extends 
 
 	private String externalIds;
 	public ExecLinkeBahamutCompleteunitswheniterationcompletedRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeBahamutCompleteunitswheniterationcompleted", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeBahamutCompleteunitswheniterationcompleted", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

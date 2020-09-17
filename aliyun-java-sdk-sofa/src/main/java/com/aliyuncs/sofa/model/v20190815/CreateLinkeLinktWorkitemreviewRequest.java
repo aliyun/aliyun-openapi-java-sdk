@@ -34,7 +34,7 @@ public class CreateLinkeLinktWorkitemreviewRequest extends RpcAcsRequest<CreateL
 
 	private Long endDate;
 	public CreateLinkeLinktWorkitemreviewRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktWorkitemreview", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktWorkitemreview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

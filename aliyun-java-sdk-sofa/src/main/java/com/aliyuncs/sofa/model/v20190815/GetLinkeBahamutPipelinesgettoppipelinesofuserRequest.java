@@ -27,7 +27,7 @@ public class GetLinkeBahamutPipelinesgettoppipelinesofuserRequest extends RpcAcs
 
 	private String tenantName;
 	public GetLinkeBahamutPipelinesgettoppipelinesofuserRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinesgettoppipelinesofuser", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinesgettoppipelinesofuser", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

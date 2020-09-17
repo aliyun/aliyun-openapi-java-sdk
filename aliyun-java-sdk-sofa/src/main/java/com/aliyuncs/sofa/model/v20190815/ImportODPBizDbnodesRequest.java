@@ -30,7 +30,7 @@ public class ImportODPBizDbnodesRequest extends RpcAcsRequest<ImportODPBizDbnode
 
 	private String instanceId;
 	public ImportODPBizDbnodesRequest() {
-		super("SOFA", "2019-08-15", "ImportODPBizDbnodes", "sofa");
+		super("SOFA", "2019-08-15", "ImportODPBizDbnodes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

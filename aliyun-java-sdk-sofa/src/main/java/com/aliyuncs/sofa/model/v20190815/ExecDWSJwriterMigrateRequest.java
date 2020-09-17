@@ -35,7 +35,7 @@ public class ExecDWSJwriterMigrateRequest extends RpcAcsRequest<ExecDWSJwriterMi
 
 	private Boolean force;
 	public ExecDWSJwriterMigrateRequest() {
-		super("SOFA", "2019-08-15", "ExecDWSJwriterMigrate", "sofa");
+		super("SOFA", "2019-08-15", "ExecDWSJwriterMigrate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

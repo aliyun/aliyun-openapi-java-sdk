@@ -27,7 +27,7 @@ public class GetLinkeBahamutCommonconfiggetbytypeRequest extends RpcAcsRequest<G
 
 	private String type;
 	public GetLinkeBahamutCommonconfiggetbytypeRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutCommonconfiggetbytype", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutCommonconfiggetbytype", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

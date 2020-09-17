@@ -31,7 +31,7 @@ public class RetryTSChunksRequest extends RpcAcsRequest<RetryTSChunksResponse> {
 
 	private String jobRequestId;
 	public RetryTSChunksRequest() {
-		super("SOFA", "2019-08-15", "RetryTSChunks", "sofa");
+		super("SOFA", "2019-08-15", "RetryTSChunks", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

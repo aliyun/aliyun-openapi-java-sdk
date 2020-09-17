@@ -45,7 +45,7 @@ public class GetDWSJdbcwriterOverviewRequest extends RpcAcsRequest<GetDWSJdbcwri
 
 	private String location;
 	public GetDWSJdbcwriterOverviewRequest() {
-		super("SOFA", "2019-08-15", "GetDWSJdbcwriterOverview", "sofa");
+		super("SOFA", "2019-08-15", "GetDWSJdbcwriterOverview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

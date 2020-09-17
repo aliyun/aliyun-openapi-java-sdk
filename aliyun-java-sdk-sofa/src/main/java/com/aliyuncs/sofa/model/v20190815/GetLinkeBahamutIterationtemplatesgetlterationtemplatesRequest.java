@@ -27,7 +27,7 @@ public class GetLinkeBahamutIterationtemplatesgetlterationtemplatesRequest exten
 
 	private String tenantId;
 	public GetLinkeBahamutIterationtemplatesgetlterationtemplatesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationtemplatesgetlterationtemplates", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationtemplatesgetlterationtemplates", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

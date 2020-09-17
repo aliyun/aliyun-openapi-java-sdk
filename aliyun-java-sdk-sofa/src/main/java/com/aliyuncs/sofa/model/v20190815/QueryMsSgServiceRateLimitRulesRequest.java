@@ -33,7 +33,7 @@ public class QueryMsSgServiceRateLimitRulesRequest extends RpcAcsRequest<QueryMs
 
 	private String dataId;
 	public QueryMsSgServiceRateLimitRulesRequest() {
-		super("SOFA", "2019-08-15", "QueryMsSgServiceRateLimitRules", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsSgServiceRateLimitRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

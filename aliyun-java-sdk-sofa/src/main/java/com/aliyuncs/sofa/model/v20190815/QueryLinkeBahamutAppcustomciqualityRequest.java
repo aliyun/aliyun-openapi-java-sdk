@@ -33,7 +33,7 @@ public class QueryLinkeBahamutAppcustomciqualityRequest extends RpcAcsRequest<Qu
 
 	private String tenantId;
 	public QueryLinkeBahamutAppcustomciqualityRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppcustomciquality", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppcustomciquality", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

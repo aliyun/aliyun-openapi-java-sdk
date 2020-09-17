@@ -31,7 +31,7 @@ public class GetLinkeantcodeAntcodeRedochecksuitesRequest extends RpcAcsRequest<
 
 	private String requestGitOperate;
 	public GetLinkeantcodeAntcodeRedochecksuitesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeantcodeAntcodeRedochecksuites", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeantcodeAntcodeRedochecksuites", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

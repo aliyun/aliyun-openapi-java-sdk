@@ -41,7 +41,7 @@ public class UpdateLinkeLinktMilestoneRequest extends RpcAcsRequest<UpdateLinkeL
 
 	private String status;
 	public UpdateLinkeLinktMilestoneRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktMilestone", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktMilestone", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

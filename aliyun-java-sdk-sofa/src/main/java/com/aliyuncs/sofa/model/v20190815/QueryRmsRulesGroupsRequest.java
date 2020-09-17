@@ -29,7 +29,7 @@ public class QueryRmsRulesGroupsRequest extends RpcAcsRequest<QueryRmsRulesGroup
 
 	private String envJsonStr;
 	public QueryRmsRulesGroupsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsRulesGroups", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsRulesGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

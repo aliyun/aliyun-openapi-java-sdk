@@ -31,7 +31,7 @@ public class DeleteLinkedeploycoreDeploycoreAppserviceRequest extends RpcAcsRequ
 
 	private String fromApp;
 	public DeleteLinkedeploycoreDeploycoreAppserviceRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkedeploycoreDeploycoreAppservice", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkedeploycoreDeploycoreAppservice", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

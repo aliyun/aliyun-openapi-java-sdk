@@ -30,7 +30,7 @@ public class CheckODPDbnodesPrivilegesRequest extends RpcAcsRequest<CheckODPDbno
 
 	private String instanceId;
 	public CheckODPDbnodesPrivilegesRequest() {
-		super("SOFA", "2019-08-15", "CheckODPDbnodesPrivileges", "sofa");
+		super("SOFA", "2019-08-15", "CheckODPDbnodesPrivileges", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

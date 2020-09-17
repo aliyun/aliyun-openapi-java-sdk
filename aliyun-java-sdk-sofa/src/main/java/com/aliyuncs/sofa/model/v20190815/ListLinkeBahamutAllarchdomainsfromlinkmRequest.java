@@ -31,7 +31,7 @@ public class ListLinkeBahamutAllarchdomainsfromlinkmRequest extends RpcAcsReques
 
 	private String needParentLinkcGroups;
 	public ListLinkeBahamutAllarchdomainsfromlinkmRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutAllarchdomainsfromlinkm", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutAllarchdomainsfromlinkm", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

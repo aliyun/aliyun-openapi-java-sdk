@@ -31,7 +31,7 @@ public class GetLinkeBahamutIterationgetlterationtabnumRequest extends RpcAcsReq
 
 	private String stageId;
 	public GetLinkeBahamutIterationgetlterationtabnumRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationgetlterationtabnum", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationgetlterationtabnum", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

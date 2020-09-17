@@ -29,7 +29,7 @@ public class GetLinkeBahamutStagequalityRequest extends RpcAcsRequest<GetLinkeBa
 
 	private String stageId;
 	public GetLinkeBahamutStagequalityRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutStagequality", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutStagequality", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -83,11 +83,17 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 
 		private Long id;
 
+		private String lastProbeTime;
+
 		private String netMode;
 
 		private String nodeId;
 
+		private Boolean overMaxRetryCount;
+
 		private String password;
+
+		private String probeFailMsg;
 
 		private String status;
 
@@ -163,6 +169,14 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 			this.id = id;
 		}
 
+		public String getLastProbeTime() {
+			return this.lastProbeTime;
+		}
+
+		public void setLastProbeTime(String lastProbeTime) {
+			this.lastProbeTime = lastProbeTime;
+		}
+
 		public String getNetMode() {
 			return this.netMode;
 		}
@@ -179,12 +193,28 @@ public class BatchqueryODPDbnodesResponse extends AcsResponse {
 			this.nodeId = nodeId;
 		}
 
+		public Boolean getOverMaxRetryCount() {
+			return this.overMaxRetryCount;
+		}
+
+		public void setOverMaxRetryCount(Boolean overMaxRetryCount) {
+			this.overMaxRetryCount = overMaxRetryCount;
+		}
+
 		public String getPassword() {
 			return this.password;
 		}
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public String getProbeFailMsg() {
+			return this.probeFailMsg;
+		}
+
+		public void setProbeFailMsg(String probeFailMsg) {
+			this.probeFailMsg = probeFailMsg;
 		}
 
 		public String getStatus() {

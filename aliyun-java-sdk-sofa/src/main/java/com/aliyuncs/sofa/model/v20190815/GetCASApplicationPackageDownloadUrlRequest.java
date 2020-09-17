@@ -29,7 +29,7 @@ public class GetCASApplicationPackageDownloadUrlRequest extends RpcAcsRequest<Ge
 
 	private String appId;
 	public GetCASApplicationPackageDownloadUrlRequest() {
-		super("SOFA", "2019-08-15", "GetCASApplicationPackageDownloadUrl", "sofa");
+		super("SOFA", "2019-08-15", "GetCASApplicationPackageDownloadUrl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

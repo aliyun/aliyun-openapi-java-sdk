@@ -29,7 +29,7 @@ public class GetDTXMiddlewareInstanceRequest extends RpcAcsRequest<GetDTXMiddlew
 
 	private String workspaceId;
 	public GetDTXMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetDTXMiddlewareInstance", "sofa");
+		super("SOFA", "2019-08-15", "GetDTXMiddlewareInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

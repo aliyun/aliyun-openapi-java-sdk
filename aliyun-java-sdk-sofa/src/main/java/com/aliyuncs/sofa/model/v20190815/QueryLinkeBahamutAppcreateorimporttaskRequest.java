@@ -35,7 +35,7 @@ public class QueryLinkeBahamutAppcreateorimporttaskRequest extends RpcAcsRequest
 
 	private String page;
 	public QueryLinkeBahamutAppcreateorimporttaskRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppcreateorimporttask", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppcreateorimporttask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

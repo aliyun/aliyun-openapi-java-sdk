@@ -124,7 +124,7 @@ public class ExportLinkeLinktWorkitemRequest extends RpcAcsRequest<ExportLinkeLi
 
 	private List<String> projectSignsRepeatLists;
 	public ExportLinkeLinktWorkitemRequest() {
-		super("SOFA", "2019-08-15", "ExportLinkeLinktWorkitem", "sofa");
+		super("SOFA", "2019-08-15", "ExportLinkeLinktWorkitem", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

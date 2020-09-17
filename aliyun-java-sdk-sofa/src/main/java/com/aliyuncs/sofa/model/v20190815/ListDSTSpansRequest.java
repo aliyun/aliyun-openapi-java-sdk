@@ -60,7 +60,7 @@ public class ListDSTSpansRequest extends RpcAcsRequest<ListDSTSpansResponse> {
 
 	private Long maxDuration;
 	public ListDSTSpansRequest() {
-		super("SOFA", "2019-08-15", "ListDSTSpans", "sofa");
+		super("SOFA", "2019-08-15", "ListDSTSpans", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

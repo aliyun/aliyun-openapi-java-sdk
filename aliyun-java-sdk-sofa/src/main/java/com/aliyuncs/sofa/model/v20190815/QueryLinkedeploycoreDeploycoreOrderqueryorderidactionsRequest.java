@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreOrderqueryorderidactionsRequest exten
 
 	private String orderId;
 	public QueryLinkedeploycoreDeploycoreOrderqueryorderidactionsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreOrderqueryorderidactions", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreOrderqueryorderidactions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

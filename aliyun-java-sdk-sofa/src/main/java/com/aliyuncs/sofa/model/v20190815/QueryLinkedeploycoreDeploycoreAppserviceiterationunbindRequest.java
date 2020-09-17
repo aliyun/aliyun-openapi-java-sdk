@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreAppserviceiterationunbindRequest exte
 
 	private Long id;
 	public QueryLinkedeploycoreDeploycoreAppserviceiterationunbindRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppserviceiterationunbind", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppserviceiterationunbind", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

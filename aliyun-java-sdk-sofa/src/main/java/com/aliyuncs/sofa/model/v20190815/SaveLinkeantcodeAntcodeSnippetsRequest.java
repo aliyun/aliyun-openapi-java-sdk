@@ -29,7 +29,7 @@ public class SaveLinkeantcodeAntcodeSnippetsRequest extends RpcAcsRequest<SaveLi
 
 	private String requestGitOperate;
 	public SaveLinkeantcodeAntcodeSnippetsRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeantcodeAntcodeSnippets", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeantcodeAntcodeSnippets", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

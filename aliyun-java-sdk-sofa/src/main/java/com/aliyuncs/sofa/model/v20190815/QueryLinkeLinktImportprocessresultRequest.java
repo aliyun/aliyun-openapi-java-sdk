@@ -27,7 +27,7 @@ public class QueryLinkeLinktImportprocessresultRequest extends RpcAcsRequest<Que
 
 	private String key;
 	public QueryLinkeLinktImportprocessresultRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktImportprocessresult", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktImportprocessresult", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

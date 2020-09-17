@@ -33,7 +33,7 @@ public class AddMsTransparentProxyAppRequest extends RpcAcsRequest<AddMsTranspar
 
 	private String supportProtocols;
 	public AddMsTransparentProxyAppRequest() {
-		super("SOFA", "2019-08-15", "AddMsTransparentProxyApp", "sofa");
+		super("SOFA", "2019-08-15", "AddMsTransparentProxyApp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

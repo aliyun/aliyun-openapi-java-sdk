@@ -27,7 +27,7 @@ public class QueryAKSBuildPackTechStacksRequest extends RpcAcsRequest<QueryAKSBu
 
 	private String cafeRegionId;
 	public QueryAKSBuildPackTechStacksRequest() {
-		super("SOFA", "2019-08-15", "QueryAKSBuildPackTechStacks", "sofa");
+		super("SOFA", "2019-08-15", "QueryAKSBuildPackTechStacks", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

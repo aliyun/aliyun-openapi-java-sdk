@@ -29,7 +29,7 @@ public class CreateLinkeantcodeAntcodeBroadcastmessageRequest extends RpcAcsRequ
 
 	private String requestGitOperate;
 	public CreateLinkeantcodeAntcodeBroadcastmessageRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeBroadcastmessage", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeBroadcastmessage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

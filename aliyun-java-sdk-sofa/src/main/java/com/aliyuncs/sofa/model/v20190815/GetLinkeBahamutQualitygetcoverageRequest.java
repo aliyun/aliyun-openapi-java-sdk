@@ -27,7 +27,7 @@ public class GetLinkeBahamutQualitygetcoverageRequest extends RpcAcsRequest<GetL
 
 	private String group;
 	public GetLinkeBahamutQualitygetcoverageRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutQualitygetcoverage", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutQualitygetcoverage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

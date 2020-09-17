@@ -27,7 +27,7 @@ public class QueryODPEnvironmentMiddlewareTenantRequest extends RpcAcsRequest<Qu
 
 	private String instanceId;
 	public QueryODPEnvironmentMiddlewareTenantRequest() {
-		super("SOFA", "2019-08-15", "QueryODPEnvironmentMiddlewareTenant", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPEnvironmentMiddlewareTenant", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkeBahamutTaskapprovalbyinstanceRequest extends RpcAcsRequest<
 
 	private String instanceId;
 	public GetLinkeBahamutTaskapprovalbyinstanceRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutTaskapprovalbyinstance", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutTaskapprovalbyinstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

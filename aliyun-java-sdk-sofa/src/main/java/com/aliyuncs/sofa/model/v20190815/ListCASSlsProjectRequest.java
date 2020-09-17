@@ -29,7 +29,7 @@ public class ListCASSlsProjectRequest extends RpcAcsRequest<ListCASSlsProjectRes
 
 	private String slsRegionId;
 	public ListCASSlsProjectRequest() {
-		super("SOFA", "2019-08-15", "ListCASSlsProject", "sofa");
+		super("SOFA", "2019-08-15", "ListCASSlsProject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

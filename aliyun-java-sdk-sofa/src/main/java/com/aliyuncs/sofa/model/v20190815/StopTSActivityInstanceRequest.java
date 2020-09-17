@@ -29,7 +29,7 @@ public class StopTSActivityInstanceRequest extends RpcAcsRequest<StopTSActivityI
 
 	private String instanceId;
 	public StopTSActivityInstanceRequest() {
-		super("SOFA", "2019-08-15", "StopTSActivityInstance", "sofa");
+		super("SOFA", "2019-08-15", "StopTSActivityInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class CheckLinkeantcodeAntcodeLsifexistsRequest extends RpcAcsRequest<Che
 
 	private String sha;
 	public CheckLinkeantcodeAntcodeLsifexistsRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeantcodeAntcodeLsifexists", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeantcodeAntcodeLsifexists", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

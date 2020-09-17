@@ -39,7 +39,7 @@ public class ListLinkeBahamutTaskRequest extends RpcAcsRequest<ListLinkeBahamutT
 
 	private String status;
 	public ListLinkeBahamutTaskRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutTask", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

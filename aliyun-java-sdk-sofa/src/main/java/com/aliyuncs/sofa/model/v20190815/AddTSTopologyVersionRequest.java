@@ -31,7 +31,7 @@ public class AddTSTopologyVersionRequest extends RpcAcsRequest<AddTSTopologyVers
 
 	private String instanceId;
 	public AddTSTopologyVersionRequest() {
-		super("SOFA", "2019-08-15", "AddTSTopologyVersion", "sofa");
+		super("SOFA", "2019-08-15", "AddTSTopologyVersion", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

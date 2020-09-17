@@ -27,7 +27,7 @@ public class GetLinkeBahamutWebapigeturlsignRequest extends RpcAcsRequest<GetLin
 
 	private String url;
 	public GetLinkeBahamutWebapigeturlsignRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigeturlsign", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigeturlsign", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

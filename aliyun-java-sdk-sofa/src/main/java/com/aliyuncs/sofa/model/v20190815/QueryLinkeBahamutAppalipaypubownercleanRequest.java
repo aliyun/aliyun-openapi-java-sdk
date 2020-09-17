@@ -27,7 +27,7 @@ public class QueryLinkeBahamutAppalipaypubownercleanRequest extends RpcAcsReques
 
 	private String needUpdate;
 	public QueryLinkeBahamutAppalipaypubownercleanRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppalipaypubownerclean", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppalipaypubownerclean", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

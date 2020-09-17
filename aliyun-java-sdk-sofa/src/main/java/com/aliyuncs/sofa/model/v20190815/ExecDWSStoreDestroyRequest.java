@@ -31,7 +31,7 @@ public class ExecDWSStoreDestroyRequest extends RpcAcsRequest<ExecDWSStoreDestro
 
 	private String crawler;
 	public ExecDWSStoreDestroyRequest() {
-		super("SOFA", "2019-08-15", "ExecDWSStoreDestroy", "sofa");
+		super("SOFA", "2019-08-15", "ExecDWSStoreDestroy", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

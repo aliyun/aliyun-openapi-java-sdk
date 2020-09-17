@@ -27,7 +27,7 @@ public class GetMsSgRelationSwitchRequest extends RpcAcsRequest<GetMsSgRelationS
 
 	private String instanceId;
 	public GetMsSgRelationSwitchRequest() {
-		super("SOFA", "2019-08-15", "GetMsSgRelationSwitch", "sofa");
+		super("SOFA", "2019-08-15", "GetMsSgRelationSwitch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

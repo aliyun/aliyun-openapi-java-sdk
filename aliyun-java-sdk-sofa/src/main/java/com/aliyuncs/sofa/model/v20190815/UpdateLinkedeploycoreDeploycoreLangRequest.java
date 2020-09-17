@@ -35,7 +35,7 @@ public class UpdateLinkedeploycoreDeploycoreLangRequest extends RpcAcsRequest<Up
 
 	private String fromApp;
 	public UpdateLinkedeploycoreDeploycoreLangRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkedeploycoreDeploycoreLang", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkedeploycoreDeploycoreLang", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

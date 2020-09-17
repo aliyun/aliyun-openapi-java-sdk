@@ -27,7 +27,7 @@ public class RebootCasDatabaseRequest extends RpcAcsRequest<RebootCasDatabaseRes
 
 	private String id;
 	public RebootCasDatabaseRequest() {
-		super("SOFA", "2019-08-15", "RebootCasDatabase", "sofa");
+		super("SOFA", "2019-08-15", "RebootCasDatabase", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetClriskDataNodeRequest extends RpcAcsRequest<GetClriskDataNodeRes
 
 	private String id;
 	public GetClriskDataNodeRequest() {
-		super("SOFA", "2019-08-15", "GetClriskDataNode", "sofa");
+		super("SOFA", "2019-08-15", "GetClriskDataNode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

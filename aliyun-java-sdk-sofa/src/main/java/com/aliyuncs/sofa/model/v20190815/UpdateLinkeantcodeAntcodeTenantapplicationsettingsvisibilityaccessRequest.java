@@ -29,7 +29,7 @@ public class UpdateLinkeantcodeAntcodeTenantapplicationsettingsvisibilityaccessR
 
 	private String requestGitOperate;
 	public UpdateLinkeantcodeAntcodeTenantapplicationsettingsvisibilityaccessRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeTenantapplicationsettingsvisibilityaccess", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeTenantapplicationsettingsvisibilityaccess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

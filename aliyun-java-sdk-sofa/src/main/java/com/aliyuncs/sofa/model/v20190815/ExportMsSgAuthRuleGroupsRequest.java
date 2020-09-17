@@ -31,7 +31,7 @@ public class ExportMsSgAuthRuleGroupsRequest extends RpcAcsRequest<ExportMsSgAut
 
 	private Boolean isExportAll;
 	public ExportMsSgAuthRuleGroupsRequest() {
-		super("SOFA", "2019-08-15", "ExportMsSgAuthRuleGroups", "sofa");
+		super("SOFA", "2019-08-15", "ExportMsSgAuthRuleGroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

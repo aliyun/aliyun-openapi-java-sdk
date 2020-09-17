@@ -29,7 +29,7 @@ public class StopMsRcSyncTaskRequest extends RpcAcsRequest<StopMsRcSyncTaskRespo
 
 	private String instanceId;
 	public StopMsRcSyncTaskRequest() {
-		super("SOFA", "2019-08-15", "StopMsRcSyncTask", "sofa");
+		super("SOFA", "2019-08-15", "StopMsRcSyncTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

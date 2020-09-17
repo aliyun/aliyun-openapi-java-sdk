@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeAcipipelinewebhookRequest extends RpcAcsRequ
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeAcipipelinewebhookRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeAcipipelinewebhook", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeAcipipelinewebhook", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

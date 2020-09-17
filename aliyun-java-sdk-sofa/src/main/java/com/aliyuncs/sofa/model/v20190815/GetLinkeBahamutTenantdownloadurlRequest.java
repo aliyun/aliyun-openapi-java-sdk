@@ -31,7 +31,7 @@ public class GetLinkeBahamutTenantdownloadurlRequest extends RpcAcsRequest<GetLi
 
 	private String expireTime;
 	public GetLinkeBahamutTenantdownloadurlRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutTenantdownloadurl", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutTenantdownloadurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

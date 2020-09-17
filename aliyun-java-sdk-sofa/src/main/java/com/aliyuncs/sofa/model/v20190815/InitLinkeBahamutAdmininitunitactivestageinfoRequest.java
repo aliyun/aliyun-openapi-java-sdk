@@ -31,7 +31,7 @@ public class InitLinkeBahamutAdmininitunitactivestageinfoRequest extends RpcAcsR
 
 	private String tenantPath;
 	public InitLinkeBahamutAdmininitunitactivestageinfoRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutAdmininitunitactivestageinfo", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutAdmininitunitactivestageinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

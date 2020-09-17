@@ -29,7 +29,7 @@ public class DeleteLinkeBahamutArchdomainRequest extends RpcAcsRequest<DeleteLin
 
 	private String archDomainMetaJsonStr;
 	public DeleteLinkeBahamutArchdomainRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutArchdomain", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutArchdomain", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

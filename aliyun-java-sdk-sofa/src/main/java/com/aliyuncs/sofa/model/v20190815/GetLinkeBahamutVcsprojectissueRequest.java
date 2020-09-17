@@ -31,7 +31,7 @@ public class GetLinkeBahamutVcsprojectissueRequest extends RpcAcsRequest<GetLink
 
 	private String projectId;
 	public GetLinkeBahamutVcsprojectissueRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsprojectissue", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsprojectissue", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

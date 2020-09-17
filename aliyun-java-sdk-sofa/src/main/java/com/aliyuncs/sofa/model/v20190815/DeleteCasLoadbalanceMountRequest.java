@@ -30,7 +30,7 @@ public class DeleteCasLoadbalanceMountRequest extends RpcAcsRequest<DeleteCasLoa
 
 	private List<String> computerIdsRepeatLists;
 	public DeleteCasLoadbalanceMountRequest() {
-		super("SOFA", "2019-08-15", "DeleteCasLoadbalanceMount", "sofa");
+		super("SOFA", "2019-08-15", "DeleteCasLoadbalanceMount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

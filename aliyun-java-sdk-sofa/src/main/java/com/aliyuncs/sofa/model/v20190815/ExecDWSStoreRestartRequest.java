@@ -31,7 +31,7 @@ public class ExecDWSStoreRestartRequest extends RpcAcsRequest<ExecDWSStoreRestar
 
 	private String crawler;
 	public ExecDWSStoreRestartRequest() {
-		super("SOFA", "2019-08-15", "ExecDWSStoreRestart", "sofa");
+		super("SOFA", "2019-08-15", "ExecDWSStoreRestart", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class ListLinkeBahamutAoneinternalworkitemRequest extends RpcAcsRequest<L
 
 	private String status;
 	public ListLinkeBahamutAoneinternalworkitemRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutAoneinternalworkitem", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutAoneinternalworkitem", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

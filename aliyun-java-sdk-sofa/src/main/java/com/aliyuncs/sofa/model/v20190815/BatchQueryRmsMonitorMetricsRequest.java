@@ -31,7 +31,7 @@ public class BatchQueryRmsMonitorMetricsRequest extends RpcAcsRequest<BatchQuery
 
 	private String queryBatchJsonStr;
 	public BatchQueryRmsMonitorMetricsRequest() {
-		super("SOFA", "2019-08-15", "BatchQueryRmsMonitorMetrics", "sofa");
+		super("SOFA", "2019-08-15", "BatchQueryRmsMonitorMetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

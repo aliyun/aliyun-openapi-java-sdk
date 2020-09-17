@@ -31,7 +31,7 @@ public class RetryrollbackLinkeBahamutWebapirecoveryinitinstanceRequest extends 
 
 	private String stageId;
 	public RetryrollbackLinkeBahamutWebapirecoveryinitinstanceRequest() {
-		super("SOFA", "2019-08-15", "RetryrollbackLinkeBahamutWebapirecoveryinitinstance", "sofa");
+		super("SOFA", "2019-08-15", "RetryrollbackLinkeBahamutWebapirecoveryinitinstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

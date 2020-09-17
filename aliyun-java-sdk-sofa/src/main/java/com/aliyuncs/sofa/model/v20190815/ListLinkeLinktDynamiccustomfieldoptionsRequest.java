@@ -33,7 +33,7 @@ public class ListLinkeLinktDynamiccustomfieldoptionsRequest extends RpcAcsReques
 
 	private Long fieldId;
 	public ListLinkeLinktDynamiccustomfieldoptionsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktDynamiccustomfieldoptions", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktDynamiccustomfieldoptions", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

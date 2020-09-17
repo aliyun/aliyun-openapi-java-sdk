@@ -31,7 +31,7 @@ public class ListClriskIssueDatasRequest extends RpcAcsRequest<ListClriskIssueDa
 
 	private Long pageSize;
 	public ListClriskIssueDatasRequest() {
-		super("SOFA", "2019-08-15", "ListClriskIssueDatas", "sofa");
+		super("SOFA", "2019-08-15", "ListClriskIssueDatas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

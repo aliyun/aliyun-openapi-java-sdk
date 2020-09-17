@@ -33,7 +33,7 @@ public class GetLinkeBahamutVcsfileRequest extends RpcAcsRequest<GetLinkeBahamut
 
 	private String filename;
 	public GetLinkeBahamutVcsfileRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsfile", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsfile", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

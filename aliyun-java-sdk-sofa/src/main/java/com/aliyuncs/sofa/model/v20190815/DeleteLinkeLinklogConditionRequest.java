@@ -27,7 +27,7 @@ public class DeleteLinkeLinklogConditionRequest extends RpcAcsRequest<DeleteLink
 
 	private String conditionId;
 	public DeleteLinkeLinklogConditionRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinklogCondition", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinklogCondition", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

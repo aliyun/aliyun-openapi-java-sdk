@@ -27,7 +27,7 @@ public class DeleteLinkeLinktMilestoneRequest extends RpcAcsRequest<DeleteLinkeL
 
 	private String milestoneId;
 	public DeleteLinkeLinktMilestoneRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktMilestone", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktMilestone", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

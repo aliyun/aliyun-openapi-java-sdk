@@ -39,6 +39,7 @@ public class QueryODPSqlAuditInstancesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryODPSqlAuditInstancesResponse.Data.Instances.Length"); i++) {
 			InstancesItem instancesItem = new InstancesItem();
 			instancesItem.setInstanceId(_ctx.stringValue("QueryODPSqlAuditInstancesResponse.Data.Instances["+ i +"].InstanceId"));
+			instancesItem.setInstanceName(_ctx.stringValue("QueryODPSqlAuditInstancesResponse.Data.Instances["+ i +"].InstanceName"));
 			instancesItem.setOpenedCount(_ctx.longValue("QueryODPSqlAuditInstancesResponse.Data.Instances["+ i +"].OpenedCount"));
 
 			List<SchemasItem> schemas = new ArrayList<SchemasItem>();

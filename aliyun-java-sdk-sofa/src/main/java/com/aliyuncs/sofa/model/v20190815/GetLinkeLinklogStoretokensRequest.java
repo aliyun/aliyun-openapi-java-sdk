@@ -27,7 +27,7 @@ public class GetLinkeLinklogStoretokensRequest extends RpcAcsRequest<GetLinkeLin
 
 	private String storeId;
 	public GetLinkeLinklogStoretokensRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinklogStoretokens", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinklogStoretokens", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

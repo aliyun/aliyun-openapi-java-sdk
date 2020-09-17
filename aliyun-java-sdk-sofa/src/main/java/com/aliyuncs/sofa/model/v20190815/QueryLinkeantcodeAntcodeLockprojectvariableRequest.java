@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeLockprojectvariableRequest extends RpcAcsRe
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeLockprojectvariableRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeLockprojectvariable", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeLockprojectvariable", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

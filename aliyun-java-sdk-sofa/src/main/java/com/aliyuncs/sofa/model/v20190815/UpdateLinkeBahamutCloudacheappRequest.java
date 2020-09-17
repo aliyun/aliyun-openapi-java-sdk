@@ -27,7 +27,7 @@ public class UpdateLinkeBahamutCloudacheappRequest extends RpcAcsRequest<UpdateL
 
 	private String tenantId;
 	public UpdateLinkeBahamutCloudacheappRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutCloudacheapp", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutCloudacheapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

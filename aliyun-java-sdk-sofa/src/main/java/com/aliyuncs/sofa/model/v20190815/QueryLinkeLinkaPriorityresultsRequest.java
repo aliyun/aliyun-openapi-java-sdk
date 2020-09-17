@@ -29,7 +29,7 @@ public class QueryLinkeLinkaPriorityresultsRequest extends RpcAcsRequest<QueryLi
 
 	private String priority;
 	public QueryLinkeLinkaPriorityresultsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaPriorityresults", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaPriorityresults", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

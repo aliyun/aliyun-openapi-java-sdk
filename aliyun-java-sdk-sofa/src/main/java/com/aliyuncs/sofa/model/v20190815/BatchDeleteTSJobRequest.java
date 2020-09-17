@@ -29,7 +29,7 @@ public class BatchDeleteTSJobRequest extends RpcAcsRequest<BatchDeleteTSJobRespo
 
 	private String jobIds;
 	public BatchDeleteTSJobRequest() {
-		super("SOFA", "2019-08-15", "BatchDeleteTSJob", "sofa");
+		super("SOFA", "2019-08-15", "BatchDeleteTSJob", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

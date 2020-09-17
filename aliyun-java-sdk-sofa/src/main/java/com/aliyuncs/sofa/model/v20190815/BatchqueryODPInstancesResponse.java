@@ -67,6 +67,8 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 
 	public static class DataItem {
 
+		private String bizVpcId;
+
 		private String configSpecDesc;
 
 		private String envMode;
@@ -112,6 +114,14 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 		private Long zoneCount;
 
 		private List<NodesItem> nodes;
+
+		public String getBizVpcId() {
+			return this.bizVpcId;
+		}
+
+		public void setBizVpcId(String bizVpcId) {
+			this.bizVpcId = bizVpcId;
+		}
 
 		public String getConfigSpecDesc() {
 			return this.configSpecDesc;
@@ -299,9 +309,15 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 
 		public static class NodesItem {
 
+			private String bizVpcId;
+
+			private String bizVswtichId;
+
 			private String cellId;
 
 			private String cellName;
+
+			private String clusterId;
 
 			private String configSpecDesc;
 
@@ -327,7 +343,13 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 
 			private Long memoryCount;
 
+			private String nodeLanAddress;
+
 			private String nodeStatus;
+
+			private String nodeWanAddress;
+
+			private Long nodeWanPort;
 
 			private Long port;
 
@@ -343,6 +365,22 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 
 			private String zone;
 
+			public String getBizVpcId() {
+				return this.bizVpcId;
+			}
+
+			public void setBizVpcId(String bizVpcId) {
+				this.bizVpcId = bizVpcId;
+			}
+
+			public String getBizVswtichId() {
+				return this.bizVswtichId;
+			}
+
+			public void setBizVswtichId(String bizVswtichId) {
+				this.bizVswtichId = bizVswtichId;
+			}
+
 			public String getCellId() {
 				return this.cellId;
 			}
@@ -357,6 +395,14 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 
 			public void setCellName(String cellName) {
 				this.cellName = cellName;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
 			}
 
 			public String getConfigSpecDesc() {
@@ -455,12 +501,36 @@ public class BatchqueryODPInstancesResponse extends AcsResponse {
 				this.memoryCount = memoryCount;
 			}
 
+			public String getNodeLanAddress() {
+				return this.nodeLanAddress;
+			}
+
+			public void setNodeLanAddress(String nodeLanAddress) {
+				this.nodeLanAddress = nodeLanAddress;
+			}
+
 			public String getNodeStatus() {
 				return this.nodeStatus;
 			}
 
 			public void setNodeStatus(String nodeStatus) {
 				this.nodeStatus = nodeStatus;
+			}
+
+			public String getNodeWanAddress() {
+				return this.nodeWanAddress;
+			}
+
+			public void setNodeWanAddress(String nodeWanAddress) {
+				this.nodeWanAddress = nodeWanAddress;
+			}
+
+			public Long getNodeWanPort() {
+				return this.nodeWanPort;
+			}
+
+			public void setNodeWanPort(Long nodeWanPort) {
+				this.nodeWanPort = nodeWanPort;
 			}
 
 			public Long getPort() {

@@ -27,7 +27,7 @@ public class DownloadLinkeLinklogStoreslogsfilefromossRequest extends RpcAcsRequ
 
 	private String logId;
 	public DownloadLinkeLinklogStoreslogsfilefromossRequest() {
-		super("SOFA", "2019-08-15", "DownloadLinkeLinklogStoreslogsfilefromoss", "sofa");
+		super("SOFA", "2019-08-15", "DownloadLinkeLinklogStoreslogsfilefromoss", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

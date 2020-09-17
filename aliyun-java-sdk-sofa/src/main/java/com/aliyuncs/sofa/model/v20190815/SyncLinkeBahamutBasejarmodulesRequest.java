@@ -27,7 +27,7 @@ public class SyncLinkeBahamutBasejarmodulesRequest extends RpcAcsRequest<SyncLin
 
 	private String repoName;
 	public SyncLinkeBahamutBasejarmodulesRequest() {
-		super("SOFA", "2019-08-15", "SyncLinkeBahamutBasejarmodules", "sofa");
+		super("SOFA", "2019-08-15", "SyncLinkeBahamutBasejarmodules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

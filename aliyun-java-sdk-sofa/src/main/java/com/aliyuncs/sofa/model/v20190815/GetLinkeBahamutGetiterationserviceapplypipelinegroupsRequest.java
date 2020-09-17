@@ -33,7 +33,7 @@ public class GetLinkeBahamutGetiterationserviceapplypipelinegroupsRequest extend
 
 	private String stageId;
 	public GetLinkeBahamutGetiterationserviceapplypipelinegroupsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGetiterationserviceapplypipelinegroups", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGetiterationserviceapplypipelinegroups", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

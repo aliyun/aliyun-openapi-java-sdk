@@ -33,7 +33,7 @@ public class QueryODPJobsSqlbatchRequest extends RpcAcsRequest<QueryODPJobsSqlba
 
 	private String instanceId;
 	public QueryODPJobsSqlbatchRequest() {
-		super("SOFA", "2019-08-15", "QueryODPJobsSqlbatch", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPJobsSqlbatch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CreateLinkeantcodeAntcodeProjectreviewtaskRequest extends RpcAcsReq
 
 	private String globPattern;
 	public CreateLinkeantcodeAntcodeProjectreviewtaskRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectreviewtask", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjectreviewtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

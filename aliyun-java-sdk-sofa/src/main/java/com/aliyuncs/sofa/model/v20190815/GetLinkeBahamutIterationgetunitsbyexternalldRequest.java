@@ -33,7 +33,7 @@ public class GetLinkeBahamutIterationgetunitsbyexternalldRequest extends RpcAcsR
 
 	private String pageSize;
 	public GetLinkeBahamutIterationgetunitsbyexternalldRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationgetunitsbyexternalld", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationgetunitsbyexternalld", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

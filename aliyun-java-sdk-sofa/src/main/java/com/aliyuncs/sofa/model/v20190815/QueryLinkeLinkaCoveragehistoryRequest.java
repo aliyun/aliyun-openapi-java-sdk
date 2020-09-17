@@ -29,7 +29,7 @@ public class QueryLinkeLinkaCoveragehistoryRequest extends RpcAcsRequest<QueryLi
 
 	private String group;
 	public QueryLinkeLinkaCoveragehistoryRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaCoveragehistory", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaCoveragehistory", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

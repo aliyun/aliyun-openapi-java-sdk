@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeAcceptreviewRequest extends RpcAcsRequest<Ex
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeAcceptreviewRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeAcceptreview", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeAcceptreview", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

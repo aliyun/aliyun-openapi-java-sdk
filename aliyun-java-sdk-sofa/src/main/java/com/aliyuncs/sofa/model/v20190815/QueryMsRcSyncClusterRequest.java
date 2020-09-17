@@ -29,7 +29,7 @@ public class QueryMsRcSyncClusterRequest extends RpcAcsRequest<QueryMsRcSyncClus
 
 	private String instanceId;
 	public QueryMsRcSyncClusterRequest() {
-		super("SOFA", "2019-08-15", "QueryMsRcSyncCluster", "sofa");
+		super("SOFA", "2019-08-15", "QueryMsRcSyncCluster", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

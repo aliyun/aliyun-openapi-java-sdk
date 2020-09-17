@@ -27,7 +27,7 @@ public class QueryLinkefabricFabricUrlsclouddrmurlRequest extends RpcAcsRequest<
 
 	private String tenantId;
 	public QueryLinkefabricFabricUrlsclouddrmurlRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricUrlsclouddrmurl", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricUrlsclouddrmurl", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

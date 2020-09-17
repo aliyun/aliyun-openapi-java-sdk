@@ -49,7 +49,7 @@ public class SaveLinkeBahamutAppcustomciconfigRequest extends RpcAcsRequest<Save
 
 	private String name;
 	public SaveLinkeBahamutAppcustomciconfigRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutAppcustomciconfig", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutAppcustomciconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

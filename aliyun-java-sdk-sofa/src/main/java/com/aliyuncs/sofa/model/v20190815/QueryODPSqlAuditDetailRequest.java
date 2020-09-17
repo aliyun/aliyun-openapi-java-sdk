@@ -33,7 +33,7 @@ public class QueryODPSqlAuditDetailRequest extends RpcAcsRequest<QueryODPSqlAudi
 
 	private String queryJsonStr;
 	public QueryODPSqlAuditDetailRequest() {
-		super("SOFA", "2019-08-15", "QueryODPSqlAuditDetail", "sofa");
+		super("SOFA", "2019-08-15", "QueryODPSqlAuditDetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

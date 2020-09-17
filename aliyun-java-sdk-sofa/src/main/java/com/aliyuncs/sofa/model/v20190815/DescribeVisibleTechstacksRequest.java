@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class DescribeVisibleTechstacksRequest extends RpcAcsRequest<DescribeVisibleTechstacksResponse> {
 	   
 	public DescribeVisibleTechstacksRequest() {
-		super("SOFA", "2019-08-15", "DescribeVisibleTechstacks", "sofa");
+		super("SOFA", "2019-08-15", "DescribeVisibleTechstacks", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetLinkeBahamutGetpipelinestatusbystageRequest extends RpcAcsReques
 
 	private String iterationUnitId;
 	public GetLinkeBahamutGetpipelinestatusbystageRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutGetpipelinestatusbystage", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutGetpipelinestatusbystage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

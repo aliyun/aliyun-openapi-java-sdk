@@ -31,7 +31,7 @@ public class BatchqueryODPDbnodesRequest extends RpcAcsRequest<BatchqueryODPDbno
 
 	private String filterInstanceType;
 	public BatchqueryODPDbnodesRequest() {
-		super("SOFA", "2019-08-15", "BatchqueryODPDbnodes", "sofa");
+		super("SOFA", "2019-08-15", "BatchqueryODPDbnodes", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

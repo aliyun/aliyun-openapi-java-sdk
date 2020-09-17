@@ -27,7 +27,7 @@ public class GetLinkeBahamutPipelinegetcomponentresultRequest extends RpcAcsRequ
 
 	private String id;
 	public GetLinkeBahamutPipelinegetcomponentresultRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetcomponentresult", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPipelinegetcomponentresult", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class DeleteLinkeBahamutAdminuserroleRequest extends RpcAcsRequest<Delete
 
 	private String account;
 	public DeleteLinkeBahamutAdminuserroleRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAdminuserrole", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAdminuserrole", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

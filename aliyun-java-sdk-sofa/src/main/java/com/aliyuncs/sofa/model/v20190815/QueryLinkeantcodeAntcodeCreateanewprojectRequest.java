@@ -51,7 +51,7 @@ public class QueryLinkeantcodeAntcodeCreateanewprojectRequest extends RpcAcsRequ
 
 	private String page;
 	public QueryLinkeantcodeAntcodeCreateanewprojectRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeCreateanewproject", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeCreateanewproject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -38,7 +38,7 @@ public class CreateAKSSecretRequest extends RpcAcsRequest<CreateAKSSecretRespons
 
 	private String namespace;
 	public CreateAKSSecretRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSSecret", "sofa");
+		super("SOFA", "2019-08-15", "CreateAKSSecret", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

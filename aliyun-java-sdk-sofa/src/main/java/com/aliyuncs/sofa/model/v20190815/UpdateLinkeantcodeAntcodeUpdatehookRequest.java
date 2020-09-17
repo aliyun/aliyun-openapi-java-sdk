@@ -45,7 +45,7 @@ public class UpdateLinkeantcodeAntcodeUpdatehookRequest extends RpcAcsRequest<Up
 
 	private String issuesEvents;
 	public UpdateLinkeantcodeAntcodeUpdatehookRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatehook", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatehook", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

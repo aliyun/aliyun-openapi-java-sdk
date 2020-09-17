@@ -37,7 +37,7 @@ public class CreateLinkeBahamutAppcreaterepoRequest extends RpcAcsRequest<Create
 
 	private String group;
 	public CreateLinkeBahamutAppcreaterepoRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutAppcreaterepo", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutAppcreaterepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

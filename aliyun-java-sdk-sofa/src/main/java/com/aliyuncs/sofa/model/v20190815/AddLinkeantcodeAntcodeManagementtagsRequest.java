@@ -33,7 +33,7 @@ public class AddLinkeantcodeAntcodeManagementtagsRequest extends RpcAcsRequest<A
 
 	private String requestGitOperate;
 	public AddLinkeantcodeAntcodeManagementtagsRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeManagementtags", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeantcodeAntcodeManagementtags", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

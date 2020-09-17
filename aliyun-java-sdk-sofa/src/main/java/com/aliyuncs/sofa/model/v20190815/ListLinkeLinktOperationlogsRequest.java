@@ -27,7 +27,7 @@ public class ListLinkeLinktOperationlogsRequest extends RpcAcsRequest<ListLinkeL
 
 	private String workItemSign;
 	public ListLinkeLinktOperationlogsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktOperationlogs", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktOperationlogs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

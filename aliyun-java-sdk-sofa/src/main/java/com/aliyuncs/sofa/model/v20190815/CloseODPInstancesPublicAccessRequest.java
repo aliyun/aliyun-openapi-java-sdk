@@ -15,6 +15,7 @@
 package com.aliyuncs.sofa.model.v20190815;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sofa.Endpoint;
 
@@ -25,16 +26,31 @@ import com.aliyuncs.sofa.Endpoint;
 public class CloseODPInstancesPublicAccessRequest extends RpcAcsRequest<CloseODPInstancesPublicAccessResponse> {
 	   
 
+	private List<String> zonesRepeatLists;
+
 	private String zdalproxyInstanceId;
 
 	private String instanceId;
 	public CloseODPInstancesPublicAccessRequest() {
-		super("SOFA", "2019-08-15", "CloseODPInstancesPublicAccess", "sofa");
+		super("SOFA", "2019-08-15", "CloseODPInstancesPublicAccess", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getZonesRepeatLists() {
+		return this.zonesRepeatLists;
+	}
+
+	public void setZonesRepeatLists(List<String> zonesRepeatLists) {
+		this.zonesRepeatLists = zonesRepeatLists;	
+		if (zonesRepeatLists != null) {
+			for (int i = 0; i < zonesRepeatLists.size(); i++) {
+				putBodyParameter("ZonesRepeatList." + (i + 1) , zonesRepeatLists.get(i));
+			}
+		}	
 	}
 
 	public String getZdalproxyInstanceId() {

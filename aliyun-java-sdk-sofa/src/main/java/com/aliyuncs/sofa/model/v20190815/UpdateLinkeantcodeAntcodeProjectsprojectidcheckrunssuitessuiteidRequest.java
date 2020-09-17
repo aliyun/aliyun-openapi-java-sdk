@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeProjectsprojectidcheckrunssuitessuiteidReq
 
 	private String updateDTOJsonStr;
 	public UpdateLinkeantcodeAntcodeProjectsprojectidcheckrunssuitessuiteidRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectsprojectidcheckrunssuitessuiteid", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectsprojectidcheckrunssuitessuiteid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

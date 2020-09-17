@@ -31,7 +31,7 @@ public class RemoveLinkeantcodeAntcodePullrequestssourcebranchRequest extends Rp
 
 	private String requestGitOperate;
 	public RemoveLinkeantcodeAntcodePullrequestssourcebranchRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeantcodeAntcodePullrequestssourcebranch", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeantcodeAntcodePullrequestssourcebranch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

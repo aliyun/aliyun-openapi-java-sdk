@@ -35,7 +35,7 @@ public class CreateDTXAppsRequest extends RpcAcsRequest<CreateDTXAppsResponse> {
 
 	private String desc;
 	public CreateDTXAppsRequest() {
-		super("SOFA", "2019-08-15", "CreateDTXApps", "sofa");
+		super("SOFA", "2019-08-15", "CreateDTXApps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetLinkeBahamutAoneinternaldefectsRequest extends RpcAcsRequest<Get
 
 	private String externalId;
 	public GetLinkeBahamutAoneinternaldefectsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAoneinternaldefects", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAoneinternaldefects", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

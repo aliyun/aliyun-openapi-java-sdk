@@ -39,7 +39,7 @@ public class UpdateLinkeantcodeAntcodeApiupdateexistingfileinrepositoryRequest e
 
 	private String encoding;
 	public UpdateLinkeantcodeAntcodeApiupdateexistingfileinrepositoryRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeApiupdateexistingfileinrepository", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeApiupdateexistingfileinrepository", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

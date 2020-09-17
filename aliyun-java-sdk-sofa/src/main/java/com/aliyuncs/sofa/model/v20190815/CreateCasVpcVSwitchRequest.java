@@ -35,7 +35,7 @@ public class CreateCasVpcVSwitchRequest extends RpcAcsRequest<CreateCasVpcVSwitc
 
 	private String name;
 	public CreateCasVpcVSwitchRequest() {
-		super("SOFA", "2019-08-15", "CreateCasVpcVSwitch", "sofa");
+		super("SOFA", "2019-08-15", "CreateCasVpcVSwitch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

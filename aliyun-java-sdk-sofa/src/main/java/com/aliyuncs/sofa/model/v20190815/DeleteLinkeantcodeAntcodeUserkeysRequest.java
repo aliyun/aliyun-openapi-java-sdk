@@ -29,7 +29,7 @@ public class DeleteLinkeantcodeAntcodeUserkeysRequest extends RpcAcsRequest<Dele
 
 	private String keyId;
 	public DeleteLinkeantcodeAntcodeUserkeysRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeUserkeys", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeUserkeys", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

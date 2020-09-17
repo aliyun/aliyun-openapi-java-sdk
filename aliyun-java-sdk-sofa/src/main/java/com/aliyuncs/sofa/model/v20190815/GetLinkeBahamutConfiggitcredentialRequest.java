@@ -29,7 +29,7 @@ public class GetLinkeBahamutConfiggitcredentialRequest extends RpcAcsRequest<Get
 
 	private String tenantName;
 	public GetLinkeBahamutConfiggitcredentialRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutConfiggitcredential", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutConfiggitcredential", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

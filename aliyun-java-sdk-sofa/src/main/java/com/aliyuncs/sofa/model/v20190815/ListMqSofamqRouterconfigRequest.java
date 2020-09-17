@@ -31,7 +31,7 @@ public class ListMqSofamqRouterconfigRequest extends RpcAcsRequest<ListMqSofamqR
 
 	private String instanceId;
 	public ListMqSofamqRouterconfigRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqRouterconfig", "sofa");
+		super("SOFA", "2019-08-15", "ListMqSofamqRouterconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

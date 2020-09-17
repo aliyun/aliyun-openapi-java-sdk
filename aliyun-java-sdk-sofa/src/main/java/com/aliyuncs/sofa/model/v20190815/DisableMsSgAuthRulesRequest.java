@@ -33,7 +33,7 @@ public class DisableMsSgAuthRulesRequest extends RpcAcsRequest<DisableMsSgAuthRu
 
 	private Long ruleId;
 	public DisableMsSgAuthRulesRequest() {
-		super("SOFA", "2019-08-15", "DisableMsSgAuthRules", "sofa");
+		super("SOFA", "2019-08-15", "DisableMsSgAuthRules", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

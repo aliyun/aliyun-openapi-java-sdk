@@ -29,7 +29,7 @@ public class QueryLinkeBahamutAttachableiterationsbyreleaseRequest extends RpcAc
 
 	private String releaseId;
 	public QueryLinkeBahamutAttachableiterationsbyreleaseRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAttachableiterationsbyrelease", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAttachableiterationsbyrelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

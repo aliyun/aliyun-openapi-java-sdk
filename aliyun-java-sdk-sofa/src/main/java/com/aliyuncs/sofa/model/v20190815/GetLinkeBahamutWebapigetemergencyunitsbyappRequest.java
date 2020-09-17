@@ -31,7 +31,7 @@ public class GetLinkeBahamutWebapigetemergencyunitsbyappRequest extends RpcAcsRe
 
 	private String tenantId;
 	public GetLinkeBahamutWebapigetemergencyunitsbyappRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetemergencyunitsbyapp", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetemergencyunitsbyapp", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

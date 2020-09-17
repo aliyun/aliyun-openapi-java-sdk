@@ -41,7 +41,7 @@ public class QueryLinkefabricFabricAllzonebydevstageenvRequest extends RpcAcsReq
 
 	private Boolean isStandard;
 	public QueryLinkefabricFabricAllzonebydevstageenvRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricAllzonebydevstageenv", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricAllzonebydevstageenv", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

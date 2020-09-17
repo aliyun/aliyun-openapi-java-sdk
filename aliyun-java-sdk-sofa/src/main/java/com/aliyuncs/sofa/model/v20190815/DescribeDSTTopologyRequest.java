@@ -40,7 +40,7 @@ public class DescribeDSTTopologyRequest extends RpcAcsRequest<DescribeDSTTopolog
 
 	private List<Dimensions> dimensionss;
 	public DescribeDSTTopologyRequest() {
-		super("SOFA", "2019-08-15", "DescribeDSTTopology", "sofa");
+		super("SOFA", "2019-08-15", "DescribeDSTTopology", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

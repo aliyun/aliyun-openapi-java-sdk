@@ -27,7 +27,7 @@ public class GetDTXGlobalEnvRequest extends RpcAcsRequest<GetDTXGlobalEnvRespons
 
 	private String instanceId;
 	public GetDTXGlobalEnvRequest() {
-		super("SOFA", "2019-08-15", "GetDTXGlobalEnv", "sofa");
+		super("SOFA", "2019-08-15", "GetDTXGlobalEnv", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

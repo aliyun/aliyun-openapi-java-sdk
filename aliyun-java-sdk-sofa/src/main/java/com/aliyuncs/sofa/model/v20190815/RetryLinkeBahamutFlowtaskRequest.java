@@ -27,7 +27,7 @@ public class RetryLinkeBahamutFlowtaskRequest extends RpcAcsRequest<RetryLinkeBa
 
 	private String id;
 	public RetryLinkeBahamutFlowtaskRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkeBahamutFlowtask", "sofa");
+		super("SOFA", "2019-08-15", "RetryLinkeBahamutFlowtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

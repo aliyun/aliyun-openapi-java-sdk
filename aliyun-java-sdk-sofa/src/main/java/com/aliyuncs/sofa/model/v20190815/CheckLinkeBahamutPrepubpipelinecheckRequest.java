@@ -27,7 +27,7 @@ public class CheckLinkeBahamutPrepubpipelinecheckRequest extends RpcAcsRequest<C
 
 	private String iterationUnitId;
 	public CheckLinkeBahamutPrepubpipelinecheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutPrepubpipelinecheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutPrepubpipelinecheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

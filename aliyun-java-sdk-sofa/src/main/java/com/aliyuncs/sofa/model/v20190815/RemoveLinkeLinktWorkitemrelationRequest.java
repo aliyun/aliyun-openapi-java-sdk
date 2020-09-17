@@ -31,7 +31,7 @@ public class RemoveLinkeLinktWorkitemrelationRequest extends RpcAcsRequest<Remov
 
 	private String workItemRelationType;
 	public RemoveLinkeLinktWorkitemrelationRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeLinktWorkitemrelation", "sofa");
+		super("SOFA", "2019-08-15", "RemoveLinkeLinktWorkitemrelation", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

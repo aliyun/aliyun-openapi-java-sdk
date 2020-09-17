@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class CountLinkeBahamutMonitoruserstatisticsmonitorRequest extends RpcAcsRequest<CountLinkeBahamutMonitoruserstatisticsmonitorResponse> {
 	   
 	public CountLinkeBahamutMonitoruserstatisticsmonitorRequest() {
-		super("SOFA", "2019-08-15", "CountLinkeBahamutMonitoruserstatisticsmonitor", "sofa");
+		super("SOFA", "2019-08-15", "CountLinkeBahamutMonitoruserstatisticsmonitor", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

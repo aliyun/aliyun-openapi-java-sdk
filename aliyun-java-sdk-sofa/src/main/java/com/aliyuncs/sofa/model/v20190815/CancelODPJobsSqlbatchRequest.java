@@ -33,7 +33,7 @@ public class CancelODPJobsSqlbatchRequest extends RpcAcsRequest<CancelODPJobsSql
 
 	private String instanceId;
 	public CancelODPJobsSqlbatchRequest() {
-		super("SOFA", "2019-08-15", "CancelODPJobsSqlbatch", "sofa");
+		super("SOFA", "2019-08-15", "CancelODPJobsSqlbatch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

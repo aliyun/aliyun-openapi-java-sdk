@@ -31,7 +31,7 @@ public class RetryLinkedeploycoreDeploycoreActionretryRequest extends RpcAcsRequ
 
 	private String tenantName;
 	public RetryLinkedeploycoreDeploycoreActionretryRequest() {
-		super("SOFA", "2019-08-15", "RetryLinkedeploycoreDeploycoreActionretry", "sofa");
+		super("SOFA", "2019-08-15", "RetryLinkedeploycoreDeploycoreActionretry", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

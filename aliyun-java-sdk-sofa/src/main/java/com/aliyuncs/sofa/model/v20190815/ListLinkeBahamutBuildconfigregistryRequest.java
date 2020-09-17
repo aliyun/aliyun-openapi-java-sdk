@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ListLinkeBahamutBuildconfigregistryRequest extends RpcAcsRequest<ListLinkeBahamutBuildconfigregistryResponse> {
 	   
 	public ListLinkeBahamutBuildconfigregistryRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutBuildconfigregistry", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutBuildconfigregistry", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

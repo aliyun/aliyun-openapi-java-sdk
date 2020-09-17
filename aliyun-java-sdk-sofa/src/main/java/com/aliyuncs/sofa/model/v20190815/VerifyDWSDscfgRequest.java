@@ -29,7 +29,7 @@ public class VerifyDWSDscfgRequest extends RpcAcsRequest<VerifyDWSDscfgResponse>
 
 	private String taskModelJsonStr;
 	public VerifyDWSDscfgRequest() {
-		super("SOFA", "2019-08-15", "VerifyDWSDscfg", "sofa");
+		super("SOFA", "2019-08-15", "VerifyDWSDscfg", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

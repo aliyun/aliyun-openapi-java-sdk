@@ -41,7 +41,7 @@ public class CreateAKSHelmChartReleaseRequest extends RpcAcsRequest<CreateAKSHel
 
 	private String namespace;
 	public CreateAKSHelmChartReleaseRequest() {
-		super("SOFA", "2019-08-15", "CreateAKSHelmChartRelease", "sofa");
+		super("SOFA", "2019-08-15", "CreateAKSHelmChartRelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

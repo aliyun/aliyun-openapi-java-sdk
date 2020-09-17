@@ -32,7 +32,7 @@ public class AddAKSNodeLabelRequest extends RpcAcsRequest<AddAKSNodeLabelRespons
 
 	private List<Nodes> nodess;
 	public AddAKSNodeLabelRequest() {
-		super("SOFA", "2019-08-15", "AddAKSNodeLabel", "sofa");
+		super("SOFA", "2019-08-15", "AddAKSNodeLabel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

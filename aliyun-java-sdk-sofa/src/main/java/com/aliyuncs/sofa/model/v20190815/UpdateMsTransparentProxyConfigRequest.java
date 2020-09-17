@@ -31,7 +31,7 @@ public class UpdateMsTransparentProxyConfigRequest extends RpcAcsRequest<UpdateM
 
 	private String instanceId;
 	public UpdateMsTransparentProxyConfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateMsTransparentProxyConfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateMsTransparentProxyConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

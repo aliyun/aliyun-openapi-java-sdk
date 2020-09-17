@@ -29,7 +29,7 @@ public class GetDTXTransactionSagaRequest extends RpcAcsRequest<GetDTXTransactio
 
 	private String instanceId;
 	public GetDTXTransactionSagaRequest() {
-		super("SOFA", "2019-08-15", "GetDTXTransactionSaga", "sofa");
+		super("SOFA", "2019-08-15", "GetDTXTransactionSaga", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

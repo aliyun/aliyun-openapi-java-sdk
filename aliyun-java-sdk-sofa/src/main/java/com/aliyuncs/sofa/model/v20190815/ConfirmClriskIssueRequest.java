@@ -33,7 +33,7 @@ public class ConfirmClriskIssueRequest extends RpcAcsRequest<ConfirmClriskIssueR
 
 	private Boolean fundLoss;
 	public ConfirmClriskIssueRequest() {
-		super("SOFA", "2019-08-15", "ConfirmClriskIssue", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmClriskIssue", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

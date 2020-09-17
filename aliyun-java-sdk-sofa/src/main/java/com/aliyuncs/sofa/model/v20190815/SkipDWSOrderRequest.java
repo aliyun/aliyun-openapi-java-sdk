@@ -31,7 +31,7 @@ public class SkipDWSOrderRequest extends RpcAcsRequest<SkipDWSOrderResponse> {
 
 	private String instanceId;
 	public SkipDWSOrderRequest() {
-		super("SOFA", "2019-08-15", "SkipDWSOrder", "sofa");
+		super("SOFA", "2019-08-15", "SkipDWSOrder", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

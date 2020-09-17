@@ -52,7 +52,7 @@ public class CreateCasDatabaseRequest extends RpcAcsRequest<CreateCasDatabaseRes
 
 	private String name;
 	public CreateCasDatabaseRequest() {
-		super("SOFA", "2019-08-15", "CreateCasDatabase", "sofa");
+		super("SOFA", "2019-08-15", "CreateCasDatabase", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

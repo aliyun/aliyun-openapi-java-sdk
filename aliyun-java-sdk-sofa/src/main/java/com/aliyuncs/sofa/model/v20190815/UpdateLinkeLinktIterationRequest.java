@@ -51,7 +51,7 @@ public class UpdateLinkeLinktIterationRequest extends RpcAcsRequest<UpdateLinkeL
 
 	private Long updatedAt;
 	public UpdateLinkeLinktIterationRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktIteration", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktIteration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

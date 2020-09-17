@@ -35,7 +35,7 @@ public class QueryMSDdsJobsRequest extends RpcAcsRequest<QueryMSDdsJobsResponse>
 
 	private String pageSize;
 	public QueryMSDdsJobsRequest() {
-		super("SOFA", "2019-08-15", "QueryMSDdsJobs", "sofa");
+		super("SOFA", "2019-08-15", "QueryMSDdsJobs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

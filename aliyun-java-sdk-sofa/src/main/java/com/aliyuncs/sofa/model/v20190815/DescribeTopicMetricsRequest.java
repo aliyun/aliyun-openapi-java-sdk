@@ -33,7 +33,7 @@ public class DescribeTopicMetricsRequest extends RpcAcsRequest<DescribeTopicMetr
 
 	private String topic;
 	public DescribeTopicMetricsRequest() {
-		super("SOFA", "2019-08-15", "DescribeTopicMetrics", "sofa");
+		super("SOFA", "2019-08-15", "DescribeTopicMetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

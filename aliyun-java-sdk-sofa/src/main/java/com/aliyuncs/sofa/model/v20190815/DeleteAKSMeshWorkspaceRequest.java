@@ -27,7 +27,7 @@ public class DeleteAKSMeshWorkspaceRequest extends RpcAcsRequest<DeleteAKSMeshWo
 
 	private String name;
 	public DeleteAKSMeshWorkspaceRequest() {
-		super("SOFA", "2019-08-15", "DeleteAKSMeshWorkspace", "sofa");
+		super("SOFA", "2019-08-15", "DeleteAKSMeshWorkspace", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

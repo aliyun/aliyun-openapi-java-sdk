@@ -29,7 +29,7 @@ public class ExecLinkeLinktSearchtagRequest extends RpcAcsRequest<ExecLinkeLinkt
 
 	private String projectSign;
 	public ExecLinkeLinktSearchtagRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchtag", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinktSearchtag", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

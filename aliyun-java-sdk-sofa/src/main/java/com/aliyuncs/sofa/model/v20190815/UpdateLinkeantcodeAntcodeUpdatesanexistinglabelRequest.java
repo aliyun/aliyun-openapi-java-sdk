@@ -35,7 +35,7 @@ public class UpdateLinkeantcodeAntcodeUpdatesanexistinglabelRequest extends RpcA
 
 	private String name;
 	public UpdateLinkeantcodeAntcodeUpdatesanexistinglabelRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatesanexistinglabel", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdatesanexistinglabel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

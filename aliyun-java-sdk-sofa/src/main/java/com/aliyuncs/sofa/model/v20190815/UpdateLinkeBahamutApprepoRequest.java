@@ -31,7 +31,7 @@ public class UpdateLinkeBahamutApprepoRequest extends RpcAcsRequest<UpdateLinkeB
 
 	private String tenantId;
 	public UpdateLinkeBahamutApprepoRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutApprepo", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutApprepo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

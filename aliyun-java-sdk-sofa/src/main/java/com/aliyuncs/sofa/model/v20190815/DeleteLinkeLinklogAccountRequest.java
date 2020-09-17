@@ -27,7 +27,7 @@ public class DeleteLinkeLinklogAccountRequest extends RpcAcsRequest<DeleteLinkeL
 
 	private String accountId;
 	public DeleteLinkeLinklogAccountRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinklogAccount", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinklogAccount", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

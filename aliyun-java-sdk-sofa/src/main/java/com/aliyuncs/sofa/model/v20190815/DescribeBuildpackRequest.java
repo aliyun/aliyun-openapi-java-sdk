@@ -72,7 +72,7 @@ public class DescribeBuildpackRequest extends RpcAcsRequest<DescribeBuildpackRes
 
 	private List<String> statusesRepeatLists;
 	public DescribeBuildpackRequest() {
-		super("SOFA", "2019-08-15", "DescribeBuildpack", "sofa");
+		super("SOFA", "2019-08-15", "DescribeBuildpack", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

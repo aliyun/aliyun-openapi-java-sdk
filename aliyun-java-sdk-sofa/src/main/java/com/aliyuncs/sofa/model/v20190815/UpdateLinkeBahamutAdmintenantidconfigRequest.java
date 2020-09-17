@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutAdmintenantidconfigRequest extends RpcAcsRequest<
 
 	private String tenantId;
 	public UpdateLinkeBahamutAdmintenantidconfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdmintenantidconfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAdmintenantidconfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

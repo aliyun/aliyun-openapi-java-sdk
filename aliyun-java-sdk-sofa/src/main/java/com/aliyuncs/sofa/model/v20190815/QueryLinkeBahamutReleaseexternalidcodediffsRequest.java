@@ -27,7 +27,7 @@ public class QueryLinkeBahamutReleaseexternalidcodediffsRequest extends RpcAcsRe
 
 	private String externalId;
 	public QueryLinkeBahamutReleaseexternalidcodediffsRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleaseexternalidcodediffs", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleaseexternalidcodediffs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

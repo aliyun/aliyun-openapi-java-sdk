@@ -35,7 +35,7 @@ public class QueryLinkeBahamutListprojectsprojectsauthorizedRequest extends RpcA
 
 	private String page;
 	public QueryLinkeBahamutListprojectsprojectsauthorizedRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutListprojectsprojectsauthorized", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutListprojectsprojectsauthorized", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

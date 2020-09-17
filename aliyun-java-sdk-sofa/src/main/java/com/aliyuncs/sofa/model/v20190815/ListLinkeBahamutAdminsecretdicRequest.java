@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ListLinkeBahamutAdminsecretdicRequest extends RpcAcsRequest<ListLinkeBahamutAdminsecretdicResponse> {
 	   
 	public ListLinkeBahamutAdminsecretdicRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutAdminsecretdic", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutAdminsecretdic", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

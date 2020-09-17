@@ -29,7 +29,7 @@ public class QueryLinkeBahamutDelbasejarmoduleRequest extends RpcAcsRequest<Quer
 
 	private String iterationUnitId;
 	public QueryLinkeBahamutDelbasejarmoduleRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutDelbasejarmodule", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutDelbasejarmodule", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

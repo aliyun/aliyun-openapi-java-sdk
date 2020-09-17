@@ -91,6 +91,8 @@ public class QueryODPSqlAuditInstancesResponse extends AcsResponse {
 
 			private String instanceId;
 
+			private String instanceName;
+
 			private Long openedCount;
 
 			private List<SchemasItem> schemas;
@@ -101,6 +103,14 @@ public class QueryODPSqlAuditInstancesResponse extends AcsResponse {
 
 			public void setInstanceId(String instanceId) {
 				this.instanceId = instanceId;
+			}
+
+			public String getInstanceName() {
+				return this.instanceName;
+			}
+
+			public void setInstanceName(String instanceName) {
+				this.instanceName = instanceName;
 			}
 
 			public Long getOpenedCount() {

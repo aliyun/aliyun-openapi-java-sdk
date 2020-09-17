@@ -27,7 +27,7 @@ public class QueryLinkeBahamutCloudtenantapplevelRequest extends RpcAcsRequest<Q
 
 	private String tenantId;
 	public QueryLinkeBahamutCloudtenantapplevelRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutCloudtenantapplevel", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutCloudtenantapplevel", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

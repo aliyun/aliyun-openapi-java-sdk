@@ -27,7 +27,7 @@ public class QueryLinkedeploycoreDeploycoreAppservicequeryappserviceiddetailRequ
 
 	private String appServiceId;
 	public QueryLinkedeploycoreDeploycoreAppservicequeryappserviceiddetailRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppservicequeryappserviceiddetail", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkedeploycoreDeploycoreAppservicequeryappserviceiddetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

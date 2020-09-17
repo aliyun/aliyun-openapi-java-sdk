@@ -51,7 +51,7 @@ public class QueryLinkefabricFabricOperationrecordbyprojectRequest extends RpcAc
 
 	private String tenantName;
 	public QueryLinkefabricFabricOperationrecordbyprojectRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricOperationrecordbyproject", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricOperationrecordbyproject", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

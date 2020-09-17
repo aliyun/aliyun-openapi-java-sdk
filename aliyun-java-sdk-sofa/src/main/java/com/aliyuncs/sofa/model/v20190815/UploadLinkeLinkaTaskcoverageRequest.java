@@ -48,7 +48,7 @@ public class UploadLinkeLinkaTaskcoverageRequest extends RpcAcsRequest<UploadLin
 
 	private List<String> coverageFileRepeatLists;
 	public UploadLinkeLinkaTaskcoverageRequest() {
-		super("SOFA", "2019-08-15", "UploadLinkeLinkaTaskcoverage", "sofa");
+		super("SOFA", "2019-08-15", "UploadLinkeLinkaTaskcoverage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

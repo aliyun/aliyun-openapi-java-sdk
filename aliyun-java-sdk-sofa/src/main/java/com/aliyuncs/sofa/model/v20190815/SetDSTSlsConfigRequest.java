@@ -31,7 +31,7 @@ public class SetDSTSlsConfigRequest extends RpcAcsRequest<SetDSTSlsConfigRespons
 
 	private String instanceId;
 	public SetDSTSlsConfigRequest() {
-		super("SOFA", "2019-08-15", "SetDSTSlsConfig", "sofa");
+		super("SOFA", "2019-08-15", "SetDSTSlsConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

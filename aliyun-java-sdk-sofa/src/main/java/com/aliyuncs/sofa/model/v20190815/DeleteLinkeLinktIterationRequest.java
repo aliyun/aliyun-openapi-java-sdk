@@ -27,7 +27,7 @@ public class DeleteLinkeLinktIterationRequest extends RpcAcsRequest<DeleteLinkeL
 
 	private String iterationSign;
 	public DeleteLinkeLinktIterationRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeLinktIteration", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeLinktIteration", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

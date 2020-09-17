@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class ConfirmLinkeBahamutUserRequest extends RpcAcsRequest<ConfirmLinkeBahamutUserResponse> {
 	   
 	public ConfirmLinkeBahamutUserRequest() {
-		super("SOFA", "2019-08-15", "ConfirmLinkeBahamutUser", "sofa");
+		super("SOFA", "2019-08-15", "ConfirmLinkeBahamutUser", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

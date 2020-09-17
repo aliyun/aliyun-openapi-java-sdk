@@ -41,7 +41,7 @@ public class CreateDSTBizLogConfigRequest extends RpcAcsRequest<CreateDSTBizLogC
 
 	private String name;
 	public CreateDSTBizLogConfigRequest() {
-		super("SOFA", "2019-08-15", "CreateDSTBizLogConfig", "sofa");
+		super("SOFA", "2019-08-15", "CreateDSTBizLogConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

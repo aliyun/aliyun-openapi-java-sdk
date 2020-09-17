@@ -29,7 +29,7 @@ public class QueryRmsCloudmeshSysmetricsRequest extends RpcAcsRequest<QueryRmsCl
 
 	private String queryJsonStr;
 	public QueryRmsCloudmeshSysmetricsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsCloudmeshSysmetrics", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsCloudmeshSysmetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

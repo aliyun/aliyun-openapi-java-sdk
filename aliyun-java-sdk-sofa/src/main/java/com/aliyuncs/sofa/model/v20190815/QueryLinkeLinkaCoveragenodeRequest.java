@@ -29,7 +29,7 @@ public class QueryLinkeLinkaCoveragenodeRequest extends RpcAcsRequest<QueryLinke
 
 	private String taskId;
 	public QueryLinkeLinkaCoveragenodeRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinkaCoveragenode", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinkaCoveragenode", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

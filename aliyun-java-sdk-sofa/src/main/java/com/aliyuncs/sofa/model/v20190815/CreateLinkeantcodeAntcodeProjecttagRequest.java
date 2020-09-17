@@ -37,7 +37,7 @@ public class CreateLinkeantcodeAntcodeProjecttagRequest extends RpcAcsRequest<Cr
 
 	private String message;
 	public CreateLinkeantcodeAntcodeProjecttagRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjecttag", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeProjecttag", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

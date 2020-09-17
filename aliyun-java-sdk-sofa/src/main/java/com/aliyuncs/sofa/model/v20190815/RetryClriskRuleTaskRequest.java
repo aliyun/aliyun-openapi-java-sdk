@@ -27,7 +27,7 @@ public class RetryClriskRuleTaskRequest extends RpcAcsRequest<RetryClriskRuleTas
 
 	private Long taskId;
 	public RetryClriskRuleTaskRequest() {
-		super("SOFA", "2019-08-15", "RetryClriskRuleTask", "sofa");
+		super("SOFA", "2019-08-15", "RetryClriskRuleTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

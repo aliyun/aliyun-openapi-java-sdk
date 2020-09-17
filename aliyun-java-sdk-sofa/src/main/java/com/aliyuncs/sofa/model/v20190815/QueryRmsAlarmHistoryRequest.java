@@ -29,7 +29,7 @@ public class QueryRmsAlarmHistoryRequest extends RpcAcsRequest<QueryRmsAlarmHist
 
 	private String envJsonStr;
 	public QueryRmsAlarmHistoryRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlarmHistory", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsAlarmHistory", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

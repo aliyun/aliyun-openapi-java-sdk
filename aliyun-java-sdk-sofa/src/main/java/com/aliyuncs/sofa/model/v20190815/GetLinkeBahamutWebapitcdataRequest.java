@@ -27,7 +27,7 @@ public class GetLinkeBahamutWebapitcdataRequest extends RpcAcsRequest<GetLinkeBa
 
 	private String id;
 	public GetLinkeBahamutWebapitcdataRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapitcdata", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapitcdata", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

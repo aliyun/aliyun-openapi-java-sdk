@@ -29,7 +29,7 @@ public class QueryLinkeBahamutReleasequeryapppipelineinfoinmultienvRequest exten
 
 	private String releaseId;
 	public QueryLinkeBahamutReleasequeryapppipelineinfoinmultienvRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleasequeryapppipelineinfoinmultienv", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutReleasequeryapppipelineinfoinmultienv", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

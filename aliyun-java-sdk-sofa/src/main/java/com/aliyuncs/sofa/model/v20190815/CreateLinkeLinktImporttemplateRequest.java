@@ -29,7 +29,7 @@ public class CreateLinkeLinktImporttemplateRequest extends RpcAcsRequest<CreateL
 
 	private String templateId;
 	public CreateLinkeLinktImporttemplateRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeLinktImporttemplate", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeLinktImporttemplate", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DeleteLinkeBahamutVcsbranchRequest extends RpcAcsRequest<DeleteLink
 
 	private String branchName;
 	public DeleteLinkeBahamutVcsbranchRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutVcsbranch", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutVcsbranch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetLinkeBahamutTracecollectRequest extends RpcAcsRequest<GetLinkeBa
 
 	private String page;
 	public GetLinkeBahamutTracecollectRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutTracecollect", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutTracecollect", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

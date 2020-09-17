@@ -27,7 +27,7 @@ public class GetLinkeBahamutPubownerempidRequest extends RpcAcsRequest<GetLinkeB
 
 	private String tenantId;
 	public GetLinkeBahamutPubownerempidRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutPubownerempid", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutPubownerempid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

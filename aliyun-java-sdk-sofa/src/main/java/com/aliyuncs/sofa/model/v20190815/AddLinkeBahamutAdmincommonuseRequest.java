@@ -43,7 +43,7 @@ public class AddLinkeBahamutAdmincommonuseRequest extends RpcAcsRequest<AddLinke
 
 	private String name;
 	public AddLinkeBahamutAdmincommonuseRequest() {
-		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmincommonuse", "sofa");
+		super("SOFA", "2019-08-15", "AddLinkeBahamutAdmincommonuse", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

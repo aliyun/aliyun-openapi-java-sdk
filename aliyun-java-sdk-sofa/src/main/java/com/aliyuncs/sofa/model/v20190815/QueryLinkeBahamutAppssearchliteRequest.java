@@ -33,7 +33,7 @@ public class QueryLinkeBahamutAppssearchliteRequest extends RpcAcsRequest<QueryL
 
 	private String page;
 	public QueryLinkeBahamutAppssearchliteRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppssearchlite", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAppssearchlite", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

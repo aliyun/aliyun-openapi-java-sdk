@@ -33,7 +33,7 @@ public class GetLinkeBahamutIterationgetiterationsRequest extends RpcAcsRequest<
 
 	private String account;
 	public GetLinkeBahamutIterationgetiterationsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationgetiterations", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutIterationgetiterations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

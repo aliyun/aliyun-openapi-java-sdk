@@ -27,7 +27,7 @@ public class QueryAllDrmCellsRequest extends RpcAcsRequest<QueryAllDrmCellsRespo
 
 	private String instanceId;
 	public QueryAllDrmCellsRequest() {
-		super("SOFA", "2019-08-15", "QueryAllDrmCells", "sofa");
+		super("SOFA", "2019-08-15", "QueryAllDrmCells", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

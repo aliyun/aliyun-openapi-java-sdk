@@ -30,7 +30,7 @@ public class CreateLinkefabricFabricOperationrecordRequest extends RpcAcsRequest
 
 	private String operationRecordContext;
 	public CreateLinkefabricFabricOperationrecordRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkefabricFabricOperationrecord", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkefabricFabricOperationrecord", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

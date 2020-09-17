@@ -29,7 +29,7 @@ public class CloneLinkeBahamutAoneinternalconverttolinkeiterationformRequest ext
 
 	private String id;
 	public CloneLinkeBahamutAoneinternalconverttolinkeiterationformRequest() {
-		super("SOFA", "2019-08-15", "CloneLinkeBahamutAoneinternalconverttolinkeiterationform", "sofa");
+		super("SOFA", "2019-08-15", "CloneLinkeBahamutAoneinternalconverttolinkeiterationform", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

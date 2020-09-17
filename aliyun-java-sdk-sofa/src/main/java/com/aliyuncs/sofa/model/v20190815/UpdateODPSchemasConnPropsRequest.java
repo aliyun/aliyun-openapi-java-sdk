@@ -33,7 +33,7 @@ public class UpdateODPSchemasConnPropsRequest extends RpcAcsRequest<UpdateODPSch
 
 	private String instanceId;
 	public UpdateODPSchemasConnPropsRequest() {
-		super("SOFA", "2019-08-15", "UpdateODPSchemasConnProps", "sofa");
+		super("SOFA", "2019-08-15", "UpdateODPSchemasConnProps", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeProjectreviewtaskRequest extends RpcAcsReq
 
 	private String reviewTaskId;
 	public UpdateLinkeantcodeAntcodeProjectreviewtaskRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectreviewtask", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeProjectreviewtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

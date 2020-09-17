@@ -36,7 +36,7 @@ public class UpdateLinkeLinktIterationmeetingRequest extends RpcAcsRequest<Updat
 
 	private List<Long> attachmentIdsRepeatLists;
 	public UpdateLinkeLinktIterationmeetingRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinktIterationmeeting", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinktIterationmeeting", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

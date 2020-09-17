@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeNamespacefeatureRequest extends RpcAcsRequ
 
 	private String featureType;
 	public DeleteLinkeantcodeAntcodeNamespacefeatureRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeNamespacefeature", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeNamespacefeature", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

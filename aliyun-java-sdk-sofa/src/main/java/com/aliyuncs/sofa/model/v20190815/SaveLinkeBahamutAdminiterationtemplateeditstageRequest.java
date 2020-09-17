@@ -29,7 +29,7 @@ public class SaveLinkeBahamutAdminiterationtemplateeditstageRequest extends RpcA
 
 	private String editFormJsonStr;
 	public SaveLinkeBahamutAdminiterationtemplateeditstageRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdminiterationtemplateeditstage", "sofa");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutAdminiterationtemplateeditstage", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

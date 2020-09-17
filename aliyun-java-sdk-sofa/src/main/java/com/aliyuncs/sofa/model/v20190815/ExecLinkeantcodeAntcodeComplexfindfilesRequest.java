@@ -31,7 +31,7 @@ public class ExecLinkeantcodeAntcodeComplexfindfilesRequest extends RpcAcsReques
 
 	private String requestGitOperate;
 	public ExecLinkeantcodeAntcodeComplexfindfilesRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeComplexfindfiles", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeantcodeAntcodeComplexfindfiles", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

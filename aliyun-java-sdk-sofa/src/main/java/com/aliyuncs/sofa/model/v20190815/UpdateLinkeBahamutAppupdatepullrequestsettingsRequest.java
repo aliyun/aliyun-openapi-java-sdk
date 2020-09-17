@@ -31,7 +31,7 @@ public class UpdateLinkeBahamutAppupdatepullrequestsettingsRequest extends RpcAc
 
 	private Boolean mustPreview;
 	public UpdateLinkeBahamutAppupdatepullrequestsettingsRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAppupdatepullrequestsettings", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutAppupdatepullrequestsettings", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

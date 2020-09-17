@@ -33,7 +33,7 @@ public class UpdateLinkeantcodeAntcodeUpdateprotectrepositorybranchesRequest ext
 
 	private String protectBranchId;
 	public UpdateLinkeantcodeAntcodeUpdateprotectrepositorybranchesRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdateprotectrepositorybranches", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeUpdateprotectrepositorybranches", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

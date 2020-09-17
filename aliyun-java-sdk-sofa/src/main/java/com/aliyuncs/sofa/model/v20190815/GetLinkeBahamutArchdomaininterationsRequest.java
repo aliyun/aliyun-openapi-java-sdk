@@ -39,7 +39,7 @@ public class GetLinkeBahamutArchdomaininterationsRequest extends RpcAcsRequest<G
 
 	private String page;
 	public GetLinkeBahamutArchdomaininterationsRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutArchdomaininterations", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutArchdomaininterations", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

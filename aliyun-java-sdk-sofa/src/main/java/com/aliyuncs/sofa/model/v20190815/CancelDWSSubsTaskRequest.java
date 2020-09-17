@@ -29,7 +29,7 @@ public class CancelDWSSubsTaskRequest extends RpcAcsRequest<CancelDWSSubsTaskRes
 
 	private String instanceId;
 	public CancelDWSSubsTaskRequest() {
-		super("SOFA", "2019-08-15", "CancelDWSSubsTask", "sofa");
+		super("SOFA", "2019-08-15", "CancelDWSSubsTask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -86,7 +86,7 @@ public class QueryCasDatabaseRequest extends RpcAcsRequest<QueryCasDatabaseRespo
 
 	private Long minMemory;
 	public QueryCasDatabaseRequest() {
-		super("SOFA", "2019-08-15", "QueryCasDatabase", "sofa");
+		super("SOFA", "2019-08-15", "QueryCasDatabase", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class UpdateDWSUsersRequest extends RpcAcsRequest<UpdateDWSUsersResponse>
 
 	private String userName;
 	public UpdateDWSUsersRequest() {
-		super("SOFA", "2019-08-15", "UpdateDWSUsers", "sofa");
+		super("SOFA", "2019-08-15", "UpdateDWSUsers", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

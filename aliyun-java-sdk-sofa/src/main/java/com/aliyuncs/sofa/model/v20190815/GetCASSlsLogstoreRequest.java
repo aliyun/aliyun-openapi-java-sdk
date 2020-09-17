@@ -33,7 +33,7 @@ public class GetCASSlsLogstoreRequest extends RpcAcsRequest<GetCASSlsLogstoreRes
 
 	private String logstoreName;
 	public GetCASSlsLogstoreRequest() {
-		super("SOFA", "2019-08-15", "GetCASSlsLogstore", "sofa");
+		super("SOFA", "2019-08-15", "GetCASSlsLogstore", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

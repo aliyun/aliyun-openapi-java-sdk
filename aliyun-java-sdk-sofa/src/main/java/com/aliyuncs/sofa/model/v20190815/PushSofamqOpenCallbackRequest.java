@@ -27,7 +27,7 @@ public class PushSofamqOpenCallbackRequest extends RpcAcsRequest<PushSofamqOpenC
 
 	private String data;
 	public PushSofamqOpenCallbackRequest() {
-		super("SOFA", "2019-08-15", "PushSofamqOpenCallback", "sofa");
+		super("SOFA", "2019-08-15", "PushSofamqOpenCallback", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

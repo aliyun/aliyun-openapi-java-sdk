@@ -33,7 +33,7 @@ public class QueryLinkefabricFabricSchedulerconfigsqueryallzoneRequest extends R
 
 	private String releaseId;
 	public QueryLinkefabricFabricSchedulerconfigsqueryallzoneRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSchedulerconfigsqueryallzone", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkefabricFabricSchedulerconfigsqueryallzone", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

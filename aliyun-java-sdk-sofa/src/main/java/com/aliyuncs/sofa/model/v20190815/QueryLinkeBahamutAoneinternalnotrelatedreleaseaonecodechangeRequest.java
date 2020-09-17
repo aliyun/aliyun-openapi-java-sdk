@@ -27,7 +27,7 @@ public class QueryLinkeBahamutAoneinternalnotrelatedreleaseaonecodechangeRequest
 
 	private String q;
 	public QueryLinkeBahamutAoneinternalnotrelatedreleaseaonecodechangeRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAoneinternalnotrelatedreleaseaonecodechange", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAoneinternalnotrelatedreleaseaonecodechange", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class GetLinkeBahamutQualitygetqualitylogRequest extends RpcAcsRequest<Ge
 
 	private String qualityItem;
 	public GetLinkeBahamutQualitygetqualitylogRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutQualitygetqualitylog", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutQualitygetqualitylog", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

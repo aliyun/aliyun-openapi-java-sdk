@@ -31,7 +31,7 @@ public class CreateLinkeantcodeAntcodeAuthenticatedgpgkeyRequest extends RpcAcsR
 
 	private String requestGitOperate;
 	public CreateLinkeantcodeAntcodeAuthenticatedgpgkeyRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeAuthenticatedgpgkey", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeAuthenticatedgpgkey", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

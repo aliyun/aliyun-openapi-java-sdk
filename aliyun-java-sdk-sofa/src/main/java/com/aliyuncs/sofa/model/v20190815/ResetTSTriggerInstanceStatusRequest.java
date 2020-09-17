@@ -33,7 +33,7 @@ public class ResetTSTriggerInstanceStatusRequest extends RpcAcsRequest<ResetTSTr
 
 	private String status;
 	public ResetTSTriggerInstanceStatusRequest() {
-		super("SOFA", "2019-08-15", "ResetTSTriggerInstanceStatus", "sofa");
+		super("SOFA", "2019-08-15", "ResetTSTriggerInstanceStatus", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

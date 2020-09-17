@@ -115,6 +115,8 @@ public class QueryMsSgServiceSubKeysResponse extends AcsResponse {
 
 		private Long subCount;
 
+		private List<AppInfosItem> appInfos;
+
 		private List<String> pubApp;
 
 		public String getDataId() {
@@ -149,12 +151,43 @@ public class QueryMsSgServiceSubKeysResponse extends AcsResponse {
 			this.subCount = subCount;
 		}
 
+		public List<AppInfosItem> getAppInfos() {
+			return this.appInfos;
+		}
+
+		public void setAppInfos(List<AppInfosItem> appInfos) {
+			this.appInfos = appInfos;
+		}
+
 		public List<String> getPubApp() {
 			return this.pubApp;
 		}
 
 		public void setPubApp(List<String> pubApp) {
 			this.pubApp = pubApp;
+		}
+
+		public static class AppInfosItem {
+
+			private String appName;
+
+			private String url;
+
+			public String getAppName() {
+				return this.appName;
+			}
+
+			public void setAppName(String appName) {
+				this.appName = appName;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
 		}
 	}
 

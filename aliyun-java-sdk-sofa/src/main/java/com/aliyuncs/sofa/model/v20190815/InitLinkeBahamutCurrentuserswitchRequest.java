@@ -31,7 +31,7 @@ public class InitLinkeBahamutCurrentuserswitchRequest extends RpcAcsRequest<Init
 
 	private String tenantPath;
 	public InitLinkeBahamutCurrentuserswitchRequest() {
-		super("SOFA", "2019-08-15", "InitLinkeBahamutCurrentuserswitch", "sofa");
+		super("SOFA", "2019-08-15", "InitLinkeBahamutCurrentuserswitch", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetLinkeBahamutVcsmrcommentRequest extends RpcAcsRequest<GetLinkeBa
 
 	private String mergeRequestId;
 	public GetLinkeBahamutVcsmrcommentRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsmrcomment", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutVcsmrcomment", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

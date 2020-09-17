@@ -27,7 +27,7 @@ public class CheckLinkeBahamutPointRequest extends RpcAcsRequest<CheckLinkeBaham
 
 	private String params;
 	public CheckLinkeBahamutPointRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutPoint", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutPoint", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

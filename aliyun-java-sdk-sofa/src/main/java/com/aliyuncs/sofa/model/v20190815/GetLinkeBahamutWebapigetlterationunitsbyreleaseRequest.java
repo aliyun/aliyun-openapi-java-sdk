@@ -27,7 +27,7 @@ public class GetLinkeBahamutWebapigetlterationunitsbyreleaseRequest extends RpcA
 
 	private String releaseExternalId;
 	public GetLinkeBahamutWebapigetlterationunitsbyreleaseRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetlterationunitsbyrelease", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutWebapigetlterationunitsbyrelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

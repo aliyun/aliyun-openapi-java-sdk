@@ -45,7 +45,7 @@ public class CreateLinkeBahamutCustomflowtaskRequest extends RpcAcsRequest<Creat
 
 	private String iterationUnitId;
 	public CreateLinkeBahamutCustomflowtaskRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutCustomflowtask", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutCustomflowtask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

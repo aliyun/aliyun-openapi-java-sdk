@@ -59,6 +59,9 @@ public class QueryODPInstancesResponseUnmarshaller {
 		List<NodesItem> nodes = new ArrayList<NodesItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryODPInstancesResponse.Data.Nodes.Length"); i++) {
 			NodesItem nodesItem = new NodesItem();
+			nodesItem.setAliyunInstanceId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].AliyunInstanceId"));
+			nodesItem.setBizVpcId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].BizVpcId"));
+			nodesItem.setBizVswtichId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].BizVswtichId"));
 			nodesItem.setCellId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].CellId"));
 			nodesItem.setCellName(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].CellName"));
 			nodesItem.setClusterId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ClusterId"));
@@ -74,7 +77,10 @@ public class QueryODPInstancesResponseUnmarshaller {
 			nodesItem.setId(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Id"));
 			nodesItem.setMachineCount(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].MachineCount"));
 			nodesItem.setMemoryCount(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].MemoryCount"));
+			nodesItem.setNodeLanAddress(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].NodeLanAddress"));
 			nodesItem.setNodeStatus(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].NodeStatus"));
+			nodesItem.setNodeWanAddress(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].NodeWanAddress"));
+			nodesItem.setNodeWanPort(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].NodeWanPort"));
 			nodesItem.setPort(_ctx.longValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Port"));
 			nodesItem.setVip(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Vip"));
 			nodesItem.setYunyouDeployUnitUrl(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].YunyouDeployUnitUrl"));
@@ -82,6 +88,7 @@ public class QueryODPInstancesResponseUnmarshaller {
 			nodesItem.setZdalproxyInstanceId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ZdalproxyInstanceId"));
 			nodesItem.setZdalproxyNodeId(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ZdalproxyNodeId"));
 			nodesItem.setZone(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].Zone"));
+			nodesItem.setZoneDescription(_ctx.stringValue("QueryODPInstancesResponse.Data.Nodes["+ i +"].ZoneDescription"));
 
 			nodes.add(nodesItem);
 		}

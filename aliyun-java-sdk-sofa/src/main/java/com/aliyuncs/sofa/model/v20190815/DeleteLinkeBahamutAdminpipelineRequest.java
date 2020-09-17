@@ -27,7 +27,7 @@ public class DeleteLinkeBahamutAdminpipelineRequest extends RpcAcsRequest<Delete
 
 	private String id;
 	public DeleteLinkeBahamutAdminpipelineRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAdminpipeline", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutAdminpipeline", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

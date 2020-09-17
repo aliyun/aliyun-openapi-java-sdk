@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class QueryLinkeBahamutAdminuserroleRequest extends RpcAcsRequest<QueryLinkeBahamutAdminuserroleResponse> {
 	   
 	public QueryLinkeBahamutAdminuserroleRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdminuserrole", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutAdminuserrole", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

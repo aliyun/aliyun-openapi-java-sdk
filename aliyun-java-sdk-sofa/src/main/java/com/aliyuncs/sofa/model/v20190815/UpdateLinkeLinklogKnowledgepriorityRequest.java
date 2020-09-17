@@ -30,7 +30,7 @@ public class UpdateLinkeLinklogKnowledgepriorityRequest extends RpcAcsRequest<Up
 
 	private Long selectStoreId;
 	public UpdateLinkeLinklogKnowledgepriorityRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinklogKnowledgepriority", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinklogKnowledgepriority", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

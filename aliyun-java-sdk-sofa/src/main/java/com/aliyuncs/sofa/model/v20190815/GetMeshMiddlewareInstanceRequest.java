@@ -31,7 +31,7 @@ public class GetMeshMiddlewareInstanceRequest extends RpcAcsRequest<GetMeshMiddl
 
 	private String tenantName;
 	public GetMeshMiddlewareInstanceRequest() {
-		super("SOFA", "2019-08-15", "GetMeshMiddlewareInstance", "sofa");
+		super("SOFA", "2019-08-15", "GetMeshMiddlewareInstance", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

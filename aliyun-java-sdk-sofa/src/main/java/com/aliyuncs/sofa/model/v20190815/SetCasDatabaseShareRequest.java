@@ -30,7 +30,7 @@ public class SetCasDatabaseShareRequest extends RpcAcsRequest<SetCasDatabaseShar
 
 	private List<String> workspaceIdsRepeatLists;
 	public SetCasDatabaseShareRequest() {
-		super("SOFA", "2019-08-15", "SetCasDatabaseShare", "sofa");
+		super("SOFA", "2019-08-15", "SetCasDatabaseShare", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

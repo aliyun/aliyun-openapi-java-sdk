@@ -31,7 +31,7 @@ public class UpdateLinkeantcodeAntcodeSnippetsidRequest extends RpcAcsRequest<Up
 
 	private String requestGitOperate;
 	public UpdateLinkeantcodeAntcodeSnippetsidRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeSnippetsid", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeantcodeAntcodeSnippetsid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

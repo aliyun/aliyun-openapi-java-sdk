@@ -29,7 +29,7 @@ public class GetCASApplicationDetailRequest extends RpcAcsRequest<GetCASApplicat
 
 	private String workspaceId;
 	public GetCASApplicationDetailRequest() {
-		super("SOFA", "2019-08-15", "GetCASApplicationDetail", "sofa");
+		super("SOFA", "2019-08-15", "GetCASApplicationDetail", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

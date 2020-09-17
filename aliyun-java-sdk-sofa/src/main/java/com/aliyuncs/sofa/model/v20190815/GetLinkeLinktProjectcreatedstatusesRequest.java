@@ -27,7 +27,7 @@ public class GetLinkeLinktProjectcreatedstatusesRequest extends RpcAcsRequest<Ge
 
 	private String projectSign;
 	public GetLinkeLinktProjectcreatedstatusesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinktProjectcreatedstatuses", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinktProjectcreatedstatuses", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -51,7 +51,7 @@ public class UpdateLinkeLinklogConfigRequest extends RpcAcsRequest<UpdateLinkeLi
 
 	private Long begin;
 	public UpdateLinkeLinklogConfigRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeLinklogConfig", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeLinklogConfig", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

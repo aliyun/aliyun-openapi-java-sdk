@@ -32,7 +32,7 @@ public class OpenODPSqlAuditRequest extends RpcAcsRequest<OpenODPSqlAuditRespons
 
 	private String instanceId;
 	public OpenODPSqlAuditRequest() {
-		super("SOFA", "2019-08-15", "OpenODPSqlAudit", "sofa");
+		super("SOFA", "2019-08-15", "OpenODPSqlAudit", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

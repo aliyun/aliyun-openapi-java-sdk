@@ -31,7 +31,7 @@ public class GetLinkeBahamutAoneinternaldailyreleasesRequest extends RpcAcsReque
 
 	private String page;
 	public GetLinkeBahamutAoneinternaldailyreleasesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeBahamutAoneinternaldailyreleases", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeBahamutAoneinternaldailyreleases", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

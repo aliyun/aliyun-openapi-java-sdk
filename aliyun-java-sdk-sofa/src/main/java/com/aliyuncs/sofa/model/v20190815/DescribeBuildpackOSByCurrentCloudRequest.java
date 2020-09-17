@@ -25,7 +25,7 @@ import com.aliyuncs.sofa.Endpoint;
 public class DescribeBuildpackOSByCurrentCloudRequest extends RpcAcsRequest<DescribeBuildpackOSByCurrentCloudResponse> {
 	   
 	public DescribeBuildpackOSByCurrentCloudRequest() {
-		super("SOFA", "2019-08-15", "DescribeBuildpackOSByCurrentCloud", "sofa");
+		super("SOFA", "2019-08-15", "DescribeBuildpackOSByCurrentCloud", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

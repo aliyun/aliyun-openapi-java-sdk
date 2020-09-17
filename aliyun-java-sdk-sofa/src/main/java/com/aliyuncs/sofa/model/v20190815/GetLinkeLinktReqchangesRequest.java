@@ -27,7 +27,7 @@ public class GetLinkeLinktReqchangesRequest extends RpcAcsRequest<GetLinkeLinktR
 
 	private String workItemSign;
 	public GetLinkeLinktReqchangesRequest() {
-		super("SOFA", "2019-08-15", "GetLinkeLinktReqchanges", "sofa");
+		super("SOFA", "2019-08-15", "GetLinkeLinktReqchanges", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

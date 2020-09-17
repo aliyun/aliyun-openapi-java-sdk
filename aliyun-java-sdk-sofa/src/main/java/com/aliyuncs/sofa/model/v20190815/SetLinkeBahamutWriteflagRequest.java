@@ -33,7 +33,7 @@ public class SetLinkeBahamutWriteflagRequest extends RpcAcsRequest<SetLinkeBaham
 
 	private String keyVal;
 	public SetLinkeBahamutWriteflagRequest() {
-		super("SOFA", "2019-08-15", "SetLinkeBahamutWriteflag", "sofa");
+		super("SOFA", "2019-08-15", "SetLinkeBahamutWriteflag", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

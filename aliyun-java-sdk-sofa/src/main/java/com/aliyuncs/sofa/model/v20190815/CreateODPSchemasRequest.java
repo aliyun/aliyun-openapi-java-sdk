@@ -27,9 +27,11 @@ public class CreateODPSchemasRequest extends RpcAcsRequest<CreateODPSchemasRespo
 
 	private String schemaJsonStr;
 
+	private String clientToken;
+
 	private String instanceId;
 	public CreateODPSchemasRequest() {
-		super("SOFA", "2019-08-15", "CreateODPSchemas", "sofa");
+		super("SOFA", "2019-08-15", "CreateODPSchemas", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,6 +47,17 @@ public class CreateODPSchemasRequest extends RpcAcsRequest<CreateODPSchemasRespo
 		this.schemaJsonStr = schemaJsonStr;
 		if(schemaJsonStr != null){
 			putBodyParameter("SchemaJsonStr", schemaJsonStr);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class UpdateLinkeBahamutReleaseRequest extends RpcAcsRequest<UpdateLinkeB
 
 	private String releaseJsonStr;
 	public UpdateLinkeBahamutReleaseRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutRelease", "sofa");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutRelease", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class GetAKSKubernetesResourceRequest extends RpcAcsRequest<GetAKSKuberne
 
 	private String name;
 	public GetAKSKubernetesResourceRequest() {
-		super("SOFA", "2019-08-15", "GetAKSKubernetesResource", "sofa");
+		super("SOFA", "2019-08-15", "GetAKSKubernetesResource", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

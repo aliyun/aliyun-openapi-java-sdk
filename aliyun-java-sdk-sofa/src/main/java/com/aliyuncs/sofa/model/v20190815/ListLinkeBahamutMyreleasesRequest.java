@@ -27,7 +27,7 @@ public class ListLinkeBahamutMyreleasesRequest extends RpcAcsRequest<ListLinkeBa
 
 	private String tenantId;
 	public ListLinkeBahamutMyreleasesRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutMyreleases", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutMyreleases", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

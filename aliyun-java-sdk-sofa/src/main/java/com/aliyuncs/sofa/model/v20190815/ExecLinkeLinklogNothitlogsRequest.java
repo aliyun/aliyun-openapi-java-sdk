@@ -76,7 +76,7 @@ public class ExecLinkeLinklogNothitlogsRequest extends RpcAcsRequest<ExecLinkeLi
 
 	private List<String> bizInfoRepeatLists;
 	public ExecLinkeLinklogNothitlogsRequest() {
-		super("SOFA", "2019-08-15", "ExecLinkeLinklogNothitlogs", "sofa");
+		super("SOFA", "2019-08-15", "ExecLinkeLinklogNothitlogs", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

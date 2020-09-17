@@ -31,7 +31,7 @@ public class DeleteLinkeantcodeAntcodeLabelgivenbyitsnameRequest extends RpcAcsR
 
 	private String idOrName;
 	public DeleteLinkeantcodeAntcodeLabelgivenbyitsnameRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeLabelgivenbyitsname", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeLabelgivenbyitsname", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

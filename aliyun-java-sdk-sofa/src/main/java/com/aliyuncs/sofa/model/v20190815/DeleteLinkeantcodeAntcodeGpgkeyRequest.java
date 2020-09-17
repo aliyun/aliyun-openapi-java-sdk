@@ -29,7 +29,7 @@ public class DeleteLinkeantcodeAntcodeGpgkeyRequest extends RpcAcsRequest<Delete
 
 	private String keyId;
 	public DeleteLinkeantcodeAntcodeGpgkeyRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeGpgkey", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeGpgkey", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

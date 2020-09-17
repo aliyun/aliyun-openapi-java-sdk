@@ -27,7 +27,7 @@ public class ListLinkeLinktTemplateselectablecustomfieldsRequest extends RpcAcsR
 
 	private String templateId;
 	public ListLinkeLinktTemplateselectablecustomfieldsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktTemplateselectablecustomfields", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktTemplateselectablecustomfields", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

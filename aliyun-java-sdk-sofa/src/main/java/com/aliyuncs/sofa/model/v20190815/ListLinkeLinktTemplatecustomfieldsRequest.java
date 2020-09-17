@@ -29,7 +29,7 @@ public class ListLinkeLinktTemplatecustomfieldsRequest extends RpcAcsRequest<Lis
 
 	private String templateId;
 	public ListLinkeLinktTemplatecustomfieldsRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeLinktTemplatecustomfields", "sofa");
+		super("SOFA", "2019-08-15", "ListLinkeLinktTemplatecustomfields", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

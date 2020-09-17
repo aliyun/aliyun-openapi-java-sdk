@@ -27,7 +27,7 @@ public class QueryLinkeLinktNextreachablestatusesRequest extends RpcAcsRequest<Q
 
 	private String workItemSign;
 	public QueryLinkeLinktNextreachablestatusesRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeLinktNextreachablestatuses", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeLinktNextreachablestatuses", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

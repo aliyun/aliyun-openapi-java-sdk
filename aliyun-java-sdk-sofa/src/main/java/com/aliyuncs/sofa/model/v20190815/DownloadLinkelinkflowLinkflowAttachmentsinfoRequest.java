@@ -27,7 +27,7 @@ public class DownloadLinkelinkflowLinkflowAttachmentsinfoRequest extends RpcAcsR
 
 	private String attachmentId;
 	public DownloadLinkelinkflowLinkflowAttachmentsinfoRequest() {
-		super("SOFA", "2019-08-15", "DownloadLinkelinkflowLinkflowAttachmentsinfo", "sofa");
+		super("SOFA", "2019-08-15", "DownloadLinkelinkflowLinkflowAttachmentsinfo", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

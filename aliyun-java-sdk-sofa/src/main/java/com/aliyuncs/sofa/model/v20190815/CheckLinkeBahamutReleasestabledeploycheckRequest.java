@@ -29,7 +29,7 @@ public class CheckLinkeBahamutReleasestabledeploycheckRequest extends RpcAcsRequ
 
 	private String releaseExternalId;
 	public CheckLinkeBahamutReleasestabledeploycheckRequest() {
-		super("SOFA", "2019-08-15", "CheckLinkeBahamutReleasestabledeploycheck", "sofa");
+		super("SOFA", "2019-08-15", "CheckLinkeBahamutReleasestabledeploycheck", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

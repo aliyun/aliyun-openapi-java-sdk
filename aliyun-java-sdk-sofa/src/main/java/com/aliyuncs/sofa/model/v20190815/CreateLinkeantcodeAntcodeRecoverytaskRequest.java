@@ -37,7 +37,7 @@ public class CreateLinkeantcodeAntcodeRecoverytaskRequest extends RpcAcsRequest<
 
 	private String endTime;
 	public CreateLinkeantcodeAntcodeRecoverytaskRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeRecoverytask", "sofa");
+		super("SOFA", "2019-08-15", "CreateLinkeantcodeAntcodeRecoverytask", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

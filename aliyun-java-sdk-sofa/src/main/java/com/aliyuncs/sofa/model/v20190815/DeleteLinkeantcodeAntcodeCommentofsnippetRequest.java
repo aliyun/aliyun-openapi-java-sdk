@@ -35,7 +35,7 @@ public class DeleteLinkeantcodeAntcodeCommentofsnippetRequest extends RpcAcsRequ
 
 	private String page;
 	public DeleteLinkeantcodeAntcodeCommentofsnippetRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeCommentofsnippet", "sofa");
+		super("SOFA", "2019-08-15", "DeleteLinkeantcodeAntcodeCommentofsnippet", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

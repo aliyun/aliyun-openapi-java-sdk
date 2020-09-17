@@ -29,7 +29,7 @@ public class QueryRmsResourceidMetricsRequest extends RpcAcsRequest<QueryRmsReso
 
 	private String queryJsonStr;
 	public QueryRmsResourceidMetricsRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsResourceidMetrics", "sofa");
+		super("SOFA", "2019-08-15", "QueryRmsResourceidMetrics", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

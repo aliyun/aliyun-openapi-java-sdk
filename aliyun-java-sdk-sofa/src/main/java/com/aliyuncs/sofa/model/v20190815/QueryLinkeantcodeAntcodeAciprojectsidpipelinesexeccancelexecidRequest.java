@@ -31,7 +31,7 @@ public class QueryLinkeantcodeAntcodeAciprojectsidpipelinesexeccancelexecidReque
 
 	private String requestGitOperate;
 	public QueryLinkeantcodeAntcodeAciprojectsidpipelinesexeccancelexecidRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAciprojectsidpipelinesexeccancelexecid", "sofa");
+		super("SOFA", "2019-08-15", "QueryLinkeantcodeAntcodeAciprojectsidpipelinesexeccancelexecid", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

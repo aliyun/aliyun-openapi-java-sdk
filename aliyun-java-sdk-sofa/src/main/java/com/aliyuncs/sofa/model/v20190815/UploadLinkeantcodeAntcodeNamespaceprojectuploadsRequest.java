@@ -31,7 +31,7 @@ public class UploadLinkeantcodeAntcodeNamespaceprojectuploadsRequest extends Rpc
 
 	private String namespace;
 	public UploadLinkeantcodeAntcodeNamespaceprojectuploadsRequest() {
-		super("SOFA", "2019-08-15", "UploadLinkeantcodeAntcodeNamespaceprojectuploads", "sofa");
+		super("SOFA", "2019-08-15", "UploadLinkeantcodeAntcodeNamespaceprojectuploads", "sofacafedeps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
