@@ -83,6 +83,8 @@ public class DescribeSystemEventMetaListResponse extends AcsResponse {
 
 		private String nameDesc;
 
+		private String nameDescEn;
+
 		private String level;
 
 		private String status;
@@ -113,6 +115,14 @@ public class DescribeSystemEventMetaListResponse extends AcsResponse {
 
 		public void setNameDesc(String nameDesc) {
 			this.nameDesc = nameDesc;
+		}
+
+		public String getNameDescEn() {
+			return this.nameDescEn;
+		}
+
+		public void setNameDescEn(String nameDescEn) {
+			this.nameDescEn = nameDescEn;
 		}
 
 		public String getLevel() {

@@ -39,6 +39,7 @@ public class DescribeContactListResponseUnmarshaller {
 			Contact contact = new Contact();
 			contact.setName(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Name"));
 			contact.setDesc(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Desc"));
+			contact.setLang(_ctx.stringValue("DescribeContactListResponse.Contacts["+ i +"].Lang"));
 			contact.setCreateTime(_ctx.longValue("DescribeContactListResponse.Contacts["+ i +"].CreateTime"));
 			contact.setUpdateTime(_ctx.longValue("DescribeContactListResponse.Contacts["+ i +"].UpdateTime"));
 

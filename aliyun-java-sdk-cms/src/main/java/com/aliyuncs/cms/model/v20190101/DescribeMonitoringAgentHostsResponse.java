@@ -37,6 +37,10 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 
 	private Integer total;
 
+	private Integer pageSize;
+
+	private Integer pageNumber;
+
 	private List<Host> hosts;
 
 	public String getCode() {
@@ -85,6 +89,22 @@ public class DescribeMonitoringAgentHostsResponse extends AcsResponse {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Host> getHosts() {

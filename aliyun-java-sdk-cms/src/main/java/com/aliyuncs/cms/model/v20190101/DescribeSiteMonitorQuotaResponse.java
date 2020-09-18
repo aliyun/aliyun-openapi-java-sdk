@@ -86,6 +86,8 @@ public class DescribeSiteMonitorQuotaResponse extends AcsResponse {
 
 		private String siteMonitorVersion;
 
+		private Boolean secondMonitor;
+
 		public Integer getSiteMonitorIdcQuota() {
 			return this.siteMonitorIdcQuota;
 		}
@@ -124,6 +126,14 @@ public class DescribeSiteMonitorQuotaResponse extends AcsResponse {
 
 		public void setSiteMonitorVersion(String siteMonitorVersion) {
 			this.siteMonitorVersion = siteMonitorVersion;
+		}
+
+		public Boolean getSecondMonitor() {
+			return this.secondMonitor;
+		}
+
+		public void setSecondMonitor(Boolean secondMonitor) {
+			this.secondMonitor = secondMonitor;
 		}
 	}
 

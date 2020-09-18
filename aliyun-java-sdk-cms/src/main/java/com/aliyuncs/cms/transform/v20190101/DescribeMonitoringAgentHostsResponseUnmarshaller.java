@@ -32,6 +32,8 @@ public class DescribeMonitoringAgentHostsResponseUnmarshaller {
 		describeMonitoringAgentHostsResponse.setSuccess(_ctx.booleanValue("DescribeMonitoringAgentHostsResponse.Success"));
 		describeMonitoringAgentHostsResponse.setPageTotal(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageTotal"));
 		describeMonitoringAgentHostsResponse.setTotal(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.Total"));
+		describeMonitoringAgentHostsResponse.setPageSize(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageSize"));
+		describeMonitoringAgentHostsResponse.setPageNumber(_ctx.integerValue("DescribeMonitoringAgentHostsResponse.PageNumber"));
 
 		List<Host> hosts = new ArrayList<Host>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitoringAgentHostsResponse.Hosts.Length"); i++) {

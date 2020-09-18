@@ -34,6 +34,7 @@ public class DescribeSiteMonitorQuotaResponseUnmarshaller {
 		data.setSiteMonitorTaskQuota(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorTaskQuota"));
 		data.setSiteMonitorQuotaTaskUsed(_ctx.integerValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorQuotaTaskUsed"));
 		data.setSiteMonitorVersion(_ctx.stringValue("DescribeSiteMonitorQuotaResponse.Data.SiteMonitorVersion"));
+		data.setSecondMonitor(_ctx.booleanValue("DescribeSiteMonitorQuotaResponse.Data.SecondMonitor"));
 		describeSiteMonitorQuotaResponse.setData(data);
 	 
 	 	return describeSiteMonitorQuotaResponse;

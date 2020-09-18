@@ -25,7 +25,11 @@ import com.aliyuncs.http.MethodType;
 public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupResponse> {
 	   
 
+	private Boolean enableSubscribed;
+
 	private String contactGroupName;
+
+	private Boolean enabledWeeklyReport;
 
 	private String describe;
 
@@ -33,6 +37,17 @@ public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupRespons
 	public PutContactGroupRequest() {
 		super("Cms", "2019-01-01", "PutContactGroup", "cms");
 		setMethod(MethodType.POST);
+	}
+
+	public Boolean getEnableSubscribed() {
+		return this.enableSubscribed;
+	}
+
+	public void setEnableSubscribed(Boolean enableSubscribed) {
+		this.enableSubscribed = enableSubscribed;
+		if(enableSubscribed != null){
+			putQueryParameter("EnableSubscribed", enableSubscribed.toString());
+		}
 	}
 
 	public String getContactGroupName() {
@@ -43,6 +58,17 @@ public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupRespons
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
+		}
+	}
+
+	public Boolean getEnabledWeeklyReport() {
+		return this.enabledWeeklyReport;
+	}
+
+	public void setEnabledWeeklyReport(Boolean enabledWeeklyReport) {
+		this.enabledWeeklyReport = enabledWeeklyReport;
+		if(enabledWeeklyReport != null){
+			putQueryParameter("EnabledWeeklyReport", enabledWeeklyReport.toString());
 		}
 	}
 

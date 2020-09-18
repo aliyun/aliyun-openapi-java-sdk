@@ -34,6 +34,8 @@ public class PutContactRequest extends RpcAcsRequest<PutContactResponse> {
 
 	private String describe;
 
+	private String lang;
+
 	private String channelsSMS;
 	public PutContactRequest() {
 		super("Cms", "2019-01-01", "PutContact", "cms");
@@ -92,6 +94,17 @@ public class PutContactRequest extends RpcAcsRequest<PutContactResponse> {
 		this.describe = describe;
 		if(describe != null){
 			putQueryParameter("Describe", describe);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 

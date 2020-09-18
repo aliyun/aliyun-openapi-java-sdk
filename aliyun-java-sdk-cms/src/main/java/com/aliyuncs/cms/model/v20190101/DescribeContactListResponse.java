@@ -91,6 +91,8 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		private String desc;
 
+		private String lang;
+
 		private Long createTime;
 
 		private Long updateTime;
@@ -115,6 +117,14 @@ public class DescribeContactListResponse extends AcsResponse {
 
 		public void setDesc(String desc) {
 			this.desc = desc;
+		}
+
+		public String getLang() {
+			return this.lang;
+		}
+
+		public void setLang(String lang) {
+			this.lang = lang;
 		}
 
 		public Long getCreateTime() {

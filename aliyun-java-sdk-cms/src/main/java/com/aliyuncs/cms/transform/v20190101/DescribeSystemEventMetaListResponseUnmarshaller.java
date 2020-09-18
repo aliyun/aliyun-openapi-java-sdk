@@ -37,6 +37,7 @@ public class DescribeSystemEventMetaListResponseUnmarshaller {
 			resource.setProduct(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Product"));
 			resource.setName(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Name"));
 			resource.setNameDesc(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].NameDesc"));
+			resource.setNameDescEn(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].NameDesc.En"));
 			resource.setLevel(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Level"));
 			resource.setStatus(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].Status"));
 			resource.setStatusDesc(_ctx.stringValue("DescribeSystemEventMetaListResponse.Data["+ i +"].StatusDesc"));

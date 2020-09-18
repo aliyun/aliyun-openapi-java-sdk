@@ -319,6 +319,8 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				private String times;
 
+				private String preCondition;
+
 				public String getComparisonOperator() {
 					return this.comparisonOperator;
 				}
@@ -349,6 +351,14 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				public void setTimes(String times) {
 					this.times = times;
+				}
+
+				public String getPreCondition() {
+					return this.preCondition;
+				}
+
+				public void setPreCondition(String preCondition) {
+					this.preCondition = preCondition;
 				}
 			}
 
@@ -362,6 +372,8 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				private String times;
 
+				private String preCondition;
+
 				public String getComparisonOperator() {
 					return this.comparisonOperator;
 				}
@@ -392,6 +404,14 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				public void setTimes(String times) {
 					this.times = times;
+				}
+
+				public String getPreCondition() {
+					return this.preCondition;
+				}
+
+				public void setPreCondition(String preCondition) {
+					this.preCondition = preCondition;
 				}
 			}
 
@@ -405,6 +425,8 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				private String times;
 
+				private String preCondition;
+
 				public String getComparisonOperator() {
 					return this.comparisonOperator;
 				}
@@ -435,6 +457,14 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				public void setTimes(String times) {
 					this.times = times;
+				}
+
+				public String getPreCondition() {
+					return this.preCondition;
+				}
+
+				public void setPreCondition(String preCondition) {
+					this.preCondition = preCondition;
 				}
 			}
 		}

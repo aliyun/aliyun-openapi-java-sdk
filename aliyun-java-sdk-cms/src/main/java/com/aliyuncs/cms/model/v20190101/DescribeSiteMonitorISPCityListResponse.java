@@ -101,6 +101,10 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		private String countryzh_CN;
 
+		private String iPV4ProbeCount;
+
+		private String iPV6ProbeCount;
+
 		public String getIsp() {
 			return this.isp;
 		}
@@ -195,6 +199,22 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		public void setCountryzh_CN(String countryzh_CN) {
 			this.countryzh_CN = countryzh_CN;
+		}
+
+		public String getIPV4ProbeCount() {
+			return this.iPV4ProbeCount;
+		}
+
+		public void setIPV4ProbeCount(String iPV4ProbeCount) {
+			this.iPV4ProbeCount = iPV4ProbeCount;
+		}
+
+		public String getIPV6ProbeCount() {
+			return this.iPV6ProbeCount;
+		}
+
+		public void setIPV6ProbeCount(String iPV6ProbeCount) {
+			this.iPV6ProbeCount = iPV6ProbeCount;
 		}
 	}
 

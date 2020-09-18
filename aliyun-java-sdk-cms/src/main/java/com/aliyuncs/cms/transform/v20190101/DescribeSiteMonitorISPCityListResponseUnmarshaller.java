@@ -46,6 +46,8 @@ public class DescribeSiteMonitorISPCityListResponseUnmarshaller {
 			ispCity.setRegionzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Region.zh_CN"));
 			ispCity.setCountryen(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.en"));
 			ispCity.setCountryzh_CN(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].Country.zh_CN"));
+			ispCity.setIPV4ProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPV4ProbeCount"));
+			ispCity.setIPV6ProbeCount(_ctx.stringValue("DescribeSiteMonitorISPCityListResponse.IspCityList["+ i +"].IPV6ProbeCount"));
 
 			ispCityList.add(ispCity);
 		}

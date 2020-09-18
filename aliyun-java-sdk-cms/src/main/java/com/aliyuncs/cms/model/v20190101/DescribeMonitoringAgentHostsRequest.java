@@ -30,13 +30,17 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 
 	private String hostName;
 
-	private String instanceIds;
-
 	private String instanceRegionId;
 
 	private Integer pageSize;
 
+	private Boolean aliyunHost;
+
 	private String keyWord;
+
+	private String instanceIds;
+
+	private String status;
 	public DescribeMonitoringAgentHostsRequest() {
 		super("Cms", "2019-01-01", "DescribeMonitoringAgentHosts", "cms");
 		setMethod(MethodType.POST);
@@ -75,17 +79,6 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 		}
 	}
 
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
-		}
-	}
-
 	public String getInstanceRegionId() {
 		return this.instanceRegionId;
 	}
@@ -108,6 +101,17 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 		}
 	}
 
+	public Boolean getAliyunHost() {
+		return this.aliyunHost;
+	}
+
+	public void setAliyunHost(Boolean aliyunHost) {
+		this.aliyunHost = aliyunHost;
+		if(aliyunHost != null){
+			putQueryParameter("AliyunHost", aliyunHost.toString());
+		}
+	}
+
 	public String getKeyWord() {
 		return this.keyWord;
 	}
@@ -116,6 +120,28 @@ public class DescribeMonitoringAgentHostsRequest extends RpcAcsRequest<DescribeM
 		this.keyWord = keyWord;
 		if(keyWord != null){
 			putQueryParameter("KeyWord", keyWord);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

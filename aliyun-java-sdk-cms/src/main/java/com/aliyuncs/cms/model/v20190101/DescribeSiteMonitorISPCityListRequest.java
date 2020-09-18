@@ -27,6 +27,10 @@ public class DescribeSiteMonitorISPCityListRequest extends RpcAcsRequest<Describ
 	private String city;
 
 	private String isp;
+
+	private Boolean iPV4;
+
+	private Boolean iPV6;
 	public DescribeSiteMonitorISPCityListRequest() {
 		super("Cms", "2019-01-01", "DescribeSiteMonitorISPCityList", "cms");
 		setMethod(MethodType.POST);
@@ -51,6 +55,28 @@ public class DescribeSiteMonitorISPCityListRequest extends RpcAcsRequest<Describ
 		this.isp = isp;
 		if(isp != null){
 			putQueryParameter("Isp", isp);
+		}
+	}
+
+	public Boolean getIPV4() {
+		return this.iPV4;
+	}
+
+	public void setIPV4(Boolean iPV4) {
+		this.iPV4 = iPV4;
+		if(iPV4 != null){
+			putQueryParameter("IPV4", iPV4.toString());
+		}
+	}
+
+	public Boolean getIPV6() {
+		return this.iPV6;
+	}
+
+	public void setIPV6(Boolean iPV6) {
+		this.iPV6 = iPV6;
+		if(iPV6 != null){
+			putQueryParameter("IPV6", iPV6.toString());
 		}
 	}
 
