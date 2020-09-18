@@ -26,7 +26,13 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleResponse> {
 	   
 
+	private String dataFormat;
+
 	private List<URLList> uRLLists;
+
+	private String orgId;
+
+	private String orgName;
 	public DetectLungNoduleRequest() {
 		super("imageprocess", "2020-03-20", "DetectLungNodule", "imageprocess");
 		setMethod(MethodType.POST);
@@ -34,6 +40,17 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataFormat() {
+		return this.dataFormat;
+	}
+
+	public void setDataFormat(String dataFormat) {
+		this.dataFormat = dataFormat;
+		if(dataFormat != null){
+			putBodyParameter("DataFormat", dataFormat);
+		}
 	}
 
 	public List<URLList> getURLLists() {
@@ -47,6 +64,28 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 				putBodyParameter("URLList." + (depth1 + 1) + ".URL" , uRLLists.get(depth1).getURL());
 			}
 		}	
+	}
+
+	public String getOrgId() {
+		return this.orgId;
+	}
+
+	public void setOrgId(String orgId) {
+		this.orgId = orgId;
+		if(orgId != null){
+			putBodyParameter("OrgId", orgId);
+		}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
 	}
 
 	public static class URLList {

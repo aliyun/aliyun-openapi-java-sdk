@@ -37,6 +37,18 @@ public class DetectLungNoduleResponseUnmarshaller {
 			Serie serie = new Serie();
 			serie.setSeriesInstanceUid(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].SeriesInstanceUid"));
 
+			List<Float> origin = new ArrayList<Float>();
+			for (int j = 0; j < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Origin.Length"); j++) {
+				origin.add(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Origin["+ j +"]"));
+			}
+			serie.setOrigin(origin);
+
+			List<Float> spacing = new ArrayList<Float>();
+			for (int j = 0; j < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Spacing.Length"); j++) {
+				spacing.add(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Spacing["+ j +"]"));
+			}
+			serie.setSpacing(spacing);
+
 			List<Element> elements = new ArrayList<Element>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements.Length"); j++) {
 				Element element = new Element();
@@ -48,6 +60,9 @@ public class DetectLungNoduleResponseUnmarshaller {
 				element.setX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].X"));
 				element.setZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Z"));
 				element.setY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Y"));
+				element.setImageX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageX"));
+				element.setImageY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageY"));
+				element.setImageZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageZ"));
 
 				elements.add(element);
 			}

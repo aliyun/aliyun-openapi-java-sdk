@@ -63,6 +63,10 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 			private List<Element> elements;
 
+			private List<Float> origin;
+
+			private List<Float> spacing;
+
 			public String getSeriesInstanceUid() {
 				return this.seriesInstanceUid;
 			}
@@ -77,6 +81,22 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 			public void setElements(List<Element> elements) {
 				this.elements = elements;
+			}
+
+			public List<Float> getOrigin() {
+				return this.origin;
+			}
+
+			public void setOrigin(List<Float> origin) {
+				this.origin = origin;
+			}
+
+			public List<Float> getSpacing() {
+				return this.spacing;
+			}
+
+			public void setSpacing(List<Float> spacing) {
+				this.spacing = spacing;
 			}
 
 			public static class Element {
@@ -96,6 +116,12 @@ public class DetectLungNoduleResponse extends AcsResponse {
 				private Float z;
 
 				private Float y;
+
+				private Float imageX;
+
+				private Float imageY;
+
+				private Float imageZ;
 
 				public String getCategory() {
 					return this.category;
@@ -159,6 +185,30 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 				public void setY(Float y) {
 					this.y = y;
+				}
+
+				public Float getImageX() {
+					return this.imageX;
+				}
+
+				public void setImageX(Float imageX) {
+					this.imageX = imageX;
+				}
+
+				public Float getImageY() {
+					return this.imageY;
+				}
+
+				public void setImageY(Float imageY) {
+					this.imageY = imageY;
+				}
+
+				public Float getImageZ() {
+					return this.imageZ;
+				}
+
+				public void setImageZ(Float imageZ) {
+					this.imageZ = imageZ;
 				}
 			}
 		}

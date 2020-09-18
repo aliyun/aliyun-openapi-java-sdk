@@ -28,6 +28,10 @@ public class DetectKneeXRayRequest extends RpcAcsRequest<DetectKneeXRayResponse>
 	private String dataFormat;
 
 	private String url;
+
+	private String orgId;
+
+	private String orgName;
 	public DetectKneeXRayRequest() {
 		super("imageprocess", "2020-03-20", "DetectKneeXRay", "imageprocess");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class DetectKneeXRayRequest extends RpcAcsRequest<DetectKneeXRayResponse>
 		this.url = url;
 		if(url != null){
 			putBodyParameter("Url", url);
+		}
+	}
+
+	public String getOrgId() {
+		return this.orgId;
+	}
+
+	public void setOrgId(String orgId) {
+		this.orgId = orgId;
+		if(orgId != null){
+			putBodyParameter("OrgId", orgId);
+		}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
 		}
 	}
 
