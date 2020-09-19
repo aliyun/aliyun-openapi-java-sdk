@@ -66,6 +66,8 @@ public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse>
 	private Integer port;
 
 	private String vpcId;
+
+	private Boolean skipTest;
 	public UpdateInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise");
 		setMethod(MethodType.POST);
@@ -303,6 +305,17 @@ public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse>
 		this.vpcId = vpcId;
 		if(vpcId != null){
 			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public Boolean getSkipTest() {
+		return this.skipTest;
+	}
+
+	public void setSkipTest(Boolean skipTest) {
+		this.skipTest = skipTest;
+		if(skipTest != null){
+			putQueryParameter("SkipTest", skipTest.toString());
 		}
 	}
 

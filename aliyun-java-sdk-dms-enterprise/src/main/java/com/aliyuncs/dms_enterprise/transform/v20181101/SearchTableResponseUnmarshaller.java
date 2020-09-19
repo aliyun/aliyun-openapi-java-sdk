@@ -44,6 +44,10 @@ public class SearchTableResponseUnmarshaller {
 			searchTable.setLogic(_ctx.booleanValue("SearchTableResponse.SearchTableList["+ i +"].Logic"));
 			searchTable.setEnvType(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].EnvType"));
 			searchTable.setDBSearchName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DBSearchName"));
+			searchTable.setDbType(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DbType"));
+			searchTable.setDescription(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].Description"));
+			searchTable.setDbName(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].DbName"));
+			searchTable.setTableGuid(_ctx.stringValue("SearchTableResponse.SearchTableList["+ i +"].TableGuid"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchTableResponse.SearchTableList["+ i +"].OwnerIdList.Length"); j++) {

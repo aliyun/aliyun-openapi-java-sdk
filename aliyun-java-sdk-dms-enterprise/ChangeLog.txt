@@ -1,3 +1,7 @@
+2020-09-19 Version: 1.10.0
+- Support query user tenant list and current active tenant.
+- Support query table meta information via table GUID.
+
 2020-09-11 Version: 1.9.0
 - Support execute database script via open api.
 

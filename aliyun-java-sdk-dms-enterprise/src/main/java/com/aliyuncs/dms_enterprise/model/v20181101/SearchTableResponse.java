@@ -105,6 +105,14 @@ public class SearchTableResponse extends AcsResponse {
 
 		private String dBSearchName;
 
+		private String dbType;
+
+		private String description;
+
+		private String dbName;
+
+		private String tableGuid;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -179,6 +187,38 @@ public class SearchTableResponse extends AcsResponse {
 
 		public void setDBSearchName(String dBSearchName) {
 			this.dBSearchName = dBSearchName;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public String getTableGuid() {
+			return this.tableGuid;
+		}
+
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
 		}
 
 		public List<String> getOwnerIdList() {

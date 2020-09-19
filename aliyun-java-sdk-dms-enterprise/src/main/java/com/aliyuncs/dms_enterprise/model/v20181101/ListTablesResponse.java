@@ -105,6 +105,10 @@ public class ListTablesResponse extends AcsResponse {
 
 		private Long storeCapacity;
 
+		private String tableGuid;
+
+		private String description;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -179,6 +183,22 @@ public class ListTablesResponse extends AcsResponse {
 
 		public void setStoreCapacity(Long storeCapacity) {
 			this.storeCapacity = storeCapacity;
+		}
+
+		public String getTableGuid() {
+			return this.tableGuid;
+		}
+
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public List<String> getOwnerIdList() {

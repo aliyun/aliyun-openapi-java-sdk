@@ -27,6 +27,8 @@ public class ListLogicTablesRequest extends RpcAcsRequest<ListLogicTablesRespons
 
 	private String searchName;
 
+	private Boolean returnGuid;
+
 	private Integer pageSize;
 
 	private String databaseId;
@@ -51,6 +53,17 @@ public class ListLogicTablesRequest extends RpcAcsRequest<ListLogicTablesRespons
 		this.searchName = searchName;
 		if(searchName != null){
 			putQueryParameter("SearchName", searchName);
+		}
+	}
+
+	public Boolean getReturnGuid() {
+		return this.returnGuid;
+	}
+
+	public void setReturnGuid(Boolean returnGuid) {
+		this.returnGuid = returnGuid;
+		if(returnGuid != null){
+			putQueryParameter("ReturnGuid", returnGuid.toString());
 		}
 	}
 

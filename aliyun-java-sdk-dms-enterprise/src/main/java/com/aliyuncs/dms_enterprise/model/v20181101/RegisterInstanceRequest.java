@@ -65,6 +65,8 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private Long dbaUid;
 
+	private Boolean skipTest;
+
 	private String safeRule;
 	public RegisterInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "RegisterInstance", "dmsenterprise");
@@ -292,6 +294,17 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 		this.dbaUid = dbaUid;
 		if(dbaUid != null){
 			putQueryParameter("DbaUid", dbaUid.toString());
+		}
+	}
+
+	public Boolean getSkipTest() {
+		return this.skipTest;
+	}
+
+	public void setSkipTest(Boolean skipTest) {
+		this.skipTest = skipTest;
+		if(skipTest != null){
+			putQueryParameter("SkipTest", skipTest.toString());
 		}
 	}
 

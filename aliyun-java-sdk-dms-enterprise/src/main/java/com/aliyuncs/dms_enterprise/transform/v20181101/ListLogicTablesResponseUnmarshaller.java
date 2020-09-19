@@ -41,6 +41,8 @@ public class ListLogicTablesResponseUnmarshaller {
 			logicTable.setLogic(_ctx.booleanValue("ListLogicTablesResponse.LogicTableList["+ i +"].Logic"));
 			logicTable.setTableExpr(_ctx.stringValue("ListLogicTablesResponse.LogicTableList["+ i +"].TableExpr"));
 			logicTable.setTableCount(_ctx.stringValue("ListLogicTablesResponse.LogicTableList["+ i +"].TableCount"));
+			logicTable.setTableGuid(_ctx.stringValue("ListLogicTablesResponse.LogicTableList["+ i +"].TableGuid"));
+			logicTable.setSchemaName(_ctx.stringValue("ListLogicTablesResponse.LogicTableList["+ i +"].SchemaName"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListLogicTablesResponse.LogicTableList["+ i +"].OwnerIdList.Length"); j++) {

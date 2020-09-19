@@ -99,6 +99,10 @@ public class ListLogicTablesResponse extends AcsResponse {
 
 		private String tableCount;
 
+		private String tableGuid;
+
+		private String schemaName;
+
 		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
@@ -149,6 +153,22 @@ public class ListLogicTablesResponse extends AcsResponse {
 
 		public void setTableCount(String tableCount) {
 			this.tableCount = tableCount;
+		}
+
+		public String getTableGuid() {
+			return this.tableGuid;
+		}
+
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 
 		public List<String> getOwnerIdList() {

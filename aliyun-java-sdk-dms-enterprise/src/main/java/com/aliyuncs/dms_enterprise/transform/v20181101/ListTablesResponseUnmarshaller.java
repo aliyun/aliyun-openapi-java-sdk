@@ -44,6 +44,8 @@ public class ListTablesResponseUnmarshaller {
 			table.setTableType(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableType"));
 			table.setNumRows(_ctx.longValue("ListTablesResponse.TableList["+ i +"].NumRows"));
 			table.setStoreCapacity(_ctx.longValue("ListTablesResponse.TableList["+ i +"].StoreCapacity"));
+			table.setTableGuid(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].TableGuid"));
+			table.setDescription(_ctx.stringValue("ListTablesResponse.TableList["+ i +"].Description"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListTablesResponse.TableList["+ i +"].OwnerIdList.Length"); j++) {
