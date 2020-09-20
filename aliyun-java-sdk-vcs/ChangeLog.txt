@@ -1,6 +1,9 @@
 2020-09-20 Version: 1.2.9
 - Add describe devices to return device status.
 
+2020-09-20 Version: 1.2.9
+- Add describe devices to return device status.
+
 2020-09-15 Version: 1.2.9
 - Add describe devices to return device status.
 
