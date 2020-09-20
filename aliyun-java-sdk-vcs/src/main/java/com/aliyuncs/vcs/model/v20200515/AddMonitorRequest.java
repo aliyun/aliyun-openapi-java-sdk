@@ -31,7 +31,17 @@ public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 
 	private String description;
 
+	private String notifierAppSecret;
+
+	private String notifierExtendValues;
+
+	private String notifierUrl;
+
+	private String notifierType;
+
 	private Integer batchIndicator;
+
+	private Integer notifierTimeOut;
 
 	private String algorithmVendor;
 	public AddMonitorRequest() {
@@ -76,6 +86,50 @@ public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 		}
 	}
 
+	public String getNotifierAppSecret() {
+		return this.notifierAppSecret;
+	}
+
+	public void setNotifierAppSecret(String notifierAppSecret) {
+		this.notifierAppSecret = notifierAppSecret;
+		if(notifierAppSecret != null){
+			putBodyParameter("NotifierAppSecret", notifierAppSecret);
+		}
+	}
+
+	public String getNotifierExtendValues() {
+		return this.notifierExtendValues;
+	}
+
+	public void setNotifierExtendValues(String notifierExtendValues) {
+		this.notifierExtendValues = notifierExtendValues;
+		if(notifierExtendValues != null){
+			putBodyParameter("NotifierExtendValues", notifierExtendValues);
+		}
+	}
+
+	public String getNotifierUrl() {
+		return this.notifierUrl;
+	}
+
+	public void setNotifierUrl(String notifierUrl) {
+		this.notifierUrl = notifierUrl;
+		if(notifierUrl != null){
+			putBodyParameter("NotifierUrl", notifierUrl);
+		}
+	}
+
+	public String getNotifierType() {
+		return this.notifierType;
+	}
+
+	public void setNotifierType(String notifierType) {
+		this.notifierType = notifierType;
+		if(notifierType != null){
+			putBodyParameter("NotifierType", notifierType);
+		}
+	}
+
 	public Integer getBatchIndicator() {
 		return this.batchIndicator;
 	}
@@ -84,6 +138,17 @@ public class AddMonitorRequest extends RpcAcsRequest<AddMonitorResponse> {
 		this.batchIndicator = batchIndicator;
 		if(batchIndicator != null){
 			putBodyParameter("BatchIndicator", batchIndicator.toString());
+		}
+	}
+
+	public Integer getNotifierTimeOut() {
+		return this.notifierTimeOut;
+	}
+
+	public void setNotifierTimeOut(Integer notifierTimeOut) {
+		this.notifierTimeOut = notifierTimeOut;
+		if(notifierTimeOut != null){
+			putBodyParameter("NotifierTimeOut", notifierTimeOut.toString());
 		}
 	}
 

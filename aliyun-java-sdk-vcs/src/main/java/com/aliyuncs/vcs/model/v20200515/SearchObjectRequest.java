@@ -27,27 +27,25 @@ import com.aliyuncs.vcs.Endpoint;
 public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 	   
 
+	private String algorithmType;
+
 	private String corpId;
+
+	private Long endTime;
 
 	private Long startTime;
 
 	private Integer pageNumber;
-
-	private String picContent;
-
-	private Integer pageSize;
-
-	private String objectType;
-
-	private String algorithmType;
-
-	private Long endTime;
 
 	private List<Object> deviceList;
 
 	private String picUrl;
 
 	private String imagePath;
+
+	private Integer pageSize;
+
+	private String objectType;
 
 	private String conditions;
 	public SearchObjectRequest() {
@@ -59,6 +57,17 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getAlgorithmType() {
+		return this.algorithmType;
+	}
+
+	public void setAlgorithmType(String algorithmType) {
+		this.algorithmType = algorithmType;
+		if(algorithmType != null){
+			putBodyParameter("AlgorithmType", algorithmType);
+		}
+	}
+
 	public String getCorpId() {
 		return this.corpId;
 	}
@@ -67,6 +76,17 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -89,61 +109,6 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putBodyParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getPicContent() {
-		return this.picContent;
-	}
-
-	public void setPicContent(String picContent) {
-		this.picContent = picContent;
-		if(picContent != null){
-			putBodyParameter("PicContent", picContent);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getObjectType() {
-		return this.objectType;
-	}
-
-	public void setObjectType(String objectType) {
-		this.objectType = objectType;
-		if(objectType != null){
-			putBodyParameter("ObjectType", objectType);
-		}
-	}
-
-	public String getAlgorithmType() {
-		return this.algorithmType;
-	}
-
-	public void setAlgorithmType(String algorithmType) {
-		this.algorithmType = algorithmType;
-		if(algorithmType != null){
-			putBodyParameter("AlgorithmType", algorithmType);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putBodyParameter("EndTime", endTime.toString());
 		}
 	}
 
@@ -177,6 +142,28 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 		this.imagePath = imagePath;
 		if(imagePath != null){
 			putBodyParameter("ImagePath", imagePath);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getObjectType() {
+		return this.objectType;
+	}
+
+	public void setObjectType(String objectType) {
+		this.objectType = objectType;
+		if(objectType != null){
+			putBodyParameter("ObjectType", objectType);
 		}
 	}
 

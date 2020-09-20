@@ -33,6 +33,8 @@ public class UpdateCorpRequest extends RpcAcsRequest<UpdateCorpResponse> {
 
 	private String description;
 
+	private String iconPath;
+
 	private String appName;
 
 	private String corpName;
@@ -86,6 +88,17 @@ public class UpdateCorpRequest extends RpcAcsRequest<UpdateCorpResponse> {
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getIconPath() {
+		return this.iconPath;
+	}
+
+	public void setIconPath(String iconPath) {
+		this.iconPath = iconPath;
+		if(iconPath != null){
+			putBodyParameter("IconPath", iconPath);
 		}
 	}
 

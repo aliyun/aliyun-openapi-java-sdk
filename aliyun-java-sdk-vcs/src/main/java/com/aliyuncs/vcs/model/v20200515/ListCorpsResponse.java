@@ -135,6 +135,10 @@ public class ListCorpsResponse extends AcsResponse {
 
 			private String isvSubId;
 
+			private Integer acuUsed;
+
+			private String iconPath;
+
 			public String getCorpId() {
 				return this.corpId;
 			}
@@ -197,6 +201,22 @@ public class ListCorpsResponse extends AcsResponse {
 
 			public void setIsvSubId(String isvSubId) {
 				this.isvSubId = isvSubId;
+			}
+
+			public Integer getAcuUsed() {
+				return this.acuUsed;
+			}
+
+			public void setAcuUsed(Integer acuUsed) {
+				this.acuUsed = acuUsed;
+			}
+
+			public String getIconPath() {
+				return this.iconPath;
+			}
+
+			public void setIconPath(String iconPath) {
+				this.iconPath = iconPath;
 			}
 		}
 	}

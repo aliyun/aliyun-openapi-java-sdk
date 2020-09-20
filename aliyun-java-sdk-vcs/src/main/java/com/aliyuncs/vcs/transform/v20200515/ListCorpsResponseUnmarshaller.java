@@ -48,6 +48,8 @@ public class ListCorpsResponseUnmarshaller {
 			record.setAppName(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].AppName"));
 			record.setDeviceCount(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].DeviceCount"));
 			record.setIsvSubId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].IsvSubId"));
+			record.setAcuUsed(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].AcuUsed"));
+			record.setIconPath(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].IconPath"));
 
 			records.add(record);
 		}

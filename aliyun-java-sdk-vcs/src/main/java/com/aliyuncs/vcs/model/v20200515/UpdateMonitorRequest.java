@@ -39,6 +39,8 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 
 	private String ruleExpression;
 
+	private Integer notifierTimeOut;
+
 	private String taskId;
 
 	private String deviceOperateType;
@@ -47,7 +49,15 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 
 	private String attributeValueList;
 
+	private String notifierAppSecret;
+
+	private String notifierExtendValues;
+
 	private String deviceList;
+
+	private String notifierUrl;
+
+	private String notifierType;
 
 	private String algorithmVendor;
 	public UpdateMonitorRequest() {
@@ -136,6 +146,17 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		}
 	}
 
+	public Integer getNotifierTimeOut() {
+		return this.notifierTimeOut;
+	}
+
+	public void setNotifierTimeOut(Integer notifierTimeOut) {
+		this.notifierTimeOut = notifierTimeOut;
+		if(notifierTimeOut != null){
+			putBodyParameter("NotifierTimeOut", notifierTimeOut.toString());
+		}
+	}
+
 	public String getTaskId() {
 		return this.taskId;
 	}
@@ -180,6 +201,28 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		}
 	}
 
+	public String getNotifierAppSecret() {
+		return this.notifierAppSecret;
+	}
+
+	public void setNotifierAppSecret(String notifierAppSecret) {
+		this.notifierAppSecret = notifierAppSecret;
+		if(notifierAppSecret != null){
+			putBodyParameter("NotifierAppSecret", notifierAppSecret);
+		}
+	}
+
+	public String getNotifierExtendValues() {
+		return this.notifierExtendValues;
+	}
+
+	public void setNotifierExtendValues(String notifierExtendValues) {
+		this.notifierExtendValues = notifierExtendValues;
+		if(notifierExtendValues != null){
+			putBodyParameter("NotifierExtendValues", notifierExtendValues);
+		}
+	}
+
 	public String getDeviceList() {
 		return this.deviceList;
 	}
@@ -188,6 +231,28 @@ public class UpdateMonitorRequest extends RpcAcsRequest<UpdateMonitorResponse> {
 		this.deviceList = deviceList;
 		if(deviceList != null){
 			putBodyParameter("DeviceList", deviceList);
+		}
+	}
+
+	public String getNotifierUrl() {
+		return this.notifierUrl;
+	}
+
+	public void setNotifierUrl(String notifierUrl) {
+		this.notifierUrl = notifierUrl;
+		if(notifierUrl != null){
+			putBodyParameter("NotifierUrl", notifierUrl);
+		}
+	}
+
+	public String getNotifierType() {
+		return this.notifierType;
+	}
+
+	public void setNotifierType(String notifierType) {
+		this.notifierType = notifierType;
+		if(notifierType != null){
+			putBodyParameter("NotifierType", notifierType);
 		}
 	}
 

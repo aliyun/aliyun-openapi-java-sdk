@@ -33,6 +33,8 @@ public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 
 	private String description;
 
+	private String iconPath;
+
 	private String appName;
 
 	private String corpName;
@@ -86,6 +88,17 @@ public class CreateCorpRequest extends RpcAcsRequest<CreateCorpResponse> {
 		this.description = description;
 		if(description != null){
 			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getIconPath() {
+		return this.iconPath;
+	}
+
+	public void setIconPath(String iconPath) {
+		this.iconPath = iconPath;
+		if(iconPath != null){
+			putBodyParameter("IconPath", iconPath);
 		}
 	}
 
