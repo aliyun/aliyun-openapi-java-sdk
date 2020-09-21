@@ -29,6 +29,7 @@ public class TranslateECommerceResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setTranslated(_ctx.stringValue("TranslateECommerceResponse.Data.Translated"));
+		data.setWordCount(_ctx.stringValue("TranslateECommerceResponse.Data.WordCount"));
 		translateECommerceResponse.setData(data);
 	 
 	 	return translateECommerceResponse;

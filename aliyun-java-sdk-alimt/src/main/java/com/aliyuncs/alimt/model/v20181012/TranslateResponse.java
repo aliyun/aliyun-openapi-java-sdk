@@ -68,12 +68,22 @@ public class TranslateResponse extends AcsResponse {
 
 		private String translated;
 
+		private String wordCount;
+
 		public String getTranslated() {
 			return this.translated;
 		}
 
 		public void setTranslated(String translated) {
 			this.translated = translated;
+		}
+
+		public String getWordCount() {
+			return this.wordCount;
+		}
+
+		public void setWordCount(String wordCount) {
+			this.wordCount = wordCount;
 		}
 	}
 

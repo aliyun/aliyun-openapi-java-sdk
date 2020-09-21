@@ -1,3 +1,6 @@
+2020-09-21 Version: 3.0.24
+- Interface add column wordCount.
+
 2020-09-17 Version: 3.0.23
 - GetTitleIntelligence add interface.
 

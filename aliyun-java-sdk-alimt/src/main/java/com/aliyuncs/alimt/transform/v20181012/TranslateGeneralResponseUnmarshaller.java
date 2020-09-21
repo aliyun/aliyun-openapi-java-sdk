@@ -29,6 +29,7 @@ public class TranslateGeneralResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setTranslated(_ctx.stringValue("TranslateGeneralResponse.Data.Translated"));
+		data.setWordCount(_ctx.stringValue("TranslateGeneralResponse.Data.WordCount"));
 		translateGeneralResponse.setData(data);
 	 
 	 	return translateGeneralResponse;
