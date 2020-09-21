@@ -84,6 +84,7 @@ public class DescribeVirtualBorderRoutersResponseUnmarshaller {
 				associatedPhysicalConnection.setPeerIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PeerIpv6GatewayIp"));
 				associatedPhysicalConnection.setPeeringIpv6SubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PeeringIpv6SubnetMask"));
 				associatedPhysicalConnection.setStatus(_ctx.stringValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].Status"));
+				associatedPhysicalConnection.setEnableIpv6(_ctx.booleanValue("DescribeVirtualBorderRoutersResponse.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].EnableIpv6"));
 
 				associatedPhysicalConnections.add(associatedPhysicalConnection);
 			}

@@ -31,6 +31,10 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private String iSP;
 
+	private Long serviceUid;
+
+	private String description;
+
 	private String resourceGroupId;
 
 	private String netmode;
@@ -52,6 +56,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	private Long activityId;
 
 	private String internetChargeType;
+
+	private String name;
 
 	private String pricingCycle;
 	public AllocateEipAddressRequest() {
@@ -93,6 +99,28 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.iSP = iSP;
 		if(iSP != null){
 			putQueryParameter("ISP", iSP);
+		}
+	}
+
+	public Long getServiceUid() {
+		return this.serviceUid;
+	}
+
+	public void setServiceUid(Long serviceUid) {
+		this.serviceUid = serviceUid;
+		if(serviceUid != null){
+			putQueryParameter("ServiceUid", serviceUid.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
@@ -214,6 +242,17 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

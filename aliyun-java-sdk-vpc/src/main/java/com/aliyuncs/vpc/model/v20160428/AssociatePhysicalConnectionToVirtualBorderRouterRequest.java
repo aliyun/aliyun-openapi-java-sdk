@@ -33,13 +33,19 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 
 	private String clientToken;
 
+	private String enableIpv6;
+
 	private String vbrId;
 
 	private String peerGatewayIp;
 
+	private String peerIpv6GatewayIp;
+
 	private String peeringSubnetMask;
 
 	private String localGatewayIp;
+
+	private String peeringIpv6SubnetMask;
 
 	private String resourceOwnerAccount;
 
@@ -48,6 +54,8 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 	private Long ownerId;
 
 	private String physicalConnectionId;
+
+	private String localIpv6GatewayIp;
 	public AssociatePhysicalConnectionToVirtualBorderRouterRequest() {
 		super("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "vpc");
 		setMethod(MethodType.POST);
@@ -101,6 +109,17 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		}
 	}
 
+	public String getEnableIpv6() {
+		return this.enableIpv6;
+	}
+
+	public void setEnableIpv6(String enableIpv6) {
+		this.enableIpv6 = enableIpv6;
+		if(enableIpv6 != null){
+			putQueryParameter("EnableIpv6", enableIpv6);
+		}
+	}
+
 	public String getVbrId() {
 		return this.vbrId;
 	}
@@ -123,6 +142,17 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		}
 	}
 
+	public String getPeerIpv6GatewayIp() {
+		return this.peerIpv6GatewayIp;
+	}
+
+	public void setPeerIpv6GatewayIp(String peerIpv6GatewayIp) {
+		this.peerIpv6GatewayIp = peerIpv6GatewayIp;
+		if(peerIpv6GatewayIp != null){
+			putQueryParameter("PeerIpv6GatewayIp", peerIpv6GatewayIp);
+		}
+	}
+
 	public String getPeeringSubnetMask() {
 		return this.peeringSubnetMask;
 	}
@@ -142,6 +172,17 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		this.localGatewayIp = localGatewayIp;
 		if(localGatewayIp != null){
 			putQueryParameter("LocalGatewayIp", localGatewayIp);
+		}
+	}
+
+	public String getPeeringIpv6SubnetMask() {
+		return this.peeringIpv6SubnetMask;
+	}
+
+	public void setPeeringIpv6SubnetMask(String peeringIpv6SubnetMask) {
+		this.peeringIpv6SubnetMask = peeringIpv6SubnetMask;
+		if(peeringIpv6SubnetMask != null){
+			putQueryParameter("PeeringIpv6SubnetMask", peeringIpv6SubnetMask);
 		}
 	}
 
@@ -186,6 +227,17 @@ public class AssociatePhysicalConnectionToVirtualBorderRouterRequest extends Rpc
 		this.physicalConnectionId = physicalConnectionId;
 		if(physicalConnectionId != null){
 			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
+	public String getLocalIpv6GatewayIp() {
+		return this.localIpv6GatewayIp;
+	}
+
+	public void setLocalIpv6GatewayIp(String localIpv6GatewayIp) {
+		this.localIpv6GatewayIp = localIpv6GatewayIp;
+		if(localIpv6GatewayIp != null){
+			putQueryParameter("LocalIpv6GatewayIp", localIpv6GatewayIp);
 		}
 	}
 

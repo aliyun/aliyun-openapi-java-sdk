@@ -22,32 +22,28 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipSegmentAddressResponse> {
+public class UpdateNatGatewayNatTypeRequest extends RpcAcsRequest<UpdateNatGatewayNatTypeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String isp;
+	private String natType;
 
-	private String resourceGroupId;
+	private String natGatewayId;
 
-	private String netmode;
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
-	private String bandwidth;
-
 	private String ownerAccount;
-
-	private String eipMask;
 
 	private Long ownerId;
 
-	private String internetChargeType;
-	public AllocateEipSegmentAddressRequest() {
-		super("Vpc", "2016-04-28", "AllocateEipSegmentAddress", "vpc");
+	private String vSwitchId;
+	public UpdateNatGatewayNatTypeRequest() {
+		super("Vpc", "2016-04-28", "UpdateNatGatewayNatType", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,36 +73,36 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getIsp() {
-		return this.isp;
+	public String getNatType() {
+		return this.natType;
 	}
 
-	public void setIsp(String isp) {
-		this.isp = isp;
-		if(isp != null){
-			putQueryParameter("Isp", isp);
+	public void setNatType(String natType) {
+		this.natType = natType;
+		if(natType != null){
+			putQueryParameter("NatType", natType);
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getNatGatewayId() {
+		return this.natGatewayId;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 
-	public String getNetmode() {
-		return this.netmode;
+	public Boolean getDryRun() {
+		return this.dryRun;
 	}
 
-	public void setNetmode(String netmode) {
-		this.netmode = netmode;
-		if(netmode != null){
-			putQueryParameter("Netmode", netmode);
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -121,17 +117,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -140,17 +125,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEipMask() {
-		return this.eipMask;
-	}
-
-	public void setEipMask(String eipMask) {
-		this.eipMask = eipMask;
-		if(eipMask != null){
-			putQueryParameter("EipMask", eipMask);
 		}
 	}
 
@@ -165,20 +139,20 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
+	public String getVSwitchId() {
+		return this.vSwitchId;
 	}
 
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
 	@Override
-	public Class<AllocateEipSegmentAddressResponse> getResponseClass() {
-		return AllocateEipSegmentAddressResponse.class;
+	public Class<UpdateNatGatewayNatTypeResponse> getResponseClass() {
+		return UpdateNatGatewayNatTypeResponse.class;
 	}
 
 }

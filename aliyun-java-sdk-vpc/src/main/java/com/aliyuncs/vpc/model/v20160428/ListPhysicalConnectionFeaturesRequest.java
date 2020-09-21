@@ -22,32 +22,22 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipSegmentAddressResponse> {
+public class ListPhysicalConnectionFeaturesRequest extends RpcAcsRequest<ListPhysicalConnectionFeaturesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String isp;
-
-	private String resourceGroupId;
-
-	private String netmode;
-
 	private String resourceOwnerAccount;
-
-	private String bandwidth;
 
 	private String ownerAccount;
 
-	private String eipMask;
-
 	private Long ownerId;
 
-	private String internetChargeType;
-	public AllocateEipSegmentAddressRequest() {
-		super("Vpc", "2016-04-28", "AllocateEipSegmentAddress", "vpc");
+	private String physicalConnectionId;
+	public ListPhysicalConnectionFeaturesRequest() {
+		super("Vpc", "2016-04-28", "ListPhysicalConnectionFeatures", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -77,39 +67,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getIsp() {
-		return this.isp;
-	}
-
-	public void setIsp(String isp) {
-		this.isp = isp;
-		if(isp != null){
-			putQueryParameter("Isp", isp);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getNetmode() {
-		return this.netmode;
-	}
-
-	public void setNetmode(String netmode) {
-		this.netmode = netmode;
-		if(netmode != null){
-			putQueryParameter("Netmode", netmode);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -118,17 +75,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -143,17 +89,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getEipMask() {
-		return this.eipMask;
-	}
-
-	public void setEipMask(String eipMask) {
-		this.eipMask = eipMask;
-		if(eipMask != null){
-			putQueryParameter("EipMask", eipMask);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -165,20 +100,20 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
 	}
 
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
 		}
 	}
 
 	@Override
-	public Class<AllocateEipSegmentAddressResponse> getResponseClass() {
-		return AllocateEipSegmentAddressResponse.class;
+	public Class<ListPhysicalConnectionFeaturesResponse> getResponseClass() {
+		return ListPhysicalConnectionFeaturesResponse.class;
 	}
 
 }

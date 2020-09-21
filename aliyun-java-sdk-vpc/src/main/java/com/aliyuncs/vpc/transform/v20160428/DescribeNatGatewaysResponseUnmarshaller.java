@@ -52,6 +52,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGateway.setInternetChargeType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].InternetChargeType"));
 			natGateway.setResourceGroupId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ResourceGroupId"));
 			natGateway.setDeletionProtection(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].DeletionProtection"));
+			natGateway.setEcsMetricEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].EcsMetricEnabled"));
 
 			List<String> forwardTableIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {

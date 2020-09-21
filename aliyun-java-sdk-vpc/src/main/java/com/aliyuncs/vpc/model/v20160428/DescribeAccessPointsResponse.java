@@ -93,6 +93,8 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		private String description;
 
+		private List<AccessPointFeatureModel> accessPointFeatureModels;
+
 		public String getAccessPointId() {
 			return this.accessPointId;
 		}
@@ -155,6 +157,37 @@ public class DescribeAccessPointsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public List<AccessPointFeatureModel> getAccessPointFeatureModels() {
+			return this.accessPointFeatureModels;
+		}
+
+		public void setAccessPointFeatureModels(List<AccessPointFeatureModel> accessPointFeatureModels) {
+			this.accessPointFeatureModels = accessPointFeatureModels;
+		}
+
+		public static class AccessPointFeatureModel {
+
+			private String featureKey;
+
+			private String featureValue;
+
+			public String getFeatureKey() {
+				return this.featureKey;
+			}
+
+			public void setFeatureKey(String featureKey) {
+				this.featureKey = featureKey;
+			}
+
+			public String getFeatureValue() {
+				return this.featureValue;
+			}
+
+			public void setFeatureValue(String featureValue) {
+				this.featureValue = featureValue;
+			}
 		}
 	}
 

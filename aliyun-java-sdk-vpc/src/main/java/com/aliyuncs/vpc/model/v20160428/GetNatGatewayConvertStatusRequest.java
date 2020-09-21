@@ -22,32 +22,20 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipSegmentAddressResponse> {
+public class GetNatGatewayConvertStatusRequest extends RpcAcsRequest<GetNatGatewayConvertStatusResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String isp;
-
-	private String resourceGroupId;
-
-	private String netmode;
+	private String natGatewayId;
 
 	private String resourceOwnerAccount;
 
-	private String bandwidth;
-
 	private String ownerAccount;
 
-	private String eipMask;
-
 	private Long ownerId;
-
-	private String internetChargeType;
-	public AllocateEipSegmentAddressRequest() {
-		super("Vpc", "2016-04-28", "AllocateEipSegmentAddress", "vpc");
+	public GetNatGatewayConvertStatusRequest() {
+		super("Vpc", "2016-04-28", "GetNatGatewayConvertStatus", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,47 +54,14 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getNatGatewayId() {
+		return this.natGatewayId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getIsp() {
-		return this.isp;
-	}
-
-	public void setIsp(String isp) {
-		this.isp = isp;
-		if(isp != null){
-			putQueryParameter("Isp", isp);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getNetmode() {
-		return this.netmode;
-	}
-
-	public void setNetmode(String netmode) {
-		this.netmode = netmode;
-		if(netmode != null){
-			putQueryParameter("Netmode", netmode);
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 
@@ -121,17 +76,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
-		}
-	}
-
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -140,17 +84,6 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEipMask() {
-		return this.eipMask;
-	}
-
-	public void setEipMask(String eipMask) {
-		this.eipMask = eipMask;
-		if(eipMask != null){
-			putQueryParameter("EipMask", eipMask);
 		}
 	}
 
@@ -165,20 +98,9 @@ public class AllocateEipSegmentAddressRequest extends RpcAcsRequest<AllocateEipS
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
 	@Override
-	public Class<AllocateEipSegmentAddressResponse> getResponseClass() {
-		return AllocateEipSegmentAddressResponse.class;
+	public Class<GetNatGatewayConvertStatusResponse> getResponseClass() {
+		return GetNatGatewayConvertStatusResponse.class;
 	}
 
 }

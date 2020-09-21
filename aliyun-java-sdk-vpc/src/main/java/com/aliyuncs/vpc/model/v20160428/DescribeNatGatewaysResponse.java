@@ -109,6 +109,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		private Boolean deletionProtection;
 
+		private Boolean ecsMetricEnabled;
+
 		private List<IpList> ipLists;
 
 		private List<String> forwardTableIds;
@@ -245,6 +247,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 		public void setDeletionProtection(Boolean deletionProtection) {
 			this.deletionProtection = deletionProtection;
+		}
+
+		public Boolean getEcsMetricEnabled() {
+			return this.ecsMetricEnabled;
+		}
+
+		public void setEcsMetricEnabled(Boolean ecsMetricEnabled) {
+			this.ecsMetricEnabled = ecsMetricEnabled;
 		}
 
 		public List<IpList> getIpLists() {

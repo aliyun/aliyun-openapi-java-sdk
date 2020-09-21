@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsResponse.AccessPointType;
+import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsResponse.AccessPointType.AccessPointFeatureModel;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,6 +43,16 @@ public class DescribeAccessPointsResponseUnmarshaller {
 			accessPointType.setHostOperator(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].HostOperator"));
 			accessPointType.setName(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Name"));
 			accessPointType.setDescription(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].Description"));
+
+			List<AccessPointFeatureModel> accessPointFeatureModels = new ArrayList<AccessPointFeatureModel>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].AccessPointFeatureModels.Length"); j++) {
+				AccessPointFeatureModel accessPointFeatureModel = new AccessPointFeatureModel();
+				accessPointFeatureModel.setFeatureKey(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].AccessPointFeatureModels["+ j +"].FeatureKey"));
+				accessPointFeatureModel.setFeatureValue(_ctx.stringValue("DescribeAccessPointsResponse.AccessPointSet["+ i +"].AccessPointFeatureModels["+ j +"].FeatureValue"));
+
+				accessPointFeatureModels.add(accessPointFeatureModel);
+			}
+			accessPointType.setAccessPointFeatureModels(accessPointFeatureModels);
 
 			accessPointSet.add(accessPointType);
 		}

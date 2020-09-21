@@ -427,6 +427,8 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 			private String status;
 
+			private Boolean enableIpv6;
+
 			public String getCircuitCode() {
 				return this.circuitCode;
 			}
@@ -537,6 +539,14 @@ public class DescribeVirtualBorderRoutersResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
+			}
+
+			public Boolean getEnableIpv6() {
+				return this.enableIpv6;
+			}
+
+			public void setEnableIpv6(Boolean enableIpv6) {
+				this.enableIpv6 = enableIpv6;
 			}
 		}
 
