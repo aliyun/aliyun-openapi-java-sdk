@@ -41,7 +41,7 @@ public class DescribeLiveStreamsOnlineListRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 	public DescribeLiveStreamsOnlineListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList");
+		super("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

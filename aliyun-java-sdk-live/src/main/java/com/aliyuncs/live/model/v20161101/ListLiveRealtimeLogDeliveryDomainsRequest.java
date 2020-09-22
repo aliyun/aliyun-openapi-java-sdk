@@ -33,7 +33,7 @@ public class ListLiveRealtimeLogDeliveryDomainsRequest extends RpcAcsRequest<Lis
 
 	private String logstore;
 	public ListLiveRealtimeLogDeliveryDomainsRequest() {
-		super("live", "2016-11-01", "ListLiveRealtimeLogDeliveryDomains");
+		super("live", "2016-11-01", "ListLiveRealtimeLogDeliveryDomains", "live");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

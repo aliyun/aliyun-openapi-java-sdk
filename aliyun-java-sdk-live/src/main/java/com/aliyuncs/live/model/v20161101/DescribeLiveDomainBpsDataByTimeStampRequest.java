@@ -35,7 +35,7 @@ public class DescribeLiveDomainBpsDataByTimeStampRequest extends RpcAcsRequest<D
 
 	private String timePoint;
 	public DescribeLiveDomainBpsDataByTimeStampRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp");
+		super("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

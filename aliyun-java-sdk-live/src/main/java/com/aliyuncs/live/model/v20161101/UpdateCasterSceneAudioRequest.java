@@ -38,7 +38,7 @@ public class UpdateCasterSceneAudioRequest extends RpcAcsRequest<UpdateCasterSce
 
 	private Integer followEnable;
 	public UpdateCasterSceneAudioRequest() {
-		super("live", "2016-11-01", "UpdateCasterSceneAudio");
+		super("live", "2016-11-01", "UpdateCasterSceneAudio", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class UnTagLiveResourcesRequest extends RpcAcsRequest<UnTagLiveResourcesR
 
 	private List<String> tagKeys;
 	public UnTagLiveResourcesRequest() {
-		super("live", "2016-11-01", "UnTagLiveResources");
+		super("live", "2016-11-01", "UnTagLiveResources", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

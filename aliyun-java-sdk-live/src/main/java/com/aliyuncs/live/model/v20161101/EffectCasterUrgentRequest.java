@@ -31,7 +31,7 @@ public class EffectCasterUrgentRequest extends RpcAcsRequest<EffectCasterUrgentR
 
 	private String sceneId;
 	public EffectCasterUrgentRequest() {
-		super("live", "2016-11-01", "EffectCasterUrgent");
+		super("live", "2016-11-01", "EffectCasterUrgent", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

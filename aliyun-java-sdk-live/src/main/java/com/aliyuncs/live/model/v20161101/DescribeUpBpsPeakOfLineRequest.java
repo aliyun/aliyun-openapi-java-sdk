@@ -37,7 +37,7 @@ public class DescribeUpBpsPeakOfLineRequest extends RpcAcsRequest<DescribeUpBpsP
 
 	private String domainSwitch;
 	public DescribeUpBpsPeakOfLineRequest() {
-		super("live", "2016-11-01", "DescribeUpBpsPeakOfLine");
+		super("live", "2016-11-01", "DescribeUpBpsPeakOfLine", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

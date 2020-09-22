@@ -31,7 +31,7 @@ public class StopCasterSceneRequest extends RpcAcsRequest<StopCasterSceneRespons
 
 	private String sceneId;
 	public StopCasterSceneRequest() {
-		super("live", "2016-11-01", "StopCasterScene");
+		super("live", "2016-11-01", "StopCasterScene", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

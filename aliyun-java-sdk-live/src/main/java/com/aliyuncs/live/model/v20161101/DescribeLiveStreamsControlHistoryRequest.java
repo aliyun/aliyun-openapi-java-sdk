@@ -37,7 +37,7 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 
 	private Long ownerId;
 	public DescribeLiveStreamsControlHistoryRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsControlHistory");
+		super("live", "2016-11-01", "DescribeLiveStreamsControlHistory", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

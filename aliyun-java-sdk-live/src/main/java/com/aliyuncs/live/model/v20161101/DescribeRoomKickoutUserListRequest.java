@@ -37,7 +37,7 @@ public class DescribeRoomKickoutUserListRequest extends RpcAcsRequest<DescribeRo
 
 	private String appId;
 	public DescribeRoomKickoutUserListRequest() {
-		super("live", "2016-11-01", "DescribeRoomKickoutUserList");
+		super("live", "2016-11-01", "DescribeRoomKickoutUserList", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

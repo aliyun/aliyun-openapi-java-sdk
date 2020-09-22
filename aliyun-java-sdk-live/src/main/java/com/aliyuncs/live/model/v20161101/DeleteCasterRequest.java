@@ -31,7 +31,7 @@ public class DeleteCasterRequest extends RpcAcsRequest<DeleteCasterResponse> {
 
 	private String securityToken;
 	public DeleteCasterRequest() {
-		super("live", "2016-11-01", "DeleteCaster");
+		super("live", "2016-11-01", "DeleteCaster", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

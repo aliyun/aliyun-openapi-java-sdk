@@ -41,7 +41,7 @@ public class DescribeCastersRequest extends RpcAcsRequest<DescribeCastersRespons
 
 	private Integer status;
 	public DescribeCastersRequest() {
-		super("live", "2016-11-01", "DescribeCasters");
+		super("live", "2016-11-01", "DescribeCasters", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteCasterEpisodeGroupRequest extends RpcAcsRequest<DeleteCasterE
 
 	private Long ownerId;
 	public DeleteCasterEpisodeGroupRequest() {
-		super("live", "2016-11-01", "DeleteCasterEpisodeGroup");
+		super("live", "2016-11-01", "DeleteCasterEpisodeGroup", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

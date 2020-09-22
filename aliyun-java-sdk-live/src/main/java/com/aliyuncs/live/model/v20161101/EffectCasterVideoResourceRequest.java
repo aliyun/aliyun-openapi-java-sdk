@@ -33,7 +33,7 @@ public class EffectCasterVideoResourceRequest extends RpcAcsRequest<EffectCaster
 
 	private String sceneId;
 	public EffectCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "EffectCasterVideoResource");
+		super("live", "2016-11-01", "EffectCasterVideoResource", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

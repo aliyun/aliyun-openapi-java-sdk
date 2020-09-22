@@ -33,7 +33,7 @@ public class DescribeBoardsRequest extends RpcAcsRequest<DescribeBoardsResponse>
 
 	private String appId;
 	public DescribeBoardsRequest() {
-		super("live", "2016-11-01", "DescribeBoards");
+		super("live", "2016-11-01", "DescribeBoards", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

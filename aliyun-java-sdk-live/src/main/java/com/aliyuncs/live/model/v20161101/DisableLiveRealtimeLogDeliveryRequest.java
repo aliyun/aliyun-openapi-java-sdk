@@ -29,7 +29,7 @@ public class DisableLiveRealtimeLogDeliveryRequest extends RpcAcsRequest<Disable
 
 	private Long ownerId;
 	public DisableLiveRealtimeLogDeliveryRequest() {
-		super("live", "2016-11-01", "DisableLiveRealtimeLogDelivery");
+		super("live", "2016-11-01", "DisableLiveRealtimeLogDelivery", "live");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

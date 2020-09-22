@@ -31,7 +31,7 @@ public class DeleteCasterVideoResourceRequest extends RpcAcsRequest<DeleteCaster
 
 	private Long ownerId;
 	public DeleteCasterVideoResourceRequest() {
-		super("live", "2016-11-01", "DeleteCasterVideoResource");
+		super("live", "2016-11-01", "DeleteCasterVideoResource", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

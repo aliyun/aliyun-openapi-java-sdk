@@ -42,7 +42,7 @@ public class AddCasterEpisodeGroupRequest extends RpcAcsRequest<AddCasterEpisode
 
 	private String callbackUrl;
 	public AddCasterEpisodeGroupRequest() {
-		super("live", "2016-11-01", "AddCasterEpisodeGroup");
+		super("live", "2016-11-01", "AddCasterEpisodeGroup", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

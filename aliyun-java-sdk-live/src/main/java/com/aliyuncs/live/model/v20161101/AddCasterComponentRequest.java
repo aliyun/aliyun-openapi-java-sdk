@@ -49,7 +49,7 @@ public class AddCasterComponentRequest extends RpcAcsRequest<AddCasterComponentR
 
 	private String textLayerContent;
 	public AddCasterComponentRequest() {
-		super("live", "2016-11-01", "AddCasterComponent");
+		super("live", "2016-11-01", "AddCasterComponent", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

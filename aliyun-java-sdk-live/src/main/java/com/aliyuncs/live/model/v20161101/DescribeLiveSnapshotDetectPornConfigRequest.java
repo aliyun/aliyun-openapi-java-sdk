@@ -39,7 +39,7 @@ public class DescribeLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<D
 
 	private Long ownerId;
 	public DescribeLiveSnapshotDetectPornConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig");
+		super("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class SetBoardCallbackRequest extends RpcAcsRequest<SetBoardCallbackRespo
 
 	private String authSwitch;
 	public SetBoardCallbackRequest() {
-		super("live", "2016-11-01", "SetBoardCallback");
+		super("live", "2016-11-01", "SetBoardCallback", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

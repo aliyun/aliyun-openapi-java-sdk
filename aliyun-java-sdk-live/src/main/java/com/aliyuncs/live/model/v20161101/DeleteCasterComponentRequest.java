@@ -31,7 +31,7 @@ public class DeleteCasterComponentRequest extends RpcAcsRequest<DeleteCasterComp
 
 	private Long ownerId;
 	public DeleteCasterComponentRequest() {
-		super("live", "2016-11-01", "DeleteCasterComponent");
+		super("live", "2016-11-01", "DeleteCasterComponent", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeLiveDomainRealtimeLogDeliveryRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 	public DescribeLiveDomainRealtimeLogDeliveryRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainRealtimeLogDelivery");
+		super("live", "2016-11-01", "DescribeLiveDomainRealtimeLogDelivery", "live");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

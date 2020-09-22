@@ -31,7 +31,7 @@ public class UpdateLiveTopLevelDomainRequest extends RpcAcsRequest<UpdateLiveTop
 
 	private String securityToken;
 	public UpdateLiveTopLevelDomainRequest() {
-		super("live", "2016-11-01", "UpdateLiveTopLevelDomain");
+		super("live", "2016-11-01", "UpdateLiveTopLevelDomain", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

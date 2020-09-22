@@ -28,8 +28,6 @@ public class DescribeLivePullStreamConfigRequest extends RpcAcsRequest<DescribeL
 	private String domainName;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public DescribeLivePullStreamConfigRequest() {
 		super("live", "2016-11-01", "DescribeLivePullStreamConfig", "live");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DescribeLivePullStreamConfigRequest extends RpcAcsRequest<DescribeL
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

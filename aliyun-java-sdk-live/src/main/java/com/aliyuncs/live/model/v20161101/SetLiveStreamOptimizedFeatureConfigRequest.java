@@ -35,7 +35,7 @@ public class SetLiveStreamOptimizedFeatureConfigRequest extends RpcAcsRequest<Se
 
 	private Long ownerId;
 	public SetLiveStreamOptimizedFeatureConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig");
+		super("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

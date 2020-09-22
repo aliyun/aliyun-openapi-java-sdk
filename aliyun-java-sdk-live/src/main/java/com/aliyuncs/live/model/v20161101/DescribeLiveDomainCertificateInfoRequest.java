@@ -29,7 +29,7 @@ public class DescribeLiveDomainCertificateInfoRequest extends RpcAcsRequest<Desc
 
 	private Long ownerId;
 	public DescribeLiveDomainCertificateInfoRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainCertificateInfo");
+		super("live", "2016-11-01", "DescribeLiveDomainCertificateInfo", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

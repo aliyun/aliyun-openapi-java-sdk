@@ -27,6 +27,8 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 
 	private String template;
 
+	private String lazy;
+
 	private String gop;
 
 	private String audioCodec;
@@ -57,7 +59,7 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 
 	private Integer videoBitrate;
 	public AddCustomLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddCustomLiveStreamTranscode");
+		super("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +75,17 @@ public class AddCustomLiveStreamTranscodeRequest extends RpcAcsRequest<AddCustom
 		this.template = template;
 		if(template != null){
 			putQueryParameter("Template", template);
+		}
+	}
+
+	public String getLazy() {
+		return this.lazy;
+	}
+
+	public void setLazy(String lazy) {
+		this.lazy = lazy;
+		if(lazy != null){
+			putQueryParameter("Lazy", lazy);
 		}
 	}
 

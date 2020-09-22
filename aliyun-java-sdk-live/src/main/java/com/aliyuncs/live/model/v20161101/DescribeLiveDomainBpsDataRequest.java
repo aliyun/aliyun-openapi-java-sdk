@@ -39,7 +39,7 @@ public class DescribeLiveDomainBpsDataRequest extends RpcAcsRequest<DescribeLive
 
 	private String interval;
 	public DescribeLiveDomainBpsDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainBpsData");
+		super("live", "2016-11-01", "DescribeLiveDomainBpsData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

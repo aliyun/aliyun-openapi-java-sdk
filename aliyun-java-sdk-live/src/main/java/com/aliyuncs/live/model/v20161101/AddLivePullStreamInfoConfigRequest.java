@@ -39,7 +39,7 @@ public class AddLivePullStreamInfoConfigRequest extends RpcAcsRequest<AddLivePul
 
 	private String sourceUrl;
 	public AddLivePullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "AddLivePullStreamInfoConfig");
+		super("live", "2016-11-01", "AddLivePullStreamInfoConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

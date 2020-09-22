@@ -41,7 +41,7 @@ public class AddLiveAudioAuditConfigRequest extends RpcAcsRequest<AddLiveAudioAu
 
 	private String bizType;
 	public AddLiveAudioAuditConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAudioAuditConfig");
+		super("live", "2016-11-01", "AddLiveAudioAuditConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

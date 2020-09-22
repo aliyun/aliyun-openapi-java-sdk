@@ -1,3 +1,6 @@
+2020-09-22 Version: 3.9.1
+- Generated 2016-11-01 for `live`.
+
 2020-08-19 Version: 3.9.1
 - Add DescribeLiveDomainCertificateInfo.
 

@@ -31,7 +31,7 @@ public class DeleteBoardRequest extends RpcAcsRequest<DeleteBoardResponse> {
 
 	private String boardId;
 	public DeleteBoardRequest() {
-		super("live", "2016-11-01", "DeleteBoard");
+		super("live", "2016-11-01", "DeleteBoard", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

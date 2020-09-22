@@ -29,7 +29,7 @@ public class DescribeLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Des
 
 	private Long ownerId;
 	public DescribeLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig");
+		super("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

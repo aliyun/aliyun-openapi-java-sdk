@@ -37,7 +37,7 @@ public class DescribeLiveRealtimeDeliveryAccRequest extends RpcAcsRequest<Descri
 
 	private String logStore;
 	public DescribeLiveRealtimeDeliveryAccRequest() {
-		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc");
+		super("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

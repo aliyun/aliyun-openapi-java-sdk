@@ -31,7 +31,7 @@ public class DescribeLiveCertificateDetailRequest extends RpcAcsRequest<Describe
 
 	private String securityToken;
 	public DescribeLiveCertificateDetailRequest() {
-		super("live", "2016-11-01", "DescribeLiveCertificateDetail");
+		super("live", "2016-11-01", "DescribeLiveCertificateDetail", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

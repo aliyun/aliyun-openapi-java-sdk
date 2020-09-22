@@ -39,7 +39,7 @@ public class ForbidLiveStreamRequest extends RpcAcsRequest<ForbidLiveStreamRespo
 
 	private String oneshot;
 	public ForbidLiveStreamRequest() {
-		super("live", "2016-11-01", "ForbidLiveStream");
+		super("live", "2016-11-01", "ForbidLiveStream", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

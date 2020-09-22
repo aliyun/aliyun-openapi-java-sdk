@@ -47,7 +47,7 @@ public class StartLiveIndexRequest extends RpcAcsRequest<StartLiveIndexResponse>
 
 	private Integer interval;
 	public StartLiveIndexRequest() {
-		super("live", "2016-11-01", "StartLiveIndex");
+		super("live", "2016-11-01", "StartLiveIndex", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

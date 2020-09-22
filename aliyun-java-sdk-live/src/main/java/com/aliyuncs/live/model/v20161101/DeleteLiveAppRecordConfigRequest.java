@@ -35,7 +35,7 @@ public class DeleteLiveAppRecordConfigRequest extends RpcAcsRequest<DeleteLiveAp
 
 	private Long ownerId;
 	public DeleteLiveAppRecordConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveAppRecordConfig");
+		super("live", "2016-11-01", "DeleteLiveAppRecordConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

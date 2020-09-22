@@ -37,7 +37,7 @@ public class DescribeLiveDomainRealTimeBpsDataRequest extends RpcAcsRequest<Desc
 
 	private Long ownerId;
 	public DescribeLiveDomainRealTimeBpsDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData");
+		super("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData", "live");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

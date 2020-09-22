@@ -36,7 +36,7 @@ public class UpdateCasterSceneConfigRequest extends RpcAcsRequest<UpdateCasterSc
 
 	private String sceneId;
 	public UpdateCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "UpdateCasterSceneConfig");
+		super("live", "2016-11-01", "UpdateCasterSceneConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class BatchSetLiveDomainConfigsRequest extends RpcAcsRequest<BatchSetLive
 
 	private String securityToken;
 	public BatchSetLiveDomainConfigsRequest() {
-		super("live", "2016-11-01", "BatchSetLiveDomainConfigs");
+		super("live", "2016-11-01", "BatchSetLiveDomainConfigs", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

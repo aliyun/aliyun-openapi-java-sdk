@@ -44,7 +44,7 @@ public class AddCasterEpisodeRequest extends RpcAcsRequest<AddCasterEpisodeRespo
 
 	private String switchType;
 	public AddCasterEpisodeRequest() {
-		super("live", "2016-11-01", "AddCasterEpisode");
+		super("live", "2016-11-01", "AddCasterEpisode", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

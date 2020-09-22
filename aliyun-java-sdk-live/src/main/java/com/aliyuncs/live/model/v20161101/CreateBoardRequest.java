@@ -31,7 +31,7 @@ public class CreateBoardRequest extends RpcAcsRequest<CreateBoardResponse> {
 
 	private String appId;
 	public CreateBoardRequest() {
-		super("live", "2016-11-01", "CreateBoard");
+		super("live", "2016-11-01", "CreateBoard", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class ListLiveRealtimeLogDeliveryInfosRequest extends RpcAcsRequest<ListL
 
 	private String liveOpenapiReserve;
 	public ListLiveRealtimeLogDeliveryInfosRequest() {
-		super("live", "2016-11-01", "ListLiveRealtimeLogDeliveryInfos");
+		super("live", "2016-11-01", "ListLiveRealtimeLogDeliveryInfos", "live");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

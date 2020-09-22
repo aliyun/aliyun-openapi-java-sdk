@@ -29,7 +29,7 @@ public class DeleteLiveStreamsNotifyUrlConfigRequest extends RpcAcsRequest<Delet
 
 	private Long ownerId;
 	public DeleteLiveStreamsNotifyUrlConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig");
+		super("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

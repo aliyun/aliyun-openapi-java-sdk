@@ -33,7 +33,7 @@ public class DeleteCasterSceneConfigRequest extends RpcAcsRequest<DeleteCasterSc
 
 	private String sceneId;
 	public DeleteCasterSceneConfigRequest() {
-		super("live", "2016-11-01", "DeleteCasterSceneConfig");
+		super("live", "2016-11-01", "DeleteCasterSceneConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

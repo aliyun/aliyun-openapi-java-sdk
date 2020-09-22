@@ -29,7 +29,7 @@ public class DescribeCasterStreamUrlRequest extends RpcAcsRequest<DescribeCaster
 
 	private Long ownerId;
 	public DescribeCasterStreamUrlRequest() {
-		super("live", "2016-11-01", "DescribeCasterStreamUrl");
+		super("live", "2016-11-01", "DescribeCasterStreamUrl", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

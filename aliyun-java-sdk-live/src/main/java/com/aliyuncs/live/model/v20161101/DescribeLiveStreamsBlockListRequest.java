@@ -35,7 +35,7 @@ public class DescribeLiveStreamsBlockListRequest extends RpcAcsRequest<DescribeL
 
 	private Long ownerId;
 	public DescribeLiveStreamsBlockListRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsBlockList");
+		super("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

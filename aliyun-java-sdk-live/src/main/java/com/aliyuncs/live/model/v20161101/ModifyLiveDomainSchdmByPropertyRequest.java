@@ -31,7 +31,7 @@ public class ModifyLiveDomainSchdmByPropertyRequest extends RpcAcsRequest<Modify
 
 	private Long ownerId;
 	public ModifyLiveDomainSchdmByPropertyRequest() {
-		super("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty");
+		super("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

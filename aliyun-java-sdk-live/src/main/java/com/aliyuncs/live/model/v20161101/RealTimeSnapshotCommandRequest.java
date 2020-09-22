@@ -39,7 +39,7 @@ public class RealTimeSnapshotCommandRequest extends RpcAcsRequest<RealTimeSnapsh
 
 	private Integer interval;
 	public RealTimeSnapshotCommandRequest() {
-		super("live", "2016-11-01", "RealTimeSnapshotCommand");
+		super("live", "2016-11-01", "RealTimeSnapshotCommand", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

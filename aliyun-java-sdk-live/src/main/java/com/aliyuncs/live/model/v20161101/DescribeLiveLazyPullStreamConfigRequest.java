@@ -33,7 +33,7 @@ public class DescribeLiveLazyPullStreamConfigRequest extends RpcAcsRequest<Descr
 
 	private Long ownerId;
 	public DescribeLiveLazyPullStreamConfigRequest() {
-		super("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig");
+		super("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class DeleteLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<Del
 
 	private String appName;
 	public DeleteLiveLazyPullStreamInfoConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig");
+		super("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

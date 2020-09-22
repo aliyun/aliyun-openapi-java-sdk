@@ -31,7 +31,7 @@ public class DescribeHlsLiveStreamRealTimeBpsDataRequest extends RpcAcsRequest<D
 
 	private String time;
 	public DescribeHlsLiveStreamRealTimeBpsDataRequest() {
-		super("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData");
+		super("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

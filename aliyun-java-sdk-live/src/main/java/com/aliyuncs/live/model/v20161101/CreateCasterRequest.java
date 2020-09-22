@@ -41,7 +41,7 @@ public class CreateCasterRequest extends RpcAcsRequest<CreateCasterResponse> {
 
 	private String chargeType;
 	public CreateCasterRequest() {
-		super("live", "2016-11-01", "CreateCaster");
+		super("live", "2016-11-01", "CreateCaster", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeRecordsRequest extends RpcAcsRequest<DescribeRecordsRespons
 
 	private String appId;
 	public DescribeRecordsRequest() {
-		super("live", "2016-11-01", "DescribeRecords");
+		super("live", "2016-11-01", "DescribeRecords", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

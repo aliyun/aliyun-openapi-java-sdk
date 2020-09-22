@@ -34,7 +34,7 @@ public class DescribeLiveTagResourcesRequest extends RpcAcsRequest<DescribeLiveT
 
 	private String resourceType;
 	public DescribeLiveTagResourcesRequest() {
-		super("live", "2016-11-01", "DescribeLiveTagResources");
+		super("live", "2016-11-01", "DescribeLiveTagResources", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

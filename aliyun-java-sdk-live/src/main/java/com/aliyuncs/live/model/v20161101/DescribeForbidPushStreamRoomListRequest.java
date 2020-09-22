@@ -35,7 +35,7 @@ public class DescribeForbidPushStreamRoomListRequest extends RpcAcsRequest<Descr
 
 	private String appId;
 	public DescribeForbidPushStreamRoomListRequest() {
-		super("live", "2016-11-01", "DescribeForbidPushStreamRoomList");
+		super("live", "2016-11-01", "DescribeForbidPushStreamRoomList", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

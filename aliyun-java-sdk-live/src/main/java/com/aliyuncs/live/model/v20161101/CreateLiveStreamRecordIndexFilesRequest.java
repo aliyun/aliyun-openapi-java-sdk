@@ -45,7 +45,7 @@ public class CreateLiveStreamRecordIndexFilesRequest extends RpcAcsRequest<Creat
 
 	private Long ownerId;
 	public CreateLiveStreamRecordIndexFilesRequest() {
-		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles");
+		super("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

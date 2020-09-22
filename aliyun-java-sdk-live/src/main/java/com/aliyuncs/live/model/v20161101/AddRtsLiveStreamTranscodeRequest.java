@@ -29,6 +29,8 @@ public class AddRtsLiveStreamTranscodeRequest extends RpcAcsRequest<AddRtsLiveSt
 
 	private Boolean deleteBframes;
 
+	private String lazy;
+
 	private String gop;
 
 	private Boolean opus;
@@ -61,7 +63,7 @@ public class AddRtsLiveStreamTranscodeRequest extends RpcAcsRequest<AddRtsLiveSt
 
 	private Integer videoBitrate;
 	public AddRtsLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddRtsLiveStreamTranscode");
+		super("live", "2016-11-01", "AddRtsLiveStreamTranscode", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -88,6 +90,17 @@ public class AddRtsLiveStreamTranscodeRequest extends RpcAcsRequest<AddRtsLiveSt
 		this.deleteBframes = deleteBframes;
 		if(deleteBframes != null){
 			putQueryParameter("DeleteBframes", deleteBframes.toString());
+		}
+	}
+
+	public String getLazy() {
+		return this.lazy;
+	}
+
+	public void setLazy(String lazy) {
+		this.lazy = lazy;
+		if(lazy != null){
+			putQueryParameter("Lazy", lazy);
 		}
 	}
 

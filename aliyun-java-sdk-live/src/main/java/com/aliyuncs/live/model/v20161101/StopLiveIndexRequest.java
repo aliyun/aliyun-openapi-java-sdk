@@ -35,7 +35,7 @@ public class StopLiveIndexRequest extends RpcAcsRequest<StopLiveIndexResponse> {
 
 	private Long ownerId;
 	public StopLiveIndexRequest() {
-		super("live", "2016-11-01", "StopLiveIndex");
+		super("live", "2016-11-01", "StopLiveIndex", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

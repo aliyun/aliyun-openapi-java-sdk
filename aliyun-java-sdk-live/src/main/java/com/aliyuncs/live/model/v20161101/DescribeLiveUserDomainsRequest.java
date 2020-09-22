@@ -46,7 +46,7 @@ public class DescribeLiveUserDomainsRequest extends RpcAcsRequest<DescribeLiveUs
 
 	private String liveDomainType;
 	public DescribeLiveUserDomainsRequest() {
-		super("live", "2016-11-01", "DescribeLiveUserDomains");
+		super("live", "2016-11-01", "DescribeLiveUserDomains", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

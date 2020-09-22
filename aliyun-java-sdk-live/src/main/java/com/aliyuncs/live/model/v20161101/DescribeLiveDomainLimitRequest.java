@@ -31,7 +31,7 @@ public class DescribeLiveDomainLimitRequest extends RpcAcsRequest<DescribeLiveDo
 
 	private Long ownerId;
 	public DescribeLiveDomainLimitRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainLimit");
+		super("live", "2016-11-01", "DescribeLiveDomainLimit", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

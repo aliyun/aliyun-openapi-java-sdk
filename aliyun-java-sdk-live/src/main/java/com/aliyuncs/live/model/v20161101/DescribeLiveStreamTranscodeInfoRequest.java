@@ -29,7 +29,7 @@ public class DescribeLiveStreamTranscodeInfoRequest extends RpcAcsRequest<Descri
 
 	private String domainTranscodeName;
 	public DescribeLiveStreamTranscodeInfoRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo");
+		super("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

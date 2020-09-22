@@ -31,7 +31,7 @@ public class DescribeCasterSceneAudioRequest extends RpcAcsRequest<DescribeCaste
 
 	private String sceneId;
 	public DescribeCasterSceneAudioRequest() {
-		super("live", "2016-11-01", "DescribeCasterSceneAudio");
+		super("live", "2016-11-01", "DescribeCasterSceneAudio", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

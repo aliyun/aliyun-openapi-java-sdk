@@ -32,7 +32,7 @@ public class ModifyCasterProgramRequest extends RpcAcsRequest<ModifyCasterProgra
 
 	private Long ownerId;
 	public ModifyCasterProgramRequest() {
-		super("live", "2016-11-01", "ModifyCasterProgram");
+		super("live", "2016-11-01", "ModifyCasterProgram", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

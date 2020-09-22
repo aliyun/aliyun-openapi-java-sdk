@@ -51,7 +51,7 @@ public class SetCasterConfigRequest extends RpcAcsRequest<SetCasterConfigRespons
 
 	private String callbackUrl;
 	public SetCasterConfigRequest() {
-		super("live", "2016-11-01", "SetCasterConfig");
+		super("live", "2016-11-01", "SetCasterConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

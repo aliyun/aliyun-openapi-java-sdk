@@ -33,7 +33,7 @@ public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDoma
 
 	private String pushDomain;
 	public DeleteLiveDomainMappingRequest() {
-		super("live", "2016-11-01", "DeleteLiveDomainMapping");
+		super("live", "2016-11-01", "DeleteLiveDomainMapping", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

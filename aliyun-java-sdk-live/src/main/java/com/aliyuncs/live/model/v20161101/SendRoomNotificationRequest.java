@@ -37,7 +37,7 @@ public class SendRoomNotificationRequest extends RpcAcsRequest<SendRoomNotificat
 
 	private String appId;
 	public SendRoomNotificationRequest() {
-		super("live", "2016-11-01", "SendRoomNotification");
+		super("live", "2016-11-01", "SendRoomNotification", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

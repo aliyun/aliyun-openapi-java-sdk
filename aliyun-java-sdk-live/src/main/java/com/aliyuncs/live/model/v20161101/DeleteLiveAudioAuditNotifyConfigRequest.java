@@ -29,7 +29,7 @@ public class DeleteLiveAudioAuditNotifyConfigRequest extends RpcAcsRequest<Delet
 
 	private Long ownerId;
 	public DeleteLiveAudioAuditNotifyConfigRequest() {
-		super("live", "2016-11-01", "DeleteLiveAudioAuditNotifyConfig");
+		super("live", "2016-11-01", "DeleteLiveAudioAuditNotifyConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

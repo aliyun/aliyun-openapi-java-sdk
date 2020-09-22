@@ -35,7 +35,7 @@ public class BatchDeleteLiveDomainConfigsRequest extends RpcAcsRequest<BatchDele
 
 	private String securityToken;
 	public BatchDeleteLiveDomainConfigsRequest() {
-		super("live", "2016-11-01", "BatchDeleteLiveDomainConfigs");
+		super("live", "2016-11-01", "BatchDeleteLiveDomainConfigs", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

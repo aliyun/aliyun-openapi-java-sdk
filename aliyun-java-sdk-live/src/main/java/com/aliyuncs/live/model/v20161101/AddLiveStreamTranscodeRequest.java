@@ -27,15 +27,23 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	private String template;
 
-	private String securityToken;
+	private String lazy;
+
+	private String mix;
 
 	private String app;
+
+	private String watermark;
 
 	private Long ownerId;
 
 	private String domain;
+
+	private String waterPattern;
+
+	private String onlyAudio;
 	public AddLiveStreamTranscodeRequest() {
-		super("live", "2016-11-01", "AddLiveStreamTranscode");
+		super("live", "2016-11-01", "AddLiveStreamTranscode", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,14 +62,25 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getLazy() {
+		return this.lazy;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setLazy(String lazy) {
+		this.lazy = lazy;
+		if(lazy != null){
+			putQueryParameter("Lazy", lazy);
+		}
+	}
+
+	public String getMix() {
+		return this.mix;
+	}
+
+	public void setMix(String mix) {
+		this.mix = mix;
+		if(mix != null){
+			putQueryParameter("Mix", mix);
 		}
 	}
 
@@ -73,6 +92,17 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		this.app = app;
 		if(app != null){
 			putQueryParameter("App", app);
+		}
+	}
+
+	public String getWatermark() {
+		return this.watermark;
+	}
+
+	public void setWatermark(String watermark) {
+		this.watermark = watermark;
+		if(watermark != null){
+			putQueryParameter("Watermark", watermark);
 		}
 	}
 
@@ -95,6 +125,28 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getWaterPattern() {
+		return this.waterPattern;
+	}
+
+	public void setWaterPattern(String waterPattern) {
+		this.waterPattern = waterPattern;
+		if(waterPattern != null){
+			putQueryParameter("WaterPattern", waterPattern);
+		}
+	}
+
+	public String getOnlyAudio() {
+		return this.onlyAudio;
+	}
+
+	public void setOnlyAudio(String onlyAudio) {
+		this.onlyAudio = onlyAudio;
+		if(onlyAudio != null){
+			putQueryParameter("OnlyAudio", onlyAudio);
 		}
 	}
 

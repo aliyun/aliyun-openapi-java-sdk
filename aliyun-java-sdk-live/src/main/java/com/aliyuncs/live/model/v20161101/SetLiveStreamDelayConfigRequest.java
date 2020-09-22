@@ -41,7 +41,7 @@ public class SetLiveStreamDelayConfigRequest extends RpcAcsRequest<SetLiveStream
 
 	private Integer hlsDelay;
 	public SetLiveStreamDelayConfigRequest() {
-		super("live", "2016-11-01", "SetLiveStreamDelayConfig");
+		super("live", "2016-11-01", "SetLiveStreamDelayConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

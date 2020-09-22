@@ -45,7 +45,7 @@ public class UpdateLiveAppSnapshotConfigRequest extends RpcAcsRequest<UpdateLive
 
 	private String callback;
 	public UpdateLiveAppSnapshotConfigRequest() {
-		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig");
+		super("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

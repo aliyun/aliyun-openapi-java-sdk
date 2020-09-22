@@ -31,7 +31,7 @@ public class AllowPushStreamRequest extends RpcAcsRequest<AllowPushStreamRespons
 
 	private String appId;
 	public AllowPushStreamRequest() {
-		super("live", "2016-11-01", "AllowPushStream");
+		super("live", "2016-11-01", "AllowPushStream", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

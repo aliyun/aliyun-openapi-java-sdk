@@ -33,7 +33,7 @@ public class CopyCasterRequest extends RpcAcsRequest<CopyCasterResponse> {
 
 	private Long ownerId;
 	public CopyCasterRequest() {
-		super("live", "2016-11-01", "CopyCaster");
+		super("live", "2016-11-01", "CopyCaster", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

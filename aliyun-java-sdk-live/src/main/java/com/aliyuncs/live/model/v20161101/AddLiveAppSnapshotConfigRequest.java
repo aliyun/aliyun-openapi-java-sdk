@@ -45,7 +45,7 @@ public class AddLiveAppSnapshotConfigRequest extends RpcAcsRequest<AddLiveAppSna
 
 	private String callback;
 	public AddLiveAppSnapshotConfigRequest() {
-		super("live", "2016-11-01", "AddLiveAppSnapshotConfig");
+		super("live", "2016-11-01", "AddLiveAppSnapshotConfig", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

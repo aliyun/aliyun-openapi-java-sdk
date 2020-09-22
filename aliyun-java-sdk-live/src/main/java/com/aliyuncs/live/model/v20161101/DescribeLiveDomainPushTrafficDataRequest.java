@@ -39,7 +39,7 @@ public class DescribeLiveDomainPushTrafficDataRequest extends RpcAcsRequest<Desc
 
 	private String interval;
 	public DescribeLiveDomainPushTrafficDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveDomainPushTrafficData");
+		super("live", "2016-11-01", "DescribeLiveDomainPushTrafficData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
