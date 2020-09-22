@@ -22,32 +22,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
+public class DeleteMPURuleRequest extends RpcAcsRequest<DeleteMPURuleResponse> {
 	   
-
-	private String taskId;
 
 	private Long ownerId;
 
 	private String appId;
-	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+
+	private Long ruleId;
+	public DeleteMPURuleRequest() {
+		super("rtc", "2018-01-11", "DeleteMPURule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -72,9 +61,20 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 		}
 	}
 
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
+		}
+	}
+
 	@Override
-	public Class<StopMPUTaskResponse> getResponseClass() {
-		return StopMPUTaskResponse.class;
+	public Class<DeleteMPURuleResponse> getResponseClass() {
+		return DeleteMPURuleResponse.class;
 	}
 
 }

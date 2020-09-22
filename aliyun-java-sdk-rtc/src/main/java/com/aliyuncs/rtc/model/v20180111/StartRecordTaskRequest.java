@@ -23,60 +23,29 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
+public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskResponse> {
 	   
-
-	private Integer payloadType;
 
 	private List<UserPanes> userPaness;
 
-	private Integer rtpExtInfo;
-
-	private Integer backgroundColor;
-
-	private Integer cropMode;
-
-	private Integer reportVad;
-
-	private String taskProfile;
-
-	private List<Long> layoutIdss;
-
 	private String taskId;
 
-	private String streamURL;
-
-	private Long vadInterval;
-
 	private Long ownerId;
+
+	private String templateId;
 
 	private List<String> subSpecUserss;
 
 	private String appId;
 
-	private Long timeStampRef;
-
-	private Integer mediaEncode;
-
 	private String channelId;
-	public StartMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StartMPUTask", "rtc");
+	public StartRecordTaskRequest() {
+		super("rtc", "2018-01-11", "StartRecordTask", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPayloadType() {
-		return this.payloadType;
-	}
-
-	public void setPayloadType(Integer payloadType) {
-		this.payloadType = payloadType;
-		if(payloadType != null){
-			putQueryParameter("PayloadType", payloadType.toString());
-		}
 	}
 
 	public List<UserPanes> getUserPaness() {
@@ -94,74 +63,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}	
 	}
 
-	public Integer getRtpExtInfo() {
-		return this.rtpExtInfo;
-	}
-
-	public void setRtpExtInfo(Integer rtpExtInfo) {
-		this.rtpExtInfo = rtpExtInfo;
-		if(rtpExtInfo != null){
-			putQueryParameter("RtpExtInfo", rtpExtInfo.toString());
-		}
-	}
-
-	public Integer getBackgroundColor() {
-		return this.backgroundColor;
-	}
-
-	public void setBackgroundColor(Integer backgroundColor) {
-		this.backgroundColor = backgroundColor;
-		if(backgroundColor != null){
-			putQueryParameter("BackgroundColor", backgroundColor.toString());
-		}
-	}
-
-	public Integer getCropMode() {
-		return this.cropMode;
-	}
-
-	public void setCropMode(Integer cropMode) {
-		this.cropMode = cropMode;
-		if(cropMode != null){
-			putQueryParameter("CropMode", cropMode.toString());
-		}
-	}
-
-	public Integer getReportVad() {
-		return this.reportVad;
-	}
-
-	public void setReportVad(Integer reportVad) {
-		this.reportVad = reportVad;
-		if(reportVad != null){
-			putQueryParameter("ReportVad", reportVad.toString());
-		}
-	}
-
-	public String getTaskProfile() {
-		return this.taskProfile;
-	}
-
-	public void setTaskProfile(String taskProfile) {
-		this.taskProfile = taskProfile;
-		if(taskProfile != null){
-			putQueryParameter("TaskProfile", taskProfile);
-		}
-	}
-
-	public List<Long> getLayoutIdss() {
-		return this.layoutIdss;
-	}
-
-	public void setLayoutIdss(List<Long> layoutIdss) {
-		this.layoutIdss = layoutIdss;	
-		if (layoutIdss != null) {
-			for (int i = 0; i < layoutIdss.size(); i++) {
-				putQueryParameter("LayoutIds." + (i + 1) , layoutIdss.get(i));
-			}
-		}	
-	}
-
 	public String getTaskId() {
 		return this.taskId;
 	}
@@ -173,28 +74,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
-	public String getStreamURL() {
-		return this.streamURL;
-	}
-
-	public void setStreamURL(String streamURL) {
-		this.streamURL = streamURL;
-		if(streamURL != null){
-			putQueryParameter("StreamURL", streamURL);
-		}
-	}
-
-	public Long getVadInterval() {
-		return this.vadInterval;
-	}
-
-	public void setVadInterval(Long vadInterval) {
-		this.vadInterval = vadInterval;
-		if(vadInterval != null){
-			putQueryParameter("VadInterval", vadInterval.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -203,6 +82,17 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
@@ -227,28 +117,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public Long getTimeStampRef() {
-		return this.timeStampRef;
-	}
-
-	public void setTimeStampRef(Long timeStampRef) {
-		this.timeStampRef = timeStampRef;
-		if(timeStampRef != null){
-			putQueryParameter("TimeStampRef", timeStampRef.toString());
-		}
-	}
-
-	public Integer getMediaEncode() {
-		return this.mediaEncode;
-	}
-
-	public void setMediaEncode(Integer mediaEncode) {
-		this.mediaEncode = mediaEncode;
-		if(mediaEncode != null){
-			putQueryParameter("MediaEncode", mediaEncode.toString());
 		}
 	}
 
@@ -297,8 +165,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 	}
 
 	@Override
-	public Class<StartMPUTaskResponse> getResponseClass() {
-		return StartMPUTaskResponse.class;
+	public Class<StartRecordTaskResponse> getResponseClass() {
+		return StartRecordTaskResponse.class;
 	}
 
 }

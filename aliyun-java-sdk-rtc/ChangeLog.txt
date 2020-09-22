@@ -1,3 +1,6 @@
+2020-09-22 Version: 1.2.1
+- Generated 2018-01-11 for `rtc`.
+
 2020-03-25 Version: 1.2.0
 - Supported describe appkey for rtc application.
 - Supported set property for rtc channel.

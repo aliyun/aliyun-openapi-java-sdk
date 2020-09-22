@@ -22,7 +22,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
+public class StopRecordTaskRequest extends RpcAcsRequest<StopRecordTaskResponse> {
 	   
 
 	private String taskId;
@@ -30,8 +30,8 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 	private Long ownerId;
 
 	private String appId;
-	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+	public StopRecordTaskRequest() {
+		super("rtc", "2018-01-11", "StopRecordTask", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,8 +73,8 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 	}
 
 	@Override
-	public Class<StopMPUTaskResponse> getResponseClass() {
-		return StopMPUTaskResponse.class;
+	public Class<StopRecordTaskResponse> getResponseClass() {
+		return StopRecordTaskResponse.class;
 	}
 
 }

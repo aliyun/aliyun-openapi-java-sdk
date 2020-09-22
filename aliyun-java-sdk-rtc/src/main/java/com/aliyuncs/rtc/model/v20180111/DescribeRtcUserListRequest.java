@@ -27,9 +27,13 @@ public class DescribeRtcUserListRequest extends RpcAcsRequest<DescribeRtcUserLis
 
 	private String startTime;
 
+	private String subUser;
+
 	private String endTime;
 
 	private Long ownerId;
+
+	private String pubUser;
 
 	private String appId;
 
@@ -54,6 +58,17 @@ public class DescribeRtcUserListRequest extends RpcAcsRequest<DescribeRtcUserLis
 		}
 	}
 
+	public String getSubUser() {
+		return this.subUser;
+	}
+
+	public void setSubUser(String subUser) {
+		this.subUser = subUser;
+		if(subUser != null){
+			putQueryParameter("SubUser", subUser);
+		}
+	}
+
 	public String getEndTime() {
 		return this.endTime;
 	}
@@ -73,6 +88,17 @@ public class DescribeRtcUserListRequest extends RpcAcsRequest<DescribeRtcUserLis
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPubUser() {
+		return this.pubUser;
+	}
+
+	public void setPubUser(String pubUser) {
+		this.pubUser = pubUser;
+		if(pubUser != null){
+			putQueryParameter("PubUser", pubUser);
 		}
 	}
 

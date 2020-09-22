@@ -22,16 +22,22 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
+public class DescribeMPULayoutInfoListRequest extends RpcAcsRequest<DescribeMPULayoutInfoListResponse> {
 	   
 
-	private String taskId;
+	private Long pageNum;
+
+	private Long layoutId;
+
+	private Long pageSize;
 
 	private Long ownerId;
 
 	private String appId;
-	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+
+	private String name;
+	public DescribeMPULayoutInfoListRequest() {
+		super("rtc", "2018-01-11", "DescribeMPULayoutInfoList", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +45,36 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Long getPageNum() {
+		return this.pageNum;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setPageNum(Long pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Long getLayoutId() {
+		return this.layoutId;
+	}
+
+	public void setLayoutId(Long layoutId) {
+		this.layoutId = layoutId;
+		if(layoutId != null){
+			putQueryParameter("LayoutId", layoutId.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -72,9 +100,20 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
 	@Override
-	public Class<StopMPUTaskResponse> getResponseClass() {
-		return StopMPUTaskResponse.class;
+	public Class<DescribeMPULayoutInfoListResponse> getResponseClass() {
+		return DescribeMPULayoutInfoListResponse.class;
 	}
 
 }

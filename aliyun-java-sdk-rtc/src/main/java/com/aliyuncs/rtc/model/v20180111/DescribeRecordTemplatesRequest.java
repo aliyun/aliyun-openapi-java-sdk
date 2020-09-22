@@ -15,6 +15,7 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.rtc.Endpoint;
 
@@ -22,16 +23,20 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
+public class DescribeRecordTemplatesRequest extends RpcAcsRequest<DescribeRecordTemplatesResponse> {
 	   
 
-	private String taskId;
+	private List<String> templateIdss;
+
+	private Integer pageNum;
+
+	private Integer pageSize;
 
 	private Long ownerId;
 
 	private String appId;
-	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+	public DescribeRecordTemplatesRequest() {
+		super("rtc", "2018-01-11", "DescribeRecordTemplates", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +44,38 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public List<String> getTemplateIdss() {
+		return this.templateIdss;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setTemplateIdss(List<String> templateIdss) {
+		this.templateIdss = templateIdss;	
+		if (templateIdss != null) {
+			for (int i = 0; i < templateIdss.size(); i++) {
+				putQueryParameter("TemplateIds." + (i + 1) , templateIdss.get(i));
+			}
+		}	
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -73,8 +102,8 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 	}
 
 	@Override
-	public Class<StopMPUTaskResponse> getResponseClass() {
-		return StopMPUTaskResponse.class;
+	public Class<DescribeRecordTemplatesResponse> getResponseClass() {
+		return DescribeRecordTemplatesResponse.class;
 	}
 
 }

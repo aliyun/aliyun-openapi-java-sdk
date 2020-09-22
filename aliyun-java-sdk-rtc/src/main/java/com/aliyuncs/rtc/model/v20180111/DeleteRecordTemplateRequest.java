@@ -22,32 +22,21 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
+public class DeleteRecordTemplateRequest extends RpcAcsRequest<DeleteRecordTemplateResponse> {
 	   
-
-	private String taskId;
 
 	private Long ownerId;
 
+	private String templateId;
+
 	private String appId;
-	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+	public DeleteRecordTemplateRequest() {
+		super("rtc", "2018-01-11", "DeleteRecordTemplate", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -58,6 +47,17 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
@@ -73,8 +73,8 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 	}
 
 	@Override
-	public Class<StopMPUTaskResponse> getResponseClass() {
-		return StopMPUTaskResponse.class;
+	public Class<DeleteRecordTemplateResponse> getResponseClass() {
+		return DeleteRecordTemplateResponse.class;
 	}
 
 }

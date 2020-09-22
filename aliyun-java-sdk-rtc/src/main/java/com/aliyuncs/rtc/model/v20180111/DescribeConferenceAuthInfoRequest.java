@@ -25,9 +25,9 @@ import com.aliyuncs.rtc.Endpoint;
 public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeConferenceAuthInfoResponse> {
 	   
 
-	private Long ownerId;
-
 	private String conferenceId;
+
+	private Long ownerId;
 
 	private String appId;
 	public DescribeConferenceAuthInfoRequest() {
@@ -39,17 +39,6 @@ public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeCon
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getConferenceId() {
 		return this.conferenceId;
 	}
@@ -58,6 +47,17 @@ public class DescribeConferenceAuthInfoRequest extends RpcAcsRequest<DescribeCon
 		this.conferenceId = conferenceId;
 		if(conferenceId != null){
 			putQueryParameter("ConferenceId", conferenceId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

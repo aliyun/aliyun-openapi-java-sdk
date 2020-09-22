@@ -22,16 +22,16 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
+public class DeleteMPULayoutRequest extends RpcAcsRequest<DeleteMPULayoutResponse> {
 	   
 
-	private String taskId;
+	private Long layoutId;
 
 	private Long ownerId;
 
 	private String appId;
-	public StopMPUTaskRequest() {
-		super("rtc", "2018-01-11", "StopMPUTask", "rtc");
+	public DeleteMPULayoutRequest() {
+		super("rtc", "2018-01-11", "DeleteMPULayout", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +39,14 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public Long getLayoutId() {
+		return this.layoutId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setLayoutId(Long layoutId) {
+		this.layoutId = layoutId;
+		if(layoutId != null){
+			putQueryParameter("LayoutId", layoutId.toString());
 		}
 	}
 
@@ -73,8 +73,8 @@ public class StopMPUTaskRequest extends RpcAcsRequest<StopMPUTaskResponse> {
 	}
 
 	@Override
-	public Class<StopMPUTaskResponse> getResponseClass() {
-		return StopMPUTaskResponse.class;
+	public Class<DeleteMPULayoutResponse> getResponseClass() {
+		return DeleteMPULayoutResponse.class;
 	}
 
 }

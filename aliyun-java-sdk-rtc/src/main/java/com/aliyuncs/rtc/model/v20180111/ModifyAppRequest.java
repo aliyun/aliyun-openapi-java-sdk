@@ -25,9 +25,9 @@ import com.aliyuncs.rtc.Endpoint;
 public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 	   
 
-	private Long ownerId;
-
 	private String appName;
+
+	private Long ownerId;
 
 	private String appId;
 	public ModifyAppRequest() {
@@ -39,17 +39,6 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -58,6 +47,17 @@ public class ModifyAppRequest extends RpcAcsRequest<ModifyAppResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
