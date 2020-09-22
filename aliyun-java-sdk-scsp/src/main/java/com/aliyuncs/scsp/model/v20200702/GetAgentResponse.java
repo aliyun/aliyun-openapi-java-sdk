@@ -14,6 +14,7 @@
 
 package com.aliyuncs.scsp.model.v20200702;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.scsp.transform.v20200702.GetAgentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -76,6 +77,8 @@ public class GetAgentResponse extends AcsResponse {
 
 		private Integer status;
 
+		private List<GroupListItem> groupList;
+
 		public Long getTenantId() {
 			return this.tenantId;
 		}
@@ -114,6 +117,67 @@ public class GetAgentResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public List<GroupListItem> getGroupList() {
+			return this.groupList;
+		}
+
+		public void setGroupList(List<GroupListItem> groupList) {
+			this.groupList = groupList;
+		}
+
+		public static class GroupListItem {
+
+			private Long skillGroupId;
+
+			private String name;
+
+			private String description;
+
+			private String displayName;
+
+			private Integer channelType;
+
+			public Long getSkillGroupId() {
+				return this.skillGroupId;
+			}
+
+			public void setSkillGroupId(Long skillGroupId) {
+				this.skillGroupId = skillGroupId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getDisplayName() {
+				return this.displayName;
+			}
+
+			public void setDisplayName(String displayName) {
+				this.displayName = displayName;
+			}
+
+			public Integer getChannelType() {
+				return this.channelType;
+			}
+
+			public void setChannelType(Integer channelType) {
+				this.channelType = channelType;
+			}
 		}
 	}
 

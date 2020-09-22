@@ -1,3 +1,6 @@
+2020-09-22 Version: 1.1.3
+- Upgrade hotline num.
+
 2020-09-14 Version: 1.1.2
 - Generated 2020-07-02 for `scsp`.
 

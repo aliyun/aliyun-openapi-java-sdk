@@ -38,7 +38,7 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 
 	private List<Long> skillGroupIdLists;
 	public CreateAgentRequest() {
-		super("scsp", "2020-07-02", "CreateAgent");
+		super("scsp", "2020-07-02", "CreateAgent", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

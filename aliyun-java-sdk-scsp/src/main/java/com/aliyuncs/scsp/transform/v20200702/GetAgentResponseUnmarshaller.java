@@ -14,8 +14,12 @@
 
 package com.aliyuncs.scsp.transform.v20200702;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.scsp.model.v20200702.GetAgentResponse;
 import com.aliyuncs.scsp.model.v20200702.GetAgentResponse.Data;
+import com.aliyuncs.scsp.model.v20200702.GetAgentResponse.Data.GroupListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,6 +37,19 @@ public class GetAgentResponseUnmarshaller {
 		data.setAccountName(_ctx.stringValue("GetAgentResponse.Data.AccountName"));
 		data.setDisplayName(_ctx.stringValue("GetAgentResponse.Data.DisplayName"));
 		data.setStatus(_ctx.integerValue("GetAgentResponse.Data.Status"));
+
+		List<GroupListItem> groupList = new ArrayList<GroupListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetAgentResponse.Data.GroupList.Length"); i++) {
+			GroupListItem groupListItem = new GroupListItem();
+			groupListItem.setSkillGroupId(_ctx.longValue("GetAgentResponse.Data.GroupList["+ i +"].SkillGroupId"));
+			groupListItem.setName(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].Name"));
+			groupListItem.setDescription(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].Description"));
+			groupListItem.setDisplayName(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].DisplayName"));
+			groupListItem.setChannelType(_ctx.integerValue("GetAgentResponse.Data.GroupList["+ i +"].ChannelType"));
+
+			groupList.add(groupListItem);
+		}
+		data.setGroupList(groupList);
 		getAgentResponse.setData(data);
 	 
 	 	return getAgentResponse;

@@ -33,7 +33,7 @@ public class SuspendHotlineServiceRequest extends RpcAcsRequest<SuspendHotlineSe
 
 	private Integer type;
 	public SuspendHotlineServiceRequest() {
-		super("scsp", "2020-07-02", "SuspendHotlineService");
+		super("scsp", "2020-07-02", "SuspendHotlineService", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
