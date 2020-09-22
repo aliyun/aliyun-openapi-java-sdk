@@ -1,3 +1,6 @@
+2020-09-22 Version: 2.6.2
+- DescribePrice update amount type to string.
+
 2020-09-10 Version: 2.6.1
 - Update HasRenewChangeOrder type to Boolean in DescribeInstances.
 

@@ -27,9 +27,9 @@ public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInsta
 
 	private Long resourceOwnerId;
 
-	private String effectTime;
-
 	private String securityToken;
+
+	private String effectiveTime;
 
 	private String resourceOwnerAccount;
 
@@ -60,17 +60,6 @@ public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInsta
 		}
 	}
 
-	public String getEffectTime() {
-		return this.effectTime;
-	}
-
-	public void setEffectTime(String effectTime) {
-		this.effectTime = effectTime;
-		if(effectTime != null){
-			putQueryParameter("EffectTime", effectTime);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -79,6 +68,17 @@ public class ModifyInstanceMinorVersionRequest extends RpcAcsRequest<ModifyInsta
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEffectiveTime() {
+		return this.effectiveTime;
+	}
+
+	public void setEffectiveTime(String effectiveTime) {
+		this.effectiveTime = effectiveTime;
+		if(effectiveTime != null){
+			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 
