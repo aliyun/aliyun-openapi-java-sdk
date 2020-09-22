@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,24 +23,27 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceResponse> {
-	
-	public UpdateDataSourceRequest() {
-		super("Emr", "2016-04-08", "UpdateDataSource", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private String name;
 
 	private String description;
 
 	private String conf;
 
+	private String resourceGroupId;
+
+	private String name;
+
 	private String id;
+	public UpdateDataSourceRequest() {
+		super("Emr", "2016-04-08", "UpdateDataSource");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,17 +53,6 @@ public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -82,6 +75,28 @@ public class UpdateDataSourceRequest extends RpcAcsRequest<UpdateDataSourceRespo
 		this.conf = conf;
 		if(conf != null){
 			putQueryParameter("Conf", conf);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

@@ -37,6 +37,7 @@ public class ListUsersResponseUnmarshaller {
 			user.setKnoxStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].KnoxStatus"));
 			user.setLinuxStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LinuxStatus"));
 			user.setKerberosStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].KerberosStatus"));
+			user.setK8sStatus(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].K8sStatus"));
 
 			userList.add(user);
 		}

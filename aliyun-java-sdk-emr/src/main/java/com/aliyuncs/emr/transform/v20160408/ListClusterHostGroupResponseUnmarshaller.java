@@ -61,6 +61,13 @@ public class ListClusterHostGroupResponseUnmarshaller {
 			hostGroup.setGmtModified(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].gmtModified"));
 			hostGroup.setHostGroupChangeType(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].HostGroupChangeType"));
 			hostGroup.setHostGroupChangeStatus(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].HostGroupChangeStatus"));
+			hostGroup.setScalingGroupBizId(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].ScalingGroupBizId"));
+			hostGroup.setScalingGroupActiveStatus(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].ScalingGroupActiveStatus"));
+			hostGroup.setScalingInMode(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].ScalingInMode"));
+			hostGroup.setScalingGroupMinNode(_ctx.integerValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].ScalingGroupMinNode"));
+			hostGroup.setScalingGroupMaxNode(_ctx.integerValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].ScalingGroupMaxNode"));
+			hostGroup.setScalingGroupConfigState(_ctx.stringValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].ScalingGroupConfigState"));
+			hostGroup.setCostSavingPercent(_ctx.floatValue("ListClusterHostGroupResponse.HostGroupList["+ i +"].CostSavingPercent"));
 
 			hostGroupList.add(hostGroup);
 		}

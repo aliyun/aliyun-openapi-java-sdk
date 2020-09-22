@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,36 +23,19 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebResponse> {
-	
-	public CreateFlowForWebRequest() {
-		super("Emr", "2016-04-08", "CreateFlowForWeb", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String cronExpr;
 
-	private String parentFlowList;
-
-	private String alertDingDingGroupBizId;
-
-	private Long startSchedule;
-
 	private String description;
-
-	private String clusterId;
 
 	private String alertUserGroupBizId;
 
-	private String graph;
+	private String lifecycle;
 
 	private String hostName;
 
 	private Boolean createCluster;
-
-	private String name;
 
 	private Long endSchedule;
 
@@ -59,7 +43,31 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 
 	private String projectId;
 
+	private String parentFlowList;
+
+	private String logArchiveLocation;
+
+	private String alertDingDingGroupBizId;
+
+	private Long startSchedule;
+
+	private String clusterId;
+
+	private String graph;
+
+	private String name;
+
+	private String namespace;
+
 	private String parentCategory;
+	public CreateFlowForWebRequest() {
+		super("Emr", "2016-04-08", "CreateFlowForWeb");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCronExpr() {
 		return this.cronExpr;
@@ -69,39 +77,6 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.cronExpr = cronExpr;
 		if(cronExpr != null){
 			putQueryParameter("CronExpr", cronExpr);
-		}
-	}
-
-	public String getParentFlowList() {
-		return this.parentFlowList;
-	}
-
-	public void setParentFlowList(String parentFlowList) {
-		this.parentFlowList = parentFlowList;
-		if(parentFlowList != null){
-			putQueryParameter("ParentFlowList", parentFlowList);
-		}
-	}
-
-	public String getAlertDingDingGroupBizId() {
-		return this.alertDingDingGroupBizId;
-	}
-
-	public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
-		this.alertDingDingGroupBizId = alertDingDingGroupBizId;
-		if(alertDingDingGroupBizId != null){
-			putQueryParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
-		}
-	}
-
-	public Long getStartSchedule() {
-		return this.startSchedule;
-	}
-
-	public void setStartSchedule(Long startSchedule) {
-		this.startSchedule = startSchedule;
-		if(startSchedule != null){
-			putQueryParameter("StartSchedule", startSchedule.toString());
 		}
 	}
 
@@ -116,17 +91,6 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getAlertUserGroupBizId() {
 		return this.alertUserGroupBizId;
 	}
@@ -138,14 +102,14 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		}
 	}
 
-	public String getGraph() {
-		return this.graph;
+	public String getLifecycle() {
+		return this.lifecycle;
 	}
 
-	public void setGraph(String graph) {
-		this.graph = graph;
-		if(graph != null){
-			putQueryParameter("Graph", graph);
+	public void setLifecycle(String lifecycle) {
+		this.lifecycle = lifecycle;
+		if(lifecycle != null){
+			putQueryParameter("Lifecycle", lifecycle);
 		}
 	}
 
@@ -168,17 +132,6 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.createCluster = createCluster;
 		if(createCluster != null){
 			putQueryParameter("CreateCluster", createCluster.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -212,6 +165,94 @@ public class CreateFlowForWebRequest extends RpcAcsRequest<CreateFlowForWebRespo
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
+		}
+	}
+
+	public String getParentFlowList() {
+		return this.parentFlowList;
+	}
+
+	public void setParentFlowList(String parentFlowList) {
+		this.parentFlowList = parentFlowList;
+		if(parentFlowList != null){
+			putQueryParameter("ParentFlowList", parentFlowList);
+		}
+	}
+
+	public String getLogArchiveLocation() {
+		return this.logArchiveLocation;
+	}
+
+	public void setLogArchiveLocation(String logArchiveLocation) {
+		this.logArchiveLocation = logArchiveLocation;
+		if(logArchiveLocation != null){
+			putQueryParameter("LogArchiveLocation", logArchiveLocation);
+		}
+	}
+
+	public String getAlertDingDingGroupBizId() {
+		return this.alertDingDingGroupBizId;
+	}
+
+	public void setAlertDingDingGroupBizId(String alertDingDingGroupBizId) {
+		this.alertDingDingGroupBizId = alertDingDingGroupBizId;
+		if(alertDingDingGroupBizId != null){
+			putQueryParameter("AlertDingDingGroupBizId", alertDingDingGroupBizId);
+		}
+	}
+
+	public Long getStartSchedule() {
+		return this.startSchedule;
+	}
+
+	public void setStartSchedule(Long startSchedule) {
+		this.startSchedule = startSchedule;
+		if(startSchedule != null){
+			putQueryParameter("StartSchedule", startSchedule.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getGraph() {
+		return this.graph;
+	}
+
+	public void setGraph(String graph) {
+		this.graph = graph;
+		if(graph != null){
+			putQueryParameter("Graph", graph);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

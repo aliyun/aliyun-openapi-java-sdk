@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,28 +23,22 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateFlowProjectRequest extends RpcAcsRequest<CreateFlowProjectResponse> {
-	
+	   
+
+	private String description;
+
+	private String productType;
+
+	private String resourceGroupId;
+
+	private String name;
 	public CreateFlowProjectRequest() {
-		super("Emr", "2016-04-08", "CreateFlowProject", "emr");
+		super("Emr", "2016-04-08", "CreateFlowProject");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String name;
-
-	private String description;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getDescription() {
@@ -54,6 +49,39 @@ public class CreateFlowProjectRequest extends RpcAcsRequest<CreateFlowProjectRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

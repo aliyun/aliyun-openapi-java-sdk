@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DescribeFlowInstanceRequest extends RpcAcsRequest<DescribeFlowInstanceResponse> {
-	
+	   
+
+	private String id;
+
+	private String projectId;
 	public DescribeFlowInstanceRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowInstance", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowInstance");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String id;
-
-	private String projectId;
 
 	public String getId() {
 		return this.id;

@@ -21,6 +21,7 @@ import com.aliyuncs.emr.model.v20160408.ListClustersResponse;
 import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo;
 import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo.FailReason;
 import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo.OrderTaskInfo;
+import com.aliyuncs.emr.model.v20160408.ListClustersResponse.ClusterInfo.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,6 +52,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfo.setCreateResource(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].CreateResource"));
 			clusterInfo.setDepositType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].DepositType"));
 			clusterInfo.setMetaStoreType(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].MetaStoreType"));
+			clusterInfo.setK8sClusterId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].K8sClusterId"));
 
 			OrderTaskInfo orderTaskInfo = new OrderTaskInfo();
 			orderTaskInfo.setTargetCount(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].OrderTaskInfo.TargetCount"));
@@ -63,6 +65,16 @@ public class ListClustersResponseUnmarshaller {
 			failReason.setErrorMsg(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].FailReason.ErrorMsg"));
 			failReason.setRequestId(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].FailReason.RequestId"));
 			clusterInfo.setFailReason(failReason);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListClustersResponse.Clusters["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			clusterInfo.setTags(tags);
 
 			clusters.add(clusterInfo);
 		}

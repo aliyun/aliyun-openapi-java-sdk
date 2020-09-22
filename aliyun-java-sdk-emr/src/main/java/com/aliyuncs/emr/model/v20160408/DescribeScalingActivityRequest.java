@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DescribeScalingActivityRequest extends RpcAcsRequest<DescribeScalingActivityResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String clusterId;
+
+	private String scalingActivityId;
+
+	private String hostGroupId;
 	public DescribeScalingActivityRequest() {
-		super("Emr", "2016-04-08", "DescribeScalingActivity", "emr");
+		super("Emr", "2016-04-08", "DescribeScalingActivity");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String hostGroupId;
-
-	private String clusterId;
-
-	private String scalingActivityId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -47,17 +49,6 @@ public class DescribeScalingActivityRequest extends RpcAcsRequest<DescribeScalin
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getHostGroupId() {
-		return this.hostGroupId;
-	}
-
-	public void setHostGroupId(String hostGroupId) {
-		this.hostGroupId = hostGroupId;
-		if(hostGroupId != null){
-			putQueryParameter("HostGroupId", hostGroupId);
 		}
 	}
 
@@ -80,6 +71,17 @@ public class DescribeScalingActivityRequest extends RpcAcsRequest<DescribeScalin
 		this.scalingActivityId = scalingActivityId;
 		if(scalingActivityId != null){
 			putQueryParameter("ScalingActivityId", scalingActivityId);
+		}
+	}
+
+	public String getHostGroupId() {
+		return this.hostGroupId;
+	}
+
+	public void setHostGroupId(String hostGroupId) {
+		this.hostGroupId = hostGroupId;
+		if(hostGroupId != null){
+			putQueryParameter("HostGroupId", hostGroupId);
 		}
 	}
 

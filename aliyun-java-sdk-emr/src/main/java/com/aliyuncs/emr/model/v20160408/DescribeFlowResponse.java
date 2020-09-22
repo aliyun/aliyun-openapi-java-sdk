@@ -55,6 +55,12 @@ public class DescribeFlowResponse extends AcsResponse {
 
 	private String hostName;
 
+	private String namespace;
+
+	private String logArchiveLocation;
+
+	private String lifecycle;
+
 	private String graph;
 
 	private String categoryId;
@@ -66,6 +72,8 @@ public class DescribeFlowResponse extends AcsResponse {
 	private String alertDingDingGroupBizId;
 
 	private String application;
+
+	private String editLockDetail;
 
 	private List<ParentFlow> parentFlowList;
 
@@ -189,6 +197,30 @@ public class DescribeFlowResponse extends AcsResponse {
 		this.hostName = hostName;
 	}
 
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	public String getLogArchiveLocation() {
+		return this.logArchiveLocation;
+	}
+
+	public void setLogArchiveLocation(String logArchiveLocation) {
+		this.logArchiveLocation = logArchiveLocation;
+	}
+
+	public String getLifecycle() {
+		return this.lifecycle;
+	}
+
+	public void setLifecycle(String lifecycle) {
+		this.lifecycle = lifecycle;
+	}
+
 	public String getGraph() {
 		return this.graph;
 	}
@@ -235,6 +267,14 @@ public class DescribeFlowResponse extends AcsResponse {
 
 	public void setApplication(String application) {
 		this.application = application;
+	}
+
+	public String getEditLockDetail() {
+		return this.editLockDetail;
+	}
+
+	public void setEditLockDetail(String editLockDetail) {
+		this.editLockDetail = editLockDetail;
 	}
 
 	public List<ParentFlow> getParentFlowList() {

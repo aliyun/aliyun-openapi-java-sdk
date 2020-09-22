@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,25 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DescribeFlowCategoryTreeRequest extends RpcAcsRequest<DescribeFlowCategoryTreeResponse> {
-	
+	   
+
+	private String type;
+
+	private String mode;
+
+	private String keyword;
+
+	private String projectId;
+
+	private String categoryId;
 	public DescribeFlowCategoryTreeRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowCategoryTree", "emr");
+		super("Emr", "2016-04-08", "DescribeFlowCategoryTree");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String type;
-
-	private String projectId;
 
 	public String getType() {
 		return this.type;
@@ -46,6 +54,28 @@ public class DescribeFlowCategoryTreeRequest extends RpcAcsRequest<DescribeFlowC
 		}
 	}
 
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
+		}
+	}
+
+	public String getKeyword() {
+		return this.keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+		if(keyword != null){
+			putQueryParameter("Keyword", keyword);
+		}
+	}
+
 	public String getProjectId() {
 		return this.projectId;
 	}
@@ -54,6 +84,17 @@ public class DescribeFlowCategoryTreeRequest extends RpcAcsRequest<DescribeFlowC
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
+		}
+	}
+
+	public String getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+		if(categoryId != null){
+			putQueryParameter("CategoryId", categoryId);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,30 +23,20 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyFlowProjectRequest extends RpcAcsRequest<ModifyFlowProjectResponse> {
-	
+	   
+
+	private String description;
+
+	private String name;
+
+	private String projectId;
 	public ModifyFlowProjectRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowProject", "emr");
+		super("Emr", "2016-04-08", "ModifyFlowProject");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String name;
-
-	private String description;
-
-	private String projectId;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getDescription() {
@@ -56,6 +47,17 @@ public class ModifyFlowProjectRequest extends RpcAcsRequest<ModifyFlowProjectRes
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

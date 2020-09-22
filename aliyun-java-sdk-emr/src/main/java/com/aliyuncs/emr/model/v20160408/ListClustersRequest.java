@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,34 +24,43 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
-	
-	public ListClustersRequest() {
-		super("Emr", "2016-04-08", "ListClusters", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
 	private List<String> statusLists;
 
-	private Integer pageSize;
-
-	private List<String> clusterTypeLists;
-
 	private Boolean isDesc;
 
-	private String createType;
-
 	private String depositType;
-
-	private Boolean defaultStatus;
 
 	private Integer pageNumber;
 
 	private String machineType;
+
+	private String resourceGroupId;
+
+	private Integer pageSize;
+
+	private List<Tag> tags;
+
+	private String createType;
+
+	private List<String> expiredTagLists;
+
+	private Boolean defaultStatus;
+
+	private String name;
+
+	private List<String> clusterTypeLists;
+	public ListClustersRequest() {
+		super("Emr", "2016-04-08", "ListClusters");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -76,30 +86,6 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		}	
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public List<String> getClusterTypeLists() {
-		return this.clusterTypeLists;
-	}
-
-	public void setClusterTypeLists(List<String> clusterTypeLists) {
-		this.clusterTypeLists = clusterTypeLists;	
-		if (clusterTypeLists != null) {
-			for (int i = 0; i < clusterTypeLists.size(); i++) {
-				putQueryParameter("ClusterTypeList." + (i + 1) , clusterTypeLists.get(i));
-			}
-		}	
-	}
-
 	public Boolean getIsDesc() {
 		return this.isDesc;
 	}
@@ -111,17 +97,6 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		}
 	}
 
-	public String getCreateType() {
-		return this.createType;
-	}
-
-	public void setCreateType(String createType) {
-		this.createType = createType;
-		if(createType != null){
-			putQueryParameter("CreateType", createType);
-		}
-	}
-
 	public String getDepositType() {
 		return this.depositType;
 	}
@@ -130,17 +105,6 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.depositType = depositType;
 		if(depositType != null){
 			putQueryParameter("DepositType", depositType);
-		}
-	}
-
-	public Boolean getDefaultStatus() {
-		return this.defaultStatus;
-	}
-
-	public void setDefaultStatus(Boolean defaultStatus) {
-		this.defaultStatus = defaultStatus;
-		if(defaultStatus != null){
-			putQueryParameter("DefaultStatus", defaultStatus.toString());
 		}
 	}
 
@@ -163,6 +127,124 @@ public class ListClustersRequest extends RpcAcsRequest<ListClustersResponse> {
 		this.machineType = machineType;
 		if(machineType != null){
 			putQueryParameter("MachineType", machineType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public String getCreateType() {
+		return this.createType;
+	}
+
+	public void setCreateType(String createType) {
+		this.createType = createType;
+		if(createType != null){
+			putQueryParameter("CreateType", createType);
+		}
+	}
+
+	public List<String> getExpiredTagLists() {
+		return this.expiredTagLists;
+	}
+
+	public void setExpiredTagLists(List<String> expiredTagLists) {
+		this.expiredTagLists = expiredTagLists;	
+		if (expiredTagLists != null) {
+			for (int i = 0; i < expiredTagLists.size(); i++) {
+				putQueryParameter("ExpiredTagList." + (i + 1) , expiredTagLists.get(i));
+			}
+		}	
+	}
+
+	public Boolean getDefaultStatus() {
+		return this.defaultStatus;
+	}
+
+	public void setDefaultStatus(Boolean defaultStatus) {
+		this.defaultStatus = defaultStatus;
+		if(defaultStatus != null){
+			putQueryParameter("DefaultStatus", defaultStatus.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<String> getClusterTypeLists() {
+		return this.clusterTypeLists;
+	}
+
+	public void setClusterTypeLists(List<String> clusterTypeLists) {
+		this.clusterTypeLists = clusterTypeLists;	
+		if (clusterTypeLists != null) {
+			for (int i = 0; i < clusterTypeLists.size(); i++) {
+				putQueryParameter("ClusterTypeList." + (i + 1) , clusterTypeLists.get(i));
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

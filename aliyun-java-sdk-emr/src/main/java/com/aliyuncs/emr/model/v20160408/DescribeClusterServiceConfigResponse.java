@@ -133,6 +133,10 @@ public class DescribeClusterServiceConfigResponse extends AcsResponse {
 
 			private Boolean allowCustom;
 
+			private String scope;
+
+			private Long scopeId;
+
 			private List<ConfigItemValue> configItemValueList;
 
 			public String getConfigName() {
@@ -149,6 +153,22 @@ public class DescribeClusterServiceConfigResponse extends AcsResponse {
 
 			public void setAllowCustom(Boolean allowCustom) {
 				this.allowCustom = allowCustom;
+			}
+
+			public String getScope() {
+				return this.scope;
+			}
+
+			public void setScope(String scope) {
+				this.scope = scope;
+			}
+
+			public Long getScopeId() {
+				return this.scopeId;
+			}
+
+			public void setScopeId(Long scopeId) {
+				this.scopeId = scopeId;
 			}
 
 			public List<ConfigItemValue> getConfigItemValueList() {

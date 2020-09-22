@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class SubmitFlowRequest extends RpcAcsRequest<SubmitFlowResponse> {
-	
-	public SubmitFlowRequest() {
-		super("Emr", "2016-04-08", "SubmitFlow", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String conf;
 
 	private String projectId;
 
 	private String flowId;
+	public SubmitFlowRequest() {
+		super("Emr", "2016-04-08", "SubmitFlow");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getConf() {
 		return this.conf;

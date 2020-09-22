@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,54 +24,48 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleResponse> {
-	
-	public ModifyScalingRuleRequest() {
-		super("Emr", "2016-04-08", "ModifyScalingRule", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String launchTime;
+	   
 
 	private Long resourceOwnerId;
 
-	private Integer adjustmentValue;
-
-	private String adjustmentType;
-
 	private String ruleName;
 
-	private String clusterId;
-
 	private String scalingRuleId;
-
-	private Integer launchExpirationTime;
-
-	private String recurrenceValue;
 
 	private String recurrenceEndTime;
 
 	private List<CloudWatchTrigger> cloudWatchTriggers;
 
+	private Long timeoutWithGrace;
+
+	private Integer cooldown;
+
+	private String launchTime;
+
+	private Boolean withGrace;
+
+	private Integer adjustmentValue;
+
+	private String adjustmentType;
+
+	private String clusterId;
+
+	private Integer launchExpirationTime;
+
+	private String recurrenceValue;
+
 	private String hostGroupId;
 
 	private List<SchedulerTrigger> schedulerTriggers;
 
-	private Integer cooldown;
-
 	private String recurrenceType;
-
-	public String getLaunchTime() {
-		return this.launchTime;
-	}
-
-	public void setLaunchTime(String launchTime) {
-		this.launchTime = launchTime;
-		if(launchTime != null){
-			putQueryParameter("LaunchTime", launchTime);
-		}
+	public ModifyScalingRuleRequest() {
+		super("Emr", "2016-04-08", "ModifyScalingRule");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -81,28 +76,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getAdjustmentValue() {
-		return this.adjustmentValue;
-	}
-
-	public void setAdjustmentValue(Integer adjustmentValue) {
-		this.adjustmentValue = adjustmentValue;
-		if(adjustmentValue != null){
-			putQueryParameter("AdjustmentValue", adjustmentValue.toString());
-		}
-	}
-
-	public String getAdjustmentType() {
-		return this.adjustmentType;
-	}
-
-	public void setAdjustmentType(String adjustmentType) {
-		this.adjustmentType = adjustmentType;
-		if(adjustmentType != null){
-			putQueryParameter("AdjustmentType", adjustmentType);
 		}
 	}
 
@@ -117,17 +90,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getScalingRuleId() {
 		return this.scalingRuleId;
 	}
@@ -136,28 +98,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		this.scalingRuleId = scalingRuleId;
 		if(scalingRuleId != null){
 			putQueryParameter("ScalingRuleId", scalingRuleId);
-		}
-	}
-
-	public Integer getLaunchExpirationTime() {
-		return this.launchExpirationTime;
-	}
-
-	public void setLaunchExpirationTime(Integer launchExpirationTime) {
-		this.launchExpirationTime = launchExpirationTime;
-		if(launchExpirationTime != null){
-			putQueryParameter("LaunchExpirationTime", launchExpirationTime.toString());
-		}
-	}
-
-	public String getRecurrenceValue() {
-		return this.recurrenceValue;
-	}
-
-	public void setRecurrenceValue(String recurrenceValue) {
-		this.recurrenceValue = recurrenceValue;
-		if(recurrenceValue != null){
-			putQueryParameter("RecurrenceValue", recurrenceValue);
 		}
 	}
 
@@ -190,6 +130,105 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 		}	
 	}
 
+	public Long getTimeoutWithGrace() {
+		return this.timeoutWithGrace;
+	}
+
+	public void setTimeoutWithGrace(Long timeoutWithGrace) {
+		this.timeoutWithGrace = timeoutWithGrace;
+		if(timeoutWithGrace != null){
+			putQueryParameter("TimeoutWithGrace", timeoutWithGrace.toString());
+		}
+	}
+
+	public Integer getCooldown() {
+		return this.cooldown;
+	}
+
+	public void setCooldown(Integer cooldown) {
+		this.cooldown = cooldown;
+		if(cooldown != null){
+			putQueryParameter("Cooldown", cooldown.toString());
+		}
+	}
+
+	public String getLaunchTime() {
+		return this.launchTime;
+	}
+
+	public void setLaunchTime(String launchTime) {
+		this.launchTime = launchTime;
+		if(launchTime != null){
+			putQueryParameter("LaunchTime", launchTime);
+		}
+	}
+
+	public Boolean getWithGrace() {
+		return this.withGrace;
+	}
+
+	public void setWithGrace(Boolean withGrace) {
+		this.withGrace = withGrace;
+		if(withGrace != null){
+			putQueryParameter("WithGrace", withGrace.toString());
+		}
+	}
+
+	public Integer getAdjustmentValue() {
+		return this.adjustmentValue;
+	}
+
+	public void setAdjustmentValue(Integer adjustmentValue) {
+		this.adjustmentValue = adjustmentValue;
+		if(adjustmentValue != null){
+			putQueryParameter("AdjustmentValue", adjustmentValue.toString());
+		}
+	}
+
+	public String getAdjustmentType() {
+		return this.adjustmentType;
+	}
+
+	public void setAdjustmentType(String adjustmentType) {
+		this.adjustmentType = adjustmentType;
+		if(adjustmentType != null){
+			putQueryParameter("AdjustmentType", adjustmentType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getLaunchExpirationTime() {
+		return this.launchExpirationTime;
+	}
+
+	public void setLaunchExpirationTime(Integer launchExpirationTime) {
+		this.launchExpirationTime = launchExpirationTime;
+		if(launchExpirationTime != null){
+			putQueryParameter("LaunchExpirationTime", launchExpirationTime.toString());
+		}
+	}
+
+	public String getRecurrenceValue() {
+		return this.recurrenceValue;
+	}
+
+	public void setRecurrenceValue(String recurrenceValue) {
+		this.recurrenceValue = recurrenceValue;
+		if(recurrenceValue != null){
+			putQueryParameter("RecurrenceValue", recurrenceValue);
+		}
+	}
+
 	public String getHostGroupId() {
 		return this.hostGroupId;
 	}
@@ -216,17 +255,6 @@ public class ModifyScalingRuleRequest extends RpcAcsRequest<ModifyScalingRuleRes
 				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".RecurrenceType" , schedulerTriggers.get(depth1).getRecurrenceType());
 			}
 		}	
-	}
-
-	public Integer getCooldown() {
-		return this.cooldown;
-	}
-
-	public void setCooldown(Integer cooldown) {
-		this.cooldown = cooldown;
-		if(cooldown != null){
-			putQueryParameter("Cooldown", cooldown.toString());
-		}
 	}
 
 	public String getRecurrenceType() {

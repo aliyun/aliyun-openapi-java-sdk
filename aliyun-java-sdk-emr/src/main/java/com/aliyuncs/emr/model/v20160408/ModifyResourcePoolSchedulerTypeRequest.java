@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyResourcePoolSchedulerTypeRequest extends RpcAcsRequest<ModifyResourcePoolSchedulerTypeResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String clusterId;
+
+	private String schedulerType;
 	public ModifyResourcePoolSchedulerTypeRequest() {
-		super("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType", "emr");
+		super("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String schedulerType;
-
-	private String clusterId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +50,6 @@ public class ModifyResourcePoolSchedulerTypeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getSchedulerType() {
-		return this.schedulerType;
-	}
-
-	public void setSchedulerType(String schedulerType) {
-		this.schedulerType = schedulerType;
-		if(schedulerType != null){
-			putQueryParameter("SchedulerType", schedulerType);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -67,6 +58,17 @@ public class ModifyResourcePoolSchedulerTypeRequest extends RpcAcsRequest<Modify
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getSchedulerType() {
+		return this.schedulerType;
+	}
+
+	public void setSchedulerType(String schedulerType) {
+		this.schedulerType = schedulerType;
+		if(schedulerType != null){
+			putQueryParameter("SchedulerType", schedulerType);
 		}
 	}
 

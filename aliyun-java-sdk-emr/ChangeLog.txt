@@ -1,3 +1,6 @@
+2020-09-22 Version: 3.3.1
+- Add new OpenAPI for EMR Auto-Scaling module.
+
 2019-08-27 Version: 3.2.6
 - Fixed endpoint data init.
 

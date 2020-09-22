@@ -44,6 +44,7 @@ public class DescribeClusterBasicInfoResponseUnmarshaller {
 		clusterInfo.setDepositType(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.DepositType"));
 		clusterInfo.setZoneId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.ZoneId"));
 		clusterInfo.setName(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.Name"));
+		clusterInfo.setExtraInfo(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.ExtraInfo"));
 		clusterInfo.setRelateClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterId"));
 		clusterInfo.setGatewayClusterIds(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.GatewayClusterIds"));
 		clusterInfo.setCreateType(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.CreateType"));
@@ -79,12 +80,15 @@ public class DescribeClusterBasicInfoResponseUnmarshaller {
 		clusterInfo.setBootstrapFailed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.BootstrapFailed"));
 		clusterInfo.setConfigurations(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.Configurations"));
 		clusterInfo.setEasEnable(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.EasEnable"));
+		clusterInfo.setAutoScalingVersion(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingVersion"));
 		clusterInfo.setAutoScalingEnable(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingEnable"));
 		clusterInfo.setAutoScalingAllowed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingAllowed"));
 		clusterInfo.setAutoScalingSpotWithLimitAllowed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingSpotWithLimitAllowed"));
 		clusterInfo.setAutoScalingByLoadAllowed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingByLoadAllowed"));
+		clusterInfo.setAutoScalingWithGraceAllowed(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.AutoScalingWithGraceAllowed"));
 		clusterInfo.setResizeDiskEnable(_ctx.booleanValue("DescribeClusterBasicInfoResponse.ClusterInfo.ResizeDiskEnable"));
 		clusterInfo.setMetaStoreType(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.MetaStoreType"));
+		clusterInfo.setK8sClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.K8sClusterId"));
 
 		RelateClusterInfo relateClusterInfo = new RelateClusterInfo();
 		relateClusterInfo.setClusterId(_ctx.stringValue("DescribeClusterBasicInfoResponse.ClusterInfo.RelateClusterInfo.ClusterId"));

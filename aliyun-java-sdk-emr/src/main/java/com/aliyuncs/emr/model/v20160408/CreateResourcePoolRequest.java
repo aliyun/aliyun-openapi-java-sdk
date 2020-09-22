@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,20 +24,11 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolResponse> {
-	
-	public CreateResourcePoolRequest() {
-		super("Emr", "2016-04-08", "CreateResourcePool", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String note;
 
 	private Long resourceOwnerId;
-
-	private String name;
 
 	private Boolean active;
 
@@ -44,9 +36,19 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 
 	private String yarnSiteConfig;
 
+	private String name;
+
 	private List<Config> configs;
 
 	private String poolType;
+	public CreateResourcePoolRequest() {
+		super("Emr", "2016-04-08", "CreateResourcePool");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNote() {
 		return this.note;
@@ -67,17 +69,6 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -111,6 +102,17 @@ public class CreateResourcePoolRequest extends RpcAcsRequest<CreateResourcePoolR
 		this.yarnSiteConfig = yarnSiteConfig;
 		if(yarnSiteConfig != null){
 			putQueryParameter("YarnSiteConfig", yarnSiteConfig);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

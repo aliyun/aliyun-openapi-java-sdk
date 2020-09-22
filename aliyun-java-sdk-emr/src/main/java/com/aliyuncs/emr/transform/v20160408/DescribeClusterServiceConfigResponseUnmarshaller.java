@@ -47,6 +47,8 @@ public class DescribeClusterServiceConfigResponseUnmarshaller {
 			ConfigValue configValue = new ConfigValue();
 			configValue.setConfigName(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigName"));
 			configValue.setAllowCustom(_ctx.booleanValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].AllowCustom"));
+			configValue.setScope(_ctx.stringValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].Scope"));
+			configValue.setScopeId(_ctx.longValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ScopeId"));
 
 			List<ConfigItemValue> configItemValueList = new ArrayList<ConfigItemValue>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClusterServiceConfigResponse.Config.ConfigValueList["+ i +"].ConfigItemValueList.Length"); j++) {

@@ -73,6 +73,8 @@ public class ListClusterServiceComponentHealthInfoResponse extends AcsResponse {
 
 		private Integer agentHeartBeatLostNum;
 
+		private Long createdTime;
+
 		private List<HealthDetail> healthDetailList;
 
 		public String getServiceName() {
@@ -137,6 +139,14 @@ public class ListClusterServiceComponentHealthInfoResponse extends AcsResponse {
 
 		public void setAgentHeartBeatLostNum(Integer agentHeartBeatLostNum) {
 			this.agentHeartBeatLostNum = agentHeartBeatLostNum;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
 		}
 
 		public List<HealthDetail> getHealthDetailList() {

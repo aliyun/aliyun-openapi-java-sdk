@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanResponse> {
-	
-	public CreateBackupPlanRequest() {
-		super("Emr", "2016-04-08", "CreateBackupPlan", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,6 +34,14 @@ public class CreateBackupPlanRequest extends RpcAcsRequest<CreateBackupPlanRespo
 	private String name;
 
 	private String rootPath;
+	public CreateBackupPlanRequest() {
+		super("Emr", "2016-04-08", "CreateBackupPlan");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

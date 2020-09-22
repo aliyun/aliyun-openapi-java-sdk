@@ -123,6 +123,8 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 
 		private List<Config> configList;
 
+		private List<Tag> tags;
+
 		private List<String> softwareInfoList;
 
 		public String getId() {
@@ -429,6 +431,14 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 			this.configList = configList;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getSoftwareInfoList() {
 			return this.softwareInfoList;
 		}
@@ -663,6 +673,29 @@ public class DescribeClusterTemplateResponse extends AcsResponse {
 
 			public void setReplace(String replace) {
 				this.replace = replace;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

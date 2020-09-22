@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,32 +23,22 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateFlowCategoryRequest extends RpcAcsRequest<CreateFlowCategoryResponse> {
-	
+	   
+
+	private String type;
+
+	private String parentId;
+
+	private String name;
+
+	private String projectId;
 	public CreateFlowCategoryRequest() {
-		super("Emr", "2016-04-08", "CreateFlowCategory", "emr");
+		super("Emr", "2016-04-08", "CreateFlowCategory");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String name;
-
-	private String type;
-
-	private String projectId;
-
-	private String parentId;
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getType() {
@@ -61,17 +52,6 @@ public class CreateFlowCategoryRequest extends RpcAcsRequest<CreateFlowCategoryR
 		}
 	}
 
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
 	public String getParentId() {
 		return this.parentId;
 	}
@@ -80,6 +60,28 @@ public class CreateFlowCategoryRequest extends RpcAcsRequest<CreateFlowCategoryR
 		this.parentId = parentId;
 		if(parentId != null){
 			putQueryParameter("ParentId", parentId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 

@@ -44,6 +44,10 @@ public class ListClusterServiceConfigHistoryResponseUnmarshaller {
 			configHistory.setCreateTime(_ctx.longValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].CreateTime"));
 			configHistory.setAuthor(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Author"));
 			configHistory.setComment(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].Comment"));
+			configHistory.setHostGroupId(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].HostGroupId"));
+			configHistory.setHostGroupName(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].HostGroupName"));
+			configHistory.setHostInstanceId(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].HostInstanceId"));
+			configHistory.setHostName(_ctx.stringValue("ListClusterServiceConfigHistoryResponse.ConfigHistoryList["+ i +"].HostName"));
 
 			configHistoryList.add(configHistory);
 		}

@@ -42,6 +42,7 @@ public class ListClusterServiceComponentHealthInfoResponseUnmarshaller {
 			healthInfo.setNormalNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].NormalNum"));
 			healthInfo.setTotalNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].TotalNum"));
 			healthInfo.setAgentHeartBeatLostNum(_ctx.integerValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].AgentHeartBeatLostNum"));
+			healthInfo.setCreatedTime(_ctx.longValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].CreatedTime"));
 
 			List<HealthDetail> healthDetailList = new ArrayList<HealthDetail>();
 			for (int j = 0; j < _ctx.lengthValue("ListClusterServiceComponentHealthInfoResponse.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {

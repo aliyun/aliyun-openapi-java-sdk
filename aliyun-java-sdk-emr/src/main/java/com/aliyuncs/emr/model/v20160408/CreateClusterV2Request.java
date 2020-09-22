@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Response> {
-	
-	public CreateClusterV2Request() {
-		super("Emr", "2016-04-08", "CreateClusterV2", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean autoPayOrder;
 
@@ -42,13 +36,7 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String configurations;
 
-	private Boolean ioOptimized;
-
-	private String securityGroupId;
-
 	private Boolean sshEnable;
-
-	private Boolean easEnable;
 
 	private String keyPairName;
 
@@ -56,23 +44,21 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private String securityGroupName;
 
-	private String depositType;
-
 	private String machineType;
+
+	private String resourceGroupId;
 
 	private List<HostComponentInfo> hostComponentInfos;
 
-	private List<BootstrapAction> bootstrapActions;
+	private String clickHouseConf;
 
-	private Boolean useLocalMetaDb;
+	private List<BootstrapAction> bootstrapActions;
 
 	private String metaStoreConf;
 
 	private String emrVer;
 
-	private List<UserInfo> userInfos;
-
-	private String userDefinedEmrEcsRole;
+	private List<Tag> tags;
 
 	private String authorizeContent;
 
@@ -80,39 +66,67 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 	private Integer period;
 
-	private String whiteListType;
-
-	private String relatedClusterId;
-
 	private String instanceGeneration;
 
 	private String vSwitchId;
 
 	private String clusterType;
 
+	private String extraAttributes;
+
 	private Boolean autoRenew;
 
 	private List<String> optionSoftWareLists;
-
-	private String vpcId;
 
 	private String netType;
 
 	private String name;
 
-	private List<HostGroup> hostGroups;
-
 	private String zoneId;
+
+	private Boolean useCustomHiveMetaDB;
+
+	private Boolean initCustomHiveMetaDB;
+
+	private Boolean ioOptimized;
+
+	private String securityGroupId;
+
+	private Boolean easEnable;
+
+	private String depositType;
+
+	private Boolean useLocalMetaDb;
+
+	private List<UserInfo> userInfos;
+
+	private String userDefinedEmrEcsRole;
+
+	private String whiteListType;
+
+	private String relatedClusterId;
+
+	private String vpcId;
+
+	private List<PromotionInfo> promotionInfos;
+
+	private List<HostGroup> hostGroups;
 
 	private String chargeType;
 
-	private Boolean useCustomHiveMetaDB;
+	private List<ServiceInfo> serviceInfos;
 
 	private List<Config> configs;
 
 	private Boolean highAvailabilityEnable;
-
-	private Boolean initCustomHiveMetaDB;
+	public CreateClusterV2Request() {
+		super("Emr", "2016-04-08", "CreateClusterV2");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getAutoPayOrder() {
 		return this.autoPayOrder;
@@ -169,28 +183,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
-	public Boolean getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(Boolean ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
 	public Boolean getSshEnable() {
 		return this.sshEnable;
 	}
@@ -199,17 +191,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.sshEnable = sshEnable;
 		if(sshEnable != null){
 			putQueryParameter("SshEnable", sshEnable.toString());
-		}
-	}
-
-	public Boolean getEasEnable() {
-		return this.easEnable;
-	}
-
-	public void setEasEnable(Boolean easEnable) {
-		this.easEnable = easEnable;
-		if(easEnable != null){
-			putQueryParameter("EasEnable", easEnable.toString());
 		}
 	}
 
@@ -246,17 +227,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
-	public String getDepositType() {
-		return this.depositType;
-	}
-
-	public void setDepositType(String depositType) {
-		this.depositType = depositType;
-		if(depositType != null){
-			putQueryParameter("DepositType", depositType);
-		}
-	}
-
 	public String getMachineType() {
 		return this.machineType;
 	}
@@ -265,6 +235,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.machineType = machineType;
 		if(machineType != null){
 			putQueryParameter("MachineType", machineType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -287,6 +268,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}	
 	}
 
+	public String getClickHouseConf() {
+		return this.clickHouseConf;
+	}
+
+	public void setClickHouseConf(String clickHouseConf) {
+		this.clickHouseConf = clickHouseConf;
+		if(clickHouseConf != null){
+			putQueryParameter("ClickHouseConf", clickHouseConf);
+		}
+	}
+
 	public List<BootstrapAction> getBootstrapActions() {
 		return this.bootstrapActions;
 	}
@@ -300,17 +292,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 			}
 		}	
-	}
-
-	public Boolean getUseLocalMetaDb() {
-		return this.useLocalMetaDb;
-	}
-
-	public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
-		this.useLocalMetaDb = useLocalMetaDb;
-		if(useLocalMetaDb != null){
-			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
-		}
 	}
 
 	public String getMetaStoreConf() {
@@ -335,30 +316,18 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
-	public List<UserInfo> getUserInfos() {
-		return this.userInfos;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setUserInfos(List<UserInfo> userInfos) {
-		this.userInfos = userInfos;	
-		if (userInfos != null) {
-			for (int depth1 = 0; depth1 < userInfos.size(); depth1++) {
-				putQueryParameter("UserInfo." + (depth1 + 1) + ".Password" , userInfos.get(depth1).getPassword());
-				putQueryParameter("UserInfo." + (depth1 + 1) + ".UserId" , userInfos.get(depth1).getUserId());
-				putQueryParameter("UserInfo." + (depth1 + 1) + ".UserName" , userInfos.get(depth1).getUserName());
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getUserDefinedEmrEcsRole() {
-		return this.userDefinedEmrEcsRole;
-	}
-
-	public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
-		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
-		if(userDefinedEmrEcsRole != null){
-			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
-		}
 	}
 
 	public String getAuthorizeContent() {
@@ -391,28 +360,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
-		}
-	}
-
-	public String getWhiteListType() {
-		return this.whiteListType;
-	}
-
-	public void setWhiteListType(String whiteListType) {
-		this.whiteListType = whiteListType;
-		if(whiteListType != null){
-			putQueryParameter("WhiteListType", whiteListType);
-		}
-	}
-
-	public String getRelatedClusterId() {
-		return this.relatedClusterId;
-	}
-
-	public void setRelatedClusterId(String relatedClusterId) {
-		this.relatedClusterId = relatedClusterId;
-		if(relatedClusterId != null){
-			putQueryParameter("RelatedClusterId", relatedClusterId);
 		}
 	}
 
@@ -449,6 +396,17 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public String getExtraAttributes() {
+		return this.extraAttributes;
+	}
+
+	public void setExtraAttributes(String extraAttributes) {
+		this.extraAttributes = extraAttributes;
+		if(extraAttributes != null){
+			putQueryParameter("ExtraAttributes", extraAttributes);
+		}
+	}
+
 	public Boolean getAutoRenew() {
 		return this.autoRenew;
 	}
@@ -473,17 +431,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}	
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getNetType() {
 		return this.netType;
 	}
@@ -504,6 +451,168 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		if(name != null){
 			putQueryParameter("Name", name);
 		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getUseCustomHiveMetaDB() {
+		return this.useCustomHiveMetaDB;
+	}
+
+	public void setUseCustomHiveMetaDB(Boolean useCustomHiveMetaDB) {
+		this.useCustomHiveMetaDB = useCustomHiveMetaDB;
+		if(useCustomHiveMetaDB != null){
+			putQueryParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB.toString());
+		}
+	}
+
+	public Boolean getInitCustomHiveMetaDB() {
+		return this.initCustomHiveMetaDB;
+	}
+
+	public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
+		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
+		if(initCustomHiveMetaDB != null){
+			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
+		}
+	}
+
+	public Boolean getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(Boolean ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized.toString());
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Boolean getEasEnable() {
+		return this.easEnable;
+	}
+
+	public void setEasEnable(Boolean easEnable) {
+		this.easEnable = easEnable;
+		if(easEnable != null){
+			putQueryParameter("EasEnable", easEnable.toString());
+		}
+	}
+
+	public String getDepositType() {
+		return this.depositType;
+	}
+
+	public void setDepositType(String depositType) {
+		this.depositType = depositType;
+		if(depositType != null){
+			putQueryParameter("DepositType", depositType);
+		}
+	}
+
+	public Boolean getUseLocalMetaDb() {
+		return this.useLocalMetaDb;
+	}
+
+	public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
+		this.useLocalMetaDb = useLocalMetaDb;
+		if(useLocalMetaDb != null){
+			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
+		}
+	}
+
+	public List<UserInfo> getUserInfos() {
+		return this.userInfos;
+	}
+
+	public void setUserInfos(List<UserInfo> userInfos) {
+		this.userInfos = userInfos;	
+		if (userInfos != null) {
+			for (int depth1 = 0; depth1 < userInfos.size(); depth1++) {
+				putQueryParameter("UserInfo." + (depth1 + 1) + ".Password" , userInfos.get(depth1).getPassword());
+				putQueryParameter("UserInfo." + (depth1 + 1) + ".UserId" , userInfos.get(depth1).getUserId());
+				putQueryParameter("UserInfo." + (depth1 + 1) + ".UserName" , userInfos.get(depth1).getUserName());
+			}
+		}	
+	}
+
+	public String getUserDefinedEmrEcsRole() {
+		return this.userDefinedEmrEcsRole;
+	}
+
+	public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
+		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
+		if(userDefinedEmrEcsRole != null){
+			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+		}
+	}
+
+	public String getWhiteListType() {
+		return this.whiteListType;
+	}
+
+	public void setWhiteListType(String whiteListType) {
+		this.whiteListType = whiteListType;
+		if(whiteListType != null){
+			putQueryParameter("WhiteListType", whiteListType);
+		}
+	}
+
+	public String getRelatedClusterId() {
+		return this.relatedClusterId;
+	}
+
+	public void setRelatedClusterId(String relatedClusterId) {
+		this.relatedClusterId = relatedClusterId;
+		if(relatedClusterId != null){
+			putQueryParameter("RelatedClusterId", relatedClusterId);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public List<PromotionInfo> getPromotionInfos() {
+		return this.promotionInfos;
+	}
+
+	public void setPromotionInfos(List<PromotionInfo> promotionInfos) {
+		this.promotionInfos = promotionInfos;	
+		if (promotionInfos != null) {
+			for (int depth1 = 0; depth1 < promotionInfos.size(); depth1++) {
+				putQueryParameter("PromotionInfo." + (depth1 + 1) + ".PromotionOptionCode" , promotionInfos.get(depth1).getPromotionOptionCode());
+				putQueryParameter("PromotionInfo." + (depth1 + 1) + ".ProductCode" , promotionInfos.get(depth1).getProductCode());
+				putQueryParameter("PromotionInfo." + (depth1 + 1) + ".PromotionOptionNo" , promotionInfos.get(depth1).getPromotionOptionNo());
+			}
+		}	
 	}
 
 	public List<HostGroup> getHostGroups() {
@@ -536,17 +645,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}	
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	public String getChargeType() {
 		return this.chargeType;
 	}
@@ -558,15 +656,18 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
-	public Boolean getUseCustomHiveMetaDB() {
-		return this.useCustomHiveMetaDB;
+	public List<ServiceInfo> getServiceInfos() {
+		return this.serviceInfos;
 	}
 
-	public void setUseCustomHiveMetaDB(Boolean useCustomHiveMetaDB) {
-		this.useCustomHiveMetaDB = useCustomHiveMetaDB;
-		if(useCustomHiveMetaDB != null){
-			putQueryParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB.toString());
-		}
+	public void setServiceInfos(List<ServiceInfo> serviceInfos) {
+		this.serviceInfos = serviceInfos;	
+		if (serviceInfos != null) {
+			for (int depth1 = 0; depth1 < serviceInfos.size(); depth1++) {
+				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".ServiceVersion" , serviceInfos.get(depth1).getServiceVersion());
+				putQueryParameter("ServiceInfo." + (depth1 + 1) + ".ServiceName" , serviceInfos.get(depth1).getServiceName());
+			}
+		}	
 	}
 
 	public List<Config> getConfigs() {
@@ -595,17 +696,6 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		this.highAvailabilityEnable = highAvailabilityEnable;
 		if(highAvailabilityEnable != null){
 			putQueryParameter("HighAvailabilityEnable", highAvailabilityEnable.toString());
-		}
-	}
-
-	public Boolean getInitCustomHiveMetaDB() {
-		return this.initCustomHiveMetaDB;
-	}
-
-	public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
-		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
-		if(initCustomHiveMetaDB != null){
-			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
 		}
 	}
 
@@ -675,6 +765,29 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 		}
 	}
 
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+	}
+
 	public static class UserInfo {
 
 		private String password;
@@ -705,6 +818,39 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+	}
+
+	public static class PromotionInfo {
+
+		private String promotionOptionCode;
+
+		private String productCode;
+
+		private String promotionOptionNo;
+
+		public String getPromotionOptionCode() {
+			return this.promotionOptionCode;
+		}
+
+		public void setPromotionOptionCode(String promotionOptionCode) {
+			this.promotionOptionCode = promotionOptionCode;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public String getPromotionOptionNo() {
+			return this.promotionOptionNo;
+		}
+
+		public void setPromotionOptionNo(String promotionOptionNo) {
+			this.promotionOptionNo = promotionOptionNo;
 		}
 	}
 
@@ -888,6 +1034,29 @@ public class CreateClusterV2Request extends RpcAcsRequest<CreateClusterV2Respons
 
 		public void setHostGroupType(String hostGroupType) {
 			this.hostGroupType = hostGroupType;
+		}
+	}
+
+	public static class ServiceInfo {
+
+		private String serviceVersion;
+
+		private String serviceName;
+
+		public String getServiceVersion() {
+			return this.serviceVersion;
+		}
+
+		public void setServiceVersion(String serviceVersion) {
+			this.serviceVersion = serviceVersion;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
 		}
 	}
 

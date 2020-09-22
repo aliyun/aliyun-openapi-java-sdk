@@ -36,6 +36,9 @@ public class DescribeFlowInstanceResponseUnmarshaller {
 		describeFlowInstanceResponse.setProjectId(_ctx.stringValue("DescribeFlowInstanceResponse.ProjectId"));
 		describeFlowInstanceResponse.setStatus(_ctx.stringValue("DescribeFlowInstanceResponse.Status"));
 		describeFlowInstanceResponse.setClusterId(_ctx.stringValue("DescribeFlowInstanceResponse.ClusterId"));
+		describeFlowInstanceResponse.setNamespace(_ctx.stringValue("DescribeFlowInstanceResponse.Namespace"));
+		describeFlowInstanceResponse.setLogArchiveLocation(_ctx.stringValue("DescribeFlowInstanceResponse.LogArchiveLocation"));
+		describeFlowInstanceResponse.setLifecycle(_ctx.stringValue("DescribeFlowInstanceResponse.Lifecycle"));
 		describeFlowInstanceResponse.setStartTime(_ctx.longValue("DescribeFlowInstanceResponse.StartTime"));
 		describeFlowInstanceResponse.setEndTime(_ctx.longValue("DescribeFlowInstanceResponse.EndTime"));
 		describeFlowInstanceResponse.setDuration(_ctx.longValue("DescribeFlowInstanceResponse.Duration"));
@@ -54,6 +57,7 @@ public class DescribeFlowInstanceResponseUnmarshaller {
 			parentFlow.setDependencyInstanceId(_ctx.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].DependencyInstanceId"));
 			parentFlow.setScheduleKey(_ctx.stringValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].ScheduleKey"));
 			parentFlow.setBizDate(_ctx.longValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].BizDate"));
+			parentFlow.setMeet(_ctx.booleanValue("DescribeFlowInstanceResponse.DependencyFlowList["+ i +"].Meet"));
 
 			dependencyFlowList.add(parentFlow);
 		}

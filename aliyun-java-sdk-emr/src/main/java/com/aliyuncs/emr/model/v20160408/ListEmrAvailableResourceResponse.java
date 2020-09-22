@@ -39,26 +39,10 @@ public class ListEmrAvailableResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBizRegionId() {
-		return this.regionId;
-	}
-
-	public void setBizRegionId(String regionId) {
-		this.regionId = regionId;
-	}
-
-	/**
-	 * @deprecated use getBizRegionId instead of this.
-	 */
-	@Deprecated
 	public String getRegionId() {
 		return this.regionId;
 	}
 
-	/**
-	 * @deprecated use setBizRegionId instead of this.
-	 */
-	@Deprecated
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
 	}
@@ -125,8 +109,6 @@ public class ListEmrAvailableResourceResponse extends AcsResponse {
 
 				private String unit;
 
-				private String value1;
-
 				private List<String> supportNodeTypeList;
 
 				private EmrInstanceType emrInstanceType;
@@ -161,14 +143,6 @@ public class ListEmrAvailableResourceResponse extends AcsResponse {
 
 				public void setUnit(String unit) {
 					this.unit = unit;
-				}
-
-				public String getValue1() {
-					return this.value1;
-				}
-
-				public void setValue1(String value1) {
-					this.value1 = value1;
 				}
 
 				public List<String> getSupportNodeTypeList() {

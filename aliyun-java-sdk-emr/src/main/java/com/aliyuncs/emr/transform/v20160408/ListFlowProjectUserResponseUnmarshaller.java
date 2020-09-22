@@ -39,6 +39,7 @@ public class ListFlowProjectUserResponseUnmarshaller {
 			user.setProjectId(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].ProjectId"));
 			user.setOwnerId(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].OwnerId"));
 			user.setUserName(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].UserName"));
+			user.setAccountUserId(_ctx.stringValue("ListFlowProjectUserResponse.Users["+ i +"].AccountUserId"));
 
 			users.add(user);
 		}

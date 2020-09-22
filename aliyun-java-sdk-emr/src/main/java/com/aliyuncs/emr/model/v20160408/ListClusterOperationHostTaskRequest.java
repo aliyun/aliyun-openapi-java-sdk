@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,9 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListClusterOperationHostTaskRequest extends RpcAcsRequest<ListClusterOperationHostTaskResponse> {
-	
-	public ListClusterOperationHostTaskRequest() {
-		super("Emr", "2016-04-08", "ListClusterOperationHostTask", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private Integer pageSize;
-
-	private String operationId;
 
 	private String hostId;
 
@@ -43,7 +33,19 @@ public class ListClusterOperationHostTaskRequest extends RpcAcsRequest<ListClust
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
+	private String operationId;
+
 	private String status;
+	public ListClusterOperationHostTaskRequest() {
+		super("Emr", "2016-04-08", "ListClusterOperationHostTask");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -53,28 +55,6 @@ public class ListClusterOperationHostTaskRequest extends RpcAcsRequest<ListClust
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getOperationId() {
-		return this.operationId;
-	}
-
-	public void setOperationId(String operationId) {
-		this.operationId = operationId;
-		if(operationId != null){
-			putQueryParameter("OperationId", operationId);
 		}
 	}
 
@@ -108,6 +88,28 @@ public class ListClusterOperationHostTaskRequest extends RpcAcsRequest<ListClust
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getOperationId() {
+		return this.operationId;
+	}
+
+	public void setOperationId(String operationId) {
+		this.operationId = operationId;
+		if(operationId != null){
+			putQueryParameter("OperationId", operationId);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListJobInstanceWorkersRequest extends RpcAcsRequest<ListJobInstanceWorkersResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String jobInstanceId;
 	public ListJobInstanceWorkersRequest() {
-		super("Emr", "2016-04-08", "ListJobInstanceWorkers", "emr");
+		super("Emr", "2016-04-08", "ListJobInstanceWorkers");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String jobInstanceId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

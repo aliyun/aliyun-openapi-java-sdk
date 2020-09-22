@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,45 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListFlowClusterRequest extends RpcAcsRequest<ListFlowClusterResponse> {
-	
+	   
+
+	private Integer pageNumber;
+
+	private String resourceGroupId;
+
+	private Integer pageSize;
+
+	private String projectId;
 	public ListFlowClusterRequest() {
-		super("Emr", "2016-04-08", "ListFlowCluster", "emr");
+		super("Emr", "2016-04-08", "ListFlowCluster");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private Integer pageSize;
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
 
-	private String projectId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
-	private Integer pageNumber;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
 
 	public Integer getPageSize() {
 		return this.pageSize;
@@ -56,17 +82,6 @@ public class ListFlowClusterRequest extends RpcAcsRequest<ListFlowClusterRespons
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

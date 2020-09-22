@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,23 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListClusterServiceQuickLinkRequest extends RpcAcsRequest<ListClusterServiceQuickLinkResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private Boolean directType;
+
+	private String clusterId;
+
+	private String serviceName;
 	public ListClusterServiceQuickLinkRequest() {
-		super("Emr", "2016-04-08", "ListClusterServiceQuickLink", "emr");
+		super("Emr", "2016-04-08", "ListClusterServiceQuickLink");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String serviceName;
-
-	private String clusterId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,14 +52,14 @@ public class ListClusterServiceQuickLinkRequest extends RpcAcsRequest<ListCluste
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public Boolean getDirectType() {
+		return this.directType;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+	public void setDirectType(Boolean directType) {
+		this.directType = directType;
+		if(directType != null){
+			putQueryParameter("DirectType", directType.toString());
 		}
 	}
 
@@ -67,6 +71,17 @@ public class ListClusterServiceQuickLinkRequest extends RpcAcsRequest<ListCluste
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

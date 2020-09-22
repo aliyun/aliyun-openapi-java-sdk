@@ -49,7 +49,6 @@ public class ListEmrAvailableResourceResponseUnmarshaller {
 					supportedResource.setMin(_ctx.integerValue("ListEmrAvailableResourceResponse.EmrZoneInfoList["+ i +"].EmrResourceInfoList["+ j +"].SupportedResourceList["+ k +"].Min"));
 					supportedResource.setMax(_ctx.integerValue("ListEmrAvailableResourceResponse.EmrZoneInfoList["+ i +"].EmrResourceInfoList["+ j +"].SupportedResourceList["+ k +"].Max"));
 					supportedResource.setUnit(_ctx.stringValue("ListEmrAvailableResourceResponse.EmrZoneInfoList["+ i +"].EmrResourceInfoList["+ j +"].SupportedResourceList["+ k +"].Unit"));
-					supportedResource.setValue1(_ctx.stringValue("ListEmrAvailableResourceResponse.EmrZoneInfoList["+ i +"].EmrResourceInfoList["+ j +"].SupportedResourceList["+ k +"].Value"));
 
 					List<String> supportNodeTypeList = new ArrayList<String>();
 					for (int l = 0; l < _ctx.lengthValue("ListEmrAvailableResourceResponse.EmrZoneInfoList["+ i +"].EmrResourceInfoList["+ j +"].SupportedResourceList["+ k +"].SupportNodeTypeList.Length"); l++) {

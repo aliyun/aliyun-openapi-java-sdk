@@ -21,6 +21,7 @@ import com.aliyuncs.emr.model.v20160408.ListEmrMainVersionResponse;
 import com.aliyuncs.emr.model.v20160408.ListEmrMainVersionResponse.EmrMainVersion;
 import com.aliyuncs.emr.model.v20160408.ListEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfo;
 import com.aliyuncs.emr.model.v20160408.ListEmrMainVersionResponse.EmrMainVersion.ClusterTypeInfo.ServiceInfo;
+import com.aliyuncs.emr.model.v20160408.ListEmrMainVersionResponse.EmrMainVersion.ClusterTypeWhiteUser;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,7 @@ public class ListEmrMainVersionResponseUnmarshaller {
 			emrMainVersion.setDisplay(_ctx.booleanValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].Display"));
 			emrMainVersion.setStackName(_ctx.stringValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].StackName"));
 			emrMainVersion.setStackVersion(_ctx.stringValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].StackVersion"));
+			emrMainVersion.setPublishType(_ctx.stringValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].PublishType"));
 
 			List<String> whiteUserList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].WhiteUserList.Length"); j++) {
@@ -72,6 +74,16 @@ public class ListEmrMainVersionResponseUnmarshaller {
 				clusterTypeInfoList.add(clusterTypeInfo);
 			}
 			emrMainVersion.setClusterTypeInfoList(clusterTypeInfoList);
+
+			List<ClusterTypeWhiteUser> clusterTypeWhiteUserList = new ArrayList<ClusterTypeWhiteUser>();
+			for (int j = 0; j < _ctx.lengthValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].ClusterTypeWhiteUserList.Length"); j++) {
+				ClusterTypeWhiteUser clusterTypeWhiteUser = new ClusterTypeWhiteUser();
+				clusterTypeWhiteUser.setClusterType(_ctx.stringValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].ClusterTypeWhiteUserList["+ j +"].ClusterType"));
+				clusterTypeWhiteUser.setUserId(_ctx.stringValue("ListEmrMainVersionResponse.EmrMainVersionList["+ i +"].ClusterTypeWhiteUserList["+ j +"].UserId"));
+
+				clusterTypeWhiteUserList.add(clusterTypeWhiteUser);
+			}
+			emrMainVersion.setClusterTypeWhiteUserList(clusterTypeWhiteUserList);
 
 			emrMainVersionList.add(emrMainVersion);
 		}

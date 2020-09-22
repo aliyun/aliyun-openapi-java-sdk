@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,24 +23,25 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecutionInstancesResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private Boolean isDesc;
+
+	private Integer pageNumber;
+
+	private String executionPlanInstanceId;
+
+	private Integer pageSize;
 	public ListJobExecutionInstancesRequest() {
-		super("Emr", "2016-04-08", "ListJobExecutionInstances", "emr");
+		super("Emr", "2016-04-08", "ListJobExecutionInstances");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String executionPlanInstanceId;
-
-	private Integer pageSize;
-
-	private Boolean isDesc;
-
-	private Integer pageNumber;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -49,28 +51,6 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getExecutionPlanInstanceId() {
-		return this.executionPlanInstanceId;
-	}
-
-	public void setExecutionPlanInstanceId(String executionPlanInstanceId) {
-		this.executionPlanInstanceId = executionPlanInstanceId;
-		if(executionPlanInstanceId != null){
-			putQueryParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -93,6 +73,28 @@ public class ListJobExecutionInstancesRequest extends RpcAcsRequest<ListJobExecu
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getExecutionPlanInstanceId() {
+		return this.executionPlanInstanceId;
+	}
+
+	public void setExecutionPlanInstanceId(String executionPlanInstanceId) {
+		this.executionPlanInstanceId = executionPlanInstanceId;
+		if(executionPlanInstanceId != null){
+			putQueryParameter("ExecutionPlanInstanceId", executionPlanInstanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeClusterServiceConfigResponse> {
-	
-	public DescribeClusterServiceConfigRequest() {
-		super("Emr", "2016-04-08", "DescribeClusterServiceConfig", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -39,11 +33,19 @@ public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeC
 
 	private String groupId;
 
-	private String serviceName;
-
 	private String clusterId;
 
 	private String configVersion;
+
+	private String serviceName;
+	public DescribeClusterServiceConfigRequest() {
+		super("Emr", "2016-04-08", "DescribeClusterServiceConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -89,17 +91,6 @@ public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -119,6 +110,17 @@ public class DescribeClusterServiceConfigRequest extends RpcAcsRequest<DescribeC
 		this.configVersion = configVersion;
 		if(configVersion != null){
 			putQueryParameter("ConfigVersion", configVersion);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 

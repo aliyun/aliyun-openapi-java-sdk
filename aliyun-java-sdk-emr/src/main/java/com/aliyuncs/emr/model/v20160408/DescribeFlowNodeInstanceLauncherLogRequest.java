@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DescribeFlowNodeInstanceLauncherLogRequest extends RpcAcsRequest<DescribeFlowNodeInstanceLauncherLogResponse> {
-	
-	public DescribeFlowNodeInstanceLauncherLogRequest() {
-		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceLauncherLog", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Integer offset;
 
@@ -41,13 +35,21 @@ public class DescribeFlowNodeInstanceLauncherLogRequest extends RpcAcsRequest<De
 
 	private Long startTime;
 
-	private Integer lines;
-
 	private Boolean reverse;
 
 	private String nodeInstanceId;
 
+	private Integer lines;
+
 	private String projectId;
+	public DescribeFlowNodeInstanceLauncherLogRequest() {
+		super("Emr", "2016-04-08", "DescribeFlowNodeInstanceLauncherLog");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Integer getOffset() {
 		return this.offset;
@@ -104,17 +106,6 @@ public class DescribeFlowNodeInstanceLauncherLogRequest extends RpcAcsRequest<De
 		}
 	}
 
-	public Integer getLines() {
-		return this.lines;
-	}
-
-	public void setLines(Integer lines) {
-		this.lines = lines;
-		if(lines != null){
-			putQueryParameter("Lines", lines.toString());
-		}
-	}
-
 	public Boolean getReverse() {
 		return this.reverse;
 	}
@@ -134,6 +125,17 @@ public class DescribeFlowNodeInstanceLauncherLogRequest extends RpcAcsRequest<De
 		this.nodeInstanceId = nodeInstanceId;
 		if(nodeInstanceId != null){
 			putQueryParameter("NodeInstanceId", nodeInstanceId);
+		}
+	}
+
+	public Integer getLines() {
+		return this.lines;
+	}
+
+	public void setLines(Integer lines) {
+		this.lines = lines;
+		if(lines != null){
+			putQueryParameter("Lines", lines.toString());
 		}
 	}
 

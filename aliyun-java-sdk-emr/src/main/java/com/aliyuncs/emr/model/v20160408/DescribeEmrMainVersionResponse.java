@@ -61,30 +61,18 @@ public class DescribeEmrMainVersionResponse extends AcsResponse {
 
 		private String stackVersion;
 
+		private String publishType;
+
 		private List<ClusterTypeInfo> clusterTypeInfoList;
+
+		private List<ClusterTypeWhiteUser> clusterTypeWhiteUserList;
 
 		private List<String> whiteUserList;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -137,12 +125,28 @@ public class DescribeEmrMainVersionResponse extends AcsResponse {
 			this.stackVersion = stackVersion;
 		}
 
+		public String getPublishType() {
+			return this.publishType;
+		}
+
+		public void setPublishType(String publishType) {
+			this.publishType = publishType;
+		}
+
 		public List<ClusterTypeInfo> getClusterTypeInfoList() {
 			return this.clusterTypeInfoList;
 		}
 
 		public void setClusterTypeInfoList(List<ClusterTypeInfo> clusterTypeInfoList) {
 			this.clusterTypeInfoList = clusterTypeInfoList;
+		}
+
+		public List<ClusterTypeWhiteUser> getClusterTypeWhiteUserList() {
+			return this.clusterTypeWhiteUserList;
+		}
+
+		public void setClusterTypeWhiteUserList(List<ClusterTypeWhiteUser> clusterTypeWhiteUserList) {
+			this.clusterTypeWhiteUserList = clusterTypeWhiteUserList;
 		}
 
 		public List<String> getWhiteUserList() {
@@ -236,6 +240,29 @@ public class DescribeEmrMainVersionResponse extends AcsResponse {
 				public void setDisplay(Boolean display) {
 					this.display = display;
 				}
+			}
+		}
+
+		public static class ClusterTypeWhiteUser {
+
+			private String clusterType;
+
+			private String userId;
+
+			public String getClusterType() {
+				return this.clusterType;
+			}
+
+			public void setClusterType(String clusterType) {
+				this.clusterType = clusterType;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
 			}
 		}
 	}

@@ -717,26 +717,10 @@ public class DescribeExecutionPlanResponse extends AcsResponse {
 					this.startTpe = startTpe;
 				}
 
-				public String getBizVersion() {
-					return this.version;
-				}
-
-				public void setBizVersion(String version) {
-					this.version = version;
-				}
-
-				/**
-				 * @deprecated use getBizVersion instead of this.
-				 */
-				@Deprecated
 				public String getVersion() {
 					return this.version;
 				}
 
-				/**
-				 * @deprecated use setBizVersion instead of this.
-				 */
-				@Deprecated
 				public void setVersion(String version) {
 					this.version = version;
 				}

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DeleteResourceQueueRequest extends RpcAcsRequest<DeleteResourceQueueResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String clusterId;
+
+	private String resourceQueueId;
 	public DeleteResourceQueueRequest() {
-		super("Emr", "2016-04-08", "DeleteResourceQueue", "emr");
+		super("Emr", "2016-04-08", "DeleteResourceQueue");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String resourceQueueId;
-
-	private String clusterId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -48,17 +50,6 @@ public class DeleteResourceQueueRequest extends RpcAcsRequest<DeleteResourceQueu
 		}
 	}
 
-	public String getResourceQueueId() {
-		return this.resourceQueueId;
-	}
-
-	public void setResourceQueueId(String resourceQueueId) {
-		this.resourceQueueId = resourceQueueId;
-		if(resourceQueueId != null){
-			putQueryParameter("ResourceQueueId", resourceQueueId);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -67,6 +58,17 @@ public class DeleteResourceQueueRequest extends RpcAcsRequest<DeleteResourceQueu
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getResourceQueueId() {
+		return this.resourceQueueId;
+	}
+
+	public void setResourceQueueId(String resourceQueueId) {
+		this.resourceQueueId = resourceQueueId;
+		if(resourceQueueId != null){
+			putQueryParameter("ResourceQueueId", resourceQueueId);
 		}
 	}
 

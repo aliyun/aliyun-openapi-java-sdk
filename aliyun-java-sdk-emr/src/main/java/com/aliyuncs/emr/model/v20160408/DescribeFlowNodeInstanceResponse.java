@@ -50,6 +50,8 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 
 	private String retryInterval;
 
+	private String retryPolicy;
+
 	private String nodeName;
 
 	private String flowId;
@@ -198,6 +200,14 @@ public class DescribeFlowNodeInstanceResponse extends AcsResponse {
 
 	public void setRetryInterval(String retryInterval) {
 		this.retryInterval = retryInterval;
+	}
+
+	public String getRetryPolicy() {
+		return this.retryPolicy;
+	}
+
+	public void setRetryPolicy(String retryPolicy) {
+		this.retryPolicy = retryPolicy;
 	}
 
 	public String getNodeName() {

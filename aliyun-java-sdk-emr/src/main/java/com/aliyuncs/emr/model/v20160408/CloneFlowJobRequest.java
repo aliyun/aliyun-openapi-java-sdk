@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,32 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CloneFlowJobRequest extends RpcAcsRequest<CloneFlowJobResponse> {
-	
+	   
+
+	private String name;
+
+	private String id;
+
+	private String projectId;
 	public CloneFlowJobRequest() {
-		super("Emr", "2016-04-08", "CloneFlowJob", "emr");
+		super("Emr", "2016-04-08", "CloneFlowJob");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String id;
+	public String getName() {
+		return this.name;
+	}
 
-	private String projectId;
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
 
 	public String getId() {
 		return this.id;

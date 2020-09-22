@@ -41,12 +41,16 @@ public class DescribeFlowResponseUnmarshaller {
 		describeFlowResponse.setCreateCluster(_ctx.booleanValue("DescribeFlowResponse.CreateCluster"));
 		describeFlowResponse.setClusterId(_ctx.stringValue("DescribeFlowResponse.ClusterId"));
 		describeFlowResponse.setHostName(_ctx.stringValue("DescribeFlowResponse.HostName"));
+		describeFlowResponse.setNamespace(_ctx.stringValue("DescribeFlowResponse.Namespace"));
+		describeFlowResponse.setLogArchiveLocation(_ctx.stringValue("DescribeFlowResponse.LogArchiveLocation"));
+		describeFlowResponse.setLifecycle(_ctx.stringValue("DescribeFlowResponse.Lifecycle"));
 		describeFlowResponse.setGraph(_ctx.stringValue("DescribeFlowResponse.Graph"));
 		describeFlowResponse.setCategoryId(_ctx.stringValue("DescribeFlowResponse.CategoryId"));
 		describeFlowResponse.setAlertConf(_ctx.stringValue("DescribeFlowResponse.AlertConf"));
 		describeFlowResponse.setAlertUserGroupBizId(_ctx.stringValue("DescribeFlowResponse.AlertUserGroupBizId"));
 		describeFlowResponse.setAlertDingDingGroupBizId(_ctx.stringValue("DescribeFlowResponse.AlertDingDingGroupBizId"));
 		describeFlowResponse.setApplication(_ctx.stringValue("DescribeFlowResponse.Application"));
+		describeFlowResponse.setEditLockDetail(_ctx.stringValue("DescribeFlowResponse.EditLockDetail"));
 
 		List<ParentFlow> parentFlowList = new ArrayList<ParentFlow>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFlowResponse.ParentFlowList.Length"); i++) {

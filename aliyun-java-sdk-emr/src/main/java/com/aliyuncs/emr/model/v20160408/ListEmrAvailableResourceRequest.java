@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvailableResourceResponse> {
-	
-	public ListEmrAvailableResourceRequest() {
-		super("Emr", "2016-04-08", "ListEmrAvailableResource", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String clusterId;
-
 	private String depositType;
+
+	private String systemDiskType;
+
+	private String resourceGroupId;
+
+	private String instanceType;
+
+	private String instanceChargeType;
+
+	private String clusterId;
 
 	private String destinationResource;
 
@@ -43,17 +45,19 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 
 	private String spotStrategy;
 
-	private String systemDiskType;
-
 	private String netType;
 
 	private String zoneId;
 
-	private String instanceType;
-
 	private String dataDiskType;
-
-	private String instanceChargeType;
+	public ListEmrAvailableResourceRequest() {
+		super("Emr", "2016-04-08", "ListEmrAvailableResource");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -66,17 +70,6 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public String getDepositType() {
 		return this.depositType;
 	}
@@ -85,6 +78,61 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		this.depositType = depositType;
 		if(depositType != null){
 			putQueryParameter("DepositType", depositType);
+		}
+	}
+
+	public String getSystemDiskType() {
+		return this.systemDiskType;
+	}
+
+	public void setSystemDiskType(String systemDiskType) {
+		this.systemDiskType = systemDiskType;
+		if(systemDiskType != null){
+			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -121,17 +169,6 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		}
 	}
 
-	public String getSystemDiskType() {
-		return this.systemDiskType;
-	}
-
-	public void setSystemDiskType(String systemDiskType) {
-		this.systemDiskType = systemDiskType;
-		if(systemDiskType != null){
-			putQueryParameter("SystemDiskType", systemDiskType);
-		}
-	}
-
 	public String getNetType() {
 		return this.netType;
 	}
@@ -154,17 +191,6 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
-	}
-
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
 	public String getDataDiskType() {
 		return this.dataDiskType;
 	}
@@ -173,17 +199,6 @@ public class ListEmrAvailableResourceRequest extends RpcAcsRequest<ListEmrAvaila
 		this.dataDiskType = dataDiskType;
 		if(dataDiskType != null){
 			putQueryParameter("DataDiskType", dataDiskType);
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

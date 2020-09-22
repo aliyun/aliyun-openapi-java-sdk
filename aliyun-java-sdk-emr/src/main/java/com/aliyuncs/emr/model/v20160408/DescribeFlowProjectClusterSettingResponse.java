@@ -35,6 +35,8 @@ public class DescribeFlowProjectClusterSettingResponse extends AcsResponse {
 
 	private String clusterId;
 
+	private String k8sClusterId;
+
 	private String defaultUser;
 
 	private String defaultQueue;
@@ -83,6 +85,14 @@ public class DescribeFlowProjectClusterSettingResponse extends AcsResponse {
 
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
+	}
+
+	public String getK8sClusterId() {
+		return this.k8sClusterId;
+	}
+
+	public void setK8sClusterId(String k8sClusterId) {
+		this.k8sClusterId = k8sClusterId;
 	}
 
 	public String getDefaultUser() {

@@ -48,6 +48,7 @@ public class ListFlowClusterResponseUnmarshaller {
 			clusterInfo.setHasUncompletedOrder(_ctx.booleanValue("ListFlowClusterResponse.Clusters["+ i +"].HasUncompletedOrder"));
 			clusterInfo.setOrderList(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].OrderList"));
 			clusterInfo.setCreateResource(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].CreateResource"));
+			clusterInfo.setK8sClusterId(_ctx.stringValue("ListFlowClusterResponse.Clusters["+ i +"].K8sClusterId"));
 
 			OrderTaskInfo orderTaskInfo = new OrderTaskInfo();
 			orderTaskInfo.setTargetCount(_ctx.integerValue("ListFlowClusterResponse.Clusters["+ i +"].OrderTaskInfo.TargetCount"));

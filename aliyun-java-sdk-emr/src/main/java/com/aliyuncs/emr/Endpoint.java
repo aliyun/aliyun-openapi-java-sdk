@@ -22,7 +22,10 @@ public class Endpoint {
             put("cn-shenzhen", "emr.aliyuncs.com");
             put("cn-beijing", "emr.aliyuncs.com");
             put("cn-shanghai", "emr.aliyuncs.com");
+            put("cn-shanghai-finance-1", "emr.aliyuncs.com");
+            put("cn-hangzhou-finance", "emr.aliyuncs.com");
             put("ap-southeast-1", "emr.aliyuncs.com");
+            put("cn-shenzhen-finance-1", "emr.aliyuncs.com");
             put("us-west-1", "emr.aliyuncs.com");
             put("cn-hangzhou", "emr.aliyuncs.com");
         }

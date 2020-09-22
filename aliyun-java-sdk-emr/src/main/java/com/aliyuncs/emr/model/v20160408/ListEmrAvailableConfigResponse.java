@@ -87,28 +87,18 @@ public class ListEmrAvailableConfigResponse extends AcsResponse {
 
 		private String stackVersion;
 
+		private String extraInfo;
+
+		private Boolean onCloudNative;
+
+		private String publishType;
+
 		private List<ClusterTypeInfo> clusterTypeInfoList;
 
-		public String getBizRegionId() {
-			return this.regionId;
-		}
-
-		public void setBizRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		/**
-		 * @deprecated use getBizRegionId instead of this.
-		 */
-		@Deprecated
 		public String getRegionId() {
 			return this.regionId;
 		}
 
-		/**
-		 * @deprecated use setBizRegionId instead of this.
-		 */
-		@Deprecated
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
 		}
@@ -143,6 +133,30 @@ public class ListEmrAvailableConfigResponse extends AcsResponse {
 
 		public void setStackVersion(String stackVersion) {
 			this.stackVersion = stackVersion;
+		}
+
+		public String getExtraInfo() {
+			return this.extraInfo;
+		}
+
+		public void setExtraInfo(String extraInfo) {
+			this.extraInfo = extraInfo;
+		}
+
+		public Boolean getOnCloudNative() {
+			return this.onCloudNative;
+		}
+
+		public void setOnCloudNative(Boolean onCloudNative) {
+			this.onCloudNative = onCloudNative;
+		}
+
+		public String getPublishType() {
+			return this.publishType;
+		}
+
+		public void setPublishType(String publishType) {
+			this.publishType = publishType;
 		}
 
 		public List<ClusterTypeInfo> getClusterTypeInfoList() {
@@ -232,6 +246,8 @@ public class ListEmrAvailableConfigResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String securityGroupType;
+
 		private Integer availableInstanceAmount;
 
 		private Integer ecsCount;
@@ -274,6 +290,14 @@ public class ListEmrAvailableConfigResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getSecurityGroupType() {
+			return this.securityGroupType;
+		}
+
+		public void setSecurityGroupType(String securityGroupType) {
+			this.securityGroupType = securityGroupType;
 		}
 
 		public Integer getAvailableInstanceAmount() {

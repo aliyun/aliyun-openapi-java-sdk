@@ -34,6 +34,8 @@ public class DescribeScalingRuleResponseUnmarshaller {
 		describeScalingRuleResponse.setAdjustmentValue(_ctx.integerValue("DescribeScalingRuleResponse.AdjustmentValue"));
 		describeScalingRuleResponse.setCooldown(_ctx.integerValue("DescribeScalingRuleResponse.Cooldown"));
 		describeScalingRuleResponse.setStatus(_ctx.stringValue("DescribeScalingRuleResponse.Status"));
+		describeScalingRuleResponse.setWithGrace(_ctx.booleanValue("DescribeScalingRuleResponse.WithGrace"));
+		describeScalingRuleResponse.setTimeoutWithGrace(_ctx.longValue("DescribeScalingRuleResponse.TimeoutWithGrace"));
 
 		SchedulerTrigger schedulerTrigger = new SchedulerTrigger();
 		schedulerTrigger.setLaunchTime(_ctx.longValue("DescribeScalingRuleResponse.SchedulerTrigger.LaunchTime"));

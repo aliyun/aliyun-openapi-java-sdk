@@ -43,6 +43,12 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 	private String clusterId;
 
+	private String namespace;
+
+	private String logArchiveLocation;
+
+	private String lifecycle;
+
 	private Long startTime;
 
 	private Long endTime;
@@ -133,6 +139,30 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 		this.clusterId = clusterId;
 	}
 
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	public String getLogArchiveLocation() {
+		return this.logArchiveLocation;
+	}
+
+	public void setLogArchiveLocation(String logArchiveLocation) {
+		this.logArchiveLocation = logArchiveLocation;
+	}
+
+	public String getLifecycle() {
+		return this.lifecycle;
+	}
+
+	public void setLifecycle(String lifecycle) {
+		this.lifecycle = lifecycle;
+	}
+
 	public Long getStartTime() {
 		return this.startTime;
 	}
@@ -221,6 +251,8 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 		private Long bizDate;
 
+		private Boolean meet;
+
 		public String getProjectId() {
 			return this.projectId;
 		}
@@ -275,6 +307,14 @@ public class DescribeFlowInstanceResponse extends AcsResponse {
 
 		public void setBizDate(Long bizDate) {
 			this.bizDate = bizDate;
+		}
+
+		public Boolean getMeet() {
+			return this.meet;
+		}
+
+		public void setMeet(Boolean meet) {
+			this.meet = meet;
 		}
 	}
 

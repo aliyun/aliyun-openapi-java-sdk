@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,44 +24,34 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListExecutionPlansRequest extends RpcAcsRequest<ListExecutionPlansResponse> {
-	
-	public ListExecutionPlansRequest() {
-		super("Emr", "2016-04-08", "ListExecutionPlans", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String jobId;
+	   
 
 	private Long resourceOwnerId;
 
 	private List<String> statusLists;
 
+	private Boolean isDesc;
+
+	private Integer pageNumber;
+
+	private String jobId;
+
 	private Integer pageSize;
+
+	private String queryType;
 
 	private String queryString;
 
 	private String clusterId;
 
-	private Boolean isDesc;
-
 	private String strategy;
-
-	private Integer pageNumber;
-
-	private String queryType;
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
+	public ListExecutionPlansRequest() {
+		super("Emr", "2016-04-08", "ListExecutionPlans");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -87,6 +78,39 @@ public class ListExecutionPlansRequest extends RpcAcsRequest<ListExecutionPlansR
 		}	
 	}
 
+	public Boolean getIsDesc() {
+		return this.isDesc;
+	}
+
+	public void setIsDesc(Boolean isDesc) {
+		this.isDesc = isDesc;
+		if(isDesc != null){
+			putQueryParameter("IsDesc", isDesc.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -95,6 +119,17 @@ public class ListExecutionPlansRequest extends RpcAcsRequest<ListExecutionPlansR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 
@@ -120,17 +155,6 @@ public class ListExecutionPlansRequest extends RpcAcsRequest<ListExecutionPlansR
 		}
 	}
 
-	public Boolean getIsDesc() {
-		return this.isDesc;
-	}
-
-	public void setIsDesc(Boolean isDesc) {
-		this.isDesc = isDesc;
-		if(isDesc != null){
-			putQueryParameter("IsDesc", isDesc.toString());
-		}
-	}
-
 	public String getStrategy() {
 		return this.strategy;
 	}
@@ -139,28 +163,6 @@ public class ListExecutionPlansRequest extends RpcAcsRequest<ListExecutionPlansR
 		this.strategy = strategy;
 		if(strategy != null){
 			putQueryParameter("Strategy", strategy);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
 		}
 	}
 

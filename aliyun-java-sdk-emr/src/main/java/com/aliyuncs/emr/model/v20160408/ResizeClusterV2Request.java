@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,36 +24,28 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Response> {
-	
-	public ResizeClusterV2Request() {
-		super("Emr", "2016-04-08", "ResizeClusterV2", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String vswitchId;
+	   
 
 	private Boolean isOpenPublicIp;
 
 	private Boolean autoPayOrder;
 
+	private String clusterId;
+
+	private String vswitchId;
+
 	private List<HostComponentInfo> hostComponentInfos;
 
 	private List<HostGroup> hostGroups;
 
-	private String clusterId;
-
-	public String getVswitchId() {
-		return this.vswitchId;
-	}
-
-	public void setVswitchId(String vswitchId) {
-		this.vswitchId = vswitchId;
-		if(vswitchId != null){
-			putQueryParameter("VswitchId", vswitchId);
-		}
+	private List<PromotionInfo> promotionInfos;
+	public ResizeClusterV2Request() {
+		super("Emr", "2016-04-08", "ResizeClusterV2");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getIsOpenPublicIp() {
@@ -74,6 +67,28 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 		this.autoPayOrder = autoPayOrder;
 		if(autoPayOrder != null){
 			putQueryParameter("AutoPayOrder", autoPayOrder.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getVswitchId() {
+		return this.vswitchId;
+	}
+
+	public void setVswitchId(String vswitchId) {
+		this.vswitchId = vswitchId;
+		if(vswitchId != null){
+			putQueryParameter("VswitchId", vswitchId);
 		}
 	}
 
@@ -127,15 +142,19 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 		}	
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public List<PromotionInfo> getPromotionInfos() {
+		return this.promotionInfos;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
+	public void setPromotionInfos(List<PromotionInfo> promotionInfos) {
+		this.promotionInfos = promotionInfos;	
+		if (promotionInfos != null) {
+			for (int depth1 = 0; depth1 < promotionInfos.size(); depth1++) {
+				putQueryParameter("PromotionInfo." + (depth1 + 1) + ".PromotionOptionCode" , promotionInfos.get(depth1).getPromotionOptionCode());
+				putQueryParameter("PromotionInfo." + (depth1 + 1) + ".ProductCode" , promotionInfos.get(depth1).getProductCode());
+				putQueryParameter("PromotionInfo." + (depth1 + 1) + ".PromotionOptionNo" , promotionInfos.get(depth1).getPromotionOptionNo());
+			}
+		}	
 	}
 
 	public static class HostComponentInfo {
@@ -361,6 +380,39 @@ public class ResizeClusterV2Request extends RpcAcsRequest<ResizeClusterV2Respons
 
 		public void setHostGroupType(String hostGroupType) {
 			this.hostGroupType = hostGroupType;
+		}
+	}
+
+	public static class PromotionInfo {
+
+		private String promotionOptionCode;
+
+		private String productCode;
+
+		private String promotionOptionNo;
+
+		public String getPromotionOptionCode() {
+			return this.promotionOptionCode;
+		}
+
+		public void setPromotionOptionCode(String promotionOptionCode) {
+			this.promotionOptionCode = promotionOptionCode;
+		}
+
+		public String getProductCode() {
+			return this.productCode;
+		}
+
+		public void setProductCode(String productCode) {
+			this.productCode = productCode;
+		}
+
+		public String getPromotionOptionNo() {
+			return this.promotionOptionNo;
+		}
+
+		public void setPromotionOptionNo(String promotionOptionNo) {
+			this.promotionOptionNo = promotionOptionNo;
 		}
 	}
 

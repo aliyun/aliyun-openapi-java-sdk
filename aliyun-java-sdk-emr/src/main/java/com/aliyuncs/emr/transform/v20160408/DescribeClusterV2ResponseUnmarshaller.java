@@ -48,6 +48,7 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		clusterInfo.setMachineType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.MachineType"));
 		clusterInfo.setZoneId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.ZoneId"));
 		clusterInfo.setName(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.Name"));
+		clusterInfo.setExtraInfo(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.ExtraInfo"));
 		clusterInfo.setRelateClusterId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterId"));
 		clusterInfo.setGatewayClusterIds(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.GatewayClusterIds"));
 		clusterInfo.setCreateType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.CreateType"));
@@ -83,12 +84,15 @@ public class DescribeClusterV2ResponseUnmarshaller {
 		clusterInfo.setBootstrapFailed(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.BootstrapFailed"));
 		clusterInfo.setConfigurations(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.Configurations"));
 		clusterInfo.setEasEnable(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.EasEnable"));
+		clusterInfo.setAutoScalingVersion(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.AutoScalingVersion"));
 		clusterInfo.setAutoScalingEnable(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingEnable"));
 		clusterInfo.setAutoScalingAllowed(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingAllowed"));
 		clusterInfo.setAutoScalingSpotWithLimitAllowed(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingSpotWithLimitAllowed"));
 		clusterInfo.setAutoScalingByLoadAllowed(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingByLoadAllowed"));
+		clusterInfo.setAutoScalingWithGraceAllowed(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.AutoScalingWithGraceAllowed"));
 		clusterInfo.setResizeDiskEnable(_ctx.booleanValue("DescribeClusterV2Response.ClusterInfo.ResizeDiskEnable"));
 		clusterInfo.setMetaStoreType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.MetaStoreType"));
+		clusterInfo.setK8sClusterId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.K8sClusterId"));
 
 		RelateClusterInfo relateClusterInfo = new RelateClusterInfo();
 		relateClusterInfo.setClusterId(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.RelateClusterInfo.ClusterId"));
@@ -157,7 +161,7 @@ public class DescribeClusterV2ResponseUnmarshaller {
 			hostGroup.setHostGroupType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].HostGroupType"));
 			hostGroup.setHostGroupSubType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].HostGroupSubType"));
 			hostGroup.setHostGroupChangeType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].HostGroupChangeType"));
-			hostGroup.setHostGroupChangeStatus(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].hostGroupChangeStatus"));
+			hostGroup.setHostGroupChangeStatus(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].HostGroupChangeStatus"));
 			hostGroup.setChargeType(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].ChargeType"));
 			hostGroup.setPeriod(_ctx.stringValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].Period"));
 			hostGroup.setNodeCount(_ctx.integerValue("DescribeClusterV2Response.ClusterInfo.HostGroupList["+ i +"].NodeCount"));

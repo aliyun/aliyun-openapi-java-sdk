@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,18 +24,9 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyFlowProjectClusterSettingRequest extends RpcAcsRequest<ModifyFlowProjectClusterSettingResponse> {
-	
-	public ModifyFlowProjectClusterSettingRequest() {
-		super("Emr", "2016-04-08", "ModifyFlowProjectClusterSetting", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private List<String> userLists;
-
-	private List<String> queueLists;
 
 	private List<String> hostLists;
 
@@ -42,9 +34,19 @@ public class ModifyFlowProjectClusterSettingRequest extends RpcAcsRequest<Modify
 
 	private String defaultQueue;
 
-	private String projectId;
-
 	private String defaultUser;
+
+	private List<String> queueLists;
+
+	private String projectId;
+	public ModifyFlowProjectClusterSettingRequest() {
+		super("Emr", "2016-04-08", "ModifyFlowProjectClusterSetting");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public List<String> getUserLists() {
 		return this.userLists;
@@ -55,19 +57,6 @@ public class ModifyFlowProjectClusterSettingRequest extends RpcAcsRequest<Modify
 		if (userLists != null) {
 			for (int i = 0; i < userLists.size(); i++) {
 				putQueryParameter("UserList." + (i + 1) , userLists.get(i));
-			}
-		}	
-	}
-
-	public List<String> getQueueLists() {
-		return this.queueLists;
-	}
-
-	public void setQueueLists(List<String> queueLists) {
-		this.queueLists = queueLists;	
-		if (queueLists != null) {
-			for (int i = 0; i < queueLists.size(); i++) {
-				putQueryParameter("QueueList." + (i + 1) , queueLists.get(i));
 			}
 		}	
 	}
@@ -107,17 +96,6 @@ public class ModifyFlowProjectClusterSettingRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
 	public String getDefaultUser() {
 		return this.defaultUser;
 	}
@@ -126,6 +104,30 @@ public class ModifyFlowProjectClusterSettingRequest extends RpcAcsRequest<Modify
 		this.defaultUser = defaultUser;
 		if(defaultUser != null){
 			putQueryParameter("DefaultUser", defaultUser);
+		}
+	}
+
+	public List<String> getQueueLists() {
+		return this.queueLists;
+	}
+
+	public void setQueueLists(List<String> queueLists) {
+		this.queueLists = queueLists;	
+		if (queueLists != null) {
+			for (int i = 0; i < queueLists.size(); i++) {
+				putQueryParameter("QueueList." + (i + 1) , queueLists.get(i));
+			}
+		}	
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 

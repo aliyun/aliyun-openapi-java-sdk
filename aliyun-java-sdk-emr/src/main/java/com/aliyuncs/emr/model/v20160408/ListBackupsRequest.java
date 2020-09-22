@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListBackupsRequest extends RpcAcsRequest<ListBackupsResponse> {
-	
-	public ListBackupsRequest() {
-		super("Emr", "2016-04-08", "ListBackups", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -52,8 +46,6 @@ public class ListBackupsRequest extends RpcAcsRequest<ListBackupsResponse> {
 
 	private Integer currentSize;
 
-	private String orderField;
-
 	private List<String> backupIds;
 
 	private String clusterId;
@@ -63,6 +55,14 @@ public class ListBackupsRequest extends RpcAcsRequest<ListBackupsResponse> {
 	private String bizId;
 
 	private String status;
+	public ListBackupsRequest() {
+		super("Emr", "2016-04-08", "ListBackups");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -171,17 +171,6 @@ public class ListBackupsRequest extends RpcAcsRequest<ListBackupsResponse> {
 		this.currentSize = currentSize;
 		if(currentSize != null){
 			putQueryParameter("CurrentSize", currentSize.toString());
-		}
-	}
-
-	public String getOrderField() {
-		return this.orderField;
-	}
-
-	public void setOrderField(String orderField) {
-		this.orderField = orderField;
-		if(orderField != null){
-			putQueryParameter("OrderField", orderField);
 		}
 	}
 

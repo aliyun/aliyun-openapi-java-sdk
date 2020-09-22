@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
-	
-	public UpdateUserRequest() {
-		super("Emr", "2016-04-08", "UpdateUser", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -49,6 +43,14 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 	private String userName;
 
 	private String status;
+	public UpdateUserRequest() {
+		super("Emr", "2016-04-08", "UpdateUser");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

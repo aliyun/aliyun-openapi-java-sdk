@@ -45,6 +45,8 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	private Long retryInterval;
 
+	private String retryPolicy;
+
 	private String params;
 
 	private String paramConf;
@@ -66,6 +68,10 @@ public class DescribeFlowJobResponse extends AcsResponse {
 	private String adhoc;
 
 	private String alertConf;
+
+	private String editLockDetail;
+
+	private Long maxRunningTimeSec;
 
 	private List<Resource> resourceList;
 
@@ -147,6 +153,14 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	public void setRetryInterval(Long retryInterval) {
 		this.retryInterval = retryInterval;
+	}
+
+	public String getRetryPolicy() {
+		return this.retryPolicy;
+	}
+
+	public void setRetryPolicy(String retryPolicy) {
+		this.retryPolicy = retryPolicy;
 	}
 
 	public String getParams() {
@@ -235,6 +249,22 @@ public class DescribeFlowJobResponse extends AcsResponse {
 
 	public void setAlertConf(String alertConf) {
 		this.alertConf = alertConf;
+	}
+
+	public String getEditLockDetail() {
+		return this.editLockDetail;
+	}
+
+	public void setEditLockDetail(String editLockDetail) {
+		this.editLockDetail = editLockDetail;
+	}
+
+	public Long getMaxRunningTimeSec() {
+		return this.maxRunningTimeSec;
+	}
+
+	public void setMaxRunningTimeSec(Long maxRunningTimeSec) {
+		this.maxRunningTimeSec = maxRunningTimeSec;
 	}
 
 	public List<Resource> getResourceList() {

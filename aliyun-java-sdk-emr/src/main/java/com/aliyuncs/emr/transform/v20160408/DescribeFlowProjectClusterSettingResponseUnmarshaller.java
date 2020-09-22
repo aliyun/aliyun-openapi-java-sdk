@@ -30,6 +30,7 @@ public class DescribeFlowProjectClusterSettingResponseUnmarshaller {
 		describeFlowProjectClusterSettingResponse.setGmtModified(_ctx.longValue("DescribeFlowProjectClusterSettingResponse.GmtModified"));
 		describeFlowProjectClusterSettingResponse.setProjectId(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.ProjectId"));
 		describeFlowProjectClusterSettingResponse.setClusterId(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.ClusterId"));
+		describeFlowProjectClusterSettingResponse.setK8sClusterId(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.K8sClusterId"));
 		describeFlowProjectClusterSettingResponse.setDefaultUser(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.DefaultUser"));
 		describeFlowProjectClusterSettingResponse.setDefaultQueue(_ctx.stringValue("DescribeFlowProjectClusterSettingResponse.DefaultQueue"));
 

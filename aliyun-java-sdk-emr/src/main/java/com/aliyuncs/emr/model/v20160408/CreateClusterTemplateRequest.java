@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTemplateResponse> {
-	
-	public CreateClusterTemplateRequest() {
-		super("Emr", "2016-04-08", "CreateClusterTemplate", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -40,13 +34,7 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 	private String configurations;
 
-	private Boolean ioOptimized;
-
-	private String securityGroupId;
-
 	private Boolean sshEnable;
-
-	private Boolean easEnable;
 
 	private String keyPairName;
 
@@ -54,21 +42,17 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 	private String securityGroupName;
 
-	private String depositType;
-
 	private String machineType;
 
-	private List<BootstrapAction> bootstrapActions;
+	private String resourceGroupId;
 
-	private Boolean useLocalMetaDb;
+	private List<BootstrapAction> bootstrapActions;
 
 	private String metaStoreConf;
 
 	private String emrVer;
 
-	private String templateName;
-
-	private String userDefinedEmrEcsRole;
+	private List<Tag> tags;
 
 	private Boolean isOpenPublicIp;
 
@@ -84,21 +68,43 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 	private List<String> optionSoftWareLists;
 
-	private String vpcId;
-
 	private String netType;
-
-	private List<HostGroup> hostGroups;
 
 	private String zoneId;
 
 	private Boolean useCustomHiveMetaDb;
 
+	private Boolean initCustomHiveMetaDb;
+
+	private Boolean ioOptimized;
+
+	private String securityGroupId;
+
+	private Boolean easEnable;
+
+	private String depositType;
+
+	private Boolean useLocalMetaDb;
+
+	private String templateName;
+
+	private String userDefinedEmrEcsRole;
+
+	private String vpcId;
+
+	private List<HostGroup> hostGroups;
+
 	private List<Config> configs;
 
 	private Boolean highAvailabilityEnable;
-
-	private Boolean initCustomHiveMetaDb;
+	public CreateClusterTemplateRequest() {
+		super("Emr", "2016-04-08", "CreateClusterTemplate");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -144,28 +150,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		}
 	}
 
-	public Boolean getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(Boolean ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
 	public Boolean getSshEnable() {
 		return this.sshEnable;
 	}
@@ -174,17 +158,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		this.sshEnable = sshEnable;
 		if(sshEnable != null){
 			putQueryParameter("SshEnable", sshEnable.toString());
-		}
-	}
-
-	public Boolean getEasEnable() {
-		return this.easEnable;
-	}
-
-	public void setEasEnable(Boolean easEnable) {
-		this.easEnable = easEnable;
-		if(easEnable != null){
-			putQueryParameter("EasEnable", easEnable.toString());
 		}
 	}
 
@@ -221,17 +194,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		}
 	}
 
-	public String getDepositType() {
-		return this.depositType;
-	}
-
-	public void setDepositType(String depositType) {
-		this.depositType = depositType;
-		if(depositType != null){
-			putQueryParameter("DepositType", depositType);
-		}
-	}
-
 	public String getMachineType() {
 		return this.machineType;
 	}
@@ -240,6 +202,17 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		this.machineType = machineType;
 		if(machineType != null){
 			putQueryParameter("MachineType", machineType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -256,17 +229,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 			}
 		}	
-	}
-
-	public Boolean getUseLocalMetaDb() {
-		return this.useLocalMetaDb;
-	}
-
-	public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
-		this.useLocalMetaDb = useLocalMetaDb;
-		if(useLocalMetaDb != null){
-			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
-		}
 	}
 
 	public String getMetaStoreConf() {
@@ -291,26 +253,18 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		}
 	}
 
-	public String getTemplateName() {
-		return this.templateName;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setTemplateName(String templateName) {
-		this.templateName = templateName;
-		if(templateName != null){
-			putQueryParameter("TemplateName", templateName);
-		}
-	}
-
-	public String getUserDefinedEmrEcsRole() {
-		return this.userDefinedEmrEcsRole;
-	}
-
-	public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
-		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
-		if(userDefinedEmrEcsRole != null){
-			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public Boolean getIsOpenPublicIp() {
@@ -392,17 +346,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		}	
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getNetType() {
 		return this.netType;
 	}
@@ -411,6 +354,127 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		this.netType = netType;
 		if(netType != null){
 			putQueryParameter("NetType", netType);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getUseCustomHiveMetaDb() {
+		return this.useCustomHiveMetaDb;
+	}
+
+	public void setUseCustomHiveMetaDb(Boolean useCustomHiveMetaDb) {
+		this.useCustomHiveMetaDb = useCustomHiveMetaDb;
+		if(useCustomHiveMetaDb != null){
+			putQueryParameter("UseCustomHiveMetaDb", useCustomHiveMetaDb.toString());
+		}
+	}
+
+	public Boolean getInitCustomHiveMetaDb() {
+		return this.initCustomHiveMetaDb;
+	}
+
+	public void setInitCustomHiveMetaDb(Boolean initCustomHiveMetaDb) {
+		this.initCustomHiveMetaDb = initCustomHiveMetaDb;
+		if(initCustomHiveMetaDb != null){
+			putQueryParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb.toString());
+		}
+	}
+
+	public Boolean getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(Boolean ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized.toString());
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Boolean getEasEnable() {
+		return this.easEnable;
+	}
+
+	public void setEasEnable(Boolean easEnable) {
+		this.easEnable = easEnable;
+		if(easEnable != null){
+			putQueryParameter("EasEnable", easEnable.toString());
+		}
+	}
+
+	public String getDepositType() {
+		return this.depositType;
+	}
+
+	public void setDepositType(String depositType) {
+		this.depositType = depositType;
+		if(depositType != null){
+			putQueryParameter("DepositType", depositType);
+		}
+	}
+
+	public Boolean getUseLocalMetaDb() {
+		return this.useLocalMetaDb;
+	}
+
+	public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
+		this.useLocalMetaDb = useLocalMetaDb;
+		if(useLocalMetaDb != null){
+			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
+		}
+	}
+
+	public String getTemplateName() {
+		return this.templateName;
+	}
+
+	public void setTemplateName(String templateName) {
+		this.templateName = templateName;
+		if(templateName != null){
+			putQueryParameter("TemplateName", templateName);
+		}
+	}
+
+	public String getUserDefinedEmrEcsRole() {
+		return this.userDefinedEmrEcsRole;
+	}
+
+	public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
+		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
+		if(userDefinedEmrEcsRole != null){
+			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
@@ -444,28 +508,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		}	
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public Boolean getUseCustomHiveMetaDb() {
-		return this.useCustomHiveMetaDb;
-	}
-
-	public void setUseCustomHiveMetaDb(Boolean useCustomHiveMetaDb) {
-		this.useCustomHiveMetaDb = useCustomHiveMetaDb;
-		if(useCustomHiveMetaDb != null){
-			putQueryParameter("UseCustomHiveMetaDb", useCustomHiveMetaDb.toString());
-		}
-	}
-
 	public List<Config> getConfigs() {
 		return this.configs;
 	}
@@ -492,17 +534,6 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 		this.highAvailabilityEnable = highAvailabilityEnable;
 		if(highAvailabilityEnable != null){
 			putQueryParameter("HighAvailabilityEnable", highAvailabilityEnable.toString());
-		}
-	}
-
-	public Boolean getInitCustomHiveMetaDb() {
-		return this.initCustomHiveMetaDb;
-	}
-
-	public void setInitCustomHiveMetaDb(Boolean initCustomHiveMetaDb) {
-		this.initCustomHiveMetaDb = initCustomHiveMetaDb;
-		if(initCustomHiveMetaDb != null){
-			putQueryParameter("InitCustomHiveMetaDb", initCustomHiveMetaDb.toString());
 		}
 	}
 
@@ -536,6 +567,29 @@ public class CreateClusterTemplateRequest extends RpcAcsRequest<CreateClusterTem
 
 		public void setName(String name) {
 			this.name = name;
+		}
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

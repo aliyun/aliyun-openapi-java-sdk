@@ -43,6 +43,7 @@ public class ListFlowInstanceResponseUnmarshaller {
 			flowInstance.setStatus(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Status"));
 			flowInstance.setClusterId(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ClusterId"));
 			flowInstance.setOwner(_ctx.stringValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Owner"));
+			flowInstance.setScheduleTime(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].ScheduleTime"));
 			flowInstance.setStartTime(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].StartTime"));
 			flowInstance.setEndTime(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].EndTime"));
 			flowInstance.setDuration(_ctx.longValue("ListFlowInstanceResponse.FlowInstances["+ i +"].Duration"));

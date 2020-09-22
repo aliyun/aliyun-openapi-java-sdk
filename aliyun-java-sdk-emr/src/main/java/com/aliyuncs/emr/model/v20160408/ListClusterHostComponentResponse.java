@@ -111,6 +111,8 @@ public class ListClusterHostComponentResponse extends AcsResponse {
 
 		private String serialNumber;
 
+		private String commissionStatus;
+
 		public String getServiceName() {
 			return this.serviceName;
 		}
@@ -245,6 +247,14 @@ public class ListClusterHostComponentResponse extends AcsResponse {
 
 		public void setSerialNumber(String serialNumber) {
 			this.serialNumber = serialNumber;
+		}
+
+		public String getCommissionStatus() {
+			return this.commissionStatus;
+		}
+
+		public void setCommissionStatus(String commissionStatus) {
+			this.commissionStatus = commissionStatus;
 		}
 	}
 

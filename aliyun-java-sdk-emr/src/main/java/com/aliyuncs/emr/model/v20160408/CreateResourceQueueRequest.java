@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,20 +24,9 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueueResponse> {
-	
-	public CreateResourceQueueRequest() {
-		super("Emr", "2016-04-08", "CreateResourceQueue", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
-
-	private Long parentQueueId;
-
-	private String name;
 
 	private String qualifiedName;
 
@@ -46,7 +36,19 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 
 	private Boolean leaf;
 
+	private Long parentQueueId;
+
+	private String name;
+
 	private List<Config> configs;
+	public CreateResourceQueueRequest() {
+		super("Emr", "2016-04-08", "CreateResourceQueue");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,28 +58,6 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Long getParentQueueId() {
-		return this.parentQueueId;
-	}
-
-	public void setParentQueueId(Long parentQueueId) {
-		this.parentQueueId = parentQueueId;
-		if(parentQueueId != null){
-			putQueryParameter("ParentQueueId", parentQueueId.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -122,6 +102,28 @@ public class CreateResourceQueueRequest extends RpcAcsRequest<CreateResourceQueu
 		this.leaf = leaf;
 		if(leaf != null){
 			putQueryParameter("Leaf", leaf.toString());
+		}
+	}
+
+	public Long getParentQueueId() {
+		return this.parentQueueId;
+	}
+
+	public void setParentQueueId(Long parentQueueId) {
+		this.parentQueueId = parentQueueId;
+		if(parentQueueId != null){
+			putQueryParameter("ParentQueueId", parentQueueId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

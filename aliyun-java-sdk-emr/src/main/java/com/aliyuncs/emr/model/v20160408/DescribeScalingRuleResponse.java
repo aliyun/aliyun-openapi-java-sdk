@@ -44,6 +44,10 @@ public class DescribeScalingRuleResponse extends AcsResponse {
 
 	private String status;
 
+	private Boolean withGrace;
+
+	private Long timeoutWithGrace;
+
 	private SchedulerTrigger schedulerTrigger;
 
 	private CloudWatchTrigger cloudWatchTrigger;
@@ -126,6 +130,22 @@ public class DescribeScalingRuleResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Boolean getWithGrace() {
+		return this.withGrace;
+	}
+
+	public void setWithGrace(Boolean withGrace) {
+		this.withGrace = withGrace;
+	}
+
+	public Long getTimeoutWithGrace() {
+		return this.timeoutWithGrace;
+	}
+
+	public void setTimeoutWithGrace(Long timeoutWithGrace) {
+		this.timeoutWithGrace = timeoutWithGrace;
 	}
 
 	public SchedulerTrigger getSchedulerTrigger() {

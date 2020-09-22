@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,24 +23,49 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
-	
+	   
+
+	private String conf;
+
+	private String clusterId;
+
+	private String jobId;
+
+	private String hostName;
+
+	private String namespace;
+
+	private String projectId;
 	public SubmitFlowJobRequest() {
-		super("Emr", "2016-04-08", "SubmitFlowJob", "emr");
+		super("Emr", "2016-04-08", "SubmitFlowJob");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String jobId;
+	public String getConf() {
+		return this.conf;
+	}
 
-	private String hostName;
+	public void setConf(String conf) {
+		this.conf = conf;
+		if(conf != null){
+			putQueryParameter("Conf", conf);
+		}
+	}
 
-	private String conf;
+	public String getClusterId() {
+		return this.clusterId;
+	}
 
-	private String clusterId;
-
-	private String projectId;
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
 
 	public String getJobId() {
 		return this.jobId;
@@ -63,25 +89,14 @@ public class SubmitFlowJobRequest extends RpcAcsRequest<SubmitFlowJobResponse> {
 		}
 	}
 
-	public String getConf() {
-		return this.conf;
+	public String getNamespace() {
+		return this.namespace;
 	}
 
-	public void setConf(String conf) {
-		this.conf = conf;
-		if(conf != null){
-			putQueryParameter("Conf", conf);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

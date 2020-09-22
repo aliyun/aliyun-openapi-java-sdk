@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class QueryAlarmHistoryRequest extends RpcAcsRequest<QueryAlarmHistoryResponse> {
-	
-	public QueryAlarmHistoryRequest() {
-		super("Emr", "2016-04-08", "QueryAlarmHistory", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String cursor;
 
 	private Long resourceOwnerId;
-
-	private Integer size;
 
 	private String clusterId;
 
 	private Long startTimeStamp;
 
 	private Long endTimeStamp;
+
+	private Integer size;
+	public QueryAlarmHistoryRequest() {
+		super("Emr", "2016-04-08", "QueryAlarmHistory");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getCursor() {
 		return this.cursor;
@@ -62,17 +64,6 @@ public class QueryAlarmHistoryRequest extends RpcAcsRequest<QueryAlarmHistoryRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getSize() {
-		return this.size;
-	}
-
-	public void setSize(Integer size) {
-		this.size = size;
-		if(size != null){
-			putQueryParameter("Size", size.toString());
 		}
 	}
 
@@ -106,6 +97,17 @@ public class QueryAlarmHistoryRequest extends RpcAcsRequest<QueryAlarmHistoryRes
 		this.endTimeStamp = endTimeStamp;
 		if(endTimeStamp != null){
 			putQueryParameter("EndTimeStamp", endTimeStamp.toString());
+		}
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
 		}
 	}
 

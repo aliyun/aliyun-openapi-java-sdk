@@ -35,6 +35,7 @@ public class DescribeFlowNodeInstanceResponseUnmarshaller {
 		describeFlowNodeInstanceResponse.setFailAct(_ctx.stringValue("DescribeFlowNodeInstanceResponse.FailAct"));
 		describeFlowNodeInstanceResponse.setMaxRetry(_ctx.stringValue("DescribeFlowNodeInstanceResponse.MaxRetry"));
 		describeFlowNodeInstanceResponse.setRetryInterval(_ctx.stringValue("DescribeFlowNodeInstanceResponse.RetryInterval"));
+		describeFlowNodeInstanceResponse.setRetryPolicy(_ctx.stringValue("DescribeFlowNodeInstanceResponse.RetryPolicy"));
 		describeFlowNodeInstanceResponse.setNodeName(_ctx.stringValue("DescribeFlowNodeInstanceResponse.NodeName"));
 		describeFlowNodeInstanceResponse.setFlowId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.FlowId"));
 		describeFlowNodeInstanceResponse.setFlowInstanceId(_ctx.stringValue("DescribeFlowNodeInstanceResponse.FlowInstanceId"));

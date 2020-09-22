@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,38 +23,28 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyClusterHostGroupRequest extends RpcAcsRequest<ModifyClusterHostGroupResponse> {
-	
-	public ModifyClusterHostGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterHostGroup", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String vswitchId;
+	   
 
 	private Long resourceOwnerId;
 
-	private String hostGroupId;
-
 	private String securityGroupId;
-
-	private String comment;
 
 	private String clusterId;
 
 	private String hostGroupName;
 
-	public String getVswitchId() {
-		return this.vswitchId;
-	}
+	private String vswitchId;
 
-	public void setVswitchId(String vswitchId) {
-		this.vswitchId = vswitchId;
-		if(vswitchId != null){
-			putQueryParameter("VswitchId", vswitchId);
-		}
+	private String hostGroupId;
+
+	private String comment;
+	public ModifyClusterHostGroupRequest() {
+		super("Emr", "2016-04-08", "ModifyClusterHostGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -67,17 +58,6 @@ public class ModifyClusterHostGroupRequest extends RpcAcsRequest<ModifyClusterHo
 		}
 	}
 
-	public String getHostGroupId() {
-		return this.hostGroupId;
-	}
-
-	public void setHostGroupId(String hostGroupId) {
-		this.hostGroupId = hostGroupId;
-		if(hostGroupId != null){
-			putQueryParameter("HostGroupId", hostGroupId);
-		}
-	}
-
 	public String getSecurityGroupId() {
 		return this.securityGroupId;
 	}
@@ -86,17 +66,6 @@ public class ModifyClusterHostGroupRequest extends RpcAcsRequest<ModifyClusterHo
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
 		}
 	}
 
@@ -119,6 +88,39 @@ public class ModifyClusterHostGroupRequest extends RpcAcsRequest<ModifyClusterHo
 		this.hostGroupName = hostGroupName;
 		if(hostGroupName != null){
 			putQueryParameter("HostGroupName", hostGroupName);
+		}
+	}
+
+	public String getVswitchId() {
+		return this.vswitchId;
+	}
+
+	public void setVswitchId(String vswitchId) {
+		this.vswitchId = vswitchId;
+		if(vswitchId != null){
+			putQueryParameter("VswitchId", vswitchId);
+		}
+	}
+
+	public String getHostGroupId() {
+		return this.hostGroupId;
+	}
+
+	public void setHostGroupId(String hostGroupId) {
+		this.hostGroupId = hostGroupId;
+		if(hostGroupId != null){
+			putQueryParameter("HostGroupId", hostGroupId);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
 		}
 	}
 

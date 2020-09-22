@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,19 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class SuspendExecutionPlanSchedulerRequest extends RpcAcsRequest<SuspendExecutionPlanSchedulerResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String id;
 	public SuspendExecutionPlanSchedulerRequest() {
-		super("Emr", "2016-04-08", "SuspendExecutionPlanScheduler", "emr");
+		super("Emr", "2016-04-08", "SuspendExecutionPlanScheduler");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String id;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;

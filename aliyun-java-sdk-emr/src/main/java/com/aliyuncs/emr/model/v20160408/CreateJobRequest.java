@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,28 +23,64 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String type;
+
+	private String failAct;
+
+	private String runParameter;
+
+	private Integer retryInterval;
+
+	private String resourceGroupId;
+
+	private String name;
+
+	private Integer maxRetry;
 	public CreateJobRequest() {
-		super("Emr", "2016-04-08", "CreateJob", "emr");
+		super("Emr", "2016-04-08", "CreateJob");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	private String runParameter;
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
 
-	private Integer retryInterval;
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
 
-	private Long resourceOwnerId;
+	public String getType() {
+		return this.type;
+	}
 
-	private String name;
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
 
-	private String type;
+	public String getFailAct() {
+		return this.failAct;
+	}
 
-	private Integer maxRetry;
-
-	private String failAct;
+	public void setFailAct(String failAct) {
+		this.failAct = failAct;
+		if(failAct != null){
+			putQueryParameter("FailAct", failAct);
+		}
+	}
 
 	public String getRunParameter() {
 		return this.runParameter;
@@ -67,14 +104,14 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -89,17 +126,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public Integer getMaxRetry() {
 		return this.maxRetry;
 	}
@@ -108,17 +134,6 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.maxRetry = maxRetry;
 		if(maxRetry != null){
 			putQueryParameter("MaxRetry", maxRetry.toString());
-		}
-	}
-
-	public String getFailAct() {
-		return this.failAct;
-	}
-
-	public void setFailAct(String failAct) {
-		this.failAct = failAct;
-		if(failAct != null){
-			putQueryParameter("FailAct", failAct);
 		}
 	}
 

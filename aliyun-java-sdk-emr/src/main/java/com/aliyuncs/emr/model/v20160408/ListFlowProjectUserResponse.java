@@ -87,6 +87,8 @@ public class ListFlowProjectUserResponse extends AcsResponse {
 
 		private String userName;
 
+		private String accountUserId;
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -125,6 +127,14 @@ public class ListFlowProjectUserResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getAccountUserId() {
+			return this.accountUserId;
+		}
+
+		public void setAccountUserId(String accountUserId) {
+			this.accountUserId = accountUserId;
 		}
 	}
 

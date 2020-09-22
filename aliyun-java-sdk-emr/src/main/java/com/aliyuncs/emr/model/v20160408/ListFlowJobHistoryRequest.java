@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,18 +24,15 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryResponse> {
-	
-	public ListFlowJobHistoryRequest() {
-		super("Emr", "2016-04-08", "ListFlowJobHistory", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String timeRange;
 
 	private List<String> statusLists;
+
+	private String jobType;
+
+	private Integer pageNumber;
 
 	private String instanceId;
 
@@ -43,10 +41,14 @@ public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryR
 	private String id;
 
 	private String projectId;
-
-	private String jobType;
-
-	private Integer pageNumber;
+	public ListFlowJobHistoryRequest() {
+		super("Emr", "2016-04-08", "ListFlowJobHistory");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getTimeRange() {
 		return this.timeRange;
@@ -70,6 +72,28 @@ public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryR
 				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
 			}
 		}	
+	}
+
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putQueryParameter("JobType", jobType);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getInstanceId() {
@@ -113,28 +137,6 @@ public class ListFlowJobHistoryRequest extends RpcAcsRequest<ListFlowJobHistoryR
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
-	public String getJobType() {
-		return this.jobType;
-	}
-
-	public void setJobType(String jobType) {
-		this.jobType = jobType;
-		if(jobType != null){
-			putQueryParameter("JobType", jobType);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,22 +24,23 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String clusterId;
+
+	private List<Service> services;
+
+	private String comment;
 	public AddClusterServiceRequest() {
-		super("Emr", "2016-04-08", "AddClusterService", "emr");
+		super("Emr", "2016-04-08", "AddClusterService");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private List<Service> services;
-
-	private String comment;
-
-	private String clusterId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -51,6 +53,17 @@ public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceRes
 		}
 	}
 
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
 	public List<Service> getServices() {
 		return this.services;
 	}
@@ -59,6 +72,7 @@ public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceRes
 		this.services = services;	
 		if (services != null) {
 			for (int depth1 = 0; depth1 < services.size(); depth1++) {
+				putQueryParameter("Service." + (depth1 + 1) + ".ServiceVersion" , services.get(depth1).getServiceVersion());
 				putQueryParameter("Service." + (depth1 + 1) + ".ServiceName" , services.get(depth1).getServiceName());
 			}
 		}	
@@ -75,20 +89,19 @@ public class AddClusterServiceRequest extends RpcAcsRequest<AddClusterServiceRes
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public static class Service {
 
+		private String serviceVersion;
+
 		private String serviceName;
+
+		public String getServiceVersion() {
+			return this.serviceVersion;
+		}
+
+		public void setServiceVersion(String serviceVersion) {
+			this.serviceVersion = serviceVersion;
+		}
 
 		public String getServiceName() {
 			return this.serviceName;

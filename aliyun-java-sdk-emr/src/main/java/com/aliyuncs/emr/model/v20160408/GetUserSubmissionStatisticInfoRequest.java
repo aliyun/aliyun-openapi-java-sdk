@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class GetUserSubmissionStatisticInfoRequest extends RpcAcsRequest<GetUserSubmissionStatisticInfoResponse> {
-	
-	public GetUserSubmissionStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String fromDatetime;
 
@@ -39,9 +33,17 @@ public class GetUserSubmissionStatisticInfoRequest extends RpcAcsRequest<GetUser
 
 	private String toDatetime;
 
-	private String applicationType;
-
 	private String finalStatus;
+
+	private String applicationType;
+	public GetUserSubmissionStatisticInfoRequest() {
+		super("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFromDatetime() {
 		return this.fromDatetime;
@@ -87,17 +89,6 @@ public class GetUserSubmissionStatisticInfoRequest extends RpcAcsRequest<GetUser
 		}
 	}
 
-	public String getApplicationType() {
-		return this.applicationType;
-	}
-
-	public void setApplicationType(String applicationType) {
-		this.applicationType = applicationType;
-		if(applicationType != null){
-			putQueryParameter("ApplicationType", applicationType);
-		}
-	}
-
 	public String getFinalStatus() {
 		return this.finalStatus;
 	}
@@ -106,6 +97,17 @@ public class GetUserSubmissionStatisticInfoRequest extends RpcAcsRequest<GetUser
 		this.finalStatus = finalStatus;
 		if(finalStatus != null){
 			putQueryParameter("FinalStatus", finalStatus);
+		}
+	}
+
+	public String getApplicationType() {
+		return this.applicationType;
+	}
+
+	public void setApplicationType(String applicationType) {
+		this.applicationType = applicationType;
+		if(applicationType != null){
+			putQueryParameter("ApplicationType", applicationType);
 		}
 	}
 

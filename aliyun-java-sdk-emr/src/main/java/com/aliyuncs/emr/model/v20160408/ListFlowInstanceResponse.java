@@ -95,6 +95,8 @@ public class ListFlowInstanceResponse extends AcsResponse {
 
 		private String owner;
 
+		private Long scheduleTime;
+
 		private Long startTime;
 
 		private Long endTime;
@@ -173,6 +175,14 @@ public class ListFlowInstanceResponse extends AcsResponse {
 
 		public void setOwner(String owner) {
 			this.owner = owner;
+		}
+
+		public Long getScheduleTime() {
+			return this.scheduleTime;
+		}
+
+		public void setScheduleTime(Long scheduleTime) {
+			this.scheduleTime = scheduleTime;
 		}
 
 		public Long getStartTime() {

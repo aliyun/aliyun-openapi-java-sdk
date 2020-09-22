@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,14 +23,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class GetUserInputStatisticInfoRequest extends RpcAcsRequest<GetUserInputStatisticInfoResponse> {
-	
-	public GetUserInputStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetUserInputStatisticInfo", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String fromDatetime;
 
@@ -38,6 +32,14 @@ public class GetUserInputStatisticInfoRequest extends RpcAcsRequest<GetUserInput
 	private String clusterId;
 
 	private String toDatetime;
+	public GetUserInputStatisticInfoRequest() {
+		super("Emr", "2016-04-08", "GetUserInputStatisticInfo");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFromDatetime() {
 		return this.fromDatetime;

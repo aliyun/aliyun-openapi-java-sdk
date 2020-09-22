@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,32 +23,22 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecurityGroupResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String clusterId;
+
+	private String bizType;
+
+	private String bizContent;
 	public AuthorizeSecurityGroupRequest() {
-		super("Emr", "2016-04-08", "AuthorizeSecurityGroup", "emr");
+		super("Emr", "2016-04-08", "AuthorizeSecurityGroup");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	private String bizType;
-
-	private Long resourceOwnerId;
-
-	private String bizContent;
-
-	private String clusterId;
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putQueryParameter("BizType", bizType);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -61,17 +52,6 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 		}
 	}
 
-	public String getBizContent() {
-		return this.bizContent;
-	}
-
-	public void setBizContent(String bizContent) {
-		this.bizContent = bizContent;
-		if(bizContent != null){
-			putQueryParameter("BizContent", bizContent);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -80,6 +60,28 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public String getBizContent() {
+		return this.bizContent;
+	}
+
+	public void setBizContent(String bizContent) {
+		this.bizContent = bizContent;
+		if(bizContent != null){
+			putQueryParameter("BizContent", bizContent);
 		}
 	}
 

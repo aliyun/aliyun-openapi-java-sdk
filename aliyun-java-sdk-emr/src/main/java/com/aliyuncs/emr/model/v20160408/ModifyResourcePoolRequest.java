@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,28 +24,29 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyResourcePoolRequest extends RpcAcsRequest<ModifyResourcePoolResponse> {
-	
-	public ModifyResourcePoolRequest() {
-		super("Emr", "2016-04-08", "ModifyResourcePool", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String name;
-
 	private Boolean active;
-
-	private String id;
 
 	private String clusterId;
 
 	private String yarnsiteconfig;
 
+	private String name;
+
+	private String id;
+
 	private List<Config> configs;
+	public ModifyResourcePoolRequest() {
+		super("Emr", "2016-04-08", "ModifyResourcePool");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -57,17 +59,6 @@ public class ModifyResourcePoolRequest extends RpcAcsRequest<ModifyResourcePoolR
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Boolean getActive() {
 		return this.active;
 	}
@@ -76,17 +67,6 @@ public class ModifyResourcePoolRequest extends RpcAcsRequest<ModifyResourcePoolR
 		this.active = active;
 		if(active != null){
 			putQueryParameter("Active", active.toString());
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
 		}
 	}
 
@@ -109,6 +89,28 @@ public class ModifyResourcePoolRequest extends RpcAcsRequest<ModifyResourcePoolR
 		this.yarnsiteconfig = yarnsiteconfig;
 		if(yarnsiteconfig != null){
 			putQueryParameter("Yarnsiteconfig", yarnsiteconfig);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 

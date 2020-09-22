@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,22 +24,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClusterServiceConfigResponse> {
-	
-	public ModifyClusterServiceConfigRequest() {
-		super("Emr", "2016-04-08", "ModifyClusterServiceConfig", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean refreshHostConfig;
 
 	private Long resourceOwnerId;
 
-	private String configType;
-
 	private String hostInstanceId;
+
+	private String serviceName;
+
+	private List<String> gatewayClusterIdLists;
+
+	private String configParams;
+
+	private String configType;
 
 	private String groupId;
 
@@ -46,13 +46,15 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 
 	private String customConfigParams;
 
-	private String serviceName;
-
 	private String comment;
-
-	private List<String> gatewayClusterIdLists;
-
-	private String configParams;
+	public ModifyClusterServiceConfigRequest() {
+		super("Emr", "2016-04-08", "ModifyClusterServiceConfig");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getRefreshHostConfig() {
 		return this.refreshHostConfig;
@@ -76,17 +78,6 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 		}
 	}
 
-	public String getConfigType() {
-		return this.configType;
-	}
-
-	public void setConfigType(String configType) {
-		this.configType = configType;
-		if(configType != null){
-			putQueryParameter("ConfigType", configType);
-		}
-	}
-
 	public String getHostInstanceId() {
 		return this.hostInstanceId;
 	}
@@ -95,6 +86,52 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 		this.hostInstanceId = hostInstanceId;
 		if(hostInstanceId != null){
 			putQueryParameter("HostInstanceId", hostInstanceId);
+		}
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
+		}
+	}
+
+	public List<String> getGatewayClusterIdLists() {
+		return this.gatewayClusterIdLists;
+	}
+
+	public void setGatewayClusterIdLists(List<String> gatewayClusterIdLists) {
+		this.gatewayClusterIdLists = gatewayClusterIdLists;	
+		if (gatewayClusterIdLists != null) {
+			for (int i = 0; i < gatewayClusterIdLists.size(); i++) {
+				putQueryParameter("GatewayClusterIdList." + (i + 1) , gatewayClusterIdLists.get(i));
+			}
+		}	
+	}
+
+	public String getConfigParams() {
+		return this.configParams;
+	}
+
+	public void setConfigParams(String configParams) {
+		this.configParams = configParams;
+		if(configParams != null){
+			putQueryParameter("ConfigParams", configParams);
+		}
+	}
+
+	public String getConfigType() {
+		return this.configType;
+	}
+
+	public void setConfigType(String configType) {
+		this.configType = configType;
+		if(configType != null){
+			putQueryParameter("ConfigType", configType);
 		}
 	}
 
@@ -131,17 +168,6 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
 	public String getComment() {
 		return this.comment;
 	}
@@ -150,30 +176,6 @@ public class ModifyClusterServiceConfigRequest extends RpcAcsRequest<ModifyClust
 		this.comment = comment;
 		if(comment != null){
 			putQueryParameter("Comment", comment);
-		}
-	}
-
-	public List<String> getGatewayClusterIdLists() {
-		return this.gatewayClusterIdLists;
-	}
-
-	public void setGatewayClusterIdLists(List<String> gatewayClusterIdLists) {
-		this.gatewayClusterIdLists = gatewayClusterIdLists;	
-		if (gatewayClusterIdLists != null) {
-			for (int i = 0; i < gatewayClusterIdLists.size(); i++) {
-				putQueryParameter("GatewayClusterIdList." + (i + 1) , gatewayClusterIdLists.get(i));
-			}
-		}	
-	}
-
-	public String getConfigParams() {
-		return this.configParams;
-	}
-
-	public void setConfigParams(String configParams) {
-		this.configParams = configParams;
-		if(configParams != null){
-			putQueryParameter("ConfigParams", configParams);
 		}
 	}
 

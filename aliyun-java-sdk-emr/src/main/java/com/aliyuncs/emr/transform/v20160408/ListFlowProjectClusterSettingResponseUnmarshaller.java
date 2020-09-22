@@ -38,6 +38,7 @@ public class ListFlowProjectClusterSettingResponseUnmarshaller {
 			clusterSetting.setGmtModified(_ctx.longValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].GmtModified"));
 			clusterSetting.setProjectId(_ctx.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].ProjectId"));
 			clusterSetting.setClusterId(_ctx.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].ClusterId"));
+			clusterSetting.setK8sClusterId(_ctx.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].K8sClusterId"));
 			clusterSetting.setClusterName(_ctx.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].ClusterName"));
 			clusterSetting.setDefaultUser(_ctx.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].DefaultUser"));
 			clusterSetting.setDefaultQueue(_ctx.stringValue("ListFlowProjectClusterSettingResponse.ClusterSettings["+ i +"].DefaultQueue"));

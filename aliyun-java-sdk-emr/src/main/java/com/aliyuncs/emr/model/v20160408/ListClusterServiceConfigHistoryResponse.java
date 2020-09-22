@@ -97,6 +97,14 @@ public class ListClusterServiceConfigHistoryResponse extends AcsResponse {
 
 		private String comment;
 
+		private String hostGroupId;
+
+		private String hostGroupName;
+
+		private String hostInstanceId;
+
+		private String hostName;
+
 		public String getServiceName() {
 			return this.serviceName;
 		}
@@ -175,6 +183,38 @@ public class ListClusterServiceConfigHistoryResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
+		}
+
+		public String getHostGroupId() {
+			return this.hostGroupId;
+		}
+
+		public void setHostGroupId(String hostGroupId) {
+			this.hostGroupId = hostGroupId;
+		}
+
+		public String getHostGroupName() {
+			return this.hostGroupName;
+		}
+
+		public void setHostGroupName(String hostGroupName) {
+			this.hostGroupName = hostGroupName;
+		}
+
+		public String getHostInstanceId() {
+			return this.hostInstanceId;
+		}
+
+		public void setHostInstanceId(String hostInstanceId) {
+			this.hostInstanceId = hostInstanceId;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
 		}
 	}
 

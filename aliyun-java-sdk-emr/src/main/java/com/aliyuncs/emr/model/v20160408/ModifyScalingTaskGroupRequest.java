@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,28 +23,33 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyScalingTaskGroupRequest extends RpcAcsRequest<ModifyScalingTaskGroupResponse> {
-	
-	public ModifyScalingTaskGroupRequest() {
-		super("Emr", "2016-04-08", "ModifyScalingTaskGroup", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
-	private String hostGroupId;
-
-	private String activeRuleCategory;
+	private Boolean withGrace;
 
 	private String clusterId;
 
 	private Integer minSize;
 
+	private Long timeoutWithGrace;
+
+	private String hostGroupId;
+
+	private String activeRuleCategory;
+
 	private Integer maxSize;
 
 	private Integer defaultCooldown;
+	public ModifyScalingTaskGroupRequest() {
+		super("Emr", "2016-04-08", "ModifyScalingTaskGroup");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -56,25 +62,14 @@ public class ModifyScalingTaskGroupRequest extends RpcAcsRequest<ModifyScalingTa
 		}
 	}
 
-	public String getHostGroupId() {
-		return this.hostGroupId;
+	public Boolean getWithGrace() {
+		return this.withGrace;
 	}
 
-	public void setHostGroupId(String hostGroupId) {
-		this.hostGroupId = hostGroupId;
-		if(hostGroupId != null){
-			putQueryParameter("HostGroupId", hostGroupId);
-		}
-	}
-
-	public String getActiveRuleCategory() {
-		return this.activeRuleCategory;
-	}
-
-	public void setActiveRuleCategory(String activeRuleCategory) {
-		this.activeRuleCategory = activeRuleCategory;
-		if(activeRuleCategory != null){
-			putQueryParameter("ActiveRuleCategory", activeRuleCategory);
+	public void setWithGrace(Boolean withGrace) {
+		this.withGrace = withGrace;
+		if(withGrace != null){
+			putQueryParameter("WithGrace", withGrace.toString());
 		}
 	}
 
@@ -97,6 +92,39 @@ public class ModifyScalingTaskGroupRequest extends RpcAcsRequest<ModifyScalingTa
 		this.minSize = minSize;
 		if(minSize != null){
 			putQueryParameter("MinSize", minSize.toString());
+		}
+	}
+
+	public Long getTimeoutWithGrace() {
+		return this.timeoutWithGrace;
+	}
+
+	public void setTimeoutWithGrace(Long timeoutWithGrace) {
+		this.timeoutWithGrace = timeoutWithGrace;
+		if(timeoutWithGrace != null){
+			putQueryParameter("TimeoutWithGrace", timeoutWithGrace.toString());
+		}
+	}
+
+	public String getHostGroupId() {
+		return this.hostGroupId;
+	}
+
+	public void setHostGroupId(String hostGroupId) {
+		this.hostGroupId = hostGroupId;
+		if(hostGroupId != null){
+			putQueryParameter("HostGroupId", hostGroupId);
+		}
+	}
+
+	public String getActiveRuleCategory() {
+		return this.activeRuleCategory;
+	}
+
+	public void setActiveRuleCategory(String activeRuleCategory) {
+		this.activeRuleCategory = activeRuleCategory;
+		if(activeRuleCategory != null){
+			putQueryParameter("ActiveRuleCategory", activeRuleCategory);
 		}
 	}
 

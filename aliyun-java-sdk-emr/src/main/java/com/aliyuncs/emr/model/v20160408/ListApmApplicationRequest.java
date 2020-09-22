@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,16 +23,19 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListApmApplicationRequest extends RpcAcsRequest<ListApmApplicationResponse> {
-	
-	public ListApmApplicationRequest() {
-		super("Emr", "2016-04-08", "ListApmApplication", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
+
+	private Integer pageNumber;
+
+	private String finalStatus;
+
+	private Integer pageSize;
+
+	private String state;
+
+	private Long startTimeTo;
 
 	private String diagnoseResult;
 
@@ -43,27 +47,25 @@ public class ListApmApplicationRequest extends RpcAcsRequest<ListApmApplicationR
 
 	private String jobType;
 
-	private Integer pageNumber;
-
-	private String finalStatus;
-
 	private Long startTimeFrom;
 
 	private String appId;
 
 	private String name;
 
-	private Integer pageSize;
-
-	private String state;
-
-	private Long startTimeTo;
-
 	private String user;
 
 	private Long endTimeTo;
 
 	private String queue;
+	public ListApmApplicationRequest() {
+		super("Emr", "2016-04-08", "ListApmApplication");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -73,6 +75,61 @@ public class ListApmApplicationRequest extends RpcAcsRequest<ListApmApplicationR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getFinalStatus() {
+		return this.finalStatus;
+	}
+
+	public void setFinalStatus(String finalStatus) {
+		this.finalStatus = finalStatus;
+		if(finalStatus != null){
+			putQueryParameter("FinalStatus", finalStatus);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public Long getStartTimeTo() {
+		return this.startTimeTo;
+	}
+
+	public void setStartTimeTo(Long startTimeTo) {
+		this.startTimeTo = startTimeTo;
+		if(startTimeTo != null){
+			putQueryParameter("StartTimeTo", startTimeTo.toString());
 		}
 	}
 
@@ -131,28 +188,6 @@ public class ListApmApplicationRequest extends RpcAcsRequest<ListApmApplicationR
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getFinalStatus() {
-		return this.finalStatus;
-	}
-
-	public void setFinalStatus(String finalStatus) {
-		this.finalStatus = finalStatus;
-		if(finalStatus != null){
-			putQueryParameter("FinalStatus", finalStatus);
-		}
-	}
-
 	public Long getStartTimeFrom() {
 		return this.startTimeFrom;
 	}
@@ -183,39 +218,6 @@ public class ListApmApplicationRequest extends RpcAcsRequest<ListApmApplicationR
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
-	public Long getStartTimeTo() {
-		return this.startTimeTo;
-	}
-
-	public void setStartTimeTo(Long startTimeTo) {
-		this.startTimeTo = startTimeTo;
-		if(startTimeTo != null){
-			putQueryParameter("StartTimeTo", startTimeTo.toString());
 		}
 	}
 

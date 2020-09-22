@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListFlowClusterHostRequest extends RpcAcsRequest<ListFlowClusterHostResponse> {
-	
+	   
+
+	private String clusterId;
+
+	private String resourceGroupId;
+
+	private String projectId;
 	public ListFlowClusterHostRequest() {
-		super("Emr", "2016-04-08", "ListFlowClusterHost", "emr");
+		super("Emr", "2016-04-08", "ListFlowClusterHost");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String clusterId;
-
-	private String projectId;
 
 	public String getClusterId() {
 		return this.clusterId;
@@ -43,6 +47,17 @@ public class ListFlowClusterHostRequest extends RpcAcsRequest<ListFlowClusterHos
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

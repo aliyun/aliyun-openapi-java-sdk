@@ -47,6 +47,9 @@ public class ListEmrAvailableConfigResponseUnmarshaller {
 			emrMainVersion.setEcmVersion(_ctx.booleanValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].EcmVersion"));
 			emrMainVersion.setStackName(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].StackName"));
 			emrMainVersion.setStackVersion(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].StackVersion"));
+			emrMainVersion.setExtraInfo(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ExtraInfo"));
+			emrMainVersion.setOnCloudNative(_ctx.booleanValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].OnCloudNative"));
+			emrMainVersion.setPublishType(_ctx.stringValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].PublishType"));
 
 			List<ClusterTypeInfo> clusterTypeInfoList = new ArrayList<ClusterTypeInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListEmrAvailableConfigResponse.EmrMainVersionList["+ i +"].ClusterTypeInfoList.Length"); j++) {
@@ -81,6 +84,7 @@ public class ListEmrAvailableConfigResponseUnmarshaller {
 			securityGroup.setSecurityGroupName(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].SecurityGroupName"));
 			securityGroup.setVpcId(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].VpcId"));
 			securityGroup.setCreationTime(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].CreationTime"));
+			securityGroup.setSecurityGroupType(_ctx.stringValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].SecurityGroupType"));
 			securityGroup.setAvailableInstanceAmount(_ctx.integerValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].AvailableInstanceAmount"));
 			securityGroup.setEcsCount(_ctx.integerValue("ListEmrAvailableConfigResponse.SecurityGroupList["+ i +"].EcsCount"));
 

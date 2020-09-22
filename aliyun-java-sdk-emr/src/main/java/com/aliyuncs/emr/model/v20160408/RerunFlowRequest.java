@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class RerunFlowRequest extends RpcAcsRequest<RerunFlowResponse> {
-	
+	   
+
+	private String flowInstanceId;
+
+	private Boolean reRunFail;
+
+	private String projectId;
 	public RerunFlowRequest() {
-		super("Emr", "2016-04-08", "RerunFlow", "emr");
+		super("Emr", "2016-04-08", "RerunFlow");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String flowInstanceId;
-
-	private String projectId;
-
-	private Boolean reRunFail;
 
 	public String getFlowInstanceId() {
 		return this.flowInstanceId;
@@ -48,17 +50,6 @@ public class RerunFlowRequest extends RpcAcsRequest<RerunFlowResponse> {
 		}
 	}
 
-	public String getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
 	public Boolean getReRunFail() {
 		return this.reRunFail;
 	}
@@ -67,6 +58,17 @@ public class RerunFlowRequest extends RpcAcsRequest<RerunFlowResponse> {
 		this.reRunFail = reRunFail;
 		if(reRunFail != null){
 			putQueryParameter("ReRunFail", reRunFail.toString());
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 

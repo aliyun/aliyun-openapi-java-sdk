@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,26 +23,27 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class GetJobRunningTimeStatisticInfoRequest extends RpcAcsRequest<GetJobRunningTimeStatisticInfoResponse> {
-	
-	public GetJobRunningTimeStatisticInfoRequest() {
-		super("Emr", "2016-04-08", "GetJobRunningTimeStatisticInfo", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String fromDatetime;
 
 	private Long resourceOwnerId;
-
-	private Integer pageSize;
 
 	private String clusterId;
 
 	private String toDatetime;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
+	public GetJobRunningTimeStatisticInfoRequest() {
+		super("Emr", "2016-04-08", "GetJobRunningTimeStatisticInfo");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getFromDatetime() {
 		return this.fromDatetime;
@@ -62,17 +64,6 @@ public class GetJobRunningTimeStatisticInfoRequest extends RpcAcsRequest<GetJobR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -106,6 +97,17 @@ public class GetJobRunningTimeStatisticInfoRequest extends RpcAcsRequest<GetJobR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,18 +23,21 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<DescribeSecurityGroupAttributeResponse> {
-	
+	   
+
+	private Long resourceOwnerId;
+
+	private String clusterId;
+
+	private String resourceGroupId;
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Emr", "2016-04-08", "DescribeSecurityGroupAttribute", "emr");
+		super("Emr", "2016-04-08", "DescribeSecurityGroupAttribute");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private Long resourceOwnerId;
-
-	private String clusterId;
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -54,6 +58,17 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

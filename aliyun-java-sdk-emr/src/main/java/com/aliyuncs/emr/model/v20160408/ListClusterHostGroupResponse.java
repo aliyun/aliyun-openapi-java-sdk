@@ -139,6 +139,20 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 		private String hostGroupChangeStatus;
 
+		private String scalingGroupBizId;
+
+		private String scalingGroupActiveStatus;
+
+		private String scalingInMode;
+
+		private Integer scalingGroupMinNode;
+
+		private Integer scalingGroupMaxNode;
+
+		private String scalingGroupConfigState;
+
+		private Float costSavingPercent;
+
 		public String getHostGroupId() {
 			return this.hostGroupId;
 		}
@@ -345,6 +359,62 @@ public class ListClusterHostGroupResponse extends AcsResponse {
 
 		public void setHostGroupChangeStatus(String hostGroupChangeStatus) {
 			this.hostGroupChangeStatus = hostGroupChangeStatus;
+		}
+
+		public String getScalingGroupBizId() {
+			return this.scalingGroupBizId;
+		}
+
+		public void setScalingGroupBizId(String scalingGroupBizId) {
+			this.scalingGroupBizId = scalingGroupBizId;
+		}
+
+		public String getScalingGroupActiveStatus() {
+			return this.scalingGroupActiveStatus;
+		}
+
+		public void setScalingGroupActiveStatus(String scalingGroupActiveStatus) {
+			this.scalingGroupActiveStatus = scalingGroupActiveStatus;
+		}
+
+		public String getScalingInMode() {
+			return this.scalingInMode;
+		}
+
+		public void setScalingInMode(String scalingInMode) {
+			this.scalingInMode = scalingInMode;
+		}
+
+		public Integer getScalingGroupMinNode() {
+			return this.scalingGroupMinNode;
+		}
+
+		public void setScalingGroupMinNode(Integer scalingGroupMinNode) {
+			this.scalingGroupMinNode = scalingGroupMinNode;
+		}
+
+		public Integer getScalingGroupMaxNode() {
+			return this.scalingGroupMaxNode;
+		}
+
+		public void setScalingGroupMaxNode(Integer scalingGroupMaxNode) {
+			this.scalingGroupMaxNode = scalingGroupMaxNode;
+		}
+
+		public String getScalingGroupConfigState() {
+			return this.scalingGroupConfigState;
+		}
+
+		public void setScalingGroupConfigState(String scalingGroupConfigState) {
+			this.scalingGroupConfigState = scalingGroupConfigState;
+		}
+
+		public Float getCostSavingPercent() {
+			return this.costSavingPercent;
+		}
+
+		public void setCostSavingPercent(Float costSavingPercent) {
+			this.costSavingPercent = costSavingPercent;
 		}
 	}
 

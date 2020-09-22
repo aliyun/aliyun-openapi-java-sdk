@@ -15,6 +15,7 @@
 package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -22,14 +23,11 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
-	
-	public ListFlowJobRequest() {
-		super("Emr", "2016-04-08", "ListFlowJob", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private String type;
+
+	private Integer pageNumber;
 
 	private String name;
 
@@ -37,13 +35,39 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 
 	private String id;
 
-	private String type;
-
 	private Boolean adhoc;
 
 	private String projectId;
+	public ListFlowJobRequest() {
+		super("Emr", "2016-04-08", "ListFlowJob");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
-	private Integer pageNumber;
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
 
 	public String getName() {
 		return this.name;
@@ -78,17 +102,6 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public Boolean getAdhoc() {
 		return this.adhoc;
 	}
@@ -108,17 +121,6 @@ public class ListFlowJobRequest extends RpcAcsRequest<ListFlowJobResponse> {
 		this.projectId = projectId;
 		if(projectId != null){
 			putQueryParameter("ProjectId", projectId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

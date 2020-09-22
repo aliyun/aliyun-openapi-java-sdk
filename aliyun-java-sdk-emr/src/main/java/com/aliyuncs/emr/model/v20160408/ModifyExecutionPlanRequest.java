@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPlanResponse> {
-	
-	public ModifyExecutionPlanRequest() {
-		super("Emr", "2016-04-08", "ModifyExecutionPlan", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -42,37 +36,19 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 	private String configurations;
 
-	private Boolean ioOptimized;
-
-	private String securityGroupId;
-
-	private Boolean easEnable;
-
 	private Boolean createClusterOnDemand;
 
 	private Long startTime;
 
-	private List<String> jobIdLists;
-
-	private String dayOfMonth;
-
 	private List<BootstrapAction> bootstrapActions;
-
-	private Boolean useLocalMetaDb;
 
 	private String emrVer;
 
 	private String id;
 
-	private String userDefinedEmrEcsRole;
-
 	private Boolean isOpenPublicIp;
 
 	private Long executionPlanVersion;
-
-	private String clusterId;
-
-	private String timeUnit;
 
 	private String instanceGeneration;
 
@@ -82,11 +58,7 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 	private List<String> optionSoftWareLists;
 
-	private String vpcId;
-
 	private String netType;
-
-	private String workflowDefinition;
 
 	private List<EcsOrder> ecsOrders;
 
@@ -94,9 +66,33 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 	private String zoneId;
 
-	private String dayOfWeek;
-
 	private Boolean useCustomHiveMetaDB;
+
+	private Boolean initCustomHiveMetaDB;
+
+	private Boolean ioOptimized;
+
+	private String securityGroupId;
+
+	private Boolean easEnable;
+
+	private List<String> jobIdLists;
+
+	private String dayOfMonth;
+
+	private Boolean useLocalMetaDb;
+
+	private String userDefinedEmrEcsRole;
+
+	private String clusterId;
+
+	private String timeUnit;
+
+	private String vpcId;
+
+	private String workflowDefinition;
+
+	private String dayOfWeek;
 
 	private String strategy;
 
@@ -104,9 +100,15 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 
 	private Boolean highAvailabilityEnable;
 
-	private Boolean initCustomHiveMetaDB;
-
 	private Boolean logEnable;
+	public ModifyExecutionPlanRequest() {
+		super("Emr", "2016-04-08", "ModifyExecutionPlan");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -163,39 +165,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		}
 	}
 
-	public Boolean getIoOptimized() {
-		return this.ioOptimized;
-	}
-
-	public void setIoOptimized(Boolean ioOptimized) {
-		this.ioOptimized = ioOptimized;
-		if(ioOptimized != null){
-			putQueryParameter("IoOptimized", ioOptimized.toString());
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public Boolean getEasEnable() {
-		return this.easEnable;
-	}
-
-	public void setEasEnable(Boolean easEnable) {
-		this.easEnable = easEnable;
-		if(easEnable != null){
-			putQueryParameter("EasEnable", easEnable.toString());
-		}
-	}
-
 	public Boolean getCreateClusterOnDemand() {
 		return this.createClusterOnDemand;
 	}
@@ -218,30 +187,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		}
 	}
 
-	public List<String> getJobIdLists() {
-		return this.jobIdLists;
-	}
-
-	public void setJobIdLists(List<String> jobIdLists) {
-		this.jobIdLists = jobIdLists;	
-		if (jobIdLists != null) {
-			for (int i = 0; i < jobIdLists.size(); i++) {
-				putQueryParameter("JobIdList." + (i + 1) , jobIdLists.get(i));
-			}
-		}	
-	}
-
-	public String getDayOfMonth() {
-		return this.dayOfMonth;
-	}
-
-	public void setDayOfMonth(String dayOfMonth) {
-		this.dayOfMonth = dayOfMonth;
-		if(dayOfMonth != null){
-			putQueryParameter("DayOfMonth", dayOfMonth);
-		}
-	}
-
 	public List<BootstrapAction> getBootstrapActions() {
 		return this.bootstrapActions;
 	}
@@ -255,17 +200,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 				putQueryParameter("BootstrapAction." + (depth1 + 1) + ".Name" , bootstrapActions.get(depth1).getName());
 			}
 		}	
-	}
-
-	public Boolean getUseLocalMetaDb() {
-		return this.useLocalMetaDb;
-	}
-
-	public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
-		this.useLocalMetaDb = useLocalMetaDb;
-		if(useLocalMetaDb != null){
-			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
-		}
 	}
 
 	public String getEmrVer() {
@@ -290,17 +224,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		}
 	}
 
-	public String getUserDefinedEmrEcsRole() {
-		return this.userDefinedEmrEcsRole;
-	}
-
-	public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
-		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
-		if(userDefinedEmrEcsRole != null){
-			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
-		}
-	}
-
 	public Boolean getIsOpenPublicIp() {
 		return this.isOpenPublicIp;
 	}
@@ -320,28 +243,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		this.executionPlanVersion = executionPlanVersion;
 		if(executionPlanVersion != null){
 			putQueryParameter("ExecutionPlanVersion", executionPlanVersion.toString());
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getTimeUnit() {
-		return this.timeUnit;
-	}
-
-	public void setTimeUnit(String timeUnit) {
-		this.timeUnit = timeUnit;
-		if(timeUnit != null){
-			putQueryParameter("TimeUnit", timeUnit);
 		}
 	}
 
@@ -391,17 +292,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		}	
 	}
 
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
 	public String getNetType() {
 		return this.netType;
 	}
@@ -410,17 +300,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		this.netType = netType;
 		if(netType != null){
 			putQueryParameter("NetType", netType);
-		}
-	}
-
-	public String getWorkflowDefinition() {
-		return this.workflowDefinition;
-	}
-
-	public void setWorkflowDefinition(String workflowDefinition) {
-		this.workflowDefinition = workflowDefinition;
-		if(workflowDefinition != null){
-			putQueryParameter("WorkflowDefinition", workflowDefinition);
 		}
 	}
 
@@ -465,17 +344,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		}
 	}
 
-	public String getDayOfWeek() {
-		return this.dayOfWeek;
-	}
-
-	public void setDayOfWeek(String dayOfWeek) {
-		this.dayOfWeek = dayOfWeek;
-		if(dayOfWeek != null){
-			putQueryParameter("DayOfWeek", dayOfWeek);
-		}
-	}
-
 	public Boolean getUseCustomHiveMetaDB() {
 		return this.useCustomHiveMetaDB;
 	}
@@ -484,6 +352,151 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		this.useCustomHiveMetaDB = useCustomHiveMetaDB;
 		if(useCustomHiveMetaDB != null){
 			putQueryParameter("UseCustomHiveMetaDB", useCustomHiveMetaDB.toString());
+		}
+	}
+
+	public Boolean getInitCustomHiveMetaDB() {
+		return this.initCustomHiveMetaDB;
+	}
+
+	public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
+		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
+		if(initCustomHiveMetaDB != null){
+			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
+		}
+	}
+
+	public Boolean getIoOptimized() {
+		return this.ioOptimized;
+	}
+
+	public void setIoOptimized(Boolean ioOptimized) {
+		this.ioOptimized = ioOptimized;
+		if(ioOptimized != null){
+			putQueryParameter("IoOptimized", ioOptimized.toString());
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public Boolean getEasEnable() {
+		return this.easEnable;
+	}
+
+	public void setEasEnable(Boolean easEnable) {
+		this.easEnable = easEnable;
+		if(easEnable != null){
+			putQueryParameter("EasEnable", easEnable.toString());
+		}
+	}
+
+	public List<String> getJobIdLists() {
+		return this.jobIdLists;
+	}
+
+	public void setJobIdLists(List<String> jobIdLists) {
+		this.jobIdLists = jobIdLists;	
+		if (jobIdLists != null) {
+			for (int i = 0; i < jobIdLists.size(); i++) {
+				putQueryParameter("JobIdList." + (i + 1) , jobIdLists.get(i));
+			}
+		}	
+	}
+
+	public String getDayOfMonth() {
+		return this.dayOfMonth;
+	}
+
+	public void setDayOfMonth(String dayOfMonth) {
+		this.dayOfMonth = dayOfMonth;
+		if(dayOfMonth != null){
+			putQueryParameter("DayOfMonth", dayOfMonth);
+		}
+	}
+
+	public Boolean getUseLocalMetaDb() {
+		return this.useLocalMetaDb;
+	}
+
+	public void setUseLocalMetaDb(Boolean useLocalMetaDb) {
+		this.useLocalMetaDb = useLocalMetaDb;
+		if(useLocalMetaDb != null){
+			putQueryParameter("UseLocalMetaDb", useLocalMetaDb.toString());
+		}
+	}
+
+	public String getUserDefinedEmrEcsRole() {
+		return this.userDefinedEmrEcsRole;
+	}
+
+	public void setUserDefinedEmrEcsRole(String userDefinedEmrEcsRole) {
+		this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
+		if(userDefinedEmrEcsRole != null){
+			putQueryParameter("UserDefinedEmrEcsRole", userDefinedEmrEcsRole);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getTimeUnit() {
+		return this.timeUnit;
+	}
+
+	public void setTimeUnit(String timeUnit) {
+		this.timeUnit = timeUnit;
+		if(timeUnit != null){
+			putQueryParameter("TimeUnit", timeUnit);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
+		}
+	}
+
+	public String getWorkflowDefinition() {
+		return this.workflowDefinition;
+	}
+
+	public void setWorkflowDefinition(String workflowDefinition) {
+		this.workflowDefinition = workflowDefinition;
+		if(workflowDefinition != null){
+			putQueryParameter("WorkflowDefinition", workflowDefinition);
+		}
+	}
+
+	public String getDayOfWeek() {
+		return this.dayOfWeek;
+	}
+
+	public void setDayOfWeek(String dayOfWeek) {
+		this.dayOfWeek = dayOfWeek;
+		if(dayOfWeek != null){
+			putQueryParameter("DayOfWeek", dayOfWeek);
 		}
 	}
 
@@ -524,17 +537,6 @@ public class ModifyExecutionPlanRequest extends RpcAcsRequest<ModifyExecutionPla
 		this.highAvailabilityEnable = highAvailabilityEnable;
 		if(highAvailabilityEnable != null){
 			putQueryParameter("HighAvailabilityEnable", highAvailabilityEnable.toString());
-		}
-	}
-
-	public Boolean getInitCustomHiveMetaDB() {
-		return this.initCustomHiveMetaDB;
-	}
-
-	public void setInitCustomHiveMetaDB(Boolean initCustomHiveMetaDB) {
-		this.initCustomHiveMetaDB = initCustomHiveMetaDB;
-		if(initCustomHiveMetaDB != null){
-			putQueryParameter("InitCustomHiveMetaDB", initCustomHiveMetaDB.toString());
 		}
 	}
 

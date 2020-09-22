@@ -59,6 +59,8 @@ public class ListUsersResponse extends AcsResponse {
 
 		private String kerberosStatus;
 
+		private String k8sStatus;
+
 		public String getUserName() {
 			return this.userName;
 		}
@@ -105,6 +107,14 @@ public class ListUsersResponse extends AcsResponse {
 
 		public void setKerberosStatus(String kerberosStatus) {
 			this.kerberosStatus = kerberosStatus;
+		}
+
+		public String getK8sStatus() {
+			return this.k8sStatus;
+		}
+
+		public void setK8sStatus(String k8sStatus) {
+			this.k8sStatus = k8sStatus;
 		}
 	}
 

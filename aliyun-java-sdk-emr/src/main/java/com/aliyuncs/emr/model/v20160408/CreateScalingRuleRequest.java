@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,18 +24,23 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleResponse> {
-	
-	public CreateScalingRuleRequest() {
-		super("Emr", "2016-04-08", "CreateScalingRule", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
+
+	private Long resourceOwnerId;
+
+	private String ruleName;
+
+	private String recurrenceEndTime;
+
+	private List<CloudWatchTrigger> cloudWatchTriggers;
+
+	private Long timeoutWithGrace;
+
+	private Integer cooldown;
 
 	private String launchTime;
 
-	private Long resourceOwnerId;
+	private Boolean withGrace;
 
 	private String ruleCategory;
 
@@ -42,25 +48,98 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 
 	private String adjustmentType;
 
-	private String ruleName;
-
 	private String clusterId;
 
 	private Integer launchExpirationTime;
 
 	private String recurrenceValue;
 
-	private String recurrenceEndTime;
-
-	private List<CloudWatchTrigger> cloudWatchTriggers;
-
 	private String hostGroupId;
 
 	private List<SchedulerTrigger> schedulerTriggers;
 
-	private Integer cooldown;
-
 	private String recurrenceType;
+	public CreateScalingRuleRequest() {
+		super("Emr", "2016-04-08", "CreateScalingRule");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
+	}
+
+	public String getRecurrenceEndTime() {
+		return this.recurrenceEndTime;
+	}
+
+	public void setRecurrenceEndTime(String recurrenceEndTime) {
+		this.recurrenceEndTime = recurrenceEndTime;
+		if(recurrenceEndTime != null){
+			putQueryParameter("RecurrenceEndTime", recurrenceEndTime);
+		}
+	}
+
+	public List<CloudWatchTrigger> getCloudWatchTriggers() {
+		return this.cloudWatchTriggers;
+	}
+
+	public void setCloudWatchTriggers(List<CloudWatchTrigger> cloudWatchTriggers) {
+		this.cloudWatchTriggers = cloudWatchTriggers;	
+		if (cloudWatchTriggers != null) {
+			for (int depth1 = 0; depth1 < cloudWatchTriggers.size(); depth1++) {
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Period" , cloudWatchTriggers.get(depth1).getPeriod());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".EvaluationCount" , cloudWatchTriggers.get(depth1).getEvaluationCount());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Threshold" , cloudWatchTriggers.get(depth1).getThreshold());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".MetricName" , cloudWatchTriggers.get(depth1).getMetricName());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".ComparisonOperator" , cloudWatchTriggers.get(depth1).getComparisonOperator());
+				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Statistics" , cloudWatchTriggers.get(depth1).getStatistics());
+			}
+		}	
+	}
+
+	public Long getTimeoutWithGrace() {
+		return this.timeoutWithGrace;
+	}
+
+	public void setTimeoutWithGrace(Long timeoutWithGrace) {
+		this.timeoutWithGrace = timeoutWithGrace;
+		if(timeoutWithGrace != null){
+			putQueryParameter("TimeoutWithGrace", timeoutWithGrace.toString());
+		}
+	}
+
+	public Integer getCooldown() {
+		return this.cooldown;
+	}
+
+	public void setCooldown(Integer cooldown) {
+		this.cooldown = cooldown;
+		if(cooldown != null){
+			putQueryParameter("Cooldown", cooldown.toString());
+		}
+	}
 
 	public String getLaunchTime() {
 		return this.launchTime;
@@ -73,14 +152,14 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Boolean getWithGrace() {
+		return this.withGrace;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setWithGrace(Boolean withGrace) {
+		this.withGrace = withGrace;
+		if(withGrace != null){
+			putQueryParameter("WithGrace", withGrace.toString());
 		}
 	}
 
@@ -117,17 +196,6 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		}
 	}
 
-	public String getRuleName() {
-		return this.ruleName;
-	}
-
-	public void setRuleName(String ruleName) {
-		this.ruleName = ruleName;
-		if(ruleName != null){
-			putQueryParameter("RuleName", ruleName);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -161,35 +229,6 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 		}
 	}
 
-	public String getRecurrenceEndTime() {
-		return this.recurrenceEndTime;
-	}
-
-	public void setRecurrenceEndTime(String recurrenceEndTime) {
-		this.recurrenceEndTime = recurrenceEndTime;
-		if(recurrenceEndTime != null){
-			putQueryParameter("RecurrenceEndTime", recurrenceEndTime);
-		}
-	}
-
-	public List<CloudWatchTrigger> getCloudWatchTriggers() {
-		return this.cloudWatchTriggers;
-	}
-
-	public void setCloudWatchTriggers(List<CloudWatchTrigger> cloudWatchTriggers) {
-		this.cloudWatchTriggers = cloudWatchTriggers;	
-		if (cloudWatchTriggers != null) {
-			for (int depth1 = 0; depth1 < cloudWatchTriggers.size(); depth1++) {
-				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Period" , cloudWatchTriggers.get(depth1).getPeriod());
-				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".EvaluationCount" , cloudWatchTriggers.get(depth1).getEvaluationCount());
-				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Threshold" , cloudWatchTriggers.get(depth1).getThreshold());
-				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".MetricName" , cloudWatchTriggers.get(depth1).getMetricName());
-				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".ComparisonOperator" , cloudWatchTriggers.get(depth1).getComparisonOperator());
-				putQueryParameter("CloudWatchTrigger." + (depth1 + 1) + ".Statistics" , cloudWatchTriggers.get(depth1).getStatistics());
-			}
-		}	
-	}
-
 	public String getHostGroupId() {
 		return this.hostGroupId;
 	}
@@ -216,17 +255,6 @@ public class CreateScalingRuleRequest extends RpcAcsRequest<CreateScalingRuleRes
 				putQueryParameter("SchedulerTrigger." + (depth1 + 1) + ".RecurrenceType" , schedulerTriggers.get(depth1).getRecurrenceType());
 			}
 		}	
-	}
-
-	public Integer getCooldown() {
-		return this.cooldown;
-	}
-
-	public void setCooldown(Integer cooldown) {
-		this.cooldown = cooldown;
-		if(cooldown != null){
-			putQueryParameter("Cooldown", cooldown.toString());
-		}
 	}
 
 	public String getRecurrenceType() {

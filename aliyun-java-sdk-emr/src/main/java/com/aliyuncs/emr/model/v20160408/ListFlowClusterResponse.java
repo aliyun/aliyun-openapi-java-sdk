@@ -101,6 +101,8 @@ public class ListFlowClusterResponse extends AcsResponse {
 
 		private String createResource;
 
+		private String k8sClusterId;
+
 		private OrderTaskInfo orderTaskInfo;
 
 		private FailReason failReason;
@@ -199,6 +201,14 @@ public class ListFlowClusterResponse extends AcsResponse {
 
 		public void setCreateResource(String createResource) {
 			this.createResource = createResource;
+		}
+
+		public String getK8sClusterId() {
+			return this.k8sClusterId;
+		}
+
+		public void setK8sClusterId(String k8sClusterId) {
+			this.k8sClusterId = k8sClusterId;
 		}
 
 		public OrderTaskInfo getOrderTaskInfo() {

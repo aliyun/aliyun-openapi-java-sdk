@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostResponse> {
-	
-	public ListClusterHostRequest() {
-		super("Emr", "2016-04-08", "ListClusterHost", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Long resourceOwnerId;
 
@@ -38,13 +32,9 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 
 	private List<String> statusLists;
 
-	private String privateIp;
-
 	private String componentName;
 
 	private String publicIp;
-
-	private String clusterId;
 
 	private Integer pageNumber;
 
@@ -52,9 +42,21 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 
 	private String groupType;
 
-	private String hostGroupId;
-
 	private Integer pageSize;
+
+	private String privateIp;
+
+	private String clusterId;
+
+	private String hostGroupId;
+	public ListClusterHostRequest() {
+		super("Emr", "2016-04-08", "ListClusterHost");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
@@ -91,17 +93,6 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		}	
 	}
 
-	public String getPrivateIp() {
-		return this.privateIp;
-	}
-
-	public void setPrivateIp(String privateIp) {
-		this.privateIp = privateIp;
-		if(privateIp != null){
-			putQueryParameter("PrivateIp", privateIp);
-		}
-	}
-
 	public String getComponentName() {
 		return this.componentName;
 	}
@@ -121,17 +112,6 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.publicIp = publicIp;
 		if(publicIp != null){
 			putQueryParameter("PublicIp", publicIp);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -168,17 +148,6 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		}
 	}
 
-	public String getHostGroupId() {
-		return this.hostGroupId;
-	}
-
-	public void setHostGroupId(String hostGroupId) {
-		this.hostGroupId = hostGroupId;
-		if(hostGroupId != null){
-			putQueryParameter("HostGroupId", hostGroupId);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -187,6 +156,39 @@ public class ListClusterHostRequest extends RpcAcsRequest<ListClusterHostRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getPrivateIp() {
+		return this.privateIp;
+	}
+
+	public void setPrivateIp(String privateIp) {
+		this.privateIp = privateIp;
+		if(privateIp != null){
+			putQueryParameter("PrivateIp", privateIp);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getHostGroupId() {
+		return this.hostGroupId;
+	}
+
+	public void setHostGroupId(String hostGroupId) {
+		this.hostGroupId = hostGroupId;
+		if(hostGroupId != null){
+			putQueryParameter("HostGroupId", hostGroupId);
 		}
 	}
 

@@ -16,6 +16,7 @@ package com.aliyuncs.emr.model.v20160408;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emr.Endpoint;
 
 /**
@@ -23,14 +24,7 @@ import com.aliyuncs.emr.Endpoint;
  * @version 
  */
 public class ListExecutionPlanInstancesRequest extends RpcAcsRequest<ListExecutionPlanInstancesResponse> {
-	
-	public ListExecutionPlanInstancesRequest() {
-		super("Emr", "2016-04-08", "ListExecutionPlanInstances", "emr");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private Boolean onlyLastInstance;
 
@@ -40,11 +34,19 @@ public class ListExecutionPlanInstancesRequest extends RpcAcsRequest<ListExecuti
 
 	private List<String> statusLists;
 
-	private Integer pageSize;
-
 	private Boolean isDesc;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
+	public ListExecutionPlanInstancesRequest() {
+		super("Emr", "2016-04-08", "ListExecutionPlanInstances");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public Boolean getOnlyLastInstance() {
 		return this.onlyLastInstance;
@@ -94,17 +96,6 @@ public class ListExecutionPlanInstancesRequest extends RpcAcsRequest<ListExecuti
 		}	
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Boolean getIsDesc() {
 		return this.isDesc;
 	}
@@ -124,6 +115,17 @@ public class ListExecutionPlanInstancesRequest extends RpcAcsRequest<ListExecuti
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

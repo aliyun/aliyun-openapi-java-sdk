@@ -107,6 +107,10 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String metaStoreType;
 
+		private String k8sClusterId;
+
+		private List<Tag> tags;
+
 		private OrderTaskInfo orderTaskInfo;
 
 		private FailReason failReason;
@@ -231,6 +235,22 @@ public class ListClustersResponse extends AcsResponse {
 			this.metaStoreType = metaStoreType;
 		}
 
+		public String getK8sClusterId() {
+			return this.k8sClusterId;
+		}
+
+		public void setK8sClusterId(String k8sClusterId) {
+			this.k8sClusterId = k8sClusterId;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public OrderTaskInfo getOrderTaskInfo() {
 			return this.orderTaskInfo;
 		}
@@ -245,6 +265,29 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setFailReason(FailReason failReason) {
 			this.failReason = failReason;
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
 		}
 
 		public static class OrderTaskInfo {

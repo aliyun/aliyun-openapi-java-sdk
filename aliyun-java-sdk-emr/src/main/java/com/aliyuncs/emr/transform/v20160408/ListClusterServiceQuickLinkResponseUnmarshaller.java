@@ -34,7 +34,7 @@ public class ListClusterServiceQuickLinkResponseUnmarshaller {
 			quickLink.setServiceName(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].ServiceName"));
 			quickLink.setServiceDisplayName(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].ServiceDisplayName"));
 			quickLink.setQuickLinkAddress(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].QuickLinkAddress"));
-			quickLink.setProtocol(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Protocol"));
+			quickLink.setBizProtocol(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Protocol"));
 			quickLink.setPort(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Port"));
 			quickLink.setType(_ctx.stringValue("ListClusterServiceQuickLinkResponse.QuickLinkList["+ i +"].Type"));
 
