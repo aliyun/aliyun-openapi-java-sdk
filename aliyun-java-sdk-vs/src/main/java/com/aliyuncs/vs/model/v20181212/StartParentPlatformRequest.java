@@ -22,16 +22,14 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateStreamSnapshotRequest extends RpcAcsRequest<CreateStreamSnapshotResponse> {
+public class StartParentPlatformRequest extends RpcAcsRequest<StartParentPlatformResponse> {
 	   
 
 	private String id;
 
 	private Long ownerId;
-
-	private String location;
-	public CreateStreamSnapshotRequest() {
-		super("vs", "2018-12-12", "CreateStreamSnapshot", "vs");
+	public StartParentPlatformRequest() {
+		super("vs", "2018-12-12", "StartParentPlatform", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,20 +59,9 @@ public class CreateStreamSnapshotRequest extends RpcAcsRequest<CreateStreamSnaps
 		}
 	}
 
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-		if(location != null){
-			putQueryParameter("Location", location);
-		}
-	}
-
 	@Override
-	public Class<CreateStreamSnapshotResponse> getResponseClass() {
-		return CreateStreamSnapshotResponse.class;
+	public Class<StartParentPlatformResponse> getResponseClass() {
+		return StartParentPlatformResponse.class;
 	}
 
 }

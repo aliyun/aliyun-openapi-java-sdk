@@ -28,6 +28,10 @@ public class CreateStreamSnapshotResponseUnmarshaller {
 		createStreamSnapshotResponse.setOssBucket(_ctx.stringValue("CreateStreamSnapshotResponse.OssBucket"));
 		createStreamSnapshotResponse.setOssObject(_ctx.stringValue("CreateStreamSnapshotResponse.OssObject"));
 		createStreamSnapshotResponse.setOssEndpoint(_ctx.stringValue("CreateStreamSnapshotResponse.OssEndpoint"));
+		createStreamSnapshotResponse.setHeight(_ctx.longValue("CreateStreamSnapshotResponse.Height"));
+		createStreamSnapshotResponse.setWidth(_ctx.longValue("CreateStreamSnapshotResponse.Width"));
+		createStreamSnapshotResponse.setFormat(_ctx.stringValue("CreateStreamSnapshotResponse.Format"));
+		createStreamSnapshotResponse.setTimestamp(_ctx.longValue("CreateStreamSnapshotResponse.Timestamp"));
 	 
 	 	return createStreamSnapshotResponse;
 	}

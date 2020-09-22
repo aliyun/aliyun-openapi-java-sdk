@@ -1,3 +1,6 @@
+2020-09-22 Version: 1.10.1
+- Generated 2018-12-12 for `vs`.
+
 2020-06-29 Version: 1.10.0
 - Supported gb28181 parent platform.
 

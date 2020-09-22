@@ -22,16 +22,18 @@ import com.aliyuncs.vs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateStreamSnapshotRequest extends RpcAcsRequest<CreateStreamSnapshotResponse> {
+public class DescribeVsTopDomainsByFlowRequest extends RpcAcsRequest<DescribeVsTopDomainsByFlowResponse> {
 	   
 
-	private String id;
+	private String startTime;
+
+	private Long limit;
+
+	private String endTime;
 
 	private Long ownerId;
-
-	private String location;
-	public CreateStreamSnapshotRequest() {
-		super("vs", "2018-12-12", "CreateStreamSnapshot", "vs");
+	public DescribeVsTopDomainsByFlowRequest() {
+		super("vs", "2018-12-12", "DescribeVsTopDomainsByFlow", "vs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,36 @@ public class CreateStreamSnapshotRequest extends RpcAcsRequest<CreateStreamSnaps
 		} catch (Exception e) {}
 	}
 
-	public String getId() {
-		return this.id;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Long limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -61,20 +85,9 @@ public class CreateStreamSnapshotRequest extends RpcAcsRequest<CreateStreamSnaps
 		}
 	}
 
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-		if(location != null){
-			putQueryParameter("Location", location);
-		}
-	}
-
 	@Override
-	public Class<CreateStreamSnapshotResponse> getResponseClass() {
-		return CreateStreamSnapshotResponse.class;
+	public Class<DescribeVsTopDomainsByFlowResponse> getResponseClass() {
+		return DescribeVsTopDomainsByFlowResponse.class;
 	}
 
 }

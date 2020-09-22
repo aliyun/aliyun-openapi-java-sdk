@@ -36,6 +36,14 @@ public class CreateStreamSnapshotResponse extends AcsResponse {
 
 	private String ossEndpoint;
 
+	private Long height;
+
+	private Long width;
+
+	private String format;
+
+	private Long timestamp;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +90,38 @@ public class CreateStreamSnapshotResponse extends AcsResponse {
 
 	public void setOssEndpoint(String ossEndpoint) {
 		this.ossEndpoint = ossEndpoint;
+	}
+
+	public Long getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(Long height) {
+		this.height = height;
+	}
+
+	public Long getWidth() {
+		return this.width;
+	}
+
+	public void setWidth(Long width) {
+		this.width = width;
+	}
+
+	public String getFormat() {
+		return this.format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
+	}
+
+	public Long getTimestamp() {
+		return this.timestamp;
+	}
+
+	public void setTimestamp(Long timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	@Override
