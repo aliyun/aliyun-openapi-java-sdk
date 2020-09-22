@@ -89,6 +89,8 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 		private String predictId;
 
+		private String predictTemplateId;
+
 		private String streamType;
 
 		private String streamId;
@@ -105,7 +107,13 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 		private String userData;
 
+		private String faceGroupId;
+
+		private String modelUserData;
+
 		private String creationTime;
+
+		private String autoStart;
 
 		private String status;
 
@@ -115,6 +123,14 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 		public void setPredictId(String predictId) {
 			this.predictId = predictId;
+		}
+
+		public String getPredictTemplateId() {
+			return this.predictTemplateId;
+		}
+
+		public void setPredictTemplateId(String predictTemplateId) {
+			this.predictTemplateId = predictTemplateId;
 		}
 
 		public String getStreamType() {
@@ -181,12 +197,36 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.userData = userData;
 		}
 
+		public String getFaceGroupId() {
+			return this.faceGroupId;
+		}
+
+		public void setFaceGroupId(String faceGroupId) {
+			this.faceGroupId = faceGroupId;
+		}
+
+		public String getModelUserData() {
+			return this.modelUserData;
+		}
+
+		public void setModelUserData(String modelUserData) {
+			this.modelUserData = modelUserData;
+		}
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getAutoStart() {
+			return this.autoStart;
+		}
+
+		public void setAutoStart(String autoStart) {
+			this.autoStart = autoStart;
 		}
 
 		public String getStatus() {

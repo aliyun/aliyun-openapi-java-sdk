@@ -36,6 +36,7 @@ public class DescribeStreamPredictsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamPredictsResponse.StreamPredicts.Length"); i++) {
 			StreamPredict streamPredict = new StreamPredict();
 			streamPredict.setPredictId(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].PredictId"));
+			streamPredict.setPredictTemplateId(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].PredictTemplateId"));
 			streamPredict.setStreamType(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].StreamType"));
 			streamPredict.setStreamId(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].StreamId"));
 			streamPredict.setModelIds(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].ModelIds"));
@@ -44,7 +45,10 @@ public class DescribeStreamPredictsResponseUnmarshaller {
 			streamPredict.setOutput(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Output"));
 			streamPredict.setNotify(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Notify"));
 			streamPredict.setUserData(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].UserData"));
+			streamPredict.setFaceGroupId(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].FaceGroupId"));
+			streamPredict.setModelUserData(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].ModelUserData"));
 			streamPredict.setCreationTime(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].CreationTime"));
+			streamPredict.setAutoStart(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].AutoStart"));
 			streamPredict.setStatus(_ctx.stringValue("DescribeStreamPredictsResponse.StreamPredicts["+ i +"].Status"));
 
 			streamPredicts.add(streamPredict);
