@@ -49,6 +49,8 @@ public class SearchMetaTablesResponseUnmarshaller {
 			dataEntityListItem.setEntityType(_ctx.integerValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].EntityType"));
 			dataEntityListItem.setProjectId(_ctx.longValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ProjectId"));
 			dataEntityListItem.setProjectName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ProjectName"));
+			dataEntityListItem.setClusterId(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].ClusterId"));
+			dataEntityListItem.setDatabaseName(_ctx.stringValue("SearchMetaTablesResponse.Data.DataEntityList["+ i +"].DatabaseName"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

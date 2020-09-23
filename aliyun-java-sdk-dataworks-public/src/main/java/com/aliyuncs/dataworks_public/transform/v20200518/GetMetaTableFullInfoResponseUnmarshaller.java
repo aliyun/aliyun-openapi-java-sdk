@@ -50,6 +50,10 @@ public class GetMetaTableFullInfoResponseUnmarshaller {
 		data.setTotalColumnCount(_ctx.longValue("GetMetaTableFullInfoResponse.Data.TotalColumnCount"));
 		data.setLastDdlTime(_ctx.longValue("GetMetaTableFullInfoResponse.Data.LastDdlTime"));
 		data.setLastAccessTime(_ctx.longValue("GetMetaTableFullInfoResponse.Data.LastAccessTime"));
+		data.setDatabaseName(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.DatabaseName"));
+		data.setPartitionKeys(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.PartitionKeys"));
+		data.setLocation(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.Location"));
+		data.setClusterId(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.ClusterId"));
 
 		List<ColumnListItem> columnList = new ArrayList<ColumnListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableFullInfoResponse.Data.ColumnList.Length"); i++) {

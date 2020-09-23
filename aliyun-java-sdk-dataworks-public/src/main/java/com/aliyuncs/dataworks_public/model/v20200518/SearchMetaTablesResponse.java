@@ -145,6 +145,10 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 			private String projectName;
 
+			private String clusterId;
+
+			private String databaseName;
+
 			public String getTableName() {
 				return this.tableName;
 			}
@@ -207,6 +211,22 @@ public class SearchMetaTablesResponse extends AcsResponse {
 
 			public void setProjectName(String projectName) {
 				this.projectName = projectName;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getDatabaseName() {
+				return this.databaseName;
+			}
+
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
 			}
 		}
 	}

@@ -27,14 +27,6 @@ public class GetMetaDBTableListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
-
-	private String errorMessage;
-
-	private Integer httpStatusCode;
-
-	private Boolean success;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -43,38 +35,6 @@ public class GetMetaDBTableListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -133,6 +93,8 @@ public class GetMetaDBTableListResponse extends AcsResponse {
 
 			private String tableGuid;
 
+			private String databaseName;
+
 			public String getTableName() {
 				return this.tableName;
 			}
@@ -147,6 +109,14 @@ public class GetMetaDBTableListResponse extends AcsResponse {
 
 			public void setTableGuid(String tableGuid) {
 				this.tableGuid = tableGuid;
+			}
+
+			public String getDatabaseName() {
+				return this.databaseName;
+			}
+
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
 			}
 		}
 	}

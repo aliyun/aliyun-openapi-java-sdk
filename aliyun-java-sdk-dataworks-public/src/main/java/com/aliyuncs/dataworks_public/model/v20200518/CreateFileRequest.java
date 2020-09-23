@@ -49,6 +49,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String paraValue;
 
+	private String resourceGroupIdentifier;
+
 	private Integer autoRerunTimes;
 
 	private String cronExpress;
@@ -202,6 +204,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.paraValue = paraValue;
 		if(paraValue != null){
 			putBodyParameter("ParaValue", paraValue);
+		}
+	}
+
+	public String getResourceGroupIdentifier() {
+		return this.resourceGroupIdentifier;
+	}
+
+	public void setResourceGroupIdentifier(String resourceGroupIdentifier) {
+		this.resourceGroupIdentifier = resourceGroupIdentifier;
+		if(resourceGroupIdentifier != null){
+			putBodyParameter("ResourceGroupIdentifier", resourceGroupIdentifier);
 		}
 	}
 

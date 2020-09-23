@@ -61,6 +61,7 @@ public class GetDataServiceApiResponseUnmarshaller {
 		data.setTenantId(_ctx.longValue("GetDataServiceApiResponse.Data.TenantId"));
 		data.setTimeout(_ctx.integerValue("GetDataServiceApiResponse.Data.Timeout"));
 		data.setVisibleRange(_ctx.integerValue("GetDataServiceApiResponse.Data.VisibleRange"));
+		data.setFolderId(_ctx.longValue("GetDataServiceApiResponse.Data.FolderId"));
 
 		List<Integer> protocols = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataServiceApiResponse.Data.Protocols.Length"); i++) {

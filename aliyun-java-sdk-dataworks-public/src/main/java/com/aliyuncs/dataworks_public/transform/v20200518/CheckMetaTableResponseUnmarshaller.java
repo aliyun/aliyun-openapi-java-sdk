@@ -23,10 +23,6 @@ public class CheckMetaTableResponseUnmarshaller {
 	public static CheckMetaTableResponse unmarshall(CheckMetaTableResponse checkMetaTableResponse, UnmarshallerContext _ctx) {
 		
 		checkMetaTableResponse.setRequestId(_ctx.stringValue("CheckMetaTableResponse.RequestId"));
-		checkMetaTableResponse.setErrorCode(_ctx.stringValue("CheckMetaTableResponse.ErrorCode"));
-		checkMetaTableResponse.setErrorMessage(_ctx.stringValue("CheckMetaTableResponse.ErrorMessage"));
-		checkMetaTableResponse.setHttpStatusCode(_ctx.integerValue("CheckMetaTableResponse.HttpStatusCode"));
-		checkMetaTableResponse.setSuccess(_ctx.booleanValue("CheckMetaTableResponse.Success"));
 		checkMetaTableResponse.setData(_ctx.booleanValue("CheckMetaTableResponse.Data"));
 	 
 	 	return checkMetaTableResponse;

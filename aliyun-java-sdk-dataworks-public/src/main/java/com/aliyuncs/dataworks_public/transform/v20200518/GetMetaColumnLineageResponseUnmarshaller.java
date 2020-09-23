@@ -43,6 +43,9 @@ public class GetMetaColumnLineageResponseUnmarshaller {
 			DataEntityListItem dataEntityListItem = new DataEntityListItem();
 			dataEntityListItem.setColumnName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ColumnName"));
 			dataEntityListItem.setColumnGuid(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ColumnGuid"));
+			dataEntityListItem.setClusterId(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].ClusterId"));
+			dataEntityListItem.setDatabaseName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].DatabaseName"));
+			dataEntityListItem.setTableName(_ctx.stringValue("GetMetaColumnLineageResponse.Data.DataEntityList["+ i +"].TableName"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

@@ -116,6 +116,16 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		private String projectName;
 
+		private String databaseName;
+
+		private String partitionKeys;
+
+		private String location;
+
+		private String clusterId;
+
+		private String caption;
+
 		public String getTableName() {
 			return this.tableName;
 		}
@@ -234,6 +244,46 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		public void setProjectName(String projectName) {
 			this.projectName = projectName;
+		}
+
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
+		public String getPartitionKeys() {
+			return this.partitionKeys;
+		}
+
+		public void setPartitionKeys(String partitionKeys) {
+			this.partitionKeys = partitionKeys;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getCaption() {
+			return this.caption;
+		}
+
+		public void setCaption(String caption) {
+			this.caption = caption;
 		}
 	}
 

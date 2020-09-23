@@ -25,11 +25,19 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetMetaTableLineageRequest extends RpcAcsRequest<GetMetaTableLineageResponse> {
 	   
 
+	private String dataSourceType;
+
+	private String clusterId;
+
 	private String tableGuid;
 
 	private String nextPrimaryKey;
 
+	private String databaseName;
+
 	private Integer pageSize;
+
+	private String tableName;
 
 	private String direction;
 	public GetMetaTableLineageRequest() {
@@ -39,6 +47,28 @@ public class GetMetaTableLineageRequest extends RpcAcsRequest<GetMetaTableLineag
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getTableGuid() {
@@ -63,6 +93,17 @@ public class GetMetaTableLineageRequest extends RpcAcsRequest<GetMetaTableLineag
 		}
 	}
 
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -71,6 +112,17 @@ public class GetMetaTableLineageRequest extends RpcAcsRequest<GetMetaTableLineag
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
 		}
 	}
 

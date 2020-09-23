@@ -24,10 +24,6 @@ public class GetMetaDBInfoResponseUnmarshaller {
 	public static GetMetaDBInfoResponse unmarshall(GetMetaDBInfoResponse getMetaDBInfoResponse, UnmarshallerContext _ctx) {
 		
 		getMetaDBInfoResponse.setRequestId(_ctx.stringValue("GetMetaDBInfoResponse.RequestId"));
-		getMetaDBInfoResponse.setErrorCode(_ctx.stringValue("GetMetaDBInfoResponse.ErrorCode"));
-		getMetaDBInfoResponse.setErrorMessage(_ctx.stringValue("GetMetaDBInfoResponse.ErrorMessage"));
-		getMetaDBInfoResponse.setHttpStatusCode(_ctx.integerValue("GetMetaDBInfoResponse.HttpStatusCode"));
-		getMetaDBInfoResponse.setSuccess(_ctx.booleanValue("GetMetaDBInfoResponse.Success"));
 
 		Data data = new Data();
 		data.setAppGuid(_ctx.stringValue("GetMetaDBInfoResponse.Data.AppGuid"));
@@ -41,6 +37,11 @@ public class GetMetaDBInfoResponseUnmarshaller {
 		data.setModifyTime(_ctx.longValue("GetMetaDBInfoResponse.Data.ModifyTime"));
 		data.setOwnerId(_ctx.stringValue("GetMetaDBInfoResponse.Data.OwnerId"));
 		data.setOwnerName(_ctx.stringValue("GetMetaDBInfoResponse.Data.OwnerName"));
+		data.setName(_ctx.stringValue("GetMetaDBInfoResponse.Data.Name"));
+		data.setType(_ctx.stringValue("GetMetaDBInfoResponse.Data.Type"));
+		data.setComment(_ctx.stringValue("GetMetaDBInfoResponse.Data.Comment"));
+		data.setLocation(_ctx.stringValue("GetMetaDBInfoResponse.Data.Location"));
+		data.setClusterBizId(_ctx.stringValue("GetMetaDBInfoResponse.Data.ClusterBizId"));
 		getMetaDBInfoResponse.setData(data);
 	 
 	 	return getMetaDBInfoResponse;

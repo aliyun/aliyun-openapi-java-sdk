@@ -25,11 +25,19 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetMetaTableColumnRequest extends RpcAcsRequest<GetMetaTableColumnResponse> {
 	   
 
+	private String dataSourceType;
+
+	private String clusterId;
+
+	private Integer pageNum;
+
 	private String tableGuid;
+
+	private String databaseName;
 
 	private Integer pageSize;
 
-	private Integer pageNum;
+	private String tableName;
 	public GetMetaTableColumnRequest() {
 		super("dataworks-public", "2020-05-18", "GetMetaTableColumn", "dide");
 		setMethod(MethodType.GET);
@@ -37,6 +45,39 @@ public class GetMetaTableColumnRequest extends RpcAcsRequest<GetMetaTableColumnR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
+		}
 	}
 
 	public String getTableGuid() {
@@ -47,6 +88,17 @@ public class GetMetaTableColumnRequest extends RpcAcsRequest<GetMetaTableColumnR
 		this.tableGuid = tableGuid;
 		if(tableGuid != null){
 			putQueryParameter("TableGuid", tableGuid);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
 		}
 	}
 
@@ -61,14 +113,14 @@ public class GetMetaTableColumnRequest extends RpcAcsRequest<GetMetaTableColumnR
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getTableName() {
+		return this.tableName;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
 		}
 	}
 

@@ -71,6 +71,7 @@ public class GetFileResponseUnmarshaller {
 		nodeConfiguration.setCycleType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.CycleType"));
 		nodeConfiguration.setDependentType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentType"));
 		nodeConfiguration.setDependentNodeIdList(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.DependentNodeIdList"));
+		nodeConfiguration.setResourceGroupId(_ctx.longValue("GetFileResponse.Data.NodeConfiguration.ResourceGroupId"));
 
 		List<NodeInputOutput> inputList = new ArrayList<NodeInputOutput>();
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {

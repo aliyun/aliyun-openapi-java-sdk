@@ -25,9 +25,17 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionResponse> {
 	   
 
+	private String dataSourceType;
+
 	private String partition;
 
 	private String tableGuid;
+
+	private String databaseName;
+
+	private String clusterId;
+
+	private String tableName;
 	public CheckMetaPartitionRequest() {
 		super("dataworks-public", "2020-05-18", "CheckMetaPartition", "dide");
 		setMethod(MethodType.POST);
@@ -35,6 +43,17 @@ public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putQueryParameter("DataSourceType", dataSourceType);
+		}
 	}
 
 	public String getPartition() {
@@ -56,6 +75,39 @@ public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionR
 		this.tableGuid = tableGuid;
 		if(tableGuid != null){
 			putQueryParameter("TableGuid", tableGuid);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
 		}
 	}
 

@@ -119,6 +119,14 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 		private Long lastAccessTime;
 
+		private String databaseName;
+
+		private String partitionKeys;
+
+		private String location;
+
+		private String clusterId;
+
 		private List<ColumnListItem> columnList;
 
 		public String getTableName() {
@@ -247,6 +255,38 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 		public void setLastAccessTime(Long lastAccessTime) {
 			this.lastAccessTime = lastAccessTime;
+		}
+
+		public String getDatabaseName() {
+			return this.databaseName;
+		}
+
+		public void setDatabaseName(String databaseName) {
+			this.databaseName = databaseName;
+		}
+
+		public String getPartitionKeys() {
+			return this.partitionKeys;
+		}
+
+		public void setPartitionKeys(String partitionKeys) {
+			this.partitionKeys = partitionKeys;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
 		}
 
 		public List<ColumnListItem> getColumnList() {

@@ -25,7 +25,13 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListResponse> {
 	   
 
+	private String dataSourceType;
+
+	private String databaseName;
+
 	private Integer pageSize;
+
+	private String clusterId;
 
 	private String appGuid;
 
@@ -39,6 +45,28 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 		} catch (Exception e) {}
 	}
 
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -47,6 +75,17 @@ public class GetMetaDBTableListRequest extends RpcAcsRequest<GetMetaDBTableListR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

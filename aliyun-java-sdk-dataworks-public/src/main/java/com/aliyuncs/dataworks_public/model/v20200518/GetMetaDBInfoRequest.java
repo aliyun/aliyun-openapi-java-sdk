@@ -25,6 +25,12 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class GetMetaDBInfoRequest extends RpcAcsRequest<GetMetaDBInfoResponse> {
 	   
 
+	private String dataSourceType;
+
+	private String databaseName;
+
+	private String clusterId;
+
 	private String appGuid;
 	public GetMetaDBInfoRequest() {
 		super("dataworks-public", "2020-05-18", "GetMetaDBInfo", "dide");
@@ -33,6 +39,39 @@ public class GetMetaDBInfoRequest extends RpcAcsRequest<GetMetaDBInfoResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getDatabaseName() {
+		return this.databaseName;
+	}
+
+	public void setDatabaseName(String databaseName) {
+		this.databaseName = databaseName;
+		if(databaseName != null){
+			putQueryParameter("DatabaseName", databaseName);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getAppGuid() {

@@ -28,10 +28,6 @@ public class GetMetaDBTableListResponseUnmarshaller {
 	public static GetMetaDBTableListResponse unmarshall(GetMetaDBTableListResponse getMetaDBTableListResponse, UnmarshallerContext _ctx) {
 		
 		getMetaDBTableListResponse.setRequestId(_ctx.stringValue("GetMetaDBTableListResponse.RequestId"));
-		getMetaDBTableListResponse.setErrorCode(_ctx.stringValue("GetMetaDBTableListResponse.ErrorCode"));
-		getMetaDBTableListResponse.setErrorMessage(_ctx.stringValue("GetMetaDBTableListResponse.ErrorMessage"));
-		getMetaDBTableListResponse.setHttpStatusCode(_ctx.integerValue("GetMetaDBTableListResponse.HttpStatusCode"));
-		getMetaDBTableListResponse.setSuccess(_ctx.booleanValue("GetMetaDBTableListResponse.Success"));
 
 		Data data = new Data();
 		data.setPageNumber(_ctx.integerValue("GetMetaDBTableListResponse.Data.PageNumber"));
@@ -43,6 +39,7 @@ public class GetMetaDBTableListResponseUnmarshaller {
 			TableEntityListItem tableEntityListItem = new TableEntityListItem();
 			tableEntityListItem.setTableName(_ctx.stringValue("GetMetaDBTableListResponse.Data.TableEntityList["+ i +"].TableName"));
 			tableEntityListItem.setTableGuid(_ctx.stringValue("GetMetaDBTableListResponse.Data.TableEntityList["+ i +"].TableGuid"));
+			tableEntityListItem.setDatabaseName(_ctx.stringValue("GetMetaDBTableListResponse.Data.TableEntityList["+ i +"].DatabaseName"));
 
 			tableEntityList.add(tableEntityListItem);
 		}

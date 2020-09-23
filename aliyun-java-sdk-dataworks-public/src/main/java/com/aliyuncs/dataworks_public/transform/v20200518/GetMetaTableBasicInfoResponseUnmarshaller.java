@@ -45,6 +45,11 @@ public class GetMetaTableBasicInfoResponseUnmarshaller {
 		data.setDataSize(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.DataSize"));
 		data.setComment(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Comment"));
 		data.setProjectName(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.ProjectName"));
+		data.setDatabaseName(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.DatabaseName"));
+		data.setPartitionKeys(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.PartitionKeys"));
+		data.setLocation(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Location"));
+		data.setClusterId(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.ClusterId"));
+		data.setCaption(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Caption"));
 		getMetaTableBasicInfoResponse.setData(data);
 	 
 	 	return getMetaTableBasicInfoResponse;

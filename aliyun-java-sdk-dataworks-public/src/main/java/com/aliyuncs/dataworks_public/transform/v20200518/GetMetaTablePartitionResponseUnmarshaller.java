@@ -48,6 +48,10 @@ public class GetMetaTablePartitionResponseUnmarshaller {
 			dataEntityListItem.setRecordCount(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].RecordCount"));
 			dataEntityListItem.setModifiedTime(_ctx.longValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].ModifiedTime"));
 			dataEntityListItem.setTableGuid(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].TableGuid"));
+			dataEntityListItem.setComment(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].Comment"));
+			dataEntityListItem.setPartitionType(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionType"));
+			dataEntityListItem.setPartitionPath(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionPath"));
+			dataEntityListItem.setPartitionLocation(_ctx.stringValue("GetMetaTablePartitionResponse.Data.DataEntityList["+ i +"].PartitionLocation"));
 
 			dataEntityList.add(dataEntityListItem);
 		}

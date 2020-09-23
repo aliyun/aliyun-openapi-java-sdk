@@ -69,6 +69,7 @@ public class ListDataServiceApisResponseUnmarshaller {
 			api.setTenantId(_ctx.longValue("ListDataServiceApisResponse.Data.Apis["+ i +"].TenantId"));
 			api.setTimeout(_ctx.integerValue("ListDataServiceApisResponse.Data.Apis["+ i +"].Timeout"));
 			api.setVisibleRange(_ctx.integerValue("ListDataServiceApisResponse.Data.Apis["+ i +"].VisibleRange"));
+			api.setFolderId(_ctx.longValue("ListDataServiceApisResponse.Data.Apis["+ i +"].FolderId"));
 
 			List<Integer> protocols = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("ListDataServiceApisResponse.Data.Apis["+ i +"].Protocols.Length"); j++) {

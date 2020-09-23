@@ -314,6 +314,8 @@ public class GetFileResponse extends AcsResponse {
 
 			private String dependentNodeIdList;
 
+			private Long resourceGroupId;
+
 			private List<NodeInputOutput> inputList;
 
 			private List<NodeInputOutput1> outputList;
@@ -404,6 +406,14 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setDependentNodeIdList(String dependentNodeIdList) {
 				this.dependentNodeIdList = dependentNodeIdList;
+			}
+
+			public Long getResourceGroupId() {
+				return this.resourceGroupId;
+			}
+
+			public void setResourceGroupId(Long resourceGroupId) {
+				this.resourceGroupId = resourceGroupId;
 			}
 
 			public List<NodeInputOutput> getInputList() {

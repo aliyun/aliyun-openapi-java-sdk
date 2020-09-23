@@ -24,41 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMetaDBInfoResponse extends AcsResponse {
 
-	private String errorCode;
-
-	private String errorMessage;
-
-	private Integer httpStatusCode;
-
 	private String requestId;
 
-	private Boolean success;
-
 	private Data data;
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,14 +34,6 @@ public class GetMetaDBInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public Data getData() {
@@ -107,6 +67,16 @@ public class GetMetaDBInfoResponse extends AcsResponse {
 		private String ownerId;
 
 		private String ownerName;
+
+		private String name;
+
+		private String type;
+
+		private String comment;
+
+		private String location;
+
+		private String clusterBizId;
 
 		public String getAppGuid() {
 			return this.appGuid;
@@ -194,6 +164,46 @@ public class GetMetaDBInfoResponse extends AcsResponse {
 
 		public void setOwnerName(String ownerName) {
 			this.ownerName = ownerName;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getComment() {
+			return this.comment;
+		}
+
+		public void setComment(String comment) {
+			this.comment = comment;
+		}
+
+		public String getLocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public String getClusterBizId() {
+			return this.clusterBizId;
+		}
+
+		public void setClusterBizId(String clusterBizId) {
+			this.clusterBizId = clusterBizId;
 		}
 	}
 

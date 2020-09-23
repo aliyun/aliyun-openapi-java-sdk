@@ -143,6 +143,14 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 
 			private String tableGuid;
 
+			private String comment;
+
+			private String partitionType;
+
+			private String partitionPath;
+
+			private String partitionLocation;
+
 			public String getPartitionGuid() {
 				return this.partitionGuid;
 			}
@@ -197,6 +205,38 @@ public class GetMetaTablePartitionResponse extends AcsResponse {
 
 			public void setTableGuid(String tableGuid) {
 				this.tableGuid = tableGuid;
+			}
+
+			public String getComment() {
+				return this.comment;
+			}
+
+			public void setComment(String comment) {
+				this.comment = comment;
+			}
+
+			public String getPartitionType() {
+				return this.partitionType;
+			}
+
+			public void setPartitionType(String partitionType) {
+				this.partitionType = partitionType;
+			}
+
+			public String getPartitionPath() {
+				return this.partitionPath;
+			}
+
+			public void setPartitionPath(String partitionPath) {
+				this.partitionPath = partitionPath;
+			}
+
+			public String getPartitionLocation() {
+				return this.partitionLocation;
+			}
+
+			public void setPartitionLocation(String partitionLocation) {
+				this.partitionLocation = partitionLocation;
 			}
 		}
 	}

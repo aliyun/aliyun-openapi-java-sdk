@@ -133,6 +133,12 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 
 			private String columnGuid;
 
+			private String clusterId;
+
+			private String databaseName;
+
+			private String tableName;
+
 			public String getColumnName() {
 				return this.columnName;
 			}
@@ -147,6 +153,30 @@ public class GetMetaColumnLineageResponse extends AcsResponse {
 
 			public void setColumnGuid(String columnGuid) {
 				this.columnGuid = columnGuid;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getDatabaseName() {
+				return this.databaseName;
+			}
+
+			public void setDatabaseName(String databaseName) {
+				this.databaseName = databaseName;
+			}
+
+			public String getTableName() {
+				return this.tableName;
+			}
+
+			public void setTableName(String tableName) {
+				this.tableName = tableName;
 			}
 		}
 	}

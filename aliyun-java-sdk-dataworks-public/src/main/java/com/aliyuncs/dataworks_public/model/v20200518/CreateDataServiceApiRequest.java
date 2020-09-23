@@ -43,6 +43,8 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Integer timeout;
 
+	private Long folderId;
+
 	private String registrationDetails;
 
 	private String apiName;
@@ -159,6 +161,17 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 		this.timeout = timeout;
 		if(timeout != null){
 			putBodyParameter("Timeout", timeout.toString());
+		}
+	}
+
+	public Long getFolderId() {
+		return this.folderId;
+	}
+
+	public void setFolderId(Long folderId) {
+		this.folderId = folderId;
+		if(folderId != null){
+			putBodyParameter("FolderId", folderId.toString());
 		}
 	}
 

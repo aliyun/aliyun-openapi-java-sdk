@@ -121,6 +121,8 @@ public class GetDataServiceApiResponse extends AcsResponse {
 
 		private Integer visibleRange;
 
+		private Long folderId;
+
 		private List<Integer> protocols;
 
 		private RegistrationDetails registrationDetails;
@@ -263,6 +265,14 @@ public class GetDataServiceApiResponse extends AcsResponse {
 
 		public void setVisibleRange(Integer visibleRange) {
 			this.visibleRange = visibleRange;
+		}
+
+		public Long getFolderId() {
+			return this.folderId;
+		}
+
+		public void setFolderId(Long folderId) {
+			this.folderId = folderId;
 		}
 
 		public List<Integer> getProtocols() {

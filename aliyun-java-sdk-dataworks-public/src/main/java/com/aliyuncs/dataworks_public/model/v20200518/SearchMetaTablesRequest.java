@@ -25,6 +25,12 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesResponse> {
 	   
 
+	private String dataSourceType;
+
+	private String clusterId;
+
+	private Integer pageNumber;
+
 	private Integer entityType;
 
 	private Integer pageSize;
@@ -32,8 +38,6 @@ public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesRespo
 	private String appGuid;
 
 	private String keyword;
-
-	private Integer pageNumber;
 	public SearchMetaTablesRequest() {
 		super("dataworks-public", "2020-05-18", "SearchMetaTables", "dide");
 		setMethod(MethodType.POST);
@@ -41,6 +45,39 @@ public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public Integer getEntityType() {
@@ -84,17 +121,6 @@ public class SearchMetaTablesRequest extends RpcAcsRequest<SearchMetaTablesRespo
 		this.keyword = keyword;
 		if(keyword != null){
 			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
