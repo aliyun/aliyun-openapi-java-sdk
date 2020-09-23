@@ -153,6 +153,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Float spotPriceLimit;
 
+		private Integer spotDuration;
+
 		private String resourceGroupId;
 
 		private String keyPairName;
@@ -497,6 +499,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setSpotPriceLimit(Float spotPriceLimit) {
 			this.spotPriceLimit = spotPriceLimit;
+		}
+
+		public Integer getSpotDuration() {
+			return this.spotDuration;
+		}
+
+		public void setSpotDuration(Integer spotDuration) {
+			this.spotDuration = spotDuration;
 		}
 
 		public String getResourceGroupId() {

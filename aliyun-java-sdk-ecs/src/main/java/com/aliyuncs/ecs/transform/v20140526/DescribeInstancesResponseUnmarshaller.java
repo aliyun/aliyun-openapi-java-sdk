@@ -82,6 +82,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setGPUSpec(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].GPUSpec"));
 			instance.setSpotStrategy(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpotStrategy"));
 			instance.setSpotPriceLimit(_ctx.floatValue("DescribeInstancesResponse.Instances["+ i +"].SpotPriceLimit"));
+			instance.setSpotDuration(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SpotDuration"));
 			instance.setResourceGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 			instance.setKeyPairName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].KeyPairName"));
 			instance.setRecyclable(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].Recyclable"));

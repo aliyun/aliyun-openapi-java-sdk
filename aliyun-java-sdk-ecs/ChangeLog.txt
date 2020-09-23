@@ -1,3 +1,6 @@
+2020-09-23 Version: 4.19.12
+- Add spotDuration support.
+
 2020-09-04 Version: 4.19.11
 - Supported QueueNumber for API CreateNetworkInterface.
 - Supported MaximumQueueNumberPerEni, PrimaryEniQueueNumber, SecondaryEniQueueNumber for API DescribeInstanceTypes.
