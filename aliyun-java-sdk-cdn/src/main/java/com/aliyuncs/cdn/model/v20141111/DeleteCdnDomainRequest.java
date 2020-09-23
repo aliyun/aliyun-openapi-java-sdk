@@ -29,8 +29,6 @@ public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainRespons
 
 	private Long ownerId;
 
-	private String resourceGroupId;
-
 	private String securityToken;
 	public DeleteCdnDomainRequest() {
 		super("Cdn", "2014-11-11", "DeleteCdnDomain");
@@ -60,17 +58,6 @@ public class DeleteCdnDomainRequest extends RpcAcsRequest<DeleteCdnDomainRespons
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
