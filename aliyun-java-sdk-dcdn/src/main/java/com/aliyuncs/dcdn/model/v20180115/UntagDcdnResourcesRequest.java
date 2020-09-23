@@ -26,6 +26,8 @@ import com.aliyuncs.dcdn.Endpoint;
 public class UntagDcdnResourcesRequest extends RpcAcsRequest<UntagDcdnResourcesResponse> {
 	   
 
+	private Boolean all;
+
 	private List<String> resourceIds;
 
 	private Long ownerId;
@@ -40,6 +42,17 @@ public class UntagDcdnResourcesRequest extends RpcAcsRequest<UntagDcdnResourcesR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getAll() {
+		return this.all;
+	}
+
+	public void setAll(Boolean all) {
+		this.all = all;
+		if(all != null){
+			putQueryParameter("All", all.toString());
+		}
 	}
 
 	public List<String> getResourceIds() {
