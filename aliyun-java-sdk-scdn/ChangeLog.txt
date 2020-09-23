@@ -1,3 +1,6 @@
+2020-09-23 Version: 2.1.2
+- Update Scdn API.
+
 2020-09-04 Version: 2.1.1
 - Update Scdn API.
 
