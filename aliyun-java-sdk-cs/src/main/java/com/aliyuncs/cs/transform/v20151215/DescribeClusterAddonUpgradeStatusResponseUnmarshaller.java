@@ -27,11 +27,11 @@ public class DescribeClusterAddonUpgradeStatusResponseUnmarshaller {
 		describeClusterAddonUpgradeStatusResponse.setCan_upgrade(_ctx.booleanValue("DescribeClusterAddonUpgradeStatusResponse.can_upgrade"));
 
 		Addon_info addon_info = new Addon_info();
+		addon_info.setComponent_name(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.component_name"));
 		addon_info.setMessage(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.message"));
 		addon_info.setCategory(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.category"));
-		addon_info.setYaml(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.yaml"));
-		addon_info.setComponent_name(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.component_name"));
 		addon_info.setVersion(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.version"));
+		addon_info.setYaml(_ctx.stringValue("DescribeClusterAddonUpgradeStatusResponse.addon_info.yaml"));
 		describeClusterAddonUpgradeStatusResponse.setAddon_info(addon_info);
 	 
 	 	return describeClusterAddonUpgradeStatusResponse;

@@ -24,16 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CancelComponentUpgradeResponse extends AcsResponse {
 
-	private String requestId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	@Override
 	public CancelComponentUpgradeResponse getInstance(UnmarshallerContext context) {
 		return	CancelComponentUpgradeResponseUnmarshaller.unmarshall(this, context);

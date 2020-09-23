@@ -26,11 +26,9 @@ public class ModifyClusterResponse extends AcsResponse {
 
 	private String cluster_id;
 
-	private String request_id;
-
 	private String task_id;
 
-	private String instanceId;
+	private String request_id;
 
 	public String getCluster_id() {
 		return this.cluster_id;
@@ -38,14 +36,6 @@ public class ModifyClusterResponse extends AcsResponse {
 
 	public void setCluster_id(String cluster_id) {
 		this.cluster_id = cluster_id;
-	}
-
-	public String getRequest_id() {
-		return this.request_id;
-	}
-
-	public void setRequest_id(String request_id) {
-		this.request_id = request_id;
 	}
 
 	public String getTask_id() {
@@ -56,12 +46,12 @@ public class ModifyClusterResponse extends AcsResponse {
 		this.task_id = task_id;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getRequest_id() {
+		return this.request_id;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
+	public void setRequest_id(String request_id) {
+		this.request_id = request_id;
 	}
 
 	@Override

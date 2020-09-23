@@ -21,7 +21,7 @@ import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse;
 import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.ComponentGroupsItem;
 import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.ComponentGroupsItem.ItemsItem;
 import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.StandardComponents;
-import com.aliyuncs.cs.model.v20151215.DescribeAddonsResponse.StandardComponents.Addon_name;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,14 +31,7 @@ public class DescribeAddonsResponseUnmarshaller {
 		
 
 		StandardComponents standardComponents = new StandardComponents();
-
-		Addon_name addon_name = new Addon_name();
-		addon_name.setName(_ctx.stringValue("DescribeAddonsResponse.StandardComponents.addon_name.name"));
-		addon_name.setConfig(_ctx.stringValue("DescribeAddonsResponse.StandardComponents.addon_name.config"));
-		addon_name.setRequired(_ctx.stringValue("DescribeAddonsResponse.StandardComponents.addon_name.required"));
-		addon_name.setDisabled(_ctx.booleanValue("DescribeAddonsResponse.StandardComponents.addon_name.disabled"));
-		addon_name.setVersion(_ctx.stringValue("DescribeAddonsResponse.StandardComponents.addon_name.version"));
-		standardComponents.setAddon_name(addon_name);
+		standardComponents.setComponentName(_ctx.mapValue("DescribeAddonsResponse.StandardComponents.ComponentName"));
 		describeAddonsResponse.setStandardComponents(standardComponents);
 
 		List<ComponentGroupsItem> componentGroups = new ArrayList<ComponentGroupsItem>();
@@ -56,10 +49,10 @@ public class DescribeAddonsResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items.Length"); j++) {
 				ItemsItem itemsItem = new ItemsItem();
 				itemsItem.setName(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].name"));
-				itemsItem.setConfig(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].config"));
-				itemsItem.setRequired(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].required"));
+				itemsItem.setDescription(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].description"));
 				itemsItem.setDisabled(_ctx.booleanValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].disabled"));
 				itemsItem.setVersion(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].version"));
+				itemsItem.setRequired(_ctx.stringValue("DescribeAddonsResponse.ComponentGroups["+ i +"].items["+ j +"].required"));
 
 				items.add(itemsItem);
 			}

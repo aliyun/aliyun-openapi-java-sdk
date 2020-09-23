@@ -28,9 +28,13 @@ public class DescribeClusterLogsResponse extends AcsResponse {
 
 	private String cluster_log;
 
+	private String created;
+
 	private String log_level;
 
-	private String created;
+	private String iD;
+
+	private String updated;
 
 	public String getCluster_id() {
 		return this.cluster_id;
@@ -48,6 +52,14 @@ public class DescribeClusterLogsResponse extends AcsResponse {
 		this.cluster_log = cluster_log;
 	}
 
+	public String getCreated() {
+		return this.created;
+	}
+
+	public void setCreated(String created) {
+		this.created = created;
+	}
+
 	public String getLog_level() {
 		return this.log_level;
 	}
@@ -56,12 +68,20 @@ public class DescribeClusterLogsResponse extends AcsResponse {
 		this.log_level = log_level;
 	}
 
-	public String getCreated() {
-		return this.created;
+	public String getID() {
+		return this.iD;
 	}
 
-	public void setCreated(String created) {
-		this.created = created;
+	public void setID(String iD) {
+		this.iD = iD;
+	}
+
+	public String getUpdated() {
+		return this.updated;
+	}
+
+	public void setUpdated(String updated) {
+		this.updated = updated;
 	}
 
 	@Override

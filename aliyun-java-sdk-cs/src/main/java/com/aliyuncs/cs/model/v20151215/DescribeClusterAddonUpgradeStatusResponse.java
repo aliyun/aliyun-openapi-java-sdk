@@ -56,15 +56,23 @@ public class DescribeClusterAddonUpgradeStatusResponse extends AcsResponse {
 
 	public static class Addon_info {
 
+		private String component_name;
+
 		private String message;
 
 		private String category;
 
+		private String version;
+
 		private String yaml;
 
-		private String component_name;
+		public String getComponent_name() {
+			return this.component_name;
+		}
 
-		private String version;
+		public void setComponent_name(String component_name) {
+			this.component_name = component_name;
+		}
 
 		public String getMessage() {
 			return this.message;
@@ -82,28 +90,20 @@ public class DescribeClusterAddonUpgradeStatusResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public String getYaml() {
-			return this.yaml;
-		}
-
-		public void setYaml(String yaml) {
-			this.yaml = yaml;
-		}
-
-		public String getComponent_name() {
-			return this.component_name;
-		}
-
-		public void setComponent_name(String component_name) {
-			this.component_name = component_name;
-		}
-
 		public String getVersion() {
 			return this.version;
 		}
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getYaml() {
+			return this.yaml;
+		}
+
+		public void setYaml(String yaml) {
+			this.yaml = yaml;
 		}
 	}
 

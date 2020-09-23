@@ -26,10 +26,6 @@ public class ModifyClusterTagsRequest extends RoaAcsRequest<ModifyClusterTagsRes
 	   
 
 	private String clusterId;
-
-	private String value;
-
-	private String key;
 	public ModifyClusterTagsRequest() {
 		super("CS", "2015-12-15", "ModifyClusterTags");
 		setUriPattern("/clusters/[ClusterId]/tags");
@@ -48,28 +44,6 @@ public class ModifyClusterTagsRequest extends RoaAcsRequest<ModifyClusterTagsRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getValue() {
-		return this.value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-		if(value != null){
-			putBodyParameter("value", value);
-		}
-	}
-
-	public String getKey() {
-		return this.key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-		if(key != null){
-			putBodyParameter("key", key);
 		}
 	}
 

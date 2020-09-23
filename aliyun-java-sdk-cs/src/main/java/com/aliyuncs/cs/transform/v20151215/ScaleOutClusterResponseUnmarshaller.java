@@ -23,9 +23,8 @@ public class ScaleOutClusterResponseUnmarshaller {
 	public static ScaleOutClusterResponse unmarshall(ScaleOutClusterResponse scaleOutClusterResponse, UnmarshallerContext _ctx) {
 		
 		scaleOutClusterResponse.setCluster_id(_ctx.stringValue("ScaleOutClusterResponse.cluster_id"));
-		scaleOutClusterResponse.setRequest_id(_ctx.stringValue("ScaleOutClusterResponse.request_id"));
 		scaleOutClusterResponse.setTask_id(_ctx.stringValue("ScaleOutClusterResponse.task_id"));
-		scaleOutClusterResponse.setInstanceId(_ctx.stringValue("ScaleOutClusterResponse.instanceId"));
+		scaleOutClusterResponse.setRequest_id(_ctx.stringValue("ScaleOutClusterResponse.request_id"));
 	 
 	 	return scaleOutClusterResponse;
 	}

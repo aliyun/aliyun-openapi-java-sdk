@@ -22,7 +22,9 @@ public class ScaleClusterResponseUnmarshaller {
 
 	public static ScaleClusterResponse unmarshall(ScaleClusterResponse scaleClusterResponse, UnmarshallerContext _ctx) {
 		
-		scaleClusterResponse.setRequestId(_ctx.stringValue("ScaleClusterResponse.RequestId"));
+		scaleClusterResponse.setCluster_id(_ctx.stringValue("ScaleClusterResponse.cluster_id"));
+		scaleClusterResponse.setTask_id(_ctx.stringValue("ScaleClusterResponse.task_id"));
+		scaleClusterResponse.setRequest_id(_ctx.stringValue("ScaleClusterResponse.request_id"));
 	 
 	 	return scaleClusterResponse;
 	}

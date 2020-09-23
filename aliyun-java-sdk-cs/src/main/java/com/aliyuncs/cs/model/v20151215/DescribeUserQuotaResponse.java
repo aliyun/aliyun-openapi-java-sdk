@@ -24,44 +24,54 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserQuotaResponse extends AcsResponse {
 
-	private Integer cluster_quota;
+	private Long cluster_nodepool_quota;
 
-	private Integer node_quota;
+	private Long amk_cluster_quota;
 
-	private Integer ask_cluster_quota;
+	private Long cluster_quota;
 
-	private Integer amk_cluster_quota;
+	private Long node_quota;
 
-	public Integer getCluster_quota() {
-		return this.cluster_quota;
+	private Long ask_cluster_quota;
+
+	public Long getCluster_nodepool_quota() {
+		return this.cluster_nodepool_quota;
 	}
 
-	public void setCluster_quota(Integer cluster_quota) {
-		this.cluster_quota = cluster_quota;
+	public void setCluster_nodepool_quota(Long cluster_nodepool_quota) {
+		this.cluster_nodepool_quota = cluster_nodepool_quota;
 	}
 
-	public Integer getNode_quota() {
-		return this.node_quota;
-	}
-
-	public void setNode_quota(Integer node_quota) {
-		this.node_quota = node_quota;
-	}
-
-	public Integer getAsk_cluster_quota() {
-		return this.ask_cluster_quota;
-	}
-
-	public void setAsk_cluster_quota(Integer ask_cluster_quota) {
-		this.ask_cluster_quota = ask_cluster_quota;
-	}
-
-	public Integer getAmk_cluster_quota() {
+	public Long getAmk_cluster_quota() {
 		return this.amk_cluster_quota;
 	}
 
-	public void setAmk_cluster_quota(Integer amk_cluster_quota) {
+	public void setAmk_cluster_quota(Long amk_cluster_quota) {
 		this.amk_cluster_quota = amk_cluster_quota;
+	}
+
+	public Long getCluster_quota() {
+		return this.cluster_quota;
+	}
+
+	public void setCluster_quota(Long cluster_quota) {
+		this.cluster_quota = cluster_quota;
+	}
+
+	public Long getNode_quota() {
+		return this.node_quota;
+	}
+
+	public void setNode_quota(Long node_quota) {
+		this.node_quota = node_quota;
+	}
+
+	public Long getAsk_cluster_quota() {
+		return this.ask_cluster_quota;
+	}
+
+	public void setAsk_cluster_quota(Long ask_cluster_quota) {
+		this.ask_cluster_quota = ask_cluster_quota;
 	}
 
 	@Override

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.cs.model.v20151215;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.DescribeClusterResourcesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -24,59 +23,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  * @version 
  */
 public class DescribeClusterResourcesResponse extends AcsResponse {
-
-	private List<ResourcesItem> resources;
-
-	public List<ResourcesItem> getResources() {
-		return this.resources;
-	}
-
-	public void setResources(List<ResourcesItem> resources) {
-		this.resources = resources;
-	}
-
-	public static class ResourcesItem {
-
-		private String instance_id;
-
-		private String resource_type;
-
-		private String resource_info;
-
-		private String state;
-
-		public String getInstance_id() {
-			return this.instance_id;
-		}
-
-		public void setInstance_id(String instance_id) {
-			this.instance_id = instance_id;
-		}
-
-		public String getResource_type() {
-			return this.resource_type;
-		}
-
-		public void setResource_type(String resource_type) {
-			this.resource_type = resource_type;
-		}
-
-		public String getResource_info() {
-			return this.resource_info;
-		}
-
-		public void setResource_info(String resource_info) {
-			this.resource_info = resource_info;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-	}
 
 	@Override
 	public DescribeClusterResourcesResponse getInstance(UnmarshallerContext context) {

@@ -22,7 +22,6 @@ public class UnInstallClusterAddonsResponseUnmarshaller {
 
 	public static UnInstallClusterAddonsResponse unmarshall(UnInstallClusterAddonsResponse unInstallClusterAddonsResponse, UnmarshallerContext _ctx) {
 		
-		unInstallClusterAddonsResponse.setRequestId(_ctx.stringValue("UnInstallClusterAddonsResponse.RequestId"));
 	 
 	 	return unInstallClusterAddonsResponse;
 	}

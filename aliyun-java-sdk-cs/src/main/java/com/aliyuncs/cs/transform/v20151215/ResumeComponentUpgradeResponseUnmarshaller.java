@@ -22,7 +22,6 @@ public class ResumeComponentUpgradeResponseUnmarshaller {
 
 	public static ResumeComponentUpgradeResponse unmarshall(ResumeComponentUpgradeResponse resumeComponentUpgradeResponse, UnmarshallerContext _ctx) {
 		
-		resumeComponentUpgradeResponse.setRequestId(_ctx.stringValue("ResumeComponentUpgradeResponse.RequestId"));
 	 
 	 	return resumeComponentUpgradeResponse;
 	}

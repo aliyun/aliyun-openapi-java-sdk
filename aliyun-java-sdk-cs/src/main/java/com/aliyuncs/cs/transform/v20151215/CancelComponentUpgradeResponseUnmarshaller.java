@@ -22,7 +22,6 @@ public class CancelComponentUpgradeResponseUnmarshaller {
 
 	public static CancelComponentUpgradeResponse unmarshall(CancelComponentUpgradeResponse cancelComponentUpgradeResponse, UnmarshallerContext _ctx) {
 		
-		cancelComponentUpgradeResponse.setRequestId(_ctx.stringValue("CancelComponentUpgradeResponse.RequestId"));
 	 
 	 	return cancelComponentUpgradeResponse;
 	}

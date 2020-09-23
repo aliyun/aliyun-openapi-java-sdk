@@ -47,74 +47,66 @@ public class DescribeClusterNodesResponse extends AcsResponse {
 
 	public static class Node {
 
-		private String instance_type;
+		private String error_message;
 
-		private String instance_role;
+		private String creation_time;
 
-		private String expired_time;
-
-		private String state;
+		private String node_status;
 
 		private String instance_name;
 
 		private Boolean is_aliyun_node;
 
-		private String host_name;
+		private String node_name;
 
-		private String image_id;
-
-		private String instance_status;
-
-		private String instance_charge_type;
+		private String expired_time;
 
 		private String source;
 
-		private String error_message;
-
-		private String node_status;
-
-		private String creation_time;
-
-		private String node_name;
-
 		private String instance_type_family;
-
-		private String nodepool_id;
 
 		private String instance_id;
 
+		private String instance_charge_type;
+
+		private String instance_role;
+
+		private String state;
+
+		private String instance_status;
+
+		private String image_id;
+
+		private String nodepool_id;
+
+		private String instance_type;
+
+		private String host_name;
+
 		private List<String> ip_address;
 
-		public String getInstance_type() {
-			return this.instance_type;
+		public String getError_message() {
+			return this.error_message;
 		}
 
-		public void setInstance_type(String instance_type) {
-			this.instance_type = instance_type;
+		public void setError_message(String error_message) {
+			this.error_message = error_message;
 		}
 
-		public String getInstance_role() {
-			return this.instance_role;
+		public String getCreation_time() {
+			return this.creation_time;
 		}
 
-		public void setInstance_role(String instance_role) {
-			this.instance_role = instance_role;
+		public void setCreation_time(String creation_time) {
+			this.creation_time = creation_time;
 		}
 
-		public String getExpired_time() {
-			return this.expired_time;
+		public String getNode_status() {
+			return this.node_status;
 		}
 
-		public void setExpired_time(String expired_time) {
-			this.expired_time = expired_time;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setNode_status(String node_status) {
+			this.node_status = node_status;
 		}
 
 		public String getInstance_name() {
@@ -133,36 +125,20 @@ public class DescribeClusterNodesResponse extends AcsResponse {
 			this.is_aliyun_node = is_aliyun_node;
 		}
 
-		public String getHost_name() {
-			return this.host_name;
+		public String getNode_name() {
+			return this.node_name;
 		}
 
-		public void setHost_name(String host_name) {
-			this.host_name = host_name;
+		public void setNode_name(String node_name) {
+			this.node_name = node_name;
 		}
 
-		public String getImage_id() {
-			return this.image_id;
+		public String getExpired_time() {
+			return this.expired_time;
 		}
 
-		public void setImage_id(String image_id) {
-			this.image_id = image_id;
-		}
-
-		public String getInstance_status() {
-			return this.instance_status;
-		}
-
-		public void setInstance_status(String instance_status) {
-			this.instance_status = instance_status;
-		}
-
-		public String getInstance_charge_type() {
-			return this.instance_charge_type;
-		}
-
-		public void setInstance_charge_type(String instance_charge_type) {
-			this.instance_charge_type = instance_charge_type;
+		public void setExpired_time(String expired_time) {
+			this.expired_time = expired_time;
 		}
 
 		public String getSource() {
@@ -173,44 +149,60 @@ public class DescribeClusterNodesResponse extends AcsResponse {
 			this.source = source;
 		}
 
-		public String getError_message() {
-			return this.error_message;
-		}
-
-		public void setError_message(String error_message) {
-			this.error_message = error_message;
-		}
-
-		public String getNode_status() {
-			return this.node_status;
-		}
-
-		public void setNode_status(String node_status) {
-			this.node_status = node_status;
-		}
-
-		public String getCreation_time() {
-			return this.creation_time;
-		}
-
-		public void setCreation_time(String creation_time) {
-			this.creation_time = creation_time;
-		}
-
-		public String getNode_name() {
-			return this.node_name;
-		}
-
-		public void setNode_name(String node_name) {
-			this.node_name = node_name;
-		}
-
 		public String getInstance_type_family() {
 			return this.instance_type_family;
 		}
 
 		public void setInstance_type_family(String instance_type_family) {
 			this.instance_type_family = instance_type_family;
+		}
+
+		public String getInstance_id() {
+			return this.instance_id;
+		}
+
+		public void setInstance_id(String instance_id) {
+			this.instance_id = instance_id;
+		}
+
+		public String getInstance_charge_type() {
+			return this.instance_charge_type;
+		}
+
+		public void setInstance_charge_type(String instance_charge_type) {
+			this.instance_charge_type = instance_charge_type;
+		}
+
+		public String getInstance_role() {
+			return this.instance_role;
+		}
+
+		public void setInstance_role(String instance_role) {
+			this.instance_role = instance_role;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getInstance_status() {
+			return this.instance_status;
+		}
+
+		public void setInstance_status(String instance_status) {
+			this.instance_status = instance_status;
+		}
+
+		public String getImage_id() {
+			return this.image_id;
+		}
+
+		public void setImage_id(String image_id) {
+			this.image_id = image_id;
 		}
 
 		public String getNodepool_id() {
@@ -221,12 +213,20 @@ public class DescribeClusterNodesResponse extends AcsResponse {
 			this.nodepool_id = nodepool_id;
 		}
 
-		public String getInstance_id() {
-			return this.instance_id;
+		public String getInstance_type() {
+			return this.instance_type;
 		}
 
-		public void setInstance_id(String instance_id) {
-			this.instance_id = instance_id;
+		public void setInstance_type(String instance_type) {
+			this.instance_type = instance_type;
+		}
+
+		public String getHost_name() {
+			return this.host_name;
+		}
+
+		public void setHost_name(String host_name) {
+			this.host_name = host_name;
 		}
 
 		public List<String> getIp_address() {
@@ -240,19 +240,11 @@ public class DescribeClusterNodesResponse extends AcsResponse {
 
 	public static class Page {
 
-		private Integer page_size;
-
 		private Integer page_number;
 
 		private Integer total_count;
 
-		public Integer getPage_size() {
-			return this.page_size;
-		}
-
-		public void setPage_size(Integer page_size) {
-			this.page_size = page_size;
-		}
+		private Integer page_size;
 
 		public Integer getPage_number() {
 			return this.page_number;
@@ -268,6 +260,14 @@ public class DescribeClusterNodesResponse extends AcsResponse {
 
 		public void setTotal_count(Integer total_count) {
 			this.total_count = total_count;
+		}
+
+		public Integer getPage_size() {
+			return this.page_size;
+		}
+
+		public void setPage_size(Integer page_size) {
+			this.page_size = page_size;
 		}
 	}
 

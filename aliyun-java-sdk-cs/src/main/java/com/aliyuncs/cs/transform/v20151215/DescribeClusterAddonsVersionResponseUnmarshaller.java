@@ -15,6 +15,7 @@
 package com.aliyuncs.cs.transform.v20151215;
 
 import com.aliyuncs.cs.model.v20151215.DescribeClusterAddonsVersionResponse;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -22,14 +23,7 @@ public class DescribeClusterAddonsVersionResponseUnmarshaller {
 
 	public static DescribeClusterAddonsVersionResponse unmarshall(DescribeClusterAddonsVersionResponse describeClusterAddonsVersionResponse, UnmarshallerContext _ctx) {
 		
-		describeClusterAddonsVersionResponse.setTemplate(_ctx.stringValue("DescribeClusterAddonsVersionResponse.template"));
-		describeClusterAddonsVersionResponse.setNext_version(_ctx.stringValue("DescribeClusterAddonsVersionResponse.next_version"));
-		describeClusterAddonsVersionResponse.setCan_upgrade(_ctx.booleanValue("DescribeClusterAddonsVersionResponse.can_upgrade"));
-		describeClusterAddonsVersionResponse.setComponent_name(_ctx.stringValue("DescribeClusterAddonsVersionResponse.component_name"));
-		describeClusterAddonsVersionResponse.setVersion(_ctx.stringValue("DescribeClusterAddonsVersionResponse.version"));
-		describeClusterAddonsVersionResponse.setChanged(_ctx.stringValue("DescribeClusterAddonsVersionResponse.changed"));
-		describeClusterAddonsVersionResponse.setMessage(_ctx.stringValue("DescribeClusterAddonsVersionResponse.message"));
-		describeClusterAddonsVersionResponse.setRequired(_ctx.booleanValue("DescribeClusterAddonsVersionResponse.required"));
+		describeClusterAddonsVersionResponse.setAddonsName(_ctx.mapValue("DescribeClusterAddonsVersionResponse.AddonsName"));
 	 
 	 	return describeClusterAddonsVersionResponse;
 	}

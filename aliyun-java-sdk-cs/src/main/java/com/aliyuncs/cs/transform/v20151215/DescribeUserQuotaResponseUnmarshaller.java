@@ -22,10 +22,11 @@ public class DescribeUserQuotaResponseUnmarshaller {
 
 	public static DescribeUserQuotaResponse unmarshall(DescribeUserQuotaResponse describeUserQuotaResponse, UnmarshallerContext _ctx) {
 		
-		describeUserQuotaResponse.setCluster_quota(_ctx.integerValue("DescribeUserQuotaResponse.cluster_quota"));
-		describeUserQuotaResponse.setNode_quota(_ctx.integerValue("DescribeUserQuotaResponse.node_quota"));
-		describeUserQuotaResponse.setAsk_cluster_quota(_ctx.integerValue("DescribeUserQuotaResponse.ask_cluster_quota"));
-		describeUserQuotaResponse.setAmk_cluster_quota(_ctx.integerValue("DescribeUserQuotaResponse.amk_cluster_quota"));
+		describeUserQuotaResponse.setCluster_nodepool_quota(_ctx.longValue("DescribeUserQuotaResponse.cluster_nodepool_quota"));
+		describeUserQuotaResponse.setAmk_cluster_quota(_ctx.longValue("DescribeUserQuotaResponse.amk_cluster_quota"));
+		describeUserQuotaResponse.setCluster_quota(_ctx.longValue("DescribeUserQuotaResponse.cluster_quota"));
+		describeUserQuotaResponse.setNode_quota(_ctx.longValue("DescribeUserQuotaResponse.node_quota"));
+		describeUserQuotaResponse.setAsk_cluster_quota(_ctx.longValue("DescribeUserQuotaResponse.ask_cluster_quota"));
 	 
 	 	return describeUserQuotaResponse;
 	}

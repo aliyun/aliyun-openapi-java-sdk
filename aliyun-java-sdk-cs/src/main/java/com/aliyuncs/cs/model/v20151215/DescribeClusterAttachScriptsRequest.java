@@ -26,6 +26,8 @@ public class DescribeClusterAttachScriptsRequest extends RoaAcsRequest<DescribeC
 	   
 
 	private String clusterId;
+
+	private String arch;
 	public DescribeClusterAttachScriptsRequest() {
 		super("CS", "2015-12-15", "DescribeClusterAttachScripts");
 		setUriPattern("/clusters/[ClusterId]/attachscript");
@@ -44,6 +46,17 @@ public class DescribeClusterAttachScriptsRequest extends RoaAcsRequest<DescribeC
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getArch() {
+		return this.arch;
+	}
+
+	public void setArch(String arch) {
+		this.arch = arch;
+		if(arch != null){
+			putBodyParameter("arch", arch);
 		}
 	}
 

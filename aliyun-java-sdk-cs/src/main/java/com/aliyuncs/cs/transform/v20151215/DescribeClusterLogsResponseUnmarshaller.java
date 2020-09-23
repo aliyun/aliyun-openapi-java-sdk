@@ -24,8 +24,10 @@ public class DescribeClusterLogsResponseUnmarshaller {
 		
 		describeClusterLogsResponse.setCluster_id(_ctx.stringValue("DescribeClusterLogsResponse.cluster_id"));
 		describeClusterLogsResponse.setCluster_log(_ctx.stringValue("DescribeClusterLogsResponse.cluster_log"));
-		describeClusterLogsResponse.setLog_level(_ctx.stringValue("DescribeClusterLogsResponse.log_level"));
 		describeClusterLogsResponse.setCreated(_ctx.stringValue("DescribeClusterLogsResponse.created"));
+		describeClusterLogsResponse.setLog_level(_ctx.stringValue("DescribeClusterLogsResponse.log_level"));
+		describeClusterLogsResponse.setID(_ctx.stringValue("DescribeClusterLogsResponse.ID"));
+		describeClusterLogsResponse.setUpdated(_ctx.stringValue("DescribeClusterLogsResponse.updated"));
 	 
 	 	return describeClusterLogsResponse;
 	}

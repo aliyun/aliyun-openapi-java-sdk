@@ -1,3 +1,6 @@
+2020-09-23 Version: 4.8.1
+- Some new parameters are supported.
+
 2020-06-24 Version: 4.8.0
 - Generated 2015-12-15 for `CS`.
 

@@ -25,11 +25,7 @@ import com.aliyuncs.cs.Endpoint;
 public class UpgradeClusterAddonsRequest extends RoaAcsRequest<UpgradeClusterAddonsResponse> {
 	   
 
-	private String component_name;
-
 	private String clusterId;
-
-	private String version;
 	public UpgradeClusterAddonsRequest() {
 		super("CS", "2015-12-15", "UpgradeClusterAddons");
 		setUriPattern("/clusters/[ClusterId]/components/upgrade");
@@ -40,17 +36,6 @@ public class UpgradeClusterAddonsRequest extends RoaAcsRequest<UpgradeClusterAdd
 		} catch (Exception e) {}
 	}
 
-	public String getComponent_name() {
-		return this.component_name;
-	}
-
-	public void setComponent_name(String component_name) {
-		this.component_name = component_name;
-		if(component_name != null){
-			putBodyParameter("component_name", component_name);
-		}
-	}
-
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -59,17 +44,6 @@ public class UpgradeClusterAddonsRequest extends RoaAcsRequest<UpgradeClusterAdd
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putBodyParameter("version", version);
 		}
 	}
 

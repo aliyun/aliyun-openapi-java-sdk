@@ -25,13 +25,15 @@ import com.aliyuncs.cs.Endpoint;
 public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 	   
 
+	private Boolean private_zone;
+
 	private String proxy_mode;
 
 	private String master_system_disk_category;
 
-	private Boolean cloud_monitor_flags;
+	private Long master_period;
 
-	private Integer master_period;
+	private Boolean cloud_monitor_flags;
 
 	private Boolean ssh_flags;
 
@@ -47,29 +49,33 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 
 	private String platform;
 
+	private String service_cidr;
+
 	private String node_port_range;
 
-	private String service_cidr;
+	private String zone_id;
 
 	private String login_password;
 
 	private String kubernetes_version;
 
+	private Boolean is_enterprise_security_group;
+
 	private String master_period_unit;
 
-	private Integer master_system_disk_size;
+	private Long master_system_disk_size;
 
-	private Integer master_count;
+	private Long master_count;
 
-	private Integer num_of_nodes;
+	private Long num_of_nodes;
 
-	private Boolean deletion_protection;
+	private String deletion_protection;
 
 	private String key_pair;
 
-	private Boolean worker_data_disk;
-
 	private Boolean master_auto_renew;
+
+	private String profile;
 
 	private String region_id;
 
@@ -77,7 +83,7 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 
 	private String worker_system_disk_category;
 
-	private String runtime;
+	private String user_data;
 
 	private String worker_period_unit;
 
@@ -85,21 +91,23 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 
 	private String node_cidr_mask;
 
-	private Integer worker_auto_renew_period;
+	private Long worker_auto_renew_period;
 
-	private Integer master_auto_renew_period;
+	private Long master_auto_renew_period;
 
-	private Integer worker_period;
+	private Long worker_period;
 
-	private Integer timeout_mins;
+	private Long timeout_mins;
 
-	private Integer worker_system_disk_size;
+	private String images_id;
+
+	private Long worker_system_disk_size;
+
+	private String vpcid;
 
 	private String os_type;
 
 	private String cpu_policy;
-
-	private String vpcid;
 
 	private String name;
 
@@ -114,6 +122,17 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getPrivate_zone() {
+		return this.private_zone;
+	}
+
+	public void setPrivate_zone(Boolean private_zone) {
+		this.private_zone = private_zone;
+		if(private_zone != null){
+			putBodyParameter("private_zone", private_zone.toString());
+		}
 	}
 
 	public String getProxy_mode() {
@@ -138,6 +157,17 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public Long getMaster_period() {
+		return this.master_period;
+	}
+
+	public void setMaster_period(Long master_period) {
+		this.master_period = master_period;
+		if(master_period != null){
+			putBodyParameter("master_period", master_period.toString());
+		}
+	}
+
 	public Boolean getCloud_monitor_flags() {
 		return this.cloud_monitor_flags;
 	}
@@ -146,17 +176,6 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		this.cloud_monitor_flags = cloud_monitor_flags;
 		if(cloud_monitor_flags != null){
 			putBodyParameter("cloud_monitor_flags", cloud_monitor_flags.toString());
-		}
-	}
-
-	public Integer getMaster_period() {
-		return this.master_period;
-	}
-
-	public void setMaster_period(Integer master_period) {
-		this.master_period = master_period;
-		if(master_period != null){
-			putBodyParameter("master_period", master_period.toString());
 		}
 	}
 
@@ -237,6 +256,17 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getService_cidr() {
+		return this.service_cidr;
+	}
+
+	public void setService_cidr(String service_cidr) {
+		this.service_cidr = service_cidr;
+		if(service_cidr != null){
+			putBodyParameter("service_cidr", service_cidr);
+		}
+	}
+
 	public String getNode_port_range() {
 		return this.node_port_range;
 	}
@@ -248,14 +278,14 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getService_cidr() {
-		return this.service_cidr;
+	public String getZone_id() {
+		return this.zone_id;
 	}
 
-	public void setService_cidr(String service_cidr) {
-		this.service_cidr = service_cidr;
-		if(service_cidr != null){
-			putBodyParameter("service_cidr", service_cidr);
+	public void setZone_id(String zone_id) {
+		this.zone_id = zone_id;
+		if(zone_id != null){
+			putBodyParameter("zone_id", zone_id);
 		}
 	}
 
@@ -281,6 +311,17 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public Boolean getIs_enterprise_security_group() {
+		return this.is_enterprise_security_group;
+	}
+
+	public void setIs_enterprise_security_group(Boolean is_enterprise_security_group) {
+		this.is_enterprise_security_group = is_enterprise_security_group;
+		if(is_enterprise_security_group != null){
+			putBodyParameter("is_enterprise_security_group", is_enterprise_security_group.toString());
+		}
+	}
+
 	public String getMaster_period_unit() {
 		return this.master_period_unit;
 	}
@@ -292,47 +333,47 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public Integer getMaster_system_disk_size() {
+	public Long getMaster_system_disk_size() {
 		return this.master_system_disk_size;
 	}
 
-	public void setMaster_system_disk_size(Integer master_system_disk_size) {
+	public void setMaster_system_disk_size(Long master_system_disk_size) {
 		this.master_system_disk_size = master_system_disk_size;
 		if(master_system_disk_size != null){
 			putBodyParameter("master_system_disk_size", master_system_disk_size.toString());
 		}
 	}
 
-	public Integer getMaster_count() {
+	public Long getMaster_count() {
 		return this.master_count;
 	}
 
-	public void setMaster_count(Integer master_count) {
+	public void setMaster_count(Long master_count) {
 		this.master_count = master_count;
 		if(master_count != null){
 			putBodyParameter("master_count", master_count.toString());
 		}
 	}
 
-	public Integer getNum_of_nodes() {
+	public Long getNum_of_nodes() {
 		return this.num_of_nodes;
 	}
 
-	public void setNum_of_nodes(Integer num_of_nodes) {
+	public void setNum_of_nodes(Long num_of_nodes) {
 		this.num_of_nodes = num_of_nodes;
 		if(num_of_nodes != null){
 			putBodyParameter("num_of_nodes", num_of_nodes.toString());
 		}
 	}
 
-	public Boolean getDeletion_protection() {
+	public String getDeletion_protection() {
 		return this.deletion_protection;
 	}
 
-	public void setDeletion_protection(Boolean deletion_protection) {
+	public void setDeletion_protection(String deletion_protection) {
 		this.deletion_protection = deletion_protection;
 		if(deletion_protection != null){
-			putBodyParameter("deletion_protection", deletion_protection.toString());
+			putBodyParameter("deletion_protection", deletion_protection);
 		}
 	}
 
@@ -347,17 +388,6 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public Boolean getWorker_data_disk() {
-		return this.worker_data_disk;
-	}
-
-	public void setWorker_data_disk(Boolean worker_data_disk) {
-		this.worker_data_disk = worker_data_disk;
-		if(worker_data_disk != null){
-			putBodyParameter("worker_data_disk", worker_data_disk.toString());
-		}
-	}
-
 	public Boolean getMaster_auto_renew() {
 		return this.master_auto_renew;
 	}
@@ -366,6 +396,17 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		this.master_auto_renew = master_auto_renew;
 		if(master_auto_renew != null){
 			putBodyParameter("master_auto_renew", master_auto_renew.toString());
+		}
+	}
+
+	public String getProfile() {
+		return this.profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+		if(profile != null){
+			putBodyParameter("profile", profile);
 		}
 	}
 
@@ -402,14 +443,14 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public String getRuntime() {
-		return this.runtime;
+	public String getUser_data() {
+		return this.user_data;
 	}
 
-	public void setRuntime(String runtime) {
-		this.runtime = runtime;
-		if(runtime != null){
-			putBodyParameter("runtime", runtime);
+	public void setUser_data(String user_data) {
+		this.user_data = user_data;
+		if(user_data != null){
+			putBodyParameter("user_data", user_data);
 		}
 	}
 
@@ -446,58 +487,80 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		}
 	}
 
-	public Integer getWorker_auto_renew_period() {
+	public Long getWorker_auto_renew_period() {
 		return this.worker_auto_renew_period;
 	}
 
-	public void setWorker_auto_renew_period(Integer worker_auto_renew_period) {
+	public void setWorker_auto_renew_period(Long worker_auto_renew_period) {
 		this.worker_auto_renew_period = worker_auto_renew_period;
 		if(worker_auto_renew_period != null){
 			putBodyParameter("worker_auto_renew_period", worker_auto_renew_period.toString());
 		}
 	}
 
-	public Integer getMaster_auto_renew_period() {
+	public Long getMaster_auto_renew_period() {
 		return this.master_auto_renew_period;
 	}
 
-	public void setMaster_auto_renew_period(Integer master_auto_renew_period) {
+	public void setMaster_auto_renew_period(Long master_auto_renew_period) {
 		this.master_auto_renew_period = master_auto_renew_period;
 		if(master_auto_renew_period != null){
 			putBodyParameter("master_auto_renew_period", master_auto_renew_period.toString());
 		}
 	}
 
-	public Integer getWorker_period() {
+	public Long getWorker_period() {
 		return this.worker_period;
 	}
 
-	public void setWorker_period(Integer worker_period) {
+	public void setWorker_period(Long worker_period) {
 		this.worker_period = worker_period;
 		if(worker_period != null){
 			putBodyParameter("worker_period", worker_period.toString());
 		}
 	}
 
-	public Integer getTimeout_mins() {
+	public Long getTimeout_mins() {
 		return this.timeout_mins;
 	}
 
-	public void setTimeout_mins(Integer timeout_mins) {
+	public void setTimeout_mins(Long timeout_mins) {
 		this.timeout_mins = timeout_mins;
 		if(timeout_mins != null){
 			putBodyParameter("timeout_mins", timeout_mins.toString());
 		}
 	}
 
-	public Integer getWorker_system_disk_size() {
+	public String getImages_id() {
+		return this.images_id;
+	}
+
+	public void setImages_id(String images_id) {
+		this.images_id = images_id;
+		if(images_id != null){
+			putBodyParameter("images_id", images_id);
+		}
+	}
+
+	public Long getWorker_system_disk_size() {
 		return this.worker_system_disk_size;
 	}
 
-	public void setWorker_system_disk_size(Integer worker_system_disk_size) {
+	public void setWorker_system_disk_size(Long worker_system_disk_size) {
 		this.worker_system_disk_size = worker_system_disk_size;
 		if(worker_system_disk_size != null){
 			putBodyParameter("worker_system_disk_size", worker_system_disk_size.toString());
+		}
+	}
+
+	public String getVpcid() {
+		return this.vpcid;
+	}
+
+	public void setVpcid(String vpcid) {
+		this.vpcid = vpcid;
+		if(vpcid != null){
+			putBodyParameter("vpcid", vpcid);
 		}
 	}
 
@@ -520,17 +583,6 @@ public class CreateClusterRequest extends RoaAcsRequest<CreateClusterResponse> {
 		this.cpu_policy = cpu_policy;
 		if(cpu_policy != null){
 			putBodyParameter("cpu_policy", cpu_policy);
-		}
-	}
-
-	public String getVpcid() {
-		return this.vpcid;
-	}
-
-	public void setVpcid(String vpcid) {
-		this.vpcid = vpcid;
-		if(vpcid != null){
-			putBodyParameter("vpcid", vpcid);
 		}
 	}
 

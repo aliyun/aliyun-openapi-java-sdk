@@ -33,9 +33,17 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 
 	private String cpu_policy;
 
+	private Boolean is_edge_worker;
+
 	private String clusterId;
 
+	private String user_data;
+
+	private String image_id;
+
 	private Boolean format_disk;
+
+	private String nodepool_id;
 	public AttachInstancesRequest() {
 		super("CS", "2015-12-15", "AttachInstances");
 		setUriPattern("/clusters/[ClusterId]/attach");
@@ -90,6 +98,17 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 		}
 	}
 
+	public Boolean getIs_edge_worker() {
+		return this.is_edge_worker;
+	}
+
+	public void setIs_edge_worker(Boolean is_edge_worker) {
+		this.is_edge_worker = is_edge_worker;
+		if(is_edge_worker != null){
+			putBodyParameter("is_edge_worker", is_edge_worker.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -101,6 +120,28 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 		}
 	}
 
+	public String getUser_data() {
+		return this.user_data;
+	}
+
+	public void setUser_data(String user_data) {
+		this.user_data = user_data;
+		if(user_data != null){
+			putBodyParameter("user_data", user_data);
+		}
+	}
+
+	public String getImage_id() {
+		return this.image_id;
+	}
+
+	public void setImage_id(String image_id) {
+		this.image_id = image_id;
+		if(image_id != null){
+			putBodyParameter("image_id", image_id);
+		}
+	}
+
 	public Boolean getFormat_disk() {
 		return this.format_disk;
 	}
@@ -109,6 +150,17 @@ public class AttachInstancesRequest extends RoaAcsRequest<AttachInstancesRespons
 		this.format_disk = format_disk;
 		if(format_disk != null){
 			putBodyParameter("format_disk", format_disk.toString());
+		}
+	}
+
+	public String getNodepool_id() {
+		return this.nodepool_id;
+	}
+
+	public void setNodepool_id(String nodepool_id) {
+		this.nodepool_id = nodepool_id;
+		if(nodepool_id != null){
+			putBodyParameter("nodepool_id", nodepool_id);
 		}
 	}
 

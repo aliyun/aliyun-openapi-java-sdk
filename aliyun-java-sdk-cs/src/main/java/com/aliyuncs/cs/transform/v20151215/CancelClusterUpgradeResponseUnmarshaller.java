@@ -22,7 +22,6 @@ public class CancelClusterUpgradeResponseUnmarshaller {
 
 	public static CancelClusterUpgradeResponse unmarshall(CancelClusterUpgradeResponse cancelClusterUpgradeResponse, UnmarshallerContext _ctx) {
 		
-		cancelClusterUpgradeResponse.setRequestId(_ctx.stringValue("CancelClusterUpgradeResponse.RequestId"));
 	 
 	 	return cancelClusterUpgradeResponse;
 	}

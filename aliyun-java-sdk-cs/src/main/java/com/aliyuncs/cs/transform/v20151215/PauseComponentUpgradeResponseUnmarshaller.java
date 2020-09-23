@@ -22,7 +22,6 @@ public class PauseComponentUpgradeResponseUnmarshaller {
 
 	public static PauseComponentUpgradeResponse unmarshall(PauseComponentUpgradeResponse pauseComponentUpgradeResponse, UnmarshallerContext _ctx) {
 		
-		pauseComponentUpgradeResponse.setRequestId(_ctx.stringValue("PauseComponentUpgradeResponse.RequestId"));
 	 
 	 	return pauseComponentUpgradeResponse;
 	}

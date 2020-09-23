@@ -25,8 +25,6 @@ import com.aliyuncs.cs.Endpoint;
 public class UnInstallClusterAddonsRequest extends RoaAcsRequest<UnInstallClusterAddonsResponse> {
 	   
 
-	private String name;
-
 	private String clusterId;
 	public UnInstallClusterAddonsRequest() {
 		super("CS", "2015-12-15", "UnInstallClusterAddons");
@@ -36,17 +34,6 @@ public class UnInstallClusterAddonsRequest extends RoaAcsRequest<UnInstallCluste
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putBodyParameter("name", name);
-		}
 	}
 
 	public String getClusterId() {

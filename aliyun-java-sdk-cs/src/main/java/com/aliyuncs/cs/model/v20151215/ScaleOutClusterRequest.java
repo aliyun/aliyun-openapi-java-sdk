@@ -37,6 +37,8 @@ public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterRespons
 
 	private String clusterId;
 
+	private String user_data;
+
 	private String worker_period_unit;
 
 	private Boolean worker_auto_renew;
@@ -52,6 +54,8 @@ public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterRespons
 	private String cpu_policy;
 
 	private Boolean disable_rollback;
+
+	private String image_id;
 
 	private String worker_instance_charge_type;
 	public ScaleOutClusterRequest() {
@@ -127,6 +131,17 @@ public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterRespons
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putPathParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getUser_data() {
+		return this.user_data;
+	}
+
+	public void setUser_data(String user_data) {
+		this.user_data = user_data;
+		if(user_data != null){
+			putBodyParameter("user_data", user_data);
 		}
 	}
 
@@ -215,6 +230,17 @@ public class ScaleOutClusterRequest extends RoaAcsRequest<ScaleOutClusterRespons
 		this.disable_rollback = disable_rollback;
 		if(disable_rollback != null){
 			putBodyParameter("disable_rollback", disable_rollback.toString());
+		}
+	}
+
+	public String getImage_id() {
+		return this.image_id;
+	}
+
+	public void setImage_id(String image_id) {
+		this.image_id = image_id;
+		if(image_id != null){
+			putBodyParameter("image_id", image_id);
 		}
 	}
 

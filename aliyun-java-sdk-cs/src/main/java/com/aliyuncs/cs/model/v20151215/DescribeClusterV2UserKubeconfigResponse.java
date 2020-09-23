@@ -24,14 +24,14 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeClusterV2UserKubeconfigResponse extends AcsResponse {
 
-	private String requestId;
+	private String config;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getConfig() {
+		return this.config;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setConfig(String config) {
+		this.config = config;
 	}
 
 	@Override

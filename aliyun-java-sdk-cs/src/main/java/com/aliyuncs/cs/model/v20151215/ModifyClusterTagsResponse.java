@@ -24,16 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ModifyClusterTagsResponse extends AcsResponse {
 
-	private String requestId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	@Override
 	public ModifyClusterTagsResponse getInstance(UnmarshallerContext context) {
 		return	ModifyClusterTagsResponseUnmarshaller.unmarshall(this, context);

@@ -22,10 +22,10 @@ public class GetUpgradeStatusResponseUnmarshaller {
 
 	public static GetUpgradeStatusResponse unmarshall(GetUpgradeStatusResponse getUpgradeStatusResponse, UnmarshallerContext _ctx) {
 		
-		getUpgradeStatusResponse.setStatus(_ctx.stringValue("GetUpgradeStatusResponse.status"));
+		getUpgradeStatusResponse.setError_message(_ctx.stringValue("GetUpgradeStatusResponse.error_message"));
 		getUpgradeStatusResponse.setPrecheck_report_id(_ctx.stringValue("GetUpgradeStatusResponse.precheck_report_id"));
 		getUpgradeStatusResponse.setUpgrade_step(_ctx.stringValue("GetUpgradeStatusResponse.upgrade_step"));
-		getUpgradeStatusResponse.setError_message(_ctx.stringValue("GetUpgradeStatusResponse.error_message"));
+		getUpgradeStatusResponse.setStatus(_ctx.stringValue("GetUpgradeStatusResponse.status"));
 	 
 	 	return getUpgradeStatusResponse;
 	}

@@ -22,7 +22,6 @@ public class ModifyClusterTagsResponseUnmarshaller {
 
 	public static ModifyClusterTagsResponse unmarshall(ModifyClusterTagsResponse modifyClusterTagsResponse, UnmarshallerContext _ctx) {
 		
-		modifyClusterTagsResponse.setRequestId(_ctx.stringValue("ModifyClusterTagsResponse.requestId"));
 	 
 	 	return modifyClusterTagsResponse;
 	}

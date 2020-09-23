@@ -24,16 +24,6 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PauseComponentUpgradeResponse extends AcsResponse {
 
-	private String requestId;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	@Override
 	public PauseComponentUpgradeResponse getInstance(UnmarshallerContext context) {
 		return	PauseComponentUpgradeResponseUnmarshaller.unmarshall(this, context);

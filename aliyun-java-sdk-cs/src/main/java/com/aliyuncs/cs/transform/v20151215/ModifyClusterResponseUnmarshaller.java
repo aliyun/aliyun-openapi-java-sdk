@@ -23,9 +23,8 @@ public class ModifyClusterResponseUnmarshaller {
 	public static ModifyClusterResponse unmarshall(ModifyClusterResponse modifyClusterResponse, UnmarshallerContext _ctx) {
 		
 		modifyClusterResponse.setCluster_id(_ctx.stringValue("ModifyClusterResponse.cluster_id"));
-		modifyClusterResponse.setRequest_id(_ctx.stringValue("ModifyClusterResponse.request_id"));
 		modifyClusterResponse.setTask_id(_ctx.stringValue("ModifyClusterResponse.task_id"));
-		modifyClusterResponse.setInstanceId(_ctx.stringValue("ModifyClusterResponse.instanceId"));
+		modifyClusterResponse.setRequest_id(_ctx.stringValue("ModifyClusterResponse.request_id"));
 	 
 	 	return modifyClusterResponse;
 	}

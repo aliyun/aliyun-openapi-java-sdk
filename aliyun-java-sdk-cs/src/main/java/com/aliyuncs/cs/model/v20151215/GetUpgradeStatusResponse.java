@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUpgradeStatusResponse extends AcsResponse {
 
-	private String status;
+	private String error_message;
 
 	private String precheck_report_id;
 
 	private String upgrade_step;
 
-	private String error_message;
+	private String status;
 
-	public String getStatus() {
-		return this.status;
+	public String getError_message() {
+		return this.error_message;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setError_message(String error_message) {
+		this.error_message = error_message;
 	}
 
 	public String getPrecheck_report_id() {
@@ -56,12 +56,12 @@ public class GetUpgradeStatusResponse extends AcsResponse {
 		this.upgrade_step = upgrade_step;
 	}
 
-	public String getError_message() {
-		return this.error_message;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setError_message(String error_message) {
-		this.error_message = error_message;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override

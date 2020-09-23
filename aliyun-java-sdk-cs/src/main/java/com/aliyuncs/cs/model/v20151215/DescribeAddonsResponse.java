@@ -15,6 +15,7 @@
 package com.aliyuncs.cs.model.v20151215;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.cs.transform.v20151215.DescribeAddonsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -81,13 +82,13 @@ public class DescribeAddonsResponse extends AcsResponse {
 
 			private String name;
 
-			private String config;
-
-			private String required;
+			private String description;
 
 			private Boolean disabled;
 
 			private String version;
+
+			private String required;
 
 			public String getName() {
 				return this.name;
@@ -97,20 +98,12 @@ public class DescribeAddonsResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getConfig() {
-				return this.config;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setConfig(String config) {
-				this.config = config;
-			}
-
-			public String getRequired() {
-				return this.required;
-			}
-
-			public void setRequired(String required) {
-				this.required = required;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public Boolean getDisabled() {
@@ -127,73 +120,28 @@ public class DescribeAddonsResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public String getRequired() {
+				return this.required;
+			}
+
+			public void setRequired(String required) {
+				this.required = required;
 			}
 		}
 	}
 
 	public static class StandardComponents {
 
-		private Addon_name addon_name;
+		private Map<Object,Object> componentName;
 
-		public Addon_name getAddon_name() {
-			return this.addon_name;
+		public Map<Object,Object> getComponentName() {
+			return this.componentName;
 		}
 
-		public void setAddon_name(Addon_name addon_name) {
-			this.addon_name = addon_name;
-		}
-
-		public static class Addon_name {
-
-			private String name;
-
-			private String config;
-
-			private String required;
-
-			private Boolean disabled;
-
-			private String version;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getConfig() {
-				return this.config;
-			}
-
-			public void setConfig(String config) {
-				this.config = config;
-			}
-
-			public String getRequired() {
-				return this.required;
-			}
-
-			public void setRequired(String required) {
-				this.required = required;
-			}
-
-			public Boolean getDisabled() {
-				return this.disabled;
-			}
-
-			public void setDisabled(Boolean disabled) {
-				this.disabled = disabled;
-			}
-
-			public String getVersion() {
-				return this.version;
-			}
-
-			public void setVersion(String version) {
-				this.version = version;
-			}
+		public void setComponentName(Map<Object,Object> componentName) {
+			this.componentName = componentName;
 		}
 	}
 

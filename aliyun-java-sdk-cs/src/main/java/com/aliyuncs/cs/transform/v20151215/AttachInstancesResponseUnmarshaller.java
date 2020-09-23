@@ -31,8 +31,8 @@ public class AttachInstancesResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("AttachInstancesResponse.list.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setCode(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].code"));
 			listItem.setInstanceId(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].instanceId"));
+			listItem.setCode(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].code"));
 			listItem.setMessage(_ctx.stringValue("AttachInstancesResponse.list["+ i +"].message"));
 
 			list.add(listItem);
