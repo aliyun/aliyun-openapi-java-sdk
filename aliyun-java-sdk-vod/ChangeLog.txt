@@ -1,3 +1,10 @@
+2020-09-24 Version: 2.15.12
+- Add a new api named SubmitAIImageAuditJob to submit image ai detection job.
+- Add a new api named CreateDNADB to create a DNA analysis library.
+- Add a new api named ListDNADB to query the list of DNA analysis libraries.
+- Add a new api named GetDNADB to query specified DNA analysis library.
+- Add a new field DNADBId to the request parameter Config structure for SubmitAIJob api.
+
 2020-09-09 Version: 2.15.11
 - Add support cn-beijing service region.
 - Add ai video cover interface,include submit and query.

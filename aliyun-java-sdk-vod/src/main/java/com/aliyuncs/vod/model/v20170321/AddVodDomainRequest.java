@@ -31,6 +31,8 @@ public class AddVodDomainRequest extends RpcAcsRequest<AddVodDomainResponse> {
 
 	private String scope;
 
+	private String topLevelDomain;
+
 	private String ownerAccount;
 
 	private String domainName;
@@ -77,6 +79,17 @@ public class AddVodDomainRequest extends RpcAcsRequest<AddVodDomainResponse> {
 		this.scope = scope;
 		if(scope != null){
 			putQueryParameter("Scope", scope);
+		}
+	}
+
+	public String getTopLevelDomain() {
+		return this.topLevelDomain;
+	}
+
+	public void setTopLevelDomain(String topLevelDomain) {
+		this.topLevelDomain = topLevelDomain;
+		if(topLevelDomain != null){
+			putQueryParameter("TopLevelDomain", topLevelDomain);
 		}
 	}
 
