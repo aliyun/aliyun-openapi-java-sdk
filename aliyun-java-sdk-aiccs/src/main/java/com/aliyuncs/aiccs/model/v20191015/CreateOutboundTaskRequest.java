@@ -59,7 +59,7 @@ public class CreateOutboundTaskRequest extends RpcAcsRequest<CreateOutboundTaskR
 
 	private Integer retryTime;
 	public CreateOutboundTaskRequest() {
-		super("aiccs", "2019-10-15", "CreateOutboundTask", "aiccs-service");
+		super("aiccs", "2019-10-15", "CreateOutboundTask", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class TransferCallToSkillGroupRequest extends RpcAcsRequest<TransferCallT
 
 	private Boolean isSingleTransfer;
 	public TransferCallToSkillGroupRequest() {
-		super("aiccs", "2019-10-15", "TransferCallToSkillGroup", "aiccs-service");
+		super("aiccs", "2019-10-15", "TransferCallToSkillGroup", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

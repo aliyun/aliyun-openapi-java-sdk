@@ -29,7 +29,7 @@ public class DeleteOuterAccountRequest extends RpcAcsRequest<DeleteOuterAccountR
 
 	private String outerAccountType;
 	public DeleteOuterAccountRequest() {
-		super("aiccs", "2019-10-15", "DeleteOuterAccount", "aiccs-service");
+		super("aiccs", "2019-10-15", "DeleteOuterAccount", "aiccs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

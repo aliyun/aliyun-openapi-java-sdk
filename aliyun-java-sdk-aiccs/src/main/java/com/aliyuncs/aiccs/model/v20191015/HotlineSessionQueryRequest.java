@@ -15,6 +15,7 @@
 package com.aliyuncs.aiccs.model.v20191015;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.aiccs.Endpoint;
 
@@ -25,23 +26,45 @@ import com.aliyuncs.aiccs.Endpoint;
 public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQueryResponse> {
 	   
 
-	private Long groupId;
+	private List<String> memberIdLists;
+
+	private List<Integer> callTypeLists;
 
 	private String servicerId;
+
+	private String acid;
+
+	private List<Long> groupIdLists;
+
+	private String calledNumber;
+
+	private List<String> callResultLists;
+
+	private String servicerName;
+
+	private Integer pageSize;
+
+	private String id;
+
+	private Integer callType;
+
+	private List<String> calledNumberLists;
+
+	private List<String> acidLists;
+
+	private Long groupId;
 
 	private String params;
 
 	private String groupName;
 
-	private String acid;
-
 	private String callingNumber;
 
 	private Long queryEndTime;
 
-	private String instanceId;
+	private List<String> callingNumberLists;
 
-	private String calledNumber;
+	private String instanceId;
 
 	private String requestId;
 
@@ -49,21 +72,15 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 
 	private Long queryStartTime;
 
-	private String servicerName;
-
-	private Integer pageSize;
-
 	private String callResult;
 
-	private String id;
-
-	private Integer callType;
+	private List<String> servicerIdLists;
 
 	private String memberName;
 
 	private String memberId;
 	public HotlineSessionQueryRequest() {
-		super("aiccs", "2019-10-15", "HotlineSessionQuery", "aiccs-service");
+		super("aiccs", "2019-10-15", "HotlineSessionQuery", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,15 +88,30 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		} catch (Exception e) {}
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
+	public List<String> getMemberIdLists() {
+		return this.memberIdLists;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
-		}
+	public void setMemberIdLists(List<String> memberIdLists) {
+		this.memberIdLists = memberIdLists;	
+		if (memberIdLists != null) {
+			for (int i = 0; i < memberIdLists.size(); i++) {
+				putQueryParameter("MemberIdList." + (i + 1) , memberIdLists.get(i));
+			}
+		}	
+	}
+
+	public List<Integer> getCallTypeLists() {
+		return this.callTypeLists;
+	}
+
+	public void setCallTypeLists(List<Integer> callTypeLists) {
+		this.callTypeLists = callTypeLists;	
+		if (callTypeLists != null) {
+			for (int i = 0; i < callTypeLists.size(); i++) {
+				putQueryParameter("CallTypeList." + (i + 1) , callTypeLists.get(i));
+			}
+		}	
 	}
 
 	public String getServicerId() {
@@ -90,6 +122,135 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		this.servicerId = servicerId;
 		if(servicerId != null){
 			putQueryParameter("ServicerId", servicerId);
+		}
+	}
+
+	public String getAcid() {
+		return this.acid;
+	}
+
+	public void setAcid(String acid) {
+		this.acid = acid;
+		if(acid != null){
+			putQueryParameter("Acid", acid);
+		}
+	}
+
+	public List<Long> getGroupIdLists() {
+		return this.groupIdLists;
+	}
+
+	public void setGroupIdLists(List<Long> groupIdLists) {
+		this.groupIdLists = groupIdLists;	
+		if (groupIdLists != null) {
+			for (int i = 0; i < groupIdLists.size(); i++) {
+				putQueryParameter("GroupIdList." + (i + 1) , groupIdLists.get(i));
+			}
+		}	
+	}
+
+	public String getCalledNumber() {
+		return this.calledNumber;
+	}
+
+	public void setCalledNumber(String calledNumber) {
+		this.calledNumber = calledNumber;
+		if(calledNumber != null){
+			putQueryParameter("CalledNumber", calledNumber);
+		}
+	}
+
+	public List<String> getCallResultLists() {
+		return this.callResultLists;
+	}
+
+	public void setCallResultLists(List<String> callResultLists) {
+		this.callResultLists = callResultLists;	
+		if (callResultLists != null) {
+			for (int i = 0; i < callResultLists.size(); i++) {
+				putQueryParameter("CallResultList." + (i + 1) , callResultLists.get(i));
+			}
+		}	
+	}
+
+	public String getServicerName() {
+		return this.servicerName;
+	}
+
+	public void setServicerName(String servicerName) {
+		this.servicerName = servicerName;
+		if(servicerName != null){
+			putQueryParameter("ServicerName", servicerName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
+	}
+
+	public Integer getCallType() {
+		return this.callType;
+	}
+
+	public void setCallType(Integer callType) {
+		this.callType = callType;
+		if(callType != null){
+			putQueryParameter("CallType", callType.toString());
+		}
+	}
+
+	public List<String> getCalledNumberLists() {
+		return this.calledNumberLists;
+	}
+
+	public void setCalledNumberLists(List<String> calledNumberLists) {
+		this.calledNumberLists = calledNumberLists;	
+		if (calledNumberLists != null) {
+			for (int i = 0; i < calledNumberLists.size(); i++) {
+				putQueryParameter("CalledNumberList." + (i + 1) , calledNumberLists.get(i));
+			}
+		}	
+	}
+
+	public List<String> getAcidLists() {
+		return this.acidLists;
+	}
+
+	public void setAcidLists(List<String> acidLists) {
+		this.acidLists = acidLists;	
+		if (acidLists != null) {
+			for (int i = 0; i < acidLists.size(); i++) {
+				putQueryParameter("AcidList." + (i + 1) , acidLists.get(i));
+			}
+		}	
+	}
+
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -115,17 +276,6 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		}
 	}
 
-	public String getAcid() {
-		return this.acid;
-	}
-
-	public void setAcid(String acid) {
-		this.acid = acid;
-		if(acid != null){
-			putQueryParameter("Acid", acid);
-		}
-	}
-
 	public String getCallingNumber() {
 		return this.callingNumber;
 	}
@@ -148,6 +298,19 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		}
 	}
 
+	public List<String> getCallingNumberLists() {
+		return this.callingNumberLists;
+	}
+
+	public void setCallingNumberLists(List<String> callingNumberLists) {
+		this.callingNumberLists = callingNumberLists;	
+		if (callingNumberLists != null) {
+			for (int i = 0; i < callingNumberLists.size(); i++) {
+				putQueryParameter("CallingNumberList." + (i + 1) , callingNumberLists.get(i));
+			}
+		}	
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -156,17 +319,6 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getCalledNumber() {
-		return this.calledNumber;
-	}
-
-	public void setCalledNumber(String calledNumber) {
-		this.calledNumber = calledNumber;
-		if(calledNumber != null){
-			putQueryParameter("CalledNumber", calledNumber);
 		}
 	}
 
@@ -203,28 +355,6 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		}
 	}
 
-	public String getServicerName() {
-		return this.servicerName;
-	}
-
-	public void setServicerName(String servicerName) {
-		this.servicerName = servicerName;
-		if(servicerName != null){
-			putQueryParameter("ServicerName", servicerName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getCallResult() {
 		return this.callResult;
 	}
@@ -236,26 +366,17 @@ public class HotlineSessionQueryRequest extends RpcAcsRequest<HotlineSessionQuer
 		}
 	}
 
-	public String getId() {
-		return this.id;
+	public List<String> getServicerIdLists() {
+		return this.servicerIdLists;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putQueryParameter("Id", id);
-		}
-	}
-
-	public Integer getCallType() {
-		return this.callType;
-	}
-
-	public void setCallType(Integer callType) {
-		this.callType = callType;
-		if(callType != null){
-			putQueryParameter("CallType", callType.toString());
-		}
+	public void setServicerIdLists(List<String> servicerIdLists) {
+		this.servicerIdLists = servicerIdLists;	
+		if (servicerIdLists != null) {
+			for (int i = 0; i < servicerIdLists.size(); i++) {
+				putQueryParameter("ServicerIdList." + (i + 1) , servicerIdLists.get(i));
+			}
+		}	
 	}
 
 	public String getMemberName() {

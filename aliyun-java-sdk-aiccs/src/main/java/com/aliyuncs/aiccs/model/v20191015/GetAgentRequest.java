@@ -31,7 +31,7 @@ public class GetAgentRequest extends RpcAcsRequest<GetAgentResponse> {
 
 	private String accountName;
 	public GetAgentRequest() {
-		super("aiccs", "2019-10-15", "GetAgent", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetAgent", "aiccs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

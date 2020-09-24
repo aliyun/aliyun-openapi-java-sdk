@@ -37,7 +37,7 @@ public class ListOutboundStrategiesRequest extends RpcAcsRequest<ListOutboundStr
 
 	private Long ownerId;
 	public ListOutboundStrategiesRequest() {
-		super("aiccs", "2019-10-15", "ListOutboundStrategies", "aiccs-service");
+		super("aiccs", "2019-10-15", "ListOutboundStrategies", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

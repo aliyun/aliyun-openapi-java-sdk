@@ -37,7 +37,7 @@ public class HangupThirdCallRequest extends RpcAcsRequest<HangupThirdCallRespons
 
 	private String connectionId;
 	public HangupThirdCallRequest() {
-		super("aiccs", "2019-10-15", "HangupThirdCall", "aiccs-service");
+		super("aiccs", "2019-10-15", "HangupThirdCall", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

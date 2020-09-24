@@ -31,7 +31,7 @@ public class RemoveSkillGroupRequest extends RpcAcsRequest<RemoveSkillGroupRespo
 
 	private String skillGroupId;
 	public RemoveSkillGroupRequest() {
-		super("aiccs", "2019-10-15", "RemoveSkillGroup", "aiccs-service");
+		super("aiccs", "2019-10-15", "RemoveSkillGroup", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

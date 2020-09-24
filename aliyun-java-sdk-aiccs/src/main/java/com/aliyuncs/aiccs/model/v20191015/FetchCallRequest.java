@@ -39,7 +39,7 @@ public class FetchCallRequest extends RpcAcsRequest<FetchCallResponse> {
 
 	private String holdConnectionId;
 	public FetchCallRequest() {
-		super("aiccs", "2019-10-15", "FetchCall", "aiccs-service");
+		super("aiccs", "2019-10-15", "FetchCall", "aiccs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
