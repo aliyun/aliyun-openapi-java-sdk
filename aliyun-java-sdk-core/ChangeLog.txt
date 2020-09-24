@@ -1,4 +1,7 @@
-﻿2020-09-14 Version: 4.5.10
+﻿2020-09-24 Version: 4.5.11
+1, Improve endpoints.json
+
+2020-09-14 Version: 4.5.10
 1, Add x-acs-version and x-acs-action in header
 
 2020-09-10 Version: 4.5.9
