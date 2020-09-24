@@ -27,15 +27,7 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 
 	private String productCode;
 
-	private String ossObjectName;
-
 	private String faceContrastPicture;
-
-	private String certName;
-
-	private String ip;
-
-	private String mobile;
 
 	private String deviceToken;
 
@@ -50,6 +42,16 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 	private String certType;
 
 	private String faceContrastPictureUrl;
+
+	private String model;
+
+	private String ossObjectName;
+
+	private String certName;
+
+	private String ip;
+
+	private String mobile;
 
 	private Long sceneId;
 
@@ -74,17 +76,6 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 		}
 	}
 
-	public String getOssObjectName() {
-		return this.ossObjectName;
-	}
-
-	public void setOssObjectName(String ossObjectName) {
-		this.ossObjectName = ossObjectName;
-		if(ossObjectName != null){
-			putBodyParameter("OssObjectName", ossObjectName);
-		}
-	}
-
 	public String getFaceContrastPicture() {
 		return this.faceContrastPicture;
 	}
@@ -93,39 +84,6 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 		this.faceContrastPicture = faceContrastPicture;
 		if(faceContrastPicture != null){
 			putBodyParameter("FaceContrastPicture", faceContrastPicture);
-		}
-	}
-
-	public String getCertName() {
-		return this.certName;
-	}
-
-	public void setCertName(String certName) {
-		this.certName = certName;
-		if(certName != null){
-			putBodyParameter("CertName", certName);
-		}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putBodyParameter("Ip", ip);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putBodyParameter("Mobile", mobile);
 		}
 	}
 
@@ -203,6 +161,61 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 		this.faceContrastPictureUrl = faceContrastPictureUrl;
 		if(faceContrastPictureUrl != null){
 			putBodyParameter("FaceContrastPictureUrl", faceContrastPictureUrl);
+		}
+	}
+
+	public String getModel() {
+		return this.model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+		if(model != null){
+			putQueryParameter("Model", model);
+		}
+	}
+
+	public String getOssObjectName() {
+		return this.ossObjectName;
+	}
+
+	public void setOssObjectName(String ossObjectName) {
+		this.ossObjectName = ossObjectName;
+		if(ossObjectName != null){
+			putBodyParameter("OssObjectName", ossObjectName);
+		}
+	}
+
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+		if(certName != null){
+			putBodyParameter("CertName", certName);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putBodyParameter("Ip", ip);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putBodyParameter("Mobile", mobile);
 		}
 	}
 
