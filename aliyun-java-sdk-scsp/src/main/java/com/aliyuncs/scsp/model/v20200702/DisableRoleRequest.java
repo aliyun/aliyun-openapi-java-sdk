@@ -31,7 +31,7 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 
 	private Long roleId;
 	public DisableRoleRequest() {
-		super("scsp", "2020-07-02", "DisableRole", "scsp-service");
+		super("scsp", "2020-07-02", "DisableRole", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
