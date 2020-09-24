@@ -1,3 +1,6 @@
+2020-09-24 Version: 1.0.2
+- Generated 2019-04-02 for `datav-outer`.
+
 2020-06-02 Version: 1.0.0
 - Generated 2019-04-02 for `datav-outer`.
 
