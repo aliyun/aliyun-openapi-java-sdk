@@ -50,6 +50,8 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private String escalationsWarnThreshold;
 
+	private String contactGroups;
+
 	private String escalationsCriticalStatistics;
 
 	private String groupId;
@@ -220,6 +222,17 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.escalationsWarnThreshold = escalationsWarnThreshold;
 		if(escalationsWarnThreshold != null){
 			putQueryParameter("Escalations.Warn.Threshold", escalationsWarnThreshold);
+		}
+	}
+
+	public String getContactGroups() {
+		return this.contactGroups;
+	}
+
+	public void setContactGroups(String contactGroups) {
+		this.contactGroups = contactGroups;
+		if(contactGroups != null){
+			putQueryParameter("ContactGroups", contactGroups);
 		}
 	}
 

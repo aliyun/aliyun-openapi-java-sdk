@@ -1,3 +1,6 @@
+2020-09-25 Version: 7.0.15
+- Add alarm contact group by monitor group alarm rules.
+
 2020-09-18 Version: 7.0.14
 - Add alarm notification language settings.
 
