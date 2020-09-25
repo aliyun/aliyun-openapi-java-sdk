@@ -29,6 +29,8 @@ public class RegisterUemDeviceRequest extends RpcAcsRequest<RegisterUemDeviceRes
 
 	private String groupId;
 
+	private String ownerId;
+
 	private String deviceId;
 
 	private String groupName;
@@ -64,6 +66,17 @@ public class RegisterUemDeviceRequest extends RpcAcsRequest<RegisterUemDeviceRes
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
 		}
 	}
 
