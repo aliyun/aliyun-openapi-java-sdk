@@ -59,6 +59,8 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 
 		private String lastLoginTime;
 
+		private Long lastLoginTimestamp;
+
 		private String isRoot;
 
 		private String instanceName;
@@ -95,6 +97,14 @@ public class DescribePropertyUserDetailResponse extends AcsResponse {
 
 		public void setLastLoginTime(String lastLoginTime) {
 			this.lastLoginTime = lastLoginTime;
+		}
+
+		public Long getLastLoginTimestamp() {
+			return this.lastLoginTimestamp;
+		}
+
+		public void setLastLoginTimestamp(Long lastLoginTimestamp) {
+			this.lastLoginTimestamp = lastLoginTimestamp;
 		}
 
 		public String getIsRoot() {

@@ -51,9 +51,9 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		private String intranetIp;
 
-		private Integer instanceName;
+		private String instanceName;
 
-		private Integer instanceId;
+		private String instanceId;
 
 		private String ip;
 
@@ -91,7 +91,9 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		private String vpcInstanceId;
 
-		private String osName1;
+		private String instanceStatus;
+
+		private Long createTime;
 
 		private List<String> ipList;
 
@@ -115,19 +117,19 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 			this.intranetIp = intranetIp;
 		}
 
-		public Integer getInstanceName() {
+		public String getInstanceName() {
 			return this.instanceName;
 		}
 
-		public void setInstanceName(Integer instanceName) {
+		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
 		}
 
-		public Integer getInstanceId() {
+		public String getInstanceId() {
 			return this.instanceId;
 		}
 
-		public void setInstanceId(Integer instanceId) {
+		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
 		}
 
@@ -275,12 +277,20 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 			this.vpcInstanceId = vpcInstanceId;
 		}
 
-		public String getOsName1() {
-			return this.osName1;
+		public String getInstanceStatus() {
+			return this.instanceStatus;
 		}
 
-		public void setOsName1(String osName1) {
-			this.osName1 = osName1;
+		public void setInstanceStatus(String instanceStatus) {
+			this.instanceStatus = instanceStatus;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public List<String> getIpList() {

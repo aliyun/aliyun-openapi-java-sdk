@@ -35,6 +35,7 @@ public class DescribeAllEntityResponseUnmarshaller {
 			entity.setInstanceName(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].InstanceName"));
 			entity.setIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Ip"));
 			entity.setUuid(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Uuid"));
+			entity.setOs(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].Os"));
 			entity.setInternetIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].InternetIp"));
 			entity.setIntranetIp(_ctx.stringValue("DescribeAllEntityResponse.EntityList["+ i +"].IntranetIp"));
 

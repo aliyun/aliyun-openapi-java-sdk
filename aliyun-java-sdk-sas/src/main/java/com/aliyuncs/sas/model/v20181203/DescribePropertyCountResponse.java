@@ -36,6 +36,10 @@ public class DescribePropertyCountResponse extends AcsResponse {
 
 	private Integer cron;
 
+	private Integer sca;
+
+	private Integer autoRun;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -82,6 +86,22 @@ public class DescribePropertyCountResponse extends AcsResponse {
 
 	public void setCron(Integer cron) {
 		this.cron = cron;
+	}
+
+	public Integer getSca() {
+		return this.sca;
+	}
+
+	public void setSca(Integer sca) {
+		this.sca = sca;
+	}
+
+	public Integer getAutoRun() {
+		return this.autoRun;
+	}
+
+	public void setAutoRun(Integer autoRun) {
+		this.autoRun = autoRun;
 	}
 
 	@Override

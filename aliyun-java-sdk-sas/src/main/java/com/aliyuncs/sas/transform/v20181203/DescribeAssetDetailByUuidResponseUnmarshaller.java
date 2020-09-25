@@ -31,8 +31,8 @@ public class DescribeAssetDetailByUuidResponseUnmarshaller {
 		AssetDetail assetDetail = new AssetDetail();
 		assetDetail.setInternetIp(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.InternetIp"));
 		assetDetail.setIntranetIp(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.IntranetIp"));
-		assetDetail.setInstanceName(_ctx.integerValue("DescribeAssetDetailByUuidResponse.AssetDetail.InstanceName"));
-		assetDetail.setInstanceId(_ctx.integerValue("DescribeAssetDetailByUuidResponse.AssetDetail.InstanceId"));
+		assetDetail.setInstanceName(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.InstanceName"));
+		assetDetail.setInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.InstanceId"));
 		assetDetail.setIp(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Ip"));
 		assetDetail.setUuid(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Uuid"));
 		assetDetail.setAssetType(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.AssetType"));
@@ -51,7 +51,8 @@ public class DescribeAssetDetailByUuidResponseUnmarshaller {
 		assetDetail.setHostName(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.HostName"));
 		assetDetail.setOsName(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.OsName"));
 		assetDetail.setVpcInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.VpcInstanceId"));
-		assetDetail.setOsName1(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.OsName"));
+		assetDetail.setInstanceStatus(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.InstanceStatus"));
+		assetDetail.setCreateTime(_ctx.longValue("DescribeAssetDetailByUuidResponse.AssetDetail.CreateTime"));
 
 		List<String> ipList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAssetDetailByUuidResponse.AssetDetail.IpList.Length"); i++) {

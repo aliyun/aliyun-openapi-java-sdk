@@ -46,6 +46,7 @@ public class DescribeAlarmEventListResponseUnmarshaller {
 			suspEventsItem.setDescription(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Description"));
 			suspEventsItem.setStartTime(_ctx.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].StartTime"));
 			suspEventsItem.setEndTime(_ctx.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].EndTime"));
+			suspEventsItem.setOperateTime(_ctx.longValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].OperateTime"));
 			suspEventsItem.setAlarmEventType(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventType"));
 			suspEventsItem.setSuspiciousEventCount(_ctx.integerValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].SuspiciousEventCount"));
 			suspEventsItem.setUuid(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Uuid"));
@@ -63,6 +64,16 @@ public class DescribeAlarmEventListResponseUnmarshaller {
 			suspEventsItem.setOperateErrorCode(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].OperateErrorCode"));
 			suspEventsItem.setAlarmEventNameOriginal(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AlarmEventNameOriginal"));
 			suspEventsItem.setInstanceId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].InstanceId"));
+			suspEventsItem.setContainHwMode(_ctx.booleanValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].ContainHwMode"));
+			suspEventsItem.setStages(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].Stages"));
+			suspEventsItem.setContainerImageId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].ContainerImageId"));
+			suspEventsItem.setContainerImageName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].ContainerImageName"));
+			suspEventsItem.setContainerId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].ContainerId"));
+			suspEventsItem.setK8sNamespace(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sNamespace"));
+			suspEventsItem.setK8sClusterId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sClusterId"));
+			suspEventsItem.setK8sNodeId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sNodeId"));
+			suspEventsItem.setK8sPodName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sPodName"));
+			suspEventsItem.setK8sNodeName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sNodeName"));
 
 			suspEvents.add(suspEventsItem);
 		}

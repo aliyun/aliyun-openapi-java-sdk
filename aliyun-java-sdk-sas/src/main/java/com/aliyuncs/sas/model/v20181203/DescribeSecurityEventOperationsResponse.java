@@ -53,6 +53,10 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 		private Boolean userCanOperate;
 
+		private List<MarkFieldItem> markField;
+
+		private List<SecurityEventOperation1> markFieldsSource;
+
 		public String getOperationCode() {
 			return this.operationCode;
 		}
@@ -75,6 +79,118 @@ public class DescribeSecurityEventOperationsResponse extends AcsResponse {
 
 		public void setUserCanOperate(Boolean userCanOperate) {
 			this.userCanOperate = userCanOperate;
+		}
+
+		public List<MarkFieldItem> getMarkField() {
+			return this.markField;
+		}
+
+		public void setMarkField(List<MarkFieldItem> markField) {
+			this.markField = markField;
+		}
+
+		public List<SecurityEventOperation1> getMarkFieldsSource() {
+			return this.markFieldsSource;
+		}
+
+		public void setMarkFieldsSource(List<SecurityEventOperation1> markFieldsSource) {
+			this.markFieldsSource = markFieldsSource;
+		}
+
+		public static class MarkFieldItem {
+
+			private String filedName;
+
+			private String filedAliasName;
+
+			private String markMisType;
+
+			private String markMisValue;
+
+			private List<String> supportedMisType;
+
+			public String getFiledName() {
+				return this.filedName;
+			}
+
+			public void setFiledName(String filedName) {
+				this.filedName = filedName;
+			}
+
+			public String getFiledAliasName() {
+				return this.filedAliasName;
+			}
+
+			public void setFiledAliasName(String filedAliasName) {
+				this.filedAliasName = filedAliasName;
+			}
+
+			public String getMarkMisType() {
+				return this.markMisType;
+			}
+
+			public void setMarkMisType(String markMisType) {
+				this.markMisType = markMisType;
+			}
+
+			public String getMarkMisValue() {
+				return this.markMisValue;
+			}
+
+			public void setMarkMisValue(String markMisValue) {
+				this.markMisValue = markMisValue;
+			}
+
+			public List<String> getSupportedMisType() {
+				return this.supportedMisType;
+			}
+
+			public void setSupportedMisType(List<String> supportedMisType) {
+				this.supportedMisType = supportedMisType;
+			}
+		}
+
+		public static class SecurityEventOperation1 {
+
+			private String filedName;
+
+			private String filedAliasName;
+
+			private String markMisValue;
+
+			private List<String> supportedMisType2;
+
+			public String getFiledName() {
+				return this.filedName;
+			}
+
+			public void setFiledName(String filedName) {
+				this.filedName = filedName;
+			}
+
+			public String getFiledAliasName() {
+				return this.filedAliasName;
+			}
+
+			public void setFiledAliasName(String filedAliasName) {
+				this.filedAliasName = filedAliasName;
+			}
+
+			public String getMarkMisValue() {
+				return this.markMisValue;
+			}
+
+			public void setMarkMisValue(String markMisValue) {
+				this.markMisValue = markMisValue;
+			}
+
+			public List<String> getSupportedMisType2() {
+				return this.supportedMisType2;
+			}
+
+			public void setSupportedMisType2(List<String> supportedMisType2) {
+				this.supportedMisType2 = supportedMisType2;
+			}
 		}
 	}
 

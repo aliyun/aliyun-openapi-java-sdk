@@ -55,6 +55,8 @@ public class DescribeAllEntityResponse extends AcsResponse {
 
 		private String uuid;
 
+		private String os;
+
 		private String internetIp;
 
 		private String intranetIp;
@@ -89,6 +91,14 @@ public class DescribeAllEntityResponse extends AcsResponse {
 
 		public void setUuid(String uuid) {
 			this.uuid = uuid;
+		}
+
+		public String getOs() {
+			return this.os;
+		}
+
+		public void setOs(String os) {
+			this.os = os;
 		}
 
 		public String getInternetIp() {

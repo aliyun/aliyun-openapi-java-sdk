@@ -28,6 +28,8 @@ public class DescribePropertyCountResponseUnmarshaller {
 		describePropertyCountResponse.setSoftware(_ctx.integerValue("DescribePropertyCountResponse.Software"));
 		describePropertyCountResponse.setUser(_ctx.integerValue("DescribePropertyCountResponse.User"));
 		describePropertyCountResponse.setCron(_ctx.integerValue("DescribePropertyCountResponse.Cron"));
+		describePropertyCountResponse.setSca(_ctx.integerValue("DescribePropertyCountResponse.Sca"));
+		describePropertyCountResponse.setAutoRun(_ctx.integerValue("DescribePropertyCountResponse.AutoRun"));
 	 
 	 	return describePropertyCountResponse;
 	}

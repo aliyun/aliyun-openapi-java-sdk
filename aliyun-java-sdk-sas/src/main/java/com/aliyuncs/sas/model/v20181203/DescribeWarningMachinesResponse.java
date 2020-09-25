@@ -89,7 +89,11 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 
 		private String uuid;
 
-		private String machineName;
+		private String instanceName;
+
+		private String instanceId;
+
+		private String regionId;
 
 		private String internetIp;
 
@@ -113,12 +117,28 @@ public class DescribeWarningMachinesResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
-		public String getMachineName() {
-			return this.machineName;
+		public String getInstanceName() {
+			return this.instanceName;
 		}
 
-		public void setMachineName(String machineName) {
-			this.machineName = machineName;
+		public void setInstanceName(String instanceName) {
+			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getInternetIp() {

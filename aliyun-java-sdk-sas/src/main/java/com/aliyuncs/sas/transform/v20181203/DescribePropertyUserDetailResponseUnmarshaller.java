@@ -40,6 +40,7 @@ public class DescribePropertyUserDetailResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribePropertyUserDetailResponse.Propertys.Length"); i++) {
 			PropertyUser propertyUser = new PropertyUser();
 			propertyUser.setLastLoginTime(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTime"));
+			propertyUser.setLastLoginTimestamp(_ctx.longValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].LastLoginTimestamp"));
 			propertyUser.setIsRoot(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].IsRoot"));
 			propertyUser.setInstanceName(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].InstanceName"));
 			propertyUser.setAccountsExpirationDate(_ctx.stringValue("DescribePropertyUserDetailResponse.Propertys["+ i +"].AccountsExpirationDate"));

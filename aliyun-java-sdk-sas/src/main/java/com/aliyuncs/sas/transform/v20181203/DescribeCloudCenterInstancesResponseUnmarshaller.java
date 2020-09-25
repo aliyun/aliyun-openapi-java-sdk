@@ -65,6 +65,9 @@ public class DescribeCloudCenterInstancesResponseUnmarshaller {
 			instance.setSafeEventCount(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].SafeEventCount"));
 			instance.setRegionId(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].RegionId"));
 			instance.setGroupId(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].GroupId"));
+			instance.setImportance(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].Importance"));
+			instance.setClientVersion(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].ClientVersion"));
+			instance.setRiskCount(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].RiskCount"));
 
 			instances.add(instance);
 		}

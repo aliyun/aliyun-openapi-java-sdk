@@ -46,6 +46,7 @@ public class DescribeAlarmEventDetailResponseUnmarshaller {
 		data.setAlarmUniqueInfo(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.AlarmUniqueInfo"));
 		data.setDataSource(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.DataSource"));
 		data.setCanCancelFault(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.CanCancelFault"));
+		data.setContainHwMode(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.ContainHwMode"));
 
 		List<CauseDetail> causeDetails = new ArrayList<CauseDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlarmEventDetailResponse.Data.CauseDetails.Length"); i++) {

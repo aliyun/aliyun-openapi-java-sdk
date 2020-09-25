@@ -25,6 +25,8 @@ import com.aliyuncs.sas.Endpoint;
 public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimilarSecurityEventsResponse> {
 	   
 
+	private String markMissParam;
+
 	private Long resourceOwnerId;
 
 	private String sourceIp;
@@ -41,6 +43,17 @@ public class HandleSimilarSecurityEventsRequest extends RpcAcsRequest<HandleSimi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMarkMissParam() {
+		return this.markMissParam;
+	}
+
+	public void setMarkMissParam(String markMissParam) {
+		this.markMissParam = markMissParam;
+		if(markMissParam != null){
+			putQueryParameter("MarkMissParam", markMissParam);
+		}
 	}
 
 	public Long getResourceOwnerId() {

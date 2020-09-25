@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse.WarningSummary;
+import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse.WarningSummary.QuaraFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,8 +37,11 @@ public class DescribeSuspEventsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSuspEventsResponse.SuspEvents.Length"); i++) {
 			WarningSummary warningSummary = new WarningSummary();
 			warningSummary.setLastTime(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].LastTime"));
+			warningSummary.setLastTimeStamp(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].LastTimeStamp"));
 			warningSummary.setOccurrenceTime(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OccurrenceTime"));
+			warningSummary.setOccurrenceTimeStamp(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OccurrenceTimeStamp"));
 			warningSummary.setId(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Id"));
+			warningSummary.setSecurityEventIds(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].SecurityEventIds"));
 			warningSummary.setUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].UniqueInfo"));
 			warningSummary.setInstanceName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InstanceName"));
 			warningSummary.setInternetIp(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InternetIp"));
@@ -49,6 +53,8 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setEventStatus(_ctx.integerValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventStatus"));
 			warningSummary.setDesc(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Desc"));
 			warningSummary.setOperateMsg(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OperateMsg"));
+			warningSummary.setOperateErrorCode(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OperateErrorCode"));
+			warningSummary.setOperateTime(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].OperateTime"));
 			warningSummary.setDataSource(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].DataSource"));
 			warningSummary.setCanBeDealOnLine(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].CanBeDealOnLine"));
 			warningSummary.setSaleVersion(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].SaleVersion"));
@@ -56,6 +62,36 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setAlarmEventName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventName"));
 			warningSummary.setAlarmUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmUniqueInfo"));
 			warningSummary.setAdvanced(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Advanced"));
+			warningSummary.setMarkMisRules(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].MarkMisRules"));
+			warningSummary.setStages(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Stages"));
+			warningSummary.setAlarmEventTypeDisplay(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventTypeDisplay"));
+			warningSummary.setAlarmEventNameDisplay(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AlarmEventNameDisplay"));
+			warningSummary.setCanCancelFault(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].CanCancelFault"));
+			warningSummary.setHasTraceInfo(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].HasTraceInfo"));
+			warningSummary.setAutoBreaking(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AutoBreaking"));
+			warningSummary.setContainHwMode(_ctx.booleanValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].ContainHwMode"));
+			warningSummary.setContainerImageId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].ContainerImageId"));
+			warningSummary.setContainerImageName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].ContainerImageName"));
+			warningSummary.setContainerId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].ContainerId"));
+			warningSummary.setK8sNamespace(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sNamespace"));
+			warningSummary.setK8sClusterId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sClusterId"));
+			warningSummary.setK8sNodeId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sNodeId"));
+			warningSummary.setK8sPodName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sPodName"));
+			warningSummary.setK8sNodeName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sNodeName"));
+
+			List<QuaraFile> details = new ArrayList<QuaraFile>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details.Length"); j++) {
+				QuaraFile quaraFile = new QuaraFile();
+				quaraFile.setName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details["+ j +"].Name"));
+				quaraFile.setNameDisplay(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details["+ j +"].NameDisplay"));
+				quaraFile.setType(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details["+ j +"].Type"));
+				quaraFile.setInfoType(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details["+ j +"].InfoType"));
+				quaraFile.setValue(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details["+ j +"].Value"));
+				quaraFile.setValueDisplay(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details["+ j +"].ValueDisplay"));
+
+				details.add(quaraFile);
+			}
+			warningSummary.setDetails(details);
 
 			suspEvents.add(warningSummary);
 		}

@@ -64,6 +64,12 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer offlineInstanceCount;
 
+		private Integer importantAssetCount;
+
+		private Integer generalAssetCount;
+
+		private Integer testAssetCount;
+
 		public Integer getRiskInstanceCount() {
 			return this.riskInstanceCount;
 		}
@@ -134,6 +140,30 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		public void setOfflineInstanceCount(Integer offlineInstanceCount) {
 			this.offlineInstanceCount = offlineInstanceCount;
+		}
+
+		public Integer getImportantAssetCount() {
+			return this.importantAssetCount;
+		}
+
+		public void setImportantAssetCount(Integer importantAssetCount) {
+			this.importantAssetCount = importantAssetCount;
+		}
+
+		public Integer getGeneralAssetCount() {
+			return this.generalAssetCount;
+		}
+
+		public void setGeneralAssetCount(Integer generalAssetCount) {
+			this.generalAssetCount = generalAssetCount;
+		}
+
+		public Integer getTestAssetCount() {
+			return this.testAssetCount;
+		}
+
+		public void setTestAssetCount(Integer testAssetCount) {
+			this.testAssetCount = testAssetCount;
 		}
 	}
 

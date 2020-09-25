@@ -25,7 +25,15 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulResponse> {
 	   
 
+	private String targetType;
+
+	private Integer minScore;
+
 	private String type;
+
+	private String containerFieldName;
+
+	private String containerFieldValue;
 
 	private Integer pageSize;
 
@@ -36,6 +44,8 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 	private String dealed;
 
 	private Integer currentPage;
+
+	private String clusterId;
 
 	private String aliasName;
 
@@ -51,6 +61,28 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		} catch (Exception e) {}
 	}
 
+	public String getTargetType() {
+		return this.targetType;
+	}
+
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
+	}
+
+	public Integer getMinScore() {
+		return this.minScore;
+	}
+
+	public void setMinScore(Integer minScore) {
+		this.minScore = minScore;
+		if(minScore != null){
+			putQueryParameter("MinScore", minScore.toString());
+		}
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -59,6 +91,28 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getContainerFieldName() {
+		return this.containerFieldName;
+	}
+
+	public void setContainerFieldName(String containerFieldName) {
+		this.containerFieldName = containerFieldName;
+		if(containerFieldName != null){
+			putQueryParameter("ContainerFieldName", containerFieldName);
+		}
+	}
+
+	public String getContainerFieldValue() {
+		return this.containerFieldValue;
+	}
+
+	public void setContainerFieldValue(String containerFieldValue) {
+		this.containerFieldValue = containerFieldValue;
+		if(containerFieldValue != null){
+			putQueryParameter("ContainerFieldValue", containerFieldValue);
 		}
 	}
 
@@ -114,6 +168,17 @@ public class DescribeGroupedVulRequest extends RpcAcsRequest<DescribeGroupedVulR
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

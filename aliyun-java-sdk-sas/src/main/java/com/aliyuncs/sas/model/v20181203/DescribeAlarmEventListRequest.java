@@ -26,13 +26,19 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEventListResponse> {
 	   
 
+	private String targetType;
+
 	private String alarmEventType;
 
 	private String remark;
 
+	private String containerFieldName;
+
 	private String alarmEventName;
 
 	private String sourceIp;
+
+	private String containerFieldValue;
 
 	private String pageSize;
 
@@ -46,6 +52,8 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 
 	private Integer currentPage;
 
+	private String clusterId;
+
 	private List<String> operateErrorCodeLists;
 
 	private String levels;
@@ -56,6 +64,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getTargetType() {
+		return this.targetType;
+	}
+
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
 	}
 
 	public String getAlarmEventType() {
@@ -80,6 +99,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		}
 	}
 
+	public String getContainerFieldName() {
+		return this.containerFieldName;
+	}
+
+	public void setContainerFieldName(String containerFieldName) {
+		this.containerFieldName = containerFieldName;
+		if(containerFieldName != null){
+			putQueryParameter("ContainerFieldName", containerFieldName);
+		}
+	}
+
 	public String getAlarmEventName() {
 		return this.alarmEventName;
 	}
@@ -99,6 +129,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getContainerFieldValue() {
+		return this.containerFieldValue;
+	}
+
+	public void setContainerFieldValue(String containerFieldValue) {
+		this.containerFieldValue = containerFieldValue;
+		if(containerFieldValue != null){
+			putQueryParameter("ContainerFieldValue", containerFieldValue);
 		}
 	}
 
@@ -165,6 +206,17 @@ public class DescribeAlarmEventListRequest extends RpcAcsRequest<DescribeAlarmEv
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

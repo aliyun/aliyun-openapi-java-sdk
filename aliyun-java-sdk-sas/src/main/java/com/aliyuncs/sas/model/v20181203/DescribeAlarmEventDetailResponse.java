@@ -77,6 +77,8 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		private Boolean canCancelFault;
 
+		private Boolean containHwMode;
+
 		private List<CauseDetail> causeDetails;
 
 		public String getInternetIp() {
@@ -197,6 +199,14 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		public void setCanCancelFault(Boolean canCancelFault) {
 			this.canCancelFault = canCancelFault;
+		}
+
+		public Boolean getContainHwMode() {
+			return this.containHwMode;
+		}
+
+		public void setContainHwMode(Boolean containHwMode) {
+			this.containHwMode = containHwMode;
 		}
 
 		public List<CauseDetail> getCauseDetails() {

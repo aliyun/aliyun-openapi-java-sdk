@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.DescribeSecurityEventOperationsResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeSecurityEventOperationsResponse.SecurityEventOperation;
+import com.aliyuncs.sas.model.v20181203.DescribeSecurityEventOperationsResponse.SecurityEventOperation.MarkFieldItem;
+import com.aliyuncs.sas.model.v20181203.DescribeSecurityEventOperationsResponse.SecurityEventOperation.SecurityEventOperation1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,6 +36,41 @@ public class DescribeSecurityEventOperationsResponseUnmarshaller {
 			securityEventOperation.setOperationCode(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].OperationCode"));
 			securityEventOperation.setOperationParams(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].OperationParams"));
 			securityEventOperation.setUserCanOperate(_ctx.booleanValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].UserCanOperate"));
+
+			List<MarkFieldItem> markField = new ArrayList<MarkFieldItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField.Length"); j++) {
+				MarkFieldItem markFieldItem = new MarkFieldItem();
+				markFieldItem.setFiledName(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].FiledName"));
+				markFieldItem.setFiledAliasName(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].FiledAliasName"));
+				markFieldItem.setMarkMisType(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisType"));
+				markFieldItem.setMarkMisValue(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisValue"));
+
+				List<String> supportedMisType = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].SupportedMisType.Length"); k++) {
+					supportedMisType.add(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].SupportedMisType["+ k +"]"));
+				}
+				markFieldItem.setSupportedMisType(supportedMisType);
+
+				markField.add(markFieldItem);
+			}
+			securityEventOperation.setMarkField(markField);
+
+			List<SecurityEventOperation1> markFieldsSource = new ArrayList<SecurityEventOperation1>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource.Length"); j++) {
+				SecurityEventOperation1 securityEventOperation1 = new SecurityEventOperation1();
+				securityEventOperation1.setFiledName(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].FiledName"));
+				securityEventOperation1.setFiledAliasName(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].FiledAliasName"));
+				securityEventOperation1.setMarkMisValue(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].MarkMisValue"));
+
+				List<String> supportedMisType2 = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].SupportedMisType.Length"); k++) {
+					supportedMisType2.add(_ctx.stringValue("DescribeSecurityEventOperationsResponse.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].SupportedMisType["+ k +"]"));
+				}
+				securityEventOperation1.setSupportedMisType2(supportedMisType2);
+
+				markFieldsSource.add(securityEventOperation1);
+			}
+			securityEventOperation.setMarkFieldsSource(markFieldsSource);
 
 			securityEventOperationsResponse.add(securityEventOperation);
 		}

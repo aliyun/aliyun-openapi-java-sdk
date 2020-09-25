@@ -27,6 +27,8 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private String criteria;
 
+	private Integer importance;
+
 	private Boolean noPage;
 
 	private Integer pageSize;
@@ -53,6 +55,17 @@ public class DescribeCloudCenterInstancesRequest extends RpcAcsRequest<DescribeC
 		this.criteria = criteria;
 		if(criteria != null){
 			putQueryParameter("Criteria", criteria);
+		}
+	}
+
+	public Integer getImportance() {
+		return this.importance;
+	}
+
+	public void setImportance(Integer importance) {
+		this.importance = importance;
+		if(importance != null){
+			putQueryParameter("Importance", importance.toString());
 		}
 	}
 

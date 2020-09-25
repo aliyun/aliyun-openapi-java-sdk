@@ -36,6 +36,8 @@ public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCh
 
 	private String assetType;
 
+	private String queryFlag;
+
 	private Long groupId;
 
 	private List<String> itemIdss;
@@ -108,6 +110,17 @@ public class DescribeRiskCheckResultRequest extends RpcAcsRequest<DescribeRiskCh
 		this.assetType = assetType;
 		if(assetType != null){
 			putQueryParameter("AssetType", assetType);
+		}
+	}
+
+	public String getQueryFlag() {
+		return this.queryFlag;
+	}
+
+	public void setQueryFlag(String queryFlag) {
+		this.queryFlag = queryFlag;
+		if(queryFlag != null){
+			putQueryParameter("QueryFlag", queryFlag);
 		}
 	}
 

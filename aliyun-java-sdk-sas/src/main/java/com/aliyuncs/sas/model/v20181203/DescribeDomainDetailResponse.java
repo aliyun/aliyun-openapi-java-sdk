@@ -31,6 +31,10 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 
 	private String rootDomain;
 
+	private Integer vulCount;
+
+	private Integer alarmCount;
+
 	private List<DomainDetailItem> domainDetailItems;
 
 	public String getRequestId() {
@@ -55,6 +59,22 @@ public class DescribeDomainDetailResponse extends AcsResponse {
 
 	public void setRootDomain(String rootDomain) {
 		this.rootDomain = rootDomain;
+	}
+
+	public Integer getVulCount() {
+		return this.vulCount;
+	}
+
+	public void setVulCount(Integer vulCount) {
+		this.vulCount = vulCount;
+	}
+
+	public Integer getAlarmCount() {
+		return this.alarmCount;
+	}
+
+	public void setAlarmCount(Integer alarmCount) {
+		this.alarmCount = alarmCount;
 	}
 
 	public List<DomainDetailItem> getDomainDetailItems() {

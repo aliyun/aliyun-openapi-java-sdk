@@ -35,6 +35,9 @@ public class DescribeFieldStatisticsResponseUnmarshaller {
 		groupedFields.setGroupCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.GroupCount"));
 		groupedFields.setNotRunningStatusCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.NotRunningStatusCount"));
 		groupedFields.setOfflineInstanceCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.OfflineInstanceCount"));
+		groupedFields.setImportantAssetCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.ImportantAssetCount"));
+		groupedFields.setGeneralAssetCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.GeneralAssetCount"));
+		groupedFields.setTestAssetCount(_ctx.integerValue("DescribeFieldStatisticsResponse.GroupedFields.TestAssetCount"));
 		describeFieldStatisticsResponse.setGroupedFields(groupedFields);
 	 
 	 	return describeFieldStatisticsResponse;

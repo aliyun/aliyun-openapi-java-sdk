@@ -42,6 +42,7 @@ public class DescribeInstanceStatisticsResponseUnmarshaller {
 			dataItem.setSysNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].SysNum"));
 			dataItem.setCmsNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].CmsNum"));
 			dataItem.setAppNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].AppNum"));
+			dataItem.setScaNum(_ctx.integerValue("DescribeInstanceStatisticsResponse.Data["+ i +"].ScaNum"));
 
 			data.add(dataItem);
 		}

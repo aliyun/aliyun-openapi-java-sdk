@@ -69,6 +69,8 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		private Integer appNum;
 
+		private Integer scaNum;
+
 		public String getUuid() {
 			return this.uuid;
 		}
@@ -155,6 +157,14 @@ public class DescribeInstanceStatisticsResponse extends AcsResponse {
 
 		public void setAppNum(Integer appNum) {
 			this.appNum = appNum;
+		}
+
+		public Integer getScaNum() {
+			return this.scaNum;
+		}
+
+		public void setScaNum(Integer scaNum) {
+			this.scaNum = scaNum;
 		}
 	}
 

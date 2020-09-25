@@ -89,9 +89,15 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private String lastTime;
 
+		private Long lastTimeStamp;
+
 		private String occurrenceTime;
 
+		private Long occurrenceTimeStamp;
+
 		private Long id;
+
+		private String securityEventIds;
 
 		private String uniqueInfo;
 
@@ -115,6 +121,10 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private String operateMsg;
 
+		private String operateErrorCode;
+
+		private Long operateTime;
+
 		private String dataSource;
 
 		private Boolean canBeDealOnLine;
@@ -129,12 +139,54 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private Boolean advanced;
 
+		private String markMisRules;
+
+		private String stages;
+
+		private String alarmEventTypeDisplay;
+
+		private String alarmEventNameDisplay;
+
+		private Boolean canCancelFault;
+
+		private Boolean hasTraceInfo;
+
+		private Boolean autoBreaking;
+
+		private Boolean containHwMode;
+
+		private String containerImageId;
+
+		private String containerImageName;
+
+		private String containerId;
+
+		private String k8sNamespace;
+
+		private String k8sClusterId;
+
+		private String k8sNodeId;
+
+		private String k8sPodName;
+
+		private String k8sNodeName;
+
+		private List<QuaraFile> details;
+
 		public String getLastTime() {
 			return this.lastTime;
 		}
 
 		public void setLastTime(String lastTime) {
 			this.lastTime = lastTime;
+		}
+
+		public Long getLastTimeStamp() {
+			return this.lastTimeStamp;
+		}
+
+		public void setLastTimeStamp(Long lastTimeStamp) {
+			this.lastTimeStamp = lastTimeStamp;
 		}
 
 		public String getOccurrenceTime() {
@@ -145,12 +197,28 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.occurrenceTime = occurrenceTime;
 		}
 
+		public Long getOccurrenceTimeStamp() {
+			return this.occurrenceTimeStamp;
+		}
+
+		public void setOccurrenceTimeStamp(Long occurrenceTimeStamp) {
+			this.occurrenceTimeStamp = occurrenceTimeStamp;
+		}
+
 		public Long getId() {
 			return this.id;
 		}
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+
+		public String getSecurityEventIds() {
+			return this.securityEventIds;
+		}
+
+		public void setSecurityEventIds(String securityEventIds) {
+			this.securityEventIds = securityEventIds;
 		}
 
 		public String getUniqueInfo() {
@@ -241,6 +309,22 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.operateMsg = operateMsg;
 		}
 
+		public String getOperateErrorCode() {
+			return this.operateErrorCode;
+		}
+
+		public void setOperateErrorCode(String operateErrorCode) {
+			this.operateErrorCode = operateErrorCode;
+		}
+
+		public Long getOperateTime() {
+			return this.operateTime;
+		}
+
+		public void setOperateTime(Long operateTime) {
+			this.operateTime = operateTime;
+		}
+
 		public String getDataSource() {
 			return this.dataSource;
 		}
@@ -295,6 +379,205 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setAdvanced(Boolean advanced) {
 			this.advanced = advanced;
+		}
+
+		public String getMarkMisRules() {
+			return this.markMisRules;
+		}
+
+		public void setMarkMisRules(String markMisRules) {
+			this.markMisRules = markMisRules;
+		}
+
+		public String getStages() {
+			return this.stages;
+		}
+
+		public void setStages(String stages) {
+			this.stages = stages;
+		}
+
+		public String getAlarmEventTypeDisplay() {
+			return this.alarmEventTypeDisplay;
+		}
+
+		public void setAlarmEventTypeDisplay(String alarmEventTypeDisplay) {
+			this.alarmEventTypeDisplay = alarmEventTypeDisplay;
+		}
+
+		public String getAlarmEventNameDisplay() {
+			return this.alarmEventNameDisplay;
+		}
+
+		public void setAlarmEventNameDisplay(String alarmEventNameDisplay) {
+			this.alarmEventNameDisplay = alarmEventNameDisplay;
+		}
+
+		public Boolean getCanCancelFault() {
+			return this.canCancelFault;
+		}
+
+		public void setCanCancelFault(Boolean canCancelFault) {
+			this.canCancelFault = canCancelFault;
+		}
+
+		public Boolean getHasTraceInfo() {
+			return this.hasTraceInfo;
+		}
+
+		public void setHasTraceInfo(Boolean hasTraceInfo) {
+			this.hasTraceInfo = hasTraceInfo;
+		}
+
+		public Boolean getAutoBreaking() {
+			return this.autoBreaking;
+		}
+
+		public void setAutoBreaking(Boolean autoBreaking) {
+			this.autoBreaking = autoBreaking;
+		}
+
+		public Boolean getContainHwMode() {
+			return this.containHwMode;
+		}
+
+		public void setContainHwMode(Boolean containHwMode) {
+			this.containHwMode = containHwMode;
+		}
+
+		public String getContainerImageId() {
+			return this.containerImageId;
+		}
+
+		public void setContainerImageId(String containerImageId) {
+			this.containerImageId = containerImageId;
+		}
+
+		public String getContainerImageName() {
+			return this.containerImageName;
+		}
+
+		public void setContainerImageName(String containerImageName) {
+			this.containerImageName = containerImageName;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getK8sNamespace() {
+			return this.k8sNamespace;
+		}
+
+		public void setK8sNamespace(String k8sNamespace) {
+			this.k8sNamespace = k8sNamespace;
+		}
+
+		public String getK8sClusterId() {
+			return this.k8sClusterId;
+		}
+
+		public void setK8sClusterId(String k8sClusterId) {
+			this.k8sClusterId = k8sClusterId;
+		}
+
+		public String getK8sNodeId() {
+			return this.k8sNodeId;
+		}
+
+		public void setK8sNodeId(String k8sNodeId) {
+			this.k8sNodeId = k8sNodeId;
+		}
+
+		public String getK8sPodName() {
+			return this.k8sPodName;
+		}
+
+		public void setK8sPodName(String k8sPodName) {
+			this.k8sPodName = k8sPodName;
+		}
+
+		public String getK8sNodeName() {
+			return this.k8sNodeName;
+		}
+
+		public void setK8sNodeName(String k8sNodeName) {
+			this.k8sNodeName = k8sNodeName;
+		}
+
+		public List<QuaraFile> getDetails() {
+			return this.details;
+		}
+
+		public void setDetails(List<QuaraFile> details) {
+			this.details = details;
+		}
+
+		public static class QuaraFile {
+
+			private String name;
+
+			private String nameDisplay;
+
+			private String type;
+
+			private String infoType;
+
+			private String value;
+
+			private String valueDisplay;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getNameDisplay() {
+				return this.nameDisplay;
+			}
+
+			public void setNameDisplay(String nameDisplay) {
+				this.nameDisplay = nameDisplay;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getInfoType() {
+				return this.infoType;
+			}
+
+			public void setInfoType(String infoType) {
+				this.infoType = infoType;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
+			public String getValueDisplay() {
+				return this.valueDisplay;
+			}
+
+			public void setValueDisplay(String valueDisplay) {
+				this.valueDisplay = valueDisplay;
+			}
 		}
 	}
 

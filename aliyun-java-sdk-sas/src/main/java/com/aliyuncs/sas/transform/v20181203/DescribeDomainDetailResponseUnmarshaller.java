@@ -29,6 +29,8 @@ public class DescribeDomainDetailResponseUnmarshaller {
 		describeDomainDetailResponse.setRequestId(_ctx.stringValue("DescribeDomainDetailResponse.RequestId"));
 		describeDomainDetailResponse.setDomain(_ctx.stringValue("DescribeDomainDetailResponse.Domain"));
 		describeDomainDetailResponse.setRootDomain(_ctx.stringValue("DescribeDomainDetailResponse.RootDomain"));
+		describeDomainDetailResponse.setVulCount(_ctx.integerValue("DescribeDomainDetailResponse.VulCount"));
+		describeDomainDetailResponse.setAlarmCount(_ctx.integerValue("DescribeDomainDetailResponse.AlarmCount"));
 
 		List<DomainDetailItem> domainDetailItems = new ArrayList<DomainDetailItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainDetailResponse.DomainDetailItems.Length"); i++) {

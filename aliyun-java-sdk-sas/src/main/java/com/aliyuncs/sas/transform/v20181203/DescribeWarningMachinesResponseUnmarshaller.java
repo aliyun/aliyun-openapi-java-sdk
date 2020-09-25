@@ -36,7 +36,9 @@ public class DescribeWarningMachinesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeWarningMachinesResponse.WarningMachines.Length"); i++) {
 			WarningMachine warningMachine = new WarningMachine();
 			warningMachine.setUuid(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].Uuid"));
-			warningMachine.setMachineName(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].MachineName"));
+			warningMachine.setInstanceName(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceName"));
+			warningMachine.setInstanceId(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InstanceId"));
+			warningMachine.setRegionId(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].RegionId"));
 			warningMachine.setInternetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].InternetIp"));
 			warningMachine.setIntranetIp(_ctx.stringValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].IntranetIp"));
 			warningMachine.setPassCount(_ctx.integerValue("DescribeWarningMachinesResponse.WarningMachines["+ i +"].PassCount"));

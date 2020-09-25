@@ -117,6 +117,12 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		private String groupId;
 
+		private Integer importance;
+
+		private String clientVersion;
+
+		private String riskCount;
+
 		public String getInternetIp() {
 			return this.internetIp;
 		}
@@ -315,6 +321,30 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
+		}
+
+		public Integer getImportance() {
+			return this.importance;
+		}
+
+		public void setImportance(Integer importance) {
+			this.importance = importance;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
+		}
+
+		public String getRiskCount() {
+			return this.riskCount;
+		}
+
+		public void setRiskCount(String riskCount) {
+			this.riskCount = riskCount;
 		}
 	}
 
