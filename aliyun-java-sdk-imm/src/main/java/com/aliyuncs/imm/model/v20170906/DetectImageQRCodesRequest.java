@@ -28,7 +28,7 @@ public class DetectImageQRCodesRequest extends RpcAcsRequest<DetectImageQRCodesR
 
 	private String imageUri;
 	public DetectImageQRCodesRequest() {
-		super("imm", "2017-09-06", "DetectImageQRCodes");
+		super("imm", "2017-09-06", "DetectImageQRCodes", "imm");
 		setMethod(MethodType.POST);
 	}
 

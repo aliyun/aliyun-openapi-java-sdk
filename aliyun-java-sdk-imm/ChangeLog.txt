@@ -1,3 +1,6 @@
+2020-09-27 Version: 1.19.0
+- Support Open Service API.
+
 2020-09-04 Version: 1.18.0
 - Add GetImageQuality API.
 - Add more info as parameters to Images related APIs.

@@ -34,7 +34,7 @@ public class CreateVideoAnalyseTaskRequest extends RpcAcsRequest<CreateVideoAnal
 
 	private String tgtUri;
 	public CreateVideoAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoAnalyseTask");
+		super("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class DeleteSetRequest extends RpcAcsRequest<DeleteSetResponse> {
 
 	private String setId;
 	public DeleteSetRequest() {
-		super("imm", "2017-09-06", "DeleteSet");
+		super("imm", "2017-09-06", "DeleteSet", "imm");
 		setMethod(MethodType.POST);
 	}
 

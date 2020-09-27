@@ -38,7 +38,7 @@ public class CreateVideoAbstractTaskRequest extends RpcAcsRequest<CreateVideoAbs
 
 	private String targetClipsUri;
 	public CreateVideoAbstractTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoAbstractTask");
+		super("imm", "2017-09-06", "CreateVideoAbstractTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 
 	private String setId;
 	public DeleteImageRequest() {
-		super("imm", "2017-09-06", "DeleteImage");
+		super("imm", "2017-09-06", "DeleteImage", "imm");
 		setMethod(MethodType.POST);
 	}
 

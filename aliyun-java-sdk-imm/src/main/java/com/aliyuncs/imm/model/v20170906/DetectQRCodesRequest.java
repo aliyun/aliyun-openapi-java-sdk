@@ -28,7 +28,7 @@ public class DetectQRCodesRequest extends RpcAcsRequest<DetectQRCodesResponse> {
 
 	private String srcUris;
 	public DetectQRCodesRequest() {
-		super("imm", "2017-09-06", "DetectQRCodes");
+		super("imm", "2017-09-06", "DetectQRCodes", "imm");
 		setMethod(MethodType.POST);
 	}
 

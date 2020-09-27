@@ -15,20 +15,18 @@
 package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imm.transform.v20170906.GetDRMLicenseResponseUnmarshaller;
+import com.aliyuncs.imm.transform.v20170906.OpenImmServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDRMLicenseResponse extends AcsResponse {
+public class OpenImmServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dRMData;
-
-	private String deviceInfo;
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +36,17 @@ public class GetDRMLicenseResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDRMData() {
-		return this.dRMData;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setDRMData(String dRMData) {
-		this.dRMData = dRMData;
-	}
-
-	public String getDeviceInfo() {
-		return this.deviceInfo;
-	}
-
-	public void setDeviceInfo(String deviceInfo) {
-		this.deviceInfo = deviceInfo;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public GetDRMLicenseResponse getInstance(UnmarshallerContext context) {
-		return	GetDRMLicenseResponseUnmarshaller.unmarshall(this, context);
+	public OpenImmServiceResponse getInstance(UnmarshallerContext context) {
+		return	OpenImmServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

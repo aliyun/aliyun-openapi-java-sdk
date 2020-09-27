@@ -30,7 +30,7 @@ public class GetImageCroppingSuggestionsRequest extends RpcAcsRequest<GetImageCr
 
 	private String imageUri;
 	public GetImageCroppingSuggestionsRequest() {
-		super("imm", "2017-09-06", "GetImageCroppingSuggestions");
+		super("imm", "2017-09-06", "GetImageCroppingSuggestions", "imm");
 		setMethod(MethodType.POST);
 	}
 

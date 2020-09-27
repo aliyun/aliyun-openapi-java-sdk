@@ -28,7 +28,7 @@ public class DetectImageLogosRequest extends RpcAcsRequest<DetectImageLogosRespo
 
 	private String imageUri;
 	public DetectImageLogosRequest() {
-		super("imm", "2017-09-06", "DetectImageLogos");
+		super("imm", "2017-09-06", "DetectImageLogos", "imm");
 		setMethod(MethodType.POST);
 	}
 

@@ -54,7 +54,7 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 
 	private String setId;
 	public IndexImageRequest() {
-		super("imm", "2017-09-06", "IndexImage");
+		super("imm", "2017-09-06", "IndexImage", "imm");
 		setMethod(MethodType.POST);
 	}
 

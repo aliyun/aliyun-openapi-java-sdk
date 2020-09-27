@@ -32,7 +32,7 @@ public class CreateMediaComplexTaskRequest extends RpcAcsRequest<CreateMediaComp
 
 	private String parameters;
 	public CreateMediaComplexTaskRequest() {
-		super("imm", "2017-09-06", "CreateMediaComplexTask");
+		super("imm", "2017-09-06", "CreateMediaComplexTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

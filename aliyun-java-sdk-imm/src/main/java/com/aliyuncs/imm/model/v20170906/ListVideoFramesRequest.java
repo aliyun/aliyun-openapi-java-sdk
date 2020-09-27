@@ -32,7 +32,7 @@ public class ListVideoFramesRequest extends RpcAcsRequest<ListVideoFramesRespons
 
 	private String setId;
 	public ListVideoFramesRequest() {
-		super("imm", "2017-09-06", "ListVideoFrames");
+		super("imm", "2017-09-06", "ListVideoFrames", "imm");
 		setMethod(MethodType.POST);
 	}
 

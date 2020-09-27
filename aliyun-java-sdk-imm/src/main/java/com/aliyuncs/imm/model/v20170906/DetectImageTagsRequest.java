@@ -28,7 +28,7 @@ public class DetectImageTagsRequest extends RpcAcsRequest<DetectImageTagsRespons
 
 	private String imageUri;
 	public DetectImageTagsRequest() {
-		super("imm", "2017-09-06", "DetectImageTags");
+		super("imm", "2017-09-06", "DetectImageTags", "imm");
 		setMethod(MethodType.POST);
 	}
 

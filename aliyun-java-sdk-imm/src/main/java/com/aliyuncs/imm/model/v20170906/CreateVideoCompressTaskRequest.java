@@ -38,7 +38,7 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 
 	private String videoUri;
 	public CreateVideoCompressTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoCompressTask");
+		super("imm", "2017-09-06", "CreateVideoCompressTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

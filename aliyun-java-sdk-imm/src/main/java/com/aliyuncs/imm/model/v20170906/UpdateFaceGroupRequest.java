@@ -48,7 +48,7 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 
 	private String groupCoverFaceId;
 	public UpdateFaceGroupRequest() {
-		super("imm", "2017-09-06", "UpdateFaceGroup");
+		super("imm", "2017-09-06", "UpdateFaceGroup", "imm");
 		setMethod(MethodType.POST);
 	}
 

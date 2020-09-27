@@ -84,10 +84,10 @@ public class GetVideoResponseUnmarshaller {
 		List<VideoTagsItem> videoTags = new ArrayList<VideoTagsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetVideoResponse.VideoTags.Length"); i++) {
 			VideoTagsItem videoTagsItem = new VideoTagsItem();
-			videoTagsItem.setVideoTagName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagName"));
-			videoTagsItem.setVideoTagEnName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].VideoTagEnName"));
-			videoTagsItem.setVideoTagConfidence(_ctx.floatValue("GetVideoResponse.VideoTags["+ i +"].VideoTagConfidence"));
-			videoTagsItem.setVideoTagLevel(_ctx.integerValue("GetVideoResponse.VideoTags["+ i +"].VideoTagLevel"));
+			videoTagsItem.setTagName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].TagName"));
+			videoTagsItem.setParentTagName(_ctx.stringValue("GetVideoResponse.VideoTags["+ i +"].ParentTagName"));
+			videoTagsItem.setTagConfidence(_ctx.floatValue("GetVideoResponse.VideoTags["+ i +"].TagConfidence"));
+			videoTagsItem.setTagLevel(_ctx.integerValue("GetVideoResponse.VideoTags["+ i +"].TagLevel"));
 
 			videoTags.add(videoTagsItem);
 		}

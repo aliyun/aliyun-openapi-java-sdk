@@ -28,7 +28,7 @@ public class StopStreamAnalyseTaskRequest extends RpcAcsRequest<StopStreamAnalys
 
 	private String taskId;
 	public StopStreamAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "StopStreamAnalyseTask");
+		super("imm", "2017-09-06", "StopStreamAnalyseTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

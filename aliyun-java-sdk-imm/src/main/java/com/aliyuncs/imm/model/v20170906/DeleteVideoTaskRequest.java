@@ -30,7 +30,7 @@ public class DeleteVideoTaskRequest extends RpcAcsRequest<DeleteVideoTaskRespons
 
 	private String taskType;
 	public DeleteVideoTaskRequest() {
-		super("imm", "2017-09-06", "DeleteVideoTask");
+		super("imm", "2017-09-06", "DeleteVideoTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

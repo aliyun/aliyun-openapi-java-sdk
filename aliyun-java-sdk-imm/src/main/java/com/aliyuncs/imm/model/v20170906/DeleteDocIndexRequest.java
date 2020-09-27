@@ -30,7 +30,7 @@ public class DeleteDocIndexRequest extends RpcAcsRequest<DeleteDocIndexResponse>
 
 	private String set;
 	public DeleteDocIndexRequest() {
-		super("imm", "2017-09-06", "DeleteDocIndex");
+		super("imm", "2017-09-06", "DeleteDocIndex", "imm");
 		setMethod(MethodType.POST);
 	}
 

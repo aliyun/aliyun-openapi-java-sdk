@@ -30,7 +30,7 @@ public class CreateSetRequest extends RpcAcsRequest<CreateSetResponse> {
 
 	private String setId;
 	public CreateSetRequest() {
-		super("imm", "2017-09-06", "CreateSet");
+		super("imm", "2017-09-06", "CreateSet", "imm");
 		setMethod(MethodType.POST);
 	}
 

@@ -44,7 +44,7 @@ public class GetOfficeEditURLRequest extends RpcAcsRequest<GetOfficeEditURLRespo
 
 	private String userName;
 	public GetOfficeEditURLRequest() {
-		super("imm", "2017-09-06", "GetOfficeEditURL");
+		super("imm", "2017-09-06", "GetOfficeEditURL", "imm");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class GetImageJobRequest extends RpcAcsRequest<GetImageJobResponse> {
 
 	private String jobType;
 	public GetImageJobRequest() {
-		super("imm", "2017-09-06", "GetImageJob");
+		super("imm", "2017-09-06", "GetImageJob", "imm");
 		setMethod(MethodType.POST);
 	}
 

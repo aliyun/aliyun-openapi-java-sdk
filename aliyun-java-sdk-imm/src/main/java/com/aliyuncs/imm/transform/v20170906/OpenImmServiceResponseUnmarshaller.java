@@ -14,18 +14,17 @@
 
 package com.aliyuncs.imm.transform.v20170906;
 
-import com.aliyuncs.imm.model.v20170906.GetDRMLicenseResponse;
+import com.aliyuncs.imm.model.v20170906.OpenImmServiceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetDRMLicenseResponseUnmarshaller {
+public class OpenImmServiceResponseUnmarshaller {
 
-	public static GetDRMLicenseResponse unmarshall(GetDRMLicenseResponse getDRMLicenseResponse, UnmarshallerContext _ctx) {
+	public static OpenImmServiceResponse unmarshall(OpenImmServiceResponse openImmServiceResponse, UnmarshallerContext _ctx) {
 		
-		getDRMLicenseResponse.setRequestId(_ctx.stringValue("GetDRMLicenseResponse.RequestId"));
-		getDRMLicenseResponse.setDRMData(_ctx.stringValue("GetDRMLicenseResponse.DRMData"));
-		getDRMLicenseResponse.setDeviceInfo(_ctx.stringValue("GetDRMLicenseResponse.DeviceInfo"));
+		openImmServiceResponse.setRequestId(_ctx.stringValue("OpenImmServiceResponse.RequestId"));
+		openImmServiceResponse.setOrderId(_ctx.stringValue("OpenImmServiceResponse.OrderId"));
 	 
-	 	return getDRMLicenseResponse;
+	 	return openImmServiceResponse;
 	}
 }

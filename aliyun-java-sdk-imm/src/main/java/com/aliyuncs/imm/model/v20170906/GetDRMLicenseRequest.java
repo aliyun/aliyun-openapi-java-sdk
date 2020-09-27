@@ -30,7 +30,7 @@ public class GetDRMLicenseRequest extends RpcAcsRequest<GetDRMLicenseResponse> {
 
 	private String dRMLicense;
 	public GetDRMLicenseRequest() {
-		super("imm", "2017-09-06", "GetDRMLicense");
+		super("imm", "2017-09-06", "GetDRMLicense", "imm");
 		setMethod(MethodType.POST);
 	}
 

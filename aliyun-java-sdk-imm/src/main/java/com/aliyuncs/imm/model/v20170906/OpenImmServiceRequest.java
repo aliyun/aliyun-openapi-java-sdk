@@ -21,42 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetOfficeConversionTaskRequest extends RpcAcsRequest<GetOfficeConversionTaskResponse> {
+public class OpenImmServiceRequest extends RpcAcsRequest<OpenImmServiceResponse> {
 	   
 
-	private String project;
-
-	private String taskId;
-	public GetOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "GetOfficeConversionTask", "imm");
+	private Long ownerId;
+	public OpenImmServiceRequest() {
+		super("imm", "2017-09-06", "OpenImmService", "imm");
 		setMethod(MethodType.POST);
 	}
 
-	public String getProject() {
-		return this.project;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
-		if(project != null){
-			putQueryParameter("Project", project);
-		}
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetOfficeConversionTaskResponse> getResponseClass() {
-		return GetOfficeConversionTaskResponse.class;
+	public Class<OpenImmServiceResponse> getResponseClass() {
+		return OpenImmServiceResponse.class;
 	}
 
 }

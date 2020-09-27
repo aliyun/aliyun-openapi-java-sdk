@@ -359,34 +359,44 @@ public class ListVideosResponse extends AcsResponse {
 
 		public static class VideoTagsItem {
 
-			private String videoTagName;
+			private String tagName;
 
-			private String videoTagEnName;
+			private String parentTagName;
 
-			private Float videoTagConfidence;
+			private Float tagConfidence;
 
-			public String getVideoTagName() {
-				return this.videoTagName;
+			private Integer tagLevel;
+
+			public String getTagName() {
+				return this.tagName;
 			}
 
-			public void setVideoTagName(String videoTagName) {
-				this.videoTagName = videoTagName;
+			public void setTagName(String tagName) {
+				this.tagName = tagName;
 			}
 
-			public String getVideoTagEnName() {
-				return this.videoTagEnName;
+			public String getParentTagName() {
+				return this.parentTagName;
 			}
 
-			public void setVideoTagEnName(String videoTagEnName) {
-				this.videoTagEnName = videoTagEnName;
+			public void setParentTagName(String parentTagName) {
+				this.parentTagName = parentTagName;
 			}
 
-			public Float getVideoTagConfidence() {
-				return this.videoTagConfidence;
+			public Float getTagConfidence() {
+				return this.tagConfidence;
 			}
 
-			public void setVideoTagConfidence(Float videoTagConfidence) {
-				this.videoTagConfidence = videoTagConfidence;
+			public void setTagConfidence(Float tagConfidence) {
+				this.tagConfidence = tagConfidence;
+			}
+
+			public Integer getTagLevel() {
+				return this.tagLevel;
+			}
+
+			public void setTagLevel(Integer tagLevel) {
+				this.tagLevel = tagLevel;
 			}
 		}
 

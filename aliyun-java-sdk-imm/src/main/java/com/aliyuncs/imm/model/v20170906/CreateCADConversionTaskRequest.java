@@ -54,7 +54,7 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 
 	private String tgtUri;
 	public CreateCADConversionTaskRequest() {
-		super("imm", "2017-09-06", "CreateCADConversionTask");
+		super("imm", "2017-09-06", "CreateCADConversionTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

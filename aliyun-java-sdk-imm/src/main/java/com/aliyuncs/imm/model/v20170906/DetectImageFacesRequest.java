@@ -28,7 +28,7 @@ public class DetectImageFacesRequest extends RpcAcsRequest<DetectImageFacesRespo
 
 	private String imageUri;
 	public DetectImageFacesRequest() {
-		super("imm", "2017-09-06", "DetectImageFaces");
+		super("imm", "2017-09-06", "DetectImageFaces", "imm");
 		setMethod(MethodType.POST);
 	}
 

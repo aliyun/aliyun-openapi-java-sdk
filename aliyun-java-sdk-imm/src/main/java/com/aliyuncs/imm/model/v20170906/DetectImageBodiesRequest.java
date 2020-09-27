@@ -28,7 +28,7 @@ public class DetectImageBodiesRequest extends RpcAcsRequest<DetectImageBodiesRes
 
 	private String imageUri;
 	public DetectImageBodiesRequest() {
-		super("imm", "2017-09-06", "DetectImageBodies");
+		super("imm", "2017-09-06", "DetectImageBodies", "imm");
 		setMethod(MethodType.POST);
 	}
 

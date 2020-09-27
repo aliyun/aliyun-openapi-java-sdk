@@ -26,7 +26,7 @@ public class GetProjectRequest extends RpcAcsRequest<GetProjectResponse> {
 
 	private String project;
 	public GetProjectRequest() {
-		super("imm", "2017-09-06", "GetProject");
+		super("imm", "2017-09-06", "GetProject", "imm");
 		setMethod(MethodType.POST);
 	}
 

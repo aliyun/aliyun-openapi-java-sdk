@@ -30,7 +30,7 @@ public class GetImageRequest extends RpcAcsRequest<GetImageResponse> {
 
 	private String setId;
 	public GetImageRequest() {
-		super("imm", "2017-09-06", "GetImage");
+		super("imm", "2017-09-06", "GetImage", "imm");
 		setMethod(MethodType.POST);
 	}
 

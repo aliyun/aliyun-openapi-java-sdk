@@ -40,7 +40,7 @@ public class EncodeBlindWatermarkRequest extends RpcAcsRequest<EncodeBlindWaterm
 
 	private String imageUri;
 	public EncodeBlindWatermarkRequest() {
-		super("imm", "2017-09-06", "EncodeBlindWatermark");
+		super("imm", "2017-09-06", "EncodeBlindWatermark", "imm");
 		setMethod(MethodType.POST);
 	}
 

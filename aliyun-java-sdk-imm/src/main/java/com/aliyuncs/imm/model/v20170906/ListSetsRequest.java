@@ -28,7 +28,7 @@ public class ListSetsRequest extends RpcAcsRequest<ListSetsResponse> {
 
 	private String marker;
 	public ListSetsRequest() {
-		super("imm", "2017-09-06", "ListSets");
+		super("imm", "2017-09-06", "ListSets", "imm");
 		setMethod(MethodType.POST);
 	}
 

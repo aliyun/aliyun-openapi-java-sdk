@@ -46,7 +46,7 @@ public class IndexVideoRequest extends RpcAcsRequest<IndexVideoResponse> {
 
 	private String tgtUri;
 	public IndexVideoRequest() {
-		super("imm", "2017-09-06", "IndexVideo");
+		super("imm", "2017-09-06", "IndexVideo", "imm");
 		setMethod(MethodType.POST);
 	}
 

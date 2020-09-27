@@ -36,7 +36,7 @@ public class CompareImageFacesRequest extends RpcAcsRequest<CompareImageFacesRes
 
 	private String setId;
 	public CompareImageFacesRequest() {
-		super("imm", "2017-09-06", "CompareImageFaces");
+		super("imm", "2017-09-06", "CompareImageFaces", "imm");
 		setMethod(MethodType.POST);
 	}
 

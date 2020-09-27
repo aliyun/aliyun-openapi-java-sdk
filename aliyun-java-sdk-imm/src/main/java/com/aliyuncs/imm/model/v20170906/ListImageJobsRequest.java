@@ -32,7 +32,7 @@ public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
 
 	private String marker;
 	public ListImageJobsRequest() {
-		super("imm", "2017-09-06", "ListImageJobs");
+		super("imm", "2017-09-06", "ListImageJobs", "imm");
 		setMethod(MethodType.POST);
 	}
 

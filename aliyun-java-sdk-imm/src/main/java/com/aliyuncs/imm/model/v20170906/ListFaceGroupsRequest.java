@@ -50,7 +50,7 @@ public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse>
 
 	private String remarksCQuery;
 	public ListFaceGroupsRequest() {
-		super("imm", "2017-09-06", "ListFaceGroups");
+		super("imm", "2017-09-06", "ListFaceGroups", "imm");
 		setMethod(MethodType.POST);
 	}
 

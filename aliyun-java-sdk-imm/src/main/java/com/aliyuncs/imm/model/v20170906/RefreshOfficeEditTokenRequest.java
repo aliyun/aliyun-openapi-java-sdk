@@ -30,7 +30,7 @@ public class RefreshOfficeEditTokenRequest extends RpcAcsRequest<RefreshOfficeEd
 
 	private String refreshToken;
 	public RefreshOfficeEditTokenRequest() {
-		super("imm", "2017-09-06", "RefreshOfficeEditToken");
+		super("imm", "2017-09-06", "RefreshOfficeEditToken", "imm");
 		setMethod(MethodType.POST);
 	}
 

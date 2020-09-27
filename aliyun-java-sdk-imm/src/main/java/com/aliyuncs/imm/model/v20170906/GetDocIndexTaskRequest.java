@@ -28,7 +28,7 @@ public class GetDocIndexTaskRequest extends RpcAcsRequest<GetDocIndexTaskRespons
 
 	private String taskId;
 	public GetDocIndexTaskRequest() {
-		super("imm", "2017-09-06", "GetDocIndexTask");
+		super("imm", "2017-09-06", "GetDocIndexTask", "imm");
 		setMethod(MethodType.POST);
 	}
 

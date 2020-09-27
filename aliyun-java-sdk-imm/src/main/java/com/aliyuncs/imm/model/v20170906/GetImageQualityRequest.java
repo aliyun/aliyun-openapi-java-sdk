@@ -28,7 +28,7 @@ public class GetImageQualityRequest extends RpcAcsRequest<GetImageQualityRespons
 
 	private String imageUri;
 	public GetImageQualityRequest() {
-		super("imm", "2017-09-06", "GetImageQuality");
+		super("imm", "2017-09-06", "GetImageQuality", "imm");
 		setMethod(MethodType.POST);
 	}
 
