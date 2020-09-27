@@ -1,3 +1,6 @@
+2020-09-27 Version: 1.0.9
+- Get agent info realtime.
+
 2020-09-24 Version: 1.0.9
 - Support Conference Call.
 

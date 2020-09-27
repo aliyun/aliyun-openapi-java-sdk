@@ -38,7 +38,7 @@ public class UpdateAgentRequest extends RpcAcsRequest<UpdateAgentResponse> {
 
 	private List<Long> skillGroupIdLists;
 	public UpdateAgentRequest() {
-		super("aiccs", "2019-10-15", "UpdateAgent", "aiccs");
+		super("aiccs", "2019-10-15", "UpdateAgent", "aiccs-service");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

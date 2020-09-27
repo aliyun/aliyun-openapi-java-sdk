@@ -31,7 +31,7 @@ public class InsertTaskDetailRequest extends RpcAcsRequest<InsertTaskDetailRespo
 
 	private String callInfos;
 	public InsertTaskDetailRequest() {
-		super("aiccs", "2019-10-15", "InsertTaskDetail", "aiccs");
+		super("aiccs", "2019-10-15", "InsertTaskDetail", "aiccs-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

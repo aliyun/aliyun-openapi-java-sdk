@@ -31,7 +31,7 @@ public class GenerateWebSocketSignRequest extends RpcAcsRequest<GenerateWebSocke
 
 	private String accountName;
 	public GenerateWebSocketSignRequest() {
-		super("aiccs", "2019-10-15", "GenerateWebSocketSign", "aiccs");
+		super("aiccs", "2019-10-15", "GenerateWebSocketSign", "aiccs-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

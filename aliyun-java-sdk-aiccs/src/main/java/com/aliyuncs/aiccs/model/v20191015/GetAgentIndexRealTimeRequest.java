@@ -15,6 +15,7 @@
 package com.aliyuncs.aiccs.model.v20191015;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.aiccs.Endpoint;
 
@@ -22,23 +23,38 @@ import com.aliyuncs.aiccs.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsResponse> {
+public class GetAgentIndexRealTimeRequest extends RpcAcsRequest<GetAgentIndexRealTimeResponse> {
 	   
+
+	private List<Long> depIdss;
 
 	private String instanceId;
 
-	private String clientToken;
-
-	private Integer pageNo;
+	private List<Long> groupIdss;
 
 	private Integer pageSize;
-	public QuerySkillGroupsRequest() {
-		super("aiccs", "2019-10-15", "QuerySkillGroups", "aiccs-service");
+
+	private Integer currentPage;
+	public GetAgentIndexRealTimeRequest() {
+		super("aiccs", "2019-10-15", "GetAgentIndexRealTime", "aiccs-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<Long> getDepIdss() {
+		return this.depIdss;
+	}
+
+	public void setDepIdss(List<Long> depIdss) {
+		this.depIdss = depIdss;	
+		if (depIdss != null) {
+			for (int i = 0; i < depIdss.size(); i++) {
+				putQueryParameter("DepIds." + (i + 1) , depIdss.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceId() {
@@ -52,26 +68,17 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public List<Long> getGroupIdss() {
+		return this.groupIdss;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
+	public void setGroupIdss(List<Long> groupIdss) {
+		this.groupIdss = groupIdss;	
+		if (groupIdss != null) {
+			for (int i = 0; i < groupIdss.size(); i++) {
+				putQueryParameter("GroupIds." + (i + 1) , groupIdss.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageSize() {
@@ -85,9 +92,20 @@ public class QuerySkillGroupsRequest extends RpcAcsRequest<QuerySkillGroupsRespo
 		}
 	}
 
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	@Override
-	public Class<QuerySkillGroupsResponse> getResponseClass() {
-		return QuerySkillGroupsResponse.class;
+	public Class<GetAgentIndexRealTimeResponse> getResponseClass() {
+		return GetAgentIndexRealTimeResponse.class;
 	}
 
 }

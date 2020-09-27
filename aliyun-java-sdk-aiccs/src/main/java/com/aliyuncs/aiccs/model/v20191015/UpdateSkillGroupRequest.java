@@ -37,7 +37,7 @@ public class UpdateSkillGroupRequest extends RpcAcsRequest<UpdateSkillGroupRespo
 
 	private String description;
 	public UpdateSkillGroupRequest() {
-		super("aiccs", "2019-10-15", "UpdateSkillGroup", "aiccs");
+		super("aiccs", "2019-10-15", "UpdateSkillGroup", "aiccs-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
