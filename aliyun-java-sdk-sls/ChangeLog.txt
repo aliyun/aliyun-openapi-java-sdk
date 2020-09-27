@@ -1,3 +1,6 @@
+2020-09-27 Version: 1.0.9
+- ResourceOrchestration.
+
 2020-08-24 Version: 1.0.8
 - OpenSlsService and GetSlsService support RAM subaccount.
 

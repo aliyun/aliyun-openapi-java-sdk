@@ -31,7 +31,11 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 
 	private String resourceQuota;
 
+	private String variableMap;
+
 	private Integer tTL;
+
+	private String clientIp;
 
 	private String region;
 
@@ -82,6 +86,17 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 		}
 	}
 
+	public String getVariableMap() {
+		return this.variableMap;
+	}
+
+	public void setVariableMap(String variableMap) {
+		this.variableMap = variableMap;
+		if(variableMap != null){
+			putQueryParameter("VariableMap", variableMap);
+		}
+	}
+
 	public Integer getTTL() {
 		return this.tTL;
 	}
@@ -90,6 +105,17 @@ public class AnalyzeProductLogRequest extends RpcAcsRequest<AnalyzeProductLogRes
 		this.tTL = tTL;
 		if(tTL != null){
 			putQueryParameter("TTL", tTL.toString());
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putQueryParameter("ClientIp", clientIp);
 		}
 	}
 

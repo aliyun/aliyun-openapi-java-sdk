@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-sls</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.8</version>
+  <version>1.0.9</version>
   <name>aliyun-java-sdk-sls</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
