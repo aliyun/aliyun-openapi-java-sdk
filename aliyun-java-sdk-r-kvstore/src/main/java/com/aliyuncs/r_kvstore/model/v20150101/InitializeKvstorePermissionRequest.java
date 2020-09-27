@@ -22,32 +22,22 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
+public class InitializeKvstorePermissionRequest extends RpcAcsRequest<InitializeKvstorePermissionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
-
 	private String securityToken;
 
-	private String engine;
-
-	private String instanceChargeType;
+	private String serviceName;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String instanceId;
-
-	private String zoneId;
-
-	private String orderType;
-	public DescribeAvailableResourceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa");
+	public InitializeKvstorePermissionRequest() {
+		super("R-kvstore", "2015-01-01", "InitializeKvstorePermission", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,17 +56,6 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -88,25 +67,14 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public String getServiceName() {
+		return this.serviceName;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+		if(serviceName != null){
+			putQueryParameter("ServiceName", serviceName);
 		}
 	}
 
@@ -143,42 +111,9 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putQueryParameter("OrderType", orderType);
-		}
-	}
-
 	@Override
-	public Class<DescribeAvailableResourceResponse> getResponseClass() {
-		return DescribeAvailableResourceResponse.class;
+	public Class<InitializeKvstorePermissionResponse> getResponseClass() {
+		return InitializeKvstorePermissionResponse.class;
 	}
 
 }

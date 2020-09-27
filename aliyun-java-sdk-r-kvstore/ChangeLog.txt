@@ -1,3 +1,6 @@
+2020-09-27 Version: 2.7.0
+- DescribeAvailableResource support list available resource for modify instance.
+
 2020-09-22 Version: 2.6.2
 - DescribePrice update amount type to string.
 
