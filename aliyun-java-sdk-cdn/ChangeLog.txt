@@ -1,3 +1,6 @@
+2020-09-27 Version: 3.4.8
+- Update domain API.
+
 2020-09-27 Version: 3.4.7
 - Update domain API.
 
