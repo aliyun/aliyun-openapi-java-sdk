@@ -155,6 +155,12 @@ public class DescribeUsersResponse extends AcsResponse {
 
 		private String userType;
 
+		private String ownerId;
+
+		private String bid;
+
+		private List<DingTalkInfo> dingTalkInfos;
+
 		public String getStores() {
 			return this.stores;
 		}
@@ -185,6 +191,53 @@ public class DescribeUsersResponse extends AcsResponse {
 
 		public void setUserType(String userType) {
 			this.userType = userType;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getBid() {
+			return this.bid;
+		}
+
+		public void setBid(String bid) {
+			this.bid = bid;
+		}
+
+		public List<DingTalkInfo> getDingTalkInfos() {
+			return this.dingTalkInfos;
+		}
+
+		public void setDingTalkInfos(List<DingTalkInfo> dingTalkInfos) {
+			this.dingTalkInfos = dingTalkInfos;
+		}
+
+		public static class DingTalkInfo {
+
+			private String dingTalkCompanyId;
+
+			private String dingTalkUserId;
+
+			public String getDingTalkCompanyId() {
+				return this.dingTalkCompanyId;
+			}
+
+			public void setDingTalkCompanyId(String dingTalkCompanyId) {
+				this.dingTalkCompanyId = dingTalkCompanyId;
+			}
+
+			public String getDingTalkUserId() {
+				return this.dingTalkUserId;
+			}
+
+			public void setDingTalkUserId(String dingTalkUserId) {
+				this.dingTalkUserId = dingTalkUserId;
+			}
 		}
 	}
 

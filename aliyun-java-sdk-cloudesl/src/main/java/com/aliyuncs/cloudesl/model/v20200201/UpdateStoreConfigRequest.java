@@ -25,6 +25,8 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigResponse> {
 	   
 
+	private String extraParams;
+
 	private Boolean enableNotification;
 
 	private String notificationWebHook;
@@ -39,6 +41,17 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
+		}
 	}
 
 	public Boolean getEnableNotification() {

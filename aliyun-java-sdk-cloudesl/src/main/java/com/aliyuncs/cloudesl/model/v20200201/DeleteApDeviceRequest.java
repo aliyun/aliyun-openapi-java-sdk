@@ -25,6 +25,8 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class DeleteApDeviceRequest extends RpcAcsRequest<DeleteApDeviceResponse> {
 	   
 
+	private String extraParams;
+
 	private String apMac;
 
 	private String storeId;
@@ -35,6 +37,17 @@ public class DeleteApDeviceRequest extends RpcAcsRequest<DeleteApDeviceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
+		}
 	}
 
 	public String getApMac() {

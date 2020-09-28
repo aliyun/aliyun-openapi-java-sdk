@@ -14,16 +14,15 @@
 
 package com.aliyuncs.cloudesl.model.v20200201;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudesl.transform.v20200201.GetUserResponseUnmarshaller;
+import com.aliyuncs.cloudesl.transform.v20200201.UpdateUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetUserResponse extends AcsResponse {
+public class UpdateUserResponse extends AcsResponse {
 
 	private String errorMessage;
 
@@ -40,8 +39,6 @@ public class GetUserResponse extends AcsResponse {
 	private String requestId;
 
 	private Boolean success;
-
-	private User user;
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -107,113 +104,9 @@ public class GetUserResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public User getUser() {
-		return this.user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public static class User {
-
-		private String stores;
-
-		private String userName;
-
-		private String userId;
-
-		private String userType;
-
-		private String ownerId;
-
-		private String bid;
-
-		private List<DingTalkInfo> dingTalkInfos;
-
-		public String getStores() {
-			return this.stores;
-		}
-
-		public void setStores(String stores) {
-			this.stores = stores;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getUserType() {
-			return this.userType;
-		}
-
-		public void setUserType(String userType) {
-			this.userType = userType;
-		}
-
-		public String getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(String ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public String getBid() {
-			return this.bid;
-		}
-
-		public void setBid(String bid) {
-			this.bid = bid;
-		}
-
-		public List<DingTalkInfo> getDingTalkInfos() {
-			return this.dingTalkInfos;
-		}
-
-		public void setDingTalkInfos(List<DingTalkInfo> dingTalkInfos) {
-			this.dingTalkInfos = dingTalkInfos;
-		}
-
-		public static class DingTalkInfo {
-
-			private String dingTalkCompanyId;
-
-			private String dingTalkUserId;
-
-			public String getDingTalkCompanyId() {
-				return this.dingTalkCompanyId;
-			}
-
-			public void setDingTalkCompanyId(String dingTalkCompanyId) {
-				this.dingTalkCompanyId = dingTalkCompanyId;
-			}
-
-			public String getDingTalkUserId() {
-				return this.dingTalkUserId;
-			}
-
-			public void setDingTalkUserId(String dingTalkUserId) {
-				this.dingTalkUserId = dingTalkUserId;
-			}
-		}
-	}
-
 	@Override
-	public GetUserResponse getInstance(UnmarshallerContext context) {
-		return	GetUserResponseUnmarshaller.unmarshall(this, context);
+	public UpdateUserResponse getInstance(UnmarshallerContext context) {
+		return	UpdateUserResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

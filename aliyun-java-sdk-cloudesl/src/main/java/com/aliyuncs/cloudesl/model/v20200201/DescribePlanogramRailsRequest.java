@@ -25,17 +25,19 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class DescribePlanogramRailsRequest extends RpcAcsRequest<DescribePlanogramRailsResponse> {
 	   
 
+	private String extraParams;
+
 	private String storeId;
 
 	private Integer layer;
 
 	private Integer pageNumber;
 
+	private Integer pageSize;
+
 	private String shelf;
 
 	private String railCode;
-
-	private Integer pageSize;
 	public DescribePlanogramRailsRequest() {
 		super("cloudesl", "2020-02-01", "DescribePlanogramRails", "cloudesl");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class DescribePlanogramRailsRequest extends RpcAcsRequest<DescribePlanogr
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
+		}
 	}
 
 	public String getStoreId() {
@@ -78,6 +91,17 @@ public class DescribePlanogramRailsRequest extends RpcAcsRequest<DescribePlanogr
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getShelf() {
 		return this.shelf;
 	}
@@ -97,17 +121,6 @@ public class DescribePlanogramRailsRequest extends RpcAcsRequest<DescribePlanogr
 		this.railCode = railCode;
 		if(railCode != null){
 			putBodyParameter("RailCode", railCode);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

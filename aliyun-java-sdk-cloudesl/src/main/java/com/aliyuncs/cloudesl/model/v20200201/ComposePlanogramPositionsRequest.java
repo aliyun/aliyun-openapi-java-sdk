@@ -28,6 +28,8 @@ public class ComposePlanogramPositionsRequest extends RpcAcsRequest<ComposePlano
 
 	private String actionType;
 
+	private String extraParams;
+
 	private String storeId;
 
 	private Integer layer;
@@ -56,6 +58,17 @@ public class ComposePlanogramPositionsRequest extends RpcAcsRequest<ComposePlano
 		this.actionType = actionType;
 		if(actionType != null){
 			putBodyParameter("ActionType", actionType);
+		}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
 		}
 	}
 

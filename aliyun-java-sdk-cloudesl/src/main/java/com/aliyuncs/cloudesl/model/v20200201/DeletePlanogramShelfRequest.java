@@ -25,6 +25,8 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class DeletePlanogramShelfRequest extends RpcAcsRequest<DeletePlanogramShelfResponse> {
 	   
 
+	private String extraParams;
+
 	private Boolean beAutoRefresh;
 
 	private String storeId;
@@ -37,6 +39,17 @@ public class DeletePlanogramShelfRequest extends RpcAcsRequest<DeletePlanogramSh
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
+		}
 	}
 
 	public Boolean getBeAutoRefresh() {

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cloudesl.model.v20200201.DescribeUsersResponse;
 import com.aliyuncs.cloudesl.model.v20200201.DescribeUsersResponse.UserInfo;
+import com.aliyuncs.cloudesl.model.v20200201.DescribeUsersResponse.UserInfo.DingTalkInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -45,6 +46,18 @@ public class DescribeUsersResponseUnmarshaller {
 			userInfo.setUserName(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].UserName"));
 			userInfo.setUserId(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].UserId"));
 			userInfo.setUserType(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].UserType"));
+			userInfo.setOwnerId(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].OwnerId"));
+			userInfo.setBid(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].Bid"));
+
+			List<DingTalkInfo> dingTalkInfos = new ArrayList<DingTalkInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeUsersResponse.Users["+ i +"].DingTalkInfos.Length"); j++) {
+				DingTalkInfo dingTalkInfo = new DingTalkInfo();
+				dingTalkInfo.setDingTalkCompanyId(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].DingTalkInfos["+ j +"].DingTalkCompanyId"));
+				dingTalkInfo.setDingTalkUserId(_ctx.stringValue("DescribeUsersResponse.Users["+ i +"].DingTalkInfos["+ j +"].DingTalkUserId"));
+
+				dingTalkInfos.add(dingTalkInfo);
+			}
+			userInfo.setDingTalkInfos(dingTalkInfos);
 
 			users.add(userInfo);
 		}

@@ -25,17 +25,19 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 	   
 
-	private String column;
+	private String extraParams;
 
 	private String storeId;
 
 	private Integer layer;
 
-	private String shelf;
-
 	private String eslBarCode;
 
 	private String itemBarCode;
+
+	private String column;
+
+	private String shelf;
 	public BindEslDeviceRequest() {
 		super("cloudesl", "2020-02-01", "BindEslDevice", "cloudesl");
 		setMethod(MethodType.POST);
@@ -45,14 +47,14 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getColumn() {
-		return this.column;
+	public String getExtraParams() {
+		return this.extraParams;
 	}
 
-	public void setColumn(String column) {
-		this.column = column;
-		if(column != null){
-			putBodyParameter("Column", column);
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
 		}
 	}
 
@@ -78,17 +80,6 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		}
 	}
 
-	public String getShelf() {
-		return this.shelf;
-	}
-
-	public void setShelf(String shelf) {
-		this.shelf = shelf;
-		if(shelf != null){
-			putBodyParameter("Shelf", shelf);
-		}
-	}
-
 	public String getEslBarCode() {
 		return this.eslBarCode;
 	}
@@ -108,6 +99,28 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 		this.itemBarCode = itemBarCode;
 		if(itemBarCode != null){
 			putBodyParameter("ItemBarCode", itemBarCode);
+		}
+	}
+
+	public String getColumn() {
+		return this.column;
+	}
+
+	public void setColumn(String column) {
+		this.column = column;
+		if(column != null){
+			putBodyParameter("Column", column);
+		}
+	}
+
+	public String getShelf() {
+		return this.shelf;
+	}
+
+	public void setShelf(String shelf) {
+		this.shelf = shelf;
+		if(shelf != null){
+			putBodyParameter("Shelf", shelf);
 		}
 	}
 

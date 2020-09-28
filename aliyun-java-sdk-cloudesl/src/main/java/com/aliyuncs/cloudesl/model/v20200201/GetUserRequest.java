@@ -25,6 +25,8 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 	   
 
+	private String extraParams;
+
 	private String userId;
 	public GetUserRequest() {
 		super("cloudesl", "2020-02-01", "GetUser", "cloudesl");
@@ -33,6 +35,17 @@ public class GetUserRequest extends RpcAcsRequest<GetUserResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
+		}
 	}
 
 	public String getUserId() {

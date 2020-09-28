@@ -22,30 +22,23 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeClientPackageRequest extends RpcAcsRequest<DescribeClientPackageResponse> {
+public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 	   
 
-	private String clientType;
-
 	private String extraParams;
-	public DescribeClientPackageRequest() {
-		super("cloudesl", "2020-02-01", "DescribeClientPackage", "cloudesl");
+
+	private String dingTalkUserId;
+
+	private String userId;
+
+	private String dingTalkCompanyId;
+	public UpdateUserRequest() {
+		super("cloudesl", "2020-02-01", "UpdateUser", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientType() {
-		return this.clientType;
-	}
-
-	public void setClientType(String clientType) {
-		this.clientType = clientType;
-		if(clientType != null){
-			putBodyParameter("ClientType", clientType);
-		}
 	}
 
 	public String getExtraParams() {
@@ -59,9 +52,42 @@ public class DescribeClientPackageRequest extends RpcAcsRequest<DescribeClientPa
 		}
 	}
 
+	public String getDingTalkUserId() {
+		return this.dingTalkUserId;
+	}
+
+	public void setDingTalkUserId(String dingTalkUserId) {
+		this.dingTalkUserId = dingTalkUserId;
+		if(dingTalkUserId != null){
+			putBodyParameter("DingTalkUserId", dingTalkUserId);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getDingTalkCompanyId() {
+		return this.dingTalkCompanyId;
+	}
+
+	public void setDingTalkCompanyId(String dingTalkCompanyId) {
+		this.dingTalkCompanyId = dingTalkCompanyId;
+		if(dingTalkCompanyId != null){
+			putBodyParameter("DingTalkCompanyId", dingTalkCompanyId);
+		}
+	}
+
 	@Override
-	public Class<DescribeClientPackageResponse> getResponseClass() {
-		return DescribeClientPackageResponse.class;
+	public Class<UpdateUserResponse> getResponseClass() {
+		return UpdateUserResponse.class;
 	}
 
 }

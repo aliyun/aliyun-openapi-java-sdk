@@ -25,7 +25,7 @@ import com.aliyuncs.cloudesl.Endpoint;
 public class DescribeBindersRequest extends RpcAcsRequest<DescribeBindersResponse> {
 	   
 
-	private String itemTitle;
+	private String extraParams;
 
 	private String storeId;
 
@@ -36,6 +36,8 @@ public class DescribeBindersRequest extends RpcAcsRequest<DescribeBindersRespons
 	private Integer pageSize;
 
 	private String itemBarCode;
+
+	private String itemTitle;
 	public DescribeBindersRequest() {
 		super("cloudesl", "2020-02-01", "DescribeBinders", "cloudesl");
 		setMethod(MethodType.POST);
@@ -45,14 +47,14 @@ public class DescribeBindersRequest extends RpcAcsRequest<DescribeBindersRespons
 		} catch (Exception e) {}
 	}
 
-	public String getItemTitle() {
-		return this.itemTitle;
+	public String getExtraParams() {
+		return this.extraParams;
 	}
 
-	public void setItemTitle(String itemTitle) {
-		this.itemTitle = itemTitle;
-		if(itemTitle != null){
-			putBodyParameter("ItemTitle", itemTitle);
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
 		}
 	}
 
@@ -108,6 +110,17 @@ public class DescribeBindersRequest extends RpcAcsRequest<DescribeBindersRespons
 		this.itemBarCode = itemBarCode;
 		if(itemBarCode != null){
 			putBodyParameter("ItemBarCode", itemBarCode);
+		}
+	}
+
+	public String getItemTitle() {
+		return this.itemTitle;
+	}
+
+	public void setItemTitle(String itemTitle) {
+		this.itemTitle = itemTitle;
+		if(itemTitle != null){
+			putBodyParameter("ItemTitle", itemTitle);
 		}
 	}
 
