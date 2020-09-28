@@ -22,18 +22,16 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResizeNodeCountRequest extends RpcAcsRequest<ResizeNodeCountResponse> {
+public class ResizeMultiZoneClusterDiskSizeRequest extends RpcAcsRequest<ResizeMultiZoneClusterDiskSizeResponse> {
 	   
 
 	private String clusterId;
 
-	private String vSwitchId;
+	private Integer logDiskSize;
 
-	private Integer nodeCount;
-
-	private String zoneId;
-	public ResizeNodeCountRequest() {
-		super("HBase", "2019-01-01", "ResizeNodeCount", "hbase");
+	private Integer coreDiskSize;
+	public ResizeMultiZoneClusterDiskSizeRequest() {
+		super("HBase", "2019-01-01", "ResizeMultiZoneClusterDiskSize", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,42 +50,31 @@ public class ResizeNodeCountRequest extends RpcAcsRequest<ResizeNodeCountRespons
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public Integer getLogDiskSize() {
+		return this.logDiskSize;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setLogDiskSize(Integer logDiskSize) {
+		this.logDiskSize = logDiskSize;
+		if(logDiskSize != null){
+			putQueryParameter("LogDiskSize", logDiskSize.toString());
 		}
 	}
 
-	public Integer getNodeCount() {
-		return this.nodeCount;
+	public Integer getCoreDiskSize() {
+		return this.coreDiskSize;
 	}
 
-	public void setNodeCount(Integer nodeCount) {
-		this.nodeCount = nodeCount;
-		if(nodeCount != null){
-			putQueryParameter("NodeCount", nodeCount.toString());
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setCoreDiskSize(Integer coreDiskSize) {
+		this.coreDiskSize = coreDiskSize;
+		if(coreDiskSize != null){
+			putQueryParameter("CoreDiskSize", coreDiskSize.toString());
 		}
 	}
 
 	@Override
-	public Class<ResizeNodeCountResponse> getResponseClass() {
-		return ResizeNodeCountResponse.class;
+	public Class<ResizeMultiZoneClusterDiskSizeResponse> getResponseClass() {
+		return ResizeMultiZoneClusterDiskSizeResponse.class;
 	}
 
 }
