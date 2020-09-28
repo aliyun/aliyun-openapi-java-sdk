@@ -59,7 +59,6 @@ public class DescribeScdnServiceResponseUnmarshaller {
 		describeScdnServiceResponse.setCurrentElasticProtectionValue(_ctx.stringValue("DescribeScdnServiceResponse.CurrentElasticProtectionValue"));
 		describeScdnServiceResponse.setPriceType(_ctx.stringValue("DescribeScdnServiceResponse.PriceType"));
 		describeScdnServiceResponse.setPricingCycle(_ctx.stringValue("DescribeScdnServiceResponse.PricingCycle"));
-		describeScdnServiceResponse.setChangingChargeType1(_ctx.stringValue("DescribeScdnServiceResponse.ChangingChargeType"));
 
 		List<LockReason> operationLocks = new ArrayList<LockReason>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnServiceResponse.OperationLocks.Length"); i++) {

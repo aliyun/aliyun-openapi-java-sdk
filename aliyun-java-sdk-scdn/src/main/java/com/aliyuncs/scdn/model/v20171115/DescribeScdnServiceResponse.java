@@ -91,8 +91,6 @@ public class DescribeScdnServiceResponse extends AcsResponse {
 
 	private String pricingCycle;
 
-	private String changingChargeType1;
-
 	private List<LockReason> operationLocks;
 
 	public String getRequestId() {
@@ -357,14 +355,6 @@ public class DescribeScdnServiceResponse extends AcsResponse {
 
 	public void setPricingCycle(String pricingCycle) {
 		this.pricingCycle = pricingCycle;
-	}
-
-	public String getChangingChargeType1() {
-		return this.changingChargeType1;
-	}
-
-	public void setChangingChargeType1(String changingChargeType1) {
-		this.changingChargeType1 = changingChargeType1;
 	}
 
 	public List<LockReason> getOperationLocks() {
