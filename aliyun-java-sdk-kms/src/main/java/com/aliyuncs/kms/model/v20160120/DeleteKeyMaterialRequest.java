@@ -28,7 +28,7 @@ public class DeleteKeyMaterialRequest extends RpcAcsRequest<DeleteKeyMaterialRes
 
 	private String keyId;
 	public DeleteKeyMaterialRequest() {
-		super("Kms", "2016-01-20", "DeleteKeyMaterial", "kms-service");
+		super("Kms", "2016-01-20", "DeleteKeyMaterial", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

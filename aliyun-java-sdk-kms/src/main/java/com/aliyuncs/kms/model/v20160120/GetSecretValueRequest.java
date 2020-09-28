@@ -32,7 +32,7 @@ public class GetSecretValueRequest extends RpcAcsRequest<GetSecretValueResponse>
 
 	private String secretName;
 	public GetSecretValueRequest() {
-		super("Kms", "2016-01-20", "GetSecretValue", "kms-service");
+		super("Kms", "2016-01-20", "GetSecretValue", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

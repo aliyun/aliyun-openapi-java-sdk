@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListKeysResponse extends AcsResponse {
 
-	private Integer totalCount;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String requestId;
 
+	private Integer totalCount;
+
 	private List<Key> keys;
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -67,6 +59,14 @@ public class ListKeysResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public List<Key> getKeys() {
 		return this.keys;
 	}
@@ -77,17 +77,9 @@ public class ListKeysResponse extends AcsResponse {
 
 	public static class Key {
 
-		private String keyId;
-
 		private String keyArn;
 
-		public String getKeyId() {
-			return this.keyId;
-		}
-
-		public void setKeyId(String keyId) {
-			this.keyId = keyId;
-		}
+		private String keyId;
 
 		public String getKeyArn() {
 			return this.keyArn;
@@ -95,6 +87,14 @@ public class ListKeysResponse extends AcsResponse {
 
 		public void setKeyArn(String keyArn) {
 			this.keyArn = keyArn;
+		}
+
+		public String getKeyId() {
+			return this.keyId;
+		}
+
+		public void setKeyId(String keyId) {
+			this.keyId = keyId;
 		}
 	}
 

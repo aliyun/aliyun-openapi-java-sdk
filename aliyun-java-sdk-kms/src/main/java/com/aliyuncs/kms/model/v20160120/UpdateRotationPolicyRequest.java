@@ -32,7 +32,7 @@ public class UpdateRotationPolicyRequest extends RpcAcsRequest<UpdateRotationPol
 
 	private Boolean enableAutomaticRotation;
 	public UpdateRotationPolicyRequest() {
-		super("Kms", "2016-01-20", "UpdateRotationPolicy", "kms-service");
+		super("Kms", "2016-01-20", "UpdateRotationPolicy", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

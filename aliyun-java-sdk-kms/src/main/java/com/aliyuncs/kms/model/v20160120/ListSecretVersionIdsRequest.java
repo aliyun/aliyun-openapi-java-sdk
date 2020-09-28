@@ -34,7 +34,7 @@ public class ListSecretVersionIdsRequest extends RpcAcsRequest<ListSecretVersion
 
 	private Integer pageNumber;
 	public ListSecretVersionIdsRequest() {
-		super("Kms", "2016-01-20", "ListSecretVersionIds", "kms-service");
+		super("Kms", "2016-01-20", "ListSecretVersionIds", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

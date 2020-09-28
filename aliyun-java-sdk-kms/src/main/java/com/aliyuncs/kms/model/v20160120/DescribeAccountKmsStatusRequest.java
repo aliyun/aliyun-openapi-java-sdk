@@ -23,12 +23,10 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
+public class DescribeAccountKmsStatusRequest extends RpcAcsRequest<DescribeAccountKmsStatusResponse> {
 	   
-
-	private String keyId;
-	public EnableKeyRequest() {
-		super("Kms", "2016-01-20", "EnableKey", "kms");
+	public DescribeAccountKmsStatusRequest() {
+		super("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -37,20 +35,9 @@ public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
-		}
-	}
-
 	@Override
-	public Class<EnableKeyResponse> getResponseClass() {
-		return EnableKeyResponse.class;
+	public Class<DescribeAccountKmsStatusResponse> getResponseClass() {
+		return DescribeAccountKmsStatusResponse.class;
 	}
 
 }

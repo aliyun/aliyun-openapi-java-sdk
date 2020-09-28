@@ -28,11 +28,13 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 
 	private Integer pageSize;
 
+	private String filters;
+
 	private String fetchTags;
 
 	private Integer pageNumber;
 	public ListSecretsRequest() {
-		super("Kms", "2016-01-20", "ListSecrets", "kms-service");
+		super("Kms", "2016-01-20", "ListSecrets", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -49,6 +51,17 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(String filters) {
+		this.filters = filters;
+		if(filters != null){
+			putQueryParameter("Filters", filters);
 		}
 	}
 

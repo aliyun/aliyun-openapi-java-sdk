@@ -28,7 +28,7 @@ public class ListResourceTagsRequest extends RpcAcsRequest<ListResourceTagsRespo
 
 	private String keyId;
 	public ListResourceTagsRequest() {
-		super("Kms", "2016-01-20", "ListResourceTags", "kms-service");
+		super("Kms", "2016-01-20", "ListResourceTags", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

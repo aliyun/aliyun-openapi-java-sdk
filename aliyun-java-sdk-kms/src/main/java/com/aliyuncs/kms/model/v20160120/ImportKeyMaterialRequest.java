@@ -34,7 +34,7 @@ public class ImportKeyMaterialRequest extends RpcAcsRequest<ImportKeyMaterialRes
 
 	private String keyId;
 	public ImportKeyMaterialRequest() {
-		super("Kms", "2016-01-20", "ImportKeyMaterial", "kms-service");
+		super("Kms", "2016-01-20", "ImportKeyMaterial", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

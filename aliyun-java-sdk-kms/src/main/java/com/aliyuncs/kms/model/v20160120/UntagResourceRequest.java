@@ -32,7 +32,7 @@ public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 
 	private String secretName;
 	public UntagResourceRequest() {
-		super("Kms", "2016-01-20", "UntagResource", "kms-service");
+		super("Kms", "2016-01-20", "UntagResource", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

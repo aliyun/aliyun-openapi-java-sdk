@@ -35,10 +35,10 @@ public class ListSecretsResponseUnmarshaller {
 		List<Secret> secretList = new ArrayList<Secret>();
 		for (int i = 0; i < _ctx.lengthValue("ListSecretsResponse.SecretList.Length"); i++) {
 			Secret secret = new Secret();
-			secret.setSecretName(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].SecretName"));
 			secret.setCreateTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].CreateTime"));
-			secret.setUpdateTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].UpdateTime"));
 			secret.setPlannedDeleteTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].PlannedDeleteTime"));
+			secret.setSecretName(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].SecretName"));
+			secret.setUpdateTime(_ctx.stringValue("ListSecretsResponse.SecretList["+ i +"].UpdateTime"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("ListSecretsResponse.SecretList["+ i +"].Tags.Length"); j++) {

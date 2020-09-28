@@ -28,9 +28,11 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 
 	private Integer pageSize;
 
+	private String filters;
+
 	private Integer pageNumber;
 	public ListKeysRequest() {
-		super("Kms", "2016-01-20", "ListKeys", "kms-service");
+		super("Kms", "2016-01-20", "ListKeys", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -47,6 +49,17 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getFilters() {
+		return this.filters;
+	}
+
+	public void setFilters(String filters) {
+		this.filters = filters;
+		if(filters != null){
+			putQueryParameter("Filters", filters);
 		}
 	}
 

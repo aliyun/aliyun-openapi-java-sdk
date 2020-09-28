@@ -30,7 +30,7 @@ public class UpdateKeyDescriptionRequest extends RpcAcsRequest<UpdateKeyDescript
 
 	private String description;
 	public UpdateKeyDescriptionRequest() {
-		super("Kms", "2016-01-20", "UpdateKeyDescription", "kms-service");
+		super("Kms", "2016-01-20", "UpdateKeyDescription", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

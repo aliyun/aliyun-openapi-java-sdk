@@ -1,3 +1,8 @@
+2020-09-28 Version: 2.12.0
+- Support filtering keys and secrets.
+- Support opening KMS service and describing service status by API.
+- Add a prefix limitation for SecretName.
+
 2020-07-23 Version: 2.11.0
 - Add GenerateAndExportDataKey, ExportDataKey, ReEncrypt api.
 

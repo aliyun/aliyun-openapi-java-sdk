@@ -30,7 +30,7 @@ public class DescribeKeyVersionRequest extends RpcAcsRequest<DescribeKeyVersionR
 
 	private String keyId;
 	public DescribeKeyVersionRequest() {
-		super("Kms", "2016-01-20", "DescribeKeyVersion", "kms-service");
+		super("Kms", "2016-01-20", "DescribeKeyVersion", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -32,7 +32,7 @@ public class GetParametersForImportRequest extends RpcAcsRequest<GetParametersFo
 
 	private String wrappingKeySpec;
 	public GetParametersForImportRequest() {
-		super("Kms", "2016-01-20", "GetParametersForImport", "kms-service");
+		super("Kms", "2016-01-20", "GetParametersForImport", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

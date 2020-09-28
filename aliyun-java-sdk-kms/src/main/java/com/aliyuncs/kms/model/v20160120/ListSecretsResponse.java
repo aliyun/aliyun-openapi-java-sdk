@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSecretsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
+	private String requestId;
+
 	private Integer totalCount;
 
 	private List<Secret> secretList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -57,6 +49,14 @@ public class ListSecretsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getTotalCount() {
@@ -77,23 +77,15 @@ public class ListSecretsResponse extends AcsResponse {
 
 	public static class Secret {
 
-		private String secretName;
-
 		private String createTime;
-
-		private String updateTime;
 
 		private String plannedDeleteTime;
 
+		private String secretName;
+
+		private String updateTime;
+
 		private List<Tag> tags;
-
-		public String getSecretName() {
-			return this.secretName;
-		}
-
-		public void setSecretName(String secretName) {
-			this.secretName = secretName;
-		}
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -103,20 +95,28 @@ public class ListSecretsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(String updateTime) {
-			this.updateTime = updateTime;
-		}
-
 		public String getPlannedDeleteTime() {
 			return this.plannedDeleteTime;
 		}
 
 		public void setPlannedDeleteTime(String plannedDeleteTime) {
 			this.plannedDeleteTime = plannedDeleteTime;
+		}
+
+		public String getSecretName() {
+			return this.secretName;
+		}
+
+		public void setSecretName(String secretName) {
+			this.secretName = secretName;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
 		}
 
 		public List<Tag> getTags() {

@@ -28,7 +28,7 @@ public class DisableKeyRequest extends RpcAcsRequest<DisableKeyResponse> {
 
 	private String keyId;
 	public DisableKeyRequest() {
-		super("Kms", "2016-01-20", "DisableKey", "kms-service");
+		super("Kms", "2016-01-20", "DisableKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
