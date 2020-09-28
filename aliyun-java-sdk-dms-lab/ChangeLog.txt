@@ -1,0 +1,7 @@
+2020-09-28 Version: 1.0.0
+- Supported init database.
+- Supported get database information.
+- Supported release database.
+- Supported get task status.
+- Supported list databases.
+
