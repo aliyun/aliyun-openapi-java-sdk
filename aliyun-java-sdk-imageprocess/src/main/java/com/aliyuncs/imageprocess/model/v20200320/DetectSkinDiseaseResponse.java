@@ -14,15 +14,16 @@
 
 package com.aliyuncs.imageprocess.model.v20200320;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.CalcCACSResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.DetectSkinDiseaseResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CalcCACSResponse extends AcsResponse {
+public class DetectSkinDiseaseResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,30 +47,20 @@ public class CalcCACSResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String score;
+		private Map<Object,Object> results;
 
-		private String resultUrl;
-
-		public String getScore() {
-			return this.score;
+		public Map<Object,Object> getResults() {
+			return this.results;
 		}
 
-		public void setScore(String score) {
-			this.score = score;
-		}
-
-		public String getResultUrl() {
-			return this.resultUrl;
-		}
-
-		public void setResultUrl(String resultUrl) {
-			this.resultUrl = resultUrl;
+		public void setResults(Map<Object,Object> results) {
+			this.results = results;
 		}
 	}
 
 	@Override
-	public CalcCACSResponse getInstance(UnmarshallerContext context) {
-		return	CalcCACSResponseUnmarshaller.unmarshall(this, context);
+	public DetectSkinDiseaseResponse getInstance(UnmarshallerContext context) {
+		return	DetectSkinDiseaseResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

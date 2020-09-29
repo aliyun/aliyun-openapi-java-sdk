@@ -14,15 +14,16 @@
 
 package com.aliyuncs.imageprocess.model.v20200320;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.imageprocess.transform.v20200320.CalcCACSResponseUnmarshaller;
+import com.aliyuncs.imageprocess.transform.v20200320.RunMedQAResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CalcCACSResponse extends AcsResponse {
+public class RunMedQAResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,30 +47,30 @@ public class CalcCACSResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String score;
+		private String answer;
 
-		private String resultUrl;
+		private List<String> similarQuestion;
 
-		public String getScore() {
-			return this.score;
+		public String getAnswer() {
+			return this.answer;
 		}
 
-		public void setScore(String score) {
-			this.score = score;
+		public void setAnswer(String answer) {
+			this.answer = answer;
 		}
 
-		public String getResultUrl() {
-			return this.resultUrl;
+		public List<String> getSimilarQuestion() {
+			return this.similarQuestion;
 		}
 
-		public void setResultUrl(String resultUrl) {
-			this.resultUrl = resultUrl;
+		public void setSimilarQuestion(List<String> similarQuestion) {
+			this.similarQuestion = similarQuestion;
 		}
 	}
 
 	@Override
-	public CalcCACSResponse getInstance(UnmarshallerContext context) {
-		return	CalcCACSResponseUnmarshaller.unmarshall(this, context);
+	public RunMedQAResponse getInstance(UnmarshallerContext context) {
+		return	RunMedQAResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

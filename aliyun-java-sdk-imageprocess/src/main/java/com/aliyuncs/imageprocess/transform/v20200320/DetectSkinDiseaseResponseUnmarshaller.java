@@ -14,22 +14,22 @@
 
 package com.aliyuncs.imageprocess.transform.v20200320;
 
-import com.aliyuncs.imageprocess.model.v20200320.CalcCACSResponse;
-import com.aliyuncs.imageprocess.model.v20200320.CalcCACSResponse.Data;
+import com.aliyuncs.imageprocess.model.v20200320.DetectSkinDiseaseResponse;
+import com.aliyuncs.imageprocess.model.v20200320.DetectSkinDiseaseResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CalcCACSResponseUnmarshaller {
+public class DetectSkinDiseaseResponseUnmarshaller {
 
-	public static CalcCACSResponse unmarshall(CalcCACSResponse calcCACSResponse, UnmarshallerContext _ctx) {
+	public static DetectSkinDiseaseResponse unmarshall(DetectSkinDiseaseResponse detectSkinDiseaseResponse, UnmarshallerContext _ctx) {
 		
-		calcCACSResponse.setRequestId(_ctx.stringValue("CalcCACSResponse.RequestId"));
+		detectSkinDiseaseResponse.setRequestId(_ctx.stringValue("DetectSkinDiseaseResponse.RequestId"));
 
 		Data data = new Data();
-		data.setScore(_ctx.stringValue("CalcCACSResponse.Data.Score"));
-		data.setResultUrl(_ctx.stringValue("CalcCACSResponse.Data.ResultUrl"));
-		calcCACSResponse.setData(data);
+		data.setResults(_ctx.mapValue("DetectSkinDiseaseResponse.Data.Results"));
+		detectSkinDiseaseResponse.setData(data);
 	 
-	 	return calcCACSResponse;
+	 	return detectSkinDiseaseResponse;
 	}
 }
