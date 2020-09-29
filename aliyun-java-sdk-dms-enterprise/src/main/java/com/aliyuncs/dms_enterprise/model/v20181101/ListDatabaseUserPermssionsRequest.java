@@ -25,6 +25,10 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabaseUserPermssionsResponse> {
 	   
 
+	private Long tid;
+
+	private Integer pageNumber;
+
 	private String permType;
 
 	private String dbId;
@@ -32,10 +36,6 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 	private Integer pageSize;
 
 	private Boolean logic;
-
-	private Long tid;
-
-	private Integer pageNumber;
 
 	private String userName;
 	public ListDatabaseUserPermssionsRequest() {
@@ -45,6 +45,28 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public String getPermType() {
@@ -88,28 +110,6 @@ public class ListDatabaseUserPermssionsRequest extends RpcAcsRequest<ListDatabas
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

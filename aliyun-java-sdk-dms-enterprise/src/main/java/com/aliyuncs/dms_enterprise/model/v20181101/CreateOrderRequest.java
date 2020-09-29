@@ -85,7 +85,7 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	public void setPluginParam(Map<Object,Object> pluginParam) {
 		this.pluginParam = pluginParam;
 		if(pluginParam != null){
-			putQueryParameter("PluginParam", new Gson().toJson(pluginParam));
+			putBodyParameter("PluginParam", new Gson().toJson(pluginParam));
 		}
 	}
 

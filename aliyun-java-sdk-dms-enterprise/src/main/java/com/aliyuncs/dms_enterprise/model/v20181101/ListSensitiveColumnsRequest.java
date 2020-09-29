@@ -27,17 +27,17 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 
 	private String schemaName;
 
-	private String securityLevel;
-
-	private Integer pageSize;
-
-	private String tableName;
-
 	private String columnName;
 
 	private Long tid;
 
 	private Integer pageNumber;
+
+	private String securityLevel;
+
+	private Integer pageSize;
+
+	private String tableName;
 	public ListSensitiveColumnsRequest() {
 		super("dms-enterprise", "2018-11-01", "ListSensitiveColumns", "dmsenterprise");
 		setMethod(MethodType.POST);
@@ -55,39 +55,6 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		this.schemaName = schemaName;
 		if(schemaName != null){
 			putQueryParameter("SchemaName", schemaName);
-		}
-	}
-
-	public String getSecurityLevel() {
-		return this.securityLevel;
-	}
-
-	public void setSecurityLevel(String securityLevel) {
-		this.securityLevel = securityLevel;
-		if(securityLevel != null){
-			putQueryParameter("SecurityLevel", securityLevel);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 
@@ -121,6 +88,39 @@ public class ListSensitiveColumnsRequest extends RpcAcsRequest<ListSensitiveColu
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getSecurityLevel() {
+		return this.securityLevel;
+	}
+
+	public void setSecurityLevel(String securityLevel) {
+		this.securityLevel = securityLevel;
+		if(securityLevel != null){
+			putQueryParameter("SecurityLevel", securityLevel);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
 		}
 	}
 

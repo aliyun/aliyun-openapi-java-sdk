@@ -27,8 +27,6 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 
 	private String roleNames;
 
-	private Long uid;
-
 	private Long maxResultCount;
 
 	private Long maxExecuteCount;
@@ -38,6 +36,8 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 	private String mobile;
 
 	private Long tid;
+
+	private Long uid;
 	public UpdateUserRequest() {
 		super("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise");
 		setMethod(MethodType.POST);
@@ -55,17 +55,6 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.roleNames = roleNames;
 		if(roleNames != null){
 			putQueryParameter("RoleNames", roleNames);
-		}
-	}
-
-	public Long getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
 		}
 	}
 
@@ -121,6 +110,17 @@ public class UpdateUserRequest extends RpcAcsRequest<UpdateUserResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getUid() {
+		return this.uid;
+	}
+
+	public void setUid(Long uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid.toString());
 		}
 	}
 
