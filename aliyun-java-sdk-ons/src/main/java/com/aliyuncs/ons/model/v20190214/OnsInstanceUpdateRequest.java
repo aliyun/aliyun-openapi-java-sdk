@@ -31,7 +31,7 @@ public class OnsInstanceUpdateRequest extends RpcAcsRequest<OnsInstanceUpdateRes
 
 	private String instanceId;
 	public OnsInstanceUpdateRequest() {
-		super("Ons", "2019-02-14", "OnsInstanceUpdate", "ons");
+		super("Ons", "2019-02-14", "OnsInstanceUpdate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class OnsGroupListRequest extends RpcAcsRequest<OnsGroupListResponse> {
 
 	private List<Tag> tags;
 	public OnsGroupListRequest() {
-		super("Ons", "2019-02-14", "OnsGroupList", "ons");
+		super("Ons", "2019-02-14", "OnsGroupList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,6 +35,8 @@ public class OnsInstanceBaseInfoResponseUnmarshaller {
 		instanceBaseInfo.setInstanceName(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.InstanceName"));
 		instanceBaseInfo.setIndependentNaming(_ctx.booleanValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.IndependentNaming"));
 		instanceBaseInfo.setRemark(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Remark"));
+		instanceBaseInfo.setTopicCapacity(_ctx.integerValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.TopicCapacity"));
+		instanceBaseInfo.setMaxTps(_ctx.longValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.MaxTps"));
 
 		Endpoints endpoints = new Endpoints();
 		endpoints.setTcpEndpoint(_ctx.stringValue("OnsInstanceBaseInfoResponse.InstanceBaseInfo.Endpoints.TcpEndpoint"));

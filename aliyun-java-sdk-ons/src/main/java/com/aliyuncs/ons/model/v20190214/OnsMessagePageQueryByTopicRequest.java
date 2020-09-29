@@ -39,7 +39,7 @@ public class OnsMessagePageQueryByTopicRequest extends RpcAcsRequest<OnsMessageP
 
 	private String taskId;
 	public OnsMessagePageQueryByTopicRequest() {
-		super("Ons", "2019-02-14", "OnsMessagePageQueryByTopic", "ons");
+		super("Ons", "2019-02-14", "OnsMessagePageQueryByTopic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

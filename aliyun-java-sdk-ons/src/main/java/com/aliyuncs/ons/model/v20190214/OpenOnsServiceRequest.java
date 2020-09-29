@@ -22,16 +22,10 @@ import com.aliyuncs.ons.Endpoint;
  * @author auto create
  * @version 
  */
-public class OnsMessageTraceRequest extends RpcAcsRequest<OnsMessageTraceResponse> {
+public class OpenOnsServiceRequest extends RpcAcsRequest<OpenOnsServiceResponse> {
 	   
-
-	private String msgId;
-
-	private String instanceId;
-
-	private String topic;
-	public OnsMessageTraceRequest() {
-		super("Ons", "2019-02-14", "OnsMessageTrace");
+	public OpenOnsServiceRequest() {
+		super("Ons", "2019-02-14", "OpenOnsService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +33,9 @@ public class OnsMessageTraceRequest extends RpcAcsRequest<OnsMessageTraceRespons
 		} catch (Exception e) {}
 	}
 
-	public String getMsgId() {
-		return this.msgId;
-	}
-
-	public void setMsgId(String msgId) {
-		this.msgId = msgId;
-		if(msgId != null){
-			putQueryParameter("MsgId", msgId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getTopic() {
-		return this.topic;
-	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
-		if(topic != null){
-			putQueryParameter("Topic", topic);
-		}
-	}
-
 	@Override
-	public Class<OnsMessageTraceResponse> getResponseClass() {
-		return OnsMessageTraceResponse.class;
+	public Class<OpenOnsServiceResponse> getResponseClass() {
+		return OpenOnsServiceResponse.class;
 	}
 
 }

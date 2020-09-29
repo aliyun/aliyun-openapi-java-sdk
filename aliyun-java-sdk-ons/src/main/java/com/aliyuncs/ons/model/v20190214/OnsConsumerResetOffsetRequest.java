@@ -35,7 +35,7 @@ public class OnsConsumerResetOffsetRequest extends RpcAcsRequest<OnsConsumerRese
 
 	private String topic;
 	public OnsConsumerResetOffsetRequest() {
-		super("Ons", "2019-02-14", "OnsConsumerResetOffset", "ons");
+		super("Ons", "2019-02-14", "OnsConsumerResetOffset");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

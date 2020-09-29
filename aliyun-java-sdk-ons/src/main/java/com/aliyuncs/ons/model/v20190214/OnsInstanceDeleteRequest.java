@@ -27,7 +27,7 @@ public class OnsInstanceDeleteRequest extends RpcAcsRequest<OnsInstanceDeleteRes
 
 	private String instanceId;
 	public OnsInstanceDeleteRequest() {
-		super("Ons", "2019-02-14", "OnsInstanceDelete", "ons");
+		super("Ons", "2019-02-14", "OnsInstanceDelete");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

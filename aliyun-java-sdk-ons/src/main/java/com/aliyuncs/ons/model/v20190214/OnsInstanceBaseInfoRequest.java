@@ -27,7 +27,7 @@ public class OnsInstanceBaseInfoRequest extends RpcAcsRequest<OnsInstanceBaseInf
 
 	private String instanceId;
 	public OnsInstanceBaseInfoRequest() {
-		super("Ons", "2019-02-14", "OnsInstanceBaseInfo", "ons");
+		super("Ons", "2019-02-14", "OnsInstanceBaseInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

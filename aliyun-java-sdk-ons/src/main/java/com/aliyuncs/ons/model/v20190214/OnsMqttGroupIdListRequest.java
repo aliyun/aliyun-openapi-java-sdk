@@ -27,7 +27,7 @@ public class OnsMqttGroupIdListRequest extends RpcAcsRequest<OnsMqttGroupIdListR
 
 	private String instanceId;
 	public OnsMqttGroupIdListRequest() {
-		super("Ons", "2019-02-14", "OnsMqttGroupIdList", "ons");
+		super("Ons", "2019-02-14", "OnsMqttGroupIdList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

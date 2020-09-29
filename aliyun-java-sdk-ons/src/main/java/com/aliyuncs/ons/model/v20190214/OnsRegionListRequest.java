@@ -25,7 +25,7 @@ import com.aliyuncs.ons.Endpoint;
 public class OnsRegionListRequest extends RpcAcsRequest<OnsRegionListResponse> {
 	   
 	public OnsRegionListRequest() {
-		super("Ons", "2019-02-14", "OnsRegionList", "ons");
+		super("Ons", "2019-02-14", "OnsRegionList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

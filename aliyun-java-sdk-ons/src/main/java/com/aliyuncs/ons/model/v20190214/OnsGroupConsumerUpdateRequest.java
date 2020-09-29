@@ -31,7 +31,7 @@ public class OnsGroupConsumerUpdateRequest extends RpcAcsRequest<OnsGroupConsume
 
 	private String instanceId;
 	public OnsGroupConsumerUpdateRequest() {
-		super("Ons", "2019-02-14", "OnsGroupConsumerUpdate", "ons");
+		super("Ons", "2019-02-14", "OnsGroupConsumerUpdate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

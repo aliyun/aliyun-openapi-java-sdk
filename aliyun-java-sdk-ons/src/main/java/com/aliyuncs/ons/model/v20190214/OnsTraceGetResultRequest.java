@@ -27,7 +27,7 @@ public class OnsTraceGetResultRequest extends RpcAcsRequest<OnsTraceGetResultRes
 
 	private String queryId;
 	public OnsTraceGetResultRequest() {
-		super("Ons", "2019-02-14", "OnsTraceGetResult", "ons");
+		super("Ons", "2019-02-14", "OnsTraceGetResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

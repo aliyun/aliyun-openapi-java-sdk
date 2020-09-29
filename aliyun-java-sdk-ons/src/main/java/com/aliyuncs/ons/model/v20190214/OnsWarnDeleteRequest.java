@@ -31,7 +31,7 @@ public class OnsWarnDeleteRequest extends RpcAcsRequest<OnsWarnDeleteResponse> {
 
 	private String topic;
 	public OnsWarnDeleteRequest() {
-		super("Ons", "2019-02-14", "OnsWarnDelete", "ons");
+		super("Ons", "2019-02-14", "OnsWarnDelete");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class OnsMqttGroupIdDeleteRequest extends RpcAcsRequest<OnsMqttGroupIdDel
 
 	private String instanceId;
 	public OnsMqttGroupIdDeleteRequest() {
-		super("Ons", "2019-02-14", "OnsMqttGroupIdDelete", "ons");
+		super("Ons", "2019-02-14", "OnsMqttGroupIdDelete");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

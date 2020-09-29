@@ -1,3 +1,6 @@
+2020-09-29 Version: 3.1.6
+- Add API OpenOnsService which can active ons service.
+
 2020-07-03 Version: 3.1.5
 - Supports tag management APIs.
 

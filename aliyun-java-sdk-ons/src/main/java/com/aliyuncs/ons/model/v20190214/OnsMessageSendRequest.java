@@ -35,7 +35,7 @@ public class OnsMessageSendRequest extends RpcAcsRequest<OnsMessageSendResponse>
 
 	private String key;
 	public OnsMessageSendRequest() {
-		super("Ons", "2019-02-14", "OnsMessageSend", "ons");
+		super("Ons", "2019-02-14", "OnsMessageSend");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

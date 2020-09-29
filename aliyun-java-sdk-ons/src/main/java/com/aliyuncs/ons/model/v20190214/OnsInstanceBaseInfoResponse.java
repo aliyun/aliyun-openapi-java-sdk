@@ -70,6 +70,10 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 		private String remark;
 
+		private Integer topicCapacity;
+
+		private Long maxTps;
+
 		private Endpoints endpoints;
 
 		public String getInstanceId() {
@@ -126,6 +130,22 @@ public class OnsInstanceBaseInfoResponse extends AcsResponse {
 
 		public void setRemark(String remark) {
 			this.remark = remark;
+		}
+
+		public Integer getTopicCapacity() {
+			return this.topicCapacity;
+		}
+
+		public void setTopicCapacity(Integer topicCapacity) {
+			this.topicCapacity = topicCapacity;
+		}
+
+		public Long getMaxTps() {
+			return this.maxTps;
+		}
+
+		public void setMaxTps(Long maxTps) {
+			this.maxTps = maxTps;
 		}
 
 		public Endpoints getEndpoints() {

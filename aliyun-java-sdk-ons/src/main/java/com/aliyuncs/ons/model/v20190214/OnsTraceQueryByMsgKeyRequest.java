@@ -35,7 +35,7 @@ public class OnsTraceQueryByMsgKeyRequest extends RpcAcsRequest<OnsTraceQueryByM
 
 	private String msgKey;
 	public OnsTraceQueryByMsgKeyRequest() {
-		super("Ons", "2019-02-14", "OnsTraceQueryByMsgKey", "ons");
+		super("Ons", "2019-02-14", "OnsTraceQueryByMsgKey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
