@@ -326,7 +326,9 @@ public class DefaultAcsClient implements IAcsClient {
             request.putHeaderParameter("User-Agent",
                     UserAgentConfig.resolve(request.getSysUserAgentConfig(), this.userAgentConfig));
             request.putHeaderParameter("x-acs-version", request.getSysVersion());
-            request.putHeaderParameter("x-acs-action", request.getSysActionName());
+            if (null != request.getSysActionName()) {
+                request.putHeaderParameter("x-acs-action", request.getSysActionName());
+            }
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
                 HttpUtil.debugHttpRequest(request);
