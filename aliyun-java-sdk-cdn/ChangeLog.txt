@@ -1,3 +1,6 @@
+2020-10-09 Version: 3.5.0
+- Update SetVideoSeekConfig API.
+
 2020-09-27 Version: 3.4.8
 - Update domain API.
 
