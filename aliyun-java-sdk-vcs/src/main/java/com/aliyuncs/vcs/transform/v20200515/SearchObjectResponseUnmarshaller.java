@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.SearchObjectResponse;
-import com.aliyuncs.vcs.model.v20200515.SearchObjectResponse.DataItem;
-import com.aliyuncs.vcs.model.v20200515.SearchObjectResponse.DataItem.RecordsItem;
+import com.aliyuncs.vcs.model.v20200515.SearchObjectResponse.Data;
+import com.aliyuncs.vcs.model.v20200515.SearchObjectResponse.Data.RecordsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,40 +31,32 @@ public class SearchObjectResponseUnmarshaller {
 		searchObjectResponse.setCode(_ctx.stringValue("SearchObjectResponse.Code"));
 		searchObjectResponse.setMessage(_ctx.stringValue("SearchObjectResponse.Message"));
 
-		List<DataItem> data = new ArrayList<DataItem>();
-		for (int i = 0; i < _ctx.lengthValue("SearchObjectResponse.Data.Length"); i++) {
-			DataItem dataItem = new DataItem();
-			dataItem.setPageNumber(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].PageNumber"));
-			dataItem.setPageSize(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].PageSize"));
-			dataItem.setTotalCount(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].TotalCount"));
-			dataItem.setTotalPage(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].TotalPage"));
+		Data data = new Data();
+		data.setPageNumber(_ctx.integerValue("SearchObjectResponse.Data.PageNumber"));
+		data.setPageSize(_ctx.integerValue("SearchObjectResponse.Data.PageSize"));
+		data.setTotalCount(_ctx.integerValue("SearchObjectResponse.Data.TotalCount"));
+		data.setTotalPage(_ctx.integerValue("SearchObjectResponse.Data.TotalPage"));
 
-			List<RecordsItem> records = new ArrayList<RecordsItem>();
-			for (int j = 0; j < _ctx.lengthValue("SearchObjectResponse.Data["+ i +"].Records.Length"); j++) {
-				RecordsItem recordsItem = new RecordsItem();
-				recordsItem.setBodyShotTime(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].BodyShotTime"));
-				recordsItem.setCompareResult(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].CompareResult"));
-				recordsItem.setDeviceID(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].DeviceID"));
-				recordsItem.setFaceShotTime(_ctx.longValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].FaceShotTime"));
-				recordsItem.setLeftTopX(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].LeftTopX"));
-				recordsItem.setLeftTopY(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].LeftTopY"));
-				recordsItem.setMotorShotTime(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].MotorShotTime"));
-				recordsItem.setPassTime(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].PassTime"));
-				recordsItem.setRightBtmX(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].RightBtmX"));
-				recordsItem.setRightBtmY(_ctx.integerValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].RightBtmY"));
-				recordsItem.setScore(_ctx.floatValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].Score"));
-				recordsItem.setSourceID(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].SourceID"));
-				recordsItem.setSourceImagePath(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].SourceImagePath"));
-				recordsItem.setSourceImageUrl(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].SourceImageUrl"));
-				recordsItem.setTargetImagePath(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].TargetImagePath"));
-				recordsItem.setTargetImageUrl(_ctx.stringValue("SearchObjectResponse.Data["+ i +"].Records["+ j +"].TargetImageUrl"));
+		List<RecordsItem> records = new ArrayList<RecordsItem>();
+		for (int i = 0; i < _ctx.lengthValue("SearchObjectResponse.Data.Records.Length"); i++) {
+			RecordsItem recordsItem = new RecordsItem();
+			recordsItem.setCompareResult(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].CompareResult"));
+			recordsItem.setDeviceID(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].DeviceID"));
+			recordsItem.setShotTime(_ctx.longValue("SearchObjectResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setLeftTopX(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].LeftTopX"));
+			recordsItem.setLeftTopY(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].LeftTopY"));
+			recordsItem.setRightBtmX(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].RightBtmX"));
+			recordsItem.setRightBtmY(_ctx.integerValue("SearchObjectResponse.Data.Records["+ i +"].RightBtmY"));
+			recordsItem.setScore(_ctx.floatValue("SearchObjectResponse.Data.Records["+ i +"].Score"));
+			recordsItem.setSourceID(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceID"));
+			recordsItem.setSourceImagePath(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceImagePath"));
+			recordsItem.setSourceImageUrl(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].SourceImageUrl"));
+			recordsItem.setTargetImagePath(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].TargetImagePath"));
+			recordsItem.setTargetImageUrl(_ctx.stringValue("SearchObjectResponse.Data.Records["+ i +"].TargetImageUrl"));
 
-				records.add(recordsItem);
-			}
-			dataItem.setRecords(records);
-
-			data.add(dataItem);
+			records.add(recordsItem);
 		}
+		data.setRecords(records);
 		searchObjectResponse.setData(data);
 	 
 	 	return searchObjectResponse;

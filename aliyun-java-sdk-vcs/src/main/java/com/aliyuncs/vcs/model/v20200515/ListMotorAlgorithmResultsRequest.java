@@ -41,7 +41,7 @@ public class ListMotorAlgorithmResultsRequest extends RpcAcsRequest<ListMotorAlg
 
 	private String pageSize;
 	public ListMotorAlgorithmResultsRequest() {
-		super("Vcs", "2020-05-15", "ListMotorAlgorithmResults", "vcs");
+		super("Vcs", "2020-05-15", "ListMotorAlgorithmResults");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

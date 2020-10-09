@@ -109,6 +109,14 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 
 			private String installAddress;
 
+			private String deviceSn;
+
+			private String deviceStatus;
+
+			private String deviceStreamStatus;
+
+			private String deviceComputeStatus;
+
 			public String getDeviceGroup() {
 				return this.deviceGroup;
 			}
@@ -187,6 +195,38 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 
 			public void setInstallAddress(String installAddress) {
 				this.installAddress = installAddress;
+			}
+
+			public String getDeviceSn() {
+				return this.deviceSn;
+			}
+
+			public void setDeviceSn(String deviceSn) {
+				this.deviceSn = deviceSn;
+			}
+
+			public String getDeviceStatus() {
+				return this.deviceStatus;
+			}
+
+			public void setDeviceStatus(String deviceStatus) {
+				this.deviceStatus = deviceStatus;
+			}
+
+			public String getDeviceStreamStatus() {
+				return this.deviceStreamStatus;
+			}
+
+			public void setDeviceStreamStatus(String deviceStreamStatus) {
+				this.deviceStreamStatus = deviceStreamStatus;
+			}
+
+			public String getDeviceComputeStatus() {
+				return this.deviceComputeStatus;
+			}
+
+			public void setDeviceComputeStatus(String deviceComputeStatus) {
+				this.deviceComputeStatus = deviceComputeStatus;
 			}
 		}
 	}

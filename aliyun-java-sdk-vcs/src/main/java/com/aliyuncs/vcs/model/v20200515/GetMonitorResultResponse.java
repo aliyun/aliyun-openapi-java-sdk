@@ -109,6 +109,10 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 			private String targetPicUrl;
 
+			private String taskId;
+
+			private ExtendInfo extendInfo;
+
 			public String getRightBottomY() {
 				return this.rightBottomY;
 			}
@@ -187,6 +191,35 @@ public class GetMonitorResultResponse extends AcsResponse {
 
 			public void setTargetPicUrl(String targetPicUrl) {
 				this.targetPicUrl = targetPicUrl;
+			}
+
+			public String getTaskId() {
+				return this.taskId;
+			}
+
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
+
+			public ExtendInfo getExtendInfo() {
+				return this.extendInfo;
+			}
+
+			public void setExtendInfo(ExtendInfo extendInfo) {
+				this.extendInfo = extendInfo;
+			}
+
+			public static class ExtendInfo {
+
+				private String plateNo;
+
+				public String getPlateNo() {
+					return this.plateNo;
+				}
+
+				public void setPlateNo(String plateNo) {
+					this.plateNo = plateNo;
+				}
 			}
 		}
 	}

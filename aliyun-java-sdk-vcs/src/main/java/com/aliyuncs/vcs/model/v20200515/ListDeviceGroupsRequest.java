@@ -39,7 +39,7 @@ public class ListDeviceGroupsRequest extends RpcAcsRequest<ListDeviceGroupsRespo
 
 	private String group;
 	public ListDeviceGroupsRequest() {
-		super("Vcs", "2020-05-15", "ListDeviceGroups", "vcs");
+		super("Vcs", "2020-05-15", "ListDeviceGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

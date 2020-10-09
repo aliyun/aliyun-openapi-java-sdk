@@ -31,7 +31,7 @@ public class SaveVideoSummaryTaskVideoRequest extends RpcAcsRequest<SaveVideoSum
 
 	private Long taskId;
 	public SaveVideoSummaryTaskVideoRequest() {
-		super("Vcs", "2020-05-15", "SaveVideoSummaryTaskVideo", "vcs");
+		super("Vcs", "2020-05-15", "SaveVideoSummaryTaskVideo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

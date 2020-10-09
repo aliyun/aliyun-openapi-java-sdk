@@ -49,6 +49,10 @@ public class ListDeviceGroupsResponseUnmarshaller {
 				listItem.setRegionName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionName"));
 				listItem.setRegionId(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionId"));
 				listItem.setInstallAddress(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].InstallAddress"));
+				listItem.setDeviceSn(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceSn"));
+				listItem.setDeviceStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStatus"));
+				listItem.setDeviceStreamStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStreamStatus"));
+				listItem.setDeviceComputeStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceComputeStatus"));
 
 				list.add(listItem);
 			}

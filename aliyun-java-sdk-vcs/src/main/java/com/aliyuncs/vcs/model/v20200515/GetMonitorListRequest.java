@@ -22,32 +22,21 @@ import com.aliyuncs.vcs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
+public class GetMonitorListRequest extends RpcAcsRequest<GetMonitorListResponse> {
 	   
-
-	private String isvSubId;
 
 	private String corpId;
 
-	private Long userId;
-	public DeleteUserRequest() {
-		super("Vcs", "2020-05-15", "DeleteUser");
+	private Integer pageNo;
+
+	private Integer pageSize;
+	public GetMonitorListRequest() {
+		super("Vcs", "2020-05-15", "GetMonitorList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIsvSubId() {
-		return this.isvSubId;
-	}
-
-	public void setIsvSubId(String isvSubId) {
-		this.isvSubId = isvSubId;
-		if(isvSubId != null){
-			putBodyParameter("IsvSubId", isvSubId);
-		}
 	}
 
 	public String getCorpId() {
@@ -61,20 +50,31 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 		}
 	}
 
-	public Long getUserId() {
-		return this.userId;
+	public Integer getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId.toString());
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putBodyParameter("PageNo", pageNo.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteUserResponse> getResponseClass() {
-		return DeleteUserResponse.class;
+	public Class<GetMonitorListResponse> getResponseClass() {
+		return GetMonitorListResponse.class;
 	}
 
 }

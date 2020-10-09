@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse;
 import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse.Data;
 import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse.Data.RecordsItem;
+import com.aliyuncs.vcs.model.v20200515.GetMonitorResultResponse.Data.RecordsItem.ExtendInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,11 @@ public class GetMonitorResultResponseUnmarshaller {
 			recordsItem.setShotTime(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].MonitorPicUrl"));
 			recordsItem.setTargetPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].TargetPicUrl"));
+			recordsItem.setTaskId(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].TaskId"));
+
+			ExtendInfo extendInfo = new ExtendInfo();
+			extendInfo.setPlateNo(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ExtendInfo.PlateNo"));
+			recordsItem.setExtendInfo(extendInfo);
 
 			records.add(recordsItem);
 		}

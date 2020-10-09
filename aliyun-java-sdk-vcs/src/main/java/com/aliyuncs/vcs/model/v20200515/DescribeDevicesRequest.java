@@ -31,7 +31,7 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 
 	private Integer pageSize;
 	public DescribeDevicesRequest() {
-		super("Vcs", "2020-05-15", "DescribeDevices", "vcs");
+		super("Vcs", "2020-05-15", "DescribeDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

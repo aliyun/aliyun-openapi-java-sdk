@@ -39,7 +39,7 @@ public class ListMetricsRequest extends RpcAcsRequest<ListMetricsResponse> {
 
 	private String aggregateType;
 	public ListMetricsRequest() {
-		super("Vcs", "2020-05-15", "ListMetrics", "vcs");
+		super("Vcs", "2020-05-15", "ListMetrics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

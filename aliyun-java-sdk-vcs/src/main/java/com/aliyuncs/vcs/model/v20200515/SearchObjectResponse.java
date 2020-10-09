@@ -31,7 +31,7 @@ public class SearchObjectResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<DataItem> data;
+	private Data data;
 
 	public String getCode() {
 		return this.code;
@@ -57,15 +57,15 @@ public class SearchObjectResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
+	public static class Data {
 
 		private Integer pageNumber;
 
@@ -119,21 +119,15 @@ public class SearchObjectResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String bodyShotTime;
-
 			private String compareResult;
 
 			private String deviceID;
 
-			private Long faceShotTime;
+			private Long shotTime;
 
 			private Integer leftTopX;
 
 			private Integer leftTopY;
-
-			private String motorShotTime;
-
-			private String passTime;
 
 			private Integer rightBtmX;
 
@@ -151,14 +145,6 @@ public class SearchObjectResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
-			public String getBodyShotTime() {
-				return this.bodyShotTime;
-			}
-
-			public void setBodyShotTime(String bodyShotTime) {
-				this.bodyShotTime = bodyShotTime;
-			}
-
 			public String getCompareResult() {
 				return this.compareResult;
 			}
@@ -175,12 +161,12 @@ public class SearchObjectResponse extends AcsResponse {
 				this.deviceID = deviceID;
 			}
 
-			public Long getFaceShotTime() {
-				return this.faceShotTime;
+			public Long getShotTime() {
+				return this.shotTime;
 			}
 
-			public void setFaceShotTime(Long faceShotTime) {
-				this.faceShotTime = faceShotTime;
+			public void setShotTime(Long shotTime) {
+				this.shotTime = shotTime;
 			}
 
 			public Integer getLeftTopX() {
@@ -197,22 +183,6 @@ public class SearchObjectResponse extends AcsResponse {
 
 			public void setLeftTopY(Integer leftTopY) {
 				this.leftTopY = leftTopY;
-			}
-
-			public String getMotorShotTime() {
-				return this.motorShotTime;
-			}
-
-			public void setMotorShotTime(String motorShotTime) {
-				this.motorShotTime = motorShotTime;
-			}
-
-			public String getPassTime() {
-				return this.passTime;
-			}
-
-			public void setPassTime(String passTime) {
-				this.passTime = passTime;
 			}
 
 			public Integer getRightBtmX() {

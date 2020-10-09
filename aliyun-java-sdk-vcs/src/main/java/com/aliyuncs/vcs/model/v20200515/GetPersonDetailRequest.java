@@ -31,7 +31,7 @@ public class GetPersonDetailRequest extends RpcAcsRequest<GetPersonDetailRespons
 
 	private String personID;
 	public GetPersonDetailRequest() {
-		super("Vcs", "2020-05-15", "GetPersonDetail", "vcs");
+		super("Vcs", "2020-05-15", "GetPersonDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
