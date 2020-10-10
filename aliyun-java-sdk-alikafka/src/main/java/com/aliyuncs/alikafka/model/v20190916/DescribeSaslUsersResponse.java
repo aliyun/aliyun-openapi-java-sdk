@@ -81,6 +81,8 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 
 		private String password;
 
+		private String type;
+
 		public String getUsername() {
 			return this.username;
 		}
@@ -95,6 +97,14 @@ public class DescribeSaslUsersResponse extends AcsResponse {
 
 		public void setPassword(String password) {
 			this.password = password;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
 		}
 	}
 

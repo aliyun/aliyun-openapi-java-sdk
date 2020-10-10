@@ -36,6 +36,7 @@ public class DescribeSaslUsersResponseUnmarshaller {
 			SaslUserVO saslUserVO = new SaslUserVO();
 			saslUserVO.setUsername(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Username"));
 			saslUserVO.setPassword(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Password"));
+			saslUserVO.setType(_ctx.stringValue("DescribeSaslUsersResponse.SaslUserList["+ i +"].Type"));
 
 			saslUserList.add(saslUserVO);
 		}

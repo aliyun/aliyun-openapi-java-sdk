@@ -56,6 +56,7 @@ public class GetInstanceListResponseUnmarshaller {
 			instanceVO.setZoneId(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].ZoneId"));
 			instanceVO.setPaidType(_ctx.integerValue("GetInstanceListResponse.InstanceList["+ i +"].PaidType"));
 			instanceVO.setSpecType(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SpecType"));
+			instanceVO.setSecurityGroup(_ctx.stringValue("GetInstanceListResponse.InstanceList["+ i +"].SecurityGroup"));
 
 			List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo = new ArrayList<UpgradeServiceDetailInfoVO>();
 			for (int j = 0; j < _ctx.lengthValue("GetInstanceListResponse.InstanceList["+ i +"].UpgradeServiceDetailInfo.Length"); j++) {

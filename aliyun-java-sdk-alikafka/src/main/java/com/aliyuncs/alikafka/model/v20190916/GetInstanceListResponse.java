@@ -117,6 +117,8 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		private String specType;
 
+		private String securityGroup;
+
 		private List<UpgradeServiceDetailInfoVO> upgradeServiceDetailInfo;
 
 		private List<TagVO> tags;
@@ -279,6 +281,14 @@ public class GetInstanceListResponse extends AcsResponse {
 
 		public void setSpecType(String specType) {
 			this.specType = specType;
+		}
+
+		public String getSecurityGroup() {
+			return this.securityGroup;
+		}
+
+		public void setSecurityGroup(String securityGroup) {
+			this.securityGroup = securityGroup;
 		}
 
 		public List<UpgradeServiceDetailInfoVO> getUpgradeServiceDetailInfo() {

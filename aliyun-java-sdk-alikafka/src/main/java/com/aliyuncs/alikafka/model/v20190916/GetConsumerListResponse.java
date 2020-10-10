@@ -83,6 +83,8 @@ public class GetConsumerListResponse extends AcsResponse {
 
 		private String consumerId;
 
+		private String remark;
+
 		private List<TagVO> tags;
 
 		public String getRegionId() {
@@ -107,6 +109,14 @@ public class GetConsumerListResponse extends AcsResponse {
 
 		public void setConsumerId(String consumerId) {
 			this.consumerId = consumerId;
+		}
+
+		public String getRemark() {
+			return this.remark;
+		}
+
+		public void setRemark(String remark) {
+			this.remark = remark;
 		}
 
 		public List<TagVO> getTags() {

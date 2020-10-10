@@ -29,6 +29,8 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 
 	private Integer ioMax;
 
+	private String ioMaxSpec;
+
 	private Integer topicQuota;
 
 	private Integer eipMax;
@@ -64,6 +66,17 @@ public class UpgradePrePayOrderRequest extends RpcAcsRequest<UpgradePrePayOrderR
 		this.ioMax = ioMax;
 		if(ioMax != null){
 			putQueryParameter("IoMax", ioMax.toString());
+		}
+	}
+
+	public String getIoMaxSpec() {
+		return this.ioMaxSpec;
+	}
+
+	public void setIoMaxSpec(String ioMaxSpec) {
+		this.ioMaxSpec = ioMaxSpec;
+		if(ioMaxSpec != null){
+			putQueryParameter("IoMaxSpec", ioMaxSpec);
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.alikafka.Endpoint;
 public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse> {
 	   
 
+	private String type;
+
 	private String password;
 
 	private String instanceId;
@@ -37,6 +39,17 @@ public class CreateSaslUserRequest extends RpcAcsRequest<CreateSaslUserResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
 	}
 
 	public String getPassword() {

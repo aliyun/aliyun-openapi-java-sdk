@@ -27,6 +27,8 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private Boolean isEipInner;
 
+	private String securityGroup;
+
 	private String deployModule;
 
 	private Boolean isSetUserAndPassword;
@@ -61,6 +63,17 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 		this.isEipInner = isEipInner;
 		if(isEipInner != null){
 			putQueryParameter("IsEipInner", isEipInner.toString());
+		}
+	}
+
+	public String getSecurityGroup() {
+		return this.securityGroup;
+	}
+
+	public void setSecurityGroup(String securityGroup) {
+		this.securityGroup = securityGroup;
+		if(securityGroup != null){
+			putQueryParameter("SecurityGroup", securityGroup);
 		}
 	}
 

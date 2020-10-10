@@ -29,6 +29,8 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 
 	private Integer ioMax;
 
+	private String ioMaxSpec;
+
 	private String diskType;
 
 	private Integer topicQuota;
@@ -64,6 +66,17 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		this.ioMax = ioMax;
 		if(ioMax != null){
 			putQueryParameter("IoMax", ioMax.toString());
+		}
+	}
+
+	public String getIoMaxSpec() {
+		return this.ioMaxSpec;
+	}
+
+	public void setIoMaxSpec(String ioMaxSpec) {
+		this.ioMaxSpec = ioMaxSpec;
+		if(ioMaxSpec != null){
+			putQueryParameter("IoMaxSpec", ioMaxSpec);
 		}
 	}
 
