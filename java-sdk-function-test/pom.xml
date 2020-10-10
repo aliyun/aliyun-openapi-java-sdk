@@ -31,9 +31,9 @@
 
     <licenses>
         <license>
-            <name></name>
-            <url></url>
-            <distribution></distribution>
+            <name/>
+            <url/>
+            <distribution/>
         </license>
     </licenses>
     <scm>
@@ -147,7 +147,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
+            <version>4.5.13</version>
         </dependency>
         <dependency>
             <groupId>javax.xml.bind</groupId>
