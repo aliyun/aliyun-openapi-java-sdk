@@ -27,6 +27,8 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 
 	private String approvalType;
 
+	private String comment;
+
 	private Long tid;
 
 	private Long workflowInstanceId;
@@ -47,6 +49,17 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 		this.approvalType = approvalType;
 		if(approvalType != null){
 			putQueryParameter("ApprovalType", approvalType);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
 		}
 	}
 
