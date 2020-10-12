@@ -22,36 +22,22 @@ import com.aliyuncs.cams.Endpoint;
  * @author auto create
  * @version 
  */
-public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
+public class CheckContactsRequest extends RpcAcsRequest<CheckContactsResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String messageType;
-
-	private String templateBodyParams;
-
-	private String link;
-
-	private String caption;
-
-	private String type;
 
 	private String channelType;
 
 	private String from;
 
-	private String text;
-
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
-	private String to;
-
-	private String templateCode;
-	public SendMessageRequest() {
-		super("cams", "2020-06-06", "SendMessage", "cams");
+	private String contacts;
+	public CheckContactsRequest() {
+		super("cams", "2020-06-06", "CheckContacts", "cams");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,61 +53,6 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getMessageType() {
-		return this.messageType;
-	}
-
-	public void setMessageType(String messageType) {
-		this.messageType = messageType;
-		if(messageType != null){
-			putBodyParameter("MessageType", messageType);
-		}
-	}
-
-	public String getTemplateBodyParams() {
-		return this.templateBodyParams;
-	}
-
-	public void setTemplateBodyParams(String templateBodyParams) {
-		this.templateBodyParams = templateBodyParams;
-		if(templateBodyParams != null){
-			putBodyParameter("TemplateBodyParams", templateBodyParams);
-		}
-	}
-
-	public String getLink() {
-		return this.link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
-		if(link != null){
-			putBodyParameter("Link", link);
-		}
-	}
-
-	public String getCaption() {
-		return this.caption;
-	}
-
-	public void setCaption(String caption) {
-		this.caption = caption;
-		if(caption != null){
-			putBodyParameter("Caption", caption);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type);
 		}
 	}
 
@@ -147,17 +78,6 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		}
 	}
 
-	public String getText() {
-		return this.text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
-		if(text != null){
-			putBodyParameter("Text", text);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -180,31 +100,20 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 		}
 	}
 
-	public String getTo() {
-		return this.to;
+	public String getContacts() {
+		return this.contacts;
 	}
 
-	public void setTo(String to) {
-		this.to = to;
-		if(to != null){
-			putBodyParameter("To", to);
-		}
-	}
-
-	public String getTemplateCode() {
-		return this.templateCode;
-	}
-
-	public void setTemplateCode(String templateCode) {
-		this.templateCode = templateCode;
-		if(templateCode != null){
-			putBodyParameter("TemplateCode", templateCode);
+	public void setContacts(String contacts) {
+		this.contacts = contacts;
+		if(contacts != null){
+			putBodyParameter("Contacts", contacts);
 		}
 	}
 
 	@Override
-	public Class<SendMessageResponse> getResponseClass() {
-		return SendMessageResponse.class;
+	public Class<CheckContactsResponse> getResponseClass() {
+		return CheckContactsResponse.class;
 	}
 
 }

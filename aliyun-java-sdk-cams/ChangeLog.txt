@@ -1,3 +1,7 @@
+2020-10-12 Version: 1.0.3
+- ChatApp third version.
+- Add contack check api.
+
 2020-09-02 Version: 1.0.2
 - ChatApp second version.
 - Support new message fomat.
