@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.aliyuncvc.model.v20191030.ListConferenceDevicesResponse;
-import com.aliyuncs.aliyuncvc.model.v20191030.ListConferenceDevicesResponse.Data.Data;
+import com.aliyuncs.aliyuncvc.model.v20191030.ListConferenceDevicesResponse.ConferencesDatas;
+import com.aliyuncs.aliyuncvc.model.v20191030.ListConferenceDevicesResponse.ConferencesDatas.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,29 +32,29 @@ public class ListConferenceDevicesResponseUnmarshaller {
 		listConferenceDevicesResponse.setMessage(_ctx.stringValue("ListConferenceDevicesResponse.Message"));
 		listConferenceDevicesResponse.setSuccess(_ctx.booleanValue("ListConferenceDevicesResponse.Success"));
 
-		Data data = new Data();
-		data.setTotal(_ctx.integerValue("ListConferenceDevicesResponse.Data.Total"));
-		data.setPageSize(_ctx.integerValue("ListConferenceDevicesResponse.Data.PageSize"));
-		data.setPageNumber(_ctx.integerValue("ListConferenceDevicesResponse.Data.PageNumber"));
+		ConferencesDatas conferencesDatas = new ConferencesDatas();
+		conferencesDatas.setTotal(_ctx.integerValue("ListConferenceDevicesResponse.ConferencesDatas.Total"));
+		conferencesDatas.setPageSize(_ctx.integerValue("ListConferenceDevicesResponse.ConferencesDatas.PageSize"));
+		conferencesDatas.setPageNumber(_ctx.integerValue("ListConferenceDevicesResponse.ConferencesDatas.PageNumber"));
 
 		List<Data> conferences = new ArrayList<Data>();
-		for (int i = 0; i < _ctx.lengthValue("ListConferenceDevicesResponse.Data.Conferences.Length"); i++) {
-			Data data_ = new Data();
-			data_.setActivationCode(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].ActivationCode"));
-			data_.setConferenceCode(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].ConferenceCode"));
-			data_.setConferenceName(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].ConferenceName"));
-			data_.setCreateTime(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].CreateTime"));
-			data_.setDeviceModel(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].DeviceModel"));
-			data_.setManufacturer(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].Manufacturer"));
-			data_.setPictureUrl(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].PictureUrl"));
-			data_.setSN(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].SN"));
-			data_.setStatus(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].Status"));
-			data_.setCastScreenCode(_ctx.stringValue("ListConferenceDevicesResponse.Data.Conferences["+ i +"].CastScreenCode"));
+		for (int i = 0; i < _ctx.lengthValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences.Length"); i++) {
+			Data data = new Data();
+			data.setActivationCode(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].ActivationCode"));
+			data.setConferenceCode(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].ConferenceCode"));
+			data.setConferenceName(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].ConferenceName"));
+			data.setCreateTime(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].CreateTime"));
+			data.setDeviceModel(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].DeviceModel"));
+			data.setManufacturer(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].Manufacturer"));
+			data.setPictureUrl(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].PictureUrl"));
+			data.setSN(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].SN"));
+			data.setStatus(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].Status"));
+			data.setCastScreenCode(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].CastScreenCode"));
 
-			conferences.add(data_);
+			conferences.add(data);
 		}
-		data.setConferences(conferences);
-		listConferenceDevicesResponse.setData(listConferenceDevicesResponseData);
+		conferencesDatas.setConferences(conferences);
+		listConferenceDevicesResponse.setConferencesDatas(conferencesDatas);
 	 
 	 	return listConferenceDevicesResponse;
 	}
