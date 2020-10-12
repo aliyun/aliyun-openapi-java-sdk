@@ -21,19 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepositoryGroupResponse> {
+public class CreateMergeRequestRequest extends RoaAcsRequest<CreateMergeRequestResponse> {
 	   
 
 	private String organizationId;
 
 	private String subUserId;
 
-	private Long groupId;
-
 	private String accessToken;
-	public DeleteRepositoryGroupRequest() {
-		super("codeup", "2020-04-14", "DeleteRepositoryGroup");
-		setUriPattern("/api/v3/groups/[GroupId]/remove");
+
+	private Long projectId;
+	public CreateMergeRequestRequest() {
+		super("codeup", "2020-04-14", "CreateMergeRequest");
+		setUriPattern("/api/v4/projects/[ProjectId]/merge_requests");
 		setMethod(MethodType.POST);
 	}
 
@@ -59,17 +59,6 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putPathParameter("GroupId", groupId.toString());
-		}
-	}
-
 	public String getAccessToken() {
 		return this.accessToken;
 	}
@@ -81,9 +70,20 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteRepositoryGroupResponse> getResponseClass() {
-		return DeleteRepositoryGroupResponse.class;
+	public Class<CreateMergeRequestResponse> getResponseClass() {
+		return CreateMergeRequestResponse.class;
 	}
 
 }

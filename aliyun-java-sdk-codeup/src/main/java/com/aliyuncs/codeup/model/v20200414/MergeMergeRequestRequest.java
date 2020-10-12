@@ -21,20 +21,22 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepositoryGroupResponse> {
+public class MergeMergeRequestRequest extends RoaAcsRequest<MergeMergeRequestResponse> {
 	   
 
 	private String organizationId;
 
 	private String subUserId;
 
-	private Long groupId;
+	private Long mergeRequestId;
 
 	private String accessToken;
-	public DeleteRepositoryGroupRequest() {
-		super("codeup", "2020-04-14", "DeleteRepositoryGroup");
-		setUriPattern("/api/v3/groups/[GroupId]/remove");
-		setMethod(MethodType.POST);
+
+	private Long projectId;
+	public MergeMergeRequestRequest() {
+		super("codeup", "2020-04-14", "MergeMergeRequest");
+		setUriPattern("/api/v3/projects/[ProjectId]/merge_request/[MergeRequestId]/merge");
+		setMethod(MethodType.PUT);
 	}
 
 	public String getOrganizationId() {
@@ -59,14 +61,14 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
+	public Long getMergeRequestId() {
+		return this.mergeRequestId;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putPathParameter("GroupId", groupId.toString());
+	public void setMergeRequestId(Long mergeRequestId) {
+		this.mergeRequestId = mergeRequestId;
+		if(mergeRequestId != null){
+			putPathParameter("MergeRequestId", mergeRequestId.toString());
 		}
 	}
 
@@ -81,9 +83,20 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteRepositoryGroupResponse> getResponseClass() {
-		return DeleteRepositoryGroupResponse.class;
+	public Class<MergeMergeRequestResponse> getResponseClass() {
+		return MergeMergeRequestResponse.class;
 	}
 
 }

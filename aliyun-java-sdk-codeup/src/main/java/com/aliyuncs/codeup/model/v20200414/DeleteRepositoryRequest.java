@@ -34,7 +34,7 @@ public class DeleteRepositoryRequest extends RoaAcsRequest<DeleteRepositoryRespo
 	public DeleteRepositoryRequest() {
 		super("codeup", "2020-04-14", "DeleteRepository");
 		setUriPattern("/api/v3/projects/[ProjectId]/remove");
-		setMethod(MethodType.DELETE);
+		setMethod(MethodType.POST);
 	}
 
 	public String getOrganizationId() {

@@ -21,20 +21,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepositoryGroupResponse> {
+public class GetRepositoryInfoRequest extends RoaAcsRequest<GetRepositoryInfoResponse> {
 	   
 
 	private String organizationId;
 
-	private String subUserId;
-
-	private Long groupId;
+	private String identity;
 
 	private String accessToken;
-	public DeleteRepositoryGroupRequest() {
-		super("codeup", "2020-04-14", "DeleteRepositoryGroup");
-		setUriPattern("/api/v3/groups/[GroupId]/remove");
-		setMethod(MethodType.POST);
+	public GetRepositoryInfoRequest() {
+		super("codeup", "2020-04-14", "GetRepositoryInfo");
+		setUriPattern("/api/v3/projects/info");
+		setMethod(MethodType.GET);
 	}
 
 	public String getOrganizationId() {
@@ -48,25 +46,14 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
-	public String getSubUserId() {
-		return this.subUserId;
+	public String getIdentity() {
+		return this.identity;
 	}
 
-	public void setSubUserId(String subUserId) {
-		this.subUserId = subUserId;
-		if(subUserId != null){
-			putQueryParameter("SubUserId", subUserId);
-		}
-	}
-
-	public Long getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putPathParameter("GroupId", groupId.toString());
+	public void setIdentity(String identity) {
+		this.identity = identity;
+		if(identity != null){
+			putQueryParameter("Identity", identity);
 		}
 	}
 
@@ -82,8 +69,8 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 	}
 
 	@Override
-	public Class<DeleteRepositoryGroupResponse> getResponseClass() {
-		return DeleteRepositoryGroupResponse.class;
+	public Class<GetRepositoryInfoResponse> getResponseClass() {
+		return GetRepositoryInfoResponse.class;
 	}
 
 }

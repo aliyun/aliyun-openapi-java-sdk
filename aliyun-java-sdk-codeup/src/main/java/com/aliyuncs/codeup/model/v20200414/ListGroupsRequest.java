@@ -21,20 +21,26 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepositoryGroupResponse> {
+public class ListGroupsRequest extends RoaAcsRequest<ListGroupsResponse> {
 	   
 
 	private String organizationId;
 
+	private Boolean includePersonal;
+
+	private String search;
+
 	private String subUserId;
 
-	private Long groupId;
+	private Long pageSize;
 
 	private String accessToken;
-	public DeleteRepositoryGroupRequest() {
-		super("codeup", "2020-04-14", "DeleteRepositoryGroup");
-		setUriPattern("/api/v3/groups/[GroupId]/remove");
-		setMethod(MethodType.POST);
+
+	private Long page;
+	public ListGroupsRequest() {
+		super("codeup", "2020-04-14", "ListGroups");
+		setUriPattern("/api/v3/groups/all");
+		setMethod(MethodType.GET);
 	}
 
 	public String getOrganizationId() {
@@ -45,6 +51,28 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		this.organizationId = organizationId;
 		if(organizationId != null){
 			putQueryParameter("OrganizationId", organizationId);
+		}
+	}
+
+	public Boolean getIncludePersonal() {
+		return this.includePersonal;
+	}
+
+	public void setIncludePersonal(Boolean includePersonal) {
+		this.includePersonal = includePersonal;
+		if(includePersonal != null){
+			putQueryParameter("IncludePersonal", includePersonal.toString());
+		}
+	}
+
+	public String getSearch() {
+		return this.search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+		if(search != null){
+			putQueryParameter("Search", search);
 		}
 	}
 
@@ -59,14 +87,14 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
+	public Long getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putPathParameter("GroupId", groupId.toString());
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -81,9 +109,20 @@ public class DeleteRepositoryGroupRequest extends RoaAcsRequest<DeleteRepository
 		}
 	}
 
+	public Long getPage() {
+		return this.page;
+	}
+
+	public void setPage(Long page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteRepositoryGroupResponse> getResponseClass() {
-		return DeleteRepositoryGroupResponse.class;
+	public Class<ListGroupsResponse> getResponseClass() {
+		return ListGroupsResponse.class;
 	}
 
 }
