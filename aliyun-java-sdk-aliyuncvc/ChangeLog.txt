@@ -1,3 +1,7 @@
+2020-10-12 Version: 1.0.10.2
+- Public beta version.
+- Add Api Overseas.
+
 2020-10-12 Version: 1.0.10.1
 - Public beta version.
 - Add Api Overseas.
