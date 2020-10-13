@@ -59,6 +59,10 @@
     <version>0.33.0</version>
 </dependency>
 ```
+
+## 使用诊断
+[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
+
 ## 快速使用
 
 以下这个代码示例向您展示了调用 Alibaba Cloud SDK for Java 的3个主要步骤：
