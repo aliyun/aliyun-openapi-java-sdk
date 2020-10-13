@@ -1,3 +1,6 @@
+2020-10-13 Version: 1.2.1
+- Release PedestrianDetectAttribute.
+
 2020-09-24 Version: 1.2.1
 - Update ExtractPedestrianFeatureAttr.
 
