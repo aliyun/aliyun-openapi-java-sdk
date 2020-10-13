@@ -1,3 +1,6 @@
+2020-10-13 Version: 1.2.2
+- Release PedestrianDetectAttribute.
+
 2020-10-13 Version: 1.2.1
 - Release PedestrianDetectAttribute.
 
