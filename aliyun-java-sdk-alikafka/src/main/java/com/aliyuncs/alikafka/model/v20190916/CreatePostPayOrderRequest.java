@@ -37,6 +37,8 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 
 	private Integer eipMax;
 
+	private String specType;
+
 	private Integer deployType;
 	public CreatePostPayOrderRequest() {
 		super("alikafka", "2019-09-16", "CreatePostPayOrder", "alikafka");
@@ -110,6 +112,17 @@ public class CreatePostPayOrderRequest extends RpcAcsRequest<CreatePostPayOrderR
 		this.eipMax = eipMax;
 		if(eipMax != null){
 			putQueryParameter("EipMax", eipMax.toString());
+		}
+	}
+
+	public String getSpecType() {
+		return this.specType;
+	}
+
+	public void setSpecType(String specType) {
+		this.specType = specType;
+		if(specType != null){
+			putQueryParameter("SpecType", specType);
 		}
 	}
 
