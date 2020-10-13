@@ -22,47 +22,21 @@ import com.aliyuncs.cassandra.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExecuteNodeToolRequest extends RpcAcsRequest<ExecuteNodeToolResponse> {
+public class DescribeNodeToolExecutionHistoryRequest extends RpcAcsRequest<DescribeNodeToolExecutionHistoryResponse> {
 	   
-
-	private String executeNodes;
-
-	private String dataCenterId;
 
 	private String clusterId;
 
-	private String command;
+	private String jobId;
 
-	private String arguments;
-	public ExecuteNodeToolRequest() {
-		super("Cassandra", "2019-01-01", "ExecuteNodeTool", "Cassandra");
+	private String dcId;
+	public DescribeNodeToolExecutionHistoryRequest() {
+		super("Cassandra", "2019-01-01", "DescribeNodeToolExecutionHistory", "Cassandra");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getExecuteNodes() {
-		return this.executeNodes;
-	}
-
-	public void setExecuteNodes(String executeNodes) {
-		this.executeNodes = executeNodes;
-		if(executeNodes != null){
-			putQueryParameter("ExecuteNodes", executeNodes);
-		}
-	}
-
-	public String getDataCenterId() {
-		return this.dataCenterId;
-	}
-
-	public void setDataCenterId(String dataCenterId) {
-		this.dataCenterId = dataCenterId;
-		if(dataCenterId != null){
-			putQueryParameter("DataCenterId", dataCenterId);
-		}
 	}
 
 	public String getClusterId() {
@@ -76,31 +50,31 @@ public class ExecuteNodeToolRequest extends RpcAcsRequest<ExecuteNodeToolRespons
 		}
 	}
 
-	public String getCommand() {
-		return this.command;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setCommand(String command) {
-		this.command = command;
-		if(command != null){
-			putQueryParameter("Command", command);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
-	public String getArguments() {
-		return this.arguments;
+	public String getDcId() {
+		return this.dcId;
 	}
 
-	public void setArguments(String arguments) {
-		this.arguments = arguments;
-		if(arguments != null){
-			putQueryParameter("Arguments", arguments);
+	public void setDcId(String dcId) {
+		this.dcId = dcId;
+		if(dcId != null){
+			putQueryParameter("DcId", dcId);
 		}
 	}
 
 	@Override
-	public Class<ExecuteNodeToolResponse> getResponseClass() {
-		return ExecuteNodeToolResponse.class;
+	public Class<DescribeNodeToolExecutionHistoryResponse> getResponseClass() {
+		return DescribeNodeToolExecutionHistoryResponse.class;
 	}
 
 }
