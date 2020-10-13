@@ -7,6 +7,7 @@ import com.aliyuncs.http.FormatType;
 import com.aliyuncs.http.HttpResponse;
 import com.google.gson.Gson;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.*;
 public class ErrorHandlingTest extends BaseTest {
 
     @Test
+    @Ignore
     public void parameterErrorTest() {
         CommonRequest request = new CommonRequest();
         request.setSysDomain("ecs-cn-hangzhou.aliyuncs.com");
