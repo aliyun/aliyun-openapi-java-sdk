@@ -1,4 +1,7 @@
-﻿2020-09-29 Version: 4.5.12
+﻿2020-10-13 Version: 4.5.13
+1, Turn off automatic retry
+
+2020-09-29 Version: 4.5.12
 1, Improve x-acs-action
 
 2020-09-24 Version: 4.5.11
