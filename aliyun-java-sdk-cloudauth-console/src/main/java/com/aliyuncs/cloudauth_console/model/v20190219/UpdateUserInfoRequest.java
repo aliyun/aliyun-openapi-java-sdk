@@ -33,6 +33,8 @@ public class UpdateUserInfoRequest extends RpcAcsRequest<UpdateUserInfoResponse>
 
 	private String certificateNo;
 
+	private Boolean overwriteImg;
+
 	private String imageBase64;
 
 	private String projectId;
@@ -98,6 +100,17 @@ public class UpdateUserInfoRequest extends RpcAcsRequest<UpdateUserInfoResponse>
 		this.certificateNo = certificateNo;
 		if(certificateNo != null){
 			putQueryParameter("CertificateNo", certificateNo);
+		}
+	}
+
+	public Boolean getOverwriteImg() {
+		return this.overwriteImg;
+	}
+
+	public void setOverwriteImg(Boolean overwriteImg) {
+		this.overwriteImg = overwriteImg;
+		if(overwriteImg != null){
+			putQueryParameter("OverwriteImg", overwriteImg.toString());
 		}
 	}
 
