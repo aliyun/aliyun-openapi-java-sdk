@@ -179,6 +179,8 @@ public class PullActionDataResponse extends AcsResponse {
 
 		private String imageObjectKey;
 
+		private Integer bodyPointNumber;
+
 		private ObjectPositionInImage objectPositionInImage;
 
 		private PointInMap pointInMap;
@@ -349,6 +351,14 @@ public class PullActionDataResponse extends AcsResponse {
 
 		public void setImageObjectKey(String imageObjectKey) {
 			this.imageObjectKey = imageObjectKey;
+		}
+
+		public Integer getBodyPointNumber() {
+			return this.bodyPointNumber;
+		}
+
+		public void setBodyPointNumber(Integer bodyPointNumber) {
+			this.bodyPointNumber = bodyPointNumber;
 		}
 
 		public ObjectPositionInImage getObjectPositionInImage() {

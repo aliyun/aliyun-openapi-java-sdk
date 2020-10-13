@@ -159,6 +159,8 @@ public class ListActionDataResponse extends AcsResponse {
 
 		private Integer facePointNumber;
 
+		private Integer bodyPointNumber;
+
 		private ObjectPositionInImage objectPositionInImage;
 
 		private PointInMap pointInMap;
@@ -329,6 +331,14 @@ public class ListActionDataResponse extends AcsResponse {
 
 		public void setFacePointNumber(Integer facePointNumber) {
 			this.facePointNumber = facePointNumber;
+		}
+
+		public Integer getBodyPointNumber() {
+			return this.bodyPointNumber;
+		}
+
+		public void setBodyPointNumber(Integer bodyPointNumber) {
+			this.bodyPointNumber = bodyPointNumber;
 		}
 
 		public ObjectPositionInImage getObjectPositionInImage() {

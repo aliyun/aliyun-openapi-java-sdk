@@ -63,6 +63,7 @@ public class PullActionDataResponseUnmarshaller {
 			action.setScore(_ctx.floatValue("PullActionDataResponse.Actions["+ i +"].Score"));
 			action.setSpecialType(_ctx.stringValue("PullActionDataResponse.Actions["+ i +"].SpecialType"));
 			action.setImageObjectKey(_ctx.stringValue("PullActionDataResponse.Actions["+ i +"].ImageObjectKey"));
+			action.setBodyPointNumber(_ctx.integerValue("PullActionDataResponse.Actions["+ i +"].BodyPointNumber"));
 
 			ObjectPositionInImage objectPositionInImage = new ObjectPositionInImage();
 			objectPositionInImage.setBottom(_ctx.floatValue("PullActionDataResponse.Actions["+ i +"].ObjectPositionInImage.Bottom"));
