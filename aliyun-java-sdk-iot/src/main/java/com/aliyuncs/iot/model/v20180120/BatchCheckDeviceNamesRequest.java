@@ -26,6 +26,8 @@ import com.aliyuncs.iot.Endpoint;
 public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDeviceNamesResponse> {
 	   
 
+	private List<DeviceNameList> deviceNameLists;
+
 	private String iotInstanceId;
 
 	private String productKey;
@@ -38,6 +40,20 @@ public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDevice
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<DeviceNameList> getDeviceNameLists() {
+		return this.deviceNameLists;
+	}
+
+	public void setDeviceNameLists(List<DeviceNameList> deviceNameLists) {
+		this.deviceNameLists = deviceNameLists;	
+		if (deviceNameLists != null) {
+			for (int depth1 = 0; depth1 < deviceNameLists.size(); depth1++) {
+				putQueryParameter("DeviceNameList." + (depth1 + 1) + ".DeviceNickname" , deviceNameLists.get(depth1).getDeviceNickname());
+				putQueryParameter("DeviceNameList." + (depth1 + 1) + ".DeviceName" , deviceNameLists.get(depth1).getDeviceName());
+			}
+		}	
 	}
 
 	public String getIotInstanceId() {
@@ -73,6 +89,29 @@ public class BatchCheckDeviceNamesRequest extends RpcAcsRequest<BatchCheckDevice
 				putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
 			}
 		}	
+	}
+
+	public static class DeviceNameList {
+
+		private String deviceNickname;
+
+		private String deviceName;
+
+		public String getDeviceNickname() {
+			return this.deviceNickname;
+		}
+
+		public void setDeviceNickname(String deviceNickname) {
+			this.deviceNickname = deviceNickname;
+		}
+
+		public String getDeviceName() {
+			return this.deviceName;
+		}
+
+		public void setDeviceName(String deviceName) {
+			this.deviceName = deviceName;
+		}
 	}
 
 	@Override

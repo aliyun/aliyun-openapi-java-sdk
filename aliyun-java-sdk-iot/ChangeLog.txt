@@ -1,3 +1,10 @@
+2020-10-13 Version: 7.14.0
+- Add DeviceCenter API, including QueryDeviceBySQL.
+- Add OTA API, including ListOTAModuleByProduct, DeleteOTAModule.
+- Update error message in response with InvokeThingService, SetDeviceProperty.
+- Update OTA API, including CreateOTAModule, QueryDeviceVersionCountByPkFromOTA, QueryFirmwareByUid.
+- Update thing model API, ImportThingModelTsl.
+
 2020-09-15 Version: 7.13.0
 - Fix java sdk version.
 

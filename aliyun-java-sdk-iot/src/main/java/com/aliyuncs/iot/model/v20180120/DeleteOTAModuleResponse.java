@@ -14,16 +14,15 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.BatchCheckDeviceNamesResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.DeleteOTAModuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchCheckDeviceNamesResponse extends AcsResponse {
+public class DeleteOTAModuleResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,8 +31,6 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
-
-	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,49 +64,13 @@ public class BatchCheckDeviceNamesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Data getData() {
-		return this.data;
-	}
-
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private Long applyId;
-
-		private List<String> invalidDeviceNameList;
-
-		private List<String> invalidDeviceNicknameList;
-
-		public Long getApplyId() {
-			return this.applyId;
-		}
-
-		public void setApplyId(Long applyId) {
-			this.applyId = applyId;
-		}
-
-		public List<String> getInvalidDeviceNameList() {
-			return this.invalidDeviceNameList;
-		}
-
-		public void setInvalidDeviceNameList(List<String> invalidDeviceNameList) {
-			this.invalidDeviceNameList = invalidDeviceNameList;
-		}
-
-		public List<String> getInvalidDeviceNicknameList() {
-			return this.invalidDeviceNicknameList;
-		}
-
-		public void setInvalidDeviceNicknameList(List<String> invalidDeviceNicknameList) {
-			this.invalidDeviceNicknameList = invalidDeviceNicknameList;
-		}
+	@Override
+	public DeleteOTAModuleResponse getInstance(UnmarshallerContext context) {
+		return	DeleteOTAModuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public BatchCheckDeviceNamesResponse getInstance(UnmarshallerContext context) {
-		return	BatchCheckDeviceNamesResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

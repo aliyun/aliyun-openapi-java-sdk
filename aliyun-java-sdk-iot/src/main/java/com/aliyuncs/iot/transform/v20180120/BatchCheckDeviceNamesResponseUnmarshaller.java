@@ -39,6 +39,12 @@ public class BatchCheckDeviceNamesResponseUnmarshaller {
 			invalidDeviceNameList.add(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNameList["+ i +"]"));
 		}
 		data.setInvalidDeviceNameList(invalidDeviceNameList);
+
+		List<String> invalidDeviceNicknameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNicknameList.Length"); i++) {
+			invalidDeviceNicknameList.add(_ctx.stringValue("BatchCheckDeviceNamesResponse.Data.InvalidDeviceNicknameList["+ i +"]"));
+		}
+		data.setInvalidDeviceNicknameList(invalidDeviceNicknameList);
 		batchCheckDeviceNamesResponse.setData(data);
 	 
 	 	return batchCheckDeviceNamesResponse;
