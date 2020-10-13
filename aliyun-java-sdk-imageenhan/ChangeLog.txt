@@ -1,3 +1,6 @@
+2020-10-13 Version: 1.1.0
+- Release GenerateDynamicImage.
+
 2020-07-01 Version: 1.0.9
 - SDK version 109.
 
