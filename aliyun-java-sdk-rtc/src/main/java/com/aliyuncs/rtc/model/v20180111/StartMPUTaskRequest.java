@@ -48,11 +48,15 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Long vadInterval;
 
+	private List<Watermarks> watermarkss;
+
 	private Long ownerId;
 
 	private List<String> subSpecUserss;
 
 	private String appId;
+
+	private List<Backgrounds> backgroundss;
 
 	private Long timeStampRef;
 
@@ -90,6 +94,28 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".PaneId" , userPaness.get(depth1).getPaneId());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".UserId" , userPaness.get(depth1).getUserId());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".SourceType" , userPaness.get(depth1).getSourceType());
+				if (userPaness.get(depth1).getImagess() != null) {
+					for (int depth2 = 0; depth2 < userPaness.get(depth1).getImagess().size(); depth2++) {
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Url" , userPaness.get(depth1).getImagess().get(depth2).getUrl());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Display" , userPaness.get(depth1).getImagess().get(depth2).getDisplay());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".X" , userPaness.get(depth1).getImagess().get(depth2).getX());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Y" , userPaness.get(depth1).getImagess().get(depth2).getY());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Width" , userPaness.get(depth1).getImagess().get(depth2).getWidth());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Height" , userPaness.get(depth1).getImagess().get(depth2).getHeight());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".ZOrder" , userPaness.get(depth1).getImagess().get(depth2).getZOrder());
+					}
+				}
+				if (userPaness.get(depth1).getTextss() != null) {
+					for (int depth2 = 0; depth2 < userPaness.get(depth1).getTextss().size(); depth2++) {
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Text" , userPaness.get(depth1).getTextss().get(depth2).getText());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".X" , userPaness.get(depth1).getTextss().get(depth2).getX());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".Y" , userPaness.get(depth1).getTextss().get(depth2).getY());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontType" , userPaness.get(depth1).getTextss().get(depth2).getFontType());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontSize" , userPaness.get(depth1).getTextss().get(depth2).getFontSize());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".FontColor" , userPaness.get(depth1).getTextss().get(depth2).getFontColor());
+						putQueryParameter("UserPanes." + (depth1 + 1) + ".Texts." + (depth2 + 1) + ".ZOrder" , userPaness.get(depth1).getTextss().get(depth2).getZOrder());
+					}
+				}
 			}
 		}	
 	}
@@ -195,6 +221,26 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
+	public List<Watermarks> getWatermarkss() {
+		return this.watermarkss;
+	}
+
+	public void setWatermarkss(List<Watermarks> watermarkss) {
+		this.watermarkss = watermarkss;	
+		if (watermarkss != null) {
+			for (int depth1 = 0; depth1 < watermarkss.size(); depth1++) {
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Url" , watermarkss.get(depth1).getUrl());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Alpha" , watermarkss.get(depth1).getAlpha());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Display" , watermarkss.get(depth1).getDisplay());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".X" , watermarkss.get(depth1).getX());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Y" , watermarkss.get(depth1).getY());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Width" , watermarkss.get(depth1).getWidth());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Height" , watermarkss.get(depth1).getHeight());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".ZOrder" , watermarkss.get(depth1).getZOrder());
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -228,6 +274,25 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		if(appId != null){
 			putQueryParameter("AppId", appId);
 		}
+	}
+
+	public List<Backgrounds> getBackgroundss() {
+		return this.backgroundss;
+	}
+
+	public void setBackgroundss(List<Backgrounds> backgroundss) {
+		this.backgroundss = backgroundss;	
+		if (backgroundss != null) {
+			for (int depth1 = 0; depth1 < backgroundss.size(); depth1++) {
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Url" , backgroundss.get(depth1).getUrl());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Display" , backgroundss.get(depth1).getDisplay());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".X" , backgroundss.get(depth1).getX());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Y" , backgroundss.get(depth1).getY());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Width" , backgroundss.get(depth1).getWidth());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Height" , backgroundss.get(depth1).getHeight());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".ZOrder" , backgroundss.get(depth1).getZOrder());
+			}
+		}	
 	}
 
 	public Long getTimeStampRef() {
@@ -271,6 +336,10 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 		private String sourceType;
 
+		private List<Images> imagess;
+
+		private List<Texts> textss;
+
 		public Integer getPaneId() {
 			return this.paneId;
 		}
@@ -293,6 +362,324 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public List<Images> getImagess() {
+			return this.imagess;
+		}
+
+		public void setImagess(List<Images> imagess) {
+			this.imagess = imagess;
+		}
+
+		public List<Texts> getTextss() {
+			return this.textss;
+		}
+
+		public void setTextss(List<Texts> textss) {
+			this.textss = textss;
+		}
+
+		public static class Images {
+
+			private String url;
+
+			private Integer display;
+
+			private Float x;
+
+			private Float y;
+
+			private Float width;
+
+			private Float height;
+
+			private Integer zOrder;
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public Integer getDisplay() {
+				return this.display;
+			}
+
+			public void setDisplay(Integer display) {
+				this.display = display;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
+			}
+
+			public Float getY() {
+				return this.y;
+			}
+
+			public void setY(Float y) {
+				this.y = y;
+			}
+
+			public Float getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Float width) {
+				this.width = width;
+			}
+
+			public Float getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Float height) {
+				this.height = height;
+			}
+
+			public Integer getZOrder() {
+				return this.zOrder;
+			}
+
+			public void setZOrder(Integer zOrder) {
+				this.zOrder = zOrder;
+			}
+		}
+
+		public static class Texts {
+
+			private String text;
+
+			private Float x;
+
+			private Float y;
+
+			private Integer fontType;
+
+			private Integer fontSize;
+
+			private Integer fontColor;
+
+			private Integer zOrder;
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
+			public Float getX() {
+				return this.x;
+			}
+
+			public void setX(Float x) {
+				this.x = x;
+			}
+
+			public Float getY() {
+				return this.y;
+			}
+
+			public void setY(Float y) {
+				this.y = y;
+			}
+
+			public Integer getFontType() {
+				return this.fontType;
+			}
+
+			public void setFontType(Integer fontType) {
+				this.fontType = fontType;
+			}
+
+			public Integer getFontSize() {
+				return this.fontSize;
+			}
+
+			public void setFontSize(Integer fontSize) {
+				this.fontSize = fontSize;
+			}
+
+			public Integer getFontColor() {
+				return this.fontColor;
+			}
+
+			public void setFontColor(Integer fontColor) {
+				this.fontColor = fontColor;
+			}
+
+			public Integer getZOrder() {
+				return this.zOrder;
+			}
+
+			public void setZOrder(Integer zOrder) {
+				this.zOrder = zOrder;
+			}
+		}
+	}
+
+	public static class Watermarks {
+
+		private String url;
+
+		private Float alpha;
+
+		private Integer display;
+
+		private Float x;
+
+		private Float y;
+
+		private Float width;
+
+		private Float height;
+
+		private Integer zOrder;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Float getAlpha() {
+			return this.alpha;
+		}
+
+		public void setAlpha(Float alpha) {
+			this.alpha = alpha;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Float height) {
+			this.height = height;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
+		}
+	}
+
+	public static class Backgrounds {
+
+		private String url;
+
+		private Integer display;
+
+		private Float x;
+
+		private Float y;
+
+		private Float width;
+
+		private Float height;
+
+		private Integer zOrder;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Float height) {
+			this.height = height;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
 		}
 	}
 
