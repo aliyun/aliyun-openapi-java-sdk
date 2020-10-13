@@ -32,6 +32,8 @@ public class CreateMPULayoutRequest extends RpcAcsRequest<CreateMPULayoutRespons
 
 	private String appId;
 
+	private String name;
+
 	private Integer audioMixCount;
 	public CreateMPULayoutRequest() {
 		super("rtc", "2018-01-11", "CreateMPULayout", "rtc");
@@ -80,6 +82,17 @@ public class CreateMPULayoutRequest extends RpcAcsRequest<CreateMPULayoutRespons
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

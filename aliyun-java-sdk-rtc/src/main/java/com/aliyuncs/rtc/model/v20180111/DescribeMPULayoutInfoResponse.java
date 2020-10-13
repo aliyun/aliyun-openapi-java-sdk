@@ -49,6 +49,8 @@ public class DescribeMPULayoutInfoResponse extends AcsResponse {
 
 		private Long layoutId;
 
+		private String name;
+
 		private Integer audioMixCount;
 
 		private List<PanesItem> panes;
@@ -59,6 +61,14 @@ public class DescribeMPULayoutInfoResponse extends AcsResponse {
 
 		public void setLayoutId(Long layoutId) {
 			this.layoutId = layoutId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getAudioMixCount() {

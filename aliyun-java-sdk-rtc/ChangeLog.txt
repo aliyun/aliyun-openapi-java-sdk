@@ -1,3 +1,6 @@
+2020-10-13 Version: 1.2.2
+- Generated 2018-01-11 for `rtc`.
+
 2020-09-22 Version: 1.2.1
 - Generated 2018-01-11 for `rtc`.
 

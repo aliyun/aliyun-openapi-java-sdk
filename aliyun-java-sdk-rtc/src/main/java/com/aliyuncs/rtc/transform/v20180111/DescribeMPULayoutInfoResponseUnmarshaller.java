@@ -31,6 +31,7 @@ public class DescribeMPULayoutInfoResponseUnmarshaller {
 
 		Layout layout = new Layout();
 		layout.setLayoutId(_ctx.longValue("DescribeMPULayoutInfoResponse.Layout.LayoutId"));
+		layout.setName(_ctx.stringValue("DescribeMPULayoutInfoResponse.Layout.Name"));
 		layout.setAudioMixCount(_ctx.integerValue("DescribeMPULayoutInfoResponse.Layout.AudioMixCount"));
 
 		List<PanesItem> panes = new ArrayList<PanesItem>();
