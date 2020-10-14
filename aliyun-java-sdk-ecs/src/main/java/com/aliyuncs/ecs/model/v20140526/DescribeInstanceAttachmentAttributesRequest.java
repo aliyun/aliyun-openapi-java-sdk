@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,22 +22,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
+public class DescribeInstanceAttachmentAttributesRequest extends RpcAcsRequest<DescribeInstanceAttachmentAttributesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private List<String> instanceTypess;
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String instanceTypeFamily;
-
 	private Long ownerId;
-	public DescribeInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
+
+	private String instanceIds;
+	public DescribeInstanceAttachmentAttributesRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceAttachmentAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +58,26 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public List<String> getInstanceTypess() {
-		return this.instanceTypess;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setInstanceTypess(List<String> instanceTypess) {
-		this.instanceTypess = instanceTypess;	
-		if (instanceTypess != null) {
-			for (int i = 0; i < instanceTypess.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
-			}
-		}	
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -92,17 +102,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,9 +113,20 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceTypesResponse> getResponseClass() {
-		return DescribeInstanceTypesResponse.class;
+	public Class<DescribeInstanceAttachmentAttributesResponse> getResponseClass() {
+		return DescribeInstanceAttachmentAttributesResponse.class;
 	}
 
 }

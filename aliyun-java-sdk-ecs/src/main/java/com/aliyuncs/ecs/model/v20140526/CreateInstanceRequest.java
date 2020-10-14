@@ -42,6 +42,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String resourceGroupId;
 
+	private String privatePoolOptionsMatchCriteria;
+
 	private String hostName;
 
 	private String password;
@@ -51,6 +53,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private Integer storageSetPartitionNumber;
 
 	private List<Tag> tags;
+
+	private String privatePoolOptionsId;
 
 	private Integer autoRenewPeriod;
 
@@ -246,6 +250,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getPrivatePoolOptionsMatchCriteria() {
+		return this.privatePoolOptionsMatchCriteria;
+	}
+
+	public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+		this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		if(privatePoolOptionsMatchCriteria != null){
+			putQueryParameter("PrivatePoolOptions.MatchCriteria", privatePoolOptionsMatchCriteria);
+		}
+	}
+
 	public String getHostName() {
 		return this.hostName;
 	}
@@ -302,6 +317,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getPrivatePoolOptionsId() {
+		return this.privatePoolOptionsId;
+	}
+
+	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+		this.privatePoolOptionsId = privatePoolOptionsId;
+		if(privatePoolOptionsId != null){
+			putQueryParameter("PrivatePoolOptions.Id", privatePoolOptionsId);
+		}
 	}
 
 	public Integer getAutoRenewPeriod() {

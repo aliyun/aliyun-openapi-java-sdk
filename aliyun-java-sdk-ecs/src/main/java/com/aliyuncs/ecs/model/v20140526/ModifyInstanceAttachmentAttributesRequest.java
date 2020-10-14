@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,22 +22,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
+public class ModifyInstanceAttachmentAttributesRequest extends RpcAcsRequest<ModifyInstanceAttachmentAttributesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private List<String> instanceTypess;
+	private String privatePoolOptionsMatchCriteria;
+
+	private String privatePoolOptionsId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String instanceTypeFamily;
-
 	private Long ownerId;
-	public DescribeInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
+
+	private String instanceId;
+	public ModifyInstanceAttachmentAttributesRequest() {
+		super("Ecs", "2014-05-26", "ModifyInstanceAttachmentAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +58,26 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public List<String> getInstanceTypess() {
-		return this.instanceTypess;
+	public String getPrivatePoolOptionsMatchCriteria() {
+		return this.privatePoolOptionsMatchCriteria;
 	}
 
-	public void setInstanceTypess(List<String> instanceTypess) {
-		this.instanceTypess = instanceTypess;	
-		if (instanceTypess != null) {
-			for (int i = 0; i < instanceTypess.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
-			}
-		}	
+	public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+		this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		if(privatePoolOptionsMatchCriteria != null){
+			putQueryParameter("PrivatePoolOptions.MatchCriteria", privatePoolOptionsMatchCriteria);
+		}
+	}
+
+	public String getPrivatePoolOptionsId() {
+		return this.privatePoolOptionsId;
+	}
+
+	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+		this.privatePoolOptionsId = privatePoolOptionsId;
+		if(privatePoolOptionsId != null){
+			putQueryParameter("PrivatePoolOptions.Id", privatePoolOptionsId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -92,17 +102,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,9 +113,20 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceTypesResponse> getResponseClass() {
-		return DescribeInstanceTypesResponse.class;
+	public Class<ModifyInstanceAttachmentAttributesResponse> getResponseClass() {
+		return ModifyInstanceAttachmentAttributesResponse.class;
 	}
 
 }

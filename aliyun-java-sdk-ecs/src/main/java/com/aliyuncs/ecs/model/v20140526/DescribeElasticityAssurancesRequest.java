@@ -15,7 +15,6 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -23,22 +22,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
+public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeElasticityAssurancesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private List<String> instanceTypess;
+	private String nextToken;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String instanceTypeFamily;
-
 	private Long ownerId;
-	public DescribeInstanceTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs");
+
+	private String privatePoolOptionsIds;
+
+	private Integer maxResults;
+	public DescribeElasticityAssurancesRequest() {
+		super("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +58,15 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public List<String> getInstanceTypess() {
-		return this.instanceTypess;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setInstanceTypess(List<String> instanceTypess) {
-		this.instanceTypess = instanceTypess;	
-		if (instanceTypess != null) {
-			for (int i = 0; i < instanceTypess.size(); i++) {
-				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
-			}
-		}	
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getResourceOwnerAccount() {
@@ -92,17 +91,6 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
-	public String getInstanceTypeFamily() {
-		return this.instanceTypeFamily;
-	}
-
-	public void setInstanceTypeFamily(String instanceTypeFamily) {
-		this.instanceTypeFamily = instanceTypeFamily;
-		if(instanceTypeFamily != null){
-			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -114,9 +102,31 @@ public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstance
 		}
 	}
 
+	public String getPrivatePoolOptionsIds() {
+		return this.privatePoolOptionsIds;
+	}
+
+	public void setPrivatePoolOptionsIds(String privatePoolOptionsIds) {
+		this.privatePoolOptionsIds = privatePoolOptionsIds;
+		if(privatePoolOptionsIds != null){
+			putQueryParameter("PrivatePoolOptions.Ids", privatePoolOptionsIds);
+		}
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceTypesResponse> getResponseClass() {
-		return DescribeInstanceTypesResponse.class;
+	public Class<DescribeElasticityAssurancesResponse> getResponseClass() {
+		return DescribeElasticityAssurancesResponse.class;
 	}
 
 }

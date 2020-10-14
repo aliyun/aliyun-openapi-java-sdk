@@ -30,6 +30,8 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 
 	private String clientToken;
 
+	private Boolean serviceManaged;
+
 	private String description;
 
 	private String securityGroupName;
@@ -75,6 +77,17 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getServiceManaged() {
+		return this.serviceManaged;
+	}
+
+	public void setServiceManaged(Boolean serviceManaged) {
+		this.serviceManaged = serviceManaged;
+		if(serviceManaged != null){
+			putQueryParameter("ServiceManaged", serviceManaged.toString());
 		}
 	}
 
