@@ -31,7 +31,7 @@ public class ListHotlineRecordRequest extends RpcAcsRequest<ListHotlineRecordRes
 
 	private String callId;
 	public ListHotlineRecordRequest() {
-		super("scsp", "2020-07-02", "ListHotlineRecord", "scsp");
+		super("scsp", "2020-07-02", "ListHotlineRecord", "scsp-service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

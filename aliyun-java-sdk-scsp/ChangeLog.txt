@@ -1,3 +1,6 @@
+2020-10-14 Version: 1.1.5
+- Data statistics.
+
 2020-09-24 Version: 1.1.4
 - Support Conference Call.
 

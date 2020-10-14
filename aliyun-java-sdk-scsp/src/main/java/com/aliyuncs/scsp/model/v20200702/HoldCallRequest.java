@@ -37,7 +37,7 @@ public class HoldCallRequest extends RpcAcsRequest<HoldCallResponse> {
 
 	private String connectionId;
 	public HoldCallRequest() {
-		super("scsp", "2020-07-02", "HoldCall", "scsp");
+		super("scsp", "2020-07-02", "HoldCall", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

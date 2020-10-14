@@ -31,7 +31,7 @@ public class ListAgentBySkillGroupIdRequest extends RpcAcsRequest<ListAgentBySki
 
 	private Long skillGroupId;
 	public ListAgentBySkillGroupIdRequest() {
-		super("scsp", "2020-07-02", "ListAgentBySkillGroupId", "scsp");
+		super("scsp", "2020-07-02", "ListAgentBySkillGroupId", "scsp-service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
