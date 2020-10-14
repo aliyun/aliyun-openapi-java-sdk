@@ -41,7 +41,7 @@ public class CreateQualityRelativeNodeRequest extends RpcAcsRequest<CreateQualit
 
 	private Long projectId;
 	public CreateQualityRelativeNodeRequest() {
-		super("dataworks-public", "2020-05-18", "CreateQualityRelativeNode", "dide");
+		super("dataworks-public", "2020-05-18", "CreateQualityRelativeNode");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

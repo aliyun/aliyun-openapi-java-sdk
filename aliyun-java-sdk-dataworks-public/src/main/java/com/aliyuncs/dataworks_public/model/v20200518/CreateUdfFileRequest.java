@@ -49,7 +49,7 @@ public class CreateUdfFileRequest extends RpcAcsRequest<CreateUdfFileResponse> {
 
 	private Long projectId;
 	public CreateUdfFileRequest() {
-		super("dataworks-public", "2020-05-18", "CreateUdfFile", "dide");
+		super("dataworks-public", "2020-05-18", "CreateUdfFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

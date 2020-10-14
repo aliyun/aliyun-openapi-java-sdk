@@ -31,7 +31,7 @@ public class RemoveProjectMemberFromRoleRequest extends RpcAcsRequest<RemoveProj
 
 	private String userId;
 	public RemoveProjectMemberFromRoleRequest() {
-		super("dataworks-public", "2020-05-18", "RemoveProjectMemberFromRole", "dide");
+		super("dataworks-public", "2020-05-18", "RemoveProjectMemberFromRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

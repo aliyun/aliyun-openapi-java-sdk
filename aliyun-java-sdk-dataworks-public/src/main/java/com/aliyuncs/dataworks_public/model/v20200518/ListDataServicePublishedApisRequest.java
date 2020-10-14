@@ -39,7 +39,7 @@ public class ListDataServicePublishedApisRequest extends RpcAcsRequest<ListDataS
 
 	private Long projectId;
 	public ListDataServicePublishedApisRequest() {
-		super("dataworks-public", "2020-05-18", "ListDataServicePublishedApis", "dide");
+		super("dataworks-public", "2020-05-18", "ListDataServicePublishedApis");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

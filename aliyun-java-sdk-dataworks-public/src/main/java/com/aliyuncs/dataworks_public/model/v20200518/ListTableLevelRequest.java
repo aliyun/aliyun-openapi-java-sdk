@@ -29,7 +29,7 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 
 	private Long projectId;
 	public ListTableLevelRequest() {
-		super("dataworks-public", "2020-05-18", "ListTableLevel", "dide");
+		super("dataworks-public", "2020-05-18", "ListTableLevel");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

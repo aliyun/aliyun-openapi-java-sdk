@@ -29,7 +29,7 @@ public class DeleteTableThemeRequest extends RpcAcsRequest<DeleteTableThemeRespo
 
 	private Long projectId;
 	public DeleteTableThemeRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteTableTheme", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteTableTheme");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -60,7 +60,7 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 
 	private Long categoryId;
 	public CreateTableRequest() {
-		super("dataworks-public", "2020-05-18", "CreateTable", "dide");
+		super("dataworks-public", "2020-05-18", "CreateTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

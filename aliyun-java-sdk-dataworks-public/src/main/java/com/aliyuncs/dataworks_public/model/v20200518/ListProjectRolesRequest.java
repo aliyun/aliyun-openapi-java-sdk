@@ -27,7 +27,7 @@ public class ListProjectRolesRequest extends RpcAcsRequest<ListProjectRolesRespo
 
 	private Long projectId;
 	public ListProjectRolesRequest() {
-		super("dataworks-public", "2020-05-18", "ListProjectRoles", "dide");
+		super("dataworks-public", "2020-05-18", "ListProjectRoles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

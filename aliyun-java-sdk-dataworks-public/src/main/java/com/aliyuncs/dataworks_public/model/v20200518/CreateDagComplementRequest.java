@@ -47,7 +47,7 @@ public class CreateDagComplementRequest extends RpcAcsRequest<CreateDagComplemen
 
 	private String nodeParams;
 	public CreateDagComplementRequest() {
-		super("dataworks-public", "2020-05-18", "CreateDagComplement", "dide");
+		super("dataworks-public", "2020-05-18", "CreateDagComplement");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

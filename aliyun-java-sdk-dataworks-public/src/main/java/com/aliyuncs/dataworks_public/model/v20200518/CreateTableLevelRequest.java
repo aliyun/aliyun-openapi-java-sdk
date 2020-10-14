@@ -33,7 +33,7 @@ public class CreateTableLevelRequest extends RpcAcsRequest<CreateTableLevelRespo
 
 	private Long projectId;
 	public CreateTableLevelRequest() {
-		super("dataworks-public", "2020-05-18", "CreateTableLevel", "dide");
+		super("dataworks-public", "2020-05-18", "CreateTableLevel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ListRemindsRequest extends RpcAcsRequest<ListRemindsResponse> {
 
 	private Long nodeId;
 	public ListRemindsRequest() {
-		super("dataworks-public", "2020-05-18", "ListReminds", "dide");
+		super("dataworks-public", "2020-05-18", "ListReminds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

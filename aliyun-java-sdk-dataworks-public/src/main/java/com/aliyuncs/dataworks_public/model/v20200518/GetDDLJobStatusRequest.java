@@ -27,7 +27,7 @@ public class GetDDLJobStatusRequest extends RpcAcsRequest<GetDDLJobStatusRespons
 
 	private String taskId;
 	public GetDDLJobStatusRequest() {
-		super("dataworks-public", "2020-05-18", "GetDDLJobStatus", "dide");
+		super("dataworks-public", "2020-05-18", "GetDDLJobStatus");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

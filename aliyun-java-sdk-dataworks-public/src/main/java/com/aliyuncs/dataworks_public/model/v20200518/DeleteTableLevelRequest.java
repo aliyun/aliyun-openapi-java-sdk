@@ -29,7 +29,7 @@ public class DeleteTableLevelRequest extends RpcAcsRequest<DeleteTableLevelRespo
 
 	private Long projectId;
 	public DeleteTableLevelRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteTableLevel", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteTableLevel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

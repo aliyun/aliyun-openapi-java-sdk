@@ -35,7 +35,7 @@ public class DeployFileRequest extends RpcAcsRequest<DeployFileResponse> {
 
 	private Long fileId;
 	public DeployFileRequest() {
-		super("dataworks-public", "2020-05-18", "DeployFile", "dide");
+		super("dataworks-public", "2020-05-18", "DeployFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

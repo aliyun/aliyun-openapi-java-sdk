@@ -61,7 +61,7 @@ public class CreateQualityRuleRequest extends RpcAcsRequest<CreateQualityRuleRes
 
 	private String methodName;
 	public CreateQualityRuleRequest() {
-		super("dataworks-public", "2020-05-18", "CreateQualityRule", "dide");
+		super("dataworks-public", "2020-05-18", "CreateQualityRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

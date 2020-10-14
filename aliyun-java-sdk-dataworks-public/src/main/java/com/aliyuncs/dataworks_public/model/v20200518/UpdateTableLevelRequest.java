@@ -35,7 +35,7 @@ public class UpdateTableLevelRequest extends RpcAcsRequest<UpdateTableLevelRespo
 
 	private Long projectId;
 	public UpdateTableLevelRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateTableLevel", "dide");
+		super("dataworks-public", "2020-05-18", "UpdateTableLevel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

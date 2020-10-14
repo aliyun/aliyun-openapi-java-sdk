@@ -41,7 +41,7 @@ public class GetMetaTableLineageRequest extends RpcAcsRequest<GetMetaTableLineag
 
 	private String direction;
 	public GetMetaTableLineageRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableLineage", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaTableLineage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

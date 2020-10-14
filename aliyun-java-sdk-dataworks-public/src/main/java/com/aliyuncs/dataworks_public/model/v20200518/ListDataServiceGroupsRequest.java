@@ -35,7 +35,7 @@ public class ListDataServiceGroupsRequest extends RpcAcsRequest<ListDataServiceG
 
 	private Integer pageNumber;
 	public ListDataServiceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListDataServiceGroups", "dide");
+		super("dataworks-public", "2020-05-18", "ListDataServiceGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

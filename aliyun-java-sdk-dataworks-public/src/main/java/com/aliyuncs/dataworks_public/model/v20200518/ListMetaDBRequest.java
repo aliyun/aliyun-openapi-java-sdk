@@ -29,7 +29,7 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 
 	private Long projectId;
 	public ListMetaDBRequest() {
-		super("dataworks-public", "2020-05-18", "ListMetaDB", "dide");
+		super("dataworks-public", "2020-05-18", "ListMetaDB");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

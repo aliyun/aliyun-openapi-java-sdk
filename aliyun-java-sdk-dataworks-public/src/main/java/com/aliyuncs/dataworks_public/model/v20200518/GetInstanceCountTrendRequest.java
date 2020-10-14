@@ -31,7 +31,7 @@ public class GetInstanceCountTrendRequest extends RpcAcsRequest<GetInstanceCount
 
 	private Long projectId;
 	public GetInstanceCountTrendRequest() {
-		super("dataworks-public", "2020-05-18", "GetInstanceCountTrend", "dide");
+		super("dataworks-public", "2020-05-18", "GetInstanceCountTrend");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

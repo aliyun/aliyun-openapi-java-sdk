@@ -35,7 +35,7 @@ public class CreateDataServiceApiAuthorityRequest extends RpcAcsRequest<CreateDa
 
 	private Long apiId;
 	public CreateDataServiceApiAuthorityRequest() {
-		super("dataworks-public", "2020-05-18", "CreateDataServiceApiAuthority", "dide");
+		super("dataworks-public", "2020-05-18", "CreateDataServiceApiAuthority");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

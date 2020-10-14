@@ -29,7 +29,7 @@ public class ListProjectsRequest extends RpcAcsRequest<ListProjectsResponse> {
 
 	private Integer pageNumber;
 	public ListProjectsRequest() {
-		super("dataworks-public", "2020-05-18", "ListProjects", "dide");
+		super("dataworks-public", "2020-05-18", "ListProjects");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class GetNodeTypeListInfoRequest extends RpcAcsRequest<GetNodeTypeListInf
 
 	private Integer pageNumber;
 	public GetNodeTypeListInfoRequest() {
-		super("dataworks-public", "2020-05-18", "GetNodeTypeListInfo", "dide");
+		super("dataworks-public", "2020-05-18", "GetNodeTypeListInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

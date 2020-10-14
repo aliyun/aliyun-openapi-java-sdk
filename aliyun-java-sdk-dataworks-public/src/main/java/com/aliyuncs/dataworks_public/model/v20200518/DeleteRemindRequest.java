@@ -27,7 +27,7 @@ public class DeleteRemindRequest extends RpcAcsRequest<DeleteRemindResponse> {
 
 	private Long remindId;
 	public DeleteRemindRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteRemind", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteRemind");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

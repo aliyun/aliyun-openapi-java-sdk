@@ -15,6 +15,7 @@
 package com.aliyuncs.dataworks_public.model.v20200518;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dataworks_public.Endpoint;
 
@@ -33,7 +34,8 @@ public class GetQualityEntityRequest extends RpcAcsRequest<GetQualityEntityRespo
 
 	private String tableName;
 	public GetQualityEntityRequest() {
-		super("dataworks-public", "2020-05-18", "GetQualityEntity", "dide");
+		super("dataworks-public", "2020-05-18", "GetQualityEntity");
+		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

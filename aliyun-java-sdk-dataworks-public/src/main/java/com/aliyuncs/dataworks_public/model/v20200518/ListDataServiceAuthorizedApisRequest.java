@@ -35,7 +35,7 @@ public class ListDataServiceAuthorizedApisRequest extends RpcAcsRequest<ListData
 
 	private Integer pageNumber;
 	public ListDataServiceAuthorizedApisRequest() {
-		super("dataworks-public", "2020-05-18", "ListDataServiceAuthorizedApis", "dide");
+		super("dataworks-public", "2020-05-18", "ListDataServiceAuthorizedApis");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

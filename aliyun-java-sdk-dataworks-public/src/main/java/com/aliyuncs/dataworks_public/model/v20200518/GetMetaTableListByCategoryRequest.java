@@ -31,7 +31,7 @@ public class GetMetaTableListByCategoryRequest extends RpcAcsRequest<GetMetaTabl
 
 	private Long categoryId;
 	public GetMetaTableListByCategoryRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableListByCategory", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaTableListByCategory");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

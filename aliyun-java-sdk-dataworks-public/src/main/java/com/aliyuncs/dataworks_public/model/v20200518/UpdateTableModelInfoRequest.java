@@ -35,7 +35,7 @@ public class UpdateTableModelInfoRequest extends RpcAcsRequest<UpdateTableModelI
 
 	private Long firstLevelThemeId;
 	public UpdateTableModelInfoRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateTableModelInfo", "dide");
+		super("dataworks-public", "2020-05-18", "UpdateTableModelInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

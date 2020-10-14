@@ -35,7 +35,7 @@ public class CreateDataServiceFolderRequest extends RpcAcsRequest<CreateDataServ
 
 	private Long parentId;
 	public CreateDataServiceFolderRequest() {
-		super("dataworks-public", "2020-05-18", "CreateDataServiceFolder", "dide");
+		super("dataworks-public", "2020-05-18", "CreateDataServiceFolder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

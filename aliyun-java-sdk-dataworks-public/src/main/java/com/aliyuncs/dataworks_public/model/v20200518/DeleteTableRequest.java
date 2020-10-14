@@ -33,7 +33,7 @@ public class DeleteTableRequest extends RpcAcsRequest<DeleteTableResponse> {
 
 	private Long projectId;
 	public DeleteTableRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteTable", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

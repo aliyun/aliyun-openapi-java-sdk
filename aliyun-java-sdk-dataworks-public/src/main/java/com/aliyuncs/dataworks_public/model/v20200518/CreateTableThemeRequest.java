@@ -33,7 +33,7 @@ public class CreateTableThemeRequest extends RpcAcsRequest<CreateTableThemeRespo
 
 	private Long parentId;
 	public CreateTableThemeRequest() {
-		super("dataworks-public", "2020-05-18", "CreateTableTheme", "dide");
+		super("dataworks-public", "2020-05-18", "CreateTableTheme");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

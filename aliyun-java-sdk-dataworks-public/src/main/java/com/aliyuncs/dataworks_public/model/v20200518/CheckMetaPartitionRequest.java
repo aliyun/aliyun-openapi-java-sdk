@@ -37,7 +37,7 @@ public class CheckMetaPartitionRequest extends RpcAcsRequest<CheckMetaPartitionR
 
 	private String tableName;
 	public CheckMetaPartitionRequest() {
-		super("dataworks-public", "2020-05-18", "CheckMetaPartition", "dide");
+		super("dataworks-public", "2020-05-18", "CheckMetaPartition");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

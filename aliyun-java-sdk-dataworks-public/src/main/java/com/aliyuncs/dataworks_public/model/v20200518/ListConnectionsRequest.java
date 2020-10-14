@@ -41,7 +41,7 @@ public class ListConnectionsRequest extends RpcAcsRequest<ListConnectionsRespons
 
 	private String status;
 	public ListConnectionsRequest() {
-		super("dataworks-public", "2020-05-18", "ListConnections", "dide");
+		super("dataworks-public", "2020-05-18", "ListConnections");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

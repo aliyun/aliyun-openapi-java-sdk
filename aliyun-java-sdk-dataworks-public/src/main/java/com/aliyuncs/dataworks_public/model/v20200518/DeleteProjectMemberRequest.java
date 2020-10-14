@@ -29,7 +29,7 @@ public class DeleteProjectMemberRequest extends RpcAcsRequest<DeleteProjectMembe
 
 	private String userId;
 	public DeleteProjectMemberRequest() {
-		super("dataworks-public", "2020-05-18", "DeleteProjectMember", "dide");
+		super("dataworks-public", "2020-05-18", "DeleteProjectMember");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

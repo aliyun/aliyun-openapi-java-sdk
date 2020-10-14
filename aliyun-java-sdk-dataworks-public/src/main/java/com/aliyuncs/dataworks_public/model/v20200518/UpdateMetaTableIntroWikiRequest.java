@@ -29,7 +29,7 @@ public class UpdateMetaTableIntroWikiRequest extends RpcAcsRequest<UpdateMetaTab
 
 	private String content;
 	public UpdateMetaTableIntroWikiRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateMetaTableIntroWiki", "dide");
+		super("dataworks-public", "2020-05-18", "UpdateMetaTableIntroWiki");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

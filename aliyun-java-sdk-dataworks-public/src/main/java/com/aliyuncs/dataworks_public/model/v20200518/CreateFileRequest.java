@@ -33,6 +33,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String projectIdentifier;
 
+	private Long resourceGroupId;
+
 	private Long projectId;
 
 	private Long startEffectDate;
@@ -46,6 +48,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 	private String inputList;
 
 	private String rerunMode;
+
+	private String connectionName;
 
 	private String paraValue;
 
@@ -67,7 +71,7 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 
 	private String fileDescription;
 	public CreateFileRequest() {
-		super("dataworks-public", "2020-05-18", "CreateFile", "dide");
+		super("dataworks-public", "2020-05-18", "CreateFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -116,6 +120,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.projectIdentifier = projectIdentifier;
 		if(projectIdentifier != null){
 			putBodyParameter("ProjectIdentifier", projectIdentifier);
+		}
+	}
+
+	public Long getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(Long resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putBodyParameter("ResourceGroupId", resourceGroupId.toString());
 		}
 	}
 
@@ -193,6 +208,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.rerunMode = rerunMode;
 		if(rerunMode != null){
 			putBodyParameter("RerunMode", rerunMode);
+		}
+	}
+
+	public String getConnectionName() {
+		return this.connectionName;
+	}
+
+	public void setConnectionName(String connectionName) {
+		this.connectionName = connectionName;
+		if(connectionName != null){
+			putBodyParameter("ConnectionName", connectionName);
 		}
 	}
 

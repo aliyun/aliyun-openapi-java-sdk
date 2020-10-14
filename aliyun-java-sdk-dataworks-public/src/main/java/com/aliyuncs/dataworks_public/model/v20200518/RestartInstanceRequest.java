@@ -29,7 +29,7 @@ public class RestartInstanceRequest extends RpcAcsRequest<RestartInstanceRespons
 
 	private Long instanceId;
 	public RestartInstanceRequest() {
-		super("dataworks-public", "2020-05-18", "RestartInstance", "dide");
+		super("dataworks-public", "2020-05-18", "RestartInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

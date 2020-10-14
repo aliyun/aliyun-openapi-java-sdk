@@ -31,7 +31,7 @@ public class GetInstanceStatusCountRequest extends RpcAcsRequest<GetInstanceStat
 
 	private Long projectId;
 	public GetInstanceStatusCountRequest() {
-		super("dataworks-public", "2020-05-18", "GetInstanceStatusCount", "dide");
+		super("dataworks-public", "2020-05-18", "GetInstanceStatusCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

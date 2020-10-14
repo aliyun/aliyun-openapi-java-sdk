@@ -57,7 +57,7 @@ public class CreateDataServiceApiRequest extends RpcAcsRequest<CreateDataService
 
 	private Integer responseContentType;
 	public CreateDataServiceApiRequest() {
-		super("dataworks-public", "2020-05-18", "CreateDataServiceApi", "dide");
+		super("dataworks-public", "2020-05-18", "CreateDataServiceApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

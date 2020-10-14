@@ -31,7 +31,7 @@ public class ListNodeIORequest extends RpcAcsRequest<ListNodeIOResponse> {
 
 	private String ioType;
 	public ListNodeIORequest() {
-		super("dataworks-public", "2020-05-18", "ListNodeIO", "dide");
+		super("dataworks-public", "2020-05-18", "ListNodeIO");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

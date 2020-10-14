@@ -43,9 +43,13 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private Integer autoRerunIntervalMillis;
 
+	private String owner;
+
 	private String inputList;
 
 	private String rerunMode;
+
+	private String connectionName;
 
 	private String paraValue;
 
@@ -67,7 +71,7 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String fileDescription;
 	public UpdateFileRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateFile", "dide");
+		super("dataworks-public", "2020-05-18", "UpdateFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -174,6 +178,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		}
 	}
 
+	public String getOwner() {
+		return this.owner;
+	}
+
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putBodyParameter("Owner", owner);
+		}
+	}
+
 	public String getInputList() {
 		return this.inputList;
 	}
@@ -193,6 +208,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.rerunMode = rerunMode;
 		if(rerunMode != null){
 			putBodyParameter("RerunMode", rerunMode);
+		}
+	}
+
+	public String getConnectionName() {
+		return this.connectionName;
+	}
+
+	public void setConnectionName(String connectionName) {
+		this.connectionName = connectionName;
+		if(connectionName != null){
+			putBodyParameter("ConnectionName", connectionName);
 		}
 	}
 

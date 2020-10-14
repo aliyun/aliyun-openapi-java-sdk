@@ -29,7 +29,7 @@ public class ListProgramTypeCountRequest extends RpcAcsRequest<ListProgramTypeCo
 
 	private Long projectId;
 	public ListProgramTypeCountRequest() {
-		super("dataworks-public", "2020-05-18", "ListProgramTypeCount", "dide");
+		super("dataworks-public", "2020-05-18", "ListProgramTypeCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ListTableThemeRequest extends RpcAcsRequest<ListTableThemeResponse>
 
 	private Long parentId;
 	public ListTableThemeRequest() {
-		super("dataworks-public", "2020-05-18", "ListTableTheme", "dide");
+		super("dataworks-public", "2020-05-18", "ListTableTheme");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

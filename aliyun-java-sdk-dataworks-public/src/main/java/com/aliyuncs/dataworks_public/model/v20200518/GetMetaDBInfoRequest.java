@@ -33,7 +33,7 @@ public class GetMetaDBInfoRequest extends RpcAcsRequest<GetMetaDBInfoResponse> {
 
 	private String appGuid;
 	public GetMetaDBInfoRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaDBInfo", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaDBInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

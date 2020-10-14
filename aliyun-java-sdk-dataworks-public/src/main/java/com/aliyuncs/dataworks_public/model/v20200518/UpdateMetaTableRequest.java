@@ -45,7 +45,7 @@ public class UpdateMetaTableRequest extends RpcAcsRequest<UpdateMetaTableRespons
 
 	private Long categoryId;
 	public UpdateMetaTableRequest() {
-		super("dataworks-public", "2020-05-18", "UpdateMetaTable", "dide");
+		super("dataworks-public", "2020-05-18", "UpdateMetaTable");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

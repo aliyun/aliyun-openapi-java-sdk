@@ -27,7 +27,7 @@ public class GetSuccessInstanceTrendRequest extends RpcAcsRequest<GetSuccessInst
 
 	private Long projectId;
 	public GetSuccessInstanceTrendRequest() {
-		super("dataworks-public", "2020-05-18", "GetSuccessInstanceTrend", "dide");
+		super("dataworks-public", "2020-05-18", "GetSuccessInstanceTrend");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

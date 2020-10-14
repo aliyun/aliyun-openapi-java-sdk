@@ -41,7 +41,7 @@ public class ListAlertMessagesRequest extends RpcAcsRequest<ListAlertMessagesRes
 
 	private String alertRuleTypes;
 	public ListAlertMessagesRequest() {
-		super("dataworks-public", "2020-05-18", "ListAlertMessages", "dide");
+		super("dataworks-public", "2020-05-18", "ListAlertMessages");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

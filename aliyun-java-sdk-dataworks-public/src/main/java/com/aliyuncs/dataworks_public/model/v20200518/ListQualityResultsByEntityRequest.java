@@ -37,7 +37,7 @@ public class ListQualityResultsByEntityRequest extends RpcAcsRequest<ListQuality
 
 	private Integer pageNumber;
 	public ListQualityResultsByEntityRequest() {
-		super("dataworks-public", "2020-05-18", "ListQualityResultsByEntity", "dide");
+		super("dataworks-public", "2020-05-18", "ListQualityResultsByEntity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

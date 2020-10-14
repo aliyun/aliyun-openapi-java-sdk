@@ -35,7 +35,7 @@ public class CreateDagTestRequest extends RpcAcsRequest<CreateDagTestResponse> {
 
 	private Long nodeId;
 	public CreateDagTestRequest() {
-		super("dataworks-public", "2020-05-18", "CreateDagTest", "dide");
+		super("dataworks-public", "2020-05-18", "CreateDagTest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class GetMetaTableFullInfoRequest extends RpcAcsRequest<GetMetaTableFullI
 
 	private String tableName;
 	public GetMetaTableFullInfoRequest() {
-		super("dataworks-public", "2020-05-18", "GetMetaTableFullInfo", "dide");
+		super("dataworks-public", "2020-05-18", "GetMetaTableFullInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class CreateProjectMemberRequest extends RpcAcsRequest<CreateProjectMembe
 
 	private String userId;
 	public CreateProjectMemberRequest() {
-		super("dataworks-public", "2020-05-18", "CreateProjectMember", "dide");
+		super("dataworks-public", "2020-05-18", "CreateProjectMember");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

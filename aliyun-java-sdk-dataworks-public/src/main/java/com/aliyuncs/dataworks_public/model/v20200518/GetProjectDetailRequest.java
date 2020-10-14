@@ -27,7 +27,7 @@ public class GetProjectDetailRequest extends RpcAcsRequest<GetProjectDetailRespo
 
 	private Long projectId;
 	public GetProjectDetailRequest() {
-		super("dataworks-public", "2020-05-18", "GetProjectDetail", "dide");
+		super("dataworks-public", "2020-05-18", "GetProjectDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
