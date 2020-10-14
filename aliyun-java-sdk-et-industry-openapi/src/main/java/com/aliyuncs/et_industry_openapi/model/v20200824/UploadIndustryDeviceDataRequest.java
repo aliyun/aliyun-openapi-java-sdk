@@ -18,6 +18,7 @@ import com.aliyuncs.RoaAcsRequest;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.et_industry_openapi.Endpoint;
 
 /**
  * @author auto create
@@ -31,6 +32,10 @@ public class UploadIndustryDeviceDataRequest extends RoaAcsRequest<UploadIndustr
 		super("et-industry-openapi", "2020-08-24", "UploadIndustryDeviceData");
 		setUriPattern("/api/igate/timeseries/upload/pop/multifieldbatch");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Map<Object,Object> getRequest() {

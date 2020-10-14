@@ -1,3 +1,6 @@
+2020-10-14 Version: 1.8
+- Python version.
+
 2020-09-09 Version: 1.8
 - Python version.
 
