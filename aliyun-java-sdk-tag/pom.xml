@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-tag</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.1</version>
+  <version>1.0.0</version>
   <name>aliyun-java-sdk-tag</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
