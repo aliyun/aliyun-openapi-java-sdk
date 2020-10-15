@@ -1,3 +1,6 @@
+2020-10-15 Version: 1.2.0
+- Add Usergroup APIs and UserTag APIs.
+
 2020-08-21 Version: 1.1.0
 - Supported AddUserGroupMember,DeleteUserGroupMember.
 - Supported QueryDataService API.
