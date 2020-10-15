@@ -26,8 +26,6 @@ import com.aliyuncs.arms.Endpoint;
 public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageResponse> {
 	   
 
-	private String consistencyQueryStrategy;
-
 	private Long endTime;
 
 	private String orderBy;
@@ -37,10 +35,6 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 	private Long startTime;
 
 	private List<Filters> filterss;
-
-	private String consistencyDataKey;
-
-	private String proxyUserId;
 
 	private List<String> measuress;
 
@@ -60,17 +54,6 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getConsistencyQueryStrategy() {
-		return this.consistencyQueryStrategy;
-	}
-
-	public void setConsistencyQueryStrategy(String consistencyQueryStrategy) {
-		this.consistencyQueryStrategy = consistencyQueryStrategy;
-		if(consistencyQueryStrategy != null){
-			putQueryParameter("ConsistencyQueryStrategy", consistencyQueryStrategy);
-		}
 	}
 
 	public Long getEndTime() {
@@ -129,28 +112,6 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
 			}
 		}	
-	}
-
-	public String getConsistencyDataKey() {
-		return this.consistencyDataKey;
-	}
-
-	public void setConsistencyDataKey(String consistencyDataKey) {
-		this.consistencyDataKey = consistencyDataKey;
-		if(consistencyDataKey != null){
-			putQueryParameter("ConsistencyDataKey", consistencyDataKey);
-		}
-	}
-
-	public String getProxyUserId() {
-		return this.proxyUserId;
-	}
-
-	public void setProxyUserId(String proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId);
-		}
 	}
 
 	public List<String> getMeasuress() {

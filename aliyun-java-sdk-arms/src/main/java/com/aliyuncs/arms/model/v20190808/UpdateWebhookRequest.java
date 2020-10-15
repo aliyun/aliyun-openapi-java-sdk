@@ -22,25 +22,51 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertContactGroupResponse> {
+public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 	   
+
+	private String headers;
+
+	private String method;
 
 	private Long contactId;
 
-	private Boolean isDetail;
+	private String params;
 
-	private String contactGroupName;
+	private String body;
+
+	private String url;
 
 	private String contactName;
-
-	private String contactGroupIds;
-	public SearchAlertContactGroupRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms");
+	public UpdateWebhookRequest() {
+		super("ARMS", "2019-08-08", "UpdateWebhook", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getHeaders() {
+		return this.headers;
+	}
+
+	public void setHeaders(String headers) {
+		this.headers = headers;
+		if(headers != null){
+			putQueryParameter("Headers", headers);
+		}
+	}
+
+	public String getBizMethod() {
+		return this.method;
+	}
+
+	public void setBizMethod(String method) {
+		this.method = method;
+		if(method != null){
+			putQueryParameter("Method", method);
+		}
 	}
 
 	public Long getContactId() {
@@ -54,25 +80,36 @@ public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertCon
 		}
 	}
 
-	public Boolean getIsDetail() {
-		return this.isDetail;
+	public String getParams() {
+		return this.params;
 	}
 
-	public void setIsDetail(Boolean isDetail) {
-		this.isDetail = isDetail;
-		if(isDetail != null){
-			putQueryParameter("IsDetail", isDetail.toString());
+	public void setParams(String params) {
+		this.params = params;
+		if(params != null){
+			putQueryParameter("Params", params);
 		}
 	}
 
-	public String getContactGroupName() {
-		return this.contactGroupName;
+	public String getBody() {
+		return this.body;
 	}
 
-	public void setContactGroupName(String contactGroupName) {
-		this.contactGroupName = contactGroupName;
-		if(contactGroupName != null){
-			putQueryParameter("ContactGroupName", contactGroupName);
+	public void setBody(String body) {
+		this.body = body;
+		if(body != null){
+			putQueryParameter("Body", body);
+		}
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+		if(url != null){
+			putQueryParameter("Url", url);
 		}
 	}
 
@@ -87,20 +124,9 @@ public class SearchAlertContactGroupRequest extends RpcAcsRequest<SearchAlertCon
 		}
 	}
 
-	public String getContactGroupIds() {
-		return this.contactGroupIds;
-	}
-
-	public void setContactGroupIds(String contactGroupIds) {
-		this.contactGroupIds = contactGroupIds;
-		if(contactGroupIds != null){
-			putQueryParameter("ContactGroupIds", contactGroupIds);
-		}
-	}
-
 	@Override
-	public Class<SearchAlertContactGroupResponse> getResponseClass() {
-		return SearchAlertContactGroupResponse.class;
+	public Class<UpdateWebhookResponse> getResponseClass() {
+		return UpdateWebhookResponse.class;
 	}
 
 }

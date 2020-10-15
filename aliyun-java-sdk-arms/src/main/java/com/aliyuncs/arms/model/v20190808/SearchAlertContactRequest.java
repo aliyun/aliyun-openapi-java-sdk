@@ -27,6 +27,8 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 
 	private String currentPage;
 
+	private String contactIds;
+
 	private String contactName;
 
 	private String phone;
@@ -51,6 +53,17 @@ public class SearchAlertContactRequest extends RpcAcsRequest<SearchAlertContactR
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage);
+		}
+	}
+
+	public String getContactIds() {
+		return this.contactIds;
+	}
+
+	public void setContactIds(String contactIds) {
+		this.contactIds = contactIds;
+		if(contactIds != null){
+			putQueryParameter("ContactIds", contactIds);
 		}
 	}
 

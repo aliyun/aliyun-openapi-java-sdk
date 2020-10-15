@@ -107,6 +107,8 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 			private Boolean systemNoc;
 
+			private String webhook;
+
 			public Long getContactId() {
 				return this.contactId;
 			}
@@ -177,6 +179,14 @@ public class SearchAlertContactResponse extends AcsResponse {
 
 			public void setSystemNoc(Boolean systemNoc) {
 				this.systemNoc = systemNoc;
+			}
+
+			public String getWebhook() {
+				return this.webhook;
+			}
+
+			public void setWebhook(String webhook) {
+				this.webhook = webhook;
 			}
 		}
 	}

@@ -46,6 +46,7 @@ public class SearchAlertContactResponseUnmarshaller {
 			contact.setCreateTime(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].CreateTime"));
 			contact.setUpdateTime(_ctx.longValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].UpdateTime"));
 			contact.setSystemNoc(_ctx.booleanValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].SystemNoc"));
+			contact.setWebhook(_ctx.stringValue("SearchAlertContactResponse.PageBean.Contacts["+ i +"].Webhook"));
 
 			contacts.add(contact);
 		}
