@@ -16,6 +16,7 @@ package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.das.Endpoint;
 
 /**
  * @author auto create
@@ -42,6 +43,10 @@ public class GetEndpointSwitchTaskRequest extends RpcAcsRequest<GetEndpointSwitc
 	public GetEndpointSwitchTaskRequest() {
 		super("DAS", "2020-01-16", "GetEndpointSwitchTask", "hdm");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSkipAuth() {

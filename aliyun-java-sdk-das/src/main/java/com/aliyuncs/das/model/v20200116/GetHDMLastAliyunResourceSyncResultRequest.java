@@ -16,6 +16,7 @@ package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.das.Endpoint;
 
 /**
  * @author auto create
@@ -40,6 +41,10 @@ public class GetHDMLastAliyunResourceSyncResultRequest extends RpcAcsRequest<Get
 	public GetHDMLastAliyunResourceSyncResultRequest() {
 		super("DAS", "2020-01-16", "GetHDMLastAliyunResourceSyncResult", "hdm");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSkipAuth() {
