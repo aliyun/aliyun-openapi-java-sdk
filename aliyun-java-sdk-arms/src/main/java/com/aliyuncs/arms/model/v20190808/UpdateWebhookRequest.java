@@ -25,13 +25,13 @@ import com.aliyuncs.arms.Endpoint;
 public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 	   
 
-	private String headers;
+	private String httpHeaders;
 
 	private String method;
 
 	private Long contactId;
 
-	private String params;
+	private String httpParams;
 
 	private String body;
 
@@ -47,14 +47,14 @@ public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getHeaders() {
-		return this.headers;
+	public String getHttpHeaders() {
+		return this.httpHeaders;
 	}
 
-	public void setHeaders(String headers) {
-		this.headers = headers;
-		if(headers != null){
-			putQueryParameter("Headers", headers);
+	public void setHttpHeaders(String httpHeaders) {
+		this.httpHeaders = httpHeaders;
+		if(httpHeaders != null){
+			putQueryParameter("HttpHeaders", httpHeaders);
 		}
 	}
 
@@ -80,14 +80,14 @@ public class UpdateWebhookRequest extends RpcAcsRequest<UpdateWebhookResponse> {
 		}
 	}
 
-	public String getParams() {
-		return this.params;
+	public String getHttpParams() {
+		return this.httpParams;
 	}
 
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
+	public void setHttpParams(String httpParams) {
+		this.httpParams = httpParams;
+		if(httpParams != null){
+			putQueryParameter("HttpParams", httpParams);
 		}
 	}
 
