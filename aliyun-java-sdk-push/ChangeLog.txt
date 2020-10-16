@@ -2,6 +2,10 @@
 - Supported AndroidNotificationNotifyId for Push and MassPush.
 - Supported iOSNotificationCollapseId for Push and MassPush.
 
+2020-10-16 Version: 3.13.6
+- Supported AndroidNotificationNotifyId for Push and MassPush.
+- Supported iOSNotificationCollapseId for Push and MassPush.
+
 2020-09-02 Version: 3.13.5
 - Supported AndroidNotificationHuaweiChannel for Push and MassPush.
 
