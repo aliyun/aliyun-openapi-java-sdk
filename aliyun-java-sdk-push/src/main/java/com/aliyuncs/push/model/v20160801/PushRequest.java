@@ -79,6 +79,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 
 	private String androidMusic;
 
+	private String iOSNotificationCollapseId;
+
 	private String pushType;
 
 	private String androidExtParameters;
@@ -110,6 +112,8 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 	private String androidActivity;
 
 	private String smsSignName;
+
+	private Integer androidNotificationNotifyId;
 
 	private Long appKey;
 
@@ -424,6 +428,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		}
 	}
 
+	public String getIOSNotificationCollapseId() {
+		return this.iOSNotificationCollapseId;
+	}
+
+	public void setIOSNotificationCollapseId(String iOSNotificationCollapseId) {
+		this.iOSNotificationCollapseId = iOSNotificationCollapseId;
+		if(iOSNotificationCollapseId != null){
+			putQueryParameter("iOSNotificationCollapseId", iOSNotificationCollapseId);
+		}
+	}
+
 	public String getPushType() {
 		return this.pushType;
 	}
@@ -597,6 +612,17 @@ public class PushRequest extends RpcAcsRequest<PushResponse> {
 		this.smsSignName = smsSignName;
 		if(smsSignName != null){
 			putQueryParameter("SmsSignName", smsSignName);
+		}
+	}
+
+	public Integer getAndroidNotificationNotifyId() {
+		return this.androidNotificationNotifyId;
+	}
+
+	public void setAndroidNotificationNotifyId(Integer androidNotificationNotifyId) {
+		this.androidNotificationNotifyId = androidNotificationNotifyId;
+		if(androidNotificationNotifyId != null){
+			putQueryParameter("AndroidNotificationNotifyId", androidNotificationNotifyId.toString());
 		}
 	}
 

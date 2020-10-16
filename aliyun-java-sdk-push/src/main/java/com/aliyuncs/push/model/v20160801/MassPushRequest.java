@@ -82,10 +82,12 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiNotifyBody" , pushTasks.get(depth1).getAndroidXiaoMiNotifyBody());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSSubtitle" , pushTasks.get(depth1).getIOSSubtitle());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSRemind" , pushTasks.get(depth1).getIOSRemind());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidNotificationNotifyId" , pushTasks.get(depth1).getAndroidNotificationNotifyId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".TargetValue" , pushTasks.get(depth1).getTargetValue());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidMusic" , pushTasks.get(depth1).getAndroidMusic());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiActivity" , pushTasks.get(depth1).getAndroidXiaoMiActivity());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".AndroidXiaoMiNotifyTitle" , pushTasks.get(depth1).getAndroidXiaoMiNotifyTitle());
+				putBodyParameter("PushTask." + (depth1 + 1) + ".iOSNotificationCollapseId" , pushTasks.get(depth1).getIOSNotificationCollapseId());
 				putBodyParameter("PushTask." + (depth1 + 1) + ".PushType" , pushTasks.get(depth1).getPushType());
 			}
 		}	
@@ -176,6 +178,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		private Boolean iOSRemind;
 
+		private Integer androidNotificationNotifyId;
+
 		private String targetValue;
 
 		private String androidMusic;
@@ -183,6 +187,8 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 		private String androidXiaoMiActivity;
 
 		private String androidXiaoMiNotifyTitle;
+
+		private String iOSNotificationCollapseId;
 
 		private String pushType;
 
@@ -474,6 +480,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 			this.iOSRemind = iOSRemind;
 		}
 
+		public Integer getAndroidNotificationNotifyId() {
+			return this.androidNotificationNotifyId;
+		}
+
+		public void setAndroidNotificationNotifyId(Integer androidNotificationNotifyId) {
+			this.androidNotificationNotifyId = androidNotificationNotifyId;
+		}
+
 		public String getTargetValue() {
 			return this.targetValue;
 		}
@@ -504,6 +518,14 @@ public class MassPushRequest extends RpcAcsRequest<MassPushResponse> {
 
 		public void setAndroidXiaoMiNotifyTitle(String androidXiaoMiNotifyTitle) {
 			this.androidXiaoMiNotifyTitle = androidXiaoMiNotifyTitle;
+		}
+
+		public String getIOSNotificationCollapseId() {
+			return this.iOSNotificationCollapseId;
+		}
+
+		public void setIOSNotificationCollapseId(String iOSNotificationCollapseId) {
+			this.iOSNotificationCollapseId = iOSNotificationCollapseId;
 		}
 
 		public String getPushType() {
