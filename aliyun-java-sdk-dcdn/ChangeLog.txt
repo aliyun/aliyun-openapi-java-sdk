@@ -1,3 +1,6 @@
+2020-10-16 Version: 2.0.5
+- Update cert API.
+
 2020-09-23 Version: 2.0.3
 - Sync cdn APIs.
 
