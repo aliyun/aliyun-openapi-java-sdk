@@ -25,6 +25,7 @@ public class CreateServerlessClusterResponseUnmarshaller {
 		createServerlessClusterResponse.setRequestId(_ctx.stringValue("CreateServerlessClusterResponse.RequestId"));
 		createServerlessClusterResponse.setClusterId(_ctx.stringValue("CreateServerlessClusterResponse.ClusterId"));
 		createServerlessClusterResponse.setOrderId(_ctx.stringValue("CreateServerlessClusterResponse.OrderId"));
+		createServerlessClusterResponse.setPassWord(_ctx.stringValue("CreateServerlessClusterResponse.PassWord"));
 	 
 	 	return createServerlessClusterResponse;
 	}

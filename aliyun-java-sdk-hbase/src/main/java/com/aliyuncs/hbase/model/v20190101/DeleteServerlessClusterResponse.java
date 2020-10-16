@@ -15,22 +15,16 @@
 package com.aliyuncs.hbase.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hbase.transform.v20190101.CreateServerlessClusterResponseUnmarshaller;
+import com.aliyuncs.hbase.transform.v20190101.DeleteServerlessClusterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateServerlessClusterResponse extends AcsResponse {
+public class DeleteServerlessClusterResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String clusterId;
-
-	private String orderId;
-
-	private String passWord;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +34,9 @@ public class CreateServerlessClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getPassWord() {
-		return this.passWord;
-	}
-
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
-	}
-
 	@Override
-	public CreateServerlessClusterResponse getInstance(UnmarshallerContext context) {
-		return	CreateServerlessClusterResponseUnmarshaller.unmarshall(this, context);
+	public DeleteServerlessClusterResponse getInstance(UnmarshallerContext context) {
+		return	DeleteServerlessClusterResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
