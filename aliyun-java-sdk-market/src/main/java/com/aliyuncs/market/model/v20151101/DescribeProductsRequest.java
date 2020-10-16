@@ -26,13 +26,13 @@ import com.aliyuncs.market.Endpoint;
 public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsResponse> {
 	   
 
-	private List<Filter> filters;
-
 	private String searchTerm;
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private List<Filter> filters;
+
+	private Integer pageSize;
 	public DescribeProductsRequest() {
 		super("Market", "2015-11-01", "DescribeProducts");
 		setMethod(MethodType.POST);
@@ -40,6 +40,28 @@ public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSearchTerm() {
+		return this.searchTerm;
+	}
+
+	public void setSearchTerm(String searchTerm) {
+		this.searchTerm = searchTerm;
+		if(searchTerm != null){
+			putQueryParameter("SearchTerm", searchTerm);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
 	}
 
 	public List<Filter> getFilters() {
@@ -56,17 +78,6 @@ public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsRespo
 		}	
 	}
 
-	public String getSearchTerm() {
-		return this.searchTerm;
-	}
-
-	public void setSearchTerm(String searchTerm) {
-		this.searchTerm = searchTerm;
-		if(searchTerm != null){
-			putQueryParameter("SearchTerm", searchTerm);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -75,17 +86,6 @@ public class DescribeProductsRequest extends RpcAcsRequest<DescribeProductsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
