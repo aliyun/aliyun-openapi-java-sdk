@@ -22,21 +22,32 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteOTAModuleRequest extends RpcAcsRequest<DeleteOTAModuleResponse> {
+public class UpdateThingModelValidationConfigRequest extends RpcAcsRequest<UpdateThingModelValidationConfigResponse> {
 	   
+
+	private Integer validateType;
 
 	private String iotInstanceId;
 
-	private String moduleName;
-
 	private String productKey;
-	public DeleteOTAModuleRequest() {
-		super("Iot", "2018-01-20", "DeleteOTAModule", "iot");
+	public UpdateThingModelValidationConfigRequest() {
+		super("Iot", "2018-01-20", "UpdateThingModelValidationConfig", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getValidateType() {
+		return this.validateType;
+	}
+
+	public void setValidateType(Integer validateType) {
+		this.validateType = validateType;
+		if(validateType != null){
+			putQueryParameter("ValidateType", validateType.toString());
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -47,17 +58,6 @@ public class DeleteOTAModuleRequest extends RpcAcsRequest<DeleteOTAModuleRespons
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getModuleName() {
-		return this.moduleName;
-	}
-
-	public void setModuleName(String moduleName) {
-		this.moduleName = moduleName;
-		if(moduleName != null){
-			putQueryParameter("ModuleName", moduleName);
 		}
 	}
 
@@ -73,8 +73,8 @@ public class DeleteOTAModuleRequest extends RpcAcsRequest<DeleteOTAModuleRespons
 	}
 
 	@Override
-	public Class<DeleteOTAModuleResponse> getResponseClass() {
-		return DeleteOTAModuleResponse.class;
+	public Class<UpdateThingModelValidationConfigResponse> getResponseClass() {
+		return UpdateThingModelValidationConfigResponse.class;
 	}
 
 }

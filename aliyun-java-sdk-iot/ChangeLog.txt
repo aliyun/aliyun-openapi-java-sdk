@@ -1,3 +1,6 @@
+2020-10-16 Version: 7.15.0
+- Update OTA API, including ListOTAModuleByProduct, DeleteOTAModule.
+
 2020-10-13 Version: 7.14.0
 - Add DeviceCenter API, including QueryDeviceBySQL.
 - Add OTA API, including ListOTAModuleByProduct, DeleteOTAModule.

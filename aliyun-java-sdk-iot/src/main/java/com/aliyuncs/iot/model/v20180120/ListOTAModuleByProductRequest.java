@@ -25,15 +25,9 @@ import com.aliyuncs.iot.Endpoint;
 public class ListOTAModuleByProductRequest extends RpcAcsRequest<ListOTAModuleByProductResponse> {
 	   
 
-	private String resourceGroupId;
-
-	private String iotId;
-
 	private String iotInstanceId;
 
 	private String productKey;
-
-	private String deviceName;
 	public ListOTAModuleByProductRequest() {
 		super("Iot", "2018-01-20", "ListOTAModuleByProduct", "iot");
 		setMethod(MethodType.GET);
@@ -41,28 +35,6 @@ public class ListOTAModuleByProductRequest extends RpcAcsRequest<ListOTAModuleBy
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getIotId() {
-		return this.iotId;
-	}
-
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -84,17 +56,6 @@ public class ListOTAModuleByProductRequest extends RpcAcsRequest<ListOTAModuleBy
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getDeviceName() {
-		return this.deviceName;
-	}
-
-	public void setDeviceName(String deviceName) {
-		this.deviceName = deviceName;
-		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 
