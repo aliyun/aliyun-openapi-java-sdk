@@ -16,6 +16,7 @@ package com.aliyuncs.metering.model.v20200921;
 
 import com.aliyuncs.RoaAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.metering.Endpoint;
 
 /**
  * @author auto create
@@ -43,6 +44,10 @@ public class PostDataRequest extends RoaAcsRequest<PostDataResponse> {
 		super("Metering", "2020-09-21", "PostData", "pai");
 		setUriPattern("/api/dataPost");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getInstanceId() {
