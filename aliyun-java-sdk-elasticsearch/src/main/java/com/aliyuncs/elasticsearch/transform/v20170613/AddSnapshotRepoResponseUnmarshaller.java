@@ -23,8 +23,6 @@ public class AddSnapshotRepoResponseUnmarshaller {
 	public static AddSnapshotRepoResponse unmarshall(AddSnapshotRepoResponse addSnapshotRepoResponse, UnmarshallerContext _ctx) {
 		
 		addSnapshotRepoResponse.setRequestId(_ctx.stringValue("AddSnapshotRepoResponse.RequestId"));
-		addSnapshotRepoResponse.setCode(_ctx.stringValue("AddSnapshotRepoResponse.Code"));
-		addSnapshotRepoResponse.setMessage(_ctx.stringValue("AddSnapshotRepoResponse.Message"));
 		addSnapshotRepoResponse.setResult(_ctx.booleanValue("AddSnapshotRepoResponse.Result"));
 	 
 	 	return addSnapshotRepoResponse;

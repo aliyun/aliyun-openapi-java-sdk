@@ -32,6 +32,7 @@ public class DescribePipelineManagementConfigResponseUnmarshaller {
 		result.setPipelineManagementType(_ctx.stringValue("DescribePipelineManagementConfigResponse.Result.pipelineManagementType"));
 		result.setEndpoints(_ctx.stringValue("DescribePipelineManagementConfigResponse.Result.endpoints"));
 		result.setUserName(_ctx.stringValue("DescribePipelineManagementConfigResponse.Result.userName"));
+		result.setEsInstanceId(_ctx.stringValue("DescribePipelineManagementConfigResponse.Result.esInstanceId"));
 
 		List<String> pipelineIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePipelineManagementConfigResponse.Result.pipelineIds.Length"); i++) {

@@ -30,7 +30,7 @@ public class DescribePipelineManagementConfigRequest extends RoaAcsRequest<Descr
 	private String clientToken;
 	public DescribePipelineManagementConfigRequest() {
 		super("elasticsearch", "2017-06-13", "DescribePipelineManagementConfig", "elasticsearch");
-		setUriPattern("/openapi/logstashes/[InstanceId]//pipeline-management-config");
+		setUriPattern("/openapi/logstashes/[InstanceId]/pipeline-management-config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

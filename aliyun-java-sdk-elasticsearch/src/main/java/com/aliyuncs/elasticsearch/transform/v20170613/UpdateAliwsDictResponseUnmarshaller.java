@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateAliwsDictResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateAliwsDictResponse.DictList;
-import com.aliyuncs.elasticsearch.model.v20170613.UpdateAliwsDictResponse.DictList.OssObject;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,12 +35,6 @@ public class UpdateAliwsDictResponseUnmarshaller {
 			dictList.setFileSize(_ctx.longValue("UpdateAliwsDictResponse.Result["+ i +"].fileSize"));
 			dictList.setType(_ctx.stringValue("UpdateAliwsDictResponse.Result["+ i +"].type"));
 			dictList.setSourceType(_ctx.stringValue("UpdateAliwsDictResponse.Result["+ i +"].sourceType"));
-
-			OssObject ossObject = new OssObject();
-			ossObject.setBucketName(_ctx.stringValue("UpdateAliwsDictResponse.Result["+ i +"].ossObject.bucketName"));
-			ossObject.setKey(_ctx.stringValue("UpdateAliwsDictResponse.Result["+ i +"].ossObject.key"));
-			ossObject.setEtag(_ctx.stringValue("UpdateAliwsDictResponse.Result["+ i +"].ossObject.etag"));
-			dictList.setOssObject(ossObject);
 
 			result.add(dictList);
 		}

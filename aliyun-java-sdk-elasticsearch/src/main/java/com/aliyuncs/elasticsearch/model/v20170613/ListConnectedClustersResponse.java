@@ -27,7 +27,7 @@ public class ListConnectedClustersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ConnectableClustersInfo> result;
+	private List<ResultItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +37,15 @@ public class ListConnectedClustersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ConnectableClustersInfo> getResult() {
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ConnectableClustersInfo> result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class ConnectableClustersInfo {
+	public static class ResultItem {
 
 		private String instances;
 

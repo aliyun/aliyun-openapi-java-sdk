@@ -35,6 +35,7 @@ public class ListLogstashPluginsResponseUnmarshaller {
 			resultItem.setState(_ctx.stringValue("ListLogstashPluginsResponse.Result["+ i +"].state"));
 			resultItem.setSource(_ctx.stringValue("ListLogstashPluginsResponse.Result["+ i +"].source"));
 			resultItem.setDescription(_ctx.stringValue("ListLogstashPluginsResponse.Result["+ i +"].description"));
+			resultItem.setSpecificationUrl(_ctx.stringValue("ListLogstashPluginsResponse.Result["+ i +"].specificationUrl"));
 
 			result.add(resultItem);
 		}

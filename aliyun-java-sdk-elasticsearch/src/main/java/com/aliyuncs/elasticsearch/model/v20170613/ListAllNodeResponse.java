@@ -57,11 +57,13 @@ public class ListAllNodeResponse extends AcsResponse {
 
 		private String cpuPercent;
 
-		private String loadFiveM;
+		private String loadOneM;
 
 		private String heapPercent;
 
 		private String health;
+
+		private String diskUsedPercent;
 
 		public String getHost() {
 			return this.host;
@@ -103,12 +105,12 @@ public class ListAllNodeResponse extends AcsResponse {
 			this.cpuPercent = cpuPercent;
 		}
 
-		public String getLoadFiveM() {
-			return this.loadFiveM;
+		public String getLoadOneM() {
+			return this.loadOneM;
 		}
 
-		public void setLoadFiveM(String loadFiveM) {
-			this.loadFiveM = loadFiveM;
+		public void setLoadOneM(String loadOneM) {
+			this.loadOneM = loadOneM;
 		}
 
 		public String getHeapPercent() {
@@ -125,6 +127,14 @@ public class ListAllNodeResponse extends AcsResponse {
 
 		public void setHealth(String health) {
 			this.health = health;
+		}
+
+		public String getDiskUsedPercent() {
+			return this.diskUsedPercent;
+		}
+
+		public void setDiskUsedPercent(String diskUsedPercent) {
+			this.diskUsedPercent = diskUsedPercent;
 		}
 	}
 

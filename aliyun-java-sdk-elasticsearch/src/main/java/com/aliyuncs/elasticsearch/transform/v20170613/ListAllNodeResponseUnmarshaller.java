@@ -36,9 +36,10 @@ public class ListAllNodeResponseUnmarshaller {
 			resultItem.setZoneId(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].zoneId"));
 			resultItem.setNodeType(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].nodeType"));
 			resultItem.setCpuPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].cpuPercent"));
-			resultItem.setLoadFiveM(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].loadFiveM"));
+			resultItem.setLoadOneM(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].loadOneM"));
 			resultItem.setHeapPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].heapPercent"));
 			resultItem.setHealth(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].health"));
+			resultItem.setDiskUsedPercent(_ctx.stringValue("ListAllNodeResponse.Result["+ i +"].diskUsedPercent"));
 
 			result.add(resultItem);
 		}

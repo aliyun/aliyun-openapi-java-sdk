@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateSynonymsDictsResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateSynonymsDictsResponse.DictList;
-import com.aliyuncs.elasticsearch.model.v20170613.UpdateSynonymsDictsResponse.DictList.OssObject;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,12 +35,6 @@ public class UpdateSynonymsDictsResponseUnmarshaller {
 			dictList.setFileSize(_ctx.longValue("UpdateSynonymsDictsResponse.Result["+ i +"].fileSize"));
 			dictList.setType(_ctx.stringValue("UpdateSynonymsDictsResponse.Result["+ i +"].type"));
 			dictList.setSourceType(_ctx.stringValue("UpdateSynonymsDictsResponse.Result["+ i +"].sourceType"));
-
-			OssObject ossObject = new OssObject();
-			ossObject.setBucketName(_ctx.stringValue("UpdateSynonymsDictsResponse.Result["+ i +"].ossObject.bucketName"));
-			ossObject.setKey(_ctx.stringValue("UpdateSynonymsDictsResponse.Result["+ i +"].ossObject.key"));
-			ossObject.setEtag(_ctx.stringValue("UpdateSynonymsDictsResponse.Result["+ i +"].ossObject.etag"));
-			dictList.setOssObject(ossObject);
 
 			result.add(dictList);
 		}

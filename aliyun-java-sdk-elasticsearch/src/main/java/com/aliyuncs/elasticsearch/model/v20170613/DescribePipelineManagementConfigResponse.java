@@ -53,6 +53,8 @@ public class DescribePipelineManagementConfigResponse extends AcsResponse {
 
 		private String userName;
 
+		private String esInstanceId;
+
 		private List<String> pipelineIds;
 
 		public String getPipelineManagementType() {
@@ -77,6 +79,14 @@ public class DescribePipelineManagementConfigResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
+		}
+
+		public String getEsInstanceId() {
+			return this.esInstanceId;
+		}
+
+		public void setEsInstanceId(String esInstanceId) {
+			this.esInstanceId = esInstanceId;
 		}
 
 		public List<String> getPipelineIds() {

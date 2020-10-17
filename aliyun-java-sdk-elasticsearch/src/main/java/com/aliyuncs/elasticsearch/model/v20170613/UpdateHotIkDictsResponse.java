@@ -55,8 +55,6 @@ public class UpdateHotIkDictsResponse extends AcsResponse {
 
 		private String sourceType;
 
-		private OssObject ossObject;
-
 		public String getName() {
 			return this.name;
 		}
@@ -87,47 +85,6 @@ public class UpdateHotIkDictsResponse extends AcsResponse {
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
-		}
-
-		public OssObject getOssObject() {
-			return this.ossObject;
-		}
-
-		public void setOssObject(OssObject ossObject) {
-			this.ossObject = ossObject;
-		}
-
-		public static class OssObject {
-
-			private String bucketName;
-
-			private String key;
-
-			private String etag;
-
-			public String getBucketName() {
-				return this.bucketName;
-			}
-
-			public void setBucketName(String bucketName) {
-				this.bucketName = bucketName;
-			}
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getEtag() {
-				return this.etag;
-			}
-
-			public void setEtag(String etag) {
-				this.etag = etag;
-			}
 		}
 	}
 

@@ -26,12 +26,22 @@ public class UntagResourcesResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean result;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
 	}
 
 	@Override

@@ -49,8 +49,6 @@ public class ListAlternativeSnapshotReposResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private String snapWarehouse;
-
 		private String repoPath;
 
 		public String getInstanceId() {
@@ -59,14 +57,6 @@ public class ListAlternativeSnapshotReposResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getSnapWarehouse() {
-			return this.snapWarehouse;
-		}
-
-		public void setSnapWarehouse(String snapWarehouse) {
-			this.snapWarehouse = snapWarehouse;
 		}
 
 		public String getRepoPath() {

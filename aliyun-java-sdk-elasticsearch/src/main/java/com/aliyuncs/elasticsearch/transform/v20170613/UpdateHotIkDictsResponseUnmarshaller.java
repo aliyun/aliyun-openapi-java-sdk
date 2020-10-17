@@ -19,7 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateHotIkDictsResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.UpdateHotIkDictsResponse.DictList;
-import com.aliyuncs.elasticsearch.model.v20170613.UpdateHotIkDictsResponse.DictList.OssObject;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -36,12 +35,6 @@ public class UpdateHotIkDictsResponseUnmarshaller {
 			dictList.setFileSize(_ctx.longValue("UpdateHotIkDictsResponse.Result["+ i +"].fileSize"));
 			dictList.setType(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].type"));
 			dictList.setSourceType(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].sourceType"));
-
-			OssObject ossObject = new OssObject();
-			ossObject.setBucketName(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.bucketName"));
-			ossObject.setKey(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.key"));
-			ossObject.setEtag(_ctx.stringValue("UpdateHotIkDictsResponse.Result["+ i +"].ossObject.etag"));
-			dictList.setOssObject(ossObject);
 
 			result.add(dictList);
 		}

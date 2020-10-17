@@ -40,6 +40,7 @@ public class ListPluginsResponseUnmarshaller {
 			resultItem.setState(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].state"));
 			resultItem.setSource(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].source"));
 			resultItem.setDescription(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].description"));
+			resultItem.setSpecificationUrl(_ctx.stringValue("ListPluginsResponse.Result["+ i +"].specificationUrl"));
 
 			result.add(resultItem);
 		}

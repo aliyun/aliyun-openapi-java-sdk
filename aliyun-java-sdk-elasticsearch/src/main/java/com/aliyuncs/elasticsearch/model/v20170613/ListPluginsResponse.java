@@ -65,6 +65,8 @@ public class ListPluginsResponse extends AcsResponse {
 
 		private String description;
 
+		private String specificationUrl;
+
 		public String getName() {
 			return this.name;
 		}
@@ -95,6 +97,14 @@ public class ListPluginsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getSpecificationUrl() {
+			return this.specificationUrl;
+		}
+
+		public void setSpecificationUrl(String specificationUrl) {
+			this.specificationUrl = specificationUrl;
 		}
 	}
 

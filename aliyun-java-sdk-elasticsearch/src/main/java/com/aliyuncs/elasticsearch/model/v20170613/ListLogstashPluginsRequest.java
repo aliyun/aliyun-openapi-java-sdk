@@ -31,7 +31,7 @@ public class ListLogstashPluginsRequest extends RoaAcsRequest<ListLogstashPlugin
 
 	private String name;
 
-	private String page;
+	private Integer page;
 
 	private String source;
 	public ListLogstashPluginsRequest() {
@@ -77,14 +77,14 @@ public class ListLogstashPluginsRequest extends RoaAcsRequest<ListLogstashPlugin
 		}
 	}
 
-	public String getPage() {
+	public Integer getPage() {
 		return this.page;
 	}
 
-	public void setPage(String page) {
+	public void setPage(Integer page) {
 		this.page = page;
 		if(page != null){
-			putQueryParameter("page", page);
+			putQueryParameter("page", page.toString());
 		}
 	}
 

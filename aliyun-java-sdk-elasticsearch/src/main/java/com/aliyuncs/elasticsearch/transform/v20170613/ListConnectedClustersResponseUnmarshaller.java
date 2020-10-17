@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.ListConnectedClustersResponse;
-import com.aliyuncs.elasticsearch.model.v20170613.ListConnectedClustersResponse.ConnectableClustersInfo;
+import com.aliyuncs.elasticsearch.model.v20170613.ListConnectedClustersResponse.ResultItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,13 +28,13 @@ public class ListConnectedClustersResponseUnmarshaller {
 		
 		listConnectedClustersResponse.setRequestId(_ctx.stringValue("ListConnectedClustersResponse.RequestId"));
 
-		List<ConnectableClustersInfo> result = new ArrayList<ConnectableClustersInfo>();
+		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListConnectedClustersResponse.Result.Length"); i++) {
-			ConnectableClustersInfo connectableClustersInfo = new ConnectableClustersInfo();
-			connectableClustersInfo.setInstances(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].instances"));
-			connectableClustersInfo.setNetworkType(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].networkType"));
+			ResultItem resultItem = new ResultItem();
+			resultItem.setInstances(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].instances"));
+			resultItem.setNetworkType(_ctx.stringValue("ListConnectedClustersResponse.Result["+ i +"].networkType"));
 
-			result.add(connectableClustersInfo);
+			result.add(resultItem);
 		}
 		listConnectedClustersResponse.setResult(result);
 	 

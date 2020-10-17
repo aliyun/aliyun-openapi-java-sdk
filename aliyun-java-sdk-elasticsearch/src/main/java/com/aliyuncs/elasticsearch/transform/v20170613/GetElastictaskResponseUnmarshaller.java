@@ -33,27 +33,27 @@ public class GetElastictaskResponseUnmarshaller {
 		Result result = new Result();
 
 		ElasticExpansionTask elasticExpansionTask = new ElasticExpansionTask();
-		elasticExpansionTask.setTriggerType(_ctx.stringValue("GetElastictaskResponse.Result.ElasticExpansionTask.TriggerType"));
-		elasticExpansionTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.ElasticExpansionTask.CronExpression"));
-		elasticExpansionTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.ElasticExpansionTask.ElasticNodeCount"));
-		elasticExpansionTask.setReplicaCount(_ctx.integerValue("GetElastictaskResponse.Result.ElasticExpansionTask.ReplicaCount"));
+		elasticExpansionTask.setTriggerType(_ctx.stringValue("GetElastictaskResponse.Result.elasticExpansionTask.triggerType"));
+		elasticExpansionTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.elasticExpansionTask.cronExpression"));
+		elasticExpansionTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticExpansionTask.elasticNodeCount"));
+		elasticExpansionTask.setReplicaCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticExpansionTask.replicaCount"));
 
 		List<String> targetIndices = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetElastictaskResponse.Result.ElasticExpansionTask.TargetIndices.Length"); i++) {
-			targetIndices.add(_ctx.stringValue("GetElastictaskResponse.Result.ElasticExpansionTask.TargetIndices["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetElastictaskResponse.Result.elasticExpansionTask.targetIndices.Length"); i++) {
+			targetIndices.add(_ctx.stringValue("GetElastictaskResponse.Result.elasticExpansionTask.targetIndices["+ i +"]"));
 		}
 		elasticExpansionTask.setTargetIndices(targetIndices);
 		result.setElasticExpansionTask(elasticExpansionTask);
 
 		ElasticShrinkTask elasticShrinkTask = new ElasticShrinkTask();
-		elasticShrinkTask.setTriggerType(_ctx.stringValue("GetElastictaskResponse.Result.ElasticShrinkTask.TriggerType"));
-		elasticShrinkTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.ElasticShrinkTask.CronExpression"));
-		elasticShrinkTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.ElasticShrinkTask.ElasticNodeCount"));
-		elasticShrinkTask.setReplicaCount(_ctx.integerValue("GetElastictaskResponse.Result.ElasticShrinkTask.ReplicaCount"));
+		elasticShrinkTask.setTriggerType(_ctx.stringValue("GetElastictaskResponse.Result.elasticShrinkTask.triggerType"));
+		elasticShrinkTask.setCronExpression(_ctx.stringValue("GetElastictaskResponse.Result.elasticShrinkTask.cronExpression"));
+		elasticShrinkTask.setElasticNodeCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticShrinkTask.elasticNodeCount"));
+		elasticShrinkTask.setReplicaCount(_ctx.integerValue("GetElastictaskResponse.Result.elasticShrinkTask.replicaCount"));
 
 		List<String> targetIndices1 = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetElastictaskResponse.Result.ElasticShrinkTask.TargetIndices.Length"); i++) {
-			targetIndices1.add(_ctx.stringValue("GetElastictaskResponse.Result.ElasticShrinkTask.TargetIndices["+ i +"]"));
+		for (int i = 0; i < _ctx.lengthValue("GetElastictaskResponse.Result.elasticShrinkTask.targetIndices.Length"); i++) {
+			targetIndices1.add(_ctx.stringValue("GetElastictaskResponse.Result.elasticShrinkTask.targetIndices["+ i +"]"));
 		}
 		elasticShrinkTask.setTargetIndices1(targetIndices1);
 		result.setElasticShrinkTask(elasticShrinkTask);

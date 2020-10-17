@@ -23,8 +23,6 @@ public class ResumeElasticsearchTaskResponseUnmarshaller {
 	public static ResumeElasticsearchTaskResponse unmarshall(ResumeElasticsearchTaskResponse resumeElasticsearchTaskResponse, UnmarshallerContext _ctx) {
 		
 		resumeElasticsearchTaskResponse.setRequestId(_ctx.stringValue("ResumeElasticsearchTaskResponse.RequestId"));
-		resumeElasticsearchTaskResponse.setCode(_ctx.stringValue("ResumeElasticsearchTaskResponse.Code"));
-		resumeElasticsearchTaskResponse.setMessage(_ctx.stringValue("ResumeElasticsearchTaskResponse.Message"));
 		resumeElasticsearchTaskResponse.setResult(_ctx.booleanValue("ResumeElasticsearchTaskResponse.Result"));
 	 
 	 	return resumeElasticsearchTaskResponse;
