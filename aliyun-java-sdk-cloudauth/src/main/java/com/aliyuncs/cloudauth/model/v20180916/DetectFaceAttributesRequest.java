@@ -15,7 +15,6 @@
 package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudauth.Endpoint;
 
@@ -43,7 +42,6 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 	private Boolean dontSaveDB;
 	public DetectFaceAttributesRequest() {
 		super("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
