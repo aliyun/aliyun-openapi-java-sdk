@@ -1,3 +1,6 @@
+2020-10-19 Version: 1.0.0
+- Metering 1019.
+
 2020-10-17 Version: 1.0.0
 - Metering.
 
