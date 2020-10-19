@@ -43,6 +43,10 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 
 	private Long sceneId;
 
+	private String callbackToken;
+
+	private String callbackUrl;
+
 	private String metaInfo;
 
 	private String ocr;
@@ -151,6 +155,28 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.sceneId = sceneId;
 		if(sceneId != null){
 			putBodyParameter("SceneId", sceneId.toString());
+		}
+	}
+
+	public String getCallbackToken() {
+		return this.callbackToken;
+	}
+
+	public void setCallbackToken(String callbackToken) {
+		this.callbackToken = callbackToken;
+		if(callbackToken != null){
+			putBodyParameter("CallbackToken", callbackToken);
+		}
+	}
+
+	public String getCallbackUrl() {
+		return this.callbackUrl;
+	}
+
+	public void setCallbackUrl(String callbackUrl) {
+		this.callbackUrl = callbackUrl;
+		if(callbackUrl != null){
+			putBodyParameter("CallbackUrl", callbackUrl);
 		}
 	}
 
