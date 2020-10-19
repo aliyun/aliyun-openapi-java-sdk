@@ -51,7 +51,7 @@ public class InitDeviceRequest extends RpcAcsRequest<InitDeviceResponse> {
 
 	private String metaInfo;
 	public InitDeviceRequest() {
-		super("Cloudauth", "2019-03-07", "InitDevice");
+		super("Cloudauth", "2019-03-07", "InitDevice", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

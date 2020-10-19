@@ -39,7 +39,7 @@ public class DescribeDeviceInfoRequest extends RpcAcsRequest<DescribeDeviceInfoR
 
 	private String expiredEndDay;
 	public DescribeDeviceInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeDeviceInfo");
+		super("Cloudauth", "2019-03-07", "DescribeDeviceInfo", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

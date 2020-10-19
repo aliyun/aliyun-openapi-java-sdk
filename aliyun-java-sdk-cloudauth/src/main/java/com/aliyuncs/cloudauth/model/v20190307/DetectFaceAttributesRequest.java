@@ -27,7 +27,7 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 
 	private String materialValue;
 	public DetectFaceAttributesRequest() {
-		super("Cloudauth", "2019-03-07", "DetectFaceAttributes");
+		super("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

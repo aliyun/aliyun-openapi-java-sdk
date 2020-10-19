@@ -63,7 +63,7 @@ public class InitFaceVerifyRequest extends RpcAcsRequest<InitFaceVerifyResponse>
 
 	private String callbackUrl;
 	public InitFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "InitFaceVerify");
+		super("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

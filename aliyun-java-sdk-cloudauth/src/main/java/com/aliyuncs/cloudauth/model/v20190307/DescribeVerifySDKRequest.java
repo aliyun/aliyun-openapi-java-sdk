@@ -27,7 +27,7 @@ public class DescribeVerifySDKRequest extends RpcAcsRequest<DescribeVerifySDKRes
 
 	private String taskId;
 	public DescribeVerifySDKRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifySDK");
+		super("Cloudauth", "2019-03-07", "DescribeVerifySDK", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

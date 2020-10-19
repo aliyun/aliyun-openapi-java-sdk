@@ -27,7 +27,7 @@ public class DescribeUploadInfoRequest extends RpcAcsRequest<DescribeUploadInfoR
 
 	private String biz;
 	public DescribeUploadInfoRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeUploadInfo");
+		super("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

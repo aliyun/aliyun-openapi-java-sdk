@@ -25,7 +25,7 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class DescribeUserStatusRequest extends RpcAcsRequest<DescribeUserStatusResponse> {
 	   
 	public DescribeUserStatusRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeUserStatus");
+		super("Cloudauth", "2019-03-07", "DescribeUserStatus", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

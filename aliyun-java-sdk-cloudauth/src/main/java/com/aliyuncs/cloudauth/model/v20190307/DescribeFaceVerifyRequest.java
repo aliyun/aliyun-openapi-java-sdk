@@ -29,7 +29,7 @@ public class DescribeFaceVerifyRequest extends RpcAcsRequest<DescribeFaceVerifyR
 
 	private String certifyId;
 	public DescribeFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeFaceVerify");
+		super("Cloudauth", "2019-03-07", "DescribeFaceVerify", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
