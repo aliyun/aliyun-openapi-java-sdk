@@ -27,7 +27,7 @@ public class DescribeUpdatePackageResultRequest extends RpcAcsRequest<DescribeUp
 
 	private String taskId;
 	public DescribeUpdatePackageResultRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeUpdatePackageResult", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeUpdatePackageResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

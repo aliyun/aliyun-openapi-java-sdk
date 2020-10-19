@@ -29,7 +29,7 @@ public class DescribeVerifyResultRequest extends RpcAcsRequest<DescribeVerifyRes
 
 	private String bizId;
 	public DescribeVerifyResultRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeVerifyResult", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeVerifyResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

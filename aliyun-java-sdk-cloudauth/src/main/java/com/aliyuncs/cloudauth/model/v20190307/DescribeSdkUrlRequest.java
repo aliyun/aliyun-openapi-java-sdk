@@ -29,7 +29,7 @@ public class DescribeSdkUrlRequest extends RpcAcsRequest<DescribeSdkUrlResponse>
 
 	private Long id;
 	public DescribeSdkUrlRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeSdkUrl", "cloudauth");
+		super("Cloudauth", "2019-03-07", "DescribeSdkUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
