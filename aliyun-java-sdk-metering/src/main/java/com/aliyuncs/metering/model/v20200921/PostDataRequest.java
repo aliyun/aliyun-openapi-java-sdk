@@ -39,6 +39,8 @@ public class PostDataRequest extends RoaAcsRequest<PostDataResponse> {
 
 	private String region;
 
+	private String serviceId;
+
 	private String userId;
 	public PostDataRequest() {
 		super("Metering", "2020-09-21", "PostData", "pai");
@@ -124,6 +126,17 @@ public class PostDataRequest extends RoaAcsRequest<PostDataResponse> {
 		this.region = region;
 		if(region != null){
 			putBodyParameter("Region", region);
+		}
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putBodyParameter("ServiceId", serviceId);
 		}
 	}
 

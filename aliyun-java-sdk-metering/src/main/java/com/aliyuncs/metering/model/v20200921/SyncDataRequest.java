@@ -39,6 +39,8 @@ public class SyncDataRequest extends RoaAcsRequest<SyncDataResponse> {
 
 	private String region;
 
+	private String serviceId;
+
 	private String userId;
 	public SyncDataRequest() {
 		super("Metering", "2020-09-21", "SyncData", "pai");
@@ -124,6 +126,17 @@ public class SyncDataRequest extends RoaAcsRequest<SyncDataResponse> {
 		this.region = region;
 		if(region != null){
 			putQueryParameter("Region", region);
+		}
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+		if(serviceId != null){
+			putQueryParameter("ServiceId", serviceId);
 		}
 	}
 
