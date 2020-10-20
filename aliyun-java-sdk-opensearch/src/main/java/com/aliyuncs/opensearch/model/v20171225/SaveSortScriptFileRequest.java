@@ -27,12 +27,14 @@ public class SaveSortScriptFileRequest extends RoaAcsRequest<SaveSortScriptFileR
 
 	private String appVersionId;
 
+	private String fileName;
+
 	private String scriptName;
 
 	private String appGroupIdentity;
 	public SaveSortScriptFileRequest() {
 		super("OpenSearch", "2017-12-25", "SaveSortScriptFile", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/UserScorer.cava");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +50,17 @@ public class SaveSortScriptFileRequest extends RoaAcsRequest<SaveSortScriptFileR
 		this.appVersionId = appVersionId;
 		if(appVersionId != null){
 			putPathParameter("appVersionId", appVersionId);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putPathParameter("fileName", fileName);
 		}
 	}
 

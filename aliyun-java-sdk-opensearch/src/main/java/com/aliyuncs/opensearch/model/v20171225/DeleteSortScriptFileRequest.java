@@ -22,7 +22,7 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileResponse> {
+public class DeleteSortScriptFileRequest extends RoaAcsRequest<DeleteSortScriptFileResponse> {
 	   
 
 	private String appVersionId;
@@ -32,10 +32,10 @@ public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileRes
 	private String scriptName;
 
 	private String appGroupIdentity;
-	public GetSortScriptFileRequest() {
-		super("OpenSearch", "2017-12-25", "GetSortScriptFile", "opensearch");
+	public DeleteSortScriptFileRequest() {
+		super("OpenSearch", "2017-12-25", "DeleteSortScriptFile", "opensearch");
 		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -87,8 +87,8 @@ public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileRes
 	}
 
 	@Override
-	public Class<GetSortScriptFileResponse> getResponseClass() {
-		return GetSortScriptFileResponse.class;
+	public Class<DeleteSortScriptFileResponse> getResponseClass() {
+		return DeleteSortScriptFileResponse.class;
 	}
 
 }

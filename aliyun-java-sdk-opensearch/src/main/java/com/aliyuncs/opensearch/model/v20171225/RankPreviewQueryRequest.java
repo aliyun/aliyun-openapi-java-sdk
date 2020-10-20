@@ -22,56 +22,30 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileResponse> {
+public class RankPreviewQueryRequest extends RoaAcsRequest<RankPreviewQueryResponse> {
 	   
 
-	private String appVersionId;
-
-	private String fileName;
-
-	private String scriptName;
+	private String modelName;
 
 	private String appGroupIdentity;
-	public GetSortScriptFileRequest() {
-		super("OpenSearch", "2017-12-25", "GetSortScriptFile", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]");
-		setMethod(MethodType.GET);
+	public RankPreviewQueryRequest() {
+		super("OpenSearch", "2017-12-25", "RankPreviewQuery", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/query-rank");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getAppVersionId() {
-		return this.appVersionId;
+	public String getModelName() {
+		return this.modelName;
 	}
 
-	public void setAppVersionId(String appVersionId) {
-		this.appVersionId = appVersionId;
-		if(appVersionId != null){
-			putPathParameter("appVersionId", appVersionId);
-		}
-	}
-
-	public String getFileName() {
-		return this.fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putPathParameter("fileName", fileName);
-		}
-	}
-
-	public String getScriptName() {
-		return this.scriptName;
-	}
-
-	public void setScriptName(String scriptName) {
-		this.scriptName = scriptName;
-		if(scriptName != null){
-			putPathParameter("scriptName", scriptName);
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+		if(modelName != null){
+			putPathParameter("modelName", modelName);
 		}
 	}
 
@@ -87,8 +61,8 @@ public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileRes
 	}
 
 	@Override
-	public Class<GetSortScriptFileResponse> getResponseClass() {
-		return GetSortScriptFileResponse.class;
+	public Class<RankPreviewQueryResponse> getResponseClass() {
+		return RankPreviewQueryResponse.class;
 	}
 
 }

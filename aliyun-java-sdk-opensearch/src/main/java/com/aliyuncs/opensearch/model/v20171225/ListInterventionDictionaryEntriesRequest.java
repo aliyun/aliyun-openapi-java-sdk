@@ -27,7 +27,11 @@ public class ListInterventionDictionaryEntriesRequest extends RoaAcsRequest<List
 
 	private String name;
 
+	private Integer pageSize;
+
 	private String word;
+
+	private Integer pageNumber;
 	public ListInterventionDictionaryEntriesRequest() {
 		super("OpenSearch", "2017-12-25", "ListInterventionDictionaryEntries", "opensearch");
 		setUriPattern("/v4/openapi/intervention-dictionaries/[name]/entries");
@@ -49,6 +53,17 @@ public class ListInterventionDictionaryEntriesRequest extends RoaAcsRequest<List
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("pageSize", pageSize.toString());
+		}
+	}
+
 	public String getWord() {
 		return this.word;
 	}
@@ -57,6 +72,17 @@ public class ListInterventionDictionaryEntriesRequest extends RoaAcsRequest<List
 		this.word = word;
 		if(word != null){
 			putQueryParameter("word", word);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("pageNumber", pageNumber.toString());
 		}
 	}
 

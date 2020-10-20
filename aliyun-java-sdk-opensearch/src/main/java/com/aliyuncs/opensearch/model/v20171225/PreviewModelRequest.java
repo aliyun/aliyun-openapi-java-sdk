@@ -22,19 +22,17 @@ import com.aliyuncs.opensearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileResponse> {
+public class PreviewModelRequest extends RoaAcsRequest<PreviewModelResponse> {
 	   
 
-	private String appVersionId;
+	private String modelName;
 
-	private String fileName;
-
-	private String scriptName;
+	private String query;
 
 	private String appGroupIdentity;
-	public GetSortScriptFileRequest() {
-		super("OpenSearch", "2017-12-25", "GetSortScriptFile", "opensearch");
-		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]");
+	public PreviewModelRequest() {
+		super("OpenSearch", "2017-12-25", "PreviewModel", "opensearch");
+		setUriPattern("/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/preview");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -42,36 +40,25 @@ public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileRes
 		} catch (Exception e) {}
 	}
 
-	public String getAppVersionId() {
-		return this.appVersionId;
+	public String getModelName() {
+		return this.modelName;
 	}
 
-	public void setAppVersionId(String appVersionId) {
-		this.appVersionId = appVersionId;
-		if(appVersionId != null){
-			putPathParameter("appVersionId", appVersionId);
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+		if(modelName != null){
+			putPathParameter("modelName", modelName);
 		}
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public String getQuery() {
+		return this.query;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putPathParameter("fileName", fileName);
-		}
-	}
-
-	public String getScriptName() {
-		return this.scriptName;
-	}
-
-	public void setScriptName(String scriptName) {
-		this.scriptName = scriptName;
-		if(scriptName != null){
-			putPathParameter("scriptName", scriptName);
+	public void setQuery(String query) {
+		this.query = query;
+		if(query != null){
+			putQueryParameter("query", query);
 		}
 	}
 
@@ -87,8 +74,8 @@ public class GetSortScriptFileRequest extends RoaAcsRequest<GetSortScriptFileRes
 	}
 
 	@Override
-	public Class<GetSortScriptFileResponse> getResponseClass() {
-		return GetSortScriptFileResponse.class;
+	public Class<PreviewModelResponse> getResponseClass() {
+		return PreviewModelResponse.class;
 	}
 
 }
