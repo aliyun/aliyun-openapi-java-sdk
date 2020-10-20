@@ -157,6 +157,10 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		private String tenancy;
 
+		private String privatePoolOptionsMatchCriteria;
+
+		private String privatePoolOptionsId;
+
 		private Integer ipv6AddressCount;
 
 		private List<DataDisk> dataDisks;
@@ -168,6 +172,8 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 		private List<String> instanceTypes;
 
 		private List<String> securityGroupIds;
+
+		private SchedulerOptions schedulerOptions;
 
 		public String getScalingConfigurationId() {
 			return this.scalingConfigurationId;
@@ -489,6 +495,22 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 			this.tenancy = tenancy;
 		}
 
+		public String getPrivatePoolOptionsMatchCriteria() {
+			return this.privatePoolOptionsMatchCriteria;
+		}
+
+		public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+			this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		}
+
+		public String getPrivatePoolOptionsId() {
+			return this.privatePoolOptionsId;
+		}
+
+		public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+			this.privatePoolOptionsId = privatePoolOptionsId;
+		}
+
 		public Integer getIpv6AddressCount() {
 			return this.ipv6AddressCount;
 		}
@@ -535,6 +557,14 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 		public void setSecurityGroupIds(List<String> securityGroupIds) {
 			this.securityGroupIds = securityGroupIds;
+		}
+
+		public SchedulerOptions getSchedulerOptions() {
+			return this.schedulerOptions;
+		}
+
+		public void setSchedulerOptions(SchedulerOptions schedulerOptions) {
+			this.schedulerOptions = schedulerOptions;
 		}
 
 		public static class DataDisk {
@@ -683,6 +713,19 @@ public class DescribeScalingConfigurationsResponse extends AcsResponse {
 
 			public void setPriceLimit(Float priceLimit) {
 				this.priceLimit = priceLimit;
+			}
+		}
+
+		public static class SchedulerOptions {
+
+			private String managedPrivateSpaceId;
+
+			public String getManagedPrivateSpaceId() {
+				return this.managedPrivateSpaceId;
+			}
+
+			public void setManagedPrivateSpaceId(String managedPrivateSpaceId) {
+				this.managedPrivateSpaceId = managedPrivateSpaceId;
 			}
 		}
 	}

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.DataDisk;
+import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SchedulerOptions;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.SpotPriceModel;
 import com.aliyuncs.ess.model.v20140828.DescribeScalingConfigurationsResponse.ScalingConfiguration.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -77,6 +78,8 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 			scalingConfiguration.setDedicatedHostId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DedicatedHostId"));
 			scalingConfiguration.setAffinity(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Affinity"));
 			scalingConfiguration.setTenancy(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Tenancy"));
+			scalingConfiguration.setPrivatePoolOptionsMatchCriteria(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.MatchCriteria"));
+			scalingConfiguration.setPrivatePoolOptionsId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].PrivatePoolOptions.Id"));
 			scalingConfiguration.setIpv6AddressCount(_ctx.integerValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].Ipv6AddressCount"));
 
 			List<String> instanceTypes = new ArrayList<String>();
@@ -90,6 +93,10 @@ public class DescribeScalingConfigurationsResponseUnmarshaller {
 				securityGroupIds.add(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SecurityGroupIds["+ j +"]"));
 			}
 			scalingConfiguration.setSecurityGroupIds(securityGroupIds);
+
+			SchedulerOptions schedulerOptions = new SchedulerOptions();
+			schedulerOptions.setManagedPrivateSpaceId(_ctx.stringValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].SchedulerOptions.ManagedPrivateSpaceId"));
+			scalingConfiguration.setSchedulerOptions(schedulerOptions);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeScalingConfigurationsResponse.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {

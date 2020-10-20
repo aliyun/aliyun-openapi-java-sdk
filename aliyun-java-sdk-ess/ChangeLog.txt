@@ -1,3 +1,7 @@
+2020-10-21 Version: 2.3.5
+1, Support Private Pool Options.
+2, Support mps option.
+
 2020-08-31 Version: 2.3.4
 1, Support ScaleInEvaluationCount, ScaleOutEvaluationCount for target tracking scaling rule;
 2, Support CompensateWithOnDemand for CostOptimized scaling group.
