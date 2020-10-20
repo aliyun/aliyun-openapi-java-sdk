@@ -25,13 +25,11 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyResponse> {
 	   
 
-	private String ip;
-
-	private String certName;
-
-	private String mobile;
-
 	private String userId;
+
+	private String certifyId;
+
+	private String facePictureBase64;
 
 	private String mode;
 
@@ -41,15 +39,27 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 
 	private String certType;
 
+	private String metaInfo;
+
+	private String ocr;
+
+	private String ossObjectName;
+
+	private String facePictureUrl;
+
+	private String ip;
+
+	private String certName;
+
+	private String mobile;
+
 	private Long sceneId;
 
 	private String callbackToken;
 
+	private String ossBucketName;
+
 	private String callbackUrl;
-
-	private String metaInfo;
-
-	private String ocr;
 	public InitSmartVerifyRequest() {
 		super("Cloudauth", "2020-06-18", "InitSmartVerify", "cloudauth");
 		setMethod(MethodType.POST);
@@ -57,39 +67,6 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIp() {
-		return this.ip;
-	}
-
-	public void setIp(String ip) {
-		this.ip = ip;
-		if(ip != null){
-			putBodyParameter("Ip", ip);
-		}
-	}
-
-	public String getCertName() {
-		return this.certName;
-	}
-
-	public void setCertName(String certName) {
-		this.certName = certName;
-		if(certName != null){
-			putBodyParameter("CertName", certName);
-		}
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-		if(mobile != null){
-			putBodyParameter("Mobile", mobile);
-		}
 	}
 
 	public String getUserId() {
@@ -100,6 +77,28 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.userId = userId;
 		if(userId != null){
 			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getCertifyId() {
+		return this.certifyId;
+	}
+
+	public void setCertifyId(String certifyId) {
+		this.certifyId = certifyId;
+		if(certifyId != null){
+			putBodyParameter("CertifyId", certifyId);
+		}
+	}
+
+	public String getFacePictureBase64() {
+		return this.facePictureBase64;
+	}
+
+	public void setFacePictureBase64(String facePictureBase64) {
+		this.facePictureBase64 = facePictureBase64;
+		if(facePictureBase64 != null){
+			putBodyParameter("FacePictureBase64", facePictureBase64);
 		}
 	}
 
@@ -147,6 +146,83 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		}
 	}
 
+	public String getMetaInfo() {
+		return this.metaInfo;
+	}
+
+	public void setMetaInfo(String metaInfo) {
+		this.metaInfo = metaInfo;
+		if(metaInfo != null){
+			putBodyParameter("MetaInfo", metaInfo);
+		}
+	}
+
+	public String getOcr() {
+		return this.ocr;
+	}
+
+	public void setOcr(String ocr) {
+		this.ocr = ocr;
+		if(ocr != null){
+			putBodyParameter("Ocr", ocr);
+		}
+	}
+
+	public String getOssObjectName() {
+		return this.ossObjectName;
+	}
+
+	public void setOssObjectName(String ossObjectName) {
+		this.ossObjectName = ossObjectName;
+		if(ossObjectName != null){
+			putBodyParameter("OssObjectName", ossObjectName);
+		}
+	}
+
+	public String getFacePictureUrl() {
+		return this.facePictureUrl;
+	}
+
+	public void setFacePictureUrl(String facePictureUrl) {
+		this.facePictureUrl = facePictureUrl;
+		if(facePictureUrl != null){
+			putBodyParameter("FacePictureUrl", facePictureUrl);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putBodyParameter("Ip", ip);
+		}
+	}
+
+	public String getCertName() {
+		return this.certName;
+	}
+
+	public void setCertName(String certName) {
+		this.certName = certName;
+		if(certName != null){
+			putBodyParameter("CertName", certName);
+		}
+	}
+
+	public String getMobile() {
+		return this.mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+		if(mobile != null){
+			putBodyParameter("Mobile", mobile);
+		}
+	}
+
 	public Long getSceneId() {
 		return this.sceneId;
 	}
@@ -169,6 +245,17 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		}
 	}
 
+	public String getOssBucketName() {
+		return this.ossBucketName;
+	}
+
+	public void setOssBucketName(String ossBucketName) {
+		this.ossBucketName = ossBucketName;
+		if(ossBucketName != null){
+			putBodyParameter("OssBucketName", ossBucketName);
+		}
+	}
+
 	public String getCallbackUrl() {
 		return this.callbackUrl;
 	}
@@ -177,28 +264,6 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.callbackUrl = callbackUrl;
 		if(callbackUrl != null){
 			putBodyParameter("CallbackUrl", callbackUrl);
-		}
-	}
-
-	public String getMetaInfo() {
-		return this.metaInfo;
-	}
-
-	public void setMetaInfo(String metaInfo) {
-		this.metaInfo = metaInfo;
-		if(metaInfo != null){
-			putBodyParameter("MetaInfo", metaInfo);
-		}
-	}
-
-	public String getOcr() {
-		return this.ocr;
-	}
-
-	public void setOcr(String ocr) {
-		this.ocr = ocr;
-		if(ocr != null){
-			putBodyParameter("Ocr", ocr);
 		}
 	}
 

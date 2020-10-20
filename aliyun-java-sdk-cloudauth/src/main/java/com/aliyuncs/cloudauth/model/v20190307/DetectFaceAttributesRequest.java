@@ -25,6 +25,8 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttributesResponse> {
 	   
 
+	private String bizType;
+
 	private String materialValue;
 	public DetectFaceAttributesRequest() {
 		super("Cloudauth", "2019-03-07", "DetectFaceAttributes", "cloudauth");
@@ -33,6 +35,17 @@ public class DetectFaceAttributesRequest extends RpcAcsRequest<DetectFaceAttribu
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putBodyParameter("BizType", bizType);
+		}
 	}
 
 	public String getMaterialValue() {
