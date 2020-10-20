@@ -36,6 +36,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 
 	private String resourceGroupId;
 
+	private String privatePoolOptionsMatchCriteria;
+
 	private String hostName;
 
 	private String password;
@@ -43,6 +45,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String instanceDescription;
 
 	private String systemDiskAutoSnapshotPolicyId;
+
+	private String privatePoolOptionsId;
 
 	private Integer ipv6AddressCount;
 
@@ -91,6 +95,8 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 	private String imageName;
 
 	private String instanceType;
+
+	private Map<Object,Object> schedulerOptions;
 
 	private String deploymentSetId;
 
@@ -186,6 +192,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		}
 	}
 
+	public String getPrivatePoolOptionsMatchCriteria() {
+		return this.privatePoolOptionsMatchCriteria;
+	}
+
+	public void setPrivatePoolOptionsMatchCriteria(String privatePoolOptionsMatchCriteria) {
+		this.privatePoolOptionsMatchCriteria = privatePoolOptionsMatchCriteria;
+		if(privatePoolOptionsMatchCriteria != null){
+			putQueryParameter("PrivatePoolOptions.MatchCriteria", privatePoolOptionsMatchCriteria);
+		}
+	}
+
 	public String getHostName() {
 		return this.hostName;
 	}
@@ -227,6 +244,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
 		if(systemDiskAutoSnapshotPolicyId != null){
 			putQueryParameter("SystemDisk.AutoSnapshotPolicyId", systemDiskAutoSnapshotPolicyId);
+		}
+	}
+
+	public String getPrivatePoolOptionsId() {
+		return this.privatePoolOptionsId;
+	}
+
+	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+		this.privatePoolOptionsId = privatePoolOptionsId;
+		if(privatePoolOptionsId != null){
+			putQueryParameter("PrivatePoolOptions.Id", privatePoolOptionsId);
 		}
 	}
 
@@ -493,6 +521,17 @@ public class CreateScalingConfigurationRequest extends RpcAcsRequest<CreateScali
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public Map<Object,Object> getSchedulerOptions() {
+		return this.schedulerOptions;
+	}
+
+	public void setSchedulerOptions(Map<Object,Object> schedulerOptions) {
+		this.schedulerOptions = schedulerOptions;
+		if(schedulerOptions != null){
+			putQueryParameter("SchedulerOptions", new Gson().toJson(schedulerOptions));
 		}
 	}
 
