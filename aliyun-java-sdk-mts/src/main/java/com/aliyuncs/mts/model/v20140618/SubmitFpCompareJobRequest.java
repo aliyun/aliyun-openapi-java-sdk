@@ -45,7 +45,7 @@ public class SubmitFpCompareJobRequest extends RpcAcsRequest<SubmitFpCompareJobR
 
 	private String matchedFrameStorage;
 	public SubmitFpCompareJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFpCompareJob");
+		super("Mts", "2014-06-18", "SubmitFpCompareJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

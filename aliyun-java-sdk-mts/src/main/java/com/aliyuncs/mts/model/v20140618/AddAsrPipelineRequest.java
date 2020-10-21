@@ -39,7 +39,7 @@ public class AddAsrPipelineRequest extends RpcAcsRequest<AddAsrPipelineResponse>
 
 	private String name;
 	public AddAsrPipelineRequest() {
-		super("Mts", "2014-06-18", "AddAsrPipeline");
+		super("Mts", "2014-06-18", "AddAsrPipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class SubmitSubtitleJobRequest extends RpcAcsRequest<SubmitSubtitleJobRes
 
 	private String pipelineId;
 	public SubmitSubtitleJobRequest() {
-		super("Mts", "2014-06-18", "SubmitSubtitleJob");
+		super("Mts", "2014-06-18", "SubmitSubtitleJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

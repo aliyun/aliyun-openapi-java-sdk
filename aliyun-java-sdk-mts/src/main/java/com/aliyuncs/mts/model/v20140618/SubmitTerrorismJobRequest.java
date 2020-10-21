@@ -41,7 +41,7 @@ public class SubmitTerrorismJobRequest extends RpcAcsRequest<SubmitTerrorismJobR
 
 	private String input;
 	public SubmitTerrorismJobRequest() {
-		super("Mts", "2014-06-18", "SubmitTerrorismJob");
+		super("Mts", "2014-06-18", "SubmitTerrorismJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

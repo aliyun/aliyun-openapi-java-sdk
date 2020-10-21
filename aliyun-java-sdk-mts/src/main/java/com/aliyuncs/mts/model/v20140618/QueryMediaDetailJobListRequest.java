@@ -35,7 +35,7 @@ public class QueryMediaDetailJobListRequest extends RpcAcsRequest<QueryMediaDeta
 
 	private String jobIds;
 	public QueryMediaDetailJobListRequest() {
-		super("Mts", "2014-06-18", "QueryMediaDetailJobList");
+		super("Mts", "2014-06-18", "QueryMediaDetailJobList", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

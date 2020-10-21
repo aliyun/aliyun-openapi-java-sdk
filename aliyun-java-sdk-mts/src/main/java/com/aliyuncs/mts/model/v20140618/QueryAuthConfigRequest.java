@@ -33,7 +33,7 @@ public class QueryAuthConfigRequest extends RpcAcsRequest<QueryAuthConfigRespons
 
 	private String ownerId;
 	public QueryAuthConfigRequest() {
-		super("Mts", "2014-06-18", "QueryAuthConfig");
+		super("Mts", "2014-06-18", "QueryAuthConfig", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

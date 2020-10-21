@@ -37,7 +37,7 @@ public class SetAuthConfigRequest extends RpcAcsRequest<SetAuthConfigResponse> {
 
 	private String ownerId;
 	public SetAuthConfigRequest() {
-		super("Mts", "2014-06-18", "SetAuthConfig");
+		super("Mts", "2014-06-18", "SetAuthConfig", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

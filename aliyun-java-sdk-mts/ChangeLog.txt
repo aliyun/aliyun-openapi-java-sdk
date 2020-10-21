@@ -1,3 +1,7 @@
+2020-10-21 Version: 2.7.6
+- Add custom person interfaces, support registration, update etc.
+- Optimize updateSmarttagTemplate interface, set some parameters as optional.
+
 2020-04-20 Version: 2.7.5
 - Add TemplateId.
 

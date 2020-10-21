@@ -45,7 +45,7 @@ public class SubmitImageSearchJobRequest extends RpcAcsRequest<SubmitImageSearch
 
 	private String config;
 	public SubmitImageSearchJobRequest() {
-		super("Mts", "2014-06-18", "SubmitImageSearchJob");
+		super("Mts", "2014-06-18", "SubmitImageSearchJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

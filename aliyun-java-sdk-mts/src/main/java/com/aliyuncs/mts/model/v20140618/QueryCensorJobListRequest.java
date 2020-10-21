@@ -35,7 +35,7 @@ public class QueryCensorJobListRequest extends RpcAcsRequest<QueryCensorJobListR
 
 	private String jobIds;
 	public QueryCensorJobListRequest() {
-		super("Mts", "2014-06-18", "QueryCensorJobList");
+		super("Mts", "2014-06-18", "QueryCensorJobList", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,6 +29,8 @@ public class SubmitIProductionJobRequest extends RpcAcsRequest<SubmitIProduction
 
 	private String jobParams;
 
+	private String output;
+
 	private String userData;
 
 	private String functionName;
@@ -45,9 +47,11 @@ public class SubmitIProductionJobRequest extends RpcAcsRequest<SubmitIProduction
 
 	private String pipelineId;
 
+	private String input;
+
 	private String scheduleParams;
 	public SubmitIProductionJobRequest() {
-		super("Mts", "2014-06-18", "SubmitIProductionJob");
+		super("Mts", "2014-06-18", "SubmitIProductionJob", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -74,6 +78,17 @@ public class SubmitIProductionJobRequest extends RpcAcsRequest<SubmitIProduction
 		this.jobParams = jobParams;
 		if(jobParams != null){
 			putQueryParameter("JobParams", jobParams);
+		}
+	}
+
+	public String getOutput() {
+		return this.output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
+		if(output != null){
+			putQueryParameter("Output", output);
 		}
 	}
 
@@ -162,6 +177,17 @@ public class SubmitIProductionJobRequest extends RpcAcsRequest<SubmitIProduction
 		this.pipelineId = pipelineId;
 		if(pipelineId != null){
 			putQueryParameter("PipelineId", pipelineId);
+		}
+	}
+
+	public String getInput() {
+		return this.input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 

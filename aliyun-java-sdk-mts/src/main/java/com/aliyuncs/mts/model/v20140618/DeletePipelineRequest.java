@@ -35,7 +35,7 @@ public class DeletePipelineRequest extends RpcAcsRequest<DeletePipelineResponse>
 
 	private String pipelineId;
 	public DeletePipelineRequest() {
-		super("Mts", "2014-06-18", "DeletePipeline");
+		super("Mts", "2014-06-18", "DeletePipeline", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ListAllCategoryRequest extends RpcAcsRequest<ListAllCategoryRespons
 
 	private Long ownerId;
 	public ListAllCategoryRequest() {
-		super("Mts", "2014-06-18", "ListAllCategory");
+		super("Mts", "2014-06-18", "ListAllCategory", "mts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
