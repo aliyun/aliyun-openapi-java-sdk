@@ -145,6 +145,10 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Integer shardCount;
+
+		private Integer proxyCount;
+
 		private List<Tag> tags;
 
 		public String getReplacateId() {
@@ -417,6 +421,22 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getShardCount() {
+			return this.shardCount;
+		}
+
+		public void setShardCount(Integer shardCount) {
+			this.shardCount = shardCount;
+		}
+
+		public Integer getProxyCount() {
+			return this.proxyCount;
+		}
+
+		public void setProxyCount(Integer proxyCount) {
+			this.proxyCount = proxyCount;
 		}
 
 		public List<Tag> getTags() {

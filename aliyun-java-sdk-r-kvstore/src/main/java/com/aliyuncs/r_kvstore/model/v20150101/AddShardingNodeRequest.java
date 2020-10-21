@@ -22,18 +22,20 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
+public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceGroupId;
+	private String couponNo;
 
 	private String securityToken;
 
-	private String engine;
+	private Integer shardCount;
 
-	private String instanceChargeType;
+	private String businessInfo;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
@@ -43,13 +45,9 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private String instanceId;
 
-	private String acceptLanguage;
-
-	private String zoneId;
-
-	private String orderType;
-	public DescribeAvailableResourceRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa");
+	private String shardClass;
+	public AddShardingNodeRequest() {
+		super("R-kvstore", "2015-01-01", "AddShardingNode", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,14 +66,14 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getCouponNo() {
+		return this.couponNo;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -90,25 +88,36 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public Integer getShardCount() {
+		return this.shardCount;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
+	public void setShardCount(Integer shardCount) {
+		this.shardCount = shardCount;
+		if(shardCount != null){
+			putQueryParameter("ShardCount", shardCount.toString());
 		}
 	}
 
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
+	public String getBusinessInfo() {
+		return this.businessInfo;
 	}
 
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -156,42 +165,20 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getShardClass() {
+		return this.shardClass;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getOrderType() {
-		return this.orderType;
-	}
-
-	public void setOrderType(String orderType) {
-		this.orderType = orderType;
-		if(orderType != null){
-			putQueryParameter("OrderType", orderType);
+	public void setShardClass(String shardClass) {
+		this.shardClass = shardClass;
+		if(shardClass != null){
+			putQueryParameter("ShardClass", shardClass);
 		}
 	}
 
 	@Override
-	public Class<DescribeAvailableResourceResponse> getResponseClass() {
-		return DescribeAvailableResourceResponse.class;
+	public Class<AddShardingNodeResponse> getResponseClass() {
+		return AddShardingNodeResponse.class;
 	}
 
 }

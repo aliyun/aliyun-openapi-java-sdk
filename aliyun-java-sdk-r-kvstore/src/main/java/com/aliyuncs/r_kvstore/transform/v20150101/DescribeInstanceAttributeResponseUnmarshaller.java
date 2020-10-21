@@ -72,6 +72,7 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setVpcCloudInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcCloudInstanceId"));
 			dBInstanceAttribute.setInstanceReleaseProtection(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceReleaseProtection"));
 			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ResourceGroupId"));
+			dBInstanceAttribute.setShardCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ShardCount"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

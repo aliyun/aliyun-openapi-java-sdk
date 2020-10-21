@@ -127,6 +127,8 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Integer shardCount;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -447,6 +449,14 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getShardCount() {
+			return this.shardCount;
+		}
+
+		public void setShardCount(Integer shardCount) {
+			this.shardCount = shardCount;
 		}
 
 		public List<Tag> getTags() {
