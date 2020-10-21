@@ -72,6 +72,12 @@ public class DescribeApplicationConfigResponseUnmarshaller {
 		data.setPostStart(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PostStart"));
 		data.setWarStartOptions(_ctx.stringValue("DescribeApplicationConfigResponse.Data.WarStartOptions"));
 		data.setSecurityGroupId(_ctx.stringValue("DescribeApplicationConfigResponse.Data.SecurityGroupId"));
+		data.setTerminationGracePeriodSeconds(_ctx.integerValue("DescribeApplicationConfigResponse.Data.TerminationGracePeriodSeconds"));
+		data.setEnableAhas(_ctx.stringValue("DescribeApplicationConfigResponse.Data.EnableAhas"));
+		data.setPhpArmsConfigLocation(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpArmsConfigLocation"));
+		data.setPhpConfigLocation(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpConfigLocation"));
+		data.setPhpConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.PhpConfig"));
+		data.setTomcatConfig(_ctx.stringValue("DescribeApplicationConfigResponse.Data.TomcatConfig"));
 
 		List<MountDescItem> mountDesc = new ArrayList<MountDescItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeApplicationConfigResponse.Data.MountDesc.Length"); i++) {

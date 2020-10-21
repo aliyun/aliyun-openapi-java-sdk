@@ -167,6 +167,18 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		private String securityGroupId;
 
+		private Integer terminationGracePeriodSeconds;
+
+		private String enableAhas;
+
+		private String phpArmsConfigLocation;
+
+		private String phpConfigLocation;
+
+		private String phpConfig;
+
+		private String tomcatConfig;
+
 		private List<MountDescItem> mountDesc;
 
 		private List<Tag> tags;
@@ -451,6 +463,54 @@ public class DescribeApplicationConfigResponse extends AcsResponse {
 
 		public void setSecurityGroupId(String securityGroupId) {
 			this.securityGroupId = securityGroupId;
+		}
+
+		public Integer getTerminationGracePeriodSeconds() {
+			return this.terminationGracePeriodSeconds;
+		}
+
+		public void setTerminationGracePeriodSeconds(Integer terminationGracePeriodSeconds) {
+			this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
+		}
+
+		public String getEnableAhas() {
+			return this.enableAhas;
+		}
+
+		public void setEnableAhas(String enableAhas) {
+			this.enableAhas = enableAhas;
+		}
+
+		public String getPhpArmsConfigLocation() {
+			return this.phpArmsConfigLocation;
+		}
+
+		public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
+			this.phpArmsConfigLocation = phpArmsConfigLocation;
+		}
+
+		public String getPhpConfigLocation() {
+			return this.phpConfigLocation;
+		}
+
+		public void setPhpConfigLocation(String phpConfigLocation) {
+			this.phpConfigLocation = phpConfigLocation;
+		}
+
+		public String getPhpConfig() {
+			return this.phpConfig;
+		}
+
+		public void setPhpConfig(String phpConfig) {
+			this.phpConfig = phpConfig;
+		}
+
+		public String getTomcatConfig() {
+			return this.tomcatConfig;
+		}
+
+		public void setTomcatConfig(String tomcatConfig) {
+			this.tomcatConfig = tomcatConfig;
 		}
 
 		public List<MountDescItem> getMountDesc() {

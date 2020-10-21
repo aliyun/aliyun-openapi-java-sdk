@@ -43,13 +43,19 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String mountHost;
 
+	private Boolean autoConfig;
+
 	private String liveness;
 
 	private String securityGroupId;
 
 	private String envs;
 
+	private String phpArmsConfigLocation;
+
 	private String packageVersion;
+
+	private String tomcatConfig;
 
 	private String customHostAlias;
 
@@ -67,7 +73,11 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String packageUrl;
 
+	private Integer terminationGracePeriodSeconds;
+
 	private String configMapMountDesc;
+
+	private String phpConfig;
 
 	private String preStop;
 
@@ -90,6 +100,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 	private String imageUrl;
 
 	private String packageType;
+
+	private String phpConfigLocation;
 
 	private String postStart;
 	public CreateApplicationRequest() {
@@ -201,6 +213,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public Boolean getAutoConfig() {
+		return this.autoConfig;
+	}
+
+	public void setAutoConfig(Boolean autoConfig) {
+		this.autoConfig = autoConfig;
+		if(autoConfig != null){
+			putQueryParameter("AutoConfig", autoConfig.toString());
+		}
+	}
+
 	public String getLiveness() {
 		return this.liveness;
 	}
@@ -234,6 +257,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public String getPhpArmsConfigLocation() {
+		return this.phpArmsConfigLocation;
+	}
+
+	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
+		this.phpArmsConfigLocation = phpArmsConfigLocation;
+		if(phpArmsConfigLocation != null){
+			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+		}
+	}
+
 	public String getPackageVersion() {
 		return this.packageVersion;
 	}
@@ -242,6 +276,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.packageVersion = packageVersion;
 		if(packageVersion != null){
 			putQueryParameter("PackageVersion", packageVersion);
+		}
+	}
+
+	public String getTomcatConfig() {
+		return this.tomcatConfig;
+	}
+
+	public void setTomcatConfig(String tomcatConfig) {
+		this.tomcatConfig = tomcatConfig;
+		if(tomcatConfig != null){
+			putQueryParameter("TomcatConfig", tomcatConfig);
 		}
 	}
 
@@ -333,6 +378,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		}
 	}
 
+	public Integer getTerminationGracePeriodSeconds() {
+		return this.terminationGracePeriodSeconds;
+	}
+
+	public void setTerminationGracePeriodSeconds(Integer terminationGracePeriodSeconds) {
+		this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
+		if(terminationGracePeriodSeconds != null){
+			putQueryParameter("TerminationGracePeriodSeconds", terminationGracePeriodSeconds.toString());
+		}
+	}
+
 	public String getConfigMapMountDesc() {
 		return this.configMapMountDesc;
 	}
@@ -341,6 +397,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.configMapMountDesc = configMapMountDesc;
 		if(configMapMountDesc != null){
 			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+		}
+	}
+
+	public String getPhpConfig() {
+		return this.phpConfig;
+	}
+
+	public void setPhpConfig(String phpConfig) {
+		this.phpConfig = phpConfig;
+		if(phpConfig != null){
+			putBodyParameter("PhpConfig", phpConfig);
 		}
 	}
 
@@ -462,6 +529,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.packageType = packageType;
 		if(packageType != null){
 			putQueryParameter("PackageType", packageType);
+		}
+	}
+
+	public String getPhpConfigLocation() {
+		return this.phpConfigLocation;
+	}
+
+	public void setPhpConfigLocation(String phpConfigLocation) {
+		this.phpConfigLocation = phpConfigLocation;
+		if(phpConfigLocation != null){
+			putQueryParameter("PhpConfigLocation", phpConfigLocation);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String jarStartArgs;
 
+	private String enableAhas;
+
 	private String slsConfigs;
 
 	private String commandArgs;
@@ -47,7 +49,11 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String envs;
 
+	private String phpArmsConfigLocation;
+
 	private String packageVersion;
+
+	private String tomcatConfig;
 
 	private String customHostAlias;
 
@@ -59,7 +65,11 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String packageUrl;
 
+	private Integer terminationGracePeriodSeconds;
+
 	private String configMapMountDesc;
+
+	private String phpConfig;
 
 	private String preStop;
 
@@ -78,6 +88,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	private String appId;
 
 	private String imageUrl;
+
+	private String phpConfigLocation;
 
 	private String postStart;
 	public DeployApplicationRequest() {
@@ -120,6 +132,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.jarStartArgs = jarStartArgs;
 		if(jarStartArgs != null){
 			putQueryParameter("JarStartArgs", jarStartArgs);
+		}
+	}
+
+	public String getEnableAhas() {
+		return this.enableAhas;
+	}
+
+	public void setEnableAhas(String enableAhas) {
+		this.enableAhas = enableAhas;
+		if(enableAhas != null){
+			putQueryParameter("EnableAhas", enableAhas);
 		}
 	}
 
@@ -211,6 +234,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public String getPhpArmsConfigLocation() {
+		return this.phpArmsConfigLocation;
+	}
+
+	public void setPhpArmsConfigLocation(String phpArmsConfigLocation) {
+		this.phpArmsConfigLocation = phpArmsConfigLocation;
+		if(phpArmsConfigLocation != null){
+			putQueryParameter("PhpArmsConfigLocation", phpArmsConfigLocation);
+		}
+	}
+
 	public String getPackageVersion() {
 		return this.packageVersion;
 	}
@@ -219,6 +253,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.packageVersion = packageVersion;
 		if(packageVersion != null){
 			putQueryParameter("PackageVersion", packageVersion);
+		}
+	}
+
+	public String getTomcatConfig() {
+		return this.tomcatConfig;
+	}
+
+	public void setTomcatConfig(String tomcatConfig) {
+		this.tomcatConfig = tomcatConfig;
+		if(tomcatConfig != null){
+			putQueryParameter("TomcatConfig", tomcatConfig);
 		}
 	}
 
@@ -277,6 +322,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public Integer getTerminationGracePeriodSeconds() {
+		return this.terminationGracePeriodSeconds;
+	}
+
+	public void setTerminationGracePeriodSeconds(Integer terminationGracePeriodSeconds) {
+		this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
+		if(terminationGracePeriodSeconds != null){
+			putQueryParameter("TerminationGracePeriodSeconds", terminationGracePeriodSeconds.toString());
+		}
+	}
+
 	public String getConfigMapMountDesc() {
 		return this.configMapMountDesc;
 	}
@@ -285,6 +341,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.configMapMountDesc = configMapMountDesc;
 		if(configMapMountDesc != null){
 			putBodyParameter("ConfigMapMountDesc", configMapMountDesc);
+		}
+	}
+
+	public String getPhpConfig() {
+		return this.phpConfig;
+	}
+
+	public void setPhpConfig(String phpConfig) {
+		this.phpConfig = phpConfig;
+		if(phpConfig != null){
+			putBodyParameter("PhpConfig", phpConfig);
 		}
 	}
 
@@ -384,6 +451,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getPhpConfigLocation() {
+		return this.phpConfigLocation;
+	}
+
+	public void setPhpConfigLocation(String phpConfigLocation) {
+		this.phpConfigLocation = phpConfigLocation;
+		if(phpConfigLocation != null){
+			putQueryParameter("PhpConfigLocation", phpConfigLocation);
 		}
 	}
 
