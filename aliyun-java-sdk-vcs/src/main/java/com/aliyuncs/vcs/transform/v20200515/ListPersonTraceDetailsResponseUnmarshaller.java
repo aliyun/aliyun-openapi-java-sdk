@@ -41,7 +41,6 @@ public class ListPersonTraceDetailsResponseUnmarshaller {
 			datas.setDataSourceId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].DataSourceId"));
 			datas.setPersonId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PersonId"));
 			datas.setPicUrlPath(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PicUrlPath"));
-			datas.setIsvId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].IsvId"));
 			datas.setRightBottomY(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].RightBottomY"));
 			datas.setRightBottomX(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].RightBottomX"));
 			datas.setShotTime(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].ShotTime"));

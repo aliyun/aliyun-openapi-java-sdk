@@ -83,8 +83,6 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 
 		private String picUrlPath;
 
-		private String isvId;
-
 		private String rightBottomY;
 
 		private String rightBottomX;
@@ -161,14 +159,6 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 
 		public void setPicUrlPath(String picUrlPath) {
 			this.picUrlPath = picUrlPath;
-		}
-
-		public String getIsvId() {
-			return this.isvId;
-		}
-
-		public void setIsvId(String isvId) {
-			this.isvId = isvId;
 		}
 
 		public String getRightBottomY() {

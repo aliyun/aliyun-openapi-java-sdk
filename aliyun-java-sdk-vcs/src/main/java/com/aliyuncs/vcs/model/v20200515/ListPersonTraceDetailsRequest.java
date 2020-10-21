@@ -38,8 +38,6 @@ public class ListPersonTraceDetailsRequest extends RpcAcsRequest<ListPersonTrace
 	private Long pageSize;
 
 	private String personId;
-
-	private String isvId;
 	public ListPersonTraceDetailsRequest() {
 		super("Vcs", "2020-05-15", "ListPersonTraceDetails");
 		setMethod(MethodType.POST);
@@ -123,17 +121,6 @@ public class ListPersonTraceDetailsRequest extends RpcAcsRequest<ListPersonTrace
 		this.personId = personId;
 		if(personId != null){
 			putBodyParameter("PersonId", personId);
-		}
-	}
-
-	public String getIsvId() {
-		return this.isvId;
-	}
-
-	public void setIsvId(String isvId) {
-		this.isvId = isvId;
-		if(isvId != null){
-			putBodyParameter("IsvId", isvId);
 		}
 	}
 
