@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-dcdn</artifactId>
   <packaging>jar</packaging>
-  <version>2.0.5</version>
+  <version>2.0.6</version>
   <name>aliyun-java-sdk-dcdn</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
