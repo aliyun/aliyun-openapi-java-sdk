@@ -590,5 +590,27 @@ public class ApacheHttpClientTest {
         ApacheHttpClient.getInstance(HttpClientConfig.getDefault());
     }
 
+    @Test
+    public void createSSLConnectionSocketFactoryTest() throws Exception{
+        Method createSSLConnectionSocketFactory = ApacheHttpClient.class.getDeclaredMethod("createSSLConnectionSocketFactory");
+        createSSLConnectionSocketFactory.setAccessible(true);
+        HttpClientConfig httpClientConfig = HttpClientConfig.getDefault();
+        httpClientConfig.setSslSocketFactory(mock(SSLSocketFactory.class));
+        httpClientConfig.setHostnameVerifier(mock(HostnameVerifier.class));
+        ApacheHttpClient client = ApacheHttpClient.getInstance();
+        Field clientConfig = IHttpClient.class.getDeclaredField("clientConfig");
+        clientConfig.setAccessible(true);
+        clientConfig.set(client, httpClientConfig);
+        Object result = createSSLConnectionSocketFactory.invoke(client);
+        Assert.assertTrue(result instanceof SSLConnectionSocketFactory);
+
+        httpClientConfig = HttpClientConfig.getDefault();
+        httpClientConfig.setSslSocketFactory(mock(SSLSocketFactory.class));
+        httpClientConfig.setHostnameVerifier(null);
+        clientConfig.set(client, httpClientConfig);
+        result = createSSLConnectionSocketFactory.invoke(client);
+        Assert.assertTrue(result instanceof SSLConnectionSocketFactory);
+    }
+
 
 }

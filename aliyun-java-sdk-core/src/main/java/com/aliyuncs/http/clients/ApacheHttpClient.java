@@ -82,44 +82,54 @@ public class ApacheHttpClient extends IHttpClient {
 
     private SSLConnectionSocketFactory createSSLConnectionSocketFactory() throws ClientException {
         try {
-            List<TrustManager> trustManagerList = new ArrayList<TrustManager>();
-            X509TrustManager[] trustManagers = clientConfig.getX509TrustManagers();
+            if (null == clientConfig.getSslSocketFactory()) {
+                List<TrustManager> trustManagerList = new ArrayList<TrustManager>();
+                X509TrustManager[] trustManagers = clientConfig.getX509TrustManagers();
 
-            if (null != trustManagers) {
-                trustManagerList.addAll(Arrays.asList(trustManagers));
-            }
-
-            // get trustManager using default certification from jdk
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-            tmf.init((KeyStore) null);
-            trustManagerList.addAll(Arrays.asList(tmf.getTrustManagers()));
-
-            final List<X509TrustManager> finalTrustManagerList = new ArrayList<X509TrustManager>();
-            for (TrustManager tm : trustManagerList) {
-                if (tm instanceof X509TrustManager) {
-                    finalTrustManagerList.add((X509TrustManager) tm);
+                if (null != trustManagers) {
+                    trustManagerList.addAll(Arrays.asList(trustManagers));
                 }
-            }
-            CompositeX509TrustManager compositeX509TrustManager = new CompositeX509TrustManager(finalTrustManagerList);
-            compositeX509TrustManager.setIgnoreSSLCert(clientConfig.isIgnoreSSLCerts());
-            KeyManager[] keyManagers = null;
-            if (clientConfig.getKeyManagers() != null) {
-                keyManagers = clientConfig.getKeyManagers();
-            }
 
-            SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(keyManagers, new TrustManager[]{compositeX509TrustManager}, clientConfig.getSecureRandom());
+                // get trustManager using default certification from jdk
+                TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+                tmf.init((KeyStore) null);
+                trustManagerList.addAll(Arrays.asList(tmf.getTrustManagers()));
 
-            HostnameVerifier hostnameVerifier = null;
-            if (clientConfig.isIgnoreSSLCerts()) {
-                hostnameVerifier = new NoopHostnameVerifier();
-            } else if (clientConfig.getHostnameVerifier() != null) {
-                hostnameVerifier = clientConfig.getHostnameVerifier();
+                final List<X509TrustManager> finalTrustManagerList = new ArrayList<X509TrustManager>();
+                for (TrustManager tm : trustManagerList) {
+                    if (tm instanceof X509TrustManager) {
+                        finalTrustManagerList.add((X509TrustManager) tm);
+                    }
+                }
+                CompositeX509TrustManager compositeX509TrustManager = new CompositeX509TrustManager(finalTrustManagerList);
+                compositeX509TrustManager.setIgnoreSSLCert(clientConfig.isIgnoreSSLCerts());
+                KeyManager[] keyManagers = null;
+                if (clientConfig.getKeyManagers() != null) {
+                    keyManagers = clientConfig.getKeyManagers();
+                }
+
+                SSLContext sslContext = SSLContext.getInstance("TLS");
+                sslContext.init(keyManagers, new TrustManager[]{compositeX509TrustManager}, clientConfig.getSecureRandom());
+
+                HostnameVerifier hostnameVerifier = null;
+                if (clientConfig.isIgnoreSSLCerts()) {
+                    hostnameVerifier = new NoopHostnameVerifier();
+                } else if (clientConfig.getHostnameVerifier() != null) {
+                    hostnameVerifier = clientConfig.getHostnameVerifier();
+                } else {
+                    hostnameVerifier = new DefaultHostnameVerifier();
+                }
+                SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
+                return sslConnectionSocketFactory;
             } else {
-                hostnameVerifier = new DefaultHostnameVerifier();
+                HostnameVerifier hostnameVerifier;
+                if (null == clientConfig.getHostnameVerifier()) {
+                    hostnameVerifier = new NoopHostnameVerifier();
+                } else {
+                    hostnameVerifier = clientConfig.getHostnameVerifier();
+                }
+               return new SSLConnectionSocketFactory(clientConfig.getSslSocketFactory(), hostnameVerifier);
             }
-            SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
-            return sslConnectionSocketFactory;
         } catch (Exception e) {
             throw new ClientException("SDK.InitFailed", "Init https with SSL socket failed", e);
         }

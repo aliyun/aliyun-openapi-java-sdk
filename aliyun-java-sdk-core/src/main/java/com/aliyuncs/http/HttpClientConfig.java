@@ -43,7 +43,6 @@ public class HttpClientConfig {
      * https
      **/
     private boolean ignoreSSLCerts = false;
-    @Deprecated
     private SSLSocketFactory sslSocketFactory = null;
     private KeyManager[] keyManagers = null;
     private X509TrustManager[] x509TrustManagers = null;
@@ -152,15 +151,10 @@ public class HttpClientConfig {
         this.writeTimeoutMillis = writeTimeoutMillis;
     }
 
-    @Deprecated
     public SSLSocketFactory getSslSocketFactory() {
         return this.sslSocketFactory;
     }
 
-    /**
-     * use HttpClientConfig.setX509TrustManagers() and HttpClientConfig.setKeyManagers() instead
-     */
-    @Deprecated
     public void setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
         this.sslSocketFactory = sslSocketFactory;
     }
