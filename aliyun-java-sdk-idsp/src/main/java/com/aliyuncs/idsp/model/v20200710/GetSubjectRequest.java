@@ -15,8 +15,8 @@
 package com.aliyuncs.idsp.model.v20200710;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.idsp.Endpoint;
 
 /**
  * @author auto create
@@ -31,9 +31,12 @@ public class GetSubjectRequest extends RpcAcsRequest<GetSubjectResponse> {
 
 	private Integer currentPage;
 	public GetSubjectRequest() {
-		super("idsp", "2020-07-10", "GetSubject");
-		setProtocol(ProtocolType.HTTPS);
+		super("idsp", "2020-07-10", "GetSubject", "idsp");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getName() {

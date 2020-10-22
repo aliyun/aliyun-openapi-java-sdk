@@ -15,8 +15,8 @@
 package com.aliyuncs.idsp.model.v20200710;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.idsp.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
  */
 public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 	   
+
+	private String entityName;
 
 	private Long endTime;
 
@@ -33,19 +35,41 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 
 	private String posKeywords;
 
+	private String titleIncludeWords;
+
 	private String excludeKeywords;
 
 	private Long subjectId;
+
+	private String parentId;
+
+	private Long publishTimeEnd;
 
 	private String mediaTypeFilter;
 
 	private Long pageSize;
 
+	private Long publishTimeStart;
+
 	private String assKeywords;
 	public SearchDataRequest() {
-		super("idsp", "2020-07-10", "SearchData");
-		setProtocol(ProtocolType.HTTPS);
+		super("idsp", "2020-07-10", "SearchData", "idsp");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getEntityName() {
+		return this.entityName;
+	}
+
+	public void setEntityName(String entityName) {
+		this.entityName = entityName;
+		if(entityName != null){
+			putBodyParameter("EntityName", entityName);
+		}
 	}
 
 	public Long getEndTime() {
@@ -92,6 +116,17 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 		}
 	}
 
+	public String getTitleIncludeWords() {
+		return this.titleIncludeWords;
+	}
+
+	public void setTitleIncludeWords(String titleIncludeWords) {
+		this.titleIncludeWords = titleIncludeWords;
+		if(titleIncludeWords != null){
+			putBodyParameter("TitleIncludeWords", titleIncludeWords);
+		}
+	}
+
 	public String getExcludeKeywords() {
 		return this.excludeKeywords;
 	}
@@ -114,6 +149,28 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 		}
 	}
 
+	public String getParentId() {
+		return this.parentId;
+	}
+
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+		if(parentId != null){
+			putBodyParameter("ParentId", parentId);
+		}
+	}
+
+	public Long getPublishTimeEnd() {
+		return this.publishTimeEnd;
+	}
+
+	public void setPublishTimeEnd(Long publishTimeEnd) {
+		this.publishTimeEnd = publishTimeEnd;
+		if(publishTimeEnd != null){
+			putBodyParameter("PublishTimeEnd", publishTimeEnd.toString());
+		}
+	}
+
 	public String getMediaTypeFilter() {
 		return this.mediaTypeFilter;
 	}
@@ -133,6 +190,17 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Long getPublishTimeStart() {
+		return this.publishTimeStart;
+	}
+
+	public void setPublishTimeStart(Long publishTimeStart) {
+		this.publishTimeStart = publishTimeStart;
+		if(publishTimeStart != null){
+			putBodyParameter("PublishTimeStart", publishTimeStart.toString());
 		}
 	}
 
