@@ -1,3 +1,6 @@
+2020-10-22 Version: 3.5.3
+- Update cert API.
+
 2020-10-16 Version: 3.5.2
 - Update cert API.
 
