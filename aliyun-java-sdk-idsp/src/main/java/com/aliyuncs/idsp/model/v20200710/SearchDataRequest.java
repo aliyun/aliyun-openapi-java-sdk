@@ -45,6 +45,8 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 
 	private Long publishTimeEnd;
 
+	private String messageTypeFilter;
+
 	private String mediaTypeFilter;
 
 	private Long pageSize;
@@ -52,6 +54,8 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 	private Long publishTimeStart;
 
 	private String assKeywords;
+
+	private String docContentType;
 	public SearchDataRequest() {
 		super("idsp", "2020-07-10", "SearchData", "idsp");
 		setMethod(MethodType.POST);
@@ -171,6 +175,17 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 		}
 	}
 
+	public String getMessageTypeFilter() {
+		return this.messageTypeFilter;
+	}
+
+	public void setMessageTypeFilter(String messageTypeFilter) {
+		this.messageTypeFilter = messageTypeFilter;
+		if(messageTypeFilter != null){
+			putBodyParameter("MessageTypeFilter", messageTypeFilter);
+		}
+	}
+
 	public String getMediaTypeFilter() {
 		return this.mediaTypeFilter;
 	}
@@ -212,6 +227,17 @@ public class SearchDataRequest extends RpcAcsRequest<SearchDataResponse> {
 		this.assKeywords = assKeywords;
 		if(assKeywords != null){
 			putBodyParameter("AssKeywords", assKeywords);
+		}
+	}
+
+	public String getDocContentType() {
+		return this.docContentType;
+	}
+
+	public void setDocContentType(String docContentType) {
+		this.docContentType = docContentType;
+		if(docContentType != null){
+			putBodyParameter("DocContentType", docContentType);
 		}
 	}
 
