@@ -1,3 +1,6 @@
+2020-10-23 Version: 1.0.2
+- Support resource,rules,monitor-scope,delievery settings.
+
 2020-09-01 Version: 1.0.1
 - Support region route.
 

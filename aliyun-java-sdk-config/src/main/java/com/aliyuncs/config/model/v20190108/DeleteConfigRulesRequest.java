@@ -27,7 +27,7 @@ public class DeleteConfigRulesRequest extends RpcAcsRequest<DeleteConfigRulesRes
 
 	private String configRuleIds;
 	public DeleteConfigRulesRequest() {
-		super("Config", "2019-01-08", "DeleteConfigRules", "config");
+		super("Config", "2019-01-08", "DeleteConfigRules", "Config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

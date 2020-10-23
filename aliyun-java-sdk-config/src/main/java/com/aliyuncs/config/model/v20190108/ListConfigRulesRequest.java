@@ -31,17 +31,17 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 
 	private String configRuleState;
 
-	private Integer riskLevel;
-
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String complianceType;
 
+	private Integer riskLevel;
+
 	private Long memberId;
 	public ListConfigRulesRequest() {
-		super("Config", "2019-01-08", "ListConfigRules", "config");
+		super("Config", "2019-01-08", "ListConfigRules", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,17 +82,6 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 		}
 	}
 
-	public Integer getRiskLevel() {
-		return this.riskLevel;
-	}
-
-	public void setRiskLevel(Integer riskLevel) {
-		this.riskLevel = riskLevel;
-		if(riskLevel != null){
-			putQueryParameter("RiskLevel", riskLevel.toString());
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -123,6 +112,17 @@ public class ListConfigRulesRequest extends RpcAcsRequest<ListConfigRulesRespons
 		this.complianceType = complianceType;
 		if(complianceType != null){
 			putQueryParameter("ComplianceType", complianceType);
+		}
+	}
+
+	public Integer getRiskLevel() {
+		return this.riskLevel;
+	}
+
+	public void setRiskLevel(Integer riskLevel) {
+		this.riskLevel = riskLevel;
+		if(riskLevel != null){
+			putQueryParameter("RiskLevel", riskLevel.toString());
 		}
 	}
 

@@ -27,7 +27,7 @@ public class StartConfigurationRecorderRequest extends RpcAcsRequest<StartConfig
 
 	private Boolean enterpriseEdition;
 	public StartConfigurationRecorderRequest() {
-		super("Config", "2019-01-08", "StartConfigurationRecorder", "config");
+		super("Config", "2019-01-08", "StartConfigurationRecorder", "Config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

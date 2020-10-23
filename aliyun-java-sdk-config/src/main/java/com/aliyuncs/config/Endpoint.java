@@ -21,7 +21,6 @@ public class Endpoint {
         {
             put("cn-shanghai", "config.cn-shanghai.aliyuncs.com");
             put("ap-southeast-1", "config.ap-southeast-1.aliyuncs.com");
-            put("cn-hangzhou", "config.cn-hangzhou.aliyuncs.com");
         }
     };
 

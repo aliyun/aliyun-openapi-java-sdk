@@ -27,7 +27,7 @@ public class StopConfigRulesRequest extends RpcAcsRequest<StopConfigRulesRespons
 
 	private String configRuleIds;
 	public StopConfigRulesRequest() {
-		super("Config", "2019-01-08", "StopConfigRules", "config");
+		super("Config", "2019-01-08", "StopConfigRules", "Config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

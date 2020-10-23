@@ -47,6 +47,7 @@ public class DescribeConfigRuleResponseUnmarshaller {
 		configRule.setInputParameters(_ctx.mapValue("DescribeConfigRuleResponse.ConfigRule.InputParameters"));
 		configRule.setModifiedTimestamp(_ctx.longValue("DescribeConfigRuleResponse.ConfigRule.ModifiedTimestamp"));
 		configRule.setRiskLevel(_ctx.integerValue("DescribeConfigRuleResponse.ConfigRule.RiskLevel"));
+		configRule.setMaximumExecutionFrequency(_ctx.stringValue("DescribeConfigRuleResponse.ConfigRule.MaximumExecutionFrequency"));
 
 		CreateBy createBy = new CreateBy();
 		createBy.setCreatorType(_ctx.stringValue("DescribeConfigRuleResponse.ConfigRule.CreateBy.CreatorType"));

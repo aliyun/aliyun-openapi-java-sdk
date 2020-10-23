@@ -43,7 +43,7 @@ public class GetResourceConfigurationTimelineRequest extends RpcAcsRequest<GetRe
 
 	private Long memberId;
 	public GetResourceConfigurationTimelineRequest() {
-		super("Config", "2019-01-08", "GetResourceConfigurationTimeline", "config");
+		super("Config", "2019-01-08", "GetResourceConfigurationTimeline", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

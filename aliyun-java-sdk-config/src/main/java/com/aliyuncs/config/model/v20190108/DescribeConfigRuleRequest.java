@@ -31,7 +31,7 @@ public class DescribeConfigRuleRequest extends RpcAcsRequest<DescribeConfigRuleR
 
 	private Long memberId;
 	public DescribeConfigRuleRequest() {
-		super("Config", "2019-01-08", "DescribeConfigRule", "config");
+		super("Config", "2019-01-08", "DescribeConfigRule", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

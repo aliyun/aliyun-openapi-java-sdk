@@ -35,7 +35,7 @@ public class DescribeDiscoveredResourceRequest extends RpcAcsRequest<DescribeDis
 
 	private Long memberId;
 	public DescribeDiscoveredResourceRequest() {
-		super("Config", "2019-01-08", "DescribeDiscoveredResource", "config");
+		super("Config", "2019-01-08", "DescribeDiscoveredResource", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

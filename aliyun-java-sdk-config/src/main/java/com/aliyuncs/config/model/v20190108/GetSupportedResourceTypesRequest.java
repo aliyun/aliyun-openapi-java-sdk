@@ -25,7 +25,7 @@ import com.aliyuncs.config.Endpoint;
 public class GetSupportedResourceTypesRequest extends RpcAcsRequest<GetSupportedResourceTypesResponse> {
 	   
 	public GetSupportedResourceTypesRequest() {
-		super("Config", "2019-01-08", "GetSupportedResourceTypes", "config");
+		super("Config", "2019-01-08", "GetSupportedResourceTypes", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

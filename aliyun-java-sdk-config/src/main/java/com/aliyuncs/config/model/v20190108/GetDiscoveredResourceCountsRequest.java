@@ -31,7 +31,7 @@ public class GetDiscoveredResourceCountsRequest extends RpcAcsRequest<GetDiscove
 
 	private Long memberId;
 	public GetDiscoveredResourceCountsRequest() {
-		super("Config", "2019-01-08", "GetDiscoveredResourceCounts", "config");
+		super("Config", "2019-01-08", "GetDiscoveredResourceCounts", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

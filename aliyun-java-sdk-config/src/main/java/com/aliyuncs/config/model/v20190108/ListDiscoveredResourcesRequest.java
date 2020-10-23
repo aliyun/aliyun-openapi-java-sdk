@@ -43,7 +43,7 @@ public class ListDiscoveredResourcesRequest extends RpcAcsRequest<ListDiscovered
 
 	private Long memberId;
 	public ListDiscoveredResourcesRequest() {
-		super("Config", "2019-01-08", "ListDiscoveredResources", "config");
+		super("Config", "2019-01-08", "ListDiscoveredResources", "Config");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

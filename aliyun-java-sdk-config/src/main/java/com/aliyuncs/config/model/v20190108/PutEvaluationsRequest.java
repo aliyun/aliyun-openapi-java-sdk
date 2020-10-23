@@ -29,7 +29,7 @@ public class PutEvaluationsRequest extends RpcAcsRequest<PutEvaluationsResponse>
 
 	private String resultToken;
 	public PutEvaluationsRequest() {
-		super("Config", "2019-01-08", "PutEvaluations", "config");
+		super("Config", "2019-01-08", "PutEvaluations", "Config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

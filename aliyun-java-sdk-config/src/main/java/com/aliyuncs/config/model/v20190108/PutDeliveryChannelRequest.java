@@ -43,7 +43,7 @@ public class PutDeliveryChannelRequest extends RpcAcsRequest<PutDeliveryChannelR
 
 	private Integer status;
 	public PutDeliveryChannelRequest() {
-		super("Config", "2019-01-08", "PutDeliveryChannel", "config");
+		super("Config", "2019-01-08", "PutDeliveryChannel", "Config");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

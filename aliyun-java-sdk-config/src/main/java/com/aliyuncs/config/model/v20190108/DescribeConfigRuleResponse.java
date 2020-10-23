@@ -66,6 +66,8 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 
 		private Integer riskLevel;
 
+		private String maximumExecutionFrequency;
+
 		private CreateBy createBy;
 
 		private ConfigRuleEvaluationStatus configRuleEvaluationStatus;
@@ -146,6 +148,14 @@ public class DescribeConfigRuleResponse extends AcsResponse {
 
 		public void setRiskLevel(Integer riskLevel) {
 			this.riskLevel = riskLevel;
+		}
+
+		public String getMaximumExecutionFrequency() {
+			return this.maximumExecutionFrequency;
+		}
+
+		public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
+			this.maximumExecutionFrequency = maximumExecutionFrequency;
 		}
 
 		public CreateBy getCreateBy() {
