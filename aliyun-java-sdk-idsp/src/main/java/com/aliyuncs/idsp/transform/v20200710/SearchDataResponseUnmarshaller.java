@@ -103,6 +103,12 @@ public class SearchDataResponseUnmarshaller {
 			yqMessageViewModel.setSpam(_ctx.booleanValue("SearchDataResponse.Data.List["+ i +"].Spam"));
 			yqMessageViewModel.setWbCommentId(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].WbCommentId"));
 			yqMessageViewModel.setWbMid(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].WbMid"));
+			yqMessageViewModel.setIsPoliticalRisk(_ctx.booleanValue("SearchDataResponse.Data.List["+ i +"].IsPoliticalRisk"));
+			yqMessageViewModel.setContentVideoUrl(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].ContentVideoUrl"));
+			yqMessageViewModel.setRelevanceScore(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].RelevanceScore"));
+			yqMessageViewModel.setOssVideoUrl(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].OssVideoUrl"));
+			yqMessageViewModel.setDocContentType(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].DocContentType"));
+			yqMessageViewModel.setOssImageUrl(_ctx.stringValue("SearchDataResponse.Data.List["+ i +"].OssImageUrl"));
 
 			list.add(yqMessageViewModel);
 		}

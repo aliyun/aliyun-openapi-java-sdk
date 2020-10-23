@@ -217,6 +217,18 @@ public class SearchDataResponse extends AcsResponse {
 
 			private String wbMid;
 
+			private Boolean isPoliticalRisk;
+
+			private String contentVideoUrl;
+
+			private String relevanceScore;
+
+			private String ossVideoUrl;
+
+			private String docContentType;
+
+			private String ossImageUrl;
+
 			public String getVideoUrl() {
 				return this.videoUrl;
 			}
@@ -687,6 +699,54 @@ public class SearchDataResponse extends AcsResponse {
 
 			public void setWbMid(String wbMid) {
 				this.wbMid = wbMid;
+			}
+
+			public Boolean getIsPoliticalRisk() {
+				return this.isPoliticalRisk;
+			}
+
+			public void setIsPoliticalRisk(Boolean isPoliticalRisk) {
+				this.isPoliticalRisk = isPoliticalRisk;
+			}
+
+			public String getContentVideoUrl() {
+				return this.contentVideoUrl;
+			}
+
+			public void setContentVideoUrl(String contentVideoUrl) {
+				this.contentVideoUrl = contentVideoUrl;
+			}
+
+			public String getRelevanceScore() {
+				return this.relevanceScore;
+			}
+
+			public void setRelevanceScore(String relevanceScore) {
+				this.relevanceScore = relevanceScore;
+			}
+
+			public String getOssVideoUrl() {
+				return this.ossVideoUrl;
+			}
+
+			public void setOssVideoUrl(String ossVideoUrl) {
+				this.ossVideoUrl = ossVideoUrl;
+			}
+
+			public String getDocContentType() {
+				return this.docContentType;
+			}
+
+			public void setDocContentType(String docContentType) {
+				this.docContentType = docContentType;
+			}
+
+			public String getOssImageUrl() {
+				return this.ossImageUrl;
+			}
+
+			public void setOssImageUrl(String ossImageUrl) {
+				this.ossImageUrl = ossImageUrl;
 			}
 		}
 
