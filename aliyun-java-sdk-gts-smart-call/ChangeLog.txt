@@ -1,3 +1,6 @@
+2020-10-23 Version: 1.0.1
+- Supported interact Voice callBack.
+
 2020-10-22 Version: 1.0.0
 - Supported alicom voice.
 

@@ -60,6 +60,10 @@ public class InteractVoiceResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private String sessionTimeout;
+
+	private String ttsVolume;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -202,6 +206,22 @@ public class InteractVoiceResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getSessionTimeout() {
+		return this.sessionTimeout;
+	}
+
+	public void setSessionTimeout(String sessionTimeout) {
+		this.sessionTimeout = sessionTimeout;
+	}
+
+	public String getTtsVolume() {
+		return this.ttsVolume;
+	}
+
+	public void setTtsVolume(String ttsVolume) {
+		this.ttsVolume = ttsVolume;
 	}
 
 	@Override

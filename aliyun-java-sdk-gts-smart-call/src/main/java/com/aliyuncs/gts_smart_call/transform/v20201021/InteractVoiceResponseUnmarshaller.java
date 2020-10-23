@@ -40,6 +40,8 @@ public class InteractVoiceResponseUnmarshaller {
 		interactVoiceResponse.setIsMonitor(_ctx.booleanValue("InteractVoiceResponse.IsMonitor"));
 		interactVoiceResponse.setCcName(_ctx.stringValue("InteractVoiceResponse.CcName"));
 		interactVoiceResponse.setErrorMessage(_ctx.stringValue("InteractVoiceResponse.ErrorMessage"));
+		interactVoiceResponse.setSessionTimeout(_ctx.stringValue("InteractVoiceResponse.SessionTimeout"));
+		interactVoiceResponse.setTtsVolume(_ctx.stringValue("InteractVoiceResponse.TtsVolume"));
 	 
 	 	return interactVoiceResponse;
 	}
