@@ -29,14 +29,13 @@ public class ListPersonTraceDetailsResponseUnmarshaller {
 		listPersonTraceDetailsResponse.setRequestId(_ctx.stringValue("ListPersonTraceDetailsResponse.RequestId"));
 		listPersonTraceDetailsResponse.setCode(_ctx.stringValue("ListPersonTraceDetailsResponse.Code"));
 		listPersonTraceDetailsResponse.setMessage(_ctx.stringValue("ListPersonTraceDetailsResponse.Message"));
+		listPersonTraceDetailsResponse.setPageNumber(_ctx.longValue("ListPersonTraceDetailsResponse.PageNumber"));
+		listPersonTraceDetailsResponse.setPageSize(_ctx.longValue("ListPersonTraceDetailsResponse.PageSize"));
+		listPersonTraceDetailsResponse.setTotalCount(_ctx.longValue("ListPersonTraceDetailsResponse.TotalCount"));
 
 		List<Datas> data = new ArrayList<Datas>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonTraceDetailsResponse.Data.Length"); i++) {
 			Datas datas = new Datas();
-			datas.setPageNumber(_ctx.longValue("ListPersonTraceDetailsResponse.Data["+ i +"].PageNumber"));
-			datas.setPageSize(_ctx.longValue("ListPersonTraceDetailsResponse.Data["+ i +"].PageSize"));
-			datas.setTotalCount(_ctx.longValue("ListPersonTraceDetailsResponse.Data["+ i +"].TotalCount"));
-			datas.setTotalPage(_ctx.longValue("ListPersonTraceDetailsResponse.Data["+ i +"].TotalPage"));
 			datas.setTargetPicUrlPath(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].TargetPicUrlPath"));
 			datas.setDataSourceId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].DataSourceId"));
 			datas.setPersonId(_ctx.stringValue("ListPersonTraceDetailsResponse.Data["+ i +"].PersonId"));

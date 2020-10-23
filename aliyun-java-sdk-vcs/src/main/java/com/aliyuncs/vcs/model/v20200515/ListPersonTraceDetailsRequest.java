@@ -37,6 +37,8 @@ public class ListPersonTraceDetailsRequest extends RpcAcsRequest<ListPersonTrace
 
 	private Long pageSize;
 
+	private String dataSourceId;
+
 	private String personId;
 	public ListPersonTraceDetailsRequest() {
 		super("Vcs", "2020-05-15", "ListPersonTraceDetails");
@@ -110,6 +112,17 @@ public class ListPersonTraceDetailsRequest extends RpcAcsRequest<ListPersonTrace
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDataSourceId() {
+		return this.dataSourceId;
+	}
+
+	public void setDataSourceId(String dataSourceId) {
+		this.dataSourceId = dataSourceId;
+		if(dataSourceId != null){
+			putBodyParameter("DataSourceId", dataSourceId);
 		}
 	}
 

@@ -31,6 +31,12 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long pageNumber;
+
+	private Long pageSize;
+
+	private Long totalCount;
+
 	private List<Datas> data;
 
 	public String getCode() {
@@ -57,6 +63,30 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public List<Datas> getData() {
 		return this.data;
 	}
@@ -66,14 +96,6 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 	}
 
 	public static class Datas {
-
-		private Long pageNumber;
-
-		private Long pageSize;
-
-		private Long totalCount;
-
-		private Long totalPage;
 
 		private String targetPicUrlPath;
 
@@ -96,38 +118,6 @@ public class ListPersonTraceDetailsResponse extends AcsResponse {
 		private String leftTopY;
 
 		private String leftTopX;
-
-		public Long getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Long pageNumber) {
-			this.pageNumber = pageNumber;
-		}
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
-		}
-
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
-		public Long getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Long totalPage) {
-			this.totalPage = totalPage;
-		}
 
 		public String getTargetPicUrlPath() {
 			return this.targetPicUrlPath;
