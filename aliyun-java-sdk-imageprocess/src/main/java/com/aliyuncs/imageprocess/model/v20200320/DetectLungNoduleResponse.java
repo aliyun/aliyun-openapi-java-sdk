@@ -123,6 +123,8 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 				private Float imageZ;
 
+				private String sOPInstanceUID;
+
 				public String getCategory() {
 					return this.category;
 				}
@@ -209,6 +211,14 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 				public void setImageZ(Float imageZ) {
 					this.imageZ = imageZ;
+				}
+
+				public String getSOPInstanceUID() {
+					return this.sOPInstanceUID;
+				}
+
+				public void setSOPInstanceUID(String sOPInstanceUID) {
+					this.sOPInstanceUID = sOPInstanceUID;
 				}
 			}
 		}

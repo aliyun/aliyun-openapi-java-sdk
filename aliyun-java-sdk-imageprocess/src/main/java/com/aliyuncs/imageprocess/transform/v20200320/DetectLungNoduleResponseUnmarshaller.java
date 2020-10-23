@@ -63,6 +63,7 @@ public class DetectLungNoduleResponseUnmarshaller {
 				element.setImageX(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageX"));
 				element.setImageY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageY"));
 				element.setImageZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageZ"));
+				element.setSOPInstanceUID(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].SOPInstanceUID"));
 
 				elements.add(element);
 			}
