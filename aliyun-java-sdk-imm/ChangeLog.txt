@@ -1,3 +1,6 @@
+2020-10-23 Version: 1.19.1
+- Support feedback.
+
 2020-09-27 Version: 1.19.0
 - Support Open Service API.
 
