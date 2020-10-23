@@ -23,6 +23,9 @@ public class Endpoint {
             put("cn-beijing", "ahas.cn-beijing.aliyuncs.com");
             put("cn-shanghai", "ahas.cn-shanghai.aliyuncs.com");
             put("cn-hongkong", "ahas.cn-hongkong.aliyuncs.com");
+            put("ap-southeast-1", "ahas.ap-southeast-1.aliyuncs.com");
+            put("eu-central-1", "ahas.eu-central-1.aliyuncs.com");
+            put("cn-zhangjiakou", "ahas.cn-zhangjiakou.aliyuncs.com");
             put("cn-hangzhou", "ahas.cn-hangzhou.aliyuncs.com");
         }
     };

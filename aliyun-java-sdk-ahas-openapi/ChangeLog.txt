@@ -1,3 +1,6 @@
+2020-10-23 Version: 1.0.3
+- Fix cn-zhangjiakou endpoint.
+
 2020-09-16 Version: 1.0.2
 - Sync region endpoint.
 
