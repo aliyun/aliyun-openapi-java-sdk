@@ -22,7 +22,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeElasticityAssurancesResponse> {
+public class DescribeCapacityReservationsRequest extends RpcAcsRequest<DescribeCapacityReservationsResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -46,8 +46,8 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 	private Integer maxResults;
 
 	private String zoneId;
-	public DescribeElasticityAssurancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs");
+	public DescribeCapacityReservationsRequest() {
+		super("Ecs", "2014-05-26", "DescribeCapacityReservations", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -177,8 +177,8 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 	}
 
 	@Override
-	public Class<DescribeElasticityAssurancesResponse> getResponseClass() {
-		return DescribeElasticityAssurancesResponse.class;
+	public Class<DescribeCapacityReservationsResponse> getResponseClass() {
+		return DescribeCapacityReservationsResponse.class;
 	}
 
 }

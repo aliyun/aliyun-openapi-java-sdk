@@ -22,18 +22,14 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeElasticityAssurancesResponse> {
+public class DescribeCapacityReservationInstancesRequest extends RpcAcsRequest<DescribeCapacityReservationInstancesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String platform;
-
 	private String nextToken;
 
-	private String instanceType;
-
-	private String instanceChargeType;
+	private String privatePoolOptionsId;
 
 	private String resourceOwnerAccount;
 
@@ -41,13 +37,9 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 
 	private Long ownerId;
 
-	private String privatePoolOptionsIds;
-
 	private Integer maxResults;
-
-	private String zoneId;
-	public DescribeElasticityAssurancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs");
+	public DescribeCapacityReservationInstancesRequest() {
+		super("Ecs", "2014-05-26", "DescribeCapacityReservationInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -66,17 +58,6 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		}
 	}
 
-	public String getPlatform() {
-		return this.platform;
-	}
-
-	public void setPlatform(String platform) {
-		this.platform = platform;
-		if(platform != null){
-			putQueryParameter("Platform", platform);
-		}
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -88,25 +69,14 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		}
 	}
 
-	public String getInstanceType() {
-		return this.instanceType;
+	public String getPrivatePoolOptionsId() {
+		return this.privatePoolOptionsId;
 	}
 
-	public void setInstanceType(String instanceType) {
-		this.instanceType = instanceType;
-		if(instanceType != null){
-			putQueryParameter("InstanceType", instanceType);
-		}
-	}
-
-	public String getInstanceChargeType() {
-		return this.instanceChargeType;
-	}
-
-	public void setInstanceChargeType(String instanceChargeType) {
-		this.instanceChargeType = instanceChargeType;
-		if(instanceChargeType != null){
-			putQueryParameter("InstanceChargeType", instanceChargeType);
+	public void setPrivatePoolOptionsId(String privatePoolOptionsId) {
+		this.privatePoolOptionsId = privatePoolOptionsId;
+		if(privatePoolOptionsId != null){
+			putQueryParameter("PrivatePoolOptions.Id", privatePoolOptionsId);
 		}
 	}
 
@@ -143,17 +113,6 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		}
 	}
 
-	public String getPrivatePoolOptionsIds() {
-		return this.privatePoolOptionsIds;
-	}
-
-	public void setPrivatePoolOptionsIds(String privatePoolOptionsIds) {
-		this.privatePoolOptionsIds = privatePoolOptionsIds;
-		if(privatePoolOptionsIds != null){
-			putQueryParameter("PrivatePoolOptions.Ids", privatePoolOptionsIds);
-		}
-	}
-
 	public Integer getMaxResults() {
 		return this.maxResults;
 	}
@@ -165,20 +124,9 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	@Override
-	public Class<DescribeElasticityAssurancesResponse> getResponseClass() {
-		return DescribeElasticityAssurancesResponse.class;
+	public Class<DescribeCapacityReservationInstancesResponse> getResponseClass() {
+		return DescribeCapacityReservationInstancesResponse.class;
 	}
 
 }
