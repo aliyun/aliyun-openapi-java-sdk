@@ -64,6 +64,16 @@ public class InteractVoiceResponse extends AcsResponse {
 
 	private String ttsVolume;
 
+	private Boolean recordFlag;
+
+	private Integer pauseTime;
+
+	private Boolean ttsConf;
+
+	private String ttsStyle;
+
+	private String ttsSpeed;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -222,6 +232,46 @@ public class InteractVoiceResponse extends AcsResponse {
 
 	public void setTtsVolume(String ttsVolume) {
 		this.ttsVolume = ttsVolume;
+	}
+
+	public Boolean getRecordFlag() {
+		return this.recordFlag;
+	}
+
+	public void setRecordFlag(Boolean recordFlag) {
+		this.recordFlag = recordFlag;
+	}
+
+	public Integer getPauseTime() {
+		return this.pauseTime;
+	}
+
+	public void setPauseTime(Integer pauseTime) {
+		this.pauseTime = pauseTime;
+	}
+
+	public Boolean getTtsConf() {
+		return this.ttsConf;
+	}
+
+	public void setTtsConf(Boolean ttsConf) {
+		this.ttsConf = ttsConf;
+	}
+
+	public String getTtsStyle() {
+		return this.ttsStyle;
+	}
+
+	public void setTtsStyle(String ttsStyle) {
+		this.ttsStyle = ttsStyle;
+	}
+
+	public String getTtsSpeed() {
+		return this.ttsSpeed;
+	}
+
+	public void setTtsSpeed(String ttsSpeed) {
+		this.ttsSpeed = ttsSpeed;
 	}
 
 	@Override

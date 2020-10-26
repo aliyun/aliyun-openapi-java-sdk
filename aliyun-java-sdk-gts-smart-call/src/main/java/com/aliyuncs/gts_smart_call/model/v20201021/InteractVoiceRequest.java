@@ -24,29 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class InteractVoiceRequest extends RpcAcsRequest<InteractVoiceResponse> {
 	   
 
-	private String callId;
-
 	private Long currentTime;
 
-	private String secretKey;
+	private String selfServerKey;
+
+	private String callTaskId;
+
+	private String voiceType;
 
 	private String content;
-
-	private String contentType;
 	public InteractVoiceRequest() {
 		super("gts-smart-call", "2020-10-21", "InteractVoice");
 		setMethod(MethodType.POST);
-	}
-
-	public String getCallId() {
-		return this.callId;
-	}
-
-	public void setCallId(String callId) {
-		this.callId = callId;
-		if(callId != null){
-			putBodyParameter("CallId", callId);
-		}
 	}
 
 	public Long getCurrentTime() {
@@ -60,14 +49,36 @@ public class InteractVoiceRequest extends RpcAcsRequest<InteractVoiceResponse> {
 		}
 	}
 
-	public String getSecretKey() {
-		return this.secretKey;
+	public String getSelfServerKey() {
+		return this.selfServerKey;
 	}
 
-	public void setSecretKey(String secretKey) {
-		this.secretKey = secretKey;
-		if(secretKey != null){
-			putBodyParameter("SecretKey", secretKey);
+	public void setSelfServerKey(String selfServerKey) {
+		this.selfServerKey = selfServerKey;
+		if(selfServerKey != null){
+			putBodyParameter("SelfServerKey", selfServerKey);
+		}
+	}
+
+	public String getCallTaskId() {
+		return this.callTaskId;
+	}
+
+	public void setCallTaskId(String callTaskId) {
+		this.callTaskId = callTaskId;
+		if(callTaskId != null){
+			putBodyParameter("CallTaskId", callTaskId);
+		}
+	}
+
+	public String getVoiceType() {
+		return this.voiceType;
+	}
+
+	public void setVoiceType(String voiceType) {
+		this.voiceType = voiceType;
+		if(voiceType != null){
+			putBodyParameter("VoiceType", voiceType);
 		}
 	}
 
@@ -79,17 +90,6 @@ public class InteractVoiceRequest extends RpcAcsRequest<InteractVoiceResponse> {
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
-		}
-	}
-
-	public String getContentType() {
-		return this.contentType;
-	}
-
-	public void setContentType(String contentType) {
-		this.contentType = contentType;
-		if(contentType != null){
-			putBodyParameter("ContentType", contentType);
 		}
 	}
 

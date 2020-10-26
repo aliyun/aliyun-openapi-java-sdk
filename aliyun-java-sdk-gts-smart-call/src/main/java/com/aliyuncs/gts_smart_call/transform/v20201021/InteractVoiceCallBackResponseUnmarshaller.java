@@ -25,6 +25,7 @@ public class InteractVoiceCallBackResponseUnmarshaller {
 		interactVoiceCallBackResponse.setRequestId(_ctx.stringValue("InteractVoiceCallBackResponse.RequestId"));
 		interactVoiceCallBackResponse.setCallBackResult(_ctx.stringValue("InteractVoiceCallBackResponse.CallBackResult"));
 		interactVoiceCallBackResponse.setErrorMessage(_ctx.stringValue("InteractVoiceCallBackResponse.ErrorMessage"));
+		interactVoiceCallBackResponse.setResultCode(_ctx.integerValue("InteractVoiceCallBackResponse.ResultCode"));
 	 
 	 	return interactVoiceCallBackResponse;
 	}

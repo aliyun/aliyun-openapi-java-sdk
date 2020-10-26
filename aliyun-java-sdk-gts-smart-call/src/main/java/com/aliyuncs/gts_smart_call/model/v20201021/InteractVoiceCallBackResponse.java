@@ -30,6 +30,8 @@ public class InteractVoiceCallBackResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private Integer resultCode;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class InteractVoiceCallBackResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Integer getResultCode() {
+		return this.resultCode;
+	}
+
+	public void setResultCode(Integer resultCode) {
+		this.resultCode = resultCode;
 	}
 
 	@Override
