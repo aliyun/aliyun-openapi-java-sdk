@@ -1,3 +1,6 @@
+2020-10-26 Version: 7.16.0
+- Add Message API,including BatchPub.
+
 2020-10-16 Version: 7.15.0
 - Update OTA API, including ListOTAModuleByProduct, DeleteOTAModule.
 
