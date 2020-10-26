@@ -65,6 +65,7 @@ public class DescribeDnsProductInstancesResponseUnmarshaller {
 			dnsProduct.setBindDomainCount(_ctx.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].BindDomainCount"));
 			dnsProduct.setBindDomainUsedCount(_ctx.longValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].BindDomainUsedCount"));
 			dnsProduct.setDnsSecurity(_ctx.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].DnsSecurity"));
+			dnsProduct.setPaymentType(_ctx.stringValue("DescribeDnsProductInstancesResponse.DnsProducts["+ i +"].PaymentType"));
 
 			dnsProducts.add(dnsProduct);
 		}

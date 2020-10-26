@@ -139,6 +139,8 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		private String dnsSecurity;
 
+		private String paymentType;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -385,6 +387,14 @@ public class DescribeDnsProductInstancesResponse extends AcsResponse {
 
 		public void setDnsSecurity(String dnsSecurity) {
 			this.dnsSecurity = dnsSecurity;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
 		}
 	}
 

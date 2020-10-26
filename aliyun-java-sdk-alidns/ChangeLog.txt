@@ -1,3 +1,6 @@
+2020-10-26 Version: 2.6.19
+- Supported PaymentType for DescribeDnsProductInstance.
+
 2020-07-14 Version: 2.6.18
 - Fixed bug for service code.
 
