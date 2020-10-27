@@ -1,3 +1,8 @@
+2020-10-27 Version: 1.7.6
+- Support DescribePendingMaintenanceAction.
+- Support ModifyPendingMaintenanceAction.
+- Support DescribePendingMaintenanceActions.
+
 2020-09-17 Version: 1.7.5
 - Fix endpoint.
 
