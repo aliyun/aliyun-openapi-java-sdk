@@ -35,7 +35,7 @@ public class GetTagValRequest extends RpcAcsRequest<GetTagValResponse> {
 
 	private String spanName;
 	public GetTagValRequest() {
-		super("xtrace", "2019-08-08", "GetTagVal", "xtrace");
+		super("xtrace", "2019-08-08", "GetTagVal");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,16 +22,14 @@ import com.aliyuncs.xtrace.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
+public class UpdateSamplingRequest extends RpcAcsRequest<UpdateSamplingResponse> {
 	   
 
-	private Long endTime;
+	private String sampling;
 
-	private String serviceName;
-
-	private Long startTime;
-	public ListIpOrHostsRequest() {
-		super("xtrace", "2019-08-08", "ListIpOrHosts");
+	private String proxyUserId;
+	public UpdateSamplingRequest() {
+		super("xtrace", "2019-08-08", "UpdateSampling");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getSampling() {
+		return this.sampling;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setSampling(String sampling) {
+		this.sampling = sampling;
+		if(sampling != null){
+			putQueryParameter("Sampling", sampling);
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getProxyUserId() {
+		return this.proxyUserId;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
 	@Override
-	public Class<ListIpOrHostsResponse> getResponseClass() {
-		return ListIpOrHostsResponse.class;
+	public Class<UpdateSamplingResponse> getResponseClass() {
+		return UpdateSamplingResponse.class;
 	}
 
 }

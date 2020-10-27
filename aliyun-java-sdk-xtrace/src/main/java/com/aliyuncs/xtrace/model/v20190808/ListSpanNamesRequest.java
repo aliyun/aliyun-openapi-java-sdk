@@ -31,7 +31,7 @@ public class ListSpanNamesRequest extends RpcAcsRequest<ListSpanNamesResponse> {
 
 	private Long startTime;
 	public ListSpanNamesRequest() {
-		super("xtrace", "2019-08-08", "ListSpanNames", "xtrace");
+		super("xtrace", "2019-08-08", "ListSpanNames");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

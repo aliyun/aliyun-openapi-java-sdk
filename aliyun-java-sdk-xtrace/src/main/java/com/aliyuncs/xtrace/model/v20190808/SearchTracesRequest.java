@@ -48,7 +48,7 @@ public class SearchTracesRequest extends RpcAcsRequest<SearchTracesResponse> {
 
 	private List<Tag> tags;
 	public SearchTracesRequest() {
-		super("xtrace", "2019-08-08", "SearchTraces", "xtrace");
+		super("xtrace", "2019-08-08", "SearchTraces");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

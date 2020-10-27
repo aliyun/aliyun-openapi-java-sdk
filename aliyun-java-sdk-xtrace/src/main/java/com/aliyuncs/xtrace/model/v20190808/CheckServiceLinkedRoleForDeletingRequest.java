@@ -22,16 +22,18 @@ import com.aliyuncs.xtrace.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
+public class CheckServiceLinkedRoleForDeletingRequest extends RpcAcsRequest<CheckServiceLinkedRoleForDeletingResponse> {
 	   
 
-	private Long endTime;
+	private String sPIRegionId;
+
+	private String roleArn;
+
+	private String deletionTaskId;
 
 	private String serviceName;
-
-	private Long startTime;
-	public ListIpOrHostsRequest() {
-		super("xtrace", "2019-08-08", "ListIpOrHosts");
+	public CheckServiceLinkedRoleForDeletingRequest() {
+		super("xtrace", "2019-08-08", "CheckServiceLinkedRoleForDeleting");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,14 +41,36 @@ public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getSPIRegionId() {
+		return this.sPIRegionId;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setSPIRegionId(String sPIRegionId) {
+		this.sPIRegionId = sPIRegionId;
+		if(sPIRegionId != null){
+			putQueryParameter("SPIRegionId", sPIRegionId);
+		}
+	}
+
+	public String getRoleArn() {
+		return this.roleArn;
+	}
+
+	public void setRoleArn(String roleArn) {
+		this.roleArn = roleArn;
+		if(roleArn != null){
+			putQueryParameter("RoleArn", roleArn);
+		}
+	}
+
+	public String getDeletionTaskId() {
+		return this.deletionTaskId;
+	}
+
+	public void setDeletionTaskId(String deletionTaskId) {
+		this.deletionTaskId = deletionTaskId;
+		if(deletionTaskId != null){
+			putQueryParameter("DeletionTaskId", deletionTaskId);
 		}
 	}
 
@@ -61,20 +85,9 @@ public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	@Override
-	public Class<ListIpOrHostsResponse> getResponseClass() {
-		return ListIpOrHostsResponse.class;
+	public Class<CheckServiceLinkedRoleForDeletingResponse> getResponseClass() {
+		return CheckServiceLinkedRoleForDeletingResponse.class;
 	}
 
 }

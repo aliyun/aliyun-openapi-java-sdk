@@ -34,6 +34,8 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 
 	private List<Filters> filterss;
 
+	private String proxyUserId;
+
 	private List<String> measuress;
 
 	private Integer intervalInSec;
@@ -46,7 +48,7 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 
 	private String order;
 	public QueryMetricRequest() {
-		super("xtrace", "2019-08-08", "QueryMetric", "xtrace");
+		super("xtrace", "2019-08-08", "QueryMetric");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,6 +101,17 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 				putQueryParameter("Filters." + (depth1 + 1) + ".Key" , filterss.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getProxyUserId() {
+		return this.proxyUserId;
+	}
+
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
+		}
 	}
 
 	public List<String> getMeasuress() {

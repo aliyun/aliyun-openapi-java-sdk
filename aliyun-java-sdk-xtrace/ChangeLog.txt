@@ -1,3 +1,6 @@
+2020-10-27 Version: 0.2.0
+- Support Sampling for jaeger.
+
 2019-12-05 Version: 0.1.1
 - Add api QueryMetric.
 

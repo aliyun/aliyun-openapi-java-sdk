@@ -29,7 +29,7 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 
 	private String appType;
 	public GetTraceRequest() {
-		super("xtrace", "2019-08-08", "GetTrace", "xtrace");
+		super("xtrace", "2019-08-08", "GetTrace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

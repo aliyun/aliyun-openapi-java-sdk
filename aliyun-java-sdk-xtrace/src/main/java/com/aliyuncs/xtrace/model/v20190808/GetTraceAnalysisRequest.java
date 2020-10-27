@@ -22,16 +22,16 @@ import com.aliyuncs.xtrace.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
+public class GetTraceAnalysisRequest extends RpcAcsRequest<GetTraceAnalysisResponse> {
 	   
 
-	private Long endTime;
+	private String query;
 
-	private String serviceName;
+	private String api;
 
-	private Long startTime;
-	public ListIpOrHostsRequest() {
-		super("xtrace", "2019-08-08", "ListIpOrHosts");
+	private String proxyUserId;
+	public GetTraceAnalysisRequest() {
+		super("xtrace", "2019-08-08", "GetTraceAnalysis");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class ListIpOrHostsRequest extends RpcAcsRequest<ListIpOrHostsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getQuery() {
+		return this.query;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setQuery(String query) {
+		this.query = query;
+		if(query != null){
+			putQueryParameter("Query", query);
 		}
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public String getApi() {
+		return this.api;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-		if(serviceName != null){
-			putQueryParameter("ServiceName", serviceName);
+	public void setApi(String api) {
+		this.api = api;
+		if(api != null){
+			putQueryParameter("Api", api);
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public String getProxyUserId() {
+		return this.proxyUserId;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setProxyUserId(String proxyUserId) {
+		this.proxyUserId = proxyUserId;
+		if(proxyUserId != null){
+			putQueryParameter("ProxyUserId", proxyUserId);
 		}
 	}
 
 	@Override
-	public Class<ListIpOrHostsResponse> getResponseClass() {
-		return ListIpOrHostsResponse.class;
+	public Class<GetTraceAnalysisResponse> getResponseClass() {
+		return GetTraceAnalysisResponse.class;
 	}
 
 }
