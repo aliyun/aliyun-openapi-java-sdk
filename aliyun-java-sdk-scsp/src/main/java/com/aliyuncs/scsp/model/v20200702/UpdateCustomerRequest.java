@@ -39,7 +39,7 @@ public class UpdateCustomerRequest extends RpcAcsRequest<UpdateCustomerResponse>
 
 	private String enterpriseName;
 	public UpdateCustomerRequest() {
-		super("scsp", "2020-07-02", "UpdateCustomer", "scsp-service");
+		super("scsp", "2020-07-02", "UpdateCustomer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

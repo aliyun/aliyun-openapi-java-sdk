@@ -1,4 +1,7 @@
 2020-10-27 Version: 1.1.6
+- Generated 2020-07-02 for `scsp`.
+
+2020-10-27 Version: 1.1.6
 - Get hotline number list new.
 
 2020-10-15 Version: 1.1.5

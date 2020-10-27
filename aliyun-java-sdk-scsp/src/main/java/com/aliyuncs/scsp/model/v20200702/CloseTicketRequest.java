@@ -35,7 +35,7 @@ public class CloseTicketRequest extends RpcAcsRequest<CloseTicketResponse> {
 
 	private Long operatorId;
 	public CloseTicketRequest() {
-		super("scsp", "2020-07-02", "CloseTicket", "scsp-service");
+		super("scsp", "2020-07-02", "CloseTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

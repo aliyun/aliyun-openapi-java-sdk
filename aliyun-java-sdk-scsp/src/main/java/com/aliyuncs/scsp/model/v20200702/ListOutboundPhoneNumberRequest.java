@@ -31,7 +31,7 @@ public class ListOutboundPhoneNumberRequest extends RpcAcsRequest<ListOutboundPh
 
 	private String accountName;
 	public ListOutboundPhoneNumberRequest() {
-		super("scsp", "2020-07-02", "ListOutboundPhoneNumber", "scsp-service");
+		super("scsp", "2020-07-02", "ListOutboundPhoneNumber");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class GetUserTokenRequest extends RpcAcsRequest<GetUserTokenResponse> {
 
 	private String userId;
 	public GetUserTokenRequest() {
-		super("scsp", "2020-07-02", "GetUserToken", "scsp-service");
+		super("scsp", "2020-07-02", "GetUserToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

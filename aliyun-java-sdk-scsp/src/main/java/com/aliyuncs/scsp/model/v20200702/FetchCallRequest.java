@@ -39,7 +39,7 @@ public class FetchCallRequest extends RpcAcsRequest<FetchCallResponse> {
 
 	private String holdConnectionId;
 	public FetchCallRequest() {
-		super("scsp", "2020-07-02", "FetchCall", "scsp-service");
+		super("scsp", "2020-07-02", "FetchCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

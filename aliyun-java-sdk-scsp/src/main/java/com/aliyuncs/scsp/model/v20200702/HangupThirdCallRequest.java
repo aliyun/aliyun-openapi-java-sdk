@@ -37,7 +37,7 @@ public class HangupThirdCallRequest extends RpcAcsRequest<HangupThirdCallRespons
 
 	private String connectionId;
 	public HangupThirdCallRequest() {
-		super("scsp", "2020-07-02", "HangupThirdCall", "scsp-service");
+		super("scsp", "2020-07-02", "HangupThirdCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class FinishHotlineServiceRequest extends RpcAcsRequest<FinishHotlineServ
 
 	private String accountName;
 	public FinishHotlineServiceRequest() {
-		super("scsp", "2020-07-02", "FinishHotlineService", "scsp-service");
+		super("scsp", "2020-07-02", "FinishHotlineService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

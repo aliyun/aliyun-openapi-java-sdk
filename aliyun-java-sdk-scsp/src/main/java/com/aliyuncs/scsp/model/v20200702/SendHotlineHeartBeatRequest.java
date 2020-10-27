@@ -33,7 +33,7 @@ public class SendHotlineHeartBeatRequest extends RpcAcsRequest<SendHotlineHeartB
 
 	private String token;
 	public SendHotlineHeartBeatRequest() {
-		super("scsp", "2020-07-02", "SendHotlineHeartBeat", "scsp-service");
+		super("scsp", "2020-07-02", "SendHotlineHeartBeat");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

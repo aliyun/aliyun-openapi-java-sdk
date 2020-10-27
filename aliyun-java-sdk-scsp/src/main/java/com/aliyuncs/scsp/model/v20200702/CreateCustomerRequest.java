@@ -37,7 +37,7 @@ public class CreateCustomerRequest extends RpcAcsRequest<CreateCustomerResponse>
 
 	private String name;
 	public CreateCustomerRequest() {
-		super("scsp", "2020-07-02", "CreateCustomer", "scsp-service");
+		super("scsp", "2020-07-02", "CreateCustomer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

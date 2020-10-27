@@ -38,7 +38,7 @@ public class UpdateRoleRequest extends RpcAcsRequest<UpdateRoleResponse> {
 
 	private String operator;
 	public UpdateRoleRequest() {
-		super("scsp", "2020-07-02", "UpdateRole", "scsp-service");
+		super("scsp", "2020-07-02", "UpdateRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
