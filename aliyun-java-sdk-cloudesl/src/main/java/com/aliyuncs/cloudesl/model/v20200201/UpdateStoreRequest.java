@@ -31,9 +31,9 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 
 	private String storeId;
 
-	private String phone;
-
 	private String userStoreCode;
+
+	private String phone;
 	public UpdateStoreRequest() {
 		super("cloudesl", "2020-02-01", "UpdateStore", "cloudesl");
 		setMethod(MethodType.POST);
@@ -76,17 +76,6 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 		}
 	}
 
-	public String getPhone() {
-		return this.phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-		if(phone != null){
-			putBodyParameter("Phone", phone);
-		}
-	}
-
 	public String getUserStoreCode() {
 		return this.userStoreCode;
 	}
@@ -95,6 +84,17 @@ public class UpdateStoreRequest extends RpcAcsRequest<UpdateStoreResponse> {
 		this.userStoreCode = userStoreCode;
 		if(userStoreCode != null){
 			putBodyParameter("UserStoreCode", userStoreCode);
+		}
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+		if(phone != null){
+			putBodyParameter("Phone", phone);
 		}
 	}
 

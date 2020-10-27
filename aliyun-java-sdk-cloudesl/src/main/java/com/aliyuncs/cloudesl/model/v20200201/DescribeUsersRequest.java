@@ -27,13 +27,13 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 
 	private String extraParams;
 
-	private String userType;
-
 	private String userId;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String userType;
 
 	private String userName;
 	public DescribeUsersRequest() {
@@ -53,17 +53,6 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 		this.extraParams = extraParams;
 		if(extraParams != null){
 			putBodyParameter("ExtraParams", extraParams);
-		}
-	}
-
-	public String getUserType() {
-		return this.userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-		if(userType != null){
-			putBodyParameter("UserType", userType);
 		}
 	}
 
@@ -97,6 +86,17 @@ public class DescribeUsersRequest extends RpcAcsRequest<DescribeUsersResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getUserType() {
+		return this.userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+		if(userType != null){
+			putBodyParameter("UserType", userType);
 		}
 	}
 

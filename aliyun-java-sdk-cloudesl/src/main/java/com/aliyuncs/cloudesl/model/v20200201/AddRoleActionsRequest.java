@@ -22,25 +22,34 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePlanogramEslDevicesResponse> {
+public class AddRoleActionsRequest extends RpcAcsRequest<AddRoleActionsResponse> {
 	   
+
+	private String roleCode;
 
 	private String extraParams;
 
-	private String storeId;
+	private String clientToken;
 
-	private Integer layer;
-
-	private String eslBarCode;
-
-	private String shelf;
-	public DescribePlanogramEslDevicesRequest() {
-		super("cloudesl", "2020-02-01", "DescribePlanogramEslDevices", "cloudesl");
+	private String accessControlLists;
+	public AddRoleActionsRequest() {
+		super("cloudesl", "2020-02-01", "AddRoleActions", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRoleCode() {
+		return this.roleCode;
+	}
+
+	public void setRoleCode(String roleCode) {
+		this.roleCode = roleCode;
+		if(roleCode != null){
+			putBodyParameter("RoleCode", roleCode);
+		}
 	}
 
 	public String getExtraParams() {
@@ -54,53 +63,31 @@ public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePl
 		}
 	}
 
-	public String getStoreId() {
-		return this.storeId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setStoreId(String storeId) {
-		this.storeId = storeId;
-		if(storeId != null){
-			putBodyParameter("StoreId", storeId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
 		}
 	}
 
-	public Integer getLayer() {
-		return this.layer;
+	public String getAccessControlLists() {
+		return this.accessControlLists;
 	}
 
-	public void setLayer(Integer layer) {
-		this.layer = layer;
-		if(layer != null){
-			putBodyParameter("Layer", layer.toString());
-		}
-	}
-
-	public String getEslBarCode() {
-		return this.eslBarCode;
-	}
-
-	public void setEslBarCode(String eslBarCode) {
-		this.eslBarCode = eslBarCode;
-		if(eslBarCode != null){
-			putBodyParameter("EslBarCode", eslBarCode);
-		}
-	}
-
-	public String getShelf() {
-		return this.shelf;
-	}
-
-	public void setShelf(String shelf) {
-		this.shelf = shelf;
-		if(shelf != null){
-			putBodyParameter("Shelf", shelf);
+	public void setAccessControlLists(String accessControlLists) {
+		this.accessControlLists = accessControlLists;
+		if(accessControlLists != null){
+			putBodyParameter("AccessControlLists", accessControlLists);
 		}
 	}
 
 	@Override
-	public Class<DescribePlanogramEslDevicesResponse> getResponseClass() {
-		return DescribePlanogramEslDevicesResponse.class;
+	public Class<AddRoleActionsResponse> getResponseClass() {
+		return AddRoleActionsResponse.class;
 	}
 
 }

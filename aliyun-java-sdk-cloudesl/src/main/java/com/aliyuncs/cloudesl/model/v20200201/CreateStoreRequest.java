@@ -33,9 +33,9 @@ public class CreateStoreRequest extends RpcAcsRequest<CreateStoreResponse> {
 
 	private String parentId;
 
-	private String phone;
-
 	private String userStoreCode;
+
+	private String phone;
 	public CreateStoreRequest() {
 		super("cloudesl", "2020-02-01", "CreateStore", "cloudesl");
 		setMethod(MethodType.POST);
@@ -89,17 +89,6 @@ public class CreateStoreRequest extends RpcAcsRequest<CreateStoreResponse> {
 		}
 	}
 
-	public String getPhone() {
-		return this.phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-		if(phone != null){
-			putBodyParameter("Phone", phone);
-		}
-	}
-
 	public String getUserStoreCode() {
 		return this.userStoreCode;
 	}
@@ -108,6 +97,17 @@ public class CreateStoreRequest extends RpcAcsRequest<CreateStoreResponse> {
 		this.userStoreCode = userStoreCode;
 		if(userStoreCode != null){
 			putBodyParameter("UserStoreCode", userStoreCode);
+		}
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+		if(phone != null){
+			putBodyParameter("Phone", phone);
 		}
 	}
 

@@ -22,25 +22,30 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePlanogramEslDevicesResponse> {
+public class DescribeRoleActionsRequest extends RpcAcsRequest<DescribeRoleActionsResponse> {
 	   
 
+	private String roleCode;
+
 	private String extraParams;
-
-	private String storeId;
-
-	private Integer layer;
-
-	private String eslBarCode;
-
-	private String shelf;
-	public DescribePlanogramEslDevicesRequest() {
-		super("cloudesl", "2020-02-01", "DescribePlanogramEslDevices", "cloudesl");
+	public DescribeRoleActionsRequest() {
+		super("cloudesl", "2020-02-01", "DescribeRoleActions", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRoleCode() {
+		return this.roleCode;
+	}
+
+	public void setRoleCode(String roleCode) {
+		this.roleCode = roleCode;
+		if(roleCode != null){
+			putBodyParameter("RoleCode", roleCode);
+		}
 	}
 
 	public String getExtraParams() {
@@ -54,53 +59,9 @@ public class DescribePlanogramEslDevicesRequest extends RpcAcsRequest<DescribePl
 		}
 	}
 
-	public String getStoreId() {
-		return this.storeId;
-	}
-
-	public void setStoreId(String storeId) {
-		this.storeId = storeId;
-		if(storeId != null){
-			putBodyParameter("StoreId", storeId);
-		}
-	}
-
-	public Integer getLayer() {
-		return this.layer;
-	}
-
-	public void setLayer(Integer layer) {
-		this.layer = layer;
-		if(layer != null){
-			putBodyParameter("Layer", layer.toString());
-		}
-	}
-
-	public String getEslBarCode() {
-		return this.eslBarCode;
-	}
-
-	public void setEslBarCode(String eslBarCode) {
-		this.eslBarCode = eslBarCode;
-		if(eslBarCode != null){
-			putBodyParameter("EslBarCode", eslBarCode);
-		}
-	}
-
-	public String getShelf() {
-		return this.shelf;
-	}
-
-	public void setShelf(String shelf) {
-		this.shelf = shelf;
-		if(shelf != null){
-			putBodyParameter("Shelf", shelf);
-		}
-	}
-
 	@Override
-	public Class<DescribePlanogramEslDevicesResponse> getResponseClass() {
-		return DescribePlanogramEslDevicesResponse.class;
+	public Class<DescribeRoleActionsResponse> getResponseClass() {
+		return DescribeRoleActionsResponse.class;
 	}
 
 }

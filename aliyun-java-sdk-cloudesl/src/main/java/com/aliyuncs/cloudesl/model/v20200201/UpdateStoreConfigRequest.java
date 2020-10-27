@@ -27,11 +27,11 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 
 	private String extraParams;
 
+	private String storeId;
+
 	private Boolean enableNotification;
 
 	private String notificationWebHook;
-
-	private String storeId;
 
 	private String notificationSilentTimes;
 	public UpdateStoreConfigRequest() {
@@ -54,6 +54,17 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 		}
 	}
 
+	public String getStoreId() {
+		return this.storeId;
+	}
+
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+		if(storeId != null){
+			putBodyParameter("StoreId", storeId);
+		}
+	}
+
 	public Boolean getEnableNotification() {
 		return this.enableNotification;
 	}
@@ -73,17 +84,6 @@ public class UpdateStoreConfigRequest extends RpcAcsRequest<UpdateStoreConfigRes
 		this.notificationWebHook = notificationWebHook;
 		if(notificationWebHook != null){
 			putBodyParameter("NotificationWebHook", notificationWebHook);
-		}
-	}
-
-	public String getStoreId() {
-		return this.storeId;
-	}
-
-	public void setStoreId(String storeId) {
-		this.storeId = storeId;
-		if(storeId != null){
-			putBodyParameter("StoreId", storeId);
 		}
 	}
 
