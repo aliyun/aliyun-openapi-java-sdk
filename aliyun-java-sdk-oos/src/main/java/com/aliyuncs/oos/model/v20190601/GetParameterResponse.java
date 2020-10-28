@@ -68,6 +68,8 @@ public class GetParameterResponse extends AcsResponse {
 
 		private String value;
 
+		private String constraints;
+
 		public String getId() {
 			return this.id;
 		}
@@ -154,6 +156,14 @@ public class GetParameterResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getConstraints() {
+			return this.constraints;
+		}
+
+		public void setConstraints(String constraints) {
+			this.constraints = constraints;
 		}
 	}
 

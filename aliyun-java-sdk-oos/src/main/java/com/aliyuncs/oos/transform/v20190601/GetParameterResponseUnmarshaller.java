@@ -37,6 +37,7 @@ public class GetParameterResponseUnmarshaller {
 		parameter.setParameterVersion(_ctx.integerValue("GetParameterResponse.Parameter.ParameterVersion"));
 		parameter.setType(_ctx.stringValue("GetParameterResponse.Parameter.Type"));
 		parameter.setValue(_ctx.stringValue("GetParameterResponse.Parameter.Value"));
+		parameter.setConstraints(_ctx.stringValue("GetParameterResponse.Parameter.Constraints"));
 		getParameterResponse.setParameter(parameter);
 	 
 	 	return getParameterResponse;

@@ -87,6 +87,8 @@ public class ListSecretParametersResponse extends AcsResponse {
 
 		private String type;
 
+		private String keyId;
+
 		public String getName() {
 			return this.name;
 		}
@@ -165,6 +167,14 @@ public class ListSecretParametersResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getKeyId() {
+			return this.keyId;
+		}
+
+		public void setKeyId(String keyId) {
+			this.keyId = keyId;
 		}
 	}
 

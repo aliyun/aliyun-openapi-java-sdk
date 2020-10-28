@@ -37,6 +37,8 @@ public class GetSecretParameterResponseUnmarshaller {
 		parameter.setParameterVersion(_ctx.integerValue("GetSecretParameterResponse.Parameter.ParameterVersion"));
 		parameter.setType(_ctx.stringValue("GetSecretParameterResponse.Parameter.Type"));
 		parameter.setValue(_ctx.stringValue("GetSecretParameterResponse.Parameter.Value"));
+		parameter.setConstraints(_ctx.stringValue("GetSecretParameterResponse.Parameter.Constraints"));
+		parameter.setKeyId(_ctx.stringValue("GetSecretParameterResponse.Parameter.KeyId"));
 		getSecretParameterResponse.setParameter(parameter);
 	 
 	 	return getSecretParameterResponse;

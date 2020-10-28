@@ -1,3 +1,6 @@
+2020-10-28 Version: 1.3.1
+- Support GetParameters, GetParametersByPath, GetSecretParameters, GetSecretParametersByPath.
+
 2020-09-07 Version: 1.3.0
 - Support parameter APIs.
 

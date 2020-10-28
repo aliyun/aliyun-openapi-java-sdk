@@ -31,6 +31,8 @@ public class CreateParameterRequest extends RpcAcsRequest<CreateParameterRespons
 
 	private String type;
 
+	private String constraints;
+
 	private String name;
 
 	private String value;
@@ -73,6 +75,17 @@ public class CreateParameterRequest extends RpcAcsRequest<CreateParameterRespons
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getConstraints() {
+		return this.constraints;
+	}
+
+	public void setConstraints(String constraints) {
+		this.constraints = constraints;
+		if(constraints != null){
+			putQueryParameter("Constraints", constraints);
 		}
 	}
 

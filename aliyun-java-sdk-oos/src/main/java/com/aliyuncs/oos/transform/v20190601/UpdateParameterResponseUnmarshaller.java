@@ -36,6 +36,7 @@ public class UpdateParameterResponseUnmarshaller {
 		parameter.setShareType(_ctx.stringValue("UpdateParameterResponse.Parameter.ShareType"));
 		parameter.setParameterVersion(_ctx.integerValue("UpdateParameterResponse.Parameter.ParameterVersion"));
 		parameter.setType(_ctx.stringValue("UpdateParameterResponse.Parameter.Type"));
+		parameter.setConstraints(_ctx.stringValue("UpdateParameterResponse.Parameter.Constraints"));
 		updateParameterResponse.setParameter(parameter);
 	 
 	 	return updateParameterResponse;

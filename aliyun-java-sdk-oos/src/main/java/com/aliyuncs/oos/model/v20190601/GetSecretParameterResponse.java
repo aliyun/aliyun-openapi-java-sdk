@@ -68,6 +68,10 @@ public class GetSecretParameterResponse extends AcsResponse {
 
 		private String value;
 
+		private String constraints;
+
+		private String keyId;
+
 		public String getId() {
 			return this.id;
 		}
@@ -154,6 +158,22 @@ public class GetSecretParameterResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getConstraints() {
+			return this.constraints;
+		}
+
+		public void setConstraints(String constraints) {
+			this.constraints = constraints;
+		}
+
+		public String getKeyId() {
+			return this.keyId;
+		}
+
+		public void setKeyId(String keyId) {
+			this.keyId = keyId;
 		}
 	}
 

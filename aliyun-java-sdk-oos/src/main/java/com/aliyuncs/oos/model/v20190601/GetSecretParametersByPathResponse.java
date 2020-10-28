@@ -14,19 +14,26 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oos.transform.v20190601.CreateParameterResponseUnmarshaller;
+import com.aliyuncs.oos.transform.v20190601.GetSecretParametersByPathResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateParameterResponse extends AcsResponse {
+public class GetSecretParametersByPathResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Parameter parameter;
+	private String nextToken;
+
+	private Integer maxResults;
+
+	private Integer totalCount;
+
+	private List<Parameter> parameters;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +43,36 @@ public class CreateParameterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Parameter getParameter() {
-		return this.parameter;
+	public String getNextToken() {
+		return this.nextToken;
 	}
 
-	public void setParameter(Parameter parameter) {
-		this.parameter = parameter;
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+	}
+
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
+
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public List<Parameter> getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(List<Parameter> parameters) {
+		this.parameters = parameters;
 	}
 
 	public static class Parameter {
@@ -66,7 +97,11 @@ public class CreateParameterResponse extends AcsResponse {
 
 		private String type;
 
+		private String value;
+
 		private String constraints;
+
+		private String keyId;
 
 		public String getId() {
 			return this.id;
@@ -148,6 +183,14 @@ public class CreateParameterResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
 		public String getConstraints() {
 			return this.constraints;
 		}
@@ -155,11 +198,19 @@ public class CreateParameterResponse extends AcsResponse {
 		public void setConstraints(String constraints) {
 			this.constraints = constraints;
 		}
+
+		public String getKeyId() {
+			return this.keyId;
+		}
+
+		public void setKeyId(String keyId) {
+			this.keyId = keyId;
+		}
 	}
 
 	@Override
-	public CreateParameterResponse getInstance(UnmarshallerContext context) {
-		return	CreateParameterResponseUnmarshaller.unmarshall(this, context);
+	public GetSecretParametersByPathResponse getInstance(UnmarshallerContext context) {
+		return	GetSecretParametersByPathResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

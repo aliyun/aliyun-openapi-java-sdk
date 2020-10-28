@@ -33,6 +33,8 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 
 	private String type;
 
+	private String constraints;
+
 	private String name;
 
 	private String value;
@@ -86,6 +88,17 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getConstraints() {
+		return this.constraints;
+	}
+
+	public void setConstraints(String constraints) {
+		this.constraints = constraints;
+		if(constraints != null){
+			putQueryParameter("Constraints", constraints);
 		}
 	}
 

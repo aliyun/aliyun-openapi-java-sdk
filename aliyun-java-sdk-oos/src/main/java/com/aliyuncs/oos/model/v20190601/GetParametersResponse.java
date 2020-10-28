@@ -14,19 +14,22 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.oos.transform.v20190601.CreateParameterResponseUnmarshaller;
+import com.aliyuncs.oos.transform.v20190601.GetParametersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateParameterResponse extends AcsResponse {
+public class GetParametersResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Parameter parameter;
+	private List<Parameter> parameters;
+
+	private List<String> invalidParameters;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,12 +39,20 @@ public class CreateParameterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Parameter getParameter() {
-		return this.parameter;
+	public List<Parameter> getParameters() {
+		return this.parameters;
 	}
 
-	public void setParameter(Parameter parameter) {
-		this.parameter = parameter;
+	public void setParameters(List<Parameter> parameters) {
+		this.parameters = parameters;
+	}
+
+	public List<String> getInvalidParameters() {
+		return this.invalidParameters;
+	}
+
+	public void setInvalidParameters(List<String> invalidParameters) {
+		this.invalidParameters = invalidParameters;
 	}
 
 	public static class Parameter {
@@ -65,6 +76,8 @@ public class CreateParameterResponse extends AcsResponse {
 		private Integer parameterVersion;
 
 		private String type;
+
+		private String value;
 
 		private String constraints;
 
@@ -148,6 +161,14 @@ public class CreateParameterResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
 		public String getConstraints() {
 			return this.constraints;
 		}
@@ -158,8 +179,8 @@ public class CreateParameterResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateParameterResponse getInstance(UnmarshallerContext context) {
-		return	CreateParameterResponseUnmarshaller.unmarshall(this, context);
+	public GetParametersResponse getInstance(UnmarshallerContext context) {
+		return	GetParametersResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

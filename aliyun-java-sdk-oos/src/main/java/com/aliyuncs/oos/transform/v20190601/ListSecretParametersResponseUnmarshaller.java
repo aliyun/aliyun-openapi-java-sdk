@@ -43,6 +43,7 @@ public class ListSecretParametersResponseUnmarshaller {
 			parameter.setShareType(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].ShareType"));
 			parameter.setParameterVersion(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].ParameterVersion"));
 			parameter.setType(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].Type"));
+			parameter.setKeyId(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].KeyId"));
 
 			parameters.add(parameter);
 		}
