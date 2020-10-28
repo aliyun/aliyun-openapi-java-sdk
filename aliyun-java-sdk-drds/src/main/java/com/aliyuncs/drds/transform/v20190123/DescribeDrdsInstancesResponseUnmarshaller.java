@@ -56,6 +56,7 @@ public class DescribeDrdsInstancesResponseUnmarshaller {
 			instance.setLabel(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].Label"));
 			instance.setMachineType(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].MachineType"));
 			instance.setOrderInstanceId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].OrderInstanceId"));
+			instance.setResourceGroupId(_ctx.stringValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 
 			List<String> readOnlyDBInstanceIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDrdsInstancesResponse.Instances["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

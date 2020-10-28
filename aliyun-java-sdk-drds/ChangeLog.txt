@@ -1,3 +1,7 @@
+2020-10-28 Version: 20201028
+- Supported golang sdk.
+- Fixed some bugs for drds.
+
 2020-09-01 Version: 202009031
 - Generated 2019-01-23 for `Drds`.
 

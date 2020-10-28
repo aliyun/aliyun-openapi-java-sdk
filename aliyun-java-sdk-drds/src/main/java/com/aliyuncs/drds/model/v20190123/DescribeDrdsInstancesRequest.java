@@ -32,11 +32,15 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 
 	private Integer pageNumber;
 
+	private String resourceGroupId;
+
 	private Boolean expired;
 
 	private Integer pageSize;
 
 	private List<Tag> tags;
+
+	private Boolean mix;
 	public DescribeDrdsInstancesRequest() {
 		super("Drds", "2019-01-23", "DescribeDrdsInstances", "Drds");
 		setMethod(MethodType.POST);
@@ -79,6 +83,17 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Boolean getExpired() {
 		return this.expired;
 	}
@@ -113,6 +128,17 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public Boolean getMix() {
+		return this.mix;
+	}
+
+	public void setMix(Boolean mix) {
+		this.mix = mix;
+		if(mix != null){
+			putQueryParameter("Mix", mix.toString());
+		}
 	}
 
 	public static class Tag {
