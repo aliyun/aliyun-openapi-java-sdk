@@ -27,7 +27,7 @@ public class UnsubscribeSpaceEventRequest extends RpcAcsRequest<UnsubscribeSpace
 
 	private String spaceId;
 	public UnsubscribeSpaceEventRequest() {
-		super("Vcs", "2020-05-15", "UnsubscribeSpaceEvent");
+		super("Vcs", "2020-05-15", "UnsubscribeSpaceEvent", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class UnsubscribeDeviceEventRequest extends RpcAcsRequest<UnsubscribeDevi
 
 	private String deviceId;
 	public UnsubscribeDeviceEventRequest() {
-		super("Vcs", "2020-05-15", "UnsubscribeDeviceEvent");
+		super("Vcs", "2020-05-15", "UnsubscribeDeviceEvent", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

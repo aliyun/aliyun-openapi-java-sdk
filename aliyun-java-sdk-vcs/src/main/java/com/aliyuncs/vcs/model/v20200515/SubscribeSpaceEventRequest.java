@@ -25,27 +25,16 @@ import com.aliyuncs.vcs.Endpoint;
 public class SubscribeSpaceEventRequest extends RpcAcsRequest<SubscribeSpaceEventResponse> {
 	   
 
-	private String spaceId;
-
 	private String pushConfig;
+
+	private String spaceId;
 	public SubscribeSpaceEventRequest() {
-		super("Vcs", "2020-05-15", "SubscribeSpaceEvent");
+		super("Vcs", "2020-05-15", "SubscribeSpaceEvent", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSpaceId() {
-		return this.spaceId;
-	}
-
-	public void setSpaceId(String spaceId) {
-		this.spaceId = spaceId;
-		if(spaceId != null){
-			putQueryParameter("SpaceId", spaceId);
-		}
 	}
 
 	public String getPushConfig() {
@@ -56,6 +45,17 @@ public class SubscribeSpaceEventRequest extends RpcAcsRequest<SubscribeSpaceEven
 		this.pushConfig = pushConfig;
 		if(pushConfig != null){
 			putQueryParameter("PushConfig", pushConfig);
+		}
+	}
+
+	public String getSpaceId() {
+		return this.spaceId;
+	}
+
+	public void setSpaceId(String spaceId) {
+		this.spaceId = spaceId;
+		if(spaceId != null){
+			putQueryParameter("SpaceId", spaceId);
 		}
 	}
 

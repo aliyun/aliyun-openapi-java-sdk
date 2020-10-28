@@ -43,7 +43,7 @@ public class ListCorpMetricsRequest extends RpcAcsRequest<ListCorpMetricsRespons
 
 	private String deviceIdList;
 	public ListCorpMetricsRequest() {
-		super("Vcs", "2020-05-15", "ListCorpMetrics");
+		super("Vcs", "2020-05-15", "ListCorpMetrics", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

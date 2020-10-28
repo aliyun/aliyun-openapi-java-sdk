@@ -25,27 +25,16 @@ import com.aliyuncs.vcs.Endpoint;
 public class ListSubscribeDeviceRequest extends RpcAcsRequest<ListSubscribeDeviceResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Integer pageNum;
+
+	private Integer pageSize;
 	public ListSubscribeDeviceRequest() {
-		super("Vcs", "2020-05-15", "ListSubscribeDevice");
+		super("Vcs", "2020-05-15", "ListSubscribeDevice", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Integer getPageNum() {
@@ -56,6 +45,17 @@ public class ListSubscribeDeviceRequest extends RpcAcsRequest<ListSubscribeDevic
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -200,6 +200,10 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			private String rightBottomY;
 
+			private Float quality;
+
+			private Float keyPointQuality;
+
 			public String getFeature() {
 				return this.feature;
 			}
@@ -270,6 +274,22 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			public void setRightBottomY(String rightBottomY) {
 				this.rightBottomY = rightBottomY;
+			}
+
+			public Float getQuality() {
+				return this.quality;
+			}
+
+			public void setQuality(Float quality) {
+				this.quality = quality;
+			}
+
+			public Float getKeyPointQuality() {
+				return this.keyPointQuality;
+			}
+
+			public void setKeyPointQuality(Float keyPointQuality) {
+				this.keyPointQuality = keyPointQuality;
 			}
 		}
 	}

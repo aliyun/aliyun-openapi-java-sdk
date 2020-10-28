@@ -31,7 +31,7 @@ public class GetProfileDetailRequest extends RpcAcsRequest<GetProfileDetailRespo
 
 	private Long profileId;
 	public GetProfileDetailRequest() {
-		super("Vcs", "2020-05-15", "GetProfileDetail");
+		super("Vcs", "2020-05-15", "GetProfileDetail", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class GetMonitorListRequest extends RpcAcsRequest<GetMonitorListResponse>
 
 	private Integer pageSize;
 	public GetMonitorListRequest() {
-		super("Vcs", "2020-05-15", "GetMonitorList");
+		super("Vcs", "2020-05-15", "GetMonitorList", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

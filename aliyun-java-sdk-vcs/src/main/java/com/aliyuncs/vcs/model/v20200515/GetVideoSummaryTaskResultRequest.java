@@ -29,7 +29,7 @@ public class GetVideoSummaryTaskResultRequest extends RpcAcsRequest<GetVideoSumm
 
 	private String taskId;
 	public GetVideoSummaryTaskResultRequest() {
-		super("Vcs", "2020-05-15", "GetVideoSummaryTaskResult");
+		super("Vcs", "2020-05-15", "GetVideoSummaryTaskResult", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

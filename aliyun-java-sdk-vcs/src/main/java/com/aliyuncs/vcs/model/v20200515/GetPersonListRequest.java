@@ -41,7 +41,7 @@ public class GetPersonListRequest extends RpcAcsRequest<GetPersonListResponse> {
 
 	private List<Object> personIdList;
 	public GetPersonListRequest() {
-		super("Vcs", "2020-05-15", "GetPersonList");
+		super("Vcs", "2020-05-15", "GetPersonList", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class UnbindCorpGroupRequest extends RpcAcsRequest<UnbindCorpGroupRespons
 
 	private String corpGroupId;
 	public UnbindCorpGroupRequest() {
-		super("Vcs", "2020-05-15", "UnbindCorpGroup");
+		super("Vcs", "2020-05-15", "UnbindCorpGroup", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

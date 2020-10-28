@@ -29,7 +29,7 @@ public class SubscribeDeviceEventRequest extends RpcAcsRequest<SubscribeDeviceEv
 
 	private String deviceId;
 	public SubscribeDeviceEventRequest() {
-		super("Vcs", "2020-05-15", "SubscribeDeviceEvent");
+		super("Vcs", "2020-05-15", "SubscribeDeviceEvent", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

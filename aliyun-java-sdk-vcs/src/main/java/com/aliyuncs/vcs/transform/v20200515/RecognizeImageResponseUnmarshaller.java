@@ -63,6 +63,8 @@ public class RecognizeImageResponseUnmarshaller {
 			face.setRespiratorColor(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].RespiratorColor"));
 			face.setRightBottomX(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].RightBottomX"));
 			face.setRightBottomY(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].RightBottomY"));
+			face.setQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].Quality"));
+			face.setKeyPointQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].KeyPointQuality"));
 
 			faceList.add(face);
 		}

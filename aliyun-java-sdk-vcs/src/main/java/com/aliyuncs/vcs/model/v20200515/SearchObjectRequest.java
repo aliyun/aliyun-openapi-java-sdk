@@ -49,7 +49,7 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 
 	private String conditions;
 	public SearchObjectRequest() {
-		super("Vcs", "2020-05-15", "SearchObject");
+		super("Vcs", "2020-05-15", "SearchObject", "vcs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
