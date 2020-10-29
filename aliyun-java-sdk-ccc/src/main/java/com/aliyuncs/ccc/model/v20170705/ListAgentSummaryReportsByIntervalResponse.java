@@ -287,6 +287,10 @@ public class ListAgentSummaryReportsByIntervalResponse extends AcsResponse {
 
 					private Long oneTransferCalls;
 
+					private String firstLogInTime;
+
+					private String lastLogOutTime;
+
 					public Long getTotalCalls() {
 						return this.totalCalls;
 					}
@@ -421,6 +425,22 @@ public class ListAgentSummaryReportsByIntervalResponse extends AcsResponse {
 
 					public void setOneTransferCalls(Long oneTransferCalls) {
 						this.oneTransferCalls = oneTransferCalls;
+					}
+
+					public String getFirstLogInTime() {
+						return this.firstLogInTime;
+					}
+
+					public void setFirstLogInTime(String firstLogInTime) {
+						this.firstLogInTime = firstLogInTime;
+					}
+
+					public String getLastLogOutTime() {
+						return this.lastLogOutTime;
+					}
+
+					public void setLastLogOutTime(String lastLogOutTime) {
+						this.lastLogOutTime = lastLogOutTime;
 					}
 				}
 

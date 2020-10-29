@@ -69,6 +69,8 @@ public class ListAgentSummaryReportsResponseUnmarshaller {
 			overall.setSatisfactionSurveysOffered(_ctx.longValue("ListAgentSummaryReportsResponse.PagedAgentSummaryReport.List["+ i +"].Overall.SatisfactionSurveysOffered"));
 			overall.setSatisfactionSurveysResponded(_ctx.longValue("ListAgentSummaryReportsResponse.PagedAgentSummaryReport.List["+ i +"].Overall.SatisfactionSurveysResponded"));
 			overall.setOneTransferCalls(_ctx.longValue("ListAgentSummaryReportsResponse.PagedAgentSummaryReport.List["+ i +"].Overall.OneTransferCalls"));
+			overall.setFirstLogInTime(_ctx.stringValue("ListAgentSummaryReportsResponse.PagedAgentSummaryReport.List["+ i +"].Overall.FirstLogInTime"));
+			overall.setLastLogOutTime(_ctx.stringValue("ListAgentSummaryReportsResponse.PagedAgentSummaryReport.List["+ i +"].Overall.LastLogOutTime"));
 			agentSummaryReport.setOverall(overall);
 
 			Inbound inbound = new Inbound();
