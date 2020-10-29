@@ -1,4 +1,10 @@
-﻿2020-10-13 Version: 4.5.13
+﻿2020-10-29 Version: 4.5.14
+1, Support national secret certificate
+2, Improve dependencies
+3, Delete endpoint for ons
+4, The maximum number of requests is upgraded to 128
+
+2020-10-13 Version: 4.5.13
 1, Turn off automatic retry
 
 2020-09-29 Version: 4.5.12
