@@ -23,7 +23,7 @@ public class HttpClientConfig {
     /**
      * connectionPool
      **/
-    private int maxIdleConnections = 5;
+    private int maxIdleConnections = 128;
     private long maxIdleTimeMillis = 60 * 1000L;
     private long keepAliveDurationMillis = 5000L;
 
@@ -32,7 +32,7 @@ public class HttpClientConfig {
      **/
     private long connectionTimeoutMillis = DEFAULT_CONNECTION_TIMEOUT;
     private long readTimeoutMillis = DEFAULT_READ_TIMEOUT;
-    private long writeTimeoutMillis = 15000L;
+    private long writeTimeoutMillis = 60 * 1000L;
 
     /**
      * global protocolType
@@ -54,8 +54,8 @@ public class HttpClientConfig {
     /**
      * dispatcher
      **/
-    private int maxRequests = 64;
-    private int maxRequestsPerHost = 5;
+    private int maxRequests = 128;
+    private int maxRequestsPerHost = 128;
     private Runnable idleCallback = null;
     private ExecutorService executorService = null;
 
