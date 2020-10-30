@@ -31,14 +31,14 @@ http://www.aliyun.com</description>
   		<groupId>com.aliyun</groupId>
   		<artifactId>aliyun-java-sdk-core</artifactId>
 		<optional>true</optional>
-  		<version>4.1.1</version>
+  		<version>4.5.14</version>
   	</dependency>
   </dependencies>
 	<licenses>
 		<license>
-			<name></name>
-			<url></url>
-			<distribution></distribution>
+			<name/>
+			<url/>
+			<distribution/>
 		</license>
 	</licenses>
 	<scm>
