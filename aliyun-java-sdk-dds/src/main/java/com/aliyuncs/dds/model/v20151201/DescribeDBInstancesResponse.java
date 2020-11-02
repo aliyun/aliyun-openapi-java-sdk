@@ -95,6 +95,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private Integer dBInstanceStorage;
 
+		private String kindCode;
+
 		private String dBInstanceStatus;
 
 		private String lockMode;
@@ -193,6 +195,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDBInstanceStorage(Integer dBInstanceStorage) {
 			this.dBInstanceStorage = dBInstanceStorage;
+		}
+
+		public String getKindCode() {
+			return this.kindCode;
+		}
+
+		public void setKindCode(String kindCode) {
+			this.kindCode = kindCode;
 		}
 
 		public String getDBInstanceStatus() {

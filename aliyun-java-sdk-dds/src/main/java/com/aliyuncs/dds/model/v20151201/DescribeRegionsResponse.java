@@ -83,6 +83,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 			private Boolean vpcEnabled;
 
+			private String zoneName;
+
 			public String getZoneId() {
 				return this.zoneId;
 			}
@@ -97,6 +99,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 			public void setVpcEnabled(Boolean vpcEnabled) {
 				this.vpcEnabled = vpcEnabled;
+			}
+
+			public String getZoneName() {
+				return this.zoneName;
+			}
+
+			public void setZoneName(String zoneName) {
+				this.zoneName = zoneName;
 			}
 		}
 	}

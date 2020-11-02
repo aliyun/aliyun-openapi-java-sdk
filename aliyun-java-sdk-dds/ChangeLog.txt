@@ -1,3 +1,6 @@
+2020-11-02 Version: 3.3.1
+- Support create serverless by day price type.
+
 2020-08-13 Version: 3.3.0
 - DescribePrice update amount parameters type, float to string.
 - Add ResourceGroupId parameter to support resource group.
