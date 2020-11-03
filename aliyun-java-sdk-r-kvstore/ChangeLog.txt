@@ -1,3 +1,6 @@
+2020-11-03 Version: 2.8.1
+- Minor update for r-kvstore.
+
 2020-10-21 Version: 2.8.0
 - DescribeAvailableResource support AcceptLanguage.
 
