@@ -1,3 +1,6 @@
+2020-11-04 Version: 2.8.0
+- Support modifyInstnaceType.
+
 2020-10-20 Version: 2.8.0
 - Support modifyInstnaceType.
 
