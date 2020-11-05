@@ -25,17 +25,33 @@ import com.aliyuncs.scsp.Endpoint;
 public class CreateCustomerRequest extends RpcAcsRequest<CreateCustomerResponse> {
 	   
 
+	private String industry;
+
+	private Integer outerIdType;
+
+	private String dingding;
+
 	private String bizType;
 
 	private String typeCode;
 
 	private String instanceId;
 
+	private String contacter;
+
 	private Long prodLineId;
 
 	private String phone;
 
 	private String name;
+
+	private String managerName;
+
+	private String outerId;
+
+	private String position;
+
+	private String email;
 	public CreateCustomerRequest() {
 		super("scsp", "2020-07-02", "CreateCustomer");
 		setMethod(MethodType.POST);
@@ -43,6 +59,39 @@ public class CreateCustomerRequest extends RpcAcsRequest<CreateCustomerResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIndustry() {
+		return this.industry;
+	}
+
+	public void setIndustry(String industry) {
+		this.industry = industry;
+		if(industry != null){
+			putQueryParameter("Industry", industry);
+		}
+	}
+
+	public Integer getOuterIdType() {
+		return this.outerIdType;
+	}
+
+	public void setOuterIdType(Integer outerIdType) {
+		this.outerIdType = outerIdType;
+		if(outerIdType != null){
+			putQueryParameter("OuterIdType", outerIdType.toString());
+		}
+	}
+
+	public String getDingding() {
+		return this.dingding;
+	}
+
+	public void setDingding(String dingding) {
+		this.dingding = dingding;
+		if(dingding != null){
+			putQueryParameter("Dingding", dingding);
+		}
 	}
 
 	public String getBizType() {
@@ -78,6 +127,17 @@ public class CreateCustomerRequest extends RpcAcsRequest<CreateCustomerResponse>
 		}
 	}
 
+	public String getContacter() {
+		return this.contacter;
+	}
+
+	public void setContacter(String contacter) {
+		this.contacter = contacter;
+		if(contacter != null){
+			putQueryParameter("Contacter", contacter);
+		}
+	}
+
 	public Long getProdLineId() {
 		return this.prodLineId;
 	}
@@ -108,6 +168,50 @@ public class CreateCustomerRequest extends RpcAcsRequest<CreateCustomerResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getManagerName() {
+		return this.managerName;
+	}
+
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+		if(managerName != null){
+			putQueryParameter("ManagerName", managerName);
+		}
+	}
+
+	public String getOuterId() {
+		return this.outerId;
+	}
+
+	public void setOuterId(String outerId) {
+		this.outerId = outerId;
+		if(outerId != null){
+			putQueryParameter("OuterId", outerId);
+		}
+	}
+
+	public String getPosition() {
+		return this.position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+		if(position != null){
+			putQueryParameter("Position", position);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 
