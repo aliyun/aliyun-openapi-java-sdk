@@ -1,4 +1,7 @@
-﻿2020-10-29 Version: 4.5.14
+﻿2020-11-09 Version: 4.5.15
+1, Remove region id in the http header
+
+2020-10-29 Version: 4.5.14
 1, Support national secret certificate
 2, Improve dependencies
 3, Delete endpoint for ons
