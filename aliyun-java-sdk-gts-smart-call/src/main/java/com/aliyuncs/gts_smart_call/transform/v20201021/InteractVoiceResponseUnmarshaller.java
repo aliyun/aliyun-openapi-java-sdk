@@ -41,12 +41,13 @@ public class InteractVoiceResponseUnmarshaller {
 		interactVoiceResponse.setCcName(_ctx.stringValue("InteractVoiceResponse.CcName"));
 		interactVoiceResponse.setErrorMessage(_ctx.stringValue("InteractVoiceResponse.ErrorMessage"));
 		interactVoiceResponse.setSessionTimeout(_ctx.stringValue("InteractVoiceResponse.SessionTimeout"));
-		interactVoiceResponse.setTtsVolume(_ctx.stringValue("InteractVoiceResponse.TtsVolume"));
+		interactVoiceResponse.setTtsVolume(_ctx.integerValue("InteractVoiceResponse.TtsVolume"));
 		interactVoiceResponse.setRecordFlag(_ctx.booleanValue("InteractVoiceResponse.RecordFlag"));
 		interactVoiceResponse.setPauseTime(_ctx.integerValue("InteractVoiceResponse.PauseTime"));
 		interactVoiceResponse.setTtsConf(_ctx.booleanValue("InteractVoiceResponse.TtsConf"));
 		interactVoiceResponse.setTtsStyle(_ctx.stringValue("InteractVoiceResponse.TtsStyle"));
-		interactVoiceResponse.setTtsSpeed(_ctx.stringValue("InteractVoiceResponse.TtsSpeed"));
+		interactVoiceResponse.setTtsSpeed(_ctx.integerValue("InteractVoiceResponse.TtsSpeed"));
+		interactVoiceResponse.setDtmfNoinOvertime(_ctx.integerValue("InteractVoiceResponse.DtmfNoinOvertime"));
 	 
 	 	return interactVoiceResponse;
 	}

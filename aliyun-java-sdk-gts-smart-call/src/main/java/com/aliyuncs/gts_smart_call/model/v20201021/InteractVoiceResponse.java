@@ -62,7 +62,7 @@ public class InteractVoiceResponse extends AcsResponse {
 
 	private String sessionTimeout;
 
-	private String ttsVolume;
+	private Integer ttsVolume;
 
 	private Boolean recordFlag;
 
@@ -72,7 +72,9 @@ public class InteractVoiceResponse extends AcsResponse {
 
 	private String ttsStyle;
 
-	private String ttsSpeed;
+	private Integer ttsSpeed;
+
+	private Integer dtmfNoinOvertime;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -226,11 +228,11 @@ public class InteractVoiceResponse extends AcsResponse {
 		this.sessionTimeout = sessionTimeout;
 	}
 
-	public String getTtsVolume() {
+	public Integer getTtsVolume() {
 		return this.ttsVolume;
 	}
 
-	public void setTtsVolume(String ttsVolume) {
+	public void setTtsVolume(Integer ttsVolume) {
 		this.ttsVolume = ttsVolume;
 	}
 
@@ -266,12 +268,20 @@ public class InteractVoiceResponse extends AcsResponse {
 		this.ttsStyle = ttsStyle;
 	}
 
-	public String getTtsSpeed() {
+	public Integer getTtsSpeed() {
 		return this.ttsSpeed;
 	}
 
-	public void setTtsSpeed(String ttsSpeed) {
+	public void setTtsSpeed(Integer ttsSpeed) {
 		this.ttsSpeed = ttsSpeed;
+	}
+
+	public Integer getDtmfNoinOvertime() {
+		return this.dtmfNoinOvertime;
+	}
+
+	public void setDtmfNoinOvertime(Integer dtmfNoinOvertime) {
+		this.dtmfNoinOvertime = dtmfNoinOvertime;
 	}
 
 	@Override
