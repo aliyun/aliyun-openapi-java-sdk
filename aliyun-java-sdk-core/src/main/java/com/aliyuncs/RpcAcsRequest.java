@@ -132,6 +132,10 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 }
             }
             imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
+            if (imutableMap.get("RegionId") == null) {
+                imutableMap.put("RegionId", getSysRegionId());
+            }
+
             Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
             Map<String, String> bodyParams = this.getSysBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
