@@ -151,6 +151,10 @@ public abstract class RoaAcsRequest<T extends AcsResponse> extends AcsRequest<T>
         if (null != signer && null != credentials) {
             String accessKeyId = credentials.getAccessKeyId();
             imutableMap = this.composer.refreshSignParameters(this.getSysHeaders(), signer, accessKeyId, format);
+            if (imutableMap.get("RegionId") == null) {
+                imutableMap.put("RegionId", getSysRegionId());
+            }
+
             if (credentials instanceof BasicSessionCredentials) {
                 String sessionToken = ((BasicSessionCredentials) credentials).getSessionToken();
                 if (null != sessionToken) {
