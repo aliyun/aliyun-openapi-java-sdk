@@ -22,7 +22,7 @@ import com.aliyuncs.imageaudit.model.v20191230.ScanTextResponse.Data;
 import com.aliyuncs.imageaudit.model.v20191230.ScanTextResponse.Data.Element;
 import com.aliyuncs.imageaudit.model.v20191230.ScanTextResponse.Data.Element.Result;
 import com.aliyuncs.imageaudit.model.v20191230.ScanTextResponse.Data.Element.Result.Detail;
-import com.aliyuncs.imageaudit.model.v20191230.ScanTextResponse.Data.Element.Result.Detail.HintWord;
+import com.aliyuncs.imageaudit.model.v20191230.ScanTextResponse.Data.Element.Result.Detail.Context;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -51,14 +51,14 @@ public class ScanTextResponseUnmarshaller {
 					Detail detail = new Detail();
 					detail.setLabel(_ctx.stringValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Details["+ k +"].Label"));
 
-					List<HintWord> hintWords = new ArrayList<HintWord>();
-					for (int l = 0; l < _ctx.lengthValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Details["+ k +"].HintWords.Length"); l++) {
-						HintWord hintWord = new HintWord();
-						hintWord.setContext(_ctx.stringValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Details["+ k +"].HintWords["+ l +"].Context"));
+					List<Context> contexts = new ArrayList<Context>();
+					for (int l = 0; l < _ctx.lengthValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Details["+ k +"].Contexts.Length"); l++) {
+						Context context = new Context();
+						context.setContext(_ctx.stringValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Details["+ k +"].Contexts["+ l +"].Context"));
 
-						hintWords.add(hintWord);
+						contexts.add(context);
 					}
-					detail.setHintWords(hintWords);
+					detail.setContexts(contexts);
 
 					details.add(detail);
 				}

@@ -125,7 +125,7 @@ public class ScanTextResponse extends AcsResponse {
 
 					private String label;
 
-					private List<HintWord> hintWords;
+					private List<Context> contexts;
 
 					public String getLabel() {
 						return this.label;
@@ -135,15 +135,15 @@ public class ScanTextResponse extends AcsResponse {
 						this.label = label;
 					}
 
-					public List<HintWord> getHintWords() {
-						return this.hintWords;
+					public List<Context> getContexts() {
+						return this.contexts;
 					}
 
-					public void setHintWords(List<HintWord> hintWords) {
-						this.hintWords = hintWords;
+					public void setContexts(List<Context> contexts) {
+						this.contexts = contexts;
 					}
 
-					public static class HintWord {
+					public static class Context {
 
 						private String context;
 

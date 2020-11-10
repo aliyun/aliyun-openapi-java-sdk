@@ -1,3 +1,6 @@
+2020-11-10 Version: 1.0.7
+- Add IdentifyPorn And So On.
+
 2020-02-27 Version: 1.0.6
 - Sixth version.
 
