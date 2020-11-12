@@ -38,6 +38,7 @@ public class DescribeZoneInfoResponseUnmarshaller {
 		describeZoneInfoResponse.setIsPtr(_ctx.booleanValue("DescribeZoneInfoResponse.IsPtr"));
 		describeZoneInfoResponse.setProxyPattern(_ctx.stringValue("DescribeZoneInfoResponse.ProxyPattern"));
 		describeZoneInfoResponse.setSlaveDns(_ctx.booleanValue("DescribeZoneInfoResponse.SlaveDns"));
+		describeZoneInfoResponse.setResourceGroupId(_ctx.stringValue("DescribeZoneInfoResponse.ResourceGroupId"));
 
 		List<Vpc> bindVpcs = new ArrayList<Vpc>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeZoneInfoResponse.BindVpcs.Length"); i++) {

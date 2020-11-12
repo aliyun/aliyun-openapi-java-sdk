@@ -71,6 +71,8 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 		private Long requestCount;
 
+		private String bizType;
+
 		public String getZoneName() {
 			return this.zoneName;
 		}
@@ -85,6 +87,14 @@ public class DescribeStatisticSummaryResponse extends AcsResponse {
 
 		public void setRequestCount(Long requestCount) {
 			this.requestCount = requestCount;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 

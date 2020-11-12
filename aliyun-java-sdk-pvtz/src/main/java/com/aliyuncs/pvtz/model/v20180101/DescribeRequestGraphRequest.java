@@ -29,9 +29,13 @@ public class DescribeRequestGraphRequest extends RpcAcsRequest<DescribeRequestGr
 
 	private Long endTimestamp;
 
+	private String bizType;
+
 	private String vpcId;
 
 	private String userClientIp;
+
+	private String bizId;
 
 	private String zoneId;
 
@@ -67,6 +71,17 @@ public class DescribeRequestGraphRequest extends RpcAcsRequest<DescribeRequestGr
 		}
 	}
 
+	public String getBizType() {
+		return this.bizType;
+	}
+
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
 	public String getVpcId() {
 		return this.vpcId;
 	}
@@ -86,6 +101,17 @@ public class DescribeRequestGraphRequest extends RpcAcsRequest<DescribeRequestGr
 		this.userClientIp = userClientIp;
 		if(userClientIp != null){
 			putQueryParameter("UserClientIp", userClientIp);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 

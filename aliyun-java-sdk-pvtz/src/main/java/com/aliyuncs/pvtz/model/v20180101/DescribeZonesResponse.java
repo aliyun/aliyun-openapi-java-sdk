@@ -107,6 +107,8 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		private String proxyPattern;
 
+		private String resourceGroupId;
+
 		public String getZoneId() {
 			return this.zoneId;
 		}
@@ -185,6 +187,14 @@ public class DescribeZonesResponse extends AcsResponse {
 
 		public void setProxyPattern(String proxyPattern) {
 			this.proxyPattern = proxyPattern;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

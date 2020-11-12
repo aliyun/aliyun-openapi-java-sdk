@@ -35,6 +35,7 @@ public class DescribeStatisticSummaryResponseUnmarshaller {
 			ZoneRequestTop zoneRequestTop = new ZoneRequestTop();
 			zoneRequestTop.setZoneName(_ctx.stringValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].ZoneName"));
 			zoneRequestTop.setRequestCount(_ctx.longValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].RequestCount"));
+			zoneRequestTop.setBizType(_ctx.stringValue("DescribeStatisticSummaryResponse.ZoneRequestTops["+ i +"].BizType"));
 
 			zoneRequestTops.add(zoneRequestTop);
 		}

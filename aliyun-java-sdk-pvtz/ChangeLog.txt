@@ -1,3 +1,6 @@
+2020-11-12 Version: 1.0.5
+- Update new version.
+
 2020-02-14 Version: 1.0.4
 - Update default endpoints.
 

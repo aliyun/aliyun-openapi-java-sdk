@@ -49,6 +49,8 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 	private Boolean slaveDns;
 
+	private String resourceGroupId;
+
 	private List<Vpc> bindVpcs;
 
 	public String getRequestId() {
@@ -145,6 +147,14 @@ public class DescribeZoneInfoResponse extends AcsResponse {
 
 	public void setSlaveDns(Boolean slaveDns) {
 		this.slaveDns = slaveDns;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Vpc> getBindVpcs() {

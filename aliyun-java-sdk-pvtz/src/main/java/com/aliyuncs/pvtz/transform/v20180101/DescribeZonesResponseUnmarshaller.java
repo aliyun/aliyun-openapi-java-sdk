@@ -45,6 +45,7 @@ public class DescribeZonesResponseUnmarshaller {
 			zone.setUpdateTimestamp(_ctx.longValue("DescribeZonesResponse.Zones["+ i +"].UpdateTimestamp"));
 			zone.setIsPtr(_ctx.booleanValue("DescribeZonesResponse.Zones["+ i +"].IsPtr"));
 			zone.setProxyPattern(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ProxyPattern"));
+			zone.setResourceGroupId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ResourceGroupId"));
 
 			zones.add(zone);
 		}
