@@ -1,3 +1,6 @@
+2020-11-12 Version: 2.12.12
+- Add QueryBizItemsWithActivity.
+
 2020-08-12 Version: 2.12.11
 - Modify interface field,eg SettleOrder,CreateWithholdTrade,QueryWithholdTrade,RefundOrder.
 
