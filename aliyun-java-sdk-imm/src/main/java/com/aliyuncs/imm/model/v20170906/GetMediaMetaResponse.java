@@ -101,6 +101,8 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 			private Address address;
 
+			private Tag tag;
+
 			public Integer getNumberStreams() {
 				return this.numberStreams;
 			}
@@ -189,6 +191,14 @@ public class GetMediaMetaResponse extends AcsResponse {
 				this.address = address;
 			}
 
+			public Tag getTag() {
+				return this.tag;
+			}
+
+			public void setTag(Tag tag) {
+				this.tag = tag;
+			}
+
 			public static class Address {
 
 				private String addressLine;
@@ -249,6 +259,89 @@ public class GetMediaMetaResponse extends AcsResponse {
 
 				public void setTownship(String township) {
 					this.township = township;
+				}
+			}
+
+			public static class Tag {
+
+				private String language;
+
+				private String creationTime;
+
+				private String album;
+
+				private String albumArtist;
+
+				private String artist;
+
+				private String composer;
+
+				private String title;
+
+				private String performer;
+
+				public String getLanguage() {
+					return this.language;
+				}
+
+				public void setLanguage(String language) {
+					this.language = language;
+				}
+
+				public String getCreationTime() {
+					return this.creationTime;
+				}
+
+				public void setCreationTime(String creationTime) {
+					this.creationTime = creationTime;
+				}
+
+				public String getAlbum() {
+					return this.album;
+				}
+
+				public void setAlbum(String album) {
+					this.album = album;
+				}
+
+				public String getAlbumArtist() {
+					return this.albumArtist;
+				}
+
+				public void setAlbumArtist(String albumArtist) {
+					this.albumArtist = albumArtist;
+				}
+
+				public String getArtist() {
+					return this.artist;
+				}
+
+				public void setArtist(String artist) {
+					this.artist = artist;
+				}
+
+				public String getComposer() {
+					return this.composer;
+				}
+
+				public void setComposer(String composer) {
+					this.composer = composer;
+				}
+
+				public String getTitle() {
+					return this.title;
+				}
+
+				public void setTitle(String title) {
+					this.title = title;
+				}
+
+				public String getPerformer() {
+					return this.performer;
+				}
+
+				public void setPerformer(String performer) {
+					this.performer = performer;
 				}
 			}
 		}

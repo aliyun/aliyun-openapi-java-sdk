@@ -21,6 +21,7 @@ import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaFormat;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaFormat.Address;
+import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaFormat.Tag;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaStreams;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaStreams.AudioStream;
 import com.aliyuncs.imm.model.v20170906.GetMediaMetaResponse.MediaMeta.MediaStreams.SubtitleStream;
@@ -57,6 +58,17 @@ public class GetMediaMetaResponseUnmarshaller {
 		address.setDistrict(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.District"));
 		address.setTownship(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Address.Township"));
 		mediaFormat.setAddress(address);
+
+		Tag tag = new Tag();
+		tag.setLanguage(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Language"));
+		tag.setCreationTime(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.CreationTime"));
+		tag.setAlbum(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Album"));
+		tag.setAlbumArtist(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.AlbumArtist"));
+		tag.setArtist(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Artist"));
+		tag.setComposer(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Composer"));
+		tag.setTitle(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Title"));
+		tag.setPerformer(_ctx.stringValue("GetMediaMetaResponse.MediaMeta.MediaFormat.Tag.Performer"));
+		mediaFormat.setTag(tag);
 		mediaMeta.setMediaFormat(mediaFormat);
 
 		MediaStreams mediaStreams = new MediaStreams();
