@@ -1,3 +1,7 @@
+2020-11-12 Version: 1.7.7
+- Support DescribeDBClusterTDE.
+- Support ModifyDBClusterTDE.
+
 2020-10-27 Version: 1.7.6
 - Support DescribePendingMaintenanceAction.
 - Support ModifyPendingMaintenanceAction.
