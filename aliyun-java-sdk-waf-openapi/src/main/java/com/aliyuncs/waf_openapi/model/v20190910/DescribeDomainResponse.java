@@ -69,7 +69,11 @@ public class DescribeDomainResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private String accessType;
+
 		private List<LogHeader> logHeaders;
+
+		private List<CloudNativeInstancesItem> cloudNativeInstances;
 
 		private List<String> sourceIps;
 
@@ -167,12 +171,28 @@ public class DescribeDomainResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
+		public String getAccessType() {
+			return this.accessType;
+		}
+
+		public void setAccessType(String accessType) {
+			this.accessType = accessType;
+		}
+
 		public List<LogHeader> getLogHeaders() {
 			return this.logHeaders;
 		}
 
 		public void setLogHeaders(List<LogHeader> logHeaders) {
 			this.logHeaders = logHeaders;
+		}
+
+		public List<CloudNativeInstancesItem> getCloudNativeInstances() {
+			return this.cloudNativeInstances;
+		}
+
+		public void setCloudNativeInstances(List<CloudNativeInstancesItem> cloudNativeInstances) {
+			this.cloudNativeInstances = cloudNativeInstances;
 		}
 
 		public List<String> getSourceIps() {
@@ -227,6 +247,72 @@ public class DescribeDomainResponse extends AcsResponse {
 
 			public void setK(String k) {
 				this.k = k;
+			}
+		}
+
+		public static class CloudNativeInstancesItem {
+
+			private String cloudNativeProductName;
+
+			private String instanceId;
+
+			private String iPAddressList;
+
+			private List<ProtocolPortConfigsItem> protocolPortConfigs;
+
+			public String getCloudNativeProductName() {
+				return this.cloudNativeProductName;
+			}
+
+			public void setCloudNativeProductName(String cloudNativeProductName) {
+				this.cloudNativeProductName = cloudNativeProductName;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getIPAddressList() {
+				return this.iPAddressList;
+			}
+
+			public void setIPAddressList(String iPAddressList) {
+				this.iPAddressList = iPAddressList;
+			}
+
+			public List<ProtocolPortConfigsItem> getProtocolPortConfigs() {
+				return this.protocolPortConfigs;
+			}
+
+			public void setProtocolPortConfigs(List<ProtocolPortConfigsItem> protocolPortConfigs) {
+				this.protocolPortConfigs = protocolPortConfigs;
+			}
+
+			public static class ProtocolPortConfigsItem {
+
+				private String protocol;
+
+				private String ports;
+
+				public String getBizProtocol() {
+					return this.protocol;
+				}
+
+				public void setBizProtocol(String protocol) {
+					this.protocol = protocol;
+				}
+
+				public String getPorts() {
+					return this.ports;
+				}
+
+				public void setPorts(String ports) {
+					this.ports = ports;
+				}
 			}
 		}
 	}

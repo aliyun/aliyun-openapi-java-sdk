@@ -22,40 +22,31 @@ import com.aliyuncs.waf_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDomainBasicConfigsRequest extends RpcAcsRequest<DescribeDomainBasicConfigsResponse> {
+public class DescribeOutputDomainsRequest extends RpcAcsRequest<DescribeOutputDomainsResponse> {
 	   
-
-	private Integer pageNumber;
 
 	private String resourceGroupId;
 
+	private String sourceIp;
+
 	private Integer pageSize;
 
-	private String accessType;
+	private String lang;
 
-	private Integer cloudNativeProductId;
+	private Integer currentPage;
 
 	private String instanceId;
 
-	private String domainKey;
-	public DescribeDomainBasicConfigsRequest() {
-		super("waf-openapi", "2019-09-10", "DescribeDomainBasicConfigs", "waf");
+	private String domain;
+
+	private String region;
+	public DescribeOutputDomainsRequest() {
+		super("waf-openapi", "2019-09-10", "DescribeOutputDomains", "waf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -66,6 +57,17 @@ public class DescribeDomainBasicConfigsRequest extends RpcAcsRequest<DescribeDom
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
@@ -80,25 +82,25 @@ public class DescribeDomainBasicConfigsRequest extends RpcAcsRequest<DescribeDom
 		}
 	}
 
-	public String getAccessType() {
-		return this.accessType;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setAccessType(String accessType) {
-		this.accessType = accessType;
-		if(accessType != null){
-			putQueryParameter("AccessType", accessType);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
-	public Integer getCloudNativeProductId() {
-		return this.cloudNativeProductId;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setCloudNativeProductId(Integer cloudNativeProductId) {
-		this.cloudNativeProductId = cloudNativeProductId;
-		if(cloudNativeProductId != null){
-			putQueryParameter("CloudNativeProductId", cloudNativeProductId.toString());
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -113,20 +115,31 @@ public class DescribeDomainBasicConfigsRequest extends RpcAcsRequest<DescribeDom
 		}
 	}
 
-	public String getDomainKey() {
-		return this.domainKey;
+	public String getDomain() {
+		return this.domain;
 	}
 
-	public void setDomainKey(String domainKey) {
-		this.domainKey = domainKey;
-		if(domainKey != null){
-			putQueryParameter("DomainKey", domainKey);
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<DescribeDomainBasicConfigsResponse> getResponseClass() {
-		return DescribeDomainBasicConfigsResponse.class;
+	public Class<DescribeOutputDomainsResponse> getResponseClass() {
+		return DescribeOutputDomainsResponse.class;
 	}
 
 }

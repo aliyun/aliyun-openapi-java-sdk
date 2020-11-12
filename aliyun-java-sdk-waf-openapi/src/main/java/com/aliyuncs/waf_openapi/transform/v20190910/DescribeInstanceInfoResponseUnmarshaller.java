@@ -35,6 +35,7 @@ public class DescribeInstanceInfoResponseUnmarshaller {
 		instanceInfo.setTrial(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.Trial"));
 		instanceInfo.setStatus(_ctx.integerValue("DescribeInstanceInfoResponse.InstanceInfo.Status"));
 		instanceInfo.setSubscriptionType(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.SubscriptionType"));
+		instanceInfo.setVersion(_ctx.stringValue("DescribeInstanceInfoResponse.InstanceInfo.Version"));
 		describeInstanceInfoResponse.setInstanceInfo(instanceInfo);
 	 
 	 	return describeInstanceInfoResponse;

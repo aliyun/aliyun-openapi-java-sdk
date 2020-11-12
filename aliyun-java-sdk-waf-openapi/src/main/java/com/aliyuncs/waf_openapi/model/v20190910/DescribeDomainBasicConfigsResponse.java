@@ -75,6 +75,8 @@ public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 
 		private Integer status;
 
+		private String accessType;
+
 		public String getOwner() {
 			return this.owner;
 		}
@@ -145,6 +147,14 @@ public class DescribeDomainBasicConfigsResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public String getAccessType() {
+			return this.accessType;
+		}
+
+		public void setAccessType(String accessType) {
+			this.accessType = accessType;
 		}
 	}
 

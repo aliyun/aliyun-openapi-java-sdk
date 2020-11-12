@@ -22,14 +22,18 @@ import com.aliyuncs.waf_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceInfoRequest extends RpcAcsRequest<DescribeInstanceInfoResponse> {
+public class DeleteProtectionModuleRuleRequest extends RpcAcsRequest<DeleteProtectionModuleRuleResponse> {
 	   
 
-	private String resourceGroupId;
+	private String defenseType;
 
 	private String instanceId;
-	public DescribeInstanceInfoRequest() {
-		super("waf-openapi", "2019-09-10", "DescribeInstanceInfo", "waf");
+
+	private String domain;
+
+	private Long ruleId;
+	public DeleteProtectionModuleRuleRequest() {
+		super("waf-openapi", "2019-09-10", "DeleteProtectionModuleRule", "waf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,14 @@ public class DescribeInstanceInfoRequest extends RpcAcsRequest<DescribeInstanceI
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getDefenseType() {
+		return this.defenseType;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setDefenseType(String defenseType) {
+		this.defenseType = defenseType;
+		if(defenseType != null){
+			putQueryParameter("DefenseType", defenseType);
 		}
 	}
 
@@ -59,9 +63,31 @@ public class DescribeInstanceInfoRequest extends RpcAcsRequest<DescribeInstanceI
 		}
 	}
 
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceInfoResponse> getResponseClass() {
-		return DescribeInstanceInfoResponse.class;
+	public Class<DeleteProtectionModuleRuleResponse> getResponseClass() {
+		return DeleteProtectionModuleRuleResponse.class;
 	}
 
 }

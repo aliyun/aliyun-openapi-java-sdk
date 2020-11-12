@@ -64,6 +64,8 @@ public class DescribeInstanceInfoResponse extends AcsResponse {
 
 		private String subscriptionType;
 
+		private String version;
+
 		public Integer getInDebt() {
 			return this.inDebt;
 		}
@@ -134,6 +136,14 @@ public class DescribeInstanceInfoResponse extends AcsResponse {
 
 		public void setSubscriptionType(String subscriptionType) {
 			this.subscriptionType = subscriptionType;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

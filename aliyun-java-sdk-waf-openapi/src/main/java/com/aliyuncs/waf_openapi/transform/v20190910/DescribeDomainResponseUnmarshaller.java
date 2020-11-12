@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse;
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse.Domain;
+import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse.Domain.CloudNativeInstancesItem;
+import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse.Domain.CloudNativeInstancesItem.ProtocolPortConfigsItem;
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeDomainResponse.Domain.LogHeader;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -41,6 +43,7 @@ public class DescribeDomainResponseUnmarshaller {
 		domain.setReadTime(_ctx.integerValue("DescribeDomainResponse.Domain.ReadTime"));
 		domain.setWriteTime(_ctx.integerValue("DescribeDomainResponse.Domain.WriteTime"));
 		domain.setResourceGroupId(_ctx.stringValue("DescribeDomainResponse.Domain.ResourceGroupId"));
+		domain.setAccessType(_ctx.stringValue("DescribeDomainResponse.Domain.AccessType"));
 
 		List<String> sourceIps = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.SourceIps.Length"); i++) {
@@ -75,6 +78,27 @@ public class DescribeDomainResponseUnmarshaller {
 			logHeaders.add(logHeader);
 		}
 		domain.setLogHeaders(logHeaders);
+
+		List<CloudNativeInstancesItem> cloudNativeInstances = new ArrayList<CloudNativeInstancesItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainResponse.Domain.CloudNativeInstances.Length"); i++) {
+			CloudNativeInstancesItem cloudNativeInstancesItem = new CloudNativeInstancesItem();
+			cloudNativeInstancesItem.setCloudNativeProductName(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].CloudNativeProductName"));
+			cloudNativeInstancesItem.setInstanceId(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].InstanceId"));
+			cloudNativeInstancesItem.setIPAddressList(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].IPAddressList"));
+
+			List<ProtocolPortConfigsItem> protocolPortConfigs = new ArrayList<ProtocolPortConfigsItem>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs.Length"); j++) {
+				ProtocolPortConfigsItem protocolPortConfigsItem = new ProtocolPortConfigsItem();
+				protocolPortConfigsItem.setBizProtocol(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Protocol"));
+				protocolPortConfigsItem.setPorts(_ctx.stringValue("DescribeDomainResponse.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Ports"));
+
+				protocolPortConfigs.add(protocolPortConfigsItem);
+			}
+			cloudNativeInstancesItem.setProtocolPortConfigs(protocolPortConfigs);
+
+			cloudNativeInstances.add(cloudNativeInstancesItem);
+		}
+		domain.setCloudNativeInstances(cloudNativeInstances);
 		describeDomainResponse.setDomain(domain);
 	 
 	 	return describeDomainResponse;

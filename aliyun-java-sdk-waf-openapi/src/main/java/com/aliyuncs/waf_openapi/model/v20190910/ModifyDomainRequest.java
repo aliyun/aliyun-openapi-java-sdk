@@ -31,11 +31,15 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 
 	private Integer writeTime;
 
+	private String accessType;
+
 	private String logHeaders;
 
 	private Integer connectionTime;
 
 	private Integer clusterType;
+
+	private String cloudNativeInstances;
 
 	private Integer httpsRedirect;
 
@@ -96,6 +100,17 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 		}
 	}
 
+	public String getAccessType() {
+		return this.accessType;
+	}
+
+	public void setAccessType(String accessType) {
+		this.accessType = accessType;
+		if(accessType != null){
+			putQueryParameter("AccessType", accessType);
+		}
+	}
+
 	public String getLogHeaders() {
 		return this.logHeaders;
 	}
@@ -126,6 +141,17 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType.toString());
+		}
+	}
+
+	public String getCloudNativeInstances() {
+		return this.cloudNativeInstances;
+	}
+
+	public void setCloudNativeInstances(String cloudNativeInstances) {
+		this.cloudNativeInstances = cloudNativeInstances;
+		if(cloudNativeInstances != null){
+			putQueryParameter("CloudNativeInstances", cloudNativeInstances);
 		}
 	}
 

@@ -41,6 +41,7 @@ public class DescribeDomainBasicConfigsResponseUnmarshaller {
 			domainConfig.setVersion(_ctx.longValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Version"));
 			domainConfig.setDomain(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Domain"));
 			domainConfig.setStatus(_ctx.integerValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].Status"));
+			domainConfig.setAccessType(_ctx.stringValue("DescribeDomainBasicConfigsResponse.DomainConfigs["+ i +"].AccessType"));
 
 			domainConfigs.add(domainConfig);
 		}

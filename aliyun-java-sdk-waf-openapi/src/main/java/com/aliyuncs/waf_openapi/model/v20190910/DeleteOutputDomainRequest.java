@@ -22,30 +22,25 @@ import com.aliyuncs.waf_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeInstanceInfoRequest extends RpcAcsRequest<DescribeInstanceInfoResponse> {
+public class DeleteOutputDomainRequest extends RpcAcsRequest<DeleteOutputDomainResponse> {
 	   
 
-	private String resourceGroupId;
-
 	private String instanceId;
-	public DescribeInstanceInfoRequest() {
-		super("waf-openapi", "2019-09-10", "DescribeInstanceInfo", "waf");
+
+	private String sourceIp;
+
+	private String domain;
+
+	private String lang;
+
+	private String region;
+	public DeleteOutputDomainRequest() {
+		super("waf-openapi", "2019-09-10", "DeleteOutputDomain", "waf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +54,53 @@ public class DescribeInstanceInfoRequest extends RpcAcsRequest<DescribeInstanceI
 		}
 	}
 
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getDomain() {
+		return this.domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+		if(domain != null){
+			putQueryParameter("Domain", domain);
+		}
+	}
+
+	public String getLang() {
+		return this.lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
+		}
+	}
+
 	@Override
-	public Class<DescribeInstanceInfoResponse> getResponseClass() {
-		return DescribeInstanceInfoResponse.class;
+	public Class<DeleteOutputDomainResponse> getResponseClass() {
+		return DeleteOutputDomainResponse.class;
 	}
 
 }
