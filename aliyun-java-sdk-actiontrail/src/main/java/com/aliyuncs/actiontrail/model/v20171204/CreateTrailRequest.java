@@ -16,6 +16,7 @@ package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.actiontrail.Endpoint;
 
 /**
  * @author auto create
@@ -28,7 +29,11 @@ public class CreateTrailRequest extends RpcAcsRequest<CreateTrailResponse> {
 
 	private String slsWriteRoleArn;
 
+	private Boolean isOrganizationTrail;
+
 	private String ossKeyPrefix;
+
+	private String mnsTopicArn;
 
 	private String roleName;
 
@@ -42,6 +47,10 @@ public class CreateTrailRequest extends RpcAcsRequest<CreateTrailResponse> {
 	public CreateTrailRequest() {
 		super("Actiontrail", "2017-12-04", "CreateTrail", "actiontrail");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSlsProjectArn() {
@@ -66,6 +75,17 @@ public class CreateTrailRequest extends RpcAcsRequest<CreateTrailResponse> {
 		}
 	}
 
+	public Boolean getIsOrganizationTrail() {
+		return this.isOrganizationTrail;
+	}
+
+	public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+		this.isOrganizationTrail = isOrganizationTrail;
+		if(isOrganizationTrail != null){
+			putQueryParameter("IsOrganizationTrail", isOrganizationTrail.toString());
+		}
+	}
+
 	public String getOssKeyPrefix() {
 		return this.ossKeyPrefix;
 	}
@@ -74,6 +94,17 @@ public class CreateTrailRequest extends RpcAcsRequest<CreateTrailResponse> {
 		this.ossKeyPrefix = ossKeyPrefix;
 		if(ossKeyPrefix != null){
 			putQueryParameter("OssKeyPrefix", ossKeyPrefix);
+		}
+	}
+
+	public String getMnsTopicArn() {
+		return this.mnsTopicArn;
+	}
+
+	public void setMnsTopicArn(String mnsTopicArn) {
+		this.mnsTopicArn = mnsTopicArn;
+		if(mnsTopicArn != null){
+			putQueryParameter("MnsTopicArn", mnsTopicArn);
 		}
 	}
 

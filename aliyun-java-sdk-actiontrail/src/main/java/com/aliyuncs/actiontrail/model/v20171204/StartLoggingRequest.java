@@ -16,6 +16,7 @@ package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.actiontrail.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +29,10 @@ public class StartLoggingRequest extends RpcAcsRequest<StartLoggingResponse> {
 	public StartLoggingRequest() {
 		super("Actiontrail", "2017-12-04", "StartLogging", "actiontrail");
 		setMethod(MethodType.GET);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getName() {

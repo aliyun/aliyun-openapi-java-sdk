@@ -16,6 +16,7 @@ package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.actiontrail.Endpoint;
 
 /**
  * @author auto create
@@ -25,9 +26,15 @@ public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse>
 	   
 
 	private String name;
+
+	private Boolean isOrganizationTrail;
 	public GetTrailStatusRequest() {
 		super("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getName() {
@@ -38,6 +45,17 @@ public class GetTrailStatusRequest extends RpcAcsRequest<GetTrailStatusResponse>
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public Boolean getIsOrganizationTrail() {
+		return this.isOrganizationTrail;
+	}
+
+	public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+		this.isOrganizationTrail = isOrganizationTrail;
+		if(isOrganizationTrail != null){
+			putQueryParameter("IsOrganizationTrail", isOrganizationTrail.toString());
 		}
 	}
 

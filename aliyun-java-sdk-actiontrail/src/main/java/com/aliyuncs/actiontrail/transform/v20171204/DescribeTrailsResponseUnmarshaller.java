@@ -45,6 +45,8 @@ public class DescribeTrailsResponseUnmarshaller {
 			trailListItem.setUpdateTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].UpdateTime"));
 			trailListItem.setStartLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StartLoggingTime"));
 			trailListItem.setStopLoggingTime(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].StopLoggingTime"));
+			trailListItem.setMnsTopicArn(_ctx.stringValue("DescribeTrailsResponse.TrailList["+ i +"].MnsTopicArn"));
+			trailListItem.setIsOrganizationTrail(_ctx.booleanValue("DescribeTrailsResponse.TrailList["+ i +"].IsOrganizationTrail"));
 
 			trailList.add(trailListItem);
 		}

@@ -32,6 +32,7 @@ public class UpdateTrailResponseUnmarshaller {
 		updateTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("UpdateTrailResponse.SlsWriteRoleArn"));
 		updateTrailResponse.setEventRW(_ctx.stringValue("UpdateTrailResponse.EventRW"));
 		updateTrailResponse.setTrailRegion(_ctx.stringValue("UpdateTrailResponse.TrailRegion"));
+		updateTrailResponse.setMnsTopicArn(_ctx.stringValue("UpdateTrailResponse.MnsTopicArn"));
 	 
 	 	return updateTrailResponse;
 	}

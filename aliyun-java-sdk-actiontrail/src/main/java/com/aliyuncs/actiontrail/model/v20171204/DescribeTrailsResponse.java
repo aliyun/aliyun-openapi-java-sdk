@@ -75,6 +75,10 @@ public class DescribeTrailsResponse extends AcsResponse {
 
 		private String stopLoggingTime;
 
+		private String mnsTopicArn;
+
+		private Boolean isOrganizationTrail;
+
 		public String getName() {
 			return this.name;
 		}
@@ -185,6 +189,22 @@ public class DescribeTrailsResponse extends AcsResponse {
 
 		public void setStopLoggingTime(String stopLoggingTime) {
 			this.stopLoggingTime = stopLoggingTime;
+		}
+
+		public String getMnsTopicArn() {
+			return this.mnsTopicArn;
+		}
+
+		public void setMnsTopicArn(String mnsTopicArn) {
+			this.mnsTopicArn = mnsTopicArn;
+		}
+
+		public Boolean getIsOrganizationTrail() {
+			return this.isOrganizationTrail;
+		}
+
+		public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+			this.isOrganizationTrail = isOrganizationTrail;
 		}
 	}
 

@@ -44,6 +44,8 @@ public class UpdateTrailResponse extends AcsResponse {
 
 	private String trailRegion;
 
+	private String mnsTopicArn;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -122,6 +124,14 @@ public class UpdateTrailResponse extends AcsResponse {
 
 	public void setTrailRegion(String trailRegion) {
 		this.trailRegion = trailRegion;
+	}
+
+	public String getMnsTopicArn() {
+		return this.mnsTopicArn;
+	}
+
+	public void setMnsTopicArn(String mnsTopicArn) {
+		this.mnsTopicArn = mnsTopicArn;
 	}
 
 	@Override

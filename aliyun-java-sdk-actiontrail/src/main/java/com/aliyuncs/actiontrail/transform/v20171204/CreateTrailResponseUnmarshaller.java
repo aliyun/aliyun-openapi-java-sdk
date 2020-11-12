@@ -32,6 +32,7 @@ public class CreateTrailResponseUnmarshaller {
 		createTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("CreateTrailResponse.SlsWriteRoleArn"));
 		createTrailResponse.setEventRW(_ctx.stringValue("CreateTrailResponse.EventRW"));
 		createTrailResponse.setTrailRegion(_ctx.stringValue("CreateTrailResponse.TrailRegion"));
+		createTrailResponse.setMnsTopicArn(_ctx.stringValue("CreateTrailResponse.MnsTopicArn"));
 	 
 	 	return createTrailResponse;
 	}

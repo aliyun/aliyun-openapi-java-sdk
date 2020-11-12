@@ -16,6 +16,7 @@ package com.aliyuncs.actiontrail.model.v20171204;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.actiontrail.Endpoint;
 
 /**
  * @author auto create
@@ -30,6 +31,10 @@ public class DescribeTrailsRequest extends RpcAcsRequest<DescribeTrailsResponse>
 	public DescribeTrailsRequest() {
 		super("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Boolean getIncludeShadowTrails() {
