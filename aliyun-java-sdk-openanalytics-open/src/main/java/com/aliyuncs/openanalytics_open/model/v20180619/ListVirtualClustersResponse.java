@@ -59,6 +59,12 @@ public class ListVirtualClustersResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String minCpu;
+
+		private String maxCpu;
+
+		private String chargeType;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -105,6 +111,30 @@ public class ListVirtualClustersResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getMinCpu() {
+			return this.minCpu;
+		}
+
+		public void setMinCpu(String minCpu) {
+			this.minCpu = minCpu;
+		}
+
+		public String getMaxCpu() {
+			return this.maxCpu;
+		}
+
+		public void setMaxCpu(String maxCpu) {
+			this.maxCpu = maxCpu;
+		}
+
+		public String getChargeType() {
+			return this.chargeType;
+		}
+
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 	}
 

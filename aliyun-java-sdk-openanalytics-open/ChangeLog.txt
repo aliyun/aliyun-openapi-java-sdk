@@ -1,3 +1,6 @@
+2020-11-12 Version: 1.8.1
+- Support OpenAPI.
+
 2020-08-18 Version: 1.0.10
 - Open GetJobDetail and GetJobStatus APIs.
 

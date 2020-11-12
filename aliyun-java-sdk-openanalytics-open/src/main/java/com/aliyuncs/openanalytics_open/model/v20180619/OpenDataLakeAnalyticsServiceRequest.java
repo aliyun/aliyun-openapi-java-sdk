@@ -22,33 +22,33 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourcesSpecRequest extends RpcAcsRequest<ListResourcesSpecResponse> {
+public class OpenDataLakeAnalyticsServiceRequest extends RpcAcsRequest<OpenDataLakeAnalyticsServiceResponse> {
 	   
 
-	private String type;
-	public ListResourcesSpecRequest() {
-		super("openanalytics-open", "2018-06-19", "ListResourcesSpec", "openanalytics");
-		setMethod(MethodType.GET);
+	private String internetChargeType;
+	public OpenDataLakeAnalyticsServiceRequest() {
+		super("openanalytics-open", "2018-06-19", "OpenDataLakeAnalyticsService", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getInternetChargeType() {
+		return this.internetChargeType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 
 	@Override
-	public Class<ListResourcesSpecResponse> getResponseClass() {
-		return ListResourcesSpecResponse.class;
+	public Class<OpenDataLakeAnalyticsServiceResponse> getResponseClass() {
+		return OpenDataLakeAnalyticsServiceResponse.class;
 	}
 
 }

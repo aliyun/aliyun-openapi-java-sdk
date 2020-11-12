@@ -22,33 +22,20 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourcesSpecRequest extends RpcAcsRequest<ListResourcesSpecResponse> {
+public class ForbidAutomaticMetaSyncAsIntegrationAccountRequest extends RpcAcsRequest<ForbidAutomaticMetaSyncAsIntegrationAccountResponse> {
 	   
-
-	private String type;
-	public ListResourcesSpecRequest() {
-		super("openanalytics-open", "2018-06-19", "ListResourcesSpec", "openanalytics");
-		setMethod(MethodType.GET);
+	public ForbidAutomaticMetaSyncAsIntegrationAccountRequest() {
+		super("openanalytics-open", "2018-06-19", "ForbidAutomaticMetaSyncAsIntegrationAccount", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	@Override
-	public Class<ListResourcesSpecResponse> getResponseClass() {
-		return ListResourcesSpecResponse.class;
+	public Class<ForbidAutomaticMetaSyncAsIntegrationAccountResponse> getResponseClass() {
+		return ForbidAutomaticMetaSyncAsIntegrationAccountResponse.class;
 	}
 
 }

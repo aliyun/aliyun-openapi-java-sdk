@@ -22,33 +22,46 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourcesSpecRequest extends RpcAcsRequest<ListResourcesSpecResponse> {
+public class DecodeStsTokenRequest extends RpcAcsRequest<DecodeStsTokenResponse> {
 	   
 
-	private String type;
-	public ListResourcesSpecRequest() {
-		super("openanalytics-open", "2018-06-19", "ListResourcesSpec", "openanalytics");
-		setMethod(MethodType.GET);
+	private String accessKey;
+
+	private String token;
+	public DecodeStsTokenRequest() {
+		super("openanalytics-open", "2018-06-19", "DecodeStsToken", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getAccessKey() {
+		return this.accessKey;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setAccessKey(String accessKey) {
+		this.accessKey = accessKey;
+		if(accessKey != null){
+			putQueryParameter("AccessKey", accessKey);
+		}
+	}
+
+	public String getToken() {
+		return this.token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
 		}
 	}
 
 	@Override
-	public Class<ListResourcesSpecResponse> getResponseClass() {
-		return ListResourcesSpecResponse.class;
+	public Class<DecodeStsTokenResponse> getResponseClass() {
+		return DecodeStsTokenResponse.class;
 	}
 
 }

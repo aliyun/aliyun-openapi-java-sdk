@@ -59,13 +59,9 @@ public class DescribeVirtualClusterV2Response extends AcsResponse {
 
 		private Float maxCpu;
 
-		private Float maxMemory;
-
-		private Float maxCpuLimit;
-
-		private Float maxMemoryLimit;
-
 		private String chargeType;
+
+		private String minCpu;
 
 		private List<UserNetWorkConfigListItem> userNetWorkConfigList;
 
@@ -119,36 +115,20 @@ public class DescribeVirtualClusterV2Response extends AcsResponse {
 			this.maxCpu = maxCpu;
 		}
 
-		public Float getMaxMemory() {
-			return this.maxMemory;
-		}
-
-		public void setMaxMemory(Float maxMemory) {
-			this.maxMemory = maxMemory;
-		}
-
-		public Float getMaxCpuLimit() {
-			return this.maxCpuLimit;
-		}
-
-		public void setMaxCpuLimit(Float maxCpuLimit) {
-			this.maxCpuLimit = maxCpuLimit;
-		}
-
-		public Float getMaxMemoryLimit() {
-			return this.maxMemoryLimit;
-		}
-
-		public void setMaxMemoryLimit(Float maxMemoryLimit) {
-			this.maxMemoryLimit = maxMemoryLimit;
-		}
-
 		public String getChargeType() {
 			return this.chargeType;
 		}
 
 		public void setChargeType(String chargeType) {
 			this.chargeType = chargeType;
+		}
+
+		public String getMinCpu() {
+			return this.minCpu;
+		}
+
+		public void setMinCpu(String minCpu) {
+			this.minCpu = minCpu;
 		}
 
 		public List<UserNetWorkConfigListItem> getUserNetWorkConfigList() {

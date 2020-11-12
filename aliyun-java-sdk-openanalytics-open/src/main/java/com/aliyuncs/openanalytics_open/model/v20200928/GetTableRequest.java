@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.openanalytics_open.model.v20180619;
+package com.aliyuncs.openanalytics_open.model.v20200928;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,33 +22,46 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourcesSpecRequest extends RpcAcsRequest<ListResourcesSpecResponse> {
+public class GetTableRequest extends RpcAcsRequest<GetTableResponse> {
 	   
 
-	private String type;
-	public ListResourcesSpecRequest() {
-		super("openanalytics-open", "2018-06-19", "ListResourcesSpec", "openanalytics");
-		setMethod(MethodType.GET);
+	private String dbName;
+
+	private String tableName;
+	public GetTableRequest() {
+		super("openanalytics-open", "2020-09-28", "GetTable", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getDbName() {
+		return this.dbName;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
 		}
 	}
 
 	@Override
-	public Class<ListResourcesSpecResponse> getResponseClass() {
-		return ListResourcesSpecResponse.class;
+	public Class<GetTableResponse> getResponseClass() {
+		return GetTableResponse.class;
 	}
 
 }

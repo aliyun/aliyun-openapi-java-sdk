@@ -1,0 +1,33 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.aliyuncs.openanalytics_open.transform.v20180619;
+
+import com.aliyuncs.openanalytics_open.model.v20180619.CreateInstanceResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
+
+
+public class CreateInstanceResponseUnmarshaller {
+
+	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
+		
+		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
+		createInstanceResponse.setSuccess(_ctx.booleanValue("CreateInstanceResponse.Success"));
+		createInstanceResponse.setErrorCode(_ctx.stringValue("CreateInstanceResponse.ErrorCode"));
+		createInstanceResponse.setErrorInfo(_ctx.stringValue("CreateInstanceResponse.ErrorInfo"));
+		createInstanceResponse.setResult(_ctx.stringValue("CreateInstanceResponse.Result"));
+	 
+	 	return createInstanceResponse;
+	}
+}

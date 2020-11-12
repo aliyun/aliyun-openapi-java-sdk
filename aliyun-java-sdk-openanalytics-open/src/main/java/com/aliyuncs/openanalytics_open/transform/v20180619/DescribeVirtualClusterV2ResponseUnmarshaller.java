@@ -39,10 +39,8 @@ public class DescribeVirtualClusterV2ResponseUnmarshaller {
 			dataItem.setCreatorId(_ctx.stringValue("DescribeVirtualClusterV2Response.Data["+ i +"].CreatorId"));
 			dataItem.setCreateTime(_ctx.stringValue("DescribeVirtualClusterV2Response.Data["+ i +"].CreateTime"));
 			dataItem.setMaxCpu(_ctx.floatValue("DescribeVirtualClusterV2Response.Data["+ i +"].MaxCpu"));
-			dataItem.setMaxMemory(_ctx.floatValue("DescribeVirtualClusterV2Response.Data["+ i +"].MaxMemory"));
-			dataItem.setMaxCpuLimit(_ctx.floatValue("DescribeVirtualClusterV2Response.Data["+ i +"].MaxCpuLimit"));
-			dataItem.setMaxMemoryLimit(_ctx.floatValue("DescribeVirtualClusterV2Response.Data["+ i +"].MaxMemoryLimit"));
 			dataItem.setChargeType(_ctx.stringValue("DescribeVirtualClusterV2Response.Data["+ i +"].ChargeType"));
+			dataItem.setMinCpu(_ctx.stringValue("DescribeVirtualClusterV2Response.Data["+ i +"].MinCpu"));
 
 			SparkEngineConfig sparkEngineConfig = new SparkEngineConfig();
 			sparkEngineConfig.setSparkModuleReleaseName(_ctx.stringValue("DescribeVirtualClusterV2Response.Data["+ i +"].SparkEngineConfig.SparkModuleReleaseName"));

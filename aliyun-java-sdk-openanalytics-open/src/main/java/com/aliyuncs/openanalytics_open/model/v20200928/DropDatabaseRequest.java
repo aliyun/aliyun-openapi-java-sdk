@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.openanalytics_open.model.v20180619;
+package com.aliyuncs.openanalytics_open.model.v20200928;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,33 +22,46 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourcesSpecRequest extends RpcAcsRequest<ListResourcesSpecResponse> {
+public class DropDatabaseRequest extends RpcAcsRequest<DropDatabaseResponse> {
 	   
 
-	private String type;
-	public ListResourcesSpecRequest() {
-		super("openanalytics-open", "2018-06-19", "ListResourcesSpec", "openanalytics");
-		setMethod(MethodType.GET);
+	private Boolean cascade;
+
+	private String name;
+	public DropDatabaseRequest() {
+		super("openanalytics-open", "2020-09-28", "DropDatabase", "openanalytics");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public Boolean getCascade() {
+		return this.cascade;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setCascade(Boolean cascade) {
+		this.cascade = cascade;
+		if(cascade != null){
+			putQueryParameter("Cascade", cascade.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ListResourcesSpecResponse> getResponseClass() {
-		return ListResourcesSpecResponse.class;
+	public Class<DropDatabaseResponse> getResponseClass() {
+		return DropDatabaseResponse.class;
 	}
 
 }

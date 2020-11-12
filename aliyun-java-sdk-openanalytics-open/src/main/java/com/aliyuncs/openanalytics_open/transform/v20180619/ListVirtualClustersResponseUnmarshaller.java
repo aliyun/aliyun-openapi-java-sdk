@@ -37,6 +37,9 @@ public class ListVirtualClustersResponseUnmarshaller {
 			dataItem.setStatus(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].Status"));
 			dataItem.setType(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].Type"));
 			dataItem.setInstanceId(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].InstanceId"));
+			dataItem.setMinCpu(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].MinCpu"));
+			dataItem.setMaxCpu(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].MaxCpu"));
+			dataItem.setChargeType(_ctx.stringValue("ListVirtualClustersResponse.Data["+ i +"].ChargeType"));
 
 			data.add(dataItem);
 		}
