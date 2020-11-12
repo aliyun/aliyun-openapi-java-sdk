@@ -1,3 +1,7 @@
+2020-11-12 Version: 1.0.1
+- Add type of payment for endpoint service.
+- Add api for opening endpoint.
+
 2020-09-24 Version: 1.0.0
 - Generated 2020-04-15 for `Privatelink`.
 

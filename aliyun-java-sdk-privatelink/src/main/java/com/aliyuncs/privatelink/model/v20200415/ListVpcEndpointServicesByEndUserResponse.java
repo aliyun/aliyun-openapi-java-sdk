@@ -73,6 +73,8 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 		private String serviceName;
 
+		private String payer;
+
 		private List<String> zones;
 
 		public String getServiceDomain() {
@@ -97,6 +99,14 @@ public class ListVpcEndpointServicesByEndUserResponse extends AcsResponse {
 
 		public void setServiceName(String serviceName) {
 			this.serviceName = serviceName;
+		}
+
+		public String getPayer() {
+			return this.payer;
+		}
+
+		public void setPayer(String payer) {
+			this.payer = payer;
 		}
 
 		public List<String> getZones() {

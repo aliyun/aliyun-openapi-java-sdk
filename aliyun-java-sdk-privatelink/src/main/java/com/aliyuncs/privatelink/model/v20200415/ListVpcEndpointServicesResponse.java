@@ -91,6 +91,8 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 
 		private String serviceStatus;
 
+		private String payer;
+
 		public Boolean getAutoAcceptEnabled() {
 			return this.autoAcceptEnabled;
 		}
@@ -185,6 +187,14 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 
 		public void setServiceStatus(String serviceStatus) {
 			this.serviceStatus = serviceStatus;
+		}
+
+		public String getPayer() {
+			return this.payer;
+		}
+
+		public void setPayer(String payer) {
+			this.payer = payer;
 		}
 	}
 

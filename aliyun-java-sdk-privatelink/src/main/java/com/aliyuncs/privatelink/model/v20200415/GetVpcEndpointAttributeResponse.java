@@ -52,6 +52,8 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private String regionId;
 
+	private String payer;
+
 	public String getBandwidth() {
 		return this.bandwidth;
 	}
@@ -162,6 +164,14 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getPayer() {
+		return this.payer;
+	}
+
+	public void setPayer(String payer) {
+		this.payer = payer;
 	}
 
 	@Override

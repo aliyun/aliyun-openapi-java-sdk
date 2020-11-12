@@ -51,6 +51,8 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	private String regionId;
 
+	private String payer;
+
 	private List<String> zones;
 
 	public String getRequestId() {
@@ -155,6 +157,14 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	public void setRegionId(String regionId) {
 		this.regionId = regionId;
+	}
+
+	public String getPayer() {
+		return this.payer;
+	}
+
+	public void setPayer(String payer) {
+		this.payer = payer;
 	}
 
 	public List<String> getZones() {

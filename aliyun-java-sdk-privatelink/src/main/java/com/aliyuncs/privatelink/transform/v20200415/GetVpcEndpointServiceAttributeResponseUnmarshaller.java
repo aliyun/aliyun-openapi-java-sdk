@@ -38,6 +38,7 @@ public class GetVpcEndpointServiceAttributeResponseUnmarshaller {
 		getVpcEndpointServiceAttributeResponse.setMinBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.MinBandwidth"));
 		getVpcEndpointServiceAttributeResponse.setConnectBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.ConnectBandwidth"));
 		getVpcEndpointServiceAttributeResponse.setRegionId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.RegionId"));
+		getVpcEndpointServiceAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.Payer"));
 
 		List<String> zones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVpcEndpointServiceAttributeResponse.Zones.Length"); i++) {

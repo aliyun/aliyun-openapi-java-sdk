@@ -45,6 +45,7 @@ public class ListVpcEndpointServicesResponseUnmarshaller {
 			service.setServiceId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceId"));
 			service.setServiceName(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceName"));
 			service.setServiceStatus(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceStatus"));
+			service.setPayer(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].Payer"));
 
 			services.add(service);
 		}

@@ -36,6 +36,7 @@ public class GetVpcEndpointAttributeResponseUnmarshaller {
 		getVpcEndpointAttributeResponse.setServiceName(_ctx.stringValue("GetVpcEndpointAttributeResponse.ServiceName"));
 		getVpcEndpointAttributeResponse.setVpcId(_ctx.stringValue("GetVpcEndpointAttributeResponse.VpcId"));
 		getVpcEndpointAttributeResponse.setRegionId(_ctx.stringValue("GetVpcEndpointAttributeResponse.RegionId"));
+		getVpcEndpointAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointAttributeResponse.Payer"));
 	 
 	 	return getVpcEndpointAttributeResponse;
 	}

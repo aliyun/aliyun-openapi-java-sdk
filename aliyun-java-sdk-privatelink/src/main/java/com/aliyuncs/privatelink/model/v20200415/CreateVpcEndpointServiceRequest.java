@@ -31,6 +31,8 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 	private String clientToken;
 
+	private String payer;
+
 	private Boolean dryRun;
 
 	private List<Resource> resources;
@@ -65,6 +67,17 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getPayer() {
+		return this.payer;
+	}
+
+	public void setPayer(String payer) {
+		this.payer = payer;
+		if(payer != null){
+			putQueryParameter("Payer", payer);
 		}
 	}
 
