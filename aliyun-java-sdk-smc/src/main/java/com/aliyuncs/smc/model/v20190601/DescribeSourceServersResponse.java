@@ -111,6 +111,8 @@ public class DescribeSourceServersResponse extends AcsResponse {
 
 		private List<DataDisk> dataDisks;
 
+		private List<SystemDiskPart> systemDiskParts;
+
 		public String getSourceId() {
 			return this.sourceId;
 		}
@@ -247,6 +249,14 @@ public class DescribeSourceServersResponse extends AcsResponse {
 			this.dataDisks = dataDisks;
 		}
 
+		public List<SystemDiskPart> getSystemDiskParts() {
+			return this.systemDiskParts;
+		}
+
+		public void setSystemDiskParts(List<SystemDiskPart> systemDiskParts) {
+			this.systemDiskParts = systemDiskParts;
+		}
+
 		public static class DataDisk {
 
 			private Integer index;
@@ -254,6 +264,8 @@ public class DescribeSourceServersResponse extends AcsResponse {
 			private Integer size;
 
 			private String path;
+
+			private List<Part> parts;
 
 			public Integer getIndex() {
 				return this.index;
@@ -277,6 +289,120 @@ public class DescribeSourceServersResponse extends AcsResponse {
 
 			public void setPath(String path) {
 				this.path = path;
+			}
+
+			public List<Part> getParts() {
+				return this.parts;
+			}
+
+			public void setParts(List<Part> parts) {
+				this.parts = parts;
+			}
+
+			public static class Part {
+
+				private String path;
+
+				private String device;
+
+				private Long sizeBytes;
+
+				private Boolean need;
+
+				private Boolean canBlock;
+
+				public String getPath() {
+					return this.path;
+				}
+
+				public void setPath(String path) {
+					this.path = path;
+				}
+
+				public String getDevice() {
+					return this.device;
+				}
+
+				public void setDevice(String device) {
+					this.device = device;
+				}
+
+				public Long getSizeBytes() {
+					return this.sizeBytes;
+				}
+
+				public void setSizeBytes(Long sizeBytes) {
+					this.sizeBytes = sizeBytes;
+				}
+
+				public Boolean getNeed() {
+					return this.need;
+				}
+
+				public void setNeed(Boolean need) {
+					this.need = need;
+				}
+
+				public Boolean getCanBlock() {
+					return this.canBlock;
+				}
+
+				public void setCanBlock(Boolean canBlock) {
+					this.canBlock = canBlock;
+				}
+			}
+		}
+
+		public static class SystemDiskPart {
+
+			private String path;
+
+			private String device;
+
+			private Long sizeBytes;
+
+			private Boolean need;
+
+			private Boolean canBlock;
+
+			public String getPath() {
+				return this.path;
+			}
+
+			public void setPath(String path) {
+				this.path = path;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Long getSizeBytes() {
+				return this.sizeBytes;
+			}
+
+			public void setSizeBytes(Long sizeBytes) {
+				this.sizeBytes = sizeBytes;
+			}
+
+			public Boolean getNeed() {
+				return this.need;
+			}
+
+			public void setNeed(Boolean need) {
+				this.need = need;
+			}
+
+			public Boolean getCanBlock() {
+				return this.canBlock;
+			}
+
+			public void setCanBlock(Boolean canBlock) {
+				this.canBlock = canBlock;
 			}
 		}
 	}

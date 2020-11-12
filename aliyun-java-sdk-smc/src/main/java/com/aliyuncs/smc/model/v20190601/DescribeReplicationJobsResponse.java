@@ -135,6 +135,20 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 
 		private String instanceType;
 
+		private String launchTemplateId;
+
+		private String launchTemplateVersion;
+
+		private String instanceRamRole;
+
+		private String containerNamespace;
+
+		private String containerRepository;
+
+		private String containerTag;
+
+		private List<SystemDiskPart> systemDiskParts;
+
 		private List<DataDisk> dataDisks;
 
 		private List<ReplicationJobRun> replicationJobRuns;
@@ -371,6 +385,62 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
+		public String getLaunchTemplateId() {
+			return this.launchTemplateId;
+		}
+
+		public void setLaunchTemplateId(String launchTemplateId) {
+			this.launchTemplateId = launchTemplateId;
+		}
+
+		public String getLaunchTemplateVersion() {
+			return this.launchTemplateVersion;
+		}
+
+		public void setLaunchTemplateVersion(String launchTemplateVersion) {
+			this.launchTemplateVersion = launchTemplateVersion;
+		}
+
+		public String getInstanceRamRole() {
+			return this.instanceRamRole;
+		}
+
+		public void setInstanceRamRole(String instanceRamRole) {
+			this.instanceRamRole = instanceRamRole;
+		}
+
+		public String getContainerNamespace() {
+			return this.containerNamespace;
+		}
+
+		public void setContainerNamespace(String containerNamespace) {
+			this.containerNamespace = containerNamespace;
+		}
+
+		public String getContainerRepository() {
+			return this.containerRepository;
+		}
+
+		public void setContainerRepository(String containerRepository) {
+			this.containerRepository = containerRepository;
+		}
+
+		public String getContainerTag() {
+			return this.containerTag;
+		}
+
+		public void setContainerTag(String containerTag) {
+			this.containerTag = containerTag;
+		}
+
+		public List<SystemDiskPart> getSystemDiskParts() {
+			return this.systemDiskParts;
+		}
+
+		public void setSystemDiskParts(List<SystemDiskPart> systemDiskParts) {
+			this.systemDiskParts = systemDiskParts;
+		}
+
 		public List<DataDisk> getDataDisks() {
 			return this.dataDisks;
 		}
@@ -387,11 +457,46 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 			this.replicationJobRuns = replicationJobRuns;
 		}
 
+		public static class SystemDiskPart {
+
+			private String device;
+
+			private Long sizeBytes;
+
+			private Boolean block;
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
+
+			public Long getSizeBytes() {
+				return this.sizeBytes;
+			}
+
+			public void setSizeBytes(Long sizeBytes) {
+				this.sizeBytes = sizeBytes;
+			}
+
+			public Boolean getBlock() {
+				return this.block;
+			}
+
+			public void setBlock(Boolean block) {
+				this.block = block;
+			}
+		}
+
 		public static class DataDisk {
 
 			private Integer size;
 
 			private Integer index;
+
+			private List<Part> parts;
 
 			public Integer getSize() {
 				return this.size;
@@ -407,6 +512,47 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 
 			public void setIndex(Integer index) {
 				this.index = index;
+			}
+
+			public List<Part> getParts() {
+				return this.parts;
+			}
+
+			public void setParts(List<Part> parts) {
+				this.parts = parts;
+			}
+
+			public static class Part {
+
+				private String device;
+
+				private Long sizeBytes;
+
+				private Boolean block;
+
+				public String getDevice() {
+					return this.device;
+				}
+
+				public void setDevice(String device) {
+					this.device = device;
+				}
+
+				public Long getSizeBytes() {
+					return this.sizeBytes;
+				}
+
+				public void setSizeBytes(Long sizeBytes) {
+					this.sizeBytes = sizeBytes;
+				}
+
+				public Boolean getBlock() {
+					return this.block;
+				}
+
+				public void setBlock(Boolean block) {
+					this.block = block;
+				}
 			}
 		}
 

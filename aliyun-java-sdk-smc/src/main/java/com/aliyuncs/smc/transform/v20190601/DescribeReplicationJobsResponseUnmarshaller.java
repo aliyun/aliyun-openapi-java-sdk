@@ -20,7 +20,9 @@ import java.util.List;
 import com.aliyuncs.smc.model.v20190601.DescribeReplicationJobsResponse;
 import com.aliyuncs.smc.model.v20190601.DescribeReplicationJobsResponse.ReplicationJob;
 import com.aliyuncs.smc.model.v20190601.DescribeReplicationJobsResponse.ReplicationJob.DataDisk;
+import com.aliyuncs.smc.model.v20190601.DescribeReplicationJobsResponse.ReplicationJob.DataDisk.Part;
 import com.aliyuncs.smc.model.v20190601.DescribeReplicationJobsResponse.ReplicationJob.ReplicationJobRun;
+import com.aliyuncs.smc.model.v20190601.DescribeReplicationJobsResponse.ReplicationJob.SystemDiskPart;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -65,12 +67,40 @@ public class DescribeReplicationJobsResponseUnmarshaller {
 			replicationJob.setFrequency(_ctx.integerValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].Frequency"));
 			replicationJob.setMaxNumberOfImageToKeep(_ctx.integerValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].MaxNumberOfImageToKeep"));
 			replicationJob.setInstanceType(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].InstanceType"));
+			replicationJob.setLaunchTemplateId(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].LaunchTemplateId"));
+			replicationJob.setLaunchTemplateVersion(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].LaunchTemplateVersion"));
+			replicationJob.setInstanceRamRole(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].InstanceRamRole"));
+			replicationJob.setContainerNamespace(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].ContainerNamespace"));
+			replicationJob.setContainerRepository(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].ContainerRepository"));
+			replicationJob.setContainerTag(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].ContainerTag"));
+
+			List<SystemDiskPart> systemDiskParts = new ArrayList<SystemDiskPart>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].SystemDiskParts.Length"); j++) {
+				SystemDiskPart systemDiskPart = new SystemDiskPart();
+				systemDiskPart.setDevice(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].SystemDiskParts["+ j +"].Device"));
+				systemDiskPart.setSizeBytes(_ctx.longValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].SystemDiskParts["+ j +"].SizeBytes"));
+				systemDiskPart.setBlock(_ctx.booleanValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].SystemDiskParts["+ j +"].Block"));
+
+				systemDiskParts.add(systemDiskPart);
+			}
+			replicationJob.setSystemDiskParts(systemDiskParts);
 
 			List<DataDisk> dataDisks = new ArrayList<DataDisk>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks.Length"); j++) {
 				DataDisk dataDisk = new DataDisk();
 				dataDisk.setSize(_ctx.integerValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks["+ j +"].Size"));
 				dataDisk.setIndex(_ctx.integerValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks["+ j +"].Index"));
+
+				List<Part> parts = new ArrayList<Part>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
+					Part part = new Part();
+					part.setDevice(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device"));
+					part.setSizeBytes(_ctx.longValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes"));
+					part.setBlock(_ctx.booleanValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Block"));
+
+					parts.add(part);
+				}
+				dataDisk.setParts(parts);
 
 				dataDisks.add(dataDisk);
 			}

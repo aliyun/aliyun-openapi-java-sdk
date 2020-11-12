@@ -20,6 +20,8 @@ import java.util.List;
 import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse;
 import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer;
 import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.DataDisk;
+import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.DataDisk.Part;
+import com.aliyuncs.smc.model.v20190601.DescribeSourceServersResponse.SourceServer.SystemDiskPart;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -59,9 +61,35 @@ public class DescribeSourceServersResponseUnmarshaller {
 				dataDisk.setSize(_ctx.integerValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Size"));
 				dataDisk.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Path"));
 
+				List<Part> parts = new ArrayList<Part>();
+				for (int k = 0; k < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
+					Part part = new Part();
+					part.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Path"));
+					part.setDevice(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device"));
+					part.setSizeBytes(_ctx.longValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes"));
+					part.setNeed(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Need"));
+					part.setCanBlock(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].CanBlock"));
+
+					parts.add(part);
+				}
+				dataDisk.setParts(parts);
+
 				dataDisks.add(dataDisk);
 			}
 			sourceServer.setDataDisks(dataDisks);
+
+			List<SystemDiskPart> systemDiskParts = new ArrayList<SystemDiskPart>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts.Length"); j++) {
+				SystemDiskPart systemDiskPart = new SystemDiskPart();
+				systemDiskPart.setPath(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Path"));
+				systemDiskPart.setDevice(_ctx.stringValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Device"));
+				systemDiskPart.setSizeBytes(_ctx.longValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].SizeBytes"));
+				systemDiskPart.setNeed(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].Need"));
+				systemDiskPart.setCanBlock(_ctx.booleanValue("DescribeSourceServersResponse.SourceServers["+ i +"].SystemDiskParts["+ j +"].CanBlock"));
+
+				systemDiskParts.add(systemDiskPart);
+			}
+			sourceServer.setSystemDiskParts(systemDiskParts);
 
 			sourceServers.add(sourceServer);
 		}

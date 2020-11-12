@@ -40,15 +40,31 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 
 	private String instanceType;
 
+	private String containerRepository;
+
+	private String containerTag;
+
+	private String containerNamespace;
+
+	private String launchTemplateId;
+
 	private String resourceOwnerAccount;
+
+	private List<SystemDiskPart> systemDiskParts;
+
+	private String validTime;
 
 	private Long ownerId;
 
 	private List<DataDisk> dataDisks;
 
+	private String launchTemplateVersion;
+
 	private String scheduledStartTime;
 
 	private String instanceId;
+
+	private String instanceRamRole;
 
 	private String name;
 
@@ -139,6 +155,50 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		}
 	}
 
+	public String getContainerRepository() {
+		return this.containerRepository;
+	}
+
+	public void setContainerRepository(String containerRepository) {
+		this.containerRepository = containerRepository;
+		if(containerRepository != null){
+			putQueryParameter("ContainerRepository", containerRepository);
+		}
+	}
+
+	public String getContainerTag() {
+		return this.containerTag;
+	}
+
+	public void setContainerTag(String containerTag) {
+		this.containerTag = containerTag;
+		if(containerTag != null){
+			putQueryParameter("ContainerTag", containerTag);
+		}
+	}
+
+	public String getContainerNamespace() {
+		return this.containerNamespace;
+	}
+
+	public void setContainerNamespace(String containerNamespace) {
+		this.containerNamespace = containerNamespace;
+		if(containerNamespace != null){
+			putQueryParameter("ContainerNamespace", containerNamespace);
+		}
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -147,6 +207,32 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public List<SystemDiskPart> getSystemDiskParts() {
+		return this.systemDiskParts;
+	}
+
+	public void setSystemDiskParts(List<SystemDiskPart> systemDiskParts) {
+		this.systemDiskParts = systemDiskParts;	
+		if (systemDiskParts != null) {
+			for (int depth1 = 0; depth1 < systemDiskParts.size(); depth1++) {
+				putQueryParameter("SystemDiskPart." + (depth1 + 1) + ".SizeBytes" , systemDiskParts.get(depth1).getSizeBytes());
+				putQueryParameter("SystemDiskPart." + (depth1 + 1) + ".Block" , systemDiskParts.get(depth1).getBlock());
+				putQueryParameter("SystemDiskPart." + (depth1 + 1) + ".Device" , systemDiskParts.get(depth1).getDevice());
+			}
+		}	
+	}
+
+	public String getValidTime() {
+		return this.validTime;
+	}
+
+	public void setValidTime(String validTime) {
+		this.validTime = validTime;
+		if(validTime != null){
+			putQueryParameter("ValidTime", validTime);
 		}
 	}
 
@@ -170,9 +256,27 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		if (dataDisks != null) {
 			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				if (dataDisks.get(depth1).getParts() != null) {
+					for (int depth2 = 0; depth2 < dataDisks.get(depth1).getParts().size(); depth2++) {
+						putQueryParameter("DataDisk." + (depth1 + 1) + ".Part." + (depth2 + 1) + ".SizeBytes" , dataDisks.get(depth1).getParts().get(depth2).getSizeBytes());
+						putQueryParameter("DataDisk." + (depth1 + 1) + ".Part." + (depth2 + 1) + ".Block" , dataDisks.get(depth1).getParts().get(depth2).getBlock());
+						putQueryParameter("DataDisk." + (depth1 + 1) + ".Part." + (depth2 + 1) + ".Device" , dataDisks.get(depth1).getParts().get(depth2).getDevice());
+					}
+				}
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Index" , dataDisks.get(depth1).getIndex());
 			}
 		}	
+	}
+
+	public String getLaunchTemplateVersion() {
+		return this.launchTemplateVersion;
+	}
+
+	public void setLaunchTemplateVersion(String launchTemplateVersion) {
+		this.launchTemplateVersion = launchTemplateVersion;
+		if(launchTemplateVersion != null){
+			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
+		}
 	}
 
 	public String getScheduledStartTime() {
@@ -194,6 +298,17 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getInstanceRamRole() {
+		return this.instanceRamRole;
+	}
+
+	public void setInstanceRamRole(String instanceRamRole) {
+		this.instanceRamRole = instanceRamRole;
+		if(instanceRamRole != null){
+			putQueryParameter("InstanceRamRole", instanceRamRole);
 		}
 	}
 
@@ -219,9 +334,44 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 		}
 	}
 
+	public static class SystemDiskPart {
+
+		private Long sizeBytes;
+
+		private Boolean block;
+
+		private String device;
+
+		public Long getSizeBytes() {
+			return this.sizeBytes;
+		}
+
+		public void setSizeBytes(Long sizeBytes) {
+			this.sizeBytes = sizeBytes;
+		}
+
+		public Boolean getBlock() {
+			return this.block;
+		}
+
+		public void setBlock(Boolean block) {
+			this.block = block;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
+	}
+
 	public static class DataDisk {
 
 		private Integer size;
+
+		private List<Part> parts;
 
 		private Integer index;
 
@@ -233,12 +383,53 @@ public class ModifyReplicationJobAttributeRequest extends RpcAcsRequest<ModifyRe
 			this.size = size;
 		}
 
+		public List<Part> getParts() {
+			return this.parts;
+		}
+
+		public void setParts(List<Part> parts) {
+			this.parts = parts;
+		}
+
 		public Integer getIndex() {
 			return this.index;
 		}
 
 		public void setIndex(Integer index) {
 			this.index = index;
+		}
+
+		public static class Part {
+
+			private Long sizeBytes;
+
+			private Boolean block;
+
+			private String device;
+
+			public Long getSizeBytes() {
+				return this.sizeBytes;
+			}
+
+			public void setSizeBytes(Long sizeBytes) {
+				this.sizeBytes = sizeBytes;
+			}
+
+			public Boolean getBlock() {
+				return this.block;
+			}
+
+			public void setBlock(Boolean block) {
+				this.block = block;
+			}
+
+			public String getDevice() {
+				return this.device;
+			}
+
+			public void setDevice(String device) {
+				this.device = device;
+			}
 		}
 	}
 
