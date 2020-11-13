@@ -37,7 +37,6 @@ public class DescribeAccountsResponseUnmarshaller {
 			account.setAccountStatus(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountStatus"));
 			account.setAccountType(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountType"));
 			account.setAccountDescription(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].AccountDescription"));
-			account.setPrivExceeded(_ctx.stringValue("DescribeAccountsResponse.Accounts["+ i +"].PrivExceeded"));
 
 			List<DatabasePrivilege> databasePrivileges = new ArrayList<DatabasePrivilege>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAccountsResponse.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {

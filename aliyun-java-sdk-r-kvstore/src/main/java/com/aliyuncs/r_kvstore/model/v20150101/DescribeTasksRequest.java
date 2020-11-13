@@ -22,20 +22,32 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class InitializeKvstorePermissionRequest extends RpcAcsRequest<InitializeKvstorePermissionResponse> {
+public class DescribeTasksRequest extends RpcAcsRequest<DescribeTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String startTime;
+
+	private Integer pageNumber;
+
 	private String securityToken;
+
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
-	public InitializeKvstorePermissionRequest() {
-		super("R-kvstore", "2015-01-01", "InitializeKvstorePermission", "redisa");
+
+	private String instanceId;
+
+	private String status;
+	public DescribeTasksRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeTasks", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +66,28 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -62,6 +96,17 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -87,6 +132,17 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -98,9 +154,31 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
 	@Override
-	public Class<InitializeKvstorePermissionResponse> getResponseClass() {
-		return InitializeKvstorePermissionResponse.class;
+	public Class<DescribeTasksResponse> getResponseClass() {
+		return DescribeTasksResponse.class;
 	}
 
 }

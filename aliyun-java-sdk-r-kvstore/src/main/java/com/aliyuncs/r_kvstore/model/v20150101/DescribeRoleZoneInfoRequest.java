@@ -22,20 +22,28 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class InitializeKvstorePermissionRequest extends RpcAcsRequest<InitializeKvstorePermissionResponse> {
+public class DescribeRoleZoneInfoRequest extends RpcAcsRequest<DescribeRoleZoneInfoResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private Integer pageNumber;
+
 	private String securityToken;
+
+	private Integer pageSize;
+
+	private Integer queryType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public InitializeKvstorePermissionRequest() {
-		super("R-kvstore", "2015-01-01", "InitializeKvstorePermission", "redisa");
+
+	private String instanceId;
+	public DescribeRoleZoneInfoRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeRoleZoneInfo", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +62,17 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -62,6 +81,28 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(Integer queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType.toString());
 		}
 	}
 
@@ -98,9 +139,20 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<InitializeKvstorePermissionResponse> getResponseClass() {
-		return InitializeKvstorePermissionResponse.class;
+	public Class<DescribeRoleZoneInfoResponse> getResponseClass() {
+		return DescribeRoleZoneInfoResponse.class;
 	}
 
 }

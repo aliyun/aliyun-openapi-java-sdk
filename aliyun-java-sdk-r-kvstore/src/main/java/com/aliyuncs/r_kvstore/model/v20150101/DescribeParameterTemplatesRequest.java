@@ -22,20 +22,26 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class InitializeKvstorePermissionRequest extends RpcAcsRequest<InitializeKvstorePermissionResponse> {
+public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String engineVersion;
+
 	private String securityToken;
+
+	private String engine;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public InitializeKvstorePermissionRequest() {
-		super("R-kvstore", "2015-01-01", "InitializeKvstorePermission", "redisa");
+
+	private String characterType;
+	public DescribeParameterTemplatesRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,6 +60,17 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -62,6 +79,17 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -98,9 +126,20 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getCharacterType() {
+		return this.characterType;
+	}
+
+	public void setCharacterType(String characterType) {
+		this.characterType = characterType;
+		if(characterType != null){
+			putQueryParameter("CharacterType", characterType);
+		}
+	}
+
 	@Override
-	public Class<InitializeKvstorePermissionResponse> getResponseClass() {
-		return InitializeKvstorePermissionResponse.class;
+	public Class<DescribeParameterTemplatesResponse> getResponseClass() {
+		return DescribeParameterTemplatesResponse.class;
 	}
 
 }

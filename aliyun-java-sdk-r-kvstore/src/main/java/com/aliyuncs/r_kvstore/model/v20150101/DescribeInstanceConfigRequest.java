@@ -22,7 +22,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class InitializeKvstorePermissionRequest extends RpcAcsRequest<InitializeKvstorePermissionResponse> {
+public class DescribeInstanceConfigRequest extends RpcAcsRequest<DescribeInstanceConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -34,8 +34,10 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 	private String ownerAccount;
 
 	private Long ownerId;
-	public InitializeKvstorePermissionRequest() {
-		super("R-kvstore", "2015-01-01", "InitializeKvstorePermission", "redisa");
+
+	private String instanceId;
+	public DescribeInstanceConfigRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeInstanceConfig", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -98,9 +100,20 @@ public class InitializeKvstorePermissionRequest extends RpcAcsRequest<Initialize
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<InitializeKvstorePermissionResponse> getResponseClass() {
-		return InitializeKvstorePermissionResponse.class;
+	public Class<DescribeInstanceConfigResponse> getResponseClass() {
+		return DescribeInstanceConfigResponse.class;
 	}
 
 }

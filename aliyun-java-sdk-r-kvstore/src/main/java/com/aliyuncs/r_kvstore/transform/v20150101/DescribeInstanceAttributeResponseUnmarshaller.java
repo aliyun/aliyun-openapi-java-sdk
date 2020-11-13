@@ -63,7 +63,6 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setSecurityIPList(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].SecurityIPList"));
 			dBInstanceAttribute.setInstanceType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceType"));
 			dBInstanceAttribute.setArchitectureType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ArchitectureType"));
-			dBInstanceAttribute.setNodeType1(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].NodeType"));
 			dBInstanceAttribute.setPackageType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].PackageType"));
 			dBInstanceAttribute.setReplicaId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ReplicaId"));
 			dBInstanceAttribute.setVpcAuthMode(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].VpcAuthMode"));

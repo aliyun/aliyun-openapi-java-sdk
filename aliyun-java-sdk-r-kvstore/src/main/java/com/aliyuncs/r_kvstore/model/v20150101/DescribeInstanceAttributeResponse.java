@@ -109,8 +109,6 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String architectureType;
 
-		private String nodeType1;
-
 		private String packageType;
 
 		private String replicaId;
@@ -377,14 +375,6 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setArchitectureType(String architectureType) {
 			this.architectureType = architectureType;
-		}
-
-		public String getNodeType1() {
-			return this.nodeType1;
-		}
-
-		public void setNodeType1(String nodeType1) {
-			this.nodeType1 = nodeType1;
 		}
 
 		public String getPackageType() {

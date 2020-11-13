@@ -57,8 +57,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		private String accountDescription;
 
-		private String privExceeded;
-
 		private List<DatabasePrivilege> databasePrivileges;
 
 		public String getInstanceId() {
@@ -99,14 +97,6 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 		public void setAccountDescription(String accountDescription) {
 			this.accountDescription = accountDescription;
-		}
-
-		public String getPrivExceeded() {
-			return this.privExceeded;
-		}
-
-		public void setPrivExceeded(String privExceeded) {
-			this.privExceeded = privExceeded;
 		}
 
 		public List<DatabasePrivilege> getDatabasePrivileges() {
