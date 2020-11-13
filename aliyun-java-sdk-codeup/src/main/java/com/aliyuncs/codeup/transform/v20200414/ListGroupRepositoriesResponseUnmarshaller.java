@@ -30,6 +30,7 @@ public class ListGroupRepositoriesResponseUnmarshaller {
 		listGroupRepositoriesResponse.setErrorCode(_ctx.stringValue("ListGroupRepositoriesResponse.ErrorCode"));
 		listGroupRepositoriesResponse.setSuccess(_ctx.booleanValue("ListGroupRepositoriesResponse.Success"));
 		listGroupRepositoriesResponse.setErrorMessage(_ctx.stringValue("ListGroupRepositoriesResponse.ErrorMessage"));
+		listGroupRepositoriesResponse.setTotal(_ctx.longValue("ListGroupRepositoriesResponse.Total"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListGroupRepositoriesResponse.Result.Length"); i++) {

@@ -33,6 +33,8 @@ public class ListGroupMemberResponse extends AcsResponse {
 
 	private String errorMessage;
 
+	private Long total;
+
 	private List<ResultItem> result;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class ListGroupMemberResponse extends AcsResponse {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
 	}
 
 	public List<ResultItem> getResult() {

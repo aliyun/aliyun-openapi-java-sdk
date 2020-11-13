@@ -21,21 +21,25 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
+public class ListRepositoryBranchesRequest extends RoaAcsRequest<ListRepositoryBranchesResponse> {
 	   
 
 	private String organizationId;
 
+	private String search;
+
 	private String subUserId;
+
+	private Long pageSize;
 
 	private String accessToken;
 
-	private Long projectId;
+	private Long page;
 
-	private String branchName;
-	public GetBranchInfoRequest() {
-		super("codeup", "2020-04-14", "GetBranchInfo");
-		setUriPattern("/api/v3/projects/[ProjectId]/repository/branches/detail");
+	private Long projectId;
+	public ListRepositoryBranchesRequest() {
+		super("codeup", "2020-04-14", "ListRepositoryBranches");
+		setUriPattern("/api/v3/projects/[ProjectId]/repository/branches");
 		setMethod(MethodType.GET);
 	}
 
@@ -50,6 +54,17 @@ public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
 		}
 	}
 
+	public String getSearch() {
+		return this.search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+		if(search != null){
+			putQueryParameter("Search", search);
+		}
+	}
+
 	public String getSubUserId() {
 		return this.subUserId;
 	}
@@ -58,6 +73,17 @@ public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
 		this.subUserId = subUserId;
 		if(subUserId != null){
 			putQueryParameter("SubUserId", subUserId);
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -72,6 +98,17 @@ public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
 		}
 	}
 
+	public Long getPage() {
+		return this.page;
+	}
+
+	public void setPage(Long page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
 	public Long getProjectId() {
 		return this.projectId;
 	}
@@ -83,20 +120,9 @@ public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
 		}
 	}
 
-	public String getBranchName() {
-		return this.branchName;
-	}
-
-	public void setBranchName(String branchName) {
-		this.branchName = branchName;
-		if(branchName != null){
-			putQueryParameter("BranchName", branchName);
-		}
-	}
-
 	@Override
-	public Class<GetBranchInfoResponse> getResponseClass() {
-		return GetBranchInfoResponse.class;
+	public Class<ListRepositoryBranchesResponse> getResponseClass() {
+		return ListRepositoryBranchesResponse.class;
 	}
 
 }

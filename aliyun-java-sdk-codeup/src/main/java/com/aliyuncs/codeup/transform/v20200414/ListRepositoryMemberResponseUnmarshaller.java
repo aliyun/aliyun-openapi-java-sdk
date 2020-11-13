@@ -30,6 +30,7 @@ public class ListRepositoryMemberResponseUnmarshaller {
 		listRepositoryMemberResponse.setErrorCode(_ctx.stringValue("ListRepositoryMemberResponse.ErrorCode"));
 		listRepositoryMemberResponse.setSuccess(_ctx.booleanValue("ListRepositoryMemberResponse.Success"));
 		listRepositoryMemberResponse.setErrorMessage(_ctx.stringValue("ListRepositoryMemberResponse.ErrorMessage"));
+		listRepositoryMemberResponse.setTotal(_ctx.longValue("ListRepositoryMemberResponse.Total"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListRepositoryMemberResponse.Result.Length"); i++) {

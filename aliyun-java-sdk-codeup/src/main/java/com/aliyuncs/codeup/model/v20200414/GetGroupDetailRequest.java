@@ -21,21 +21,19 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
+public class GetGroupDetailRequest extends RoaAcsRequest<GetGroupDetailResponse> {
 	   
 
 	private String organizationId;
 
 	private String subUserId;
 
+	private Long groupId;
+
 	private String accessToken;
-
-	private Long projectId;
-
-	private String branchName;
-	public GetBranchInfoRequest() {
-		super("codeup", "2020-04-14", "GetBranchInfo");
-		setUriPattern("/api/v3/projects/[ProjectId]/repository/branches/detail");
+	public GetGroupDetailRequest() {
+		super("codeup", "2020-04-14", "GetGroupDetail");
+		setUriPattern("/api/v3/groups/detail");
 		setMethod(MethodType.GET);
 	}
 
@@ -61,6 +59,17 @@ public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
 		}
 	}
 
+	public Long getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
+		}
+	}
+
 	public String getAccessToken() {
 		return this.accessToken;
 	}
@@ -72,31 +81,9 @@ public class GetBranchInfoRequest extends RoaAcsRequest<GetBranchInfoResponse> {
 		}
 	}
 
-	public Long getProjectId() {
-		return this.projectId;
-	}
-
-	public void setProjectId(Long projectId) {
-		this.projectId = projectId;
-		if(projectId != null){
-			putPathParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public String getBranchName() {
-		return this.branchName;
-	}
-
-	public void setBranchName(String branchName) {
-		this.branchName = branchName;
-		if(branchName != null){
-			putQueryParameter("BranchName", branchName);
-		}
-	}
-
 	@Override
-	public Class<GetBranchInfoResponse> getResponseClass() {
-		return GetBranchInfoResponse.class;
+	public Class<GetGroupDetailResponse> getResponseClass() {
+		return GetGroupDetailResponse.class;
 	}
 
 }

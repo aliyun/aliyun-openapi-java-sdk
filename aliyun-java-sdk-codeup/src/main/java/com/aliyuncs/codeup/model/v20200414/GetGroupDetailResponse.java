@@ -14,16 +14,15 @@
 
 package com.aliyuncs.codeup.model.v20200414;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.codeup.transform.v20200414.ListGroupsResponseUnmarshaller;
+import com.aliyuncs.codeup.transform.v20200414.GetGroupDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListGroupsResponse extends AcsResponse {
+public class GetGroupDetailResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,9 +32,7 @@ public class ListGroupsResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Long total;
-
-	private List<ResultItem> result;
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -69,51 +66,39 @@ public class ListGroupsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
-	}
-
-	public List<ResultItem> getResult() {
+	public Result getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(Result result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class Result {
 
 		private Long id;
 
-		private String createdAt;
-
-		private String updatedAt;
-
-		private Integer accessLevel;
-
-		private String description;
-
 		private String name;
-
-		private String nameWithNamespace;
-
-		private Long ownerId;
-
-		private Long parentId;
 
 		private String path;
 
+		private String description;
+
+		private String avatarUrl;
+
+		private String webUrl;
+
 		private String pathWithNamespace;
+
+		private String nameWithNamespace;
 
 		private String type;
 
 		private String visibilityLevel;
 
-		private String webUrl;
+		private Long parentId;
+
+		private Long ownerId;
 
 		public Long getId() {
 			return this.id;
@@ -121,38 +106,6 @@ public class ListGroupsResponse extends AcsResponse {
 
 		public void setId(Long id) {
 			this.id = id;
-		}
-
-		public String getCreatedAt() {
-			return this.createdAt;
-		}
-
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
-
-		public String getUpdatedAt() {
-			return this.updatedAt;
-		}
-
-		public void setUpdatedAt(String updatedAt) {
-			this.updatedAt = updatedAt;
-		}
-
-		public Integer getAccessLevel() {
-			return this.accessLevel;
-		}
-
-		public void setAccessLevel(Integer accessLevel) {
-			this.accessLevel = accessLevel;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 
 		public String getName() {
@@ -163,30 +116,6 @@ public class ListGroupsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getNameWithNamespace() {
-			return this.nameWithNamespace;
-		}
-
-		public void setNameWithNamespace(String nameWithNamespace) {
-			this.nameWithNamespace = nameWithNamespace;
-		}
-
-		public Long getOwnerId() {
-			return this.ownerId;
-		}
-
-		public void setOwnerId(Long ownerId) {
-			this.ownerId = ownerId;
-		}
-
-		public Long getParentId() {
-			return this.parentId;
-		}
-
-		public void setParentId(Long parentId) {
-			this.parentId = parentId;
-		}
-
 		public String getPath() {
 			return this.path;
 		}
@@ -195,12 +124,44 @@ public class ListGroupsResponse extends AcsResponse {
 			this.path = path;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getAvatarUrl() {
+			return this.avatarUrl;
+		}
+
+		public void setAvatarUrl(String avatarUrl) {
+			this.avatarUrl = avatarUrl;
+		}
+
+		public String getWebUrl() {
+			return this.webUrl;
+		}
+
+		public void setWebUrl(String webUrl) {
+			this.webUrl = webUrl;
+		}
+
 		public String getPathWithNamespace() {
 			return this.pathWithNamespace;
 		}
 
 		public void setPathWithNamespace(String pathWithNamespace) {
 			this.pathWithNamespace = pathWithNamespace;
+		}
+
+		public String getNameWithNamespace() {
+			return this.nameWithNamespace;
+		}
+
+		public void setNameWithNamespace(String nameWithNamespace) {
+			this.nameWithNamespace = nameWithNamespace;
 		}
 
 		public String getType() {
@@ -219,18 +180,26 @@ public class ListGroupsResponse extends AcsResponse {
 			this.visibilityLevel = visibilityLevel;
 		}
 
-		public String getWebUrl() {
-			return this.webUrl;
+		public Long getParentId() {
+			return this.parentId;
 		}
 
-		public void setWebUrl(String webUrl) {
-			this.webUrl = webUrl;
+		public void setParentId(Long parentId) {
+			this.parentId = parentId;
+		}
+
+		public Long getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(Long ownerId) {
+			this.ownerId = ownerId;
 		}
 	}
 
 	@Override
-	public ListGroupsResponse getInstance(UnmarshallerContext context) {
-		return	ListGroupsResponseUnmarshaller.unmarshall(this, context);
+	public GetGroupDetailResponse getInstance(UnmarshallerContext context) {
+		return	GetGroupDetailResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class DeleteBranchRequest extends RoaAcsRequest<DeleteBranchResponse> {
 	private String branchName;
 	public DeleteBranchRequest() {
 		super("codeup", "2020-04-14", "DeleteBranch");
-		setUriPattern("/api/v3/projects/[ProjectId]/repository/branches/[BranchName]");
+		setUriPattern("/api/v3/projects/[ProjectId]/repository/branches/delete");
 		setMethod(MethodType.DELETE);
 	}
 
@@ -90,7 +90,7 @@ public class DeleteBranchRequest extends RoaAcsRequest<DeleteBranchResponse> {
 	public void setBranchName(String branchName) {
 		this.branchName = branchName;
 		if(branchName != null){
-			putPathParameter("BranchName", branchName);
+			putQueryParameter("BranchName", branchName);
 		}
 	}
 

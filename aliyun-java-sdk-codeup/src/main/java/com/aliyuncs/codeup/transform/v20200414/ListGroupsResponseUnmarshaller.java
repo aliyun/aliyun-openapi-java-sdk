@@ -30,6 +30,7 @@ public class ListGroupsResponseUnmarshaller {
 		listGroupsResponse.setErrorCode(_ctx.stringValue("ListGroupsResponse.ErrorCode"));
 		listGroupsResponse.setSuccess(_ctx.booleanValue("ListGroupsResponse.Success"));
 		listGroupsResponse.setErrorMessage(_ctx.stringValue("ListGroupsResponse.ErrorMessage"));
+		listGroupsResponse.setTotal(_ctx.longValue("ListGroupsResponse.Total"));
 
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListGroupsResponse.Result.Length"); i++) {
