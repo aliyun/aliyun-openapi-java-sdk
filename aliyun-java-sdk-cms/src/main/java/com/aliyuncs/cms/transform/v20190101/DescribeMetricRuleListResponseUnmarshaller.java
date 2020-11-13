@@ -45,7 +45,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			alarm.setPeriod(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Period"));
 			alarm.setEffectiveInterval(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EffectiveInterval"));
 			alarm.setNoEffectiveInterval(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].NoEffectiveInterval"));
-			alarm.setSilenceTime(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SilenceTime"));
+			alarm.setSilenceTime(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SilenceTime"));
 			alarm.setEnableState(_ctx.booleanValue("DescribeMetricRuleListResponse.Alarms["+ i +"].EnableState"));
 			alarm.setAlertState(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].AlertState"));
 			alarm.setContactGroups(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].ContactGroups"));
@@ -64,7 +64,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			info.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.ComparisonOperator"));
 			info.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Statistics"));
 			info.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Threshold"));
-			info.setTimes(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Times"));
+			info.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.Times"));
 			info.setPreCondition(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Info.PreCondition"));
 			escalations.setInfo(info);
 
@@ -72,7 +72,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			warn.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.ComparisonOperator"));
 			warn.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Statistics"));
 			warn.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Threshold"));
-			warn.setTimes(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Times"));
+			warn.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.Times"));
 			warn.setPreCondition(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Warn.PreCondition"));
 			escalations.setWarn(warn);
 
@@ -80,7 +80,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			critical.setComparisonOperator(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.ComparisonOperator"));
 			critical.setStatistics(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Statistics"));
 			critical.setThreshold(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Threshold"));
-			critical.setTimes(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Times"));
+			critical.setTimes(_ctx.integerValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.Times"));
 			critical.setPreCondition(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Escalations.Critical.PreCondition"));
 			escalations.setCritical(critical);
 			alarm.setEscalations(escalations);

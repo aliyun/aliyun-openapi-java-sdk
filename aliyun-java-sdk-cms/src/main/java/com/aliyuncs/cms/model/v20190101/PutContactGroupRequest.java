@@ -29,8 +29,6 @@ public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupRespons
 
 	private String contactGroupName;
 
-	private Boolean enabledWeeklyReport;
-
 	private String describe;
 
 	private List<String> contactNamess;
@@ -58,17 +56,6 @@ public class PutContactGroupRequest extends RpcAcsRequest<PutContactGroupRespons
 		this.contactGroupName = contactGroupName;
 		if(contactGroupName != null){
 			putQueryParameter("ContactGroupName", contactGroupName);
-		}
-	}
-
-	public Boolean getEnabledWeeklyReport() {
-		return this.enabledWeeklyReport;
-	}
-
-	public void setEnabledWeeklyReport(Boolean enabledWeeklyReport) {
-		this.enabledWeeklyReport = enabledWeeklyReport;
-		if(enabledWeeklyReport != null){
-			putQueryParameter("EnabledWeeklyReport", enabledWeeklyReport.toString());
 		}
 	}
 

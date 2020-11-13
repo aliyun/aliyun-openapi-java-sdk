@@ -35,6 +35,8 @@ public class CreateSiteMonitorResponse extends AcsResponse {
 
 	private String alertRule;
 
+	private List<CreateResultListItem> createResultList;
+
 	private Data data;
 
 	public String getCode() {
@@ -77,12 +79,43 @@ public class CreateSiteMonitorResponse extends AcsResponse {
 		this.alertRule = alertRule;
 	}
 
+	public List<CreateResultListItem> getCreateResultList() {
+		return this.createResultList;
+	}
+
+	public void setCreateResultList(List<CreateResultListItem> createResultList) {
+		this.createResultList = createResultList;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
 
 	public void setData(Data data) {
 		this.data = data;
+	}
+
+	public static class CreateResultListItem {
+
+		private String taskName;
+
+		private String taskId;
+
+		public String getTaskName() {
+			return this.taskName;
+		}
+
+		public void setTaskName(String taskName) {
+			this.taskName = taskName;
+		}
+
+		public String getTaskId() {
+			return this.taskId;
+		}
+
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
+		}
 	}
 
 	public static class Data {

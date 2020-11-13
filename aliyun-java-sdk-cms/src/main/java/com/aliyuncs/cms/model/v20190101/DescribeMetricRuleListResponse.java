@@ -99,7 +99,7 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		private String noEffectiveInterval;
 
-		private String silenceTime;
+		private Integer silenceTime;
 
 		private Boolean enableState;
 
@@ -173,11 +173,11 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 			this.noEffectiveInterval = noEffectiveInterval;
 		}
 
-		public String getSilenceTime() {
+		public Integer getSilenceTime() {
 			return this.silenceTime;
 		}
 
-		public void setSilenceTime(String silenceTime) {
+		public void setSilenceTime(Integer silenceTime) {
 			this.silenceTime = silenceTime;
 		}
 
@@ -317,7 +317,7 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				private String threshold;
 
-				private String times;
+				private Integer times;
 
 				private String preCondition;
 
@@ -345,11 +345,11 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 					this.threshold = threshold;
 				}
 
-				public String getTimes() {
+				public Integer getTimes() {
 					return this.times;
 				}
 
-				public void setTimes(String times) {
+				public void setTimes(Integer times) {
 					this.times = times;
 				}
 
@@ -370,7 +370,7 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				private String threshold;
 
-				private String times;
+				private Integer times;
 
 				private String preCondition;
 
@@ -398,11 +398,11 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 					this.threshold = threshold;
 				}
 
-				public String getTimes() {
+				public Integer getTimes() {
 					return this.times;
 				}
 
-				public void setTimes(String times) {
+				public void setTimes(Integer times) {
 					this.times = times;
 				}
 
@@ -423,7 +423,7 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 				private String threshold;
 
-				private String times;
+				private Integer times;
 
 				private String preCondition;
 
@@ -451,11 +451,11 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 					this.threshold = threshold;
 				}
 
-				public String getTimes() {
+				public Integer getTimes() {
 					return this.times;
 				}
 
-				public void setTimes(String times) {
+				public void setTimes(Integer times) {
 					this.times = times;
 				}
 

@@ -28,7 +28,7 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 
 	private String ruleName;
 
-	private String pageSize;
+	private Integer pageSize;
 
 	private String metricName;
 
@@ -40,7 +40,7 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 
 	private String alertState;
 
-	private String page;
+	private Integer page;
 
 	private String dimensions;
 	public DescribeMetricRuleListRequest() {
@@ -70,14 +70,14 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		}
 	}
 
-	public String getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -136,14 +136,14 @@ public class DescribeMetricRuleListRequest extends RpcAcsRequest<DescribeMetricR
 		}
 	}
 
-	public String getPage() {
+	public Integer getPage() {
 		return this.page;
 	}
 
-	public void setPage(String page) {
+	public void setPage(Integer page) {
 		this.page = page;
 		if(page != null){
-			putQueryParameter("Page", page);
+			putQueryParameter("Page", page.toString());
 		}
 	}
 

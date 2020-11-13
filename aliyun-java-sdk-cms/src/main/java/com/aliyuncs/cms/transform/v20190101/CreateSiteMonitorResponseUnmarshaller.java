@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cms.model.v20190101.CreateSiteMonitorResponse;
+import com.aliyuncs.cms.model.v20190101.CreateSiteMonitorResponse.CreateResultListItem;
 import com.aliyuncs.cms.model.v20190101.CreateSiteMonitorResponse.Data;
 import com.aliyuncs.cms.model.v20190101.CreateSiteMonitorResponse.Data.Contact;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -48,6 +49,16 @@ public class CreateSiteMonitorResponseUnmarshaller {
 		}
 		data.setAttachAlertResult(attachAlertResult);
 		createSiteMonitorResponse.setData(data);
+
+		List<CreateResultListItem> createResultList = new ArrayList<CreateResultListItem>();
+		for (int i = 0; i < _ctx.lengthValue("CreateSiteMonitorResponse.CreateResultList.Length"); i++) {
+			CreateResultListItem createResultListItem = new CreateResultListItem();
+			createResultListItem.setTaskName(_ctx.stringValue("CreateSiteMonitorResponse.CreateResultList["+ i +"].TaskName"));
+			createResultListItem.setTaskId(_ctx.stringValue("CreateSiteMonitorResponse.CreateResultList["+ i +"].TaskId"));
+
+			createResultList.add(createResultListItem);
+		}
+		createSiteMonitorResponse.setCreateResultList(createResultList);
 	 
 	 	return createSiteMonitorResponse;
 	}

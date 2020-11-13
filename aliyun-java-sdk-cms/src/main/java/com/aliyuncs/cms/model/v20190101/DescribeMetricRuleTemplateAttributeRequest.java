@@ -24,23 +24,12 @@ import com.aliyuncs.http.MethodType;
 public class DescribeMetricRuleTemplateAttributeRequest extends RpcAcsRequest<DescribeMetricRuleTemplateAttributeResponse> {
 	   
 
-	private String name;
-
 	private String templateId;
+
+	private String name;
 	public DescribeMetricRuleTemplateAttributeRequest() {
 		super("Cms", "2019-01-01", "DescribeMetricRuleTemplateAttribute", "cms");
 		setMethod(MethodType.POST);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
 	}
 
 	public String getTemplateId() {
@@ -51,6 +40,17 @@ public class DescribeMetricRuleTemplateAttributeRequest extends RpcAcsRequest<De
 		this.templateId = templateId;
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
