@@ -1,3 +1,6 @@
+2020-11-13 Version: 1.0.8
+- Update Imageaudit.
+
 2020-11-10 Version: 1.0.7
 - Add IdentifyPorn And So On.
 
