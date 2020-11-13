@@ -15,7 +15,6 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.facebody.Endpoint;
 
@@ -23,16 +22,14 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<ExtractPedestrianFeatureAttributeResponse> {
+public class CountCrowdRequest extends RpcAcsRequest<CountCrowdResponse> {
 	   
 
-	private List<UrlList> urlLists;
-
-	private String mode;
+	private Boolean isShow;
 
 	private String imageURL;
-	public ExtractPedestrianFeatureAttributeRequest() {
-		super("facebody", "2019-12-30", "ExtractPedestrianFeatureAttribute", "facebody");
+	public CountCrowdRequest() {
+		super("facebody", "2019-12-30", "CountCrowd", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,27 +37,14 @@ public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<Extr
 		} catch (Exception e) {}
 	}
 
-	public List<UrlList> getUrlLists() {
-		return this.urlLists;
+	public Boolean getIsShow() {
+		return this.isShow;
 	}
 
-	public void setUrlLists(List<UrlList> urlLists) {
-		this.urlLists = urlLists;	
-		if (urlLists != null) {
-			for (int depth1 = 0; depth1 < urlLists.size(); depth1++) {
-				putBodyParameter("UrlList." + (depth1 + 1) + ".Url" , urlLists.get(depth1).getUrl());
-			}
-		}	
-	}
-
-	public String getMode() {
-		return this.mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
-		if(mode != null){
-			putBodyParameter("Mode", mode);
+	public void setIsShow(Boolean isShow) {
+		this.isShow = isShow;
+		if(isShow != null){
+			putBodyParameter("IsShow", isShow.toString());
 		}
 	}
 
@@ -75,22 +59,9 @@ public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<Extr
 		}
 	}
 
-	public static class UrlList {
-
-		private String url;
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-	}
-
 	@Override
-	public Class<ExtractPedestrianFeatureAttributeResponse> getResponseClass() {
-		return ExtractPedestrianFeatureAttributeResponse.class;
+	public Class<CountCrowdResponse> getResponseClass() {
+		return CountCrowdResponse.class;
 	}
 
 }

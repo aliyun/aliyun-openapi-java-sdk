@@ -1,3 +1,6 @@
+2020-11-13 Version: 1.2.3
+- Release GenerateHumanAnimeStyle CountCrowd.
+
 2020-10-13 Version: 1.2.2
 - Release PedestrianDetectAttribute.
 

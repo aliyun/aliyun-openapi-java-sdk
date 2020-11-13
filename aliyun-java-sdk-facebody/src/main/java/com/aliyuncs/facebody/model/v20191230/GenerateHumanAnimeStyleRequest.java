@@ -15,7 +15,6 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.facebody.Endpoint;
 
@@ -23,45 +22,17 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<ExtractPedestrianFeatureAttributeResponse> {
+public class GenerateHumanAnimeStyleRequest extends RpcAcsRequest<GenerateHumanAnimeStyleResponse> {
 	   
 
-	private List<UrlList> urlLists;
-
-	private String mode;
-
 	private String imageURL;
-	public ExtractPedestrianFeatureAttributeRequest() {
-		super("facebody", "2019-12-30", "ExtractPedestrianFeatureAttribute", "facebody");
+	public GenerateHumanAnimeStyleRequest() {
+		super("facebody", "2019-12-30", "GenerateHumanAnimeStyle", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public List<UrlList> getUrlLists() {
-		return this.urlLists;
-	}
-
-	public void setUrlLists(List<UrlList> urlLists) {
-		this.urlLists = urlLists;	
-		if (urlLists != null) {
-			for (int depth1 = 0; depth1 < urlLists.size(); depth1++) {
-				putBodyParameter("UrlList." + (depth1 + 1) + ".Url" , urlLists.get(depth1).getUrl());
-			}
-		}	
-	}
-
-	public String getMode() {
-		return this.mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
-		if(mode != null){
-			putBodyParameter("Mode", mode);
-		}
 	}
 
 	public String getImageURL() {
@@ -75,22 +46,9 @@ public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<Extr
 		}
 	}
 
-	public static class UrlList {
-
-		private String url;
-
-		public String getUrl() {
-			return this.url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-	}
-
 	@Override
-	public Class<ExtractPedestrianFeatureAttributeResponse> getResponseClass() {
-		return ExtractPedestrianFeatureAttributeResponse.class;
+	public Class<GenerateHumanAnimeStyleResponse> getResponseClass() {
+		return GenerateHumanAnimeStyleResponse.class;
 	}
 
 }
