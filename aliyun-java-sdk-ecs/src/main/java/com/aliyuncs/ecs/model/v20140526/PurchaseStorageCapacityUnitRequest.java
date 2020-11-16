@@ -51,7 +51,7 @@ public class PurchaseStorageCapacityUnitRequest extends RpcAcsRequest<PurchaseSt
 
 	private String name;
 	public PurchaseStorageCapacityUnitRequest() {
-		super("Ecs", "2014-05-26", "PurchaseStorageCapacityUnit", "ecs");
+		super("Ecs", "2014-05-26", "PurchaseStorageCapacityUnit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

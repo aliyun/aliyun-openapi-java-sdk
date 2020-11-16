@@ -51,7 +51,7 @@ public class DescribeSpotPriceHistoryRequest extends RpcAcsRequest<DescribeSpotP
 
 	private String zoneId;
 	public DescribeSpotPriceHistoryRequest() {
-		super("Ecs", "2014-05-26", "DescribeSpotPriceHistory", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSpotPriceHistory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

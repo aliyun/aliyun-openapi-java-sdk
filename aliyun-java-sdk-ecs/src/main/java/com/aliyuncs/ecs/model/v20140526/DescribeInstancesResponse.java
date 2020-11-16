@@ -169,6 +169,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Boolean deletionProtection;
 
+		private String iSP;
+
 		private List<NetworkInterface> networkInterfaces;
 
 		private List<LockReason> operationLocks;
@@ -563,6 +565,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setDeletionProtection(Boolean deletionProtection) {
 			this.deletionProtection = deletionProtection;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public List<NetworkInterface> getNetworkInterfaces() {

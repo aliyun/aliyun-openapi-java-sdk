@@ -45,7 +45,7 @@ public class CreateForwardEntryRequest extends RpcAcsRequest<CreateForwardEntryR
 
 	private String externalPort;
 	public CreateForwardEntryRequest() {
-		super("Ecs", "2014-05-26", "CreateForwardEntry", "ecs");
+		super("Ecs", "2014-05-26", "CreateForwardEntry");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

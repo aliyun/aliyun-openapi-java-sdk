@@ -40,7 +40,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends RpcAcsRequest<Desc
 
 	private String networkInterfaceId;
 	public DescribeNetworkInterfaceAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeNetworkInterfaceAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeNetworkInterfaceAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

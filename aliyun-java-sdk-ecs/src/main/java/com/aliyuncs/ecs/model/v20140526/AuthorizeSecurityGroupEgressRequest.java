@@ -65,7 +65,7 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 
 	private Long destGroupOwnerId;
 	public AuthorizeSecurityGroupEgressRequest() {
-		super("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress", "ecs");
+		super("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

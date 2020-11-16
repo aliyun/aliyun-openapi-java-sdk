@@ -39,7 +39,7 @@ public class DeleteRouterInterfaceRequest extends RpcAcsRequest<DeleteRouterInte
 
 	private Long ownerId;
 	public DeleteRouterInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DeleteRouterInterface", "ecs");
+		super("Ecs", "2014-05-26", "DeleteRouterInterface");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

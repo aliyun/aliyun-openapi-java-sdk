@@ -35,7 +35,7 @@ public class DescribeImageFromFamilyRequest extends RpcAcsRequest<DescribeImageF
 
 	private String imageFamily;
 	public DescribeImageFromFamilyRequest() {
-		super("Ecs", "2014-05-26", "DescribeImageFromFamily", "ecs");
+		super("Ecs", "2014-05-26", "DescribeImageFromFamily");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

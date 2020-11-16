@@ -43,7 +43,7 @@ public class DescribeSendFileResultsRequest extends RpcAcsRequest<DescribeSendFi
 
 	private String name;
 	public DescribeSendFileResultsRequest() {
-		super("Ecs", "2014-05-26", "DescribeSendFileResults", "ecs");
+		super("Ecs", "2014-05-26", "DescribeSendFileResults");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

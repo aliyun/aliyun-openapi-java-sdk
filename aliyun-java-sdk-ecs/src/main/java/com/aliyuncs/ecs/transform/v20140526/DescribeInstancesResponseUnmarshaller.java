@@ -90,6 +90,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setStoppedMode(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].StoppedMode"));
 			instance.setCreditSpecification(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreditSpecification"));
 			instance.setDeletionProtection(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].DeletionProtection"));
+			instance.setISP(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ISP"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {

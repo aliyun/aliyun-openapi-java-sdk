@@ -49,7 +49,7 @@ public class ModifyAutoSnapshotPolicyRequest extends RpcAcsRequest<ModifyAutoSna
 
 	private Boolean systemDiskPolicyEnabled;
 	public ModifyAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicy", "ecs");
+		super("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

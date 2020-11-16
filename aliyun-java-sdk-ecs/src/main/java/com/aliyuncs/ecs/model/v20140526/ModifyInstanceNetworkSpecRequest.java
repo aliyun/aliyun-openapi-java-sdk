@@ -29,6 +29,8 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	private String clientToken;
 
+	private String iSP;
+
 	private Integer internetMaxBandwidthOut;
 
 	private String startTime;
@@ -51,7 +53,7 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	private Boolean allocatePublicIp;
 	public ModifyInstanceNetworkSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,6 +80,17 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
 		}
 	}
 

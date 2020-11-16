@@ -35,7 +35,7 @@ public class DescribeDedicatedHostAutoRenewRequest extends RpcAcsRequest<Describ
 
 	private Long ownerId;
 	public DescribeDedicatedHostAutoRenewRequest() {
-		super("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "ecs");
+		super("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

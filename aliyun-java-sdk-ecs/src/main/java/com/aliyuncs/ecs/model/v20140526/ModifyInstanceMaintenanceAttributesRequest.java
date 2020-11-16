@@ -40,7 +40,7 @@ public class ModifyInstanceMaintenanceAttributesRequest extends RpcAcsRequest<Mo
 
 	private List<String> instanceIds;
 	public ModifyInstanceMaintenanceAttributesRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceMaintenanceAttributes", "ecs");
+		super("Ecs", "2014-05-26", "ModifyInstanceMaintenanceAttributes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

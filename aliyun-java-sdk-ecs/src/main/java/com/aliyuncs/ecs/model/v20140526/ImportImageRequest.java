@@ -54,7 +54,7 @@ public class ImportImageRequest extends RpcAcsRequest<ImportImageResponse> {
 
 	private Long ownerId;
 	public ImportImageRequest() {
-		super("Ecs", "2014-05-26", "ImportImage", "ecs");
+		super("Ecs", "2014-05-26", "ImportImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

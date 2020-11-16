@@ -32,6 +32,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String dataDisk3Category;
 
+	private String isp;
+
 	private Integer dataDisk4Size;
 
 	private String priceUnit;
@@ -100,7 +102,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String offeringType;
 	public DescribePriceRequest() {
-		super("Ecs", "2014-05-26", "DescribePrice", "ecs");
+		super("Ecs", "2014-05-26", "DescribePrice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -138,6 +140,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.dataDisk3Category = dataDisk3Category;
 		if(dataDisk3Category != null){
 			putQueryParameter("DataDisk.3.Category", dataDisk3Category);
+		}
+	}
+
+	public String getIsp() {
+		return this.isp;
+	}
+
+	public void setIsp(String isp) {
+		this.isp = isp;
+		if(isp != null){
+			putQueryParameter("Isp", isp);
 		}
 	}
 

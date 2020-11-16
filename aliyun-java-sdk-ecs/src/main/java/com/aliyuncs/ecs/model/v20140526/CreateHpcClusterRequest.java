@@ -39,7 +39,7 @@ public class CreateHpcClusterRequest extends RpcAcsRequest<CreateHpcClusterRespo
 
 	private String name;
 	public CreateHpcClusterRequest() {
-		super("Ecs", "2014-05-26", "CreateHpcCluster", "ecs");
+		super("Ecs", "2014-05-26", "CreateHpcCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

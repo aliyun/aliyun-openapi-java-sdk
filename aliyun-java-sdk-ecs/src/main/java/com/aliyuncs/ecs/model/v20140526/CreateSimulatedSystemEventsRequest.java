@@ -40,7 +40,7 @@ public class CreateSimulatedSystemEventsRequest extends RpcAcsRequest<CreateSimu
 
 	private String eventType;
 	public CreateSimulatedSystemEventsRequest() {
-		super("Ecs", "2014-05-26", "CreateSimulatedSystemEvents", "ecs");
+		super("Ecs", "2014-05-26", "CreateSimulatedSystemEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -48,7 +48,7 @@ public class DescribeStorageCapacityUnitsRequest extends RpcAcsRequest<DescribeS
 
 	private String allocationType;
 	public DescribeStorageCapacityUnitsRequest() {
-		super("Ecs", "2014-05-26", "DescribeStorageCapacityUnits", "ecs");
+		super("Ecs", "2014-05-26", "DescribeStorageCapacityUnits");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

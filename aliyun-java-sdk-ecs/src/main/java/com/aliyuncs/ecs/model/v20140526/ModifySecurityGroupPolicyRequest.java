@@ -39,7 +39,7 @@ public class ModifySecurityGroupPolicyRequest extends RpcAcsRequest<ModifySecuri
 
 	private Long ownerId;
 	public ModifySecurityGroupPolicyRequest() {
-		super("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs");
+		super("Ecs", "2014-05-26", "ModifySecurityGroupPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

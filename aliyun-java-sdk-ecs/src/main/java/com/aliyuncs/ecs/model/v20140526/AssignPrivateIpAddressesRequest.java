@@ -42,7 +42,7 @@ public class AssignPrivateIpAddressesRequest extends RpcAcsRequest<AssignPrivate
 
 	private String networkInterfaceId;
 	public AssignPrivateIpAddressesRequest() {
-		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs");
+		super("Ecs", "2014-05-26", "AssignPrivateIpAddresses");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

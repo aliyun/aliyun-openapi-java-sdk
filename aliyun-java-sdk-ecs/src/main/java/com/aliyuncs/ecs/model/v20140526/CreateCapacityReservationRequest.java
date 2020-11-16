@@ -56,7 +56,7 @@ public class CreateCapacityReservationRequest extends RpcAcsRequest<CreateCapaci
 
 	private Integer instanceAmount;
 	public CreateCapacityReservationRequest() {
-		super("Ecs", "2014-05-26", "CreateCapacityReservation", "ecs");
+		super("Ecs", "2014-05-26", "CreateCapacityReservation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

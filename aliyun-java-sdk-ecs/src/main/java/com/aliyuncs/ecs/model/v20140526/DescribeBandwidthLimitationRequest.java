@@ -43,7 +43,7 @@ public class DescribeBandwidthLimitationRequest extends RpcAcsRequest<DescribeBa
 
 	private String spotStrategy;
 	public DescribeBandwidthLimitationRequest() {
-		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs");
+		super("Ecs", "2014-05-26", "DescribeBandwidthLimitation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

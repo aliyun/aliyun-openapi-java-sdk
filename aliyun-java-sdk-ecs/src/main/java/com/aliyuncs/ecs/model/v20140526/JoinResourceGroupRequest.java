@@ -39,7 +39,7 @@ public class JoinResourceGroupRequest extends RpcAcsRequest<JoinResourceGroupRes
 
 	private String resourceType;
 	public JoinResourceGroupRequest() {
-		super("Ecs", "2014-05-26", "JoinResourceGroup", "ecs");
+		super("Ecs", "2014-05-26", "JoinResourceGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

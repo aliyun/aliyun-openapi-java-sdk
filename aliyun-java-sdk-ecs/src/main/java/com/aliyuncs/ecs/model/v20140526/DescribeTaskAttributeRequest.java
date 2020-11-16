@@ -33,7 +33,7 @@ public class DescribeTaskAttributeRequest extends RpcAcsRequest<DescribeTaskAttr
 
 	private Long ownerId;
 	public DescribeTaskAttributeRequest() {
-		super("Ecs", "2014-05-26", "DescribeTaskAttribute", "ecs");
+		super("Ecs", "2014-05-26", "DescribeTaskAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

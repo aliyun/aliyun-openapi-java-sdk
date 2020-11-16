@@ -60,7 +60,7 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 
 	private String eventType;
 	public DescribeInstanceHistoryEventsRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

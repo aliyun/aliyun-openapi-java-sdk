@@ -39,7 +39,7 @@ public class DescribeCapacityReservationInstancesRequest extends RpcAcsRequest<D
 
 	private Integer maxResults;
 	public DescribeCapacityReservationInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeCapacityReservationInstances", "ecs");
+		super("Ecs", "2014-05-26", "DescribeCapacityReservationInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

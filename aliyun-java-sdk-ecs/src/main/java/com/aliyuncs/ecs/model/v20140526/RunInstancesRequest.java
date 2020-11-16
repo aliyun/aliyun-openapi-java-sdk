@@ -110,6 +110,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer httpPutResponseHopLimit;
 
+	private String isp;
+
 	private String keyPairName;
 
 	private Float spotPriceLimit;
@@ -176,7 +178,7 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String systemDiskDescription;
 	public RunInstancesRequest() {
-		super("Ecs", "2014-05-26", "RunInstances", "ecs");
+		super("Ecs", "2014-05-26", "RunInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -649,6 +651,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.httpPutResponseHopLimit = httpPutResponseHopLimit;
 		if(httpPutResponseHopLimit != null){
 			putQueryParameter("HttpPutResponseHopLimit", httpPutResponseHopLimit.toString());
+		}
+	}
+
+	public String getIsp() {
+		return this.isp;
+	}
+
+	public void setIsp(String isp) {
+		this.isp = isp;
+		if(isp != null){
+			putQueryParameter("Isp", isp);
 		}
 	}
 

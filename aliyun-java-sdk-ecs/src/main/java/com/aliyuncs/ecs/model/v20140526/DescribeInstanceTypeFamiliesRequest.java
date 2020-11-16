@@ -35,7 +35,7 @@ public class DescribeInstanceTypeFamiliesRequest extends RpcAcsRequest<DescribeI
 
 	private Long ownerId;
 	public DescribeInstanceTypeFamiliesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceTypeFamilies");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

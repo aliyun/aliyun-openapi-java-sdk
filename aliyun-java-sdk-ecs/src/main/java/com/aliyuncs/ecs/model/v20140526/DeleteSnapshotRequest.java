@@ -37,7 +37,7 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 
 	private Boolean force;
 	public DeleteSnapshotRequest() {
-		super("Ecs", "2014-05-26", "DeleteSnapshot", "ecs");
+		super("Ecs", "2014-05-26", "DeleteSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

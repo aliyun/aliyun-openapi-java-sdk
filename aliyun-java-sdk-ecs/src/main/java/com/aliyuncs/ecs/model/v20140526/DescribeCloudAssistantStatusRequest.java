@@ -36,7 +36,7 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 
 	private List<String> instanceIds;
 	public DescribeCloudAssistantStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeCloudAssistantStatus", "ecs");
+		super("Ecs", "2014-05-26", "DescribeCloudAssistantStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

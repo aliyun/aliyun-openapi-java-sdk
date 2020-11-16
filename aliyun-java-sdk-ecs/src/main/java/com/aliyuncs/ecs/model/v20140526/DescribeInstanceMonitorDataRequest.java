@@ -41,7 +41,7 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	private String instanceId;
 	public DescribeInstanceMonitorDataRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInstanceMonitorData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

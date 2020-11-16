@@ -35,7 +35,7 @@ public class AttachInstanceRamRoleRequest extends RpcAcsRequest<AttachInstanceRa
 
 	private String instanceIds;
 	public AttachInstanceRamRoleRequest() {
-		super("Ecs", "2014-05-26", "AttachInstanceRamRole", "ecs");
+		super("Ecs", "2014-05-26", "AttachInstanceRamRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

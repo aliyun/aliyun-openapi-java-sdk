@@ -58,7 +58,7 @@ public class CreateElasticityAssuranceRequest extends RpcAcsRequest<CreateElasti
 
 	private Integer instanceAmount;
 	public CreateElasticityAssuranceRequest() {
-		super("Ecs", "2014-05-26", "CreateElasticityAssurance", "ecs");
+		super("Ecs", "2014-05-26", "CreateElasticityAssurance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
