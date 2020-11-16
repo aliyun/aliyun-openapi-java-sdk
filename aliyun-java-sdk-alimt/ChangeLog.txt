@@ -1,3 +1,6 @@
+2020-11-16 Version: 3.0.26
+- Add a new interface for asynchronous image translation.
+
 2020-10-19 Version: 3.0.25
 - Add a new interface for asynchronous image translation.
 

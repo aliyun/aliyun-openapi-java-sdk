@@ -70,6 +70,8 @@ public class GetImageTranslateResponse extends AcsResponse {
 
 		private String orc;
 
+		private String pictureEditor;
+
 		public String getUrl() {
 			return this.url;
 		}
@@ -84,6 +86,14 @@ public class GetImageTranslateResponse extends AcsResponse {
 
 		public void setOrc(String orc) {
 			this.orc = orc;
+		}
+
+		public String getPictureEditor() {
+			return this.pictureEditor;
+		}
+
+		public void setPictureEditor(String pictureEditor) {
+			this.pictureEditor = pictureEditor;
 		}
 	}
 
