@@ -31,7 +31,7 @@ public class MyCatConnectTestRequest extends RpcAcsRequest<MyCatConnectTestRespo
 
 	private String ruleUrl;
 	public MyCatConnectTestRequest() {
-		super("Drds", "2019-01-23", "MyCatConnectTest", "Drds");
+		super("Drds", "2019-01-23", "MyCatConnectTest");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

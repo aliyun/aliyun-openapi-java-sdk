@@ -27,7 +27,7 @@ public class DescribeMyCatReportInfoRequest extends RpcAcsRequest<DescribeMyCatR
 
 	private Long taskId;
 	public DescribeMyCatReportInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeMyCatReportInfo", "Drds");
+		super("Drds", "2019-01-23", "DescribeMyCatReportInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

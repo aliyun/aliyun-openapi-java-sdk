@@ -29,7 +29,7 @@ public class DescribeHotDbListRequest extends RpcAcsRequest<DescribeHotDbListRes
 
 	private String dbName;
 	public DescribeHotDbListRequest() {
-		super("Drds", "2019-01-23", "DescribeHotDbList", "Drds");
+		super("Drds", "2019-01-23", "DescribeHotDbList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

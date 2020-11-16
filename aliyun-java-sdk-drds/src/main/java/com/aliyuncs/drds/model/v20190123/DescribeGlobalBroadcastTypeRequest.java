@@ -29,7 +29,7 @@ public class DescribeGlobalBroadcastTypeRequest extends RpcAcsRequest<DescribeGl
 
 	private String dbName;
 	public DescribeGlobalBroadcastTypeRequest() {
-		super("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "Drds");
+		super("Drds", "2019-01-23", "DescribeGlobalBroadcastType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

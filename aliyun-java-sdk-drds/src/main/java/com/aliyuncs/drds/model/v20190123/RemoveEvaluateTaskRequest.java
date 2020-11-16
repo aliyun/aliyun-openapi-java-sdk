@@ -27,7 +27,7 @@ public class RemoveEvaluateTaskRequest extends RpcAcsRequest<RemoveEvaluateTaskR
 
 	private Integer taskId;
 	public RemoveEvaluateTaskRequest() {
-		super("Drds", "2019-01-23", "RemoveEvaluateTask", "Drds");
+		super("Drds", "2019-01-23", "RemoveEvaluateTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

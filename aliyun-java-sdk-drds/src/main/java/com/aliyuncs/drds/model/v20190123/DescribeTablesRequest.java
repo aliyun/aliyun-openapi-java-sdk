@@ -35,7 +35,7 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private Integer pageSize;
 	public DescribeTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeTables", "Drds");
+		super("Drds", "2019-01-23", "DescribeTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeMyCatDbListRequest extends RpcAcsRequest<DescribeMyCatDbLis
 
 	private String ruleUrl;
 	public DescribeMyCatDbListRequest() {
-		super("Drds", "2019-01-23", "DescribeMyCatDbList", "Drds");
+		super("Drds", "2019-01-23", "DescribeMyCatDbList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

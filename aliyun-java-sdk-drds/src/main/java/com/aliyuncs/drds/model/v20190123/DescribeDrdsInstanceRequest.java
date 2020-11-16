@@ -27,7 +27,7 @@ public class DescribeDrdsInstanceRequest extends RpcAcsRequest<DescribeDrdsInsta
 
 	private String drdsInstanceId;
 	public DescribeDrdsInstanceRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstance", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

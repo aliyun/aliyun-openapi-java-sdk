@@ -42,7 +42,7 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 
 	private Boolean mix;
 	public DescribeDrdsInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstances", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

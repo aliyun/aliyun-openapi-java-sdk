@@ -27,7 +27,7 @@ public class DescribeDataExportPreCheckResultRequest extends RpcAcsRequest<Descr
 
 	private Long taskId;
 	public DescribeDataExportPreCheckResultRequest() {
-		super("Drds", "2019-01-23", "DescribeDataExportPreCheckResult", "Drds");
+		super("Drds", "2019-01-23", "DescribeDataExportPreCheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class RollbackHiStoreInstanceRequest extends RpcAcsRequest<RollbackHiStor
 
 	private String drdsInstanceId;
 	public RollbackHiStoreInstanceRequest() {
-		super("Drds", "2019-01-23", "RollbackHiStoreInstance", "Drds");
+		super("Drds", "2019-01-23", "RollbackHiStoreInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

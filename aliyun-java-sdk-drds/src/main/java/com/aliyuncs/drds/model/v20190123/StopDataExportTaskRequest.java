@@ -27,7 +27,7 @@ public class StopDataExportTaskRequest extends RpcAcsRequest<StopDataExportTaskR
 
 	private Integer taskId;
 	public StopDataExportTaskRequest() {
-		super("Drds", "2019-01-23", "StopDataExportTask", "Drds");
+		super("Drds", "2019-01-23", "StopDataExportTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

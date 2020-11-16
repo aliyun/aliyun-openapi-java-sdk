@@ -27,7 +27,7 @@ public class DescribeCustomDataExportSrcDstTablesRequest extends RpcAcsRequest<D
 
 	private String exportParam;
 	public DescribeCustomDataExportSrcDstTablesRequest() {
-		super("Drds", "2019-01-23", "DescribeCustomDataExportSrcDstTables", "Drds");
+		super("Drds", "2019-01-23", "DescribeCustomDataExportSrcDstTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

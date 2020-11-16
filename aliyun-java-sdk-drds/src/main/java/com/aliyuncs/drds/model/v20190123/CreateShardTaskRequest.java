@@ -35,7 +35,7 @@ public class CreateShardTaskRequest extends RpcAcsRequest<CreateShardTaskRespons
 
 	private String sourceTableName;
 	public CreateShardTaskRequest() {
-		super("Drds", "2019-01-23", "CreateShardTask", "Drds");
+		super("Drds", "2019-01-23", "CreateShardTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

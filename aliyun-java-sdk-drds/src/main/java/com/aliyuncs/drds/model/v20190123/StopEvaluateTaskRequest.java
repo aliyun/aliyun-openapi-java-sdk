@@ -27,7 +27,7 @@ public class StopEvaluateTaskRequest extends RpcAcsRequest<StopEvaluateTaskRespo
 
 	private Integer taskId;
 	public StopEvaluateTaskRequest() {
-		super("Drds", "2019-01-23", "StopEvaluateTask", "Drds");
+		super("Drds", "2019-01-23", "StopEvaluateTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

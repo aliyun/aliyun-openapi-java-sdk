@@ -31,7 +31,7 @@ public class SqlCompatibilityStartRequest extends RpcAcsRequest<SqlCompatibility
 
 	private Boolean performanceTest;
 	public SqlCompatibilityStartRequest() {
-		super("Drds", "2019-01-23", "SqlCompatibilityStart", "Drds");
+		super("Drds", "2019-01-23", "SqlCompatibilityStart");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

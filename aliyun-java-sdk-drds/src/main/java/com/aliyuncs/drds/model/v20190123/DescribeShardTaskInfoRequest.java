@@ -33,7 +33,7 @@ public class DescribeShardTaskInfoRequest extends RpcAcsRequest<DescribeShardTas
 
 	private String sourceTableName;
 	public DescribeShardTaskInfoRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskInfo", "Drds");
+		super("Drds", "2019-01-23", "DescribeShardTaskInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DescribeDrdsInstanceLevelTasksRequest extends RpcAcsRequest<Describ
 
 	private String drdsInstanceId;
 	public DescribeDrdsInstanceLevelTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks", "Drds");
+		super("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DescribeUnCompatibilitySqlRequest extends RpcAcsRequest<DescribeUnC
 
 	private Long taskId;
 	public DescribeUnCompatibilitySqlRequest() {
-		super("Drds", "2019-01-23", "DescribeUnCompatibilitySql", "Drds");
+		super("Drds", "2019-01-23", "DescribeUnCompatibilitySql");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CreateCustomDataExportTaskRequest extends RpcAcsRequest<CreateCusto
 
 	private String exportParam;
 	public CreateCustomDataExportTaskRequest() {
-		super("Drds", "2019-01-23", "CreateCustomDataExportTask", "Drds");
+		super("Drds", "2019-01-23", "CreateCustomDataExportTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

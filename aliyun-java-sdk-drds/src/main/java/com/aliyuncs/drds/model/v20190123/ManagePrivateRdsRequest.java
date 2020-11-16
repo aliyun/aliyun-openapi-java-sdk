@@ -33,7 +33,7 @@ public class ManagePrivateRdsRequest extends RpcAcsRequest<ManagePrivateRdsRespo
 
 	private String rdsAction;
 	public ManagePrivateRdsRequest() {
-		super("Drds", "2019-01-23", "ManagePrivateRds", "Drds");
+		super("Drds", "2019-01-23", "ManagePrivateRds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

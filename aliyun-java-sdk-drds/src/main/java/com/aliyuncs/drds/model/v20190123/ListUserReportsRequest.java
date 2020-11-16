@@ -29,7 +29,7 @@ public class ListUserReportsRequest extends RpcAcsRequest<ListUserReportsRespons
 
 	private String drdsInstanceId;
 	public ListUserReportsRequest() {
-		super("Drds", "2019-01-23", "ListUserReports", "Drds");
+		super("Drds", "2019-01-23", "ListUserReports");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

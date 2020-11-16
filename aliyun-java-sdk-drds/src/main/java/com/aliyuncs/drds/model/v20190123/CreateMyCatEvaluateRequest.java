@@ -44,7 +44,7 @@ public class CreateMyCatEvaluateRequest extends RpcAcsRequest<CreateMyCatEvaluat
 
 	private List<String> importDbLists;
 	public CreateMyCatEvaluateRequest() {
-		super("Drds", "2019-01-23", "CreateMyCatEvaluate", "Drds");
+		super("Drds", "2019-01-23", "CreateMyCatEvaluate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

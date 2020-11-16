@@ -29,7 +29,7 @@ public class DescribePreCheckResultRequest extends RpcAcsRequest<DescribePreChec
 
 	private String taskId;
 	public DescribePreCheckResultRequest() {
-		super("Drds", "2019-01-23", "DescribePreCheckResult", "Drds");
+		super("Drds", "2019-01-23", "DescribePreCheckResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

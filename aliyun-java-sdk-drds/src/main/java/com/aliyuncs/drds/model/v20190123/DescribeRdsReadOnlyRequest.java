@@ -31,7 +31,7 @@ public class DescribeRdsReadOnlyRequest extends RpcAcsRequest<DescribeRdsReadOnl
 
 	private String dbInstType;
 	public DescribeRdsReadOnlyRequest() {
-		super("Drds", "2019-01-23", "DescribeRdsReadOnly", "Drds");
+		super("Drds", "2019-01-23", "DescribeRdsReadOnly");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

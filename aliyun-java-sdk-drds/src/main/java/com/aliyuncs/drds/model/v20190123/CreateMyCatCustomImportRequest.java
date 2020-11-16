@@ -45,7 +45,7 @@ public class CreateMyCatCustomImportRequest extends RpcAcsRequest<CreateMyCatCus
 
 	private String dstDrdsInstanceId;
 	public CreateMyCatCustomImportRequest() {
-		super("Drds", "2019-01-23", "CreateMyCatCustomImport", "Drds");
+		super("Drds", "2019-01-23", "CreateMyCatCustomImport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

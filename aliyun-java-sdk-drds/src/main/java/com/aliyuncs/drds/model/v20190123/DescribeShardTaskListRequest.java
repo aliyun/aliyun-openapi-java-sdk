@@ -37,7 +37,7 @@ public class DescribeShardTaskListRequest extends RpcAcsRequest<DescribeShardTas
 
 	private Integer pageSize;
 	public DescribeShardTaskListRequest() {
-		super("Drds", "2019-01-23", "DescribeShardTaskList", "Drds");
+		super("Drds", "2019-01-23", "DescribeShardTaskList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

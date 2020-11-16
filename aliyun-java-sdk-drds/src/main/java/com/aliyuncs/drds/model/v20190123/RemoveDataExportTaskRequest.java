@@ -27,7 +27,7 @@ public class RemoveDataExportTaskRequest extends RpcAcsRequest<RemoveDataExportT
 
 	private Integer taskId;
 	public RemoveDataExportTaskRequest() {
-		super("Drds", "2019-01-23", "RemoveDataExportTask", "Drds");
+		super("Drds", "2019-01-23", "RemoveDataExportTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

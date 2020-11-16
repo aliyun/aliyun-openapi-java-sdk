@@ -27,7 +27,7 @@ public class StartEvaluateTaskRequest extends RpcAcsRequest<StartEvaluateTaskRes
 
 	private Integer taskId;
 	public StartEvaluateTaskRequest() {
-		super("Drds", "2019-01-23", "StartEvaluateTask", "Drds");
+		super("Drds", "2019-01-23", "StartEvaluateTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

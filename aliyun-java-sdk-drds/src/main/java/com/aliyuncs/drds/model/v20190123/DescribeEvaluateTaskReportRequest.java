@@ -27,7 +27,7 @@ public class DescribeEvaluateTaskReportRequest extends RpcAcsRequest<DescribeEva
 
 	private Long taskId;
 	public DescribeEvaluateTaskReportRequest() {
-		super("Drds", "2019-01-23", "DescribeEvaluateTaskReport", "Drds");
+		super("Drds", "2019-01-23", "DescribeEvaluateTaskReport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

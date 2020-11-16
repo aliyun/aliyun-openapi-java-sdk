@@ -29,7 +29,7 @@ public class DescribeDataExportTasksRequest extends RpcAcsRequest<DescribeDataEx
 
 	private Integer pageSize;
 	public DescribeDataExportTasksRequest() {
-		super("Drds", "2019-01-23", "DescribeDataExportTasks", "Drds");
+		super("Drds", "2019-01-23", "DescribeDataExportTasks");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
