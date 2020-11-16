@@ -28,8 +28,6 @@ public class BatchPubRequest extends RpcAcsRequest<BatchPubResponse> {
 
 	private String messageContent;
 
-	private List<String> deviceNameNs;
-
 	private Integer qos;
 
 	private String iotInstanceId;
@@ -37,6 +35,8 @@ public class BatchPubRequest extends RpcAcsRequest<BatchPubResponse> {
 	private String topicShortName;
 
 	private String productKey;
+
+	private List<String> deviceNames;
 	public BatchPubRequest() {
 		super("Iot", "2018-01-20", "BatchPub", "iot");
 		setMethod(MethodType.POST);
@@ -55,19 +55,6 @@ public class BatchPubRequest extends RpcAcsRequest<BatchPubResponse> {
 		if(messageContent != null){
 			putQueryParameter("MessageContent", messageContent);
 		}
-	}
-
-	public List<String> getDeviceNameNs() {
-		return this.deviceNameNs;
-	}
-
-	public void setDeviceNameNs(List<String> deviceNameNs) {
-		this.deviceNameNs = deviceNameNs;	
-		if (deviceNameNs != null) {
-			for (int i = 0; i < deviceNameNs.size(); i++) {
-				putQueryParameter("DeviceName.N." + (i + 1) , deviceNameNs.get(i));
-			}
-		}	
 	}
 
 	public Integer getQos() {
@@ -112,6 +99,19 @@ public class BatchPubRequest extends RpcAcsRequest<BatchPubResponse> {
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
 		}
+	}
+
+	public List<String> getDeviceNames() {
+		return this.deviceNames;
+	}
+
+	public void setDeviceNames(List<String> deviceNames) {
+		this.deviceNames = deviceNames;	
+		if (deviceNames != null) {
+			for (int i = 0; i < deviceNames.size(); i++) {
+				putQueryParameter("DeviceName." + (i + 1) , deviceNames.get(i));
+			}
+		}	
 	}
 
 	@Override

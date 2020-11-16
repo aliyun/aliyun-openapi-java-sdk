@@ -26,17 +26,17 @@ import com.aliyuncs.iot.Endpoint;
 public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListResponse> {
 	   
 
-	private Integer currentPage;
-
 	private List<TagList> tagLists;
 
 	private List<String> productKeyLists;
 
-	private List<String> categoryKeyLists;
-
 	private String iotInstanceId;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
+
+	private List<String> categoryKeyLists;
 
 	private String appKey;
 	public QueryAppDeviceListRequest() {
@@ -46,17 +46,6 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
 	}
 
 	public List<TagList> getTagLists() {
@@ -86,19 +75,6 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 		}	
 	}
 
-	public List<String> getCategoryKeyLists() {
-		return this.categoryKeyLists;
-	}
-
-	public void setCategoryKeyLists(List<String> categoryKeyLists) {
-		this.categoryKeyLists = categoryKeyLists;	
-		if (categoryKeyLists != null) {
-			for (int i = 0; i < categoryKeyLists.size(); i++) {
-				putQueryParameter("CategoryKeyList." + (i + 1) , categoryKeyLists.get(i));
-			}
-		}	
-	}
-
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -119,6 +95,30 @@ public class QueryAppDeviceListRequest extends RpcAcsRequest<QueryAppDeviceListR
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
 		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public List<String> getCategoryKeyLists() {
+		return this.categoryKeyLists;
+	}
+
+	public void setCategoryKeyLists(List<String> categoryKeyLists) {
+		this.categoryKeyLists = categoryKeyLists;	
+		if (categoryKeyLists != null) {
+			for (int i = 0; i < categoryKeyLists.size(); i++) {
+				putQueryParameter("CategoryKeyList." + (i + 1) , categoryKeyLists.get(i));
+			}
+		}	
 	}
 
 	public String getAppKey() {
