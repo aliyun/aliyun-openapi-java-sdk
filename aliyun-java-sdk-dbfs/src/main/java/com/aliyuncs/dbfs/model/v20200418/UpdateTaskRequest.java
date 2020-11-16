@@ -22,10 +22,14 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
+public class UpdateTaskRequest extends RpcAcsRequest<UpdateTaskResponse> {
 	   
-	public ListTagKeysRequest() {
-		super("DBFS", "2020-04-18", "ListTagKeys", "dbfs");
+
+	private Integer taskProgress;
+
+	private String taskIds;
+	public UpdateTaskRequest() {
+		super("DBFS", "2020-04-18", "UpdateTask", "dbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +37,31 @@ public class ListTagKeysRequest extends RpcAcsRequest<ListTagKeysResponse> {
 		} catch (Exception e) {}
 	}
 
+	public Integer getTaskProgress() {
+		return this.taskProgress;
+	}
+
+	public void setTaskProgress(Integer taskProgress) {
+		this.taskProgress = taskProgress;
+		if(taskProgress != null){
+			putQueryParameter("TaskProgress", taskProgress.toString());
+		}
+	}
+
+	public String getTaskIds() {
+		return this.taskIds;
+	}
+
+	public void setTaskIds(String taskIds) {
+		this.taskIds = taskIds;
+		if(taskIds != null){
+			putQueryParameter("TaskIds", taskIds);
+		}
+	}
+
 	@Override
-	public Class<ListTagKeysResponse> getResponseClass() {
-		return ListTagKeysResponse.class;
+	public Class<UpdateTaskResponse> getResponseClass() {
+		return UpdateTaskResponse.class;
 	}
 
 }

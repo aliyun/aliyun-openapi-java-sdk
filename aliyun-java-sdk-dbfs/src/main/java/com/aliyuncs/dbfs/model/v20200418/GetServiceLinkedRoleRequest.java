@@ -16,6 +16,7 @@ package com.aliyuncs.dbfs.model.v20200418;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dbfs.Endpoint;
 
 /**
  * @author auto create
@@ -24,8 +25,12 @@ import com.aliyuncs.http.MethodType;
 public class GetServiceLinkedRoleRequest extends RpcAcsRequest<GetServiceLinkedRoleResponse> {
 	   
 	public GetServiceLinkedRoleRequest() {
-		super("DBFS", "2020-04-18", "GetServiceLinkedRole");
+		super("DBFS", "2020-04-18", "GetServiceLinkedRole", "dbfs");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	@Override

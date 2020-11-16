@@ -16,6 +16,7 @@ package com.aliyuncs.dbfs.model.v20200418;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.dbfs.Endpoint;
 
 /**
  * @author auto create
@@ -36,8 +37,12 @@ public class ListTaskRequest extends RpcAcsRequest<ListTaskResponse> {
 
 	private Integer pageSize;
 	public ListTaskRequest() {
-		super("DBFS", "2020-04-18", "ListTask");
+		super("DBFS", "2020-04-18", "ListTask", "dbfs");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSortType() {
