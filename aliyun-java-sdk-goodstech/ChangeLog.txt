@@ -1,3 +1,6 @@
+2020-11-16 Version: 1.0.2
+- Update goodstech.
+
 2020-03-23 Version: 1.0.1
 - SDK version 101.
 
