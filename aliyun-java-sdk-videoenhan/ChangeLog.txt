@@ -1,3 +1,6 @@
+2020-11-16 Version: 1.0.4
+- Update videoenhan.
+
 2020-07-31 Version: 1.0.3
 - Add ChangeVideoSize.
 
