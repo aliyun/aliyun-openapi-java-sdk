@@ -1,3 +1,6 @@
+2020-11-16 Version: 1.0.9
+- Update objectdet.
+
 2020-08-19 Version: 1.0.8
 - Add GenerateVehicleRepairPlan GetVehicleRepairPlan.
 
