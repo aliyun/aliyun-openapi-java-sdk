@@ -36,10 +36,6 @@ public class GenerateVideoCoverResponseUnmarshaller {
 			Output output = new Output();
 			output.setImageURL(_ctx.stringValue("GenerateVideoCoverResponse.Data.Outputs["+ i +"].ImageURL"));
 			output.setConfidence(_ctx.floatValue("GenerateVideoCoverResponse.Data.Outputs["+ i +"].Confidence"));
-			output.setTime(_ctx.floatValue("GenerateVideoCoverResponse.Data.Outputs["+ i +"].Time"));
-			output.setFaceCount(_ctx.floatValue("GenerateVideoCoverResponse.Data.Outputs["+ i +"].FaceCount"));
-			output.setStartTime(_ctx.floatValue("GenerateVideoCoverResponse.Data.Outputs["+ i +"].StartTime"));
-			output.setEndTime(_ctx.floatValue("GenerateVideoCoverResponse.Data.Outputs["+ i +"].EndTime"));
 
 			outputs.add(output);
 		}

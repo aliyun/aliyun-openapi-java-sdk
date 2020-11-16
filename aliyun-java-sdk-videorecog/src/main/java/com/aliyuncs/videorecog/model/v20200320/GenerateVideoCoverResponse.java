@@ -63,14 +63,6 @@ public class GenerateVideoCoverResponse extends AcsResponse {
 
 			private Float confidence;
 
-			private Float time;
-
-			private Float faceCount;
-
-			private Float startTime;
-
-			private Float endTime;
-
 			public String getImageURL() {
 				return this.imageURL;
 			}
@@ -85,38 +77,6 @@ public class GenerateVideoCoverResponse extends AcsResponse {
 
 			public void setConfidence(Float confidence) {
 				this.confidence = confidence;
-			}
-
-			public Float getTime() {
-				return this.time;
-			}
-
-			public void setTime(Float time) {
-				this.time = time;
-			}
-
-			public Float getFaceCount() {
-				return this.faceCount;
-			}
-
-			public void setFaceCount(Float faceCount) {
-				this.faceCount = faceCount;
-			}
-
-			public Float getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(Float startTime) {
-				this.startTime = startTime;
-			}
-
-			public Float getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(Float endTime) {
-				this.endTime = endTime;
 			}
 		}
 	}
