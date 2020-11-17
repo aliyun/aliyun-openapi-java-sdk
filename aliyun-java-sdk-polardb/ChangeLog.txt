@@ -1,3 +1,7 @@
+2020-11-17 Version: 1.7.8
+- Support ModifyDBClusterPrimaryZone.
+- Support DescribeGlobalDatabaseNetworks.
+
 2020-11-12 Version: 1.7.7
 - Support DescribeDBClusterTDE.
 - Support ModifyDBClusterTDE.
