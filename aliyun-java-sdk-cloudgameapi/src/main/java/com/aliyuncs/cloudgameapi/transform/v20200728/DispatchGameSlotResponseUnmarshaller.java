@@ -29,6 +29,7 @@ public class DispatchGameSlotResponseUnmarshaller {
 		dispatchGameSlotResponse.setQueueCode(_ctx.integerValue("DispatchGameSlotResponse.QueueCode"));
 		dispatchGameSlotResponse.setMessage(_ctx.stringValue("DispatchGameSlotResponse.Message"));
 		dispatchGameSlotResponse.setRegionName(_ctx.stringValue("DispatchGameSlotResponse.RegionName"));
+		dispatchGameSlotResponse.setUserId(_ctx.stringValue("DispatchGameSlotResponse.UserId"));
 	 
 	 	return dispatchGameSlotResponse;
 	}

@@ -38,6 +38,8 @@ public class DispatchGameSlotResponse extends AcsResponse {
 
 	private String regionName;
 
+	private String userId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +94,14 @@ public class DispatchGameSlotResponse extends AcsResponse {
 
 	public void setRegionName(String regionName) {
 		this.regionName = regionName;
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	@Override
