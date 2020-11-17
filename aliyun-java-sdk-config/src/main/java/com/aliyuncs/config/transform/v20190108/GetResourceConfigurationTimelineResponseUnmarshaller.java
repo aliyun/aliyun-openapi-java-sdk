@@ -49,6 +49,7 @@ public class GetResourceConfigurationTimelineResponseUnmarshaller {
 			configurationListItem.setResourceName(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceName"));
 			configurationListItem.setResourceType(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceType"));
 			configurationListItem.setTags(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Tags"));
+			configurationListItem.setResourceEventType(_ctx.stringValue("GetResourceConfigurationTimelineResponse.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceEventType"));
 
 			configurationList.add(configurationListItem);
 		}

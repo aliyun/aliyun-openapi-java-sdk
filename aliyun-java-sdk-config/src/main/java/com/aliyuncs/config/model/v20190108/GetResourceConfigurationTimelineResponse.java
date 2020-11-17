@@ -113,6 +113,8 @@ public class GetResourceConfigurationTimelineResponse extends AcsResponse {
 
 			private String tags;
 
+			private String resourceEventType;
+
 			public Long getAccountId() {
 				return this.accountId;
 			}
@@ -207,6 +209,14 @@ public class GetResourceConfigurationTimelineResponse extends AcsResponse {
 
 			public void setTags(String tags) {
 				this.tags = tags;
+			}
+
+			public String getResourceEventType() {
+				return this.resourceEventType;
+			}
+
+			public void setResourceEventType(String resourceEventType) {
+				this.resourceEventType = resourceEventType;
 			}
 		}
 	}
