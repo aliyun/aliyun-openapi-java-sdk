@@ -29,7 +29,7 @@ public class UpdateLogstashSettingsRequest extends RoaAcsRequest<UpdateLogstashS
 
 	private String clientToken;
 	public UpdateLogstashSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateLogstashSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateLogstashSettings", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/instance-settings");
 		setMethod(MethodType.POST);
 		try {

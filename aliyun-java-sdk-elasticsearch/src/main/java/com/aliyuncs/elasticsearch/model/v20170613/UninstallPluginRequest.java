@@ -29,7 +29,7 @@ public class UninstallPluginRequest extends RoaAcsRequest<UninstallPluginRespons
 
 	private String clientToken;
 	public UninstallPluginRequest() {
-		super("elasticsearch", "2017-06-13", "UninstallPlugin", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UninstallPlugin", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/actions/uninstall");
 		setMethod(MethodType.POST);
 		try {

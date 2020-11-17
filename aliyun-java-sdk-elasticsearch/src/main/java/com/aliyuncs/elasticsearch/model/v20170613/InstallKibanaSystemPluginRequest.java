@@ -29,7 +29,7 @@ public class InstallKibanaSystemPluginRequest extends RoaAcsRequest<InstallKiban
 
 	private String clientToken;
 	public InstallKibanaSystemPluginRequest() {
-		super("elasticsearch", "2017-06-13", "InstallKibanaSystemPlugin", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "InstallKibanaSystemPlugin", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins/system/actions/install");
 		setMethod(MethodType.POST);
 		try {

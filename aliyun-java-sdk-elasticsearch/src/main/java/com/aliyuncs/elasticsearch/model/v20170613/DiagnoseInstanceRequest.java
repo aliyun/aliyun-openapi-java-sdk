@@ -31,7 +31,7 @@ public class DiagnoseInstanceRequest extends RoaAcsRequest<DiagnoseInstanceRespo
 
 	private String lang;
 	public DiagnoseInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "DiagnoseInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DiagnoseInstance", "elasticsearche");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/actions/diagnose");
 		setMethod(MethodType.POST);
 		try {

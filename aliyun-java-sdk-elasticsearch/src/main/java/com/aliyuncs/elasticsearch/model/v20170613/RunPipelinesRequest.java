@@ -29,7 +29,7 @@ public class RunPipelinesRequest extends RoaAcsRequest<RunPipelinesResponse> {
 
 	private String clientToken;
 	public RunPipelinesRequest() {
-		super("elasticsearch", "2017-06-13", "RunPipelines", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "RunPipelines", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines/action/run");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class UpdatePrivateNetworkWhiteIpsRequest extends RoaAcsRequest<UpdatePri
 
 	private String clientToken;
 	public UpdatePrivateNetworkWhiteIpsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdatePrivateNetworkWhiteIps", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdatePrivateNetworkWhiteIps", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/private-network-white-ips");
 		setMethod(MethodType.POST);
 		try {

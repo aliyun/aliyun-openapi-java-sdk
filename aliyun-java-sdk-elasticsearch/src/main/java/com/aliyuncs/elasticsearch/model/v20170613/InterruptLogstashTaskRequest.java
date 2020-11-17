@@ -29,7 +29,7 @@ public class InterruptLogstashTaskRequest extends RoaAcsRequest<InterruptLogstas
 
 	private String clientToken;
 	public InterruptLogstashTaskRequest() {
-		super("elasticsearch", "2017-06-13", "InterruptLogstashTask", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "InterruptLogstashTask", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/interrupt");
 		setMethod(MethodType.POST);
 		try {

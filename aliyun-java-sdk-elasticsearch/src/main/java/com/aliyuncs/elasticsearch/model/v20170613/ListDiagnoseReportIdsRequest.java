@@ -39,7 +39,7 @@ public class ListDiagnoseReportIdsRequest extends RoaAcsRequest<ListDiagnoseRepo
 
 	private String lang;
 	public ListDiagnoseReportIdsRequest() {
-		super("elasticsearch", "2017-06-13", "ListDiagnoseReportIds", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListDiagnoseReportIds", "elasticsearche");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/report-ids");
 		setMethod(MethodType.GET);
 		try {

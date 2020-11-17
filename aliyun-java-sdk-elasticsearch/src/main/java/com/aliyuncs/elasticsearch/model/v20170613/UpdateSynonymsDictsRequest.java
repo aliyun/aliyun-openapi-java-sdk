@@ -29,7 +29,7 @@ public class UpdateSynonymsDictsRequest extends RoaAcsRequest<UpdateSynonymsDict
 
 	private String clientToken;
 	public UpdateSynonymsDictsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateSynonymsDicts", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/synonymsDict");
 		setMethod(MethodType.PUT);
 		try {

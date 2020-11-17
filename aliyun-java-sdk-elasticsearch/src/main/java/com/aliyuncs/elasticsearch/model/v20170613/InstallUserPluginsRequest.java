@@ -27,7 +27,7 @@ public class InstallUserPluginsRequest extends RoaAcsRequest<InstallUserPluginsR
 
 	private String instanceId;
 	public InstallUserPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "InstallUserPlugins", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "InstallUserPlugins", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/user/actions/install");
 		setMethod(MethodType.POST);
 		try {

@@ -37,7 +37,7 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 
 	private String tags;
 	public ListTagResourcesRequest() {
-		super("elasticsearch", "2017-06-13", "ListTagResources", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListTagResources", "elasticsearche");
 		setUriPattern("/openapi/tags");
 		setMethod(MethodType.GET);
 		try {

@@ -27,7 +27,7 @@ public class CreateInstanceRequest extends RoaAcsRequest<CreateInstanceResponse>
 
 	private String clientToken;
 	public CreateInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "CreateInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CreateInstance", "elasticsearche");
 		setUriPattern("/openapi/instances");
 		setMethod(MethodType.POST);
 		try {

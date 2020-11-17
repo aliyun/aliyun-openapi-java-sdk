@@ -29,7 +29,7 @@ public class UpdatePublicNetworkRequest extends RoaAcsRequest<UpdatePublicNetwor
 
 	private String clientToken;
 	public UpdatePublicNetworkRequest() {
-		super("elasticsearch", "2017-06-13", "UpdatePublicNetwork", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdatePublicNetwork", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/public-network");
 		setMethod(MethodType.POST);
 		try {

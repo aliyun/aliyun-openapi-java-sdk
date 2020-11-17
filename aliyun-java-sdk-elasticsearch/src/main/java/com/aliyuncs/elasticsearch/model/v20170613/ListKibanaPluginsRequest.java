@@ -31,7 +31,7 @@ public class ListKibanaPluginsRequest extends RoaAcsRequest<ListKibanaPluginsRes
 
 	private String page;
 	public ListKibanaPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "ListKibanaPlugins", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListKibanaPlugins", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins");
 		setMethod(MethodType.GET);
 		try {

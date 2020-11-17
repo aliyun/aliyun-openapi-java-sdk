@@ -29,7 +29,7 @@ public class CloseHttpsRequest extends RoaAcsRequest<CloseHttpsResponse> {
 
 	private String clientToken;
 	public CloseHttpsRequest() {
-		super("elasticsearch", "2017-06-13", "CloseHttps", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CloseHttps", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/close-https");
 		setMethod(MethodType.POST);
 		try {

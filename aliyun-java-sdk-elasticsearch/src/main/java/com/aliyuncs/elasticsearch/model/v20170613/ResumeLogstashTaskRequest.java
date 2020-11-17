@@ -29,7 +29,7 @@ public class ResumeLogstashTaskRequest extends RoaAcsRequest<ResumeLogstashTaskR
 
 	private String clientToken;
 	public ResumeLogstashTaskRequest() {
-		super("elasticsearch", "2017-06-13", "ResumeLogstashTask", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ResumeLogstashTask", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/resume");
 		setMethod(MethodType.POST);
 		try {

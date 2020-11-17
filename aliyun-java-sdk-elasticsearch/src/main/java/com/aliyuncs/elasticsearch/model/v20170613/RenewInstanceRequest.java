@@ -29,7 +29,7 @@ public class RenewInstanceRequest extends RoaAcsRequest<RenewInstanceResponse> {
 
 	private String clientToken;
 	public RenewInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RenewInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "RenewInstance", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/renew");
 		setMethod(MethodType.POST);
 		try {

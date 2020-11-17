@@ -41,7 +41,7 @@ public class ListDiagnoseReportRequest extends RoaAcsRequest<ListDiagnoseReportR
 
 	private String lang;
 	public ListDiagnoseReportRequest() {
-		super("elasticsearch", "2017-06-13", "ListDiagnoseReport", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListDiagnoseReport", "elasticsearche");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/reports");
 		setMethod(MethodType.GET);
 		try {

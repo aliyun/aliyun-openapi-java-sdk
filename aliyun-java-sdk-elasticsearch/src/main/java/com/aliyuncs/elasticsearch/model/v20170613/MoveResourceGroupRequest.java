@@ -29,7 +29,7 @@ public class MoveResourceGroupRequest extends RoaAcsRequest<MoveResourceGroupRes
 
 	private String clientToken;
 	public MoveResourceGroupRequest() {
-		super("elasticsearch", "2017-06-13", "MoveResourceGroup", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "MoveResourceGroup", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/resourcegroup");
 		setMethod(MethodType.POST);
 		try {

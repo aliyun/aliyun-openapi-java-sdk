@@ -31,7 +31,7 @@ public class CloseDiagnosisRequest extends RoaAcsRequest<CloseDiagnosisResponse>
 
 	private String lang;
 	public CloseDiagnosisRequest() {
-		super("elasticsearch", "2017-06-13", "CloseDiagnosis", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CloseDiagnosis", "elasticsearche");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/actions/close-diagnosis");
 		setMethod(MethodType.POST);
 		try {

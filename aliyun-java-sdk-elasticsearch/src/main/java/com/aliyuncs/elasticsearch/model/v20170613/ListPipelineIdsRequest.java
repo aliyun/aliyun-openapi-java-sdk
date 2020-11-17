@@ -27,7 +27,7 @@ public class ListPipelineIdsRequest extends RoaAcsRequest<ListPipelineIdsRespons
 
 	private String instanceId;
 	public ListPipelineIdsRequest() {
-		super("elasticsearch", "2017-06-13", "ListPipelineIds", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListPipelineIds", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/pipeline-ids");
 		setMethod(MethodType.POST);
 		try {

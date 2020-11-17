@@ -35,7 +35,7 @@ public class ListLogstashPluginsRequest extends RoaAcsRequest<ListLogstashPlugin
 
 	private String source;
 	public ListLogstashPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "ListLogstashPlugins", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListLogstashPlugins", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/plugins");
 		setMethod(MethodType.GET);
 		try {

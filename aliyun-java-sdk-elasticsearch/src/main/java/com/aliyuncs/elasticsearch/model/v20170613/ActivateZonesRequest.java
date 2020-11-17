@@ -29,7 +29,7 @@ public class ActivateZonesRequest extends RoaAcsRequest<ActivateZonesResponse> {
 
 	private String clientToken;
 	public ActivateZonesRequest() {
-		super("elasticsearch", "2017-06-13", "ActivateZones", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ActivateZones", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/recover-zones");
 		setMethod(MethodType.POST);
 		try {

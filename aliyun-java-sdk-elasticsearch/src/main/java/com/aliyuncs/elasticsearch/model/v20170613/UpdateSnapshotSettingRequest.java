@@ -27,7 +27,7 @@ public class UpdateSnapshotSettingRequest extends RoaAcsRequest<UpdateSnapshotSe
 
 	private String instanceId;
 	public UpdateSnapshotSettingRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateSnapshotSetting", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateSnapshotSetting", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-setting");
 		setMethod(MethodType.POST);
 		try {

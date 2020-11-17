@@ -31,7 +31,7 @@ public class DeleteDataTaskRequest extends RoaAcsRequest<DeleteDataTaskResponse>
 
 	private String taskId;
 	public DeleteDataTaskRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteDataTask", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DeleteDataTask", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/data-task");
 		setMethod(MethodType.DELETE);
 		try {

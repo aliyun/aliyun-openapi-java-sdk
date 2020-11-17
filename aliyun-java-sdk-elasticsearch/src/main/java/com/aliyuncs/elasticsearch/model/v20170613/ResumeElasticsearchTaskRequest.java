@@ -29,7 +29,7 @@ public class ResumeElasticsearchTaskRequest extends RoaAcsRequest<ResumeElastics
 
 	private String clientToken;
 	public ResumeElasticsearchTaskRequest() {
-		super("elasticsearch", "2017-06-13", "ResumeElasticsearchTask", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ResumeElasticsearchTask", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/resume");
 		setMethod(MethodType.POST);
 		try {

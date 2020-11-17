@@ -25,7 +25,7 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class DescribeRegionsRequest extends RoaAcsRequest<DescribeRegionsResponse> {
 	   
 	public DescribeRegionsRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeRegions", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeRegions", "elasticsearche");
 		setUriPattern("/openapi/regions");
 		setMethod(MethodType.GET);
 		try {

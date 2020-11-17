@@ -31,7 +31,7 @@ public class GetTransferableNodesRequest extends RoaAcsRequest<GetTransferableNo
 
 	private Integer count;
 	public GetTransferableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "GetTransferableNodes", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "GetTransferableNodes", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/transferable-nodes");
 		setMethod(MethodType.GET);
 		try {

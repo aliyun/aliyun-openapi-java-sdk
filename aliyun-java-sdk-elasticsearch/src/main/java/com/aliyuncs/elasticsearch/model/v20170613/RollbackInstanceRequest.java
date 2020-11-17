@@ -29,7 +29,7 @@ public class RollbackInstanceRequest extends RoaAcsRequest<RollbackInstanceRespo
 
 	private String clientToken;
 	public RollbackInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RollbackInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "RollbackInstance", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/rollback");
 		setMethod(MethodType.POST);
 		try {

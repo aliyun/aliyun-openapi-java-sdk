@@ -29,7 +29,7 @@ public class StopPipelinesRequest extends RoaAcsRequest<StopPipelinesResponse> {
 
 	private String clientToken;
 	public StopPipelinesRequest() {
-		super("elasticsearch", "2017-06-13", "StopPipelines", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "StopPipelines", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines/action/stop");
 		setMethod(MethodType.POST);
 		try {

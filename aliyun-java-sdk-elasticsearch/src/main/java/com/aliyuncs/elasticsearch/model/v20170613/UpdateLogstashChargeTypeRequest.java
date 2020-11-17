@@ -29,7 +29,7 @@ public class UpdateLogstashChargeTypeRequest extends RoaAcsRequest<UpdateLogstas
 
 	private String clientToken;
 	public UpdateLogstashChargeTypeRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateLogstashChargeType", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateLogstashChargeType", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/convert-pay-type");
 		setMethod(MethodType.POST);
 		try {

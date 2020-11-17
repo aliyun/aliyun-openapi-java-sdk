@@ -29,7 +29,7 @@ public class DescribeDiagnosisSettingsRequest extends RoaAcsRequest<DescribeDiag
 
 	private String lang;
 	public DescribeDiagnosisSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeDiagnosisSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeDiagnosisSettings", "elasticsearche");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/settings");
 		setMethod(MethodType.GET);
 		try {

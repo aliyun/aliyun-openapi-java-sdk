@@ -29,7 +29,7 @@ public class UpdateDictRequest extends RoaAcsRequest<UpdateDictResponse> {
 
 	private String clientToken;
 	public UpdateDictRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateDict", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateDict", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/dict");
 		setMethod(MethodType.PUT);
 		try {

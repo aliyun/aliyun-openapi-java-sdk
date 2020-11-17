@@ -25,7 +25,7 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class GetClusterDataInformationRequest extends RoaAcsRequest<GetClusterDataInformationResponse> {
 	   
 	public GetClusterDataInformationRequest() {
-		super("elasticsearch", "2017-06-13", "GetClusterDataInformation", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "GetClusterDataInformation", "elasticsearche");
 		setUriPattern("/openapi/cluster/data-information");
 		setMethod(MethodType.POST);
 		try {

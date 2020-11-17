@@ -29,7 +29,7 @@ public class DeleteCollectorRequest extends RoaAcsRequest<DeleteCollectorRespons
 
 	private String resId;
 	public DeleteCollectorRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteCollector", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DeleteCollector", "elasticsearche");
 		setUriPattern("/openapi/collectors/[ResId]");
 		setMethod(MethodType.DELETE);
 		try {

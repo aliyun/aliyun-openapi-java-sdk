@@ -31,7 +31,7 @@ public class UpdateTemplateRequest extends RoaAcsRequest<UpdateTemplateResponse>
 
 	private String templateName;
 	public UpdateTemplateRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateTemplate", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateTemplate", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/templates/[TemplateName]");
 		setMethod(MethodType.POST);
 		try {

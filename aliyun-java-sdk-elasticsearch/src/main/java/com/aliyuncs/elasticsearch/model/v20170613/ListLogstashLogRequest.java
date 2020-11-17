@@ -39,7 +39,7 @@ public class ListLogstashLogRequest extends RoaAcsRequest<ListLogstashLogRespons
 
 	private String type;
 	public ListLogstashLogRequest() {
-		super("elasticsearch", "2017-06-13", "ListLogstashLog", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListLogstashLog", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/search-log");
 		setMethod(MethodType.GET);
 		try {

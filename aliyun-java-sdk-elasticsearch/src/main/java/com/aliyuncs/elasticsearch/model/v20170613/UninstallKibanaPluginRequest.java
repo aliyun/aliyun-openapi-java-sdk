@@ -29,7 +29,7 @@ public class UninstallKibanaPluginRequest extends RoaAcsRequest<UninstallKibanaP
 
 	private String clientToken;
 	public UninstallKibanaPluginRequest() {
-		super("elasticsearch", "2017-06-13", "UninstallKibanaPlugin", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UninstallKibanaPlugin", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-plugins/actions/uninstall");
 		setMethod(MethodType.POST);
 		try {

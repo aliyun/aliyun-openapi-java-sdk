@@ -29,7 +29,7 @@ public class UpdateKibanaWhiteIpsRequest extends RoaAcsRequest<UpdateKibanaWhite
 
 	private String clientToken;
 	public UpdateKibanaWhiteIpsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateKibanaWhiteIps", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateKibanaWhiteIps", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-white-ips");
 		setMethod(MethodType.POST);
 		try {

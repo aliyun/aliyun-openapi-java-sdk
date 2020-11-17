@@ -29,7 +29,7 @@ public class UpdateAdvancedSettingRequest extends RoaAcsRequest<UpdateAdvancedSe
 
 	private String clientToken;
 	public UpdateAdvancedSettingRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateAdvancedSetting", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateAdvancedSetting", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/update-advanced-setting");
 		setMethod(MethodType.POST);
 		try {

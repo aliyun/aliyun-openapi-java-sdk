@@ -27,7 +27,7 @@ public class DescribeTemplatesRequest extends RoaAcsRequest<DescribeTemplatesRes
 
 	private String instanceId;
 	public DescribeTemplatesRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeTemplates", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeTemplates", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/templates");
 		setMethod(MethodType.GET);
 		try {

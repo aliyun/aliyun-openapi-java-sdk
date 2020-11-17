@@ -25,7 +25,7 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class TagResourcesRequest extends RoaAcsRequest<TagResourcesResponse> {
 	   
 	public TagResourcesRequest() {
-		super("elasticsearch", "2017-06-13", "TagResources", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "TagResources", "elasticsearche");
 		setUriPattern("/openapi/tags");
 		setMethod(MethodType.POST);
 		try {

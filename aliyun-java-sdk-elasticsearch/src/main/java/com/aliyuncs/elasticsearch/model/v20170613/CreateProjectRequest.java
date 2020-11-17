@@ -27,7 +27,7 @@ public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
 
 	private String clientToken;
 	public CreateProjectRequest() {
-		super("elasticsearch", "2017-06-13", "CreateProject", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "CreateProject", "elasticsearche");
 		setUriPattern("/openapi/projects");
 		setMethod(MethodType.POST);
 		try {

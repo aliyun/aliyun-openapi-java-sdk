@@ -27,7 +27,7 @@ public class DescribeKibanaSettingsRequest extends RoaAcsRequest<DescribeKibanaS
 
 	private String instanceId;
 	public DescribeKibanaSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeKibanaSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeKibanaSettings", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/kibana-settings");
 		setMethod(MethodType.GET);
 		try {

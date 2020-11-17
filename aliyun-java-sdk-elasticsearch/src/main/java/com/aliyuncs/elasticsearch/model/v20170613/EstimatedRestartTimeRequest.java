@@ -29,7 +29,7 @@ public class EstimatedRestartTimeRequest extends RoaAcsRequest<EstimatedRestartT
 
 	private Boolean force;
 	public EstimatedRestartTimeRequest() {
-		super("elasticsearch", "2017-06-13", "EstimatedRestartTime", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "EstimatedRestartTime", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/estimated-time/restart-time");
 		setMethod(MethodType.POST);
 		try {

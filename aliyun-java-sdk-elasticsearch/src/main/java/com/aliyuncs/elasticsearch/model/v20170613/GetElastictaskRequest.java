@@ -27,7 +27,7 @@ public class GetElastictaskRequest extends RoaAcsRequest<GetElastictaskResponse>
 
 	private String instanceId;
 	public GetElastictaskRequest() {
-		super("elasticsearch", "2017-06-13", "GetElastictask", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "GetElastictask", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/elastic-task");
 		setMethod(MethodType.GET);
 		try {

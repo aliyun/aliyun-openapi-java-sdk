@@ -29,7 +29,7 @@ public class UpdateCollectorRequest extends RoaAcsRequest<UpdateCollectorRespons
 
 	private String resId;
 	public UpdateCollectorRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateCollector", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateCollector", "elasticsearche");
 		setUriPattern("/openapi/collectors/[ResId]");
 		setMethod(MethodType.PUT);
 		try {

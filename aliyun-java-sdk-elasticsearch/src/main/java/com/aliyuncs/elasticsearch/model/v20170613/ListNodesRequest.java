@@ -37,7 +37,7 @@ public class ListNodesRequest extends RoaAcsRequest<ListNodesResponse> {
 
 	private String tags;
 	public ListNodesRequest() {
-		super("elasticsearch", "2017-06-13", "ListNodes", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListNodes", "elasticsearche");
 		setUriPattern("/openapi/collectors/[ResId]/nodes");
 		setMethod(MethodType.GET);
 		try {

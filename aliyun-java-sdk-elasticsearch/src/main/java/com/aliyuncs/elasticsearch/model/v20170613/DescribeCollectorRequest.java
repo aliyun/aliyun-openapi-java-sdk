@@ -27,7 +27,7 @@ public class DescribeCollectorRequest extends RoaAcsRequest<DescribeCollectorRes
 
 	private String resId;
 	public DescribeCollectorRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeCollector", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribeCollector", "elasticsearche");
 		setUriPattern("/openapi/collectors/[ResId]");
 		setMethod(MethodType.GET);
 		try {

@@ -29,7 +29,7 @@ public class UpdateKibanaSettingsRequest extends RoaAcsRequest<UpdateKibanaSetti
 
 	private String clientToken;
 	public UpdateKibanaSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "UpdateKibanaSettings", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/update-kibana-settings");
 		setMethod(MethodType.POST);
 		try {

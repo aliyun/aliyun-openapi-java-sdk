@@ -27,7 +27,7 @@ public class ListExtendfilesRequest extends RoaAcsRequest<ListExtendfilesRespons
 
 	private String instanceId;
 	public ListExtendfilesRequest() {
-		super("elasticsearch", "2017-06-13", "ListExtendfiles", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListExtendfiles", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/extendfiles");
 		setMethod(MethodType.GET);
 		try {

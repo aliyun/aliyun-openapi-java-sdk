@@ -31,7 +31,7 @@ public class RestartInstanceRequest extends RoaAcsRequest<RestartInstanceRespons
 
 	private Boolean force;
 	public RestartInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/restart");
 		setMethod(MethodType.POST);
 		try {

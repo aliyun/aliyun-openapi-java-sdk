@@ -31,7 +31,7 @@ public class DeleteConnectedClusterRequest extends RoaAcsRequest<DeleteConnected
 
 	private String connectedInstanceId;
 	public DeleteConnectedClusterRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteConnectedCluster", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DeleteConnectedCluster", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/connected-clusters");
 		setMethod(MethodType.DELETE);
 		try {

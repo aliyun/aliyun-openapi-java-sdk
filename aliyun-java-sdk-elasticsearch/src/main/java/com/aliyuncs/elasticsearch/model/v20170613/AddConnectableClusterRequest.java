@@ -29,7 +29,7 @@ public class AddConnectableClusterRequest extends RoaAcsRequest<AddConnectableCl
 
 	private String clientToken;
 	public AddConnectableClusterRequest() {
-		super("elasticsearch", "2017-06-13", "AddConnectableCluster", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "AddConnectableCluster", "elasticsearche");
 		setUriPattern("/openapi/instances/[InstanceId]/connected-clusters");
 		setMethod(MethodType.POST);
 		try {

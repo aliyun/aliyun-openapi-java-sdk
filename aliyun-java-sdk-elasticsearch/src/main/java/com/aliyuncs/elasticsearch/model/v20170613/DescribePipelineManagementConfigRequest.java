@@ -29,7 +29,7 @@ public class DescribePipelineManagementConfigRequest extends RoaAcsRequest<Descr
 
 	private String clientToken;
 	public DescribePipelineManagementConfigRequest() {
-		super("elasticsearch", "2017-06-13", "DescribePipelineManagementConfig", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "DescribePipelineManagementConfig", "elasticsearche");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipeline-management-config");
 		setMethod(MethodType.GET);
 		try {

@@ -37,7 +37,7 @@ public class ListEcsInstancesRequest extends RoaAcsRequest<ListEcsInstancesRespo
 
 	private String tags;
 	public ListEcsInstancesRequest() {
-		super("elasticsearch", "2017-06-13", "ListEcsInstances", "elasticsearch");
+		super("elasticsearch", "2017-06-13", "ListEcsInstances", "elasticsearche");
 		setUriPattern("/openapi/ecs");
 		setMethod(MethodType.GET);
 		try {
