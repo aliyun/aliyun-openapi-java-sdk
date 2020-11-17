@@ -116,6 +116,24 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private String nodeName;
 
+		private Integer priority;
+
+		private Long baselineId;
+
+		private Boolean repeatability;
+
+		private Long repeatInterval;
+
+		private String connection;
+
+		private Integer dqcType;
+
+		private String dqcDescription;
+
+		private String errorMessage;
+
+		private Long relatedFlowId;
+
 		public Long getNodeId() {
 			return this.nodeId;
 		}
@@ -234,6 +252,78 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setNodeName(String nodeName) {
 			this.nodeName = nodeName;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Long getBaselineId() {
+			return this.baselineId;
+		}
+
+		public void setBaselineId(Long baselineId) {
+			this.baselineId = baselineId;
+		}
+
+		public Boolean getRepeatability() {
+			return this.repeatability;
+		}
+
+		public void setRepeatability(Boolean repeatability) {
+			this.repeatability = repeatability;
+		}
+
+		public Long getRepeatInterval() {
+			return this.repeatInterval;
+		}
+
+		public void setRepeatInterval(Long repeatInterval) {
+			this.repeatInterval = repeatInterval;
+		}
+
+		public String getConnection() {
+			return this.connection;
+		}
+
+		public void setConnection(String connection) {
+			this.connection = connection;
+		}
+
+		public Integer getDqcType() {
+			return this.dqcType;
+		}
+
+		public void setDqcType(Integer dqcType) {
+			this.dqcType = dqcType;
+		}
+
+		public String getDqcDescription() {
+			return this.dqcDescription;
+		}
+
+		public void setDqcDescription(String dqcDescription) {
+			this.dqcDescription = dqcDescription;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public Long getRelatedFlowId() {
+			return this.relatedFlowId;
+		}
+
+		public void setRelatedFlowId(Long relatedFlowId) {
+			this.relatedFlowId = relatedFlowId;
 		}
 	}
 

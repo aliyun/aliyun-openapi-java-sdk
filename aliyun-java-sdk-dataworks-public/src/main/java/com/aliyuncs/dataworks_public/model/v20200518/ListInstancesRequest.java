@@ -31,6 +31,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String bizName;
 
+	private Long dagId;
+
 	private Integer pageNumber;
 
 	private String nodeName;
@@ -81,6 +83,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.bizName = bizName;
 		if(bizName != null){
 			putBodyParameter("BizName", bizName);
+		}
+	}
+
+	public Long getDagId() {
+		return this.dagId;
+	}
+
+	public void setDagId(Long dagId) {
+		this.dagId = dagId;
+		if(dagId != null){
+			putBodyParameter("DagId", dagId.toString());
 		}
 	}
 

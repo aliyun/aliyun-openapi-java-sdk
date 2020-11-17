@@ -14,28 +14,28 @@
 
 package com.aliyuncs.dataworks_public.model.v20200518;
 
-import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dataworks_public.transform.v20200518.ListNodeIOResponseUnmarshaller;
+import com.aliyuncs.dataworks_public.transform.v20200518.SearchNodesByOutputResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListNodeIOResponse extends AcsResponse {
+public class SearchNodesByOutputResponse extends AcsResponse {
 
 	private Boolean success;
+
+	private Integer httpStatusCode;
 
 	private String errorCode;
 
 	private String errorMessage;
 
-	private Integer httpStatusCode;
-
 	private String requestId;
 
-	private List<DataItem> data;
+	private Map<Object,Object> data;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -43,6 +43,14 @@ public class ListNodeIOResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getErrorCode() {
@@ -61,14 +69,6 @@ public class ListNodeIOResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -77,50 +77,17 @@ public class ListNodeIOResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<DataItem> getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(List<DataItem> data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 
-	public static class DataItem {
-
-		private String tableName;
-
-		private String data;
-
-		private Long nodeId;
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
-
-		public String getData() {
-			return this.data;
-		}
-
-		public void setData(String data) {
-			this.data = data;
-		}
-
-		public Long getNodeId() {
-			return this.nodeId;
-		}
-
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
-		}
-	}
-
 	@Override
-	public ListNodeIOResponse getInstance(UnmarshallerContext context) {
-		return	ListNodeIOResponseUnmarshaller.unmarshall(this, context);
+	public SearchNodesByOutputResponse getInstance(UnmarshallerContext context) {
+		return	SearchNodesByOutputResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

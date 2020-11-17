@@ -52,6 +52,13 @@ public class ListNodesResponseUnmarshaller {
 			nodesItem.setParamValues(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ParamValues"));
 			nodesItem.setDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].Description"));
 			nodesItem.setResGroupName(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].ResGroupName"));
+			nodesItem.setPriority(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].Priority"));
+			nodesItem.setBaselineId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].BaselineId"));
+			nodesItem.setRepeatInterval(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].RepeatInterval"));
+			nodesItem.setConnection(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].Connection"));
+			nodesItem.setDqcType(_ctx.integerValue("ListNodesResponse.Data.Nodes["+ i +"].DqcType"));
+			nodesItem.setDqcDescription(_ctx.stringValue("ListNodesResponse.Data.Nodes["+ i +"].DqcDescription"));
+			nodesItem.setRelatedFlowId(_ctx.longValue("ListNodesResponse.Data.Nodes["+ i +"].RelatedFlowId"));
 
 			nodes.add(nodesItem);
 		}

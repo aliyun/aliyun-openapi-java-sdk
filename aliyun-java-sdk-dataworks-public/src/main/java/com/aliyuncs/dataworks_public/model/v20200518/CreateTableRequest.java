@@ -52,6 +52,8 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 
 	private String location;
 
+	private String comment;
+
 	private String tableName;
 
 	private String appGuid;
@@ -221,6 +223,17 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 		this.location = location;
 		if(location != null){
 			putQueryParameter("Location", location);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
 		}
 	}
 

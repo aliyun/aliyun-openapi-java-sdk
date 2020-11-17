@@ -56,6 +56,15 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setBeginRunningTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BeginRunningTime"));
 			instance.setParamValues(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ParamValues"));
 			instance.setFinishTime(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].FinishTime"));
+			instance.setPriority(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].Priority"));
+			instance.setBaselineId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].BaselineId"));
+			instance.setRepeatability(_ctx.booleanValue("ListInstancesResponse.Data.Instances["+ i +"].Repeatability"));
+			instance.setRepeatInterval(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].RepeatInterval"));
+			instance.setConnection(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Connection"));
+			instance.setDqcType(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].DqcType"));
+			instance.setDqcDescription(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DqcDescription"));
+			instance.setErrorMessage(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ErrorMessage"));
+			instance.setRelatedFlowId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].RelatedFlowId"));
 
 			instances.add(instance);
 		}

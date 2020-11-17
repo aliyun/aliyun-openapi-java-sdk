@@ -37,6 +37,7 @@ public class ListNodeIOResponseUnmarshaller {
 			DataItem dataItem = new DataItem();
 			dataItem.setTableName(_ctx.stringValue("ListNodeIOResponse.Data["+ i +"].TableName"));
 			dataItem.setData(_ctx.stringValue("ListNodeIOResponse.Data["+ i +"].Data"));
+			dataItem.setNodeId(_ctx.longValue("ListNodeIOResponse.Data["+ i +"].NodeId"));
 
 			data.add(dataItem);
 		}

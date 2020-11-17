@@ -41,6 +41,13 @@ public class GetNodeResponseUnmarshaller {
 		data.setProjectId(_ctx.longValue("GetNodeResponse.Data.ProjectId"));
 		data.setSchedulerType(_ctx.stringValue("GetNodeResponse.Data.SchedulerType"));
 		data.setParamValues(_ctx.stringValue("GetNodeResponse.Data.ParamValues"));
+		data.setPriority(_ctx.integerValue("GetNodeResponse.Data.Priority"));
+		data.setBaselineId(_ctx.longValue("GetNodeResponse.Data.BaselineId"));
+		data.setRepeatInterval(_ctx.longValue("GetNodeResponse.Data.RepeatInterval"));
+		data.setConnection(_ctx.stringValue("GetNodeResponse.Data.Connection"));
+		data.setDqcType(_ctx.integerValue("GetNodeResponse.Data.DqcType"));
+		data.setDqcDescription(_ctx.stringValue("GetNodeResponse.Data.DqcDescription"));
+		data.setRelatedFlowId(_ctx.longValue("GetNodeResponse.Data.RelatedFlowId"));
 		getNodeResponse.setData(data);
 	 
 	 	return getNodeResponse;

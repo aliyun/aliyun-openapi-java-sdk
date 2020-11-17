@@ -45,6 +45,15 @@ public class GetInstanceResponseUnmarshaller {
 		data.setCreateTime(_ctx.longValue("GetInstanceResponse.Data.CreateTime"));
 		data.setModifyTime(_ctx.longValue("GetInstanceResponse.Data.ModifyTime"));
 		data.setNodeName(_ctx.stringValue("GetInstanceResponse.Data.NodeName"));
+		data.setPriority(_ctx.integerValue("GetInstanceResponse.Data.Priority"));
+		data.setBaselineId(_ctx.longValue("GetInstanceResponse.Data.BaselineId"));
+		data.setRepeatability(_ctx.booleanValue("GetInstanceResponse.Data.Repeatability"));
+		data.setRepeatInterval(_ctx.longValue("GetInstanceResponse.Data.RepeatInterval"));
+		data.setConnection(_ctx.stringValue("GetInstanceResponse.Data.Connection"));
+		data.setDqcType(_ctx.integerValue("GetInstanceResponse.Data.DqcType"));
+		data.setDqcDescription(_ctx.stringValue("GetInstanceResponse.Data.DqcDescription"));
+		data.setErrorMessage(_ctx.stringValue("GetInstanceResponse.Data.ErrorMessage"));
+		data.setRelatedFlowId(_ctx.longValue("GetInstanceResponse.Data.RelatedFlowId"));
 		getInstanceResponse.setData(data);
 	 
 	 	return getInstanceResponse;
