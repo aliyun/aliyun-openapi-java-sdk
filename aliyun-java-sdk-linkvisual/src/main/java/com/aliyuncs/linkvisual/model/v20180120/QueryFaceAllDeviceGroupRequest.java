@@ -22,14 +22,18 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePictureResponse> {
+public class QueryFaceAllDeviceGroupRequest extends RpcAcsRequest<QueryFaceAllDeviceGroupResponse> {
 	   
 
-	private String iotId;
+	private String isolationId;
 
 	private String iotInstanceId;
-	public TriggerCapturePictureRequest() {
-		super("Linkvisual", "2018-01-20", "TriggerCapturePicture", "Linkvisual");
+
+	private Integer pageSize;
+
+	private Integer pageNo;
+	public QueryFaceAllDeviceGroupRequest() {
+		super("Linkvisual", "2018-01-20", "QueryFaceAllDeviceGroup", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,14 @@ public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePi
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getIsolationId() {
+		return this.isolationId;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setIsolationId(String isolationId) {
+		this.isolationId = isolationId;
+		if(isolationId != null){
+			putQueryParameter("IsolationId", isolationId);
 		}
 	}
 
@@ -59,9 +63,31 @@ public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePi
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
+	}
+
 	@Override
-	public Class<TriggerCapturePictureResponse> getResponseClass() {
-		return TriggerCapturePictureResponse.class;
+	public Class<QueryFaceAllDeviceGroupResponse> getResponseClass() {
+		return QueryFaceAllDeviceGroupResponse.class;
 	}
 
 }

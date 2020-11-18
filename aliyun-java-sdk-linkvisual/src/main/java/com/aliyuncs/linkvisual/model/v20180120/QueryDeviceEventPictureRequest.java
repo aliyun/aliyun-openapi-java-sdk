@@ -28,6 +28,8 @@ public class QueryDeviceEventPictureRequest extends RpcAcsRequest<QueryDeviceEve
 	private String eventId;
 
 	private String iotId;
+
+	private String iotInstanceId;
 	public QueryDeviceEventPictureRequest() {
 		super("Linkvisual", "2018-01-20", "QueryDeviceEventPicture", "Linkvisual");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class QueryDeviceEventPictureRequest extends RpcAcsRequest<QueryDeviceEve
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

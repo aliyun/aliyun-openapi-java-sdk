@@ -22,14 +22,14 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePictureResponse> {
+public class AddFaceUserGroupRequest extends RpcAcsRequest<AddFaceUserGroupResponse> {
 	   
 
-	private String iotId;
+	private String isolationId;
 
-	private String iotInstanceId;
-	public TriggerCapturePictureRequest() {
-		super("Linkvisual", "2018-01-20", "TriggerCapturePicture", "Linkvisual");
+	private String userGroupName;
+	public AddFaceUserGroupRequest() {
+		super("Linkvisual", "2018-01-20", "AddFaceUserGroup", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class TriggerCapturePictureRequest extends RpcAcsRequest<TriggerCapturePi
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getIsolationId() {
+		return this.isolationId;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setIsolationId(String isolationId) {
+		this.isolationId = isolationId;
+		if(isolationId != null){
+			putQueryParameter("IsolationId", isolationId);
 		}
 	}
 
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
+	public String getUserGroupName() {
+		return this.userGroupName;
 	}
 
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
+	public void setUserGroupName(String userGroupName) {
+		this.userGroupName = userGroupName;
+		if(userGroupName != null){
+			putQueryParameter("UserGroupName", userGroupName);
 		}
 	}
 
 	@Override
-	public Class<TriggerCapturePictureResponse> getResponseClass() {
-		return TriggerCapturePictureResponse.class;
+	public Class<AddFaceUserGroupResponse> getResponseClass() {
+		return AddFaceUserGroupResponse.class;
 	}
 
 }

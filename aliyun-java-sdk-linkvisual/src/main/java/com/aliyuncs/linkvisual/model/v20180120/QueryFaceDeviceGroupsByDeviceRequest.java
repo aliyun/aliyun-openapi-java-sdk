@@ -22,24 +22,22 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceEventRequest extends RpcAcsRequest<QueryDeviceEventResponse> {
+public class QueryFaceDeviceGroupsByDeviceRequest extends RpcAcsRequest<QueryFaceDeviceGroupsByDeviceResponse> {
 	   
 
-	private String iotId;
+	private String isolationId;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
-	private Long endTime;
+	private String productKey;
 
-	private Long beginTime;
+	private Integer pageNo;
 
-	private Integer currentPage;
-
-	private Integer eventType;
-	public QueryDeviceEventRequest() {
-		super("Linkvisual", "2018-01-20", "QueryDeviceEvent", "Linkvisual");
+	private String deviceName;
+	public QueryFaceDeviceGroupsByDeviceRequest() {
+		super("Linkvisual", "2018-01-20", "QueryFaceDeviceGroupsByDevice", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,14 +45,14 @@ public class QueryDeviceEventRequest extends RpcAcsRequest<QueryDeviceEventRespo
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getIsolationId() {
+		return this.isolationId;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setIsolationId(String isolationId) {
+		this.isolationId = isolationId;
+		if(isolationId != null){
+			putQueryParameter("IsolationId", isolationId);
 		}
 	}
 
@@ -80,53 +78,42 @@ public class QueryDeviceEventRequest extends RpcAcsRequest<QueryDeviceEventRespo
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
 		}
 	}
 
-	public Long getBeginTime() {
-		return this.beginTime;
+	public Integer getPageNo() {
+		return this.pageNo;
 	}
 
-	public void setBeginTime(Long beginTime) {
-		this.beginTime = beginTime;
-		if(beginTime != null){
-			putQueryParameter("BeginTime", beginTime.toString());
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
 		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public String getDeviceName() {
+		return this.deviceName;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public Integer getEventType() {
-		return this.eventType;
-	}
-
-	public void setEventType(Integer eventType) {
-		this.eventType = eventType;
-		if(eventType != null){
-			putQueryParameter("EventType", eventType.toString());
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceEventResponse> getResponseClass() {
-		return QueryDeviceEventResponse.class;
+	public Class<QueryFaceDeviceGroupsByDeviceResponse> getResponseClass() {
+		return QueryFaceDeviceGroupsByDeviceResponse.class;
 	}
 
 }

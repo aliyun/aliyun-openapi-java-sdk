@@ -22,18 +22,20 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePictureFileResponse> {
+public class CheckFaceUserDoExistOnDeviceRequest extends RpcAcsRequest<CheckFaceUserDoExistOnDeviceResponse> {
 	   
 
-	private Integer pictureType;
+	private String isolationId;
 
-	private String iotId;
+	private String userId;
 
 	private String iotInstanceId;
 
-	private String captureId;
-	public QueryDevicePictureFileRequest() {
-		super("Linkvisual", "2018-01-20", "QueryDevicePictureFile", "Linkvisual");
+	private String productKey;
+
+	private String deviceName;
+	public CheckFaceUserDoExistOnDeviceRequest() {
+		super("Linkvisual", "2018-01-20", "CheckFaceUserDoExistOnDevice", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +43,25 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 		} catch (Exception e) {}
 	}
 
-	public Integer getPictureType() {
-		return this.pictureType;
+	public String getIsolationId() {
+		return this.isolationId;
 	}
 
-	public void setPictureType(Integer pictureType) {
-		this.pictureType = pictureType;
-		if(pictureType != null){
-			putQueryParameter("PictureType", pictureType.toString());
+	public void setIsolationId(String isolationId) {
+		this.isolationId = isolationId;
+		if(isolationId != null){
+			putQueryParameter("IsolationId", isolationId);
 		}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -74,20 +76,31 @@ public class QueryDevicePictureFileRequest extends RpcAcsRequest<QueryDevicePict
 		}
 	}
 
-	public String getCaptureId() {
-		return this.captureId;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setCaptureId(String captureId) {
-		this.captureId = captureId;
-		if(captureId != null){
-			putQueryParameter("CaptureId", captureId);
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 
 	@Override
-	public Class<QueryDevicePictureFileResponse> getResponseClass() {
-		return QueryDevicePictureFileResponse.class;
+	public Class<CheckFaceUserDoExistOnDeviceResponse> getResponseClass() {
+		return CheckFaceUserDoExistOnDeviceResponse.class;
 	}
 
 }

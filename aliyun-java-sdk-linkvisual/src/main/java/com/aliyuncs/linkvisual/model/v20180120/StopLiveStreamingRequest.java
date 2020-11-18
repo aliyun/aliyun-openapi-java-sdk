@@ -27,6 +27,8 @@ public class StopLiveStreamingRequest extends RpcAcsRequest<StopLiveStreamingRes
 
 	private String iotId;
 
+	private String iotInstanceId;
+
 	private Integer streamType;
 	public StopLiveStreamingRequest() {
 		super("Linkvisual", "2018-01-20", "StopLiveStreaming", "Linkvisual");
@@ -45,6 +47,17 @@ public class StopLiveStreamingRequest extends RpcAcsRequest<StopLiveStreamingRes
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
