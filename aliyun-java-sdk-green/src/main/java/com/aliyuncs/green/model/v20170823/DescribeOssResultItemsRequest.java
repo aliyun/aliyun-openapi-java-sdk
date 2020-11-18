@@ -29,6 +29,8 @@ public class DescribeOssResultItemsRequest extends RpcAcsRequest<DescribeOssResu
 
 	private Float maxScore;
 
+	private Long stockTaskId;
+
 	private String startDate;
 
 	private String scene;
@@ -84,6 +86,17 @@ public class DescribeOssResultItemsRequest extends RpcAcsRequest<DescribeOssResu
 		this.maxScore = maxScore;
 		if(maxScore != null){
 			putQueryParameter("MaxScore", maxScore.toString());
+		}
+	}
+
+	public Long getStockTaskId() {
+		return this.stockTaskId;
+	}
+
+	public void setStockTaskId(Long stockTaskId) {
+		this.stockTaskId = stockTaskId;
+		if(stockTaskId != null){
+			putQueryParameter("StockTaskId", stockTaskId.toString());
 		}
 	}
 

@@ -34,6 +34,8 @@ public class DescribeOssIncrementCheckSettingResponseUnmarshaller {
 		describeOssIncrementCheckSettingResponse.setVideoMaxFrames(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxFrames"));
 		describeOssIncrementCheckSettingResponse.setVideoMaxSize(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxSize"));
 		describeOssIncrementCheckSettingResponse.setAutoFreezeType(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.AutoFreezeType"));
+		describeOssIncrementCheckSettingResponse.setCallbackId(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.CallbackId"));
+		describeOssIncrementCheckSettingResponse.setCallbackName(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.CallbackName"));
 
 		List<String> imageSceneList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOssIncrementCheckSettingResponse.ImageSceneList.Length"); i++) {

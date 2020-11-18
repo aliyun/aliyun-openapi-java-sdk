@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse;
 import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse.ScanResult;
 import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse.ScanResult.FrameResult;
+import com.aliyuncs.green.model.v20170823.DescribeOssResultItemsResponse.ScanResult.VoiceSegmentAntispamResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,7 @@ public class DescribeOssResultItemsResponseUnmarshaller {
 			scanResult.setScore(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Score"));
 			scanResult.setHandleStatus(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].HandleStatus"));
 			scanResult.setResourceStatus(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].ResourceStatus"));
+			scanResult.setContent(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].Content"));
 
 			List<FrameResult> frameResults = new ArrayList<FrameResult>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].FrameResults.Length"); j++) {
@@ -61,6 +63,18 @@ public class DescribeOssResultItemsResponseUnmarshaller {
 				frameResults.add(frameResult);
 			}
 			scanResult.setFrameResults(frameResults);
+
+			List<VoiceSegmentAntispamResult> voiceSegmentAntispamResults = new ArrayList<VoiceSegmentAntispamResult>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].VoiceSegmentAntispamResults.Length"); j++) {
+				VoiceSegmentAntispamResult voiceSegmentAntispamResult = new VoiceSegmentAntispamResult();
+				voiceSegmentAntispamResult.setText(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].Text"));
+				voiceSegmentAntispamResult.setEndTime(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].EndTime"));
+				voiceSegmentAntispamResult.setStartTime(_ctx.integerValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].StartTime"));
+				voiceSegmentAntispamResult.setLabel(_ctx.stringValue("DescribeOssResultItemsResponse.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].Label"));
+
+				voiceSegmentAntispamResults.add(voiceSegmentAntispamResult);
+			}
+			scanResult.setVoiceSegmentAntispamResults(voiceSegmentAntispamResults);
 
 			scanResultList.add(scanResult);
 		}

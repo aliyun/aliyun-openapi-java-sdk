@@ -33,6 +33,8 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 
 	private String sourceIp;
 
+	private String callbackId;
+
 	private String imageScanLimit;
 
 	private String videoAutoFreezeSceneList;
@@ -98,6 +100,17 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
+		}
+	}
+
+	public String getCallbackId() {
+		return this.callbackId;
+	}
+
+	public void setCallbackId(String callbackId) {
+		this.callbackId = callbackId;
+		if(callbackId != null){
+			putQueryParameter("CallbackId", callbackId);
 		}
 	}
 

@@ -39,6 +39,10 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 	private String autoFreezeType;
 
+	private String callbackId;
+
+	private String callbackName;
+
 	private List<BucketConfig> bucketConfigList;
 
 	private List<String> imageSceneList;
@@ -103,6 +107,22 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 	public void setAutoFreezeType(String autoFreezeType) {
 		this.autoFreezeType = autoFreezeType;
+	}
+
+	public String getCallbackId() {
+		return this.callbackId;
+	}
+
+	public void setCallbackId(String callbackId) {
+		this.callbackId = callbackId;
+	}
+
+	public String getCallbackName() {
+		return this.callbackName;
+	}
+
+	public void setCallbackName(String callbackName) {
+		this.callbackName = callbackName;
 	}
 
 	public List<BucketConfig> getBucketConfigList() {

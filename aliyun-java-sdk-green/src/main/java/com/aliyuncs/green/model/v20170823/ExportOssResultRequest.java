@@ -29,6 +29,8 @@ public class ExportOssResultRequest extends RpcAcsRequest<ExportOssResultRespons
 
 	private Float maxScore;
 
+	private Long stockTaskId;
+
 	private String startDate;
 
 	private String scene;
@@ -80,6 +82,17 @@ public class ExportOssResultRequest extends RpcAcsRequest<ExportOssResultRespons
 		this.maxScore = maxScore;
 		if(maxScore != null){
 			putQueryParameter("MaxScore", maxScore.toString());
+		}
+	}
+
+	public Long getStockTaskId() {
+		return this.stockTaskId;
+	}
+
+	public void setStockTaskId(Long stockTaskId) {
+		this.stockTaskId = stockTaskId;
+		if(stockTaskId != null){
+			putQueryParameter("StockTaskId", stockTaskId.toString());
 		}
 	}
 

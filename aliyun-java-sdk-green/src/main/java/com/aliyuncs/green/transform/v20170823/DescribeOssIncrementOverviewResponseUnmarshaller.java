@@ -28,6 +28,9 @@ public class DescribeOssIncrementOverviewResponseUnmarshaller {
 		describeOssIncrementOverviewResponse.setVideoFrameCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.VideoFrameCount"));
 		describeOssIncrementOverviewResponse.setPornUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.PornUnhandleCount"));
 		describeOssIncrementOverviewResponse.setTerrorismUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.TerrorismUnhandleCount"));
+		describeOssIncrementOverviewResponse.setAdUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.AdUnhandleCount"));
+		describeOssIncrementOverviewResponse.setLiveUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.LiveUnhandleCount"));
+		describeOssIncrementOverviewResponse.setVoiceAntispamUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.VoiceAntispamUnhandleCount"));
 	 
 	 	return describeOssIncrementOverviewResponse;
 	}

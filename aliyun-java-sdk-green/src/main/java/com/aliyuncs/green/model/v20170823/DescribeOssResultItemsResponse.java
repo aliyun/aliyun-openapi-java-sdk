@@ -115,7 +115,11 @@ public class DescribeOssResultItemsResponse extends AcsResponse {
 
 		private Integer resourceStatus;
 
+		private String content;
+
 		private List<FrameResult> frameResults;
+
+		private List<VoiceSegmentAntispamResult> voiceSegmentAntispamResults;
 
 		public String getTaskId() {
 			return this.taskId;
@@ -229,12 +233,28 @@ public class DescribeOssResultItemsResponse extends AcsResponse {
 			this.resourceStatus = resourceStatus;
 		}
 
+		public String getContent() {
+			return this.content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+
 		public List<FrameResult> getFrameResults() {
 			return this.frameResults;
 		}
 
 		public void setFrameResults(List<FrameResult> frameResults) {
 			this.frameResults = frameResults;
+		}
+
+		public List<VoiceSegmentAntispamResult> getVoiceSegmentAntispamResults() {
+			return this.voiceSegmentAntispamResults;
+		}
+
+		public void setVoiceSegmentAntispamResults(List<VoiceSegmentAntispamResult> voiceSegmentAntispamResults) {
+			this.voiceSegmentAntispamResults = voiceSegmentAntispamResults;
 		}
 
 		public static class FrameResult {
@@ -267,6 +287,49 @@ public class DescribeOssResultItemsResponse extends AcsResponse {
 
 			public void setUrl(String url) {
 				this.url = url;
+			}
+		}
+
+		public static class VoiceSegmentAntispamResult {
+
+			private String text;
+
+			private Integer endTime;
+
+			private Integer startTime;
+
+			private String label;
+
+			public String getText() {
+				return this.text;
+			}
+
+			public void setText(String text) {
+				this.text = text;
+			}
+
+			public Integer getEndTime() {
+				return this.endTime;
+			}
+
+			public void setEndTime(Integer endTime) {
+				this.endTime = endTime;
+			}
+
+			public Integer getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Integer startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
 			}
 		}
 	}
