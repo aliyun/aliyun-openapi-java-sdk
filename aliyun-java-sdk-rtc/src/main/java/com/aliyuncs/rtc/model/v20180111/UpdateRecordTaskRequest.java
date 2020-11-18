@@ -23,7 +23,7 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskResponse> {
+public class UpdateRecordTaskRequest extends RpcAcsRequest<UpdateRecordTaskResponse> {
 	   
 
 	private List<UserPanes> userPaness;
@@ -39,8 +39,8 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 	private String appId;
 
 	private String channelId;
-	public StartRecordTaskRequest() {
-		super("rtc", "2018-01-11", "StartRecordTask", "rtc");
+	public UpdateRecordTaskRequest() {
+		super("rtc", "2018-01-11", "UpdateRecordTask", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -353,8 +353,8 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 	}
 
 	@Override
-	public Class<StartRecordTaskResponse> getResponseClass() {
-		return StartRecordTaskResponse.class;
+	public Class<UpdateRecordTaskResponse> getResponseClass() {
+		return UpdateRecordTaskResponse.class;
 	}
 
 }

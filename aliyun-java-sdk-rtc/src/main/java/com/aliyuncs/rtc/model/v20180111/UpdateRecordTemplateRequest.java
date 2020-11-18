@@ -42,11 +42,17 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 
 	private Integer fileSplitInterval;
 
+	private String httpCallbackUrl;
+
+	private List<Watermarks> watermarkss;
+
 	private Long ownerId;
 
 	private String templateId;
 
 	private String appId;
+
+	private List<Backgrounds> backgroundss;
 
 	private String name;
 
@@ -152,6 +158,37 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		}
 	}
 
+	public String getHttpCallbackUrl() {
+		return this.httpCallbackUrl;
+	}
+
+	public void setHttpCallbackUrl(String httpCallbackUrl) {
+		this.httpCallbackUrl = httpCallbackUrl;
+		if(httpCallbackUrl != null){
+			putQueryParameter("HttpCallbackUrl", httpCallbackUrl);
+		}
+	}
+
+	public List<Watermarks> getWatermarkss() {
+		return this.watermarkss;
+	}
+
+	public void setWatermarkss(List<Watermarks> watermarkss) {
+		this.watermarkss = watermarkss;	
+		if (watermarkss != null) {
+			for (int depth1 = 0; depth1 < watermarkss.size(); depth1++) {
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Url" , watermarkss.get(depth1).getUrl());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Alpha" , watermarkss.get(depth1).getAlpha());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Display" , watermarkss.get(depth1).getDisplay());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".X" , watermarkss.get(depth1).getX());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Y" , watermarkss.get(depth1).getY());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Width" , watermarkss.get(depth1).getWidth());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".Height" , watermarkss.get(depth1).getHeight());
+				putQueryParameter("Watermarks." + (depth1 + 1) + ".ZOrder" , watermarkss.get(depth1).getZOrder());
+			}
+		}	
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -185,6 +222,25 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		}
 	}
 
+	public List<Backgrounds> getBackgroundss() {
+		return this.backgroundss;
+	}
+
+	public void setBackgroundss(List<Backgrounds> backgroundss) {
+		this.backgroundss = backgroundss;	
+		if (backgroundss != null) {
+			for (int depth1 = 0; depth1 < backgroundss.size(); depth1++) {
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Url" , backgroundss.get(depth1).getUrl());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Display" , backgroundss.get(depth1).getDisplay());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".X" , backgroundss.get(depth1).getX());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Y" , backgroundss.get(depth1).getY());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Width" , backgroundss.get(depth1).getWidth());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".Height" , backgroundss.get(depth1).getHeight());
+				putQueryParameter("Backgrounds." + (depth1 + 1) + ".ZOrder" , backgroundss.get(depth1).getZOrder());
+			}
+		}	
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -204,6 +260,162 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		this.mediaEncode = mediaEncode;
 		if(mediaEncode != null){
 			putQueryParameter("MediaEncode", mediaEncode.toString());
+		}
+	}
+
+	public static class Watermarks {
+
+		private String url;
+
+		private Float alpha;
+
+		private Integer display;
+
+		private Float x;
+
+		private Float y;
+
+		private Float width;
+
+		private Float height;
+
+		private Integer zOrder;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Float getAlpha() {
+			return this.alpha;
+		}
+
+		public void setAlpha(Float alpha) {
+			this.alpha = alpha;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Float height) {
+			this.height = height;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
+		}
+	}
+
+	public static class Backgrounds {
+
+		private String url;
+
+		private Integer display;
+
+		private Float x;
+
+		private Float y;
+
+		private Float width;
+
+		private Float height;
+
+		private Integer zOrder;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+
+		public Integer getDisplay() {
+			return this.display;
+		}
+
+		public void setDisplay(Integer display) {
+			this.display = display;
+		}
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Float getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Float width) {
+			this.width = width;
+		}
+
+		public Float getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Float height) {
+			this.height = height;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
 		}
 	}
 
