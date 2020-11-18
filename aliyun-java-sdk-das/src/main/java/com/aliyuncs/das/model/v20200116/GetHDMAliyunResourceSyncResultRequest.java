@@ -41,7 +41,7 @@ public class GetHDMAliyunResourceSyncResultRequest extends RpcAcsRequest<GetHDMA
 
 	private String timestamp;
 	public GetHDMAliyunResourceSyncResultRequest() {
-		super("DAS", "2020-01-16", "GetHDMAliyunResourceSyncResult", "hdm");
+		super("DAS", "2020-01-16", "GetHDMAliyunResourceSyncResult", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

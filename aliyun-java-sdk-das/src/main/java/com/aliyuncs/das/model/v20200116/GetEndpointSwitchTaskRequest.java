@@ -41,7 +41,7 @@ public class GetEndpointSwitchTaskRequest extends RpcAcsRequest<GetEndpointSwitc
 
 	private String timestamp;
 	public GetEndpointSwitchTaskRequest() {
-		super("DAS", "2020-01-16", "GetEndpointSwitchTask", "hdm");
+		super("DAS", "2020-01-16", "GetEndpointSwitchTask", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class SyncHDMAliyunResourceRequest extends RpcAcsRequest<SyncHDMAliyunRes
 
 	private String timestamp;
 	public SyncHDMAliyunResourceRequest() {
-		super("DAS", "2020-01-16", "SyncHDMAliyunResource", "hdm");
+		super("DAS", "2020-01-16", "SyncHDMAliyunResource", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

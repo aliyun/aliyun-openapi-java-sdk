@@ -29,7 +29,7 @@ public class CreateCacheAnalysisJobRequest extends RpcAcsRequest<CreateCacheAnal
 
 	private String nodeId;
 	public CreateCacheAnalysisJobRequest() {
-		super("DAS", "2020-01-16", "CreateCacheAnalysisJob", "hdm");
+		super("DAS", "2020-01-16", "CreateCacheAnalysisJob", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

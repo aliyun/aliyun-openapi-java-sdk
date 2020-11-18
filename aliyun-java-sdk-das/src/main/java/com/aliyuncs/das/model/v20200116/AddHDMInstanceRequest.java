@@ -63,7 +63,7 @@ public class AddHDMInstanceRequest extends RpcAcsRequest<AddHDMInstanceResponse>
 
 	private String username;
 	public AddHDMInstanceRequest() {
-		super("DAS", "2020-01-16", "AddHDMInstance", "hdm");
+		super("DAS", "2020-01-16", "AddHDMInstance", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

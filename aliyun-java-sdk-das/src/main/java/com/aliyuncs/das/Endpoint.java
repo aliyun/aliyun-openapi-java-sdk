@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class Endpoint {
     public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
         {
-            put("cn-shanghai", "hdm-api.aliyuncs.com");
+            put("cn-shanghai", "das.cn-shanghai.aliyuncs.com");
         }
     };
 

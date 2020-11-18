@@ -35,7 +35,7 @@ public class DescribeCacheAnalysisJobsRequest extends RpcAcsRequest<DescribeCach
 
 	private String pageSize;
 	public DescribeCacheAnalysisJobsRequest() {
-		super("DAS", "2020-01-16", "DescribeCacheAnalysisJobs", "hdm");
+		super("DAS", "2020-01-16", "DescribeCacheAnalysisJobs", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

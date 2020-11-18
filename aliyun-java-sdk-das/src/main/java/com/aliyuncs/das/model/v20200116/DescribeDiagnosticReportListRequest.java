@@ -49,7 +49,7 @@ public class DescribeDiagnosticReportListRequest extends RpcAcsRequest<DescribeD
 
 	private String timestamp;
 	public DescribeDiagnosticReportListRequest() {
-		super("DAS", "2020-01-16", "DescribeDiagnosticReportList", "hdm");
+		super("DAS", "2020-01-16", "DescribeDiagnosticReportList", "das");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
