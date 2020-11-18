@@ -1,0 +1,3 @@
+2020-11-18 Version: 1.0.1
+- Support auto open.
+
