@@ -28,6 +28,8 @@ public class DescribeProtectionModuleModeResponse extends AcsResponse {
 
 	private Integer mode;
 
+	private Integer learnStatus;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class DescribeProtectionModuleModeResponse extends AcsResponse {
 
 	public void setMode(Integer mode) {
 		this.mode = mode;
+	}
+
+	public Integer getLearnStatus() {
+		return this.learnStatus;
+	}
+
+	public void setLearnStatus(Integer learnStatus) {
+		this.learnStatus = learnStatus;
 	}
 
 	@Override

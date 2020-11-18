@@ -24,6 +24,7 @@ public class DescribeProtectionModuleModeResponseUnmarshaller {
 		
 		describeProtectionModuleModeResponse.setRequestId(_ctx.stringValue("DescribeProtectionModuleModeResponse.RequestId"));
 		describeProtectionModuleModeResponse.setMode(_ctx.integerValue("DescribeProtectionModuleModeResponse.Mode"));
+		describeProtectionModuleModeResponse.setLearnStatus(_ctx.integerValue("DescribeProtectionModuleModeResponse.LearnStatus"));
 	 
 	 	return describeProtectionModuleModeResponse;
 	}

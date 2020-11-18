@@ -47,6 +47,8 @@ public class DescribeDomainResponse extends AcsResponse {
 
 	public static class Domain {
 
+		private Integer ipFollowStatus;
+
 		private Integer httpToUserIp;
 
 		private Integer httpsRedirect;
@@ -82,6 +84,14 @@ public class DescribeDomainResponse extends AcsResponse {
 		private List<String> httpPort;
 
 		private List<String> httpsPort;
+
+		public Integer getIpFollowStatus() {
+			return this.ipFollowStatus;
+		}
+
+		public void setIpFollowStatus(Integer ipFollowStatus) {
+			this.ipFollowStatus = ipFollowStatus;
+		}
 
 		public Integer getHttpToUserIp() {
 			return this.httpToUserIp;

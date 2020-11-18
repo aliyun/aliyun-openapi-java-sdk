@@ -15,7 +15,6 @@
 package com.aliyuncs.waf_openapi.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.waf_openapi.Endpoint;
 
@@ -31,7 +30,6 @@ public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
 	private String domain;
 	public DeleteDomainRequest() {
 		super("waf-openapi", "2019-09-10", "DeleteDomain", "waf");
-		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

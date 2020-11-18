@@ -25,8 +25,6 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class ModifyDomainIpv6StatusRequest extends RpcAcsRequest<ModifyDomainIpv6StatusResponse> {
 	   
 
-	private String wafVersion;
-
 	private String enabled;
 
 	private String instanceId;
@@ -39,17 +37,6 @@ public class ModifyDomainIpv6StatusRequest extends RpcAcsRequest<ModifyDomainIpv
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getWafVersion() {
-		return this.wafVersion;
-	}
-
-	public void setWafVersion(String wafVersion) {
-		this.wafVersion = wafVersion;
-		if(wafVersion != null){
-			putQueryParameter("WafVersion", wafVersion);
-		}
 	}
 
 	public String getEnabled() {

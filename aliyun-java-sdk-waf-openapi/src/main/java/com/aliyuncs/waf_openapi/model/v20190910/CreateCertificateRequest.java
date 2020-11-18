@@ -34,8 +34,6 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 	private String domain;
 
 	private String certificateName;
-
-	private Long httpsCertId;
 	public CreateCertificateRequest() {
 		super("waf-openapi", "2019-09-10", "CreateCertificate", "waf");
 		setMethod(MethodType.POST);
@@ -97,17 +95,6 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 		this.certificateName = certificateName;
 		if(certificateName != null){
 			putQueryParameter("CertificateName", certificateName);
-		}
-	}
-
-	public Long getHttpsCertId() {
-		return this.httpsCertId;
-	}
-
-	public void setHttpsCertId(Long httpsCertId) {
-		this.httpsCertId = httpsCertId;
-		if(httpsCertId != null){
-			putQueryParameter("HttpsCertId", httpsCertId.toString());
 		}
 	}
 

@@ -25,6 +25,8 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 	   
 
+	private Integer ipFollowStatus;
+
 	private String httpPort;
 
 	private String http2Port;
@@ -65,6 +67,17 @@ public class ModifyDomainRequest extends RpcAcsRequest<ModifyDomainResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getIpFollowStatus() {
+		return this.ipFollowStatus;
+	}
+
+	public void setIpFollowStatus(Integer ipFollowStatus) {
+		this.ipFollowStatus = ipFollowStatus;
+		if(ipFollowStatus != null){
+			putQueryParameter("IpFollowStatus", ipFollowStatus.toString());
+		}
 	}
 
 	public String getHttpPort() {

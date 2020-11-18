@@ -25,6 +25,8 @@ import com.aliyuncs.waf_openapi.Endpoint;
 public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 	   
 
+	private Integer ipFollowStatus;
+
 	private String resourceGroupId;
 
 	private String httpPort;
@@ -67,6 +69,17 @@ public class CreateDomainRequest extends RpcAcsRequest<CreateDomainResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getIpFollowStatus() {
+		return this.ipFollowStatus;
+	}
+
+	public void setIpFollowStatus(Integer ipFollowStatus) {
+		this.ipFollowStatus = ipFollowStatus;
+		if(ipFollowStatus != null){
+			putQueryParameter("IpFollowStatus", ipFollowStatus.toString());
+		}
 	}
 
 	public String getResourceGroupId() {

@@ -32,6 +32,7 @@ public class DescribeDomainResponseUnmarshaller {
 		describeDomainResponse.setRequestId(_ctx.stringValue("DescribeDomainResponse.RequestId"));
 
 		Domain domain = new Domain();
+		domain.setIpFollowStatus(_ctx.integerValue("DescribeDomainResponse.Domain.IpFollowStatus"));
 		domain.setHttpToUserIp(_ctx.integerValue("DescribeDomainResponse.Domain.HttpToUserIp"));
 		domain.setHttpsRedirect(_ctx.integerValue("DescribeDomainResponse.Domain.HttpsRedirect"));
 		domain.setLoadBalancing(_ctx.integerValue("DescribeDomainResponse.Domain.LoadBalancing"));
