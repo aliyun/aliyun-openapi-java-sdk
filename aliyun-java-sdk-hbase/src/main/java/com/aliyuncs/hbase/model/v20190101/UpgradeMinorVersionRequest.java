@@ -22,16 +22,14 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddUserHdfsInfoRequest extends RpcAcsRequest<AddUserHdfsInfoResponse> {
+public class UpgradeMinorVersionRequest extends RpcAcsRequest<UpgradeMinorVersionResponse> {
 	   
 
-	private String extInfo;
-
-	private String clientToken;
+	private String components;
 
 	private String clusterId;
-	public AddUserHdfsInfoRequest() {
-		super("HBase", "2019-01-01", "AddUserHdfsInfo", "hbase");
+	public UpgradeMinorVersionRequest() {
+		super("HBase", "2019-01-01", "UpgradeMinorVersion", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,25 +37,14 @@ public class AddUserHdfsInfoRequest extends RpcAcsRequest<AddUserHdfsInfoRespons
 		} catch (Exception e) {}
 	}
 
-	public String getExtInfo() {
-		return this.extInfo;
+	public String getComponents() {
+		return this.components;
 	}
 
-	public void setExtInfo(String extInfo) {
-		this.extInfo = extInfo;
-		if(extInfo != null){
-			putQueryParameter("ExtInfo", extInfo);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setComponents(String components) {
+		this.components = components;
+		if(components != null){
+			putQueryParameter("Components", components);
 		}
 	}
 
@@ -73,8 +60,8 @@ public class AddUserHdfsInfoRequest extends RpcAcsRequest<AddUserHdfsInfoRespons
 	}
 
 	@Override
-	public Class<AddUserHdfsInfoResponse> getResponseClass() {
-		return AddUserHdfsInfoResponse.class;
+	public Class<UpgradeMinorVersionResponse> getResponseClass() {
+		return UpgradeMinorVersionResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2020-11-18 Version: 2.8.2
+- DescribeInstance support coldStorageSize.
+
 2020-11-05 Version: 2.8.1
 - Support modifyInstnaceType.
 

@@ -109,6 +109,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private Integer duration;
 
+	private Integer coldStorageSize;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -445,6 +447,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setDuration(Integer duration) {
 		this.duration = duration;
+	}
+
+	public Integer getColdStorageSize() {
+		return this.coldStorageSize;
+	}
+
+	public void setColdStorageSize(Integer coldStorageSize) {
+		this.coldStorageSize = coldStorageSize;
 	}
 
 	public List<Tag> getTags() {
