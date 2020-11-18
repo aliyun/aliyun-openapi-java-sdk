@@ -91,7 +91,7 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		private String engineVersion;
 
-		private Integer characterType;
+		private String characterType;
 
 		private String maintainStartTime;
 
@@ -175,11 +175,11 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 			this.engineVersion = engineVersion;
 		}
 
-		public Integer getCharacterType() {
+		public String getCharacterType() {
 			return this.characterType;
 		}
 
-		public void setCharacterType(Integer characterType) {
+		public void setCharacterType(String characterType) {
 			this.characterType = characterType;
 		}
 

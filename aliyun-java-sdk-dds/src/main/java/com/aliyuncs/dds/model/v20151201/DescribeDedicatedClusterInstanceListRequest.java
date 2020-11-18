@@ -37,7 +37,7 @@ public class DescribeDedicatedClusterInstanceListRequest extends RpcAcsRequest<D
 
 	private Integer pageSize;
 
-	private Integer instanceStatus;
+	private String instanceStatus;
 
 	private String dedicatedHostName;
 
@@ -127,14 +127,14 @@ public class DescribeDedicatedClusterInstanceListRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public Integer getInstanceStatus() {
+	public String getInstanceStatus() {
 		return this.instanceStatus;
 	}
 
-	public void setInstanceStatus(Integer instanceStatus) {
+	public void setInstanceStatus(String instanceStatus) {
 		this.instanceStatus = instanceStatus;
 		if(instanceStatus != null){
-			putQueryParameter("InstanceStatus", instanceStatus.toString());
+			putQueryParameter("InstanceStatus", instanceStatus);
 		}
 	}
 

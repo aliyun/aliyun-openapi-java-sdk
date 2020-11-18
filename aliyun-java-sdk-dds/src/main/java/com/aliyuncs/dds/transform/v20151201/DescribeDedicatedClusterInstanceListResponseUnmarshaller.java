@@ -42,7 +42,7 @@ public class DescribeDedicatedClusterInstanceListResponseUnmarshaller {
 			dbInstance.setInstanceName(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceName"));
 			dbInstance.setInstanceStatus(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceStatus"));
 			dbInstance.setEngineVersion(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].EngineVersion"));
-			dbInstance.setCharacterType(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CharacterType"));
+			dbInstance.setCharacterType(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CharacterType"));
 			dbInstance.setMaintainStartTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].MaintainStartTime"));
 			dbInstance.setMaintainEndTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].MaintainEndTime"));
 			dbInstance.setRegionId(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].RegionId"));
