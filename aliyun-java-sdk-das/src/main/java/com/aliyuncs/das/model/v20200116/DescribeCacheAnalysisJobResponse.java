@@ -89,6 +89,8 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 		private List<KeyInfo> bigKeys;
 
+		private List<Prefix> keyPrefixes;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -135,6 +137,14 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 		public void setBigKeys(List<KeyInfo> bigKeys) {
 			this.bigKeys = bigKeys;
+		}
+
+		public List<Prefix> getKeyPrefixes() {
+			return this.keyPrefixes;
+		}
+
+		public void setKeyPrefixes(List<Prefix> keyPrefixes) {
+			this.keyPrefixes = keyPrefixes;
 		}
 
 		public static class KeyInfo {
@@ -217,6 +227,59 @@ public class DescribeCacheAnalysisJobResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+		}
+
+		public static class Prefix {
+
+			private String prefix;
+
+			private String type;
+
+			private Long bytes;
+
+			private Long keyNum;
+
+			private Long count;
+
+			public String getPrefix() {
+				return this.prefix;
+			}
+
+			public void setPrefix(String prefix) {
+				this.prefix = prefix;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public Long getBytes() {
+				return this.bytes;
+			}
+
+			public void setBytes(Long bytes) {
+				this.bytes = bytes;
+			}
+
+			public Long getKeyNum() {
+				return this.keyNum;
+			}
+
+			public void setKeyNum(Long keyNum) {
+				this.keyNum = keyNum;
+			}
+
+			public Long getCount() {
+				return this.count;
+			}
+
+			public void setCount(Long count) {
+				this.count = count;
 			}
 		}
 	}

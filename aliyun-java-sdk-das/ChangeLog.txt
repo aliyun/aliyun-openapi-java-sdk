@@ -1,4 +1,7 @@
 2020-11-18 Version: 1.0.2
+- Supported Hotkey For Redis.
+
+2020-11-18 Version: 1.0.2
 - Supported CacheAnalysis For Redis.
 
 2020-10-15 Version: 1.0.1

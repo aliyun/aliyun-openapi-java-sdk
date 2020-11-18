@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.das.model.v20200116.DescribeCacheAnalysisJobResponse;
 import com.aliyuncs.das.model.v20200116.DescribeCacheAnalysisJobResponse.Data;
 import com.aliyuncs.das.model.v20200116.DescribeCacheAnalysisJobResponse.Data.KeyInfo;
+import com.aliyuncs.das.model.v20200116.DescribeCacheAnalysisJobResponse.Data.Prefix;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -54,6 +55,19 @@ public class DescribeCacheAnalysisJobResponseUnmarshaller {
 			bigKeys.add(keyInfo);
 		}
 		data.setBigKeys(bigKeys);
+
+		List<Prefix> keyPrefixes = new ArrayList<Prefix>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeCacheAnalysisJobResponse.Data.KeyPrefixes.Length"); i++) {
+			Prefix prefix = new Prefix();
+			prefix.setPrefix(_ctx.stringValue("DescribeCacheAnalysisJobResponse.Data.KeyPrefixes["+ i +"].Prefix"));
+			prefix.setType(_ctx.stringValue("DescribeCacheAnalysisJobResponse.Data.KeyPrefixes["+ i +"].Type"));
+			prefix.setBytes(_ctx.longValue("DescribeCacheAnalysisJobResponse.Data.KeyPrefixes["+ i +"].Bytes"));
+			prefix.setKeyNum(_ctx.longValue("DescribeCacheAnalysisJobResponse.Data.KeyPrefixes["+ i +"].KeyNum"));
+			prefix.setCount(_ctx.longValue("DescribeCacheAnalysisJobResponse.Data.KeyPrefixes["+ i +"].Count"));
+
+			keyPrefixes.add(prefix);
+		}
+		data.setKeyPrefixes(keyPrefixes);
 		describeCacheAnalysisJobResponse.setData(data);
 	 
 	 	return describeCacheAnalysisJobResponse;
