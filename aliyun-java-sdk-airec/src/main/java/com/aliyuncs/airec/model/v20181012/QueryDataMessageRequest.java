@@ -27,6 +27,8 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 
 	private String traceId;
 
+	private String messageSource;
+
 	private Long endTime;
 
 	private String userType;
@@ -70,6 +72,17 @@ public class QueryDataMessageRequest extends RoaAcsRequest<QueryDataMessageRespo
 		this.traceId = traceId;
 		if(traceId != null){
 			putQueryParameter("TraceId", traceId);
+		}
+	}
+
+	public String getMessageSource() {
+		return this.messageSource;
+	}
+
+	public void setMessageSource(String messageSource) {
+		this.messageSource = messageSource;
+		if(messageSource != null){
+			putQueryParameter("MessageSource", messageSource);
 		}
 	}
 
