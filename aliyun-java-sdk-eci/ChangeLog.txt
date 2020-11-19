@@ -1,3 +1,6 @@
+2020-11-19 Version: 1.0.14
+1, support automatchimagecache cache reuse
+
 2019-04-25 Version: 1.0.7
 1, support mode of configFileVolume
 

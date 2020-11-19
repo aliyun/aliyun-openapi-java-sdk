@@ -55,6 +55,8 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	private String zoneId;
 
+	private Boolean autoMatchImageCache;
+
 	public CreateImageCacheRequest() {
 		super("Eci", "2018-08-08", "CreateImageCache", "eci");
 		setMethod(MethodType.POST);
@@ -230,6 +232,17 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 		this.zoneId = zoneId;
 		if (zoneId != null) {
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getAutoMatchImageCache() {
+		return this.autoMatchImageCache;
+	}
+
+	public void setAutoMatchImageCache(Boolean autoMatchImageCache) {
+		this.autoMatchImageCache = autoMatchImageCache;
+		if (autoMatchImageCache != null) {
+			putQueryParameter("AutoMatchImageCache", autoMatchImageCache.toString());
 		}
 	}
 
