@@ -46,6 +46,10 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	private String regexRemain;
 
+	private String preloadEdgeQuota;
+
+	private String preloadEdgeRemain;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -132,6 +136,22 @@ public class DescribeRefreshQuotaResponse extends AcsResponse {
 
 	public void setRegexRemain(String regexRemain) {
 		this.regexRemain = regexRemain;
+	}
+
+	public String getPreloadEdgeQuota() {
+		return this.preloadEdgeQuota;
+	}
+
+	public void setPreloadEdgeQuota(String preloadEdgeQuota) {
+		this.preloadEdgeQuota = preloadEdgeQuota;
+	}
+
+	public String getPreloadEdgeRemain() {
+		return this.preloadEdgeRemain;
+	}
+
+	public void setPreloadEdgeRemain(String preloadEdgeRemain) {
+		this.preloadEdgeRemain = preloadEdgeRemain;
 	}
 
 	@Override
