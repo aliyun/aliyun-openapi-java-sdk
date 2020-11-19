@@ -25,6 +25,8 @@ import com.aliyuncs.imageseg.Endpoint;
 public class SegmentBodyRequest extends RpcAcsRequest<SegmentBodyResponse> {
 	   
 
+	private String returnForm;
+
 	private Boolean async;
 
 	private String imageURL;
@@ -35,6 +37,17 @@ public class SegmentBodyRequest extends RpcAcsRequest<SegmentBodyResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReturnForm() {
+		return this.returnForm;
+	}
+
+	public void setReturnForm(String returnForm) {
+		this.returnForm = returnForm;
+		if(returnForm != null){
+			putQueryParameter("ReturnForm", returnForm);
+		}
 	}
 
 	public Boolean getAsync() {
