@@ -39,7 +39,7 @@ public class ListSearchLogRequest extends RoaAcsRequest<ListSearchLogResponse> {
 
 	private String type;
 	public ListSearchLogRequest() {
-		super("elasticsearch", "2017-06-13", "ListSearchLog", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListSearchLog", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/search-log");
 		setMethod(MethodType.GET);
 		try {

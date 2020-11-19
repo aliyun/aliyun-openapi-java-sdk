@@ -35,7 +35,7 @@ public class ListPluginsRequest extends RoaAcsRequest<ListPluginsResponse> {
 
 	private String source;
 	public ListPluginsRequest() {
-		super("elasticsearch", "2017-06-13", "ListPlugins", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListPlugins", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins");
 		setMethod(MethodType.GET);
 		try {

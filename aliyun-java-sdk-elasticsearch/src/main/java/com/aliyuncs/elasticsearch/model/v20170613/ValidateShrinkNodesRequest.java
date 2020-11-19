@@ -31,7 +31,7 @@ public class ValidateShrinkNodesRequest extends RoaAcsRequest<ValidateShrinkNode
 
 	private String nodeType;
 	public ValidateShrinkNodesRequest() {
-		super("elasticsearch", "2017-06-13", "ValidateShrinkNodes", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ValidateShrinkNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/validate-shrink-nodes");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class ModifyDeployMachineRequest extends RoaAcsRequest<ModifyDeployMachin
 
 	private String resId;
 	public ModifyDeployMachineRequest() {
-		super("elasticsearch", "2017-06-13", "ModifyDeployMachine", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ModifyDeployMachine", "elasticsearch");
 		setUriPattern("/openapi/collectors/[ResId]/actions/modify-deploy-machines");
 		setMethod(MethodType.POST);
 		try {

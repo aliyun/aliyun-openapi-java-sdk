@@ -27,7 +27,7 @@ public class ListAvailableEsInstanceIdsRequest extends RoaAcsRequest<ListAvailab
 
 	private String instanceId;
 	public ListAvailableEsInstanceIdsRequest() {
-		super("elasticsearch", "2017-06-13", "ListAvailableEsInstanceIds", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListAvailableEsInstanceIds", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/available-elasticsearch-for-centralized-management");
 		setMethod(MethodType.GET);
 		try {

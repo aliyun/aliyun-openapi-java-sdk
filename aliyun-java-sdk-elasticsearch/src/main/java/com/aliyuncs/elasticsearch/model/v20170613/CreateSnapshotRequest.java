@@ -29,7 +29,7 @@ public class CreateSnapshotRequest extends RoaAcsRequest<CreateSnapshotResponse>
 
 	private String clientToken;
 	public CreateSnapshotRequest() {
-		super("elasticsearch", "2017-06-13", "CreateSnapshot", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "CreateSnapshot", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshots");
 		setMethod(MethodType.POST);
 		try {

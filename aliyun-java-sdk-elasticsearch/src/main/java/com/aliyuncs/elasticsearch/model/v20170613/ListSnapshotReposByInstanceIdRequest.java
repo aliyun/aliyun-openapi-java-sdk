@@ -27,7 +27,7 @@ public class ListSnapshotReposByInstanceIdRequest extends RoaAcsRequest<ListSnap
 
 	private String instanceId;
 	public ListSnapshotReposByInstanceIdRequest() {
-		super("elasticsearch", "2017-06-13", "ListSnapshotReposByInstanceId", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListSnapshotReposByInstanceId", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-repos");
 		setMethod(MethodType.GET);
 		try {

@@ -31,7 +31,7 @@ public class DeletePipelinesRequest extends RoaAcsRequest<DeletePipelinesRespons
 
 	private String pipelineIds;
 	public DeletePipelinesRequest() {
-		super("elasticsearch", "2017-06-13", "DeletePipelines", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DeletePipelines", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines");
 		setMethod(MethodType.DELETE);
 		try {

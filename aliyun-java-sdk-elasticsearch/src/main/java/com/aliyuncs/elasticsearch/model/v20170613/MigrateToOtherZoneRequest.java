@@ -29,7 +29,7 @@ public class MigrateToOtherZoneRequest extends RoaAcsRequest<MigrateToOtherZoneR
 
 	private Boolean dryRun;
 	public MigrateToOtherZoneRequest() {
-		super("elasticsearch", "2017-06-13", "MigrateToOtherZone", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "MigrateToOtherZone", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/migrate-zones");
 		setMethod(MethodType.POST);
 		try {

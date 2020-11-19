@@ -29,7 +29,7 @@ public class RenewLogstashRequest extends RoaAcsRequest<RenewLogstashResponse> {
 
 	private String clientToken;
 	public RenewLogstashRequest() {
-		super("elasticsearch", "2017-06-13", "RenewLogstash", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "RenewLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/renew");
 		setMethod(MethodType.POST);
 		try {

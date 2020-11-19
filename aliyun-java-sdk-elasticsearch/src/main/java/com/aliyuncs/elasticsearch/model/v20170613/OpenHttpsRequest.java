@@ -29,7 +29,7 @@ public class OpenHttpsRequest extends RoaAcsRequest<OpenHttpsResponse> {
 
 	private String clientToken;
 	public OpenHttpsRequest() {
-		super("elasticsearch", "2017-06-13", "OpenHttps", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "OpenHttps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/open-https");
 		setMethod(MethodType.POST);
 		try {

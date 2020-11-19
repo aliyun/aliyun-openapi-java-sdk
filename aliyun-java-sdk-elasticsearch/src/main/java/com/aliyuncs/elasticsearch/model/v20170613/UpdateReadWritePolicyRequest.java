@@ -29,7 +29,7 @@ public class UpdateReadWritePolicyRequest extends RoaAcsRequest<UpdateReadWriteP
 
 	private String clientToken;
 	public UpdateReadWritePolicyRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateReadWritePolicy", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateReadWritePolicy", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/update-read-write-policy");
 		setMethod(MethodType.POST);
 		try {

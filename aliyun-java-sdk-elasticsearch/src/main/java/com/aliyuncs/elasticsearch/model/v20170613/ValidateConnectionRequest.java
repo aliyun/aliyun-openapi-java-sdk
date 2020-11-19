@@ -29,7 +29,7 @@ public class ValidateConnectionRequest extends RoaAcsRequest<ValidateConnectionR
 
 	private String clientToken;
 	public ValidateConnectionRequest() {
-		super("elasticsearch", "2017-06-13", "ValidateConnection", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ValidateConnection", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/validate-connection");
 		setMethod(MethodType.POST);
 		try {

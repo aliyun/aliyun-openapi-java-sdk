@@ -29,7 +29,7 @@ public class UpdateExtendConfigRequest extends RoaAcsRequest<UpdateExtendConfigR
 
 	private String clientToken;
 	public UpdateExtendConfigRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateExtendConfig", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateExtendConfig", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/extend-configs/actions/update");
 		setMethod(MethodType.POST);
 		try {

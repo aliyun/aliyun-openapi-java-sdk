@@ -1,3 +1,6 @@
+2020-11-19 Version: 3.0.19
+- Supported International-26888 Sites Region Endpoints.
+
 2020-11-17 Version: 3.0.19
 - Supported International-26888 Sites Region Endpoints.
 

@@ -29,7 +29,7 @@ public class UpdateCollectorNameRequest extends RoaAcsRequest<UpdateCollectorNam
 
 	private String resId;
 	public UpdateCollectorNameRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateCollectorName", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateCollectorName", "elasticsearch");
 		setUriPattern("/openapi/collectors/[ResId]/actions/rename");
 		setMethod(MethodType.POST);
 		try {

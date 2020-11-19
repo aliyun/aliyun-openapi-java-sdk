@@ -29,7 +29,7 @@ public class DeleteProjectRequest extends RoaAcsRequest<DeleteProjectResponse> {
 
 	private String id;
 	public DeleteProjectRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteProject", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DeleteProject", "elasticsearch");
 		setUriPattern("/openapi/projects/[Id]");
 		setMethod(MethodType.DELETE);
 		try {

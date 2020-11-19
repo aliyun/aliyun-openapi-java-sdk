@@ -29,7 +29,7 @@ public class UninstallLogstashPluginRequest extends RoaAcsRequest<UninstallLogst
 
 	private String clientToken;
 	public UninstallLogstashPluginRequest() {
-		super("elasticsearch", "2017-06-13", "UninstallLogstashPlugin", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UninstallLogstashPlugin", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/plugins/actions/uninstall");
 		setMethod(MethodType.POST);
 		try {

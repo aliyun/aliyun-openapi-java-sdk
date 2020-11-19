@@ -27,7 +27,7 @@ public class ListAllNodeRequest extends RoaAcsRequest<ListAllNodeResponse> {
 
 	private String instanceId;
 	public ListAllNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ListAllNode", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListAllNode", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/nodes");
 		setMethod(MethodType.GET);
 		try {

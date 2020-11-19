@@ -29,7 +29,7 @@ public class UpdateAdminPasswordRequest extends RoaAcsRequest<UpdateAdminPasswor
 
 	private String clientToken;
 	public UpdateAdminPasswordRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateAdminPassword", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateAdminPassword", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/admin-pwd");
 		setMethod(MethodType.POST);
 		try {

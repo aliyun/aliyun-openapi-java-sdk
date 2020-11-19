@@ -29,7 +29,7 @@ public class StartCollectorRequest extends RoaAcsRequest<StartCollectorResponse>
 
 	private String resId;
 	public StartCollectorRequest() {
-		super("elasticsearch", "2017-06-13", "StartCollector", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "StartCollector", "elasticsearch");
 		setUriPattern("/openapi/collectors/[ResId]/actions/start");
 		setMethod(MethodType.POST);
 		try {

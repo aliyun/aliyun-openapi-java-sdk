@@ -29,7 +29,7 @@ public class UpdateDescriptionRequest extends RoaAcsRequest<UpdateDescriptionRes
 
 	private String clientToken;
 	public UpdateDescriptionRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateDescription", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateDescription", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/description");
 		setMethod(MethodType.POST);
 		try {

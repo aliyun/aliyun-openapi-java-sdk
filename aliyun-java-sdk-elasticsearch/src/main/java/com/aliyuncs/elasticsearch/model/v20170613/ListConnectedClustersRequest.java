@@ -27,7 +27,7 @@ public class ListConnectedClustersRequest extends RoaAcsRequest<ListConnectedClu
 
 	private String instanceId;
 	public ListConnectedClustersRequest() {
-		super("elasticsearch", "2017-06-13", "ListConnectedClusters", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListConnectedClusters", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/connected-clusters");
 		setMethod(MethodType.GET);
 		try {

@@ -33,7 +33,7 @@ public class ShrinkNodeRequest extends RoaAcsRequest<ShrinkNodeResponse> {
 
 	private String clientToken;
 	public ShrinkNodeRequest() {
-		super("elasticsearch", "2017-06-13", "ShrinkNode", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ShrinkNode", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/shrink");
 		setMethod(MethodType.POST);
 		try {

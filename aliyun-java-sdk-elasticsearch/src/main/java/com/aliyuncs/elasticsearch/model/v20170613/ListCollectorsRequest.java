@@ -35,7 +35,7 @@ public class ListCollectorsRequest extends RoaAcsRequest<ListCollectorsResponse>
 
 	private String resId;
 	public ListCollectorsRequest() {
-		super("elasticsearch", "2017-06-13", "ListCollectors", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListCollectors", "elasticsearch");
 		setUriPattern("/openapi/collectors");
 		setMethod(MethodType.GET);
 		try {

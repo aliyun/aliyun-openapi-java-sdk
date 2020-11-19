@@ -49,7 +49,7 @@ public class ListInstanceRequest extends RoaAcsRequest<ListInstanceResponse> {
 
 	private String paymentType;
 	public ListInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstance", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListInstance", "elasticsearch");
 		setUriPattern("/openapi/instances");
 		setMethod(MethodType.GET);
 		try {

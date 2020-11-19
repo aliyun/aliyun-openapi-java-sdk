@@ -29,7 +29,7 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 
 	private String clientToken;
 	public ModifyWhiteIpsRequest() {
-		super("elasticsearch", "2017-06-13", "ModifyWhiteIps", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ModifyWhiteIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/modify-white-ips");
 		setMethod(MethodType.POST);
 		try {

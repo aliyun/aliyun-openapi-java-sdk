@@ -29,7 +29,7 @@ public class DeleteLogstashRequest extends RoaAcsRequest<DeleteLogstashResponse>
 
 	private String clientToken;
 	public DeleteLogstashRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteLogstash", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DeleteLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]");
 		setMethod(MethodType.DELETE);
 		try {

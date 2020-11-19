@@ -27,7 +27,7 @@ public class AddSnapshotRepoRequest extends RoaAcsRequest<AddSnapshotRepoRespons
 
 	private String instanceId;
 	public AddSnapshotRepoRequest() {
-		super("elasticsearch", "2017-06-13", "AddSnapshotRepo", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "AddSnapshotRepo", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-repos");
 		setMethod(MethodType.POST);
 		try {

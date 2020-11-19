@@ -27,7 +27,7 @@ public class ListDataTasksRequest extends RoaAcsRequest<ListDataTasksResponse> {
 
 	private String instanceId;
 	public ListDataTasksRequest() {
-		super("elasticsearch", "2017-06-13", "ListDataTasks", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListDataTasks", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/data-task");
 		setMethod(MethodType.GET);
 		try {

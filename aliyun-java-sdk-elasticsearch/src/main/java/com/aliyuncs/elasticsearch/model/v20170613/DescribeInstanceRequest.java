@@ -27,7 +27,7 @@ public class DescribeInstanceRequest extends RoaAcsRequest<DescribeInstanceRespo
 
 	private String instanceId;
 	public DescribeInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeInstance", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DescribeInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.GET);
 		try {

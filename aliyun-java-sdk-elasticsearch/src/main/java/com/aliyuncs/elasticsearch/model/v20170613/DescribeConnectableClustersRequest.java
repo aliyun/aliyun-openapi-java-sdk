@@ -29,7 +29,7 @@ public class DescribeConnectableClustersRequest extends RoaAcsRequest<DescribeCo
 
 	private Boolean alreadySetItems;
 	public DescribeConnectableClustersRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeConnectableClusters", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DescribeConnectableClusters", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/connectable-clusters");
 		setMethod(MethodType.GET);
 		try {

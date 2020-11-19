@@ -29,7 +29,7 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 
 	private String lang;
 	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/indices");
 		setMethod(MethodType.GET);
 		try {

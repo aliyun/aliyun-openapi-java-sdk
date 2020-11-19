@@ -27,7 +27,7 @@ public class DescribeSnapshotSettingRequest extends RoaAcsRequest<DescribeSnapsh
 
 	private String instanceId;
 	public DescribeSnapshotSettingRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeSnapshotSetting", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DescribeSnapshotSetting", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/snapshot-setting");
 		setMethod(MethodType.GET);
 		try {

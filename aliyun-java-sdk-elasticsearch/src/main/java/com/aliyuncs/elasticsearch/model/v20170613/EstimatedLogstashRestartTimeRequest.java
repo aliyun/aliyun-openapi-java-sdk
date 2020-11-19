@@ -29,7 +29,7 @@ public class EstimatedLogstashRestartTimeRequest extends RoaAcsRequest<Estimated
 
 	private Boolean force;
 	public EstimatedLogstashRestartTimeRequest() {
-		super("elasticsearch", "2017-06-13", "EstimatedLogstashRestartTime", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "EstimatedLogstashRestartTime", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/estimated-time/restart-time");
 		setMethod(MethodType.POST);
 		try {

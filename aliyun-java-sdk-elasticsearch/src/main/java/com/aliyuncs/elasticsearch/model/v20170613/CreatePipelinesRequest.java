@@ -31,7 +31,7 @@ public class CreatePipelinesRequest extends RoaAcsRequest<CreatePipelinesRespons
 
 	private Boolean trigger;
 	public CreatePipelinesRequest() {
-		super("elasticsearch", "2017-06-13", "CreatePipelines", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "CreatePipelines", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines");
 		setMethod(MethodType.POST);
 		try {

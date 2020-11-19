@@ -29,7 +29,7 @@ public class InstallLogstashSystemPluginRequest extends RoaAcsRequest<InstallLog
 
 	private String clientToken;
 	public InstallLogstashSystemPluginRequest() {
-		super("elasticsearch", "2017-06-13", "InstallLogstashSystemPlugin", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "InstallLogstashSystemPlugin", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/plugins/system/actions/install");
 		setMethod(MethodType.POST);
 		try {

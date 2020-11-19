@@ -29,7 +29,7 @@ public class InstallSystemPluginRequest extends RoaAcsRequest<InstallSystemPlugi
 
 	private String clientToken;
 	public InstallSystemPluginRequest() {
-		super("elasticsearch", "2017-06-13", "InstallSystemPlugin", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "InstallSystemPlugin", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/plugins/system/actions/install");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class UpdatePipelinesRequest extends RoaAcsRequest<UpdatePipelinesRespons
 
 	private Boolean trigger;
 	public UpdatePipelinesRequest() {
-		super("elasticsearch", "2017-06-13", "UpdatePipelines", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdatePipelines", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines");
 		setMethod(MethodType.PUT);
 		try {

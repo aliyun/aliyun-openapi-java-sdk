@@ -27,7 +27,7 @@ public class DescribeLogstashRequest extends RoaAcsRequest<DescribeLogstashRespo
 
 	private String instanceId;
 	public DescribeLogstashRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeLogstash", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DescribeLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]");
 		setMethod(MethodType.GET);
 		try {

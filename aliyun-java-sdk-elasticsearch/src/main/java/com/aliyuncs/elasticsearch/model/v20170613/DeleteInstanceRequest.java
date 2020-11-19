@@ -29,7 +29,7 @@ public class DeleteInstanceRequest extends RoaAcsRequest<DeleteInstanceResponse>
 
 	private String clientToken;
 	public DeleteInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteInstance", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DeleteInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
 		setMethod(MethodType.DELETE);
 		try {

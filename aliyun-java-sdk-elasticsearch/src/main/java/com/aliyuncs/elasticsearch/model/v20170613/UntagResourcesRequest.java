@@ -33,7 +33,7 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 
 	private String resourceIds;
 	public UntagResourcesRequest() {
-		super("elasticsearch", "2017-06-13", "UntagResources", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UntagResources", "elasticsearch");
 		setUriPattern("/openapi/tags");
 		setMethod(MethodType.DELETE);
 		try {

@@ -31,7 +31,7 @@ public class UpdateDiagnosisSettingsRequest extends RoaAcsRequest<UpdateDiagnosi
 
 	private String lang;
 	public UpdateDiagnosisSettingsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateDiagnosisSettings", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateDiagnosisSettings", "elasticsearch");
 		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/settings");
 		setMethod(MethodType.PUT);
 		try {

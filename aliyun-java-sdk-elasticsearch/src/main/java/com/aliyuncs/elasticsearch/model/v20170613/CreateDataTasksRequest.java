@@ -29,7 +29,7 @@ public class CreateDataTasksRequest extends RoaAcsRequest<CreateDataTasksRespons
 
 	private String clientToken;
 	public CreateDataTasksRequest() {
-		super("elasticsearch", "2017-06-13", "CreateDataTasks", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "CreateDataTasks", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/data-task");
 		setMethod(MethodType.POST);
 		try {

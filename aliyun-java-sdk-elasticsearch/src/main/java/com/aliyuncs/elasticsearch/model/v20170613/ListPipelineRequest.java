@@ -33,7 +33,7 @@ public class ListPipelineRequest extends RoaAcsRequest<ListPipelineResponse> {
 
 	private String pipelineId;
 	public ListPipelineRequest() {
-		super("elasticsearch", "2017-06-13", "ListPipeline", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListPipeline", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipelines");
 		setMethod(MethodType.GET);
 		try {

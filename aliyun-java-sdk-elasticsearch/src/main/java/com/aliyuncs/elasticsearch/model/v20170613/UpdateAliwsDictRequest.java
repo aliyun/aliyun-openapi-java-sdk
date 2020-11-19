@@ -29,7 +29,7 @@ public class UpdateAliwsDictRequest extends RoaAcsRequest<UpdateAliwsDictRespons
 
 	private String clientToken;
 	public UpdateAliwsDictRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateAliwsDict", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateAliwsDict", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/aliws-dict");
 		setMethod(MethodType.PUT);
 		try {

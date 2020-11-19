@@ -31,7 +31,7 @@ public class CancelTaskRequest extends RoaAcsRequest<CancelTaskResponse> {
 
 	private String clientToken;
 	public CancelTaskRequest() {
-		super("elasticsearch", "2017-06-13", "CancelTask", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "CancelTask", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/cancel-task");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class StopCollectorRequest extends RoaAcsRequest<StopCollectorResponse> {
 
 	private String resId;
 	public StopCollectorRequest() {
-		super("elasticsearch", "2017-06-13", "StopCollector", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "StopCollector", "elasticsearch");
 		setUriPattern("/openapi/collectors/[ResId]/actions/stop");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class UpdatePipelineManagementConfigRequest extends RoaAcsRequest<UpdateP
 
 	private String clientToken;
 	public UpdatePipelineManagementConfigRequest() {
-		super("elasticsearch", "2017-06-13", "UpdatePipelineManagementConfig", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdatePipelineManagementConfig", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/pipeline-management-config");
 		setMethod(MethodType.POST);
 		try {

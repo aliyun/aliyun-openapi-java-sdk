@@ -29,7 +29,7 @@ public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse>
 
 	private String clientToken;
 	public TriggerNetworkRequest() {
-		super("elasticsearch", "2017-06-13", "TriggerNetwork", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "TriggerNetwork", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/network-trigger");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class InterruptElasticsearchTaskRequest extends RoaAcsRequest<InterruptEl
 
 	private String clientToken;
 	public InterruptElasticsearchTaskRequest() {
-		super("elasticsearch", "2017-06-13", "InterruptElasticsearchTask", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "InterruptElasticsearchTask", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/interrupt");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class RestartLogstashRequest extends RoaAcsRequest<RestartLogstashRespons
 
 	private Boolean force;
 	public RestartLogstashRequest() {
-		super("elasticsearch", "2017-06-13", "RestartLogstash", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "RestartLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]/actions/restart");
 		setMethod(MethodType.POST);
 		try {

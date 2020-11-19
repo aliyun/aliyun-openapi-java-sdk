@@ -29,7 +29,7 @@ public class UpdateHotIkDictsRequest extends RoaAcsRequest<UpdateHotIkDictsRespo
 
 	private String clientToken;
 	public UpdateHotIkDictsRequest() {
-		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpdateHotIkDicts", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/ik-hot-dict");
 		setMethod(MethodType.PUT);
 		try {

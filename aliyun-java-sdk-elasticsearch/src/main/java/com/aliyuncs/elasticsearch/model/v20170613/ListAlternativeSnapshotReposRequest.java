@@ -29,7 +29,7 @@ public class ListAlternativeSnapshotReposRequest extends RoaAcsRequest<ListAlter
 
 	private Boolean alreadySetItems;
 	public ListAlternativeSnapshotReposRequest() {
-		super("elasticsearch", "2017-06-13", "ListAlternativeSnapshotRepos", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListAlternativeSnapshotRepos", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/alternative-snapshot-repos");
 		setMethod(MethodType.GET);
 		try {

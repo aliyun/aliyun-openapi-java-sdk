@@ -33,7 +33,7 @@ public class ListDictInformationRequest extends RoaAcsRequest<ListDictInformatio
 
 	private String key;
 	public ListDictInformationRequest() {
-		super("elasticsearch", "2017-06-13", "ListDictInformation", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ListDictInformation", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/dict/_info");
 		setMethod(MethodType.GET);
 		try {

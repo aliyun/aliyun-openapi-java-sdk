@@ -33,7 +33,7 @@ public class GetSuggestShrinkableNodesRequest extends RoaAcsRequest<GetSuggestSh
 
 	private Integer count;
 	public GetSuggestShrinkableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "GetSuggestShrinkableNodes", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "GetSuggestShrinkableNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/suggest-shrinkable-nodes");
 		setMethod(MethodType.GET);
 		try {

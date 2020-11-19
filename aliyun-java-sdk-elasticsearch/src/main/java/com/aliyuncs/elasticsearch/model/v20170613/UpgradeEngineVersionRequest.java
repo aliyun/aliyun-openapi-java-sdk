@@ -31,7 +31,7 @@ public class UpgradeEngineVersionRequest extends RoaAcsRequest<UpgradeEngineVers
 
 	private String clientToken;
 	public UpgradeEngineVersionRequest() {
-		super("elasticsearch", "2017-06-13", "UpgradeEngineVersion", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "UpgradeEngineVersion", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/upgrade-version");
 		setMethod(MethodType.POST);
 		try {

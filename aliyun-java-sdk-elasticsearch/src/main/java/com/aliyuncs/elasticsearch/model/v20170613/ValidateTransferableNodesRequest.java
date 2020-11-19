@@ -29,7 +29,7 @@ public class ValidateTransferableNodesRequest extends RoaAcsRequest<ValidateTran
 
 	private String nodeType;
 	public ValidateTransferableNodesRequest() {
-		super("elasticsearch", "2017-06-13", "ValidateTransferableNodes", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ValidateTransferableNodes", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/validate-transfer-nodes");
 		setMethod(MethodType.POST);
 		try {

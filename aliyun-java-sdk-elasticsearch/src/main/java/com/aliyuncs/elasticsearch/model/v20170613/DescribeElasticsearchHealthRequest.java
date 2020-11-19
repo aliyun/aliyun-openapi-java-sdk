@@ -27,7 +27,7 @@ public class DescribeElasticsearchHealthRequest extends RoaAcsRequest<DescribeEl
 
 	private String instanceId;
 	public DescribeElasticsearchHealthRequest() {
-		super("elasticsearch", "2017-06-13", "DescribeElasticsearchHealth", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "DescribeElasticsearchHealth", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/elasticsearch-health");
 		setMethod(MethodType.GET);
 		try {

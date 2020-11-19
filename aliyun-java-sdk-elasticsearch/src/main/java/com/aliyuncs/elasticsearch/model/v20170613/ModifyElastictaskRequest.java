@@ -27,7 +27,7 @@ public class ModifyElastictaskRequest extends RoaAcsRequest<ModifyElastictaskRes
 
 	private String instanceId;
 	public ModifyElastictaskRequest() {
-		super("elasticsearch", "2017-06-13", "ModifyElastictask", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ModifyElastictask", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/elastic-task");
 		setMethod(MethodType.POST);
 		try {

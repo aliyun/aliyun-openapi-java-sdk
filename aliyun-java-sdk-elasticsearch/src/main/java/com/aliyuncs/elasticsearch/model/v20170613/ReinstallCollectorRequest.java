@@ -29,7 +29,7 @@ public class ReinstallCollectorRequest extends RoaAcsRequest<ReinstallCollectorR
 
 	private String resId;
 	public ReinstallCollectorRequest() {
-		super("elasticsearch", "2017-06-13", "ReinstallCollector", "elasticsearche");
+		super("elasticsearch", "2017-06-13", "ReinstallCollector", "elasticsearch");
 		setUriPattern("/openapi/collectors/[ResId]/actions/reinstall");
 		setMethod(MethodType.POST);
 		try {
