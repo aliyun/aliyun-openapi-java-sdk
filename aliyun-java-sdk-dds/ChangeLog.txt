@@ -1,3 +1,6 @@
+2020-11-19 Version: 3.4.1
+- Update DescribeDedicatedClusterInstanceList return data.
+
 2020-11-18 Version: 3.4.0
 - Update DescribeDedicatedClusterInstanceList InstanceStatus type.
 
