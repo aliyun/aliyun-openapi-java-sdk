@@ -1,3 +1,6 @@
+2020-11-19 Version: 1.1.0
+1、not support template api
+
 2020-11-19 Version: 1.0.14
 1, support automatchimagecache cache reuse
 
