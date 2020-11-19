@@ -14,18 +14,19 @@
 
 package com.aliyuncs.das.model.v20200116;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.DescribeHotKeysResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetEventOverviewResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeHotKeysResponse extends AcsResponse {
+public class GetEventOverviewResponse extends AcsResponse {
 
 	private String code;
+
+	private String data;
 
 	private String message;
 
@@ -33,14 +34,20 @@ public class DescribeHotKeysResponse extends AcsResponse {
 
 	private String success;
 
-	private List<HotKey> data;
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getMessage() {
@@ -67,69 +74,8 @@ public class DescribeHotKeysResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<HotKey> getData() {
-		return this.data;
-	}
-
-	public void setData(List<HotKey> data) {
-		this.data = data;
-	}
-
-	public static class HotKey {
-
-		private Integer db;
-
-		private String keyType;
-
-		private Long size;
-
-		private String hot;
-
-		private String key;
-
-		public Integer getDb() {
-			return this.db;
-		}
-
-		public void setDb(Integer db) {
-			this.db = db;
-		}
-
-		public String getKeyType() {
-			return this.keyType;
-		}
-
-		public void setKeyType(String keyType) {
-			this.keyType = keyType;
-		}
-
-		public Long getSize() {
-			return this.size;
-		}
-
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public String getHot() {
-			return this.hot;
-		}
-
-		public void setHot(String hot) {
-			this.hot = hot;
-		}
-
-		public String getKey() {
-			return this.key;
-		}
-
-		public void setKey(String key) {
-			this.key = key;
-		}
-	}
-
 	@Override
-	public DescribeHotKeysResponse getInstance(UnmarshallerContext context) {
-		return	DescribeHotKeysResponseUnmarshaller.unmarshall(this, context);
+	public GetEventOverviewResponse getInstance(UnmarshallerContext context) {
+		return	GetEventOverviewResponseUnmarshaller.unmarshall(this, context);
 	}
 }
