@@ -25,6 +25,8 @@ import com.aliyuncs.facebody.Endpoint;
 public class GenerateHumanAnimeStyleRequest extends RpcAcsRequest<GenerateHumanAnimeStyleResponse> {
 	   
 
+	private String algoType;
+
 	private String imageURL;
 	public GenerateHumanAnimeStyleRequest() {
 		super("facebody", "2019-12-30", "GenerateHumanAnimeStyle", "facebody");
@@ -35,6 +37,17 @@ public class GenerateHumanAnimeStyleRequest extends RpcAcsRequest<GenerateHumanA
 		} catch (Exception e) {}
 	}
 
+	public String getAlgoType() {
+		return this.algoType;
+	}
+
+	public void setAlgoType(String algoType) {
+		this.algoType = algoType;
+		if(algoType != null){
+			putQueryParameter("AlgoType", algoType);
+		}
+	}
+
 	public String getImageURL() {
 		return this.imageURL;
 	}
@@ -42,7 +55,7 @@ public class GenerateHumanAnimeStyleRequest extends RpcAcsRequest<GenerateHumanA
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
 		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+			putQueryParameter("ImageURL", imageURL);
 		}
 	}
 

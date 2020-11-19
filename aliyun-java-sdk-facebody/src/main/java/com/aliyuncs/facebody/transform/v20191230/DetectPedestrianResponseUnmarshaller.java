@@ -30,8 +30,8 @@ public class DetectPedestrianResponseUnmarshaller {
 		detectPedestrianResponse.setRequestId(_ctx.stringValue("DetectPedestrianResponse.RequestId"));
 
 		Data data = new Data();
-		data.setWidth(_ctx.integerValue("DetectPedestrianResponse.Data.Width"));
 		data.setHeight(_ctx.integerValue("DetectPedestrianResponse.Data.Height"));
+		data.setWidth(_ctx.integerValue("DetectPedestrianResponse.Data.Width"));
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectPedestrianResponse.Data.Elements.Length"); i++) {
