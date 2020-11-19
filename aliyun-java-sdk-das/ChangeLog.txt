@@ -1,6 +1,9 @@
 2020-11-19 Version: 1.0.3
 - Supported GetEventOverview for Events.
 
+2020-11-19 Version: 1.0.3
+- Supported GetEventOverview for Events.
+
 2020-11-18 Version: 1.0.2
 - Supported Hotkey For Redis.
 
