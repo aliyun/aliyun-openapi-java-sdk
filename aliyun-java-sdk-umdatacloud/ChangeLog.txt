@@ -1,0 +1,3 @@
+2020-11-19 Version: ali-jdk-8.2.4
+- New release.
+
