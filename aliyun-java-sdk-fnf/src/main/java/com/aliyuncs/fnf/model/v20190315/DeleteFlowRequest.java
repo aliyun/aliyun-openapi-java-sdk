@@ -29,7 +29,7 @@ public class DeleteFlowRequest extends RpcAcsRequest<DeleteFlowResponse> {
 
 	private String name;
 	public DeleteFlowRequest() {
-		super("fnf", "2019-03-15", "DeleteFlow");
+		super("fnf", "2019-03-15", "DeleteFlow", "fnf");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

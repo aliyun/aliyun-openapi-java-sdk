@@ -31,7 +31,7 @@ public class ReportTaskSucceededRequest extends RpcAcsRequest<ReportTaskSucceede
 
 	private String taskToken;
 	public ReportTaskSucceededRequest() {
-		super("fnf", "2019-03-15", "ReportTaskSucceeded");
+		super("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

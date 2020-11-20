@@ -35,7 +35,7 @@ public class StopExecutionRequest extends RpcAcsRequest<StopExecutionResponse> {
 
 	private String flowName;
 	public StopExecutionRequest() {
-		super("fnf", "2019-03-15", "StopExecution");
+		super("fnf", "2019-03-15", "StopExecution", "fnf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

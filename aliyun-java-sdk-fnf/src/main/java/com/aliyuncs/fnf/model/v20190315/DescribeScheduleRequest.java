@@ -31,7 +31,7 @@ public class DescribeScheduleRequest extends RpcAcsRequest<DescribeScheduleRespo
 
 	private String flowName;
 	public DescribeScheduleRequest() {
-		super("fnf", "2019-03-15", "DescribeSchedule");
+		super("fnf", "2019-03-15", "DescribeSchedule", "fnf");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

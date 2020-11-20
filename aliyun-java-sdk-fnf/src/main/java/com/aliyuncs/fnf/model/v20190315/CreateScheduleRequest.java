@@ -39,7 +39,7 @@ public class CreateScheduleRequest extends RpcAcsRequest<CreateScheduleResponse>
 
 	private String flowName;
 	public CreateScheduleRequest() {
-		super("fnf", "2019-03-15", "CreateSchedule");
+		super("fnf", "2019-03-15", "CreateSchedule", "fnf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

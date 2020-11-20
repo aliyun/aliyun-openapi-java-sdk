@@ -25,6 +25,10 @@ import com.aliyuncs.fnf.Endpoint;
 public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse> {
 	   
 
+	private String startedTimeBegin;
+
+	private String executionNamePrefix;
+
 	private String nextToken;
 
 	private String requestId;
@@ -33,14 +37,38 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 
 	private String flowName;
 
+	private String startedTimeEnd;
+
 	private String status;
 	public ListExecutionsRequest() {
-		super("fnf", "2019-03-15", "ListExecutions");
+		super("fnf", "2019-03-15", "ListExecutions", "fnf");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartedTimeBegin() {
+		return this.startedTimeBegin;
+	}
+
+	public void setStartedTimeBegin(String startedTimeBegin) {
+		this.startedTimeBegin = startedTimeBegin;
+		if(startedTimeBegin != null){
+			putQueryParameter("StartedTimeBegin", startedTimeBegin);
+		}
+	}
+
+	public String getExecutionNamePrefix() {
+		return this.executionNamePrefix;
+	}
+
+	public void setExecutionNamePrefix(String executionNamePrefix) {
+		this.executionNamePrefix = executionNamePrefix;
+		if(executionNamePrefix != null){
+			putQueryParameter("ExecutionNamePrefix", executionNamePrefix);
+		}
 	}
 
 	public String getNextToken() {
@@ -84,6 +112,17 @@ public class ListExecutionsRequest extends RpcAcsRequest<ListExecutionsResponse>
 		this.flowName = flowName;
 		if(flowName != null){
 			putQueryParameter("FlowName", flowName);
+		}
+	}
+
+	public String getStartedTimeEnd() {
+		return this.startedTimeEnd;
+	}
+
+	public void setStartedTimeEnd(String startedTimeEnd) {
+		this.startedTimeEnd = startedTimeEnd;
+		if(startedTimeEnd != null){
+			putQueryParameter("StartedTimeEnd", startedTimeEnd);
 		}
 	}
 

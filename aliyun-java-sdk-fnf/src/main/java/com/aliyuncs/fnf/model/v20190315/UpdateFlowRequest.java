@@ -39,7 +39,7 @@ public class UpdateFlowRequest extends RpcAcsRequest<UpdateFlowResponse> {
 
 	private String externalStorageLocation;
 	public UpdateFlowRequest() {
-		super("fnf", "2019-03-15", "UpdateFlow");
+		super("fnf", "2019-03-15", "UpdateFlow", "fnf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

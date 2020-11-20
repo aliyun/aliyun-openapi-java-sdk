@@ -33,7 +33,7 @@ public class ListSchedulesRequest extends RpcAcsRequest<ListSchedulesResponse> {
 
 	private String flowName;
 	public ListSchedulesRequest() {
-		super("fnf", "2019-03-15", "ListSchedules");
+		super("fnf", "2019-03-15", "ListSchedules", "fnf");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class CreateFlowRequest extends RpcAcsRequest<CreateFlowResponse> {
 
 	private String externalStorageLocation;
 	public CreateFlowRequest() {
-		super("fnf", "2019-03-15", "CreateFlow");
+		super("fnf", "2019-03-15", "CreateFlow", "fnf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-11-20 Version: 1.8.0
+- Support ListExecutions with filter functionality.
+
 2020-05-22 Version: 1.7.0
 - Add schedule crud api.
 
