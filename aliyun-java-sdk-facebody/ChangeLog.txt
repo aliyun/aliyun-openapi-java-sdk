@@ -1,3 +1,7 @@
+2020-11-20 Version: 1.2.6
+- Update DetectFace.
+- Update RecognizeFace.
+
 2020-11-19 Version: 1.2.5
 - Update GenerateHumanAnimeStyle.
 
