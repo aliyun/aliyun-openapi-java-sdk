@@ -1,3 +1,6 @@
+2020-11-23 Version: 1.0.1
+- Supported call in records.
+
 2020-11-09 Version: 1.1.0
 - Fix fields type.
 
