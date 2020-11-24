@@ -16,6 +16,7 @@ package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.hitsdb.Endpoint;
 
 /**
  * @author auto create
@@ -28,19 +29,17 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 
 	private String connectionString;
 
+	private String clientToken;
+
 	private String instanceClass;
 
 	private String duration;
 
 	private String securityToken;
 
-	private String maxSeriesPerDatabase;
-
-	private String maxTimelineLimit;
+	private String diskCategory;
 
 	private String instanceStorage;
-
-	private String engineType;
 
 	private String resourceOwnerAccount;
 
@@ -48,30 +47,24 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 
 	private String instanceAlias;
 
-	private String maxDatabaseLimit;
-
 	private Long ownerId;
 
 	private String vSwitchId;
-
-	private String securityIPList;
-
-	private String instanceName;
-
-	private String instanceTps;
 
 	private String vPCId;
 
 	private String zoneId;
 
-	private String tSDBVersion;
-
 	private String payType;
 
 	private String pricingCycle;
 	public CreateHiTSDBInstanceRequest() {
-		super("hitsdb", "2017-06-01", "CreateHiTSDBInstance", "hitsdb");
+		super("hitsdb", "2017-06-01", "CreateHiTSDBInstance", "tsdb");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -93,6 +86,17 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		this.connectionString = connectionString;
 		if(connectionString != null){
 			putQueryParameter("ConnectionString", connectionString);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -129,25 +133,14 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		}
 	}
 
-	public String getMaxSeriesPerDatabase() {
-		return this.maxSeriesPerDatabase;
+	public String getDiskCategory() {
+		return this.diskCategory;
 	}
 
-	public void setMaxSeriesPerDatabase(String maxSeriesPerDatabase) {
-		this.maxSeriesPerDatabase = maxSeriesPerDatabase;
-		if(maxSeriesPerDatabase != null){
-			putQueryParameter("MaxSeriesPerDatabase", maxSeriesPerDatabase);
-		}
-	}
-
-	public String getMaxTimelineLimit() {
-		return this.maxTimelineLimit;
-	}
-
-	public void setMaxTimelineLimit(String maxTimelineLimit) {
-		this.maxTimelineLimit = maxTimelineLimit;
-		if(maxTimelineLimit != null){
-			putQueryParameter("MaxTimelineLimit", maxTimelineLimit);
+	public void setDiskCategory(String diskCategory) {
+		this.diskCategory = diskCategory;
+		if(diskCategory != null){
+			putQueryParameter("DiskCategory", diskCategory);
 		}
 	}
 
@@ -159,17 +152,6 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		this.instanceStorage = instanceStorage;
 		if(instanceStorage != null){
 			putQueryParameter("InstanceStorage", instanceStorage);
-		}
-	}
-
-	public String getEngineType() {
-		return this.engineType;
-	}
-
-	public void setEngineType(String engineType) {
-		this.engineType = engineType;
-		if(engineType != null){
-			putQueryParameter("EngineType", engineType);
 		}
 	}
 
@@ -206,17 +188,6 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		}
 	}
 
-	public String getMaxDatabaseLimit() {
-		return this.maxDatabaseLimit;
-	}
-
-	public void setMaxDatabaseLimit(String maxDatabaseLimit) {
-		this.maxDatabaseLimit = maxDatabaseLimit;
-		if(maxDatabaseLimit != null){
-			putQueryParameter("MaxDatabaseLimit", maxDatabaseLimit);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -239,39 +210,6 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		}
 	}
 
-	public String getSecurityIPList() {
-		return this.securityIPList;
-	}
-
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-		if(securityIPList != null){
-			putQueryParameter("SecurityIPList", securityIPList);
-		}
-	}
-
-	public String getInstanceName() {
-		return this.instanceName;
-	}
-
-	public void setInstanceName(String instanceName) {
-		this.instanceName = instanceName;
-		if(instanceName != null){
-			putQueryParameter("InstanceName", instanceName);
-		}
-	}
-
-	public String getInstanceTps() {
-		return this.instanceTps;
-	}
-
-	public void setInstanceTps(String instanceTps) {
-		this.instanceTps = instanceTps;
-		if(instanceTps != null){
-			putQueryParameter("InstanceTps", instanceTps);
-		}
-	}
-
 	public String getVPCId() {
 		return this.vPCId;
 	}
@@ -291,17 +229,6 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getTSDBVersion() {
-		return this.tSDBVersion;
-	}
-
-	public void setTSDBVersion(String tSDBVersion) {
-		this.tSDBVersion = tSDBVersion;
-		if(tSDBVersion != null){
-			putQueryParameter("TSDBVersion", tSDBVersion);
 		}
 	}
 

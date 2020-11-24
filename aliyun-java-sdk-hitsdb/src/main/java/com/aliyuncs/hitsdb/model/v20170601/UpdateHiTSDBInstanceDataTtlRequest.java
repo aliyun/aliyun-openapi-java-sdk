@@ -16,6 +16,7 @@ package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.hitsdb.Endpoint;
 
 /**
  * @author auto create
@@ -46,8 +47,12 @@ public class UpdateHiTSDBInstanceDataTtlRequest extends RpcAcsRequest<UpdateHiTS
 
 	private String userName;
 	public UpdateHiTSDBInstanceDataTtlRequest() {
-		super("hitsdb", "2017-06-01", "UpdateHiTSDBInstanceDataTtl", "hitsdb");
+		super("hitsdb", "2017-06-01", "UpdateHiTSDBInstanceDataTtl", "tsdb");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getReverseVpcIp() {

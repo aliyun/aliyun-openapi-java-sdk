@@ -16,6 +16,7 @@ package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.hitsdb.Endpoint;
 
 /**
  * @author auto create
@@ -48,8 +49,12 @@ public class DeleteHiTSDBInstanceMetaRequest extends RpcAcsRequest<DeleteHiTSDBI
 
 	private String userName;
 	public DeleteHiTSDBInstanceMetaRequest() {
-		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "hitsdb");
+		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "tsdb");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getReverseVpcIp() {

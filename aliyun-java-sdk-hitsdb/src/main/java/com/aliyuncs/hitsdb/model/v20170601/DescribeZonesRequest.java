@@ -16,6 +16,7 @@ package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.hitsdb.Endpoint;
 
 /**
  * @author auto create
@@ -26,6 +27,8 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private Long resourceOwnerId;
 
+	private String language;
+
 	private String securityToken;
 
 	private String resourceOwnerAccount;
@@ -34,8 +37,12 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private Long ownerId;
 	public DescribeZonesRequest() {
-		super("hitsdb", "2017-06-01", "DescribeZones", "hitsdb");
+		super("hitsdb", "2017-06-01", "DescribeZones", "tsdb");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Long getResourceOwnerId() {
@@ -46,6 +53,17 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 

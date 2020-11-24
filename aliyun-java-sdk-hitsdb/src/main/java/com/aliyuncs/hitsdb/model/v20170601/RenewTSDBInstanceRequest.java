@@ -22,10 +22,12 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDBInstanceAliasResponse> {
+public class RenewTSDBInstanceRequest extends RpcAcsRequest<RenewTSDBInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private Integer duration;
 
 	private String securityToken;
 
@@ -33,13 +35,13 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 
 	private String ownerAccount;
 
-	private String instanceAlias;
-
 	private Long ownerId;
 
 	private String instanceId;
-	public RenameHiTSDBInstanceAliasRequest() {
-		super("hitsdb", "2017-06-01", "RenameHiTSDBInstanceAlias", "tsdb");
+
+	private String pricingCycle;
+	public RenewTSDBInstanceRequest() {
+		super("hitsdb", "2017-06-01", "RenewTSDBInstance", "tsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +57,17 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Integer getDuration() {
+		return this.duration;
+	}
+
+	public void setDuration(Integer duration) {
+		this.duration = duration;
+		if(duration != null){
+			putQueryParameter("Duration", duration.toString());
 		}
 	}
 
@@ -91,17 +104,6 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		}
 	}
 
-	public String getInstanceAlias() {
-		return this.instanceAlias;
-	}
-
-	public void setInstanceAlias(String instanceAlias) {
-		this.instanceAlias = instanceAlias;
-		if(instanceAlias != null){
-			putQueryParameter("InstanceAlias", instanceAlias);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -124,9 +126,20 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		}
 	}
 
+	public String getPricingCycle() {
+		return this.pricingCycle;
+	}
+
+	public void setPricingCycle(String pricingCycle) {
+		this.pricingCycle = pricingCycle;
+		if(pricingCycle != null){
+			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
 	@Override
-	public Class<RenameHiTSDBInstanceAliasResponse> getResponseClass() {
-		return RenameHiTSDBInstanceAliasResponse.class;
+	public Class<RenewTSDBInstanceResponse> getResponseClass() {
+		return RenewTSDBInstanceResponse.class;
 	}
 
 }

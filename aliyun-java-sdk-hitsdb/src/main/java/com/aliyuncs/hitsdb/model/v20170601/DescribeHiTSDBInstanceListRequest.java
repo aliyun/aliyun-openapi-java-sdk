@@ -22,24 +22,30 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDBInstanceAliasResponse> {
+public class DescribeHiTSDBInstanceListRequest extends RpcAcsRequest<DescribeHiTSDBInstanceListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String statusList;
+
+	private Integer pageNumber;
+
 	private String securityToken;
+
+	private Integer pageSize;
+
+	private String queryStr;
+
+	private String engineType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String instanceAlias;
-
 	private Long ownerId;
-
-	private String instanceId;
-	public RenameHiTSDBInstanceAliasRequest() {
-		super("hitsdb", "2017-06-01", "RenameHiTSDBInstanceAlias", "tsdb");
+	public DescribeHiTSDBInstanceListRequest() {
+		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceList", "tsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +64,28 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		}
 	}
 
+	public String getStatusList() {
+		return this.statusList;
+	}
+
+	public void setStatusList(String statusList) {
+		this.statusList = statusList;
+		if(statusList != null){
+			putQueryParameter("StatusList", statusList);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -66,6 +94,39 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getQueryStr() {
+		return this.queryStr;
+	}
+
+	public void setQueryStr(String queryStr) {
+		this.queryStr = queryStr;
+		if(queryStr != null){
+			putQueryParameter("QueryStr", queryStr);
+		}
+	}
+
+	public String getEngineType() {
+		return this.engineType;
+	}
+
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+		if(engineType != null){
+			putQueryParameter("EngineType", engineType);
 		}
 	}
 
@@ -91,17 +152,6 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		}
 	}
 
-	public String getInstanceAlias() {
-		return this.instanceAlias;
-	}
-
-	public void setInstanceAlias(String instanceAlias) {
-		this.instanceAlias = instanceAlias;
-		if(instanceAlias != null){
-			putQueryParameter("InstanceAlias", instanceAlias);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -113,20 +163,9 @@ public class RenameHiTSDBInstanceAliasRequest extends RpcAcsRequest<RenameHiTSDB
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<RenameHiTSDBInstanceAliasResponse> getResponseClass() {
-		return RenameHiTSDBInstanceAliasResponse.class;
+	public Class<DescribeHiTSDBInstanceListResponse> getResponseClass() {
+		return DescribeHiTSDBInstanceListResponse.class;
 	}
 
 }
