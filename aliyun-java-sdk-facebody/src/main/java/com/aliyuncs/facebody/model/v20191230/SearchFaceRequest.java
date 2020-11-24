@@ -25,6 +25,8 @@ import com.aliyuncs.facebody.Endpoint;
 public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	   
 
+	private String dbNames;
+
 	private String dbName;
 
 	private String imageUrl;
@@ -37,6 +39,17 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDbNames() {
+		return this.dbNames;
+	}
+
+	public void setDbNames(String dbNames) {
+		this.dbNames = dbNames;
+		if(dbNames != null){
+			putQueryParameter("DbNames", dbNames);
+		}
 	}
 
 	public String getDbName() {

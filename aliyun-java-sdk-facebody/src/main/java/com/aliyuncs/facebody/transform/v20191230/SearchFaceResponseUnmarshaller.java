@@ -40,17 +40,18 @@ public class SearchFaceResponseUnmarshaller {
 			Location location = new Location();
 			location.setX(_ctx.integerValue("SearchFaceResponse.Data.MatchList["+ i +"].Location.X"));
 			location.setY(_ctx.integerValue("SearchFaceResponse.Data.MatchList["+ i +"].Location.Y"));
-			location.setWidth(_ctx.integerValue("SearchFaceResponse.Data.MatchList["+ i +"].Location.Width"));
 			location.setHeight(_ctx.integerValue("SearchFaceResponse.Data.MatchList["+ i +"].Location.Height"));
+			location.setWidth(_ctx.integerValue("SearchFaceResponse.Data.MatchList["+ i +"].Location.Width"));
 			matchListItem.setLocation(location);
 
 			List<FaceItemsItem> faceItems = new ArrayList<FaceItemsItem>();
 			for (int j = 0; j < _ctx.lengthValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems.Length"); j++) {
 				FaceItemsItem faceItemsItem = new FaceItemsItem();
 				faceItemsItem.setFaceId(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].FaceId"));
-				faceItemsItem.setScore(_ctx.floatValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].Score"));
-				faceItemsItem.setExtraData(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].ExtraData"));
 				faceItemsItem.setEntityId(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].EntityId"));
+				faceItemsItem.setScore(_ctx.floatValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].Score"));
+				faceItemsItem.setDbName(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].DbName"));
+				faceItemsItem.setExtraData(_ctx.stringValue("SearchFaceResponse.Data.MatchList["+ i +"].FaceItems["+ j +"].ExtraData"));
 
 				faceItems.add(faceItemsItem);
 			}

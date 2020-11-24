@@ -83,11 +83,13 @@ public class SearchFaceResponse extends AcsResponse {
 
 				private String faceId;
 
+				private String entityId;
+
 				private Float score;
 
-				private String extraData;
+				private String dbName;
 
-				private String entityId;
+				private String extraData;
 
 				public String getFaceId() {
 					return this.faceId;
@@ -95,6 +97,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 				public void setFaceId(String faceId) {
 					this.faceId = faceId;
+				}
+
+				public String getEntityId() {
+					return this.entityId;
+				}
+
+				public void setEntityId(String entityId) {
+					this.entityId = entityId;
 				}
 
 				public Float getScore() {
@@ -105,20 +115,20 @@ public class SearchFaceResponse extends AcsResponse {
 					this.score = score;
 				}
 
+				public String getDbName() {
+					return this.dbName;
+				}
+
+				public void setDbName(String dbName) {
+					this.dbName = dbName;
+				}
+
 				public String getExtraData() {
 					return this.extraData;
 				}
 
 				public void setExtraData(String extraData) {
 					this.extraData = extraData;
-				}
-
-				public String getEntityId() {
-					return this.entityId;
-				}
-
-				public void setEntityId(String entityId) {
-					this.entityId = entityId;
 				}
 			}
 
@@ -128,9 +138,9 @@ public class SearchFaceResponse extends AcsResponse {
 
 				private Integer y;
 
-				private Integer width;
-
 				private Integer height;
+
+				private Integer width;
 
 				public Integer getX() {
 					return this.x;
@@ -148,20 +158,20 @@ public class SearchFaceResponse extends AcsResponse {
 					this.y = y;
 				}
 
-				public Integer getWidth() {
-					return this.width;
-				}
-
-				public void setWidth(Integer width) {
-					this.width = width;
-				}
-
 				public Integer getHeight() {
 					return this.height;
 				}
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
 				}
 			}
 		}
