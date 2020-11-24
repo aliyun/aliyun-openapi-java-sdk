@@ -45,7 +45,7 @@ public class DescribeHiTSDBInstanceListRequest extends RpcAcsRequest<DescribeHiT
 
 	private Long ownerId;
 	public DescribeHiTSDBInstanceListRequest() {
-		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceList", "tsdb");
+		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

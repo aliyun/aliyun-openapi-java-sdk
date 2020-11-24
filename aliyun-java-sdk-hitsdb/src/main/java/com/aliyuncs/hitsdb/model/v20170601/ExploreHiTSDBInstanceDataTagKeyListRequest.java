@@ -51,7 +51,7 @@ public class ExploreHiTSDBInstanceDataTagKeyListRequest extends RpcAcsRequest<Ex
 
 	private String userName;
 	public ExploreHiTSDBInstanceDataTagKeyListRequest() {
-		super("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataTagKeyList", "tsdb");
+		super("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataTagKeyList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

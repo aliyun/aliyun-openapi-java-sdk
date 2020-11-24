@@ -53,7 +53,7 @@ public class DeleteHiTSDBInstanceDataRequest extends RpcAcsRequest<DeleteHiTSDBI
 
 	private String userName;
 	public DeleteHiTSDBInstanceDataRequest() {
-		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceData", "tsdb");
+		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceData", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

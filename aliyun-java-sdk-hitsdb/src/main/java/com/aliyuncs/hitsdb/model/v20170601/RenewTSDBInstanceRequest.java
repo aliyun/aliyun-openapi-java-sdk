@@ -41,7 +41,7 @@ public class RenewTSDBInstanceRequest extends RpcAcsRequest<RenewTSDBInstanceRes
 
 	private String pricingCycle;
 	public RenewTSDBInstanceRequest() {
-		super("hitsdb", "2017-06-01", "RenewTSDBInstance", "tsdb");
+		super("hitsdb", "2017-06-01", "RenewTSDBInstance", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

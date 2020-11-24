@@ -39,7 +39,7 @@ public class SwitchHiTSDBInstancePublicNetRequest extends RpcAcsRequest<SwitchHi
 
 	private String instanceId;
 	public SwitchHiTSDBInstancePublicNetRequest() {
-		super("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "tsdb");
+		super("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

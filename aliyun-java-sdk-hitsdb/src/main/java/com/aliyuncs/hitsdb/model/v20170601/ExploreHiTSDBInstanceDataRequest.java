@@ -59,7 +59,7 @@ public class ExploreHiTSDBInstanceDataRequest extends RpcAcsRequest<ExploreHiTSD
 
 	private String userName;
 	public ExploreHiTSDBInstanceDataRequest() {
-		super("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceData", "tsdb");
+		super("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceData", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

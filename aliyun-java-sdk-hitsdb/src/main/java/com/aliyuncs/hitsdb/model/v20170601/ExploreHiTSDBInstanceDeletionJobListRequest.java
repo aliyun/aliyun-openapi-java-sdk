@@ -47,7 +47,7 @@ public class ExploreHiTSDBInstanceDeletionJobListRequest extends RpcAcsRequest<E
 
 	private String userName;
 	public ExploreHiTSDBInstanceDeletionJobListRequest() {
-		super("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDeletionJobList", "tsdb");
+		super("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDeletionJobList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

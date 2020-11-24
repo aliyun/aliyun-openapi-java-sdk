@@ -59,7 +59,7 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 
 	private String pricingCycle;
 	public CreateHiTSDBInstanceRequest() {
-		super("hitsdb", "2017-06-01", "CreateHiTSDBInstance", "tsdb");
+		super("hitsdb", "2017-06-01", "CreateHiTSDBInstance", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class RestartHiTSDBInstanceRequest extends RpcAcsRequest<RestartHiTSDBIns
 
 	private String instanceId;
 	public RestartHiTSDBInstanceRequest() {
-		super("hitsdb", "2017-06-01", "RestartHiTSDBInstance", "tsdb");
+		super("hitsdb", "2017-06-01", "RestartHiTSDBInstance", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

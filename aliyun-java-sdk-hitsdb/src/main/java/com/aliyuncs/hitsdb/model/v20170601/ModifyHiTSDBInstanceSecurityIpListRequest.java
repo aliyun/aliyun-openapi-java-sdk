@@ -39,7 +39,7 @@ public class ModifyHiTSDBInstanceSecurityIpListRequest extends RpcAcsRequest<Mod
 
 	private String instanceId;
 	public ModifyHiTSDBInstanceSecurityIpListRequest() {
-		super("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceSecurityIpList", "tsdb");
+		super("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceSecurityIpList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

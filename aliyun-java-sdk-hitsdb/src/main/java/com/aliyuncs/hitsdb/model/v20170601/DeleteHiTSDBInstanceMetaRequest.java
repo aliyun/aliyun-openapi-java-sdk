@@ -49,7 +49,7 @@ public class DeleteHiTSDBInstanceMetaRequest extends RpcAcsRequest<DeleteHiTSDBI
 
 	private String userName;
 	public DeleteHiTSDBInstanceMetaRequest() {
-		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "tsdb");
+		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

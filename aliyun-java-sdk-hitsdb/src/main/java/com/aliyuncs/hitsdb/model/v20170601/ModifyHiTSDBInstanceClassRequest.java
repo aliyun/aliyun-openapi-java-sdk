@@ -41,7 +41,7 @@ public class ModifyHiTSDBInstanceClassRequest extends RpcAcsRequest<ModifyHiTSDB
 
 	private String instanceId;
 	public ModifyHiTSDBInstanceClassRequest() {
-		super("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceClass", "tsdb");
+		super("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceClass", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

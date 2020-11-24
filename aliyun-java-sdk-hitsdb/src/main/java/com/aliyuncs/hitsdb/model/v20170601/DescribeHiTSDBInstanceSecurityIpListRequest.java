@@ -37,7 +37,7 @@ public class DescribeHiTSDBInstanceSecurityIpListRequest extends RpcAcsRequest<D
 
 	private String instanceId;
 	public DescribeHiTSDBInstanceSecurityIpListRequest() {
-		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceSecurityIpList", "tsdb");
+		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceSecurityIpList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

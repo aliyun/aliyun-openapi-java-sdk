@@ -37,7 +37,7 @@ public class DeleteHiTSDBInstanceRequest extends RpcAcsRequest<DeleteHiTSDBInsta
 
 	private String instanceId;
 	public DeleteHiTSDBInstanceRequest() {
-		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstance", "tsdb");
+		super("hitsdb", "2017-06-01", "DeleteHiTSDBInstance", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

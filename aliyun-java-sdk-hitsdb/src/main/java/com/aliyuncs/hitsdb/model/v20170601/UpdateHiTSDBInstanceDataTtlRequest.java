@@ -47,7 +47,7 @@ public class UpdateHiTSDBInstanceDataTtlRequest extends RpcAcsRequest<UpdateHiTS
 
 	private String userName;
 	public UpdateHiTSDBInstanceDataTtlRequest() {
-		super("hitsdb", "2017-06-01", "UpdateHiTSDBInstanceDataTtl", "tsdb");
+		super("hitsdb", "2017-06-01", "UpdateHiTSDBInstanceDataTtl", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
