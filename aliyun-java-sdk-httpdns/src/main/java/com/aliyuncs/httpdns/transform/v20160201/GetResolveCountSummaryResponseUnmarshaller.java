@@ -21,15 +21,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResolveCountSummaryResponseUnmarshaller {
 
-	public static GetResolveCountSummaryResponse unmarshall(GetResolveCountSummaryResponse getResolveCountSummaryResponse, UnmarshallerContext context) {
+	public static GetResolveCountSummaryResponse unmarshall(GetResolveCountSummaryResponse getResolveCountSummaryResponse, UnmarshallerContext _ctx) {
 		
-		getResolveCountSummaryResponse.setRequestId(context.stringValue("GetResolveCountSummaryResponse.RequestId"));
+		getResolveCountSummaryResponse.setRequestId(_ctx.stringValue("GetResolveCountSummaryResponse.RequestId"));
 
 		ResolveSummary resolveSummary = new ResolveSummary();
-		resolveSummary.setHttp(context.longValue("GetResolveCountSummaryResponse.ResolveSummary.Http"));
-		resolveSummary.setHttps(context.longValue("GetResolveCountSummaryResponse.ResolveSummary.Https"));
-		resolveSummary.setHttp6(context.longValue("GetResolveCountSummaryResponse.ResolveSummary.Http6"));
-		resolveSummary.setHttps6(context.longValue("GetResolveCountSummaryResponse.ResolveSummary.Https6"));
+		resolveSummary.setHttp(_ctx.longValue("GetResolveCountSummaryResponse.ResolveSummary.Http"));
+		resolveSummary.setHttps(_ctx.longValue("GetResolveCountSummaryResponse.ResolveSummary.Https"));
+		resolveSummary.setHttp6(_ctx.longValue("GetResolveCountSummaryResponse.ResolveSummary.Http6"));
+		resolveSummary.setHttps6(_ctx.longValue("GetResolveCountSummaryResponse.ResolveSummary.Https6"));
 		getResolveCountSummaryResponse.setResolveSummary(resolveSummary);
 	 
 	 	return getResolveCountSummaryResponse;

@@ -15,30 +15,21 @@
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetResolveCountSummaryRequest extends RpcAcsRequest<GetResolveCountSummaryResponse> {
-	
-	public GetResolveCountSummaryRequest() {
-		super("Httpdns", "2016-02-01", "GetResolveCountSummary", "httpdns");
-	}
-
-	private String granularity;
+	   
 
 	private Integer timeSpan;
 
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
-		}
+	private String granularity;
+	public GetResolveCountSummaryRequest() {
+		super("Httpdns", "2016-02-01", "GetResolveCountSummary");
+		setMethod(MethodType.POST);
 	}
 
 	public Integer getTimeSpan() {
@@ -49,6 +40,17 @@ public class GetResolveCountSummaryRequest extends RpcAcsRequest<GetResolveCount
 		this.timeSpan = timeSpan;
 		if(timeSpan != null){
 			putQueryParameter("TimeSpan", timeSpan.toString());
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 

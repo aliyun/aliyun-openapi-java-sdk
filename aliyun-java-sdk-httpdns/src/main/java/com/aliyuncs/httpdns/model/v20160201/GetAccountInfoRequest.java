@@ -15,15 +15,17 @@
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetAccountInfoRequest extends RpcAcsRequest<GetAccountInfoResponse> {
-	
+	   
 	public GetAccountInfoRequest() {
-		super("Httpdns", "2016-02-01", "GetAccountInfo", "httpdns");
+		super("Httpdns", "2016-02-01", "GetAccountInfo");
+		setMethod(MethodType.POST);
 	}
 
 	@Override

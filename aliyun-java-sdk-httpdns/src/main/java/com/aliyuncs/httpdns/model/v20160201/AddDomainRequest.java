@@ -15,30 +15,21 @@
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
-	
-	public AddDomainRequest() {
-		super("Httpdns", "2016-02-01", "AddDomain", "httpdns");
-	}
-
-	private String accountId;
+	   
 
 	private String domainName;
 
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
+	private String accountId;
+	public AddDomainRequest() {
+		super("Httpdns", "2016-02-01", "AddDomain");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDomainName() {
@@ -49,6 +40,17 @@ public class AddDomainRequest extends RpcAcsRequest<AddDomainResponse> {
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
 		}
 	}
 

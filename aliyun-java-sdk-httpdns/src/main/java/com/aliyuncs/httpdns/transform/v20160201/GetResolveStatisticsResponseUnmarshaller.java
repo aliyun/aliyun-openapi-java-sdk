@@ -24,15 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetResolveStatisticsResponseUnmarshaller {
 
-	public static GetResolveStatisticsResponse unmarshall(GetResolveStatisticsResponse getResolveStatisticsResponse, UnmarshallerContext context) {
+	public static GetResolveStatisticsResponse unmarshall(GetResolveStatisticsResponse getResolveStatisticsResponse, UnmarshallerContext _ctx) {
 		
-		getResolveStatisticsResponse.setRequestId(context.stringValue("GetResolveStatisticsResponse.RequestId"));
+		getResolveStatisticsResponse.setRequestId(_ctx.stringValue("GetResolveStatisticsResponse.RequestId"));
 
 		List<DataPoint> dataPoints = new ArrayList<DataPoint>();
-		for (int i = 0; i < context.lengthValue("GetResolveStatisticsResponse.DataPoints.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("GetResolveStatisticsResponse.DataPoints.Length"); i++) {
 			DataPoint dataPoint = new DataPoint();
-			dataPoint.setTime(context.integerValue("GetResolveStatisticsResponse.DataPoints["+ i +"].Time"));
-			dataPoint.setCount(context.integerValue("GetResolveStatisticsResponse.DataPoints["+ i +"].Count"));
+			dataPoint.setTime(_ctx.integerValue("GetResolveStatisticsResponse.DataPoints["+ i +"].Time"));
+			dataPoint.setCount(_ctx.integerValue("GetResolveStatisticsResponse.DataPoints["+ i +"].Count"));
 
 			dataPoints.add(dataPoint);
 		}

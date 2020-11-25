@@ -15,30 +15,21 @@
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListDomainsRequest extends RpcAcsRequest<ListDomainsResponse> {
-	
-	public ListDomainsRequest() {
-		super("Httpdns", "2016-02-01", "ListDomains", "httpdns");
-	}
-
-	private Integer pageSize;
+	   
 
 	private Integer pageNumber;
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	private Integer pageSize;
+	public ListDomainsRequest() {
+		super("Httpdns", "2016-02-01", "ListDomains");
+		setMethod(MethodType.POST);
 	}
 
 	public Integer getPageNumber() {
@@ -49,6 +40,17 @@ public class ListDomainsRequest extends RpcAcsRequest<ListDomainsResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

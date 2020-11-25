@@ -24,17 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class DescribeDomainsResponseUnmarshaller {
 
-	public static DescribeDomainsResponse unmarshall(DescribeDomainsResponse describeDomainsResponse, UnmarshallerContext context) {
+	public static DescribeDomainsResponse unmarshall(DescribeDomainsResponse describeDomainsResponse, UnmarshallerContext _ctx) {
 		
-		describeDomainsResponse.setRequestId(context.stringValue("DescribeDomainsResponse.RequestId"));
-		describeDomainsResponse.setTotalCount(context.longValue("DescribeDomainsResponse.TotalCount"));
-		describeDomainsResponse.setPageNumber(context.longValue("DescribeDomainsResponse.PageNumber"));
-		describeDomainsResponse.setPageSize(context.longValue("DescribeDomainsResponse.PageSize"));
+		describeDomainsResponse.setRequestId(_ctx.stringValue("DescribeDomainsResponse.RequestId"));
+		describeDomainsResponse.setTotalCount(_ctx.longValue("DescribeDomainsResponse.TotalCount"));
+		describeDomainsResponse.setPageNumber(_ctx.longValue("DescribeDomainsResponse.PageNumber"));
+		describeDomainsResponse.setPageSize(_ctx.longValue("DescribeDomainsResponse.PageSize"));
 
 		List<Domain> domains = new ArrayList<Domain>();
-		for (int i = 0; i < context.lengthValue("DescribeDomainsResponse.Domains.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("DescribeDomainsResponse.Domains.Length"); i++) {
 			Domain domain = new Domain();
-			domain.setDomainName(context.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainName"));
+			domain.setDomainName(_ctx.stringValue("DescribeDomainsResponse.Domains["+ i +"].DomainName"));
 
 			domains.add(domain);
 		}

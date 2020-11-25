@@ -15,18 +15,14 @@
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatisticsResponse> {
-	
-	public GetResolveStatisticsRequest() {
-		super("Httpdns", "2016-02-01", "GetResolveStatistics", "httpdns");
-	}
-
-	private String granularity;
+	   
 
 	private String protocolName;
 
@@ -34,15 +30,10 @@ public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatist
 
 	private Integer timeSpan;
 
-	public String getGranularity() {
-		return this.granularity;
-	}
-
-	public void setGranularity(String granularity) {
-		this.granularity = granularity;
-		if(granularity != null){
-			putQueryParameter("Granularity", granularity);
-		}
+	private String granularity;
+	public GetResolveStatisticsRequest() {
+		super("Httpdns", "2016-02-01", "GetResolveStatistics");
+		setMethod(MethodType.POST);
 	}
 
 	public String getProtocolName() {
@@ -75,6 +66,17 @@ public class GetResolveStatisticsRequest extends RpcAcsRequest<GetResolveStatist
 		this.timeSpan = timeSpan;
 		if(timeSpan != null){
 			putQueryParameter("TimeSpan", timeSpan.toString());
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 

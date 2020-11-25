@@ -21,21 +21,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class GetAccountInfoResponseUnmarshaller {
 
-	public static GetAccountInfoResponse unmarshall(GetAccountInfoResponse getAccountInfoResponse, UnmarshallerContext context) {
+	public static GetAccountInfoResponse unmarshall(GetAccountInfoResponse getAccountInfoResponse, UnmarshallerContext _ctx) {
 		
-		getAccountInfoResponse.setRequestId(context.stringValue("GetAccountInfoResponse.RequestId"));
+		getAccountInfoResponse.setRequestId(_ctx.stringValue("GetAccountInfoResponse.RequestId"));
 
 		AccountInfo accountInfo = new AccountInfo();
-		accountInfo.setAccountId(context.stringValue("GetAccountInfoResponse.AccountInfo.AccountId"));
-		accountInfo.setMonthFreeCount(context.integerValue("GetAccountInfoResponse.AccountInfo.MonthFreeCount"));
-		accountInfo.setMonthHttpsResolveCount(context.integerValue("GetAccountInfoResponse.AccountInfo.MonthHttpsResolveCount"));
-		accountInfo.setMonthResolveCount(context.integerValue("GetAccountInfoResponse.AccountInfo.MonthResolveCount"));
-		accountInfo.setPackageCount(context.integerValue("GetAccountInfoResponse.AccountInfo.PackageCount"));
-		accountInfo.setUserStatus(context.integerValue("GetAccountInfoResponse.AccountInfo.UserStatus"));
-		accountInfo.setSignSecret(context.stringValue("GetAccountInfoResponse.AccountInfo.SignSecret"));
-		accountInfo.setUnsignedEnabled(context.booleanValue("GetAccountInfoResponse.AccountInfo.UnsignedEnabled"));
-		accountInfo.setSignedCount(context.longValue("GetAccountInfoResponse.AccountInfo.SignedCount"));
-		accountInfo.setUnsignedCount(context.longValue("GetAccountInfoResponse.AccountInfo.UnsignedCount"));
+		accountInfo.setAccountId(_ctx.stringValue("GetAccountInfoResponse.AccountInfo.AccountId"));
+		accountInfo.setMonthFreeCount(_ctx.integerValue("GetAccountInfoResponse.AccountInfo.MonthFreeCount"));
+		accountInfo.setMonthHttpsResolveCount(_ctx.integerValue("GetAccountInfoResponse.AccountInfo.MonthHttpsResolveCount"));
+		accountInfo.setMonthResolveCount(_ctx.integerValue("GetAccountInfoResponse.AccountInfo.MonthResolveCount"));
+		accountInfo.setPackageCount(_ctx.integerValue("GetAccountInfoResponse.AccountInfo.PackageCount"));
+		accountInfo.setUserStatus(_ctx.integerValue("GetAccountInfoResponse.AccountInfo.UserStatus"));
+		accountInfo.setSignSecret(_ctx.stringValue("GetAccountInfoResponse.AccountInfo.SignSecret"));
+		accountInfo.setUnsignedEnabled(_ctx.booleanValue("GetAccountInfoResponse.AccountInfo.UnsignedEnabled"));
+		accountInfo.setSignedCount(_ctx.longValue("GetAccountInfoResponse.AccountInfo.SignedCount"));
+		accountInfo.setUnsignedCount(_ctx.longValue("GetAccountInfoResponse.AccountInfo.UnsignedCount"));
 		getAccountInfoResponse.setAccountInfo(accountInfo);
 	 
 	 	return getAccountInfoResponse;

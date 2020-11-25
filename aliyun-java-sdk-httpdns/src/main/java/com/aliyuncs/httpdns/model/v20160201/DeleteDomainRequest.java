@@ -15,30 +15,21 @@
 package com.aliyuncs.httpdns.model.v20160201;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 
 /**
  * @author auto create
  * @version 
  */
 public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
-	
-	public DeleteDomainRequest() {
-		super("Httpdns", "2016-02-01", "DeleteDomain", "httpdns");
-	}
-
-	private String accountId;
+	   
 
 	private String domainName;
 
-	public String getAccountId() {
-		return this.accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-		if(accountId != null){
-			putQueryParameter("AccountId", accountId);
-		}
+	private String accountId;
+	public DeleteDomainRequest() {
+		super("Httpdns", "2016-02-01", "DeleteDomain");
+		setMethod(MethodType.POST);
 	}
 
 	public String getDomainName() {
@@ -49,6 +40,17 @@ public class DeleteDomainRequest extends RpcAcsRequest<DeleteDomainResponse> {
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public String getAccountId() {
+		return this.accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
 		}
 	}
 

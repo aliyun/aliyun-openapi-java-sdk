@@ -24,21 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
 
 public class ListDomainsResponseUnmarshaller {
 
-	public static ListDomainsResponse unmarshall(ListDomainsResponse listDomainsResponse, UnmarshallerContext context) {
+	public static ListDomainsResponse unmarshall(ListDomainsResponse listDomainsResponse, UnmarshallerContext _ctx) {
 		
-		listDomainsResponse.setRequestId(context.stringValue("ListDomainsResponse.RequestId"));
-		listDomainsResponse.setTotalCount(context.longValue("ListDomainsResponse.TotalCount"));
-		listDomainsResponse.setPageNumber(context.longValue("ListDomainsResponse.PageNumber"));
-		listDomainsResponse.setPageSize(context.longValue("ListDomainsResponse.PageSize"));
+		listDomainsResponse.setRequestId(_ctx.stringValue("ListDomainsResponse.RequestId"));
+		listDomainsResponse.setTotalCount(_ctx.longValue("ListDomainsResponse.TotalCount"));
+		listDomainsResponse.setPageNumber(_ctx.longValue("ListDomainsResponse.PageNumber"));
+		listDomainsResponse.setPageSize(_ctx.longValue("ListDomainsResponse.PageSize"));
 
 		List<DomainInfo> domainInfos = new ArrayList<DomainInfo>();
-		for (int i = 0; i < context.lengthValue("ListDomainsResponse.DomainInfos.Length"); i++) {
+		for (int i = 0; i < _ctx.lengthValue("ListDomainsResponse.DomainInfos.Length"); i++) {
 			DomainInfo domainInfo = new DomainInfo();
-			domainInfo.setDomainName(context.stringValue("ListDomainsResponse.DomainInfos["+ i +"].DomainName"));
-			domainInfo.setResolved(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].Resolved"));
-			domainInfo.setResolvedHttps(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].ResolvedHttps"));
-			domainInfo.setResolved6(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].Resolved6"));
-			domainInfo.setResolvedHttps6(context.longValue("ListDomainsResponse.DomainInfos["+ i +"].ResolvedHttps6"));
+			domainInfo.setDomainName(_ctx.stringValue("ListDomainsResponse.DomainInfos["+ i +"].DomainName"));
+			domainInfo.setResolved(_ctx.longValue("ListDomainsResponse.DomainInfos["+ i +"].Resolved"));
+			domainInfo.setResolvedHttps(_ctx.longValue("ListDomainsResponse.DomainInfos["+ i +"].ResolvedHttps"));
+			domainInfo.setResolved6(_ctx.longValue("ListDomainsResponse.DomainInfos["+ i +"].Resolved6"));
+			domainInfo.setResolvedHttps6(_ctx.longValue("ListDomainsResponse.DomainInfos["+ i +"].ResolvedHttps6"));
 
 			domainInfos.add(domainInfo);
 		}
