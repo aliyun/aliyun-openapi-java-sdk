@@ -29,6 +29,8 @@ public class DescribeScdnDomainPvDataResponseUnmarshaller {
 		describeScdnDomainPvDataResponse.setRequestId(_ctx.stringValue("DescribeScdnDomainPvDataResponse.RequestId"));
 		describeScdnDomainPvDataResponse.setDomainName(_ctx.stringValue("DescribeScdnDomainPvDataResponse.DomainName"));
 		describeScdnDomainPvDataResponse.setStartTime(_ctx.stringValue("DescribeScdnDomainPvDataResponse.StartTime"));
+		describeScdnDomainPvDataResponse.setEndTime(_ctx.stringValue("DescribeScdnDomainPvDataResponse.EndTime"));
+		describeScdnDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeScdnDomainPvDataResponse.DataInterval"));
 
 		List<UsageData> pvDataInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeScdnDomainPvDataResponse.PvDataInterval.Length"); i++) {

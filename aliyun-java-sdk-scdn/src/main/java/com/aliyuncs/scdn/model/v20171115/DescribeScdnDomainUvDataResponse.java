@@ -31,6 +31,10 @@ public class DescribeScdnDomainUvDataResponse extends AcsResponse {
 
 	private String startTime;
 
+	private String endTime;
+
+	private String dataInterval;
+
 	private List<UsageData> uvDataInterval;
 
 	public String getRequestId() {
@@ -55,6 +59,22 @@ public class DescribeScdnDomainUvDataResponse extends AcsResponse {
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getDataInterval() {
+		return this.dataInterval;
+	}
+
+	public void setDataInterval(String dataInterval) {
+		this.dataInterval = dataInterval;
 	}
 
 	public List<UsageData> getUvDataInterval() {
