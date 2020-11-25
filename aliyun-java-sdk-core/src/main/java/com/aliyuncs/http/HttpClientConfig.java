@@ -1,5 +1,7 @@
 package com.aliyuncs.http;
 
+import org.apache.http.client.CredentialsProvider;
+
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLSocketFactory;
@@ -67,6 +69,7 @@ public class HttpClientConfig {
     private String httpProxy = null;
     private String httpsProxy = null;
     private String noProxy = null;
+    private CredentialsProvider credentialsProvider;
 
     /**
      * extra params
@@ -297,5 +300,13 @@ public class HttpClientConfig {
 
     public void setNoProxy(String noProxy) {
         this.noProxy = noProxy;
+    }
+
+    public CredentialsProvider getCredentialsProvider() {
+        return credentialsProvider;
+    }
+
+    public void setCredentialsProvider(CredentialsProvider credentialsProvider) {
+        this.credentialsProvider = credentialsProvider;
     }
 }
