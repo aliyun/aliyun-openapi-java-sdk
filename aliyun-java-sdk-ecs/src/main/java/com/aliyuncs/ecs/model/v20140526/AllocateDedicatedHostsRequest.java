@@ -74,7 +74,7 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private Integer networkAttributesUdpTimeout;
 	public AllocateDedicatedHostsRequest() {
-		super("Ecs", "2014-05-26", "AllocateDedicatedHosts");
+		super("Ecs", "2014-05-26", "AllocateDedicatedHosts", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

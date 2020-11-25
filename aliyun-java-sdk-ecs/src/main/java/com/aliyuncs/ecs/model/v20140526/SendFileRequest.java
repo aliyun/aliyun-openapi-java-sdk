@@ -56,7 +56,7 @@ public class SendFileRequest extends RpcAcsRequest<SendFileResponse> {
 
 	private String targetDir;
 	public SendFileRequest() {
-		super("Ecs", "2014-05-26", "SendFile");
+		super("Ecs", "2014-05-26", "SendFile", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

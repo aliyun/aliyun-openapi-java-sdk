@@ -38,7 +38,7 @@ public class UnassignIpv6AddressesRequest extends RpcAcsRequest<UnassignIpv6Addr
 
 	private List<String> ipv6Addresss;
 	public UnassignIpv6AddressesRequest() {
-		super("Ecs", "2014-05-26", "UnassignIpv6Addresses");
+		super("Ecs", "2014-05-26", "UnassignIpv6Addresses", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

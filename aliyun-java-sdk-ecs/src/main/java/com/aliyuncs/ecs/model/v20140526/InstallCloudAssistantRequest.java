@@ -36,7 +36,7 @@ public class InstallCloudAssistantRequest extends RpcAcsRequest<InstallCloudAssi
 
 	private List<String> instanceIds;
 	public InstallCloudAssistantRequest() {
-		super("Ecs", "2014-05-26", "InstallCloudAssistant");
+		super("Ecs", "2014-05-26", "InstallCloudAssistant", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

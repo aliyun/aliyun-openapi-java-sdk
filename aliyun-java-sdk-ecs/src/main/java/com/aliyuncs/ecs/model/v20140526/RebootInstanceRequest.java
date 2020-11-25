@@ -39,7 +39,7 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 
 	private String instanceId;
 	public RebootInstanceRequest() {
-		super("Ecs", "2014-05-26", "RebootInstance");
+		super("Ecs", "2014-05-26", "RebootInstance", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

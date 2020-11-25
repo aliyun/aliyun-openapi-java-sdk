@@ -47,7 +47,7 @@ public class AttachDiskRequest extends RpcAcsRequest<AttachDiskResponse> {
 
 	private String device;
 	public AttachDiskRequest() {
-		super("Ecs", "2014-05-26", "AttachDisk");
+		super("Ecs", "2014-05-26", "AttachDisk", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

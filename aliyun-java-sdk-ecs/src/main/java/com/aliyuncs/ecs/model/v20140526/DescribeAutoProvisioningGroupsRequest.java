@@ -44,7 +44,7 @@ public class DescribeAutoProvisioningGroupsRequest extends RpcAcsRequest<Describ
 
 	private String autoProvisioningGroupName;
 	public DescribeAutoProvisioningGroupsRequest() {
-		super("Ecs", "2014-05-26", "DescribeAutoProvisioningGroups");
+		super("Ecs", "2014-05-26", "DescribeAutoProvisioningGroups", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

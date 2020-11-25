@@ -26,33 +26,79 @@ import com.aliyuncs.ecs.Endpoint;
 public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAutoProvisioningGroupResponse> {
 	   
 
+	private List<LaunchConfigurationDataDisk> launchConfigurationDataDisks;
+
 	private Long resourceOwnerId;
+
+	private String launchConfigurationSystemDiskCategory;
 
 	private String autoProvisioningGroupType;
 
-	private String description;
-
-	private Boolean terminateInstancesWithExpiration;
-
 	private String resourceGroupId;
 
-	private String spotAllocationStrategy;
+	private String launchConfigurationImageId;
 
-	private Boolean terminateInstances;
+	private String launchConfigurationResourceGroupId;
 
 	private String payAsYouGoAllocationStrategy;
 
 	private String defaultTargetCapacityType;
 
+	private String launchConfigurationKeyPairName;
+
+	private List<SystemDiskConfig> systemDiskConfigs;
+
+	private List<DataDiskConfig> dataDiskConfigs;
+
+	private String validUntil;
+
+	private String launchTemplateId;
+
+	private Long ownerId;
+
+	private Integer launchConfigurationSystemDiskSize;
+
+	private Integer launchConfigurationInternetMaxBandwidthOut;
+
+	private String launchConfigurationHostName;
+
+	private Float maxSpotPrice;
+
+	private Boolean launchConfigurationPasswordInherit;
+
+	private String launchConfigurationSecurityGroupId;
+
+	private String description;
+
+	private Boolean terminateInstancesWithExpiration;
+
+	private String launchConfigurationUserData;
+
+	private String launchConfigurationInstanceName;
+
+	private String launchConfigurationInstanceDescription;
+
+	private String spotAllocationStrategy;
+
+	private Boolean terminateInstances;
+
+	private String launchConfigurationSystemDiskName;
+
+	private String launchConfigurationSystemDiskDescription;
+
 	private String excessCapacityTerminationPolicy;
 
 	private List<LaunchTemplateConfig> launchTemplateConfigs;
 
-	private String validUntil;
+	private String launchConfigurationRamRoleName;
+
+	private Integer launchConfigurationInternetMaxBandwidthIn;
 
 	private String spotInstanceInterruptionBehavior;
 
-	private String launchTemplateId;
+	private String launchConfigurationSecurityEnhancementStrategy;
+
+	private List<LaunchConfigurationTag> launchConfigurationTags;
 
 	private String resourceOwnerAccount;
 
@@ -60,9 +106,11 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private Integer spotInstancePoolsToUseCount;
 
-	private Long ownerId;
+	private String launchConfigurationInternetChargeType;
 
 	private String launchTemplateVersion;
+
+	private String launchConfigurationIoOptimized;
 
 	private String payAsYouGoTargetCapacity;
 
@@ -73,15 +121,27 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private String validFrom;
 
 	private String autoProvisioningGroupName;
-
-	private Float maxSpotPrice;
 	public CreateAutoProvisioningGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateAutoProvisioningGroup");
+		super("Ecs", "2014-05-26", "CreateAutoProvisioningGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<LaunchConfigurationDataDisk> getLaunchConfigurationDataDisks() {
+		return this.launchConfigurationDataDisks;
+	}
+
+	public void setLaunchConfigurationDataDisks(List<LaunchConfigurationDataDisk> launchConfigurationDataDisks) {
+		this.launchConfigurationDataDisks = launchConfigurationDataDisks;	
+		if (launchConfigurationDataDisks != null) {
+			for (int depth1 = 0; depth1 < launchConfigurationDataDisks.size(); depth1++) {
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Size" , launchConfigurationDataDisks.get(depth1).getSize());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
+			}
+		}	
 	}
 
 	public Long getResourceOwnerId() {
@@ -95,6 +155,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
+	public String getLaunchConfigurationSystemDiskCategory() {
+		return this.launchConfigurationSystemDiskCategory;
+	}
+
+	public void setLaunchConfigurationSystemDiskCategory(String launchConfigurationSystemDiskCategory) {
+		this.launchConfigurationSystemDiskCategory = launchConfigurationSystemDiskCategory;
+		if(launchConfigurationSystemDiskCategory != null){
+			putQueryParameter("LaunchConfiguration.SystemDiskCategory", launchConfigurationSystemDiskCategory);
+		}
+	}
+
 	public String getAutoProvisioningGroupType() {
 		return this.autoProvisioningGroupType;
 	}
@@ -103,6 +174,197 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.autoProvisioningGroupType = autoProvisioningGroupType;
 		if(autoProvisioningGroupType != null){
 			putQueryParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getLaunchConfigurationImageId() {
+		return this.launchConfigurationImageId;
+	}
+
+	public void setLaunchConfigurationImageId(String launchConfigurationImageId) {
+		this.launchConfigurationImageId = launchConfigurationImageId;
+		if(launchConfigurationImageId != null){
+			putQueryParameter("LaunchConfiguration.ImageId", launchConfigurationImageId);
+		}
+	}
+
+	public String getLaunchConfigurationResourceGroupId() {
+		return this.launchConfigurationResourceGroupId;
+	}
+
+	public void setLaunchConfigurationResourceGroupId(String launchConfigurationResourceGroupId) {
+		this.launchConfigurationResourceGroupId = launchConfigurationResourceGroupId;
+		if(launchConfigurationResourceGroupId != null){
+			putQueryParameter("LaunchConfiguration.ResourceGroupId", launchConfigurationResourceGroupId);
+		}
+	}
+
+	public String getPayAsYouGoAllocationStrategy() {
+		return this.payAsYouGoAllocationStrategy;
+	}
+
+	public void setPayAsYouGoAllocationStrategy(String payAsYouGoAllocationStrategy) {
+		this.payAsYouGoAllocationStrategy = payAsYouGoAllocationStrategy;
+		if(payAsYouGoAllocationStrategy != null){
+			putQueryParameter("PayAsYouGoAllocationStrategy", payAsYouGoAllocationStrategy);
+		}
+	}
+
+	public String getDefaultTargetCapacityType() {
+		return this.defaultTargetCapacityType;
+	}
+
+	public void setDefaultTargetCapacityType(String defaultTargetCapacityType) {
+		this.defaultTargetCapacityType = defaultTargetCapacityType;
+		if(defaultTargetCapacityType != null){
+			putQueryParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+		}
+	}
+
+	public String getLaunchConfigurationKeyPairName() {
+		return this.launchConfigurationKeyPairName;
+	}
+
+	public void setLaunchConfigurationKeyPairName(String launchConfigurationKeyPairName) {
+		this.launchConfigurationKeyPairName = launchConfigurationKeyPairName;
+		if(launchConfigurationKeyPairName != null){
+			putQueryParameter("LaunchConfiguration.KeyPairName", launchConfigurationKeyPairName);
+		}
+	}
+
+	public List<SystemDiskConfig> getSystemDiskConfigs() {
+		return this.systemDiskConfigs;
+	}
+
+	public void setSystemDiskConfigs(List<SystemDiskConfig> systemDiskConfigs) {
+		this.systemDiskConfigs = systemDiskConfigs;	
+		if (systemDiskConfigs != null) {
+			for (int depth1 = 0; depth1 < systemDiskConfigs.size(); depth1++) {
+				putQueryParameter("SystemDiskConfig." + (depth1 + 1) + ".DiskCategory" , systemDiskConfigs.get(depth1).getDiskCategory());
+			}
+		}	
+	}
+
+	public List<DataDiskConfig> getDataDiskConfigs() {
+		return this.dataDiskConfigs;
+	}
+
+	public void setDataDiskConfigs(List<DataDiskConfig> dataDiskConfigs) {
+		this.dataDiskConfigs = dataDiskConfigs;	
+		if (dataDiskConfigs != null) {
+			for (int depth1 = 0; depth1 < dataDiskConfigs.size(); depth1++) {
+				putQueryParameter("DataDiskConfig." + (depth1 + 1) + ".DiskCategory" , dataDiskConfigs.get(depth1).getDiskCategory());
+			}
+		}	
+	}
+
+	public String getValidUntil() {
+		return this.validUntil;
+	}
+
+	public void setValidUntil(String validUntil) {
+		this.validUntil = validUntil;
+		if(validUntil != null){
+			putQueryParameter("ValidUntil", validUntil);
+		}
+	}
+
+	public String getLaunchTemplateId() {
+		return this.launchTemplateId;
+	}
+
+	public void setLaunchTemplateId(String launchTemplateId) {
+		this.launchTemplateId = launchTemplateId;
+		if(launchTemplateId != null){
+			putQueryParameter("LaunchTemplateId", launchTemplateId);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getLaunchConfigurationSystemDiskSize() {
+		return this.launchConfigurationSystemDiskSize;
+	}
+
+	public void setLaunchConfigurationSystemDiskSize(Integer launchConfigurationSystemDiskSize) {
+		this.launchConfigurationSystemDiskSize = launchConfigurationSystemDiskSize;
+		if(launchConfigurationSystemDiskSize != null){
+			putQueryParameter("LaunchConfiguration.SystemDiskSize", launchConfigurationSystemDiskSize.toString());
+		}
+	}
+
+	public Integer getLaunchConfigurationInternetMaxBandwidthOut() {
+		return this.launchConfigurationInternetMaxBandwidthOut;
+	}
+
+	public void setLaunchConfigurationInternetMaxBandwidthOut(Integer launchConfigurationInternetMaxBandwidthOut) {
+		this.launchConfigurationInternetMaxBandwidthOut = launchConfigurationInternetMaxBandwidthOut;
+		if(launchConfigurationInternetMaxBandwidthOut != null){
+			putQueryParameter("LaunchConfiguration.InternetMaxBandwidthOut", launchConfigurationInternetMaxBandwidthOut.toString());
+		}
+	}
+
+	public String getLaunchConfigurationHostName() {
+		return this.launchConfigurationHostName;
+	}
+
+	public void setLaunchConfigurationHostName(String launchConfigurationHostName) {
+		this.launchConfigurationHostName = launchConfigurationHostName;
+		if(launchConfigurationHostName != null){
+			putQueryParameter("LaunchConfiguration.HostName", launchConfigurationHostName);
+		}
+	}
+
+	public Float getMaxSpotPrice() {
+		return this.maxSpotPrice;
+	}
+
+	public void setMaxSpotPrice(Float maxSpotPrice) {
+		this.maxSpotPrice = maxSpotPrice;
+		if(maxSpotPrice != null){
+			putQueryParameter("MaxSpotPrice", maxSpotPrice.toString());
+		}
+	}
+
+	public Boolean getLaunchConfigurationPasswordInherit() {
+		return this.launchConfigurationPasswordInherit;
+	}
+
+	public void setLaunchConfigurationPasswordInherit(Boolean launchConfigurationPasswordInherit) {
+		this.launchConfigurationPasswordInherit = launchConfigurationPasswordInherit;
+		if(launchConfigurationPasswordInherit != null){
+			putQueryParameter("LaunchConfiguration.PasswordInherit", launchConfigurationPasswordInherit.toString());
+		}
+	}
+
+	public String getLaunchConfigurationSecurityGroupId() {
+		return this.launchConfigurationSecurityGroupId;
+	}
+
+	public void setLaunchConfigurationSecurityGroupId(String launchConfigurationSecurityGroupId) {
+		this.launchConfigurationSecurityGroupId = launchConfigurationSecurityGroupId;
+		if(launchConfigurationSecurityGroupId != null){
+			putQueryParameter("LaunchConfiguration.SecurityGroupId", launchConfigurationSecurityGroupId);
 		}
 	}
 
@@ -128,14 +390,36 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getLaunchConfigurationUserData() {
+		return this.launchConfigurationUserData;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setLaunchConfigurationUserData(String launchConfigurationUserData) {
+		this.launchConfigurationUserData = launchConfigurationUserData;
+		if(launchConfigurationUserData != null){
+			putQueryParameter("LaunchConfiguration.UserData", launchConfigurationUserData);
+		}
+	}
+
+	public String getLaunchConfigurationInstanceName() {
+		return this.launchConfigurationInstanceName;
+	}
+
+	public void setLaunchConfigurationInstanceName(String launchConfigurationInstanceName) {
+		this.launchConfigurationInstanceName = launchConfigurationInstanceName;
+		if(launchConfigurationInstanceName != null){
+			putQueryParameter("LaunchConfiguration.InstanceName", launchConfigurationInstanceName);
+		}
+	}
+
+	public String getLaunchConfigurationInstanceDescription() {
+		return this.launchConfigurationInstanceDescription;
+	}
+
+	public void setLaunchConfigurationInstanceDescription(String launchConfigurationInstanceDescription) {
+		this.launchConfigurationInstanceDescription = launchConfigurationInstanceDescription;
+		if(launchConfigurationInstanceDescription != null){
+			putQueryParameter("LaunchConfiguration.InstanceDescription", launchConfigurationInstanceDescription);
 		}
 	}
 
@@ -161,25 +445,25 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
-	public String getPayAsYouGoAllocationStrategy() {
-		return this.payAsYouGoAllocationStrategy;
+	public String getLaunchConfigurationSystemDiskName() {
+		return this.launchConfigurationSystemDiskName;
 	}
 
-	public void setPayAsYouGoAllocationStrategy(String payAsYouGoAllocationStrategy) {
-		this.payAsYouGoAllocationStrategy = payAsYouGoAllocationStrategy;
-		if(payAsYouGoAllocationStrategy != null){
-			putQueryParameter("PayAsYouGoAllocationStrategy", payAsYouGoAllocationStrategy);
+	public void setLaunchConfigurationSystemDiskName(String launchConfigurationSystemDiskName) {
+		this.launchConfigurationSystemDiskName = launchConfigurationSystemDiskName;
+		if(launchConfigurationSystemDiskName != null){
+			putQueryParameter("LaunchConfiguration.SystemDiskName", launchConfigurationSystemDiskName);
 		}
 	}
 
-	public String getDefaultTargetCapacityType() {
-		return this.defaultTargetCapacityType;
+	public String getLaunchConfigurationSystemDiskDescription() {
+		return this.launchConfigurationSystemDiskDescription;
 	}
 
-	public void setDefaultTargetCapacityType(String defaultTargetCapacityType) {
-		this.defaultTargetCapacityType = defaultTargetCapacityType;
-		if(defaultTargetCapacityType != null){
-			putQueryParameter("DefaultTargetCapacityType", defaultTargetCapacityType);
+	public void setLaunchConfigurationSystemDiskDescription(String launchConfigurationSystemDiskDescription) {
+		this.launchConfigurationSystemDiskDescription = launchConfigurationSystemDiskDescription;
+		if(launchConfigurationSystemDiskDescription != null){
+			putQueryParameter("LaunchConfiguration.SystemDiskDescription", launchConfigurationSystemDiskDescription);
 		}
 	}
 
@@ -211,14 +495,25 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}	
 	}
 
-	public String getValidUntil() {
-		return this.validUntil;
+	public String getLaunchConfigurationRamRoleName() {
+		return this.launchConfigurationRamRoleName;
 	}
 
-	public void setValidUntil(String validUntil) {
-		this.validUntil = validUntil;
-		if(validUntil != null){
-			putQueryParameter("ValidUntil", validUntil);
+	public void setLaunchConfigurationRamRoleName(String launchConfigurationRamRoleName) {
+		this.launchConfigurationRamRoleName = launchConfigurationRamRoleName;
+		if(launchConfigurationRamRoleName != null){
+			putQueryParameter("LaunchConfiguration.RamRoleName", launchConfigurationRamRoleName);
+		}
+	}
+
+	public Integer getLaunchConfigurationInternetMaxBandwidthIn() {
+		return this.launchConfigurationInternetMaxBandwidthIn;
+	}
+
+	public void setLaunchConfigurationInternetMaxBandwidthIn(Integer launchConfigurationInternetMaxBandwidthIn) {
+		this.launchConfigurationInternetMaxBandwidthIn = launchConfigurationInternetMaxBandwidthIn;
+		if(launchConfigurationInternetMaxBandwidthIn != null){
+			putQueryParameter("LaunchConfiguration.InternetMaxBandwidthIn", launchConfigurationInternetMaxBandwidthIn.toString());
 		}
 	}
 
@@ -233,15 +528,29 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
-	public String getLaunchTemplateId() {
-		return this.launchTemplateId;
+	public String getLaunchConfigurationSecurityEnhancementStrategy() {
+		return this.launchConfigurationSecurityEnhancementStrategy;
 	}
 
-	public void setLaunchTemplateId(String launchTemplateId) {
-		this.launchTemplateId = launchTemplateId;
-		if(launchTemplateId != null){
-			putQueryParameter("LaunchTemplateId", launchTemplateId);
+	public void setLaunchConfigurationSecurityEnhancementStrategy(String launchConfigurationSecurityEnhancementStrategy) {
+		this.launchConfigurationSecurityEnhancementStrategy = launchConfigurationSecurityEnhancementStrategy;
+		if(launchConfigurationSecurityEnhancementStrategy != null){
+			putQueryParameter("LaunchConfiguration.SecurityEnhancementStrategy", launchConfigurationSecurityEnhancementStrategy);
 		}
+	}
+
+	public List<LaunchConfigurationTag> getLaunchConfigurationTags() {
+		return this.launchConfigurationTags;
+	}
+
+	public void setLaunchConfigurationTags(List<LaunchConfigurationTag> launchConfigurationTags) {
+		this.launchConfigurationTags = launchConfigurationTags;	
+		if (launchConfigurationTags != null) {
+			for (int depth1 = 0; depth1 < launchConfigurationTags.size(); depth1++) {
+				putQueryParameter("LaunchConfiguration.Tag." + (depth1 + 1) + ".Key" , launchConfigurationTags.get(depth1).getKey());
+				putQueryParameter("LaunchConfiguration.Tag." + (depth1 + 1) + ".Value" , launchConfigurationTags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -277,14 +586,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getLaunchConfigurationInternetChargeType() {
+		return this.launchConfigurationInternetChargeType;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setLaunchConfigurationInternetChargeType(String launchConfigurationInternetChargeType) {
+		this.launchConfigurationInternetChargeType = launchConfigurationInternetChargeType;
+		if(launchConfigurationInternetChargeType != null){
+			putQueryParameter("LaunchConfiguration.InternetChargeType", launchConfigurationInternetChargeType);
 		}
 	}
 
@@ -296,6 +605,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchTemplateVersion = launchTemplateVersion;
 		if(launchTemplateVersion != null){
 			putQueryParameter("LaunchTemplateVersion", launchTemplateVersion);
+		}
+	}
+
+	public String getLaunchConfigurationIoOptimized() {
+		return this.launchConfigurationIoOptimized;
+	}
+
+	public void setLaunchConfigurationIoOptimized(String launchConfigurationIoOptimized) {
+		this.launchConfigurationIoOptimized = launchConfigurationIoOptimized;
+		if(launchConfigurationIoOptimized != null){
+			putQueryParameter("LaunchConfiguration.IoOptimized", launchConfigurationIoOptimized);
 		}
 	}
 
@@ -354,14 +674,52 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		}
 	}
 
-	public Float getMaxSpotPrice() {
-		return this.maxSpotPrice;
+	public static class LaunchConfigurationDataDisk {
+
+		private Integer size;
+
+		private String category;
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
 	}
 
-	public void setMaxSpotPrice(Float maxSpotPrice) {
-		this.maxSpotPrice = maxSpotPrice;
-		if(maxSpotPrice != null){
-			putQueryParameter("MaxSpotPrice", maxSpotPrice.toString());
+	public static class SystemDiskConfig {
+
+		private String diskCategory;
+
+		public String getDiskCategory() {
+			return this.diskCategory;
+		}
+
+		public void setDiskCategory(String diskCategory) {
+			this.diskCategory = diskCategory;
+		}
+	}
+
+	public static class DataDiskConfig {
+
+		private String diskCategory;
+
+		public String getDiskCategory() {
+			return this.diskCategory;
+		}
+
+		public void setDiskCategory(String diskCategory) {
+			this.diskCategory = diskCategory;
 		}
 	}
 
@@ -415,6 +773,29 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setPriority(Integer priority) {
 			this.priority = priority;
+		}
+	}
+
+	public static class LaunchConfigurationTag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

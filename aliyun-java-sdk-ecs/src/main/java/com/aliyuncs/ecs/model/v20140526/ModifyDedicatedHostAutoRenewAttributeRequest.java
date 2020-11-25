@@ -43,7 +43,7 @@ public class ModifyDedicatedHostAutoRenewAttributeRequest extends RpcAcsRequest<
 
 	private Boolean autoRenew;
 	public ModifyDedicatedHostAutoRenewAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute");
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

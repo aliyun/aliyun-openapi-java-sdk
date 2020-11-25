@@ -35,7 +35,7 @@ public class ReActivateInstancesRequest extends RpcAcsRequest<ReActivateInstance
 
 	private String instanceId;
 	public ReActivateInstancesRequest() {
-		super("Ecs", "2014-05-26", "ReActivateInstances");
+		super("Ecs", "2014-05-26", "ReActivateInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

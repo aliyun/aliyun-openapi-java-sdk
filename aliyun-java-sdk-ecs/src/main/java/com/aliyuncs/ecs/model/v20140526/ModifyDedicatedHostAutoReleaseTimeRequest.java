@@ -37,7 +37,7 @@ public class ModifyDedicatedHostAutoReleaseTimeRequest extends RpcAcsRequest<Mod
 
 	private Long ownerId;
 	public ModifyDedicatedHostAutoReleaseTimeRequest() {
-		super("Ecs", "2014-05-26", "ModifyDedicatedHostAutoReleaseTime");
+		super("Ecs", "2014-05-26", "ModifyDedicatedHostAutoReleaseTime", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class EipFillProductRequest extends RpcAcsRequest<EipFillProductResponse>
 
 	private Long ownerId;
 	public EipFillProductRequest() {
-		super("Ecs", "2014-05-26", "EipFillProduct");
+		super("Ecs", "2014-05-26", "EipFillProduct", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

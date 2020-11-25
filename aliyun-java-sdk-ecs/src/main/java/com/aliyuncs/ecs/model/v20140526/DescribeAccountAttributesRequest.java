@@ -36,7 +36,7 @@ public class DescribeAccountAttributesRequest extends RpcAcsRequest<DescribeAcco
 
 	private String zoneId;
 	public DescribeAccountAttributesRequest() {
-		super("Ecs", "2014-05-26", "DescribeAccountAttributes");
+		super("Ecs", "2014-05-26", "DescribeAccountAttributes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

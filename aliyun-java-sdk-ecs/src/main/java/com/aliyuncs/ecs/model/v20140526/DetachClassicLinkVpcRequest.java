@@ -35,7 +35,7 @@ public class DetachClassicLinkVpcRequest extends RpcAcsRequest<DetachClassicLink
 
 	private String vpcId;
 	public DetachClassicLinkVpcRequest() {
-		super("Ecs", "2014-05-26", "DetachClassicLinkVpc");
+		super("Ecs", "2014-05-26", "DetachClassicLinkVpc", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

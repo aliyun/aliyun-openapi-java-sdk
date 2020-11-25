@@ -37,7 +37,7 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 
 	private Long ownerId;
 	public ModifyBandwidthPackageSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec");
+		super("Ecs", "2014-05-26", "ModifyBandwidthPackageSpec", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

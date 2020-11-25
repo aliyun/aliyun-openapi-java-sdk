@@ -56,7 +56,7 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String instanceName;
 	public ModifyInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceAttribute");
+		super("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

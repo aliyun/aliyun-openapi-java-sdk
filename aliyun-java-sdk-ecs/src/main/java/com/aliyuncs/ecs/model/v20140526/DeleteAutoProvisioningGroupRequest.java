@@ -37,7 +37,7 @@ public class DeleteAutoProvisioningGroupRequest extends RpcAcsRequest<DeleteAuto
 
 	private String autoProvisioningGroupId;
 	public DeleteAutoProvisioningGroupRequest() {
-		super("Ecs", "2014-05-26", "DeleteAutoProvisioningGroup");
+		super("Ecs", "2014-05-26", "DeleteAutoProvisioningGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

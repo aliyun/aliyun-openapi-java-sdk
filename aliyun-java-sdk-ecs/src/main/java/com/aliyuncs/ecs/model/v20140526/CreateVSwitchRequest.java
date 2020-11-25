@@ -45,7 +45,7 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 
 	private String zoneId;
 	public CreateVSwitchRequest() {
-		super("Ecs", "2014-05-26", "CreateVSwitch");
+		super("Ecs", "2014-05-26", "CreateVSwitch", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -695,6 +695,12 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			private String primaryIpAddress;
 
+			private String type;
+
+			private List<PrivateIpSet> privateIpSets;
+
+			private List<Ipv6Set> ipv6Sets;
+
 			public String getNetworkInterfaceId() {
 				return this.networkInterfaceId;
 			}
@@ -717,6 +723,66 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setPrimaryIpAddress(String primaryIpAddress) {
 				this.primaryIpAddress = primaryIpAddress;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public List<PrivateIpSet> getPrivateIpSets() {
+				return this.privateIpSets;
+			}
+
+			public void setPrivateIpSets(List<PrivateIpSet> privateIpSets) {
+				this.privateIpSets = privateIpSets;
+			}
+
+			public List<Ipv6Set> getIpv6Sets() {
+				return this.ipv6Sets;
+			}
+
+			public void setIpv6Sets(List<Ipv6Set> ipv6Sets) {
+				this.ipv6Sets = ipv6Sets;
+			}
+
+			public static class PrivateIpSet {
+
+				private String privateIpAddress;
+
+				private Boolean primary;
+
+				public String getPrivateIpAddress() {
+					return this.privateIpAddress;
+				}
+
+				public void setPrivateIpAddress(String privateIpAddress) {
+					this.privateIpAddress = privateIpAddress;
+				}
+
+				public Boolean getPrimary() {
+					return this.primary;
+				}
+
+				public void setPrimary(Boolean primary) {
+					this.primary = primary;
+				}
+			}
+
+			public static class Ipv6Set {
+
+				private String ipv6Address;
+
+				public String getIpv6Address() {
+					return this.ipv6Address;
+				}
+
+				public void setIpv6Address(String ipv6Address) {
+					this.ipv6Address = ipv6Address;
+				}
 			}
 		}
 

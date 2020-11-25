@@ -53,7 +53,7 @@ public class ModifyInstanceNetworkSpecRequest extends RpcAcsRequest<ModifyInstan
 
 	private Boolean allocatePublicIp;
 	public ModifyInstanceNetworkSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec");
+		super("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

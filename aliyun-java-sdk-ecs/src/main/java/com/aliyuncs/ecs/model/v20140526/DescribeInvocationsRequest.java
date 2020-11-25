@@ -55,7 +55,7 @@ public class DescribeInvocationsRequest extends RpcAcsRequest<DescribeInvocation
 
 	private String instanceId;
 	public DescribeInvocationsRequest() {
-		super("Ecs", "2014-05-26", "DescribeInvocations");
+		super("Ecs", "2014-05-26", "DescribeInvocations", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

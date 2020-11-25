@@ -51,7 +51,7 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 
 	private String autoProvisioningGroupName;
 	public ModifyAutoProvisioningGroupRequest() {
-		super("Ecs", "2014-05-26", "ModifyAutoProvisioningGroup");
+		super("Ecs", "2014-05-26", "ModifyAutoProvisioningGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class DescribeClassicLinkInstancesRequest extends RpcAcsRequest<DescribeC
 
 	private String vpcId;
 	public DescribeClassicLinkInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeClassicLinkInstances");
+		super("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

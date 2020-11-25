@@ -35,7 +35,7 @@ public class DeleteDedicatedHostClusterRequest extends RpcAcsRequest<DeleteDedic
 
 	private Long ownerId;
 	public DeleteDedicatedHostClusterRequest() {
-		super("Ecs", "2014-05-26", "DeleteDedicatedHostCluster");
+		super("Ecs", "2014-05-26", "DeleteDedicatedHostCluster", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

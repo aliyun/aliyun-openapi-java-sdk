@@ -41,7 +41,7 @@ public class DescribeHpcClustersRequest extends RpcAcsRequest<DescribeHpcCluster
 
 	private String hpcClusterIds;
 	public DescribeHpcClustersRequest() {
-		super("Ecs", "2014-05-26", "DescribeHpcClusters");
+		super("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -64,7 +64,7 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String primaryIpAddress;
 	public CreateNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "CreateNetworkInterface");
+		super("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

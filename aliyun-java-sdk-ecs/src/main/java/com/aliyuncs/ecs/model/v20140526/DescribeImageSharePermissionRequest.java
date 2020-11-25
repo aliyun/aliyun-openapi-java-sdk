@@ -39,7 +39,7 @@ public class DescribeImageSharePermissionRequest extends RpcAcsRequest<DescribeI
 
 	private Long ownerId;
 	public DescribeImageSharePermissionRequest() {
-		super("Ecs", "2014-05-26", "DescribeImageSharePermission");
+		super("Ecs", "2014-05-26", "DescribeImageSharePermission", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 
 	private Long ownerId;
 	public ImportKeyPairRequest() {
-		super("Ecs", "2014-05-26", "ImportKeyPair");
+		super("Ecs", "2014-05-26", "ImportKeyPair", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

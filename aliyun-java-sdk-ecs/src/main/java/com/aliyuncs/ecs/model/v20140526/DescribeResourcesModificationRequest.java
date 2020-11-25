@@ -47,7 +47,7 @@ public class DescribeResourcesModificationRequest extends RpcAcsRequest<Describe
 
 	private String destinationResource;
 	public DescribeResourcesModificationRequest() {
-		super("Ecs", "2014-05-26", "DescribeResourcesModification");
+		super("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

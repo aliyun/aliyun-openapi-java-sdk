@@ -52,7 +52,7 @@ public class DescribeDisksFullStatusRequest extends RpcAcsRequest<DescribeDisksF
 
 	private String status;
 	public DescribeDisksFullStatusRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisksFullStatus");
+		super("Ecs", "2014-05-26", "DescribeDisksFullStatus", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

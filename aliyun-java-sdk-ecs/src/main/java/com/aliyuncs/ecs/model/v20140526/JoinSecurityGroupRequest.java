@@ -37,7 +37,7 @@ public class JoinSecurityGroupRequest extends RpcAcsRequest<JoinSecurityGroupRes
 
 	private String instanceId;
 	public JoinSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "JoinSecurityGroup");
+		super("Ecs", "2014-05-26", "JoinSecurityGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -51,7 +51,7 @@ public class ModifyInstanceChargeTypeRequest extends RpcAcsRequest<ModifyInstanc
 
 	private String instanceIds;
 	public ModifyInstanceChargeTypeRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceChargeType");
+		super("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

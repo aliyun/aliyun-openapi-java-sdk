@@ -53,7 +53,7 @@ public class ModifyInstanceDeploymentRequest extends RpcAcsRequest<ModifyInstanc
 
 	private String affinity;
 	public ModifyInstanceDeploymentRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceDeployment");
+		super("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

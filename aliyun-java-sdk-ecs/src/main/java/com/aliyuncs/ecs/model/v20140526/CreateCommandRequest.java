@@ -47,7 +47,7 @@ public class CreateCommandRequest extends RpcAcsRequest<CreateCommandResponse> {
 
 	private Boolean enableParameter;
 	public CreateCommandRequest() {
-		super("Ecs", "2014-05-26", "CreateCommand");
+		super("Ecs", "2014-05-26", "CreateCommand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2020-11-25 Version: 4.22.1
+- Supported Primary NetworkInterface IP for API DescribeInstances.
+
 2020-11-16 Version: 4.22.0
 - Nat public IP supports the ISP attribute.
 

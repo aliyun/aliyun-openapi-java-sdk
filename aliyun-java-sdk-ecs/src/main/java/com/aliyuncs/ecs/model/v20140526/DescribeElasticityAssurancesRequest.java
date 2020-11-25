@@ -47,7 +47,7 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 
 	private String zoneId;
 	public DescribeElasticityAssurancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeElasticityAssurances");
+		super("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

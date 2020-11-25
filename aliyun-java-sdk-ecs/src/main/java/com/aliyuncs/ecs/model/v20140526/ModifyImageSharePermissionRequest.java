@@ -42,7 +42,7 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private List<String> removeAccounts;
 	public ModifyImageSharePermissionRequest() {
-		super("Ecs", "2014-05-26", "ModifyImageSharePermission");
+		super("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

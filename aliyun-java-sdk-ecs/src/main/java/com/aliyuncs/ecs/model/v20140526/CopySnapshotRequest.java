@@ -46,7 +46,7 @@ public class CopySnapshotRequest extends RpcAcsRequest<CopySnapshotResponse> {
 
 	private Integer retentionDays;
 	public CopySnapshotRequest() {
-		super("Ecs", "2014-05-26", "CopySnapshot");
+		super("Ecs", "2014-05-26", "CopySnapshot", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

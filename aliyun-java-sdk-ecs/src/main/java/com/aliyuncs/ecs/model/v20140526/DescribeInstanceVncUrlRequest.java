@@ -35,7 +35,7 @@ public class DescribeInstanceVncUrlRequest extends RpcAcsRequest<DescribeInstanc
 
 	private String instanceId;
 	public DescribeInstanceVncUrlRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstanceVncUrl");
+		super("Ecs", "2014-05-26", "DescribeInstanceVncUrl", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 
 	private String vpcId;
 	public DescribeNatGatewaysRequest() {
-		super("Ecs", "2014-05-26", "DescribeNatGateways");
+		super("Ecs", "2014-05-26", "DescribeNatGateways", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
