@@ -27,8 +27,6 @@ public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvD
 
 	private String startTime;
 
-	private String securityToken;
-
 	private String domainName;
 
 	private String endTime;
@@ -51,17 +49,6 @@ public class DescribeDomainPvDataRequest extends RpcAcsRequest<DescribeDomainPvD
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

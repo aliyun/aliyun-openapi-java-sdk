@@ -25,31 +25,18 @@ import com.aliyuncs.cdn.Endpoint;
 public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserVipsByDomainResponse> {
 	   
 
-	private String domainName;
-
 	private String available;
 
-	private Long ownerId;
+	private String domainName;
 
-	private String securityToken;
+	private Long ownerId;
 	public DescribeUserVipsByDomainRequest() {
 		super("Cdn", "2018-05-10", "DescribeUserVipsByDomain");
-		setMethod(MethodType.POST);
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
 	}
 
 	public String getAvailable() {
@@ -63,6 +50,17 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -71,17 +69,6 @@ public class DescribeUserVipsByDomainRequest extends RpcAcsRequest<DescribeUserV
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

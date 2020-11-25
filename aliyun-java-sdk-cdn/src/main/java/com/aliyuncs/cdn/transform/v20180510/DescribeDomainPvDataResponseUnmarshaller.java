@@ -28,15 +28,15 @@ public class DescribeDomainPvDataResponseUnmarshaller {
 		
 		describeDomainPvDataResponse.setRequestId(_ctx.stringValue("DescribeDomainPvDataResponse.RequestId"));
 		describeDomainPvDataResponse.setDomainName(_ctx.stringValue("DescribeDomainPvDataResponse.DomainName"));
-		describeDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainPvDataResponse.DataInterval"));
 		describeDomainPvDataResponse.setStartTime(_ctx.stringValue("DescribeDomainPvDataResponse.StartTime"));
 		describeDomainPvDataResponse.setEndTime(_ctx.stringValue("DescribeDomainPvDataResponse.EndTime"));
+		describeDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeDomainPvDataResponse.DataInterval"));
 
 		List<UsageData> pvDataInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainPvDataResponse.PvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(_ctx.stringValue("DescribeDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
 			usageData.setValue(_ctx.stringValue("DescribeDomainPvDataResponse.PvDataInterval["+ i +"].Value"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
 
 			pvDataInterval.add(usageData);
 		}
