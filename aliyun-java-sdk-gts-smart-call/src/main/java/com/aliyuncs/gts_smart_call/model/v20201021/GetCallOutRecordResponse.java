@@ -15,14 +15,14 @@
 package com.aliyuncs.gts_smart_call.model.v20201021;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallInVoiceRecordURLResponseUnmarshaller;
+import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallOutRecordResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCallInVoiceRecordURLResponse extends AcsResponse {
+public class GetCallOutRecordResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,7 +30,15 @@ public class GetCallInVoiceRecordURLResponse extends AcsResponse {
 
 	private String message;
 
-	private String dialogueRecordUrl;
+	private String acid;
+
+	private String caller;
+
+	private String callee;
+
+	private Long startTime;
+
+	private Long endTime;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,17 +64,49 @@ public class GetCallInVoiceRecordURLResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getDialogueRecordUrl() {
-		return this.dialogueRecordUrl;
+	public String getAcid() {
+		return this.acid;
 	}
 
-	public void setDialogueRecordUrl(String dialogueRecordUrl) {
-		this.dialogueRecordUrl = dialogueRecordUrl;
+	public void setAcid(String acid) {
+		this.acid = acid;
+	}
+
+	public String getCaller() {
+		return this.caller;
+	}
+
+	public void setCaller(String caller) {
+		this.caller = caller;
+	}
+
+	public String getCallee() {
+		return this.callee;
+	}
+
+	public void setCallee(String callee) {
+		this.callee = callee;
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
 	}
 
 	@Override
-	public GetCallInVoiceRecordURLResponse getInstance(UnmarshallerContext context) {
-		return	GetCallInVoiceRecordURLResponseUnmarshaller.unmarshall(this, context);
+	public GetCallOutRecordResponse getInstance(UnmarshallerContext context) {
+		return	GetCallOutRecordResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

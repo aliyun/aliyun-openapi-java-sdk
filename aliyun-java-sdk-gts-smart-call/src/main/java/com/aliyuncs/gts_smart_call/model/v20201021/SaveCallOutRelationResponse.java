@@ -15,22 +15,20 @@
 package com.aliyuncs.gts_smart_call.model.v20201021;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallInVoiceRecordURLResponseUnmarshaller;
+import com.aliyuncs.gts_smart_call.transform.v20201021.SaveCallOutRelationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCallInVoiceRecordURLResponse extends AcsResponse {
+public class SaveCallOutRelationResponse extends AcsResponse {
 
 	private String requestId;
 
 	private Integer code;
 
 	private String message;
-
-	private String dialogueRecordUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,17 +54,9 @@ public class GetCallInVoiceRecordURLResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getDialogueRecordUrl() {
-		return this.dialogueRecordUrl;
-	}
-
-	public void setDialogueRecordUrl(String dialogueRecordUrl) {
-		this.dialogueRecordUrl = dialogueRecordUrl;
-	}
-
 	@Override
-	public GetCallInVoiceRecordURLResponse getInstance(UnmarshallerContext context) {
-		return	GetCallInVoiceRecordURLResponseUnmarshaller.unmarshall(this, context);
+	public SaveCallOutRelationResponse getInstance(UnmarshallerContext context) {
+		return	SaveCallOutRelationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

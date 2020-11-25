@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class GetCallInVoiceRecordURLRequest extends RpcAcsRequest<GetCallInVoiceRecordURLResponse> {
 	   
 
+	private String appName;
+
 	private String targetBizId;
 	public GetCallInVoiceRecordURLRequest() {
 		super("gts-smart-call", "2020-10-21", "GetCallInVoiceRecordURL");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public String getTargetBizId() {

@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListCallInDialogRecordsRequest extends RpcAcsRequest<ListCallInDialogRecordsResponse> {
 	   
 
+	private String appName;
+
 	private Integer pageSize;
 
 	private String targetBizId;
@@ -32,6 +34,17 @@ public class ListCallInDialogRecordsRequest extends RpcAcsRequest<ListCallInDial
 	public ListCallInDialogRecordsRequest() {
 		super("gts-smart-call", "2020-10-21", "ListCallInDialogRecords");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
 	}
 
 	public Integer getPageSize() {

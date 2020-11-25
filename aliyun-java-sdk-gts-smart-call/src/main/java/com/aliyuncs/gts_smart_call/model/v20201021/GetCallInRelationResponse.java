@@ -15,14 +15,14 @@
 package com.aliyuncs.gts_smart_call.model.v20201021;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallInVoiceRecordURLResponseUnmarshaller;
+import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallInRelationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCallInVoiceRecordURLResponse extends AcsResponse {
+public class GetCallInRelationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -30,7 +30,9 @@ public class GetCallInVoiceRecordURLResponse extends AcsResponse {
 
 	private String message;
 
-	private String dialogueRecordUrl;
+	private String instanceId;
+
+	private String targetBizId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,17 +58,25 @@ public class GetCallInVoiceRecordURLResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getDialogueRecordUrl() {
-		return this.dialogueRecordUrl;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setDialogueRecordUrl(String dialogueRecordUrl) {
-		this.dialogueRecordUrl = dialogueRecordUrl;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getTargetBizId() {
+		return this.targetBizId;
+	}
+
+	public void setTargetBizId(String targetBizId) {
+		this.targetBizId = targetBizId;
 	}
 
 	@Override
-	public GetCallInVoiceRecordURLResponse getInstance(UnmarshallerContext context) {
-		return	GetCallInVoiceRecordURLResponseUnmarshaller.unmarshall(this, context);
+	public GetCallInRelationResponse getInstance(UnmarshallerContext context) {
+		return	GetCallInRelationResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

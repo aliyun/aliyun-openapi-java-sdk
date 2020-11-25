@@ -21,14 +21,14 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordResponse> {
+public class GetCallOutRecordRequest extends RpcAcsRequest<GetCallOutRecordResponse> {
 	   
 
 	private String appName;
 
 	private String targetBizId;
-	public GetCallInRecordRequest() {
-		super("gts-smart-call", "2020-10-21", "GetCallInRecord");
+	public GetCallOutRecordRequest() {
+		super("gts-smart-call", "2020-10-21", "GetCallOutRecord");
 		setMethod(MethodType.POST);
 	}
 
@@ -55,8 +55,8 @@ public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordRespons
 	}
 
 	@Override
-	public Class<GetCallInRecordResponse> getResponseClass() {
-		return GetCallInRecordResponse.class;
+	public Class<GetCallOutRecordResponse> getResponseClass() {
+		return GetCallOutRecordResponse.class;
 	}
 
 }

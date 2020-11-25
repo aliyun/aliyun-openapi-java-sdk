@@ -21,14 +21,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordResponse> {
+public class ListCallOutDialogRecordsRequest extends RpcAcsRequest<ListCallOutDialogRecordsResponse> {
 	   
 
 	private String appName;
 
+	private Integer pageSize;
+
 	private String targetBizId;
-	public GetCallInRecordRequest() {
-		super("gts-smart-call", "2020-10-21", "GetCallInRecord");
+
+	private Integer pageNumber;
+	public ListCallOutDialogRecordsRequest() {
+		super("gts-smart-call", "2020-10-21", "ListCallOutDialogRecords");
 		setMethod(MethodType.POST);
 	}
 
@@ -43,6 +47,17 @@ public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordRespons
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getTargetBizId() {
 		return this.targetBizId;
 	}
@@ -54,9 +69,20 @@ public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordRespons
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	@Override
-	public Class<GetCallInRecordResponse> getResponseClass() {
-		return GetCallInRecordResponse.class;
+	public Class<ListCallOutDialogRecordsResponse> getResponseClass() {
+		return ListCallOutDialogRecordsResponse.class;
 	}
 
 }

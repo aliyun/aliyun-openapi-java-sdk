@@ -25,7 +25,7 @@ public class GetCallInVoiceRecordURLResponseUnmarshaller {
 		getCallInVoiceRecordURLResponse.setRequestId(_ctx.stringValue("GetCallInVoiceRecordURLResponse.RequestId"));
 		getCallInVoiceRecordURLResponse.setCode(_ctx.integerValue("GetCallInVoiceRecordURLResponse.Code"));
 		getCallInVoiceRecordURLResponse.setMessage(_ctx.stringValue("GetCallInVoiceRecordURLResponse.Message"));
-		getCallInVoiceRecordURLResponse.setCallInVoiceRecordUrl(_ctx.stringValue("GetCallInVoiceRecordURLResponse.CallInVoiceRecordUrl"));
+		getCallInVoiceRecordURLResponse.setDialogueRecordUrl(_ctx.stringValue("GetCallInVoiceRecordURLResponse.DialogueRecordUrl"));
 	 
 	 	return getCallInVoiceRecordURLResponse;
 	}

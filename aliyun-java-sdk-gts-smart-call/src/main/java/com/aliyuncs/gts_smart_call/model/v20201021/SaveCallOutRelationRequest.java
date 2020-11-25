@@ -21,15 +21,43 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordResponse> {
+public class SaveCallOutRelationRequest extends RpcAcsRequest<SaveCallOutRelationResponse> {
 	   
+
+	private String acid;
+
+	private String caller;
 
 	private String appName;
 
+	private String callee;
+
 	private String targetBizId;
-	public GetCallInRecordRequest() {
-		super("gts-smart-call", "2020-10-21", "GetCallInRecord");
+	public SaveCallOutRelationRequest() {
+		super("gts-smart-call", "2020-10-21", "SaveCallOutRelation");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAcid() {
+		return this.acid;
+	}
+
+	public void setAcid(String acid) {
+		this.acid = acid;
+		if(acid != null){
+			putQueryParameter("Acid", acid);
+		}
+	}
+
+	public String getCaller() {
+		return this.caller;
+	}
+
+	public void setCaller(String caller) {
+		this.caller = caller;
+		if(caller != null){
+			putQueryParameter("Caller", caller);
+		}
 	}
 
 	public String getAppName() {
@@ -40,6 +68,17 @@ public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordRespons
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getCallee() {
+		return this.callee;
+	}
+
+	public void setCallee(String callee) {
+		this.callee = callee;
+		if(callee != null){
+			putQueryParameter("Callee", callee);
 		}
 	}
 
@@ -55,8 +94,8 @@ public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordRespons
 	}
 
 	@Override
-	public Class<GetCallInRecordResponse> getResponseClass() {
-		return GetCallInRecordResponse.class;
+	public Class<SaveCallOutRelationResponse> getResponseClass() {
+		return SaveCallOutRelationResponse.class;
 	}
 
 }

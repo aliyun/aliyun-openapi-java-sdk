@@ -1,3 +1,6 @@
+2020-11-25 Version: 1.1.2
+- Support new features.
+
 2020-11-23 Version: 1.1.1
 - Supported call in records.
 

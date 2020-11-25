@@ -15,14 +15,14 @@
 package com.aliyuncs.gts_smart_call.model.v20201021;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallInVoiceRecordURLResponseUnmarshaller;
+import com.aliyuncs.gts_smart_call.transform.v20201021.GetCallOutVoiceRecordURLResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetCallInVoiceRecordURLResponse extends AcsResponse {
+public class GetCallOutVoiceRecordURLResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,8 +65,8 @@ public class GetCallInVoiceRecordURLResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetCallInVoiceRecordURLResponse getInstance(UnmarshallerContext context) {
-		return	GetCallInVoiceRecordURLResponseUnmarshaller.unmarshall(this, context);
+	public GetCallOutVoiceRecordURLResponse getInstance(UnmarshallerContext context) {
+		return	GetCallOutVoiceRecordURLResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

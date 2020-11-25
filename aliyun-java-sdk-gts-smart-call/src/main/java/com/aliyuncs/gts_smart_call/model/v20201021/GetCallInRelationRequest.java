@@ -21,15 +21,28 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordResponse> {
+public class GetCallInRelationRequest extends RpcAcsRequest<GetCallInRelationResponse> {
 	   
+
+	private String acid;
 
 	private String appName;
 
-	private String targetBizId;
-	public GetCallInRecordRequest() {
-		super("gts-smart-call", "2020-10-21", "GetCallInRecord");
+	private String ani;
+	public GetCallInRelationRequest() {
+		super("gts-smart-call", "2020-10-21", "GetCallInRelation");
 		setMethod(MethodType.POST);
+	}
+
+	public String getAcid() {
+		return this.acid;
+	}
+
+	public void setAcid(String acid) {
+		this.acid = acid;
+		if(acid != null){
+			putQueryParameter("Acid", acid);
+		}
 	}
 
 	public String getAppName() {
@@ -43,20 +56,20 @@ public class GetCallInRecordRequest extends RpcAcsRequest<GetCallInRecordRespons
 		}
 	}
 
-	public String getTargetBizId() {
-		return this.targetBizId;
+	public String getAni() {
+		return this.ani;
 	}
 
-	public void setTargetBizId(String targetBizId) {
-		this.targetBizId = targetBizId;
-		if(targetBizId != null){
-			putQueryParameter("TargetBizId", targetBizId);
+	public void setAni(String ani) {
+		this.ani = ani;
+		if(ani != null){
+			putQueryParameter("Ani", ani);
 		}
 	}
 
 	@Override
-	public Class<GetCallInRecordResponse> getResponseClass() {
-		return GetCallInRecordResponse.class;
+	public Class<GetCallInRelationResponse> getResponseClass() {
+		return GetCallInRelationResponse.class;
 	}
 
 }
