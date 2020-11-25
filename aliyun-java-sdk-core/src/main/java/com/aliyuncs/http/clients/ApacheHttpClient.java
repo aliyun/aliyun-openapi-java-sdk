@@ -7,6 +7,7 @@ import com.aliyuncs.utils.IOUtils;
 import com.aliyuncs.utils.StringUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpHost;
+import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.EntityBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -185,7 +186,10 @@ public class ApacheHttpClient extends IHttpClient {
         this.clientConfig = config;
 
         HttpClientBuilder builder = initHttpClientBuilder();
-
+        CredentialsProvider credentialsProvider = this.clientConfig.getCredentialsProvider();
+        if (null != credentialsProvider) {
+            builder.setDefaultCredentialsProvider(credentialsProvider);
+        }
         // default request config
         RequestConfig defaultConfig = RequestConfig.custom().setConnectTimeout((int) config
                 .getConnectionTimeoutMillis()).setSocketTimeout((int) config.getReadTimeoutMillis())

@@ -1,6 +1,8 @@
 package com.aliyuncs.http;
 
+import org.apache.http.client.CredentialsProvider;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -149,5 +151,11 @@ public class HttpClientConfigTest {
 
     }
 
-
+    @Test
+    public void getSetCredentialsProviderTest() {
+        HttpClientConfig httpClientConfig = new HttpClientConfig();
+        CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+        httpClientConfig.setCredentialsProvider(credentialsProvider);
+        Assert.assertEquals(credentialsProvider, httpClientConfig.getCredentialsProvider());
+    }
 }
