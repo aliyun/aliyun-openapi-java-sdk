@@ -37,6 +37,8 @@ public class MapUtilsTest {
         testMap.put("DescribeAntChainNodesResponse.List[1].map.key.List[1]", "ListMapKeyList11");
         testMap.put("DescribeAntChainNodesResponse.ListMulti.Length", "1");
         testMap.put("DescribeAntChainNodesResponse.ListMulti[0]", "1");
+        testMap.put("DescribeAntChainNodesResponse.ListMulti[1].a.list[0]", "1");
+        testMap.put("DescribeAntChainNodesResponse.ListMulti[1].a.list.Length", "1");
 
         MapUtils mapUtils = new MapUtils();
         List<Map<Object, Object>> list = mapUtils.convertMapToListMap(testMap, "DescribeAntChainNodesResponse.Result");
@@ -45,6 +47,8 @@ public class MapUtilsTest {
 
         list = mapUtils.convertMapToListMap(testMap, "DescribeAntChainNodesResponse.ListMulti");
         Assert.assertEquals("1", list.get(0));
+        Map<Object, Object> listMultiAMap = (Map<Object, Object>) list.get(1).get("a");
+        Assert.assertEquals(1, ((List) listMultiAMap.get("list")).size());
 
         list = mapUtils.convertMapToListMap(testMap, "DescribeAntChainNodesResponse.List");
         Assert.assertEquals(list.get(0).get("key"), "ListKey");
