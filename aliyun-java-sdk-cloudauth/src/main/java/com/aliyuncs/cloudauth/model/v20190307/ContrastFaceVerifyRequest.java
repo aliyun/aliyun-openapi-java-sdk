@@ -53,6 +53,8 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 
 	private String mobile;
 
+	private String faceContrastFile;
+
 	private Long sceneId;
 
 	private String ossBucketName;
@@ -216,6 +218,17 @@ public class ContrastFaceVerifyRequest extends RpcAcsRequest<ContrastFaceVerifyR
 		this.mobile = mobile;
 		if(mobile != null){
 			putBodyParameter("Mobile", mobile);
+		}
+	}
+
+	public String getFaceContrastFile() {
+		return this.faceContrastFile;
+	}
+
+	public void setFaceContrastFile(String faceContrastFile) {
+		this.faceContrastFile = faceContrastFile;
+		if(faceContrastFile != null){
+			putBodyParameter("FaceContrastFile", faceContrastFile);
 		}
 	}
 
