@@ -34,7 +34,7 @@ public class MapUtils {
             String value = entry.getValue();
             if (key.indexOf(prefix) == 0) {
                 String remainKey = key.replace(prefix, "");
-                if (!remainKey.equalsIgnoreCase(".length") && remainKey.indexOf("[") == 0 || remainKey.indexOf(".") == 0) {
+                if (!remainKey.toLowerCase().endsWith(".length") && (remainKey.indexOf("[") == 0 || remainKey.indexOf(".") == 0)) {
                     obj = resolve(obj, remainKey, value);
                 }
             }
