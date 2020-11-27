@@ -1,3 +1,6 @@
+2020-11-27 Version: 1.0.7.1
+- Support taskList.
+
 2020-10-22 Version: 1.0.7
 - Add Pipeline Member api.
 
