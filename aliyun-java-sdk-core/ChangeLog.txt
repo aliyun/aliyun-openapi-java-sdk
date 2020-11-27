@@ -1,4 +1,8 @@
-﻿2020-11-09 Version: 4.5.16
+﻿2020-11-27 Version: 4.5.17
+1, Support for setting proxy certificates
+2, Improve parse method
+
+2020-11-09 Version: 4.5.16
 1, add region id when region id non-exist
 
 2020-11-09 Version: 4.5.15
