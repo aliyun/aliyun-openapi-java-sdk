@@ -31,6 +31,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 	private Integer pageSize;
 
+	private Integer totalNumber;
+
 	private List<DBInstance> dBInstances;
 
 	public String getRequestId() {
@@ -55,6 +57,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalNumber() {
+		return this.totalNumber;
+	}
+
+	public void setTotalNumber(Integer totalNumber) {
+		this.totalNumber = totalNumber;
 	}
 
 	public List<DBInstance> getDBInstances() {
@@ -108,6 +118,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		private String commodityCode;
 
 		private String type;
+
+		private List<PolarDBXNode> nodes;
 
 		private List<String> readDBInstances;
 
@@ -279,12 +291,63 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public List<PolarDBXNode> getNodes() {
+			return this.nodes;
+		}
+
+		public void setNodes(List<PolarDBXNode> nodes) {
+			this.nodes = nodes;
+		}
+
 		public List<String> getReadDBInstances() {
 			return this.readDBInstances;
 		}
 
 		public void setReadDBInstances(List<String> readDBInstances) {
 			this.readDBInstances = readDBInstances;
+		}
+
+		public static class PolarDBXNode {
+
+			private String id;
+
+			private String classCode;
+
+			private String regionId;
+
+			private String zoneId;
+
+			public String getId() {
+				return this.id;
+			}
+
+			public void setId(String id) {
+				this.id = id;
+			}
+
+			public String getClassCode() {
+				return this.classCode;
+			}
+
+			public void setClassCode(String classCode) {
+				this.classCode = classCode;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
 		}
 	}
 

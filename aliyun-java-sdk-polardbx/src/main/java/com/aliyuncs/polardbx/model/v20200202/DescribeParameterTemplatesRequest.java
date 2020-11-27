@@ -16,6 +16,7 @@ package com.aliyuncs.polardbx.model.v20200202;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.polardbx.Endpoint;
 
 /**
  * @author auto create
@@ -30,6 +31,10 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 	public DescribeParameterTemplatesRequest() {
 		super("polardbx", "2020-02-02", "DescribeParameterTemplates", "polardbx");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getDBInstanceId() {

@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-polardbx</artifactId>
   <packaging>jar</packaging>
-  <version>20201028</version>
+  <version>2020-11-27</version>
   <name>aliyun-java-sdk-polardbx</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

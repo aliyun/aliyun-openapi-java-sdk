@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse;
 import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse.DBInstance;
+import com.aliyuncs.polardbx.model.v20200202.DescribeDBInstancesResponse.DBInstance.PolarDBXNode;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +30,7 @@ public class DescribeDBInstancesResponseUnmarshaller {
 		describeDBInstancesResponse.setRequestId(_ctx.stringValue("DescribeDBInstancesResponse.RequestId"));
 		describeDBInstancesResponse.setPageNumber(_ctx.integerValue("DescribeDBInstancesResponse.PageNumber"));
 		describeDBInstancesResponse.setPageSize(_ctx.integerValue("DescribeDBInstancesResponse.PageSize"));
+		describeDBInstancesResponse.setTotalNumber(_ctx.integerValue("DescribeDBInstancesResponse.TotalNumber"));
 
 		List<DBInstance> dBInstances = new ArrayList<DBInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances.Length"); i++) {
@@ -60,6 +62,18 @@ public class DescribeDBInstancesResponseUnmarshaller {
 				readDBInstances.add(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ReadDBInstances["+ j +"]"));
 			}
 			dBInstance.setReadDBInstances(readDBInstances);
+
+			List<PolarDBXNode> nodes = new ArrayList<PolarDBXNode>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes.Length"); j++) {
+				PolarDBXNode polarDBXNode = new PolarDBXNode();
+				polarDBXNode.setId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].Id"));
+				polarDBXNode.setClassCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].ClassCode"));
+				polarDBXNode.setRegionId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].RegionId"));
+				polarDBXNode.setZoneId(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Nodes["+ j +"].ZoneId"));
+
+				nodes.add(polarDBXNode);
+			}
+			dBInstance.setNodes(nodes);
 
 			dBInstances.add(dBInstance);
 		}

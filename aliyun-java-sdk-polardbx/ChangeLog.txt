@@ -1,3 +1,7 @@
+2020-11-27 Version: 2020-11-27
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
 2020-10-28 Version: 20201028
 - Supported all language sdk.
 - Fixed some bugs for polardbx.
