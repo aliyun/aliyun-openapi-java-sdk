@@ -30,27 +30,35 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private List<UserPanes> userPaness;
 
-	private Integer rtpExtInfo;
-
 	private Integer backgroundColor;
-
-	private Integer cropMode;
 
 	private Integer reportVad;
 
-	private String taskProfile;
-
-	private List<Long> layoutIdss;
+	private String sourceType;
 
 	private String taskId;
 
-	private String streamURL;
+	private List<ClockWidgets> clockWidgetss;
 
 	private Long vadInterval;
 
 	private List<Watermarks> watermarkss;
 
 	private Long ownerId;
+
+	private Integer mediaEncode;
+
+	private Integer rtpExtInfo;
+
+	private Integer cropMode;
+
+	private String taskProfile;
+
+	private List<Long> layoutIdss;
+
+	private String streamURL;
+
+	private Integer streamType;
 
 	private List<String> subSpecUserss;
 
@@ -60,7 +68,7 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Long timeStampRef;
 
-	private Integer mediaEncode;
+	private Integer mixMode;
 
 	private String channelId;
 	public StartMPUTaskRequest() {
@@ -120,17 +128,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}	
 	}
 
-	public Integer getRtpExtInfo() {
-		return this.rtpExtInfo;
-	}
-
-	public void setRtpExtInfo(Integer rtpExtInfo) {
-		this.rtpExtInfo = rtpExtInfo;
-		if(rtpExtInfo != null){
-			putQueryParameter("RtpExtInfo", rtpExtInfo.toString());
-		}
-	}
-
 	public Integer getBackgroundColor() {
 		return this.backgroundColor;
 	}
@@ -139,17 +136,6 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.backgroundColor = backgroundColor;
 		if(backgroundColor != null){
 			putQueryParameter("BackgroundColor", backgroundColor.toString());
-		}
-	}
-
-	public Integer getCropMode() {
-		return this.cropMode;
-	}
-
-	public void setCropMode(Integer cropMode) {
-		this.cropMode = cropMode;
-		if(cropMode != null){
-			putQueryParameter("CropMode", cropMode.toString());
 		}
 	}
 
@@ -164,28 +150,15 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
-	public String getTaskProfile() {
-		return this.taskProfile;
+	public String getSourceType() {
+		return this.sourceType;
 	}
 
-	public void setTaskProfile(String taskProfile) {
-		this.taskProfile = taskProfile;
-		if(taskProfile != null){
-			putQueryParameter("TaskProfile", taskProfile);
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
 		}
-	}
-
-	public List<Long> getLayoutIdss() {
-		return this.layoutIdss;
-	}
-
-	public void setLayoutIdss(List<Long> layoutIdss) {
-		this.layoutIdss = layoutIdss;	
-		if (layoutIdss != null) {
-			for (int i = 0; i < layoutIdss.size(); i++) {
-				putQueryParameter("LayoutIds." + (i + 1) , layoutIdss.get(i));
-			}
-		}	
 	}
 
 	public String getTaskId() {
@@ -199,15 +172,22 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
-	public String getStreamURL() {
-		return this.streamURL;
+	public List<ClockWidgets> getClockWidgetss() {
+		return this.clockWidgetss;
 	}
 
-	public void setStreamURL(String streamURL) {
-		this.streamURL = streamURL;
-		if(streamURL != null){
-			putQueryParameter("StreamURL", streamURL);
-		}
+	public void setClockWidgetss(List<ClockWidgets> clockWidgetss) {
+		this.clockWidgetss = clockWidgetss;	
+		if (clockWidgetss != null) {
+			for (int depth1 = 0; depth1 < clockWidgetss.size(); depth1++) {
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Y" , clockWidgetss.get(depth1).getY());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontType" , clockWidgetss.get(depth1).getFontType());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontColor" , clockWidgetss.get(depth1).getFontColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".ZOrder" , clockWidgetss.get(depth1).getZOrder());
+			}
+		}	
 	}
 
 	public Long getVadInterval() {
@@ -249,6 +229,85 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getMediaEncode() {
+		return this.mediaEncode;
+	}
+
+	public void setMediaEncode(Integer mediaEncode) {
+		this.mediaEncode = mediaEncode;
+		if(mediaEncode != null){
+			putQueryParameter("MediaEncode", mediaEncode.toString());
+		}
+	}
+
+	public Integer getRtpExtInfo() {
+		return this.rtpExtInfo;
+	}
+
+	public void setRtpExtInfo(Integer rtpExtInfo) {
+		this.rtpExtInfo = rtpExtInfo;
+		if(rtpExtInfo != null){
+			putQueryParameter("RtpExtInfo", rtpExtInfo.toString());
+		}
+	}
+
+	public Integer getCropMode() {
+		return this.cropMode;
+	}
+
+	public void setCropMode(Integer cropMode) {
+		this.cropMode = cropMode;
+		if(cropMode != null){
+			putQueryParameter("CropMode", cropMode.toString());
+		}
+	}
+
+	public String getTaskProfile() {
+		return this.taskProfile;
+	}
+
+	public void setTaskProfile(String taskProfile) {
+		this.taskProfile = taskProfile;
+		if(taskProfile != null){
+			putQueryParameter("TaskProfile", taskProfile);
+		}
+	}
+
+	public List<Long> getLayoutIdss() {
+		return this.layoutIdss;
+	}
+
+	public void setLayoutIdss(List<Long> layoutIdss) {
+		this.layoutIdss = layoutIdss;	
+		if (layoutIdss != null) {
+			for (int i = 0; i < layoutIdss.size(); i++) {
+				putQueryParameter("LayoutIds." + (i + 1) , layoutIdss.get(i));
+			}
+		}	
+	}
+
+	public String getStreamURL() {
+		return this.streamURL;
+	}
+
+	public void setStreamURL(String streamURL) {
+		this.streamURL = streamURL;
+		if(streamURL != null){
+			putQueryParameter("StreamURL", streamURL);
+		}
+	}
+
+	public Integer getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType.toString());
 		}
 	}
 
@@ -306,14 +365,14 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		}
 	}
 
-	public Integer getMediaEncode() {
-		return this.mediaEncode;
+	public Integer getMixMode() {
+		return this.mixMode;
 	}
 
-	public void setMediaEncode(Integer mediaEncode) {
-		this.mediaEncode = mediaEncode;
-		if(mediaEncode != null){
-			putQueryParameter("MediaEncode", mediaEncode.toString());
+	public void setMixMode(Integer mixMode) {
+		this.mixMode = mixMode;
+		if(mixMode != null){
+			putQueryParameter("MixMode", mixMode.toString());
 		}
 	}
 
@@ -524,6 +583,69 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 			public void setZOrder(Integer zOrder) {
 				this.zOrder = zOrder;
 			}
+		}
+	}
+
+	public static class ClockWidgets {
+
+		private Float x;
+
+		private Float y;
+
+		private Integer fontType;
+
+		private Integer fontSize;
+
+		private Integer fontColor;
+
+		private Integer zOrder;
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Integer getFontType() {
+			return this.fontType;
+		}
+
+		public void setFontType(Integer fontType) {
+			this.fontType = fontType;
+		}
+
+		public Integer getFontSize() {
+			return this.fontSize;
+		}
+
+		public void setFontSize(Integer fontSize) {
+			this.fontSize = fontSize;
+		}
+
+		public Integer getFontColor() {
+			return this.fontColor;
+		}
+
+		public void setFontColor(Integer fontColor) {
+			this.fontColor = fontColor;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
 		}
 	}
 

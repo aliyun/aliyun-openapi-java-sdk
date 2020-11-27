@@ -36,6 +36,8 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 
 	private String taskId;
 
+	private List<ClockWidgets> clockWidgetss;
+
 	private List<Watermarks> watermarkss;
 
 	private Long ownerId;
@@ -133,6 +135,24 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 		if(taskId != null){
 			putQueryParameter("TaskId", taskId);
 		}
+	}
+
+	public List<ClockWidgets> getClockWidgetss() {
+		return this.clockWidgetss;
+	}
+
+	public void setClockWidgetss(List<ClockWidgets> clockWidgetss) {
+		this.clockWidgetss = clockWidgetss;	
+		if (clockWidgetss != null) {
+			for (int depth1 = 0; depth1 < clockWidgetss.size(); depth1++) {
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Y" , clockWidgetss.get(depth1).getY());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontType" , clockWidgetss.get(depth1).getFontType());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontColor" , clockWidgetss.get(depth1).getFontColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".ZOrder" , clockWidgetss.get(depth1).getZOrder());
+			}
+		}	
 	}
 
 	public List<Watermarks> getWatermarkss() {
@@ -392,6 +412,69 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 			public void setZOrder(Integer zOrder) {
 				this.zOrder = zOrder;
 			}
+		}
+	}
+
+	public static class ClockWidgets {
+
+		private Float x;
+
+		private Float y;
+
+		private Integer fontType;
+
+		private Integer fontSize;
+
+		private Integer fontColor;
+
+		private Integer zOrder;
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Integer getFontType() {
+			return this.fontType;
+		}
+
+		public void setFontType(Integer fontType) {
+			this.fontType = fontType;
+		}
+
+		public Integer getFontSize() {
+			return this.fontSize;
+		}
+
+		public void setFontSize(Integer fontSize) {
+			this.fontSize = fontSize;
+		}
+
+		public Integer getFontColor() {
+			return this.fontColor;
+		}
+
+		public void setFontColor(Integer fontColor) {
+			this.fontColor = fontColor;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
 		}
 	}
 
