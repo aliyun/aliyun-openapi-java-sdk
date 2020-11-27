@@ -30,7 +30,7 @@ public class GetPublicKeyRequest extends RpcAcsRequest<GetPublicKeyResponse> {
 
 	private String keyId;
 	public GetPublicKeyRequest() {
-		super("Kms", "2016-01-20", "GetPublicKey", "kms");
+		super("Kms", "2016-01-20", "GetPublicKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

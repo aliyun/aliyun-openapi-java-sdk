@@ -32,7 +32,7 @@ public class ListKeyVersionsRequest extends RpcAcsRequest<ListKeyVersionsRespons
 
 	private Integer pageNumber;
 	public ListKeyVersionsRequest() {
-		super("Kms", "2016-01-20", "ListKeyVersions", "kms");
+		super("Kms", "2016-01-20", "ListKeyVersions", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

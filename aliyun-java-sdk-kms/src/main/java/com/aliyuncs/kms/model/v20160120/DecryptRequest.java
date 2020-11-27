@@ -30,7 +30,7 @@ public class DecryptRequest extends RpcAcsRequest<DecryptResponse> {
 
 	private String ciphertextBlob;
 	public DecryptRequest() {
-		super("Kms", "2016-01-20", "Decrypt", "kms");
+		super("Kms", "2016-01-20", "Decrypt", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

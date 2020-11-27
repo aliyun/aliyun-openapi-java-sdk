@@ -1,3 +1,6 @@
+2020-11-27 Version: 2.13.0
+- Add Certificate Manager Api.
+
 2020-09-28 Version: 2.12.0
 - Support filtering keys and secrets.
 - Support opening KMS service and describing service status by API.

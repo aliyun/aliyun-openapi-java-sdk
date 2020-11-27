@@ -34,7 +34,7 @@ public class AsymmetricSignRequest extends RpcAcsRequest<AsymmetricSignResponse>
 
 	private String algorithm;
 	public AsymmetricSignRequest() {
-		super("Kms", "2016-01-20", "AsymmetricSign", "kms");
+		super("Kms", "2016-01-20", "AsymmetricSign", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

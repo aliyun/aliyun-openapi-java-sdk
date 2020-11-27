@@ -26,7 +26,7 @@ import com.aliyuncs.kms.Endpoint;
 public class DescribeServiceRequest extends RpcAcsRequest<DescribeServiceResponse> {
 	   
 	public DescribeServiceRequest() {
-		super("Kms", "2016-01-20", "DescribeService", "kms");
+		super("Kms", "2016-01-20", "DescribeService", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -40,7 +40,7 @@ public class GetRandomPasswordRequest extends RpcAcsRequest<GetRandomPasswordRes
 
 	private String excludeNumbers;
 	public GetRandomPasswordRequest() {
-		super("Kms", "2016-01-20", "GetRandomPassword", "kms");
+		super("Kms", "2016-01-20", "GetRandomPassword", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

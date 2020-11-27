@@ -32,7 +32,7 @@ public class DeleteSecretRequest extends RpcAcsRequest<DeleteSecretResponse> {
 
 	private String secretName;
 	public DeleteSecretRequest() {
-		super("Kms", "2016-01-20", "DeleteSecret", "kms");
+		super("Kms", "2016-01-20", "DeleteSecret", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -30,7 +30,7 @@ public class ScheduleKeyDeletionRequest extends RpcAcsRequest<ScheduleKeyDeletio
 
 	private String keyId;
 	public ScheduleKeyDeletionRequest() {
-		super("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms");
+		super("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

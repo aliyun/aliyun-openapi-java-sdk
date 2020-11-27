@@ -40,7 +40,7 @@ public class ReEncryptRequest extends RpcAcsRequest<ReEncryptResponse> {
 
 	private String ciphertextBlob;
 	public ReEncryptRequest() {
-		super("Kms", "2016-01-20", "ReEncrypt", "kms");
+		super("Kms", "2016-01-20", "ReEncrypt", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

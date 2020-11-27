@@ -26,19 +26,32 @@ import com.aliyuncs.kms.Endpoint;
 public class UntagResourceRequest extends RpcAcsRequest<UntagResourceResponse> {
 	   
 
+	private String certificateId;
+
 	private String tagKeys;
 
 	private String keyId;
 
 	private String secretName;
 	public UntagResourceRequest() {
-		super("Kms", "2016-01-20", "UntagResource", "kms");
+		super("Kms", "2016-01-20", "UntagResource", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCertificateId() {
+		return this.certificateId;
+	}
+
+	public void setCertificateId(String certificateId) {
+		this.certificateId = certificateId;
+		if(certificateId != null){
+			putQueryParameter("CertificateId", certificateId);
+		}
 	}
 
 	public String getTagKeys() {

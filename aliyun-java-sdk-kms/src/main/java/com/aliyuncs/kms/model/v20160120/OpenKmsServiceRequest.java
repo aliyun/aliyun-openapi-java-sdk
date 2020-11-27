@@ -26,7 +26,7 @@ import com.aliyuncs.kms.Endpoint;
 public class OpenKmsServiceRequest extends RpcAcsRequest<OpenKmsServiceResponse> {
 	   
 	public OpenKmsServiceRequest() {
-		super("Kms", "2016-01-20", "OpenKmsService", "kms");
+		super("Kms", "2016-01-20", "OpenKmsService", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

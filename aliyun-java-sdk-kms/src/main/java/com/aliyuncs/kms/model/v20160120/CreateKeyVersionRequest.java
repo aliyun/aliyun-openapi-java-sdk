@@ -28,7 +28,7 @@ public class CreateKeyVersionRequest extends RpcAcsRequest<CreateKeyVersionRespo
 
 	private String keyId;
 	public CreateKeyVersionRequest() {
-		super("Kms", "2016-01-20", "CreateKeyVersion", "kms");
+		super("Kms", "2016-01-20", "CreateKeyVersion", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

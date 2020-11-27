@@ -34,7 +34,7 @@ public class GenerateDataKeyRequest extends RpcAcsRequest<GenerateDataKeyRespons
 
 	private Integer numberOfBytes;
 	public GenerateDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKey", "kms");
+		super("Kms", "2016-01-20", "GenerateDataKey", "kms-service");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
