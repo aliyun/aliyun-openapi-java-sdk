@@ -92,6 +92,16 @@ public class GetTaskResponse extends AcsResponse {
 
 		private String userId;
 
+		private Integer publishStatus;
+
+		private String taskCoordinateSystem;
+
+		private String taskStatistics;
+
+		private String sourceCoordinateSystem;
+
+		private String destinationCoordinateSystem;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -194,6 +204,46 @@ public class GetTaskResponse extends AcsResponse {
 
 		public void setUserId(String userId) {
 			this.userId = userId;
+		}
+
+		public Integer getPublishStatus() {
+			return this.publishStatus;
+		}
+
+		public void setPublishStatus(Integer publishStatus) {
+			this.publishStatus = publishStatus;
+		}
+
+		public String getTaskCoordinateSystem() {
+			return this.taskCoordinateSystem;
+		}
+
+		public void setTaskCoordinateSystem(String taskCoordinateSystem) {
+			this.taskCoordinateSystem = taskCoordinateSystem;
+		}
+
+		public String getTaskStatistics() {
+			return this.taskStatistics;
+		}
+
+		public void setTaskStatistics(String taskStatistics) {
+			this.taskStatistics = taskStatistics;
+		}
+
+		public String getSourceCoordinateSystem() {
+			return this.sourceCoordinateSystem;
+		}
+
+		public void setSourceCoordinateSystem(String sourceCoordinateSystem) {
+			this.sourceCoordinateSystem = sourceCoordinateSystem;
+		}
+
+		public String getDestinationCoordinateSystem() {
+			return this.destinationCoordinateSystem;
+		}
+
+		public void setDestinationCoordinateSystem(String destinationCoordinateSystem) {
+			this.destinationCoordinateSystem = destinationCoordinateSystem;
 		}
 	}
 

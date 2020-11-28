@@ -22,12 +22,16 @@ import com.aliyuncs.rsimganalys.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
+public class GetShpInfoRequest extends RpcAcsRequest<GetShpInfoResponse> {
 	   
 
-	private Long imageId;
-	public DeleteImageRequest() {
-		super("rsimganalys", "2019-08-01", "DeleteImage");
+	private String fid;
+
+	private String taskId;
+
+	private String fileId;
+	public GetShpInfoRequest() {
+		super("rsimganalys", "2019-08-01", "GetShpInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +39,42 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getImageId() {
-		return this.imageId;
+	public String getFid() {
+		return this.fid;
 	}
 
-	public void setImageId(Long imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId.toString());
+	public void setFid(String fid) {
+		this.fid = fid;
+		if(fid != null){
+			putQueryParameter("Fid", fid);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
+	public String getFileId() {
+		return this.fileId;
+	}
+
+	public void setFileId(String fileId) {
+		this.fileId = fileId;
+		if(fileId != null){
+			putQueryParameter("FileId", fileId);
 		}
 	}
 
 	@Override
-	public Class<DeleteImageResponse> getResponseClass() {
-		return DeleteImageResponse.class;
+	public Class<GetShpInfoResponse> getResponseClass() {
+		return GetShpInfoResponse.class;
 	}
 
 }

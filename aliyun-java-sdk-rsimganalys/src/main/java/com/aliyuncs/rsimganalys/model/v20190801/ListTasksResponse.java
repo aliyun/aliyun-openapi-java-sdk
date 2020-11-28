@@ -121,9 +121,11 @@ public class ListTasksResponse extends AcsResponse {
 
 		private String statusMessage;
 
-		private String statusCode;
+		private Integer statusCode;
 
 		private Integer enableZoneIdentification;
+
+		private Integer publishStatus;
 
 		public String getAppkey() {
 			return this.appkey;
@@ -221,11 +223,11 @@ public class ListTasksResponse extends AcsResponse {
 			this.statusMessage = statusMessage;
 		}
 
-		public String getStatusCode() {
+		public Integer getStatusCode() {
 			return this.statusCode;
 		}
 
-		public void setStatusCode(String statusCode) {
+		public void setStatusCode(Integer statusCode) {
 			this.statusCode = statusCode;
 		}
 
@@ -235,6 +237,14 @@ public class ListTasksResponse extends AcsResponse {
 
 		public void setEnableZoneIdentification(Integer enableZoneIdentification) {
 			this.enableZoneIdentification = enableZoneIdentification;
+		}
+
+		public Integer getPublishStatus() {
+			return this.publishStatus;
+		}
+
+		public void setPublishStatus(Integer publishStatus) {
+			this.publishStatus = publishStatus;
 		}
 	}
 

@@ -35,6 +35,11 @@ public class GetImageResponseUnmarshaller {
 		data.setDescription(_ctx.stringValue("GetImageResponse.Data.Description"));
 		data.setAliyunPK(_ctx.stringValue("GetImageResponse.Data.AliyunPK"));
 		data.setRunStatus(_ctx.integerValue("GetImageResponse.Data.RunStatus"));
+		data.setUserResolution(_ctx.stringValue("GetImageResponse.Data.UserResolution"));
+		data.setResolution(_ctx.stringValue("GetImageResponse.Data.Resolution"));
+		data.setUCS(_ctx.stringValue("GetImageResponse.Data.UCS"));
+		data.setPixelSize(_ctx.stringValue("GetImageResponse.Data.PixelSize"));
+		data.setPublishStatus(_ctx.integerValue("GetImageResponse.Data.PublishStatus"));
 		getImageResponse.setData(data);
 	 
 	 	return getImageResponse;

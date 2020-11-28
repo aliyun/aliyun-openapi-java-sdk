@@ -16,6 +16,7 @@ package com.aliyuncs.rsimganalys.model.v20190801;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.rsimganalys.Endpoint;
 
 /**
  * @author auto create
@@ -30,6 +31,10 @@ public class GetTaskRequest extends RpcAcsRequest<GetTaskResponse> {
 	public GetTaskRequest() {
 		super("rsimganalys", "2019-08-01", "GetTask");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getJobId() {

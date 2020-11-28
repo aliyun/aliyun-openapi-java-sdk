@@ -48,8 +48,9 @@ public class ListTasksResponseUnmarshaller {
 			contents.setLastUpdateTime(_ctx.longValue("ListTasksResponse.Data["+ i +"].LastUpdateTime"));
 			contents.setResponse(_ctx.stringValue("ListTasksResponse.Data["+ i +"].Response"));
 			contents.setStatusMessage(_ctx.stringValue("ListTasksResponse.Data["+ i +"].StatusMessage"));
-			contents.setStatusCode(_ctx.stringValue("ListTasksResponse.Data["+ i +"].StatusCode"));
+			contents.setStatusCode(_ctx.integerValue("ListTasksResponse.Data["+ i +"].StatusCode"));
 			contents.setEnableZoneIdentification(_ctx.integerValue("ListTasksResponse.Data["+ i +"].EnableZoneIdentification"));
+			contents.setPublishStatus(_ctx.integerValue("ListTasksResponse.Data["+ i +"].PublishStatus"));
 
 			data.add(contents);
 		}

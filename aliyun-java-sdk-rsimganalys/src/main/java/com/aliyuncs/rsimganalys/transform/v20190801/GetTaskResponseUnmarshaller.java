@@ -41,6 +41,11 @@ public class GetTaskResponseUnmarshaller {
 		data.setVersion(_ctx.integerValue("GetTaskResponse.Data.Version"));
 		data.setAppkey(_ctx.stringValue("GetTaskResponse.Data.Appkey"));
 		data.setUserId(_ctx.stringValue("GetTaskResponse.Data.UserId"));
+		data.setPublishStatus(_ctx.integerValue("GetTaskResponse.Data.PublishStatus"));
+		data.setTaskCoordinateSystem(_ctx.stringValue("GetTaskResponse.Data.TaskCoordinateSystem"));
+		data.setTaskStatistics(_ctx.stringValue("GetTaskResponse.Data.TaskStatistics"));
+		data.setSourceCoordinateSystem(_ctx.stringValue("GetTaskResponse.Data.SourceCoordinateSystem"));
+		data.setDestinationCoordinateSystem(_ctx.stringValue("GetTaskResponse.Data.DestinationCoordinateSystem"));
 		getTaskResponse.setData(data);
 	 
 	 	return getTaskResponse;

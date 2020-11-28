@@ -27,6 +27,8 @@ public class CreateImageResponseUnmarshaller {
 		createImageResponse.setResultCode(_ctx.integerValue("CreateImageResponse.ResultCode"));
 		createImageResponse.setImageId(_ctx.stringValue("CreateImageResponse.ImageId"));
 		createImageResponse.setResultMessage(_ctx.stringValue("CreateImageResponse.ResultMessage"));
+		createImageResponse.setUserResolution(_ctx.stringValue("CreateImageResponse.UserResolution"));
+		createImageResponse.setPublishStatus(_ctx.integerValue("CreateImageResponse.PublishStatus"));
 
 		Data data = new Data();
 		data.setAliyunPK(_ctx.stringValue("CreateImageResponse.Data.AliyunPK"));

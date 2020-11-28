@@ -32,6 +32,10 @@ public class CreateImageResponse extends AcsResponse {
 
 	private String resultMessage;
 
+	private String userResolution;
+
+	private Integer publishStatus;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -64,6 +68,22 @@ public class CreateImageResponse extends AcsResponse {
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public String getUserResolution() {
+		return this.userResolution;
+	}
+
+	public void setUserResolution(String userResolution) {
+		this.userResolution = userResolution;
+	}
+
+	public Integer getPublishStatus() {
+		return this.publishStatus;
+	}
+
+	public void setPublishStatus(Integer publishStatus) {
+		this.publishStatus = publishStatus;
 	}
 
 	public Data getData() {

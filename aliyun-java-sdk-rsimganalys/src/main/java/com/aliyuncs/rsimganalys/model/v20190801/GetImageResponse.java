@@ -88,6 +88,16 @@ public class GetImageResponse extends AcsResponse {
 
 		private Integer runStatus;
 
+		private String userResolution;
+
+		private String resolution;
+
+		private String uCS;
+
+		private String pixelSize;
+
+		private Integer publishStatus;
+
 		public String getImageName() {
 			return this.imageName;
 		}
@@ -134,6 +144,46 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setRunStatus(Integer runStatus) {
 			this.runStatus = runStatus;
+		}
+
+		public String getUserResolution() {
+			return this.userResolution;
+		}
+
+		public void setUserResolution(String userResolution) {
+			this.userResolution = userResolution;
+		}
+
+		public String getResolution() {
+			return this.resolution;
+		}
+
+		public void setResolution(String resolution) {
+			this.resolution = resolution;
+		}
+
+		public String getUCS() {
+			return this.uCS;
+		}
+
+		public void setUCS(String uCS) {
+			this.uCS = uCS;
+		}
+
+		public String getPixelSize() {
+			return this.pixelSize;
+		}
+
+		public void setPixelSize(String pixelSize) {
+			this.pixelSize = pixelSize;
+		}
+
+		public Integer getPublishStatus() {
+			return this.publishStatus;
+		}
+
+		public void setPublishStatus(Integer publishStatus) {
+			this.publishStatus = publishStatus;
 		}
 	}
 

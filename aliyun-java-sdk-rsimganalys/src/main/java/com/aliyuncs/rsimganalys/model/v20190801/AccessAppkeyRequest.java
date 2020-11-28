@@ -22,12 +22,10 @@ import com.aliyuncs.rsimganalys.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
+public class AccessAppkeyRequest extends RpcAcsRequest<AccessAppkeyResponse> {
 	   
-
-	private Long imageId;
-	public DeleteImageRequest() {
-		super("rsimganalys", "2019-08-01", "DeleteImage");
+	public AccessAppkeyRequest() {
+		super("rsimganalys", "2019-08-01", "AccessAppkey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +33,9 @@ public class DeleteImageRequest extends RpcAcsRequest<DeleteImageResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(Long imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId.toString());
-		}
-	}
-
 	@Override
-	public Class<DeleteImageResponse> getResponseClass() {
-		return DeleteImageResponse.class;
+	public Class<AccessAppkeyResponse> getResponseClass() {
+		return AccessAppkeyResponse.class;
 	}
 
 }
