@@ -1,3 +1,6 @@
+2020-11-29 Version: 1.0.9
+- Add update config and modify ssl sdk.
+
 2020-07-31 Version: 1.0.8
 - Support create ecs instance.
 

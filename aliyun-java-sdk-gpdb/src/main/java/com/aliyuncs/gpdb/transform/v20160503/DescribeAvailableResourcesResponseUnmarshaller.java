@@ -21,6 +21,8 @@ import com.aliyuncs.gpdb.model.v20160503.DescribeAvailableResourcesResponse;
 import com.aliyuncs.gpdb.model.v20160503.DescribeAvailableResourcesResponse.Resource;
 import com.aliyuncs.gpdb.model.v20160503.DescribeAvailableResourcesResponse.Resource.SupportedEngine;
 import com.aliyuncs.gpdb.model.v20160503.DescribeAvailableResourcesResponse.Resource.SupportedEngine.SupportedInstanceClass;
+import com.aliyuncs.gpdb.model.v20160503.DescribeAvailableResourcesResponse.Resource.SupportedEngine.SupportedInstanceClass.NodeCount;
+import com.aliyuncs.gpdb.model.v20160503.DescribeAvailableResourcesResponse.Resource.SupportedEngine.SupportedInstanceClass.StorageSize;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +42,7 @@ public class DescribeAvailableResourcesResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines.Length"); j++) {
 				SupportedEngine supportedEngine = new SupportedEngine();
 				supportedEngine.setSupportedEngineVersion(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedEngineVersion"));
+				supportedEngine.setMode(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].Mode"));
 
 				List<SupportedInstanceClass> supportedInstanceClasses = new ArrayList<SupportedInstanceClass>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses.Length"); k++) {
@@ -47,12 +50,19 @@ public class DescribeAvailableResourcesResponseUnmarshaller {
 					supportedInstanceClass.setDisplayClass(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].DisplayClass"));
 					supportedInstanceClass.setInstanceClass(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].InstanceClass"));
 					supportedInstanceClass.setDescription(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].Description"));
+					supportedInstanceClass.setStorageType(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageType"));
 
-					List<Integer> nodeCount = new ArrayList<Integer>();
-					for (int l = 0; l < _ctx.lengthValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.Length"); l++) {
-						nodeCount.add(_ctx.integerValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount["+ l +"]"));
-					}
+					NodeCount nodeCount = new NodeCount();
+					nodeCount.setMinCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.MinCount"));
+					nodeCount.setMaxCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.MaxCount"));
+					nodeCount.setStep(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].NodeCount.Step"));
 					supportedInstanceClass.setNodeCount(nodeCount);
+
+					StorageSize storageSize = new StorageSize();
+					storageSize.setMinCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.MinCount"));
+					storageSize.setMaxCount(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.MaxCount"));
+					storageSize.setStep(_ctx.stringValue("DescribeAvailableResourcesResponse.Resources["+ i +"].SupportedEngines["+ j +"].SupportedInstanceClasses["+ k +"].StorageSize.Step"));
+					supportedInstanceClass.setStorageSize(storageSize);
 
 					supportedInstanceClasses.add(supportedInstanceClass);
 				}

@@ -81,6 +81,8 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 			private String supportedEngineVersion;
 
+			private String mode;
+
 			private List<SupportedInstanceClass> supportedInstanceClasses;
 
 			public String getSupportedEngineVersion() {
@@ -89,6 +91,14 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 			public void setSupportedEngineVersion(String supportedEngineVersion) {
 				this.supportedEngineVersion = supportedEngineVersion;
+			}
+
+			public String getMode() {
+				return this.mode;
+			}
+
+			public void setMode(String mode) {
+				this.mode = mode;
 			}
 
 			public List<SupportedInstanceClass> getSupportedInstanceClasses() {
@@ -107,7 +117,11 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 
 				private String description;
 
-				private List<Integer> nodeCount;
+				private String storageType;
+
+				private NodeCount nodeCount;
+
+				private StorageSize storageSize;
 
 				public String getDisplayClass() {
 					return this.displayClass;
@@ -133,12 +147,94 @@ public class DescribeAvailableResourcesResponse extends AcsResponse {
 					this.description = description;
 				}
 
-				public List<Integer> getNodeCount() {
+				public String getStorageType() {
+					return this.storageType;
+				}
+
+				public void setStorageType(String storageType) {
+					this.storageType = storageType;
+				}
+
+				public NodeCount getNodeCount() {
 					return this.nodeCount;
 				}
 
-				public void setNodeCount(List<Integer> nodeCount) {
+				public void setNodeCount(NodeCount nodeCount) {
 					this.nodeCount = nodeCount;
+				}
+
+				public StorageSize getStorageSize() {
+					return this.storageSize;
+				}
+
+				public void setStorageSize(StorageSize storageSize) {
+					this.storageSize = storageSize;
+				}
+
+				public static class NodeCount {
+
+					private String minCount;
+
+					private String maxCount;
+
+					private String step;
+
+					public String getMinCount() {
+						return this.minCount;
+					}
+
+					public void setMinCount(String minCount) {
+						this.minCount = minCount;
+					}
+
+					public String getMaxCount() {
+						return this.maxCount;
+					}
+
+					public void setMaxCount(String maxCount) {
+						this.maxCount = maxCount;
+					}
+
+					public String getStep() {
+						return this.step;
+					}
+
+					public void setStep(String step) {
+						this.step = step;
+					}
+				}
+
+				public static class StorageSize {
+
+					private String minCount;
+
+					private String maxCount;
+
+					private String step;
+
+					public String getMinCount() {
+						return this.minCount;
+					}
+
+					public void setMinCount(String minCount) {
+						this.minCount = minCount;
+					}
+
+					public String getMaxCount() {
+						return this.maxCount;
+					}
+
+					public void setMaxCount(String maxCount) {
+						this.maxCount = maxCount;
+					}
+
+					public String getStep() {
+						return this.step;
+					}
+
+					public void setStep(String step) {
+						this.step = step;
+					}
 				}
 			}
 		}
