@@ -33,7 +33,7 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	private String endTimestamp;
 
-	private String errorMessage;
+	private String errMessage;
 
 	private String payType;
 
@@ -46,6 +46,14 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 	private String subscriptionInstanceID;
 
 	private String subscriptionInstanceName;
+
+	private String errCode;
+
+	private String success;
+
+	private String errorMessage;
+
+	private String errorMessage1;
 
 	private List<SynchronousObject> subscriptionObject;
 
@@ -87,12 +95,12 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 		this.endTimestamp = endTimestamp;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public String getErrMessage() {
+		return this.errMessage;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
 	}
 
 	public String getPayType() {
@@ -141,6 +149,38 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	public void setSubscriptionInstanceName(String subscriptionInstanceName) {
 		this.subscriptionInstanceName = subscriptionInstanceName;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorMessage1() {
+		return this.errorMessage1;
+	}
+
+	public void setErrorMessage1(String errorMessage1) {
+		this.errorMessage1 = errorMessage1;
 	}
 
 	public List<SynchronousObject> getSubscriptionObject() {

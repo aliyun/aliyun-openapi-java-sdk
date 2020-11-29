@@ -34,12 +34,15 @@ public class DescribeMigrationJobStatusResponseUnmarshaller {
 	public static DescribeMigrationJobStatusResponse unmarshall(DescribeMigrationJobStatusResponse describeMigrationJobStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeMigrationJobStatusResponse.setRequestId(_ctx.stringValue("DescribeMigrationJobStatusResponse.RequestId"));
+		describeMigrationJobStatusResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobStatusResponse.ErrCode"));
+		describeMigrationJobStatusResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobStatusResponse.ErrMessage"));
 		describeMigrationJobStatusResponse.setMigrationJobClass(_ctx.stringValue("DescribeMigrationJobStatusResponse.MigrationJobClass"));
 		describeMigrationJobStatusResponse.setMigrationJobId(_ctx.stringValue("DescribeMigrationJobStatusResponse.MigrationJobId"));
 		describeMigrationJobStatusResponse.setMigrationJobName(_ctx.stringValue("DescribeMigrationJobStatusResponse.MigrationJobName"));
 		describeMigrationJobStatusResponse.setMigrationJobStatus(_ctx.stringValue("DescribeMigrationJobStatusResponse.MigrationJobStatus"));
 		describeMigrationJobStatusResponse.setMigrationObject(_ctx.stringValue("DescribeMigrationJobStatusResponse.MigrationObject"));
 		describeMigrationJobStatusResponse.setPayType(_ctx.stringValue("DescribeMigrationJobStatusResponse.PayType"));
+		describeMigrationJobStatusResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobStatusResponse.Success"));
 
 		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
 		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeMigrationJobStatusResponse.DataInitializationStatus.ErrorMessage"));

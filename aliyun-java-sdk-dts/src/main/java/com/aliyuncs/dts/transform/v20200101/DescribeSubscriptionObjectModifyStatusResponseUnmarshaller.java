@@ -27,8 +27,11 @@ public class DescribeSubscriptionObjectModifyStatusResponseUnmarshaller {
 	public static DescribeSubscriptionObjectModifyStatusResponse unmarshall(DescribeSubscriptionObjectModifyStatusResponse describeSubscriptionObjectModifyStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeSubscriptionObjectModifyStatusResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.RequestId"));
+		describeSubscriptionObjectModifyStatusResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.ErrCode"));
+		describeSubscriptionObjectModifyStatusResponse.setErrMessage(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.ErrMessage"));
 		describeSubscriptionObjectModifyStatusResponse.setPercent(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Percent"));
 		describeSubscriptionObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Status"));
+		describeSubscriptionObjectModifyStatusResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionObjectModifyStatusResponse.Success"));
 
 		List<CheckItem> detail = new ArrayList<CheckItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSubscriptionObjectModifyStatusResponse.Detail.Length"); i++) {

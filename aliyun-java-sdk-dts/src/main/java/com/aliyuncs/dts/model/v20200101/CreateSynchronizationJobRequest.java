@@ -45,6 +45,8 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 
 	private Integer usedTime;
 
+	private Integer dBInstanceCount;
+
 	private String sourceRegion;
 
 	private String payType;
@@ -166,6 +168,17 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 		this.usedTime = usedTime;
 		if(usedTime != null){
 			putQueryParameter("UsedTime", usedTime.toString());
+		}
+	}
+
+	public Integer getDBInstanceCount() {
+		return this.dBInstanceCount;
+	}
+
+	public void setDBInstanceCount(Integer dBInstanceCount) {
+		this.dBInstanceCount = dBInstanceCount;
+		if(dBInstanceCount != null){
+			putQueryParameter("DBInstanceCount", dBInstanceCount.toString());
 		}
 	}
 

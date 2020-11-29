@@ -25,11 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSynchronizationObjectModifyStatusResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
 	private String errorMessage;
 
 	private String requestId;
 
 	private String status;
+
+	private String success;
 
 	private DataInitializationStatus dataInitializationStatus;
 
@@ -38,6 +44,22 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 	private PrecheckStatus precheckStatus;
 
 	private StructureInitializationStatus structureInitializationStatus;
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public String getErrorMessage() {
 		return this.errorMessage;
@@ -61,6 +83,14 @@ public class DescribeSynchronizationObjectModifyStatusResponse extends AcsRespon
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public DataInitializationStatus getDataInitializationStatus() {

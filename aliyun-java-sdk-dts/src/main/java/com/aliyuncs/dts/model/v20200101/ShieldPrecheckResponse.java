@@ -15,26 +15,22 @@
 package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dts.transform.v20200101.DescribeEndpointSwitchStatusResponseUnmarshaller;
+import com.aliyuncs.dts.transform.v20200101.ShieldPrecheckResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
+public class ShieldPrecheckResponse extends AcsResponse {
 
 	private String errCode;
 
 	private String errMessage;
 
-	private String errorMessage;
-
 	private String requestId;
 
-	private String status;
-
-	private String success;
+	private Boolean success;
 
 	public String getErrCode() {
 		return this.errCode;
@@ -52,14 +48,6 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 		this.errMessage = errMessage;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -68,25 +56,17 @@ public class DescribeEndpointSwitchStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
 	@Override
-	public DescribeEndpointSwitchStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeEndpointSwitchStatusResponseUnmarshaller.unmarshall(this, context);
+	public ShieldPrecheckResponse getInstance(UnmarshallerContext context) {
+		return	ShieldPrecheckResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

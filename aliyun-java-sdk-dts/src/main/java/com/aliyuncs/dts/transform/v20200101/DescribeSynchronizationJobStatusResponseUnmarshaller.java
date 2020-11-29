@@ -41,11 +41,14 @@ public class DescribeSynchronizationJobStatusResponseUnmarshaller {
 		describeSynchronizationJobStatusResponse.setDataInitialization(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitialization"));
 		describeSynchronizationJobStatusResponse.setDelay(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Delay"));
 		describeSynchronizationJobStatusResponse.setDelayMillis(_ctx.longValue("DescribeSynchronizationJobStatusResponse.DelayMillis"));
+		describeSynchronizationJobStatusResponse.setErrCode(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ErrCode"));
+		describeSynchronizationJobStatusResponse.setErrMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ErrMessage"));
 		describeSynchronizationJobStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ErrorMessage"));
 		describeSynchronizationJobStatusResponse.setExpireTime(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.ExpireTime"));
 		describeSynchronizationJobStatusResponse.setPayType(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.PayType"));
 		describeSynchronizationJobStatusResponse.setStatus(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Status"));
 		describeSynchronizationJobStatusResponse.setStructureInitialization(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.StructureInitialization"));
+		describeSynchronizationJobStatusResponse.setSuccess(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.Success"));
 		describeSynchronizationJobStatusResponse.setSynchronizationDirection(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationDirection"));
 		describeSynchronizationJobStatusResponse.setSynchronizationJobClass(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobClass"));
 		describeSynchronizationJobStatusResponse.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobId"));

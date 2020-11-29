@@ -77,6 +77,8 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 	public static class SynchronizationInstance {
 
+		private String createTime;
+
 		private String dataInitialization;
 
 		private String delay;
@@ -99,8 +101,6 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		private String synchronizationJobName;
 
-		private String createTime;
-
 		private List<SynchronizationObject> synchronizationObjects;
 
 		private DataInitializationStatus dataInitializationStatus;
@@ -116,6 +116,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 		private SourceEndpoint sourceEndpoint;
 
 		private StructureInitializationStatus structureInitializationStatus;
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
 
 		public String getDataInitialization() {
 			return this.dataInitialization;
@@ -203,14 +211,6 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		public void setSynchronizationJobName(String synchronizationJobName) {
 			this.synchronizationJobName = synchronizationJobName;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public List<SynchronizationObject> getSynchronizationObjects() {

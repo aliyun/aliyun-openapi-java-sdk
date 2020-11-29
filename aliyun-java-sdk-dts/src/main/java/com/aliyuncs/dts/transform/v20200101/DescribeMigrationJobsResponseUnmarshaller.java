@@ -38,6 +38,9 @@ public class DescribeMigrationJobsResponseUnmarshaller {
 		describeMigrationJobsResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobsResponse.PageNumber"));
 		describeMigrationJobsResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrationJobsResponse.PageRecordCount"));
 		describeMigrationJobsResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobsResponse.TotalRecordCount"));
+		describeMigrationJobsResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobsResponse.ErrCode"));
+		describeMigrationJobsResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobsResponse.ErrMessage"));
+		describeMigrationJobsResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobsResponse.Success"));
 
 		List<MigrationJob> migrationJobs = new ArrayList<MigrationJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobsResponse.MigrationJobs.Length"); i++) {

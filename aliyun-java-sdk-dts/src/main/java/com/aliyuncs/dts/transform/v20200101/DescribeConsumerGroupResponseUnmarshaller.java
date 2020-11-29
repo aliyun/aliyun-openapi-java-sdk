@@ -30,6 +30,9 @@ public class DescribeConsumerGroupResponseUnmarshaller {
 		describeConsumerGroupResponse.setPageNumber(_ctx.integerValue("DescribeConsumerGroupResponse.PageNumber"));
 		describeConsumerGroupResponse.setPageRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.PageRecordCount"));
 		describeConsumerGroupResponse.setTotalRecordCount(_ctx.integerValue("DescribeConsumerGroupResponse.TotalRecordCount"));
+		describeConsumerGroupResponse.setErrCode(_ctx.stringValue("DescribeConsumerGroupResponse.ErrCode"));
+		describeConsumerGroupResponse.setErrMessage(_ctx.stringValue("DescribeConsumerGroupResponse.ErrMessage"));
+		describeConsumerGroupResponse.setSuccess(_ctx.stringValue("DescribeConsumerGroupResponse.Success"));
 
 		List<DescribeConsumerChannel> consumerChannels = new ArrayList<DescribeConsumerChannel>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeConsumerGroupResponse.ConsumerChannels.Length"); i++) {

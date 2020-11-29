@@ -25,11 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrationJobDetailResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
 	private String requestId;
+
+	private String success;
 
 	private Long totalRecordCount;
 
@@ -38,6 +44,22 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 	private List<DataSynchronizationDetail> dataSynchronizationDetailList;
 
 	private List<StructureInitializationDetail> structureInitializationDetailList;
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -61,6 +83,14 @@ public class DescribeMigrationJobDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public Long getTotalRecordCount() {

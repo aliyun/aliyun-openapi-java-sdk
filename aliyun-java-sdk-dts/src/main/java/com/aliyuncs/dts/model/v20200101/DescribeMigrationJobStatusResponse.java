@@ -25,6 +25,10 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
 	private String migrationJobClass;
 
 	private String migrationJobId;
@@ -39,6 +43,8 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String success;
+
 	private DataInitializationStatus dataInitializationStatus;
 
 	private DataSynchronizationStatus dataSynchronizationStatus;
@@ -52,6 +58,22 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 	private SourceEndpoint sourceEndpoint;
 
 	private StructureInitializationStatus structureInitializationStatus;
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public String getMigrationJobClass() {
 		return this.migrationJobClass;
@@ -107,6 +129,14 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public DataInitializationStatus getDataInitializationStatus() {

@@ -30,6 +30,9 @@ public class DescribeInitializationStatusResponseUnmarshaller {
 	public static DescribeInitializationStatusResponse unmarshall(DescribeInitializationStatusResponse describeInitializationStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeInitializationStatusResponse.setRequestId(_ctx.stringValue("DescribeInitializationStatusResponse.RequestId"));
+		describeInitializationStatusResponse.setErrCode(_ctx.stringValue("DescribeInitializationStatusResponse.ErrCode"));
+		describeInitializationStatusResponse.setErrMessage(_ctx.stringValue("DescribeInitializationStatusResponse.ErrMessage"));
+		describeInitializationStatusResponse.setSuccess(_ctx.stringValue("DescribeInitializationStatusResponse.Success"));
 
 		List<DataInitializationDetail> dataInitializationDetails = new ArrayList<DataInitializationDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInitializationStatusResponse.DataInitializationDetails.Length"); i++) {

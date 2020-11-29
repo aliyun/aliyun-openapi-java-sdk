@@ -1,3 +1,6 @@
+2020-11-29 Version: 5.0.96.19.5
+- Support CPP and Go and PHP.
+
 2020-08-20 Version: 5.0.78.19.4
 - ConfigureSynchronizationJob and ConfigureMigrationJob and ConfigureSubscriptionInstance convert query string param to form.
 

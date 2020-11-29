@@ -25,13 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionObjectModifyStatusResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
 	private String percent;
 
 	private String requestId;
 
 	private String status;
 
+	private String success;
+
 	private List<CheckItem> detail;
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public String getPercent() {
 		return this.percent;
@@ -55,6 +77,14 @@ public class DescribeSubscriptionObjectModifyStatusResponse extends AcsResponse 
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<CheckItem> getDetail() {

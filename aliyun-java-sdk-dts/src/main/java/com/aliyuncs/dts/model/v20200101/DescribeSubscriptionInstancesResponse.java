@@ -33,6 +33,12 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	private Long totalRecordCount;
 
+	private String errCode;
+
+	private String errMessage;
+
+	private String success;
+
 	private List<SubscriptionInstance> subscriptionInstances;
 
 	public Integer getPageNumber() {
@@ -65,6 +71,30 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Long totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<SubscriptionInstance> getSubscriptionInstances() {

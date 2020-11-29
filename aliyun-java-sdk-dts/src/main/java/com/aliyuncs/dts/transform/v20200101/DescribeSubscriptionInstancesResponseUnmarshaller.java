@@ -34,6 +34,9 @@ public class DescribeSubscriptionInstancesResponseUnmarshaller {
 		describeSubscriptionInstancesResponse.setPageNumber(_ctx.integerValue("DescribeSubscriptionInstancesResponse.PageNumber"));
 		describeSubscriptionInstancesResponse.setPageRecordCount(_ctx.integerValue("DescribeSubscriptionInstancesResponse.PageRecordCount"));
 		describeSubscriptionInstancesResponse.setTotalRecordCount(_ctx.longValue("DescribeSubscriptionInstancesResponse.TotalRecordCount"));
+		describeSubscriptionInstancesResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionInstancesResponse.ErrCode"));
+		describeSubscriptionInstancesResponse.setErrMessage(_ctx.stringValue("DescribeSubscriptionInstancesResponse.ErrMessage"));
+		describeSubscriptionInstancesResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionInstancesResponse.Success"));
 
 		List<SubscriptionInstance> subscriptionInstances = new ArrayList<SubscriptionInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances.Length"); i++) {

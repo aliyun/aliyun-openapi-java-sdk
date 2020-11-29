@@ -33,6 +33,10 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	private Long delayMillis;
 
+	private String errCode;
+
+	private String errMessage;
+
 	private String errorMessage;
 
 	private String expireTime;
@@ -44,6 +48,8 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 	private String status;
 
 	private String structureInitialization;
+
+	private String success;
 
 	private String synchronizationDirection;
 
@@ -101,6 +107,22 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 		this.delayMillis = delayMillis;
 	}
 
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
+
 	public String getErrorMessage() {
 		return this.errorMessage;
 	}
@@ -147,6 +169,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	public void setStructureInitialization(String structureInitialization) {
 		this.structureInitialization = structureInitialization;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public String getSynchronizationDirection() {

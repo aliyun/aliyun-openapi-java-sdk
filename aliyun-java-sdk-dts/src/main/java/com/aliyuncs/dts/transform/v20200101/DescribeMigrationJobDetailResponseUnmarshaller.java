@@ -30,8 +30,11 @@ public class DescribeMigrationJobDetailResponseUnmarshaller {
 	public static DescribeMigrationJobDetailResponse unmarshall(DescribeMigrationJobDetailResponse describeMigrationJobDetailResponse, UnmarshallerContext _ctx) {
 		
 		describeMigrationJobDetailResponse.setRequestId(_ctx.stringValue("DescribeMigrationJobDetailResponse.RequestId"));
+		describeMigrationJobDetailResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobDetailResponse.ErrCode"));
+		describeMigrationJobDetailResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobDetailResponse.ErrMessage"));
 		describeMigrationJobDetailResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobDetailResponse.PageNumber"));
 		describeMigrationJobDetailResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrationJobDetailResponse.PageRecordCount"));
+		describeMigrationJobDetailResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobDetailResponse.Success"));
 		describeMigrationJobDetailResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobDetailResponse.TotalRecordCount"));
 
 		List<DataInitializationDetail> dataInitializationDetailList = new ArrayList<DataInitializationDetail>();

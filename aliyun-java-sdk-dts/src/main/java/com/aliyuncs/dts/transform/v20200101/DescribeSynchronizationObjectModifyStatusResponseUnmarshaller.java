@@ -31,8 +31,11 @@ public class DescribeSynchronizationObjectModifyStatusResponseUnmarshaller {
 	public static DescribeSynchronizationObjectModifyStatusResponse unmarshall(DescribeSynchronizationObjectModifyStatusResponse describeSynchronizationObjectModifyStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeSynchronizationObjectModifyStatusResponse.setRequestId(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.RequestId"));
+		describeSynchronizationObjectModifyStatusResponse.setErrCode(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.ErrCode"));
+		describeSynchronizationObjectModifyStatusResponse.setErrMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.ErrMessage"));
 		describeSynchronizationObjectModifyStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.ErrorMessage"));
 		describeSynchronizationObjectModifyStatusResponse.setStatus(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.Status"));
+		describeSynchronizationObjectModifyStatusResponse.setSuccess(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.Success"));
 
 		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
 		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationObjectModifyStatusResponse.DataInitializationStatus.ErrorMessage"));
