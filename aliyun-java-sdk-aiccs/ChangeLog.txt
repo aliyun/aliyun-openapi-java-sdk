@@ -1,3 +1,6 @@
+2020-11-30 Version: 1.1.2
+- Add quality project api.
+
 2020-11-26 Version: 1.1.1
 - Add num location and agent status.
 
