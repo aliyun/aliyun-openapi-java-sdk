@@ -28,15 +28,15 @@ public class DescribeDcdnDomainPvDataResponseUnmarshaller {
 		
 		describeDcdnDomainPvDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.RequestId"));
 		describeDcdnDomainPvDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DomainName"));
-		describeDcdnDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DataInterval"));
 		describeDcdnDomainPvDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.StartTime"));
 		describeDcdnDomainPvDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.EndTime"));
+		describeDcdnDomainPvDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.DataInterval"));
 
 		List<UsageData> pvDataInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainPvDataResponse.PvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
 			usageData.setValue(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].Value"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainPvDataResponse.PvDataInterval["+ i +"].TimeStamp"));
 
 			pvDataInterval.add(usageData);
 		}

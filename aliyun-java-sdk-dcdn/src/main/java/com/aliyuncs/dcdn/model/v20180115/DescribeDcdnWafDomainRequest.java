@@ -22,34 +22,19 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnDomainUvDataRequest extends RpcAcsRequest<DescribeDcdnDomainUvDataResponse> {
+public class DescribeDcdnWafDomainRequest extends RpcAcsRequest<DescribeDcdnWafDomainResponse> {
 	   
-
-	private String startTime;
 
 	private String domainName;
 
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeDcdnDomainUvDataRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainUvData");
+	public DescribeDcdnWafDomainRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnWafDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -60,17 +45,6 @@ public class DescribeDcdnDomainUvDataRequest extends RpcAcsRequest<DescribeDcdnD
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class DescribeDcdnDomainUvDataRequest extends RpcAcsRequest<DescribeDcdnD
 	}
 
 	@Override
-	public Class<DescribeDcdnDomainUvDataResponse> getResponseClass() {
-		return DescribeDcdnDomainUvDataResponse.class;
+	public Class<DescribeDcdnWafDomainResponse> getResponseClass() {
+		return DescribeDcdnWafDomainResponse.class;
 	}
 
 }

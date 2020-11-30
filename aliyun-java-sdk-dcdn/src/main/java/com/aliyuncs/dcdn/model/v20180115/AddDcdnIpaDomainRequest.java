@@ -29,6 +29,8 @@ public class AddDcdnIpaDomainRequest extends RpcAcsRequest<AddDcdnIpaDomainRespo
 
 	private String resourceGroupId;
 
+	private String protocol;
+
 	private String securityToken;
 
 	private String scope;
@@ -70,6 +72,17 @@ public class AddDcdnIpaDomainRequest extends RpcAcsRequest<AddDcdnIpaDomainRespo
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public String getBizProtocol() {
+		return this.protocol;
+	}
+
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
 		}
 	}
 

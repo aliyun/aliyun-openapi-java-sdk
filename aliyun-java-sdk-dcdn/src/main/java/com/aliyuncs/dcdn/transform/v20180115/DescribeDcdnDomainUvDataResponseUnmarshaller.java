@@ -28,15 +28,15 @@ public class DescribeDcdnDomainUvDataResponseUnmarshaller {
 		
 		describeDcdnDomainUvDataResponse.setRequestId(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.RequestId"));
 		describeDcdnDomainUvDataResponse.setDomainName(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.DomainName"));
-		describeDcdnDomainUvDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.DataInterval"));
 		describeDcdnDomainUvDataResponse.setStartTime(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.StartTime"));
 		describeDcdnDomainUvDataResponse.setEndTime(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.EndTime"));
+		describeDcdnDomainUvDataResponse.setDataInterval(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.DataInterval"));
 
 		List<UsageData> uvDataInterval = new ArrayList<UsageData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDcdnDomainUvDataResponse.UvDataInterval.Length"); i++) {
 			UsageData usageData = new UsageData();
-			usageData.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.UvDataInterval["+ i +"].TimeStamp"));
 			usageData.setValue(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.UvDataInterval["+ i +"].Value"));
+			usageData.setTimeStamp(_ctx.stringValue("DescribeDcdnDomainUvDataResponse.UvDataInterval["+ i +"].TimeStamp"));
 
 			uvDataInterval.add(usageData);
 		}
