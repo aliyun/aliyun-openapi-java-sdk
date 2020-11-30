@@ -25,21 +25,33 @@ import com.aliyuncs.edas.Endpoint;
 public class ScaleoutApplicationWithNewInstancesRequest extends RoaAcsRequest<ScaleoutApplicationWithNewInstancesResponse> {
 	   
 
-	private String templateVersion;
+	private Integer autoRenewPeriod;
 
 	private String templateInstanceId;
 
-	private String appId;
-
 	private String groupId;
+
+	private String instanceChargePeriodUnit;
+
+	private String clusterId;
 
 	private Integer scalingNum;
 
 	private String templateId;
 
 	private String scalingPolicy;
+
+	private String templateVersion;
+
+	private Boolean autoRenew;
+
+	private String appId;
+
+	private Integer instanceChargePeriod;
+
+	private String instanceChargeType;
 	public ScaleoutApplicationWithNewInstancesRequest() {
-		super("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "edas");
+		super("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "Edas");
 		setUriPattern("/pop/v5/scaling/scale_out");
 		setMethod(MethodType.POST);
 		try {
@@ -48,14 +60,14 @@ public class ScaleoutApplicationWithNewInstancesRequest extends RoaAcsRequest<Sc
 		} catch (Exception e) {}
 	}
 
-	public String getTemplateVersion() {
-		return this.templateVersion;
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
 	}
 
-	public void setTemplateVersion(String templateVersion) {
-		this.templateVersion = templateVersion;
-		if(templateVersion != null){
-			putQueryParameter("TemplateVersion", templateVersion);
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
 		}
 	}
 
@@ -70,17 +82,6 @@ public class ScaleoutApplicationWithNewInstancesRequest extends RoaAcsRequest<Sc
 		}
 	}
 
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
 	public String getGroupId() {
 		return this.groupId;
 	}
@@ -89,6 +90,28 @@ public class ScaleoutApplicationWithNewInstancesRequest extends RoaAcsRequest<Sc
 		this.groupId = groupId;
 		if(groupId != null){
 			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getInstanceChargePeriodUnit() {
+		return this.instanceChargePeriodUnit;
+	}
+
+	public void setInstanceChargePeriodUnit(String instanceChargePeriodUnit) {
+		this.instanceChargePeriodUnit = instanceChargePeriodUnit;
+		if(instanceChargePeriodUnit != null){
+			putQueryParameter("InstanceChargePeriodUnit", instanceChargePeriodUnit);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
@@ -122,6 +145,61 @@ public class ScaleoutApplicationWithNewInstancesRequest extends RoaAcsRequest<Sc
 		this.scalingPolicy = scalingPolicy;
 		if(scalingPolicy != null){
 			putQueryParameter("ScalingPolicy", scalingPolicy);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getInstanceChargePeriod() {
+		return this.instanceChargePeriod;
+	}
+
+	public void setInstanceChargePeriod(Integer instanceChargePeriod) {
+		this.instanceChargePeriod = instanceChargePeriod;
+		if(instanceChargePeriod != null){
+			putQueryParameter("InstanceChargePeriod", instanceChargePeriod.toString());
+		}
+	}
+
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
+	}
+
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 

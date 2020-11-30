@@ -33,7 +33,7 @@ public class GetK8sClusterRequest extends RoaAcsRequest<GetK8sClusterResponse> {
 
 	private Integer currentPage;
 	public GetK8sClusterRequest() {
-		super("Edas", "2017-08-01", "GetK8sCluster", "edas");
+		super("Edas", "2017-08-01", "GetK8sCluster", "Edas");
 		setUriPattern("/pop/v5/k8s_clusters");
 		setMethod(MethodType.POST);
 		try {

@@ -422,6 +422,8 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			private Boolean ahasEnabled;
 
+			private String deployAcrossNodes;
+
 			public String getJarStartArgs() {
 				return this.jarStartArgs;
 			}
@@ -532,6 +534,14 @@ public class GetK8sApplicationResponse extends AcsResponse {
 
 			public void setAhasEnabled(Boolean ahasEnabled) {
 				this.ahasEnabled = ahasEnabled;
+			}
+
+			public String getDeployAcrossNodes() {
+				return this.deployAcrossNodes;
+			}
+
+			public void setDeployAcrossNodes(String deployAcrossNodes) {
+				this.deployAcrossNodes = deployAcrossNodes;
 			}
 		}
 	}

@@ -50,6 +50,7 @@ public class ListClusterResponseUnmarshaller {
 			cluster.setUpdateTime(_ctx.longValue("ListClusterResponse.ClusterList["+ i +"].UpdateTime"));
 			cluster.setIaasProvider(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].IaasProvider"));
 			cluster.setCsClusterId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].CsClusterId"));
+			cluster.setResourceGroupId(_ctx.stringValue("ListClusterResponse.ClusterList["+ i +"].ResourceGroupId"));
 
 			clusterList.add(cluster);
 		}

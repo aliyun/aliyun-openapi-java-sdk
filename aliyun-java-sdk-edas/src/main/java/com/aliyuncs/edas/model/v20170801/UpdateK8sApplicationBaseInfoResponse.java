@@ -14,16 +14,15 @@
 
 package com.aliyuncs.edas.model.v20170801;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.ScaleoutApplicationWithNewInstancesResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.UpdateK8sApplicationBaseInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ScaleoutApplicationWithNewInstancesResponse extends AcsResponse {
+public class UpdateK8sApplicationBaseInfoResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,9 +30,7 @@ public class ScaleoutApplicationWithNewInstancesResponse extends AcsResponse {
 
 	private String message;
 
-	private String changeOrderId;
-
-	private List<String> instanceIds;
+	private String result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,25 +56,17 @@ public class ScaleoutApplicationWithNewInstancesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getChangeOrderId() {
-		return this.changeOrderId;
+	public String getResult() {
+		return this.result;
 	}
 
-	public void setChangeOrderId(String changeOrderId) {
-		this.changeOrderId = changeOrderId;
-	}
-
-	public List<String> getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(List<String> instanceIds) {
-		this.instanceIds = instanceIds;
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	@Override
-	public ScaleoutApplicationWithNewInstancesResponse getInstance(UnmarshallerContext context) {
-		return	ScaleoutApplicationWithNewInstancesResponseUnmarshaller.unmarshall(this, context);
+	public UpdateK8sApplicationBaseInfoResponse getInstance(UnmarshallerContext context) {
+		return	UpdateK8sApplicationBaseInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

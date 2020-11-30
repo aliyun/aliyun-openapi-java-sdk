@@ -25,6 +25,8 @@ import com.aliyuncs.edas.Endpoint;
 public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 	   
 
+	private String scheduler;
+
 	private String servicePortInfos;
 
 	private String slbProtocol;
@@ -33,19 +35,32 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 
 	private String appId;
 
+	private String specification;
+
 	private String clusterId;
 
 	private String type;
 
 	private String targetPort;
 	public UpdateK8sSlbRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sSlb", "edas");
+		super("Edas", "2017-08-01", "UpdateK8sSlb", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_slb_binding");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getScheduler() {
+		return this.scheduler;
+	}
+
+	public void setScheduler(String scheduler) {
+		this.scheduler = scheduler;
+		if(scheduler != null){
+			putQueryParameter("Scheduler", scheduler);
+		}
 	}
 
 	public String getServicePortInfos() {
@@ -89,6 +104,17 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getSpecification() {
+		return this.specification;
+	}
+
+	public void setSpecification(String specification) {
+		this.specification = specification;
+		if(specification != null){
+			putQueryParameter("Specification", specification);
 		}
 	}
 

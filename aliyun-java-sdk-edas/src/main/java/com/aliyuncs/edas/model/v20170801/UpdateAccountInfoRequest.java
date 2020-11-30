@@ -31,7 +31,7 @@ public class UpdateAccountInfoRequest extends RoaAcsRequest<UpdateAccountInfoRes
 
 	private String email;
 	public UpdateAccountInfoRequest() {
-		super("Edas", "2017-08-01", "UpdateAccountInfo", "edas");
+		super("Edas", "2017-08-01", "UpdateAccountInfo", "Edas");
 		setUriPattern("/pop/v5/account/edit_account_info");
 		setMethod(MethodType.POST);
 		try {

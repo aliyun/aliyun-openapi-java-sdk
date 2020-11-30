@@ -41,17 +41,21 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String packageVersion;
 
+	private Boolean gray;
+
 	private String appId;
 
 	private String imageUrl;
 
 	private String warUrl;
 
+	private String trafficControlStrategy;
+
 	private String desc;
 
 	private String deployType;
 	public DeployApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployApplication", "edas");
+		super("Edas", "2017-08-01", "DeployApplication", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_deploy");
 		setMethod(MethodType.POST);
 		try {
@@ -148,6 +152,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		}
 	}
 
+	public Boolean getGray() {
+		return this.gray;
+	}
+
+	public void setGray(Boolean gray) {
+		this.gray = gray;
+		if(gray != null){
+			putQueryParameter("Gray", gray.toString());
+		}
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -178,6 +193,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.warUrl = warUrl;
 		if(warUrl != null){
 			putQueryParameter("WarUrl", warUrl);
+		}
+	}
+
+	public String getTrafficControlStrategy() {
+		return this.trafficControlStrategy;
+	}
+
+	public void setTrafficControlStrategy(String trafficControlStrategy) {
+		this.trafficControlStrategy = trafficControlStrategy;
+		if(trafficControlStrategy != null){
+			putQueryParameter("TrafficControlStrategy", trafficControlStrategy);
 		}
 	}
 

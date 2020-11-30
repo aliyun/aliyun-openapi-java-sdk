@@ -33,7 +33,7 @@ public class ListClusterMembersRequest extends RoaAcsRequest<ListClusterMembersR
 
 	private String ecsList;
 	public ListClusterMembersRequest() {
-		super("Edas", "2017-08-01", "ListClusterMembers", "edas");
+		super("Edas", "2017-08-01", "ListClusterMembers", "Edas");
 		setUriPattern("/pop/v5/resource/cluster_member_list");
 		setMethod(MethodType.GET);
 		try {

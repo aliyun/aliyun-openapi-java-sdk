@@ -22,15 +22,17 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
+public class UpdateK8sApplicationBaseInfoRequest extends RoaAcsRequest<UpdateK8sApplicationBaseInfoResponse> {
 	   
 
-	private String resourceGroupId;
+	private String owner;
 
-	private String logicalRegionId;
-	public ListClusterRequest() {
-		super("Edas", "2017-08-01", "ListCluster", "Edas");
-		setUriPattern("/pop/v5/resource/cluster_list");
+	private String appId;
+
+	private String description;
+	public UpdateK8sApplicationBaseInfoRequest() {
+		super("Edas", "2017-08-01", "UpdateK8sApplicationBaseInfo", "Edas");
+		setUriPattern("/pop/v5/oam/update_app_basic_info");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,31 +40,42 @@ public class ListClusterRequest extends RoaAcsRequest<ListClusterResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public String getOwner() {
+		return this.owner;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
+	public void setOwner(String owner) {
+		this.owner = owner;
+		if(owner != null){
+			putQueryParameter("Owner", owner);
 		}
 	}
 
-	public String getLogicalRegionId() {
-		return this.logicalRegionId;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setLogicalRegionId(String logicalRegionId) {
-		this.logicalRegionId = logicalRegionId;
-		if(logicalRegionId != null){
-			putQueryParameter("LogicalRegionId", logicalRegionId);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
 		}
 	}
 
 	@Override
-	public Class<ListClusterResponse> getResponseClass() {
-		return ListClusterResponse.class;
+	public Class<UpdateK8sApplicationBaseInfoResponse> getResponseClass() {
+		return UpdateK8sApplicationBaseInfoResponse.class;
 	}
 
 }

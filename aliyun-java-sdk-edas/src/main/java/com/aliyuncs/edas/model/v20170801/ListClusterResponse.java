@@ -101,6 +101,8 @@ public class ListClusterResponse extends AcsResponse {
 
 		private String csClusterId;
 
+		private String resourceGroupId;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -235,6 +237,14 @@ public class ListClusterResponse extends AcsResponse {
 
 		public void setCsClusterId(String csClusterId) {
 			this.csClusterId = csClusterId;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

@@ -27,7 +27,7 @@ public class InsertServiceGroupRequest extends RoaAcsRequest<InsertServiceGroupR
 
 	private String groupName;
 	public InsertServiceGroupRequest() {
-		super("Edas", "2017-08-01", "InsertServiceGroup", "edas");
+		super("Edas", "2017-08-01", "InsertServiceGroup", "Edas");
 		setUriPattern("/pop/v5/service/serviceGroups");
 		setMethod(MethodType.POST);
 		try {

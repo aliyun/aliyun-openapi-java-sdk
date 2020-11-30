@@ -14,6 +14,9 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.edas.model.v20170801.ScaleoutApplicationWithNewInstancesResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -26,6 +29,12 @@ public class ScaleoutApplicationWithNewInstancesResponseUnmarshaller {
 		scaleoutApplicationWithNewInstancesResponse.setCode(_ctx.integerValue("ScaleoutApplicationWithNewInstancesResponse.Code"));
 		scaleoutApplicationWithNewInstancesResponse.setMessage(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.Message"));
 		scaleoutApplicationWithNewInstancesResponse.setChangeOrderId(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.ChangeOrderId"));
+
+		List<String> instanceIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("ScaleoutApplicationWithNewInstancesResponse.InstanceIds.Length"); i++) {
+			instanceIds.add(_ctx.stringValue("ScaleoutApplicationWithNewInstancesResponse.InstanceIds["+ i +"]"));
+		}
+		scaleoutApplicationWithNewInstancesResponse.setInstanceIds(instanceIds);
 	 
 	 	return scaleoutApplicationWithNewInstancesResponse;
 	}

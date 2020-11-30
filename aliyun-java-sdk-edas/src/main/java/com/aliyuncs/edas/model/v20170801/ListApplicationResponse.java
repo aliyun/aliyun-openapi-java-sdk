@@ -83,6 +83,8 @@ public class ListApplicationResponse extends AcsResponse {
 
 		private Integer runningInstanceCount;
 
+		private String resourceGroupId;
+
 		public String getAppId() {
 			return this.appId;
 		}
@@ -145,6 +147,14 @@ public class ListApplicationResponse extends AcsResponse {
 
 		public void setRunningInstanceCount(Integer runningInstanceCount) {
 			this.runningInstanceCount = runningInstanceCount;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 	}
 

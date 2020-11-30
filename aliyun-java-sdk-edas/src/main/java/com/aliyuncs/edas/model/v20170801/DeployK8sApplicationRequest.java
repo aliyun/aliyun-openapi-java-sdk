@@ -59,6 +59,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String deployAcrossZones;
 
+	private String deployAcrossNodes;
+
 	private Integer memoryRequest;
 
 	private String image;
@@ -101,11 +103,13 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String runtimeClassName;
 
+	private String trafficControlStrategy;
+
 	private String postStart;
 
 	private String javaStartUpConfig;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -298,6 +302,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.deployAcrossZones = deployAcrossZones;
 		if(deployAcrossZones != null){
 			putQueryParameter("DeployAcrossZones", deployAcrossZones);
+		}
+	}
+
+	public String getDeployAcrossNodes() {
+		return this.deployAcrossNodes;
+	}
+
+	public void setDeployAcrossNodes(String deployAcrossNodes) {
+		this.deployAcrossNodes = deployAcrossNodes;
+		if(deployAcrossNodes != null){
+			putQueryParameter("DeployAcrossNodes", deployAcrossNodes);
 		}
 	}
 
@@ -529,6 +544,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.runtimeClassName = runtimeClassName;
 		if(runtimeClassName != null){
 			putQueryParameter("RuntimeClassName", runtimeClassName);
+		}
+	}
+
+	public String getTrafficControlStrategy() {
+		return this.trafficControlStrategy;
+	}
+
+	public void setTrafficControlStrategy(String trafficControlStrategy) {
+		this.trafficControlStrategy = trafficControlStrategy;
+		if(trafficControlStrategy != null){
+			putQueryParameter("TrafficControlStrategy", trafficControlStrategy);
 		}
 	}
 

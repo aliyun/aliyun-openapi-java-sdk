@@ -25,19 +25,32 @@ import com.aliyuncs.edas.Endpoint;
 public class ListApplicationRequest extends RoaAcsRequest<ListApplicationResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String appName;
 
 	private String logicalRegionId;
 
 	private String clusterId;
 	public ListApplicationRequest() {
-		super("Edas", "2017-08-01", "ListApplication", "edas");
+		super("Edas", "2017-08-01", "ListApplication", "Edas");
 		setUriPattern("/pop/v5/app/app_list");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getAppName() {
