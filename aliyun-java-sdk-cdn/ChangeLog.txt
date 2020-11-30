@@ -1,6 +1,9 @@
 2020-11-30 Version: 3.5.9
 - Update SetVideoSeekConfig.
 
+2020-11-30 Version: 3.5.9
+- Update SetVideoSeekConfig.
+
 2020-11-25 Version: 3.5.8
 - Update SetVideoSeekConfig.
 
