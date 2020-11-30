@@ -36,6 +36,7 @@ public class GetGuidePageResponseUnmarshaller {
 			miniShopInfoItem.setBizId(_ctx.stringValue("GetGuidePageResponse.MiniShopInfo["+ i +"].BizId"));
 			miniShopInfoItem.setName(_ctx.stringValue("GetGuidePageResponse.MiniShopInfo["+ i +"].Name"));
 			miniShopInfoItem.setSrc(_ctx.stringValue("GetGuidePageResponse.MiniShopInfo["+ i +"].Src"));
+			miniShopInfoItem.setLiteShopId(_ctx.stringValue("GetGuidePageResponse.MiniShopInfo["+ i +"].LiteShopId"));
 
 			miniShopInfo.add(miniShopInfoItem);
 		}

@@ -73,6 +73,8 @@ public class GetGuidePageResponse extends AcsResponse {
 
 		private String src;
 
+		private String liteShopId;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -95,6 +97,14 @@ public class GetGuidePageResponse extends AcsResponse {
 
 		public void setSrc(String src) {
 			this.src = src;
+		}
+
+		public String getLiteShopId() {
+			return this.liteShopId;
+		}
+
+		public void setLiteShopId(String liteShopId) {
+			this.liteShopId = liteShopId;
 		}
 	}
 
