@@ -1,6 +1,9 @@
 2020-11-30 Version: 2.7.10
 - Add OpenARMS api.
 
+2020-11-30 Version: 2.7.10
+- Add OpenARMS api.
+
 2020-10-15 Version: 2.7.9
 - Add SaveTraceAppConfig api.
 
