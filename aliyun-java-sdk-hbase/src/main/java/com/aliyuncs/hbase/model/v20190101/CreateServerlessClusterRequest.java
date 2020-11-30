@@ -25,6 +25,8 @@ import com.aliyuncs.hbase.Endpoint;
 public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerlessClusterResponse> {
 	   
 
+	private String clientType;
+
 	private String clusterName;
 
 	private String clientToken;
@@ -59,6 +61,17 @@ public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerle
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientType() {
+		return this.clientType;
+	}
+
+	public void setClientType(String clientType) {
+		this.clientType = clientType;
+		if(clientType != null){
+			putQueryParameter("ClientType", clientType);
+		}
 	}
 
 	public String getClusterName() {

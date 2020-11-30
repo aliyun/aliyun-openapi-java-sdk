@@ -1,3 +1,6 @@
+2020-11-30 Version: 2.8.4
+- Add SourceType for severless instance.
+
 2020-11-22 Version: 2.8.3
 - DescribeClusterConnection.
 
