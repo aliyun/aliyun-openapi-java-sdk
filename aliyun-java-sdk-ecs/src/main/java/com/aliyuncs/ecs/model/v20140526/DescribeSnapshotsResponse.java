@@ -33,6 +33,8 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 	private Integer pageSize;
 
+	private String nextToken;
+
 	private List<Snapshot> snapshots;
 
 	public String getRequestId() {
@@ -65,6 +67,14 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
 	}
 
 	public List<Snapshot> getSnapshots() {
@@ -118,6 +128,10 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 		private String category;
 
 		private String snapshotType;
+
+		private Boolean instantAccess;
+
+		private Integer instantAccessRetentionDays;
 
 		private List<Tag> tags;
 
@@ -287,6 +301,22 @@ public class DescribeSnapshotsResponse extends AcsResponse {
 
 		public void setSnapshotType(String snapshotType) {
 			this.snapshotType = snapshotType;
+		}
+
+		public Boolean getInstantAccess() {
+			return this.instantAccess;
+		}
+
+		public void setInstantAccess(Boolean instantAccess) {
+			this.instantAccess = instantAccess;
+		}
+
+		public Integer getInstantAccessRetentionDays() {
+			return this.instantAccessRetentionDays;
+		}
+
+		public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+			this.instantAccessRetentionDays = instantAccessRetentionDays;
 		}
 
 		public List<Tag> getTags() {

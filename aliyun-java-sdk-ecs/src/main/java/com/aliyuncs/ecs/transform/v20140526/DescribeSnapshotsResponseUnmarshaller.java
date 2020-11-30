@@ -31,6 +31,7 @@ public class DescribeSnapshotsResponseUnmarshaller {
 		describeSnapshotsResponse.setTotalCount(_ctx.integerValue("DescribeSnapshotsResponse.TotalCount"));
 		describeSnapshotsResponse.setPageNumber(_ctx.integerValue("DescribeSnapshotsResponse.PageNumber"));
 		describeSnapshotsResponse.setPageSize(_ctx.integerValue("DescribeSnapshotsResponse.PageSize"));
+		describeSnapshotsResponse.setNextToken(_ctx.stringValue("DescribeSnapshotsResponse.NextToken"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnapshotsResponse.Snapshots.Length"); i++) {
@@ -56,6 +57,8 @@ public class DescribeSnapshotsResponseUnmarshaller {
 			snapshot.setKMSKeyId(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].KMSKeyId"));
 			snapshot.setCategory(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Category"));
 			snapshot.setSnapshotType(_ctx.stringValue("DescribeSnapshotsResponse.Snapshots["+ i +"].SnapshotType"));
+			snapshot.setInstantAccess(_ctx.booleanValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstantAccess"));
+			snapshot.setInstantAccessRetentionDays(_ctx.integerValue("DescribeSnapshotsResponse.Snapshots["+ i +"].InstantAccessRetentionDays"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSnapshotsResponse.Snapshots["+ i +"].Tags.Length"); j++) {

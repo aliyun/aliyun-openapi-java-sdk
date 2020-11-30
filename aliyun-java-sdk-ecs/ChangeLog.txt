@@ -1,3 +1,6 @@
+2020-11-30 Version: 4.22.2
+- Support autoPtovisioning whth DiskConfigs.
+
 2020-11-25 Version: 4.22.1
 - Supported Primary NetworkInterface IP for API DescribeInstances.
 

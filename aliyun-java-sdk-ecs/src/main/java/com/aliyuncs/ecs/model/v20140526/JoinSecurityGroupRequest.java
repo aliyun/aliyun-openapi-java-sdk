@@ -36,6 +36,8 @@ public class JoinSecurityGroupRequest extends RpcAcsRequest<JoinSecurityGroupRes
 	private Long ownerId;
 
 	private String instanceId;
+
+	private String networkInterfaceId;
 	public JoinSecurityGroupRequest() {
 		super("Ecs", "2014-05-26", "JoinSecurityGroup", "ecs");
 		setMethod(MethodType.POST);
@@ -108,6 +110,17 @@ public class JoinSecurityGroupRequest extends RpcAcsRequest<JoinSecurityGroupRes
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNetworkInterfaceId() {
+		return this.networkInterfaceId;
+	}
+
+	public void setNetworkInterfaceId(String networkInterfaceId) {
+		this.networkInterfaceId = networkInterfaceId;
+		if(networkInterfaceId != null){
+			putQueryParameter("NetworkInterfaceId", networkInterfaceId);
 		}
 	}
 

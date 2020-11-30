@@ -95,6 +95,8 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		private String category;
 
+		private Boolean instantAccess;
+
 		private Long totalSize;
 
 		private Integer totalCount;
@@ -169,6 +171,14 @@ public class DescribeSnapshotLinksResponse extends AcsResponse {
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public Boolean getInstantAccess() {
+			return this.instantAccess;
+		}
+
+		public void setInstantAccess(Boolean instantAccess) {
+			this.instantAccess = instantAccess;
 		}
 
 		public Long getTotalSize() {

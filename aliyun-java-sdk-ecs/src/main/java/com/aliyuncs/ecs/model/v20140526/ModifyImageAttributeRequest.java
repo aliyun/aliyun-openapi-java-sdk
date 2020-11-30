@@ -35,6 +35,8 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private String imageName;
 
+	private String licenseType;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -105,6 +107,17 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 		this.imageName = imageName;
 		if(imageName != null){
 			putQueryParameter("ImageName", imageName);
+		}
+	}
+
+	public String getLicenseType() {
+		return this.licenseType;
+	}
+
+	public void setLicenseType(String licenseType) {
+		this.licenseType = licenseType;
+		if(licenseType != null){
+			putQueryParameter("LicenseType", licenseType);
 		}
 	}
 

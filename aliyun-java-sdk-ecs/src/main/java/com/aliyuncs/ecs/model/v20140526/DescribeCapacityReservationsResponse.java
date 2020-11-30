@@ -99,6 +99,8 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		private String platform;
 
+		private String timeSlot;
+
 		private List<AllocatedResource> allocatedResources;
 
 		public String getPrivatePoolOptionsId() {
@@ -187,6 +189,14 @@ public class DescribeCapacityReservationsResponse extends AcsResponse {
 
 		public void setPlatform(String platform) {
 			this.platform = platform;
+		}
+
+		public String getTimeSlot() {
+			return this.timeSlot;
+		}
+
+		public void setTimeSlot(String timeSlot) {
+			this.timeSlot = timeSlot;
 		}
 
 		public List<AllocatedResource> getAllocatedResources() {

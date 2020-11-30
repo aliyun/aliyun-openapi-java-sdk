@@ -30,11 +30,15 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 
 	private String clientToken;
 
+	private Boolean instantAccess;
+
 	private String description;
 
 	private String snapshotName;
 
 	private String resourceGroupId;
+
+	private Integer instantAccessRetentionDays;
 
 	private String diskId;
 
@@ -80,6 +84,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		}
 	}
 
+	public Boolean getInstantAccess() {
+		return this.instantAccess;
+	}
+
+	public void setInstantAccess(Boolean instantAccess) {
+		this.instantAccess = instantAccess;
+		if(instantAccess != null){
+			putQueryParameter("InstantAccess", instantAccess.toString());
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -110,6 +125,17 @@ public class CreateSnapshotRequest extends RpcAcsRequest<CreateSnapshotResponse>
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getInstantAccessRetentionDays() {
+		return this.instantAccessRetentionDays;
+	}
+
+	public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+		this.instantAccessRetentionDays = instantAccessRetentionDays;
+		if(instantAccessRetentionDays != null){
+			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
 		}
 	}
 

@@ -46,6 +46,7 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 			capacityReservationItem.setEndTimeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].EndTimeType"));
 			capacityReservationItem.setInstanceChargeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].InstanceChargeType"));
 			capacityReservationItem.setPlatform(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Platform"));
+			capacityReservationItem.setTimeSlot(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].TimeSlot"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {

@@ -34,6 +34,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String autoProvisioningGroupType;
 
+	private String launchConfigurationSystemDiskPerformanceLevel;
+
 	private String resourceGroupId;
 
 	private String launchConfigurationImageId;
@@ -73,6 +75,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private Boolean terminateInstancesWithExpiration;
 
 	private String launchConfigurationUserData;
+
+	private String launchConfigurationCreditSpecification;
 
 	private String launchConfigurationInstanceName;
 
@@ -140,6 +144,7 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 			for (int depth1 = 0; depth1 < launchConfigurationDataDisks.size(); depth1++) {
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Size" , launchConfigurationDataDisks.get(depth1).getSize());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".PerformanceLevel" , launchConfigurationDataDisks.get(depth1).getPerformanceLevel());
 			}
 		}	
 	}
@@ -174,6 +179,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.autoProvisioningGroupType = autoProvisioningGroupType;
 		if(autoProvisioningGroupType != null){
 			putQueryParameter("AutoProvisioningGroupType", autoProvisioningGroupType);
+		}
+	}
+
+	public String getLaunchConfigurationSystemDiskPerformanceLevel() {
+		return this.launchConfigurationSystemDiskPerformanceLevel;
+	}
+
+	public void setLaunchConfigurationSystemDiskPerformanceLevel(String launchConfigurationSystemDiskPerformanceLevel) {
+		this.launchConfigurationSystemDiskPerformanceLevel = launchConfigurationSystemDiskPerformanceLevel;
+		if(launchConfigurationSystemDiskPerformanceLevel != null){
+			putQueryParameter("LaunchConfiguration.SystemDiskPerformanceLevel", launchConfigurationSystemDiskPerformanceLevel);
 		}
 	}
 
@@ -398,6 +414,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchConfigurationUserData = launchConfigurationUserData;
 		if(launchConfigurationUserData != null){
 			putQueryParameter("LaunchConfiguration.UserData", launchConfigurationUserData);
+		}
+	}
+
+	public String getLaunchConfigurationCreditSpecification() {
+		return this.launchConfigurationCreditSpecification;
+	}
+
+	public void setLaunchConfigurationCreditSpecification(String launchConfigurationCreditSpecification) {
+		this.launchConfigurationCreditSpecification = launchConfigurationCreditSpecification;
+		if(launchConfigurationCreditSpecification != null){
+			putQueryParameter("LaunchConfiguration.CreditSpecification", launchConfigurationCreditSpecification);
 		}
 	}
 
@@ -680,6 +707,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private String category;
 
+		private String performanceLevel;
+
 		public Integer getSize() {
 			return this.size;
 		}
@@ -694,6 +723,14 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setCategory(String category) {
 			this.category = category;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 	}
 
