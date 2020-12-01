@@ -29,7 +29,7 @@ public class DescribeApplicationImageRequest extends RoaAcsRequest<DescribeAppli
 
 	private String imageUrl;
 	public DescribeApplicationImageRequest() {
-		super("sae", "2019-05-06", "DescribeApplicationImage", "serverless");
+		super("sae", "2019-05-06", "DescribeApplicationImage");
 		setUriPattern("/pop/v1/sam/container/describeApplicationImage");
 		setMethod(MethodType.GET);
 		try {

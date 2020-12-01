@@ -27,7 +27,7 @@ public class AbortChangeOrderRequest extends RoaAcsRequest<AbortChangeOrderRespo
 
 	private String changeOrderId;
 	public AbortChangeOrderRequest() {
-		super("sae", "2019-05-06", "AbortChangeOrder", "serverless");
+		super("sae", "2019-05-06", "AbortChangeOrder");
 		setUriPattern("/pop/v1/sam/changeorder/AbortChangeOrder");
 		setMethod(MethodType.PUT);
 		try {

@@ -29,7 +29,7 @@ public class DescribeApplicationConfigRequest extends RoaAcsRequest<DescribeAppl
 
 	private String appId;
 	public DescribeApplicationConfigRequest() {
-		super("sae", "2019-05-06", "DescribeApplicationConfig", "serverless");
+		super("sae", "2019-05-06", "DescribeApplicationConfig");
 		setUriPattern("/pop/v1/sam/app/describeApplicationConfig");
 		setMethod(MethodType.GET);
 		try {

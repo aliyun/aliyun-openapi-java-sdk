@@ -27,7 +27,7 @@ public class DescribeConfigMapRequest extends RoaAcsRequest<DescribeConfigMapRes
 
 	private Long configMapId;
 	public DescribeConfigMapRequest() {
-		super("sae", "2019-05-06", "DescribeConfigMap", "serverless");
+		super("sae", "2019-05-06", "DescribeConfigMap");
 		setUriPattern("/pop/v1/sam/configmap/configMap");
 		setMethod(MethodType.GET);
 		try {

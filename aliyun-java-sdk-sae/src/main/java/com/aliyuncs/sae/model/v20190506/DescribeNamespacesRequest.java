@@ -29,7 +29,7 @@ public class DescribeNamespacesRequest extends RoaAcsRequest<DescribeNamespacesR
 
 	private Integer currentPage;
 	public DescribeNamespacesRequest() {
-		super("sae", "2019-05-06", "DescribeNamespaces", "serverless");
+		super("sae", "2019-05-06", "DescribeNamespaces");
 		setUriPattern("/pop/v1/paas/namespaces");
 		setMethod(MethodType.GET);
 		try {

@@ -35,7 +35,7 @@ public class ListApplicationsRequest extends RoaAcsRequest<ListApplicationsRespo
 
 	private String tags;
 	public ListApplicationsRequest() {
-		super("sae", "2019-05-06", "ListApplications", "serverless");
+		super("sae", "2019-05-06", "ListApplications");
 		setUriPattern("/pop/v1/sam/app/listApplications");
 		setMethod(MethodType.GET);
 		try {

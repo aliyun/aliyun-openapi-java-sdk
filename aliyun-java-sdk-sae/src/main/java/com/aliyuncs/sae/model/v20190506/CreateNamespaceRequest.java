@@ -31,7 +31,7 @@ public class CreateNamespaceRequest extends RoaAcsRequest<CreateNamespaceRespons
 
 	private String namespaceId;
 	public CreateNamespaceRequest() {
-		super("sae", "2019-05-06", "CreateNamespace", "serverless");
+		super("sae", "2019-05-06", "CreateNamespace");
 		setUriPattern("/pop/v1/paas/namespace");
 		setMethod(MethodType.POST);
 		try {

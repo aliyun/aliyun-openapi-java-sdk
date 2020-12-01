@@ -25,7 +25,7 @@ import com.aliyuncs.sae.Endpoint;
 public class DescribeEdasContainersRequest extends RoaAcsRequest<DescribeEdasContainersResponse> {
 	   
 	public DescribeEdasContainersRequest() {
-		super("sae", "2019-05-06", "DescribeEdasContainers", "serverless");
+		super("sae", "2019-05-06", "DescribeEdasContainers");
 		setUriPattern("/pop/v1/sam/resource/edasContainers");
 		setMethod(MethodType.GET);
 		try {

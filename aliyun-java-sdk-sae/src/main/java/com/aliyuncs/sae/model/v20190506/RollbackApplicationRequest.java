@@ -35,7 +35,7 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 
 	private String updateStrategy;
 	public RollbackApplicationRequest() {
-		super("sae", "2019-05-06", "RollbackApplication", "serverless");
+		super("sae", "2019-05-06", "RollbackApplication");
 		setUriPattern("/pop/v1/sam/app/rollbackApplication");
 		setMethod(MethodType.PUT);
 		try {

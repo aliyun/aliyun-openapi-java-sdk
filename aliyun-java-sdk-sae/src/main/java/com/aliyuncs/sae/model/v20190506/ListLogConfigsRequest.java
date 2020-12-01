@@ -31,7 +31,7 @@ public class ListLogConfigsRequest extends RoaAcsRequest<ListLogConfigsResponse>
 
 	private Integer currentPage;
 	public ListLogConfigsRequest() {
-		super("sae", "2019-05-06", "ListLogConfigs", "serverless");
+		super("sae", "2019-05-06", "ListLogConfigs");
 		setUriPattern("/pop/v1/sam/log/listLogConfigs");
 		setMethod(MethodType.GET);
 		try {

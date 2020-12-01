@@ -33,7 +33,7 @@ public class DescribeApplicationInstancesRequest extends RoaAcsRequest<DescribeA
 
 	private Integer currentPage;
 	public DescribeApplicationInstancesRequest() {
-		super("sae", "2019-05-06", "DescribeApplicationInstances", "serverless");
+		super("sae", "2019-05-06", "DescribeApplicationInstances");
 		setUriPattern("/pop/v1/sam/app/describeApplicationInstances");
 		setMethod(MethodType.GET);
 		try {

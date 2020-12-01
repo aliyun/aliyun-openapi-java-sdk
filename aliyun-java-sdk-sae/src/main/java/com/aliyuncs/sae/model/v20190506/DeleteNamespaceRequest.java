@@ -27,7 +27,7 @@ public class DeleteNamespaceRequest extends RoaAcsRequest<DeleteNamespaceRespons
 
 	private String namespaceId;
 	public DeleteNamespaceRequest() {
-		super("sae", "2019-05-06", "DeleteNamespace", "serverless");
+		super("sae", "2019-05-06", "DeleteNamespace");
 		setUriPattern("/pop/v1/paas/namespace");
 		setMethod(MethodType.DELETE);
 		try {

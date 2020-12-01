@@ -33,7 +33,7 @@ public class CreateConfigMapRequest extends RoaAcsRequest<CreateConfigMapRespons
 
 	private String description;
 	public CreateConfigMapRequest() {
-		super("sae", "2019-05-06", "CreateConfigMap", "serverless");
+		super("sae", "2019-05-06", "CreateConfigMap");
 		setUriPattern("/pop/v1/sam/configmap/configMap");
 		setMethod(MethodType.POST);
 		try {

@@ -29,7 +29,7 @@ public class UpdateAppSecurityGroupRequest extends RoaAcsRequest<UpdateAppSecuri
 
 	private String securityGroupId;
 	public UpdateAppSecurityGroupRequest() {
-		super("sae", "2019-05-06", "UpdateAppSecurityGroup", "serverless");
+		super("sae", "2019-05-06", "UpdateAppSecurityGroup");
 		setUriPattern("/pop/v1/sam/app/updateAppSecurityGroup");
 		setMethod(MethodType.PUT);
 		try {

@@ -31,7 +31,7 @@ public class UpdateNamespaceRequest extends RoaAcsRequest<UpdateNamespaceRespons
 
 	private String namespaceId;
 	public UpdateNamespaceRequest() {
-		super("sae", "2019-05-06", "UpdateNamespace", "serverless");
+		super("sae", "2019-05-06", "UpdateNamespace");
 		setUriPattern("/pop/v1/paas/namespace");
 		setMethod(MethodType.PUT);
 		try {

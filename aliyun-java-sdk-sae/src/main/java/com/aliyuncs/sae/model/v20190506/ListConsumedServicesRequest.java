@@ -27,7 +27,7 @@ public class ListConsumedServicesRequest extends RoaAcsRequest<ListConsumedServi
 
 	private String appId;
 	public ListConsumedServicesRequest() {
-		super("sae", "2019-05-06", "ListConsumedServices", "serverless");
+		super("sae", "2019-05-06", "ListConsumedServices");
 		setUriPattern("/pop/v1/sam/service/listConsumedServices");
 		setMethod(MethodType.GET);
 		try {

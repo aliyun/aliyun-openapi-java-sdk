@@ -31,7 +31,7 @@ public class UnbindSlbRequest extends RoaAcsRequest<UnbindSlbResponse> {
 
 	private Boolean internet;
 	public UnbindSlbRequest() {
-		super("sae", "2019-05-06", "UnbindSlb", "serverless");
+		super("sae", "2019-05-06", "UnbindSlb");
 		setUriPattern("/pop/v1/sam/app/slb");
 		setMethod(MethodType.DELETE);
 		try {

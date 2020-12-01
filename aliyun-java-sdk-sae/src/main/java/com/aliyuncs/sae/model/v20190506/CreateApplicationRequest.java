@@ -105,7 +105,7 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String postStart;
 	public CreateApplicationRequest() {
-		super("sae", "2019-05-06", "CreateApplication", "serverless");
+		super("sae", "2019-05-06", "CreateApplication");
 		setUriPattern("/pop/v1/sam/app/createApplication");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleAp
 
 	private String cpu;
 	public RescaleApplicationVerticallyRequest() {
-		super("sae", "2019-05-06", "RescaleApplicationVertically", "serverless");
+		super("sae", "2019-05-06", "RescaleApplicationVertically");
 		setUriPattern("/pop/v1/sam/app/rescaleApplicationVertically");
 		setMethod(MethodType.POST);
 		try {

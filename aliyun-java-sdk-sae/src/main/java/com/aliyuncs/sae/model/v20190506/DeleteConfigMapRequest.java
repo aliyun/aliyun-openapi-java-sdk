@@ -27,7 +27,7 @@ public class DeleteConfigMapRequest extends RoaAcsRequest<DeleteConfigMapRespons
 
 	private Long configMapId;
 	public DeleteConfigMapRequest() {
-		super("sae", "2019-05-06", "DeleteConfigMap", "serverless");
+		super("sae", "2019-05-06", "DeleteConfigMap");
 		setUriPattern("/pop/v1/sam/configmap/configMap");
 		setMethod(MethodType.DELETE);
 		try {

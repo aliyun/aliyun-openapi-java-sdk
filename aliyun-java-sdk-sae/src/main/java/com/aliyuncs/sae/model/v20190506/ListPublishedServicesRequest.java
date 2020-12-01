@@ -27,7 +27,7 @@ public class ListPublishedServicesRequest extends RoaAcsRequest<ListPublishedSer
 
 	private String appId;
 	public ListPublishedServicesRequest() {
-		super("sae", "2019-05-06", "ListPublishedServices", "serverless");
+		super("sae", "2019-05-06", "ListPublishedServices");
 		setUriPattern("/pop/v1/sam/service/listPublishedServices");
 		setMethod(MethodType.GET);
 		try {

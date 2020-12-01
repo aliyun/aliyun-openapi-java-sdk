@@ -27,7 +27,7 @@ public class DescribeChangeOrderRequest extends RoaAcsRequest<DescribeChangeOrde
 
 	private String changeOrderId;
 	public DescribeChangeOrderRequest() {
-		super("sae", "2019-05-06", "DescribeChangeOrder", "serverless");
+		super("sae", "2019-05-06", "DescribeChangeOrder");
 		setUriPattern("/pop/v1/sam/changeorder/DescribeChangeOrder");
 		setMethod(MethodType.GET);
 		try {

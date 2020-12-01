@@ -24,27 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeployApplicationResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
-	private String errorCode;
+	private String requestId;
 
 	private String traceId;
 
-	private String requestId;
+	private String errorCode;
+
+	private String code;
 
 	private Boolean success;
 
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -54,12 +46,12 @@ public class DeployApplicationResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTraceId() {
@@ -70,12 +62,20 @@ public class DeployApplicationResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {

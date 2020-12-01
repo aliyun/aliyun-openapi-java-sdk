@@ -33,7 +33,7 @@ public class ListTagResourcesRequest extends RoaAcsRequest<ListTagResourcesRespo
 
 	private String tags;
 	public ListTagResourcesRequest() {
-		super("sae", "2019-05-06", "ListTagResources", "serverless");
+		super("sae", "2019-05-06", "ListTagResources");
 		setUriPattern("/tags");
 		setMethod(MethodType.GET);
 		try {

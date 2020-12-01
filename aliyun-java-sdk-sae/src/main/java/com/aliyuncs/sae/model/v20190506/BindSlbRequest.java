@@ -35,7 +35,7 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 
 	private String internet;
 	public BindSlbRequest() {
-		super("sae", "2019-05-06", "BindSlb", "serverless");
+		super("sae", "2019-05-06", "BindSlb");
 		setUriPattern("/pop/v1/sam/app/slb");
 		setMethod(MethodType.POST);
 		try {

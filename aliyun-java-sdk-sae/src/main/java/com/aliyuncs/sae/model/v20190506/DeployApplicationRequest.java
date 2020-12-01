@@ -37,6 +37,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String commandArgs;
 
+	private String acrAssumeRoleArn;
+
 	private String readiness;
 
 	private String timezone;
@@ -93,7 +95,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String postStart;
 	public DeployApplicationRequest() {
-		super("sae", "2019-05-06", "DeployApplication", "serverless");
+		super("sae", "2019-05-06", "DeployApplication");
 		setUriPattern("/pop/v1/sam/app/deployApplication");
 		setMethod(MethodType.POST);
 		try {
@@ -165,6 +167,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.commandArgs = commandArgs;
 		if(commandArgs != null){
 			putQueryParameter("CommandArgs", commandArgs);
+		}
+	}
+
+	public String getAcrAssumeRoleArn() {
+		return this.acrAssumeRoleArn;
+	}
+
+	public void setAcrAssumeRoleArn(String acrAssumeRoleArn) {
+		this.acrAssumeRoleArn = acrAssumeRoleArn;
+		if(acrAssumeRoleArn != null){
+			putQueryParameter("AcrAssumeRoleArn", acrAssumeRoleArn);
 		}
 	}
 

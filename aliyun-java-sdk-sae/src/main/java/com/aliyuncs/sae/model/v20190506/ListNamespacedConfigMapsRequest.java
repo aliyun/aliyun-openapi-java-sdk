@@ -27,7 +27,7 @@ public class ListNamespacedConfigMapsRequest extends RoaAcsRequest<ListNamespace
 
 	private String namespaceId;
 	public ListNamespacedConfigMapsRequest() {
-		super("sae", "2019-05-06", "ListNamespacedConfigMaps", "serverless");
+		super("sae", "2019-05-06", "ListNamespacedConfigMaps");
 		setUriPattern("/pop/v1/sam/configmap/listNamespacedConfigMaps");
 		setMethod(MethodType.GET);
 		try {

@@ -27,7 +27,7 @@ public class DescribeNamespaceRequest extends RoaAcsRequest<DescribeNamespaceRes
 
 	private String namespaceId;
 	public DescribeNamespaceRequest() {
-		super("sae", "2019-05-06", "DescribeNamespace", "serverless");
+		super("sae", "2019-05-06", "DescribeNamespace");
 		setUriPattern("/pop/v1/paas/namespace");
 		setMethod(MethodType.GET);
 		try {

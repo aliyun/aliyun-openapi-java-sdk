@@ -39,7 +39,7 @@ public class CreateIngressRequest extends RoaAcsRequest<CreateIngressResponse> {
 
 	private String defaultRule;
 	public CreateIngressRequest() {
-		super("sae", "2019-05-06", "CreateIngress", "serverless");
+		super("sae", "2019-05-06", "CreateIngress");
 		setUriPattern("/pop/v1/sam/ingress/Ingress");
 		setMethod(MethodType.POST);
 		try {

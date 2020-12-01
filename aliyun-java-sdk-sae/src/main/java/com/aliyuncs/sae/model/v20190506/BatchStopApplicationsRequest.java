@@ -29,7 +29,7 @@ public class BatchStopApplicationsRequest extends RoaAcsRequest<BatchStopApplica
 
 	private String namespaceId;
 	public BatchStopApplicationsRequest() {
-		super("sae", "2019-05-06", "BatchStopApplications", "serverless");
+		super("sae", "2019-05-06", "BatchStopApplications");
 		setUriPattern("/pop/v1/sam/app/batchStopApplications");
 		setMethod(MethodType.PUT);
 		try {
