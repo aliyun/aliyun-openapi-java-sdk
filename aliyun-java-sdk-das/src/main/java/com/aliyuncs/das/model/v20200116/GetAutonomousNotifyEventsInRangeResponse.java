@@ -14,19 +14,18 @@
 
 package com.aliyuncs.das.model.v20200116;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.GetAutonomousNotifyEventDetailResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetAutonomousNotifyEventsInRangeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
+public class GetAutonomousNotifyEventsInRangeResponse extends AcsResponse {
 
 	private String code;
-
-	private String data;
 
 	private String message;
 
@@ -34,20 +33,14 @@ public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
 
 	private String success;
 
+	private Data data;
+
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	public String getMessage() {
@@ -74,8 +67,69 @@ public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Long total;
+
+		private Long pageNo;
+
+		private Long pageSize;
+
+		private String extra;
+
+		private List<String> list;
+
+		public Long getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Long total) {
+			this.total = total;
+		}
+
+		public Long getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Long pageNo) {
+			this.pageNo = pageNo;
+		}
+
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
+		}
+
+		public String getExtra() {
+			return this.extra;
+		}
+
+		public void setExtra(String extra) {
+			this.extra = extra;
+		}
+
+		public List<String> getList() {
+			return this.list;
+		}
+
+		public void setList(List<String> list) {
+			this.list = list;
+		}
+	}
+
 	@Override
-	public GetAutonomousNotifyEventDetailResponse getInstance(UnmarshallerContext context) {
-		return	GetAutonomousNotifyEventDetailResponseUnmarshaller.unmarshall(this, context);
+	public GetAutonomousNotifyEventsInRangeResponse getInstance(UnmarshallerContext context) {
+		return	GetAutonomousNotifyEventsInRangeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

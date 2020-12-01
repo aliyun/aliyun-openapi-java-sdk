@@ -15,14 +15,14 @@
 package com.aliyuncs.das.model.v20200116;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.das.transform.v20200116.GetAutonomousNotifyEventDetailResponseUnmarshaller;
+import com.aliyuncs.das.transform.v20200116.GetAutonomousNotifyEventContentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
+public class GetAutonomousNotifyEventContentResponse extends AcsResponse {
 
 	private String code;
 
@@ -75,7 +75,7 @@ public class GetAutonomousNotifyEventDetailResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetAutonomousNotifyEventDetailResponse getInstance(UnmarshallerContext context) {
-		return	GetAutonomousNotifyEventDetailResponseUnmarshaller.unmarshall(this, context);
+	public GetAutonomousNotifyEventContentResponse getInstance(UnmarshallerContext context) {
+		return	GetAutonomousNotifyEventContentResponseUnmarshaller.unmarshall(this, context);
 	}
 }

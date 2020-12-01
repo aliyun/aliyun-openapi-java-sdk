@@ -15,7 +15,6 @@
 package com.aliyuncs.das.transform.v20200116;
 
 import com.aliyuncs.das.model.v20200116.GetAutonomousNotifyEventDetailResponse;
-import com.aliyuncs.das.model.v20200116.GetAutonomousNotifyEventDetailResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,14 +24,9 @@ public class GetAutonomousNotifyEventDetailResponseUnmarshaller {
 		
 		getAutonomousNotifyEventDetailResponse.setRequestId(_ctx.stringValue("GetAutonomousNotifyEventDetailResponse.RequestId"));
 		getAutonomousNotifyEventDetailResponse.setCode(_ctx.stringValue("GetAutonomousNotifyEventDetailResponse.Code"));
+		getAutonomousNotifyEventDetailResponse.setData(_ctx.stringValue("GetAutonomousNotifyEventDetailResponse.Data"));
 		getAutonomousNotifyEventDetailResponse.setMessage(_ctx.stringValue("GetAutonomousNotifyEventDetailResponse.Message"));
 		getAutonomousNotifyEventDetailResponse.setSuccess(_ctx.stringValue("GetAutonomousNotifyEventDetailResponse.Success"));
-
-		Data data = new Data();
-		data.setSerialVersionUID(_ctx.longValue("GetAutonomousNotifyEventDetailResponse.Data.SerialVersionUID"));
-		data.setDEFAULT_INITIAL_CAPACITY(_ctx.integerValue("GetAutonomousNotifyEventDetailResponse.Data.DEFAULT_INITIAL_CAPACITY"));
-		data.setMap(_ctx.stringValue("GetAutonomousNotifyEventDetailResponse.Data.Map"));
-		getAutonomousNotifyEventDetailResponse.setData(data);
 	 
 	 	return getAutonomousNotifyEventDetailResponse;
 	}

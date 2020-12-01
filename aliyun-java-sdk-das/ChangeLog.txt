@@ -1,3 +1,6 @@
+2020-12-01 Version: 1.0.5
+- Support new API GetAutonomousNotifyEventsInRange and GetAutonomousNotifyEventContent.
+
 2020-11-30 Version: 1.0.4
 - Supported GetAutonomousNotifyEvents and GetAutonomousNotifyEventDetails.
 
