@@ -1,3 +1,6 @@
+2020-12-01 Version: 1.1.3
+- Fix and optimization.
+
 2020-11-25 Version: 1.1.2
 - Support new features.
 
