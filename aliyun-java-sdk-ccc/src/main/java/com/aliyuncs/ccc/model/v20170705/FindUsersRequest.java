@@ -33,7 +33,7 @@ public class FindUsersRequest extends RpcAcsRequest<FindUsersResponse> {
 
 	private Integer pageSize;
 	public FindUsersRequest() {
-		super("CCC", "2017-07-05", "FindUsers", "CCC");
+		super("CCC", "2017-07-05", "FindUsers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class ListCallMeasureSummaryReportsRequest extends RpcAcsRequest<ListCall
 
 	private String intervalType;
 	public ListCallMeasureSummaryReportsRequest() {
-		super("CCC", "2017-07-05", "ListCallMeasureSummaryReports", "CCC");
+		super("CCC", "2017-07-05", "ListCallMeasureSummaryReports");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

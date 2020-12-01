@@ -33,7 +33,7 @@ public class ListSkillGroupSummaryReportsSinceMidnightRequest extends RpcAcsRequ
 
 	private Integer pageSize;
 	public ListSkillGroupSummaryReportsSinceMidnightRequest() {
-		super("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight", "CCC");
+		super("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

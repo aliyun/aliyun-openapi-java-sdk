@@ -37,7 +37,7 @@ public class ListRecentCallRecordsRequest extends RpcAcsRequest<ListRecentCallRe
 
 	private Integer pageSize;
 	public ListRecentCallRecordsRequest() {
-		super("CCC", "2017-07-05", "ListRecentCallRecords", "CCC");
+		super("CCC", "2017-07-05", "ListRecentCallRecords");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

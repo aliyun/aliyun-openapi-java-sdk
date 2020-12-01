@@ -27,7 +27,7 @@ public class ListContactFlowsRequest extends RpcAcsRequest<ListContactFlowsRespo
 
 	private String instanceId;
 	public ListContactFlowsRequest() {
-		super("CCC", "2017-07-05", "ListContactFlows", "CCC");
+		super("CCC", "2017-07-05", "ListContactFlows");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

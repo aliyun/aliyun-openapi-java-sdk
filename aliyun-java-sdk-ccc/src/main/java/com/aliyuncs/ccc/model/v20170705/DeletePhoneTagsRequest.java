@@ -30,7 +30,7 @@ public class DeletePhoneTagsRequest extends RpcAcsRequest<DeletePhoneTagsRespons
 
 	private List<String> phoneNumberLists;
 	public DeletePhoneTagsRequest() {
-		super("CCC", "2017-07-05", "DeletePhoneTags", "CCC");
+		super("CCC", "2017-07-05", "DeletePhoneTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ModifyPrivacyNumberCallDetailRequest extends RpcAcsRequest<ModifyPr
 
 	private String instanceId;
 	public ModifyPrivacyNumberCallDetailRequest() {
-		super("CCC", "2017-07-05", "ModifyPrivacyNumberCallDetail", "CCC");
+		super("CCC", "2017-07-05", "ModifyPrivacyNumberCallDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

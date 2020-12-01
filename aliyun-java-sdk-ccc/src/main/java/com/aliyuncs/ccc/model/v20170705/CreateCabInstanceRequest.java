@@ -33,7 +33,7 @@ public class CreateCabInstanceRequest extends RpcAcsRequest<CreateCabInstanceRes
 
 	private String instanceDescription;
 	public CreateCabInstanceRequest() {
-		super("CCC", "2017-07-05", "CreateCabInstance", "CCC");
+		super("CCC", "2017-07-05", "CreateCabInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

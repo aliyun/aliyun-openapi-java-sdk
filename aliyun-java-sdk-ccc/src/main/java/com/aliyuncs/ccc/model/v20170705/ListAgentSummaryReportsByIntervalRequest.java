@@ -41,7 +41,7 @@ public class ListAgentSummaryReportsByIntervalRequest extends RpcAcsRequest<List
 
 	private String interval;
 	public ListAgentSummaryReportsByIntervalRequest() {
-		super("CCC", "2017-07-05", "ListAgentSummaryReportsByInterval", "CCC");
+		super("CCC", "2017-07-05", "ListAgentSummaryReportsByInterval");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

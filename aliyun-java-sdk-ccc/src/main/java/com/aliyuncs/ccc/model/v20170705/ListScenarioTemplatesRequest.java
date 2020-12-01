@@ -25,7 +25,7 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListScenarioTemplatesRequest extends RpcAcsRequest<ListScenarioTemplatesResponse> {
 	   
 	public ListScenarioTemplatesRequest() {
-		super("CCC", "2017-07-05", "ListScenarioTemplates", "CCC");
+		super("CCC", "2017-07-05", "ListScenarioTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class RemovePhoneNumberRequest extends RpcAcsRequest<RemovePhoneNumberRes
 
 	private String phoneNumberId;
 	public RemovePhoneNumberRequest() {
-		super("CCC", "2017-07-05", "RemovePhoneNumber", "CCC");
+		super("CCC", "2017-07-05", "RemovePhoneNumber");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class RequestLoginInfoRequest extends RpcAcsRequest<RequestLoginInfoRespo
 
 	private String userId;
 	public RequestLoginInfoRequest() {
-		super("CCC", "2017-07-05", "RequestLoginInfo", "CCC");
+		super("CCC", "2017-07-05", "RequestLoginInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

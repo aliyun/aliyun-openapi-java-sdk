@@ -37,7 +37,7 @@ public class GetAgentDataRequest extends RpcAcsRequest<GetAgentDataResponse> {
 
 	private Integer pageSize;
 	public GetAgentDataRequest() {
-		super("CCC", "2017-07-05", "GetAgentData", "CCC");
+		super("CCC", "2017-07-05", "GetAgentData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

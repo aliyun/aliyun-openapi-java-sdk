@@ -33,7 +33,7 @@ public class SendPredefinedShortMessageRequest extends RpcAcsRequest<SendPredefi
 
 	private String templateParam;
 	public SendPredefinedShortMessageRequest() {
-		super("CCC", "2017-07-05", "SendPredefinedShortMessage", "CCC");
+		super("CCC", "2017-07-05", "SendPredefinedShortMessage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

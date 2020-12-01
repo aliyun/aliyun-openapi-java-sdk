@@ -39,7 +39,7 @@ public class ListAgentSummaryReportsRequest extends RpcAcsRequest<ListAgentSumma
 
 	private Integer pageSize;
 	public ListAgentSummaryReportsRequest() {
-		super("CCC", "2017-07-05", "ListAgentSummaryReports", "CCC");
+		super("CCC", "2017-07-05", "ListAgentSummaryReports");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

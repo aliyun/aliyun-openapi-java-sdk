@@ -34,7 +34,7 @@ public class ModifySkillGroupOutboundNumbersRequest extends RpcAcsRequest<Modify
 
 	private String skillGroupId;
 	public ModifySkillGroupOutboundNumbersRequest() {
-		super("CCC", "2017-07-05", "ModifySkillGroupOutboundNumbers", "CCC");
+		super("CCC", "2017-07-05", "ModifySkillGroupOutboundNumbers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

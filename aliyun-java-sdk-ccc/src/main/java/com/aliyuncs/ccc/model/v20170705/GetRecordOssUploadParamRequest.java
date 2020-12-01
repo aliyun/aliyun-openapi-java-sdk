@@ -29,7 +29,7 @@ public class GetRecordOssUploadParamRequest extends RpcAcsRequest<GetRecordOssUp
 
 	private String fileName;
 	public GetRecordOssUploadParamRequest() {
-		super("CCC", "2017-07-05", "GetRecordOssUploadParam", "CCC");
+		super("CCC", "2017-07-05", "GetRecordOssUploadParam");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

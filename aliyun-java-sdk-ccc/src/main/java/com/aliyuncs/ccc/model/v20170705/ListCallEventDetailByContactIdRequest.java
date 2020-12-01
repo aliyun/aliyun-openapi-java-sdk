@@ -29,7 +29,7 @@ public class ListCallEventDetailByContactIdRequest extends RpcAcsRequest<ListCal
 
 	private String contactId;
 	public ListCallEventDetailByContactIdRequest() {
-		super("CCC", "2017-07-05", "ListCallEventDetailByContactId", "CCC");
+		super("CCC", "2017-07-05", "ListCallEventDetailByContactId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

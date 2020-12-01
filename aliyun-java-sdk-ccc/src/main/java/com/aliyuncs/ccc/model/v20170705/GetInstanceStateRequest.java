@@ -27,7 +27,7 @@ public class GetInstanceStateRequest extends RpcAcsRequest<GetInstanceStateRespo
 
 	private String instanceId;
 	public GetInstanceStateRequest() {
-		super("CCC", "2017-07-05", "GetInstanceState", "CCC");
+		super("CCC", "2017-07-05", "GetInstanceState");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

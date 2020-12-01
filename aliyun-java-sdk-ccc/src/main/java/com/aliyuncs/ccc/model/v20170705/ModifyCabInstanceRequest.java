@@ -35,7 +35,7 @@ public class ModifyCabInstanceRequest extends RpcAcsRequest<ModifyCabInstanceRes
 
 	private String instanceDescription;
 	public ModifyCabInstanceRequest() {
-		super("CCC", "2017-07-05", "ModifyCabInstance", "CCC");
+		super("CCC", "2017-07-05", "ModifyCabInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

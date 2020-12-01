@@ -29,7 +29,7 @@ public class ListTrunksOfSkillGroupRequest extends RpcAcsRequest<ListTrunksOfSki
 
 	private String skillGroupId;
 	public ListTrunksOfSkillGroupRequest() {
-		super("CCC", "2017-07-05", "ListTrunksOfSkillGroup", "CCC");
+		super("CCC", "2017-07-05", "ListTrunksOfSkillGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

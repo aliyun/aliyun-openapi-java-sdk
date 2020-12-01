@@ -29,7 +29,7 @@ public class GetJobStatusByCallIdRequest extends RpcAcsRequest<GetJobStatusByCal
 
 	private String instanceId;
 	public GetJobStatusByCallIdRequest() {
-		super("CCC", "2017-07-05", "GetJobStatusByCallId", "CCC");
+		super("CCC", "2017-07-05", "GetJobStatusByCallId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

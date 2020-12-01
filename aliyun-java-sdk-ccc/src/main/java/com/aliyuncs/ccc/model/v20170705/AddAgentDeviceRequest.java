@@ -35,7 +35,7 @@ public class AddAgentDeviceRequest extends RpcAcsRequest<AddAgentDeviceResponse>
 
 	private String browserVersion;
 	public AddAgentDeviceRequest() {
-		super("CCC", "2017-07-05", "AddAgentDevice", "CCC");
+		super("CCC", "2017-07-05", "AddAgentDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,7 +32,7 @@ public class ModifyPrimaryTrunksOfSkillGroupRequest extends RpcAcsRequest<Modify
 
 	private String skillGroupId;
 	public ModifyPrimaryTrunksOfSkillGroupRequest() {
-		super("CCC", "2017-07-05", "ModifyPrimaryTrunksOfSkillGroup", "CCC");
+		super("CCC", "2017-07-05", "ModifyPrimaryTrunksOfSkillGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

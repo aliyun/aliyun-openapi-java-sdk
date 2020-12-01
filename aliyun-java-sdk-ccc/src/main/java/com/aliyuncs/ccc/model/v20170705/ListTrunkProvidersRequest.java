@@ -25,7 +25,7 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListTrunkProvidersRequest extends RpcAcsRequest<ListTrunkProvidersResponse> {
 	   
 	public ListTrunkProvidersRequest() {
-		super("CCC", "2017-07-05", "ListTrunkProviders", "CCC");
+		super("CCC", "2017-07-05", "ListTrunkProviders");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,7 +28,7 @@ public class DisableTrunkProvidersRequest extends RpcAcsRequest<DisableTrunkProv
 
 	private List<String> providerNames;
 	public DisableTrunkProvidersRequest() {
-		super("CCC", "2017-07-05", "DisableTrunkProviders", "CCC");
+		super("CCC", "2017-07-05", "DisableTrunkProviders");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

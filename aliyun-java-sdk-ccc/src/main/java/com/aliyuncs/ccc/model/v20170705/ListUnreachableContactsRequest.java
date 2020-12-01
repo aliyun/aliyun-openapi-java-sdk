@@ -33,7 +33,7 @@ public class ListUnreachableContactsRequest extends RpcAcsRequest<ListUnreachabl
 
 	private Integer pageSize;
 	public ListUnreachableContactsRequest() {
-		super("CCC", "2017-07-05", "ListUnreachableContacts", "CCC");
+		super("CCC", "2017-07-05", "ListUnreachableContacts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

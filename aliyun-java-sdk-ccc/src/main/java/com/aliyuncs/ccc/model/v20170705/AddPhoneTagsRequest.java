@@ -44,7 +44,7 @@ public class AddPhoneTagsRequest extends RpcAcsRequest<AddPhoneTagsResponse> {
 
 	private String regionNameCity;
 	public AddPhoneTagsRequest() {
-		super("CCC", "2017-07-05", "AddPhoneTags", "CCC");
+		super("CCC", "2017-07-05", "AddPhoneTags");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

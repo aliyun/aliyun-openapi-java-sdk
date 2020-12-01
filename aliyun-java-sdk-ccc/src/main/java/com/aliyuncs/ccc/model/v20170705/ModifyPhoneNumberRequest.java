@@ -36,7 +36,7 @@ public class ModifyPhoneNumberRequest extends RpcAcsRequest<ModifyPhoneNumberRes
 
 	private List<String> skillGroupIds;
 	public ModifyPhoneNumberRequest() {
-		super("CCC", "2017-07-05", "ModifyPhoneNumber", "CCC");
+		super("CCC", "2017-07-05", "ModifyPhoneNumber");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteJobGroupRequest extends RpcAcsRequest<DeleteJobGroupResponse>
 
 	private String jobGroupId;
 	public DeleteJobGroupRequest() {
-		super("CCC", "2017-07-05", "DeleteJobGroup", "CCC");
+		super("CCC", "2017-07-05", "DeleteJobGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

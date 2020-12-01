@@ -29,7 +29,7 @@ public class DownloadOriginalStatisticsReportRequest extends RpcAcsRequest<Downl
 
 	private String jobGroupId;
 	public DownloadOriginalStatisticsReportRequest() {
-		super("CCC", "2017-07-05", "DownloadOriginalStatisticsReport", "CCC");
+		super("CCC", "2017-07-05", "DownloadOriginalStatisticsReport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

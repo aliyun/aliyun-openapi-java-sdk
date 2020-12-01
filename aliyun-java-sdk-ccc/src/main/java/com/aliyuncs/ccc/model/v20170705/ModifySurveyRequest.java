@@ -49,7 +49,7 @@ public class ModifySurveyRequest extends RpcAcsRequest<ModifySurveyResponse> {
 
 	private String flowId;
 	public ModifySurveyRequest() {
-		super("CCC", "2017-07-05", "ModifySurvey", "CCC");
+		super("CCC", "2017-07-05", "ModifySurvey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

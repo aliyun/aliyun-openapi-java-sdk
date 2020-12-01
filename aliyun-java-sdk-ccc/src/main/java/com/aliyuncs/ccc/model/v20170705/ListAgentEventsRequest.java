@@ -36,7 +36,7 @@ public class ListAgentEventsRequest extends RpcAcsRequest<ListAgentEventsRespons
 
 	private List<String> events;
 	public ListAgentEventsRequest() {
-		super("CCC", "2017-07-05", "ListAgentEvents", "CCC");
+		super("CCC", "2017-07-05", "ListAgentEvents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

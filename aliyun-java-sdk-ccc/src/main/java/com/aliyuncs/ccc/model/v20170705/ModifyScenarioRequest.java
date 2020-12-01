@@ -35,7 +35,7 @@ public class ModifyScenarioRequest extends RpcAcsRequest<ModifyScenarioResponse>
 
 	private String scenarioId;
 	public ModifyScenarioRequest() {
-		super("CCC", "2017-07-05", "ModifyScenario", "CCC");
+		super("CCC", "2017-07-05", "ModifyScenario");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

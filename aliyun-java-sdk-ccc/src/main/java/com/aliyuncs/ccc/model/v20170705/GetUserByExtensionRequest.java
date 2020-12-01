@@ -29,7 +29,7 @@ public class GetUserByExtensionRequest extends RpcAcsRequest<GetUserByExtensionR
 
 	private String instanceId;
 	public GetUserByExtensionRequest() {
-		super("CCC", "2017-07-05", "GetUserByExtension", "CCC");
+		super("CCC", "2017-07-05", "GetUserByExtension");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

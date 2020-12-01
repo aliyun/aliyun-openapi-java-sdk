@@ -37,7 +37,7 @@ public class ListAgentStateLogsRequest extends RpcAcsRequest<ListAgentStateLogsR
 
 	private Integer pageSize;
 	public ListAgentStateLogsRequest() {
-		super("CCC", "2017-07-05", "ListAgentStateLogs", "CCC");
+		super("CCC", "2017-07-05", "ListAgentStateLogs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class AddBulkPhoneNumbersRequest extends RpcAcsRequest<AddBulkPhoneNumber
 
 	private List<String> skillGroupIds;
 	public AddBulkPhoneNumbersRequest() {
-		super("CCC", "2017-07-05", "AddBulkPhoneNumbers", "CCC");
+		super("CCC", "2017-07-05", "AddBulkPhoneNumbers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

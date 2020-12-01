@@ -30,7 +30,7 @@ public class ResetUserStatusRequest extends RpcAcsRequest<ResetUserStatusRespons
 
 	private List<Long> ramIdLists;
 	public ResetUserStatusRequest() {
-		super("CCC", "2017-07-05", "ResetUserStatus", "CCC");
+		super("CCC", "2017-07-05", "ResetUserStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

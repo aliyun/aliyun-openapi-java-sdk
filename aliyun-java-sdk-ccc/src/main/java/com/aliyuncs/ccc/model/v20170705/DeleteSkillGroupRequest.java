@@ -29,7 +29,7 @@ public class DeleteSkillGroupRequest extends RpcAcsRequest<DeleteSkillGroupRespo
 
 	private String skillGroupId;
 	public DeleteSkillGroupRequest() {
-		super("CCC", "2017-07-05", "DeleteSkillGroup", "CCC");
+		super("CCC", "2017-07-05", "DeleteSkillGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

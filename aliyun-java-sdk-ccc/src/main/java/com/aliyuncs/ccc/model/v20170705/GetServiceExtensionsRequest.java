@@ -29,7 +29,7 @@ public class GetServiceExtensionsRequest extends RpcAcsRequest<GetServiceExtensi
 
 	private String instanceId;
 	public GetServiceExtensionsRequest() {
-		super("CCC", "2017-07-05", "GetServiceExtensions", "CCC");
+		super("CCC", "2017-07-05", "GetServiceExtensions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

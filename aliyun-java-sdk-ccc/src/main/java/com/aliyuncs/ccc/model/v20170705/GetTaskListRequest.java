@@ -29,7 +29,7 @@ public class GetTaskListRequest extends RpcAcsRequest<GetTaskListResponse> {
 
 	private String instanceId;
 	public GetTaskListRequest() {
-		super("CCC", "2017-07-05", "GetTaskList", "CCC");
+		super("CCC", "2017-07-05", "GetTaskList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

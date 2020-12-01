@@ -27,7 +27,7 @@ public class ListTransferableSkillGroupsRequest extends RpcAcsRequest<ListTransf
 
 	private String instanceId;
 	public ListTransferableSkillGroupsRequest() {
-		super("CCC", "2017-07-05", "ListTransferableSkillGroups", "CCC");
+		super("CCC", "2017-07-05", "ListTransferableSkillGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

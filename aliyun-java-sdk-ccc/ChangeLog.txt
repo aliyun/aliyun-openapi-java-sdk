@@ -1,3 +1,6 @@
+2020-12-01 Version: 1.0.24
+- Fixed bugs for CCC.
+
 2020-10-29 Version: 1.0.23
 - Add new open api.
 

@@ -31,7 +31,7 @@ public class GetSurveyRequest extends RpcAcsRequest<GetSurveyResponse> {
 
 	private String scenarioId;
 	public GetSurveyRequest() {
-		super("CCC", "2017-07-05", "GetSurvey", "CCC");
+		super("CCC", "2017-07-05", "GetSurvey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

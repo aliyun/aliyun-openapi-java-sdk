@@ -45,7 +45,7 @@ public class ListJobStatusRequest extends RpcAcsRequest<ListJobStatusResponse> {
 
 	private String scenarioId;
 	public ListJobStatusRequest() {
-		super("CCC", "2017-07-05", "ListJobStatus", "CCC");
+		super("CCC", "2017-07-05", "ListJobStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

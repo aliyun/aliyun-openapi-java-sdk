@@ -29,7 +29,7 @@ public class DownloadUnreachableContactsRequest extends RpcAcsRequest<DownloadUn
 
 	private String jobGroupId;
 	public DownloadUnreachableContactsRequest() {
-		super("CCC", "2017-07-05", "DownloadUnreachableContacts", "CCC");
+		super("CCC", "2017-07-05", "DownloadUnreachableContacts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

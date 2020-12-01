@@ -35,7 +35,7 @@ public class ListJobGroupsRequest extends RpcAcsRequest<ListJobGroupsResponse> {
 
 	private Integer pageSize;
 	public ListJobGroupsRequest() {
-		super("CCC", "2017-07-05", "ListJobGroups", "CCC");
+		super("CCC", "2017-07-05", "ListJobGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

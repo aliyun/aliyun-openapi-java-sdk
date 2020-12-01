@@ -37,7 +37,7 @@ public class GetJobListRequest extends RpcAcsRequest<GetJobListResponse> {
 
 	private Integer status;
 	public GetJobListRequest() {
-		super("CCC", "2017-07-05", "GetJobList", "CCC");
+		super("CCC", "2017-07-05", "GetJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class GetInstanceSummaryReportByIntervalRequest extends RpcAcsRequest<Get
 
 	private String interval;
 	public GetInstanceSummaryReportByIntervalRequest() {
-		super("CCC", "2017-07-05", "GetInstanceSummaryReportByInterval", "CCC");
+		super("CCC", "2017-07-05", "GetInstanceSummaryReportByInterval");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

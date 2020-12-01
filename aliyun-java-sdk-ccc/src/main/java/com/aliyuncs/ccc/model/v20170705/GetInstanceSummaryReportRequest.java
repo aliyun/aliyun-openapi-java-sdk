@@ -35,7 +35,7 @@ public class GetInstanceSummaryReportRequest extends RpcAcsRequest<GetInstanceSu
 
 	private Integer pageSize;
 	public GetInstanceSummaryReportRequest() {
-		super("CCC", "2017-07-05", "GetInstanceSummaryReport", "CCC");
+		super("CCC", "2017-07-05", "GetInstanceSummaryReport");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

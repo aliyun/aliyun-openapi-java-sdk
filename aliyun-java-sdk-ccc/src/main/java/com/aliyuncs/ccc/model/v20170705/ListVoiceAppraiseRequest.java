@@ -27,7 +27,7 @@ public class ListVoiceAppraiseRequest extends RpcAcsRequest<ListVoiceAppraiseRes
 
 	private String instanceId;
 	public ListVoiceAppraiseRequest() {
-		super("CCC", "2017-07-05", "ListVoiceAppraise", "CCC");
+		super("CCC", "2017-07-05", "ListVoiceAppraise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

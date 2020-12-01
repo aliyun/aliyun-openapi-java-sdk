@@ -31,7 +31,7 @@ public class DeleteSurveyRequest extends RpcAcsRequest<DeleteSurveyResponse> {
 
 	private String scenarioId;
 	public DeleteSurveyRequest() {
-		super("CCC", "2017-07-05", "DeleteSurvey", "CCC");
+		super("CCC", "2017-07-05", "DeleteSurvey");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
