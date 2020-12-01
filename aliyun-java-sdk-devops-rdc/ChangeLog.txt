@@ -1,3 +1,6 @@
+2020-12-01 Version: 1.0.8.RELEASE
+- Add task api.
+
 2020-12-01 Version: 1.0.8
 - Add task api.
 
