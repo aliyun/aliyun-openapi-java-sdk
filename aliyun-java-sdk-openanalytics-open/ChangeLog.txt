@@ -1,3 +1,6 @@
+2020-12-01 Version: 2.0.2
+- Supported Open Api.
+
 2020-11-12 Version: 2.0.0
 - Supported Open Api.
 
