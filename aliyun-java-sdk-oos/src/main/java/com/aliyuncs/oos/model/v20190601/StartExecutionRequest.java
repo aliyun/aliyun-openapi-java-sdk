@@ -43,6 +43,8 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 
 	private Map<Object,Object> tags;
 
+	private String templateContent;
+
 	private String parentExecutionId;
 
 	private String parameters;
@@ -140,6 +142,17 @@ public class StartExecutionRequest extends RpcAcsRequest<StartExecutionResponse>
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", new Gson().toJson(tags));
+		}
+	}
+
+	public String getTemplateContent() {
+		return this.templateContent;
+	}
+
+	public void setTemplateContent(String templateContent) {
+		this.templateContent = templateContent;
+		if(templateContent != null){
+			putQueryParameter("TemplateContent", templateContent);
 		}
 	}
 
