@@ -34,11 +34,11 @@ public class SegmentHeadResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("SegmentHeadResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setImageURL(_ctx.stringValue("SegmentHeadResponse.Data.Elements["+ i +"].ImageURL"));
 			element.setX(_ctx.integerValue("SegmentHeadResponse.Data.Elements["+ i +"].X"));
 			element.setY(_ctx.integerValue("SegmentHeadResponse.Data.Elements["+ i +"].Y"));
-			element.setWidth(_ctx.integerValue("SegmentHeadResponse.Data.Elements["+ i +"].Width"));
+			element.setImageURL(_ctx.stringValue("SegmentHeadResponse.Data.Elements["+ i +"].ImageURL"));
 			element.setHeight(_ctx.integerValue("SegmentHeadResponse.Data.Elements["+ i +"].Height"));
+			element.setWidth(_ctx.integerValue("SegmentHeadResponse.Data.Elements["+ i +"].Width"));
 
 			elements.add(element);
 		}

@@ -59,23 +59,15 @@ public class SegmentHeadResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String imageURL;
-
 			private Integer x;
 
 			private Integer y;
 
-			private Integer width;
+			private String imageURL;
 
 			private Integer height;
 
-			public String getImageURL() {
-				return this.imageURL;
-			}
-
-			public void setImageURL(String imageURL) {
-				this.imageURL = imageURL;
-			}
+			private Integer width;
 
 			public Integer getX() {
 				return this.x;
@@ -93,12 +85,12 @@ public class SegmentHeadResponse extends AcsResponse {
 				this.y = y;
 			}
 
-			public Integer getWidth() {
-				return this.width;
+			public String getImageURL() {
+				return this.imageURL;
 			}
 
-			public void setWidth(Integer width) {
-				this.width = width;
+			public void setImageURL(String imageURL) {
+				this.imageURL = imageURL;
 			}
 
 			public Integer getHeight() {
@@ -107,6 +99,14 @@ public class SegmentHeadResponse extends AcsResponse {
 
 			public void setHeight(Integer height) {
 				this.height = height;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 		}
 	}
