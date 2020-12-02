@@ -26,7 +26,7 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dBInstanceName;
+	private String dBClusterId;
 
 	private String dBVersion;
 
@@ -48,12 +48,12 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public String getDBVersion() {

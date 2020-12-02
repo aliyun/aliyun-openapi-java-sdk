@@ -23,7 +23,7 @@ public class DescribeDBClusterVersionResponseUnmarshaller {
 	public static DescribeDBClusterVersionResponse unmarshall(DescribeDBClusterVersionResponse describeDBClusterVersionResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterVersionResponse.setRequestId(_ctx.stringValue("DescribeDBClusterVersionResponse.RequestId"));
-		describeDBClusterVersionResponse.setDBInstanceName(_ctx.stringValue("DescribeDBClusterVersionResponse.DBInstanceName"));
+		describeDBClusterVersionResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterVersionResponse.DBClusterId"));
 		describeDBClusterVersionResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersion"));
 		describeDBClusterVersionResponse.setDBMinorVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBMinorVersion"));
 		describeDBClusterVersionResponse.setDBRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersion"));

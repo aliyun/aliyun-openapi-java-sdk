@@ -1,3 +1,8 @@
+2020-12-02 Version: 1.8.0
+- Support CreateDBLink for polardb oracle.
+- Support DeleteDBLink for polardb oracle.
+- Support DescribeDBLinks for polardb oracle.
+
 2020-11-25 Version: 1.7.9
 - Support DescribeDBClusterVersion.
 
