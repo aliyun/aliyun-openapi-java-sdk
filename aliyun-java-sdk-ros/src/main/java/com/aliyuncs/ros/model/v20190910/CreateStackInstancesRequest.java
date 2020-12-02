@@ -30,11 +30,15 @@ public class CreateStackInstancesRequest extends RpcAcsRequest<CreateStackInstan
 
 	private String clientToken;
 
+	private Long timeoutInMinutes;
+
 	private String stackGroupName;
 
 	private String operationDescription;
 
 	private Map<Object,Object> operationPreferences;
+
+	private Boolean disableRollback;
 
 	private List<Object> regionIds;
 
@@ -58,6 +62,17 @@ public class CreateStackInstancesRequest extends RpcAcsRequest<CreateStackInstan
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Long getTimeoutInMinutes() {
+		return this.timeoutInMinutes;
+	}
+
+	public void setTimeoutInMinutes(Long timeoutInMinutes) {
+		this.timeoutInMinutes = timeoutInMinutes;
+		if(timeoutInMinutes != null){
+			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
 		}
 	}
 
@@ -91,6 +106,17 @@ public class CreateStackInstancesRequest extends RpcAcsRequest<CreateStackInstan
 		this.operationPreferences = operationPreferences;
 		if(operationPreferences != null){
 			putQueryParameter("OperationPreferences", new Gson().toJson(operationPreferences));
+		}
+	}
+
+	public Boolean getDisableRollback() {
+		return this.disableRollback;
+	}
+
+	public void setDisableRollback(Boolean disableRollback) {
+		this.disableRollback = disableRollback;
+		if(disableRollback != null){
+			putQueryParameter("DisableRollback", disableRollback.toString());
 		}
 	}
 

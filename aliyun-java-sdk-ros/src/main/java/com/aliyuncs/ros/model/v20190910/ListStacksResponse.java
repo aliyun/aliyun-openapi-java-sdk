@@ -101,6 +101,8 @@ public class ListStacksResponse extends AcsResponse {
 
 		private String driftDetectionTime;
 
+		private String stackType;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -195,6 +197,14 @@ public class ListStacksResponse extends AcsResponse {
 
 		public void setDriftDetectionTime(String driftDetectionTime) {
 			this.driftDetectionTime = driftDetectionTime;
+		}
+
+		public String getStackType() {
+			return this.stackType;
+		}
+
+		public void setStackType(String stackType) {
+			this.stackType = stackType;
 		}
 	}
 

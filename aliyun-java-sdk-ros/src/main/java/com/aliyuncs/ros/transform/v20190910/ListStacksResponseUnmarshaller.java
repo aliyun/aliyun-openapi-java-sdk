@@ -46,6 +46,7 @@ public class ListStacksResponseUnmarshaller {
 			stack.setUpdateTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].UpdateTime"));
 			stack.setStackDriftStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackDriftStatus"));
 			stack.setDriftDetectionTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].DriftDetectionTime"));
+			stack.setStackType(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackType"));
 
 			stacks.add(stack);
 		}

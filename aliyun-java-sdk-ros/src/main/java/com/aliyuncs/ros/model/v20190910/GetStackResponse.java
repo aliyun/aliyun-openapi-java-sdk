@@ -62,6 +62,8 @@ public class GetStackResponse extends AcsResponse {
 
 	private String rootStackId;
 
+	private String stackType;
+
 	private List<Parameter> parameters;
 
 	private List<Map<Object,Object>> outputs;
@@ -210,6 +212,14 @@ public class GetStackResponse extends AcsResponse {
 
 	public void setRootStackId(String rootStackId) {
 		this.rootStackId = rootStackId;
+	}
+
+	public String getStackType() {
+		return this.stackType;
+	}
+
+	public void setStackType(String stackType) {
+		this.stackType = stackType;
 	}
 
 	public List<Parameter> getParameters() {

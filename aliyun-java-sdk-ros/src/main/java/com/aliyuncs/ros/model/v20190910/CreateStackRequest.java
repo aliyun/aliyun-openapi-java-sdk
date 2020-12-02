@@ -48,6 +48,8 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String ramRoleName;
 
+	private String createOption;
+
 	private String stackPolicyURL;
 	public CreateStackRequest() {
 		super("ROS", "2019-09-10", "CreateStack", "ros");
@@ -181,6 +183,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.ramRoleName = ramRoleName;
 		if(ramRoleName != null){
 			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public String getCreateOption() {
+		return this.createOption;
+	}
+
+	public void setCreateOption(String createOption) {
+		this.createOption = createOption;
+		if(createOption != null){
+			putQueryParameter("CreateOption", createOption);
 		}
 	}
 

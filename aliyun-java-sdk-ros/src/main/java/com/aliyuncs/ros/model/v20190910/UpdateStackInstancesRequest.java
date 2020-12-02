@@ -30,6 +30,8 @@ public class UpdateStackInstancesRequest extends RpcAcsRequest<UpdateStackInstan
 
 	private String clientToken;
 
+	private Long timeoutInMinutes;
+
 	private String stackGroupName;
 
 	private String operationDescription;
@@ -58,6 +60,17 @@ public class UpdateStackInstancesRequest extends RpcAcsRequest<UpdateStackInstan
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Long getTimeoutInMinutes() {
+		return this.timeoutInMinutes;
+	}
+
+	public void setTimeoutInMinutes(Long timeoutInMinutes) {
+		this.timeoutInMinutes = timeoutInMinutes;
+		if(timeoutInMinutes != null){
+			putQueryParameter("TimeoutInMinutes", timeoutInMinutes.toString());
 		}
 	}
 

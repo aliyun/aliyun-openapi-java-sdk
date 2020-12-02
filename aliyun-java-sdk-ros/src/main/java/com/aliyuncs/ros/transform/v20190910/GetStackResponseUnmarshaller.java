@@ -45,6 +45,7 @@ public class GetStackResponseUnmarshaller {
 		getStackResponse.setRamRoleName(_ctx.stringValue("GetStackResponse.RamRoleName"));
 		getStackResponse.setDeletionProtection(_ctx.stringValue("GetStackResponse.DeletionProtection"));
 		getStackResponse.setRootStackId(_ctx.stringValue("GetStackResponse.RootStackId"));
+		getStackResponse.setStackType(_ctx.stringValue("GetStackResponse.StackType"));
 
 		List<Map<Object, Object>> outputs = _ctx.listMapValue("GetStackResponse.Outputs");
 		getStackResponse.setOutputs(outputs);
