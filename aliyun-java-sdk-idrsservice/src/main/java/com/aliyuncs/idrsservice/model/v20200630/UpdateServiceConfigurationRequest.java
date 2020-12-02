@@ -25,6 +25,10 @@ import com.aliyuncs.idrsservice.Endpoint;
 public class UpdateServiceConfigurationRequest extends RpcAcsRequest<UpdateServiceConfigurationResponse> {
 	   
 
+	private Integer liveRecordMaxClient;
+
+	private Integer liveRecordVideoResolution;
+
 	private Integer taskItemQueueSize;
 
 	private Integer liveRecordLayout;
@@ -43,6 +47,28 @@ public class UpdateServiceConfigurationRequest extends RpcAcsRequest<UpdateServi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getLiveRecordMaxClient() {
+		return this.liveRecordMaxClient;
+	}
+
+	public void setLiveRecordMaxClient(Integer liveRecordMaxClient) {
+		this.liveRecordMaxClient = liveRecordMaxClient;
+		if(liveRecordMaxClient != null){
+			putQueryParameter("LiveRecordMaxClient", liveRecordMaxClient.toString());
+		}
+	}
+
+	public Integer getLiveRecordVideoResolution() {
+		return this.liveRecordVideoResolution;
+	}
+
+	public void setLiveRecordVideoResolution(Integer liveRecordVideoResolution) {
+		this.liveRecordVideoResolution = liveRecordVideoResolution;
+		if(liveRecordVideoResolution != null){
+			putQueryParameter("LiveRecordVideoResolution", liveRecordVideoResolution.toString());
+		}
 	}
 
 	public Integer getTaskItemQueueSize() {

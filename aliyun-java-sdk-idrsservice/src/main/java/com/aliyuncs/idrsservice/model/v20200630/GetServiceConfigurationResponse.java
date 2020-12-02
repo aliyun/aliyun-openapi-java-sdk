@@ -78,6 +78,10 @@ public class GetServiceConfigurationResponse extends AcsResponse {
 
 		private Integer taskItemQueueSize;
 
+		private Integer liveRecordMaxClient;
+
+		private Integer liveRecordVideoResolution;
+
 		public Integer getClientQueueSize() {
 			return this.clientQueueSize;
 		}
@@ -124,6 +128,22 @@ public class GetServiceConfigurationResponse extends AcsResponse {
 
 		public void setTaskItemQueueSize(Integer taskItemQueueSize) {
 			this.taskItemQueueSize = taskItemQueueSize;
+		}
+
+		public Integer getLiveRecordMaxClient() {
+			return this.liveRecordMaxClient;
+		}
+
+		public void setLiveRecordMaxClient(Integer liveRecordMaxClient) {
+			this.liveRecordMaxClient = liveRecordMaxClient;
+		}
+
+		public Integer getLiveRecordVideoResolution() {
+			return this.liveRecordVideoResolution;
+		}
+
+		public void setLiveRecordVideoResolution(Integer liveRecordVideoResolution) {
+			this.liveRecordVideoResolution = liveRecordVideoResolution;
 		}
 	}
 

@@ -28,6 +28,8 @@ public class ExitLiveRequest extends RpcAcsRequest<ExitLiveResponse> {
 	private String channel;
 
 	private String userId;
+
+	private String rtcCode;
 	public ExitLiveRequest() {
 		super("idrsservice", "2020-06-30", "ExitLive", "idrsservice");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class ExitLiveRequest extends RpcAcsRequest<ExitLiveResponse> {
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getRtcCode() {
+		return this.rtcCode;
+	}
+
+	public void setRtcCode(String rtcCode) {
+		this.rtcCode = rtcCode;
+		if(rtcCode != null){
+			putQueryParameter("RtcCode", rtcCode);
 		}
 	}
 

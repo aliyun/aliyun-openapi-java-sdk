@@ -15,6 +15,7 @@
 package com.aliyuncs.idrsservice.model.v20200630;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.idrsservice.Endpoint;
 
@@ -22,16 +23,12 @@ import com.aliyuncs.idrsservice.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinLiveRequest extends RpcAcsRequest<JoinLiveResponse> {
+public class GetModelSignedUrlRequest extends RpcAcsRequest<GetModelSignedUrlResponse> {
 	   
 
-	private String channel;
-
-	private String userId;
-
-	private String rtcCode;
-	public JoinLiveRequest() {
-		super("idrsservice", "2020-06-30", "JoinLive", "idrsservice");
+	private List<String> modelPaths;
+	public GetModelSignedUrlRequest() {
+		super("idrsservice", "2020-06-30", "GetModelSignedUrl", "idrsservice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +36,22 @@ public class JoinLiveRequest extends RpcAcsRequest<JoinLiveResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getChannel() {
-		return this.channel;
+	public List<String> getModelPaths() {
+		return this.modelPaths;
 	}
 
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("Channel", channel);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getRtcCode() {
-		return this.rtcCode;
-	}
-
-	public void setRtcCode(String rtcCode) {
-		this.rtcCode = rtcCode;
-		if(rtcCode != null){
-			putQueryParameter("RtcCode", rtcCode);
-		}
+	public void setModelPaths(List<String> modelPaths) {
+		this.modelPaths = modelPaths;	
+		if (modelPaths != null) {
+			for (int i = 0; i < modelPaths.size(); i++) {
+				putBodyParameter("ModelPath." + (i + 1) , modelPaths.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<JoinLiveResponse> getResponseClass() {
-		return JoinLiveResponse.class;
+	public Class<GetModelSignedUrlResponse> getResponseClass() {
+		return GetModelSignedUrlResponse.class;
 	}
 
 }

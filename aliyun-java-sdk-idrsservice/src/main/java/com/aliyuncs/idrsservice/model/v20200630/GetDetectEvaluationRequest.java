@@ -22,16 +22,14 @@ import com.aliyuncs.idrsservice.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinLiveRequest extends RpcAcsRequest<JoinLiveResponse> {
+public class GetDetectEvaluationRequest extends RpcAcsRequest<GetDetectEvaluationResponse> {
 	   
 
-	private String channel;
+	private String endTime;
 
-	private String userId;
-
-	private String rtcCode;
-	public JoinLiveRequest() {
-		super("idrsservice", "2020-06-30", "JoinLive", "idrsservice");
+	private String startTime;
+	public GetDetectEvaluationRequest() {
+		super("idrsservice", "2020-06-30", "GetDetectEvaluation", "idrsservice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class JoinLiveRequest extends RpcAcsRequest<JoinLiveResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getChannel() {
-		return this.channel;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("Channel", channel);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getRtcCode() {
-		return this.rtcCode;
-	}
-
-	public void setRtcCode(String rtcCode) {
-		this.rtcCode = rtcCode;
-		if(rtcCode != null){
-			putQueryParameter("RtcCode", rtcCode);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
 		}
 	}
 
 	@Override
-	public Class<JoinLiveResponse> getResponseClass() {
-		return JoinLiveResponse.class;
+	public Class<GetDetectEvaluationResponse> getResponseClass() {
+		return GetDetectEvaluationResponse.class;
 	}
 
 }

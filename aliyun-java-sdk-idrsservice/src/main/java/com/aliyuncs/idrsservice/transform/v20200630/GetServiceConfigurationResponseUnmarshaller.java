@@ -34,6 +34,8 @@ public class GetServiceConfigurationResponseUnmarshaller {
 		data.setLiveRecordLayout(_ctx.integerValue("GetServiceConfigurationResponse.Data.LiveRecordLayout"));
 		data.setLiveRecordTaskProfile(_ctx.stringValue("GetServiceConfigurationResponse.Data.LiveRecordTaskProfile"));
 		data.setTaskItemQueueSize(_ctx.integerValue("GetServiceConfigurationResponse.Data.TaskItemQueueSize"));
+		data.setLiveRecordMaxClient(_ctx.integerValue("GetServiceConfigurationResponse.Data.LiveRecordMaxClient"));
+		data.setLiveRecordVideoResolution(_ctx.integerValue("GetServiceConfigurationResponse.Data.LiveRecordVideoResolution"));
 		getServiceConfigurationResponse.setData(data);
 	 
 	 	return getServiceConfigurationResponse;

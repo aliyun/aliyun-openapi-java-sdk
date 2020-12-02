@@ -22,36 +22,17 @@ import com.aliyuncs.idrsservice.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateLiveRequest extends RpcAcsRequest<CreateLiveResponse> {
+public class GetSlrConfigurationRequest extends RpcAcsRequest<GetSlrConfigurationResponse> {
 	   
 
-	private String clientToken;
-
 	private String userId;
-
-	private String rtcCode;
-
-	private String appId;
-
-	private String name;
-	public CreateLiveRequest() {
-		super("idrsservice", "2020-06-30", "CreateLive", "idrsservice");
+	public GetSlrConfigurationRequest() {
+		super("idrsservice", "2020-06-30", "GetSlrConfiguration", "idrsservice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getUserId() {
@@ -65,42 +46,9 @@ public class CreateLiveRequest extends RpcAcsRequest<CreateLiveResponse> {
 		}
 	}
 
-	public String getRtcCode() {
-		return this.rtcCode;
-	}
-
-	public void setRtcCode(String rtcCode) {
-		this.rtcCode = rtcCode;
-		if(rtcCode != null){
-			putQueryParameter("RtcCode", rtcCode);
-		}
-	}
-
-	public String getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	@Override
-	public Class<CreateLiveResponse> getResponseClass() {
-		return CreateLiveResponse.class;
+	public Class<GetSlrConfigurationResponse> getResponseClass() {
+		return GetSlrConfigurationResponse.class;
 	}
 
 }

@@ -22,16 +22,12 @@ import com.aliyuncs.idrsservice.Endpoint;
  * @author auto create
  * @version 
  */
-public class JoinLiveRequest extends RpcAcsRequest<JoinLiveResponse> {
+public class GetSignedUrlRequest extends RpcAcsRequest<GetSignedUrlResponse> {
 	   
 
-	private String channel;
-
-	private String userId;
-
-	private String rtcCode;
-	public JoinLiveRequest() {
-		super("idrsservice", "2020-06-30", "JoinLive", "idrsservice");
+	private String fileUrl;
+	public GetSignedUrlRequest() {
+		super("idrsservice", "2020-06-30", "GetSignedUrl", "idrsservice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class JoinLiveRequest extends RpcAcsRequest<JoinLiveResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getChannel() {
-		return this.channel;
+	public String getFileUrl() {
+		return this.fileUrl;
 	}
 
-	public void setChannel(String channel) {
-		this.channel = channel;
-		if(channel != null){
-			putQueryParameter("Channel", channel);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
-		}
-	}
-
-	public String getRtcCode() {
-		return this.rtcCode;
-	}
-
-	public void setRtcCode(String rtcCode) {
-		this.rtcCode = rtcCode;
-		if(rtcCode != null){
-			putQueryParameter("RtcCode", rtcCode);
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+		if(fileUrl != null){
+			putBodyParameter("FileUrl", fileUrl);
 		}
 	}
 
 	@Override
-	public Class<JoinLiveResponse> getResponseClass() {
-		return JoinLiveResponse.class;
+	public Class<GetSignedUrlResponse> getResponseClass() {
+		return GetSignedUrlResponse.class;
 	}
 
 }
