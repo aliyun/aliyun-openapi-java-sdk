@@ -22,20 +22,22 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDialogueFlowRequest extends RpcAcsRequest<ModifyDialogueFlowResponse> {
+public class DescribeTTSDemoRequest extends RpcAcsRequest<DescribeTTSDemoResponse> {
 	   
 
-	private Boolean isDrafted;
+	private String voice;
+
+	private Integer volume;
 
 	private String scriptId;
 
 	private String instanceId;
 
-	private String dialogueFlowDefinition;
+	private String text;
 
-	private String dialogueFlowId;
-	public ModifyDialogueFlowRequest() {
-		super("OutboundBot", "2019-12-26", "ModifyDialogueFlow", "outboundbot");
+	private Integer speechRate;
+	public DescribeTTSDemoRequest() {
+		super("OutboundBot", "2019-12-26", "DescribeTTSDemo", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +45,25 @@ public class ModifyDialogueFlowRequest extends RpcAcsRequest<ModifyDialogueFlowR
 		} catch (Exception e) {}
 	}
 
-	public Boolean getIsDrafted() {
-		return this.isDrafted;
+	public String getVoice() {
+		return this.voice;
 	}
 
-	public void setIsDrafted(Boolean isDrafted) {
-		this.isDrafted = isDrafted;
-		if(isDrafted != null){
-			putQueryParameter("IsDrafted", isDrafted.toString());
+	public void setVoice(String voice) {
+		this.voice = voice;
+		if(voice != null){
+			putQueryParameter("Voice", voice);
+		}
+	}
+
+	public Integer getVolume() {
+		return this.volume;
+	}
+
+	public void setVolume(Integer volume) {
+		this.volume = volume;
+		if(volume != null){
+			putQueryParameter("Volume", volume.toString());
 		}
 	}
 
@@ -76,31 +89,31 @@ public class ModifyDialogueFlowRequest extends RpcAcsRequest<ModifyDialogueFlowR
 		}
 	}
 
-	public String getDialogueFlowDefinition() {
-		return this.dialogueFlowDefinition;
+	public String getText() {
+		return this.text;
 	}
 
-	public void setDialogueFlowDefinition(String dialogueFlowDefinition) {
-		this.dialogueFlowDefinition = dialogueFlowDefinition;
-		if(dialogueFlowDefinition != null){
-			putQueryParameter("DialogueFlowDefinition", dialogueFlowDefinition);
+	public void setText(String text) {
+		this.text = text;
+		if(text != null){
+			putQueryParameter("Text", text);
 		}
 	}
 
-	public String getDialogueFlowId() {
-		return this.dialogueFlowId;
+	public Integer getSpeechRate() {
+		return this.speechRate;
 	}
 
-	public void setDialogueFlowId(String dialogueFlowId) {
-		this.dialogueFlowId = dialogueFlowId;
-		if(dialogueFlowId != null){
-			putQueryParameter("DialogueFlowId", dialogueFlowId);
+	public void setSpeechRate(Integer speechRate) {
+		this.speechRate = speechRate;
+		if(speechRate != null){
+			putQueryParameter("SpeechRate", speechRate.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyDialogueFlowResponse> getResponseClass() {
-		return ModifyDialogueFlowResponse.class;
+	public Class<DescribeTTSDemoResponse> getResponseClass() {
+		return DescribeTTSDemoResponse.class;
 	}
 
 }
