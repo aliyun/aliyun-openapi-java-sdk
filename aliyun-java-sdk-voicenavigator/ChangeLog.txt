@@ -1,3 +1,6 @@
+2020-12-02 Version: 1.1.1
+- Update version.
+
 2020-02-24 Version: 1.1.0
 - Generated 2018-06-12 for `VoiceNavigator`.
 

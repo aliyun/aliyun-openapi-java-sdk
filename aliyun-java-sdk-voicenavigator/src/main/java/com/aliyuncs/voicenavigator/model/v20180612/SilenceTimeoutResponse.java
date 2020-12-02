@@ -24,39 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SilenceTimeoutResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String textResponse;
-
-	private Boolean interruptible;
-
 	private String action;
 
 	private String actionParams;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private Boolean interruptible;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
-	public String getTextResponse() {
-		return this.textResponse;
-	}
-
-	public void setTextResponse(String textResponse) {
-		this.textResponse = textResponse;
-	}
-
-	public Boolean getInterruptible() {
-		return this.interruptible;
-	}
-
-	public void setInterruptible(Boolean interruptible) {
-		this.interruptible = interruptible;
-	}
+	private String textResponse;
 
 	public String getAction() {
 		return this.action;
@@ -72,6 +48,30 @@ public class SilenceTimeoutResponse extends AcsResponse {
 
 	public void setActionParams(String actionParams) {
 		this.actionParams = actionParams;
+	}
+
+	public Boolean getInterruptible() {
+		return this.interruptible;
+	}
+
+	public void setInterruptible(Boolean interruptible) {
+		this.interruptible = interruptible;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTextResponse() {
+		return this.textResponse;
+	}
+
+	public void setTextResponse(String textResponse) {
+		this.textResponse = textResponse;
 	}
 
 	@Override

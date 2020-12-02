@@ -25,15 +25,15 @@ import com.aliyuncs.voicenavigator.Endpoint;
 public class DebugBeginDialogueRequest extends RpcAcsRequest<DebugBeginDialogueResponse> {
 	   
 
+	private String conversationId;
+
+	private String initialContext;
+
 	private String callingNumber;
 
 	private String instanceId;
 
 	private String calledNumber;
-
-	private String conversationId;
-
-	private String initialContext;
 	public DebugBeginDialogueRequest() {
 		super("VoiceNavigator", "2018-06-12", "DebugBeginDialogue", "voicebot");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class DebugBeginDialogueRequest extends RpcAcsRequest<DebugBeginDialogueR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getConversationId() {
+		return this.conversationId;
+	}
+
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
+		if(conversationId != null){
+			putQueryParameter("ConversationId", conversationId);
+		}
+	}
+
+	public String getInitialContext() {
+		return this.initialContext;
+	}
+
+	public void setInitialContext(String initialContext) {
+		this.initialContext = initialContext;
+		if(initialContext != null){
+			putQueryParameter("InitialContext", initialContext);
+		}
 	}
 
 	public String getCallingNumber() {
@@ -73,28 +95,6 @@ public class DebugBeginDialogueRequest extends RpcAcsRequest<DebugBeginDialogueR
 		this.calledNumber = calledNumber;
 		if(calledNumber != null){
 			putQueryParameter("CalledNumber", calledNumber);
-		}
-	}
-
-	public String getConversationId() {
-		return this.conversationId;
-	}
-
-	public void setConversationId(String conversationId) {
-		this.conversationId = conversationId;
-		if(conversationId != null){
-			putQueryParameter("ConversationId", conversationId);
-		}
-	}
-
-	public String getInitialContext() {
-		return this.initialContext;
-	}
-
-	public void setInitialContext(String initialContext) {
-		this.initialContext = initialContext;
-		if(initialContext != null){
-			putQueryParameter("InitialContext", initialContext);
 		}
 	}
 

@@ -23,10 +23,10 @@ public class SilenceTimeoutResponseUnmarshaller {
 	public static SilenceTimeoutResponse unmarshall(SilenceTimeoutResponse silenceTimeoutResponse, UnmarshallerContext _ctx) {
 		
 		silenceTimeoutResponse.setRequestId(_ctx.stringValue("SilenceTimeoutResponse.RequestId"));
-		silenceTimeoutResponse.setTextResponse(_ctx.stringValue("SilenceTimeoutResponse.TextResponse"));
-		silenceTimeoutResponse.setInterruptible(_ctx.booleanValue("SilenceTimeoutResponse.Interruptible"));
 		silenceTimeoutResponse.setAction(_ctx.stringValue("SilenceTimeoutResponse.Action"));
 		silenceTimeoutResponse.setActionParams(_ctx.stringValue("SilenceTimeoutResponse.ActionParams"));
+		silenceTimeoutResponse.setInterruptible(_ctx.booleanValue("SilenceTimeoutResponse.Interruptible"));
+		silenceTimeoutResponse.setTextResponse(_ctx.stringValue("SilenceTimeoutResponse.TextResponse"));
 	 
 	 	return silenceTimeoutResponse;
 	}
