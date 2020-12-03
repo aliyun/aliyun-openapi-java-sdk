@@ -1,3 +1,6 @@
+2020-12-03 Version: 2.2.1
+- Update DescribeScdnDomainCertificateInfo.
+
 2020-12-03 Version: 2.2.0
 - Update DescribeScdnDomainCertificateInfo.
 
