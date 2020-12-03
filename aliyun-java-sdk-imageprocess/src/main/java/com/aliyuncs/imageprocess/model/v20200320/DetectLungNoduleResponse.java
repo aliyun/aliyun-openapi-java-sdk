@@ -61,6 +61,8 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 			private String seriesInstanceUid;
 
+			private String report;
+
 			private List<Element> elements;
 
 			private List<Float> origin;
@@ -73,6 +75,14 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 			public void setSeriesInstanceUid(String seriesInstanceUid) {
 				this.seriesInstanceUid = seriesInstanceUid;
+			}
+
+			public String getReport() {
+				return this.report;
+			}
+
+			public void setReport(String report) {
+				this.report = report;
 			}
 
 			public List<Element> getElements() {
@@ -124,6 +134,10 @@ public class DetectLungNoduleResponse extends AcsResponse {
 				private Float imageZ;
 
 				private String sOPInstanceUID;
+
+				private Float volume;
+
+				private Float meanValue;
 
 				public String getCategory() {
 					return this.category;
@@ -219,6 +233,22 @@ public class DetectLungNoduleResponse extends AcsResponse {
 
 				public void setSOPInstanceUID(String sOPInstanceUID) {
 					this.sOPInstanceUID = sOPInstanceUID;
+				}
+
+				public Float getVolume() {
+					return this.volume;
+				}
+
+				public void setVolume(Float volume) {
+					this.volume = volume;
+				}
+
+				public Float getMeanValue() {
+					return this.meanValue;
+				}
+
+				public void setMeanValue(Float meanValue) {
+					this.meanValue = meanValue;
 				}
 			}
 		}

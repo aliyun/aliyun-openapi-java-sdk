@@ -36,6 +36,7 @@ public class DetectLungNoduleResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series.Length"); i++) {
 			Serie serie = new Serie();
 			serie.setSeriesInstanceUid(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].SeriesInstanceUid"));
+			serie.setReport(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Report"));
 
 			List<Float> origin = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLungNoduleResponse.Data.Series["+ i +"].Origin.Length"); j++) {
@@ -64,6 +65,8 @@ public class DetectLungNoduleResponseUnmarshaller {
 				element.setImageY(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageY"));
 				element.setImageZ(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].ImageZ"));
 				element.setSOPInstanceUID(_ctx.stringValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].SOPInstanceUID"));
+				element.setVolume(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].Volume"));
+				element.setMeanValue(_ctx.floatValue("DetectLungNoduleResponse.Data.Series["+ i +"].Elements["+ j +"].MeanValue"));
 
 				elements.add(element);
 			}
