@@ -4,6 +4,9 @@
 2020-12-03 Version: 1.0.0
 - Supported ListIpGeolocations for user.
 
+2020-12-03 Version: 1.0.0
+- Supported ListIpGeolocations for user.
+
 2019-06-13 Version: 1.0.0
 Add Network Assistant openapi sdk
 
