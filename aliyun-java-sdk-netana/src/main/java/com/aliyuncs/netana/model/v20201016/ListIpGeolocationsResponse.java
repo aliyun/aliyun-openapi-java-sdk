@@ -27,7 +27,7 @@ public class ListIpGeolocationsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer nextToken;
+	private String nextToken;
 
 	private Integer totalCount;
 
@@ -43,11 +43,11 @@ public class ListIpGeolocationsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getNextToken() {
+	public String getNextToken() {
 		return this.nextToken;
 	}
 
-	public void setNextToken(Integer nextToken) {
+	public void setNextToken(String nextToken) {
 		this.nextToken = nextToken;
 	}
 

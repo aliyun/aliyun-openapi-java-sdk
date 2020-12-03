@@ -27,7 +27,7 @@ public class ListIpGeolocationsResponseUnmarshaller {
 	public static ListIpGeolocationsResponse unmarshall(ListIpGeolocationsResponse listIpGeolocationsResponse, UnmarshallerContext _ctx) {
 		
 		listIpGeolocationsResponse.setRequestId(_ctx.stringValue("ListIpGeolocationsResponse.RequestId"));
-		listIpGeolocationsResponse.setNextToken(_ctx.integerValue("ListIpGeolocationsResponse.NextToken"));
+		listIpGeolocationsResponse.setNextToken(_ctx.stringValue("ListIpGeolocationsResponse.NextToken"));
 		listIpGeolocationsResponse.setTotalCount(_ctx.integerValue("ListIpGeolocationsResponse.TotalCount"));
 		listIpGeolocationsResponse.setMaxResults(_ctx.integerValue("ListIpGeolocationsResponse.MaxResults"));
 
