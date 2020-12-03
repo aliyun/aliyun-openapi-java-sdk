@@ -27,11 +27,15 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 
 	private String startTime;
 
+	private String cycle;
+
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
+
+	private String timePoint;
 	public DescribeDomainMax95BpsDataRequest() {
 		super("Cdn", "2014-11-11", "DescribeDomainMax95BpsData");
 		setMethod(MethodType.POST);
@@ -49,6 +53,17 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getCycle() {
+		return this.cycle;
+	}
+
+	public void setCycle(String cycle) {
+		this.cycle = cycle;
+		if(cycle != null){
+			putQueryParameter("Cycle", cycle);
 		}
 	}
 
@@ -82,6 +97,17 @@ public class DescribeDomainMax95BpsDataRequest extends RpcAcsRequest<DescribeDom
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getTimePoint() {
+		return this.timePoint;
+	}
+
+	public void setTimePoint(String timePoint) {
+		this.timePoint = timePoint;
+		if(timePoint != null){
+			putQueryParameter("TimePoint", timePoint);
 		}
 	}
 
