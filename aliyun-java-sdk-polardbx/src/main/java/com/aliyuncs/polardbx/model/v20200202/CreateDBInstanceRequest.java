@@ -25,15 +25,17 @@ import com.aliyuncs.polardbx.Endpoint;
 public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceResponse> {
 	   
 
+	private String networkType;
+
+	private String engineVersion;
+
 	private String resourceGroupId;
 
 	private String dBNodeClass;
 
-	private String dBInstanceDescription;
-
 	private String period;
 
-	private String securityIPList;
+	private Boolean isReadDBInstance;
 
 	private String vSwitchId;
 
@@ -41,7 +43,7 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String zoneId;
 
-	private String instanceNetworkType;
+	private String primaryDBInstanceName;
 
 	private String clientToken;
 
@@ -59,6 +61,28 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putQueryParameter("NetworkType", networkType);
+		}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
 	}
 
 	public String getResourceGroupId() {
@@ -83,17 +107,6 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getDBInstanceDescription() {
-		return this.dBInstanceDescription;
-	}
-
-	public void setDBInstanceDescription(String dBInstanceDescription) {
-		this.dBInstanceDescription = dBInstanceDescription;
-		if(dBInstanceDescription != null){
-			putQueryParameter("DBInstanceDescription", dBInstanceDescription);
-		}
-	}
-
 	public String getPeriod() {
 		return this.period;
 	}
@@ -105,14 +118,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getSecurityIPList() {
-		return this.securityIPList;
+	public Boolean getIsReadDBInstance() {
+		return this.isReadDBInstance;
 	}
 
-	public void setSecurityIPList(String securityIPList) {
-		this.securityIPList = securityIPList;
-		if(securityIPList != null){
-			putQueryParameter("SecurityIPList", securityIPList);
+	public void setIsReadDBInstance(Boolean isReadDBInstance) {
+		this.isReadDBInstance = isReadDBInstance;
+		if(isReadDBInstance != null){
+			putQueryParameter("IsReadDBInstance", isReadDBInstance.toString());
 		}
 	}
 
@@ -149,14 +162,14 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		}
 	}
 
-	public String getInstanceNetworkType() {
-		return this.instanceNetworkType;
+	public String getPrimaryDBInstanceName() {
+		return this.primaryDBInstanceName;
 	}
 
-	public void setInstanceNetworkType(String instanceNetworkType) {
-		this.instanceNetworkType = instanceNetworkType;
-		if(instanceNetworkType != null){
-			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+	public void setPrimaryDBInstanceName(String primaryDBInstanceName) {
+		this.primaryDBInstanceName = primaryDBInstanceName;
+		if(primaryDBInstanceName != null){
+			putQueryParameter("PrimaryDBInstanceName", primaryDBInstanceName);
 		}
 	}
 

@@ -41,10 +41,11 @@ public class DescribeTasksResponseUnmarshaller {
 			taskProgressInfo.setTaskAction(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskAction"));
 			taskProgressInfo.setTaskId(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskId"));
 			taskProgressInfo.setProgress(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Progress"));
-			taskProgressInfo.setExpectedFinishTime(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ExpectedFinishTime"));
+			taskProgressInfo.setFinishTime1(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].FinishTime"));
 			taskProgressInfo.setStatus(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].Status"));
 			taskProgressInfo.setTaskErrorCode(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorCode"));
 			taskProgressInfo.setTaskErrorMessage(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].TaskErrorMessage"));
+			taskProgressInfo.setScaleOutToken(_ctx.stringValue("DescribeTasksResponse.Items["+ i +"].ScaleOutToken"));
 
 			items.add(taskProgressInfo);
 		}

@@ -15,18 +15,16 @@
 package com.aliyuncs.polardbx.model.v20200202;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardbx.transform.v20200202.ModifyDBInstanceClassResponseUnmarshaller;
+import com.aliyuncs.polardbx.transform.v20200202.CancelPolarxOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceClassResponse extends AcsResponse {
+public class CancelPolarxOrderResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +34,9 @@ public class ModifyDBInstanceClassResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public ModifyDBInstanceClassResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBInstanceClassResponseUnmarshaller.unmarshall(this, context);
+	public CancelPolarxOrderResponse getInstance(UnmarshallerContext context) {
+		return	CancelPolarxOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

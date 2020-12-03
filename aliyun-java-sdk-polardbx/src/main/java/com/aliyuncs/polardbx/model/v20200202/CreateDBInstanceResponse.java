@@ -30,10 +30,6 @@ public class CreateDBInstanceResponse extends AcsResponse {
 
 	private String orderId;
 
-	private String connectionString;
-
-	private Integer port;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -56,22 +52,6 @@ public class CreateDBInstanceResponse extends AcsResponse {
 
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-	}
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
 	}
 
 	@Override

@@ -14,19 +14,20 @@
 
 package com.aliyuncs.polardbx.model.v20200202;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardbx.transform.v20200202.ModifyDBInstanceClassResponseUnmarshaller;
+import com.aliyuncs.polardbx.transform.v20200202.CreatePolarxOrderResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceClassResponse extends AcsResponse {
+public class CreatePolarxOrderResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderId;
+	private List<OrderResult> orderResultList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +37,40 @@ public class ModifyDBInstanceClassResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public List<OrderResult> getOrderResultList() {
+		return this.orderResultList;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setOrderResultList(List<OrderResult> orderResultList) {
+		this.orderResultList = orderResultList;
+	}
+
+	public static class OrderResult {
+
+		private Long orderId;
+
+		private String dBInstanceName;
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
+		}
+
+		public String getDBInstanceName() {
+			return this.dBInstanceName;
+		}
+
+		public void setDBInstanceName(String dBInstanceName) {
+			this.dBInstanceName = dBInstanceName;
+		}
 	}
 
 	@Override
-	public ModifyDBInstanceClassResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBInstanceClassResponseUnmarshaller.unmarshall(this, context);
+	public CreatePolarxOrderResponse getInstance(UnmarshallerContext context) {
+		return	CreatePolarxOrderResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -91,13 +91,15 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		private String progress;
 
-		private String expectedFinishTime;
+		private String finishTime1;
 
 		private String status;
 
 		private String taskErrorCode;
 
 		private String taskErrorMessage;
+
+		private String scaleOutToken;
 
 		public String getDBName() {
 			return this.dBName;
@@ -155,12 +157,12 @@ public class DescribeTasksResponse extends AcsResponse {
 			this.progress = progress;
 		}
 
-		public String getExpectedFinishTime() {
-			return this.expectedFinishTime;
+		public String getFinishTime1() {
+			return this.finishTime1;
 		}
 
-		public void setExpectedFinishTime(String expectedFinishTime) {
-			this.expectedFinishTime = expectedFinishTime;
+		public void setFinishTime1(String finishTime1) {
+			this.finishTime1 = finishTime1;
 		}
 
 		public String getStatus() {
@@ -185,6 +187,14 @@ public class DescribeTasksResponse extends AcsResponse {
 
 		public void setTaskErrorMessage(String taskErrorMessage) {
 			this.taskErrorMessage = taskErrorMessage;
+		}
+
+		public String getScaleOutToken() {
+			return this.scaleOutToken;
+		}
+
+		public void setScaleOutToken(String scaleOutToken) {
+			this.scaleOutToken = scaleOutToken;
 		}
 	}
 
