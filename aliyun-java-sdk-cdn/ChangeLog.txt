@@ -1,6 +1,9 @@
 2020-12-03 Version: 3.6.0
 - Update DescribeDomainMax95BpsData.
 
+2020-12-03 Version: 3.6.0
+- Update DescribeDomainMax95BpsData.
+
 2020-11-30 Version: 3.5.9
 - Update SetVideoSeekConfig.
 
