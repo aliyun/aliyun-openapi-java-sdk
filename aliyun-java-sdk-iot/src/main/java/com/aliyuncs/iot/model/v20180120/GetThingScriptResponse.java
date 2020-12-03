@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.GetSpeechModelResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.GetThingScriptResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetSpeechModelResponse extends AcsResponse {
+public class GetThingScriptResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,79 +76,29 @@ public class GetSpeechModelResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String code;
+		private String scriptType;
 
-		private String bizCode;
+		private String scriptUrl;
 
-		private String voice;
-
-		private Integer volume;
-
-		private Integer speechRate;
-
-		private String text;
-
-		private String audioFormat;
-
-		public String getCode() {
-			return this.code;
+		public String getScriptType() {
+			return this.scriptType;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setScriptType(String scriptType) {
+			this.scriptType = scriptType;
 		}
 
-		public String getBizCode() {
-			return this.bizCode;
+		public String getScriptUrl() {
+			return this.scriptUrl;
 		}
 
-		public void setBizCode(String bizCode) {
-			this.bizCode = bizCode;
-		}
-
-		public String getVoice() {
-			return this.voice;
-		}
-
-		public void setVoice(String voice) {
-			this.voice = voice;
-		}
-
-		public Integer getVolume() {
-			return this.volume;
-		}
-
-		public void setVolume(Integer volume) {
-			this.volume = volume;
-		}
-
-		public Integer getSpeechRate() {
-			return this.speechRate;
-		}
-
-		public void setSpeechRate(Integer speechRate) {
-			this.speechRate = speechRate;
-		}
-
-		public String getText() {
-			return this.text;
-		}
-
-		public void setText(String text) {
-			this.text = text;
-		}
-
-		public String getAudioFormat() {
-			return this.audioFormat;
-		}
-
-		public void setAudioFormat(String audioFormat) {
-			this.audioFormat = audioFormat;
+		public void setScriptUrl(String scriptUrl) {
+			this.scriptUrl = scriptUrl;
 		}
 	}
 
 	@Override
-	public GetSpeechModelResponse getInstance(UnmarshallerContext context) {
-		return	GetSpeechModelResponseUnmarshaller.unmarshall(this, context);
+	public GetThingScriptResponse getInstance(UnmarshallerContext context) {
+		return	GetThingScriptResponseUnmarshaller.unmarshall(this, context);
 	}
 }

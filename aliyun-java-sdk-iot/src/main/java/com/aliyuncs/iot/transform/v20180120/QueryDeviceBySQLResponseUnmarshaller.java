@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.iot.model.v20180120.QueryDeviceBySQLResponse;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceBySQLResponse.SimpleDeviceSearchInfo;
+import com.aliyuncs.iot.model.v20180120.QueryDeviceBySQLResponse.SimpleDeviceSearchInfo.OTAModuleInfo;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceBySQLResponse.SimpleDeviceSearchInfo.SimpleDeviceGroupInfo;
 import com.aliyuncs.iot.model.v20180120.QueryDeviceBySQLResponse.SimpleDeviceSearchInfo.TagInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -64,6 +65,16 @@ public class QueryDeviceBySQLResponseUnmarshaller {
 				tags.add(tagInfo);
 			}
 			simpleDeviceSearchInfo.setTags(tags);
+
+			List<OTAModuleInfo> oTAModules = new ArrayList<OTAModuleInfo>();
+			for (int j = 0; j < _ctx.lengthValue("QueryDeviceBySQLResponse.Data["+ i +"].OTAModules.Length"); j++) {
+				OTAModuleInfo oTAModuleInfo = new OTAModuleInfo();
+				oTAModuleInfo.setModuleName(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].OTAModules["+ j +"].ModuleName"));
+				oTAModuleInfo.setFirmwareVersion(_ctx.stringValue("QueryDeviceBySQLResponse.Data["+ i +"].OTAModules["+ j +"].FirmwareVersion"));
+
+				oTAModules.add(oTAModuleInfo);
+			}
+			simpleDeviceSearchInfo.setOTAModules(oTAModules);
 
 			data.add(simpleDeviceSearchInfo);
 		}

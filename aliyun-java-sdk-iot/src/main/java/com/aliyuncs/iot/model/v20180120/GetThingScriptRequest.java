@@ -22,32 +22,19 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryThingModelExtendConfigPublishedRequest extends RpcAcsRequest<QueryThingModelExtendConfigPublishedResponse> {
+public class GetThingScriptRequest extends RpcAcsRequest<GetThingScriptResponse> {
 	   
-
-	private String iotInstanceId;
 
 	private String productKey;
 
-	private String modelVersion;
-	public QueryThingModelExtendConfigPublishedRequest() {
-		super("Iot", "2018-01-20", "QueryThingModelExtendConfigPublished", "iot");
+	private String iotInstanceId;
+	public GetThingScriptRequest() {
+		super("Iot", "2018-01-20", "GetThingScript", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
 	}
 
 	public String getProductKey() {
@@ -61,20 +48,20 @@ public class QueryThingModelExtendConfigPublishedRequest extends RpcAcsRequest<Q
 		}
 	}
 
-	public String getModelVersion() {
-		return this.modelVersion;
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
 	}
 
-	public void setModelVersion(String modelVersion) {
-		this.modelVersion = modelVersion;
-		if(modelVersion != null){
-			putQueryParameter("ModelVersion", modelVersion);
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
 	@Override
-	public Class<QueryThingModelExtendConfigPublishedResponse> getResponseClass() {
-		return QueryThingModelExtendConfigPublishedResponse.class;
+	public Class<GetThingScriptResponse> getResponseClass() {
+		return GetThingScriptResponse.class;
 	}
 
 }

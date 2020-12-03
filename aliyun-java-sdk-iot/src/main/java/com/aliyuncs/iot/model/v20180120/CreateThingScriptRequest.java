@@ -22,16 +22,18 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryThingModelExtendConfigPublishedRequest extends RpcAcsRequest<QueryThingModelExtendConfigPublishedResponse> {
+public class CreateThingScriptRequest extends RpcAcsRequest<CreateThingScriptResponse> {
 	   
 
 	private String iotInstanceId;
 
+	private String scriptType;
+
 	private String productKey;
 
-	private String modelVersion;
-	public QueryThingModelExtendConfigPublishedRequest() {
-		super("Iot", "2018-01-20", "QueryThingModelExtendConfigPublished", "iot");
+	private String scriptContent;
+	public CreateThingScriptRequest() {
+		super("Iot", "2018-01-20", "CreateThingScript", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +52,17 @@ public class QueryThingModelExtendConfigPublishedRequest extends RpcAcsRequest<Q
 		}
 	}
 
+	public String getScriptType() {
+		return this.scriptType;
+	}
+
+	public void setScriptType(String scriptType) {
+		this.scriptType = scriptType;
+		if(scriptType != null){
+			putQueryParameter("ScriptType", scriptType);
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -61,20 +74,20 @@ public class QueryThingModelExtendConfigPublishedRequest extends RpcAcsRequest<Q
 		}
 	}
 
-	public String getModelVersion() {
-		return this.modelVersion;
+	public String getScriptContent() {
+		return this.scriptContent;
 	}
 
-	public void setModelVersion(String modelVersion) {
-		this.modelVersion = modelVersion;
-		if(modelVersion != null){
-			putQueryParameter("ModelVersion", modelVersion);
+	public void setScriptContent(String scriptContent) {
+		this.scriptContent = scriptContent;
+		if(scriptContent != null){
+			putQueryParameter("ScriptContent", scriptContent);
 		}
 	}
 
 	@Override
-	public Class<QueryThingModelExtendConfigPublishedResponse> getResponseClass() {
-		return QueryThingModelExtendConfigPublishedResponse.class;
+	public Class<CreateThingScriptResponse> getResponseClass() {
+		return CreateThingScriptResponse.class;
 	}
 
 }

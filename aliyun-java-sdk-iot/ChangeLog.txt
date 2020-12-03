@@ -1,3 +1,9 @@
+2020-12-03 Version: 7.17.0
+- Support data retrieval of Ota module.
+- Added script management API,including CreateThingScript,UpdateThingScript,GetThingScript.
+- Update OTA API, including DeleteOTAModule,UpdateOTAModule,ListOTATaskByJob.
+- Add OTA API, ListOTAModuleVersionsByDevice.
+
 2020-11-16 Version: 7.16.1
 - Update BatchPub.
 

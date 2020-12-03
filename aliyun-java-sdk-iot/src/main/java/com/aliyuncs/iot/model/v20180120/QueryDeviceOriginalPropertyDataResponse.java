@@ -14,15 +14,16 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.GetSpeechModelResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.QueryDeviceOriginalPropertyDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetSpeechModelResponse extends AcsResponse {
+public class QueryDeviceOriginalPropertyDataResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -76,79 +77,62 @@ public class GetSpeechModelResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String code;
+		private Boolean nextValid;
 
-		private String bizCode;
+		private String nextPageToken;
 
-		private String voice;
+		private List<PropertyInfo> list;
 
-		private Integer volume;
-
-		private Integer speechRate;
-
-		private String text;
-
-		private String audioFormat;
-
-		public String getCode() {
-			return this.code;
+		public Boolean getNextValid() {
+			return this.nextValid;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setNextValid(Boolean nextValid) {
+			this.nextValid = nextValid;
 		}
 
-		public String getBizCode() {
-			return this.bizCode;
+		public String getNextPageToken() {
+			return this.nextPageToken;
 		}
 
-		public void setBizCode(String bizCode) {
-			this.bizCode = bizCode;
+		public void setNextPageToken(String nextPageToken) {
+			this.nextPageToken = nextPageToken;
 		}
 
-		public String getVoice() {
-			return this.voice;
+		public List<PropertyInfo> getList() {
+			return this.list;
 		}
 
-		public void setVoice(String voice) {
-			this.voice = voice;
+		public void setList(List<PropertyInfo> list) {
+			this.list = list;
 		}
 
-		public Integer getVolume() {
-			return this.volume;
-		}
+		public static class PropertyInfo {
 
-		public void setVolume(Integer volume) {
-			this.volume = volume;
-		}
+			private String time;
 
-		public Integer getSpeechRate() {
-			return this.speechRate;
-		}
+			private String value;
 
-		public void setSpeechRate(Integer speechRate) {
-			this.speechRate = speechRate;
-		}
+			public String getTime() {
+				return this.time;
+			}
 
-		public String getText() {
-			return this.text;
-		}
+			public void setTime(String time) {
+				this.time = time;
+			}
 
-		public void setText(String text) {
-			this.text = text;
-		}
+			public String getValue() {
+				return this.value;
+			}
 
-		public String getAudioFormat() {
-			return this.audioFormat;
-		}
-
-		public void setAudioFormat(String audioFormat) {
-			this.audioFormat = audioFormat;
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 
 	@Override
-	public GetSpeechModelResponse getInstance(UnmarshallerContext context) {
-		return	GetSpeechModelResponseUnmarshaller.unmarshall(this, context);
+	public QueryDeviceOriginalPropertyDataResponse getInstance(UnmarshallerContext context) {
+		return	QueryDeviceOriginalPropertyDataResponseUnmarshaller.unmarshall(this, context);
 	}
 }

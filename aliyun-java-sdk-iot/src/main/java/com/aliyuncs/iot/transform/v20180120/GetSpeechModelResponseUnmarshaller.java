@@ -35,6 +35,7 @@ public class GetSpeechModelResponseUnmarshaller {
 		data.setVolume(_ctx.integerValue("GetSpeechModelResponse.Data.Volume"));
 		data.setSpeechRate(_ctx.integerValue("GetSpeechModelResponse.Data.SpeechRate"));
 		data.setText(_ctx.stringValue("GetSpeechModelResponse.Data.Text"));
+		data.setAudioFormat(_ctx.stringValue("GetSpeechModelResponse.Data.AudioFormat"));
 		getSpeechModelResponse.setData(data);
 	 
 	 	return getSpeechModelResponse;

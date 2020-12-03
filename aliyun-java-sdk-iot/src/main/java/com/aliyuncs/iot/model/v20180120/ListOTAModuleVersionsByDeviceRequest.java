@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -23,22 +22,22 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobResponse> {
+public class ListOTAModuleVersionsByDeviceRequest extends RpcAcsRequest<ListOTAModuleVersionsByDeviceResponse> {
 	   
 
-	private String jobId;
-
-	private String taskStatus;
+	private String iotId;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
-	private List<String> deviceNamess;
-
 	private Integer currentPage;
-	public ListOTATaskByJobRequest() {
-		super("Iot", "2018-01-20", "ListOTATaskByJob", "iot");
+
+	private String productKey;
+
+	private String deviceName;
+	public ListOTAModuleVersionsByDeviceRequest() {
+		super("Iot", "2018-01-20", "ListOTAModuleVersionsByDevice", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,25 +45,14 @@ public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobRespo
 		} catch (Exception e) {}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
-		}
-	}
-
-	public String getTaskStatus() {
-		return this.taskStatus;
-	}
-
-	public void setTaskStatus(String taskStatus) {
-		this.taskStatus = taskStatus;
-		if(taskStatus != null){
-			putQueryParameter("TaskStatus", taskStatus);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 
@@ -90,19 +78,6 @@ public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobRespo
 		}
 	}
 
-	public List<String> getDeviceNamess() {
-		return this.deviceNamess;
-	}
-
-	public void setDeviceNamess(List<String> deviceNamess) {
-		this.deviceNamess = deviceNamess;	
-		if (deviceNamess != null) {
-			for (int i = 0; i < deviceNamess.size(); i++) {
-				putQueryParameter("DeviceNames." + (i + 1) , deviceNamess.get(i));
-			}
-		}	
-	}
-
 	public Integer getCurrentPage() {
 		return this.currentPage;
 	}
@@ -114,9 +89,31 @@ public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobRespo
 		}
 	}
 
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
 	@Override
-	public Class<ListOTATaskByJobResponse> getResponseClass() {
-		return ListOTATaskByJobResponse.class;
+	public Class<ListOTAModuleVersionsByDeviceResponse> getResponseClass() {
+		return ListOTAModuleVersionsByDeviceResponse.class;
 	}
 
 }

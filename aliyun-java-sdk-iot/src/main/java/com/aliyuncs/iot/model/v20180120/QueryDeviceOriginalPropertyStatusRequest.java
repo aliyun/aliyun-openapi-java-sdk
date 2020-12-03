@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -23,22 +22,24 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobResponse> {
+public class QueryDeviceOriginalPropertyStatusRequest extends RpcAcsRequest<QueryDeviceOriginalPropertyStatusResponse> {
 	   
 
-	private String jobId;
+	private String nextPageToken;
 
-	private String taskStatus;
+	private String iotId;
 
 	private String iotInstanceId;
 
 	private Integer pageSize;
 
-	private List<String> deviceNamess;
+	private String productKey;
 
-	private Integer currentPage;
-	public ListOTATaskByJobRequest() {
-		super("Iot", "2018-01-20", "ListOTATaskByJob", "iot");
+	private Integer asc;
+
+	private String deviceName;
+	public QueryDeviceOriginalPropertyStatusRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceOriginalPropertyStatus", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,25 +47,25 @@ public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobRespo
 		} catch (Exception e) {}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getNextPageToken() {
+		return this.nextPageToken;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
+		if(nextPageToken != null){
+			putQueryParameter("NextPageToken", nextPageToken);
 		}
 	}
 
-	public String getTaskStatus() {
-		return this.taskStatus;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setTaskStatus(String taskStatus) {
-		this.taskStatus = taskStatus;
-		if(taskStatus != null){
-			putQueryParameter("TaskStatus", taskStatus);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 
@@ -90,33 +91,42 @@ public class ListOTATaskByJobRequest extends RpcAcsRequest<ListOTATaskByJobRespo
 		}
 	}
 
-	public List<String> getDeviceNamess() {
-		return this.deviceNamess;
+	public String getProductKey() {
+		return this.productKey;
 	}
 
-	public void setDeviceNamess(List<String> deviceNamess) {
-		this.deviceNamess = deviceNamess;	
-		if (deviceNamess != null) {
-			for (int i = 0; i < deviceNamess.size(); i++) {
-				putQueryParameter("DeviceNames." + (i + 1) , deviceNamess.get(i));
-			}
-		}	
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putQueryParameter("ProductKey", productKey);
+		}
 	}
 
-	public Integer getCurrentPage() {
-		return this.currentPage;
+	public Integer getAsc() {
+		return this.asc;
 	}
 
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
+	public void setAsc(Integer asc) {
+		this.asc = asc;
+		if(asc != null){
+			putQueryParameter("Asc", asc.toString());
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
 		}
 	}
 
 	@Override
-	public Class<ListOTATaskByJobResponse> getResponseClass() {
-		return ListOTATaskByJobResponse.class;
+	public Class<QueryDeviceOriginalPropertyStatusResponse> getResponseClass() {
+		return QueryDeviceOriginalPropertyStatusResponse.class;
 	}
 
 }

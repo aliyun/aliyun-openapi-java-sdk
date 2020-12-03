@@ -107,6 +107,8 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 
 		private List<TagInfo> tags;
 
+		private List<OTAModuleInfo> oTAModules;
+
 		public String getProductKey() {
 			return this.productKey;
 		}
@@ -187,6 +189,14 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<OTAModuleInfo> getOTAModules() {
+			return this.oTAModules;
+		}
+
+		public void setOTAModules(List<OTAModuleInfo> oTAModules) {
+			this.oTAModules = oTAModules;
+		}
+
 		public static class SimpleDeviceGroupInfo {
 
 			private String groupId;
@@ -220,6 +230,29 @@ public class QueryDeviceBySQLResponse extends AcsResponse {
 
 			public void setTagValue(String tagValue) {
 				this.tagValue = tagValue;
+			}
+		}
+
+		public static class OTAModuleInfo {
+
+			private String moduleName;
+
+			private String firmwareVersion;
+
+			public String getModuleName() {
+				return this.moduleName;
+			}
+
+			public void setModuleName(String moduleName) {
+				this.moduleName = moduleName;
+			}
+
+			public String getFirmwareVersion() {
+				return this.firmwareVersion;
+			}
+
+			public void setFirmwareVersion(String firmwareVersion) {
+				this.firmwareVersion = firmwareVersion;
 			}
 		}
 	}
