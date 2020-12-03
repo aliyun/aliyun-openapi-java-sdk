@@ -105,7 +105,17 @@ public class GetSkillGroupConfigResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private Integer qualityCheckType;
+
+		private Integer allContentQualityCheck;
+
+		private String allRids;
+
+		private Integer skillGroupFrom;
+
 		private List<RuleNameInfo> ruleList;
+
+		private List<RuleNameInfo> allRuleList;
 
 		public Long getId() {
 			return this.id;
@@ -219,12 +229,52 @@ public class GetSkillGroupConfigResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public Integer getQualityCheckType() {
+			return this.qualityCheckType;
+		}
+
+		public void setQualityCheckType(Integer qualityCheckType) {
+			this.qualityCheckType = qualityCheckType;
+		}
+
+		public Integer getAllContentQualityCheck() {
+			return this.allContentQualityCheck;
+		}
+
+		public void setAllContentQualityCheck(Integer allContentQualityCheck) {
+			this.allContentQualityCheck = allContentQualityCheck;
+		}
+
+		public String getAllRids() {
+			return this.allRids;
+		}
+
+		public void setAllRids(String allRids) {
+			this.allRids = allRids;
+		}
+
+		public Integer getSkillGroupFrom() {
+			return this.skillGroupFrom;
+		}
+
+		public void setSkillGroupFrom(Integer skillGroupFrom) {
+			this.skillGroupFrom = skillGroupFrom;
+		}
+
 		public List<RuleNameInfo> getRuleList() {
 			return this.ruleList;
 		}
 
 		public void setRuleList(List<RuleNameInfo> ruleList) {
 			this.ruleList = ruleList;
+		}
+
+		public List<RuleNameInfo> getAllRuleList() {
+			return this.allRuleList;
+		}
+
+		public void setAllRuleList(List<RuleNameInfo> allRuleList) {
+			this.allRuleList = allRuleList;
 		}
 
 		public static class RuleNameInfo {

@@ -21,10 +21,12 @@ import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.Dialogue;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ComplainHistoriesItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo.KeyWord;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo.Phrase;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ReviewInfo;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo1;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ReviewHistory;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ScorePo;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ScorePo.ScoreParam;
@@ -106,6 +108,9 @@ public class GetResultToReviewResponseUnmarshaller {
 			hitRuleReviewInfo.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreId"));
 			hitRuleReviewInfo.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreSubId"));
 			hitRuleReviewInfo.setTotalNumber(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].TotalNumber"));
+			hitRuleReviewInfo.setScoreSubName(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreSubName"));
+			hitRuleReviewInfo.setScoreNum(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ScoreNum"));
+			hitRuleReviewInfo.setComplainable(_ctx.booleanValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].Complainable"));
 
 			ReviewInfo reviewInfo = new ReviewInfo();
 			reviewInfo.setHitId(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ReviewInfo.HitId"));
@@ -143,6 +148,7 @@ public class GetResultToReviewResponseUnmarshaller {
 					keyWord.setFrom(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].From"));
 					keyWord.setTo(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
 					keyWord.setTid(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid"));
+					keyWord.setCid(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Cid"));
 
 					keyWords.add(keyWord);
 				}
@@ -152,68 +158,46 @@ public class GetResultToReviewResponseUnmarshaller {
 			}
 			hitRuleReviewInfo.setConditionHitInfoList(conditionHitInfoList);
 
+			List<ComplainHistoriesItem> complainHistories = new ArrayList<ComplainHistoriesItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ComplainHistories.Length"); j++) {
+				ComplainHistoriesItem complainHistoriesItem = new ComplainHistoriesItem();
+				complainHistoriesItem.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ComplainHistories["+ j +"].Comments"));
+				complainHistoriesItem.setOperatorName(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ComplainHistories["+ j +"].OperatorName"));
+				complainHistoriesItem.setOperator(_ctx.longValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ComplainHistories["+ j +"].Operator"));
+				complainHistoriesItem.setOperationType(_ctx.integerValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ComplainHistories["+ j +"].OperationType"));
+				complainHistoriesItem.setOperationTime(_ctx.stringValue("GetResultToReviewResponse.Data.HitRuleReviewInfoList["+ i +"].ComplainHistories["+ j +"].OperationTime"));
+
+				complainHistories.add(complainHistoriesItem);
+			}
+			hitRuleReviewInfo.setComplainHistories(complainHistories);
+
 			hitRuleReviewInfoList.add(hitRuleReviewInfo);
 		}
 		data.setHitRuleReviewInfoList(hitRuleReviewInfoList);
 
-		List<HitRuleReviewInfo> manualScoreInfoList = new ArrayList<HitRuleReviewInfo>();
+		List<HitRuleReviewInfo1> manualScoreInfoList = new ArrayList<HitRuleReviewInfo1>();
 		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList.Length"); i++) {
-			HitRuleReviewInfo hitRuleReviewInfo_ = new HitRuleReviewInfo();
-			hitRuleReviewInfo_.setAutoReview(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].AutoReview"));
-			hitRuleReviewInfo_.setRid(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].Rid"));
-			hitRuleReviewInfo_.setRuleName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].RuleName"));
-			hitRuleReviewInfo_.setRuleScoreType(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].RuleScoreType"));
-			hitRuleReviewInfo_.setRuleType(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].RuleType"));
-			hitRuleReviewInfo_.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreId"));
-			hitRuleReviewInfo_.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubId"));
-			hitRuleReviewInfo_.setTotalNumber(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].TotalNumber"));
+			HitRuleReviewInfo1 hitRuleReviewInfo1 = new HitRuleReviewInfo1();
+			hitRuleReviewInfo1.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreId"));
+			hitRuleReviewInfo1.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubId"));
+			hitRuleReviewInfo1.setScoreSubName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubName"));
+			hitRuleReviewInfo1.setScoreNum(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreNum"));
+			hitRuleReviewInfo1.setComplainable(_ctx.booleanValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].Complainable"));
 
-			com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ReviewInfo hitRuleReviewInfoReviewInfo = new com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ReviewInfo();
-			hitRuleReviewInfoReviewInfo.setHitId(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ReviewInfo.HitId"));
-			hitRuleReviewInfoReviewInfo.setRid(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ReviewInfo.Rid"));
-			hitRuleReviewInfoReviewInfo.setReviewResult(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ReviewInfo.ReviewResult"));
-			hitRuleReviewInfoReviewInfo.setReviewer(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ReviewInfo.Reviewer"));
-			hitRuleReviewInfoReviewInfo.setReviewTime(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ReviewInfo.ReviewTime"));
-			hitRuleReviewInfo_.setReviewInfo(hitRuleReviewInfoReviewInfo);
+			List<ComplainHistoriesItem> complainHistories2 = new ArrayList<ComplainHistoriesItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories.Length"); j++) {
+				ComplainHistoriesItem complainHistoriesItem_ = new ComplainHistoriesItem();
+				complainHistoriesItem_.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].Comments"));
+				complainHistoriesItem_.setOperatorName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperatorName"));
+				complainHistoriesItem_.setOperator(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].Operator"));
+				complainHistoriesItem_.setOperationType(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperationType"));
+				complainHistoriesItem_.setOperationTime(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperationTime"));
 
-			List<ConditionHitInfo> conditionHitInfoList = new ArrayList<ConditionHitInfo>();
-			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList.Length"); j++) {
-				ConditionHitInfo conditionHitInfo_ = new ConditionHitInfo();
-
-				List<String> cid = new ArrayList<String>();
-				for (int k = 0; k < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid.Length"); k++) {
-					cid.add(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Cid["+ k +"]"));
-				}
-				conditionHitInfo_.setCid(cid);
-
-				com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo.Phrase conditionHitInfoPhrase = new com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo.Phrase();
-				conditionHitInfoPhrase.setRole(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Role"));
-				conditionHitInfoPhrase.setIdentity(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Identity"));
-				conditionHitInfoPhrase.setEmotionValue(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.EmotionValue"));
-				conditionHitInfoPhrase.setWords(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Words"));
-				conditionHitInfoPhrase.setEnd(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.End"));
-				conditionHitInfoPhrase.setPid(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Pid"));
-				conditionHitInfoPhrase.setBegin(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].Phrase.Begin"));
-				conditionHitInfo_.setPhrase(conditionHitInfoPhrase);
-
-				List<KeyWord> keyWords = new ArrayList<KeyWord>();
-				for (int k = 0; k < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords.Length"); k++) {
-					KeyWord keyWord_ = new KeyWord();
-					keyWord_.setVal(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Val"));
-					keyWord_.setPid(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Pid"));
-					keyWord_.setFrom(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].From"));
-					keyWord_.setTo(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To"));
-					keyWord_.setTid(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid"));
-
-					keyWords.add(keyWord_);
-				}
-				conditionHitInfo_.setKeyWords(keyWords);
-
-				conditionHitInfoList.add(conditionHitInfo_);
+				complainHistories2.add(complainHistoriesItem_);
 			}
-			hitRuleReviewInfo_.setConditionHitInfoList(conditionHitInfoList);
+			hitRuleReviewInfo1.setComplainHistories2(complainHistories2);
 
-			manualScoreInfoList.add(hitRuleReviewInfo_);
+			manualScoreInfoList.add(hitRuleReviewInfo1);
 		}
 		data.setManualScoreInfoList(manualScoreInfoList);
 

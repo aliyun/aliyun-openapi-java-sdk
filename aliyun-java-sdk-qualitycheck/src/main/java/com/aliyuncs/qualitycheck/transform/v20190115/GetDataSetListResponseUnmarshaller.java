@@ -43,6 +43,9 @@ public class GetDataSetListResponseUnmarshaller {
 			dataSet.setSetFolderName(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].SetFolderName"));
 			dataSet.setChannelType(_ctx.integerValue("GetDataSetListResponse.Data["+ i +"].ChannelType"));
 			dataSet.setCreateType(_ctx.integerValue("GetDataSetListResponse.Data["+ i +"].CreateType"));
+			dataSet.setCreateTime(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].CreateTime"));
+			dataSet.setUpdateTime(_ctx.stringValue("GetDataSetListResponse.Data["+ i +"].UpdateTime"));
+			dataSet.setSetNumber(_ctx.integerValue("GetDataSetListResponse.Data["+ i +"].SetNumber"));
 
 			data.add(dataSet);
 		}

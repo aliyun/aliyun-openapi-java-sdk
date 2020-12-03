@@ -56,6 +56,8 @@ public class GetRuleResponseUnmarshaller {
 			ruleInfo.setRuleScoreType(_ctx.integerValue("GetRuleResponse.Data.Rules["+ i +"].RuleScoreType"));
 			ruleInfo.setScoreName(_ctx.stringValue("GetRuleResponse.Data.Rules["+ i +"].ScoreName"));
 			ruleInfo.setScoreSubName(_ctx.stringValue("GetRuleResponse.Data.Rules["+ i +"].ScoreSubName"));
+			ruleInfo.setScoreId(_ctx.integerValue("GetRuleResponse.Data.Rules["+ i +"].ScoreId"));
+			ruleInfo.setScoreSubId(_ctx.integerValue("GetRuleResponse.Data.Rules["+ i +"].ScoreSubId"));
 
 			List<String> businessCategoryNameList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetRuleResponse.Data.Rules["+ i +"].BusinessCategoryNameList.Length"); j++) {

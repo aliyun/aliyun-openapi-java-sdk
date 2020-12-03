@@ -223,6 +223,14 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 					private String compareOperator;
 
+					private Integer checkType;
+
+					private Integer maxEmotionChangeValue;
+
+					private Integer checkType1;
+
+					private Integer maxEmotionChangeValue2;
+
 					private List<String> operKeyWords;
 
 					private List<String> references;
@@ -389,6 +397,38 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 					public void setCompareOperator(String compareOperator) {
 						this.compareOperator = compareOperator;
+					}
+
+					public Integer getCheckType() {
+						return this.checkType;
+					}
+
+					public void setCheckType(Integer checkType) {
+						this.checkType = checkType;
+					}
+
+					public Integer getMaxEmotionChangeValue() {
+						return this.maxEmotionChangeValue;
+					}
+
+					public void setMaxEmotionChangeValue(Integer maxEmotionChangeValue) {
+						this.maxEmotionChangeValue = maxEmotionChangeValue;
+					}
+
+					public Integer getCheckType1() {
+						return this.checkType1;
+					}
+
+					public void setCheckType1(Integer checkType1) {
+						this.checkType1 = checkType1;
+					}
+
+					public Integer getMaxEmotionChangeValue2() {
+						return this.maxEmotionChangeValue2;
+					}
+
+					public void setMaxEmotionChangeValue2(Integer maxEmotionChangeValue2) {
+						this.maxEmotionChangeValue2 = maxEmotionChangeValue2;
 					}
 
 					public List<String> getOperKeyWords() {

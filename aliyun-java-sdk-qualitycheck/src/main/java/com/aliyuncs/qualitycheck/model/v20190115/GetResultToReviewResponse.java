@@ -107,7 +107,7 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 		private List<HitRuleReviewInfo> hitRuleReviewInfoList;
 
-		private List<HitRuleReviewInfo> manualScoreInfoList;
+		private List<HitRuleReviewInfo1> manualScoreInfoList;
 
 		private List<ReviewHistory> reviewHistoryList;
 
@@ -231,11 +231,11 @@ public class GetResultToReviewResponse extends AcsResponse {
 			this.hitRuleReviewInfoList = hitRuleReviewInfoList;
 		}
 
-		public List<HitRuleReviewInfo> getManualScoreInfoList() {
+		public List<HitRuleReviewInfo1> getManualScoreInfoList() {
 			return this.manualScoreInfoList;
 		}
 
-		public void setManualScoreInfoList(List<HitRuleReviewInfo> manualScoreInfoList) {
+		public void setManualScoreInfoList(List<HitRuleReviewInfo1> manualScoreInfoList) {
 			this.manualScoreInfoList = manualScoreInfoList;
 		}
 
@@ -454,7 +454,15 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			private Integer totalNumber;
 
+			private String scoreSubName;
+
+			private Integer scoreNum;
+
+			private Boolean complainable;
+
 			private List<ConditionHitInfo> conditionHitInfoList;
+
+			private List<ComplainHistoriesItem> complainHistories;
 
 			private ReviewInfo reviewInfo;
 
@@ -522,12 +530,44 @@ public class GetResultToReviewResponse extends AcsResponse {
 				this.totalNumber = totalNumber;
 			}
 
+			public String getScoreSubName() {
+				return this.scoreSubName;
+			}
+
+			public void setScoreSubName(String scoreSubName) {
+				this.scoreSubName = scoreSubName;
+			}
+
+			public Integer getScoreNum() {
+				return this.scoreNum;
+			}
+
+			public void setScoreNum(Integer scoreNum) {
+				this.scoreNum = scoreNum;
+			}
+
+			public Boolean getComplainable() {
+				return this.complainable;
+			}
+
+			public void setComplainable(Boolean complainable) {
+				this.complainable = complainable;
+			}
+
 			public List<ConditionHitInfo> getConditionHitInfoList() {
 				return this.conditionHitInfoList;
 			}
 
 			public void setConditionHitInfoList(List<ConditionHitInfo> conditionHitInfoList) {
 				this.conditionHitInfoList = conditionHitInfoList;
+			}
+
+			public List<ComplainHistoriesItem> getComplainHistories() {
+				return this.complainHistories;
+			}
+
+			public void setComplainHistories(List<ComplainHistoriesItem> complainHistories) {
+				this.complainHistories = complainHistories;
 			}
 
 			public ReviewInfo getReviewInfo() {
@@ -582,6 +622,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					private String tid;
 
+					private String cid;
+
 					public String getVal() {
 						return this.val;
 					}
@@ -620,6 +662,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 					public void setTid(String tid) {
 						this.tid = tid;
+					}
+
+					public String getCid() {
+						return this.cid;
+					}
+
+					public void setCid(String cid) {
+						this.cid = cid;
 					}
 				}
 
@@ -697,6 +747,59 @@ public class GetResultToReviewResponse extends AcsResponse {
 				}
 			}
 
+			public static class ComplainHistoriesItem {
+
+				private String comments;
+
+				private String operatorName;
+
+				private Long operator;
+
+				private Integer operationType;
+
+				private String operationTime;
+
+				public String getComments() {
+					return this.comments;
+				}
+
+				public void setComments(String comments) {
+					this.comments = comments;
+				}
+
+				public String getOperatorName() {
+					return this.operatorName;
+				}
+
+				public void setOperatorName(String operatorName) {
+					this.operatorName = operatorName;
+				}
+
+				public Long getOperator() {
+					return this.operator;
+				}
+
+				public void setOperator(Long operator) {
+					this.operator = operator;
+				}
+
+				public Integer getOperationType() {
+					return this.operationType;
+				}
+
+				public void setOperationType(Integer operationType) {
+					this.operationType = operationType;
+				}
+
+				public String getOperationTime() {
+					return this.operationTime;
+				}
+
+				public void setOperationTime(String operationTime) {
+					this.operationTime = operationTime;
+				}
+			}
+
 			public static class ReviewInfo {
 
 				private String hitId;
@@ -748,6 +851,69 @@ public class GetResultToReviewResponse extends AcsResponse {
 				public void setReviewTime(String reviewTime) {
 					this.reviewTime = reviewTime;
 				}
+			}
+		}
+
+		public static class HitRuleReviewInfo1 {
+
+			private Long scoreId;
+
+			private Long scoreSubId;
+
+			private String scoreSubName;
+
+			private Integer scoreNum;
+
+			private Boolean complainable;
+
+			private List<ComplainHistoriesItem> complainHistories2;
+
+			public Long getScoreId() {
+				return this.scoreId;
+			}
+
+			public void setScoreId(Long scoreId) {
+				this.scoreId = scoreId;
+			}
+
+			public Long getScoreSubId() {
+				return this.scoreSubId;
+			}
+
+			public void setScoreSubId(Long scoreSubId) {
+				this.scoreSubId = scoreSubId;
+			}
+
+			public String getScoreSubName() {
+				return this.scoreSubName;
+			}
+
+			public void setScoreSubName(String scoreSubName) {
+				this.scoreSubName = scoreSubName;
+			}
+
+			public Integer getScoreNum() {
+				return this.scoreNum;
+			}
+
+			public void setScoreNum(Integer scoreNum) {
+				this.scoreNum = scoreNum;
+			}
+
+			public Boolean getComplainable() {
+				return this.complainable;
+			}
+
+			public void setComplainable(Boolean complainable) {
+				this.complainable = complainable;
+			}
+
+			public List<ComplainHistoriesItem> getComplainHistories2() {
+				return this.complainHistories2;
+			}
+
+			public void setComplainHistories2(List<ComplainHistoriesItem> complainHistories2) {
+				this.complainHistories2 = complainHistories2;
 			}
 		}
 

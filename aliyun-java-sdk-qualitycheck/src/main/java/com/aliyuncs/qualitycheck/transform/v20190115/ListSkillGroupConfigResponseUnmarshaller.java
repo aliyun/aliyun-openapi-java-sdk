@@ -49,6 +49,10 @@ public class ListSkillGroupConfigResponseUnmarshaller {
 			skillGroupConfig.setVocabName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].VocabName"));
 			skillGroupConfig.setCreateTime(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].CreateTime"));
 			skillGroupConfig.setUpdateTime(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].UpdateTime"));
+			skillGroupConfig.setQualityCheckType(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].QualityCheckType"));
+			skillGroupConfig.setAllContentQualityCheck(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].AllContentQualityCheck"));
+			skillGroupConfig.setAllRids(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRids"));
+			skillGroupConfig.setSkillGroupFrom(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupFrom"));
 
 			List<RuleNameInfo> ruleList = new ArrayList<RuleNameInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
@@ -59,6 +63,16 @@ public class ListSkillGroupConfigResponseUnmarshaller {
 				ruleList.add(ruleNameInfo);
 			}
 			skillGroupConfig.setRuleList(ruleList);
+
+			List<RuleNameInfo> allRuleList = new ArrayList<RuleNameInfo>();
+			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList.Length"); j++) {
+				RuleNameInfo ruleNameInfo_ = new RuleNameInfo();
+				ruleNameInfo_.setRid(_ctx.longValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList["+ j +"].Rid"));
+				ruleNameInfo_.setRuleName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRuleList["+ j +"].RuleName"));
+
+				allRuleList.add(ruleNameInfo_);
+			}
+			skillGroupConfig.setAllRuleList(allRuleList);
 
 			data.add(skillGroupConfig);
 		}

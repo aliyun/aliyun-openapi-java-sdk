@@ -103,6 +103,12 @@ public class GetDataSetListResponse extends AcsResponse {
 
 		private Integer createType;
 
+		private String createTime;
+
+		private String updateTime;
+
+		private Integer setNumber;
+
 		public Long getSetId() {
 			return this.setId;
 		}
@@ -165,6 +171,30 @@ public class GetDataSetListResponse extends AcsResponse {
 
 		public void setCreateType(Integer createType) {
 			this.createType = createType;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(String updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public Integer getSetNumber() {
+			return this.setNumber;
+		}
+
+		public void setSetNumber(Integer setNumber) {
+			this.setNumber = setNumber;
 		}
 	}
 

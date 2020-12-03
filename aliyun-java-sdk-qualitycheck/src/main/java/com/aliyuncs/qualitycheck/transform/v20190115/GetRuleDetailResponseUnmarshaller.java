@@ -91,6 +91,10 @@ public class GetRuleDetailResponseUnmarshaller {
 				param.setFrom(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.From"));
 				param.setBeginType(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.BeginType"));
 				param.setCompareOperator(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CompareOperator"));
+				param.setCheckType(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType"));
+				param.setMaxEmotionChangeValue(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
+				param.setCheckType1(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType"));
+				param.setMaxEmotionChangeValue2(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
 
 				List<String> operKeyWords = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords.Length"); k++) {

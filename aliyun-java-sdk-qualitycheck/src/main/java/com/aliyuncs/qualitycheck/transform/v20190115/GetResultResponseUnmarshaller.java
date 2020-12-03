@@ -25,6 +25,7 @@ import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.Hi
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit.KeyWord;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitResultItem.Hit.Phrase;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.HitScoreItem;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultResponse.ResultInfo.Recording;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -56,6 +57,9 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setCreateTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].CreateTime"));
 			resultInfo.setReviewer(_ctx.stringValue("GetResultResponse.Data["+ i +"].Reviewer"));
 			resultInfo.setResolver(_ctx.stringValue("GetResultResponse.Data["+ i +"].Resolver"));
+			resultInfo.setReviewTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewTime"));
+			resultInfo.setCreateTimeLong(_ctx.stringValue("GetResultResponse.Data["+ i +"].CreateTimeLong"));
+			resultInfo.setReviewTimeLong(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewTimeLong"));
 
 			Recording recording = new Recording();
 			recording.setId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));
@@ -73,6 +77,16 @@ public class GetResultResponseUnmarshaller {
 			recording.setRemark1(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark1"));
 			recording.setRemark2(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark2"));
 			recording.setRemark3(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark3"));
+			recording.setRemark4(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark4"));
+			recording.setRemark5(_ctx.longValue("GetResultResponse.Data["+ i +"].Recording.Remark5"));
+			recording.setRemark6(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark6"));
+			recording.setRemark7(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark7"));
+			recording.setRemark8(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark8"));
+			recording.setRemark9(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark9"));
+			recording.setRemark10(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark10"));
+			recording.setRemark11(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark11"));
+			recording.setRemark12(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark12"));
+			recording.setRemark13(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark13"));
 			resultInfo.setRecording(recording);
 
 			Agent agent = new Agent();
@@ -89,7 +103,6 @@ public class GetResultResponseUnmarshaller {
 				asrResultItem.setBegin(_ctx.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].Begin"));
 				asrResultItem.setEnd(_ctx.longValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].End"));
 				asrResultItem.setEmotionValue(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].EmotionValue"));
-				asrResultItem.setSilenceDuration(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SilenceDuration"));
 				asrResultItem.setSpeechRate(_ctx.integerValue("GetResultResponse.Data["+ i +"].AsrResult["+ j +"].SpeechRate"));
 
 				asrResult.add(asrResultItem);
@@ -120,8 +133,6 @@ public class GetResultResponseUnmarshaller {
 					phrase.setBegin(_ctx.longValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Begin"));
 					phrase.setEnd(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End"));
 					phrase.setEmotionValue(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.EmotionValue"));
-					phrase.setSilenceDuration(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SilenceDuration"));
-					phrase.setSpeechRate(_ctx.integerValue("GetResultResponse.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.SpeechRate"));
 					hit.setPhrase(phrase);
 
 					List<KeyWord> keyWords = new ArrayList<KeyWord>();
@@ -143,6 +154,18 @@ public class GetResultResponseUnmarshaller {
 				hitResult.add(hitResultItem);
 			}
 			resultInfo.setHitResult(hitResult);
+
+			List<HitScoreItem> hitScore = new ArrayList<HitScoreItem>();
+			for (int j = 0; j < _ctx.lengthValue("GetResultResponse.Data["+ i +"].HitScore.Length"); j++) {
+				HitScoreItem hitScoreItem = new HitScoreItem();
+				hitScoreItem.setScoreId(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitScore["+ j +"].ScoreId"));
+				hitScoreItem.setRuleId(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitScore["+ j +"].RuleId"));
+				hitScoreItem.setScoreName(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitScore["+ j +"].ScoreName"));
+				hitScoreItem.setScoreNumber(_ctx.stringValue("GetResultResponse.Data["+ i +"].HitScore["+ j +"].ScoreNumber"));
+
+				hitScore.add(hitScoreItem);
+			}
+			resultInfo.setHitScore(hitScore);
 
 			data.add(resultInfo);
 		}
