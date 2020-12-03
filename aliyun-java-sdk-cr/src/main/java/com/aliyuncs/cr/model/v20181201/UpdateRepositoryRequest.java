@@ -31,6 +31,8 @@ public class UpdateRepositoryRequest extends RpcAcsRequest<UpdateRepositoryRespo
 
 	private String repoId;
 
+	private Boolean tagImmutability;
+
 	private String instanceId;
 
 	private String detail;
@@ -73,6 +75,17 @@ public class UpdateRepositoryRequest extends RpcAcsRequest<UpdateRepositoryRespo
 		this.repoId = repoId;
 		if(repoId != null){
 			putQueryParameter("RepoId", repoId);
+		}
+	}
+
+	public Boolean getTagImmutability() {
+		return this.tagImmutability;
+	}
+
+	public void setTagImmutability(Boolean tagImmutability) {
+		this.tagImmutability = tagImmutability;
+		if(tagImmutability != null){
+			putQueryParameter("TagImmutability", tagImmutability.toString());
 		}
 	}
 

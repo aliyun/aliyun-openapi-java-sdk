@@ -29,6 +29,8 @@ public class CreateRepositoryRequest extends RpcAcsRequest<CreateRepositoryRespo
 
 	private String summary;
 
+	private Boolean tagImmutability;
+
 	private String instanceId;
 
 	private String repoName;
@@ -64,6 +66,17 @@ public class CreateRepositoryRequest extends RpcAcsRequest<CreateRepositoryRespo
 		this.summary = summary;
 		if(summary != null){
 			putQueryParameter("Summary", summary);
+		}
+	}
+
+	public Boolean getTagImmutability() {
+		return this.tagImmutability;
+	}
+
+	public void setTagImmutability(Boolean tagImmutability) {
+		this.tagImmutability = tagImmutability;
+		if(tagImmutability != null){
+			putQueryParameter("TagImmutability", tagImmutability.toString());
 		}
 	}
 

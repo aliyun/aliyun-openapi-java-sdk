@@ -52,6 +52,8 @@ public class GetRepositoryResponse extends AcsResponse {
 
 	private Long modifiedTime;
 
+	private Boolean tagImmutability;
+
 	public Boolean getIsSuccess() {
 		return this.isSuccess;
 	}
@@ -162,6 +164,14 @@ public class GetRepositoryResponse extends AcsResponse {
 
 	public void setModifiedTime(Long modifiedTime) {
 		this.modifiedTime = modifiedTime;
+	}
+
+	public Boolean getTagImmutability() {
+		return this.tagImmutability;
+	}
+
+	public void setTagImmutability(Boolean tagImmutability) {
+		this.tagImmutability = tagImmutability;
 	}
 
 	@Override

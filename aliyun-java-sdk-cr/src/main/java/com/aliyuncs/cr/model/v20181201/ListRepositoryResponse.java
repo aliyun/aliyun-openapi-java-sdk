@@ -117,6 +117,8 @@ public class ListRepositoryResponse extends AcsResponse {
 
 		private Long modifiedTime;
 
+		private Boolean tagImmutability;
+
 		public String getRepoNamespaceName() {
 			return this.repoNamespaceName;
 		}
@@ -195,6 +197,14 @@ public class ListRepositoryResponse extends AcsResponse {
 
 		public void setModifiedTime(Long modifiedTime) {
 			this.modifiedTime = modifiedTime;
+		}
+
+		public Boolean getTagImmutability() {
+			return this.tagImmutability;
+		}
+
+		public void setTagImmutability(Boolean tagImmutability) {
+			this.tagImmutability = tagImmutability;
 		}
 	}
 

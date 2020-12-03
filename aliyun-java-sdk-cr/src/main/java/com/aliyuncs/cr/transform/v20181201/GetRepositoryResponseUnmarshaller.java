@@ -36,6 +36,7 @@ public class GetRepositoryResponseUnmarshaller {
 		getRepositoryResponse.setDetail(_ctx.stringValue("GetRepositoryResponse.Detail"));
 		getRepositoryResponse.setCreateTime(_ctx.longValue("GetRepositoryResponse.CreateTime"));
 		getRepositoryResponse.setModifiedTime(_ctx.longValue("GetRepositoryResponse.ModifiedTime"));
+		getRepositoryResponse.setTagImmutability(_ctx.booleanValue("GetRepositoryResponse.TagImmutability"));
 	 
 	 	return getRepositoryResponse;
 	}

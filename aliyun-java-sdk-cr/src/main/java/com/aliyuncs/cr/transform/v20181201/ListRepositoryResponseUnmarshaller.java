@@ -46,6 +46,7 @@ public class ListRepositoryResponseUnmarshaller {
 			repositoriesItem.setRepoId(_ctx.stringValue("ListRepositoryResponse.Repositories["+ i +"].RepoId"));
 			repositoriesItem.setCreateTime(_ctx.longValue("ListRepositoryResponse.Repositories["+ i +"].CreateTime"));
 			repositoriesItem.setModifiedTime(_ctx.longValue("ListRepositoryResponse.Repositories["+ i +"].ModifiedTime"));
+			repositoriesItem.setTagImmutability(_ctx.booleanValue("ListRepositoryResponse.Repositories["+ i +"].TagImmutability"));
 
 			repositories.add(repositoriesItem);
 		}
