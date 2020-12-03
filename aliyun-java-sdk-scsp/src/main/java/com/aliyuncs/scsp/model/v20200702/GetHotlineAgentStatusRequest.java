@@ -22,36 +22,19 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
+public class GetHotlineAgentStatusRequest extends RpcAcsRequest<GetHotlineAgentStatusResponse> {
 	   
-
-	private String clientToken;
 
 	private String instanceId;
 
 	private String accountName;
-
-	private String caller;
-
-	private String callee;
-	public StartCallRequest() {
-		super("scsp", "2020-07-02", "StartCall", "scsp-service");
+	public GetHotlineAgentStatusRequest() {
+		super("scsp", "2020-07-02", "GetHotlineAgentStatus", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getInstanceId() {
@@ -76,31 +59,9 @@ public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
 		}
 	}
 
-	public String getCaller() {
-		return this.caller;
-	}
-
-	public void setCaller(String caller) {
-		this.caller = caller;
-		if(caller != null){
-			putBodyParameter("Caller", caller);
-		}
-	}
-
-	public String getCallee() {
-		return this.callee;
-	}
-
-	public void setCallee(String callee) {
-		this.callee = callee;
-		if(callee != null){
-			putBodyParameter("Callee", callee);
-		}
-	}
-
 	@Override
-	public Class<StartCallResponse> getResponseClass() {
-		return StartCallResponse.class;
+	public Class<GetHotlineAgentStatusResponse> getResponseClass() {
+		return GetHotlineAgentStatusResponse.class;
 	}
 
 }

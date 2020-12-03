@@ -31,7 +31,7 @@ public class ListSkillGroupRequest extends RpcAcsRequest<ListSkillGroupResponse>
 
 	private Integer channelType;
 	public ListSkillGroupRequest() {
-		super("scsp", "2020-07-02", "ListSkillGroup");
+		super("scsp", "2020-07-02", "ListSkillGroup", "scsp-service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,21 +22,17 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
+public class GetNumLocationRequest extends RpcAcsRequest<GetNumLocationResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private String accountName;
-
-	private String caller;
-
-	private String callee;
-	public StartCallRequest() {
-		super("scsp", "2020-07-02", "StartCall", "scsp-service");
-		setMethod(MethodType.POST);
+	private String phoneNum;
+	public GetNumLocationRequest() {
+		super("scsp", "2020-07-02", "GetNumLocation", "scsp-service");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -50,7 +46,7 @@ public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -61,46 +57,24 @@ public class StartCallRequest extends RpcAcsRequest<StartCallResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getAccountName() {
-		return this.accountName;
+	public String getPhoneNum() {
+		return this.phoneNum;
 	}
 
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putBodyParameter("AccountName", accountName);
-		}
-	}
-
-	public String getCaller() {
-		return this.caller;
-	}
-
-	public void setCaller(String caller) {
-		this.caller = caller;
-		if(caller != null){
-			putBodyParameter("Caller", caller);
-		}
-	}
-
-	public String getCallee() {
-		return this.callee;
-	}
-
-	public void setCallee(String callee) {
-		this.callee = callee;
-		if(callee != null){
-			putBodyParameter("Callee", callee);
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+		if(phoneNum != null){
+			putQueryParameter("PhoneNum", phoneNum);
 		}
 	}
 
 	@Override
-	public Class<StartCallResponse> getResponseClass() {
-		return StartCallResponse.class;
+	public Class<GetNumLocationResponse> getResponseClass() {
+		return GetNumLocationResponse.class;
 	}
 
 }

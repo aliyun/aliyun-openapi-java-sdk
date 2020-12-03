@@ -36,7 +36,7 @@ public class CreateRoleRequest extends RpcAcsRequest<CreateRoleResponse> {
 
 	private String operator;
 	public CreateRoleRequest() {
-		super("scsp", "2020-07-02", "CreateRole");
+		super("scsp", "2020-07-02", "CreateRole", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

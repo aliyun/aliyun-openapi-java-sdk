@@ -35,7 +35,7 @@ public class UpdateTicketRequest extends RpcAcsRequest<UpdateTicketResponse> {
 
 	private String formData;
 	public UpdateTicketRequest() {
-		super("scsp", "2020-07-02", "UpdateTicket");
+		super("scsp", "2020-07-02", "UpdateTicket", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

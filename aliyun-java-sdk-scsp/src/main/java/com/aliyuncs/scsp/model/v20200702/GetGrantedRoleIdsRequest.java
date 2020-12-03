@@ -31,7 +31,7 @@ public class GetGrantedRoleIdsRequest extends RpcAcsRequest<GetGrantedRoleIdsRes
 
 	private String accountName;
 	public GetGrantedRoleIdsRequest() {
-		super("scsp", "2020-07-02", "GetGrantedRoleIds");
+		super("scsp", "2020-07-02", "GetGrantedRoleIds", "scsp-service");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

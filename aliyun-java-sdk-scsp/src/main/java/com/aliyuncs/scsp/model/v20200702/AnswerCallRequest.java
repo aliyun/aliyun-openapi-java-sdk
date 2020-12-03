@@ -37,7 +37,7 @@ public class AnswerCallRequest extends RpcAcsRequest<AnswerCallResponse> {
 
 	private String connectionId;
 	public AnswerCallRequest() {
-		super("scsp", "2020-07-02", "AnswerCall");
+		super("scsp", "2020-07-02", "AnswerCall", "scsp-service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
