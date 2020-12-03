@@ -22,34 +22,19 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDcdnDomainTopUrlVisitRequest extends RpcAcsRequest<DescribeDcdnDomainTopUrlVisitResponse> {
+public class DescribeDcdnDomainPropertyRequest extends RpcAcsRequest<DescribeDcdnDomainPropertyResponse> {
 	   
-
-	private String startTime;
 
 	private String domainName;
 
 	private Long ownerId;
-
-	private String sortBy;
-	public DescribeDcdnDomainTopUrlVisitRequest() {
-		super("dcdn", "2018-01-15", "DescribeDcdnDomainTopUrlVisit");
+	public DescribeDcdnDomainPropertyRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnDomainProperty");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
 	}
 
 	public String getDomainName() {
@@ -74,20 +59,9 @@ public class DescribeDcdnDomainTopUrlVisitRequest extends RpcAcsRequest<Describe
 		}
 	}
 
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-		if(sortBy != null){
-			putQueryParameter("SortBy", sortBy);
-		}
-	}
-
 	@Override
-	public Class<DescribeDcdnDomainTopUrlVisitResponse> getResponseClass() {
-		return DescribeDcdnDomainTopUrlVisitResponse.class;
+	public Class<DescribeDcdnDomainPropertyResponse> getResponseClass() {
+		return DescribeDcdnDomainPropertyResponse.class;
 	}
 
 }
