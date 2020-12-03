@@ -41,7 +41,7 @@ public class ListAppEventsRequest extends RoaAcsRequest<ListAppEventsResponse> {
 
 	private String eventType;
 	public ListAppEventsRequest() {
-		super("sae", "2019-05-06", "ListAppEvents");
+		super("sae", "2019-05-06", "ListAppEvents", "serverless");
 		setUriPattern("/pop/v1/sam/app/listAppEvents");
 		setMethod(MethodType.GET);
 		try {

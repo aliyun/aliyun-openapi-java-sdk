@@ -31,7 +31,7 @@ public class DescribeApplicationGroupsRequest extends RoaAcsRequest<DescribeAppl
 
 	private Integer currentPage;
 	public DescribeApplicationGroupsRequest() {
-		super("sae", "2019-05-06", "DescribeApplicationGroups");
+		super("sae", "2019-05-06", "DescribeApplicationGroups", "serverless");
 		setUriPattern("/pop/v1/sam/app/describeApplicationGroups");
 		setMethod(MethodType.GET);
 		try {

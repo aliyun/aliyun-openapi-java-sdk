@@ -37,7 +37,7 @@ public class ListNamespaceChangeOrdersRequest extends RoaAcsRequest<ListNamespac
 
 	private String key;
 	public ListNamespaceChangeOrdersRequest() {
-		super("sae", "2019-05-06", "ListNamespaceChangeOrders");
+		super("sae", "2019-05-06", "ListNamespaceChangeOrders", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/listNamespaceChangeOrders");
 		setMethod(MethodType.GET);
 		try {

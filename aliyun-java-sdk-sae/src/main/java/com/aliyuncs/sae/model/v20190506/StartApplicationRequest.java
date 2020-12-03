@@ -27,7 +27,7 @@ public class StartApplicationRequest extends RoaAcsRequest<StartApplicationRespo
 
 	private String appId;
 	public StartApplicationRequest() {
-		super("sae", "2019-05-06", "StartApplication");
+		super("sae", "2019-05-06", "StartApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/startApplication");
 		setMethod(MethodType.PUT);
 		try {

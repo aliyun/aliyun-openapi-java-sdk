@@ -95,7 +95,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String postStart;
 	public DeployApplicationRequest() {
-		super("sae", "2019-05-06", "DeployApplication");
+		super("sae", "2019-05-06", "DeployApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/deployApplication");
 		setMethod(MethodType.POST);
 		try {
@@ -111,7 +111,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	public void setNasId(String nasId) {
 		this.nasId = nasId;
 		if(nasId != null){
-			putPathParameter("NasId", nasId);
+			putQueryParameter("NasId", nasId);
 		}
 	}
 
@@ -210,7 +210,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	public void setMountHost(String mountHost) {
 		this.mountHost = mountHost;
 		if(mountHost != null){
-			putPathParameter("MountHost", mountHost);
+			putQueryParameter("MountHost", mountHost);
 		}
 	}
 
@@ -408,7 +408,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 	public void setMountDesc(String mountDesc) {
 		this.mountDesc = mountDesc;
 		if(mountDesc != null){
-			putPathParameter("MountDesc", mountDesc);
+			putQueryParameter("MountDesc", mountDesc);
 		}
 	}
 

@@ -27,7 +27,7 @@ public class DeleteIngressRequest extends RoaAcsRequest<DeleteIngressResponse> {
 
 	private Long ingressId;
 	public DeleteIngressRequest() {
-		super("sae", "2019-05-06", "DeleteIngress");
+		super("sae", "2019-05-06", "DeleteIngress", "serverless");
 		setUriPattern("/pop/v1/sam/ingress/Ingress");
 		setMethod(MethodType.DELETE);
 		try {

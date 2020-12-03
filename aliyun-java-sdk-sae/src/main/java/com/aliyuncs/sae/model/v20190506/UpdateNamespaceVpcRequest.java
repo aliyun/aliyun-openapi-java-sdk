@@ -29,7 +29,7 @@ public class UpdateNamespaceVpcRequest extends RoaAcsRequest<UpdateNamespaceVpcR
 
 	private String vpcId;
 	public UpdateNamespaceVpcRequest() {
-		super("sae", "2019-05-06", "UpdateNamespaceVpc");
+		super("sae", "2019-05-06", "UpdateNamespaceVpc", "serverless");
 		setUriPattern("/pop/v1/sam/namespace/updateNamespaceVpc");
 		setMethod(MethodType.POST);
 		try {

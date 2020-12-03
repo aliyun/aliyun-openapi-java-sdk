@@ -27,7 +27,7 @@ public class StopApplicationRequest extends RoaAcsRequest<StopApplicationRespons
 
 	private String appId;
 	public StopApplicationRequest() {
-		super("sae", "2019-05-06", "StopApplication");
+		super("sae", "2019-05-06", "StopApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/stopApplication");
 		setMethod(MethodType.PUT);
 		try {

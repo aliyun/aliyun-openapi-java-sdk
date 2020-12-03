@@ -31,7 +31,7 @@ public class TagResourcesRequest extends RoaAcsRequest<TagResourcesResponse> {
 
 	private String resourceIds;
 	public TagResourcesRequest() {
-		super("sae", "2019-05-06", "TagResources");
+		super("sae", "2019-05-06", "TagResources", "serverless");
 		setUriPattern("/tags");
 		setMethod(MethodType.POST);
 		try {

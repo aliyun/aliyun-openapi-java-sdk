@@ -37,7 +37,7 @@ public class UpdateIngressRequest extends RoaAcsRequest<UpdateIngressResponse> {
 
 	private String defaultRule;
 	public UpdateIngressRequest() {
-		super("sae", "2019-05-06", "UpdateIngress");
+		super("sae", "2019-05-06", "UpdateIngress", "serverless");
 		setUriPattern("/pop/v1/sam/ingress/Ingress");
 		setMethod(MethodType.PUT);
 		try {

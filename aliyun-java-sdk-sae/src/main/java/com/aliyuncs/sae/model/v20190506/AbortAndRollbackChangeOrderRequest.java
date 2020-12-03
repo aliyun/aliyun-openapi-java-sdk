@@ -27,7 +27,7 @@ public class AbortAndRollbackChangeOrderRequest extends RoaAcsRequest<AbortAndRo
 
 	private String changeOrderId;
 	public AbortAndRollbackChangeOrderRequest() {
-		super("sae", "2019-05-06", "AbortAndRollbackChangeOrder");
+		super("sae", "2019-05-06", "AbortAndRollbackChangeOrder", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/AbortAndRollbackChangeOrder");
 		setMethod(MethodType.PUT);
 		try {

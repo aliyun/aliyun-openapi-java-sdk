@@ -33,7 +33,7 @@ public class UntagResourcesRequest extends RoaAcsRequest<UntagResourcesResponse>
 
 	private String resourceIds;
 	public UntagResourcesRequest() {
-		super("sae", "2019-05-06", "UntagResources");
+		super("sae", "2019-05-06", "UntagResources", "serverless");
 		setUriPattern("/tags");
 		setMethod(MethodType.DELETE);
 		try {

@@ -25,7 +25,7 @@ import com.aliyuncs.sae.Endpoint;
 public class DescribeInstanceSpecificationsRequest extends RoaAcsRequest<DescribeInstanceSpecificationsResponse> {
 	   
 	public DescribeInstanceSpecificationsRequest() {
-		super("sae", "2019-05-06", "DescribeInstanceSpecifications");
+		super("sae", "2019-05-06", "DescribeInstanceSpecifications", "serverless");
 		setUriPattern("/pop/v1/paas/quota/instanceSpecifications");
 		setMethod(MethodType.GET);
 		try {

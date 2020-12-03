@@ -27,7 +27,7 @@ public class DescribeIngressRequest extends RoaAcsRequest<DescribeIngressRespons
 
 	private Long ingressId;
 	public DescribeIngressRequest() {
-		super("sae", "2019-05-06", "DescribeIngress");
+		super("sae", "2019-05-06", "DescribeIngress", "serverless");
 		setUriPattern("/pop/v1/sam/ingress/Ingress");
 		setMethod(MethodType.GET);
 		try {

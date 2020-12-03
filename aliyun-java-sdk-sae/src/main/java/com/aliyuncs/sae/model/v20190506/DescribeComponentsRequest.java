@@ -29,7 +29,7 @@ public class DescribeComponentsRequest extends RoaAcsRequest<DescribeComponentsR
 
 	private String type;
 	public DescribeComponentsRequest() {
-		super("sae", "2019-05-06", "DescribeComponents");
+		super("sae", "2019-05-06", "DescribeComponents", "serverless");
 		setUriPattern("/pop/v1/sam/resource/components");
 		setMethod(MethodType.GET);
 		try {

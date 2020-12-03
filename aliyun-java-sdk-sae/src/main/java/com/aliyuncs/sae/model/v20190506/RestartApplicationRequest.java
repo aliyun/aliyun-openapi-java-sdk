@@ -29,7 +29,7 @@ public class RestartApplicationRequest extends RoaAcsRequest<RestartApplicationR
 
 	private String appId;
 	public RestartApplicationRequest() {
-		super("sae", "2019-05-06", "RestartApplication");
+		super("sae", "2019-05-06", "RestartApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/restartApplication");
 		setMethod(MethodType.PUT);
 		try {

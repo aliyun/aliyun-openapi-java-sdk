@@ -22,32 +22,30 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleApplicationVerticallyResponse> {
+public class RestartInstancesRequest extends RoaAcsRequest<RestartInstancesResponse> {
 	   
 
-	private String memory;
+	private String instanceIds;
 
 	private String appId;
-
-	private String cpu;
-	public RescaleApplicationVerticallyRequest() {
-		super("sae", "2019-05-06", "RescaleApplicationVertically", "serverless");
-		setUriPattern("/pop/v1/sam/app/rescaleApplicationVertically");
-		setMethod(MethodType.POST);
+	public RestartInstancesRequest() {
+		super("sae", "2019-05-06", "RestartInstances", "serverless");
+		setUriPattern("/pop/v1/sam/app/restartInstances");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getMemory() {
-		return this.memory;
+	public String getInstanceIds() {
+		return this.instanceIds;
 	}
 
-	public void setMemory(String memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory);
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 
@@ -62,20 +60,9 @@ public class RescaleApplicationVerticallyRequest extends RoaAcsRequest<RescaleAp
 		}
 	}
 
-	public String getCpu() {
-		return this.cpu;
-	}
-
-	public void setCpu(String cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu);
-		}
-	}
-
 	@Override
-	public Class<RescaleApplicationVerticallyResponse> getResponseClass() {
-		return RescaleApplicationVerticallyResponse.class;
+	public Class<RestartInstancesResponse> getResponseClass() {
+		return RestartInstancesResponse.class;
 	}
 
 }

@@ -27,7 +27,7 @@ public class ListAppVersionsRequest extends RoaAcsRequest<ListAppVersionsRespons
 
 	private String appId;
 	public ListAppVersionsRequest() {
-		super("sae", "2019-05-06", "ListAppVersions");
+		super("sae", "2019-05-06", "ListAppVersions", "serverless");
 		setUriPattern("/pop/v1/sam/app/listAppVersions");
 		setMethod(MethodType.GET);
 		try {

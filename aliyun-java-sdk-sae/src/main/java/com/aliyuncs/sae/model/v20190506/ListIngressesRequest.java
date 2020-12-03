@@ -29,7 +29,7 @@ public class ListIngressesRequest extends RoaAcsRequest<ListIngressesResponse> {
 
 	private String appId;
 	public ListIngressesRequest() {
-		super("sae", "2019-05-06", "ListIngresses");
+		super("sae", "2019-05-06", "ListIngresses", "serverless");
 		setUriPattern("/pop/v1/sam/ingress/IngressList");
 		setMethod(MethodType.GET);
 		try {

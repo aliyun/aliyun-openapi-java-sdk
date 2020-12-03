@@ -27,7 +27,7 @@ public class DescribeApplicationStatusRequest extends RoaAcsRequest<DescribeAppl
 
 	private String appId;
 	public DescribeApplicationStatusRequest() {
-		super("sae", "2019-05-06", "DescribeApplicationStatus");
+		super("sae", "2019-05-06", "DescribeApplicationStatus", "serverless");
 		setUriPattern("/pop/v1/sam/app/describeApplicationStatus");
 		setMethod(MethodType.GET);
 		try {

@@ -27,7 +27,7 @@ public class DescribeApplicationSlbsRequest extends RoaAcsRequest<DescribeApplic
 
 	private String appId;
 	public DescribeApplicationSlbsRequest() {
-		super("sae", "2019-05-06", "DescribeApplicationSlbs");
+		super("sae", "2019-05-06", "DescribeApplicationSlbs", "serverless");
 		setUriPattern("/pop/v1/sam/app/slb");
 		setMethod(MethodType.GET);
 		try {

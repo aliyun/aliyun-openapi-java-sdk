@@ -31,7 +31,7 @@ public class RescaleApplicationRequest extends RoaAcsRequest<RescaleApplicationR
 
 	private String appId;
 	public RescaleApplicationRequest() {
-		super("sae", "2019-05-06", "RescaleApplication");
+		super("sae", "2019-05-06", "RescaleApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/rescaleApplication");
 		setMethod(MethodType.PUT);
 		try {

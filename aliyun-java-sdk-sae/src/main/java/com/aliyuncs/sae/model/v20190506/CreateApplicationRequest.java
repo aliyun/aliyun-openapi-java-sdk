@@ -37,6 +37,8 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String commandArgs;
 
+	private String acrAssumeRoleArn;
+
 	private String readiness;
 
 	private String timezone;
@@ -105,7 +107,7 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 
 	private String postStart;
 	public CreateApplicationRequest() {
-		super("sae", "2019-05-06", "CreateApplication");
+		super("sae", "2019-05-06", "CreateApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/createApplication");
 		setMethod(MethodType.POST);
 		try {
@@ -177,6 +179,17 @@ public class CreateApplicationRequest extends RoaAcsRequest<CreateApplicationRes
 		this.commandArgs = commandArgs;
 		if(commandArgs != null){
 			putQueryParameter("CommandArgs", commandArgs);
+		}
+	}
+
+	public String getAcrAssumeRoleArn() {
+		return this.acrAssumeRoleArn;
+	}
+
+	public void setAcrAssumeRoleArn(String acrAssumeRoleArn) {
+		this.acrAssumeRoleArn = acrAssumeRoleArn;
+		if(acrAssumeRoleArn != null){
+			putQueryParameter("AcrAssumeRoleArn", acrAssumeRoleArn);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class ConfirmPipelineBatchRequest extends RoaAcsRequest<ConfirmPipelineBa
 
 	private String pipelineId;
 	public ConfirmPipelineBatchRequest() {
-		super("sae", "2019-05-06", "ConfirmPipelineBatch");
+		super("sae", "2019-05-06", "ConfirmPipelineBatch", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/ConfirmPipelineBatch");
 		setMethod(MethodType.GET);
 		try {

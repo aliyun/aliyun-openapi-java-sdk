@@ -29,7 +29,7 @@ public class DescribeNamespaceListRequest extends RoaAcsRequest<DescribeNamespac
 
 	private Boolean containCustom;
 	public DescribeNamespaceListRequest() {
-		super("sae", "2019-05-06", "DescribeNamespaceList");
+		super("sae", "2019-05-06", "DescribeNamespaceList", "serverless");
 		setUriPattern("/pop/v1/sam/namespace/describeNamespaceList");
 		setMethod(MethodType.GET);
 		try {

@@ -31,7 +31,7 @@ public class UpdateConfigMapRequest extends RoaAcsRequest<UpdateConfigMapRespons
 
 	private Long configMapId;
 	public UpdateConfigMapRequest() {
-		super("sae", "2019-05-06", "UpdateConfigMap");
+		super("sae", "2019-05-06", "UpdateConfigMap", "serverless");
 		setUriPattern("/pop/v1/sam/configmap/configMap");
 		setMethod(MethodType.PUT);
 		try {

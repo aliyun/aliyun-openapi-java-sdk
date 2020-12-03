@@ -27,7 +27,7 @@ public class DeleteApplicationRequest extends RoaAcsRequest<DeleteApplicationRes
 
 	private String appId;
 	public DeleteApplicationRequest() {
-		super("sae", "2019-05-06", "DeleteApplication");
+		super("sae", "2019-05-06", "DeleteApplication", "serverless");
 		setUriPattern("/pop/v1/sam/app/deleteApplication");
 		setMethod(MethodType.DELETE);
 		try {

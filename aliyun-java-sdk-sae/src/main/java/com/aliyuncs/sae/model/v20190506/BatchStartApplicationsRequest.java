@@ -29,7 +29,7 @@ public class BatchStartApplicationsRequest extends RoaAcsRequest<BatchStartAppli
 
 	private String namespaceId;
 	public BatchStartApplicationsRequest() {
-		super("sae", "2019-05-06", "BatchStartApplications");
+		super("sae", "2019-05-06", "BatchStartApplications", "serverless");
 		setUriPattern("/pop/v1/sam/app/batchStartApplications");
 		setMethod(MethodType.PUT);
 		try {

@@ -37,7 +37,7 @@ public class ListChangeOrdersRequest extends RoaAcsRequest<ListChangeOrdersRespo
 
 	private String key;
 	public ListChangeOrdersRequest() {
-		super("sae", "2019-05-06", "ListChangeOrders");
+		super("sae", "2019-05-06", "ListChangeOrders", "serverless");
 		setUriPattern("/pop/v1/sam/changeorder/ListChangeOrders");
 		setMethod(MethodType.GET);
 		try {

@@ -27,7 +27,7 @@ public class QueryResourceStaticsRequest extends RoaAcsRequest<QueryResourceStat
 
 	private String appId;
 	public QueryResourceStaticsRequest() {
-		super("sae", "2019-05-06", "QueryResourceStatics");
+		super("sae", "2019-05-06", "QueryResourceStatics", "serverless");
 		setUriPattern("/pop/v1/paas/quota/queryResourceStatics");
 		setMethod(MethodType.GET);
 		try {

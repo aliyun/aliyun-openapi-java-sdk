@@ -27,7 +27,7 @@ public class DescribeInstanceLogRequest extends RoaAcsRequest<DescribeInstanceLo
 
 	private String instanceId;
 	public DescribeInstanceLogRequest() {
-		super("sae", "2019-05-06", "DescribeInstanceLog");
+		super("sae", "2019-05-06", "DescribeInstanceLog", "serverless");
 		setUriPattern("/pop/v1/sam/instance/describeInstanceLog");
 		setMethod(MethodType.GET);
 		try {

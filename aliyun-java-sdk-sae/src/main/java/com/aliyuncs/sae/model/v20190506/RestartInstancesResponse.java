@@ -15,36 +15,28 @@
 package com.aliyuncs.sae.model.v20190506;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sae.transform.v20190506.CreateApplicationResponseUnmarshaller;
+import com.aliyuncs.sae.transform.v20190506.RestartInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateApplicationResponse extends AcsResponse {
-
-	private String message;
+public class RestartInstancesResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String traceId;
-
-	private String errorCode;
 
 	private String code;
 
 	private Boolean success;
 
+	private String errorCode;
+
+	private String message;
+
+	private String traceId;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,22 +44,6 @@ public class CreateApplicationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getCode() {
@@ -86,6 +62,30 @@ public class CreateApplicationResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -96,17 +96,7 @@ public class CreateApplicationResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String appId;
-
 		private String changeOrderId;
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
 
 		public String getChangeOrderId() {
 			return this.changeOrderId;
@@ -118,8 +108,8 @@ public class CreateApplicationResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateApplicationResponse getInstance(UnmarshallerContext context) {
-		return	CreateApplicationResponseUnmarshaller.unmarshall(this, context);
+	public RestartInstancesResponse getInstance(UnmarshallerContext context) {
+		return	RestartInstancesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
