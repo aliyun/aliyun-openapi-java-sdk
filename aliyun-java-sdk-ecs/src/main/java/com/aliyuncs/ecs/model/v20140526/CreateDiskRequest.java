@@ -70,7 +70,7 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String kMSKeyId;
 	public CreateDiskRequest() {
-		super("Ecs", "2014-05-26", "CreateDisk", "ecs");
+		super("Ecs", "2014-05-26", "CreateDisk");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -38,7 +38,7 @@ public class UnassignPrivateIpAddressesRequest extends RpcAcsRequest<UnassignPri
 
 	private String networkInterfaceId;
 	public UnassignPrivateIpAddressesRequest() {
-		super("Ecs", "2014-05-26", "UnassignPrivateIpAddresses", "ecs");
+		super("Ecs", "2014-05-26", "UnassignPrivateIpAddresses");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

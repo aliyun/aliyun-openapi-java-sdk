@@ -51,6 +51,7 @@ public class DescribeInvocationResultsResponseUnmarshaller {
 			invocationResult.setExitCode(_ctx.longValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ExitCode"));
 			invocationResult.setErrorCode(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ErrorCode"));
 			invocationResult.setErrorInfo(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].ErrorInfo"));
+			invocationResult.setUsername(_ctx.stringValue("DescribeInvocationResultsResponse.Invocation.InvocationResults["+ i +"].Username"));
 
 			invocationResults.add(invocationResult);
 		}

@@ -117,6 +117,8 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			private String errorInfo;
 
+			private String username;
+
 			public String getCommandId() {
 				return this.commandId;
 			}
@@ -227,6 +229,14 @@ public class DescribeInvocationResultsResponse extends AcsResponse {
 
 			public void setErrorInfo(String errorInfo) {
 				this.errorInfo = errorInfo;
+			}
+
+			public String getUsername() {
+				return this.username;
+			}
+
+			public void setUsername(String username) {
+				this.username = username;
 			}
 		}
 	}

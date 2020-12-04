@@ -45,7 +45,7 @@ public class DescribeStorageSetsRequest extends RpcAcsRequest<DescribeStorageSet
 
 	private String storageSetName;
 	public DescribeStorageSetsRequest() {
-		super("Ecs", "2014-05-26", "DescribeStorageSets", "ecs");
+		super("Ecs", "2014-05-26", "DescribeStorageSets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -61,8 +61,10 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 	private Map<Object,Object> parameters;
 
 	private Boolean enableParameter;
+
+	private String username;
 	public RunCommandRequest() {
-		super("Ecs", "2014-05-26", "RunCommand", "ecs");
+		super("Ecs", "2014-05-26", "RunCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -256,6 +258,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.enableParameter = enableParameter;
 		if(enableParameter != null){
 			putQueryParameter("EnableParameter", enableParameter.toString());
+		}
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
 		}
 	}
 

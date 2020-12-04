@@ -47,7 +47,7 @@ public class DescribeCapacityReservationsRequest extends RpcAcsRequest<DescribeC
 
 	private String zoneId;
 	public DescribeCapacityReservationsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCapacityReservations", "ecs");
+		super("Ecs", "2014-05-26", "DescribeCapacityReservations");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

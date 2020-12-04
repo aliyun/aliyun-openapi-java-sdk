@@ -48,7 +48,7 @@ public class CreateAutoSnapshotPolicyRequest extends RpcAcsRequest<CreateAutoSna
 
 	private String targetCopyRegions;
 	public CreateAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs");
+		super("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

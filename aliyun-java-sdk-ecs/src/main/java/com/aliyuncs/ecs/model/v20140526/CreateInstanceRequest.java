@@ -154,7 +154,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String systemDiskDescription;
 	public CreateInstanceRequest() {
-		super("Ecs", "2014-05-26", "CreateInstance", "ecs");
+		super("Ecs", "2014-05-26", "CreateInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

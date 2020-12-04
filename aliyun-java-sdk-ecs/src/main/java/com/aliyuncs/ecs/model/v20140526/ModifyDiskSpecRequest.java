@@ -41,7 +41,7 @@ public class ModifyDiskSpecRequest extends RpcAcsRequest<ModifyDiskSpecResponse>
 
 	private Long ownerId;
 	public ModifyDiskSpecRequest() {
-		super("Ecs", "2014-05-26", "ModifyDiskSpec", "ecs");
+		super("Ecs", "2014-05-26", "ModifyDiskSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

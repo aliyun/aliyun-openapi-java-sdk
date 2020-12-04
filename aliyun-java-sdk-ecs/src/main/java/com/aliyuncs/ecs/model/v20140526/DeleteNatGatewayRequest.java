@@ -35,7 +35,7 @@ public class DeleteNatGatewayRequest extends RpcAcsRequest<DeleteNatGatewayRespo
 
 	private Long ownerId;
 	public DeleteNatGatewayRequest() {
-		super("Ecs", "2014-05-26", "DeleteNatGateway", "ecs");
+		super("Ecs", "2014-05-26", "DeleteNatGateway");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

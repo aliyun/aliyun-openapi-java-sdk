@@ -99,6 +99,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private String parameters;
 
+		private String username;
+
 		private List<InvokeInstance> invokeInstances;
 
 		public String getInvokeId() {
@@ -187,6 +189,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		public void setParameters(String parameters) {
 			this.parameters = parameters;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 
 		public List<InvokeInstance> getInvokeInstances() {

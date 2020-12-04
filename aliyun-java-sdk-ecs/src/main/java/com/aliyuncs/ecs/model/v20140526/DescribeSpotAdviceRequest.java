@@ -22,18 +22,28 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSnapshotPolicyResponse> {
+public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String autoSnapshotPolicyId;
+	private Float memory;
+
+	private Integer minCores;
+
+	private Integer cores;
 
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private Long ownerId;
-	public DeleteAutoSnapshotPolicyRequest() {
-		super("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy");
+
+	private String zoneId;
+
+	private Float minMemory;
+	public DescribeSpotAdviceRequest() {
+		super("Ecs", "2014-05-26", "DescribeSpotAdvice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,14 +62,36 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 		}
 	}
 
-	public String getAutoSnapshotPolicyId() {
-		return this.autoSnapshotPolicyId;
+	public Float getMemory() {
+		return this.memory;
 	}
 
-	public void setAutoSnapshotPolicyId(String autoSnapshotPolicyId) {
-		this.autoSnapshotPolicyId = autoSnapshotPolicyId;
-		if(autoSnapshotPolicyId != null){
-			putQueryParameter("autoSnapshotPolicyId", autoSnapshotPolicyId);
+	public void setMemory(Float memory) {
+		this.memory = memory;
+		if(memory != null){
+			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public Integer getMinCores() {
+		return this.minCores;
+	}
+
+	public void setMinCores(Integer minCores) {
+		this.minCores = minCores;
+		if(minCores != null){
+			putQueryParameter("MinCores", minCores.toString());
+		}
+	}
+
+	public Integer getCores() {
+		return this.cores;
+	}
+
+	public void setCores(Integer cores) {
+		this.cores = cores;
+		if(cores != null){
+			putQueryParameter("Cores", cores.toString());
 		}
 	}
 
@@ -74,6 +106,17 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -85,9 +128,31 @@ public class DeleteAutoSnapshotPolicyRequest extends RpcAcsRequest<DeleteAutoSna
 		}
 	}
 
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Float getMinMemory() {
+		return this.minMemory;
+	}
+
+	public void setMinMemory(Float minMemory) {
+		this.minMemory = minMemory;
+		if(minMemory != null){
+			putQueryParameter("MinMemory", minMemory.toString());
+		}
+	}
+
 	@Override
-	public Class<DeleteAutoSnapshotPolicyResponse> getResponseClass() {
-		return DeleteAutoSnapshotPolicyResponse.class;
+	public Class<DescribeSpotAdviceResponse> getResponseClass() {
+		return DescribeSpotAdviceResponse.class;
 	}
 
 }

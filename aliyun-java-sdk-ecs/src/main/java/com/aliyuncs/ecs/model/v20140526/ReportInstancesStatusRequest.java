@@ -34,6 +34,8 @@ public class ReportInstancesStatusRequest extends RpcAcsRequest<ReportInstancesS
 
 	private String startTime;
 
+	private String issueCategory;
+
 	private List<String> diskIds;
 
 	private String resourceOwnerAccount;
@@ -48,7 +50,7 @@ public class ReportInstancesStatusRequest extends RpcAcsRequest<ReportInstancesS
 
 	private List<String> devices;
 	public ReportInstancesStatusRequest() {
-		super("Ecs", "2014-05-26", "ReportInstancesStatus", "ecs");
+		super("Ecs", "2014-05-26", "ReportInstancesStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +99,17 @@ public class ReportInstancesStatusRequest extends RpcAcsRequest<ReportInstancesS
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getIssueCategory() {
+		return this.issueCategory;
+	}
+
+	public void setIssueCategory(String issueCategory) {
+		this.issueCategory = issueCategory;
+		if(issueCategory != null){
+			putQueryParameter("IssueCategory", issueCategory);
 		}
 	}
 

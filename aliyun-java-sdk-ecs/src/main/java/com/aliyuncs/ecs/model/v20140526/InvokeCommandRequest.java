@@ -45,8 +45,10 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 	private List<String> instanceIds;
 
 	private Map<Object,Object> parameters;
+
+	private String username;
 	public InvokeCommandRequest() {
-		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
+		super("Ecs", "2014-05-26", "InvokeCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -152,6 +154,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.parameters = parameters;
 		if(parameters != null){
 			putQueryParameter("Parameters", new Gson().toJson(parameters));
+		}
+	}
+
+	public String getUsername() {
+		return this.username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+		if(username != null){
+			putQueryParameter("Username", username);
 		}
 	}
 

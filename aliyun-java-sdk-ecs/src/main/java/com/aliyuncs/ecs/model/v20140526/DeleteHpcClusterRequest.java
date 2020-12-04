@@ -37,7 +37,7 @@ public class DeleteHpcClusterRequest extends RpcAcsRequest<DeleteHpcClusterRespo
 
 	private Long ownerId;
 	public DeleteHpcClusterRequest() {
-		super("Ecs", "2014-05-26", "DeleteHpcCluster", "ecs");
+		super("Ecs", "2014-05-26", "DeleteHpcCluster");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

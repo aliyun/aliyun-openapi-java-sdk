@@ -44,7 +44,7 @@ public class StopInstancesRequest extends RpcAcsRequest<StopInstancesResponse> {
 
 	private List<String> instanceIds;
 	public StopInstancesRequest() {
-		super("Ecs", "2014-05-26", "StopInstances", "ecs");
+		super("Ecs", "2014-05-26", "StopInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class AddBandwidthPackageIpsRequest extends RpcAcsRequest<AddBandwidthPac
 
 	private String ipCount;
 	public AddBandwidthPackageIpsRequest() {
-		super("Ecs", "2014-05-26", "AddBandwidthPackageIps", "ecs");
+		super("Ecs", "2014-05-26", "AddBandwidthPackageIps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -41,7 +41,7 @@ public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 
 	private String instanceId;
 	public StartInstanceRequest() {
-		super("Ecs", "2014-05-26", "StartInstance", "ecs");
+		super("Ecs", "2014-05-26", "StartInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

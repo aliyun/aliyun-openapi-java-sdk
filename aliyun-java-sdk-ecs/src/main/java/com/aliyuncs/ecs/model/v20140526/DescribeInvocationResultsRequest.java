@@ -49,7 +49,7 @@ public class DescribeInvocationResultsRequest extends RpcAcsRequest<DescribeInvo
 
 	private Boolean includeHistory;
 	public DescribeInvocationResultsRequest() {
-		super("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs");
+		super("Ecs", "2014-05-26", "DescribeInvocationResults");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class ModifyReservedInstanceAttributeRequest extends RpcAcsRequest<Modify
 
 	private String reservedInstanceName;
 	public ModifyReservedInstanceAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyReservedInstanceAttribute", "ecs");
+		super("Ecs", "2014-05-26", "ModifyReservedInstanceAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
