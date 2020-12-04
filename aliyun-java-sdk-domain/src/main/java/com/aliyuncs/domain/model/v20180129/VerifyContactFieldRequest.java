@@ -65,7 +65,7 @@ public class VerifyContactFieldRequest extends RpcAcsRequest<VerifyContactFieldR
 
 	private String registrantName;
 	public VerifyContactFieldRequest() {
-		super("Domain", "2018-01-29", "VerifyContactField", "domain");
+		super("Domain", "2018-01-29", "VerifyContactField");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

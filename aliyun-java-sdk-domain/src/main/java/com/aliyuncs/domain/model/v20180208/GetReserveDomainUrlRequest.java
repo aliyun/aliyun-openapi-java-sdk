@@ -25,7 +25,7 @@ import com.aliyuncs.domain.Endpoint;
 public class GetReserveDomainUrlRequest extends RpcAcsRequest<GetReserveDomainUrlResponse> {
 	   
 	public GetReserveDomainUrlRequest() {
-		super("Domain", "2018-02-08", "GetReserveDomainUrl", "domain");
+		super("Domain", "2018-02-08", "GetReserveDomainUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

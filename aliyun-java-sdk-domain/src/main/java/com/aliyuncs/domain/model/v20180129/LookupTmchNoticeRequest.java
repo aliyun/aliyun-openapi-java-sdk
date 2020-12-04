@@ -31,7 +31,7 @@ public class LookupTmchNoticeRequest extends RpcAcsRequest<LookupTmchNoticeRespo
 
 	private String lang;
 	public LookupTmchNoticeRequest() {
-		super("Domain", "2018-01-29", "LookupTmchNotice", "domain");
+		super("Domain", "2018-01-29", "LookupTmchNotice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

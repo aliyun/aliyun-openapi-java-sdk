@@ -31,7 +31,7 @@ public class QueryLocalEnsAssociationRequest extends RpcAcsRequest<QueryLocalEns
 
 	private String lang;
 	public QueryLocalEnsAssociationRequest() {
-		super("Domain", "2018-01-29", "QueryLocalEnsAssociation", "domain");
+		super("Domain", "2018-01-29", "QueryLocalEnsAssociation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

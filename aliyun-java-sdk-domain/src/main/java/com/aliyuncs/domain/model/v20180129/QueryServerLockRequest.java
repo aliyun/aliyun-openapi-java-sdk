@@ -31,7 +31,7 @@ public class QueryServerLockRequest extends RpcAcsRequest<QueryServerLockRespons
 
 	private String lang;
 	public QueryServerLockRequest() {
-		super("Domain", "2018-01-29", "QueryServerLock", "domain");
+		super("Domain", "2018-01-29", "QueryServerLock");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

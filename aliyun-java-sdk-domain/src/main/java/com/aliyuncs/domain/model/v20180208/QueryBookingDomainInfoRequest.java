@@ -27,7 +27,7 @@ public class QueryBookingDomainInfoRequest extends RpcAcsRequest<QueryBookingDom
 
 	private String domainName;
 	public QueryBookingDomainInfoRequest() {
-		super("Domain", "2018-02-08", "QueryBookingDomainInfo", "domain");
+		super("Domain", "2018-02-08", "QueryBookingDomainInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class BidDomainRequest extends RpcAcsRequest<BidDomainResponse> {
 
 	private String currency;
 	public BidDomainRequest() {
-		super("Domain", "2018-02-08", "BidDomain", "domain");
+		super("Domain", "2018-02-08", "BidDomain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

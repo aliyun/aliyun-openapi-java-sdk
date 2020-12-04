@@ -33,7 +33,7 @@ public class QueryDomainGroupListRequest extends RpcAcsRequest<QueryDomainGroupL
 
 	private String lang;
 	public QueryDomainGroupListRequest() {
-		super("Domain", "2018-01-29", "QueryDomainGroupList", "domain");
+		super("Domain", "2018-01-29", "QueryDomainGroupList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

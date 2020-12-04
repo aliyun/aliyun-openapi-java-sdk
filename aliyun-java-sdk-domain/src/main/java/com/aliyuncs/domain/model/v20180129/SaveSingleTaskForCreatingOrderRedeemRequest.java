@@ -41,7 +41,7 @@ public class SaveSingleTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<S
 
 	private Boolean usePromotion;
 	public SaveSingleTaskForCreatingOrderRedeemRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

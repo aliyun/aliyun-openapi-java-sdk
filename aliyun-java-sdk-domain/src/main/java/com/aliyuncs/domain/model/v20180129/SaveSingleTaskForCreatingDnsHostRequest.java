@@ -36,7 +36,7 @@ public class SaveSingleTaskForCreatingDnsHostRequest extends RpcAcsRequest<SaveS
 
 	private String lang;
 	public SaveSingleTaskForCreatingDnsHostRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

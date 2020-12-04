@@ -33,7 +33,7 @@ public class SaveSingleTaskForTransferProhibitionLockRequest extends RpcAcsReque
 
 	private Boolean status;
 	public SaveSingleTaskForTransferProhibitionLockRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

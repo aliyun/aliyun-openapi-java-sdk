@@ -34,7 +34,7 @@ public class SaveBatchTaskForTransferProhibitionLockRequest extends RpcAcsReques
 
 	private Boolean status;
 	public SaveBatchTaskForTransferProhibitionLockRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock", "domain");
+		super("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

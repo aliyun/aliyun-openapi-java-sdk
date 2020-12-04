@@ -40,7 +40,7 @@ public class SaveBatchTaskForCreatingOrderRedeemRequest extends RpcAcsRequest<Sa
 
 	private Boolean usePromotion;
 	public SaveBatchTaskForCreatingOrderRedeemRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem", "domain");
+		super("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class SaveSingleTaskForDomainNameProxyServiceRequest extends RpcAcsReques
 
 	private Boolean status;
 	public SaveSingleTaskForDomainNameProxyServiceRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

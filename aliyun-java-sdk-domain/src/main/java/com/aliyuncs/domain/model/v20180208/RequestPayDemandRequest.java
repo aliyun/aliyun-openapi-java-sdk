@@ -35,7 +35,7 @@ public class RequestPayDemandRequest extends RpcAcsRequest<RequestPayDemandRespo
 
 	private String message;
 	public RequestPayDemandRequest() {
-		super("Domain", "2018-02-08", "RequestPayDemand", "domain");
+		super("Domain", "2018-02-08", "RequestPayDemand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

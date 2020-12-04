@@ -33,7 +33,7 @@ public class QueryContactInfoRequest extends RpcAcsRequest<QueryContactInfoRespo
 
 	private String lang;
 	public QueryContactInfoRequest() {
-		super("Domain", "2018-01-29", "QueryContactInfo", "domain");
+		super("Domain", "2018-01-29", "QueryContactInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

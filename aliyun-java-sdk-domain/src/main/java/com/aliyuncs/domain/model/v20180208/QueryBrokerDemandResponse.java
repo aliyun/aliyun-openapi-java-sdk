@@ -115,6 +115,8 @@ public class QueryBrokerDemandResponse extends AcsResponse {
 
 		private Float servicePayPrice;
 
+		private Integer orderType;
+
 		public String getBizId() {
 			return this.bizId;
 		}
@@ -225,6 +227,14 @@ public class QueryBrokerDemandResponse extends AcsResponse {
 
 		public void setServicePayPrice(Float servicePayPrice) {
 			this.servicePayPrice = servicePayPrice;
+		}
+
+		public Integer getOrderType() {
+			return this.orderType;
+		}
+
+		public void setOrderType(Integer orderType) {
+			this.orderType = orderType;
 		}
 	}
 

@@ -35,7 +35,7 @@ public class SubmitOperationCredentialsRequest extends RpcAcsRequest<SubmitOpera
 
 	private String lang;
 	public SubmitOperationCredentialsRequest() {
-		super("Domain", "2018-01-29", "SubmitOperationCredentials", "domain");
+		super("Domain", "2018-01-29", "SubmitOperationCredentials");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

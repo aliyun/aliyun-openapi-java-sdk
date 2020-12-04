@@ -31,7 +31,7 @@ public class SaveSingleTaskForApprovingTransferOutRequest extends RpcAcsRequest<
 
 	private String lang;
 	public SaveSingleTaskForApprovingTransferOutRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut", "domain");
+		super("Domain", "2018-01-29", "SaveSingleTaskForApprovingTransferOut");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

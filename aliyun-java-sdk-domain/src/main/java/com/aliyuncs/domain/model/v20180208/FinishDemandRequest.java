@@ -29,7 +29,7 @@ public class FinishDemandRequest extends RpcAcsRequest<FinishDemandResponse> {
 
 	private String message;
 	public FinishDemandRequest() {
-		super("Domain", "2018-02-08", "FinishDemand", "domain");
+		super("Domain", "2018-02-08", "FinishDemand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

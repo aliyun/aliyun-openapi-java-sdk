@@ -41,7 +41,7 @@ public class QueryTaskDetailHistoryRequest extends RpcAcsRequest<QueryTaskDetail
 
 	private String domainNameCursor;
 	public QueryTaskDetailHistoryRequest() {
-		super("Domain", "2018-01-29", "QueryTaskDetailHistory", "domain");
+		super("Domain", "2018-01-29", "QueryTaskDetailHistory");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

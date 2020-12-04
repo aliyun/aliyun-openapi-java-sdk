@@ -1,3 +1,6 @@
+2020-12-04 Version: 3.14.4
+- Supported broker demand.
+
 2020-06-23 Version: 3.14.3
 - Support SubmitOperationAuditInfo for Support self-service submission of approval information.
 - Support SubmitOperationCredentials for self-service submission of certificate information.

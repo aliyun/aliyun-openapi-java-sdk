@@ -38,7 +38,7 @@ public class SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest ext
 
 	private String lang;
 	public SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest() {
-		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId", "domain");
+		super("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

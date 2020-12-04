@@ -29,7 +29,7 @@ public class GetOperationOssUploadPolicyRequest extends RpcAcsRequest<GetOperati
 
 	private String lang;
 	public GetOperationOssUploadPolicyRequest() {
-		super("Domain", "2018-01-29", "GetOperationOssUploadPolicy", "domain");
+		super("Domain", "2018-01-29", "GetOperationOssUploadPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

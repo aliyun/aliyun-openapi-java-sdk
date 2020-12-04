@@ -23,6 +23,7 @@ public class AcceptDemandResponseUnmarshaller {
 	public static AcceptDemandResponse unmarshall(AcceptDemandResponse acceptDemandResponse, UnmarshallerContext _ctx) {
 		
 		acceptDemandResponse.setRequestId(_ctx.stringValue("AcceptDemandResponse.RequestId"));
+		acceptDemandResponse.setBindUrl(_ctx.stringValue("AcceptDemandResponse.BindUrl"));
 	 
 	 	return acceptDemandResponse;
 	}

@@ -31,7 +31,7 @@ public class QueryArtExtensionRequest extends RpcAcsRequest<QueryArtExtensionRes
 
 	private String lang;
 	public QueryArtExtensionRequest() {
-		super("Domain", "2018-01-29", "QueryArtExtension", "domain");
+		super("Domain", "2018-01-29", "QueryArtExtension");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

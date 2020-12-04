@@ -31,7 +31,7 @@ public class VerifyEmailRequest extends RpcAcsRequest<VerifyEmailResponse> {
 
 	private String lang;
 	public VerifyEmailRequest() {
-		super("Domain", "2018-01-29", "VerifyEmail", "domain");
+		super("Domain", "2018-01-29", "VerifyEmail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

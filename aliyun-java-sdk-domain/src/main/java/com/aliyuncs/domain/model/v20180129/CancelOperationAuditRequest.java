@@ -29,7 +29,7 @@ public class CancelOperationAuditRequest extends RpcAcsRequest<CancelOperationAu
 
 	private String lang;
 	public CancelOperationAuditRequest() {
-		super("Domain", "2018-01-29", "CancelOperationAudit", "domain");
+		super("Domain", "2018-01-29", "CancelOperationAudit");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

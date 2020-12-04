@@ -26,12 +26,22 @@ public class AcceptDemandResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String bindUrl;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getBindUrl() {
+		return this.bindUrl;
+	}
+
+	public void setBindUrl(String bindUrl) {
+		this.bindUrl = bindUrl;
 	}
 
 	@Override

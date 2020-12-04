@@ -28,7 +28,7 @@ public class ChangeAuctionRequest extends RpcAcsRequest<ChangeAuctionResponse> {
 
 	private List<AuctionList> auctionLists;
 	public ChangeAuctionRequest() {
-		super("Domain", "2018-02-08", "ChangeAuction", "domain");
+		super("Domain", "2018-02-08", "ChangeAuction");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class SubmitOperationAuditInfoRequest extends RpcAcsRequest<SubmitOperati
 
 	private String lang;
 	public SubmitOperationAuditInfoRequest() {
-		super("Domain", "2018-01-29", "SubmitOperationAuditInfo", "domain");
+		super("Domain", "2018-01-29", "SubmitOperationAuditInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
