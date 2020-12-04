@@ -22,22 +22,22 @@ import com.aliyuncs.dyiotapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DoIotPostImeiRequest extends RpcAcsRequest<DoIotPostImeiResponse> {
+public class DoIotSetAbsoluteRemindConfigRequest extends RpcAcsRequest<DoIotSetAbsoluteRemindConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String deviceType;
-
-	private String comments;
-
 	private String resourceOwnerAccount;
+
+	private String configInfo;
 
 	private Long ownerId;
 
-	private String imei;
-	public DoIotPostImeiRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotPostImei", "Dyiotapi");
+	private String bizType;
+
+	private String bizId;
+	public DoIotSetAbsoluteRemindConfigRequest() {
+		super("Dyiotapi", "2017-11-11", "DoIotSetAbsoluteRemindConfig", "Dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,28 +56,6 @@ public class DoIotPostImeiRequest extends RpcAcsRequest<DoIotPostImeiResponse> {
 		}
 	}
 
-	public String getDeviceType() {
-		return this.deviceType;
-	}
-
-	public void setDeviceType(String deviceType) {
-		this.deviceType = deviceType;
-		if(deviceType != null){
-			putQueryParameter("DeviceType", deviceType);
-		}
-	}
-
-	public String getComments() {
-		return this.comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-		if(comments != null){
-			putQueryParameter("Comments", comments);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -86,6 +64,17 @@ public class DoIotPostImeiRequest extends RpcAcsRequest<DoIotPostImeiResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getConfigInfo() {
+		return this.configInfo;
+	}
+
+	public void setConfigInfo(String configInfo) {
+		this.configInfo = configInfo;
+		if(configInfo != null){
+			putQueryParameter("ConfigInfo", configInfo);
 		}
 	}
 
@@ -100,20 +89,31 @@ public class DoIotPostImeiRequest extends RpcAcsRequest<DoIotPostImeiResponse> {
 		}
 	}
 
-	public String getImei() {
-		return this.imei;
+	public String getBizType() {
+		return this.bizType;
 	}
 
-	public void setImei(String imei) {
-		this.imei = imei;
-		if(imei != null){
-			putQueryParameter("Imei", imei);
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+		if(bizType != null){
+			putQueryParameter("BizType", bizType);
+		}
+	}
+
+	public String getBizId() {
+		return this.bizId;
+	}
+
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+		if(bizId != null){
+			putQueryParameter("BizId", bizId);
 		}
 	}
 
 	@Override
-	public Class<DoIotPostImeiResponse> getResponseClass() {
-		return DoIotPostImeiResponse.class;
+	public Class<DoIotSetAbsoluteRemindConfigResponse> getResponseClass() {
+		return DoIotSetAbsoluteRemindConfigResponse.class;
 	}
 
 }

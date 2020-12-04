@@ -33,7 +33,7 @@ public class DoIotUnbindResumeRequest extends RpcAcsRequest<DoIotUnbindResumeRes
 
 	private String iccid;
 	public DoIotUnbindResumeRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotUnbindResume", "dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotUnbindResume", "Dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

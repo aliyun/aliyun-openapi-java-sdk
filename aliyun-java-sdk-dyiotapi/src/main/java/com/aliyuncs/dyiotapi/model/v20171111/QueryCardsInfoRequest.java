@@ -33,7 +33,7 @@ public class QueryCardsInfoRequest extends RpcAcsRequest<QueryCardsInfoResponse>
 
 	private String iccid;
 	public QueryCardsInfoRequest() {
-		super("Dyiotapi", "2017-11-11", "QueryCardsInfo", "dyiotapi");
+		super("Dyiotapi", "2017-11-11", "QueryCardsInfo", "Dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

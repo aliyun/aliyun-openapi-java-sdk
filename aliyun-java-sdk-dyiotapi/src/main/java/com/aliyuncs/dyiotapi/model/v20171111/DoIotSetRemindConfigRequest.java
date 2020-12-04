@@ -39,7 +39,7 @@ public class DoIotSetRemindConfigRequest extends RpcAcsRequest<DoIotSetRemindCon
 
 	private String bizId;
 	public DoIotSetRemindConfigRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotSetRemindConfig", "dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotSetRemindConfig", "Dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
