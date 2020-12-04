@@ -39,7 +39,7 @@ public class DoSendIotSmsRequest extends RpcAcsRequest<DoSendIotSmsResponse> {
 
 	private String templateParam;
 	public DoSendIotSmsRequest() {
-		super("Dyiotapi", "2017-11-11", "DoSendIotSms", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoSendIotSms", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

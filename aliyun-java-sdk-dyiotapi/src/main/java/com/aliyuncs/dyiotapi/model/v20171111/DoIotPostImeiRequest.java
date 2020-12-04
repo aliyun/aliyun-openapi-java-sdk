@@ -37,7 +37,7 @@ public class DoIotPostImeiRequest extends RpcAcsRequest<DoIotPostImeiResponse> {
 
 	private String imei;
 	public DoIotPostImeiRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotPostImei", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotPostImei", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

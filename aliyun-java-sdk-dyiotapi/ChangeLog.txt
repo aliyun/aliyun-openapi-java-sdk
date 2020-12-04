@@ -1,3 +1,6 @@
+2020-12-04 Version: 2.1.1
+- Add absolute remind config.
+
 2020-12-04 Version: 2.1.0
 - Add absolute remind config.
 

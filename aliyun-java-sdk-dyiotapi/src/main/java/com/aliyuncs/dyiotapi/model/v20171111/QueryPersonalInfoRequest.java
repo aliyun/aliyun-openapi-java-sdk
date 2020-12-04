@@ -33,7 +33,7 @@ public class QueryPersonalInfoRequest extends RpcAcsRequest<QueryPersonalInfoRes
 
 	private String iccid;
 	public QueryPersonalInfoRequest() {
-		super("Dyiotapi", "2017-11-11", "QueryPersonalInfo", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "QueryPersonalInfo", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

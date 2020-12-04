@@ -33,7 +33,7 @@ public class QueryIotCardOfferDtlRequest extends RpcAcsRequest<QueryIotCardOffer
 
 	private String iccid;
 	public QueryIotCardOfferDtlRequest() {
-		super("Dyiotapi", "2017-11-11", "QueryIotCardOfferDtl", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "QueryIotCardOfferDtl", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

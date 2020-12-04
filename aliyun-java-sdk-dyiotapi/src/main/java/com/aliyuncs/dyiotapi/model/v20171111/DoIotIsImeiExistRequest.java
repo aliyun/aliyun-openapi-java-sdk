@@ -33,7 +33,7 @@ public class DoIotIsImeiExistRequest extends RpcAcsRequest<DoIotIsImeiExistRespo
 
 	private String imei;
 	public DoIotIsImeiExistRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotIsImeiExist", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotIsImeiExist", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

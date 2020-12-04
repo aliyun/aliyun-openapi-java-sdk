@@ -43,7 +43,7 @@ public class DoIotRechargeRequest extends RpcAcsRequest<DoIotRechargeResponse> {
 
 	private String effCode;
 	public DoIotRechargeRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotRecharge", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotRecharge", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

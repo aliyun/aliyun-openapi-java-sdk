@@ -41,7 +41,7 @@ public class DoIotChgBindOrUnBindRequest extends RpcAcsRequest<DoIotChgBindOrUnB
 
 	private String imei;
 	public DoIotChgBindOrUnBindRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotChgBindOrUnBind", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotChgBindOrUnBind", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

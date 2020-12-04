@@ -35,7 +35,7 @@ public class DoIotUserStopResumeRequest extends RpcAcsRequest<DoIotUserStopResum
 
 	private String iccid;
 	public DoIotUserStopResumeRequest() {
-		super("Dyiotapi", "2017-11-11", "DoIotUserStopResume", "Dyiotapi");
+		super("Dyiotapi", "2017-11-11", "DoIotUserStopResume", "dyiotapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
