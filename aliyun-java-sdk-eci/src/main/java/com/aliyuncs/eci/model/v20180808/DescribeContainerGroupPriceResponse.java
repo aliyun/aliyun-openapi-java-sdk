@@ -22,207 +22,312 @@ import java.util.List;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeContainerGroupPriceResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private PriceInfo priceInfo;
+    private PriceInfo priceInfo;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public PriceInfo getPriceInfo() {
-		return this.priceInfo;
-	}
+    public PriceInfo getPriceInfo() {
+        return priceInfo;
+    }
 
-	public void setPriceInfo(PriceInfo priceInfo) {
-		this.priceInfo = priceInfo;
-	}
+    public void setPriceInfo(PriceInfo priceInfo) {
+        this.priceInfo = priceInfo;
+    }
 
-	public static class PriceInfo {
+    public static class PriceInfo {
 
-		private List<Rule> rules;
+        private Rules rules;
 
-		private Price price;
+        private Price price;
 
-		public List<Rule> getRules() {
-			return this.rules;
-		}
+        private SpotPrices spotPrices;
 
-		public void setRules(List<Rule> rules) {
-			this.rules = rules;
-		}
+        public Rules getRules() {
+            return rules;
+        }
 
-		public Price getPrice() {
-			return this.price;
-		}
+        public void setRules(Rules rules) {
+            this.rules = rules;
+        }
 
-		public void setPrice(Price price) {
-			this.price = price;
-		}
+        public Price getPrice() {
+            return price;
+        }
 
-		public static class Rule {
+        public void setPrice(Price price) {
+            this.price = price;
+        }
 
-			private Long ruleId;
+        public SpotPrices getSpotPrices() {
+            return spotPrices;
+        }
 
-			private String description;
+        public void setSpotPrices(SpotPrices spotPrices) {
+            this.spotPrices = spotPrices;
+        }
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
+        public static class Rules {
 
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
+            private List<Rule> rule;
 
-			public String getDescription() {
-				return this.description;
-			}
+            public List<Rule> getRule() {
+                return rule;
+            }
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-		}
+            public void setRule(List<Rule> rule) {
+                this.rule = rule;
+            }
 
-		public static class Price {
+            public static class Rule {
 
-			private Float originalPrice;
+                private Long ruleId;
 
-			private Float discountPrice;
+                private String description;
 
-			private Float tradePrice;
+                public Long getRuleId() {
+                    return ruleId;
+                }
 
-			private String currency;
+                public void setRuleId(Long ruleId) {
+                    this.ruleId = ruleId;
+                }
 
-			private List<DetailInfo> detailInfos;
+                public String getDescription() {
+                    return description;
+                }
 
-			public Float getOriginalPrice() {
-				return this.originalPrice;
-			}
+                public void setDescription(String description) {
+                    this.description = description;
+                }
+            }
+        }
 
-			public void setOriginalPrice(Float originalPrice) {
-				this.originalPrice = originalPrice;
-			}
+        public static class Price {
 
-			public Float getDiscountPrice() {
-				return this.discountPrice;
-			}
+            private Float originalPrice;
 
-			public void setDiscountPrice(Float discountPrice) {
-				this.discountPrice = discountPrice;
-			}
+            private Float discountPrice;
 
-			public Float getTradePrice() {
-				return this.tradePrice;
-			}
+            private Float tradePrice;
 
-			public void setTradePrice(Float tradePrice) {
-				this.tradePrice = tradePrice;
-			}
+            private String currency;
 
-			public String getCurrency() {
-				return this.currency;
-			}
+            private DetailInfos detailInfos;
 
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
+            public Float getOriginalPrice() {
+                return originalPrice;
+            }
 
-			public List<DetailInfo> getDetailInfos() {
-				return this.detailInfos;
-			}
+            public void setOriginalPrice(Float originalPrice) {
+                this.originalPrice = originalPrice;
+            }
 
-			public void setDetailInfos(List<DetailInfo> detailInfos) {
-				this.detailInfos = detailInfos;
-			}
+            public Float getDiscountPrice() {
+                return discountPrice;
+            }
 
-			public static class DetailInfo {
+            public void setDiscountPrice(Float discountPrice) {
+                this.discountPrice = discountPrice;
+            }
 
-				private String resource;
+            public Float getTradePrice() {
+                return tradePrice;
+            }
 
-				private Float originalPrice;
+            public void setTradePrice(Float tradePrice) {
+                this.tradePrice = tradePrice;
+            }
 
-				private Float discountPrice;
+            public String getCurrency() {
+                return currency;
+            }
 
-				private Float tradePrice;
+            public void setCurrency(String currency) {
+                this.currency = currency;
+            }
 
-				private List<Rule2> rules1;
+            public DetailInfos getDetailInfos() {
+                return detailInfos;
+            }
 
-				public String getResource() {
-					return this.resource;
-				}
+            public void setDetailInfos(DetailInfos detailInfos) {
+                this.detailInfos = detailInfos;
+            }
 
-				public void setResource(String resource) {
-					this.resource = resource;
-				}
+            public static class DetailInfos {
 
-				public Float getOriginalPrice() {
-					return this.originalPrice;
-				}
+                private List<DetailInfos.DetailInfo> detailInfo;
 
-				public void setOriginalPrice(Float originalPrice) {
-					this.originalPrice = originalPrice;
-				}
+                public List<DetailInfo> getDetailInfo() {
+                    return detailInfo;
+                }
 
-				public Float getDiscountPrice() {
-					return this.discountPrice;
-				}
+                public void setDetailInfo(List<DetailInfo> detailInfo) {
+                    this.detailInfo = detailInfo;
+                }
 
-				public void setDiscountPrice(Float discountPrice) {
-					this.discountPrice = discountPrice;
-				}
+                public static class DetailInfo {
 
-				public Float getTradePrice() {
-					return this.tradePrice;
-				}
+                    private String resource;
 
-				public void setTradePrice(Float tradePrice) {
-					this.tradePrice = tradePrice;
-				}
+                    private Float originalPrice;
 
-				public List<Rule2> getRules1() {
-					return this.rules1;
-				}
+                    private Float discountPrice;
 
-				public void setRules1(List<Rule2> rules1) {
-					this.rules1 = rules1;
-				}
+                    private Float tradePrice;
 
-				public static class Rule2 {
+                    private Rules rules;
 
-					private Long ruleId;
+                    public static class Rules {
 
-					private String description;
+                        private List<PriceInfo.Price.DetailInfos.DetailInfo.Rules.Rule> rule;
 
-					public Long getRuleId() {
-						return this.ruleId;
-					}
 
-					public void setRuleId(Long ruleId) {
-						this.ruleId = ruleId;
-					}
+                        public List<Rule> getRule() {
+                            return rule;
+                        }
 
-					public String getDescription() {
-						return this.description;
-					}
+                        public void setRule(List<Rule> rule) {
+                            this.rule = rule;
+                        }
 
-					public void setDescription(String description) {
-						this.description = description;
-					}
-				}
-			}
-		}
-	}
+                        public static class Rule {
 
-	@Override
-	public DescribeContainerGroupPriceResponse getInstance(UnmarshallerContext context) {
-		return	DescribeContainerGroupPriceResponseUnmarshaller.unmarshall(this, context);
-	}
+                            private Long ruleId;
+
+                            private String description;
+
+                            public Long getRuleId() {
+                                return ruleId;
+                            }
+
+                            public void setRuleId(Long ruleId) {
+                                this.ruleId = ruleId;
+                            }
+
+                            public String getDescription() {
+                                return description;
+                            }
+
+                            public void setDescription(String description) {
+                                this.description = description;
+                            }
+                        }
+                    }
+
+                    public String getResource() {
+                        return resource;
+                    }
+
+                    public void setResource(String resource) {
+                        this.resource = resource;
+                    }
+
+                    public Float getOriginalPrice() {
+                        return originalPrice;
+                    }
+
+                    public void setOriginalPrice(Float originalPrice) {
+                        this.originalPrice = originalPrice;
+                    }
+
+                    public Float getDiscountPrice() {
+                        return discountPrice;
+                    }
+
+                    public void setDiscountPrice(Float discountPrice) {
+                        this.discountPrice = discountPrice;
+                    }
+
+                    public Float getTradePrice() {
+                        return tradePrice;
+                    }
+
+                    public void setTradePrice(Float tradePrice) {
+                        this.tradePrice = tradePrice;
+                    }
+
+                    public Rules getRules() {
+                        return rules;
+                    }
+
+                    public void setRules(Rules rules) {
+                        this.rules = rules;
+                    }
+                }
+            }
+        }
+
+        public static class SpotPrices {
+
+            private List<SpotPrices.SpotPrice> spotPrice;
+
+            public List<SpotPrice> getSpotPrice() {
+                return spotPrice;
+            }
+
+            public void setSpotPrice(List<SpotPrice> spotPrice) {
+                this.spotPrice = spotPrice;
+            }
+
+            public static class SpotPrice {
+
+                private Float spotPrice;
+
+                private Float originPrice;
+
+                private String zoneId;
+
+                private String instanceType;
+
+                public Float getSpotPrice() {
+                    return this.spotPrice;
+                }
+
+                public void setSpotPrice(Float spotPrice) {
+                    this.spotPrice = spotPrice;
+                }
+
+                public Float getOriginPrice() {
+                    return this.originPrice;
+                }
+
+                public void setOriginPrice(Float originPrice) {
+                    this.originPrice = originPrice;
+                }
+
+                public String getZoneId() {
+                    return this.zoneId;
+                }
+
+                public void setZoneId(String zoneId) {
+                    this.zoneId = zoneId;
+                }
+
+                public String getInstanceType() {
+                    return this.instanceType;
+                }
+
+                public void setInstanceType(String instanceType) {
+                    this.instanceType = instanceType;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DescribeContainerGroupPriceResponse getInstance(UnmarshallerContext context) {
+        return DescribeContainerGroupPriceResponseUnmarshaller.unmarshall(this, context);
+    }
 }

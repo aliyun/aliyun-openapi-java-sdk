@@ -18,95 +18,146 @@ import com.aliyuncs.RpcAcsRequest;
 
 /**
  * @author auto create
- * @version 
  */
 public class DescribeContainerGroupPriceRequest extends RpcAcsRequest<DescribeContainerGroupPriceResponse> {
-	
-	public DescribeContainerGroupPriceRequest() {
-		super("Eci", "2018-08-08", "DescribeContainerGroupPrice", "eci");
-	}
 
-	private Long resourceOwnerId;
+    public DescribeContainerGroupPriceRequest() {
+        super("Eci", "2018-08-08", "DescribeContainerGroupPrice", "eci");
+    }
 
-	private Float memory;
+    private Float spotPriceLimit;
 
-	private String resourceOwnerAccount;
+    private String instanceType;
 
-	private String ownerAccount;
+    private String spotStrategy;
 
-	private Float cpu;
+    private String zoneId;
 
-	private Long ownerId;
+    private Long resourceOwnerId;
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
-	}
+    private Float memory;
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
+    private String resourceOwnerAccount;
 
-	public Float getMemory() {
-		return this.memory;
-	}
+    private String ownerAccount;
 
-	public void setMemory(Float memory) {
-		this.memory = memory;
-		if(memory != null){
-			putQueryParameter("Memory", memory.toString());
-		}
-	}
+    private Float cpu;
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
+    private Long ownerId;
 
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
+    public Float getSpotPriceLimit() {
+        return this.spotPriceLimit;
+    }
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
+    public void setSpotPriceLimit(Float spotPriceLimit) {
+        this.spotPriceLimit = spotPriceLimit;
+        if (null != spotPriceLimit) {
+            putQueryParameter("SpotPriceLimit", spotPriceLimit.toString());
+        }
+    }
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
+    public String getInstanceType() {
+        return this.instanceType;
+    }
 
-	public Float getCpu() {
-		return this.cpu;
-	}
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        if (null != instanceType) {
+            putQueryParameter("InstanceType", instanceType.toString());
+        }
+    }
 
-	public void setCpu(Float cpu) {
-		this.cpu = cpu;
-		if(cpu != null){
-			putQueryParameter("Cpu", cpu.toString());
-		}
-	}
+    public String getSpotStrategy() {
+        return this.spotStrategy;
+    }
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
+    public void setSpotStrategy(String spotStrategy) {
+        this.spotStrategy = spotStrategy;
+        if (null != spotStrategy) {
+            putQueryParameter("SpotStrategy", spotStrategy.toString());
+        }
+    }
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
+    public String getZoneId() {
+        return this.zoneId;
+    }
 
-	@Override
-	public Class<DescribeContainerGroupPriceResponse> getResponseClass() {
-		return DescribeContainerGroupPriceResponse.class;
-	}
+    public void setZoneId(String zoneId) {
+        this.zoneId = zoneId;
+        if (null != zoneId) {
+            putQueryParameter("ZoneId", zoneId.toString());
+        }
+    }
+
+    public Long getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
+
+    public void setResourceOwnerId(Long resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+        if (resourceOwnerId != null) {
+            putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+        }
+    }
+
+    public Float getMemory() {
+        return this.memory;
+    }
+
+    public void setMemory(Float memory) {
+        this.memory = memory;
+        if (memory != null) {
+            putQueryParameter("Memory", memory.toString());
+        }
+    }
+
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
+
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+        if (resourceOwnerAccount != null) {
+            putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+        }
+    }
+
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
+
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+        if (ownerAccount != null) {
+            putQueryParameter("OwnerAccount", ownerAccount);
+        }
+    }
+
+    public Float getCpu() {
+        return this.cpu;
+    }
+
+    public void setCpu(Float cpu) {
+        this.cpu = cpu;
+        if (cpu != null) {
+            putQueryParameter("Cpu", cpu.toString());
+        }
+    }
+
+    public Long getOwnerId() {
+        return this.ownerId;
+    }
+
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
+        if (ownerId != null) {
+            putQueryParameter("OwnerId", ownerId.toString());
+        }
+    }
+
+    @Override
+    public Class<DescribeContainerGroupPriceResponse> getResponseClass() {
+        return DescribeContainerGroupPriceResponse.class;
+    }
 
 }
