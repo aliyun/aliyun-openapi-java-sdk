@@ -1,3 +1,6 @@
+2020-12-04 Version: 1.0.3
+- Supported ListIpGeolocations for user.
+
 2020-12-03 Version: 1.0.3
 - Supported ListIpGeolocations for user.
 
