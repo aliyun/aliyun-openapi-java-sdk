@@ -22,22 +22,20 @@ import com.aliyuncs.cloudgameapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionResponse> {
+public class BatchStopGameSessionsRequest extends RpcAcsRequest<BatchStopGameSessionsResponse> {
 	   
 
 	private String gameId;
 
 	private String reason;
 
-	private String gameSession;
+	private String projectId;
 
-	private String userId;
+	private String token;
 
-	private String accessKey;
-
-	private String bizParam;
-	public StopGameSessionRequest() {
-		super("CloudGameAPI", "2020-07-28", "StopGameSession", "CloudGameAPI");
+	private String trackInfo;
+	public BatchStopGameSessionsRequest() {
+		super("CloudGameAPI", "2020-07-28", "BatchStopGameSessions", "CloudGameAPI");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,7 +50,7 @@ public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionRespons
 	public void setGameId(String gameId) {
 		this.gameId = gameId;
 		if(gameId != null){
-			putBodyParameter("GameId", gameId);
+			putQueryParameter("GameId", gameId);
 		}
 	}
 
@@ -63,57 +61,46 @@ public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionRespons
 	public void setReason(String reason) {
 		this.reason = reason;
 		if(reason != null){
-			putBodyParameter("Reason", reason);
+			putQueryParameter("Reason", reason);
 		}
 	}
 
-	public String getGameSession() {
-		return this.gameSession;
+	public String getProjectId() {
+		return this.projectId;
 	}
 
-	public void setGameSession(String gameSession) {
-		this.gameSession = gameSession;
-		if(gameSession != null){
-			putBodyParameter("GameSession", gameSession);
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putQueryParameter("ProjectId", projectId);
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getToken() {
+		return this.token;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
 		}
 	}
 
-	public String getAccessKey() {
-		return this.accessKey;
+	public String getTrackInfo() {
+		return this.trackInfo;
 	}
 
-	public void setAccessKey(String accessKey) {
-		this.accessKey = accessKey;
-		if(accessKey != null){
-			putBodyParameter("AccessKey", accessKey);
-		}
-	}
-
-	public String getBizParam() {
-		return this.bizParam;
-	}
-
-	public void setBizParam(String bizParam) {
-		this.bizParam = bizParam;
-		if(bizParam != null){
-			putBodyParameter("BizParam", bizParam);
+	public void setTrackInfo(String trackInfo) {
+		this.trackInfo = trackInfo;
+		if(trackInfo != null){
+			putQueryParameter("TrackInfo", trackInfo);
 		}
 	}
 
 	@Override
-	public Class<StopGameSessionResponse> getResponseClass() {
-		return StopGameSessionResponse.class;
+	public Class<BatchStopGameSessionsResponse> getResponseClass() {
+		return BatchStopGameSessionsResponse.class;
 	}
 
 }

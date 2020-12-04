@@ -22,22 +22,14 @@ import com.aliyuncs.cloudgameapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionResponse> {
+public class GetStopGameTokenRequest extends RpcAcsRequest<GetStopGameTokenResponse> {
 	   
 
 	private String gameId;
 
-	private String reason;
-
-	private String gameSession;
-
-	private String userId;
-
 	private String accessKey;
-
-	private String bizParam;
-	public StopGameSessionRequest() {
-		super("CloudGameAPI", "2020-07-28", "StopGameSession", "CloudGameAPI");
+	public GetStopGameTokenRequest() {
+		super("CloudGameAPI", "2020-07-28", "GetStopGameToken", "CloudGameAPI");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,40 +44,7 @@ public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionRespons
 	public void setGameId(String gameId) {
 		this.gameId = gameId;
 		if(gameId != null){
-			putBodyParameter("GameId", gameId);
-		}
-	}
-
-	public String getReason() {
-		return this.reason;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putBodyParameter("Reason", reason);
-		}
-	}
-
-	public String getGameSession() {
-		return this.gameSession;
-	}
-
-	public void setGameSession(String gameSession) {
-		this.gameSession = gameSession;
-		if(gameSession != null){
-			putBodyParameter("GameSession", gameSession);
-		}
-	}
-
-	public String getUserId() {
-		return this.userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putBodyParameter("UserId", userId);
+			putQueryParameter("GameId", gameId);
 		}
 	}
 
@@ -96,24 +55,13 @@ public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionRespons
 	public void setAccessKey(String accessKey) {
 		this.accessKey = accessKey;
 		if(accessKey != null){
-			putBodyParameter("AccessKey", accessKey);
-		}
-	}
-
-	public String getBizParam() {
-		return this.bizParam;
-	}
-
-	public void setBizParam(String bizParam) {
-		this.bizParam = bizParam;
-		if(bizParam != null){
-			putBodyParameter("BizParam", bizParam);
+			putQueryParameter("AccessKey", accessKey);
 		}
 	}
 
 	@Override
-	public Class<StopGameSessionResponse> getResponseClass() {
-		return StopGameSessionResponse.class;
+	public Class<GetStopGameTokenResponse> getResponseClass() {
+		return GetStopGameTokenResponse.class;
 	}
 
 }
