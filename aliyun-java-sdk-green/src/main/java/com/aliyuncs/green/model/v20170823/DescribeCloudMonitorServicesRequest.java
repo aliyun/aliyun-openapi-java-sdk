@@ -22,45 +22,21 @@ import com.aliyuncs.green.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateKeywordRequest extends RpcAcsRequest<CreateKeywordResponse> {
+public class DescribeCloudMonitorServicesRequest extends RpcAcsRequest<DescribeCloudMonitorServicesResponse> {
 	   
-
-	private String keywords;
-
-	private Long keywordLibId;
 
 	private String sourceIp;
 
-	private String lang;
-	public CreateKeywordRequest() {
-		super("Green", "2017-08-23", "CreateKeyword", "green");
+	private String pageSize;
+
+	private String page;
+	public DescribeCloudMonitorServicesRequest() {
+		super("Green", "2017-08-23", "DescribeCloudMonitorServices", "green");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getKeywords() {
-		return this.keywords;
-	}
-
-	public void setKeywords(String keywords) {
-		this.keywords = keywords;
-		if(keywords != null){
-			putQueryParameter("Keywords", keywords);
-		}
-	}
-
-	public Long getKeywordLibId() {
-		return this.keywordLibId;
-	}
-
-	public void setKeywordLibId(Long keywordLibId) {
-		this.keywordLibId = keywordLibId;
-		if(keywordLibId != null){
-			putQueryParameter("KeywordLibId", keywordLibId.toString());
-		}
 	}
 
 	public String getSourceIp() {
@@ -74,20 +50,31 @@ public class CreateKeywordRequest extends RpcAcsRequest<CreateKeywordResponse> {
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getPage() {
+		return this.page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page);
 		}
 	}
 
 	@Override
-	public Class<CreateKeywordResponse> getResponseClass() {
-		return CreateKeywordResponse.class;
+	public Class<DescribeCloudMonitorServicesResponse> getResponseClass() {
+		return DescribeCloudMonitorServicesResponse.class;
 	}
 
 }

@@ -42,6 +42,8 @@ public class DescribeOssIncrementOverviewResponse extends AcsResponse {
 
 	private Integer voiceAntispamUnhandleCount;
 
+	private Integer audioCount;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class DescribeOssIncrementOverviewResponse extends AcsResponse {
 
 	public void setVoiceAntispamUnhandleCount(Integer voiceAntispamUnhandleCount) {
 		this.voiceAntispamUnhandleCount = voiceAntispamUnhandleCount;
+	}
+
+	public Integer getAudioCount() {
+		return this.audioCount;
+	}
+
+	public void setAudioCount(Integer audioCount) {
+		this.audioCount = audioCount;
 	}
 
 	@Override

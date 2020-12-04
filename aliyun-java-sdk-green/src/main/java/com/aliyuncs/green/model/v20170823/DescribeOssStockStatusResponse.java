@@ -37,11 +37,25 @@ public class DescribeOssStockStatusResponse extends AcsResponse {
 
 	private Integer imageTerrorismCount;
 
+	private Integer imageAdCount;
+
+	private Integer imageLiveCount;
+
 	private Integer videoTotalCount;
 
 	private Integer videoPornCount;
 
 	private Integer videoTerrorismCount;
+
+	private Integer videoAdCount;
+
+	private Integer videoLiveCount;
+
+	private Integer videoVoiceAntispamCount;
+
+	private Integer audioTotalCount;
+
+	private Integer audioAntispamCount;
 
 	private List<Bucket> bucketList;
 
@@ -97,6 +111,22 @@ public class DescribeOssStockStatusResponse extends AcsResponse {
 		this.imageTerrorismCount = imageTerrorismCount;
 	}
 
+	public Integer getImageAdCount() {
+		return this.imageAdCount;
+	}
+
+	public void setImageAdCount(Integer imageAdCount) {
+		this.imageAdCount = imageAdCount;
+	}
+
+	public Integer getImageLiveCount() {
+		return this.imageLiveCount;
+	}
+
+	public void setImageLiveCount(Integer imageLiveCount) {
+		this.imageLiveCount = imageLiveCount;
+	}
+
 	public Integer getVideoTotalCount() {
 		return this.videoTotalCount;
 	}
@@ -119,6 +149,46 @@ public class DescribeOssStockStatusResponse extends AcsResponse {
 
 	public void setVideoTerrorismCount(Integer videoTerrorismCount) {
 		this.videoTerrorismCount = videoTerrorismCount;
+	}
+
+	public Integer getVideoAdCount() {
+		return this.videoAdCount;
+	}
+
+	public void setVideoAdCount(Integer videoAdCount) {
+		this.videoAdCount = videoAdCount;
+	}
+
+	public Integer getVideoLiveCount() {
+		return this.videoLiveCount;
+	}
+
+	public void setVideoLiveCount(Integer videoLiveCount) {
+		this.videoLiveCount = videoLiveCount;
+	}
+
+	public Integer getVideoVoiceAntispamCount() {
+		return this.videoVoiceAntispamCount;
+	}
+
+	public void setVideoVoiceAntispamCount(Integer videoVoiceAntispamCount) {
+		this.videoVoiceAntispamCount = videoVoiceAntispamCount;
+	}
+
+	public Integer getAudioTotalCount() {
+		return this.audioTotalCount;
+	}
+
+	public void setAudioTotalCount(Integer audioTotalCount) {
+		this.audioTotalCount = audioTotalCount;
+	}
+
+	public Integer getAudioAntispamCount() {
+		return this.audioAntispamCount;
+	}
+
+	public void setAudioAntispamCount(Integer audioAntispamCount) {
+		this.audioAntispamCount = audioAntispamCount;
 	}
 
 	public List<Bucket> getBucketList() {

@@ -43,6 +43,10 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 	private String callbackName;
 
+	private Integer audioMaxSize;
+
+	private Boolean audioAutoFreezeOpened;
+
 	private List<BucketConfig> bucketConfigList;
 
 	private List<String> imageSceneList;
@@ -51,7 +55,11 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 	private List<String> videoAutoFreezeSceneList;
 
+	private List<String> audioSceneList;
+
 	private ImageAutoFreeze imageAutoFreeze;
+
+	private AudioAntispamFreezeConfig audioAntispamFreezeConfig;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -125,6 +133,22 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 		this.callbackName = callbackName;
 	}
 
+	public Integer getAudioMaxSize() {
+		return this.audioMaxSize;
+	}
+
+	public void setAudioMaxSize(Integer audioMaxSize) {
+		this.audioMaxSize = audioMaxSize;
+	}
+
+	public Boolean getAudioAutoFreezeOpened() {
+		return this.audioAutoFreezeOpened;
+	}
+
+	public void setAudioAutoFreezeOpened(Boolean audioAutoFreezeOpened) {
+		this.audioAutoFreezeOpened = audioAutoFreezeOpened;
+	}
+
 	public List<BucketConfig> getBucketConfigList() {
 		return this.bucketConfigList;
 	}
@@ -157,12 +181,28 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 		this.videoAutoFreezeSceneList = videoAutoFreezeSceneList;
 	}
 
+	public List<String> getAudioSceneList() {
+		return this.audioSceneList;
+	}
+
+	public void setAudioSceneList(List<String> audioSceneList) {
+		this.audioSceneList = audioSceneList;
+	}
+
 	public ImageAutoFreeze getImageAutoFreeze() {
 		return this.imageAutoFreeze;
 	}
 
 	public void setImageAutoFreeze(ImageAutoFreeze imageAutoFreeze) {
 		this.imageAutoFreeze = imageAutoFreeze;
+	}
+
+	public AudioAntispamFreezeConfig getAudioAntispamFreezeConfig() {
+		return this.audioAntispamFreezeConfig;
+	}
+
+	public void setAudioAntispamFreezeConfig(AudioAntispamFreezeConfig audioAntispamFreezeConfig) {
+		this.audioAntispamFreezeConfig = audioAntispamFreezeConfig;
 	}
 
 	public static class BucketConfig {
@@ -248,6 +288,29 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 		public void setLive(String live) {
 			this.live = live;
+		}
+	}
+
+	public static class AudioAntispamFreezeConfig {
+
+		private String type;
+
+		private String value;
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

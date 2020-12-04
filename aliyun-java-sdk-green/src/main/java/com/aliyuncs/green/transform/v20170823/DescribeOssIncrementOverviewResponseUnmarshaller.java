@@ -31,6 +31,7 @@ public class DescribeOssIncrementOverviewResponseUnmarshaller {
 		describeOssIncrementOverviewResponse.setAdUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.AdUnhandleCount"));
 		describeOssIncrementOverviewResponse.setLiveUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.LiveUnhandleCount"));
 		describeOssIncrementOverviewResponse.setVoiceAntispamUnhandleCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.VoiceAntispamUnhandleCount"));
+		describeOssIncrementOverviewResponse.setAudioCount(_ctx.integerValue("DescribeOssIncrementOverviewResponse.AudioCount"));
 	 
 	 	return describeOssIncrementOverviewResponse;
 	}

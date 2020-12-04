@@ -32,9 +32,16 @@ public class DescribeOssStockStatusResponseUnmarshaller {
 		describeOssStockStatusResponse.setImageTotalCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImageTotalCount"));
 		describeOssStockStatusResponse.setImagePornCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImagePornCount"));
 		describeOssStockStatusResponse.setImageTerrorismCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImageTerrorismCount"));
+		describeOssStockStatusResponse.setImageAdCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImageAdCount"));
+		describeOssStockStatusResponse.setImageLiveCount(_ctx.integerValue("DescribeOssStockStatusResponse.ImageLiveCount"));
 		describeOssStockStatusResponse.setVideoTotalCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoTotalCount"));
 		describeOssStockStatusResponse.setVideoPornCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoPornCount"));
 		describeOssStockStatusResponse.setVideoTerrorismCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoTerrorismCount"));
+		describeOssStockStatusResponse.setVideoAdCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoAdCount"));
+		describeOssStockStatusResponse.setVideoLiveCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoLiveCount"));
+		describeOssStockStatusResponse.setVideoVoiceAntispamCount(_ctx.integerValue("DescribeOssStockStatusResponse.VideoVoiceAntispamCount"));
+		describeOssStockStatusResponse.setAudioTotalCount(_ctx.integerValue("DescribeOssStockStatusResponse.AudioTotalCount"));
+		describeOssStockStatusResponse.setAudioAntispamCount(_ctx.integerValue("DescribeOssStockStatusResponse.AudioAntispamCount"));
 
 		List<String> sceneList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeOssStockStatusResponse.SceneList.Length"); i++) {

@@ -25,6 +25,8 @@ import com.aliyuncs.green.Endpoint;
 public class DescribeOssStockStatusRequest extends RpcAcsRequest<DescribeOssStockStatusResponse> {
 	   
 
+	private Long stockTaskId;
+
 	private String sourceIp;
 
 	private String lang;
@@ -35,6 +37,17 @@ public class DescribeOssStockStatusRequest extends RpcAcsRequest<DescribeOssStoc
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getStockTaskId() {
+		return this.stockTaskId;
+	}
+
+	public void setStockTaskId(Long stockTaskId) {
+		this.stockTaskId = stockTaskId;
+		if(stockTaskId != null){
+			putQueryParameter("StockTaskId", stockTaskId.toString());
+		}
 	}
 
 	public String getSourceIp() {

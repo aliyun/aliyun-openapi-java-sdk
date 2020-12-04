@@ -35,9 +35,13 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 
 	private String videoAutoFreezeSceneList;
 
+	private Integer audioMaxSize;
+
 	private String lang;
 
 	private String imageAutoFreeze;
+
+	private String audioAutoFreezeSceneList;
 
 	private Integer videoMaxSize;
 
@@ -116,6 +120,17 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 		}
 	}
 
+	public Integer getAudioMaxSize() {
+		return this.audioMaxSize;
+	}
+
+	public void setAudioMaxSize(Integer audioMaxSize) {
+		this.audioMaxSize = audioMaxSize;
+		if(audioMaxSize != null){
+			putQueryParameter("AudioMaxSize", audioMaxSize.toString());
+		}
+	}
+
 	public String getLang() {
 		return this.lang;
 	}
@@ -135,6 +150,17 @@ public class UpdateOssStockStatusRequest extends RpcAcsRequest<UpdateOssStockSta
 		this.imageAutoFreeze = imageAutoFreeze;
 		if(imageAutoFreeze != null){
 			putQueryParameter("ImageAutoFreeze", imageAutoFreeze);
+		}
+	}
+
+	public String getAudioAutoFreezeSceneList() {
+		return this.audioAutoFreezeSceneList;
+	}
+
+	public void setAudioAutoFreezeSceneList(String audioAutoFreezeSceneList) {
+		this.audioAutoFreezeSceneList = audioAutoFreezeSceneList;
+		if(audioAutoFreezeSceneList != null){
+			putQueryParameter("AudioAutoFreezeSceneList", audioAutoFreezeSceneList);
 		}
 	}
 
