@@ -25,7 +25,11 @@ import com.aliyuncs.arms.Endpoint;
 public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse> {
 	   
 
+	private String clusterType;
+
 	private String clusterId;
+
+	private String title;
 	public ListDashboardsRequest() {
 		super("ARMS", "2019-08-08", "ListDashboards", "arms");
 		setMethod(MethodType.POST);
@@ -33,6 +37,17 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
+		}
 	}
 
 	public String getClusterId() {
@@ -43,6 +58,17 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+		if(title != null){
+			putQueryParameter("Title", title);
 		}
 	}
 
