@@ -1,4 +1,4 @@
-2020-11-25 Version: 1.1.16
+2020-12-05 Version: 1.1.16
 1, not support template api
 2, describePrice support spotInstanceType
 
