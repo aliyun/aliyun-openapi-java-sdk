@@ -30,6 +30,10 @@ public class UpgradeEngineVersionRequest extends RoaAcsRequest<UpgradeEngineVers
 	private Boolean dryRun;
 
 	private String clientToken;
+
+	private String type;
+
+	private String version;
 	public UpgradeEngineVersionRequest() {
 		super("elasticsearch", "2017-06-13", "UpgradeEngineVersion", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/upgrade-version");
@@ -70,6 +74,28 @@ public class UpgradeEngineVersionRequest extends RoaAcsRequest<UpgradeEngineVers
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("type", type);
+		}
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+		if(version != null){
+			putBodyParameter("version", version);
 		}
 	}
 

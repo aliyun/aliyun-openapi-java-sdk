@@ -27,7 +27,11 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 
 	private String instanceId;
 
+	private String nodeType;
+
 	private String clientToken;
+
+	private String networkType;
 	public ModifyWhiteIpsRequest() {
 		super("elasticsearch", "2017-06-13", "ModifyWhiteIps", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/modify-white-ips");
@@ -49,6 +53,17 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 		}
 	}
 
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putBodyParameter("nodeType", nodeType);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -57,6 +72,17 @@ public class ModifyWhiteIpsRequest extends RoaAcsRequest<ModifyWhiteIpsResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putBodyParameter("networkType", networkType);
 		}
 	}
 

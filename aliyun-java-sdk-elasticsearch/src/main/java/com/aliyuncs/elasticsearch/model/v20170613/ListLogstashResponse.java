@@ -29,6 +29,8 @@ public class ListLogstashResponse extends AcsResponse {
 
 	private List<Instance> result;
 
+	private Headers headers;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -43,6 +45,14 @@ public class ListLogstashResponse extends AcsResponse {
 
 	public void setResult(List<Instance> result) {
 		this.result = result;
+	}
+
+	public Headers getHeaders() {
+		return this.headers;
+	}
+
+	public void setHeaders(Headers headers) {
+		this.headers = headers;
 	}
 
 	public static class Instance {
@@ -62,6 +72,8 @@ public class ListLogstashResponse extends AcsResponse {
 		private String createdAt;
 
 		private String updatedAt;
+
+		private List<TagsItem> tags;
 
 		private NodeSpec nodeSpec;
 
@@ -131,6 +143,14 @@ public class ListLogstashResponse extends AcsResponse {
 			this.updatedAt = updatedAt;
 		}
 
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
 		public NodeSpec getNodeSpec() {
 			return this.nodeSpec;
 		}
@@ -147,6 +167,29 @@ public class ListLogstashResponse extends AcsResponse {
 			this.networkConfig = networkConfig;
 		}
 
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
 		public static class NodeSpec {
 
 			private String spec;
@@ -154,6 +197,8 @@ public class ListLogstashResponse extends AcsResponse {
 			private Integer disk;
 
 			private String diskType;
+
+			private Boolean diskEncryption;
 
 			public String getSpec() {
 				return this.spec;
@@ -177,6 +222,14 @@ public class ListLogstashResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
 			}
 		}
 
@@ -221,6 +274,19 @@ public class ListLogstashResponse extends AcsResponse {
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
 			}
+		}
+	}
+
+	public static class Headers {
+
+		private Integer xTotalCount;
+
+		public Integer getXTotalCount() {
+			return this.xTotalCount;
+		}
+
+		public void setXTotalCount(Integer xTotalCount) {
+			this.xTotalCount = xTotalCount;
 		}
 	}
 

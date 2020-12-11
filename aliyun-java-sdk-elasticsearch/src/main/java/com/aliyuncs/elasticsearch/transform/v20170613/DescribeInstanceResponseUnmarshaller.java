@@ -107,6 +107,9 @@ public class DescribeInstanceResponseUnmarshaller {
 		}
 		result.setKibanaPrivateIPWhitelist(kibanaPrivateIPWhitelist);
 
+		List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("DescribeInstanceResponse.Result.extendConfigs");
+		result.setExtendConfigs(extendConfigs);
+
 		NodeSpec nodeSpec = new NodeSpec();
 		nodeSpec.setSpec(_ctx.stringValue("DescribeInstanceResponse.Result.nodeSpec.spec"));
 		nodeSpec.setDisk(_ctx.integerValue("DescribeInstanceResponse.Result.nodeSpec.disk"));

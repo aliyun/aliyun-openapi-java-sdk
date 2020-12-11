@@ -1,3 +1,6 @@
+2020-12-11 Version: 3.0.20
+- Add Emon route-API support.
+
 2020-11-19 Version: 3.0.19
 - Supported International-26888 Sites Region Endpoints.
 

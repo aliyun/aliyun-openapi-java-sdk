@@ -22,6 +22,8 @@ import com.aliyuncs.elasticsearch.model.v20170613.DescribeLogstashResponse.Resul
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeLogstashResponse.Result.Endpoint;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeLogstashResponse.Result.NetworkConfig;
 import com.aliyuncs.elasticsearch.model.v20170613.DescribeLogstashResponse.Result.NodeSpec;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeLogstashResponse.Result.TagsItem;
+import com.aliyuncs.elasticsearch.model.v20170613.DescribeLogstashResponse.Result.ZoneInfosItem;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -43,11 +45,16 @@ public class DescribeLogstashResponseUnmarshaller {
 		result.setUpdatedAt(_ctx.stringValue("DescribeLogstashResponse.Result.updatedAt"));
 		result.setVpcInstanceId(_ctx.stringValue("DescribeLogstashResponse.Result.vpcInstanceId"));
 		result.setConfig(_ctx.mapValue("DescribeLogstashResponse.Result.config"));
+		result.setResourceGroupId(_ctx.stringValue("DescribeLogstashResponse.Result.ResourceGroupId"));
+
+		List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("DescribeLogstashResponse.Result.ExtendConfigs");
+		result.setExtendConfigs(extendConfigs);
 
 		NodeSpec nodeSpec = new NodeSpec();
 		nodeSpec.setSpec(_ctx.stringValue("DescribeLogstashResponse.Result.nodeSpec.spec"));
 		nodeSpec.setDisk(_ctx.integerValue("DescribeLogstashResponse.Result.nodeSpec.disk"));
 		nodeSpec.setDiskType(_ctx.stringValue("DescribeLogstashResponse.Result.nodeSpec.diskType"));
+		nodeSpec.setDiskEncryption(_ctx.booleanValue("DescribeLogstashResponse.Result.nodeSpec.diskEncryption"));
 		result.setNodeSpec(nodeSpec);
 
 		NetworkConfig networkConfig = new NetworkConfig();
@@ -62,10 +69,31 @@ public class DescribeLogstashResponseUnmarshaller {
 			Endpoint endpoint = new Endpoint();
 			endpoint.setHost(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].host"));
 			endpoint.setPort(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].port"));
+			endpoint.setZoneId(_ctx.stringValue("DescribeLogstashResponse.Result.endpointList["+ i +"].zoneId"));
 
 			endpointList.add(endpoint);
 		}
 		result.setEndpointList(endpointList);
+
+		List<TagsItem> tags = new ArrayList<TagsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLogstashResponse.Result.Tags.Length"); i++) {
+			TagsItem tagsItem = new TagsItem();
+			tagsItem.setTagKey(_ctx.stringValue("DescribeLogstashResponse.Result.Tags["+ i +"].tagKey"));
+			tagsItem.setTagValue(_ctx.stringValue("DescribeLogstashResponse.Result.Tags["+ i +"].tagValue"));
+
+			tags.add(tagsItem);
+		}
+		result.setTags(tags);
+
+		List<ZoneInfosItem> zoneInfos = new ArrayList<ZoneInfosItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLogstashResponse.Result.ZoneInfos.Length"); i++) {
+			ZoneInfosItem zoneInfosItem = new ZoneInfosItem();
+			zoneInfosItem.setZoneId(_ctx.stringValue("DescribeLogstashResponse.Result.ZoneInfos["+ i +"].zoneId"));
+			zoneInfosItem.setStatus(_ctx.stringValue("DescribeLogstashResponse.Result.ZoneInfos["+ i +"].status"));
+
+			zoneInfos.add(zoneInfosItem);
+		}
+		result.setZoneInfos(zoneInfos);
 		describeLogstashResponse.setResult(result);
 	 
 	 	return describeLogstashResponse;

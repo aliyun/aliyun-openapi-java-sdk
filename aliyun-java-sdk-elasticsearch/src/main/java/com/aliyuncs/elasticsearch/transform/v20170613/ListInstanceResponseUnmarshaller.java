@@ -27,6 +27,7 @@ import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.NetworkConfig;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.NodeSpec;
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceResponse.Instance.Tag;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -55,10 +56,14 @@ public class ListInstanceResponseUnmarshaller {
 			instance.setDedicateMaster(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].dedicateMaster"));
 			instance.setResourceGroupId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].resourceGroupId"));
 
+			List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("ListInstanceResponse.Result["+ i +"].extendConfigs");
+			instance.setExtendConfigs(extendConfigs);
+
 			NodeSpec nodeSpec = new NodeSpec();
 			nodeSpec.setSpec(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.spec"));
 			nodeSpec.setDisk(_ctx.integerValue("ListInstanceResponse.Result["+ i +"].nodeSpec.disk"));
 			nodeSpec.setDiskType(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].nodeSpec.diskType"));
+			nodeSpec.setDiskEncryption(_ctx.booleanValue("ListInstanceResponse.Result["+ i +"].nodeSpec.diskEncryption"));
 			instance.setNodeSpec(nodeSpec);
 
 			NetworkConfig networkConfig = new NetworkConfig();

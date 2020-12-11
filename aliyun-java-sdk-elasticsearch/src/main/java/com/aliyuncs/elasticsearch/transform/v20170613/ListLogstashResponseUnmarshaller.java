@@ -18,9 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.ListLogstashResponse;
+import com.aliyuncs.elasticsearch.model.v20170613.ListLogstashResponse.Headers;
 import com.aliyuncs.elasticsearch.model.v20170613.ListLogstashResponse.Instance;
 import com.aliyuncs.elasticsearch.model.v20170613.ListLogstashResponse.Instance.NetworkConfig;
 import com.aliyuncs.elasticsearch.model.v20170613.ListLogstashResponse.Instance.NodeSpec;
+import com.aliyuncs.elasticsearch.model.v20170613.ListLogstashResponse.Instance.TagsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,6 +31,10 @@ public class ListLogstashResponseUnmarshaller {
 	public static ListLogstashResponse unmarshall(ListLogstashResponse listLogstashResponse, UnmarshallerContext _ctx) {
 		
 		listLogstashResponse.setRequestId(_ctx.stringValue("ListLogstashResponse.RequestId"));
+
+		Headers headers = new Headers();
+		headers.setXTotalCount(_ctx.integerValue("ListLogstashResponse.Headers.X-Total-Count"));
+		listLogstashResponse.setHeaders(headers);
 
 		List<Instance> result = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListLogstashResponse.Result.Length"); i++) {
@@ -46,6 +52,7 @@ public class ListLogstashResponseUnmarshaller {
 			nodeSpec.setSpec(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].nodeSpec.spec"));
 			nodeSpec.setDisk(_ctx.integerValue("ListLogstashResponse.Result["+ i +"].nodeSpec.disk"));
 			nodeSpec.setDiskType(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].nodeSpec.diskType"));
+			nodeSpec.setDiskEncryption(_ctx.booleanValue("ListLogstashResponse.Result["+ i +"].nodeSpec.diskEncryption"));
 			instance.setNodeSpec(nodeSpec);
 
 			NetworkConfig networkConfig = new NetworkConfig();
@@ -54,6 +61,16 @@ public class ListLogstashResponseUnmarshaller {
 			networkConfig.setVswitchId(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].networkConfig.vswitchId"));
 			networkConfig.setVsArea(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].networkConfig.vsArea"));
 			instance.setNetworkConfig(networkConfig);
+
+			List<TagsItem> tags = new ArrayList<TagsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListLogstashResponse.Result["+ i +"].Tags.Length"); j++) {
+				TagsItem tagsItem = new TagsItem();
+				tagsItem.setTagKey(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].Tags["+ j +"].TagKey"));
+				tagsItem.setTagValue(_ctx.stringValue("ListLogstashResponse.Result["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tagsItem);
+			}
+			instance.setTags(tags);
 
 			result.add(instance);
 		}

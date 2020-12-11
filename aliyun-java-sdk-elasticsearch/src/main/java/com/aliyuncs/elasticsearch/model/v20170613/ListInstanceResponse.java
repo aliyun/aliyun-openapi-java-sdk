@@ -15,6 +15,7 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.elasticsearch.transform.v20170613.ListInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -80,6 +81,8 @@ public class ListInstanceResponse extends AcsResponse {
 		private String resourceGroupId;
 
 		private List<Tag> tags;
+
+		private List<Map<Object,Object>> extendConfigs;
 
 		private NodeSpec nodeSpec;
 
@@ -189,6 +192,14 @@ public class ListInstanceResponse extends AcsResponse {
 			this.tags = tags;
 		}
 
+		public List<Map<Object,Object>> getExtendConfigs() {
+			return this.extendConfigs;
+		}
+
+		public void setExtendConfigs(List<Map<Object,Object>> extendConfigs) {
+			this.extendConfigs = extendConfigs;
+		}
+
 		public NodeSpec getNodeSpec() {
 			return this.nodeSpec;
 		}
@@ -268,6 +279,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 			private String diskType;
 
+			private Boolean diskEncryption;
+
 			public String getSpec() {
 				return this.spec;
 			}
@@ -290,6 +303,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
 			}
 		}
 

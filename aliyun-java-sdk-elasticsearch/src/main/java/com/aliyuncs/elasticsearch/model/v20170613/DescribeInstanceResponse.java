@@ -124,6 +124,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		private List<String> kibanaPrivateIPWhitelist;
 
+		private List<Map<Object,Object>> extendConfigs;
+
 		private NodeSpec nodeSpec;
 
 		private NetworkConfig networkConfig;
@@ -442,6 +444,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 		public void setKibanaPrivateIPWhitelist(List<String> kibanaPrivateIPWhitelist) {
 			this.kibanaPrivateIPWhitelist = kibanaPrivateIPWhitelist;
+		}
+
+		public List<Map<Object,Object>> getExtendConfigs() {
+			return this.extendConfigs;
+		}
+
+		public void setExtendConfigs(List<Map<Object,Object>> extendConfigs) {
+			this.extendConfigs = extendConfigs;
 		}
 
 		public NodeSpec getNodeSpec() {

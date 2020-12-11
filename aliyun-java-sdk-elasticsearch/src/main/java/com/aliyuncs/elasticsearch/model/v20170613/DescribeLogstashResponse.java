@@ -68,7 +68,15 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 		private Map<Object,Object> config;
 
+		private String resourceGroupId;
+
 		private List<Endpoint> endpointList;
+
+		private List<TagsItem> tags;
+
+		private List<ZoneInfosItem> zoneInfos;
+
+		private List<Map<Object,Object>> extendConfigs;
 
 		private NodeSpec nodeSpec;
 
@@ -154,12 +162,44 @@ public class DescribeLogstashResponse extends AcsResponse {
 			this.config = config;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<Endpoint> getEndpointList() {
 			return this.endpointList;
 		}
 
 		public void setEndpointList(List<Endpoint> endpointList) {
 			this.endpointList = endpointList;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public List<ZoneInfosItem> getZoneInfos() {
+			return this.zoneInfos;
+		}
+
+		public void setZoneInfos(List<ZoneInfosItem> zoneInfos) {
+			this.zoneInfos = zoneInfos;
+		}
+
+		public List<Map<Object,Object>> getExtendConfigs() {
+			return this.extendConfigs;
+		}
+
+		public void setExtendConfigs(List<Map<Object,Object>> extendConfigs) {
+			this.extendConfigs = extendConfigs;
 		}
 
 		public NodeSpec getNodeSpec() {
@@ -184,6 +224,8 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 			private String port;
 
+			private String zoneId;
+
 			public String getHost() {
 				return this.host;
 			}
@@ -199,6 +241,60 @@ public class DescribeLogstashResponse extends AcsResponse {
 			public void setPort(String port) {
 				this.port = port;
 			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+		}
+
+		public static class TagsItem {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
+			}
+		}
+
+		public static class ZoneInfosItem {
+
+			private String zoneId;
+
+			private String status;
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
 		}
 
 		public static class NodeSpec {
@@ -208,6 +304,8 @@ public class DescribeLogstashResponse extends AcsResponse {
 			private Integer disk;
 
 			private String diskType;
+
+			private Boolean diskEncryption;
 
 			public String getSpec() {
 				return this.spec;
@@ -231,6 +329,14 @@ public class DescribeLogstashResponse extends AcsResponse {
 
 			public void setDiskType(String diskType) {
 				this.diskType = diskType;
+			}
+
+			public Boolean getDiskEncryption() {
+				return this.diskEncryption;
+			}
+
+			public void setDiskEncryption(Boolean diskEncryption) {
+				this.diskEncryption = diskEncryption;
 			}
 		}
 

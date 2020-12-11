@@ -25,9 +25,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
 public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse> {
 	   
 
+	private String actionType;
+
 	private String instanceId;
 
+	private String nodeType;
+
 	private String clientToken;
+
+	private String networkType;
 	public TriggerNetworkRequest() {
 		super("elasticsearch", "2017-06-13", "TriggerNetwork", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]/actions/network-trigger");
@@ -36,6 +42,17 @@ public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getActionType() {
+		return this.actionType;
+	}
+
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
+		if(actionType != null){
+			putBodyParameter("actionType", actionType);
+		}
 	}
 
 	public String getInstanceId() {
@@ -49,6 +66,17 @@ public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse>
 		}
 	}
 
+	public String getNodeType() {
+		return this.nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+		if(nodeType != null){
+			putBodyParameter("nodeType", nodeType);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -57,6 +85,17 @@ public class TriggerNetworkRequest extends RoaAcsRequest<TriggerNetworkResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getNetworkType() {
+		return this.networkType;
+	}
+
+	public void setNetworkType(String networkType) {
+		this.networkType = networkType;
+		if(networkType != null){
+			putBodyParameter("networkType", networkType);
 		}
 	}
 
