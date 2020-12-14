@@ -1,3 +1,6 @@
+2020-12-14 Version: 1.8.0.1-RELEASE
+- Add update task api.
+
 2020-12-14 Version: 1.8.0.1
 - Add update task api.
 
