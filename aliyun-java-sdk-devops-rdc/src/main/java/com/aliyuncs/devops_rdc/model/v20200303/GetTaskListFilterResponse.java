@@ -193,6 +193,8 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			private String parent;
 
+			private String taskUniqueId;
+
 			private List<Customfield> customfields;
 
 			private List<String> ancestorIds;
@@ -555,6 +557,14 @@ public class GetTaskListFilterResponse extends AcsResponse {
 
 			public void setParent(String parent) {
 				this.parent = parent;
+			}
+
+			public String getTaskUniqueId() {
+				return this.taskUniqueId;
+			}
+
+			public void setTaskUniqueId(String taskUniqueId) {
+				this.taskUniqueId = taskUniqueId;
 			}
 
 			public List<Customfield> getCustomfields() {

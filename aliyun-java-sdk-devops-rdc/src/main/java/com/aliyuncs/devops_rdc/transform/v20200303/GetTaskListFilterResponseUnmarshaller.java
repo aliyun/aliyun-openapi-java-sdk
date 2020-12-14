@@ -91,6 +91,7 @@ public class GetTaskListFilterResponseUnmarshaller {
 			task.setTaskId(_ctx.stringValue("GetTaskListFilterResponse.Object.Result["+ i +"].TaskId"));
 			task.setSprint(_ctx.stringValue("GetTaskListFilterResponse.Object.Result["+ i +"].Sprint"));
 			task.setParent(_ctx.stringValue("GetTaskListFilterResponse.Object.Result["+ i +"].Parent"));
+			task.setTaskUniqueId(_ctx.stringValue("GetTaskListFilterResponse.Object.Result["+ i +"].TaskUniqueId"));
 
 			List<String> ancestorIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetTaskListFilterResponse.Object.Result["+ i +"].AncestorIds.Length"); j++) {
