@@ -15,16 +15,20 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.ModifyReplicaDescriptionResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.MigrateConnectionToOtherZoneResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyReplicaDescriptionResponse extends AcsResponse {
+public class MigrateConnectionToOtherZoneResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String code;
+
+	private String message;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +38,25 @@ public class ModifyReplicaDescriptionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	@Override
-	public ModifyReplicaDescriptionResponse getInstance(UnmarshallerContext context) {
-		return	ModifyReplicaDescriptionResponseUnmarshaller.unmarshall(this, context);
+	public MigrateConnectionToOtherZoneResponse getInstance(UnmarshallerContext context) {
+		return	MigrateConnectionToOtherZoneResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

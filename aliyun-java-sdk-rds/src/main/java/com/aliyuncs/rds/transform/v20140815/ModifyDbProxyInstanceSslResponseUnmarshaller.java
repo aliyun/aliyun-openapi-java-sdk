@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.ModifyReplicaDescriptionResponse;
+import com.aliyuncs.rds.model.v20140815.ModifyDbProxyInstanceSslResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyReplicaDescriptionResponseUnmarshaller {
+public class ModifyDbProxyInstanceSslResponseUnmarshaller {
 
-	public static ModifyReplicaDescriptionResponse unmarshall(ModifyReplicaDescriptionResponse modifyReplicaDescriptionResponse, UnmarshallerContext _ctx) {
+	public static ModifyDbProxyInstanceSslResponse unmarshall(ModifyDbProxyInstanceSslResponse modifyDbProxyInstanceSslResponse, UnmarshallerContext _ctx) {
 		
-		modifyReplicaDescriptionResponse.setRequestId(_ctx.stringValue("ModifyReplicaDescriptionResponse.RequestId"));
+		modifyDbProxyInstanceSslResponse.setRequestId(_ctx.stringValue("ModifyDbProxyInstanceSslResponse.RequestId"));
 	 
-	 	return modifyReplicaDescriptionResponse;
+	 	return modifyDbProxyInstanceSslResponse;
 	}
 }

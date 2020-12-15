@@ -33,6 +33,10 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 
 	private String instanceChargeType;
 
+	private String dispenseMode;
+
+	private String commodityCode;
+
 	private String zoneId;
 	public DescribeAvailableZonesRequest() {
 		super("Rds", "2014-08-15", "DescribeAvailableZones", "rds");
@@ -84,6 +88,28 @@ public class DescribeAvailableZonesRequest extends RpcAcsRequest<DescribeAvailab
 		this.instanceChargeType = instanceChargeType;
 		if(instanceChargeType != null){
 			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getDispenseMode() {
+		return this.dispenseMode;
+	}
+
+	public void setDispenseMode(String dispenseMode) {
+		this.dispenseMode = dispenseMode;
+		if(dispenseMode != null){
+			putQueryParameter("DispenseMode", dispenseMode);
+		}
+	}
+
+	public String getCommodityCode() {
+		return this.commodityCode;
+	}
+
+	public void setCommodityCode(String commodityCode) {
+		this.commodityCode = commodityCode;
+		if(commodityCode != null){
+			putQueryParameter("CommodityCode", commodityCode);
 		}
 	}
 

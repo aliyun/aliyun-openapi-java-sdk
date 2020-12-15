@@ -27,15 +27,15 @@ public class DescribeErrorLogsResponseUnmarshaller {
 	public static DescribeErrorLogsResponse unmarshall(DescribeErrorLogsResponse describeErrorLogsResponse, UnmarshallerContext _ctx) {
 		
 		describeErrorLogsResponse.setRequestId(_ctx.stringValue("DescribeErrorLogsResponse.RequestId"));
-		describeErrorLogsResponse.setTotalRecordCount(_ctx.integerValue("DescribeErrorLogsResponse.TotalRecordCount"));
 		describeErrorLogsResponse.setPageNumber(_ctx.integerValue("DescribeErrorLogsResponse.PageNumber"));
 		describeErrorLogsResponse.setPageRecordCount(_ctx.integerValue("DescribeErrorLogsResponse.PageRecordCount"));
+		describeErrorLogsResponse.setTotalRecordCount(_ctx.integerValue("DescribeErrorLogsResponse.TotalRecordCount"));
 
 		List<ErrorLog> items = new ArrayList<ErrorLog>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeErrorLogsResponse.Items.Length"); i++) {
 			ErrorLog errorLog = new ErrorLog();
-			errorLog.setErrorInfo(_ctx.stringValue("DescribeErrorLogsResponse.Items["+ i +"].ErrorInfo"));
 			errorLog.setCreateTime(_ctx.stringValue("DescribeErrorLogsResponse.Items["+ i +"].CreateTime"));
+			errorLog.setErrorInfo(_ctx.stringValue("DescribeErrorLogsResponse.Items["+ i +"].ErrorInfo"));
 
 			items.add(errorLog);
 		}

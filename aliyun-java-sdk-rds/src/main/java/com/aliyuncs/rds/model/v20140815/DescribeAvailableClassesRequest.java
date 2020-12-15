@@ -37,6 +37,10 @@ public class DescribeAvailableClassesRequest extends RpcAcsRequest<DescribeAvail
 
 	private String instanceChargeType;
 
+	private String dispenseMode;
+
+	private String commodityCode;
+
 	private String zoneId;
 
 	private String category;
@@ -114,6 +118,28 @@ public class DescribeAvailableClassesRequest extends RpcAcsRequest<DescribeAvail
 		this.instanceChargeType = instanceChargeType;
 		if(instanceChargeType != null){
 			putQueryParameter("InstanceChargeType", instanceChargeType);
+		}
+	}
+
+	public String getDispenseMode() {
+		return this.dispenseMode;
+	}
+
+	public void setDispenseMode(String dispenseMode) {
+		this.dispenseMode = dispenseMode;
+		if(dispenseMode != null){
+			putQueryParameter("DispenseMode", dispenseMode);
+		}
+	}
+
+	public String getCommodityCode() {
+		return this.commodityCode;
+	}
+
+	public void setCommodityCode(String commodityCode) {
+		this.commodityCode = commodityCode;
+		if(commodityCode != null){
+			putQueryParameter("CommodityCode", commodityCode);
 		}
 	}
 

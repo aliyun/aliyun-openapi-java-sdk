@@ -31,6 +31,8 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 
 	private String targetDedicatedHostIdForSlave;
 
+	private String zoneIdForFollower;
+
 	private String effectiveTime;
 
 	private String targetDedicatedHostIdForMaster;
@@ -40,6 +42,8 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 	private String dedicatedHostGroupId;
 
 	private String resourceOwnerAccount;
+
+	private String zoneIdForLog;
 
 	private Long ownerId;
 	public MigrateDBInstanceRequest() {
@@ -81,6 +85,17 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 		this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
 		if(targetDedicatedHostIdForSlave != null){
 			putQueryParameter("TargetDedicatedHostIdForSlave", targetDedicatedHostIdForSlave);
+		}
+	}
+
+	public String getZoneIdForFollower() {
+		return this.zoneIdForFollower;
+	}
+
+	public void setZoneIdForFollower(String zoneIdForFollower) {
+		this.zoneIdForFollower = zoneIdForFollower;
+		if(zoneIdForFollower != null){
+			putQueryParameter("ZoneIdForFollower", zoneIdForFollower);
 		}
 	}
 
@@ -136,6 +151,17 @@ public class MigrateDBInstanceRequest extends RpcAcsRequest<MigrateDBInstanceRes
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getZoneIdForLog() {
+		return this.zoneIdForLog;
+	}
+
+	public void setZoneIdForLog(String zoneIdForLog) {
+		this.zoneIdForLog = zoneIdForLog;
+		if(zoneIdForLog != null){
+			putQueryParameter("ZoneIdForLog", zoneIdForLog);
 		}
 	}
 

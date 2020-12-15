@@ -147,6 +147,8 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		private Integer isAvail;
 
+		private String encryption;
+
 		public String getBackupId() {
 			return this.backupId;
 		}
@@ -345,6 +347,14 @@ public class DescribeBackupsResponse extends AcsResponse {
 
 		public void setIsAvail(Integer isAvail) {
 			this.isAvail = isAvail;
+		}
+
+		public String getEncryption() {
+			return this.encryption;
+		}
+
+		public void setEncryption(String encryption) {
+			this.encryption = encryption;
 		}
 	}
 

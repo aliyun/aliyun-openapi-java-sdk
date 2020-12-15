@@ -27,7 +27,7 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 
 	private Long resourceOwnerId;
 
-	private String flag;
+	private Integer flag;
 
 	private String clientToken;
 
@@ -60,14 +60,14 @@ public class DescribeDBInstanceNetInfoRequest extends RpcAcsRequest<DescribeDBIn
 		}
 	}
 
-	public String getFlag() {
+	public Integer getFlag() {
 		return this.flag;
 	}
 
-	public void setFlag(String flag) {
+	public void setFlag(Integer flag) {
 		this.flag = flag;
 		if(flag != null){
-			putQueryParameter("Flag", flag);
+			putQueryParameter("Flag", flag.toString());
 		}
 	}
 

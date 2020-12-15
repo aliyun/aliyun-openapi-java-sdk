@@ -27,6 +27,8 @@ public class RebuildDBInstanceRequest extends RpcAcsRequest<RebuildDBInstanceRes
 
 	private Long resourceOwnerId;
 
+	private String rebuildNodeType;
+
 	private String dBInstanceId;
 
 	private String dedicatedHostGroupId;
@@ -53,6 +55,17 @@ public class RebuildDBInstanceRequest extends RpcAcsRequest<RebuildDBInstanceRes
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRebuildNodeType() {
+		return this.rebuildNodeType;
+	}
+
+	public void setRebuildNodeType(String rebuildNodeType) {
+		this.rebuildNodeType = rebuildNodeType;
+		if(rebuildNodeType != null){
+			putQueryParameter("RebuildNodeType", rebuildNodeType);
 		}
 	}
 

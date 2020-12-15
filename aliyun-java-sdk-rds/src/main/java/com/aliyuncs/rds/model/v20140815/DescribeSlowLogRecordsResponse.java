@@ -37,6 +37,22 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	private Integer pageRecordCount;
 
+	private String sQLHash;
+
+	private Long cPUTime;
+
+	private Long logicalIORead;
+
+	private Long physicalIORead;
+
+	private Long writesIOCount;
+
+	private Long rowsAffectedCount;
+
+	private Long lastRowsAffectedCount;
+
+	private String userName;
+
 	private List<SQLSlowRecord> items;
 
 	public String getRequestId() {
@@ -87,6 +103,70 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getSQLHash() {
+		return this.sQLHash;
+	}
+
+	public void setSQLHash(String sQLHash) {
+		this.sQLHash = sQLHash;
+	}
+
+	public Long getCPUTime() {
+		return this.cPUTime;
+	}
+
+	public void setCPUTime(Long cPUTime) {
+		this.cPUTime = cPUTime;
+	}
+
+	public Long getLogicalIORead() {
+		return this.logicalIORead;
+	}
+
+	public void setLogicalIORead(Long logicalIORead) {
+		this.logicalIORead = logicalIORead;
+	}
+
+	public Long getPhysicalIORead() {
+		return this.physicalIORead;
+	}
+
+	public void setPhysicalIORead(Long physicalIORead) {
+		this.physicalIORead = physicalIORead;
+	}
+
+	public Long getWritesIOCount() {
+		return this.writesIOCount;
+	}
+
+	public void setWritesIOCount(Long writesIOCount) {
+		this.writesIOCount = writesIOCount;
+	}
+
+	public Long getRowsAffectedCount() {
+		return this.rowsAffectedCount;
+	}
+
+	public void setRowsAffectedCount(Long rowsAffectedCount) {
+		this.rowsAffectedCount = rowsAffectedCount;
+	}
+
+	public Long getLastRowsAffectedCount() {
+		return this.lastRowsAffectedCount;
+	}
+
+	public void setLastRowsAffectedCount(Long lastRowsAffectedCount) {
+		this.lastRowsAffectedCount = lastRowsAffectedCount;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	public List<SQLSlowRecord> getItems() {
 		return this.items;
 	}
@@ -114,6 +194,24 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		private String executionStartTime;
 
 		private Long queryTimeMS;
+
+		private Long cpuTime;
+
+		private Long logicalIORead;
+
+		private Long physicalIORead;
+
+		private Long writeIOCount;
+
+		private Long rowsAffectedCount;
+
+		private Long lastRowsAffectedCount;
+
+		private String userName;
+
+		private String applicationName;
+
+		private String clientHostName;
 
 		public String getHostAddress() {
 			return this.hostAddress;
@@ -185,6 +283,78 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 		public void setQueryTimeMS(Long queryTimeMS) {
 			this.queryTimeMS = queryTimeMS;
+		}
+
+		public Long getCpuTime() {
+			return this.cpuTime;
+		}
+
+		public void setCpuTime(Long cpuTime) {
+			this.cpuTime = cpuTime;
+		}
+
+		public Long getLogicalIORead() {
+			return this.logicalIORead;
+		}
+
+		public void setLogicalIORead(Long logicalIORead) {
+			this.logicalIORead = logicalIORead;
+		}
+
+		public Long getPhysicalIORead() {
+			return this.physicalIORead;
+		}
+
+		public void setPhysicalIORead(Long physicalIORead) {
+			this.physicalIORead = physicalIORead;
+		}
+
+		public Long getWriteIOCount() {
+			return this.writeIOCount;
+		}
+
+		public void setWriteIOCount(Long writeIOCount) {
+			this.writeIOCount = writeIOCount;
+		}
+
+		public Long getRowsAffectedCount() {
+			return this.rowsAffectedCount;
+		}
+
+		public void setRowsAffectedCount(Long rowsAffectedCount) {
+			this.rowsAffectedCount = rowsAffectedCount;
+		}
+
+		public Long getLastRowsAffectedCount() {
+			return this.lastRowsAffectedCount;
+		}
+
+		public void setLastRowsAffectedCount(Long lastRowsAffectedCount) {
+			this.lastRowsAffectedCount = lastRowsAffectedCount;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getApplicationName() {
+			return this.applicationName;
+		}
+
+		public void setApplicationName(String applicationName) {
+			this.applicationName = applicationName;
+		}
+
+		public String getClientHostName() {
+			return this.clientHostName;
+		}
+
+		public void setClientHostName(String clientHostName) {
+			this.clientHostName = clientHostName;
 		}
 	}
 

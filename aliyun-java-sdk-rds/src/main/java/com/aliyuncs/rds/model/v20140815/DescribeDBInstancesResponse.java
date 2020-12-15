@@ -159,6 +159,10 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dedicatedHostZoneIdForLog;
 
+		private String vpcName;
+
+		private String dedicatedHostGroupName;
+
 		private List<ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 		public Integer getInsId() {
@@ -487,6 +491,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setDedicatedHostZoneIdForLog(String dedicatedHostZoneIdForLog) {
 			this.dedicatedHostZoneIdForLog = dedicatedHostZoneIdForLog;
+		}
+
+		public String getVpcName() {
+			return this.vpcName;
+		}
+
+		public void setVpcName(String vpcName) {
+			this.vpcName = vpcName;
+		}
+
+		public String getDedicatedHostGroupName() {
+			return this.dedicatedHostGroupName;
+		}
+
+		public void setDedicatedHostGroupName(String dedicatedHostGroupName) {
+			this.dedicatedHostGroupName = dedicatedHostGroupName;
 		}
 
 		public List<ReadOnlyDBInstanceId> getReadOnlyDBInstanceIds() {

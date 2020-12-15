@@ -159,6 +159,56 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		private Long avgExecutionTime;
 
+		private Long totalPhysicalReadCounts1;
+
+		private Long avgPhysicalReadCounts;
+
+		private Long maxPhysicalReadCounts;
+
+		private Long minPhysicalReadCounts;
+
+		private Long avgLogicalReadCounts;
+
+		private Long maxLogicalReadCounts;
+
+		private Long minLogicalReadCounts;
+
+		private Long totalIOWriteCounts;
+
+		private Long avgIOWriteCounts;
+
+		private Long maxIOWriteCounts;
+
+		private Long minIOWriteCounts;
+
+		private Long totalRowsAffectedCounts;
+
+		private Long avgRowsAffectedCounts;
+
+		private Long maxRowsAffectedCounts;
+
+		private Long minRowsAffectedCounts;
+
+		private Long totalLastRowsAffectedCounts;
+
+		private Long avgLastRowsAffectedCounts;
+
+		private Long maxLastRowsAffectedCounts;
+
+		private Long minLastRowsAffectedCounts;
+
+		private Long sQLServerMinExecutionTime;
+
+		private Long sQLServerAvgExecutionTime;
+
+		private Long sQLServerTotalCpuTime;
+
+		private Long sQLServerAvgCpuTime;
+
+		private Long sQLServerMaxCpuTime;
+
+		private Long sQLServerMinCpuTime;
+
 		public Long getSlowLogId() {
 			return this.slowLogId;
 		}
@@ -325,6 +375,206 @@ public class DescribeSlowLogsResponse extends AcsResponse {
 
 		public void setAvgExecutionTime(Long avgExecutionTime) {
 			this.avgExecutionTime = avgExecutionTime;
+		}
+
+		public Long getTotalPhysicalReadCounts1() {
+			return this.totalPhysicalReadCounts1;
+		}
+
+		public void setTotalPhysicalReadCounts1(Long totalPhysicalReadCounts1) {
+			this.totalPhysicalReadCounts1 = totalPhysicalReadCounts1;
+		}
+
+		public Long getAvgPhysicalReadCounts() {
+			return this.avgPhysicalReadCounts;
+		}
+
+		public void setAvgPhysicalReadCounts(Long avgPhysicalReadCounts) {
+			this.avgPhysicalReadCounts = avgPhysicalReadCounts;
+		}
+
+		public Long getMaxPhysicalReadCounts() {
+			return this.maxPhysicalReadCounts;
+		}
+
+		public void setMaxPhysicalReadCounts(Long maxPhysicalReadCounts) {
+			this.maxPhysicalReadCounts = maxPhysicalReadCounts;
+		}
+
+		public Long getMinPhysicalReadCounts() {
+			return this.minPhysicalReadCounts;
+		}
+
+		public void setMinPhysicalReadCounts(Long minPhysicalReadCounts) {
+			this.minPhysicalReadCounts = minPhysicalReadCounts;
+		}
+
+		public Long getAvgLogicalReadCounts() {
+			return this.avgLogicalReadCounts;
+		}
+
+		public void setAvgLogicalReadCounts(Long avgLogicalReadCounts) {
+			this.avgLogicalReadCounts = avgLogicalReadCounts;
+		}
+
+		public Long getMaxLogicalReadCounts() {
+			return this.maxLogicalReadCounts;
+		}
+
+		public void setMaxLogicalReadCounts(Long maxLogicalReadCounts) {
+			this.maxLogicalReadCounts = maxLogicalReadCounts;
+		}
+
+		public Long getMinLogicalReadCounts() {
+			return this.minLogicalReadCounts;
+		}
+
+		public void setMinLogicalReadCounts(Long minLogicalReadCounts) {
+			this.minLogicalReadCounts = minLogicalReadCounts;
+		}
+
+		public Long getTotalIOWriteCounts() {
+			return this.totalIOWriteCounts;
+		}
+
+		public void setTotalIOWriteCounts(Long totalIOWriteCounts) {
+			this.totalIOWriteCounts = totalIOWriteCounts;
+		}
+
+		public Long getAvgIOWriteCounts() {
+			return this.avgIOWriteCounts;
+		}
+
+		public void setAvgIOWriteCounts(Long avgIOWriteCounts) {
+			this.avgIOWriteCounts = avgIOWriteCounts;
+		}
+
+		public Long getMaxIOWriteCounts() {
+			return this.maxIOWriteCounts;
+		}
+
+		public void setMaxIOWriteCounts(Long maxIOWriteCounts) {
+			this.maxIOWriteCounts = maxIOWriteCounts;
+		}
+
+		public Long getMinIOWriteCounts() {
+			return this.minIOWriteCounts;
+		}
+
+		public void setMinIOWriteCounts(Long minIOWriteCounts) {
+			this.minIOWriteCounts = minIOWriteCounts;
+		}
+
+		public Long getTotalRowsAffectedCounts() {
+			return this.totalRowsAffectedCounts;
+		}
+
+		public void setTotalRowsAffectedCounts(Long totalRowsAffectedCounts) {
+			this.totalRowsAffectedCounts = totalRowsAffectedCounts;
+		}
+
+		public Long getAvgRowsAffectedCounts() {
+			return this.avgRowsAffectedCounts;
+		}
+
+		public void setAvgRowsAffectedCounts(Long avgRowsAffectedCounts) {
+			this.avgRowsAffectedCounts = avgRowsAffectedCounts;
+		}
+
+		public Long getMaxRowsAffectedCounts() {
+			return this.maxRowsAffectedCounts;
+		}
+
+		public void setMaxRowsAffectedCounts(Long maxRowsAffectedCounts) {
+			this.maxRowsAffectedCounts = maxRowsAffectedCounts;
+		}
+
+		public Long getMinRowsAffectedCounts() {
+			return this.minRowsAffectedCounts;
+		}
+
+		public void setMinRowsAffectedCounts(Long minRowsAffectedCounts) {
+			this.minRowsAffectedCounts = minRowsAffectedCounts;
+		}
+
+		public Long getTotalLastRowsAffectedCounts() {
+			return this.totalLastRowsAffectedCounts;
+		}
+
+		public void setTotalLastRowsAffectedCounts(Long totalLastRowsAffectedCounts) {
+			this.totalLastRowsAffectedCounts = totalLastRowsAffectedCounts;
+		}
+
+		public Long getAvgLastRowsAffectedCounts() {
+			return this.avgLastRowsAffectedCounts;
+		}
+
+		public void setAvgLastRowsAffectedCounts(Long avgLastRowsAffectedCounts) {
+			this.avgLastRowsAffectedCounts = avgLastRowsAffectedCounts;
+		}
+
+		public Long getMaxLastRowsAffectedCounts() {
+			return this.maxLastRowsAffectedCounts;
+		}
+
+		public void setMaxLastRowsAffectedCounts(Long maxLastRowsAffectedCounts) {
+			this.maxLastRowsAffectedCounts = maxLastRowsAffectedCounts;
+		}
+
+		public Long getMinLastRowsAffectedCounts() {
+			return this.minLastRowsAffectedCounts;
+		}
+
+		public void setMinLastRowsAffectedCounts(Long minLastRowsAffectedCounts) {
+			this.minLastRowsAffectedCounts = minLastRowsAffectedCounts;
+		}
+
+		public Long getSQLServerMinExecutionTime() {
+			return this.sQLServerMinExecutionTime;
+		}
+
+		public void setSQLServerMinExecutionTime(Long sQLServerMinExecutionTime) {
+			this.sQLServerMinExecutionTime = sQLServerMinExecutionTime;
+		}
+
+		public Long getSQLServerAvgExecutionTime() {
+			return this.sQLServerAvgExecutionTime;
+		}
+
+		public void setSQLServerAvgExecutionTime(Long sQLServerAvgExecutionTime) {
+			this.sQLServerAvgExecutionTime = sQLServerAvgExecutionTime;
+		}
+
+		public Long getSQLServerTotalCpuTime() {
+			return this.sQLServerTotalCpuTime;
+		}
+
+		public void setSQLServerTotalCpuTime(Long sQLServerTotalCpuTime) {
+			this.sQLServerTotalCpuTime = sQLServerTotalCpuTime;
+		}
+
+		public Long getSQLServerAvgCpuTime() {
+			return this.sQLServerAvgCpuTime;
+		}
+
+		public void setSQLServerAvgCpuTime(Long sQLServerAvgCpuTime) {
+			this.sQLServerAvgCpuTime = sQLServerAvgCpuTime;
+		}
+
+		public Long getSQLServerMaxCpuTime() {
+			return this.sQLServerMaxCpuTime;
+		}
+
+		public void setSQLServerMaxCpuTime(Long sQLServerMaxCpuTime) {
+			this.sQLServerMaxCpuTime = sQLServerMaxCpuTime;
+		}
+
+		public Long getSQLServerMinCpuTime() {
+			return this.sQLServerMinCpuTime;
+		}
+
+		public void setSQLServerMinCpuTime(Long sQLServerMinCpuTime) {
+			this.sQLServerMinCpuTime = sQLServerMinCpuTime;
 		}
 	}
 

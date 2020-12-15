@@ -59,6 +59,31 @@ public class DescribeSlowLogsResponseUnmarshaller {
 			sQLSlowLog.setReportTime(_ctx.stringValue("DescribeSlowLogsResponse.Items["+ i +"].ReportTime"));
 			sQLSlowLog.setMaxExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxExecutionTime"));
 			sQLSlowLog.setAvgExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgExecutionTime"));
+			sQLSlowLog.setTotalPhysicalReadCounts1(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].TotalPhysicalReadCounts"));
+			sQLSlowLog.setAvgPhysicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgPhysicalReadCounts"));
+			sQLSlowLog.setMaxPhysicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxPhysicalReadCounts"));
+			sQLSlowLog.setMinPhysicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinPhysicalReadCounts"));
+			sQLSlowLog.setAvgLogicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgLogicalReadCounts"));
+			sQLSlowLog.setMaxLogicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxLogicalReadCounts"));
+			sQLSlowLog.setMinLogicalReadCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinLogicalReadCounts"));
+			sQLSlowLog.setTotalIOWriteCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].TotalIOWriteCounts"));
+			sQLSlowLog.setAvgIOWriteCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgIOWriteCounts"));
+			sQLSlowLog.setMaxIOWriteCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxIOWriteCounts"));
+			sQLSlowLog.setMinIOWriteCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinIOWriteCounts"));
+			sQLSlowLog.setTotalRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].TotalRowsAffectedCounts"));
+			sQLSlowLog.setAvgRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgRowsAffectedCounts"));
+			sQLSlowLog.setMaxRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxRowsAffectedCounts"));
+			sQLSlowLog.setMinRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinRowsAffectedCounts"));
+			sQLSlowLog.setTotalLastRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].TotalLastRowsAffectedCounts"));
+			sQLSlowLog.setAvgLastRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].AvgLastRowsAffectedCounts"));
+			sQLSlowLog.setMaxLastRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MaxLastRowsAffectedCounts"));
+			sQLSlowLog.setMinLastRowsAffectedCounts(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].MinLastRowsAffectedCounts"));
+			sQLSlowLog.setSQLServerMinExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerMinExecutionTime"));
+			sQLSlowLog.setSQLServerAvgExecutionTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerAvgExecutionTime"));
+			sQLSlowLog.setSQLServerTotalCpuTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerTotalCpuTime"));
+			sQLSlowLog.setSQLServerAvgCpuTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerAvgCpuTime"));
+			sQLSlowLog.setSQLServerMaxCpuTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerMaxCpuTime"));
+			sQLSlowLog.setSQLServerMinCpuTime(_ctx.longValue("DescribeSlowLogsResponse.Items["+ i +"].SQLServerMinCpuTime"));
 
 			items.add(sQLSlowLog);
 		}

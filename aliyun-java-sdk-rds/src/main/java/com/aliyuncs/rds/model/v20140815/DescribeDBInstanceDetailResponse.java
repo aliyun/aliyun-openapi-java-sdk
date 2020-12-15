@@ -15,24 +15,24 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.CreateDBInstanceReplicaResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.DescribeDBInstanceDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBInstanceReplicaResponse extends AcsResponse {
+public class DescribeDBInstanceDetailResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String dBInstanceId;
 
-	private Long orderId;
+	private String regionId;
 
-	private String replicaId;
+	private String licenseType;
 
-	private String workflowId;
+	private String activationState;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,32 +50,32 @@ public class CreateDBInstanceReplicaResponse extends AcsResponse {
 		this.dBInstanceId = dBInstanceId;
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getRegionId() {
+		return this.regionId;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
 	}
 
-	public String getReplicaId() {
-		return this.replicaId;
+	public String getLicenseType() {
+		return this.licenseType;
 	}
 
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
+	public void setLicenseType(String licenseType) {
+		this.licenseType = licenseType;
 	}
 
-	public String getWorkflowId() {
-		return this.workflowId;
+	public String getActivationState() {
+		return this.activationState;
 	}
 
-	public void setWorkflowId(String workflowId) {
-		this.workflowId = workflowId;
+	public void setActivationState(String activationState) {
+		this.activationState = activationState;
 	}
 
 	@Override
-	public CreateDBInstanceReplicaResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBInstanceReplicaResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDBInstanceDetailResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDBInstanceDetailResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -27,15 +27,17 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 
 	private Long resourceOwnerId;
 
+	private String dBInstanceId;
+
+	private String switchTime;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
+	private String targetMinorVersion;
+
 	private String upgradeTime;
-
-	private String dBInstanceId;
-
-	private String switchTime;
 	public UpgradeDBInstanceKernelVersionRequest() {
 		super("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds");
 		setMethod(MethodType.POST);
@@ -53,6 +55,28 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -78,6 +102,17 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 		}
 	}
 
+	public String getTargetMinorVersion() {
+		return this.targetMinorVersion;
+	}
+
+	public void setTargetMinorVersion(String targetMinorVersion) {
+		this.targetMinorVersion = targetMinorVersion;
+		if(targetMinorVersion != null){
+			putQueryParameter("TargetMinorVersion", targetMinorVersion);
+		}
+	}
+
 	public String getUpgradeTime() {
 		return this.upgradeTime;
 	}
@@ -86,28 +121,6 @@ public class UpgradeDBInstanceKernelVersionRequest extends RpcAcsRequest<Upgrade
 		this.upgradeTime = upgradeTime;
 		if(upgradeTime != null){
 			putQueryParameter("UpgradeTime", upgradeTime);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getSwitchTime() {
-		return this.switchTime;
-	}
-
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 

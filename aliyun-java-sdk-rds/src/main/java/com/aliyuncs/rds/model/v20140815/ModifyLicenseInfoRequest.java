@@ -22,40 +22,27 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplicaDescriptionResponse> {
+public class ModifyLicenseInfoRequest extends RpcAcsRequest<ModifyLicenseInfoResponse> {
 	   
-
-	private String replicaDescription;
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
-	private String replicaId;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
+	private String clientToken;
 
 	private Long ownerId;
-	public ModifyReplicaDescriptionRequest() {
-		super("Rds", "2014-08-15", "ModifyReplicaDescription", "rds");
+
+	private String license;
+
+	private String dBInstanceId;
+	public ModifyLicenseInfoRequest() {
+		super("Rds", "2014-08-15", "ModifyLicenseInfo", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReplicaDescription() {
-		return this.replicaDescription;
-	}
-
-	public void setReplicaDescription(String replicaDescription) {
-		this.replicaDescription = replicaDescription;
-		if(replicaDescription != null){
-			putQueryParameter("ReplicaDescription", replicaDescription);
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -66,28 +53,6 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getReplicaId() {
-		return this.replicaId;
-	}
-
-	public void setReplicaId(String replicaId) {
-		this.replicaId = replicaId;
-		if(replicaId != null){
-			putQueryParameter("ReplicaId", replicaId);
 		}
 	}
 
@@ -102,14 +67,14 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		}
 	}
 
-	public String getOwnerAccount() {
-		return this.ownerAccount;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -124,9 +89,31 @@ public class ModifyReplicaDescriptionRequest extends RpcAcsRequest<ModifyReplica
 		}
 	}
 
+	public String getLicense() {
+		return this.license;
+	}
+
+	public void setLicense(String license) {
+		this.license = license;
+		if(license != null){
+			putQueryParameter("License", license);
+		}
+	}
+
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	@Override
-	public Class<ModifyReplicaDescriptionResponse> getResponseClass() {
-		return ModifyReplicaDescriptionResponse.class;
+	public Class<ModifyLicenseInfoResponse> getResponseClass() {
+		return ModifyLicenseInfoResponse.class;
 	}
 
 }

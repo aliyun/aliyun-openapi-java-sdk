@@ -29,6 +29,8 @@ public class DescribeDBInstancesOverviewRequest extends RpcAcsRequest<DescribeDB
 
 	private String clientToken;
 
+	private String resourceGroupId;
+
 	private String expired;
 
 	private String engine;
@@ -70,6 +72,17 @@ public class DescribeDBInstancesOverviewRequest extends RpcAcsRequest<DescribeDB
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

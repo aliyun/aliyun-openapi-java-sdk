@@ -22,26 +22,20 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceResponse> {
+public class DescribeDBInstanceDetailRequest extends RpcAcsRequest<DescribeDBInstanceDetailResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
-
-	private String dBInstanceId;
-
-	private String restoreTime;
-
 	private String resourceOwnerAccount;
 
-	private String backupId;
-
-	private String ownerAccount;
+	private String clientToken;
 
 	private Long ownerId;
-	public RestoreDBInstanceRequest() {
-		super("Rds", "2014-08-15", "RestoreDBInstance", "rds");
+
+	private String dBInstanceId;
+	public DescribeDBInstanceDetailRequest() {
+		super("Rds", "2014-08-15", "DescribeDBInstanceDetail", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,39 +54,6 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -104,25 +65,14 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
-	public String getBackupId() {
-		return this.backupId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setBackupId(String backupId) {
-		this.backupId = backupId;
-		if(backupId != null){
-			putQueryParameter("BackupId", backupId);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -137,9 +87,20 @@ public class RestoreDBInstanceRequest extends RpcAcsRequest<RestoreDBInstanceRes
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	@Override
-	public Class<RestoreDBInstanceResponse> getResponseClass() {
-		return RestoreDBInstanceResponse.class;
+	public Class<DescribeDBInstanceDetailResponse> getResponseClass() {
+		return DescribeDBInstanceDetailResponse.class;
 	}
 
 }

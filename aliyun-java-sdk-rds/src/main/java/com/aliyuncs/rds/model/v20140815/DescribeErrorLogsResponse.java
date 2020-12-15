@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeErrorLogsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer totalRecordCount;
-
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer totalRecordCount;
+
 	private List<ErrorLog> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Integer totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -67,6 +51,22 @@ public class DescribeErrorLogsResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
+	}
+
 	public List<ErrorLog> getItems() {
 		return this.items;
 	}
@@ -77,17 +77,9 @@ public class DescribeErrorLogsResponse extends AcsResponse {
 
 	public static class ErrorLog {
 
-		private String errorInfo;
-
 		private String createTime;
 
-		public String getErrorInfo() {
-			return this.errorInfo;
-		}
-
-		public void setErrorInfo(String errorInfo) {
-			this.errorInfo = errorInfo;
-		}
+		private String errorInfo;
 
 		public String getCreateTime() {
 			return this.createTime;
@@ -95,6 +87,14 @@ public class DescribeErrorLogsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getErrorInfo() {
+			return this.errorInfo;
+		}
+
+		public void setErrorInfo(String errorInfo) {
+			this.errorInfo = errorInfo;
 		}
 	}
 

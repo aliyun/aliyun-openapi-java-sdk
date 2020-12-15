@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rds.transform.v20140815;
 
-import com.aliyuncs.rds.model.v20140815.RestoreDBInstanceResponse;
+import com.aliyuncs.rds.model.v20140815.ModifyLicenseInfoResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RestoreDBInstanceResponseUnmarshaller {
+public class ModifyLicenseInfoResponseUnmarshaller {
 
-	public static RestoreDBInstanceResponse unmarshall(RestoreDBInstanceResponse restoreDBInstanceResponse, UnmarshallerContext _ctx) {
+	public static ModifyLicenseInfoResponse unmarshall(ModifyLicenseInfoResponse modifyLicenseInfoResponse, UnmarshallerContext _ctx) {
 		
-		restoreDBInstanceResponse.setRequestId(_ctx.stringValue("RestoreDBInstanceResponse.RequestId"));
+		modifyLicenseInfoResponse.setRequestId(_ctx.stringValue("ModifyLicenseInfoResponse.RequestId"));
 	 
-	 	return restoreDBInstanceResponse;
+	 	return modifyLicenseInfoResponse;
 	}
 }

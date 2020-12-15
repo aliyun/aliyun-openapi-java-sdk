@@ -15,16 +15,18 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.RestoreDBInstanceResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.CheckRegionSupportBackupEncryptionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RestoreDBInstanceResponse extends AcsResponse {
+public class CheckRegionSupportBackupEncryptionResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Boolean supportBackupEncryption;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class RestoreDBInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Boolean getSupportBackupEncryption() {
+		return this.supportBackupEncryption;
+	}
+
+	public void setSupportBackupEncryption(Boolean supportBackupEncryption) {
+		this.supportBackupEncryption = supportBackupEncryption;
+	}
+
 	@Override
-	public RestoreDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	RestoreDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public CheckRegionSupportBackupEncryptionResponse getInstance(UnmarshallerContext context) {
+		return	CheckRegionSupportBackupEncryptionResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
