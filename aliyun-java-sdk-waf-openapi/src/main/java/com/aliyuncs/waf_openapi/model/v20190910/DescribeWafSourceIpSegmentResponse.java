@@ -15,18 +15,20 @@
 package com.aliyuncs.waf_openapi.model.v20190910;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.waf_openapi.transform.v20190910.DescribeDomainStatusResponseUnmarshaller;
+import com.aliyuncs.waf_openapi.transform.v20190910.DescribeWafSourceIpSegmentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeDomainStatusResponse extends AcsResponse {
+public class DescribeWafSourceIpSegmentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String configStatus;
+	private String ips;
+
+	private String ipV6s;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +38,29 @@ public class DescribeDomainStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getConfigStatus() {
-		return this.configStatus;
+	public String getIps() {
+		return this.ips;
 	}
 
-	public void setConfigStatus(String configStatus) {
-		this.configStatus = configStatus;
+	public void setIps(String ips) {
+		this.ips = ips;
+	}
+
+	public String getIpV6s() {
+		return this.ipV6s;
+	}
+
+	public void setIpV6s(String ipV6s) {
+		this.ipV6s = ipV6s;
 	}
 
 	@Override
-	public DescribeDomainStatusResponse getInstance(UnmarshallerContext context) {
-		return	DescribeDomainStatusResponseUnmarshaller.unmarshall(this, context);
+	public DescribeWafSourceIpSegmentResponse getInstance(UnmarshallerContext context) {
+		return	DescribeWafSourceIpSegmentResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

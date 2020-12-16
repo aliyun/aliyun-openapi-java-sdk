@@ -22,44 +22,21 @@ import com.aliyuncs.waf_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRuleSummaryRequest extends RpcAcsRequest<DescribeRuleSummaryResponse> {
+public class DescribeWafSourceIpSegmentRequest extends RpcAcsRequest<DescribeWafSourceIpSegmentResponse> {
 	   
-
-	private String endTimestamp;
 
 	private String resourceGroupId;
 
-	private String sourceIp;
-
-	private String lang;
-
-	private String antibotType;
-
 	private String instanceId;
 
-	private String domain;
-
 	private String region;
-
-	private String ruleId;
-	public DescribeRuleSummaryRequest() {
-		super("waf-openapi", "2019-09-10", "DescribeRuleSummary", "waf");
+	public DescribeWafSourceIpSegmentRequest() {
+		super("waf-openapi", "2019-09-10", "DescribeWafSourceIpSegment", "waf");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getEndTimestamp() {
-		return this.endTimestamp;
-	}
-
-	public void setEndTimestamp(String endTimestamp) {
-		this.endTimestamp = endTimestamp;
-		if(endTimestamp != null){
-			putQueryParameter("EndTimestamp", endTimestamp);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -70,39 +47,6 @@ public class DescribeRuleSummaryRequest extends RpcAcsRequest<DescribeRuleSummar
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getAntibotType() {
-		return this.antibotType;
-	}
-
-	public void setAntibotType(String antibotType) {
-		this.antibotType = antibotType;
-		if(antibotType != null){
-			putQueryParameter("AntibotType", antibotType);
 		}
 	}
 
@@ -117,17 +61,6 @@ public class DescribeRuleSummaryRequest extends RpcAcsRequest<DescribeRuleSummar
 		}
 	}
 
-	public String getDomain() {
-		return this.domain;
-	}
-
-	public void setDomain(String domain) {
-		this.domain = domain;
-		if(domain != null){
-			putQueryParameter("Domain", domain);
-		}
-	}
-
 	public String getRegion() {
 		return this.region;
 	}
@@ -139,20 +72,9 @@ public class DescribeRuleSummaryRequest extends RpcAcsRequest<DescribeRuleSummar
 		}
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
-		}
-	}
-
 	@Override
-	public Class<DescribeRuleSummaryResponse> getResponseClass() {
-		return DescribeRuleSummaryResponse.class;
+	public Class<DescribeWafSourceIpSegmentResponse> getResponseClass() {
+		return DescribeWafSourceIpSegmentResponse.class;
 	}
 
 }
