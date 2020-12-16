@@ -1,3 +1,7 @@
+2020-12-16 Version: 1.0.8.2-release
+- Support show pipeline history.
+- Support show log details.
+
 2020-12-14 Version: 1.8.0.1-RELEASE
 - Add update task api.
 
