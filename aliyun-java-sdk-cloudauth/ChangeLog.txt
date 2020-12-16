@@ -1,3 +1,6 @@
+2020-12-16 Version: 2.0.23
+- Add Face Attributes.
+
 2020-11-26 Version: 2.0.22
 - ContrastFaceVerify Support Video.
 

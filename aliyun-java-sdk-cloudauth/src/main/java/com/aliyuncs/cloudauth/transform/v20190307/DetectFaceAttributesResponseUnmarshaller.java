@@ -58,6 +58,9 @@ public class DetectFaceAttributesResponseUnmarshaller {
 			faceAttributes.setFacetype(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Facetype"));
 			faceAttributes.setBlur(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Blur"));
 			faceAttributes.setEthnicity(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Ethnicity"));
+			faceAttributes.setFacequal(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Facequal"));
+			faceAttributes.setIntegrity(_ctx.integerValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Integrity"));
+			faceAttributes.setRespirator(_ctx.stringValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Respirator"));
 
 			Gender gender = new Gender();
 			gender.setScore(_ctx.floatValue("DetectFaceAttributesResponse.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score"));

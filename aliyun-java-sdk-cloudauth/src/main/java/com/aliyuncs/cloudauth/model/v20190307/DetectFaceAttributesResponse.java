@@ -184,6 +184,12 @@ public class DetectFaceAttributesResponse extends AcsResponse {
 
 				private String ethnicity;
 
+				private Float facequal;
+
+				private Integer integrity;
+
+				private String respirator;
+
 				private Gender gender;
 
 				private Smiling smiling;
@@ -228,6 +234,30 @@ public class DetectFaceAttributesResponse extends AcsResponse {
 
 				public void setEthnicity(String ethnicity) {
 					this.ethnicity = ethnicity;
+				}
+
+				public Float getFacequal() {
+					return this.facequal;
+				}
+
+				public void setFacequal(Float facequal) {
+					this.facequal = facequal;
+				}
+
+				public Integer getIntegrity() {
+					return this.integrity;
+				}
+
+				public void setIntegrity(Integer integrity) {
+					this.integrity = integrity;
+				}
+
+				public String getRespirator() {
+					return this.respirator;
+				}
+
+				public void setRespirator(String respirator) {
+					this.respirator = respirator;
 				}
 
 				public Gender getGender() {
