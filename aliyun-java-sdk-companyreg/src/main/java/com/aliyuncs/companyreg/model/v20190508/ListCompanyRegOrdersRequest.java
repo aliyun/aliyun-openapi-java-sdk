@@ -16,17 +16,16 @@ package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.companyreg.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ListCompanyRegOrdersRequest extends RpcAcsRequest<ListCompanyRegOrdersResponse> {
-	
-	public ListCompanyRegOrdersRequest() {
-		super("companyreg", "2019-05-08", "ListCompanyRegOrders", "companyreg");
-		setMethod(MethodType.POST);
-	}
+	   
+
+	private String notBizStatus;
 
 	private Integer pageNum;
 
@@ -39,6 +38,25 @@ public class ListCompanyRegOrdersRequest extends RpcAcsRequest<ListCompanyRegOrd
 	private String aliyunOrderId;
 
 	private String bizSubCode;
+	public ListCompanyRegOrdersRequest() {
+		super("companyreg", "2019-05-08", "ListCompanyRegOrders");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getNotBizStatus() {
+		return this.notBizStatus;
+	}
+
+	public void setNotBizStatus(String notBizStatus) {
+		this.notBizStatus = notBizStatus;
+		if(notBizStatus != null){
+			putQueryParameter("NotBizStatus", notBizStatus);
+		}
+	}
 
 	public Integer getPageNum() {
 		return this.pageNum;

@@ -16,19 +16,24 @@ package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.companyreg.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SendVcodeRequest extends RpcAcsRequest<SendVcodeResponse> {
-	
-	public SendVcodeRequest() {
-		super("companyreg", "2019-05-08", "SendVcode", "companyreg");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String mobile;
+	public SendVcodeRequest() {
+		super("companyreg", "2019-05-08", "SendVcode");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getMobile() {
 		return this.mobile;

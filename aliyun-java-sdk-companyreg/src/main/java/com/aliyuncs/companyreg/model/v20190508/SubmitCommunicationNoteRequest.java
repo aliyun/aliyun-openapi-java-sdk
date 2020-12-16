@@ -16,17 +16,14 @@ package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.companyreg.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class SubmitCommunicationNoteRequest extends RpcAcsRequest<SubmitCommunicationNoteResponse> {
-	
-	public SubmitCommunicationNoteRequest() {
-		super("companyreg", "2019-05-08", "SubmitCommunicationNote", "companyreg");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String note;
 
@@ -35,6 +32,14 @@ public class SubmitCommunicationNoteRequest extends RpcAcsRequest<SubmitCommunic
 	private String actionRequestId;
 
 	private String bizId;
+	public SubmitCommunicationNoteRequest() {
+		super("companyreg", "2019-05-08", "SubmitCommunicationNote");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getNote() {
 		return this.note;

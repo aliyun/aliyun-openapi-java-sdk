@@ -16,17 +16,14 @@ package com.aliyuncs.companyreg.model.v20190508;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.companyreg.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
 public class ProcessCompanyRegOrderRequest extends RpcAcsRequest<ProcessCompanyRegOrderResponse> {
-	
-	public ProcessCompanyRegOrderRequest() {
-		super("companyreg", "2019-05-08", "ProcessCompanyRegOrder", "companyreg");
-		setMethod(MethodType.POST);
-	}
+	   
 
 	private String actionType;
 
@@ -37,6 +34,14 @@ public class ProcessCompanyRegOrderRequest extends RpcAcsRequest<ProcessCompanyR
 	private String bizId;
 
 	private String bizSubCode;
+	public ProcessCompanyRegOrderRequest() {
+		super("companyreg", "2019-05-08", "ProcessCompanyRegOrder");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getActionType() {
 		return this.actionType;
