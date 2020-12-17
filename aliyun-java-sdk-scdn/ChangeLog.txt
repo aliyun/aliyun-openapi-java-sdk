@@ -1,3 +1,6 @@
+2020-12-17 Version: 2.2.3
+- Update DeleteScdnDomain.
+
 2020-12-03 Version: 2.2.2
 - Update DescribeScdnDomainCertificateInfo.
 
