@@ -107,7 +107,7 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 		private List<HitRuleReviewInfo> hitRuleReviewInfoList;
 
-		private List<HitRuleReviewInfo1> manualScoreInfoList;
+		private List<ManualScoreInfo> manualScoreInfoList;
 
 		private List<ReviewHistory> reviewHistoryList;
 
@@ -231,11 +231,11 @@ public class GetResultToReviewResponse extends AcsResponse {
 			this.hitRuleReviewInfoList = hitRuleReviewInfoList;
 		}
 
-		public List<HitRuleReviewInfo1> getManualScoreInfoList() {
+		public List<ManualScoreInfo> getManualScoreInfoList() {
 			return this.manualScoreInfoList;
 		}
 
-		public void setManualScoreInfoList(List<HitRuleReviewInfo1> manualScoreInfoList) {
+		public void setManualScoreInfoList(List<ManualScoreInfo> manualScoreInfoList) {
 			this.manualScoreInfoList = manualScoreInfoList;
 		}
 
@@ -854,7 +854,7 @@ public class GetResultToReviewResponse extends AcsResponse {
 			}
 		}
 
-		public static class HitRuleReviewInfo1 {
+		public static class ManualScoreInfo {
 
 			private Long scoreId;
 
@@ -866,7 +866,7 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 			private Boolean complainable;
 
-			private List<ComplainHistoriesItem> complainHistories2;
+			private List<ComplainHistoriesItem2> complainHistories1;
 
 			public Long getScoreId() {
 				return this.scoreId;
@@ -908,12 +908,65 @@ public class GetResultToReviewResponse extends AcsResponse {
 				this.complainable = complainable;
 			}
 
-			public List<ComplainHistoriesItem> getComplainHistories2() {
-				return this.complainHistories2;
+			public List<ComplainHistoriesItem2> getComplainHistories1() {
+				return this.complainHistories1;
 			}
 
-			public void setComplainHistories2(List<ComplainHistoriesItem> complainHistories2) {
-				this.complainHistories2 = complainHistories2;
+			public void setComplainHistories1(List<ComplainHistoriesItem2> complainHistories1) {
+				this.complainHistories1 = complainHistories1;
+			}
+
+			public static class ComplainHistoriesItem2 {
+
+				private String comments;
+
+				private String operatorName;
+
+				private Long operator;
+
+				private Integer operationType;
+
+				private String operationTime;
+
+				public String getComments() {
+					return this.comments;
+				}
+
+				public void setComments(String comments) {
+					this.comments = comments;
+				}
+
+				public String getOperatorName() {
+					return this.operatorName;
+				}
+
+				public void setOperatorName(String operatorName) {
+					this.operatorName = operatorName;
+				}
+
+				public Long getOperator() {
+					return this.operator;
+				}
+
+				public void setOperator(Long operator) {
+					this.operator = operator;
+				}
+
+				public Integer getOperationType() {
+					return this.operationType;
+				}
+
+				public void setOperationType(Integer operationType) {
+					this.operationType = operationType;
+				}
+
+				public String getOperationTime() {
+					return this.operationTime;
+				}
+
+				public void setOperationTime(String operationTime) {
+					this.operationTime = operationTime;
+				}
 			}
 		}
 

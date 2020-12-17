@@ -26,7 +26,8 @@ import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo.KeyWord;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ConditionHitInfo.Phrase;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo.ReviewInfo;
-import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.HitRuleReviewInfo1;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ManualScoreInfo;
+import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ManualScoreInfo.ComplainHistoriesItem2;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ReviewHistory;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ScorePo;
 import com.aliyuncs.qualitycheck.model.v20190115.GetResultToReviewResponse.Data.ScorePo.ScoreParam;
@@ -175,29 +176,29 @@ public class GetResultToReviewResponseUnmarshaller {
 		}
 		data.setHitRuleReviewInfoList(hitRuleReviewInfoList);
 
-		List<HitRuleReviewInfo1> manualScoreInfoList = new ArrayList<HitRuleReviewInfo1>();
+		List<ManualScoreInfo> manualScoreInfoList = new ArrayList<ManualScoreInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList.Length"); i++) {
-			HitRuleReviewInfo1 hitRuleReviewInfo1 = new HitRuleReviewInfo1();
-			hitRuleReviewInfo1.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreId"));
-			hitRuleReviewInfo1.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubId"));
-			hitRuleReviewInfo1.setScoreSubName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubName"));
-			hitRuleReviewInfo1.setScoreNum(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreNum"));
-			hitRuleReviewInfo1.setComplainable(_ctx.booleanValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].Complainable"));
+			ManualScoreInfo manualScoreInfo = new ManualScoreInfo();
+			manualScoreInfo.setScoreId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreId"));
+			manualScoreInfo.setScoreSubId(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubId"));
+			manualScoreInfo.setScoreSubName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreSubName"));
+			manualScoreInfo.setScoreNum(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ScoreNum"));
+			manualScoreInfo.setComplainable(_ctx.booleanValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].Complainable"));
 
-			List<ComplainHistoriesItem> complainHistories2 = new ArrayList<ComplainHistoriesItem>();
+			List<ComplainHistoriesItem2> complainHistories1 = new ArrayList<ComplainHistoriesItem2>();
 			for (int j = 0; j < _ctx.lengthValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories.Length"); j++) {
-				ComplainHistoriesItem complainHistoriesItem_ = new ComplainHistoriesItem();
-				complainHistoriesItem_.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].Comments"));
-				complainHistoriesItem_.setOperatorName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperatorName"));
-				complainHistoriesItem_.setOperator(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].Operator"));
-				complainHistoriesItem_.setOperationType(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperationType"));
-				complainHistoriesItem_.setOperationTime(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperationTime"));
+				ComplainHistoriesItem2 complainHistoriesItem2 = new ComplainHistoriesItem2();
+				complainHistoriesItem2.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].Comments"));
+				complainHistoriesItem2.setOperatorName(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperatorName"));
+				complainHistoriesItem2.setOperator(_ctx.longValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].Operator"));
+				complainHistoriesItem2.setOperationType(_ctx.integerValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperationType"));
+				complainHistoriesItem2.setOperationTime(_ctx.stringValue("GetResultToReviewResponse.Data.ManualScoreInfoList["+ i +"].ComplainHistories["+ j +"].OperationTime"));
 
-				complainHistories2.add(complainHistoriesItem_);
+				complainHistories1.add(complainHistoriesItem2);
 			}
-			hitRuleReviewInfo1.setComplainHistories2(complainHistories2);
+			manualScoreInfo.setComplainHistories1(complainHistories1);
 
-			manualScoreInfoList.add(hitRuleReviewInfo1);
+			manualScoreInfoList.add(manualScoreInfo);
 		}
 		data.setManualScoreInfoList(manualScoreInfoList);
 
