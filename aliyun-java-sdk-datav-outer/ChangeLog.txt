@@ -1,3 +1,8 @@
+2020-12-17 Version: 1.0.3
+- Support DeleteDatasourceUserAssociation.
+- Support SetDatasourceUserAssociation.
+- Support GetDatasourceUserAssociation.
+
 2020-09-24 Version: 1.0.2
 - Generated 2019-04-02 for `datav-outer`.
 
