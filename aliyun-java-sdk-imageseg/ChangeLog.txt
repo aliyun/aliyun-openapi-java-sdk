@@ -1,3 +1,6 @@
+2020-12-17 Version: 1.1.8
+- Update SegmentFood.
+
 2020-12-09 Version: 1.1.7
 - Update SegmentCommodity.
 
