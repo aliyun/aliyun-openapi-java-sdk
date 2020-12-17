@@ -35,7 +35,7 @@ public class DeleteNetworkInterfaceRequest extends RpcAcsRequest<DeleteNetworkIn
 
 	private String networkInterfaceId;
 	public DeleteNetworkInterfaceRequest() {
-		super("Ecs", "2014-05-26", "DeleteNetworkInterface");
+		super("Ecs", "2014-05-26", "DeleteNetworkInterface", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

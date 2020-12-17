@@ -116,7 +116,7 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String filter3Key;
 	public DescribeInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeInstances");
+		super("Ecs", "2014-05-26", "DescribeInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

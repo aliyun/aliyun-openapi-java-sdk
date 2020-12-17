@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -25,9 +26,13 @@ import com.aliyuncs.ecs.Endpoint;
 public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceResponse> {
 	   
 
+	private String gpuSpec;
+
 	private Long resourceOwnerId;
 
 	private Float memory;
+
+	private List<String> instanceTypess;
 
 	private Integer minCores;
 
@@ -37,18 +42,35 @@ public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceR
 
 	private String ownerAccount;
 
+	private String instanceTypeFamily;
+
 	private Long ownerId;
+
+	private String instanceFamilyLevel;
 
 	private String zoneId;
 
+	private Integer gpuAmount;
+
 	private Float minMemory;
 	public DescribeSpotAdviceRequest() {
-		super("Ecs", "2014-05-26", "DescribeSpotAdvice");
+		super("Ecs", "2014-05-26", "DescribeSpotAdvice", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGpuSpec() {
+		return this.gpuSpec;
+	}
+
+	public void setGpuSpec(String gpuSpec) {
+		this.gpuSpec = gpuSpec;
+		if(gpuSpec != null){
+			putQueryParameter("GpuSpec", gpuSpec);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -71,6 +93,19 @@ public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceR
 		if(memory != null){
 			putQueryParameter("Memory", memory.toString());
 		}
+	}
+
+	public List<String> getInstanceTypess() {
+		return this.instanceTypess;
+	}
+
+	public void setInstanceTypess(List<String> instanceTypess) {
+		this.instanceTypess = instanceTypess;	
+		if (instanceTypess != null) {
+			for (int i = 0; i < instanceTypess.size(); i++) {
+				putQueryParameter("InstanceTypes." + (i + 1) , instanceTypess.get(i));
+			}
+		}	
 	}
 
 	public Integer getMinCores() {
@@ -117,6 +152,17 @@ public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceR
 		}
 	}
 
+	public String getInstanceTypeFamily() {
+		return this.instanceTypeFamily;
+	}
+
+	public void setInstanceTypeFamily(String instanceTypeFamily) {
+		this.instanceTypeFamily = instanceTypeFamily;
+		if(instanceTypeFamily != null){
+			putQueryParameter("InstanceTypeFamily", instanceTypeFamily);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -128,6 +174,17 @@ public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceR
 		}
 	}
 
+	public String getInstanceFamilyLevel() {
+		return this.instanceFamilyLevel;
+	}
+
+	public void setInstanceFamilyLevel(String instanceFamilyLevel) {
+		this.instanceFamilyLevel = instanceFamilyLevel;
+		if(instanceFamilyLevel != null){
+			putQueryParameter("InstanceFamilyLevel", instanceFamilyLevel);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -136,6 +193,17 @@ public class DescribeSpotAdviceRequest extends RpcAcsRequest<DescribeSpotAdviceR
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Integer getGpuAmount() {
+		return this.gpuAmount;
+	}
+
+	public void setGpuAmount(Integer gpuAmount) {
+		this.gpuAmount = gpuAmount;
+		if(gpuAmount != null){
+			putQueryParameter("GpuAmount", gpuAmount.toString());
 		}
 	}
 

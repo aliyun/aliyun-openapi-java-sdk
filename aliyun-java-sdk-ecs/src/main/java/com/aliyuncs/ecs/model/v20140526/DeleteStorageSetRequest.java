@@ -37,7 +37,7 @@ public class DeleteStorageSetRequest extends RpcAcsRequest<DeleteStorageSetRespo
 
 	private String storageSetId;
 	public DeleteStorageSetRequest() {
-		super("Ecs", "2014-05-26", "DeleteStorageSet");
+		super("Ecs", "2014-05-26", "DeleteStorageSet", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

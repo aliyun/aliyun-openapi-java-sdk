@@ -56,7 +56,7 @@ public class DescribeDemandsRequest extends RpcAcsRequest<DescribeDemandsRespons
 
 	private String demandType;
 	public DescribeDemandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeDemands");
+		super("Ecs", "2014-05-26", "DescribeDemands", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

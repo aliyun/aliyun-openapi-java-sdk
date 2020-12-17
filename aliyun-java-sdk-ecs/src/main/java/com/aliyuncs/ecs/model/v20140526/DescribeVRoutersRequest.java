@@ -39,7 +39,7 @@ public class DescribeVRoutersRequest extends RpcAcsRequest<DescribeVRoutersRespo
 
 	private Long ownerId;
 	public DescribeVRoutersRequest() {
-		super("Ecs", "2014-05-26", "DescribeVRouters");
+		super("Ecs", "2014-05-26", "DescribeVRouters", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

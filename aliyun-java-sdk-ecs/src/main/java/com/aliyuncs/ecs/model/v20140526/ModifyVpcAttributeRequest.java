@@ -43,7 +43,7 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	private String cidrBlock;
 	public ModifyVpcAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifyVpcAttribute");
+		super("Ecs", "2014-05-26", "ModifyVpcAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

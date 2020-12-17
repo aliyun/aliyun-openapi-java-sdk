@@ -52,7 +52,7 @@ public class DescribeDedicatedHostClustersRequest extends RpcAcsRequest<Describe
 
 	private String status;
 	public DescribeDedicatedHostClustersRequest() {
-		super("Ecs", "2014-05-26", "DescribeDedicatedHostClusters");
+		super("Ecs", "2014-05-26", "DescribeDedicatedHostClusters", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

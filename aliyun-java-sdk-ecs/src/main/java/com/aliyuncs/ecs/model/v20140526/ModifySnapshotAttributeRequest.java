@@ -41,7 +41,7 @@ public class ModifySnapshotAttributeRequest extends RpcAcsRequest<ModifySnapshot
 
 	private Boolean disableInstantAccess;
 	public ModifySnapshotAttributeRequest() {
-		super("Ecs", "2014-05-26", "ModifySnapshotAttribute");
+		super("Ecs", "2014-05-26", "ModifySnapshotAttribute", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

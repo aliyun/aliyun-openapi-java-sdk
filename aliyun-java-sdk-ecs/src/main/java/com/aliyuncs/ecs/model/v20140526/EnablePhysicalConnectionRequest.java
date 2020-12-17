@@ -39,7 +39,7 @@ public class EnablePhysicalConnectionRequest extends RpcAcsRequest<EnablePhysica
 
 	private String physicalConnectionId;
 	public EnablePhysicalConnectionRequest() {
-		super("Ecs", "2014-05-26", "EnablePhysicalConnection");
+		super("Ecs", "2014-05-26", "EnablePhysicalConnection", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

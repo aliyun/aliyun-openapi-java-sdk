@@ -38,7 +38,7 @@ public class DescribeRouterInterfacesRequest extends RpcAcsRequest<DescribeRoute
 
 	private List<Filter> filters;
 	public DescribeRouterInterfacesRequest() {
-		super("Ecs", "2014-05-26", "DescribeRouterInterfaces");
+		super("Ecs", "2014-05-26", "DescribeRouterInterfaces", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

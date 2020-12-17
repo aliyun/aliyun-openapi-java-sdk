@@ -64,7 +64,7 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String username;
 	public RunCommandRequest() {
-		super("Ecs", "2014-05-26", "RunCommand");
+		super("Ecs", "2014-05-26", "RunCommand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

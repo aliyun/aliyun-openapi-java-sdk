@@ -41,7 +41,7 @@ public class DescribeForwardTableEntriesRequest extends RpcAcsRequest<DescribeFo
 
 	private Long ownerId;
 	public DescribeForwardTableEntriesRequest() {
-		super("Ecs", "2014-05-26", "DescribeForwardTableEntries");
+		super("Ecs", "2014-05-26", "DescribeForwardTableEntries", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

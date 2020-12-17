@@ -37,7 +37,7 @@ public class DescribeDedicatedHostTypesRequest extends RpcAcsRequest<DescribeDed
 
 	private Long ownerId;
 	public DescribeDedicatedHostTypesRequest() {
-		super("Ecs", "2014-05-26", "DescribeDedicatedHostTypes");
+		super("Ecs", "2014-05-26", "DescribeDedicatedHostTypes", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

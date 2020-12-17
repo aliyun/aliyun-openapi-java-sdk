@@ -43,7 +43,7 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private String internetChargeType;
 	public AllocateEipAddressRequest() {
-		super("Ecs", "2014-05-26", "AllocateEipAddress");
+		super("Ecs", "2014-05-26", "AllocateEipAddress", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

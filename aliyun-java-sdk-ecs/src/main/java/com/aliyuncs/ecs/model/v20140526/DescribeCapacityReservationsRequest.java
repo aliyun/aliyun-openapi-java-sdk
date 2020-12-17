@@ -46,8 +46,10 @@ public class DescribeCapacityReservationsRequest extends RpcAcsRequest<DescribeC
 	private Integer maxResults;
 
 	private String zoneId;
+
+	private String status;
 	public DescribeCapacityReservationsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCapacityReservations");
+		super("Ecs", "2014-05-26", "DescribeCapacityReservations", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -173,6 +175,17 @@ public class DescribeCapacityReservationsRequest extends RpcAcsRequest<DescribeC
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

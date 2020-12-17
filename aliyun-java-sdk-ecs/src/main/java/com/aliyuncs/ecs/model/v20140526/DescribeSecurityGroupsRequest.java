@@ -60,7 +60,7 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private String vpcId;
 	public DescribeSecurityGroupsRequest() {
-		super("Ecs", "2014-05-26", "DescribeSecurityGroups");
+		super("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

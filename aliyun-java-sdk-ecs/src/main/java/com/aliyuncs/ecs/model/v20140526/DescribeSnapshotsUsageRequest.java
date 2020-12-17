@@ -33,7 +33,7 @@ public class DescribeSnapshotsUsageRequest extends RpcAcsRequest<DescribeSnapsho
 
 	private Long ownerId;
 	public DescribeSnapshotsUsageRequest() {
-		super("Ecs", "2014-05-26", "DescribeSnapshotsUsage");
+		super("Ecs", "2014-05-26", "DescribeSnapshotsUsage", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

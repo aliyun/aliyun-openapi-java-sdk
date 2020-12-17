@@ -36,7 +36,7 @@ public class CancelSimulatedSystemEventsRequest extends RpcAcsRequest<CancelSimu
 
 	private Long ownerId;
 	public CancelSimulatedSystemEventsRequest() {
-		super("Ecs", "2014-05-26", "CancelSimulatedSystemEvents");
+		super("Ecs", "2014-05-26", "CancelSimulatedSystemEvents", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

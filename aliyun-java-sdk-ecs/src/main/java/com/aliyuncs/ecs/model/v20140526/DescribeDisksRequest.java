@@ -96,7 +96,7 @@ public class DescribeDisksRequest extends RpcAcsRequest<DescribeDisksResponse> {
 
 	private String kMSKeyId;
 	public DescribeDisksRequest() {
-		super("Ecs", "2014-05-26", "DescribeDisks");
+		super("Ecs", "2014-05-26", "DescribeDisks", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

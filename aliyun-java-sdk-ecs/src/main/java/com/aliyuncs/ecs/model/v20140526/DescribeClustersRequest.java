@@ -33,7 +33,7 @@ public class DescribeClustersRequest extends RpcAcsRequest<DescribeClustersRespo
 
 	private Long ownerId;
 	public DescribeClustersRequest() {
-		super("Ecs", "2014-05-26", "DescribeClusters");
+		super("Ecs", "2014-05-26", "DescribeClusters", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

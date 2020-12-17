@@ -47,7 +47,7 @@ public class ModifyForwardEntryRequest extends RpcAcsRequest<ModifyForwardEntryR
 
 	private String externalPort;
 	public ModifyForwardEntryRequest() {
-		super("Ecs", "2014-05-26", "ModifyForwardEntry");
+		super("Ecs", "2014-05-26", "ModifyForwardEntry", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

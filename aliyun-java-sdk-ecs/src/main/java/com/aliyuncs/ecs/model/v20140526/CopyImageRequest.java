@@ -52,7 +52,7 @@ public class CopyImageRequest extends RpcAcsRequest<CopyImageResponse> {
 
 	private String destinationDescription;
 	public CopyImageRequest() {
-		super("Ecs", "2014-05-26", "CopyImage");
+		super("Ecs", "2014-05-26", "CopyImage", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

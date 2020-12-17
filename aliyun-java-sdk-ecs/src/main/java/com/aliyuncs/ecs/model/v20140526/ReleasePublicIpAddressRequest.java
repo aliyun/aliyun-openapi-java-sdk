@@ -37,7 +37,7 @@ public class ReleasePublicIpAddressRequest extends RpcAcsRequest<ReleasePublicIp
 
 	private String instanceId;
 	public ReleasePublicIpAddressRequest() {
-		super("Ecs", "2014-05-26", "ReleasePublicIpAddress");
+		super("Ecs", "2014-05-26", "ReleasePublicIpAddress", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

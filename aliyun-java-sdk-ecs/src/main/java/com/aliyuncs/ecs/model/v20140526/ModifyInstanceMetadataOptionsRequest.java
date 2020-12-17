@@ -39,7 +39,7 @@ public class ModifyInstanceMetadataOptionsRequest extends RpcAcsRequest<ModifyIn
 
 	private String httpTokens;
 	public ModifyInstanceMetadataOptionsRequest() {
-		super("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions");
+		super("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupR
 
 	private String networkInterfaceId;
 	public LeaveSecurityGroupRequest() {
-		super("Ecs", "2014-05-26", "LeaveSecurityGroup");
+		super("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class CancelCopyImageRequest extends RpcAcsRequest<CancelCopyImageRespons
 
 	private Long ownerId;
 	public CancelCopyImageRequest() {
-		super("Ecs", "2014-05-26", "CancelCopyImage");
+		super("Ecs", "2014-05-26", "CancelCopyImage", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

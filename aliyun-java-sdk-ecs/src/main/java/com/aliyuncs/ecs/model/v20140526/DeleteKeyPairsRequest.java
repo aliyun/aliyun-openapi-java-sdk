@@ -33,7 +33,7 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 
 	private Long ownerId;
 	public DeleteKeyPairsRequest() {
-		super("Ecs", "2014-05-26", "DeleteKeyPairs");
+		super("Ecs", "2014-05-26", "DeleteKeyPairs", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

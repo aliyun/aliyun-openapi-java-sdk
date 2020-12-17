@@ -60,7 +60,7 @@ public class DescribeReservedInstancesRequest extends RpcAcsRequest<DescribeRese
 
 	private String allocationType;
 	public DescribeReservedInstancesRequest() {
-		super("Ecs", "2014-05-26", "DescribeReservedInstances");
+		super("Ecs", "2014-05-26", "DescribeReservedInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

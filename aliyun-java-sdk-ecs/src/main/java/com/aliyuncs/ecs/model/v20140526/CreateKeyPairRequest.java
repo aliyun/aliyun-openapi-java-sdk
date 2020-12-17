@@ -38,7 +38,7 @@ public class CreateKeyPairRequest extends RpcAcsRequest<CreateKeyPairResponse> {
 
 	private Long ownerId;
 	public CreateKeyPairRequest() {
-		super("Ecs", "2014-05-26", "CreateKeyPair");
+		super("Ecs", "2014-05-26", "CreateKeyPair", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

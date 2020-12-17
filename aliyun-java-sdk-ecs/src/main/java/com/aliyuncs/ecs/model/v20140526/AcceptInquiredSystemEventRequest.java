@@ -35,7 +35,7 @@ public class AcceptInquiredSystemEventRequest extends RpcAcsRequest<AcceptInquir
 
 	private Long ownerId;
 	public AcceptInquiredSystemEventRequest() {
-		super("Ecs", "2014-05-26", "AcceptInquiredSystemEvent");
+		super("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

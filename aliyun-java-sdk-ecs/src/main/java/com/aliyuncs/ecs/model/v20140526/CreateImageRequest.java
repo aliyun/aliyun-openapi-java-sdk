@@ -58,7 +58,7 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String imageVersion;
 	public CreateImageRequest() {
-		super("Ecs", "2014-05-26", "CreateImage");
+		super("Ecs", "2014-05-26", "CreateImage", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

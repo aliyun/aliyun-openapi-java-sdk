@@ -35,7 +35,7 @@ public class ReleaseDedicatedHostRequest extends RpcAcsRequest<ReleaseDedicatedH
 
 	private Long ownerId;
 	public ReleaseDedicatedHostRequest() {
-		super("Ecs", "2014-05-26", "ReleaseDedicatedHost");
+		super("Ecs", "2014-05-26", "ReleaseDedicatedHost", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

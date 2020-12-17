@@ -48,7 +48,7 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String username;
 	public InvokeCommandRequest() {
-		super("Ecs", "2014-05-26", "InvokeCommand");
+		super("Ecs", "2014-05-26", "InvokeCommand", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
