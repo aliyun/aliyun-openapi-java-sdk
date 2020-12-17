@@ -34,9 +34,13 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 
 	private String mode;
 
+	private String templateVersion;
+
 	private Boolean dryRun;
 
 	private String ramRoleName;
+
+	private String templateId;
 
 	private List<Parameters> parameterss;
 
@@ -94,6 +98,17 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 		}
 	}
 
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -113,6 +128,17 @@ public class ContinueCreateStackRequest extends RpcAcsRequest<ContinueCreateStac
 		this.ramRoleName = ramRoleName;
 		if(ramRoleName != null){
 			putQueryParameter("RamRoleName", ramRoleName);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

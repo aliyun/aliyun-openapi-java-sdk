@@ -15,6 +15,7 @@
 package com.aliyuncs.ros.model.v20190910;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ros.Endpoint;
 
@@ -22,62 +23,25 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryResponse> {
+public class SetTemplatePermissionRequest extends RpcAcsRequest<SetTemplatePermissionResponse> {
 	   
-
-	private String templateBody;
-
-	private String stackId;
-
-	private String templateURL;
 
 	private String templateVersion;
 
-	private String stackGroupName;
-
 	private String templateId;
 
-	private String changeSetId;
-	public GetTemplateSummaryRequest() {
-		super("ROS", "2019-09-10", "GetTemplateSummary", "ros");
+	private String versionOption;
+
+	private String shareOption;
+
+	private List<String> accountIdss;
+	public SetTemplatePermissionRequest() {
+		super("ROS", "2019-09-10", "SetTemplatePermission", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getTemplateBody() {
-		return this.templateBody;
-	}
-
-	public void setTemplateBody(String templateBody) {
-		this.templateBody = templateBody;
-		if(templateBody != null){
-			putQueryParameter("TemplateBody", templateBody);
-		}
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-		if(stackId != null){
-			putQueryParameter("StackId", stackId);
-		}
-	}
-
-	public String getTemplateURL() {
-		return this.templateURL;
-	}
-
-	public void setTemplateURL(String templateURL) {
-		this.templateURL = templateURL;
-		if(templateURL != null){
-			putQueryParameter("TemplateURL", templateURL);
-		}
 	}
 
 	public String getTemplateVersion() {
@@ -88,17 +52,6 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 		this.templateVersion = templateVersion;
 		if(templateVersion != null){
 			putQueryParameter("TemplateVersion", templateVersion);
-		}
-	}
-
-	public String getStackGroupName() {
-		return this.stackGroupName;
-	}
-
-	public void setStackGroupName(String stackGroupName) {
-		this.stackGroupName = stackGroupName;
-		if(stackGroupName != null){
-			putQueryParameter("StackGroupName", stackGroupName);
 		}
 	}
 
@@ -113,20 +66,44 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 		}
 	}
 
-	public String getChangeSetId() {
-		return this.changeSetId;
+	public String getVersionOption() {
+		return this.versionOption;
 	}
 
-	public void setChangeSetId(String changeSetId) {
-		this.changeSetId = changeSetId;
-		if(changeSetId != null){
-			putQueryParameter("ChangeSetId", changeSetId);
+	public void setVersionOption(String versionOption) {
+		this.versionOption = versionOption;
+		if(versionOption != null){
+			putQueryParameter("VersionOption", versionOption);
 		}
 	}
 
+	public String getShareOption() {
+		return this.shareOption;
+	}
+
+	public void setShareOption(String shareOption) {
+		this.shareOption = shareOption;
+		if(shareOption != null){
+			putQueryParameter("ShareOption", shareOption);
+		}
+	}
+
+	public List<String> getAccountIdss() {
+		return this.accountIdss;
+	}
+
+	public void setAccountIdss(List<String> accountIdss) {
+		this.accountIdss = accountIdss;	
+		if (accountIdss != null) {
+			for (int i = 0; i < accountIdss.size(); i++) {
+				putQueryParameter("AccountIds." + (i + 1) , accountIdss.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<GetTemplateSummaryResponse> getResponseClass() {
-		return GetTemplateSummaryResponse.class;
+	public Class<SetTemplatePermissionResponse> getResponseClass() {
+		return SetTemplatePermissionResponse.class;
 	}
 
 }

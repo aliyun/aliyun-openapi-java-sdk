@@ -22,24 +22,18 @@ import com.aliyuncs.ros.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryResponse> {
+public class GenerateTemplatePolicyRequest extends RpcAcsRequest<GenerateTemplatePolicyResponse> {
 	   
 
 	private String templateBody;
-
-	private String stackId;
 
 	private String templateURL;
 
 	private String templateVersion;
 
-	private String stackGroupName;
-
 	private String templateId;
-
-	private String changeSetId;
-	public GetTemplateSummaryRequest() {
-		super("ROS", "2019-09-10", "GetTemplateSummary", "ros");
+	public GenerateTemplatePolicyRequest() {
+		super("ROS", "2019-09-10", "GenerateTemplatePolicy", "ros");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,17 +49,6 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 		this.templateBody = templateBody;
 		if(templateBody != null){
 			putQueryParameter("TemplateBody", templateBody);
-		}
-	}
-
-	public String getStackId() {
-		return this.stackId;
-	}
-
-	public void setStackId(String stackId) {
-		this.stackId = stackId;
-		if(stackId != null){
-			putQueryParameter("StackId", stackId);
 		}
 	}
 
@@ -91,17 +74,6 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 		}
 	}
 
-	public String getStackGroupName() {
-		return this.stackGroupName;
-	}
-
-	public void setStackGroupName(String stackGroupName) {
-		this.stackGroupName = stackGroupName;
-		if(stackGroupName != null){
-			putQueryParameter("StackGroupName", stackGroupName);
-		}
-	}
-
 	public String getTemplateId() {
 		return this.templateId;
 	}
@@ -113,20 +85,9 @@ public class GetTemplateSummaryRequest extends RpcAcsRequest<GetTemplateSummaryR
 		}
 	}
 
-	public String getChangeSetId() {
-		return this.changeSetId;
-	}
-
-	public void setChangeSetId(String changeSetId) {
-		this.changeSetId = changeSetId;
-		if(changeSetId != null){
-			putQueryParameter("ChangeSetId", changeSetId);
-		}
-	}
-
 	@Override
-	public Class<GetTemplateSummaryResponse> getResponseClass() {
-		return GetTemplateSummaryResponse.class;
+	public Class<GenerateTemplatePolicyResponse> getResponseClass() {
+		return GenerateTemplatePolicyResponse.class;
 	}
 
 }

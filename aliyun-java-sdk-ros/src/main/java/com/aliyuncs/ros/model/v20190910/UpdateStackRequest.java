@@ -30,7 +30,11 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 
 	private String stackPolicyDuringUpdateBody;
 
+	private String templateVersion;
+
 	private Boolean disableRollback;
+
+	private String templateId;
 
 	private List<Parameters> parameterss;
 
@@ -84,6 +88,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		}
 	}
 
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
 	public Boolean getDisableRollback() {
 		return this.disableRollback;
 	}
@@ -92,6 +107,17 @@ public class UpdateStackRequest extends RpcAcsRequest<UpdateStackResponse> {
 		this.disableRollback = disableRollback;
 		if(disableRollback != null){
 			putQueryParameter("DisableRollback", disableRollback.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

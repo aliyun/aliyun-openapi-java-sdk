@@ -30,9 +30,13 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String deletionProtection;
 
+	private String templateVersion;
+
 	private String stackName;
 
 	private Boolean disableRollback;
+
+	private String templateId;
 
 	private List<Parameters> parameterss;
 
@@ -82,6 +86,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		}
 	}
 
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
 	public String getStackName() {
 		return this.stackName;
 	}
@@ -101,6 +116,17 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.disableRollback = disableRollback;
 		if(disableRollback != null){
 			putQueryParameter("DisableRollback", disableRollback.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

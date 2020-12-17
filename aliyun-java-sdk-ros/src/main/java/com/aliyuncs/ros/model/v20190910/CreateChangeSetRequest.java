@@ -30,11 +30,15 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 
 	private String stackPolicyDuringUpdateBody;
 
+	private String templateVersion;
+
 	private String stackName;
 
 	private String changeSetType;
 
 	private Boolean disableRollback;
+
+	private String templateId;
 
 	private List<Parameters> parameterss;
 
@@ -96,6 +100,17 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		}
 	}
 
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
 	public String getStackName() {
 		return this.stackName;
 	}
@@ -126,6 +141,17 @@ public class CreateChangeSetRequest extends RpcAcsRequest<CreateChangeSetRespons
 		this.disableRollback = disableRollback;
 		if(disableRollback != null){
 			putQueryParameter("DisableRollback", disableRollback.toString());
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 

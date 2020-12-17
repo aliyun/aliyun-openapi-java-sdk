@@ -87,6 +87,14 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String templateVersion;
+
+		private String shareType;
+
+		private String ownerId;
+
+		private String templateARN;
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
@@ -125,6 +133,38 @@ public class ListTemplatesResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getTemplateVersion() {
+			return this.templateVersion;
+		}
+
+		public void setTemplateVersion(String templateVersion) {
+			this.templateVersion = templateVersion;
+		}
+
+		public String getShareType() {
+			return this.shareType;
+		}
+
+		public void setShareType(String shareType) {
+			this.shareType = shareType;
+		}
+
+		public String getOwnerId() {
+			return this.ownerId;
+		}
+
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
+		}
+
+		public String getTemplateARN() {
+			return this.templateARN;
+		}
+
+		public void setTemplateARN(String templateARN) {
+			this.templateARN = templateARN;
 		}
 	}
 

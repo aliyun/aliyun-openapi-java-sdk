@@ -27,6 +27,14 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 
 	private String stackId;
 
+	private String templateVersion;
+
+	private String stackGroupName;
+
+	private String templateStage;
+
+	private String includePermission;
+
 	private String templateId;
 
 	private String changeSetId;
@@ -47,6 +55,50 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 		this.stackId = stackId;
 		if(stackId != null){
 			putQueryParameter("StackId", stackId);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public String getStackGroupName() {
+		return this.stackGroupName;
+	}
+
+	public void setStackGroupName(String stackGroupName) {
+		this.stackGroupName = stackGroupName;
+		if(stackGroupName != null){
+			putQueryParameter("StackGroupName", stackGroupName);
+		}
+	}
+
+	public String getTemplateStage() {
+		return this.templateStage;
+	}
+
+	public void setTemplateStage(String templateStage) {
+		this.templateStage = templateStage;
+		if(templateStage != null){
+			putQueryParameter("TemplateStage", templateStage);
+		}
+	}
+
+	public String getIncludePermission() {
+		return this.includePermission;
+	}
+
+	public void setIncludePermission(String includePermission) {
+		this.includePermission = includePermission;
+		if(includePermission != null){
+			putQueryParameter("IncludePermission", includePermission);
 		}
 	}
 

@@ -33,6 +33,8 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 	private String templateName;
 
 	private List<Tag> tags;
+
+	private String shareType;
 	public ListTemplatesRequest() {
 		super("ROS", "2019-09-10", "ListTemplates", "ros");
 		setMethod(MethodType.POST);
@@ -87,6 +89,17 @@ public class ListTemplatesRequest extends RpcAcsRequest<ListTemplatesResponse> {
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getShareType() {
+		return this.shareType;
+	}
+
+	public void setShareType(String shareType) {
+		this.shareType = shareType;
+		if(shareType != null){
+			putQueryParameter("ShareType", shareType);
+		}
 	}
 
 	public static class Tag {

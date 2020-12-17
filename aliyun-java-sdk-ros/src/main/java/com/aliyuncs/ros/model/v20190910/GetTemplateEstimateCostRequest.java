@@ -32,6 +32,10 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 
 	private String templateURL;
 
+	private String templateVersion;
+
+	private String templateId;
+
 	private List<Parameters> parameterss;
 	public GetTemplateEstimateCostRequest() {
 		super("ROS", "2019-09-10", "GetTemplateEstimateCost", "ros");
@@ -72,6 +76,28 @@ public class GetTemplateEstimateCostRequest extends RpcAcsRequest<GetTemplateEst
 		this.templateURL = templateURL;
 		if(templateURL != null){
 			putQueryParameter("TemplateURL", templateURL);
+		}
+	}
+
+	public String getTemplateVersion() {
+		return this.templateVersion;
+	}
+
+	public void setTemplateVersion(String templateVersion) {
+		this.templateVersion = templateVersion;
+		if(templateVersion != null){
+			putQueryParameter("TemplateVersion", templateVersion);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
