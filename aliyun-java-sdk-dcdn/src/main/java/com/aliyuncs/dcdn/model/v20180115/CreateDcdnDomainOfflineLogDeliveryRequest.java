@@ -22,34 +22,21 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainResponse> {
+public class CreateDcdnDomainOfflineLogDeliveryRequest extends RpcAcsRequest<CreateDcdnDomainOfflineLogDeliveryResponse> {
 	   
-
-	private String ownerAccount;
 
 	private String domainName;
 
 	private Long ownerId;
 
-	private String securityToken;
-	public DeleteDcdnDomainRequest() {
-		super("dcdn", "2018-01-15", "DeleteDcdnDomain");
+	private String fieldId;
+	public CreateDcdnDomainOfflineLogDeliveryRequest() {
+		super("dcdn", "2018-01-15", "CreateDcdnDomainOfflineLogDelivery");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
 	}
 
 	public String getDomainName() {
@@ -59,7 +46,7 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+			putBodyParameter("DomainName", domainName);
 		}
 	}
 
@@ -74,20 +61,20 @@ public class DeleteDcdnDomainRequest extends RpcAcsRequest<DeleteDcdnDomainRespo
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getFieldId() {
+		return this.fieldId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setFieldId(String fieldId) {
+		this.fieldId = fieldId;
+		if(fieldId != null){
+			putBodyParameter("FieldId", fieldId);
 		}
 	}
 
 	@Override
-	public Class<DeleteDcdnDomainResponse> getResponseClass() {
-		return DeleteDcdnDomainResponse.class;
+	public Class<CreateDcdnDomainOfflineLogDeliveryResponse> getResponseClass() {
+		return CreateDcdnDomainOfflineLogDeliveryResponse.class;
 	}
 
 }

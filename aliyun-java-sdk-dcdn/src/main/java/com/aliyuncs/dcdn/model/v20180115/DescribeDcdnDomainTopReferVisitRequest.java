@@ -25,13 +25,11 @@ import com.aliyuncs.dcdn.Endpoint;
 public class DescribeDcdnDomainTopReferVisitRequest extends RpcAcsRequest<DescribeDcdnDomainTopReferVisitResponse> {
 	   
 
-	private String domainName;
-
 	private String startTime;
 
-	private Long ownerId;
+	private String domainName;
 
-	private String securityToken;
+	private Long ownerId;
 
 	private String sortBy;
 	public DescribeDcdnDomainTopReferVisitRequest() {
@@ -41,17 +39,6 @@ public class DescribeDcdnDomainTopReferVisitRequest extends RpcAcsRequest<Descri
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
 	}
 
 	public String getStartTime() {
@@ -65,6 +52,17 @@ public class DescribeDcdnDomainTopReferVisitRequest extends RpcAcsRequest<Descri
 		}
 	}
 
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -73,17 +71,6 @@ public class DescribeDcdnDomainTopReferVisitRequest extends RpcAcsRequest<Descri
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

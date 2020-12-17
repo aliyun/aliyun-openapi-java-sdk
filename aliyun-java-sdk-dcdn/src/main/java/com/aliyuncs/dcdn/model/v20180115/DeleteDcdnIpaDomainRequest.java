@@ -25,15 +25,13 @@ import com.aliyuncs.dcdn.Endpoint;
 public class DeleteDcdnIpaDomainRequest extends RpcAcsRequest<DeleteDcdnIpaDomainResponse> {
 	   
 
-	private String resourceGroupId;
-
-	private String securityToken;
-
 	private String ownerAccount;
 
 	private String domainName;
 
 	private Long ownerId;
+
+	private String securityToken;
 	public DeleteDcdnIpaDomainRequest() {
 		super("dcdn", "2018-01-15", "DeleteDcdnIpaDomain");
 		setMethod(MethodType.POST);
@@ -41,28 +39,6 @@ public class DeleteDcdnIpaDomainRequest extends RpcAcsRequest<DeleteDcdnIpaDomai
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
 	}
 
 	public String getOwnerAccount() {
@@ -95,6 +71,17 @@ public class DeleteDcdnIpaDomainRequest extends RpcAcsRequest<DeleteDcdnIpaDomai
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSecurityToken() {
+		return this.securityToken;
+	}
+
+	public void setSecurityToken(String securityToken) {
+		this.securityToken = securityToken;
+		if(securityToken != null){
+			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 
