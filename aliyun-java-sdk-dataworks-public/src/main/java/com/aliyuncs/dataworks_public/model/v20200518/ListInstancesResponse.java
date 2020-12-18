@@ -129,11 +129,11 @@ public class ListInstancesResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private Integer nodeId;
+			private Long nodeId;
 
 			private Long instanceId;
 
-			private Integer dagId;
+			private Long dagId;
 
 			private String dagType;
 
@@ -177,11 +177,11 @@ public class ListInstancesResponse extends AcsResponse {
 
 			private Long relatedFlowId;
 
-			public Integer getNodeId() {
+			public Long getNodeId() {
 				return this.nodeId;
 			}
 
-			public void setNodeId(Integer nodeId) {
+			public void setNodeId(Long nodeId) {
 				this.nodeId = nodeId;
 			}
 
@@ -193,11 +193,11 @@ public class ListInstancesResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
-			public Integer getDagId() {
+			public Long getDagId() {
 				return this.dagId;
 			}
 
-			public void setDagId(Integer dagId) {
+			public void setDagId(Long dagId) {
 				this.dagId = dagId;
 			}
 

@@ -41,9 +41,9 @@ public class ListInstancesResponseUnmarshaller {
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstancesResponse.Data.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setNodeId(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
+			instance.setNodeId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].NodeId"));
 			instance.setInstanceId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].InstanceId"));
-			instance.setDagId(_ctx.integerValue("ListInstancesResponse.Data.Instances["+ i +"].DagId"));
+			instance.setDagId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].DagId"));
 			instance.setDagType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DagType"));
 			instance.setStatus(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].Status"));
 			instance.setBizdate(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].Bizdate"));

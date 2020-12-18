@@ -501,7 +501,7 @@ public class ListQualityResultsByEntityResponse extends AcsResponse {
 
 			public static class ReferenceValueItem {
 
-				private Long bizDate;
+				private String bizDate;
 
 				private String discreteProperty;
 
@@ -511,11 +511,11 @@ public class ListQualityResultsByEntityResponse extends AcsResponse {
 
 				private Integer singleCheckResult;
 
-				public Long getBizDate() {
+				public String getBizDate() {
 					return this.bizDate;
 				}
 
-				public void setBizDate(Long bizDate) {
+				public void setBizDate(String bizDate) {
 					this.bizDate = bizDate;
 				}
 
@@ -554,17 +554,17 @@ public class ListQualityResultsByEntityResponse extends AcsResponse {
 
 			public static class SampleValueItem {
 
-				private Long bizDate;
+				private String bizDate;
 
 				private String discreteProperty;
 
 				private Float value;
 
-				public Long getBizDate() {
+				public String getBizDate() {
 					return this.bizDate;
 				}
 
-				public void setBizDate(Long bizDate) {
+				public void setBizDate(String bizDate) {
 					this.bizDate = bizDate;
 				}
 
