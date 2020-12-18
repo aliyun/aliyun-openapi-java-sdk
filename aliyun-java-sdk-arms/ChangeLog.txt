@@ -1,3 +1,8 @@
+2020-12-18 Version: 2.7.13
+- Add ListScenario Api.
+- Add ApplyScenario Api.
+- Add DeleteScenario Api.
+
 2020-12-16 Version: 2.7.12
 - Add Listdashboard Api.
 
