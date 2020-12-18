@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.linkvisual.model.v20180120.PictureSearchPictureResponse;
-import com.aliyuncs.linkvisual.model.v20180120.PictureSearchPictureResponse.Data.Data;
+import com.aliyuncs.linkvisual.model.v20180120.PictureSearchPictureResponse.Data;
+import com.aliyuncs.linkvisual.model.v20180120.PictureSearchPictureResponse.Data.SearchData;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,18 +38,18 @@ public class PictureSearchPictureResponseUnmarshaller {
 		data.setCurrentPage(_ctx.integerValue("PictureSearchPictureResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("PictureSearchPictureResponse.Data.PageSize"));
 
-		List<Data> pageData = new ArrayList<Data>();
+		List<SearchData> pageData = new ArrayList<SearchData>();
 		for (int i = 0; i < _ctx.lengthValue("PictureSearchPictureResponse.Data.PageData.Length"); i++) {
-			Data data_ = new Data();
-			data_.setVectorId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].VectorId"));
-			data_.setEventTime(_ctx.longValue("PictureSearchPictureResponse.Data.PageData["+ i +"].EventTime"));
-			data_.setThreshold(_ctx.floatValue("PictureSearchPictureResponse.Data.PageData["+ i +"].Threshold"));
-			data_.setPicUrl(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].PicUrl"));
+			SearchData searchData = new SearchData();
+			searchData.setVectorId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].VectorId"));
+			searchData.setEventTime(_ctx.longValue("PictureSearchPictureResponse.Data.PageData["+ i +"].EventTime"));
+			searchData.setThreshold(_ctx.floatValue("PictureSearchPictureResponse.Data.PageData["+ i +"].Threshold"));
+			searchData.setPicUrl(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].PicUrl"));
 
-			pageData.add(data_);
+			pageData.add(searchData);
 		}
 		data.setPageData(pageData);
-		pictureSearchPictureResponse.setData(pictureSearchPictureResponseData);
+		pictureSearchPictureResponse.setData(data);
 	 
 	 	return pictureSearchPictureResponse;
 	}

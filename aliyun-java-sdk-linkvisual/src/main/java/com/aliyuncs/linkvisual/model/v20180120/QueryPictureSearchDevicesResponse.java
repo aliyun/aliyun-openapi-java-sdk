@@ -85,7 +85,7 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 
 		private Integer pageSize;
 
-		private List<Data> pageData;
+		private List<SearchData> pageData;
 
 		public Integer getTotal() {
 			return this.total;
@@ -119,17 +119,45 @@ public class QueryPictureSearchDevicesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public List<Data> getPageData() {
+		public List<SearchData> getPageData() {
 			return this.pageData;
 		}
 
-		public void setPageData(List<Data> pageData) {
+		public void setPageData(List<SearchData> pageData) {
 			this.pageData = pageData;
+		}
+
+		public static class SearchData {
+
+			private String iotId;
+
+			private String nickName;
+
+			public String getIotId() {
+				return this.iotId;
+			}
+
+			public void setIotId(String iotId) {
+				this.iotId = iotId;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
+			}
 		}
 	}
 
 	@Override
 	public QueryPictureSearchDevicesResponse getInstance(UnmarshallerContext context) {
 		return	QueryPictureSearchDevicesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

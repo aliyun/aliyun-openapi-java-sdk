@@ -85,7 +85,7 @@ public class PictureSearchPictureResponse extends AcsResponse {
 
 		private Integer pageSize;
 
-		private List<Data> pageData;
+		private List<SearchData> pageData;
 
 		public Integer getTotal() {
 			return this.total;
@@ -119,17 +119,65 @@ public class PictureSearchPictureResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public List<Data> getPageData() {
+		public List<SearchData> getPageData() {
 			return this.pageData;
 		}
 
-		public void setPageData(List<Data> pageData) {
+		public void setPageData(List<SearchData> pageData) {
 			this.pageData = pageData;
+		}
+
+		public static class SearchData {
+
+			private String vectorId;
+
+			private Long eventTime;
+
+			private Float threshold;
+
+			private String picUrl;
+
+			public String getVectorId() {
+				return this.vectorId;
+			}
+
+			public void setVectorId(String vectorId) {
+				this.vectorId = vectorId;
+			}
+
+			public Long getEventTime() {
+				return this.eventTime;
+			}
+
+			public void setEventTime(Long eventTime) {
+				this.eventTime = eventTime;
+			}
+
+			public Float getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(Float threshold) {
+				this.threshold = threshold;
+			}
+
+			public String getPicUrl() {
+				return this.picUrl;
+			}
+
+			public void setPicUrl(String picUrl) {
+				this.picUrl = picUrl;
+			}
 		}
 	}
 
 	@Override
 	public PictureSearchPictureResponse getInstance(UnmarshallerContext context) {
 		return	PictureSearchPictureResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

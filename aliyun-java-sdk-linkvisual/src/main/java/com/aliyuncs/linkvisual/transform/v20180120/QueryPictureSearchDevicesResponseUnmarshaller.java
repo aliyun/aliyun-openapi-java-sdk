@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.linkvisual.model.v20180120.QueryPictureSearchDevicesResponse;
-import com.aliyuncs.linkvisual.model.v20180120.QueryPictureSearchDevicesResponse.Data.Data;
+import com.aliyuncs.linkvisual.model.v20180120.QueryPictureSearchDevicesResponse.Data;
+import com.aliyuncs.linkvisual.model.v20180120.QueryPictureSearchDevicesResponse.Data.SearchData;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -37,16 +38,16 @@ public class QueryPictureSearchDevicesResponseUnmarshaller {
 		data.setCurrentPage(_ctx.integerValue("QueryPictureSearchDevicesResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("QueryPictureSearchDevicesResponse.Data.PageSize"));
 
-		List<Data> pageData = new ArrayList<Data>();
+		List<SearchData> pageData = new ArrayList<SearchData>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPictureSearchDevicesResponse.Data.PageData.Length"); i++) {
-			Data data_ = new Data();
-			data_.setIotId(_ctx.stringValue("QueryPictureSearchDevicesResponse.Data.PageData["+ i +"].IotId"));
-			data_.setNickName(_ctx.stringValue("QueryPictureSearchDevicesResponse.Data.PageData["+ i +"].NickName"));
+			SearchData searchData = new SearchData();
+			searchData.setIotId(_ctx.stringValue("QueryPictureSearchDevicesResponse.Data.PageData["+ i +"].IotId"));
+			searchData.setNickName(_ctx.stringValue("QueryPictureSearchDevicesResponse.Data.PageData["+ i +"].NickName"));
 
-			pageData.add(data_);
+			pageData.add(searchData);
 		}
 		data.setPageData(pageData);
-		queryPictureSearchDevicesResponse.setData(queryPictureSearchDevicesResponseData);
+		queryPictureSearchDevicesResponse.setData(data);
 	 
 	 	return queryPictureSearchDevicesResponse;
 	}
