@@ -1,3 +1,6 @@
+2020-12-18 Version: 1.0.10
+- Release EvaluateCertificateQuality.
+
 2020-11-16 Version: 1.0.9
 - Update imagerecog.
 
