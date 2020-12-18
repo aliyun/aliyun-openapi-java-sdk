@@ -29,9 +29,13 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 
 	private Integer recordType;
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer streamType;
+
+	private Boolean needSnapshot;
 
 	private Integer endTime;
 
@@ -69,6 +73,17 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 		}
 	}
 
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -88,6 +103,17 @@ public class QueryRecordRequest extends RpcAcsRequest<QueryRecordResponse> {
 		this.streamType = streamType;
 		if(streamType != null){
 			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
+	public Boolean getNeedSnapshot() {
+		return this.needSnapshot;
+	}
+
+	public void setNeedSnapshot(Boolean needSnapshot) {
+		this.needSnapshot = needSnapshot;
+		if(needSnapshot != null){
+			putQueryParameter("NeedSnapshot", needSnapshot.toString());
 		}
 	}
 

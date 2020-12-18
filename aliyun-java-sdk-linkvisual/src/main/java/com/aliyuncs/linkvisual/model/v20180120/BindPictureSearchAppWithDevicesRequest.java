@@ -22,16 +22,14 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRecordIdResponse> {
+public class BindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<BindPictureSearchAppWithDevicesResponse> {
 	   
 
-	private String iotId;
+	private String deviceIotIds;
 
-	private String iotInstanceId;
-
-	private String recordId;
-	public QueryRecordByRecordIdRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecordByRecordId", "Linkvisual");
+	private String appInstanceId;
+	public BindPictureSearchAppWithDevicesRequest() {
+		super("Linkvisual", "2018-01-20", "BindPictureSearchAppWithDevices", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRec
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getDeviceIotIds() {
+		return this.deviceIotIds;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setDeviceIotIds(String deviceIotIds) {
+		this.deviceIotIds = deviceIotIds;
+		if(deviceIotIds != null){
+			putQueryParameter("DeviceIotIds", deviceIotIds);
 		}
 	}
 
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
+	public String getAppInstanceId() {
+		return this.appInstanceId;
 	}
 
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		if(recordId != null){
-			putQueryParameter("RecordId", recordId);
+	public void setAppInstanceId(String appInstanceId) {
+		this.appInstanceId = appInstanceId;
+		if(appInstanceId != null){
+			putQueryParameter("AppInstanceId", appInstanceId);
 		}
 	}
 
 	@Override
-	public Class<QueryRecordByRecordIdResponse> getResponseClass() {
-		return QueryRecordByRecordIdResponse.class;
+	public Class<BindPictureSearchAppWithDevicesResponse> getResponseClass() {
+		return BindPictureSearchAppWithDevicesResponse.class;
 	}
 
 }

@@ -27,6 +27,8 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 
 	private String iotId;
 
+	private String iotInstanceId;
+
 	private String fileName;
 	public QueryRecordUrlRequest() {
 		super("Linkvisual", "2018-01-20", "QueryRecordUrl", "Linkvisual");
@@ -45,6 +47,17 @@ public class QueryRecordUrlRequest extends RpcAcsRequest<QueryRecordUrlResponse>
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 

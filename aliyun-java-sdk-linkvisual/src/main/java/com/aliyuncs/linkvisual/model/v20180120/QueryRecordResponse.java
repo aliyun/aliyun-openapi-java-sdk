@@ -123,6 +123,8 @@ public class QueryRecordResponse extends AcsResponse {
 
 			private Integer videoFrameNumber;
 
+			private String snapshotUrl;
+
 			public String getBeginTime() {
 				return this.beginTime;
 			}
@@ -177,6 +179,14 @@ public class QueryRecordResponse extends AcsResponse {
 
 			public void setVideoFrameNumber(Integer videoFrameNumber) {
 				this.videoFrameNumber = videoFrameNumber;
+			}
+
+			public String getSnapshotUrl() {
+				return this.snapshotUrl;
+			}
+
+			public void setSnapshotUrl(String snapshotUrl) {
+				this.snapshotUrl = snapshotUrl;
 			}
 		}
 	}

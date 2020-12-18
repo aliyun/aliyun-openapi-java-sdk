@@ -22,16 +22,10 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryMonthRecordRequest extends RpcAcsRequest<QueryMonthRecordResponse> {
+public class QueryPictureSearchAppRequest extends RpcAcsRequest<QueryPictureSearchAppResponse> {
 	   
-
-	private String iotId;
-
-	private String iotInstanceId;
-
-	private String month;
-	public QueryMonthRecordRequest() {
-		super("Linkvisual", "2018-01-20", "QueryMonthRecord", "Linkvisual");
+	public QueryPictureSearchAppRequest() {
+		super("Linkvisual", "2018-01-20", "QueryPictureSearchApp", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +33,9 @@ public class QueryMonthRecordRequest extends RpcAcsRequest<QueryMonthRecordRespo
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
-	}
-
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getMonth() {
-		return this.month;
-	}
-
-	public void setMonth(String month) {
-		this.month = month;
-		if(month != null){
-			putQueryParameter("Month", month);
-		}
-	}
-
 	@Override
-	public Class<QueryMonthRecordResponse> getResponseClass() {
-		return QueryMonthRecordResponse.class;
+	public Class<QueryPictureSearchAppResponse> getResponseClass() {
+		return QueryPictureSearchAppResponse.class;
 	}
 
 }

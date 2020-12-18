@@ -22,16 +22,12 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRecordIdResponse> {
+public class DetectUserFaceByUrlRequest extends RpcAcsRequest<DetectUserFaceByUrlResponse> {
 	   
 
-	private String iotId;
-
-	private String iotInstanceId;
-
-	private String recordId;
-	public QueryRecordByRecordIdRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecordByRecordId", "Linkvisual");
+	private String facePicUrl;
+	public DetectUserFaceByUrlRequest() {
+		super("Linkvisual", "2018-01-20", "DetectUserFaceByUrl", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRec
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getFacePicUrl() {
+		return this.facePicUrl;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
-	}
-
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
-	}
-
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		if(recordId != null){
-			putQueryParameter("RecordId", recordId);
+	public void setFacePicUrl(String facePicUrl) {
+		this.facePicUrl = facePicUrl;
+		if(facePicUrl != null){
+			putQueryParameter("FacePicUrl", facePicUrl);
 		}
 	}
 
 	@Override
-	public Class<QueryRecordByRecordIdResponse> getResponseClass() {
-		return QueryRecordByRecordIdResponse.class;
+	public Class<DetectUserFaceByUrlResponse> getResponseClass() {
+		return DetectUserFaceByUrlResponse.class;
 	}
 
 }

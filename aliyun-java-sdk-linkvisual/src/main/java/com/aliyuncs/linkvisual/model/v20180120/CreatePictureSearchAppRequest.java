@@ -22,16 +22,14 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRecordIdResponse> {
+public class CreatePictureSearchAppRequest extends RpcAcsRequest<CreatePictureSearchAppResponse> {
 	   
 
-	private String iotId;
+	private String name;
 
-	private String iotInstanceId;
-
-	private String recordId;
-	public QueryRecordByRecordIdRequest() {
-		super("Linkvisual", "2018-01-20", "QueryRecordByRecordId", "Linkvisual");
+	private String desc;
+	public CreatePictureSearchAppRequest() {
+		super("Linkvisual", "2018-01-20", "CreatePictureSearchApp", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class QueryRecordByRecordIdRequest extends RpcAcsRequest<QueryRecordByRec
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
-	public String getIotInstanceId() {
-		return this.iotInstanceId;
+	public String getDesc() {
+		return this.desc;
 	}
 
-	public void setIotInstanceId(String iotInstanceId) {
-		this.iotInstanceId = iotInstanceId;
-		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
-		}
-	}
-
-	public String getRecordId() {
-		return this.recordId;
-	}
-
-	public void setRecordId(String recordId) {
-		this.recordId = recordId;
-		if(recordId != null){
-			putQueryParameter("RecordId", recordId);
+	public void setDesc(String desc) {
+		this.desc = desc;
+		if(desc != null){
+			putQueryParameter("Desc", desc);
 		}
 	}
 
 	@Override
-	public Class<QueryRecordByRecordIdResponse> getResponseClass() {
-		return QueryRecordByRecordIdResponse.class;
+	public Class<CreatePictureSearchAppResponse> getResponseClass() {
+		return CreatePictureSearchAppResponse.class;
 	}
 
 }

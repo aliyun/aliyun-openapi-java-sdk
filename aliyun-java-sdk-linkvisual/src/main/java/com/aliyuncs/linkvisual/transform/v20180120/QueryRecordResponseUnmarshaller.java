@@ -46,6 +46,7 @@ public class QueryRecordResponseUnmarshaller {
 			listItem.setFileName(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].FileName"));
 			listItem.setFileSize(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].FileSize"));
 			listItem.setVideoFrameNumber(_ctx.integerValue("QueryRecordResponse.Data.List["+ i +"].VideoFrameNumber"));
+			listItem.setSnapshotUrl(_ctx.stringValue("QueryRecordResponse.Data.List["+ i +"].SnapshotUrl"));
 
 			list.add(listItem);
 		}

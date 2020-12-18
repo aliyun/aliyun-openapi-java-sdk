@@ -29,6 +29,8 @@ public class TriggerRecordRequest extends RpcAcsRequest<TriggerRecordResponse> {
 
 	private Integer preRecordDuration;
 
+	private String iotInstanceId;
+
 	private Integer recordDuration;
 
 	private Integer streamType;
@@ -60,6 +62,17 @@ public class TriggerRecordRequest extends RpcAcsRequest<TriggerRecordResponse> {
 		this.preRecordDuration = preRecordDuration;
 		if(preRecordDuration != null){
 			putQueryParameter("PreRecordDuration", preRecordDuration.toString());
+		}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
