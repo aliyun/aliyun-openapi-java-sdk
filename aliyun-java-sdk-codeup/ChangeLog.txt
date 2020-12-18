@@ -1,3 +1,7 @@
+2020-12-18 Version: 0.0.6
+- Support ListRepositories, ListOrganizations, GetUserInfo, ListRepositoryWebhook, DeleteRepositoryWebhook api.
+- AddWebhook api support SecretToken.
+
 2020-11-26 Version: 0.0.5
 - Add tags api, include GetRepositoryTag, ListRepositoryTags, DeleteRepositoryTag.
 

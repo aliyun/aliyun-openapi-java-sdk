@@ -14,15 +14,16 @@
 
 package com.aliyuncs.codeup.model.v20200414;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.codeup.transform.v20200414.AddWebhookResponseUnmarshaller;
+import com.aliyuncs.codeup.transform.v20200414.ListRepositoryWebhookResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddWebhookResponse extends AcsResponse {
+public class ListRepositoryWebhookResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -32,7 +33,9 @@ public class AddWebhookResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Result result;
+	private Long total;
+
+	private List<ResultItem> result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,15 +69,23 @@ public class AddWebhookResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Result getResult() {
+	public Long getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Long total) {
+		this.total = total;
+	}
+
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public static class ResultItem {
 
 		private Long id;
 
@@ -86,13 +97,9 @@ public class AddWebhookResponse extends AcsResponse {
 
 		private Boolean pushEvents;
 
-		private Boolean issuesEvents;
-
 		private Boolean mergeRequestsEvents;
 
 		private Boolean tagPushEvents;
-
-		private Boolean buildEvents;
 
 		private Boolean noteEvents;
 
@@ -144,14 +151,6 @@ public class AddWebhookResponse extends AcsResponse {
 			this.pushEvents = pushEvents;
 		}
 
-		public Boolean getIssuesEvents() {
-			return this.issuesEvents;
-		}
-
-		public void setIssuesEvents(Boolean issuesEvents) {
-			this.issuesEvents = issuesEvents;
-		}
-
 		public Boolean getMergeRequestsEvents() {
 			return this.mergeRequestsEvents;
 		}
@@ -166,14 +165,6 @@ public class AddWebhookResponse extends AcsResponse {
 
 		public void setTagPushEvents(Boolean tagPushEvents) {
 			this.tagPushEvents = tagPushEvents;
-		}
-
-		public Boolean getBuildEvents() {
-			return this.buildEvents;
-		}
-
-		public void setBuildEvents(Boolean buildEvents) {
-			this.buildEvents = buildEvents;
 		}
 
 		public Boolean getNoteEvents() {
@@ -218,8 +209,8 @@ public class AddWebhookResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddWebhookResponse getInstance(UnmarshallerContext context) {
-		return	AddWebhookResponseUnmarshaller.unmarshall(this, context);
+	public ListRepositoryWebhookResponse getInstance(UnmarshallerContext context) {
+		return	ListRepositoryWebhookResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

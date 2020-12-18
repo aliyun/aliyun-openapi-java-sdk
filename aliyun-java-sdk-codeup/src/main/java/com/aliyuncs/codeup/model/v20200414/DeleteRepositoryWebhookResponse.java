@@ -15,14 +15,14 @@
 package com.aliyuncs.codeup.model.v20200414;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.codeup.transform.v20200414.AddWebhookResponseUnmarshaller;
+import com.aliyuncs.codeup.transform.v20200414.DeleteRepositoryWebhookResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddWebhookResponse extends AcsResponse {
+public class DeleteRepositoryWebhookResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -86,13 +86,9 @@ public class AddWebhookResponse extends AcsResponse {
 
 		private Boolean pushEvents;
 
-		private Boolean issuesEvents;
-
 		private Boolean mergeRequestsEvents;
 
 		private Boolean tagPushEvents;
-
-		private Boolean buildEvents;
 
 		private Boolean noteEvents;
 
@@ -144,14 +140,6 @@ public class AddWebhookResponse extends AcsResponse {
 			this.pushEvents = pushEvents;
 		}
 
-		public Boolean getIssuesEvents() {
-			return this.issuesEvents;
-		}
-
-		public void setIssuesEvents(Boolean issuesEvents) {
-			this.issuesEvents = issuesEvents;
-		}
-
 		public Boolean getMergeRequestsEvents() {
 			return this.mergeRequestsEvents;
 		}
@@ -166,14 +154,6 @@ public class AddWebhookResponse extends AcsResponse {
 
 		public void setTagPushEvents(Boolean tagPushEvents) {
 			this.tagPushEvents = tagPushEvents;
-		}
-
-		public Boolean getBuildEvents() {
-			return this.buildEvents;
-		}
-
-		public void setBuildEvents(Boolean buildEvents) {
-			this.buildEvents = buildEvents;
 		}
 
 		public Boolean getNoteEvents() {
@@ -218,8 +198,8 @@ public class AddWebhookResponse extends AcsResponse {
 	}
 
 	@Override
-	public AddWebhookResponse getInstance(UnmarshallerContext context) {
-		return	AddWebhookResponseUnmarshaller.unmarshall(this, context);
+	public DeleteRepositoryWebhookResponse getInstance(UnmarshallerContext context) {
+		return	DeleteRepositoryWebhookResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

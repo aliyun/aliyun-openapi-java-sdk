@@ -42,6 +42,7 @@ public class AddWebhookResponseUnmarshaller {
 		result.setEnableSslVerification(_ctx.booleanValue("AddWebhookResponse.Result.EnableSslVerification"));
 		result.setLastTestResult(_ctx.stringValue("AddWebhookResponse.Result.LastTestResult"));
 		result.setDescription(_ctx.stringValue("AddWebhookResponse.Result.Description"));
+		result.setSecretToken(_ctx.stringValue("AddWebhookResponse.Result.SecretToken"));
 		addWebhookResponse.setResult(result);
 	 
 	 	return addWebhookResponse;
