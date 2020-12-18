@@ -56,6 +56,8 @@ public class DescribeDBInstanceOnECSAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].VSwitchId"));
 			dBInstanceAttribute.setConnectionString(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].ConnectionString"));
 			dBInstanceAttribute.setPort(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Port"));
+			dBInstanceAttribute.setEncryptionType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionType"));
+			dBInstanceAttribute.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionKey"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

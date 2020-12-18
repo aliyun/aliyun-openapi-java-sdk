@@ -95,6 +95,10 @@ public class DescribeDBInstanceOnECSAttributeResponse extends AcsResponse {
 
 		private String port;
 
+		private String encryptionType;
+
+		private String encryptionKey;
+
 		private List<Tag> tags;
 
 		public String getDBInstanceId() {
@@ -287,6 +291,22 @@ public class DescribeDBInstanceOnECSAttributeResponse extends AcsResponse {
 
 		public void setPort(String port) {
 			this.port = port;
+		}
+
+		public String getEncryptionType() {
+			return this.encryptionType;
+		}
+
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
 		}
 
 		public List<Tag> getTags() {

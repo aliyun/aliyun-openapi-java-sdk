@@ -39,9 +39,13 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 
 	private String engine;
 
+	private String encryptionType;
+
 	private String dBInstanceDescription;
 
 	private String period;
+
+	private String encryptionKey;
 
 	private Long ownerId;
 
@@ -146,6 +150,17 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		}
 	}
 
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+		if(encryptionType != null){
+			putQueryParameter("EncryptionType", encryptionType);
+		}
+	}
+
 	public String getDBInstanceDescription() {
 		return this.dBInstanceDescription;
 	}
@@ -165,6 +180,17 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 
