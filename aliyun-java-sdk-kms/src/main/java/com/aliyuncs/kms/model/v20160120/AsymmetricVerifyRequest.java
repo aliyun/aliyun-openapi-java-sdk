@@ -36,7 +36,7 @@ public class AsymmetricVerifyRequest extends RpcAcsRequest<AsymmetricVerifyRespo
 
 	private String algorithm;
 	public AsymmetricVerifyRequest() {
-		super("Kms", "2016-01-20", "AsymmetricVerify", "kms-service");
+		super("Kms", "2016-01-20", "AsymmetricVerify", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

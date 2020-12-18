@@ -36,7 +36,7 @@ public class CertificatePublicKeyVerifyRequest extends RpcAcsRequest<Certificate
 
 	private String algorithm;
 	public CertificatePublicKeyVerifyRequest() {
-		super("Kms", "2016-01-20", "CertificatePublicKeyVerify", "kms-service");
+		super("Kms", "2016-01-20", "CertificatePublicKeyVerify", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

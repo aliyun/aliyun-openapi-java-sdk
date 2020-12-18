@@ -26,7 +26,7 @@ import com.aliyuncs.kms.Endpoint;
 public class DescribeAccountKmsStatusRequest extends RpcAcsRequest<DescribeAccountKmsStatusResponse> {
 	   
 	public DescribeAccountKmsStatusRequest() {
-		super("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms-service");
+		super("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

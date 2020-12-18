@@ -32,6 +32,16 @@ public class CreateSecretResponse extends AcsResponse {
 
 	private String secretName;
 
+	private String secretType;
+
+	private String automaticRotation;
+
+	private String rotationInterval;
+
+	private String nextRotationDate;
+
+	private String extendedConfig;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +72,46 @@ public class CreateSecretResponse extends AcsResponse {
 
 	public void setSecretName(String secretName) {
 		this.secretName = secretName;
+	}
+
+	public String getSecretType() {
+		return this.secretType;
+	}
+
+	public void setSecretType(String secretType) {
+		this.secretType = secretType;
+	}
+
+	public String getAutomaticRotation() {
+		return this.automaticRotation;
+	}
+
+	public void setAutomaticRotation(String automaticRotation) {
+		this.automaticRotation = automaticRotation;
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+	}
+
+	public String getNextRotationDate() {
+		return this.nextRotationDate;
+	}
+
+	public void setNextRotationDate(String nextRotationDate) {
+		this.nextRotationDate = nextRotationDate;
+	}
+
+	public String getExtendedConfig() {
+		return this.extendedConfig;
+	}
+
+	public void setExtendedConfig(String extendedConfig) {
+		this.extendedConfig = extendedConfig;
 	}
 
 	@Override

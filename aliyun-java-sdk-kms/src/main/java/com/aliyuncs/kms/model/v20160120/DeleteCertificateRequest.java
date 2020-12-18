@@ -28,7 +28,7 @@ public class DeleteCertificateRequest extends RpcAcsRequest<DeleteCertificateRes
 
 	private String certificateId;
 	public DeleteCertificateRequest() {
-		super("Kms", "2016-01-20", "DeleteCertificate", "kms-service");
+		super("Kms", "2016-01-20", "DeleteCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

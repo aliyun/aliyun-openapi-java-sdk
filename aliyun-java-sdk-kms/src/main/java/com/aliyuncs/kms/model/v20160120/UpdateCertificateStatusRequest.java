@@ -30,7 +30,7 @@ public class UpdateCertificateStatusRequest extends RpcAcsRequest<UpdateCertific
 
 	private String status;
 	public UpdateCertificateStatusRequest() {
-		super("Kms", "2016-01-20", "UpdateCertificateStatus", "kms-service");
+		super("Kms", "2016-01-20", "UpdateCertificateStatus", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

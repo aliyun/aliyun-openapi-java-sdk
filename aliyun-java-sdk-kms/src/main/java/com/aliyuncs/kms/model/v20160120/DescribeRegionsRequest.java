@@ -26,7 +26,7 @@ import com.aliyuncs.kms.Endpoint;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 	public DescribeRegionsRequest() {
-		super("Kms", "2016-01-20", "DescribeRegions", "kms-service");
+		super("Kms", "2016-01-20", "DescribeRegions", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

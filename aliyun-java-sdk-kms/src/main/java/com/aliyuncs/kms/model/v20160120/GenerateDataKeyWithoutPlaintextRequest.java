@@ -34,7 +34,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends RpcAcsRequest<Genera
 
 	private Integer numberOfBytes;
 	public GenerateDataKeyWithoutPlaintextRequest() {
-		super("Kms", "2016-01-20", "GenerateDataKeyWithoutPlaintext", "kms-service");
+		super("Kms", "2016-01-20", "GenerateDataKeyWithoutPlaintext", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

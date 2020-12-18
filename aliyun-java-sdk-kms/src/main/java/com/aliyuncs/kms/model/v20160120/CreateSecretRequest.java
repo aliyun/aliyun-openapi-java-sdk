@@ -26,27 +26,46 @@ import com.aliyuncs.kms.Endpoint;
 public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 	   
 
+	private String secretType;
+
 	private String versionId;
 
 	private String secretData;
 
 	private String description;
 
+	private String rotationInterval;
+
 	private String secretName;
+
+	private Boolean enableAutomaticRotation;
 
 	private String encryptionKeyId;
 
 	private String secretDataType;
 
 	private String tags;
+
+	private String extendedConfig;
 	public CreateSecretRequest() {
-		super("Kms", "2016-01-20", "CreateSecret", "kms-service");
+		super("Kms", "2016-01-20", "CreateSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSecretType() {
+		return this.secretType;
+	}
+
+	public void setSecretType(String secretType) {
+		this.secretType = secretType;
+		if(secretType != null){
+			putQueryParameter("SecretType", secretType);
+		}
 	}
 
 	public String getVersionId() {
@@ -82,6 +101,17 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		}
 	}
 
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+		if(rotationInterval != null){
+			putQueryParameter("RotationInterval", rotationInterval);
+		}
+	}
+
 	public String getSecretName() {
 		return this.secretName;
 	}
@@ -90,6 +120,17 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		this.secretName = secretName;
 		if(secretName != null){
 			putQueryParameter("SecretName", secretName);
+		}
+	}
+
+	public Boolean getEnableAutomaticRotation() {
+		return this.enableAutomaticRotation;
+	}
+
+	public void setEnableAutomaticRotation(Boolean enableAutomaticRotation) {
+		this.enableAutomaticRotation = enableAutomaticRotation;
+		if(enableAutomaticRotation != null){
+			putQueryParameter("EnableAutomaticRotation", enableAutomaticRotation.toString());
 		}
 	}
 
@@ -123,6 +164,17 @@ public class CreateSecretRequest extends RpcAcsRequest<CreateSecretResponse> {
 		this.tags = tags;
 		if(tags != null){
 			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getExtendedConfig() {
+		return this.extendedConfig;
+	}
+
+	public void setExtendedConfig(String extendedConfig) {
+		this.extendedConfig = extendedConfig;
+		if(extendedConfig != null){
+			putQueryParameter("ExtendedConfig", extendedConfig);
 		}
 	}
 

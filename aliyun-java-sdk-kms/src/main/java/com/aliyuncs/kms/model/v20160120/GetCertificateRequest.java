@@ -28,7 +28,7 @@ public class GetCertificateRequest extends RpcAcsRequest<GetCertificateResponse>
 
 	private String certificateId;
 	public GetCertificateRequest() {
-		super("Kms", "2016-01-20", "GetCertificate", "kms-service");
+		super("Kms", "2016-01-20", "GetCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

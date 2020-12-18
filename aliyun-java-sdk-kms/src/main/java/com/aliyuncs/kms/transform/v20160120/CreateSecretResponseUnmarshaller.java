@@ -26,6 +26,11 @@ public class CreateSecretResponseUnmarshaller {
 		createSecretResponse.setArn(_ctx.stringValue("CreateSecretResponse.Arn"));
 		createSecretResponse.setVersionId(_ctx.stringValue("CreateSecretResponse.VersionId"));
 		createSecretResponse.setSecretName(_ctx.stringValue("CreateSecretResponse.SecretName"));
+		createSecretResponse.setSecretType(_ctx.stringValue("CreateSecretResponse.SecretType"));
+		createSecretResponse.setAutomaticRotation(_ctx.stringValue("CreateSecretResponse.AutomaticRotation"));
+		createSecretResponse.setRotationInterval(_ctx.stringValue("CreateSecretResponse.RotationInterval"));
+		createSecretResponse.setNextRotationDate(_ctx.stringValue("CreateSecretResponse.NextRotationDate"));
+		createSecretResponse.setExtendedConfig(_ctx.stringValue("CreateSecretResponse.ExtendedConfig"));
 	 
 	 	return createSecretResponse;
 	}

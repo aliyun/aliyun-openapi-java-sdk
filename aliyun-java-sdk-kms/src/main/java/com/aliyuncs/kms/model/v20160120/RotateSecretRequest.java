@@ -23,12 +23,14 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
+public class RotateSecretRequest extends RpcAcsRequest<RotateSecretResponse> {
 	   
 
-	private String keyId;
-	public EnableKeyRequest() {
-		super("Kms", "2016-01-20", "EnableKey", "kms");
+	private String versionId;
+
+	private String secretName;
+	public RotateSecretRequest() {
+		super("Kms", "2016-01-20", "RotateSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -37,20 +39,31 @@ public class EnableKeyRequest extends RpcAcsRequest<EnableKeyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
+	public String getVersionId() {
+		return this.versionId;
 	}
 
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
+	public void setVersionId(String versionId) {
+		this.versionId = versionId;
+		if(versionId != null){
+			putQueryParameter("VersionId", versionId);
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 
 	@Override
-	public Class<EnableKeyResponse> getResponseClass() {
-		return EnableKeyResponse.class;
+	public Class<RotateSecretResponse> getResponseClass() {
+		return RotateSecretResponse.class;
 	}
 
 }

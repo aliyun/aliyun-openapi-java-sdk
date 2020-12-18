@@ -32,7 +32,7 @@ public class UploadCertificateRequest extends RpcAcsRequest<UploadCertificateRes
 
 	private String certificateChain;
 	public UploadCertificateRequest() {
-		super("Kms", "2016-01-20", "UploadCertificate", "kms-service");
+		super("Kms", "2016-01-20", "UploadCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

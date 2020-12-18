@@ -41,6 +41,18 @@ public class DescribeSecretResponse extends AcsResponse {
 
 	private String plannedDeleteTime;
 
+	private String automaticRotation;
+
+	private String lastRotationDate;
+
+	private String rotationInterval;
+
+	private String nextRotationDate;
+
+	private String extendedConfig;
+
+	private String secretType;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -105,6 +117,54 @@ public class DescribeSecretResponse extends AcsResponse {
 
 	public void setPlannedDeleteTime(String plannedDeleteTime) {
 		this.plannedDeleteTime = plannedDeleteTime;
+	}
+
+	public String getAutomaticRotation() {
+		return this.automaticRotation;
+	}
+
+	public void setAutomaticRotation(String automaticRotation) {
+		this.automaticRotation = automaticRotation;
+	}
+
+	public String getLastRotationDate() {
+		return this.lastRotationDate;
+	}
+
+	public void setLastRotationDate(String lastRotationDate) {
+		this.lastRotationDate = lastRotationDate;
+	}
+
+	public String getRotationInterval() {
+		return this.rotationInterval;
+	}
+
+	public void setRotationInterval(String rotationInterval) {
+		this.rotationInterval = rotationInterval;
+	}
+
+	public String getNextRotationDate() {
+		return this.nextRotationDate;
+	}
+
+	public void setNextRotationDate(String nextRotationDate) {
+		this.nextRotationDate = nextRotationDate;
+	}
+
+	public String getExtendedConfig() {
+		return this.extendedConfig;
+	}
+
+	public void setExtendedConfig(String extendedConfig) {
+		this.extendedConfig = extendedConfig;
+	}
+
+	public String getSecretType() {
+		return this.secretType;
+	}
+
+	public void setSecretType(String secretType) {
+		this.secretType = secretType;
 	}
 
 	public List<Tag> getTags() {

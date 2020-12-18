@@ -30,7 +30,7 @@ public class DescribeSecretRequest extends RpcAcsRequest<DescribeSecretResponse>
 
 	private String fetchTags;
 	public DescribeSecretRequest() {
-		super("Kms", "2016-01-20", "DescribeSecret", "kms-service");
+		super("Kms", "2016-01-20", "DescribeSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

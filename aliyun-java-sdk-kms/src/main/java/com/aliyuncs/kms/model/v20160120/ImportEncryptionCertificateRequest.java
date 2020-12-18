@@ -40,7 +40,7 @@ public class ImportEncryptionCertificateRequest extends RpcAcsRequest<ImportEncr
 
 	private String certificateChain;
 	public ImportEncryptionCertificateRequest() {
-		super("Kms", "2016-01-20", "ImportEncryptionCertificate", "kms-service");
+		super("Kms", "2016-01-20", "ImportEncryptionCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -30,7 +30,7 @@ public class ImportCertificateRequest extends RpcAcsRequest<ImportCertificateRes
 
 	private String passphrase;
 	public ImportCertificateRequest() {
-		super("Kms", "2016-01-20", "ImportCertificate", "kms-service");
+		super("Kms", "2016-01-20", "ImportCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

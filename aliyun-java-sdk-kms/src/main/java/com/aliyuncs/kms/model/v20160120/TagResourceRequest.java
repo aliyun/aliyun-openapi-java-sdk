@@ -34,7 +34,7 @@ public class TagResourceRequest extends RpcAcsRequest<TagResourceResponse> {
 
 	private String tags;
 	public TagResourceRequest() {
-		super("Kms", "2016-01-20", "TagResource", "kms-service");
+		super("Kms", "2016-01-20", "TagResource", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -31,8 +31,10 @@ public class GetSecretValueRequest extends RpcAcsRequest<GetSecretValueResponse>
 	private String versionStage;
 
 	private String secretName;
+
+	private Boolean fetchExtendedConfig;
 	public GetSecretValueRequest() {
-		super("Kms", "2016-01-20", "GetSecretValue", "kms-service");
+		super("Kms", "2016-01-20", "GetSecretValue", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -71,6 +73,17 @@ public class GetSecretValueRequest extends RpcAcsRequest<GetSecretValueResponse>
 		this.secretName = secretName;
 		if(secretName != null){
 			putQueryParameter("SecretName", secretName);
+		}
+	}
+
+	public Boolean getFetchExtendedConfig() {
+		return this.fetchExtendedConfig;
+	}
+
+	public void setFetchExtendedConfig(Boolean fetchExtendedConfig) {
+		this.fetchExtendedConfig = fetchExtendedConfig;
+		if(fetchExtendedConfig != null){
+			putQueryParameter("FetchExtendedConfig", fetchExtendedConfig.toString());
 		}
 	}
 

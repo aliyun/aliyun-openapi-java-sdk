@@ -36,7 +36,7 @@ public class CreateCertificateRequest extends RpcAcsRequest<CreateCertificateRes
 
 	private String keySpec;
 	public CreateCertificateRequest() {
-		super("Kms", "2016-01-20", "CreateCertificate", "kms-service");
+		super("Kms", "2016-01-20", "CreateCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

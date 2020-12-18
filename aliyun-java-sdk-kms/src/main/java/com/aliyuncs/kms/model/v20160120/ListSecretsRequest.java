@@ -34,7 +34,7 @@ public class ListSecretsRequest extends RpcAcsRequest<ListSecretsResponse> {
 
 	private Integer pageNumber;
 	public ListSecretsRequest() {
-		super("Kms", "2016-01-20", "ListSecrets", "kms-service");
+		super("Kms", "2016-01-20", "ListSecrets", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

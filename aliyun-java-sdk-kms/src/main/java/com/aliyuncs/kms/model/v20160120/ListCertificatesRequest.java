@@ -36,7 +36,7 @@ public class ListCertificatesRequest extends RpcAcsRequest<ListCertificatesRespo
 
 	private String status;
 	public ListCertificatesRequest() {
-		super("Kms", "2016-01-20", "ListCertificates", "kms-service");
+		super("Kms", "2016-01-20", "ListCertificates", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

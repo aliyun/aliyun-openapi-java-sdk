@@ -32,7 +32,7 @@ public class CertificatePrivateKeyDecryptRequest extends RpcAcsRequest<Certifica
 
 	private String ciphertextBlob;
 	public CertificatePrivateKeyDecryptRequest() {
-		super("Kms", "2016-01-20", "CertificatePrivateKeyDecrypt", "kms-service");
+		super("Kms", "2016-01-20", "CertificatePrivateKeyDecrypt", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

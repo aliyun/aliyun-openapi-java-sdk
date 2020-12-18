@@ -28,7 +28,7 @@ public class RestoreSecretRequest extends RpcAcsRequest<RestoreSecretResponse> {
 
 	private String secretName;
 	public RestoreSecretRequest() {
-		super("Kms", "2016-01-20", "RestoreSecret", "kms-service");
+		super("Kms", "2016-01-20", "RestoreSecret", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

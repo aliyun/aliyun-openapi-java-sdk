@@ -31,6 +31,12 @@ public class GetSecretValueResponseUnmarshaller {
 		getSecretValueResponse.setCreateTime(_ctx.stringValue("GetSecretValueResponse.CreateTime"));
 		getSecretValueResponse.setSecretData(_ctx.stringValue("GetSecretValueResponse.SecretData"));
 		getSecretValueResponse.setSecretDataType(_ctx.stringValue("GetSecretValueResponse.SecretDataType"));
+		getSecretValueResponse.setAutomaticRotation(_ctx.stringValue("GetSecretValueResponse.AutomaticRotation"));
+		getSecretValueResponse.setRotationInterval(_ctx.stringValue("GetSecretValueResponse.RotationInterval"));
+		getSecretValueResponse.setNextRotationDate(_ctx.stringValue("GetSecretValueResponse.NextRotationDate"));
+		getSecretValueResponse.setExtendedConfig(_ctx.stringValue("GetSecretValueResponse.ExtendedConfig"));
+		getSecretValueResponse.setLastRotationDate(_ctx.stringValue("GetSecretValueResponse.LastRotationDate"));
+		getSecretValueResponse.setSecretType(_ctx.stringValue("GetSecretValueResponse.SecretType"));
 
 		List<String> versionStages = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetSecretValueResponse.VersionStages.Length"); i++) {

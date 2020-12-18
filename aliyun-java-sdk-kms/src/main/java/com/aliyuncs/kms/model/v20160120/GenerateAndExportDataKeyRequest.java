@@ -40,7 +40,7 @@ public class GenerateAndExportDataKeyRequest extends RpcAcsRequest<GenerateAndEx
 
 	private String wrappingKeySpec;
 	public GenerateAndExportDataKeyRequest() {
-		super("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms-service");
+		super("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

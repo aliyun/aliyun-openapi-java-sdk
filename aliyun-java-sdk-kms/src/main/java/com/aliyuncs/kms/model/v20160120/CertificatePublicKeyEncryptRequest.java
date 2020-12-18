@@ -32,7 +32,7 @@ public class CertificatePublicKeyEncryptRequest extends RpcAcsRequest<Certificat
 
 	private String algorithm;
 	public CertificatePublicKeyEncryptRequest() {
-		super("Kms", "2016-01-20", "CertificatePublicKeyEncrypt", "kms-service");
+		super("Kms", "2016-01-20", "CertificatePublicKeyEncrypt", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

@@ -32,7 +32,7 @@ public class ExportCertificateRequest extends RpcAcsRequest<ExportCertificateRes
 
 	private String exportFormat;
 	public ExportCertificateRequest() {
-		super("Kms", "2016-01-20", "ExportCertificate", "kms-service");
+		super("Kms", "2016-01-20", "ExportCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

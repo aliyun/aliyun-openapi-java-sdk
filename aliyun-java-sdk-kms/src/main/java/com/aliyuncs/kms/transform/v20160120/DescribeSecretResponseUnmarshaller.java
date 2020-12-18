@@ -34,6 +34,12 @@ public class DescribeSecretResponseUnmarshaller {
 		describeSecretResponse.setCreateTime(_ctx.stringValue("DescribeSecretResponse.CreateTime"));
 		describeSecretResponse.setUpdateTime(_ctx.stringValue("DescribeSecretResponse.UpdateTime"));
 		describeSecretResponse.setPlannedDeleteTime(_ctx.stringValue("DescribeSecretResponse.PlannedDeleteTime"));
+		describeSecretResponse.setAutomaticRotation(_ctx.stringValue("DescribeSecretResponse.AutomaticRotation"));
+		describeSecretResponse.setLastRotationDate(_ctx.stringValue("DescribeSecretResponse.LastRotationDate"));
+		describeSecretResponse.setRotationInterval(_ctx.stringValue("DescribeSecretResponse.RotationInterval"));
+		describeSecretResponse.setNextRotationDate(_ctx.stringValue("DescribeSecretResponse.NextRotationDate"));
+		describeSecretResponse.setExtendedConfig(_ctx.stringValue("DescribeSecretResponse.ExtendedConfig"));
+		describeSecretResponse.setSecretType(_ctx.stringValue("DescribeSecretResponse.SecretType"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecretResponse.Tags.Length"); i++) {

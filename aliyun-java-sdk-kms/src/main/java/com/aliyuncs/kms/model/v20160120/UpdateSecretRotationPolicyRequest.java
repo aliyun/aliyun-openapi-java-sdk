@@ -23,33 +23,22 @@ import com.aliyuncs.kms.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateRotationPolicyRequest extends RpcAcsRequest<UpdateRotationPolicyResponse> {
+public class UpdateSecretRotationPolicyRequest extends RpcAcsRequest<UpdateSecretRotationPolicyResponse> {
 	   
-
-	private String keyId;
 
 	private String rotationInterval;
 
+	private String secretName;
+
 	private Boolean enableAutomaticRotation;
-	public UpdateRotationPolicyRequest() {
-		super("Kms", "2016-01-20", "UpdateRotationPolicy", "kms");
+	public UpdateSecretRotationPolicyRequest() {
+		super("Kms", "2016-01-20", "UpdateSecretRotationPolicy", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
-		}
 	}
 
 	public String getRotationInterval() {
@@ -60,6 +49,17 @@ public class UpdateRotationPolicyRequest extends RpcAcsRequest<UpdateRotationPol
 		this.rotationInterval = rotationInterval;
 		if(rotationInterval != null){
 			putQueryParameter("RotationInterval", rotationInterval);
+		}
+	}
+
+	public String getSecretName() {
+		return this.secretName;
+	}
+
+	public void setSecretName(String secretName) {
+		this.secretName = secretName;
+		if(secretName != null){
+			putQueryParameter("SecretName", secretName);
 		}
 	}
 
@@ -75,8 +75,8 @@ public class UpdateRotationPolicyRequest extends RpcAcsRequest<UpdateRotationPol
 	}
 
 	@Override
-	public Class<UpdateRotationPolicyResponse> getResponseClass() {
-		return UpdateRotationPolicyResponse.class;
+	public Class<UpdateSecretRotationPolicyResponse> getResponseClass() {
+		return UpdateSecretRotationPolicyResponse.class;
 	}
 
 }

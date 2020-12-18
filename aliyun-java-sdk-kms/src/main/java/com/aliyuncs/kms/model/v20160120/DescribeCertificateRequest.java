@@ -28,7 +28,7 @@ public class DescribeCertificateRequest extends RpcAcsRequest<DescribeCertificat
 
 	private String certificateId;
 	public DescribeCertificateRequest() {
-		super("Kms", "2016-01-20", "DescribeCertificate", "kms-service");
+		super("Kms", "2016-01-20", "DescribeCertificate", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

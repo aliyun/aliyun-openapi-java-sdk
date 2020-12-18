@@ -85,6 +85,8 @@ public class ListSecretsResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String secretType;
+
 		private List<Tag> tags;
 
 		public String getCreateTime() {
@@ -117,6 +119,14 @@ public class ListSecretsResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getSecretType() {
+			return this.secretType;
+		}
+
+		public void setSecretType(String secretType) {
+			this.secretType = secretType;
 		}
 
 		public List<Tag> getTags() {

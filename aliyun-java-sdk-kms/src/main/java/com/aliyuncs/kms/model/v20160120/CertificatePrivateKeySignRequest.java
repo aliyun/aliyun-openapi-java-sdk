@@ -34,7 +34,7 @@ public class CertificatePrivateKeySignRequest extends RpcAcsRequest<CertificateP
 
 	private String algorithm;
 	public CertificatePrivateKeySignRequest() {
-		super("Kms", "2016-01-20", "CertificatePrivateKeySign", "kms-service");
+		super("Kms", "2016-01-20", "CertificatePrivateKeySign", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

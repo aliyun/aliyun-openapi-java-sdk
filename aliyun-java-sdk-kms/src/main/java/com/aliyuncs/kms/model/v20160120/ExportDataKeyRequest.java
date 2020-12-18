@@ -36,7 +36,7 @@ public class ExportDataKeyRequest extends RpcAcsRequest<ExportDataKeyResponse> {
 
 	private String wrappingKeySpec;
 	public ExportDataKeyRequest() {
-		super("Kms", "2016-01-20", "ExportDataKey", "kms-service");
+		super("Kms", "2016-01-20", "ExportDataKey", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

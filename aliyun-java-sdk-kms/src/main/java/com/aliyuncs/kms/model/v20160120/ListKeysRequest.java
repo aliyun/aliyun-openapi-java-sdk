@@ -32,7 +32,7 @@ public class ListKeysRequest extends RpcAcsRequest<ListKeysResponse> {
 
 	private Integer pageNumber;
 	public ListKeysRequest() {
-		super("Kms", "2016-01-20", "ListKeys", "kms-service");
+		super("Kms", "2016-01-20", "ListKeys", "kms");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
