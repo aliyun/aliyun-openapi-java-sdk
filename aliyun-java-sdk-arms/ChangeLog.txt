@@ -1,3 +1,6 @@
+2020-12-18 Version: 2.7.14
+- Add GetAgentDownloadUrl api.
+
 2020-12-18 Version: 2.7.13
 - Add ListScenario Api.
 - Add ApplyScenario Api.
