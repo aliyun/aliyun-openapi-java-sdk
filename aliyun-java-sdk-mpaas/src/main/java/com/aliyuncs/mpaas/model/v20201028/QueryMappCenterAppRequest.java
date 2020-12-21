@@ -29,7 +29,7 @@ public class QueryMappCenterAppRequest extends RpcAcsRequest<QueryMappCenterAppR
 
 	private String workspaceId;
 	public QueryMappCenterAppRequest() {
-		super("mPaaS", "2020-10-28", "QueryMappCenterApp", "mpaas");
+		super("mPaaS", "2020-10-28", "QueryMappCenterApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

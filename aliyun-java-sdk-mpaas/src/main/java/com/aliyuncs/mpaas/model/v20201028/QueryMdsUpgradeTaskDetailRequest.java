@@ -33,7 +33,7 @@ public class QueryMdsUpgradeTaskDetailRequest extends RpcAcsRequest<QueryMdsUpgr
 
 	private String workspaceId;
 	public QueryMdsUpgradeTaskDetailRequest() {
-		super("mPaaS", "2020-10-28", "QueryMdsUpgradeTaskDetail", "mpaas");
+		super("mPaaS", "2020-10-28", "QueryMdsUpgradeTaskDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class AddMdsMiniConfigRequest extends RpcAcsRequest<AddMdsMiniConfigRespo
 
 	private String workspaceId;
 	public AddMdsMiniConfigRequest() {
-		super("mPaaS", "2020-10-28", "AddMdsMiniConfig", "mpaas");
+		super("mPaaS", "2020-10-28", "AddMdsMiniConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

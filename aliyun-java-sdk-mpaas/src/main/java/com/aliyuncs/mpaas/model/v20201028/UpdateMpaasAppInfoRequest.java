@@ -39,7 +39,7 @@ public class UpdateMpaasAppInfoRequest extends RpcAcsRequest<UpdateMpaasAppInfoR
 
 	private String appId;
 	public UpdateMpaasAppInfoRequest() {
-		super("mPaaS", "2020-10-28", "UpdateMpaasAppInfo", "mpaas");
+		super("mPaaS", "2020-10-28", "UpdateMpaasAppInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

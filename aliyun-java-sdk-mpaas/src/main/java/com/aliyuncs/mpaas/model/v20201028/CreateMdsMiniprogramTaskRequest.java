@@ -51,7 +51,7 @@ public class CreateMdsMiniprogramTaskRequest extends RpcAcsRequest<CreateMdsMini
 
 	private String workspaceId;
 	public CreateMdsMiniprogramTaskRequest() {
-		super("mPaaS", "2020-10-28", "CreateMdsMiniprogramTask", "mpaas");
+		super("mPaaS", "2020-10-28", "CreateMdsMiniprogramTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

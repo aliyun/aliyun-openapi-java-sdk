@@ -33,7 +33,7 @@ public class CreateMsaEnhanceRequest extends RpcAcsRequest<CreateMsaEnhanceRespo
 
 	private String workspaceId;
 	public CreateMsaEnhanceRequest() {
-		super("mPaaS", "2020-10-28", "CreateMsaEnhance", "mpaas");
+		super("mPaaS", "2020-10-28", "CreateMsaEnhance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

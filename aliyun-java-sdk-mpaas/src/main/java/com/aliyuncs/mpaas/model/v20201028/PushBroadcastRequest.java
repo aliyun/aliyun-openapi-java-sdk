@@ -25,6 +25,8 @@ import com.aliyuncs.mpaas.Endpoint;
 public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 	   
 
+	private Integer androidChannel;
+
 	private String taskName;
 
 	private String templateKeyValue;
@@ -53,12 +55,23 @@ public class PushBroadcastRequest extends RpcAcsRequest<PushBroadcastResponse> {
 
 	private String workspaceId;
 	public PushBroadcastRequest() {
-		super("mPaaS", "2020-10-28", "PushBroadcast", "mpaas");
+		super("mPaaS", "2020-10-28", "PushBroadcast");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getAndroidChannel() {
+		return this.androidChannel;
+	}
+
+	public void setAndroidChannel(Integer androidChannel) {
+		this.androidChannel = androidChannel;
+		if(androidChannel != null){
+			putBodyParameter("AndroidChannel", androidChannel.toString());
+		}
 	}
 
 	public String getTaskName() {
