@@ -22,16 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsResponse> {
+public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDBClusterMinorVersionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
+	private String switchTimeMode;
 
 	private String resourceOwnerAccount;
 
@@ -39,13 +35,9 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 
 	private String ownerAccount;
 
-	private String endTime;
-
 	private Long ownerId;
-
-	private String dBName;
-	public DescribeSlowLogsRequest() {
-		super("polardb", "2017-08-01", "DescribeSlowLogs", "polardb");
+	public UpgradeDBClusterMinorVersionRequest() {
+		super("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,36 +56,14 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
 		}
 	}
 
@@ -130,17 +100,6 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -152,20 +111,9 @@ public class DescribeSlowLogsRequest extends RpcAcsRequest<DescribeSlowLogsRespo
 		}
 	}
 
-	public String getDBName() {
-		return this.dBName;
-	}
-
-	public void setDBName(String dBName) {
-		this.dBName = dBName;
-		if(dBName != null){
-			putQueryParameter("DBName", dBName);
-		}
-	}
-
 	@Override
-	public Class<DescribeSlowLogsResponse> getResponseClass() {
-		return DescribeSlowLogsResponse.class;
+	public Class<UpgradeDBClusterMinorVersionResponse> getResponseClass() {
+		return UpgradeDBClusterMinorVersionResponse.class;
 	}
 
 }

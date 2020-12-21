@@ -32,13 +32,11 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 
 	private String dBMinorVersion;
 
-	private String dBRevisionVersion;
-
 	private String dBVersionStatus;
 
 	private String isLatestVersion;
 
-	private String latestRevisionVersion;
+	private String dBRevisionVersion;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,14 +70,6 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 		this.dBMinorVersion = dBMinorVersion;
 	}
 
-	public String getDBRevisionVersion() {
-		return this.dBRevisionVersion;
-	}
-
-	public void setDBRevisionVersion(String dBRevisionVersion) {
-		this.dBRevisionVersion = dBRevisionVersion;
-	}
-
 	public String getDBVersionStatus() {
 		return this.dBVersionStatus;
 	}
@@ -96,12 +86,12 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 		this.isLatestVersion = isLatestVersion;
 	}
 
-	public String getLatestRevisionVersion() {
-		return this.latestRevisionVersion;
+	public String getDBRevisionVersion() {
+		return this.dBRevisionVersion;
 	}
 
-	public void setLatestRevisionVersion(String latestRevisionVersion) {
-		this.latestRevisionVersion = latestRevisionVersion;
+	public void setDBRevisionVersion(String dBRevisionVersion) {
+		this.dBRevisionVersion = dBRevisionVersion;
 	}
 
 	@Override

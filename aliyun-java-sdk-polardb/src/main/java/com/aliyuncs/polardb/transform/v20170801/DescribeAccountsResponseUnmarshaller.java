@@ -28,6 +28,8 @@ public class DescribeAccountsResponseUnmarshaller {
 	public static DescribeAccountsResponse unmarshall(DescribeAccountsResponse describeAccountsResponse, UnmarshallerContext _ctx) {
 		
 		describeAccountsResponse.setRequestId(_ctx.stringValue("DescribeAccountsResponse.RequestId"));
+		describeAccountsResponse.setPageNumber(_ctx.integerValue("DescribeAccountsResponse.PageNumber"));
+		describeAccountsResponse.setPageRecordCount(_ctx.integerValue("DescribeAccountsResponse.PageRecordCount"));
 
 		List<DBAccount> accounts = new ArrayList<DBAccount>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {

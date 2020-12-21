@@ -1,3 +1,7 @@
+2020-12-21 Version: 1.8.1
+- Support DescribeDatabases for page query.
+- Support DescribeAccounts for page query.
+
 2020-12-02 Version: 1.8.0
 - Support CreateDBLink for polardb oracle.
 - Support DeleteDBLink for polardb oracle.

@@ -32,8 +32,7 @@ public class DescribeTasksResponseUnmarshaller {
 		describeTasksResponse.setTotalRecordCount(_ctx.integerValue("DescribeTasksResponse.TotalRecordCount"));
 		describeTasksResponse.setPageNumber(_ctx.integerValue("DescribeTasksResponse.PageNumber"));
 		describeTasksResponse.setPageRecordCount(_ctx.integerValue("DescribeTasksResponse.PageRecordCount"));
-		describeTasksResponse.setDBInstanceName(_ctx.stringValue("DescribeTasksResponse.DBInstanceName"));
-		describeTasksResponse.setDBInstanceId(_ctx.stringValue("DescribeTasksResponse.DBInstanceId"));
+		describeTasksResponse.setDBClusterId(_ctx.stringValue("DescribeTasksResponse.DBClusterId"));
 
 		List<Task> tasks = new ArrayList<Task>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTasksResponse.Tasks.Length"); i++) {

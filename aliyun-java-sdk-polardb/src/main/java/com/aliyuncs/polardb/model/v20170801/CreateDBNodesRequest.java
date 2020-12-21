@@ -30,6 +30,8 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 
 	private String clientToken;
 
+	private String endpointBindList;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -67,6 +69,17 @@ public class CreateDBNodesRequest extends RpcAcsRequest<CreateDBNodesResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getEndpointBindList() {
+		return this.endpointBindList;
+	}
+
+	public void setEndpointBindList(String endpointBindList) {
+		this.endpointBindList = endpointBindList;
+		if(endpointBindList != null){
+			putQueryParameter("EndpointBindList", endpointBindList);
 		}
 	}
 

@@ -15,20 +15,16 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribeActiveOperationTaskCountResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.UpgradeDBClusterMinorVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeActiveOperationTaskCountResponse extends AcsResponse {
+public class UpgradeDBClusterMinorVersionResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Integer taskCount;
-
-	private Integer needPop;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class DescribeActiveOperationTaskCountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTaskCount() {
-		return this.taskCount;
-	}
-
-	public void setTaskCount(Integer taskCount) {
-		this.taskCount = taskCount;
-	}
-
-	public Integer getNeedPop() {
-		return this.needPop;
-	}
-
-	public void setNeedPop(Integer needPop) {
-		this.needPop = needPop;
-	}
-
 	@Override
-	public DescribeActiveOperationTaskCountResponse getInstance(UnmarshallerContext context) {
-		return	DescribeActiveOperationTaskCountResponseUnmarshaller.unmarshall(this, context);
+	public UpgradeDBClusterMinorVersionResponse getInstance(UnmarshallerContext context) {
+		return	UpgradeDBClusterMinorVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

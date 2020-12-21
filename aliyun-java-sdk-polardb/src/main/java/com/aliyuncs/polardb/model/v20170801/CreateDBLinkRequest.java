@@ -31,7 +31,11 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 
 	private String targetDBName;
 
+	private String targetIp;
+
 	private String dBLinkName;
+
+	private String targetPort;
 
 	private String resourceOwnerAccount;
 
@@ -46,6 +50,8 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 	private Long ownerId;
 
 	private String targetDBAccount;
+
+	private String vpcId;
 	public CreateDBLinkRequest() {
 		super("polardb", "2017-08-01", "CreateDBLink", "polardb");
 		setMethod(MethodType.POST);
@@ -88,6 +94,17 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 		}
 	}
 
+	public String getTargetIp() {
+		return this.targetIp;
+	}
+
+	public void setTargetIp(String targetIp) {
+		this.targetIp = targetIp;
+		if(targetIp != null){
+			putQueryParameter("TargetIp", targetIp);
+		}
+	}
+
 	public String getDBLinkName() {
 		return this.dBLinkName;
 	}
@@ -96,6 +113,17 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 		this.dBLinkName = dBLinkName;
 		if(dBLinkName != null){
 			putQueryParameter("DBLinkName", dBLinkName);
+		}
+	}
+
+	public String getTargetPort() {
+		return this.targetPort;
+	}
+
+	public void setTargetPort(String targetPort) {
+		this.targetPort = targetPort;
+		if(targetPort != null){
+			putQueryParameter("TargetPort", targetPort);
 		}
 	}
 
@@ -173,6 +201,17 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 		this.targetDBAccount = targetDBAccount;
 		if(targetDBAccount != null){
 			putQueryParameter("TargetDBAccount", targetDBAccount);
+		}
+	}
+
+	public String getVpcId() {
+		return this.vpcId;
+	}
+
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 

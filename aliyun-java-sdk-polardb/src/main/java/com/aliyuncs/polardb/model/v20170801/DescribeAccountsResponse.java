@@ -27,6 +27,10 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNumber;
+
+	private Integer pageRecordCount;
+
 	private List<DBAccount> accounts;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
 	}
 
 	public List<DBAccount> getAccounts() {

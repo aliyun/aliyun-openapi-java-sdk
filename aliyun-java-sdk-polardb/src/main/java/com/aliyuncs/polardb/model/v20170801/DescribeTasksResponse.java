@@ -37,9 +37,7 @@ public class DescribeTasksResponse extends AcsResponse {
 
 	private Integer pageRecordCount;
 
-	private String dBInstanceName;
-
-	private String dBInstanceId;
+	private String dBClusterId;
 
 	private List<Task> tasks;
 
@@ -91,20 +89,12 @@ public class DescribeTasksResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
-	public String getDBInstanceName() {
-		return this.dBInstanceName;
+	public String getDBClusterId() {
+		return this.dBClusterId;
 	}
 
-	public void setDBInstanceName(String dBInstanceName) {
-		this.dBInstanceName = dBInstanceName;
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
 	}
 
 	public List<Task> getTasks() {

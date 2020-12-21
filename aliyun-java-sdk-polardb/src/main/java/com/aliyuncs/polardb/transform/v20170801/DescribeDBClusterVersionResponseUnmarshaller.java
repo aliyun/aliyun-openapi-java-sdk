@@ -26,10 +26,9 @@ public class DescribeDBClusterVersionResponseUnmarshaller {
 		describeDBClusterVersionResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterVersionResponse.DBClusterId"));
 		describeDBClusterVersionResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersion"));
 		describeDBClusterVersionResponse.setDBMinorVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBMinorVersion"));
-		describeDBClusterVersionResponse.setDBRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersion"));
 		describeDBClusterVersionResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersionStatus"));
 		describeDBClusterVersionResponse.setIsLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.IsLatestVersion"));
-		describeDBClusterVersionResponse.setLatestRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.LatestRevisionVersion"));
+		describeDBClusterVersionResponse.setDBRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersion"));
 	 
 	 	return describeDBClusterVersionResponse;
 	}
