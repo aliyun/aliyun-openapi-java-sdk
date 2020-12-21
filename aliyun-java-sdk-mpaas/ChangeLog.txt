@@ -1,6 +1,9 @@
 2020-12-21 Version: 3.0.0
 - Update mpaas push sdk.
 
+2020-12-21 Version: 3.0.0
+- Update mpaas push sdk.
+
 2020-11-26 Version: 3.0.0
 - Add feijin.
 
