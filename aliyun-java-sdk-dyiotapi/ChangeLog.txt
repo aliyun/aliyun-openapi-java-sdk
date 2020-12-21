@@ -1,3 +1,6 @@
+2020-12-21 Version: 2.1.1-SNAPSHOT
+- Add QueryCardsInfo.
+
 2020-12-04 Version: 2.1.1
 - Add absolute remind config.
 

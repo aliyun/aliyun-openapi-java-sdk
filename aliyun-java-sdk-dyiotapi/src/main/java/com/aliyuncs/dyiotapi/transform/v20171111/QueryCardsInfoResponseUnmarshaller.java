@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.dyiotapi.model.v20171111.QueryCardsInfoResponse;
+import com.aliyuncs.dyiotapi.model.v20171111.QueryCardsInfoResponse.CardsInfoItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,9 +30,19 @@ public class QueryCardsInfoResponseUnmarshaller {
 		queryCardsInfoResponse.setCode(_ctx.stringValue("QueryCardsInfoResponse.Code"));
 		queryCardsInfoResponse.setMessage(_ctx.stringValue("QueryCardsInfoResponse.Message"));
 
-		List<String> cardsInfo = new ArrayList<String>();
+		List<CardsInfoItem> cardsInfo = new ArrayList<CardsInfoItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCardsInfoResponse.CardsInfo.Length"); i++) {
-			cardsInfo.add(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"]"));
+			CardsInfoItem cardsInfoItem = new CardsInfoItem();
+			cardsInfoItem.setIccid(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].Iccid"));
+			cardsInfoItem.setOpenTime(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].OpenTime"));
+			cardsInfoItem.setFirstActiveTime(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].FirstActiveTime"));
+			cardsInfoItem.setImsi(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].Imsi"));
+			cardsInfoItem.setMsisdn(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].Msisdn"));
+			cardsInfoItem.setGprsStatus(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].GprsStatus"));
+			cardsInfoItem.setVoiceStatus(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].VoiceStatus"));
+			cardsInfoItem.setSmsStatus(_ctx.stringValue("QueryCardsInfoResponse.CardsInfo["+ i +"].SmsStatus"));
+
+			cardsInfo.add(cardsInfoItem);
 		}
 		queryCardsInfoResponse.setCardsInfo(cardsInfo);
 	 

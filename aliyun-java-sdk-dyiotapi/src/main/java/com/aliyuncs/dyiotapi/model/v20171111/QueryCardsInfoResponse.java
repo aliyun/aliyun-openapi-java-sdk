@@ -31,7 +31,7 @@ public class QueryCardsInfoResponse extends AcsResponse {
 
 	private String message;
 
-	private List<String> cardsInfo;
+	private List<CardsInfoItem> cardsInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,12 +57,95 @@ public class QueryCardsInfoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<String> getCardsInfo() {
+	public List<CardsInfoItem> getCardsInfo() {
 		return this.cardsInfo;
 	}
 
-	public void setCardsInfo(List<String> cardsInfo) {
+	public void setCardsInfo(List<CardsInfoItem> cardsInfo) {
 		this.cardsInfo = cardsInfo;
+	}
+
+	public static class CardsInfoItem {
+
+		private String iccid;
+
+		private String openTime;
+
+		private String firstActiveTime;
+
+		private String imsi;
+
+		private String msisdn;
+
+		private String gprsStatus;
+
+		private String voiceStatus;
+
+		private String smsStatus;
+
+		public String getIccid() {
+			return this.iccid;
+		}
+
+		public void setIccid(String iccid) {
+			this.iccid = iccid;
+		}
+
+		public String getOpenTime() {
+			return this.openTime;
+		}
+
+		public void setOpenTime(String openTime) {
+			this.openTime = openTime;
+		}
+
+		public String getFirstActiveTime() {
+			return this.firstActiveTime;
+		}
+
+		public void setFirstActiveTime(String firstActiveTime) {
+			this.firstActiveTime = firstActiveTime;
+		}
+
+		public String getImsi() {
+			return this.imsi;
+		}
+
+		public void setImsi(String imsi) {
+			this.imsi = imsi;
+		}
+
+		public String getMsisdn() {
+			return this.msisdn;
+		}
+
+		public void setMsisdn(String msisdn) {
+			this.msisdn = msisdn;
+		}
+
+		public String getGprsStatus() {
+			return this.gprsStatus;
+		}
+
+		public void setGprsStatus(String gprsStatus) {
+			this.gprsStatus = gprsStatus;
+		}
+
+		public String getVoiceStatus() {
+			return this.voiceStatus;
+		}
+
+		public void setVoiceStatus(String voiceStatus) {
+			this.voiceStatus = voiceStatus;
+		}
+
+		public String getSmsStatus() {
+			return this.smsStatus;
+		}
+
+		public void setSmsStatus(String smsStatus) {
+			this.smsStatus = smsStatus;
+		}
 	}
 
 	@Override
