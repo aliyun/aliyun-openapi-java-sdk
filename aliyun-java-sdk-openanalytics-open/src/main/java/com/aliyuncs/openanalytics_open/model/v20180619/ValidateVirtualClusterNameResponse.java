@@ -15,20 +15,18 @@
 package com.aliyuncs.openanalytics_open.model.v20180619;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.openanalytics_open.transform.v20180619.GetConsolePermissionResponseUnmarshaller;
+import com.aliyuncs.openanalytics_open.transform.v20180619.ValidateVirtualClusterNameResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetConsolePermissionResponse extends AcsResponse {
+public class ValidateVirtualClusterNameResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String regionId;
-
-	private String result;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,44 @@ public class GetConsolePermissionResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRegionId() {
-		return this.regionId;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public String getResult() {
-		return this.result;
-	}
+	public static class Data {
 
-	public void setResult(String result) {
-		this.result = result;
+		private String legal;
+
+		private String message;
+
+		public String getLegal() {
+			return this.legal;
+		}
+
+		public void setLegal(String legal) {
+			this.legal = legal;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
 	}
 
 	@Override
-	public GetConsolePermissionResponse getInstance(UnmarshallerContext context) {
-		return	GetConsolePermissionResponseUnmarshaller.unmarshall(this, context);
+	public ValidateVirtualClusterNameResponse getInstance(UnmarshallerContext context) {
+		return	ValidateVirtualClusterNameResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
