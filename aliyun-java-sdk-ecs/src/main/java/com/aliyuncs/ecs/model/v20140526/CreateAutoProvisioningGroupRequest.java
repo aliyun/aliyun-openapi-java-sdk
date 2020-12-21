@@ -145,6 +145,13 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Size" , launchConfigurationDataDisks.get(depth1).getSize());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".PerformanceLevel" , launchConfigurationDataDisks.get(depth1).getPerformanceLevel());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Device" , launchConfigurationDataDisks.get(depth1).getDevice());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".SnapshotId" , launchConfigurationDataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , launchConfigurationDataDisks.get(depth1).getDeleteWithInstance());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Encrypted" , launchConfigurationDataDisks.get(depth1).getEncrypted());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".KmsKeyId" , launchConfigurationDataDisks.get(depth1).getKmsKeyId());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DiskName" , launchConfigurationDataDisks.get(depth1).getDiskName());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Description" , launchConfigurationDataDisks.get(depth1).getDescription());
 			}
 		}	
 	}
@@ -709,6 +716,20 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		private String performanceLevel;
 
+		private String device;
+
+		private String snapshotId;
+
+		private Boolean deleteWithInstance;
+
+		private Boolean encrypted;
+
+		private String kmsKeyId;
+
+		private String diskName;
+
+		private String description;
+
 		public Integer getSize() {
 			return this.size;
 		}
@@ -731,6 +752,62 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setPerformanceLevel(String performanceLevel) {
 			this.performanceLevel = performanceLevel;
+		}
+
+		public String getDevice() {
+			return this.device;
+		}
+
+		public void setDevice(String device) {
+			this.device = device;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Boolean getDeleteWithInstance() {
+			return this.deleteWithInstance;
+		}
+
+		public void setDeleteWithInstance(Boolean deleteWithInstance) {
+			this.deleteWithInstance = deleteWithInstance;
+		}
+
+		public Boolean getEncrypted() {
+			return this.encrypted;
+		}
+
+		public void setEncrypted(Boolean encrypted) {
+			this.encrypted = encrypted;
+		}
+
+		public String getKmsKeyId() {
+			return this.kmsKeyId;
+		}
+
+		public void setKmsKeyId(String kmsKeyId) {
+			this.kmsKeyId = kmsKeyId;
+		}
+
+		public String getDiskName() {
+			return this.diskName;
+		}
+
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

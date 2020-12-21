@@ -1,3 +1,6 @@
+2020-12-21 Version: 4.23.2
+- Support Device of LaunchConfiguration_DataDisk.
+
 2020-12-17 Version: 4.23.1
 - Generated 2014-05-26 for `Ecs`.
 
