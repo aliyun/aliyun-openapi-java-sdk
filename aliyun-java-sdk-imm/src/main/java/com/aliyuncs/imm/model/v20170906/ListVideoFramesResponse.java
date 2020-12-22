@@ -125,12 +125,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 
 		private String tagsModifyTime;
 
-		private String celebrityStatus;
-
-		private String celebrityModifyTime;
-
-		private String celebrityFailReason;
-
 		private String tagsStatus;
 
 		private String remarksC;
@@ -144,8 +138,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 		private List<TagsItem> tags;
 
 		private List<OCRItem> oCR;
-
-		private List<CelebrityItem> celebrity;
 
 		public String getFacesModifyTime() {
 			return this.facesModifyTime;
@@ -339,30 +331,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 			this.tagsModifyTime = tagsModifyTime;
 		}
 
-		public String getCelebrityStatus() {
-			return this.celebrityStatus;
-		}
-
-		public void setCelebrityStatus(String celebrityStatus) {
-			this.celebrityStatus = celebrityStatus;
-		}
-
-		public String getCelebrityModifyTime() {
-			return this.celebrityModifyTime;
-		}
-
-		public void setCelebrityModifyTime(String celebrityModifyTime) {
-			this.celebrityModifyTime = celebrityModifyTime;
-		}
-
-		public String getCelebrityFailReason() {
-			return this.celebrityFailReason;
-		}
-
-		public void setCelebrityFailReason(String celebrityFailReason) {
-			this.celebrityFailReason = celebrityFailReason;
-		}
-
 		public String getTagsStatus() {
 			return this.tagsStatus;
 		}
@@ -417,14 +385,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 
 		public void setOCR(List<OCRItem> oCR) {
 			this.oCR = oCR;
-		}
-
-		public List<CelebrityItem> getCelebrity() {
-			return this.celebrity;
-		}
-
-		public void setCelebrity(List<CelebrityItem> celebrity) {
-			this.celebrity = celebrity;
 		}
 
 		public static class FacesItem {
@@ -858,102 +818,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 			}
 
 			public static class OCRBoundary {
-
-				private Integer left;
-
-				private Integer left1;
-
-				private Integer width;
-
-				private Integer height;
-
-				public Integer getLeft() {
-					return this.left;
-				}
-
-				public void setLeft(Integer left) {
-					this.left = left;
-				}
-
-				public Integer getLeft1() {
-					return this.left1;
-				}
-
-				public void setLeft1(Integer left1) {
-					this.left1 = left1;
-				}
-
-				public Integer getWidth() {
-					return this.width;
-				}
-
-				public void setWidth(Integer width) {
-					this.width = width;
-				}
-
-				public Integer getHeight() {
-					return this.height;
-				}
-
-				public void setHeight(Integer height) {
-					this.height = height;
-				}
-			}
-		}
-
-		public static class CelebrityItem {
-
-			private String celebrityName;
-
-			private String celebrityGender;
-
-			private Float celebrityConfidence;
-
-			private String celebrityLibraryName;
-
-			private CelebrityBoundary celebrityBoundary;
-
-			public String getCelebrityName() {
-				return this.celebrityName;
-			}
-
-			public void setCelebrityName(String celebrityName) {
-				this.celebrityName = celebrityName;
-			}
-
-			public String getCelebrityGender() {
-				return this.celebrityGender;
-			}
-
-			public void setCelebrityGender(String celebrityGender) {
-				this.celebrityGender = celebrityGender;
-			}
-
-			public Float getCelebrityConfidence() {
-				return this.celebrityConfidence;
-			}
-
-			public void setCelebrityConfidence(Float celebrityConfidence) {
-				this.celebrityConfidence = celebrityConfidence;
-			}
-
-			public String getCelebrityLibraryName() {
-				return this.celebrityLibraryName;
-			}
-
-			public void setCelebrityLibraryName(String celebrityLibraryName) {
-				this.celebrityLibraryName = celebrityLibraryName;
-			}
-
-			public CelebrityBoundary getCelebrityBoundary() {
-				return this.celebrityBoundary;
-			}
-
-			public void setCelebrityBoundary(CelebrityBoundary celebrityBoundary) {
-				this.celebrityBoundary = celebrityBoundary;
-			}
-
-			public static class CelebrityBoundary {
 
 				private Integer left;
 

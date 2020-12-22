@@ -19,8 +19,6 @@ import java.util.List;
 
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem;
-import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.CelebrityItem;
-import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.CelebrityItem.CelebrityBoundary;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem.EmotionDetails;
 import com.aliyuncs.imm.model.v20170906.ListVideoFramesResponse.FramesItem.FacesItem.FaceAttributes;
@@ -68,9 +66,6 @@ public class ListVideoFramesResponseUnmarshaller {
 			framesItem.setFacesFailReason(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].FacesFailReason"));
 			framesItem.setTagsFailReason(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].TagsFailReason"));
 			framesItem.setTagsModifyTime(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].TagsModifyTime"));
-			framesItem.setCelebrityStatus(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].CelebrityStatus"));
-			framesItem.setCelebrityModifyTime(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].CelebrityModifyTime"));
-			framesItem.setCelebrityFailReason(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].CelebrityFailReason"));
 			framesItem.setTagsStatus(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].TagsStatus"));
 			framesItem.setRemarksC(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].RemarksC"));
 			framesItem.setRemarksD(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].RemarksD"));
@@ -146,7 +141,7 @@ public class ListVideoFramesResponseUnmarshaller {
 
 				OCRBoundary oCRBoundary = new OCRBoundary();
 				oCRBoundary.setLeft(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left"));
-				oCRBoundary.setLeft1(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left"));
+				oCRBoundary.setTop(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Top"));
 				oCRBoundary.setWidth(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Width"));
 				oCRBoundary.setHeight(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Height"));
 				oCRItem.setOCRBoundary(oCRBoundary);
@@ -154,25 +149,6 @@ public class ListVideoFramesResponseUnmarshaller {
 				oCR.add(oCRItem);
 			}
 			framesItem.setOCR(oCR);
-
-			List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-			for (int j = 0; j < _ctx.lengthValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity.Length"); j++) {
-				CelebrityItem celebrityItem = new CelebrityItem();
-				celebrityItem.setCelebrityName(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityName"));
-				celebrityItem.setCelebrityGender(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityGender"));
-				celebrityItem.setCelebrityConfidence(_ctx.floatValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityConfidence"));
-				celebrityItem.setCelebrityLibraryName(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityLibraryName"));
-
-				CelebrityBoundary celebrityBoundary = new CelebrityBoundary();
-				celebrityBoundary.setLeft(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Left"));
-				celebrityBoundary.setTop(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Top"));
-				celebrityBoundary.setWidth(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Width"));
-				celebrityBoundary.setHeight(_ctx.integerValue("ListVideoFramesResponse.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Height"));
-				celebrityItem.setCelebrityBoundary(celebrityBoundary);
-
-				celebrity.add(celebrityItem);
-			}
-			framesItem.setCelebrity(celebrity);
 
 			frames.add(framesItem);
 		}

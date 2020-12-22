@@ -20,8 +20,6 @@ import java.util.List;
 import com.aliyuncs.imm.model.v20170906.ListImagesResponse;
 import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem;
 import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem.Address;
-import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem.CelebrityItem;
-import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem.CelebrityItem.CelebrityBoundary;
 import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem.CroppingSuggestionItem;
 import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem.CroppingSuggestionItem.CroppingBoundary;
 import com.aliyuncs.imm.model.v20170906.ListImagesResponse.ImagesItem.FacesItem;
@@ -71,9 +69,6 @@ public class ListImagesResponseUnmarshaller {
 			imagesItem.setFacesFailReason(_ctx.stringValue("ListImagesResponse.Images["+ i +"].FacesFailReason"));
 			imagesItem.setTagsFailReason(_ctx.stringValue("ListImagesResponse.Images["+ i +"].TagsFailReason"));
 			imagesItem.setTagsModifyTime(_ctx.stringValue("ListImagesResponse.Images["+ i +"].TagsModifyTime"));
-			imagesItem.setCelebrityStatus(_ctx.stringValue("ListImagesResponse.Images["+ i +"].CelebrityStatus"));
-			imagesItem.setCelebrityModifyTime(_ctx.stringValue("ListImagesResponse.Images["+ i +"].CelebrityModifyTime"));
-			imagesItem.setCelebrityFailReason(_ctx.stringValue("ListImagesResponse.Images["+ i +"].CelebrityFailReason"));
 			imagesItem.setTagsStatus(_ctx.stringValue("ListImagesResponse.Images["+ i +"].TagsStatus"));
 			imagesItem.setRemarksC(_ctx.stringValue("ListImagesResponse.Images["+ i +"].RemarksC"));
 			imagesItem.setRemarksD(_ctx.stringValue("ListImagesResponse.Images["+ i +"].RemarksD"));
@@ -207,25 +202,6 @@ public class ListImagesResponseUnmarshaller {
 				oCR.add(oCRItem);
 			}
 			imagesItem.setOCR(oCR);
-
-			List<CelebrityItem> celebrity = new ArrayList<CelebrityItem>();
-			for (int j = 0; j < _ctx.lengthValue("ListImagesResponse.Images["+ i +"].Celebrity.Length"); j++) {
-				CelebrityItem celebrityItem = new CelebrityItem();
-				celebrityItem.setCelebrityName(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityName"));
-				celebrityItem.setCelebrityGender(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityGender"));
-				celebrityItem.setCelebrityConfidence(_ctx.floatValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityConfidence"));
-				celebrityItem.setCelebrityLibraryName(_ctx.stringValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityLibraryName"));
-
-				CelebrityBoundary celebrityBoundary = new CelebrityBoundary();
-				celebrityBoundary.setLeft(_ctx.integerValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Left"));
-				celebrityBoundary.setTop(_ctx.integerValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Top"));
-				celebrityBoundary.setWidth(_ctx.integerValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Width"));
-				celebrityBoundary.setHeight(_ctx.integerValue("ListImagesResponse.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Height"));
-				celebrityItem.setCelebrityBoundary(celebrityBoundary);
-
-				celebrity.add(celebrityItem);
-			}
-			imagesItem.setCelebrity(celebrity);
 
 			images.add(imagesItem);
 		}
