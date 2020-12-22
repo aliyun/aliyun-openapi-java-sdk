@@ -1,4 +1,7 @@
 2020-12-22 Version: 1.2.8
+- Release DetectPedestrianIntrusion.
+
+2020-12-22 Version: 1.2.8
 - Release InterpolateVideoFrame.
 
 2020-12-22 Version: 1.2.8
