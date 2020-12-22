@@ -25,6 +25,8 @@ import com.aliyuncs.rds.Endpoint;
 public class DescribeAvailableClassesRequest extends RpcAcsRequest<DescribeAvailableClassesResponse> {
 	   
 
+	private String dBInstanceName;
+
 	private Long resourceOwnerId;
 
 	private String engineVersion;
@@ -53,6 +55,17 @@ public class DescribeAvailableClassesRequest extends RpcAcsRequest<DescribeAvail
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+		if(dBInstanceName != null){
+			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
 	}
 
 	public Long getResourceOwnerId() {
