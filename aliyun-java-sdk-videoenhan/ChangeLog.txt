@@ -1,3 +1,6 @@
+2020-12-22 Version: 1.0.6
+- Release InterpolateVideoFrame ToneSdrVideo ConvertHdrVideo.
+
 2020-12-02 Version: 1.0.5
 - Release MergeVideoFace EnhanceVideoQuality.
 
