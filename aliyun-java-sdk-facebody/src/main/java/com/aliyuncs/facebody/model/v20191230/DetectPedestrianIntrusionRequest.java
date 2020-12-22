@@ -22,14 +22,16 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListFacesRequest extends RpcAcsRequest<ListFacesResponse> {
+public class DetectPedestrianIntrusionRequest extends RpcAcsRequest<DetectPedestrianIntrusionResponse> {
 	   
 
-	private String fromScrollId;
+	private String regionType;
 
-	private String dbName;
-	public ListFacesRequest() {
-		super("facebody", "2019-12-30", "ListFaces", "facebody");
+	private String imageURL;
+
+	private Array region;
+	public DetectPedestrianIntrusionRequest() {
+		super("facebody", "2019-12-30", "DetectPedestrianIntrusion", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class ListFacesRequest extends RpcAcsRequest<ListFacesResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getFromScrollId() {
-		return this.fromScrollId;
+	public String getRegionType() {
+		return this.regionType;
 	}
 
-	public void setFromScrollId(String fromScrollId) {
-		this.fromScrollId = fromScrollId;
-		if(fromScrollId != null){
-			putBodyParameter("FromScrollId", fromScrollId);
+	public void setRegionType(String regionType) {
+		this.regionType = regionType;
+		if(regionType != null){
+			putBodyParameter("RegionType", regionType);
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
+	public String getImageURL() {
+		return this.imageURL;
 	}
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putBodyParameter("DbName", dbName);
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
+		}
+	}
+
+	public Array getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(Array region) {
+		this.region = region;
+		if(region != null){
+			putBodyParameter("Region", region.toString());
 		}
 	}
 
 	@Override
-	public Class<ListFacesResponse> getResponseClass() {
-		return ListFacesResponse.class;
+	public Class<DetectPedestrianIntrusionResponse> getResponseClass() {
+		return DetectPedestrianIntrusionResponse.class;
 	}
 
 }
