@@ -47,17 +47,7 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String objType;
-
-		private Float objTypeScore;
-
-		private String feature;
-
-		private Float qualityScore;
-
-		private String upperColor;
-
-		private Float upperColorScore;
+		private String hair;
 
 		private String upperType;
 
@@ -65,72 +55,42 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 
 		private String lowerColor;
 
-		private Float lowerColorScore;
-
-		private String lowerType;
-
-		private Float lowerTypeScore;
+		private Float qualityScore;
 
 		private String gender;
 
+		private String feature;
+
+		private Float upperColorScore;
+
 		private Float genderScore;
 
-		private String hair;
+		private Float lowerColorScore;
+
+		private String objType;
+
+		private Float lowerTypeScore;
 
 		private Float hairScore;
 
-		private String age;
+		private String upperColor;
+
+		private String lowerType;
 
 		private Float ageScore;
 
+		private Float objTypeScore;
+
+		private String age;
+
 		private List<Element> elements;
 
-		public String getObjType() {
-			return this.objType;
+		public String getHair() {
+			return this.hair;
 		}
 
-		public void setObjType(String objType) {
-			this.objType = objType;
-		}
-
-		public Float getObjTypeScore() {
-			return this.objTypeScore;
-		}
-
-		public void setObjTypeScore(Float objTypeScore) {
-			this.objTypeScore = objTypeScore;
-		}
-
-		public String getFeature() {
-			return this.feature;
-		}
-
-		public void setFeature(String feature) {
-			this.feature = feature;
-		}
-
-		public Float getQualityScore() {
-			return this.qualityScore;
-		}
-
-		public void setQualityScore(Float qualityScore) {
-			this.qualityScore = qualityScore;
-		}
-
-		public String getUpperColor() {
-			return this.upperColor;
-		}
-
-		public void setUpperColor(String upperColor) {
-			this.upperColor = upperColor;
-		}
-
-		public Float getUpperColorScore() {
-			return this.upperColorScore;
-		}
-
-		public void setUpperColorScore(Float upperColorScore) {
-			this.upperColorScore = upperColorScore;
+		public void setHair(String hair) {
+			this.hair = hair;
 		}
 
 		public String getUpperType() {
@@ -157,28 +117,12 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 			this.lowerColor = lowerColor;
 		}
 
-		public Float getLowerColorScore() {
-			return this.lowerColorScore;
+		public Float getQualityScore() {
+			return this.qualityScore;
 		}
 
-		public void setLowerColorScore(Float lowerColorScore) {
-			this.lowerColorScore = lowerColorScore;
-		}
-
-		public String getLowerType() {
-			return this.lowerType;
-		}
-
-		public void setLowerType(String lowerType) {
-			this.lowerType = lowerType;
-		}
-
-		public Float getLowerTypeScore() {
-			return this.lowerTypeScore;
-		}
-
-		public void setLowerTypeScore(Float lowerTypeScore) {
-			this.lowerTypeScore = lowerTypeScore;
+		public void setQualityScore(Float qualityScore) {
+			this.qualityScore = qualityScore;
 		}
 
 		public String getGender() {
@@ -189,6 +133,22 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 			this.gender = gender;
 		}
 
+		public String getFeature() {
+			return this.feature;
+		}
+
+		public void setFeature(String feature) {
+			this.feature = feature;
+		}
+
+		public Float getUpperColorScore() {
+			return this.upperColorScore;
+		}
+
+		public void setUpperColorScore(Float upperColorScore) {
+			this.upperColorScore = upperColorScore;
+		}
+
 		public Float getGenderScore() {
 			return this.genderScore;
 		}
@@ -197,12 +157,28 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 			this.genderScore = genderScore;
 		}
 
-		public String getHair() {
-			return this.hair;
+		public Float getLowerColorScore() {
+			return this.lowerColorScore;
 		}
 
-		public void setHair(String hair) {
-			this.hair = hair;
+		public void setLowerColorScore(Float lowerColorScore) {
+			this.lowerColorScore = lowerColorScore;
+		}
+
+		public String getObjType() {
+			return this.objType;
+		}
+
+		public void setObjType(String objType) {
+			this.objType = objType;
+		}
+
+		public Float getLowerTypeScore() {
+			return this.lowerTypeScore;
+		}
+
+		public void setLowerTypeScore(Float lowerTypeScore) {
+			this.lowerTypeScore = lowerTypeScore;
 		}
 
 		public Float getHairScore() {
@@ -213,12 +189,20 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 			this.hairScore = hairScore;
 		}
 
-		public String getAge() {
-			return this.age;
+		public String getUpperColor() {
+			return this.upperColor;
 		}
 
-		public void setAge(String age) {
-			this.age = age;
+		public void setUpperColor(String upperColor) {
+			this.upperColor = upperColor;
+		}
+
+		public String getLowerType() {
+			return this.lowerType;
+		}
+
+		public void setLowerType(String lowerType) {
+			this.lowerType = lowerType;
 		}
 
 		public Float getAgeScore() {
@@ -227,6 +211,22 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 
 		public void setAgeScore(Float ageScore) {
 			this.ageScore = ageScore;
+		}
+
+		public Float getObjTypeScore() {
+			return this.objTypeScore;
+		}
+
+		public void setObjTypeScore(Float objTypeScore) {
+			this.objTypeScore = objTypeScore;
+		}
+
+		public String getAge() {
+			return this.age;
+		}
+
+		public void setAge(String age) {
+			this.age = age;
 		}
 
 		public List<Element> getElements() {
@@ -239,17 +239,7 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 
 		public static class Element {
 
-			private String objType;
-
-			private Float objTypeScore;
-
-			private String feature;
-
-			private Float qualityScore;
-
-			private String upperColor;
-
-			private Float upperColorScore;
+			private String hair;
 
 			private String upperType;
 
@@ -257,70 +247,40 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 
 			private String lowerColor;
 
-			private Float lowerColorScore;
-
-			private String lowerType;
-
-			private Float lowerTypeScore;
+			private Float qualityScore;
 
 			private String gender;
 
+			private String feature;
+
+			private Float upperColorScore;
+
 			private Float genderScore;
 
-			private String hair;
+			private Float lowerColorScore;
+
+			private String objType;
+
+			private Float lowerTypeScore;
 
 			private Float hairScore;
 
-			private String age;
+			private String upperColor;
+
+			private String lowerType;
 
 			private Float ageScore;
 
-			public String getObjType() {
-				return this.objType;
+			private Float objTypeScore;
+
+			private String age;
+
+			public String getHair() {
+				return this.hair;
 			}
 
-			public void setObjType(String objType) {
-				this.objType = objType;
-			}
-
-			public Float getObjTypeScore() {
-				return this.objTypeScore;
-			}
-
-			public void setObjTypeScore(Float objTypeScore) {
-				this.objTypeScore = objTypeScore;
-			}
-
-			public String getFeature() {
-				return this.feature;
-			}
-
-			public void setFeature(String feature) {
-				this.feature = feature;
-			}
-
-			public Float getQualityScore() {
-				return this.qualityScore;
-			}
-
-			public void setQualityScore(Float qualityScore) {
-				this.qualityScore = qualityScore;
-			}
-
-			public String getUpperColor() {
-				return this.upperColor;
-			}
-
-			public void setUpperColor(String upperColor) {
-				this.upperColor = upperColor;
-			}
-
-			public Float getUpperColorScore() {
-				return this.upperColorScore;
-			}
-
-			public void setUpperColorScore(Float upperColorScore) {
-				this.upperColorScore = upperColorScore;
+			public void setHair(String hair) {
+				this.hair = hair;
 			}
 
 			public String getUpperType() {
@@ -347,28 +307,12 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 				this.lowerColor = lowerColor;
 			}
 
-			public Float getLowerColorScore() {
-				return this.lowerColorScore;
+			public Float getQualityScore() {
+				return this.qualityScore;
 			}
 
-			public void setLowerColorScore(Float lowerColorScore) {
-				this.lowerColorScore = lowerColorScore;
-			}
-
-			public String getLowerType() {
-				return this.lowerType;
-			}
-
-			public void setLowerType(String lowerType) {
-				this.lowerType = lowerType;
-			}
-
-			public Float getLowerTypeScore() {
-				return this.lowerTypeScore;
-			}
-
-			public void setLowerTypeScore(Float lowerTypeScore) {
-				this.lowerTypeScore = lowerTypeScore;
+			public void setQualityScore(Float qualityScore) {
+				this.qualityScore = qualityScore;
 			}
 
 			public String getGender() {
@@ -379,6 +323,22 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 				this.gender = gender;
 			}
 
+			public String getFeature() {
+				return this.feature;
+			}
+
+			public void setFeature(String feature) {
+				this.feature = feature;
+			}
+
+			public Float getUpperColorScore() {
+				return this.upperColorScore;
+			}
+
+			public void setUpperColorScore(Float upperColorScore) {
+				this.upperColorScore = upperColorScore;
+			}
+
 			public Float getGenderScore() {
 				return this.genderScore;
 			}
@@ -387,12 +347,28 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 				this.genderScore = genderScore;
 			}
 
-			public String getHair() {
-				return this.hair;
+			public Float getLowerColorScore() {
+				return this.lowerColorScore;
 			}
 
-			public void setHair(String hair) {
-				this.hair = hair;
+			public void setLowerColorScore(Float lowerColorScore) {
+				this.lowerColorScore = lowerColorScore;
+			}
+
+			public String getObjType() {
+				return this.objType;
+			}
+
+			public void setObjType(String objType) {
+				this.objType = objType;
+			}
+
+			public Float getLowerTypeScore() {
+				return this.lowerTypeScore;
+			}
+
+			public void setLowerTypeScore(Float lowerTypeScore) {
+				this.lowerTypeScore = lowerTypeScore;
 			}
 
 			public Float getHairScore() {
@@ -403,12 +379,20 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 				this.hairScore = hairScore;
 			}
 
-			public String getAge() {
-				return this.age;
+			public String getUpperColor() {
+				return this.upperColor;
 			}
 
-			public void setAge(String age) {
-				this.age = age;
+			public void setUpperColor(String upperColor) {
+				this.upperColor = upperColor;
+			}
+
+			public String getLowerType() {
+				return this.lowerType;
+			}
+
+			public void setLowerType(String lowerType) {
+				this.lowerType = lowerType;
 			}
 
 			public Float getAgeScore() {
@@ -417,6 +401,22 @@ public class ExtractPedestrianFeatureAttributeResponse extends AcsResponse {
 
 			public void setAgeScore(Float ageScore) {
 				this.ageScore = ageScore;
+			}
+
+			public Float getObjTypeScore() {
+				return this.objTypeScore;
+			}
+
+			public void setObjTypeScore(Float objTypeScore) {
+				this.objTypeScore = objTypeScore;
+			}
+
+			public String getAge() {
+				return this.age;
+			}
+
+			public void setAge(String age) {
+				this.age = age;
 			}
 		}
 	}

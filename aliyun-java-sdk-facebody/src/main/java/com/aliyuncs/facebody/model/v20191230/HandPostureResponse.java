@@ -91,17 +91,9 @@ public class HandPostureResponse extends AcsResponse {
 
 			public static class Result {
 
-				private Box box;
-
 				private Hands hands;
 
-				public Box getBox() {
-					return this.box;
-				}
-
-				public void setBox(Box box) {
-					this.box = box;
-				}
+				private Box box;
 
 				public Hands getHands() {
 					return this.hands;
@@ -111,40 +103,12 @@ public class HandPostureResponse extends AcsResponse {
 					this.hands = hands;
 				}
 
-				public static class Box {
+				public Box getBox() {
+					return this.box;
+				}
 
-					private Float confident;
-
-					private List<Position> positions;
-
-					public Float getConfident() {
-						return this.confident;
-					}
-
-					public void setConfident(Float confident) {
-						this.confident = confident;
-					}
-
-					public List<Position> getPositions() {
-						return this.positions;
-					}
-
-					public void setPositions(List<Position> positions) {
-						this.positions = positions;
-					}
-
-					public static class Position {
-
-						private List<Float> points;
-
-						public List<Float> getPoints() {
-							return this.points;
-						}
-
-						public void setPoints(List<Float> points) {
-							this.points = points;
-						}
-					}
+				public void setBox(Box box) {
+					this.box = box;
 				}
 
 				public static class Hands {
@@ -173,7 +137,7 @@ public class HandPostureResponse extends AcsResponse {
 
 						private String label;
 
-						private List<Position2> positions1;
+						private List<Position> positions;
 
 						public String getLabel() {
 							return this.label;
@@ -183,25 +147,61 @@ public class HandPostureResponse extends AcsResponse {
 							this.label = label;
 						}
 
-						public List<Position2> getPositions1() {
-							return this.positions1;
+						public List<Position> getPositions() {
+							return this.positions;
 						}
 
-						public void setPositions1(List<Position2> positions1) {
-							this.positions1 = positions1;
+						public void setPositions(List<Position> positions) {
+							this.positions = positions;
 						}
 
-						public static class Position2 {
+						public static class Position {
 
-							private List<Float> points3;
+							private List<Float> points;
 
-							public List<Float> getPoints3() {
-								return this.points3;
+							public List<Float> getPoints() {
+								return this.points;
 							}
 
-							public void setPoints3(List<Float> points3) {
-								this.points3 = points3;
+							public void setPoints(List<Float> points) {
+								this.points = points;
 							}
+						}
+					}
+				}
+
+				public static class Box {
+
+					private Float confident;
+
+					private List<Position2> positions1;
+
+					public Float getConfident() {
+						return this.confident;
+					}
+
+					public void setConfident(Float confident) {
+						this.confident = confident;
+					}
+
+					public List<Position2> getPositions1() {
+						return this.positions1;
+					}
+
+					public void setPositions1(List<Position2> positions1) {
+						this.positions1 = positions1;
+					}
+
+					public static class Position2 {
+
+						private List<Float> points3;
+
+						public List<Float> getPoints3() {
+							return this.points3;
+						}
+
+						public void setPoints3(List<Float> points3) {
+							this.points3 = points3;
 						}
 					}
 				}

@@ -27,7 +27,7 @@ public class DetectBodyCountRequest extends RpcAcsRequest<DetectBodyCountRespons
 
 	private String imageURL;
 	public DetectBodyCountRequest() {
-		super("facebody", "2019-12-30", "DetectBodyCount", "facebody");
+		super("facebody", "2019-12-30", "DetectBodyCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

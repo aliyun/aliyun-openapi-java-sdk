@@ -27,7 +27,7 @@ public class CreateFaceDbRequest extends RpcAcsRequest<CreateFaceDbResponse> {
 
 	private String name;
 	public CreateFaceDbRequest() {
-		super("facebody", "2019-12-30", "CreateFaceDb", "facebody");
+		super("facebody", "2019-12-30", "CreateFaceDb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
