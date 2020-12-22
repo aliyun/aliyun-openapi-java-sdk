@@ -41,7 +41,7 @@ public class SearchTicketListRequest extends RpcAcsRequest<SearchTicketListRespo
 
 	private Long endTime;
 	public SearchTicketListRequest() {
-		super("scsp", "2020-07-02", "SearchTicketList", "scsp-service");
+		super("scsp", "2020-07-02", "SearchTicketList", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

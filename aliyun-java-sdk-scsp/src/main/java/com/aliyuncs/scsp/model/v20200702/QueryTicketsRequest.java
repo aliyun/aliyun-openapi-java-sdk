@@ -39,6 +39,8 @@ public class QueryTicketsRequest extends RpcAcsRequest<QueryTicketsResponse> {
 
 	private String instanceId;
 
+	private String accountName;
+
 	private Long caseId;
 
 	private Map<Object,Object> extra;
@@ -53,7 +55,7 @@ public class QueryTicketsRequest extends RpcAcsRequest<QueryTicketsResponse> {
 
 	private String channelId;
 	public QueryTicketsRequest() {
-		super("scsp", "2020-07-02", "QueryTickets", "scsp-service");
+		super("scsp", "2020-07-02", "QueryTickets", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -124,6 +126,17 @@ public class QueryTicketsRequest extends RpcAcsRequest<QueryTicketsResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putBodyParameter("AccountName", accountName);
 		}
 	}
 
