@@ -27,7 +27,15 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private QualityResults qualityResults;
+	private Boolean success;
+
+	private String errorCode;
+
+	private String errorMessage;
+
+	private Integer httpStatusCode;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +45,47 @@ public class ListQualityResultsByRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public QualityResults getQualityResults() {
-		return this.qualityResults;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setQualityResults(QualityResults qualityResults) {
-		this.qualityResults = qualityResults;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
-	public static class QualityResults {
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
 
 		private Long totalCount;
 

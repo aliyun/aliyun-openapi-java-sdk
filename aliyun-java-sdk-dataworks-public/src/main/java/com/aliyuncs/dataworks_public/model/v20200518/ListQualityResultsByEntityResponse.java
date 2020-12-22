@@ -27,7 +27,15 @@ public class ListQualityResultsByEntityResponse extends AcsResponse {
 
 	private String requestId;
 
-	private QualityResults qualityResults;
+	private Integer httpStatusCode;
+
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Boolean success;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,15 +45,47 @@ public class ListQualityResultsByEntityResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public QualityResults getQualityResults() {
-		return this.qualityResults;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setQualityResults(QualityResults qualityResults) {
-		this.qualityResults = qualityResults;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
-	public static class QualityResults {
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
 
 		private Long totalCount;
 
