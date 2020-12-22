@@ -1,3 +1,6 @@
+2020-12-22 Version: 1.0.9
+- Release DetectRibFracture.
+
 2020-12-03 Version: 1.0.8
 - Update DetectLungNodule.
 
