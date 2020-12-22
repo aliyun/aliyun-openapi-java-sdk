@@ -1,3 +1,6 @@
+2020-12-22 Version: 3.3.2
+- Support SLB latest OpenAPIs.
+
 2020-07-29 Version: 3.2.18
 - Support ModificationProtection.
 

@@ -33,29 +33,15 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 
 	private String masterZoneId;
 
-	private Integer pageNumber;
-
 	private String resourceGroupId;
 
 	private String loadBalancerName;
 
-	private Integer pageSize;
-
-	private String addressType;
-
 	private String slaveZoneId;
-
-	private String address;
-
-	private String resourceOwnerAccount;
-
-	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String serverId;
-
-	private String loadBalancerStatus;
 
 	private String tags;
 
@@ -66,6 +52,20 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 	private String loadBalancerId;
 
 	private String internetChargeType;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String addressType;
+
+	private String address;
+
+	private String resourceOwnerAccount;
+
+	private String ownerAccount;
+
+	private String loadBalancerStatus;
 
 	private String vpcId;
 
@@ -123,17 +123,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getResourceGroupId() {
 		return this.resourceGroupId;
 	}
@@ -156,28 +145,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getAddressType() {
-		return this.addressType;
-	}
-
-	public void setAddressType(String addressType) {
-		this.addressType = addressType;
-		if(addressType != null){
-			putQueryParameter("AddressType", addressType);
-		}
-	}
-
 	public String getSlaveZoneId() {
 		return this.slaveZoneId;
 	}
@@ -186,39 +153,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		this.slaveZoneId = slaveZoneId;
 		if(slaveZoneId != null){
 			putQueryParameter("SlaveZoneId", slaveZoneId);
-		}
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-		if(address != null){
-			putQueryParameter("Address", address);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
 		}
 	}
 
@@ -241,17 +175,6 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		this.serverId = serverId;
 		if(serverId != null){
 			putQueryParameter("ServerId", serverId);
-		}
-	}
-
-	public String getLoadBalancerStatus() {
-		return this.loadBalancerStatus;
-	}
-
-	public void setLoadBalancerStatus(String loadBalancerStatus) {
-		this.loadBalancerStatus = loadBalancerStatus;
-		if(loadBalancerStatus != null){
-			putQueryParameter("LoadBalancerStatus", loadBalancerStatus);
 		}
 	}
 
@@ -307,6 +230,83 @@ public class DescribeLoadBalancersRequest extends RpcAcsRequest<DescribeLoadBala
 		this.internetChargeType = internetChargeType;
 		if(internetChargeType != null){
 			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+		if(address != null){
+			putQueryParameter("Address", address);
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getLoadBalancerStatus() {
+		return this.loadBalancerStatus;
+	}
+
+	public void setLoadBalancerStatus(String loadBalancerStatus) {
+		this.loadBalancerStatus = loadBalancerStatus;
+		if(loadBalancerStatus != null){
+			putQueryParameter("LoadBalancerStatus", loadBalancerStatus);
 		}
 	}
 
