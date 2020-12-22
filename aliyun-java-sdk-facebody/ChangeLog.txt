@@ -1,6 +1,9 @@
 2020-12-22 Version: 1.2.8
 - Release InterpolateVideoFrame.
 
+2020-12-22 Version: 1.2.8
+- Release InterpolateVideoFrame.
+
 2020-11-24 Version: 1.2.7
 - Update SearchFace.
 
