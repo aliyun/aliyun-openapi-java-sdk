@@ -16,6 +16,7 @@ package com.aliyuncs.imm.model.v20170906;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.imm.Endpoint;
 
 /**
  * @author auto create
@@ -66,6 +67,10 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 	public ConvertOfficeFormatRequest() {
 		super("imm", "2017-09-06", "ConvertOfficeFormat", "imm");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSrcType() {

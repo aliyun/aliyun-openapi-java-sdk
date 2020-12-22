@@ -193,15 +193,11 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 			private String beard;
 
-			private String race;
-
 			private String mask;
 
 			private Float glassesConfidence;
 
 			private Float beardConfidence;
-
-			private Float raceConfidence;
 
 			private Float maskConfidence;
 
@@ -223,14 +219,6 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 			public void setBeard(String beard) {
 				this.beard = beard;
-			}
-
-			public String getRace() {
-				return this.race;
-			}
-
-			public void setRace(String race) {
-				this.race = race;
 			}
 
 			public String getMask() {
@@ -255,14 +243,6 @@ public class DetectImageFacesResponse extends AcsResponse {
 
 			public void setBeardConfidence(Float beardConfidence) {
 				this.beardConfidence = beardConfidence;
-			}
-
-			public Float getRaceConfidence() {
-				return this.raceConfidence;
-			}
-
-			public void setRaceConfidence(Float raceConfidence) {
-				this.raceConfidence = raceConfidence;
 			}
 
 			public Float getMaskConfidence() {

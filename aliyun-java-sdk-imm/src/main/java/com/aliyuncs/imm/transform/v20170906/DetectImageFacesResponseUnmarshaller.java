@@ -51,11 +51,9 @@ public class DetectImageFacesResponseUnmarshaller {
 			FaceAttributes faceAttributes = new FaceAttributes();
 			faceAttributes.setGlasses(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Glasses"));
 			faceAttributes.setBeard(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Beard"));
-			faceAttributes.setRace(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Race"));
 			faceAttributes.setMask(_ctx.stringValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.Mask"));
 			faceAttributes.setGlassesConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.GlassesConfidence"));
 			faceAttributes.setBeardConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.BeardConfidence"));
-			faceAttributes.setRaceConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.RaceConfidence"));
 			faceAttributes.setMaskConfidence(_ctx.floatValue("DetectImageFacesResponse.Faces["+ i +"].FaceAttributes.MaskConfidence"));
 
 			FaceBoundary faceBoundary = new FaceBoundary();

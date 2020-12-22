@@ -834,13 +834,9 @@ public class ListImagesResponse extends AcsResponse {
 
 				private String glasses;
 
-				private Float raceConfidence;
-
 				private String beard;
 
 				private Float maskConfidence;
-
-				private String race;
 
 				private Float beardConfidence;
 
@@ -866,14 +862,6 @@ public class ListImagesResponse extends AcsResponse {
 					this.glasses = glasses;
 				}
 
-				public Float getRaceConfidence() {
-					return this.raceConfidence;
-				}
-
-				public void setRaceConfidence(Float raceConfidence) {
-					this.raceConfidence = raceConfidence;
-				}
-
 				public String getBeard() {
 					return this.beard;
 				}
@@ -888,14 +876,6 @@ public class ListImagesResponse extends AcsResponse {
 
 				public void setMaskConfidence(Float maskConfidence) {
 					this.maskConfidence = maskConfidence;
-				}
-
-				public String getRace() {
-					return this.race;
-				}
-
-				public void setRace(String race) {
-					this.race = race;
 				}
 
 				public Float getBeardConfidence() {
@@ -1087,7 +1067,7 @@ public class ListImagesResponse extends AcsResponse {
 
 				private Integer left;
 
-				private Integer left1;
+				private Integer top;
 
 				private Integer width;
 
@@ -1101,12 +1081,12 @@ public class ListImagesResponse extends AcsResponse {
 					this.left = left;
 				}
 
-				public Integer getLeft1() {
-					return this.left1;
+				public Integer getTop() {
+					return this.top;
 				}
 
-				public void setLeft1(Integer left1) {
-					this.left1 = left1;
+				public void setTop(Integer top) {
+					this.top = top;
 				}
 
 				public Integer getWidth() {

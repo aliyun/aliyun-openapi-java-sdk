@@ -628,13 +628,9 @@ public class ListVideoFramesResponse extends AcsResponse {
 
 				private String glasses;
 
-				private Float raceConfidence;
-
 				private String beard;
 
 				private Float maskConfidence;
-
-				private String race;
 
 				private Float beardConfidence;
 
@@ -660,14 +656,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 					this.glasses = glasses;
 				}
 
-				public Float getRaceConfidence() {
-					return this.raceConfidence;
-				}
-
-				public void setRaceConfidence(Float raceConfidence) {
-					this.raceConfidence = raceConfidence;
-				}
-
 				public String getBeard() {
 					return this.beard;
 				}
@@ -682,14 +670,6 @@ public class ListVideoFramesResponse extends AcsResponse {
 
 				public void setMaskConfidence(Float maskConfidence) {
 					this.maskConfidence = maskConfidence;
-				}
-
-				public String getRace() {
-					return this.race;
-				}
-
-				public void setRace(String race) {
-					this.race = race;
 				}
 
 				public Float getBeardConfidence() {

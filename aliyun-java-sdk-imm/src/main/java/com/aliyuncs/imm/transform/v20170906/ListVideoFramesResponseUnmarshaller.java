@@ -103,10 +103,8 @@ public class ListVideoFramesResponseUnmarshaller {
 				FaceAttributes faceAttributes = new FaceAttributes();
 				faceAttributes.setGlassesConfidence(_ctx.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.GlassesConfidence"));
 				faceAttributes.setGlasses(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.Glasses"));
-				faceAttributes.setRaceConfidence(_ctx.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.RaceConfidence"));
 				faceAttributes.setBeard(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.Beard"));
 				faceAttributes.setMaskConfidence(_ctx.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.MaskConfidence"));
-				faceAttributes.setRace(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.Race"));
 				faceAttributes.setBeardConfidence(_ctx.floatValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.BeardConfidence"));
 				faceAttributes.setMask(_ctx.stringValue("ListVideoFramesResponse.Frames["+ i +"].Faces["+ j +"].FaceAttributes.Mask"));
 
