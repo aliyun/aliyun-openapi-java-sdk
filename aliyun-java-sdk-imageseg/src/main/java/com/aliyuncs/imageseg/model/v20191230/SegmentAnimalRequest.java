@@ -25,6 +25,8 @@ import com.aliyuncs.imageseg.Endpoint;
 public class SegmentAnimalRequest extends RpcAcsRequest<SegmentAnimalResponse> {
 	   
 
+	private String returnForm;
+
 	private String imageURL;
 	public SegmentAnimalRequest() {
 		super("imageseg", "2019-12-30", "SegmentAnimal", "imageseg");
@@ -33,6 +35,17 @@ public class SegmentAnimalRequest extends RpcAcsRequest<SegmentAnimalResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReturnForm() {
+		return this.returnForm;
+	}
+
+	public void setReturnForm(String returnForm) {
+		this.returnForm = returnForm;
+		if(returnForm != null){
+			putQueryParameter("ReturnForm", returnForm);
+		}
 	}
 
 	public String getImageURL() {
