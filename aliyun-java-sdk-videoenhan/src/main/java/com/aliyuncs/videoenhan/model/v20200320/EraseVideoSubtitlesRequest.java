@@ -27,15 +27,15 @@ public class EraseVideoSubtitlesRequest extends RpcAcsRequest<EraseVideoSubtitle
 
 	private Float bH;
 
-	private String videoUrl;
-
 	private Float bW;
 
 	private Float bX;
 
 	private Float bY;
+
+	private String videoUrl;
 	public EraseVideoSubtitlesRequest() {
-		super("videoenhan", "2020-03-20", "EraseVideoSubtitles", "videoenhan");
+		super("videoenhan", "2020-03-20", "EraseVideoSubtitles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,17 +51,6 @@ public class EraseVideoSubtitlesRequest extends RpcAcsRequest<EraseVideoSubtitle
 		this.bH = bH;
 		if(bH != null){
 			putBodyParameter("BH", bH.toString());
-		}
-	}
-
-	public String getVideoUrl() {
-		return this.videoUrl;
-	}
-
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
-		if(videoUrl != null){
-			putBodyParameter("VideoUrl", videoUrl);
 		}
 	}
 
@@ -95,6 +84,17 @@ public class EraseVideoSubtitlesRequest extends RpcAcsRequest<EraseVideoSubtitle
 		this.bY = bY;
 		if(bY != null){
 			putBodyParameter("BY", bY.toString());
+		}
+	}
+
+	public String getVideoUrl() {
+		return this.videoUrl;
+	}
+
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+		if(videoUrl != null){
+			putBodyParameter("VideoUrl", videoUrl);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class AbstractFilmVideoRequest extends RpcAcsRequest<AbstractFilmVideoRes
 
 	private String videoUrl;
 	public AbstractFilmVideoRequest() {
-		super("videoenhan", "2020-03-20", "AbstractFilmVideo", "videoenhan");
+		super("videoenhan", "2020-03-20", "AbstractFilmVideo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

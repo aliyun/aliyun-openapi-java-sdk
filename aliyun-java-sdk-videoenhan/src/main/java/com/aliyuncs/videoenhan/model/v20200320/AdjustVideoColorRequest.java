@@ -35,7 +35,7 @@ public class AdjustVideoColorRequest extends RpcAcsRequest<AdjustVideoColorRespo
 
 	private String videoFormat;
 	public AdjustVideoColorRequest() {
-		super("videoenhan", "2020-03-20", "AdjustVideoColor", "videoenhan");
+		super("videoenhan", "2020-03-20", "AdjustVideoColor");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
