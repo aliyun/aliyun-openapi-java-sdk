@@ -31,7 +31,7 @@ public class SwapFacialFeaturesRequest extends RpcAcsRequest<SwapFacialFeaturesR
 
 	private String editPart;
 	public SwapFacialFeaturesRequest() {
-		super("facebody", "2019-12-30", "SwapFacialFeatures");
+		super("facebody", "2019-12-30", "SwapFacialFeatures", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
