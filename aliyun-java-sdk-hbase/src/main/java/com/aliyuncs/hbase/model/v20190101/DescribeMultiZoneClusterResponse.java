@@ -115,6 +115,8 @@ public class DescribeMultiZoneClusterResponse extends AcsResponse {
 
 	private String vpcId;
 
+	private String resourceGroupId;
+
 	private List<MultiZoneInstanceModel> multiZoneInstanceModels;
 
 	private List<Tag> tags;
@@ -477,6 +479,14 @@ public class DescribeMultiZoneClusterResponse extends AcsResponse {
 
 	public void setVpcId(String vpcId) {
 		this.vpcId = vpcId;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<MultiZoneInstanceModel> getMultiZoneInstanceModels() {

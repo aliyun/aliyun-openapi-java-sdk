@@ -111,6 +111,8 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private Integer coldStorageSize;
 
+	private String resourceGroupId;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -455,6 +457,14 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setColdStorageSize(Integer coldStorageSize) {
 		this.coldStorageSize = coldStorageSize;
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
 	}
 
 	public List<Tag> getTags() {

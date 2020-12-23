@@ -15,20 +15,16 @@
 package com.aliyuncs.hbase.model.v20190101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hbase.transform.v20190101.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.hbase.transform.v20190101.AllocatePublicNetworkAddressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class AllocatePublicNetworkAddressResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String clusterId;
-
-	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public AllocatePublicNetworkAddressResponse getInstance(UnmarshallerContext context) {
+		return	AllocatePublicNetworkAddressResponseUnmarshaller.unmarshall(this, context);
 	}
 }

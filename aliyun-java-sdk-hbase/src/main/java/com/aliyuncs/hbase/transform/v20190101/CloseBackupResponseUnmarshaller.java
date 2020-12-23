@@ -14,18 +14,16 @@
 
 package com.aliyuncs.hbase.transform.v20190101;
 
-import com.aliyuncs.hbase.model.v20190101.CreateInstanceResponse;
+import com.aliyuncs.hbase.model.v20190101.CloseBackupResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateInstanceResponseUnmarshaller {
+public class CloseBackupResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
+	public static CloseBackupResponse unmarshall(CloseBackupResponse closeBackupResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setClusterId(_ctx.stringValue("CreateInstanceResponse.ClusterId"));
-		createInstanceResponse.setOrderId(_ctx.stringValue("CreateInstanceResponse.OrderId"));
+		closeBackupResponse.setRequestId(_ctx.stringValue("CloseBackupResponse.RequestId"));
 	 
-	 	return createInstanceResponse;
+	 	return closeBackupResponse;
 	}
 }

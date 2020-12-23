@@ -149,6 +149,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private Integer duration;
 
+		private String resourceGroupId;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -437,6 +439,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		public void setDuration(Integer duration) {
 			this.duration = duration;
+		}
+
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {

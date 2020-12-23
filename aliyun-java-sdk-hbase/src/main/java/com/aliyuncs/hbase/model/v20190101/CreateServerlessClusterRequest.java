@@ -33,6 +33,8 @@ public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerle
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private String engine;
 
 	private Integer autoRenewPeriod;
@@ -104,6 +106,17 @@ public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerle
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
