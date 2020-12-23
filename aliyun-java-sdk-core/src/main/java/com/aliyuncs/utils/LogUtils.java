@@ -88,11 +88,11 @@ public class LogUtils {
     }
 
     public static String utcNow() {
-        formatLocaleNow(TimeZone.getTimeZone("UTC"));
+        return formatLocaleNow(TimeZone.getTimeZone("UTC"));
     }
 
     public static String localeNow() {
-        formatLocaleNow(TimeZone.getDefault());
+        return formatLocaleNow(TimeZone.getDefault());
     }
 
     private static String formatLocaleNow(TimeZone tz) {
