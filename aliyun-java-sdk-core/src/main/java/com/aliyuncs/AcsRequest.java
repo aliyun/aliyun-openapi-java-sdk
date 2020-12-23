@@ -39,7 +39,7 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     public String productEndpointRegional = null;
     public String productNetwork = "public";
     public String productSuffix = "";
-    public String signatureMethod = "HMAC-SHA1";
+    public String signatureMethod = "";
 
     public AcsRequest(String product) {
         super(null);

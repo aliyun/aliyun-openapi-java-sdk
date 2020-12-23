@@ -35,19 +35,19 @@ public abstract class Signer {
     private final static Signer BEARER_TOKEN_SIGNER = new BearerTokenSigner();
 
     public static Signer getSigner(AlibabaCloudCredentials credentials, AcsRequest request) {
+        if (request != null && !request.getSysSignatureMethod().isEmpty()) {
+            String signatureMethod = request.getSysSignatureMethod();
+            if ("HMAC-SM3".equals(signatureMethod)) {
+                return HMACSM3_SIGNER;
+            }
+            return HMACSHA1_SIGNER;
+        }
         if (credentials instanceof KeyPairCredentials) {
             return SHA256_WITH_RSA_SIGNER;
         } else if (credentials instanceof BearerTokenCredentials) {
             return BEARER_TOKEN_SIGNER;
-        } else {
-            if(request != null){
-                String signatureMethod = request.getSysSignatureMethod();
-                if ("HMAC-SM3".equals(signatureMethod)) {
-                    return HMACSM3_SIGNER;
-                }
-            }
-            return HMACSHA1_SIGNER;
         }
+        return HMACSHA1_SIGNER;
     }
 
     public abstract String signString(String stringToSign, AlibabaCloudCredentials credentials);
