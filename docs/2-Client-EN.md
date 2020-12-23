@@ -150,5 +150,12 @@ public class Main {
 }
 ```
 
+### Using HmacSM3 Signature Method to request API
+
+```java
+// IClientProfile profile
+profile.setSignatureMethod("HMAC-SM3");
+```
+
 ***
 [← Installation](1-Installation-EN.md) | Client & Credentials[(中文)](2-Client-CN.md) | [Connection Pool →](3-Pool-EN.md)

@@ -39,7 +39,6 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
     public String productEndpointRegional = null;
     public String productNetwork = "public";
     public String productSuffix = "";
-    public String signatureMethod = "";
 
     public AcsRequest(String product) {
         super(null);
@@ -404,13 +403,5 @@ public abstract class AcsRequest<T extends AcsResponse> extends HttpRequest {
             this.userAgentConfig = new UserAgentConfig();
         }
         this.userAgentConfig.append(key, value);
-    }
-
-    public void setSysSignatureMethod(String signatureMethod) {
-        this.signatureMethod = signatureMethod;
-    }
-
-    public String getSysSignatureMethod(){
-        return this.signatureMethod;
     }
 }
