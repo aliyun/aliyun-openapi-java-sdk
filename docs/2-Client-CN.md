@@ -148,5 +148,12 @@ public class Main {
 }
 ```
 
+### 使用 HmacSM3 签名算法调用
+
+```java
+// IClientProfile profile
+profile.setSignatureMethod("HMAC-SM3");
+```
+
 ***
 [← 安装](1-Installation-CN.md) | 客户端与凭证[(English)](2-Client-EN.md) | [连接池 →](3-Pool-CN.md)

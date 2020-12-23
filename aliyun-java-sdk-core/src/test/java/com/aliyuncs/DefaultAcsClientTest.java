@@ -44,10 +44,13 @@ import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Iterator;
+import java.util.Map;
 
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 @PowerMockIgnore("javax.net.ssl.*")
 @RunWith(PowerMockRunner.class)
@@ -222,7 +225,6 @@ public class DefaultAcsClientTest {
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
         when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
         when(request.getResponseClass()).thenReturn(responseClass);
-        when(request.getSysSignatureMethod()).thenReturn("");
         return request;
     }
 
