@@ -30,8 +30,8 @@ public class DetectCelebrityResponseUnmarshaller {
 		detectCelebrityResponse.setRequestId(_ctx.stringValue("DetectCelebrityResponse.RequestId"));
 
 		Data data = new Data();
-		data.setWidth(_ctx.integerValue("DetectCelebrityResponse.Data.Width"));
 		data.setHeight(_ctx.integerValue("DetectCelebrityResponse.Data.Height"));
+		data.setWidth(_ctx.integerValue("DetectCelebrityResponse.Data.Width"));
 
 		List<FaceRecognizeResult> faceRecognizeResults = new ArrayList<FaceRecognizeResult>();
 		for (int i = 0; i < _ctx.lengthValue("DetectCelebrityResponse.Data.FaceRecognizeResults.Length"); i++) {

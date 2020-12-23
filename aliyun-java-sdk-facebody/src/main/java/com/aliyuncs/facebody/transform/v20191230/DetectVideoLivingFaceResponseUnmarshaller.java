@@ -34,8 +34,8 @@ public class DetectVideoLivingFaceResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectVideoLivingFaceResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setLiveConfidence(_ctx.floatValue("DetectVideoLivingFaceResponse.Data.Elements["+ i +"].LiveConfidence"));
 			element.setFaceConfidence(_ctx.floatValue("DetectVideoLivingFaceResponse.Data.Elements["+ i +"].FaceConfidence"));
+			element.setLiveConfidence(_ctx.floatValue("DetectVideoLivingFaceResponse.Data.Elements["+ i +"].LiveConfidence"));
 
 			List<Integer> rect = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("DetectVideoLivingFaceResponse.Data.Elements["+ i +"].Rect.Length"); j++) {
