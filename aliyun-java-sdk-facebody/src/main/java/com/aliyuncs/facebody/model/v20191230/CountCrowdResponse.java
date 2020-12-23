@@ -46,17 +46,9 @@ public class CountCrowdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer peopleNumber;
-
 		private String hotMap;
 
-		public Integer getPeopleNumber() {
-			return this.peopleNumber;
-		}
-
-		public void setPeopleNumber(Integer peopleNumber) {
-			this.peopleNumber = peopleNumber;
-		}
+		private Integer peopleNumber;
 
 		public String getHotMap() {
 			return this.hotMap;
@@ -64,6 +56,14 @@ public class CountCrowdResponse extends AcsResponse {
 
 		public void setHotMap(String hotMap) {
 			this.hotMap = hotMap;
+		}
+
+		public Integer getPeopleNumber() {
+			return this.peopleNumber;
+		}
+
+		public void setPeopleNumber(Integer peopleNumber) {
+			this.peopleNumber = peopleNumber;
 		}
 	}
 
