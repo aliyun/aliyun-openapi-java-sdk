@@ -71,6 +71,7 @@ public class DescribeInstancesResponseUnmarshaller {
 			instance.setCoreDiskCount(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CoreDiskCount"));
 			instance.setAutoRenewal(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].AutoRenewal"));
 			instance.setDuration(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Duration"));
+			instance.setResourceGroupId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ResourceGroupId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].Tags.Length"); j++) {

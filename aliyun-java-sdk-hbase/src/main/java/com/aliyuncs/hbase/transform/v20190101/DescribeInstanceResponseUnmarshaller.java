@@ -69,6 +69,7 @@ public class DescribeInstanceResponseUnmarshaller {
 		describeInstanceResponse.setAutoRenewal(_ctx.booleanValue("DescribeInstanceResponse.AutoRenewal"));
 		describeInstanceResponse.setDuration(_ctx.integerValue("DescribeInstanceResponse.Duration"));
 		describeInstanceResponse.setColdStorageSize(_ctx.integerValue("DescribeInstanceResponse.ColdStorageSize"));
+		describeInstanceResponse.setResourceGroupId(_ctx.stringValue("DescribeInstanceResponse.ResourceGroupId"));
 
 		List<Tag> tags = new ArrayList<Tag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceResponse.Tags.Length"); i++) {

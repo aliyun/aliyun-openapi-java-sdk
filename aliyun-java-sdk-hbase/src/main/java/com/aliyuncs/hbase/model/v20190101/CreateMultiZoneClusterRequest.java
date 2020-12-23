@@ -33,6 +33,8 @@ public class CreateMultiZoneClusterRequest extends RpcAcsRequest<CreateMultiZone
 
 	private String logDiskType;
 
+	private String resourceGroupId;
+
 	private String primaryVSwitchId;
 
 	private String logInstanceType;
@@ -128,6 +130,17 @@ public class CreateMultiZoneClusterRequest extends RpcAcsRequest<CreateMultiZone
 		this.logDiskType = logDiskType;
 		if(logDiskType != null){
 			putQueryParameter("LogDiskType", logDiskType);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

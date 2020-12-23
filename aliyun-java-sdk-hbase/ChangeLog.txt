@@ -1,3 +1,6 @@
+2020-12-23 Version: 2.9.0
+- Add 2019 openapi.
+
 2020-11-30 Version: 2.8.4
 - Add SourceType for severless instance.
 
