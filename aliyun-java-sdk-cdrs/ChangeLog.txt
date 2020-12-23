@@ -1,3 +1,6 @@
+2020-12-23 Version: 1.0.0
+- CDRS First edition.
+
 2020-12-15 Version: 1.0.0
 - CDRS First edition.
 
