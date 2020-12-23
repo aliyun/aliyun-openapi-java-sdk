@@ -25,31 +25,20 @@ import com.aliyuncs.facebody.Endpoint;
 public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 	   
 
-	private Integer limit;
-
 	private String dbNames;
 
 	private String dbName;
 
 	private String imageUrl;
+
+	private Integer limit;
 	public SearchFaceRequest() {
-		super("facebody", "2019-12-30", "SearchFace");
+		super("facebody", "2019-12-30", "SearchFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getLimit() {
-		return this.limit;
-	}
-
-	public void setLimit(Integer limit) {
-		this.limit = limit;
-		if(limit != null){
-			putBodyParameter("Limit", limit.toString());
-		}
 	}
 
 	public String getDbNames() {
@@ -82,6 +71,17 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putBodyParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public Integer getLimit() {
+		return this.limit;
+	}
+
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putBodyParameter("Limit", limit.toString());
 		}
 	}
 

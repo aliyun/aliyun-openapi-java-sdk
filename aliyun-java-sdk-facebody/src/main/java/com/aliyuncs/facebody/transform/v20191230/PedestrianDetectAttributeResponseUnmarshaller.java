@@ -49,65 +49,65 @@ public class PedestrianDetectAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("PedestrianDetectAttributeResponse.Data.Attributes.Length"); i++) {
 			AttributesItem attributesItem = new AttributesItem();
 
+			Age age = new Age();
+			age.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Age.Name"));
+			age.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Age.Score"));
+			attributesItem.setAge(age);
+
 			Backpack backpack = new Backpack();
-			backpack.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Backpack.Score"));
 			backpack.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Backpack.Name"));
+			backpack.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Backpack.Score"));
 			attributesItem.setBackpack(backpack);
 
-			LowerWear lowerWear = new LowerWear();
-			lowerWear.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerWear.Score"));
-			lowerWear.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerWear.Name"));
-			attributesItem.setLowerWear(lowerWear);
-
-			ShoulderBag shoulderBag = new ShoulderBag();
-			shoulderBag.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].ShoulderBag.Score"));
-			shoulderBag.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].ShoulderBag.Name"));
-			attributesItem.setShoulderBag(shoulderBag);
-
-			Orient orient = new Orient();
-			orient.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Orient.Score"));
-			orient.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Orient.Name"));
-			attributesItem.setOrient(orient);
-
-			LowerColor lowerColor = new LowerColor();
-			lowerColor.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerColor.Score"));
-			lowerColor.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerColor.Name"));
-			attributesItem.setLowerColor(lowerColor);
+			Gender gender = new Gender();
+			gender.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Gender.Name"));
+			gender.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Gender.Score"));
+			attributesItem.setGender(gender);
 
 			Glasses glasses = new Glasses();
-			glasses.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Glasses.Score"));
 			glasses.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Glasses.Name"));
+			glasses.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Glasses.Score"));
 			attributesItem.setGlasses(glasses);
 
-			UpperColor upperColor = new UpperColor();
-			upperColor.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperColor.Score"));
-			upperColor.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperColor.Name"));
-			attributesItem.setUpperColor(upperColor);
-
 			Handbag handbag = new Handbag();
-			handbag.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Handbag.Score"));
 			handbag.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Handbag.Name"));
+			handbag.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Handbag.Score"));
 			attributesItem.setHandbag(handbag);
 
 			Hat hat = new Hat();
-			hat.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Hat.Score"));
 			hat.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Hat.Name"));
+			hat.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Hat.Score"));
 			attributesItem.setHat(hat);
 
-			Gender gender = new Gender();
-			gender.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Gender.Score"));
-			gender.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Gender.Name"));
-			attributesItem.setGender(gender);
+			LowerColor lowerColor = new LowerColor();
+			lowerColor.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerColor.Name"));
+			lowerColor.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerColor.Score"));
+			attributesItem.setLowerColor(lowerColor);
+
+			LowerWear lowerWear = new LowerWear();
+			lowerWear.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerWear.Name"));
+			lowerWear.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].LowerWear.Score"));
+			attributesItem.setLowerWear(lowerWear);
+
+			Orient orient = new Orient();
+			orient.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Orient.Name"));
+			orient.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Orient.Score"));
+			attributesItem.setOrient(orient);
+
+			ShoulderBag shoulderBag = new ShoulderBag();
+			shoulderBag.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].ShoulderBag.Name"));
+			shoulderBag.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].ShoulderBag.Score"));
+			attributesItem.setShoulderBag(shoulderBag);
+
+			UpperColor upperColor = new UpperColor();
+			upperColor.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperColor.Name"));
+			upperColor.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperColor.Score"));
+			attributesItem.setUpperColor(upperColor);
 
 			UpperWear upperWear = new UpperWear();
-			upperWear.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperWear.Score"));
 			upperWear.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperWear.Name"));
+			upperWear.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].UpperWear.Score"));
 			attributesItem.setUpperWear(upperWear);
-
-			Age age = new Age();
-			age.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Age.Score"));
-			age.setName(_ctx.stringValue("PedestrianDetectAttributeResponse.Data.Attributes["+ i +"].Age.Name"));
-			attributesItem.setAge(age);
 
 			attributes.add(attributesItem);
 		}
@@ -117,10 +117,10 @@ public class PedestrianDetectAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("PedestrianDetectAttributeResponse.Data.Boxes.Length"); i++) {
 			BoxesItem boxesItem = new BoxesItem();
 			boxesItem.setScore(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].Score"));
-			boxesItem.setBottomRightY(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].BottomRightY"));
-			boxesItem.setBottomRightX(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].BottomRightX"));
-			boxesItem.setTopLeftY(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].TopLeftY"));
 			boxesItem.setTopLeftX(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].TopLeftX"));
+			boxesItem.setTopLeftY(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].TopLeftY"));
+			boxesItem.setBottomRightX(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].BottomRightX"));
+			boxesItem.setBottomRightY(_ctx.floatValue("PedestrianDetectAttributeResponse.Data.Boxes["+ i +"].BottomRightY"));
 
 			boxes.add(boxesItem);
 		}

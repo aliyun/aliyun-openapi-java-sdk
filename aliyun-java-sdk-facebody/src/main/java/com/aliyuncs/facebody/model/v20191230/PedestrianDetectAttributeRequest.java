@@ -27,7 +27,7 @@ public class PedestrianDetectAttributeRequest extends RpcAcsRequest<PedestrianDe
 
 	private String imageURL;
 	public PedestrianDetectAttributeRequest() {
-		super("facebody", "2019-12-30", "PedestrianDetectAttribute");
+		super("facebody", "2019-12-30", "PedestrianDetectAttribute", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -91,13 +91,21 @@ public class RecognizePublicFaceResponse extends AcsResponse {
 
 			public static class Result {
 
+				private String label;
+
 				private String suggestion;
 
 				private Float rate;
 
-				private String label;
-
 				private List<SubResult> subResults;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -115,14 +123,6 @@ public class RecognizePublicFaceResponse extends AcsResponse {
 					this.rate = rate;
 				}
 
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
-
 				public List<SubResult> getSubResults() {
 					return this.subResults;
 				}
@@ -133,15 +133,23 @@ public class RecognizePublicFaceResponse extends AcsResponse {
 
 				public static class SubResult {
 
+					private Float h;
+
 					private Float w;
 
 					private Float x;
 
-					private Float h;
-
 					private Float y;
 
 					private List<Face> faces;
+
+					public Float getH() {
+						return this.h;
+					}
+
+					public void setH(Float h) {
+						this.h = h;
+					}
 
 					public Float getW() {
 						return this.w;
@@ -157,14 +165,6 @@ public class RecognizePublicFaceResponse extends AcsResponse {
 
 					public void setX(Float x) {
 						this.x = x;
-					}
-
-					public Float getH() {
-						return this.h;
-					}
-
-					public void setH(Float h) {
-						this.h = h;
 					}
 
 					public Float getY() {
@@ -185,19 +185,11 @@ public class RecognizePublicFaceResponse extends AcsResponse {
 
 					public static class Face {
 
-						private Float rate;
-
 						private String id;
 
 						private String name;
 
-						public Float getRate() {
-							return this.rate;
-						}
-
-						public void setRate(Float rate) {
-							this.rate = rate;
-						}
+						private Float rate;
 
 						public String getId() {
 							return this.id;
@@ -213,6 +205,14 @@ public class RecognizePublicFaceResponse extends AcsResponse {
 
 						public void setName(String name) {
 							this.name = name;
+						}
+
+						public Float getRate() {
+							return this.rate;
+						}
+
+						public void setRate(Float rate) {
+							this.rate = rate;
 						}
 					}
 				}

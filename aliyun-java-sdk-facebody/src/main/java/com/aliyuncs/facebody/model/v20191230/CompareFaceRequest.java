@@ -29,7 +29,7 @@ public class CompareFaceRequest extends RpcAcsRequest<CompareFaceResponse> {
 
 	private String imageURLA;
 	public CompareFaceRequest() {
-		super("facebody", "2019-12-30", "CompareFace");
+		super("facebody", "2019-12-30", "CompareFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
