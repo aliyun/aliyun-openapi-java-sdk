@@ -24,6 +24,7 @@ public class DefaultProfile implements IClientProfile {
     private Logger logger;
     private String logFormat = DEFAULT_LOG_FORMAT;
     private boolean isCloseTrace = false;
+    private String signatureMethod = "";
 
     private DefaultProfile() {
     }
@@ -204,5 +205,15 @@ public class DefaultProfile implements IClientProfile {
     @Override
     public void setCloseTrace(boolean closeTrace) {
         isCloseTrace = closeTrace;
+    }
+
+    @Override
+    public void setSignatureMethod(String signatureMethod) {
+        this.signatureMethod = signatureMethod;
+    }
+
+    @Override
+    public String getSignatureMethod() {
+        return this.signatureMethod;
     }
 }

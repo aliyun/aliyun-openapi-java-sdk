@@ -174,6 +174,7 @@ public class DefaultAcsClientTest {
         HttpClientConfig httpClientConfig = mock(HttpClientConfig.class);
         when(httpClientConfig.getProtocolType()).thenReturn(ProtocolType.HTTP);
         when(profile.getHttpClientConfig()).thenReturn(httpClientConfig);
+        when(profile.getSignatureMethod()).thenReturn("");
         PowerMockito.mockStatic(HttpUtil.class);
         BDDMockito.given(HttpUtil.debugHttpRequest(any(HttpRequest.class))).willReturn(null);
         BDDMockito.given(HttpUtil.debugHttpResponse(any(HttpResponse.class))).willReturn(null);
@@ -200,6 +201,7 @@ public class DefaultAcsClientTest {
         HttpClientConfig httpClientConfig = mock(HttpClientConfig.class);
         when(httpClientConfig.getProtocolType()).thenReturn(ProtocolType.HTTP);
         when(profile.getHttpClientConfig()).thenReturn(httpClientConfig);
+        when(profile.getSignatureMethod()).thenReturn("");
         PowerMockito.mockStatic(HttpUtil.class);
         BDDMockito.given(HttpUtil.debugHttpRequest(any(HttpRequest.class))).willReturn(null);
         BDDMockito.given(HttpUtil.debugHttpResponse(any(HttpResponse.class))).willReturn(null);
@@ -222,7 +224,6 @@ public class DefaultAcsClientTest {
         Mockito.doReturn(ProtocolType.HTTP).when(request).getSysProtocol();
         when(request.getSysAcceptFormat()).thenReturn(FormatType.JSON);
         when(request.getResponseClass()).thenReturn(responseClass);
-        when(request.getSysSignatureMethod()).thenReturn("");
         return request;
     }
 
@@ -456,6 +457,7 @@ public class DefaultAcsClientTest {
         when(credential.getSecurityToken()).thenReturn(null);
         DefaultProfile profile = mock(DefaultProfile.class);
         when(profile.getCredential()).thenReturn(credential);
+        when(profile.getSignatureMethod()).thenReturn("");
         DefaultAcsClient client = new DefaultAcsClient(profile);
         DefaultEndpointResolver endpointResolver = mock(DefaultEndpointResolver.class);
         client.setEndpointResolver(endpointResolver);

@@ -79,4 +79,8 @@ public interface IClientProfile {
          boolean isCloseTrace();
 
          void setCloseTrace(boolean closeTrace);
+
+         void setSignatureMethod(String signatureMethod);
+
+         String getSignatureMethod();
 }
