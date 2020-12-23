@@ -81,6 +81,14 @@ public class DescribeHiTSDBInstanceResponse extends AcsResponse {
 
 	private String diskCategory;
 
+	private String status;
+
+	private String paymentType;
+
+	private Long createTime;
+
+	private Long expiredTime;
+
 	private List<SecurityIp> securityIpList;
 
 	public String getRequestId() {
@@ -305,6 +313,38 @@ public class DescribeHiTSDBInstanceResponse extends AcsResponse {
 
 	public void setDiskCategory(String diskCategory) {
 		this.diskCategory = diskCategory;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getPaymentType() {
+		return this.paymentType;
+	}
+
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
+	public Long getExpiredTime() {
+		return this.expiredTime;
+	}
+
+	public void setExpiredTime(Long expiredTime) {
+		this.expiredTime = expiredTime;
 	}
 
 	public List<SecurityIp> getSecurityIpList() {

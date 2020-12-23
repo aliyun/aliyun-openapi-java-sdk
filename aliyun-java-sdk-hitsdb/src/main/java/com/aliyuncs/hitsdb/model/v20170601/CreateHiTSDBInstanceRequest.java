@@ -27,10 +27,6 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 
 	private Long resourceOwnerId;
 
-	private String connectionString;
-
-	private String clientToken;
-
 	private String instanceClass;
 
 	private String duration;
@@ -75,28 +71,6 @@ public class CreateHiTSDBInstanceRequest extends RpcAcsRequest<CreateHiTSDBInsta
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-		if(connectionString != null){
-			putQueryParameter("ConnectionString", connectionString);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

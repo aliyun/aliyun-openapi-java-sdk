@@ -54,6 +54,10 @@ public class DescribeHiTSDBInstanceResponseUnmarshaller {
 		describeHiTSDBInstanceResponse.setSeries(_ctx.integerValue("DescribeHiTSDBInstanceResponse.Series"));
 		describeHiTSDBInstanceResponse.setRDSStatus(_ctx.stringValue("DescribeHiTSDBInstanceResponse.RDSStatus"));
 		describeHiTSDBInstanceResponse.setDiskCategory(_ctx.stringValue("DescribeHiTSDBInstanceResponse.DiskCategory"));
+		describeHiTSDBInstanceResponse.setStatus(_ctx.stringValue("DescribeHiTSDBInstanceResponse.Status"));
+		describeHiTSDBInstanceResponse.setPaymentType(_ctx.stringValue("DescribeHiTSDBInstanceResponse.PaymentType"));
+		describeHiTSDBInstanceResponse.setCreateTime(_ctx.longValue("DescribeHiTSDBInstanceResponse.CreateTime"));
+		describeHiTSDBInstanceResponse.setExpiredTime(_ctx.longValue("DescribeHiTSDBInstanceResponse.ExpiredTime"));
 
 		List<SecurityIp> securityIpList = new ArrayList<SecurityIp>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHiTSDBInstanceResponse.SecurityIpList.Length"); i++) {

@@ -119,6 +119,14 @@ public class DescribeHiTSDBInstanceListResponse extends AcsResponse {
 
 		private String vswitchId;
 
+		private String status;
+
+		private String paymentType;
+
+		private Long createTime;
+
+		private Long expiredTime;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -285,6 +293,38 @@ public class DescribeHiTSDBInstanceListResponse extends AcsResponse {
 
 		public void setVswitchId(String vswitchId) {
 			this.vswitchId = vswitchId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
 		}
 	}
 
