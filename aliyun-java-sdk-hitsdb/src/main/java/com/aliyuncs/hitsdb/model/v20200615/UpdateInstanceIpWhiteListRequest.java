@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20170601;
+package com.aliyuncs.hitsdb.model.v20200615;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,7 +22,7 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeHiTSDBInstanceRequest extends RpcAcsRequest<DescribeHiTSDBInstanceResponse> {
+public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstanceIpWhiteListResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -35,9 +35,13 @@ public class DescribeHiTSDBInstanceRequest extends RpcAcsRequest<DescribeHiTSDBI
 
 	private Long ownerId;
 
+	private String groupName;
+
+	private String securityIpList;
+
 	private String instanceId;
-	public DescribeHiTSDBInstanceRequest() {
-		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstance", "hitsdb");
+	public UpdateInstanceIpWhiteListRequest() {
+		super("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -100,6 +104,28 @@ public class DescribeHiTSDBInstanceRequest extends RpcAcsRequest<DescribeHiTSDBI
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getSecurityIpList() {
+		return this.securityIpList;
+	}
+
+	public void setSecurityIpList(String securityIpList) {
+		this.securityIpList = securityIpList;
+		if(securityIpList != null){
+			putQueryParameter("SecurityIpList", securityIpList);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -112,8 +138,8 @@ public class DescribeHiTSDBInstanceRequest extends RpcAcsRequest<DescribeHiTSDBI
 	}
 
 	@Override
-	public Class<DescribeHiTSDBInstanceResponse> getResponseClass() {
-		return DescribeHiTSDBInstanceResponse.class;
+	public Class<UpdateInstanceIpWhiteListResponse> getResponseClass() {
+		return UpdateInstanceIpWhiteListResponse.class;
 	}
 
 }

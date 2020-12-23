@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20170601;
+package com.aliyuncs.hitsdb.model.v20200615;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,16 +22,20 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyHiTSDBInstanceClassRequest extends RpcAcsRequest<ModifyHiTSDBInstanceClassResponse> {
+public class GetLindormInstanceListRequest extends RpcAcsRequest<GetLindormInstanceListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String instanceClass;
+	private Integer supportEngine;
+
+	private Integer pageNumber;
 
 	private String securityToken;
 
-	private String instanceStorage;
+	private Integer pageSize;
+
+	private String queryStr;
 
 	private String resourceOwnerAccount;
 
@@ -39,9 +43,9 @@ public class ModifyHiTSDBInstanceClassRequest extends RpcAcsRequest<ModifyHiTSDB
 
 	private Long ownerId;
 
-	private String instanceId;
-	public ModifyHiTSDBInstanceClassRequest() {
-		super("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceClass", "hitsdb");
+	private String serviceType;
+	public GetLindormInstanceListRequest() {
+		super("hitsdb", "2020-06-15", "GetLindormInstanceList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,14 +64,25 @@ public class ModifyHiTSDBInstanceClassRequest extends RpcAcsRequest<ModifyHiTSDB
 		}
 	}
 
-	public String getInstanceClass() {
-		return this.instanceClass;
+	public Integer getSupportEngine() {
+		return this.supportEngine;
 	}
 
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putQueryParameter("InstanceClass", instanceClass);
+	public void setSupportEngine(Integer supportEngine) {
+		this.supportEngine = supportEngine;
+		if(supportEngine != null){
+			putQueryParameter("SupportEngine", supportEngine.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -82,14 +97,25 @@ public class ModifyHiTSDBInstanceClassRequest extends RpcAcsRequest<ModifyHiTSDB
 		}
 	}
 
-	public String getInstanceStorage() {
-		return this.instanceStorage;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setInstanceStorage(String instanceStorage) {
-		this.instanceStorage = instanceStorage;
-		if(instanceStorage != null){
-			putQueryParameter("InstanceStorage", instanceStorage);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getQueryStr() {
+		return this.queryStr;
+	}
+
+	public void setQueryStr(String queryStr) {
+		this.queryStr = queryStr;
+		if(queryStr != null){
+			putQueryParameter("QueryStr", queryStr);
 		}
 	}
 
@@ -126,20 +152,20 @@ public class ModifyHiTSDBInstanceClassRequest extends RpcAcsRequest<ModifyHiTSDB
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getServiceType() {
+		return this.serviceType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
+		if(serviceType != null){
+			putQueryParameter("ServiceType", serviceType);
 		}
 	}
 
 	@Override
-	public Class<ModifyHiTSDBInstanceClassResponse> getResponseClass() {
-		return ModifyHiTSDBInstanceClassResponse.class;
+	public Class<GetLindormInstanceListResponse> getResponseClass() {
+		return GetLindormInstanceListResponse.class;
 	}
 
 }

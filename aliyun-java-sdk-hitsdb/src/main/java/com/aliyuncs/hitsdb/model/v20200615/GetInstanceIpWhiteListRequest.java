@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20170601;
+package com.aliyuncs.hitsdb.model.v20200615;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,30 +22,24 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeHiTSDBInstanceListRequest extends RpcAcsRequest<DescribeHiTSDBInstanceListResponse> {
+public class GetInstanceIpWhiteListRequest extends RpcAcsRequest<GetInstanceIpWhiteListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String statusList;
-
-	private Integer pageNumber;
-
 	private String securityToken;
-
-	private Integer pageSize;
-
-	private String queryStr;
-
-	private String engineType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeHiTSDBInstanceListRequest() {
-		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceList", "hitsdb");
+
+	private String groupName;
+
+	private String instanceId;
+	public GetInstanceIpWhiteListRequest() {
+		super("hitsdb", "2020-06-15", "GetInstanceIpWhiteList", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,28 +58,6 @@ public class DescribeHiTSDBInstanceListRequest extends RpcAcsRequest<DescribeHiT
 		}
 	}
 
-	public String getStatusList() {
-		return this.statusList;
-	}
-
-	public void setStatusList(String statusList) {
-		this.statusList = statusList;
-		if(statusList != null){
-			putQueryParameter("StatusList", statusList);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -94,39 +66,6 @@ public class DescribeHiTSDBInstanceListRequest extends RpcAcsRequest<DescribeHiT
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getQueryStr() {
-		return this.queryStr;
-	}
-
-	public void setQueryStr(String queryStr) {
-		this.queryStr = queryStr;
-		if(queryStr != null){
-			putQueryParameter("QueryStr", queryStr);
-		}
-	}
-
-	public String getEngineType() {
-		return this.engineType;
-	}
-
-	public void setEngineType(String engineType) {
-		this.engineType = engineType;
-		if(engineType != null){
-			putQueryParameter("EngineType", engineType);
 		}
 	}
 
@@ -163,9 +102,31 @@ public class DescribeHiTSDBInstanceListRequest extends RpcAcsRequest<DescribeHiT
 		}
 	}
 
+	public String getGroupName() {
+		return this.groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+		if(groupName != null){
+			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeHiTSDBInstanceListResponse> getResponseClass() {
-		return DescribeHiTSDBInstanceListResponse.class;
+	public Class<GetInstanceIpWhiteListResponse> getResponseClass() {
+		return GetInstanceIpWhiteListResponse.class;
 	}
 
 }

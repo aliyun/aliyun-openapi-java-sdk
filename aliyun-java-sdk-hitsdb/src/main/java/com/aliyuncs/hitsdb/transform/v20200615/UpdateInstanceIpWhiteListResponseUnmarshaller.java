@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.transform.v20170601;
+package com.aliyuncs.hitsdb.transform.v20200615;
 
-import com.aliyuncs.hitsdb.model.v20170601.RestartHiTSDBInstanceResponse;
+import com.aliyuncs.hitsdb.model.v20200615.UpdateInstanceIpWhiteListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RestartHiTSDBInstanceResponseUnmarshaller {
+public class UpdateInstanceIpWhiteListResponseUnmarshaller {
 
-	public static RestartHiTSDBInstanceResponse unmarshall(RestartHiTSDBInstanceResponse restartHiTSDBInstanceResponse, UnmarshallerContext _ctx) {
+	public static UpdateInstanceIpWhiteListResponse unmarshall(UpdateInstanceIpWhiteListResponse updateInstanceIpWhiteListResponse, UnmarshallerContext _ctx) {
 		
-		restartHiTSDBInstanceResponse.setRequestId(_ctx.stringValue("RestartHiTSDBInstanceResponse.RequestId"));
+		updateInstanceIpWhiteListResponse.setRequestId(_ctx.stringValue("UpdateInstanceIpWhiteListResponse.RequestId"));
 	 
-	 	return restartHiTSDBInstanceResponse;
+	 	return updateInstanceIpWhiteListResponse;
 	}
 }
