@@ -42,9 +42,9 @@ public class DetectLivingFaceResponseUnmarshaller {
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
+				result.setLabel(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setSuggestion(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
 				result.setRate(_ctx.floatValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
-				result.setLabel(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 
 				List<Frame> frames = new ArrayList<Frame>();
 				for (int k = 0; k < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Frames.Length"); k++) {

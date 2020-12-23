@@ -59,19 +59,11 @@ public class DetectVideoLivingFaceResponse extends AcsResponse {
 
 		public static class Element {
 
-			private Float faceConfidence;
-
 			private Float liveConfidence;
 
+			private Float faceConfidence;
+
 			private List<Integer> rect;
-
-			public Float getFaceConfidence() {
-				return this.faceConfidence;
-			}
-
-			public void setFaceConfidence(Float faceConfidence) {
-				this.faceConfidence = faceConfidence;
-			}
 
 			public Float getLiveConfidence() {
 				return this.liveConfidence;
@@ -79,6 +71,14 @@ public class DetectVideoLivingFaceResponse extends AcsResponse {
 
 			public void setLiveConfidence(Float liveConfidence) {
 				this.liveConfidence = liveConfidence;
+			}
+
+			public Float getFaceConfidence() {
+				return this.faceConfidence;
+			}
+
+			public void setFaceConfidence(Float faceConfidence) {
+				this.faceConfidence = faceConfidence;
 			}
 
 			public List<Integer> getRect() {

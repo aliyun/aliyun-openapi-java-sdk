@@ -26,24 +26,24 @@ public class ExtractPedestrianFeatureAttrResponseUnmarshaller {
 		extractPedestrianFeatureAttrResponse.setRequestId(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.RequestId"));
 
 		Data data = new Data();
-		data.setHair(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Hair"));
+		data.setObjType(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.ObjType"));
+		data.setObjTypeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.ObjTypeScore"));
+		data.setFeature(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Feature"));
+		data.setQualityScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.QualityScore"));
+		data.setUpperColor(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.UpperColor"));
+		data.setUpperColorScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.UpperColorScore"));
 		data.setUpperType(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.UpperType"));
 		data.setUpperTypeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.UpperTypeScore"));
 		data.setLowerColor(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.LowerColor"));
-		data.setQualityScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.QualityScore"));
-		data.setGender(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Gender"));
-		data.setFeature(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Feature"));
-		data.setUpperColorScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.UpperColorScore"));
-		data.setGenderScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.GenderScore"));
 		data.setLowerColorScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.LowerColorScore"));
-		data.setObjType(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.ObjType"));
-		data.setLowerTypeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.LowerTypeScore"));
-		data.setHairScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.HairScore"));
-		data.setUpperColor(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.UpperColor"));
 		data.setLowerType(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.LowerType"));
-		data.setAgeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.AgeScore"));
-		data.setObjTypeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.ObjTypeScore"));
+		data.setLowerTypeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.LowerTypeScore"));
+		data.setGender(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Gender"));
+		data.setGenderScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.GenderScore"));
+		data.setHair(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Hair"));
+		data.setHairScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.HairScore"));
 		data.setAge(_ctx.stringValue("ExtractPedestrianFeatureAttrResponse.Data.Age"));
+		data.setAgeScore(_ctx.floatValue("ExtractPedestrianFeatureAttrResponse.Data.AgeScore"));
 		extractPedestrianFeatureAttrResponse.setData(data);
 	 
 	 	return extractPedestrianFeatureAttrResponse;
