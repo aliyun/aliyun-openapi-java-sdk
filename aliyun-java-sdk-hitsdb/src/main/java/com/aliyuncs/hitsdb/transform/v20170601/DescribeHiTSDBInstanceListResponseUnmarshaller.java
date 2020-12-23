@@ -55,6 +55,10 @@ public class DescribeHiTSDBInstanceListResponseUnmarshaller {
 			instance.setMaxSeriesPerDatabase(_ctx.stringValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].MaxSeriesPerDatabase"));
 			instance.setVpcId(_ctx.stringValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].VpcId"));
 			instance.setVswitchId(_ctx.stringValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].VswitchId"));
+			instance.setStatus(_ctx.stringValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].Status"));
+			instance.setPaymentType(_ctx.stringValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].PaymentType"));
+			instance.setCreateTime(_ctx.longValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].CreateTime"));
+			instance.setExpiredTime(_ctx.longValue("DescribeHiTSDBInstanceListResponse.InstanceList["+ i +"].ExpiredTime"));
 
 			instanceList.add(instance);
 		}
