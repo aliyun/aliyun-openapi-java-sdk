@@ -51,6 +51,19 @@ public class DescribeContainerGroupsRequest extends RpcAcsRequest<DescribeContai
 
 	private String status;
 
+	private String resourceGroupId;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if (resourceGroupId != null) {
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}

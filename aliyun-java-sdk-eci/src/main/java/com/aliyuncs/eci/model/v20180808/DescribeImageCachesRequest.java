@@ -40,6 +40,19 @@ public class DescribeImageCachesRequest extends RpcAcsRequest<DescribeImageCache
 
 	private Long ownerId;
 
+	private String resourceGroupId;
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if (resourceGroupId != null) {
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public DescribeImageCachesRequest() {
 		super("Eci", "2018-08-08", "DescribeImageCaches", "eci");
 		setMethod(MethodType.POST);
