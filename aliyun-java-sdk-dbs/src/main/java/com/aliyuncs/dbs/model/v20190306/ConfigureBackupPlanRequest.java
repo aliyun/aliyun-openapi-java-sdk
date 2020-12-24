@@ -53,6 +53,8 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 
 	private Integer duplicationArchivePeriod;
 
+	private Integer backupLogIntervalSeconds;
+
 	private String crossAliyunId;
 
 	private Boolean autoStartBackup;
@@ -60,6 +62,8 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 	private String sourceEndpointPassword;
 
 	private String backupObjects;
+
+	private Long backupRateLimit;
 
 	private String ownerId;
 
@@ -243,6 +247,17 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		}
 	}
 
+	public Integer getBackupLogIntervalSeconds() {
+		return this.backupLogIntervalSeconds;
+	}
+
+	public void setBackupLogIntervalSeconds(Integer backupLogIntervalSeconds) {
+		this.backupLogIntervalSeconds = backupLogIntervalSeconds;
+		if(backupLogIntervalSeconds != null){
+			putQueryParameter("BackupLogIntervalSeconds", backupLogIntervalSeconds.toString());
+		}
+	}
+
 	public String getCrossAliyunId() {
 		return this.crossAliyunId;
 	}
@@ -284,6 +299,17 @@ public class ConfigureBackupPlanRequest extends RpcAcsRequest<ConfigureBackupPla
 		this.backupObjects = backupObjects;
 		if(backupObjects != null){
 			putQueryParameter("BackupObjects", backupObjects);
+		}
+	}
+
+	public Long getBackupRateLimit() {
+		return this.backupRateLimit;
+	}
+
+	public void setBackupRateLimit(Long backupRateLimit) {
+		this.backupRateLimit = backupRateLimit;
+		if(backupRateLimit != null){
+			putQueryParameter("BackupRateLimit", backupRateLimit.toString());
 		}
 	}
 
