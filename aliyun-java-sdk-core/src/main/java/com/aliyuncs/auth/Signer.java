@@ -24,19 +24,22 @@ package com.aliyuncs.auth;
  */
 
 public abstract class Signer {
-
-    private final static Signer HMACSHA1_SIGNER = new HmacSHA1Signer();
-    private final static Signer SHA256_WITH_RSA_SIGNER = new SHA256withRSASigner();
-    private final static Signer BEARER_TOKEN_SIGNER = new BearerTokenSigner();
-
     public static Signer getSigner(AlibabaCloudCredentials credentials) {
         if (credentials instanceof KeyPairCredentials) {
-            return SHA256_WITH_RSA_SIGNER;
+            return new SHA256withRSASigner();
         } else if (credentials instanceof BearerTokenCredentials) {
-            return BEARER_TOKEN_SIGNER;
-        } else {
-            return HMACSHA1_SIGNER;
+            return new BearerTokenSigner();
         }
+        return new HmacSHA1Signer();
+    }
+
+    public static Signer getSigner(String signatureMethod) {
+        if (signatureMethod != null && !signatureMethod.isEmpty()) {
+            if ("hmac-sm3".equalsIgnoreCase(signatureMethod)) {
+                return new HmacSM3Signer();
+            }
+        }
+        return new HmacSHA1Signer();
     }
 
     public abstract String signString(String stringToSign, AlibabaCloudCredentials credentials);

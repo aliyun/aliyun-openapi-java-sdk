@@ -14,30 +14,30 @@ public interface IClientProfile {
      * @Deprecated : Use Signer.getSigner(AlibabaCloudCredentials credentials) instead of this
      */
     @Deprecated
-           ISigner getSigner();
+    ISigner getSigner();
 
-           String getRegionId();
+    String getRegionId();
 
-           FormatType getFormat();
+    FormatType getFormat();
 
     /**
      * @Deprecated : Use AlibabaCloudCredentialsProvider getCredentials() instead of this
      */
     @Deprecated
-            Credential getCredential();
+    Credential getCredential();
 
     /**
      * This method exists because ClientProfile holds too much modules like endpoint management
      *
      * @param credentialsProvider
      */
-        void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
+    void setCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
 
     /**
      * use HttpClientConfig.getCertPath instead
      */
     @Deprecated
-         String getCertPath();
+    String getCertPath();
 
     /**
      * use HttpClientConfig.setCertPath instead
@@ -45,38 +45,42 @@ public interface IClientProfile {
      * @param certPath
      */
     @Deprecated
-          void setCertPath(String certPath);
+    void setCertPath(String certPath);
 
     /**
      * http client configs
      */
-          HttpClientConfig getHttpClientConfig();
+    HttpClientConfig getHttpClientConfig();
 
-          void setHttpClientConfig(HttpClientConfig httpClientConfig);
+    void setHttpClientConfig(HttpClientConfig httpClientConfig);
 
-          void enableUsingInternalLocationService();
+    void enableUsingInternalLocationService();
 
-          boolean isUsingInternalLocationService();
+    boolean isUsingInternalLocationService();
 
-          boolean isUsingVpcEndpoint();
+    boolean isUsingVpcEndpoint();
 
-          void enableUsingVpcEndpoint();
+    void enableUsingVpcEndpoint();
 
     /**
      * @Deprecated : Use enableUsingInternalLocationService instead of this
      */
     @Deprecated
-          void setUsingInternalLocationService();
+    void setUsingInternalLocationService();
 
-          Logger getLogger();
+    Logger getLogger();
 
-          void setLogger(Logger logger);
+    void setLogger(Logger logger);
 
-          String getLogFormat();
+    String getLogFormat();
 
-          void setLogFormat(String logFormat);
+    void setLogFormat(String logFormat);
 
-         boolean isCloseTrace();
+    boolean isCloseTrace();
 
-         void setCloseTrace(boolean closeTrace);
+    void setCloseTrace(boolean closeTrace);
+
+    void setSignatureMethod(String signatureMethod);
+
+    String getSignatureMethod();
 }
