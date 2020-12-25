@@ -1,3 +1,6 @@
+2020-12-25 Version: 1.2.9
+- Release GenRealPersonVerificationToken GetRealPersonVerificationResult.
+
 2020-12-25 Version: 1.0.2
 - Release GenRealPersonVerificationToken GetRealPersonVerificationResult.
 
