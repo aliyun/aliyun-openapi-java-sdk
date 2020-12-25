@@ -29,7 +29,7 @@ public class GetImageQualityRequest extends RpcAcsRequest<GetImageQualityRespons
 
 	private String imageUri;
 	public GetImageQualityRequest() {
-		super("imm", "2017-09-06", "GetImageQuality", "imm");
+		super("imm", "2017-09-06", "GetImageQuality");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteOfficeConversionTaskRequest extends RpcAcsRequest<DeleteOffic
 
 	private String taskId;
 	public DeleteOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm");
+		super("imm", "2017-09-06", "DeleteOfficeConversionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DetectImageLogosRequest extends RpcAcsRequest<DetectImageLogosRespo
 
 	private String imageUri;
 	public DetectImageLogosRequest() {
-		super("imm", "2017-09-06", "DetectImageLogos", "imm");
+		super("imm", "2017-09-06", "DetectImageLogos");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

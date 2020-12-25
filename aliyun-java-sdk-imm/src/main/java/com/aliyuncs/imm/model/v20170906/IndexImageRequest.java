@@ -55,7 +55,7 @@ public class IndexImageRequest extends RpcAcsRequest<IndexImageResponse> {
 
 	private String setId;
 	public IndexImageRequest() {
-		super("imm", "2017-09-06", "IndexImage", "imm");
+		super("imm", "2017-09-06", "IndexImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

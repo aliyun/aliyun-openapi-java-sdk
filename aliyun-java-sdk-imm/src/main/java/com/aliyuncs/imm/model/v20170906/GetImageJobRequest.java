@@ -31,7 +31,7 @@ public class GetImageJobRequest extends RpcAcsRequest<GetImageJobResponse> {
 
 	private String jobType;
 	public GetImageJobRequest() {
-		super("imm", "2017-09-06", "GetImageJob", "imm");
+		super("imm", "2017-09-06", "GetImageJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

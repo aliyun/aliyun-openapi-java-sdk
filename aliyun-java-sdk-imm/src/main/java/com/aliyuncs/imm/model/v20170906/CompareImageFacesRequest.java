@@ -37,7 +37,7 @@ public class CompareImageFacesRequest extends RpcAcsRequest<CompareImageFacesRes
 
 	private String setId;
 	public CompareImageFacesRequest() {
-		super("imm", "2017-09-06", "CompareImageFaces", "imm");
+		super("imm", "2017-09-06", "CompareImageFaces");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

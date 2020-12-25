@@ -22,27 +22,42 @@ import com.aliyuncs.imm.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFaceGroupsJobResponse> {
+public class GetWebofficeURLRequest extends RpcAcsRequest<GetWebofficeURLResponse> {
 	   
+
+	private String srcType;
 
 	private String project;
 
+	private String file;
+
 	private String notifyEndpoint;
 
-	private String groupIdFrom;
+	private String fileID;
 
 	private String notifyTopicName;
 
-	private String groupIdTo;
+	private String permission;
 
-	private String setId;
-	public CreateMergeFaceGroupsJobRequest() {
-		super("imm", "2017-09-06", "CreateMergeFaceGroupsJob");
+	private String user;
+	public GetWebofficeURLRequest() {
+		super("imm", "2017-09-06", "GetWebofficeURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSrcType() {
+		return this.srcType;
+	}
+
+	public void setSrcType(String srcType) {
+		this.srcType = srcType;
+		if(srcType != null){
+			putQueryParameter("SrcType", srcType);
+		}
 	}
 
 	public String getProject() {
@@ -53,6 +68,17 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 		this.project = project;
 		if(project != null){
 			putQueryParameter("Project", project);
+		}
+	}
+
+	public String getFile() {
+		return this.file;
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+		if(file != null){
+			putQueryParameter("File", file);
 		}
 	}
 
@@ -67,14 +93,14 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 		}
 	}
 
-	public String getGroupIdFrom() {
-		return this.groupIdFrom;
+	public String getFileID() {
+		return this.fileID;
 	}
 
-	public void setGroupIdFrom(String groupIdFrom) {
-		this.groupIdFrom = groupIdFrom;
-		if(groupIdFrom != null){
-			putQueryParameter("GroupIdFrom", groupIdFrom);
+	public void setFileID(String fileID) {
+		this.fileID = fileID;
+		if(fileID != null){
+			putQueryParameter("FileID", fileID);
 		}
 	}
 
@@ -89,31 +115,31 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 		}
 	}
 
-	public String getGroupIdTo() {
-		return this.groupIdTo;
+	public String getPermission() {
+		return this.permission;
 	}
 
-	public void setGroupIdTo(String groupIdTo) {
-		this.groupIdTo = groupIdTo;
-		if(groupIdTo != null){
-			putQueryParameter("GroupIdTo", groupIdTo);
+	public void setPermission(String permission) {
+		this.permission = permission;
+		if(permission != null){
+			putQueryParameter("Permission", permission);
 		}
 	}
 
-	public String getSetId() {
-		return this.setId;
+	public String getUser() {
+		return this.user;
 	}
 
-	public void setSetId(String setId) {
-		this.setId = setId;
-		if(setId != null){
-			putQueryParameter("SetId", setId);
+	public void setUser(String user) {
+		this.user = user;
+		if(user != null){
+			putQueryParameter("User", user);
 		}
 	}
 
 	@Override
-	public Class<CreateMergeFaceGroupsJobResponse> getResponseClass() {
-		return CreateMergeFaceGroupsJobResponse.class;
+	public Class<GetWebofficeURLResponse> getResponseClass() {
+		return GetWebofficeURLResponse.class;
 	}
 
 }

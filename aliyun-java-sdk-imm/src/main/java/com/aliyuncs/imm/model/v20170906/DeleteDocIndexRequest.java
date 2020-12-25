@@ -31,7 +31,7 @@ public class DeleteDocIndexRequest extends RpcAcsRequest<DeleteDocIndexResponse>
 
 	private String set;
 	public DeleteDocIndexRequest() {
-		super("imm", "2017-09-06", "DeleteDocIndex", "imm");
+		super("imm", "2017-09-06", "DeleteDocIndex");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

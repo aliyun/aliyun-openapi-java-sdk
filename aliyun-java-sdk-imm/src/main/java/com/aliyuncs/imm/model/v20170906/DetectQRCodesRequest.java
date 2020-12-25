@@ -29,7 +29,7 @@ public class DetectQRCodesRequest extends RpcAcsRequest<DetectQRCodesResponse> {
 
 	private String srcUris;
 	public DetectQRCodesRequest() {
-		super("imm", "2017-09-06", "DetectQRCodes", "imm");
+		super("imm", "2017-09-06", "DetectQRCodes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

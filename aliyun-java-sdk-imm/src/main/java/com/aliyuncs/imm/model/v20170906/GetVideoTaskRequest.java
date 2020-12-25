@@ -31,7 +31,7 @@ public class GetVideoTaskRequest extends RpcAcsRequest<GetVideoTaskResponse> {
 
 	private String taskType;
 	public GetVideoTaskRequest() {
-		super("imm", "2017-09-06", "GetVideoTask", "imm");
+		super("imm", "2017-09-06", "GetVideoTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

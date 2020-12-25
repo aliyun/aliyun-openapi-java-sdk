@@ -39,7 +39,7 @@ public class CreateVideoAbstractTaskRequest extends RpcAcsRequest<CreateVideoAbs
 
 	private String targetClipsUri;
 	public CreateVideoAbstractTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoAbstractTask", "imm");
+		super("imm", "2017-09-06", "CreateVideoAbstractTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

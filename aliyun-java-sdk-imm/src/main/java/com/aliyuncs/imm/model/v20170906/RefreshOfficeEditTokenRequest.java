@@ -31,7 +31,7 @@ public class RefreshOfficeEditTokenRequest extends RpcAcsRequest<RefreshOfficeEd
 
 	private String refreshToken;
 	public RefreshOfficeEditTokenRequest() {
-		super("imm", "2017-09-06", "RefreshOfficeEditToken", "imm");
+		super("imm", "2017-09-06", "RefreshOfficeEditToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

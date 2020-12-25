@@ -29,7 +29,7 @@ public class GetSetRequest extends RpcAcsRequest<GetSetResponse> {
 
 	private String setId;
 	public GetSetRequest() {
-		super("imm", "2017-09-06", "GetSet", "imm");
+		super("imm", "2017-09-06", "GetSet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

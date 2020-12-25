@@ -1,3 +1,6 @@
+2020-12-25 Version: 1.22.0
+- Supported for weboffice edit.
+
 2020-12-22 Version: 1.21.0
 - Minor chagnes.
 

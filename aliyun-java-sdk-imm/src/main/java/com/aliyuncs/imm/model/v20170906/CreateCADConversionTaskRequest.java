@@ -55,7 +55,7 @@ public class CreateCADConversionTaskRequest extends RpcAcsRequest<CreateCADConve
 
 	private String tgtUri;
 	public CreateCADConversionTaskRequest() {
-		super("imm", "2017-09-06", "CreateCADConversionTask", "imm");
+		super("imm", "2017-09-06", "CreateCADConversionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

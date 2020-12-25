@@ -31,7 +31,7 @@ public class GetImageCroppingSuggestionsRequest extends RpcAcsRequest<GetImageCr
 
 	private String imageUri;
 	public GetImageCroppingSuggestionsRequest() {
-		super("imm", "2017-09-06", "GetImageCroppingSuggestions", "imm");
+		super("imm", "2017-09-06", "GetImageCroppingSuggestions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

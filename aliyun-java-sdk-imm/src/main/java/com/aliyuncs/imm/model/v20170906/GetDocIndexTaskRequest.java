@@ -29,7 +29,7 @@ public class GetDocIndexTaskRequest extends RpcAcsRequest<GetDocIndexTaskRespons
 
 	private String taskId;
 	public GetDocIndexTaskRequest() {
-		super("imm", "2017-09-06", "GetDocIndexTask", "imm");
+		super("imm", "2017-09-06", "GetDocIndexTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

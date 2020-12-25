@@ -27,7 +27,7 @@ public class OpenImmServiceRequest extends RpcAcsRequest<OpenImmServiceResponse>
 
 	private Long ownerId;
 	public OpenImmServiceRequest() {
-		super("imm", "2017-09-06", "OpenImmService", "imm");
+		super("imm", "2017-09-06", "OpenImmService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

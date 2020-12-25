@@ -31,7 +31,7 @@ public class CreateSetRequest extends RpcAcsRequest<CreateSetResponse> {
 
 	private String setId;
 	public CreateSetRequest() {
-		super("imm", "2017-09-06", "CreateSet", "imm");
+		super("imm", "2017-09-06", "CreateSet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

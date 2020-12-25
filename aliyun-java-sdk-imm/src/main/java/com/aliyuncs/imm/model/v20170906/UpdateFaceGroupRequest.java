@@ -49,7 +49,7 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 
 	private String groupCoverFaceId;
 	public UpdateFaceGroupRequest() {
-		super("imm", "2017-09-06", "UpdateFaceGroup", "imm");
+		super("imm", "2017-09-06", "UpdateFaceGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

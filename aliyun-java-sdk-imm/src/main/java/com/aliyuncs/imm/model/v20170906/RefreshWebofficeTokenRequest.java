@@ -22,16 +22,16 @@ import com.aliyuncs.imm.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDRMLicenseRequest extends RpcAcsRequest<GetDRMLicenseResponse> {
+public class RefreshWebofficeTokenRequest extends RpcAcsRequest<RefreshWebofficeTokenResponse> {
 	   
 
 	private String project;
 
-	private String dRMType;
+	private String accessToken;
 
-	private String dRMLicense;
-	public GetDRMLicenseRequest() {
-		super("imm", "2017-09-06", "GetDRMLicense");
+	private String refreshToken;
+	public RefreshWebofficeTokenRequest() {
+		super("imm", "2017-09-06", "RefreshWebofficeToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +50,31 @@ public class GetDRMLicenseRequest extends RpcAcsRequest<GetDRMLicenseResponse> {
 		}
 	}
 
-	public String getDRMType() {
-		return this.dRMType;
+	public String getAccessToken() {
+		return this.accessToken;
 	}
 
-	public void setDRMType(String dRMType) {
-		this.dRMType = dRMType;
-		if(dRMType != null){
-			putQueryParameter("DRMType", dRMType);
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+		if(accessToken != null){
+			putQueryParameter("AccessToken", accessToken);
 		}
 	}
 
-	public String getDRMLicense() {
-		return this.dRMLicense;
+	public String getRefreshToken() {
+		return this.refreshToken;
 	}
 
-	public void setDRMLicense(String dRMLicense) {
-		this.dRMLicense = dRMLicense;
-		if(dRMLicense != null){
-			putQueryParameter("DRMLicense", dRMLicense);
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+		if(refreshToken != null){
+			putQueryParameter("RefreshToken", refreshToken);
 		}
 	}
 
 	@Override
-	public Class<GetDRMLicenseResponse> getResponseClass() {
-		return GetDRMLicenseResponse.class;
+	public Class<RefreshWebofficeTokenResponse> getResponseClass() {
+		return RefreshWebofficeTokenResponse.class;
 	}
 
 }

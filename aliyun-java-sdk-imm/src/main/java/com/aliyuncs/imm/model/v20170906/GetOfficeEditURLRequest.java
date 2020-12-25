@@ -45,7 +45,7 @@ public class GetOfficeEditURLRequest extends RpcAcsRequest<GetOfficeEditURLRespo
 
 	private String userName;
 	public GetOfficeEditURLRequest() {
-		super("imm", "2017-09-06", "GetOfficeEditURL", "imm");
+		super("imm", "2017-09-06", "GetOfficeEditURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

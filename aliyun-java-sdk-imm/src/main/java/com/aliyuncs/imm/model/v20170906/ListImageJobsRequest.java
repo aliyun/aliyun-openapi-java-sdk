@@ -33,7 +33,7 @@ public class ListImageJobsRequest extends RpcAcsRequest<ListImageJobsResponse> {
 
 	private String marker;
 	public ListImageJobsRequest() {
-		super("imm", "2017-09-06", "ListImageJobs", "imm");
+		super("imm", "2017-09-06", "ListImageJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class VideoAnalyseFeedbackRequest extends RpcAcsRequest<VideoAnalyseFeedb
 
 	private String scenes;
 	public VideoAnalyseFeedbackRequest() {
-		super("imm", "2017-09-06", "VideoAnalyseFeedback", "imm");
+		super("imm", "2017-09-06", "VideoAnalyseFeedback");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

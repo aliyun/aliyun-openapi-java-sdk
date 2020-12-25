@@ -29,7 +29,7 @@ public class DeleteSetRequest extends RpcAcsRequest<DeleteSetResponse> {
 
 	private String setId;
 	public DeleteSetRequest() {
-		super("imm", "2017-09-06", "DeleteSet", "imm");
+		super("imm", "2017-09-06", "DeleteSet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

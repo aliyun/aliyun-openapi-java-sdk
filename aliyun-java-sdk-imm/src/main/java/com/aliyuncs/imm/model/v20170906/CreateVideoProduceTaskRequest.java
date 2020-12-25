@@ -45,7 +45,7 @@ public class CreateVideoProduceTaskRequest extends RpcAcsRequest<CreateVideoProd
 
 	private Integer width;
 	public CreateVideoProduceTaskRequest() {
-		super("imm", "2017-09-06", "CreateVideoProduceTask", "imm");
+		super("imm", "2017-09-06", "CreateVideoProduceTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class StopStreamAnalyseTaskRequest extends RpcAcsRequest<StopStreamAnalys
 
 	private String taskId;
 	public StopStreamAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "StopStreamAnalyseTask", "imm");
+		super("imm", "2017-09-06", "StopStreamAnalyseTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

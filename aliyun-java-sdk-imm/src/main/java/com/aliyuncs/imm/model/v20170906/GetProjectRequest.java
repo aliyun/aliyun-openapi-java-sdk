@@ -27,7 +27,7 @@ public class GetProjectRequest extends RpcAcsRequest<GetProjectResponse> {
 
 	private String project;
 	public GetProjectRequest() {
-		super("imm", "2017-09-06", "GetProject", "imm");
+		super("imm", "2017-09-06", "GetProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
