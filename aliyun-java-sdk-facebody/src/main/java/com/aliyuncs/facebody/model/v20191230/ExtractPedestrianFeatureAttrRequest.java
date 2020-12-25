@@ -29,7 +29,7 @@ public class ExtractPedestrianFeatureAttrRequest extends RpcAcsRequest<ExtractPe
 
 	private String imageURL;
 	public ExtractPedestrianFeatureAttrRequest() {
-		super("facebody", "2019-12-30", "ExtractPedestrianFeatureAttr", "facebody");
+		super("facebody", "2019-12-30", "ExtractPedestrianFeatureAttr");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

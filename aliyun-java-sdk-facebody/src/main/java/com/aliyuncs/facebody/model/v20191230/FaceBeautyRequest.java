@@ -25,31 +25,20 @@ import com.aliyuncs.facebody.Endpoint;
 public class FaceBeautyRequest extends RpcAcsRequest<FaceBeautyResponse> {
 	   
 
-	private Float sharp;
-
 	private Float white;
 
-	private String imageURL;
-
 	private Float smooth;
+
+	private Float sharp;
+
+	private String imageURL;
 	public FaceBeautyRequest() {
-		super("facebody", "2019-12-30", "FaceBeauty", "facebody");
+		super("facebody", "2019-12-30", "FaceBeauty");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Float getSharp() {
-		return this.sharp;
-	}
-
-	public void setSharp(Float sharp) {
-		this.sharp = sharp;
-		if(sharp != null){
-			putBodyParameter("Sharp", sharp.toString());
-		}
 	}
 
 	public Float getWhite() {
@@ -63,17 +52,6 @@ public class FaceBeautyRequest extends RpcAcsRequest<FaceBeautyResponse> {
 		}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
-		}
-	}
-
 	public Float getSmooth() {
 		return this.smooth;
 	}
@@ -82,6 +60,28 @@ public class FaceBeautyRequest extends RpcAcsRequest<FaceBeautyResponse> {
 		this.smooth = smooth;
 		if(smooth != null){
 			putBodyParameter("Smooth", smooth.toString());
+		}
+	}
+
+	public Float getSharp() {
+		return this.sharp;
+	}
+
+	public void setSharp(Float sharp) {
+		this.sharp = sharp;
+		if(sharp != null){
+			putBodyParameter("Sharp", sharp.toString());
+		}
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 

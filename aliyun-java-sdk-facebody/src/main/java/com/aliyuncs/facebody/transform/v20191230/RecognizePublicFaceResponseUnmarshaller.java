@@ -43,24 +43,24 @@ public class RecognizePublicFaceResponseUnmarshaller {
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
-				result.setLabel(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setSuggestion(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
 				result.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
+				result.setLabel(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 
 				List<SubResult> subResults = new ArrayList<SubResult>();
 				for (int k = 0; k < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults.Length"); k++) {
 					SubResult subResult = new SubResult();
-					subResult.setH(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].H"));
 					subResult.setW(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].W"));
 					subResult.setX(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].X"));
+					subResult.setH(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].H"));
 					subResult.setY(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Y"));
 
 					List<Face> faces = new ArrayList<Face>();
 					for (int l = 0; l < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces.Length"); l++) {
 						Face face = new Face();
+						face.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Rate"));
 						face.setId(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Id"));
 						face.setName(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Name"));
-						face.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Rate"));
 
 						faces.add(face);
 					}

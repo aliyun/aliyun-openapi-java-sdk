@@ -79,37 +79,29 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 		public static class AttributesItem {
 
-			private Age age;
-
 			private Backpack backpack;
 
-			private Gender gender;
+			private LowerWear lowerWear;
+
+			private ShoulderBag shoulderBag;
+
+			private Orient orient;
+
+			private LowerColor lowerColor;
 
 			private Glasses glasses;
+
+			private UpperColor upperColor;
 
 			private Handbag handbag;
 
 			private Hat hat;
 
-			private LowerColor lowerColor;
-
-			private LowerWear lowerWear;
-
-			private Orient orient;
-
-			private ShoulderBag shoulderBag;
-
-			private UpperColor upperColor;
+			private Gender gender;
 
 			private UpperWear upperWear;
 
-			public Age getAge() {
-				return this.age;
-			}
-
-			public void setAge(Age age) {
-				this.age = age;
-			}
+			private Age age;
 
 			public Backpack getBackpack() {
 				return this.backpack;
@@ -119,12 +111,36 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				this.backpack = backpack;
 			}
 
-			public Gender getGender() {
-				return this.gender;
+			public LowerWear getLowerWear() {
+				return this.lowerWear;
 			}
 
-			public void setGender(Gender gender) {
-				this.gender = gender;
+			public void setLowerWear(LowerWear lowerWear) {
+				this.lowerWear = lowerWear;
+			}
+
+			public ShoulderBag getShoulderBag() {
+				return this.shoulderBag;
+			}
+
+			public void setShoulderBag(ShoulderBag shoulderBag) {
+				this.shoulderBag = shoulderBag;
+			}
+
+			public Orient getOrient() {
+				return this.orient;
+			}
+
+			public void setOrient(Orient orient) {
+				this.orient = orient;
+			}
+
+			public LowerColor getLowerColor() {
+				return this.lowerColor;
+			}
+
+			public void setLowerColor(LowerColor lowerColor) {
+				this.lowerColor = lowerColor;
 			}
 
 			public Glasses getGlasses() {
@@ -133,6 +149,14 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 			public void setGlasses(Glasses glasses) {
 				this.glasses = glasses;
+			}
+
+			public UpperColor getUpperColor() {
+				return this.upperColor;
+			}
+
+			public void setUpperColor(UpperColor upperColor) {
+				this.upperColor = upperColor;
 			}
 
 			public Handbag getHandbag() {
@@ -151,44 +175,12 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				this.hat = hat;
 			}
 
-			public LowerColor getLowerColor() {
-				return this.lowerColor;
+			public Gender getGender() {
+				return this.gender;
 			}
 
-			public void setLowerColor(LowerColor lowerColor) {
-				this.lowerColor = lowerColor;
-			}
-
-			public LowerWear getLowerWear() {
-				return this.lowerWear;
-			}
-
-			public void setLowerWear(LowerWear lowerWear) {
-				this.lowerWear = lowerWear;
-			}
-
-			public Orient getOrient() {
-				return this.orient;
-			}
-
-			public void setOrient(Orient orient) {
-				this.orient = orient;
-			}
-
-			public ShoulderBag getShoulderBag() {
-				return this.shoulderBag;
-			}
-
-			public void setShoulderBag(ShoulderBag shoulderBag) {
-				this.shoulderBag = shoulderBag;
-			}
-
-			public UpperColor getUpperColor() {
-				return this.upperColor;
-			}
-
-			public void setUpperColor(UpperColor upperColor) {
-				this.upperColor = upperColor;
+			public void setGender(Gender gender) {
+				this.gender = gender;
 			}
 
 			public UpperWear getUpperWear() {
@@ -199,42 +191,19 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				this.upperWear = upperWear;
 			}
 
-			public static class Age {
+			public Age getAge() {
+				return this.age;
+			}
 
-				private String name;
-
-				private Float score;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
+			public void setAge(Age age) {
+				this.age = age;
 			}
 
 			public static class Backpack {
 
-				private String name;
-
 				private Float score;
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public Float getScore() {
 					return this.score;
@@ -243,13 +212,6 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				public void setScore(Float score) {
 					this.score = score;
 				}
-			}
-
-			public static class Gender {
-
-				private String name;
-
-				private Float score;
 
 				public String getName() {
 					return this.name;
@@ -257,122 +219,14 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
-			}
-
-			public static class Glasses {
-
-				private String name;
-
-				private Float score;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
-			}
-
-			public static class Handbag {
-
-				private String name;
-
-				private Float score;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
-			}
-
-			public static class Hat {
-
-				private String name;
-
-				private Float score;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
-			}
-
-			public static class LowerColor {
-
-				private String name;
-
-				private Float score;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
 				}
 			}
 
 			public static class LowerWear {
 
-				private String name;
-
 				private Float score;
 
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
+				private String name;
 
 				public Float getScore() {
 					return this.score;
@@ -381,13 +235,6 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				public void setScore(Float score) {
 					this.score = score;
 				}
-			}
-
-			public static class Orient {
-
-				private String name;
-
-				private Float score;
 
 				public String getName() {
 					return this.name;
@@ -395,22 +242,22 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 				public void setName(String name) {
 					this.name = name;
-				}
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
 				}
 			}
 
 			public static class ShoulderBag {
 
+				private Float score;
+
 				private String name;
 
-				private Float score;
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
 
 				public String getName() {
 					return this.name;
@@ -419,6 +266,13 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
+			}
+
+			public static class Orient {
+
+				private Float score;
+
+				private String name;
 
 				public Float getScore() {
 					return this.score;
@@ -426,14 +280,76 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 				public void setScore(Float score) {
 					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class LowerColor {
+
+				private Float score;
+
+				private String name;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class Glasses {
+
+				private Float score;
+
+				private String name;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 
 			public static class UpperColor {
 
+				private Float score;
+
 				private String name;
 
-				private Float score;
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
 
 				public String getName() {
 					return this.name;
@@ -442,6 +358,13 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
+			}
+
+			public static class Handbag {
+
+				private Float score;
+
+				private String name;
 
 				public Float getScore() {
 					return this.score;
@@ -449,14 +372,76 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 				public void setScore(Float score) {
 					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class Hat {
+
+				private Float score;
+
+				private String name;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+			}
+
+			public static class Gender {
+
+				private Float score;
+
+				private String name;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 
 			public static class UpperWear {
 
+				private Float score;
+
 				private String name;
 
-				private Float score;
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
 
 				public String getName() {
 					return this.name;
@@ -465,6 +450,13 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				public void setName(String name) {
 					this.name = name;
 				}
+			}
+
+			public static class Age {
+
+				private Float score;
+
+				private String name;
 
 				public Float getScore() {
 					return this.score;
@@ -472,6 +464,14 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 				public void setScore(Float score) {
 					this.score = score;
+				}
+
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
 				}
 			}
 		}
@@ -480,13 +480,13 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 			private Float score;
 
-			private Float topLeftX;
-
-			private Float topLeftY;
+			private Float bottomRightY;
 
 			private Float bottomRightX;
 
-			private Float bottomRightY;
+			private Float topLeftY;
+
+			private Float topLeftX;
 
 			public Float getScore() {
 				return this.score;
@@ -496,20 +496,12 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				this.score = score;
 			}
 
-			public Float getTopLeftX() {
-				return this.topLeftX;
+			public Float getBottomRightY() {
+				return this.bottomRightY;
 			}
 
-			public void setTopLeftX(Float topLeftX) {
-				this.topLeftX = topLeftX;
-			}
-
-			public Float getTopLeftY() {
-				return this.topLeftY;
-			}
-
-			public void setTopLeftY(Float topLeftY) {
-				this.topLeftY = topLeftY;
+			public void setBottomRightY(Float bottomRightY) {
+				this.bottomRightY = bottomRightY;
 			}
 
 			public Float getBottomRightX() {
@@ -520,12 +512,20 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 				this.bottomRightX = bottomRightX;
 			}
 
-			public Float getBottomRightY() {
-				return this.bottomRightY;
+			public Float getTopLeftY() {
+				return this.topLeftY;
 			}
 
-			public void setBottomRightY(Float bottomRightY) {
-				this.bottomRightY = bottomRightY;
+			public void setTopLeftY(Float topLeftY) {
+				this.topLeftY = topLeftY;
+			}
+
+			public Float getTopLeftX() {
+				return this.topLeftX;
+			}
+
+			public void setTopLeftX(Float topLeftX) {
+				this.topLeftX = topLeftX;
 			}
 		}
 	}

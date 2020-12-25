@@ -30,9 +30,9 @@ public class GetFaceEntityResponseUnmarshaller {
 		getFaceEntityResponse.setRequestId(_ctx.stringValue("GetFaceEntityResponse.RequestId"));
 
 		Data data = new Data();
-		data.setDbName(_ctx.stringValue("GetFaceEntityResponse.Data.DbName"));
 		data.setEntityId(_ctx.stringValue("GetFaceEntityResponse.Data.EntityId"));
 		data.setLabels(_ctx.stringValue("GetFaceEntityResponse.Data.Labels"));
+		data.setDbName(_ctx.stringValue("GetFaceEntityResponse.Data.DbName"));
 
 		List<Face> faces = new ArrayList<Face>();
 		for (int i = 0; i < _ctx.lengthValue("GetFaceEntityResponse.Data.Faces.Length"); i++) {

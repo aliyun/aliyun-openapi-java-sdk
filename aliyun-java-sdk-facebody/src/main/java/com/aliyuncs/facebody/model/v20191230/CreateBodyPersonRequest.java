@@ -29,7 +29,7 @@ public class CreateBodyPersonRequest extends RpcAcsRequest<CreateBodyPersonRespo
 
 	private String name;
 	public CreateBodyPersonRequest() {
-		super("facebody", "2019-12-30", "CreateBodyPerson", "facebody");
+		super("facebody", "2019-12-30", "CreateBodyPerson");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
