@@ -35,7 +35,7 @@ public class DescribeChildInstanceRegionsRequest extends RpcAcsRequest<DescribeC
 
 	private Long ownerId;
 	public DescribeChildInstanceRegionsRequest() {
-		super("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -45,7 +45,7 @@ public class DetachCenChildInstanceRequest extends RpcAcsRequest<DetachCenChildI
 
 	private String childInstanceId;
 	public DetachCenChildInstanceRequest() {
-		super("Cbn", "2017-09-12", "DetachCenChildInstance", "Cbn");
+		super("Cbn", "2017-09-12", "DetachCenChildInstance", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

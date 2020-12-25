@@ -35,7 +35,7 @@ public class DeleteCenBandwidthPackageRequest extends RpcAcsRequest<DeleteCenBan
 
 	private String cenBandwidthPackageId;
 	public DeleteCenBandwidthPackageRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "Cbn");
+		super("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

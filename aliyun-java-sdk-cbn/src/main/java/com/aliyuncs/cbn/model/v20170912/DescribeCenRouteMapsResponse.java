@@ -111,6 +111,8 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		private String gatewayZoneId;
 
+		private String matchAddressType;
+
 		private List<String> sourceInstanceIds;
 
 		private List<String> destinationInstanceIds;
@@ -277,6 +279,14 @@ public class DescribeCenRouteMapsResponse extends AcsResponse {
 
 		public void setGatewayZoneId(String gatewayZoneId) {
 			this.gatewayZoneId = gatewayZoneId;
+		}
+
+		public String getMatchAddressType() {
+			return this.matchAddressType;
+		}
+
+		public void setMatchAddressType(String matchAddressType) {
+			this.matchAddressType = matchAddressType;
 		}
 
 		public List<String> getSourceInstanceIds() {

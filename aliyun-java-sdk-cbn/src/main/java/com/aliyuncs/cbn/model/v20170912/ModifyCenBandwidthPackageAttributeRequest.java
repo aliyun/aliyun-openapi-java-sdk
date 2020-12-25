@@ -39,7 +39,7 @@ public class ModifyCenBandwidthPackageAttributeRequest extends RpcAcsRequest<Mod
 
 	private String name;
 	public ModifyCenBandwidthPackageAttributeRequest() {
-		super("Cbn", "2017-09-12", "ModifyCenBandwidthPackageAttribute", "Cbn");
+		super("Cbn", "2017-09-12", "ModifyCenBandwidthPackageAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

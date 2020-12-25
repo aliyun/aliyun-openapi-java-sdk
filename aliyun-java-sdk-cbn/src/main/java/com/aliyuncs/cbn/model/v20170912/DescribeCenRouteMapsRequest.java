@@ -45,7 +45,7 @@ public class DescribeCenRouteMapsRequest extends RpcAcsRequest<DescribeCenRouteM
 
 	private String cenRegionId;
 	public DescribeCenRouteMapsRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenRouteMaps", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenRouteMaps", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

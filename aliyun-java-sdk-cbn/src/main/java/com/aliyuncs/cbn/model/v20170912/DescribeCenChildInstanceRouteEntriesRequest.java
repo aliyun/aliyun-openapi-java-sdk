@@ -47,7 +47,7 @@ public class DescribeCenChildInstanceRouteEntriesRequest extends RpcAcsRequest<D
 
 	private String status;
 	public DescribeCenChildInstanceRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

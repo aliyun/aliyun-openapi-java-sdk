@@ -53,7 +53,7 @@ public class DescribeFlowlogsRequest extends RpcAcsRequest<DescribeFlowlogsRespo
 
 	private String status;
 	public DescribeFlowlogsRequest() {
-		super("Cbn", "2017-09-12", "DescribeFlowlogs", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeFlowlogs", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

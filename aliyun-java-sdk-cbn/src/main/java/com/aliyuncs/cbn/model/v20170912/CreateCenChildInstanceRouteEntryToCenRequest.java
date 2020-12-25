@@ -22,7 +22,7 @@ import com.aliyuncs.cbn.Endpoint;
  * @author auto create
  * @version 
  */
-public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntriesResponse> {
+public class CreateCenChildInstanceRouteEntryToCenRequest extends RpcAcsRequest<CreateCenChildInstanceRouteEntryToCenResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -31,17 +31,23 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 
 	private String childInstanceRegionId;
 
+	private String routeTableId;
+
 	private String resourceOwnerAccount;
 
+	private String ownerAccount;
+
 	private String destinationCidrBlock;
+
+	private Long ownerId;
 
 	private String childInstanceType;
 
 	private String childInstanceId;
 
-	private String childInstanceRouteTableId;
-	public PublishRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "PublishRouteEntries", "cbn");
+	private Long childInstanceAliUid;
+	public CreateCenChildInstanceRouteEntryToCenRequest() {
+		super("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +88,17 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		}
 	}
 
+	public String getRouteTableId() {
+		return this.routeTableId;
+	}
+
+	public void setRouteTableId(String routeTableId) {
+		this.routeTableId = routeTableId;
+		if(routeTableId != null){
+			putQueryParameter("RouteTableId", routeTableId);
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -93,6 +110,17 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		}
 	}
 
+	public String getOwnerAccount() {
+		return this.ownerAccount;
+	}
+
+	public void setOwnerAccount(String ownerAccount) {
+		this.ownerAccount = ownerAccount;
+		if(ownerAccount != null){
+			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
 	public String getDestinationCidrBlock() {
 		return this.destinationCidrBlock;
 	}
@@ -101,6 +129,17 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		this.destinationCidrBlock = destinationCidrBlock;
 		if(destinationCidrBlock != null){
 			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -126,20 +165,20 @@ public class PublishRouteEntriesRequest extends RpcAcsRequest<PublishRouteEntrie
 		}
 	}
 
-	public String getChildInstanceRouteTableId() {
-		return this.childInstanceRouteTableId;
+	public Long getChildInstanceAliUid() {
+		return this.childInstanceAliUid;
 	}
 
-	public void setChildInstanceRouteTableId(String childInstanceRouteTableId) {
-		this.childInstanceRouteTableId = childInstanceRouteTableId;
-		if(childInstanceRouteTableId != null){
-			putQueryParameter("ChildInstanceRouteTableId", childInstanceRouteTableId);
+	public void setChildInstanceAliUid(Long childInstanceAliUid) {
+		this.childInstanceAliUid = childInstanceAliUid;
+		if(childInstanceAliUid != null){
+			putQueryParameter("ChildInstanceAliUid", childInstanceAliUid.toString());
 		}
 	}
 
 	@Override
-	public Class<PublishRouteEntriesResponse> getResponseClass() {
-		return PublishRouteEntriesResponse.class;
+	public Class<CreateCenChildInstanceRouteEntryToCenResponse> getResponseClass() {
+		return CreateCenChildInstanceRouteEntryToCenResponse.class;
 	}
 
 }

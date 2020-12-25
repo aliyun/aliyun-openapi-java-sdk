@@ -47,7 +47,7 @@ public class DescribeRouteConflictRequest extends RpcAcsRequest<DescribeRouteCon
 
 	private String childInstanceRouteTableId;
 	public DescribeRouteConflictRequest() {
-		super("Cbn", "2017-09-12", "DescribeRouteConflict", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeRouteConflict", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

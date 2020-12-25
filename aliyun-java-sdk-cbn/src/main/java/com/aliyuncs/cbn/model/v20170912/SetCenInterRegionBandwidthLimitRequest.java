@@ -41,7 +41,7 @@ public class SetCenInterRegionBandwidthLimitRequest extends RpcAcsRequest<SetCen
 
 	private Long bandwidthLimit;
 	public SetCenInterRegionBandwidthLimitRequest() {
-		super("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "Cbn");
+		super("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

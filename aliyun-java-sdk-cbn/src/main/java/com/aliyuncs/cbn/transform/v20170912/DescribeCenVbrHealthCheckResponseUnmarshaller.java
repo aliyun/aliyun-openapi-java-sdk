@@ -43,6 +43,7 @@ public class DescribeCenVbrHealthCheckResponseUnmarshaller {
 			vbrHealthCheck.setDelay(_ctx.longValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].Delay"));
 			vbrHealthCheck.setHealthCheckInterval(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthCheckInterval"));
 			vbrHealthCheck.setHealthyThreshold(_ctx.integerValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].HealthyThreshold"));
+			vbrHealthCheck.setVbrInstanceRegionId(_ctx.stringValue("DescribeCenVbrHealthCheckResponse.VbrHealthChecks["+ i +"].VbrInstanceRegionId"));
 
 			vbrHealthChecks.add(vbrHealthCheck);
 		}

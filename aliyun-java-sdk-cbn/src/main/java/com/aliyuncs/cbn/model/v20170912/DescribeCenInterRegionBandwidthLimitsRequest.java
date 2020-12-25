@@ -39,7 +39,7 @@ public class DescribeCenInterRegionBandwidthLimitsRequest extends RpcAcsRequest<
 
 	private Long ownerId;
 	public DescribeCenInterRegionBandwidthLimitsRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenInterRegionBandwidthLimits", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenInterRegionBandwidthLimits", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

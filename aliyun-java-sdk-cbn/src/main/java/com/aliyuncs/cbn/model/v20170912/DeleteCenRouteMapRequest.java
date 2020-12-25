@@ -39,7 +39,7 @@ public class DeleteCenRouteMapRequest extends RpcAcsRequest<DeleteCenRouteMapRes
 
 	private String cenRegionId;
 	public DeleteCenRouteMapRequest() {
-		super("Cbn", "2017-09-12", "DeleteCenRouteMap", "Cbn");
+		super("Cbn", "2017-09-12", "DeleteCenRouteMap", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

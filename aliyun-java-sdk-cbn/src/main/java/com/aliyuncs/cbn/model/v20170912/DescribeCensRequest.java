@@ -42,7 +42,7 @@ public class DescribeCensRequest extends RpcAcsRequest<DescribeCensResponse> {
 
 	private List<Filter> filters;
 	public DescribeCensRequest() {
-		super("Cbn", "2017-09-12", "DescribeCens", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCens", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

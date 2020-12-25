@@ -37,7 +37,7 @@ public class UnassociateCenBandwidthPackageRequest extends RpcAcsRequest<Unassoc
 
 	private String cenBandwidthPackageId;
 	public UnassociateCenBandwidthPackageRequest() {
-		super("Cbn", "2017-09-12", "UnassociateCenBandwidthPackage", "Cbn");
+		super("Cbn", "2017-09-12", "UnassociateCenBandwidthPackage", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

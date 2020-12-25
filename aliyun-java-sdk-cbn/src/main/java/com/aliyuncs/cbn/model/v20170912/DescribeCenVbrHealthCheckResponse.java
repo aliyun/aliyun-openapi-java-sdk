@@ -95,6 +95,8 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 		private Integer healthyThreshold;
 
+		private String vbrInstanceRegionId;
+
 		public String getCenId() {
 			return this.cenId;
 		}
@@ -165,6 +167,14 @@ public class DescribeCenVbrHealthCheckResponse extends AcsResponse {
 
 		public void setHealthyThreshold(Integer healthyThreshold) {
 			this.healthyThreshold = healthyThreshold;
+		}
+
+		public String getVbrInstanceRegionId() {
+			return this.vbrInstanceRegionId;
+		}
+
+		public void setVbrInstanceRegionId(String vbrInstanceRegionId) {
+			this.vbrInstanceRegionId = vbrInstanceRegionId;
 		}
 	}
 

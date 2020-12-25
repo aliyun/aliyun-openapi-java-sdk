@@ -57,7 +57,7 @@ public class CreateCenBandwidthPackageRequest extends RpcAcsRequest<CreateCenBan
 
 	private String pricingCycle;
 	public CreateCenBandwidthPackageRequest() {
-		super("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "Cbn");
+		super("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

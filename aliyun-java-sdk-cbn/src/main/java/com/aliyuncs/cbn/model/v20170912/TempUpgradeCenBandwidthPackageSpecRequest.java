@@ -39,7 +39,7 @@ public class TempUpgradeCenBandwidthPackageSpecRequest extends RpcAcsRequest<Tem
 
 	private String cenBandwidthPackageId;
 	public TempUpgradeCenBandwidthPackageSpecRequest() {
-		super("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "Cbn");
+		super("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

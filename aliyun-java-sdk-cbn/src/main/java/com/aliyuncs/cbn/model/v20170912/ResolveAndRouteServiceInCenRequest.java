@@ -48,7 +48,7 @@ public class ResolveAndRouteServiceInCenRequest extends RpcAcsRequest<ResolveAnd
 
 	private List<String> accessRegionIdss;
 	public ResolveAndRouteServiceInCenRequest() {
-		super("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "Cbn");
+		super("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class DeleteRouteServiceInCenRequest extends RpcAcsRequest<DeleteRouteSer
 
 	private Long ownerId;
 	public DeleteRouteServiceInCenRequest() {
-		super("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "Cbn");
+		super("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

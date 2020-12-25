@@ -41,7 +41,7 @@ public class DescribeCenAttachedChildInstanceAttributeRequest extends RpcAcsRequ
 
 	private String childInstanceId;
 	public DescribeCenAttachedChildInstanceAttributeRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

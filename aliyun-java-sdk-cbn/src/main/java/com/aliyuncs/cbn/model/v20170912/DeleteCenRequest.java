@@ -35,7 +35,7 @@ public class DeleteCenRequest extends RpcAcsRequest<DeleteCenResponse> {
 
 	private Long ownerId;
 	public DeleteCenRequest() {
-		super("Cbn", "2017-09-12", "DeleteCen", "Cbn");
+		super("Cbn", "2017-09-12", "DeleteCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class DescribeRouteServicesInCenRequest extends RpcAcsRequest<DescribeRou
 
 	private Long ownerId;
 	public DescribeRouteServicesInCenRequest() {
-		super("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

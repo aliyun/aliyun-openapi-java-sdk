@@ -39,7 +39,7 @@ public class DescribeCenPrivateZoneRoutesRequest extends RpcAcsRequest<DescribeC
 
 	private String resourceOwnerAccount;
 	public DescribeCenPrivateZoneRoutesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

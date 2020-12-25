@@ -39,7 +39,7 @@ public class DescribeCenGeographicSpansRequest extends RpcAcsRequest<DescribeCen
 
 	private Long ownerId;
 	public DescribeCenGeographicSpansRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

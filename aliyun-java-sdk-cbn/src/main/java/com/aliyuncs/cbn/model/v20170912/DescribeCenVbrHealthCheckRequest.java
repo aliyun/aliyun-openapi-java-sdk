@@ -45,7 +45,7 @@ public class DescribeCenVbrHealthCheckRequest extends RpcAcsRequest<DescribeCenV
 
 	private String vbrInstanceId;
 	public DescribeCenVbrHealthCheckRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenVbrHealthCheck", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenVbrHealthCheck", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

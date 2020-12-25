@@ -39,7 +39,7 @@ public class DescribeGeographicRegionMembershipRequest extends RpcAcsRequest<Des
 
 	private String geographicRegionId;
 	public DescribeGeographicRegionMembershipRequest() {
-		super("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

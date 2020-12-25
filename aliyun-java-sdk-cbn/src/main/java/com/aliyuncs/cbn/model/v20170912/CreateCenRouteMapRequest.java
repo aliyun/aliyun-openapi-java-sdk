@@ -88,7 +88,7 @@ public class CreateCenRouteMapRequest extends RpcAcsRequest<CreateCenRouteMapRes
 
 	private String cenRegionId;
 	public CreateCenRouteMapRequest() {
-		super("Cbn", "2017-09-12", "CreateCenRouteMap", "Cbn");
+		super("Cbn", "2017-09-12", "CreateCenRouteMap", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

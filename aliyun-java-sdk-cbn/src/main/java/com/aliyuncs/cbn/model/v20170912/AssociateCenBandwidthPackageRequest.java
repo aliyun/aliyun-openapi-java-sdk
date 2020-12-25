@@ -37,7 +37,7 @@ public class AssociateCenBandwidthPackageRequest extends RpcAcsRequest<Associate
 
 	private String cenBandwidthPackageId;
 	public AssociateCenBandwidthPackageRequest() {
-		super("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "Cbn");
+		super("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

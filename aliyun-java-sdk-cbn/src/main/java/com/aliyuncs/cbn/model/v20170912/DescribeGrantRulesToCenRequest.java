@@ -37,7 +37,7 @@ public class DescribeGrantRulesToCenRequest extends RpcAcsRequest<DescribeGrantR
 
 	private Long ownerId;
 	public DescribeGrantRulesToCenRequest() {
-		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

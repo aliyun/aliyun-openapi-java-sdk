@@ -41,7 +41,7 @@ public class RoutePrivateZoneInCenToVpcRequest extends RpcAcsRequest<RoutePrivat
 
 	private Long ownerId;
 	public RoutePrivateZoneInCenToVpcRequest() {
-		super("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "Cbn");
+		super("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

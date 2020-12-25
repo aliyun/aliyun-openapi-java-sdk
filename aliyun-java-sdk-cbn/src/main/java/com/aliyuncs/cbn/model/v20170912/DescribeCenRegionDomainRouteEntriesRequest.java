@@ -43,7 +43,7 @@ public class DescribeCenRegionDomainRouteEntriesRequest extends RpcAcsRequest<De
 
 	private String status;
 	public DescribeCenRegionDomainRouteEntriesRequest() {
-		super("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "Cbn");
+		super("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
