@@ -27,9 +27,9 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 
 	private Integer recoveryTimeoutMs;
 
-	private String resource;
-
 	private Float threshold;
+
+	private String ahasRegionId;
 
 	private Integer halfOpenBaseAmountPerStep;
 
@@ -39,15 +39,17 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 
 	private Integer statDurationMs;
 
-	private String namespace;
-
 	private Integer minRequestAmount;
+
+	private Integer slowRtMs;
+
+	private String resource;
+
+	private String namespace;
 
 	private Integer halfOpenRecoveryStepNum;
 
 	private Integer strategy;
-
-	private Integer slowRtMs;
 	public CreateDegradeRuleRequest() {
 		super("ahas-openapi", "2019-09-01", "CreateDegradeRule", "ahas");
 		setMethod(MethodType.POST);
@@ -68,17 +70,6 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 		}
 	}
 
-	public String getResource() {
-		return this.resource;
-	}
-
-	public void setResource(String resource) {
-		this.resource = resource;
-		if(resource != null){
-			putQueryParameter("Resource", resource);
-		}
-	}
-
 	public Float getThreshold() {
 		return this.threshold;
 	}
@@ -87,6 +78,17 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 
@@ -134,17 +136,6 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
-	}
-
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
 	public Integer getMinRequestAmount() {
 		return this.minRequestAmount;
 	}
@@ -153,6 +144,39 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 		this.minRequestAmount = minRequestAmount;
 		if(minRequestAmount != null){
 			putQueryParameter("MinRequestAmount", minRequestAmount.toString());
+		}
+	}
+
+	public Integer getSlowRtMs() {
+		return this.slowRtMs;
+	}
+
+	public void setSlowRtMs(Integer slowRtMs) {
+		this.slowRtMs = slowRtMs;
+		if(slowRtMs != null){
+			putQueryParameter("SlowRtMs", slowRtMs.toString());
+		}
+	}
+
+	public String getResource() {
+		return this.resource;
+	}
+
+	public void setResource(String resource) {
+		this.resource = resource;
+		if(resource != null){
+			putQueryParameter("Resource", resource);
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 
@@ -175,17 +199,6 @@ public class CreateDegradeRuleRequest extends RpcAcsRequest<CreateDegradeRuleRes
 		this.strategy = strategy;
 		if(strategy != null){
 			putQueryParameter("Strategy", strategy.toString());
-		}
-	}
-
-	public Integer getSlowRtMs() {
-		return this.slowRtMs;
-	}
-
-	public void setSlowRtMs(Integer slowRtMs) {
-		this.slowRtMs = slowRtMs;
-		if(slowRtMs != null){
-			putQueryParameter("SlowRtMs", slowRtMs.toString());
 		}
 	}
 

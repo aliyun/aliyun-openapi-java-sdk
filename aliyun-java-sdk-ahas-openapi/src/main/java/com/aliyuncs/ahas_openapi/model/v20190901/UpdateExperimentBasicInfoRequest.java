@@ -26,15 +26,17 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class UpdateExperimentBasicInfoRequest extends RpcAcsRequest<UpdateExperimentBasicInfoResponse> {
 	   
 
+	private String description;
+
+	private String ahasRegionId;
+
+	private List<String> tagss;
+
 	private String nameSpace;
 
 	private String name;
 
-	private String description;
-
 	private String experimentId;
-
-	private List<String> tagss;
 	public UpdateExperimentBasicInfoRequest() {
 		super("ahas-openapi", "2019-09-01", "UpdateExperimentBasicInfo", "ahas");
 		setMethod(MethodType.POST);
@@ -42,6 +44,41 @@ public class UpdateExperimentBasicInfoRequest extends RpcAcsRequest<UpdateExperi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
+	public List<String> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<String> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int i = 0; i < tagss.size(); i++) {
+				putQueryParameter("Tags." + (i + 1) , tagss.get(i));
+			}
+		}	
 	}
 
 	public String getNameSpace() {
@@ -66,17 +103,6 @@ public class UpdateExperimentBasicInfoRequest extends RpcAcsRequest<UpdateExperi
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
 	public String getExperimentId() {
 		return this.experimentId;
 	}
@@ -86,19 +112,6 @@ public class UpdateExperimentBasicInfoRequest extends RpcAcsRequest<UpdateExperi
 		if(experimentId != null){
 			putQueryParameter("ExperimentId", experimentId);
 		}
-	}
-
-	public List<String> getTagss() {
-		return this.tagss;
-	}
-
-	public void setTagss(List<String> tagss) {
-		this.tagss = tagss;	
-		if (tagss != null) {
-			for (int i = 0; i < tagss.size(); i++) {
-				putQueryParameter("Tags." + (i + 1) , tagss.get(i));
-			}
-		}	
 	}
 
 	@Override

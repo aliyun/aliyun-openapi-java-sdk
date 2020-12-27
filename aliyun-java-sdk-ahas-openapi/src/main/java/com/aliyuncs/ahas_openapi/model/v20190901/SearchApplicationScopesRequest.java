@@ -22,19 +22,40 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetLicenseKeyRequest extends RpcAcsRequest<GetLicenseKeyResponse> {
+public class SearchApplicationScopesRequest extends RpcAcsRequest<SearchApplicationScopesResponse> {
 	   
+
+	private String ip;
 
 	private String ahasRegionId;
 
+	private Integer size;
+
+	private String appName;
+
+	private String appId;
+
 	private String namespace;
-	public GetLicenseKeyRequest() {
-		super("ahas-openapi", "2019-09-01", "GetLicenseKey", "ahas");
+
+	private Integer page;
+	public SearchApplicationScopesRequest() {
+		super("ahas-openapi", "2019-09-01", "SearchApplicationScopes", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
 	}
 
 	public String getAhasRegionId() {
@@ -45,6 +66,39 @@ public class GetLicenseKeyRequest extends RpcAcsRequest<GetLicenseKeyResponse> {
 		this.ahasRegionId = ahasRegionId;
 		if(ahasRegionId != null){
 			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
+	public Integer getSize() {
+		return this.size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
+		}
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
@@ -59,9 +113,20 @@ public class GetLicenseKeyRequest extends RpcAcsRequest<GetLicenseKeyResponse> {
 		}
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
 	@Override
-	public Class<GetLicenseKeyResponse> getResponseClass() {
-		return GetLicenseKeyResponse.class;
+	public Class<SearchApplicationScopesResponse> getResponseClass() {
+		return SearchApplicationScopesResponse.class;
 	}
 
 }

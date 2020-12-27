@@ -30,6 +30,8 @@ public class GetHitCountRequest extends RpcAcsRequest<GetHitCountResponse> {
 	private Long endTime;
 
 	private Long startTime;
+
+	private String ahasRegionId;
 	public GetHitCountRequest() {
 		super("ahas-openapi", "2019-09-01", "GetHitCount", "ahas");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetHitCountRequest extends RpcAcsRequest<GetHitCountResponse> {
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

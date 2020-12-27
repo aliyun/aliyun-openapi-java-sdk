@@ -30,6 +30,8 @@ public class GetActivityTaskRequest extends RpcAcsRequest<GetActivityTaskRespons
 	private String activityTaskId;
 
 	private String experimentTaskId;
+
+	private String ahasRegionId;
 	public GetActivityTaskRequest() {
 		super("ahas-openapi", "2019-09-01", "GetActivityTask", "ahas");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class GetActivityTaskRequest extends RpcAcsRequest<GetActivityTaskRespons
 		this.experimentTaskId = experimentTaskId;
 		if(experimentTaskId != null){
 			putQueryParameter("ExperimentTaskId", experimentTaskId);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

@@ -35,6 +35,8 @@ public class CreateHotParamRuleRequest extends RpcAcsRequest<CreateHotParamRuleR
 
 	private Float threshold;
 
+	private String ahasRegionId;
+
 	private String appName;
 
 	private Boolean enable;
@@ -107,6 +109,17 @@ public class CreateHotParamRuleRequest extends RpcAcsRequest<CreateHotParamRuleR
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

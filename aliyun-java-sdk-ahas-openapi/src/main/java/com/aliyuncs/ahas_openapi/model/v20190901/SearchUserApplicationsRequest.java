@@ -22,14 +22,18 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetLicenseKeyRequest extends RpcAcsRequest<GetLicenseKeyResponse> {
+public class SearchUserApplicationsRequest extends RpcAcsRequest<SearchUserApplicationsResponse> {
 	   
 
-	private String ahasRegionId;
+	private Integer size;
 
 	private String namespace;
-	public GetLicenseKeyRequest() {
-		super("ahas-openapi", "2019-09-01", "GetLicenseKey", "ahas");
+
+	private Integer page;
+
+	private String ahasRegionId;
+	public SearchUserApplicationsRequest() {
+		super("ahas-openapi", "2019-09-01", "SearchUserApplications", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +41,14 @@ public class GetLicenseKeyRequest extends RpcAcsRequest<GetLicenseKeyResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAhasRegionId() {
-		return this.ahasRegionId;
+	public Integer getSize() {
+		return this.size;
 	}
 
-	public void setAhasRegionId(String ahasRegionId) {
-		this.ahasRegionId = ahasRegionId;
-		if(ahasRegionId != null){
-			putQueryParameter("AhasRegionId", ahasRegionId);
+	public void setSize(Integer size) {
+		this.size = size;
+		if(size != null){
+			putQueryParameter("Size", size.toString());
 		}
 	}
 
@@ -59,9 +63,31 @@ public class GetLicenseKeyRequest extends RpcAcsRequest<GetLicenseKeyResponse> {
 		}
 	}
 
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
+	}
+
 	@Override
-	public Class<GetLicenseKeyResponse> getResponseClass() {
-		return GetLicenseKeyResponse.class;
+	public Class<SearchUserApplicationsResponse> getResponseClass() {
+		return SearchUserApplicationsResponse.class;
 	}
 
 }

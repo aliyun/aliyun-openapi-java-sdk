@@ -31,6 +31,8 @@ public class GetMetricsOfResourceRequest extends RpcAcsRequest<GetMetricsOfResou
 
 	private Long startTime;
 
+	private String ahasRegionId;
+
 	private String appName;
 
 	private String namespace;
@@ -73,6 +75,17 @@ public class GetMetricsOfResourceRequest extends RpcAcsRequest<GetMetricsOfResou
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class ListActiveAppsRequest extends RpcAcsRequest<ListActiveAppsResponse>
 
 	private Integer appType;
 
+	private String ahasRegionId;
+
 	private String namespace;
 	public ListActiveAppsRequest() {
 		super("ahas-openapi", "2019-09-01", "ListActiveApps", "ahas");
@@ -45,6 +47,17 @@ public class ListActiveAppsRequest extends RpcAcsRequest<ListActiveAppsResponse>
 		this.appType = appType;
 		if(appType != null){
 			putQueryParameter("AppType", appType.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

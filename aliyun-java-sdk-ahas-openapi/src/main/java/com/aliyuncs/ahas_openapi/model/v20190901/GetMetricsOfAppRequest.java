@@ -29,6 +29,8 @@ public class GetMetricsOfAppRequest extends RpcAcsRequest<GetMetricsOfAppRespons
 
 	private Long startTime;
 
+	private String ahasRegionId;
+
 	private String appName;
 
 	private String namespace;
@@ -60,6 +62,17 @@ public class GetMetricsOfAppRequest extends RpcAcsRequest<GetMetricsOfAppRespons
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

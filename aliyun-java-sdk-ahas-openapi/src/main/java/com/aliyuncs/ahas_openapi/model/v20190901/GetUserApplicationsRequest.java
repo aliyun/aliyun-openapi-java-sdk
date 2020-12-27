@@ -26,6 +26,8 @@ public class GetUserApplicationsRequest extends RpcAcsRequest<GetUserApplication
 	   
 
 	private String namespace;
+
+	private String ahasRegionId;
 	public GetUserApplicationsRequest() {
 		super("ahas-openapi", "2019-09-01", "GetUserApplications", "ahas");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetUserApplicationsRequest extends RpcAcsRequest<GetUserApplication
 		this.namespace = namespace;
 		if(namespace != null){
 			putQueryParameter("Namespace", namespace);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

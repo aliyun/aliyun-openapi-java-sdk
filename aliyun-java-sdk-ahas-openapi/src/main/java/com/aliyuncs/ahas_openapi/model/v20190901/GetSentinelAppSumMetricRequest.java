@@ -29,6 +29,8 @@ public class GetSentinelAppSumMetricRequest extends RpcAcsRequest<GetSentinelApp
 
 	private String startTime;
 
+	private String ahasRegionId;
+
 	private String appName;
 
 	private String acceptLanguage;
@@ -62,6 +64,17 @@ public class GetSentinelAppSumMetricRequest extends RpcAcsRequest<GetSentinelApp
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

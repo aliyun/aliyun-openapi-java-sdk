@@ -27,6 +27,8 @@ public class ModifySystemRuleRequest extends RpcAcsRequest<ModifySystemRuleRespo
 
 	private Float threshold;
 
+	private String ahasRegionId;
+
 	private Long ruleId;
 	public ModifySystemRuleRequest() {
 		super("ahas-openapi", "2019-09-01", "ModifySystemRule", "ahas");
@@ -45,6 +47,17 @@ public class ModifySystemRuleRequest extends RpcAcsRequest<ModifySystemRuleRespo
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

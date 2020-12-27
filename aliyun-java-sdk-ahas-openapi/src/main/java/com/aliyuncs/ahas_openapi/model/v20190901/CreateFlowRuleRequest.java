@@ -35,6 +35,8 @@ public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse>
 
 	private Float threshold;
 
+	private String ahasRegionId;
+
 	private String limitOrigin;
 
 	private String appName;
@@ -107,6 +109,17 @@ public class CreateFlowRuleRequest extends RpcAcsRequest<CreateFlowRuleResponse>
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

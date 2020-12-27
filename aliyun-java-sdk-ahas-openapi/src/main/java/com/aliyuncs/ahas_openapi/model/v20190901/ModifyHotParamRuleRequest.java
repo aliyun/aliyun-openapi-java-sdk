@@ -33,6 +33,8 @@ public class ModifyHotParamRuleRequest extends RpcAcsRequest<ModifyHotParamRuleR
 
 	private Float threshold;
 
+	private String ahasRegionId;
+
 	private Boolean enable;
 
 	private Integer maxQueueingTimeMs;
@@ -92,6 +94,17 @@ public class ModifyHotParamRuleRequest extends RpcAcsRequest<ModifyHotParamRuleR
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

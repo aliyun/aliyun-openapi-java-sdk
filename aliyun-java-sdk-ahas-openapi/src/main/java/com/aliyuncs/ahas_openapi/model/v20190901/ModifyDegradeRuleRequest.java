@@ -29,6 +29,8 @@ public class ModifyDegradeRuleRequest extends RpcAcsRequest<ModifyDegradeRuleRes
 
 	private Float threshold;
 
+	private String ahasRegionId;
+
 	private Integer halfOpenBaseAmountPerStep;
 
 	private Integer statDurationMs;
@@ -70,6 +72,17 @@ public class ModifyDegradeRuleRequest extends RpcAcsRequest<ModifyDegradeRuleRes
 		this.threshold = threshold;
 		if(threshold != null){
 			putQueryParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

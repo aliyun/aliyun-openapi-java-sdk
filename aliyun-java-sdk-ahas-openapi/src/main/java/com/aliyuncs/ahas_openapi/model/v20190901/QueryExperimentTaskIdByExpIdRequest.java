@@ -22,21 +22,32 @@ import com.aliyuncs.ahas_openapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateHotParamItemsRequest extends RpcAcsRequest<CreateHotParamItemsResponse> {
+public class QueryExperimentTaskIdByExpIdRequest extends RpcAcsRequest<QueryExperimentTaskIdByExpIdResponse> {
 	   
+
+	private String namespace;
 
 	private String ahasRegionId;
 
-	private Long ruleId;
-
-	private String items;
-	public CreateHotParamItemsRequest() {
-		super("ahas-openapi", "2019-09-01", "CreateHotParamItems", "ahas");
+	private String expId;
+	public QueryExperimentTaskIdByExpIdRequest() {
+		super("ahas-openapi", "2019-09-01", "QueryExperimentTaskIdByExpId", "ahas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
+		}
 	}
 
 	public String getAhasRegionId() {
@@ -50,31 +61,20 @@ public class CreateHotParamItemsRequest extends RpcAcsRequest<CreateHotParamItem
 		}
 	}
 
-	public Long getRuleId() {
-		return this.ruleId;
+	public String getExpId() {
+		return this.expId;
 	}
 
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
-	public String getItems() {
-		return this.items;
-	}
-
-	public void setItems(String items) {
-		this.items = items;
-		if(items != null){
-			putQueryParameter("Items", items);
+	public void setExpId(String expId) {
+		this.expId = expId;
+		if(expId != null){
+			putQueryParameter("ExpId", expId);
 		}
 	}
 
 	@Override
-	public Class<CreateHotParamItemsResponse> getResponseClass() {
-		return CreateHotParamItemsResponse.class;
+	public Class<QueryExperimentTaskIdByExpIdResponse> getResponseClass() {
+		return QueryExperimentTaskIdByExpIdResponse.class;
 	}
 
 }

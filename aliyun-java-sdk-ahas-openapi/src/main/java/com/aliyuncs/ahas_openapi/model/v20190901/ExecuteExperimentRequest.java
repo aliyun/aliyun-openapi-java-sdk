@@ -30,6 +30,8 @@ public class ExecuteExperimentRequest extends RpcAcsRequest<ExecuteExperimentRes
 	private String experimentId;
 
 	private String definition;
+
+	private String ahasRegionId;
 	public ExecuteExperimentRequest() {
 		super("ahas-openapi", "2019-09-01", "ExecuteExperiment", "ahas");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ExecuteExperimentRequest extends RpcAcsRequest<ExecuteExperimentRes
 		this.definition = definition;
 		if(definition != null){
 			putQueryParameter("Definition", definition);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

@@ -28,6 +28,8 @@ public class UpdateExperimentRequest extends RpcAcsRequest<UpdateExperimentRespo
 
 	private String description;
 
+	private String ahasRegionId;
+
 	private List<String> tagss;
 
 	private String name;
@@ -54,6 +56,17 @@ public class UpdateExperimentRequest extends RpcAcsRequest<UpdateExperimentRespo
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

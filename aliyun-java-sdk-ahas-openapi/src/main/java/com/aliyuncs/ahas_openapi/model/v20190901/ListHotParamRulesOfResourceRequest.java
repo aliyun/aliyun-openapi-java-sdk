@@ -27,6 +27,8 @@ public class ListHotParamRulesOfResourceRequest extends RpcAcsRequest<ListHotPar
 
 	private String resource;
 
+	private String ahasRegionId;
+
 	private String appName;
 
 	private String namespace;
@@ -51,6 +53,17 @@ public class ListHotParamRulesOfResourceRequest extends RpcAcsRequest<ListHotPar
 		this.resource = resource;
 		if(resource != null){
 			putQueryParameter("Resource", resource);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

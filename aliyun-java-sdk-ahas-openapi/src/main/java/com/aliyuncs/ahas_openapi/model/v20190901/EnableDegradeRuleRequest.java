@@ -25,6 +25,8 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class EnableDegradeRuleRequest extends RpcAcsRequest<EnableDegradeRuleResponse> {
 	   
 
+	private String ahasRegionId;
+
 	private Long ruleId;
 	public EnableDegradeRuleRequest() {
 		super("ahas-openapi", "2019-09-01", "EnableDegradeRule", "ahas");
@@ -33,6 +35,17 @@ public class EnableDegradeRuleRequest extends RpcAcsRequest<EnableDegradeRuleRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
 	}
 
 	public Long getRuleId() {

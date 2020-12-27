@@ -25,6 +25,8 @@ import com.aliyuncs.ahas_openapi.Endpoint;
 public class ListSystemRulesRequest extends RpcAcsRequest<ListSystemRulesResponse> {
 	   
 
+	private String ahasRegionId;
+
 	private String appName;
 
 	private String namespace;
@@ -39,6 +41,17 @@ public class ListSystemRulesRequest extends RpcAcsRequest<ListSystemRulesRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
+		}
 	}
 
 	public String getAppName() {

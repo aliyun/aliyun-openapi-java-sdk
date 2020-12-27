@@ -30,6 +30,8 @@ public class ListExperimentMetasRequest extends RpcAcsRequest<ListExperimentMeta
 	private String nameSpace;
 
 	private Integer page;
+
+	private String ahasRegionId;
 	public ListExperimentMetasRequest() {
 		super("ahas-openapi", "2019-09-01", "ListExperimentMetas", "ahas");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class ListExperimentMetasRequest extends RpcAcsRequest<ListExperimentMeta
 		this.page = page;
 		if(page != null){
 			putQueryParameter("Page", page.toString());
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 

@@ -27,6 +27,8 @@ public class AddApplicationEmpIdRelationRequest extends RpcAcsRequest<AddApplica
 
 	private String applicationId;
 
+	private String ahasRegionId;
+
 	private String empIds;
 	public AddApplicationEmpIdRelationRequest() {
 		super("ahas-openapi", "2019-09-01", "AddApplicationEmpIdRelation", "ahas");
@@ -45,6 +47,17 @@ public class AddApplicationEmpIdRelationRequest extends RpcAcsRequest<AddApplica
 		this.applicationId = applicationId;
 		if(applicationId != null){
 			putQueryParameter("ApplicationId", applicationId);
+		}
+	}
+
+	public String getAhasRegionId() {
+		return this.ahasRegionId;
+	}
+
+	public void setAhasRegionId(String ahasRegionId) {
+		this.ahasRegionId = ahasRegionId;
+		if(ahasRegionId != null){
+			putQueryParameter("AhasRegionId", ahasRegionId);
 		}
 	}
 
