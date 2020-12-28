@@ -37,7 +37,7 @@ public class CreateEnvironmentRequest extends RpcAcsRequest<CreateEnvironmentRes
 
 	private String region;
 	public CreateEnvironmentRequest() {
-		super("retailcloud", "2018-03-13", "CreateEnvironment");
+		super("retailcloud", "2018-03-13", "CreateEnvironment", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

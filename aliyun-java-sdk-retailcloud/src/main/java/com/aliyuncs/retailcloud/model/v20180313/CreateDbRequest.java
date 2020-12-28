@@ -33,7 +33,7 @@ public class CreateDbRequest extends RpcAcsRequest<CreateDbResponse> {
 
 	private String characterSetName;
 	public CreateDbRequest() {
-		super("retailcloud", "2018-03-13", "CreateDb");
+		super("retailcloud", "2018-03-13", "CreateDb", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

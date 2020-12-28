@@ -27,7 +27,7 @@ public class DeleteAppResourceAllocRequest extends RpcAcsRequest<DeleteAppResour
 
 	private Long appEnvId;
 	public DeleteAppResourceAllocRequest() {
-		super("retailcloud", "2018-03-13", "DeleteAppResourceAlloc");
+		super("retailcloud", "2018-03-13", "DeleteAppResourceAlloc", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

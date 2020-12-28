@@ -27,7 +27,7 @@ public class ResumeDeployRequest extends RpcAcsRequest<ResumeDeployResponse> {
 
 	private Long deployOrderId;
 	public ResumeDeployRequest() {
-		super("retailcloud", "2018-03-13", "ResumeDeploy");
+		super("retailcloud", "2018-03-13", "ResumeDeploy", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

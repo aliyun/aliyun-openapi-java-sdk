@@ -35,7 +35,7 @@ public class GetRdsBackUpRequest extends RpcAcsRequest<GetRdsBackUpResponse> {
 
 	private Integer pageNumber;
 	public GetRdsBackUpRequest() {
-		super("retailcloud", "2018-03-13", "GetRdsBackUp");
+		super("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

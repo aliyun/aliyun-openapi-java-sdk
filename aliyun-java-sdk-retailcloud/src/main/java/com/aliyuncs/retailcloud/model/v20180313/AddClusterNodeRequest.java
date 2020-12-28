@@ -30,7 +30,7 @@ public class AddClusterNodeRequest extends RpcAcsRequest<AddClusterNodeResponse>
 
 	private String clusterInstanceId;
 	public AddClusterNodeRequest() {
-		super("retailcloud", "2018-03-13", "AddClusterNode");
+		super("retailcloud", "2018-03-13", "AddClusterNode", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

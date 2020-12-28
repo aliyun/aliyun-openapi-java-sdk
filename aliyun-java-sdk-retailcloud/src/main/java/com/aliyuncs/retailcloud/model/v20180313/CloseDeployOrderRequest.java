@@ -27,7 +27,7 @@ public class CloseDeployOrderRequest extends RpcAcsRequest<CloseDeployOrderRespo
 
 	private Long deployOrderId;
 	public CloseDeployOrderRequest() {
-		super("retailcloud", "2018-03-13", "CloseDeployOrder");
+		super("retailcloud", "2018-03-13", "CloseDeployOrder", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

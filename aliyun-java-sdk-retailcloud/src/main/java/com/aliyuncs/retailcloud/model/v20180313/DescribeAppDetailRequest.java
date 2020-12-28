@@ -27,7 +27,7 @@ public class DescribeAppDetailRequest extends RpcAcsRequest<DescribeAppDetailRes
 
 	private Long appId;
 	public DescribeAppDetailRequest() {
-		super("retailcloud", "2018-03-13", "DescribeAppDetail");
+		super("retailcloud", "2018-03-13", "DescribeAppDetail", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

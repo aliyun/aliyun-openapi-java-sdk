@@ -31,7 +31,7 @@ public class ResetAccountPasswordRequest extends RpcAcsRequest<ResetAccountPassw
 
 	private String dbInstanceId;
 	public ResetAccountPasswordRequest() {
-		super("retailcloud", "2018-03-13", "ResetAccountPassword");
+		super("retailcloud", "2018-03-13", "ResetAccountPassword", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

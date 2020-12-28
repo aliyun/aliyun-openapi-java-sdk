@@ -27,7 +27,7 @@ public class ResourceStatusNotifyRequest extends RpcAcsRequest<ResourceStatusNot
 
 	private String data;
 	public ResourceStatusNotifyRequest() {
-		super("retailcloud", "2018-03-13", "ResourceStatusNotify");
+		super("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

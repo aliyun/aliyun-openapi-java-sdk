@@ -36,7 +36,7 @@ public class ListPodsRequest extends RpcAcsRequest<ListPodsResponse> {
 
 	private List<Integer> resultLists;
 	public ListPodsRequest() {
-		super("retailcloud", "2018-03-13", "ListPods");
+		super("retailcloud", "2018-03-13", "ListPods", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
