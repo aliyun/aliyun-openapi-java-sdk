@@ -27,11 +27,11 @@ public class ModifyCostUnitResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -43,12 +43,12 @@ public class ModifyCostUnitResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class ModifyCostUnitResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -77,18 +77,18 @@ public class ModifyCostUnitResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long ownerUid;
+		private Boolean isSuccess;
 
 		private Long unitId;
 
-		private Boolean isSuccess;
+		private Long ownerUid;
 
-		public Long getOwnerUid() {
-			return this.ownerUid;
+		public Boolean getIsSuccess() {
+			return this.isSuccess;
 		}
 
-		public void setOwnerUid(Long ownerUid) {
-			this.ownerUid = ownerUid;
+		public void setIsSuccess(Boolean isSuccess) {
+			this.isSuccess = isSuccess;
 		}
 
 		public Long getUnitId() {
@@ -99,12 +99,12 @@ public class ModifyCostUnitResponse extends AcsResponse {
 			this.unitId = unitId;
 		}
 
-		public Boolean getIsSuccess() {
-			return this.isSuccess;
+		public Long getOwnerUid() {
+			return this.ownerUid;
 		}
 
-		public void setIsSuccess(Boolean isSuccess) {
-			this.isSuccess = isSuccess;
+		public void setOwnerUid(Long ownerUid) {
+			this.ownerUid = ownerUid;
 		}
 	}
 

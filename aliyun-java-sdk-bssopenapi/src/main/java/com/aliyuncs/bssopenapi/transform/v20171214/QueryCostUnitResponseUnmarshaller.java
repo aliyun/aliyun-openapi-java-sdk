@@ -28,21 +28,21 @@ public class QueryCostUnitResponseUnmarshaller {
 	public static QueryCostUnitResponse unmarshall(QueryCostUnitResponse queryCostUnitResponse, UnmarshallerContext _ctx) {
 		
 		queryCostUnitResponse.setRequestId(_ctx.stringValue("QueryCostUnitResponse.RequestId"));
-		queryCostUnitResponse.setSuccess(_ctx.booleanValue("QueryCostUnitResponse.Success"));
-		queryCostUnitResponse.setCode(_ctx.stringValue("QueryCostUnitResponse.Code"));
 		queryCostUnitResponse.setMessage(_ctx.stringValue("QueryCostUnitResponse.Message"));
+		queryCostUnitResponse.setCode(_ctx.stringValue("QueryCostUnitResponse.Code"));
+		queryCostUnitResponse.setSuccess(_ctx.booleanValue("QueryCostUnitResponse.Success"));
 
 		Data data = new Data();
-		data.setPageNum(_ctx.integerValue("QueryCostUnitResponse.Data.PageNum"));
-		data.setPageSize(_ctx.integerValue("QueryCostUnitResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("QueryCostUnitResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("QueryCostUnitResponse.Data.PageSize"));
+		data.setPageNum(_ctx.integerValue("QueryCostUnitResponse.Data.PageNum"));
 
 		List<CostUnitDtoListItem> costUnitDtoList = new ArrayList<CostUnitDtoListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCostUnitResponse.Data.CostUnitDtoList.Length"); i++) {
 			CostUnitDtoListItem costUnitDtoListItem = new CostUnitDtoListItem();
-			costUnitDtoListItem.setOwnerUid(_ctx.longValue("QueryCostUnitResponse.Data.CostUnitDtoList["+ i +"].OwnerUid"));
-			costUnitDtoListItem.setParentUnitId(_ctx.longValue("QueryCostUnitResponse.Data.CostUnitDtoList["+ i +"].ParentUnitId"));
 			costUnitDtoListItem.setUnitId(_ctx.longValue("QueryCostUnitResponse.Data.CostUnitDtoList["+ i +"].UnitId"));
+			costUnitDtoListItem.setParentUnitId(_ctx.longValue("QueryCostUnitResponse.Data.CostUnitDtoList["+ i +"].ParentUnitId"));
+			costUnitDtoListItem.setOwnerUid(_ctx.longValue("QueryCostUnitResponse.Data.CostUnitDtoList["+ i +"].OwnerUid"));
 			costUnitDtoListItem.setUnitName(_ctx.stringValue("QueryCostUnitResponse.Data.CostUnitDtoList["+ i +"].UnitName"));
 
 			costUnitDtoList.add(costUnitDtoListItem);

@@ -161,6 +161,8 @@ public class QueryOrdersResponse extends AcsResponse {
 
 			private String relatedOrderId;
 
+			private String commodityCode;
+
 			public String getOrderId() {
 				return this.orderId;
 			}
@@ -287,6 +289,14 @@ public class QueryOrdersResponse extends AcsResponse {
 
 			public void setRelatedOrderId(String relatedOrderId) {
 				this.relatedOrderId = relatedOrderId;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 		}
 	}

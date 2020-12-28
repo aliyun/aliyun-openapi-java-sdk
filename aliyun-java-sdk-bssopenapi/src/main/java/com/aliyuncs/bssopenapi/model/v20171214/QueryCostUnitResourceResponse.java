@@ -27,11 +27,11 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -43,12 +43,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,11 +77,11 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNum;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
+		private Integer pageNum;
 
 		private List<ResourceInstanceList> resourceInstanceDtoList;
 
@@ -89,12 +89,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 		private CostUnitStatisInfo costUnitStatisInfo;
 
-		public Integer getPageNum() {
-			return this.pageNum;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -105,12 +105,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Integer getPageNum() {
+			return this.pageNum;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
 		}
 
 		public List<ResourceInstanceList> getResourceInstanceDtoList() {
@@ -141,29 +141,29 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 			private Long resourceUserId;
 
+			private String resourceTag;
+
+			private String relatedResources;
+
+			private String apportionName;
+
 			private String resourceId;
 
 			private String commodityCode;
 
-			private String resourceUserName;
-
-			private String commodityName;
-
-			private String resourceGroup;
-
-			private String resourceTag;
-
-			private String resourceNick;
+			private String resourceStatus;
 
 			private String resourceType;
 
-			private String resourceStatus;
+			private String resourceUserName;
 
-			private String relatedResources;
+			private String resourceNick;
+
+			private String resourceGroup;
+
+			private String commodityName;
 
 			private String apportionCode;
-
-			private String apportionName;
 
 			public Long getResourceUserId() {
 				return this.resourceUserId;
@@ -171,6 +171,30 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 			public void setResourceUserId(Long resourceUserId) {
 				this.resourceUserId = resourceUserId;
+			}
+
+			public String getResourceTag() {
+				return this.resourceTag;
+			}
+
+			public void setResourceTag(String resourceTag) {
+				this.resourceTag = resourceTag;
+			}
+
+			public String getRelatedResources() {
+				return this.relatedResources;
+			}
+
+			public void setRelatedResources(String relatedResources) {
+				this.relatedResources = relatedResources;
+			}
+
+			public String getApportionName() {
+				return this.apportionName;
+			}
+
+			public void setApportionName(String apportionName) {
+				this.apportionName = apportionName;
 			}
 
 			public String getResourceId() {
@@ -189,44 +213,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.commodityCode = commodityCode;
 			}
 
-			public String getResourceUserName() {
-				return this.resourceUserName;
+			public String getResourceStatus() {
+				return this.resourceStatus;
 			}
 
-			public void setResourceUserName(String resourceUserName) {
-				this.resourceUserName = resourceUserName;
-			}
-
-			public String getCommodityName() {
-				return this.commodityName;
-			}
-
-			public void setCommodityName(String commodityName) {
-				this.commodityName = commodityName;
-			}
-
-			public String getResourceGroup() {
-				return this.resourceGroup;
-			}
-
-			public void setResourceGroup(String resourceGroup) {
-				this.resourceGroup = resourceGroup;
-			}
-
-			public String getResourceTag() {
-				return this.resourceTag;
-			}
-
-			public void setResourceTag(String resourceTag) {
-				this.resourceTag = resourceTag;
-			}
-
-			public String getResourceNick() {
-				return this.resourceNick;
-			}
-
-			public void setResourceNick(String resourceNick) {
-				this.resourceNick = resourceNick;
+			public void setResourceStatus(String resourceStatus) {
+				this.resourceStatus = resourceStatus;
 			}
 
 			public String getResourceType() {
@@ -237,20 +229,36 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.resourceType = resourceType;
 			}
 
-			public String getResourceStatus() {
-				return this.resourceStatus;
+			public String getResourceUserName() {
+				return this.resourceUserName;
 			}
 
-			public void setResourceStatus(String resourceStatus) {
-				this.resourceStatus = resourceStatus;
+			public void setResourceUserName(String resourceUserName) {
+				this.resourceUserName = resourceUserName;
 			}
 
-			public String getRelatedResources() {
-				return this.relatedResources;
+			public String getResourceNick() {
+				return this.resourceNick;
 			}
 
-			public void setRelatedResources(String relatedResources) {
-				this.relatedResources = relatedResources;
+			public void setResourceNick(String resourceNick) {
+				this.resourceNick = resourceNick;
+			}
+
+			public String getResourceGroup() {
+				return this.resourceGroup;
+			}
+
+			public void setResourceGroup(String resourceGroup) {
+				this.resourceGroup = resourceGroup;
+			}
+
+			public String getCommodityName() {
+				return this.commodityName;
+			}
+
+			public void setCommodityName(String commodityName) {
+				this.commodityName = commodityName;
 			}
 
 			public String getApportionCode() {
@@ -260,32 +268,24 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 			public void setApportionCode(String apportionCode) {
 				this.apportionCode = apportionCode;
 			}
-
-			public String getApportionName() {
-				return this.apportionName;
-			}
-
-			public void setApportionName(String apportionName) {
-				this.apportionName = apportionName;
-			}
 		}
 
 		public static class CostUnit {
 
-			private Long ownerUid;
+			private Long unitId;
 
 			private Long parentUnitId;
 
-			private Long unitId;
+			private Long ownerUid;
 
 			private String unitName;
 
-			public Long getOwnerUid() {
-				return this.ownerUid;
+			public Long getUnitId() {
+				return this.unitId;
 			}
 
-			public void setOwnerUid(Long ownerUid) {
-				this.ownerUid = ownerUid;
+			public void setUnitId(Long unitId) {
+				this.unitId = unitId;
 			}
 
 			public Long getParentUnitId() {
@@ -296,12 +296,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.parentUnitId = parentUnitId;
 			}
 
-			public Long getUnitId() {
-				return this.unitId;
+			public Long getOwnerUid() {
+				return this.ownerUid;
 			}
 
-			public void setUnitId(Long unitId) {
-				this.unitId = unitId;
+			public void setOwnerUid(Long ownerUid) {
+				this.ownerUid = ownerUid;
 			}
 
 			public String getUnitName() {
@@ -315,35 +315,19 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 
 		public static class CostUnitStatisInfo {
 
-			private Long resourceCount;
-
-			private Long resourceGroupCount;
-
 			private Long subUnitCount;
-
-			private Long userCount;
-
-			private Long totalResourceCount;
-
-			private Long totalUserCount;
 
 			private Long totalResourceGroupCount;
 
-			public Long getResourceCount() {
-				return this.resourceCount;
-			}
+			private Long totalResourceCount;
 
-			public void setResourceCount(Long resourceCount) {
-				this.resourceCount = resourceCount;
-			}
+			private Long userCount;
 
-			public Long getResourceGroupCount() {
-				return this.resourceGroupCount;
-			}
+			private Long resourceCount;
 
-			public void setResourceGroupCount(Long resourceGroupCount) {
-				this.resourceGroupCount = resourceGroupCount;
-			}
+			private Long totalUserCount;
+
+			private Long resourceGroupCount;
 
 			public Long getSubUnitCount() {
 				return this.subUnitCount;
@@ -353,12 +337,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.subUnitCount = subUnitCount;
 			}
 
-			public Long getUserCount() {
-				return this.userCount;
+			public Long getTotalResourceGroupCount() {
+				return this.totalResourceGroupCount;
 			}
 
-			public void setUserCount(Long userCount) {
-				this.userCount = userCount;
+			public void setTotalResourceGroupCount(Long totalResourceGroupCount) {
+				this.totalResourceGroupCount = totalResourceGroupCount;
 			}
 
 			public Long getTotalResourceCount() {
@@ -369,6 +353,22 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.totalResourceCount = totalResourceCount;
 			}
 
+			public Long getUserCount() {
+				return this.userCount;
+			}
+
+			public void setUserCount(Long userCount) {
+				this.userCount = userCount;
+			}
+
+			public Long getResourceCount() {
+				return this.resourceCount;
+			}
+
+			public void setResourceCount(Long resourceCount) {
+				this.resourceCount = resourceCount;
+			}
+
 			public Long getTotalUserCount() {
 				return this.totalUserCount;
 			}
@@ -377,12 +377,12 @@ public class QueryCostUnitResourceResponse extends AcsResponse {
 				this.totalUserCount = totalUserCount;
 			}
 
-			public Long getTotalResourceGroupCount() {
-				return this.totalResourceGroupCount;
+			public Long getResourceGroupCount() {
+				return this.resourceGroupCount;
 			}
 
-			public void setTotalResourceGroupCount(Long totalResourceGroupCount) {
-				this.totalResourceGroupCount = totalResourceGroupCount;
+			public void setResourceGroupCount(Long resourceGroupCount) {
+				this.resourceGroupCount = resourceGroupCount;
 			}
 		}
 	}

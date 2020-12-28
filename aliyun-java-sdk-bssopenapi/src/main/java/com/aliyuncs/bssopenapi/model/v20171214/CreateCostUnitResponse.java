@@ -27,11 +27,11 @@ public class CreateCostUnitResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -43,12 +43,12 @@ public class CreateCostUnitResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class CreateCostUnitResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -89,20 +89,20 @@ public class CreateCostUnitResponse extends AcsResponse {
 
 		public static class CostUnitDtoListItem {
 
-			private Long ownerUid;
+			private Long unitId;
 
 			private Long parentUnitId;
 
-			private Long unitId;
+			private Long ownerUid;
 
 			private String unitName;
 
-			public Long getOwnerUid() {
-				return this.ownerUid;
+			public Long getUnitId() {
+				return this.unitId;
 			}
 
-			public void setOwnerUid(Long ownerUid) {
-				this.ownerUid = ownerUid;
+			public void setUnitId(Long unitId) {
+				this.unitId = unitId;
 			}
 
 			public Long getParentUnitId() {
@@ -113,12 +113,12 @@ public class CreateCostUnitResponse extends AcsResponse {
 				this.parentUnitId = parentUnitId;
 			}
 
-			public Long getUnitId() {
-				return this.unitId;
+			public Long getOwnerUid() {
+				return this.ownerUid;
 			}
 
-			public void setUnitId(Long unitId) {
-				this.unitId = unitId;
+			public void setOwnerUid(Long ownerUid) {
+				this.ownerUid = ownerUid;
 			}
 
 			public String getUnitName() {

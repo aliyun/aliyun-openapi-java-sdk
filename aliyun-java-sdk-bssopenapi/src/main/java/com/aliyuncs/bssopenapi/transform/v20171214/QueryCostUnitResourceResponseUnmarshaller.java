@@ -30,48 +30,48 @@ public class QueryCostUnitResourceResponseUnmarshaller {
 	public static QueryCostUnitResourceResponse unmarshall(QueryCostUnitResourceResponse queryCostUnitResourceResponse, UnmarshallerContext _ctx) {
 		
 		queryCostUnitResourceResponse.setRequestId(_ctx.stringValue("QueryCostUnitResourceResponse.RequestId"));
-		queryCostUnitResourceResponse.setSuccess(_ctx.booleanValue("QueryCostUnitResourceResponse.Success"));
-		queryCostUnitResourceResponse.setCode(_ctx.stringValue("QueryCostUnitResourceResponse.Code"));
 		queryCostUnitResourceResponse.setMessage(_ctx.stringValue("QueryCostUnitResourceResponse.Message"));
+		queryCostUnitResourceResponse.setCode(_ctx.stringValue("QueryCostUnitResourceResponse.Code"));
+		queryCostUnitResourceResponse.setSuccess(_ctx.booleanValue("QueryCostUnitResourceResponse.Success"));
 
 		Data data = new Data();
-		data.setPageNum(_ctx.integerValue("QueryCostUnitResourceResponse.Data.PageNum"));
-		data.setPageSize(_ctx.integerValue("QueryCostUnitResourceResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("QueryCostUnitResourceResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("QueryCostUnitResourceResponse.Data.PageSize"));
+		data.setPageNum(_ctx.integerValue("QueryCostUnitResourceResponse.Data.PageNum"));
 
 		CostUnit costUnit = new CostUnit();
-		costUnit.setOwnerUid(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnit.OwnerUid"));
-		costUnit.setParentUnitId(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnit.ParentUnitId"));
 		costUnit.setUnitId(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnit.UnitId"));
+		costUnit.setParentUnitId(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnit.ParentUnitId"));
+		costUnit.setOwnerUid(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnit.OwnerUid"));
 		costUnit.setUnitName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.CostUnit.UnitName"));
 		data.setCostUnit(costUnit);
 
 		CostUnitStatisInfo costUnitStatisInfo = new CostUnitStatisInfo();
-		costUnitStatisInfo.setResourceCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.ResourceCount"));
-		costUnitStatisInfo.setResourceGroupCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.ResourceGroupCount"));
 		costUnitStatisInfo.setSubUnitCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.SubUnitCount"));
-		costUnitStatisInfo.setUserCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.UserCount"));
-		costUnitStatisInfo.setTotalResourceCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.TotalResourceCount"));
-		costUnitStatisInfo.setTotalUserCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.TotalUserCount"));
 		costUnitStatisInfo.setTotalResourceGroupCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.TotalResourceGroupCount"));
+		costUnitStatisInfo.setTotalResourceCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.TotalResourceCount"));
+		costUnitStatisInfo.setUserCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.UserCount"));
+		costUnitStatisInfo.setResourceCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.ResourceCount"));
+		costUnitStatisInfo.setTotalUserCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.TotalUserCount"));
+		costUnitStatisInfo.setResourceGroupCount(_ctx.longValue("QueryCostUnitResourceResponse.Data.CostUnitStatisInfo.ResourceGroupCount"));
 		data.setCostUnitStatisInfo(costUnitStatisInfo);
 
 		List<ResourceInstanceList> resourceInstanceDtoList = new ArrayList<ResourceInstanceList>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList.Length"); i++) {
 			ResourceInstanceList resourceInstanceList = new ResourceInstanceList();
 			resourceInstanceList.setResourceUserId(_ctx.longValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceUserId"));
+			resourceInstanceList.setResourceTag(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceTag"));
+			resourceInstanceList.setRelatedResources(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].RelatedResources"));
+			resourceInstanceList.setApportionName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ApportionName"));
 			resourceInstanceList.setResourceId(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceId"));
 			resourceInstanceList.setCommodityCode(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].CommodityCode"));
-			resourceInstanceList.setResourceUserName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceUserName"));
-			resourceInstanceList.setCommodityName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].CommodityName"));
-			resourceInstanceList.setResourceGroup(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceGroup"));
-			resourceInstanceList.setResourceTag(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceTag"));
-			resourceInstanceList.setResourceNick(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceNick"));
-			resourceInstanceList.setResourceType(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceType"));
 			resourceInstanceList.setResourceStatus(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceStatus"));
-			resourceInstanceList.setRelatedResources(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].RelatedResources"));
+			resourceInstanceList.setResourceType(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceType"));
+			resourceInstanceList.setResourceUserName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceUserName"));
+			resourceInstanceList.setResourceNick(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceNick"));
+			resourceInstanceList.setResourceGroup(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ResourceGroup"));
+			resourceInstanceList.setCommodityName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].CommodityName"));
 			resourceInstanceList.setApportionCode(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ApportionCode"));
-			resourceInstanceList.setApportionName(_ctx.stringValue("QueryCostUnitResourceResponse.Data.ResourceInstanceDtoList["+ i +"].ApportionName"));
 
 			resourceInstanceDtoList.add(resourceInstanceList);
 		}

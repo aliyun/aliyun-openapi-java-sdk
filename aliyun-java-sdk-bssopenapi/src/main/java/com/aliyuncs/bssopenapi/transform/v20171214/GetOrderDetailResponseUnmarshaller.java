@@ -28,45 +28,46 @@ public class GetOrderDetailResponseUnmarshaller {
 	public static GetOrderDetailResponse unmarshall(GetOrderDetailResponse getOrderDetailResponse, UnmarshallerContext _ctx) {
 		
 		getOrderDetailResponse.setRequestId(_ctx.stringValue("GetOrderDetailResponse.RequestId"));
-		getOrderDetailResponse.setSuccess(_ctx.booleanValue("GetOrderDetailResponse.Success"));
-		getOrderDetailResponse.setCode(_ctx.stringValue("GetOrderDetailResponse.Code"));
 		getOrderDetailResponse.setMessage(_ctx.stringValue("GetOrderDetailResponse.Message"));
+		getOrderDetailResponse.setCode(_ctx.stringValue("GetOrderDetailResponse.Code"));
+		getOrderDetailResponse.setSuccess(_ctx.booleanValue("GetOrderDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setHostName(_ctx.stringValue("GetOrderDetailResponse.Data.HostName"));
-		data.setPageNum(_ctx.integerValue("GetOrderDetailResponse.Data.PageNum"));
-		data.setPageSize(_ctx.integerValue("GetOrderDetailResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("GetOrderDetailResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("GetOrderDetailResponse.Data.PageSize"));
+		data.setPageNum(_ctx.integerValue("GetOrderDetailResponse.Data.PageNum"));
+		data.setHostName(_ctx.stringValue("GetOrderDetailResponse.Data.HostName"));
 
 		List<Order> orderList = new ArrayList<Order>();
 		for (int i = 0; i < _ctx.lengthValue("GetOrderDetailResponse.Data.OrderList.Length"); i++) {
 			Order order = new Order();
-			order.setOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderId"));
-			order.setSubOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].SubOrderId"));
-			order.setProductCode(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].ProductCode"));
-			order.setProductType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].ProductType"));
-			order.setSubscriptionType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].SubscriptionType"));
-			order.setOrderType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderType"));
-			order.setCreateTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].CreateTime"));
-			order.setPaymentTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentTime"));
-			order.setPaymentStatus(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentStatus"));
-			order.setRegion(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Region"));
-			order.setConfig(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Config"));
-			order.setQuantity(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Quantity"));
-			order.setUsageStartTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].UsageStartTime"));
-			order.setUsageEndTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].UsageEndTime"));
-			order.setInstanceIDs(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].InstanceIDs"));
-			order.setPretaxGrossAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxGrossAmount"));
-			order.setPretaxAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxAmount"));
-			order.setCurrency(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Currency"));
-			order.setPretaxAmountLocal(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxAmountLocal"));
-			order.setTax(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Tax"));
-			order.setAfterTaxAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].AfterTaxAmount"));
-			order.setPaymentCurrency(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentCurrency"));
 			order.setOperator(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Operator"));
-			order.setRelatedOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].RelatedOrderId"));
-			order.setOrderSubType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderSubType"));
+			order.setAfterTaxAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].AfterTaxAmount"));
+			order.setSubOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].SubOrderId"));
+			order.setConfig(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Config"));
+			order.setTax(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Tax"));
+			order.setPaymentTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentTime"));
+			order.setPaymentCurrency(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentCurrency"));
+			order.setUsageEndTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].UsageEndTime"));
+			order.setSubscriptionType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].SubscriptionType"));
+			order.setPretaxGrossAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxGrossAmount"));
+			order.setOrderType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderType"));
+			order.setCurrency(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Currency"));
+			order.setUsageStartTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].UsageStartTime"));
 			order.setOriginalConfig(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OriginalConfig"));
+			order.setPaymentStatus(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PaymentStatus"));
+			order.setProductCode(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].ProductCode"));
+			order.setCreateTime(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].CreateTime"));
+			order.setProductType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].ProductType"));
+			order.setRelatedOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].RelatedOrderId"));
+			order.setQuantity(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Quantity"));
+			order.setOrderId(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderId"));
+			order.setPretaxAmount(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxAmount"));
+			order.setOrderSubType(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].OrderSubType"));
+			order.setRegion(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].Region"));
+			order.setInstanceIDs(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].InstanceIDs"));
+			order.setPretaxAmountLocal(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].PretaxAmountLocal"));
+			order.setCommodityCode(_ctx.stringValue("GetOrderDetailResponse.Data.OrderList["+ i +"].CommodityCode"));
 
 			orderList.add(order);
 		}

@@ -27,11 +27,11 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -43,12 +43,12 @@ public class GetOrderDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class GetOrderDetailResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,30 +77,22 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String hostName;
-
-		private Integer pageNum;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
+		private Integer pageNum;
+
+		private String hostName;
 
 		private List<Order> orderList;
 
-		public String getHostName() {
-			return this.hostName;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
-		}
-
-		public Integer getPageNum() {
-			return this.pageNum;
-		}
-
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -111,12 +103,20 @@ public class GetOrderDetailResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
+		public Integer getPageNum() {
+			return this.pageNum;
 		}
 
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
+		}
+
+		public String getHostName() {
+			return this.hostName;
+		}
+
+		public void setHostName(String hostName) {
+			this.hostName = hostName;
 		}
 
 		public List<Order> getOrderList() {
@@ -129,216 +129,66 @@ public class GetOrderDetailResponse extends AcsResponse {
 
 		public static class Order {
 
-			private String orderId;
-
-			private String subOrderId;
-
-			private String productCode;
-
-			private String productType;
-
-			private String subscriptionType;
-
-			private String orderType;
-
-			private String createTime;
-
-			private String paymentTime;
-
-			private String paymentStatus;
-
-			private String region;
-
-			private String config;
-
-			private String quantity;
-
-			private String usageStartTime;
-
-			private String usageEndTime;
-
-			private String instanceIDs;
-
-			private String pretaxGrossAmount;
-
-			private String pretaxAmount;
-
-			private String currency;
-
-			private String pretaxAmountLocal;
-
-			private String tax;
+			private String operator;
 
 			private String afterTaxAmount;
 
+			private String subOrderId;
+
+			private String config;
+
+			private String tax;
+
+			private String paymentTime;
+
 			private String paymentCurrency;
 
-			private String operator;
+			private String usageEndTime;
 
-			private String relatedOrderId;
+			private String subscriptionType;
 
-			private String orderSubType;
+			private String pretaxGrossAmount;
+
+			private String orderType;
+
+			private String currency;
+
+			private String usageStartTime;
 
 			private String originalConfig;
 
-			public String getOrderId() {
-				return this.orderId;
+			private String paymentStatus;
+
+			private String productCode;
+
+			private String createTime;
+
+			private String productType;
+
+			private String relatedOrderId;
+
+			private String quantity;
+
+			private String orderId;
+
+			private String pretaxAmount;
+
+			private String orderSubType;
+
+			private String region;
+
+			private String instanceIDs;
+
+			private String pretaxAmountLocal;
+
+			private String commodityCode;
+
+			public String getOperator() {
+				return this.operator;
 			}
 
-			public void setOrderId(String orderId) {
-				this.orderId = orderId;
-			}
-
-			public String getSubOrderId() {
-				return this.subOrderId;
-			}
-
-			public void setSubOrderId(String subOrderId) {
-				this.subOrderId = subOrderId;
-			}
-
-			public String getProductCode() {
-				return this.productCode;
-			}
-
-			public void setProductCode(String productCode) {
-				this.productCode = productCode;
-			}
-
-			public String getProductType() {
-				return this.productType;
-			}
-
-			public void setProductType(String productType) {
-				this.productType = productType;
-			}
-
-			public String getSubscriptionType() {
-				return this.subscriptionType;
-			}
-
-			public void setSubscriptionType(String subscriptionType) {
-				this.subscriptionType = subscriptionType;
-			}
-
-			public String getOrderType() {
-				return this.orderType;
-			}
-
-			public void setOrderType(String orderType) {
-				this.orderType = orderType;
-			}
-
-			public String getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
-			}
-
-			public String getPaymentTime() {
-				return this.paymentTime;
-			}
-
-			public void setPaymentTime(String paymentTime) {
-				this.paymentTime = paymentTime;
-			}
-
-			public String getPaymentStatus() {
-				return this.paymentStatus;
-			}
-
-			public void setPaymentStatus(String paymentStatus) {
-				this.paymentStatus = paymentStatus;
-			}
-
-			public String getRegion() {
-				return this.region;
-			}
-
-			public void setRegion(String region) {
-				this.region = region;
-			}
-
-			public String getConfig() {
-				return this.config;
-			}
-
-			public void setConfig(String config) {
-				this.config = config;
-			}
-
-			public String getQuantity() {
-				return this.quantity;
-			}
-
-			public void setQuantity(String quantity) {
-				this.quantity = quantity;
-			}
-
-			public String getUsageStartTime() {
-				return this.usageStartTime;
-			}
-
-			public void setUsageStartTime(String usageStartTime) {
-				this.usageStartTime = usageStartTime;
-			}
-
-			public String getUsageEndTime() {
-				return this.usageEndTime;
-			}
-
-			public void setUsageEndTime(String usageEndTime) {
-				this.usageEndTime = usageEndTime;
-			}
-
-			public String getInstanceIDs() {
-				return this.instanceIDs;
-			}
-
-			public void setInstanceIDs(String instanceIDs) {
-				this.instanceIDs = instanceIDs;
-			}
-
-			public String getPretaxGrossAmount() {
-				return this.pretaxGrossAmount;
-			}
-
-			public void setPretaxGrossAmount(String pretaxGrossAmount) {
-				this.pretaxGrossAmount = pretaxGrossAmount;
-			}
-
-			public String getPretaxAmount() {
-				return this.pretaxAmount;
-			}
-
-			public void setPretaxAmount(String pretaxAmount) {
-				this.pretaxAmount = pretaxAmount;
-			}
-
-			public String getCurrency() {
-				return this.currency;
-			}
-
-			public void setCurrency(String currency) {
-				this.currency = currency;
-			}
-
-			public String getPretaxAmountLocal() {
-				return this.pretaxAmountLocal;
-			}
-
-			public void setPretaxAmountLocal(String pretaxAmountLocal) {
-				this.pretaxAmountLocal = pretaxAmountLocal;
-			}
-
-			public String getTax() {
-				return this.tax;
-			}
-
-			public void setTax(String tax) {
-				this.tax = tax;
+			public void setOperator(String operator) {
+				this.operator = operator;
 			}
 
 			public String getAfterTaxAmount() {
@@ -349,6 +199,38 @@ public class GetOrderDetailResponse extends AcsResponse {
 				this.afterTaxAmount = afterTaxAmount;
 			}
 
+			public String getSubOrderId() {
+				return this.subOrderId;
+			}
+
+			public void setSubOrderId(String subOrderId) {
+				this.subOrderId = subOrderId;
+			}
+
+			public String getConfig() {
+				return this.config;
+			}
+
+			public void setConfig(String config) {
+				this.config = config;
+			}
+
+			public String getTax() {
+				return this.tax;
+			}
+
+			public void setTax(String tax) {
+				this.tax = tax;
+			}
+
+			public String getPaymentTime() {
+				return this.paymentTime;
+			}
+
+			public void setPaymentTime(String paymentTime) {
+				this.paymentTime = paymentTime;
+			}
+
 			public String getPaymentCurrency() {
 				return this.paymentCurrency;
 			}
@@ -357,12 +239,92 @@ public class GetOrderDetailResponse extends AcsResponse {
 				this.paymentCurrency = paymentCurrency;
 			}
 
-			public String getOperator() {
-				return this.operator;
+			public String getUsageEndTime() {
+				return this.usageEndTime;
 			}
 
-			public void setOperator(String operator) {
-				this.operator = operator;
+			public void setUsageEndTime(String usageEndTime) {
+				this.usageEndTime = usageEndTime;
+			}
+
+			public String getSubscriptionType() {
+				return this.subscriptionType;
+			}
+
+			public void setSubscriptionType(String subscriptionType) {
+				this.subscriptionType = subscriptionType;
+			}
+
+			public String getPretaxGrossAmount() {
+				return this.pretaxGrossAmount;
+			}
+
+			public void setPretaxGrossAmount(String pretaxGrossAmount) {
+				this.pretaxGrossAmount = pretaxGrossAmount;
+			}
+
+			public String getOrderType() {
+				return this.orderType;
+			}
+
+			public void setOrderType(String orderType) {
+				this.orderType = orderType;
+			}
+
+			public String getCurrency() {
+				return this.currency;
+			}
+
+			public void setCurrency(String currency) {
+				this.currency = currency;
+			}
+
+			public String getUsageStartTime() {
+				return this.usageStartTime;
+			}
+
+			public void setUsageStartTime(String usageStartTime) {
+				this.usageStartTime = usageStartTime;
+			}
+
+			public String getOriginalConfig() {
+				return this.originalConfig;
+			}
+
+			public void setOriginalConfig(String originalConfig) {
+				this.originalConfig = originalConfig;
+			}
+
+			public String getPaymentStatus() {
+				return this.paymentStatus;
+			}
+
+			public void setPaymentStatus(String paymentStatus) {
+				this.paymentStatus = paymentStatus;
+			}
+
+			public String getProductCode() {
+				return this.productCode;
+			}
+
+			public void setProductCode(String productCode) {
+				this.productCode = productCode;
+			}
+
+			public String getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
+			}
+
+			public String getProductType() {
+				return this.productType;
+			}
+
+			public void setProductType(String productType) {
+				this.productType = productType;
 			}
 
 			public String getRelatedOrderId() {
@@ -373,6 +335,30 @@ public class GetOrderDetailResponse extends AcsResponse {
 				this.relatedOrderId = relatedOrderId;
 			}
 
+			public String getQuantity() {
+				return this.quantity;
+			}
+
+			public void setQuantity(String quantity) {
+				this.quantity = quantity;
+			}
+
+			public String getOrderId() {
+				return this.orderId;
+			}
+
+			public void setOrderId(String orderId) {
+				this.orderId = orderId;
+			}
+
+			public String getPretaxAmount() {
+				return this.pretaxAmount;
+			}
+
+			public void setPretaxAmount(String pretaxAmount) {
+				this.pretaxAmount = pretaxAmount;
+			}
+
 			public String getOrderSubType() {
 				return this.orderSubType;
 			}
@@ -381,12 +367,36 @@ public class GetOrderDetailResponse extends AcsResponse {
 				this.orderSubType = orderSubType;
 			}
 
-			public String getOriginalConfig() {
-				return this.originalConfig;
+			public String getRegion() {
+				return this.region;
 			}
 
-			public void setOriginalConfig(String originalConfig) {
-				this.originalConfig = originalConfig;
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getInstanceIDs() {
+				return this.instanceIDs;
+			}
+
+			public void setInstanceIDs(String instanceIDs) {
+				this.instanceIDs = instanceIDs;
+			}
+
+			public String getPretaxAmountLocal() {
+				return this.pretaxAmountLocal;
+			}
+
+			public void setPretaxAmountLocal(String pretaxAmountLocal) {
+				this.pretaxAmountLocal = pretaxAmountLocal;
+			}
+
+			public String getCommodityCode() {
+				return this.commodityCode;
+			}
+
+			public void setCommodityCode(String commodityCode) {
+				this.commodityCode = commodityCode;
 			}
 		}
 	}

@@ -27,16 +27,16 @@ public class ModifyCostUnitResponseUnmarshaller {
 	public static ModifyCostUnitResponse unmarshall(ModifyCostUnitResponse modifyCostUnitResponse, UnmarshallerContext _ctx) {
 		
 		modifyCostUnitResponse.setRequestId(_ctx.stringValue("ModifyCostUnitResponse.RequestId"));
-		modifyCostUnitResponse.setSuccess(_ctx.booleanValue("ModifyCostUnitResponse.Success"));
-		modifyCostUnitResponse.setCode(_ctx.stringValue("ModifyCostUnitResponse.Code"));
 		modifyCostUnitResponse.setMessage(_ctx.stringValue("ModifyCostUnitResponse.Message"));
+		modifyCostUnitResponse.setCode(_ctx.stringValue("ModifyCostUnitResponse.Code"));
+		modifyCostUnitResponse.setSuccess(_ctx.booleanValue("ModifyCostUnitResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ModifyCostUnitResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setOwnerUid(_ctx.longValue("ModifyCostUnitResponse.Data["+ i +"].OwnerUid"));
-			dataItem.setUnitId(_ctx.longValue("ModifyCostUnitResponse.Data["+ i +"].UnitId"));
 			dataItem.setIsSuccess(_ctx.booleanValue("ModifyCostUnitResponse.Data["+ i +"].IsSuccess"));
+			dataItem.setUnitId(_ctx.longValue("ModifyCostUnitResponse.Data["+ i +"].UnitId"));
+			dataItem.setOwnerUid(_ctx.longValue("ModifyCostUnitResponse.Data["+ i +"].OwnerUid"));
 
 			data.add(dataItem);
 		}
