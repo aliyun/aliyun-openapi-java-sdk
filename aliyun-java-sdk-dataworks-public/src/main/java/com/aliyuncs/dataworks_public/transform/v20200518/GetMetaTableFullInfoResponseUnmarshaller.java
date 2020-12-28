@@ -66,6 +66,7 @@ public class GetMetaTableFullInfoResponseUnmarshaller {
 			columnListItem.setIsPartitionColumn(_ctx.booleanValue("GetMetaTableFullInfoResponse.Data.ColumnList["+ i +"].IsPartitionColumn"));
 			columnListItem.setIsForeignKey(_ctx.booleanValue("GetMetaTableFullInfoResponse.Data.ColumnList["+ i +"].IsForeignKey"));
 			columnListItem.setCaption(_ctx.stringValue("GetMetaTableFullInfoResponse.Data.ColumnList["+ i +"].Caption"));
+			columnListItem.setPosition(_ctx.integerValue("GetMetaTableFullInfoResponse.Data.ColumnList["+ i +"].Position"));
 
 			columnList.add(columnListItem);
 		}

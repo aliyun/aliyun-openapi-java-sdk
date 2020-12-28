@@ -27,6 +27,10 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 
 	private String dataSourceType;
 
+	private Integer pageSize;
+
+	private Integer pageNum;
+
 	private Long projectId;
 	public ListMetaDBRequest() {
 		super("dataworks-public", "2020-05-18", "ListMetaDB");
@@ -45,6 +49,28 @@ public class ListMetaDBRequest extends RpcAcsRequest<ListMetaDBResponse> {
 		this.dataSourceType = dataSourceType;
 		if(dataSourceType != null){
 			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

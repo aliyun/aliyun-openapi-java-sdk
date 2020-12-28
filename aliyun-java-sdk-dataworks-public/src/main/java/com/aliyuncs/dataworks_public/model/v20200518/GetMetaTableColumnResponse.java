@@ -145,6 +145,8 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 
 			private String caption;
 
+			private Integer position;
+
 			public String getColumnName() {
 				return this.columnName;
 			}
@@ -207,6 +209,14 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 
 			public void setCaption(String caption) {
 				this.caption = caption;
+			}
+
+			public Integer getPosition() {
+				return this.position;
+			}
+
+			public void setPosition(Integer position) {
+				this.position = position;
 			}
 		}
 	}

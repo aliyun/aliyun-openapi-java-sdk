@@ -315,6 +315,8 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 			private String caption;
 
+			private Integer position;
+
 			public String getColumnGuid() {
 				return this.columnGuid;
 			}
@@ -377,6 +379,14 @@ public class GetMetaTableFullInfoResponse extends AcsResponse {
 
 			public void setCaption(String caption) {
 				this.caption = caption;
+			}
+
+			public Integer getPosition() {
+				return this.position;
+			}
+
+			public void setPosition(Integer position) {
+				this.position = position;
 			}
 		}
 	}
