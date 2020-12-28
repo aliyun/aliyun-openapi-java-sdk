@@ -22,10 +22,14 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBodyInstanceRequest extends RpcAcsRequest<CreateBodyInstanceResponse> {
+public class GetRealPersonVerificationResultRequest extends RpcAcsRequest<GetRealPersonVerificationResultResponse> {
 	   
-	public CreateBodyInstanceRequest() {
-		super("facebody", "2019-12-30", "CreateBodyInstance");
+
+	private String materialHash;
+
+	private String verificationToken;
+	public GetRealPersonVerificationResultRequest() {
+		super("facebody", "2019-12-30", "GetRealPersonVerificationResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +37,31 @@ public class CreateBodyInstanceRequest extends RpcAcsRequest<CreateBodyInstanceR
 		} catch (Exception e) {}
 	}
 
+	public String getMaterialHash() {
+		return this.materialHash;
+	}
+
+	public void setMaterialHash(String materialHash) {
+		this.materialHash = materialHash;
+		if(materialHash != null){
+			putBodyParameter("MaterialHash", materialHash);
+		}
+	}
+
+	public String getVerificationToken() {
+		return this.verificationToken;
+	}
+
+	public void setVerificationToken(String verificationToken) {
+		this.verificationToken = verificationToken;
+		if(verificationToken != null){
+			putBodyParameter("VerificationToken", verificationToken);
+		}
+	}
+
 	@Override
-	public Class<CreateBodyInstanceResponse> getResponseClass() {
-		return CreateBodyInstanceResponse.class;
+	public Class<GetRealPersonVerificationResultResponse> getResponseClass() {
+		return GetRealPersonVerificationResultResponse.class;
 	}
 
 }

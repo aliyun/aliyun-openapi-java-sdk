@@ -15,30 +15,24 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.facebody.transform.v20191230.CreateBodyInstanceResponseUnmarshaller;
+import com.aliyuncs.facebody.transform.v20191230.GenRealPersonVerificationTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBodyInstanceResponse extends AcsResponse {
-
-	private String message;
+public class GenRealPersonVerificationTokenResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String errorMessage;
+
 	private String code;
 
+	private Boolean success;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,12 +42,28 @@ public class CreateBodyInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -66,20 +76,20 @@ public class CreateBodyInstanceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long id;
+		private String verificationToken;
 
-		public Long getId() {
-			return this.id;
+		public String getVerificationToken() {
+			return this.verificationToken;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setVerificationToken(String verificationToken) {
+			this.verificationToken = verificationToken;
 		}
 	}
 
 	@Override
-	public CreateBodyInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateBodyInstanceResponseUnmarshaller.unmarshall(this, context);
+	public GenRealPersonVerificationTokenResponse getInstance(UnmarshallerContext context) {
+		return	GenRealPersonVerificationTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
