@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20190919;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20190919.ActiveMeetingCodeResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.GetWebSocketTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ActiveMeetingCodeResponse extends AcsResponse {
+public class GetWebSocketTokenResponse extends AcsResponse {
 
 	private Integer errorCode;
 
@@ -32,7 +32,7 @@ public class ActiveMeetingCodeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private MeetingInfo meetingInfo;
+	private Data data;
 
 	public Integer getErrorCode() {
 		return this.errorCode;
@@ -66,40 +66,50 @@ public class ActiveMeetingCodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public MeetingInfo getMeetingInfo() {
-		return this.meetingInfo;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setMeetingInfo(MeetingInfo meetingInfo) {
-		this.meetingInfo = meetingInfo;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class MeetingInfo {
+	public static class Data {
 
-		private Long validDate;
+		private String authWsUrl;
 
-		private String meetingCode;
+		private String token;
 
-		public Long getValidDate() {
-			return this.validDate;
+		private String wsOuterReConnTime;
+
+		public String getAuthWsUrl() {
+			return this.authWsUrl;
 		}
 
-		public void setValidDate(Long validDate) {
-			this.validDate = validDate;
+		public void setAuthWsUrl(String authWsUrl) {
+			this.authWsUrl = authWsUrl;
 		}
 
-		public String getMeetingCode() {
-			return this.meetingCode;
+		public String getToken() {
+			return this.token;
 		}
 
-		public void setMeetingCode(String meetingCode) {
-			this.meetingCode = meetingCode;
+		public void setToken(String token) {
+			this.token = token;
+		}
+
+		public String getWsOuterReConnTime() {
+			return this.wsOuterReConnTime;
+		}
+
+		public void setWsOuterReConnTime(String wsOuterReConnTime) {
+			this.wsOuterReConnTime = wsOuterReConnTime;
 		}
 	}
 
 	@Override
-	public ActiveMeetingCodeResponse getInstance(UnmarshallerContext context) {
-		return	ActiveMeetingCodeResponseUnmarshaller.unmarshall(this, context);
+	public GetWebSocketTokenResponse getInstance(UnmarshallerContext context) {
+		return	GetWebSocketTokenResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

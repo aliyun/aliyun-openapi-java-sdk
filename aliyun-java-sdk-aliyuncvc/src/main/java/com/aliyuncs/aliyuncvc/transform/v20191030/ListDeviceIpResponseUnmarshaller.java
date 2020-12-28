@@ -38,6 +38,7 @@ public class ListDeviceIpResponseUnmarshaller {
 			devicesItem.setIp(_ctx.stringValue("ListDeviceIpResponse.Devices["+ i +"].Ip"));
 			devicesItem.setMac(_ctx.stringValue("ListDeviceIpResponse.Devices["+ i +"].Mac"));
 			devicesItem.setSsId(_ctx.stringValue("ListDeviceIpResponse.Devices["+ i +"].SsId"));
+			devicesItem.setPort(_ctx.stringValue("ListDeviceIpResponse.Devices["+ i +"].Port"));
 
 			devices.add(devicesItem);
 		}

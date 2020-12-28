@@ -36,6 +36,7 @@ public class GetDeviceInfoResponseUnmarshaller {
 		device.setIP(_ctx.stringValue("GetDeviceInfoResponse.Device.IP"));
 		device.setMac(_ctx.stringValue("GetDeviceInfoResponse.Device.Mac"));
 		device.setSsid(_ctx.stringValue("GetDeviceInfoResponse.Device.Ssid"));
+		device.setPort(_ctx.stringValue("GetDeviceInfoResponse.Device.Port"));
 		getDeviceInfoResponse.setDevice(device);
 	 
 	 	return getDeviceInfoResponse;

@@ -26,6 +26,8 @@ public class GetDeviceInfoRequest extends RpcAcsRequest<GetDeviceInfoResponse> {
 	   
 
 	private String castScreenCode;
+
+	private String sn;
 	public GetDeviceInfoRequest() {
 		super("aliyuncvc", "2019-10-30", "GetDeviceInfo", "aliyuncvc");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetDeviceInfoRequest extends RpcAcsRequest<GetDeviceInfoResponse> {
 		this.castScreenCode = castScreenCode;
 		if(castScreenCode != null){
 			putBodyParameter("CastScreenCode", castScreenCode);
+		}
+	}
+
+	public String getSn() {
+		return this.sn;
+	}
+
+	public void setSn(String sn) {
+		this.sn = sn;
+		if(sn != null){
+			putBodyParameter("Sn", sn);
 		}
 	}
 

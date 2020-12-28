@@ -85,6 +85,8 @@ public class ListDeviceIpResponse extends AcsResponse {
 
 		private String ssId;
 
+		private String port;
+
 		public String getScreenCode() {
 			return this.screenCode;
 		}
@@ -115,6 +117,14 @@ public class ListDeviceIpResponse extends AcsResponse {
 
 		public void setSsId(String ssId) {
 			this.ssId = ssId;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
 		}
 	}
 

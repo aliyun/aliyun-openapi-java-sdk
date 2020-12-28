@@ -12,19 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20190919;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20190919.QueryUserEvaluationResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.GetScreenVerificationCodeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryUserEvaluationResponse extends AcsResponse {
-
-	private String userEvaluation;
+public class GetScreenVerificationCodeResponse extends AcsResponse {
 
 	private Integer errorCode;
 
@@ -34,13 +32,7 @@ public class QueryUserEvaluationResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getUserEvaluation() {
-		return this.userEvaluation;
-	}
-
-	public void setUserEvaluation(String userEvaluation) {
-		this.userEvaluation = userEvaluation;
-	}
+	private String screenVerificationCode;
 
 	public Integer getErrorCode() {
 		return this.errorCode;
@@ -74,9 +66,17 @@ public class QueryUserEvaluationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getScreenVerificationCode() {
+		return this.screenVerificationCode;
+	}
+
+	public void setScreenVerificationCode(String screenVerificationCode) {
+		this.screenVerificationCode = screenVerificationCode;
+	}
+
 	@Override
-	public QueryUserEvaluationResponse getInstance(UnmarshallerContext context) {
-		return	QueryUserEvaluationResponseUnmarshaller.unmarshall(this, context);
+	public GetScreenVerificationCodeResponse getInstance(UnmarshallerContext context) {
+		return	GetScreenVerificationCodeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

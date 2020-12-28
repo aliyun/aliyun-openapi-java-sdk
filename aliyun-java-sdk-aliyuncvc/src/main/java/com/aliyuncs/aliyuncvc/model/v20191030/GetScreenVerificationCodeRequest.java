@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20190919;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,12 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RemoveMeetingRequest extends RpcAcsRequest<RemoveMeetingResponse> {
+public class GetScreenVerificationCodeRequest extends RpcAcsRequest<GetScreenVerificationCodeResponse> {
 	   
 
-	private String meetingUUID;
-	public RemoveMeetingRequest() {
-		super("aliyuncvc", "2019-09-19", "RemoveMeeting", "aliyuncvc");
+	private String castScreenCode;
+	public GetScreenVerificationCodeRequest() {
+		super("aliyuncvc", "2019-10-30", "GetScreenVerificationCode", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class RemoveMeetingRequest extends RpcAcsRequest<RemoveMeetingResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getMeetingUUID() {
-		return this.meetingUUID;
+	public String getCastScreenCode() {
+		return this.castScreenCode;
 	}
 
-	public void setMeetingUUID(String meetingUUID) {
-		this.meetingUUID = meetingUUID;
-		if(meetingUUID != null){
-			putBodyParameter("MeetingUUID", meetingUUID);
+	public void setCastScreenCode(String castScreenCode) {
+		this.castScreenCode = castScreenCode;
+		if(castScreenCode != null){
+			putBodyParameter("CastScreenCode", castScreenCode);
 		}
 	}
 
 	@Override
-	public Class<RemoveMeetingResponse> getResponseClass() {
-		return RemoveMeetingResponse.class;
+	public Class<GetScreenVerificationCodeResponse> getResponseClass() {
+		return GetScreenVerificationCodeResponse.class;
 	}
 
 }

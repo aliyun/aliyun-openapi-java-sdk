@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20190919;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ActiveMeetingCodeRequest extends RpcAcsRequest<ActiveMeetingCodeResponse> {
+public class GetDeviceListRequest extends RpcAcsRequest<GetDeviceListResponse> {
 	   
 
-	private String meetingUUID;
-
-	private String meetingCode;
-	public ActiveMeetingCodeRequest() {
-		super("aliyuncvc", "2019-09-19", "ActiveMeetingCode", "aliyuncvc");
+	private String castScreenCode;
+	public GetDeviceListRequest() {
+		super("aliyuncvc", "2019-10-30", "GetDeviceList", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class ActiveMeetingCodeRequest extends RpcAcsRequest<ActiveMeetingCodeRes
 		} catch (Exception e) {}
 	}
 
-	public String getMeetingUUID() {
-		return this.meetingUUID;
+	public String getCastScreenCode() {
+		return this.castScreenCode;
 	}
 
-	public void setMeetingUUID(String meetingUUID) {
-		this.meetingUUID = meetingUUID;
-		if(meetingUUID != null){
-			putQueryParameter("MeetingUUID", meetingUUID);
-		}
-	}
-
-	public String getMeetingCode() {
-		return this.meetingCode;
-	}
-
-	public void setMeetingCode(String meetingCode) {
-		this.meetingCode = meetingCode;
-		if(meetingCode != null){
-			putQueryParameter("MeetingCode", meetingCode);
+	public void setCastScreenCode(String castScreenCode) {
+		this.castScreenCode = castScreenCode;
+		if(castScreenCode != null){
+			putQueryParameter("CastScreenCode", castScreenCode);
 		}
 	}
 
 	@Override
-	public Class<ActiveMeetingCodeResponse> getResponseClass() {
-		return ActiveMeetingCodeResponse.class;
+	public Class<GetDeviceListResponse> getResponseClass() {
+		return GetDeviceListResponse.class;
 	}
 
 }

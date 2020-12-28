@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.aliyuncvc.model.v20190919;
+package com.aliyuncs.aliyuncvc.model.v20191030;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,14 @@ import com.aliyuncs.aliyuncvc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
+public class GetWebSocketTokenRequest extends RpcAcsRequest<GetWebSocketTokenResponse> {
 	   
 
-	private Integer count;
+	private String sessionId;
 
-	private String userInfo;
-	public CreateUserRequest() {
-		super("aliyuncvc", "2019-09-19", "CreateUser", "aliyuncvc");
+	private String oldToken;
+	public GetWebSocketTokenRequest() {
+		super("aliyuncvc", "2019-10-30", "GetWebSocketToken", "aliyuncvc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +37,31 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Integer getCount() {
-		return this.count;
+	public String getSessionId() {
+		return this.sessionId;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
-		if(count != null){
-			putBodyParameter("Count", count.toString());
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+		if(sessionId != null){
+			putQueryParameter("SessionId", sessionId);
 		}
 	}
 
-	public String getUserInfo() {
-		return this.userInfo;
+	public String getOldToken() {
+		return this.oldToken;
 	}
 
-	public void setUserInfo(String userInfo) {
-		this.userInfo = userInfo;
-		if(userInfo != null){
-			putBodyParameter("UserInfo", userInfo);
+	public void setOldToken(String oldToken) {
+		this.oldToken = oldToken;
+		if(oldToken != null){
+			putQueryParameter("OldToken", oldToken);
 		}
 	}
 
 	@Override
-	public Class<CreateUserResponse> getResponseClass() {
-		return CreateUserResponse.class;
+	public Class<GetWebSocketTokenResponse> getResponseClass() {
+		return GetWebSocketTokenResponse.class;
 	}
 
 }

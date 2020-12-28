@@ -14,15 +14,16 @@
 
 package com.aliyuncs.aliyuncvc.model.v20191030;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.aliyuncvc.transform.v20191030.GetDeviceInfoResponseUnmarshaller;
+import com.aliyuncs.aliyuncvc.transform.v20191030.GetDeviceListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDeviceInfoResponse extends AcsResponse {
+public class GetDeviceListResponse extends AcsResponse {
 
 	private Integer errorCode;
 
@@ -32,7 +33,7 @@ public class GetDeviceInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Device device;
+	private List<DataItem> data;
 
 	public Integer getErrorCode() {
 		return this.errorCode;
@@ -66,29 +67,27 @@ public class GetDeviceInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Device getDevice() {
-		return this.device;
+	public List<DataItem> getData() {
+		return this.data;
 	}
 
-	public void setDevice(Device device) {
-		this.device = device;
+	public void setData(List<DataItem> data) {
+		this.data = data;
 	}
 
-	public static class Device {
+	public static class DataItem {
 
 		private String activationCode;
 
 		private String castScreenCode;
 
-		private String sn;
-
-		private Integer status;
-
 		private String iP;
 
 		private String mac;
 
-		private String ssid;
+		private String sN;
+
+		private Integer status;
 
 		private String port;
 
@@ -108,22 +107,6 @@ public class GetDeviceInfoResponse extends AcsResponse {
 			this.castScreenCode = castScreenCode;
 		}
 
-		public String getSn() {
-			return this.sn;
-		}
-
-		public void setSn(String sn) {
-			this.sn = sn;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public String getIP() {
 			return this.iP;
 		}
@@ -140,12 +123,20 @@ public class GetDeviceInfoResponse extends AcsResponse {
 			this.mac = mac;
 		}
 
-		public String getSsid() {
-			return this.ssid;
+		public String getSN() {
+			return this.sN;
 		}
 
-		public void setSsid(String ssid) {
-			this.ssid = ssid;
+		public void setSN(String sN) {
+			this.sN = sN;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getPort() {
@@ -158,8 +149,8 @@ public class GetDeviceInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetDeviceInfoResponse getInstance(UnmarshallerContext context) {
-		return	GetDeviceInfoResponseUnmarshaller.unmarshall(this, context);
+	public GetDeviceListResponse getInstance(UnmarshallerContext context) {
+		return	GetDeviceListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
