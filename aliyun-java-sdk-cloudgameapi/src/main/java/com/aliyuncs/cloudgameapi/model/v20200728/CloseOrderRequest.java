@@ -31,7 +31,7 @@ public class CloseOrderRequest extends RpcAcsRequest<CloseOrderResponse> {
 
 	private String buyerAccountId;
 	public CloseOrderRequest() {
-		super("CloudGameAPI", "2020-07-28", "CloseOrder", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "CloseOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

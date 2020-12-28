@@ -27,7 +27,7 @@ public class GetItemRequest extends RpcAcsRequest<GetItemResponse> {
 
 	private String itemId;
 	public GetItemRequest() {
-		super("CloudGameAPI", "2020-07-28", "GetItem", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "GetItem");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

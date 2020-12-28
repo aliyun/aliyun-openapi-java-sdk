@@ -22,16 +22,12 @@ import com.aliyuncs.cloudgameapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
+public class GetSessionRequest extends RpcAcsRequest<GetSessionResponse> {
 	   
 
-	private String accountDomain;
-
-	private String orderId;
-
-	private String buyerAccountId;
-	public QueryOrderRequest() {
-		super("CloudGameAPI", "2020-07-28", "QueryOrder");
+	private String token;
+	public GetSessionRequest() {
+		super("CloudGameAPI", "2020-07-28", "GetSession");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +35,20 @@ public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAccountDomain() {
-		return this.accountDomain;
+	public String getToken() {
+		return this.token;
 	}
 
-	public void setAccountDomain(String accountDomain) {
-		this.accountDomain = accountDomain;
-		if(accountDomain != null){
-			putQueryParameter("AccountDomain", accountDomain);
-		}
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getBuyerAccountId() {
-		return this.buyerAccountId;
-	}
-
-	public void setBuyerAccountId(String buyerAccountId) {
-		this.buyerAccountId = buyerAccountId;
-		if(buyerAccountId != null){
-			putQueryParameter("BuyerAccountId", buyerAccountId);
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
 		}
 	}
 
 	@Override
-	public Class<QueryOrderResponse> getResponseClass() {
-		return QueryOrderResponse.class;
+	public Class<GetSessionResponse> getResponseClass() {
+		return GetSessionResponse.class;
 	}
 
 }

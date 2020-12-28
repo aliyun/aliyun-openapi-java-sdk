@@ -31,7 +31,7 @@ public class GetGameCcuRequest extends RpcAcsRequest<GetGameCcuResponse> {
 
 	private String regionName;
 	public GetGameCcuRequest() {
-		super("CloudGameAPI", "2020-07-28", "GetGameCcu", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "GetGameCcu");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

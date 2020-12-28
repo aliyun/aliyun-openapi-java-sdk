@@ -43,7 +43,7 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	private String skuId;
 	public CreateOrderRequest() {
-		super("CloudGameAPI", "2020-07-28", "CreateOrder", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "CreateOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,16 +22,16 @@ import com.aliyuncs.cloudgameapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
+public class CreateTokenRequest extends RpcAcsRequest<CreateTokenResponse> {
 	   
 
-	private String accountDomain;
+	private String clientToken;
 
-	private String orderId;
+	private String session;
 
-	private String buyerAccountId;
-	public QueryOrderRequest() {
-		super("CloudGameAPI", "2020-07-28", "QueryOrder");
+	private String currentToken;
+	public CreateTokenRequest() {
+		super("CloudGameAPI", "2020-07-28", "CreateToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getAccountDomain() {
-		return this.accountDomain;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setAccountDomain(String accountDomain) {
-		this.accountDomain = accountDomain;
-		if(accountDomain != null){
-			putQueryParameter("AccountDomain", accountDomain);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getSession() {
+		return this.session;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
+	public void setSession(String session) {
+		this.session = session;
+		if(session != null){
+			putQueryParameter("Session", session);
 		}
 	}
 
-	public String getBuyerAccountId() {
-		return this.buyerAccountId;
+	public String getCurrentToken() {
+		return this.currentToken;
 	}
 
-	public void setBuyerAccountId(String buyerAccountId) {
-		this.buyerAccountId = buyerAccountId;
-		if(buyerAccountId != null){
-			putQueryParameter("BuyerAccountId", buyerAccountId);
+	public void setCurrentToken(String currentToken) {
+		this.currentToken = currentToken;
+		if(currentToken != null){
+			putQueryParameter("CurrentToken", currentToken);
 		}
 	}
 
 	@Override
-	public Class<QueryOrderResponse> getResponseClass() {
-		return QueryOrderResponse.class;
+	public Class<CreateTokenResponse> getResponseClass() {
+		return CreateTokenResponse.class;
 	}
 
 }

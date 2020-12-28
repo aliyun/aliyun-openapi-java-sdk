@@ -33,7 +33,7 @@ public class QueryGameRequest extends RpcAcsRequest<QueryGameResponse> {
 
 	private Long projectId;
 	public QueryGameRequest() {
-		super("CloudGameAPI", "2020-07-28", "QueryGame", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "QueryGame");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

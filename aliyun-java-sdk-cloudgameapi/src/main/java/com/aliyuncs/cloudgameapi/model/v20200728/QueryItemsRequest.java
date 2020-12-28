@@ -29,7 +29,7 @@ public class QueryItemsRequest extends RpcAcsRequest<QueryItemsResponse> {
 
 	private Integer pageSize;
 	public QueryItemsRequest() {
-		super("CloudGameAPI", "2020-07-28", "QueryItems", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "QueryItems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

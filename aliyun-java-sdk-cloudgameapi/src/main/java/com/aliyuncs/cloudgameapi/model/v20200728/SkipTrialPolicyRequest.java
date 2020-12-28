@@ -27,7 +27,7 @@ public class SkipTrialPolicyRequest extends RpcAcsRequest<SkipTrialPolicyRespons
 
 	private String gameSessionId;
 	public SkipTrialPolicyRequest() {
-		super("CloudGameAPI", "2020-07-28", "SkipTrialPolicy", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "SkipTrialPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

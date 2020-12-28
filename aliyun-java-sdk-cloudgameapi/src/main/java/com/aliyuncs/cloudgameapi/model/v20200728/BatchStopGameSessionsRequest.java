@@ -35,7 +35,7 @@ public class BatchStopGameSessionsRequest extends RpcAcsRequest<BatchStopGameSes
 
 	private String trackInfo;
 	public BatchStopGameSessionsRequest() {
-		super("CloudGameAPI", "2020-07-28", "BatchStopGameSessions", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "BatchStopGameSessions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

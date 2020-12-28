@@ -31,7 +31,7 @@ public class QueryTenantRequest extends RpcAcsRequest<QueryTenantResponse> {
 
 	private Integer pageSize;
 	public QueryTenantRequest() {
-		super("CloudGameAPI", "2020-07-28", "QueryTenant", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "QueryTenant");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -37,7 +37,7 @@ public class StopGameSessionRequest extends RpcAcsRequest<StopGameSessionRespons
 
 	private String bizParam;
 	public StopGameSessionRequest() {
-		super("CloudGameAPI", "2020-07-28", "StopGameSession", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "StopGameSession");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

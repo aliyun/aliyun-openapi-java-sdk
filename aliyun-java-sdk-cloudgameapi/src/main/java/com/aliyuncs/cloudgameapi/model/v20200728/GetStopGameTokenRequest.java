@@ -29,7 +29,7 @@ public class GetStopGameTokenRequest extends RpcAcsRequest<GetStopGameTokenRespo
 
 	private String accessKey;
 	public GetStopGameTokenRequest() {
-		super("CloudGameAPI", "2020-07-28", "GetStopGameToken", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "GetStopGameToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

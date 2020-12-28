@@ -33,7 +33,7 @@ public class ListBoughtGamesRequest extends RpcAcsRequest<ListBoughtGamesRespons
 
 	private Integer pageSize;
 	public ListBoughtGamesRequest() {
-		super("CloudGameAPI", "2020-07-28", "ListBoughtGames", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "ListBoughtGames");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

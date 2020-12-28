@@ -31,7 +31,7 @@ public class DeliveryOrderRequest extends RpcAcsRequest<DeliveryOrderResponse> {
 
 	private String buyerAccountId;
 	public DeliveryOrderRequest() {
-		super("CloudGameAPI", "2020-07-28", "DeliveryOrder", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "DeliveryOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class BatchDispatchGameSlotRequest extends RpcAcsRequest<BatchDispatchGam
 
 	private String queueUserList;
 	public BatchDispatchGameSlotRequest() {
-		super("CloudGameAPI", "2020-07-28", "BatchDispatchGameSlot", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "BatchDispatchGameSlot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

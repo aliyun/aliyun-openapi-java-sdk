@@ -35,7 +35,11 @@ public class DispatchGameSlotRequest extends RpcAcsRequest<DispatchGameSlotRespo
 
 	private String userId;
 
+	private Boolean reconnect;
+
 	private String accessKey;
+
+	private String clientIp;
 
 	private String regionName;
 
@@ -45,7 +49,7 @@ public class DispatchGameSlotRequest extends RpcAcsRequest<DispatchGameSlotRespo
 
 	private String gameStartParam;
 	public DispatchGameSlotRequest() {
-		super("CloudGameAPI", "2020-07-28", "DispatchGameSlot", "CloudGameAPI");
+		super("CloudGameAPI", "2020-07-28", "DispatchGameSlot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -108,6 +112,17 @@ public class DispatchGameSlotRequest extends RpcAcsRequest<DispatchGameSlotRespo
 		}
 	}
 
+	public Boolean getReconnect() {
+		return this.reconnect;
+	}
+
+	public void setReconnect(Boolean reconnect) {
+		this.reconnect = reconnect;
+		if(reconnect != null){
+			putBodyParameter("Reconnect", reconnect.toString());
+		}
+	}
+
 	public String getAccessKey() {
 		return this.accessKey;
 	}
@@ -116,6 +131,17 @@ public class DispatchGameSlotRequest extends RpcAcsRequest<DispatchGameSlotRespo
 		this.accessKey = accessKey;
 		if(accessKey != null){
 			putBodyParameter("AccessKey", accessKey);
+		}
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+		if(clientIp != null){
+			putBodyParameter("ClientIp", clientIp);
 		}
 	}
 

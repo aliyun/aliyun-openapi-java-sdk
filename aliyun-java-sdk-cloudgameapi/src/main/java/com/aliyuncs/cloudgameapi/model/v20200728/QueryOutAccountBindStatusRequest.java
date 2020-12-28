@@ -22,21 +22,32 @@ import com.aliyuncs.cloudgameapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
+public class QueryOutAccountBindStatusRequest extends RpcAcsRequest<QueryOutAccountBindStatusResponse> {
 	   
+
+	private String gameId;
 
 	private String accountDomain;
 
-	private String orderId;
-
-	private String buyerAccountId;
-	public QueryOrderRequest() {
-		super("CloudGameAPI", "2020-07-28", "QueryOrder");
+	private String accountId;
+	public QueryOutAccountBindStatusRequest() {
+		super("CloudGameAPI", "2020-07-28", "QueryOutAccountBindStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGameId() {
+		return this.gameId;
+	}
+
+	public void setGameId(String gameId) {
+		this.gameId = gameId;
+		if(gameId != null){
+			putQueryParameter("GameId", gameId);
+		}
 	}
 
 	public String getAccountDomain() {
@@ -50,31 +61,20 @@ public class QueryOrderRequest extends RpcAcsRequest<QueryOrderResponse> {
 		}
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getAccountId() {
+		return this.accountId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId);
-		}
-	}
-
-	public String getBuyerAccountId() {
-		return this.buyerAccountId;
-	}
-
-	public void setBuyerAccountId(String buyerAccountId) {
-		this.buyerAccountId = buyerAccountId;
-		if(buyerAccountId != null){
-			putQueryParameter("BuyerAccountId", buyerAccountId);
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+		if(accountId != null){
+			putQueryParameter("AccountId", accountId);
 		}
 	}
 
 	@Override
-	public Class<QueryOrderResponse> getResponseClass() {
-		return QueryOrderResponse.class;
+	public Class<QueryOutAccountBindStatusResponse> getResponseClass() {
+		return QueryOutAccountBindStatusResponse.class;
 	}
 
 }
