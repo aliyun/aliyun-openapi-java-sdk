@@ -107,6 +107,8 @@ public class DescribeAntChainsResponse extends AcsResponse {
 
 			private Long expireTime;
 
+			private String version;
+
 			public String getAntChainName() {
 				return this.antChainName;
 			}
@@ -217,6 +219,14 @@ public class DescribeAntChainsResponse extends AcsResponse {
 
 			public void setExpireTime(Long expireTime) {
 				this.expireTime = expireTime;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
 			}
 		}
 

@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
+	private Integer errorCode;
+
 	private String requestId;
 
 	private Boolean success;
 
-	private Integer errorCode;
-
 	private List<ResultItem> result;
+
+	public Integer getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(Integer errorCode) {
+		this.errorCode = errorCode;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Integer getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(Integer errorCode) {
-		this.errorCode = errorCode;
-	}
-
 	public List<ResultItem> getResult() {
 		return this.result;
 	}
@@ -67,46 +67,64 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 
 	public static class ResultItem {
 
-		private String requestId;
+		private Integer channelCount;
+
+		private String channelPolicy;
+
+		private String codeName;
 
 		private String consortiumId;
 
 		private String consortiumName;
 
-		private String codeName;
-
-		private String ownerBid;
-
-		private Long ownerUid;
-
-		private String ownerName;
-
-		private String channelPolicy;
-
-		private Integer organizationCount;
-
-		private Integer channelCount;
-
 		private String createTime;
-
-		private String state;
-
-		private String regionId;
 
 		private String domain;
 
 		private String expiredTime;
 
+		private Integer organizationCount;
+
+		private String ownerBid;
+
+		private String ownerName;
+
+		private Long ownerUid;
+
+		private String regionId;
+
+		private String requestId;
+
 		private String specName;
+
+		private String state;
 
 		private Boolean supportChannelConfig;
 
-		public String getRequestId() {
-			return this.requestId;
+		private List<TagsItem> tags;
+
+		public Integer getChannelCount() {
+			return this.channelCount;
 		}
 
-		public void setRequestId(String requestId) {
-			this.requestId = requestId;
+		public void setChannelCount(Integer channelCount) {
+			this.channelCount = channelCount;
+		}
+
+		public String getChannelPolicy() {
+			return this.channelPolicy;
+		}
+
+		public void setChannelPolicy(String channelPolicy) {
+			this.channelPolicy = channelPolicy;
+		}
+
+		public String getCodeName() {
+			return this.codeName;
+		}
+
+		public void setCodeName(String codeName) {
+			this.codeName = codeName;
 		}
 
 		public String getConsortiumId() {
@@ -125,84 +143,12 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.consortiumName = consortiumName;
 		}
 
-		public String getCodeName() {
-			return this.codeName;
-		}
-
-		public void setCodeName(String codeName) {
-			this.codeName = codeName;
-		}
-
-		public String getOwnerBid() {
-			return this.ownerBid;
-		}
-
-		public void setOwnerBid(String ownerBid) {
-			this.ownerBid = ownerBid;
-		}
-
-		public Long getOwnerUid() {
-			return this.ownerUid;
-		}
-
-		public void setOwnerUid(Long ownerUid) {
-			this.ownerUid = ownerUid;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
-		}
-
-		public String getChannelPolicy() {
-			return this.channelPolicy;
-		}
-
-		public void setChannelPolicy(String channelPolicy) {
-			this.channelPolicy = channelPolicy;
-		}
-
-		public Integer getOrganizationCount() {
-			return this.organizationCount;
-		}
-
-		public void setOrganizationCount(Integer organizationCount) {
-			this.organizationCount = organizationCount;
-		}
-
-		public Integer getChannelCount() {
-			return this.channelCount;
-		}
-
-		public void setChannelCount(Integer channelCount) {
-			this.channelCount = channelCount;
-		}
-
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
 		}
 
 		public String getDomain() {
@@ -221,6 +167,54 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.expiredTime = expiredTime;
 		}
 
+		public Integer getOrganizationCount() {
+			return this.organizationCount;
+		}
+
+		public void setOrganizationCount(Integer organizationCount) {
+			this.organizationCount = organizationCount;
+		}
+
+		public String getOwnerBid() {
+			return this.ownerBid;
+		}
+
+		public void setOwnerBid(String ownerBid) {
+			this.ownerBid = ownerBid;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public Long getOwnerUid() {
+			return this.ownerUid;
+		}
+
+		public void setOwnerUid(Long ownerUid) {
+			this.ownerUid = ownerUid;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getRequestId() {
+			return this.requestId;
+		}
+
+		public void setRequestId(String requestId) {
+			this.requestId = requestId;
+		}
+
 		public String getSpecName() {
 			return this.specName;
 		}
@@ -229,12 +223,51 @@ public class DescribeFabricConsortiumsResponse extends AcsResponse {
 			this.specName = specName;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
 		public Boolean getSupportChannelConfig() {
 			return this.supportChannelConfig;
 		}
 
 		public void setSupportChannelConfig(Boolean supportChannelConfig) {
 			this.supportChannelConfig = supportChannelConfig;
+		}
+
+		public List<TagsItem> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<TagsItem> tags) {
+			this.tags = tags;
+		}
+
+		public static class TagsItem {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 	}
 

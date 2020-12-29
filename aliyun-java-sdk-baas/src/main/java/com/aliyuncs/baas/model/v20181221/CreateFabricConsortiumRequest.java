@@ -17,6 +17,7 @@ package com.aliyuncs.baas.model.v20181221;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.baas.Endpoint;
 
 /**
  * @author auto create
@@ -52,7 +53,11 @@ public class CreateFabricConsortiumRequest extends RpcAcsRequest<CreateFabricCon
 	private Integer peersCount;
 	public CreateFabricConsortiumRequest() {
 		super("Baas", "2018-12-21", "CreateFabricConsortium", "baas");
-		setMethod(MethodType.PUT);
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getOrderersCount() {

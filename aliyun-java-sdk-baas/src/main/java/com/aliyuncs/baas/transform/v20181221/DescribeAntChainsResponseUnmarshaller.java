@@ -56,6 +56,7 @@ public class DescribeAntChainsResponseUnmarshaller {
 			antChainsItem.setIsAdmin(_ctx.booleanValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].IsAdmin"));
 			antChainsItem.setNetwork(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].Network"));
 			antChainsItem.setExpireTime(_ctx.longValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].ExpireTime"));
+			antChainsItem.setVersion(_ctx.stringValue("DescribeAntChainsResponse.Result.AntChains["+ i +"].Version"));
 
 			antChains.add(antChainsItem);
 		}
