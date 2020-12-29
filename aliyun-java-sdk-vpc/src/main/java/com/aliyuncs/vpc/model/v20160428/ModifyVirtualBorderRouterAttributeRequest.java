@@ -57,6 +57,8 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 
 	private String resourceOwnerAccount;
 
+	private Integer bandwidth;
+
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -248,6 +250,17 @@ public class ModifyVirtualBorderRouterAttributeRequest extends RpcAcsRequest<Mod
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

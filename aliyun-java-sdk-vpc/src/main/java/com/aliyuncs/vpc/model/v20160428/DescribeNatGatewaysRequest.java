@@ -52,6 +52,8 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 	private String vpcId;
 
 	private String name;
+
+	private String status;
 	public DescribeNatGatewaysRequest() {
 		super("Vpc", "2016-04-28", "DescribeNatGateways", "vpc");
 		setMethod(MethodType.POST);
@@ -212,6 +214,17 @@ public class DescribeNatGatewaysRequest extends RpcAcsRequest<DescribeNatGateway
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 

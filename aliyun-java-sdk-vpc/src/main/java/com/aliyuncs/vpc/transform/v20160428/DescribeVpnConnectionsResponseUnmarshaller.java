@@ -49,6 +49,7 @@ public class DescribeVpnConnectionsResponseUnmarshaller {
 			vpnConnection.setStatus(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].Status"));
 			vpnConnection.setEnableDpd(_ctx.booleanValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].EnableDpd"));
 			vpnConnection.setEnableNatTraversal(_ctx.booleanValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].EnableNatTraversal"));
+			vpnConnection.setRemoteCaCertificate(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].RemoteCaCertificate"));
 
 			IkeConfig ikeConfig = new IkeConfig();
 			ikeConfig.setPsk(_ctx.stringValue("DescribeVpnConnectionsResponse.VpnConnections["+ i +"].IkeConfig.Psk"));

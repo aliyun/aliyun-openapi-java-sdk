@@ -22,22 +22,20 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandwidthPackageSpecResponse> {
+public class GetNatGatewayAttributeRequest extends RpcAcsRequest<GetNatGatewayAttributeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String bandwidthPackageId;
+	private String natGatewayId;
 
 	private String resourceOwnerAccount;
-
-	private String bandwidth;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public ModifyBandwidthPackageSpecRequest() {
-		super("Vpc", "2016-04-28", "ModifyBandwidthPackageSpec", "vpc");
+	public GetNatGatewayAttributeRequest() {
+		super("Vpc", "2016-04-28", "GetNatGatewayAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +54,14 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 		}
 	}
 
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
+	public String getNatGatewayId() {
+		return this.natGatewayId;
 	}
 
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
+	public void setNatGatewayId(String natGatewayId) {
+		this.natGatewayId = natGatewayId;
+		if(natGatewayId != null){
+			putQueryParameter("NatGatewayId", natGatewayId);
 		}
 	}
 
@@ -75,17 +73,6 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getBandwidth() {
-		return this.bandwidth;
-	}
-
-	public void setBandwidth(String bandwidth) {
-		this.bandwidth = bandwidth;
-		if(bandwidth != null){
-			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -112,8 +99,8 @@ public class ModifyBandwidthPackageSpecRequest extends RpcAcsRequest<ModifyBandw
 	}
 
 	@Override
-	public Class<ModifyBandwidthPackageSpecResponse> getResponseClass() {
-		return ModifyBandwidthPackageSpecResponse.class;
+	public Class<GetNatGatewayAttributeResponse> getResponseClass() {
+		return GetNatGatewayAttributeResponse.class;
 	}
 
 }

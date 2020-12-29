@@ -14,16 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.DeleteBandwidthPackageResponse;
+import com.aliyuncs.vpc.model.v20160428.AssociateVpnGatewayWithCertificateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteBandwidthPackageResponseUnmarshaller {
+public class AssociateVpnGatewayWithCertificateResponseUnmarshaller {
 
-	public static DeleteBandwidthPackageResponse unmarshall(DeleteBandwidthPackageResponse deleteBandwidthPackageResponse, UnmarshallerContext _ctx) {
+	public static AssociateVpnGatewayWithCertificateResponse unmarshall(AssociateVpnGatewayWithCertificateResponse associateVpnGatewayWithCertificateResponse, UnmarshallerContext _ctx) {
 		
-		deleteBandwidthPackageResponse.setRequestId(_ctx.stringValue("DeleteBandwidthPackageResponse.RequestId"));
+		associateVpnGatewayWithCertificateResponse.setRequestId(_ctx.stringValue("AssociateVpnGatewayWithCertificateResponse.RequestId"));
 	 
-	 	return deleteBandwidthPackageResponse;
+	 	return associateVpnGatewayWithCertificateResponse;
 	}
 }

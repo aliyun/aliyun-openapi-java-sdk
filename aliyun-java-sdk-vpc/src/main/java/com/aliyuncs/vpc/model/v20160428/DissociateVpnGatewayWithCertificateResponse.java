@@ -15,14 +15,14 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.ModifyBandwidthPackageSpecResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DissociateVpnGatewayWithCertificateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyBandwidthPackageSpecResponse extends AcsResponse {
+public class DissociateVpnGatewayWithCertificateResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class ModifyBandwidthPackageSpecResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyBandwidthPackageSpecResponse getInstance(UnmarshallerContext context) {
-		return	ModifyBandwidthPackageSpecResponseUnmarshaller.unmarshall(this, context);
+	public DissociateVpnGatewayWithCertificateResponse getInstance(UnmarshallerContext context) {
+		return	DissociateVpnGatewayWithCertificateResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

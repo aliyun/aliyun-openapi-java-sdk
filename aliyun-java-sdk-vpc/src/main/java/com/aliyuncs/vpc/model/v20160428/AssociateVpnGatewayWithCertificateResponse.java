@@ -15,18 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.CreateBandwidthPackageResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.AssociateVpnGatewayWithCertificateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateBandwidthPackageResponse extends AcsResponse {
+public class AssociateVpnGatewayWithCertificateResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String bandwidthPackageId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,13 @@ public class CreateBandwidthPackageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
+	@Override
+	public AssociateVpnGatewayWithCertificateResponse getInstance(UnmarshallerContext context) {
+		return	AssociateVpnGatewayWithCertificateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateBandwidthPackageResponse getInstance(UnmarshallerContext context) {
-		return	CreateBandwidthPackageResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

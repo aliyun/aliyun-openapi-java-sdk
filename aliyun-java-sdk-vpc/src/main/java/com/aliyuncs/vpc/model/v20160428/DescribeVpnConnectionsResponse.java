@@ -99,6 +99,8 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		private Boolean enableNatTraversal;
 
+		private String remoteCaCertificate;
+
 		private IkeConfig ikeConfig;
 
 		private IpsecConfig ipsecConfig;
@@ -193,6 +195,14 @@ public class DescribeVpnConnectionsResponse extends AcsResponse {
 
 		public void setEnableNatTraversal(Boolean enableNatTraversal) {
 			this.enableNatTraversal = enableNatTraversal;
+		}
+
+		public String getRemoteCaCertificate() {
+			return this.remoteCaCertificate;
+		}
+
+		public void setRemoteCaCertificate(String remoteCaCertificate) {
+			this.remoteCaCertificate = remoteCaCertificate;
 		}
 
 		public IkeConfig getIkeConfig() {

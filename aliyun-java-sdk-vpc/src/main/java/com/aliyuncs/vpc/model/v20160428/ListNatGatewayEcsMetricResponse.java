@@ -81,8 +81,6 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 
 		private Long txBps;
 
-		private Long txBps1;
-
 		private Long rxPps;
 
 		private Long txPps;
@@ -141,14 +139,6 @@ public class ListNatGatewayEcsMetricResponse extends AcsResponse {
 
 		public void setTxBps(Long txBps) {
 			this.txBps = txBps;
-		}
-
-		public Long getTxBps1() {
-			return this.txBps1;
-		}
-
-		public void setTxBps1(Long txBps1) {
-			this.txBps1 = txBps1;
 		}
 
 		public Long getRxPps() {

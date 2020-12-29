@@ -121,6 +121,8 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		private Boolean enableIpv6;
 
+		private String bandwidthStatus;
+
 		public String getVbrId() {
 			return this.vbrId;
 		}
@@ -295,6 +297,14 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponse extends A
 
 		public void setEnableIpv6(Boolean enableIpv6) {
 			this.enableIpv6 = enableIpv6;
+		}
+
+		public String getBandwidthStatus() {
+			return this.bandwidthStatus;
+		}
+
+		public void setBandwidthStatus(String bandwidthStatus) {
+			this.bandwidthStatus = bandwidthStatus;
 		}
 	}
 

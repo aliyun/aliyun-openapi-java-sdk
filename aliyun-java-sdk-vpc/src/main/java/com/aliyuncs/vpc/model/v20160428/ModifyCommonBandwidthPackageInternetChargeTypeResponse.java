@@ -15,14 +15,14 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.RemoveBandwidthPackageIpsResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.ModifyCommonBandwidthPackageInternetChargeTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RemoveBandwidthPackageIpsResponse extends AcsResponse {
+public class ModifyCommonBandwidthPackageInternetChargeTypeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class RemoveBandwidthPackageIpsResponse extends AcsResponse {
 	}
 
 	@Override
-	public RemoveBandwidthPackageIpsResponse getInstance(UnmarshallerContext context) {
-		return	RemoveBandwidthPackageIpsResponseUnmarshaller.unmarshall(this, context);
+	public ModifyCommonBandwidthPackageInternetChargeTypeResponse getInstance(UnmarshallerContext context) {
+		return	ModifyCommonBandwidthPackageInternetChargeTypeResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

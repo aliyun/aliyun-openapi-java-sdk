@@ -15,14 +15,14 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.DeleteBandwidthPackageResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.ConfirmPhysicalConnectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteBandwidthPackageResponse extends AcsResponse {
+public class ConfirmPhysicalConnectionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteBandwidthPackageResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteBandwidthPackageResponse getInstance(UnmarshallerContext context) {
-		return	DeleteBandwidthPackageResponseUnmarshaller.unmarshall(this, context);
+	public ConfirmPhysicalConnectionResponse getInstance(UnmarshallerContext context) {
+		return	ConfirmPhysicalConnectionResponseUnmarshaller.unmarshall(this, context);
 	}
 }

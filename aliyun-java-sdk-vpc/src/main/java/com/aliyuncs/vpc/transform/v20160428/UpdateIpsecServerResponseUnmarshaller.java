@@ -14,17 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.CreateBandwidthPackageResponse;
+import com.aliyuncs.vpc.model.v20160428.UpdateIpsecServerResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateBandwidthPackageResponseUnmarshaller {
+public class UpdateIpsecServerResponseUnmarshaller {
 
-	public static CreateBandwidthPackageResponse unmarshall(CreateBandwidthPackageResponse createBandwidthPackageResponse, UnmarshallerContext _ctx) {
+	public static UpdateIpsecServerResponse unmarshall(UpdateIpsecServerResponse updateIpsecServerResponse, UnmarshallerContext _ctx) {
 		
-		createBandwidthPackageResponse.setRequestId(_ctx.stringValue("CreateBandwidthPackageResponse.RequestId"));
-		createBandwidthPackageResponse.setBandwidthPackageId(_ctx.stringValue("CreateBandwidthPackageResponse.BandwidthPackageId"));
+		updateIpsecServerResponse.setRequestId(_ctx.stringValue("UpdateIpsecServerResponse.RequestId"));
 	 
-	 	return createBandwidthPackageResponse;
+	 	return updateIpsecServerResponse;
 	}
 }

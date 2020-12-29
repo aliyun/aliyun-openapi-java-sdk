@@ -22,36 +22,24 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidthPackageResponse> {
+public class UpdateVirtualBorderBandwidthRequest extends RpcAcsRequest<UpdateVirtualBorderBandwidthResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String iSP;
-
-	private String description;
-
-	private String zone;
-
-	private String natGatewayId;
-
-	private String resourceOwnerAccount;
+	private String virtualBorderRouterId;
 
 	private Integer bandwidth;
+
+	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String internetChargeType;
-
-	private String name;
-
-	private Integer ipCount;
-	public CreateBandwidthPackageRequest() {
-		super("Vpc", "2016-04-28", "CreateBandwidthPackage", "vpc");
+	public UpdateVirtualBorderBandwidthRequest() {
+		super("Vpc", "2016-04-28", "UpdateVirtualBorderBandwidth", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -81,58 +69,14 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		}
 	}
 
-	public String getISP() {
-		return this.iSP;
+	public String getVirtualBorderRouterId() {
+		return this.virtualBorderRouterId;
 	}
 
-	public void setISP(String iSP) {
-		this.iSP = iSP;
-		if(iSP != null){
-			putQueryParameter("ISP", iSP);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getZone() {
-		return this.zone;
-	}
-
-	public void setZone(String zone) {
-		this.zone = zone;
-		if(zone != null){
-			putQueryParameter("Zone", zone);
-		}
-	}
-
-	public String getNatGatewayId() {
-		return this.natGatewayId;
-	}
-
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
-		}
-	}
-
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+	public void setVirtualBorderRouterId(String virtualBorderRouterId) {
+		this.virtualBorderRouterId = virtualBorderRouterId;
+		if(virtualBorderRouterId != null){
+			putQueryParameter("VirtualBorderRouterId", virtualBorderRouterId);
 		}
 	}
 
@@ -144,6 +88,17 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		this.bandwidth = bandwidth;
 		if(bandwidth != null){
 			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
 		}
 	}
 
@@ -169,42 +124,9 @@ public class CreateBandwidthPackageRequest extends RpcAcsRequest<CreateBandwidth
 		}
 	}
 
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public Integer getIpCount() {
-		return this.ipCount;
-	}
-
-	public void setIpCount(Integer ipCount) {
-		this.ipCount = ipCount;
-		if(ipCount != null){
-			putQueryParameter("IpCount", ipCount.toString());
-		}
-	}
-
 	@Override
-	public Class<CreateBandwidthPackageResponse> getResponseClass() {
-		return CreateBandwidthPackageResponse.class;
+	public Class<UpdateVirtualBorderBandwidthResponse> getResponseClass() {
+		return UpdateVirtualBorderBandwidthResponse.class;
 	}
 
 }

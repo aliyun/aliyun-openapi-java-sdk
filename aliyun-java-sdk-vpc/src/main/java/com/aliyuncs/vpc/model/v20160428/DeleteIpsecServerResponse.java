@@ -15,14 +15,14 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.ModifyBandwidthPackageAttributeResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DeleteIpsecServerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyBandwidthPackageAttributeResponse extends AcsResponse {
+public class DeleteIpsecServerResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,12 @@ public class ModifyBandwidthPackageAttributeResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyBandwidthPackageAttributeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyBandwidthPackageAttributeResponseUnmarshaller.unmarshall(this, context);
+	public DeleteIpsecServerResponse getInstance(UnmarshallerContext context) {
+		return	DeleteIpsecServerResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

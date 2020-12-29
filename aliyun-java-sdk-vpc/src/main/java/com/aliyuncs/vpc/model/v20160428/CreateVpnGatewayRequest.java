@@ -27,6 +27,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private Boolean enableIpsec;
 
 	private String instanceChargeType;
@@ -42,6 +44,8 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String vpnType;
 
 	private String vSwitchId;
 
@@ -69,6 +73,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -157,6 +172,17 @@ public class CreateVpnGatewayRequest extends RpcAcsRequest<CreateVpnGatewayRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVpnType() {
+		return this.vpnType;
+	}
+
+	public void setVpnType(String vpnType) {
+		this.vpnType = vpnType;
+		if(vpnType != null){
+			putQueryParameter("VpnType", vpnType);
 		}
 	}
 

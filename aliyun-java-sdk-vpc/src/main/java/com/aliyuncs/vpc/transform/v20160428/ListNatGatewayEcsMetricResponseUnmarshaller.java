@@ -40,7 +40,6 @@ public class ListNatGatewayEcsMetricResponseUnmarshaller {
 			metricData.setNewSessionRate(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].NewSessionRate"));
 			metricData.setRxBps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].RxBps"));
 			metricData.setTxBps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].TxBps"));
-			metricData.setTxBps1(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].TxBps"));
 			metricData.setRxPps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].RxPps"));
 			metricData.setTxPps(_ctx.longValue("ListNatGatewayEcsMetricResponse.MetricDataList["+ i +"].TxPps"));
 

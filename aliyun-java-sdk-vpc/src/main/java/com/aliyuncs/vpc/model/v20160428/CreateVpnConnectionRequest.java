@@ -57,6 +57,8 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 
 	private Boolean enableDpd;
 
+	private String remoteCaCertificate;
+
 	private String name;
 
 	private Boolean enableNatTraversal;
@@ -242,6 +244,17 @@ public class CreateVpnConnectionRequest extends RpcAcsRequest<CreateVpnConnectio
 		this.enableDpd = enableDpd;
 		if(enableDpd != null){
 			putQueryParameter("EnableDpd", enableDpd.toString());
+		}
+	}
+
+	public String getRemoteCaCertificate() {
+		return this.remoteCaCertificate;
+	}
+
+	public void setRemoteCaCertificate(String remoteCaCertificate) {
+		this.remoteCaCertificate = remoteCaCertificate;
+		if(remoteCaCertificate != null){
+			putQueryParameter("RemoteCaCertificate", remoteCaCertificate);
 		}
 	}
 

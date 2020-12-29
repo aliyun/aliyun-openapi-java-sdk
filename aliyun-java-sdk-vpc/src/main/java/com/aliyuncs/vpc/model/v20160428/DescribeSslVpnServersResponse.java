@@ -109,6 +109,8 @@ public class DescribeSslVpnServersResponse extends AcsResponse {
 
 		private String iDaaSInstanceId;
 
+		private String iDaaSRegionId;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -235,6 +237,14 @@ public class DescribeSslVpnServersResponse extends AcsResponse {
 
 		public void setIDaaSInstanceId(String iDaaSInstanceId) {
 			this.iDaaSInstanceId = iDaaSInstanceId;
+		}
+
+		public String getIDaaSRegionId() {
+			return this.iDaaSRegionId;
+		}
+
+		public void setIDaaSRegionId(String iDaaSRegionId) {
+			this.iDaaSRegionId = iDaaSRegionId;
 		}
 	}
 

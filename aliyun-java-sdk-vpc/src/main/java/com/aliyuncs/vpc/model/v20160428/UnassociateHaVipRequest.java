@@ -29,6 +29,8 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 
 	private String clientToken;
 
+	private String instanceType;
+
 	private String haVipId;
 
 	private String resourceOwnerAccount;
@@ -68,6 +70,17 @@ public class UnassociateHaVipRequest extends RpcAcsRequest<UnassociateHaVipRespo
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getInstanceType() {
+		return this.instanceType;
+	}
+
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 

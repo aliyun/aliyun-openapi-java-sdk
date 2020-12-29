@@ -141,6 +141,10 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		private String netmode;
 
+		private Integer serviceManaged;
+
+		private String businessStatus;
+
 		private List<LockReason> operationLocks;
 
 		private List<Tag> tags;
@@ -401,6 +405,22 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setNetmode(String netmode) {
 			this.netmode = netmode;
+		}
+
+		public Integer getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Integer serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
+		public String getBusinessStatus() {
+			return this.businessStatus;
+		}
+
+		public void setBusinessStatus(String businessStatus) {
+			this.businessStatus = businessStatus;
 		}
 
 		public List<LockReason> getOperationLocks() {

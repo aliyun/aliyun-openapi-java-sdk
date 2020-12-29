@@ -117,6 +117,8 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 		private Boolean deletionProtection;
 
+		private Integer serviceManaged;
+
 		private List<PublicIpAddresse> publicIpAddresses;
 
 		public String getBandwidthPackageId() {
@@ -279,6 +281,14 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			this.deletionProtection = deletionProtection;
 		}
 
+		public Integer getServiceManaged() {
+			return this.serviceManaged;
+		}
+
+		public void setServiceManaged(Integer serviceManaged) {
+			this.serviceManaged = serviceManaged;
+		}
+
 		public List<PublicIpAddresse> getPublicIpAddresses() {
 			return this.publicIpAddresses;
 		}
@@ -292,6 +302,8 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 			private String allocationId;
 
 			private String ipAddress;
+
+			private String bandwidthPackageIpRelationStatus;
 
 			public String getAllocationId() {
 				return this.allocationId;
@@ -307,6 +319,14 @@ public class DescribeCommonBandwidthPackagesResponse extends AcsResponse {
 
 			public void setIpAddress(String ipAddress) {
 				this.ipAddress = ipAddress;
+			}
+
+			public String getBandwidthPackageIpRelationStatus() {
+				return this.bandwidthPackageIpRelationStatus;
+			}
+
+			public void setBandwidthPackageIpRelationStatus(String bandwidthPackageIpRelationStatus) {
+				this.bandwidthPackageIpRelationStatus = bandwidthPackageIpRelationStatus;
 			}
 		}
 	}

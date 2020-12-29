@@ -14,16 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.ModifyBandwidthPackageSpecResponse;
+import com.aliyuncs.vpc.model.v20160428.ConfirmPhysicalConnectionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyBandwidthPackageSpecResponseUnmarshaller {
+public class ConfirmPhysicalConnectionResponseUnmarshaller {
 
-	public static ModifyBandwidthPackageSpecResponse unmarshall(ModifyBandwidthPackageSpecResponse modifyBandwidthPackageSpecResponse, UnmarshallerContext _ctx) {
+	public static ConfirmPhysicalConnectionResponse unmarshall(ConfirmPhysicalConnectionResponse confirmPhysicalConnectionResponse, UnmarshallerContext _ctx) {
 		
-		modifyBandwidthPackageSpecResponse.setRequestId(_ctx.stringValue("ModifyBandwidthPackageSpecResponse.RequestId"));
+		confirmPhysicalConnectionResponse.setRequestId(_ctx.stringValue("ConfirmPhysicalConnectionResponse.RequestId"));
 	 
-	 	return modifyBandwidthPackageSpecResponse;
+	 	return confirmPhysicalConnectionResponse;
 	}
 }

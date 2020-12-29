@@ -33,6 +33,8 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 
 	private String localSubnet;
 
+	private String iDaaSRegionId;
+
 	private Boolean enableMultiFactorAuth;
 
 	private String iDaaSInstanceId;
@@ -104,6 +106,17 @@ public class ModifySslVpnServerRequest extends RpcAcsRequest<ModifySslVpnServerR
 		this.localSubnet = localSubnet;
 		if(localSubnet != null){
 			putQueryParameter("LocalSubnet", localSubnet);
+		}
+	}
+
+	public String getIDaaSRegionId() {
+		return this.iDaaSRegionId;
+	}
+
+	public void setIDaaSRegionId(String iDaaSRegionId) {
+		this.iDaaSRegionId = iDaaSRegionId;
+		if(iDaaSRegionId != null){
+			putQueryParameter("IDaaSRegionId", iDaaSRegionId);
 		}
 	}
 

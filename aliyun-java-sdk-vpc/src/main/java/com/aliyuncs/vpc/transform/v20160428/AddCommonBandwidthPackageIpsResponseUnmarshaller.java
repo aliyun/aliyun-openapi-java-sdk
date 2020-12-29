@@ -14,16 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.AddBandwidthPackageIpsResponse;
+import com.aliyuncs.vpc.model.v20160428.AddCommonBandwidthPackageIpsResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddBandwidthPackageIpsResponseUnmarshaller {
+public class AddCommonBandwidthPackageIpsResponseUnmarshaller {
 
-	public static AddBandwidthPackageIpsResponse unmarshall(AddBandwidthPackageIpsResponse addBandwidthPackageIpsResponse, UnmarshallerContext _ctx) {
+	public static AddCommonBandwidthPackageIpsResponse unmarshall(AddCommonBandwidthPackageIpsResponse addCommonBandwidthPackageIpsResponse, UnmarshallerContext _ctx) {
 		
-		addBandwidthPackageIpsResponse.setRequestId(_ctx.stringValue("AddBandwidthPackageIpsResponse.RequestId"));
+		addCommonBandwidthPackageIpsResponse.setRequestId(_ctx.stringValue("AddCommonBandwidthPackageIpsResponse.RequestId"));
 	 
-	 	return addBandwidthPackageIpsResponse;
+	 	return addCommonBandwidthPackageIpsResponse;
 	}
 }

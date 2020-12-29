@@ -113,6 +113,8 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		private Boolean autoPropagate;
 
+		private String vpnType;
+
 		private List<Tag> tags;
 
 		private ReservationData reservationData;
@@ -259,6 +261,14 @@ public class DescribeVpnGatewaysResponse extends AcsResponse {
 
 		public void setAutoPropagate(Boolean autoPropagate) {
 			this.autoPropagate = autoPropagate;
+		}
+
+		public String getVpnType() {
+			return this.vpnType;
+		}
+
+		public void setVpnType(String vpnType) {
+			this.vpnType = vpnType;
 		}
 
 		public List<Tag> getTags() {

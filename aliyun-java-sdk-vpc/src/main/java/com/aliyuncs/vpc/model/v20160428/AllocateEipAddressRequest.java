@@ -31,8 +31,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private String iSP;
 
-	private Long serviceUid;
-
 	private String description;
 
 	private String resourceGroupId;
@@ -99,17 +97,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.iSP = iSP;
 		if(iSP != null){
 			putQueryParameter("ISP", iSP);
-		}
-	}
-
-	public Long getServiceUid() {
-		return this.serviceUid;
-	}
-
-	public void setServiceUid(Long serviceUid) {
-		this.serviceUid = serviceUid;
-		if(serviceUid != null){
-			putQueryParameter("ServiceUid", serviceUid.toString());
 		}
 	}
 

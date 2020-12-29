@@ -55,12 +55,14 @@ public class DescribeCommonBandwidthPackagesResponseUnmarshaller {
 			commonBandwidthPackage.setReservationOrderType(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ReservationOrderType"));
 			commonBandwidthPackage.setISP(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ISP"));
 			commonBandwidthPackage.setDeletionProtection(_ctx.booleanValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].DeletionProtection"));
+			commonBandwidthPackage.setServiceManaged(_ctx.integerValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].ServiceManaged"));
 
 			List<PublicIpAddresse> publicIpAddresses = new ArrayList<PublicIpAddresse>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {
 				PublicIpAddresse publicIpAddresse = new PublicIpAddresse();
 				publicIpAddresse.setAllocationId(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].AllocationId"));
 				publicIpAddresse.setIpAddress(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].IpAddress"));
+				publicIpAddresse.setBandwidthPackageIpRelationStatus(_ctx.stringValue("DescribeCommonBandwidthPackagesResponse.CommonBandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].BandwidthPackageIpRelationStatus"));
 
 				publicIpAddresses.add(publicIpAddresse);
 			}

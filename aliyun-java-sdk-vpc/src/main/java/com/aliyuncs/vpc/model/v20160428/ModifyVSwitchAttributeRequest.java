@@ -27,6 +27,8 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 
 	private Long resourceOwnerId;
 
+	private Boolean enableIPv6;
+
 	private String description;
 
 	private String resourceOwnerAccount;
@@ -57,6 +59,17 @@ public class ModifyVSwitchAttributeRequest extends RpcAcsRequest<ModifyVSwitchAt
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public Boolean getEnableIPv6() {
+		return this.enableIPv6;
+	}
+
+	public void setEnableIPv6(Boolean enableIPv6) {
+		this.enableIPv6 = enableIPv6;
+		if(enableIPv6 != null){
+			putQueryParameter("EnableIPv6", enableIPv6.toString());
 		}
 	}
 

@@ -45,6 +45,7 @@ public class DescribeHaVipsResponseUnmarshaller {
 			haVip.setName(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].Name"));
 			haVip.setChargeType(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].ChargeType"));
 			haVip.setCreateTime(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].CreateTime"));
+			haVip.setAssociatedInstanceType(_ctx.stringValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstanceType"));
 
 			List<String> associatedInstances = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeHaVipsResponse.HaVips["+ i +"].AssociatedInstances.Length"); j++) {

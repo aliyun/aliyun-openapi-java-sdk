@@ -15,7 +15,6 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -23,24 +22,22 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwidthPackageIpsResponse> {
+public class ConfirmPhysicalConnectionRequest extends RpcAcsRequest<ConfirmPhysicalConnectionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private List<String> removedIpAddressess;
-
-	private String bandwidthPackageId;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public RemoveBandwidthPackageIpsRequest() {
-		super("Vpc", "2016-04-28", "RemoveBandwidthPackageIps", "vpc");
+
+	private String physicalConnectionId;
+	public ConfirmPhysicalConnectionRequest() {
+		super("Vpc", "2016-04-28", "ConfirmPhysicalConnection", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,30 +64,6 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public List<String> getRemovedIpAddressess() {
-		return this.removedIpAddressess;
-	}
-
-	public void setRemovedIpAddressess(List<String> removedIpAddressess) {
-		this.removedIpAddressess = removedIpAddressess;	
-		if (removedIpAddressess != null) {
-			for (int i = 0; i < removedIpAddressess.size(); i++) {
-				putQueryParameter("RemovedIpAddresses." + (i + 1) , removedIpAddressess.get(i));
-			}
-		}	
-	}
-
-	public String getBandwidthPackageId() {
-		return this.bandwidthPackageId;
-	}
-
-	public void setBandwidthPackageId(String bandwidthPackageId) {
-		this.bandwidthPackageId = bandwidthPackageId;
-		if(bandwidthPackageId != null){
-			putQueryParameter("BandwidthPackageId", bandwidthPackageId);
 		}
 	}
 
@@ -127,9 +100,20 @@ public class RemoveBandwidthPackageIpsRequest extends RpcAcsRequest<RemoveBandwi
 		}
 	}
 
+	public String getPhysicalConnectionId() {
+		return this.physicalConnectionId;
+	}
+
+	public void setPhysicalConnectionId(String physicalConnectionId) {
+		this.physicalConnectionId = physicalConnectionId;
+		if(physicalConnectionId != null){
+			putQueryParameter("PhysicalConnectionId", physicalConnectionId);
+		}
+	}
+
 	@Override
-	public Class<RemoveBandwidthPackageIpsResponse> getResponseClass() {
-		return RemoveBandwidthPackageIpsResponse.class;
+	public Class<ConfirmPhysicalConnectionResponse> getResponseClass() {
+		return ConfirmPhysicalConnectionResponse.class;
 	}
 
 }

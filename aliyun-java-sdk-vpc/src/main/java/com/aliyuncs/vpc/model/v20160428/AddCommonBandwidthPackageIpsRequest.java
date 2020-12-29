@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -22,16 +23,12 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBandwidthPackagesResponse> {
+public class AddCommonBandwidthPackageIpsRequest extends RpcAcsRequest<AddCommonBandwidthPackageIpsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String natGatewayId;
+	private List<String> ipInstanceIdss;
 
 	private String bandwidthPackageId;
 
@@ -40,8 +37,10 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeBandwidthPackagesRequest() {
-		super("Vpc", "2016-04-28", "DescribeBandwidthPackages", "vpc");
+
+	private String ipType;
+	public AddCommonBandwidthPackageIpsRequest() {
+		super("Vpc", "2016-04-28", "AddCommonBandwidthPackageIps", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,37 +59,17 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public List<String> getIpInstanceIdss() {
+		return this.ipInstanceIdss;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getNatGatewayId() {
-		return this.natGatewayId;
-	}
-
-	public void setNatGatewayId(String natGatewayId) {
-		this.natGatewayId = natGatewayId;
-		if(natGatewayId != null){
-			putQueryParameter("NatGatewayId", natGatewayId);
-		}
+	public void setIpInstanceIdss(List<String> ipInstanceIdss) {
+		this.ipInstanceIdss = ipInstanceIdss;	
+		if (ipInstanceIdss != null) {
+			for (int i = 0; i < ipInstanceIdss.size(); i++) {
+				putQueryParameter("IpInstanceIds." + (i + 1) , ipInstanceIdss.get(i));
+			}
+		}	
 	}
 
 	public String getBandwidthPackageId() {
@@ -137,9 +116,20 @@ public class DescribeBandwidthPackagesRequest extends RpcAcsRequest<DescribeBand
 		}
 	}
 
+	public String getIpType() {
+		return this.ipType;
+	}
+
+	public void setIpType(String ipType) {
+		this.ipType = ipType;
+		if(ipType != null){
+			putQueryParameter("IpType", ipType);
+		}
+	}
+
 	@Override
-	public Class<DescribeBandwidthPackagesResponse> getResponseClass() {
-		return DescribeBandwidthPackagesResponse.class;
+	public Class<AddCommonBandwidthPackageIpsResponse> getResponseClass() {
+		return AddCommonBandwidthPackageIpsResponse.class;
 	}
 
 }

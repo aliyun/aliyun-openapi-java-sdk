@@ -99,6 +99,8 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		private String createTime;
 
+		private String associatedInstanceType;
+
 		private List<String> associatedInstances;
 
 		private List<String> associatedEipAddresses;
@@ -189,6 +191,14 @@ public class DescribeHaVipsResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getAssociatedInstanceType() {
+			return this.associatedInstanceType;
+		}
+
+		public void setAssociatedInstanceType(String associatedInstanceType) {
+			this.associatedInstanceType = associatedInstanceType;
 		}
 
 		public List<String> getAssociatedInstances() {

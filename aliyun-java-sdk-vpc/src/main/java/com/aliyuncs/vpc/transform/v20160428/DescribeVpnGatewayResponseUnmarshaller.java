@@ -46,6 +46,7 @@ public class DescribeVpnGatewayResponseUnmarshaller {
 		describeVpnGatewayResponse.setTag(_ctx.stringValue("DescribeVpnGatewayResponse.Tag"));
 		describeVpnGatewayResponse.setEnableBgp(_ctx.booleanValue("DescribeVpnGatewayResponse.EnableBgp"));
 		describeVpnGatewayResponse.setAutoPropagate(_ctx.booleanValue("DescribeVpnGatewayResponse.AutoPropagate"));
+		describeVpnGatewayResponse.setVpnType(_ctx.stringValue("DescribeVpnGatewayResponse.VpnType"));
 
 		ReservationData reservationData = new ReservationData();
 		reservationData.setStatus(_ctx.stringValue("DescribeVpnGatewayResponse.ReservationData.Status"));

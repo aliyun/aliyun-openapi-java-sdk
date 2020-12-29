@@ -22,24 +22,30 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBandwidthPackageAttributeRequest extends RpcAcsRequest<ModifyBandwidthPackageAttributeResponse> {
+public class ModifyCommonBandwidthPackageInternetChargeTypeRequest extends RpcAcsRequest<ModifyCommonBandwidthPackageInternetChargeTypeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String description;
+	private String instanceChargeType;
 
 	private String bandwidthPackageId;
 
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
+
+	private Integer bandwidth;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String name;
-	public ModifyBandwidthPackageAttributeRequest() {
-		super("Vpc", "2016-04-28", "ModifyBandwidthPackageAttribute", "vpc");
+	private String internetChargeType;
+
+	private Integer ratio;
+	public ModifyCommonBandwidthPackageInternetChargeTypeRequest() {
+		super("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageInternetChargeType", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,14 +64,14 @@ public class ModifyBandwidthPackageAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getInstanceChargeType() {
+		return this.instanceChargeType;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setInstanceChargeType(String instanceChargeType) {
+		this.instanceChargeType = instanceChargeType;
+		if(instanceChargeType != null){
+			putQueryParameter("InstanceChargeType", instanceChargeType);
 		}
 	}
 
@@ -80,6 +86,17 @@ public class ModifyBandwidthPackageAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -88,6 +105,17 @@ public class ModifyBandwidthPackageAttributeRequest extends RpcAcsRequest<Modify
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 
@@ -113,20 +141,31 @@ public class ModifyBandwidthPackageAttributeRequest extends RpcAcsRequest<Modify
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getInternetChargeType() {
+		return this.internetChargeType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
+		}
+	}
+
+	public Integer getRatio() {
+		return this.ratio;
+	}
+
+	public void setRatio(Integer ratio) {
+		this.ratio = ratio;
+		if(ratio != null){
+			putQueryParameter("Ratio", ratio.toString());
 		}
 	}
 
 	@Override
-	public Class<ModifyBandwidthPackageAttributeResponse> getResponseClass() {
-		return ModifyBandwidthPackageAttributeResponse.class;
+	public Class<ModifyCommonBandwidthPackageInternetChargeTypeResponse> getResponseClass() {
+		return ModifyCommonBandwidthPackageInternetChargeTypeResponse.class;
 	}
 
 }

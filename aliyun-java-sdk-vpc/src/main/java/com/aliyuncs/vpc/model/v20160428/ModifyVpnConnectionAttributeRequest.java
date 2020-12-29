@@ -53,6 +53,8 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 
 	private Boolean enableDpd;
 
+	private String remoteCaCertificate;
+
 	private String vpnConnectionId;
 
 	private String name;
@@ -218,6 +220,17 @@ public class ModifyVpnConnectionAttributeRequest extends RpcAcsRequest<ModifyVpn
 		this.enableDpd = enableDpd;
 		if(enableDpd != null){
 			putQueryParameter("EnableDpd", enableDpd.toString());
+		}
+	}
+
+	public String getRemoteCaCertificate() {
+		return this.remoteCaCertificate;
+	}
+
+	public void setRemoteCaCertificate(String remoteCaCertificate) {
+		this.remoteCaCertificate = remoteCaCertificate;
+		if(remoteCaCertificate != null){
+			putQueryParameter("RemoteCaCertificate", remoteCaCertificate);
 		}
 	}
 

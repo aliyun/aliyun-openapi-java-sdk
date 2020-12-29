@@ -14,16 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.ModifyBandwidthPackageAttributeResponse;
+import com.aliyuncs.vpc.model.v20160428.DeleteIpsecServerResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyBandwidthPackageAttributeResponseUnmarshaller {
+public class DeleteIpsecServerResponseUnmarshaller {
 
-	public static ModifyBandwidthPackageAttributeResponse unmarshall(ModifyBandwidthPackageAttributeResponse modifyBandwidthPackageAttributeResponse, UnmarshallerContext _ctx) {
+	public static DeleteIpsecServerResponse unmarshall(DeleteIpsecServerResponse deleteIpsecServerResponse, UnmarshallerContext _ctx) {
 		
-		modifyBandwidthPackageAttributeResponse.setRequestId(_ctx.stringValue("ModifyBandwidthPackageAttributeResponse.RequestId"));
+		deleteIpsecServerResponse.setRequestId(_ctx.stringValue("DeleteIpsecServerResponse.RequestId"));
 	 
-	 	return modifyBandwidthPackageAttributeResponse;
+	 	return deleteIpsecServerResponse;
 	}
 }

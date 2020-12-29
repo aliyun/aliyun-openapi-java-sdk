@@ -49,6 +49,8 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 
 	private String resourceOwnerAccount;
 
+	private Long bandwidth;
+
 	private String ownerAccount;
 
 	private Long ownerId;
@@ -198,6 +200,17 @@ public class CreateVirtualBorderRouterRequest extends RpcAcsRequest<CreateVirtua
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Long bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
 		}
 	}
 

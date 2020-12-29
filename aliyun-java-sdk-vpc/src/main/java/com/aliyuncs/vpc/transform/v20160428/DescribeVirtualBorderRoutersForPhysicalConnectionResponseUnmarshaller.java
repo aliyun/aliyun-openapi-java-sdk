@@ -56,6 +56,7 @@ public class DescribeVirtualBorderRoutersForPhysicalConnectionResponseUnmarshall
 			virtualBorderRouterForPhysicalConnectionType.setPeerIpv6GatewayIp(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerIpv6GatewayIp"));
 			virtualBorderRouterForPhysicalConnectionType.setPeeringIpv6SubnetMask(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringIpv6SubnetMask"));
 			virtualBorderRouterForPhysicalConnectionType.setEnableIpv6(_ctx.booleanValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EnableIpv6"));
+			virtualBorderRouterForPhysicalConnectionType.setBandwidthStatus(_ctx.stringValue("DescribeVirtualBorderRoutersForPhysicalConnectionResponse.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].BandwidthStatus"));
 
 			virtualBorderRouterForPhysicalConnectionSet.add(virtualBorderRouterForPhysicalConnectionType);
 		}
