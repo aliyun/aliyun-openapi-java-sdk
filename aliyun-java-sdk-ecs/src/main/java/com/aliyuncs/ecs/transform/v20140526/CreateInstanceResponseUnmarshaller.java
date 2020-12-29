@@ -25,6 +25,7 @@ public class CreateInstanceResponseUnmarshaller {
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
 		createInstanceResponse.setInstanceId(_ctx.stringValue("CreateInstanceResponse.InstanceId"));
 		createInstanceResponse.setTradePrice(_ctx.floatValue("CreateInstanceResponse.TradePrice"));
+		createInstanceResponse.setOrderId(_ctx.stringValue("CreateInstanceResponse.OrderId"));
 	 
 	 	return createInstanceResponse;
 	}

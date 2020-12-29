@@ -205,6 +205,10 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private Integer systemDiskIops;
 
+			private String systemDiskPerformanceLevel;
+
+			private Boolean systemDiskDeleteWithInstance;
+
 			private String ioOptimized;
 
 			private String instanceChargeType;
@@ -235,11 +239,15 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String securityEnhancementStrategy;
 
+			private String privateIpAddress;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
 
 			private List<InstanceTag> tags;
+
+			private List<String> securityGroupIds;
 
 			public String getImageId() {
 				return this.imageId;
@@ -385,6 +393,22 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.systemDiskIops = systemDiskIops;
 			}
 
+			public String getSystemDiskPerformanceLevel() {
+				return this.systemDiskPerformanceLevel;
+			}
+
+			public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+				this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+			}
+
+			public Boolean getSystemDiskDeleteWithInstance() {
+				return this.systemDiskDeleteWithInstance;
+			}
+
+			public void setSystemDiskDeleteWithInstance(Boolean systemDiskDeleteWithInstance) {
+				this.systemDiskDeleteWithInstance = systemDiskDeleteWithInstance;
+			}
+
 			public String getIoOptimized() {
 				return this.ioOptimized;
 			}
@@ -505,6 +529,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.securityEnhancementStrategy = securityEnhancementStrategy;
 			}
 
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
+
 			public List<DataDisk> getDataDisks() {
 				return this.dataDisks;
 			}
@@ -529,6 +561,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				this.tags = tags;
 			}
 
+			public List<String> getSecurityGroupIds() {
+				return this.securityGroupIds;
+			}
+
+			public void setSecurityGroupIds(List<String> securityGroupIds) {
+				this.securityGroupIds = securityGroupIds;
+			}
+
 			public static class DataDisk {
 
 				private Integer size;
@@ -546,6 +586,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private Boolean deleteWithInstance;
 
 				private String device;
+
+				private String performanceLevel;
 
 				public Integer getSize() {
 					return this.size;
@@ -610,6 +652,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				public void setDevice(String device) {
 					this.device = device;
 				}
+
+				public String getPerformanceLevel() {
+					return this.performanceLevel;
+				}
+
+				public void setPerformanceLevel(String performanceLevel) {
+					this.performanceLevel = performanceLevel;
+				}
 			}
 
 			public static class NetworkInterface {
@@ -623,6 +673,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 				private String networkInterfaceName;
 
 				private String description;
+
+				private List<String> securityGroupIds1;
 
 				public String getPrimaryIpAddress() {
 					return this.primaryIpAddress;
@@ -662,6 +714,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 				public void setDescription(String description) {
 					this.description = description;
+				}
+
+				public List<String> getSecurityGroupIds1() {
+					return this.securityGroupIds1;
+				}
+
+				public void setSecurityGroupIds1(List<String> securityGroupIds1) {
+					this.securityGroupIds1 = securityGroupIds1;
 				}
 			}
 

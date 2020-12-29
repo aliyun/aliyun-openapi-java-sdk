@@ -1,3 +1,6 @@
+2020-12-29 Version: 4.23.3
+- Supported SystemDiskPerformanceLevel, SystemDiskDeleteWithInstance, DataDiskPerformanceLevel, NetworkInterfaceSecurityGroupIds, SecurityGroupIds, PrivateIpAddress for CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersion.
+
 2020-12-21 Version: 4.23.2
 - Support Device of LaunchConfiguration_DataDisk.
 

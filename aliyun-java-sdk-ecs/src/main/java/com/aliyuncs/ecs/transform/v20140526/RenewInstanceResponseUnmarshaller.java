@@ -23,6 +23,7 @@ public class RenewInstanceResponseUnmarshaller {
 	public static RenewInstanceResponse unmarshall(RenewInstanceResponse renewInstanceResponse, UnmarshallerContext _ctx) {
 		
 		renewInstanceResponse.setRequestId(_ctx.stringValue("RenewInstanceResponse.RequestId"));
+		renewInstanceResponse.setOrderId(_ctx.stringValue("RenewInstanceResponse.OrderId"));
 	 
 	 	return renewInstanceResponse;
 	}

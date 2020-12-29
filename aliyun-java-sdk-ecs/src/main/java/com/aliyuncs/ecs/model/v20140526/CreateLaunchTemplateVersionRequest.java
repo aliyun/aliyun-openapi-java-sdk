@@ -58,6 +58,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private String spotStrategy;
 
+	private String privateIpAddress;
+
 	private String instanceName;
 
 	private String internetChargeType;
@@ -67,6 +69,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 	private Integer internetMaxBandwidthIn;
 
 	private String versionDescription;
+
+	private Boolean systemDiskDeleteWithInstance;
 
 	private String imageId;
 
@@ -79,6 +83,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 	private String description;
 
 	private String systemDiskCategory;
+
+	private String systemDiskPerformanceLevel;
 
 	private String userData;
 
@@ -103,6 +109,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 	private String autoReleaseTime;
 
 	private Integer spotDuration;
+
+	private List<String> securityGroupIdss;
 
 	private List<DataDisk> dataDisks;
 
@@ -299,6 +307,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
 	public String getInstanceName() {
 		return this.instanceName;
 	}
@@ -351,6 +370,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.versionDescription = versionDescription;
 		if(versionDescription != null){
 			putQueryParameter("VersionDescription", versionDescription);
+		}
+	}
+
+	public Boolean getSystemDiskDeleteWithInstance() {
+		return this.systemDiskDeleteWithInstance;
+	}
+
+	public void setSystemDiskDeleteWithInstance(Boolean systemDiskDeleteWithInstance) {
+		this.systemDiskDeleteWithInstance = systemDiskDeleteWithInstance;
+		if(systemDiskDeleteWithInstance != null){
+			putQueryParameter("SystemDisk.DeleteWithInstance", systemDiskDeleteWithInstance.toString());
 		}
 	}
 
@@ -417,6 +447,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		this.systemDiskCategory = systemDiskCategory;
 		if(systemDiskCategory != null){
 			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getSystemDiskPerformanceLevel() {
+		return this.systemDiskPerformanceLevel;
+	}
+
+	public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+		this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+		if(systemDiskPerformanceLevel != null){
+			putQueryParameter("SystemDisk.PerformanceLevel", systemDiskPerformanceLevel);
 		}
 	}
 
@@ -488,6 +529,11 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupId" , networkInterfaces.get(depth1).getSecurityGroupId());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".NetworkInterfaceName" , networkInterfaces.get(depth1).getNetworkInterfaceName());
 				putQueryParameter("NetworkInterface." + (depth1 + 1) + ".Description" , networkInterfaces.get(depth1).getDescription());
+				if (networkInterfaces.get(depth1).getSecurityGroupIdss() != null) {
+					for (int i = 0; i < networkInterfaces.get(depth1).getSecurityGroupIdss().size(); i++) {
+						putQueryParameter("NetworkInterface." + (depth1 + 1) + ".SecurityGroupIds." + (i + 1) , networkInterfaces.get(depth1).getSecurityGroupIdss().get(i));
+					}
+				}
 			}
 		}	
 	}
@@ -558,6 +604,19 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		}
 	}
 
+	public List<String> getSecurityGroupIdss() {
+		return this.securityGroupIdss;
+	}
+
+	public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+		this.securityGroupIdss = securityGroupIdss;	
+		if (securityGroupIdss != null) {
+			for (int i = 0; i < securityGroupIdss.size(); i++) {
+				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
+			}
+		}	
+	}
+
 	public List<DataDisk> getDataDisks() {
 		return this.dataDisks;
 	}
@@ -574,6 +633,7 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Description" , dataDisks.get(depth1).getDescription());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , dataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("DataDisk." + (depth1 + 1) + ".Device" , dataDisks.get(depth1).getDevice());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
 			}
 		}	
 	}
@@ -646,6 +706,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 		private String description;
 
+		private List<String> securityGroupIdss;
+
 		public String getPrimaryIpAddress() {
 			return this.primaryIpAddress;
 		}
@@ -685,6 +747,14 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		public void setDescription(String description) {
 			this.description = description;
 		}
+
+		public List<String> getSecurityGroupIdss() {
+			return this.securityGroupIdss;
+		}
+
+		public void setSecurityGroupIdss(List<String> securityGroupIdss) {
+			this.securityGroupIdss = securityGroupIdss;
+		}
 	}
 
 	public static class DataDisk {
@@ -704,6 +774,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 		private Boolean deleteWithInstance;
 
 		private String device;
+
+		private String performanceLevel;
 
 		public Integer getSize() {
 			return this.size;
@@ -767,6 +839,14 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 		public void setDevice(String device) {
 			this.device = device;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
 		}
 	}
 

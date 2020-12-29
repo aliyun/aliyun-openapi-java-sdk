@@ -27,6 +27,8 @@ public class AttachInstanceRamRoleRequest extends RpcAcsRequest<AttachInstanceRa
 
 	private Long resourceOwnerId;
 
+	private String policy;
+
 	private String resourceOwnerAccount;
 
 	private String ramRoleName;
@@ -51,6 +53,17 @@ public class AttachInstanceRamRoleRequest extends RpcAcsRequest<AttachInstanceRa
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 
