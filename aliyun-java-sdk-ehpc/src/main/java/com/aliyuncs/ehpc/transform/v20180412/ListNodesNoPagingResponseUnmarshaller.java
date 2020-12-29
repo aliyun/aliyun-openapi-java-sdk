@@ -50,6 +50,7 @@ public class ListNodesNoPagingResponseUnmarshaller {
 			nodeInfo.setImageOwnerAlias(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageOwnerAlias"));
 			nodeInfo.setImageId(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].ImageId"));
 			nodeInfo.setHtEnabled(_ctx.booleanValue("ListNodesNoPagingResponse.Nodes["+ i +"].HtEnabled"));
+			nodeInfo.setInstanceType(_ctx.stringValue("ListNodesNoPagingResponse.Nodes["+ i +"].InstanceType"));
 
 			List<String> roles = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListNodesNoPagingResponse.Nodes["+ i +"].Roles.Length"); j++) {

@@ -14,17 +14,16 @@
 
 package com.aliyuncs.ehpc.transform.v20180412;
 
-import com.aliyuncs.ehpc.model.v20180412.InstallNFSClientResponse;
+import com.aliyuncs.ehpc.model.v20180412.InitializeEHPCResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class InstallNFSClientResponseUnmarshaller {
+public class InitializeEHPCResponseUnmarshaller {
 
-	public static InstallNFSClientResponse unmarshall(InstallNFSClientResponse installNFSClientResponse, UnmarshallerContext _ctx) {
+	public static InitializeEHPCResponse unmarshall(InitializeEHPCResponse initializeEHPCResponse, UnmarshallerContext _ctx) {
 		
-		installNFSClientResponse.setRequestId(_ctx.stringValue("InstallNFSClientResponse.RequestId"));
-		installNFSClientResponse.setInvokeId(_ctx.stringValue("InstallNFSClientResponse.InvokeId"));
+		initializeEHPCResponse.setRequestId(_ctx.stringValue("InitializeEHPCResponse.RequestId"));
 	 
-	 	return installNFSClientResponse;
+	 	return initializeEHPCResponse;
 	}
 }

@@ -84,6 +84,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String imageId;
 
+	private String systemDiskLevel;
+
 	private String clientToken;
 
 	private String ehpcVersion;
@@ -465,6 +467,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSystemDiskLevel() {
+		return this.systemDiskLevel;
+	}
+
+	public void setSystemDiskLevel(String systemDiskLevel) {
+		this.systemDiskLevel = systemDiskLevel;
+		if(systemDiskLevel != null){
+			putQueryParameter("SystemDiskLevel", systemDiskLevel);
 		}
 	}
 

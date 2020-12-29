@@ -15,18 +15,16 @@
 package com.aliyuncs.ehpc.model.v20180412;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ehpc.transform.v20180412.InstallNFSClientResponseUnmarshaller;
+import com.aliyuncs.ehpc.transform.v20180412.InitializeEHPCResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class InstallNFSClientResponse extends AcsResponse {
+public class InitializeEHPCResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String invokeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class InstallNFSClientResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getInvokeId() {
-		return this.invokeId;
-	}
-
-	public void setInvokeId(String invokeId) {
-		this.invokeId = invokeId;
-	}
-
 	@Override
-	public InstallNFSClientResponse getInstance(UnmarshallerContext context) {
-		return	InstallNFSClientResponseUnmarshaller.unmarshall(this, context);
+	public InitializeEHPCResponse getInstance(UnmarshallerContext context) {
+		return	InitializeEHPCResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -22,12 +22,10 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class InstallNFSClientRequest extends RpcAcsRequest<InstallNFSClientResponse> {
+public class InitializeEHPCRequest extends RpcAcsRequest<InitializeEHPCResponse> {
 	   
-
-	private String instanceId;
-	public InstallNFSClientRequest() {
-		super("EHPC", "2018-04-12", "InstallNFSClient", "ehs");
+	public InitializeEHPCRequest() {
+		super("EHPC", "2018-04-12", "InitializeEHPC");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +33,9 @@ public class InstallNFSClientRequest extends RpcAcsRequest<InstallNFSClientRespo
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<InstallNFSClientResponse> getResponseClass() {
-		return InstallNFSClientResponse.class;
+	public Class<InitializeEHPCResponse> getResponseClass() {
+		return InitializeEHPCResponse.class;
 	}
 
 }

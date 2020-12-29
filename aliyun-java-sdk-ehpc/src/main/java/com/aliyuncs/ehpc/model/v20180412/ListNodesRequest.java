@@ -31,11 +31,17 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private Integer pageNumber;
 
+	private String filter;
+
+	private String privateIpAddress;
+
 	private String sequence;
 
 	private String hostName;
 
 	private Integer pageSize;
+
+	private String sortBy;
 	public ListNodesRequest() {
 		super("EHPC", "2018-04-12", "ListNodes");
 		setMethod(MethodType.GET);
@@ -78,6 +84,28 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		}
 	}
 
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
+	public String getPrivateIpAddress() {
+		return this.privateIpAddress;
+	}
+
+	public void setPrivateIpAddress(String privateIpAddress) {
+		this.privateIpAddress = privateIpAddress;
+		if(privateIpAddress != null){
+			putQueryParameter("PrivateIpAddress", privateIpAddress);
+		}
+	}
+
 	public String getSequence() {
 		return this.sequence;
 	}
@@ -108,6 +136,17 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+		if(sortBy != null){
+			putQueryParameter("SortBy", sortBy);
 		}
 	}
 

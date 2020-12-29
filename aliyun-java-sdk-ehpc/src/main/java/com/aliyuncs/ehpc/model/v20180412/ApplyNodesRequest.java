@@ -30,6 +30,8 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 
 	private Integer memory;
 
+	private String systemDiskLevel;
+
 	private Boolean allocatePublicAddress;
 
 	private Integer internetMaxBandWidthOut;
@@ -95,6 +97,17 @@ public class ApplyNodesRequest extends RpcAcsRequest<ApplyNodesResponse> {
 		this.memory = memory;
 		if(memory != null){
 			putQueryParameter("Memory", memory.toString());
+		}
+	}
+
+	public String getSystemDiskLevel() {
+		return this.systemDiskLevel;
+	}
+
+	public void setSystemDiskLevel(String systemDiskLevel) {
+		this.systemDiskLevel = systemDiskLevel;
+		if(systemDiskLevel != null){
+			putQueryParameter("SystemDiskLevel", systemDiskLevel);
 		}
 	}
 

@@ -39,6 +39,12 @@ public class ListClustersMetaResponseUnmarshaller {
 			clusterInfoSimple.setDescription(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Description"));
 			clusterInfoSimple.setStatus(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Status"));
 			clusterInfoSimple.setLocation(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].Location"));
+			clusterInfoSimple.setOsTag(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].OsTag"));
+			clusterInfoSimple.setClientVersion(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].ClientVersion"));
+			clusterInfoSimple.setAccountType(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].AccountType"));
+			clusterInfoSimple.setSchedulerType(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].SchedulerType"));
+			clusterInfoSimple.setVpcId(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].VpcId"));
+			clusterInfoSimple.setDeployMode(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].DeployMode"));
 
 			clusters.add(clusterInfoSimple);
 		}

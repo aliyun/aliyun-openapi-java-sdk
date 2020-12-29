@@ -129,6 +129,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private Float computeSpotPriceLimit;
 
+		private String clientVersion;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -343,6 +345,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setComputeSpotPriceLimit(Float computeSpotPriceLimit) {
 			this.computeSpotPriceLimit = computeSpotPriceLimit;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
 		}
 
 		public Managers getManagers() {

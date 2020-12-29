@@ -87,6 +87,18 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		private String location;
 
+		private String osTag;
+
+		private String clientVersion;
+
+		private String accountType;
+
+		private String schedulerType;
+
+		private String vpcId;
+
+		private String deployMode;
+
 		public String getId() {
 			return this.id;
 		}
@@ -125,6 +137,54 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		public void setLocation(String location) {
 			this.location = location;
+		}
+
+		public String getOsTag() {
+			return this.osTag;
+		}
+
+		public void setOsTag(String osTag) {
+			this.osTag = osTag;
+		}
+
+		public String getClientVersion() {
+			return this.clientVersion;
+		}
+
+		public void setClientVersion(String clientVersion) {
+			this.clientVersion = clientVersion;
+		}
+
+		public String getAccountType() {
+			return this.accountType;
+		}
+
+		public void setAccountType(String accountType) {
+			this.accountType = accountType;
+		}
+
+		public String getSchedulerType() {
+			return this.schedulerType;
+		}
+
+		public void setSchedulerType(String schedulerType) {
+			this.schedulerType = schedulerType;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getDeployMode() {
+			return this.deployMode;
+		}
+
+		public void setDeployMode(String deployMode) {
+			this.deployMode = deployMode;
 		}
 	}
 

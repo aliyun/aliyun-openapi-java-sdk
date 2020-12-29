@@ -29,6 +29,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private String runasUserPassword;
 
+	private String clockTime;
+
 	private String commandLine;
 
 	private String jobQueue;
@@ -38,6 +40,8 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 	private String unzipCmd;
 
 	private String packagePath;
+
+	private String mem;
 
 	private String stdoutRedirectPath;
 
@@ -51,7 +55,15 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 
 	private Boolean reRunable;
 
+	private Integer thread;
+
 	private Integer priority;
+
+	private Integer gpu;
+
+	private Integer node;
+
+	private Integer task;
 
 	private String inputFileUrl;
 
@@ -86,6 +98,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.runasUserPassword = runasUserPassword;
 		if(runasUserPassword != null){
 			putQueryParameter("RunasUserPassword", runasUserPassword);
+		}
+	}
+
+	public String getClockTime() {
+		return this.clockTime;
+	}
+
+	public void setClockTime(String clockTime) {
+		this.clockTime = clockTime;
+		if(clockTime != null){
+			putQueryParameter("ClockTime", clockTime);
 		}
 	}
 
@@ -141,6 +164,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.packagePath = packagePath;
 		if(packagePath != null){
 			putQueryParameter("PackagePath", packagePath);
+		}
+	}
+
+	public String getMem() {
+		return this.mem;
+	}
+
+	public void setMem(String mem) {
+		this.mem = mem;
+		if(mem != null){
+			putQueryParameter("Mem", mem);
 		}
 	}
 
@@ -210,6 +244,17 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		}
 	}
 
+	public Integer getThread() {
+		return this.thread;
+	}
+
+	public void setThread(Integer thread) {
+		this.thread = thread;
+		if(thread != null){
+			putQueryParameter("Thread", thread.toString());
+		}
+	}
+
 	public Integer getPriority() {
 		return this.priority;
 	}
@@ -218,6 +263,39 @@ public class SubmitJobRequest extends RpcAcsRequest<SubmitJobResponse> {
 		this.priority = priority;
 		if(priority != null){
 			putQueryParameter("Priority", priority.toString());
+		}
+	}
+
+	public Integer getGpu() {
+		return this.gpu;
+	}
+
+	public void setGpu(Integer gpu) {
+		this.gpu = gpu;
+		if(gpu != null){
+			putQueryParameter("Gpu", gpu.toString());
+		}
+	}
+
+	public Integer getNode() {
+		return this.node;
+	}
+
+	public void setNode(Integer node) {
+		this.node = node;
+		if(node != null){
+			putQueryParameter("Node", node.toString());
+		}
+	}
+
+	public Integer getTask() {
+		return this.task;
+	}
+
+	public void setTask(Integer task) {
+		this.task = task;
+		if(task != null){
+			putQueryParameter("Task", task.toString());
 		}
 	}
 

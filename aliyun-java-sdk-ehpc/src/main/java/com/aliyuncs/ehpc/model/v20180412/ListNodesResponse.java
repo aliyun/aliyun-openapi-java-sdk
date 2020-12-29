@@ -119,6 +119,8 @@ public class ListNodesResponse extends AcsResponse {
 
 		private String publicIpAddress;
 
+		private String instanceType;
+
 		private List<String> roles;
 
 		private TotalResources totalResources;
@@ -291,6 +293,14 @@ public class ListNodesResponse extends AcsResponse {
 
 		public void setPublicIpAddress(String publicIpAddress) {
 			this.publicIpAddress = publicIpAddress;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public List<String> getRoles() {

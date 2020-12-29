@@ -105,6 +105,8 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		private Boolean htEnabled;
 
+		private String instanceType;
+
 		private List<String> roles;
 
 		private TotalResources totalResources;
@@ -221,6 +223,14 @@ public class ListNodesNoPagingResponse extends AcsResponse {
 
 		public void setHtEnabled(Boolean htEnabled) {
 			this.htEnabled = htEnabled;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public List<String> getRoles() {

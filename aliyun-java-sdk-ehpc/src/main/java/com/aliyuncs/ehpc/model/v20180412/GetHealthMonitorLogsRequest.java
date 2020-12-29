@@ -22,18 +22,20 @@ import com.aliyuncs.ehpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetInstanceReportRequest extends RpcAcsRequest<GetInstanceReportResponse> {
+public class GetHealthMonitorLogsRequest extends RpcAcsRequest<GetHealthMonitorLogsResponse> {
 	   
 
 	private Integer endTime;
 
-	private String filterValue;
-
 	private String clusterId;
 
 	private Integer startTime;
-	public GetInstanceReportRequest() {
-		super("EHPC", "2018-04-12", "GetInstanceReport", "ehs");
+
+	private Boolean enableReverse;
+
+	private String filter;
+	public GetHealthMonitorLogsRequest() {
+		super("EHPC", "2018-04-12", "GetHealthMonitorLogs");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,17 +51,6 @@ public class GetInstanceReportRequest extends RpcAcsRequest<GetInstanceReportRes
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public String getFilterValue() {
-		return this.filterValue;
-	}
-
-	public void setFilterValue(String filterValue) {
-		this.filterValue = filterValue;
-		if(filterValue != null){
-			putQueryParameter("FilterValue", filterValue);
 		}
 	}
 
@@ -85,9 +76,31 @@ public class GetInstanceReportRequest extends RpcAcsRequest<GetInstanceReportRes
 		}
 	}
 
+	public Boolean getEnableReverse() {
+		return this.enableReverse;
+	}
+
+	public void setEnableReverse(Boolean enableReverse) {
+		this.enableReverse = enableReverse;
+		if(enableReverse != null){
+			putQueryParameter("EnableReverse", enableReverse.toString());
+		}
+	}
+
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		if(filter != null){
+			putQueryParameter("Filter", filter);
+		}
+	}
+
 	@Override
-	public Class<GetInstanceReportResponse> getResponseClass() {
-		return GetInstanceReportResponse.class;
+	public Class<GetHealthMonitorLogsResponse> getResponseClass() {
+		return GetHealthMonitorLogsResponse.class;
 	}
 
 }

@@ -27,6 +27,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String imageId;
 
+	private String systemDiskLevel;
+
 	private String clientToken;
 
 	private Boolean allocatePublicAddress;
@@ -93,6 +95,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSystemDiskLevel() {
+		return this.systemDiskLevel;
+	}
+
+	public void setSystemDiskLevel(String systemDiskLevel) {
+		this.systemDiskLevel = systemDiskLevel;
+		if(systemDiskLevel != null){
+			putQueryParameter("SystemDiskLevel", systemDiskLevel);
 		}
 	}
 
