@@ -27,6 +27,12 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private Integer totalCount;
+
 	private List<Children> clusterChildren;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Children> getClusterChildren() {
@@ -59,11 +89,7 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 		private String serviceVersion;
 
-		private String connType;
-
 		private Integer diskSizeMB;
-
-		private String insType;
 
 		private String nickname;
 
@@ -74,8 +100,6 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 		private Integer creator;
 
 		private String resourceGroupName;
-
-		private String lockMode;
 
 		private String health;
 
@@ -92,6 +116,8 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 		private Long bandWidth;
 
 		private Long connections;
+
+		private List<Item> items;
 
 		public Long getId() {
 			return this.id;
@@ -141,28 +167,12 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 			this.serviceVersion = serviceVersion;
 		}
 
-		public String getConnType() {
-			return this.connType;
-		}
-
-		public void setConnType(String connType) {
-			this.connType = connType;
-		}
-
 		public Integer getDiskSizeMB() {
 			return this.diskSizeMB;
 		}
 
 		public void setDiskSizeMB(Integer diskSizeMB) {
 			this.diskSizeMB = diskSizeMB;
-		}
-
-		public String getInsType() {
-			return this.insType;
-		}
-
-		public void setInsType(String insType) {
-			this.insType = insType;
 		}
 
 		public String getNickname() {
@@ -203,14 +213,6 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 		public void setResourceGroupName(String resourceGroupName) {
 			this.resourceGroupName = resourceGroupName;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
 		}
 
 		public String getHealth() {
@@ -275,6 +277,87 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 		public void setConnections(Long connections) {
 			this.connections = connections;
+		}
+
+		public List<Item> getItems() {
+			return this.items;
+		}
+
+		public void setItems(List<Item> items) {
+			this.items = items;
+		}
+
+		public static class Item {
+
+			private Integer id;
+
+			private String hostName;
+
+			private String role;
+
+			private String status;
+
+			private String zoneId;
+
+			private String ip;
+
+			private List<Integer> ports;
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
+
+			public String getHostName() {
+				return this.hostName;
+			}
+
+			public void setHostName(String hostName) {
+				this.hostName = hostName;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
+
+			public String getIp() {
+				return this.ip;
+			}
+
+			public void setIp(String ip) {
+				this.ip = ip;
+			}
+
+			public List<Integer> getPorts() {
+				return this.ports;
+			}
+
+			public void setPorts(List<Integer> ports) {
+				this.ports = ports;
+			}
 		}
 	}
 

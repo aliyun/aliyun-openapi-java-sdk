@@ -39,6 +39,8 @@ public class DescribeGlobalDistributeCacheRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 
+	private String subInstanceId;
+
 	private String globalInstanceId;
 	public DescribeGlobalDistributeCacheRequest() {
 		super("R-kvstore", "2015-01-01", "DescribeGlobalDistributeCache", "redisa");
@@ -123,6 +125,17 @@ public class DescribeGlobalDistributeCacheRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getSubInstanceId() {
+		return this.subInstanceId;
+	}
+
+	public void setSubInstanceId(String subInstanceId) {
+		this.subInstanceId = subInstanceId;
+		if(subInstanceId != null){
+			putQueryParameter("SubInstanceId", subInstanceId);
 		}
 	}
 

@@ -72,6 +72,9 @@ public class DescribeInstanceAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setInstanceReleaseProtection(_ctx.booleanValue("DescribeInstanceAttributeResponse.Instances["+ i +"].InstanceReleaseProtection"));
 			dBInstanceAttribute.setResourceGroupId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ResourceGroupId"));
 			dBInstanceAttribute.setShardCount(_ctx.integerValue("DescribeInstanceAttributeResponse.Instances["+ i +"].ShardCount"));
+			dBInstanceAttribute.setStorage(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Storage"));
+			dBInstanceAttribute.setStorageType(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].StorageType"));
+			dBInstanceAttribute.setGlobalInstanceId(_ctx.stringValue("DescribeInstanceAttributeResponse.Instances["+ i +"].GlobalInstanceId"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstanceAttributeResponse.Instances["+ i +"].Tags.Length"); j++) {

@@ -14,16 +14,17 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
-import com.aliyuncs.r_kvstore.model.v20150101.ModifyAuditLogConfigResponse;
+import com.aliyuncs.r_kvstore.model.v20150101.ModifyNodeSpecResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyAuditLogConfigResponseUnmarshaller {
+public class ModifyNodeSpecResponseUnmarshaller {
 
-	public static ModifyAuditLogConfigResponse unmarshall(ModifyAuditLogConfigResponse modifyAuditLogConfigResponse, UnmarshallerContext _ctx) {
+	public static ModifyNodeSpecResponse unmarshall(ModifyNodeSpecResponse modifyNodeSpecResponse, UnmarshallerContext _ctx) {
 		
-		modifyAuditLogConfigResponse.setRequestId(_ctx.stringValue("ModifyAuditLogConfigResponse.RequestId"));
+		modifyNodeSpecResponse.setRequestId(_ctx.stringValue("ModifyNodeSpecResponse.RequestId"));
+		modifyNodeSpecResponse.setOrderId(_ctx.stringValue("ModifyNodeSpecResponse.OrderId"));
 	 
-	 	return modifyAuditLogConfigResponse;
+	 	return modifyNodeSpecResponse;
 	}
 }

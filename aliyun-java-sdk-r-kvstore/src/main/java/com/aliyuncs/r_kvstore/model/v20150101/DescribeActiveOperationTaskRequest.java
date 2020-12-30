@@ -22,14 +22,20 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogConfigResponse> {
+public class DescribeActiveOperationTaskRequest extends RpcAcsRequest<DescribeActiveOperationTaskResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private Integer pageNumber;
+
+	private Integer isHistory;
+
 	private String securityToken;
 
-	private String retention;
+	private Integer pageSize;
+
+	private String taskType;
 
 	private String resourceOwnerAccount;
 
@@ -37,9 +43,9 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 
 	private Long ownerId;
 
-	private String instanceId;
-	public ModifyAuditLogConfigRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa");
+	private String region;
+	public DescribeActiveOperationTaskRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +64,28 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getIsHistory() {
+		return this.isHistory;
+	}
+
+	public void setIsHistory(Integer isHistory) {
+		this.isHistory = isHistory;
+		if(isHistory != null){
+			putQueryParameter("IsHistory", isHistory.toString());
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -69,14 +97,25 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		}
 	}
 
-	public String getRetention() {
-		return this.retention;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setRetention(String retention) {
-		this.retention = retention;
-		if(retention != null){
-			putQueryParameter("Retention", retention);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 
@@ -113,20 +152,20 @@ public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogCon
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getRegion() {
+		return this.region;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<ModifyAuditLogConfigResponse> getResponseClass() {
-		return ModifyAuditLogConfigResponse.class;
+	public Class<DescribeActiveOperationTaskResponse> getResponseClass() {
+		return DescribeActiveOperationTaskResponse.class;
 	}
 
 }

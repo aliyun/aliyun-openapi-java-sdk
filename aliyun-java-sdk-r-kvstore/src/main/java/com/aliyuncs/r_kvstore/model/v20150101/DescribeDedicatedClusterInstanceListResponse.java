@@ -115,6 +115,8 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		private String createTime;
 
+		private Integer shardCount;
+
 		private List<InstanceNodes> instanceNodeList;
 
 		public Integer getCharacterType() {
@@ -267,6 +269,14 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public Integer getShardCount() {
+			return this.shardCount;
+		}
+
+		public void setShardCount(Integer shardCount) {
+			this.shardCount = shardCount;
 		}
 
 		public List<InstanceNodes> getInstanceNodeList() {

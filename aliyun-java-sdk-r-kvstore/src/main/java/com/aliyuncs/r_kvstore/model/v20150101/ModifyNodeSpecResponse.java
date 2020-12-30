@@ -15,16 +15,18 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.ModifyAuditLogConfigResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.ModifyNodeSpecResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyAuditLogConfigResponse extends AcsResponse {
+public class ModifyNodeSpecResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class ModifyAuditLogConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
 	@Override
-	public ModifyAuditLogConfigResponse getInstance(UnmarshallerContext context) {
-		return	ModifyAuditLogConfigResponseUnmarshaller.unmarshall(this, context);
+	public ModifyNodeSpecResponse getInstance(UnmarshallerContext context) {
+		return	ModifyNodeSpecResponseUnmarshaller.unmarshall(this, context);
 	}
 }

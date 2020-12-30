@@ -127,6 +127,12 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private Integer shardCount;
 
+		private String storage;
+
+		private String storageType;
+
+		private String globalInstanceId;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -447,6 +453,30 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setShardCount(Integer shardCount) {
 			this.shardCount = shardCount;
+		}
+
+		public String getStorage() {
+			return this.storage;
+		}
+
+		public void setStorage(String storage) {
+			this.storage = storage;
+		}
+
+		public String getStorageType() {
+			return this.storageType;
+		}
+
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getGlobalInstanceId() {
+			return this.globalInstanceId;
+		}
+
+		public void setGlobalInstanceId(String globalInstanceId) {
+			this.globalInstanceId = globalInstanceId;
 		}
 
 		public List<Tag> getTags() {

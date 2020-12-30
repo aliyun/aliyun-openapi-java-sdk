@@ -22,12 +22,14 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeEngineVersionRequest extends RpcAcsRequest<DescribeEngineVersionResponse> {
+public class ModifyActiveOperationTaskRequest extends RpcAcsRequest<ModifyActiveOperationTaskResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
+
+	private String switchTime;
 
 	private String resourceOwnerAccount;
 
@@ -35,9 +37,9 @@ public class DescribeEngineVersionRequest extends RpcAcsRequest<DescribeEngineVe
 
 	private Long ownerId;
 
-	private String instanceId;
-	public DescribeEngineVersionRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeEngineVersion", "redisa");
+	private String ids;
+	public ModifyActiveOperationTaskRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,6 +66,17 @@ public class DescribeEngineVersionRequest extends RpcAcsRequest<DescribeEngineVe
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getSwitchTime() {
+		return this.switchTime;
+	}
+
+	public void setSwitchTime(String switchTime) {
+		this.switchTime = switchTime;
+		if(switchTime != null){
+			putQueryParameter("SwitchTime", switchTime);
 		}
 	}
 
@@ -100,20 +113,20 @@ public class DescribeEngineVersionRequest extends RpcAcsRequest<DescribeEngineVe
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 
 	@Override
-	public Class<DescribeEngineVersionResponse> getResponseClass() {
-		return DescribeEngineVersionResponse.class;
+	public Class<ModifyActiveOperationTaskResponse> getResponseClass() {
+		return ModifyActiveOperationTaskResponse.class;
 	}
 
 }

@@ -127,6 +127,8 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 
 			private String instanceStatus;
 
+			private String instanceClass;
+
 			public String getGlobalInstanceId() {
 				return this.globalInstanceId;
 			}
@@ -157,6 +159,14 @@ public class DescribeGlobalDistributeCacheResponse extends AcsResponse {
 
 			public void setInstanceStatus(String instanceStatus) {
 				this.instanceStatus = instanceStatus;
+			}
+
+			public String getInstanceClass() {
+				return this.instanceClass;
+			}
+
+			public void setInstanceClass(String instanceClass) {
+				this.instanceClass = instanceClass;
 			}
 		}
 	}

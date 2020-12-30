@@ -14,6 +14,9 @@
 
 package com.aliyuncs.r_kvstore.transform.v20150101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.r_kvstore.model.v20150101.AddShardingNodeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,8 +26,14 @@ public class AddShardingNodeResponseUnmarshaller {
 	public static AddShardingNodeResponse unmarshall(AddShardingNodeResponse addShardingNodeResponse, UnmarshallerContext _ctx) {
 		
 		addShardingNodeResponse.setRequestId(_ctx.stringValue("AddShardingNodeResponse.RequestId"));
-		addShardingNodeResponse.setNodeId(_ctx.stringValue("AddShardingNodeResponse.NodeId"));
 		addShardingNodeResponse.setOrderId(_ctx.longValue("AddShardingNodeResponse.OrderId"));
+		addShardingNodeResponse.setNodeId(_ctx.stringValue("AddShardingNodeResponse.NodeId"));
+
+		List<String> nodeIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AddShardingNodeResponse.NodeIds.Length"); i++) {
+			nodeIds.add(_ctx.stringValue("AddShardingNodeResponse.NodeIds["+ i +"]"));
+		}
+		addShardingNodeResponse.setNodeIds(nodeIds);
 	 
 	 	return addShardingNodeResponse;
 	}

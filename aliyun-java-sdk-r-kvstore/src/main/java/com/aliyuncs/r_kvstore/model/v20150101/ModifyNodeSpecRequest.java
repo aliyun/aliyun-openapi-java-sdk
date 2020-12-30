@@ -22,12 +22,24 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRedisLogConfigRequest extends RpcAcsRequest<DescribeRedisLogConfigResponse> {
+public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String couponNo;
+
+	private String instanceClass;
+
+	private String switchTimeMode;
+
 	private String securityToken;
+
+	private String nodeId;
+
+	private String businessInfo;
+
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
@@ -36,8 +48,10 @@ public class DescribeRedisLogConfigRequest extends RpcAcsRequest<DescribeRedisLo
 	private Long ownerId;
 
 	private String instanceId;
-	public DescribeRedisLogConfigRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeRedisLogConfig", "R-kvstore");
+
+	private String orderType;
+	public ModifyNodeSpecRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyNodeSpec", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,6 +70,39 @@ public class DescribeRedisLogConfigRequest extends RpcAcsRequest<DescribeRedisLo
 		}
 	}
 
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
+		}
+	}
+
+	public String getInstanceClass() {
+		return this.instanceClass;
+	}
+
+	public void setInstanceClass(String instanceClass) {
+		this.instanceClass = instanceClass;
+		if(instanceClass != null){
+			putQueryParameter("InstanceClass", instanceClass);
+		}
+	}
+
+	public String getSwitchTimeMode() {
+		return this.switchTimeMode;
+	}
+
+	public void setSwitchTimeMode(String switchTimeMode) {
+		this.switchTimeMode = switchTimeMode;
+		if(switchTimeMode != null){
+			putQueryParameter("SwitchTimeMode", switchTimeMode);
+		}
+	}
+
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -64,6 +111,39 @@ public class DescribeRedisLogConfigRequest extends RpcAcsRequest<DescribeRedisLo
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getNodeId() {
+		return this.nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putQueryParameter("NodeId", nodeId);
+		}
+	}
+
+	public String getBusinessInfo() {
+		return this.businessInfo;
+	}
+
+	public void setBusinessInfo(String businessInfo) {
+		this.businessInfo = businessInfo;
+		if(businessInfo != null){
+			putQueryParameter("BusinessInfo", businessInfo);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -111,9 +191,20 @@ public class DescribeRedisLogConfigRequest extends RpcAcsRequest<DescribeRedisLo
 		}
 	}
 
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
+		}
+	}
+
 	@Override
-	public Class<DescribeRedisLogConfigResponse> getResponseClass() {
-		return DescribeRedisLogConfigResponse.class;
+	public Class<ModifyNodeSpecResponse> getResponseClass() {
+		return ModifyNodeSpecResponse.class;
 	}
 
 }

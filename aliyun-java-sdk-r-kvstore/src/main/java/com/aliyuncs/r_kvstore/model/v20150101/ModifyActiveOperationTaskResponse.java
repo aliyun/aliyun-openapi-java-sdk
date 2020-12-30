@@ -14,24 +14,19 @@
 
 package com.aliyuncs.r_kvstore.model.v20150101;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.r_kvstore.transform.v20150101.AddShardingNodeResponseUnmarshaller;
+import com.aliyuncs.r_kvstore.transform.v20150101.ModifyActiveOperationTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddShardingNodeResponse extends AcsResponse {
+public class ModifyActiveOperationTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long orderId;
-
-	private String nodeId;
-
-	private List<String> nodeIds;
+	private String ids;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,37 +36,16 @@ public class AddShardingNodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getNodeId() {
-		return this.nodeId;
-	}
-
-	public void setNodeId(String nodeId) {
-		this.nodeId = nodeId;
-	}
-
-	public List<String> getNodeIds() {
-		return this.nodeIds;
-	}
-
-	public void setNodeIds(List<String> nodeIds) {
-		this.nodeIds = nodeIds;
+	public void setIds(String ids) {
+		this.ids = ids;
 	}
 
 	@Override
-	public AddShardingNodeResponse getInstance(UnmarshallerContext context) {
-		return	AddShardingNodeResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public ModifyActiveOperationTaskResponse getInstance(UnmarshallerContext context) {
+		return	ModifyActiveOperationTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

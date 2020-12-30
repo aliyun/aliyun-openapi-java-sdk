@@ -46,6 +46,7 @@ public class DescribeGlobalDistributeCacheResponseUnmarshaller {
 				subInstance.setInstanceID(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID"));
 				subInstance.setRegionId(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId"));
 				subInstance.setInstanceStatus(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceStatus"));
+				subInstance.setInstanceClass(_ctx.stringValue("DescribeGlobalDistributeCacheResponse.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceClass"));
 
 				subInstances.add(subInstance);
 			}
