@@ -31,7 +31,7 @@ public class AllocatePodConfigRequest extends RpcAcsRequest<AllocatePodConfigRes
 
 	private Long envId;
 	public AllocatePodConfigRequest() {
-		super("retailcloud", "2018-03-13", "AllocatePodConfig", "retailcloud");
+		super("retailcloud", "2018-03-13", "AllocatePodConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

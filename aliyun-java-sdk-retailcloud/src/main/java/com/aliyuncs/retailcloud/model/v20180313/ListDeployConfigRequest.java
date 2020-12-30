@@ -33,7 +33,7 @@ public class ListDeployConfigRequest extends RpcAcsRequest<ListDeployConfigRespo
 
 	private Long id;
 	public ListDeployConfigRequest() {
-		super("retailcloud", "2018-03-13", "ListDeployConfig", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListDeployConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

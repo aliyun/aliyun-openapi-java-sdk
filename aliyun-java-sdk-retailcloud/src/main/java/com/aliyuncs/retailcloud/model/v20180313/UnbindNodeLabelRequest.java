@@ -33,7 +33,7 @@ public class UnbindNodeLabelRequest extends RpcAcsRequest<UnbindNodeLabelRespons
 
 	private String clusterId;
 	public UnbindNodeLabelRequest() {
-		super("retailcloud", "2018-03-13", "UnbindNodeLabel", "retailcloud");
+		super("retailcloud", "2018-03-13", "UnbindNodeLabel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -42,7 +42,7 @@ public class ListSlbAPsRequest extends RpcAcsRequest<ListSlbAPsResponse> {
 
 	private Integer pageNumber;
 	public ListSlbAPsRequest() {
-		super("retailcloud", "2018-03-13", "ListSlbAPs", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListSlbAPs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

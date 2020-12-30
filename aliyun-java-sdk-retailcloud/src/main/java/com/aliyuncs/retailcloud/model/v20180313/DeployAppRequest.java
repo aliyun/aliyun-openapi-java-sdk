@@ -15,6 +15,7 @@
 package com.aliyuncs.retailcloud.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.retailcloud.Endpoint;
 
@@ -25,13 +26,9 @@ import com.aliyuncs.retailcloud.Endpoint;
 public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 	   
 
-	private Long deployPacketId;
-
 	private String deployPacketUrl;
 
 	private Integer totalPartitions;
-
-	private String name;
 
 	private String description;
 
@@ -41,25 +38,22 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 
 	private String pauseType;
 
+	private Long deployPacketId;
+
+	private List<String> containerImageLists;
+
+	private String name;
+
+	private List<String> initContainerImageLists;
+
 	private Boolean armsFlag;
 	public DeployAppRequest() {
-		super("retailcloud", "2018-03-13", "DeployApp", "retailcloud");
+		super("retailcloud", "2018-03-13", "DeployApp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getDeployPacketId() {
-		return this.deployPacketId;
-	}
-
-	public void setDeployPacketId(Long deployPacketId) {
-		this.deployPacketId = deployPacketId;
-		if(deployPacketId != null){
-			putQueryParameter("DeployPacketId", deployPacketId.toString());
-		}
 	}
 
 	public String getDeployPacketUrl() {
@@ -81,17 +75,6 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 		this.totalPartitions = totalPartitions;
 		if(totalPartitions != null){
 			putQueryParameter("TotalPartitions", totalPartitions.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
 		}
 	}
 
@@ -137,6 +120,54 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 		if(pauseType != null){
 			putQueryParameter("PauseType", pauseType);
 		}
+	}
+
+	public Long getDeployPacketId() {
+		return this.deployPacketId;
+	}
+
+	public void setDeployPacketId(Long deployPacketId) {
+		this.deployPacketId = deployPacketId;
+		if(deployPacketId != null){
+			putQueryParameter("DeployPacketId", deployPacketId.toString());
+		}
+	}
+
+	public List<String> getContainerImageLists() {
+		return this.containerImageLists;
+	}
+
+	public void setContainerImageLists(List<String> containerImageLists) {
+		this.containerImageLists = containerImageLists;	
+		if (containerImageLists != null) {
+			for (int i = 0; i < containerImageLists.size(); i++) {
+				putQueryParameter("ContainerImageList." + (i + 1) , containerImageLists.get(i));
+			}
+		}	
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public List<String> getInitContainerImageLists() {
+		return this.initContainerImageLists;
+	}
+
+	public void setInitContainerImageLists(List<String> initContainerImageLists) {
+		this.initContainerImageLists = initContainerImageLists;	
+		if (initContainerImageLists != null) {
+			for (int i = 0; i < initContainerImageLists.size(); i++) {
+				putQueryParameter("InitContainerImageList." + (i + 1) , initContainerImageLists.get(i));
+			}
+		}	
 	}
 
 	public Boolean getArmsFlag() {

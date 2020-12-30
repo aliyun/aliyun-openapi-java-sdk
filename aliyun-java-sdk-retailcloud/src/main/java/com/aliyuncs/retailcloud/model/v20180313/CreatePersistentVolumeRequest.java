@@ -43,7 +43,7 @@ public class CreatePersistentVolumeRequest extends RpcAcsRequest<CreatePersisten
 
 	private String storageClass;
 	public CreatePersistentVolumeRequest() {
-		super("retailcloud", "2018-03-13", "CreatePersistentVolume", "retailcloud");
+		super("retailcloud", "2018-03-13", "CreatePersistentVolume");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

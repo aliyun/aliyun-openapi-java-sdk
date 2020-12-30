@@ -29,7 +29,7 @@ public class DeleteDatabaseRequest extends RpcAcsRequest<DeleteDatabaseResponse>
 
 	private String dBInstanceId;
 	public DeleteDatabaseRequest() {
-		super("retailcloud", "2018-03-13", "DeleteDatabase", "retailcloud");
+		super("retailcloud", "2018-03-13", "DeleteDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
