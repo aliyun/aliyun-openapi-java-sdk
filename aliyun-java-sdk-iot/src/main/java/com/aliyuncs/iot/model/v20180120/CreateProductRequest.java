@@ -37,6 +37,8 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private String resourceGroupId;
 
+	private Integer validateType;
+
 	private String iotInstanceId;
 
 	private String productName;
@@ -126,6 +128,17 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getValidateType() {
+		return this.validateType;
+	}
+
+	public void setValidateType(Integer validateType) {
+		this.validateType = validateType;
+		if(validateType != null){
+			putQueryParameter("ValidateType", validateType.toString());
 		}
 	}
 

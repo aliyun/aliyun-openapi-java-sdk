@@ -35,6 +35,8 @@ public class QueryDeviceDesiredPropertyRequest extends RpcAcsRequest<QueryDevice
 	private String productKey;
 
 	private String deviceName;
+
+	private String functionBlockId;
 	public QueryDeviceDesiredPropertyRequest() {
 		super("Iot", "2018-01-20", "QueryDeviceDesiredProperty", "iot");
 		setMethod(MethodType.POST);
@@ -98,6 +100,17 @@ public class QueryDeviceDesiredPropertyRequest extends RpcAcsRequest<QueryDevice
 		this.deviceName = deviceName;
 		if(deviceName != null){
 			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
+	public String getFunctionBlockId() {
+		return this.functionBlockId;
+	}
+
+	public void setFunctionBlockId(String functionBlockId) {
+		this.functionBlockId = functionBlockId;
+		if(functionBlockId != null){
+			putQueryParameter("FunctionBlockId", functionBlockId);
 		}
 	}
 

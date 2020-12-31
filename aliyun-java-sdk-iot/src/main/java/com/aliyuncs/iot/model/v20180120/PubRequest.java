@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -25,11 +26,17 @@ import com.aliyuncs.iot.Endpoint;
 public class PubRequest extends RpcAcsRequest<PubResponse> {
 	   
 
+	private List<UserProp> userProps;
+
 	private String messageContent;
 
 	private Integer qos;
 
+	private String correlationData;
+
 	private String iotInstanceId;
+
+	private String responseTopic;
 
 	private String topicFullName;
 
@@ -41,6 +48,20 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<UserProp> getUserProps() {
+		return this.userProps;
+	}
+
+	public void setUserProps(List<UserProp> userProps) {
+		this.userProps = userProps;	
+		if (userProps != null) {
+			for (int depth1 = 0; depth1 < userProps.size(); depth1++) {
+				putQueryParameter("UserProp." + (depth1 + 1) + ".Value" , userProps.get(depth1).getValue());
+				putQueryParameter("UserProp." + (depth1 + 1) + ".Key" , userProps.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public String getMessageContent() {
@@ -65,6 +86,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		}
 	}
 
+	public String getCorrelationData() {
+		return this.correlationData;
+	}
+
+	public void setCorrelationData(String correlationData) {
+		this.correlationData = correlationData;
+		if(correlationData != null){
+			putQueryParameter("CorrelationData", correlationData);
+		}
+	}
+
 	public String getIotInstanceId() {
 		return this.iotInstanceId;
 	}
@@ -73,6 +105,17 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getResponseTopic() {
+		return this.responseTopic;
+	}
+
+	public void setResponseTopic(String responseTopic) {
+		this.responseTopic = responseTopic;
+		if(responseTopic != null){
+			putQueryParameter("ResponseTopic", responseTopic);
 		}
 	}
 
@@ -95,6 +138,29 @@ public class PubRequest extends RpcAcsRequest<PubResponse> {
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
+		}
+	}
+
+	public static class UserProp {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

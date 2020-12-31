@@ -27,9 +27,13 @@ public class CreateThingModelRequest extends RpcAcsRequest<CreateThingModelRespo
 
 	private String iotInstanceId;
 
+	private String functionBlockName;
+
 	private String productKey;
 
 	private String thingModelJson;
+
+	private String functionBlockId;
 	public CreateThingModelRequest() {
 		super("Iot", "2018-01-20", "CreateThingModel", "iot");
 		setMethod(MethodType.POST);
@@ -47,6 +51,17 @@ public class CreateThingModelRequest extends RpcAcsRequest<CreateThingModelRespo
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getFunctionBlockName() {
+		return this.functionBlockName;
+	}
+
+	public void setFunctionBlockName(String functionBlockName) {
+		this.functionBlockName = functionBlockName;
+		if(functionBlockName != null){
+			putQueryParameter("FunctionBlockName", functionBlockName);
 		}
 	}
 
@@ -69,6 +84,17 @@ public class CreateThingModelRequest extends RpcAcsRequest<CreateThingModelRespo
 		this.thingModelJson = thingModelJson;
 		if(thingModelJson != null){
 			putQueryParameter("ThingModelJson", thingModelJson);
+		}
+	}
+
+	public String getFunctionBlockId() {
+		return this.functionBlockId;
+	}
+
+	public void setFunctionBlockId(String functionBlockId) {
+		this.functionBlockId = functionBlockId;
+		if(functionBlockId != null){
+			putQueryParameter("FunctionBlockId", functionBlockId);
 		}
 	}
 

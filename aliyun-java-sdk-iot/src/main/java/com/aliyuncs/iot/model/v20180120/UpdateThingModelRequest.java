@@ -29,9 +29,13 @@ public class UpdateThingModelRequest extends RpcAcsRequest<UpdateThingModelRespo
 
 	private String identifier;
 
+	private String functionBlockName;
+
 	private String productKey;
 
 	private String thingModelJson;
+
+	private String functionBlockId;
 	public UpdateThingModelRequest() {
 		super("Iot", "2018-01-20", "UpdateThingModel", "iot");
 		setMethod(MethodType.POST);
@@ -63,6 +67,17 @@ public class UpdateThingModelRequest extends RpcAcsRequest<UpdateThingModelRespo
 		}
 	}
 
+	public String getFunctionBlockName() {
+		return this.functionBlockName;
+	}
+
+	public void setFunctionBlockName(String functionBlockName) {
+		this.functionBlockName = functionBlockName;
+		if(functionBlockName != null){
+			putQueryParameter("FunctionBlockName", functionBlockName);
+		}
+	}
+
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -82,6 +97,17 @@ public class UpdateThingModelRequest extends RpcAcsRequest<UpdateThingModelRespo
 		this.thingModelJson = thingModelJson;
 		if(thingModelJson != null){
 			putQueryParameter("ThingModelJson", thingModelJson);
+		}
+	}
+
+	public String getFunctionBlockId() {
+		return this.functionBlockId;
+	}
+
+	public void setFunctionBlockId(String functionBlockId) {
+		this.functionBlockId = functionBlockId;
+		if(functionBlockId != null){
+			putQueryParameter("FunctionBlockId", functionBlockId);
 		}
 	}
 

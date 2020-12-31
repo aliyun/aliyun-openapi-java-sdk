@@ -32,6 +32,8 @@ public class QueryThingModelPublishedRequest extends RpcAcsRequest<QueryThingMod
 	private String productKey;
 
 	private String modelVersion;
+
+	private String functionBlockId;
 	public QueryThingModelPublishedRequest() {
 		super("Iot", "2018-01-20", "QueryThingModelPublished", "iot");
 		setMethod(MethodType.POST);
@@ -82,6 +84,17 @@ public class QueryThingModelPublishedRequest extends RpcAcsRequest<QueryThingMod
 		this.modelVersion = modelVersion;
 		if(modelVersion != null){
 			putQueryParameter("ModelVersion", modelVersion);
+		}
+	}
+
+	public String getFunctionBlockId() {
+		return this.functionBlockId;
+	}
+
+	public void setFunctionBlockId(String functionBlockId) {
+		this.functionBlockId = functionBlockId;
+		if(functionBlockId != null){
+			putQueryParameter("FunctionBlockId", functionBlockId);
 		}
 	}
 

@@ -29,11 +29,15 @@ public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTs
 
 	private String iotInstanceId;
 
+	private String functionBlockName;
+
 	private String productKey;
 
 	private String tslUrl;
 
 	private String tslStr;
+
+	private String functionBlockId;
 	public ImportThingModelTslRequest() {
 		super("Iot", "2018-01-20", "ImportThingModelTsl", "iot");
 		setMethod(MethodType.POST);
@@ -62,6 +66,17 @@ public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTs
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
 			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getFunctionBlockName() {
+		return this.functionBlockName;
+	}
+
+	public void setFunctionBlockName(String functionBlockName) {
+		this.functionBlockName = functionBlockName;
+		if(functionBlockName != null){
+			putQueryParameter("FunctionBlockName", functionBlockName);
 		}
 	}
 
@@ -95,6 +110,17 @@ public class ImportThingModelTslRequest extends RpcAcsRequest<ImportThingModelTs
 		this.tslStr = tslStr;
 		if(tslStr != null){
 			putQueryParameter("TslStr", tslStr);
+		}
+	}
+
+	public String getFunctionBlockId() {
+		return this.functionBlockId;
+	}
+
+	public void setFunctionBlockId(String functionBlockId) {
+		this.functionBlockId = functionBlockId;
+		if(functionBlockId != null){
+			putQueryParameter("FunctionBlockId", functionBlockId);
 		}
 	}
 
