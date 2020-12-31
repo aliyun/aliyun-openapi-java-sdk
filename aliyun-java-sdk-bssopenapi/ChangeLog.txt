@@ -1,3 +1,7 @@
+2020-12-31 Version: 1.6.1
+- Support savingsplans instance Query.
+- Support savingsplans deduct log Query.
+
 2020-12-28 Version: 1.6.0
 - Add CommodityCode For QueryOrderAPI.
 
