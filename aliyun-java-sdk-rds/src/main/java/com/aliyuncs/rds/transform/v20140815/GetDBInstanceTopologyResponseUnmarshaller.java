@@ -38,8 +38,8 @@ public class GetDBInstanceTopologyResponseUnmarshaller {
 		List<Connection> connections = new ArrayList<Connection>();
 		for (int i = 0; i < _ctx.lengthValue("GetDBInstanceTopologyResponse.Data.Connections.Length"); i++) {
 			Connection connection = new Connection();
-			connection.setNetType(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].NetType"));
 			connection.setConnectionString(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].ConnectionString"));
+			connection.setNetType(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].NetType"));
 			connection.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Connections["+ i +"].ZoneId"));
 
 			connections.add(connection);
@@ -49,10 +49,10 @@ public class GetDBInstanceTopologyResponseUnmarshaller {
 		List<Node> nodes = new ArrayList<Node>();
 		for (int i = 0; i < _ctx.lengthValue("GetDBInstanceTopologyResponse.Data.Nodes.Length"); i++) {
 			Node node = new Node();
-			node.setRole(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].Role"));
-			node.setDedicatedHostId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DedicatedHostId"));
-			node.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].ZoneId"));
 			node.setDedicatedHostGroupId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DedicatedHostGroupId"));
+			node.setDedicatedHostId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].DedicatedHostId"));
+			node.setRole(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].Role"));
+			node.setZoneId(_ctx.stringValue("GetDBInstanceTopologyResponse.Data.Nodes["+ i +"].ZoneId"));
 
 			nodes.add(node);
 		}

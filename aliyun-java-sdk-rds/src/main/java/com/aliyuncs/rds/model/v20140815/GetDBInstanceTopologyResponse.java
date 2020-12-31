@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDBInstanceTopologyResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
 
 	private String message;
 
+	private String requestId;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -55,6 +47,14 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -99,19 +99,11 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 
 		public static class Connection {
 
-			private String netType;
-
 			private String connectionString;
 
+			private String netType;
+
 			private String zoneId;
-
-			public String getNetType() {
-				return this.netType;
-			}
-
-			public void setNetType(String netType) {
-				this.netType = netType;
-			}
 
 			public String getConnectionString() {
 				return this.connectionString;
@@ -119,6 +111,14 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 
 			public void setConnectionString(String connectionString) {
 				this.connectionString = connectionString;
+			}
+
+			public String getNetType() {
+				return this.netType;
+			}
+
+			public void setNetType(String netType) {
+				this.netType = netType;
 			}
 
 			public String getZoneId() {
@@ -132,20 +132,20 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 
 		public static class Node {
 
-			private String role;
+			private String dedicatedHostGroupId;
 
 			private String dedicatedHostId;
 
+			private String role;
+
 			private String zoneId;
 
-			private String dedicatedHostGroupId;
-
-			public String getRole() {
-				return this.role;
+			public String getDedicatedHostGroupId() {
+				return this.dedicatedHostGroupId;
 			}
 
-			public void setRole(String role) {
-				this.role = role;
+			public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
+				this.dedicatedHostGroupId = dedicatedHostGroupId;
 			}
 
 			public String getDedicatedHostId() {
@@ -156,20 +156,20 @@ public class GetDBInstanceTopologyResponse extends AcsResponse {
 				this.dedicatedHostId = dedicatedHostId;
 			}
 
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
+
 			public String getZoneId() {
 				return this.zoneId;
 			}
 
 			public void setZoneId(String zoneId) {
 				this.zoneId = zoneId;
-			}
-
-			public String getDedicatedHostGroupId() {
-				return this.dedicatedHostGroupId;
-			}
-
-			public void setDedicatedHostGroupId(String dedicatedHostGroupId) {
-				this.dedicatedHostGroupId = dedicatedHostGroupId;
 			}
 		}
 	}
