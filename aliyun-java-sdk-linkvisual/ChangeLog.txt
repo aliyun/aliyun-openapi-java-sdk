@@ -1,3 +1,6 @@
+2021-01-04 Version: 1.5.1
+- Generated 2018-01-20 for `Linkvisual`.
+
 2020-12-18 Version: 1.4.1
 - Generated 2018-01-20 for `Linkvisual`.
 
