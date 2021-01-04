@@ -45,6 +45,7 @@ public class DescribeDomainInfoResponseUnmarshaller {
 		describeDomainInfoResponse.setInClean(_ctx.booleanValue("DescribeDomainInfoResponse.InClean"));
 		describeDomainInfoResponse.setSlaveDns(_ctx.booleanValue("DescribeDomainInfoResponse.SlaveDns"));
 		describeDomainInfoResponse.setResourceGroupId(_ctx.stringValue("DescribeDomainInfoResponse.ResourceGroupId"));
+		describeDomainInfoResponse.setCreateTime(_ctx.stringValue("DescribeDomainInfoResponse.CreateTime"));
 
 		List<String> dnsServers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDomainInfoResponse.DnsServers.Length"); i++) {

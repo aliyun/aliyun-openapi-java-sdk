@@ -91,6 +91,8 @@ public class DescribeDomainStatisticsSummaryResponse extends AcsResponse {
 
 		private Long count;
 
+		private String domainType;
+
 		public String getDomainName() {
 			return this.domainName;
 		}
@@ -105,6 +107,14 @@ public class DescribeDomainStatisticsSummaryResponse extends AcsResponse {
 
 		public void setCount(Long count) {
 			this.count = count;
+		}
+
+		public String getDomainType() {
+			return this.domainType;
+		}
+
+		public void setDomainType(String domainType) {
+			this.domainType = domainType;
 		}
 	}
 

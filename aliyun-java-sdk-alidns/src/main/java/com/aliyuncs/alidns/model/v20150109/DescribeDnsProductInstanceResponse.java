@@ -91,6 +91,8 @@ public class DescribeDnsProductInstanceResponse extends AcsResponse {
 
 	private String paymentType;
 
+	private String domainType;
+
 	private List<String> dnsServers;
 
 	public String getRequestId() {
@@ -355,6 +357,14 @@ public class DescribeDnsProductInstanceResponse extends AcsResponse {
 
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
 	}
 
 	public List<String> getDnsServers() {

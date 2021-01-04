@@ -1,3 +1,6 @@
+2021-01-04 Version: 2.6.20
+- Supported API for GTM.
+
 2020-10-26 Version: 2.6.19
 - Supported PaymentType for DescribeDnsProductInstance.
 

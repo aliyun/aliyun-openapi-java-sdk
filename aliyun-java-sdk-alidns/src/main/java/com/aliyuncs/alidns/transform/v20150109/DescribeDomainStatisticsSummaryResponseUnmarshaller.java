@@ -37,6 +37,7 @@ public class DescribeDomainStatisticsSummaryResponseUnmarshaller {
 			Statistic statistic = new Statistic();
 			statistic.setDomainName(_ctx.stringValue("DescribeDomainStatisticsSummaryResponse.Statistics["+ i +"].DomainName"));
 			statistic.setCount(_ctx.longValue("DescribeDomainStatisticsSummaryResponse.Statistics["+ i +"].Count"));
+			statistic.setDomainType(_ctx.stringValue("DescribeDomainStatisticsSummaryResponse.Statistics["+ i +"].DomainType"));
 
 			statistics.add(statistic);
 		}

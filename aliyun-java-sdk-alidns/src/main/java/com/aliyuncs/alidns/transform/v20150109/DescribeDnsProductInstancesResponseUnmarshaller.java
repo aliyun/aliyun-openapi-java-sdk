@@ -30,6 +30,7 @@ public class DescribeDnsProductInstancesResponseUnmarshaller {
 		describeDnsProductInstancesResponse.setTotalCount(_ctx.longValue("DescribeDnsProductInstancesResponse.TotalCount"));
 		describeDnsProductInstancesResponse.setPageNumber(_ctx.longValue("DescribeDnsProductInstancesResponse.PageNumber"));
 		describeDnsProductInstancesResponse.setPageSize(_ctx.longValue("DescribeDnsProductInstancesResponse.PageSize"));
+		describeDnsProductInstancesResponse.setDomainType(_ctx.stringValue("DescribeDnsProductInstancesResponse.DomainType"));
 
 		List<DnsProduct> dnsProducts = new ArrayList<DnsProduct>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsProductInstancesResponse.DnsProducts.Length"); i++) {

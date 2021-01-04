@@ -27,6 +27,8 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 
 	private Long pageNumber;
 
+	private String domainType;
+
 	private String userClientIp;
 
 	private Long pageSize;
@@ -51,6 +53,17 @@ public class DescribeDnsProductInstancesRequest extends RpcAcsRequest<DescribeDn
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class DescribeRecordStatisticsSummaryRequest extends RpcAcsRequest<Descri
 
 	private Long pageNumber;
 
+	private String domainType;
+
 	private Long pageSize;
 
 	private String lang;
@@ -81,6 +83,17 @@ public class DescribeRecordStatisticsSummaryRequest extends RpcAcsRequest<Descri
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
 		}
 	}
 

@@ -58,6 +58,7 @@ public class DescribeDnsProductInstanceResponseUnmarshaller {
 		describeDnsProductInstanceResponse.setBindDomainUsedCount(_ctx.longValue("DescribeDnsProductInstanceResponse.BindDomainUsedCount"));
 		describeDnsProductInstanceResponse.setDnsSecurity(_ctx.stringValue("DescribeDnsProductInstanceResponse.DnsSecurity"));
 		describeDnsProductInstanceResponse.setPaymentType(_ctx.stringValue("DescribeDnsProductInstanceResponse.PaymentType"));
+		describeDnsProductInstanceResponse.setDomainType(_ctx.stringValue("DescribeDnsProductInstanceResponse.DomainType"));
 
 		List<String> dnsServers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsProductInstanceResponse.DnsServers.Length"); i++) {

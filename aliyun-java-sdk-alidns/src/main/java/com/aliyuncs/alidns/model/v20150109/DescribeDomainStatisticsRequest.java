@@ -31,6 +31,8 @@ public class DescribeDomainStatisticsRequest extends RpcAcsRequest<DescribeDomai
 
 	private String endDate;
 
+	private String domainType;
+
 	private String lang;
 	public DescribeDomainStatisticsRequest() {
 		super("Alidns", "2015-01-09", "DescribeDomainStatistics", "alidns");
@@ -71,6 +73,17 @@ public class DescribeDomainStatisticsRequest extends RpcAcsRequest<DescribeDomai
 		this.endDate = endDate;
 		if(endDate != null){
 			putQueryParameter("EndDate", endDate);
+		}
+	}
+
+	public String getDomainType() {
+		return this.domainType;
+	}
+
+	public void setDomainType(String domainType) {
+		this.domainType = domainType;
+		if(domainType != null){
+			putQueryParameter("DomainType", domainType);
 		}
 	}
 
