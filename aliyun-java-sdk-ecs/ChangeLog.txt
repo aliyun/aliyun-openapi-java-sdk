@@ -1,3 +1,6 @@
+2021-01-04 Version: 4.23.4
+- Generated 2014-05-26 for `Ecs`.
+
 2020-12-29 Version: 4.23.3
 - Supported SystemDiskPerformanceLevel, SystemDiskDeleteWithInstance, DataDiskPerformanceLevel, NetworkInterfaceSecurityGroupIds, SecurityGroupIds, PrivateIpAddress for CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersion.
 
