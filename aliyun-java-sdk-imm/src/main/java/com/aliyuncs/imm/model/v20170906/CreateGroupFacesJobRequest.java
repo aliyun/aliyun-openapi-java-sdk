@@ -33,7 +33,7 @@ public class CreateGroupFacesJobRequest extends RpcAcsRequest<CreateGroupFacesJo
 
 	private String setId;
 	public CreateGroupFacesJobRequest() {
-		super("imm", "2017-09-06", "CreateGroupFacesJob");
+		super("imm", "2017-09-06", "CreateGroupFacesJob", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

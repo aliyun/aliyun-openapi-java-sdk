@@ -35,7 +35,7 @@ public class ListImagesRequest extends RpcAcsRequest<ListImagesResponse> {
 
 	private String createTimeStart;
 	public ListImagesRequest() {
-		super("imm", "2017-09-06", "ListImages");
+		super("imm", "2017-09-06", "ListImages", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

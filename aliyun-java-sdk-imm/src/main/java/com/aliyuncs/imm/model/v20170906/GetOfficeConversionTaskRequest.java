@@ -29,7 +29,7 @@ public class GetOfficeConversionTaskRequest extends RpcAcsRequest<GetOfficeConve
 
 	private String taskId;
 	public GetOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "GetOfficeConversionTask");
+		super("imm", "2017-09-06", "GetOfficeConversionTask", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

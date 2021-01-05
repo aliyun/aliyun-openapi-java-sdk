@@ -31,7 +31,7 @@ public class UpdateProjectRequest extends RpcAcsRequest<UpdateProjectResponse> {
 
 	private Integer newCU;
 	public UpdateProjectRequest() {
-		super("imm", "2017-09-06", "UpdateProject");
+		super("imm", "2017-09-06", "UpdateProject", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

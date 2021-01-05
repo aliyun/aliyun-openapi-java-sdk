@@ -35,7 +35,7 @@ public class CreateStreamAnalyseTaskRequest extends RpcAcsRequest<CreateStreamAn
 
 	private String tgtUri;
 	public CreateStreamAnalyseTaskRequest() {
-		super("imm", "2017-09-06", "CreateStreamAnalyseTask");
+		super("imm", "2017-09-06", "CreateStreamAnalyseTask", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ListVideoTasksRequest extends RpcAcsRequest<ListVideoTasksResponse>
 
 	private String marker;
 	public ListVideoTasksRequest() {
-		super("imm", "2017-09-06", "ListVideoTasks");
+		super("imm", "2017-09-06", "ListVideoTasks", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

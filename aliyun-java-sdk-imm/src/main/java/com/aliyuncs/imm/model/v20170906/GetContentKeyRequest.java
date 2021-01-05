@@ -33,7 +33,7 @@ public class GetContentKeyRequest extends RpcAcsRequest<GetContentKeyResponse> {
 
 	private String keyIds;
 	public GetContentKeyRequest() {
-		super("imm", "2017-09-06", "GetContentKey");
+		super("imm", "2017-09-06", "GetContentKey", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

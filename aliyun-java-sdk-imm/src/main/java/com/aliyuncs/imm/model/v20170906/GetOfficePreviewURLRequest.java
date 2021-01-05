@@ -45,7 +45,7 @@ public class GetOfficePreviewURLRequest extends RpcAcsRequest<GetOfficePreviewUR
 
 	private String watermarkFillStyle;
 	public GetOfficePreviewURLRequest() {
-		super("imm", "2017-09-06", "GetOfficePreviewURL");
+		super("imm", "2017-09-06", "GetOfficePreviewURL", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

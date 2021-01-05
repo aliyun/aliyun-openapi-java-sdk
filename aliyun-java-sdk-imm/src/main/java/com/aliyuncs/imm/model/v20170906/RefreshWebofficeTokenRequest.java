@@ -31,7 +31,7 @@ public class RefreshWebofficeTokenRequest extends RpcAcsRequest<RefreshWeboffice
 
 	private String refreshToken;
 	public RefreshWebofficeTokenRequest() {
-		super("imm", "2017-09-06", "RefreshWebofficeToken");
+		super("imm", "2017-09-06", "RefreshWebofficeToken", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

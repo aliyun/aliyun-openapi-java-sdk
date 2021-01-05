@@ -31,7 +31,7 @@ public class UpdateSetRequest extends RpcAcsRequest<UpdateSetResponse> {
 
 	private String setId;
 	public UpdateSetRequest() {
-		super("imm", "2017-09-06", "UpdateSet");
+		super("imm", "2017-09-06", "UpdateSet", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

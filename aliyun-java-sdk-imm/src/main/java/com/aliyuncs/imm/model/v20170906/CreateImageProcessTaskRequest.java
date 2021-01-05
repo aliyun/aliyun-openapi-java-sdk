@@ -35,7 +35,7 @@ public class CreateImageProcessTaskRequest extends RpcAcsRequest<CreateImageProc
 
 	private String imageUri;
 	public CreateImageProcessTaskRequest() {
-		super("imm", "2017-09-06", "CreateImageProcessTask");
+		super("imm", "2017-09-06", "CreateImageProcessTask", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

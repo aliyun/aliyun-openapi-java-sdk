@@ -35,7 +35,7 @@ public class PutProjectRequest extends RpcAcsRequest<PutProjectResponse> {
 
 	private String billingType;
 	public PutProjectRequest() {
-		super("imm", "2017-09-06", "PutProject");
+		super("imm", "2017-09-06", "PutProject", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

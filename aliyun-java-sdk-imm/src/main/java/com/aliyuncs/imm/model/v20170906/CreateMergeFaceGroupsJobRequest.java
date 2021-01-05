@@ -37,7 +37,7 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 
 	private String setId;
 	public CreateMergeFaceGroupsJobRequest() {
-		super("imm", "2017-09-06", "CreateMergeFaceGroupsJob");
+		super("imm", "2017-09-06", "CreateMergeFaceGroupsJob", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

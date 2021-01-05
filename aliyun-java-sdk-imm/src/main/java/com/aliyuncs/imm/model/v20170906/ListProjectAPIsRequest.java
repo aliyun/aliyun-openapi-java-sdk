@@ -27,7 +27,7 @@ public class ListProjectAPIsRequest extends RpcAcsRequest<ListProjectAPIsRespons
 
 	private String project;
 	public ListProjectAPIsRequest() {
-		super("imm", "2017-09-06", "ListProjectAPIs");
+		super("imm", "2017-09-06", "ListProjectAPIs", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

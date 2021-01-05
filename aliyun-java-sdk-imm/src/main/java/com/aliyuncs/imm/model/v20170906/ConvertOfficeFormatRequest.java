@@ -65,7 +65,7 @@ public class ConvertOfficeFormatRequest extends RpcAcsRequest<ConvertOfficeForma
 
 	private String tgtUri;
 	public ConvertOfficeFormatRequest() {
-		super("imm", "2017-09-06", "ConvertOfficeFormat");
+		super("imm", "2017-09-06", "ConvertOfficeFormat", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

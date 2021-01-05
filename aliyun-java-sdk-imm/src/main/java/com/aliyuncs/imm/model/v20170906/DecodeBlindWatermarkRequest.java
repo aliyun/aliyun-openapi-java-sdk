@@ -37,7 +37,7 @@ public class DecodeBlindWatermarkRequest extends RpcAcsRequest<DecodeBlindWaterm
 
 	private String originalImageUri;
 	public DecodeBlindWatermarkRequest() {
-		super("imm", "2017-09-06", "DecodeBlindWatermark");
+		super("imm", "2017-09-06", "DecodeBlindWatermark", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

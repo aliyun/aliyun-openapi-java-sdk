@@ -31,7 +31,7 @@ public class ListOfficeConversionTaskRequest extends RpcAcsRequest<ListOfficeCon
 
 	private String marker;
 	public ListOfficeConversionTaskRequest() {
-		super("imm", "2017-09-06", "ListOfficeConversionTask");
+		super("imm", "2017-09-06", "ListOfficeConversionTask", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

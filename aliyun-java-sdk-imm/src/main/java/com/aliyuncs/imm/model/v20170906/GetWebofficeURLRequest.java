@@ -41,7 +41,7 @@ public class GetWebofficeURLRequest extends RpcAcsRequest<GetWebofficeURLRespons
 
 	private String user;
 	public GetWebofficeURLRequest() {
-		super("imm", "2017-09-06", "GetWebofficeURL");
+		super("imm", "2017-09-06", "GetWebofficeURL", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

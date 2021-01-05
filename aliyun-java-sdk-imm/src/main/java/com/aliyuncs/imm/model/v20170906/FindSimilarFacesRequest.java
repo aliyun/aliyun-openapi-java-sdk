@@ -39,7 +39,7 @@ public class FindSimilarFacesRequest extends RpcAcsRequest<FindSimilarFacesRespo
 
 	private String setId;
 	public FindSimilarFacesRequest() {
-		super("imm", "2017-09-06", "FindSimilarFaces");
+		super("imm", "2017-09-06", "FindSimilarFaces", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

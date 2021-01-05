@@ -31,7 +31,7 @@ public class DeleteImageJobRequest extends RpcAcsRequest<DeleteImageJobResponse>
 
 	private String jobType;
 	public DeleteImageJobRequest() {
-		super("imm", "2017-09-06", "DeleteImageJob");
+		super("imm", "2017-09-06", "DeleteImageJob", "imm");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

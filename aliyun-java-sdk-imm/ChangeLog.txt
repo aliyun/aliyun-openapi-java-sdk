@@ -1,3 +1,6 @@
+2021-01-05 Version: 1.23.0
+- Remove legacy APIs.
+
 2020-12-25 Version: 1.22.0
 - Supported for weboffice edit.
 
