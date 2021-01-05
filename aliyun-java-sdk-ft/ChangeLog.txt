@@ -1,3 +1,6 @@
+2021-01-05 Version: 3.1.2
+- Generated 2018-07-13 for `Ft`.
+
 2021-01-05 Version: 3.1.0
 - Generated 2018-07-13 for `Ft`.
 
