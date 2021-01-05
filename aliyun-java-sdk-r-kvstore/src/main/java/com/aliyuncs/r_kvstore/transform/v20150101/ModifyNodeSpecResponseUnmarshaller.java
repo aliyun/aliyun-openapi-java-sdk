@@ -23,7 +23,7 @@ public class ModifyNodeSpecResponseUnmarshaller {
 	public static ModifyNodeSpecResponse unmarshall(ModifyNodeSpecResponse modifyNodeSpecResponse, UnmarshallerContext _ctx) {
 		
 		modifyNodeSpecResponse.setRequestId(_ctx.stringValue("ModifyNodeSpecResponse.RequestId"));
-		modifyNodeSpecResponse.setOrderId(_ctx.stringValue("ModifyNodeSpecResponse.OrderId"));
+		modifyNodeSpecResponse.setOrderId(_ctx.longValue("ModifyNodeSpecResponse.OrderId"));
 	 
 	 	return modifyNodeSpecResponse;
 	}

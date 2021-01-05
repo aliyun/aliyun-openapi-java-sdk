@@ -1,3 +1,6 @@
+2021-01-05 Version: 2.11.0
+- Add DescribeBackupTasks API.
+
 2020-12-30 Version: 2.10.0
 - Add DescribeActiveOperationTask API.
 - Add ModifyActiveOperationTask API.

@@ -26,7 +26,7 @@ public class ModifyNodeSpecResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderId;
+	private Long orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,11 +36,11 @@ public class ModifyNodeSpecResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
+	public Long getOrderId() {
 		return this.orderId;
 	}
 
-	public void setOrderId(String orderId) {
+	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
 

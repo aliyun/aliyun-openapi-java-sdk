@@ -22,31 +22,42 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteDedicatedUserClusterRequest extends RpcAcsRequest<DeleteDedicatedUserClusterResponse> {
+public class DescribeBackupTasksRequest extends RpcAcsRequest<DescribeBackupTasksResponse> {
 	   
+
+	private String backupJobId;
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
 
-	private String engine;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private String clusterId;
-
 	private Long ownerId;
 
-	private String zoneId;
-	public DeleteDedicatedUserClusterRequest() {
-		super("R-kvstore", "2015-01-01", "DeleteDedicatedUserCluster", "redisa");
+	private String instanceId;
+
+	private String jobMode;
+	public DescribeBackupTasksRequest() {
+		super("R-kvstore", "2015-01-01", "DescribeBackupTasks", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBackupJobId() {
+		return this.backupJobId;
+	}
+
+	public void setBackupJobId(String backupJobId) {
+		this.backupJobId = backupJobId;
+		if(backupJobId != null){
+			putQueryParameter("BackupJobId", backupJobId);
+		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,17 +79,6 @@ public class DeleteDedicatedUserClusterRequest extends RpcAcsRequest<DeleteDedic
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
 		}
 	}
 
@@ -104,17 +104,6 @@ public class DeleteDedicatedUserClusterRequest extends RpcAcsRequest<DeleteDedic
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -126,20 +115,31 @@ public class DeleteDedicatedUserClusterRequest extends RpcAcsRequest<DeleteDedic
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getJobMode() {
+		return this.jobMode;
+	}
+
+	public void setJobMode(String jobMode) {
+		this.jobMode = jobMode;
+		if(jobMode != null){
+			putQueryParameter("JobMode", jobMode);
 		}
 	}
 
 	@Override
-	public Class<DeleteDedicatedUserClusterResponse> getResponseClass() {
-		return DeleteDedicatedUserClusterResponse.class;
+	public Class<DescribeBackupTasksResponse> getResponseClass() {
+		return DescribeBackupTasksResponse.class;
 	}
 
 }
