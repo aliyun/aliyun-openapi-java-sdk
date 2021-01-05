@@ -34,6 +34,8 @@ public class StartCallV2Request extends RpcAcsRequest<StartCallV2Response> {
 	private String caller;
 
 	private String callee;
+
+	private String jsonMsg;
 	public StartCallV2Request() {
 		super("scsp", "2020-07-02", "StartCallV2", "scsp");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class StartCallV2Request extends RpcAcsRequest<StartCallV2Response> {
 		this.callee = callee;
 		if(callee != null){
 			putBodyParameter("Callee", callee);
+		}
+	}
+
+	public String getJsonMsg() {
+		return this.jsonMsg;
+	}
+
+	public void setJsonMsg(String jsonMsg) {
+		this.jsonMsg = jsonMsg;
+		if(jsonMsg != null){
+			putBodyParameter("JsonMsg", jsonMsg);
 		}
 	}
 

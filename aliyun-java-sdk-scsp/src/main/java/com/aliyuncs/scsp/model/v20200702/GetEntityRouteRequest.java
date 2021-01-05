@@ -25,9 +25,15 @@ import com.aliyuncs.scsp.Endpoint;
 public class GetEntityRouteRequest extends RpcAcsRequest<GetEntityRouteResponse> {
 	   
 
+	private String entityBizCode;
+
 	private String instanceId;
 
+	private String entityName;
+
 	private String entityId;
+
+	private String entityRelationNumber;
 
 	private Long uniqueId;
 	public GetEntityRouteRequest() {
@@ -37,6 +43,17 @@ public class GetEntityRouteRequest extends RpcAcsRequest<GetEntityRouteResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEntityBizCode() {
+		return this.entityBizCode;
+	}
+
+	public void setEntityBizCode(String entityBizCode) {
+		this.entityBizCode = entityBizCode;
+		if(entityBizCode != null){
+			putBodyParameter("EntityBizCode", entityBizCode);
+		}
 	}
 
 	public String getInstanceId() {
@@ -50,6 +67,17 @@ public class GetEntityRouteRequest extends RpcAcsRequest<GetEntityRouteResponse>
 		}
 	}
 
+	public String getEntityName() {
+		return this.entityName;
+	}
+
+	public void setEntityName(String entityName) {
+		this.entityName = entityName;
+		if(entityName != null){
+			putBodyParameter("EntityName", entityName);
+		}
+	}
+
 	public String getEntityId() {
 		return this.entityId;
 	}
@@ -58,6 +86,17 @@ public class GetEntityRouteRequest extends RpcAcsRequest<GetEntityRouteResponse>
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId);
+		}
+	}
+
+	public String getEntityRelationNumber() {
+		return this.entityRelationNumber;
+	}
+
+	public void setEntityRelationNumber(String entityRelationNumber) {
+		this.entityRelationNumber = entityRelationNumber;
+		if(entityRelationNumber != null){
+			putBodyParameter("EntityRelationNumber", entityRelationNumber);
 		}
 	}
 
