@@ -22,14 +22,12 @@ import com.aliyuncs.multimediaai.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse> {
+public class ProcessNlpAlgorithmRequest extends RpcAcsRequest<ProcessNlpAlgorithmResponse> {
 	   
 
-	private Integer pageNumber;
-
-	private Integer pageSize;
-	public ListFaceGroupsRequest() {
-		super("multimediaai", "2019-08-10", "ListFaceGroups", "multimediaai");
+	private String data;
+	public ProcessNlpAlgorithmRequest() {
+		super("multimediaai", "2019-08-10", "ProcessNlpAlgorithm", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class ListFaceGroupsRequest extends RpcAcsRequest<ListFaceGroupsResponse>
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
 		}
 	}
 
 	@Override
-	public Class<ListFaceGroupsResponse> getResponseClass() {
-		return ListFaceGroupsResponse.class;
+	public Class<ProcessNlpAlgorithmResponse> getResponseClass() {
+		return ProcessNlpAlgorithmResponse.class;
 	}
 
 }

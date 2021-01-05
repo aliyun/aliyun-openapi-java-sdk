@@ -14,20 +14,23 @@
 
 package com.aliyuncs.multimediaai.model.v20190810;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.multimediaai.transform.v20190810.RegisterFaceImageResponseUnmarshaller;
+import com.aliyuncs.multimediaai.transform.v20190810.ProcessNewsAlgorithmResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RegisterFaceImageResponse extends AcsResponse {
+public class ProcessNewsAlgorithmResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<FaceImage> faceImages;
+	private Integer code;
+
+	private String message;
+
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,30 +40,33 @@ public class RegisterFaceImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<FaceImage> getFaceImages() {
-		return this.faceImages;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setFaceImages(List<FaceImage> faceImages) {
-		this.faceImages = faceImages;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
-	public static class FaceImage {
+	public String getMessage() {
+		return this.message;
+	}
 
-		private Long faceImageId;
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-		public Long getFaceImageId() {
-			return this.faceImageId;
-		}
+	public String getData() {
+		return this.data;
+	}
 
-		public void setFaceImageId(Long faceImageId) {
-			this.faceImageId = faceImageId;
-		}
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public RegisterFaceImageResponse getInstance(UnmarshallerContext context) {
-		return	RegisterFaceImageResponseUnmarshaller.unmarshall(this, context);
+	public ProcessNewsAlgorithmResponse getInstance(UnmarshallerContext context) {
+		return	ProcessNewsAlgorithmResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class DeleteFaceGroupRequest extends RpcAcsRequest<DeleteFaceGroupRespons
 
 	private Long faceGroupId;
 	public DeleteFaceGroupRequest() {
-		super("multimediaai", "2019-08-10", "DeleteFaceGroup");
+		super("multimediaai", "2019-08-10", "DeleteFaceGroup", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

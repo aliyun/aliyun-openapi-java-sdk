@@ -31,7 +31,7 @@ public class CreateFacePersonRequest extends RpcAcsRequest<CreateFacePersonRespo
 
 	private String facePersonName;
 	public CreateFacePersonRequest() {
-		super("multimediaai", "2019-08-10", "CreateFacePerson");
+		super("multimediaai", "2019-08-10", "CreateFacePerson", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

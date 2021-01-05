@@ -29,13 +29,15 @@ public class CreateCoverTaskRequest extends RpcAcsRequest<CreateCoverTaskRespons
 
 	private String videoUrl;
 
+	private String scales;
+
 	private String videoName;
 
 	private String callbackUrl;
 
 	private String applicationId;
 	public CreateCoverTaskRequest() {
-		super("multimediaai", "2019-08-10", "CreateCoverTask");
+		super("multimediaai", "2019-08-10", "CreateCoverTask", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +64,17 @@ public class CreateCoverTaskRequest extends RpcAcsRequest<CreateCoverTaskRespons
 		this.videoUrl = videoUrl;
 		if(videoUrl != null){
 			putQueryParameter("VideoUrl", videoUrl);
+		}
+	}
+
+	public String getScales() {
+		return this.scales;
+	}
+
+	public void setScales(String scales) {
+		this.scales = scales;
+		if(scales != null){
+			putBodyParameter("Scales", scales);
 		}
 	}
 

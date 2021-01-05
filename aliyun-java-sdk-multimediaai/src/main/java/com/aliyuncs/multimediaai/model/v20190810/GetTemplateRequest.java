@@ -27,7 +27,7 @@ public class GetTemplateRequest extends RpcAcsRequest<GetTemplateResponse> {
 
 	private Long templateId;
 	public GetTemplateRequest() {
-		super("multimediaai", "2019-08-10", "GetTemplate");
+		super("multimediaai", "2019-08-10", "GetTemplate", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -14,7 +14,11 @@
 
 package com.aliyuncs.multimediaai.transform.v20190810;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.multimediaai.model.v20190810.RegisterFaceImageResponse;
+import com.aliyuncs.multimediaai.model.v20190810.RegisterFaceImageResponse.FaceImage;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,6 +27,15 @@ public class RegisterFaceImageResponseUnmarshaller {
 	public static RegisterFaceImageResponse unmarshall(RegisterFaceImageResponse registerFaceImageResponse, UnmarshallerContext _ctx) {
 		
 		registerFaceImageResponse.setRequestId(_ctx.stringValue("RegisterFaceImageResponse.RequestId"));
+
+		List<FaceImage> faceImages = new ArrayList<FaceImage>();
+		for (int i = 0; i < _ctx.lengthValue("RegisterFaceImageResponse.FaceImages.Length"); i++) {
+			FaceImage faceImage = new FaceImage();
+			faceImage.setFaceImageId(_ctx.longValue("RegisterFaceImageResponse.FaceImages["+ i +"].FaceImageId"));
+
+			faceImages.add(faceImage);
+		}
+		registerFaceImageResponse.setFaceImages(faceImages);
 	 
 	 	return registerFaceImageResponse;
 	}

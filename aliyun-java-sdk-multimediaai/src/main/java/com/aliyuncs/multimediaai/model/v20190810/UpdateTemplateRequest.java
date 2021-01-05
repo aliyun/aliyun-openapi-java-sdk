@@ -35,7 +35,7 @@ public class UpdateTemplateRequest extends RpcAcsRequest<UpdateTemplateResponse>
 
 	private Boolean isDefault;
 	public UpdateTemplateRequest() {
-		super("multimediaai", "2019-08-10", "UpdateTemplate");
+		super("multimediaai", "2019-08-10", "UpdateTemplate", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

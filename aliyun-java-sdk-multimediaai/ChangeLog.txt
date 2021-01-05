@@ -1,3 +1,6 @@
+2021-01-05 Version: 1.1.4
+- Upgrade MultimediaAI version.
+
 2020-05-18 Version: 1.1.3
 - Video Content analytics template introduced to this SDK.
 

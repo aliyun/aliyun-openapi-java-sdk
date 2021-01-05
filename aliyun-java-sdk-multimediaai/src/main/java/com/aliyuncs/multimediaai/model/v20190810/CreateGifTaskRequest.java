@@ -29,13 +29,15 @@ public class CreateGifTaskRequest extends RpcAcsRequest<CreateGifTaskResponse> {
 
 	private String videoUrl;
 
+	private String scales;
+
 	private String videoName;
 
 	private String callbackUrl;
 
 	private String applicationId;
 	public CreateGifTaskRequest() {
-		super("multimediaai", "2019-08-10", "CreateGifTask");
+		super("multimediaai", "2019-08-10", "CreateGifTask", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +64,17 @@ public class CreateGifTaskRequest extends RpcAcsRequest<CreateGifTaskResponse> {
 		this.videoUrl = videoUrl;
 		if(videoUrl != null){
 			putQueryParameter("VideoUrl", videoUrl);
+		}
+	}
+
+	public String getScales() {
+		return this.scales;
+	}
+
+	public void setScales(String scales) {
+		this.scales = scales;
+		if(scales != null){
+			putBodyParameter("Scales", scales);
 		}
 	}
 

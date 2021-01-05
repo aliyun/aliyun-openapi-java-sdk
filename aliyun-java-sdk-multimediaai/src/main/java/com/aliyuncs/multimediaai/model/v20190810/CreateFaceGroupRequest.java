@@ -29,7 +29,7 @@ public class CreateFaceGroupRequest extends RpcAcsRequest<CreateFaceGroupRespons
 
 	private String faceGroupName;
 	public CreateFaceGroupRequest() {
-		super("multimediaai", "2019-08-10", "CreateFaceGroup");
+		super("multimediaai", "2019-08-10", "CreateFaceGroup", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

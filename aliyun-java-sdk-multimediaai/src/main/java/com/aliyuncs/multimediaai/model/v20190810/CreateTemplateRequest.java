@@ -33,7 +33,7 @@ public class CreateTemplateRequest extends RpcAcsRequest<CreateTemplateResponse>
 
 	private Boolean isDefault;
 	public CreateTemplateRequest() {
-		super("multimediaai", "2019-08-10", "CreateTemplate");
+		super("multimediaai", "2019-08-10", "CreateTemplate", "multimediaai");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
