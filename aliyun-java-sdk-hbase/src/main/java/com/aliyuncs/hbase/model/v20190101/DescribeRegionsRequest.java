@@ -25,6 +25,8 @@ import com.aliyuncs.hbase.Endpoint;
 public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 
+	private String engine;
+
 	private String acceptLanguage;
 	public DescribeRegionsRequest() {
 		super("HBase", "2019-01-01", "DescribeRegions", "hbase");
@@ -33,6 +35,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
 	}
 
 	public String getAcceptLanguage() {

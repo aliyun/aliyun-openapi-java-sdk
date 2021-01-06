@@ -25,6 +25,14 @@ import com.aliyuncs.hbase.Endpoint;
 public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
 	   
 
+	private String engineVersion;
+
+	private String engine;
+
+	private String diskType;
+
+	private String coreInstanceType;
+
 	private String zoneId;
 
 	private String chargeType;
@@ -35,6 +43,50 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+		if(engineVersion != null){
+			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getEngine() {
+		return this.engine;
+	}
+
+	public void setEngine(String engine) {
+		this.engine = engine;
+		if(engine != null){
+			putQueryParameter("Engine", engine);
+		}
+	}
+
+	public String getDiskType() {
+		return this.diskType;
+	}
+
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putQueryParameter("DiskType", diskType);
+		}
+	}
+
+	public String getCoreInstanceType() {
+		return this.coreInstanceType;
+	}
+
+	public void setCoreInstanceType(String coreInstanceType) {
+		this.coreInstanceType = coreInstanceType;
+		if(coreInstanceType != null){
+			putQueryParameter("CoreInstanceType", coreInstanceType);
+		}
 	}
 
 	public String getZoneId() {
