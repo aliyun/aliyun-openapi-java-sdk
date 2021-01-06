@@ -28,6 +28,8 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 
 	private String dataFormat;
 
+	private Float threshold;
+
 	private List<URLList> uRLLists;
 
 	private String orgId;
@@ -50,6 +52,17 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 		this.dataFormat = dataFormat;
 		if(dataFormat != null){
 			putBodyParameter("DataFormat", dataFormat);
+		}
+	}
+
+	public Float getThreshold() {
+		return this.threshold;
+	}
+
+	public void setThreshold(Float threshold) {
+		this.threshold = threshold;
+		if(threshold != null){
+			putBodyParameter("Threshold", threshold.toString());
 		}
 	}
 
