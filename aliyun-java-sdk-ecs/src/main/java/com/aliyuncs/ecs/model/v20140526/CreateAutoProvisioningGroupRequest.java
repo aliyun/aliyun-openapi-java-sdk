@@ -68,6 +68,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private Boolean launchConfigurationPasswordInherit;
 
+	private String clientToken;
+
 	private String launchConfigurationSecurityGroupId;
 
 	private String description;
@@ -377,6 +379,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchConfigurationPasswordInherit = launchConfigurationPasswordInherit;
 		if(launchConfigurationPasswordInherit != null){
 			putQueryParameter("LaunchConfiguration.PasswordInherit", launchConfigurationPasswordInherit.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

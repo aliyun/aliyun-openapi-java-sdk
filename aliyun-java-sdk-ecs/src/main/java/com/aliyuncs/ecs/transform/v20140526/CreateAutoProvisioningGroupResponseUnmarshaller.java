@@ -14,7 +14,11 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.ecs.model.v20140526.CreateAutoProvisioningGroupResponse;
+import com.aliyuncs.ecs.model.v20140526.CreateAutoProvisioningGroupResponse.LaunchResult;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,6 +28,25 @@ public class CreateAutoProvisioningGroupResponseUnmarshaller {
 		
 		createAutoProvisioningGroupResponse.setRequestId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.RequestId"));
 		createAutoProvisioningGroupResponse.setAutoProvisioningGroupId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.AutoProvisioningGroupId"));
+
+		List<LaunchResult> launchResults = new ArrayList<LaunchResult>();
+		for (int i = 0; i < _ctx.lengthValue("CreateAutoProvisioningGroupResponse.LaunchResults.Length"); i++) {
+			LaunchResult launchResult = new LaunchResult();
+			launchResult.setSpotStrategy(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].SpotStrategy"));
+			launchResult.setInstanceType(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceType"));
+			launchResult.setZoneId(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ZoneId"));
+			launchResult.setErrorCode(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorCode"));
+			launchResult.setErrorMsg(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].ErrorMsg"));
+
+			List<String> instanceIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceIds.Length"); j++) {
+				instanceIds.add(_ctx.stringValue("CreateAutoProvisioningGroupResponse.LaunchResults["+ i +"].InstanceIds["+ j +"]"));
+			}
+			launchResult.setInstanceIds(instanceIds);
+
+			launchResults.add(launchResult);
+		}
+		createAutoProvisioningGroupResponse.setLaunchResults(launchResults);
 	 
 	 	return createAutoProvisioningGroupResponse;
 	}

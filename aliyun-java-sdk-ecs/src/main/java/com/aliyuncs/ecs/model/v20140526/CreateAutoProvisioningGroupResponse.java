@@ -14,6 +14,7 @@
 
 package com.aliyuncs.ecs.model.v20140526;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.ecs.transform.v20140526.CreateAutoProvisioningGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -27,6 +28,8 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 	private String requestId;
 
 	private String autoProvisioningGroupId;
+
+	private List<LaunchResult> launchResults;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,6 +45,77 @@ public class CreateAutoProvisioningGroupResponse extends AcsResponse {
 
 	public void setAutoProvisioningGroupId(String autoProvisioningGroupId) {
 		this.autoProvisioningGroupId = autoProvisioningGroupId;
+	}
+
+	public List<LaunchResult> getLaunchResults() {
+		return this.launchResults;
+	}
+
+	public void setLaunchResults(List<LaunchResult> launchResults) {
+		this.launchResults = launchResults;
+	}
+
+	public static class LaunchResult {
+
+		private String spotStrategy;
+
+		private String instanceType;
+
+		private String zoneId;
+
+		private String errorCode;
+
+		private String errorMsg;
+
+		private List<String> instanceIds;
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorMsg() {
+			return this.errorMsg;
+		}
+
+		public void setErrorMsg(String errorMsg) {
+			this.errorMsg = errorMsg;
+		}
+
+		public List<String> getInstanceIds() {
+			return this.instanceIds;
+		}
+
+		public void setInstanceIds(List<String> instanceIds) {
+			this.instanceIds = instanceIds;
+		}
 	}
 
 	@Override
