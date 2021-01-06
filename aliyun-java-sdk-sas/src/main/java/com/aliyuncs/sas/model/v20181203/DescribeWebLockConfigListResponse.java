@@ -77,6 +77,8 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 
 		private String inclusiveFile;
 
+		private String defenceMode;
+
 		public String getId() {
 			return this.id;
 		}
@@ -155,6 +157,14 @@ public class DescribeWebLockConfigListResponse extends AcsResponse {
 
 		public void setInclusiveFile(String inclusiveFile) {
 			this.inclusiveFile = inclusiveFile;
+		}
+
+		public String getDefenceMode() {
+			return this.defenceMode;
+		}
+
+		public void setDefenceMode(String defenceMode) {
+			this.defenceMode = defenceMode;
 		}
 	}
 

@@ -91,6 +91,8 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		private String level;
 
+		private Long firstTs;
+
 		private Long lastTs;
 
 		private Integer status;
@@ -163,6 +165,14 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		public void setLevel(String level) {
 			this.level = level;
+		}
+
+		public Long getFirstTs() {
+			return this.firstTs;
+		}
+
+		public void setFirstTs(Long firstTs) {
+			this.firstTs = firstTs;
 		}
 
 		public Long getLastTs() {

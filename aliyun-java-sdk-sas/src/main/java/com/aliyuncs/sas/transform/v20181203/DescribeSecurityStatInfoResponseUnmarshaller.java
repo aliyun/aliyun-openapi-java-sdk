@@ -73,6 +73,12 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 			remindList.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.SecurityEvent.RemindList["+ i +"]"));
 		}
 		securityEvent.setRemindList(remindList);
+
+		List<String> timeArray = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.SecurityEvent.TimeArray.Length"); i++) {
+			timeArray.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.SecurityEvent.TimeArray["+ i +"]"));
+		}
+		securityEvent.setTimeArray(timeArray);
 		describeSecurityStatInfoResponse.setSecurityEvent(securityEvent);
 
 		AttackEvent attackEvent = new AttackEvent();
@@ -132,6 +138,12 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 			lowList.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.HealthCheck.LowList["+ i +"]"));
 		}
 		healthCheck.setLowList(lowList);
+
+		List<String> timeArray6 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.HealthCheck.TimeArray.Length"); i++) {
+			timeArray6.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.HealthCheck.TimeArray["+ i +"]"));
+		}
+		healthCheck.setTimeArray6(timeArray6);
 		describeSecurityStatInfoResponse.setHealthCheck(healthCheck);
 
 		Vulnerability vulnerability = new Vulnerability();
@@ -140,23 +152,23 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 		vulnerability.setAsapCount(_ctx.integerValue("DescribeSecurityStatInfoResponse.Vulnerability.AsapCount"));
 		vulnerability.setTotalCount(_ctx.integerValue("DescribeSecurityStatInfoResponse.Vulnerability.TotalCount"));
 
-		List<String> dateArray6 = new ArrayList<String>();
+		List<String> dateArray7 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.DateArray.Length"); i++) {
-			dateArray6.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.DateArray["+ i +"]"));
+			dateArray7.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.DateArray["+ i +"]"));
 		}
-		vulnerability.setDateArray6(dateArray6);
+		vulnerability.setDateArray7(dateArray7);
 
-		List<String> valueArray7 = new ArrayList<String>();
+		List<String> valueArray8 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.ValueArray.Length"); i++) {
-			valueArray7.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.ValueArray["+ i +"]"));
+			valueArray8.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.ValueArray["+ i +"]"));
 		}
-		vulnerability.setValueArray7(valueArray7);
+		vulnerability.setValueArray8(valueArray8);
 
-		List<String> levelsOn8 = new ArrayList<String>();
+		List<String> levelsOn9 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.LevelsOn.Length"); i++) {
-			levelsOn8.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.LevelsOn["+ i +"]"));
+			levelsOn9.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.LevelsOn["+ i +"]"));
 		}
-		vulnerability.setLevelsOn8(levelsOn8);
+		vulnerability.setLevelsOn9(levelsOn9);
 
 		List<String> nntfList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.NntfList.Length"); i++) {
@@ -175,6 +187,12 @@ public class DescribeSecurityStatInfoResponseUnmarshaller {
 			laterList.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.LaterList["+ i +"]"));
 		}
 		vulnerability.setLaterList(laterList);
+
+		List<String> timeArray10 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeSecurityStatInfoResponse.Vulnerability.TimeArray.Length"); i++) {
+			timeArray10.add(_ctx.stringValue("DescribeSecurityStatInfoResponse.Vulnerability.TimeArray["+ i +"]"));
+		}
+		vulnerability.setTimeArray10(timeArray10);
 		describeSecurityStatInfoResponse.setVulnerability(vulnerability);
 	 
 	 	return describeSecurityStatInfoResponse;

@@ -75,9 +75,11 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setContainerId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].ContainerId"));
 			warningSummary.setK8sNamespace(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sNamespace"));
 			warningSummary.setK8sClusterId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sClusterId"));
+			warningSummary.setK8sClusterName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sClusterName"));
 			warningSummary.setK8sNodeId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sNodeId"));
 			warningSummary.setK8sPodName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sPodName"));
 			warningSummary.setK8sNodeName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].K8sNodeName"));
+			warningSummary.setAppName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].AppName"));
 
 			List<QuaraFile> details = new ArrayList<QuaraFile>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Details.Length"); j++) {

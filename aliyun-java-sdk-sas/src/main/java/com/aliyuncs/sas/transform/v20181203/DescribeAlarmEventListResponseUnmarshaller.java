@@ -71,9 +71,11 @@ public class DescribeAlarmEventListResponseUnmarshaller {
 			suspEventsItem.setContainerId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].ContainerId"));
 			suspEventsItem.setK8sNamespace(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sNamespace"));
 			suspEventsItem.setK8sClusterId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sClusterId"));
+			suspEventsItem.setK8sClusterName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sClusterName"));
 			suspEventsItem.setK8sNodeId(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sNodeId"));
 			suspEventsItem.setK8sPodName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sPodName"));
 			suspEventsItem.setK8sNodeName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].K8sNodeName"));
+			suspEventsItem.setAppName(_ctx.stringValue("DescribeAlarmEventListResponse.SuspEvents["+ i +"].AppName"));
 
 			suspEvents.add(suspEventsItem);
 		}

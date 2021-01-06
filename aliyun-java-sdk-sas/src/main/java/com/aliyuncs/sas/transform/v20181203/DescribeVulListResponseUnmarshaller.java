@@ -69,11 +69,21 @@ public class DescribeVulListResponseUnmarshaller {
 			vulRecord.setNeedReboot(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].NeedReboot"));
 			vulRecord.setProgress(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].Progress"));
 			vulRecord.setCanFix(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].CanFix"));
+			vulRecord.setContainerImageId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ContainerImageId"));
+			vulRecord.setContainerImageName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ContainerImageName"));
+			vulRecord.setContainerName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ContainerName"));
+			vulRecord.setContainerInnerPath(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ContainerInnerPath"));
+			vulRecord.setContainerId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ContainerId"));
+			vulRecord.setK8sNamespace(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].K8sNamespace"));
+			vulRecord.setK8sClusterId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].K8sClusterId"));
+			vulRecord.setK8sNodeId(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].K8sNodeId"));
+			vulRecord.setK8sPodName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].K8sPodName"));
+			vulRecord.setK8sNodeName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].K8sNodeName"));
 
 			ExtendContentJson extendContentJson = new ExtendContentJson();
 			extendContentJson.setOs(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Os"));
 			extendContentJson.setOsRelease(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.OsRelease"));
-			extendContentJson.setStatus(_ctx.integerValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Status"));
+			extendContentJson.setStatus(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Status"));
 			extendContentJson.setLastTs(_ctx.longValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.LastTs"));
 			extendContentJson.setAliasName(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.AliasName"));
 			extendContentJson.setTag(_ctx.stringValue("DescribeVulListResponse.VulRecords["+ i +"].ExtendContentJson.Tag"));

@@ -79,6 +79,26 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		private Boolean containHwMode;
 
+		private String containerImageId;
+
+		private String containerImageName;
+
+		private String containerId;
+
+		private String k8sNamespace;
+
+		private String k8sClusterId;
+
+		private String k8sClusterName;
+
+		private String k8sNodeId;
+
+		private String k8sPodName;
+
+		private String k8sNodeName;
+
+		private String appName;
+
 		private List<CauseDetail> causeDetails;
 
 		public String getInternetIp() {
@@ -207,6 +227,86 @@ public class DescribeAlarmEventDetailResponse extends AcsResponse {
 
 		public void setContainHwMode(Boolean containHwMode) {
 			this.containHwMode = containHwMode;
+		}
+
+		public String getContainerImageId() {
+			return this.containerImageId;
+		}
+
+		public void setContainerImageId(String containerImageId) {
+			this.containerImageId = containerImageId;
+		}
+
+		public String getContainerImageName() {
+			return this.containerImageName;
+		}
+
+		public void setContainerImageName(String containerImageName) {
+			this.containerImageName = containerImageName;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getK8sNamespace() {
+			return this.k8sNamespace;
+		}
+
+		public void setK8sNamespace(String k8sNamespace) {
+			this.k8sNamespace = k8sNamespace;
+		}
+
+		public String getK8sClusterId() {
+			return this.k8sClusterId;
+		}
+
+		public void setK8sClusterId(String k8sClusterId) {
+			this.k8sClusterId = k8sClusterId;
+		}
+
+		public String getK8sClusterName() {
+			return this.k8sClusterName;
+		}
+
+		public void setK8sClusterName(String k8sClusterName) {
+			this.k8sClusterName = k8sClusterName;
+		}
+
+		public String getK8sNodeId() {
+			return this.k8sNodeId;
+		}
+
+		public void setK8sNodeId(String k8sNodeId) {
+			this.k8sNodeId = k8sNodeId;
+		}
+
+		public String getK8sPodName() {
+			return this.k8sPodName;
+		}
+
+		public void setK8sPodName(String k8sPodName) {
+			this.k8sPodName = k8sPodName;
+		}
+
+		public String getK8sNodeName() {
+			return this.k8sNodeName;
+		}
+
+		public void setK8sNodeName(String k8sNodeName) {
+			this.k8sNodeName = k8sNodeName;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public List<CauseDetail> getCauseDetails() {

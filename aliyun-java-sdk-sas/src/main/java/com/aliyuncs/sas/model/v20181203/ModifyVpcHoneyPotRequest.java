@@ -22,16 +22,14 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyResponse> {
+public class ModifyVpcHoneyPotRequest extends RpcAcsRequest<ModifyVpcHoneyPotResponse> {
 	   
 
-	private String sourceIp;
+	private String honeyPotAction;
 
-	private String strategyIds;
-
-	private String lang;
-	public DescribeStratetyRequest() {
-		super("Sas", "2018-12-03", "DescribeStratety", "sas");
+	private String vpcId;
+	public ModifyVpcHoneyPotRequest() {
+		super("Sas", "2018-12-03", "ModifyVpcHoneyPot", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class DescribeStratetyRequest extends RpcAcsRequest<DescribeStratetyRespo
 		} catch (Exception e) {}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
+	public String getHoneyPotAction() {
+		return this.honeyPotAction;
 	}
 
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
+	public void setHoneyPotAction(String honeyPotAction) {
+		this.honeyPotAction = honeyPotAction;
+		if(honeyPotAction != null){
+			putQueryParameter("HoneyPotAction", honeyPotAction);
 		}
 	}
 
-	public String getStrategyIds() {
-		return this.strategyIds;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setStrategyIds(String strategyIds) {
-		this.strategyIds = strategyIds;
-		if(strategyIds != null){
-			putQueryParameter("StrategyIds", strategyIds);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("VpcId", vpcId);
 		}
 	}
 
 	@Override
-	public Class<DescribeStratetyResponse> getResponseClass() {
-		return DescribeStratetyResponse.class;
+	public Class<ModifyVpcHoneyPotResponse> getResponseClass() {
+		return ModifyVpcHoneyPotResponse.class;
 	}
 
 }

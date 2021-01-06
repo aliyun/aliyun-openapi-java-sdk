@@ -56,6 +56,7 @@ public class DescribeGroupedContainerInstancesResponseUnmarshaller {
 			groupedContainerInstance.setCusterState(_ctx.stringValue("DescribeGroupedContainerInstancesResponse.GroupedContainerInstanceList["+ i +"].CusterState"));
 			groupedContainerInstance.setRegionId(_ctx.stringValue("DescribeGroupedContainerInstancesResponse.GroupedContainerInstanceList["+ i +"].RegionId"));
 			groupedContainerInstance.setNamespace(_ctx.stringValue("DescribeGroupedContainerInstancesResponse.GroupedContainerInstanceList["+ i +"].Namespace"));
+			groupedContainerInstance.setRiskLevel(_ctx.stringValue("DescribeGroupedContainerInstancesResponse.GroupedContainerInstanceList["+ i +"].RiskLevel"));
 
 			groupedContainerInstanceList.add(groupedContainerInstance);
 		}

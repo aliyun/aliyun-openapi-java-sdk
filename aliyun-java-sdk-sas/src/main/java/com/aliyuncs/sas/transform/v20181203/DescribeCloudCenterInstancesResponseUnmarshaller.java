@@ -68,6 +68,11 @@ public class DescribeCloudCenterInstancesResponseUnmarshaller {
 			instance.setImportance(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].Importance"));
 			instance.setClientVersion(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].ClientVersion"));
 			instance.setRiskCount(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].RiskCount"));
+			instance.setClusterId(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].ClusterId"));
+			instance.setClusterName(_ctx.stringValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].ClusterName"));
+			instance.setCreatedTime(_ctx.longValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].CreatedTime"));
+			instance.setPodCount(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].PodCount"));
+			instance.setExposedStatus(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].ExposedStatus"));
 
 			instances.add(instance);
 		}

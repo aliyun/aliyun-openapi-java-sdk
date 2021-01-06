@@ -91,6 +91,8 @@ public class DescribeGroupedContainerInstancesResponse extends AcsResponse {
 
 		private String namespace;
 
+		private String riskLevel;
+
 		public Integer getInstanceCount() {
 			return this.instanceCount;
 		}
@@ -225,6 +227,14 @@ public class DescribeGroupedContainerInstancesResponse extends AcsResponse {
 
 		public void setNamespace(String namespace) {
 			this.namespace = namespace;
+		}
+
+		public String getRiskLevel() {
+			return this.riskLevel;
+		}
+
+		public void setRiskLevel(String riskLevel) {
+			this.riskLevel = riskLevel;
 		}
 	}
 

@@ -14,16 +14,17 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.ModifyWebLockStatusResponse;
+import com.aliyuncs.sas.model.v20181203.CreateSasOrderResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyWebLockStatusResponseUnmarshaller {
+public class CreateSasOrderResponseUnmarshaller {
 
-	public static ModifyWebLockStatusResponse unmarshall(ModifyWebLockStatusResponse modifyWebLockStatusResponse, UnmarshallerContext _ctx) {
+	public static CreateSasOrderResponse unmarshall(CreateSasOrderResponse createSasOrderResponse, UnmarshallerContext _ctx) {
 		
-		modifyWebLockStatusResponse.setRequestId(_ctx.stringValue("ModifyWebLockStatusResponse.RequestId"));
+		createSasOrderResponse.setRequestId(_ctx.stringValue("CreateSasOrderResponse.RequestId"));
+		createSasOrderResponse.setOrderId(_ctx.stringValue("CreateSasOrderResponse.OrderId"));
 	 
-	 	return modifyWebLockStatusResponse;
+	 	return createSasOrderResponse;
 	}
 }

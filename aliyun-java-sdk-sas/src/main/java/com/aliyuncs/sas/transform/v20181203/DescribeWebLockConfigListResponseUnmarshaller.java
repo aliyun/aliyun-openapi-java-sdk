@@ -42,6 +42,7 @@ public class DescribeWebLockConfigListResponseUnmarshaller {
 			configInfo.setInclusiveFileType(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].InclusiveFileType"));
 			configInfo.setExclusiveFile(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].ExclusiveFile"));
 			configInfo.setInclusiveFile(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].InclusiveFile"));
+			configInfo.setDefenceMode(_ctx.stringValue("DescribeWebLockConfigListResponse.ConfigList["+ i +"].DefenceMode"));
 
 			configList.add(configInfo);
 		}

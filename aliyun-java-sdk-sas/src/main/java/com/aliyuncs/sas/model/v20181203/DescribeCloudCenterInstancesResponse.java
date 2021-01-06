@@ -123,6 +123,16 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		private String riskCount;
 
+		private String clusterId;
+
+		private String clusterName;
+
+		private Long createdTime;
+
+		private Integer podCount;
+
+		private Integer exposedStatus;
+
 		public String getInternetIp() {
 			return this.internetIp;
 		}
@@ -345,6 +355,46 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		public void setRiskCount(String riskCount) {
 			this.riskCount = riskCount;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getClusterName() {
+			return this.clusterName;
+		}
+
+		public void setClusterName(String clusterName) {
+			this.clusterName = clusterName;
+		}
+
+		public Long getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(Long createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public Integer getPodCount() {
+			return this.podCount;
+		}
+
+		public void setPodCount(Integer podCount) {
+			this.podCount = podCount;
+		}
+
+		public Integer getExposedStatus() {
+			return this.exposedStatus;
+		}
+
+		public void setExposedStatus(Integer exposedStatus) {
+			this.exposedStatus = exposedStatus;
 		}
 	}
 

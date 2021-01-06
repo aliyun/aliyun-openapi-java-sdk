@@ -47,6 +47,16 @@ public class DescribeAlarmEventDetailResponseUnmarshaller {
 		data.setDataSource(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.DataSource"));
 		data.setCanCancelFault(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.CanCancelFault"));
 		data.setContainHwMode(_ctx.booleanValue("DescribeAlarmEventDetailResponse.Data.ContainHwMode"));
+		data.setContainerImageId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.ContainerImageId"));
+		data.setContainerImageName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.ContainerImageName"));
+		data.setContainerId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.ContainerId"));
+		data.setK8sNamespace(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sNamespace"));
+		data.setK8sClusterId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sClusterId"));
+		data.setK8sClusterName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sClusterName"));
+		data.setK8sNodeId(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sNodeId"));
+		data.setK8sPodName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sPodName"));
+		data.setK8sNodeName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.K8sNodeName"));
+		data.setAppName(_ctx.stringValue("DescribeAlarmEventDetailResponse.Data.AppName"));
 
 		List<CauseDetail> causeDetails = new ArrayList<CauseDetail>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAlarmEventDetailResponse.Data.CauseDetails.Length"); i++) {

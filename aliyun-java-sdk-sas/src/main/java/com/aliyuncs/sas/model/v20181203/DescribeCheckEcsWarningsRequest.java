@@ -26,8 +26,6 @@ public class DescribeCheckEcsWarningsRequest extends RpcAcsRequest<DescribeCheck
 	   
 
 	private String sourceIp;
-
-	private String uuidList;
 	public DescribeCheckEcsWarningsRequest() {
 		super("Sas", "2018-12-03", "DescribeCheckEcsWarnings", "sas");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DescribeCheckEcsWarningsRequest extends RpcAcsRequest<DescribeCheck
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getUuidList() {
-		return this.uuidList;
-	}
-
-	public void setUuidList(String uuidList) {
-		this.uuidList = uuidList;
-		if(uuidList != null){
-			putQueryParameter("UuidList", uuidList);
 		}
 	}
 

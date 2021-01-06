@@ -33,13 +33,14 @@ public class DescribeAssetDetailByUuidsResponseUnmarshaller {
 			Asset asset = new Asset();
 			asset.setInternetIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InternetIp"));
 			asset.setIntranetIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].IntranetIp"));
-			asset.setInstanceName(_ctx.integerValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceName"));
-			asset.setInstanceId(_ctx.integerValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceId"));
+			asset.setInstanceName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceName"));
+			asset.setInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].InstanceId"));
 			asset.setIp(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Ip"));
 			asset.setUuid(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Uuid"));
 			asset.setAssetType(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].AssetType"));
 			asset.setOs(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Os"));
 			asset.setClientStatus(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].ClientStatus"));
+			asset.setRegionId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionId"));
 			asset.setRegion(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].Region"));
 			asset.setRegionName(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].RegionName"));
 			asset.setVpcInstanceId(_ctx.stringValue("DescribeAssetDetailByUuidsResponse.AssetList["+ i +"].VpcInstanceId"));

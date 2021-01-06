@@ -25,17 +25,33 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulListResponse> {
 	   
 
+	private String type;
+
+	private String containerFieldName;
+
+	private String tag;
+
+	private String aliasName;
+
+	private String instanceId;
+
+	private String name;
+
+	private String necessity;
+
+	private String uuids;
+
 	private String repoId;
 
 	private String statusList;
 
-	private String type;
+	private String targetType;
+
+	private String containerFieldValue;
 
 	private Integer pageSize;
 
 	private String digest;
-
-	private String tag;
 
 	private String lang;
 
@@ -43,17 +59,7 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 
 	private Integer currentPage;
 
-	private String aliasName;
-
-	private String instanceId;
-
 	private String repoName;
-
-	private String name;
-
-	private String necessity;
-
-	private String uuids;
 	public DescribeImageVulListRequest() {
 		super("Sas", "2018-12-03", "DescribeImageVulList", "sas");
 		setMethod(MethodType.POST);
@@ -61,6 +67,94 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getContainerFieldName() {
+		return this.containerFieldName;
+	}
+
+	public void setContainerFieldName(String containerFieldName) {
+		this.containerFieldName = containerFieldName;
+		if(containerFieldName != null){
+			putQueryParameter("ContainerFieldName", containerFieldName);
+		}
+	}
+
+	public String getTag() {
+		return this.tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+		if(tag != null){
+			putQueryParameter("Tag", tag);
+		}
+	}
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getNecessity() {
+		return this.necessity;
+	}
+
+	public void setNecessity(String necessity) {
+		this.necessity = necessity;
+		if(necessity != null){
+			putQueryParameter("Necessity", necessity);
+		}
+	}
+
+	public String getUuids() {
+		return this.uuids;
+	}
+
+	public void setUuids(String uuids) {
+		this.uuids = uuids;
+		if(uuids != null){
+			putQueryParameter("Uuids", uuids);
+		}
 	}
 
 	public String getRepoId() {
@@ -85,14 +179,25 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getTargetType() {
+		return this.targetType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setTargetType(String targetType) {
+		this.targetType = targetType;
+		if(targetType != null){
+			putQueryParameter("TargetType", targetType);
+		}
+	}
+
+	public String getContainerFieldValue() {
+		return this.containerFieldValue;
+	}
+
+	public void setContainerFieldValue(String containerFieldValue) {
+		this.containerFieldValue = containerFieldValue;
+		if(containerFieldValue != null){
+			putQueryParameter("ContainerFieldValue", containerFieldValue);
 		}
 	}
 
@@ -115,17 +220,6 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		this.digest = digest;
 		if(digest != null){
 			putQueryParameter("Digest", digest);
-		}
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
 		}
 	}
 
@@ -162,28 +256,6 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		}
 	}
 
-	public String getAliasName() {
-		return this.aliasName;
-	}
-
-	public void setAliasName(String aliasName) {
-		this.aliasName = aliasName;
-		if(aliasName != null){
-			putQueryParameter("AliasName", aliasName);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	public String getRepoName() {
 		return this.repoName;
 	}
@@ -192,39 +264,6 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		this.repoName = repoName;
 		if(repoName != null){
 			putQueryParameter("RepoName", repoName);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getNecessity() {
-		return this.necessity;
-	}
-
-	public void setNecessity(String necessity) {
-		this.necessity = necessity;
-		if(necessity != null){
-			putQueryParameter("Necessity", necessity);
-		}
-	}
-
-	public String getUuids() {
-		return this.uuids;
-	}
-
-	public void setUuids(String uuids) {
-		this.uuids = uuids;
-		if(uuids != null){
-			putQueryParameter("Uuids", uuids);
 		}
 	}
 

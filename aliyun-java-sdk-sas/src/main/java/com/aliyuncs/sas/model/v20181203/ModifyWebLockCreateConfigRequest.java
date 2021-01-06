@@ -46,6 +46,8 @@ public class ModifyWebLockCreateConfigRequest extends RpcAcsRequest<ModifyWebLoc
 	private String exclusiveDir;
 
 	private String inclusiveFileType;
+
+	private String defenceMode;
 	public ModifyWebLockCreateConfigRequest() {
 		super("Sas", "2018-12-03", "ModifyWebLockCreateConfig", "sas");
 		setMethod(MethodType.POST);
@@ -173,6 +175,17 @@ public class ModifyWebLockCreateConfigRequest extends RpcAcsRequest<ModifyWebLoc
 		this.inclusiveFileType = inclusiveFileType;
 		if(inclusiveFileType != null){
 			putQueryParameter("InclusiveFileType", inclusiveFileType);
+		}
+	}
+
+	public String getDefenceMode() {
+		return this.defenceMode;
+	}
+
+	public void setDefenceMode(String defenceMode) {
+		this.defenceMode = defenceMode;
+		if(defenceMode != null){
+			putQueryParameter("DefenceMode", defenceMode);
 		}
 	}
 

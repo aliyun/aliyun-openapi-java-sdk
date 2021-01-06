@@ -68,6 +68,14 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	private Long lastTrailEndTime;
 
+	private Long honeypotCapacity;
+
+	private Long imageScanCapacity;
+
+	private Integer vmCores;
+
+	private Boolean isPaidUser;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -242,6 +250,38 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	public void setLastTrailEndTime(Long lastTrailEndTime) {
 		this.lastTrailEndTime = lastTrailEndTime;
+	}
+
+	public Long getHoneypotCapacity() {
+		return this.honeypotCapacity;
+	}
+
+	public void setHoneypotCapacity(Long honeypotCapacity) {
+		this.honeypotCapacity = honeypotCapacity;
+	}
+
+	public Long getImageScanCapacity() {
+		return this.imageScanCapacity;
+	}
+
+	public void setImageScanCapacity(Long imageScanCapacity) {
+		this.imageScanCapacity = imageScanCapacity;
+	}
+
+	public Integer getVmCores() {
+		return this.vmCores;
+	}
+
+	public void setVmCores(Integer vmCores) {
+		this.vmCores = vmCores;
+	}
+
+	public Boolean getIsPaidUser() {
+		return this.isPaidUser;
+	}
+
+	public void setIsPaidUser(Boolean isPaidUser) {
+		this.isPaidUser = isPaidUser;
 	}
 
 	@Override

@@ -22,12 +22,10 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class RefreshContainerAssertsRequest extends RpcAcsRequest<RefreshContainerAssertsResponse> {
+public class DescribeExposedStatisticsRequest extends RpcAcsRequest<DescribeExposedStatisticsResponse> {
 	   
-
-	private String assetType;
-	public RefreshContainerAssertsRequest() {
-		super("Sas", "2018-12-03", "RefreshContainerAsserts", "sas");
+	public DescribeExposedStatisticsRequest() {
+		super("Sas", "2018-12-03", "DescribeExposedStatistics", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +33,9 @@ public class RefreshContainerAssertsRequest extends RpcAcsRequest<RefreshContain
 		} catch (Exception e) {}
 	}
 
-	public String getAssetType() {
-		return this.assetType;
-	}
-
-	public void setAssetType(String assetType) {
-		this.assetType = assetType;
-		if(assetType != null){
-			putQueryParameter("AssetType", assetType);
-		}
-	}
-
 	@Override
-	public Class<RefreshContainerAssertsResponse> getResponseClass() {
-		return RefreshContainerAssertsResponse.class;
+	public Class<DescribeExposedStatisticsResponse> getResponseClass() {
+		return DescribeExposedStatisticsResponse.class;
 	}
 
 }

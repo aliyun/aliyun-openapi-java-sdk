@@ -15,6 +15,7 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.sas.Endpoint;
 
@@ -36,6 +37,8 @@ public class StartImageVulScanRequest extends RpcAcsRequest<StartImageVulScanRes
 	private String lang;
 
 	private String imageTag;
+
+	private List<String> registryTypess;
 
 	private String repoInstanceId;
 
@@ -115,6 +118,19 @@ public class StartImageVulScanRequest extends RpcAcsRequest<StartImageVulScanRes
 		if(imageTag != null){
 			putQueryParameter("ImageTag", imageTag);
 		}
+	}
+
+	public List<String> getRegistryTypess() {
+		return this.registryTypess;
+	}
+
+	public void setRegistryTypess(List<String> registryTypess) {
+		this.registryTypess = registryTypess;	
+		if (registryTypess != null) {
+			for (int i = 0; i < registryTypess.size(); i++) {
+				putQueryParameter("RegistryTypes." + (i + 1) , registryTypess.get(i));
+			}
+		}	
 	}
 
 	public String getRepoInstanceId() {

@@ -51,9 +51,9 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 
 		private String intranetIp;
 
-		private Integer instanceName;
+		private String instanceName;
 
-		private Integer instanceId;
+		private String instanceId;
 
 		private String ip;
 
@@ -64,6 +64,8 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 		private String os;
 
 		private String clientStatus;
+
+		private String regionId;
 
 		private String region;
 
@@ -89,19 +91,19 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 			this.intranetIp = intranetIp;
 		}
 
-		public Integer getInstanceName() {
+		public String getInstanceName() {
 			return this.instanceName;
 		}
 
-		public void setInstanceName(Integer instanceName) {
+		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
 		}
 
-		public Integer getInstanceId() {
+		public String getInstanceId() {
 			return this.instanceId;
 		}
 
-		public void setInstanceId(Integer instanceId) {
+		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
 		}
 
@@ -143,6 +145,14 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 
 		public void setClientStatus(String clientStatus) {
 			this.clientStatus = clientStatus;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getRegion() {

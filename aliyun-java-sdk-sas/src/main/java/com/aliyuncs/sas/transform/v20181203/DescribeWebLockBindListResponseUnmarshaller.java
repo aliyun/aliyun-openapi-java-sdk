@@ -45,6 +45,8 @@ public class DescribeWebLockBindListResponseUnmarshaller {
 			bind.setServiceDetail(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].ServiceDetail"));
 			bind.setStatus(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].Status"));
 			bind.setPercent(_ctx.integerValue("DescribeWebLockBindListResponse.BindList["+ i +"].Percent"));
+			bind.setAuditCount(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].AuditCount"));
+			bind.setBlockCount(_ctx.stringValue("DescribeWebLockBindListResponse.BindList["+ i +"].BlockCount"));
 
 			bindList.add(bind);
 		}

@@ -43,6 +43,7 @@ public class DescribeImageVulListResponseUnmarshaller {
 			vulRecord.setAliasName(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].AliasName"));
 			vulRecord.setType(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Type"));
 			vulRecord.setLevel(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Level"));
+			vulRecord.setFirstTs(_ctx.longValue("DescribeImageVulListResponse.VulRecords["+ i +"].FirstTs"));
 			vulRecord.setLastTs(_ctx.longValue("DescribeImageVulListResponse.VulRecords["+ i +"].LastTs"));
 			vulRecord.setStatus(_ctx.integerValue("DescribeImageVulListResponse.VulRecords["+ i +"].Status"));
 			vulRecord.setProgress(_ctx.integerValue("DescribeImageVulListResponse.VulRecords["+ i +"].Progress"));

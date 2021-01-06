@@ -165,11 +165,15 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private String k8sClusterId;
 
+		private String k8sClusterName;
+
 		private String k8sNodeId;
 
 		private String k8sPodName;
 
 		private String k8sNodeName;
+
+		private String appName;
 
 		private List<QuaraFile> details;
 
@@ -485,6 +489,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.k8sClusterId = k8sClusterId;
 		}
 
+		public String getK8sClusterName() {
+			return this.k8sClusterName;
+		}
+
+		public void setK8sClusterName(String k8sClusterName) {
+			this.k8sClusterName = k8sClusterName;
+		}
+
 		public String getK8sNodeId() {
 			return this.k8sNodeId;
 		}
@@ -507,6 +519,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setK8sNodeName(String k8sNodeName) {
 			this.k8sNodeName = k8sNodeName;
+		}
+
+		public String getAppName() {
+			return this.appName;
+		}
+
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public List<QuaraFile> getDetails() {

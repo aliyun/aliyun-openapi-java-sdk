@@ -135,6 +135,26 @@ public class DescribeVulListResponse extends AcsResponse {
 
 		private String canFix;
 
+		private String containerImageId;
+
+		private String containerImageName;
+
+		private String containerName;
+
+		private String containerInnerPath;
+
+		private String containerId;
+
+		private String k8sNamespace;
+
+		private String k8sClusterId;
+
+		private String k8sNodeId;
+
+		private String k8sPodName;
+
+		private String k8sNodeName;
+
 		private ExtendContentJson extendContentJson;
 
 		private ProcessInfo processInfo;
@@ -371,6 +391,86 @@ public class DescribeVulListResponse extends AcsResponse {
 			this.canFix = canFix;
 		}
 
+		public String getContainerImageId() {
+			return this.containerImageId;
+		}
+
+		public void setContainerImageId(String containerImageId) {
+			this.containerImageId = containerImageId;
+		}
+
+		public String getContainerImageName() {
+			return this.containerImageName;
+		}
+
+		public void setContainerImageName(String containerImageName) {
+			this.containerImageName = containerImageName;
+		}
+
+		public String getContainerName() {
+			return this.containerName;
+		}
+
+		public void setContainerName(String containerName) {
+			this.containerName = containerName;
+		}
+
+		public String getContainerInnerPath() {
+			return this.containerInnerPath;
+		}
+
+		public void setContainerInnerPath(String containerInnerPath) {
+			this.containerInnerPath = containerInnerPath;
+		}
+
+		public String getContainerId() {
+			return this.containerId;
+		}
+
+		public void setContainerId(String containerId) {
+			this.containerId = containerId;
+		}
+
+		public String getK8sNamespace() {
+			return this.k8sNamespace;
+		}
+
+		public void setK8sNamespace(String k8sNamespace) {
+			this.k8sNamespace = k8sNamespace;
+		}
+
+		public String getK8sClusterId() {
+			return this.k8sClusterId;
+		}
+
+		public void setK8sClusterId(String k8sClusterId) {
+			this.k8sClusterId = k8sClusterId;
+		}
+
+		public String getK8sNodeId() {
+			return this.k8sNodeId;
+		}
+
+		public void setK8sNodeId(String k8sNodeId) {
+			this.k8sNodeId = k8sNodeId;
+		}
+
+		public String getK8sPodName() {
+			return this.k8sPodName;
+		}
+
+		public void setK8sPodName(String k8sPodName) {
+			this.k8sPodName = k8sPodName;
+		}
+
+		public String getK8sNodeName() {
+			return this.k8sNodeName;
+		}
+
+		public void setK8sNodeName(String k8sNodeName) {
+			this.k8sNodeName = k8sNodeName;
+		}
+
 		public ExtendContentJson getExtendContentJson() {
 			return this.extendContentJson;
 		}
@@ -393,7 +493,7 @@ public class DescribeVulListResponse extends AcsResponse {
 
 			private String osRelease;
 
-			private Integer status;
+			private String status;
 
 			private Long lastTs;
 
@@ -455,11 +555,11 @@ public class DescribeVulListResponse extends AcsResponse {
 				this.osRelease = osRelease;
 			}
 
-			public Integer getStatus() {
+			public String getStatus() {
 				return this.status;
 			}
 
-			public void setStatus(Integer status) {
+			public void setStatus(String status) {
 				this.status = status;
 			}
 

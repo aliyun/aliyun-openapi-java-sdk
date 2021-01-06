@@ -107,6 +107,8 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 
 		private List<String> remindList;
 
+		private List<String> timeArray;
+
 		public Integer getSeriousCount() {
 			return this.seriousCount;
 		}
@@ -186,6 +188,14 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		public void setRemindList(List<String> remindList) {
 			this.remindList = remindList;
 		}
+
+		public List<String> getTimeArray() {
+			return this.timeArray;
+		}
+
+		public void setTimeArray(List<String> timeArray) {
+			this.timeArray = timeArray;
+		}
 	}
 
 	public static class AttackEvent {
@@ -242,6 +252,8 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		private List<String> mediumList;
 
 		private List<String> lowList;
+
+		private List<String> timeArray6;
 
 		public Integer getMediumCount() {
 			return this.mediumCount;
@@ -322,6 +334,14 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 		public void setLowList(List<String> lowList) {
 			this.lowList = lowList;
 		}
+
+		public List<String> getTimeArray6() {
+			return this.timeArray6;
+		}
+
+		public void setTimeArray6(List<String> timeArray6) {
+			this.timeArray6 = timeArray6;
+		}
 	}
 
 	public static class Vulnerability {
@@ -334,17 +354,19 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 
 		private Integer totalCount;
 
-		private List<String> dateArray6;
+		private List<String> dateArray7;
 
-		private List<String> valueArray7;
+		private List<String> valueArray8;
 
-		private List<String> levelsOn8;
+		private List<String> levelsOn9;
 
 		private List<String> nntfList;
 
 		private List<String> asapList;
 
 		private List<String> laterList;
+
+		private List<String> timeArray10;
 
 		public Integer getNntfCount() {
 			return this.nntfCount;
@@ -378,28 +400,28 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 			this.totalCount = totalCount;
 		}
 
-		public List<String> getDateArray6() {
-			return this.dateArray6;
+		public List<String> getDateArray7() {
+			return this.dateArray7;
 		}
 
-		public void setDateArray6(List<String> dateArray6) {
-			this.dateArray6 = dateArray6;
+		public void setDateArray7(List<String> dateArray7) {
+			this.dateArray7 = dateArray7;
 		}
 
-		public List<String> getValueArray7() {
-			return this.valueArray7;
+		public List<String> getValueArray8() {
+			return this.valueArray8;
 		}
 
-		public void setValueArray7(List<String> valueArray7) {
-			this.valueArray7 = valueArray7;
+		public void setValueArray8(List<String> valueArray8) {
+			this.valueArray8 = valueArray8;
 		}
 
-		public List<String> getLevelsOn8() {
-			return this.levelsOn8;
+		public List<String> getLevelsOn9() {
+			return this.levelsOn9;
 		}
 
-		public void setLevelsOn8(List<String> levelsOn8) {
-			this.levelsOn8 = levelsOn8;
+		public void setLevelsOn9(List<String> levelsOn9) {
+			this.levelsOn9 = levelsOn9;
 		}
 
 		public List<String> getNntfList() {
@@ -424,6 +446,14 @@ public class DescribeSecurityStatInfoResponse extends AcsResponse {
 
 		public void setLaterList(List<String> laterList) {
 			this.laterList = laterList;
+		}
+
+		public List<String> getTimeArray10() {
+			return this.timeArray10;
+		}
+
+		public void setTimeArray10(List<String> timeArray10) {
+			this.timeArray10 = timeArray10;
 		}
 	}
 

@@ -22,18 +22,12 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyWebLockStatusRequest extends RpcAcsRequest<ModifyWebLockStatusResponse> {
+public class ModifyWebLockUnbindRequest extends RpcAcsRequest<ModifyWebLockUnbindResponse> {
 	   
 
 	private String uuid;
-
-	private String sourceIp;
-
-	private String lang;
-
-	private String status;
-	public ModifyWebLockStatusRequest() {
-		super("Sas", "2018-12-03", "ModifyWebLockStatus", "sas");
+	public ModifyWebLockUnbindRequest() {
+		super("Sas", "2018-12-03", "ModifyWebLockUnbind", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,42 +46,9 @@ public class ModifyWebLockStatusRequest extends RpcAcsRequest<ModifyWebLockStatu
 		}
 	}
 
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
-		}
-	}
-
 	@Override
-	public Class<ModifyWebLockStatusResponse> getResponseClass() {
-		return ModifyWebLockStatusResponse.class;
+	public Class<ModifyWebLockUnbindResponse> getResponseClass() {
+		return ModifyWebLockUnbindResponse.class;
 	}
 
 }

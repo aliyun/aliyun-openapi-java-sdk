@@ -14,16 +14,18 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.RefreshContainerAssertsResponse;
+import com.aliyuncs.sas.model.v20181203.DescribeHoneyPotAuthResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class RefreshContainerAssertsResponseUnmarshaller {
+public class DescribeHoneyPotAuthResponseUnmarshaller {
 
-	public static RefreshContainerAssertsResponse unmarshall(RefreshContainerAssertsResponse refreshContainerAssertsResponse, UnmarshallerContext _ctx) {
+	public static DescribeHoneyPotAuthResponse unmarshall(DescribeHoneyPotAuthResponse describeHoneyPotAuthResponse, UnmarshallerContext _ctx) {
 		
-		refreshContainerAssertsResponse.setRequestId(_ctx.stringValue("RefreshContainerAssertsResponse.RequestId"));
+		describeHoneyPotAuthResponse.setRequestId(_ctx.stringValue("DescribeHoneyPotAuthResponse.RequestId"));
+		describeHoneyPotAuthResponse.setHoneyPotCount(_ctx.integerValue("DescribeHoneyPotAuthResponse.HoneyPotCount"));
+		describeHoneyPotAuthResponse.setHoneyPotAuthCount(_ctx.longValue("DescribeHoneyPotAuthResponse.HoneyPotAuthCount"));
 	 
-	 	return refreshContainerAssertsResponse;
+	 	return describeHoneyPotAuthResponse;
 	}
 }

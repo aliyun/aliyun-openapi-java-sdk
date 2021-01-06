@@ -99,6 +99,10 @@ public class DescribeWebLockBindListResponse extends AcsResponse {
 
 		private Integer percent;
 
+		private String auditCount;
+
+		private String blockCount;
+
 		public String getUuid() {
 			return this.uuid;
 		}
@@ -185,6 +189,22 @@ public class DescribeWebLockBindListResponse extends AcsResponse {
 
 		public void setPercent(Integer percent) {
 			this.percent = percent;
+		}
+
+		public String getAuditCount() {
+			return this.auditCount;
+		}
+
+		public void setAuditCount(String auditCount) {
+			this.auditCount = auditCount;
+		}
+
+		public String getBlockCount() {
+			return this.blockCount;
+		}
+
+		public void setBlockCount(String blockCount) {
+			this.blockCount = blockCount;
 		}
 	}
 

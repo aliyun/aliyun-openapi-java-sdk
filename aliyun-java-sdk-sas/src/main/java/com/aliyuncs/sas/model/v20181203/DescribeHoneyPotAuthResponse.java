@@ -15,16 +15,20 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.ModifyWebLockStatusResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.DescribeHoneyPotAuthResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyWebLockStatusResponse extends AcsResponse {
+public class DescribeHoneyPotAuthResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Integer honeyPotCount;
+
+	private Long honeyPotAuthCount;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +38,25 @@ public class ModifyWebLockStatusResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getHoneyPotCount() {
+		return this.honeyPotCount;
+	}
+
+	public void setHoneyPotCount(Integer honeyPotCount) {
+		this.honeyPotCount = honeyPotCount;
+	}
+
+	public Long getHoneyPotAuthCount() {
+		return this.honeyPotAuthCount;
+	}
+
+	public void setHoneyPotAuthCount(Long honeyPotAuthCount) {
+		this.honeyPotAuthCount = honeyPotAuthCount;
+	}
+
 	@Override
-	public ModifyWebLockStatusResponse getInstance(UnmarshallerContext context) {
-		return	ModifyWebLockStatusResponseUnmarshaller.unmarshall(this, context);
+	public DescribeHoneyPotAuthResponse getInstance(UnmarshallerContext context) {
+		return	DescribeHoneyPotAuthResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

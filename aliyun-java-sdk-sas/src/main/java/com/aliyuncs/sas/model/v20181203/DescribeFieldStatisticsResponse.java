@@ -70,6 +70,8 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		private Integer testAssetCount;
 
+		private Integer exposedInstanceCount;
+
 		public Integer getRiskInstanceCount() {
 			return this.riskInstanceCount;
 		}
@@ -164,6 +166,14 @@ public class DescribeFieldStatisticsResponse extends AcsResponse {
 
 		public void setTestAssetCount(Integer testAssetCount) {
 			this.testAssetCount = testAssetCount;
+		}
+
+		public Integer getExposedInstanceCount() {
+			return this.exposedInstanceCount;
+		}
+
+		public void setExposedInstanceCount(Integer exposedInstanceCount) {
+			this.exposedInstanceCount = exposedInstanceCount;
 		}
 	}
 

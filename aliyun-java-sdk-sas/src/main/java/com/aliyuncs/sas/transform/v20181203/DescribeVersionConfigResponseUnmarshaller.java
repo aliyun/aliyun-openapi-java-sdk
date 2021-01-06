@@ -44,6 +44,10 @@ public class DescribeVersionConfigResponseUnmarshaller {
 		describeVersionConfigResponse.setSlsCapacity(_ctx.longValue("DescribeVersionConfigResponse.SlsCapacity"));
 		describeVersionConfigResponse.setIsOverBalance(_ctx.booleanValue("DescribeVersionConfigResponse.IsOverBalance"));
 		describeVersionConfigResponse.setLastTrailEndTime(_ctx.longValue("DescribeVersionConfigResponse.LastTrailEndTime"));
+		describeVersionConfigResponse.setHoneypotCapacity(_ctx.longValue("DescribeVersionConfigResponse.HoneypotCapacity"));
+		describeVersionConfigResponse.setImageScanCapacity(_ctx.longValue("DescribeVersionConfigResponse.ImageScanCapacity"));
+		describeVersionConfigResponse.setVmCores(_ctx.integerValue("DescribeVersionConfigResponse.VmCores"));
+		describeVersionConfigResponse.setIsPaidUser(_ctx.booleanValue("DescribeVersionConfigResponse.IsPaidUser"));
 	 
 	 	return describeVersionConfigResponse;
 	}

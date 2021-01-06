@@ -15,14 +15,14 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.RefreshContainerAssertsResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.RefreshContainerAssetsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RefreshContainerAssertsResponse extends AcsResponse {
+public class RefreshContainerAssetsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class RefreshContainerAssertsResponse extends AcsResponse {
 	}
 
 	@Override
-	public RefreshContainerAssertsResponse getInstance(UnmarshallerContext context) {
-		return	RefreshContainerAssertsResponseUnmarshaller.unmarshall(this, context);
+	public RefreshContainerAssetsResponse getInstance(UnmarshallerContext context) {
+		return	RefreshContainerAssetsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
