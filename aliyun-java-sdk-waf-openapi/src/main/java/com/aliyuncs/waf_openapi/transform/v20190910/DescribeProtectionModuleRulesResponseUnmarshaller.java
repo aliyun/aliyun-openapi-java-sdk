@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeProtectionModuleRulesResponse;
 import com.aliyuncs.waf_openapi.model.v20190910.DescribeProtectionModuleRulesResponse.Rule;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,7 +35,7 @@ public class DescribeProtectionModuleRulesResponseUnmarshaller {
 			Rule rule = new Rule();
 			rule.setRuleId(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].RuleId"));
 			rule.setVersion(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Version"));
-			rule.setContent(_ctx.stringValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Content"));
+			rule.setContent(_ctx.mapValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Content"));
 			rule.setTime(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Time"));
 			rule.setStatus(_ctx.longValue("DescribeProtectionModuleRulesResponse.Rules["+ i +"].Status"));
 

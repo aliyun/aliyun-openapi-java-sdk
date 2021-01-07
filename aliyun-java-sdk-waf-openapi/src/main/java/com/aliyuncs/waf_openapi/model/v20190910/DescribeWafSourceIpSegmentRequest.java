@@ -28,8 +28,6 @@ public class DescribeWafSourceIpSegmentRequest extends RpcAcsRequest<DescribeWaf
 	private String resourceGroupId;
 
 	private String instanceId;
-
-	private String region;
 	public DescribeWafSourceIpSegmentRequest() {
 		super("waf-openapi", "2019-09-10", "DescribeWafSourceIpSegment", "waf");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DescribeWafSourceIpSegmentRequest extends RpcAcsRequest<DescribeWaf
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRegion() {
-		return this.region;
-	}
-
-	public void setRegion(String region) {
-		this.region = region;
-		if(region != null){
-			putQueryParameter("Region", region);
 		}
 	}
 

@@ -15,6 +15,7 @@
 package com.aliyuncs.waf_openapi.model.v20190910;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.waf_openapi.transform.v20190910.DescribeProtectionModuleRulesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -61,7 +62,7 @@ public class DescribeProtectionModuleRulesResponse extends AcsResponse {
 
 		private Long version;
 
-		private String content;
+		private Map<Object,Object> content;
 
 		private Long time;
 
@@ -83,11 +84,11 @@ public class DescribeProtectionModuleRulesResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getContent() {
+		public Map<Object,Object> getContent() {
 			return this.content;
 		}
 
-		public void setContent(String content) {
+		public void setContent(Map<Object,Object> content) {
 			this.content = content;
 		}
 
