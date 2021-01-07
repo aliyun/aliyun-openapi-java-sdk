@@ -15,14 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dbs.transform.v20190306.StartTaskResponseUnmarshaller;
+import com.aliyuncs.dbs.transform.v20190306.DescribeDLAServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartTaskResponse extends AcsResponse {
+public class DescribeDLAServiceResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -34,9 +34,11 @@ public class StartTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
+	private String state;
 
-	private String jobTypeName;
+	private Boolean autoAdd;
+
+	private Boolean haveJobFailed;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -78,24 +80,32 @@ public class StartTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setState(String state) {
+		this.state = state;
 	}
 
-	public String getJobTypeName() {
-		return this.jobTypeName;
+	public Boolean getAutoAdd() {
+		return this.autoAdd;
 	}
 
-	public void setJobTypeName(String jobTypeName) {
-		this.jobTypeName = jobTypeName;
+	public void setAutoAdd(Boolean autoAdd) {
+		this.autoAdd = autoAdd;
+	}
+
+	public Boolean getHaveJobFailed() {
+		return this.haveJobFailed;
+	}
+
+	public void setHaveJobFailed(Boolean haveJobFailed) {
+		this.haveJobFailed = haveJobFailed;
 	}
 
 	@Override
-	public StartTaskResponse getInstance(UnmarshallerContext context) {
-		return	StartTaskResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDLAServiceResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDLAServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -22,16 +22,16 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
+public class CloseDLAServiceRequest extends RpcAcsRequest<CloseDLAServiceResponse> {
 	   
 
 	private String clientToken;
 
-	private String ownerId;
+	private String backupPlanId;
 
-	private String taskId;
-	public StartTaskRequest() {
-		super("Dbs", "2019-03-06", "StartTask", "cbs");
+	private String ownerId;
+	public CloseDLAServiceRequest() {
+		super("Dbs", "2019-03-06", "CloseDLAService", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +50,17 @@ public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
 		}
 	}
 
+	public String getBackupPlanId() {
+		return this.backupPlanId;
+	}
+
+	public void setBackupPlanId(String backupPlanId) {
+		this.backupPlanId = backupPlanId;
+		if(backupPlanId != null){
+			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -61,20 +72,9 @@ public class StartTaskRequest extends RpcAcsRequest<StartTaskResponse> {
 		}
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId);
-		}
-	}
-
 	@Override
-	public Class<StartTaskResponse> getResponseClass() {
-		return StartTaskResponse.class;
+	public Class<CloseDLAServiceResponse> getResponseClass() {
+		return CloseDLAServiceResponse.class;
 	}
 
 }
