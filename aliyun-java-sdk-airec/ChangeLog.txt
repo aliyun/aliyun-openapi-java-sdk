@@ -1,3 +1,6 @@
+2021-01-07 Version: 2.0.0
+- Generated 2020-11-26 for `Airec`.
+
 2020-11-19 Version: 1.2.3
 - Generated 2018-10-12 for `Airec`.
 
