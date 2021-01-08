@@ -14,15 +14,16 @@
 
 package com.aliyuncs.linkvisual.model.v20180120;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.BindPictureSearchAppWithDevicesResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.GetPictureInfoWithVectorIdsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BindPictureSearchAppWithDevicesResponse extends AcsResponse {
+public class GetPictureInfoWithVectorIdsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +32,8 @@ public class BindPictureSearchAppWithDevicesResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
+
+	private List<LIst> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,9 +67,50 @@ public class BindPictureSearchAppWithDevicesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public List<LIst> getData() {
+		return this.data;
+	}
+
+	public void setData(List<LIst> data) {
+		this.data = data;
+	}
+
+	public static class LIst {
+
+		private String picUrl;
+
+		private String iotId;
+
+		private String gatewayIotId;
+
+		public String getPicUrl() {
+			return this.picUrl;
+		}
+
+		public void setPicUrl(String picUrl) {
+			this.picUrl = picUrl;
+		}
+
+		public String getIotId() {
+			return this.iotId;
+		}
+
+		public void setIotId(String iotId) {
+			this.iotId = iotId;
+		}
+
+		public String getGatewayIotId() {
+			return this.gatewayIotId;
+		}
+
+		public void setGatewayIotId(String gatewayIotId) {
+			this.gatewayIotId = gatewayIotId;
+		}
+	}
+
 	@Override
-	public BindPictureSearchAppWithDevicesResponse getInstance(UnmarshallerContext context) {
-		return	BindPictureSearchAppWithDevicesResponseUnmarshaller.unmarshall(this, context);
+	public GetPictureInfoWithVectorIdsResponse getInstance(UnmarshallerContext context) {
+		return	GetPictureInfoWithVectorIdsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

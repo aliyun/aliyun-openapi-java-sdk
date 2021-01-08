@@ -15,7 +15,6 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkvisual.Endpoint;
 
@@ -23,14 +22,16 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<UnbindPictureSearchAppWithDevicesResponse> {
+public class QueryPictureSearchAiboxesRequest extends RpcAcsRequest<QueryPictureSearchAiboxesResponse> {
 	   
 
-	private List<String> deviceIotIdss;
+	private Integer pageSize;
+
+	private Integer currentPage;
 
 	private String appInstanceId;
-	public UnbindPictureSearchAppWithDevicesRequest() {
-		super("Linkvisual", "2018-01-20", "UnbindPictureSearchAppWithDevices", "Linkvisual");
+	public QueryPictureSearchAiboxesRequest() {
+		super("Linkvisual", "2018-01-20", "QueryPictureSearchAiboxes", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,17 +39,26 @@ public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<Unbi
 		} catch (Exception e) {}
 	}
 
-	public List<String> getDeviceIotIdss() {
-		return this.deviceIotIdss;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setDeviceIotIdss(List<String> deviceIotIdss) {
-		this.deviceIotIdss = deviceIotIdss;	
-		if (deviceIotIdss != null) {
-			for (int i = 0; i < deviceIotIdss.size(); i++) {
-				putQueryParameter("DeviceIotIds." + (i + 1) , deviceIotIdss.get(i));
-			}
-		}	
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
 	}
 
 	public String getAppInstanceId() {
@@ -63,8 +73,8 @@ public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<Unbi
 	}
 
 	@Override
-	public Class<UnbindPictureSearchAppWithDevicesResponse> getResponseClass() {
-		return UnbindPictureSearchAppWithDevicesResponse.class;
+	public Class<QueryPictureSearchAiboxesResponse> getResponseClass() {
+		return QueryPictureSearchAiboxesResponse.class;
 	}
 
 }

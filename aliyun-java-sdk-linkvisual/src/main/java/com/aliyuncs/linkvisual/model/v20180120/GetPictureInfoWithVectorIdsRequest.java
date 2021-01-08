@@ -23,14 +23,12 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<UnbindPictureSearchAppWithDevicesResponse> {
+public class GetPictureInfoWithVectorIdsRequest extends RpcAcsRequest<GetPictureInfoWithVectorIdsResponse> {
 	   
 
-	private List<String> deviceIotIdss;
-
-	private String appInstanceId;
-	public UnbindPictureSearchAppWithDevicesRequest() {
-		super("Linkvisual", "2018-01-20", "UnbindPictureSearchAppWithDevices", "Linkvisual");
+	private List<String> vectorIdLists;
+	public GetPictureInfoWithVectorIdsRequest() {
+		super("Linkvisual", "2018-01-20", "GetPictureInfoWithVectorIds", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,33 +36,22 @@ public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<Unbi
 		} catch (Exception e) {}
 	}
 
-	public List<String> getDeviceIotIdss() {
-		return this.deviceIotIdss;
+	public List<String> getVectorIdLists() {
+		return this.vectorIdLists;
 	}
 
-	public void setDeviceIotIdss(List<String> deviceIotIdss) {
-		this.deviceIotIdss = deviceIotIdss;	
-		if (deviceIotIdss != null) {
-			for (int i = 0; i < deviceIotIdss.size(); i++) {
-				putQueryParameter("DeviceIotIds." + (i + 1) , deviceIotIdss.get(i));
+	public void setVectorIdLists(List<String> vectorIdLists) {
+		this.vectorIdLists = vectorIdLists;	
+		if (vectorIdLists != null) {
+			for (int i = 0; i < vectorIdLists.size(); i++) {
+				putQueryParameter("VectorIdList." + (i + 1) , vectorIdLists.get(i));
 			}
 		}	
 	}
 
-	public String getAppInstanceId() {
-		return this.appInstanceId;
-	}
-
-	public void setAppInstanceId(String appInstanceId) {
-		this.appInstanceId = appInstanceId;
-		if(appInstanceId != null){
-			putQueryParameter("AppInstanceId", appInstanceId);
-		}
-	}
-
 	@Override
-	public Class<UnbindPictureSearchAppWithDevicesResponse> getResponseClass() {
-		return UnbindPictureSearchAppWithDevicesResponse.class;
+	public Class<GetPictureInfoWithVectorIdsResponse> getResponseClass() {
+		return GetPictureInfoWithVectorIdsResponse.class;
 	}
 
 }

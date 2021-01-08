@@ -15,6 +15,7 @@
 package com.aliyuncs.linkvisual.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.linkvisual.Endpoint;
 
@@ -25,7 +26,7 @@ import com.aliyuncs.linkvisual.Endpoint;
 public class BindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<BindPictureSearchAppWithDevicesResponse> {
 	   
 
-	private String deviceIotIds;
+	private List<String> deviceIotIdss;
 
 	private String appInstanceId;
 	public BindPictureSearchAppWithDevicesRequest() {
@@ -37,15 +38,17 @@ public class BindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<BindPi
 		} catch (Exception e) {}
 	}
 
-	public String getDeviceIotIds() {
-		return this.deviceIotIds;
+	public List<String> getDeviceIotIdss() {
+		return this.deviceIotIdss;
 	}
 
-	public void setDeviceIotIds(String deviceIotIds) {
-		this.deviceIotIds = deviceIotIds;
-		if(deviceIotIds != null){
-			putQueryParameter("DeviceIotIds", deviceIotIds);
-		}
+	public void setDeviceIotIdss(List<String> deviceIotIdss) {
+		this.deviceIotIdss = deviceIotIdss;	
+		if (deviceIotIdss != null) {
+			for (int i = 0; i < deviceIotIdss.size(); i++) {
+				putQueryParameter("DeviceIotIds." + (i + 1) , deviceIotIdss.get(i));
+			}
+		}	
 	}
 
 	public String getAppInstanceId() {

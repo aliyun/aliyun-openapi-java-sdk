@@ -68,4 +68,9 @@ public class UnbindPictureSearchAppWithDevicesResponse extends AcsResponse {
 	public UnbindPictureSearchAppWithDevicesResponse getInstance(UnmarshallerContext context) {
 		return	UnbindPictureSearchAppWithDevicesResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

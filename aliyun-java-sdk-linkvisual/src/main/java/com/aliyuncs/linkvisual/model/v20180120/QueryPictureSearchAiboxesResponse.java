@@ -16,14 +16,14 @@ package com.aliyuncs.linkvisual.model.v20180120;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.linkvisual.transform.v20180120.PictureSearchPictureResponseUnmarshaller;
+import com.aliyuncs.linkvisual.transform.v20180120.QueryPictureSearchAiboxesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PictureSearchPictureResponse extends AcsResponse {
+public class QueryPictureSearchAiboxesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -129,49 +129,9 @@ public class PictureSearchPictureResponse extends AcsResponse {
 
 		public static class SearchData {
 
-			private String vectorId;
-
-			private Long eventTime;
-
-			private Float threshold;
-
-			private String picUrl;
-
 			private String iotId;
 
-			private String gatewayIotId;
-
-			public String getVectorId() {
-				return this.vectorId;
-			}
-
-			public void setVectorId(String vectorId) {
-				this.vectorId = vectorId;
-			}
-
-			public Long getEventTime() {
-				return this.eventTime;
-			}
-
-			public void setEventTime(Long eventTime) {
-				this.eventTime = eventTime;
-			}
-
-			public Float getThreshold() {
-				return this.threshold;
-			}
-
-			public void setThreshold(Float threshold) {
-				this.threshold = threshold;
-			}
-
-			public String getPicUrl() {
-				return this.picUrl;
-			}
-
-			public void setPicUrl(String picUrl) {
-				this.picUrl = picUrl;
-			}
+			private String nickName;
 
 			public String getIotId() {
 				return this.iotId;
@@ -181,19 +141,19 @@ public class PictureSearchPictureResponse extends AcsResponse {
 				this.iotId = iotId;
 			}
 
-			public String getGatewayIotId() {
-				return this.gatewayIotId;
+			public String getNickName() {
+				return this.nickName;
 			}
 
-			public void setGatewayIotId(String gatewayIotId) {
-				this.gatewayIotId = gatewayIotId;
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
 			}
 		}
 	}
 
 	@Override
-	public PictureSearchPictureResponse getInstance(UnmarshallerContext context) {
-		return	PictureSearchPictureResponseUnmarshaller.unmarshall(this, context);
+	public QueryPictureSearchAiboxesResponse getInstance(UnmarshallerContext context) {
+		return	QueryPictureSearchAiboxesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

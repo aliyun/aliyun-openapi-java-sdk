@@ -78,4 +78,9 @@ public class CreatePictureSearchAppResponse extends AcsResponse {
 	public CreatePictureSearchAppResponse getInstance(UnmarshallerContext context) {
 		return	CreatePictureSearchAppResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }
