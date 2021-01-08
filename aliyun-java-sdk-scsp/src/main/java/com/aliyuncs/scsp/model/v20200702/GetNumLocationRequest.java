@@ -31,7 +31,7 @@ public class GetNumLocationRequest extends RpcAcsRequest<GetNumLocationResponse>
 
 	private String phoneNum;
 	public GetNumLocationRequest() {
-		super("scsp", "2020-07-02", "GetNumLocation");
+		super("scsp", "2020-07-02", "GetNumLocation", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

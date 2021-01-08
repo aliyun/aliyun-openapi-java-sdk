@@ -32,7 +32,7 @@ public class QueryTicketActionsRequest extends RpcAcsRequest<QueryTicketActionsR
 
 	private List<Integer> actionCodeLists;
 	public QueryTicketActionsRequest() {
-		super("scsp", "2020-07-02", "QueryTicketActions");
+		super("scsp", "2020-07-02", "QueryTicketActions", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

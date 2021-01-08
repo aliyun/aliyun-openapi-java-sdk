@@ -39,7 +39,7 @@ public class GetOuterCallCenterDataListRequest extends RpcAcsRequest<GetOuterCal
 
 	private String fromPhoneNum;
 	public GetOuterCallCenterDataListRequest() {
-		super("scsp", "2020-07-02", "GetOuterCallCenterDataList");
+		super("scsp", "2020-07-02", "GetOuterCallCenterDataList", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

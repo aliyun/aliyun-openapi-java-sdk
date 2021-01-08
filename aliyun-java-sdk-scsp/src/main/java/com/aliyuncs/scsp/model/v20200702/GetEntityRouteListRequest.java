@@ -30,8 +30,12 @@ public class GetEntityRouteListRequest extends RpcAcsRequest<GetEntityRouteListR
 	private Integer pageNo;
 
 	private Integer pageSize;
+
+	private String entityName;
+
+	private String entityRelationNumber;
 	public GetEntityRouteListRequest() {
-		super("scsp", "2020-07-02", "GetEntityRouteList");
+		super("scsp", "2020-07-02", "GetEntityRouteList", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +73,28 @@ public class GetEntityRouteListRequest extends RpcAcsRequest<GetEntityRouteListR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getEntityName() {
+		return this.entityName;
+	}
+
+	public void setEntityName(String entityName) {
+		this.entityName = entityName;
+		if(entityName != null){
+			putBodyParameter("EntityName", entityName);
+		}
+	}
+
+	public String getEntityRelationNumber() {
+		return this.entityRelationNumber;
+	}
+
+	public void setEntityRelationNumber(String entityRelationNumber) {
+		this.entityRelationNumber = entityRelationNumber;
+		if(entityRelationNumber != null){
+			putBodyParameter("EntityRelationNumber", entityRelationNumber);
 		}
 	}
 

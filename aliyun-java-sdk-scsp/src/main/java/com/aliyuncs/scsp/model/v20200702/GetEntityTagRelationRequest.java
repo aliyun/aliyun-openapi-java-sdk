@@ -22,32 +22,21 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTemplateSchemaResponse> {
+public class GetEntityTagRelationRequest extends RpcAcsRequest<GetEntityTagRelationResponse> {
 	   
-
-	private String clientToken;
 
 	private String instanceId;
 
-	private Long templateId;
-	public GetTicketTemplateSchemaRequest() {
-		super("scsp", "2020-07-02", "GetTicketTemplateSchema", "scsp");
-		setMethod(MethodType.GET);
+	private String entityType;
+
+	private String entityId;
+	public GetEntityTagRelationRequest() {
+		super("scsp", "2020-07-02", "GetEntityTagRelation", "scsp");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getInstanceId() {
@@ -57,24 +46,35 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getTemplateId() {
-		return this.templateId;
+	public String getEntityType() {
+		return this.entityType;
 	}
 
-	public void setTemplateId(Long templateId) {
-		this.templateId = templateId;
-		if(templateId != null){
-			putQueryParameter("TemplateId", templateId.toString());
+	public void setEntityType(String entityType) {
+		this.entityType = entityType;
+		if(entityType != null){
+			putBodyParameter("EntityType", entityType);
+		}
+	}
+
+	public String getEntityId() {
+		return this.entityId;
+	}
+
+	public void setEntityId(String entityId) {
+		this.entityId = entityId;
+		if(entityId != null){
+			putBodyParameter("EntityId", entityId);
 		}
 	}
 
 	@Override
-	public Class<GetTicketTemplateSchemaResponse> getResponseClass() {
-		return GetTicketTemplateSchemaResponse.class;
+	public Class<GetEntityTagRelationResponse> getResponseClass() {
+		return GetEntityTagRelationResponse.class;
 	}
 
 }
