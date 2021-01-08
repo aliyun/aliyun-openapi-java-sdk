@@ -35,7 +35,7 @@ public class AssignTicketRequest extends RpcAcsRequest<AssignTicketResponse> {
 
 	private Long acceptorId;
 	public AssignTicketRequest() {
-		super("scsp", "2020-07-02", "AssignTicket", "scsp");
+		super("scsp", "2020-07-02", "AssignTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

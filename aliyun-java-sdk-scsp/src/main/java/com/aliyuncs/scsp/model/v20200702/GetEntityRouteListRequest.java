@@ -31,7 +31,7 @@ public class GetEntityRouteListRequest extends RpcAcsRequest<GetEntityRouteListR
 
 	private Integer pageSize;
 	public GetEntityRouteListRequest() {
-		super("scsp", "2020-07-02", "GetEntityRouteList", "scsp");
+		super("scsp", "2020-07-02", "GetEntityRouteList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

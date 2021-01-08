@@ -1,3 +1,6 @@
+2021-01-08 Version: 1.2.1
+- Add getAutoInfo.
+
 2021-01-05 Version: 1.2.0
 - Generated 2020-07-02 for `scsp`.
 

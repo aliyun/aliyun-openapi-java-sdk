@@ -22,32 +22,21 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
+public class GetAuthInfoRequest extends RpcAcsRequest<GetAuthInfoResponse> {
 	   
-
-	private String clientToken;
 
 	private String instanceId;
 
-	private Long roleId;
-	public DisableRoleRequest() {
-		super("scsp", "2020-07-02", "DisableRole");
+	private String foreignId;
+
+	private String appKey;
+	public GetAuthInfoRequest() {
+		super("scsp", "2020-07-02", "GetAuthInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getInstanceId() {
@@ -57,24 +46,35 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public String getForeignId() {
+		return this.foreignId;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putBodyParameter("RoleId", roleId.toString());
+	public void setForeignId(String foreignId) {
+		this.foreignId = foreignId;
+		if(foreignId != null){
+			putQueryParameter("ForeignId", foreignId);
+		}
+	}
+
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
 		}
 	}
 
 	@Override
-	public Class<DisableRoleResponse> getResponseClass() {
-		return DisableRoleResponse.class;
+	public Class<GetAuthInfoResponse> getResponseClass() {
+		return GetAuthInfoResponse.class;
 	}
 
 }

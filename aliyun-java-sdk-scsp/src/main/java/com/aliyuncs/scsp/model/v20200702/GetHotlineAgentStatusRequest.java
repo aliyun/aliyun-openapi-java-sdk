@@ -29,7 +29,7 @@ public class GetHotlineAgentStatusRequest extends RpcAcsRequest<GetHotlineAgentS
 
 	private String accountName;
 	public GetHotlineAgentStatusRequest() {
-		super("scsp", "2020-07-02", "GetHotlineAgentStatus", "scsp");
+		super("scsp", "2020-07-02", "GetHotlineAgentStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
