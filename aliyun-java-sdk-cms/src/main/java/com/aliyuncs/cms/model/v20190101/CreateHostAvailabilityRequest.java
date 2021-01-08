@@ -55,6 +55,8 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 
 	private String taskScope;
 
+	private String taskOptionHttpPostContent;
+
 	private Integer alertConfigStartTime;
 
 	private String alertConfigWebHook;
@@ -233,6 +235,17 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 		this.taskScope = taskScope;
 		if(taskScope != null){
 			putQueryParameter("TaskScope", taskScope);
+		}
+	}
+
+	public String getTaskOptionHttpPostContent() {
+		return this.taskOptionHttpPostContent;
+	}
+
+	public void setTaskOptionHttpPostContent(String taskOptionHttpPostContent) {
+		this.taskOptionHttpPostContent = taskOptionHttpPostContent;
+		if(taskOptionHttpPostContent != null){
+			putQueryParameter("TaskOption.HttpPostContent", taskOptionHttpPostContent);
 		}
 	}
 

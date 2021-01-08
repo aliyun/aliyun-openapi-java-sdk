@@ -1,3 +1,7 @@
+2021-01-08 Version: 7.0.19
+- Add API related to resource quota of source monitoring.
+- Add a new version of alert log API.
+
 2020-11-13 Version: 7.0.18
 - Fix the paging type parameter of DescribeMetricRuleList API.
 

@@ -32,7 +32,6 @@ public class CreateSiteMonitorResponseUnmarshaller {
 		createSiteMonitorResponse.setCode(_ctx.stringValue("CreateSiteMonitorResponse.Code"));
 		createSiteMonitorResponse.setMessage(_ctx.stringValue("CreateSiteMonitorResponse.Message"));
 		createSiteMonitorResponse.setSuccess(_ctx.stringValue("CreateSiteMonitorResponse.Success"));
-		createSiteMonitorResponse.setAlertRule(_ctx.stringValue("CreateSiteMonitorResponse.AlertRule"));
 
 		Data data = new Data();
 

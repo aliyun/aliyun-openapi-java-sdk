@@ -77,21 +77,11 @@ public class DescribeMonitorGroupDynamicRulesResponse extends AcsResponse {
 
 	public static class ResourceItem {
 
-		private Long groupId;
-
 		private String category;
 
 		private String filterRelation;
 
 		private List<Filter> filters;
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
-		}
 
 		public String getCategory() {
 			return this.category;

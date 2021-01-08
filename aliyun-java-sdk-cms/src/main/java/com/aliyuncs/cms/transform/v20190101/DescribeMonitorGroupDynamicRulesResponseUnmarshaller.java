@@ -35,7 +35,6 @@ public class DescribeMonitorGroupDynamicRulesResponseUnmarshaller {
 		List<ResourceItem> resource = new ArrayList<ResourceItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMonitorGroupDynamicRulesResponse.Resource.Length"); i++) {
 			ResourceItem resourceItem = new ResourceItem();
-			resourceItem.setGroupId(_ctx.longValue("DescribeMonitorGroupDynamicRulesResponse.Resource["+ i +"].GroupId"));
 			resourceItem.setCategory(_ctx.stringValue("DescribeMonitorGroupDynamicRulesResponse.Resource["+ i +"].Category"));
 			resourceItem.setFilterRelation(_ctx.stringValue("DescribeMonitorGroupDynamicRulesResponse.Resource["+ i +"].FilterRelation"));
 

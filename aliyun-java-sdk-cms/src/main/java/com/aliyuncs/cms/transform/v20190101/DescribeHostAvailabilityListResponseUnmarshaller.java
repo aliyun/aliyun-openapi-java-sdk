@@ -56,6 +56,7 @@ public class DescribeHostAvailabilityListResponseUnmarshaller {
 			taskOption.setHttpURI(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpURI"));
 			taskOption.setTelnetOrPingHost(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.TelnetOrPingHost"));
 			taskOption.setHttpResponseCharset(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpResponseCharset"));
+			taskOption.setHttpPostContent(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpPostContent"));
 			taskOption.setHttpKeyword(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpKeyword"));
 			taskOption.setHttpMethod(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpMethod"));
 			taskOption.setHttpNegative(_ctx.booleanValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpNegative"));

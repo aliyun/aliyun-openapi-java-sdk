@@ -95,6 +95,10 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		private String resource;
 
+		private String metricName;
+
+		private String namespace;
+
 		private String enable;
 
 		private String lastAlertTime;
@@ -106,6 +110,8 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 		private String metricValues;
 
 		private String retryTimes;
+
+		private String statistics;
 
 		private String threshold;
 
@@ -139,6 +145,22 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		public void setResource(String resource) {
 			this.resource = resource;
+		}
+
+		public String getMetricName() {
+			return this.metricName;
+		}
+
+		public void setMetricName(String metricName) {
+			this.metricName = metricName;
+		}
+
+		public String getNamespace() {
+			return this.namespace;
+		}
+
+		public void setNamespace(String namespace) {
+			this.namespace = namespace;
 		}
 
 		public String getEnable() {
@@ -187,6 +209,14 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		public void setRetryTimes(String retryTimes) {
 			this.retryTimes = retryTimes;
+		}
+
+		public String getStatistics() {
+			return this.statistics;
+		}
+
+		public void setStatistics(String statistics) {
+			this.statistics = statistics;
 		}
 
 		public String getThreshold() {

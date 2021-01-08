@@ -33,8 +33,6 @@ public class CreateSiteMonitorResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String alertRule;
-
 	private List<CreateResultListItem> createResultList;
 
 	private Data data;
@@ -69,14 +67,6 @@ public class CreateSiteMonitorResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getAlertRule() {
-		return this.alertRule;
-	}
-
-	public void setAlertRule(String alertRule) {
-		this.alertRule = alertRule;
 	}
 
 	public List<CreateResultListItem> getCreateResultList() {

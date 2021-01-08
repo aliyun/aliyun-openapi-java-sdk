@@ -39,12 +39,15 @@ public class DescribeAlertingMetricRuleResourcesResponseUnmarshaller {
 			resource.setRuleName(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].RuleName"));
 			resource.setGroupId(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].GroupId"));
 			resource.setResource(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Resource"));
+			resource.setMetricName(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].MetricName"));
+			resource.setNamespace(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Namespace"));
 			resource.setEnable(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Enable"));
 			resource.setLastAlertTime(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].LastAlertTime"));
 			resource.setLastModifyTime(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].LastModifyTime"));
 			resource.setStartTime(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].StartTime"));
 			resource.setMetricValues(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].MetricValues"));
 			resource.setRetryTimes(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].RetryTimes"));
+			resource.setStatistics(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Statistics"));
 			resource.setThreshold(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Threshold"));
 
 			resources.add(resource);

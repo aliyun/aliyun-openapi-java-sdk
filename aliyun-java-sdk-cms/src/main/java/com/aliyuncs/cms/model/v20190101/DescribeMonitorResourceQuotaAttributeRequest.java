@@ -21,29 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DescribeFolderListRequest extends RpcAcsRequest<DescribeFolderListResponse> {
+public class DescribeMonitorResourceQuotaAttributeRequest extends RpcAcsRequest<DescribeMonitorResourceQuotaAttributeResponse> {
 	   
 
-	private String appName;
-	public DescribeFolderListRequest() {
-		super("Cms", "2019-01-01", "DescribeFolderList", "cms");
-		setMethod(MethodType.GET);
+	private Boolean showUsed;
+	public DescribeMonitorResourceQuotaAttributeRequest() {
+		super("Cms", "2019-01-01", "DescribeMonitorResourceQuotaAttribute", "cms");
+		setMethod(MethodType.POST);
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public Boolean getShowUsed() {
+		return this.showUsed;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setShowUsed(Boolean showUsed) {
+		this.showUsed = showUsed;
+		if(showUsed != null){
+			putQueryParameter("ShowUsed", showUsed.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeFolderListResponse> getResponseClass() {
-		return DescribeFolderListResponse.class;
+	public Class<DescribeMonitorResourceQuotaAttributeResponse> getResponseClass() {
+		return DescribeMonitorResourceQuotaAttributeResponse.class;
 	}
 
 }

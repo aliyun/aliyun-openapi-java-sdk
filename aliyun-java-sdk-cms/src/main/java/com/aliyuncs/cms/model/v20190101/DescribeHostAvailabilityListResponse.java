@@ -195,6 +195,8 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			private String httpResponseCharset;
 
+			private String httpPostContent;
+
 			private String httpKeyword;
 
 			private String httpMethod;
@@ -223,6 +225,14 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			public void setHttpResponseCharset(String httpResponseCharset) {
 				this.httpResponseCharset = httpResponseCharset;
+			}
+
+			public String getHttpPostContent() {
+				return this.httpPostContent;
+			}
+
+			public void setHttpPostContent(String httpPostContent) {
+				this.httpPostContent = httpPostContent;
 			}
 
 			public String getHttpKeyword() {
