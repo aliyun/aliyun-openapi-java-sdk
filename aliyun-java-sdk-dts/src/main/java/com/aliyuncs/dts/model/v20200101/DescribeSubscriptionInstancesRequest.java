@@ -15,6 +15,7 @@
 package com.aliyuncs.dts.model.v20200101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dts.Endpoint;
 
@@ -36,6 +37,8 @@ public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<Describe
 	private Integer pageSize;
 
 	private String subscriptionInstanceName;
+
+	private List<Tag> tags;
 	public DescribeSubscriptionInstancesRequest() {
 		super("Dts", "2020-01-01", "DescribeSubscriptionInstances", "dts");
 		setMethod(MethodType.POST);
@@ -108,6 +111,43 @@ public class DescribeSubscriptionInstancesRequest extends RpcAcsRequest<Describe
 		this.subscriptionInstanceName = subscriptionInstanceName;
 		if(subscriptionInstanceName != null){
 			putQueryParameter("SubscriptionInstanceName", subscriptionInstanceName);
+		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
+	public static class Tag {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

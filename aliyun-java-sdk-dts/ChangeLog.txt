@@ -1,3 +1,6 @@
+2021-01-11 Version: 5.0.7
+- Add DescribeConnectionStatus and DescribeDTSIP, remove UpgradeTwoWay.
+
 2020-12-07 Version: 5.0.98.19.6
 - Remove DescribeSubscriptionObjectModifyStatus.
 

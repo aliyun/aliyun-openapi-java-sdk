@@ -23,6 +23,7 @@ import com.aliyuncs.dts.model.v20200101.DescribeSubscriptionInstancesResponse.Su
 import com.aliyuncs.dts.model.v20200101.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SubscriptionDataType;
 import com.aliyuncs.dts.model.v20200101.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SubscriptionHost;
 import com.aliyuncs.dts.model.v20200101.DescribeSubscriptionInstancesResponse.SubscriptionInstance.SynchronousObject;
+import com.aliyuncs.dts.model.v20200101.DescribeSubscriptionInstancesResponse.SubscriptionInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,12 +32,12 @@ public class DescribeSubscriptionInstancesResponseUnmarshaller {
 	public static DescribeSubscriptionInstancesResponse unmarshall(DescribeSubscriptionInstancesResponse describeSubscriptionInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeSubscriptionInstancesResponse.setRequestId(_ctx.stringValue("DescribeSubscriptionInstancesResponse.RequestId"));
-		describeSubscriptionInstancesResponse.setPageNumber(_ctx.integerValue("DescribeSubscriptionInstancesResponse.PageNumber"));
-		describeSubscriptionInstancesResponse.setPageRecordCount(_ctx.integerValue("DescribeSubscriptionInstancesResponse.PageRecordCount"));
-		describeSubscriptionInstancesResponse.setTotalRecordCount(_ctx.longValue("DescribeSubscriptionInstancesResponse.TotalRecordCount"));
 		describeSubscriptionInstancesResponse.setErrCode(_ctx.stringValue("DescribeSubscriptionInstancesResponse.ErrCode"));
 		describeSubscriptionInstancesResponse.setErrMessage(_ctx.stringValue("DescribeSubscriptionInstancesResponse.ErrMessage"));
+		describeSubscriptionInstancesResponse.setPageNumber(_ctx.integerValue("DescribeSubscriptionInstancesResponse.PageNumber"));
+		describeSubscriptionInstancesResponse.setPageRecordCount(_ctx.integerValue("DescribeSubscriptionInstancesResponse.PageRecordCount"));
 		describeSubscriptionInstancesResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionInstancesResponse.Success"));
+		describeSubscriptionInstancesResponse.setTotalRecordCount(_ctx.longValue("DescribeSubscriptionInstancesResponse.TotalRecordCount"));
 
 		List<SubscriptionInstance> subscriptionInstances = new ArrayList<SubscriptionInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances.Length"); i++) {
@@ -83,6 +84,16 @@ public class DescribeSubscriptionInstancesResponseUnmarshaller {
 				subscriptionObject.add(synchronousObject);
 			}
 			subscriptionInstance.setSubscriptionObject(subscriptionObject);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeSubscriptionInstancesResponse.SubscriptionInstances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			subscriptionInstance.setTags(tags);
 
 			subscriptionInstances.add(subscriptionInstance);
 		}

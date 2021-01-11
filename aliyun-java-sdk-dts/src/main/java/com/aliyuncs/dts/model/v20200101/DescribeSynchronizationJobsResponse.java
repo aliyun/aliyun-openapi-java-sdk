@@ -101,6 +101,8 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		private String synchronizationJobName;
 
+		private List<Tag> tags;
+
 		private List<SynchronizationObject> synchronizationObjects;
 
 		private DataInitializationStatus dataInitializationStatus;
@@ -213,6 +215,14 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 			this.synchronizationJobName = synchronizationJobName;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<SynchronizationObject> getSynchronizationObjects() {
 			return this.synchronizationObjects;
 		}
@@ -275,6 +285,29 @@ public class DescribeSynchronizationJobsResponse extends AcsResponse {
 
 		public void setStructureInitializationStatus(StructureInitializationStatus structureInitializationStatus) {
 			this.structureInitializationStatus = structureInitializationStatus;
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
 		}
 
 		public static class SynchronizationObject {

@@ -30,6 +30,7 @@ import com.aliyuncs.dts.model.v20200101.DescribeSynchronizationJobsResponse.Sync
 import com.aliyuncs.dts.model.v20200101.DescribeSynchronizationJobsResponse.SynchronizationInstance.SynchronizationObject;
 import com.aliyuncs.dts.model.v20200101.DescribeSynchronizationJobsResponse.SynchronizationInstance.SynchronizationObject.TableExclude;
 import com.aliyuncs.dts.model.v20200101.DescribeSynchronizationJobsResponse.SynchronizationInstance.SynchronizationObject.TableInclude;
+import com.aliyuncs.dts.model.v20200101.DescribeSynchronizationJobsResponse.SynchronizationInstance.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -118,6 +119,16 @@ public class DescribeSynchronizationJobsResponseUnmarshaller {
 			structureInitializationStatus.setProgress(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Progress"));
 			structureInitializationStatus.setStatus(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].StructureInitializationStatus.Status"));
 			synchronizationInstance.setStructureInitializationStatus(structureInitializationStatus);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			synchronizationInstance.setTags(tags);
 
 			List<SynchronizationObject> synchronizationObjects = new ArrayList<SynchronizationObject>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSynchronizationJobsResponse.SynchronizationInstances["+ i +"].SynchronizationObjects.Length"); j++) {

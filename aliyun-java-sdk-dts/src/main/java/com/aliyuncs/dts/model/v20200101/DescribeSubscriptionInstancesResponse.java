@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
+	private String errCode;
+
+	private String errMessage;
+
 	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
 	private String requestId;
 
-	private Long totalRecordCount;
-
-	private String errCode;
-
-	private String errMessage;
-
 	private String success;
 
+	private Long totalRecordCount;
+
 	private List<SubscriptionInstance> subscriptionInstances;
+
+	public String getErrCode() {
+		return this.errCode;
+	}
+
+	public void setErrCode(String errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrMessage() {
+		return this.errMessage;
+	}
+
+	public void setErrMessage(String errMessage) {
+		this.errMessage = errMessage;
+	}
 
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -65,36 +81,20 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTotalRecordCount() {
-		return this.totalRecordCount;
-	}
-
-	public void setTotalRecordCount(Long totalRecordCount) {
-		this.totalRecordCount = totalRecordCount;
-	}
-
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public Long getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Long totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<SubscriptionInstance> getSubscriptionInstances() {
@@ -128,6 +128,8 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 		private String subscriptionInstanceName;
 
 		private List<SynchronousObject> subscriptionObject;
+
+		private List<Tag> tags;
 
 		private SourceEndpoint sourceEndpoint;
 
@@ -223,6 +225,14 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 			this.subscriptionObject = subscriptionObject;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public SourceEndpoint getSourceEndpoint() {
 			return this.sourceEndpoint;
 		}
@@ -277,6 +287,29 @@ public class DescribeSubscriptionInstancesResponse extends AcsResponse {
 
 			public void setTableList(List<String> tableList) {
 				this.tableList = tableList;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 

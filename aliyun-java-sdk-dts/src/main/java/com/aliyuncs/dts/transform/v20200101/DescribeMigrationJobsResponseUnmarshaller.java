@@ -27,6 +27,7 @@ import com.aliyuncs.dts.model.v20200101.DescribeMigrationJobsResponse.MigrationJ
 import com.aliyuncs.dts.model.v20200101.DescribeMigrationJobsResponse.MigrationJob.SourceEndpoint;
 import com.aliyuncs.dts.model.v20200101.DescribeMigrationJobsResponse.MigrationJob.StructureInitialization;
 import com.aliyuncs.dts.model.v20200101.DescribeMigrationJobsResponse.MigrationJob.SynchronousObject;
+import com.aliyuncs.dts.model.v20200101.DescribeMigrationJobsResponse.MigrationJob.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,12 +36,12 @@ public class DescribeMigrationJobsResponseUnmarshaller {
 	public static DescribeMigrationJobsResponse unmarshall(DescribeMigrationJobsResponse describeMigrationJobsResponse, UnmarshallerContext _ctx) {
 		
 		describeMigrationJobsResponse.setRequestId(_ctx.stringValue("DescribeMigrationJobsResponse.RequestId"));
-		describeMigrationJobsResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobsResponse.PageNumber"));
-		describeMigrationJobsResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrationJobsResponse.PageRecordCount"));
-		describeMigrationJobsResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobsResponse.TotalRecordCount"));
 		describeMigrationJobsResponse.setErrCode(_ctx.stringValue("DescribeMigrationJobsResponse.ErrCode"));
 		describeMigrationJobsResponse.setErrMessage(_ctx.stringValue("DescribeMigrationJobsResponse.ErrMessage"));
+		describeMigrationJobsResponse.setPageNumber(_ctx.integerValue("DescribeMigrationJobsResponse.PageNumber"));
+		describeMigrationJobsResponse.setPageRecordCount(_ctx.integerValue("DescribeMigrationJobsResponse.PageRecordCount"));
 		describeMigrationJobsResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobsResponse.Success"));
+		describeMigrationJobsResponse.setTotalRecordCount(_ctx.longValue("DescribeMigrationJobsResponse.TotalRecordCount"));
 
 		List<MigrationJob> migrationJobs = new ArrayList<MigrationJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeMigrationJobsResponse.MigrationJobs.Length"); i++) {
@@ -120,6 +121,16 @@ public class DescribeMigrationJobsResponseUnmarshaller {
 				migrationObject.add(synchronousObject);
 			}
 			migrationJob.setMigrationObject(migrationObject);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			migrationJob.setTags(tags);
 
 			migrationJobs.add(migrationJob);
 		}
