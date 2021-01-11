@@ -88,19 +88,19 @@ public class LogUtils {
     }
 
     public static String utcNow() {
-        TimeZone tz = TimeZone.getTimeZone("UTC");
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss:SSS'Z'");
-        df.setTimeZone(tz);
-        return df.format(new Date());
+        return formatLocaleNow(TimeZone.getTimeZone("UTC"));
     }
 
     public static String localeNow() {
-        TimeZone tz = TimeZone.getDefault();
+        return formatLocaleNow(TimeZone.getDefault());
+    }
+
+    private static String formatLocaleNow(TimeZone tz) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss:SSS'Z'");
         df.setTimeZone(tz);
         return df.format(new Date());
     }
-
+    
     public static long getCurrentPID() {
         String processName =
                 java.lang.management.ManagementFactory.getRuntimeMXBean().getName();
