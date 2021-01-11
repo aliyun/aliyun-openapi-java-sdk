@@ -29,6 +29,8 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 
 	private String sourceDBName;
 
+	private String clientToken;
+
 	private String targetDBName;
 
 	private String targetIp;
@@ -80,6 +82,17 @@ public class CreateDBLinkRequest extends RpcAcsRequest<CreateDBLinkResponse> {
 		this.sourceDBName = sourceDBName;
 		if(sourceDBName != null){
 			putQueryParameter("SourceDBName", sourceDBName);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

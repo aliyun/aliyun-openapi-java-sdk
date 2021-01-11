@@ -22,14 +22,10 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDBClusterMinorVersionResponse> {
+public class DescribeScheduleTasksRequest extends RpcAcsRequest<DescribeScheduleTasksResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String plannedEndTime;
-
-	private String switchTimeMode;
 
 	private String resourceOwnerAccount;
 
@@ -39,11 +35,9 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 
 	private Long ownerId;
 
-	private String plannedStartTime;
-
-	private Boolean fromTimeService;
-	public UpgradeDBClusterMinorVersionRequest() {
-		super("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "polardb");
+	private String status;
+	public DescribeScheduleTasksRequest() {
+		super("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,28 +53,6 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getPlannedEndTime() {
-		return this.plannedEndTime;
-	}
-
-	public void setPlannedEndTime(String plannedEndTime) {
-		this.plannedEndTime = plannedEndTime;
-		if(plannedEndTime != null){
-			putQueryParameter("PlannedEndTime", plannedEndTime);
-		}
-	}
-
-	public String getSwitchTimeMode() {
-		return this.switchTimeMode;
-	}
-
-	public void setSwitchTimeMode(String switchTimeMode) {
-		this.switchTimeMode = switchTimeMode;
-		if(switchTimeMode != null){
-			putQueryParameter("SwitchTimeMode", switchTimeMode);
 		}
 	}
 
@@ -128,31 +100,20 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 		}
 	}
 
-	public String getPlannedStartTime() {
-		return this.plannedStartTime;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setPlannedStartTime(String plannedStartTime) {
-		this.plannedStartTime = plannedStartTime;
-		if(plannedStartTime != null){
-			putQueryParameter("PlannedStartTime", plannedStartTime);
-		}
-	}
-
-	public Boolean getFromTimeService() {
-		return this.fromTimeService;
-	}
-
-	public void setFromTimeService(Boolean fromTimeService) {
-		this.fromTimeService = fromTimeService;
-		if(fromTimeService != null){
-			putQueryParameter("FromTimeService", fromTimeService.toString());
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<UpgradeDBClusterMinorVersionResponse> getResponseClass() {
-		return UpgradeDBClusterMinorVersionResponse.class;
+	public Class<DescribeScheduleTasksResponse> getResponseClass() {
+		return DescribeScheduleTasksResponse.class;
 	}
 
 }

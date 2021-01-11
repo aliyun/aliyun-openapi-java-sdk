@@ -1,3 +1,8 @@
+2021-01-11 Version: 1.8.2
+- Support DescribeScheduleTasks.
+- Support CancelScheduleTasks.
+- Upgrade UpgradeDBClusterMinorVersion.
+
 2020-12-21 Version: 1.8.1
 - Support DescribeDatabases for page query.
 - Support DescribeAccounts for page query.
