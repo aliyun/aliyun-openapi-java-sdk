@@ -65,6 +65,10 @@ public class GetTraceResponse extends AcsResponse {
 
 		private Boolean haveStack;
 
+		private String spanId;
+
+		private String parentSpanId;
+
 		private List<TagEntry> tagEntryList;
 
 		private List<LogEvent> logEventList;
@@ -139,6 +143,22 @@ public class GetTraceResponse extends AcsResponse {
 
 		public void setHaveStack(Boolean haveStack) {
 			this.haveStack = haveStack;
+		}
+
+		public String getSpanId() {
+			return this.spanId;
+		}
+
+		public void setSpanId(String spanId) {
+			this.spanId = spanId;
+		}
+
+		public String getParentSpanId() {
+			return this.parentSpanId;
+		}
+
+		public void setParentSpanId(String parentSpanId) {
+			this.parentSpanId = parentSpanId;
 		}
 
 		public List<TagEntry> getTagEntryList() {

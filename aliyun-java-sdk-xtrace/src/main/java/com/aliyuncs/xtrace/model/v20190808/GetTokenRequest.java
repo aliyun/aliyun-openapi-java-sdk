@@ -28,6 +28,8 @@ public class GetTokenRequest extends RpcAcsRequest<GetTokenResponse> {
 	private String appType;
 
 	private String proxyUserId;
+
+	private Boolean isForce;
 	public GetTokenRequest() {
 		super("xtrace", "2019-08-08", "GetToken");
 		setMethod(MethodType.POST);
@@ -56,6 +58,17 @@ public class GetTokenRequest extends RpcAcsRequest<GetTokenResponse> {
 		this.proxyUserId = proxyUserId;
 		if(proxyUserId != null){
 			putQueryParameter("ProxyUserId", proxyUserId);
+		}
+	}
+
+	public Boolean getIsForce() {
+		return this.isForce;
+	}
+
+	public void setIsForce(Boolean isForce) {
+		this.isForce = isForce;
+		if(isForce != null){
+			putQueryParameter("IsForce", isForce.toString());
 		}
 	}
 
