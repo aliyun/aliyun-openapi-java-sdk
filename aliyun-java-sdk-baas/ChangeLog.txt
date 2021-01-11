@@ -1,3 +1,6 @@
+2021-01-11 Version: 2.2.1
+- Support OpenApi V2.
+
 2020-12-29 Version: 2.1.1
 - Support OpenApi DescribeAntChainMiniAppBrowserTransactionQRCodeNew.
 
