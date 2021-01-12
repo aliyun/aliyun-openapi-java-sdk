@@ -32,8 +32,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 
 	private String namespaceSource;
 
-	private String metricsThresholdJson;
-
 	private String groupId;
 
 	private String description;
@@ -83,17 +81,6 @@ public class CreateAppGroupRequest extends RpcAcsRequest<CreateAppGroupResponse>
 		this.namespaceSource = namespaceSource;
 		if(namespaceSource != null){
 			putQueryParameter("NamespaceSource", namespaceSource);
-		}
-	}
-
-	public String getMetricsThresholdJson() {
-		return this.metricsThresholdJson;
-	}
-
-	public void setMetricsThresholdJson(String metricsThresholdJson) {
-		this.metricsThresholdJson = metricsThresholdJson;
-		if(metricsThresholdJson != null){
-			putQueryParameter("MetricsThresholdJson", metricsThresholdJson);
 		}
 	}
 

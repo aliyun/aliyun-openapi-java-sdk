@@ -15,6 +15,7 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.schedulerx2.Endpoint;
 
@@ -22,19 +23,19 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteJobRequest extends RpcAcsRequest<DeleteJobResponse> {
+public class BatchEnableJobRequest extends RpcAcsRequest<BatchEnableJobResponse> {
 	   
 
 	private String namespaceSource;
 
 	private String groupId;
 
-	private Long jobId;
-
 	private String namespace;
-	public DeleteJobRequest() {
-		super("schedulerx2", "2019-04-30", "DeleteJob");
-		setMethod(MethodType.GET);
+
+	private List<Long> jobIdLists;
+	public BatchEnableJobRequest() {
+		super("schedulerx2", "2019-04-30", "BatchEnableJob");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -63,17 +64,6 @@ public class DeleteJobRequest extends RpcAcsRequest<DeleteJobResponse> {
 		}
 	}
 
-	public Long getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(Long jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId.toString());
-		}
-	}
-
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -85,9 +75,22 @@ public class DeleteJobRequest extends RpcAcsRequest<DeleteJobResponse> {
 		}
 	}
 
+	public List<Long> getJobIdLists() {
+		return this.jobIdLists;
+	}
+
+	public void setJobIdLists(List<Long> jobIdLists) {
+		this.jobIdLists = jobIdLists;	
+		if (jobIdLists != null) {
+			for (int i = 0; i < jobIdLists.size(); i++) {
+				putBodyParameter("JobIdList." + (i + 1) , jobIdLists.get(i));
+			}
+		}	
+	}
+
 	@Override
-	public Class<DeleteJobResponse> getResponseClass() {
-		return DeleteJobResponse.class;
+	public Class<BatchEnableJobResponse> getResponseClass() {
+		return BatchEnableJobResponse.class;
 	}
 
 }
