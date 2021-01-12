@@ -22,21 +22,32 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
+public class GenerateFileUploadURLRequest extends RpcAcsRequest<GenerateFileUploadURLResponse> {
 	   
+
+	private String fileSuffix;
 
 	private String iotInstanceId;
 
-	private String groupId;
-
-	private String productKey;
-	public QueryDeviceStatisticsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceStatistics", "iot");
+	private String bizCode;
+	public GenerateFileUploadURLRequest() {
+		super("Iot", "2018-01-20", "GenerateFileUploadURL", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFileSuffix() {
+		return this.fileSuffix;
+	}
+
+	public void setFileSuffix(String fileSuffix) {
+		this.fileSuffix = fileSuffix;
+		if(fileSuffix != null){
+			putQueryParameter("FileSuffix", fileSuffix);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -50,31 +61,20 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getBizCode() {
+		return this.bizCode;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+	public void setBizCode(String bizCode) {
+		this.bizCode = bizCode;
+		if(bizCode != null){
+			putQueryParameter("BizCode", bizCode);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceStatisticsResponse> getResponseClass() {
-		return QueryDeviceStatisticsResponse.class;
+	public Class<GenerateFileUploadURLResponse> getResponseClass() {
+		return GenerateFileUploadURLResponse.class;
 	}
 
 }

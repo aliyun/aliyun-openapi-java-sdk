@@ -22,21 +22,58 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
+public class UpdateJobRequest extends RpcAcsRequest<UpdateJobResponse> {
 	   
+
+	private String description;
+
+	private String rolloutConfig;
+
+	private String jobId;
 
 	private String iotInstanceId;
 
-	private String groupId;
-
-	private String productKey;
-	public QueryDeviceStatisticsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceStatistics", "iot");
+	private String timeoutConfig;
+	public UpdateJobRequest() {
+		super("Iot", "2018-01-20", "UpdateJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getRolloutConfig() {
+		return this.rolloutConfig;
+	}
+
+	public void setRolloutConfig(String rolloutConfig) {
+		this.rolloutConfig = rolloutConfig;
+		if(rolloutConfig != null){
+			putQueryParameter("RolloutConfig", rolloutConfig);
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -50,31 +87,20 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public String getTimeoutConfig() {
+		return this.timeoutConfig;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+	public void setTimeoutConfig(String timeoutConfig) {
+		this.timeoutConfig = timeoutConfig;
+		if(timeoutConfig != null){
+			putQueryParameter("TimeoutConfig", timeoutConfig);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceStatisticsResponse> getResponseClass() {
-		return QueryDeviceStatisticsResponse.class;
+	public Class<UpdateJobResponse> getResponseClass() {
+		return UpdateJobResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2021-01-12 Version: 7.19.0
+- Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.
+
 2020-12-31 Version: 7.18.0
 - Add support for thing model function block features, including thing model APIs like CreateThingModel,UpdateThingModel,SetDeviceProperty,InvokeThingService etc.
 

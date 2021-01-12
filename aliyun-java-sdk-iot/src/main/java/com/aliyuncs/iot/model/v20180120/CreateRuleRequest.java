@@ -44,6 +44,8 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 	private String productKey;
 
 	private String name;
+
+	private String topic;
 	public CreateRuleRequest() {
 		super("Iot", "2018-01-20", "CreateRule", "iot");
 		setMethod(MethodType.POST);
@@ -160,6 +162,17 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

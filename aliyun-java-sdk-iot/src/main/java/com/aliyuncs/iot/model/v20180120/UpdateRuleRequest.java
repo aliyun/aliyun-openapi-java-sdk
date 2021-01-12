@@ -41,6 +41,8 @@ public class UpdateRuleRequest extends RpcAcsRequest<UpdateRuleResponse> {
 
 	private String name;
 
+	private String topic;
+
 	private Long ruleId;
 	public UpdateRuleRequest() {
 		super("Iot", "2018-01-20", "UpdateRule", "iot");
@@ -136,6 +138,17 @@ public class UpdateRuleRequest extends RpcAcsRequest<UpdateRuleResponse> {
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getTopic() {
+		return this.topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+		if(topic != null){
+			putQueryParameter("Topic", topic);
 		}
 	}
 

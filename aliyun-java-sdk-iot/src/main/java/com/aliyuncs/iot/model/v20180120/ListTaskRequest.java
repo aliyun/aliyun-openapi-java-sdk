@@ -22,21 +22,49 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
+public class ListTaskRequest extends RpcAcsRequest<ListTaskResponse> {
 	   
+
+	private String jobId;
+
+	private String nextToken;
 
 	private String iotInstanceId;
 
-	private String groupId;
+	private Integer limit;
 
-	private String productKey;
-	public QueryDeviceStatisticsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceStatistics", "iot");
+	private String device;
+
+	private String status;
+	public ListTaskRequest() {
+		super("Iot", "2018-01-20", "ListTask", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -50,31 +78,42 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Integer getLimit() {
+		return this.limit;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setLimit(Integer limit) {
+		this.limit = limit;
+		if(limit != null){
+			putQueryParameter("Limit", limit.toString());
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public String getDevice() {
+		return this.device;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+	public void setDevice(String device) {
+		this.device = device;
+		if(device != null){
+			putQueryParameter("Device", device);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceStatisticsResponse> getResponseClass() {
-		return QueryDeviceStatisticsResponse.class;
+	public Class<ListTaskResponse> getResponseClass() {
+		return ListTaskResponse.class;
 	}
 
 }

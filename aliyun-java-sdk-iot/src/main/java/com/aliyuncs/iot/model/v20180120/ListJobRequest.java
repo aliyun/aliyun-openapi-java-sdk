@@ -22,16 +22,18 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
+public class ListJobRequest extends RpcAcsRequest<ListJobResponse> {
 	   
 
 	private String iotInstanceId;
 
-	private String groupId;
+	private Integer pageSize;
 
-	private String productKey;
-	public QueryDeviceStatisticsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceStatistics", "iot");
+	private Integer currentPage;
+
+	private String status;
+	public ListJobRequest() {
+		super("Iot", "2018-01-20", "ListJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,31 +52,42 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public String getProductKey() {
-		return this.productKey;
+	public Integer getCurrentPage() {
+		return this.currentPage;
 	}
 
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<QueryDeviceStatisticsResponse> getResponseClass() {
-		return QueryDeviceStatisticsResponse.class;
+	public Class<ListJobResponse> getResponseClass() {
+		return ListJobResponse.class;
 	}
 
 }

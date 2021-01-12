@@ -22,21 +22,30 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStatisticsResponse> {
+public class QueryJobStatisticsRequest extends RpcAcsRequest<QueryJobStatisticsResponse> {
 	   
 
+	private String jobId;
+
 	private String iotInstanceId;
-
-	private String groupId;
-
-	private String productKey;
-	public QueryDeviceStatisticsRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceStatistics", "iot");
-		setMethod(MethodType.POST);
+	public QueryJobStatisticsRequest() {
+		super("Iot", "2018-01-20", "QueryJobStatistics", "iot");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -50,31 +59,9 @@ public class QueryDeviceStatisticsRequest extends RpcAcsRequest<QueryDeviceStati
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
 	@Override
-	public Class<QueryDeviceStatisticsResponse> getResponseClass() {
-		return QueryDeviceStatisticsResponse.class;
+	public Class<QueryJobStatisticsResponse> getResponseClass() {
+		return QueryJobStatisticsResponse.class;
 	}
 
 }

@@ -110,6 +110,8 @@ public class QueryProductResponse extends AcsResponse {
 
 		private String authType;
 
+		private Integer validateType;
+
 		public Long getGmtCreate() {
 			return this.gmtCreate;
 		}
@@ -244,6 +246,14 @@ public class QueryProductResponse extends AcsResponse {
 
 		public void setAuthType(String authType) {
 			this.authType = authType;
+		}
+
+		public Integer getValidateType() {
+			return this.validateType;
+		}
+
+		public void setValidateType(Integer validateType) {
+			this.validateType = validateType;
 		}
 	}
 
