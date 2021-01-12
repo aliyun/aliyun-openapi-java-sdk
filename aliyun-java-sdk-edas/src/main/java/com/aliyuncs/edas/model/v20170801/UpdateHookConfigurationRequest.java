@@ -22,13 +22,17 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
+public class UpdateHookConfigurationRequest extends RoaAcsRequest<UpdateHookConfigurationResponse> {
 	   
 
 	private String appId;
-	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
-		setUriPattern("/pop/v5/resource/ecu_list");
+
+	private String groupId;
+
+	private String hooks;
+	public UpdateHookConfigurationRequest() {
+		super("Edas", "2017-08-01", "UpdateHookConfiguration", "Edas");
+		setUriPattern("/pop/app/config_app_hook_json");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,9 +51,31 @@ public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuR
 		}
 	}
 
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getHooks() {
+		return this.hooks;
+	}
+
+	public void setHooks(String hooks) {
+		this.hooks = hooks;
+		if(hooks != null){
+			putQueryParameter("Hooks", hooks);
+		}
+	}
+
 	@Override
-	public Class<ListApplicationEcuResponse> getResponseClass() {
-		return ListApplicationEcuResponse.class;
+	public Class<UpdateHookConfigurationResponse> getResponseClass() {
+		return UpdateHookConfigurationResponse.class;
 	}
 
 }

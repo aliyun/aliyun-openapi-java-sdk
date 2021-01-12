@@ -26,6 +26,8 @@ public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourc
 	   
 
 	private String type;
+
+	private String resourceIds;
 	public SynchronizeResourceRequest() {
 		super("Edas", "2017-08-01", "SynchronizeResource", "Edas");
 		setUriPattern("/pop/v5/resource/pop_sync_resource");
@@ -44,6 +46,17 @@ public class SynchronizeResourceRequest extends RoaAcsRequest<SynchronizeResourc
 		this.type = type;
 		if(type != null){
 			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(String resourceIds) {
+		this.resourceIds = resourceIds;
+		if(resourceIds != null){
+			putQueryParameter("ResourceIds", resourceIds);
 		}
 	}
 

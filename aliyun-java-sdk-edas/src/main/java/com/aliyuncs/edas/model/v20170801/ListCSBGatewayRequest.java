@@ -22,34 +22,34 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
+public class ListCSBGatewayRequest extends RoaAcsRequest<ListCSBGatewayResponse> {
 	   
 
-	private String appId;
-	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
-		setUriPattern("/pop/v5/resource/ecu_list");
-		setMethod(MethodType.POST);
+	private String logicalRegionId;
+	public ListCSBGatewayRequest() {
+		super("Edas", "2017-08-01", "ListCSBGateway", "Edas");
+		setUriPattern("/pop/v5/csbgateway/gateway");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getLogicalRegionId() {
+		return this.logicalRegionId;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setLogicalRegionId(String logicalRegionId) {
+		this.logicalRegionId = logicalRegionId;
+		if(logicalRegionId != null){
+			putQueryParameter("LogicalRegionId", logicalRegionId);
 		}
 	}
 
 	@Override
-	public Class<ListApplicationEcuResponse> getResponseClass() {
-		return ListApplicationEcuResponse.class;
+	public Class<ListCSBGatewayResponse> getResponseClass() {
+		return ListCSBGatewayResponse.class;
 	}
 
 }

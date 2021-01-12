@@ -1,3 +1,9 @@
+2021-01-12 Version: 3.15.0
+- Modify API InsertApplication.
+- Modify API SynchronizeResource.
+- New API UpdateHookConfiguration.
+- New API ListApplicationEcc.
+
 2020-11-30 Version: 3.14.0
 - Modify API ScaleoutApplicationWithNewInstances.
 

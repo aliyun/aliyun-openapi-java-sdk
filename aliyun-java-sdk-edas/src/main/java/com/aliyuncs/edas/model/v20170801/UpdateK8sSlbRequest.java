@@ -31,6 +31,8 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 
 	private String slbProtocol;
 
+	private String slbName;
+
 	private String port;
 
 	private String appId;
@@ -82,6 +84,17 @@ public class UpdateK8sSlbRequest extends RoaAcsRequest<UpdateK8sSlbResponse> {
 		this.slbProtocol = slbProtocol;
 		if(slbProtocol != null){
 			putQueryParameter("SlbProtocol", slbProtocol);
+		}
+	}
+
+	public String getSlbName() {
+		return this.slbName;
+	}
+
+	public void setSlbName(String slbName) {
+		this.slbName = slbName;
+		if(slbName != null){
+			putQueryParameter("SlbName", slbName);
 		}
 	}
 

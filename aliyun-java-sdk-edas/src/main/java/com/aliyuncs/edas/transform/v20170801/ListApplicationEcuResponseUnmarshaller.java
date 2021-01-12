@@ -50,6 +50,7 @@ public class ListApplicationEcuResponseUnmarshaller {
 			ecuEntity.setAvailableMem(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].AvailableMem"));
 			ecuEntity.setCpu(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Cpu"));
 			ecuEntity.setMem(_ctx.integerValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].Mem"));
+			ecuEntity.setAppId(_ctx.stringValue("ListApplicationEcuResponse.EcuInfoList["+ i +"].AppId"));
 
 			ecuInfoList.add(ecuEntity);
 		}

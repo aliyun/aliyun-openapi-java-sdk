@@ -16,6 +16,7 @@ package com.aliyuncs.edas.transform.v20170801;
 
 import com.aliyuncs.edas.model.v20170801.GetApplicationResponse;
 import com.aliyuncs.edas.model.v20170801.GetApplicationResponse.Applcation;
+import com.aliyuncs.edas.model.v20170801.GetApplicationResponse.Application;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -57,6 +58,37 @@ public class GetApplicationResponseUnmarshaller {
 		applcation.setSlbInfo(_ctx.stringValue("GetApplicationResponse.Applcation.SlbInfo"));
 		applcation.setEmail(_ctx.stringValue("GetApplicationResponse.Applcation.Email"));
 		getApplicationResponse.setApplcation(applcation);
+
+		Application application = new Application();
+		application.setAppId(_ctx.stringValue("GetApplicationResponse.Application.AppId"));
+		application.setName(_ctx.stringValue("GetApplicationResponse.Application.Name"));
+		application.setRegionId(_ctx.stringValue("GetApplicationResponse.Application.RegionId"));
+		application.setDescription(_ctx.stringValue("GetApplicationResponse.Application.Description"));
+		application.setOwner(_ctx.stringValue("GetApplicationResponse.Application.Owner"));
+		application.setInstanceCount(_ctx.integerValue("GetApplicationResponse.Application.InstanceCount"));
+		application.setRunningInstanceCount(_ctx.integerValue("GetApplicationResponse.Application.RunningInstanceCount"));
+		application.setPort(_ctx.integerValue("GetApplicationResponse.Application.Port"));
+		application.setUserId(_ctx.stringValue("GetApplicationResponse.Application.UserId"));
+		application.setSlbId(_ctx.stringValue("GetApplicationResponse.Application.SlbId"));
+		application.setSlbIp(_ctx.stringValue("GetApplicationResponse.Application.SlbIp"));
+		application.setSlbPort(_ctx.integerValue("GetApplicationResponse.Application.SlbPort"));
+		application.setExtSlbId(_ctx.stringValue("GetApplicationResponse.Application.ExtSlbId"));
+		application.setExtSlbIp(_ctx.stringValue("GetApplicationResponse.Application.ExtSlbIp"));
+		application.setSlbName(_ctx.stringValue("GetApplicationResponse.Application.SlbName"));
+		application.setExtSlbName(_ctx.stringValue("GetApplicationResponse.Application.ExtSlbName"));
+		application.setApplicationType(_ctx.stringValue("GetApplicationResponse.Application.ApplicationType"));
+		application.setClusterType(_ctx.stringValue("GetApplicationResponse.Application.ClusterType"));
+		application.setClusterId(_ctx.stringValue("GetApplicationResponse.Application.ClusterId"));
+		application.setDockerize(_ctx.booleanValue("GetApplicationResponse.Application.Dockerize"));
+		application.setCpu(_ctx.integerValue("GetApplicationResponse.Application.Cpu"));
+		application.setMemory(_ctx.integerValue("GetApplicationResponse.Application.Memory"));
+		application.setHealthCheckUrl(_ctx.stringValue("GetApplicationResponse.Application.HealthCheckUrl"));
+		application.setBuildPackageId(_ctx.longValue("GetApplicationResponse.Application.BuildPackageId"));
+		application.setCreateTime(_ctx.longValue("GetApplicationResponse.Application.CreateTime"));
+		application.setNameSpace(_ctx.stringValue("GetApplicationResponse.Application.NameSpace"));
+		application.setSlbInfo(_ctx.stringValue("GetApplicationResponse.Application.SlbInfo"));
+		application.setEmail(_ctx.stringValue("GetApplicationResponse.Application.Email"));
+		getApplicationResponse.setApplication(application);
 	 
 	 	return getApplicationResponse;
 	}

@@ -25,6 +25,8 @@ import com.aliyuncs.edas.Endpoint;
 public class UnbindK8sSlbRequest extends RoaAcsRequest<UnbindK8sSlbResponse> {
 	   
 
+	private String slbName;
+
 	private String appId;
 
 	private String clusterId;
@@ -38,6 +40,17 @@ public class UnbindK8sSlbRequest extends RoaAcsRequest<UnbindK8sSlbResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSlbName() {
+		return this.slbName;
+	}
+
+	public void setSlbName(String slbName) {
+		this.slbName = slbName;
+		if(slbName != null){
+			putQueryParameter("SlbName", slbName);
+		}
 	}
 
 	public String getAppId() {

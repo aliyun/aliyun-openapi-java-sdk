@@ -22,13 +22,19 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
+public class CreateK8sServiceRequest extends RoaAcsRequest<CreateK8sServiceResponse> {
 	   
 
 	private String appId;
-	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
-		setUriPattern("/pop/v5/resource/ecu_list");
+
+	private String name;
+
+	private String type;
+
+	private String servicePorts;
+	public CreateK8sServiceRequest() {
+		super("Edas", "2017-08-01", "CreateK8sService", "Edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_service");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,9 +53,42 @@ public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuR
 		}
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getServicePorts() {
+		return this.servicePorts;
+	}
+
+	public void setServicePorts(String servicePorts) {
+		this.servicePorts = servicePorts;
+		if(servicePorts != null){
+			putQueryParameter("ServicePorts", servicePorts);
+		}
+	}
+
 	@Override
-	public Class<ListApplicationEcuResponse> getResponseClass() {
-		return ListApplicationEcuResponse.class;
+	public Class<CreateK8sServiceResponse> getResponseClass() {
+		return CreateK8sServiceResponse.class;
 	}
 
 }

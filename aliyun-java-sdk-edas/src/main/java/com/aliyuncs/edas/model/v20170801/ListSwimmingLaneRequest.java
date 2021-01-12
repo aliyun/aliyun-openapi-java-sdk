@@ -22,34 +22,34 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
+public class ListSwimmingLaneRequest extends RoaAcsRequest<ListSwimmingLaneResponse> {
 	   
 
-	private String appId;
-	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
-		setUriPattern("/pop/v5/resource/ecu_list");
-		setMethod(MethodType.POST);
+	private Long groupId;
+	public ListSwimmingLaneRequest() {
+		super("Edas", "2017-08-01", "ListSwimmingLane", "Edas");
+		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public Long getGroupId() {
+		return this.groupId;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
 	@Override
-	public Class<ListApplicationEcuResponse> getResponseClass() {
-		return ListApplicationEcuResponse.class;
+	public Class<ListSwimmingLaneResponse> getResponseClass() {
+		return ListSwimmingLaneResponse.class;
 	}
 
 }

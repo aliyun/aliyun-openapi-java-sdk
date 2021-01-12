@@ -22,14 +22,14 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
+public class GetK8sServicesRequest extends RoaAcsRequest<GetK8sServicesResponse> {
 	   
 
 	private String appId;
-	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
-		setUriPattern("/pop/v5/resource/ecu_list");
-		setMethod(MethodType.POST);
+	public GetK8sServicesRequest() {
+		super("Edas", "2017-08-01", "GetK8sServices", "Edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_service");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -48,8 +48,8 @@ public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuR
 	}
 
 	@Override
-	public Class<ListApplicationEcuResponse> getResponseClass() {
-		return ListApplicationEcuResponse.class;
+	public Class<GetK8sServicesResponse> getResponseClass() {
+		return GetK8sServicesResponse.class;
 	}
 
 }

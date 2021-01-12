@@ -101,6 +101,8 @@ public class ListApplicationEcuResponse extends AcsResponse {
 
 		private Integer mem;
 
+		private String appId;
+
 		public String getEcuId() {
 			return this.ecuId;
 		}
@@ -235,6 +237,14 @@ public class ListApplicationEcuResponse extends AcsResponse {
 
 		public void setMem(Integer mem) {
 			this.mem = mem;
+		}
+
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
 		}
 	}
 

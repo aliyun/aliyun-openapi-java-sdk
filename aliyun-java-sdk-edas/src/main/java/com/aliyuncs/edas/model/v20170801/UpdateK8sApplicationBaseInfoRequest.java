@@ -29,7 +29,11 @@ public class UpdateK8sApplicationBaseInfoRequest extends RoaAcsRequest<UpdateK8s
 
 	private String appId;
 
+	private String phoneNumber;
+
 	private String description;
+
+	private String email;
 	public UpdateK8sApplicationBaseInfoRequest() {
 		super("Edas", "2017-08-01", "UpdateK8sApplicationBaseInfo", "Edas");
 		setUriPattern("/pop/v5/oam/update_app_basic_info");
@@ -62,6 +66,17 @@ public class UpdateK8sApplicationBaseInfoRequest extends RoaAcsRequest<UpdateK8s
 		}
 	}
 
+	public String getPhoneNumber() {
+		return this.phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+		if(phoneNumber != null){
+			putQueryParameter("PhoneNumber", phoneNumber);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -70,6 +85,17 @@ public class UpdateK8sApplicationBaseInfoRequest extends RoaAcsRequest<UpdateK8s
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+		if(email != null){
+			putQueryParameter("Email", email);
 		}
 	}
 

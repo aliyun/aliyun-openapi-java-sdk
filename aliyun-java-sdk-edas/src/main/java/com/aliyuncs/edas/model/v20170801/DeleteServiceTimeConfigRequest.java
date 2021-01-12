@@ -22,13 +22,13 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuResponse> {
+public class DeleteServiceTimeConfigRequest extends RoaAcsRequest<DeleteServiceTimeConfigResponse> {
 	   
 
-	private String appId;
-	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
-		setUriPattern("/pop/v5/resource/ecu_list");
+	private String id;
+	public DeleteServiceTimeConfigRequest() {
+		super("Edas", "2017-08-01", "DeleteServiceTimeConfig", "Edas");
+		setUriPattern("/pop/sp/api/timeout/remove");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,20 +36,20 @@ public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuR
 		} catch (Exception e) {}
 	}
 
-	public String getAppId() {
-		return this.appId;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setAppId(String appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId);
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
 		}
 	}
 
 	@Override
-	public Class<ListApplicationEcuResponse> getResponseClass() {
-		return ListApplicationEcuResponse.class;
+	public Class<DeleteServiceTimeConfigResponse> getResponseClass() {
+		return DeleteServiceTimeConfigResponse.class;
 	}
 
 }

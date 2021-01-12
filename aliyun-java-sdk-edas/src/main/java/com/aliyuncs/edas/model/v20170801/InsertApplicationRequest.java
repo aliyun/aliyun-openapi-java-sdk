@@ -29,6 +29,8 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private String ecuInfo;
 
+	private Integer minHeapSize;
+
 	private Integer buildPackId;
 
 	private String componentIds;
@@ -37,11 +39,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private String reservedPortStr;
 
+	private String jvmOptions;
+
 	private String description;
 
 	private Integer cpu;
 
+	private Integer maxPermSize;
+
 	private String clusterId;
+
+	private Integer maxHeapSize;
 
 	private String applicationName;
 
@@ -52,6 +60,8 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 	private String logicalRegionId;
 
 	private String packageType;
+
+	private String hooks;
 	public InsertApplicationRequest() {
 		super("Edas", "2017-08-01", "InsertApplication", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_create_app");
@@ -81,6 +91,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.ecuInfo = ecuInfo;
 		if(ecuInfo != null){
 			putQueryParameter("EcuInfo", ecuInfo);
+		}
+	}
+
+	public Integer getMinHeapSize() {
+		return this.minHeapSize;
+	}
+
+	public void setMinHeapSize(Integer minHeapSize) {
+		this.minHeapSize = minHeapSize;
+		if(minHeapSize != null){
+			putQueryParameter("MinHeapSize", minHeapSize.toString());
 		}
 	}
 
@@ -128,6 +149,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		}
 	}
 
+	public String getJvmOptions() {
+		return this.jvmOptions;
+	}
+
+	public void setJvmOptions(String jvmOptions) {
+		this.jvmOptions = jvmOptions;
+		if(jvmOptions != null){
+			putQueryParameter("JvmOptions", jvmOptions);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -150,6 +182,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		}
 	}
 
+	public Integer getMaxPermSize() {
+		return this.maxPermSize;
+	}
+
+	public void setMaxPermSize(Integer maxPermSize) {
+		this.maxPermSize = maxPermSize;
+		if(maxPermSize != null){
+			putQueryParameter("MaxPermSize", maxPermSize.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -158,6 +201,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Integer getMaxHeapSize() {
+		return this.maxHeapSize;
+	}
+
+	public void setMaxHeapSize(Integer maxHeapSize) {
+		this.maxHeapSize = maxHeapSize;
+		if(maxHeapSize != null){
+			putQueryParameter("MaxHeapSize", maxHeapSize.toString());
 		}
 	}
 
@@ -213,6 +267,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.packageType = packageType;
 		if(packageType != null){
 			putQueryParameter("PackageType", packageType);
+		}
+	}
+
+	public String getHooks() {
+		return this.hooks;
+	}
+
+	public void setHooks(String hooks) {
+		this.hooks = hooks;
+		if(hooks != null){
+			putQueryParameter("Hooks", hooks);
 		}
 	}
 
