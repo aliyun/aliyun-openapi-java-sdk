@@ -29,7 +29,7 @@ public class ListBodyDbsRequest extends RpcAcsRequest<ListBodyDbsResponse> {
 
 	private Long offset;
 	public ListBodyDbsRequest() {
-		super("facebody", "2019-12-30", "ListBodyDbs");
+		super("facebody", "2019-12-30", "ListBodyDbs", "facebody");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

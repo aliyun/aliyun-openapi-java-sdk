@@ -27,7 +27,7 @@ public class RecognizeFaceRequest extends RpcAcsRequest<RecognizeFaceResponse> {
 
 	private String imageURL;
 	public RecognizeFaceRequest() {
-		super("facebody", "2019-12-30", "RecognizeFace");
+		super("facebody", "2019-12-30", "RecognizeFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

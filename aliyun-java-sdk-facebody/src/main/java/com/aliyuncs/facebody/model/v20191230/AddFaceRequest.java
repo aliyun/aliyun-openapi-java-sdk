@@ -27,13 +27,13 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 
 	private String entityId;
 
-	private String extraData;
-
 	private String dbName;
 
 	private String imageUrl;
+
+	private String extraData;
 	public AddFaceRequest() {
-		super("facebody", "2019-12-30", "AddFace");
+		super("facebody", "2019-12-30", "AddFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,17 +49,6 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 		this.entityId = entityId;
 		if(entityId != null){
 			putBodyParameter("EntityId", entityId);
-		}
-	}
-
-	public String getExtraData() {
-		return this.extraData;
-	}
-
-	public void setExtraData(String extraData) {
-		this.extraData = extraData;
-		if(extraData != null){
-			putBodyParameter("ExtraData", extraData);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class AddFaceRequest extends RpcAcsRequest<AddFaceResponse> {
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putBodyParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getExtraData() {
+		return this.extraData;
+	}
+
+	public void setExtraData(String extraData) {
+		this.extraData = extraData;
+		if(extraData != null){
+			putBodyParameter("ExtraData", extraData);
 		}
 	}
 

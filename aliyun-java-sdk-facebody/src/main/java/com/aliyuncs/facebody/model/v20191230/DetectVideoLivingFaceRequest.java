@@ -27,7 +27,7 @@ public class DetectVideoLivingFaceRequest extends RpcAcsRequest<DetectVideoLivin
 
 	private String videoUrl;
 	public DetectVideoLivingFaceRequest() {
-		super("facebody", "2019-12-30", "DetectVideoLivingFace");
+		super("facebody", "2019-12-30", "DetectVideoLivingFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,9 +28,9 @@ public class GenRealPersonVerificationTokenResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private String code;
-
 	private Boolean success;
+
+	private String code;
 
 	private Data data;
 
@@ -50,20 +50,20 @@ public class GenRealPersonVerificationTokenResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {

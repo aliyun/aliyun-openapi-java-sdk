@@ -30,18 +30,18 @@ public class ListFaceEntitiesResponseUnmarshaller {
 		listFaceEntitiesResponse.setRequestId(_ctx.stringValue("ListFaceEntitiesResponse.RequestId"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("ListFaceEntitiesResponse.Data.TotalCount"));
 		data.setToken(_ctx.stringValue("ListFaceEntitiesResponse.Data.Token"));
+		data.setTotalCount(_ctx.integerValue("ListFaceEntitiesResponse.Data.TotalCount"));
 
 		List<Entity> entities = new ArrayList<Entity>();
 		for (int i = 0; i < _ctx.lengthValue("ListFaceEntitiesResponse.Data.Entities.Length"); i++) {
 			Entity entity = new Entity();
-			entity.setEntityId(_ctx.stringValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].EntityId"));
-			entity.setCreatedAt(_ctx.longValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].CreatedAt"));
-			entity.setLabels(_ctx.stringValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].Labels"));
 			entity.setDbName(_ctx.stringValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].DbName"));
-			entity.setUpdatedAt(_ctx.longValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].UpdatedAt"));
+			entity.setEntityId(_ctx.stringValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].EntityId"));
 			entity.setFaceCount(_ctx.integerValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].FaceCount"));
+			entity.setLabels(_ctx.stringValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].Labels"));
+			entity.setCreatedAt(_ctx.longValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].CreatedAt"));
+			entity.setUpdatedAt(_ctx.longValue("ListFaceEntitiesResponse.Data.Entities["+ i +"].UpdatedAt"));
 
 			entities.add(entity);
 		}

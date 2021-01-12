@@ -24,13 +24,13 @@ public class GetRealPersonVerificationResultResponseUnmarshaller {
 	public static GetRealPersonVerificationResultResponse unmarshall(GetRealPersonVerificationResultResponse getRealPersonVerificationResultResponse, UnmarshallerContext _ctx) {
 		
 		getRealPersonVerificationResultResponse.setRequestId(_ctx.stringValue("GetRealPersonVerificationResultResponse.RequestId"));
-		getRealPersonVerificationResultResponse.setErrorMessage(_ctx.stringValue("GetRealPersonVerificationResultResponse.ErrorMessage"));
 		getRealPersonVerificationResultResponse.setCode(_ctx.stringValue("GetRealPersonVerificationResultResponse.Code"));
+		getRealPersonVerificationResultResponse.setErrorMessage(_ctx.stringValue("GetRealPersonVerificationResultResponse.ErrorMessage"));
 		getRealPersonVerificationResultResponse.setSuccess(_ctx.booleanValue("GetRealPersonVerificationResultResponse.Success"));
 
 		Data data = new Data();
-		data.setMaterialMatch(_ctx.stringValue("GetRealPersonVerificationResultResponse.Data.MaterialMatch"));
 		data.setPass(_ctx.booleanValue("GetRealPersonVerificationResultResponse.Data.Pass"));
+		data.setMaterialMatch(_ctx.stringValue("GetRealPersonVerificationResultResponse.Data.MaterialMatch"));
 		data.setIdentityInfo(_ctx.stringValue("GetRealPersonVerificationResultResponse.Data.IdentityInfo"));
 		getRealPersonVerificationResultResponse.setData(data);
 	 
