@@ -25,18 +25,29 @@ import com.aliyuncs.facebody.Endpoint;
 public class GenRealPersonVerificationTokenRequest extends RpcAcsRequest<GenRealPersonVerificationTokenResponse> {
 	   
 
+	private String metaInfo;
+
 	private String certificateNumber;
 
 	private String certificateName;
-
-	private String metaInfo;
 	public GenRealPersonVerificationTokenRequest() {
-		super("facebody", "2019-12-30", "GenRealPersonVerificationToken", "facebody");
+		super("facebody", "2019-12-30", "GenRealPersonVerificationToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMetaInfo() {
+		return this.metaInfo;
+	}
+
+	public void setMetaInfo(String metaInfo) {
+		this.metaInfo = metaInfo;
+		if(metaInfo != null){
+			putBodyParameter("MetaInfo", metaInfo);
+		}
 	}
 
 	public String getCertificateNumber() {
@@ -58,17 +69,6 @@ public class GenRealPersonVerificationTokenRequest extends RpcAcsRequest<GenReal
 		this.certificateName = certificateName;
 		if(certificateName != null){
 			putBodyParameter("CertificateName", certificateName);
-		}
-	}
-
-	public String getMetaInfo() {
-		return this.metaInfo;
-	}
-
-	public void setMetaInfo(String metaInfo) {
-		this.metaInfo = metaInfo;
-		if(metaInfo != null){
-			putBodyParameter("MetaInfo", metaInfo);
 		}
 	}
 
