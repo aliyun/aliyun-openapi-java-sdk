@@ -1,3 +1,6 @@
+2021-01-12 Version: 2.0.4
+- Add new API for recording.
+
 2021-01-08 Version: 2.0.3
 - Add new API for configuration and report, generate SDK again.
 
