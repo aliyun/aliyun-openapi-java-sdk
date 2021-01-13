@@ -22,24 +22,26 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsRequest<DescribeLiveStreamsFrameRateAndBitRateDataResponse> {
+public class DescribeDomainUsageDataRequest extends RpcAcsRequest<DescribeDomainUsageDataResponse> {
 	   
 
 	private String startTime;
 
-	private String appName;
+	private String type;
 
-	private String securityToken;
-
-	private String streamName;
+	private String area;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-	public DescribeLiveStreamsFrameRateAndBitRateDataRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "live");
+
+	private String field;
+
+	private String interval;
+	public DescribeDomainUsageDataRequest() {
+		super("live", "2016-11-01", "DescribeDomainUsageData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,36 +60,25 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 		}
 	}
 
-	public String getAppName() {
-		return this.appName;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getArea() {
+		return this.area;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
+	public void setArea(String area) {
+		this.area = area;
+		if(area != null){
+			putQueryParameter("Area", area);
 		}
 	}
 
@@ -124,9 +115,31 @@ public class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends RpcAcsReq
 		}
 	}
 
+	public String getField() {
+		return this.field;
+	}
+
+	public void setField(String field) {
+		this.field = field;
+		if(field != null){
+			putQueryParameter("Field", field);
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
+		}
+	}
+
 	@Override
-	public Class<DescribeLiveStreamsFrameRateAndBitRateDataResponse> getResponseClass() {
-		return DescribeLiveStreamsFrameRateAndBitRateDataResponse.class;
+	public Class<DescribeDomainUsageDataResponse> getResponseClass() {
+		return DescribeDomainUsageDataResponse.class;
 	}
 
 }

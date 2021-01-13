@@ -29,19 +29,13 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 
 	private String lazy;
 
-	private String mix;
-
 	private String app;
 
-	private String watermark;
+	private String encryptParameters;
 
 	private Long ownerId;
 
 	private String domain;
-
-	private String waterPattern;
-
-	private String onlyAudio;
 	public AddLiveStreamTranscodeRequest() {
 		super("live", "2016-11-01", "AddLiveStreamTranscode", "live");
 		setMethod(MethodType.POST);
@@ -73,17 +67,6 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		}
 	}
 
-	public String getMix() {
-		return this.mix;
-	}
-
-	public void setMix(String mix) {
-		this.mix = mix;
-		if(mix != null){
-			putQueryParameter("Mix", mix);
-		}
-	}
-
 	public String getApp() {
 		return this.app;
 	}
@@ -95,14 +78,14 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		}
 	}
 
-	public String getWatermark() {
-		return this.watermark;
+	public String getEncryptParameters() {
+		return this.encryptParameters;
 	}
 
-	public void setWatermark(String watermark) {
-		this.watermark = watermark;
-		if(watermark != null){
-			putQueryParameter("Watermark", watermark);
+	public void setEncryptParameters(String encryptParameters) {
+		this.encryptParameters = encryptParameters;
+		if(encryptParameters != null){
+			putQueryParameter("EncryptParameters", encryptParameters);
 		}
 	}
 
@@ -125,28 +108,6 @@ public class AddLiveStreamTranscodeRequest extends RpcAcsRequest<AddLiveStreamTr
 		this.domain = domain;
 		if(domain != null){
 			putQueryParameter("Domain", domain);
-		}
-	}
-
-	public String getWaterPattern() {
-		return this.waterPattern;
-	}
-
-	public void setWaterPattern(String waterPattern) {
-		this.waterPattern = waterPattern;
-		if(waterPattern != null){
-			putQueryParameter("WaterPattern", waterPattern);
-		}
-	}
-
-	public String getOnlyAudio() {
-		return this.onlyAudio;
-	}
-
-	public void setOnlyAudio(String onlyAudio) {
-		this.onlyAudio = onlyAudio;
-		if(onlyAudio != null){
-			putQueryParameter("OnlyAudio", onlyAudio);
 		}
 	}
 

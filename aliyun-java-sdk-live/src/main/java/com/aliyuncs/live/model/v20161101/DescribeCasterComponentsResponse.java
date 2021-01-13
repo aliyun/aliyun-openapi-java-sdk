@@ -288,6 +288,12 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			private String fontName;
 
+			private String sourceLan;
+
+			private String targetLan;
+
+			private Boolean showSourceLan;
+
 			private Float sizeNormalized;
 
 			private Float borderWidthNormalized;
@@ -338,6 +344,30 @@ public class DescribeCasterComponentsResponse extends AcsResponse {
 
 			public void setFontName(String fontName) {
 				this.fontName = fontName;
+			}
+
+			public String getSourceLan() {
+				return this.sourceLan;
+			}
+
+			public void setSourceLan(String sourceLan) {
+				this.sourceLan = sourceLan;
+			}
+
+			public String getTargetLan() {
+				return this.targetLan;
+			}
+
+			public void setTargetLan(String targetLan) {
+				this.targetLan = targetLan;
+			}
+
+			public Boolean getShowSourceLan() {
+				return this.showSourceLan;
+			}
+
+			public void setShowSourceLan(Boolean showSourceLan) {
+				this.showSourceLan = showSourceLan;
 			}
 
 			public Float getSizeNormalized() {

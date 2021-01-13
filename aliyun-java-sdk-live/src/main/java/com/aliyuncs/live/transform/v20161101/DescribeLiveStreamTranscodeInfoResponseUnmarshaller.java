@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo;
 import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo.CustomTranscodeParameters;
+import com.aliyuncs.live.model.v20161101.DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeInfo.EncryptParameters;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -52,6 +53,12 @@ public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller {
 			customTranscodeParameters.setAudioRate(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioRate"));
 			customTranscodeParameters.setAudioChannelNum(_ctx.integerValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioChannelNum"));
 			domainTranscodeInfo.setCustomTranscodeParameters(customTranscodeParameters);
+
+			EncryptParameters encryptParameters = new EncryptParameters();
+			encryptParameters.setEncryptType(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].EncryptParameters.EncryptType"));
+			encryptParameters.setKmsKeyExpireInterval(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].EncryptParameters.KmsKeyExpireInterval"));
+			encryptParameters.setKmsKeyID(_ctx.stringValue("DescribeLiveStreamTranscodeInfoResponse.DomainTranscodeList["+ i +"].EncryptParameters.KmsKeyID"));
+			domainTranscodeInfo.setEncryptParameters(encryptParameters);
 
 			domainTranscodeList.add(domainTranscodeInfo);
 		}

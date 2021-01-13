@@ -74,6 +74,9 @@ public class DescribeCasterComponentsResponseUnmarshaller {
 			captionLayerContent.setWordsCount(_ctx.integerValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.WordsCount"));
 			captionLayerContent.setColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.Color"));
 			captionLayerContent.setFontName(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.FontName"));
+			captionLayerContent.setSourceLan(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.SourceLan"));
+			captionLayerContent.setTargetLan(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.TargetLan"));
+			captionLayerContent.setShowSourceLan(_ctx.booleanValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.ShowSourceLan"));
 			captionLayerContent.setSizeNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.SizeNormalized"));
 			captionLayerContent.setBorderWidthNormalized(_ctx.floatValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized"));
 			captionLayerContent.setBorderColor(_ctx.stringValue("DescribeCasterComponentsResponse.Components["+ i +"].CaptionLayerContent.BorderColor"));

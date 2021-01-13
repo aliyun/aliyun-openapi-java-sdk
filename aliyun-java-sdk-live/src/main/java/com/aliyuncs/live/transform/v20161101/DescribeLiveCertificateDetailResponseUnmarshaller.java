@@ -24,7 +24,6 @@ public class DescribeLiveCertificateDetailResponseUnmarshaller {
 		
 		describeLiveCertificateDetailResponse.setRequestId(_ctx.stringValue("DescribeLiveCertificateDetailResponse.RequestId"));
 		describeLiveCertificateDetailResponse.setCert(_ctx.stringValue("DescribeLiveCertificateDetailResponse.Cert"));
-		describeLiveCertificateDetailResponse.setKey(_ctx.stringValue("DescribeLiveCertificateDetailResponse.Key"));
 		describeLiveCertificateDetailResponse.setCertId(_ctx.longValue("DescribeLiveCertificateDetailResponse.CertId"));
 		describeLiveCertificateDetailResponse.setCertName(_ctx.stringValue("DescribeLiveCertificateDetailResponse.CertName"));
 	 

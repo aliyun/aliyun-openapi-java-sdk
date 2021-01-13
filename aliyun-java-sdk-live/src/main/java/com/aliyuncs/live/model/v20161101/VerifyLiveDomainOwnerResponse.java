@@ -15,22 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveCertificateDetailResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.VerifyLiveDomainOwnerResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveCertificateDetailResponse extends AcsResponse {
+public class VerifyLiveDomainOwnerResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String cert;
-
-	private Long certId;
-
-	private String certName;
+	private String content;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +36,16 @@ public class DescribeLiveCertificateDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCert() {
-		return this.cert;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setCert(String cert) {
-		this.cert = cert;
-	}
-
-	public Long getCertId() {
-		return this.certId;
-	}
-
-	public void setCertId(Long certId) {
-		this.certId = certId;
-	}
-
-	public String getCertName() {
-		return this.certName;
-	}
-
-	public void setCertName(String certName) {
-		this.certName = certName;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	@Override
-	public DescribeLiveCertificateDetailResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveCertificateDetailResponseUnmarshaller.unmarshall(this, context);
+	public VerifyLiveDomainOwnerResponse getInstance(UnmarshallerContext context) {
+		return	VerifyLiveDomainOwnerResponseUnmarshaller.unmarshall(this, context);
 	}
 }

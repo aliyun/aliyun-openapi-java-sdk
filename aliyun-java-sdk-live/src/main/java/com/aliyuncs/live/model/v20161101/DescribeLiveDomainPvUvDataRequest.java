@@ -22,24 +22,18 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<DescribeLiveStreamOnlineUserNumResponse> {
+public class DescribeLiveDomainPvUvDataRequest extends RpcAcsRequest<DescribeLiveDomainPvUvDataResponse> {
 	   
 
 	private String startTime;
-
-	private String appName;
-
-	private String securityToken;
-
-	private String streamName;
 
 	private String domainName;
 
 	private String endTime;
 
 	private Long ownerId;
-	public DescribeLiveStreamOnlineUserNumRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum", "live");
+	public DescribeLiveDomainPvUvDataRequest() {
+		super("live", "2016-11-01", "DescribeLiveDomainPvUvData", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,39 +49,6 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getStreamName() {
-		return this.streamName;
-	}
-
-	public void setStreamName(String streamName) {
-		this.streamName = streamName;
-		if(streamName != null){
-			putQueryParameter("StreamName", streamName);
 		}
 	}
 
@@ -125,8 +86,8 @@ public class DescribeLiveStreamOnlineUserNumRequest extends RpcAcsRequest<Descri
 	}
 
 	@Override
-	public Class<DescribeLiveStreamOnlineUserNumResponse> getResponseClass() {
-		return DescribeLiveStreamOnlineUserNumResponse.class;
+	public Class<DescribeLiveDomainPvUvDataResponse> getResponseClass() {
+		return DescribeLiveDomainPvUvDataResponse.class;
 	}
 
 }

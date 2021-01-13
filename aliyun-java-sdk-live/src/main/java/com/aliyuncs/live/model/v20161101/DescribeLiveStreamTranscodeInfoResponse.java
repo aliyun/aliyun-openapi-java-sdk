@@ -55,6 +55,8 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 		private CustomTranscodeParameters customTranscodeParameters;
 
+		private EncryptParameters encryptParameters;
+
 		public String getTranscodeApp() {
 			return this.transcodeApp;
 		}
@@ -85,6 +87,14 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 		public void setCustomTranscodeParameters(CustomTranscodeParameters customTranscodeParameters) {
 			this.customTranscodeParameters = customTranscodeParameters;
+		}
+
+		public EncryptParameters getEncryptParameters() {
+			return this.encryptParameters;
+		}
+
+		public void setEncryptParameters(EncryptParameters encryptParameters) {
+			this.encryptParameters = encryptParameters;
 		}
 
 		public static class CustomTranscodeParameters {
@@ -227,6 +237,39 @@ public class DescribeLiveStreamTranscodeInfoResponse extends AcsResponse {
 
 			public void setAudioChannelNum(Integer audioChannelNum) {
 				this.audioChannelNum = audioChannelNum;
+			}
+		}
+
+		public static class EncryptParameters {
+
+			private String encryptType;
+
+			private String kmsKeyExpireInterval;
+
+			private String kmsKeyID;
+
+			public String getEncryptType() {
+				return this.encryptType;
+			}
+
+			public void setEncryptType(String encryptType) {
+				this.encryptType = encryptType;
+			}
+
+			public String getKmsKeyExpireInterval() {
+				return this.kmsKeyExpireInterval;
+			}
+
+			public void setKmsKeyExpireInterval(String kmsKeyExpireInterval) {
+				this.kmsKeyExpireInterval = kmsKeyExpireInterval;
+			}
+
+			public String getKmsKeyID() {
+				return this.kmsKeyID;
+			}
+
+			public void setKmsKeyID(String kmsKeyID) {
+				this.kmsKeyID = kmsKeyID;
 			}
 		}
 	}

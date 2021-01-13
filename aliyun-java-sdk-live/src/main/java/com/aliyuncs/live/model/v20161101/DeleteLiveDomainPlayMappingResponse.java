@@ -15,22 +15,16 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.DescribeLiveCertificateDetailResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DeleteLiveDomainPlayMappingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLiveCertificateDetailResponse extends AcsResponse {
+public class DeleteLiveDomainPlayMappingResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String cert;
-
-	private Long certId;
-
-	private String certName;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,32 +34,8 @@ public class DescribeLiveCertificateDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCert() {
-		return this.cert;
-	}
-
-	public void setCert(String cert) {
-		this.cert = cert;
-	}
-
-	public Long getCertId() {
-		return this.certId;
-	}
-
-	public void setCertId(Long certId) {
-		this.certId = certId;
-	}
-
-	public String getCertName() {
-		return this.certName;
-	}
-
-	public void setCertName(String certName) {
-		this.certName = certName;
-	}
-
 	@Override
-	public DescribeLiveCertificateDetailResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLiveCertificateDetailResponseUnmarshaller.unmarshall(this, context);
+	public DeleteLiveDomainPlayMappingResponse getInstance(UnmarshallerContext context) {
+		return	DeleteLiveDomainPlayMappingResponseUnmarshaller.unmarshall(this, context);
 	}
 }

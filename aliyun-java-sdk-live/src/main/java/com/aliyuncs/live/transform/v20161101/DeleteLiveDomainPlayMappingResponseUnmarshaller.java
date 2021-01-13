@@ -14,18 +14,16 @@
 
 package com.aliyuncs.live.transform.v20161101;
 
-import com.aliyuncs.live.model.v20161101.TriggerRecordResponse;
+import com.aliyuncs.live.model.v20161101.DeleteLiveDomainPlayMappingResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class TriggerRecordResponseUnmarshaller {
+public class DeleteLiveDomainPlayMappingResponseUnmarshaller {
 
-	public static TriggerRecordResponse unmarshall(TriggerRecordResponse triggerRecordResponse, UnmarshallerContext _ctx) {
+	public static DeleteLiveDomainPlayMappingResponse unmarshall(DeleteLiveDomainPlayMappingResponse deleteLiveDomainPlayMappingResponse, UnmarshallerContext _ctx) {
 		
-		triggerRecordResponse.setRequestId(_ctx.stringValue("TriggerRecordResponse.RequestId"));
-		triggerRecordResponse.setResult(_ctx.stringValue("TriggerRecordResponse.Result"));
-		triggerRecordResponse.setTaskId(_ctx.stringValue("TriggerRecordResponse.TaskId"));
+		deleteLiveDomainPlayMappingResponse.setRequestId(_ctx.stringValue("DeleteLiveDomainPlayMappingResponse.RequestId"));
 	 
-	 	return triggerRecordResponse;
+	 	return deleteLiveDomainPlayMappingResponse;
 	}
 }

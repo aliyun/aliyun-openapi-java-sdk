@@ -22,20 +22,16 @@ import com.aliyuncs.live.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<DescribeLiveStreamsControlHistoryResponse> {
+public class VerifyLiveDomainOwnerRequest extends RpcAcsRequest<VerifyLiveDomainOwnerResponse> {
 	   
 
-	private String startTime;
-
-	private String appName;
+	private String verifyType;
 
 	private String domainName;
 
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeLiveStreamsControlHistoryRequest() {
-		super("live", "2016-11-01", "DescribeLiveStreamsControlHistory", "live");
+	public VerifyLiveDomainOwnerRequest() {
+		super("live", "2016-11-01", "VerifyLiveDomainOwner", "live");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +39,14 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 		} catch (Exception e) {}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
+	public String getVerifyType() {
+		return this.verifyType;
 	}
 
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getAppName() {
-		return this.appName;
-	}
-
-	public void setAppName(String appName) {
-		this.appName = appName;
-		if(appName != null){
-			putQueryParameter("AppName", appName);
+	public void setVerifyType(String verifyType) {
+		this.verifyType = verifyType;
+		if(verifyType != null){
+			putQueryParameter("VerifyType", verifyType);
 		}
 	}
 
@@ -73,17 +58,6 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 		this.domainName = domainName;
 		if(domainName != null){
 			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -99,8 +73,8 @@ public class DescribeLiveStreamsControlHistoryRequest extends RpcAcsRequest<Desc
 	}
 
 	@Override
-	public Class<DescribeLiveStreamsControlHistoryResponse> getResponseClass() {
-		return DescribeLiveStreamsControlHistoryResponse.class;
+	public Class<VerifyLiveDomainOwnerResponse> getResponseClass() {
+		return VerifyLiveDomainOwnerResponse.class;
 	}
 
 }

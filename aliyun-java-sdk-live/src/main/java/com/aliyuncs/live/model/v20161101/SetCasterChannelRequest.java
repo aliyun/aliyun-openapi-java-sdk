@@ -35,8 +35,6 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 
 	private Long ownerId;
 
-	private Integer reloadFlag;
-
 	private String channelId;
 	public SetCasterChannelRequest() {
 		super("live", "2016-11-01", "SetCasterChannel", "live");
@@ -99,17 +97,6 @@ public class SetCasterChannelRequest extends RpcAcsRequest<SetCasterChannelRespo
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Integer getReloadFlag() {
-		return this.reloadFlag;
-	}
-
-	public void setReloadFlag(Integer reloadFlag) {
-		this.reloadFlag = reloadFlag;
-		if(reloadFlag != null){
-			putQueryParameter("ReloadFlag", reloadFlag.toString());
 		}
 	}
 

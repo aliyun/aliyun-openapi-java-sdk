@@ -25,15 +25,7 @@ import com.aliyuncs.live.Endpoint;
 public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiveLazyPullStreamInfoConfigResponse> {
 	   
 
-	private String pullArgs;
-
 	private String appName;
-
-	private String liveapiRequestFrom;
-
-	private String pullAuthKey;
-
-	private String pullAuthType;
 
 	private String domainName;
 
@@ -53,17 +45,6 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		} catch (Exception e) {}
 	}
 
-	public String getPullArgs() {
-		return this.pullArgs;
-	}
-
-	public void setPullArgs(String pullArgs) {
-		this.pullArgs = pullArgs;
-		if(pullArgs != null){
-			putQueryParameter("PullArgs", pullArgs);
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -72,39 +53,6 @@ public class SetLiveLazyPullStreamInfoConfigRequest extends RpcAcsRequest<SetLiv
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public String getLiveapiRequestFrom() {
-		return this.liveapiRequestFrom;
-	}
-
-	public void setLiveapiRequestFrom(String liveapiRequestFrom) {
-		this.liveapiRequestFrom = liveapiRequestFrom;
-		if(liveapiRequestFrom != null){
-			putQueryParameter("LiveapiRequestFrom", liveapiRequestFrom);
-		}
-	}
-
-	public String getPullAuthKey() {
-		return this.pullAuthKey;
-	}
-
-	public void setPullAuthKey(String pullAuthKey) {
-		this.pullAuthKey = pullAuthKey;
-		if(pullAuthKey != null){
-			putQueryParameter("PullAuthKey", pullAuthKey);
-		}
-	}
-
-	public String getPullAuthType() {
-		return this.pullAuthType;
-	}
-
-	public void setPullAuthType(String pullAuthType) {
-		this.pullAuthType = pullAuthType;
-		if(pullAuthType != null){
-			putQueryParameter("PullAuthType", pullAuthType);
 		}
 	}
 

@@ -15,20 +15,18 @@
 package com.aliyuncs.live.model.v20161101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.live.transform.v20161101.TriggerRecordResponseUnmarshaller;
+import com.aliyuncs.live.transform.v20161101.DescribeLiveVerifyContentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TriggerRecordResponse extends AcsResponse {
+public class DescribeLiveVerifyContentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String result;
-
-	private String taskId;
+	private String content;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class TriggerRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getResult() {
-		return this.result;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setResult(String result) {
-		this.result = result;
-	}
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	@Override
-	public TriggerRecordResponse getInstance(UnmarshallerContext context) {
-		return	TriggerRecordResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLiveVerifyContentResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLiveVerifyContentResponseUnmarshaller.unmarshall(this, context);
 	}
 }
