@@ -1,3 +1,6 @@
+2021-01-13 Version: 1.2.11
+- Update ExtractPedestrianFeatureAttr.
+
 2021-01-12 Version: 1.2.11
 - Update ExtractPedestrianFeatureAttr.
 
