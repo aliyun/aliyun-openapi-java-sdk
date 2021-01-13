@@ -48,6 +48,7 @@ public class ListDevicesResponseUnmarshaller {
 			device.setSN(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].SN"));
 			device.setStatus(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].Status"));
 			device.setCastScreenCode(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].CastScreenCode"));
+			device.setStartUpPictureUrl(_ctx.stringValue("ListDevicesResponse.Data.Devices["+ i +"].StartUpPictureUrl"));
 
 			devices.add(device);
 		}

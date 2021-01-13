@@ -50,6 +50,7 @@ public class ListConferenceDevicesResponseUnmarshaller {
 			data.setSN(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].SN"));
 			data.setStatus(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].Status"));
 			data.setCastScreenCode(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].CastScreenCode"));
+			data.setStartUpPictureUrl(_ctx.stringValue("ListConferenceDevicesResponse.ConferencesDatas.Conferences["+ i +"].StartUpPictureUrl"));
 
 			conferences.add(data);
 		}

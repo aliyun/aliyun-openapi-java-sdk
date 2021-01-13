@@ -139,6 +139,8 @@ public class ListConferenceDevicesResponse extends AcsResponse {
 
 			private String castScreenCode;
 
+			private String startUpPictureUrl;
+
 			public String getActivationCode() {
 				return this.activationCode;
 			}
@@ -217,6 +219,14 @@ public class ListConferenceDevicesResponse extends AcsResponse {
 
 			public void setCastScreenCode(String castScreenCode) {
 				this.castScreenCode = castScreenCode;
+			}
+
+			public String getStartUpPictureUrl() {
+				return this.startUpPictureUrl;
+			}
+
+			public void setStartUpPictureUrl(String startUpPictureUrl) {
+				this.startUpPictureUrl = startUpPictureUrl;
 			}
 		}
 	}

@@ -1,3 +1,7 @@
+2021-01-13 Version: 1.0.13
+- Support for Device New Status Update.
+- Support for Return Device Startup Picture.
+
 2020-12-29 Version: 1.0.12
 - Support for Server Screen.
 
