@@ -22,16 +22,16 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeFaceVerifyRequest extends RpcAcsRequest<DescribeFaceVerifyResponse> {
+public class DeleteWhitelistRequest extends RpcAcsRequest<DeleteWhitelistResponse> {
 	   
 
-	private String certifyId;
+	private String sourceIp;
 
-	private String pictureReturnType;
+	private String ids;
 
-	private Long sceneId;
-	public DescribeFaceVerifyRequest() {
-		super("Cloudauth", "2019-03-07", "DescribeFaceVerify", "cloudauth");
+	private String lang;
+	public DeleteWhitelistRequest() {
+		super("Cloudauth", "2019-03-07", "DeleteWhitelist", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class DescribeFaceVerifyRequest extends RpcAcsRequest<DescribeFaceVerifyR
 		} catch (Exception e) {}
 	}
 
-	public String getCertifyId() {
-		return this.certifyId;
+	public String getSourceIp() {
+		return this.sourceIp;
 	}
 
-	public void setCertifyId(String certifyId) {
-		this.certifyId = certifyId;
-		if(certifyId != null){
-			putQueryParameter("CertifyId", certifyId);
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
-	public String getPictureReturnType() {
-		return this.pictureReturnType;
+	public String getIds() {
+		return this.ids;
 	}
 
-	public void setPictureReturnType(String pictureReturnType) {
-		this.pictureReturnType = pictureReturnType;
-		if(pictureReturnType != null){
-			putQueryParameter("PictureReturnType", pictureReturnType);
+	public void setIds(String ids) {
+		this.ids = ids;
+		if(ids != null){
+			putQueryParameter("Ids", ids);
 		}
 	}
 
-	public Long getSceneId() {
-		return this.sceneId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setSceneId(Long sceneId) {
-		this.sceneId = sceneId;
-		if(sceneId != null){
-			putQueryParameter("SceneId", sceneId.toString());
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
 	@Override
-	public Class<DescribeFaceVerifyResponse> getResponseClass() {
-		return DescribeFaceVerifyResponse.class;
+	public Class<DeleteWhitelistResponse> getResponseClass() {
+		return DeleteWhitelistResponse.class;
 	}
 
 }

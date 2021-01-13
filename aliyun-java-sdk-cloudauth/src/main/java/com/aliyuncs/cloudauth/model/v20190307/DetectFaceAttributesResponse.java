@@ -182,8 +182,6 @@ public class DetectFaceAttributesResponse extends AcsResponse {
 
 				private Float blur;
 
-				private String ethnicity;
-
 				private Float facequal;
 
 				private Integer integrity;
@@ -226,14 +224,6 @@ public class DetectFaceAttributesResponse extends AcsResponse {
 
 				public void setBlur(Float blur) {
 					this.blur = blur;
-				}
-
-				public String getEthnicity() {
-					return this.ethnicity;
-				}
-
-				public void setEthnicity(String ethnicity) {
-					this.ethnicity = ethnicity;
 				}
 
 				public Float getFacequal() {
