@@ -37,6 +37,8 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 
 	private String effectiveTime;
 
+	private String sourceBiz;
+
 	private String businessInfo;
 
 	private Boolean autoPay;
@@ -126,6 +128,17 @@ public class ModifyInstanceSpecRequest extends RpcAcsRequest<ModifyInstanceSpecR
 		this.effectiveTime = effectiveTime;
 		if(effectiveTime != null){
 			putQueryParameter("EffectiveTime", effectiveTime);
+		}
+	}
+
+	public String getSourceBiz() {
+		return this.sourceBiz;
+	}
+
+	public void setSourceBiz(String sourceBiz) {
+		this.sourceBiz = sourceBiz;
+		if(sourceBiz != null){
+			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 
