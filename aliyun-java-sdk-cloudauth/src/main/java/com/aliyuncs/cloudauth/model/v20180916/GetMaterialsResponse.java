@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20170912.GetMaterialsResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180916.GetMaterialsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -82,6 +82,8 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		private String idCardType;
 
+		private String idCardStartDate;
+
 		private String idCardExpiry;
 
 		private String address;
@@ -93,6 +95,10 @@ public class GetMaterialsResponse extends AcsResponse {
 		private String idCardBackPic;
 
 		private String facePic;
+
+		private String ethnicGroup;
+
+		private String authority;
 
 		public String getName() {
 			return this.name;
@@ -116,6 +122,14 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		public void setIdCardType(String idCardType) {
 			this.idCardType = idCardType;
+		}
+
+		public String getIdCardStartDate() {
+			return this.idCardStartDate;
+		}
+
+		public void setIdCardStartDate(String idCardStartDate) {
+			this.idCardStartDate = idCardStartDate;
 		}
 
 		public String getIdCardExpiry() {
@@ -164,6 +178,22 @@ public class GetMaterialsResponse extends AcsResponse {
 
 		public void setFacePic(String facePic) {
 			this.facePic = facePic;
+		}
+
+		public String getEthnicGroup() {
+			return this.ethnicGroup;
+		}
+
+		public void setEthnicGroup(String ethnicGroup) {
+			this.ethnicGroup = ethnicGroup;
+		}
+
+		public String getAuthority() {
+			return this.authority;
+		}
+
+		public void setAuthority(String authority) {
+			this.authority = authority;
 		}
 	}
 

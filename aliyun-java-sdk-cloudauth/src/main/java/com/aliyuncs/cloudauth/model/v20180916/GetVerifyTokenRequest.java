@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.ProtocolType;
@@ -26,21 +26,45 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse> {
 	   
 
+	private String binding;
+
+	private String verifyConfigs;
+
 	private String userData;
 
 	private String biz;
 
-	private String binding;
-
 	private String ticketId;
 	public GetVerifyTokenRequest() {
-		super("Cloudauth", "2017-09-12", "GetVerifyToken", "cloudauth");
+		super("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBinding() {
+		return this.binding;
+	}
+
+	public void setBinding(String binding) {
+		this.binding = binding;
+		if(binding != null){
+			putBodyParameter("Binding", binding);
+		}
+	}
+
+	public String getVerifyConfigs() {
+		return this.verifyConfigs;
+	}
+
+	public void setVerifyConfigs(String verifyConfigs) {
+		this.verifyConfigs = verifyConfigs;
+		if(verifyConfigs != null){
+			putQueryParameter("VerifyConfigs", verifyConfigs);
+		}
 	}
 
 	public String getUserData() {
@@ -62,17 +86,6 @@ public class GetVerifyTokenRequest extends RpcAcsRequest<GetVerifyTokenResponse>
 		this.biz = biz;
 		if(biz != null){
 			putQueryParameter("Biz", biz);
-		}
-	}
-
-	public String getBinding() {
-		return this.binding;
-	}
-
-	public void setBinding(String binding) {
-		this.binding = binding;
-		if(binding != null){
-			putQueryParameter("Binding", binding);
 		}
 	}
 

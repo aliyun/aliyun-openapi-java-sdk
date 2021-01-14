@@ -12,10 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.cloudauth.Endpoint;
 
@@ -23,15 +22,16 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetStatusRequest extends RpcAcsRequest<GetStatusResponse> {
+public class DescribeVerifySDKRequest extends RpcAcsRequest<DescribeVerifySDKResponse> {
 	   
 
-	private String biz;
+	private String sourceIp;
 
-	private String ticketId;
-	public GetStatusRequest() {
-		super("Cloudauth", "2017-09-12", "GetStatus", "cloudauth");
-		setProtocol(ProtocolType.HTTPS);
+	private String lang;
+
+	private String taskId;
+	public DescribeVerifySDKRequest() {
+		super("Cloudauth", "2018-09-16", "DescribeVerifySDK", "cloudauth");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,31 +39,42 @@ public class GetStatusRequest extends RpcAcsRequest<GetStatusResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getBiz() {
-		return this.biz;
+	public String getSourceIp() {
+		return this.sourceIp;
 	}
 
-	public void setBiz(String biz) {
-		this.biz = biz;
-		if(biz != null){
-			putQueryParameter("Biz", biz);
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
-	public String getTicketId() {
-		return this.ticketId;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setTicketId(String ticketId) {
-		this.ticketId = ticketId;
-		if(ticketId != null){
-			putQueryParameter("TicketId", ticketId);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<GetStatusResponse> getResponseClass() {
-		return GetStatusResponse.class;
+	public Class<DescribeVerifySDKResponse> getResponseClass() {
+		return DescribeVerifySDKResponse.class;
 	}
 
 }

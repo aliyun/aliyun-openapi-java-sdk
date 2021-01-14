@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20170912;
+package com.aliyuncs.cloudauth.transform.v20180916;
 
-import com.aliyuncs.cloudauth.model.v20170912.GetMaterialsResponse;
-import com.aliyuncs.cloudauth.model.v20170912.GetMaterialsResponse.Data;
+import com.aliyuncs.cloudauth.model.v20180916.GetMaterialsResponse;
+import com.aliyuncs.cloudauth.model.v20180916.GetMaterialsResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,12 +32,15 @@ public class GetMaterialsResponseUnmarshaller {
 		data.setName(_ctx.stringValue("GetMaterialsResponse.Data.Name"));
 		data.setIdentificationNumber(_ctx.stringValue("GetMaterialsResponse.Data.IdentificationNumber"));
 		data.setIdCardType(_ctx.stringValue("GetMaterialsResponse.Data.IdCardType"));
+		data.setIdCardStartDate(_ctx.stringValue("GetMaterialsResponse.Data.IdCardStartDate"));
 		data.setIdCardExpiry(_ctx.stringValue("GetMaterialsResponse.Data.IdCardExpiry"));
 		data.setAddress(_ctx.stringValue("GetMaterialsResponse.Data.Address"));
 		data.setSex(_ctx.stringValue("GetMaterialsResponse.Data.Sex"));
 		data.setIdCardFrontPic(_ctx.stringValue("GetMaterialsResponse.Data.IdCardFrontPic"));
 		data.setIdCardBackPic(_ctx.stringValue("GetMaterialsResponse.Data.IdCardBackPic"));
 		data.setFacePic(_ctx.stringValue("GetMaterialsResponse.Data.FacePic"));
+		data.setEthnicGroup(_ctx.stringValue("GetMaterialsResponse.Data.EthnicGroup"));
+		data.setAuthority(_ctx.stringValue("GetMaterialsResponse.Data.Authority"));
 		getMaterialsResponse.setData(data);
 	 
 	 	return getMaterialsResponse;

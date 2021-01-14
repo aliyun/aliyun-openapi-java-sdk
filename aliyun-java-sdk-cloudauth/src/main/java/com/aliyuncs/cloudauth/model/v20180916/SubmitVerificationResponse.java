@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20170912.SubmitMaterialsResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180916.SubmitVerificationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitMaterialsResponse extends AcsResponse {
+public class SubmitVerificationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -94,6 +94,10 @@ public class SubmitMaterialsResponse extends AcsResponse {
 
 			private Float similarityScore;
 
+			private String auditConclusions;
+
+			private Float authorityComparisonScore;
+
 			public Integer getStatusCode() {
 				return this.statusCode;
 			}
@@ -117,11 +121,27 @@ public class SubmitMaterialsResponse extends AcsResponse {
 			public void setSimilarityScore(Float similarityScore) {
 				this.similarityScore = similarityScore;
 			}
+
+			public String getAuditConclusions() {
+				return this.auditConclusions;
+			}
+
+			public void setAuditConclusions(String auditConclusions) {
+				this.auditConclusions = auditConclusions;
+			}
+
+			public Float getAuthorityComparisonScore() {
+				return this.authorityComparisonScore;
+			}
+
+			public void setAuthorityComparisonScore(Float authorityComparisonScore) {
+				this.authorityComparisonScore = authorityComparisonScore;
+			}
 		}
 	}
 
 	@Override
-	public SubmitMaterialsResponse getInstance(UnmarshallerContext context) {
-		return	SubmitMaterialsResponseUnmarshaller.unmarshall(this, context);
+	public SubmitVerificationResponse getInstance(UnmarshallerContext context) {
+		return	SubmitVerificationResponseUnmarshaller.unmarshall(this, context);
 	}
 }

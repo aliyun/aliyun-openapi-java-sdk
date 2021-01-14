@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20170912;
+package com.aliyuncs.cloudauth.transform.v20180916;
 
-import com.aliyuncs.cloudauth.model.v20170912.GetStatusResponse;
-import com.aliyuncs.cloudauth.model.v20170912.GetStatusResponse.Data;
+import com.aliyuncs.cloudauth.model.v20180916.GetStatusResponse;
+import com.aliyuncs.cloudauth.model.v20180916.GetStatusResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,6 +32,8 @@ public class GetStatusResponseUnmarshaller {
 		data.setStatusCode(_ctx.integerValue("GetStatusResponse.Data.StatusCode"));
 		data.setTrustedScore(_ctx.floatValue("GetStatusResponse.Data.TrustedScore"));
 		data.setSimilarityScore(_ctx.floatValue("GetStatusResponse.Data.SimilarityScore"));
+		data.setAuditConclusions(_ctx.stringValue("GetStatusResponse.Data.AuditConclusions"));
+		data.setAuthorityComparisonScore(_ctx.floatValue("GetStatusResponse.Data.AuthorityComparisonScore"));
 		getStatusResponse.setData(data);
 	 
 	 	return getStatusResponse;

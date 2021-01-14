@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
@@ -24,20 +24,59 @@ import com.aliyuncs.cloudauth.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsResponse> {
+public class SubmitVerificationRequest extends RpcAcsRequest<SubmitVerificationResponse> {
 	   
+
+	private Long resourceOwnerId;
+
+	private String biz;
+
+	private String sourceIp;
 
 	private List<Material> materials;
 
-	private String verifyToken;
-	public SubmitMaterialsRequest() {
-		super("Cloudauth", "2017-09-12", "SubmitMaterials", "cloudauth");
+	private String ticketId;
+	public SubmitVerificationRequest() {
+		super("Cloudauth", "2018-09-16", "SubmitVerification", "cloudauth");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getResourceOwnerId() {
+		return this.resourceOwnerId;
+	}
+
+	public void setResourceOwnerId(Long resourceOwnerId) {
+		this.resourceOwnerId = resourceOwnerId;
+		if(resourceOwnerId != null){
+			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getBiz() {
+		return this.biz;
+	}
+
+	public void setBiz(String biz) {
+		this.biz = biz;
+		if(biz != null){
+			putBodyParameter("Biz", biz);
+		}
+	}
+
+	public String getSourceIp() {
+		return this.sourceIp;
+	}
+
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
+		}
 	}
 
 	public List<Material> getMaterials() {
@@ -48,20 +87,20 @@ public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsRespons
 		this.materials = materials;	
 		if (materials != null) {
 			for (int depth1 = 0; depth1 < materials.size(); depth1++) {
-				putQueryParameter("Material." + (depth1 + 1) + ".MaterialType" , materials.get(depth1).getMaterialType());
-				putQueryParameter("Material." + (depth1 + 1) + ".Value" , materials.get(depth1).getValue());
+				putBodyParameter("Material." + (depth1 + 1) + ".MaterialType" , materials.get(depth1).getMaterialType());
+				putBodyParameter("Material." + (depth1 + 1) + ".Value" , materials.get(depth1).getValue());
 			}
 		}	
 	}
 
-	public String getVerifyToken() {
-		return this.verifyToken;
+	public String getTicketId() {
+		return this.ticketId;
 	}
 
-	public void setVerifyToken(String verifyToken) {
-		this.verifyToken = verifyToken;
-		if(verifyToken != null){
-			putQueryParameter("VerifyToken", verifyToken);
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+		if(ticketId != null){
+			putBodyParameter("TicketId", ticketId);
 		}
 	}
 
@@ -89,8 +128,8 @@ public class SubmitMaterialsRequest extends RpcAcsRequest<SubmitMaterialsRespons
 	}
 
 	@Override
-	public Class<SubmitMaterialsResponse> getResponseClass() {
-		return SubmitMaterialsResponse.class;
+	public Class<SubmitVerificationResponse> getResponseClass() {
+		return SubmitVerificationResponse.class;
 	}
 
 }

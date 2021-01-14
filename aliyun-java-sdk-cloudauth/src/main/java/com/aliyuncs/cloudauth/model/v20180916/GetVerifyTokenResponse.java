@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20170912.GetVerifyTokenResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180916.GetVerifyTokenResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -76,9 +76,19 @@ public class GetVerifyTokenResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String cloudauthPageUrl;
+
 		private VerifyToken verifyToken;
 
 		private StsToken stsToken;
+
+		public String getCloudauthPageUrl() {
+			return this.cloudauthPageUrl;
+		}
+
+		public void setCloudauthPageUrl(String cloudauthPageUrl) {
+			this.cloudauthPageUrl = cloudauthPageUrl;
+		}
 
 		public VerifyToken getVerifyToken() {
 			return this.verifyToken;

@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20170912;
+package com.aliyuncs.cloudauth.model.v20180916;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20170912.GetStatusResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20180916.GetStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -82,6 +82,10 @@ public class GetStatusResponse extends AcsResponse {
 
 		private Float similarityScore;
 
+		private String auditConclusions;
+
+		private Float authorityComparisonScore;
+
 		public Integer getStatusCode() {
 			return this.statusCode;
 		}
@@ -104,6 +108,22 @@ public class GetStatusResponse extends AcsResponse {
 
 		public void setSimilarityScore(Float similarityScore) {
 			this.similarityScore = similarityScore;
+		}
+
+		public String getAuditConclusions() {
+			return this.auditConclusions;
+		}
+
+		public void setAuditConclusions(String auditConclusions) {
+			this.auditConclusions = auditConclusions;
+		}
+
+		public Float getAuthorityComparisonScore() {
+			return this.authorityComparisonScore;
+		}
+
+		public void setAuthorityComparisonScore(Float authorityComparisonScore) {
+			this.authorityComparisonScore = authorityComparisonScore;
 		}
 	}
 

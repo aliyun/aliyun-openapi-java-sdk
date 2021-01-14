@@ -12,12 +12,12 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20170912;
+package com.aliyuncs.cloudauth.transform.v20180916;
 
-import com.aliyuncs.cloudauth.model.v20170912.GetVerifyTokenResponse;
-import com.aliyuncs.cloudauth.model.v20170912.GetVerifyTokenResponse.Data;
-import com.aliyuncs.cloudauth.model.v20170912.GetVerifyTokenResponse.Data.StsToken;
-import com.aliyuncs.cloudauth.model.v20170912.GetVerifyTokenResponse.Data.VerifyToken;
+import com.aliyuncs.cloudauth.model.v20180916.GetVerifyTokenResponse;
+import com.aliyuncs.cloudauth.model.v20180916.GetVerifyTokenResponse.Data;
+import com.aliyuncs.cloudauth.model.v20180916.GetVerifyTokenResponse.Data.StsToken;
+import com.aliyuncs.cloudauth.model.v20180916.GetVerifyTokenResponse.Data.VerifyToken;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -31,6 +31,7 @@ public class GetVerifyTokenResponseUnmarshaller {
 		getVerifyTokenResponse.setMessage(_ctx.stringValue("GetVerifyTokenResponse.Message"));
 
 		Data data = new Data();
+		data.setCloudauthPageUrl(_ctx.stringValue("GetVerifyTokenResponse.Data.CloudauthPageUrl"));
 
 		VerifyToken verifyToken = new VerifyToken();
 		verifyToken.setToken(_ctx.stringValue("GetVerifyTokenResponse.Data.VerifyToken.Token"));

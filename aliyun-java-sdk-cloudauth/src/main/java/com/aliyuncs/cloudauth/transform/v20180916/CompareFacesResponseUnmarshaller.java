@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.transform.v20170912;
+package com.aliyuncs.cloudauth.transform.v20180916;
 
-import com.aliyuncs.cloudauth.model.v20170912.CompareFacesResponse;
-import com.aliyuncs.cloudauth.model.v20170912.CompareFacesResponse.Data;
+import com.aliyuncs.cloudauth.model.v20180916.CompareFacesResponse;
+import com.aliyuncs.cloudauth.model.v20180916.CompareFacesResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
