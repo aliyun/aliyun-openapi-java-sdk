@@ -35,7 +35,7 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private String componentIds;
 
-	private String healthCheckURL;
+	private String healthCheckUrl;
 
 	private String reservedPortStr;
 
@@ -51,6 +51,8 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 
 	private Integer maxHeapSize;
 
+	private Boolean enablePortCheck;
+
 	private String applicationName;
 
 	private String jdk;
@@ -58,6 +60,8 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 	private Integer mem;
 
 	private String logicalRegionId;
+
+	private Boolean enableUrlCheck;
 
 	private String packageType;
 
@@ -127,14 +131,14 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		}
 	}
 
-	public String getHealthCheckURL() {
-		return this.healthCheckURL;
+	public String getHealthCheckUrl() {
+		return this.healthCheckUrl;
 	}
 
-	public void setHealthCheckURL(String healthCheckURL) {
-		this.healthCheckURL = healthCheckURL;
-		if(healthCheckURL != null){
-			putQueryParameter("HealthCheckURL", healthCheckURL);
+	public void setHealthCheckUrl(String healthCheckUrl) {
+		this.healthCheckUrl = healthCheckUrl;
+		if(healthCheckUrl != null){
+			putQueryParameter("HealthCheckUrl", healthCheckUrl);
 		}
 	}
 
@@ -215,6 +219,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		}
 	}
 
+	public Boolean getEnablePortCheck() {
+		return this.enablePortCheck;
+	}
+
+	public void setEnablePortCheck(Boolean enablePortCheck) {
+		this.enablePortCheck = enablePortCheck;
+		if(enablePortCheck != null){
+			putQueryParameter("EnablePortCheck", enablePortCheck.toString());
+		}
+	}
+
 	public String getApplicationName() {
 		return this.applicationName;
 	}
@@ -256,6 +271,17 @@ public class InsertApplicationRequest extends RoaAcsRequest<InsertApplicationRes
 		this.logicalRegionId = logicalRegionId;
 		if(logicalRegionId != null){
 			putQueryParameter("LogicalRegionId", logicalRegionId);
+		}
+	}
+
+	public Boolean getEnableUrlCheck() {
+		return this.enableUrlCheck;
+	}
+
+	public void setEnableUrlCheck(Boolean enableUrlCheck) {
+		this.enableUrlCheck = enableUrlCheck;
+		if(enableUrlCheck != null){
+			putQueryParameter("EnableUrlCheck", enableUrlCheck.toString());
 		}
 	}
 
