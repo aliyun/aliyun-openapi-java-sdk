@@ -25,7 +25,7 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class EnableUserRequest extends RpcAcsRequest<EnableUserResponse> {
 	   
 
-	private Long uid;
+	private String uid;
 
 	private Long tid;
 	public EnableUserRequest() {
@@ -37,14 +37,14 @@ public class EnableUserRequest extends RpcAcsRequest<EnableUserResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getUid() {
+	public String getUid() {
 		return this.uid;
 	}
 
-	public void setUid(Long uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
+			putQueryParameter("Uid", uid);
 		}
 	}
 

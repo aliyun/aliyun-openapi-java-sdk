@@ -58,6 +58,18 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setDatabasePassword(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].DatabasePassword"));
 			instance.setInstanceSource(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].InstanceSource"));
 
+			List<String> ownerIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.InstanceList["+ i +"].OwnerIdList.Length"); j++) {
+				ownerIdList.add(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].OwnerIdList["+ j +"]"));
+			}
+			instance.setOwnerIdList(ownerIdList);
+
+			List<String> ownerNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListInstancesResponse.InstanceList["+ i +"].OwnerNameList.Length"); j++) {
+				ownerNameList.add(_ctx.stringValue("ListInstancesResponse.InstanceList["+ i +"].OwnerNameList["+ j +"]"));
+			}
+			instance.setOwnerNameList(ownerNameList);
+
 			instanceList.add(instance);
 		}
 		listInstancesResponse.setInstanceList(instanceList);

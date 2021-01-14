@@ -33,7 +33,7 @@ public class GetUserResponseUnmarshaller {
 
 		User user = new User();
 		user.setUserId(_ctx.stringValue("GetUserResponse.User.UserId"));
-		user.setUid(_ctx.longValue("GetUserResponse.User.Uid"));
+		user.setUid(_ctx.stringValue("GetUserResponse.User.Uid"));
 		user.setNickName(_ctx.stringValue("GetUserResponse.User.NickName"));
 		user.setMobile(_ctx.stringValue("GetUserResponse.User.Mobile"));
 		user.setParentUid(_ctx.longValue("GetUserResponse.User.ParentUid"));

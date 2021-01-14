@@ -27,13 +27,13 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 
 	private String roleNames;
 
-	private Long uid;
-
 	private String userNick;
 
 	private String mobile;
 
 	private Long tid;
+
+	private String uid;
 	public RegisterUserRequest() {
 		super("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise");
 		setMethod(MethodType.POST);
@@ -51,17 +51,6 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		this.roleNames = roleNames;
 		if(roleNames != null){
 			putQueryParameter("RoleNames", roleNames);
-		}
-	}
-
-	public Long getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Long uid) {
-		this.uid = uid;
-		if(uid != null){
-			putQueryParameter("Uid", uid.toString());
 		}
 	}
 
@@ -95,6 +84,17 @@ public class RegisterUserRequest extends RpcAcsRequest<RegisterUserResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getUid() {
+		return this.uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid);
 		}
 	}
 

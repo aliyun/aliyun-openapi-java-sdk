@@ -36,10 +36,10 @@ public class ListUsersResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.UserList.Length"); i++) {
 			User user = new User();
 			user.setUserId(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
-			user.setUid(_ctx.longValue("ListUsersResponse.UserList["+ i +"].Uid"));
+			user.setUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Uid"));
 			user.setNickName(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].NickName"));
 			user.setMobile(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Mobile"));
-			user.setParentUid(_ctx.longValue("ListUsersResponse.UserList["+ i +"].ParentUid"));
+			user.setParentUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].ParentUid"));
 			user.setState(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].State"));
 			user.setLastLoginTime(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LastLoginTime"));
 			user.setCurExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurExecuteCount"));

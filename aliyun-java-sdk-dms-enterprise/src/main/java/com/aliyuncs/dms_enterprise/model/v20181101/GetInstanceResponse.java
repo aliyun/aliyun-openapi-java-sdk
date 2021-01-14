@@ -14,6 +14,7 @@
 
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.dms_enterprise.transform.v20181101.GetInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -119,6 +120,10 @@ public class GetInstanceResponse extends AcsResponse {
 		private String databasePassword;
 
 		private String instanceSource;
+
+		private List<String> ownerIdList;
+
+		private List<String> ownerNameList;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -294,6 +299,22 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setInstanceSource(String instanceSource) {
 			this.instanceSource = instanceSource;
+		}
+
+		public List<String> getOwnerIdList() {
+			return this.ownerIdList;
+		}
+
+		public void setOwnerIdList(List<String> ownerIdList) {
+			this.ownerIdList = ownerIdList;
+		}
+
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
+		}
+
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 	}
 

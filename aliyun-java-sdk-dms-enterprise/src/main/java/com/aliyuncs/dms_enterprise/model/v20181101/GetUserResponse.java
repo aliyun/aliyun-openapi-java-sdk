@@ -79,7 +79,7 @@ public class GetUserResponse extends AcsResponse {
 
 		private String userId;
 
-		private Long uid;
+		private String uid;
 
 		private String nickName;
 
@@ -111,11 +111,11 @@ public class GetUserResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public Long getUid() {
+		public String getUid() {
 			return this.uid;
 		}
 
-		public void setUid(Long uid) {
+		public void setUid(String uid) {
 			this.uid = uid;
 		}
 

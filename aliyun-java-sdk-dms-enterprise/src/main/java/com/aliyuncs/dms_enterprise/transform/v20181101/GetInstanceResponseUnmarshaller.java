@@ -14,6 +14,9 @@
 
 package com.aliyuncs.dms_enterprise.transform.v20181101;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.dms_enterprise.model.v20181101.GetInstanceResponse;
 import com.aliyuncs.dms_enterprise.model.v20181101.GetInstanceResponse.Instance;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -51,6 +54,18 @@ public class GetInstanceResponseUnmarshaller {
 		instance.setDatabaseUser(_ctx.stringValue("GetInstanceResponse.Instance.DatabaseUser"));
 		instance.setDatabasePassword(_ctx.stringValue("GetInstanceResponse.Instance.DatabasePassword"));
 		instance.setInstanceSource(_ctx.stringValue("GetInstanceResponse.Instance.InstanceSource"));
+
+		List<String> ownerIdList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Instance.OwnerIdList.Length"); i++) {
+			ownerIdList.add(_ctx.stringValue("GetInstanceResponse.Instance.OwnerIdList["+ i +"]"));
+		}
+		instance.setOwnerIdList(ownerIdList);
+
+		List<String> ownerNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Instance.OwnerNameList.Length"); i++) {
+			ownerNameList.add(_ctx.stringValue("GetInstanceResponse.Instance.OwnerNameList["+ i +"]"));
+		}
+		instance.setOwnerNameList(ownerNameList);
 		getInstanceResponse.setInstance(instance);
 	 
 	 	return getInstanceResponse;

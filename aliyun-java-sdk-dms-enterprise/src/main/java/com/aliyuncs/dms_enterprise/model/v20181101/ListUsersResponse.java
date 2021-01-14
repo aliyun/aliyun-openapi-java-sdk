@@ -89,13 +89,13 @@ public class ListUsersResponse extends AcsResponse {
 
 		private String userId;
 
-		private Long uid;
+		private String uid;
 
 		private String nickName;
 
 		private String mobile;
 
-		private Long parentUid;
+		private String parentUid;
 
 		private String state;
 
@@ -121,11 +121,11 @@ public class ListUsersResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public Long getUid() {
+		public String getUid() {
 			return this.uid;
 		}
 
-		public void setUid(Long uid) {
+		public void setUid(String uid) {
 			this.uid = uid;
 		}
 
@@ -145,11 +145,11 @@ public class ListUsersResponse extends AcsResponse {
 			this.mobile = mobile;
 		}
 
-		public Long getParentUid() {
+		public String getParentUid() {
 			return this.parentUid;
 		}
 
-		public void setParentUid(Long parentUid) {
+		public void setParentUid(String parentUid) {
 			this.parentUid = parentUid;
 		}
 

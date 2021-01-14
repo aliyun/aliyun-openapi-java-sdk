@@ -1,3 +1,8 @@
+2021-01-14 Version: 1.12.0
+- Fixed ListUsers, GetUser, EnableUser, RegisterUser, DisableUser, DeleteUser API parameter of uid data type error, from number into string.
+- Supported ListInstances, GetInstance API to return Owner information.
+- Supported SetOwners API to set INSTANCE owner.
+
 2020-10-12 Version: 1.11.1
 - Supported ApproveOrder to add comment message.
 

@@ -25,13 +25,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse> {
 	   
 
-	private Integer port;
-
-	private String host;
-
 	private Long tid;
 
 	private String sid;
+
+	private Integer port;
+
+	private String host;
 	public DeleteInstanceRequest() {
 		super("dms-enterprise", "2018-11-01", "DeleteInstance", "dmsenterprise");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
-		}
-	}
-
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putQueryParameter("Host", host);
-		}
 	}
 
 	public Long getTid() {
@@ -82,6 +60,28 @@ public class DeleteInstanceRequest extends RpcAcsRequest<DeleteInstanceResponse>
 		this.sid = sid;
 		if(sid != null){
 			putQueryParameter("Sid", sid);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
+		}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
 		}
 	}
 

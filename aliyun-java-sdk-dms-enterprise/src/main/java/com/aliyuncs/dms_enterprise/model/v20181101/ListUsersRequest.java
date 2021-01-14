@@ -25,17 +25,17 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	   
 
-	private String userState;
-
 	private String role;
-
-	private Integer pageSize;
 
 	private String searchKey;
 
 	private Long tid;
 
 	private Integer pageNumber;
+
+	private String userState;
+
+	private Integer pageSize;
 	public ListUsersRequest() {
 		super("dms-enterprise", "2018-11-01", "ListUsers", "dmsenterprise");
 		setMethod(MethodType.POST);
@@ -43,17 +43,6 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUserState() {
-		return this.userState;
-	}
-
-	public void setUserState(String userState) {
-		this.userState = userState;
-		if(userState != null){
-			putQueryParameter("UserState", userState);
-		}
 	}
 
 	public String getRole() {
@@ -64,17 +53,6 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.role = role;
 		if(role != null){
 			putQueryParameter("Role", role);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -108,6 +86,28 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getUserState() {
+		return this.userState;
+	}
+
+	public void setUserState(String userState) {
+		this.userState = userState;
+		if(userState != null){
+			putQueryParameter("UserState", userState);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
