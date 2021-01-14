@@ -23,6 +23,8 @@ public class ModifyDBInstanceSpecResponseUnmarshaller {
 	public static ModifyDBInstanceSpecResponse unmarshall(ModifyDBInstanceSpecResponse modifyDBInstanceSpecResponse, UnmarshallerContext _ctx) {
 		
 		modifyDBInstanceSpecResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceSpecResponse.RequestId"));
+		modifyDBInstanceSpecResponse.setDBInstanceId(_ctx.stringValue("ModifyDBInstanceSpecResponse.DBInstanceId"));
+		modifyDBInstanceSpecResponse.setOrderId(_ctx.longValue("ModifyDBInstanceSpecResponse.OrderId"));
 	 
 	 	return modifyDBInstanceSpecResponse;
 	}
