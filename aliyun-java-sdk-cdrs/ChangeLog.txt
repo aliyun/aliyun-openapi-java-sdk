@@ -1,3 +1,6 @@
+2021-01-14 Version: 1.0.5
+- Add function.
+
 2021-01-14 Version: 1.0.4
 - Update function.
 
