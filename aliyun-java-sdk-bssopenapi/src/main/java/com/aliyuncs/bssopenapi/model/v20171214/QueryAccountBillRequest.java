@@ -35,7 +35,11 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 
 	private Long billOwnerId;
 
+	private String billingDate;
+
 	private Boolean isGroupByProduct;
+
+	private String granularity;
 
 	private Integer pageSize;
 	public QueryAccountBillRequest() {
@@ -102,6 +106,17 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 		}
 	}
 
+	public String getBillingDate() {
+		return this.billingDate;
+	}
+
+	public void setBillingDate(String billingDate) {
+		this.billingDate = billingDate;
+		if(billingDate != null){
+			putQueryParameter("BillingDate", billingDate);
+		}
+	}
+
 	public Boolean getIsGroupByProduct() {
 		return this.isGroupByProduct;
 	}
@@ -110,6 +125,17 @@ public class QueryAccountBillRequest extends RpcAcsRequest<QueryAccountBillRespo
 		this.isGroupByProduct = isGroupByProduct;
 		if(isGroupByProduct != null){
 			putQueryParameter("IsGroupByProduct", isGroupByProduct.toString());
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 
