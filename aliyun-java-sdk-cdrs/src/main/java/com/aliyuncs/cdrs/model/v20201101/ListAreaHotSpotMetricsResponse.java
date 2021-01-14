@@ -16,14 +16,14 @@ package com.aliyuncs.cdrs.model.v20201101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdrs.transform.v20201101.ListMetricsResponseUnmarshaller;
+import com.aliyuncs.cdrs.transform.v20201101.ListAreaHotSpotMetricsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListMetricsResponse extends AcsResponse {
+public class ListAreaHotSpotMetricsResponse extends AcsResponse {
 
 	private String code;
 
@@ -97,60 +97,60 @@ public class ListMetricsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String dateTime;
+		private String times;
 
-		private String tagCode;
+		private String coordinates;
 
-		private String tagValue;
+		private String deviceId;
 
-		private String tagMetric;
+		private String personId;
 
-		private String corpId;
+		private String intervalTime;
 
-		public String getDateTime() {
-			return this.dateTime;
+		public String getTimes() {
+			return this.times;
 		}
 
-		public void setDateTime(String dateTime) {
-			this.dateTime = dateTime;
+		public void setTimes(String times) {
+			this.times = times;
 		}
 
-		public String getTagCode() {
-			return this.tagCode;
+		public String getCoordinates() {
+			return this.coordinates;
 		}
 
-		public void setTagCode(String tagCode) {
-			this.tagCode = tagCode;
+		public void setCoordinates(String coordinates) {
+			this.coordinates = coordinates;
 		}
 
-		public String getTagValue() {
-			return this.tagValue;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
-		public String getTagMetric() {
-			return this.tagMetric;
+		public String getPersonId() {
+			return this.personId;
 		}
 
-		public void setTagMetric(String tagMetric) {
-			this.tagMetric = tagMetric;
+		public void setPersonId(String personId) {
+			this.personId = personId;
 		}
 
-		public String getCorpId() {
-			return this.corpId;
+		public String getIntervalTime() {
+			return this.intervalTime;
 		}
 
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
+		public void setIntervalTime(String intervalTime) {
+			this.intervalTime = intervalTime;
 		}
 	}
 
 	@Override
-	public ListMetricsResponse getInstance(UnmarshallerContext context) {
-		return	ListMetricsResponseUnmarshaller.unmarshall(this, context);
+	public ListAreaHotSpotMetricsResponse getInstance(UnmarshallerContext context) {
+		return	ListAreaHotSpotMetricsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

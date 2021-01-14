@@ -1,3 +1,6 @@
+2021-01-14 Version: 1.0.4
+- Update function.
+
 2021-01-06 Version: 1.0.3
 - Add API.
 

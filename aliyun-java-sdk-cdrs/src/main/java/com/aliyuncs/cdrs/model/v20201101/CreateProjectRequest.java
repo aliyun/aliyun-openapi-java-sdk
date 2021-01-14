@@ -29,6 +29,8 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 	private String description;
 
 	private String name;
+
+	private String aggregateSceneCode;
 	public CreateProjectRequest() {
 		super("CDRS", "2020-11-01", "CreateProject");
 		setMethod(MethodType.POST);
@@ -64,6 +66,17 @@ public class CreateProjectRequest extends RpcAcsRequest<CreateProjectResponse> {
 		this.name = name;
 		if(name != null){
 			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getAggregateSceneCode() {
+		return this.aggregateSceneCode;
+	}
+
+	public void setAggregateSceneCode(String aggregateSceneCode) {
+		this.aggregateSceneCode = aggregateSceneCode;
+		if(aggregateSceneCode != null){
+			putBodyParameter("AggregateSceneCode", aggregateSceneCode);
 		}
 	}
 

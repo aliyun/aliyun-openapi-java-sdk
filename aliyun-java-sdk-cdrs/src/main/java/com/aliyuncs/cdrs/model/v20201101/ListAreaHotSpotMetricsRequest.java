@@ -21,40 +21,27 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultResponse> {
+public class ListAreaHotSpotMetricsRequest extends RpcAcsRequest<ListAreaHotSpotMetricsResponse> {
 	   
-
-	private String profession;
 
 	private String schema;
 
 	private String corpId;
 
-	private String gender;
-
 	private String endTime;
 
 	private String startTime;
 
-	private Long pageNumber;
+	private String deviceId;
 
-	private Long pageSize;
+	private String pageNumber;
 
-	private String age;
-	public ListPersonResultRequest() {
-		super("CDRS", "2020-11-01", "ListPersonResult");
+	private String pageSize;
+
+	private String personId;
+	public ListAreaHotSpotMetricsRequest() {
+		super("CDRS", "2020-11-01", "ListAreaHotSpotMetrics");
 		setMethod(MethodType.POST);
-	}
-
-	public String getProfession() {
-		return this.profession;
-	}
-
-	public void setProfession(String profession) {
-		this.profession = profession;
-		if(profession != null){
-			putBodyParameter("Profession", profession);
-		}
 	}
 
 	public String getSchema() {
@@ -76,17 +63,6 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
-		}
-	}
-
-	public String getGender() {
-		return this.gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-		if(gender != null){
-			putBodyParameter("Gender", gender);
 		}
 	}
 
@@ -112,42 +88,53 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 		}
 	}
 
-	public Long getPageNumber() {
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putBodyParameter("DeviceId", deviceId);
+		}
+	}
+
+	public String getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(Long pageNumber) {
+	public void setPageNumber(String pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putBodyParameter("PageNumber", pageNumber.toString());
+			putBodyParameter("PageNumber", pageNumber);
 		}
 	}
 
-	public Long getPageSize() {
+	public String getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(String pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
+			putBodyParameter("PageSize", pageSize);
 		}
 	}
 
-	public String getAge() {
-		return this.age;
+	public String getPersonId() {
+		return this.personId;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
-		if(age != null){
-			putBodyParameter("Age", age);
+	public void setPersonId(String personId) {
+		this.personId = personId;
+		if(personId != null){
+			putBodyParameter("PersonId", personId);
 		}
 	}
 
 	@Override
-	public Class<ListPersonResultResponse> getResponseClass() {
-		return ListPersonResultResponse.class;
+	public Class<ListAreaHotSpotMetricsResponse> getResponseClass() {
+		return ListAreaHotSpotMetricsResponse.class;
 	}
 
 }

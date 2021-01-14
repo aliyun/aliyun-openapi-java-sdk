@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cdrs.model.v20201101.GetCdrsMonitorResultResponse;
 import com.aliyuncs.cdrs.model.v20201101.GetCdrsMonitorResultResponse.Data;
 import com.aliyuncs.cdrs.model.v20201101.GetCdrsMonitorResultResponse.Data.RecordsItem;
+import com.aliyuncs.cdrs.model.v20201101.GetCdrsMonitorResultResponse.Data.RecordsItem.ExtendInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,11 @@ public class GetCdrsMonitorResultResponseUnmarshaller {
 			recordsItem.setShotTime(_ctx.stringValue("GetCdrsMonitorResultResponse.Data.Records["+ i +"].ShotTime"));
 			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetCdrsMonitorResultResponse.Data.Records["+ i +"].MonitorPicUrl"));
 			recordsItem.setTargetPicUrl(_ctx.stringValue("GetCdrsMonitorResultResponse.Data.Records["+ i +"].TargetPicUrl"));
+			recordsItem.setTaskId(_ctx.stringValue("GetCdrsMonitorResultResponse.Data.Records["+ i +"].TaskId"));
+
+			ExtendInfo extendInfo = new ExtendInfo();
+			extendInfo.setPlateNo(_ctx.stringValue("GetCdrsMonitorResultResponse.Data.Records["+ i +"].ExtendInfo.PlateNo"));
+			recordsItem.setExtendInfo(extendInfo);
 
 			records.add(recordsItem);
 		}

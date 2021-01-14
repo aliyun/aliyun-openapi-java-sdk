@@ -21,16 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultResponse> {
+public class ListCorpMetricsStatisticRequest extends RpcAcsRequest<ListCorpMetricsStatisticResponse> {
 	   
-
-	private String profession;
 
 	private String schema;
 
 	private String corpId;
-
-	private String gender;
 
 	private String endTime;
 
@@ -38,23 +34,18 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 
 	private Long pageNumber;
 
+	private String deviceGroupList;
+
+	private String tagCode;
+
+	private String userGroupList;
+
 	private Long pageSize;
 
-	private String age;
-	public ListPersonResultRequest() {
-		super("CDRS", "2020-11-01", "ListPersonResult");
+	private String deviceIdList;
+	public ListCorpMetricsStatisticRequest() {
+		super("CDRS", "2020-11-01", "ListCorpMetricsStatistic");
 		setMethod(MethodType.POST);
-	}
-
-	public String getProfession() {
-		return this.profession;
-	}
-
-	public void setProfession(String profession) {
-		this.profession = profession;
-		if(profession != null){
-			putBodyParameter("Profession", profession);
-		}
 	}
 
 	public String getSchema() {
@@ -76,17 +67,6 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
-		}
-	}
-
-	public String getGender() {
-		return this.gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-		if(gender != null){
-			putBodyParameter("Gender", gender);
 		}
 	}
 
@@ -123,6 +103,39 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 		}
 	}
 
+	public String getDeviceGroupList() {
+		return this.deviceGroupList;
+	}
+
+	public void setDeviceGroupList(String deviceGroupList) {
+		this.deviceGroupList = deviceGroupList;
+		if(deviceGroupList != null){
+			putBodyParameter("DeviceGroupList", deviceGroupList);
+		}
+	}
+
+	public String getTagCode() {
+		return this.tagCode;
+	}
+
+	public void setTagCode(String tagCode) {
+		this.tagCode = tagCode;
+		if(tagCode != null){
+			putBodyParameter("TagCode", tagCode);
+		}
+	}
+
+	public String getUserGroupList() {
+		return this.userGroupList;
+	}
+
+	public void setUserGroupList(String userGroupList) {
+		this.userGroupList = userGroupList;
+		if(userGroupList != null){
+			putBodyParameter("UserGroupList", userGroupList);
+		}
+	}
+
 	public Long getPageSize() {
 		return this.pageSize;
 	}
@@ -134,20 +147,20 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 		}
 	}
 
-	public String getAge() {
-		return this.age;
+	public String getDeviceIdList() {
+		return this.deviceIdList;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
-		if(age != null){
-			putBodyParameter("Age", age);
+	public void setDeviceIdList(String deviceIdList) {
+		this.deviceIdList = deviceIdList;
+		if(deviceIdList != null){
+			putBodyParameter("DeviceIdList", deviceIdList);
 		}
 	}
 
 	@Override
-	public Class<ListPersonResultResponse> getResponseClass() {
-		return ListPersonResultResponse.class;
+	public Class<ListCorpMetricsStatisticResponse> getResponseClass() {
+		return ListCorpMetricsStatisticResponse.class;
 	}
 
 }
