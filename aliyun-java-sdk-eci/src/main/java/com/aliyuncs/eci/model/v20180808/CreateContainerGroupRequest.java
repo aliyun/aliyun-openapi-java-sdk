@@ -92,6 +92,19 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Long terminationGracePeriodSeconds;
 
+	private Integer ephemeralStorage;
+
+    public Integer getEphemeralStorage() {
+        return ephemeralStorage;
+    }
+
+    public void setEphemeralStorage(Integer ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+        if (ephemeralStorage != null) {
+            putQueryParameter("EphemeralStorage", ephemeralStorage);
+        }
+    }
+
 
 	public Float getCpu() {
 		return cpu;

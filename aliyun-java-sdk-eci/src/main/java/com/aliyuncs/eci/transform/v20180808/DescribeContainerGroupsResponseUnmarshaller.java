@@ -68,6 +68,7 @@ public class DescribeContainerGroupsResponseUnmarshaller {
 			containerGroup.setCreationTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].CreationTime"));
 			containerGroup.setSucceededTime(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].SucceededTime"));
 			containerGroup.setEniInstanceId(context.stringValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].EniInstanceId"));
+			containerGroup.setEphemeralStorage(context.integerValue("DescribeContainerGroupsResponse.ContainerGroups["+ i +"].EphemeralStorage"));
 
 			DnsConfig dnsConfig = new DnsConfig();
 
