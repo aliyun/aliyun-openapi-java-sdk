@@ -1,3 +1,6 @@
+2021-01-14 Version: 1.1.18
+1、support anpassen systemfestplatte
+
 2020-12-24 Version: 1.1.17
 1、support specity resourcegroupid describe
 

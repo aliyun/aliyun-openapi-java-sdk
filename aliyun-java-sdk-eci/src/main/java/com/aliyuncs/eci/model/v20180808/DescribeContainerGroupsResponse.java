@@ -112,6 +112,16 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
 		private List<HostAliase> hostAliases;
 
+		private Integer ephemeralStorage;
+
+		public Integer getEphemeralStorage() {
+			return ephemeralStorage;
+		}
+
+		public void setEphemeralStorage(Integer ephemeralStorage) {
+			this.ephemeralStorage = ephemeralStorage;
+		}
+
 		public String getContainerGroupId() {
 			return this.containerGroupId;
 		}
