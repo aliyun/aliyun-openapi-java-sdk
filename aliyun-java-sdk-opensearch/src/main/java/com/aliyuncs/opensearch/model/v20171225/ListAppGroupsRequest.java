@@ -25,6 +25,8 @@ import com.aliyuncs.opensearch.Endpoint;
 public class ListAppGroupsRequest extends RoaAcsRequest<ListAppGroupsResponse> {
 	   
 
+	private String resourceGroupId;
+
 	private String instanceId;
 
 	private Integer pageSize;
@@ -44,6 +46,17 @@ public class ListAppGroupsRequest extends RoaAcsRequest<ListAppGroupsResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("resourceGroupId", resourceGroupId);
+		}
 	}
 
 	public String getInstanceId() {
