@@ -24,8 +24,6 @@ import com.aliyuncs.http.MethodType;
 public class ListTagMetricsRequest extends RpcAcsRequest<ListTagMetricsResponse> {
 	   
 
-	private String schema;
-
 	private String corpId;
 
 	private String endTime;
@@ -42,17 +40,6 @@ public class ListTagMetricsRequest extends RpcAcsRequest<ListTagMetricsResponse>
 	public ListTagMetricsRequest() {
 		super("CDRS", "2020-11-01", "ListTagMetrics");
 		setMethod(MethodType.POST);
-	}
-
-	public String getSchema() {
-		return this.schema;
-	}
-
-	public void setSchema(String schema) {
-		this.schema = schema;
-		if(schema != null){
-			putBodyParameter("Schema", schema);
-		}
 	}
 
 	public String getCorpId() {

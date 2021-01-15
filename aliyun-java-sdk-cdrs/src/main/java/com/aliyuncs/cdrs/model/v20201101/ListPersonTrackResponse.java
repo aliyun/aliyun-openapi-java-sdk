@@ -125,6 +125,10 @@ public class ListPersonTrackResponse extends AcsResponse {
 
 		private String latitude;
 
+		private String sourceUrl;
+
+		private String targetUrl;
+
 		public String getPersonId() {
 			return this.personId;
 		}
@@ -235,6 +239,22 @@ public class ListPersonTrackResponse extends AcsResponse {
 
 		public void setLatitude(String latitude) {
 			this.latitude = latitude;
+		}
+
+		public String getSourceUrl() {
+			return this.sourceUrl;
+		}
+
+		public void setSourceUrl(String sourceUrl) {
+			this.sourceUrl = sourceUrl;
+		}
+
+		public String getTargetUrl() {
+			return this.targetUrl;
+		}
+
+		public void setTargetUrl(String targetUrl) {
+			this.targetUrl = targetUrl;
 		}
 	}
 
