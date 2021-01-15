@@ -91,7 +91,7 @@ public class ListPtsSceneResponse extends AcsResponse {
 
 		private String sceneName;
 
-		private Long createTime;
+		private String createTime;
 
 		public String getSceneId() {
 			return this.sceneId;
@@ -109,11 +109,11 @@ public class ListPtsSceneResponse extends AcsResponse {
 			this.sceneName = sceneName;
 		}
 
-		public Long getCreateTime() {
+		public String getCreateTime() {
 			return this.createTime;
 		}
 
-		public void setCreateTime(Long createTime) {
+		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
 		}
 	}

@@ -27,7 +27,6 @@ public class StopPtsSceneResponseUnmarshaller {
 		stopPtsSceneResponse.setCode(_ctx.stringValue("StopPtsSceneResponse.Code"));
 		stopPtsSceneResponse.setSuccess(_ctx.booleanValue("StopPtsSceneResponse.Success"));
 		stopPtsSceneResponse.setHttpStatusCode(_ctx.integerValue("StopPtsSceneResponse.HttpStatusCode"));
-		stopPtsSceneResponse.setIsSuccess(_ctx.booleanValue("StopPtsSceneResponse.IsSuccess"));
 	 
 	 	return stopPtsSceneResponse;
 	}

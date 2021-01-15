@@ -37,7 +37,7 @@ public class ListPtsSceneResponseUnmarshaller {
 			SceneView sceneView = new SceneView();
 			sceneView.setSceneId(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].SceneId"));
 			sceneView.setSceneName(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].SceneName"));
-			sceneView.setCreateTime(_ctx.longValue("ListPtsSceneResponse.SceneViewList["+ i +"].CreateTime"));
+			sceneView.setCreateTime(_ctx.stringValue("ListPtsSceneResponse.SceneViewList["+ i +"].CreateTime"));
 
 			sceneViewList.add(sceneView);
 		}

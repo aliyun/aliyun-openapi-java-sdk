@@ -34,8 +34,6 @@ public class StopPtsSceneResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private Boolean isSuccess;
-
 	public String getMessage() {
 		return this.message;
 	}
@@ -74,14 +72,6 @@ public class StopPtsSceneResponse extends AcsResponse {
 
 	public void setHttpStatusCode(Integer httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
-	}
-
-	public Boolean getIsSuccess() {
-		return this.isSuccess;
-	}
-
-	public void setIsSuccess(Boolean isSuccess) {
-		this.isSuccess = isSuccess;
 	}
 
 	@Override
