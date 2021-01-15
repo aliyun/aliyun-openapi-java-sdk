@@ -1,3 +1,6 @@
+2021-01-15 Version: 3.0.0
+- Generated 2020-10-20 for `PTS`.
+
 2021-01-14 Version: 1.0.0
 - Generated 2020-10-20 for `PTS`.
 
