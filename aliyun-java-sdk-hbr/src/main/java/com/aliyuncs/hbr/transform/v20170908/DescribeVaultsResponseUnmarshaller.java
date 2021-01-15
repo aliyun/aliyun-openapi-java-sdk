@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.hbr.model.v20170908.DescribeVaultsResponse;
 import com.aliyuncs.hbr.model.v20170908.DescribeVaultsResponse.Vault;
 import com.aliyuncs.hbr.model.v20170908.DescribeVaultsResponse.Vault.BackupPlanStatistics;
+import com.aliyuncs.hbr.model.v20170908.DescribeVaultsResponse.Vault.Endpoint;
 import com.aliyuncs.hbr.model.v20170908.DescribeVaultsResponse.Vault.ReplicationProgress;
 import com.aliyuncs.hbr.model.v20170908.DescribeVaultsResponse.Vault.TrialInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -57,6 +58,7 @@ public class DescribeVaultsResponseUnmarshaller {
 			vault.setVaultStatusMessage(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].VaultStatusMessage"));
 			vault.setChargeType(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].ChargeType"));
 			vault.setReplication(_ctx.booleanValue("DescribeVaultsResponse.Vaults["+ i +"].Replication"));
+			vault.setBucketName(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].BucketName"));
 
 			List<String> sourceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVaultsResponse.Vaults["+ i +"].SourceTypes.Length"); j++) {
@@ -78,6 +80,8 @@ public class DescribeVaultsResponseUnmarshaller {
 			backupPlanStatistics.setCsg(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.Csg"));
 			backupPlanStatistics.setOss(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.Oss"));
 			backupPlanStatistics.setNas(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.Nas"));
+			backupPlanStatistics.setIsilon(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.Isilon"));
+			backupPlanStatistics.setCommonNas(_ctx.integerValue("DescribeVaultsResponse.Vaults["+ i +"].BackupPlanStatistics.CommonNas"));
 			vault.setBackupPlanStatistics(backupPlanStatistics);
 
 			TrialInfo trialInfo = new TrialInfo();
@@ -86,6 +90,12 @@ public class DescribeVaultsResponseUnmarshaller {
 			trialInfo.setKeepAfterTrialExpiration(_ctx.booleanValue("DescribeVaultsResponse.Vaults["+ i +"].TrialInfo.KeepAfterTrialExpiration"));
 			trialInfo.setTrialVaultReleaseTime(_ctx.longValue("DescribeVaultsResponse.Vaults["+ i +"].TrialInfo.TrialVaultReleaseTime"));
 			vault.setTrialInfo(trialInfo);
+
+			Endpoint endpoint = new Endpoint();
+			endpoint.setPub(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].Endpoint.Pub"));
+			endpoint.setVpc(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].Endpoint.Vpc"));
+			endpoint.setClassic(_ctx.stringValue("DescribeVaultsResponse.Vaults["+ i +"].Endpoint.Classic"));
+			vault.setEndpoint(endpoint);
 
 			vaults.add(vault);
 		}

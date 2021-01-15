@@ -47,6 +47,7 @@ public class DescribeInstancesInfoResponseUnmarshaller {
 			instance.setInstanceStatus(_ctx.stringValue("DescribeInstancesInfoResponse.Instances["+ i +"].InstanceStatus"));
 			instance.setClusterId(_ctx.stringValue("DescribeInstancesInfoResponse.Instances["+ i +"].ClusterId"));
 			instance.setOsType(_ctx.stringValue("DescribeInstancesInfoResponse.Instances["+ i +"].OsType"));
+			instance.setOSNameEn(_ctx.stringValue("DescribeInstancesInfoResponse.Instances["+ i +"].OSNameEn"));
 
 			List<String> sourceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesInfoResponse.Instances["+ i +"].SourceTypes.Length"); j++) {

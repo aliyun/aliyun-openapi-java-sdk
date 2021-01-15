@@ -51,6 +51,8 @@ public class ActivateClientResponse extends AcsResponse {
 
 	private String vaultType;
 
+	private Boolean useHttps;
+
 	private List<String> sourceTypes;
 
 	private MqttInfo mqttInfo;
@@ -159,6 +161,14 @@ public class ActivateClientResponse extends AcsResponse {
 
 	public void setVaultType(String vaultType) {
 		this.vaultType = vaultType;
+	}
+
+	public Boolean getUseHttps() {
+		return this.useHttps;
+	}
+
+	public void setUseHttps(Boolean useHttps) {
+		this.useHttps = useHttps;
 	}
 
 	public List<String> getSourceTypes() {

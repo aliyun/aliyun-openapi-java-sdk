@@ -26,6 +26,8 @@ import com.aliyuncs.hbr.Endpoint;
 public class UpdateRestoreRequest extends RpcAcsRequest<UpdateRestoreResponse> {
 	   
 
+	private String errorMessage;
+
 	private Long actualBytes;
 
 	private String clientId;
@@ -41,6 +43,8 @@ public class UpdateRestoreRequest extends RpcAcsRequest<UpdateRestoreResponse> {
 	private Long completeTime;
 
 	private Long bytesTotal;
+
+	private String errorFile;
 
 	private String restoreId;
 
@@ -61,6 +65,17 @@ public class UpdateRestoreRequest extends RpcAcsRequest<UpdateRestoreResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+		if(errorMessage != null){
+			putQueryParameter("ErrorMessage", errorMessage);
+		}
 	}
 
 	public Long getActualBytes() {
@@ -148,6 +163,17 @@ public class UpdateRestoreRequest extends RpcAcsRequest<UpdateRestoreResponse> {
 		this.bytesTotal = bytesTotal;
 		if(bytesTotal != null){
 			putQueryParameter("BytesTotal", bytesTotal.toString());
+		}
+	}
+
+	public String getErrorFile() {
+		return this.errorFile;
+	}
+
+	public void setErrorFile(String errorFile) {
+		this.errorFile = errorFile;
+		if(errorFile != null){
+			putQueryParameter("ErrorFile", errorFile);
 		}
 	}
 

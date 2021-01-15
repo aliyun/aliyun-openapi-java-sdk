@@ -35,6 +35,8 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 	private String token;
 
 	private String alertSetting;
+
+	private Boolean useHttps;
 	public CreateClientsRequest() {
 		super("hbr", "2017-09-08", "CreateClients", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -97,6 +99,17 @@ public class CreateClientsRequest extends RpcAcsRequest<CreateClientsResponse> {
 		this.alertSetting = alertSetting;
 		if(alertSetting != null){
 			putQueryParameter("AlertSetting", alertSetting);
+		}
+	}
+
+	public Boolean getUseHttps() {
+		return this.useHttps;
+	}
+
+	public void setUseHttps(Boolean useHttps) {
+		this.useHttps = useHttps;
+		if(useHttps != null){
+			putQueryParameter("UseHttps", useHttps.toString());
 		}
 	}
 

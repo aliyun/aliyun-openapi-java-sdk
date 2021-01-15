@@ -167,6 +167,10 @@ public class DescribeClientsResponse extends AcsResponse {
 
 		private String gatewayStatus;
 
+		private Boolean useHttps;
+
+		private String clientOption;
+
 		private List<String> sourceTypes;
 
 		private List<String> innerIpAddresses;
@@ -413,6 +417,22 @@ public class DescribeClientsResponse extends AcsResponse {
 
 		public void setGatewayStatus(String gatewayStatus) {
 			this.gatewayStatus = gatewayStatus;
+		}
+
+		public Boolean getUseHttps() {
+			return this.useHttps;
+		}
+
+		public void setUseHttps(Boolean useHttps) {
+			this.useHttps = useHttps;
+		}
+
+		public String getClientOption() {
+			return this.clientOption;
+		}
+
+		public void setClientOption(String clientOption) {
+			this.clientOption = clientOption;
 		}
 
 		public List<String> getSourceTypes() {

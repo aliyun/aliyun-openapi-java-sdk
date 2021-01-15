@@ -56,6 +56,19 @@ public class DescribeHanaRestoresResponseUnmarshaller {
 			hanaRestores.setCurrentPhase(_ctx.integerValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].CurrentPhase"));
 			hanaRestores.setMaxProgress(_ctx.longValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].MaxProgress"));
 			hanaRestores.setCurrentProgress(_ctx.longValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].CurrentProgress"));
+			hanaRestores.setMode(_ctx.stringValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].Mode"));
+			hanaRestores.setLogPosition(_ctx.longValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].LogPosition"));
+			hanaRestores.setVolumeId(_ctx.integerValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].VolumeId"));
+			hanaRestores.setUseCatalog(_ctx.booleanValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].UseCatalog"));
+			hanaRestores.setBackupPrefix(_ctx.stringValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].BackupPrefix"));
+			hanaRestores.setSystemCopy(_ctx.booleanValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].SystemCopy"));
+			hanaRestores.setSource(_ctx.stringValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].Source"));
+			hanaRestores.setSourceClusterId(_ctx.stringValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].SourceClusterId"));
+			hanaRestores.setLogPaths(_ctx.stringValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].LogPaths"));
+			hanaRestores.setCheckAccess(_ctx.booleanValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].CheckAccess"));
+			hanaRestores.setClearLog(_ctx.booleanValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].ClearLog"));
+			hanaRestores.setUseDelta(_ctx.booleanValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].UseDelta"));
+			hanaRestores.setExtraOptions(_ctx.stringValue("DescribeHanaRestoresResponse.HanaRestore["+ i +"].ExtraOptions"));
 
 			hanaRestore.add(hanaRestores);
 		}

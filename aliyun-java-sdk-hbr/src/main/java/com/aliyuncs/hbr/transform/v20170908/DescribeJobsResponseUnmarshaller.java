@@ -67,6 +67,8 @@ public class DescribeJobsResponseUnmarshaller {
 			job.setErrorCount(_ctx.longValue("DescribeJobsResponse.Jobs["+ i +"].ErrorCount"));
 			job.setInclude(_ctx.stringValue("DescribeJobsResponse.Jobs["+ i +"].Include"));
 			job.setExclude(_ctx.stringValue("DescribeJobsResponse.Jobs["+ i +"].Exclude"));
+			job.setErrorMessage(_ctx.stringValue("DescribeJobsResponse.Jobs["+ i +"].ErrorMessage"));
+			job.setErrorFile(_ctx.stringValue("DescribeJobsResponse.Jobs["+ i +"].ErrorFile"));
 
 			jobs.add(job);
 		}

@@ -32,6 +32,7 @@ public class DescribeTaskResponseUnmarshaller {
 		describeTaskResponse.setUpdatedTime(_ctx.longValue("DescribeTaskResponse.UpdatedTime"));
 		describeTaskResponse.setResult(_ctx.stringValue("DescribeTaskResponse.Result"));
 		describeTaskResponse.setCompletedTime(_ctx.longValue("DescribeTaskResponse.CompletedTime"));
+		describeTaskResponse.setName(_ctx.stringValue("DescribeTaskResponse.Name"));
 	 
 	 	return describeTaskResponse;
 	}

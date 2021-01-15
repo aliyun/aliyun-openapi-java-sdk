@@ -54,6 +54,14 @@ public class DescribeBackupPlansResponseUnmarshaller {
 			backupPlan.setCreateTime(_ctx.longValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].CreateTime"));
 			backupPlan.setBucket(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Bucket"));
 			backupPlan.setPrefix(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Prefix"));
+			backupPlan.setInstanceId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].InstanceId"));
+			backupPlan.setDetail(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Detail"));
+			backupPlan.setClientId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].ClientId"));
+			backupPlan.setSpeedLimit(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].SpeedLimit"));
+			backupPlan.setOptions(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Options"));
+			backupPlan.setInclude(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Include"));
+			backupPlan.setExclude(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Exclude"));
+			backupPlan.setDataSourceId(_ctx.stringValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].DataSourceId"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPlansResponse.BackupPlans["+ i +"].Paths.Length"); j++) {

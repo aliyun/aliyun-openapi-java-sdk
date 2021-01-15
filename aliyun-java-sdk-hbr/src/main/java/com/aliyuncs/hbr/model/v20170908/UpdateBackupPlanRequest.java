@@ -30,15 +30,29 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 
 	private String prefix;
 
-	private String schedule;
-
 	private List<String> paths;
 
 	private String planName;
 
-	private String planId;
+	private String options;
+
+	private String sourceType;
+
+	private String exclude;
 
 	private Long retention;
+
+	private String include;
+
+	private String schedule;
+
+	private String speedLimit;
+
+	private String planId;
+
+	private String detail;
+
+	private Boolean updatePaths;
 	public UpdateBackupPlanRequest() {
 		super("hbr", "2017-09-08", "UpdateBackupPlan", "hbr");
 		setMethod(MethodType.POST);
@@ -70,17 +84,6 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		}
 	}
 
-	public String getSchedule() {
-		return this.schedule;
-	}
-
-	public void setSchedule(String schedule) {
-		this.schedule = schedule;
-		if(schedule != null){
-			putQueryParameter("Schedule", schedule);
-		}
-	}
-
 	public List<String> getPaths() {
 		return this.paths;
 	}
@@ -105,14 +108,36 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		}
 	}
 
-	public String getPlanId() {
-		return this.planId;
+	public String getOptions() {
+		return this.options;
 	}
 
-	public void setPlanId(String planId) {
-		this.planId = planId;
-		if(planId != null){
-			putQueryParameter("PlanId", planId);
+	public void setOptions(String options) {
+		this.options = options;
+		if(options != null){
+			putBodyParameter("Options", options);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getExclude() {
+		return this.exclude;
+	}
+
+	public void setExclude(String exclude) {
+		this.exclude = exclude;
+		if(exclude != null){
+			putBodyParameter("Exclude", exclude);
 		}
 	}
 
@@ -124,6 +149,72 @@ public class UpdateBackupPlanRequest extends RpcAcsRequest<UpdateBackupPlanRespo
 		this.retention = retention;
 		if(retention != null){
 			putQueryParameter("Retention", retention.toString());
+		}
+	}
+
+	public String getInclude() {
+		return this.include;
+	}
+
+	public void setInclude(String include) {
+		this.include = include;
+		if(include != null){
+			putBodyParameter("Include", include);
+		}
+	}
+
+	public String getSchedule() {
+		return this.schedule;
+	}
+
+	public void setSchedule(String schedule) {
+		this.schedule = schedule;
+		if(schedule != null){
+			putQueryParameter("Schedule", schedule);
+		}
+	}
+
+	public String getSpeedLimit() {
+		return this.speedLimit;
+	}
+
+	public void setSpeedLimit(String speedLimit) {
+		this.speedLimit = speedLimit;
+		if(speedLimit != null){
+			putQueryParameter("SpeedLimit", speedLimit);
+		}
+	}
+
+	public String getPlanId() {
+		return this.planId;
+	}
+
+	public void setPlanId(String planId) {
+		this.planId = planId;
+		if(planId != null){
+			putQueryParameter("PlanId", planId);
+		}
+	}
+
+	public String getDetail() {
+		return this.detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+		if(detail != null){
+			putQueryParameter("Detail", detail);
+		}
+	}
+
+	public Boolean getUpdatePaths() {
+		return this.updatePaths;
+	}
+
+	public void setUpdatePaths(Boolean updatePaths) {
+		this.updatePaths = updatePaths;
+		if(updatePaths != null){
+			putQueryParameter("UpdatePaths", updatePaths.toString());
 		}
 	}
 

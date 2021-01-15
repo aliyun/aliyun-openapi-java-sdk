@@ -167,6 +167,10 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 
 		private String gatewayName;
 
+		private String errorMessage;
+
+		private String errorFile;
+
 		public Long getCreatedTime() {
 			return this.createdTime;
 		}
@@ -405,6 +409,22 @@ public class DescribeRestoreJobsResponse extends AcsResponse {
 
 		public void setGatewayName(String gatewayName) {
 			this.gatewayName = gatewayName;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 	}
 

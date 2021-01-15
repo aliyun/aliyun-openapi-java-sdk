@@ -167,6 +167,10 @@ public class DescribeJobsResponse extends AcsResponse {
 
 		private String exclude;
 
+		private String errorMessage;
+
+		private String errorFile;
+
 		public Long getCreatedTime() {
 			return this.createdTime;
 		}
@@ -405,6 +409,22 @@ public class DescribeJobsResponse extends AcsResponse {
 
 		public void setExclude(String exclude) {
 			this.exclude = exclude;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 	}
 

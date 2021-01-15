@@ -139,6 +139,22 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		private String prefix;
 
+		private String instanceId;
+
+		private String detail;
+
+		private String clientId;
+
+		private String speedLimit;
+
+		private String options;
+
+		private String include;
+
+		private String exclude;
+
+		private String dataSourceId;
+
 		private List<String> paths;
 
 		private TrialInfo trialInfo;
@@ -269,6 +285,70 @@ public class DescribeBackupPlansResponse extends AcsResponse {
 
 		public void setPrefix(String prefix) {
 			this.prefix = prefix;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
+		}
+
+		public String getSpeedLimit() {
+			return this.speedLimit;
+		}
+
+		public void setSpeedLimit(String speedLimit) {
+			this.speedLimit = speedLimit;
+		}
+
+		public String getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(String options) {
+			this.options = options;
+		}
+
+		public String getInclude() {
+			return this.include;
+		}
+
+		public void setInclude(String include) {
+			this.include = include;
+		}
+
+		public String getExclude() {
+			return this.exclude;
+		}
+
+		public void setExclude(String exclude) {
+			this.exclude = exclude;
+		}
+
+		public String getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
 		}
 
 		public List<String> getPaths() {

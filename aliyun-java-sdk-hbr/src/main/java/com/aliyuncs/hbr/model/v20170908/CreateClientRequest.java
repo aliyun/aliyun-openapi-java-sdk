@@ -26,8 +26,6 @@ import com.aliyuncs.hbr.Endpoint;
 public class CreateClientRequest extends RpcAcsRequest<CreateClientResponse> {
 	   
 
-	private String sourceTypes;
-
 	private String clientType;
 
 	private String vaultId;
@@ -36,15 +34,21 @@ public class CreateClientRequest extends RpcAcsRequest<CreateClientResponse> {
 
 	private String networkType;
 
+	private String alertSetting;
+
+	private String vaultRegionId;
+
+	private String clientName;
+
+	private Boolean useHttps;
+
+	private String sourceTypes;
+
 	private String clusterId;
 
 	private String token;
 
-	private String alertSetting;
-
 	private String instanceId;
-
-	private String clientName;
 
 	private String platformType;
 	public CreateClientRequest() {
@@ -55,17 +59,6 @@ public class CreateClientRequest extends RpcAcsRequest<CreateClientResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getSourceTypes() {
-		return this.sourceTypes;
-	}
-
-	public void setSourceTypes(String sourceTypes) {
-		this.sourceTypes = sourceTypes;
-		if(sourceTypes != null){
-			putQueryParameter("SourceTypes", sourceTypes);
-		}
 	}
 
 	public String getClientType() {
@@ -112,6 +105,61 @@ public class CreateClientRequest extends RpcAcsRequest<CreateClientResponse> {
 		}
 	}
 
+	public String getAlertSetting() {
+		return this.alertSetting;
+	}
+
+	public void setAlertSetting(String alertSetting) {
+		this.alertSetting = alertSetting;
+		if(alertSetting != null){
+			putQueryParameter("AlertSetting", alertSetting);
+		}
+	}
+
+	public String getVaultRegionId() {
+		return this.vaultRegionId;
+	}
+
+	public void setVaultRegionId(String vaultRegionId) {
+		this.vaultRegionId = vaultRegionId;
+		if(vaultRegionId != null){
+			putQueryParameter("VaultRegionId", vaultRegionId);
+		}
+	}
+
+	public String getClientName() {
+		return this.clientName;
+	}
+
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
+		if(clientName != null){
+			putQueryParameter("ClientName", clientName);
+		}
+	}
+
+	public Boolean getUseHttps() {
+		return this.useHttps;
+	}
+
+	public void setUseHttps(Boolean useHttps) {
+		this.useHttps = useHttps;
+		if(useHttps != null){
+			putQueryParameter("UseHttps", useHttps.toString());
+		}
+	}
+
+	public String getSourceTypes() {
+		return this.sourceTypes;
+	}
+
+	public void setSourceTypes(String sourceTypes) {
+		this.sourceTypes = sourceTypes;
+		if(sourceTypes != null){
+			putQueryParameter("SourceTypes", sourceTypes);
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -134,17 +182,6 @@ public class CreateClientRequest extends RpcAcsRequest<CreateClientResponse> {
 		}
 	}
 
-	public String getAlertSetting() {
-		return this.alertSetting;
-	}
-
-	public void setAlertSetting(String alertSetting) {
-		this.alertSetting = alertSetting;
-		if(alertSetting != null){
-			putQueryParameter("AlertSetting", alertSetting);
-		}
-	}
-
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -153,17 +190,6 @@ public class CreateClientRequest extends RpcAcsRequest<CreateClientResponse> {
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getClientName() {
-		return this.clientName;
-	}
-
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
-		if(clientName != null){
-			putQueryParameter("ClientName", clientName);
 		}
 	}
 

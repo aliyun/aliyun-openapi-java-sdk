@@ -56,6 +56,8 @@ public class DescribeRecentSnapshotsResponseUnmarshaller {
 			snapshot.setPrefix(_ctx.stringValue("DescribeRecentSnapshotsResponse.Snapshots["+ i +"].Prefix"));
 			snapshot.setBucket1(_ctx.stringValue("DescribeRecentSnapshotsResponse.Snapshots["+ i +"].Bucket"));
 			snapshot.setPrefix2(_ctx.stringValue("DescribeRecentSnapshotsResponse.Snapshots["+ i +"].Prefix"));
+			snapshot.setInstanceId(_ctx.stringValue("DescribeRecentSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
+			snapshot.setPath(_ctx.stringValue("DescribeRecentSnapshotsResponse.Snapshots["+ i +"].Path"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRecentSnapshotsResponse.Snapshots["+ i +"].Paths.Length"); j++) {

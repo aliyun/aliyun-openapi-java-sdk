@@ -127,6 +127,8 @@ public class DescribeInstancesInfoResponse extends AcsResponse {
 
 		private String osType;
 
+		private String oSNameEn;
+
 		private List<String> sourceTypes;
 
 		public String getInstanceId() {
@@ -207,6 +209,14 @@ public class DescribeInstancesInfoResponse extends AcsResponse {
 
 		public void setOsType(String osType) {
 			this.osType = osType;
+		}
+
+		public String getOSNameEn() {
+			return this.oSNameEn;
+		}
+
+		public void setOSNameEn(String oSNameEn) {
+			this.oSNameEn = oSNameEn;
 		}
 
 		public List<String> getSourceTypes() {

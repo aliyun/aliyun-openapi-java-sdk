@@ -33,6 +33,7 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 		describeBackupJobs2Response.setTotalCount(_ctx.longValue("DescribeBackupJobs2Response.TotalCount"));
 		describeBackupJobs2Response.setPageSize(_ctx.integerValue("DescribeBackupJobs2Response.PageSize"));
 		describeBackupJobs2Response.setPageNumber(_ctx.integerValue("DescribeBackupJobs2Response.PageNumber"));
+		describeBackupJobs2Response.setDiskId(_ctx.stringValue("DescribeBackupJobs2Response.DiskId"));
 
 		List<BackupJob> backupJobs = new ArrayList<BackupJob>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs.Length"); i++) {
@@ -41,14 +42,14 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			backupJob.setSourceType(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SourceType"));
 			backupJob.setVaultId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].VaultId"));
 			backupJob.setBackupSourceGroupId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].BackupSourceGroupId"));
-			backupJob.setJobName(_ctx.integerValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].JobName"));
+			backupJob.setJobName(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].JobName"));
 			backupJob.setBackupType(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].BackupType"));
 			backupJob.setStatus(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Status"));
 			backupJob.setCompleteTime(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].CompleteTime"));
 			backupJob.setProgress(_ctx.integerValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Progress"));
 			backupJob.setErrorMessage(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ErrorMessage"));
 			backupJob.setParentId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ParentId"));
-			backupJob.setClusterId(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ClusterId"));
+			backupJob.setClusterId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ClusterId"));
 			backupJob.setDatabaseName(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DatabaseName"));
 			backupJob.setCreatedTime(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].CreatedTime"));
 			backupJob.setUpdatedTime(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].UpdatedTime"));
@@ -60,6 +61,20 @@ public class DescribeBackupJobs2ResponseUnmarshaller {
 			backupJob.setBucket(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Bucket"));
 			backupJob.setPrefix(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Prefix"));
 			backupJob.setPlanId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].PlanId"));
+			backupJob.setInstanceId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].InstanceId"));
+			backupJob.setDetail(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Detail"));
+			backupJob.setDiskId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DiskId"));
+			backupJob.setClientId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ClientId"));
+			backupJob.setSpeedLimit(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].SpeedLimit"));
+			backupJob.setOptions(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Options"));
+			backupJob.setInclude(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Include"));
+			backupJob.setExclude(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Exclude"));
+			backupJob.setDataSourceId(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].DataSourceId"));
+			backupJob.setActualBytes(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ActualBytes"));
+			backupJob.setItemsDone(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ItemsDone"));
+			backupJob.setItemsTotal(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ItemsTotal"));
+			backupJob.setActualItems(_ctx.longValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ActualItems"));
+			backupJob.setErrorFile(_ctx.stringValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].ErrorFile"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupJobs2Response.BackupJobs["+ i +"].Paths.Length"); j++) {

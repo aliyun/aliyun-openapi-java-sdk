@@ -43,6 +43,7 @@ public class GetSqlServersToRestoreResponseUnmarshaller {
 			sqlServer.setWindowsLogin(_ctx.stringValue("GetSqlServersToRestoreResponse.SqlServers["+ i +"].WindowsLogin"));
 			sqlServer.setSqlLogin(_ctx.stringValue("GetSqlServersToRestoreResponse.SqlServers["+ i +"].SqlLogin"));
 			sqlServer.setUseWindowsAuth(_ctx.booleanValue("GetSqlServersToRestoreResponse.SqlServers["+ i +"].UseWindowsAuth"));
+			sqlServer.setRegionId(_ctx.stringValue("GetSqlServersToRestoreResponse.SqlServers["+ i +"].RegionId"));
 
 			sqlServers.add(sqlServer);
 		}
