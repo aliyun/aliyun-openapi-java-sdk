@@ -33,7 +33,7 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 
 	private String clusterId;
 	public ListApplicationRequest() {
-		super("Edas", "2017-08-01", "ListApplication", "Edas");
+		super("Edas", "2017-08-01", "ListApplication", "edas");
 		setUriPattern("/pop/v5/app/app_list");
 		setMethod(MethodType.POST);
 		try {

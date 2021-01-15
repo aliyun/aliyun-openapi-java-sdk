@@ -27,7 +27,7 @@ public class ListFlowControlsRequest extends RoaAcsRequest<ListFlowControlsRespo
 
 	private String appId;
 	public ListFlowControlsRequest() {
-		super("Edas", "2017-08-01", "ListFlowControls", "Edas");
+		super("Edas", "2017-08-01", "ListFlowControls", "edas");
 		setUriPattern("/pop/v5/app/flowControls");
 		setMethod(MethodType.GET);
 		try {

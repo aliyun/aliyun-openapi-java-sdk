@@ -29,7 +29,7 @@ public class GetContainerConfigurationRequest extends RoaAcsRequest<GetContainer
 
 	private String groupId;
 	public GetContainerConfigurationRequest() {
-		super("Edas", "2017-08-01", "GetContainerConfiguration", "Edas");
+		super("Edas", "2017-08-01", "GetContainerConfiguration", "edas");
 		setUriPattern("/pop/v5/app/container_config");
 		setMethod(MethodType.GET);
 		try {

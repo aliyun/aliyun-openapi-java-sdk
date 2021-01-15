@@ -22,20 +22,31 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableDegradeControlRequest extends RoaAcsRequest<DisableDegradeControlResponse> {
+public class SwitchAdvancedMonitoringRequest extends RoaAcsRequest<SwitchAdvancedMonitoringResponse> {
 	   
 
-	private String appId;
+	private Boolean enableAdvancedMonitoring;
 
-	private String ruleId;
-	public DisableDegradeControlRequest() {
-		super("Edas", "2017-08-01", "DisableDegradeControl", "edas");
-		setUriPattern("/pop/v5/degradecontrol/disable");
-		setMethod(MethodType.PUT);
+	private String appId;
+	public SwitchAdvancedMonitoringRequest() {
+		super("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "edas");
+		setUriPattern("/pop/v5/monitor/advancedMonitorInfo");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Boolean getEnableAdvancedMonitoring() {
+		return this.enableAdvancedMonitoring;
+	}
+
+	public void setEnableAdvancedMonitoring(Boolean enableAdvancedMonitoring) {
+		this.enableAdvancedMonitoring = enableAdvancedMonitoring;
+		if(enableAdvancedMonitoring != null){
+			putQueryParameter("EnableAdvancedMonitoring", enableAdvancedMonitoring.toString());
+		}
 	}
 
 	public String getAppId() {
@@ -49,20 +60,9 @@ public class DisableDegradeControlRequest extends RoaAcsRequest<DisableDegradeCo
 		}
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
-		}
-	}
-
 	@Override
-	public Class<DisableDegradeControlResponse> getResponseClass() {
-		return DisableDegradeControlResponse.class;
+	public Class<SwitchAdvancedMonitoringResponse> getResponseClass() {
+		return SwitchAdvancedMonitoringResponse.class;
 	}
 
 }

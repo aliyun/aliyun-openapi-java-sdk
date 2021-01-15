@@ -27,7 +27,7 @@ public class ListUserDefineRegionRequest extends RoaAcsRequest<ListUserDefineReg
 
 	private Boolean debugEnable;
 	public ListUserDefineRegionRequest() {
-		super("Edas", "2017-08-01", "ListUserDefineRegion", "Edas");
+		super("Edas", "2017-08-01", "ListUserDefineRegion", "edas");
 		setUriPattern("/pop/v5/user_region_defs");
 		setMethod(MethodType.POST);
 		try {

@@ -55,7 +55,7 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String deployType;
 	public DeployApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployApplication", "Edas");
+		super("Edas", "2017-08-01", "DeployApplication", "edas");
 		setUriPattern("/pop/v5/changeorder/co_deploy");
 		setMethod(MethodType.POST);
 		try {

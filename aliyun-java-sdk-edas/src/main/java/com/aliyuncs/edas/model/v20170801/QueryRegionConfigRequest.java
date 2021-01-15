@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class QueryRegionConfigRequest extends RoaAcsRequest<QueryRegionConfigResponse> {
 	   
 	public QueryRegionConfigRequest() {
-		super("Edas", "2017-08-01", "QueryRegionConfig", "Edas");
+		super("Edas", "2017-08-01", "QueryRegionConfig", "edas");
 		setUriPattern("/pop/v5/region_config");
 		setMethod(MethodType.GET);
 		try {
