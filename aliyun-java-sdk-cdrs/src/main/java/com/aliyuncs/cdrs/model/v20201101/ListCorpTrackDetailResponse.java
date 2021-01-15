@@ -129,6 +129,10 @@ public class ListCorpTrackDetailResponse extends AcsResponse {
 
 		private String endTargetImage;
 
+		private String sourceUrl;
+
+		private String targetUrl;
+
 		public String getDate() {
 			return this.date;
 		}
@@ -215,6 +219,22 @@ public class ListCorpTrackDetailResponse extends AcsResponse {
 
 		public void setEndTargetImage(String endTargetImage) {
 			this.endTargetImage = endTargetImage;
+		}
+
+		public String getSourceUrl() {
+			return this.sourceUrl;
+		}
+
+		public void setSourceUrl(String sourceUrl) {
+			this.sourceUrl = sourceUrl;
+		}
+
+		public String getTargetUrl() {
+			return this.targetUrl;
+		}
+
+		public void setTargetUrl(String targetUrl) {
+			this.targetUrl = targetUrl;
 		}
 	}
 

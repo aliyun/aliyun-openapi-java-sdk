@@ -48,6 +48,8 @@ public class ListCorpTrackDetailResponseUnmarshaller {
 			dataItem.setStartSourceImage(_ctx.stringValue("ListCorpTrackDetailResponse.Data["+ i +"].StartSourceImage"));
 			dataItem.setCorpId(_ctx.stringValue("ListCorpTrackDetailResponse.Data["+ i +"].CorpId"));
 			dataItem.setEndTargetImage(_ctx.stringValue("ListCorpTrackDetailResponse.Data["+ i +"].EndTargetImage"));
+			dataItem.setSourceUrl(_ctx.stringValue("ListCorpTrackDetailResponse.Data["+ i +"].SourceUrl"));
+			dataItem.setTargetUrl(_ctx.stringValue("ListCorpTrackDetailResponse.Data["+ i +"].TargetUrl"));
 
 			data.add(dataItem);
 		}
