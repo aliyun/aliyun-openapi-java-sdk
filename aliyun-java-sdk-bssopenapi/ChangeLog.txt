@@ -1,3 +1,7 @@
+2021-01-16 Version: 1.6.2
+- Add BillingDate support in QueryAccontBill.
+- Add SplitAccountId, SplitAccountName, SplitBillingCycle, SplitProductDetail, SplitCommodityCode, ServicePeriodUnit support in QuerySplitItemBill.
+
 2021-01-14 Version: 1.6.2
 - Add BillingDate support in QueryAccontBill.
 - Add SplitAccountId, SplitAccountName, SplitBillingCycle, SplitProductDetail, SplitCommodityCode, ServicePeriodUnit support in QuerySplitItemBill.

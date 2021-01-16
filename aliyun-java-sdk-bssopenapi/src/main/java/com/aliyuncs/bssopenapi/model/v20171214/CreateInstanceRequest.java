@@ -34,6 +34,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String subscriptionType;
 
+	private String logistics;
+
 	private Long ownerId;
 
 	private String productType;
@@ -93,6 +95,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.subscriptionType = subscriptionType;
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
+		}
+	}
+
+	public String getLogistics() {
+		return this.logistics;
+	}
+
+	public void setLogistics(String logistics) {
+		this.logistics = logistics;
+		if(logistics != null){
+			putQueryParameter("Logistics", logistics);
 		}
 	}
 
