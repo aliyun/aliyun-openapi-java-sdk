@@ -15,7 +15,6 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dg.Endpoint;
 
@@ -23,8 +22,10 @@ import com.aliyuncs.dg.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse> {
+public class RetryDatabaseRequest extends RpcAcsRequest<RetryDatabaseResponse> {
 	   
+
+	private String clientToken;
 
 	private String host;
 
@@ -32,7 +33,7 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 
 	private String dbDescription;
 
-	private String instanceId;
+	private String gatewayId;
 
 	private String dbName;
 
@@ -41,14 +42,24 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 	private String dbPassword;
 
 	private String dbType;
-	public ModifyDatabaseRequest() {
-		super("dg", "2019-03-27", "ModifyDatabase", "dg");
-		setProtocol(ProtocolType.HTTPS);
+	public RetryDatabaseRequest() {
+		super("dg", "2019-03-27", "RetryDatabase", "dg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getHost() {
@@ -84,14 +95,14 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getGatewayId() {
+		return this.gatewayId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putBodyParameter("GatewayId", gatewayId);
 		}
 	}
 
@@ -140,8 +151,8 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 	}
 
 	@Override
-	public Class<ModifyDatabaseResponse> getResponseClass() {
-		return ModifyDatabaseResponse.class;
+	public Class<RetryDatabaseResponse> getResponseClass() {
+		return RetryDatabaseResponse.class;
 	}
 
 }

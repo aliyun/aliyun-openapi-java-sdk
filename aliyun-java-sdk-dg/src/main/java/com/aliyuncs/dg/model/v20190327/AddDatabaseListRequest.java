@@ -15,7 +15,6 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.dg.Endpoint;
 
@@ -23,11 +22,14 @@ import com.aliyuncs.dg.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAllGatewayServersRequest extends RpcAcsRequest<GetAllGatewayServersResponse> {
-	
-	public GetAllGatewayServersRequest() {
-		super("dg", "2019-03-27", "GetAllGatewayServers", "dg");
-		setProtocol(ProtocolType.HTTPS);
+public class AddDatabaseListRequest extends RpcAcsRequest<AddDatabaseListResponse> {
+	   
+
+	private String databaseString;
+
+	private String clientToken;
+	public AddDatabaseListRequest() {
+		super("dg", "2019-03-27", "AddDatabaseList", "dg");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,9 +37,31 @@ public class GetAllGatewayServersRequest extends RpcAcsRequest<GetAllGatewayServ
 		} catch (Exception e) {}
 	}
 
+	public String getDatabaseString() {
+		return this.databaseString;
+	}
+
+	public void setDatabaseString(String databaseString) {
+		this.databaseString = databaseString;
+		if(databaseString != null){
+			putBodyParameter("DatabaseString", databaseString);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
 	@Override
-	public Class<GetAllGatewayServersResponse> getResponseClass() {
-		return GetAllGatewayServersResponse.class;
+	public Class<AddDatabaseListResponse> getResponseClass() {
+		return AddDatabaseListResponse.class;
 	}
 
 }

@@ -15,14 +15,14 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dg.transform.v20190327.GetAllGatewayServersResponseUnmarshaller;
+import com.aliyuncs.dg.transform.v20190327.AddDatabaseListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAllGatewayServersResponse extends AcsResponse {
+public class AddDatabaseListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -75,7 +75,12 @@ public class GetAllGatewayServersResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetAllGatewayServersResponse getInstance(UnmarshallerContext context) {
-		return	GetAllGatewayServersResponseUnmarshaller.unmarshall(this, context);
+	public AddDatabaseListResponse getInstance(UnmarshallerContext context) {
+		return	AddDatabaseListResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

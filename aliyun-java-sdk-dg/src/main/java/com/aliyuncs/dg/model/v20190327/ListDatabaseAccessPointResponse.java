@@ -15,24 +15,26 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dg.transform.v20190327.CheckDGEnabledResponseUnmarshaller;
+import com.aliyuncs.dg.transform.v20190327.ListDatabaseAccessPointResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CheckDGEnabledResponse extends AcsResponse {
+public class ListDatabaseAccessPointResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String success;
 
 	private String code;
 
 	private String errorMsg;
 
 	private String data;
+
+	private Integer count;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,11 +44,11 @@ public class CheckDGEnabledResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
+	public String getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(Boolean success) {
+	public void setSuccess(String success) {
 		this.success = success;
 	}
 
@@ -74,8 +76,21 @@ public class CheckDGEnabledResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public Integer getCount() {
+		return this.count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
 	@Override
-	public CheckDGEnabledResponse getInstance(UnmarshallerContext context) {
-		return	CheckDGEnabledResponseUnmarshaller.unmarshall(this, context);
+	public ListDatabaseAccessPointResponse getInstance(UnmarshallerContext context) {
+		return	ListDatabaseAccessPointResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

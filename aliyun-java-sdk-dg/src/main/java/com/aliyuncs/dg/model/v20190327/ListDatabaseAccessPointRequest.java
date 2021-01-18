@@ -23,28 +23,26 @@ import com.aliyuncs.dg.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
+public class ListDatabaseAccessPointRequest extends RpcAcsRequest<ListDatabaseAccessPointResponse> {
 	   
 
-	private String clientToken;
+	private String searchKey;
+
+	private String pageNumber;
+
+	private String pageSize;
 
 	private String host;
 
-	private String dbUserName;
-
-	private String dbDescription;
+	private String dbInstanceId;
 
 	private String gatewayId;
 
-	private String dbName;
-
 	private Integer port;
 
-	private String dbPassword;
-
-	private String dbType;
-	public AddDatabaseRequest() {
-		super("dg", "2019-03-27", "AddDatabase", "dg");
+	private String vpcId;
+	public ListDatabaseAccessPointRequest() {
+		super("dg", "2019-03-27", "ListDatabaseAccessPoint", "dg");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
@@ -53,14 +51,36 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSearchKey() {
+		return this.searchKey;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putBodyParameter("SearchKey", searchKey);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize);
 		}
 	}
 
@@ -75,25 +95,14 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 		}
 	}
 
-	public String getDbUserName() {
-		return this.dbUserName;
+	public String getDbInstanceId() {
+		return this.dbInstanceId;
 	}
 
-	public void setDbUserName(String dbUserName) {
-		this.dbUserName = dbUserName;
-		if(dbUserName != null){
-			putBodyParameter("DbUserName", dbUserName);
-		}
-	}
-
-	public String getDbDescription() {
-		return this.dbDescription;
-	}
-
-	public void setDbDescription(String dbDescription) {
-		this.dbDescription = dbDescription;
-		if(dbDescription != null){
-			putBodyParameter("DbDescription", dbDescription);
+	public void setDbInstanceId(String dbInstanceId) {
+		this.dbInstanceId = dbInstanceId;
+		if(dbInstanceId != null){
+			putBodyParameter("DbInstanceId", dbInstanceId);
 		}
 	}
 
@@ -108,17 +117,6 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 		}
 	}
 
-	public String getDbName() {
-		return this.dbName;
-	}
-
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
-		if(dbName != null){
-			putBodyParameter("DbName", dbName);
-		}
-	}
-
 	public Integer getPort() {
 		return this.port;
 	}
@@ -130,31 +128,20 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 		}
 	}
 
-	public String getDbPassword() {
-		return this.dbPassword;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setDbPassword(String dbPassword) {
-		this.dbPassword = dbPassword;
-		if(dbPassword != null){
-			putBodyParameter("DbPassword", dbPassword);
-		}
-	}
-
-	public String getDbType() {
-		return this.dbType;
-	}
-
-	public void setDbType(String dbType) {
-		this.dbType = dbType;
-		if(dbType != null){
-			putBodyParameter("DbType", dbType);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putBodyParameter("VpcId", vpcId);
 		}
 	}
 
 	@Override
-	public Class<AddDatabaseResponse> getResponseClass() {
-		return AddDatabaseResponse.class;
+	public Class<ListDatabaseAccessPointResponse> getResponseClass() {
+		return ListDatabaseAccessPointResponse.class;
 	}
 
 }

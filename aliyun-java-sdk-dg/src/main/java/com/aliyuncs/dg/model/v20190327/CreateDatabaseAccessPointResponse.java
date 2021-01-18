@@ -15,14 +15,14 @@
 package com.aliyuncs.dg.model.v20190327;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dg.transform.v20190327.CreateConnectChannelRandomCodeResponseUnmarshaller;
+import com.aliyuncs.dg.transform.v20190327.CreateDatabaseAccessPointResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateConnectChannelRandomCodeResponse extends AcsResponse {
+public class CreateDatabaseAccessPointResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -75,7 +75,12 @@ public class CreateConnectChannelRandomCodeResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateConnectChannelRandomCodeResponse getInstance(UnmarshallerContext context) {
-		return	CreateConnectChannelRandomCodeResponseUnmarshaller.unmarshall(this, context);
+	public CreateDatabaseAccessPointResponse getInstance(UnmarshallerContext context) {
+		return	CreateDatabaseAccessPointResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
