@@ -129,7 +129,7 @@ public class ApacheHttpClient extends IHttpClient {
                 } else {
                     hostnameVerifier = clientConfig.getHostnameVerifier();
                 }
-               return new SSLConnectionSocketFactory(clientConfig.getSslSocketFactory(), hostnameVerifier);
+                return new SSLConnectionSocketFactory(clientConfig.getSslSocketFactory(), hostnameVerifier);
             }
         } catch (Exception e) {
             throw new ClientException("SDK.InitFailed", "Init https with SSL socket failed", e);
@@ -293,7 +293,7 @@ public class ApacheHttpClient extends IHttpClient {
         result.setReasonPhrase(httpResponse.getStatusLine().getReasonPhrase());
         boolean existed = ((httpResponse.getEntity() != null && (httpResponse.getEntity().getContentLength() > 0 || httpResponse
                 .getEntity().isChunked())));
-        if (existed){
+        if (existed) {
             // content type
             Header contentTypeHeader = httpResponse.getEntity().getContentType();
             ContentType contentType = ContentType.parse(contentTypeHeader.getValue());
