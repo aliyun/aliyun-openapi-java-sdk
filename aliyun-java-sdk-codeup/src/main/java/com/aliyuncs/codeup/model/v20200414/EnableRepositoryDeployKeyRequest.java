@@ -21,16 +21,22 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
+public class EnableRepositoryDeployKeyRequest extends RoaAcsRequest<EnableRepositoryDeployKeyResponse> {
 	   
 
 	private String organizationId;
 
+	private String subUserId;
+
 	private String accessToken;
-	public GetUserInfoRequest() {
-		super("codeup", "2020-04-14", "GetUserInfo");
-		setUriPattern("/api/v3/user/current");
-		setMethod(MethodType.GET);
+
+	private Long keyId;
+
+	private Long projectId;
+	public EnableRepositoryDeployKeyRequest() {
+		super("codeup", "2020-04-14", "EnableRepositoryDeployKey");
+		setUriPattern("/api/v3/projects/[ProjectId]/keys/[KeyId]/enable");
+		setMethod(MethodType.POST);
 	}
 
 	public String getOrganizationId() {
@@ -41,6 +47,17 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		this.organizationId = organizationId;
 		if(organizationId != null){
 			putQueryParameter("OrganizationId", organizationId);
+		}
+	}
+
+	public String getSubUserId() {
+		return this.subUserId;
+	}
+
+	public void setSubUserId(String subUserId) {
+		this.subUserId = subUserId;
+		if(subUserId != null){
+			putQueryParameter("SubUserId", subUserId);
 		}
 	}
 
@@ -55,9 +72,31 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		}
 	}
 
+	public Long getKeyId() {
+		return this.keyId;
+	}
+
+	public void setKeyId(Long keyId) {
+		this.keyId = keyId;
+		if(keyId != null){
+			putPathParameter("KeyId", keyId.toString());
+		}
+	}
+
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId.toString());
+		}
+	}
+
 	@Override
-	public Class<GetUserInfoResponse> getResponseClass() {
-		return GetUserInfoResponse.class;
+	public Class<EnableRepositoryDeployKeyResponse> getResponseClass() {
+		return EnableRepositoryDeployKeyResponse.class;
 	}
 
 }

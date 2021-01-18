@@ -21,16 +21,20 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
+public class CreateRepositoryDeployKeyRequest extends RoaAcsRequest<CreateRepositoryDeployKeyResponse> {
 	   
 
 	private String organizationId;
 
+	private String subUserId;
+
 	private String accessToken;
-	public GetUserInfoRequest() {
-		super("codeup", "2020-04-14", "GetUserInfo");
-		setUriPattern("/api/v3/user/current");
-		setMethod(MethodType.GET);
+
+	private Long projectId;
+	public CreateRepositoryDeployKeyRequest() {
+		super("codeup", "2020-04-14", "CreateRepositoryDeployKey");
+		setUriPattern("/api/v3/projects/[ProjectId]/keys");
+		setMethod(MethodType.POST);
 	}
 
 	public String getOrganizationId() {
@@ -41,6 +45,17 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		this.organizationId = organizationId;
 		if(organizationId != null){
 			putQueryParameter("OrganizationId", organizationId);
+		}
+	}
+
+	public String getSubUserId() {
+		return this.subUserId;
+	}
+
+	public void setSubUserId(String subUserId) {
+		this.subUserId = subUserId;
+		if(subUserId != null){
+			putQueryParameter("SubUserId", subUserId);
 		}
 	}
 
@@ -55,9 +70,20 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		}
 	}
 
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId.toString());
+		}
+	}
+
 	@Override
-	public Class<GetUserInfoResponse> getResponseClass() {
-		return GetUserInfoResponse.class;
+	public Class<CreateRepositoryDeployKeyResponse> getResponseClass() {
+		return CreateRepositoryDeployKeyResponse.class;
 	}
 
 }

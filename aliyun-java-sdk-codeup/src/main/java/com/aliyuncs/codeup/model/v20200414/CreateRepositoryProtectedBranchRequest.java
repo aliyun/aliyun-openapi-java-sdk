@@ -21,16 +21,18 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
+public class CreateRepositoryProtectedBranchRequest extends RoaAcsRequest<CreateRepositoryProtectedBranchResponse> {
 	   
 
 	private String organizationId;
 
 	private String accessToken;
-	public GetUserInfoRequest() {
-		super("codeup", "2020-04-14", "GetUserInfo");
-		setUriPattern("/api/v3/user/current");
-		setMethod(MethodType.GET);
+
+	private Long projectId;
+	public CreateRepositoryProtectedBranchRequest() {
+		super("codeup", "2020-04-14", "CreateRepositoryProtectedBranch");
+		setUriPattern("/api/v4/projects/[ProjectId]/repository/protect_branches");
+		setMethod(MethodType.POST);
 	}
 
 	public String getOrganizationId() {
@@ -55,9 +57,20 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		}
 	}
 
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId.toString());
+		}
+	}
+
 	@Override
-	public Class<GetUserInfoResponse> getResponseClass() {
-		return GetUserInfoResponse.class;
+	public Class<CreateRepositoryProtectedBranchResponse> getResponseClass() {
+		return CreateRepositoryProtectedBranchResponse.class;
 	}
 
 }

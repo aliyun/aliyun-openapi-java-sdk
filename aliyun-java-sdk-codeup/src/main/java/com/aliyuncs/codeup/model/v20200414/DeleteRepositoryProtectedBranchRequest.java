@@ -21,16 +21,20 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
+public class DeleteRepositoryProtectedBranchRequest extends RoaAcsRequest<DeleteRepositoryProtectedBranchResponse> {
 	   
 
 	private String organizationId;
 
+	private Long protectedBranchId;
+
 	private String accessToken;
-	public GetUserInfoRequest() {
-		super("codeup", "2020-04-14", "GetUserInfo");
-		setUriPattern("/api/v3/user/current");
-		setMethod(MethodType.GET);
+
+	private Long projectId;
+	public DeleteRepositoryProtectedBranchRequest() {
+		super("codeup", "2020-04-14", "DeleteRepositoryProtectedBranch");
+		setUriPattern("/api/v4/projects/[ProjectId]/repository/protect_branches/[ProtectedBranchId]");
+		setMethod(MethodType.DELETE);
 	}
 
 	public String getOrganizationId() {
@@ -41,6 +45,17 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		this.organizationId = organizationId;
 		if(organizationId != null){
 			putQueryParameter("OrganizationId", organizationId);
+		}
+	}
+
+	public Long getProtectedBranchId() {
+		return this.protectedBranchId;
+	}
+
+	public void setProtectedBranchId(Long protectedBranchId) {
+		this.protectedBranchId = protectedBranchId;
+		if(protectedBranchId != null){
+			putPathParameter("ProtectedBranchId", protectedBranchId.toString());
 		}
 	}
 
@@ -55,9 +70,20 @@ public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 		}
 	}
 
+	public Long getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId.toString());
+		}
+	}
+
 	@Override
-	public Class<GetUserInfoResponse> getResponseClass() {
-		return GetUserInfoResponse.class;
+	public Class<DeleteRepositoryProtectedBranchResponse> getResponseClass() {
+		return DeleteRepositoryProtectedBranchResponse.class;
 	}
 
 }
