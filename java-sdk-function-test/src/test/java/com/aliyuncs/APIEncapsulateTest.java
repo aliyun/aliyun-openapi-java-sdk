@@ -1,6 +1,5 @@
 package com.aliyuncs;
 
-import com.aliyuncs.ccc.model.v20170705.CommitContactFlowVersionModificationRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
@@ -210,22 +209,6 @@ public class APIEncapsulateTest extends BaseTest {
         } catch (ClientException e) {
             Assert.assertEquals("HTTPBadRequest", e.getErrCode());
             Assert.assertEquals("No action specified", e.getErrMsg());
-        }
-    }
-
-    @Test
-    public void rpcPostTest() throws ClientException {
-        CommitContactFlowVersionModificationRequest request = new CommitContactFlowVersionModificationRequest();
-        request.setContent("test");
-        request.setCanvas("test");
-        request.setContactFlowVersionId("test");
-        request.setInstanceId("test");
-        try {
-            this.client.getAcsResponse(request);
-            Assert.fail();
-        } catch (ServerException e) {
-            Assert.assertEquals("ServiceUnavailable", e.getErrCode());
-            Assert.assertEquals("The request has failed due to a temporary failure of the server.", e.getErrMsg());
         }
     }
 }
