@@ -88,12 +88,8 @@ public class CommonRequest {
             ProductDomain productDomain = new ProductDomain(product, domain);
             request.setSysProductDomain(productDomain);
         }
-        if (bodyParameters.size() > 0) {
-            if (httpContentType == null) {
-                request.setHttpContentType(FormatType.RAW);
-            } else {
-                request.setHttpContentType(httpContentType);
-            }
+        if (bodyParameters.size() > 0 && httpContentType != null) {
+            request.setHttpContentType(httpContentType);
         }
         if (httpContent != null) {
             request.setHttpContent(httpContent, encoding, httpContentType);

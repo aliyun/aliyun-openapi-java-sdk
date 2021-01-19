@@ -24,10 +24,10 @@ public class CommonRequestTest {
 
         request.putBodyParameter("a", "a");
         acsRequest = request.buildRequest();
-        Assert.assertEquals(FormatType.RAW, acsRequest.getHttpContentType());
-        request.setHttpContentType(FormatType.JSON);
+        Assert.assertEquals(FormatType.FORM, acsRequest.getHttpContentType());
+        request.setHttpContentType(FormatType.RAW);
         acsRequest = request.buildRequest();
-        Assert.assertEquals(FormatType.JSON, acsRequest.getHttpContentType());
+        Assert.assertEquals(FormatType.RAW, acsRequest.getHttpContentType());
 
     }
 
