@@ -26,6 +26,10 @@ public class ListPersonTrackRequest extends RpcAcsRequest<ListPersonTrackRespons
 
 	private String corpId;
 
+	private String aggregateDimension;
+
+	private String imageSourceType;
+
 	private String endTime;
 
 	private String startTime;
@@ -48,6 +52,28 @@ public class ListPersonTrackRequest extends RpcAcsRequest<ListPersonTrackRespons
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getAggregateDimension() {
+		return this.aggregateDimension;
+	}
+
+	public void setAggregateDimension(String aggregateDimension) {
+		this.aggregateDimension = aggregateDimension;
+		if(aggregateDimension != null){
+			putBodyParameter("AggregateDimension", aggregateDimension);
+		}
+	}
+
+	public String getImageSourceType() {
+		return this.imageSourceType;
+	}
+
+	public void setImageSourceType(String imageSourceType) {
+		this.imageSourceType = imageSourceType;
+		if(imageSourceType != null){
+			putBodyParameter("ImageSourceType", imageSourceType);
 		}
 	}
 
