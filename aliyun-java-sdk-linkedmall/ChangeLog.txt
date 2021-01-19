@@ -1,3 +1,6 @@
+2021-01-19 Version: 2.12.14
+- Generated 2018-01-16 for `linkedmall`.
+
 2020-11-30 Version: 2.12.13
 - Add support for liteshop.
 
