@@ -25,29 +25,16 @@ import com.aliyuncs.dbfs.Endpoint;
 public class ResizeDbfsRequest extends RpcAcsRequest<ResizeDbfsResponse> {
 	   
 
-	private String clientToken;
-
 	private Integer newSizeG;
 
 	private String fsId;
 	public ResizeDbfsRequest() {
-		super("DBFS", "2020-04-18", "ResizeDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "ResizeDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
 	}
 
 	public Integer getNewSizeG() {

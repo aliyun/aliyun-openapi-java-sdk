@@ -27,8 +27,6 @@ public class ListDbfsRequest extends RpcAcsRequest<ListDbfsResponse> {
 
 	private String sortType;
 
-	private String clientToken;
-
 	private String filterValue;
 
 	private Integer pageNumber;
@@ -41,7 +39,7 @@ public class ListDbfsRequest extends RpcAcsRequest<ListDbfsResponse> {
 
 	private Integer pageSize;
 	public ListDbfsRequest() {
-		super("DBFS", "2020-04-18", "ListDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "ListDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,17 +55,6 @@ public class ListDbfsRequest extends RpcAcsRequest<ListDbfsResponse> {
 		this.sortType = sortType;
 		if(sortType != null){
 			putQueryParameter("SortType", sortType);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

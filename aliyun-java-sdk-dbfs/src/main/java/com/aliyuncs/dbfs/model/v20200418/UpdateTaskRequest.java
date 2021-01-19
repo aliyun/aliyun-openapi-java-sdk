@@ -29,7 +29,7 @@ public class UpdateTaskRequest extends RpcAcsRequest<UpdateTaskResponse> {
 
 	private String taskIds;
 	public UpdateTaskRequest() {
-		super("DBFS", "2020-04-18", "UpdateTask", "dbfs");
+		super("DBFS", "2020-04-18", "UpdateTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
