@@ -6,6 +6,8 @@ travis-test:
 	mv ./aliyun-java-sdk-ecs/target/*.jar ./java-sdk-function-test/lib/ecs.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-ccc/pom.xml
 	mv ./aliyun-java-sdk-ccc/target/*.jar ./java-sdk-function-test/lib/ccc.jar
+	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-dysmsapi/pom.xml
+	mv ./aliyun-java-sdk-dysmsapi/target/*.jar ./java-sdk-function-test/lib/dysmsapi.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-slb/pom.xml
 	mv ./aliyun-java-sdk-slb/target/*.jar ./java-sdk-function-test/lib/slb.jar
 	mvn package -Dmaven.test.skip=true -f ./aliyun-java-sdk-cdn/pom.xml
