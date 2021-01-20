@@ -58,6 +58,13 @@
         </dependency>
         <dependency>
             <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/dysmsapi.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-cdn</artifactId>
             <version>1.0</version>
             <scope>system</scope>

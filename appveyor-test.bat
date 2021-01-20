@@ -5,6 +5,8 @@ call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-ecs\pom.xml
 call move .\aliyun-java-sdk-ecs\target\*.jar .\java-sdk-function-test\lib\ecs.jar
 call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-ccc\pom.xml
 call move .\aliyun-java-sdk-ccc\target\*.jar .\java-sdk-function-test\lib\ccc.jar
+call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-dysmsapi\pom.xml
+call move .\aliyun-java-sdk-dysmsapi\target\*.jar .\java-sdk-function-test\lib\dysmsapi.jar
 call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-slb\pom.xml
 call move .\aliyun-java-sdk-slb\target\*.jar .\java-sdk-function-test\lib\slb.jar
 call mvn package -Dmaven.test.skip=true -f .\aliyun-java-sdk-cdn\pom.xml
