@@ -15,6 +15,7 @@
 package com.aliyuncs.emas_appmonitor.model.v20190611;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emas_appmonitor.Endpoint;
 
 /**
@@ -22,20 +23,21 @@ import com.aliyuncs.emas_appmonitor.Endpoint;
  * @version 
  */
 public class GetCrashSummaryRequest extends RpcAcsRequest<GetCrashSummaryResponse> {
-	
-	public GetCrashSummaryRequest() {
-		super("emas-appmonitor", "2019-06-11", "GetCrashSummary");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
+	   
 
 	private String uniqueAppId;
 
 	private Long dateTimeMs;
 
 	private String appVersion;
+	public GetCrashSummaryRequest() {
+		super("emas-appmonitor", "2019-06-11", "GetCrashSummary");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
 
 	public String getUniqueAppId() {
 		return this.uniqueAppId;

@@ -22,17 +22,47 @@ import com.aliyuncs.emas_appmonitor.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSdkConfigRequest extends RpcAcsRequest<GetSdkConfigResponse> {
+public class SaveAppFileRequest extends RpcAcsRequest<SaveAppFileResponse> {
 	   
 
+	private String fileType;
+
+	private String filePath;
+
 	private String uniqueAppId;
-	public GetSdkConfigRequest() {
-		super("emas-appmonitor", "2019-06-11", "GetSdkConfig");
+
+	private String appVersion;
+
+	private String fileName;
+	public SaveAppFileRequest() {
+		super("emas-appmonitor", "2019-06-11", "SaveAppFile");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFileType() {
+		return this.fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putBodyParameter("FileType", fileType);
+		}
+	}
+
+	public String getFilePath() {
+		return this.filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+		if(filePath != null){
+			putBodyParameter("FilePath", filePath);
+		}
 	}
 
 	public String getUniqueAppId() {
@@ -46,9 +76,31 @@ public class GetSdkConfigRequest extends RpcAcsRequest<GetSdkConfigResponse> {
 		}
 	}
 
+	public String getAppVersion() {
+		return this.appVersion;
+	}
+
+	public void setAppVersion(String appVersion) {
+		this.appVersion = appVersion;
+		if(appVersion != null){
+			putBodyParameter("AppVersion", appVersion);
+		}
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+		if(fileName != null){
+			putBodyParameter("FileName", fileName);
+		}
+	}
+
 	@Override
-	public Class<GetSdkConfigResponse> getResponseClass() {
-		return GetSdkConfigResponse.class;
+	public Class<SaveAppFileResponse> getResponseClass() {
+		return SaveAppFileResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2021-01-20 Version: 1.2.0
+- Add metrics data API.
+
 2019-08-15 Version: 1.0
 - Add Crash Summary.
 

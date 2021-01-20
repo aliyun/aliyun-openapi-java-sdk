@@ -22,17 +22,30 @@ import com.aliyuncs.emas_appmonitor.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetSdkConfigRequest extends RpcAcsRequest<GetSdkConfigResponse> {
+public class GetAppFilePolicyRequest extends RpcAcsRequest<GetAppFilePolicyResponse> {
 	   
 
+	private String fileType;
+
 	private String uniqueAppId;
-	public GetSdkConfigRequest() {
-		super("emas-appmonitor", "2019-06-11", "GetSdkConfig");
+	public GetAppFilePolicyRequest() {
+		super("emas-appmonitor", "2019-06-11", "GetAppFilePolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getFileType() {
+		return this.fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+		if(fileType != null){
+			putBodyParameter("FileType", fileType);
+		}
 	}
 
 	public String getUniqueAppId() {
@@ -47,8 +60,8 @@ public class GetSdkConfigRequest extends RpcAcsRequest<GetSdkConfigResponse> {
 	}
 
 	@Override
-	public Class<GetSdkConfigResponse> getResponseClass() {
-		return GetSdkConfigResponse.class;
+	public Class<GetAppFilePolicyResponse> getResponseClass() {
+		return GetAppFilePolicyResponse.class;
 	}
 
 }
