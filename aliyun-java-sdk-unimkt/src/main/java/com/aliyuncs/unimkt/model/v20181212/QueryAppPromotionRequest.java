@@ -15,7 +15,6 @@
 package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.unimkt.Endpoint;
 
@@ -23,17 +22,18 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckReceivingDetailRequest extends RpcAcsRequest<CheckReceivingDetailResponse> {
+public class QueryAppPromotionRequest extends RpcAcsRequest<QueryAppPromotionResponse> {
 	   
 
-	private String deviceCode;
+	private String extra;
 
-	private String v;
+	private String userType;
+
+	private String userId;
 
 	private String channelId;
-	public CheckReceivingDetailRequest() {
-		super("UniMkt", "2018-12-12", "CheckReceivingDetail");
-		setProtocol(ProtocolType.HTTPS);
+	public QueryAppPromotionRequest() {
+		super("UniMkt", "2018-12-12", "QueryAppPromotion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +41,36 @@ public class CheckReceivingDetailRequest extends RpcAcsRequest<CheckReceivingDet
 		} catch (Exception e) {}
 	}
 
-	public String getDeviceCode() {
-		return this.deviceCode;
+	public String getExtra() {
+		return this.extra;
 	}
 
-	public void setDeviceCode(String deviceCode) {
-		this.deviceCode = deviceCode;
-		if(deviceCode != null){
-			putBodyParameter("DeviceCode", deviceCode);
+	public void setExtra(String extra) {
+		this.extra = extra;
+		if(extra != null){
+			putQueryParameter("Extra", extra);
 		}
 	}
 
-	public String getV() {
-		return this.v;
+	public String getUserType() {
+		return this.userType;
 	}
 
-	public void setV(String v) {
-		this.v = v;
-		if(v != null){
-			putBodyParameter("V", v);
+	public void setUserType(String userType) {
+		this.userType = userType;
+		if(userType != null){
+			putQueryParameter("UserType", userType);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 
@@ -70,13 +81,13 @@ public class CheckReceivingDetailRequest extends RpcAcsRequest<CheckReceivingDet
 	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 		if(channelId != null){
-			putBodyParameter("ChannelId", channelId);
+			putQueryParameter("ChannelId", channelId);
 		}
 	}
 
 	@Override
-	public Class<CheckReceivingDetailResponse> getResponseClass() {
-		return CheckReceivingDetailResponse.class;
+	public Class<QueryAppPromotionResponse> getResponseClass() {
+		return QueryAppPromotionResponse.class;
 	}
 
 }

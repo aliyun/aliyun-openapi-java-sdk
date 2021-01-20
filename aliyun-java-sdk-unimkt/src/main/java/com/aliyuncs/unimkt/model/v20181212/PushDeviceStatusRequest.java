@@ -32,7 +32,7 @@ public class PushDeviceStatusRequest extends RpcAcsRequest<PushDeviceStatusRespo
 
 	private Integer status;
 	public PushDeviceStatusRequest() {
-		super("UniMkt", "2018-12-12", "PushDeviceStatus", "uniMkt");
+		super("UniMkt", "2018-12-12", "PushDeviceStatus");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {
