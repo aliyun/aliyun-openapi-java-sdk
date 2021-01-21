@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,34 +23,22 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsResponse> {
+public class DeleteImageComponentRequest extends RpcAcsRequest<DeleteImageComponentResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String description;
+	private String imageComponentId;
 
-	private String type;
-
-	private String commandId;
-
-	private Long pageNumber;
-
-	private String provider;
-
-	private String contentEncoding;
-
-	private Long pageSize;
+	private List<TemplateTag> templateTags;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String name;
-	public DescribeCommandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
+	public DeleteImageComponentRequest() {
+		super("Ecs", "2014-05-26", "DeleteImageComponent", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,81 +57,29 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getImageComponentId() {
+		return this.imageComponentId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setImageComponentId(String imageComponentId) {
+		this.imageComponentId = imageComponentId;
+		if(imageComponentId != null){
+			putQueryParameter("ImageComponentId", imageComponentId);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public List<TemplateTag> getTemplateTags() {
+		return this.templateTags;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getCommandId() {
-		return this.commandId;
-	}
-
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getProvider() {
-		return this.provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
-		}
-	}
-
-	public String getContentEncoding() {
-		return this.contentEncoding;
-	}
-
-	public void setContentEncoding(String contentEncoding) {
-		this.contentEncoding = contentEncoding;
-		if(contentEncoding != null){
-			putQueryParameter("ContentEncoding", contentEncoding);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	public void setTemplateTags(List<TemplateTag> templateTags) {
+		this.templateTags = templateTags;	
+		if (templateTags != null) {
+			for (int depth1 = 0; depth1 < templateTags.size(); depth1++) {
+				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Key" , templateTags.get(depth1).getKey());
+				putQueryParameter("TemplateTag." + (depth1 + 1) + ".Value" , templateTags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -178,20 +115,32 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
+	public static class TemplateTag {
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 
 	@Override
-	public Class<DescribeCommandsResponse> getResponseClass() {
-		return DescribeCommandsResponse.class;
+	public Class<DeleteImageComponentResponse> getResponseClass() {
+		return DeleteImageComponentResponse.class;
 	}
 
 }

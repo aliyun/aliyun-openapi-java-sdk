@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,22 +23,12 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsResponse> {
+public class DescribeManagedInstancesRequest extends RpcAcsRequest<DescribeManagedInstancesResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String description;
-
-	private String type;
-
-	private String commandId;
-
 	private Long pageNumber;
-
-	private String provider;
-
-	private String contentEncoding;
 
 	private Long pageSize;
 
@@ -45,11 +36,19 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private String ownerAccount;
 
+	private String osType;
+
 	private Long ownerId;
 
-	private String name;
-	public DescribeCommandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
+	private String instanceName;
+
+	private List<String> instanceIds;
+
+	private String instanceIp;
+
+	private String activationId;
+	public DescribeManagedInstancesRequest() {
+		super("Ecs", "2014-05-26", "DescribeManagedInstances", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,39 +67,6 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getCommandId() {
-		return this.commandId;
-	}
-
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
-		}
-	}
-
 	public Long getPageNumber() {
 		return this.pageNumber;
 	}
@@ -109,28 +75,6 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getProvider() {
-		return this.provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
-		}
-	}
-
-	public String getContentEncoding() {
-		return this.contentEncoding;
-	}
-
-	public void setContentEncoding(String contentEncoding) {
-		this.contentEncoding = contentEncoding;
-		if(contentEncoding != null){
-			putQueryParameter("ContentEncoding", contentEncoding);
 		}
 	}
 
@@ -167,6 +111,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public String getOsType() {
+		return this.osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+		if(osType != null){
+			putQueryParameter("OsType", osType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -178,20 +133,55 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getInstanceName() {
+		return this.instanceName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public List<String> getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(List<String> instanceIds) {
+		this.instanceIds = instanceIds;	
+		if (instanceIds != null) {
+			for (int i = 0; i < instanceIds.size(); i++) {
+				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
+			}
+		}	
+	}
+
+	public String getInstanceIp() {
+		return this.instanceIp;
+	}
+
+	public void setInstanceIp(String instanceIp) {
+		this.instanceIp = instanceIp;
+		if(instanceIp != null){
+			putQueryParameter("InstanceIp", instanceIp);
+		}
+	}
+
+	public String getActivationId() {
+		return this.activationId;
+	}
+
+	public void setActivationId(String activationId) {
+		this.activationId = activationId;
+		if(activationId != null){
+			putQueryParameter("ActivationId", activationId);
 		}
 	}
 
 	@Override
-	public Class<DescribeCommandsResponse> getResponseClass() {
-		return DescribeCommandsResponse.class;
+	public Class<DescribeManagedInstancesResponse> getResponseClass() {
+		return DescribeManagedInstancesResponse.class;
 	}
 
 }

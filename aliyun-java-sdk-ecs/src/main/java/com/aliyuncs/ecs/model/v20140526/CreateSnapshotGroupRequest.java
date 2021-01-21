@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,24 +23,18 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsResponse> {
+public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private List<String> excludeDiskIds;
+
+	private Boolean instantAccess;
+
 	private String description;
 
-	private String type;
-
-	private String commandId;
-
-	private Long pageNumber;
-
-	private String provider;
-
-	private String contentEncoding;
-
-	private Long pageSize;
+	private Integer instantAccessRetentionDays;
 
 	private String resourceOwnerAccount;
 
@@ -47,9 +42,11 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long ownerId;
 
+	private String instanceId;
+
 	private String name;
-	public DescribeCommandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
+	public CreateSnapshotGroupRequest() {
+		super("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +65,30 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public List<String> getExcludeDiskIds() {
+		return this.excludeDiskIds;
+	}
+
+	public void setExcludeDiskIds(List<String> excludeDiskIds) {
+		this.excludeDiskIds = excludeDiskIds;	
+		if (excludeDiskIds != null) {
+			for (int i = 0; i < excludeDiskIds.size(); i++) {
+				putQueryParameter("ExcludeDiskId." + (i + 1) , excludeDiskIds.get(i));
+			}
+		}	
+	}
+
+	public Boolean getInstantAccess() {
+		return this.instantAccess;
+	}
+
+	public void setInstantAccess(Boolean instantAccess) {
+		this.instantAccess = instantAccess;
+		if(instantAccess != null){
+			putQueryParameter("InstantAccess", instantAccess.toString());
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -79,69 +100,14 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public Integer getInstantAccessRetentionDays() {
+		return this.instantAccessRetentionDays;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getCommandId() {
-		return this.commandId;
-	}
-
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getProvider() {
-		return this.provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
-		}
-	}
-
-	public String getContentEncoding() {
-		return this.contentEncoding;
-	}
-
-	public void setContentEncoding(String contentEncoding) {
-		this.contentEncoding = contentEncoding;
-		if(contentEncoding != null){
-			putQueryParameter("ContentEncoding", contentEncoding);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+		this.instantAccessRetentionDays = instantAccessRetentionDays;
+		if(instantAccessRetentionDays != null){
+			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
 		}
 	}
 
@@ -178,6 +144,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -190,8 +167,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 	}
 
 	@Override
-	public Class<DescribeCommandsResponse> getResponseClass() {
-		return DescribeCommandsResponse.class;
+	public Class<CreateSnapshotGroupResponse> getResponseClass() {
+		return CreateSnapshotGroupResponse.class;
 	}
 
 }

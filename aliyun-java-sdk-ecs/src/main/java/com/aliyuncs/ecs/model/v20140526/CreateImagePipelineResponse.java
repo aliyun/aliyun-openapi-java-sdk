@@ -15,20 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ModifyDiskSpecResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateImagePipelineResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDiskSpecResponse extends AcsResponse {
+public class CreateImagePipelineResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
-
-	private String orderId;
+	private String imagePipelineId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class ModifyDiskSpecResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getImagePipelineId() {
+		return this.imagePipelineId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setImagePipelineId(String imagePipelineId) {
+		this.imagePipelineId = imagePipelineId;
 	}
 
 	@Override
-	public ModifyDiskSpecResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDiskSpecResponseUnmarshaller.unmarshall(this, context);
+	public CreateImagePipelineResponse getInstance(UnmarshallerContext context) {
+		return	CreateImagePipelineResponseUnmarshaller.unmarshall(this, context);
 	}
 }

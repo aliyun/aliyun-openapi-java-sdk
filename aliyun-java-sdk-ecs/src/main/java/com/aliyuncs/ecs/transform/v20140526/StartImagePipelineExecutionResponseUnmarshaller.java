@@ -14,17 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.ResizeDiskResponse;
+import com.aliyuncs.ecs.model.v20140526.StartImagePipelineExecutionResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ResizeDiskResponseUnmarshaller {
+public class StartImagePipelineExecutionResponseUnmarshaller {
 
-	public static ResizeDiskResponse unmarshall(ResizeDiskResponse resizeDiskResponse, UnmarshallerContext _ctx) {
+	public static StartImagePipelineExecutionResponse unmarshall(StartImagePipelineExecutionResponse startImagePipelineExecutionResponse, UnmarshallerContext _ctx) {
 		
-		resizeDiskResponse.setRequestId(_ctx.stringValue("ResizeDiskResponse.RequestId"));
-		resizeDiskResponse.setOrderId(_ctx.stringValue("ResizeDiskResponse.OrderId"));
+		startImagePipelineExecutionResponse.setRequestId(_ctx.stringValue("StartImagePipelineExecutionResponse.RequestId"));
+		startImagePipelineExecutionResponse.setExecutionId(_ctx.stringValue("StartImagePipelineExecutionResponse.ExecutionId"));
 	 
-	 	return resizeDiskResponse;
+	 	return startImagePipelineExecutionResponse;
 	}
 }

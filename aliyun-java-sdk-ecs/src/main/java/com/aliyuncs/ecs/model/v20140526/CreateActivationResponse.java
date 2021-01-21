@@ -15,20 +15,20 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ModifyDiskSpecResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreateActivationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDiskSpecResponse extends AcsResponse {
+public class CreateActivationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
+	private String activationId;
 
-	private String orderId;
+	private String activationCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +38,29 @@ public class ModifyDiskSpecResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getActivationId() {
+		return this.activationId;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setActivationId(String activationId) {
+		this.activationId = activationId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
+	public String getActivationCode() {
+		return this.activationCode;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	public void setActivationCode(String activationCode) {
+		this.activationCode = activationCode;
 	}
 
 	@Override
-	public ModifyDiskSpecResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDiskSpecResponseUnmarshaller.unmarshall(this, context);
+	public CreateActivationResponse getInstance(UnmarshallerContext context) {
+		return	CreateActivationResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -28,6 +28,8 @@ public class CreateDiskResponse extends AcsResponse {
 
 	private String diskId;
 
+	private String orderId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateDiskResponse extends AcsResponse {
 
 	public void setDiskId(String diskId) {
 		this.diskId = diskId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

@@ -22,34 +22,24 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsResponse> {
+public class ModifySnapshotGroupRequest extends RpcAcsRequest<ModifySnapshotGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String description;
 
-	private String type;
-
-	private String commandId;
-
-	private Long pageNumber;
-
-	private String provider;
-
-	private String contentEncoding;
-
-	private Long pageSize;
-
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private String snapshotGroupId;
+
 	private Long ownerId;
 
 	private String name;
-	public DescribeCommandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
+	public ModifySnapshotGroupRequest() {
+		super("Ecs", "2014-05-26", "ModifySnapshotGroup", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,72 +69,6 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getCommandId() {
-		return this.commandId;
-	}
-
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getProvider() {
-		return this.provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
-		}
-	}
-
-	public String getContentEncoding() {
-		return this.contentEncoding;
-	}
-
-	public void setContentEncoding(String contentEncoding) {
-		this.contentEncoding = contentEncoding;
-		if(contentEncoding != null){
-			putQueryParameter("ContentEncoding", contentEncoding);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -164,6 +88,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getSnapshotGroupId() {
+		return this.snapshotGroupId;
+	}
+
+	public void setSnapshotGroupId(String snapshotGroupId) {
+		this.snapshotGroupId = snapshotGroupId;
+		if(snapshotGroupId != null){
+			putQueryParameter("SnapshotGroupId", snapshotGroupId);
 		}
 	}
 
@@ -190,8 +125,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 	}
 
 	@Override
-	public Class<DescribeCommandsResponse> getResponseClass() {
-		return DescribeCommandsResponse.class;
+	public Class<ModifySnapshotGroupResponse> getResponseClass() {
+		return ModifySnapshotGroupResponse.class;
 	}
 
 }

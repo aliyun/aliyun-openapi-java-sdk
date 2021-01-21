@@ -22,24 +22,14 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsResponse> {
+public class CreateActivationRequest extends RpcAcsRequest<CreateActivationResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String description;
 
-	private String type;
-
-	private String commandId;
-
-	private Long pageNumber;
-
-	private String provider;
-
-	private String contentEncoding;
-
-	private Long pageSize;
+	private Integer instanceCount;
 
 	private String resourceOwnerAccount;
 
@@ -47,9 +37,13 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long ownerId;
 
-	private String name;
-	public DescribeCommandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
+	private String instanceName;
+
+	private Long timeToLiveInHours;
+
+	private String ipAddressRange;
+	public CreateActivationRequest() {
+		super("Ecs", "2014-05-26", "CreateActivation", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,69 +73,14 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public Integer getInstanceCount() {
+		return this.instanceCount;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public String getCommandId() {
-		return this.commandId;
-	}
-
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
-		}
-	}
-
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getProvider() {
-		return this.provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
-		}
-	}
-
-	public String getContentEncoding() {
-		return this.contentEncoding;
-	}
-
-	public void setContentEncoding(String contentEncoding) {
-		this.contentEncoding = contentEncoding;
-		if(contentEncoding != null){
-			putQueryParameter("ContentEncoding", contentEncoding);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setInstanceCount(Integer instanceCount) {
+		this.instanceCount = instanceCount;
+		if(instanceCount != null){
+			putQueryParameter("InstanceCount", instanceCount.toString());
 		}
 	}
 
@@ -178,20 +117,42 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getInstanceName() {
+		return this.instanceName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setInstanceName(String instanceName) {
+		this.instanceName = instanceName;
+		if(instanceName != null){
+			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Long getTimeToLiveInHours() {
+		return this.timeToLiveInHours;
+	}
+
+	public void setTimeToLiveInHours(Long timeToLiveInHours) {
+		this.timeToLiveInHours = timeToLiveInHours;
+		if(timeToLiveInHours != null){
+			putQueryParameter("TimeToLiveInHours", timeToLiveInHours.toString());
+		}
+	}
+
+	public String getIpAddressRange() {
+		return this.ipAddressRange;
+	}
+
+	public void setIpAddressRange(String ipAddressRange) {
+		this.ipAddressRange = ipAddressRange;
+		if(ipAddressRange != null){
+			putQueryParameter("IpAddressRange", ipAddressRange);
 		}
 	}
 
 	@Override
-	public Class<DescribeCommandsResponse> getResponseClass() {
-		return DescribeCommandsResponse.class;
+	public Class<CreateActivationResponse> getResponseClass() {
+		return CreateActivationResponse.class;
 	}
 
 }

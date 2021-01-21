@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,24 +23,22 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsResponse> {
+public class CreateImageComponentRequest extends RpcAcsRequest<CreateImageComponentResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String description;
 
-	private String type;
+	private String systemType;
 
-	private String commandId;
+	private String content;
 
-	private Long pageNumber;
+	private String resourceGroupId;
 
-	private String provider;
-
-	private String contentEncoding;
-
-	private Long pageSize;
+	private List<Tag> tags;
 
 	private String resourceOwnerAccount;
 
@@ -47,9 +46,11 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long ownerId;
 
+	private String componentType;
+
 	private String name;
-	public DescribeCommandsRequest() {
-		super("Ecs", "2014-05-26", "DescribeCommands", "ecs");
+	public CreateImageComponentRequest() {
+		super("Ecs", "2014-05-26", "CreateImageComponent", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +69,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getDescription() {
 		return this.description;
 	}
@@ -79,70 +91,51 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getSystemType() {
+		return this.systemType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setSystemType(String systemType) {
+		this.systemType = systemType;
+		if(systemType != null){
+			putQueryParameter("SystemType", systemType);
 		}
 	}
 
-	public String getCommandId() {
-		return this.commandId;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setCommandId(String commandId) {
-		this.commandId = commandId;
-		if(commandId != null){
-			putQueryParameter("CommandId", commandId);
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putQueryParameter("Content", content);
 		}
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
 	}
 
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
-	public String getProvider() {
-		return this.provider;
+	public List<Tag> getTags() {
+		return this.tags;
 	}
 
-	public void setProvider(String provider) {
-		this.provider = provider;
-		if(provider != null){
-			putQueryParameter("Provider", provider);
-		}
-	}
-
-	public String getContentEncoding() {
-		return this.contentEncoding;
-	}
-
-	public void setContentEncoding(String contentEncoding) {
-		this.contentEncoding = contentEncoding;
-		if(contentEncoding != null){
-			putQueryParameter("ContentEncoding", contentEncoding);
-		}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -178,6 +171,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public String getComponentType() {
+		return this.componentType;
+	}
+
+	public void setComponentType(String componentType) {
+		this.componentType = componentType;
+		if(componentType != null){
+			putQueryParameter("ComponentType", componentType);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -189,9 +193,32 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		}
 	}
 
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
+
 	@Override
-	public Class<DescribeCommandsResponse> getResponseClass() {
-		return DescribeCommandsResponse.class;
+	public Class<CreateImageComponentResponse> getResponseClass() {
+		return CreateImageComponentResponse.class;
 	}
 
 }

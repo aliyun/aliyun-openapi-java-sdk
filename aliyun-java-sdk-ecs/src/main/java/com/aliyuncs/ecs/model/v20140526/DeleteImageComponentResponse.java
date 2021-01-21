@@ -15,20 +15,16 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.ModifyDiskSpecResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DeleteImageComponentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDiskSpecResponse extends AcsResponse {
+public class DeleteImageComponentResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String taskId;
-
-	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class ModifyDiskSpecResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	@Override
-	public ModifyDiskSpecResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDiskSpecResponseUnmarshaller.unmarshall(this, context);
+	public DeleteImageComponentResponse getInstance(UnmarshallerContext context) {
+		return	DeleteImageComponentResponseUnmarshaller.unmarshall(this, context);
 	}
 }
