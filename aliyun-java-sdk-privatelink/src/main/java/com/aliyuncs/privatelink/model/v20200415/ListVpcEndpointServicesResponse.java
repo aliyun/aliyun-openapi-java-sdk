@@ -69,13 +69,13 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 
 		private Boolean autoAcceptEnabled;
 
-		private String connectBandwidth;
+		private Integer connectBandwidth;
 
 		private String createTime;
 
-		private String maxBandwidth;
+		private Integer maxBandwidth;
 
-		private String minBandwidth;
+		private Integer minBandwidth;
 
 		private String regionId;
 
@@ -101,11 +101,11 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 			this.autoAcceptEnabled = autoAcceptEnabled;
 		}
 
-		public String getConnectBandwidth() {
+		public Integer getConnectBandwidth() {
 			return this.connectBandwidth;
 		}
 
-		public void setConnectBandwidth(String connectBandwidth) {
+		public void setConnectBandwidth(Integer connectBandwidth) {
 			this.connectBandwidth = connectBandwidth;
 		}
 
@@ -117,19 +117,19 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getMaxBandwidth() {
+		public Integer getMaxBandwidth() {
 			return this.maxBandwidth;
 		}
 
-		public void setMaxBandwidth(String maxBandwidth) {
+		public void setMaxBandwidth(Integer maxBandwidth) {
 			this.maxBandwidth = maxBandwidth;
 		}
 
-		public String getMinBandwidth() {
+		public Integer getMinBandwidth() {
 			return this.minBandwidth;
 		}
 
-		public void setMinBandwidth(String minBandwidth) {
+		public void setMinBandwidth(Integer minBandwidth) {
 			this.minBandwidth = minBandwidth;
 		}
 

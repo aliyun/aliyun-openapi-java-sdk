@@ -1,3 +1,6 @@
+2021-01-21 Version: 1.0.2
+- Modify some field types.
+
 2020-11-12 Version: 1.0.1
 - Add type of payment for endpoint service.
 - Add api for opening endpoint.

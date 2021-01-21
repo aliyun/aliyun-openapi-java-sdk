@@ -81,6 +81,8 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 		private String modifiedTime;
 
+		private Boolean resourceOwner;
+
 		private List<Zone> zones;
 
 		public String getServiceId() {
@@ -137,6 +139,14 @@ public class ListVpcEndpointConnectionsResponse extends AcsResponse {
 
 		public void setModifiedTime(String modifiedTime) {
 			this.modifiedTime = modifiedTime;
+		}
+
+		public Boolean getResourceOwner() {
+			return this.resourceOwner;
+		}
+
+		public void setResourceOwner(Boolean resourceOwner) {
+			this.resourceOwner = resourceOwner;
 		}
 
 		public List<Zone> getZones() {
