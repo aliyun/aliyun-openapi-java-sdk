@@ -22,7 +22,7 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySchemeResponse> {
+public class GetCertifyResultRequest extends RpcAcsRequest<GetCertifyResultResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -31,11 +31,9 @@ public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySch
 
 	private Long ownerId;
 
-	private String schemeCode;
-
-	private Long customerId;
-	public DescribeVerifySchemeRequest() {
-		super("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "dypnsapi");
+	private String token;
+	public GetCertifyResultRequest() {
+		super("Dypnsapi", "2017-05-25", "GetCertifyResult", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,31 +74,20 @@ public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySch
 		}
 	}
 
-	public String getSchemeCode() {
-		return this.schemeCode;
+	public String getToken() {
+		return this.token;
 	}
 
-	public void setSchemeCode(String schemeCode) {
-		this.schemeCode = schemeCode;
-		if(schemeCode != null){
-			putQueryParameter("SchemeCode", schemeCode);
-		}
-	}
-
-	public Long getCustomerId() {
-		return this.customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-		if(customerId != null){
-			putQueryParameter("CustomerId", customerId.toString());
+	public void setToken(String token) {
+		this.token = token;
+		if(token != null){
+			putQueryParameter("Token", token);
 		}
 	}
 
 	@Override
-	public Class<DescribeVerifySchemeResponse> getResponseClass() {
-		return DescribeVerifySchemeResponse.class;
+	public Class<GetCertifyResultResponse> getResponseClass() {
+		return GetCertifyResultResponse.class;
 	}
 
 }

@@ -22,20 +22,22 @@ import com.aliyuncs.dypnsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySchemeResponse> {
+public class GetAuthorizationUrlRequest extends RpcAcsRequest<GetAuthorizationUrlResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String resourceOwnerAccount;
 
+	private Long schemeId;
+
 	private Long ownerId;
 
-	private String schemeCode;
+	private String phoneNo;
 
-	private Long customerId;
-	public DescribeVerifySchemeRequest() {
-		super("Dypnsapi", "2017-05-25", "DescribeVerifyScheme", "dypnsapi");
+	private String endDate;
+	public GetAuthorizationUrlRequest() {
+		super("Dypnsapi", "2017-05-25", "GetAuthorizationUrl", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,6 +67,17 @@ public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySch
 		}
 	}
 
+	public Long getSchemeId() {
+		return this.schemeId;
+	}
+
+	public void setSchemeId(Long schemeId) {
+		this.schemeId = schemeId;
+		if(schemeId != null){
+			putQueryParameter("SchemeId", schemeId.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -76,31 +89,31 @@ public class DescribeVerifySchemeRequest extends RpcAcsRequest<DescribeVerifySch
 		}
 	}
 
-	public String getSchemeCode() {
-		return this.schemeCode;
+	public String getPhoneNo() {
+		return this.phoneNo;
 	}
 
-	public void setSchemeCode(String schemeCode) {
-		this.schemeCode = schemeCode;
-		if(schemeCode != null){
-			putQueryParameter("SchemeCode", schemeCode);
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+		if(phoneNo != null){
+			putQueryParameter("PhoneNo", phoneNo);
 		}
 	}
 
-	public Long getCustomerId() {
-		return this.customerId;
+	public String getEndDate() {
+		return this.endDate;
 	}
 
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-		if(customerId != null){
-			putQueryParameter("CustomerId", customerId.toString());
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+		if(endDate != null){
+			putQueryParameter("EndDate", endDate);
 		}
 	}
 
 	@Override
-	public Class<DescribeVerifySchemeResponse> getResponseClass() {
-		return DescribeVerifySchemeResponse.class;
+	public Class<GetAuthorizationUrlResponse> getResponseClass() {
+		return GetAuthorizationUrlResponse.class;
 	}
 
 }

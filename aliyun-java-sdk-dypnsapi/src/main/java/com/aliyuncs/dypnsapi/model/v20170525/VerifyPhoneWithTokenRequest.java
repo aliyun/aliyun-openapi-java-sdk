@@ -35,7 +35,7 @@ public class VerifyPhoneWithTokenRequest extends RpcAcsRequest<VerifyPhoneWithTo
 
 	private String spToken;
 	public VerifyPhoneWithTokenRequest() {
-		super("Dypnsapi", "2017-05-25", "VerifyPhoneWithToken", "dypns");
+		super("Dypnsapi", "2017-05-25", "VerifyPhoneWithToken", "dypnsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
