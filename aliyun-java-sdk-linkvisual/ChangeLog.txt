@@ -1,4 +1,7 @@
 2021-01-22 Version: 1.5.3
+- Support AI for LV.
+
+2021-01-22 Version: 1.5.3
 - Supported AI for LV.
 
 2021-01-22 Version: 1.5.3
