@@ -33,7 +33,7 @@ public class GetCertifyResultRequest extends RpcAcsRequest<GetCertifyResultRespo
 
 	private String token;
 	public GetCertifyResultRequest() {
-		super("Dypnsapi", "2017-05-25", "GetCertifyResult", "dypnsapi");
+		super("Dypnsapi", "2017-05-25", "GetCertifyResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
