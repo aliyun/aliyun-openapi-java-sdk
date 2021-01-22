@@ -93,6 +93,8 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 		private String regionId;
 
+		private Boolean resourceOwner;
+
 		public String getEndpointId() {
 			return this.endpointId;
 		}
@@ -195,6 +197,14 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public Boolean getResourceOwner() {
+			return this.resourceOwner;
+		}
+
+		public void setResourceOwner(Boolean resourceOwner) {
+			this.resourceOwner = resourceOwner;
 		}
 	}
 

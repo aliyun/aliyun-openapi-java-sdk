@@ -46,6 +46,7 @@ public class ListVpcEndpointsResponseUnmarshaller {
 			endpoint.setVpcId(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].VpcId"));
 			endpoint.setCreateTime(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].CreateTime"));
 			endpoint.setRegionId(_ctx.stringValue("ListVpcEndpointsResponse.Endpoints["+ i +"].RegionId"));
+			endpoint.setResourceOwner(_ctx.booleanValue("ListVpcEndpointsResponse.Endpoints["+ i +"].ResourceOwner"));
 
 			endpoints.add(endpoint);
 		}

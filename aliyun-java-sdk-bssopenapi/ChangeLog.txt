@@ -1,3 +1,11 @@
+2021-01-22 Version: 1.6.6
+- Support savingsplans instance Query.
+- Support savingsplans deduct log Query.
+
+2021-01-22 Version: 1.6.6
+- Support savingsplans instance Query.
+- Support savingsplans deduct log Query.
+
 2021-01-18 Version: 1.6.5
 - Add logistics for createinstance.
 

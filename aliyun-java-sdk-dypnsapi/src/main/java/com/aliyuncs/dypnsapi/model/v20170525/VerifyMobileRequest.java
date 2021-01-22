@@ -38,7 +38,7 @@ public class VerifyMobileRequest extends RpcAcsRequest<VerifyMobileResponse> {
 
 	private String outId;
 	public VerifyMobileRequest() {
-		super("Dypnsapi", "2017-05-25", "VerifyMobile", "dypns");
+		super("Dypnsapi", "2017-05-25", "VerifyMobile");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

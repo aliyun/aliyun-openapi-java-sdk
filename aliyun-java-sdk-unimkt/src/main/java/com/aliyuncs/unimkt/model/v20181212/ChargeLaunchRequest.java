@@ -33,7 +33,7 @@ public class ChargeLaunchRequest extends RpcAcsRequest<ChargeLaunchResponse> {
 
 	private String outerCode;
 	public ChargeLaunchRequest() {
-		super("UniMkt", "2018-12-12", "ChargeLaunch", "uniMkt");
+		super("UniMkt", "2018-12-12", "ChargeLaunch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -42,6 +42,7 @@ public class DescribeInstancesResponseUnmarshaller {
 		describeInstancesResponse.setTotalCount(_ctx.integerValue("DescribeInstancesResponse.TotalCount"));
 		describeInstancesResponse.setPageNumber(_ctx.integerValue("DescribeInstancesResponse.PageNumber"));
 		describeInstancesResponse.setPageSize(_ctx.integerValue("DescribeInstancesResponse.PageSize"));
+		describeInstancesResponse.setNextToken(_ctx.stringValue("DescribeInstancesResponse.NextToken"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {

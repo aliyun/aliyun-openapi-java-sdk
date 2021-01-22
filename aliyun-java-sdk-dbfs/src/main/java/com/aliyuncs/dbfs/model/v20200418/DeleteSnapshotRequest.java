@@ -27,11 +27,9 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 
 	private String snapshotId;
 
-	private String clientToken;
-
 	private Boolean force;
 	public DeleteSnapshotRequest() {
-		super("DBFS", "2020-04-18", "DeleteSnapshot", "dbfs");
+		super("DBFS", "2020-04-18", "DeleteSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,17 +45,6 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		this.snapshotId = snapshotId;
 		if(snapshotId != null){
 			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

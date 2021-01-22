@@ -83,6 +83,14 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		private String type;
 
+		private Integer version;
+
+		private Boolean latest;
+
+		private String provider;
+
+		private String category;
+
 		private String description;
 
 		private String commandContent;
@@ -121,6 +129,38 @@ public class DescribeCommandsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Integer getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(Integer version) {
+			this.version = version;
+		}
+
+		public Boolean getLatest() {
+			return this.latest;
+		}
+
+		public void setLatest(Boolean latest) {
+			this.latest = latest;
+		}
+
+		public String getProvider() {
+			return this.provider;
+		}
+
+		public void setProvider(String provider) {
+			this.provider = provider;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public String getDescription() {

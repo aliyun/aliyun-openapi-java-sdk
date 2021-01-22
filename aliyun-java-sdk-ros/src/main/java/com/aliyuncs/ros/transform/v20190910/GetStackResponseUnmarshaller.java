@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.GetStackResponse;
 import com.aliyuncs.ros.model.v20190910.GetStackResponse.Parameter;
+import com.aliyuncs.ros.model.v20190910.GetStackResponse.Tag;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -65,6 +66,16 @@ public class GetStackResponseUnmarshaller {
 			parameters.add(parameter);
 		}
 		getStackResponse.setParameters(parameters);
+
+		List<Tag> tags = new ArrayList<Tag>();
+		for (int i = 0; i < _ctx.lengthValue("GetStackResponse.Tags.Length"); i++) {
+			Tag tag = new Tag();
+			tag.setKey(_ctx.stringValue("GetStackResponse.Tags["+ i +"].Key"));
+			tag.setValue(_ctx.stringValue("GetStackResponse.Tags["+ i +"].Value"));
+
+			tags.add(tag);
+		}
+		getStackResponse.setTags(tags);
 	 
 	 	return getStackResponse;
 	}

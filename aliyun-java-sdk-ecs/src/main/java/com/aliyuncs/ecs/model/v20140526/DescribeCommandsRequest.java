@@ -35,6 +35,8 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 
 	private Long pageNumber;
 
+	private String provider;
+
 	private String contentEncoding;
 
 	private Long pageSize;
@@ -107,6 +109,17 @@ public class DescribeCommandsRequest extends RpcAcsRequest<DescribeCommandsRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getProvider() {
+		return this.provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+		if(provider != null){
+			putQueryParameter("Provider", provider);
 		}
 	}
 

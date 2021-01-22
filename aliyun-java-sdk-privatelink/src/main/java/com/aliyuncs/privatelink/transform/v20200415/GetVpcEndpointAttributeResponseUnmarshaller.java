@@ -23,7 +23,7 @@ public class GetVpcEndpointAttributeResponseUnmarshaller {
 	public static GetVpcEndpointAttributeResponse unmarshall(GetVpcEndpointAttributeResponse getVpcEndpointAttributeResponse, UnmarshallerContext _ctx) {
 		
 		getVpcEndpointAttributeResponse.setRequestId(_ctx.stringValue("GetVpcEndpointAttributeResponse.RequestId"));
-		getVpcEndpointAttributeResponse.setBandwidth(_ctx.stringValue("GetVpcEndpointAttributeResponse.Bandwidth"));
+		getVpcEndpointAttributeResponse.setBandwidth(_ctx.integerValue("GetVpcEndpointAttributeResponse.Bandwidth"));
 		getVpcEndpointAttributeResponse.setConnectionStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.ConnectionStatus"));
 		getVpcEndpointAttributeResponse.setCreateTime(_ctx.stringValue("GetVpcEndpointAttributeResponse.CreateTime"));
 		getVpcEndpointAttributeResponse.setEndpointBusinessStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointBusinessStatus"));
@@ -37,6 +37,7 @@ public class GetVpcEndpointAttributeResponseUnmarshaller {
 		getVpcEndpointAttributeResponse.setVpcId(_ctx.stringValue("GetVpcEndpointAttributeResponse.VpcId"));
 		getVpcEndpointAttributeResponse.setRegionId(_ctx.stringValue("GetVpcEndpointAttributeResponse.RegionId"));
 		getVpcEndpointAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointAttributeResponse.Payer"));
+		getVpcEndpointAttributeResponse.setResourceOwner(_ctx.booleanValue("GetVpcEndpointAttributeResponse.ResourceOwner"));
 	 
 	 	return getVpcEndpointAttributeResponse;
 	}

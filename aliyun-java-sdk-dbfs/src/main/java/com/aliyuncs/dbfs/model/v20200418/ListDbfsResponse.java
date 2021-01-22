@@ -99,6 +99,10 @@ public class ListDbfsResponse extends AcsResponse {
 
 		private String createdTime;
 
+		private String kMSKeyId;
+
+		private Boolean encryption;
+
 		private List<TagList> tags;
 
 		private List<EcsListItem> ecsList;
@@ -189,6 +193,22 @@ public class ListDbfsResponse extends AcsResponse {
 
 		public void setCreatedTime(String createdTime) {
 			this.createdTime = createdTime;
+		}
+
+		public String getKMSKeyId() {
+			return this.kMSKeyId;
+		}
+
+		public void setKMSKeyId(String kMSKeyId) {
+			this.kMSKeyId = kMSKeyId;
+		}
+
+		public Boolean getEncryption() {
+			return this.encryption;
+		}
+
+		public void setEncryption(Boolean encryption) {
+			this.encryption = encryption;
 		}
 
 		public List<TagList> getTags() {

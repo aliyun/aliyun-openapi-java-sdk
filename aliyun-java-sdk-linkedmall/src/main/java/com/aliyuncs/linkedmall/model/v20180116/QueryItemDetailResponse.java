@@ -150,6 +150,12 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		private String lmItemId;
 
+		private Integer sellerType;
+
+		private String videoUrl;
+
+		private String videoPicUrl;
+
 		private List<Sku> skus;
 
 		private List<String> itemImages;
@@ -360,6 +366,30 @@ public class QueryItemDetailResponse extends AcsResponse {
 
 		public void setLmItemId(String lmItemId) {
 			this.lmItemId = lmItemId;
+		}
+
+		public Integer getSellerType() {
+			return this.sellerType;
+		}
+
+		public void setSellerType(Integer sellerType) {
+			this.sellerType = sellerType;
+		}
+
+		public String getVideoUrl() {
+			return this.videoUrl;
+		}
+
+		public void setVideoUrl(String videoUrl) {
+			this.videoUrl = videoUrl;
+		}
+
+		public String getVideoPicUrl() {
+			return this.videoPicUrl;
+		}
+
+		public void setVideoPicUrl(String videoPicUrl) {
+			this.videoPicUrl = videoPicUrl;
 		}
 
 		public List<Sku> getSkus() {

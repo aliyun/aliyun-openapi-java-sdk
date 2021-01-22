@@ -37,7 +37,7 @@ public class ListTaskRequest extends RpcAcsRequest<ListTaskResponse> {
 
 	private Integer pageSize;
 	public ListTaskRequest() {
-		super("DBFS", "2020-04-18", "ListTask", "dbfs");
+		super("DBFS", "2020-04-18", "ListTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

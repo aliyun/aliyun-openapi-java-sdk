@@ -29,6 +29,8 @@ public class GetDbfsResponseUnmarshaller {
 	public static GetDbfsResponse unmarshall(GetDbfsResponse getDbfsResponse, UnmarshallerContext _ctx) {
 		
 		getDbfsResponse.setRequestId(_ctx.stringValue("GetDbfsResponse.RequestId"));
+		getDbfsResponse.setKMSKeyId(_ctx.stringValue("GetDbfsResponse.KMSKeyId"));
+		getDbfsResponse.setEncryption(_ctx.booleanValue("GetDbfsResponse.Encryption"));
 
 		DBFSInfo dBFSInfo = new DBFSInfo();
 		dBFSInfo.setFsName(_ctx.stringValue("GetDbfsResponse.DBFSInfo.FsName"));

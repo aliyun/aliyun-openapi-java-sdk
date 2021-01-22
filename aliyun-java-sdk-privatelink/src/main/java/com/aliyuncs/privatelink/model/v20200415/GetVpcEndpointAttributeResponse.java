@@ -24,7 +24,7 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
-	private String bandwidth;
+	private Integer bandwidth;
 
 	private String connectionStatus;
 
@@ -54,11 +54,13 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private String payer;
 
-	public String getBandwidth() {
+	private Boolean resourceOwner;
+
+	public Integer getBandwidth() {
 		return this.bandwidth;
 	}
 
-	public void setBandwidth(String bandwidth) {
+	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
 	}
 
@@ -172,6 +174,14 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	public void setPayer(String payer) {
 		this.payer = payer;
+	}
+
+	public Boolean getResourceOwner() {
+		return this.resourceOwner;
+	}
+
+	public void setResourceOwner(Boolean resourceOwner) {
+		this.resourceOwner = resourceOwner;
 	}
 
 	@Override

@@ -27,11 +27,9 @@ public class ResetDbfsRequest extends RpcAcsRequest<ResetDbfsResponse> {
 
 	private String snapshotId;
 
-	private String clientToken;
-
 	private String fsId;
 	public ResetDbfsRequest() {
-		super("DBFS", "2020-04-18", "ResetDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "ResetDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,17 +45,6 @@ public class ResetDbfsRequest extends RpcAcsRequest<ResetDbfsResponse> {
 		this.snapshotId = snapshotId;
 		if(snapshotId != null){
 			putQueryParameter("SnapshotId", snapshotId);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

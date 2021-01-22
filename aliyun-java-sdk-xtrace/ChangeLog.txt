@@ -1,3 +1,9 @@
+2021-01-18 Version: 0.2.2
+- Add result value spanId for GetTrace api.
+
+2021-01-18 Version: 0.2.2
+- Add result value spanId for GetTrace api.
+
 2021-01-15 Version: 0.2.2
 - Add result value spanId for GetTrace api.
 
