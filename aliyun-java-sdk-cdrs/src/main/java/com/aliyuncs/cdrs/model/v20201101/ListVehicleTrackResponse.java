@@ -125,6 +125,10 @@ public class ListVehicleTrackResponse extends AcsResponse {
 
 		private String longitude;
 
+		private String sourceUrl;
+
+		private String targetUrl;
+
 		public String getPlateId() {
 			return this.plateId;
 		}
@@ -235,6 +239,22 @@ public class ListVehicleTrackResponse extends AcsResponse {
 
 		public void setLongitude(String longitude) {
 			this.longitude = longitude;
+		}
+
+		public String getSourceUrl() {
+			return this.sourceUrl;
+		}
+
+		public void setSourceUrl(String sourceUrl) {
+			this.sourceUrl = sourceUrl;
+		}
+
+		public String getTargetUrl() {
+			return this.targetUrl;
+		}
+
+		public void setTargetUrl(String targetUrl) {
+			this.targetUrl = targetUrl;
 		}
 	}
 

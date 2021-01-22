@@ -102,7 +102,7 @@ public class SearchObjectResponseUnmarshaller {
 			nonMotorListItem.setLeftTopY(_ctx.integerValue("SearchObjectResponse.Data.NonMotorList["+ i +"].LeftTopY"));
 			nonMotorListItem.setRightBottomX(_ctx.integerValue("SearchObjectResponse.Data.NonMotorList["+ i +"].RightBottomX"));
 			nonMotorListItem.setRightBottomY(_ctx.integerValue("SearchObjectResponse.Data.NonMotorList["+ i +"].RightBottomY"));
-			nonMotorListItem.setScore(_ctx.integerValue("SearchObjectResponse.Data.NonMotorList["+ i +"].Score"));
+			nonMotorListItem.setScore(_ctx.floatValue("SearchObjectResponse.Data.NonMotorList["+ i +"].Score"));
 			nonMotorListItem.setShotTime(_ctx.stringValue("SearchObjectResponse.Data.NonMotorList["+ i +"].ShotTime"));
 			nonMotorListItem.setSourceImageUrl(_ctx.stringValue("SearchObjectResponse.Data.NonMotorList["+ i +"].SourceImageUrl"));
 			nonMotorListItem.setTargetImageUrl(_ctx.stringValue("SearchObjectResponse.Data.NonMotorList["+ i +"].TargetImageUrl"));

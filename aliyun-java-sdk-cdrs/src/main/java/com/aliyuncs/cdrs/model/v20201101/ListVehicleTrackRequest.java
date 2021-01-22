@@ -31,6 +31,10 @@ public class ListVehicleTrackRequest extends RpcAcsRequest<ListVehicleTrackRespo
 	private String endTime;
 
 	private String startTime;
+
+	private Long pageNumber;
+
+	private Long pageSize;
 	public ListVehicleTrackRequest() {
 		super("CDRS", "2020-11-01", "ListVehicleTrack");
 		setMethod(MethodType.POST);
@@ -77,6 +81,28 @@ public class ListVehicleTrackRequest extends RpcAcsRequest<ListVehicleTrackRespo
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -49,6 +49,8 @@ public class ListVehicleDetailsResponseUnmarshaller {
 			datas.setVehicleApplication(_ctx.stringValue("ListVehicleDetailsResponse.Data["+ i +"].VehicleApplication"));
 			datas.setPersonId(_ctx.stringValue("ListVehicleDetailsResponse.Data["+ i +"].PersonId"));
 			datas.setPlateId(_ctx.stringValue("ListVehicleDetailsResponse.Data["+ i +"].PlateId"));
+			datas.setSourceUrl(_ctx.stringValue("ListVehicleDetailsResponse.Data["+ i +"].SourceUrl"));
+			datas.setTargetUrl(_ctx.stringValue("ListVehicleDetailsResponse.Data["+ i +"].TargetUrl"));
 
 			data.add(datas);
 		}

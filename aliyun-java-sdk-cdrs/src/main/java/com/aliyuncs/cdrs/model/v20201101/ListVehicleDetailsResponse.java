@@ -123,6 +123,10 @@ public class ListVehicleDetailsResponse extends AcsResponse {
 
 		private String plateId;
 
+		private String sourceUrl;
+
+		private String targetUrl;
+
 		public String getVehicleId() {
 			return this.vehicleId;
 		}
@@ -225,6 +229,22 @@ public class ListVehicleDetailsResponse extends AcsResponse {
 
 		public void setPlateId(String plateId) {
 			this.plateId = plateId;
+		}
+
+		public String getSourceUrl() {
+			return this.sourceUrl;
+		}
+
+		public void setSourceUrl(String sourceUrl) {
+			this.sourceUrl = sourceUrl;
+		}
+
+		public String getTargetUrl() {
+			return this.targetUrl;
+		}
+
+		public void setTargetUrl(String targetUrl) {
+			this.targetUrl = targetUrl;
 		}
 	}
 

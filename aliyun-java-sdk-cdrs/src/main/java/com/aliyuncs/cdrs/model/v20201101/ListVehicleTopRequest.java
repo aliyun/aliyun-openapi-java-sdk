@@ -31,6 +31,10 @@ public class ListVehicleTopRequest extends RpcAcsRequest<ListVehicleTopResponse>
 	private String endTime;
 
 	private String startTime;
+
+	private String pageNum;
+
+	private String pageSize;
 	public ListVehicleTopRequest() {
 		super("CDRS", "2020-11-01", "ListVehicleTop");
 		setMethod(MethodType.POST);
@@ -77,6 +81,28 @@ public class ListVehicleTopRequest extends RpcAcsRequest<ListVehicleTopResponse>
 		this.startTime = startTime;
 		if(startTime != null){
 			putBodyParameter("StartTime", startTime);
+		}
+	}
+
+	public String getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putBodyParameter("PageNum", pageNum);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize);
 		}
 	}
 

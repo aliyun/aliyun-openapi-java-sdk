@@ -16,14 +16,14 @@ package com.aliyuncs.cdrs.model.v20201101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdrs.transform.v20201101.SearchObjectResponseUnmarshaller;
+import com.aliyuncs.cdrs.transform.v20201101.SearchAggregateObjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SearchObjectResponse extends AcsResponse {
+public class SearchAggregateObjectResponse extends AcsResponse {
 
 	private String code;
 
@@ -159,6 +159,14 @@ public class SearchObjectResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
+			private String deviceName;
+
+			private Float deviceLatitude;
+
+			private Float deviceLongitude;
+
+			private String personId;
+
 			public String getDeviceID() {
 				return this.deviceID;
 			}
@@ -237,6 +245,38 @@ public class SearchObjectResponse extends AcsResponse {
 
 			public void setTargetImageUrl(String targetImageUrl) {
 				this.targetImageUrl = targetImageUrl;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public Float getDeviceLatitude() {
+				return this.deviceLatitude;
+			}
+
+			public void setDeviceLatitude(Float deviceLatitude) {
+				this.deviceLatitude = deviceLatitude;
+			}
+
+			public Float getDeviceLongitude() {
+				return this.deviceLongitude;
+			}
+
+			public void setDeviceLongitude(Float deviceLongitude) {
+				this.deviceLongitude = deviceLongitude;
+			}
+
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 		}
 
@@ -262,6 +302,14 @@ public class SearchObjectResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
+			private String deviceName;
+
+			private Float deviceLatitude;
+
+			private Float deviceLongitude;
+
+			private String personId;
+
 			public String getDeviceID() {
 				return this.deviceID;
 			}
@@ -340,6 +388,38 @@ public class SearchObjectResponse extends AcsResponse {
 
 			public void setTargetImageUrl(String targetImageUrl) {
 				this.targetImageUrl = targetImageUrl;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public Float getDeviceLatitude() {
+				return this.deviceLatitude;
+			}
+
+			public void setDeviceLatitude(Float deviceLatitude) {
+				this.deviceLatitude = deviceLatitude;
+			}
+
+			public Float getDeviceLongitude() {
+				return this.deviceLongitude;
+			}
+
+			public void setDeviceLongitude(Float deviceLongitude) {
+				this.deviceLongitude = deviceLongitude;
+			}
+
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 		}
 
@@ -365,6 +445,14 @@ public class SearchObjectResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
+			private String deviceName;
+
+			private Float deviceLatitude;
+
+			private Float deviceLongitude;
+
+			private String personId;
+
 			public String getDeviceID() {
 				return this.deviceID;
 			}
@@ -443,6 +531,38 @@ public class SearchObjectResponse extends AcsResponse {
 
 			public void setTargetImageUrl(String targetImageUrl) {
 				this.targetImageUrl = targetImageUrl;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public Float getDeviceLatitude() {
+				return this.deviceLatitude;
+			}
+
+			public void setDeviceLatitude(Float deviceLatitude) {
+				this.deviceLatitude = deviceLatitude;
+			}
+
+			public Float getDeviceLongitude() {
+				return this.deviceLongitude;
+			}
+
+			public void setDeviceLongitude(Float deviceLongitude) {
+				this.deviceLongitude = deviceLongitude;
+			}
+
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 		}
 
@@ -468,6 +588,14 @@ public class SearchObjectResponse extends AcsResponse {
 
 			private String targetImageUrl;
 
+			private String deviceName;
+
+			private Float deviceLatitude;
+
+			private Float deviceLongitude;
+
+			private String personId;
+
 			public String getDeviceID() {
 				return this.deviceID;
 			}
@@ -547,12 +675,44 @@ public class SearchObjectResponse extends AcsResponse {
 			public void setTargetImageUrl(String targetImageUrl) {
 				this.targetImageUrl = targetImageUrl;
 			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
+			}
+
+			public Float getDeviceLatitude() {
+				return this.deviceLatitude;
+			}
+
+			public void setDeviceLatitude(Float deviceLatitude) {
+				this.deviceLatitude = deviceLatitude;
+			}
+
+			public Float getDeviceLongitude() {
+				return this.deviceLongitude;
+			}
+
+			public void setDeviceLongitude(Float deviceLongitude) {
+				this.deviceLongitude = deviceLongitude;
+			}
+
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
+			}
 		}
 	}
 
 	@Override
-	public SearchObjectResponse getInstance(UnmarshallerContext context) {
-		return	SearchObjectResponseUnmarshaller.unmarshall(this, context);
+	public SearchAggregateObjectResponse getInstance(UnmarshallerContext context) {
+		return	SearchAggregateObjectResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
