@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -32,6 +33,8 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 	private String defaultTargetCapacityType;
 
 	private String excessCapacityTerminationPolicy;
+
+	private List<LaunchTemplateConfig> launchTemplateConfigs;
 
 	private String resourceOwnerAccount;
 
@@ -101,6 +104,23 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 		if(excessCapacityTerminationPolicy != null){
 			putQueryParameter("ExcessCapacityTerminationPolicy", excessCapacityTerminationPolicy);
 		}
+	}
+
+	public List<LaunchTemplateConfig> getLaunchTemplateConfigs() {
+		return this.launchTemplateConfigs;
+	}
+
+	public void setLaunchTemplateConfigs(List<LaunchTemplateConfig> launchTemplateConfigs) {
+		this.launchTemplateConfigs = launchTemplateConfigs;	
+		if (launchTemplateConfigs != null) {
+			for (int depth1 = 0; depth1 < launchTemplateConfigs.size(); depth1++) {
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxPrice" , launchTemplateConfigs.get(depth1).getMaxPrice());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".VSwitchId" , launchTemplateConfigs.get(depth1).getVSwitchId());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Priority" , launchTemplateConfigs.get(depth1).getPriority());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -199,6 +219,59 @@ public class ModifyAutoProvisioningGroupRequest extends RpcAcsRequest<ModifyAuto
 		this.autoProvisioningGroupName = autoProvisioningGroupName;
 		if(autoProvisioningGroupName != null){
 			putQueryParameter("AutoProvisioningGroupName", autoProvisioningGroupName);
+		}
+	}
+
+	public static class LaunchTemplateConfig {
+
+		private String instanceType;
+
+		private Double maxPrice;
+
+		private String vSwitchId;
+
+		private Double weightedCapacity;
+
+		private Integer priority;
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public Double getMaxPrice() {
+			return this.maxPrice;
+		}
+
+		public void setMaxPrice(Double maxPrice) {
+			this.maxPrice = maxPrice;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public Double getWeightedCapacity() {
+			return this.weightedCapacity;
+		}
+
+		public void setWeightedCapacity(Double weightedCapacity) {
+			this.weightedCapacity = weightedCapacity;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 	}
 
