@@ -15,27 +15,37 @@
 package com.aliyuncs.mts.model.v20140618;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mts.transform.v20140618.SubmitIProductionJobResponseUnmarshaller;
+import com.aliyuncs.mts.transform.v20140618.SubmitVideoQualityJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SubmitIProductionJobResponse extends AcsResponse {
+public class SubmitVideoQualityJobResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
+
+	private String message;
 
 	private String jobId;
 
-	private String result;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getJobId() {
@@ -46,16 +56,16 @@ public class SubmitIProductionJobResponse extends AcsResponse {
 		this.jobId = jobId;
 	}
 
-	public String getResult() {
-		return this.result;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setResult(String result) {
-		this.result = result;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override
-	public SubmitIProductionJobResponse getInstance(UnmarshallerContext context) {
-		return	SubmitIProductionJobResponseUnmarshaller.unmarshall(this, context);
+	public SubmitVideoQualityJobResponse getInstance(UnmarshallerContext context) {
+		return	SubmitVideoQualityJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

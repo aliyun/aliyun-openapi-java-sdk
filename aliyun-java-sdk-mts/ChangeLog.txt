@@ -1,3 +1,6 @@
+2021-01-25 Version: 3.3.12-inner
+- VideoQualitySubmit and Query.
+
 2020-10-21 Version: 2.7.6
 - Add custom person interfaces, support registration, update etc.
 - Optimize updateSmarttagTemplate interface, set some parameters as optional.
