@@ -71,6 +71,8 @@ public class DescribeClustersInServiceMeshResponse extends AcsResponse {
 
 		private String clusterDomain;
 
+		private List<AccessLogDashboardInfo> accessLogDashboards;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -165,6 +167,37 @@ public class DescribeClustersInServiceMeshResponse extends AcsResponse {
 
 		public void setClusterDomain(String clusterDomain) {
 			this.clusterDomain = clusterDomain;
+		}
+
+		public List<AccessLogDashboardInfo> getAccessLogDashboards() {
+			return this.accessLogDashboards;
+		}
+
+		public void setAccessLogDashboards(List<AccessLogDashboardInfo> accessLogDashboards) {
+			this.accessLogDashboards = accessLogDashboards;
+		}
+
+		public static class AccessLogDashboardInfo {
+
+			private String title;
+
+			private String url;
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
 		}
 	}
 

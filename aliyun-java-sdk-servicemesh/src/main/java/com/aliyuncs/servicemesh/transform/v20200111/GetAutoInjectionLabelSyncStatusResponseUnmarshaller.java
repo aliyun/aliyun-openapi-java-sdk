@@ -14,19 +14,17 @@
 
 package com.aliyuncs.servicemesh.transform.v20200111;
 
-import com.aliyuncs.servicemesh.model.v20200111.GetDiagnosisResponse;
+import com.aliyuncs.servicemesh.model.v20200111.GetAutoInjectionLabelSyncStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetDiagnosisResponseUnmarshaller {
+public class GetAutoInjectionLabelSyncStatusResponseUnmarshaller {
 
-	public static GetDiagnosisResponse unmarshall(GetDiagnosisResponse getDiagnosisResponse, UnmarshallerContext _ctx) {
+	public static GetAutoInjectionLabelSyncStatusResponse unmarshall(GetAutoInjectionLabelSyncStatusResponse getAutoInjectionLabelSyncStatusResponse, UnmarshallerContext _ctx) {
 		
-		getDiagnosisResponse.setRequestId(_ctx.stringValue("GetDiagnosisResponse.RequestId"));
-		getDiagnosisResponse.setResult(_ctx.stringValue("GetDiagnosisResponse.Result"));
-		getDiagnosisResponse.setRunAt(_ctx.stringValue("GetDiagnosisResponse.RunAt"));
-		getDiagnosisResponse.setStatus(_ctx.stringValue("GetDiagnosisResponse.Status"));
+		getAutoInjectionLabelSyncStatusResponse.setRequestId(_ctx.stringValue("GetAutoInjectionLabelSyncStatusResponse.RequestId"));
+		getAutoInjectionLabelSyncStatusResponse.setStatus(_ctx.stringValue("GetAutoInjectionLabelSyncStatusResponse.Status"));
 	 
-	 	return getDiagnosisResponse;
+	 	return getAutoInjectionLabelSyncStatusResponse;
 	}
 }

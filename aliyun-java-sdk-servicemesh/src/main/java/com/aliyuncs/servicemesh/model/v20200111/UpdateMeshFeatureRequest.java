@@ -35,7 +35,11 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 
 	private String proxyLimitMemory;
 
+	private Boolean customizedPrometheus;
+
 	private String cniExcludeNamespaces;
+
+	private Boolean accessLogEnabled;
 
 	private String oPALogLevel;
 
@@ -50,6 +54,8 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 	private String includeIPRanges;
 
 	private String oPALimitMemory;
+
+	private String prometheusUrl;
 
 	private String proxyLimitCPU;
 
@@ -82,6 +88,8 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 	private Float traceSampling;
 
 	private Boolean http10Enabled;
+
+	private Boolean kialiEnabled;
 
 	private String auditProject;
 
@@ -152,6 +160,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		}
 	}
 
+	public Boolean getCustomizedPrometheus() {
+		return this.customizedPrometheus;
+	}
+
+	public void setCustomizedPrometheus(Boolean customizedPrometheus) {
+		this.customizedPrometheus = customizedPrometheus;
+		if(customizedPrometheus != null){
+			putBodyParameter("CustomizedPrometheus", customizedPrometheus.toString());
+		}
+	}
+
 	public String getCniExcludeNamespaces() {
 		return this.cniExcludeNamespaces;
 	}
@@ -160,6 +179,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		this.cniExcludeNamespaces = cniExcludeNamespaces;
 		if(cniExcludeNamespaces != null){
 			putBodyParameter("CniExcludeNamespaces", cniExcludeNamespaces);
+		}
+	}
+
+	public Boolean getAccessLogEnabled() {
+		return this.accessLogEnabled;
+	}
+
+	public void setAccessLogEnabled(Boolean accessLogEnabled) {
+		this.accessLogEnabled = accessLogEnabled;
+		if(accessLogEnabled != null){
+			putBodyParameter("AccessLogEnabled", accessLogEnabled.toString());
 		}
 	}
 
@@ -237,6 +267,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		this.oPALimitMemory = oPALimitMemory;
 		if(oPALimitMemory != null){
 			putBodyParameter("OPALimitMemory", oPALimitMemory);
+		}
+	}
+
+	public String getPrometheusUrl() {
+		return this.prometheusUrl;
+	}
+
+	public void setPrometheusUrl(String prometheusUrl) {
+		this.prometheusUrl = prometheusUrl;
+		if(prometheusUrl != null){
+			putBodyParameter("PrometheusUrl", prometheusUrl);
 		}
 	}
 
@@ -413,6 +454,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		this.http10Enabled = http10Enabled;
 		if(http10Enabled != null){
 			putBodyParameter("Http10Enabled", http10Enabled.toString());
+		}
+	}
+
+	public Boolean getKialiEnabled() {
+		return this.kialiEnabled;
+	}
+
+	public void setKialiEnabled(Boolean kialiEnabled) {
+		this.kialiEnabled = kialiEnabled;
+		if(kialiEnabled != null){
+			putBodyParameter("KialiEnabled", kialiEnabled.toString());
 		}
 	}
 

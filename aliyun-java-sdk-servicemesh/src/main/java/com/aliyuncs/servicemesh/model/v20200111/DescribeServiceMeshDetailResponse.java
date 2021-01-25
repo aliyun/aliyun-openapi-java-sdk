@@ -302,6 +302,8 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 				private String includeIPRanges;
 
+				private String edition;
+
 				private Pilot pilot;
 
 				private OPA oPA;
@@ -311,6 +313,12 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 				private Proxy proxy;
 
 				private SidecarInjector sidecarInjector;
+
+				private Kiali kiali;
+
+				private Prometheus prometheus;
+
+				private AccessLog accessLog;
 
 				public Boolean getEnableLocalityLB() {
 					return this.enableLocalityLB;
@@ -360,6 +368,14 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 					this.includeIPRanges = includeIPRanges;
 				}
 
+				public String getEdition() {
+					return this.edition;
+				}
+
+				public void setEdition(String edition) {
+					this.edition = edition;
+				}
+
 				public Pilot getPilot() {
 					return this.pilot;
 				}
@@ -398,6 +414,30 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 				public void setSidecarInjector(SidecarInjector sidecarInjector) {
 					this.sidecarInjector = sidecarInjector;
+				}
+
+				public Kiali getKiali() {
+					return this.kiali;
+				}
+
+				public void setKiali(Kiali kiali) {
+					this.kiali = kiali;
+				}
+
+				public Prometheus getPrometheus() {
+					return this.prometheus;
+				}
+
+				public void setPrometheus(Prometheus prometheus) {
+					this.prometheus = prometheus;
+				}
+
+				public AccessLog getAccessLog() {
+					return this.accessLog;
+				}
+
+				public void setAccessLog(AccessLog accessLog) {
+					this.accessLog = accessLog;
 				}
 
 				public static class Pilot {
@@ -665,6 +705,65 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 						public void setExcludeNamespaces(String excludeNamespaces) {
 							this.excludeNamespaces = excludeNamespaces;
 						}
+					}
+				}
+
+				public static class Kiali {
+
+					private Boolean enabled;
+
+					private String url;
+
+					public Boolean getEnabled() {
+						return this.enabled;
+					}
+
+					public void setEnabled(Boolean enabled) {
+						this.enabled = enabled;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+				}
+
+				public static class Prometheus {
+
+					private Boolean useExternal;
+
+					private String externalUrl;
+
+					public Boolean getUseExternal() {
+						return this.useExternal;
+					}
+
+					public void setUseExternal(Boolean useExternal) {
+						this.useExternal = useExternal;
+					}
+
+					public String getExternalUrl() {
+						return this.externalUrl;
+					}
+
+					public void setExternalUrl(String externalUrl) {
+						this.externalUrl = externalUrl;
+					}
+				}
+
+				public static class AccessLog {
+
+					private Boolean enabled;
+
+					public Boolean getEnabled() {
+						return this.enabled;
+					}
+
+					public void setEnabled(Boolean enabled) {
+						this.enabled = enabled;
 					}
 				}
 			}

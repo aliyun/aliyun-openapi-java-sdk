@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.servicemesh.model.v20200111.DescribeClustersInServiceMeshResponse;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeClustersInServiceMeshResponse.Cluster;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeClustersInServiceMeshResponse.Cluster.AccessLogDashboardInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -43,6 +44,16 @@ public class DescribeClustersInServiceMeshResponseUnmarshaller {
 			cluster.setVpcId(_ctx.stringValue("DescribeClustersInServiceMeshResponse.Clusters["+ i +"].VpcId"));
 			cluster.setSgId(_ctx.stringValue("DescribeClustersInServiceMeshResponse.Clusters["+ i +"].SgId"));
 			cluster.setClusterDomain(_ctx.stringValue("DescribeClustersInServiceMeshResponse.Clusters["+ i +"].ClusterDomain"));
+
+			List<AccessLogDashboardInfo> accessLogDashboards = new ArrayList<AccessLogDashboardInfo>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeClustersInServiceMeshResponse.Clusters["+ i +"].AccessLogDashboards.Length"); j++) {
+				AccessLogDashboardInfo accessLogDashboardInfo = new AccessLogDashboardInfo();
+				accessLogDashboardInfo.setTitle(_ctx.stringValue("DescribeClustersInServiceMeshResponse.Clusters["+ i +"].AccessLogDashboards["+ j +"].Title"));
+				accessLogDashboardInfo.setUrl(_ctx.stringValue("DescribeClustersInServiceMeshResponse.Clusters["+ i +"].AccessLogDashboards["+ j +"].Url"));
+
+				accessLogDashboards.add(accessLogDashboardInfo);
+			}
+			cluster.setAccessLogDashboards(accessLogDashboards);
 
 			clusters.add(cluster);
 		}

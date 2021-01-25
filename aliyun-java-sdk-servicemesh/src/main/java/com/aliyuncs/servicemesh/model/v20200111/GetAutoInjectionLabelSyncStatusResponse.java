@@ -15,20 +15,16 @@
 package com.aliyuncs.servicemesh.model.v20200111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.servicemesh.transform.v20200111.GetDiagnosisResponseUnmarshaller;
+import com.aliyuncs.servicemesh.transform.v20200111.GetAutoInjectionLabelSyncStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDiagnosisResponse extends AcsResponse {
+public class GetAutoInjectionLabelSyncStatusResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String result;
-
-	private String runAt;
 
 	private String status;
 
@@ -40,22 +36,6 @@ public class GetDiagnosisResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
-
-	public String getRunAt() {
-		return this.runAt;
-	}
-
-	public void setRunAt(String runAt) {
-		this.runAt = runAt;
-	}
-
 	public String getStatus() {
 		return this.status;
 	}
@@ -65,8 +45,8 @@ public class GetDiagnosisResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetDiagnosisResponse getInstance(UnmarshallerContext context) {
-		return	GetDiagnosisResponseUnmarshaller.unmarshall(this, context);
+	public GetAutoInjectionLabelSyncStatusResponse getInstance(UnmarshallerContext context) {
+		return	GetAutoInjectionLabelSyncStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

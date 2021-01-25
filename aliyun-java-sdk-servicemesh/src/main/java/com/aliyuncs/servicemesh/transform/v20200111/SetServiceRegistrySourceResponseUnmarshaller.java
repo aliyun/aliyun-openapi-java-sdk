@@ -14,19 +14,17 @@
 
 package com.aliyuncs.servicemesh.transform.v20200111;
 
-import com.aliyuncs.servicemesh.model.v20200111.GetDiagnosisResponse;
+import com.aliyuncs.servicemesh.model.v20200111.SetServiceRegistrySourceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetDiagnosisResponseUnmarshaller {
+public class SetServiceRegistrySourceResponseUnmarshaller {
 
-	public static GetDiagnosisResponse unmarshall(GetDiagnosisResponse getDiagnosisResponse, UnmarshallerContext _ctx) {
+	public static SetServiceRegistrySourceResponse unmarshall(SetServiceRegistrySourceResponse setServiceRegistrySourceResponse, UnmarshallerContext _ctx) {
 		
-		getDiagnosisResponse.setRequestId(_ctx.stringValue("GetDiagnosisResponse.RequestId"));
-		getDiagnosisResponse.setResult(_ctx.stringValue("GetDiagnosisResponse.Result"));
-		getDiagnosisResponse.setRunAt(_ctx.stringValue("GetDiagnosisResponse.RunAt"));
-		getDiagnosisResponse.setStatus(_ctx.stringValue("GetDiagnosisResponse.Status"));
+		setServiceRegistrySourceResponse.setRequestId(_ctx.stringValue("SetServiceRegistrySourceResponse.RequestId"));
+		setServiceRegistrySourceResponse.setResult(_ctx.stringValue("SetServiceRegistrySourceResponse.Result"));
 	 
-	 	return getDiagnosisResponse;
+	 	return setServiceRegistrySourceResponse;
 	}
 }

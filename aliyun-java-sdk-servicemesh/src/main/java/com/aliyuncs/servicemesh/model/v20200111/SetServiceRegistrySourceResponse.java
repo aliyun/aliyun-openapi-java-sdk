@@ -15,22 +15,18 @@
 package com.aliyuncs.servicemesh.model.v20200111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.servicemesh.transform.v20200111.GetDiagnosisResponseUnmarshaller;
+import com.aliyuncs.servicemesh.transform.v20200111.SetServiceRegistrySourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetDiagnosisResponse extends AcsResponse {
+public class SetServiceRegistrySourceResponse extends AcsResponse {
 
 	private String requestId;
 
 	private String result;
-
-	private String runAt;
-
-	private String status;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,25 +44,9 @@ public class GetDiagnosisResponse extends AcsResponse {
 		this.result = result;
 	}
 
-	public String getRunAt() {
-		return this.runAt;
-	}
-
-	public void setRunAt(String runAt) {
-		this.runAt = runAt;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	@Override
-	public GetDiagnosisResponse getInstance(UnmarshallerContext context) {
-		return	GetDiagnosisResponseUnmarshaller.unmarshall(this, context);
+	public SetServiceRegistrySourceResponse getInstance(UnmarshallerContext context) {
+		return	SetServiceRegistrySourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
