@@ -43,6 +43,8 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 	private List<DBProxyConnectStringItemsItem> dBProxyConnectStringItems;
 
+	private List<DbProxyEndpointItemsItem> dbProxyEndpointItems;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -115,6 +117,14 @@ public class DescribeDBProxyResponse extends AcsResponse {
 		this.dBProxyConnectStringItems = dBProxyConnectStringItems;
 	}
 
+	public List<DbProxyEndpointItemsItem> getDbProxyEndpointItems() {
+		return this.dbProxyEndpointItems;
+	}
+
+	public void setDbProxyEndpointItems(List<DbProxyEndpointItemsItem> dbProxyEndpointItems) {
+		this.dbProxyEndpointItems = dbProxyEndpointItems;
+	}
+
 	public static class DBProxyConnectStringItemsItem {
 
 		private String dBProxyEndpointId;
@@ -185,6 +195,49 @@ public class DescribeDBProxyResponse extends AcsResponse {
 
 		public void setDBProxyConnectStringNetWorkType(String dBProxyConnectStringNetWorkType) {
 			this.dBProxyConnectStringNetWorkType = dBProxyConnectStringNetWorkType;
+		}
+	}
+
+	public static class DbProxyEndpointItemsItem {
+
+		private String dbProxyEndpointName;
+
+		private String dbProxyEndpointType;
+
+		private String dbProxyReadWriteMode;
+
+		private String dbProxyEndpointAliases;
+
+		public String getDbProxyEndpointName() {
+			return this.dbProxyEndpointName;
+		}
+
+		public void setDbProxyEndpointName(String dbProxyEndpointName) {
+			this.dbProxyEndpointName = dbProxyEndpointName;
+		}
+
+		public String getDbProxyEndpointType() {
+			return this.dbProxyEndpointType;
+		}
+
+		public void setDbProxyEndpointType(String dbProxyEndpointType) {
+			this.dbProxyEndpointType = dbProxyEndpointType;
+		}
+
+		public String getDbProxyReadWriteMode() {
+			return this.dbProxyReadWriteMode;
+		}
+
+		public void setDbProxyReadWriteMode(String dbProxyReadWriteMode) {
+			this.dbProxyReadWriteMode = dbProxyReadWriteMode;
+		}
+
+		public String getDbProxyEndpointAliases() {
+			return this.dbProxyEndpointAliases;
+		}
+
+		public void setDbProxyEndpointAliases(String dbProxyEndpointAliases) {
+			this.dbProxyEndpointAliases = dbProxyEndpointAliases;
 		}
 	}
 

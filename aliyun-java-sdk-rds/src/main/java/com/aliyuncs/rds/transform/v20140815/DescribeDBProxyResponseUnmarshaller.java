@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.rds.model.v20140815.DescribeDBProxyResponse;
 import com.aliyuncs.rds.model.v20140815.DescribeDBProxyResponse.DBProxyConnectStringItemsItem;
+import com.aliyuncs.rds.model.v20140815.DescribeDBProxyResponse.DbProxyEndpointItemsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +50,18 @@ public class DescribeDBProxyResponseUnmarshaller {
 			dBProxyConnectStringItems.add(dBProxyConnectStringItemsItem);
 		}
 		describeDBProxyResponse.setDBProxyConnectStringItems(dBProxyConnectStringItems);
+
+		List<DbProxyEndpointItemsItem> dbProxyEndpointItems = new ArrayList<DbProxyEndpointItemsItem>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDBProxyResponse.DbProxyEndpointItems.Length"); i++) {
+			DbProxyEndpointItemsItem dbProxyEndpointItemsItem = new DbProxyEndpointItemsItem();
+			dbProxyEndpointItemsItem.setDbProxyEndpointName(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointName"));
+			dbProxyEndpointItemsItem.setDbProxyEndpointType(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointType"));
+			dbProxyEndpointItemsItem.setDbProxyReadWriteMode(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyReadWriteMode"));
+			dbProxyEndpointItemsItem.setDbProxyEndpointAliases(_ctx.stringValue("DescribeDBProxyResponse.DbProxyEndpointItems["+ i +"].DbProxyEndpointAliases"));
+
+			dbProxyEndpointItems.add(dbProxyEndpointItemsItem);
+		}
+		describeDBProxyResponse.setDbProxyEndpointItems(dbProxyEndpointItems);
 	 
 	 	return describeDBProxyResponse;
 	}
