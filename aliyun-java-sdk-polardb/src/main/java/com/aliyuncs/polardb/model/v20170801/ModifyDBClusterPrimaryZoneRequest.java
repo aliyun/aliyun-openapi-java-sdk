@@ -27,6 +27,8 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 
 	private Long resourceOwnerId;
 
+	private String plannedEndTime;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -37,7 +39,11 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 
 	private String vSwitchId;
 
+	private String plannedStartTime;
+
 	private String zoneId;
+
+	private Boolean fromTimeService;
 	public ModifyDBClusterPrimaryZoneRequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone", "polardb");
 		setMethod(MethodType.POST);
@@ -55,6 +61,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getPlannedEndTime() {
+		return this.plannedEndTime;
+	}
+
+	public void setPlannedEndTime(String plannedEndTime) {
+		this.plannedEndTime = plannedEndTime;
+		if(plannedEndTime != null){
+			putQueryParameter("PlannedEndTime", plannedEndTime);
 		}
 	}
 
@@ -113,6 +130,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		}
 	}
 
+	public String getPlannedStartTime() {
+		return this.plannedStartTime;
+	}
+
+	public void setPlannedStartTime(String plannedStartTime) {
+		this.plannedStartTime = plannedStartTime;
+		if(plannedStartTime != null){
+			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -121,6 +149,17 @@ public class ModifyDBClusterPrimaryZoneRequest extends RpcAcsRequest<ModifyDBClu
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public Boolean getFromTimeService() {
+		return this.fromTimeService;
+	}
+
+	public void setFromTimeService(Boolean fromTimeService) {
+		this.fromTimeService = fromTimeService;
+		if(fromTimeService != null){
+			putQueryParameter("FromTimeService", fromTimeService.toString());
 		}
 	}
 

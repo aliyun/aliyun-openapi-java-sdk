@@ -29,8 +29,6 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 
 	private String plannedEndTime;
 
-	private String switchTimeMode;
-
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -70,17 +68,6 @@ public class UpgradeDBClusterMinorVersionRequest extends RpcAcsRequest<UpgradeDB
 		this.plannedEndTime = plannedEndTime;
 		if(plannedEndTime != null){
 			putQueryParameter("PlannedEndTime", plannedEndTime);
-		}
-	}
-
-	public String getSwitchTimeMode() {
-		return this.switchTimeMode;
-	}
-
-	public void setSwitchTimeMode(String switchTimeMode) {
-		this.switchTimeMode = switchTimeMode;
-		if(switchTimeMode != null){
-			putQueryParameter("SwitchTimeMode", switchTimeMode);
 		}
 	}
 

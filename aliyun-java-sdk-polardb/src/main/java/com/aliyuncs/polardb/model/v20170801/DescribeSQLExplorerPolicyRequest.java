@@ -22,22 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<DescribeGlobalDatabaseNetworksResponse> {
+public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLExplorerPolicyResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalDatabaseNetworksRequest() {
-		super("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb");
+	public DescribeSQLExplorerPolicyRequest() {
+		super("polardb", "2017-08-01", "DescribeSQLExplorerPolicy", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +54,14 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -75,17 +73,6 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -112,8 +99,8 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 	}
 
 	@Override
-	public Class<DescribeGlobalDatabaseNetworksResponse> getResponseClass() {
-		return DescribeGlobalDatabaseNetworksResponse.class;
+	public Class<DescribeSQLExplorerPolicyResponse> getResponseClass() {
+		return DescribeSQLExplorerPolicyResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2021-01-26 Version: 1.8.3
+- Support ModifyDBClusterPrimaryZone timer task.
+
 2021-01-11 Version: 1.8.2
 - Support DescribeScheduleTasks.
 - Support CancelScheduleTasks.

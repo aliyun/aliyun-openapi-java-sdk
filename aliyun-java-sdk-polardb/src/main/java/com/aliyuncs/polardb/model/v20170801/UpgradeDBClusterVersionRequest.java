@@ -22,12 +22,12 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<DescribeGlobalDatabaseNetworksResponse> {
+public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClusterVersionResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
+	private String plannedEndTime;
 
 	private String resourceOwnerAccount;
 
@@ -36,8 +36,12 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeGlobalDatabaseNetworksRequest() {
-		super("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb");
+
+	private String plannedStartTime;
+
+	private Boolean fromTimeService;
+	public UpgradeDBClusterVersionRequest() {
+		super("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,14 +60,14 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getPlannedEndTime() {
+		return this.plannedEndTime;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setPlannedEndTime(String plannedEndTime) {
+		this.plannedEndTime = plannedEndTime;
+		if(plannedEndTime != null){
+			putQueryParameter("PlannedEndTime", plannedEndTime);
 		}
 	}
 
@@ -111,9 +115,31 @@ public class DescribeGlobalDatabaseNetworksRequest extends RpcAcsRequest<Describ
 		}
 	}
 
+	public String getPlannedStartTime() {
+		return this.plannedStartTime;
+	}
+
+	public void setPlannedStartTime(String plannedStartTime) {
+		this.plannedStartTime = plannedStartTime;
+		if(plannedStartTime != null){
+			putQueryParameter("PlannedStartTime", plannedStartTime);
+		}
+	}
+
+	public Boolean getFromTimeService() {
+		return this.fromTimeService;
+	}
+
+	public void setFromTimeService(Boolean fromTimeService) {
+		this.fromTimeService = fromTimeService;
+		if(fromTimeService != null){
+			putQueryParameter("FromTimeService", fromTimeService.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeGlobalDatabaseNetworksResponse> getResponseClass() {
-		return DescribeGlobalDatabaseNetworksResponse.class;
+	public Class<UpgradeDBClusterVersionResponse> getResponseClass() {
+		return UpgradeDBClusterVersionResponse.class;
 	}
 
 }
