@@ -22,49 +22,19 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateMAURuleRequest extends RpcAcsRequest<CreateMAURuleResponse> {
+public class DescribeAutoLiveStreamRuleRequest extends RpcAcsRequest<DescribeAutoLiveStreamRuleResponse> {
 	   
-
-	private String useridPrefix;
-
-	private String channelPrefix;
 
 	private Long ownerId;
 
-	private Long mauTemplateId;
-
 	private String appId;
-
-	private String callBack;
-	public CreateMAURuleRequest() {
-		super("rtc", "2018-01-11", "CreateMAURule", "rtc");
+	public DescribeAutoLiveStreamRuleRequest() {
+		super("rtc", "2018-01-11", "DescribeAutoLiveStreamRule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getUseridPrefix() {
-		return this.useridPrefix;
-	}
-
-	public void setUseridPrefix(String useridPrefix) {
-		this.useridPrefix = useridPrefix;
-		if(useridPrefix != null){
-			putQueryParameter("UseridPrefix", useridPrefix);
-		}
-	}
-
-	public String getChannelPrefix() {
-		return this.channelPrefix;
-	}
-
-	public void setChannelPrefix(String channelPrefix) {
-		this.channelPrefix = channelPrefix;
-		if(channelPrefix != null){
-			putQueryParameter("ChannelPrefix", channelPrefix);
-		}
 	}
 
 	public Long getOwnerId() {
@@ -75,17 +45,6 @@ public class CreateMAURuleRequest extends RpcAcsRequest<CreateMAURuleResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public Long getMauTemplateId() {
-		return this.mauTemplateId;
-	}
-
-	public void setMauTemplateId(Long mauTemplateId) {
-		this.mauTemplateId = mauTemplateId;
-		if(mauTemplateId != null){
-			putQueryParameter("MauTemplateId", mauTemplateId.toString());
 		}
 	}
 
@@ -100,20 +59,9 @@ public class CreateMAURuleRequest extends RpcAcsRequest<CreateMAURuleResponse> {
 		}
 	}
 
-	public String getCallBack() {
-		return this.callBack;
-	}
-
-	public void setCallBack(String callBack) {
-		this.callBack = callBack;
-		if(callBack != null){
-			putQueryParameter("CallBack", callBack);
-		}
-	}
-
 	@Override
-	public Class<CreateMAURuleResponse> getResponseClass() {
-		return CreateMAURuleResponse.class;
+	public Class<DescribeAutoLiveStreamRuleResponse> getResponseClass() {
+		return DescribeAutoLiveStreamRuleResponse.class;
 	}
 
 }

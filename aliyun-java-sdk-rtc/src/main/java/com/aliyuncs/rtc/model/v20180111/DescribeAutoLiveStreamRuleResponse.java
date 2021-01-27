@@ -16,14 +16,14 @@ package com.aliyuncs.rtc.model.v20180111;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.DescribeMAURuleResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.DescribeAutoLiveStreamRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeMAURuleResponse extends AcsResponse {
+public class DescribeAutoLiveStreamRuleResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -49,15 +49,9 @@ public class DescribeMAURuleResponse extends AcsResponse {
 
 		private Long ruleId;
 
-		private String channelPrefix;
-
-		private String useridPrefix;
-
-		private Long templateId;
+		private String playDomain;
 
 		private String callBack;
-
-		private Integer isEnable;
 
 		public Long getRuleId() {
 			return this.ruleId;
@@ -67,28 +61,12 @@ public class DescribeMAURuleResponse extends AcsResponse {
 			this.ruleId = ruleId;
 		}
 
-		public String getChannelPrefix() {
-			return this.channelPrefix;
+		public String getPlayDomain() {
+			return this.playDomain;
 		}
 
-		public void setChannelPrefix(String channelPrefix) {
-			this.channelPrefix = channelPrefix;
-		}
-
-		public String getUseridPrefix() {
-			return this.useridPrefix;
-		}
-
-		public void setUseridPrefix(String useridPrefix) {
-			this.useridPrefix = useridPrefix;
-		}
-
-		public Long getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(Long templateId) {
-			this.templateId = templateId;
+		public void setPlayDomain(String playDomain) {
+			this.playDomain = playDomain;
 		}
 
 		public String getCallBack() {
@@ -98,19 +76,11 @@ public class DescribeMAURuleResponse extends AcsResponse {
 		public void setCallBack(String callBack) {
 			this.callBack = callBack;
 		}
-
-		public Integer getIsEnable() {
-			return this.isEnable;
-		}
-
-		public void setIsEnable(Integer isEnable) {
-			this.isEnable = isEnable;
-		}
 	}
 
 	@Override
-	public DescribeMAURuleResponse getInstance(UnmarshallerContext context) {
-		return	DescribeMAURuleResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAutoLiveStreamRuleResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAutoLiveStreamRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

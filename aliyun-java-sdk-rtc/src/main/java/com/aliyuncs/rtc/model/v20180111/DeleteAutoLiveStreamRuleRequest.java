@@ -22,14 +22,16 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeMAURuleRequest extends RpcAcsRequest<DescribeMAURuleResponse> {
+public class DeleteAutoLiveStreamRuleRequest extends RpcAcsRequest<DeleteAutoLiveStreamRuleResponse> {
 	   
 
 	private Long ownerId;
 
 	private String appId;
-	public DescribeMAURuleRequest() {
-		super("rtc", "2018-01-11", "DescribeMAURule", "rtc");
+
+	private Long ruleId;
+	public DeleteAutoLiveStreamRuleRequest() {
+		super("rtc", "2018-01-11", "DeleteAutoLiveStreamRule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -59,9 +61,20 @@ public class DescribeMAURuleRequest extends RpcAcsRequest<DescribeMAURuleRespons
 		}
 	}
 
+	public Long getRuleId() {
+		return this.ruleId;
+	}
+
+	public void setRuleId(Long ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId.toString());
+		}
+	}
+
 	@Override
-	public Class<DescribeMAURuleResponse> getResponseClass() {
-		return DescribeMAURuleResponse.class;
+	public Class<DeleteAutoLiveStreamRuleResponse> getResponseClass() {
+		return DeleteAutoLiveStreamRuleResponse.class;
 	}
 
 }

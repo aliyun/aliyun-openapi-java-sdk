@@ -15,18 +15,18 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.StartTaskResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.CreateSubscribeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class StartTaskResponse extends AcsResponse {
+public class CreateSubscribeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long taskId;
+	private String subscribeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,16 @@ public class StartTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getSubscribeId() {
+		return this.subscribeId;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
+	public void setSubscribeId(String subscribeId) {
+		this.subscribeId = subscribeId;
 	}
 
 	@Override
-	public StartTaskResponse getInstance(UnmarshallerContext context) {
-		return	StartTaskResponseUnmarshaller.unmarshall(this, context);
+	public CreateSubscribeResponse getInstance(UnmarshallerContext context) {
+		return	CreateSubscribeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

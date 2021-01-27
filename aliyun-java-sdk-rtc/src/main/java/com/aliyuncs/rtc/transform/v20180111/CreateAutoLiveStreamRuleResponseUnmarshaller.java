@@ -14,16 +14,17 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.EnableMAURuleResponse;
+import com.aliyuncs.rtc.model.v20180111.CreateAutoLiveStreamRuleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class EnableMAURuleResponseUnmarshaller {
+public class CreateAutoLiveStreamRuleResponseUnmarshaller {
 
-	public static EnableMAURuleResponse unmarshall(EnableMAURuleResponse enableMAURuleResponse, UnmarshallerContext _ctx) {
+	public static CreateAutoLiveStreamRuleResponse unmarshall(CreateAutoLiveStreamRuleResponse createAutoLiveStreamRuleResponse, UnmarshallerContext _ctx) {
 		
-		enableMAURuleResponse.setRequestId(_ctx.stringValue("EnableMAURuleResponse.RequestId"));
+		createAutoLiveStreamRuleResponse.setRequestId(_ctx.stringValue("CreateAutoLiveStreamRuleResponse.RequestId"));
+		createAutoLiveStreamRuleResponse.setRuleId(_ctx.longValue("CreateAutoLiveStreamRuleResponse.RuleId"));
 	 
-	 	return enableMAURuleResponse;
+	 	return createAutoLiveStreamRuleResponse;
 	}
 }

@@ -15,14 +15,14 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.DeleteMAURuleResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.DeleteSubscribeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteMAURuleResponse extends AcsResponse {
+public class DeleteSubscribeResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteMAURuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteMAURuleResponse getInstance(UnmarshallerContext context) {
-		return	DeleteMAURuleResponseUnmarshaller.unmarshall(this, context);
+	public DeleteSubscribeResponse getInstance(UnmarshallerContext context) {
+		return	DeleteSubscribeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

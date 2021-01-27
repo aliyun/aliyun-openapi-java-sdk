@@ -22,6 +22,7 @@ public class CreateServiceLinkedRoleForRtcResponseUnmarshaller {
 
 	public static CreateServiceLinkedRoleForRtcResponse unmarshall(CreateServiceLinkedRoleForRtcResponse createServiceLinkedRoleForRtcResponse, UnmarshallerContext _ctx) {
 		
+		createServiceLinkedRoleForRtcResponse.setRequestId(_ctx.stringValue("CreateServiceLinkedRoleForRtcResponse.RequestId"));
 	 
 	 	return createServiceLinkedRoleForRtcResponse;
 	}

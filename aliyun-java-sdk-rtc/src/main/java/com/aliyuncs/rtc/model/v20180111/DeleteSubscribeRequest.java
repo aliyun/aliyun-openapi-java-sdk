@@ -22,21 +22,32 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableMAURuleRequest extends RpcAcsRequest<DisableMAURuleResponse> {
+public class DeleteSubscribeRequest extends RpcAcsRequest<DeleteSubscribeResponse> {
 	   
+
+	private String subscribeId;
 
 	private Long ownerId;
 
 	private String appId;
-
-	private Long ruleId;
-	public DisableMAURuleRequest() {
-		super("rtc", "2018-01-11", "DisableMAURule", "rtc");
+	public DeleteSubscribeRequest() {
+		super("rtc", "2018-01-11", "DeleteSubscribe", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSubscribeId() {
+		return this.subscribeId;
+	}
+
+	public void setSubscribeId(String subscribeId) {
+		this.subscribeId = subscribeId;
+		if(subscribeId != null){
+			putQueryParameter("SubscribeId", subscribeId);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -61,20 +72,9 @@ public class DisableMAURuleRequest extends RpcAcsRequest<DisableMAURuleResponse>
 		}
 	}
 
-	public Long getRuleId() {
-		return this.ruleId;
-	}
-
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
-		}
-	}
-
 	@Override
-	public Class<DisableMAURuleResponse> getResponseClass() {
-		return DisableMAURuleResponse.class;
+	public Class<DeleteSubscribeResponse> getResponseClass() {
+		return DeleteSubscribeResponse.class;
 	}
 
 }

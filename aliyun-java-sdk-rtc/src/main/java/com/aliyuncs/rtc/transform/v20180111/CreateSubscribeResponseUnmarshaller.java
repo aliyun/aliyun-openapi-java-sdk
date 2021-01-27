@@ -12,30 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.rtc.model.v20180111;
+package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.StopTaskResponseUnmarshaller;
+import com.aliyuncs.rtc.model.v20180111.CreateSubscribeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
-/**
- * @author auto create
- * @version 
- */
-public class StopTaskResponse extends AcsResponse {
 
-	private String requestId;
+public class CreateSubscribeResponseUnmarshaller {
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	@Override
-	public StopTaskResponse getInstance(UnmarshallerContext context) {
-		return	StopTaskResponseUnmarshaller.unmarshall(this, context);
+	public static CreateSubscribeResponse unmarshall(CreateSubscribeResponse createSubscribeResponse, UnmarshallerContext _ctx) {
+		
+		createSubscribeResponse.setRequestId(_ctx.stringValue("CreateSubscribeResponse.RequestId"));
+		createSubscribeResponse.setSubscribeId(_ctx.stringValue("CreateSubscribeResponse.SubscribeId"));
+	 
+	 	return createSubscribeResponse;
 	}
 }

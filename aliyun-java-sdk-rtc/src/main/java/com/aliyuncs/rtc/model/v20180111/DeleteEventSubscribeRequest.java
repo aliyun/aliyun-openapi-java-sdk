@@ -22,23 +22,32 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class StopTaskRequest extends RpcAcsRequest<StopTaskResponse> {
+public class DeleteEventSubscribeRequest extends RpcAcsRequest<DeleteEventSubscribeResponse> {
 	   
+
+	private String subscribeId;
 
 	private Long ownerId;
 
 	private String appId;
-
-	private String channelId;
-
-	private Long taskId;
-	public StopTaskRequest() {
-		super("rtc", "2018-01-11", "StopTask", "rtc");
+	public DeleteEventSubscribeRequest() {
+		super("rtc", "2018-01-11", "DeleteEventSubscribe", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSubscribeId() {
+		return this.subscribeId;
+	}
+
+	public void setSubscribeId(String subscribeId) {
+		this.subscribeId = subscribeId;
+		if(subscribeId != null){
+			putQueryParameter("SubscribeId", subscribeId);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -63,31 +72,9 @@ public class StopTaskRequest extends RpcAcsRequest<StopTaskResponse> {
 		}
 	}
 
-	public String getChannelId() {
-		return this.channelId;
-	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
-		if(channelId != null){
-			putQueryParameter("ChannelId", channelId);
-		}
-	}
-
-	public Long getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
-		if(taskId != null){
-			putQueryParameter("TaskId", taskId.toString());
-		}
-	}
-
 	@Override
-	public Class<StopTaskResponse> getResponseClass() {
-		return StopTaskResponse.class;
+	public Class<DeleteEventSubscribeResponse> getResponseClass() {
+		return DeleteEventSubscribeResponse.class;
 	}
 
 }

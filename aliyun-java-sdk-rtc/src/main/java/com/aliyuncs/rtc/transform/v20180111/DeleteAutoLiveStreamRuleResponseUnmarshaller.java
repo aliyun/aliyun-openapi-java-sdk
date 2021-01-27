@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.DeleteTemplateResponse;
+import com.aliyuncs.rtc.model.v20180111.DeleteAutoLiveStreamRuleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteTemplateResponseUnmarshaller {
+public class DeleteAutoLiveStreamRuleResponseUnmarshaller {
 
-	public static DeleteTemplateResponse unmarshall(DeleteTemplateResponse deleteTemplateResponse, UnmarshallerContext _ctx) {
+	public static DeleteAutoLiveStreamRuleResponse unmarshall(DeleteAutoLiveStreamRuleResponse deleteAutoLiveStreamRuleResponse, UnmarshallerContext _ctx) {
 		
-		deleteTemplateResponse.setRequestId(_ctx.stringValue("DeleteTemplateResponse.RequestId"));
+		deleteAutoLiveStreamRuleResponse.setRequestId(_ctx.stringValue("DeleteAutoLiveStreamRuleResponse.RequestId"));
 	 
-	 	return deleteTemplateResponse;
+	 	return deleteAutoLiveStreamRuleResponse;
 	}
 }

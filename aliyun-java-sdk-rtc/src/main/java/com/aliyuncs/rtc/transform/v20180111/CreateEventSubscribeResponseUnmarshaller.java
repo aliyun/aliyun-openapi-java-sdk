@@ -14,17 +14,17 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.GetTaskStatusResponse;
+import com.aliyuncs.rtc.model.v20180111.CreateEventSubscribeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetTaskStatusResponseUnmarshaller {
+public class CreateEventSubscribeResponseUnmarshaller {
 
-	public static GetTaskStatusResponse unmarshall(GetTaskStatusResponse getTaskStatusResponse, UnmarshallerContext _ctx) {
+	public static CreateEventSubscribeResponse unmarshall(CreateEventSubscribeResponse createEventSubscribeResponse, UnmarshallerContext _ctx) {
 		
-		getTaskStatusResponse.setRequestId(_ctx.stringValue("GetTaskStatusResponse.RequestId"));
-		getTaskStatusResponse.setStatus(_ctx.integerValue("GetTaskStatusResponse.Status"));
+		createEventSubscribeResponse.setRequestId(_ctx.stringValue("CreateEventSubscribeResponse.RequestId"));
+		createEventSubscribeResponse.setSubscribeId(_ctx.stringValue("CreateEventSubscribeResponse.SubscribeId"));
 	 
-	 	return getTaskStatusResponse;
+	 	return createEventSubscribeResponse;
 	}
 }

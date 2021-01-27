@@ -15,16 +15,18 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.EnableMAURuleResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.CreateEventSubscribeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class EnableMAURuleResponse extends AcsResponse {
+public class CreateEventSubscribeResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String subscribeId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class EnableMAURuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getSubscribeId() {
+		return this.subscribeId;
+	}
+
+	public void setSubscribeId(String subscribeId) {
+		this.subscribeId = subscribeId;
+	}
+
 	@Override
-	public EnableMAURuleResponse getInstance(UnmarshallerContext context) {
-		return	EnableMAURuleResponseUnmarshaller.unmarshall(this, context);
+	public CreateEventSubscribeResponse getInstance(UnmarshallerContext context) {
+		return	CreateEventSubscribeResponseUnmarshaller.unmarshall(this, context);
 	}
 }

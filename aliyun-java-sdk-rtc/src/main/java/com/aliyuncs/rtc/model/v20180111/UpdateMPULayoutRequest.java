@@ -65,6 +65,7 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".PaneId" , userPaness.get(depth1).getPaneId());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".UserId" , userPaness.get(depth1).getUserId());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".SourceType" , userPaness.get(depth1).getSourceType());
+				putQueryParameter("UserPanes." + (depth1 + 1) + ".SegmentType" , userPaness.get(depth1).getSegmentType());
 				if (userPaness.get(depth1).getImagess() != null) {
 					for (int depth2 = 0; depth2 < userPaness.get(depth1).getImagess().size(); depth2++) {
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Url" , userPaness.get(depth1).getImagess().get(depth2).getUrl());
@@ -224,6 +225,8 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 
 		private String sourceType;
 
+		private Integer segmentType;
+
 		private List<Images> imagess;
 
 		private List<Texts> textss;
@@ -250,6 +253,14 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public Integer getSegmentType() {
+			return this.segmentType;
+		}
+
+		public void setSegmentType(Integer segmentType) {
+			this.segmentType = segmentType;
 		}
 
 		public List<Images> getImagess() {

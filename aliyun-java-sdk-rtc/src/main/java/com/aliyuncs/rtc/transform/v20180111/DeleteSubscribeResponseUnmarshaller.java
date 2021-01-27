@@ -14,17 +14,16 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.CreateTemplateResponse;
+import com.aliyuncs.rtc.model.v20180111.DeleteSubscribeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateTemplateResponseUnmarshaller {
+public class DeleteSubscribeResponseUnmarshaller {
 
-	public static CreateTemplateResponse unmarshall(CreateTemplateResponse createTemplateResponse, UnmarshallerContext _ctx) {
+	public static DeleteSubscribeResponse unmarshall(DeleteSubscribeResponse deleteSubscribeResponse, UnmarshallerContext _ctx) {
 		
-		createTemplateResponse.setRequestId(_ctx.stringValue("CreateTemplateResponse.RequestId"));
-		createTemplateResponse.setTemplateId(_ctx.longValue("CreateTemplateResponse.TemplateId"));
+		deleteSubscribeResponse.setRequestId(_ctx.stringValue("DeleteSubscribeResponse.RequestId"));
 	 
-	 	return createTemplateResponse;
+	 	return deleteSubscribeResponse;
 	}
 }

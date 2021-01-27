@@ -22,21 +22,34 @@ import com.aliyuncs.rtc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteMAURuleRequest extends RpcAcsRequest<DeleteMAURuleResponse> {
+public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiveStreamRuleResponse> {
 	   
+
+	private String playDomain;
 
 	private Long ownerId;
 
 	private String appId;
 
-	private Long ruleId;
-	public DeleteMAURuleRequest() {
-		super("rtc", "2018-01-11", "DeleteMAURule", "rtc");
+	private String callBack;
+	public CreateAutoLiveStreamRuleRequest() {
+		super("rtc", "2018-01-11", "CreateAutoLiveStreamRule", "rtc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getPlayDomain() {
+		return this.playDomain;
+	}
+
+	public void setPlayDomain(String playDomain) {
+		this.playDomain = playDomain;
+		if(playDomain != null){
+			putQueryParameter("PlayDomain", playDomain);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -61,20 +74,20 @@ public class DeleteMAURuleRequest extends RpcAcsRequest<DeleteMAURuleResponse> {
 		}
 	}
 
-	public Long getRuleId() {
-		return this.ruleId;
+	public String getCallBack() {
+		return this.callBack;
 	}
 
-	public void setRuleId(Long ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId.toString());
+	public void setCallBack(String callBack) {
+		this.callBack = callBack;
+		if(callBack != null){
+			putQueryParameter("CallBack", callBack);
 		}
 	}
 
 	@Override
-	public Class<DeleteMAURuleResponse> getResponseClass() {
-		return DeleteMAURuleResponse.class;
+	public Class<CreateAutoLiveStreamRuleResponse> getResponseClass() {
+		return CreateAutoLiveStreamRuleResponse.class;
 	}
 
 }

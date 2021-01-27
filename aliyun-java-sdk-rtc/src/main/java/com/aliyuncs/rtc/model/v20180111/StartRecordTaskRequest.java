@@ -28,6 +28,8 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 
 	private List<UserPanes> userPaness;
 
+	private String taskProfile;
+
 	private String taskId;
 
 	private Long ownerId;
@@ -37,6 +39,8 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 	private List<String> subSpecUserss;
 
 	private String appId;
+
+	private Integer mediaEncode;
 
 	private String channelId;
 	public StartRecordTaskRequest() {
@@ -83,6 +87,17 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 				}
 			}
 		}	
+	}
+
+	public String getTaskProfile() {
+		return this.taskProfile;
+	}
+
+	public void setTaskProfile(String taskProfile) {
+		this.taskProfile = taskProfile;
+		if(taskProfile != null){
+			putQueryParameter("TaskProfile", taskProfile);
+		}
 	}
 
 	public String getTaskId() {
@@ -139,6 +154,17 @@ public class StartRecordTaskRequest extends RpcAcsRequest<StartRecordTaskRespons
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
+		}
+	}
+
+	public Integer getMediaEncode() {
+		return this.mediaEncode;
+	}
+
+	public void setMediaEncode(Integer mediaEncode) {
+		this.mediaEncode = mediaEncode;
+		if(mediaEncode != null){
+			putQueryParameter("MediaEncode", mediaEncode.toString());
 		}
 	}
 

@@ -15,14 +15,14 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.DeleteTemplateResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.DeleteAutoLiveStreamRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteTemplateResponse extends AcsResponse {
+public class DeleteAutoLiveStreamRuleResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteTemplateResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteTemplateResponse getInstance(UnmarshallerContext context) {
-		return	DeleteTemplateResponseUnmarshaller.unmarshall(this, context);
+	public DeleteAutoLiveStreamRuleResponse getInstance(UnmarshallerContext context) {
+		return	DeleteAutoLiveStreamRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }

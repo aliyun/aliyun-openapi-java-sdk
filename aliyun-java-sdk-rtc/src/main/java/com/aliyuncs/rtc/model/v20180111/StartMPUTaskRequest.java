@@ -46,6 +46,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Long ownerId;
 
+	private Integer taskMode;
+
 	private Integer mediaEncode;
 
 	private Integer rtpExtInfo;
@@ -102,6 +104,7 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".PaneId" , userPaness.get(depth1).getPaneId());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".UserId" , userPaness.get(depth1).getUserId());
 				putQueryParameter("UserPanes." + (depth1 + 1) + ".SourceType" , userPaness.get(depth1).getSourceType());
+				putQueryParameter("UserPanes." + (depth1 + 1) + ".SegmentType" , userPaness.get(depth1).getSegmentType());
 				if (userPaness.get(depth1).getImagess() != null) {
 					for (int depth2 = 0; depth2 < userPaness.get(depth1).getImagess().size(); depth2++) {
 						putQueryParameter("UserPanes." + (depth1 + 1) + ".Images." + (depth2 + 1) + ".Url" , userPaness.get(depth1).getImagess().get(depth2).getUrl());
@@ -229,6 +232,17 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public Integer getTaskMode() {
+		return this.taskMode;
+	}
+
+	public void setTaskMode(Integer taskMode) {
+		this.taskMode = taskMode;
+		if(taskMode != null){
+			putQueryParameter("TaskMode", taskMode.toString());
 		}
 	}
 
@@ -395,6 +409,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 		private String sourceType;
 
+		private Integer segmentType;
+
 		private List<Images> imagess;
 
 		private List<Texts> textss;
@@ -421,6 +437,14 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public Integer getSegmentType() {
+			return this.segmentType;
+		}
+
+		public void setSegmentType(Integer segmentType) {
+			this.segmentType = segmentType;
 		}
 
 		public List<Images> getImagess() {

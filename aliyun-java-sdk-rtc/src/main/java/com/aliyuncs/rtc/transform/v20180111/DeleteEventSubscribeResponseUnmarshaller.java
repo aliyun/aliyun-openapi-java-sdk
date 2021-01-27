@@ -14,16 +14,16 @@
 
 package com.aliyuncs.rtc.transform.v20180111;
 
-import com.aliyuncs.rtc.model.v20180111.DeleteMAURuleResponse;
+import com.aliyuncs.rtc.model.v20180111.DeleteEventSubscribeResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteMAURuleResponseUnmarshaller {
+public class DeleteEventSubscribeResponseUnmarshaller {
 
-	public static DeleteMAURuleResponse unmarshall(DeleteMAURuleResponse deleteMAURuleResponse, UnmarshallerContext _ctx) {
+	public static DeleteEventSubscribeResponse unmarshall(DeleteEventSubscribeResponse deleteEventSubscribeResponse, UnmarshallerContext _ctx) {
 		
-		deleteMAURuleResponse.setRequestId(_ctx.stringValue("DeleteMAURuleResponse.RequestId"));
+		deleteEventSubscribeResponse.setRequestId(_ctx.stringValue("DeleteEventSubscribeResponse.RequestId"));
 	 
-	 	return deleteMAURuleResponse;
+	 	return deleteEventSubscribeResponse;
 	}
 }

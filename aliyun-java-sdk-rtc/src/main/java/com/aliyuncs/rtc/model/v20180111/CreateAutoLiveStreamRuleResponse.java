@@ -15,14 +15,14 @@
 package com.aliyuncs.rtc.model.v20180111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rtc.transform.v20180111.CreateMAURuleResponseUnmarshaller;
+import com.aliyuncs.rtc.transform.v20180111.CreateAutoLiveStreamRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateMAURuleResponse extends AcsResponse {
+public class CreateAutoLiveStreamRuleResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,7 +45,7 @@ public class CreateMAURuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateMAURuleResponse getInstance(UnmarshallerContext context) {
-		return	CreateMAURuleResponseUnmarshaller.unmarshall(this, context);
+	public CreateAutoLiveStreamRuleResponse getInstance(UnmarshallerContext context) {
+		return	CreateAutoLiveStreamRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 }
