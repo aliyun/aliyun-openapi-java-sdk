@@ -1,3 +1,6 @@
+2021-01-27 Version: 2.0.26
+- DetectFaceAttributes Add Score.
+
 2021-01-14 Version: 2.0.25
 - Support base64 picture return.
 

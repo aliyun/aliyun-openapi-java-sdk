@@ -31,6 +31,8 @@ public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 
 	private String appVersion;
 
+	private String deviceToken;
+
 	private String certifyId;
 	public VerifyDeviceRequest() {
 		super("Cloudauth", "2019-03-07", "VerifyDevice", "cloudauth");
@@ -71,6 +73,17 @@ public class VerifyDeviceRequest extends RpcAcsRequest<VerifyDeviceResponse> {
 		this.appVersion = appVersion;
 		if(appVersion != null){
 			putQueryParameter("AppVersion", appVersion);
+		}
+	}
+
+	public String getDeviceToken() {
+		return this.deviceToken;
+	}
+
+	public void setDeviceToken(String deviceToken) {
+		this.deviceToken = deviceToken;
+		if(deviceToken != null){
+			putBodyParameter("DeviceToken", deviceToken);
 		}
 	}
 
