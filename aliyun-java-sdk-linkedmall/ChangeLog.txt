@@ -1,3 +1,6 @@
+2021-01-28 Version: 2.12.15
+- Add settlement interface,eg QueryStatements, ExecuteNode.
+
 2021-01-19 Version: 2.12.14
 - Generated 2018-01-16 for `linkedmall`.
 
