@@ -22,59 +22,33 @@ import com.aliyuncs.retailcloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeJobLogRequest extends RpcAcsRequest<DescribeJobLogResponse> {
+public class DescribeClusterDetailRequest extends RpcAcsRequest<DescribeClusterDetailResponse> {
 	   
 
-	private Long appId;
-
-	private String podName;
-
-	private Long envId;
-	public DescribeJobLogRequest() {
-		super("retailcloud", "2018-03-13", "DescribeJobLog", "retailcloud");
-		setMethod(MethodType.GET);
+	private String clusterInstanceId;
+	public DescribeClusterDetailRequest() {
+		super("retailcloud", "2018-03-13", "DescribeClusterDetail", "retailcloud");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Long getAppId() {
-		return this.appId;
+	public String getClusterInstanceId() {
+		return this.clusterInstanceId;
 	}
 
-	public void setAppId(Long appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId.toString());
-		}
-	}
-
-	public String getPodName() {
-		return this.podName;
-	}
-
-	public void setPodName(String podName) {
-		this.podName = podName;
-		if(podName != null){
-			putQueryParameter("PodName", podName);
-		}
-	}
-
-	public Long getEnvId() {
-		return this.envId;
-	}
-
-	public void setEnvId(Long envId) {
-		this.envId = envId;
-		if(envId != null){
-			putQueryParameter("EnvId", envId.toString());
+	public void setClusterInstanceId(String clusterInstanceId) {
+		this.clusterInstanceId = clusterInstanceId;
+		if(clusterInstanceId != null){
+			putQueryParameter("ClusterInstanceId", clusterInstanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeJobLogResponse> getResponseClass() {
-		return DescribeJobLogResponse.class;
+	public Class<DescribeClusterDetailResponse> getResponseClass() {
+		return DescribeClusterDetailResponse.class;
 	}
 
 }

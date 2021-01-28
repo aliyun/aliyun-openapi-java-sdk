@@ -33,7 +33,7 @@ public class GrantDbToAccountRequest extends RpcAcsRequest<GrantDbToAccountRespo
 
 	private String accountPrivilege;
 	public GrantDbToAccountRequest() {
-		super("retailcloud", "2018-03-13", "GrantDbToAccount");
+		super("retailcloud", "2018-03-13", "GrantDbToAccount", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,7 +34,7 @@ public class SubmitInfoRequest extends RpcAcsRequest<SubmitInfoResponse> {
 
 	private Long callerUid;
 	public SubmitInfoRequest() {
-		super("retailcloud", "2018-03-13", "SubmitInfo");
+		super("retailcloud", "2018-03-13", "SubmitInfo", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

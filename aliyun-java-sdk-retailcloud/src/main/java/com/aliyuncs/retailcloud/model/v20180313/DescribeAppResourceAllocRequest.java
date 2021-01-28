@@ -27,7 +27,7 @@ public class DescribeAppResourceAllocRequest extends RpcAcsRequest<DescribeAppRe
 
 	private Long appEnvId;
 	public DescribeAppResourceAllocRequest() {
-		super("retailcloud", "2018-03-13", "DescribeAppResourceAlloc");
+		super("retailcloud", "2018-03-13", "DescribeAppResourceAlloc", "retailcloud");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

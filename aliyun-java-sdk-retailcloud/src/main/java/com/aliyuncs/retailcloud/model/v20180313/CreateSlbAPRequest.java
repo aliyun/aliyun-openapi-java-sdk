@@ -45,7 +45,7 @@ public class CreateSlbAPRequest extends RpcAcsRequest<CreateSlbAPResponse> {
 
 	private Long envId;
 	public CreateSlbAPRequest() {
-		super("retailcloud", "2018-03-13", "CreateSlbAP");
+		super("retailcloud", "2018-03-13", "CreateSlbAP", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

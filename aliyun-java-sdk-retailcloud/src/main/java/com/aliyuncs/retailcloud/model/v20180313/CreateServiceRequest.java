@@ -38,7 +38,7 @@ public class CreateServiceRequest extends RpcAcsRequest<CreateServiceResponse> {
 
 	private Long envId;
 	public CreateServiceRequest() {
-		super("retailcloud", "2018-03-13", "CreateService");
+		super("retailcloud", "2018-03-13", "CreateService", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

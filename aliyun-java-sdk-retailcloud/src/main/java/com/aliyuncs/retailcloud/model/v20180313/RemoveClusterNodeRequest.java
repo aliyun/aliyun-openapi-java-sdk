@@ -30,7 +30,7 @@ public class RemoveClusterNodeRequest extends RpcAcsRequest<RemoveClusterNodeRes
 
 	private String clusterInstanceId;
 	public RemoveClusterNodeRequest() {
-		super("retailcloud", "2018-03-13", "RemoveClusterNode");
+		super("retailcloud", "2018-03-13", "RemoveClusterNode", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

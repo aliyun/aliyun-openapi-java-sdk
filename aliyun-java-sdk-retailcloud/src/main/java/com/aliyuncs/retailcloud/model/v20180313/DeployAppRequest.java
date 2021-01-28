@@ -48,7 +48,7 @@ public class DeployAppRequest extends RpcAcsRequest<DeployAppResponse> {
 
 	private Boolean armsFlag;
 	public DeployAppRequest() {
-		super("retailcloud", "2018-03-13", "DeployApp");
+		super("retailcloud", "2018-03-13", "DeployApp", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

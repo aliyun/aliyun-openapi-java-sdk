@@ -27,7 +27,7 @@ public class DeleteSlbAPRequest extends RpcAcsRequest<DeleteSlbAPResponse> {
 
 	private Long slbAPId;
 	public DeleteSlbAPRequest() {
-		super("retailcloud", "2018-03-13", "DeleteSlbAP");
+		super("retailcloud", "2018-03-13", "DeleteSlbAP", "retailcloud");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

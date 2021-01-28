@@ -27,7 +27,7 @@ public class QueryClusterDetailRequest extends RpcAcsRequest<QueryClusterDetailR
 
 	private String clusterInstanceId;
 	public QueryClusterDetailRequest() {
-		super("retailcloud", "2018-03-13", "QueryClusterDetail");
+		super("retailcloud", "2018-03-13", "QueryClusterDetail", "retailcloud");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
