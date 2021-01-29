@@ -1,6 +1,9 @@
 2021-01-29 Version: 1.0.0
 - Update Monitor Api.
 
+2021-01-29 Version: 1.0.0
+- Update Monitor Api.
+
 2021-01-22 Version: 1.0.9
 - Update Function.
 
