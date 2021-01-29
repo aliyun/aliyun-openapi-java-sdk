@@ -34,6 +34,8 @@ public class SearchAggregateObjectRequest extends RpcAcsRequest<SearchAggregateO
 
 	private String vendor;
 
+	private Boolean requireTotalCount;
+
 	private Integer pageSize;
 
 	private String imageContent;
@@ -104,6 +106,17 @@ public class SearchAggregateObjectRequest extends RpcAcsRequest<SearchAggregateO
 		this.vendor = vendor;
 		if(vendor != null){
 			putBodyParameter("Vendor", vendor);
+		}
+	}
+
+	public Boolean getRequireTotalCount() {
+		return this.requireTotalCount;
+	}
+
+	public void setRequireTotalCount(Boolean requireTotalCount) {
+		this.requireTotalCount = requireTotalCount;
+		if(requireTotalCount != null){
+			putBodyParameter("RequireTotalCount", requireTotalCount.toString());
 		}
 	}
 
