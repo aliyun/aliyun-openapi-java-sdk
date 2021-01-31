@@ -22,34 +22,19 @@ import com.aliyuncs.hbase.Endpoint;
  * @author auto create
  * @version 
  */
-public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceResponse> {
+public class DescribeServerlessClusterRequest extends RpcAcsRequest<DescribeServerlessClusterResponse> {
 	   
-
-	private Integer duration;
 
 	private String clusterId;
 
-	private String pricingCycle;
-
-	private String payType;
-	public ConvertInstanceRequest() {
-		super("HBase", "2019-01-01", "ConvertInstance", "hbase");
+	private String zoneId;
+	public DescribeServerlessClusterRequest() {
+		super("HBase", "2019-01-01", "DescribeServerlessCluster", "hbase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDuration() {
-		return this.duration;
-	}
-
-	public void setDuration(Integer duration) {
-		this.duration = duration;
-		if(duration != null){
-			putQueryParameter("Duration", duration.toString());
-		}
 	}
 
 	public String getClusterId() {
@@ -63,31 +48,20 @@ public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceRespons
 		}
 	}
 
-	public String getPricingCycle() {
-		return this.pricingCycle;
+	public String getZoneId() {
+		return this.zoneId;
 	}
 
-	public void setPricingCycle(String pricingCycle) {
-		this.pricingCycle = pricingCycle;
-		if(pricingCycle != null){
-			putQueryParameter("PricingCycle", pricingCycle);
-		}
-	}
-
-	public String getPayType() {
-		return this.payType;
-	}
-
-	public void setPayType(String payType) {
-		this.payType = payType;
-		if(payType != null){
-			putQueryParameter("PayType", payType);
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
 		}
 	}
 
 	@Override
-	public Class<ConvertInstanceResponse> getResponseClass() {
-		return ConvertInstanceResponse.class;
+	public Class<DescribeServerlessClusterResponse> getResponseClass() {
+		return DescribeServerlessClusterResponse.class;
 	}
 
 }

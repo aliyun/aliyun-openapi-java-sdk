@@ -41,6 +41,8 @@ public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerle
 
 	private Integer period;
 
+	private String diskType;
+
 	private String vSwitchId;
 
 	private String periodUnit;
@@ -150,6 +152,17 @@ public class CreateServerlessClusterRequest extends RpcAcsRequest<CreateServerle
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getDiskType() {
+		return this.diskType;
+	}
+
+	public void setDiskType(String diskType) {
+		this.diskType = diskType;
+		if(diskType != null){
+			putQueryParameter("DiskType", diskType);
 		}
 	}
 
