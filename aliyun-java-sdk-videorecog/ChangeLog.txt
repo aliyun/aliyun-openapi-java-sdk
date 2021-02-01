@@ -1,3 +1,6 @@
+2021-02-01 Version: 1.0.2
+- Release UnderstandVideoContent.
+
 2020-11-16 Version: 1.0.1
 - Update videorecog.
 
