@@ -1,6 +1,9 @@
 2021-02-01 Version: 1.0.10
 - Release DetectVehicleIllegalParking DetectVehicleICongestion.
 
+2021-02-01 Version: 1.0.10
+- Release DetectVehicleIllegalParking DetectVehicleICongestion.
+
 2020-11-16 Version: 1.0.9
 - Update objectdet.
 
