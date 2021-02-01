@@ -1,6 +1,9 @@
 2021-02-01 Version: 1.0.5
 - Support device credential for mqtt.
 
+2021-02-01 Version: 1.0.5
+- Support device credential for mqtt.
+
 2020-08-18 Version: 1.0.4
 - Support session query operations.
 
