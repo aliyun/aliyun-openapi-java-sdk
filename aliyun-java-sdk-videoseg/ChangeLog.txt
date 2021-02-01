@@ -1,3 +1,6 @@
+2021-02-01 Version: 1.0.3
+- Release SegmentGreenScreenVideo.
+
 2020-11-16 Version: 1.0.2
 - Update videoseg.
 
