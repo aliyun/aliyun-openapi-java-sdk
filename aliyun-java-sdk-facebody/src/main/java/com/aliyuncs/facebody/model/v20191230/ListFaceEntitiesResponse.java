@@ -47,19 +47,11 @@ public class ListFaceEntitiesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String token;
-
 		private Integer totalCount;
 
+		private String token;
+
 		private List<Entity> entities;
-
-		public String getToken() {
-			return this.token;
-		}
-
-		public void setToken(String token) {
-			this.token = token;
-		}
 
 		public Integer getTotalCount() {
 			return this.totalCount;
@@ -67,6 +59,14 @@ public class ListFaceEntitiesResponse extends AcsResponse {
 
 		public void setTotalCount(Integer totalCount) {
 			this.totalCount = totalCount;
+		}
+
+		public String getToken() {
+			return this.token;
+		}
+
+		public void setToken(String token) {
+			this.token = token;
 		}
 
 		public List<Entity> getEntities() {
@@ -79,25 +79,17 @@ public class ListFaceEntitiesResponse extends AcsResponse {
 
 		public static class Entity {
 
-			private String dbName;
-
 			private String entityId;
-
-			private Integer faceCount;
-
-			private String labels;
 
 			private Long createdAt;
 
+			private String labels;
+
+			private String dbName;
+
 			private Long updatedAt;
 
-			public String getDbName() {
-				return this.dbName;
-			}
-
-			public void setDbName(String dbName) {
-				this.dbName = dbName;
-			}
+			private Integer faceCount;
 
 			public String getEntityId() {
 				return this.entityId;
@@ -105,22 +97,6 @@ public class ListFaceEntitiesResponse extends AcsResponse {
 
 			public void setEntityId(String entityId) {
 				this.entityId = entityId;
-			}
-
-			public Integer getFaceCount() {
-				return this.faceCount;
-			}
-
-			public void setFaceCount(Integer faceCount) {
-				this.faceCount = faceCount;
-			}
-
-			public String getLabels() {
-				return this.labels;
-			}
-
-			public void setLabels(String labels) {
-				this.labels = labels;
 			}
 
 			public Long getCreatedAt() {
@@ -131,12 +107,36 @@ public class ListFaceEntitiesResponse extends AcsResponse {
 				this.createdAt = createdAt;
 			}
 
+			public String getLabels() {
+				return this.labels;
+			}
+
+			public void setLabels(String labels) {
+				this.labels = labels;
+			}
+
+			public String getDbName() {
+				return this.dbName;
+			}
+
+			public void setDbName(String dbName) {
+				this.dbName = dbName;
+			}
+
 			public Long getUpdatedAt() {
 				return this.updatedAt;
 			}
 
 			public void setUpdatedAt(Long updatedAt) {
 				this.updatedAt = updatedAt;
+			}
+
+			public Integer getFaceCount() {
+				return this.faceCount;
+			}
+
+			public void setFaceCount(Integer faceCount) {
+				this.faceCount = faceCount;
 			}
 		}
 	}

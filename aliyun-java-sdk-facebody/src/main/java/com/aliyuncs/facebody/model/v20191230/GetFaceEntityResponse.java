@@ -47,21 +47,13 @@ public class GetFaceEntityResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String dbName;
-
 		private String entityId;
 
 		private String labels;
 
+		private String dbName;
+
 		private List<Face> faces;
-
-		public String getDbName() {
-			return this.dbName;
-		}
-
-		public void setDbName(String dbName) {
-			this.dbName = dbName;
-		}
 
 		public String getEntityId() {
 			return this.entityId;
@@ -77,6 +69,14 @@ public class GetFaceEntityResponse extends AcsResponse {
 
 		public void setLabels(String labels) {
 			this.labels = labels;
+		}
+
+		public String getDbName() {
+			return this.dbName;
+		}
+
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
 		}
 
 		public List<Face> getFaces() {

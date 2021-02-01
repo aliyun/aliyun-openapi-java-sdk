@@ -26,8 +26,8 @@ public class CountCrowdResponseUnmarshaller {
 		countCrowdResponse.setRequestId(_ctx.stringValue("CountCrowdResponse.RequestId"));
 
 		Data data = new Data();
-		data.setPeopleNumber(_ctx.integerValue("CountCrowdResponse.Data.PeopleNumber"));
 		data.setHotMap(_ctx.stringValue("CountCrowdResponse.Data.HotMap"));
+		data.setPeopleNumber(_ctx.integerValue("CountCrowdResponse.Data.PeopleNumber"));
 		countCrowdResponse.setData(data);
 	 
 	 	return countCrowdResponse;

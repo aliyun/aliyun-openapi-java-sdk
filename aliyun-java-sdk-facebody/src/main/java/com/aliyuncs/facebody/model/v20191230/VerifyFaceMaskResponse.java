@@ -53,11 +53,11 @@ public class VerifyFaceMaskResponse extends AcsResponse {
 
 		private Integer maskRef;
 
+		private List<Float> thresholds;
+
 		private List<Integer> rectangle;
 
 		private List<Integer> rectangleRef;
-
-		private List<Float> thresholds;
 
 		public Float getConfidence() {
 			return this.confidence;
@@ -83,6 +83,14 @@ public class VerifyFaceMaskResponse extends AcsResponse {
 			this.maskRef = maskRef;
 		}
 
+		public List<Float> getThresholds() {
+			return this.thresholds;
+		}
+
+		public void setThresholds(List<Float> thresholds) {
+			this.thresholds = thresholds;
+		}
+
 		public List<Integer> getRectangle() {
 			return this.rectangle;
 		}
@@ -97,14 +105,6 @@ public class VerifyFaceMaskResponse extends AcsResponse {
 
 		public void setRectangleRef(List<Integer> rectangleRef) {
 			this.rectangleRef = rectangleRef;
-		}
-
-		public List<Float> getThresholds() {
-			return this.thresholds;
-		}
-
-		public void setThresholds(List<Float> thresholds) {
-			this.thresholds = thresholds;
 		}
 	}
 

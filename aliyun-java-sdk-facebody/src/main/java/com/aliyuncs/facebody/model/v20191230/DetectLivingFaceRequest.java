@@ -28,7 +28,7 @@ public class DetectLivingFaceRequest extends RpcAcsRequest<DetectLivingFaceRespo
 
 	private List<Tasks> taskss;
 	public DetectLivingFaceRequest() {
-		super("facebody", "2019-12-30", "DetectLivingFace", "facebody");
+		super("facebody", "2019-12-30", "DetectLivingFace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

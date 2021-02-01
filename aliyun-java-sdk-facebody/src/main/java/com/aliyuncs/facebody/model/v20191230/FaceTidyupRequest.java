@@ -31,7 +31,7 @@ public class FaceTidyupRequest extends RpcAcsRequest<FaceTidyupResponse> {
 
 	private String imageURL;
 	public FaceTidyupRequest() {
-		super("facebody", "2019-12-30", "FaceTidyup", "facebody");
+		super("facebody", "2019-12-30", "FaceTidyup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

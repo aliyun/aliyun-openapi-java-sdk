@@ -29,7 +29,7 @@ public class GetBodyPersonRequest extends RpcAcsRequest<GetBodyPersonResponse> {
 
 	private Long dbId;
 	public GetBodyPersonRequest() {
-		super("facebody", "2019-12-30", "GetBodyPerson", "facebody");
+		super("facebody", "2019-12-30", "GetBodyPerson");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
