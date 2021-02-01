@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.onsmqtt.model.v20191211;
+package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.onsmqtt.transform.v20191211.RevokeTokenResponseUnmarshaller;
+import com.aliyuncs.onsmqtt.transform.v20200420.UnRegisterDeviceCredentialResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RevokeTokenResponse extends AcsResponse {
+public class UnRegisterDeviceCredentialResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class RevokeTokenResponse extends AcsResponse {
 	}
 
 	@Override
-	public RevokeTokenResponse getInstance(UnmarshallerContext context) {
-		return	RevokeTokenResponseUnmarshaller.unmarshall(this, context);
+	public UnRegisterDeviceCredentialResponse getInstance(UnmarshallerContext context) {
+		return	UnRegisterDeviceCredentialResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

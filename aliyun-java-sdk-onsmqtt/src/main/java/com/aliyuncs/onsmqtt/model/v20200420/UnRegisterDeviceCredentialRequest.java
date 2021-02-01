@@ -12,34 +12,39 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.onsmqtt.model.v20191211;
+package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.onsmqtt.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryTokenRequest extends RpcAcsRequest<QueryTokenResponse> {
+public class UnRegisterDeviceCredentialRequest extends RpcAcsRequest<UnRegisterDeviceCredentialResponse> {
 	   
 
-	private String token;
+	private String clientId;
 
 	private String instanceId;
-	public QueryTokenRequest() {
-		super("OnsMqtt", "2019-12-11", "QueryToken", "onsmqtt");
+	public UnRegisterDeviceCredentialRequest() {
+		super("OnsMqtt", "2020-04-20", "UnRegisterDeviceCredential", "onsmqtt");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public String getToken() {
-		return this.token;
+	public String getClientId() {
+		return this.clientId;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
-		if(token != null){
-			putQueryParameter("Token", token);
+	public void setClientId(String clientId) {
+		this.clientId = clientId;
+		if(clientId != null){
+			putQueryParameter("ClientId", clientId);
 		}
 	}
 
@@ -55,8 +60,8 @@ public class QueryTokenRequest extends RpcAcsRequest<QueryTokenResponse> {
 	}
 
 	@Override
-	public Class<QueryTokenResponse> getResponseClass() {
-		return QueryTokenResponse.class;
+	public Class<UnRegisterDeviceCredentialResponse> getResponseClass() {
+		return UnRegisterDeviceCredentialResponse.class;
 	}
 
 }

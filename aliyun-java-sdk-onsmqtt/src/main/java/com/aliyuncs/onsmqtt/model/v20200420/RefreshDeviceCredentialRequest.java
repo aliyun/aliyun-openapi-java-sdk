@@ -12,38 +12,40 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.onsmqtt.model.v20191211;
+package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.onsmqtt.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchQuerySessionByClientIdsRequest extends RpcAcsRequest<BatchQuerySessionByClientIdsResponse> {
+public class RefreshDeviceCredentialRequest extends RpcAcsRequest<RefreshDeviceCredentialResponse> {
 	   
 
-	private List<String> clientIdLists;
+	private String clientId;
 
 	private String instanceId;
-	public BatchQuerySessionByClientIdsRequest() {
-		super("OnsMqtt", "2019-12-11", "BatchQuerySessionByClientIds", "onsmqtt");
+	public RefreshDeviceCredentialRequest() {
+		super("OnsMqtt", "2020-04-20", "RefreshDeviceCredential", "onsmqtt");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
-	public List<String> getClientIdLists() {
-		return this.clientIdLists;
+	public String getClientId() {
+		return this.clientId;
 	}
 
-	public void setClientIdLists(List<String> clientIdLists) {
-		this.clientIdLists = clientIdLists;	
-		if (clientIdLists != null) {
-			for (int i = 0; i < clientIdLists.size(); i++) {
-				putQueryParameter("ClientIdList." + (i + 1) , clientIdLists.get(i));
-			}
-		}	
+	public void setClientId(String clientId) {
+		this.clientId = clientId;
+		if(clientId != null){
+			putQueryParameter("ClientId", clientId);
+		}
 	}
 
 	public String getInstanceId() {
@@ -58,8 +60,8 @@ public class BatchQuerySessionByClientIdsRequest extends RpcAcsRequest<BatchQuer
 	}
 
 	@Override
-	public Class<BatchQuerySessionByClientIdsResponse> getResponseClass() {
-		return BatchQuerySessionByClientIdsResponse.class;
+	public Class<RefreshDeviceCredentialResponse> getResponseClass() {
+		return RefreshDeviceCredentialResponse.class;
 	}
 
 }

@@ -12,24 +12,29 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.onsmqtt.model.v20191211;
+package com.aliyuncs.onsmqtt.model.v20200420;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.onsmqtt.Endpoint;
 
 /**
  * @author auto create
  * @version 
  */
-public class QuerySessionByClientIdRequest extends RpcAcsRequest<QuerySessionByClientIdResponse> {
+public class RegisterDeviceCredentialRequest extends RpcAcsRequest<RegisterDeviceCredentialResponse> {
 	   
 
 	private String clientId;
 
 	private String instanceId;
-	public QuerySessionByClientIdRequest() {
-		super("OnsMqtt", "2019-12-11", "QuerySessionByClientId", "onsmqtt");
+	public RegisterDeviceCredentialRequest() {
+		super("OnsMqtt", "2020-04-20", "RegisterDeviceCredential", "onsmqtt");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getClientId() {
@@ -55,8 +60,8 @@ public class QuerySessionByClientIdRequest extends RpcAcsRequest<QuerySessionByC
 	}
 
 	@Override
-	public Class<QuerySessionByClientIdResponse> getResponseClass() {
-		return QuerySessionByClientIdResponse.class;
+	public Class<RegisterDeviceCredentialResponse> getResponseClass() {
+		return RegisterDeviceCredentialResponse.class;
 	}
 
 }

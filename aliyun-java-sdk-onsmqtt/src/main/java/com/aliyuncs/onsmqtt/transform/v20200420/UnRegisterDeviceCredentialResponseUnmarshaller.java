@@ -12,19 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.onsmqtt.transform.v20191211;
+package com.aliyuncs.onsmqtt.transform.v20200420;
 
-import com.aliyuncs.onsmqtt.model.v20191211.QueryTokenResponse;
+import com.aliyuncs.onsmqtt.model.v20200420.UnRegisterDeviceCredentialResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class QueryTokenResponseUnmarshaller {
+public class UnRegisterDeviceCredentialResponseUnmarshaller {
 
-	public static QueryTokenResponse unmarshall(QueryTokenResponse queryTokenResponse, UnmarshallerContext _ctx) {
+	public static UnRegisterDeviceCredentialResponse unmarshall(UnRegisterDeviceCredentialResponse unRegisterDeviceCredentialResponse, UnmarshallerContext _ctx) {
 		
-		queryTokenResponse.setRequestId(_ctx.stringValue("QueryTokenResponse.RequestId"));
-		queryTokenResponse.setTokenStatus(_ctx.booleanValue("QueryTokenResponse.TokenStatus"));
+		unRegisterDeviceCredentialResponse.setRequestId(_ctx.stringValue("UnRegisterDeviceCredentialResponse.RequestId"));
 	 
-	 	return queryTokenResponse;
+	 	return unRegisterDeviceCredentialResponse;
 	}
 }
