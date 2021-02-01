@@ -62,9 +62,9 @@ public class DetectMainBodyResponse extends AcsResponse {
 
 			private Integer y;
 
-			private Integer width;
-
 			private Integer height;
+
+			private Integer width;
 
 			public Integer getX() {
 				return this.x;
@@ -82,20 +82,20 @@ public class DetectMainBodyResponse extends AcsResponse {
 				this.y = y;
 			}
 
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
-
 			public Integer getHeight() {
 				return this.height;
 			}
 
 			public void setHeight(Integer height) {
 				this.height = height;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 		}
 	}

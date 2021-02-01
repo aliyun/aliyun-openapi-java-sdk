@@ -15,6 +15,9 @@
 package com.aliyuncs.objectdet.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.objectdet.Endpoint;
 
@@ -25,11 +28,12 @@ import com.aliyuncs.objectdet.Endpoint;
 public class DetectVehicleIllegalParkingRequest extends RpcAcsRequest<DetectVehicleIllegalParkingResponse> {
 	   
 
-	private Array roadRegions;
+	@SerializedName("roadRegions")
+	private List<RoadRegions> roadRegions;
 
 	private String imageURL;
 	public DetectVehicleIllegalParkingRequest() {
-		super("objectdet", "2019-12-30", "DetectVehicleIllegalParking", "objectdet");
+		super("objectdet", "2019-12-30", "DetectVehicleIllegalParking");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,15 +41,15 @@ public class DetectVehicleIllegalParkingRequest extends RpcAcsRequest<DetectVehi
 		} catch (Exception e) {}
 	}
 
-	public Array getRoadRegions() {
+	public List<RoadRegions> getRoadRegions() {
 		return this.roadRegions;
 	}
 
-	public void setRoadRegions(Array roadRegions) {
-		this.roadRegions = roadRegions;
-		if(roadRegions != null){
-			putBodyParameter("RoadRegions", roadRegions.toString());
-		}
+	public void setRoadRegions(List<RoadRegions> roadRegions) {
+		this.roadRegions = roadRegions;	
+		if (roadRegions != null) {
+			putBodyParameter("RoadRegions" , new Gson().toJson(roadRegions));
+		}	
 	}
 
 	public String getImageURL() {
@@ -56,6 +60,59 @@ public class DetectVehicleIllegalParkingRequest extends RpcAcsRequest<DetectVehi
 		this.imageURL = imageURL;
 		if(imageURL != null){
 			putBodyParameter("ImageURL", imageURL);
+		}
+	}
+
+	public static class RoadRegions {
+
+		@SerializedName("RoadRegion")
+		private List<RoadRegionItem> roadRegion;
+
+		public List<RoadRegionItem> getRoadRegion() {
+			return this.roadRegion;
+		}
+
+		public void setRoadRegion(List<RoadRegionItem> roadRegion) {
+			this.roadRegion = roadRegion;
+		}
+
+		public static class RoadRegionItem {
+
+			@SerializedName("Point")
+			private Point point;
+
+			public Point getPoint() {
+				return this.point;
+			}
+
+			public void setPoint(Point point) {
+				this.point = point;
+			}
+
+			public static class Point {
+
+				@SerializedName("X")
+				private Long x;
+
+				@SerializedName("Y")
+				private Long y;
+
+				public Long getX() {
+					return this.x;
+				}
+
+				public void setX(Long x) {
+					this.x = x;
+				}
+
+				public Long getY() {
+					return this.y;
+				}
+
+				public void setY(Long y) {
+					this.y = y;
+				}
+			}
 		}
 	}
 
