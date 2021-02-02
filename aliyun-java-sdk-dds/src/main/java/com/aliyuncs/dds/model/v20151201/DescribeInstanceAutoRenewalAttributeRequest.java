@@ -27,11 +27,11 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 
 	private Long resourceOwnerId;
 
-	private String pageNumber;
+	private Long pageNumber;
 
 	private String securityToken;
 
-	private String pageSize;
+	private Long pageSize;
 
 	private String dBInstanceId;
 
@@ -62,14 +62,14 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getPageNumber() {
+	public Long getPageNumber() {
 		return this.pageNumber;
 	}
 
-	public void setPageNumber(String pageNumber) {
+	public void setPageNumber(Long pageNumber) {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -84,14 +84,14 @@ public class DescribeInstanceAutoRenewalAttributeRequest extends RpcAcsRequest<D
 		}
 	}
 
-	public String getPageSize() {
+	public Long getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

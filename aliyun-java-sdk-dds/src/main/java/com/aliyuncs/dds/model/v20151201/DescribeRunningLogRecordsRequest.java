@@ -27,6 +27,8 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 
 	private Long resourceOwnerId;
 
+	private String roleId;
+
 	private String startTime;
 
 	private Integer pageNumber;
@@ -71,6 +73,17 @@ public class DescribeRunningLogRecordsRequest extends RpcAcsRequest<DescribeRunn
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRoleId() {
+		return this.roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+		if(roleId != null){
+			putQueryParameter("RoleId", roleId);
 		}
 	}
 

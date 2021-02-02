@@ -27,24 +27,24 @@ public class DescribeSlowLogRecordsResponseUnmarshaller {
 	public static DescribeSlowLogRecordsResponse unmarshall(DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeSlowLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeSlowLogRecordsResponse.RequestId"));
-		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
 		describeSlowLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.TotalRecordCount"));
-		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
 		describeSlowLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageRecordCount"));
+		describeSlowLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeSlowLogRecordsResponse.PageNumber"));
+		describeSlowLogRecordsResponse.setEngine(_ctx.stringValue("DescribeSlowLogRecordsResponse.Engine"));
 
 		List<LogRecords> items = new ArrayList<LogRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSlowLogRecordsResponse.Items.Length"); i++) {
 			LogRecords logRecords = new LogRecords();
-			logRecords.setHostAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
-			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
-			logRecords.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
-			logRecords.setQueryTimes(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
-			logRecords.setDocsExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DocsExamined"));
-			logRecords.setKeysExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].KeysExamined"));
-			logRecords.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
-			logRecords.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
-			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
 			logRecords.setTableName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].TableName"));
+			logRecords.setQueryTimes(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].QueryTimes"));
+			logRecords.setExecutionStartTime(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ExecutionStartTime"));
+			logRecords.setReturnRowCounts(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].ReturnRowCounts"));
+			logRecords.setDBName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DBName"));
+			logRecords.setKeysExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].KeysExamined"));
+			logRecords.setDocsExamined(_ctx.longValue("DescribeSlowLogRecordsResponse.Items["+ i +"].DocsExamined"));
+			logRecords.setHostAddress(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].HostAddress"));
+			logRecords.setAccountName(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].AccountName"));
+			logRecords.setSQLText(_ctx.stringValue("DescribeSlowLogRecordsResponse.Items["+ i +"].SQLText"));
 
 			items.add(logRecords);
 		}

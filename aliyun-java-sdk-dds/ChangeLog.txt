@@ -1,3 +1,6 @@
+2021-02-02 Version: 3.5.0
+- CreateShardingDBInstance add ReadOnlyReplicas in ReplicaSet.
+
 2020-11-19 Version: 3.4.1
 - Update DescribeDedicatedClusterInstanceList return data.
 

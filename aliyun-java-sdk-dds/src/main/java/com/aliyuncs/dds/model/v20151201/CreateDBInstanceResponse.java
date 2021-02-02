@@ -26,9 +26,9 @@ public class CreateDBInstanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String orderId;
-
 	private String dBInstanceId;
+
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class CreateDBInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
 
 	public void setDBInstanceId(String dBInstanceId) {
 		this.dBInstanceId = dBInstanceId;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override

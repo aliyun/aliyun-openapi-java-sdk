@@ -31,9 +31,9 @@ public class DescribePriceResponse extends AcsResponse {
 
 	private String orderParams;
 
-	private List<Rule> rules;
-
 	private List<SubOrder> subOrders;
+
+	private List<Rule> rules;
 
 	private Order order;
 
@@ -61,20 +61,20 @@ public class DescribePriceResponse extends AcsResponse {
 		this.orderParams = orderParams;
 	}
 
-	public List<Rule> getRules() {
-		return this.rules;
-	}
-
-	public void setRules(List<Rule> rules) {
-		this.rules = rules;
-	}
-
 	public List<SubOrder> getSubOrders() {
 		return this.subOrders;
 	}
 
 	public void setSubOrders(List<SubOrder> subOrders) {
 		this.subOrders = subOrders;
+	}
+
+	public List<Rule> getRules() {
+		return this.rules;
+	}
+
+	public void setRules(List<Rule> rules) {
+		this.rules = rules;
 	}
 
 	public Order getOrder() {
@@ -85,57 +85,24 @@ public class DescribePriceResponse extends AcsResponse {
 		this.order = order;
 	}
 
-	public static class Rule {
-
-		private Long ruleDescId;
-
-		private String name;
-
-		private String title;
-
-		public Long getRuleDescId() {
-			return this.ruleDescId;
-		}
-
-		public void setRuleDescId(Long ruleDescId) {
-			this.ruleDescId = ruleDescId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-	}
-
 	public static class SubOrder {
-
-		private String originalAmount;
-
-		private String tradeAmount;
-
-		private String discountAmount;
 
 		private String instanceId;
 
+		private String tradeAmount;
+
+		private String originalAmount;
+
+		private String discountAmount;
+
 		private List<String> ruleIds;
 
-		public String getOriginalAmount() {
-			return this.originalAmount;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setOriginalAmount(String originalAmount) {
-			this.originalAmount = originalAmount;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getTradeAmount() {
@@ -146,20 +113,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.tradeAmount = tradeAmount;
 		}
 
+		public String getOriginalAmount() {
+			return this.originalAmount;
+		}
+
+		public void setOriginalAmount(String originalAmount) {
+			this.originalAmount = originalAmount;
+		}
+
 		public String getDiscountAmount() {
 			return this.discountAmount;
 		}
 
 		public void setDiscountAmount(String discountAmount) {
 			this.discountAmount = discountAmount;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
 		}
 
 		public List<String> getRuleIds() {
@@ -171,26 +138,59 @@ public class DescribePriceResponse extends AcsResponse {
 		}
 	}
 
+	public static class Rule {
+
+		private Long ruleDescId;
+
+		private String title;
+
+		private String name;
+
+		public Long getRuleDescId() {
+			return this.ruleDescId;
+		}
+
+		public void setRuleDescId(Long ruleDescId) {
+			this.ruleDescId = ruleDescId;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
+
 	public static class Order {
 
-		private String originalAmount;
+		private String currency;
 
 		private String tradeAmount;
 
-		private String discountAmount;
+		private String originalAmount;
 
-		private String currency;
+		private String discountAmount;
 
 		private List<Coupon> coupons;
 
 		private List<String> ruleIds1;
 
-		public String getOriginalAmount() {
-			return this.originalAmount;
+		public String getCurrency() {
+			return this.currency;
 		}
 
-		public void setOriginalAmount(String originalAmount) {
-			this.originalAmount = originalAmount;
+		public void setCurrency(String currency) {
+			this.currency = currency;
 		}
 
 		public String getTradeAmount() {
@@ -201,20 +201,20 @@ public class DescribePriceResponse extends AcsResponse {
 			this.tradeAmount = tradeAmount;
 		}
 
+		public String getOriginalAmount() {
+			return this.originalAmount;
+		}
+
+		public void setOriginalAmount(String originalAmount) {
+			this.originalAmount = originalAmount;
+		}
+
 		public String getDiscountAmount() {
 			return this.discountAmount;
 		}
 
 		public void setDiscountAmount(String discountAmount) {
 			this.discountAmount = discountAmount;
-		}
-
-		public String getCurrency() {
-			return this.currency;
-		}
-
-		public void setCurrency(String currency) {
-			this.currency = currency;
 		}
 
 		public List<Coupon> getCoupons() {
@@ -237,11 +237,11 @@ public class DescribePriceResponse extends AcsResponse {
 
 			private String couponNo;
 
-			private String name;
-
 			private String description;
 
 			private String isSelected;
+
+			private String name;
 
 			public String getCouponNo() {
 				return this.couponNo;
@@ -249,14 +249,6 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setCouponNo(String couponNo) {
 				this.couponNo = couponNo;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
 			}
 
 			public String getDescription() {
@@ -273,6 +265,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setIsSelected(String isSelected) {
 				this.isSelected = isSelected;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

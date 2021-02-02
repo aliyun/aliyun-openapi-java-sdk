@@ -29,6 +29,8 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String clientToken;
 
+	private Integer readonlyReplicas;
+
 	private String nodeClass;
 
 	private String securityToken;
@@ -80,6 +82,17 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getReadonlyReplicas() {
+		return this.readonlyReplicas;
+	}
+
+	public void setReadonlyReplicas(Integer readonlyReplicas) {
+		this.readonlyReplicas = readonlyReplicas;
+		if(readonlyReplicas != null){
+			putQueryParameter("ReadonlyReplicas", readonlyReplicas.toString());
 		}
 	}
 

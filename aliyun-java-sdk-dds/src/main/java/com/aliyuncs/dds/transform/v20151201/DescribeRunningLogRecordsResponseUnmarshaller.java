@@ -27,19 +27,19 @@ public class DescribeRunningLogRecordsResponseUnmarshaller {
 	public static DescribeRunningLogRecordsResponse unmarshall(DescribeRunningLogRecordsResponse describeRunningLogRecordsResponse, UnmarshallerContext _ctx) {
 		
 		describeRunningLogRecordsResponse.setRequestId(_ctx.stringValue("DescribeRunningLogRecordsResponse.RequestId"));
-		describeRunningLogRecordsResponse.setEngine(_ctx.stringValue("DescribeRunningLogRecordsResponse.Engine"));
 		describeRunningLogRecordsResponse.setTotalRecordCount(_ctx.integerValue("DescribeRunningLogRecordsResponse.TotalRecordCount"));
-		describeRunningLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageNumber"));
 		describeRunningLogRecordsResponse.setPageRecordCount(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageRecordCount"));
+		describeRunningLogRecordsResponse.setPageNumber(_ctx.integerValue("DescribeRunningLogRecordsResponse.PageNumber"));
+		describeRunningLogRecordsResponse.setEngine(_ctx.stringValue("DescribeRunningLogRecordsResponse.Engine"));
 
 		List<LogRecords> items = new ArrayList<LogRecords>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeRunningLogRecordsResponse.Items.Length"); i++) {
 			LogRecords logRecords = new LogRecords();
-			logRecords.setId(_ctx.integerValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Id"));
-			logRecords.setCreateTime(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].CreateTime"));
-			logRecords.setCategory(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Category"));
 			logRecords.setConnInfo(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].ConnInfo"));
+			logRecords.setCategory(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Category"));
 			logRecords.setContent(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Content"));
+			logRecords.setCreateTime(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].CreateTime"));
+			logRecords.setId(_ctx.integerValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Id"));
 
 			items.add(logRecords);
 		}

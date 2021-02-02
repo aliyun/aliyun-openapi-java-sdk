@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String engine;
-
 	private Integer totalRecordCount;
-
-	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
+	private String engine;
+
 	private List<LogRecords> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -59,6 +43,22 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +69,12 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	public List<LogRecords> getItems() {
@@ -87,30 +87,22 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 	public static class LogRecords {
 
-		private Integer id;
-
-		private String createTime;
+		private String connInfo;
 
 		private String category;
 
-		private String connInfo;
-
 		private String content;
 
-		public Integer getId() {
-			return this.id;
+		private String createTime;
+
+		private Integer id;
+
+		public String getConnInfo() {
+			return this.connInfo;
 		}
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setConnInfo(String connInfo) {
+			this.connInfo = connInfo;
 		}
 
 		public String getCategory() {
@@ -121,20 +113,28 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 			this.category = category;
 		}
 
-		public String getConnInfo() {
-			return this.connInfo;
-		}
-
-		public void setConnInfo(String connInfo) {
-			this.connInfo = connInfo;
-		}
-
 		public String getContent() {
 			return this.content;
 		}
 
 		public void setContent(String content) {
 			this.content = content;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Integer getId() {
+			return this.id;
+		}
+
+		public void setId(Integer id) {
+			this.id = id;
 		}
 	}
 

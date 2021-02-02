@@ -25,33 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String engine;
-
 	private Integer totalRecordCount;
-
-	private Integer pageNumber;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
+	private String engine;
+
 	private List<LogRecords> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getEngine() {
-		return this.engine;
-	}
-
-	public void setEngine(String engine) {
-		this.engine = engine;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -59,6 +43,22 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public void setTotalRecordCount(Integer totalRecordCount) {
 		this.totalRecordCount = totalRecordCount;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +69,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
+	public String getEngine() {
+		return this.engine;
 	}
 
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
+	public void setEngine(String engine) {
+		this.engine = engine;
 	}
 
 	public List<LogRecords> getItems() {
@@ -87,48 +87,32 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 
 	public static class LogRecords {
 
-		private String hostAddress;
-
-		private String dBName;
-
-		private String sQLText;
+		private String tableName;
 
 		private String queryTimes;
 
-		private Long docsExamined;
-
-		private Long keysExamined;
+		private String executionStartTime;
 
 		private Long returnRowCounts;
 
-		private String executionStartTime;
+		private String dBName;
+
+		private Long keysExamined;
+
+		private Long docsExamined;
+
+		private String hostAddress;
 
 		private String accountName;
 
-		private String tableName;
+		private String sQLText;
 
-		public String getHostAddress() {
-			return this.hostAddress;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setHostAddress(String hostAddress) {
-			this.hostAddress = hostAddress;
-		}
-
-		public String getDBName() {
-			return this.dBName;
-		}
-
-		public void setDBName(String dBName) {
-			this.dBName = dBName;
-		}
-
-		public String getSQLText() {
-			return this.sQLText;
-		}
-
-		public void setSQLText(String sQLText) {
-			this.sQLText = sQLText;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public String getQueryTimes() {
@@ -139,20 +123,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.queryTimes = queryTimes;
 		}
 
-		public Long getDocsExamined() {
-			return this.docsExamined;
+		public String getExecutionStartTime() {
+			return this.executionStartTime;
 		}
 
-		public void setDocsExamined(Long docsExamined) {
-			this.docsExamined = docsExamined;
-		}
-
-		public Long getKeysExamined() {
-			return this.keysExamined;
-		}
-
-		public void setKeysExamined(Long keysExamined) {
-			this.keysExamined = keysExamined;
+		public void setExecutionStartTime(String executionStartTime) {
+			this.executionStartTime = executionStartTime;
 		}
 
 		public Long getReturnRowCounts() {
@@ -163,12 +139,36 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.returnRowCounts = returnRowCounts;
 		}
 
-		public String getExecutionStartTime() {
-			return this.executionStartTime;
+		public String getDBName() {
+			return this.dBName;
 		}
 
-		public void setExecutionStartTime(String executionStartTime) {
-			this.executionStartTime = executionStartTime;
+		public void setDBName(String dBName) {
+			this.dBName = dBName;
+		}
+
+		public Long getKeysExamined() {
+			return this.keysExamined;
+		}
+
+		public void setKeysExamined(Long keysExamined) {
+			this.keysExamined = keysExamined;
+		}
+
+		public Long getDocsExamined() {
+			return this.docsExamined;
+		}
+
+		public void setDocsExamined(Long docsExamined) {
+			this.docsExamined = docsExamined;
+		}
+
+		public String getHostAddress() {
+			return this.hostAddress;
+		}
+
+		public void setHostAddress(String hostAddress) {
+			this.hostAddress = hostAddress;
 		}
 
 		public String getAccountName() {
@@ -179,12 +179,12 @@ public class DescribeSlowLogRecordsResponse extends AcsResponse {
 			this.accountName = accountName;
 		}
 
-		public String getTableName() {
-			return this.tableName;
+		public String getSQLText() {
+			return this.sQLText;
 		}
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
+		public void setSQLText(String sQLText) {
+			this.sQLText = sQLText;
 		}
 	}
 
