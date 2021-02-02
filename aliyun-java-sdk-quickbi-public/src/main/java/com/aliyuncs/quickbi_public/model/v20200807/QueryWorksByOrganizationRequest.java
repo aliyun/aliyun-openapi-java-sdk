@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200807;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,23 +22,47 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOrganizationWorkspaceListResponse> {
+public class QueryWorksByOrganizationRequest extends RpcAcsRequest<QueryWorksByOrganizationResponse> {
 	   
+
+	private String worksType;
+
+	private Integer thirdPartAuthFlag;
 
 	private Integer pageSize;
 
-	private String keyword;
-
 	private Integer pageNum;
 
-	private String userId;
-	public QueryOrganizationWorkspaceListRequest() {
-		super("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList", "quickbi");
+	private Integer status;
+	public QueryWorksByOrganizationRequest() {
+		super("quickbi-public", "2020-08-07", "QueryWorksByOrganization", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getWorksType() {
+		return this.worksType;
+	}
+
+	public void setWorksType(String worksType) {
+		this.worksType = worksType;
+		if(worksType != null){
+			putQueryParameter("WorksType", worksType);
+		}
+	}
+
+	public Integer getThirdPartAuthFlag() {
+		return this.thirdPartAuthFlag;
+	}
+
+	public void setThirdPartAuthFlag(Integer thirdPartAuthFlag) {
+		this.thirdPartAuthFlag = thirdPartAuthFlag;
+		if(thirdPartAuthFlag != null){
+			putQueryParameter("ThirdPartAuthFlag", thirdPartAuthFlag.toString());
+		}
 	}
 
 	public Integer getPageSize() {
@@ -49,17 +73,6 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
 		}
 	}
 
@@ -74,20 +87,20 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public Integer getStatus() {
+		return this.status;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 
 	@Override
-	public Class<QueryOrganizationWorkspaceListResponse> getResponseClass() {
-		return QueryOrganizationWorkspaceListResponse.class;
+	public Class<QueryWorksByOrganizationResponse> getResponseClass() {
+		return QueryWorksByOrganizationResponse.class;
 	}
 
 }

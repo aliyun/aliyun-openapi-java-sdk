@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200804;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,56 +22,17 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOrganizationWorkspaceListResponse> {
+public class QuerySharesToUserListRequest extends RpcAcsRequest<QuerySharesToUserListResponse> {
 	   
 
-	private Integer pageSize;
-
-	private String keyword;
-
-	private Integer pageNum;
-
 	private String userId;
-	public QueryOrganizationWorkspaceListRequest() {
-		super("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList", "quickbi");
+	public QuerySharesToUserListRequest() {
+		super("quickbi-public", "2020-08-04", "QuerySharesToUserList", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
-		}
 	}
 
 	public String getUserId() {
@@ -86,8 +47,8 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 	}
 
 	@Override
-	public Class<QueryOrganizationWorkspaceListResponse> getResponseClass() {
-		return QueryOrganizationWorkspaceListResponse.class;
+	public Class<QuerySharesToUserListResponse> getResponseClass() {
+		return QuerySharesToUserListResponse.class;
 	}
 
 }

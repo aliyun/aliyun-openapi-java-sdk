@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200806;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,18 +22,22 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOrganizationWorkspaceListResponse> {
+public class QueryDatasetListRequest extends RpcAcsRequest<QueryDatasetListResponse> {
 	   
 
 	private Integer pageSize;
+
+	private String directoryId;
+
+	private Boolean withChildren;
 
 	private String keyword;
 
 	private Integer pageNum;
 
-	private String userId;
-	public QueryOrganizationWorkspaceListRequest() {
-		super("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList", "quickbi");
+	private String workspaceId;
+	public QueryDatasetListRequest() {
+		super("quickbi-public", "2020-08-06", "QueryDatasetList", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +53,28 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDirectoryId() {
+		return this.directoryId;
+	}
+
+	public void setDirectoryId(String directoryId) {
+		this.directoryId = directoryId;
+		if(directoryId != null){
+			putQueryParameter("DirectoryId", directoryId);
+		}
+	}
+
+	public Boolean getWithChildren() {
+		return this.withChildren;
+	}
+
+	public void setWithChildren(Boolean withChildren) {
+		this.withChildren = withChildren;
+		if(withChildren != null){
+			putQueryParameter("WithChildren", withChildren.toString());
 		}
 	}
 
@@ -74,20 +100,20 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		}
 	}
 
-	public String getUserId() {
-		return this.userId;
+	public String getWorkspaceId() {
+		return this.workspaceId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-		if(userId != null){
-			putQueryParameter("UserId", userId);
+	public void setWorkspaceId(String workspaceId) {
+		this.workspaceId = workspaceId;
+		if(workspaceId != null){
+			putQueryParameter("WorkspaceId", workspaceId);
 		}
 	}
 
 	@Override
-	public Class<QueryOrganizationWorkspaceListResponse> getResponseClass() {
-		return QueryOrganizationWorkspaceListResponse.class;
+	public Class<QueryDatasetListResponse> getResponseClass() {
+		return QueryDatasetListResponse.class;
 	}
 
 }

@@ -1,3 +1,6 @@
+2021-02-02 Version: 1.4.0
+- Add Apis, includes QueryOrganizationWorkspaceList,UpdateEmbeddedStatus,QueryEmbeddedStaus,QueryEmbeddedInfo,CheckReadable,QueryReadableResourcesListByUserId,QueryWorksByWorkspace,QueryWorksByOrganization,QueryDatasetDetailInfo,QueryDatasetList,DeleteRowLevelPermission,AddRowLevelByTag,DeleteRowLevelByTag,AddRowLevelPermission,QueryDatasetRowLevelPermissionInfo,SwitchRowLevelType,SwitchColumnRowLevelControl,SwitchDatasetRowLevelControl,CancelReportShare,QuerySharesToUserList,AddShareReport,QueryShareList.
+
 2020-12-02 Version: 1.3.0
 - Add Apis, includes UpdateUserTagValue, AddUserTagMeta, QueryUserInfoByAccount, QueryUserGroupListByParentId, QueryUserRoleInfoInWorkspace, UpdateWorkspaceUserRole, DeleteUserFromWorkspace, AddUserToWorkspace, QueryWorkspaceUserList, QueryOrganizationWorkspaceList, QueryUserGroupMember, UpdateUserGroup, DeleteUserGroup, CreateUserGroup, UpdateUserTagMeta, QueryUserInfoByUserId.
 - Modify Apis, includes UpdateUser, AddUser, QueryUserList.

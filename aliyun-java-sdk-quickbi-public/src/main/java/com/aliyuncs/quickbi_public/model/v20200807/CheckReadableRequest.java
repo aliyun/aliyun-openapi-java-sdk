@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200807;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,18 +22,14 @@ import com.aliyuncs.quickbi_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOrganizationWorkspaceListResponse> {
+public class CheckReadableRequest extends RpcAcsRequest<CheckReadableResponse> {
 	   
 
-	private Integer pageSize;
-
-	private String keyword;
-
-	private Integer pageNum;
+	private String worksId;
 
 	private String userId;
-	public QueryOrganizationWorkspaceListRequest() {
-		super("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList", "quickbi");
+	public CheckReadableRequest() {
+		super("quickbi-public", "2020-08-07", "CheckReadable", "quickbi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,36 +37,14 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		} catch (Exception e) {}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getWorksId() {
+		return this.worksId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
-		}
-	}
-
-	public Integer getPageNum() {
-		return this.pageNum;
-	}
-
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setWorksId(String worksId) {
+		this.worksId = worksId;
+		if(worksId != null){
+			putQueryParameter("WorksId", worksId);
 		}
 	}
 
@@ -86,8 +60,8 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 	}
 
 	@Override
-	public Class<QueryOrganizationWorkspaceListResponse> getResponseClass() {
-		return QueryOrganizationWorkspaceListResponse.class;
+	public Class<CheckReadableResponse> getResponseClass() {
+		return CheckReadableResponse.class;
 	}
 
 }
