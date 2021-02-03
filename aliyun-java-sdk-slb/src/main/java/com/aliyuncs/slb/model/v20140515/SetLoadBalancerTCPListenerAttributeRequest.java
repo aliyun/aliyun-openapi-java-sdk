@@ -55,6 +55,8 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 
 	private Integer healthCheckInterval;
 
+	private String connectionDrain;
+
 	private Integer healthCheckConnectTimeout;
 
 	private String description;
@@ -74,6 +76,8 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 	private Integer bandwidth;
 
 	private String ownerAccount;
+
+	private Integer connectionDrainTimeout;
 
 	private Integer healthCheckConnectPort;
 
@@ -254,6 +258,17 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 		}
 	}
 
+	public String getConnectionDrain() {
+		return this.connectionDrain;
+	}
+
+	public void setConnectionDrain(String connectionDrain) {
+		this.connectionDrain = connectionDrain;
+		if(connectionDrain != null){
+			putQueryParameter("ConnectionDrain", connectionDrain);
+		}
+	}
+
 	public Integer getHealthCheckConnectTimeout() {
 		return this.healthCheckConnectTimeout;
 	}
@@ -361,6 +376,17 @@ public class SetLoadBalancerTCPListenerAttributeRequest extends RpcAcsRequest<Se
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getConnectionDrainTimeout() {
+		return this.connectionDrainTimeout;
+	}
+
+	public void setConnectionDrainTimeout(Integer connectionDrainTimeout) {
+		this.connectionDrainTimeout = connectionDrainTimeout;
+		if(connectionDrainTimeout != null){
+			putQueryParameter("ConnectionDrainTimeout", connectionDrainTimeout.toString());
 		}
 	}
 
