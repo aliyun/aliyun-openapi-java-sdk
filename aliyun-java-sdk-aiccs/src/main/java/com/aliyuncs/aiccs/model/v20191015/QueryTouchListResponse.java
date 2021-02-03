@@ -159,15 +159,15 @@ public class QueryTouchListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private Integer toId;
+			private Long toId;
 
-			private Integer queueId;
+			private Long queueId;
 
 			private Long gmtModified;
 
 			private String touchTime;
 
-			private Integer parentTouchId;
+			private Long parentTouchId;
 
 			private String memberName;
 
@@ -185,13 +185,13 @@ public class QueryTouchListResponse extends AcsResponse {
 
 			private Long memberId;
 
-			private Integer buId;
+			private Long buId;
 
 			private String touchContent;
 
 			private String touchId;
 
-			private Integer servicerId;
+			private Long servicerId;
 
 			private Long gmtCreate;
 
@@ -199,13 +199,13 @@ public class QueryTouchListResponse extends AcsResponse {
 
 			private Long firstTime;
 
-			private Integer userTouchId;
+			private Long userTouchId;
 
 			private Integer touchType;
 
 			private String servicerName;
 
-			private Integer depId;
+			private Long depId;
 
 			private String commonQueueName;
 
@@ -213,19 +213,19 @@ public class QueryTouchListResponse extends AcsResponse {
 
 			private ExtAttrs extAttrs;
 
-			public Integer getToId() {
+			public Long getToId() {
 				return this.toId;
 			}
 
-			public void setToId(Integer toId) {
+			public void setToId(Long toId) {
 				this.toId = toId;
 			}
 
-			public Integer getQueueId() {
+			public Long getQueueId() {
 				return this.queueId;
 			}
 
-			public void setQueueId(Integer queueId) {
+			public void setQueueId(Long queueId) {
 				this.queueId = queueId;
 			}
 
@@ -245,11 +245,11 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.touchTime = touchTime;
 			}
 
-			public Integer getParentTouchId() {
+			public Long getParentTouchId() {
 				return this.parentTouchId;
 			}
 
-			public void setParentTouchId(Integer parentTouchId) {
+			public void setParentTouchId(Long parentTouchId) {
 				this.parentTouchId = parentTouchId;
 			}
 
@@ -317,11 +317,11 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.memberId = memberId;
 			}
 
-			public Integer getBuId() {
+			public Long getBuId() {
 				return this.buId;
 			}
 
-			public void setBuId(Integer buId) {
+			public void setBuId(Long buId) {
 				this.buId = buId;
 			}
 
@@ -341,11 +341,11 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.touchId = touchId;
 			}
 
-			public Integer getServicerId() {
+			public Long getServicerId() {
 				return this.servicerId;
 			}
 
-			public void setServicerId(Integer servicerId) {
+			public void setServicerId(Long servicerId) {
 				this.servicerId = servicerId;
 			}
 
@@ -373,11 +373,11 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.firstTime = firstTime;
 			}
 
-			public Integer getUserTouchId() {
+			public Long getUserTouchId() {
 				return this.userTouchId;
 			}
 
-			public void setUserTouchId(Integer userTouchId) {
+			public void setUserTouchId(Long userTouchId) {
 				this.userTouchId = userTouchId;
 			}
 
@@ -397,11 +397,11 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.servicerName = servicerName;
 			}
 
-			public Integer getDepId() {
+			public Long getDepId() {
 				return this.depId;
 			}
 
-			public void setDepId(Integer depId) {
+			public void setDepId(Long depId) {
 				this.depId = depId;
 			}
 
