@@ -1,3 +1,6 @@
+2021-02-03 Version: 2.13.0
+- Add ModifyAuditLogConfig API.
+
 2021-01-13 Version: 2.12.0
 - Add SwitchInstanceHA API.
 - ModifyInstanceSpec add SourceBiz param.

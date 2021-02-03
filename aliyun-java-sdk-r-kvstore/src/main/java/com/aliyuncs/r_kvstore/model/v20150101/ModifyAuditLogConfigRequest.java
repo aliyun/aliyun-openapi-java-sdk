@@ -22,28 +22,26 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
+public class ModifyAuditLogConfigRequest extends RpcAcsRequest<ModifyAuditLogConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String engineVersion;
-
-	private String resourceGroupId;
-
 	private String securityToken;
 
-	private String engine;
+	private Integer retention;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
+	private Boolean dbAudit;
+
 	private Long ownerId;
 
-	private String characterType;
-	public DescribeParameterTemplatesRequest() {
-		super("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa");
+	private String instanceId;
+	public ModifyAuditLogConfigRequest() {
+		super("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,28 +60,6 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-		if(engineVersion != null){
-			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -95,14 +71,14 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
-	public String getEngine() {
-		return this.engine;
+	public Integer getRetention() {
+		return this.retention;
 	}
 
-	public void setEngine(String engine) {
-		this.engine = engine;
-		if(engine != null){
-			putQueryParameter("Engine", engine);
+	public void setRetention(Integer retention) {
+		this.retention = retention;
+		if(retention != null){
+			putQueryParameter("Retention", retention.toString());
 		}
 	}
 
@@ -128,6 +104,17 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
+	public Boolean getDbAudit() {
+		return this.dbAudit;
+	}
+
+	public void setDbAudit(Boolean dbAudit) {
+		this.dbAudit = dbAudit;
+		if(dbAudit != null){
+			putQueryParameter("DbAudit", dbAudit.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -139,20 +126,20 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		}
 	}
 
-	public String getCharacterType() {
-		return this.characterType;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setCharacterType(String characterType) {
-		this.characterType = characterType;
-		if(characterType != null){
-			putQueryParameter("CharacterType", characterType);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeParameterTemplatesResponse> getResponseClass() {
-		return DescribeParameterTemplatesResponse.class;
+	public Class<ModifyAuditLogConfigResponse> getResponseClass() {
+		return ModifyAuditLogConfigResponse.class;
 	}
 
 }
