@@ -22,46 +22,33 @@ import com.aliyuncs.imagerecog.Endpoint;
  * @author auto create
  * @version 
  */
-public class TaggingImageRequest extends RpcAcsRequest<TaggingImageResponse> {
+public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultResponse> {
 	   
 
-	private Boolean async;
-
-	private String imageURL;
-	public TaggingImageRequest() {
-		super("imagerecog", "2019-09-30", "TaggingImage", "imagerecog");
-		setMethod(MethodType.POST);
+	private String jobId;
+	public GetAsyncJobResultRequest() {
+		super("imagerecog", "2019-09-30", "GetAsyncJobResult", "imagerecog");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public Boolean getAsync() {
-		return this.async;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setAsync(Boolean async) {
-		this.async = async;
-		if(async != null){
-			putBodyParameter("Async", async.toString());
-		}
-	}
-
-	public String getImageURL() {
-		return this.imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
 	@Override
-	public Class<TaggingImageResponse> getResponseClass() {
-		return TaggingImageResponse.class;
+	public Class<GetAsyncJobResultResponse> getResponseClass() {
+		return GetAsyncJobResultResponse.class;
 	}
 
 }
