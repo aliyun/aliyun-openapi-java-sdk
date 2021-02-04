@@ -15,14 +15,14 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.DownloadBasicStatisticsReportResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.TaskPreparingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DownloadBasicStatisticsReportResponse extends AcsResponse {
+public class TaskPreparingResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -34,7 +34,7 @@ public class DownloadBasicStatisticsReportResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private DownloadParams downloadParams;
+	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -76,30 +76,17 @@ public class DownloadBasicStatisticsReportResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public DownloadParams getDownloadParams() {
-		return this.downloadParams;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setDownloadParams(DownloadParams downloadParams) {
-		this.downloadParams = downloadParams;
-	}
-
-	public static class DownloadParams {
-
-		private String signatureUrl;
-
-		public String getSignatureUrl() {
-			return this.signatureUrl;
-		}
-
-		public void setSignatureUrl(String signatureUrl) {
-			this.signatureUrl = signatureUrl;
-		}
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	@Override
-	public DownloadBasicStatisticsReportResponse getInstance(UnmarshallerContext context) {
-		return	DownloadBasicStatisticsReportResponseUnmarshaller.unmarshall(this, context);
+	public TaskPreparingResponse getInstance(UnmarshallerContext context) {
+		return	TaskPreparingResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

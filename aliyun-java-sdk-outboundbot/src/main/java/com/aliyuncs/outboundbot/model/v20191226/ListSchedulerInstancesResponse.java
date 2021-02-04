@@ -16,14 +16,14 @@ package com.aliyuncs.outboundbot.model.v20191226;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.GenerateOverallStatisticsReportResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.ListSchedulerInstancesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GenerateOverallStatisticsReportResponse extends AcsResponse {
+public class ListSchedulerInstancesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class GenerateOverallStatisticsReportResponse extends AcsResponse {
 
 	private Integer httpStatusCode;
 
-	private OverallStatisticsReport overallStatisticsReport;
+	private List<SchedulerInstance> schedulerInstances;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -77,73 +77,60 @@ public class GenerateOverallStatisticsReportResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public OverallStatisticsReport getOverallStatisticsReport() {
-		return this.overallStatisticsReport;
+	public List<SchedulerInstance> getSchedulerInstances() {
+		return this.schedulerInstances;
 	}
 
-	public void setOverallStatisticsReport(OverallStatisticsReport overallStatisticsReport) {
-		this.overallStatisticsReport = overallStatisticsReport;
+	public void setSchedulerInstances(List<SchedulerInstance> schedulerInstances) {
+		this.schedulerInstances = schedulerInstances;
 	}
 
-	public static class OverallStatisticsReport {
+	public static class SchedulerInstance {
 
-		private List<KeyValuePair> indicators;
+		private String ownerId;
 
-		private List<KeyValuePair> briefs;
+		private String instanceId;
 
-		private List<KeyValuePair> summaries;
+		private String business;
 
-		public List<KeyValuePair> getIndicators() {
-			return this.indicators;
+		private Integer maxConcurrency;
+
+		public String getOwnerId() {
+			return this.ownerId;
 		}
 
-		public void setIndicators(List<KeyValuePair> indicators) {
-			this.indicators = indicators;
+		public void setOwnerId(String ownerId) {
+			this.ownerId = ownerId;
 		}
 
-		public List<KeyValuePair> getBriefs() {
-			return this.briefs;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setBriefs(List<KeyValuePair> briefs) {
-			this.briefs = briefs;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
-		public List<KeyValuePair> getSummaries() {
-			return this.summaries;
+		public String getBusiness() {
+			return this.business;
 		}
 
-		public void setSummaries(List<KeyValuePair> summaries) {
-			this.summaries = summaries;
+		public void setBusiness(String business) {
+			this.business = business;
 		}
 
-		public static class KeyValuePair {
+		public Integer getMaxConcurrency() {
+			return this.maxConcurrency;
+		}
 
-			private String key;
-
-			private String value;
-
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+		public void setMaxConcurrency(Integer maxConcurrency) {
+			this.maxConcurrency = maxConcurrency;
 		}
 	}
 
 	@Override
-	public GenerateOverallStatisticsReportResponse getInstance(UnmarshallerContext context) {
-		return	GenerateOverallStatisticsReportResponseUnmarshaller.unmarshall(this, context);
+	public ListSchedulerInstancesResponse getInstance(UnmarshallerContext context) {
+		return	ListSchedulerInstancesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

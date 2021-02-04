@@ -22,30 +22,21 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class WithdrawScriptRequest extends RpcAcsRequest<WithdrawScriptResponse> {
+public class InflightTaskTimeoutRequest extends RpcAcsRequest<InflightTaskTimeoutResponse> {
 	   
 
-	private String scriptId;
-
 	private String instanceId;
-	public WithdrawScriptRequest() {
-		super("OutboundBot", "2019-12-26", "WithdrawScript", "outboundbot");
+
+	private Long instanceOwnerId;
+
+	private String taskId;
+	public InflightTaskTimeoutRequest() {
+		super("OutboundBot", "2019-12-26", "InflightTaskTimeout", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getScriptId() {
-		return this.scriptId;
-	}
-
-	public void setScriptId(String scriptId) {
-		this.scriptId = scriptId;
-		if(scriptId != null){
-			putQueryParameter("ScriptId", scriptId);
-		}
 	}
 
 	public String getInstanceId() {
@@ -59,9 +50,31 @@ public class WithdrawScriptRequest extends RpcAcsRequest<WithdrawScriptResponse>
 		}
 	}
 
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
+	}
+
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
+		}
+	}
+
 	@Override
-	public Class<WithdrawScriptResponse> getResponseClass() {
-		return WithdrawScriptResponse.class;
+	public Class<InflightTaskTimeoutResponse> getResponseClass() {
+		return InflightTaskTimeoutResponse.class;
 	}
 
 }

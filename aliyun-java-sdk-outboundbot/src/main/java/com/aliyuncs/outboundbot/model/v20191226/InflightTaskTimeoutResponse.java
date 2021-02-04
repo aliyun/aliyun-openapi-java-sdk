@@ -15,14 +15,14 @@
 package com.aliyuncs.outboundbot.model.v20191226;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.outboundbot.transform.v20191226.DownloadConversationDetailsResponseUnmarshaller;
+import com.aliyuncs.outboundbot.transform.v20191226.InflightTaskTimeoutResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DownloadConversationDetailsResponse extends AcsResponse {
+public class InflightTaskTimeoutResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,8 +33,6 @@ public class DownloadConversationDetailsResponse extends AcsResponse {
 	private String message;
 
 	private Integer httpStatusCode;
-
-	private DownloadParams downloadParams;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -76,30 +74,9 @@ public class DownloadConversationDetailsResponse extends AcsResponse {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public DownloadParams getDownloadParams() {
-		return this.downloadParams;
-	}
-
-	public void setDownloadParams(DownloadParams downloadParams) {
-		this.downloadParams = downloadParams;
-	}
-
-	public static class DownloadParams {
-
-		private String signatureUrl;
-
-		public String getSignatureUrl() {
-			return this.signatureUrl;
-		}
-
-		public void setSignatureUrl(String signatureUrl) {
-			this.signatureUrl = signatureUrl;
-		}
-	}
-
 	@Override
-	public DownloadConversationDetailsResponse getInstance(UnmarshallerContext context) {
-		return	DownloadConversationDetailsResponseUnmarshaller.unmarshall(this, context);
+	public InflightTaskTimeoutResponse getInstance(UnmarshallerContext context) {
+		return	InflightTaskTimeoutResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

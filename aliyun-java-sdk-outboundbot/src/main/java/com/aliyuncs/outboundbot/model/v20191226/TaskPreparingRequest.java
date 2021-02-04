@@ -22,20 +22,16 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListJobGroupsWithScenarioRequest extends RpcAcsRequest<ListJobGroupsWithScenarioResponse> {
+public class TaskPreparingRequest extends RpcAcsRequest<TaskPreparingResponse> {
 	   
 
-	private Long endTime;
-
-	private Long startTime;
-
-	private Integer pageNumber;
+	private String jobId;
 
 	private String instanceId;
 
-	private Integer pageSize;
-	public ListJobGroupsWithScenarioRequest() {
-		super("OutboundBot", "2019-12-26", "ListJobGroupsWithScenario", "outboundbot");
+	private Long instanceOwnerId;
+	public TaskPreparingRequest() {
+		super("OutboundBot", "2019-12-26", "TaskPreparing", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,36 +39,14 @@ public class ListJobGroupsWithScenarioRequest extends RpcAcsRequest<ListJobGroup
 		} catch (Exception e) {}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
 		}
 	}
 
@@ -87,20 +61,20 @@ public class ListJobGroupsWithScenarioRequest extends RpcAcsRequest<ListJobGroup
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 
 	@Override
-	public Class<ListJobGroupsWithScenarioResponse> getResponseClass() {
-		return ListJobGroupsWithScenarioResponse.class;
+	public Class<TaskPreparingResponse> getResponseClass() {
+		return TaskPreparingResponse.class;
 	}
 
 }

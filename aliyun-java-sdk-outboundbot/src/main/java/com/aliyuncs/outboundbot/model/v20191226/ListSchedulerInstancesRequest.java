@@ -22,14 +22,12 @@ import com.aliyuncs.outboundbot.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetJobStatusByCallIdRequest extends RpcAcsRequest<GetJobStatusByCallIdResponse> {
+public class ListSchedulerInstancesRequest extends RpcAcsRequest<ListSchedulerInstancesResponse> {
 	   
 
-	private String callId;
-
-	private String instanceId;
-	public GetJobStatusByCallIdRequest() {
-		super("OutboundBot", "2019-12-26", "GetJobStatusByCallId", "outboundbot");
+	private Long instanceOwnerId;
+	public ListSchedulerInstancesRequest() {
+		super("OutboundBot", "2019-12-26", "ListSchedulerInstances", "outboundbot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class GetJobStatusByCallIdRequest extends RpcAcsRequest<GetJobStatusByCal
 		} catch (Exception e) {}
 	}
 
-	public String getCallId() {
-		return this.callId;
+	public Long getInstanceOwnerId() {
+		return this.instanceOwnerId;
 	}
 
-	public void setCallId(String callId) {
-		this.callId = callId;
-		if(callId != null){
-			putQueryParameter("CallId", callId);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setInstanceOwnerId(Long instanceOwnerId) {
+		this.instanceOwnerId = instanceOwnerId;
+		if(instanceOwnerId != null){
+			putQueryParameter("InstanceOwnerId", instanceOwnerId.toString());
 		}
 	}
 
 	@Override
-	public Class<GetJobStatusByCallIdResponse> getResponseClass() {
-		return GetJobStatusByCallIdResponse.class;
+	public Class<ListSchedulerInstancesResponse> getResponseClass() {
+		return ListSchedulerInstancesResponse.class;
 	}
 
 }

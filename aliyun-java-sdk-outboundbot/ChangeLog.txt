@@ -1,3 +1,6 @@
+2021-02-04 Version: 1.0.5
+- Supported scheduler for outbound call.
+
 2020-12-02 Version: 1.0.4
 - Update version.
 
