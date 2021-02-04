@@ -30,8 +30,8 @@ public class DetectVehicleResponseUnmarshaller {
 		detectVehicleResponse.setRequestId(_ctx.stringValue("DetectVehicleResponse.RequestId"));
 
 		Data data = new Data();
-		data.setHeight(_ctx.integerValue("DetectVehicleResponse.Data.Height"));
 		data.setWidth(_ctx.integerValue("DetectVehicleResponse.Data.Width"));
+		data.setHeight(_ctx.integerValue("DetectVehicleResponse.Data.Height"));
 
 		List<DetectObjectInfo> detectObjectInfoList = new ArrayList<DetectObjectInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DetectVehicleResponse.Data.DetectObjectInfoList.Length"); i++) {

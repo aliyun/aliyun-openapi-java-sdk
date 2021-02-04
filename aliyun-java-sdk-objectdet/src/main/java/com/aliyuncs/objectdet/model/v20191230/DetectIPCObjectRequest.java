@@ -27,7 +27,7 @@ public class DetectIPCObjectRequest extends RpcAcsRequest<DetectIPCObjectRespons
 
 	private String imageURL;
 	public DetectIPCObjectRequest() {
-		super("objectdet", "2019-12-30", "DetectIPCObject");
+		super("objectdet", "2019-12-30", "DetectIPCObject", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

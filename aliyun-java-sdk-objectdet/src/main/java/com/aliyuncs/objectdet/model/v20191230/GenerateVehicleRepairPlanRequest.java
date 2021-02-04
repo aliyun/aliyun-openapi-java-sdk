@@ -28,7 +28,7 @@ public class GenerateVehicleRepairPlanRequest extends RpcAcsRequest<GenerateVehi
 
 	private List<DamageImageList> damageImageLists;
 	public GenerateVehicleRepairPlanRequest() {
-		super("objectdet", "2019-12-30", "GenerateVehicleRepairPlan");
+		super("objectdet", "2019-12-30", "GenerateVehicleRepairPlan", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

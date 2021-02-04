@@ -27,7 +27,7 @@ public class DetectWhiteBaseImageRequest extends RpcAcsRequest<DetectWhiteBaseIm
 
 	private String imageURL;
 	public DetectWhiteBaseImageRequest() {
-		super("objectdet", "2019-12-30", "DetectWhiteBaseImage");
+		super("objectdet", "2019-12-30", "DetectWhiteBaseImage", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

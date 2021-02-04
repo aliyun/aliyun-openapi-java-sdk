@@ -27,7 +27,7 @@ public class DetectMainBodyRequest extends RpcAcsRequest<DetectMainBodyResponse>
 
 	private String imageURL;
 	public DetectMainBodyRequest() {
-		super("objectdet", "2019-12-30", "DetectMainBody");
+		super("objectdet", "2019-12-30", "DetectMainBody", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,6 +32,8 @@ public class DetectIPCObjectResponseUnmarshaller {
 		detectIPCObjectResponse.setCode(_ctx.stringValue("DetectIPCObjectResponse.Code"));
 
 		Data data = new Data();
+		data.setHeight(_ctx.longValue("DetectIPCObjectResponse.Data.Height"));
+		data.setWidth(_ctx.longValue("DetectIPCObjectResponse.Data.Width"));
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectIPCObjectResponse.Data.Elements.Length"); i++) {

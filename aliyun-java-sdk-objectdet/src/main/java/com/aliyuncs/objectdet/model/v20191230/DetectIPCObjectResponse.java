@@ -67,7 +67,27 @@ public class DetectIPCObjectResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Long height;
+
+		private Long width;
+
 		private List<Element> elements;
+
+		public Long getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Long height) {
+			this.height = height;
+		}
+
+		public Long getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Long width) {
+			this.width = width;
+		}
 
 		public List<Element> getElements() {
 			return this.elements;

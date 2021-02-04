@@ -27,7 +27,7 @@ public class RecognizeVehiclePartsRequest extends RpcAcsRequest<RecognizeVehicle
 
 	private String imageURL;
 	public RecognizeVehiclePartsRequest() {
-		super("objectdet", "2019-12-30", "RecognizeVehicleParts");
+		super("objectdet", "2019-12-30", "RecognizeVehicleParts", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
