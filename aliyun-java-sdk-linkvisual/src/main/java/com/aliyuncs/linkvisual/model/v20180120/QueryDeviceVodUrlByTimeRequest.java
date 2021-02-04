@@ -22,7 +22,7 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlResponse> {
+public class QueryDeviceVodUrlByTimeRequest extends RpcAcsRequest<QueryDeviceVodUrlByTimeResponse> {
 	   
 
 	private String scheme;
@@ -37,11 +37,13 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 
 	private Boolean shouldEncrypt;
 
-	private String fileName;
+	private Integer endTime;
+
+	private Integer beginTime;
 
 	private Integer seekTime;
-	public QueryDeviceVodUrlRequest() {
-		super("Linkvisual", "2018-01-20", "QueryDeviceVodUrl", "Linkvisual");
+	public QueryDeviceVodUrlByTimeRequest() {
+		super("Linkvisual", "2018-01-20", "QueryDeviceVodUrlByTime", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,14 +117,25 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 		}
 	}
 
-	public String getFileName() {
-		return this.fileName;
+	public Integer getEndTime() {
+		return this.endTime;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-		if(fileName != null){
-			putQueryParameter("FileName", fileName);
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Integer getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Integer beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
 		}
 	}
 
@@ -138,8 +151,8 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 	}
 
 	@Override
-	public Class<QueryDeviceVodUrlResponse> getResponseClass() {
-		return QueryDeviceVodUrlResponse.class;
+	public Class<QueryDeviceVodUrlByTimeResponse> getResponseClass() {
+		return QueryDeviceVodUrlByTimeResponse.class;
 	}
 
 }
