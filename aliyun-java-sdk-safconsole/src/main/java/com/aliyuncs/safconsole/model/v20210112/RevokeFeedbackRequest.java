@@ -28,7 +28,7 @@ public class RevokeFeedbackRequest extends RpcAcsRequest<RevokeFeedbackResponse>
 
 	private String value;
 	public RevokeFeedbackRequest() {
-		super("safconsole", "2021-01-12", "RevokeFeedback", "safconsole");
+		super("safconsole", "2021-01-12", "RevokeFeedback", "saf");
 		setMethod(MethodType.POST);
 	}
 

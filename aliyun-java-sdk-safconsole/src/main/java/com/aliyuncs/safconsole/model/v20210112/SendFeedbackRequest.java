@@ -30,7 +30,7 @@ public class SendFeedbackRequest extends RpcAcsRequest<SendFeedbackResponse> {
 
 	private String value;
 	public SendFeedbackRequest() {
-		super("safconsole", "2021-01-12", "SendFeedback", "safconsole");
+		super("safconsole", "2021-01-12", "SendFeedback", "saf");
 		setMethod(MethodType.POST);
 	}
 
