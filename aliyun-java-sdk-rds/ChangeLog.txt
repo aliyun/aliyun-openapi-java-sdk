@@ -1,9 +1,6 @@
 2021-02-05 Version: 2.5.8
 - Update Open API.
 
-2021-02-05 Version: 2.5.8
-- Update Open API.
-
 2021-01-29 Version: 2.5.7
 - Update Open API.
 
