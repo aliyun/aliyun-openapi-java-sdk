@@ -1,3 +1,6 @@
+2021-02-07 Version: 0.0.8
+- Support some MergeRequest API.
+
 2021-01-18 Version: 0.0.7
 - Add ListMergeRequests api.
 - Add protected branch api, CreateRepositoryProtectedBranch and DeleteRepositoryProtectedBranch.

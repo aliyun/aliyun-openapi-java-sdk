@@ -16,14 +16,14 @@ package com.aliyuncs.codeup.model.v20200414;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.codeup.transform.v20200414.ListMergeRequestsResponseUnmarshaller;
+import com.aliyuncs.codeup.transform.v20200414.GetMergeRequestDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListMergeRequestsResponse extends AcsResponse {
+public class GetMergeRequestDetailResponse extends AcsResponse {
 
 	private String errorCode;
 
@@ -33,9 +33,7 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Long total;
-
-	private List<ResultItem> result;
+	private Result result;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -69,23 +67,15 @@ public class ListMergeRequestsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
-	}
-
-	public List<ResultItem> getResult() {
+	public Result getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(Result result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class Result {
 
 		private String acceptedRevision;
 
@@ -660,8 +650,8 @@ public class ListMergeRequestsResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListMergeRequestsResponse getInstance(UnmarshallerContext context) {
-		return	ListMergeRequestsResponseUnmarshaller.unmarshall(this, context);
+	public GetMergeRequestDetailResponse getInstance(UnmarshallerContext context) {
+		return	GetMergeRequestDetailResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

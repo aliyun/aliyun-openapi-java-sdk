@@ -16,14 +16,14 @@ package com.aliyuncs.codeup.model.v20200414;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.codeup.transform.v20200414.ListMergeRequestsResponseUnmarshaller;
+import com.aliyuncs.codeup.transform.v20200414.AcceptMergeRequestResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListMergeRequestsResponse extends AcsResponse {
+public class AcceptMergeRequestResponse extends AcsResponse {
 
 	private String errorCode;
 
@@ -33,9 +33,7 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private Long total;
-
-	private List<ResultItem> result;
+	private Result result;
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -69,23 +67,15 @@ public class ListMergeRequestsResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getTotal() {
-		return this.total;
-	}
-
-	public void setTotal(Long total) {
-		this.total = total;
-	}
-
-	public List<ResultItem> getResult() {
+	public Result getResult() {
 		return this.result;
 	}
 
-	public void setResult(List<ResultItem> result) {
+	public void setResult(Result result) {
 		this.result = result;
 	}
 
-	public static class ResultItem {
+	public static class Result {
 
 		private String acceptedRevision;
 
@@ -122,8 +112,6 @@ public class ListMergeRequestsResponse extends AcsResponse {
 		private String updatedAt;
 
 		private String webUrl;
-
-		private Boolean isSupportMerge;
 
 		private List<AssigneeListItem> assigneeList;
 
@@ -275,14 +263,6 @@ public class ListMergeRequestsResponse extends AcsResponse {
 			this.webUrl = webUrl;
 		}
 
-		public Boolean getIsSupportMerge() {
-			return this.isSupportMerge;
-		}
-
-		public void setIsSupportMerge(Boolean isSupportMerge) {
-			this.isSupportMerge = isSupportMerge;
-		}
-
 		public List<AssigneeListItem> getAssigneeList() {
 			return this.assigneeList;
 		}
@@ -317,10 +297,6 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 			private String name;
 
-			private String status;
-
-			private String email;
-
 			public String getAvatarUrl() {
 				return this.avatarUrl;
 			}
@@ -351,22 +327,6 @@ public class ListMergeRequestsResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
-			public String getEmail() {
-				return this.email;
-			}
-
-			public void setEmail(String email) {
-				this.email = email;
 			}
 		}
 
@@ -660,8 +620,8 @@ public class ListMergeRequestsResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListMergeRequestsResponse getInstance(UnmarshallerContext context) {
-		return	ListMergeRequestsResponseUnmarshaller.unmarshall(this, context);
+	public AcceptMergeRequestResponse getInstance(UnmarshallerContext context) {
+		return	AcceptMergeRequestResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

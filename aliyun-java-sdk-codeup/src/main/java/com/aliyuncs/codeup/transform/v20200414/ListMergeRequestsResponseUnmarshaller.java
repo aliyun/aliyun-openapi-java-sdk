@@ -60,6 +60,7 @@ public class ListMergeRequestsResponseUnmarshaller {
 			resultItem.setTitle(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].Title"));
 			resultItem.setUpdatedAt(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].UpdatedAt"));
 			resultItem.setWebUrl(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].WebUrl"));
+			resultItem.setIsSupportMerge(_ctx.booleanValue("ListMergeRequestsResponse.Result["+ i +"].IsSupportMerge"));
 
 			ApproveCheckResult approveCheckResult = new ApproveCheckResult();
 			approveCheckResult.setTotalCheckResult(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].ApproveCheckResult.TotalCheckResult"));
@@ -149,6 +150,8 @@ public class ListMergeRequestsResponseUnmarshaller {
 				assigneeListItem.setExternUserId(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].AssigneeList["+ j +"].ExternUserId"));
 				assigneeListItem.setId(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].AssigneeList["+ j +"].Id"));
 				assigneeListItem.setName(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].AssigneeList["+ j +"].Name"));
+				assigneeListItem.setStatus(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].AssigneeList["+ j +"].Status"));
+				assigneeListItem.setEmail(_ctx.stringValue("ListMergeRequestsResponse.Result["+ i +"].AssigneeList["+ j +"].Email"));
 
 				assigneeList.add(assigneeListItem);
 			}
