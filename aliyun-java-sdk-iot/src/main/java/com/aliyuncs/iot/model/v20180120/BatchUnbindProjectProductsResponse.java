@@ -14,16 +14,16 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.QueryClientIdsResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.BatchUnbindProjectProductsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryClientIdsResponse extends AcsResponse {
+public class BatchUnbindProjectProductsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class QueryClientIdsResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Data data;
+	private Map<Object,Object> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,67 +67,16 @@ public class QueryClientIdsResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Data getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 
-	public static class Data {
-
-		private String iotId;
-
-		private List<DynamicRegClientId> dynamicRegClientIds;
-
-		public String getIotId() {
-			return this.iotId;
-		}
-
-		public void setIotId(String iotId) {
-			this.iotId = iotId;
-		}
-
-		public List<DynamicRegClientId> getDynamicRegClientIds() {
-			return this.dynamicRegClientIds;
-		}
-
-		public void setDynamicRegClientIds(List<DynamicRegClientId> dynamicRegClientIds) {
-			this.dynamicRegClientIds = dynamicRegClientIds;
-		}
-
-		public static class DynamicRegClientId {
-
-			private String clientId;
-
-			private Long createTime;
-
-			public String getClientId() {
-				return this.clientId;
-			}
-
-			public void setClientId(String clientId) {
-				this.clientId = clientId;
-			}
-
-			public Long getCreateTime() {
-				return this.createTime;
-			}
-
-			public void setCreateTime(Long createTime) {
-				this.createTime = createTime;
-			}
-		}
-	}
-
 	@Override
-	public QueryClientIdsResponse getInstance(UnmarshallerContext context) {
-		return	QueryClientIdsResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
+	public BatchUnbindProjectProductsResponse getInstance(UnmarshallerContext context) {
+		return	BatchUnbindProjectProductsResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -30,6 +30,8 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 
 	private List<String> combinationLists;
 
+	private String iotInstanceId;
+
 	private String productKey;
 
 	private String deviceName;
@@ -64,6 +66,17 @@ public class SpeechByCombinationRequest extends RpcAcsRequest<SpeechByCombinatio
 				putBodyParameter("CombinationList." + (i + 1) , combinationLists.get(i));
 			}
 		}	
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getProductKey() {

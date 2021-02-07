@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -22,14 +23,16 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteClientIdsRequest extends RpcAcsRequest<DeleteClientIdsResponse> {
+public class BatchUnbindProjectProductsRequest extends RpcAcsRequest<BatchUnbindProjectProductsResponse> {
 	   
 
-	private String iotId;
+	private List<String> productKeyss;
 
 	private String iotInstanceId;
-	public DeleteClientIdsRequest() {
-		super("Iot", "2018-01-20", "DeleteClientIds", "iot");
+
+	private String projectId;
+	public BatchUnbindProjectProductsRequest() {
+		super("Iot", "2018-01-20", "BatchUnbindProjectProducts", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,15 +40,17 @@ public class DeleteClientIdsRequest extends RpcAcsRequest<DeleteClientIdsRespons
 		} catch (Exception e) {}
 	}
 
-	public String getIotId() {
-		return this.iotId;
+	public List<String> getProductKeyss() {
+		return this.productKeyss;
 	}
 
-	public void setIotId(String iotId) {
-		this.iotId = iotId;
-		if(iotId != null){
-			putQueryParameter("IotId", iotId);
-		}
+	public void setProductKeyss(List<String> productKeyss) {
+		this.productKeyss = productKeyss;	
+		if (productKeyss != null) {
+			for (int i = 0; i < productKeyss.size(); i++) {
+				putBodyParameter("ProductKeys." + (i + 1) , productKeyss.get(i));
+			}
+		}	
 	}
 
 	public String getIotInstanceId() {
@@ -55,13 +60,24 @@ public class DeleteClientIdsRequest extends RpcAcsRequest<DeleteClientIdsRespons
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProjectId() {
+		return this.projectId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId);
 		}
 	}
 
 	@Override
-	public Class<DeleteClientIdsResponse> getResponseClass() {
-		return DeleteClientIdsResponse.class;
+	public Class<BatchUnbindProjectProductsResponse> getResponseClass() {
+		return BatchUnbindProjectProductsResponse.class;
 	}
 
 }

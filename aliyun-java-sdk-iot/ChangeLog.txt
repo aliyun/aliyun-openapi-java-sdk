@@ -1,3 +1,9 @@
+2021-02-07 Version: 7.21.0
+- Add IoT Studio BatchBindDevicesIntoProject API.
+- Add IoT Studio BatchBindProductsIntoProject API.
+- Add IoT Studio BatchUnbindProjectDevices API.
+- Add IoT Studio BatchUnbindProjectProducts API.
+
 2021-01-18 Version: 7.20.0
 - Add a set of API to support device distribution management, including CreateProductDistributeJob, CreateDeviceDistributeJob, QueryDeviceDistributeJob, ListDeviceDistributeJob, QueryDeviceDistributeDetail, DeleteDeviceDistributeJob, ListDistributedDevice, ListDistributedProduct etc.
 

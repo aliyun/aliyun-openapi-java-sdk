@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.DeleteClientIdsResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.CreateRulengDistributeJobResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteClientIdsResponse extends AcsResponse {
+public class CreateRulengDistributeJobResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -65,7 +65,7 @@ public class DeleteClientIdsResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteClientIdsResponse getInstance(UnmarshallerContext context) {
-		return	DeleteClientIdsResponseUnmarshaller.unmarshall(this, context);
+	public CreateRulengDistributeJobResponse getInstance(UnmarshallerContext context) {
+		return	CreateRulengDistributeJobResponseUnmarshaller.unmarshall(this, context);
 	}
 }

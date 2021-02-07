@@ -14,19 +14,17 @@
 
 package com.aliyuncs.iot.transform.v20180120;
 
-import com.aliyuncs.iot.model.v20180120.DeleteClientIdsResponse;
+import com.aliyuncs.iot.model.v20180120.OpenIotServiceResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteClientIdsResponseUnmarshaller {
+public class OpenIotServiceResponseUnmarshaller {
 
-	public static DeleteClientIdsResponse unmarshall(DeleteClientIdsResponse deleteClientIdsResponse, UnmarshallerContext _ctx) {
+	public static OpenIotServiceResponse unmarshall(OpenIotServiceResponse openIotServiceResponse, UnmarshallerContext _ctx) {
 		
-		deleteClientIdsResponse.setRequestId(_ctx.stringValue("DeleteClientIdsResponse.RequestId"));
-		deleteClientIdsResponse.setSuccess(_ctx.booleanValue("DeleteClientIdsResponse.Success"));
-		deleteClientIdsResponse.setCode(_ctx.stringValue("DeleteClientIdsResponse.Code"));
-		deleteClientIdsResponse.setErrorMessage(_ctx.stringValue("DeleteClientIdsResponse.ErrorMessage"));
+		openIotServiceResponse.setRequestId(_ctx.stringValue("OpenIotServiceResponse.RequestId"));
+		openIotServiceResponse.setOrderId(_ctx.stringValue("OpenIotServiceResponse.OrderId"));
 	 
-	 	return deleteClientIdsResponse;
+	 	return openIotServiceResponse;
 	}
 }

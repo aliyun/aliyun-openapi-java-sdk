@@ -15,14 +15,14 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.iot.transform.v20180120.TransformClientIdResponseUnmarshaller;
+import com.aliyuncs.iot.transform.v20180120.SyncSpeechByCombinationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TransformClientIdResponse extends AcsResponse {
+public class SyncSpeechByCombinationResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +31,8 @@ public class TransformClientIdResponse extends AcsResponse {
 	private String code;
 
 	private String errorMessage;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,8 +66,39 @@ public class TransformClientIdResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String id;
+
+		private Integer retryCount;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public Integer getRetryCount() {
+			return this.retryCount;
+		}
+
+		public void setRetryCount(Integer retryCount) {
+			this.retryCount = retryCount;
+		}
+	}
+
 	@Override
-	public TransformClientIdResponse getInstance(UnmarshallerContext context) {
-		return	TransformClientIdResponseUnmarshaller.unmarshall(this, context);
+	public SyncSpeechByCombinationResponse getInstance(UnmarshallerContext context) {
+		return	SyncSpeechByCombinationResponseUnmarshaller.unmarshall(this, context);
 	}
 }

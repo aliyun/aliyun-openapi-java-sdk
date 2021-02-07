@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -22,14 +23,20 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryClientIdsRequest extends RpcAcsRequest<QueryClientIdsResponse> {
+public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCombinationResponse> {
 	   
 
 	private String iotId;
 
+	private List<String> combinationLists;
+
 	private String iotInstanceId;
-	public QueryClientIdsRequest() {
-		super("Iot", "2018-01-20", "QueryClientIds", "iot");
+
+	private String productKey;
+
+	private String deviceName;
+	public SyncSpeechByCombinationRequest() {
+		super("Iot", "2018-01-20", "SyncSpeechByCombination", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,8 +51,21 @@ public class QueryClientIdsRequest extends RpcAcsRequest<QueryClientIdsResponse>
 	public void setIotId(String iotId) {
 		this.iotId = iotId;
 		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+			putBodyParameter("IotId", iotId);
 		}
+	}
+
+	public List<String> getCombinationLists() {
+		return this.combinationLists;
+	}
+
+	public void setCombinationLists(List<String> combinationLists) {
+		this.combinationLists = combinationLists;	
+		if (combinationLists != null) {
+			for (int i = 0; i < combinationLists.size(); i++) {
+				putBodyParameter("CombinationList." + (i + 1) , combinationLists.get(i));
+			}
+		}	
 	}
 
 	public String getIotInstanceId() {
@@ -55,13 +75,35 @@ public class QueryClientIdsRequest extends RpcAcsRequest<QueryClientIdsResponse>
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
+			putBodyParameter("IotInstanceId", iotInstanceId);
+		}
+	}
+
+	public String getProductKey() {
+		return this.productKey;
+	}
+
+	public void setProductKey(String productKey) {
+		this.productKey = productKey;
+		if(productKey != null){
+			putBodyParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putBodyParameter("DeviceName", deviceName);
 		}
 	}
 
 	@Override
-	public Class<QueryClientIdsResponse> getResponseClass() {
-		return QueryClientIdsResponse.class;
+	public Class<SyncSpeechByCombinationResponse> getResponseClass() {
+		return SyncSpeechByCombinationResponse.class;
 	}
 
 }
