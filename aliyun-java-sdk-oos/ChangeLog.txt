@@ -1,3 +1,6 @@
+2021-02-07 Version: 1.4.0
+- Support patch manager apis.
+
 2020-12-02 Version: 1.3.2
 - Support TemplateContent.
 
