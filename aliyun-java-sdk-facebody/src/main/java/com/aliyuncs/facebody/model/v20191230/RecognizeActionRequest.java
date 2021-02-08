@@ -26,18 +26,29 @@ import com.aliyuncs.facebody.Endpoint;
 public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionResponse> {
 	   
 
-	private List<URLList> uRLLists;
-
 	private Integer type;
+
+	private List<URLList> uRLLists;
 
 	private String videoUrl;
 	public RecognizeActionRequest() {
-		super("facebody", "2019-12-30", "RecognizeAction", "facebody");
+		super("facebody", "2019-12-30", "RecognizeAction");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getType() {
+		return this.type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type.toString());
+		}
 	}
 
 	public List<URLList> getURLLists() {
@@ -51,17 +62,6 @@ public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionRespons
 				putBodyParameter("URLList." + (depth1 + 1) + ".URL" , uRLLists.get(depth1).getURL());
 			}
 		}	
-	}
-
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-		if(type != null){
-			putBodyParameter("Type", type.toString());
-		}
 	}
 
 	public String getVideoUrl() {

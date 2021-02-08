@@ -39,7 +39,7 @@ public class ListFaceEntitiesRequest extends RpcAcsRequest<ListFaceEntitiesRespo
 
 	private String dbName;
 	public ListFaceEntitiesRequest() {
-		super("facebody", "2019-12-30", "ListFaceEntities", "facebody");
+		super("facebody", "2019-12-30", "ListFaceEntities");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
