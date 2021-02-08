@@ -143,6 +143,8 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 		private Long allCount;
 
+		private String apiName;
+
 		public Float getAvgTps() {
 			return this.avgTps;
 		}
@@ -245,6 +247,14 @@ public class GetPtsReportDetailsResponse extends AcsResponse {
 
 		public void setAllCount(Long allCount) {
 			this.allCount = allCount;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
 		}
 	}
 

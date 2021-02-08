@@ -244,6 +244,7 @@ public class GetPtsReportDetailsResponseUnmarshaller {
 			apiMetrics.setFailCountReq(_ctx.longValue("GetPtsReportDetailsResponse.ApiMetricsList["+ i +"].FailCountReq"));
 			apiMetrics.setFailCountBiz(_ctx.longValue("GetPtsReportDetailsResponse.ApiMetricsList["+ i +"].FailCountBiz"));
 			apiMetrics.setAllCount(_ctx.longValue("GetPtsReportDetailsResponse.ApiMetricsList["+ i +"].AllCount"));
+			apiMetrics.setApiName(_ctx.stringValue("GetPtsReportDetailsResponse.ApiMetricsList["+ i +"].ApiName"));
 
 			apiMetricsList.add(apiMetrics);
 		}
