@@ -39,6 +39,8 @@ public class ModifyInstanceMaintenanceAttributesRequest extends RpcAcsRequest<Mo
 	private Long ownerId;
 
 	private List<String> instanceIds;
+
+	private Boolean notifyOnMaintenance;
 	public ModifyInstanceMaintenanceAttributesRequest() {
 		super("Ecs", "2014-05-26", "ModifyInstanceMaintenanceAttributes", "ecs");
 		setMethod(MethodType.POST);
@@ -128,6 +130,17 @@ public class ModifyInstanceMaintenanceAttributesRequest extends RpcAcsRequest<Mo
 				putQueryParameter("InstanceId." + (i + 1) , instanceIds.get(i));
 			}
 		}	
+	}
+
+	public Boolean getNotifyOnMaintenance() {
+		return this.notifyOnMaintenance;
+	}
+
+	public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
+		this.notifyOnMaintenance = notifyOnMaintenance;
+		if(notifyOnMaintenance != null){
+			putQueryParameter("NotifyOnMaintenance", notifyOnMaintenance.toString());
+		}
 	}
 
 	public static class MaintenanceWindow {

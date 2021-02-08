@@ -139,6 +139,8 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 			private Boolean instantAccess;
 
+			private Integer instantAccessRetentionDays;
+
 			public String getSnapshotId() {
 				return this.snapshotId;
 			}
@@ -177,6 +179,14 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 			public void setInstantAccess(Boolean instantAccess) {
 				this.instantAccess = instantAccess;
+			}
+
+			public Integer getInstantAccessRetentionDays() {
+				return this.instantAccessRetentionDays;
+			}
+
+			public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
+				this.instantAccessRetentionDays = instantAccessRetentionDays;
 			}
 		}
 	}

@@ -48,6 +48,8 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 
 	private String resourceOwnerAccount;
 
+	private String zoneMatchMode;
+
 	private String ownerAccount;
 
 	private List<String> instanceTypeFamilys;
@@ -188,6 +190,17 @@ public class DescribeRecommendInstanceTypeRequest extends RpcAcsRequest<Describe
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getZoneMatchMode() {
+		return this.zoneMatchMode;
+	}
+
+	public void setZoneMatchMode(String zoneMatchMode) {
+		this.zoneMatchMode = zoneMatchMode;
+		if(zoneMatchMode != null){
+			putQueryParameter("ZoneMatchMode", zoneMatchMode);
 		}
 	}
 

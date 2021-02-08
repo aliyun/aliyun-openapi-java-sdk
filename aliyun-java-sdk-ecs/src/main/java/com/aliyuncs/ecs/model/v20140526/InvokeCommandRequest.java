@@ -34,6 +34,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String frequency;
 
+	private String windowsPasswordName;
+
 	private Boolean timed;
 
 	private String resourceOwnerAccount;
@@ -86,6 +88,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.frequency = frequency;
 		if(frequency != null){
 			putQueryParameter("Frequency", frequency);
+		}
+	}
+
+	public String getWindowsPasswordName() {
+		return this.windowsPasswordName;
+	}
+
+	public void setWindowsPasswordName(String windowsPasswordName) {
+		this.windowsPasswordName = windowsPasswordName;
+		if(windowsPasswordName != null){
+			putQueryParameter("WindowsPasswordName", windowsPasswordName);
 		}
 	}
 

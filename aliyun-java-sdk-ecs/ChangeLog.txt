@@ -1,3 +1,6 @@
+2021-02-08 Version: 4.23.8
+- DescribeRecommendInstanceType support ZoneMatchMode.
+
 2021-01-25 Version: 4.23.7
 - Regenerate SDK to override list implement.
 
