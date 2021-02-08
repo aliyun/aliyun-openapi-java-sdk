@@ -14,7 +14,6 @@
 
 package com.aliyuncs.iot.model.v20180120;
 
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.iot.transform.v20180120.BatchBindDevicesIntoProjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -33,7 +32,7 @@ public class BatchBindDevicesIntoProjectResponse extends AcsResponse {
 
 	private String errorMessage;
 
-	private Map<Object,Object> data;
+	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,11 +66,11 @@ public class BatchBindDevicesIntoProjectResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Map<Object,Object> getData() {
+	public Boolean getData() {
 		return this.data;
 	}
 
-	public void setData(Map<Object,Object> data) {
+	public void setData(Boolean data) {
 		this.data = data;
 	}
 

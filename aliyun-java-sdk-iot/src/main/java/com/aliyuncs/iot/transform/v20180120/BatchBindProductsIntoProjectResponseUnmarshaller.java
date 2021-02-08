@@ -15,7 +15,6 @@
 package com.aliyuncs.iot.transform.v20180120;
 
 import com.aliyuncs.iot.model.v20180120.BatchBindProductsIntoProjectResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,7 +26,7 @@ public class BatchBindProductsIntoProjectResponseUnmarshaller {
 		batchBindProductsIntoProjectResponse.setSuccess(_ctx.booleanValue("BatchBindProductsIntoProjectResponse.Success"));
 		batchBindProductsIntoProjectResponse.setCode(_ctx.stringValue("BatchBindProductsIntoProjectResponse.Code"));
 		batchBindProductsIntoProjectResponse.setErrorMessage(_ctx.stringValue("BatchBindProductsIntoProjectResponse.ErrorMessage"));
-		batchBindProductsIntoProjectResponse.setData(_ctx.mapValue("BatchBindProductsIntoProjectResponse.Data"));
+		batchBindProductsIntoProjectResponse.setData(_ctx.booleanValue("BatchBindProductsIntoProjectResponse.Data"));
 	 
 	 	return batchBindProductsIntoProjectResponse;
 	}
