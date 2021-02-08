@@ -25,29 +25,18 @@ import com.aliyuncs.facebody.Endpoint;
 public class DetectIPCPedestrianRequest extends RpcAcsRequest<DetectIPCPedestrianResponse> {
 	   
 
-	private Integer height;
-
 	private String imageData;
 
 	private Integer width;
+
+	private Integer height;
 	public DetectIPCPedestrianRequest() {
-		super("facebody", "2019-12-30", "DetectIPCPedestrian");
+		super("facebody", "2019-12-30", "DetectIPCPedestrian", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-		if(height != null){
-			putBodyParameter("Height", height.toString());
-		}
 	}
 
 	public String getImageData() {
@@ -69,6 +58,17 @@ public class DetectIPCPedestrianRequest extends RpcAcsRequest<DetectIPCPedestria
 		this.width = width;
 		if(width != null){
 			putBodyParameter("Width", width.toString());
+		}
+	}
+
+	public Integer getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(Integer height) {
+		this.height = height;
+		if(height != null){
+			putBodyParameter("Height", height.toString());
 		}
 	}
 

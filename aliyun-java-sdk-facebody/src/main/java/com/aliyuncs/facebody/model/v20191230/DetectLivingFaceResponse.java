@@ -91,13 +91,21 @@ public class DetectLivingFaceResponse extends AcsResponse {
 
 			public static class Result {
 
+				private String label;
+
 				private String suggestion;
 
 				private Float rate;
 
-				private String label;
-
 				private List<Frame> frames;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -113,14 +121,6 @@ public class DetectLivingFaceResponse extends AcsResponse {
 
 				public void setRate(Float rate) {
 					this.rate = rate;
-				}
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
 				}
 
 				public List<Frame> getFrames() {

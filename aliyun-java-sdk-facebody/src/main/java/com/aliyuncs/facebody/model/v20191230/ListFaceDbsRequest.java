@@ -25,7 +25,7 @@ import com.aliyuncs.facebody.Endpoint;
 public class ListFaceDbsRequest extends RpcAcsRequest<ListFaceDbsResponse> {
 	   
 	public ListFaceDbsRequest() {
-		super("facebody", "2019-12-30", "ListFaceDbs");
+		super("facebody", "2019-12-30", "ListFaceDbs", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
