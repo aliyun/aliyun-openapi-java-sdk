@@ -28,10 +28,10 @@ public class GetVehicleRepairPlanResponseUnmarshaller {
 	public static GetVehicleRepairPlanResponse unmarshall(GetVehicleRepairPlanResponse getVehicleRepairPlanResponse, UnmarshallerContext _ctx) {
 		
 		getVehicleRepairPlanResponse.setRequestId(_ctx.stringValue("GetVehicleRepairPlanResponse.RequestId"));
-		getVehicleRepairPlanResponse.setCode(_ctx.stringValue("GetVehicleRepairPlanResponse.Code"));
-		getVehicleRepairPlanResponse.setErrorMessage(_ctx.stringValue("GetVehicleRepairPlanResponse.ErrorMessage"));
-		getVehicleRepairPlanResponse.setSuccess(_ctx.booleanValue("GetVehicleRepairPlanResponse.Success"));
 		getVehicleRepairPlanResponse.setHttpCode(_ctx.integerValue("GetVehicleRepairPlanResponse.HttpCode"));
+		getVehicleRepairPlanResponse.setErrorMessage(_ctx.stringValue("GetVehicleRepairPlanResponse.ErrorMessage"));
+		getVehicleRepairPlanResponse.setCode(_ctx.stringValue("GetVehicleRepairPlanResponse.Code"));
+		getVehicleRepairPlanResponse.setSuccess(_ctx.booleanValue("GetVehicleRepairPlanResponse.Success"));
 
 		Data data = new Data();
 		data.setFrameNo(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.FrameNo"));
@@ -39,17 +39,17 @@ public class GetVehicleRepairPlanResponseUnmarshaller {
 		List<RepairItems> repairParts = new ArrayList<RepairItems>();
 		for (int i = 0; i < _ctx.lengthValue("GetVehicleRepairPlanResponse.Data.RepairParts.Length"); i++) {
 			RepairItems repairItems = new RepairItems();
-			repairItems.setGarageType(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].GarageType"));
-			repairItems.setOeMatch(_ctx.booleanValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].OeMatch"));
-			repairItems.setOutStandardPartsId(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].OutStandardPartsId"));
-			repairItems.setOutStandardPartsName(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].OutStandardPartsName"));
 			repairItems.setPartNameMatch(_ctx.booleanValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].PartNameMatch"));
 			repairItems.setPartsStdCode(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].PartsStdCode"));
-			repairItems.setPartsStdName(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].PartsStdName"));
-			repairItems.setRelationType(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].RelationType"));
-			repairItems.setRepairFee(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].RepairFee"));
+			repairItems.setOutStandardPartsName(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].OutStandardPartsName"));
 			repairItems.setRepairType(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].RepairType"));
+			repairItems.setRepairFee(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].RepairFee"));
+			repairItems.setRelationType(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].RelationType"));
+			repairItems.setGarageType(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].GarageType"));
+			repairItems.setPartsStdName(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].PartsStdName"));
+			repairItems.setOutStandardPartsId(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].OutStandardPartsId"));
 			repairItems.setRepairTypeName(_ctx.stringValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].RepairTypeName"));
+			repairItems.setOeMatch(_ctx.booleanValue("GetVehicleRepairPlanResponse.Data.RepairParts["+ i +"].OeMatch"));
 
 			repairParts.add(repairItems);
 		}
