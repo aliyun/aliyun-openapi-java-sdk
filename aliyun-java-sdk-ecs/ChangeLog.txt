@@ -4,6 +4,9 @@
 2021-02-22 Version: 4.23.10
 - Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
 
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
 2021-02-08 Version: 4.23.9
 - Add username for RunCommand and InvokeCommand.
 
