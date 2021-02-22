@@ -106,6 +106,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private List<LaunchConfigurationTag> launchConfigurationTags;
 
+	private String launchConfigurationDeploymentSetId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -598,6 +600,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 				putQueryParameter("LaunchConfiguration.Tag." + (depth1 + 1) + ".Value" , launchConfigurationTags.get(depth1).getValue());
 			}
 		}	
+	}
+
+	public String getLaunchConfigurationDeploymentSetId() {
+		return this.launchConfigurationDeploymentSetId;
+	}
+
+	public void setLaunchConfigurationDeploymentSetId(String launchConfigurationDeploymentSetId) {
+		this.launchConfigurationDeploymentSetId = launchConfigurationDeploymentSetId;
+		if(launchConfigurationDeploymentSetId != null){
+			putQueryParameter("LaunchConfiguration.DeploymentSetId", launchConfigurationDeploymentSetId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {

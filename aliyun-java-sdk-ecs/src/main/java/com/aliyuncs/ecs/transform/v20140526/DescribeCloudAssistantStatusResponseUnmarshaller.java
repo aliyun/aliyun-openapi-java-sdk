@@ -27,6 +27,9 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 	public static DescribeCloudAssistantStatusResponse unmarshall(DescribeCloudAssistantStatusResponse describeCloudAssistantStatusResponse, UnmarshallerContext _ctx) {
 		
 		describeCloudAssistantStatusResponse.setRequestId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.RequestId"));
+		describeCloudAssistantStatusResponse.setTotalCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.TotalCount"));
+		describeCloudAssistantStatusResponse.setPageNumber(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageNumber"));
+		describeCloudAssistantStatusResponse.setPageSize(_ctx.longValue("DescribeCloudAssistantStatusResponse.PageSize"));
 
 		List<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet = new ArrayList<InstanceCloudAssistantStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet.Length"); i++) {
