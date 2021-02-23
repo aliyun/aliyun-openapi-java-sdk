@@ -15,7 +15,6 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.schedulerx2.Endpoint;
 
@@ -23,19 +22,15 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchDeleteJobRequest extends RpcAcsRequest<BatchDeleteJobResponse> {
+public class ListGroupsRequest extends RpcAcsRequest<ListGroupsResponse> {
 	   
 
 	private String namespaceSource;
 
-	private String groupId;
-
-	private List<Long> jobIdLists;
-
 	private String namespace;
-	public BatchDeleteJobRequest() {
-		super("schedulerx2", "2019-04-30", "BatchDeleteJob");
-		setMethod(MethodType.POST);
+	public ListGroupsRequest() {
+		super("schedulerx2", "2019-04-30", "ListGroups");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -53,30 +48,6 @@ public class BatchDeleteJobRequest extends RpcAcsRequest<BatchDeleteJobResponse>
 		}
 	}
 
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public List<Long> getJobIdLists() {
-		return this.jobIdLists;
-	}
-
-	public void setJobIdLists(List<Long> jobIdLists) {
-		this.jobIdLists = jobIdLists;	
-		if (jobIdLists != null) {
-			for (int i = 0; i < jobIdLists.size(); i++) {
-				putBodyParameter("JobIdList." + (i + 1) , jobIdLists.get(i));
-			}
-		}	
-	}
-
 	public String getNamespace() {
 		return this.namespace;
 	}
@@ -89,8 +60,8 @@ public class BatchDeleteJobRequest extends RpcAcsRequest<BatchDeleteJobResponse>
 	}
 
 	@Override
-	public Class<BatchDeleteJobResponse> getResponseClass() {
-		return BatchDeleteJobResponse.class;
+	public Class<ListGroupsResponse> getResponseClass() {
+		return ListGroupsResponse.class;
 	}
 
 }

@@ -15,7 +15,6 @@
 package com.aliyuncs.schedulerx2.model.v20190430;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.schedulerx2.Endpoint;
 
@@ -23,7 +22,7 @@ import com.aliyuncs.schedulerx2.Endpoint;
  * @author auto create
  * @version 
  */
-public class BatchDisableJobRequest extends RpcAcsRequest<BatchDisableJobResponse> {
+public class ListJobsRequest extends RpcAcsRequest<ListJobsResponse> {
 	   
 
 	private String namespaceSource;
@@ -32,10 +31,12 @@ public class BatchDisableJobRequest extends RpcAcsRequest<BatchDisableJobRespons
 
 	private String namespace;
 
-	private List<Long> jobIdLists;
-	public BatchDisableJobRequest() {
-		super("schedulerx2", "2019-04-30", "BatchDisableJob");
-		setMethod(MethodType.POST);
+	private String jobName;
+
+	private String status;
+	public ListJobsRequest() {
+		super("schedulerx2", "2019-04-30", "ListJobs");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -75,22 +76,31 @@ public class BatchDisableJobRequest extends RpcAcsRequest<BatchDisableJobRespons
 		}
 	}
 
-	public List<Long> getJobIdLists() {
-		return this.jobIdLists;
+	public String getJobName() {
+		return this.jobName;
 	}
 
-	public void setJobIdLists(List<Long> jobIdLists) {
-		this.jobIdLists = jobIdLists;	
-		if (jobIdLists != null) {
-			for (int i = 0; i < jobIdLists.size(); i++) {
-				putBodyParameter("JobIdList." + (i + 1) , jobIdLists.get(i));
-			}
-		}	
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+		if(jobName != null){
+			putQueryParameter("JobName", jobName);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	@Override
-	public Class<BatchDisableJobResponse> getResponseClass() {
-		return BatchDisableJobResponse.class;
+	public Class<ListJobsResponse> getResponseClass() {
+		return ListJobsResponse.class;
 	}
 
 }

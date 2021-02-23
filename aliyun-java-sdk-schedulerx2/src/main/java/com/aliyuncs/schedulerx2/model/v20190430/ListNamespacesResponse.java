@@ -14,15 +14,16 @@
 
 package com.aliyuncs.schedulerx2.model.v20190430;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.schedulerx2.transform.v20190430.BatchDisableJobResponseUnmarshaller;
+import com.aliyuncs.schedulerx2.transform.v20190430.ListNamespacesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchDisableJobResponse extends AcsResponse {
+public class ListNamespacesResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +32,8 @@ public class BatchDisableJobResponse extends AcsResponse {
 	private Boolean success;
 
 	private String message;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,9 +67,63 @@ public class BatchDisableJobResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private List<Namespace> namespaces;
+
+		public List<Namespace> getNamespaces() {
+			return this.namespaces;
+		}
+
+		public void setNamespaces(List<Namespace> namespaces) {
+			this.namespaces = namespaces;
+		}
+
+		public static class Namespace {
+
+			private String name;
+
+			private String uId;
+
+			private String description;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getUId() {
+				return this.uId;
+			}
+
+			public void setUId(String uId) {
+				this.uId = uId;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+		}
+	}
+
 	@Override
-	public BatchDisableJobResponse getInstance(UnmarshallerContext context) {
-		return	BatchDisableJobResponseUnmarshaller.unmarshall(this, context);
+	public ListNamespacesResponse getInstance(UnmarshallerContext context) {
+		return	ListNamespacesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

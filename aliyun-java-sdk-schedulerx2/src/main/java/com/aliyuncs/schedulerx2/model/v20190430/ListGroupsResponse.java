@@ -14,15 +14,16 @@
 
 package com.aliyuncs.schedulerx2.model.v20190430;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.schedulerx2.transform.v20190430.BatchDeleteJobResponseUnmarshaller;
+import com.aliyuncs.schedulerx2.transform.v20190430.ListGroupsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class BatchDeleteJobResponse extends AcsResponse {
+public class ListGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,6 +32,8 @@ public class BatchDeleteJobResponse extends AcsResponse {
 	private String message;
 
 	private Boolean success;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,9 +67,73 @@ public class BatchDeleteJobResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private List<AppGroup> appGroups;
+
+		public List<AppGroup> getAppGroups() {
+			return this.appGroups;
+		}
+
+		public void setAppGroups(List<AppGroup> appGroups) {
+			this.appGroups = appGroups;
+		}
+
+		public static class AppGroup {
+
+			private String appName;
+
+			private String groupId;
+
+			private String appKey;
+
+			private String description;
+
+			public String getAppName() {
+				return this.appName;
+			}
+
+			public void setAppName(String appName) {
+				this.appName = appName;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
+
+			public String getAppKey() {
+				return this.appKey;
+			}
+
+			public void setAppKey(String appKey) {
+				this.appKey = appKey;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+		}
+	}
+
 	@Override
-	public BatchDeleteJobResponse getInstance(UnmarshallerContext context) {
-		return	BatchDeleteJobResponseUnmarshaller.unmarshall(this, context);
+	public ListGroupsResponse getInstance(UnmarshallerContext context) {
+		return	ListGroupsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
