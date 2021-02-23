@@ -35,9 +35,11 @@ public class CreateEnvironmentRequest extends RpcAcsRequest<CreateEnvironmentRes
 
 	private Long appSchemaId;
 
+	private String clusterId;
+
 	private String region;
 	public CreateEnvironmentRequest() {
-		super("retailcloud", "2018-03-13", "CreateEnvironment", "retailcloud");
+		super("retailcloud", "2018-03-13", "CreateEnvironment");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -97,6 +99,17 @@ public class CreateEnvironmentRequest extends RpcAcsRequest<CreateEnvironmentRes
 		this.appSchemaId = appSchemaId;
 		if(appSchemaId != null){
 			putQueryParameter("AppSchemaId", appSchemaId.toString());
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 

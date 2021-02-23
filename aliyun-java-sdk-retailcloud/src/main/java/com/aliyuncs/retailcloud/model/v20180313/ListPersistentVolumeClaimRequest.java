@@ -33,7 +33,7 @@ public class ListPersistentVolumeClaimRequest extends RpcAcsRequest<ListPersiste
 
 	private Integer pageNumber;
 	public ListPersistentVolumeClaimRequest() {
-		super("retailcloud", "2018-03-13", "ListPersistentVolumeClaim", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListPersistentVolumeClaim");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

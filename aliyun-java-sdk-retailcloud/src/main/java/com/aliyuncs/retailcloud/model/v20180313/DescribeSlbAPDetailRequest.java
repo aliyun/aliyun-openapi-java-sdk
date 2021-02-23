@@ -27,7 +27,7 @@ public class DescribeSlbAPDetailRequest extends RpcAcsRequest<DescribeSlbAPDetai
 
 	private Long slbAPId;
 	public DescribeSlbAPDetailRequest() {
-		super("retailcloud", "2018-03-13", "DescribeSlbAPDetail", "retailcloud");
+		super("retailcloud", "2018-03-13", "DescribeSlbAPDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

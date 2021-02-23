@@ -29,7 +29,7 @@ public class DeletePersistentVolumeRequest extends RpcAcsRequest<DeletePersisten
 
 	private String clusterInstanceId;
 	public DeletePersistentVolumeRequest() {
-		super("retailcloud", "2018-03-13", "DeletePersistentVolume", "retailcloud");
+		super("retailcloud", "2018-03-13", "DeletePersistentVolume");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

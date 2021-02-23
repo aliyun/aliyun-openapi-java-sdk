@@ -115,6 +115,8 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 		private String limits;
 
+		private String version;
+
 		public String getAppInstanceId() {
 			return this.appInstanceId;
 		}
@@ -185,6 +187,14 @@ public class ListAppInstanceResponse extends AcsResponse {
 
 		public void setLimits(String limits) {
 			this.limits = limits;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

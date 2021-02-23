@@ -31,7 +31,7 @@ public class ListAvailableClusterNodeRequest extends RpcAcsRequest<ListAvailable
 
 	private String clusterInstanceId;
 	public ListAvailableClusterNodeRequest() {
-		super("retailcloud", "2018-03-13", "ListAvailableClusterNode", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListAvailableClusterNode");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

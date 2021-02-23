@@ -31,7 +31,7 @@ public class BatchAddServersRequest extends RpcAcsRequest<BatchAddServersRespons
 
 	private String sign;
 	public BatchAddServersRequest() {
-		super("retailcloud", "2018-03-13", "BatchAddServers", "retailcloud");
+		super("retailcloud", "2018-03-13", "BatchAddServers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

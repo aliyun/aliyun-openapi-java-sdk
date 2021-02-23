@@ -66,7 +66,7 @@ public class ListDeployOrdersRequest extends RpcAcsRequest<ListDeployOrdersRespo
 
 	private Integer status;
 	public ListDeployOrdersRequest() {
-		super("retailcloud", "2018-03-13", "ListDeployOrders", "retailcloud");
+		super("retailcloud", "2018-03-13", "ListDeployOrders");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

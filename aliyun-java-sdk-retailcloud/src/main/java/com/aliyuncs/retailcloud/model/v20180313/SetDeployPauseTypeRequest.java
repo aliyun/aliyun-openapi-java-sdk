@@ -29,7 +29,7 @@ public class SetDeployPauseTypeRequest extends RpcAcsRequest<SetDeployPauseTypeR
 
 	private Long deployOrderId;
 	public SetDeployPauseTypeRequest() {
-		super("retailcloud", "2018-03-13", "SetDeployPauseType", "retailcloud");
+		super("retailcloud", "2018-03-13", "SetDeployPauseType");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

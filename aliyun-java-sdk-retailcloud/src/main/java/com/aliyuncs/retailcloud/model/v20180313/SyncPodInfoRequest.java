@@ -37,7 +37,7 @@ public class SyncPodInfoRequest extends RpcAcsRequest<SyncPodInfoResponse> {
 
 	private Boolean status;
 	public SyncPodInfoRequest() {
-		super("retailcloud", "2018-03-13", "SyncPodInfo", "retailcloud");
+		super("retailcloud", "2018-03-13", "SyncPodInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
