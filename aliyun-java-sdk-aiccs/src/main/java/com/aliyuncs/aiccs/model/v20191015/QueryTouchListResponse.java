@@ -77,52 +77,28 @@ public class QueryTouchListResponse extends AcsResponse {
 
 	public static class ResultData {
 
-		private Integer totalResults;
-
-		private Integer previousPage;
-
-		private Integer totalPage;
-
-		private Integer nextPage;
+		private Boolean empty;
 
 		private Integer onePageSize;
 
+		private Integer totalPage;
+
 		private Integer currentPage;
 
-		private Boolean empty;
+		private Integer previousPage;
+
+		private Integer totalResults;
+
+		private Integer nextPage;
 
 		private List<DataItem> data;
 
-		public Integer getTotalResults() {
-			return this.totalResults;
+		public Boolean getEmpty() {
+			return this.empty;
 		}
 
-		public void setTotalResults(Integer totalResults) {
-			this.totalResults = totalResults;
-		}
-
-		public Integer getPreviousPage() {
-			return this.previousPage;
-		}
-
-		public void setPreviousPage(Integer previousPage) {
-			this.previousPage = previousPage;
-		}
-
-		public Integer getTotalPage() {
-			return this.totalPage;
-		}
-
-		public void setTotalPage(Integer totalPage) {
-			this.totalPage = totalPage;
-		}
-
-		public Integer getNextPage() {
-			return this.nextPage;
-		}
-
-		public void setNextPage(Integer nextPage) {
-			this.nextPage = nextPage;
+		public void setEmpty(Boolean empty) {
+			this.empty = empty;
 		}
 
 		public Integer getOnePageSize() {
@@ -133,6 +109,14 @@ public class QueryTouchListResponse extends AcsResponse {
 			this.onePageSize = onePageSize;
 		}
 
+		public Integer getTotalPage() {
+			return this.totalPage;
+		}
+
+		public void setTotalPage(Integer totalPage) {
+			this.totalPage = totalPage;
+		}
+
 		public Integer getCurrentPage() {
 			return this.currentPage;
 		}
@@ -141,12 +125,28 @@ public class QueryTouchListResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
-		public Boolean getEmpty() {
-			return this.empty;
+		public Integer getPreviousPage() {
+			return this.previousPage;
 		}
 
-		public void setEmpty(Boolean empty) {
-			this.empty = empty;
+		public void setPreviousPage(Integer previousPage) {
+			this.previousPage = previousPage;
+		}
+
+		public Integer getTotalResults() {
+			return this.totalResults;
+		}
+
+		public void setTotalResults(Integer totalResults) {
+			this.totalResults = totalResults;
+		}
+
+		public Integer getNextPage() {
+			return this.nextPage;
+		}
+
+		public void setNextPage(Integer nextPage) {
+			this.nextPage = nextPage;
 		}
 
 		public List<DataItem> getData() {
@@ -159,90 +159,66 @@ public class QueryTouchListResponse extends AcsResponse {
 
 		public static class DataItem {
 
-			private Long toId;
-
-			private Long queueId;
-
-			private Long gmtModified;
-
-			private String touchTime;
+			private Long depId;
 
 			private Long parentTouchId;
 
-			private String memberName;
+			private Long userTouchId;
 
-			private Integer channelType;
-
-			private String feedback;
-
-			private String switchUser;
-
-			private Integer touchEndReason;
-
-			private Long closeTime;
+			private Long gmtModified;
 
 			private String channelId;
 
-			private Long memberId;
-
-			private Long buId;
-
-			private String touchContent;
+			private String commonQueueName;
 
 			private String touchId;
 
-			private Long servicerId;
-
-			private Long gmtCreate;
-
-			private Long fromId;
-
-			private Long firstTime;
-
-			private Long userTouchId;
-
-			private Integer touchType;
+			private Long memberId;
 
 			private String servicerName;
 
-			private Long depId;
+			private String feedback;
 
-			private String commonQueueName;
+			private Integer touchType;
+
+			private String switchUser;
 
 			private Integer status;
 
+			private Long firstTime;
+
+			private Long fromId;
+
+			private Long queueId;
+
+			private String touchTime;
+
+			private Long buId;
+
+			private Long toId;
+
+			private Long gmtCreate;
+
+			private Long closeTime;
+
+			private Integer touchEndReason;
+
+			private String memberName;
+
+			private Long servicerId;
+
+			private Integer channelType;
+
+			private String touchContent;
+
 			private ExtAttrs extAttrs;
 
-			public Long getToId() {
-				return this.toId;
+			public Long getDepId() {
+				return this.depId;
 			}
 
-			public void setToId(Long toId) {
-				this.toId = toId;
-			}
-
-			public Long getQueueId() {
-				return this.queueId;
-			}
-
-			public void setQueueId(Long queueId) {
-				this.queueId = queueId;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getTouchTime() {
-				return this.touchTime;
-			}
-
-			public void setTouchTime(String touchTime) {
-				this.touchTime = touchTime;
+			public void setDepId(Long depId) {
+				this.depId = depId;
 			}
 
 			public Long getParentTouchId() {
@@ -253,52 +229,20 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.parentTouchId = parentTouchId;
 			}
 
-			public String getMemberName() {
-				return this.memberName;
+			public Long getUserTouchId() {
+				return this.userTouchId;
 			}
 
-			public void setMemberName(String memberName) {
-				this.memberName = memberName;
+			public void setUserTouchId(Long userTouchId) {
+				this.userTouchId = userTouchId;
 			}
 
-			public Integer getChannelType() {
-				return this.channelType;
+			public Long getGmtModified() {
+				return this.gmtModified;
 			}
 
-			public void setChannelType(Integer channelType) {
-				this.channelType = channelType;
-			}
-
-			public String getFeedback() {
-				return this.feedback;
-			}
-
-			public void setFeedback(String feedback) {
-				this.feedback = feedback;
-			}
-
-			public String getSwitchUser() {
-				return this.switchUser;
-			}
-
-			public void setSwitchUser(String switchUser) {
-				this.switchUser = switchUser;
-			}
-
-			public Integer getTouchEndReason() {
-				return this.touchEndReason;
-			}
-
-			public void setTouchEndReason(Integer touchEndReason) {
-				this.touchEndReason = touchEndReason;
-			}
-
-			public Long getCloseTime() {
-				return this.closeTime;
-			}
-
-			public void setCloseTime(Long closeTime) {
-				this.closeTime = closeTime;
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
 			public String getChannelId() {
@@ -309,28 +253,12 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.channelId = channelId;
 			}
 
-			public Long getMemberId() {
-				return this.memberId;
+			public String getCommonQueueName() {
+				return this.commonQueueName;
 			}
 
-			public void setMemberId(Long memberId) {
-				this.memberId = memberId;
-			}
-
-			public Long getBuId() {
-				return this.buId;
-			}
-
-			public void setBuId(Long buId) {
-				this.buId = buId;
-			}
-
-			public String getTouchContent() {
-				return this.touchContent;
-			}
-
-			public void setTouchContent(String touchContent) {
-				this.touchContent = touchContent;
+			public void setCommonQueueName(String commonQueueName) {
+				this.commonQueueName = commonQueueName;
 			}
 
 			public String getTouchId() {
@@ -341,52 +269,12 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.touchId = touchId;
 			}
 
-			public Long getServicerId() {
-				return this.servicerId;
+			public Long getMemberId() {
+				return this.memberId;
 			}
 
-			public void setServicerId(Long servicerId) {
-				this.servicerId = servicerId;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getFromId() {
-				return this.fromId;
-			}
-
-			public void setFromId(Long fromId) {
-				this.fromId = fromId;
-			}
-
-			public Long getFirstTime() {
-				return this.firstTime;
-			}
-
-			public void setFirstTime(Long firstTime) {
-				this.firstTime = firstTime;
-			}
-
-			public Long getUserTouchId() {
-				return this.userTouchId;
-			}
-
-			public void setUserTouchId(Long userTouchId) {
-				this.userTouchId = userTouchId;
-			}
-
-			public Integer getTouchType() {
-				return this.touchType;
-			}
-
-			public void setTouchType(Integer touchType) {
-				this.touchType = touchType;
+			public void setMemberId(Long memberId) {
+				this.memberId = memberId;
 			}
 
 			public String getServicerName() {
@@ -397,20 +285,28 @@ public class QueryTouchListResponse extends AcsResponse {
 				this.servicerName = servicerName;
 			}
 
-			public Long getDepId() {
-				return this.depId;
+			public String getFeedback() {
+				return this.feedback;
 			}
 
-			public void setDepId(Long depId) {
-				this.depId = depId;
+			public void setFeedback(String feedback) {
+				this.feedback = feedback;
 			}
 
-			public String getCommonQueueName() {
-				return this.commonQueueName;
+			public Integer getTouchType() {
+				return this.touchType;
 			}
 
-			public void setCommonQueueName(String commonQueueName) {
-				this.commonQueueName = commonQueueName;
+			public void setTouchType(Integer touchType) {
+				this.touchType = touchType;
+			}
+
+			public String getSwitchUser() {
+				return this.switchUser;
+			}
+
+			public void setSwitchUser(String switchUser) {
+				this.switchUser = switchUser;
 			}
 
 			public Integer getStatus() {
@@ -419,6 +315,110 @@ public class QueryTouchListResponse extends AcsResponse {
 
 			public void setStatus(Integer status) {
 				this.status = status;
+			}
+
+			public Long getFirstTime() {
+				return this.firstTime;
+			}
+
+			public void setFirstTime(Long firstTime) {
+				this.firstTime = firstTime;
+			}
+
+			public Long getFromId() {
+				return this.fromId;
+			}
+
+			public void setFromId(Long fromId) {
+				this.fromId = fromId;
+			}
+
+			public Long getQueueId() {
+				return this.queueId;
+			}
+
+			public void setQueueId(Long queueId) {
+				this.queueId = queueId;
+			}
+
+			public String getTouchTime() {
+				return this.touchTime;
+			}
+
+			public void setTouchTime(String touchTime) {
+				this.touchTime = touchTime;
+			}
+
+			public Long getBuId() {
+				return this.buId;
+			}
+
+			public void setBuId(Long buId) {
+				this.buId = buId;
+			}
+
+			public Long getToId() {
+				return this.toId;
+			}
+
+			public void setToId(Long toId) {
+				this.toId = toId;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Long getCloseTime() {
+				return this.closeTime;
+			}
+
+			public void setCloseTime(Long closeTime) {
+				this.closeTime = closeTime;
+			}
+
+			public Integer getTouchEndReason() {
+				return this.touchEndReason;
+			}
+
+			public void setTouchEndReason(Integer touchEndReason) {
+				this.touchEndReason = touchEndReason;
+			}
+
+			public String getMemberName() {
+				return this.memberName;
+			}
+
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
+			}
+
+			public Long getServicerId() {
+				return this.servicerId;
+			}
+
+			public void setServicerId(Long servicerId) {
+				this.servicerId = servicerId;
+			}
+
+			public Integer getChannelType() {
+				return this.channelType;
+			}
+
+			public void setChannelType(Integer channelType) {
+				this.channelType = channelType;
+			}
+
+			public String getTouchContent() {
+				return this.touchContent;
+			}
+
+			public void setTouchContent(String touchContent) {
+				this.touchContent = touchContent;
 			}
 
 			public ExtAttrs getExtAttrs() {
@@ -431,25 +431,17 @@ public class QueryTouchListResponse extends AcsResponse {
 
 			public static class ExtAttrs {
 
-				private Integer evaluationSolution;
-
 				private Integer evaluationScore;
-
-				private Integer onlineSessionSource;
-
-				private Integer evaluationLevel;
-
-				private Integer evaluationStatus;
 
 				private Integer onlineJoinRespInterval;
 
-				public Integer getEvaluationSolution() {
-					return this.evaluationSolution;
-				}
+				private Integer onlineSessionSource;
 
-				public void setEvaluationSolution(Integer evaluationSolution) {
-					this.evaluationSolution = evaluationSolution;
-				}
+				private Integer evaluationStatus;
+
+				private Integer evaluationLevel;
+
+				private Integer evaluationSolution;
 
 				public Integer getEvaluationScore() {
 					return this.evaluationScore;
@@ -457,6 +449,14 @@ public class QueryTouchListResponse extends AcsResponse {
 
 				public void setEvaluationScore(Integer evaluationScore) {
 					this.evaluationScore = evaluationScore;
+				}
+
+				public Integer getOnlineJoinRespInterval() {
+					return this.onlineJoinRespInterval;
+				}
+
+				public void setOnlineJoinRespInterval(Integer onlineJoinRespInterval) {
+					this.onlineJoinRespInterval = onlineJoinRespInterval;
 				}
 
 				public Integer getOnlineSessionSource() {
@@ -467,14 +467,6 @@ public class QueryTouchListResponse extends AcsResponse {
 					this.onlineSessionSource = onlineSessionSource;
 				}
 
-				public Integer getEvaluationLevel() {
-					return this.evaluationLevel;
-				}
-
-				public void setEvaluationLevel(Integer evaluationLevel) {
-					this.evaluationLevel = evaluationLevel;
-				}
-
 				public Integer getEvaluationStatus() {
 					return this.evaluationStatus;
 				}
@@ -483,12 +475,20 @@ public class QueryTouchListResponse extends AcsResponse {
 					this.evaluationStatus = evaluationStatus;
 				}
 
-				public Integer getOnlineJoinRespInterval() {
-					return this.onlineJoinRespInterval;
+				public Integer getEvaluationLevel() {
+					return this.evaluationLevel;
 				}
 
-				public void setOnlineJoinRespInterval(Integer onlineJoinRespInterval) {
-					this.onlineJoinRespInterval = onlineJoinRespInterval;
+				public void setEvaluationLevel(Integer evaluationLevel) {
+					this.evaluationLevel = evaluationLevel;
+				}
+
+				public Integer getEvaluationSolution() {
+					return this.evaluationSolution;
+				}
+
+				public void setEvaluationSolution(Integer evaluationSolution) {
+					this.evaluationSolution = evaluationSolution;
 				}
 			}
 		}
