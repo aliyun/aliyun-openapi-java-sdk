@@ -1,3 +1,6 @@
+2021-02-24 Version: 4.2.0
+- Public V42.
+
 2021-02-24 Version: 1.8.0
 - Public V42.
 
