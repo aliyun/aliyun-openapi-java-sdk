@@ -37,7 +37,7 @@ public class StartCallV2Request extends RpcAcsRequest<StartCallV2Response> {
 
 	private String jsonMsg;
 	public StartCallV2Request() {
-		super("scsp", "2020-07-02", "StartCallV2", "scsp");
+		super("scsp", "2020-07-02", "StartCallV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

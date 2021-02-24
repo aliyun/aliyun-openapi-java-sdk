@@ -22,32 +22,21 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
+public class QueryServiceConfigRequest extends RpcAcsRequest<QueryServiceConfigResponse> {
 	   
-
-	private String clientToken;
 
 	private String instanceId;
 
-	private Long roleId;
-	public DisableRoleRequest() {
-		super("scsp", "2020-07-02", "DisableRole");
-		setMethod(MethodType.POST);
+	private String viewCode;
+
+	private String parameters;
+	public QueryServiceConfigRequest() {
+		super("scsp", "2020-07-02", "QueryServiceConfig");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getInstanceId() {
@@ -57,24 +46,35 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public String getViewCode() {
+		return this.viewCode;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putBodyParameter("RoleId", roleId.toString());
+	public void setViewCode(String viewCode) {
+		this.viewCode = viewCode;
+		if(viewCode != null){
+			putQueryParameter("ViewCode", viewCode);
+		}
+	}
+
+	public String getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+		if(parameters != null){
+			putQueryParameter("Parameters", parameters);
 		}
 	}
 
 	@Override
-	public Class<DisableRoleResponse> getResponseClass() {
-		return DisableRoleResponse.class;
+	public Class<QueryServiceConfigResponse> getResponseClass() {
+		return QueryServiceConfigResponse.class;
 	}
 
 }

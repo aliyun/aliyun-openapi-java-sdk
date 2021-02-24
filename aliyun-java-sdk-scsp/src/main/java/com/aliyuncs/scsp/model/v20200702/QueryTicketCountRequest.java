@@ -22,16 +22,16 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
+public class QueryTicketCountRequest extends RpcAcsRequest<QueryTicketCountResponse> {
 	   
 
 	private String clientToken;
 
 	private String instanceId;
 
-	private Long roleId;
-	public DisableRoleRequest() {
-		super("scsp", "2020-07-02", "DisableRole");
+	private Long operatorId;
+	public QueryTicketCountRequest() {
+		super("scsp", "2020-07-02", "QueryTicketCount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -46,7 +46,7 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 	public void setClientToken(String clientToken) {
 		this.clientToken = clientToken;
 		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -57,24 +57,24 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public Long getOperatorId() {
+		return this.operatorId;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putBodyParameter("RoleId", roleId.toString());
+	public void setOperatorId(Long operatorId) {
+		this.operatorId = operatorId;
+		if(operatorId != null){
+			putQueryParameter("OperatorId", operatorId.toString());
 		}
 	}
 
 	@Override
-	public Class<DisableRoleResponse> getResponseClass() {
-		return DisableRoleResponse.class;
+	public Class<QueryTicketCountResponse> getResponseClass() {
+		return QueryTicketCountResponse.class;
 	}
 
 }

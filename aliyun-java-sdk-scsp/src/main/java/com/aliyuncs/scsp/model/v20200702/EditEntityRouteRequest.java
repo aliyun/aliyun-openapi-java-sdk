@@ -47,7 +47,7 @@ public class EditEntityRouteRequest extends RpcAcsRequest<EditEntityRouteRespons
 
 	private Long uniqueId;
 	public EditEntityRouteRequest() {
-		super("scsp", "2020-07-02", "EditEntityRoute", "scsp");
+		super("scsp", "2020-07-02", "EditEntityRoute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

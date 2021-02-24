@@ -37,7 +37,7 @@ public class ExecuteActivityRequest extends RpcAcsRequest<ExecuteActivityRespons
 
 	private String activityForm;
 	public ExecuteActivityRequest() {
-		super("scsp", "2020-07-02", "ExecuteActivity", "scsp");
+		super("scsp", "2020-07-02", "ExecuteActivity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

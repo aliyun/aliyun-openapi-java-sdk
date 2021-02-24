@@ -33,7 +33,7 @@ public class UpdateRingStatusRequest extends RpcAcsRequest<UpdateRingStatusRespo
 
 	private String uniqueBizId;
 	public UpdateRingStatusRequest() {
-		super("scsp", "2020-07-02", "UpdateRingStatus", "scsp");
+		super("scsp", "2020-07-02", "UpdateRingStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

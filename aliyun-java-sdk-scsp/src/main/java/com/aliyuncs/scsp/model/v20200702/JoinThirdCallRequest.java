@@ -39,7 +39,7 @@ public class JoinThirdCallRequest extends RpcAcsRequest<JoinThirdCallResponse> {
 
 	private String holdConnectionId;
 	public JoinThirdCallRequest() {
-		super("scsp", "2020-07-02", "JoinThirdCall", "scsp");
+		super("scsp", "2020-07-02", "JoinThirdCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
