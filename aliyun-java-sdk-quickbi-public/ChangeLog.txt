@@ -1,3 +1,6 @@
+2021-02-24 Version: 1.4.1
+- Fix the bugs for missing some interfaces in version 1_4_0, Version 1_4_0 is not recommended.
+
 2021-02-02 Version: 1.4.0
 - Add Apis, includes QueryOrganizationWorkspaceList,UpdateEmbeddedStatus,QueryEmbeddedStaus,QueryEmbeddedInfo,CheckReadable,QueryReadableResourcesListByUserId,QueryWorksByWorkspace,QueryWorksByOrganization,QueryDatasetDetailInfo,QueryDatasetList,DeleteRowLevelPermission,AddRowLevelByTag,DeleteRowLevelByTag,AddRowLevelPermission,QueryDatasetRowLevelPermissionInfo,SwitchRowLevelType,SwitchColumnRowLevelControl,SwitchDatasetRowLevelControl,CancelReportShare,QuerySharesToUserList,AddShareReport,QueryShareList.
 
