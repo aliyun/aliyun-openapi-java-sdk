@@ -22,12 +22,12 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeCharacterSetRequest extends RpcAcsRequest<DescribeCharacterSetResponse> {
+public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPolicyResponse> {
 	   
 
 	private String dBInstanceName;
-	public DescribeCharacterSetRequest() {
-		super("polardbx", "2020-02-02", "DescribeCharacterSet", "polardbx");
+	public DescribeBackupPolicyRequest() {
+		super("polardbx", "2020-02-02", "DescribeBackupPolicy", "polardbx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class DescribeCharacterSetRequest extends RpcAcsRequest<DescribeCharacter
 	}
 
 	@Override
-	public Class<DescribeCharacterSetResponse> getResponseClass() {
-		return DescribeCharacterSetResponse.class;
+	public Class<DescribeBackupPolicyResponse> getResponseClass() {
+		return DescribeBackupPolicyResponse.class;
 	}
 
 }

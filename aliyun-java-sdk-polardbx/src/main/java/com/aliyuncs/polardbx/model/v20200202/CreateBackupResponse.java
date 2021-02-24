@@ -16,22 +16,30 @@ package com.aliyuncs.polardbx.model.v20200202;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardbx.transform.v20200202.DescribeCharacterSetResponseUnmarshaller;
+import com.aliyuncs.polardbx.transform.v20200202.CreateBackupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeCharacterSetResponse extends AcsResponse {
+public class CreateBackupResponse extends AcsResponse {
+
+	private String message;
 
 	private String requestId;
 
 	private Boolean success;
 
-	private String message;
+	private List<Account> data;
 
-	private Data data;
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,48 +57,30 @@ public class DescribeCharacterSetResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Data getData() {
+	public List<Account> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<Account> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class Account {
 
-		private String engine;
+		private Long backupSetId;
 
-		private List<String> characterSet;
-
-		public String getEngine() {
-			return this.engine;
+		public Long getBackupSetId() {
+			return this.backupSetId;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
-		}
-
-		public List<String> getCharacterSet() {
-			return this.characterSet;
-		}
-
-		public void setCharacterSet(List<String> characterSet) {
-			this.characterSet = characterSet;
+		public void setBackupSetId(Long backupSetId) {
+			this.backupSetId = backupSetId;
 		}
 	}
 
 	@Override
-	public DescribeCharacterSetResponse getInstance(UnmarshallerContext context) {
-		return	DescribeCharacterSetResponseUnmarshaller.unmarshall(this, context);
+	public CreateBackupResponse getInstance(UnmarshallerContext context) {
+		return	CreateBackupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

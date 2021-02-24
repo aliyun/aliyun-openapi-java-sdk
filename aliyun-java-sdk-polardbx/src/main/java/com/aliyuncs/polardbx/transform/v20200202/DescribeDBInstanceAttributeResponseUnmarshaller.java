@@ -40,7 +40,7 @@ public class DescribeDBInstanceAttributeResponseUnmarshaller {
 		dBInstance.setPayType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.PayType"));
 		dBInstance.setDBType(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBType"));
 		dBInstance.setLockMode(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.LockMode"));
-		dBInstance.setStorageUsed(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.StorageUsed"));
+		dBInstance.setStorageUsed(_ctx.longValue("DescribeDBInstanceAttributeResponse.DBInstance.StorageUsed"));
 		dBInstance.setDBVersion(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.DBVersion"));
 		dBInstance.setNetwork(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.Network"));
 		dBInstance.setRegionId(_ctx.stringValue("DescribeDBInstanceAttributeResponse.DBInstance.RegionId"));

@@ -53,9 +53,10 @@ public class DescribeDBInstancesResponseUnmarshaller {
 			dBInstance.setLockReason(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].LockReason"));
 			dBInstance.setNodeCount(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].NodeCount"));
 			dBInstance.setNodeClass(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].NodeClass"));
-			dBInstance.setStorageUsed(_ctx.integerValue("DescribeDBInstancesResponse.DBInstances["+ i +"].StorageUsed"));
+			dBInstance.setStorageUsed(_ctx.longValue("DescribeDBInstancesResponse.DBInstances["+ i +"].StorageUsed"));
 			dBInstance.setCommodityCode(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].CommodityCode"));
 			dBInstance.setType(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].Type"));
+			dBInstance.setMinorVersion(_ctx.stringValue("DescribeDBInstancesResponse.DBInstances["+ i +"].MinorVersion"));
 
 			List<String> readDBInstances = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBInstancesResponse.DBInstances["+ i +"].ReadDBInstances.Length"); j++) {

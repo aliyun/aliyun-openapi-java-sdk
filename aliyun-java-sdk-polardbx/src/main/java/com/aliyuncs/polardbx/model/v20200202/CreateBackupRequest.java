@@ -22,10 +22,14 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class CheckHealthRequest extends RpcAcsRequest<CheckHealthResponse> {
+public class CreateBackupRequest extends RpcAcsRequest<CreateBackupResponse> {
 	   
-	public CheckHealthRequest() {
-		super("polardbx", "2020-02-02", "CheckHealth", "polardbx");
+
+	private String dBInstanceName;
+
+	private String backupType;
+	public CreateBackupRequest() {
+		super("polardbx", "2020-02-02", "CreateBackup", "polardbx");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -33,9 +37,31 @@ public class CheckHealthRequest extends RpcAcsRequest<CheckHealthResponse> {
 		} catch (Exception e) {}
 	}
 
+	public String getDBInstanceName() {
+		return this.dBInstanceName;
+	}
+
+	public void setDBInstanceName(String dBInstanceName) {
+		this.dBInstanceName = dBInstanceName;
+		if(dBInstanceName != null){
+			putQueryParameter("DBInstanceName", dBInstanceName);
+		}
+	}
+
+	public String getBackupType() {
+		return this.backupType;
+	}
+
+	public void setBackupType(String backupType) {
+		this.backupType = backupType;
+		if(backupType != null){
+			putQueryParameter("BackupType", backupType);
+		}
+	}
+
 	@Override
-	public Class<CheckHealthResponse> getResponseClass() {
-		return CheckHealthResponse.class;
+	public Class<CreateBackupResponse> getResponseClass() {
+		return CreateBackupResponse.class;
 	}
 
 }

@@ -22,15 +22,21 @@ import com.aliyuncs.polardbx.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceConfigRequest extends RpcAcsRequest<DescribeDBInstanceConfigResponse> {
+public class DescribeBackupSetListRequest extends RpcAcsRequest<DescribeBackupSetListResponse> {
 	   
 
 	private String dBInstanceName;
 
-	private String configName;
-	public DescribeDBInstanceConfigRequest() {
-		super("polardbx", "2020-02-02", "DescribeDBInstanceConfig", "polardbx");
-		setMethod(MethodType.POST);
+	private Long endTime;
+
+	private Long startTime;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+	public DescribeBackupSetListRequest() {
+		super("polardbx", "2020-02-02", "DescribeBackupSetList", "polardbx");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -48,20 +54,53 @@ public class DescribeDBInstanceConfigRequest extends RpcAcsRequest<DescribeDBIns
 		}
 	}
 
-	public String getConfigName() {
-		return this.configName;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setConfigName(String configName) {
-		this.configName = configName;
-		if(configName != null){
-			putQueryParameter("ConfigName", configName);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeDBInstanceConfigResponse> getResponseClass() {
-		return DescribeDBInstanceConfigResponse.class;
+	public Class<DescribeBackupSetListResponse> getResponseClass() {
+		return DescribeBackupSetListResponse.class;
 	}
 
 }
