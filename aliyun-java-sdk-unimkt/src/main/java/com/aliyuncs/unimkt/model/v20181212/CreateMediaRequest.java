@@ -35,6 +35,8 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 
 	private String originSiteUserId;
 
+	private String environment;
+
 	private String appName;
 
 	private String tenantId;
@@ -101,6 +103,17 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		this.originSiteUserId = originSiteUserId;
 		if(originSiteUserId != null){
 			putQueryParameter("OriginSiteUserId", originSiteUserId);
+		}
+	}
+
+	public String getEnvironment() {
+		return this.environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+		if(environment != null){
+			putQueryParameter("Environment", environment);
 		}
 	}
 

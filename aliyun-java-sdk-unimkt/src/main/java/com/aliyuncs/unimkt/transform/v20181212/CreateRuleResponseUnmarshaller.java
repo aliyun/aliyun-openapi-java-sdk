@@ -41,6 +41,7 @@ public class CreateRuleResponseUnmarshaller {
 		model.setAccessStatus(_ctx.stringValue("CreateRuleResponse.Model.AccessStatus"));
 		model.setExtInfo(_ctx.stringValue("CreateRuleResponse.Model.ExtInfo"));
 		model.setVersion(_ctx.longValue("CreateRuleResponse.Model.Version"));
+		model.setRuleId(_ctx.stringValue("CreateRuleResponse.Model.RuleId"));
 		createRuleResponse.setModel(model);
 	 
 	 	return createRuleResponse;

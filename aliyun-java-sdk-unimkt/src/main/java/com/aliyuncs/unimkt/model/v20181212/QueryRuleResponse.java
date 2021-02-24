@@ -100,6 +100,8 @@ public class QueryRuleResponse extends AcsResponse {
 
 		private Long version;
 
+		private String ruleId;
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -194,6 +196,14 @@ public class QueryRuleResponse extends AcsResponse {
 
 		public void setVersion(Long version) {
 			this.version = version;
+		}
+
+		public String getRuleId() {
+			return this.ruleId;
+		}
+
+		public void setRuleId(String ruleId) {
+			this.ruleId = ruleId;
 		}
 	}
 

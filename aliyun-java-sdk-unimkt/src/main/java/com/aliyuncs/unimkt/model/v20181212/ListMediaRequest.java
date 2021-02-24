@@ -41,6 +41,8 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 
 	private String mediaName;
 
+	private String environment;
+
 	private String appName;
 
 	private Long startCreateTime;
@@ -148,6 +150,17 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 		this.mediaName = mediaName;
 		if(mediaName != null){
 			putQueryParameter("MediaName", mediaName);
+		}
+	}
+
+	public String getEnvironment() {
+		return this.environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+		if(environment != null){
+			putQueryParameter("Environment", environment);
 		}
 	}
 

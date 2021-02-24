@@ -41,6 +41,7 @@ public class QueryRuleResponseUnmarshaller {
 		model.setAccessStatus(_ctx.stringValue("QueryRuleResponse.Model.AccessStatus"));
 		model.setExtInfo(_ctx.stringValue("QueryRuleResponse.Model.ExtInfo"));
 		model.setVersion(_ctx.longValue("QueryRuleResponse.Model.Version"));
+		model.setRuleId(_ctx.stringValue("QueryRuleResponse.Model.RuleId"));
 		queryRuleResponse.setModel(model);
 	 
 	 	return queryRuleResponse;
