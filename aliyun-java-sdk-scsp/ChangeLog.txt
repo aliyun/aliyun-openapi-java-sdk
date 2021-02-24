@@ -1,3 +1,6 @@
+2021-02-24 Version: 1.2.5
+- Add queryServiceConfig.
+
 2021-02-24 Version: 1.2.4
 - Add queryServiceConfig.
 
