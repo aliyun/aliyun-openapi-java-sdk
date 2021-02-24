@@ -25,7 +25,7 @@ import com.aliyuncs.rsimganalys.Endpoint;
 public class AccessAppkeyRequest extends RpcAcsRequest<AccessAppkeyResponse> {
 	   
 	public AccessAppkeyRequest() {
-		super("rsimganalys", "2019-08-01", "AccessAppkey");
+		super("rsimganalys", "2019-08-01", "AccessAppkey", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

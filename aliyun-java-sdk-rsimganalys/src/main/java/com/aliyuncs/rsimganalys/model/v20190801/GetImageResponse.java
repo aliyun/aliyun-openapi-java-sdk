@@ -98,6 +98,10 @@ public class GetImageResponse extends AcsResponse {
 
 		private Integer publishStatus;
 
+		private String downloadPath;
+
+		private String publicResult;
+
 		public String getImageName() {
 			return this.imageName;
 		}
@@ -184,6 +188,22 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setPublishStatus(Integer publishStatus) {
 			this.publishStatus = publishStatus;
+		}
+
+		public String getDownloadPath() {
+			return this.downloadPath;
+		}
+
+		public void setDownloadPath(String downloadPath) {
+			this.downloadPath = downloadPath;
+		}
+
+		public String getPublicResult() {
+			return this.publicResult;
+		}
+
+		public void setPublicResult(String publicResult) {
+			this.publicResult = publicResult;
 		}
 	}
 

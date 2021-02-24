@@ -14,6 +14,7 @@
 
 package com.aliyuncs.rsimganalys.model.v20190801;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rsimganalys.transform.v20190801.CreateImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,13 +29,15 @@ public class CreateImageResponse extends AcsResponse {
 
 	private Integer resultCode;
 
-	private String imageId;
-
 	private String resultMessage;
+
+	private String imageId;
 
 	private String userResolution;
 
 	private Integer publishStatus;
+
+	private List<Integer> items;
 
 	private Data data;
 
@@ -54,20 +57,20 @@ public class CreateImageResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-	}
-
 	public String getResultMessage() {
 		return this.resultMessage;
 	}
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
 	}
 
 	public String getUserResolution() {
@@ -84,6 +87,14 @@ public class CreateImageResponse extends AcsResponse {
 
 	public void setPublishStatus(Integer publishStatus) {
 		this.publishStatus = publishStatus;
+	}
+
+	public List<Integer> getItems() {
+		return this.items;
+	}
+
+	public void setItems(List<Integer> items) {
+		this.items = items;
 	}
 
 	public Data getData() {

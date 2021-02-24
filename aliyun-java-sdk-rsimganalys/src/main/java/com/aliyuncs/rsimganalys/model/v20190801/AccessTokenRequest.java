@@ -25,7 +25,7 @@ import com.aliyuncs.rsimganalys.Endpoint;
 public class AccessTokenRequest extends RpcAcsRequest<AccessTokenResponse> {
 	   
 	public AccessTokenRequest() {
-		super("rsimganalys", "2019-08-01", "AccessToken");
+		super("rsimganalys", "2019-08-01", "AccessToken", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

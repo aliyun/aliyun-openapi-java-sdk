@@ -29,7 +29,7 @@ public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 
 	private String appkey;
 	public DeleteTaskRequest() {
-		super("rsimganalys", "2019-08-01", "DeleteTask");
+		super("rsimganalys", "2019-08-01", "DeleteTask", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

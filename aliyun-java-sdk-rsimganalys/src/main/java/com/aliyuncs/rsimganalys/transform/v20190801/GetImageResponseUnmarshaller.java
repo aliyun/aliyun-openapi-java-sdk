@@ -40,6 +40,8 @@ public class GetImageResponseUnmarshaller {
 		data.setUCS(_ctx.stringValue("GetImageResponse.Data.UCS"));
 		data.setPixelSize(_ctx.stringValue("GetImageResponse.Data.PixelSize"));
 		data.setPublishStatus(_ctx.integerValue("GetImageResponse.Data.PublishStatus"));
+		data.setDownloadPath(_ctx.stringValue("GetImageResponse.Data.DownloadPath"));
+		data.setPublicResult(_ctx.stringValue("GetImageResponse.Data.PublicResult"));
 		getImageResponse.setData(data);
 	 
 	 	return getImageResponse;
