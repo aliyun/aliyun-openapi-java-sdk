@@ -1,3 +1,6 @@
+2021-02-24 Version: 2.12.16
+- CreateOrder add attribute buyerMessages.
+
 2021-01-28 Version: 2.12.15
 - Add settlement interface,eg QueryStatements, ExecuteNode.
 
