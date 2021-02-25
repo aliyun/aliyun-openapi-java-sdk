@@ -33,6 +33,10 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 
 	private String ownerId;
 
+	private Long startTimestamp;
+
+	private Long endTimestamp;
+
 	private Boolean showStorageType;
 
 	private Integer pageSize;
@@ -86,6 +90,28 @@ public class DescribeIncrementBackupListRequest extends RpcAcsRequest<DescribeIn
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Long getStartTimestamp() {
+		return this.startTimestamp;
+	}
+
+	public void setStartTimestamp(Long startTimestamp) {
+		this.startTimestamp = startTimestamp;
+		if(startTimestamp != null){
+			putQueryParameter("StartTimestamp", startTimestamp.toString());
+		}
+	}
+
+	public Long getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(Long endTimestamp) {
+		this.endTimestamp = endTimestamp;
+		if(endTimestamp != null){
+			putQueryParameter("EndTimestamp", endTimestamp.toString());
 		}
 	}
 
