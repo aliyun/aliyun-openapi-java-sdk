@@ -28,6 +28,16 @@ public class ExecContainerCommandResponse extends AcsResponse {
 
 	private String webSocketUri;
 
+	private String httpUrl;
+
+	public String getHttpUrl() {
+		return this.httpUrl;
+	}
+
+	public void setHttpUrl(String httpUrl) {
+		this.httpUrl = httpUrl;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
