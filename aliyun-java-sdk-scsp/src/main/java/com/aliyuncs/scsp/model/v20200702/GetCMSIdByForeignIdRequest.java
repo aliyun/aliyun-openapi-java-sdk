@@ -33,7 +33,7 @@ public class GetCMSIdByForeignIdRequest extends RpcAcsRequest<GetCMSIdByForeignI
 
 	private String instanceId;
 	public GetCMSIdByForeignIdRequest() {
-		super("scsp", "2020-07-02", "GetCMSIdByForeignId");
+		super("scsp", "2020-07-02", "GetCMSIdByForeignId", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class SearchTicketByPhoneRequest extends RpcAcsRequest<SearchTicketByPhon
 
 	private Long endTime;
 	public SearchTicketByPhoneRequest() {
-		super("scsp", "2020-07-02", "SearchTicketByPhone");
+		super("scsp", "2020-07-02", "SearchTicketByPhone", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class DeleteEntityRouteRequest extends RpcAcsRequest<DeleteEntityRouteRes
 
 	private Long uniqueId;
 	public DeleteEntityRouteRequest() {
-		super("scsp", "2020-07-02", "DeleteEntityRoute");
+		super("scsp", "2020-07-02", "DeleteEntityRoute", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

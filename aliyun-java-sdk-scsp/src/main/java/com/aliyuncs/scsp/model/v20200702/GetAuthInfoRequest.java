@@ -31,7 +31,7 @@ public class GetAuthInfoRequest extends RpcAcsRequest<GetAuthInfoResponse> {
 
 	private String appKey;
 	public GetAuthInfoRequest() {
-		super("scsp", "2020-07-02", "GetAuthInfo");
+		super("scsp", "2020-07-02", "GetAuthInfo", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class QueryRingDetailListRequest extends RpcAcsRequest<QueryRingDetailLis
 
 	private String toPhoneNumList;
 	public QueryRingDetailListRequest() {
-		super("scsp", "2020-07-02", "QueryRingDetailList");
+		super("scsp", "2020-07-02", "QueryRingDetailList", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

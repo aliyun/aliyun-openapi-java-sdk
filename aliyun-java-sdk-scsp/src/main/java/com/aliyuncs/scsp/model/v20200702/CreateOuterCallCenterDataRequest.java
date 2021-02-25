@@ -51,7 +51,7 @@ public class CreateOuterCallCenterDataRequest extends RpcAcsRequest<CreateOuterC
 
 	private String userInfo;
 	public CreateOuterCallCenterDataRequest() {
-		super("scsp", "2020-07-02", "CreateOuterCallCenterData");
+		super("scsp", "2020-07-02", "CreateOuterCallCenterData", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

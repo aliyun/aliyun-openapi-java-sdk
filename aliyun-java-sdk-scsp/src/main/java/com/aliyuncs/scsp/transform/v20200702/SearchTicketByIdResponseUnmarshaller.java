@@ -29,33 +29,34 @@ public class SearchTicketByIdResponseUnmarshaller {
 	public static SearchTicketByIdResponse unmarshall(SearchTicketByIdResponse searchTicketByIdResponse, UnmarshallerContext _ctx) {
 		
 		searchTicketByIdResponse.setRequestId(_ctx.stringValue("SearchTicketByIdResponse.RequestId"));
-		searchTicketByIdResponse.setSuccess(_ctx.booleanValue("SearchTicketByIdResponse.Success"));
-		searchTicketByIdResponse.setCode(_ctx.stringValue("SearchTicketByIdResponse.Code"));
 		searchTicketByIdResponse.setMessage(_ctx.stringValue("SearchTicketByIdResponse.Message"));
+		searchTicketByIdResponse.setCode(_ctx.stringValue("SearchTicketByIdResponse.Code"));
+		searchTicketByIdResponse.setSuccess(_ctx.booleanValue("SearchTicketByIdResponse.Success"));
 
 		Data data = new Data();
-		data.setTicketId(_ctx.longValue("SearchTicketByIdResponse.Data.TicketId"));
-		data.setTemplateId(_ctx.longValue("SearchTicketByIdResponse.Data.TemplateId"));
 		data.setCategoryId(_ctx.longValue("SearchTicketByIdResponse.Data.CategoryId"));
+		data.setFormData(_ctx.stringValue("SearchTicketByIdResponse.Data.FormData"));
+		data.setCarbonCopy(_ctx.stringValue("SearchTicketByIdResponse.Data.CarbonCopy"));
 		data.setCreatorId(_ctx.longValue("SearchTicketByIdResponse.Data.CreatorId"));
+		data.setPriority(_ctx.integerValue("SearchTicketByIdResponse.Data.Priority"));
+		data.setCreateTime(_ctx.longValue("SearchTicketByIdResponse.Data.CreateTime"));
 		data.setCreatorType(_ctx.integerValue("SearchTicketByIdResponse.Data.CreatorType"));
-		data.setCreatorName(_ctx.stringValue("SearchTicketByIdResponse.Data.CreatorName"));
+		data.setTicketName(_ctx.stringValue("SearchTicketByIdResponse.Data.TicketName"));
+		data.setServiceId(_ctx.longValue("SearchTicketByIdResponse.Data.ServiceId"));
 		data.setMemberId(_ctx.longValue("SearchTicketByIdResponse.Data.MemberId"));
+		data.setTicketId(_ctx.longValue("SearchTicketByIdResponse.Data.TicketId"));
+		data.setModifiedTime(_ctx.longValue("SearchTicketByIdResponse.Data.ModifiedTime"));
+		data.setCaseStatus(_ctx.integerValue("SearchTicketByIdResponse.Data.CaseStatus"));
 		data.setMemberName(_ctx.stringValue("SearchTicketByIdResponse.Data.MemberName"));
 		data.setFromInfo(_ctx.stringValue("SearchTicketByIdResponse.Data.FromInfo"));
-		data.setPriority(_ctx.integerValue("SearchTicketByIdResponse.Data.Priority"));
-		data.setCarbonCopy(_ctx.stringValue("SearchTicketByIdResponse.Data.CarbonCopy"));
-		data.setCreateTime(_ctx.longValue("SearchTicketByIdResponse.Data.CreateTime"));
-		data.setModifiedTime(_ctx.longValue("SearchTicketByIdResponse.Data.ModifiedTime"));
-		data.setFormData(_ctx.stringValue("SearchTicketByIdResponse.Data.FormData"));
-		data.setCaseStatus(_ctx.integerValue("SearchTicketByIdResponse.Data.CaseStatus"));
-		data.setServiceId(_ctx.longValue("SearchTicketByIdResponse.Data.ServiceId"));
+		data.setTemplateId(_ctx.longValue("SearchTicketByIdResponse.Data.TemplateId"));
+		data.setCreatorName(_ctx.stringValue("SearchTicketByIdResponse.Data.CreatorName"));
 
 		List<ActivitiesItem> activities = new ArrayList<ActivitiesItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTicketByIdResponse.Data.Activities.Length"); i++) {
 			ActivitiesItem activitiesItem = new ActivitiesItem();
-			activitiesItem.setActivityCode(_ctx.stringValue("SearchTicketByIdResponse.Data.Activities["+ i +"].ActivityCode"));
 			activitiesItem.setActivityFormData(_ctx.stringValue("SearchTicketByIdResponse.Data.Activities["+ i +"].ActivityFormData"));
+			activitiesItem.setActivityCode(_ctx.stringValue("SearchTicketByIdResponse.Data.Activities["+ i +"].ActivityCode"));
 
 			activities.add(activitiesItem);
 		}
@@ -64,10 +65,10 @@ public class SearchTicketByIdResponseUnmarshaller {
 		List<ActivityRecordsItem> activityRecords = new ArrayList<ActivityRecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTicketByIdResponse.Data.ActivityRecords.Length"); i++) {
 			ActivityRecordsItem activityRecordsItem = new ActivityRecordsItem();
-			activityRecordsItem.setOperatorName(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].OperatorName"));
 			activityRecordsItem.setGmtCreate(_ctx.longValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].GmtCreate"));
-			activityRecordsItem.setActionCodeDesc(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].ActionCodeDesc"));
+			activityRecordsItem.setOperatorName(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].OperatorName"));
 			activityRecordsItem.setActionCode(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].ActionCode"));
+			activityRecordsItem.setActionCodeDesc(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].ActionCodeDesc"));
 			activityRecordsItem.setMemo(_ctx.stringValue("SearchTicketByIdResponse.Data.ActivityRecords["+ i +"].Memo"));
 
 			activityRecords.add(activityRecordsItem);

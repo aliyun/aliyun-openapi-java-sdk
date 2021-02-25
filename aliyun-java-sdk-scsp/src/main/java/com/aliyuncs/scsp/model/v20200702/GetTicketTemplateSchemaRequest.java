@@ -31,7 +31,7 @@ public class GetTicketTemplateSchemaRequest extends RpcAcsRequest<GetTicketTempl
 
 	private Long templateId;
 	public GetTicketTemplateSchemaRequest() {
-		super("scsp", "2020-07-02", "GetTicketTemplateSchema");
+		super("scsp", "2020-07-02", "GetTicketTemplateSchema", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

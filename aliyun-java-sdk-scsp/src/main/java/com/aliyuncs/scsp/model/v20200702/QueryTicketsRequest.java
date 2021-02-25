@@ -55,7 +55,7 @@ public class QueryTicketsRequest extends RpcAcsRequest<QueryTicketsResponse> {
 
 	private String channelId;
 	public QueryTicketsRequest() {
-		super("scsp", "2020-07-02", "QueryTickets");
+		super("scsp", "2020-07-02", "QueryTickets", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

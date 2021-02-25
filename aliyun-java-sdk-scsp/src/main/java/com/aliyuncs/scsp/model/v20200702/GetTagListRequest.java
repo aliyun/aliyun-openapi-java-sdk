@@ -31,7 +31,7 @@ public class GetTagListRequest extends RpcAcsRequest<GetTagListResponse> {
 
 	private String entityId;
 	public GetTagListRequest() {
-		super("scsp", "2020-07-02", "GetTagList");
+		super("scsp", "2020-07-02", "GetTagList", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
