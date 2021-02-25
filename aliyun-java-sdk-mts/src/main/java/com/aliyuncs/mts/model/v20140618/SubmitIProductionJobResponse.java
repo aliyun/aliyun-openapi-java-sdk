@@ -28,6 +28,8 @@ public class SubmitIProductionJobResponse extends AcsResponse {
 
 	private String jobId;
 
+	private String result;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class SubmitIProductionJobResponse extends AcsResponse {
 
 	public void setJobId(String jobId) {
 		this.jobId = jobId;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	@Override

@@ -241,6 +241,8 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			private String privateIpAddress;
 
+			private String deploymentSetId;
+
 			private List<DataDisk> dataDisks;
 
 			private List<NetworkInterface> networkInterfaces;
@@ -535,6 +537,14 @@ public class DescribeLaunchTemplateVersionsResponse extends AcsResponse {
 
 			public void setPrivateIpAddress(String privateIpAddress) {
 				this.privateIpAddress = privateIpAddress;
+			}
+
+			public String getDeploymentSetId() {
+				return this.deploymentSetId;
+			}
+
+			public void setDeploymentSetId(String deploymentSetId) {
+				this.deploymentSetId = deploymentSetId;
 			}
 
 			public List<DataDisk> getDataDisks() {

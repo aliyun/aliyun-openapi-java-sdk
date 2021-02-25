@@ -24,7 +24,11 @@ import com.aliyuncs.http.MethodType;
 public class RecognizeImageRequest extends RpcAcsRequest<RecognizeImageResponse> {
 	   
 
+	private Boolean requireCropImage;
+
 	private String corpId;
+
+	private String recognizeType;
 
 	private String vendor;
 
@@ -36,6 +40,17 @@ public class RecognizeImageRequest extends RpcAcsRequest<RecognizeImageResponse>
 		setMethod(MethodType.POST);
 	}
 
+	public Boolean getRequireCropImage() {
+		return this.requireCropImage;
+	}
+
+	public void setRequireCropImage(Boolean requireCropImage) {
+		this.requireCropImage = requireCropImage;
+		if(requireCropImage != null){
+			putBodyParameter("RequireCropImage", requireCropImage.toString());
+		}
+	}
+
 	public String getCorpId() {
 		return this.corpId;
 	}
@@ -44,6 +59,17 @@ public class RecognizeImageRequest extends RpcAcsRequest<RecognizeImageResponse>
 		this.corpId = corpId;
 		if(corpId != null){
 			putBodyParameter("CorpId", corpId);
+		}
+	}
+
+	public String getRecognizeType() {
+		return this.recognizeType;
+	}
+
+	public void setRecognizeType(String recognizeType) {
+		this.recognizeType = recognizeType;
+		if(recognizeType != null){
+			putBodyParameter("RecognizeType", recognizeType);
 		}
 	}
 

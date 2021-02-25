@@ -58,11 +58,11 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private Long ownerId;
 
-	private List<Mongos> mongoss;
-
 	private String securityIPList;
 
 	private String vSwitchId;
+
+	private List<Mongos> mongoss;
 
 	private String accountPassword;
 
@@ -136,6 +136,7 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		this.replicaSets = replicaSets;	
 		if (replicaSets != null) {
 			for (int depth1 = 0; depth1 < replicaSets.size(); depth1++) {
+				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".ReadonlyReplicas" , replicaSets.get(depth1).getReadonlyReplicas());
 				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".Storage" , replicaSets.get(depth1).getStorage());
 				putQueryParameter("ReplicaSet." + (depth1 + 1) + ".Class" , replicaSets.get(depth1).get_Class());
 			}
@@ -266,19 +267,6 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		}
 	}
 
-	public List<Mongos> getMongoss() {
-		return this.mongoss;
-	}
-
-	public void setMongoss(List<Mongos> mongoss) {
-		this.mongoss = mongoss;	
-		if (mongoss != null) {
-			for (int depth1 = 0; depth1 < mongoss.size(); depth1++) {
-				putQueryParameter("Mongos." + (depth1 + 1) + ".Class" , mongoss.get(depth1).get_Class());
-			}
-		}	
-	}
-
 	public String getSecurityIPList() {
 		return this.securityIPList;
 	}
@@ -299,6 +287,19 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
 		}
+	}
+
+	public List<Mongos> getMongoss() {
+		return this.mongoss;
+	}
+
+	public void setMongoss(List<Mongos> mongoss) {
+		this.mongoss = mongoss;	
+		if (mongoss != null) {
+			for (int depth1 = 0; depth1 < mongoss.size(); depth1++) {
+				putQueryParameter("Mongos." + (depth1 + 1) + ".Class" , mongoss.get(depth1).get_Class());
+			}
+		}	
 	}
 
 	public String getAccountPassword() {
@@ -369,9 +370,19 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	public static class ReplicaSet {
 
+		private Integer readonlyReplicas;
+
 		private Integer storage;
 
 		private String _class;
+
+		public Integer getReadonlyReplicas() {
+			return this.readonlyReplicas;
+		}
+
+		public void setReadonlyReplicas(Integer readonlyReplicas) {
+			this.readonlyReplicas = readonlyReplicas;
+		}
 
 		public Integer getStorage() {
 			return this.storage;

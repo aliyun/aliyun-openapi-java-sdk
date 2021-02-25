@@ -37,6 +37,10 @@ public class DescribeCommandsResponseUnmarshaller {
 			command.setCommandId(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandId"));
 			command.setName(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Name"));
 			command.setType(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Type"));
+			command.setVersion(_ctx.integerValue("DescribeCommandsResponse.Commands["+ i +"].Version"));
+			command.setLatest(_ctx.booleanValue("DescribeCommandsResponse.Commands["+ i +"].Latest"));
+			command.setProvider(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Provider"));
+			command.setCategory(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Category"));
 			command.setDescription(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].Description"));
 			command.setCommandContent(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].CommandContent"));
 			command.setWorkingDir(_ctx.stringValue("DescribeCommandsResponse.Commands["+ i +"].WorkingDir"));

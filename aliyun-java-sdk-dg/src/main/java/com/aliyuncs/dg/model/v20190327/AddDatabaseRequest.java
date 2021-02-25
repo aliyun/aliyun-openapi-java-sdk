@@ -26,21 +26,23 @@ import com.aliyuncs.dg.Endpoint;
 public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 	   
 
-	private String dbName;
-
-	private Integer port;
-
-	private String dbPassword;
+	private String clientToken;
 
 	private String host;
-
-	private String dbType;
 
 	private String dbUserName;
 
 	private String dbDescription;
 
 	private String gatewayId;
+
+	private String dbName;
+
+	private Integer port;
+
+	private String dbPassword;
+
+	private String dbType;
 	public AddDatabaseRequest() {
 		super("dg", "2019-03-27", "AddDatabase", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -49,6 +51,61 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putBodyParameter("Host", host);
+		}
+	}
+
+	public String getDbUserName() {
+		return this.dbUserName;
+	}
+
+	public void setDbUserName(String dbUserName) {
+		this.dbUserName = dbUserName;
+		if(dbUserName != null){
+			putBodyParameter("DbUserName", dbUserName);
+		}
+	}
+
+	public String getDbDescription() {
+		return this.dbDescription;
+	}
+
+	public void setDbDescription(String dbDescription) {
+		this.dbDescription = dbDescription;
+		if(dbDescription != null){
+			putBodyParameter("DbDescription", dbDescription);
+		}
+	}
+
+	public String getGatewayId() {
+		return this.gatewayId;
+	}
+
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+		if(gatewayId != null){
+			putBodyParameter("GatewayId", gatewayId);
+		}
 	}
 
 	public String getDbName() {
@@ -84,17 +141,6 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 		}
 	}
 
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putBodyParameter("Host", host);
-		}
-	}
-
 	public String getDbType() {
 		return this.dbType;
 	}
@@ -103,39 +149,6 @@ public class AddDatabaseRequest extends RpcAcsRequest<AddDatabaseResponse> {
 		this.dbType = dbType;
 		if(dbType != null){
 			putBodyParameter("DbType", dbType);
-		}
-	}
-
-	public String getDbUserName() {
-		return this.dbUserName;
-	}
-
-	public void setDbUserName(String dbUserName) {
-		this.dbUserName = dbUserName;
-		if(dbUserName != null){
-			putBodyParameter("DbUserName", dbUserName);
-		}
-	}
-
-	public String getDbDescription() {
-		return this.dbDescription;
-	}
-
-	public void setDbDescription(String dbDescription) {
-		this.dbDescription = dbDescription;
-		if(dbDescription != null){
-			putBodyParameter("DbDescription", dbDescription);
-		}
-	}
-
-	public String getGatewayId() {
-		return this.gatewayId;
-	}
-
-	public void setGatewayId(String gatewayId) {
-		this.gatewayId = gatewayId;
-		if(gatewayId != null){
-			putBodyParameter("GatewayId", gatewayId);
 		}
 	}
 

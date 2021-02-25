@@ -42,6 +42,8 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 
 	private String metric;
 
+	private List<String> customFilterss;
+
 	private Integer pageSize;
 
 	private List<String> dimensionss;
@@ -147,6 +149,19 @@ public class QueryMetricByPageRequest extends RpcAcsRequest<QueryMetricByPageRes
 		if(metric != null){
 			putQueryParameter("Metric", metric);
 		}
+	}
+
+	public List<String> getCustomFilterss() {
+		return this.customFilterss;
+	}
+
+	public void setCustomFilterss(List<String> customFilterss) {
+		this.customFilterss = customFilterss;	
+		if (customFilterss != null) {
+			for (int i = 0; i < customFilterss.size(); i++) {
+				putQueryParameter("CustomFilters." + (i + 1) , customFilterss.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageSize() {

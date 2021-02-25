@@ -44,6 +44,8 @@ public class DescribeTaskResponse extends AcsResponse {
 
 	private Long completedTime;
 
+	private String name;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -122,6 +124,14 @@ public class DescribeTaskResponse extends AcsResponse {
 
 	public void setCompletedTime(Long completedTime) {
 		this.completedTime = completedTime;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

@@ -65,7 +65,7 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 
 		private String lockMode;
 
-		private String storageUsed;
+		private Long storageUsed;
 
 		private String dBVersion;
 
@@ -181,11 +181,11 @@ public class DescribeDBInstanceAttributeResponse extends AcsResponse {
 			this.lockMode = lockMode;
 		}
 
-		public String getStorageUsed() {
+		public Long getStorageUsed() {
 			return this.storageUsed;
 		}
 
-		public void setStorageUsed(String storageUsed) {
+		public void setStorageUsed(Long storageUsed) {
 			this.storageUsed = storageUsed;
 		}
 

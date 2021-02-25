@@ -23,8 +23,8 @@ public class CreateNodeResponseUnmarshaller {
 	public static CreateNodeResponse unmarshall(CreateNodeResponse createNodeResponse, UnmarshallerContext _ctx) {
 		
 		createNodeResponse.setRequestId(_ctx.stringValue("CreateNodeResponse.RequestId"));
-		createNodeResponse.setOrderId(_ctx.stringValue("CreateNodeResponse.OrderId"));
 		createNodeResponse.setNodeId(_ctx.stringValue("CreateNodeResponse.NodeId"));
+		createNodeResponse.setOrderId(_ctx.stringValue("CreateNodeResponse.OrderId"));
 	 
 	 	return createNodeResponse;
 	}

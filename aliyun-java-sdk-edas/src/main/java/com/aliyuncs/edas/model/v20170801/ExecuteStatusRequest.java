@@ -43,7 +43,7 @@ public class ExecuteStatusRequest extends RoaAcsRequest<ExecuteStatusResponse> {
 
 	private String status;
 	public ExecuteStatusRequest() {
-		super("Edas", "2017-08-01", "ExecuteStatus", "Edas");
+		super("Edas", "2017-08-01", "ExecuteStatus", "edas");
 		setUriPattern("/pop/sp/api/mse/status/execute");
 		setMethod(MethodType.POST);
 		try {

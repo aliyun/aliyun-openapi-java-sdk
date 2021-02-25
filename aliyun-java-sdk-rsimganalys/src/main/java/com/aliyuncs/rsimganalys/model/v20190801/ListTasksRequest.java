@@ -27,7 +27,7 @@ public class ListTasksRequest extends RpcAcsRequest<ListTasksResponse> {
 
 	private String appkey;
 	public ListTasksRequest() {
-		super("rsimganalys", "2019-08-01", "ListTasks");
+		super("rsimganalys", "2019-08-01", "ListTasks", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

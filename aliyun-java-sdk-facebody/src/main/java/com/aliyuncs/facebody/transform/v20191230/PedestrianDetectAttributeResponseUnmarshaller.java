@@ -44,6 +44,8 @@ public class PedestrianDetectAttributeResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setPersonNumber(_ctx.integerValue("PedestrianDetectAttributeResponse.Data.PersonNumber"));
+		data.setHeight(_ctx.longValue("PedestrianDetectAttributeResponse.Data.Height"));
+		data.setWidth(_ctx.longValue("PedestrianDetectAttributeResponse.Data.Width"));
 
 		List<AttributesItem> attributes = new ArrayList<AttributesItem>();
 		for (int i = 0; i < _ctx.lengthValue("PedestrianDetectAttributeResponse.Data.Attributes.Length"); i++) {

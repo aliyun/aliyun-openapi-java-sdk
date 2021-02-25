@@ -27,7 +27,7 @@ public class DetectTransparentImageRequest extends RpcAcsRequest<DetectTranspare
 
 	private String imageURL;
 	public DetectTransparentImageRequest() {
-		super("objectdet", "2019-12-30", "DetectTransparentImage", "objectdet");
+		super("objectdet", "2019-12-30", "DetectTransparentImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

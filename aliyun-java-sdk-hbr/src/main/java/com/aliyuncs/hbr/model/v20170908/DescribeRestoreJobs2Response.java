@@ -153,6 +153,26 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		private String targetPrefix;
 
+		private String udmDetail;
+
+		private String targetInstanceId;
+
+		private String targetClientId;
+
+		private String clusterId;
+
+		private String targetDataSourceId;
+
+		private Long actualBytes;
+
+		private Long itemsDone;
+
+		private Long itemsTotal;
+
+		private Long actualItems;
+
+		private String errorFile;
+
 		public String getRestoreId() {
 			return this.restoreId;
 		}
@@ -335,6 +355,86 @@ public class DescribeRestoreJobs2Response extends AcsResponse {
 
 		public void setTargetPrefix(String targetPrefix) {
 			this.targetPrefix = targetPrefix;
+		}
+
+		public String getUdmDetail() {
+			return this.udmDetail;
+		}
+
+		public void setUdmDetail(String udmDetail) {
+			this.udmDetail = udmDetail;
+		}
+
+		public String getTargetInstanceId() {
+			return this.targetInstanceId;
+		}
+
+		public void setTargetInstanceId(String targetInstanceId) {
+			this.targetInstanceId = targetInstanceId;
+		}
+
+		public String getTargetClientId() {
+			return this.targetClientId;
+		}
+
+		public void setTargetClientId(String targetClientId) {
+			this.targetClientId = targetClientId;
+		}
+
+		public String getClusterId() {
+			return this.clusterId;
+		}
+
+		public void setClusterId(String clusterId) {
+			this.clusterId = clusterId;
+		}
+
+		public String getTargetDataSourceId() {
+			return this.targetDataSourceId;
+		}
+
+		public void setTargetDataSourceId(String targetDataSourceId) {
+			this.targetDataSourceId = targetDataSourceId;
+		}
+
+		public Long getActualBytes() {
+			return this.actualBytes;
+		}
+
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
+		}
+
+		public Long getItemsDone() {
+			return this.itemsDone;
+		}
+
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
+		}
+
+		public Long getItemsTotal() {
+			return this.itemsTotal;
+		}
+
+		public void setItemsTotal(Long itemsTotal) {
+			this.itemsTotal = itemsTotal;
+		}
+
+		public Long getActualItems() {
+			return this.actualItems;
+		}
+
+		public void setActualItems(Long actualItems) {
+			this.actualItems = actualItems;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 	}
 

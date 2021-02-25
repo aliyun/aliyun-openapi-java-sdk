@@ -39,6 +39,8 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 	private Integer pageNumber;
 
+	private String diskId;
+
 	private List<BackupJob> backupJobs;
 
 	public String getRequestId() {
@@ -97,6 +99,14 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
+	public String getDiskId() {
+		return this.diskId;
+	}
+
+	public void setDiskId(String diskId) {
+		this.diskId = diskId;
+	}
+
 	public List<BackupJob> getBackupJobs() {
 		return this.backupJobs;
 	}
@@ -115,7 +125,7 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		private String backupSourceGroupId;
 
-		private Integer jobName;
+		private String jobName;
 
 		private String backupType;
 
@@ -129,7 +139,7 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		private String parentId;
 
-		private Long clusterId;
+		private String clusterId;
 
 		private String databaseName;
 
@@ -152,6 +162,34 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 		private String prefix;
 
 		private String planId;
+
+		private String instanceId;
+
+		private String detail;
+
+		private String diskId;
+
+		private String clientId;
+
+		private String speedLimit;
+
+		private String options;
+
+		private String include;
+
+		private String exclude;
+
+		private String dataSourceId;
+
+		private Long actualBytes;
+
+		private Long itemsDone;
+
+		private Long itemsTotal;
+
+		private Long actualItems;
+
+		private String errorFile;
 
 		private List<String> paths;
 
@@ -187,11 +225,11 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.backupSourceGroupId = backupSourceGroupId;
 		}
 
-		public Integer getJobName() {
+		public String getJobName() {
 			return this.jobName;
 		}
 
-		public void setJobName(Integer jobName) {
+		public void setJobName(String jobName) {
 			this.jobName = jobName;
 		}
 
@@ -243,11 +281,11 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 			this.parentId = parentId;
 		}
 
-		public Long getClusterId() {
+		public String getClusterId() {
 			return this.clusterId;
 		}
 
-		public void setClusterId(Long clusterId) {
+		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
 		}
 
@@ -337,6 +375,118 @@ public class DescribeBackupJobs2Response extends AcsResponse {
 
 		public void setPlanId(String planId) {
 			this.planId = planId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
+		}
+
+		public String getDiskId() {
+			return this.diskId;
+		}
+
+		public void setDiskId(String diskId) {
+			this.diskId = diskId;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
+		}
+
+		public String getSpeedLimit() {
+			return this.speedLimit;
+		}
+
+		public void setSpeedLimit(String speedLimit) {
+			this.speedLimit = speedLimit;
+		}
+
+		public String getOptions() {
+			return this.options;
+		}
+
+		public void setOptions(String options) {
+			this.options = options;
+		}
+
+		public String getInclude() {
+			return this.include;
+		}
+
+		public void setInclude(String include) {
+			this.include = include;
+		}
+
+		public String getExclude() {
+			return this.exclude;
+		}
+
+		public void setExclude(String exclude) {
+			this.exclude = exclude;
+		}
+
+		public String getDataSourceId() {
+			return this.dataSourceId;
+		}
+
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
+		}
+
+		public Long getActualBytes() {
+			return this.actualBytes;
+		}
+
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
+		}
+
+		public Long getItemsDone() {
+			return this.itemsDone;
+		}
+
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
+		}
+
+		public Long getItemsTotal() {
+			return this.itemsTotal;
+		}
+
+		public void setItemsTotal(Long itemsTotal) {
+			this.itemsTotal = itemsTotal;
+		}
+
+		public Long getActualItems() {
+			return this.actualItems;
+		}
+
+		public void setActualItems(Long actualItems) {
+			this.actualItems = actualItems;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 
 		public List<String> getPaths() {

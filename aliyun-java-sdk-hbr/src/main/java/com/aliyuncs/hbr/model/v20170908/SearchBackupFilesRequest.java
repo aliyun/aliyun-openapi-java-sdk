@@ -39,6 +39,8 @@ public class SearchBackupFilesRequest extends RpcAcsRequest<SearchBackupFilesRes
 	private String nextToken;
 
 	private Integer limit;
+
+	private String sourceType;
 	public SearchBackupFilesRequest() {
 		super("hbr", "2017-09-08", "SearchBackupFiles", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -123,6 +125,17 @@ public class SearchBackupFilesRequest extends RpcAcsRequest<SearchBackupFilesRes
 		this.limit = limit;
 		if(limit != null){
 			putQueryParameter("Limit", limit.toString());
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

@@ -26,6 +26,12 @@ import com.aliyuncs.dg.Endpoint;
 public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse> {
 	   
 
+	private String host;
+
+	private String dbUserName;
+
+	private String dbDescription;
+
 	private String instanceId;
 
 	private String dbName;
@@ -34,13 +40,7 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 
 	private String dbPassword;
 
-	private String host;
-
 	private String dbType;
-
-	private String dbUserName;
-
-	private String dbDescription;
 	public ModifyDatabaseRequest() {
 		super("dg", "2019-03-27", "ModifyDatabase", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -49,6 +49,39 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putBodyParameter("Host", host);
+		}
+	}
+
+	public String getDbUserName() {
+		return this.dbUserName;
+	}
+
+	public void setDbUserName(String dbUserName) {
+		this.dbUserName = dbUserName;
+		if(dbUserName != null){
+			putBodyParameter("DbUserName", dbUserName);
+		}
+	}
+
+	public String getDbDescription() {
+		return this.dbDescription;
+	}
+
+	public void setDbDescription(String dbDescription) {
+		this.dbDescription = dbDescription;
+		if(dbDescription != null){
+			putBodyParameter("DbDescription", dbDescription);
+		}
 	}
 
 	public String getInstanceId() {
@@ -95,17 +128,6 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 		}
 	}
 
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putBodyParameter("Host", host);
-		}
-	}
-
 	public String getDbType() {
 		return this.dbType;
 	}
@@ -114,28 +136,6 @@ public class ModifyDatabaseRequest extends RpcAcsRequest<ModifyDatabaseResponse>
 		this.dbType = dbType;
 		if(dbType != null){
 			putBodyParameter("DbType", dbType);
-		}
-	}
-
-	public String getDbUserName() {
-		return this.dbUserName;
-	}
-
-	public void setDbUserName(String dbUserName) {
-		this.dbUserName = dbUserName;
-		if(dbUserName != null){
-			putBodyParameter("DbUserName", dbUserName);
-		}
-	}
-
-	public String getDbDescription() {
-		return this.dbDescription;
-	}
-
-	public void setDbDescription(String dbDescription) {
-		this.dbDescription = dbDescription;
-		if(dbDescription != null){
-			putBodyParameter("DbDescription", dbDescription);
 		}
 	}
 

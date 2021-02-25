@@ -27,7 +27,7 @@ public class QueryApplicationStatusRequest extends RoaAcsRequest<QueryApplicatio
 
 	private String appId;
 	public QueryApplicationStatusRequest() {
-		super("Edas", "2017-08-01", "QueryApplicationStatus", "Edas");
+		super("Edas", "2017-08-01", "QueryApplicationStatus", "edas");
 		setUriPattern("/pop/v5/app/app_status");
 		setMethod(MethodType.GET);
 		try {

@@ -52,6 +52,8 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 
 	private String outTradeId;
 
+	private String buyerMessageMap;
+
 	private String deliveryAddress;
 	public CreateOrderV2Request() {
 		super("linkedmall", "2018-01-16", "CreateOrderV2", "linkedmall");
@@ -207,6 +209,17 @@ public class CreateOrderV2Request extends RpcAcsRequest<CreateOrderV2Response> {
 		this.outTradeId = outTradeId;
 		if(outTradeId != null){
 			putQueryParameter("OutTradeId", outTradeId);
+		}
+	}
+
+	public String getBuyerMessageMap() {
+		return this.buyerMessageMap;
+	}
+
+	public void setBuyerMessageMap(String buyerMessageMap) {
+		this.buyerMessageMap = buyerMessageMap;
+		if(buyerMessageMap != null){
+			putQueryParameter("BuyerMessageMap", buyerMessageMap);
 		}
 	}
 

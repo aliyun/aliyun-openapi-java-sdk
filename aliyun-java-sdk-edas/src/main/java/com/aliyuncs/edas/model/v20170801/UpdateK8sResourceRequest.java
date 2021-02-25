@@ -31,7 +31,7 @@ public class UpdateK8sResourceRequest extends RoaAcsRequest<UpdateK8sResourceRes
 
 	private String resourceContent;
 	public UpdateK8sResourceRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sResource", "Edas");
+		super("Edas", "2017-08-01", "UpdateK8sResource", "edas");
 		setUriPattern("/pop/v5/oam/update_k8s_resource_config");
 		setMethod(MethodType.POST);
 		try {

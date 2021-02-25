@@ -91,6 +91,8 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		private Boolean supportPolarx20;
 
+		private Boolean supportPolarx10;
+
 		private List<Zone> zones;
 
 		public String getRegionId() {
@@ -107,6 +109,14 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 		public void setSupportPolarx20(Boolean supportPolarx20) {
 			this.supportPolarx20 = supportPolarx20;
+		}
+
+		public Boolean getSupportPolarx10() {
+			return this.supportPolarx10;
+		}
+
+		public void setSupportPolarx10(Boolean supportPolarx10) {
+			this.supportPolarx10 = supportPolarx10;
 		}
 
 		public List<Zone> getZones() {

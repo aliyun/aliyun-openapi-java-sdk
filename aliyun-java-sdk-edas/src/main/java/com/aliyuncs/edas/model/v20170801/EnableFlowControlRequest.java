@@ -29,7 +29,7 @@ public class EnableFlowControlRequest extends RoaAcsRequest<EnableFlowControlRes
 
 	private String ruleId;
 	public EnableFlowControlRequest() {
-		super("Edas", "2017-08-01", "EnableFlowControl", "Edas");
+		super("Edas", "2017-08-01", "EnableFlowControl", "edas");
 		setUriPattern("/pop/v5/flowcontrol/enable");
 		setMethod(MethodType.PUT);
 		try {

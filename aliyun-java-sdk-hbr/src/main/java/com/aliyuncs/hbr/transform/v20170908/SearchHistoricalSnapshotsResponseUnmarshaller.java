@@ -32,6 +32,7 @@ public class SearchHistoricalSnapshotsResponseUnmarshaller {
 		searchHistoricalSnapshotsResponse.setMessage(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Message"));
 		searchHistoricalSnapshotsResponse.setLimit(_ctx.integerValue("SearchHistoricalSnapshotsResponse.Limit"));
 		searchHistoricalSnapshotsResponse.setNextToken(_ctx.stringValue("SearchHistoricalSnapshotsResponse.NextToken"));
+		searchHistoricalSnapshotsResponse.setTotalCount(_ctx.integerValue("SearchHistoricalSnapshotsResponse.TotalCount"));
 
 		List<Snapshot> snapshots = new ArrayList<Snapshot>();
 		for (int i = 0; i < _ctx.lengthValue("SearchHistoricalSnapshotsResponse.Snapshots.Length"); i++) {
@@ -53,6 +54,15 @@ public class SearchHistoricalSnapshotsResponseUnmarshaller {
 			snapshot.setCreateTime(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].CreateTime"));
 			snapshot.setBucket(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Bucket"));
 			snapshot.setPrefix(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Prefix"));
+			snapshot.setInstanceId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].InstanceId"));
+			snapshot.setPath(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Path"));
+			snapshot.setClientId(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ClientId"));
+			snapshot.setBytesDone(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].BytesDone"));
+			snapshot.setActualBytes(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ActualBytes"));
+			snapshot.setItemsDone(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ItemsDone"));
+			snapshot.setItemsTotal(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ItemsTotal"));
+			snapshot.setActualItems(_ctx.longValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ActualItems"));
+			snapshot.setErrorFile(_ctx.stringValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].ErrorFile"));
 
 			List<String> paths = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchHistoricalSnapshotsResponse.Snapshots["+ i +"].Paths.Length"); j++) {

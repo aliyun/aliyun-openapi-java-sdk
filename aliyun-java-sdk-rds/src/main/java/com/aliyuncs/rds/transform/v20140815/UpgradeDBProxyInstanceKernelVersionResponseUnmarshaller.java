@@ -25,7 +25,6 @@ public class UpgradeDBProxyInstanceKernelVersionResponseUnmarshaller {
 		upgradeDBProxyInstanceKernelVersionResponse.setRequestId(_ctx.stringValue("UpgradeDBProxyInstanceKernelVersionResponse.RequestId"));
 		upgradeDBProxyInstanceKernelVersionResponse.setDBInstanceName(_ctx.stringValue("UpgradeDBProxyInstanceKernelVersionResponse.DBInstanceName"));
 		upgradeDBProxyInstanceKernelVersionResponse.setTaskId(_ctx.stringValue("UpgradeDBProxyInstanceKernelVersionResponse.TaskId"));
-		upgradeDBProxyInstanceKernelVersionResponse.setTargetMinorVersion(_ctx.stringValue("UpgradeDBProxyInstanceKernelVersionResponse.TargetMinorVersion"));
 	 
 	 	return upgradeDBProxyInstanceKernelVersionResponse;
 	}

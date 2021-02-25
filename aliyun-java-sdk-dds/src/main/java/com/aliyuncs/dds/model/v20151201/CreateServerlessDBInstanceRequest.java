@@ -35,8 +35,6 @@ public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServe
 
 	private String engineVersion;
 
-	private String networkType;
-
 	private String storageEngine;
 
 	private String resourceGroupId;
@@ -66,8 +64,6 @@ public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServe
 	private String vpcId;
 
 	private String zoneId;
-
-	private String chargeType;
 	public CreateServerlessDBInstanceRequest() {
 		super("Dds", "2015-12-01", "CreateServerlessDBInstance", "Dds");
 		setMethod(MethodType.POST);
@@ -129,17 +125,6 @@ public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServe
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
-		}
-	}
-
-	public String getNetworkType() {
-		return this.networkType;
-	}
-
-	public void setNetworkType(String networkType) {
-		this.networkType = networkType;
-		if(networkType != null){
-			putQueryParameter("NetworkType", networkType);
 		}
 	}
 
@@ -305,17 +290,6 @@ public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServe
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getChargeType() {
-		return this.chargeType;
-	}
-
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 

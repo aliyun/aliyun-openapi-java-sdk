@@ -38,6 +38,7 @@ public class DescribeRegionsResponseUnmarshaller {
 			Region region = new Region();
 			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
 			region.setSupportPolarx20(_ctx.booleanValue("DescribeRegionsResponse.Regions["+ i +"].SupportPolarx20"));
+			region.setSupportPolarx10(_ctx.booleanValue("DescribeRegionsResponse.Regions["+ i +"].SupportPolarx10"));
 
 			List<Zone> zones = new ArrayList<Zone>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeRegionsResponse.Regions["+ i +"].Zones.Length"); j++) {

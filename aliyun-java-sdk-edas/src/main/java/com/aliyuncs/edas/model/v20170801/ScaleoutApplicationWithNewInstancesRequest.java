@@ -51,7 +51,7 @@ public class ScaleoutApplicationWithNewInstancesRequest extends RoaAcsRequest<Sc
 
 	private String instanceChargeType;
 	public ScaleoutApplicationWithNewInstancesRequest() {
-		super("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "Edas");
+		super("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "edas");
 		setUriPattern("/pop/v5/scaling/scale_out");
 		setMethod(MethodType.POST);
 		try {

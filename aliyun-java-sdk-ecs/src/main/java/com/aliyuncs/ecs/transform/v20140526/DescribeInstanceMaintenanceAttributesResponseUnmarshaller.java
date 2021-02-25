@@ -37,6 +37,7 @@ public class DescribeInstanceMaintenanceAttributesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes.Length"); i++) {
 			MaintenanceAttribute maintenanceAttribute = new MaintenanceAttribute();
 			maintenanceAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].InstanceId"));
+			maintenanceAttribute.setNotifyOnMaintenance(_ctx.booleanValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].NotifyOnMaintenance"));
 
 			ActionOnMaintenance actionOnMaintenance = new ActionOnMaintenance();
 			actionOnMaintenance.setValue(_ctx.stringValue("DescribeInstanceMaintenanceAttributesResponse.MaintenanceAttributes["+ i +"].ActionOnMaintenance.Value"));

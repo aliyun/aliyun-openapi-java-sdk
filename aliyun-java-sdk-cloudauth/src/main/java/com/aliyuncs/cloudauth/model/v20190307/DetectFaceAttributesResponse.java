@@ -188,6 +188,8 @@ public class DetectFaceAttributesResponse extends AcsResponse {
 
 				private String respirator;
 
+				private Float appearanceScore;
+
 				private Gender gender;
 
 				private Smiling smiling;
@@ -248,6 +250,14 @@ public class DetectFaceAttributesResponse extends AcsResponse {
 
 				public void setRespirator(String respirator) {
 					this.respirator = respirator;
+				}
+
+				public Float getAppearanceScore() {
+					return this.appearanceScore;
+				}
+
+				public void setAppearanceScore(Float appearanceScore) {
+					this.appearanceScore = appearanceScore;
 				}
 
 				public Gender getGender() {

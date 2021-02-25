@@ -27,6 +27,12 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Long totalCount;
+
+	private Long pageNumber;
+
+	private Long pageSize;
+
 	private List<InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
 
 	public String getRequestId() {
@@ -35,6 +41,30 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<InstanceCloudAssistantStatus> getInstanceCloudAssistantStatusSet() {

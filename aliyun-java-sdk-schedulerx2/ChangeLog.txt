@@ -1,3 +1,8 @@
+2021-02-23 Version: 1.0.5
+- Supported List Namespaces.
+- Supported List Groups.
+- Supported List Jobs.
+
 2021-01-12 Version: 1.0.4
 - Support BatchEnableJobs.
 - Support BatchDisableJobs.

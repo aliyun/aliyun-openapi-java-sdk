@@ -39,6 +39,8 @@ public class DescribeRecommendInstanceTypeResponseUnmarshaller {
 			recommendInstanceType.setInstanceChargeType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceChargeType"));
 			recommendInstanceType.setSpotStrategy(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].SpotStrategy"));
 			recommendInstanceType.setPriority(_ctx.integerValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].Priority"));
+			recommendInstanceType.setZoneId(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].ZoneId"));
+			recommendInstanceType.setNetworkType(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].NetworkType"));
 
 			InstanceType instanceType = new InstanceType();
 			instanceType.setGeneration(_ctx.stringValue("DescribeRecommendInstanceTypeResponse.Data["+ i +"].InstanceType.Generation"));

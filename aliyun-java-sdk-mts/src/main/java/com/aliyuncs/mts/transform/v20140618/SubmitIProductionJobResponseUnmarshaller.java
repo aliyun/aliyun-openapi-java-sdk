@@ -24,6 +24,7 @@ public class SubmitIProductionJobResponseUnmarshaller {
 		
 		submitIProductionJobResponse.setRequestId(_ctx.stringValue("SubmitIProductionJobResponse.RequestId"));
 		submitIProductionJobResponse.setJobId(_ctx.stringValue("SubmitIProductionJobResponse.JobId"));
+		submitIProductionJobResponse.setResult(_ctx.stringValue("SubmitIProductionJobResponse.Result"));
 	 
 	 	return submitIProductionJobResponse;
 	}

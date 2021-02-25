@@ -49,6 +49,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String securityIPList;
 
+	private String dBMinorVersion;
+
 	private Boolean autoRenew;
 
 	private String zoneId;
@@ -218,6 +220,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.securityIPList = securityIPList;
 		if(securityIPList != null){
 			putQueryParameter("SecurityIPList", securityIPList);
+		}
+	}
+
+	public String getDBMinorVersion() {
+		return this.dBMinorVersion;
+	}
+
+	public void setDBMinorVersion(String dBMinorVersion) {
+		this.dBMinorVersion = dBMinorVersion;
+		if(dBMinorVersion != null){
+			putQueryParameter("DBMinorVersion", dBMinorVersion);
 		}
 	}
 

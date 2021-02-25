@@ -27,7 +27,7 @@ public class ListSwimmingLaneRequest extends RoaAcsRequest<ListSwimmingLaneRespo
 
 	private Long groupId;
 	public ListSwimmingLaneRequest() {
-		super("Edas", "2017-08-01", "ListSwimmingLane", "Edas");
+		super("Edas", "2017-08-01", "ListSwimmingLane", "edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
 		setMethod(MethodType.GET);
 		try {

@@ -24,11 +24,24 @@ import com.aliyuncs.http.MethodType;
 public class GetUserInfoRequest extends RoaAcsRequest<GetUserInfoResponse> {
 	   
 
+	private String organizationId;
+
 	private String accessToken;
 	public GetUserInfoRequest() {
 		super("codeup", "2020-04-14", "GetUserInfo");
 		setUriPattern("/api/v3/user/current");
 		setMethod(MethodType.GET);
+	}
+
+	public String getOrganizationId() {
+		return this.organizationId;
+	}
+
+	public void setOrganizationId(String organizationId) {
+		this.organizationId = organizationId;
+		if(organizationId != null){
+			putQueryParameter("OrganizationId", organizationId);
+		}
 	}
 
 	public String getAccessToken() {

@@ -29,7 +29,7 @@ public class ListRootStacksRequest extends RoaAcsRequest<ListRootStacksResponse>
 
 	private Integer currentPage;
 	public ListRootStacksRequest() {
-		super("Edas", "2017-08-01", "ListRootStacks", "Edas");
+		super("Edas", "2017-08-01", "ListRootStacks", "edas");
 		setUriPattern("/pop/v5/s2i/list_root_stack");
 		setMethod(MethodType.GET);
 		try {

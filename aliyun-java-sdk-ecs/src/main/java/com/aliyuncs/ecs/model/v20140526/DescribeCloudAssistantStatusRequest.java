@@ -28,9 +28,15 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 
 	private Long resourceOwnerId;
 
+	private Long pageNumber;
+
+	private Long pageSize;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
+
+	private String oSType;
 
 	private Long ownerId;
 
@@ -55,6 +61,28 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 		}
 	}
 
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -74,6 +102,17 @@ public class DescribeCloudAssistantStatusRequest extends RpcAcsRequest<DescribeC
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public String getOSType() {
+		return this.oSType;
+	}
+
+	public void setOSType(String oSType) {
+		this.oSType = oSType;
+		if(oSType != null){
+			putQueryParameter("OSType", oSType);
 		}
 	}
 

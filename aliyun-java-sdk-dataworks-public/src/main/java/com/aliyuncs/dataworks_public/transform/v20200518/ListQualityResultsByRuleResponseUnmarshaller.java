@@ -86,7 +86,7 @@ public class ListQualityResultsByRuleResponseUnmarshaller {
 			List<ReferenceValueItem> referenceValue = new ArrayList<ReferenceValueItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].ReferenceValue.Length"); j++) {
 				ReferenceValueItem referenceValueItem = new ReferenceValueItem();
-				referenceValueItem.setBizDate(_ctx.longValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].ReferenceValue["+ j +"].BizDate"));
+				referenceValueItem.setBizDate(_ctx.stringValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].ReferenceValue["+ j +"].BizDate"));
 				referenceValueItem.setDiscreteProperty(_ctx.stringValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].ReferenceValue["+ j +"].DiscreteProperty"));
 				referenceValueItem.setValue(_ctx.floatValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].ReferenceValue["+ j +"].Value"));
 				referenceValueItem.setThreshold(_ctx.floatValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].ReferenceValue["+ j +"].Threshold"));
@@ -99,7 +99,7 @@ public class ListQualityResultsByRuleResponseUnmarshaller {
 			List<SampleValueItem> sampleValue = new ArrayList<SampleValueItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].SampleValue.Length"); j++) {
 				SampleValueItem sampleValueItem = new SampleValueItem();
-				sampleValueItem.setBizDate(_ctx.longValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].SampleValue["+ j +"].BizDate"));
+				sampleValueItem.setBizDate(_ctx.stringValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].SampleValue["+ j +"].BizDate"));
 				sampleValueItem.setDiscreteProperty(_ctx.stringValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].SampleValue["+ j +"].DiscreteProperty"));
 				sampleValueItem.setValue(_ctx.floatValue("ListQualityResultsByRuleResponse.Data.RuleChecks["+ i +"].SampleValue["+ j +"].Value"));
 

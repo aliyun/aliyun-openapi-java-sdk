@@ -50,6 +50,8 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 
 	private String instanceIds;
 
+	private Boolean fromFile;
+
 	private String status;
 	public DescribeClientsRequest() {
 		super("hbr", "2017-09-08", "DescribeClients", "hbr");
@@ -190,6 +192,17 @@ public class DescribeClientsRequest extends RpcAcsRequest<DescribeClientsRespons
 		this.instanceIds = instanceIds;
 		if(instanceIds != null){
 			putQueryParameter("InstanceIds", instanceIds);
+		}
+	}
+
+	public Boolean getFromFile() {
+		return this.fromFile;
+	}
+
+	public void setFromFile(Boolean fromFile) {
+		this.fromFile = fromFile;
+		if(fromFile != null){
+			putQueryParameter("FromFile", fromFile.toString());
 		}
 	}
 

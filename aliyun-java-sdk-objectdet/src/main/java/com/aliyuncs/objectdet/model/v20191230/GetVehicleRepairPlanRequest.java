@@ -31,7 +31,7 @@ public class GetVehicleRepairPlanRequest extends RpcAcsRequest<GetVehicleRepairP
 
 	private String taskId;
 	public GetVehicleRepairPlanRequest() {
-		super("objectdet", "2019-12-30", "GetVehicleRepairPlan", "objectdet");
+		super("objectdet", "2019-12-30", "GetVehicleRepairPlan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

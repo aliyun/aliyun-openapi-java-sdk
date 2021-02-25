@@ -25,15 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 
+	private Integer itemsNumbers;
+
+	private Integer pageRecordCount;
+
 	private String requestId;
 
 	private Integer pageNumber;
 
-	private Integer pageRecordCount;
-
-	private Integer itemsNumbers;
-
 	private List<Item> items;
+
+	public Integer getItemsNumbers() {
+		return this.itemsNumbers;
+	}
+
+	public void setItemsNumbers(Integer itemsNumbers) {
+		this.itemsNumbers = itemsNumbers;
+	}
+
+	public Integer getPageRecordCount() {
+		return this.pageRecordCount;
+	}
+
+	public void setPageRecordCount(Integer pageRecordCount) {
+		this.pageRecordCount = pageRecordCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageRecordCount() {
-		return this.pageRecordCount;
-	}
-
-	public void setPageRecordCount(Integer pageRecordCount) {
-		this.pageRecordCount = pageRecordCount;
-	}
-
-	public Integer getItemsNumbers() {
-		return this.itemsNumbers;
-	}
-
-	public void setItemsNumbers(Integer itemsNumbers) {
-		this.itemsNumbers = itemsNumbers;
-	}
-
 	public List<Item> getItems() {
 		return this.items;
 	}
@@ -77,39 +77,15 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String dbInstanceId;
-
-		private String regionId;
-
-		private String duration;
-
 		private String autoRenew;
 
 		private String dBInstanceType;
 
-		public String getDbInstanceId() {
-			return this.dbInstanceId;
-		}
+		private String duration;
 
-		public void setDbInstanceId(String dbInstanceId) {
-			this.dbInstanceId = dbInstanceId;
-		}
+		private String regionId;
 
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(String duration) {
-			this.duration = duration;
-		}
+		private String dbInstanceId;
 
 		public String getAutoRenew() {
 			return this.autoRenew;
@@ -125,6 +101,30 @@ public class DescribeInstanceAutoRenewalAttributeResponse extends AcsResponse {
 
 		public void setDBInstanceType(String dBInstanceType) {
 			this.dBInstanceType = dBInstanceType;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public String getDbInstanceId() {
+			return this.dbInstanceId;
+		}
+
+		public void setDbInstanceId(String dbInstanceId) {
+			this.dbInstanceId = dbInstanceId;
 		}
 	}
 

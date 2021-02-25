@@ -1,3 +1,24 @@
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
+2021-02-08 Version: 4.23.9
+- Add username for RunCommand and InvokeCommand.
+
+2021-02-08 Version: 4.23.8
+- DescribeRecommendInstanceType support ZoneMatchMode.
+
+2021-01-25 Version: 4.23.7
+- Regenerate SDK to override list implement.
+
+2021-01-21 Version: 4.23.6
+- Supported RunInstances specifiy Dedicated Host Cluster Id.
+
 2021-01-06 Version: 4.23.5
 - Support input parameter ClientToken for CreateAutoProvisioningGroup.
 

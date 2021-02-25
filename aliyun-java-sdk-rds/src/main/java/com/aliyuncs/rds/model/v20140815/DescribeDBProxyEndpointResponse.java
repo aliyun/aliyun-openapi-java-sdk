@@ -14,6 +14,7 @@
 
 package com.aliyuncs.rds.model.v20140815;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.rds.transform.v20140815.DescribeDBProxyEndpointResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -41,6 +42,12 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 	private String readOnlyInstanceDistributionType;
 
 	private String readOnlyInstanceWeight;
+
+	private String dbProxyEndpointAliases;
+
+	private String dbProxyEndpointReadWriteMode;
+
+	private List<EndpointConnectItemsItem> endpointConnectItems;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -112,6 +119,63 @@ public class DescribeDBProxyEndpointResponse extends AcsResponse {
 
 	public void setReadOnlyInstanceWeight(String readOnlyInstanceWeight) {
 		this.readOnlyInstanceWeight = readOnlyInstanceWeight;
+	}
+
+	public String getDbProxyEndpointAliases() {
+		return this.dbProxyEndpointAliases;
+	}
+
+	public void setDbProxyEndpointAliases(String dbProxyEndpointAliases) {
+		this.dbProxyEndpointAliases = dbProxyEndpointAliases;
+	}
+
+	public String getDbProxyEndpointReadWriteMode() {
+		return this.dbProxyEndpointReadWriteMode;
+	}
+
+	public void setDbProxyEndpointReadWriteMode(String dbProxyEndpointReadWriteMode) {
+		this.dbProxyEndpointReadWriteMode = dbProxyEndpointReadWriteMode;
+	}
+
+	public List<EndpointConnectItemsItem> getEndpointConnectItems() {
+		return this.endpointConnectItems;
+	}
+
+	public void setEndpointConnectItems(List<EndpointConnectItemsItem> endpointConnectItems) {
+		this.endpointConnectItems = endpointConnectItems;
+	}
+
+	public static class EndpointConnectItemsItem {
+
+		private String dbProxyEndpointConnectString;
+
+		private String dbProxyEndpointPort;
+
+		private String dbProxyEndpointNetType;
+
+		public String getDbProxyEndpointConnectString() {
+			return this.dbProxyEndpointConnectString;
+		}
+
+		public void setDbProxyEndpointConnectString(String dbProxyEndpointConnectString) {
+			this.dbProxyEndpointConnectString = dbProxyEndpointConnectString;
+		}
+
+		public String getDbProxyEndpointPort() {
+			return this.dbProxyEndpointPort;
+		}
+
+		public void setDbProxyEndpointPort(String dbProxyEndpointPort) {
+			this.dbProxyEndpointPort = dbProxyEndpointPort;
+		}
+
+		public String getDbProxyEndpointNetType() {
+			return this.dbProxyEndpointNetType;
+		}
+
+		public void setDbProxyEndpointNetType(String dbProxyEndpointNetType) {
+			this.dbProxyEndpointNetType = dbProxyEndpointNetType;
+		}
 	}
 
 	@Override

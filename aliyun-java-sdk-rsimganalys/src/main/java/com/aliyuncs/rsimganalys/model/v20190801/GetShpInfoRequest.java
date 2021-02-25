@@ -31,7 +31,7 @@ public class GetShpInfoRequest extends RpcAcsRequest<GetShpInfoResponse> {
 
 	private String fileId;
 	public GetShpInfoRequest() {
-		super("rsimganalys", "2019-08-01", "GetShpInfo");
+		super("rsimganalys", "2019-08-01", "GetShpInfo", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

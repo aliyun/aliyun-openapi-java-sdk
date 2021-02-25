@@ -43,6 +43,8 @@ public class RecognizeImageResponseUnmarshaller {
 			bodyListItem.setRightBottomX(_ctx.integerValue("RecognizeImageResponse.Data.BodyList["+ i +"].RightBottomX"));
 			bodyListItem.setRightBottomY(_ctx.integerValue("RecognizeImageResponse.Data.BodyList["+ i +"].RightBottomY"));
 			bodyListItem.setFeature(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].Feature"));
+			bodyListItem.setTargetImageContent(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].TargetImageContent"));
+			bodyListItem.setCropAlgorithmCode(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].CropAlgorithmCode"));
 
 			bodyList.add(bodyListItem);
 		}
@@ -58,6 +60,8 @@ public class RecognizeImageResponseUnmarshaller {
 			faceListItem.setFaceQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].FaceQuality"));
 			faceListItem.setFaceKeyPointQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].FaceKeyPointQuality"));
 			faceListItem.setFeature(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].Feature"));
+			faceListItem.setTargetImageContent(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].TargetImageContent"));
+			faceListItem.setCropAlgorithmCode(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].CropAlgorithmCode"));
 
 			faceList.add(faceListItem);
 		}

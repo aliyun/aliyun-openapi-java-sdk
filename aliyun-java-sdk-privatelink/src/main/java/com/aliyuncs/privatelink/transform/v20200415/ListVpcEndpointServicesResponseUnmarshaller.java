@@ -34,10 +34,10 @@ public class ListVpcEndpointServicesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointServicesResponse.Services.Length"); i++) {
 			Service service = new Service();
 			service.setAutoAcceptEnabled(_ctx.booleanValue("ListVpcEndpointServicesResponse.Services["+ i +"].AutoAcceptEnabled"));
-			service.setConnectBandwidth(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ConnectBandwidth"));
+			service.setConnectBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].ConnectBandwidth"));
 			service.setCreateTime(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].CreateTime"));
-			service.setMaxBandwidth(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].MaxBandwidth"));
-			service.setMinBandwidth(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].MinBandwidth"));
+			service.setMaxBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].MaxBandwidth"));
+			service.setMinBandwidth(_ctx.integerValue("ListVpcEndpointServicesResponse.Services["+ i +"].MinBandwidth"));
 			service.setRegionId(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].RegionId"));
 			service.setServiceBusinessStatus(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceBusinessStatus"));
 			service.setServiceDescription(_ctx.stringValue("ListVpcEndpointServicesResponse.Services["+ i +"].ServiceDescription"));

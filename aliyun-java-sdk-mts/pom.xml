@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-mts</artifactId>
   <packaging>jar</packaging>
-  <version>2.7.6</version>
+  <version>3.3.12-inner</version>
   <name>aliyun-java-sdk-mts</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

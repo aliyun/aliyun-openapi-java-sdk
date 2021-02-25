@@ -45,6 +45,8 @@ public class ListPersonResultResponseUnmarshaller {
 			datas.setPersonType(_ctx.stringValue("ListPersonResultResponse.Data["+ i +"].PersonType"));
 			datas.setHotSpotAddress(_ctx.stringValue("ListPersonResultResponse.Data["+ i +"].HotSpotAddress"));
 			datas.setUpdateTime(_ctx.stringValue("ListPersonResultResponse.Data["+ i +"].UpdateTime"));
+			datas.setTargetUrl(_ctx.stringValue("ListPersonResultResponse.Data["+ i +"].TargetUrl"));
+			datas.setSourceUrl(_ctx.stringValue("ListPersonResultResponse.Data["+ i +"].SourceUrl"));
 
 			data.add(datas);
 		}

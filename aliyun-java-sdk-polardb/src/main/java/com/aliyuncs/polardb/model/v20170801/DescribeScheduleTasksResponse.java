@@ -25,33 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScheduleTasksResponse extends AcsResponse {
 
-	private String code;
-
-	private Integer httpStatusCode;
-
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
-	private List<Items> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -61,12 +41,12 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,194 +57,177 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<Items> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<Items> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class Items {
+	public static class Data {
 
-		private String action;
+		private Integer totalRecordCount;
 
-		private String args;
+		private Integer pageSize;
 
-		private Long gmtCreate;
+		private Integer pageNumber;
 
-		private Long gmtModified;
+		private List<TimerInfosItem> timerInfos;
 
-		private String dBClusterId;
-
-		private Integer maxRetryTime;
-
-		private String mutex;
-
-		private String orderId;
-
-		private Long plannedEndTime;
-
-		private Long plannedStartTime;
-
-		private Long plannedTime;
-
-		private String productCode;
-
-		private String region;
-
-		private String response;
-
-		private Integer retryTime;
-
-		private String status;
-
-		private String taskId;
-
-		private Integer type;
-
-		public String getAction() {
-			return this.action;
+		public Integer getTotalRecordCount() {
+			return this.totalRecordCount;
 		}
 
-		public void setAction(String action) {
-			this.action = action;
+		public void setTotalRecordCount(Integer totalRecordCount) {
+			this.totalRecordCount = totalRecordCount;
 		}
 
-		public String getArgs() {
-			return this.args;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setArgs(String args) {
-			this.args = args;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
-		public Long getGmtCreate() {
-			return this.gmtCreate;
+		public Integer getPageNumber() {
+			return this.pageNumber;
 		}
 
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
-		public Long getGmtModified() {
-			return this.gmtModified;
+		public List<TimerInfosItem> getTimerInfos() {
+			return this.timerInfos;
 		}
 
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
+		public void setTimerInfos(List<TimerInfosItem> timerInfos) {
+			this.timerInfos = timerInfos;
 		}
 
-		public String getDBClusterId() {
-			return this.dBClusterId;
-		}
+		public static class TimerInfosItem {
 
-		public void setDBClusterId(String dBClusterId) {
-			this.dBClusterId = dBClusterId;
-		}
+			private String status;
 
-		public Integer getMaxRetryTime() {
-			return this.maxRetryTime;
-		}
+			private Long gmtCreate;
 
-		public void setMaxRetryTime(Integer maxRetryTime) {
-			this.maxRetryTime = maxRetryTime;
-		}
+			private String action;
 
-		public String getMutex() {
-			return this.mutex;
-		}
+			private String taskId;
 
-		public void setMutex(String mutex) {
-			this.mutex = mutex;
-		}
+			private String plannedTime;
 
-		public String getOrderId() {
-			return this.orderId;
-		}
+			private String plannedStartTime;
 
-		public void setOrderId(String orderId) {
-			this.orderId = orderId;
-		}
+			private String dBClusterId;
 
-		public Long getPlannedEndTime() {
-			return this.plannedEndTime;
-		}
+			private Long gmtModified;
 
-		public void setPlannedEndTime(Long plannedEndTime) {
-			this.plannedEndTime = plannedEndTime;
-		}
+			private String region;
 
-		public Long getPlannedStartTime() {
-			return this.plannedStartTime;
-		}
+			private String orderId;
 
-		public void setPlannedStartTime(Long plannedStartTime) {
-			this.plannedStartTime = plannedStartTime;
-		}
+			private String plannedEndTime;
 
-		public Long getPlannedTime() {
-			return this.plannedTime;
-		}
+			private Integer aliUid;
 
-		public void setPlannedTime(Long plannedTime) {
-			this.plannedTime = plannedTime;
-		}
+			public String getStatus() {
+				return this.status;
+			}
 
-		public String getProductCode() {
-			return this.productCode;
-		}
+			public void setStatus(String status) {
+				this.status = status;
+			}
 
-		public void setProductCode(String productCode) {
-			this.productCode = productCode;
-		}
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
 
-		public String getRegion() {
-			return this.region;
-		}
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
 
-		public void setRegion(String region) {
-			this.region = region;
-		}
+			public String getAction() {
+				return this.action;
+			}
 
-		public String getResponse() {
-			return this.response;
-		}
+			public void setAction(String action) {
+				this.action = action;
+			}
 
-		public void setResponse(String response) {
-			this.response = response;
-		}
+			public String getTaskId() {
+				return this.taskId;
+			}
 
-		public Integer getRetryTime() {
-			return this.retryTime;
-		}
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
+			}
 
-		public void setRetryTime(Integer retryTime) {
-			this.retryTime = retryTime;
-		}
+			public String getPlannedTime() {
+				return this.plannedTime;
+			}
 
-		public String getStatus() {
-			return this.status;
-		}
+			public void setPlannedTime(String plannedTime) {
+				this.plannedTime = plannedTime;
+			}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+			public String getPlannedStartTime() {
+				return this.plannedStartTime;
+			}
 
-		public String getTaskId() {
-			return this.taskId;
-		}
+			public void setPlannedStartTime(String plannedStartTime) {
+				this.plannedStartTime = plannedStartTime;
+			}
 
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
+			public String getDBClusterId() {
+				return this.dBClusterId;
+			}
 
-		public Integer getType() {
-			return this.type;
-		}
+			public void setDBClusterId(String dBClusterId) {
+				this.dBClusterId = dBClusterId;
+			}
 
-		public void setType(Integer type) {
-			this.type = type;
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public String getRegion() {
+				return this.region;
+			}
+
+			public void setRegion(String region) {
+				this.region = region;
+			}
+
+			public String getOrderId() {
+				return this.orderId;
+			}
+
+			public void setOrderId(String orderId) {
+				this.orderId = orderId;
+			}
+
+			public String getPlannedEndTime() {
+				return this.plannedEndTime;
+			}
+
+			public void setPlannedEndTime(String plannedEndTime) {
+				this.plannedEndTime = plannedEndTime;
+			}
+
+			public Integer getAliUid() {
+				return this.aliUid;
+			}
+
+			public void setAliUid(Integer aliUid) {
+				this.aliUid = aliUid;
+			}
 		}
 	}
 

@@ -27,6 +27,8 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 
 	private String scheme;
 
+	private Boolean playUnLimited;
+
 	private Integer encryptType;
 
 	private String iotId;
@@ -55,6 +57,17 @@ public class QueryDeviceVodUrlRequest extends RpcAcsRequest<QueryDeviceVodUrlRes
 		this.scheme = scheme;
 		if(scheme != null){
 			putQueryParameter("Scheme", scheme);
+		}
+	}
+
+	public Boolean getPlayUnLimited() {
+		return this.playUnLimited;
+	}
+
+	public void setPlayUnLimited(Boolean playUnLimited) {
+		this.playUnLimited = playUnLimited;
+		if(playUnLimited != null){
+			putQueryParameter("PlayUnLimited", playUnLimited.toString());
 		}
 	}
 

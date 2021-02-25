@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-quickbi-public</artifactId>
   <packaging>jar</packaging>
-  <version>1.3.0</version>
+  <version>1.4.1</version>
   <name>aliyun-java-sdk-quickbi-public</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

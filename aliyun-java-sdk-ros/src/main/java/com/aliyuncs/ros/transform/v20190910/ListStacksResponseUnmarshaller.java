@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ros.model.v20190910.ListStacksResponse;
 import com.aliyuncs.ros.model.v20190910.ListStacksResponse.Stack;
+import com.aliyuncs.ros.model.v20190910.ListStacksResponse.Stack.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,16 @@ public class ListStacksResponseUnmarshaller {
 			stack.setStackDriftStatus(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackDriftStatus"));
 			stack.setDriftDetectionTime(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].DriftDetectionTime"));
 			stack.setStackType(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].StackType"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("ListStacksResponse.Stacks["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("ListStacksResponse.Stacks["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			stack.setTags(tags);
 
 			stacks.add(stack);
 		}

@@ -15,6 +15,7 @@
 package com.aliyuncs.emas_appmonitor.model.v20190611;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emas_appmonitor.Endpoint;
 
 /**
@@ -22,22 +23,23 @@ import com.aliyuncs.emas_appmonitor.Endpoint;
  * @version 
  */
 public class GetAppMonthlyDeviceCountRequest extends RpcAcsRequest<GetAppMonthlyDeviceCountResponse> {
-	
+	   
+
+	private String uniqueAppId;
+
+	private Long fromDateMs;
+
+	private String service;
+
+	private Long untilDateMs;
 	public GetAppMonthlyDeviceCountRequest() {
 		super("emas-appmonitor", "2019-06-11", "GetAppMonthlyDeviceCount");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String uniqueAppId;
-
-	private String service;
-
-	private Long untilDateMs;
-
-	private Long fromDateMs;
 
 	public String getUniqueAppId() {
 		return this.uniqueAppId;
@@ -47,6 +49,17 @@ public class GetAppMonthlyDeviceCountRequest extends RpcAcsRequest<GetAppMonthly
 		this.uniqueAppId = uniqueAppId;
 		if(uniqueAppId != null){
 			putBodyParameter("UniqueAppId", uniqueAppId);
+		}
+	}
+
+	public Long getFromDateMs() {
+		return this.fromDateMs;
+	}
+
+	public void setFromDateMs(Long fromDateMs) {
+		this.fromDateMs = fromDateMs;
+		if(fromDateMs != null){
+			putBodyParameter("FromDateMs", fromDateMs.toString());
 		}
 	}
 
@@ -69,17 +82,6 @@ public class GetAppMonthlyDeviceCountRequest extends RpcAcsRequest<GetAppMonthly
 		this.untilDateMs = untilDateMs;
 		if(untilDateMs != null){
 			putBodyParameter("UntilDateMs", untilDateMs.toString());
-		}
-	}
-
-	public Long getFromDateMs() {
-		return this.fromDateMs;
-	}
-
-	public void setFromDateMs(Long fromDateMs) {
-		this.fromDateMs = fromDateMs;
-		if(fromDateMs != null){
-			putBodyParameter("FromDateMs", fromDateMs.toString());
 		}
 	}
 

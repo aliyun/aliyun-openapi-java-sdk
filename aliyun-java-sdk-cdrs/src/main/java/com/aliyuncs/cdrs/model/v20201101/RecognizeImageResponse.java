@@ -109,6 +109,10 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			private String feature;
 
+			private String targetImageContent;
+
+			private String cropAlgorithmCode;
+
 			public Integer getLeftTopX() {
 				return this.leftTopX;
 			}
@@ -148,6 +152,22 @@ public class RecognizeImageResponse extends AcsResponse {
 			public void setFeature(String feature) {
 				this.feature = feature;
 			}
+
+			public String getTargetImageContent() {
+				return this.targetImageContent;
+			}
+
+			public void setTargetImageContent(String targetImageContent) {
+				this.targetImageContent = targetImageContent;
+			}
+
+			public String getCropAlgorithmCode() {
+				return this.cropAlgorithmCode;
+			}
+
+			public void setCropAlgorithmCode(String cropAlgorithmCode) {
+				this.cropAlgorithmCode = cropAlgorithmCode;
+			}
 		}
 
 		public static class FaceListItem {
@@ -165,6 +185,10 @@ public class RecognizeImageResponse extends AcsResponse {
 			private Float faceKeyPointQuality;
 
 			private String feature;
+
+			private String targetImageContent;
+
+			private String cropAlgorithmCode;
 
 			public Integer getLeftTopX() {
 				return this.leftTopX;
@@ -220,6 +244,22 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			public void setFeature(String feature) {
 				this.feature = feature;
+			}
+
+			public String getTargetImageContent() {
+				return this.targetImageContent;
+			}
+
+			public void setTargetImageContent(String targetImageContent) {
+				this.targetImageContent = targetImageContent;
+			}
+
+			public String getCropAlgorithmCode() {
+				return this.cropAlgorithmCode;
+			}
+
+			public void setCropAlgorithmCode(String cropAlgorithmCode) {
+				this.cropAlgorithmCode = cropAlgorithmCode;
 			}
 		}
 	}

@@ -27,9 +27,15 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 
 	private String scheme;
 
+	private Boolean playUnLimited;
+
 	private Integer encryptType;
 
+	private Integer cacheDuration;
+
 	private String iotId;
+
+	private Boolean forceIFrame;
 
 	private String iotInstanceId;
 
@@ -56,6 +62,17 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		}
 	}
 
+	public Boolean getPlayUnLimited() {
+		return this.playUnLimited;
+	}
+
+	public void setPlayUnLimited(Boolean playUnLimited) {
+		this.playUnLimited = playUnLimited;
+		if(playUnLimited != null){
+			putQueryParameter("PlayUnLimited", playUnLimited.toString());
+		}
+	}
+
 	public Integer getEncryptType() {
 		return this.encryptType;
 	}
@@ -67,6 +84,17 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		}
 	}
 
+	public Integer getCacheDuration() {
+		return this.cacheDuration;
+	}
+
+	public void setCacheDuration(Integer cacheDuration) {
+		this.cacheDuration = cacheDuration;
+		if(cacheDuration != null){
+			putQueryParameter("CacheDuration", cacheDuration.toString());
+		}
+	}
+
 	public String getIotId() {
 		return this.iotId;
 	}
@@ -75,6 +103,17 @@ public class QueryLiveStreamingRequest extends RpcAcsRequest<QueryLiveStreamingR
 		this.iotId = iotId;
 		if(iotId != null){
 			putQueryParameter("IotId", iotId);
+		}
+	}
+
+	public Boolean getForceIFrame() {
+		return this.forceIFrame;
+	}
+
+	public void setForceIFrame(Boolean forceIFrame) {
+		this.forceIFrame = forceIFrame;
+		if(forceIFrame != null){
+			putQueryParameter("ForceIFrame", forceIFrame.toString());
 		}
 	}
 

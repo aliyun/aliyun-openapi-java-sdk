@@ -37,7 +37,15 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 
 	private String resourceOwnerAccount;
 
+	private String dbEndpointAliases;
+
+	private String dbEndpointOperator;
+
+	private String dbEndpointType;
+
 	private Long ownerId;
+
+	private String dbEndpointReadWriteMode;
 
 	private String dBProxyEndpointId;
 
@@ -117,6 +125,39 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		}
 	}
 
+	public String getDbEndpointAliases() {
+		return this.dbEndpointAliases;
+	}
+
+	public void setDbEndpointAliases(String dbEndpointAliases) {
+		this.dbEndpointAliases = dbEndpointAliases;
+		if(dbEndpointAliases != null){
+			putQueryParameter("DbEndpointAliases", dbEndpointAliases);
+		}
+	}
+
+	public String getDbEndpointOperator() {
+		return this.dbEndpointOperator;
+	}
+
+	public void setDbEndpointOperator(String dbEndpointOperator) {
+		this.dbEndpointOperator = dbEndpointOperator;
+		if(dbEndpointOperator != null){
+			putQueryParameter("DbEndpointOperator", dbEndpointOperator);
+		}
+	}
+
+	public String getDbEndpointType() {
+		return this.dbEndpointType;
+	}
+
+	public void setDbEndpointType(String dbEndpointType) {
+		this.dbEndpointType = dbEndpointType;
+		if(dbEndpointType != null){
+			putQueryParameter("DbEndpointType", dbEndpointType);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -125,6 +166,17 @@ public class ModifyDBProxyEndpointRequest extends RpcAcsRequest<ModifyDBProxyEnd
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDbEndpointReadWriteMode() {
+		return this.dbEndpointReadWriteMode;
+	}
+
+	public void setDbEndpointReadWriteMode(String dbEndpointReadWriteMode) {
+		this.dbEndpointReadWriteMode = dbEndpointReadWriteMode;
+		if(dbEndpointReadWriteMode != null){
+			putQueryParameter("DbEndpointReadWriteMode", dbEndpointReadWriteMode);
 		}
 	}
 

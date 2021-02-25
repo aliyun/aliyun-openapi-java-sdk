@@ -14,7 +14,11 @@
 
 package com.aliyuncs.devops_rdc.transform.v20200303;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.devops_rdc.model.v20200303.ListUserOrganizationResponse;
+import com.aliyuncs.devops_rdc.model.v20200303.ListUserOrganizationResponse.Organization;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +27,19 @@ public class ListUserOrganizationResponseUnmarshaller {
 	public static ListUserOrganizationResponse unmarshall(ListUserOrganizationResponse listUserOrganizationResponse, UnmarshallerContext _ctx) {
 		
 		listUserOrganizationResponse.setRequestId(_ctx.stringValue("ListUserOrganizationResponse.RequestId"));
+		listUserOrganizationResponse.setSuccess(_ctx.booleanValue("ListUserOrganizationResponse.Success"));
 		listUserOrganizationResponse.setErrorCode(_ctx.stringValue("ListUserOrganizationResponse.ErrorCode"));
 		listUserOrganizationResponse.setErrorMessage(_ctx.stringValue("ListUserOrganizationResponse.ErrorMessage"));
-		listUserOrganizationResponse.setSuccess(_ctx.booleanValue("ListUserOrganizationResponse.Success"));
-		listUserOrganizationResponse.setObject(_ctx.stringValue("ListUserOrganizationResponse.Object"));
+
+		List<Organization> object = new ArrayList<Organization>();
+		for (int i = 0; i < _ctx.lengthValue("ListUserOrganizationResponse.Object.Length"); i++) {
+			Organization organization = new Organization();
+			organization.setName(_ctx.stringValue("ListUserOrganizationResponse.Object["+ i +"].Name"));
+			organization.setId(_ctx.stringValue("ListUserOrganizationResponse.Object["+ i +"].Id"));
+
+			object.add(organization);
+		}
+		listUserOrganizationResponse.setObject(object);
 	 
 	 	return listUserOrganizationResponse;
 	}

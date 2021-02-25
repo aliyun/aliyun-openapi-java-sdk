@@ -79,6 +79,8 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private Boolean notifyOnMaintenance;
+
 		private List<MaintenanceWindow> maintenanceWindows;
 
 		private ActionOnMaintenance actionOnMaintenance;
@@ -89,6 +91,14 @@ public class DescribeInstanceMaintenanceAttributesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Boolean getNotifyOnMaintenance() {
+			return this.notifyOnMaintenance;
+		}
+
+		public void setNotifyOnMaintenance(Boolean notifyOnMaintenance) {
+			this.notifyOnMaintenance = notifyOnMaintenance;
 		}
 
 		public List<MaintenanceWindow> getMaintenanceWindows() {

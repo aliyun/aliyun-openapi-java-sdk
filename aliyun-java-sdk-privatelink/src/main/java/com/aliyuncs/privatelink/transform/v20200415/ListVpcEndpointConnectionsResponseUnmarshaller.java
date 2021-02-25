@@ -41,6 +41,7 @@ public class ListVpcEndpointConnectionsResponseUnmarshaller {
 			connection.setEndpointVpcId(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].EndpointVpcId"));
 			connection.setBandwidth(_ctx.integerValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Bandwidth"));
 			connection.setModifiedTime(_ctx.stringValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ModifiedTime"));
+			connection.setResourceOwner(_ctx.booleanValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].ResourceOwner"));
 
 			List<Zone> zones = new ArrayList<Zone>();
 			for (int j = 0; j < _ctx.lengthValue("ListVpcEndpointConnectionsResponse.Connections["+ i +"].Zones.Length"); j++) {

@@ -35,6 +35,10 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 
 	private String proxyLimitMemory;
 
+	private Boolean customizedPrometheus;
+
+	private Boolean accessLogEnabled;
+
 	private String oPALogLevel;
 
 	private String excludeIPRanges;
@@ -48,6 +52,8 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 	private String excludeInboundPorts;
 
 	private String oPALimitMemory;
+
+	private String prometheusUrl;
 
 	private String vSwitches;
 
@@ -70,6 +76,8 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 	private Boolean apiServerPublicEip;
 
 	private Float traceSampling;
+
+	private Boolean kialiEnabled;
 
 	private Boolean pilotPublicEip;
 
@@ -139,6 +147,28 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		this.proxyLimitMemory = proxyLimitMemory;
 		if(proxyLimitMemory != null){
 			putBodyParameter("ProxyLimitMemory", proxyLimitMemory);
+		}
+	}
+
+	public Boolean getCustomizedPrometheus() {
+		return this.customizedPrometheus;
+	}
+
+	public void setCustomizedPrometheus(Boolean customizedPrometheus) {
+		this.customizedPrometheus = customizedPrometheus;
+		if(customizedPrometheus != null){
+			putBodyParameter("CustomizedPrometheus", customizedPrometheus.toString());
+		}
+	}
+
+	public Boolean getAccessLogEnabled() {
+		return this.accessLogEnabled;
+	}
+
+	public void setAccessLogEnabled(Boolean accessLogEnabled) {
+		this.accessLogEnabled = accessLogEnabled;
+		if(accessLogEnabled != null){
+			putBodyParameter("AccessLogEnabled", accessLogEnabled.toString());
 		}
 	}
 
@@ -216,6 +246,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		this.oPALimitMemory = oPALimitMemory;
 		if(oPALimitMemory != null){
 			putBodyParameter("OPALimitMemory", oPALimitMemory);
+		}
+	}
+
+	public String getPrometheusUrl() {
+		return this.prometheusUrl;
+	}
+
+	public void setPrometheusUrl(String prometheusUrl) {
+		this.prometheusUrl = prometheusUrl;
+		if(prometheusUrl != null){
+			putBodyParameter("PrometheusUrl", prometheusUrl);
 		}
 	}
 
@@ -337,6 +378,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		this.traceSampling = traceSampling;
 		if(traceSampling != null){
 			putBodyParameter("TraceSampling", traceSampling.toString());
+		}
+	}
+
+	public Boolean getKialiEnabled() {
+		return this.kialiEnabled;
+	}
+
+	public void setKialiEnabled(Boolean kialiEnabled) {
+		this.kialiEnabled = kialiEnabled;
+		if(kialiEnabled != null){
+			putBodyParameter("KialiEnabled", kialiEnabled.toString());
 		}
 	}
 

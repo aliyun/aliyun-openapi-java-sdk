@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalRecordCount;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<GlobalDatabaseNetwork> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -67,6 +51,22 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<GlobalDatabaseNetwork> getItems() {
 		return this.items;
 	}
@@ -77,19 +77,35 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 	public static class GlobalDatabaseNetwork {
 
+		private String gDNStatus;
+
+		private String dBVersion;
+
 		private String gDNId;
 
-		private String gDNStatus;
+		private String createTime;
 
 		private String gDNDescription;
 
 		private String dBType;
 
-		private String dBVersion;
-
-		private String createTime;
-
 		private List<DBCluster> dBClusters;
+
+		public String getGDNStatus() {
+			return this.gDNStatus;
+		}
+
+		public void setGDNStatus(String gDNStatus) {
+			this.gDNStatus = gDNStatus;
+		}
+
+		public String getDBVersion() {
+			return this.dBVersion;
+		}
+
+		public void setDBVersion(String dBVersion) {
+			this.dBVersion = dBVersion;
+		}
 
 		public String getGDNId() {
 			return this.gDNId;
@@ -99,12 +115,12 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 			this.gDNId = gDNId;
 		}
 
-		public String getGDNStatus() {
-			return this.gDNStatus;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setGDNStatus(String gDNStatus) {
-			this.gDNStatus = gDNStatus;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getGDNDescription() {
@@ -123,22 +139,6 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 			this.dBType = dBType;
 		}
 
-		public String getDBVersion() {
-			return this.dBVersion;
-		}
-
-		public void setDBVersion(String dBVersion) {
-			this.dBVersion = dBVersion;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
 		public List<DBCluster> getDBClusters() {
 			return this.dBClusters;
 		}
@@ -149,11 +149,19 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 		public static class DBCluster {
 
+			private String role;
+
 			private String dBClusterId;
 
 			private String regionId;
 
-			private String role;
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
+			}
 
 			public String getDBClusterId() {
 				return this.dBClusterId;
@@ -169,14 +177,6 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
-			}
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
 			}
 		}
 	}

@@ -33,6 +33,10 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 	private String vaultId;
 
 	private String token;
+
+	private String instanceId;
+
+	private String sourceType;
 	public DeleteSnapshotRequest() {
 		super("hbr", "2017-09-08", "DeleteSnapshot", "hbr");
 		setProtocol(ProtocolType.HTTPS);
@@ -84,6 +88,28 @@ public class DeleteSnapshotRequest extends RpcAcsRequest<DeleteSnapshotResponse>
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
 		}
 	}
 

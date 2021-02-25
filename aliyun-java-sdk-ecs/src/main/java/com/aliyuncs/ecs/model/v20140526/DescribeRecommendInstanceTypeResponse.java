@@ -59,6 +59,10 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 		private Integer priority;
 
+		private String zoneId;
+
+		private String networkType;
+
 		private List<Zone> zones;
 
 		private InstanceType instanceType;
@@ -109,6 +113,22 @@ public class DescribeRecommendInstanceTypeResponse extends AcsResponse {
 
 		public void setPriority(Integer priority) {
 			this.priority = priority;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getNetworkType() {
+			return this.networkType;
+		}
+
+		public void setNetworkType(String networkType) {
+			this.networkType = networkType;
 		}
 
 		public List<Zone> getZones() {

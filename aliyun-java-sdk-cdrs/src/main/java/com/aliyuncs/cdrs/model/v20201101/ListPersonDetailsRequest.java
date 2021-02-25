@@ -24,6 +24,8 @@ import com.aliyuncs.http.MethodType;
 public class ListPersonDetailsRequest extends RpcAcsRequest<ListPersonDetailsResponse> {
 	   
 
+	private String schema;
+
 	private String corpId;
 
 	private String endTime;
@@ -38,6 +40,17 @@ public class ListPersonDetailsRequest extends RpcAcsRequest<ListPersonDetailsRes
 	public ListPersonDetailsRequest() {
 		super("CDRS", "2020-11-01", "ListPersonDetails");
 		setMethod(MethodType.POST);
+	}
+
+	public String getSchema() {
+		return this.schema;
+	}
+
+	public void setSchema(String schema) {
+		this.schema = schema;
+		if(schema != null){
+			putBodyParameter("Schema", schema);
+		}
 	}
 
 	public String getCorpId() {

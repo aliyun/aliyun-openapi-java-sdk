@@ -103,6 +103,8 @@ public class DescribeNasFileSystemsResponse extends AcsResponse {
 
 		private String zoneId;
 
+		private String status;
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -165,6 +167,14 @@ public class DescribeNasFileSystemsResponse extends AcsResponse {
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

@@ -37,7 +37,7 @@ public class ListPersonTopResponse extends AcsResponse {
 
 	private Long totalCount;
 
-	private List<Datas> data;
+	private List<DataItem> data;
 
 	public String getCode() {
 		return this.code;
@@ -87,15 +87,15 @@ public class ListPersonTopResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public List<Datas> getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Datas> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
 	}
 
-	public static class Datas {
+	public static class DataItem {
 
 		private String corpId;
 

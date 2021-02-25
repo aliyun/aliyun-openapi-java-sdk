@@ -41,6 +41,7 @@ public class ActivateClientResponseUnmarshaller {
 		activateClientResponse.setEnvironment(_ctx.stringValue("ActivateClientResponse.Environment"));
 		activateClientResponse.setClusterId(_ctx.stringValue("ActivateClientResponse.ClusterId"));
 		activateClientResponse.setVaultType(_ctx.stringValue("ActivateClientResponse.VaultType"));
+		activateClientResponse.setUseHttps(_ctx.booleanValue("ActivateClientResponse.UseHttps"));
 
 		List<String> sourceTypes = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ActivateClientResponse.SourceTypes.Length"); i++) {

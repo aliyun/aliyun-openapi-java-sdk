@@ -27,7 +27,7 @@ public class ListApplicationEcuRequest extends RoaAcsRequest<ListApplicationEcuR
 
 	private String appId;
 	public ListApplicationEcuRequest() {
-		super("Edas", "2017-08-01", "ListApplicationEcu", "Edas");
+		super("Edas", "2017-08-01", "ListApplicationEcu", "edas");
 		setUriPattern("/pop/v5/resource/ecu_list");
 		setMethod(MethodType.POST);
 		try {

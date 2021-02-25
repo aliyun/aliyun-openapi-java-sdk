@@ -47,7 +47,7 @@ public class ListSnapshotRequest extends RpcAcsRequest<ListSnapshotResponse> {
 
 	private String status;
 	public ListSnapshotRequest() {
-		super("DBFS", "2020-04-18", "ListSnapshot", "dbfs");
+		super("DBFS", "2020-04-18", "ListSnapshot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

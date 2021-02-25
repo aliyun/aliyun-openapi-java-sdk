@@ -39,7 +39,7 @@ public class TransferToThirdCallRequest extends RpcAcsRequest<TransferToThirdCal
 
 	private String holdConnectionId;
 	public TransferToThirdCallRequest() {
-		super("scsp", "2020-07-02", "TransferToThirdCall", "scsp");
+		super("scsp", "2020-07-02", "TransferToThirdCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

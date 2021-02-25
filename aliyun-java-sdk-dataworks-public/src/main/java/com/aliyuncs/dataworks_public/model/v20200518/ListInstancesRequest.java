@@ -31,6 +31,10 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 
 	private String bizName;
 
+	private String beginBizdate;
+
+	private String endBizdate;
+
 	private Long dagId;
 
 	private Integer pageNumber;
@@ -38,6 +42,8 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 	private String nodeName;
 
 	private String programType;
+
+	private String bizdate;
 
 	private Integer pageSize;
 
@@ -86,6 +92,28 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		}
 	}
 
+	public String getBeginBizdate() {
+		return this.beginBizdate;
+	}
+
+	public void setBeginBizdate(String beginBizdate) {
+		this.beginBizdate = beginBizdate;
+		if(beginBizdate != null){
+			putBodyParameter("BeginBizdate", beginBizdate);
+		}
+	}
+
+	public String getEndBizdate() {
+		return this.endBizdate;
+	}
+
+	public void setEndBizdate(String endBizdate) {
+		this.endBizdate = endBizdate;
+		if(endBizdate != null){
+			putBodyParameter("EndBizdate", endBizdate);
+		}
+	}
+
 	public Long getDagId() {
 		return this.dagId;
 	}
@@ -127,6 +155,17 @@ public class ListInstancesRequest extends RpcAcsRequest<ListInstancesResponse> {
 		this.programType = programType;
 		if(programType != null){
 			putBodyParameter("ProgramType", programType);
+		}
+	}
+
+	public String getBizdate() {
+		return this.bizdate;
+	}
+
+	public void setBizdate(String bizdate) {
+		this.bizdate = bizdate;
+		if(bizdate != null){
+			putBodyParameter("Bizdate", bizdate);
 		}
 	}
 

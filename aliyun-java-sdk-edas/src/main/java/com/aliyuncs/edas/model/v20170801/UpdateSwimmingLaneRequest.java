@@ -35,7 +35,7 @@ public class UpdateSwimmingLaneRequest extends RoaAcsRequest<UpdateSwimmingLaneR
 
 	private String name;
 	public UpdateSwimmingLaneRequest() {
-		super("Edas", "2017-08-01", "UpdateSwimmingLane", "Edas");
+		super("Edas", "2017-08-01", "UpdateSwimmingLane", "edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
 		setMethod(MethodType.PUT);
 		try {

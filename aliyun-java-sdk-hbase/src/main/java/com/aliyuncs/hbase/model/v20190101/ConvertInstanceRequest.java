@@ -25,11 +25,13 @@ import com.aliyuncs.hbase.Endpoint;
 public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceResponse> {
 	   
 
-	private String clusterId;
-
 	private Integer duration;
 
+	private String clusterId;
+
 	private String pricingCycle;
+
+	private String payType;
 	public ConvertInstanceRequest() {
 		super("HBase", "2019-01-01", "ConvertInstance", "hbase");
 		setMethod(MethodType.POST);
@@ -37,17 +39,6 @@ public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
 	}
 
 	public Integer getDuration() {
@@ -61,6 +52,17 @@ public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceRespons
 		}
 	}
 
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
 	public String getPricingCycle() {
 		return this.pricingCycle;
 	}
@@ -69,6 +71,17 @@ public class ConvertInstanceRequest extends RpcAcsRequest<ConvertInstanceRespons
 		this.pricingCycle = pricingCycle;
 		if(pricingCycle != null){
 			putQueryParameter("PricingCycle", pricingCycle);
+		}
+	}
+
+	public String getPayType() {
+		return this.payType;
+	}
+
+	public void setPayType(String payType) {
+		this.payType = payType;
+		if(payType != null){
+			putQueryParameter("PayType", payType);
 		}
 	}
 

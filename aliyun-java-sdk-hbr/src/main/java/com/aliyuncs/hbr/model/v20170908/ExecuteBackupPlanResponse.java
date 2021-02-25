@@ -32,6 +32,8 @@ public class ExecuteBackupPlanResponse extends AcsResponse {
 
 	private String message;
 
+	private String jobId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -62,6 +64,14 @@ public class ExecuteBackupPlanResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

@@ -43,6 +43,7 @@ public class DescribeNasFileSystemsResponseUnmarshaller {
 			fileSystem.setMeteredSize(_ctx.longValue("DescribeNasFileSystemsResponse.FileSystems["+ i +"].MeteredSize"));
 			fileSystem.setFileSystemDesc(_ctx.stringValue("DescribeNasFileSystemsResponse.FileSystems["+ i +"].FileSystemDesc"));
 			fileSystem.setZoneId(_ctx.stringValue("DescribeNasFileSystemsResponse.FileSystems["+ i +"].ZoneId"));
+			fileSystem.setStatus(_ctx.stringValue("DescribeNasFileSystemsResponse.FileSystems["+ i +"].Status"));
 
 			fileSystems.add(fileSystem);
 		}

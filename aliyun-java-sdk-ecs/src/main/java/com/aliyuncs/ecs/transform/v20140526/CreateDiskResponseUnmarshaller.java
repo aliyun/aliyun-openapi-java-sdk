@@ -24,6 +24,7 @@ public class CreateDiskResponseUnmarshaller {
 		
 		createDiskResponse.setRequestId(_ctx.stringValue("CreateDiskResponse.RequestId"));
 		createDiskResponse.setDiskId(_ctx.stringValue("CreateDiskResponse.DiskId"));
+		createDiskResponse.setOrderId(_ctx.stringValue("CreateDiskResponse.OrderId"));
 	 
 	 	return createDiskResponse;
 	}

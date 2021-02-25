@@ -157,6 +157,10 @@ public class DescribeRestoresResponse extends AcsResponse {
 
 		private String sourceClientId;
 
+		private String errorMessage;
+
+		private String errorFile;
+
 		public String getRestoreId() {
 			return this.restoreId;
 		}
@@ -355,6 +359,22 @@ public class DescribeRestoresResponse extends AcsResponse {
 
 		public void setSourceClientId(String sourceClientId) {
 			this.sourceClientId = sourceClientId;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 	}
 

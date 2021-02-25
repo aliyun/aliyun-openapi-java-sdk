@@ -27,7 +27,7 @@ public class GetImageRequest extends RpcAcsRequest<GetImageResponse> {
 
 	private Long imageId;
 	public GetImageRequest() {
-		super("rsimganalys", "2019-08-01", "GetImage");
+		super("rsimganalys", "2019-08-01", "GetImage", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

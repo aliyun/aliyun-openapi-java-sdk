@@ -27,7 +27,7 @@ public class GetDbfsRequest extends RpcAcsRequest<GetDbfsResponse> {
 
 	private String fsId;
 	public GetDbfsRequest() {
-		super("DBFS", "2020-04-18", "GetDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "GetDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

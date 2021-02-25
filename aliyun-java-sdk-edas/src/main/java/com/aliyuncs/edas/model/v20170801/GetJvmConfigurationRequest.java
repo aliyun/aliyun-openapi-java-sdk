@@ -29,7 +29,7 @@ public class GetJvmConfigurationRequest extends RoaAcsRequest<GetJvmConfiguratio
 
 	private String groupId;
 	public GetJvmConfigurationRequest() {
-		super("Edas", "2017-08-01", "GetJvmConfiguration", "Edas");
+		super("Edas", "2017-08-01", "GetJvmConfiguration", "edas");
 		setUriPattern("/pop/v5/app/app_jvm_config");
 		setMethod(MethodType.GET);
 		try {

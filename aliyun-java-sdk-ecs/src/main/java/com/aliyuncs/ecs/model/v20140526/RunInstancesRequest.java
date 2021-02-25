@@ -90,6 +90,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String resourceOwnerAccount;
 
+	private String schedulerOptionsDedicatedHostClusterId;
+
 	private String systemDiskDiskName;
 
 	private String dedicatedHostId;
@@ -539,6 +541,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getSchedulerOptionsDedicatedHostClusterId() {
+		return this.schedulerOptionsDedicatedHostClusterId;
+	}
+
+	public void setSchedulerOptionsDedicatedHostClusterId(String schedulerOptionsDedicatedHostClusterId) {
+		this.schedulerOptionsDedicatedHostClusterId = schedulerOptionsDedicatedHostClusterId;
+		if(schedulerOptionsDedicatedHostClusterId != null){
+			putQueryParameter("SchedulerOptions.DedicatedHostClusterId", schedulerOptionsDedicatedHostClusterId);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 
 	private String clientToken;
 
+	private Integer readonlyReplicas;
+
 	private String nodeClass;
 
 	private String securityToken;
@@ -87,6 +89,17 @@ public class CreateNodeRequest extends RpcAcsRequest<CreateNodeResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Integer getReadonlyReplicas() {
+		return this.readonlyReplicas;
+	}
+
+	public void setReadonlyReplicas(Integer readonlyReplicas) {
+		this.readonlyReplicas = readonlyReplicas;
+		if(readonlyReplicas != null){
+			putQueryParameter("ReadonlyReplicas", readonlyReplicas.toString());
 		}
 	}
 

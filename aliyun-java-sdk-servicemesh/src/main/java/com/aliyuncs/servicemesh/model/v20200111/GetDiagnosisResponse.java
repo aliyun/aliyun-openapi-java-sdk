@@ -30,6 +30,8 @@ public class GetDiagnosisResponse extends AcsResponse {
 
 	private String runAt;
 
+	private String status;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class GetDiagnosisResponse extends AcsResponse {
 
 	public void setRunAt(String runAt) {
 		this.runAt = runAt;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override

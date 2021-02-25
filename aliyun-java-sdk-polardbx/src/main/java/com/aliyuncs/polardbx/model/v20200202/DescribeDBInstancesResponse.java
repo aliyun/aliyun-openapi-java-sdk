@@ -113,11 +113,13 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String nodeClass;
 
-		private Integer storageUsed;
+		private Long storageUsed;
 
 		private String commodityCode;
 
 		private String type;
+
+		private String minorVersion;
 
 		private List<PolarDBXNode> nodes;
 
@@ -267,11 +269,11 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.nodeClass = nodeClass;
 		}
 
-		public Integer getStorageUsed() {
+		public Long getStorageUsed() {
 			return this.storageUsed;
 		}
 
-		public void setStorageUsed(Integer storageUsed) {
+		public void setStorageUsed(Long storageUsed) {
 			this.storageUsed = storageUsed;
 		}
 
@@ -289,6 +291,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getMinorVersion() {
+			return this.minorVersion;
+		}
+
+		public void setMinorVersion(String minorVersion) {
+			this.minorVersion = minorVersion;
 		}
 
 		public List<PolarDBXNode> getNodes() {

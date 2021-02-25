@@ -99,6 +99,10 @@ public class ListRepositoryMemberResponse extends AcsResponse {
 
 		private String email;
 
+		private String name;
+
+		private String username;
+
 		public Integer getAccessLevel() {
 			return this.accessLevel;
 		}
@@ -145,6 +149,22 @@ public class ListRepositoryMemberResponse extends AcsResponse {
 
 		public void setEmail(String email) {
 			this.email = email;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 	}
 

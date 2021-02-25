@@ -98,6 +98,8 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 
 	private List<NetworkInterface> networkInterfaces;
 
+	private String deploymentSetId;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -536,6 +538,17 @@ public class CreateLaunchTemplateVersionRequest extends RpcAcsRequest<CreateLaun
 				}
 			}
 		}	
+	}
+
+	public String getDeploymentSetId() {
+		return this.deploymentSetId;
+	}
+
+	public void setDeploymentSetId(String deploymentSetId) {
+		this.deploymentSetId = deploymentSetId;
+		if(deploymentSetId != null){
+			putQueryParameter("DeploymentSetId", deploymentSetId);
+		}
 	}
 
 	public String getResourceOwnerAccount() {

@@ -141,6 +141,8 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 		private Boolean replication;
 
+		private String bucketName;
+
 		private List<String> sourceTypes;
 
 		private ReplicationProgress replicationProgress;
@@ -148,6 +150,8 @@ public class DescribeVaultsResponse extends AcsResponse {
 		private BackupPlanStatistics backupPlanStatistics;
 
 		private TrialInfo trialInfo;
+
+		private Endpoint endpoint;
 
 		public String getVaultId() {
 			return this.vaultId;
@@ -285,6 +289,14 @@ public class DescribeVaultsResponse extends AcsResponse {
 			this.replication = replication;
 		}
 
+		public String getBucketName() {
+			return this.bucketName;
+		}
+
+		public void setBucketName(String bucketName) {
+			this.bucketName = bucketName;
+		}
+
 		public List<String> getSourceTypes() {
 			return this.sourceTypes;
 		}
@@ -315,6 +327,14 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 		public void setTrialInfo(TrialInfo trialInfo) {
 			this.trialInfo = trialInfo;
+		}
+
+		public Endpoint getEndpoint() {
+			return this.endpoint;
+		}
+
+		public void setEndpoint(Endpoint endpoint) {
+			this.endpoint = endpoint;
 		}
 
 		public static class ReplicationProgress {
@@ -357,6 +377,10 @@ public class DescribeVaultsResponse extends AcsResponse {
 			private Integer oss;
 
 			private Integer nas;
+
+			private Integer isilon;
+
+			private Integer commonNas;
 
 			public Integer getLocalFile() {
 				return this.localFile;
@@ -421,6 +445,22 @@ public class DescribeVaultsResponse extends AcsResponse {
 			public void setNas(Integer nas) {
 				this.nas = nas;
 			}
+
+			public Integer getIsilon() {
+				return this.isilon;
+			}
+
+			public void setIsilon(Integer isilon) {
+				this.isilon = isilon;
+			}
+
+			public Integer getCommonNas() {
+				return this.commonNas;
+			}
+
+			public void setCommonNas(Integer commonNas) {
+				this.commonNas = commonNas;
+			}
 		}
 
 		public static class TrialInfo {
@@ -463,6 +503,39 @@ public class DescribeVaultsResponse extends AcsResponse {
 
 			public void setTrialVaultReleaseTime(Long trialVaultReleaseTime) {
 				this.trialVaultReleaseTime = trialVaultReleaseTime;
+			}
+		}
+
+		public static class Endpoint {
+
+			private String pub;
+
+			private String vpc;
+
+			private String classic;
+
+			public String getPub() {
+				return this.pub;
+			}
+
+			public void setPub(String pub) {
+				this.pub = pub;
+			}
+
+			public String getVpc() {
+				return this.vpc;
+			}
+
+			public void setVpc(String vpc) {
+				this.vpc = vpc;
+			}
+
+			public String getClassic() {
+				return this.classic;
+			}
+
+			public void setClassic(String classic) {
+				this.classic = classic;
 			}
 		}
 	}

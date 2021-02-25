@@ -30,6 +30,8 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 	private String keyword;
 
 	private Integer pageNum;
+
+	private String userId;
 	public QueryOrganizationWorkspaceListRequest() {
 		super("quickbi-public", "2020-08-03", "QueryOrganizationWorkspaceList", "quickbi");
 		setMethod(MethodType.POST);
@@ -69,6 +71,17 @@ public class QueryOrganizationWorkspaceListRequest extends RpcAcsRequest<QueryOr
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putQueryParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 

@@ -23,6 +23,7 @@ public class ResizeDiskResponseUnmarshaller {
 	public static ResizeDiskResponse unmarshall(ResizeDiskResponse resizeDiskResponse, UnmarshallerContext _ctx) {
 		
 		resizeDiskResponse.setRequestId(_ctx.stringValue("ResizeDiskResponse.RequestId"));
+		resizeDiskResponse.setOrderId(_ctx.stringValue("ResizeDiskResponse.OrderId"));
 	 
 	 	return resizeDiskResponse;
 	}

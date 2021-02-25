@@ -1,4 +1,7 @@
-﻿2020-11-27 Version: 4.5.17
+﻿2021-01-22 Version: 4.5.18
+1, Fix default content type while has bodyParameters
+
+2020-11-27 Version: 4.5.17
 1, Support for setting proxy certificates
 2, Improve parse method
 

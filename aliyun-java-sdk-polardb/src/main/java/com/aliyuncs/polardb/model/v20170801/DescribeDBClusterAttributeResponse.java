@@ -77,6 +77,8 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	private String category;
 
+	private String dBVersionStatus;
+
 	private List<Tag> tags;
 
 	private List<DBNode> dBNodes;
@@ -287,6 +289,14 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public String getDBVersionStatus() {
+		return this.dBVersionStatus;
+	}
+
+	public void setDBVersionStatus(String dBVersionStatus) {
+		this.dBVersionStatus = dBVersionStatus;
 	}
 
 	public List<Tag> getTags() {

@@ -29,7 +29,7 @@ public class TagDbfsRequest extends RpcAcsRequest<TagDbfsResponse> {
 
 	private String dbfsId;
 	public TagDbfsRequest() {
-		super("DBFS", "2020-04-18", "TagDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "TagDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

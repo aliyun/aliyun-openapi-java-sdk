@@ -1,6 +1,7 @@
 package com.aliyuncs;
 
-import com.aliyuncs.ccc.model.v20170705.CommitContactFlowVersionModificationRequest;
+import com.aliyuncs.dysmsapi.model.v20170525.AddSmsSignRequest;
+import com.aliyuncs.dysmsapi.model.v20170525.AddSmsSignResponse;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailRequest;
 import com.aliyuncs.cdn.model.v20180510.DescribeCdnCertificateDetailResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesRequest;
@@ -22,6 +23,8 @@ import com.aliyuncs.vpc.model.v20160428.DescribeAccessPointsResponse;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import java.util.List;
+import java.util.ArrayList;
 
 public class APIEncapsulateTest extends BaseTest {
 
@@ -213,19 +216,25 @@ public class APIEncapsulateTest extends BaseTest {
         }
     }
 
-    @Test
-    public void rpcPostTest() throws ClientException {
-        CommitContactFlowVersionModificationRequest request = new CommitContactFlowVersionModificationRequest();
-        request.setContent("test");
-        request.setCanvas("test");
-        request.setContactFlowVersionId("test");
-        request.setInstanceId("test");
-        try {
-            this.client.getAcsResponse(request);
+    @Test	
+    public void rpcPostTest() throws ClientException {	
+        AddSmsSignRequest request = new AddSmsSignRequest();
+        request.setRegionId("test");
+        request.setSignName("");
+        request.setRemark("test");
+        request.setSignSource(0);
+        AddSmsSignRequest.SignFileList signFileList = new AddSmsSignRequest.SignFileList();
+        signFileList.setFileContents("\tR0lGODlhHAAmAKIHAKqqqsvLy0hISObm5vf394uLiwAA");
+        signFileList.setFileSuffix("jbg");
+        List<AddSmsSignRequest.SignFileList> list = new ArrayList<AddSmsSignRequest.SignFileList>();
+        list.add(signFileList);
+        request.setSignFileLists(list);
+        try {	
+            this.client.getAcsResponse(request);	
             Assert.fail();
-        } catch (ServerException e) {
-            Assert.assertEquals("ServiceUnavailable", e.getErrCode());
-            Assert.assertEquals("The request has failed due to a temporary failure of the server.", e.getErrMsg());
+        } catch (ClientException e) {
+            Assert.assertEquals("MissingSignName", e.getErrCode());
+            Assert.assertEquals("SignName is mandatory for this action.", e.getErrMsg());
         }
     }
 }

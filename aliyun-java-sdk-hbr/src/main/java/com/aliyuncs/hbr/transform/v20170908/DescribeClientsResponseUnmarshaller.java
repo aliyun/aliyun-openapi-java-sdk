@@ -67,6 +67,8 @@ public class DescribeClientsResponseUnmarshaller {
 			client.setGatewayName(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].GatewayName"));
 			client.setGatewayInnerIp(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].GatewayInnerIp"));
 			client.setGatewayStatus(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].GatewayStatus"));
+			client.setUseHttps(_ctx.booleanValue("DescribeClientsResponse.Clients["+ i +"].UseHttps"));
+			client.setClientOption(_ctx.stringValue("DescribeClientsResponse.Clients["+ i +"].ClientOption"));
 
 			List<String> sourceTypes = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClientsResponse.Clients["+ i +"].SourceTypes.Length"); j++) {

@@ -25,6 +25,7 @@ public class GetDiagnosisResponseUnmarshaller {
 		getDiagnosisResponse.setRequestId(_ctx.stringValue("GetDiagnosisResponse.RequestId"));
 		getDiagnosisResponse.setResult(_ctx.stringValue("GetDiagnosisResponse.Result"));
 		getDiagnosisResponse.setRunAt(_ctx.stringValue("GetDiagnosisResponse.RunAt"));
+		getDiagnosisResponse.setStatus(_ctx.stringValue("GetDiagnosisResponse.Status"));
 	 
 	 	return getDiagnosisResponse;
 	}

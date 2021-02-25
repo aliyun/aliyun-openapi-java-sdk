@@ -49,7 +49,7 @@ public class AddServiceTimeConfigRequest extends RoaAcsRequest<AddServiceTimeCon
 
 	private String timeout;
 	public AddServiceTimeConfigRequest() {
-		super("Edas", "2017-08-01", "AddServiceTimeConfig", "Edas");
+		super("Edas", "2017-08-01", "AddServiceTimeConfig", "edas");
 		setUriPattern("/pop/sp/api/timeout/add");
 		setMethod(MethodType.POST);
 		try {

@@ -1,3 +1,14 @@
+2021-02-07 Version: 0.0.8
+- Support some MergeRequest API.
+
+2021-01-18 Version: 0.0.7
+- Add ListMergeRequests api.
+- Add protected branch api, CreateRepositoryProtectedBranch and DeleteRepositoryProtectedBranch.
+- Add repository deploy key api, EnableRepositoryDeployKey and CreateRepositoryDeployKey.
+- Add UpdateRepository api.
+- Update GetUserInfo, support use OrganizationId param to get user organization name.
+
+
 2020-12-18 Version: 0.0.6
 - Support ListRepositories, ListOrganizations, GetUserInfo, ListRepositoryWebhook, DeleteRepositoryWebhook api.
 - AddWebhook api support SecretToken.

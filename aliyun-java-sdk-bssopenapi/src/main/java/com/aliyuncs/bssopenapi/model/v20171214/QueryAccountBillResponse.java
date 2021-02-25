@@ -181,6 +181,8 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			private String pipCode;
 
+			private String billingDate;
+
 			public String getCostUnit() {
 				return this.costUnit;
 			}
@@ -307,6 +309,14 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			public void setPipCode(String pipCode) {
 				this.pipCode = pipCode;
+			}
+
+			public String getBillingDate() {
+				return this.billingDate;
+			}
+
+			public void setBillingDate(String billingDate) {
+				this.billingDate = billingDate;
 			}
 		}
 	}

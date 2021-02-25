@@ -36,7 +36,11 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 
 	private List<Long> layoutIdss;
 
+	private List<ClockWidgets> clockWidgetss;
+
 	private String ossBucket;
+
+	private Integer delayStopTime;
 
 	private String mnsQueue;
 
@@ -125,6 +129,24 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		}	
 	}
 
+	public List<ClockWidgets> getClockWidgetss() {
+		return this.clockWidgetss;
+	}
+
+	public void setClockWidgetss(List<ClockWidgets> clockWidgetss) {
+		this.clockWidgetss = clockWidgetss;	
+		if (clockWidgetss != null) {
+			for (int depth1 = 0; depth1 < clockWidgetss.size(); depth1++) {
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".X" , clockWidgetss.get(depth1).getX());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".Y" , clockWidgetss.get(depth1).getY());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontType" , clockWidgetss.get(depth1).getFontType());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontSize" , clockWidgetss.get(depth1).getFontSize());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".FontColor" , clockWidgetss.get(depth1).getFontColor());
+				putQueryParameter("ClockWidgets." + (depth1 + 1) + ".ZOrder" , clockWidgetss.get(depth1).getZOrder());
+			}
+		}	
+	}
+
 	public String getOssBucket() {
 		return this.ossBucket;
 	}
@@ -133,6 +155,17 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		this.ossBucket = ossBucket;
 		if(ossBucket != null){
 			putQueryParameter("OssBucket", ossBucket);
+		}
+	}
+
+	public Integer getDelayStopTime() {
+		return this.delayStopTime;
+	}
+
+	public void setDelayStopTime(Integer delayStopTime) {
+		this.delayStopTime = delayStopTime;
+		if(delayStopTime != null){
+			putQueryParameter("DelayStopTime", delayStopTime.toString());
 		}
 	}
 
@@ -260,6 +293,69 @@ public class UpdateRecordTemplateRequest extends RpcAcsRequest<UpdateRecordTempl
 		this.mediaEncode = mediaEncode;
 		if(mediaEncode != null){
 			putQueryParameter("MediaEncode", mediaEncode.toString());
+		}
+	}
+
+	public static class ClockWidgets {
+
+		private Float x;
+
+		private Float y;
+
+		private Integer fontType;
+
+		private Integer fontSize;
+
+		private Integer fontColor;
+
+		private Integer zOrder;
+
+		public Float getX() {
+			return this.x;
+		}
+
+		public void setX(Float x) {
+			this.x = x;
+		}
+
+		public Float getY() {
+			return this.y;
+		}
+
+		public void setY(Float y) {
+			this.y = y;
+		}
+
+		public Integer getFontType() {
+			return this.fontType;
+		}
+
+		public void setFontType(Integer fontType) {
+			this.fontType = fontType;
+		}
+
+		public Integer getFontSize() {
+			return this.fontSize;
+		}
+
+		public void setFontSize(Integer fontSize) {
+			this.fontSize = fontSize;
+		}
+
+		public Integer getFontColor() {
+			return this.fontColor;
+		}
+
+		public void setFontColor(Integer fontColor) {
+			this.fontColor = fontColor;
+		}
+
+		public Integer getZOrder() {
+			return this.zOrder;
+		}
+
+		public void setZOrder(Integer zOrder) {
+			this.zOrder = zOrder;
 		}
 	}
 

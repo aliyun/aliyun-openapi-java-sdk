@@ -202,6 +202,8 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 			private List<LocalStorageCapacity> localStorageCapacities;
 
+			private List<AvailableInstanceType> availableInstanceTypes;
+
 			public Integer getTotalVcpus() {
 				return this.totalVcpus;
 			}
@@ -242,6 +244,14 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 				this.localStorageCapacities = localStorageCapacities;
 			}
 
+			public List<AvailableInstanceType> getAvailableInstanceTypes() {
+				return this.availableInstanceTypes;
+			}
+
+			public void setAvailableInstanceTypes(List<AvailableInstanceType> availableInstanceTypes) {
+				this.availableInstanceTypes = availableInstanceTypes;
+			}
+
 			public static class LocalStorageCapacity {
 
 				private Integer totalDisk;
@@ -272,6 +282,29 @@ public class DescribeDedicatedHostClustersResponse extends AcsResponse {
 
 				public void setDataDiskCategory(String dataDiskCategory) {
 					this.dataDiskCategory = dataDiskCategory;
+				}
+			}
+
+			public static class AvailableInstanceType {
+
+				private String instanceType;
+
+				private Integer availableInstanceCapacity;
+
+				public String getInstanceType() {
+					return this.instanceType;
+				}
+
+				public void setInstanceType(String instanceType) {
+					this.instanceType = instanceType;
+				}
+
+				public Integer getAvailableInstanceCapacity() {
+					return this.availableInstanceCapacity;
+				}
+
+				public void setAvailableInstanceCapacity(Integer availableInstanceCapacity) {
+					this.availableInstanceCapacity = availableInstanceCapacity;
 				}
 			}
 		}

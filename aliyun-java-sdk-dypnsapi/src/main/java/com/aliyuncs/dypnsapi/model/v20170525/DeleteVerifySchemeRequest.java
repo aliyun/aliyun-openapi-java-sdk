@@ -35,7 +35,7 @@ public class DeleteVerifySchemeRequest extends RpcAcsRequest<DeleteVerifySchemeR
 
 	private Long customerId;
 	public DeleteVerifySchemeRequest() {
-		super("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "dypns");
+		super("Dypnsapi", "2017-05-25", "DeleteVerifyScheme");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

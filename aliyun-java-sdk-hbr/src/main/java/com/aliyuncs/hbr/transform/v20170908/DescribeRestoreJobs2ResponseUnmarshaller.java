@@ -60,6 +60,16 @@ public class DescribeRestoreJobs2ResponseUnmarshaller {
 			restoreJob.setUpdatedTime(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].UpdatedTime"));
 			restoreJob.setTargetBucket(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetBucket"));
 			restoreJob.setTargetPrefix(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetPrefix"));
+			restoreJob.setUdmDetail(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].UdmDetail"));
+			restoreJob.setTargetInstanceId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetInstanceId"));
+			restoreJob.setTargetClientId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetClientId"));
+			restoreJob.setClusterId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ClusterId"));
+			restoreJob.setTargetDataSourceId(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].TargetDataSourceId"));
+			restoreJob.setActualBytes(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ActualBytes"));
+			restoreJob.setItemsDone(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ItemsDone"));
+			restoreJob.setItemsTotal(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ItemsTotal"));
+			restoreJob.setActualItems(_ctx.longValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ActualItems"));
+			restoreJob.setErrorFile(_ctx.stringValue("DescribeRestoreJobs2Response.RestoreJobs["+ i +"].ErrorFile"));
 
 			restoreJobs.add(restoreJob);
 		}

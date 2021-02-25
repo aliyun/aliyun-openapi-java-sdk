@@ -1,6 +1,6 @@
 package com.aliyuncs;
 
-import com.aliyuncs.airec.model.v20181012.PushDocumentRequest;
+import com.aliyuncs.airec.model.v20201126.PushDocumentRequest;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.green.model.v20180509.TextScanRequest;
 import com.aliyuncs.http.FormatType;

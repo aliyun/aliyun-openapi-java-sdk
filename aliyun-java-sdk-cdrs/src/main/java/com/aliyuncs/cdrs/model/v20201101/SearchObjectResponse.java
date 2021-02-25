@@ -460,7 +460,7 @@ public class SearchObjectResponse extends AcsResponse {
 
 			private Integer rightBottomY;
 
-			private Integer score;
+			private Float score;
 
 			private String shotTime;
 
@@ -516,11 +516,11 @@ public class SearchObjectResponse extends AcsResponse {
 				this.rightBottomY = rightBottomY;
 			}
 
-			public Integer getScore() {
+			public Float getScore() {
 				return this.score;
 			}
 
-			public void setScore(Integer score) {
+			public void setScore(Float score) {
 				this.score = score;
 			}
 

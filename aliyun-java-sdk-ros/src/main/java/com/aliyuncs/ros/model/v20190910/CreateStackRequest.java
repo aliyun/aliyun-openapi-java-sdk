@@ -38,6 +38,8 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 
 	private String templateId;
 
+	private List<Tags> tagss;
+
 	private List<Parameters> parameterss;
 
 	private String clientToken;
@@ -128,6 +130,20 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		if(templateId != null){
 			putQueryParameter("TemplateId", templateId);
 		}
+	}
+
+	public List<Tags> getTagss() {
+		return this.tagss;
+	}
+
+	public void setTagss(List<Tags> tagss) {
+		this.tagss = tagss;	
+		if (tagss != null) {
+			for (int depth1 = 0; depth1 < tagss.size(); depth1++) {
+				putQueryParameter("Tags." + (depth1 + 1) + ".Value" , tagss.get(depth1).getValue());
+				putQueryParameter("Tags." + (depth1 + 1) + ".Key" , tagss.get(depth1).getKey());
+			}
+		}	
 	}
 
 	public List<Parameters> getParameterss() {
@@ -231,6 +247,29 @@ public class CreateStackRequest extends RpcAcsRequest<CreateStackResponse> {
 		this.stackPolicyURL = stackPolicyURL;
 		if(stackPolicyURL != null){
 			putQueryParameter("StackPolicyURL", stackPolicyURL);
+		}
+	}
+
+	public static class Tags {
+
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

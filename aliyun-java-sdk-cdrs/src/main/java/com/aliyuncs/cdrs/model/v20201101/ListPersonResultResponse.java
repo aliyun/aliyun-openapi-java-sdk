@@ -115,6 +115,10 @@ public class ListPersonResultResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String targetUrl;
+
+		private String sourceUrl;
+
 		public String getPersonId() {
 			return this.personId;
 		}
@@ -185,6 +189,22 @@ public class ListPersonResultResponse extends AcsResponse {
 
 		public void setUpdateTime(String updateTime) {
 			this.updateTime = updateTime;
+		}
+
+		public String getTargetUrl() {
+			return this.targetUrl;
+		}
+
+		public void setTargetUrl(String targetUrl) {
+			this.targetUrl = targetUrl;
+		}
+
+		public String getSourceUrl() {
+			return this.sourceUrl;
+		}
+
+		public void setSourceUrl(String sourceUrl) {
+			this.sourceUrl = sourceUrl;
 		}
 	}
 

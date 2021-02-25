@@ -30,8 +30,8 @@ public class DetectObjectResponseUnmarshaller {
 		detectObjectResponse.setRequestId(_ctx.stringValue("DetectObjectResponse.RequestId"));
 
 		Data data = new Data();
-		data.setWidth(_ctx.integerValue("DetectObjectResponse.Data.Width"));
 		data.setHeight(_ctx.integerValue("DetectObjectResponse.Data.Height"));
+		data.setWidth(_ctx.integerValue("DetectObjectResponse.Data.Width"));
 
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectObjectResponse.Data.Elements.Length"); i++) {

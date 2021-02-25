@@ -50,6 +50,8 @@ public class ListPersonTrackResponseUnmarshaller {
 			datas.setOrder(_ctx.stringValue("ListPersonTrackResponse.Data["+ i +"].Order"));
 			datas.setLongitude(_ctx.stringValue("ListPersonTrackResponse.Data["+ i +"].Longitude"));
 			datas.setLatitude(_ctx.stringValue("ListPersonTrackResponse.Data["+ i +"].Latitude"));
+			datas.setSourceUrl(_ctx.stringValue("ListPersonTrackResponse.Data["+ i +"].SourceUrl"));
+			datas.setTargetUrl(_ctx.stringValue("ListPersonTrackResponse.Data["+ i +"].TargetUrl"));
 
 			data.add(datas);
 		}

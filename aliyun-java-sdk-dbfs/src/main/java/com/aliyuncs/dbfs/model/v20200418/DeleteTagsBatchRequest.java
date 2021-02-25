@@ -29,7 +29,7 @@ public class DeleteTagsBatchRequest extends RpcAcsRequest<DeleteTagsBatchRespons
 
 	private String tags;
 	public DeleteTagsBatchRequest() {
-		super("DBFS", "2020-04-18", "DeleteTagsBatch", "dbfs");
+		super("DBFS", "2020-04-18", "DeleteTagsBatch");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

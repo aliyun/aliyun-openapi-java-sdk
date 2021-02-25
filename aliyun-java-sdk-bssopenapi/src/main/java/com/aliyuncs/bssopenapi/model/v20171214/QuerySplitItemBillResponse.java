@@ -229,6 +229,18 @@ public class QuerySplitItemBillResponse extends AcsResponse {
 
 			private String commodityCode;
 
+			private String servicePeriodUnit;
+
+			private String splitCommodityCode;
+
+			private String splitProductDetail;
+
+			private String splitAccountID;
+
+			private String splitAccountName;
+
+			private String splitBillingCycle;
+
 			public String getInstanceID() {
 				return this.instanceID;
 			}
@@ -547,6 +559,54 @@ public class QuerySplitItemBillResponse extends AcsResponse {
 
 			public void setCommodityCode(String commodityCode) {
 				this.commodityCode = commodityCode;
+			}
+
+			public String getServicePeriodUnit() {
+				return this.servicePeriodUnit;
+			}
+
+			public void setServicePeriodUnit(String servicePeriodUnit) {
+				this.servicePeriodUnit = servicePeriodUnit;
+			}
+
+			public String getSplitCommodityCode() {
+				return this.splitCommodityCode;
+			}
+
+			public void setSplitCommodityCode(String splitCommodityCode) {
+				this.splitCommodityCode = splitCommodityCode;
+			}
+
+			public String getSplitProductDetail() {
+				return this.splitProductDetail;
+			}
+
+			public void setSplitProductDetail(String splitProductDetail) {
+				this.splitProductDetail = splitProductDetail;
+			}
+
+			public String getSplitAccountID() {
+				return this.splitAccountID;
+			}
+
+			public void setSplitAccountID(String splitAccountID) {
+				this.splitAccountID = splitAccountID;
+			}
+
+			public String getSplitAccountName() {
+				return this.splitAccountName;
+			}
+
+			public void setSplitAccountName(String splitAccountName) {
+				this.splitAccountName = splitAccountName;
+			}
+
+			public String getSplitBillingCycle() {
+				return this.splitBillingCycle;
+			}
+
+			public void setSplitBillingCycle(String splitBillingCycle) {
+				this.splitBillingCycle = splitBillingCycle;
 			}
 		}
 	}

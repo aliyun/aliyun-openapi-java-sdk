@@ -33,19 +33,35 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String vaultId;
 
-	private String restoreType;
-
 	private String snapshotHash;
+
+	private String targetClientId;
 
 	private String options;
 
 	private String sourceType;
 
+	private String exclude;
+
+	private String targetBucket;
+
+	private String targetDataSourceId;
+
+	private String include;
+
+	private String udmDetail;
+
+	private String clusterId;
+
+	private String restoreType;
+
+	private String targetInstanceId;
+
 	private String targetFileSystemId;
 
 	private String targetPath;
 
-	private String targetBucket;
+	private String udmRegionId;
 	public CreateRestoreJobRequest() {
 		super("hbr", "2017-09-08", "CreateRestoreJob", "hbr");
 		setMethod(MethodType.POST);
@@ -99,17 +115,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
-	public String getRestoreType() {
-		return this.restoreType;
-	}
-
-	public void setRestoreType(String restoreType) {
-		this.restoreType = restoreType;
-		if(restoreType != null){
-			putQueryParameter("RestoreType", restoreType);
-		}
-	}
-
 	public String getSnapshotHash() {
 		return this.snapshotHash;
 	}
@@ -118,6 +123,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.snapshotHash = snapshotHash;
 		if(snapshotHash != null){
 			putQueryParameter("SnapshotHash", snapshotHash);
+		}
+	}
+
+	public String getTargetClientId() {
+		return this.targetClientId;
+	}
+
+	public void setTargetClientId(String targetClientId) {
+		this.targetClientId = targetClientId;
+		if(targetClientId != null){
+			putBodyParameter("TargetClientId", targetClientId);
 		}
 	}
 
@@ -143,6 +159,94 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public String getExclude() {
+		return this.exclude;
+	}
+
+	public void setExclude(String exclude) {
+		this.exclude = exclude;
+		if(exclude != null){
+			putBodyParameter("Exclude", exclude);
+		}
+	}
+
+	public String getTargetBucket() {
+		return this.targetBucket;
+	}
+
+	public void setTargetBucket(String targetBucket) {
+		this.targetBucket = targetBucket;
+		if(targetBucket != null){
+			putQueryParameter("TargetBucket", targetBucket);
+		}
+	}
+
+	public String getTargetDataSourceId() {
+		return this.targetDataSourceId;
+	}
+
+	public void setTargetDataSourceId(String targetDataSourceId) {
+		this.targetDataSourceId = targetDataSourceId;
+		if(targetDataSourceId != null){
+			putBodyParameter("TargetDataSourceId", targetDataSourceId);
+		}
+	}
+
+	public String getInclude() {
+		return this.include;
+	}
+
+	public void setInclude(String include) {
+		this.include = include;
+		if(include != null){
+			putBodyParameter("Include", include);
+		}
+	}
+
+	public String getUdmDetail() {
+		return this.udmDetail;
+	}
+
+	public void setUdmDetail(String udmDetail) {
+		this.udmDetail = udmDetail;
+		if(udmDetail != null){
+			putQueryParameter("UdmDetail", udmDetail);
+		}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putBodyParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getRestoreType() {
+		return this.restoreType;
+	}
+
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
+		}
+	}
+
+	public String getTargetInstanceId() {
+		return this.targetInstanceId;
+	}
+
+	public void setTargetInstanceId(String targetInstanceId) {
+		this.targetInstanceId = targetInstanceId;
+		if(targetInstanceId != null){
+			putBodyParameter("TargetInstanceId", targetInstanceId);
+		}
+	}
+
 	public String getTargetFileSystemId() {
 		return this.targetFileSystemId;
 	}
@@ -161,18 +265,18 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 	public void setTargetPath(String targetPath) {
 		this.targetPath = targetPath;
 		if(targetPath != null){
-			putQueryParameter("TargetPath", targetPath);
+			putBodyParameter("TargetPath", targetPath);
 		}
 	}
 
-	public String getTargetBucket() {
-		return this.targetBucket;
+	public String getUdmRegionId() {
+		return this.udmRegionId;
 	}
 
-	public void setTargetBucket(String targetBucket) {
-		this.targetBucket = targetBucket;
-		if(targetBucket != null){
-			putQueryParameter("TargetBucket", targetBucket);
+	public void setUdmRegionId(String udmRegionId) {
+		this.udmRegionId = udmRegionId;
+		if(udmRegionId != null){
+			putQueryParameter("UdmRegionId", udmRegionId);
 		}
 	}
 

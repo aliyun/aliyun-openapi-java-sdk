@@ -62,6 +62,8 @@ public class DescribeRestoresResponseUnmarshaller {
 			restore.setServerId(_ctx.stringValue("DescribeRestoresResponse.Restores["+ i +"].ServerId"));
 			restore.setExtra(_ctx.stringValue("DescribeRestoresResponse.Restores["+ i +"].Extra"));
 			restore.setSourceClientId(_ctx.stringValue("DescribeRestoresResponse.Restores["+ i +"].SourceClientId"));
+			restore.setErrorMessage(_ctx.stringValue("DescribeRestoresResponse.Restores["+ i +"].ErrorMessage"));
+			restore.setErrorFile(_ctx.stringValue("DescribeRestoresResponse.Restores["+ i +"].ErrorFile"));
 
 			restores.add(restore);
 		}

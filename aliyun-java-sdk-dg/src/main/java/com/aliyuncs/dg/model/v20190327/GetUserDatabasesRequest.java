@@ -30,17 +30,17 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 
 	private String pageNumber;
 
-	private String instanceId;
-
-	private Integer port;
-
 	private String pageSize;
-
-	private String dbType;
 
 	private String host;
 
 	private String gatewayId;
+
+	private String instanceId;
+
+	private Integer port;
+
+	private String dbType;
 	public GetUserDatabasesRequest() {
 		super("dg", "2019-03-27", "GetUserDatabases", "dg");
 		setProtocol(ProtocolType.HTTPS);
@@ -73,28 +73,6 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putBodyParameter("Port", port.toString());
-		}
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -103,17 +81,6 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getDbType() {
-		return this.dbType;
-	}
-
-	public void setDbType(String dbType) {
-		this.dbType = dbType;
-		if(dbType != null){
-			putBodyParameter("DbType", dbType);
 		}
 	}
 
@@ -136,6 +103,39 @@ public class GetUserDatabasesRequest extends RpcAcsRequest<GetUserDatabasesRespo
 		this.gatewayId = gatewayId;
 		if(gatewayId != null){
 			putBodyParameter("GatewayId", gatewayId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putBodyParameter("Port", port.toString());
+		}
+	}
+
+	public String getDbType() {
+		return this.dbType;
+	}
+
+	public void setDbType(String dbType) {
+		this.dbType = dbType;
+		if(dbType != null){
+			putBodyParameter("DbType", dbType);
 		}
 	}
 

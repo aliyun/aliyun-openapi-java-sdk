@@ -1,3 +1,15 @@
+2021-02-24 Version: 1.2.5
+- Add queryServiceConfig.
+
+2021-02-24 Version: 1.2.4
+- Add queryServiceConfig.
+
+2021-01-18 Version: 1.2.3
+- Generated 2020-07-02 for `scsp`.
+
+2021-01-18 Version: 1.2.3
+- Generated 2020-07-02 for `scsp`.
+
 2021-01-08 Version: 1.2.2
 - Generated 2020-07-02 for `scsp`.
 

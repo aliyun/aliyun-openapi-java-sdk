@@ -62,6 +62,9 @@ public class QueryItemDetailResponseUnmarshaller {
 		item.setCenterInventory(_ctx.booleanValue("QueryItemDetailResponse.Item.CenterInventory"));
 		item.setCustomizedAttributeMap(_ctx.mapValue("QueryItemDetailResponse.Item.CustomizedAttributeMap"));
 		item.setLmItemId(_ctx.stringValue("QueryItemDetailResponse.Item.LmItemId"));
+		item.setSellerType(_ctx.integerValue("QueryItemDetailResponse.Item.SellerType"));
+		item.setVideoUrl(_ctx.stringValue("QueryItemDetailResponse.Item.VideoUrl"));
+		item.setVideoPicUrl(_ctx.stringValue("QueryItemDetailResponse.Item.VideoPicUrl"));
 
 		List<String> itemImages = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryItemDetailResponse.Item.ItemImages.Length"); i++) {

@@ -49,6 +49,10 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 		private Integer personNumber;
 
+		private Long height;
+
+		private Long width;
+
 		private List<AttributesItem> attributes;
 
 		private List<BoxesItem> boxes;
@@ -59,6 +63,22 @@ public class PedestrianDetectAttributeResponse extends AcsResponse {
 
 		public void setPersonNumber(Integer personNumber) {
 			this.personNumber = personNumber;
+		}
+
+		public Long getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Long height) {
+			this.height = height;
+		}
+
+		public Long getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Long width) {
+			this.width = width;
 		}
 
 		public List<AttributesItem> getAttributes() {

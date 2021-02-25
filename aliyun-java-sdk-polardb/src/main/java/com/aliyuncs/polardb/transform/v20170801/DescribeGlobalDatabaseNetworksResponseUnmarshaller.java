@@ -28,26 +28,26 @@ public class DescribeGlobalDatabaseNetworksResponseUnmarshaller {
 	public static DescribeGlobalDatabaseNetworksResponse unmarshall(DescribeGlobalDatabaseNetworksResponse describeGlobalDatabaseNetworksResponse, UnmarshallerContext _ctx) {
 		
 		describeGlobalDatabaseNetworksResponse.setRequestId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.RequestId"));
-		describeGlobalDatabaseNetworksResponse.setPageNumber(_ctx.integerValue("DescribeGlobalDatabaseNetworksResponse.PageNumber"));
 		describeGlobalDatabaseNetworksResponse.setTotalRecordCount(_ctx.integerValue("DescribeGlobalDatabaseNetworksResponse.TotalRecordCount"));
 		describeGlobalDatabaseNetworksResponse.setPageRecordCount(_ctx.integerValue("DescribeGlobalDatabaseNetworksResponse.PageRecordCount"));
+		describeGlobalDatabaseNetworksResponse.setPageNumber(_ctx.integerValue("DescribeGlobalDatabaseNetworksResponse.PageNumber"));
 
 		List<GlobalDatabaseNetwork> items = new ArrayList<GlobalDatabaseNetwork>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items.Length"); i++) {
 			GlobalDatabaseNetwork globalDatabaseNetwork = new GlobalDatabaseNetwork();
-			globalDatabaseNetwork.setGDNId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNId"));
 			globalDatabaseNetwork.setGDNStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNStatus"));
+			globalDatabaseNetwork.setDBVersion(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBVersion"));
+			globalDatabaseNetwork.setGDNId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNId"));
+			globalDatabaseNetwork.setCreateTime(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].CreateTime"));
 			globalDatabaseNetwork.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNDescription"));
 			globalDatabaseNetwork.setDBType(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBType"));
-			globalDatabaseNetwork.setDBVersion(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBVersion"));
-			globalDatabaseNetwork.setCreateTime(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].CreateTime"));
 
 			List<DBCluster> dBClusters = new ArrayList<DBCluster>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters.Length"); j++) {
 				DBCluster dBCluster = new DBCluster();
+				dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].Role"));
 				dBCluster.setDBClusterId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].DBClusterId"));
 				dBCluster.setRegionId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].RegionId"));
-				dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].Role"));
 
 				dBClusters.add(dBCluster);
 			}

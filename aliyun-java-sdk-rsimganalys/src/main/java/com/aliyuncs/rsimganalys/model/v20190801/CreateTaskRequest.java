@@ -43,7 +43,7 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 
 	private String dstImageId;
 	public CreateTaskRequest() {
-		super("rsimganalys", "2019-08-01", "CreateTask");
+		super("rsimganalys", "2019-08-01", "CreateTask", "rsimganalys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

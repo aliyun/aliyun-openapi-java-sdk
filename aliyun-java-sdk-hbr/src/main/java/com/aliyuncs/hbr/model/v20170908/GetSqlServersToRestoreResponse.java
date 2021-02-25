@@ -119,6 +119,8 @@ public class GetSqlServersToRestoreResponse extends AcsResponse {
 
 		private Boolean useWindowsAuth;
 
+		private String regionId;
+
 		public String getClusterId() {
 			return this.clusterId;
 		}
@@ -165,6 +167,14 @@ public class GetSqlServersToRestoreResponse extends AcsResponse {
 
 		public void setUseWindowsAuth(Boolean useWindowsAuth) {
 			this.useWindowsAuth = useWindowsAuth;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

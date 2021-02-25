@@ -30,8 +30,6 @@ public class UpgradeDBProxyInstanceKernelVersionResponse extends AcsResponse {
 
 	private String taskId;
 
-	private String targetMinorVersion;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -54,14 +52,6 @@ public class UpgradeDBProxyInstanceKernelVersionResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
-	}
-
-	public String getTargetMinorVersion() {
-		return this.targetMinorVersion;
-	}
-
-	public void setTargetMinorVersion(String targetMinorVersion) {
-		this.targetMinorVersion = targetMinorVersion;
 	}
 
 	@Override

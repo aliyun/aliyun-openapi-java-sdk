@@ -14,6 +14,7 @@
 
 package com.aliyuncs.devops_rdc.model.v20200303;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.devops_rdc.transform.v20200303.ListUserOrganizationResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,13 +27,13 @@ public class ListUserOrganizationResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	private String errorCode;
 
 	private String errorMessage;
 
-	private Boolean success;
-
-	private String object;
+	private List<Organization> object;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +41,14 @@ public class ListUserOrganizationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorCode() {
@@ -58,20 +67,35 @@ public class ListUserOrganizationResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getObject() {
+	public List<Organization> getObject() {
 		return this.object;
 	}
 
-	public void setObject(String object) {
+	public void setObject(List<Organization> object) {
 		this.object = object;
+	}
+
+	public static class Organization {
+
+		private String name;
+
+		private String id;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
 	}
 
 	@Override

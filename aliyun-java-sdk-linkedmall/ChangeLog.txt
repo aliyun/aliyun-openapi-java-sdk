@@ -1,3 +1,12 @@
+2021-02-24 Version: 2.12.16
+- CreateOrder add attribute buyerMessages.
+
+2021-01-28 Version: 2.12.15
+- Add settlement interface,eg QueryStatements, ExecuteNode.
+
+2021-01-19 Version: 2.12.14
+- Generated 2018-01-16 for `linkedmall`.
+
 2020-11-30 Version: 2.12.13
 - Add support for liteshop.
 

@@ -1,3 +1,9 @@
+2021-01-30 Version: 5.1.9
+- Update rate limit.
+
+2021-01-15 Version: 5.1.8
+- Remove drcGuidRouteApi, ModifyDtsJobPassword API.
+
 2021-01-11 Version: 5.0.7
 - Add DescribeConnectionStatus and DescribeDTSIP, remove UpgradeTwoWay.
 

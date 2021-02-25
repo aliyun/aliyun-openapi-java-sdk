@@ -26,8 +26,6 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 
 	private String profession;
 
-	private String schema;
-
 	private String corpId;
 
 	private String gender;
@@ -54,17 +52,6 @@ public class ListPersonResultRequest extends RpcAcsRequest<ListPersonResultRespo
 		this.profession = profession;
 		if(profession != null){
 			putBodyParameter("Profession", profession);
-		}
-	}
-
-	public String getSchema() {
-		return this.schema;
-	}
-
-	public void setSchema(String schema) {
-		this.schema = schema;
-		if(schema != null){
-			putBodyParameter("Schema", schema);
 		}
 	}
 

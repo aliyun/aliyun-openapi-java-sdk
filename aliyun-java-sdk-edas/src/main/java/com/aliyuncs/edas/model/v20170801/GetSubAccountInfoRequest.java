@@ -27,7 +27,7 @@ public class GetSubAccountInfoRequest extends RoaAcsRequest<GetSubAccountInfoRes
 
 	private String targetUserId;
 	public GetSubAccountInfoRequest() {
-		super("Edas", "2017-08-01", "GetSubAccountInfo", "Edas");
+		super("Edas", "2017-08-01", "GetSubAccountInfo", "edas");
 		setUriPattern("/pop/v5/account/sub_account_info");
 		setMethod(MethodType.POST);
 		try {

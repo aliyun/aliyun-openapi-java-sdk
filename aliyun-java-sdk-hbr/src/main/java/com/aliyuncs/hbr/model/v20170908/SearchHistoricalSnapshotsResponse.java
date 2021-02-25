@@ -37,6 +37,8 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 	private String nextToken;
 
+	private Integer totalCount;
+
 	private List<Snapshot> snapshots;
 
 	public String getRequestId() {
@@ -87,6 +89,14 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public List<Snapshot> getSnapshots() {
 		return this.snapshots;
 	}
@@ -130,6 +140,24 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 		private String bucket;
 
 		private String prefix;
+
+		private String instanceId;
+
+		private String path;
+
+		private String clientId;
+
+		private Long bytesDone;
+
+		private Long actualBytes;
+
+		private Long itemsDone;
+
+		private Long itemsTotal;
+
+		private Long actualItems;
+
+		private String errorFile;
 
 		private List<String> paths;
 
@@ -267,6 +295,78 @@ public class SearchHistoricalSnapshotsResponse extends AcsResponse {
 
 		public void setPrefix(String prefix) {
 			this.prefix = prefix;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
+		}
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
+		}
+
+		public Long getBytesDone() {
+			return this.bytesDone;
+		}
+
+		public void setBytesDone(Long bytesDone) {
+			this.bytesDone = bytesDone;
+		}
+
+		public Long getActualBytes() {
+			return this.actualBytes;
+		}
+
+		public void setActualBytes(Long actualBytes) {
+			this.actualBytes = actualBytes;
+		}
+
+		public Long getItemsDone() {
+			return this.itemsDone;
+		}
+
+		public void setItemsDone(Long itemsDone) {
+			this.itemsDone = itemsDone;
+		}
+
+		public Long getItemsTotal() {
+			return this.itemsTotal;
+		}
+
+		public void setItemsTotal(Long itemsTotal) {
+			this.itemsTotal = itemsTotal;
+		}
+
+		public Long getActualItems() {
+			return this.actualItems;
+		}
+
+		public void setActualItems(Long actualItems) {
+			this.actualItems = actualItems;
+		}
+
+		public String getErrorFile() {
+			return this.errorFile;
+		}
+
+		public void setErrorFile(String errorFile) {
+			this.errorFile = errorFile;
 		}
 
 		public List<String> getPaths() {

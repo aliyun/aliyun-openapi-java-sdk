@@ -25,8 +25,8 @@ public class GenerateVehicleRepairPlanResponseUnmarshaller {
 		
 		generateVehicleRepairPlanResponse.setRequestId(_ctx.stringValue("GenerateVehicleRepairPlanResponse.RequestId"));
 		generateVehicleRepairPlanResponse.setHttpCode(_ctx.integerValue("GenerateVehicleRepairPlanResponse.HttpCode"));
-		generateVehicleRepairPlanResponse.setCode(_ctx.stringValue("GenerateVehicleRepairPlanResponse.Code"));
 		generateVehicleRepairPlanResponse.setErrorMessage(_ctx.stringValue("GenerateVehicleRepairPlanResponse.ErrorMessage"));
+		generateVehicleRepairPlanResponse.setCode(_ctx.stringValue("GenerateVehicleRepairPlanResponse.Code"));
 		generateVehicleRepairPlanResponse.setSuccess(_ctx.booleanValue("GenerateVehicleRepairPlanResponse.Success"));
 
 		Data data = new Data();

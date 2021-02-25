@@ -41,6 +41,8 @@ public class ListRepositoryMemberResponseUnmarshaller {
 			resultItem.setState(_ctx.stringValue("ListRepositoryMemberResponse.Result["+ i +"].State"));
 			resultItem.setAvatarUrl(_ctx.stringValue("ListRepositoryMemberResponse.Result["+ i +"].AvatarUrl"));
 			resultItem.setEmail(_ctx.stringValue("ListRepositoryMemberResponse.Result["+ i +"].Email"));
+			resultItem.setName(_ctx.stringValue("ListRepositoryMemberResponse.Result["+ i +"].Name"));
+			resultItem.setUsername(_ctx.stringValue("ListRepositoryMemberResponse.Result["+ i +"].Username"));
 
 			result.add(resultItem);
 		}

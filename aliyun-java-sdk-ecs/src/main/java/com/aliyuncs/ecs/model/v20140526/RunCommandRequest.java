@@ -44,6 +44,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String contentEncoding;
 
+	private String windowsPasswordName;
+
 	private Boolean keepCommand;
 
 	private Boolean timed;
@@ -157,6 +159,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.contentEncoding = contentEncoding;
 		if(contentEncoding != null){
 			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getWindowsPasswordName() {
+		return this.windowsPasswordName;
+	}
+
+	public void setWindowsPasswordName(String windowsPasswordName) {
+		this.windowsPasswordName = windowsPasswordName;
+		if(windowsPasswordName != null){
+			putQueryParameter("WindowsPasswordName", windowsPasswordName);
 		}
 	}
 

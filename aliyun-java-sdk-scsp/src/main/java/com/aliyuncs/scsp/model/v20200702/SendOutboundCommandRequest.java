@@ -35,7 +35,7 @@ public class SendOutboundCommandRequest extends RpcAcsRequest<SendOutboundComman
 
 	private String customerInfo;
 	public SendOutboundCommandRequest() {
-		super("scsp", "2020-07-02", "SendOutboundCommand", "scsp");
+		super("scsp", "2020-07-02", "SendOutboundCommand");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

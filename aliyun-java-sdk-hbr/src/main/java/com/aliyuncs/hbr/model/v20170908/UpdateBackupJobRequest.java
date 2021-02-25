@@ -27,17 +27,27 @@ public class UpdateBackupJobRequest extends RpcAcsRequest<UpdateBackupJobRespons
 
 	private String errorMessage;
 
+	private Long actualBytes;
+
+	private String jobId;
+
+	private Long itemsTotal;
+
+	private Long bytesTotal;
+
 	private Long expireTime;
+
+	private String errorFile;
 
 	private String token;
 
-	private String jobId;
+	private Long itemsDone;
+
+	private Long actualItems;
 
 	private Integer progress;
 
 	private Long bytesDone;
-
-	private Long bytesTotal;
 
 	private String status;
 	public UpdateBackupJobRequest() {
@@ -60,6 +70,50 @@ public class UpdateBackupJobRequest extends RpcAcsRequest<UpdateBackupJobRespons
 		}
 	}
 
+	public Long getActualBytes() {
+		return this.actualBytes;
+	}
+
+	public void setActualBytes(Long actualBytes) {
+		this.actualBytes = actualBytes;
+		if(actualBytes != null){
+			putQueryParameter("ActualBytes", actualBytes.toString());
+		}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public Long getItemsTotal() {
+		return this.itemsTotal;
+	}
+
+	public void setItemsTotal(Long itemsTotal) {
+		this.itemsTotal = itemsTotal;
+		if(itemsTotal != null){
+			putQueryParameter("ItemsTotal", itemsTotal.toString());
+		}
+	}
+
+	public Long getBytesTotal() {
+		return this.bytesTotal;
+	}
+
+	public void setBytesTotal(Long bytesTotal) {
+		this.bytesTotal = bytesTotal;
+		if(bytesTotal != null){
+			putQueryParameter("BytesTotal", bytesTotal.toString());
+		}
+	}
+
 	public Long getExpireTime() {
 		return this.expireTime;
 	}
@@ -68,6 +122,17 @@ public class UpdateBackupJobRequest extends RpcAcsRequest<UpdateBackupJobRespons
 		this.expireTime = expireTime;
 		if(expireTime != null){
 			putQueryParameter("ExpireTime", expireTime.toString());
+		}
+	}
+
+	public String getErrorFile() {
+		return this.errorFile;
+	}
+
+	public void setErrorFile(String errorFile) {
+		this.errorFile = errorFile;
+		if(errorFile != null){
+			putQueryParameter("ErrorFile", errorFile);
 		}
 	}
 
@@ -82,14 +147,25 @@ public class UpdateBackupJobRequest extends RpcAcsRequest<UpdateBackupJobRespons
 		}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public Long getItemsDone() {
+		return this.itemsDone;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putQueryParameter("JobId", jobId);
+	public void setItemsDone(Long itemsDone) {
+		this.itemsDone = itemsDone;
+		if(itemsDone != null){
+			putQueryParameter("ItemsDone", itemsDone.toString());
+		}
+	}
+
+	public Long getActualItems() {
+		return this.actualItems;
+	}
+
+	public void setActualItems(Long actualItems) {
+		this.actualItems = actualItems;
+		if(actualItems != null){
+			putQueryParameter("ActualItems", actualItems.toString());
 		}
 	}
 
@@ -112,17 +188,6 @@ public class UpdateBackupJobRequest extends RpcAcsRequest<UpdateBackupJobRespons
 		this.bytesDone = bytesDone;
 		if(bytesDone != null){
 			putQueryParameter("BytesDone", bytesDone.toString());
-		}
-	}
-
-	public Long getBytesTotal() {
-		return this.bytesTotal;
-	}
-
-	public void setBytesTotal(Long bytesTotal) {
-		this.bytesTotal = bytesTotal;
-		if(bytesTotal != null){
-			putQueryParameter("BytesTotal", bytesTotal.toString());
 		}
 	}
 

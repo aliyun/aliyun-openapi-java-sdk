@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostClustersResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostClustersResponse.DedicatedHostCluster;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostClustersResponse.DedicatedHostCluster.DedicatedHostClusterCapacity;
+import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostClustersResponse.DedicatedHostCluster.DedicatedHostClusterCapacity.AvailableInstanceType;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostClustersResponse.DedicatedHostCluster.DedicatedHostClusterCapacity.LocalStorageCapacity;
 import com.aliyuncs.ecs.model.v20140526.DescribeDedicatedHostClustersResponse.DedicatedHostCluster.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -66,6 +67,16 @@ public class DescribeDedicatedHostClustersResponseUnmarshaller {
 				localStorageCapacities.add(localStorageCapacity);
 			}
 			dedicatedHostClusterCapacity.setLocalStorageCapacities(localStorageCapacities);
+
+			List<AvailableInstanceType> availableInstanceTypes = new ArrayList<AvailableInstanceType>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes.Length"); j++) {
+				AvailableInstanceType availableInstanceType = new AvailableInstanceType();
+				availableInstanceType.setInstanceType(_ctx.stringValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].InstanceType"));
+				availableInstanceType.setAvailableInstanceCapacity(_ctx.integerValue("DescribeDedicatedHostClustersResponse.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity"));
+
+				availableInstanceTypes.add(availableInstanceType);
+			}
+			dedicatedHostClusterCapacity.setAvailableInstanceTypes(availableInstanceTypes);
 			dedicatedHostCluster.setDedicatedHostClusterCapacity(dedicatedHostClusterCapacity);
 
 			List<Tag> tags = new ArrayList<Tag>();

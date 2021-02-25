@@ -145,6 +145,32 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 
 		private Long currentProgress;
 
+		private String mode;
+
+		private Long logPosition;
+
+		private Integer volumeId;
+
+		private Boolean useCatalog;
+
+		private String backupPrefix;
+
+		private Boolean systemCopy;
+
+		private String source;
+
+		private String sourceClusterId;
+
+		private String logPaths;
+
+		private Boolean checkAccess;
+
+		private Boolean clearLog;
+
+		private Boolean useDelta;
+
+		private String extraOptions;
+
 		public String getRestoreId() {
 			return this.restoreId;
 		}
@@ -295,6 +321,110 @@ public class DescribeHanaRestoresResponse extends AcsResponse {
 
 		public void setCurrentProgress(Long currentProgress) {
 			this.currentProgress = currentProgress;
+		}
+
+		public String getMode() {
+			return this.mode;
+		}
+
+		public void setMode(String mode) {
+			this.mode = mode;
+		}
+
+		public Long getLogPosition() {
+			return this.logPosition;
+		}
+
+		public void setLogPosition(Long logPosition) {
+			this.logPosition = logPosition;
+		}
+
+		public Integer getVolumeId() {
+			return this.volumeId;
+		}
+
+		public void setVolumeId(Integer volumeId) {
+			this.volumeId = volumeId;
+		}
+
+		public Boolean getUseCatalog() {
+			return this.useCatalog;
+		}
+
+		public void setUseCatalog(Boolean useCatalog) {
+			this.useCatalog = useCatalog;
+		}
+
+		public String getBackupPrefix() {
+			return this.backupPrefix;
+		}
+
+		public void setBackupPrefix(String backupPrefix) {
+			this.backupPrefix = backupPrefix;
+		}
+
+		public Boolean getSystemCopy() {
+			return this.systemCopy;
+		}
+
+		public void setSystemCopy(Boolean systemCopy) {
+			this.systemCopy = systemCopy;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public String getSourceClusterId() {
+			return this.sourceClusterId;
+		}
+
+		public void setSourceClusterId(String sourceClusterId) {
+			this.sourceClusterId = sourceClusterId;
+		}
+
+		public String getLogPaths() {
+			return this.logPaths;
+		}
+
+		public void setLogPaths(String logPaths) {
+			this.logPaths = logPaths;
+		}
+
+		public Boolean getCheckAccess() {
+			return this.checkAccess;
+		}
+
+		public void setCheckAccess(Boolean checkAccess) {
+			this.checkAccess = checkAccess;
+		}
+
+		public Boolean getClearLog() {
+			return this.clearLog;
+		}
+
+		public void setClearLog(Boolean clearLog) {
+			this.clearLog = clearLog;
+		}
+
+		public Boolean getUseDelta() {
+			return this.useDelta;
+		}
+
+		public void setUseDelta(Boolean useDelta) {
+			this.useDelta = useDelta;
+		}
+
+		public String getExtraOptions() {
+			return this.extraOptions;
+		}
+
+		public void setExtraOptions(String extraOptions) {
+			this.extraOptions = extraOptions;
 		}
 	}
 

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.cdrs.model.v20201101.ListPersonTopResponse;
-import com.aliyuncs.cdrs.model.v20201101.ListPersonTopResponse.Datas;
+import com.aliyuncs.cdrs.model.v20201101.ListPersonTopResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -33,17 +33,17 @@ public class ListPersonTopResponseUnmarshaller {
 		listPersonTopResponse.setPageSize(_ctx.longValue("ListPersonTopResponse.PageSize"));
 		listPersonTopResponse.setTotalCount(_ctx.longValue("ListPersonTopResponse.TotalCount"));
 
-		List<Datas> data = new ArrayList<Datas>();
+		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonTopResponse.Data.Length"); i++) {
-			Datas datas = new Datas();
-			datas.setCorpId(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].CorpId"));
-			datas.setPersonId(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PersonId"));
-			datas.setPoiId(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PoiId"));
-			datas.setPoiName(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PoiName"));
-			datas.setPassHour(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PassHour"));
-			datas.setFrequency(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].Frequency"));
+			DataItem dataItem = new DataItem();
+			dataItem.setCorpId(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].CorpId"));
+			dataItem.setPersonId(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PersonId"));
+			dataItem.setPoiId(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PoiId"));
+			dataItem.setPoiName(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PoiName"));
+			dataItem.setPassHour(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].PassHour"));
+			dataItem.setFrequency(_ctx.stringValue("ListPersonTopResponse.Data["+ i +"].Frequency"));
 
-			data.add(datas);
+			data.add(dataItem);
 		}
 		listPersonTopResponse.setData(data);
 	 

@@ -137,6 +137,8 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 		private NetworkAttributes networkAttributes;
 
+		private HostDetailInfo hostDetailInfo;
+
 		public String getDedicatedHostId() {
 			return this.dedicatedHostId;
 		}
@@ -377,6 +379,14 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 			this.networkAttributes = networkAttributes;
 		}
 
+		public HostDetailInfo getHostDetailInfo() {
+			return this.hostDetailInfo;
+		}
+
+		public void setHostDetailInfo(HostDetailInfo hostDetailInfo) {
+			this.hostDetailInfo = hostDetailInfo;
+		}
+
 		public static class Instance {
 
 			private String instanceId;
@@ -549,6 +559,19 @@ public class DescribeDedicatedHostsResponse extends AcsResponse {
 
 			public void setUdpTimeout(Integer udpTimeout) {
 				this.udpTimeout = udpTimeout;
+			}
+		}
+
+		public static class HostDetailInfo {
+
+			private String serialNumber;
+
+			public String getSerialNumber() {
+				return this.serialNumber;
+			}
+
+			public void setSerialNumber(String serialNumber) {
+				this.serialNumber = serialNumber;
 			}
 		}
 	}

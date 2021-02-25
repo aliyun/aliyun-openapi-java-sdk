@@ -67,6 +67,8 @@ public class DescribeRestoreJobsResponseUnmarshaller {
 			restoreJob.setSourceClientId(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].SourceClientId"));
 			restoreJob.setGatewayId(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].GatewayId"));
 			restoreJob.setGatewayName(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].GatewayName"));
+			restoreJob.setErrorMessage(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ErrorMessage"));
+			restoreJob.setErrorFile(_ctx.stringValue("DescribeRestoreJobsResponse.RestoreJobs["+ i +"].ErrorFile"));
 
 			restoreJobs.add(restoreJob);
 		}

@@ -27,7 +27,7 @@ public class DeleteDbfsRequest extends RpcAcsRequest<DeleteDbfsResponse> {
 
 	private String fsId;
 	public DeleteDbfsRequest() {
-		super("DBFS", "2020-04-18", "DeleteDbfs", "dbfs");
+		super("DBFS", "2020-04-18", "DeleteDbfs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

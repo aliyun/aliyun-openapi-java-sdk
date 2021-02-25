@@ -45,6 +45,7 @@ public class ListAppInstanceResponseUnmarshaller {
 			appInstanceDetail.setHealth(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Health"));
 			appInstanceDetail.setRequests(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Requests"));
 			appInstanceDetail.setLimits(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Limits"));
+			appInstanceDetail.setVersion(_ctx.stringValue("ListAppInstanceResponse.Data["+ i +"].Version"));
 
 			data.add(appInstanceDetail);
 		}

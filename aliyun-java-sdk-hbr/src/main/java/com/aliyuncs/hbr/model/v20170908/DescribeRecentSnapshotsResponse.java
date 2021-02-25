@@ -145,6 +145,10 @@ public class DescribeRecentSnapshotsResponse extends AcsResponse {
 
 		private String prefix2;
 
+		private String instanceId;
+
+		private String path;
+
 		private List<String> paths;
 
 		public Long getCreatedTime() {
@@ -297,6 +301,22 @@ public class DescribeRecentSnapshotsResponse extends AcsResponse {
 
 		public void setPrefix2(String prefix2) {
 			this.prefix2 = prefix2;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public String getPath() {
+			return this.path;
+		}
+
+		public void setPath(String path) {
+			this.path = path;
 		}
 
 		public List<String> getPaths() {

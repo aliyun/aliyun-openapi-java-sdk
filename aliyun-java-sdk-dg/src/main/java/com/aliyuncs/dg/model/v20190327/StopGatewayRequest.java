@@ -26,6 +26,8 @@ import com.aliyuncs.dg.Endpoint;
 public class StopGatewayRequest extends RpcAcsRequest<StopGatewayResponse> {
 	   
 
+	private String gatewayInstanceId;
+
 	private String gatewayId;
 	public StopGatewayRequest() {
 		super("dg", "2019-03-27", "StopGateway", "dg");
@@ -35,6 +37,17 @@ public class StopGatewayRequest extends RpcAcsRequest<StopGatewayResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGatewayInstanceId() {
+		return this.gatewayInstanceId;
+	}
+
+	public void setGatewayInstanceId(String gatewayInstanceId) {
+		this.gatewayInstanceId = gatewayInstanceId;
+		if(gatewayInstanceId != null){
+			putBodyParameter("GatewayInstanceId", gatewayInstanceId);
+		}
 	}
 
 	public String getGatewayId() {

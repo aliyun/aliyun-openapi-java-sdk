@@ -15,6 +15,7 @@
 package com.aliyuncs.emas_appmonitor.model.v20190611;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emas_appmonitor.Endpoint;
 
 /**
@@ -22,16 +23,17 @@ import com.aliyuncs.emas_appmonitor.Endpoint;
  * @version 
  */
 public class GetAppStatusRequest extends RpcAcsRequest<GetAppStatusResponse> {
-	
+	   
+
+	private String uniqueAppId;
 	public GetAppStatusRequest() {
 		super("emas-appmonitor", "2019-06-11", "GetAppStatus");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
-
-	private String uniqueAppId;
 
 	public String getUniqueAppId() {
 		return this.uniqueAppId;

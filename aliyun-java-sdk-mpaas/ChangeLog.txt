@@ -1,3 +1,9 @@
+2021-01-28 Version: 3.0.2
+- Push add bind unbind report api.
+
+2021-01-28 Version: 3.0.2
+- Push add bind unbind report api.
+
 2020-12-21 Version: 3.0.1
 - Update mpaas push sdk.
 

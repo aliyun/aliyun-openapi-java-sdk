@@ -27,6 +27,10 @@ public class GetDbfsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String kMSKeyId;
+
+	private Boolean encryption;
+
 	private DBFSInfo dBFSInfo;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class GetDbfsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getKMSKeyId() {
+		return this.kMSKeyId;
+	}
+
+	public void setKMSKeyId(String kMSKeyId) {
+		this.kMSKeyId = kMSKeyId;
+	}
+
+	public Boolean getEncryption() {
+		return this.encryption;
+	}
+
+	public void setEncryption(Boolean encryption) {
+		this.encryption = encryption;
 	}
 
 	public DBFSInfo getDBFSInfo() {

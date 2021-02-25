@@ -29,6 +29,8 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 
 	private String engineVersion;
 
+	private String resourceGroupId;
+
 	private String securityToken;
 
 	private String engine;
@@ -68,6 +70,17 @@ public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribePar
 		this.engineVersion = engineVersion;
 		if(engineVersion != null){
 			putQueryParameter("EngineVersion", engineVersion);
+		}
+	}
+
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

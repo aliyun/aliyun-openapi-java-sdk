@@ -24,9 +24,12 @@ import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailRespons
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.LoadBalancer;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.AccessLog;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Audit;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Kiali;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.OPA;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Pilot;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Prometheus;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Proxy;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.SidecarInjector;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.SidecarInjector.InitCNIConfiguration;
@@ -82,6 +85,7 @@ public class DescribeServiceMeshDetailResponseUnmarshaller {
 		meshConfig.setCustomizedZipkin(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.CustomizedZipkin"));
 		meshConfig.setOutboundTrafficPolicy(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.OutboundTrafficPolicy"));
 		meshConfig.setIncludeIPRanges(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.IncludeIPRanges"));
+		meshConfig.setEdition(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Edition"));
 
 		Pilot pilot = new Pilot();
 		pilot.setTraceSampling(_ctx.floatValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Pilot.TraceSampling"));
@@ -124,6 +128,20 @@ public class DescribeServiceMeshDetailResponseUnmarshaller {
 		initCNIConfiguration.setExcludeNamespaces(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.SidecarInjector.InitCNIConfiguration.ExcludeNamespaces"));
 		sidecarInjector.setInitCNIConfiguration(initCNIConfiguration);
 		meshConfig.setSidecarInjector(sidecarInjector);
+
+		Kiali kiali = new Kiali();
+		kiali.setEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Kiali.Enabled"));
+		kiali.setUrl(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Kiali.Url"));
+		meshConfig.setKiali(kiali);
+
+		Prometheus prometheus = new Prometheus();
+		prometheus.setUseExternal(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Prometheus.UseExternal"));
+		prometheus.setExternalUrl(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Prometheus.ExternalUrl"));
+		meshConfig.setPrometheus(prometheus);
+
+		AccessLog accessLog = new AccessLog();
+		accessLog.setEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.AccessLog.Enabled"));
+		meshConfig.setAccessLog(accessLog);
 		spec.setMeshConfig(meshConfig);
 
 		Network network = new Network();

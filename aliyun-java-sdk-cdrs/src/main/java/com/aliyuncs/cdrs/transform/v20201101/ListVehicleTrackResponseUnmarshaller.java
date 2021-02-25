@@ -50,6 +50,8 @@ public class ListVehicleTrackResponseUnmarshaller {
 			datas.setOrder(_ctx.stringValue("ListVehicleTrackResponse.Data["+ i +"].Order"));
 			datas.setLatitude(_ctx.stringValue("ListVehicleTrackResponse.Data["+ i +"].Latitude"));
 			datas.setLongitude(_ctx.stringValue("ListVehicleTrackResponse.Data["+ i +"].Longitude"));
+			datas.setSourceUrl(_ctx.stringValue("ListVehicleTrackResponse.Data["+ i +"].SourceUrl"));
+			datas.setTargetUrl(_ctx.stringValue("ListVehicleTrackResponse.Data["+ i +"].TargetUrl"));
 
 			data.add(datas);
 		}

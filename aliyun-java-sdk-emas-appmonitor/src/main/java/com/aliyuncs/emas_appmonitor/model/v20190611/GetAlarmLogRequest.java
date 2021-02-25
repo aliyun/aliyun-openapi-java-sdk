@@ -15,6 +15,7 @@
 package com.aliyuncs.emas_appmonitor.model.v20190611;
 
 import com.aliyuncs.RpcAcsRequest;
+import com.aliyuncs.http.MethodType;
 import com.aliyuncs.emas_appmonitor.Endpoint;
 
 /**
@@ -22,22 +23,7 @@ import com.aliyuncs.emas_appmonitor.Endpoint;
  * @version 
  */
 public class GetAlarmLogRequest extends RpcAcsRequest<GetAlarmLogResponse> {
-	
-	public GetAlarmLogRequest() {
-		super("emas-appmonitor", "2019-06-11", "GetAlarmLog");
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
-	}
-
-	private String alarmItemId;
-
-	private String uniqueAppId;
-
-	private Long untilDate;
-
-	private Integer pageSize;
+	   
 
 	private String alarmItemType;
 
@@ -45,48 +31,20 @@ public class GetAlarmLogRequest extends RpcAcsRequest<GetAlarmLogResponse> {
 
 	private Long fromDate;
 
-	public String getAlarmItemId() {
-		return this.alarmItemId;
-	}
+	private Integer pageSize;
 
-	public void setAlarmItemId(String alarmItemId) {
-		this.alarmItemId = alarmItemId;
-		if(alarmItemId != null){
-			putBodyParameter("AlarmItemId", alarmItemId);
-		}
-	}
+	private String alarmItemId;
 
-	public String getUniqueAppId() {
-		return this.uniqueAppId;
-	}
+	private String uniqueAppId;
 
-	public void setUniqueAppId(String uniqueAppId) {
-		this.uniqueAppId = uniqueAppId;
-		if(uniqueAppId != null){
-			putBodyParameter("UniqueAppId", uniqueAppId);
-		}
-	}
-
-	public Long getUntilDate() {
-		return this.untilDate;
-	}
-
-	public void setUntilDate(Long untilDate) {
-		this.untilDate = untilDate;
-		if(untilDate != null){
-			putBodyParameter("UntilDate", untilDate.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putBodyParameter("PageSize", pageSize.toString());
-		}
+	private Long untilDate;
+	public GetAlarmLogRequest() {
+		super("emas-appmonitor", "2019-06-11", "GetAlarmLog");
+		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getAlarmItemType() {
@@ -119,6 +77,50 @@ public class GetAlarmLogRequest extends RpcAcsRequest<GetAlarmLogResponse> {
 		this.fromDate = fromDate;
 		if(fromDate != null){
 			putBodyParameter("FromDate", fromDate.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getAlarmItemId() {
+		return this.alarmItemId;
+	}
+
+	public void setAlarmItemId(String alarmItemId) {
+		this.alarmItemId = alarmItemId;
+		if(alarmItemId != null){
+			putBodyParameter("AlarmItemId", alarmItemId);
+		}
+	}
+
+	public String getUniqueAppId() {
+		return this.uniqueAppId;
+	}
+
+	public void setUniqueAppId(String uniqueAppId) {
+		this.uniqueAppId = uniqueAppId;
+		if(uniqueAppId != null){
+			putBodyParameter("UniqueAppId", uniqueAppId);
+		}
+	}
+
+	public Long getUntilDate() {
+		return this.untilDate;
+	}
+
+	public void setUntilDate(Long untilDate) {
+		this.untilDate = untilDate;
+		if(untilDate != null){
+			putBodyParameter("UntilDate", untilDate.toString());
 		}
 	}
 
