@@ -117,6 +117,8 @@ public class GetQualityEntityResponse extends AcsResponse {
 
 		private String relativeNode;
 
+		private String onDutyAccountName;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -235,6 +237,14 @@ public class GetQualityEntityResponse extends AcsResponse {
 
 		public void setRelativeNode(String relativeNode) {
 			this.relativeNode = relativeNode;
+		}
+
+		public String getOnDutyAccountName() {
+			return this.onDutyAccountName;
+		}
+
+		public void setOnDutyAccountName(String onDutyAccountName) {
+			this.onDutyAccountName = onDutyAccountName;
 		}
 	}
 

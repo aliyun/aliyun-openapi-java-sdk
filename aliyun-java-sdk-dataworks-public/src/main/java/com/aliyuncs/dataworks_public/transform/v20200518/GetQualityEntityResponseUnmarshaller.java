@@ -50,6 +50,7 @@ public class GetQualityEntityResponseUnmarshaller {
 			entityDto.setFollowers(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].Followers"));
 			entityDto.setHasRelativeNode(_ctx.booleanValue("GetQualityEntityResponse.Data["+ i +"].HasRelativeNode"));
 			entityDto.setRelativeNode(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].RelativeNode"));
+			entityDto.setOnDutyAccountName(_ctx.stringValue("GetQualityEntityResponse.Data["+ i +"].OnDutyAccountName"));
 
 			data.add(entityDto);
 		}

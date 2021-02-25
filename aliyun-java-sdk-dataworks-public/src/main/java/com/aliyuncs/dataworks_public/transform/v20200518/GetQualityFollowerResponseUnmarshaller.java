@@ -41,6 +41,7 @@ public class GetQualityFollowerResponseUnmarshaller {
 			follower.setEntityId(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].EntityId"));
 			follower.setFollower(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].Follower"));
 			follower.setAlarmMode(_ctx.integerValue("GetQualityFollowerResponse.Data["+ i +"].AlarmMode"));
+			follower.setFollowerAccountName(_ctx.stringValue("GetQualityFollowerResponse.Data["+ i +"].FollowerAccountName"));
 
 			data.add(follower);
 		}

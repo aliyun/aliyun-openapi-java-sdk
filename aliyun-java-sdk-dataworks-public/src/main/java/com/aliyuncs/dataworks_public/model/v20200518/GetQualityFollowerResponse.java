@@ -99,6 +99,8 @@ public class GetQualityFollowerResponse extends AcsResponse {
 
 		private Integer alarmMode;
 
+		private String followerAccountName;
+
 		public String getProjectName() {
 			return this.projectName;
 		}
@@ -145,6 +147,14 @@ public class GetQualityFollowerResponse extends AcsResponse {
 
 		public void setAlarmMode(Integer alarmMode) {
 			this.alarmMode = alarmMode;
+		}
+
+		public String getFollowerAccountName() {
+			return this.followerAccountName;
+		}
+
+		public void setFollowerAccountName(String followerAccountName) {
+			this.followerAccountName = followerAccountName;
 		}
 	}
 

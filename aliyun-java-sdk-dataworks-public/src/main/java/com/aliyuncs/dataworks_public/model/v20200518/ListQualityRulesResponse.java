@@ -177,6 +177,8 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 			private String expectValue;
 
+			private String onDutyAccountName;
+
 			public String getProjectName() {
 				return this.projectName;
 			}
@@ -367,6 +369,14 @@ public class ListQualityRulesResponse extends AcsResponse {
 
 			public void setExpectValue(String expectValue) {
 				this.expectValue = expectValue;
+			}
+
+			public String getOnDutyAccountName() {
+				return this.onDutyAccountName;
+			}
+
+			public void setOnDutyAccountName(String onDutyAccountName) {
+				this.onDutyAccountName = onDutyAccountName;
 			}
 		}
 	}

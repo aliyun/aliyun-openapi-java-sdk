@@ -130,6 +130,8 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		private Boolean fixCheck;
 
+		private String onDutyAccountName;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -304,6 +306,14 @@ public class GetQualityRuleResponse extends AcsResponse {
 
 		public void setFixCheck(Boolean fixCheck) {
 			this.fixCheck = fixCheck;
+		}
+
+		public String getOnDutyAccountName() {
+			return this.onDutyAccountName;
+		}
+
+		public void setOnDutyAccountName(String onDutyAccountName) {
+			this.onDutyAccountName = onDutyAccountName;
 		}
 	}
 

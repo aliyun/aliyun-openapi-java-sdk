@@ -52,6 +52,7 @@ public class GetQualityRuleResponseUnmarshaller {
 		data.setCheckerName(_ctx.stringValue("GetQualityRuleResponse.Data.CheckerName"));
 		data.setChecker(_ctx.integerValue("GetQualityRuleResponse.Data.Checker"));
 		data.setFixCheck(_ctx.booleanValue("GetQualityRuleResponse.Data.FixCheck"));
+		data.setOnDutyAccountName(_ctx.stringValue("GetQualityRuleResponse.Data.OnDutyAccountName"));
 		getQualityRuleResponse.setData(data);
 	 
 	 	return getQualityRuleResponse;

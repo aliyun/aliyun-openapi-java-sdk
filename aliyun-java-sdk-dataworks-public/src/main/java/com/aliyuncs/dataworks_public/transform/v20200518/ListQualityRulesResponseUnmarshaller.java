@@ -65,6 +65,7 @@ public class ListQualityRulesResponseUnmarshaller {
 			rulesItem.setMatchExpression(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].MatchExpression"));
 			rulesItem.setComment(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].Comment"));
 			rulesItem.setExpectValue(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].ExpectValue"));
+			rulesItem.setOnDutyAccountName(_ctx.stringValue("ListQualityRulesResponse.Data.Rules["+ i +"].OnDutyAccountName"));
 
 			rules.add(rulesItem);
 		}
