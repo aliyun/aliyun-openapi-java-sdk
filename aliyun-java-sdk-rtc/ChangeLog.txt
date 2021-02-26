@@ -4,6 +4,9 @@
 2021-02-26 Version: 1.2.7
 - Support MixMode switch.
 
+2021-02-26 Version: 1.2.7
+- Support MixMode switch.
+
 2021-01-27 Version: 1.2.6
 - Support Auto Live Stream.
 
