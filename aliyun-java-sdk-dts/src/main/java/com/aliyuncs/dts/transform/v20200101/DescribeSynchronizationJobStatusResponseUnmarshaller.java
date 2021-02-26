@@ -53,6 +53,7 @@ public class DescribeSynchronizationJobStatusResponseUnmarshaller {
 		describeSynchronizationJobStatusResponse.setSynchronizationJobClass(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobClass"));
 		describeSynchronizationJobStatusResponse.setSynchronizationJobId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobId"));
 		describeSynchronizationJobStatusResponse.setSynchronizationJobName(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.SynchronizationJobName"));
+		describeSynchronizationJobStatusResponse.setTaskId(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.TaskId"));
 
 		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
 		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeSynchronizationJobStatusResponse.DataInitializationStatus.ErrorMessage"));

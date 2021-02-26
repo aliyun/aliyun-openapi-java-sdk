@@ -43,6 +43,7 @@ public class DescribeMigrationJobStatusResponseUnmarshaller {
 		describeMigrationJobStatusResponse.setMigrationObject(_ctx.stringValue("DescribeMigrationJobStatusResponse.MigrationObject"));
 		describeMigrationJobStatusResponse.setPayType(_ctx.stringValue("DescribeMigrationJobStatusResponse.PayType"));
 		describeMigrationJobStatusResponse.setSuccess(_ctx.stringValue("DescribeMigrationJobStatusResponse.Success"));
+		describeMigrationJobStatusResponse.setTaskId(_ctx.stringValue("DescribeMigrationJobStatusResponse.TaskId"));
 
 		DataInitializationStatus dataInitializationStatus = new DataInitializationStatus();
 		dataInitializationStatus.setErrorMessage(_ctx.stringValue("DescribeMigrationJobStatusResponse.DataInitializationStatus.ErrorMessage"));

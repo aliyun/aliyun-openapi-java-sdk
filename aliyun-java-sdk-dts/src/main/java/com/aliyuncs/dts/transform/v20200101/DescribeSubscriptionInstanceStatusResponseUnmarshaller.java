@@ -44,6 +44,7 @@ public class DescribeSubscriptionInstanceStatusResponseUnmarshaller {
 		describeSubscriptionInstanceStatusResponse.setSuccess(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.Success"));
 		describeSubscriptionInstanceStatusResponse.setErrorMessage(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrorMessage"));
 		describeSubscriptionInstanceStatusResponse.setErrorMessage1(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.ErrorMessage"));
+		describeSubscriptionInstanceStatusResponse.setTaskId(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.TaskId"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
 		sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeSubscriptionInstanceStatusResponse.SourceEndpoint.InstanceID"));
