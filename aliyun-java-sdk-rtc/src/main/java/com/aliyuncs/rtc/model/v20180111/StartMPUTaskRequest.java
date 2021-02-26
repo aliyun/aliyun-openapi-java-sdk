@@ -46,6 +46,8 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 
 	private Long ownerId;
 
+	private List<String> subSpecAudioUserss;
+
 	private Integer taskMode;
 
 	private Integer mediaEncode;
@@ -233,6 +235,19 @@ public class StartMPUTaskRequest extends RpcAcsRequest<StartMPUTaskResponse> {
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getSubSpecAudioUserss() {
+		return this.subSpecAudioUserss;
+	}
+
+	public void setSubSpecAudioUserss(List<String> subSpecAudioUserss) {
+		this.subSpecAudioUserss = subSpecAudioUserss;	
+		if (subSpecAudioUserss != null) {
+			for (int i = 0; i < subSpecAudioUserss.size(); i++) {
+				putQueryParameter("SubSpecAudioUsers." + (i + 1) , subSpecAudioUserss.get(i));
+			}
+		}	
 	}
 
 	public Integer getTaskMode() {

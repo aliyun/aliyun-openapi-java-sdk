@@ -51,6 +51,10 @@ public class DescribeAutoLiveStreamRuleResponse extends AcsResponse {
 
 		private String playDomain;
 
+		private String ruleName;
+
+		private String createTime;
+
 		private String callBack;
 
 		public Long getRuleId() {
@@ -67,6 +71,22 @@ public class DescribeAutoLiveStreamRuleResponse extends AcsResponse {
 
 		public void setPlayDomain(String playDomain) {
 			this.playDomain = playDomain;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getCallBack() {
