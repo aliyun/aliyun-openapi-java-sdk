@@ -120,6 +120,8 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 		private String lmItemId;
 
+		private Long reservePrice1;
+
 		private List<Sku> skuList;
 
 		public Long getItemId() {
@@ -210,6 +212,14 @@ public class QueryBizItemListResponse extends AcsResponse {
 			this.lmItemId = lmItemId;
 		}
 
+		public Long getReservePrice1() {
+			return this.reservePrice1;
+		}
+
+		public void setReservePrice1(Long reservePrice1) {
+			this.reservePrice1 = reservePrice1;
+		}
+
 		public List<Sku> getSkuList() {
 			return this.skuList;
 		}
@@ -237,6 +247,8 @@ public class QueryBizItemListResponse extends AcsResponse {
 			private Boolean canSell;
 
 			private Map<Object,Object> customizedAttributeMap;
+
+			private Long taoBaoCurrentPrice;
 
 			private List<GradePriceModel> gradePriceModels;
 
@@ -314,6 +326,14 @@ public class QueryBizItemListResponse extends AcsResponse {
 				this.customizedAttributeMap = customizedAttributeMap;
 			}
 
+			public Long getTaoBaoCurrentPrice() {
+				return this.taoBaoCurrentPrice;
+			}
+
+			public void setTaoBaoCurrentPrice(Long taoBaoCurrentPrice) {
+				this.taoBaoCurrentPrice = taoBaoCurrentPrice;
+			}
+
 			public List<GradePriceModel> getGradePriceModels() {
 				return this.gradePriceModels;
 			}
@@ -358,7 +378,7 @@ public class QueryBizItemListResponse extends AcsResponse {
 
 				private String icon;
 
-				private List<String> userLabelList1;
+				private List<String> userLabelList2;
 
 				public String getCharacteristicCode() {
 					return this.characteristicCode;
@@ -464,12 +484,12 @@ public class QueryBizItemListResponse extends AcsResponse {
 					this.icon = icon;
 				}
 
-				public List<String> getUserLabelList1() {
-					return this.userLabelList1;
+				public List<String> getUserLabelList2() {
+					return this.userLabelList2;
 				}
 
-				public void setUserLabelList1(List<String> userLabelList1) {
-					this.userLabelList1 = userLabelList1;
+				public void setUserLabelList2(List<String> userLabelList2) {
+					this.userLabelList2 = userLabelList2;
 				}
 			}
 		}

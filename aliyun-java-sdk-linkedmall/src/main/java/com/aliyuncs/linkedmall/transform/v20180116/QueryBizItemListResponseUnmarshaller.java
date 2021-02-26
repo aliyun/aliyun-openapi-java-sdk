@@ -50,6 +50,7 @@ public class QueryBizItemListResponseUnmarshaller {
 			item.setExtJson(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].ExtJson"));
 			item.setSellerId(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SellerId"));
 			item.setLmItemId(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].LmItemId"));
+			item.setReservePrice1(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].ReservePrice"));
 
 			List<Sku> skuList = new ArrayList<Sku>();
 			for (int j = 0; j < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList.Length"); j++) {
@@ -63,6 +64,7 @@ public class QueryBizItemListResponseUnmarshaller {
 				sku.setBenefitId(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].BenefitId"));
 				sku.setCanSell(_ctx.booleanValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CanSell"));
 				sku.setCustomizedAttributeMap(_ctx.mapValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].CustomizedAttributeMap"));
+				sku.setTaoBaoCurrentPrice(_ctx.longValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].TaoBaoCurrentPrice"));
 
 				List<String> userLabelList = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].UserLabelList.Length"); k++) {
@@ -87,11 +89,11 @@ public class QueryBizItemListResponseUnmarshaller {
 					gradePriceModel.setAccessUrl(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].AccessUrl"));
 					gradePriceModel.setIcon(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].Icon"));
 
-					List<String> userLabelList1 = new ArrayList<String>();
+					List<String> userLabelList2 = new ArrayList<String>();
 					for (int l = 0; l < _ctx.lengthValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].UserLabelList.Length"); l++) {
-						userLabelList1.add(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].UserLabelList["+ l +"]"));
+						userLabelList2.add(_ctx.stringValue("QueryBizItemListResponse.ItemList["+ i +"].SkuList["+ j +"].GradePriceModels["+ k +"].UserLabelList["+ l +"]"));
 					}
-					gradePriceModel.setUserLabelList1(userLabelList1);
+					gradePriceModel.setUserLabelList2(userLabelList2);
 
 					gradePriceModels.add(gradePriceModel);
 				}
