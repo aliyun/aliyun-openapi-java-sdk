@@ -28,6 +28,10 @@ public class ListServerlessTopNAppsRequest extends RpcAcsRequest<ListServerlessT
 	private Integer limit;
 
 	private String orderBy;
+
+	private Long endTime;
+
+	private Long startTime;
 	public ListServerlessTopNAppsRequest() {
 		super("ARMS", "2019-08-08", "ListServerlessTopNApps", "arms");
 		setMethod(MethodType.POST);
@@ -56,6 +60,28 @@ public class ListServerlessTopNAppsRequest extends RpcAcsRequest<ListServerlessT
 		this.orderBy = orderBy;
 		if(orderBy != null){
 			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
 		}
 	}
 
