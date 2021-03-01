@@ -27,11 +27,11 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private LogicDatabase logicDatabase;
 
@@ -43,12 +43,12 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public LogicDatabase getLogicDatabase() {
@@ -77,21 +77,37 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 	public static class LogicDatabase {
 
+		private String searchName;
+
+		private String databaseId;
+
 		private Boolean logic;
 
 		private String envType;
 
 		private String schemaName;
 
-		private String searchName;
-
 		private String dbType;
 
-		private String databaseId;
+		private List<String> ownerNameList;
 
 		private List<String> ownerIdList;
 
-		private List<String> ownerNameList;
+		public String getSearchName() {
+			return this.searchName;
+		}
+
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
+		}
+
+		public String getDatabaseId() {
+			return this.databaseId;
+		}
+
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
+		}
 
 		public Boolean getLogic() {
 			return this.logic;
@@ -117,14 +133,6 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 			this.schemaName = schemaName;
 		}
 
-		public String getSearchName() {
-			return this.searchName;
-		}
-
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
-		}
-
 		public String getDbType() {
 			return this.dbType;
 		}
@@ -133,12 +141,12 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
-		public String getDatabaseId() {
-			return this.databaseId;
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
 		}
 
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -147,14 +155,6 @@ public class GetLogicDatabaseResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
-		}
-
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
-		}
-
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
 		}
 	}
 

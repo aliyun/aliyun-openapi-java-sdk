@@ -29,7 +29,7 @@ public class GetMetaTableDetailInfoRequest extends RpcAcsRequest<GetMetaTableDet
 
 	private Long tid;
 	public GetMetaTableDetailInfoRequest() {
-		super("dms-enterprise", "2018-11-01", "GetMetaTableDetailInfo", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetMetaTableDetailInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

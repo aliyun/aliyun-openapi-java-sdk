@@ -23,9 +23,9 @@ public class RegisterInstanceResponseUnmarshaller {
 	public static RegisterInstanceResponse unmarshall(RegisterInstanceResponse registerInstanceResponse, UnmarshallerContext _ctx) {
 		
 		registerInstanceResponse.setRequestId(_ctx.stringValue("RegisterInstanceResponse.RequestId"));
-		registerInstanceResponse.setSuccess(_ctx.booleanValue("RegisterInstanceResponse.Success"));
-		registerInstanceResponse.setErrorMessage(_ctx.stringValue("RegisterInstanceResponse.ErrorMessage"));
 		registerInstanceResponse.setErrorCode(_ctx.stringValue("RegisterInstanceResponse.ErrorCode"));
+		registerInstanceResponse.setErrorMessage(_ctx.stringValue("RegisterInstanceResponse.ErrorMessage"));
+		registerInstanceResponse.setSuccess(_ctx.booleanValue("RegisterInstanceResponse.Success"));
 	 
 	 	return registerInstanceResponse;
 	}

@@ -23,9 +23,9 @@ public class SetOwnersResponseUnmarshaller {
 	public static SetOwnersResponse unmarshall(SetOwnersResponse setOwnersResponse, UnmarshallerContext _ctx) {
 		
 		setOwnersResponse.setRequestId(_ctx.stringValue("SetOwnersResponse.RequestId"));
-		setOwnersResponse.setSuccess(_ctx.booleanValue("SetOwnersResponse.Success"));
-		setOwnersResponse.setErrorMessage(_ctx.stringValue("SetOwnersResponse.ErrorMessage"));
 		setOwnersResponse.setErrorCode(_ctx.stringValue("SetOwnersResponse.ErrorCode"));
+		setOwnersResponse.setErrorMessage(_ctx.stringValue("SetOwnersResponse.ErrorMessage"));
+		setOwnersResponse.setSuccess(_ctx.booleanValue("SetOwnersResponse.Success"));
 	 
 	 	return setOwnersResponse;
 	}

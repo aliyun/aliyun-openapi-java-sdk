@@ -25,42 +25,20 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 	   
 
-	private Integer dbId;
-
-	private Boolean logic;
-
 	private String script;
 
 	private Long tid;
+
+	private Integer dbId;
+
+	private Boolean logic;
 	public ExecuteScriptRequest() {
-		super("dms-enterprise", "2018-11-01", "ExecuteScript", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ExecuteScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getDbId() {
-		return this.dbId;
-	}
-
-	public void setDbId(Integer dbId) {
-		this.dbId = dbId;
-		if(dbId != null){
-			putQueryParameter("DbId", dbId.toString());
-		}
-	}
-
-	public Boolean getLogic() {
-		return this.logic;
-	}
-
-	public void setLogic(Boolean logic) {
-		this.logic = logic;
-		if(logic != null){
-			putQueryParameter("Logic", logic.toString());
-		}
 	}
 
 	public String getScript() {
@@ -82,6 +60,28 @@ public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Integer getDbId() {
+		return this.dbId;
+	}
+
+	public void setDbId(Integer dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId.toString());
+		}
+	}
+
+	public Boolean getLogic() {
+		return this.logic;
+	}
+
+	public void setLogic(Boolean logic) {
+		this.logic = logic;
+		if(logic != null){
+			putQueryParameter("Logic", logic.toString());
 		}
 	}
 

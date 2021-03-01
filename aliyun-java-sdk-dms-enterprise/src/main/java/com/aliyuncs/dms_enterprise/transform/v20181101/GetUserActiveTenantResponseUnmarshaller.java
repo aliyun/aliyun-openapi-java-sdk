@@ -24,14 +24,14 @@ public class GetUserActiveTenantResponseUnmarshaller {
 	public static GetUserActiveTenantResponse unmarshall(GetUserActiveTenantResponse getUserActiveTenantResponse, UnmarshallerContext _ctx) {
 		
 		getUserActiveTenantResponse.setRequestId(_ctx.stringValue("GetUserActiveTenantResponse.RequestId"));
-		getUserActiveTenantResponse.setSuccess(_ctx.booleanValue("GetUserActiveTenantResponse.Success"));
-		getUserActiveTenantResponse.setErrorMessage(_ctx.stringValue("GetUserActiveTenantResponse.ErrorMessage"));
 		getUserActiveTenantResponse.setErrorCode(_ctx.stringValue("GetUserActiveTenantResponse.ErrorCode"));
+		getUserActiveTenantResponse.setErrorMessage(_ctx.stringValue("GetUserActiveTenantResponse.ErrorMessage"));
+		getUserActiveTenantResponse.setSuccess(_ctx.booleanValue("GetUserActiveTenantResponse.Success"));
 
 		Tenant tenant = new Tenant();
-		tenant.setTid(_ctx.longValue("GetUserActiveTenantResponse.Tenant.Tid"));
-		tenant.setTenantName(_ctx.stringValue("GetUserActiveTenantResponse.Tenant.TenantName"));
 		tenant.setStatus(_ctx.stringValue("GetUserActiveTenantResponse.Tenant.Status"));
+		tenant.setTenantName(_ctx.stringValue("GetUserActiveTenantResponse.Tenant.TenantName"));
+		tenant.setTid(_ctx.longValue("GetUserActiveTenantResponse.Tenant.Tid"));
 		getUserActiveTenantResponse.setTenant(tenant);
 	 
 	 	return getUserActiveTenantResponse;

@@ -27,20 +27,20 @@ public class ListSensitiveColumnsResponseUnmarshaller {
 	public static ListSensitiveColumnsResponse unmarshall(ListSensitiveColumnsResponse listSensitiveColumnsResponse, UnmarshallerContext _ctx) {
 		
 		listSensitiveColumnsResponse.setRequestId(_ctx.stringValue("ListSensitiveColumnsResponse.RequestId"));
-		listSensitiveColumnsResponse.setSuccess(_ctx.booleanValue("ListSensitiveColumnsResponse.Success"));
-		listSensitiveColumnsResponse.setErrorMessage(_ctx.stringValue("ListSensitiveColumnsResponse.ErrorMessage"));
-		listSensitiveColumnsResponse.setErrorCode(_ctx.stringValue("ListSensitiveColumnsResponse.ErrorCode"));
 		listSensitiveColumnsResponse.setTotalCount(_ctx.longValue("ListSensitiveColumnsResponse.TotalCount"));
+		listSensitiveColumnsResponse.setErrorCode(_ctx.stringValue("ListSensitiveColumnsResponse.ErrorCode"));
+		listSensitiveColumnsResponse.setErrorMessage(_ctx.stringValue("ListSensitiveColumnsResponse.ErrorMessage"));
+		listSensitiveColumnsResponse.setSuccess(_ctx.booleanValue("ListSensitiveColumnsResponse.Success"));
 
 		List<SensitiveColumn> sensitiveColumnList = new ArrayList<SensitiveColumn>();
 		for (int i = 0; i < _ctx.lengthValue("ListSensitiveColumnsResponse.SensitiveColumnList.Length"); i++) {
 			SensitiveColumn sensitiveColumn = new SensitiveColumn();
-			sensitiveColumn.setSchemaName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].SchemaName"));
 			sensitiveColumn.setTableName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].TableName"));
 			sensitiveColumn.setColumnName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].ColumnName"));
-			sensitiveColumn.setSecurityLevel(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].SecurityLevel"));
 			sensitiveColumn.setColumnCount(_ctx.longValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].ColumnCount"));
 			sensitiveColumn.setFunctionType(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].FunctionType"));
+			sensitiveColumn.setSecurityLevel(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].SecurityLevel"));
+			sensitiveColumn.setSchemaName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].SchemaName"));
 
 			sensitiveColumnList.add(sensitiveColumn);
 		}

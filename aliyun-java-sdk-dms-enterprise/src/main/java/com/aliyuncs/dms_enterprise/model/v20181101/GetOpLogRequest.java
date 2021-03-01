@@ -27,8 +27,6 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 
 	private String module;
 
-	private Integer pageSize;
-
 	private String endTime;
 
 	private String startTime;
@@ -36,8 +34,10 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 	private Long tid;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
 	public GetOpLogRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetOpLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,17 +53,6 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		this.module = module;
 		if(module != null){
 			putQueryParameter("Module", module);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -108,6 +97,17 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

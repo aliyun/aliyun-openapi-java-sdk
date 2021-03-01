@@ -28,16 +28,16 @@ public class ExecuteScriptResponseUnmarshaller {
 	public static ExecuteScriptResponse unmarshall(ExecuteScriptResponse executeScriptResponse, UnmarshallerContext _ctx) {
 		
 		executeScriptResponse.setRequestId(_ctx.stringValue("ExecuteScriptResponse.RequestId"));
-		executeScriptResponse.setSuccess(_ctx.booleanValue("ExecuteScriptResponse.Success"));
-		executeScriptResponse.setErrorMessage(_ctx.stringValue("ExecuteScriptResponse.ErrorMessage"));
 		executeScriptResponse.setErrorCode(_ctx.stringValue("ExecuteScriptResponse.ErrorCode"));
+		executeScriptResponse.setErrorMessage(_ctx.stringValue("ExecuteScriptResponse.ErrorMessage"));
+		executeScriptResponse.setSuccess(_ctx.booleanValue("ExecuteScriptResponse.Success"));
 
 		List<Result> results = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("ExecuteScriptResponse.Results.Length"); i++) {
 			Result result = new Result();
+			result.setMessage(_ctx.stringValue("ExecuteScriptResponse.Results["+ i +"].Message"));
 			result.setRowCount(_ctx.longValue("ExecuteScriptResponse.Results["+ i +"].RowCount"));
 			result.setSuccess(_ctx.booleanValue("ExecuteScriptResponse.Results["+ i +"].Success"));
-			result.setMessage(_ctx.stringValue("ExecuteScriptResponse.Results["+ i +"].Message"));
 
 			List<String> columnNames = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ExecuteScriptResponse.Results["+ i +"].ColumnNames.Length"); j++) {

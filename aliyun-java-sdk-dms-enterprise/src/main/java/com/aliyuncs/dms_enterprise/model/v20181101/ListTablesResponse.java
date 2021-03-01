@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTablesResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<Table> tableList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class ListTablesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListTablesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Table> getTableList() {
@@ -89,29 +89,29 @@ public class ListTablesResponse extends AcsResponse {
 
 		private String tableId;
 
-		private String databaseId;
-
 		private String tableName;
+
+		private String tableGuid;
+
+		private String tableType;
+
+		private String description;
 
 		private String tableSchemaName;
 
-		private String engine;
-
 		private String encoding;
 
-		private String tableType;
+		private String databaseId;
 
 		private Long numRows;
 
 		private Long storeCapacity;
 
-		private String tableGuid;
-
-		private String description;
-
-		private List<String> ownerIdList;
+		private String engine;
 
 		private List<String> ownerNameList;
+
+		private List<String> ownerIdList;
 
 		public String getTableId() {
 			return this.tableId;
@@ -119,14 +119,6 @@ public class ListTablesResponse extends AcsResponse {
 
 		public void setTableId(String tableId) {
 			this.tableId = tableId;
-		}
-
-		public String getDatabaseId() {
-			return this.databaseId;
-		}
-
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
 		}
 
 		public String getTableName() {
@@ -137,20 +129,36 @@ public class ListTablesResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
+		public String getTableGuid() {
+			return this.tableGuid;
+		}
+
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
+		}
+
+		public String getTableType() {
+			return this.tableType;
+		}
+
+		public void setTableType(String tableType) {
+			this.tableType = tableType;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
 		public String getTableSchemaName() {
 			return this.tableSchemaName;
 		}
 
 		public void setTableSchemaName(String tableSchemaName) {
 			this.tableSchemaName = tableSchemaName;
-		}
-
-		public String getEngine() {
-			return this.engine;
-		}
-
-		public void setEngine(String engine) {
-			this.engine = engine;
 		}
 
 		public String getEncoding() {
@@ -161,12 +169,12 @@ public class ListTablesResponse extends AcsResponse {
 			this.encoding = encoding;
 		}
 
-		public String getTableType() {
-			return this.tableType;
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setTableType(String tableType) {
-			this.tableType = tableType;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
 		}
 
 		public Long getNumRows() {
@@ -185,28 +193,12 @@ public class ListTablesResponse extends AcsResponse {
 			this.storeCapacity = storeCapacity;
 		}
 
-		public String getTableGuid() {
-			return this.tableGuid;
+		public String getEngine() {
+			return this.engine;
 		}
 
-		public void setTableGuid(String tableGuid) {
-			this.tableGuid = tableGuid;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public List<String> getOwnerIdList() {
-			return this.ownerIdList;
-		}
-
-		public void setOwnerIdList(List<String> ownerIdList) {
-			this.ownerIdList = ownerIdList;
+		public void setEngine(String engine) {
+			this.engine = engine;
 		}
 
 		public List<String> getOwnerNameList() {
@@ -215,6 +207,14 @@ public class ListTablesResponse extends AcsResponse {
 
 		public void setOwnerNameList(List<String> ownerNameList) {
 			this.ownerNameList = ownerNameList;
+		}
+
+		public List<String> getOwnerIdList() {
+			return this.ownerIdList;
+		}
+
+		public void setOwnerIdList(List<String> ownerIdList) {
+			this.ownerIdList = ownerIdList;
 		}
 	}
 

@@ -27,15 +27,15 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 
 	private String schemaName;
 
-	private Integer port;
-
-	private String host;
-
 	private Long tid;
 
 	private String sid;
+
+	private Integer port;
+
+	private String host;
 	public GetDatabaseRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDatabase", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetDatabase");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,28 +51,6 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 		this.schemaName = schemaName;
 		if(schemaName != null){
 			putQueryParameter("SchemaName", schemaName);
-		}
-	}
-
-	public Integer getPort() {
-		return this.port;
-	}
-
-	public void setPort(Integer port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
-		}
-	}
-
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putQueryParameter("Host", host);
 		}
 	}
 
@@ -95,6 +73,28 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 		this.sid = sid;
 		if(sid != null){
 			putQueryParameter("Sid", sid);
+		}
+	}
+
+	public Integer getPort() {
+		return this.port;
+	}
+
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
+		}
+	}
+
+	public String getHost() {
+		return this.host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+		if(host != null){
+			putQueryParameter("Host", host);
 		}
 	}
 

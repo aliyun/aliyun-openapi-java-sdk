@@ -24,14 +24,14 @@ public class GetDataExportDownloadURLResponseUnmarshaller {
 	public static GetDataExportDownloadURLResponse unmarshall(GetDataExportDownloadURLResponse getDataExportDownloadURLResponse, UnmarshallerContext _ctx) {
 		
 		getDataExportDownloadURLResponse.setRequestId(_ctx.stringValue("GetDataExportDownloadURLResponse.RequestId"));
-		getDataExportDownloadURLResponse.setSuccess(_ctx.booleanValue("GetDataExportDownloadURLResponse.Success"));
-		getDataExportDownloadURLResponse.setErrorMessage(_ctx.stringValue("GetDataExportDownloadURLResponse.ErrorMessage"));
 		getDataExportDownloadURLResponse.setErrorCode(_ctx.stringValue("GetDataExportDownloadURLResponse.ErrorCode"));
+		getDataExportDownloadURLResponse.setErrorMessage(_ctx.stringValue("GetDataExportDownloadURLResponse.ErrorMessage"));
+		getDataExportDownloadURLResponse.setSuccess(_ctx.booleanValue("GetDataExportDownloadURLResponse.Success"));
 
 		DownloadURLResult downloadURLResult = new DownloadURLResult();
 		downloadURLResult.setHasResult(_ctx.booleanValue("GetDataExportDownloadURLResponse.DownloadURLResult.HasResult"));
-		downloadURLResult.setURL(_ctx.stringValue("GetDataExportDownloadURLResponse.DownloadURLResult.URL"));
 		downloadURLResult.setTipMessage(_ctx.stringValue("GetDataExportDownloadURLResponse.DownloadURLResult.TipMessage"));
+		downloadURLResult.setURL(_ctx.stringValue("GetDataExportDownloadURLResponse.DownloadURLResult.URL"));
 		getDataExportDownloadURLResponse.setDownloadURLResult(downloadURLResult);
 	 
 	 	return getDataExportDownloadURLResponse;

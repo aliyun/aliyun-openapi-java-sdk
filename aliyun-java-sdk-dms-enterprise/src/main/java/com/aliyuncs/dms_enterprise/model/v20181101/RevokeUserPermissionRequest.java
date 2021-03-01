@@ -43,7 +43,7 @@ public class RevokeUserPermissionRequest extends RpcAcsRequest<RevokeUserPermiss
 
 	private String tableName;
 	public RevokeUserPermissionRequest() {
-		super("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "RevokeUserPermission");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -69,7 +69,7 @@ public class UpdateInstanceRequest extends RpcAcsRequest<UpdateInstanceResponse>
 
 	private Boolean skipTest;
 	public UpdateInstanceRequest() {
-		super("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "UpdateInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

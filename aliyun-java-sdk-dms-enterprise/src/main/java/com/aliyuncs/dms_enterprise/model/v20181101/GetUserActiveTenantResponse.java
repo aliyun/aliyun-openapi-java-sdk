@@ -26,11 +26,11 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private Tenant tenant;
 
@@ -42,12 +42,12 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Tenant getTenant() {
@@ -76,18 +76,18 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 
 	public static class Tenant {
 
-		private Long tid;
+		private String status;
 
 		private String tenantName;
 
-		private String status;
+		private Long tid;
 
-		public Long getTid() {
-			return this.tid;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setTid(Long tid) {
-			this.tid = tid;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getTenantName() {
@@ -98,12 +98,12 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 			this.tenantName = tenantName;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getTid() {
+			return this.tid;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setTid(Long tid) {
+			this.tid = tid;
 		}
 	}
 

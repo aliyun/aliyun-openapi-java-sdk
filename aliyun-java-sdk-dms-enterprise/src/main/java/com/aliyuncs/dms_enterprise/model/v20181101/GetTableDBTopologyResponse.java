@@ -27,11 +27,11 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private DBTopology dBTopology;
 
@@ -43,12 +43,12 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public DBTopology getDBTopology() {
@@ -109,9 +109,9 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 		public static class DataSource {
 
-			private String host;
-
 			private Integer port;
+
+			private String host;
 
 			private String dbType;
 
@@ -119,20 +119,20 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 			private List<Database> databaseList;
 
-			public String getHost() {
-				return this.host;
-			}
-
-			public void setHost(String host) {
-				this.host = host;
-			}
-
 			public Integer getPort() {
 				return this.port;
 			}
 
 			public void setPort(Integer port) {
 				this.port = port;
+			}
+
+			public String getHost() {
+				return this.host;
+			}
+
+			public void setHost(String host) {
+				this.host = host;
 			}
 
 			public String getDbType() {
@@ -161,9 +161,9 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 			public static class Database {
 
-				private String dbName;
-
 				private String dbId;
+
+				private String dbName;
 
 				private String envType;
 
@@ -171,20 +171,20 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 				private List<Table> tableList;
 
-				public String getDbName() {
-					return this.dbName;
-				}
-
-				public void setDbName(String dbName) {
-					this.dbName = dbName;
-				}
-
 				public String getDbId() {
 					return this.dbId;
 				}
 
 				public void setDbId(String dbId) {
 					this.dbId = dbId;
+				}
+
+				public String getDbName() {
+					return this.dbName;
+				}
+
+				public void setDbName(String dbName) {
+					this.dbName = dbName;
 				}
 
 				public String getEnvType() {
@@ -213,19 +213,11 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 				public static class Table {
 
-					private String tableName;
-
 					private String tableId;
 
+					private String tableName;
+
 					private String tableType;
-
-					public String getTableName() {
-						return this.tableName;
-					}
-
-					public void setTableName(String tableName) {
-						this.tableName = tableName;
-					}
 
 					public String getTableId() {
 						return this.tableId;
@@ -233,6 +225,14 @@ public class GetTableDBTopologyResponse extends AcsResponse {
 
 					public void setTableId(String tableId) {
 						this.tableId = tableId;
+					}
+
+					public String getTableName() {
+						return this.tableName;
+					}
+
+					public void setTableName(String tableName) {
+						this.tableName = tableName;
 					}
 
 					public String getTableType() {

@@ -25,42 +25,20 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 	   
 
-	private String instanceId;
-
-	private Integer pageSize;
-
 	private Long tid;
 
 	private Integer pageNumber;
+
+	private String instanceId;
+
+	private Integer pageSize;
 	public ListDatabasesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListDatabases", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListDatabases");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -82,6 +60,28 @@ public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

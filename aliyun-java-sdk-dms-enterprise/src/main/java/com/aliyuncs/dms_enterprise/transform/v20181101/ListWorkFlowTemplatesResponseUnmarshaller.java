@@ -28,30 +28,30 @@ public class ListWorkFlowTemplatesResponseUnmarshaller {
 	public static ListWorkFlowTemplatesResponse unmarshall(ListWorkFlowTemplatesResponse listWorkFlowTemplatesResponse, UnmarshallerContext _ctx) {
 		
 		listWorkFlowTemplatesResponse.setRequestId(_ctx.stringValue("ListWorkFlowTemplatesResponse.RequestId"));
-		listWorkFlowTemplatesResponse.setSuccess(_ctx.booleanValue("ListWorkFlowTemplatesResponse.Success"));
-		listWorkFlowTemplatesResponse.setErrorMessage(_ctx.stringValue("ListWorkFlowTemplatesResponse.ErrorMessage"));
 		listWorkFlowTemplatesResponse.setErrorCode(_ctx.stringValue("ListWorkFlowTemplatesResponse.ErrorCode"));
+		listWorkFlowTemplatesResponse.setErrorMessage(_ctx.stringValue("ListWorkFlowTemplatesResponse.ErrorMessage"));
+		listWorkFlowTemplatesResponse.setSuccess(_ctx.booleanValue("ListWorkFlowTemplatesResponse.Success"));
 
 		List<WorkFlowTemplate> workFlowTemplates = new ArrayList<WorkFlowTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates.Length"); i++) {
 			WorkFlowTemplate workFlowTemplate = new WorkFlowTemplate();
-			workFlowTemplate.setTemplateName(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].TemplateName"));
 			workFlowTemplate.setComment(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].Comment"));
-			workFlowTemplate.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].TemplateId"));
-			workFlowTemplate.setIsSystem(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].IsSystem"));
-			workFlowTemplate.setEnabled(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].Enabled"));
 			workFlowTemplate.setCreateUserId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].CreateUserId"));
+			workFlowTemplate.setTemplateName(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].TemplateName"));
+			workFlowTemplate.setEnabled(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].Enabled"));
+			workFlowTemplate.setIsSystem(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].IsSystem"));
+			workFlowTemplate.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].TemplateId"));
 
 			List<WorkflowNode> workflowNodes = new ArrayList<WorkflowNode>();
 			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes.Length"); j++) {
 				WorkflowNode workflowNode = new WorkflowNode();
-				workflowNode.setNodeId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId"));
-				workflowNode.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].TemplateId"));
-				workflowNode.setNodeName(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName"));
-				workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType"));
 				workflowNode.setComment(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Comment"));
 				workflowNode.setPosition(_ctx.integerValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position"));
+				workflowNode.setNodeName(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName"));
+				workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType"));
+				workflowNode.setNodeId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId"));
 				workflowNode.setCreateUserId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].CreateUserId"));
+				workflowNode.setTemplateId(_ctx.longValue("ListWorkFlowTemplatesResponse.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].TemplateId"));
 
 				workflowNodes.add(workflowNode);
 			}

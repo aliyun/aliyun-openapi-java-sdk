@@ -27,11 +27,11 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private List<WorkflowNode> workflowNodes;
 
@@ -43,12 +43,12 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<WorkflowNode> getWorkflowNodes() {
@@ -77,27 +77,19 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 	public static class WorkflowNode {
 
-		private String nodeName;
-
 		private String comment;
-
-		private Long nodeId;
-
-		private String nodeType;
-
-		private Long createUserId;
 
 		private String createUserNickName;
 
+		private String nodeName;
+
+		private String nodeType;
+
+		private Long nodeId;
+
+		private Long createUserId;
+
 		private List<AuditUser> auditUsers;
-
-		public String getNodeName() {
-			return this.nodeName;
-		}
-
-		public void setNodeName(String nodeName) {
-			this.nodeName = nodeName;
-		}
 
 		public String getComment() {
 			return this.comment;
@@ -107,12 +99,20 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 			this.comment = comment;
 		}
 
-		public Long getNodeId() {
-			return this.nodeId;
+		public String getCreateUserNickName() {
+			return this.createUserNickName;
 		}
 
-		public void setNodeId(Long nodeId) {
-			this.nodeId = nodeId;
+		public void setCreateUserNickName(String createUserNickName) {
+			this.createUserNickName = createUserNickName;
+		}
+
+		public String getNodeName() {
+			return this.nodeName;
+		}
+
+		public void setNodeName(String nodeName) {
+			this.nodeName = nodeName;
 		}
 
 		public String getNodeType() {
@@ -123,20 +123,20 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 			this.nodeType = nodeType;
 		}
 
+		public Long getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(Long nodeId) {
+			this.nodeId = nodeId;
+		}
+
 		public Long getCreateUserId() {
 			return this.createUserId;
 		}
 
 		public void setCreateUserId(Long createUserId) {
 			this.createUserId = createUserId;
-		}
-
-		public String getCreateUserNickName() {
-			return this.createUserNickName;
-		}
-
-		public void setCreateUserNickName(String createUserNickName) {
-			this.createUserNickName = createUserNickName;
 		}
 
 		public List<AuditUser> getAuditUsers() {
@@ -151,9 +151,9 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 
 			private Long userId;
 
-			private String nickName;
-
 			private String realName;
+
+			private String nickName;
 
 			public Long getUserId() {
 				return this.userId;
@@ -163,20 +163,20 @@ public class ListWorkFlowNodesResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getNickName() {
-				return this.nickName;
-			}
-
-			public void setNickName(String nickName) {
-				this.nickName = nickName;
-			}
-
 			public String getRealName() {
 				return this.realName;
 			}
 
 			public void setRealName(String realName) {
 				this.realName = realName;
+			}
+
+			public String getNickName() {
+				return this.nickName;
+			}
+
+			public void setNickName(String nickName) {
+				this.nickName = nickName;
 			}
 		}
 	}

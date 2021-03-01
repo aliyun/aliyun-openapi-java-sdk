@@ -23,9 +23,9 @@ public class ExecuteDataCorrectResponseUnmarshaller {
 	public static ExecuteDataCorrectResponse unmarshall(ExecuteDataCorrectResponse executeDataCorrectResponse, UnmarshallerContext _ctx) {
 		
 		executeDataCorrectResponse.setRequestId(_ctx.stringValue("ExecuteDataCorrectResponse.RequestId"));
-		executeDataCorrectResponse.setSuccess(_ctx.booleanValue("ExecuteDataCorrectResponse.Success"));
-		executeDataCorrectResponse.setErrorMessage(_ctx.stringValue("ExecuteDataCorrectResponse.ErrorMessage"));
 		executeDataCorrectResponse.setErrorCode(_ctx.stringValue("ExecuteDataCorrectResponse.ErrorCode"));
+		executeDataCorrectResponse.setErrorMessage(_ctx.stringValue("ExecuteDataCorrectResponse.ErrorMessage"));
+		executeDataCorrectResponse.setSuccess(_ctx.booleanValue("ExecuteDataCorrectResponse.Success"));
 	 
 	 	return executeDataCorrectResponse;
 	}

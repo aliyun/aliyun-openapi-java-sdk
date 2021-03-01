@@ -26,11 +26,11 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private DataExportOrderDetail dataExportOrderDetail;
 
@@ -42,12 +42,12 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public DataExportOrderDetail getDataExportOrderDetail() {
@@ -98,30 +98,38 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 		public static class OrderDetail {
 
-			private Long actualAffectRows;
+			private Boolean ignoreAffectRows;
+
+			private String exeSQL;
 
 			private String classify;
+
+			private String ignoreAffectRowsReason;
 
 			private String database;
 
 			private Integer dbId;
 
-			private String envType;
-
-			private String exeSQL;
-
-			private Boolean ignoreAffectRows;
-
-			private String ignoreAffectRowsReason;
+			private Long actualAffectRows;
 
 			private Boolean logic;
 
-			public Long getActualAffectRows() {
-				return this.actualAffectRows;
+			private String envType;
+
+			public Boolean getIgnoreAffectRows() {
+				return this.ignoreAffectRows;
 			}
 
-			public void setActualAffectRows(Long actualAffectRows) {
-				this.actualAffectRows = actualAffectRows;
+			public void setIgnoreAffectRows(Boolean ignoreAffectRows) {
+				this.ignoreAffectRows = ignoreAffectRows;
+			}
+
+			public String getExeSQL() {
+				return this.exeSQL;
+			}
+
+			public void setExeSQL(String exeSQL) {
+				this.exeSQL = exeSQL;
 			}
 
 			public String getClassify() {
@@ -130,6 +138,14 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 			public void setClassify(String classify) {
 				this.classify = classify;
+			}
+
+			public String getIgnoreAffectRowsReason() {
+				return this.ignoreAffectRowsReason;
+			}
+
+			public void setIgnoreAffectRowsReason(String ignoreAffectRowsReason) {
+				this.ignoreAffectRowsReason = ignoreAffectRowsReason;
 			}
 
 			public String getDatabase() {
@@ -148,36 +164,12 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 				this.dbId = dbId;
 			}
 
-			public String getEnvType() {
-				return this.envType;
+			public Long getActualAffectRows() {
+				return this.actualAffectRows;
 			}
 
-			public void setEnvType(String envType) {
-				this.envType = envType;
-			}
-
-			public String getExeSQL() {
-				return this.exeSQL;
-			}
-
-			public void setExeSQL(String exeSQL) {
-				this.exeSQL = exeSQL;
-			}
-
-			public Boolean getIgnoreAffectRows() {
-				return this.ignoreAffectRows;
-			}
-
-			public void setIgnoreAffectRows(Boolean ignoreAffectRows) {
-				this.ignoreAffectRows = ignoreAffectRows;
-			}
-
-			public String getIgnoreAffectRowsReason() {
-				return this.ignoreAffectRowsReason;
-			}
-
-			public void setIgnoreAffectRowsReason(String ignoreAffectRowsReason) {
-				this.ignoreAffectRowsReason = ignoreAffectRowsReason;
+			public void setActualAffectRows(Long actualAffectRows) {
+				this.actualAffectRows = actualAffectRows;
 			}
 
 			public Boolean getLogic() {
@@ -186,6 +178,14 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 			public void setLogic(Boolean logic) {
 				this.logic = logic;
+			}
+
+			public String getEnvType() {
+				return this.envType;
+			}
+
+			public void setEnvType(String envType) {
+				this.envType = envType;
 			}
 		}
 

@@ -27,18 +27,18 @@ public class ListIndexesResponseUnmarshaller {
 	public static ListIndexesResponse unmarshall(ListIndexesResponse listIndexesResponse, UnmarshallerContext _ctx) {
 		
 		listIndexesResponse.setRequestId(_ctx.stringValue("ListIndexesResponse.RequestId"));
-		listIndexesResponse.setSuccess(_ctx.booleanValue("ListIndexesResponse.Success"));
-		listIndexesResponse.setErrorMessage(_ctx.stringValue("ListIndexesResponse.ErrorMessage"));
 		listIndexesResponse.setErrorCode(_ctx.stringValue("ListIndexesResponse.ErrorCode"));
+		listIndexesResponse.setErrorMessage(_ctx.stringValue("ListIndexesResponse.ErrorMessage"));
+		listIndexesResponse.setSuccess(_ctx.booleanValue("ListIndexesResponse.Success"));
 
 		List<Index> indexList = new ArrayList<Index>();
 		for (int i = 0; i < _ctx.lengthValue("ListIndexesResponse.IndexList.Length"); i++) {
 			Index index = new Index();
-			index.setIndexId(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexId"));
 			index.setTableId(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].TableId"));
 			index.setIndexName(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexName"));
-			index.setIndexType(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexType"));
+			index.setIndexId(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexId"));
 			index.setIndexComment(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexComment"));
+			index.setIndexType(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexType"));
 
 			indexList.add(index);
 		}

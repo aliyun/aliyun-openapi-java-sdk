@@ -25,42 +25,20 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 	   
 
-	private String approvalType;
-
-	private String comment;
-
 	private Long tid;
 
 	private Long workflowInstanceId;
+
+	private String approvalType;
+
+	private String comment;
 	public ApproveOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "ApproveOrder", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ApproveOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getApprovalType() {
-		return this.approvalType;
-	}
-
-	public void setApprovalType(String approvalType) {
-		this.approvalType = approvalType;
-		if(approvalType != null){
-			putQueryParameter("ApprovalType", approvalType);
-		}
-	}
-
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
-		}
 	}
 
 	public Long getTid() {
@@ -82,6 +60,28 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 		this.workflowInstanceId = workflowInstanceId;
 		if(workflowInstanceId != null){
 			putQueryParameter("WorkflowInstanceId", workflowInstanceId.toString());
+		}
+	}
+
+	public String getApprovalType() {
+		return this.approvalType;
+	}
+
+	public void setApprovalType(String approvalType) {
+		this.approvalType = approvalType;
+		if(approvalType != null){
+			putQueryParameter("ApprovalType", approvalType);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
 		}
 	}
 

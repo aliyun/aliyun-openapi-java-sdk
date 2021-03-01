@@ -26,11 +26,11 @@ public class GetDataExportDownloadURLResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private DownloadURLResult downloadURLResult;
 
@@ -42,12 +42,12 @@ public class GetDataExportDownloadURLResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetDataExportDownloadURLResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public DownloadURLResult getDownloadURLResult() {
@@ -78,9 +78,9 @@ public class GetDataExportDownloadURLResponse extends AcsResponse {
 
 		private Boolean hasResult;
 
-		private String uRL;
-
 		private String tipMessage;
+
+		private String uRL;
 
 		public Boolean getHasResult() {
 			return this.hasResult;
@@ -90,20 +90,20 @@ public class GetDataExportDownloadURLResponse extends AcsResponse {
 			this.hasResult = hasResult;
 		}
 
-		public String getURL() {
-			return this.uRL;
-		}
-
-		public void setURL(String uRL) {
-			this.uRL = uRL;
-		}
-
 		public String getTipMessage() {
 			return this.tipMessage;
 		}
 
 		public void setTipMessage(String tipMessage) {
 			this.tipMessage = tipMessage;
+		}
+
+		public String getURL() {
+			return this.uRL;
+		}
+
+		public void setURL(String uRL) {
+			this.uRL = uRL;
 		}
 	}
 

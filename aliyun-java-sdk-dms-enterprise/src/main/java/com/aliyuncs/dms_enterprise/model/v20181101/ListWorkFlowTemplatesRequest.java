@@ -29,7 +29,7 @@ public class ListWorkFlowTemplatesRequest extends RpcAcsRequest<ListWorkFlowTemp
 
 	private Long tid;
 	public ListWorkFlowTemplatesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListWorkFlowTemplates", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListWorkFlowTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

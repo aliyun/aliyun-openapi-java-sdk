@@ -27,25 +27,25 @@ public class ListUsersResponseUnmarshaller {
 	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext _ctx) {
 		
 		listUsersResponse.setRequestId(_ctx.stringValue("ListUsersResponse.RequestId"));
-		listUsersResponse.setSuccess(_ctx.booleanValue("ListUsersResponse.Success"));
-		listUsersResponse.setErrorMessage(_ctx.stringValue("ListUsersResponse.ErrorMessage"));
-		listUsersResponse.setErrorCode(_ctx.stringValue("ListUsersResponse.ErrorCode"));
 		listUsersResponse.setTotalCount(_ctx.longValue("ListUsersResponse.TotalCount"));
+		listUsersResponse.setErrorCode(_ctx.stringValue("ListUsersResponse.ErrorCode"));
+		listUsersResponse.setErrorMessage(_ctx.stringValue("ListUsersResponse.ErrorMessage"));
+		listUsersResponse.setSuccess(_ctx.booleanValue("ListUsersResponse.Success"));
 
 		List<User> userList = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.UserList.Length"); i++) {
 			User user = new User();
-			user.setUserId(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
 			user.setUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Uid"));
+			user.setLastLoginTime(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LastLoginTime"));
+			user.setCurResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurResultCount"));
+			user.setMaxResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxResultCount"));
+			user.setUserId(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
+			user.setState(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].State"));
+			user.setCurExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurExecuteCount"));
 			user.setNickName(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].NickName"));
 			user.setMobile(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Mobile"));
-			user.setParentUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].ParentUid"));
-			user.setState(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].State"));
-			user.setLastLoginTime(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LastLoginTime"));
-			user.setCurExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurExecuteCount"));
-			user.setCurResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurResultCount"));
 			user.setMaxExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxExecuteCount"));
-			user.setMaxResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxResultCount"));
+			user.setParentUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].ParentUid"));
 
 			List<Integer> roleIdList = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.UserList["+ i +"].RoleIdList.Length"); j++) {

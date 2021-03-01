@@ -27,21 +27,21 @@ public class GetOpLogResponseUnmarshaller {
 	public static GetOpLogResponse unmarshall(GetOpLogResponse getOpLogResponse, UnmarshallerContext _ctx) {
 		
 		getOpLogResponse.setRequestId(_ctx.stringValue("GetOpLogResponse.RequestId"));
-		getOpLogResponse.setSuccess(_ctx.booleanValue("GetOpLogResponse.Success"));
-		getOpLogResponse.setErrorMessage(_ctx.stringValue("GetOpLogResponse.ErrorMessage"));
-		getOpLogResponse.setErrorCode(_ctx.stringValue("GetOpLogResponse.ErrorCode"));
 		getOpLogResponse.setTotalCount(_ctx.longValue("GetOpLogResponse.TotalCount"));
+		getOpLogResponse.setErrorCode(_ctx.stringValue("GetOpLogResponse.ErrorCode"));
+		getOpLogResponse.setErrorMessage(_ctx.stringValue("GetOpLogResponse.ErrorMessage"));
+		getOpLogResponse.setSuccess(_ctx.booleanValue("GetOpLogResponse.Success"));
 
 		List<OpLogDetail> opLogDetails = new ArrayList<OpLogDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetOpLogResponse.OpLogDetails.Length"); i++) {
 			OpLogDetail opLogDetail = new OpLogDetail();
 			opLogDetail.setUserId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].UserId"));
-			opLogDetail.setUserNick(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].UserNick"));
-			opLogDetail.setModule(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Module"));
-			opLogDetail.setOpContent(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpContent"));
-			opLogDetail.setOpTime(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpTime"));
 			opLogDetail.setDatabase(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Database"));
+			opLogDetail.setOpContent(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpContent"));
+			opLogDetail.setUserNick(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].UserNick"));
 			opLogDetail.setOrderId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].OrderId"));
+			opLogDetail.setModule(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Module"));
+			opLogDetail.setOpTime(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpTime"));
 
 			opLogDetails.add(opLogDetail);
 		}

@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchDatabaseResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<SearchDatabase> searchDatabaseList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class SearchDatabaseResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SearchDatabase> getSearchDatabaseList() {
@@ -87,35 +87,91 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 	public static class SearchDatabase {
 
+		private String dbaId;
+
+		private String searchName;
+
+		private String alias;
+
+		private Integer port;
+
+		private String datalinkName;
+
+		private String encoding;
+
+		private String host;
+
 		private String databaseId;
 
 		private Boolean logic;
+
+		private String dbType;
 
 		private String envType;
 
 		private String schemaName;
 
-		private String searchName;
-
-		private String dbType;
-
-		private String host;
-
-		private Integer port;
-
 		private String sid;
 
-		private String dbaId;
-
-		private String encoding;
-
-		private String alias;
-
-		private String datalinkName;
+		private List<String> ownerNameList;
 
 		private List<String> ownerIdList;
 
-		private List<String> ownerNameList;
+		public String getDbaId() {
+			return this.dbaId;
+		}
+
+		public void setDbaId(String dbaId) {
+			this.dbaId = dbaId;
+		}
+
+		public String getSearchName() {
+			return this.searchName;
+		}
+
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
+		}
+
+		public String getAlias() {
+			return this.alias;
+		}
+
+		public void setAlias(String alias) {
+			this.alias = alias;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getDatalinkName() {
+			return this.datalinkName;
+		}
+
+		public void setDatalinkName(String datalinkName) {
+			this.datalinkName = datalinkName;
+		}
+
+		public String getEncoding() {
+			return this.encoding;
+		}
+
+		public void setEncoding(String encoding) {
+			this.encoding = encoding;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
 
 		public String getDatabaseId() {
 			return this.databaseId;
@@ -131,6 +187,14 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 		public void setLogic(Boolean logic) {
 			this.logic = logic;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
 		public String getEnvType() {
@@ -149,38 +213,6 @@ public class SearchDatabaseResponse extends AcsResponse {
 			this.schemaName = schemaName;
 		}
 
-		public String getSearchName() {
-			return this.searchName;
-		}
-
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
 		public String getSid() {
 			return this.sid;
 		}
@@ -189,36 +221,12 @@ public class SearchDatabaseResponse extends AcsResponse {
 			this.sid = sid;
 		}
 
-		public String getDbaId() {
-			return this.dbaId;
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
 		}
 
-		public void setDbaId(String dbaId) {
-			this.dbaId = dbaId;
-		}
-
-		public String getEncoding() {
-			return this.encoding;
-		}
-
-		public void setEncoding(String encoding) {
-			this.encoding = encoding;
-		}
-
-		public String getAlias() {
-			return this.alias;
-		}
-
-		public void setAlias(String alias) {
-			this.alias = alias;
-		}
-
-		public String getDatalinkName() {
-			return this.datalinkName;
-		}
-
-		public void setDatalinkName(String datalinkName) {
-			this.datalinkName = datalinkName;
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -227,14 +235,6 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
-		}
-
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
-		}
-
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
 		}
 	}
 

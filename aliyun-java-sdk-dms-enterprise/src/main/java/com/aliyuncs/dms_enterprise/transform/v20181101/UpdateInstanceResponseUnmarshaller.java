@@ -23,9 +23,9 @@ public class UpdateInstanceResponseUnmarshaller {
 	public static UpdateInstanceResponse unmarshall(UpdateInstanceResponse updateInstanceResponse, UnmarshallerContext _ctx) {
 		
 		updateInstanceResponse.setRequestId(_ctx.stringValue("UpdateInstanceResponse.RequestId"));
-		updateInstanceResponse.setSuccess(_ctx.booleanValue("UpdateInstanceResponse.Success"));
-		updateInstanceResponse.setErrorMessage(_ctx.stringValue("UpdateInstanceResponse.ErrorMessage"));
 		updateInstanceResponse.setErrorCode(_ctx.stringValue("UpdateInstanceResponse.ErrorCode"));
+		updateInstanceResponse.setErrorMessage(_ctx.stringValue("UpdateInstanceResponse.ErrorMessage"));
+		updateInstanceResponse.setSuccess(_ctx.booleanValue("UpdateInstanceResponse.Success"));
 	 
 	 	return updateInstanceResponse;
 	}

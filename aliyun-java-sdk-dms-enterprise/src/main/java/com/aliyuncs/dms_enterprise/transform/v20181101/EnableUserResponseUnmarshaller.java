@@ -23,9 +23,9 @@ public class EnableUserResponseUnmarshaller {
 	public static EnableUserResponse unmarshall(EnableUserResponse enableUserResponse, UnmarshallerContext _ctx) {
 		
 		enableUserResponse.setRequestId(_ctx.stringValue("EnableUserResponse.RequestId"));
-		enableUserResponse.setSuccess(_ctx.booleanValue("EnableUserResponse.Success"));
-		enableUserResponse.setErrorMessage(_ctx.stringValue("EnableUserResponse.ErrorMessage"));
 		enableUserResponse.setErrorCode(_ctx.stringValue("EnableUserResponse.ErrorCode"));
+		enableUserResponse.setErrorMessage(_ctx.stringValue("EnableUserResponse.ErrorMessage"));
+		enableUserResponse.setSuccess(_ctx.booleanValue("EnableUserResponse.Success"));
 	 
 	 	return enableUserResponse;
 	}

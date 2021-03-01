@@ -27,26 +27,26 @@ public class ListColumnsResponseUnmarshaller {
 	public static ListColumnsResponse unmarshall(ListColumnsResponse listColumnsResponse, UnmarshallerContext _ctx) {
 		
 		listColumnsResponse.setRequestId(_ctx.stringValue("ListColumnsResponse.RequestId"));
-		listColumnsResponse.setSuccess(_ctx.booleanValue("ListColumnsResponse.Success"));
-		listColumnsResponse.setErrorMessage(_ctx.stringValue("ListColumnsResponse.ErrorMessage"));
 		listColumnsResponse.setErrorCode(_ctx.stringValue("ListColumnsResponse.ErrorCode"));
+		listColumnsResponse.setErrorMessage(_ctx.stringValue("ListColumnsResponse.ErrorMessage"));
+		listColumnsResponse.setSuccess(_ctx.booleanValue("ListColumnsResponse.Success"));
 
 		List<Column> columnList = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("ListColumnsResponse.ColumnList.Length"); i++) {
 			Column column = new Column();
 			column.setColumnId(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnId"));
 			column.setColumnName(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnName"));
-			column.setColumnType(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnType"));
-			column.setNullable(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].Nullable"));
 			column.setDefaultValue(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].DefaultValue"));
-			column.setAutoIncrement(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].AutoIncrement"));
 			column.setDescription(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].Description"));
-			column.setSecurityLevel(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].SecurityLevel"));
+			column.setColumnType(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnType"));
+			column.setAutoIncrement(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].AutoIncrement"));
 			column.setFunctionType(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].FunctionType"));
+			column.setSecurityLevel(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].SecurityLevel"));
 			column.setDataLength(_ctx.longValue("ListColumnsResponse.ColumnList["+ i +"].DataLength"));
-			column.setSensitive(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].Sensitive"));
-			column.setDataPrecision(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataPrecision"));
 			column.setDataScale(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataScale"));
+			column.setDataPrecision(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataPrecision"));
+			column.setSensitive(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].Sensitive"));
+			column.setNullable(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].Nullable"));
 
 			columnList.add(column);
 		}

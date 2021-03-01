@@ -27,11 +27,11 @@ public class ListIndexesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private List<Index> indexList;
 
@@ -43,12 +43,12 @@ public class ListIndexesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class ListIndexesResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Index> getIndexList() {
@@ -77,23 +77,15 @@ public class ListIndexesResponse extends AcsResponse {
 
 	public static class Index {
 
-		private String indexId;
-
 		private String tableId;
 
 		private String indexName;
 
-		private String indexType;
+		private String indexId;
 
 		private String indexComment;
 
-		public String getIndexId() {
-			return this.indexId;
-		}
-
-		public void setIndexId(String indexId) {
-			this.indexId = indexId;
-		}
+		private String indexType;
 
 		public String getTableId() {
 			return this.tableId;
@@ -111,12 +103,12 @@ public class ListIndexesResponse extends AcsResponse {
 			this.indexName = indexName;
 		}
 
-		public String getIndexType() {
-			return this.indexType;
+		public String getIndexId() {
+			return this.indexId;
 		}
 
-		public void setIndexType(String indexType) {
-			this.indexType = indexType;
+		public void setIndexId(String indexId) {
+			this.indexId = indexId;
 		}
 
 		public String getIndexComment() {
@@ -125,6 +117,14 @@ public class ListIndexesResponse extends AcsResponse {
 
 		public void setIndexComment(String indexComment) {
 			this.indexComment = indexComment;
+		}
+
+		public String getIndexType() {
+			return this.indexType;
+		}
+
+		public void setIndexType(String indexType) {
+			this.indexType = indexType;
 		}
 	}
 

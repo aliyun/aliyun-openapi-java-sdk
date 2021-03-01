@@ -29,7 +29,7 @@ public class EnableUserRequest extends RpcAcsRequest<EnableUserResponse> {
 
 	private Long tid;
 	public EnableUserRequest() {
-		super("dms-enterprise", "2018-11-01", "EnableUser", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "EnableUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

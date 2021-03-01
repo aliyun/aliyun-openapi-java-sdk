@@ -23,9 +23,9 @@ public class SyncDatabaseMetaResponseUnmarshaller {
 	public static SyncDatabaseMetaResponse unmarshall(SyncDatabaseMetaResponse syncDatabaseMetaResponse, UnmarshallerContext _ctx) {
 		
 		syncDatabaseMetaResponse.setRequestId(_ctx.stringValue("SyncDatabaseMetaResponse.RequestId"));
-		syncDatabaseMetaResponse.setSuccess(_ctx.booleanValue("SyncDatabaseMetaResponse.Success"));
-		syncDatabaseMetaResponse.setErrorMessage(_ctx.stringValue("SyncDatabaseMetaResponse.ErrorMessage"));
 		syncDatabaseMetaResponse.setErrorCode(_ctx.stringValue("SyncDatabaseMetaResponse.ErrorCode"));
+		syncDatabaseMetaResponse.setErrorMessage(_ctx.stringValue("SyncDatabaseMetaResponse.ErrorMessage"));
+		syncDatabaseMetaResponse.setSuccess(_ctx.booleanValue("SyncDatabaseMetaResponse.Success"));
 	 
 	 	return syncDatabaseMetaResponse;
 	}

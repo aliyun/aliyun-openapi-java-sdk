@@ -25,29 +25,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class SyncInstanceMetaRequest extends RpcAcsRequest<SyncInstanceMetaResponse> {
 	   
 
-	private String instanceId;
-
 	private Boolean ignoreTable;
 
 	private Long tid;
+
+	private String instanceId;
 	public SyncInstanceMetaRequest() {
-		super("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "SyncInstanceMeta");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
 	}
 
 	public Boolean getIgnoreTable() {
@@ -69,6 +58,17 @@ public class SyncInstanceMetaRequest extends RpcAcsRequest<SyncInstanceMetaRespo
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

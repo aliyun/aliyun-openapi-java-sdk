@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSensitiveColumnsResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<SensitiveColumn> sensitiveColumnList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SensitiveColumn> getSensitiveColumnList() {
@@ -87,25 +87,17 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 
 	public static class SensitiveColumn {
 
-		private String schemaName;
-
 		private String tableName;
 
 		private String columnName;
-
-		private String securityLevel;
 
 		private Long columnCount;
 
 		private String functionType;
 
-		public String getSchemaName() {
-			return this.schemaName;
-		}
+		private String securityLevel;
 
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
+		private String schemaName;
 
 		public String getTableName() {
 			return this.tableName;
@@ -123,14 +115,6 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 			this.columnName = columnName;
 		}
 
-		public String getSecurityLevel() {
-			return this.securityLevel;
-		}
-
-		public void setSecurityLevel(String securityLevel) {
-			this.securityLevel = securityLevel;
-		}
-
 		public Long getColumnCount() {
 			return this.columnCount;
 		}
@@ -145,6 +129,22 @@ public class ListSensitiveColumnsResponse extends AcsResponse {
 
 		public void setFunctionType(String functionType) {
 			this.functionType = functionType;
+		}
+
+		public String getSecurityLevel() {
+			return this.securityLevel;
+		}
+
+		public void setSecurityLevel(String securityLevel) {
+			this.securityLevel = securityLevel;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 	}
 

@@ -23,9 +23,9 @@ public class ApproveOrderResponseUnmarshaller {
 	public static ApproveOrderResponse unmarshall(ApproveOrderResponse approveOrderResponse, UnmarshallerContext _ctx) {
 		
 		approveOrderResponse.setRequestId(_ctx.stringValue("ApproveOrderResponse.RequestId"));
-		approveOrderResponse.setSuccess(_ctx.booleanValue("ApproveOrderResponse.Success"));
-		approveOrderResponse.setErrorMessage(_ctx.stringValue("ApproveOrderResponse.ErrorMessage"));
 		approveOrderResponse.setErrorCode(_ctx.stringValue("ApproveOrderResponse.ErrorCode"));
+		approveOrderResponse.setErrorMessage(_ctx.stringValue("ApproveOrderResponse.ErrorMessage"));
+		approveOrderResponse.setSuccess(_ctx.booleanValue("ApproveOrderResponse.Success"));
 	 
 	 	return approveOrderResponse;
 	}
