@@ -16,6 +16,7 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
@@ -36,6 +37,10 @@ public class DescribeDnsGtmInstancesRequest extends RpcAcsRequest<DescribeDnsGtm
 	public DescribeDnsGtmInstancesRequest() {
 		super("Alidns", "2015-01-09", "DescribeDnsGtmInstances", "alidns");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public Integer getPageNumber() {

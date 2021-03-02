@@ -16,6 +16,7 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
@@ -28,6 +29,10 @@ public class DescribeGtmAvailableAlertGroupRequest extends RpcAcsRequest<Describ
 	public DescribeGtmAvailableAlertGroupRequest() {
 		super("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "alidns");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getLang() {
