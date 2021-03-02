@@ -25,6 +25,8 @@ import com.aliyuncs.das.Endpoint;
 public class CreateCacheAnalysisJobRequest extends RpcAcsRequest<CreateCacheAnalysisJobResponse> {
 	   
 
+	private String backupSetId;
+
 	private String instanceId;
 
 	private String nodeId;
@@ -35,6 +37,17 @@ public class CreateCacheAnalysisJobRequest extends RpcAcsRequest<CreateCacheAnal
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBackupSetId() {
+		return this.backupSetId;
+	}
+
+	public void setBackupSetId(String backupSetId) {
+		this.backupSetId = backupSetId;
+		if(backupSetId != null){
+			putQueryParameter("BackupSetId", backupSetId);
+		}
 	}
 
 	public String getInstanceId() {
