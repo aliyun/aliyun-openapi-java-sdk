@@ -324,6 +324,10 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
 		private Long failedCount;
 
+		private String apiId;
+
+		private String apiName;
+
 		private CheckPointResult checkPointResult;
 
 		public Long getNodeId() {
@@ -420,6 +424,22 @@ public class GetPtsSceneRunningDataResponse extends AcsResponse {
 
 		public void setFailedCount(Long failedCount) {
 			this.failedCount = failedCount;
+		}
+
+		public String getApiId() {
+			return this.apiId;
+		}
+
+		public void setApiId(String apiId) {
+			this.apiId = apiId;
+		}
+
+		public String getApiName() {
+			return this.apiName;
+		}
+
+		public void setApiName(String apiName) {
+			this.apiName = apiName;
 		}
 
 		public CheckPointResult getCheckPointResult() {
