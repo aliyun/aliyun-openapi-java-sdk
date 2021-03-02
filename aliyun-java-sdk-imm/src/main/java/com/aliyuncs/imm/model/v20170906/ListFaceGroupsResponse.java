@@ -243,6 +243,8 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			private String imageUri;
 
+			private String externalId;
+
 			private FaceBoundary faceBoundary;
 
 			public String getFaceId() {
@@ -259,6 +261,14 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			public void setImageUri(String imageUri) {
 				this.imageUri = imageUri;
+			}
+
+			public String getExternalId() {
+				return this.externalId;
+			}
+
+			public void setExternalId(String externalId) {
+				this.externalId = externalId;
 			}
 
 			public FaceBoundary getFaceBoundary() {

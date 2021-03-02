@@ -37,6 +37,8 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 
 	private String groupName;
 
+	private String resetItems;
+
 	private String remarksArrayA;
 
 	private String remarksArrayB;
@@ -120,6 +122,17 @@ public class UpdateFaceGroupRequest extends RpcAcsRequest<UpdateFaceGroupRespons
 		this.groupName = groupName;
 		if(groupName != null){
 			putQueryParameter("GroupName", groupName);
+		}
+	}
+
+	public String getResetItems() {
+		return this.resetItems;
+	}
+
+	public void setResetItems(String resetItems) {
+		this.resetItems = resetItems;
+		if(resetItems != null){
+			putQueryParameter("ResetItems", resetItems);
 		}
 	}
 
