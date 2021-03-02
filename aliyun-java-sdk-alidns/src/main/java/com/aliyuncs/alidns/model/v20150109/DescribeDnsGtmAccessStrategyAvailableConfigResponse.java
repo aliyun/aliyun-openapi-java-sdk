@@ -37,6 +37,12 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 
 	private List<DomainAddrPool> domainAddrPools;
 
+	private List<String> selectedIpv4Lines;
+
+	private List<String> selectedIpv6Lines;
+
+	private List<String> selectedDomainLines;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -83,6 +89,30 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponse extends AcsResp
 
 	public void setDomainAddrPools(List<DomainAddrPool> domainAddrPools) {
 		this.domainAddrPools = domainAddrPools;
+	}
+
+	public List<String> getSelectedIpv4Lines() {
+		return this.selectedIpv4Lines;
+	}
+
+	public void setSelectedIpv4Lines(List<String> selectedIpv4Lines) {
+		this.selectedIpv4Lines = selectedIpv4Lines;
+	}
+
+	public List<String> getSelectedIpv6Lines() {
+		return this.selectedIpv6Lines;
+	}
+
+	public void setSelectedIpv6Lines(List<String> selectedIpv6Lines) {
+		this.selectedIpv6Lines = selectedIpv6Lines;
+	}
+
+	public List<String> getSelectedDomainLines() {
+		return this.selectedDomainLines;
+	}
+
+	public void setSelectedDomainLines(List<String> selectedDomainLines) {
+		this.selectedDomainLines = selectedDomainLines;
 	}
 
 	public static class Ipv4AddrPool {

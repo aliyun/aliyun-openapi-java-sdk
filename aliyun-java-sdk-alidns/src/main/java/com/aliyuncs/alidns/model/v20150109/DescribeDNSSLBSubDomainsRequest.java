@@ -16,7 +16,6 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +23,8 @@ import com.aliyuncs.alidns.Endpoint;
  */
 public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSLBSubDomainsResponse> {
 	   
+
+	private String rr;
 
 	private String domainName;
 
@@ -37,10 +38,17 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 	public DescribeDNSSLBSubDomainsRequest() {
 		super("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "alidns");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getRr() {
+		return this.rr;
+	}
+
+	public void setRr(String rr) {
+		this.rr = rr;
+		if(rr != null){
+			putQueryParameter("Rr", rr);
+		}
 	}
 
 	public String getDomainName() {

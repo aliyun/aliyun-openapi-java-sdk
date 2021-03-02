@@ -32,6 +32,24 @@ public class DescribeDnsGtmAccessStrategyAvailableConfigResponseUnmarshaller {
 		describeDnsGtmAccessStrategyAvailableConfigResponse.setRequestId(_ctx.stringValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.RequestId"));
 		describeDnsGtmAccessStrategyAvailableConfigResponse.setSuggestSetDefaultLine(_ctx.booleanValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SuggestSetDefaultLine"));
 
+		List<String> selectedIpv4Lines = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SelectedIpv4Lines.Length"); i++) {
+			selectedIpv4Lines.add(_ctx.stringValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SelectedIpv4Lines["+ i +"]"));
+		}
+		describeDnsGtmAccessStrategyAvailableConfigResponse.setSelectedIpv4Lines(selectedIpv4Lines);
+
+		List<String> selectedIpv6Lines = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SelectedIpv6Lines.Length"); i++) {
+			selectedIpv6Lines.add(_ctx.stringValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SelectedIpv6Lines["+ i +"]"));
+		}
+		describeDnsGtmAccessStrategyAvailableConfigResponse.setSelectedIpv6Lines(selectedIpv6Lines);
+
+		List<String> selectedDomainLines = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SelectedDomainLines.Length"); i++) {
+			selectedDomainLines.add(_ctx.stringValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.SelectedDomainLines["+ i +"]"));
+		}
+		describeDnsGtmAccessStrategyAvailableConfigResponse.setSelectedDomainLines(selectedDomainLines);
+
 		List<Ipv4AddrPool> ipv4AddrPools = new ArrayList<Ipv4AddrPool>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnsGtmAccessStrategyAvailableConfigResponse.Ipv4AddrPools.Length"); i++) {
 			Ipv4AddrPool ipv4AddrPool = new Ipv4AddrPool();

@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.alidns.model.v20150109.DescribeDNSSLBSubDomainsResponse;
 import com.aliyuncs.alidns.model.v20150109.DescribeDNSSLBSubDomainsResponse.SlbSubDomain;
+import com.aliyuncs.alidns.model.v20150109.DescribeDNSSLBSubDomainsResponse.SlbSubDomain.LineAlgorithm;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,6 +39,16 @@ public class DescribeDNSSLBSubDomainsResponseUnmarshaller {
 			slbSubDomain.setRecordCount(_ctx.longValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].RecordCount"));
 			slbSubDomain.setOpen(_ctx.booleanValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Open"));
 			slbSubDomain.setType(_ctx.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].Type"));
+
+			List<LineAlgorithm> lineAlgorithms = new ArrayList<LineAlgorithm>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].LineAlgorithms.Length"); j++) {
+				LineAlgorithm lineAlgorithm = new LineAlgorithm();
+				lineAlgorithm.setLine(_ctx.stringValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].LineAlgorithms["+ j +"].Line"));
+				lineAlgorithm.setOpen(_ctx.booleanValue("DescribeDNSSLBSubDomainsResponse.SlbSubDomains["+ i +"].LineAlgorithms["+ j +"].Open"));
+
+				lineAlgorithms.add(lineAlgorithm);
+			}
+			slbSubDomain.setLineAlgorithms(lineAlgorithms);
 
 			slbSubDomains.add(slbSubDomain);
 		}

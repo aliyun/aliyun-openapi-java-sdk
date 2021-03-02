@@ -16,7 +16,6 @@ package com.aliyuncs.alidns.model.v20150109;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.alidns.Endpoint;
 
 /**
  * @author auto create
@@ -24,6 +23,8 @@ import com.aliyuncs.alidns.Endpoint;
  */
 public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusResponse> {
 	   
+
+	private String line;
 
 	private String domainName;
 
@@ -39,10 +40,17 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 	public SetDNSSLBStatusRequest() {
 		super("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
+	}
+
+	public String getLine() {
+		return this.line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line);
+		}
 	}
 
 	public String getDomainName() {

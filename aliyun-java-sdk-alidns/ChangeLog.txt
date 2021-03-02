@@ -1,3 +1,7 @@
+2021-03-02 Version: 2.6.28
+- Supported API for dnsCache.
+- Supported API for GTM.
+
 2021-01-04 Version: 2.6.20
 - Supported API for GTM.
 

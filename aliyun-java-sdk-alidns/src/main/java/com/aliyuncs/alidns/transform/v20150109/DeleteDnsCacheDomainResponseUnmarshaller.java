@@ -12,12 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.alidns;
+package com.aliyuncs.alidns.transform.v20150109;
 
-import java.util.HashMap;
+import com.aliyuncs.alidns.model.v20150109.DeleteDnsCacheDomainResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {};
 
-    public static String endpointRegionalType = "central";
+public class DeleteDnsCacheDomainResponseUnmarshaller {
+
+	public static DeleteDnsCacheDomainResponse unmarshall(DeleteDnsCacheDomainResponse deleteDnsCacheDomainResponse, UnmarshallerContext _ctx) {
+		
+		deleteDnsCacheDomainResponse.setRequestId(_ctx.stringValue("DeleteDnsCacheDomainResponse.RequestId"));
+	 
+	 	return deleteDnsCacheDomainResponse;
+	}
 }
