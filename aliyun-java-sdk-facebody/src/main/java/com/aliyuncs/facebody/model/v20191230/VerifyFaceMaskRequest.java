@@ -29,7 +29,7 @@ public class VerifyFaceMaskRequest extends RpcAcsRequest<VerifyFaceMaskResponse>
 
 	private String refUrl;
 	public VerifyFaceMaskRequest() {
-		super("facebody", "2019-12-30", "VerifyFaceMask");
+		super("facebody", "2019-12-30", "VerifyFaceMask", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

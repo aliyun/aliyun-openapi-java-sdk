@@ -33,7 +33,7 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 
 	private String imageUrl;
 	public SearchFaceRequest() {
-		super("facebody", "2019-12-30", "SearchFace");
+		super("facebody", "2019-12-30", "SearchFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

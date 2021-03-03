@@ -25,16 +25,29 @@ import com.aliyuncs.facebody.Endpoint;
 public class CompareFaceRequest extends RpcAcsRequest<CompareFaceResponse> {
 	   
 
+	private Float qualityScoreThreshold;
+
 	private String imageURLB;
 
 	private String imageURLA;
 	public CompareFaceRequest() {
-		super("facebody", "2019-12-30", "CompareFace");
+		super("facebody", "2019-12-30", "CompareFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Float getQualityScoreThreshold() {
+		return this.qualityScoreThreshold;
+	}
+
+	public void setQualityScoreThreshold(Float qualityScoreThreshold) {
+		this.qualityScoreThreshold = qualityScoreThreshold;
+		if(qualityScoreThreshold != null){
+			putBodyParameter("QualityScoreThreshold", qualityScoreThreshold.toString());
+		}
 	}
 
 	public String getImageURLB() {

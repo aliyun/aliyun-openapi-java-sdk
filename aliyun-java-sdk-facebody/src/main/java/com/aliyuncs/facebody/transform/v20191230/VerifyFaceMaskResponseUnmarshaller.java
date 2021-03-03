@@ -33,12 +33,6 @@ public class VerifyFaceMaskResponseUnmarshaller {
 		data.setMask(_ctx.integerValue("VerifyFaceMaskResponse.Data.Mask"));
 		data.setMaskRef(_ctx.integerValue("VerifyFaceMaskResponse.Data.MaskRef"));
 
-		List<Float> thresholds = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("VerifyFaceMaskResponse.Data.Thresholds.Length"); i++) {
-			thresholds.add(_ctx.floatValue("VerifyFaceMaskResponse.Data.Thresholds["+ i +"]"));
-		}
-		data.setThresholds(thresholds);
-
 		List<Integer> rectangle = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("VerifyFaceMaskResponse.Data.Rectangle.Length"); i++) {
 			rectangle.add(_ctx.integerValue("VerifyFaceMaskResponse.Data.Rectangle["+ i +"]"));
@@ -50,6 +44,12 @@ public class VerifyFaceMaskResponseUnmarshaller {
 			rectangleRef.add(_ctx.integerValue("VerifyFaceMaskResponse.Data.RectangleRef["+ i +"]"));
 		}
 		data.setRectangleRef(rectangleRef);
+
+		List<Float> thresholds = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("VerifyFaceMaskResponse.Data.Thresholds.Length"); i++) {
+			thresholds.add(_ctx.floatValue("VerifyFaceMaskResponse.Data.Thresholds["+ i +"]"));
+		}
+		data.setThresholds(thresholds);
 		verifyFaceMaskResponse.setData(data);
 	 
 	 	return verifyFaceMaskResponse;
