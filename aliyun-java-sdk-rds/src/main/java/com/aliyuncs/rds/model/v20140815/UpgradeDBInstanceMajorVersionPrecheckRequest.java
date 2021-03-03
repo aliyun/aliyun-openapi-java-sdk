@@ -22,22 +22,16 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteHostAccountRequest extends RpcAcsRequest<DeleteHostAccountResponse> {
+public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<UpgradeDBInstanceMajorVersionPrecheckResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String resourceOwnerAccount;
-
-	private String clientToken;
-
-	private Long ownerId;
-
-	private String accountName;
-
 	private String dBInstanceId;
-	public DeleteHostAccountRequest() {
-		super("Rds", "2014-08-15", "DeleteHostAccount", "rds");
+
+	private String targetMajorVersion;
+	public UpgradeDBInstanceMajorVersionPrecheckRequest() {
+		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,50 +50,6 @@ public class DeleteHostAccountRequest extends RpcAcsRequest<DeleteHostAccountRes
 		}
 	}
 
-	public String getResourceOwnerAccount() {
-		return this.resourceOwnerAccount;
-	}
-
-	public void setResourceOwnerAccount(String resourceOwnerAccount) {
-		this.resourceOwnerAccount = resourceOwnerAccount;
-		if(resourceOwnerAccount != null){
-			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getAccountName() {
-		return this.accountName;
-	}
-
-	public void setAccountName(String accountName) {
-		this.accountName = accountName;
-		if(accountName != null){
-			putQueryParameter("AccountName", accountName);
-		}
-	}
-
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -111,9 +61,20 @@ public class DeleteHostAccountRequest extends RpcAcsRequest<DeleteHostAccountRes
 		}
 	}
 
+	public String getTargetMajorVersion() {
+		return this.targetMajorVersion;
+	}
+
+	public void setTargetMajorVersion(String targetMajorVersion) {
+		this.targetMajorVersion = targetMajorVersion;
+		if(targetMajorVersion != null){
+			putQueryParameter("TargetMajorVersion", targetMajorVersion);
+		}
+	}
+
 	@Override
-	public Class<DeleteHostAccountResponse> getResponseClass() {
-		return DeleteHostAccountResponse.class;
+	public Class<UpgradeDBInstanceMajorVersionPrecheckResponse> getResponseClass() {
+		return UpgradeDBInstanceMajorVersionPrecheckResponse.class;
 	}
 
 }

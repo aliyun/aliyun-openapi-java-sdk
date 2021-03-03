@@ -47,15 +47,23 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 	public static class AvailableZone {
 
-		private String regionId;
+		private String networkTypes;
 
-		private String zoneId;
+		private String regionId;
 
 		private String status;
 
-		private String networkTypes;
+		private String zoneId;
 
 		private List<SupportedEngine> supportedEngines;
+
+		public String getNetworkTypes() {
+			return this.networkTypes;
+		}
+
+		public void setNetworkTypes(String networkTypes) {
+			this.networkTypes = networkTypes;
+		}
 
 		public String getRegionId() {
 			return this.regionId;
@@ -63,14 +71,6 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
 		}
 
 		public String getStatus() {
@@ -81,12 +81,12 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getNetworkTypes() {
-			return this.networkTypes;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setNetworkTypes(String networkTypes) {
-			this.networkTypes = networkTypes;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
 		public List<SupportedEngine> getSupportedEngines() {

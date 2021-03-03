@@ -26,12 +26,22 @@ public class DeleteParameterGroupResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String parameterGroupId;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getParameterGroupId() {
+		return this.parameterGroupId;
+	}
+
+	public void setParameterGroupId(String parameterGroupId) {
+		this.parameterGroupId = parameterGroupId;
 	}
 
 	@Override

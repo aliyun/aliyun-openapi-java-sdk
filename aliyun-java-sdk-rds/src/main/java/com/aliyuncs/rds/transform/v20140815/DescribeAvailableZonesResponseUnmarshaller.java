@@ -35,9 +35,9 @@ public class DescribeAvailableZonesResponseUnmarshaller {
 		List<AvailableZone> availableZones = new ArrayList<AvailableZone>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableZonesResponse.AvailableZones.Length"); i++) {
 			AvailableZone availableZone = new AvailableZone();
+			availableZone.setNetworkTypes(_ctx.stringValue("DescribeAvailableZonesResponse.AvailableZones["+ i +"].NetworkTypes"));
 			availableZone.setRegionId(_ctx.stringValue("DescribeAvailableZonesResponse.AvailableZones["+ i +"].RegionId"));
 			availableZone.setZoneId(_ctx.stringValue("DescribeAvailableZonesResponse.AvailableZones["+ i +"].ZoneId"));
-			availableZone.setNetworkTypes(_ctx.stringValue("DescribeAvailableZonesResponse.AvailableZones["+ i +"].NetworkTypes"));
 
 			List<SupportedEngine> supportedEngines = new ArrayList<SupportedEngine>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeAvailableZonesResponse.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {
