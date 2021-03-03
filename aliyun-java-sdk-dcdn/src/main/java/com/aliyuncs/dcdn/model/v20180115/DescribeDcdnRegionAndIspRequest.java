@@ -22,18 +22,14 @@ import com.aliyuncs.dcdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDcdnServiceRequest extends RpcAcsRequest<ModifyDcdnServiceResponse> {
+public class DescribeDcdnRegionAndIspRequest extends RpcAcsRequest<DescribeDcdnRegionAndIspResponse> {
 	   
 
-	private String websocketBillType;
-
-	private String billType;
+	private Long ownerId;
 
 	private String securityToken;
-
-	private Long ownerId;
-	public ModifyDcdnServiceRequest() {
-		super("dcdn", "2018-01-15", "ModifyDcdnService");
+	public DescribeDcdnRegionAndIspRequest() {
+		super("dcdn", "2018-01-15", "DescribeDcdnRegionAndIsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +37,14 @@ public class ModifyDcdnServiceRequest extends RpcAcsRequest<ModifyDcdnServiceRes
 		} catch (Exception e) {}
 	}
 
-	public String getWebsocketBillType() {
-		return this.websocketBillType;
+	public Long getOwnerId() {
+		return this.ownerId;
 	}
 
-	public void setWebsocketBillType(String websocketBillType) {
-		this.websocketBillType = websocketBillType;
-		if(websocketBillType != null){
-			putQueryParameter("WebsocketBillType", websocketBillType);
-		}
-	}
-
-	public String getBillType() {
-		return this.billType;
-	}
-
-	public void setBillType(String billType) {
-		this.billType = billType;
-		if(billType != null){
-			putQueryParameter("BillType", billType);
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -74,20 +59,9 @@ public class ModifyDcdnServiceRequest extends RpcAcsRequest<ModifyDcdnServiceRes
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
 	@Override
-	public Class<ModifyDcdnServiceResponse> getResponseClass() {
-		return ModifyDcdnServiceResponse.class;
+	public Class<DescribeDcdnRegionAndIspResponse> getResponseClass() {
+		return DescribeDcdnRegionAndIspResponse.class;
 	}
 
 }

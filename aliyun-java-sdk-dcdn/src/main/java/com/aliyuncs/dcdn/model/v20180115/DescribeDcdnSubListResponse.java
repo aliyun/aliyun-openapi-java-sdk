@@ -15,16 +15,18 @@
 package com.aliyuncs.dcdn.model.v20180115;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dcdn.transform.v20180115.ModifyDcdnServiceResponseUnmarshaller;
+import com.aliyuncs.dcdn.transform.v20180115.DescribeDcdnSubListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDcdnServiceResponse extends AcsResponse {
+public class DescribeDcdnSubListResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String content;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class ModifyDcdnServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	@Override
-	public ModifyDcdnServiceResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDcdnServiceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDcdnSubListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDcdnSubListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

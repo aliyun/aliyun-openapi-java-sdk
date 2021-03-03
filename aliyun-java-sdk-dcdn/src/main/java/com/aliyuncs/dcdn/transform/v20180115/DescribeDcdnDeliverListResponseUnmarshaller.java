@@ -14,16 +14,17 @@
 
 package com.aliyuncs.dcdn.transform.v20180115;
 
-import com.aliyuncs.dcdn.model.v20180115.ModifyDcdnServiceResponse;
+import com.aliyuncs.dcdn.model.v20180115.DescribeDcdnDeliverListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyDcdnServiceResponseUnmarshaller {
+public class DescribeDcdnDeliverListResponseUnmarshaller {
 
-	public static ModifyDcdnServiceResponse unmarshall(ModifyDcdnServiceResponse modifyDcdnServiceResponse, UnmarshallerContext _ctx) {
+	public static DescribeDcdnDeliverListResponse unmarshall(DescribeDcdnDeliverListResponse describeDcdnDeliverListResponse, UnmarshallerContext _ctx) {
 		
-		modifyDcdnServiceResponse.setRequestId(_ctx.stringValue("ModifyDcdnServiceResponse.RequestId"));
+		describeDcdnDeliverListResponse.setRequestId(_ctx.stringValue("DescribeDcdnDeliverListResponse.RequestId"));
+		describeDcdnDeliverListResponse.setContent(_ctx.stringValue("DescribeDcdnDeliverListResponse.Content"));
 	 
-	 	return modifyDcdnServiceResponse;
+	 	return describeDcdnDeliverListResponse;
 	}
 }
