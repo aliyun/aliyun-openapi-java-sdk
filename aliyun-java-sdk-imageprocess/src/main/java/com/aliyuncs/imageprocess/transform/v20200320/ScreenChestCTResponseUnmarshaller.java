@@ -21,6 +21,8 @@ import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse;
 import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data;
 import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.CACS;
 import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.Covid;
+import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.DetectRibFracture;
+import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.DetectRibFracture.DetectionsItem;
 import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.LungNodule;
 import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.LungNodule.Serie;
 import com.aliyuncs.imageprocess.model.v20200320.ScreenChestCTResponse.Data.LungNodule.Serie.Element;
@@ -32,16 +34,31 @@ public class ScreenChestCTResponseUnmarshaller {
 	public static ScreenChestCTResponse unmarshall(ScreenChestCTResponse screenChestCTResponse, UnmarshallerContext _ctx) {
 		
 		screenChestCTResponse.setRequestId(_ctx.stringValue("ScreenChestCTResponse.RequestId"));
+		screenChestCTResponse.setMessage(_ctx.stringValue("ScreenChestCTResponse.Message"));
+		screenChestCTResponse.setCode(_ctx.stringValue("ScreenChestCTResponse.Code"));
 
 		Data data = new Data();
+
+		Covid covid = new Covid();
+		covid.setNewProbability(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.NewProbability"));
+		covid.setOtherProbability(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.OtherProbability"));
+		covid.setNormalProbability(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.NormalProbability"));
+		covid.setMask(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.Mask"));
+		covid.setLesionRatio(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.LesionRatio"));
+		data.setCovid(covid);
+
+		CACS cACS = new CACS();
+		cACS.setScore(_ctx.stringValue("ScreenChestCTResponse.Data.CACS.Score"));
+		cACS.setResultUrl(_ctx.stringValue("ScreenChestCTResponse.Data.CACS.ResultUrl"));
+		data.setCACS(cACS);
 
 		LungNodule lungNodule = new LungNodule();
 
 		List<Serie> series = new ArrayList<Serie>();
 		for (int i = 0; i < _ctx.lengthValue("ScreenChestCTResponse.Data.LungNodule.Series.Length"); i++) {
 			Serie serie = new Serie();
-			serie.setSeriesInstanceUid(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].SeriesInstanceUid"));
 			serie.setReport(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Report"));
+			serie.setSeriesInstanceUid(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].SeriesInstanceUid"));
 
 			List<Float> origin = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Origin.Length"); j++) {
@@ -58,20 +75,20 @@ public class ScreenChestCTResponseUnmarshaller {
 			List<Element> elements = new ArrayList<Element>();
 			for (int j = 0; j < _ctx.lengthValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements.Length"); j++) {
 				Element element = new Element();
-				element.setCategory(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Category"));
-				element.setConfidence(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Confidence"));
-				element.setDiameter(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Diameter"));
-				element.setLobe(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Lobe"));
-				element.setLung(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Lung"));
-				element.setX(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].X"));
-				element.setZ(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Z"));
-				element.setY(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Y"));
-				element.setImageX(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].ImageX"));
-				element.setImageY(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].ImageY"));
 				element.setImageZ(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].ImageZ"));
-				element.setSOPInstanceUID(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].SOPInstanceUID"));
-				element.setVolume(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Volume"));
+				element.setImageY(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].ImageY"));
+				element.setImageX(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].ImageX"));
+				element.setLobe(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Lobe"));
+				element.setCategory(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Category"));
+				element.setLung(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Lung"));
 				element.setMeanValue(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].MeanValue"));
+				element.setVolume(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Volume"));
+				element.setConfidence(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Confidence"));
+				element.setX(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].X"));
+				element.setY(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Y"));
+				element.setZ(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Z"));
+				element.setSOPInstanceUID(_ctx.stringValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].SOPInstanceUID"));
+				element.setDiameter(_ctx.floatValue("ScreenChestCTResponse.Data.LungNodule.Series["+ i +"].Elements["+ j +"].Diameter"));
 
 				elements.add(element);
 			}
@@ -82,18 +99,44 @@ public class ScreenChestCTResponseUnmarshaller {
 		lungNodule.setSeries(series);
 		data.setLungNodule(lungNodule);
 
-		CACS cACS = new CACS();
-		cACS.setScore(_ctx.stringValue("ScreenChestCTResponse.Data.CACS.Score"));
-		cACS.setResultUrl(_ctx.stringValue("ScreenChestCTResponse.Data.CACS.ResultUrl"));
-		data.setCACS(cACS);
+		DetectRibFracture detectRibFracture = new DetectRibFracture();
+		detectRibFracture.setResultURL(_ctx.stringValue("ScreenChestCTResponse.Data.DetectRibFracture.ResultURL"));
 
-		Covid covid = new Covid();
-		covid.setNewProbability(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.NewProbability"));
-		covid.setNormalProbability(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.NormalProbability"));
-		covid.setOtherProbability(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.OtherProbability"));
-		covid.setLesionRatio(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.LesionRatio"));
-		covid.setMask(_ctx.stringValue("ScreenChestCTResponse.Data.Covid.Mask"));
-		data.setCovid(covid);
+		List<Float> origin1 = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("ScreenChestCTResponse.Data.DetectRibFracture.Origin.Length"); i++) {
+			origin1.add(_ctx.floatValue("ScreenChestCTResponse.Data.DetectRibFracture.Origin["+ i +"]"));
+		}
+		detectRibFracture.setOrigin1(origin1);
+
+		List<Float> spacing2 = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("ScreenChestCTResponse.Data.DetectRibFracture.Spacing.Length"); i++) {
+			spacing2.add(_ctx.floatValue("ScreenChestCTResponse.Data.DetectRibFracture.Spacing["+ i +"]"));
+		}
+		detectRibFracture.setSpacing2(spacing2);
+
+		List<DetectionsItem> detections = new ArrayList<DetectionsItem>();
+		for (int i = 0; i < _ctx.lengthValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections.Length"); i++) {
+			DetectionsItem detectionsItem = new DetectionsItem();
+			detectionsItem.setFractureCategory(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureCategory"));
+			detectionsItem.setFractureConfidence(_ctx.floatValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureConfidence"));
+			detectionsItem.setFractureId(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureId"));
+
+			List<Long> coordinateImage = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].CoordinateImage.Length"); j++) {
+				coordinateImage.add(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].CoordinateImage["+ j +"]"));
+			}
+			detectionsItem.setCoordinateImage(coordinateImage);
+
+			List<Long> coordinates = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].Coordinates.Length"); j++) {
+				coordinates.add(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].Coordinates["+ j +"]"));
+			}
+			detectionsItem.setCoordinates(coordinates);
+
+			detections.add(detectionsItem);
+		}
+		detectRibFracture.setDetections(detections);
+		data.setDetectRibFracture(detectRibFracture);
 		screenChestCTResponse.setData(data);
 	 
 	 	return screenChestCTResponse;

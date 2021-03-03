@@ -25,9 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ScreenChestCTResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
+	private String code;
+
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -35,6 +47,14 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -47,18 +67,20 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 	public static class Data {
 
-		private LungNodule lungNodule;
+		private Covid covid;
 
 		private CACS cACS;
 
-		private Covid covid;
+		private LungNodule lungNodule;
 
-		public LungNodule getLungNodule() {
-			return this.lungNodule;
+		private DetectRibFracture detectRibFracture;
+
+		public Covid getCovid() {
+			return this.covid;
 		}
 
-		public void setLungNodule(LungNodule lungNodule) {
-			this.lungNodule = lungNodule;
+		public void setCovid(Covid covid) {
+			this.covid = covid;
 		}
 
 		public CACS getCACS() {
@@ -69,12 +91,96 @@ public class ScreenChestCTResponse extends AcsResponse {
 			this.cACS = cACS;
 		}
 
-		public Covid getCovid() {
-			return this.covid;
+		public LungNodule getLungNodule() {
+			return this.lungNodule;
 		}
 
-		public void setCovid(Covid covid) {
-			this.covid = covid;
+		public void setLungNodule(LungNodule lungNodule) {
+			this.lungNodule = lungNodule;
+		}
+
+		public DetectRibFracture getDetectRibFracture() {
+			return this.detectRibFracture;
+		}
+
+		public void setDetectRibFracture(DetectRibFracture detectRibFracture) {
+			this.detectRibFracture = detectRibFracture;
+		}
+
+		public static class Covid {
+
+			private String newProbability;
+
+			private String otherProbability;
+
+			private String normalProbability;
+
+			private String mask;
+
+			private String lesionRatio;
+
+			public String getNewProbability() {
+				return this.newProbability;
+			}
+
+			public void setNewProbability(String newProbability) {
+				this.newProbability = newProbability;
+			}
+
+			public String getOtherProbability() {
+				return this.otherProbability;
+			}
+
+			public void setOtherProbability(String otherProbability) {
+				this.otherProbability = otherProbability;
+			}
+
+			public String getNormalProbability() {
+				return this.normalProbability;
+			}
+
+			public void setNormalProbability(String normalProbability) {
+				this.normalProbability = normalProbability;
+			}
+
+			public String getMask() {
+				return this.mask;
+			}
+
+			public void setMask(String mask) {
+				this.mask = mask;
+			}
+
+			public String getLesionRatio() {
+				return this.lesionRatio;
+			}
+
+			public void setLesionRatio(String lesionRatio) {
+				this.lesionRatio = lesionRatio;
+			}
+		}
+
+		public static class CACS {
+
+			private String score;
+
+			private String resultUrl;
+
+			public String getScore() {
+				return this.score;
+			}
+
+			public void setScore(String score) {
+				this.score = score;
+			}
+
+			public String getResultUrl() {
+				return this.resultUrl;
+			}
+
+			public void setResultUrl(String resultUrl) {
+				this.resultUrl = resultUrl;
+			}
 		}
 
 		public static class LungNodule {
@@ -91,9 +197,9 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 			public static class Serie {
 
-				private String seriesInstanceUid;
-
 				private String report;
+
+				private String seriesInstanceUid;
 
 				private List<Element> elements;
 
@@ -101,20 +207,20 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 				private List<Float> spacing;
 
-				public String getSeriesInstanceUid() {
-					return this.seriesInstanceUid;
-				}
-
-				public void setSeriesInstanceUid(String seriesInstanceUid) {
-					this.seriesInstanceUid = seriesInstanceUid;
-				}
-
 				public String getReport() {
 					return this.report;
 				}
 
 				public void setReport(String report) {
 					this.report = report;
+				}
+
+				public String getSeriesInstanceUid() {
+					return this.seriesInstanceUid;
+				}
+
+				public void setSeriesInstanceUid(String seriesInstanceUid) {
+					this.seriesInstanceUid = seriesInstanceUid;
 				}
 
 				public List<Element> getElements() {
@@ -143,104 +249,40 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 				public static class Element {
 
-					private String category;
-
-					private Float confidence;
-
-					private Float diameter;
-
-					private String lobe;
-
-					private String lung;
-
-					private Float x;
-
-					private Float z;
-
-					private Float y;
-
-					private Float imageX;
+					private Float imageZ;
 
 					private Float imageY;
 
-					private Float imageZ;
+					private Float imageX;
 
-					private String sOPInstanceUID;
+					private String lobe;
 
-					private Float volume;
+					private String category;
+
+					private String lung;
 
 					private Float meanValue;
 
-					public String getCategory() {
-						return this.category;
+					private Float volume;
+
+					private Float confidence;
+
+					private Float x;
+
+					private Float y;
+
+					private Float z;
+
+					private String sOPInstanceUID;
+
+					private Float diameter;
+
+					public Float getImageZ() {
+						return this.imageZ;
 					}
 
-					public void setCategory(String category) {
-						this.category = category;
-					}
-
-					public Float getConfidence() {
-						return this.confidence;
-					}
-
-					public void setConfidence(Float confidence) {
-						this.confidence = confidence;
-					}
-
-					public Float getDiameter() {
-						return this.diameter;
-					}
-
-					public void setDiameter(Float diameter) {
-						this.diameter = diameter;
-					}
-
-					public String getLobe() {
-						return this.lobe;
-					}
-
-					public void setLobe(String lobe) {
-						this.lobe = lobe;
-					}
-
-					public String getLung() {
-						return this.lung;
-					}
-
-					public void setLung(String lung) {
-						this.lung = lung;
-					}
-
-					public Float getX() {
-						return this.x;
-					}
-
-					public void setX(Float x) {
-						this.x = x;
-					}
-
-					public Float getZ() {
-						return this.z;
-					}
-
-					public void setZ(Float z) {
-						this.z = z;
-					}
-
-					public Float getY() {
-						return this.y;
-					}
-
-					public void setY(Float y) {
-						this.y = y;
-					}
-
-					public Float getImageX() {
-						return this.imageX;
-					}
-
-					public void setImageX(Float imageX) {
-						this.imageX = imageX;
+					public void setImageZ(Float imageZ) {
+						this.imageZ = imageZ;
 					}
 
 					public Float getImageY() {
@@ -251,20 +293,44 @@ public class ScreenChestCTResponse extends AcsResponse {
 						this.imageY = imageY;
 					}
 
-					public Float getImageZ() {
-						return this.imageZ;
+					public Float getImageX() {
+						return this.imageX;
 					}
 
-					public void setImageZ(Float imageZ) {
-						this.imageZ = imageZ;
+					public void setImageX(Float imageX) {
+						this.imageX = imageX;
 					}
 
-					public String getSOPInstanceUID() {
-						return this.sOPInstanceUID;
+					public String getLobe() {
+						return this.lobe;
 					}
 
-					public void setSOPInstanceUID(String sOPInstanceUID) {
-						this.sOPInstanceUID = sOPInstanceUID;
+					public void setLobe(String lobe) {
+						this.lobe = lobe;
+					}
+
+					public String getCategory() {
+						return this.category;
+					}
+
+					public void setCategory(String category) {
+						this.category = category;
+					}
+
+					public String getLung() {
+						return this.lung;
+					}
+
+					public void setLung(String lung) {
+						this.lung = lung;
+					}
+
+					public Float getMeanValue() {
+						return this.meanValue;
+					}
+
+					public void setMeanValue(Float meanValue) {
+						this.meanValue = meanValue;
 					}
 
 					public Float getVolume() {
@@ -275,90 +341,150 @@ public class ScreenChestCTResponse extends AcsResponse {
 						this.volume = volume;
 					}
 
-					public Float getMeanValue() {
-						return this.meanValue;
+					public Float getConfidence() {
+						return this.confidence;
 					}
 
-					public void setMeanValue(Float meanValue) {
-						this.meanValue = meanValue;
+					public void setConfidence(Float confidence) {
+						this.confidence = confidence;
+					}
+
+					public Float getX() {
+						return this.x;
+					}
+
+					public void setX(Float x) {
+						this.x = x;
+					}
+
+					public Float getY() {
+						return this.y;
+					}
+
+					public void setY(Float y) {
+						this.y = y;
+					}
+
+					public Float getZ() {
+						return this.z;
+					}
+
+					public void setZ(Float z) {
+						this.z = z;
+					}
+
+					public String getSOPInstanceUID() {
+						return this.sOPInstanceUID;
+					}
+
+					public void setSOPInstanceUID(String sOPInstanceUID) {
+						this.sOPInstanceUID = sOPInstanceUID;
+					}
+
+					public Float getDiameter() {
+						return this.diameter;
+					}
+
+					public void setDiameter(Float diameter) {
+						this.diameter = diameter;
 					}
 				}
 			}
 		}
 
-		public static class CACS {
+		public static class DetectRibFracture {
 
-			private String score;
+			private String resultURL;
 
-			private String resultUrl;
+			private List<DetectionsItem> detections;
 
-			public String getScore() {
-				return this.score;
+			private List<Float> origin1;
+
+			private List<Float> spacing2;
+
+			public String getResultURL() {
+				return this.resultURL;
 			}
 
-			public void setScore(String score) {
-				this.score = score;
+			public void setResultURL(String resultURL) {
+				this.resultURL = resultURL;
 			}
 
-			public String getResultUrl() {
-				return this.resultUrl;
+			public List<DetectionsItem> getDetections() {
+				return this.detections;
 			}
 
-			public void setResultUrl(String resultUrl) {
-				this.resultUrl = resultUrl;
-			}
-		}
-
-		public static class Covid {
-
-			private String newProbability;
-
-			private String normalProbability;
-
-			private String otherProbability;
-
-			private String lesionRatio;
-
-			private String mask;
-
-			public String getNewProbability() {
-				return this.newProbability;
+			public void setDetections(List<DetectionsItem> detections) {
+				this.detections = detections;
 			}
 
-			public void setNewProbability(String newProbability) {
-				this.newProbability = newProbability;
+			public List<Float> getOrigin1() {
+				return this.origin1;
 			}
 
-			public String getNormalProbability() {
-				return this.normalProbability;
+			public void setOrigin1(List<Float> origin1) {
+				this.origin1 = origin1;
 			}
 
-			public void setNormalProbability(String normalProbability) {
-				this.normalProbability = normalProbability;
+			public List<Float> getSpacing2() {
+				return this.spacing2;
 			}
 
-			public String getOtherProbability() {
-				return this.otherProbability;
+			public void setSpacing2(List<Float> spacing2) {
+				this.spacing2 = spacing2;
 			}
 
-			public void setOtherProbability(String otherProbability) {
-				this.otherProbability = otherProbability;
-			}
+			public static class DetectionsItem {
 
-			public String getLesionRatio() {
-				return this.lesionRatio;
-			}
+				private Long fractureCategory;
 
-			public void setLesionRatio(String lesionRatio) {
-				this.lesionRatio = lesionRatio;
-			}
+				private Float fractureConfidence;
 
-			public String getMask() {
-				return this.mask;
-			}
+				private Long fractureId;
 
-			public void setMask(String mask) {
-				this.mask = mask;
+				private List<Long> coordinateImage;
+
+				private List<Long> coordinates;
+
+				public Long getFractureCategory() {
+					return this.fractureCategory;
+				}
+
+				public void setFractureCategory(Long fractureCategory) {
+					this.fractureCategory = fractureCategory;
+				}
+
+				public Float getFractureConfidence() {
+					return this.fractureConfidence;
+				}
+
+				public void setFractureConfidence(Float fractureConfidence) {
+					this.fractureConfidence = fractureConfidence;
+				}
+
+				public Long getFractureId() {
+					return this.fractureId;
+				}
+
+				public void setFractureId(Long fractureId) {
+					this.fractureId = fractureId;
+				}
+
+				public List<Long> getCoordinateImage() {
+					return this.coordinateImage;
+				}
+
+				public void setCoordinateImage(List<Long> coordinateImage) {
+					this.coordinateImage = coordinateImage;
+				}
+
+				public List<Long> getCoordinates() {
+					return this.coordinates;
+				}
+
+				public void setCoordinates(List<Long> coordinates) {
+					this.coordinates = coordinates;
+				}
 			}
 		}
 	}
