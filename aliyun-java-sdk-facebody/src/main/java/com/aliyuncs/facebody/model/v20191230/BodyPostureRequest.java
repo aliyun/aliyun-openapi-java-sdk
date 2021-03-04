@@ -27,7 +27,7 @@ public class BodyPostureRequest extends RpcAcsRequest<BodyPostureResponse> {
 
 	private String imageURL;
 	public BodyPostureRequest() {
-		super("facebody", "2019-12-30", "BodyPosture", "facebody");
+		super("facebody", "2019-12-30", "BodyPosture");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class FaceBeautyRequest extends RpcAcsRequest<FaceBeautyResponse> {
 
 	private String imageURL;
 	public FaceBeautyRequest() {
-		super("facebody", "2019-12-30", "FaceBeauty", "facebody");
+		super("facebody", "2019-12-30", "FaceBeauty");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

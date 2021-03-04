@@ -26,18 +26,29 @@ import com.aliyuncs.facebody.Endpoint;
 public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<ExtractPedestrianFeatureAttributeResponse> {
 	   
 
-	private List<UrlList> urlLists;
-
 	private String mode;
+
+	private List<UrlList> urlLists;
 
 	private String imageURL;
 	public ExtractPedestrianFeatureAttributeRequest() {
-		super("facebody", "2019-12-30", "ExtractPedestrianFeatureAttribute", "facebody");
+		super("facebody", "2019-12-30", "ExtractPedestrianFeatureAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putBodyParameter("Mode", mode);
+		}
 	}
 
 	public List<UrlList> getUrlLists() {
@@ -51,17 +62,6 @@ public class ExtractPedestrianFeatureAttributeRequest extends RpcAcsRequest<Extr
 				putBodyParameter("UrlList." + (depth1 + 1) + ".Url" , urlLists.get(depth1).getUrl());
 			}
 		}	
-	}
-
-	public String getMode() {
-		return this.mode;
-	}
-
-	public void setMode(String mode) {
-		this.mode = mode;
-		if(mode != null){
-			putBodyParameter("Mode", mode);
-		}
 	}
 
 	public String getImageURL() {

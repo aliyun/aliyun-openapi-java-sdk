@@ -22,17 +22,43 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class PedestrianDetectAttributeRequest extends RpcAcsRequest<PedestrianDetectAttributeResponse> {
+public class RecognizeHandGestureRequest extends RpcAcsRequest<RecognizeHandGestureResponse> {
 	   
 
+	private String gestureType;
+
+	private String appId;
+
 	private String imageURL;
-	public PedestrianDetectAttributeRequest() {
-		super("facebody", "2019-12-30", "PedestrianDetectAttribute");
+	public RecognizeHandGestureRequest() {
+		super("facebody", "2019-12-30", "RecognizeHandGesture");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getGestureType() {
+		return this.gestureType;
+	}
+
+	public void setGestureType(String gestureType) {
+		this.gestureType = gestureType;
+		if(gestureType != null){
+			putBodyParameter("GestureType", gestureType);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putBodyParameter("AppId", appId);
+		}
 	}
 
 	public String getImageURL() {
@@ -47,8 +73,8 @@ public class PedestrianDetectAttributeRequest extends RpcAcsRequest<PedestrianDe
 	}
 
 	@Override
-	public Class<PedestrianDetectAttributeResponse> getResponseClass() {
-		return PedestrianDetectAttributeResponse.class;
+	public Class<RecognizeHandGestureResponse> getResponseClass() {
+		return RecognizeHandGestureResponse.class;
 	}
 
 }

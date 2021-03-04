@@ -35,9 +35,9 @@ public class DetectIPCPedestrianResponseUnmarshaller {
 		List<ImageInfoListItem> imageInfoList = new ArrayList<ImageInfoListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectIPCPedestrianResponse.Data.ImageInfoList.Length"); i++) {
 			ImageInfoListItem imageInfoListItem = new ImageInfoListItem();
+			imageInfoListItem.setDataId(_ctx.stringValue("DetectIPCPedestrianResponse.Data.ImageInfoList["+ i +"].DataId"));
 			imageInfoListItem.setErrorCode(_ctx.stringValue("DetectIPCPedestrianResponse.Data.ImageInfoList["+ i +"].ErrorCode"));
 			imageInfoListItem.setErrorMessage(_ctx.stringValue("DetectIPCPedestrianResponse.Data.ImageInfoList["+ i +"].ErrorMessage"));
-			imageInfoListItem.setDataId(_ctx.stringValue("DetectIPCPedestrianResponse.Data.ImageInfoList["+ i +"].DataId"));
 
 			List<Element> elements = new ArrayList<Element>();
 			for (int j = 0; j < _ctx.lengthValue("DetectIPCPedestrianResponse.Data.ImageInfoList["+ i +"].Elements.Length"); j++) {

@@ -28,7 +28,7 @@ public class RecognizePublicFaceRequest extends RpcAcsRequest<RecognizePublicFac
 
 	private List<Task> tasks;
 	public RecognizePublicFaceRequest() {
-		super("facebody", "2019-12-30", "RecognizePublicFace", "facebody");
+		super("facebody", "2019-12-30", "RecognizePublicFace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
