@@ -38,7 +38,6 @@ public class ApplyMetricRuleTemplateResponseUnmarshaller {
 		List<Result> alertResults = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults.Length"); i++) {
 			Result result = new Result();
-			result.setGroupId(_ctx.longValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].GroupId"));
 			result.setRuleId(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].RuleId"));
 			result.setMessage(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].Message"));
 			result.setRuleName(_ctx.stringValue("ApplyMetricRuleTemplateResponse.Resource.AlertResults["+ i +"].RuleName"));

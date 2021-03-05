@@ -28,6 +28,8 @@ public class DescribeAlertingMetricRuleResourcesRequest extends RpcAcsRequest<De
 
 	private Integer pageSize;
 
+	private String namespace;
+
 	private Integer page;
 
 	private String ruleId;
@@ -55,6 +57,17 @@ public class DescribeAlertingMetricRuleResourcesRequest extends RpcAcsRequest<De
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getNamespace() {
+		return this.namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+		if(namespace != null){
+			putQueryParameter("Namespace", namespace);
 		}
 	}
 

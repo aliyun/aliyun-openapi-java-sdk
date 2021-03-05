@@ -1,3 +1,6 @@
+2021-03-05 Version: 7.0.20
+- Increase availability monitoring increase HTP header.
+
 2021-01-08 Version: 7.0.19
 - Add API related to resource quota of source monitoring.
 - Add a new version of alert log API.

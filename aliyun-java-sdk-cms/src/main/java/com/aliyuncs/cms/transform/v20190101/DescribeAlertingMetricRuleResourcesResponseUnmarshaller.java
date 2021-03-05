@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse;
 import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse.Resource;
+import com.aliyuncs.cms.model.v20190101.DescribeAlertingMetricRuleResourcesResponse.Resource.Resource1;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,11 +45,29 @@ public class DescribeAlertingMetricRuleResourcesResponseUnmarshaller {
 			resource.setEnable(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Enable"));
 			resource.setLastAlertTime(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].LastAlertTime"));
 			resource.setLastModifyTime(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].LastModifyTime"));
+			resource.setDimensions(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Dimensions"));
 			resource.setStartTime(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].StartTime"));
 			resource.setMetricValues(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].MetricValues"));
 			resource.setRetryTimes(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].RetryTimes"));
 			resource.setStatistics(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Statistics"));
 			resource.setThreshold(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Threshold"));
+			resource.setProductCategory(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].ProductCategory"));
+			resource.setLevel(_ctx.integerValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Level"));
+
+			List<Resource1> escalation = new ArrayList<Resource1>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation.Length"); j++) {
+				Resource1 resource1 = new Resource1();
+				resource1.setExpression(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Expression"));
+				resource1.setPreCondition(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].PreCondition"));
+				resource1.setLevel(_ctx.integerValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Level"));
+				resource1.setTimes(_ctx.integerValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Times"));
+				resource1.setComparisonOperator(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].ComparisonOperator"));
+				resource1.setTag(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Tag"));
+				resource1.setThreshold(_ctx.stringValue("DescribeAlertingMetricRuleResourcesResponse.Resources["+ i +"].Escalation["+ j +"].Threshold"));
+
+				escalation.add(resource1);
+			}
+			resource.setEscalation(escalation);
 
 			resources.add(resource);
 		}
