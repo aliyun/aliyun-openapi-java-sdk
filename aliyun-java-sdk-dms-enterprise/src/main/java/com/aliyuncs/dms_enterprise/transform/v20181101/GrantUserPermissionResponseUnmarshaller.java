@@ -23,9 +23,9 @@ public class GrantUserPermissionResponseUnmarshaller {
 	public static GrantUserPermissionResponse unmarshall(GrantUserPermissionResponse grantUserPermissionResponse, UnmarshallerContext _ctx) {
 		
 		grantUserPermissionResponse.setRequestId(_ctx.stringValue("GrantUserPermissionResponse.RequestId"));
-		grantUserPermissionResponse.setSuccess(_ctx.booleanValue("GrantUserPermissionResponse.Success"));
-		grantUserPermissionResponse.setErrorMessage(_ctx.stringValue("GrantUserPermissionResponse.ErrorMessage"));
 		grantUserPermissionResponse.setErrorCode(_ctx.stringValue("GrantUserPermissionResponse.ErrorCode"));
+		grantUserPermissionResponse.setErrorMessage(_ctx.stringValue("GrantUserPermissionResponse.ErrorMessage"));
+		grantUserPermissionResponse.setSuccess(_ctx.booleanValue("GrantUserPermissionResponse.Success"));
 	 
 	 	return grantUserPermissionResponse;
 	}

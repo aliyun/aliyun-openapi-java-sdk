@@ -27,22 +27,22 @@ public class GetOrderBaseInfoResponseUnmarshaller {
 	public static GetOrderBaseInfoResponse unmarshall(GetOrderBaseInfoResponse getOrderBaseInfoResponse, UnmarshallerContext _ctx) {
 		
 		getOrderBaseInfoResponse.setRequestId(_ctx.stringValue("GetOrderBaseInfoResponse.RequestId"));
-		getOrderBaseInfoResponse.setSuccess(_ctx.booleanValue("GetOrderBaseInfoResponse.Success"));
-		getOrderBaseInfoResponse.setErrorMessage(_ctx.stringValue("GetOrderBaseInfoResponse.ErrorMessage"));
 		getOrderBaseInfoResponse.setErrorCode(_ctx.stringValue("GetOrderBaseInfoResponse.ErrorCode"));
+		getOrderBaseInfoResponse.setErrorMessage(_ctx.stringValue("GetOrderBaseInfoResponse.ErrorMessage"));
+		getOrderBaseInfoResponse.setSuccess(_ctx.booleanValue("GetOrderBaseInfoResponse.Success"));
 
 		OrderBaseInfo orderBaseInfo = new OrderBaseInfo();
+		orderBaseInfo.setStatusDesc(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.StatusDesc"));
+		orderBaseInfo.setWorkflowStatusDesc(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.WorkflowStatusDesc"));
 		orderBaseInfo.setComment(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.Comment"));
-		orderBaseInfo.setCommitter(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.Committer"));
-		orderBaseInfo.setCommitterId(_ctx.longValue("GetOrderBaseInfoResponse.OrderBaseInfo.CommitterId"));
 		orderBaseInfo.setCreateTime(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.CreateTime"));
-		orderBaseInfo.setLastModifyTime(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.LastModifyTime"));
+		orderBaseInfo.setWorkflowInstanceId(_ctx.longValue("GetOrderBaseInfoResponse.OrderBaseInfo.WorkflowInstanceId"));
+		orderBaseInfo.setCommitter(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.Committer"));
 		orderBaseInfo.setOrderId(_ctx.longValue("GetOrderBaseInfoResponse.OrderBaseInfo.OrderId"));
+		orderBaseInfo.setLastModifyTime(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.LastModifyTime"));
 		orderBaseInfo.setPluginType(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.PluginType"));
 		orderBaseInfo.setStatusCode(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.StatusCode"));
-		orderBaseInfo.setStatusDesc(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.StatusDesc"));
-		orderBaseInfo.setWorkflowInstanceId(_ctx.longValue("GetOrderBaseInfoResponse.OrderBaseInfo.WorkflowInstanceId"));
-		orderBaseInfo.setWorkflowStatusDesc(_ctx.stringValue("GetOrderBaseInfoResponse.OrderBaseInfo.WorkflowStatusDesc"));
+		orderBaseInfo.setCommitterId(_ctx.longValue("GetOrderBaseInfoResponse.OrderBaseInfo.CommitterId"));
 
 		List<String> relatedUserList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetOrderBaseInfoResponse.OrderBaseInfo.RelatedUserList.Length"); i++) {

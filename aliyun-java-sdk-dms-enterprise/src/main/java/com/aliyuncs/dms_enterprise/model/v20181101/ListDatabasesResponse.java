@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDatabasesResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<Database> databaseList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class ListDatabasesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListDatabasesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Database> getDatabaseList() {
@@ -87,27 +87,21 @@ public class ListDatabasesResponse extends AcsResponse {
 
 	public static class Database {
 
+		private String searchName;
+
 		private String instanceId;
 
-		private String databaseId;
-
-		private String envType;
-
-		private String schemaName;
-
-		private String catalogName;
+		private Integer port;
 
 		private String encoding;
 
-		private String searchName;
+		private String host;
 
-		private String state;
+		private String databaseId;
 
 		private String dbType;
 
-		private String host;
-
-		private Integer port;
+		private String envType;
 
 		private String sid;
 
@@ -115,9 +109,23 @@ public class ListDatabasesResponse extends AcsResponse {
 
 		private String dbaId;
 
-		private List<String> ownerIdList;
+		private String state;
+
+		private String catalogName;
+
+		private String schemaName;
 
 		private List<String> ownerNameList;
+
+		private List<String> ownerIdList;
+
+		public String getSearchName() {
+			return this.searchName;
+		}
+
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -127,36 +135,12 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getDatabaseId() {
-			return this.databaseId;
+		public Integer getPort() {
+			return this.port;
 		}
 
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public String getCatalogName() {
-			return this.catalogName;
-		}
-
-		public void setCatalogName(String catalogName) {
-			this.catalogName = catalogName;
+		public void setPort(Integer port) {
+			this.port = port;
 		}
 
 		public String getEncoding() {
@@ -167,20 +151,20 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.encoding = encoding;
 		}
 
-		public String getSearchName() {
-			return this.searchName;
+		public String getHost() {
+			return this.host;
 		}
 
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
+		public void setHost(String host) {
+			this.host = host;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
 		}
 
 		public String getDbType() {
@@ -191,20 +175,12 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
-		public String getHost() {
-			return this.host;
+		public String getEnvType() {
+			return this.envType;
 		}
 
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public Integer getPort() {
-			return this.port;
-		}
-
-		public void setPort(Integer port) {
-			this.port = port;
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 
 		public String getSid() {
@@ -231,12 +207,28 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.dbaId = dbaId;
 		}
 
-		public List<String> getOwnerIdList() {
-			return this.ownerIdList;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setOwnerIdList(List<String> ownerIdList) {
-			this.ownerIdList = ownerIdList;
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCatalogName() {
+			return this.catalogName;
+		}
+
+		public void setCatalogName(String catalogName) {
+			this.catalogName = catalogName;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 
 		public List<String> getOwnerNameList() {
@@ -245,6 +237,14 @@ public class ListDatabasesResponse extends AcsResponse {
 
 		public void setOwnerNameList(List<String> ownerNameList) {
 			this.ownerNameList = ownerNameList;
+		}
+
+		public List<String> getOwnerIdList() {
+			return this.ownerIdList;
+		}
+
+		public void setOwnerIdList(List<String> ownerIdList) {
+			this.ownerIdList = ownerIdList;
 		}
 	}
 

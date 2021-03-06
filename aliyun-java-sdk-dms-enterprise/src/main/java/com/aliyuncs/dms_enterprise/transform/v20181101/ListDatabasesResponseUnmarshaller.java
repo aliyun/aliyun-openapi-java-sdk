@@ -27,40 +27,40 @@ public class ListDatabasesResponseUnmarshaller {
 	public static ListDatabasesResponse unmarshall(ListDatabasesResponse listDatabasesResponse, UnmarshallerContext _ctx) {
 		
 		listDatabasesResponse.setRequestId(_ctx.stringValue("ListDatabasesResponse.RequestId"));
-		listDatabasesResponse.setSuccess(_ctx.booleanValue("ListDatabasesResponse.Success"));
-		listDatabasesResponse.setErrorMessage(_ctx.stringValue("ListDatabasesResponse.ErrorMessage"));
-		listDatabasesResponse.setErrorCode(_ctx.stringValue("ListDatabasesResponse.ErrorCode"));
 		listDatabasesResponse.setTotalCount(_ctx.longValue("ListDatabasesResponse.TotalCount"));
+		listDatabasesResponse.setErrorCode(_ctx.stringValue("ListDatabasesResponse.ErrorCode"));
+		listDatabasesResponse.setErrorMessage(_ctx.stringValue("ListDatabasesResponse.ErrorMessage"));
+		listDatabasesResponse.setSuccess(_ctx.booleanValue("ListDatabasesResponse.Success"));
 
 		List<Database> databaseList = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("ListDatabasesResponse.DatabaseList.Length"); i++) {
 			Database database = new Database();
-			database.setInstanceId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].InstanceId"));
-			database.setDatabaseId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DatabaseId"));
-			database.setEnvType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].EnvType"));
-			database.setSchemaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SchemaName"));
-			database.setCatalogName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].CatalogName"));
-			database.setEncoding(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Encoding"));
 			database.setSearchName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SearchName"));
-			database.setState(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].State"));
-			database.setDbType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbType"));
-			database.setHost(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Host"));
+			database.setInstanceId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].InstanceId"));
 			database.setPort(_ctx.integerValue("ListDatabasesResponse.DatabaseList["+ i +"].Port"));
+			database.setEncoding(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Encoding"));
+			database.setHost(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Host"));
+			database.setDatabaseId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DatabaseId"));
+			database.setDbType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbType"));
+			database.setEnvType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].EnvType"));
 			database.setSid(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Sid"));
 			database.setDbaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbaName"));
 			database.setDbaId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbaId"));
-
-			List<String> ownerIdList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerIdList.Length"); j++) {
-				ownerIdList.add(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerIdList["+ j +"]"));
-			}
-			database.setOwnerIdList(ownerIdList);
+			database.setState(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].State"));
+			database.setCatalogName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].CatalogName"));
+			database.setSchemaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SchemaName"));
 
 			List<String> ownerNameList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerNameList.Length"); j++) {
 				ownerNameList.add(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerNameList["+ j +"]"));
 			}
 			database.setOwnerNameList(ownerNameList);
+
+			List<String> ownerIdList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerIdList.Length"); j++) {
+				ownerIdList.add(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerIdList["+ j +"]"));
+			}
+			database.setOwnerIdList(ownerIdList);
 
 			databaseList.add(database);
 		}

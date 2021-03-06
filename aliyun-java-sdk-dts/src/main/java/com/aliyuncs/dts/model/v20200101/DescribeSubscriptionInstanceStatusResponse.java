@@ -55,6 +55,8 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	private String errorMessage1;
 
+	private String taskId;
+
 	private List<SynchronousObject> subscriptionObject;
 
 	private SourceEndpoint sourceEndpoint;
@@ -181,6 +183,14 @@ public class DescribeSubscriptionInstanceStatusResponse extends AcsResponse {
 
 	public void setErrorMessage1(String errorMessage1) {
 		this.errorMessage1 = errorMessage1;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public List<SynchronousObject> getSubscriptionObject() {

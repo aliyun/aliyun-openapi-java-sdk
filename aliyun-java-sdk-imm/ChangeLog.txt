@@ -1,3 +1,7 @@
+2021-03-02 Version: 1.23.1
+- Support GroupCoverFace ExternalId for ListFaceGroups.
+- Support ResetItems for UpdateFaceGroup.
+
 2021-01-05 Version: 1.23.0
 - Remove legacy APIs.
 

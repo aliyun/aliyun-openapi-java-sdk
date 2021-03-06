@@ -77,6 +77,8 @@ public class GetPtsSceneRunningDataResponseUnmarshaller {
 			chainMonitorData.setMinRt(_ctx.integerValue("GetPtsSceneRunningDataResponse.ChainMonitorDataList["+ i +"].MinRt"));
 			chainMonitorData.setCount2XX(_ctx.longValue("GetPtsSceneRunningDataResponse.ChainMonitorDataList["+ i +"].Count2XX"));
 			chainMonitorData.setFailedCount(_ctx.longValue("GetPtsSceneRunningDataResponse.ChainMonitorDataList["+ i +"].FailedCount"));
+			chainMonitorData.setApiId(_ctx.stringValue("GetPtsSceneRunningDataResponse.ChainMonitorDataList["+ i +"].ApiId"));
+			chainMonitorData.setApiName(_ctx.stringValue("GetPtsSceneRunningDataResponse.ChainMonitorDataList["+ i +"].ApiName"));
 
 			CheckPointResult checkPointResult = new CheckPointResult();
 			checkPointResult.setSucceedBusinessCount(_ctx.longValue("GetPtsSceneRunningDataResponse.ChainMonitorDataList["+ i +"].CheckPointResult.SucceedBusinessCount"));

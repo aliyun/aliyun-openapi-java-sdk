@@ -29,11 +29,11 @@ public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 
 	private String ownerIds;
 
-	private String ownerType;
-
 	private Long tid;
+
+	private String ownerType;
 	public SetOwnersRequest() {
-		super("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "SetOwners");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -63,17 +63,6 @@ public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 		}
 	}
 
-	public String getOwnerType() {
-		return this.ownerType;
-	}
-
-	public void setOwnerType(String ownerType) {
-		this.ownerType = ownerType;
-		if(ownerType != null){
-			putQueryParameter("OwnerType", ownerType);
-		}
-	}
-
 	public Long getTid() {
 		return this.tid;
 	}
@@ -82,6 +71,17 @@ public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getOwnerType() {
+		return this.ownerType;
+	}
+
+	public void setOwnerType(String ownerType) {
+		this.ownerType = ownerType;
+		if(ownerType != null){
+			putQueryParameter("OwnerType", ownerType);
 		}
 	}
 

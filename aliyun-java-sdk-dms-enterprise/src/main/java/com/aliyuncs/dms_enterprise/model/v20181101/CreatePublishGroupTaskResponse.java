@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreatePublishGroupTaskResponse extends AcsResponse {
 
+	private Long taskId;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long taskId;
+	private String errorMessage;
+
+	private Boolean success;
+
+	public Long getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(Long taskId) {
+		this.taskId = taskId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +48,6 @@ public class CreatePublishGroupTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -66,12 +58,20 @@ public class CreatePublishGroupTaskResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTaskId() {
-		return this.taskId;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTaskId(Long taskId) {
-		this.taskId = taskId;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

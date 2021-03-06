@@ -27,6 +27,8 @@ public class CompareFaceResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class CompareFaceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -47,6 +57,12 @@ public class CompareFaceResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String messageTips;
+
+		private Float qualityScoreA;
+
+		private Float qualityScoreB;
+
 		private Float confidence;
 
 		private List<Float> thresholds;
@@ -54,6 +70,30 @@ public class CompareFaceResponse extends AcsResponse {
 		private List<Integer> rectAList;
 
 		private List<Integer> rectBList;
+
+		public String getMessageTips() {
+			return this.messageTips;
+		}
+
+		public void setMessageTips(String messageTips) {
+			this.messageTips = messageTips;
+		}
+
+		public Float getQualityScoreA() {
+			return this.qualityScoreA;
+		}
+
+		public void setQualityScoreA(Float qualityScoreA) {
+			this.qualityScoreA = qualityScoreA;
+		}
+
+		public Float getQualityScoreB() {
+			return this.qualityScoreB;
+		}
+
+		public void setQualityScoreB(Float qualityScoreB) {
+			this.qualityScoreB = qualityScoreB;
+		}
 
 		public Float getConfidence() {
 			return this.confidence;

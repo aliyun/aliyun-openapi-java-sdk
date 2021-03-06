@@ -33,6 +33,8 @@ public class DescribeAutoLiveStreamRuleResponseUnmarshaller {
 			Rule rule = new Rule();
 			rule.setRuleId(_ctx.longValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].RuleId"));
 			rule.setPlayDomain(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].PlayDomain"));
+			rule.setRuleName(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].RuleName"));
+			rule.setCreateTime(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].CreateTime"));
 			rule.setCallBack(_ctx.stringValue("DescribeAutoLiveStreamRuleResponse.Rules["+ i +"].CallBack"));
 
 			rules.add(rule);

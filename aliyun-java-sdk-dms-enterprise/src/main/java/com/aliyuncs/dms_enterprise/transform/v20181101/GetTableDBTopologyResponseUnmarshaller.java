@@ -30,9 +30,9 @@ public class GetTableDBTopologyResponseUnmarshaller {
 	public static GetTableDBTopologyResponse unmarshall(GetTableDBTopologyResponse getTableDBTopologyResponse, UnmarshallerContext _ctx) {
 		
 		getTableDBTopologyResponse.setRequestId(_ctx.stringValue("GetTableDBTopologyResponse.RequestId"));
-		getTableDBTopologyResponse.setSuccess(_ctx.booleanValue("GetTableDBTopologyResponse.Success"));
-		getTableDBTopologyResponse.setErrorMessage(_ctx.stringValue("GetTableDBTopologyResponse.ErrorMessage"));
 		getTableDBTopologyResponse.setErrorCode(_ctx.stringValue("GetTableDBTopologyResponse.ErrorCode"));
+		getTableDBTopologyResponse.setErrorMessage(_ctx.stringValue("GetTableDBTopologyResponse.ErrorMessage"));
+		getTableDBTopologyResponse.setSuccess(_ctx.booleanValue("GetTableDBTopologyResponse.Success"));
 
 		DBTopology dBTopology = new DBTopology();
 		dBTopology.setTableName(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.TableName"));
@@ -41,24 +41,24 @@ public class GetTableDBTopologyResponseUnmarshaller {
 		List<DataSource> dataSourceList = new ArrayList<DataSource>();
 		for (int i = 0; i < _ctx.lengthValue("GetTableDBTopologyResponse.DBTopology.DataSourceList.Length"); i++) {
 			DataSource dataSource = new DataSource();
-			dataSource.setHost(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].Host"));
 			dataSource.setPort(_ctx.integerValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].Port"));
+			dataSource.setHost(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].Host"));
 			dataSource.setDbType(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DbType"));
 			dataSource.setSid(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].Sid"));
 
 			List<Database> databaseList = new ArrayList<Database>();
 			for (int j = 0; j < _ctx.lengthValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList.Length"); j++) {
 				Database database = new Database();
-				database.setDbName(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbName"));
 				database.setDbId(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbId"));
+				database.setDbName(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbName"));
 				database.setEnvType(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].EnvType"));
 				database.setDbType(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbType"));
 
 				List<Table> tableList = new ArrayList<Table>();
 				for (int k = 0; k < _ctx.lengthValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList.Length"); k++) {
 					Table table = new Table();
-					table.setTableName(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableName"));
 					table.setTableId(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableId"));
+					table.setTableName(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableName"));
 					table.setTableType(_ctx.stringValue("GetTableDBTopologyResponse.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableType"));
 
 					tableList.add(table);

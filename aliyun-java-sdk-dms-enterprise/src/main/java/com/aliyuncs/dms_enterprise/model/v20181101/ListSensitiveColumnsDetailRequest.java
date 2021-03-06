@@ -27,13 +27,13 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 
 	private String schemaName;
 
-	private String tableName;
-
 	private String columnName;
 
 	private Long tid;
+
+	private String tableName;
 	public ListSensitiveColumnsDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,17 +49,6 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 		this.schemaName = schemaName;
 		if(schemaName != null){
 			putQueryParameter("SchemaName", schemaName);
-		}
-	}
-
-	public String getTableName() {
-		return this.tableName;
-	}
-
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-		if(tableName != null){
-			putQueryParameter("TableName", tableName);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getTableName() {
+		return this.tableName;
+	}
+
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+		if(tableName != null){
+			putQueryParameter("TableName", tableName);
 		}
 	}
 

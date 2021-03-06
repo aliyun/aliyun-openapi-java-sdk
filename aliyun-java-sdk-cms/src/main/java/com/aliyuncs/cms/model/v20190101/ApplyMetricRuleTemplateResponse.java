@@ -99,8 +99,6 @@ public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 
 		public static class Result {
 
-			private Long groupId;
-
 			private String ruleId;
 
 			private String message;
@@ -110,14 +108,6 @@ public class ApplyMetricRuleTemplateResponse extends AcsResponse {
 			private String code;
 
 			private Boolean success;
-
-			public Long getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(Long groupId) {
-				this.groupId = groupId;
-			}
 
 			public String getRuleId() {
 				return this.ruleId;

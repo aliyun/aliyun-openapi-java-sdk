@@ -27,6 +27,8 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 
 	private String taskOptionHttpMethod;
 
+	private String taskOptionHttpHeader;
+
 	private List<AlertConfigEscalationList> alertConfigEscalationLists;
 
 	private String taskName;
@@ -73,6 +75,17 @@ public class CreateHostAvailabilityRequest extends RpcAcsRequest<CreateHostAvail
 		this.taskOptionHttpMethod = taskOptionHttpMethod;
 		if(taskOptionHttpMethod != null){
 			putQueryParameter("TaskOption.HttpMethod", taskOptionHttpMethod);
+		}
+	}
+
+	public String getTaskOptionHttpHeader() {
+		return this.taskOptionHttpHeader;
+	}
+
+	public void setTaskOptionHttpHeader(String taskOptionHttpHeader) {
+		this.taskOptionHttpHeader = taskOptionHttpHeader;
+		if(taskOptionHttpHeader != null){
+			putQueryParameter("TaskOption.HttpHeader", taskOptionHttpHeader);
 		}
 	}
 

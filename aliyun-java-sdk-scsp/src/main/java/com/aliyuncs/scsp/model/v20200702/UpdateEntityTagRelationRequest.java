@@ -29,7 +29,7 @@ public class UpdateEntityTagRelationRequest extends RpcAcsRequest<UpdateEntityTa
 
 	private String entityTagParam;
 	public UpdateEntityTagRelationRequest() {
-		super("scsp", "2020-07-02", "UpdateEntityTagRelation");
+		super("scsp", "2020-07-02", "UpdateEntityTagRelation", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -26,9 +26,9 @@ public class CreateOrderResponseUnmarshaller {
 	public static CreateOrderResponse unmarshall(CreateOrderResponse createOrderResponse, UnmarshallerContext _ctx) {
 		
 		createOrderResponse.setRequestId(_ctx.stringValue("CreateOrderResponse.RequestId"));
-		createOrderResponse.setSuccess(_ctx.booleanValue("CreateOrderResponse.Success"));
-		createOrderResponse.setErrorMessage(_ctx.stringValue("CreateOrderResponse.ErrorMessage"));
 		createOrderResponse.setErrorCode(_ctx.stringValue("CreateOrderResponse.ErrorCode"));
+		createOrderResponse.setErrorMessage(_ctx.stringValue("CreateOrderResponse.ErrorMessage"));
+		createOrderResponse.setSuccess(_ctx.booleanValue("CreateOrderResponse.Success"));
 
 		List<Long> createOrderResult = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateOrderResponse.CreateOrderResult.Length"); i++) {

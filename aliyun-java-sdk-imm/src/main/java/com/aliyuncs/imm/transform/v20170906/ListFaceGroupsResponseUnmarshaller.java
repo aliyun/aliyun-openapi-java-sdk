@@ -55,6 +55,7 @@ public class ListFaceGroupsResponseUnmarshaller {
 			GroupCoverFace groupCoverFace = new GroupCoverFace();
 			groupCoverFace.setFaceId(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].GroupCoverFace.FaceId"));
 			groupCoverFace.setImageUri(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].GroupCoverFace.ImageUri"));
+			groupCoverFace.setExternalId(_ctx.stringValue("ListFaceGroupsResponse.FaceGroups["+ i +"].GroupCoverFace.ExternalId"));
 
 			FaceBoundary faceBoundary = new FaceBoundary();
 			faceBoundary.setLeft(_ctx.integerValue("ListFaceGroupsResponse.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Left"));

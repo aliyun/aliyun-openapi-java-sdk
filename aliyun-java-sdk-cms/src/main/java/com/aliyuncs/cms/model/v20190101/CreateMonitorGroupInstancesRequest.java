@@ -27,7 +27,7 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 
 	private List<Instances> instancess;
 
-	private Long groupId;
+	private String groupId;
 	public CreateMonitorGroupInstancesRequest() {
 		super("Cms", "2019-01-01", "CreateMonitorGroupInstances", "cms");
 		setMethod(MethodType.POST);
@@ -49,14 +49,14 @@ public class CreateMonitorGroupInstancesRequest extends RpcAcsRequest<CreateMoni
 		}	
 	}
 
-	public Long getGroupId() {
+	public String getGroupId() {
 		return this.groupId;
 	}
 
-	public void setGroupId(Long groupId) {
+	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 		if(groupId != null){
-			putQueryParameter("GroupId", groupId.toString());
+			putQueryParameter("GroupId", groupId);
 		}
 	}
 

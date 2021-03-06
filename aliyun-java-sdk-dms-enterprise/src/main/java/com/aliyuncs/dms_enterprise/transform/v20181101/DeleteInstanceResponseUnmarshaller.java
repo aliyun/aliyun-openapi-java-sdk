@@ -23,9 +23,9 @@ public class DeleteInstanceResponseUnmarshaller {
 	public static DeleteInstanceResponse unmarshall(DeleteInstanceResponse deleteInstanceResponse, UnmarshallerContext _ctx) {
 		
 		deleteInstanceResponse.setRequestId(_ctx.stringValue("DeleteInstanceResponse.RequestId"));
-		deleteInstanceResponse.setSuccess(_ctx.booleanValue("DeleteInstanceResponse.Success"));
-		deleteInstanceResponse.setErrorMessage(_ctx.stringValue("DeleteInstanceResponse.ErrorMessage"));
 		deleteInstanceResponse.setErrorCode(_ctx.stringValue("DeleteInstanceResponse.ErrorCode"));
+		deleteInstanceResponse.setErrorMessage(_ctx.stringValue("DeleteInstanceResponse.ErrorMessage"));
+		deleteInstanceResponse.setSuccess(_ctx.booleanValue("DeleteInstanceResponse.Success"));
 	 
 	 	return deleteInstanceResponse;
 	}

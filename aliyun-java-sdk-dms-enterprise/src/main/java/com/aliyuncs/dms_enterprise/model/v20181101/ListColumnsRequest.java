@@ -25,18 +25,29 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListColumnsRequest extends RpcAcsRequest<ListColumnsResponse> {
 	   
 
+	private Long tid;
+
 	private String tableId;
 
 	private Boolean logic;
-
-	private Long tid;
 	public ListColumnsRequest() {
-		super("dms-enterprise", "2018-11-01", "ListColumns", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListColumns");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	public String getTableId() {
@@ -58,17 +69,6 @@ public class ListColumnsRequest extends RpcAcsRequest<ListColumnsResponse> {
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

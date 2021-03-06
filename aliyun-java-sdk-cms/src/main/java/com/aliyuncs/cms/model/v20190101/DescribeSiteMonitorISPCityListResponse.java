@@ -105,6 +105,10 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		private String iPV6ProbeCount;
 
+		private String aPIProbeCount;
+
+		private List<String> iPPool;
+
 		public String getIsp() {
 			return this.isp;
 		}
@@ -215,6 +219,22 @@ public class DescribeSiteMonitorISPCityListResponse extends AcsResponse {
 
 		public void setIPV6ProbeCount(String iPV6ProbeCount) {
 			this.iPV6ProbeCount = iPV6ProbeCount;
+		}
+
+		public String getAPIProbeCount() {
+			return this.aPIProbeCount;
+		}
+
+		public void setAPIProbeCount(String aPIProbeCount) {
+			this.aPIProbeCount = aPIProbeCount;
+		}
+
+		public List<String> getIPPool() {
+			return this.iPPool;
+		}
+
+		public void setIPPool(List<String> iPPool) {
+			this.iPPool = iPPool;
 		}
 	}
 

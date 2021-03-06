@@ -25,29 +25,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListLogicDatabasesRequest extends RpcAcsRequest<ListLogicDatabasesResponse> {
 	   
 
-	private Integer pageSize;
-
 	private Long tid;
 
 	private Integer pageNumber;
+
+	private Integer pageSize;
 	public ListLogicDatabasesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListLogicDatabases", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "ListLogicDatabases");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Long getTid() {
@@ -69,6 +58,17 @@ public class ListLogicDatabasesRequest extends RpcAcsRequest<ListLogicDatabasesR
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

@@ -23,9 +23,9 @@ public class RevokeUserPermissionResponseUnmarshaller {
 	public static RevokeUserPermissionResponse unmarshall(RevokeUserPermissionResponse revokeUserPermissionResponse, UnmarshallerContext _ctx) {
 		
 		revokeUserPermissionResponse.setRequestId(_ctx.stringValue("RevokeUserPermissionResponse.RequestId"));
-		revokeUserPermissionResponse.setSuccess(_ctx.booleanValue("RevokeUserPermissionResponse.Success"));
-		revokeUserPermissionResponse.setErrorMessage(_ctx.stringValue("RevokeUserPermissionResponse.ErrorMessage"));
 		revokeUserPermissionResponse.setErrorCode(_ctx.stringValue("RevokeUserPermissionResponse.ErrorCode"));
+		revokeUserPermissionResponse.setErrorMessage(_ctx.stringValue("RevokeUserPermissionResponse.ErrorMessage"));
+		revokeUserPermissionResponse.setSuccess(_ctx.booleanValue("RevokeUserPermissionResponse.Success"));
 	 
 	 	return revokeUserPermissionResponse;
 	}

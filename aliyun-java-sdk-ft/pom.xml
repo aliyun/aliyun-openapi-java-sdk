@@ -4,11 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-ft</artifactId>
   <packaging>jar</packaging>
-<<<<<<< Updated upstream
-  <version>3.1.0</version>
-=======
-  <version>3.1.2</version>
->>>>>>> Stashed changes
+  <version>1.10.14</version>
   <name>aliyun-java-sdk-ft</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java

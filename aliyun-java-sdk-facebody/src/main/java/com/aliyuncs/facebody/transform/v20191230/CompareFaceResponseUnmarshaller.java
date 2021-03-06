@@ -27,8 +27,12 @@ public class CompareFaceResponseUnmarshaller {
 	public static CompareFaceResponse unmarshall(CompareFaceResponse compareFaceResponse, UnmarshallerContext _ctx) {
 		
 		compareFaceResponse.setRequestId(_ctx.stringValue("CompareFaceResponse.RequestId"));
+		compareFaceResponse.setCode(_ctx.stringValue("CompareFaceResponse.Code"));
 
 		Data data = new Data();
+		data.setMessageTips(_ctx.stringValue("CompareFaceResponse.Data.MessageTips"));
+		data.setQualityScoreA(_ctx.floatValue("CompareFaceResponse.Data.QualityScoreA"));
+		data.setQualityScoreB(_ctx.floatValue("CompareFaceResponse.Data.QualityScoreB"));
 		data.setConfidence(_ctx.floatValue("CompareFaceResponse.Data.Confidence"));
 
 		List<Float> thresholds = new ArrayList<Float>();

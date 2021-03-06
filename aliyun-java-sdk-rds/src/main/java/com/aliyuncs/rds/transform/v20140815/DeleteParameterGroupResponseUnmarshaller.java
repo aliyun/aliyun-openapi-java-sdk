@@ -23,6 +23,7 @@ public class DeleteParameterGroupResponseUnmarshaller {
 	public static DeleteParameterGroupResponse unmarshall(DeleteParameterGroupResponse deleteParameterGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteParameterGroupResponse.setRequestId(_ctx.stringValue("DeleteParameterGroupResponse.RequestId"));
+		deleteParameterGroupResponse.setParameterGroupId(_ctx.stringValue("DeleteParameterGroupResponse.ParameterGroupId"));
 	 
 	 	return deleteParameterGroupResponse;
 	}

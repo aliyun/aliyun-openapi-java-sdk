@@ -26,9 +26,9 @@ public class GetDataCorrectBackupFilesResponseUnmarshaller {
 	public static GetDataCorrectBackupFilesResponse unmarshall(GetDataCorrectBackupFilesResponse getDataCorrectBackupFilesResponse, UnmarshallerContext _ctx) {
 		
 		getDataCorrectBackupFilesResponse.setRequestId(_ctx.stringValue("GetDataCorrectBackupFilesResponse.RequestId"));
-		getDataCorrectBackupFilesResponse.setSuccess(_ctx.booleanValue("GetDataCorrectBackupFilesResponse.Success"));
-		getDataCorrectBackupFilesResponse.setErrorMessage(_ctx.stringValue("GetDataCorrectBackupFilesResponse.ErrorMessage"));
 		getDataCorrectBackupFilesResponse.setErrorCode(_ctx.stringValue("GetDataCorrectBackupFilesResponse.ErrorCode"));
+		getDataCorrectBackupFilesResponse.setErrorMessage(_ctx.stringValue("GetDataCorrectBackupFilesResponse.ErrorMessage"));
+		getDataCorrectBackupFilesResponse.setSuccess(_ctx.booleanValue("GetDataCorrectBackupFilesResponse.Success"));
 
 		List<String> dataCorrectBackupFiles = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataCorrectBackupFilesResponse.DataCorrectBackupFiles.Length"); i++) {

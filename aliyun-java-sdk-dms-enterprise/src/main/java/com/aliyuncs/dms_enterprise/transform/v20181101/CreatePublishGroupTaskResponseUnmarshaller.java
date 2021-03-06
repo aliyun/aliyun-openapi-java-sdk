@@ -23,10 +23,10 @@ public class CreatePublishGroupTaskResponseUnmarshaller {
 	public static CreatePublishGroupTaskResponse unmarshall(CreatePublishGroupTaskResponse createPublishGroupTaskResponse, UnmarshallerContext _ctx) {
 		
 		createPublishGroupTaskResponse.setRequestId(_ctx.stringValue("CreatePublishGroupTaskResponse.RequestId"));
-		createPublishGroupTaskResponse.setSuccess(_ctx.booleanValue("CreatePublishGroupTaskResponse.Success"));
-		createPublishGroupTaskResponse.setErrorMessage(_ctx.stringValue("CreatePublishGroupTaskResponse.ErrorMessage"));
-		createPublishGroupTaskResponse.setErrorCode(_ctx.stringValue("CreatePublishGroupTaskResponse.ErrorCode"));
 		createPublishGroupTaskResponse.setTaskId(_ctx.longValue("CreatePublishGroupTaskResponse.TaskId"));
+		createPublishGroupTaskResponse.setErrorCode(_ctx.stringValue("CreatePublishGroupTaskResponse.ErrorCode"));
+		createPublishGroupTaskResponse.setErrorMessage(_ctx.stringValue("CreatePublishGroupTaskResponse.ErrorMessage"));
+		createPublishGroupTaskResponse.setSuccess(_ctx.booleanValue("CreatePublishGroupTaskResponse.Success"));
 	 
 	 	return createPublishGroupTaskResponse;
 	}

@@ -27,17 +27,17 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 
 	private Long orderId;
 
+	private Long tid;
+
 	private Integer dbId;
 
 	private String planTime;
 
 	private Boolean logic;
 
-	private Long tid;
-
 	private String publishStrategy;
 	public CreatePublishGroupTaskRequest() {
-		super("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "CreatePublishGroupTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +53,17 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 
@@ -86,17 +97,6 @@ public class CreatePublishGroupTaskRequest extends RpcAcsRequest<CreatePublishGr
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

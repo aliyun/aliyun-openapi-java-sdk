@@ -25,6 +25,8 @@ import com.aliyuncs.alidns.Endpoint;
 public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSLBSubDomainsResponse> {
 	   
 
+	private String rr;
+
 	private String domainName;
 
 	private Long pageNumber;
@@ -41,6 +43,17 @@ public class DescribeDNSSLBSubDomainsRequest extends RpcAcsRequest<DescribeDNSSL
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRr() {
+		return this.rr;
+	}
+
+	public void setRr(String rr) {
+		this.rr = rr;
+		if(rr != null){
+			putQueryParameter("Rr", rr);
+		}
 	}
 
 	public String getDomainName() {

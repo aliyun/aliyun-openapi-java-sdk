@@ -27,25 +27,25 @@ public class GetMetaTableColumnResponseUnmarshaller {
 	public static GetMetaTableColumnResponse unmarshall(GetMetaTableColumnResponse getMetaTableColumnResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableColumnResponse.setRequestId(_ctx.stringValue("GetMetaTableColumnResponse.RequestId"));
-		getMetaTableColumnResponse.setSuccess(_ctx.booleanValue("GetMetaTableColumnResponse.Success"));
-		getMetaTableColumnResponse.setErrorMessage(_ctx.stringValue("GetMetaTableColumnResponse.ErrorMessage"));
 		getMetaTableColumnResponse.setErrorCode(_ctx.stringValue("GetMetaTableColumnResponse.ErrorCode"));
+		getMetaTableColumnResponse.setErrorMessage(_ctx.stringValue("GetMetaTableColumnResponse.ErrorMessage"));
+		getMetaTableColumnResponse.setSuccess(_ctx.booleanValue("GetMetaTableColumnResponse.Success"));
 
 		List<Column> columnList = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableColumnResponse.ColumnList.Length"); i++) {
 			Column column = new Column();
 			column.setColumnId(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnId"));
 			column.setColumnName(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnName"));
-			column.setColumnType(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnType"));
-			column.setDataLength(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataLength"));
 			column.setDescription(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Description"));
+			column.setColumnType(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnType"));
 			column.setPosition(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Position"));
 			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].AutoIncrement"));
-			column.setNullable(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Nullable"));
 			column.setSecurityLevel(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].SecurityLevel"));
-			column.setPrimaryKey(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].PrimaryKey"));
+			column.setDataLength(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataLength"));
 			column.setDataScale(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataScale"));
 			column.setDataPrecision(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataPrecision"));
+			column.setPrimaryKey(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].PrimaryKey"));
+			column.setNullable(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Nullable"));
 
 			columnList.add(column);
 		}

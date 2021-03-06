@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOrdersResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<Order> orders;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class ListOrdersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListOrdersResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Order> getOrders() {
@@ -87,30 +87,30 @@ public class ListOrdersResponse extends AcsResponse {
 
 	public static class Order {
 
-		private Long orderId;
+		private String statusDesc;
 
 		private String comment;
 
+		private String createTime;
+
 		private String committer;
 
-		private Long committerId;
-
-		private String createTime;
+		private Long orderId;
 
 		private String lastModifyTime;
 
 		private String pluginType;
 
+		private Long committerId;
+
 		private String statusCode;
 
-		private String statusDesc;
-
-		public Long getOrderId() {
-			return this.orderId;
+		public String getStatusDesc() {
+			return this.statusDesc;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
+		public void setStatusDesc(String statusDesc) {
+			this.statusDesc = statusDesc;
 		}
 
 		public String getComment() {
@@ -121,6 +121,14 @@ public class ListOrdersResponse extends AcsResponse {
 			this.comment = comment;
 		}
 
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getCommitter() {
 			return this.committer;
 		}
@@ -129,20 +137,12 @@ public class ListOrdersResponse extends AcsResponse {
 			this.committer = committer;
 		}
 
-		public Long getCommitterId() {
-			return this.committerId;
+		public Long getOrderId() {
+			return this.orderId;
 		}
 
-		public void setCommitterId(Long committerId) {
-			this.committerId = committerId;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
 		}
 
 		public String getLastModifyTime() {
@@ -161,20 +161,20 @@ public class ListOrdersResponse extends AcsResponse {
 			this.pluginType = pluginType;
 		}
 
+		public Long getCommitterId() {
+			return this.committerId;
+		}
+
+		public void setCommitterId(Long committerId) {
+			this.committerId = committerId;
+		}
+
 		public String getStatusCode() {
 			return this.statusCode;
 		}
 
 		public void setStatusCode(String statusCode) {
 			this.statusCode = statusCode;
-		}
-
-		public String getStatusDesc() {
-			return this.statusDesc;
-		}
-
-		public void setStatusDesc(String statusDesc) {
-			this.statusDesc = statusDesc;
 		}
 	}
 

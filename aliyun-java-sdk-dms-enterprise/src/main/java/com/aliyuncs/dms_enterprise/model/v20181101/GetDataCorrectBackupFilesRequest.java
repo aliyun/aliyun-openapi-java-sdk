@@ -27,29 +27,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetDataCorrectBackupFilesRequest extends RpcAcsRequest<GetDataCorrectBackupFilesResponse> {
 	   
 
-	private Map<Object,Object> actionDetail;
-
 	private Long orderId;
 
 	private Long tid;
+
+	private Map<Object,Object> actionDetail;
 	public GetDataCorrectBackupFilesRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Map<Object,Object> getActionDetail() {
-		return this.actionDetail;
-	}
-
-	public void setActionDetail(Map<Object,Object> actionDetail) {
-		this.actionDetail = actionDetail;
-		if(actionDetail != null){
-			putQueryParameter("ActionDetail", new Gson().toJson(actionDetail));
-		}
 	}
 
 	public Long getOrderId() {
@@ -71,6 +60,17 @@ public class GetDataCorrectBackupFilesRequest extends RpcAcsRequest<GetDataCorre
 		this.tid = tid;
 		if(tid != null){
 			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Map<Object,Object> getActionDetail() {
+		return this.actionDetail;
+	}
+
+	public void setActionDetail(Map<Object,Object> actionDetail) {
+		this.actionDetail = actionDetail;
+		if(actionDetail != null){
+			putQueryParameter("ActionDetail", new Gson().toJson(actionDetail));
 		}
 	}
 

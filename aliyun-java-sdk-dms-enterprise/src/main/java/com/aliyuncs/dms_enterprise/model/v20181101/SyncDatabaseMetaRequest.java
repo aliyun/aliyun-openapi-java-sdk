@@ -25,18 +25,29 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class SyncDatabaseMetaRequest extends RpcAcsRequest<SyncDatabaseMetaResponse> {
 	   
 
+	private Long tid;
+
 	private String dbId;
 
 	private Boolean logic;
-
-	private Long tid;
 	public SyncDatabaseMetaRequest() {
-		super("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "SyncDatabaseMeta");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	public String getDbId() {
@@ -58,17 +69,6 @@ public class SyncDatabaseMetaRequest extends RpcAcsRequest<SyncDatabaseMetaRespo
 		this.logic = logic;
 		if(logic != null){
 			putQueryParameter("Logic", logic.toString());
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

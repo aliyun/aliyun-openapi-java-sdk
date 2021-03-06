@@ -23,9 +23,9 @@ public class ExecuteDataExportResponseUnmarshaller {
 	public static ExecuteDataExportResponse unmarshall(ExecuteDataExportResponse executeDataExportResponse, UnmarshallerContext _ctx) {
 		
 		executeDataExportResponse.setRequestId(_ctx.stringValue("ExecuteDataExportResponse.RequestId"));
-		executeDataExportResponse.setSuccess(_ctx.booleanValue("ExecuteDataExportResponse.Success"));
-		executeDataExportResponse.setErrorMessage(_ctx.stringValue("ExecuteDataExportResponse.ErrorMessage"));
 		executeDataExportResponse.setErrorCode(_ctx.stringValue("ExecuteDataExportResponse.ErrorCode"));
+		executeDataExportResponse.setErrorMessage(_ctx.stringValue("ExecuteDataExportResponse.ErrorMessage"));
+		executeDataExportResponse.setSuccess(_ctx.booleanValue("ExecuteDataExportResponse.Success"));
 	 
 	 	return executeDataExportResponse;
 	}

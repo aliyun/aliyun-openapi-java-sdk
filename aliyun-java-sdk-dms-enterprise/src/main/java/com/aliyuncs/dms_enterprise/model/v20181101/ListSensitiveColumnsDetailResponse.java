@@ -27,11 +27,11 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private List<SensitiveColumnsDetail> sensitiveColumnsDetailList;
 
@@ -43,12 +43,12 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SensitiveColumnsDetail> getSensitiveColumnsDetailList() {
@@ -77,33 +77,25 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 
 	public static class SensitiveColumnsDetail {
 
-		private String schemaName;
-
 		private String tableName;
 
 		private String columnName;
 
-		private String searchName;
-
-		private Long dbId;
-
-		private String envType;
-
-		private String dbType;
-
-		private Boolean logic;
-
 		private String columnType;
+
+		private String searchName;
 
 		private String columnDescription;
 
-		public String getSchemaName() {
-			return this.schemaName;
-		}
+		private Long dbId;
 
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
+		private Boolean logic;
+
+		private String envType;
+
+		private String schemaName;
+
+		private String dbType;
 
 		public String getTableName() {
 			return this.tableName;
@@ -121,12 +113,28 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.columnName = columnName;
 		}
 
+		public String getColumnType() {
+			return this.columnType;
+		}
+
+		public void setColumnType(String columnType) {
+			this.columnType = columnType;
+		}
+
 		public String getSearchName() {
 			return this.searchName;
 		}
 
 		public void setSearchName(String searchName) {
 			this.searchName = searchName;
+		}
+
+		public String getColumnDescription() {
+			return this.columnDescription;
+		}
+
+		public void setColumnDescription(String columnDescription) {
+			this.columnDescription = columnDescription;
 		}
 
 		public Long getDbId() {
@@ -137,22 +145,6 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.dbId = dbId;
 		}
 
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
 		public Boolean getLogic() {
 			return this.logic;
 		}
@@ -161,20 +153,28 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.logic = logic;
 		}
 
-		public String getColumnType() {
-			return this.columnType;
+		public String getEnvType() {
+			return this.envType;
 		}
 
-		public void setColumnType(String columnType) {
-			this.columnType = columnType;
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 
-		public String getColumnDescription() {
-			return this.columnDescription;
+		public String getSchemaName() {
+			return this.schemaName;
 		}
 
-		public void setColumnDescription(String columnDescription) {
-			this.columnDescription = columnDescription;
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 	}
 

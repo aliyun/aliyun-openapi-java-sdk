@@ -25,6 +25,8 @@ import com.aliyuncs.rtc.Endpoint;
 public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiveStreamRuleResponse> {
 	   
 
+	private String ruleName;
+
 	private String playDomain;
 
 	private Long ownerId;
@@ -39,6 +41,17 @@ public class CreateAutoLiveStreamRuleRequest extends RpcAcsRequest<CreateAutoLiv
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRuleName() {
+		return this.ruleName;
+	}
+
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
+		if(ruleName != null){
+			putQueryParameter("RuleName", ruleName);
+		}
 	}
 
 	public String getPlayDomain() {

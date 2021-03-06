@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUsersResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<User> userList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class ListUsersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListUsersResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<User> getUserList() {
@@ -87,31 +87,63 @@ public class ListUsersResponse extends AcsResponse {
 
 	public static class User {
 
+		private String uid;
+
+		private String lastLoginTime;
+
+		private Long curResultCount;
+
+		private Long maxResultCount;
+
 		private String userId;
 
-		private String uid;
+		private String state;
+
+		private Long curExecuteCount;
 
 		private String nickName;
 
 		private String mobile;
 
-		private String parentUid;
-
-		private String state;
-
-		private String lastLoginTime;
-
-		private Long curExecuteCount;
-
-		private Long curResultCount;
-
 		private Long maxExecuteCount;
 
-		private Long maxResultCount;
+		private String parentUid;
 
 		private List<Integer> roleIdList;
 
 		private List<String> roleNameList;
+
+		public String getUid() {
+			return this.uid;
+		}
+
+		public void setUid(String uid) {
+			this.uid = uid;
+		}
+
+		public String getLastLoginTime() {
+			return this.lastLoginTime;
+		}
+
+		public void setLastLoginTime(String lastLoginTime) {
+			this.lastLoginTime = lastLoginTime;
+		}
+
+		public Long getCurResultCount() {
+			return this.curResultCount;
+		}
+
+		public void setCurResultCount(Long curResultCount) {
+			this.curResultCount = curResultCount;
+		}
+
+		public Long getMaxResultCount() {
+			return this.maxResultCount;
+		}
+
+		public void setMaxResultCount(Long maxResultCount) {
+			this.maxResultCount = maxResultCount;
+		}
 
 		public String getUserId() {
 			return this.userId;
@@ -121,12 +153,20 @@ public class ListUsersResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getUid() {
-			return this.uid;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setUid(String uid) {
-			this.uid = uid;
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public Long getCurExecuteCount() {
+			return this.curExecuteCount;
+		}
+
+		public void setCurExecuteCount(Long curExecuteCount) {
+			this.curExecuteCount = curExecuteCount;
 		}
 
 		public String getNickName() {
@@ -145,46 +185,6 @@ public class ListUsersResponse extends AcsResponse {
 			this.mobile = mobile;
 		}
 
-		public String getParentUid() {
-			return this.parentUid;
-		}
-
-		public void setParentUid(String parentUid) {
-			this.parentUid = parentUid;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getLastLoginTime() {
-			return this.lastLoginTime;
-		}
-
-		public void setLastLoginTime(String lastLoginTime) {
-			this.lastLoginTime = lastLoginTime;
-		}
-
-		public Long getCurExecuteCount() {
-			return this.curExecuteCount;
-		}
-
-		public void setCurExecuteCount(Long curExecuteCount) {
-			this.curExecuteCount = curExecuteCount;
-		}
-
-		public Long getCurResultCount() {
-			return this.curResultCount;
-		}
-
-		public void setCurResultCount(Long curResultCount) {
-			this.curResultCount = curResultCount;
-		}
-
 		public Long getMaxExecuteCount() {
 			return this.maxExecuteCount;
 		}
@@ -193,12 +193,12 @@ public class ListUsersResponse extends AcsResponse {
 			this.maxExecuteCount = maxExecuteCount;
 		}
 
-		public Long getMaxResultCount() {
-			return this.maxResultCount;
+		public String getParentUid() {
+			return this.parentUid;
 		}
 
-		public void setMaxResultCount(Long maxResultCount) {
-			this.maxResultCount = maxResultCount;
+		public void setParentUid(String parentUid) {
+			this.parentUid = parentUid;
 		}
 
 		public List<Integer> getRoleIdList() {

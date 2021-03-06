@@ -59,6 +59,8 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	private String synchronizationJobName;
 
+	private String taskId;
+
 	private List<SynchronizationObject> synchronizationObjects;
 
 	private DataInitializationStatus dataInitializationStatus;
@@ -209,6 +211,14 @@ public class DescribeSynchronizationJobStatusResponse extends AcsResponse {
 
 	public void setSynchronizationJobName(String synchronizationJobName) {
 		this.synchronizationJobName = synchronizationJobName;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public List<SynchronizationObject> getSynchronizationObjects() {

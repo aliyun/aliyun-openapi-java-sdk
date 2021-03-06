@@ -27,16 +27,16 @@ public class ListUserTenantsResponseUnmarshaller {
 	public static ListUserTenantsResponse unmarshall(ListUserTenantsResponse listUserTenantsResponse, UnmarshallerContext _ctx) {
 		
 		listUserTenantsResponse.setRequestId(_ctx.stringValue("ListUserTenantsResponse.RequestId"));
-		listUserTenantsResponse.setSuccess(_ctx.booleanValue("ListUserTenantsResponse.Success"));
-		listUserTenantsResponse.setErrorMessage(_ctx.stringValue("ListUserTenantsResponse.ErrorMessage"));
 		listUserTenantsResponse.setErrorCode(_ctx.stringValue("ListUserTenantsResponse.ErrorCode"));
+		listUserTenantsResponse.setErrorMessage(_ctx.stringValue("ListUserTenantsResponse.ErrorMessage"));
+		listUserTenantsResponse.setSuccess(_ctx.booleanValue("ListUserTenantsResponse.Success"));
 
 		List<Tenant> tenantList = new ArrayList<Tenant>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserTenantsResponse.TenantList.Length"); i++) {
 			Tenant tenant = new Tenant();
-			tenant.setTid(_ctx.longValue("ListUserTenantsResponse.TenantList["+ i +"].Tid"));
-			tenant.setTenantName(_ctx.stringValue("ListUserTenantsResponse.TenantList["+ i +"].TenantName"));
 			tenant.setStatus(_ctx.stringValue("ListUserTenantsResponse.TenantList["+ i +"].Status"));
+			tenant.setTenantName(_ctx.stringValue("ListUserTenantsResponse.TenantList["+ i +"].TenantName"));
+			tenant.setTid(_ctx.longValue("ListUserTenantsResponse.TenantList["+ i +"].Tid"));
 
 			tenantList.add(tenant);
 		}

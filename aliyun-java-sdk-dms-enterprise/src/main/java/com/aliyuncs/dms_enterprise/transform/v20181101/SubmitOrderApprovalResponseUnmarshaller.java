@@ -23,9 +23,9 @@ public class SubmitOrderApprovalResponseUnmarshaller {
 	public static SubmitOrderApprovalResponse unmarshall(SubmitOrderApprovalResponse submitOrderApprovalResponse, UnmarshallerContext _ctx) {
 		
 		submitOrderApprovalResponse.setRequestId(_ctx.stringValue("SubmitOrderApprovalResponse.RequestId"));
-		submitOrderApprovalResponse.setSuccess(_ctx.booleanValue("SubmitOrderApprovalResponse.Success"));
-		submitOrderApprovalResponse.setErrorMessage(_ctx.stringValue("SubmitOrderApprovalResponse.ErrorMessage"));
 		submitOrderApprovalResponse.setErrorCode(_ctx.stringValue("SubmitOrderApprovalResponse.ErrorCode"));
+		submitOrderApprovalResponse.setErrorMessage(_ctx.stringValue("SubmitOrderApprovalResponse.ErrorMessage"));
+		submitOrderApprovalResponse.setSuccess(_ctx.booleanValue("SubmitOrderApprovalResponse.Success"));
 	 
 	 	return submitOrderApprovalResponse;
 	}

@@ -31,7 +31,7 @@ public class QueryServiceConfigRequest extends RpcAcsRequest<QueryServiceConfigR
 
 	private String parameters;
 	public QueryServiceConfigRequest() {
-		super("scsp", "2020-07-02", "QueryServiceConfig");
+		super("scsp", "2020-07-02", "QueryServiceConfig", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

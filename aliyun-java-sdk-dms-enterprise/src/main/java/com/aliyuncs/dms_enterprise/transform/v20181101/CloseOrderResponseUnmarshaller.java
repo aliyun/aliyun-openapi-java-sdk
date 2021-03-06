@@ -23,9 +23,9 @@ public class CloseOrderResponseUnmarshaller {
 	public static CloseOrderResponse unmarshall(CloseOrderResponse closeOrderResponse, UnmarshallerContext _ctx) {
 		
 		closeOrderResponse.setRequestId(_ctx.stringValue("CloseOrderResponse.RequestId"));
-		closeOrderResponse.setSuccess(_ctx.booleanValue("CloseOrderResponse.Success"));
-		closeOrderResponse.setErrorMessage(_ctx.stringValue("CloseOrderResponse.ErrorMessage"));
 		closeOrderResponse.setErrorCode(_ctx.stringValue("CloseOrderResponse.ErrorCode"));
+		closeOrderResponse.setErrorMessage(_ctx.stringValue("CloseOrderResponse.ErrorMessage"));
+		closeOrderResponse.setSuccess(_ctx.booleanValue("CloseOrderResponse.Success"));
 	 
 	 	return closeOrderResponse;
 	}

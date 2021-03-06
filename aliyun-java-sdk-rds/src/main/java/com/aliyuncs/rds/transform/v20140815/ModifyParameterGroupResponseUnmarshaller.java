@@ -23,6 +23,7 @@ public class ModifyParameterGroupResponseUnmarshaller {
 	public static ModifyParameterGroupResponse unmarshall(ModifyParameterGroupResponse modifyParameterGroupResponse, UnmarshallerContext _ctx) {
 		
 		modifyParameterGroupResponse.setRequestId(_ctx.stringValue("ModifyParameterGroupResponse.RequestId"));
+		modifyParameterGroupResponse.setParameterGroupId(_ctx.stringValue("ModifyParameterGroupResponse.ParameterGroupId"));
 	 
 	 	return modifyParameterGroupResponse;
 	}

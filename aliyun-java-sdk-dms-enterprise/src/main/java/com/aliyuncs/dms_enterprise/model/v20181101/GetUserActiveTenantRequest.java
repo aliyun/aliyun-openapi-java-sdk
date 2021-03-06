@@ -25,7 +25,7 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class GetUserActiveTenantRequest extends RpcAcsRequest<GetUserActiveTenantResponse> {
 	   
 	public GetUserActiveTenantRequest() {
-		super("dms-enterprise", "2018-11-01", "GetUserActiveTenant", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetUserActiveTenant");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

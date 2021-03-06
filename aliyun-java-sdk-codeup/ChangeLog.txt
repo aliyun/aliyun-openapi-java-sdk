@@ -1,3 +1,6 @@
+2021-03-03 Version: 0.0.9
+- Add GetRepositoryTagV2 and DeleteRepositoryTagV2 API.
+
 2021-02-07 Version: 0.0.8
 - Support some MergeRequest API.
 

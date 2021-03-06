@@ -33,7 +33,7 @@ public class SearchTicketByIdRequest extends RpcAcsRequest<SearchTicketByIdRespo
 
 	private Integer statusCode;
 	public SearchTicketByIdRequest() {
-		super("scsp", "2020-07-02", "SearchTicketById");
+		super("scsp", "2020-07-02", "SearchTicketById", "scsp");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

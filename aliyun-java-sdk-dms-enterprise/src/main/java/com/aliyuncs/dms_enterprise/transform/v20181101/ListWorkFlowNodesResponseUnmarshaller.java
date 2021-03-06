@@ -28,26 +28,26 @@ public class ListWorkFlowNodesResponseUnmarshaller {
 	public static ListWorkFlowNodesResponse unmarshall(ListWorkFlowNodesResponse listWorkFlowNodesResponse, UnmarshallerContext _ctx) {
 		
 		listWorkFlowNodesResponse.setRequestId(_ctx.stringValue("ListWorkFlowNodesResponse.RequestId"));
-		listWorkFlowNodesResponse.setSuccess(_ctx.booleanValue("ListWorkFlowNodesResponse.Success"));
-		listWorkFlowNodesResponse.setErrorMessage(_ctx.stringValue("ListWorkFlowNodesResponse.ErrorMessage"));
 		listWorkFlowNodesResponse.setErrorCode(_ctx.stringValue("ListWorkFlowNodesResponse.ErrorCode"));
+		listWorkFlowNodesResponse.setErrorMessage(_ctx.stringValue("ListWorkFlowNodesResponse.ErrorMessage"));
+		listWorkFlowNodesResponse.setSuccess(_ctx.booleanValue("ListWorkFlowNodesResponse.Success"));
 
 		List<WorkflowNode> workflowNodes = new ArrayList<WorkflowNode>();
 		for (int i = 0; i < _ctx.lengthValue("ListWorkFlowNodesResponse.WorkflowNodes.Length"); i++) {
 			WorkflowNode workflowNode = new WorkflowNode();
-			workflowNode.setNodeName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeName"));
 			workflowNode.setComment(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].Comment"));
-			workflowNode.setNodeId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeId"));
-			workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeType"));
-			workflowNode.setCreateUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].CreateUserId"));
 			workflowNode.setCreateUserNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].CreateUserNickName"));
+			workflowNode.setNodeName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeName"));
+			workflowNode.setNodeType(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeType"));
+			workflowNode.setNodeId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].NodeId"));
+			workflowNode.setCreateUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].CreateUserId"));
 
 			List<AuditUser> auditUsers = new ArrayList<AuditUser>();
 			for (int j = 0; j < _ctx.lengthValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers.Length"); j++) {
 				AuditUser auditUser = new AuditUser();
 				auditUser.setUserId(_ctx.longValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].UserId"));
-				auditUser.setNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].NickName"));
 				auditUser.setRealName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].RealName"));
+				auditUser.setNickName(_ctx.stringValue("ListWorkFlowNodesResponse.WorkflowNodes["+ i +"].AuditUsers["+ j +"].NickName"));
 
 				auditUsers.add(auditUser);
 			}

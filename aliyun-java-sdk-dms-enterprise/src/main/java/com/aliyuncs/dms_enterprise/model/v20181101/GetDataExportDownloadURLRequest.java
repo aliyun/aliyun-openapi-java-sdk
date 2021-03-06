@@ -29,7 +29,7 @@ public class GetDataExportDownloadURLRequest extends RpcAcsRequest<GetDataExport
 
 	private Long tid;
 	public GetDataExportDownloadURLRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

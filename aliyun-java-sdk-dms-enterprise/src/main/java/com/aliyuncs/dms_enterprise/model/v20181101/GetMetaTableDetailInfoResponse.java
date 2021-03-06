@@ -27,11 +27,11 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private DetailInfo detailInfo;
 
@@ -43,12 +43,12 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public DetailInfo getDetailInfo() {
@@ -99,64 +99,32 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 
 		public static class Column {
 
-			private String description;
-
-			private String columnType;
-
-			private String position;
-
-			private Integer dataLength;
-
-			private Boolean nullable;
+			private String columnId;
 
 			private String columnName;
 
+			private String columnType;
+
+			private String description;
+
+			private String position;
+
 			private Boolean autoIncrement;
 
-			private Integer dataPrecision;
+			private Integer dataLength;
 
 			private Integer dataScale;
 
-			private String columnId;
+			private Integer dataPrecision;
 
-			public String getDescription() {
-				return this.description;
+			private Boolean nullable;
+
+			public String getColumnId() {
+				return this.columnId;
 			}
 
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getColumnType() {
-				return this.columnType;
-			}
-
-			public void setColumnType(String columnType) {
-				this.columnType = columnType;
-			}
-
-			public String getPosition() {
-				return this.position;
-			}
-
-			public void setPosition(String position) {
-				this.position = position;
-			}
-
-			public Integer getDataLength() {
-				return this.dataLength;
-			}
-
-			public void setDataLength(Integer dataLength) {
-				this.dataLength = dataLength;
-			}
-
-			public Boolean getNullable() {
-				return this.nullable;
-			}
-
-			public void setNullable(Boolean nullable) {
-				this.nullable = nullable;
+			public void setColumnId(String columnId) {
+				this.columnId = columnId;
 			}
 
 			public String getColumnName() {
@@ -167,6 +135,30 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 				this.columnName = columnName;
 			}
 
+			public String getColumnType() {
+				return this.columnType;
+			}
+
+			public void setColumnType(String columnType) {
+				this.columnType = columnType;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getPosition() {
+				return this.position;
+			}
+
+			public void setPosition(String position) {
+				this.position = position;
+			}
+
 			public Boolean getAutoIncrement() {
 				return this.autoIncrement;
 			}
@@ -175,12 +167,12 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 				this.autoIncrement = autoIncrement;
 			}
 
-			public Integer getDataPrecision() {
-				return this.dataPrecision;
+			public Integer getDataLength() {
+				return this.dataLength;
 			}
 
-			public void setDataPrecision(Integer dataPrecision) {
-				this.dataPrecision = dataPrecision;
+			public void setDataLength(Integer dataLength) {
+				this.dataLength = dataLength;
 			}
 
 			public Integer getDataScale() {
@@ -191,12 +183,20 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 				this.dataScale = dataScale;
 			}
 
-			public String getColumnId() {
-				return this.columnId;
+			public Integer getDataPrecision() {
+				return this.dataPrecision;
 			}
 
-			public void setColumnId(String columnId) {
-				this.columnId = columnId;
+			public void setDataPrecision(Integer dataPrecision) {
+				this.dataPrecision = dataPrecision;
+			}
+
+			public Boolean getNullable() {
+				return this.nullable;
+			}
+
+			public void setNullable(Boolean nullable) {
+				this.nullable = nullable;
 			}
 		}
 
@@ -204,11 +204,11 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 
 			private String indexName;
 
-			private String indexType;
+			private String indexId;
 
 			private Boolean unique;
 
-			private String indexId;
+			private String indexType;
 
 			private List<String> indexColumns;
 
@@ -220,12 +220,12 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 				this.indexName = indexName;
 			}
 
-			public String getIndexType() {
-				return this.indexType;
+			public String getIndexId() {
+				return this.indexId;
 			}
 
-			public void setIndexType(String indexType) {
-				this.indexType = indexType;
+			public void setIndexId(String indexId) {
+				this.indexId = indexId;
 			}
 
 			public Boolean getUnique() {
@@ -236,12 +236,12 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 				this.unique = unique;
 			}
 
-			public String getIndexId() {
-				return this.indexId;
+			public String getIndexType() {
+				return this.indexType;
 			}
 
-			public void setIndexId(String indexId) {
-				this.indexId = indexId;
+			public void setIndexType(String indexType) {
+				this.indexType = indexType;
 			}
 
 			public List<String> getIndexColumns() {

@@ -105,6 +105,8 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		private String lastModifyTime;
 
+		private String dimensions;
+
 		private String startTime;
 
 		private String metricValues;
@@ -114,6 +116,12 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 		private String statistics;
 
 		private String threshold;
+
+		private String productCategory;
+
+		private Integer level;
+
+		private List<Resource1> escalation;
 
 		public String getRuleId() {
 			return this.ruleId;
@@ -187,6 +195,14 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 			this.lastModifyTime = lastModifyTime;
 		}
 
+		public String getDimensions() {
+			return this.dimensions;
+		}
+
+		public void setDimensions(String dimensions) {
+			this.dimensions = dimensions;
+		}
+
 		public String getStartTime() {
 			return this.startTime;
 		}
@@ -225,6 +241,103 @@ public class DescribeAlertingMetricRuleResourcesResponse extends AcsResponse {
 
 		public void setThreshold(String threshold) {
 			this.threshold = threshold;
+		}
+
+		public String getProductCategory() {
+			return this.productCategory;
+		}
+
+		public void setProductCategory(String productCategory) {
+			this.productCategory = productCategory;
+		}
+
+		public Integer getLevel() {
+			return this.level;
+		}
+
+		public void setLevel(Integer level) {
+			this.level = level;
+		}
+
+		public List<Resource1> getEscalation() {
+			return this.escalation;
+		}
+
+		public void setEscalation(List<Resource1> escalation) {
+			this.escalation = escalation;
+		}
+
+		public static class Resource1 {
+
+			private String expression;
+
+			private String preCondition;
+
+			private Integer level;
+
+			private Integer times;
+
+			private String comparisonOperator;
+
+			private String tag;
+
+			private String threshold;
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
+			}
+
+			public String getPreCondition() {
+				return this.preCondition;
+			}
+
+			public void setPreCondition(String preCondition) {
+				this.preCondition = preCondition;
+			}
+
+			public Integer getLevel() {
+				return this.level;
+			}
+
+			public void setLevel(Integer level) {
+				this.level = level;
+			}
+
+			public Integer getTimes() {
+				return this.times;
+			}
+
+			public void setTimes(Integer times) {
+				this.times = times;
+			}
+
+			public String getComparisonOperator() {
+				return this.comparisonOperator;
+			}
+
+			public void setComparisonOperator(String comparisonOperator) {
+				this.comparisonOperator = comparisonOperator;
+			}
+
+			public String getTag() {
+				return this.tag;
+			}
+
+			public void setTag(String tag) {
+				this.tag = tag;
+			}
+
+			public String getThreshold() {
+				return this.threshold;
+			}
+
+			public void setThreshold(String threshold) {
+				this.threshold = threshold;
+			}
 		}
 	}
 

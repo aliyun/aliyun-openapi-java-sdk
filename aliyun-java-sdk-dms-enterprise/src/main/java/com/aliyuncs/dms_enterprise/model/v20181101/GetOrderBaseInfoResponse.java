@@ -27,11 +27,11 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String errorCode;
 
 	private String errorMessage;
 
-	private String errorCode;
+	private Boolean success;
 
 	private OrderBaseInfo orderBaseInfo;
 
@@ -43,12 +43,12 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public OrderBaseInfo getOrderBaseInfo() {
@@ -77,31 +77,47 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 	public static class OrderBaseInfo {
 
+		private String statusDesc;
+
+		private String workflowStatusDesc;
+
 		private String comment;
-
-		private String committer;
-
-		private Long committerId;
 
 		private String createTime;
 
-		private String lastModifyTime;
+		private Long workflowInstanceId;
+
+		private String committer;
 
 		private Long orderId;
+
+		private String lastModifyTime;
 
 		private String pluginType;
 
 		private String statusCode;
 
-		private String statusDesc;
-
-		private Long workflowInstanceId;
-
-		private String workflowStatusDesc;
+		private Long committerId;
 
 		private List<String> relatedUserList;
 
 		private List<String> relatedUserNickList;
+
+		public String getStatusDesc() {
+			return this.statusDesc;
+		}
+
+		public void setStatusDesc(String statusDesc) {
+			this.statusDesc = statusDesc;
+		}
+
+		public String getWorkflowStatusDesc() {
+			return this.workflowStatusDesc;
+		}
+
+		public void setWorkflowStatusDesc(String workflowStatusDesc) {
+			this.workflowStatusDesc = workflowStatusDesc;
+		}
 
 		public String getComment() {
 			return this.comment;
@@ -109,22 +125,6 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 		public void setComment(String comment) {
 			this.comment = comment;
-		}
-
-		public String getCommitter() {
-			return this.committer;
-		}
-
-		public void setCommitter(String committer) {
-			this.committer = committer;
-		}
-
-		public Long getCommitterId() {
-			return this.committerId;
-		}
-
-		public void setCommitterId(Long committerId) {
-			this.committerId = committerId;
 		}
 
 		public String getCreateTime() {
@@ -135,12 +135,20 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getLastModifyTime() {
-			return this.lastModifyTime;
+		public Long getWorkflowInstanceId() {
+			return this.workflowInstanceId;
 		}
 
-		public void setLastModifyTime(String lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
+		public void setWorkflowInstanceId(Long workflowInstanceId) {
+			this.workflowInstanceId = workflowInstanceId;
+		}
+
+		public String getCommitter() {
+			return this.committer;
+		}
+
+		public void setCommitter(String committer) {
+			this.committer = committer;
 		}
 
 		public Long getOrderId() {
@@ -149,6 +157,14 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 		public void setOrderId(Long orderId) {
 			this.orderId = orderId;
+		}
+
+		public String getLastModifyTime() {
+			return this.lastModifyTime;
+		}
+
+		public void setLastModifyTime(String lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
 		}
 
 		public String getPluginType() {
@@ -167,28 +183,12 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 			this.statusCode = statusCode;
 		}
 
-		public String getStatusDesc() {
-			return this.statusDesc;
+		public Long getCommitterId() {
+			return this.committerId;
 		}
 
-		public void setStatusDesc(String statusDesc) {
-			this.statusDesc = statusDesc;
-		}
-
-		public Long getWorkflowInstanceId() {
-			return this.workflowInstanceId;
-		}
-
-		public void setWorkflowInstanceId(Long workflowInstanceId) {
-			this.workflowInstanceId = workflowInstanceId;
-		}
-
-		public String getWorkflowStatusDesc() {
-			return this.workflowStatusDesc;
-		}
-
-		public void setWorkflowStatusDesc(String workflowStatusDesc) {
-			this.workflowStatusDesc = workflowStatusDesc;
+		public void setCommitterId(Long committerId) {
+			this.committerId = committerId;
 		}
 
 		public List<String> getRelatedUserList() {

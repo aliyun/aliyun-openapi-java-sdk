@@ -45,6 +45,8 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	private String success;
 
+	private String taskId;
+
 	private DataInitializationStatus dataInitializationStatus;
 
 	private DataSynchronizationStatus dataSynchronizationStatus;
@@ -137,6 +139,14 @@ public class DescribeMigrationJobStatusResponse extends AcsResponse {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public DataInitializationStatus getDataInitializationStatus() {

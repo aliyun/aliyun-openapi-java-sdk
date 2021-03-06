@@ -85,6 +85,8 @@ public class DescribeDNSSLBSubDomainsResponse extends AcsResponse {
 
 		private String type;
 
+		private List<LineAlgorithm> lineAlgorithms;
+
 		public String getSubDomain() {
 			return this.subDomain;
 		}
@@ -115,6 +117,37 @@ public class DescribeDNSSLBSubDomainsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public List<LineAlgorithm> getLineAlgorithms() {
+			return this.lineAlgorithms;
+		}
+
+		public void setLineAlgorithms(List<LineAlgorithm> lineAlgorithms) {
+			this.lineAlgorithms = lineAlgorithms;
+		}
+
+		public static class LineAlgorithm {
+
+			private String line;
+
+			private Boolean open;
+
+			public String getLine() {
+				return this.line;
+			}
+
+			public void setLine(String line) {
+				this.line = line;
+			}
+
+			public Boolean getOpen() {
+				return this.open;
+			}
+
+			public void setOpen(Boolean open) {
+				this.open = open;
+			}
 		}
 	}
 

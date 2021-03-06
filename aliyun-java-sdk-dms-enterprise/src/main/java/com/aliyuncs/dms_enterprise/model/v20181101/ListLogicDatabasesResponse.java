@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListLogicDatabasesResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String requestId;
-
-	private Boolean success;
-
-	private String errorMessage;
 
 	private String errorCode;
 
-	private Long totalCount;
+	private String errorMessage;
+
+	private Boolean success;
 
 	private List<LogicDatabase> logicDatabaseList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,22 +51,6 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getErrorCode() {
@@ -69,12 +61,20 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public Long getTotalCount() {
-		return this.totalCount;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<LogicDatabase> getLogicDatabaseList() {
@@ -87,28 +87,28 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 
 	public static class LogicDatabase {
 
-		private Boolean logic;
+		private String searchName;
 
 		private String databaseId;
+
+		private Boolean logic;
 
 		private String envType;
 
 		private String schemaName;
 
-		private String searchName;
-
 		private String dbType;
-
-		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
 
-		public Boolean getLogic() {
-			return this.logic;
+		private List<String> ownerIdList;
+
+		public String getSearchName() {
+			return this.searchName;
 		}
 
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
 		}
 
 		public String getDatabaseId() {
@@ -117,6 +117,14 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 
 		public void setDatabaseId(String databaseId) {
 			this.databaseId = databaseId;
+		}
+
+		public Boolean getLogic() {
+			return this.logic;
+		}
+
+		public void setLogic(Boolean logic) {
+			this.logic = logic;
 		}
 
 		public String getEnvType() {
@@ -135,14 +143,6 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 			this.schemaName = schemaName;
 		}
 
-		public String getSearchName() {
-			return this.searchName;
-		}
-
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
-		}
-
 		public String getDbType() {
 			return this.dbType;
 		}
@@ -151,20 +151,20 @@ public class ListLogicDatabasesResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
-		public List<String> getOwnerIdList() {
-			return this.ownerIdList;
-		}
-
-		public void setOwnerIdList(List<String> ownerIdList) {
-			this.ownerIdList = ownerIdList;
-		}
-
 		public List<String> getOwnerNameList() {
 			return this.ownerNameList;
 		}
 
 		public void setOwnerNameList(List<String> ownerNameList) {
 			this.ownerNameList = ownerNameList;
+		}
+
+		public List<String> getOwnerIdList() {
+			return this.ownerIdList;
+		}
+
+		public void setOwnerIdList(List<String> ownerIdList) {
+			this.ownerIdList = ownerIdList;
 		}
 	}
 

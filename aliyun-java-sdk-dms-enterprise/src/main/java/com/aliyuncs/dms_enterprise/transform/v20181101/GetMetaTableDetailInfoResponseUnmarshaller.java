@@ -29,25 +29,25 @@ public class GetMetaTableDetailInfoResponseUnmarshaller {
 	public static GetMetaTableDetailInfoResponse unmarshall(GetMetaTableDetailInfoResponse getMetaTableDetailInfoResponse, UnmarshallerContext _ctx) {
 		
 		getMetaTableDetailInfoResponse.setRequestId(_ctx.stringValue("GetMetaTableDetailInfoResponse.RequestId"));
-		getMetaTableDetailInfoResponse.setSuccess(_ctx.booleanValue("GetMetaTableDetailInfoResponse.Success"));
-		getMetaTableDetailInfoResponse.setErrorMessage(_ctx.stringValue("GetMetaTableDetailInfoResponse.ErrorMessage"));
 		getMetaTableDetailInfoResponse.setErrorCode(_ctx.stringValue("GetMetaTableDetailInfoResponse.ErrorCode"));
+		getMetaTableDetailInfoResponse.setErrorMessage(_ctx.stringValue("GetMetaTableDetailInfoResponse.ErrorMessage"));
+		getMetaTableDetailInfoResponse.setSuccess(_ctx.booleanValue("GetMetaTableDetailInfoResponse.Success"));
 
 		DetailInfo detailInfo = new DetailInfo();
 
 		List<Column> columnList = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList.Length"); i++) {
 			Column column = new Column();
-			column.setDescription(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Description"));
-			column.setColumnType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnType"));
-			column.setPosition(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Position"));
-			column.setDataLength(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataLength"));
-			column.setNullable(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Nullable"));
-			column.setColumnName(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnName"));
-			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].AutoIncrement"));
-			column.setDataPrecision(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataPrecision"));
-			column.setDataScale(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataScale"));
 			column.setColumnId(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnId"));
+			column.setColumnName(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnName"));
+			column.setColumnType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnType"));
+			column.setDescription(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Description"));
+			column.setPosition(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Position"));
+			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].AutoIncrement"));
+			column.setDataLength(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataLength"));
+			column.setDataScale(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataScale"));
+			column.setDataPrecision(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataPrecision"));
+			column.setNullable(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Nullable"));
 
 			columnList.add(column);
 		}
@@ -57,9 +57,9 @@ public class GetMetaTableDetailInfoResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList.Length"); i++) {
 			Index index = new Index();
 			index.setIndexName(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexName"));
-			index.setIndexType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexType"));
-			index.setUnique(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].Unique"));
 			index.setIndexId(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexId"));
+			index.setUnique(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].Unique"));
+			index.setIndexType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexType"));
 
 			List<String> indexColumns = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexColumns.Length"); j++) {

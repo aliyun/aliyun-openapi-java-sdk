@@ -27,22 +27,33 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 	   
 
+	private Long tid;
+
 	private String pluginType;
 
 	private String comment;
-
-	private Long tid;
 
 	private Map<Object,Object> pluginParam;
 
 	private String relatedUserList;
 	public CreateOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateOrder", "dmsenterprise");
+		super("dms-enterprise", "2018-11-01", "CreateOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	public String getPluginType() {
@@ -64,17 +75,6 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.comment = comment;
 		if(comment != null){
 			putQueryParameter("Comment", comment);
-		}
-	}
-
-	public Long getTid() {
-		return this.tid;
-	}
-
-	public void setTid(Long tid) {
-		this.tid = tid;
-		if(tid != null){
-			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

@@ -32,19 +32,31 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 
 	private Integer cropMode;
 
+	private String sourceType;
+
+	private String taskProfile;
+
 	private List<Long> layoutIdss;
 
 	private String taskId;
 
 	private List<ClockWidgets> clockWidgetss;
 
+	private Integer streamType;
+
 	private List<Watermarks> watermarkss;
 
 	private Long ownerId;
 
+	private List<String> subSpecUserss;
+
 	private String appId;
 
 	private List<Backgrounds> backgroundss;
+
+	private Integer mediaEncode;
+
+	private Integer mixMode;
 	public UpdateMPULayoutRequest() {
 		super("rtc", "2018-01-11", "UpdateMPULayout", "rtc");
 		setMethod(MethodType.POST);
@@ -114,6 +126,28 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 		}
 	}
 
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
+	public String getTaskProfile() {
+		return this.taskProfile;
+	}
+
+	public void setTaskProfile(String taskProfile) {
+		this.taskProfile = taskProfile;
+		if(taskProfile != null){
+			putQueryParameter("TaskProfile", taskProfile);
+		}
+	}
+
 	public List<Long> getLayoutIdss() {
 		return this.layoutIdss;
 	}
@@ -156,6 +190,17 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 		}	
 	}
 
+	public Integer getStreamType() {
+		return this.streamType;
+	}
+
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
+		if(streamType != null){
+			putQueryParameter("StreamType", streamType.toString());
+		}
+	}
+
 	public List<Watermarks> getWatermarkss() {
 		return this.watermarkss;
 	}
@@ -187,6 +232,19 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 		}
 	}
 
+	public List<String> getSubSpecUserss() {
+		return this.subSpecUserss;
+	}
+
+	public void setSubSpecUserss(List<String> subSpecUserss) {
+		this.subSpecUserss = subSpecUserss;	
+		if (subSpecUserss != null) {
+			for (int i = 0; i < subSpecUserss.size(); i++) {
+				putQueryParameter("SubSpecUsers." + (i + 1) , subSpecUserss.get(i));
+			}
+		}	
+	}
+
 	public String getAppId() {
 		return this.appId;
 	}
@@ -215,6 +273,28 @@ public class UpdateMPULayoutRequest extends RpcAcsRequest<UpdateMPULayoutRespons
 				putQueryParameter("Backgrounds." + (depth1 + 1) + ".ZOrder" , backgroundss.get(depth1).getZOrder());
 			}
 		}	
+	}
+
+	public Integer getMediaEncode() {
+		return this.mediaEncode;
+	}
+
+	public void setMediaEncode(Integer mediaEncode) {
+		this.mediaEncode = mediaEncode;
+		if(mediaEncode != null){
+			putQueryParameter("MediaEncode", mediaEncode.toString());
+		}
+	}
+
+	public Integer getMixMode() {
+		return this.mixMode;
+	}
+
+	public void setMixMode(Integer mixMode) {
+		this.mixMode = mixMode;
+		if(mixMode != null){
+			putQueryParameter("MixMode", mixMode.toString());
+		}
 	}
 
 	public static class UserPanes {

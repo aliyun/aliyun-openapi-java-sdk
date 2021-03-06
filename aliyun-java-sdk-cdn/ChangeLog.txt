@@ -1,3 +1,6 @@
+2021-03-03 Version: 3.6.2
+- Delete API.
+
 2020-12-17 Version: 3.6.1
 - Update DeleteCdnDomain.
 

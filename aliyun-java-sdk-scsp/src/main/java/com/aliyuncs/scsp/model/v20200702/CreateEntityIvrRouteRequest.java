@@ -45,7 +45,7 @@ public class CreateEntityIvrRouteRequest extends RpcAcsRequest<CreateEntityIvrRo
 
 	private Long serviceId;
 	public CreateEntityIvrRouteRequest() {
-		super("scsp", "2020-07-02", "CreateEntityIvrRoute");
+		super("scsp", "2020-07-02", "CreateEntityIvrRoute", "scsp");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

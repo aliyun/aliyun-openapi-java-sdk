@@ -25,6 +25,8 @@ import com.aliyuncs.alidns.Endpoint;
 public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusResponse> {
 	   
 
+	private String line;
+
 	private String domainName;
 
 	private String type;
@@ -43,6 +45,17 @@ public class SetDNSSLBStatusRequest extends RpcAcsRequest<SetDNSSLBStatusRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getLine() {
+		return this.line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+		if(line != null){
+			putQueryParameter("Line", line);
+		}
 	}
 
 	public String getDomainName() {

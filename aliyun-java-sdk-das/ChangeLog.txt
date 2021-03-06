@@ -1,3 +1,11 @@
+2021-03-03 Version: 1.0.3
+- Support Redis CacheAnalysis using backupset.
+- Support Instance Inspection API.
+
+2021-03-02 Version: 1.0.3
+- Support Redis CacheAnalysis using backupset.
+- Support Instance Inspection API.
+
 2020-12-01 Version: 1.0.5
 - Support new API GetAutonomousNotifyEventsInRange and GetAutonomousNotifyEventContent.
 
