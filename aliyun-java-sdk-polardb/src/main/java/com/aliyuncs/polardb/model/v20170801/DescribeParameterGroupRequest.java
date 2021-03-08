@@ -22,22 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLExplorerVersionRequest extends RpcAcsRequest<DescribeSQLExplorerVersionResponse> {
+public class DescribeParameterGroupRequest extends RpcAcsRequest<DescribeParameterGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
-	private String dBInstanceId;
+	private String parameterGroupId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeSQLExplorerVersionRequest() {
-		super("polardb", "2017-08-01", "DescribeSQLExplorerVersion", "polardb");
+	public DescribeParameterGroupRequest() {
+		super("polardb", "2017-08-01", "DescribeParameterGroup", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +54,14 @@ public class DescribeSQLExplorerVersionRequest extends RpcAcsRequest<DescribeSQL
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
+	public String getParameterGroupId() {
+		return this.parameterGroupId;
 	}
 
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setParameterGroupId(String parameterGroupId) {
+		this.parameterGroupId = parameterGroupId;
+		if(parameterGroupId != null){
+			putQueryParameter("ParameterGroupId", parameterGroupId);
 		}
 	}
 
@@ -112,8 +99,8 @@ public class DescribeSQLExplorerVersionRequest extends RpcAcsRequest<DescribeSQL
 	}
 
 	@Override
-	public Class<DescribeSQLExplorerVersionResponse> getResponseClass() {
-		return DescribeSQLExplorerVersionResponse.class;
+	public Class<DescribeParameterGroupResponse> getResponseClass() {
+		return DescribeParameterGroupResponse.class;
 	}
 
 }

@@ -15,30 +15,16 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.CreateDBClusterResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.CreateParameterGroupResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDBClusterResponse extends AcsResponse {
-
-	private String resourceGroupId;
+public class CreateParameterGroupResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String dBClusterId;
-
-	private String orderId;
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,24 +34,13 @@ public class CreateDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getOrderId() {
-		return this.orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
+	@Override
+	public CreateParameterGroupResponse getInstance(UnmarshallerContext context) {
+		return	CreateParameterGroupResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	CreateDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

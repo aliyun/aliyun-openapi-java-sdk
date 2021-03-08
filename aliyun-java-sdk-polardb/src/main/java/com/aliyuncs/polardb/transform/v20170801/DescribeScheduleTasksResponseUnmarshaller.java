@@ -40,17 +40,16 @@ public class DescribeScheduleTasksResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeScheduleTasksResponse.Data.TimerInfos.Length"); i++) {
 			TimerInfosItem timerInfosItem = new TimerInfosItem();
 			timerInfosItem.setStatus(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].Status"));
-			timerInfosItem.setGmtCreate(_ctx.longValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].GmtCreate"));
 			timerInfosItem.setAction(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].Action"));
 			timerInfosItem.setTaskId(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].TaskId"));
 			timerInfosItem.setPlannedTime(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].PlannedTime"));
+			timerInfosItem.setDbClusterDescription(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].DbClusterDescription"));
 			timerInfosItem.setPlannedStartTime(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].PlannedStartTime"));
 			timerInfosItem.setDBClusterId(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].DBClusterId"));
-			timerInfosItem.setGmtModified(_ctx.longValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].GmtModified"));
 			timerInfosItem.setRegion(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].Region"));
 			timerInfosItem.setOrderId(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].OrderId"));
 			timerInfosItem.setPlannedEndTime(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].PlannedEndTime"));
-			timerInfosItem.setAliUid(_ctx.integerValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].AliUid"));
+			timerInfosItem.setDbClusterStatus(_ctx.stringValue("DescribeScheduleTasksResponse.Data.TimerInfos["+ i +"].DbClusterStatus"));
 
 			timerInfos.add(timerInfosItem);
 		}

@@ -22,26 +22,28 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClusterParametersResponse> {
+public class CreateParameterGroupRequest extends RpcAcsRequest<CreateParameterGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String parameterGroupId;
-
-	private String effectiveTime;
-
 	private String resourceOwnerAccount;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
+	private String dBType;
+
+	private String dBVersion;
+
+	private String parameterGroupName;
+
 	private String parameters;
-	public ModifyDBClusterParametersRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb");
+
+	private String parameterGroupDesc;
+	public CreateParameterGroupRequest() {
+		super("polardb", "2017-08-01", "CreateParameterGroup", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,28 +62,6 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		}
 	}
 
-	public String getParameterGroupId() {
-		return this.parameterGroupId;
-	}
-
-	public void setParameterGroupId(String parameterGroupId) {
-		this.parameterGroupId = parameterGroupId;
-		if(parameterGroupId != null){
-			putQueryParameter("ParameterGroupId", parameterGroupId);
-		}
-	}
-
-	public String getEffectiveTime() {
-		return this.effectiveTime;
-	}
-
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -90,17 +70,6 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -126,6 +95,39 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		}
 	}
 
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
+		}
+	}
+
+	public String getParameterGroupName() {
+		return this.parameterGroupName;
+	}
+
+	public void setParameterGroupName(String parameterGroupName) {
+		this.parameterGroupName = parameterGroupName;
+		if(parameterGroupName != null){
+			putQueryParameter("ParameterGroupName", parameterGroupName);
+		}
+	}
+
 	public String getParameters() {
 		return this.parameters;
 	}
@@ -137,9 +139,20 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		}
 	}
 
+	public String getParameterGroupDesc() {
+		return this.parameterGroupDesc;
+	}
+
+	public void setParameterGroupDesc(String parameterGroupDesc) {
+		this.parameterGroupDesc = parameterGroupDesc;
+		if(parameterGroupDesc != null){
+			putQueryParameter("ParameterGroupDesc", parameterGroupDesc);
+		}
+	}
+
 	@Override
-	public Class<ModifyDBClusterParametersResponse> getResponseClass() {
-		return ModifyDBClusterParametersResponse.class;
+	public Class<CreateParameterGroupResponse> getResponseClass() {
+		return CreateParameterGroupResponse.class;
 	}
 
 }

@@ -22,22 +22,22 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSqlLogTrialStatusRequest extends RpcAcsRequest<DescribeSqlLogTrialStatusResponse> {
+public class DescribeParameterGroupsRequest extends RpcAcsRequest<DescribeParameterGroupsResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String securityToken;
-
-	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeSqlLogTrialStatusRequest() {
-		super("polardb", "2017-08-01", "DescribeSqlLogTrialStatus", "polardb");
+
+	private String dBType;
+
+	private String dBVersion;
+	public DescribeParameterGroupsRequest() {
+		super("polardb", "2017-08-01", "DescribeParameterGroups", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,28 +53,6 @@ public class DescribeSqlLogTrialStatusRequest extends RpcAcsRequest<DescribeSqlL
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -111,9 +89,31 @@ public class DescribeSqlLogTrialStatusRequest extends RpcAcsRequest<DescribeSqlL
 		}
 	}
 
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
+		}
+	}
+
 	@Override
-	public Class<DescribeSqlLogTrialStatusResponse> getResponseClass() {
-		return DescribeSqlLogTrialStatusResponse.class;
+	public Class<DescribeParameterGroupsResponse> getResponseClass() {
+		return DescribeParameterGroupsResponse.class;
 	}
 
 }

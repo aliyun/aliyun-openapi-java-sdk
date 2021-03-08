@@ -22,26 +22,20 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClusterParametersResponse> {
+public class DeleteParameterGroupRequest extends RpcAcsRequest<DeleteParameterGroupResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String parameterGroupId;
 
-	private String effectiveTime;
-
 	private String resourceOwnerAccount;
-
-	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String parameters;
-	public ModifyDBClusterParametersRequest() {
-		super("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb");
+	public DeleteParameterGroupRequest() {
+		super("polardb", "2017-08-01", "DeleteParameterGroup", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,17 +65,6 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		}
 	}
 
-	public String getEffectiveTime() {
-		return this.effectiveTime;
-	}
-
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -90,17 +73,6 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-		if(dBClusterId != null){
-			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -126,20 +98,9 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		}
 	}
 
-	public String getParameters() {
-		return this.parameters;
-	}
-
-	public void setParameters(String parameters) {
-		this.parameters = parameters;
-		if(parameters != null){
-			putQueryParameter("Parameters", parameters);
-		}
-	}
-
 	@Override
-	public Class<ModifyDBClusterParametersResponse> getResponseClass() {
-		return ModifyDBClusterParametersResponse.class;
+	public Class<DeleteParameterGroupResponse> getResponseClass() {
+		return DeleteParameterGroupResponse.class;
 	}
 
 }

@@ -27,6 +27,8 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 
 	private Long resourceOwnerId;
 
+	private String upgradeType;
+
 	private String plannedEndTime;
 
 	private String resourceOwnerAccount;
@@ -57,6 +59,17 @@ public class UpgradeDBClusterVersionRequest extends RpcAcsRequest<UpgradeDBClust
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getUpgradeType() {
+		return this.upgradeType;
+	}
+
+	public void setUpgradeType(String upgradeType) {
+		this.upgradeType = upgradeType;
+		if(upgradeType != null){
+			putQueryParameter("UpgradeType", upgradeType);
 		}
 	}
 
