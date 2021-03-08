@@ -36,6 +36,8 @@ public class CreateAndStartBackupPlanResponse extends AcsResponse {
 
 	private String backupPlanId;
 
+	private Boolean createBackupSet;
+
 	private String orderId;
 
 	public Boolean getSuccess() {
@@ -84,6 +86,14 @@ public class CreateAndStartBackupPlanResponse extends AcsResponse {
 
 	public void setBackupPlanId(String backupPlanId) {
 		this.backupPlanId = backupPlanId;
+	}
+
+	public Boolean getCreateBackupSet() {
+		return this.createBackupSet;
+	}
+
+	public void setCreateBackupSet(Boolean createBackupSet) {
+		this.createBackupSet = createBackupSet;
 	}
 
 	public String getOrderId() {
