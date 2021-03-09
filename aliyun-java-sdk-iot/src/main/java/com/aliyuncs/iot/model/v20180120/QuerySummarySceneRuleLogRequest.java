@@ -39,7 +39,7 @@ public class QuerySummarySceneRuleLogRequest extends RpcAcsRequest<QuerySummaryS
 
 	private String status;
 	public QuerySummarySceneRuleLogRequest() {
-		super("Iot", "2018-01-20", "QuerySummarySceneRuleLog", "iot");
+		super("Iot", "2018-01-20", "QuerySummarySceneRuleLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -36,7 +36,7 @@ public class CreateEdgeInstanceChannelRequest extends RpcAcsRequest<CreateEdgeIn
 
 	private String instanceId;
 	public CreateEdgeInstanceChannelRequest() {
-		super("Iot", "2018-01-20", "CreateEdgeInstanceChannel", "iot");
+		super("Iot", "2018-01-20", "CreateEdgeInstanceChannel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

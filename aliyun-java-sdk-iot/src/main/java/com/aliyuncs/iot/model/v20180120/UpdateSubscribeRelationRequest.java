@@ -56,7 +56,7 @@ public class UpdateSubscribeRelationRequest extends RpcAcsRequest<UpdateSubscrib
 
 	private String mnsConfiguration;
 	public UpdateSubscribeRelationRequest() {
-		super("Iot", "2018-01-20", "UpdateSubscribeRelation", "iot");
+		super("Iot", "2018-01-20", "UpdateSubscribeRelation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

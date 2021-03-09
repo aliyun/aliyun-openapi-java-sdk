@@ -31,7 +31,7 @@ public class DeleteOTAModuleRequest extends RpcAcsRequest<DeleteOTAModuleRespons
 
 	private String productKey;
 	public DeleteOTAModuleRequest() {
-		super("Iot", "2018-01-20", "DeleteOTAModule", "iot");
+		super("Iot", "2018-01-20", "DeleteOTAModule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class PublishThingModelRequest extends RpcAcsRequest<PublishThingModelRes
 
 	private String modelVersion;
 	public PublishThingModelRequest() {
-		super("Iot", "2018-01-20", "PublishThingModel", "iot");
+		super("Iot", "2018-01-20", "PublishThingModel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

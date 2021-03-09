@@ -1,3 +1,6 @@
+2021-03-09 Version: 1.0.0-20210309
+- Generated 2018-01-20 for `Iot`.
+
 2021-02-08 Version: 7.21.1
 - Fix IoT Studio BatchBindDevicesIntoProject API return datatype.
 - Fix IoT Studio BatchBindProductsIntoProject API return datatype.

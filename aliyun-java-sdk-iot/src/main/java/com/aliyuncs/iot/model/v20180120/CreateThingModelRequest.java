@@ -35,7 +35,7 @@ public class CreateThingModelRequest extends RpcAcsRequest<CreateThingModelRespo
 
 	private String functionBlockId;
 	public CreateThingModelRequest() {
-		super("Iot", "2018-01-20", "CreateThingModel", "iot");
+		super("Iot", "2018-01-20", "CreateThingModel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

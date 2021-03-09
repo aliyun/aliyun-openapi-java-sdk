@@ -31,7 +31,7 @@ public class UpdateThingModelValidationConfigRequest extends RpcAcsRequest<Updat
 
 	private String productKey;
 	public UpdateThingModelValidationConfigRequest() {
-		super("Iot", "2018-01-20", "UpdateThingModelValidationConfig", "iot");
+		super("Iot", "2018-01-20", "UpdateThingModelValidationConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

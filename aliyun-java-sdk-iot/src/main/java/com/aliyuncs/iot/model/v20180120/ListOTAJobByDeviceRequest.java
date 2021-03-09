@@ -37,7 +37,7 @@ public class ListOTAJobByDeviceRequest extends RpcAcsRequest<ListOTAJobByDeviceR
 
 	private String deviceName;
 	public ListOTAJobByDeviceRequest() {
-		super("Iot", "2018-01-20", "ListOTAJobByDevice", "iot");
+		super("Iot", "2018-01-20", "ListOTAJobByDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
