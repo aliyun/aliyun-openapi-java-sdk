@@ -65,6 +65,7 @@ public class ListInstancesResponseUnmarshaller {
 			instance.setDqcDescription(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].DqcDescription"));
 			instance.setErrorMessage(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].ErrorMessage"));
 			instance.setRelatedFlowId(_ctx.longValue("ListInstancesResponse.Data.Instances["+ i +"].RelatedFlowId"));
+			instance.setTaskType(_ctx.stringValue("ListInstancesResponse.Data.Instances["+ i +"].TaskType"));
 
 			instances.add(instance);
 		}

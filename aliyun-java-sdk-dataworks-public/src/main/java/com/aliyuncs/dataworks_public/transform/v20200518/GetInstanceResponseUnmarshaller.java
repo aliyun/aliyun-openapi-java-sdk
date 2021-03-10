@@ -54,6 +54,7 @@ public class GetInstanceResponseUnmarshaller {
 		data.setDqcDescription(_ctx.stringValue("GetInstanceResponse.Data.DqcDescription"));
 		data.setErrorMessage(_ctx.stringValue("GetInstanceResponse.Data.ErrorMessage"));
 		data.setRelatedFlowId(_ctx.longValue("GetInstanceResponse.Data.RelatedFlowId"));
+		data.setTaskType(_ctx.stringValue("GetInstanceResponse.Data.TaskType"));
 		getInstanceResponse.setData(data);
 	 
 	 	return getInstanceResponse;

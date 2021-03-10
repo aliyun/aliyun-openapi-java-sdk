@@ -46,6 +46,7 @@ public class GetManualDagInstancesResponseUnmarshaller {
 			instancesItem.setBeginRunningTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].BeginRunningTime"));
 			instancesItem.setParamValues(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].ParamValues"));
 			instancesItem.setFinishTime(_ctx.longValue("GetManualDagInstancesResponse.Instances["+ i +"].FinishTime"));
+			instancesItem.setTaskType(_ctx.stringValue("GetManualDagInstancesResponse.Instances["+ i +"].TaskType"));
 
 			instances.add(instancesItem);
 		}

@@ -77,6 +77,8 @@ public class GetManualDagInstancesResponse extends AcsResponse {
 
 		private Long finishTime;
 
+		private String taskType;
+
 		public Long getNodeId() {
 			return this.nodeId;
 		}
@@ -195,6 +197,14 @@ public class GetManualDagInstancesResponse extends AcsResponse {
 
 		public void setFinishTime(Long finishTime) {
 			this.finishTime = finishTime;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
 		}
 	}
 

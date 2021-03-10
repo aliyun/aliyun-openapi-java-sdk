@@ -134,6 +134,8 @@ public class GetInstanceResponse extends AcsResponse {
 
 		private Long relatedFlowId;
 
+		private String taskType;
+
 		public Long getNodeId() {
 			return this.nodeId;
 		}
@@ -324,6 +326,14 @@ public class GetInstanceResponse extends AcsResponse {
 
 		public void setRelatedFlowId(Long relatedFlowId) {
 			this.relatedFlowId = relatedFlowId;
+		}
+
+		public String getTaskType() {
+			return this.taskType;
+		}
+
+		public void setTaskType(String taskType) {
+			this.taskType = taskType;
 		}
 	}
 
