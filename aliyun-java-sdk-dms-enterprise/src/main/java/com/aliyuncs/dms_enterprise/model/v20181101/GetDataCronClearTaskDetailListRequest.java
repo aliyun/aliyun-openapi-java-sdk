@@ -22,14 +22,18 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitStructSyncOrderApprovalResponse> {
+public class GetDataCronClearTaskDetailListRequest extends RpcAcsRequest<GetDataCronClearTaskDetailListResponse> {
 	   
 
 	private Long orderId;
 
+	private Long pageNumber;
+
 	private Long tid;
-	public SubmitStructSyncOrderApprovalRequest() {
-		super("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval");
+
+	private Long pageSize;
+	public GetDataCronClearTaskDetailListRequest() {
+		super("dms-enterprise", "2018-11-01", "GetDataCronClearTaskDetailList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,6 +52,17 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 		}
 	}
 
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public Long getTid() {
 		return this.tid;
 	}
@@ -59,9 +74,20 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 		}
 	}
 
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	@Override
-	public Class<SubmitStructSyncOrderApprovalResponse> getResponseClass() {
-		return SubmitStructSyncOrderApprovalResponse.class;
+	public Class<GetDataCronClearTaskDetailListResponse> getResponseClass() {
+		return GetDataCronClearTaskDetailListResponse.class;
 	}
 
 }

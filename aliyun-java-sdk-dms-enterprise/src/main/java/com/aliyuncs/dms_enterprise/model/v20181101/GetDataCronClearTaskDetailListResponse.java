@@ -14,15 +14,18 @@
 
 package com.aliyuncs.dms_enterprise.model.v20181101;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dms_enterprise.transform.v20181101.GetStructSyncJobDetailResponseUnmarshaller;
+import com.aliyuncs.dms_enterprise.transform.v20181101.GetDataCronClearTaskDetailListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetStructSyncJobDetailResponse extends AcsResponse {
+public class GetDataCronClearTaskDetailListResponse extends AcsResponse {
+
+	private Long totalCount;
 
 	private String requestId;
 
@@ -32,7 +35,15 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private StructSyncJobDetail structSyncJobDetail;
+	private List<DataCronClearTaskDetail> dataCronClearTaskDetailList;
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,39 +77,23 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public StructSyncJobDetail getStructSyncJobDetail() {
-		return this.structSyncJobDetail;
+	public List<DataCronClearTaskDetail> getDataCronClearTaskDetailList() {
+		return this.dataCronClearTaskDetailList;
 	}
 
-	public void setStructSyncJobDetail(StructSyncJobDetail structSyncJobDetail) {
-		this.structSyncJobDetail = structSyncJobDetail;
+	public void setDataCronClearTaskDetailList(List<DataCronClearTaskDetail> dataCronClearTaskDetailList) {
+		this.dataCronClearTaskDetailList = dataCronClearTaskDetailList;
 	}
 
-	public static class StructSyncJobDetail {
-
-		private Long sqlCount;
+	public static class DataCronClearTaskDetail {
 
 		private String jobStatus;
 
-		private String message;
+		private String createTime;
 
-		private Long tableAnalyzed;
-
-		private Long tableCount;
-
-		private Long executeCount;
-
-		private String securityRule;
+		private Long actualAffectRows;
 
 		private Long dBTaskGroupId;
-
-		public Long getSqlCount() {
-			return this.sqlCount;
-		}
-
-		public void setSqlCount(Long sqlCount) {
-			this.sqlCount = sqlCount;
-		}
 
 		public String getJobStatus() {
 			return this.jobStatus;
@@ -108,44 +103,20 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 			this.jobStatus = jobStatus;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getCreateTime() {
+			return this.createTime;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
-		public Long getTableAnalyzed() {
-			return this.tableAnalyzed;
+		public Long getActualAffectRows() {
+			return this.actualAffectRows;
 		}
 
-		public void setTableAnalyzed(Long tableAnalyzed) {
-			this.tableAnalyzed = tableAnalyzed;
-		}
-
-		public Long getTableCount() {
-			return this.tableCount;
-		}
-
-		public void setTableCount(Long tableCount) {
-			this.tableCount = tableCount;
-		}
-
-		public Long getExecuteCount() {
-			return this.executeCount;
-		}
-
-		public void setExecuteCount(Long executeCount) {
-			this.executeCount = executeCount;
-		}
-
-		public String getSecurityRule() {
-			return this.securityRule;
-		}
-
-		public void setSecurityRule(String securityRule) {
-			this.securityRule = securityRule;
+		public void setActualAffectRows(Long actualAffectRows) {
+			this.actualAffectRows = actualAffectRows;
 		}
 
 		public Long getDBTaskGroupId() {
@@ -158,8 +129,8 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetStructSyncJobDetailResponse getInstance(UnmarshallerContext context) {
-		return	GetStructSyncJobDetailResponseUnmarshaller.unmarshall(this, context);
+	public GetDataCronClearTaskDetailListResponse getInstance(UnmarshallerContext context) {
+		return	GetDataCronClearTaskDetailListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

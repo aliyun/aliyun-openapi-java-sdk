@@ -22,14 +22,14 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitStructSyncOrderApprovalResponse> {
+public class GetDataCorrectTaskDetailRequest extends RpcAcsRequest<GetDataCorrectTaskDetailResponse> {
 	   
 
 	private Long orderId;
 
 	private Long tid;
-	public SubmitStructSyncOrderApprovalRequest() {
-		super("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval");
+	public GetDataCorrectTaskDetailRequest() {
+		super("dms-enterprise", "2018-11-01", "GetDataCorrectTaskDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -60,8 +60,8 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 	}
 
 	@Override
-	public Class<SubmitStructSyncOrderApprovalResponse> getResponseClass() {
-		return SubmitStructSyncOrderApprovalResponse.class;
+	public Class<GetDataCorrectTaskDetailResponse> getResponseClass() {
+		return GetDataCorrectTaskDetailResponse.class;
 	}
 
 }

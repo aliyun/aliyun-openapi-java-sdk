@@ -35,6 +35,7 @@ public class GetDataCorrectOrderDetailResponseUnmarshaller {
 		getDataCorrectOrderDetailResponse.setSuccess(_ctx.booleanValue("GetDataCorrectOrderDetailResponse.Success"));
 
 		DataCorrectOrderDetail dataCorrectOrderDetail = new DataCorrectOrderDetail();
+		dataCorrectOrderDetail.setStatus(_ctx.stringValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.Status"));
 
 		OrderDetail orderDetail = new OrderDetail();
 		orderDetail.setEstimateAffectRows(_ctx.longValue("GetDataCorrectOrderDetailResponse.DataCorrectOrderDetail.OrderDetail.EstimateAffectRows"));

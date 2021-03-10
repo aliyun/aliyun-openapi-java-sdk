@@ -36,6 +36,7 @@ public class GetStructSyncJobDetailResponseUnmarshaller {
 		structSyncJobDetail.setTableCount(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.TableCount"));
 		structSyncJobDetail.setExecuteCount(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.ExecuteCount"));
 		structSyncJobDetail.setSecurityRule(_ctx.stringValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.SecurityRule"));
+		structSyncJobDetail.setDBTaskGroupId(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.DBTaskGroupId"));
 		getStructSyncJobDetailResponse.setStructSyncJobDetail(structSyncJobDetail);
 	 
 	 	return getStructSyncJobDetailResponse;

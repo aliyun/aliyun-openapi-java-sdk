@@ -31,6 +31,8 @@ public class GetStructSyncJobAnalyzeResultRequest extends RpcAcsRequest<GetStruc
 
 	private Long pageNumber;
 
+	private Long tid;
+
 	private Long pageSize;
 	public GetStructSyncJobAnalyzeResultRequest() {
 		super("dms-enterprise", "2018-11-01", "GetStructSyncJobAnalyzeResult");
@@ -71,6 +73,17 @@ public class GetStructSyncJobAnalyzeResultRequest extends RpcAcsRequest<GetStruc
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

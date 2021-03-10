@@ -22,14 +22,14 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitStructSyncOrderApprovalResponse> {
+public class GetTableTopologyRequest extends RpcAcsRequest<GetTableTopologyResponse> {
 	   
 
-	private Long orderId;
+	private String tableGuid;
 
 	private Long tid;
-	public SubmitStructSyncOrderApprovalRequest() {
-		super("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval");
+	public GetTableTopologyRequest() {
+		super("dms-enterprise", "2018-11-01", "GetTableTopology");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 		} catch (Exception e) {}
 	}
 
-	public Long getOrderId() {
-		return this.orderId;
+	public String getTableGuid() {
+		return this.tableGuid;
 	}
 
-	public void setOrderId(Long orderId) {
-		this.orderId = orderId;
-		if(orderId != null){
-			putQueryParameter("OrderId", orderId.toString());
+	public void setTableGuid(String tableGuid) {
+		this.tableGuid = tableGuid;
+		if(tableGuid != null){
+			putQueryParameter("TableGuid", tableGuid);
 		}
 	}
 
@@ -60,8 +60,8 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 	}
 
 	@Override
-	public Class<SubmitStructSyncOrderApprovalResponse> getResponseClass() {
-		return SubmitStructSyncOrderApprovalResponse.class;
+	public Class<GetTableTopologyResponse> getResponseClass() {
+		return GetTableTopologyResponse.class;
 	}
 
 }

@@ -29,6 +29,8 @@ public class CreateUploadOSSFileJobRequest extends RpcAcsRequest<CreateUploadOSS
 
 	private String fileSource;
 
+	private Long tid;
+
 	private String fileName;
 
 	@SerializedName("uploadTarget")
@@ -50,6 +52,17 @@ public class CreateUploadOSSFileJobRequest extends RpcAcsRequest<CreateUploadOSS
 		this.fileSource = fileSource;
 		if(fileSource != null){
 			putQueryParameter("FileSource", fileSource);
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 
