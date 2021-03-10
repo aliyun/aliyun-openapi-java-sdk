@@ -142,7 +142,7 @@ Please make sure to read the [Contributing Guide](CONTRIBUTING.md) before making
 
 ## References
 * [Alibaba Cloud Regions & Endpoints](https://developer.aliyun.com/endpoints)
-* [OpenAPI Explorer](https://api.aliyun.com/)
+* [Alibab Cloud OpenAPI Portal](https://next.api.aliyun.com/)
 * [Latest Release](https://github.com/aliyun/aliyun-openapi-java-sdk)
 
 ## License
