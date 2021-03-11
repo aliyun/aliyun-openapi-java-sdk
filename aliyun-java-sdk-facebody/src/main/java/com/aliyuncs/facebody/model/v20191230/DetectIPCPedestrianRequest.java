@@ -29,9 +29,11 @@ public class DetectIPCPedestrianRequest extends RpcAcsRequest<DetectIPCPedestria
 
 	private String imageData;
 
+	private String imageURL;
+
 	private Integer width;
 	public DetectIPCPedestrianRequest() {
-		super("facebody", "2019-12-30", "DetectIPCPedestrian");
+		super("facebody", "2019-12-30", "DetectIPCPedestrian", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class DetectIPCPedestrianRequest extends RpcAcsRequest<DetectIPCPedestria
 		this.imageData = imageData;
 		if(imageData != null){
 			putBodyParameter("ImageData", imageData);
+		}
+	}
+
+	public String getImageURL() {
+		return this.imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+		if(imageURL != null){
+			putBodyParameter("ImageURL", imageURL);
 		}
 	}
 

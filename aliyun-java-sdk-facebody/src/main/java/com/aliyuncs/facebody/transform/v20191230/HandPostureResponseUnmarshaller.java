@@ -23,10 +23,10 @@ import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.MetaObject
 import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output;
 import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result;
 import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Box;
-import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Box.Position2;
+import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Box.Position;
 import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Hands;
 import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Hands.KeyPoint;
-import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Hands.KeyPoint.Position;
+import com.aliyuncs.facebody.model.v20191230.HandPostureResponse.Data.Output.Result.Hands.KeyPoint.Position2;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -52,6 +52,24 @@ public class HandPostureResponseUnmarshaller {
 			for (int j = 0; j < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
 
+				Box box = new Box();
+				box.setConfident(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Confident"));
+
+				List<Position> positions = new ArrayList<Position>();
+				for (int k = 0; k < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Positions.Length"); k++) {
+					Position position = new Position();
+
+					List<Float> points = new ArrayList<Float>();
+					for (int l = 0; l < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Positions["+ k +"].Points.Length"); l++) {
+						points.add(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Positions["+ k +"].Points["+ l +"]"));
+					}
+					position.setPoints(points);
+
+					positions.add(position);
+				}
+				box.setPositions(positions);
+				result.setBox(box);
+
 				Hands hands = new Hands();
 				hands.setConfident(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Hands.Confident"));
 
@@ -60,42 +78,24 @@ public class HandPostureResponseUnmarshaller {
 					KeyPoint keyPoint = new KeyPoint();
 					keyPoint.setLabel(_ctx.stringValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Hands.KeyPoints["+ k +"].Label"));
 
-					List<Position> positions = new ArrayList<Position>();
+					List<Position2> positions1 = new ArrayList<Position2>();
 					for (int l = 0; l < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Hands.KeyPoints["+ k +"].Positions.Length"); l++) {
-						Position position = new Position();
+						Position2 position2 = new Position2();
 
-						List<Float> points = new ArrayList<Float>();
+						List<Float> points3 = new ArrayList<Float>();
 						for (int m = 0; m < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Hands.KeyPoints["+ k +"].Positions["+ l +"].Points.Length"); m++) {
-							points.add(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Hands.KeyPoints["+ k +"].Positions["+ l +"].Points["+ m +"]"));
+							points3.add(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Hands.KeyPoints["+ k +"].Positions["+ l +"].Points["+ m +"]"));
 						}
-						position.setPoints(points);
+						position2.setPoints3(points3);
 
-						positions.add(position);
+						positions1.add(position2);
 					}
-					keyPoint.setPositions(positions);
+					keyPoint.setPositions1(positions1);
 
 					keyPoints.add(keyPoint);
 				}
 				hands.setKeyPoints(keyPoints);
 				result.setHands(hands);
-
-				Box box = new Box();
-				box.setConfident(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Confident"));
-
-				List<Position2> positions1 = new ArrayList<Position2>();
-				for (int k = 0; k < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Positions.Length"); k++) {
-					Position2 position2 = new Position2();
-
-					List<Float> points3 = new ArrayList<Float>();
-					for (int l = 0; l < _ctx.lengthValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Positions["+ k +"].Points.Length"); l++) {
-						points3.add(_ctx.floatValue("HandPostureResponse.Data.Outputs["+ i +"].Results["+ j +"].Box.Positions["+ k +"].Points["+ l +"]"));
-					}
-					position2.setPoints3(points3);
-
-					positions1.add(position2);
-				}
-				box.setPositions1(positions1);
-				result.setBox(box);
 
 				results.add(result);
 			}

@@ -28,11 +28,13 @@ public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionRespons
 
 	private Integer type;
 
+	private String videoData;
+
 	private List<URLList> uRLLists;
 
 	private String videoUrl;
 	public RecognizeActionRequest() {
-		super("facebody", "2019-12-30", "RecognizeAction");
+		super("facebody", "2019-12-30", "RecognizeAction", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,17 @@ public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionRespons
 		}
 	}
 
+	public String getVideoData() {
+		return this.videoData;
+	}
+
+	public void setVideoData(String videoData) {
+		this.videoData = videoData;
+		if(videoData != null){
+			putBodyParameter("VideoData", videoData);
+		}
+	}
+
 	public List<URLList> getURLLists() {
 		return this.uRLLists;
 	}
@@ -59,6 +72,7 @@ public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionRespons
 		this.uRLLists = uRLLists;	
 		if (uRLLists != null) {
 			for (int depth1 = 0; depth1 < uRLLists.size(); depth1++) {
+				putBodyParameter("URLList." + (depth1 + 1) + ".imageData" , uRLLists.get(depth1).getImageData());
 				putBodyParameter("URLList." + (depth1 + 1) + ".URL" , uRLLists.get(depth1).getURL());
 			}
 		}	
@@ -77,7 +91,17 @@ public class RecognizeActionRequest extends RpcAcsRequest<RecognizeActionRespons
 
 	public static class URLList {
 
+		private String imageData;
+
 		private String uRL;
+
+		public String getImageData() {
+			return this.imageData;
+		}
+
+		public void setImageData(String imageData) {
+			this.imageData = imageData;
+		}
 
 		public String getURL() {
 			return this.uRL;

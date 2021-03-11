@@ -31,7 +31,7 @@ public class MergeImageFaceRequest extends RpcAcsRequest<MergeImageFaceResponse>
 
 	private String imageURL;
 	public MergeImageFaceRequest() {
-		super("facebody", "2019-12-30", "MergeImageFace");
+		super("facebody", "2019-12-30", "MergeImageFace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,16 +25,42 @@ import com.aliyuncs.facebody.Endpoint;
 public class VerifyFaceMaskRequest extends RpcAcsRequest<VerifyFaceMaskResponse> {
 	   
 
+	private String refData;
+
+	private String imageData;
+
 	private String imageURL;
 
 	private String refUrl;
 	public VerifyFaceMaskRequest() {
-		super("facebody", "2019-12-30", "VerifyFaceMask");
+		super("facebody", "2019-12-30", "VerifyFaceMask", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getRefData() {
+		return this.refData;
+	}
+
+	public void setRefData(String refData) {
+		this.refData = refData;
+		if(refData != null){
+			putBodyParameter("RefData", refData);
+		}
+	}
+
+	public String getImageData() {
+		return this.imageData;
+	}
+
+	public void setImageData(String imageData) {
+		this.imageData = imageData;
+		if(imageData != null){
+			putBodyParameter("ImageData", imageData);
+		}
 	}
 
 	public String getImageURL() {

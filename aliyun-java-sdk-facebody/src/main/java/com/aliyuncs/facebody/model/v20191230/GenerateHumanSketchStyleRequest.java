@@ -27,7 +27,7 @@ public class GenerateHumanSketchStyleRequest extends RpcAcsRequest<GenerateHuman
 
 	private String imageURL;
 	public GenerateHumanSketchStyleRequest() {
-		super("facebody", "2019-12-30", "GenerateHumanSketchStyle");
+		super("facebody", "2019-12-30", "GenerateHumanSketchStyle", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

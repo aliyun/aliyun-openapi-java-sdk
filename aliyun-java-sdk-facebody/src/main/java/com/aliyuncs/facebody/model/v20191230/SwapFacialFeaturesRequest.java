@@ -27,11 +27,15 @@ public class SwapFacialFeaturesRequest extends RpcAcsRequest<SwapFacialFeaturesR
 
 	private String targetImageURL;
 
+	private String sourceImageData;
+
 	private String sourceImageURL;
+
+	private String targetImageData;
 
 	private String editPart;
 	public SwapFacialFeaturesRequest() {
-		super("facebody", "2019-12-30", "SwapFacialFeatures");
+		super("facebody", "2019-12-30", "SwapFacialFeatures", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +54,17 @@ public class SwapFacialFeaturesRequest extends RpcAcsRequest<SwapFacialFeaturesR
 		}
 	}
 
+	public String getSourceImageData() {
+		return this.sourceImageData;
+	}
+
+	public void setSourceImageData(String sourceImageData) {
+		this.sourceImageData = sourceImageData;
+		if(sourceImageData != null){
+			putBodyParameter("SourceImageData", sourceImageData);
+		}
+	}
+
 	public String getSourceImageURL() {
 		return this.sourceImageURL;
 	}
@@ -58,6 +73,17 @@ public class SwapFacialFeaturesRequest extends RpcAcsRequest<SwapFacialFeaturesR
 		this.sourceImageURL = sourceImageURL;
 		if(sourceImageURL != null){
 			putBodyParameter("SourceImageURL", sourceImageURL);
+		}
+	}
+
+	public String getTargetImageData() {
+		return this.targetImageData;
+	}
+
+	public void setTargetImageData(String targetImageData) {
+		this.targetImageData = targetImageData;
+		if(targetImageData != null){
+			putBodyParameter("TargetImageData", targetImageData);
 		}
 	}
 

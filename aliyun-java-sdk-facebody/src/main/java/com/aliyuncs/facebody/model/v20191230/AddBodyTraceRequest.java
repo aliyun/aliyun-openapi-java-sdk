@@ -15,9 +15,6 @@
 package com.aliyuncs.facebody.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.facebody.Endpoint;
 
@@ -32,12 +29,11 @@ public class AddBodyTraceRequest extends RpcAcsRequest<AddBodyTraceResponse> {
 
 	private Long personId;
 
-	@SerializedName("images")
-	private List<Images> images;
+	private Array images;
 
 	private Long dbId;
 	public AddBodyTraceRequest() {
-		super("facebody", "2019-12-30", "AddBodyTrace");
+		super("facebody", "2019-12-30", "AddBodyTrace", "facebody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -67,15 +63,15 @@ public class AddBodyTraceRequest extends RpcAcsRequest<AddBodyTraceResponse> {
 		}
 	}
 
-	public List<Images> getImages() {
+	public Array getImages() {
 		return this.images;
 	}
 
-	public void setImages(List<Images> images) {
-		this.images = images;	
-		if (images != null) {
-			putBodyParameter("Images" , new Gson().toJson(images));
-		}	
+	public void setImages(Array images) {
+		this.images = images;
+		if(images != null){
+			putBodyParameter("Images", images.toString());
+		}
 	}
 
 	public Long getDbId() {
@@ -86,20 +82,6 @@ public class AddBodyTraceRequest extends RpcAcsRequest<AddBodyTraceResponse> {
 		this.dbId = dbId;
 		if(dbId != null){
 			putBodyParameter("DbId", dbId.toString());
-		}
-	}
-
-	public static class Images {
-
-		@SerializedName("ImageURL")
-		private String imageURL;
-
-		public String getImageURL() {
-			return this.imageURL;
-		}
-
-		public void setImageURL(String imageURL) {
-			this.imageURL = imageURL;
 		}
 	}
 
