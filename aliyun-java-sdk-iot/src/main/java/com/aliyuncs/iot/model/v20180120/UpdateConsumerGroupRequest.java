@@ -31,7 +31,7 @@ public class UpdateConsumerGroupRequest extends RpcAcsRequest<UpdateConsumerGrou
 
 	private String newGroupName;
 	public UpdateConsumerGroupRequest() {
-		super("Iot", "2018-01-20", "UpdateConsumerGroup", "iot");
+		super("Iot", "2018-01-20", "UpdateConsumerGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

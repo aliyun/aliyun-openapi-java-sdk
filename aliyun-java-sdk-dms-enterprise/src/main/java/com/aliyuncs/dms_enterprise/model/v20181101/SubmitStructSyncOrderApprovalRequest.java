@@ -26,6 +26,8 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 	   
 
 	private Long orderId;
+
+	private Long tid;
 	public SubmitStructSyncOrderApprovalRequest() {
 		super("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

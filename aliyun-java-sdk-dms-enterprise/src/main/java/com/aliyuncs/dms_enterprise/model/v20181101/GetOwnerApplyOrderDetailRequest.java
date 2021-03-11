@@ -26,6 +26,8 @@ public class GetOwnerApplyOrderDetailRequest extends RpcAcsRequest<GetOwnerApply
 	   
 
 	private Long orderId;
+
+	private Long tid;
 	public GetOwnerApplyOrderDetailRequest() {
 		super("dms-enterprise", "2018-11-01", "GetOwnerApplyOrderDetail");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetOwnerApplyOrderDetailRequest extends RpcAcsRequest<GetOwnerApply
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

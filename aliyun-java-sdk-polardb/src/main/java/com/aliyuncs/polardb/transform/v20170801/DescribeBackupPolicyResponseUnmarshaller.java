@@ -23,13 +23,14 @@ public class DescribeBackupPolicyResponseUnmarshaller {
 	public static DescribeBackupPolicyResponse unmarshall(DescribeBackupPolicyResponse describeBackupPolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeBackupPolicyResponse.setRequestId(_ctx.stringValue("DescribeBackupPolicyResponse.RequestId"));
-		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
-		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
 		describeBackupPolicyResponse.setPreferredBackupPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupPeriod"));
 		describeBackupPolicyResponse.setDataLevel1BackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel1BackupRetentionPeriod"));
-		describeBackupPolicyResponse.setDataLevel2BackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupRetentionPeriod"));
 		describeBackupPolicyResponse.setBackupRetentionPolicyOnClusterDeletion(_ctx.stringValue("DescribeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion"));
+		describeBackupPolicyResponse.setPreferredBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredBackupTime"));
+		describeBackupPolicyResponse.setBackupFrequency(_ctx.stringValue("DescribeBackupPolicyResponse.BackupFrequency"));
+		describeBackupPolicyResponse.setPreferredNextBackupTime(_ctx.stringValue("DescribeBackupPolicyResponse.PreferredNextBackupTime"));
+		describeBackupPolicyResponse.setBackupRetentionPeriod(_ctx.integerValue("DescribeBackupPolicyResponse.BackupRetentionPeriod"));
+		describeBackupPolicyResponse.setDataLevel2BackupRetentionPeriod(_ctx.stringValue("DescribeBackupPolicyResponse.DataLevel2BackupRetentionPeriod"));
 	 
 	 	return describeBackupPolicyResponse;
 	}

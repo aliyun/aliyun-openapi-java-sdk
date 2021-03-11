@@ -31,6 +31,8 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 
 	private String pluginType;
 
+	private String attachmentKey;
+
 	private String comment;
 
 	private Map<Object,Object> pluginParam;
@@ -64,6 +66,17 @@ public class CreateOrderRequest extends RpcAcsRequest<CreateOrderResponse> {
 		this.pluginType = pluginType;
 		if(pluginType != null){
 			putQueryParameter("PluginType", pluginType);
+		}
+	}
+
+	public String getAttachmentKey() {
+		return this.attachmentKey;
+	}
+
+	public void setAttachmentKey(String attachmentKey) {
+		this.attachmentKey = attachmentKey;
+		if(attachmentKey != null){
+			putQueryParameter("AttachmentKey", attachmentKey);
 		}
 	}
 

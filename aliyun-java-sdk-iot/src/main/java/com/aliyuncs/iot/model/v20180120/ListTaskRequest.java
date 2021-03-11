@@ -37,7 +37,7 @@ public class ListTaskRequest extends RpcAcsRequest<ListTaskResponse> {
 
 	private String status;
 	public ListTaskRequest() {
-		super("Iot", "2018-01-20", "ListTask", "iot");
+		super("Iot", "2018-01-20", "ListTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

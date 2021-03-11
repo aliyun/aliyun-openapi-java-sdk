@@ -35,7 +35,7 @@ public class QueryThingModelPublishedRequest extends RpcAcsRequest<QueryThingMod
 
 	private String functionBlockId;
 	public QueryThingModelPublishedRequest() {
-		super("Iot", "2018-01-20", "QueryThingModelPublished", "iot");
+		super("Iot", "2018-01-20", "QueryThingModelPublished");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

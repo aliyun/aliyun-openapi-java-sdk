@@ -77,11 +77,21 @@ public class GetDataCorrectOrderDetailResponse extends AcsResponse {
 
 	public static class DataCorrectOrderDetail {
 
+		private String status;
+
 		private List<Database> databaseList;
 
 		private List<TaskCheckDO> preCheckDetail;
 
 		private OrderDetail orderDetail;
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
 		public List<Database> getDatabaseList() {
 			return this.databaseList;

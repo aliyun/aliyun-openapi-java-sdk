@@ -90,6 +90,8 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 		private String securityRule;
 
+		private Long dBTaskGroupId;
+
 		public Long getSqlCount() {
 			return this.sqlCount;
 		}
@@ -144,6 +146,14 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 		public void setSecurityRule(String securityRule) {
 			this.securityRule = securityRule;
+		}
+
+		public Long getDBTaskGroupId() {
+			return this.dBTaskGroupId;
+		}
+
+		public void setDBTaskGroupId(Long dBTaskGroupId) {
+			this.dBTaskGroupId = dBTaskGroupId;
 		}
 	}
 

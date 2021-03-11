@@ -1,3 +1,6 @@
+2021-03-08 Version: 1.8.4
+- Support Mysql Parameter Group API.
+
 2021-01-26 Version: 1.8.3
 - Support ModifyDBClusterPrimaryZone timer task.
 

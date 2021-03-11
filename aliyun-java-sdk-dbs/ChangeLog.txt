@@ -1,3 +1,6 @@
+2021-03-08 Version: 1.0.32
+- Update CreateAndStartBackupPlan Response with createBackupSet.
+
 2021-02-26 Version: 1.0.31
 - Support SLR by InitializeDbsServiceLinkedRole action.
 - Change DescribeIncrementBackupList and DescribeFullBackupList to Support Range filter by endTimestamp.

@@ -28,6 +28,10 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class CreateStructSyncOrderRequest extends RpcAcsRequest<CreateStructSyncOrderResponse> {
 	   
 
+	private Long tid;
+
+	private String attachmentKey;
+
 	@SerializedName("param")
 	private Param param;
 
@@ -42,6 +46,28 @@ public class CreateStructSyncOrderRequest extends RpcAcsRequest<CreateStructSync
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public String getAttachmentKey() {
+		return this.attachmentKey;
+	}
+
+	public void setAttachmentKey(String attachmentKey) {
+		this.attachmentKey = attachmentKey;
+		if(attachmentKey != null){
+			putQueryParameter("AttachmentKey", attachmentKey);
+		}
 	}
 
 	public Param getParam() {

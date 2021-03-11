@@ -25,11 +25,13 @@ import com.aliyuncs.dms_enterprise.Endpoint;
 public class ListDBTaskSQLJobRequest extends RpcAcsRequest<ListDBTaskSQLJobResponse> {
 	   
 
-	private Long pageSize;
-
 	private Long dBTaskGroupId;
 
 	private Long pageNumber;
+
+	private Long tid;
+
+	private Long pageSize;
 	public ListDBTaskSQLJobRequest() {
 		super("dms-enterprise", "2018-11-01", "ListDBTaskSQLJob");
 		setMethod(MethodType.POST);
@@ -37,17 +39,6 @@ public class ListDBTaskSQLJobRequest extends RpcAcsRequest<ListDBTaskSQLJobRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
 	}
 
 	public Long getDBTaskGroupId() {
@@ -69,6 +60,28 @@ public class ListDBTaskSQLJobRequest extends RpcAcsRequest<ListDBTaskSQLJobRespo
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

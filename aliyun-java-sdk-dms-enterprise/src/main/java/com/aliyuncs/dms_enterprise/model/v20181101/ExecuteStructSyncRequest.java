@@ -26,6 +26,8 @@ public class ExecuteStructSyncRequest extends RpcAcsRequest<ExecuteStructSyncRes
 	   
 
 	private Long orderId;
+
+	private Long tid;
 	public ExecuteStructSyncRequest() {
 		super("dms-enterprise", "2018-11-01", "ExecuteStructSync");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class ExecuteStructSyncRequest extends RpcAcsRequest<ExecuteStructSyncRes
 		this.orderId = orderId;
 		if(orderId != null){
 			putQueryParameter("OrderId", orderId.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

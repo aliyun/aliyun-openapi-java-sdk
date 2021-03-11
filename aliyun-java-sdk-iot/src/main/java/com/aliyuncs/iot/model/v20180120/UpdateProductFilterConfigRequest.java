@@ -33,7 +33,7 @@ public class UpdateProductFilterConfigRequest extends RpcAcsRequest<UpdateProduc
 
 	private Boolean propertyValueFilter;
 	public UpdateProductFilterConfigRequest() {
-		super("Iot", "2018-01-20", "UpdateProductFilterConfig", "iot");
+		super("Iot", "2018-01-20", "UpdateProductFilterConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

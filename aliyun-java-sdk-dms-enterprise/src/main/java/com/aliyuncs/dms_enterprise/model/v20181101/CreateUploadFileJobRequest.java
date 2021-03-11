@@ -27,6 +27,8 @@ public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJo
 
 	private String fileSource;
 
+	private Long tid;
+
 	private String fileName;
 
 	private String uploadURL;
@@ -47,6 +49,17 @@ public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJo
 		this.fileSource = fileSource;
 		if(fileSource != null){
 			putQueryParameter("FileSource", fileSource);
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

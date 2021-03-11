@@ -65,6 +65,8 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String clusterNetworkType;
 
+	private String parameterGroupId;
+
 	private String gDNId;
 
 	private String resourceOwnerAccount;
@@ -308,6 +310,17 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.clusterNetworkType = clusterNetworkType;
 		if(clusterNetworkType != null){
 			putQueryParameter("ClusterNetworkType", clusterNetworkType);
+		}
+	}
+
+	public String getParameterGroupId() {
+		return this.parameterGroupId;
+	}
+
+	public void setParameterGroupId(String parameterGroupId) {
+		this.parameterGroupId = parameterGroupId;
+		if(parameterGroupId != null){
+			putQueryParameter("ParameterGroupId", parameterGroupId);
 		}
 	}
 

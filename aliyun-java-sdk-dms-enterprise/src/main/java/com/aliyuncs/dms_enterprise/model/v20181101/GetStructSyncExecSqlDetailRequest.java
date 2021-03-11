@@ -27,9 +27,11 @@ public class GetStructSyncExecSqlDetailRequest extends RpcAcsRequest<GetStructSy
 
 	private Long orderId;
 
-	private Long pageSize;
-
 	private Long pageNumber;
+
+	private Long tid;
+
+	private Long pageSize;
 	public GetStructSyncExecSqlDetailRequest() {
 		super("dms-enterprise", "2018-11-01", "GetStructSyncExecSqlDetail");
 		setMethod(MethodType.POST);
@@ -50,17 +52,6 @@ public class GetStructSyncExecSqlDetailRequest extends RpcAcsRequest<GetStructSy
 		}
 	}
 
-	public Long getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Long pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
 	public Long getPageNumber() {
 		return this.pageNumber;
 	}
@@ -69,6 +60,28 @@ public class GetStructSyncExecSqlDetailRequest extends RpcAcsRequest<GetStructSy
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

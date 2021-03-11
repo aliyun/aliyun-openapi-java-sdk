@@ -31,7 +31,7 @@ public class UnbindDriverFromEdgeInstanceRequest extends RpcAcsRequest<UnbindDri
 
 	private String instanceId;
 	public UnbindDriverFromEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "UnbindDriverFromEdgeInstance", "iot");
+		super("Iot", "2018-01-20", "UnbindDriverFromEdgeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -24,6 +24,8 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  */
 public class GetUserActiveTenantRequest extends RpcAcsRequest<GetUserActiveTenantResponse> {
 	   
+
+	private Long tid;
 	public GetUserActiveTenantRequest() {
 		super("dms-enterprise", "2018-11-01", "GetUserActiveTenant");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class GetUserActiveTenantRequest extends RpcAcsRequest<GetUserActiveTenan
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
+		}
 	}
 
 	@Override

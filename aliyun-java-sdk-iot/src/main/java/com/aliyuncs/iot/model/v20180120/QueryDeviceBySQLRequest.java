@@ -29,7 +29,7 @@ public class QueryDeviceBySQLRequest extends RpcAcsRequest<QueryDeviceBySQLRespo
 
 	private String iotInstanceId;
 	public QueryDeviceBySQLRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceBySQL", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceBySQL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

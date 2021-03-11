@@ -26,6 +26,8 @@ public class GetUserUploadFileJobRequest extends RpcAcsRequest<GetUserUploadFile
 	   
 
 	private String jobKey;
+
+	private Long tid;
 	public GetUserUploadFileJobRequest() {
 		super("dms-enterprise", "2018-11-01", "GetUserUploadFileJob");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class GetUserUploadFileJobRequest extends RpcAcsRequest<GetUserUploadFile
 		this.jobKey = jobKey;
 		if(jobKey != null){
 			putQueryParameter("JobKey", jobKey);
+		}
+	}
+
+	public Long getTid() {
+		return this.tid;
+	}
+
+	public void setTid(Long tid) {
+		this.tid = tid;
+		if(tid != null){
+			putQueryParameter("Tid", tid.toString());
 		}
 	}
 

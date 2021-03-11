@@ -36,7 +36,7 @@ public class CancelOTATaskByDeviceRequest extends RpcAcsRequest<CancelOTATaskByD
 
 	private List<String> deviceNames;
 	public CancelOTATaskByDeviceRequest() {
-		super("Iot", "2018-01-20", "CancelOTATaskByDevice", "iot");
+		super("Iot", "2018-01-20", "CancelOTATaskByDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

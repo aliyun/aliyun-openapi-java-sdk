@@ -111,19 +111,17 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			private String status;
 
-			private Long gmtCreate;
-
 			private String action;
 
 			private String taskId;
 
 			private String plannedTime;
 
+			private String dbClusterDescription;
+
 			private String plannedStartTime;
 
 			private String dBClusterId;
-
-			private Long gmtModified;
 
 			private String region;
 
@@ -131,7 +129,7 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			private String plannedEndTime;
 
-			private Integer aliUid;
+			private String dbClusterStatus;
 
 			public String getStatus() {
 				return this.status;
@@ -139,14 +137,6 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
 			}
 
 			public String getAction() {
@@ -173,6 +163,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.plannedTime = plannedTime;
 			}
 
+			public String getDbClusterDescription() {
+				return this.dbClusterDescription;
+			}
+
+			public void setDbClusterDescription(String dbClusterDescription) {
+				this.dbClusterDescription = dbClusterDescription;
+			}
+
 			public String getPlannedStartTime() {
 				return this.plannedStartTime;
 			}
@@ -187,14 +185,6 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 
 			public void setDBClusterId(String dBClusterId) {
 				this.dBClusterId = dBClusterId;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
 			}
 
 			public String getRegion() {
@@ -221,12 +211,12 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 				this.plannedEndTime = plannedEndTime;
 			}
 
-			public Integer getAliUid() {
-				return this.aliUid;
+			public String getDbClusterStatus() {
+				return this.dbClusterStatus;
 			}
 
-			public void setAliUid(Integer aliUid) {
-				this.aliUid = aliUid;
+			public void setDbClusterStatus(String dbClusterStatus) {
+				this.dbClusterStatus = dbClusterStatus;
 			}
 		}
 	}

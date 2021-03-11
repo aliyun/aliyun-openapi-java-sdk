@@ -35,11 +35,9 @@ public class QueryDeviceByStatusRequest extends RpcAcsRequest<QueryDeviceByStatu
 
 	private String productKey;
 
-	private String bizTenantId;
-
 	private Integer status;
 	public QueryDeviceByStatusRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceByStatus", "iot");
+		super("Iot", "2018-01-20", "QueryDeviceByStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,17 +97,6 @@ public class QueryDeviceByStatusRequest extends RpcAcsRequest<QueryDeviceByStatu
 		this.productKey = productKey;
 		if(productKey != null){
 			putQueryParameter("ProductKey", productKey);
-		}
-	}
-
-	public String getBizTenantId() {
-		return this.bizTenantId;
-	}
-
-	public void setBizTenantId(String bizTenantId) {
-		this.bizTenantId = bizTenantId;
-		if(bizTenantId != null){
-			putQueryParameter("BizTenantId", bizTenantId);
 		}
 	}
 

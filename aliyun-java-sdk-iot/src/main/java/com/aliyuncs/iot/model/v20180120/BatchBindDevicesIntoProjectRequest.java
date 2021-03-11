@@ -32,7 +32,7 @@ public class BatchBindDevicesIntoProjectRequest extends RpcAcsRequest<BatchBindD
 
 	private List<Devices> devicess;
 	public BatchBindDevicesIntoProjectRequest() {
-		super("Iot", "2018-01-20", "BatchBindDevicesIntoProject", "iot");
+		super("Iot", "2018-01-20", "BatchBindDevicesIntoProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

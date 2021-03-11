@@ -29,7 +29,7 @@ public class DeleteJobRequest extends RpcAcsRequest<DeleteJobResponse> {
 
 	private String iotInstanceId;
 	public DeleteJobRequest() {
-		super("Iot", "2018-01-20", "DeleteJob", "iot");
+		super("Iot", "2018-01-20", "DeleteJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
