@@ -94,6 +94,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Integer ephemeralStorage;
 
+	private List<AcrRegistryInfo> AcrRegistryInfos;
+
     public Integer getEphemeralStorage() {
         return ephemeralStorage;
     }
@@ -1405,6 +1407,69 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			this.password = password;
 		}
 	}
+
+	public List<AcrRegistryInfo> getAcrRegistryInfos() {
+        return this.AcrRegistryInfos;
+    }
+
+    public void setAcrRegistryInfos(List<AcrRegistryInfo> acrRegistryInfos) {
+        AcrRegistryInfos = acrRegistryInfos;
+        if (acrRegistryInfos != null) {
+            for (int depth1 = 0; depth1 < acrRegistryInfos.size(); depth1++) {
+                if (AcrRegistryInfos.get(depth1).getDomains() != null) {
+                    for (int i = 0; i < AcrRegistryInfos.get(depth1).getDomains().size(); i++) {
+                        putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".Domain." + (i + 1), acrRegistryInfos.get(depth1).getDomains().get(i));
+                    }
+                }
+                putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceId", acrRegistryInfos.get(depth1).getInstanceId());
+                putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".InstanceName", acrRegistryInfos.get(depth1).getInstanceName());
+                putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".RegionId", acrRegistryInfos.get(depth1).getRegionId());
+            }
+        }
+    }
+
+    public static class AcrRegistryInfo {
+
+        private String instanceName;
+
+        private String instanceId;
+
+        private String regionId;
+
+        private List<String> domains;
+
+        public List<String> getDomains() {
+            return this.domains;
+        }
+
+        public void setDomains(List<String> domains) {
+            this.domains = domains;
+        }
+
+        public String getInstanceName() {
+            return this.instanceName;
+        }
+
+        public void setInstanceName(String instanceName) {
+            this.instanceName = instanceName;
+        }
+
+        public String getInstanceId() {
+            return this.instanceId;
+        }
+
+        public void setInstanceId(String instanceId) {
+            this.instanceId = instanceId;
+        }
+
+        public String getRegionId() {
+            return this.regionId;
+        }
+
+        public void setRegionId(String regionId) {
+            this.regionId = regionId;
+        }
+    }
 
 	public static class Tag {
 
