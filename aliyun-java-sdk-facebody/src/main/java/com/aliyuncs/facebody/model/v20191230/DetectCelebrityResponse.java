@@ -47,19 +47,11 @@ public class DetectCelebrityResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer width;
-
 		private Integer height;
 
+		private Integer width;
+
 		private List<FaceRecognizeResult> faceRecognizeResults;
-
-		public Integer getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(Integer width) {
-			this.width = width;
-		}
 
 		public Integer getHeight() {
 			return this.height;
@@ -67,6 +59,14 @@ public class DetectCelebrityResponse extends AcsResponse {
 
 		public void setHeight(Integer height) {
 			this.height = height;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
 		}
 
 		public List<FaceRecognizeResult> getFaceRecognizeResults() {

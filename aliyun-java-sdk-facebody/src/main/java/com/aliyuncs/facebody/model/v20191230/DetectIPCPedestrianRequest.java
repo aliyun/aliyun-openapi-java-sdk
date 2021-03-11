@@ -33,7 +33,7 @@ public class DetectIPCPedestrianRequest extends RpcAcsRequest<DetectIPCPedestria
 
 	private Integer width;
 	public DetectIPCPedestrianRequest() {
-		super("facebody", "2019-12-30", "DetectIPCPedestrian", "facebody");
+		super("facebody", "2019-12-30", "DetectIPCPedestrian");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class RecognizeHandGestureRequest extends RpcAcsRequest<RecognizeHandGest
 
 	private String imageURL;
 	public RecognizeHandGestureRequest() {
-		super("facebody", "2019-12-30", "RecognizeHandGesture", "facebody");
+		super("facebody", "2019-12-30", "RecognizeHandGesture");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

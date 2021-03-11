@@ -25,8 +25,8 @@ public class GenRealPersonVerificationTokenResponseUnmarshaller {
 		
 		genRealPersonVerificationTokenResponse.setRequestId(_ctx.stringValue("GenRealPersonVerificationTokenResponse.RequestId"));
 		genRealPersonVerificationTokenResponse.setErrorMessage(_ctx.stringValue("GenRealPersonVerificationTokenResponse.ErrorMessage"));
-		genRealPersonVerificationTokenResponse.setSuccess(_ctx.booleanValue("GenRealPersonVerificationTokenResponse.Success"));
 		genRealPersonVerificationTokenResponse.setCode(_ctx.stringValue("GenRealPersonVerificationTokenResponse.Code"));
+		genRealPersonVerificationTokenResponse.setSuccess(_ctx.booleanValue("GenRealPersonVerificationTokenResponse.Success"));
 
 		Data data = new Data();
 		data.setVerificationToken(_ctx.stringValue("GenRealPersonVerificationTokenResponse.Data.VerificationToken"));
