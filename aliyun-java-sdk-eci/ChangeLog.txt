@@ -1,3 +1,6 @@
+2021-03-11 Version: 1.2.0
+1, support acrRegistryInfo
+
 2021-02-25 Version: 1.1.19
 1, exec reponse add HttpUrl
 
