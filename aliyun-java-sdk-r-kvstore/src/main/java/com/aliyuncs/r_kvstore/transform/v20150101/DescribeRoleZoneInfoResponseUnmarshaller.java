@@ -48,6 +48,9 @@ public class DescribeRoleZoneInfoResponseUnmarshaller {
 			nodeInfo.setInsName(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].InsName"));
 			nodeInfo.setIsLatestVersion(_ctx.integerValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IsLatestVersion"));
 			nodeInfo.setCurrentMinorVersion(_ctx.stringValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CurrentMinorVersion"));
+			nodeInfo.setCurrentBandWidth(_ctx.longValue("DescribeRoleZoneInfoResponse.Node["+ i +"].CurrentBandWidth"));
+			nodeInfo.setDefaultBandWidth(_ctx.longValue("DescribeRoleZoneInfoResponse.Node["+ i +"].DefaultBandWidth"));
+			nodeInfo.setIsOpenBandWidthService(_ctx.booleanValue("DescribeRoleZoneInfoResponse.Node["+ i +"].IsOpenBandWidthService"));
 
 			node.add(nodeInfo);
 		}

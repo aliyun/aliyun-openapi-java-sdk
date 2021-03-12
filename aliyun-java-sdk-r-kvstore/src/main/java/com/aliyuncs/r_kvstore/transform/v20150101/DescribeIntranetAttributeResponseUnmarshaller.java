@@ -25,6 +25,7 @@ public class DescribeIntranetAttributeResponseUnmarshaller {
 		describeIntranetAttributeResponse.setRequestId(_ctx.stringValue("DescribeIntranetAttributeResponse.RequestId"));
 		describeIntranetAttributeResponse.setIntranetBandwidth(_ctx.integerValue("DescribeIntranetAttributeResponse.IntranetBandwidth"));
 		describeIntranetAttributeResponse.setExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.ExpireTime"));
+		describeIntranetAttributeResponse.setBandwidthExpireTime(_ctx.stringValue("DescribeIntranetAttributeResponse.BandwidthExpireTime"));
 	 
 	 	return describeIntranetAttributeResponse;
 	}

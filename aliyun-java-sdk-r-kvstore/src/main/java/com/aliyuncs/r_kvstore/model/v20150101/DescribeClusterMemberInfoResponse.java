@@ -117,6 +117,8 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 		private Long connections;
 
+		private Long currentBandWidth;
+
 		private List<Item> items;
 
 		public Long getId() {
@@ -277,6 +279,14 @@ public class DescribeClusterMemberInfoResponse extends AcsResponse {
 
 		public void setConnections(Long connections) {
 			this.connections = connections;
+		}
+
+		public Long getCurrentBandWidth() {
+			return this.currentBandWidth;
+		}
+
+		public void setCurrentBandWidth(Long currentBandWidth) {
+			this.currentBandWidth = currentBandWidth;
 		}
 
 		public List<Item> getItems() {

@@ -1,3 +1,7 @@
+2021-03-12 Version: 2.14.0
+- Add EnableAdditionalBandwidth API.
+- Add CreateTairInstance API.
+
 2021-02-03 Version: 2.13.0
 - Add ModifyAuditLogConfig API.
 

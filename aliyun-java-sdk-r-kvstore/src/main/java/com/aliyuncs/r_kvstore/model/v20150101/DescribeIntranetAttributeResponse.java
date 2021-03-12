@@ -30,6 +30,8 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	private String expireTime;
 
+	private String bandwidthExpireTime;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class DescribeIntranetAttributeResponse extends AcsResponse {
 
 	public void setExpireTime(String expireTime) {
 		this.expireTime = expireTime;
+	}
+
+	public String getBandwidthExpireTime() {
+		return this.bandwidthExpireTime;
+	}
+
+	public void setBandwidthExpireTime(String bandwidthExpireTime) {
+		this.bandwidthExpireTime = bandwidthExpireTime;
 	}
 
 	@Override

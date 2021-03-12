@@ -55,6 +55,7 @@ public class DescribeClusterMemberInfoResponseUnmarshaller {
 			children.setCapacity(_ctx.longValue("DescribeClusterMemberInfoResponse.ClusterChildren["+ i +"].Capacity"));
 			children.setBandWidth(_ctx.longValue("DescribeClusterMemberInfoResponse.ClusterChildren["+ i +"].BandWidth"));
 			children.setConnections(_ctx.longValue("DescribeClusterMemberInfoResponse.ClusterChildren["+ i +"].Connections"));
+			children.setCurrentBandWidth(_ctx.longValue("DescribeClusterMemberInfoResponse.ClusterChildren["+ i +"].CurrentBandWidth"));
 
 			List<Item> items = new ArrayList<Item>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeClusterMemberInfoResponse.ClusterChildren["+ i +"].Items.Length"); j++) {

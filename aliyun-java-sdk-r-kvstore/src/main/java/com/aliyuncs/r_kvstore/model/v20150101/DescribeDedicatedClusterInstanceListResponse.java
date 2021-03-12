@@ -117,6 +117,10 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		private Integer shardCount;
 
+		private Long currentBandWidth;
+
+		private Long bandWidth;
+
 		private List<InstanceNodes> instanceNodeList;
 
 		public Integer getCharacterType() {
@@ -277,6 +281,22 @@ public class DescribeDedicatedClusterInstanceListResponse extends AcsResponse {
 
 		public void setShardCount(Integer shardCount) {
 			this.shardCount = shardCount;
+		}
+
+		public Long getCurrentBandWidth() {
+			return this.currentBandWidth;
+		}
+
+		public void setCurrentBandWidth(Long currentBandWidth) {
+			this.currentBandWidth = currentBandWidth;
+		}
+
+		public Long getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(Long bandWidth) {
+			this.bandWidth = bandWidth;
 		}
 
 		public List<InstanceNodes> getInstanceNodeList() {

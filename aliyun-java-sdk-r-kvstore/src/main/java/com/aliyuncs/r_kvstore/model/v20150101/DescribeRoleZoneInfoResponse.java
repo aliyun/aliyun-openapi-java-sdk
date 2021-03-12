@@ -105,6 +105,12 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 		private String currentMinorVersion;
 
+		private Long currentBandWidth;
+
+		private Long defaultBandWidth;
+
+		private Boolean isOpenBandWidthService;
+
 		public String getNodeId() {
 			return this.nodeId;
 		}
@@ -215,6 +221,30 @@ public class DescribeRoleZoneInfoResponse extends AcsResponse {
 
 		public void setCurrentMinorVersion(String currentMinorVersion) {
 			this.currentMinorVersion = currentMinorVersion;
+		}
+
+		public Long getCurrentBandWidth() {
+			return this.currentBandWidth;
+		}
+
+		public void setCurrentBandWidth(Long currentBandWidth) {
+			this.currentBandWidth = currentBandWidth;
+		}
+
+		public Long getDefaultBandWidth() {
+			return this.defaultBandWidth;
+		}
+
+		public void setDefaultBandWidth(Long defaultBandWidth) {
+			this.defaultBandWidth = defaultBandWidth;
+		}
+
+		public Boolean getIsOpenBandWidthService() {
+			return this.isOpenBandWidthService;
+		}
+
+		public void setIsOpenBandWidthService(Boolean isOpenBandWidthService) {
+			this.isOpenBandWidthService = isOpenBandWidthService;
 		}
 	}
 

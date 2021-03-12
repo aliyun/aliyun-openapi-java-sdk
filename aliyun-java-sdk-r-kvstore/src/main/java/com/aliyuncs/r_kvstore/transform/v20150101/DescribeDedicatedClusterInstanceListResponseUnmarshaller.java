@@ -55,6 +55,8 @@ public class DescribeDedicatedClusterInstanceListResponseUnmarshaller {
 			instancesItem.setConnectionDomain(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ConnectionDomain"));
 			instancesItem.setCreateTime(_ctx.stringValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CreateTime"));
 			instancesItem.setShardCount(_ctx.integerValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].ShardCount"));
+			instancesItem.setCurrentBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].CurrentBandWidth"));
+			instancesItem.setBandWidth(_ctx.longValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].BandWidth"));
 
 			List<InstanceNodes> instanceNodeList = new ArrayList<InstanceNodes>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDedicatedClusterInstanceListResponse.Instances["+ i +"].InstanceNodeList.Length"); j++) {

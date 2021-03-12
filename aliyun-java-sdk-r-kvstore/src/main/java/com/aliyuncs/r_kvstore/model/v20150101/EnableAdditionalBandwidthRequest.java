@@ -22,26 +22,32 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyIntranetAttributeRequest extends RpcAcsRequest<ModifyIntranetAttributeResponse> {
+public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditionalBandwidthResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String couponNo;
 
 	private String securityToken;
 
 	private String nodeId;
 
+	private String orderTimeLength;
+
+	private Boolean autoPay;
+
 	private String resourceOwnerAccount;
 
-	private Long bandWidth;
+	private String bandwidth;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
 	private String instanceId;
-	public ModifyIntranetAttributeRequest() {
-		super("R-kvstore", "2015-01-01", "ModifyIntranetAttribute", "redisa");
+	public EnableAdditionalBandwidthRequest() {
+		super("R-kvstore", "2015-01-01", "EnableAdditionalBandwidth", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,6 +63,17 @@ public class ModifyIntranetAttributeRequest extends RpcAcsRequest<ModifyIntranet
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCouponNo() {
+		return this.couponNo;
+	}
+
+	public void setCouponNo(String couponNo) {
+		this.couponNo = couponNo;
+		if(couponNo != null){
+			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -82,6 +99,28 @@ public class ModifyIntranetAttributeRequest extends RpcAcsRequest<ModifyIntranet
 		}
 	}
 
+	public String getOrderTimeLength() {
+		return this.orderTimeLength;
+	}
+
+	public void setOrderTimeLength(String orderTimeLength) {
+		this.orderTimeLength = orderTimeLength;
+		if(orderTimeLength != null){
+			putQueryParameter("OrderTimeLength", orderTimeLength);
+		}
+	}
+
+	public Boolean getAutoPay() {
+		return this.autoPay;
+	}
+
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -93,14 +132,14 @@ public class ModifyIntranetAttributeRequest extends RpcAcsRequest<ModifyIntranet
 		}
 	}
 
-	public Long getBandWidth() {
-		return this.bandWidth;
+	public String getBandwidth() {
+		return this.bandwidth;
 	}
 
-	public void setBandWidth(Long bandWidth) {
-		this.bandWidth = bandWidth;
-		if(bandWidth != null){
-			putQueryParameter("BandWidth", bandWidth.toString());
+	public void setBandwidth(String bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth);
 		}
 	}
 
@@ -138,8 +177,8 @@ public class ModifyIntranetAttributeRequest extends RpcAcsRequest<ModifyIntranet
 	}
 
 	@Override
-	public Class<ModifyIntranetAttributeResponse> getResponseClass() {
-		return ModifyIntranetAttributeResponse.class;
+	public Class<EnableAdditionalBandwidthResponse> getResponseClass() {
+		return EnableAdditionalBandwidthResponse.class;
 	}
 
 }
