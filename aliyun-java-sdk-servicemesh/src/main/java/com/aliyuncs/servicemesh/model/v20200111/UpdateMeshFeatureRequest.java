@@ -33,6 +33,8 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 
 	private Boolean opaEnabled;
 
+	private Boolean mSEEnabled;
+
 	private String proxyLimitMemory;
 
 	private Boolean customizedPrometheus;
@@ -42,6 +44,8 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 	private Boolean accessLogEnabled;
 
 	private String oPALogLevel;
+
+	private Boolean redisFilterEnabled;
 
 	private Boolean customizedZipkin;
 
@@ -61,7 +65,11 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 
 	private String proxyRequestMemory;
 
+	private Boolean thriftFilterEnabled;
+
 	private Boolean telemetry;
+
+	private Boolean webAssemblyFilterEnabled;
 
 	private String oPARequestCPU;
 
@@ -85,7 +93,11 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 
 	private String sidecarInjectorLimitCPU;
 
+	private Boolean dNSProxyingEnabled;
+
 	private Float traceSampling;
+
+	private Boolean mysqlFilterEnabled;
 
 	private Boolean http10Enabled;
 
@@ -149,6 +161,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		}
 	}
 
+	public Boolean getMSEEnabled() {
+		return this.mSEEnabled;
+	}
+
+	public void setMSEEnabled(Boolean mSEEnabled) {
+		this.mSEEnabled = mSEEnabled;
+		if(mSEEnabled != null){
+			putBodyParameter("MSEEnabled", mSEEnabled.toString());
+		}
+	}
+
 	public String getProxyLimitMemory() {
 		return this.proxyLimitMemory;
 	}
@@ -201,6 +224,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		this.oPALogLevel = oPALogLevel;
 		if(oPALogLevel != null){
 			putBodyParameter("OPALogLevel", oPALogLevel);
+		}
+	}
+
+	public Boolean getRedisFilterEnabled() {
+		return this.redisFilterEnabled;
+	}
+
+	public void setRedisFilterEnabled(Boolean redisFilterEnabled) {
+		this.redisFilterEnabled = redisFilterEnabled;
+		if(redisFilterEnabled != null){
+			putBodyParameter("RedisFilterEnabled", redisFilterEnabled.toString());
 		}
 	}
 
@@ -303,6 +337,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		}
 	}
 
+	public Boolean getThriftFilterEnabled() {
+		return this.thriftFilterEnabled;
+	}
+
+	public void setThriftFilterEnabled(Boolean thriftFilterEnabled) {
+		this.thriftFilterEnabled = thriftFilterEnabled;
+		if(thriftFilterEnabled != null){
+			putBodyParameter("ThriftFilterEnabled", thriftFilterEnabled.toString());
+		}
+	}
+
 	public Boolean getTelemetry() {
 		return this.telemetry;
 	}
@@ -311,6 +356,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		this.telemetry = telemetry;
 		if(telemetry != null){
 			putBodyParameter("Telemetry", telemetry.toString());
+		}
+	}
+
+	public Boolean getWebAssemblyFilterEnabled() {
+		return this.webAssemblyFilterEnabled;
+	}
+
+	public void setWebAssemblyFilterEnabled(Boolean webAssemblyFilterEnabled) {
+		this.webAssemblyFilterEnabled = webAssemblyFilterEnabled;
+		if(webAssemblyFilterEnabled != null){
+			putBodyParameter("WebAssemblyFilterEnabled", webAssemblyFilterEnabled.toString());
 		}
 	}
 
@@ -435,6 +491,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		}
 	}
 
+	public Boolean getDNSProxyingEnabled() {
+		return this.dNSProxyingEnabled;
+	}
+
+	public void setDNSProxyingEnabled(Boolean dNSProxyingEnabled) {
+		this.dNSProxyingEnabled = dNSProxyingEnabled;
+		if(dNSProxyingEnabled != null){
+			putBodyParameter("DNSProxyingEnabled", dNSProxyingEnabled.toString());
+		}
+	}
+
 	public Float getTraceSampling() {
 		return this.traceSampling;
 	}
@@ -443,6 +510,17 @@ public class UpdateMeshFeatureRequest extends RpcAcsRequest<UpdateMeshFeatureRes
 		this.traceSampling = traceSampling;
 		if(traceSampling != null){
 			putBodyParameter("TraceSampling", traceSampling.toString());
+		}
+	}
+
+	public Boolean getMysqlFilterEnabled() {
+		return this.mysqlFilterEnabled;
+	}
+
+	public void setMysqlFilterEnabled(Boolean mysqlFilterEnabled) {
+		this.mysqlFilterEnabled = mysqlFilterEnabled;
+		if(mysqlFilterEnabled != null){
+			putBodyParameter("MysqlFilterEnabled", mysqlFilterEnabled.toString());
 		}
 	}
 

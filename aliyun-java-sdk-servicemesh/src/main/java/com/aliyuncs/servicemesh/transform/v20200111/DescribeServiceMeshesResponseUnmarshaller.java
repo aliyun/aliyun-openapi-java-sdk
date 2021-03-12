@@ -64,6 +64,7 @@ public class DescribeServiceMeshesResponseUnmarshaller {
 			serviceMeshInfo.setState(_ctx.stringValue("DescribeServiceMeshesResponse.ServiceMeshes["+ i +"].ServiceMeshInfo.State"));
 			serviceMeshInfo.setUpdateTime(_ctx.stringValue("DescribeServiceMeshesResponse.ServiceMeshes["+ i +"].ServiceMeshInfo.UpdateTime"));
 			serviceMeshInfo.setVersion(_ctx.stringValue("DescribeServiceMeshesResponse.ServiceMeshes["+ i +"].ServiceMeshInfo.Version"));
+			serviceMeshInfo.setProfile(_ctx.stringValue("DescribeServiceMeshesResponse.ServiceMeshes["+ i +"].ServiceMeshInfo.Profile"));
 			serviceMesh.setServiceMeshInfo(serviceMeshInfo);
 
 			Spec spec = new Spec();

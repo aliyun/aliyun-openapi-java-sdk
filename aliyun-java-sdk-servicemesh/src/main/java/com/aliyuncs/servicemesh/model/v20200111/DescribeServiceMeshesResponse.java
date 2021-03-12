@@ -158,6 +158,8 @@ public class DescribeServiceMeshesResponse extends AcsResponse {
 
 			private String version;
 
+			private String profile;
+
 			public String getCreationTime() {
 				return this.creationTime;
 			}
@@ -220,6 +222,14 @@ public class DescribeServiceMeshesResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public String getProfile() {
+				return this.profile;
+			}
+
+			public void setProfile(String profile) {
+				this.profile = profile;
 			}
 		}
 

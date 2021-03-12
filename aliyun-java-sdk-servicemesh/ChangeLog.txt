@@ -1,3 +1,6 @@
+2021-03-12 Version: 1.0.8
+- Generated 2020-01-11 for `servicemesh`.
+
 2021-01-25 Version: 1.0.7
 - Generated 2020-01-11 for `servicemesh`.
 

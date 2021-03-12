@@ -33,6 +33,8 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 
 	private Boolean opaEnabled;
 
+	private Boolean mSEEnabled;
+
 	private String proxyLimitMemory;
 
 	private Boolean customizedPrometheus;
@@ -40,6 +42,8 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 	private Boolean accessLogEnabled;
 
 	private String oPALogLevel;
+
+	private Boolean redisFilterEnabled;
 
 	private String excludeIPRanges;
 
@@ -61,13 +65,19 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 
 	private String proxyRequestMemory;
 
+	private Boolean thriftFilterEnabled;
+
 	private String name;
 
 	private Boolean telemetry;
 
+	private Boolean webAssemblyFilterEnabled;
+
 	private String oPARequestCPU;
 
 	private String oPARequestMemory;
+
+	private String edition;
 
 	private Boolean enableAudit;
 
@@ -75,7 +85,11 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 
 	private Boolean apiServerPublicEip;
 
+	private Boolean dNSProxyingEnabled;
+
 	private Float traceSampling;
+
+	private Boolean mysqlFilterEnabled;
 
 	private Boolean kialiEnabled;
 
@@ -139,6 +153,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		}
 	}
 
+	public Boolean getMSEEnabled() {
+		return this.mSEEnabled;
+	}
+
+	public void setMSEEnabled(Boolean mSEEnabled) {
+		this.mSEEnabled = mSEEnabled;
+		if(mSEEnabled != null){
+			putBodyParameter("MSEEnabled", mSEEnabled.toString());
+		}
+	}
+
 	public String getProxyLimitMemory() {
 		return this.proxyLimitMemory;
 	}
@@ -180,6 +205,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		this.oPALogLevel = oPALogLevel;
 		if(oPALogLevel != null){
 			putBodyParameter("OPALogLevel", oPALogLevel);
+		}
+	}
+
+	public Boolean getRedisFilterEnabled() {
+		return this.redisFilterEnabled;
+	}
+
+	public void setRedisFilterEnabled(Boolean redisFilterEnabled) {
+		this.redisFilterEnabled = redisFilterEnabled;
+		if(redisFilterEnabled != null){
+			putBodyParameter("RedisFilterEnabled", redisFilterEnabled.toString());
 		}
 	}
 
@@ -293,6 +329,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		}
 	}
 
+	public Boolean getThriftFilterEnabled() {
+		return this.thriftFilterEnabled;
+	}
+
+	public void setThriftFilterEnabled(Boolean thriftFilterEnabled) {
+		this.thriftFilterEnabled = thriftFilterEnabled;
+		if(thriftFilterEnabled != null){
+			putBodyParameter("ThriftFilterEnabled", thriftFilterEnabled.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -315,6 +362,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		}
 	}
 
+	public Boolean getWebAssemblyFilterEnabled() {
+		return this.webAssemblyFilterEnabled;
+	}
+
+	public void setWebAssemblyFilterEnabled(Boolean webAssemblyFilterEnabled) {
+		this.webAssemblyFilterEnabled = webAssemblyFilterEnabled;
+		if(webAssemblyFilterEnabled != null){
+			putBodyParameter("WebAssemblyFilterEnabled", webAssemblyFilterEnabled.toString());
+		}
+	}
+
 	public String getOPARequestCPU() {
 		return this.oPARequestCPU;
 	}
@@ -334,6 +392,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		this.oPARequestMemory = oPARequestMemory;
 		if(oPARequestMemory != null){
 			putBodyParameter("OPARequestMemory", oPARequestMemory);
+		}
+	}
+
+	public String getEdition() {
+		return this.edition;
+	}
+
+	public void setEdition(String edition) {
+		this.edition = edition;
+		if(edition != null){
+			putBodyParameter("Edition", edition);
 		}
 	}
 
@@ -370,6 +439,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		}
 	}
 
+	public Boolean getDNSProxyingEnabled() {
+		return this.dNSProxyingEnabled;
+	}
+
+	public void setDNSProxyingEnabled(Boolean dNSProxyingEnabled) {
+		this.dNSProxyingEnabled = dNSProxyingEnabled;
+		if(dNSProxyingEnabled != null){
+			putBodyParameter("DNSProxyingEnabled", dNSProxyingEnabled.toString());
+		}
+	}
+
 	public Float getTraceSampling() {
 		return this.traceSampling;
 	}
@@ -378,6 +458,17 @@ public class CreateServiceMeshRequest extends RpcAcsRequest<CreateServiceMeshRes
 		this.traceSampling = traceSampling;
 		if(traceSampling != null){
 			putBodyParameter("TraceSampling", traceSampling.toString());
+		}
+	}
+
+	public Boolean getMysqlFilterEnabled() {
+		return this.mysqlFilterEnabled;
+	}
+
+	public void setMysqlFilterEnabled(Boolean mysqlFilterEnabled) {
+		this.mysqlFilterEnabled = mysqlFilterEnabled;
+		if(mysqlFilterEnabled != null){
+			putBodyParameter("MysqlFilterEnabled", mysqlFilterEnabled.toString());
 		}
 	}
 

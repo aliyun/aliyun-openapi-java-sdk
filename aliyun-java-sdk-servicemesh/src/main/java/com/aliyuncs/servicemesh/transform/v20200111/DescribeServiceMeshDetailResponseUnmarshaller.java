@@ -27,12 +27,15 @@ import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailRespons
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.AccessLog;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Audit;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Kiali;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.MSE;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.OPA;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Pilot;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Prometheus;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.ProtocolSupport;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Proxy;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.SidecarInjector;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.SidecarInjector.InitCNIConfiguration;
+import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.WebAssemblyFilterDeployment;
 import com.aliyuncs.servicemesh.model.v20200111.DescribeServiceMeshDetailResponse.ServiceMesh.Spec.Network;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -67,6 +70,7 @@ public class DescribeServiceMeshDetailResponseUnmarshaller {
 		serviceMeshInfo.setState(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.ServiceMeshInfo.State"));
 		serviceMeshInfo.setUpdateTime(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.ServiceMeshInfo.UpdateTime"));
 		serviceMeshInfo.setVersion(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.ServiceMeshInfo.Version"));
+		serviceMeshInfo.setProfile(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.ServiceMeshInfo.Profile"));
 		serviceMesh.setServiceMeshInfo(serviceMeshInfo);
 
 		Spec spec = new Spec();
@@ -112,6 +116,7 @@ public class DescribeServiceMeshDetailResponseUnmarshaller {
 		proxy.setRequestMemory(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Proxy.RequestMemory"));
 		proxy.setLimitCPU(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Proxy.LimitCPU"));
 		proxy.setLimitMemory(_ctx.stringValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Proxy.LimitMemory"));
+		proxy.setEnableDNSProxying(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.Proxy.EnableDNSProxying"));
 		meshConfig.setProxy(proxy);
 
 		SidecarInjector sidecarInjector = new SidecarInjector();
@@ -142,6 +147,20 @@ public class DescribeServiceMeshDetailResponseUnmarshaller {
 		AccessLog accessLog = new AccessLog();
 		accessLog.setEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.AccessLog.Enabled"));
 		meshConfig.setAccessLog(accessLog);
+
+		WebAssemblyFilterDeployment webAssemblyFilterDeployment = new WebAssemblyFilterDeployment();
+		webAssemblyFilterDeployment.setEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.WebAssemblyFilterDeployment.Enabled"));
+		meshConfig.setWebAssemblyFilterDeployment(webAssemblyFilterDeployment);
+
+		ProtocolSupport protocolSupport = new ProtocolSupport();
+		protocolSupport.setRedisFilterEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.ProtocolSupport.RedisFilterEnabled"));
+		protocolSupport.setMysqlFilterEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.ProtocolSupport.MysqlFilterEnabled"));
+		protocolSupport.setThriftFilterEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.ProtocolSupport.ThriftFilterEnabled"));
+		meshConfig.setProtocolSupport(protocolSupport);
+
+		MSE mSE = new MSE();
+		mSE.setEnabled(_ctx.booleanValue("DescribeServiceMeshDetailResponse.ServiceMesh.Spec.MeshConfig.MSE.Enabled"));
+		meshConfig.setMSE(mSE);
 		spec.setMeshConfig(meshConfig);
 
 		Network network = new Network();

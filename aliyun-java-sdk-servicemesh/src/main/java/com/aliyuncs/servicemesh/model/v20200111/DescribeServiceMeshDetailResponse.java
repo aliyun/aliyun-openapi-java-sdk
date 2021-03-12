@@ -148,6 +148,8 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 			private String version;
 
+			private String profile;
+
 			public String getCreationTime() {
 				return this.creationTime;
 			}
@@ -210,6 +212,14 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
+			}
+
+			public String getProfile() {
+				return this.profile;
+			}
+
+			public void setProfile(String profile) {
+				this.profile = profile;
 			}
 		}
 
@@ -319,6 +329,12 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 				private Prometheus prometheus;
 
 				private AccessLog accessLog;
+
+				private WebAssemblyFilterDeployment webAssemblyFilterDeployment;
+
+				private ProtocolSupport protocolSupport;
+
+				private MSE mSE;
 
 				public Boolean getEnableLocalityLB() {
 					return this.enableLocalityLB;
@@ -438,6 +454,30 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 				public void setAccessLog(AccessLog accessLog) {
 					this.accessLog = accessLog;
+				}
+
+				public WebAssemblyFilterDeployment getWebAssemblyFilterDeployment() {
+					return this.webAssemblyFilterDeployment;
+				}
+
+				public void setWebAssemblyFilterDeployment(WebAssemblyFilterDeployment webAssemblyFilterDeployment) {
+					this.webAssemblyFilterDeployment = webAssemblyFilterDeployment;
+				}
+
+				public ProtocolSupport getProtocolSupport() {
+					return this.protocolSupport;
+				}
+
+				public void setProtocolSupport(ProtocolSupport protocolSupport) {
+					this.protocolSupport = protocolSupport;
+				}
+
+				public MSE getMSE() {
+					return this.mSE;
+				}
+
+				public void setMSE(MSE mSE) {
+					this.mSE = mSE;
 				}
 
 				public static class Pilot {
@@ -561,6 +601,8 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 					private String limitMemory;
 
+					private Boolean enableDNSProxying;
+
 					public String getClusterDomain() {
 						return this.clusterDomain;
 					}
@@ -599,6 +641,14 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 
 					public void setLimitMemory(String limitMemory) {
 						this.limitMemory = limitMemory;
+					}
+
+					public Boolean getEnableDNSProxying() {
+						return this.enableDNSProxying;
+					}
+
+					public void setEnableDNSProxying(Boolean enableDNSProxying) {
+						this.enableDNSProxying = enableDNSProxying;
 					}
 				}
 
@@ -755,6 +805,65 @@ public class DescribeServiceMeshDetailResponse extends AcsResponse {
 				}
 
 				public static class AccessLog {
+
+					private Boolean enabled;
+
+					public Boolean getEnabled() {
+						return this.enabled;
+					}
+
+					public void setEnabled(Boolean enabled) {
+						this.enabled = enabled;
+					}
+				}
+
+				public static class WebAssemblyFilterDeployment {
+
+					private Boolean enabled;
+
+					public Boolean getEnabled() {
+						return this.enabled;
+					}
+
+					public void setEnabled(Boolean enabled) {
+						this.enabled = enabled;
+					}
+				}
+
+				public static class ProtocolSupport {
+
+					private Boolean redisFilterEnabled;
+
+					private Boolean mysqlFilterEnabled;
+
+					private Boolean thriftFilterEnabled;
+
+					public Boolean getRedisFilterEnabled() {
+						return this.redisFilterEnabled;
+					}
+
+					public void setRedisFilterEnabled(Boolean redisFilterEnabled) {
+						this.redisFilterEnabled = redisFilterEnabled;
+					}
+
+					public Boolean getMysqlFilterEnabled() {
+						return this.mysqlFilterEnabled;
+					}
+
+					public void setMysqlFilterEnabled(Boolean mysqlFilterEnabled) {
+						this.mysqlFilterEnabled = mysqlFilterEnabled;
+					}
+
+					public Boolean getThriftFilterEnabled() {
+						return this.thriftFilterEnabled;
+					}
+
+					public void setThriftFilterEnabled(Boolean thriftFilterEnabled) {
+						this.thriftFilterEnabled = thriftFilterEnabled;
+					}
+				}
+
+				public static class MSE {
 
 					private Boolean enabled;
 
