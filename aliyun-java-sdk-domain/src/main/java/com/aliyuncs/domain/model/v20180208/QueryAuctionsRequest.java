@@ -31,7 +31,7 @@ public class QueryAuctionsRequest extends RpcAcsRequest<QueryAuctionsResponse> {
 
 	private String status;
 	public QueryAuctionsRequest() {
-		super("Domain", "2018-02-08", "QueryAuctions");
+		super("Domain", "2018-02-08", "QueryAuctions", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

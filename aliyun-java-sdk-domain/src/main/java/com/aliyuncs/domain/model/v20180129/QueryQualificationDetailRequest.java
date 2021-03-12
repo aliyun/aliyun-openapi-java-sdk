@@ -33,7 +33,7 @@ public class QueryQualificationDetailRequest extends RpcAcsRequest<QueryQualific
 
 	private String lang;
 	public QueryQualificationDetailRequest() {
-		super("Domain", "2018-01-29", "QueryQualificationDetail");
+		super("Domain", "2018-01-29", "QueryQualificationDetail", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

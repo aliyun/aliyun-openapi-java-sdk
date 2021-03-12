@@ -77,7 +77,7 @@ public class QueryAdvancedDomainListRequest extends RpcAcsRequest<QueryAdvancedD
 
 	private Integer endLength;
 	public QueryAdvancedDomainListRequest() {
-		super("Domain", "2018-01-29", "QueryAdvancedDomainList");
+		super("Domain", "2018-01-29", "QueryAdvancedDomainList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

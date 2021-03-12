@@ -29,7 +29,7 @@ public class AcceptDemandRequest extends RpcAcsRequest<AcceptDemandResponse> {
 
 	private String message;
 	public AcceptDemandRequest() {
-		super("Domain", "2018-02-08", "AcceptDemand");
+		super("Domain", "2018-02-08", "AcceptDemand", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

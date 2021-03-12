@@ -31,7 +31,7 @@ public class CancelTaskRequest extends RpcAcsRequest<CancelTaskResponse> {
 
 	private String lang;
 	public CancelTaskRequest() {
-		super("Domain", "2018-01-29", "CancelTask");
+		super("Domain", "2018-01-29", "CancelTask", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

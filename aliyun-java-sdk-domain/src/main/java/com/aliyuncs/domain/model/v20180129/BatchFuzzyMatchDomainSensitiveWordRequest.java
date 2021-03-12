@@ -31,7 +31,7 @@ public class BatchFuzzyMatchDomainSensitiveWordRequest extends RpcAcsRequest<Bat
 
 	private String lang;
 	public BatchFuzzyMatchDomainSensitiveWordRequest() {
-		super("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord");
+		super("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -40,7 +40,7 @@ public class UpdateDomainToDomainGroupRequest extends RpcAcsRequest<UpdateDomain
 
 	private String lang;
 	public UpdateDomainToDomainGroupRequest() {
-		super("Domain", "2018-01-29", "UpdateDomainToDomainGroup");
+		super("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

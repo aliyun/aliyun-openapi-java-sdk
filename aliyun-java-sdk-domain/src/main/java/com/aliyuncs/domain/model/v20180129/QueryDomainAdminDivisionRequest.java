@@ -29,7 +29,7 @@ public class QueryDomainAdminDivisionRequest extends RpcAcsRequest<QueryDomainAd
 
 	private String lang;
 	public QueryDomainAdminDivisionRequest() {
-		super("Domain", "2018-01-29", "QueryDomainAdminDivision");
+		super("Domain", "2018-01-29", "QueryDomainAdminDivision", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class SaveSingleTaskForUpdatingContactInfoRequest extends RpcAcsRequest<S
 
 	private String lang;
 	public SaveSingleTaskForUpdatingContactInfoRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo");
+		super("Domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

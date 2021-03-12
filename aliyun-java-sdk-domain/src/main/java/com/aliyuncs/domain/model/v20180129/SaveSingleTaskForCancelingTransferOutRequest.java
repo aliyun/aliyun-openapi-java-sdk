@@ -31,7 +31,7 @@ public class SaveSingleTaskForCancelingTransferOutRequest extends RpcAcsRequest<
 
 	private String lang;
 	public SaveSingleTaskForCancelingTransferOutRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferOut");
+		super("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferOut", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

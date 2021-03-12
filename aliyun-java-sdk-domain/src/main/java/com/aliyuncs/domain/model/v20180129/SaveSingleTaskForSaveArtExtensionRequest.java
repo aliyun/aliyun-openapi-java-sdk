@@ -49,7 +49,7 @@ public class SaveSingleTaskForSaveArtExtensionRequest extends RpcAcsRequest<Save
 
 	private String dimensions;
 	public SaveSingleTaskForSaveArtExtensionRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension");
+		super("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

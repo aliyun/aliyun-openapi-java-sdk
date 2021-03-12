@@ -69,7 +69,7 @@ public class SaveRegistrantProfileRequest extends RpcAcsRequest<SaveRegistrantPr
 
 	private String registrantName;
 	public SaveRegistrantProfileRequest() {
-		super("Domain", "2018-01-29", "SaveRegistrantProfile");
+		super("Domain", "2018-01-29", "SaveRegistrantProfile", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

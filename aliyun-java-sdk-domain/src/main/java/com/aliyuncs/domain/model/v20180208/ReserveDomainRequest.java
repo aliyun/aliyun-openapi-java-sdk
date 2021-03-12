@@ -30,7 +30,7 @@ public class ReserveDomainRequest extends RpcAcsRequest<ReserveDomainResponse> {
 
 	private String domainName;
 	public ReserveDomainRequest() {
-		super("Domain", "2018-02-08", "ReserveDomain");
+		super("Domain", "2018-02-08", "ReserveDomain", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

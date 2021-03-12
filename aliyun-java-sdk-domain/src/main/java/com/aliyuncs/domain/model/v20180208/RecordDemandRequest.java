@@ -29,7 +29,7 @@ public class RecordDemandRequest extends RpcAcsRequest<RecordDemandResponse> {
 
 	private String message;
 	public RecordDemandRequest() {
-		super("Domain", "2018-02-08", "RecordDemand");
+		super("Domain", "2018-02-08", "RecordDemand", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

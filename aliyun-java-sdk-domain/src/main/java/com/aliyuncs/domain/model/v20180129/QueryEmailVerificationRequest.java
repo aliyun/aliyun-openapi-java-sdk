@@ -31,7 +31,7 @@ public class QueryEmailVerificationRequest extends RpcAcsRequest<QueryEmailVerif
 
 	private String email;
 	public QueryEmailVerificationRequest() {
-		super("Domain", "2018-01-29", "QueryEmailVerification");
+		super("Domain", "2018-01-29", "QueryEmailVerification", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class SaveSingleTaskForAddingDSRecordRequest extends RpcAcsRequest<SaveSi
 
 	private Integer algorithm;
 	public SaveSingleTaskForAddingDSRecordRequest() {
-		super("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord");
+		super("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

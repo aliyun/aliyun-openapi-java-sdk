@@ -1,3 +1,8 @@
+2021-03-12 Version: 3.14.5
+- Supported batch delete for contact template.
+- Supported save for contact template.
+- Supported set default for contact template.
+
 2021-01-08 Version: 3.14.4
 - Added batch drop list domain.
 

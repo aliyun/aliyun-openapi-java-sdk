@@ -74,7 +74,7 @@ public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extend
 
 	private String registrantName;
 	public SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest() {
-		super("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential");
+		super("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

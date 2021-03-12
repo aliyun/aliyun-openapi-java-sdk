@@ -53,7 +53,7 @@ public class QueryDomainListRequest extends RpcAcsRequest<QueryDomainListRespons
 
 	private Long startRegistrationDate;
 	public QueryDomainListRequest() {
-		super("Domain", "2018-01-29", "QueryDomainList");
+		super("Domain", "2018-01-29", "QueryDomainList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

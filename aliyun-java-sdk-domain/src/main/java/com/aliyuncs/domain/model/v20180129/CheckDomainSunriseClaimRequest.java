@@ -31,7 +31,7 @@ public class CheckDomainSunriseClaimRequest extends RpcAcsRequest<CheckDomainSun
 
 	private String lang;
 	public CheckDomainSunriseClaimRequest() {
-		super("Domain", "2018-01-29", "CheckDomainSunriseClaim");
+		super("Domain", "2018-01-29", "CheckDomainSunriseClaim", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

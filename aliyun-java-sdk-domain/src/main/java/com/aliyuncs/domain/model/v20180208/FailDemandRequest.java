@@ -29,7 +29,7 @@ public class FailDemandRequest extends RpcAcsRequest<FailDemandResponse> {
 
 	private String message;
 	public FailDemandRequest() {
-		super("Domain", "2018-02-08", "FailDemand");
+		super("Domain", "2018-02-08", "FailDemand", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

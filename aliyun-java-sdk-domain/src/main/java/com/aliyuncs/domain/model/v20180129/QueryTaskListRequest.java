@@ -37,7 +37,7 @@ public class QueryTaskListRequest extends RpcAcsRequest<QueryTaskListResponse> {
 
 	private String lang;
 	public QueryTaskListRequest() {
-		super("Domain", "2018-01-29", "QueryTaskList");
+		super("Domain", "2018-01-29", "QueryTaskList", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class TransferInCheckMailTokenRequest extends RpcAcsRequest<TransferInChe
 
 	private String lang;
 	public TransferInCheckMailTokenRequest() {
-		super("Domain", "2018-01-29", "TransferInCheckMailToken");
+		super("Domain", "2018-01-29", "TransferInCheckMailToken", "domain");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
