@@ -27,9 +27,13 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 
 	private Long resourceOwnerId;
 
+	private String mode;
+
 	private String storageResource;
 
 	private String dBNodeClass;
+
+	private String dBClusterCategory;
 
 	private String resourceOwnerAccount;
 
@@ -48,6 +52,8 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 	private String modifyType;
 
 	private String computeResource;
+
+	private Integer elasticIOResource;
 	public ModifyDBClusterRequest() {
 		super("adb", "2019-03-15", "ModifyDBCluster", "ads");
 		setMethod(MethodType.POST);
@@ -65,6 +71,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putQueryParameter("Mode", mode);
 		}
 	}
 
@@ -87,6 +104,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.dBNodeClass = dBNodeClass;
 		if(dBNodeClass != null){
 			putQueryParameter("DBNodeClass", dBNodeClass);
+		}
+	}
+
+	public String getDBClusterCategory() {
+		return this.dBClusterCategory;
+	}
+
+	public void setDBClusterCategory(String dBClusterCategory) {
+		this.dBClusterCategory = dBClusterCategory;
+		if(dBClusterCategory != null){
+			putQueryParameter("DBClusterCategory", dBClusterCategory);
 		}
 	}
 
@@ -186,6 +214,17 @@ public class ModifyDBClusterRequest extends RpcAcsRequest<ModifyDBClusterRespons
 		this.computeResource = computeResource;
 		if(computeResource != null){
 			putQueryParameter("ComputeResource", computeResource);
+		}
+	}
+
+	public Integer getElasticIOResource() {
+		return this.elasticIOResource;
+	}
+
+	public void setElasticIOResource(Integer elasticIOResource) {
+		this.elasticIOResource = elasticIOResource;
+		if(elasticIOResource != null){
+			putQueryParameter("ElasticIOResource", elasticIOResource.toString());
 		}
 	}
 

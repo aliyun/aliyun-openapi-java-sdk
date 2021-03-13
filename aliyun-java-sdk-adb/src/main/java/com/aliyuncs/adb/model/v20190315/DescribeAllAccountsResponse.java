@@ -14,21 +14,20 @@
 
 package com.aliyuncs.adb.model.v20190315;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.DeleteDBClusterResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.DescribeAllAccountsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterResponse extends AcsResponse {
+public class DescribeAllAccountsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer taskId;
-
-	private String dBClusterId;
+	private List<AccountInfo> accountList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +37,30 @@ public class DeleteDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTaskId() {
-		return this.taskId;
+	public List<AccountInfo> getAccountList() {
+		return this.accountList;
 	}
 
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
+	public void setAccountList(List<AccountInfo> accountList) {
+		this.accountList = accountList;
 	}
 
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
+	public static class AccountInfo {
 
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
+		private String user;
+
+		public String getUser() {
+			return this.user;
+		}
+
+		public void setUser(String user) {
+			this.user = user;
+		}
 	}
 
 	@Override
-	public DeleteDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public DescribeAllAccountsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeAllAccountsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

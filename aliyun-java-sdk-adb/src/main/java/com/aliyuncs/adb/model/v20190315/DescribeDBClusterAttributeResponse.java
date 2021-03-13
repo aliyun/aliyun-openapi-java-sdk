@@ -115,6 +115,16 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Integer elasticIOResource;
+
+		private String engineVersion;
+
+		private Boolean userENIStatus;
+
+		private Boolean enableSpark;
+
+		private Boolean enableAirflow;
+
 		private List<Tag> tags;
 
 		public String getRegionId() {
@@ -387,6 +397,46 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getElasticIOResource() {
+			return this.elasticIOResource;
+		}
+
+		public void setElasticIOResource(Integer elasticIOResource) {
+			this.elasticIOResource = elasticIOResource;
+		}
+
+		public String getEngineVersion() {
+			return this.engineVersion;
+		}
+
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
+		}
+
+		public Boolean getUserENIStatus() {
+			return this.userENIStatus;
+		}
+
+		public void setUserENIStatus(Boolean userENIStatus) {
+			this.userENIStatus = userENIStatus;
+		}
+
+		public Boolean getEnableSpark() {
+			return this.enableSpark;
+		}
+
+		public void setEnableSpark(Boolean enableSpark) {
+			this.enableSpark = enableSpark;
+		}
+
+		public Boolean getEnableAirflow() {
+			return this.enableAirflow;
+		}
+
+		public void setEnableAirflow(Boolean enableAirflow) {
+			this.enableAirflow = enableAirflow;
 		}
 
 		public List<Tag> getTags() {

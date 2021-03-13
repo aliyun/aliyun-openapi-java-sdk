@@ -27,11 +27,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 
 	private Long resourceOwnerId;
 
+	private String range;
+
 	private String startTime;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
+
+	private String state;
+
+	private String order;
 
 	private String resourceOwnerAccount;
 
@@ -44,6 +50,8 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 	private Long ownerId;
 
 	private String dBName;
+
+	private String processID;
 	public DescribeSlowLogRecordsRequest() {
 		super("adb", "2019-03-15", "DescribeSlowLogRecords", "ads");
 		setMethod(MethodType.POST);
@@ -61,6 +69,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getRange() {
+		return this.range;
+	}
+
+	public void setRange(String range) {
+		this.range = range;
+		if(range != null){
+			putQueryParameter("Range", range);
 		}
 	}
 
@@ -94,6 +113,28 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 
@@ -160,6 +201,17 @@ public class DescribeSlowLogRecordsRequest extends RpcAcsRequest<DescribeSlowLog
 		this.dBName = dBName;
 		if(dBName != null){
 			putQueryParameter("DBName", dBName);
+		}
+	}
+
+	public String getProcessID() {
+		return this.processID;
+	}
+
+	public void setProcessID(String processID) {
+		this.processID = processID;
+		if(processID != null){
+			putQueryParameter("ProcessID", processID);
 		}
 	}
 

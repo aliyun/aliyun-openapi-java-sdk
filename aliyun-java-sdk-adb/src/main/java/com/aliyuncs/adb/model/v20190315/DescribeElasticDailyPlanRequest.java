@@ -22,14 +22,14 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
+public class DescribeElasticDailyPlanRequest extends RpcAcsRequest<DescribeElasticDailyPlanResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String enableBackupLog;
+	private String elasticDailyPlanStatusList;
 
-	private String preferredBackupPeriod;
+	private String elasticDailyPlanDay;
 
 	private String resourceOwnerAccount;
 
@@ -39,13 +39,11 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long ownerId;
 
-	private String preferredBackupTime;
+	private String elasticPlanName;
 
-	private String backupRetentionPeriod;
-
-	private Integer logBackupRetentionPeriod;
-	public ModifyBackupPolicyRequest() {
-		super("adb", "2019-03-15", "ModifyBackupPolicy", "ads");
+	private String resourcePoolName;
+	public DescribeElasticDailyPlanRequest() {
+		super("adb", "2019-03-15", "DescribeElasticDailyPlan", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,25 +62,25 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getEnableBackupLog() {
-		return this.enableBackupLog;
+	public String getElasticDailyPlanStatusList() {
+		return this.elasticDailyPlanStatusList;
 	}
 
-	public void setEnableBackupLog(String enableBackupLog) {
-		this.enableBackupLog = enableBackupLog;
-		if(enableBackupLog != null){
-			putQueryParameter("EnableBackupLog", enableBackupLog);
+	public void setElasticDailyPlanStatusList(String elasticDailyPlanStatusList) {
+		this.elasticDailyPlanStatusList = elasticDailyPlanStatusList;
+		if(elasticDailyPlanStatusList != null){
+			putQueryParameter("ElasticDailyPlanStatusList", elasticDailyPlanStatusList);
 		}
 	}
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
+	public String getElasticDailyPlanDay() {
+		return this.elasticDailyPlanDay;
 	}
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		if(preferredBackupPeriod != null){
-			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	public void setElasticDailyPlanDay(String elasticDailyPlanDay) {
+		this.elasticDailyPlanDay = elasticDailyPlanDay;
+		if(elasticDailyPlanDay != null){
+			putQueryParameter("ElasticDailyPlanDay", elasticDailyPlanDay);
 		}
 	}
 
@@ -130,42 +128,31 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getElasticPlanName() {
+		return this.elasticPlanName;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		if(preferredBackupTime != null){
-			putQueryParameter("PreferredBackupTime", preferredBackupTime);
+	public void setElasticPlanName(String elasticPlanName) {
+		this.elasticPlanName = elasticPlanName;
+		if(elasticPlanName != null){
+			putQueryParameter("ElasticPlanName", elasticPlanName);
 		}
 	}
 
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
+	public String getResourcePoolName() {
+		return this.resourcePoolName;
 	}
 
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-		}
-	}
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-		if(logBackupRetentionPeriod != null){
-			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod.toString());
+	public void setResourcePoolName(String resourcePoolName) {
+		this.resourcePoolName = resourcePoolName;
+		if(resourcePoolName != null){
+			putQueryParameter("ResourcePoolName", resourcePoolName);
 		}
 	}
 
 	@Override
-	public Class<ModifyBackupPolicyResponse> getResponseClass() {
-		return ModifyBackupPolicyResponse.class;
+	public Class<DescribeElasticDailyPlanResponse> getResponseClass() {
+		return DescribeElasticDailyPlanResponse.class;
 	}
 
 }

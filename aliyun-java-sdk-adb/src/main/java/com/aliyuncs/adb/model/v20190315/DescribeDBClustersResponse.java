@@ -143,6 +143,8 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
+		private Integer elasticIOResource;
+
 		private List<Tag> tags;
 
 		public String getDBClusterId() {
@@ -407,6 +409,14 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setResourceGroupId(String resourceGroupId) {
 			this.resourceGroupId = resourceGroupId;
+		}
+
+		public Integer getElasticIOResource() {
+			return this.elasticIOResource;
+		}
+
+		public void setElasticIOResource(Integer elasticIOResource) {
+			this.elasticIOResource = elasticIOResource;
 		}
 
 		public List<Tag> getTags() {

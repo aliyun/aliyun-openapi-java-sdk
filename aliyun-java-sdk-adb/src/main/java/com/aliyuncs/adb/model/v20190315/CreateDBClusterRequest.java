@@ -29,13 +29,29 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBClusterDescription;
 
-	private String clientToken;
-
 	private String storageType;
 
 	private String mode;
 
 	private String resourceGroupId;
+
+	private String period;
+
+	private String backupSetID;
+
+	private Long ownerId;
+
+	private String dBNodeGroupCount;
+
+	private String vSwitchId;
+
+	private String zoneId;
+
+	private String computeResource;
+
+	private String sourceDBInstanceName;
+
+	private String clientToken;
 
 	private String storageResource;
 
@@ -43,7 +59,7 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBClusterNetworkType;
 
-	private String period;
+	private String restoreTime;
 
 	private String resourceOwnerAccount;
 
@@ -53,23 +69,15 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 
 	private String dBClusterClass;
 
-	private Long ownerId;
-
-	private String dBNodeGroupCount;
-
 	private String usedTime;
 
-	private String vSwitchId;
+	private String restoreType;
 
 	private String dBNodeStorage;
 
 	private String executorCount;
 
 	private String vPCId;
-
-	private String zoneId;
-
-	private String computeResource;
 
 	private String payType;
 	public CreateDBClusterRequest() {
@@ -100,17 +108,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.dBClusterDescription = dBClusterDescription;
 		if(dBClusterDescription != null){
 			putQueryParameter("DBClusterDescription", dBClusterDescription);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -147,6 +144,105 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
+	public String getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(String period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period);
+		}
+	}
+
+	public String getBackupSetID() {
+		return this.backupSetID;
+	}
+
+	public void setBackupSetID(String backupSetID) {
+		this.backupSetID = backupSetID;
+		if(backupSetID != null){
+			putQueryParameter("BackupSetID", backupSetID);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getDBNodeGroupCount() {
+		return this.dBNodeGroupCount;
+	}
+
+	public void setDBNodeGroupCount(String dBNodeGroupCount) {
+		this.dBNodeGroupCount = dBNodeGroupCount;
+		if(dBNodeGroupCount != null){
+			putQueryParameter("DBNodeGroupCount", dBNodeGroupCount);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getZoneId() {
+		return this.zoneId;
+	}
+
+	public void setZoneId(String zoneId) {
+		this.zoneId = zoneId;
+		if(zoneId != null){
+			putQueryParameter("ZoneId", zoneId);
+		}
+	}
+
+	public String getComputeResource() {
+		return this.computeResource;
+	}
+
+	public void setComputeResource(String computeResource) {
+		this.computeResource = computeResource;
+		if(computeResource != null){
+			putQueryParameter("ComputeResource", computeResource);
+		}
+	}
+
+	public String getSourceDBInstanceName() {
+		return this.sourceDBInstanceName;
+	}
+
+	public void setSourceDBInstanceName(String sourceDBInstanceName) {
+		this.sourceDBInstanceName = sourceDBInstanceName;
+		if(sourceDBInstanceName != null){
+			putQueryParameter("SourceDBInstanceName", sourceDBInstanceName);
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
 	public String getStorageResource() {
 		return this.storageResource;
 	}
@@ -180,14 +276,14 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public String getPeriod() {
-		return this.period;
+	public String getRestoreTime() {
+		return this.restoreTime;
 	}
 
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
+	public void setRestoreTime(String restoreTime) {
+		this.restoreTime = restoreTime;
+		if(restoreTime != null){
+			putQueryParameter("RestoreTime", restoreTime);
 		}
 	}
 
@@ -235,28 +331,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getDBNodeGroupCount() {
-		return this.dBNodeGroupCount;
-	}
-
-	public void setDBNodeGroupCount(String dBNodeGroupCount) {
-		this.dBNodeGroupCount = dBNodeGroupCount;
-		if(dBNodeGroupCount != null){
-			putQueryParameter("DBNodeGroupCount", dBNodeGroupCount);
-		}
-	}
-
 	public String getUsedTime() {
 		return this.usedTime;
 	}
@@ -268,14 +342,14 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getRestoreType() {
+		return this.restoreType;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setRestoreType(String restoreType) {
+		this.restoreType = restoreType;
+		if(restoreType != null){
+			putQueryParameter("RestoreType", restoreType);
 		}
 	}
 
@@ -309,28 +383,6 @@ public class CreateDBClusterRequest extends RpcAcsRequest<CreateDBClusterRespons
 		this.vPCId = vPCId;
 		if(vPCId != null){
 			putQueryParameter("VPCId", vPCId);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getComputeResource() {
-		return this.computeResource;
-	}
-
-	public void setComputeResource(String computeResource) {
-		this.computeResource = computeResource;
-		if(computeResource != null){
-			putQueryParameter("ComputeResource", computeResource);
 		}
 	}
 

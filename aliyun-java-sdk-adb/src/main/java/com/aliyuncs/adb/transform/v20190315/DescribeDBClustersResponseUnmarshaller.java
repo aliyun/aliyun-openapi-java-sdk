@@ -68,6 +68,7 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setStorageResource(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].StorageResource"));
 			dBCluster.setMode(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].Mode"));
 			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClustersResponse.Items["+ i +"].ResourceGroupId"));
+			dBCluster.setElasticIOResource(_ctx.integerValue("DescribeDBClustersResponse.Items["+ i +"].ElasticIOResource"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClustersResponse.Items["+ i +"].Tags.Length"); j++) {

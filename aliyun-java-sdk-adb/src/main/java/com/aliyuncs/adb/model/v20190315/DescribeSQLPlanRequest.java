@@ -22,14 +22,10 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
+public class DescribeSQLPlanRequest extends RpcAcsRequest<DescribeSQLPlanResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String enableBackupLog;
-
-	private String preferredBackupPeriod;
 
 	private String resourceOwnerAccount;
 
@@ -39,13 +35,9 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private Long ownerId;
 
-	private String preferredBackupTime;
-
-	private String backupRetentionPeriod;
-
-	private Integer logBackupRetentionPeriod;
-	public ModifyBackupPolicyRequest() {
-		super("adb", "2019-03-15", "ModifyBackupPolicy", "ads");
+	private String processId;
+	public DescribeSQLPlanRequest() {
+		super("adb", "2019-03-15", "DescribeSQLPlan", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,28 +53,6 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getEnableBackupLog() {
-		return this.enableBackupLog;
-	}
-
-	public void setEnableBackupLog(String enableBackupLog) {
-		this.enableBackupLog = enableBackupLog;
-		if(enableBackupLog != null){
-			putQueryParameter("EnableBackupLog", enableBackupLog);
-		}
-	}
-
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
-	}
-
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		if(preferredBackupPeriod != null){
-			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
 		}
 	}
 
@@ -130,42 +100,20 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getProcessId() {
+		return this.processId;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		if(preferredBackupTime != null){
-			putQueryParameter("PreferredBackupTime", preferredBackupTime);
-		}
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-		}
-	}
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-		if(logBackupRetentionPeriod != null){
-			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod.toString());
+	public void setProcessId(String processId) {
+		this.processId = processId;
+		if(processId != null){
+			putQueryParameter("ProcessId", processId);
 		}
 	}
 
 	@Override
-	public Class<ModifyBackupPolicyResponse> getResponseClass() {
-		return ModifyBackupPolicyResponse.class;
+	public Class<DescribeSQLPlanResponse> getResponseClass() {
+		return DescribeSQLPlanResponse.class;
 	}
 
 }

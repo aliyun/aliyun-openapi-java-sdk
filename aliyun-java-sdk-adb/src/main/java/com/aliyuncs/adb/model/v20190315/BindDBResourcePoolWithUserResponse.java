@@ -15,20 +15,16 @@
 package com.aliyuncs.adb.model.v20190315;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.DeleteDBClusterResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.BindDBResourcePoolWithUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteDBClusterResponse extends AcsResponse {
+public class BindDBResourcePoolWithUserResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Integer taskId;
-
-	private String dBClusterId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +34,9 @@ public class DeleteDBClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(Integer taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
 	@Override
-	public DeleteDBClusterResponse getInstance(UnmarshallerContext context) {
-		return	DeleteDBClusterResponseUnmarshaller.unmarshall(this, context);
+	public BindDBResourcePoolWithUserResponse getInstance(UnmarshallerContext context) {
+		return	BindDBResourcePoolWithUserResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

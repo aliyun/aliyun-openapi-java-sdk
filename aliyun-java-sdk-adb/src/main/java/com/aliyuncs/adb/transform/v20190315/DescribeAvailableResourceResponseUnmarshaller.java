@@ -22,6 +22,7 @@ import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.Availa
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem;
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem;
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedFlexibleResourceItem;
+import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedFlexibleResourceItem.SupportedElasticIOResource;
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass;
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass.SupportedExecutor;
 import com.aliyuncs.adb.model.v20190315.DescribeAvailableResourceResponse.AvailableZone.SupportedModeItem.SupportedSerialListItem.SupportedInstanceClass.SupportedExecutor.NodeCount1;
@@ -68,6 +69,12 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 							supportedComputeResource.add(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedComputeResource["+ m +"]"));
 						}
 						supportedFlexibleResourceItem.setSupportedComputeResource(supportedComputeResource);
+
+						SupportedElasticIOResource supportedElasticIOResource = new SupportedElasticIOResource();
+						supportedElasticIOResource.setMinCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedElasticIOResource.MinCount"));
+						supportedElasticIOResource.setMaxCount(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedElasticIOResource.MaxCount"));
+						supportedElasticIOResource.setStep(_ctx.stringValue("DescribeAvailableResourceResponse.AvailableZoneList["+ i +"].SupportedMode["+ j +"].SupportedSerialList["+ k +"].SupportedFlexibleResource["+ l +"].SupportedElasticIOResource.Step"));
+						supportedFlexibleResourceItem.setSupportedElasticIOResource(supportedElasticIOResource);
 
 						supportedFlexibleResource.add(supportedFlexibleResourceItem);
 					}

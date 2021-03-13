@@ -66,6 +66,11 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 			dBCluster.setStorageResource(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].StorageResource"));
 			dBCluster.setMode(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].Mode"));
 			dBCluster.setResourceGroupId(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ResourceGroupId"));
+			dBCluster.setElasticIOResource(_ctx.integerValue("DescribeDBClusterAttributeResponse.Items["+ i +"].ElasticIOResource"));
+			dBCluster.setEngineVersion(_ctx.stringValue("DescribeDBClusterAttributeResponse.Items["+ i +"].EngineVersion"));
+			dBCluster.setUserENIStatus(_ctx.booleanValue("DescribeDBClusterAttributeResponse.Items["+ i +"].UserENIStatus"));
+			dBCluster.setEnableSpark(_ctx.booleanValue("DescribeDBClusterAttributeResponse.Items["+ i +"].EnableSpark"));
+			dBCluster.setEnableAirflow(_ctx.booleanValue("DescribeDBClusterAttributeResponse.Items["+ i +"].EnableAirflow"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDBClusterAttributeResponse.Items["+ i +"].Tags.Length"); j++) {

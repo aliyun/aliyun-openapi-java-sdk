@@ -22,14 +22,22 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyResponse> {
+public class DescribeLoadTasksRecordsRequest extends RpcAcsRequest<DescribeLoadTasksRecordsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String enableBackupLog;
+	private String range;
 
-	private String preferredBackupPeriod;
+	private String startTime;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
+
+	private String state;
+
+	private String order;
 
 	private String resourceOwnerAccount;
 
@@ -37,15 +45,13 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String ownerAccount;
 
+	private String endTime;
+
 	private Long ownerId;
 
-	private String preferredBackupTime;
-
-	private String backupRetentionPeriod;
-
-	private Integer logBackupRetentionPeriod;
-	public ModifyBackupPolicyRequest() {
-		super("adb", "2019-03-15", "ModifyBackupPolicy", "ads");
+	private String dBName;
+	public DescribeLoadTasksRecordsRequest() {
+		super("adb", "2019-03-15", "DescribeLoadTasksRecords", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,25 +70,69 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getEnableBackupLog() {
-		return this.enableBackupLog;
+	public String getRange() {
+		return this.range;
 	}
 
-	public void setEnableBackupLog(String enableBackupLog) {
-		this.enableBackupLog = enableBackupLog;
-		if(enableBackupLog != null){
-			putQueryParameter("EnableBackupLog", enableBackupLog);
+	public void setRange(String range) {
+		this.range = range;
+		if(range != null){
+			putQueryParameter("Range", range);
 		}
 	}
 
-	public String getPreferredBackupPeriod() {
-		return this.preferredBackupPeriod;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setPreferredBackupPeriod(String preferredBackupPeriod) {
-		this.preferredBackupPeriod = preferredBackupPeriod;
-		if(preferredBackupPeriod != null){
-			putQueryParameter("PreferredBackupPeriod", preferredBackupPeriod);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+		if(state != null){
+			putQueryParameter("State", state);
+		}
+	}
+
+	public String getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+		if(order != null){
+			putQueryParameter("Order", order);
 		}
 	}
 
@@ -119,6 +169,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -130,42 +191,20 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getPreferredBackupTime() {
-		return this.preferredBackupTime;
+	public String getDBName() {
+		return this.dBName;
 	}
 
-	public void setPreferredBackupTime(String preferredBackupTime) {
-		this.preferredBackupTime = preferredBackupTime;
-		if(preferredBackupTime != null){
-			putQueryParameter("PreferredBackupTime", preferredBackupTime);
-		}
-	}
-
-	public String getBackupRetentionPeriod() {
-		return this.backupRetentionPeriod;
-	}
-
-	public void setBackupRetentionPeriod(String backupRetentionPeriod) {
-		this.backupRetentionPeriod = backupRetentionPeriod;
-		if(backupRetentionPeriod != null){
-			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
-		}
-	}
-
-	public Integer getLogBackupRetentionPeriod() {
-		return this.logBackupRetentionPeriod;
-	}
-
-	public void setLogBackupRetentionPeriod(Integer logBackupRetentionPeriod) {
-		this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-		if(logBackupRetentionPeriod != null){
-			putQueryParameter("LogBackupRetentionPeriod", logBackupRetentionPeriod.toString());
+	public void setDBName(String dBName) {
+		this.dBName = dBName;
+		if(dBName != null){
+			putQueryParameter("DBName", dBName);
 		}
 	}
 
 	@Override
-	public Class<ModifyBackupPolicyResponse> getResponseClass() {
-		return ModifyBackupPolicyResponse.class;
+	public Class<DescribeLoadTasksRecordsResponse> getResponseClass() {
+		return DescribeLoadTasksRecordsResponse.class;
 	}
 
 }

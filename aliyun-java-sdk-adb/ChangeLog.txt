@@ -1,3 +1,6 @@
+2021-03-13 Version: 1.0.6
+- Supportd DescribeTableStatisticsRequest.
+
 2020-07-21 Version: 1.0.5
 - Support Tag API.
 

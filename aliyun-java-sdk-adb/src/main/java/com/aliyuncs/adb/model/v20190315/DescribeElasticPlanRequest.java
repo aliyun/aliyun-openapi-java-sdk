@@ -22,22 +22,26 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLogStoreKeysRequest extends RpcAcsRequest<DescribeLogStoreKeysResponse> {
+public class DescribeElasticPlanRequest extends RpcAcsRequest<DescribeElasticPlanResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String projectName;
-
-	private String logStoreName;
+	private Boolean elasticPlanEnable;
 
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeLogStoreKeysRequest() {
-		super("adb", "2019-03-15", "DescribeLogStoreKeys", "ads");
+
+	private String elasticPlanName;
+
+	private String resourcePoolName;
+	public DescribeElasticPlanRequest() {
+		super("adb", "2019-03-15", "DescribeElasticPlan", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,25 +60,14 @@ public class DescribeLogStoreKeysRequest extends RpcAcsRequest<DescribeLogStoreK
 		}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
+	public Boolean getElasticPlanEnable() {
+		return this.elasticPlanEnable;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
-	public String getLogStoreName() {
-		return this.logStoreName;
-	}
-
-	public void setLogStoreName(String logStoreName) {
-		this.logStoreName = logStoreName;
-		if(logStoreName != null){
-			putQueryParameter("LogStoreName", logStoreName);
+	public void setElasticPlanEnable(Boolean elasticPlanEnable) {
+		this.elasticPlanEnable = elasticPlanEnable;
+		if(elasticPlanEnable != null){
+			putQueryParameter("ElasticPlanEnable", elasticPlanEnable.toString());
 		}
 	}
 
@@ -86,6 +79,17 @@ public class DescribeLogStoreKeysRequest extends RpcAcsRequest<DescribeLogStoreK
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -111,9 +115,31 @@ public class DescribeLogStoreKeysRequest extends RpcAcsRequest<DescribeLogStoreK
 		}
 	}
 
+	public String getElasticPlanName() {
+		return this.elasticPlanName;
+	}
+
+	public void setElasticPlanName(String elasticPlanName) {
+		this.elasticPlanName = elasticPlanName;
+		if(elasticPlanName != null){
+			putQueryParameter("ElasticPlanName", elasticPlanName);
+		}
+	}
+
+	public String getResourcePoolName() {
+		return this.resourcePoolName;
+	}
+
+	public void setResourcePoolName(String resourcePoolName) {
+		this.resourcePoolName = resourcePoolName;
+		if(resourcePoolName != null){
+			putQueryParameter("ResourcePoolName", resourcePoolName);
+		}
+	}
+
 	@Override
-	public Class<DescribeLogStoreKeysResponse> getResponseClass() {
-		return DescribeLogStoreKeysResponse.class;
+	public Class<DescribeElasticPlanResponse> getResponseClass() {
+		return DescribeElasticPlanResponse.class;
 	}
 
 }

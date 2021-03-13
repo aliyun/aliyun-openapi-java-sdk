@@ -25,37 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalCount;
 
 	private Integer pageSize;
 
-	private Integer dBClusterId;
+	private String requestId;
 
-	private Long suggestMinRecordsPerPartition;
+	private Integer pageNumber;
+
+	private String dBClusterId;
 
 	private Long suggestMaxRecordsPerPartition;
 
+	private Long suggestMinRecordsPerPartition;
+
 	private List<TablePartitionDiagnose> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -73,20 +57,28 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getDBClusterId() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getDBClusterId() {
 		return this.dBClusterId;
 	}
 
-	public void setDBClusterId(Integer dBClusterId) {
+	public void setDBClusterId(String dBClusterId) {
 		this.dBClusterId = dBClusterId;
-	}
-
-	public Long getSuggestMinRecordsPerPartition() {
-		return this.suggestMinRecordsPerPartition;
-	}
-
-	public void setSuggestMinRecordsPerPartition(Long suggestMinRecordsPerPartition) {
-		this.suggestMinRecordsPerPartition = suggestMinRecordsPerPartition;
 	}
 
 	public Long getSuggestMaxRecordsPerPartition() {
@@ -95,6 +87,14 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 	public void setSuggestMaxRecordsPerPartition(Long suggestMaxRecordsPerPartition) {
 		this.suggestMaxRecordsPerPartition = suggestMaxRecordsPerPartition;
+	}
+
+	public Long getSuggestMinRecordsPerPartition() {
+		return this.suggestMinRecordsPerPartition;
+	}
+
+	public void setSuggestMinRecordsPerPartition(Long suggestMinRecordsPerPartition) {
+		this.suggestMinRecordsPerPartition = suggestMinRecordsPerPartition;
 	}
 
 	public List<TablePartitionDiagnose> getItems() {
@@ -107,21 +107,13 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 	public static class TablePartitionDiagnose {
 
-		private String schemaName;
-
 		private String tableName;
 
 		private Integer partitionNumber;
 
 		private String partitionDetail;
 
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
+		private String schemaName;
 
 		public String getTableName() {
 			return this.tableName;
@@ -145,6 +137,14 @@ public class DescribeTablePartitionDiagnoseResponse extends AcsResponse {
 
 		public void setPartitionDetail(String partitionDetail) {
 			this.partitionDetail = partitionDetail;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 	}
 

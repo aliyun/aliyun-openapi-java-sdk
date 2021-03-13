@@ -22,22 +22,20 @@ import com.aliyuncs.adb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeLoghubDetailRequest extends RpcAcsRequest<DescribeLoghubDetailResponse> {
+public class DescribeAllAccountsRequest extends RpcAcsRequest<DescribeAllAccountsResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String projectName;
-
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String exportName;
-	public DescribeLoghubDetailRequest() {
-		super("adb", "2019-03-15", "DescribeLoghubDetail", "ads");
+	public DescribeAllAccountsRequest() {
+		super("adb", "2019-03-15", "DescribeAllAccounts", "ads");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +54,6 @@ public class DescribeLoghubDetailRequest extends RpcAcsRequest<DescribeLoghubDet
 		}
 	}
 
-	public String getProjectName() {
-		return this.projectName;
-	}
-
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-		if(projectName != null){
-			putQueryParameter("ProjectName", projectName);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -75,6 +62,17 @@ public class DescribeLoghubDetailRequest extends RpcAcsRequest<DescribeLoghubDet
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -100,20 +98,9 @@ public class DescribeLoghubDetailRequest extends RpcAcsRequest<DescribeLoghubDet
 		}
 	}
 
-	public String getExportName() {
-		return this.exportName;
-	}
-
-	public void setExportName(String exportName) {
-		this.exportName = exportName;
-		if(exportName != null){
-			putQueryParameter("ExportName", exportName);
-		}
-	}
-
 	@Override
-	public Class<DescribeLoghubDetailResponse> getResponseClass() {
-		return DescribeLoghubDetailResponse.class;
+	public Class<DescribeAllAccountsResponse> getResponseClass() {
+		return DescribeAllAccountsResponse.class;
 	}
 
 }

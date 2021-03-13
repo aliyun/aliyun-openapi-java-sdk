@@ -139,6 +139,8 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					private List<String> supportedComputeResource;
 
+					private SupportedElasticIOResource supportedElasticIOResource;
+
 					public String getStorageType() {
 						return this.storageType;
 					}
@@ -161,6 +163,47 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 
 					public void setSupportedComputeResource(List<String> supportedComputeResource) {
 						this.supportedComputeResource = supportedComputeResource;
+					}
+
+					public SupportedElasticIOResource getSupportedElasticIOResource() {
+						return this.supportedElasticIOResource;
+					}
+
+					public void setSupportedElasticIOResource(SupportedElasticIOResource supportedElasticIOResource) {
+						this.supportedElasticIOResource = supportedElasticIOResource;
+					}
+
+					public static class SupportedElasticIOResource {
+
+						private String minCount;
+
+						private String maxCount;
+
+						private String step;
+
+						public String getMinCount() {
+							return this.minCount;
+						}
+
+						public void setMinCount(String minCount) {
+							this.minCount = minCount;
+						}
+
+						public String getMaxCount() {
+							return this.maxCount;
+						}
+
+						public void setMaxCount(String maxCount) {
+							this.maxCount = maxCount;
+						}
+
+						public String getStep() {
+							return this.step;
+						}
+
+						public void setStep(String step) {
+							this.step = step;
+						}
 					}
 				}
 

@@ -14,20 +14,17 @@
 
 package com.aliyuncs.adb.model.v20190315;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.adb.transform.v20190315.DescribeLogStoreKeysResponseUnmarshaller;
+import com.aliyuncs.adb.transform.v20190315.UnbindDBResourcePoolWithUserResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeLogStoreKeysResponse extends AcsResponse {
+public class UnbindDBResourcePoolWithUserResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> logStoreKeys;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,16 +34,13 @@ public class DescribeLogStoreKeysResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getLogStoreKeys() {
-		return this.logStoreKeys;
-	}
-
-	public void setLogStoreKeys(List<String> logStoreKeys) {
-		this.logStoreKeys = logStoreKeys;
+	@Override
+	public UnbindDBResourcePoolWithUserResponse getInstance(UnmarshallerContext context) {
+		return	UnbindDBResourcePoolWithUserResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public DescribeLogStoreKeysResponse getInstance(UnmarshallerContext context) {
-		return	DescribeLogStoreKeysResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

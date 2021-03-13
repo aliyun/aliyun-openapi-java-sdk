@@ -14,18 +14,16 @@
 
 package com.aliyuncs.adb.transform.v20190315;
 
-import com.aliyuncs.adb.model.v20190315.DeleteDBClusterResponse;
+import com.aliyuncs.adb.model.v20190315.DeleteDBResourcePoolResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteDBClusterResponseUnmarshaller {
+public class DeleteDBResourcePoolResponseUnmarshaller {
 
-	public static DeleteDBClusterResponse unmarshall(DeleteDBClusterResponse deleteDBClusterResponse, UnmarshallerContext _ctx) {
+	public static DeleteDBResourcePoolResponse unmarshall(DeleteDBResourcePoolResponse deleteDBResourcePoolResponse, UnmarshallerContext _ctx) {
 		
-		deleteDBClusterResponse.setRequestId(_ctx.stringValue("DeleteDBClusterResponse.RequestId"));
-		deleteDBClusterResponse.setTaskId(_ctx.integerValue("DeleteDBClusterResponse.TaskId"));
-		deleteDBClusterResponse.setDBClusterId(_ctx.stringValue("DeleteDBClusterResponse.DBClusterId"));
+		deleteDBResourcePoolResponse.setRequestId(_ctx.stringValue("DeleteDBResourcePoolResponse.RequestId"));
 	 
-	 	return deleteDBClusterResponse;
+	 	return deleteDBResourcePoolResponse;
 	}
 }

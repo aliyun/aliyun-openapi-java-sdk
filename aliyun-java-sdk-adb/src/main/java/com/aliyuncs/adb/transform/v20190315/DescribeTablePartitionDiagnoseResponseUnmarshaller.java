@@ -27,20 +27,20 @@ public class DescribeTablePartitionDiagnoseResponseUnmarshaller {
 	public static DescribeTablePartitionDiagnoseResponse unmarshall(DescribeTablePartitionDiagnoseResponse describeTablePartitionDiagnoseResponse, UnmarshallerContext _ctx) {
 		
 		describeTablePartitionDiagnoseResponse.setRequestId(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.RequestId"));
-		describeTablePartitionDiagnoseResponse.setPageNumber(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.PageNumber"));
 		describeTablePartitionDiagnoseResponse.setTotalCount(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.TotalCount"));
 		describeTablePartitionDiagnoseResponse.setPageSize(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.PageSize"));
-		describeTablePartitionDiagnoseResponse.setDBClusterId(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.DBClusterId"));
-		describeTablePartitionDiagnoseResponse.setSuggestMinRecordsPerPartition(_ctx.longValue("DescribeTablePartitionDiagnoseResponse.SuggestMinRecordsPerPartition"));
+		describeTablePartitionDiagnoseResponse.setPageNumber(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.PageNumber"));
+		describeTablePartitionDiagnoseResponse.setDBClusterId(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.DBClusterId"));
 		describeTablePartitionDiagnoseResponse.setSuggestMaxRecordsPerPartition(_ctx.longValue("DescribeTablePartitionDiagnoseResponse.SuggestMaxRecordsPerPartition"));
+		describeTablePartitionDiagnoseResponse.setSuggestMinRecordsPerPartition(_ctx.longValue("DescribeTablePartitionDiagnoseResponse.SuggestMinRecordsPerPartition"));
 
 		List<TablePartitionDiagnose> items = new ArrayList<TablePartitionDiagnose>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeTablePartitionDiagnoseResponse.Items.Length"); i++) {
 			TablePartitionDiagnose tablePartitionDiagnose = new TablePartitionDiagnose();
-			tablePartitionDiagnose.setSchemaName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].SchemaName"));
 			tablePartitionDiagnose.setTableName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].TableName"));
 			tablePartitionDiagnose.setPartitionNumber(_ctx.integerValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionNumber"));
 			tablePartitionDiagnose.setPartitionDetail(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].PartitionDetail"));
+			tablePartitionDiagnose.setSchemaName(_ctx.stringValue("DescribeTablePartitionDiagnoseResponse.Items["+ i +"].SchemaName"));
 
 			items.add(tablePartitionDiagnose);
 		}
