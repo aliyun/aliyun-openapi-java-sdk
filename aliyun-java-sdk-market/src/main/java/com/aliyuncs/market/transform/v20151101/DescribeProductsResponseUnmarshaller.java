@@ -49,6 +49,7 @@ public class DescribeProductsResponseUnmarshaller {
 			productItem.setWarrantyDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].WarrantyDate"));
 			productItem.setDeliveryDate(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryDate"));
 			productItem.setDeliveryWay(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].DeliveryWay"));
+			productItem.setPriceInfo(_ctx.stringValue("DescribeProductsResponse.ProductItems["+ i +"].PriceInfo"));
 
 			productItems.add(productItem);
 		}

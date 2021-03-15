@@ -107,6 +107,8 @@ public class DescribeProductsResponse extends AcsResponse {
 
 		private String deliveryWay;
 
+		private String priceInfo;
+
 		public String getCode() {
 			return this.code;
 		}
@@ -225,6 +227,14 @@ public class DescribeProductsResponse extends AcsResponse {
 
 		public void setDeliveryWay(String deliveryWay) {
 			this.deliveryWay = deliveryWay;
+		}
+
+		public String getPriceInfo() {
+			return this.priceInfo;
+		}
+
+		public void setPriceInfo(String priceInfo) {
+			this.priceInfo = priceInfo;
 		}
 	}
 
