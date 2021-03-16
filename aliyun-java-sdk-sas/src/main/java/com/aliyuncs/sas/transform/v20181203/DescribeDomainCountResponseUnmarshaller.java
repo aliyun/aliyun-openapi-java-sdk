@@ -25,6 +25,7 @@ public class DescribeDomainCountResponseUnmarshaller {
 		describeDomainCountResponse.setRequestId(_ctx.stringValue("DescribeDomainCountResponse.RequestId"));
 		describeDomainCountResponse.setTotalDomainsCount(_ctx.integerValue("DescribeDomainCountResponse.TotalDomainsCount"));
 		describeDomainCountResponse.setRootDomainsCount(_ctx.integerValue("DescribeDomainCountResponse.RootDomainsCount"));
+		describeDomainCountResponse.setSubDomainsCount(_ctx.integerValue("DescribeDomainCountResponse.SubDomainsCount"));
 	 
 	 	return describeDomainCountResponse;
 	}

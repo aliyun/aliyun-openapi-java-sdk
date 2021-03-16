@@ -71,7 +71,7 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 
 		private Boolean honeyPotExistence;
 
-		private String honeyPotVSwitchId;
+		private String honeyPotVpcSwitchId;
 
 		private String honeyPotInstanceStatus;
 
@@ -79,7 +79,7 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 
 		private String honeyPotEcsInstanceStatus;
 
-		private List<String> vpcSwitchIdList;
+		private List<VpcSwitchInfo> vpcSwitchIdList;
 
 		public String getVpcId() {
 			return this.vpcId;
@@ -137,12 +137,12 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 			this.honeyPotExistence = honeyPotExistence;
 		}
 
-		public String getHoneyPotVSwitchId() {
-			return this.honeyPotVSwitchId;
+		public String getHoneyPotVpcSwitchId() {
+			return this.honeyPotVpcSwitchId;
 		}
 
-		public void setHoneyPotVSwitchId(String honeyPotVSwitchId) {
-			this.honeyPotVSwitchId = honeyPotVSwitchId;
+		public void setHoneyPotVpcSwitchId(String honeyPotVpcSwitchId) {
+			this.honeyPotVpcSwitchId = honeyPotVpcSwitchId;
 		}
 
 		public String getHoneyPotInstanceStatus() {
@@ -169,12 +169,45 @@ public class DescribeVpcHoneyPotListResponse extends AcsResponse {
 			this.honeyPotEcsInstanceStatus = honeyPotEcsInstanceStatus;
 		}
 
-		public List<String> getVpcSwitchIdList() {
+		public List<VpcSwitchInfo> getVpcSwitchIdList() {
 			return this.vpcSwitchIdList;
 		}
 
-		public void setVpcSwitchIdList(List<String> vpcSwitchIdList) {
+		public void setVpcSwitchIdList(List<VpcSwitchInfo> vpcSwitchIdList) {
 			this.vpcSwitchIdList = vpcSwitchIdList;
+		}
+
+		public static class VpcSwitchInfo {
+
+			private String vpcSwitchId;
+
+			private String vpcSwitchName;
+
+			private String zoneId;
+
+			public String getVpcSwitchId() {
+				return this.vpcSwitchId;
+			}
+
+			public void setVpcSwitchId(String vpcSwitchId) {
+				this.vpcSwitchId = vpcSwitchId;
+			}
+
+			public String getVpcSwitchName() {
+				return this.vpcSwitchName;
+			}
+
+			public void setVpcSwitchName(String vpcSwitchName) {
+				this.vpcSwitchName = vpcSwitchName;
+			}
+
+			public String getZoneId() {
+				return this.zoneId;
+			}
+
+			public void setZoneId(String zoneId) {
+				this.zoneId = zoneId;
+			}
 		}
 	}
 

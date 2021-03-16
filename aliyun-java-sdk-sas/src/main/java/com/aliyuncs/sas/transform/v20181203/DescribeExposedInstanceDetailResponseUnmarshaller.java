@@ -47,9 +47,9 @@ public class DescribeExposedInstanceDetailResponseUnmarshaller {
 			List<ScaVulRecord> realVulList = new ArrayList<ScaVulRecord>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList.Length"); j++) {
 				ScaVulRecord scaVulRecord = new ScaVulRecord();
-				scaVulRecord.setName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList["+ j +"].Name"));
 				scaVulRecord.setAliasName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList["+ j +"].AliasName"));
 				scaVulRecord.setNecessity(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList["+ j +"].Necessity"));
+				scaVulRecord.setName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList["+ j +"].Name"));
 				scaVulRecord.setType(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList["+ j +"].Type"));
 				scaVulRecord.setUuid(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList["+ j +"].Uuid"));
 
@@ -60,9 +60,9 @@ public class DescribeExposedInstanceDetailResponseUnmarshaller {
 			List<ScaVulRecord> allVulList = new ArrayList<ScaVulRecord>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList.Length"); j++) {
 				ScaVulRecord scaVulRecord_ = new ScaVulRecord();
-				scaVulRecord_.setName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Name"));
 				scaVulRecord_.setAliasName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].AliasName"));
 				scaVulRecord_.setNecessity(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Necessity"));
+				scaVulRecord_.setName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Name"));
 				scaVulRecord_.setType(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Type"));
 				scaVulRecord_.setUuid(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].AllVulList["+ j +"].Uuid"));
 

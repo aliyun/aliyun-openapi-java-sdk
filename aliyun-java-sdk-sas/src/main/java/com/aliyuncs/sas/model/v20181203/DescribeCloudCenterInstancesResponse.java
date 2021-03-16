@@ -133,6 +133,8 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		private Integer exposedStatus;
 
+		private Integer autoSnapshotsLevel;
+
 		public String getInternetIp() {
 			return this.internetIp;
 		}
@@ -395,6 +397,14 @@ public class DescribeCloudCenterInstancesResponse extends AcsResponse {
 
 		public void setExposedStatus(Integer exposedStatus) {
 			this.exposedStatus = exposedStatus;
+		}
+
+		public Integer getAutoSnapshotsLevel() {
+			return this.autoSnapshotsLevel;
+		}
+
+		public void setAutoSnapshotsLevel(Integer autoSnapshotsLevel) {
+			this.autoSnapshotsLevel = autoSnapshotsLevel;
 		}
 	}
 

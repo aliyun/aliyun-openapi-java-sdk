@@ -22,18 +22,16 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<DescribeSecurityEventOperationsResponse> {
+public class ModifyAssetGroupRequest extends RpcAcsRequest<ModifyAssetGroupResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private Long groupId;
 
 	private String sourceIp;
 
-	private String lang;
-
-	private Long securityEventId;
-	public DescribeSecurityEventOperationsRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityEventOperations", "sas");
+	private String uuids;
+	public ModifyAssetGroupRequest() {
+		super("Sas", "2018-12-03", "ModifyAssetGroup", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +39,14 @@ public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<Descri
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public Long getGroupId() {
+		return this.groupId;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setGroupId(Long groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId.toString());
 		}
 	}
 
@@ -63,31 +61,20 @@ public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getUuids() {
+		return this.uuids;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("Lang", lang);
-		}
-	}
-
-	public Long getSecurityEventId() {
-		return this.securityEventId;
-	}
-
-	public void setSecurityEventId(Long securityEventId) {
-		this.securityEventId = securityEventId;
-		if(securityEventId != null){
-			putQueryParameter("SecurityEventId", securityEventId.toString());
+	public void setUuids(String uuids) {
+		this.uuids = uuids;
+		if(uuids != null){
+			putQueryParameter("Uuids", uuids);
 		}
 	}
 
 	@Override
-	public Class<DescribeSecurityEventOperationsResponse> getResponseClass() {
-		return DescribeSecurityEventOperationsResponse.class;
+	public Class<ModifyAssetGroupResponse> getResponseClass() {
+		return ModifyAssetGroupResponse.class;
 	}
 
 }

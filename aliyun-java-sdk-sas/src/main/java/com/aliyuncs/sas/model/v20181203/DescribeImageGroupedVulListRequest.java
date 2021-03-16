@@ -25,6 +25,32 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeImageGroupedVulListResponse> {
 	   
 
+	private String type;
+
+	private Long lastTsEnd;
+
+	private Long createTsStart;
+
+	private String imageTag;
+
+	private String level;
+
+	private String groupId;
+
+	private String orderBy;
+
+	private String aliasName;
+
+	private Long patchId;
+
+	private String name;
+
+	private Long createTsEnd;
+
+	private String necessity;
+
+	private String uuids;
+
 	private String repoId;
 
 	private String statusList;
@@ -33,53 +59,29 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 
 	private String remark;
 
-	private String type;
-
-	private Long lastTsEnd;
-
-	private Long createTsStart;
-
 	private String repoNamespace;
 
 	private String imageDigest;
 
 	private Integer pageSize;
 
-	private String imageTag;
+	private String lang;
 
 	private Long lastTsStart;
 
 	private String direction;
 
-	private String level;
-
-	private String groupId;
-
-	private String orderBy;
-
 	private String dealed;
 
 	private Integer currentPage;
-
-	private String aliasName;
-
-	private Long patchId;
 
 	private String searchTags;
 
 	private String repoName;
 
-	private String name;
-
 	private String repoInstanceId;
 
 	private String imageLayer;
-
-	private Long createTsEnd;
-
-	private String necessity;
-
-	private String uuids;
 
 	private String repoRegionId;
 	public DescribeImageGroupedVulListRequest() {
@@ -89,6 +91,149 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public Long getLastTsEnd() {
+		return this.lastTsEnd;
+	}
+
+	public void setLastTsEnd(Long lastTsEnd) {
+		this.lastTsEnd = lastTsEnd;
+		if(lastTsEnd != null){
+			putQueryParameter("LastTsEnd", lastTsEnd.toString());
+		}
+	}
+
+	public Long getCreateTsStart() {
+		return this.createTsStart;
+	}
+
+	public void setCreateTsStart(Long createTsStart) {
+		this.createTsStart = createTsStart;
+		if(createTsStart != null){
+			putQueryParameter("CreateTsStart", createTsStart.toString());
+		}
+	}
+
+	public String getImageTag() {
+		return this.imageTag;
+	}
+
+	public void setImageTag(String imageTag) {
+		this.imageTag = imageTag;
+		if(imageTag != null){
+			putQueryParameter("ImageTag", imageTag);
+		}
+	}
+
+	public String getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+		if(level != null){
+			putQueryParameter("Level", level);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getOrderBy() {
+		return this.orderBy;
+	}
+
+	public void setOrderBy(String orderBy) {
+		this.orderBy = orderBy;
+		if(orderBy != null){
+			putQueryParameter("OrderBy", orderBy);
+		}
+	}
+
+	public String getAliasName() {
+		return this.aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+		if(aliasName != null){
+			putQueryParameter("AliasName", aliasName);
+		}
+	}
+
+	public Long getPatchId() {
+		return this.patchId;
+	}
+
+	public void setPatchId(Long patchId) {
+		this.patchId = patchId;
+		if(patchId != null){
+			putQueryParameter("PatchId", patchId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public Long getCreateTsEnd() {
+		return this.createTsEnd;
+	}
+
+	public void setCreateTsEnd(Long createTsEnd) {
+		this.createTsEnd = createTsEnd;
+		if(createTsEnd != null){
+			putQueryParameter("CreateTsEnd", createTsEnd.toString());
+		}
+	}
+
+	public String getNecessity() {
+		return this.necessity;
+	}
+
+	public void setNecessity(String necessity) {
+		this.necessity = necessity;
+		if(necessity != null){
+			putQueryParameter("Necessity", necessity);
+		}
+	}
+
+	public String getUuids() {
+		return this.uuids;
+	}
+
+	public void setUuids(String uuids) {
+		this.uuids = uuids;
+		if(uuids != null){
+			putQueryParameter("Uuids", uuids);
+		}
 	}
 
 	public String getRepoId() {
@@ -135,39 +280,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Long getLastTsEnd() {
-		return this.lastTsEnd;
-	}
-
-	public void setLastTsEnd(Long lastTsEnd) {
-		this.lastTsEnd = lastTsEnd;
-		if(lastTsEnd != null){
-			putQueryParameter("LastTsEnd", lastTsEnd.toString());
-		}
-	}
-
-	public Long getCreateTsStart() {
-		return this.createTsStart;
-	}
-
-	public void setCreateTsStart(Long createTsStart) {
-		this.createTsStart = createTsStart;
-		if(createTsStart != null){
-			putQueryParameter("CreateTsStart", createTsStart.toString());
-		}
-	}
-
 	public String getRepoNamespace() {
 		return this.repoNamespace;
 	}
@@ -201,14 +313,14 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getImageTag() {
-		return this.imageTag;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setImageTag(String imageTag) {
-		this.imageTag = imageTag;
-		if(imageTag != null){
-			putQueryParameter("ImageTag", imageTag);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
@@ -234,39 +346,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
-	}
-
-	public String getGroupId() {
-		return this.groupId;
-	}
-
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
-		if(groupId != null){
-			putQueryParameter("GroupId", groupId);
-		}
-	}
-
-	public String getOrderBy() {
-		return this.orderBy;
-	}
-
-	public void setOrderBy(String orderBy) {
-		this.orderBy = orderBy;
-		if(orderBy != null){
-			putQueryParameter("OrderBy", orderBy);
-		}
-	}
-
 	public String getDealed() {
 		return this.dealed;
 	}
@@ -286,28 +365,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getAliasName() {
-		return this.aliasName;
-	}
-
-	public void setAliasName(String aliasName) {
-		this.aliasName = aliasName;
-		if(aliasName != null){
-			putQueryParameter("AliasName", aliasName);
-		}
-	}
-
-	public Long getPatchId() {
-		return this.patchId;
-	}
-
-	public void setPatchId(Long patchId) {
-		this.patchId = patchId;
-		if(patchId != null){
-			putQueryParameter("PatchId", patchId.toString());
 		}
 	}
 
@@ -333,17 +390,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getRepoInstanceId() {
 		return this.repoInstanceId;
 	}
@@ -363,39 +409,6 @@ public class DescribeImageGroupedVulListRequest extends RpcAcsRequest<DescribeIm
 		this.imageLayer = imageLayer;
 		if(imageLayer != null){
 			putQueryParameter("ImageLayer", imageLayer);
-		}
-	}
-
-	public Long getCreateTsEnd() {
-		return this.createTsEnd;
-	}
-
-	public void setCreateTsEnd(Long createTsEnd) {
-		this.createTsEnd = createTsEnd;
-		if(createTsEnd != null){
-			putQueryParameter("CreateTsEnd", createTsEnd.toString());
-		}
-	}
-
-	public String getNecessity() {
-		return this.necessity;
-	}
-
-	public void setNecessity(String necessity) {
-		this.necessity = necessity;
-		if(necessity != null){
-			putQueryParameter("Necessity", necessity);
-		}
-	}
-
-	public String getUuids() {
-		return this.uuids;
-	}
-
-	public void setUuids(String uuids) {
-		this.uuids = uuids;
-		if(uuids != null){
-			putQueryParameter("Uuids", uuids);
 		}
 	}
 

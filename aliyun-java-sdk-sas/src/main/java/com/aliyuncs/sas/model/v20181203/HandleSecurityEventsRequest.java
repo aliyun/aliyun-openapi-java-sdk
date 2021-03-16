@@ -37,6 +37,8 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 	private String operationCode;
 
 	private String operationParams;
+
+	private String markBatch;
 	public HandleSecurityEventsRequest() {
 		super("Sas", "2018-12-03", "HandleSecurityEvents", "sas");
 		setMethod(MethodType.POST);
@@ -111,6 +113,17 @@ public class HandleSecurityEventsRequest extends RpcAcsRequest<HandleSecurityEve
 		this.operationParams = operationParams;
 		if(operationParams != null){
 			putQueryParameter("OperationParams", operationParams);
+		}
+	}
+
+	public String getMarkBatch() {
+		return this.markBatch;
+	}
+
+	public void setMarkBatch(String markBatch) {
+		this.markBatch = markBatch;
+		if(markBatch != null){
+			putQueryParameter("MarkBatch", markBatch);
 		}
 	}
 

@@ -32,7 +32,6 @@ public class DescribeHoneyPotSuspStatisticsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse.Length"); i++) {
 			SuspHoneyPotStatisticsResponseItem suspHoneyPotStatisticsResponseItem = new SuspHoneyPotStatisticsResponseItem();
 			suspHoneyPotStatisticsResponseItem.setCount(_ctx.integerValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].Count"));
-			suspHoneyPotStatisticsResponseItem.setName(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].Name"));
 			suspHoneyPotStatisticsResponseItem.setType(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].Type"));
 			suspHoneyPotStatisticsResponseItem.setInstanceId(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].InstanceId"));
 			suspHoneyPotStatisticsResponseItem.setInstanceName(_ctx.stringValue("DescribeHoneyPotSuspStatisticsResponse.SuspHoneyPotStatisticsResponse["+ i +"].InstanceName"));

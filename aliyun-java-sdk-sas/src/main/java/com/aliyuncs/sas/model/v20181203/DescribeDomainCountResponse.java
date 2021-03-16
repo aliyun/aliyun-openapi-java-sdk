@@ -30,6 +30,8 @@ public class DescribeDomainCountResponse extends AcsResponse {
 
 	private Integer rootDomainsCount;
 
+	private Integer subDomainsCount;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class DescribeDomainCountResponse extends AcsResponse {
 
 	public void setRootDomainsCount(Integer rootDomainsCount) {
 		this.rootDomainsCount = rootDomainsCount;
+	}
+
+	public Integer getSubDomainsCount() {
+		return this.subDomainsCount;
+	}
+
+	public void setSubDomainsCount(Integer subDomainsCount) {
+		this.subDomainsCount = subDomainsCount;
 	}
 
 	@Override

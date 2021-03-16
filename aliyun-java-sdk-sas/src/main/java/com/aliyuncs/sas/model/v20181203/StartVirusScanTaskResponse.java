@@ -15,18 +15,18 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.CreateOrUpdateAssetGroupResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.StartVirusScanTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
+public class StartVirusScanTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long groupId;
+	private Long scanTaskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,17 @@ public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
+	public Long getScanTaskId() {
+		return this.scanTaskId;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
+	public void setScanTaskId(Long scanTaskId) {
+		this.scanTaskId = scanTaskId;
 	}
 
 	@Override
-	public CreateOrUpdateAssetGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrUpdateAssetGroupResponseUnmarshaller.unmarshall(this, context);
+	public StartVirusScanTaskResponse getInstance(UnmarshallerContext context) {
+		return	StartVirusScanTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

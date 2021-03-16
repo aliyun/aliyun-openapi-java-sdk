@@ -35,6 +35,8 @@ public class CreateSasOrderRequest extends RpcAcsRequest<CreateSasOrderResponse>
 
 	private String sasWebguardOrderNum;
 
+	private String containerImageScan;
+
 	private Integer autoRenewPeriod;
 
 	private Integer period;
@@ -46,6 +48,8 @@ public class CreateSasOrderRequest extends RpcAcsRequest<CreateSasOrderResponse>
 	private String periodUnit;
 
 	private String sasSc;
+
+	private String vcore;
 
 	private String sasSlsStorage;
 
@@ -114,6 +118,17 @@ public class CreateSasOrderRequest extends RpcAcsRequest<CreateSasOrderResponse>
 		}
 	}
 
+	public String getContainerImageScan() {
+		return this.containerImageScan;
+	}
+
+	public void setContainerImageScan(String containerImageScan) {
+		this.containerImageScan = containerImageScan;
+		if(containerImageScan != null){
+			putQueryParameter("ContainerImageScan", containerImageScan);
+		}
+	}
+
 	public Integer getAutoRenewPeriod() {
 		return this.autoRenewPeriod;
 	}
@@ -177,6 +192,17 @@ public class CreateSasOrderRequest extends RpcAcsRequest<CreateSasOrderResponse>
 		this.sasSc = sasSc;
 		if(sasSc != null){
 			putQueryParameter("SasSc", sasSc);
+		}
+	}
+
+	public String getVcore() {
+		return this.vcore;
+	}
+
+	public void setVcore(String vcore) {
+		this.vcore = vcore;
+		if(vcore != null){
+			putQueryParameter("Vcore", vcore);
 		}
 	}
 

@@ -14,17 +14,17 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.CreateOrUpdateAssetGroupResponse;
+import com.aliyuncs.sas.model.v20181203.StartVirusScanTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrUpdateAssetGroupResponseUnmarshaller {
+public class StartVirusScanTaskResponseUnmarshaller {
 
-	public static CreateOrUpdateAssetGroupResponse unmarshall(CreateOrUpdateAssetGroupResponse createOrUpdateAssetGroupResponse, UnmarshallerContext _ctx) {
+	public static StartVirusScanTaskResponse unmarshall(StartVirusScanTaskResponse startVirusScanTaskResponse, UnmarshallerContext _ctx) {
 		
-		createOrUpdateAssetGroupResponse.setRequestId(_ctx.stringValue("CreateOrUpdateAssetGroupResponse.RequestId"));
-		createOrUpdateAssetGroupResponse.setGroupId(_ctx.longValue("CreateOrUpdateAssetGroupResponse.GroupId"));
+		startVirusScanTaskResponse.setRequestId(_ctx.stringValue("StartVirusScanTaskResponse.RequestId"));
+		startVirusScanTaskResponse.setScanTaskId(_ctx.longValue("StartVirusScanTaskResponse.ScanTaskId"));
 	 
-	 	return createOrUpdateAssetGroupResponse;
+	 	return startVirusScanTaskResponse;
 	}
 }

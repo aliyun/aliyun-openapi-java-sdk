@@ -49,8 +49,6 @@ public class DescribeHoneyPotSuspStatisticsResponse extends AcsResponse {
 
 		private Integer count;
 
-		private String name;
-
 		private String type;
 
 		private String instanceId;
@@ -67,14 +65,6 @@ public class DescribeHoneyPotSuspStatisticsResponse extends AcsResponse {
 
 		public void setCount(Integer count) {
 			this.count = count;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getType() {

@@ -73,6 +73,7 @@ public class DescribeCloudCenterInstancesResponseUnmarshaller {
 			instance.setCreatedTime(_ctx.longValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].CreatedTime"));
 			instance.setPodCount(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].PodCount"));
 			instance.setExposedStatus(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].ExposedStatus"));
+			instance.setAutoSnapshotsLevel(_ctx.integerValue("DescribeCloudCenterInstancesResponse.Instances["+ i +"].AutoSnapshotsLevel"));
 
 			instances.add(instance);
 		}

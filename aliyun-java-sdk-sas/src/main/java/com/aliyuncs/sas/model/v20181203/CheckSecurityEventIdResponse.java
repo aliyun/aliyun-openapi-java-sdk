@@ -15,18 +15,18 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.CreateOrUpdateAssetGroupResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.CheckSecurityEventIdResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
+public class CheckSecurityEventIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long groupId;
+	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +36,17 @@ public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	@Override
-	public CreateOrUpdateAssetGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrUpdateAssetGroupResponseUnmarshaller.unmarshall(this, context);
+	public CheckSecurityEventIdResponse getInstance(UnmarshallerContext context) {
+		return	CheckSecurityEventIdResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

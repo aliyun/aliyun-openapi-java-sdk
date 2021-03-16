@@ -15,18 +15,20 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.CreateOrUpdateAssetGroupResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.DescribeScanTaskProgressResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
+public class DescribeScanTaskProgressResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long groupId;
+	private String scanTaskProgress;
+
+	private String targetInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +38,25 @@ public class CreateOrUpdateAssetGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getGroupId() {
-		return this.groupId;
+	public String getScanTaskProgress() {
+		return this.scanTaskProgress;
 	}
 
-	public void setGroupId(Long groupId) {
-		this.groupId = groupId;
+	public void setScanTaskProgress(String scanTaskProgress) {
+		this.scanTaskProgress = scanTaskProgress;
+	}
+
+	public String getTargetInfo() {
+		return this.targetInfo;
+	}
+
+	public void setTargetInfo(String targetInfo) {
+		this.targetInfo = targetInfo;
 	}
 
 	@Override
-	public CreateOrUpdateAssetGroupResponse getInstance(UnmarshallerContext context) {
-		return	CreateOrUpdateAssetGroupResponseUnmarshaller.unmarshall(this, context);
+	public DescribeScanTaskProgressResponse getInstance(UnmarshallerContext context) {
+		return	DescribeScanTaskProgressResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

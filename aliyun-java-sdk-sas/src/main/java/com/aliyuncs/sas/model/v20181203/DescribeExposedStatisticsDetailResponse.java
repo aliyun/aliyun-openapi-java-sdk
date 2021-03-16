@@ -16,18 +16,18 @@ package com.aliyuncs.sas.model.v20181203;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.DescribeExposedInstanceListResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.DescribeExposedStatisticsDetailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeExposedInstanceListResponse extends AcsResponse {
+public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ExposedInstance> exposedInstances;
+	private List<StatisticsDetail> statisticsDetails;
 
 	private PageInfo pageInfo;
 
@@ -39,12 +39,12 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ExposedInstance> getExposedInstances() {
-		return this.exposedInstances;
+	public List<StatisticsDetail> getStatisticsDetails() {
+		return this.statisticsDetails;
 	}
 
-	public void setExposedInstances(List<ExposedInstance> exposedInstances) {
-		this.exposedInstances = exposedInstances;
+	public void setStatisticsDetails(List<StatisticsDetail> statisticsDetails) {
+		this.statisticsDetails = statisticsDetails;
 	}
 
 	public PageInfo getPageInfo() {
@@ -55,21 +55,7 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 		this.pageInfo = pageInfo;
 	}
 
-	public static class ExposedInstance {
-
-		private String uuid;
-
-		private String intranetIp;
-
-		private String internetIp;
-
-		private Integer asapVulCount;
-
-		private Integer laterVulCount;
-
-		private Integer nntfVulCount;
-
-		private Integer totalVulCount;
+	public static class StatisticsDetail {
 
 		private String exposureComponent;
 
@@ -81,71 +67,7 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 
 		private String exposureIp;
 
-		private String instanceId;
-
-		private String instanceName;
-
-		private String regionId;
-
-		private Long groupId;
-
-		private String groupName;
-
-		public String getUuid() {
-			return this.uuid;
-		}
-
-		public void setUuid(String uuid) {
-			this.uuid = uuid;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
-
-		public String getInternetIp() {
-			return this.internetIp;
-		}
-
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
-
-		public Integer getAsapVulCount() {
-			return this.asapVulCount;
-		}
-
-		public void setAsapVulCount(Integer asapVulCount) {
-			this.asapVulCount = asapVulCount;
-		}
-
-		public Integer getLaterVulCount() {
-			return this.laterVulCount;
-		}
-
-		public void setLaterVulCount(Integer laterVulCount) {
-			this.laterVulCount = laterVulCount;
-		}
-
-		public Integer getNntfVulCount() {
-			return this.nntfVulCount;
-		}
-
-		public void setNntfVulCount(Integer nntfVulCount) {
-			this.nntfVulCount = nntfVulCount;
-		}
-
-		public Integer getTotalVulCount() {
-			return this.totalVulCount;
-		}
-
-		public void setTotalVulCount(Integer totalVulCount) {
-			this.totalVulCount = totalVulCount;
-		}
+		private String exposureTypeInstanceName;
 
 		public String getExposureComponent() {
 			return this.exposureComponent;
@@ -187,44 +109,12 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 			this.exposureIp = exposureIp;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public String getExposureTypeInstanceName() {
+			return this.exposureTypeInstanceName;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
-
-		public String getInstanceName() {
-			return this.instanceName;
-		}
-
-		public void setInstanceName(String instanceName) {
-			this.instanceName = instanceName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
+		public void setExposureTypeInstanceName(String exposureTypeInstanceName) {
+			this.exposureTypeInstanceName = exposureTypeInstanceName;
 		}
 	}
 
@@ -272,8 +162,8 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeExposedInstanceListResponse getInstance(UnmarshallerContext context) {
-		return	DescribeExposedInstanceListResponseUnmarshaller.unmarshall(this, context);
+	public DescribeExposedStatisticsDetailResponse getInstance(UnmarshallerContext context) {
+		return	DescribeExposedStatisticsDetailResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

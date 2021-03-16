@@ -22,18 +22,20 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<DescribeSecurityEventOperationsResponse> {
+public class DescribeAlarmEventStackInfoRequest extends RpcAcsRequest<DescribeAlarmEventStackInfoResponse> {
 	   
 
-	private Long resourceOwnerId;
+	private String uniqueInfo;
+
+	private String uuid;
+
+	private String eventName;
 
 	private String sourceIp;
 
 	private String lang;
-
-	private Long securityEventId;
-	public DescribeSecurityEventOperationsRequest() {
-		super("Sas", "2018-12-03", "DescribeSecurityEventOperations", "sas");
+	public DescribeAlarmEventStackInfoRequest() {
+		super("Sas", "2018-12-03", "DescribeAlarmEventStackInfo", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +43,36 @@ public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<Descri
 		} catch (Exception e) {}
 	}
 
-	public Long getResourceOwnerId() {
-		return this.resourceOwnerId;
+	public String getUniqueInfo() {
+		return this.uniqueInfo;
 	}
 
-	public void setResourceOwnerId(Long resourceOwnerId) {
-		this.resourceOwnerId = resourceOwnerId;
-		if(resourceOwnerId != null){
-			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+	public void setUniqueInfo(String uniqueInfo) {
+		this.uniqueInfo = uniqueInfo;
+		if(uniqueInfo != null){
+			putQueryParameter("UniqueInfo", uniqueInfo);
+		}
+	}
+
+	public String getUuid() {
+		return this.uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
+		}
+	}
+
+	public String getEventName() {
+		return this.eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+		if(eventName != null){
+			putQueryParameter("EventName", eventName);
 		}
 	}
 
@@ -74,20 +98,9 @@ public class DescribeSecurityEventOperationsRequest extends RpcAcsRequest<Descri
 		}
 	}
 
-	public Long getSecurityEventId() {
-		return this.securityEventId;
-	}
-
-	public void setSecurityEventId(Long securityEventId) {
-		this.securityEventId = securityEventId;
-		if(securityEventId != null){
-			putQueryParameter("SecurityEventId", securityEventId.toString());
-		}
-	}
-
 	@Override
-	public Class<DescribeSecurityEventOperationsResponse> getResponseClass() {
-		return DescribeSecurityEventOperationsResponse.class;
+	public Class<DescribeAlarmEventStackInfoResponse> getResponseClass() {
+		return DescribeAlarmEventStackInfoResponse.class;
 	}
 
 }

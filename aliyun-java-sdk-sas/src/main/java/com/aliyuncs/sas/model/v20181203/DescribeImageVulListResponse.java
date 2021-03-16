@@ -107,6 +107,8 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 		private String imageDigest;
 
+		private Boolean canUpdate;
+
 		private List<String> layers;
 
 		private ExtendContentJson extendContentJson;
@@ -231,6 +233,14 @@ public class DescribeImageVulListResponse extends AcsResponse {
 			this.imageDigest = imageDigest;
 		}
 
+		public Boolean getCanUpdate() {
+			return this.canUpdate;
+		}
+
+		public void setCanUpdate(Boolean canUpdate) {
+			this.canUpdate = canUpdate;
+		}
+
 		public List<String> getLayers() {
 			return this.layers;
 		}
@@ -295,6 +305,8 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 				private String layer;
 
+				private String matchList;
+
 				public String getFullVersion() {
 					return this.fullVersion;
 				}
@@ -349,6 +361,14 @@ public class DescribeImageVulListResponse extends AcsResponse {
 
 				public void setLayer(String layer) {
 					this.layer = layer;
+				}
+
+				public String getMatchList() {
+					return this.matchList;
+				}
+
+				public void setMatchList(String matchList) {
+					this.matchList = matchList;
 				}
 			}
 		}

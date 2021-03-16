@@ -28,7 +28,6 @@ public class DescribeExposedInstanceListResponseUnmarshaller {
 	public static DescribeExposedInstanceListResponse unmarshall(DescribeExposedInstanceListResponse describeExposedInstanceListResponse, UnmarshallerContext _ctx) {
 		
 		describeExposedInstanceListResponse.setRequestId(_ctx.stringValue("DescribeExposedInstanceListResponse.RequestId"));
-		describeExposedInstanceListResponse.setSuccess(_ctx.booleanValue("DescribeExposedInstanceListResponse.Success"));
 
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setCount(_ctx.integerValue("DescribeExposedInstanceListResponse.PageInfo.Count"));

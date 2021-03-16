@@ -47,6 +47,8 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 
 	private String targetType;
 
+	private String repoNamespace;
+
 	private String containerFieldValue;
 
 	private Integer pageSize;
@@ -60,6 +62,10 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 	private Integer currentPage;
 
 	private String repoName;
+
+	private String repoInstanceId;
+
+	private String repoRegionId;
 	public DescribeImageVulListRequest() {
 		super("Sas", "2018-12-03", "DescribeImageVulList", "sas");
 		setMethod(MethodType.POST);
@@ -190,6 +196,17 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		}
 	}
 
+	public String getRepoNamespace() {
+		return this.repoNamespace;
+	}
+
+	public void setRepoNamespace(String repoNamespace) {
+		this.repoNamespace = repoNamespace;
+		if(repoNamespace != null){
+			putQueryParameter("RepoNamespace", repoNamespace);
+		}
+	}
+
 	public String getContainerFieldValue() {
 		return this.containerFieldValue;
 	}
@@ -264,6 +281,28 @@ public class DescribeImageVulListRequest extends RpcAcsRequest<DescribeImageVulL
 		this.repoName = repoName;
 		if(repoName != null){
 			putQueryParameter("RepoName", repoName);
+		}
+	}
+
+	public String getRepoInstanceId() {
+		return this.repoInstanceId;
+	}
+
+	public void setRepoInstanceId(String repoInstanceId) {
+		this.repoInstanceId = repoInstanceId;
+		if(repoInstanceId != null){
+			putQueryParameter("RepoInstanceId", repoInstanceId);
+		}
+	}
+
+	public String getRepoRegionId() {
+		return this.repoRegionId;
+	}
+
+	public void setRepoRegionId(String repoRegionId) {
+		this.repoRegionId = repoRegionId;
+		if(repoRegionId != null){
+			putQueryParameter("RepoRegionId", repoRegionId);
 		}
 	}
 

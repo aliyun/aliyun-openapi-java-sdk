@@ -14,17 +14,16 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.CreateOrUpdateAssetGroupResponse;
+import com.aliyuncs.sas.model.v20181203.UnbindAegisResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrUpdateAssetGroupResponseUnmarshaller {
+public class UnbindAegisResponseUnmarshaller {
 
-	public static CreateOrUpdateAssetGroupResponse unmarshall(CreateOrUpdateAssetGroupResponse createOrUpdateAssetGroupResponse, UnmarshallerContext _ctx) {
+	public static UnbindAegisResponse unmarshall(UnbindAegisResponse unbindAegisResponse, UnmarshallerContext _ctx) {
 		
-		createOrUpdateAssetGroupResponse.setRequestId(_ctx.stringValue("CreateOrUpdateAssetGroupResponse.RequestId"));
-		createOrUpdateAssetGroupResponse.setGroupId(_ctx.longValue("CreateOrUpdateAssetGroupResponse.GroupId"));
+		unbindAegisResponse.setRequestId(_ctx.stringValue("UnbindAegisResponse.RequestId"));
 	 
-	 	return createOrUpdateAssetGroupResponse;
+	 	return unbindAegisResponse;
 	}
 }

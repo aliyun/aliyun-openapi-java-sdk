@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.sas.model.v20181203.DescribeVpcHoneyPotListResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeVpcHoneyPotListResponse.PageInfo;
 import com.aliyuncs.sas.model.v20181203.DescribeVpcHoneyPotListResponse.VpcHoneyPotDTO;
+import com.aliyuncs.sas.model.v20181203.DescribeVpcHoneyPotListResponse.VpcHoneyPotDTO.VpcSwitchInfo;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,14 +47,19 @@ public class DescribeVpcHoneyPotListResponseUnmarshaller {
 			vpcHoneyPotDTO.setVpcStatus(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].VpcStatus"));
 			vpcHoneyPotDTO.setCidrBlock(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].CidrBlock"));
 			vpcHoneyPotDTO.setHoneyPotExistence(_ctx.booleanValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].HoneyPotExistence"));
-			vpcHoneyPotDTO.setHoneyPotVSwitchId(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].HoneyPotVSwitchId"));
+			vpcHoneyPotDTO.setHoneyPotVpcSwitchId(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].HoneyPotVpcSwitchId"));
 			vpcHoneyPotDTO.setHoneyPotInstanceStatus(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].HoneyPotInstanceStatus"));
 			vpcHoneyPotDTO.setHoneyPotEniInstanceId(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].HoneyPotEniInstanceId"));
 			vpcHoneyPotDTO.setHoneyPotEcsInstanceStatus(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].HoneyPotEcsInstanceStatus"));
 
-			List<String> vpcSwitchIdList = new ArrayList<String>();
+			List<VpcSwitchInfo> vpcSwitchIdList = new ArrayList<VpcSwitchInfo>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].VpcSwitchIdList.Length"); j++) {
-				vpcSwitchIdList.add(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].VpcSwitchIdList["+ j +"]"));
+				VpcSwitchInfo vpcSwitchInfo = new VpcSwitchInfo();
+				vpcSwitchInfo.setVpcSwitchId(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].VpcSwitchIdList["+ j +"].VpcSwitchId"));
+				vpcSwitchInfo.setVpcSwitchName(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].VpcSwitchIdList["+ j +"].VpcSwitchName"));
+				vpcSwitchInfo.setZoneId(_ctx.stringValue("DescribeVpcHoneyPotListResponse.VpcHoneyPotDTOList["+ i +"].VpcSwitchIdList["+ j +"].ZoneId"));
+
+				vpcSwitchIdList.add(vpcSwitchInfo);
 			}
 			vpcHoneyPotDTO.setVpcSwitchIdList(vpcSwitchIdList);
 

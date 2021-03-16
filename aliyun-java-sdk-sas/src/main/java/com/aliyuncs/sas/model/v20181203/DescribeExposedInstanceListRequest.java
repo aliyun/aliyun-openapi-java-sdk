@@ -25,15 +25,9 @@ import com.aliyuncs.sas.Endpoint;
 public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeExposedInstanceListResponse> {
 	   
 
-	private String exposureType;
-
 	private String exposurePort;
 
-	private String uuid;
-
 	private Integer pageSize;
-
-	private String from;
 
 	private Boolean vulStatus;
 
@@ -57,17 +51,6 @@ public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeEx
 		} catch (Exception e) {}
 	}
 
-	public String getExposureType() {
-		return this.exposureType;
-	}
-
-	public void setExposureType(String exposureType) {
-		this.exposureType = exposureType;
-		if(exposureType != null){
-			putQueryParameter("ExposureType", exposureType);
-		}
-	}
-
 	public String getExposurePort() {
 		return this.exposurePort;
 	}
@@ -79,17 +62,6 @@ public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeEx
 		}
 	}
 
-	public String getUuid() {
-		return this.uuid;
-	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-		if(uuid != null){
-			putQueryParameter("Uuid", uuid);
-		}
-	}
-
 	public Integer getPageSize() {
 		return this.pageSize;
 	}
@@ -98,17 +70,6 @@ public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeEx
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from);
 		}
 	}
 

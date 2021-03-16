@@ -51,6 +51,7 @@ public class DescribeImageVulListResponseUnmarshaller {
 			vulRecord.setRelated(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].Related"));
 			vulRecord.setModifyTs(_ctx.longValue("DescribeImageVulListResponse.VulRecords["+ i +"].ModifyTs"));
 			vulRecord.setImageDigest(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ImageDigest"));
+			vulRecord.setCanUpdate(_ctx.booleanValue("DescribeImageVulListResponse.VulRecords["+ i +"].CanUpdate"));
 
 			List<String> layers = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeImageVulListResponse.VulRecords["+ i +"].Layers.Length"); j++) {
@@ -72,6 +73,7 @@ public class DescribeImageVulListResponseUnmarshaller {
 				rpmEntity.setUpdateCmd(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd"));
 				rpmEntity.setVersion(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Version"));
 				rpmEntity.setLayer(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Layer"));
+				rpmEntity.setMatchList(_ctx.stringValue("DescribeImageVulListResponse.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchList"));
 
 				rpmEntityList.add(rpmEntity);
 			}

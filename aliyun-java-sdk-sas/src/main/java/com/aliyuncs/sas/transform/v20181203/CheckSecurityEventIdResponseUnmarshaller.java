@@ -14,17 +14,17 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.CreateOrUpdateAssetGroupResponse;
+import com.aliyuncs.sas.model.v20181203.CheckSecurityEventIdResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateOrUpdateAssetGroupResponseUnmarshaller {
+public class CheckSecurityEventIdResponseUnmarshaller {
 
-	public static CreateOrUpdateAssetGroupResponse unmarshall(CreateOrUpdateAssetGroupResponse createOrUpdateAssetGroupResponse, UnmarshallerContext _ctx) {
+	public static CheckSecurityEventIdResponse unmarshall(CheckSecurityEventIdResponse checkSecurityEventIdResponse, UnmarshallerContext _ctx) {
 		
-		createOrUpdateAssetGroupResponse.setRequestId(_ctx.stringValue("CreateOrUpdateAssetGroupResponse.RequestId"));
-		createOrUpdateAssetGroupResponse.setGroupId(_ctx.longValue("CreateOrUpdateAssetGroupResponse.GroupId"));
+		checkSecurityEventIdResponse.setRequestId(_ctx.stringValue("CheckSecurityEventIdResponse.RequestId"));
+		checkSecurityEventIdResponse.setData(_ctx.booleanValue("CheckSecurityEventIdResponse.Data"));
 	 
-	 	return createOrUpdateAssetGroupResponse;
+	 	return checkSecurityEventIdResponse;
 	}
 }

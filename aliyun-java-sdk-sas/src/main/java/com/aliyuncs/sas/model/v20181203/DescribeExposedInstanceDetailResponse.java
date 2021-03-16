@@ -179,23 +179,15 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 
 		public static class ScaVulRecord {
 
-			private String name;
-
 			private String aliasName;
 
 			private String necessity;
 
+			private String name;
+
 			private String type;
 
 			private String uuid;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
 
 			public String getAliasName() {
 				return this.aliasName;
@@ -211,6 +203,14 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 
 			public void setNecessity(String necessity) {
 				this.necessity = necessity;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public String getType() {
