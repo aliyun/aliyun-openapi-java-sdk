@@ -49,7 +49,7 @@ public class ChangeMediaStatusRequest extends RpcAcsRequest<ChangeMediaStatusRes
 
 	private String accessStatus;
 	public ChangeMediaStatusRequest() {
-		super("UniMkt", "2018-12-12", "ChangeMediaStatus");
+		super("UniMkt", "2018-12-12", "ChangeMediaStatus", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

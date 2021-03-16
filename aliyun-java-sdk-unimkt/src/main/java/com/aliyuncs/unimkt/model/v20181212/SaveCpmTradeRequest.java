@@ -62,7 +62,7 @@ public class SaveCpmTradeRequest extends RpcAcsRequest<SaveCpmTradeResponse> {
 
 	private Long tradeTime;
 	public SaveCpmTradeRequest() {
-		super("UniMkt", "2018-12-12", "SaveCpmTrade");
+		super("UniMkt", "2018-12-12", "SaveCpmTrade", "uniMkt");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

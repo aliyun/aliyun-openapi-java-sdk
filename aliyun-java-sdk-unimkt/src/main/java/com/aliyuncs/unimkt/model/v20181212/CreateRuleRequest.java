@@ -43,7 +43,7 @@ public class CreateRuleRequest extends RpcAcsRequest<CreateRuleResponse> {
 
 	private String userSite;
 	public CreateRuleRequest() {
-		super("UniMkt", "2018-12-12", "CreateRule");
+		super("UniMkt", "2018-12-12", "CreateRule", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
