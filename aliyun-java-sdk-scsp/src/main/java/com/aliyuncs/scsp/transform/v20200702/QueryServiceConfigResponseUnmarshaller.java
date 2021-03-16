@@ -23,10 +23,10 @@ public class QueryServiceConfigResponseUnmarshaller {
 	public static QueryServiceConfigResponse unmarshall(QueryServiceConfigResponse queryServiceConfigResponse, UnmarshallerContext _ctx) {
 		
 		queryServiceConfigResponse.setRequestId(_ctx.stringValue("QueryServiceConfigResponse.RequestId"));
-		queryServiceConfigResponse.setCode(_ctx.stringValue("QueryServiceConfigResponse.Code"));
-		queryServiceConfigResponse.setSuccess(_ctx.booleanValue("QueryServiceConfigResponse.Success"));
 		queryServiceConfigResponse.setMessage(_ctx.stringValue("QueryServiceConfigResponse.Message"));
 		queryServiceConfigResponse.setData(_ctx.stringValue("QueryServiceConfigResponse.Data"));
+		queryServiceConfigResponse.setCode(_ctx.stringValue("QueryServiceConfigResponse.Code"));
+		queryServiceConfigResponse.setSuccess(_ctx.booleanValue("QueryServiceConfigResponse.Success"));
 	 
 	 	return queryServiceConfigResponse;
 	}

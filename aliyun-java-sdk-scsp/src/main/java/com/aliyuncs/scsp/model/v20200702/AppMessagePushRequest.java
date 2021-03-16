@@ -22,32 +22,23 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
+public class AppMessagePushRequest extends RpcAcsRequest<AppMessagePushResponse> {
 	   
-
-	private String clientToken;
 
 	private String instanceId;
 
-	private Long roleId;
-	public DisableRoleRequest() {
-		super("scsp", "2020-07-02", "DisableRole");
+	private Long expirationTime;
+
+	private String userId;
+
+	private Integer status;
+	public AppMessagePushRequest() {
+		super("scsp", "2020-07-02", "AppMessagePush");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putBodyParameter("ClientToken", clientToken);
-		}
 	}
 
 	public String getInstanceId() {
@@ -57,24 +48,46 @@ public class DisableRoleRequest extends RpcAcsRequest<DisableRoleResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putBodyParameter("InstanceId", instanceId);
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public Long getRoleId() {
-		return this.roleId;
+	public Long getExpirationTime() {
+		return this.expirationTime;
 	}
 
-	public void setRoleId(Long roleId) {
-		this.roleId = roleId;
-		if(roleId != null){
-			putBodyParameter("RoleId", roleId.toString());
+	public void setExpirationTime(Long expirationTime) {
+		this.expirationTime = expirationTime;
+		if(expirationTime != null){
+			putQueryParameter("ExpirationTime", expirationTime.toString());
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public Integer getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status.toString());
 		}
 	}
 
 	@Override
-	public Class<DisableRoleResponse> getResponseClass() {
-		return DisableRoleResponse.class;
+	public Class<AppMessagePushResponse> getResponseClass() {
+		return AppMessagePushResponse.class;
 	}
 
 }

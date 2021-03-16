@@ -15,18 +15,18 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scsp.transform.v20200702.QueryServiceConfigResponseUnmarshaller;
+import com.aliyuncs.scsp.transform.v20200702.AppMessagePushResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryServiceConfigResponse extends AcsResponse {
-
-	private String requestId;
+public class AppMessagePushResponse extends AcsResponse {
 
 	private String message;
+
+	private String requestId;
 
 	private String data;
 
@@ -34,20 +34,20 @@ public class QueryServiceConfigResponse extends AcsResponse {
 
 	private Boolean success;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getData() {
@@ -75,8 +75,8 @@ public class QueryServiceConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryServiceConfigResponse getInstance(UnmarshallerContext context) {
-		return	QueryServiceConfigResponseUnmarshaller.unmarshall(this, context);
+	public AppMessagePushResponse getInstance(UnmarshallerContext context) {
+		return	AppMessagePushResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class GetEntityTagRelationRequest extends RpcAcsRequest<GetEntityTagRelat
 
 	private String entityId;
 	public GetEntityTagRelationRequest() {
-		super("scsp", "2020-07-02", "GetEntityTagRelation", "scsp");
+		super("scsp", "2020-07-02", "GetEntityTagRelation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
