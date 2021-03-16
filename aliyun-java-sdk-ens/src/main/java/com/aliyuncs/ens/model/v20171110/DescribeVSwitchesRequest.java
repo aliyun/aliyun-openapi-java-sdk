@@ -24,33 +24,20 @@ import com.aliyuncs.http.MethodType;
 public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesResponse> {
 	   
 
-	private Integer pageNumber;
-
 	private String orderByParams;
 
 	private String ensRegionId;
 
-	private Integer pageSize;
-
-	private String version;
-
 	private String vSwitchId;
+
+	private Integer pageNumber;
+
+	private Integer pageSize;
 
 	private String vSwitchName;
 	public DescribeVSwitchesRequest() {
-		super("Ens", "2017-11-10", "DescribeVSwitches", "ens");
+		super("Ens", "2017-11-10", "DescribeVSwitches");
 		setMethod(MethodType.POST);
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getOrderByParams() {
@@ -75,28 +62,6 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -105,6 +70,28 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

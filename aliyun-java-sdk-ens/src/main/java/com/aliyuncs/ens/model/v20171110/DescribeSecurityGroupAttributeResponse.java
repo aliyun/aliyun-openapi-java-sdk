@@ -57,55 +57,23 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public static class Permission {
 
-		private String destCidrIp;
-
-		private String sourceCidrIp;
-
-		private String ipProtocol;
-
-		private Integer priority;
-
 		private String policy;
-
-		private String direction;
-
-		private String creationTime;
 
 		private String portRange;
 
 		private String sourcePortRange;
 
-		public String getDestCidrIp() {
-			return this.destCidrIp;
-		}
+		private Integer priority;
 
-		public void setDestCidrIp(String destCidrIp) {
-			this.destCidrIp = destCidrIp;
-		}
+		private String sourceCidrIp;
 
-		public String getSourceCidrIp() {
-			return this.sourceCidrIp;
-		}
+		private String creationTime;
 
-		public void setSourceCidrIp(String sourceCidrIp) {
-			this.sourceCidrIp = sourceCidrIp;
-		}
+		private String ipProtocol;
 
-		public String getIpProtocol() {
-			return this.ipProtocol;
-		}
+		private String destCidrIp;
 
-		public void setIpProtocol(String ipProtocol) {
-			this.ipProtocol = ipProtocol;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
+		private String direction;
 
 		public String getPolicy() {
 			return this.policy;
@@ -113,22 +81,6 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setPolicy(String policy) {
 			this.policy = policy;
-		}
-
-		public String getDirection() {
-			return this.direction;
-		}
-
-		public void setDirection(String direction) {
-			this.direction = direction;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public String getPortRange() {
@@ -145,6 +97,54 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 		public void setSourcePortRange(String sourcePortRange) {
 			this.sourcePortRange = sourcePortRange;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getSourceCidrIp() {
+			return this.sourceCidrIp;
+		}
+
+		public void setSourceCidrIp(String sourceCidrIp) {
+			this.sourceCidrIp = sourceCidrIp;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getIpProtocol() {
+			return this.ipProtocol;
+		}
+
+		public void setIpProtocol(String ipProtocol) {
+			this.ipProtocol = ipProtocol;
+		}
+
+		public String getDestCidrIp() {
+			return this.destCidrIp;
+		}
+
+		public void setDestCidrIp(String destCidrIp) {
+			this.destCidrIp = destCidrIp;
+		}
+
+		public String getDirection() {
+			return this.direction;
+		}
+
+		public void setDirection(String direction) {
+			this.direction = direction;
 		}
 	}
 

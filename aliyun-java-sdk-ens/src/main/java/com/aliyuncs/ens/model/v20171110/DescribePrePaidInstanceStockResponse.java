@@ -24,21 +24,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePrePaidInstanceStockResponse extends AcsResponse {
 
+	private Integer cores;
+
+	private String instanceSpec;
+
+	private Integer avaliableCount;
+
 	private String requestId;
+
+	private Integer systemDiskSize;
+
+	private Integer memory;
 
 	private Integer dataDiskSize;
 
 	private String ensRegionId;
 
-	private Integer cores;
+	public Integer getCores() {
+		return this.cores;
+	}
 
-	private Integer memory;
+	public void setCores(Integer cores) {
+		this.cores = cores;
+	}
 
-	private Integer avaliableCount;
+	public String getInstanceSpec() {
+		return this.instanceSpec;
+	}
 
-	private String instanceSpec;
+	public void setInstanceSpec(String instanceSpec) {
+		this.instanceSpec = instanceSpec;
+	}
 
-	private Integer systemDiskSize;
+	public Integer getAvaliableCount() {
+		return this.avaliableCount;
+	}
+
+	public void setAvaliableCount(Integer avaliableCount) {
+		this.avaliableCount = avaliableCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +70,22 @@ public class DescribePrePaidInstanceStockResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getSystemDiskSize() {
+		return this.systemDiskSize;
+	}
+
+	public void setSystemDiskSize(Integer systemDiskSize) {
+		this.systemDiskSize = systemDiskSize;
+	}
+
+	public Integer getMemory() {
+		return this.memory;
+	}
+
+	public void setMemory(Integer memory) {
+		this.memory = memory;
 	}
 
 	public Integer getDataDiskSize() {
@@ -62,46 +102,6 @@ public class DescribePrePaidInstanceStockResponse extends AcsResponse {
 
 	public void setEnsRegionId(String ensRegionId) {
 		this.ensRegionId = ensRegionId;
-	}
-
-	public Integer getCores() {
-		return this.cores;
-	}
-
-	public void setCores(Integer cores) {
-		this.cores = cores;
-	}
-
-	public Integer getMemory() {
-		return this.memory;
-	}
-
-	public void setMemory(Integer memory) {
-		this.memory = memory;
-	}
-
-	public Integer getAvaliableCount() {
-		return this.avaliableCount;
-	}
-
-	public void setAvaliableCount(Integer avaliableCount) {
-		this.avaliableCount = avaliableCount;
-	}
-
-	public String getInstanceSpec() {
-		return this.instanceSpec;
-	}
-
-	public void setInstanceSpec(String instanceSpec) {
-		this.instanceSpec = instanceSpec;
-	}
-
-	public Integer getSystemDiskSize() {
-		return this.systemDiskSize;
-	}
-
-	public void setSystemDiskSize(Integer systemDiskSize) {
-		this.systemDiskSize = systemDiskSize;
 	}
 
 	@Override

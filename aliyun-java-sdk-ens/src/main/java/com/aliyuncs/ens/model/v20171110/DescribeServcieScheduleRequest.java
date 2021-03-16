@@ -30,7 +30,7 @@ public class DescribeServcieScheduleRequest extends RpcAcsRequest<DescribeServci
 
 	private String appId;
 	public DescribeServcieScheduleRequest() {
-		super("Ens", "2017-11-10", "DescribeServcieSchedule", "ens");
+		super("Ens", "2017-11-10", "DescribeServcieSchedule");
 		setMethod(MethodType.POST);
 	}
 

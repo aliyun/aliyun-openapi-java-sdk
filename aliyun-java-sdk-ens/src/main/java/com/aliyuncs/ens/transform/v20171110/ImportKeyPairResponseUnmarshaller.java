@@ -23,8 +23,8 @@ public class ImportKeyPairResponseUnmarshaller {
 	public static ImportKeyPairResponse unmarshall(ImportKeyPairResponse importKeyPairResponse, UnmarshallerContext _ctx) {
 		
 		importKeyPairResponse.setRequestId(_ctx.stringValue("ImportKeyPairResponse.RequestId"));
-		importKeyPairResponse.setKeyPairName(_ctx.stringValue("ImportKeyPairResponse.KeyPairName"));
 		importKeyPairResponse.setKeyPairFingerPrint(_ctx.stringValue("ImportKeyPairResponse.KeyPairFingerPrint"));
+		importKeyPairResponse.setKeyPairName(_ctx.stringValue("ImportKeyPairResponse.KeyPairName"));
 	 
 	 	return importKeyPairResponse;
 	}

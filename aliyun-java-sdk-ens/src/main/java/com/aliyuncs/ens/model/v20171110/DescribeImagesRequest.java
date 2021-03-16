@@ -24,24 +24,44 @@ import com.aliyuncs.http.MethodType;
 public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse> {
 	   
 
+	private String ensRegionId;
+
+	private String status;
+
 	private String imageId;
 
 	private String pageNumber;
 
 	private String imageName;
 
-	private String ensRegionId;
-
 	private String pageSize;
 
 	private String product;
-
-	private String version;
-
-	private String status;
 	public DescribeImagesRequest() {
-		super("Ens", "2017-11-10", "DescribeImages", "ens");
+		super("Ens", "2017-11-10", "DescribeImages");
 		setMethod(MethodType.POST);
+	}
+
+	public String getEnsRegionId() {
+		return this.ensRegionId;
+	}
+
+	public void setEnsRegionId(String ensRegionId) {
+		this.ensRegionId = ensRegionId;
+		if(ensRegionId != null){
+			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
 	}
 
 	public String getImageId() {
@@ -77,17 +97,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		}
 	}
 
-	public String getEnsRegionId() {
-		return this.ensRegionId;
-	}
-
-	public void setEnsRegionId(String ensRegionId) {
-		this.ensRegionId = ensRegionId;
-		if(ensRegionId != null){
-			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
 	public String getPageSize() {
 		return this.pageSize;
 	}
@@ -107,28 +116,6 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 		this.product = product;
 		if(product != null){
 			putQueryParameter("product", product);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

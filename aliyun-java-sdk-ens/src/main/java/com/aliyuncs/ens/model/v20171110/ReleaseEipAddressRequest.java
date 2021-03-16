@@ -27,10 +27,8 @@ public class ReleaseEipAddressRequest extends RpcAcsRequest<ReleaseEipAddressRes
 	private String eips;
 
 	private String ensRegionId;
-
-	private String version;
 	public ReleaseEipAddressRequest() {
-		super("Ens", "2017-11-10", "ReleaseEipAddress", "ens");
+		super("Ens", "2017-11-10", "ReleaseEipAddress");
 		setMethod(MethodType.POST);
 	}
 
@@ -53,17 +51,6 @@ public class ReleaseEipAddressRequest extends RpcAcsRequest<ReleaseEipAddressRes
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

@@ -24,31 +24,20 @@ import com.aliyuncs.http.MethodType;
 public class RescaleApplicationRequest extends RpcAcsRequest<RescaleApplicationResponse> {
 	   
 
-	private String rescaleType;
-
 	private String resourceSelector;
+
+	private String toAppVersion;
+
+	private String rescaleType;
 
 	private Integer timeout;
 
 	private String rescaleLevel;
 
 	private String appId;
-
-	private String toAppVersion;
 	public RescaleApplicationRequest() {
-		super("Ens", "2017-11-10", "RescaleApplication", "ens");
+		super("Ens", "2017-11-10", "RescaleApplication");
 		setMethod(MethodType.POST);
-	}
-
-	public String getRescaleType() {
-		return this.rescaleType;
-	}
-
-	public void setRescaleType(String rescaleType) {
-		this.rescaleType = rescaleType;
-		if(rescaleType != null){
-			putQueryParameter("RescaleType", rescaleType);
-		}
 	}
 
 	public String getResourceSelector() {
@@ -59,6 +48,28 @@ public class RescaleApplicationRequest extends RpcAcsRequest<RescaleApplicationR
 		this.resourceSelector = resourceSelector;
 		if(resourceSelector != null){
 			putQueryParameter("ResourceSelector", resourceSelector);
+		}
+	}
+
+	public String getToAppVersion() {
+		return this.toAppVersion;
+	}
+
+	public void setToAppVersion(String toAppVersion) {
+		this.toAppVersion = toAppVersion;
+		if(toAppVersion != null){
+			putQueryParameter("ToAppVersion", toAppVersion);
+		}
+	}
+
+	public String getRescaleType() {
+		return this.rescaleType;
+	}
+
+	public void setRescaleType(String rescaleType) {
+		this.rescaleType = rescaleType;
+		if(rescaleType != null){
+			putQueryParameter("RescaleType", rescaleType);
 		}
 	}
 
@@ -92,17 +103,6 @@ public class RescaleApplicationRequest extends RpcAcsRequest<RescaleApplicationR
 		this.appId = appId;
 		if(appId != null){
 			putQueryParameter("AppId", appId);
-		}
-	}
-
-	public String getToAppVersion() {
-		return this.toAppVersion;
-	}
-
-	public void setToAppVersion(String toAppVersion) {
-		this.toAppVersion = toAppVersion;
-		if(toAppVersion != null){
-			putQueryParameter("ToAppVersion", toAppVersion);
 		}
 	}
 

@@ -156,9 +156,9 @@ public class DescribeMeasurementDataResponse extends AcsResponse {
 
 			private String costCode;
 
-			private String costName;
-
 			private String resourceType;
+
+			private String costName;
 
 			public Integer getCostVal() {
 				return this.costVal;
@@ -176,20 +176,20 @@ public class DescribeMeasurementDataResponse extends AcsResponse {
 				this.costCode = costCode;
 			}
 
-			public String getCostName() {
-				return this.costName;
-			}
-
-			public void setCostName(String costName) {
-				this.costName = costName;
-			}
-
 			public String getResourceType() {
 				return this.resourceType;
 			}
 
 			public void setResourceType(String resourceType) {
 				this.resourceType = resourceType;
+			}
+
+			public String getCostName() {
+				return this.costName;
+			}
+
+			public void setCostName(String costName) {
+				this.costName = costName;
 			}
 		}
 

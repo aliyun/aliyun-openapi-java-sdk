@@ -24,25 +24,13 @@ import com.aliyuncs.http.MethodType;
 public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesResponse> {
 	   
 
-	private String imageId;
-
-	private String searchKey;
-
-	private Integer pageNumber;
-
 	private String orderByParams;
 
 	private String ensRegionId;
 
-	private String pageSize;
-
-	private String ensRegionIds;
-
 	private String instanceResourceType;
 
 	private String ensServiceId;
-
-	private String version;
 
 	private String instanceId;
 
@@ -51,42 +39,19 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 	private String instanceIds;
 
 	private String status;
+
+	private String imageId;
+
+	private String searchKey;
+
+	private Integer pageNumber;
+
+	private String pageSize;
+
+	private String ensRegionIds;
 	public DescribeInstancesRequest() {
-		super("Ens", "2017-11-10", "DescribeInstances", "ens");
+		super("Ens", "2017-11-10", "DescribeInstances");
 		setMethod(MethodType.POST);
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getSearchKey() {
-		return this.searchKey;
-	}
-
-	public void setSearchKey(String searchKey) {
-		this.searchKey = searchKey;
-		if(searchKey != null){
-			putQueryParameter("SearchKey", searchKey);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
 	}
 
 	public String getOrderByParams() {
@@ -111,28 +76,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getEnsRegionIds() {
-		return this.ensRegionIds;
-	}
-
-	public void setEnsRegionIds(String ensRegionIds) {
-		this.ensRegionIds = ensRegionIds;
-		if(ensRegionIds != null){
-			putQueryParameter("EnsRegionIds", ensRegionIds);
-		}
-	}
-
 	public String getInstanceResourceType() {
 		return this.instanceResourceType;
 	}
@@ -152,17 +95,6 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.ensServiceId = ensServiceId;
 		if(ensServiceId != null){
 			putQueryParameter("EnsServiceId", ensServiceId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
@@ -207,6 +139,61 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSearchKey() {
+		return this.searchKey;
+	}
+
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+		if(searchKey != null){
+			putQueryParameter("SearchKey", searchKey);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public String getEnsRegionIds() {
+		return this.ensRegionIds;
+	}
+
+	public void setEnsRegionIds(String ensRegionIds) {
+		this.ensRegionIds = ensRegionIds;
+		if(ensRegionIds != null){
+			putQueryParameter("EnsRegionIds", ensRegionIds);
 		}
 	}
 

@@ -25,10 +25,8 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 	   
 
 	private String securityGroupId;
-
-	private String version;
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeSecurityGroupAttribute", "ens");
+		super("Ens", "2017-11-10", "DescribeSecurityGroupAttribute");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

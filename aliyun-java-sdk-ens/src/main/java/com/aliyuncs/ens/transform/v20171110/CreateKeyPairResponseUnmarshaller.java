@@ -23,10 +23,10 @@ public class CreateKeyPairResponseUnmarshaller {
 	public static CreateKeyPairResponse unmarshall(CreateKeyPairResponse createKeyPairResponse, UnmarshallerContext _ctx) {
 		
 		createKeyPairResponse.setRequestId(_ctx.stringValue("CreateKeyPairResponse.RequestId"));
+		createKeyPairResponse.setKeyPairFingerPrint(_ctx.stringValue("CreateKeyPairResponse.KeyPairFingerPrint"));
+		createKeyPairResponse.setKeyPairName(_ctx.stringValue("CreateKeyPairResponse.KeyPairName"));
 		createKeyPairResponse.setKeyPairId(_ctx.stringValue("CreateKeyPairResponse.KeyPairId"));
 		createKeyPairResponse.setPrivateKeyBody(_ctx.stringValue("CreateKeyPairResponse.PrivateKeyBody"));
-		createKeyPairResponse.setKeyPairName(_ctx.stringValue("CreateKeyPairResponse.KeyPairName"));
-		createKeyPairResponse.setKeyPairFingerPrint(_ctx.stringValue("CreateKeyPairResponse.KeyPairFingerPrint"));
 	 
 	 	return createKeyPairResponse;
 	}

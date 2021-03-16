@@ -27,15 +27,15 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String networkingModel;
+
 	private String ePNInstanceId;
 
 	private String ePNInstanceName;
 
-	private String networkingModel;
+	private List<EPNInstance> instances;
 
-	private List<EPNInstance> vSwitches;
-
-	private List<EPNInstance1> instances;
+	private List<EPNInstance1> vSwitches;
 
 	private List<ConfVersionsItem> confVersions;
 
@@ -45,6 +45,14 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNetworkingModel() {
+		return this.networkingModel;
+	}
+
+	public void setNetworkingModel(String networkingModel) {
+		this.networkingModel = networkingModel;
 	}
 
 	public String getEPNInstanceId() {
@@ -63,28 +71,20 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 		this.ePNInstanceName = ePNInstanceName;
 	}
 
-	public String getNetworkingModel() {
-		return this.networkingModel;
-	}
-
-	public void setNetworkingModel(String networkingModel) {
-		this.networkingModel = networkingModel;
-	}
-
-	public List<EPNInstance> getVSwitches() {
-		return this.vSwitches;
-	}
-
-	public void setVSwitches(List<EPNInstance> vSwitches) {
-		this.vSwitches = vSwitches;
-	}
-
-	public List<EPNInstance1> getInstances() {
+	public List<EPNInstance> getInstances() {
 		return this.instances;
 	}
 
-	public void setInstances(List<EPNInstance1> instances) {
+	public void setInstances(List<EPNInstance> instances) {
 		this.instances = instances;
+	}
+
+	public List<EPNInstance1> getVSwitches() {
+		return this.vSwitches;
+	}
+
+	public void setVSwitches(List<EPNInstance1> vSwitches) {
+		this.vSwitches = vSwitches;
 	}
 
 	public List<ConfVersionsItem> getConfVersions() {
@@ -97,69 +97,26 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 
 	public static class EPNInstance {
 
-		private String vSwitchId;
-
-		private String ensRegionId;
-
-		private String cidrBlock;
-
-		private String vSwitchName;
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getEnsRegionId() {
-			return this.ensRegionId;
-		}
-
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
-		}
-
-		public String getCidrBlock() {
-			return this.cidrBlock;
-		}
-
-		public void setCidrBlock(String cidrBlock) {
-			this.cidrBlock = cidrBlock;
-		}
-
-		public String getVSwitchName() {
-			return this.vSwitchName;
-		}
-
-		public void setVSwitchName(String vSwitchName) {
-			this.vSwitchName = vSwitchName;
-		}
-	}
-
-	public static class EPNInstance1 {
-
-		private String instanceId;
+		private String status;
 
 		private String publicIpAddress;
-
-		private String ensRegionId;
-
-		private String isp;
 
 		private String instanceName;
 
 		private String privateIpAddress;
 
-		private String status;
+		private String instanceId;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private String isp;
+
+		private String ensRegionId;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getPublicIpAddress() {
@@ -168,22 +125,6 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 
 		public void setPublicIpAddress(String publicIpAddress) {
 			this.publicIpAddress = publicIpAddress;
-		}
-
-		public String getEnsRegionId() {
-			return this.ensRegionId;
-		}
-
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
-		}
-
-		public String getIsp() {
-			return this.isp;
-		}
-
-		public void setIsp(String isp) {
-			this.isp = isp;
 		}
 
 		public String getInstanceName() {
@@ -202,20 +143,21 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 			this.privateIpAddress = privateIpAddress;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
-	}
 
-	public static class ConfVersionsItem {
+		public String getIsp() {
+			return this.isp;
+		}
 
-		private String ensRegionId;
-
-		private String confVersion;
+		public void setIsp(String isp) {
+			this.isp = isp;
+		}
 
 		public String getEnsRegionId() {
 			return this.ensRegionId;
@@ -224,6 +166,56 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 		public void setEnsRegionId(String ensRegionId) {
 			this.ensRegionId = ensRegionId;
 		}
+	}
+
+	public static class EPNInstance1 {
+
+		private String vSwitchId;
+
+		private String cidrBlock;
+
+		private String vSwitchName;
+
+		private String ensRegionId;
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getCidrBlock() {
+			return this.cidrBlock;
+		}
+
+		public void setCidrBlock(String cidrBlock) {
+			this.cidrBlock = cidrBlock;
+		}
+
+		public String getVSwitchName() {
+			return this.vSwitchName;
+		}
+
+		public void setVSwitchName(String vSwitchName) {
+			this.vSwitchName = vSwitchName;
+		}
+
+		public String getEnsRegionId() {
+			return this.ensRegionId;
+		}
+
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
+		}
+	}
+
+	public static class ConfVersionsItem {
+
+		private String confVersion;
+
+		private String ensRegionId;
 
 		public String getConfVersion() {
 			return this.confVersion;
@@ -231,6 +223,14 @@ public class DescribeEpnInstanceAttributeResponse extends AcsResponse {
 
 		public void setConfVersion(String confVersion) {
 			this.confVersion = confVersion;
+		}
+
+		public String getEnsRegionId() {
+			return this.ensRegionId;
+		}
+
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
 		}
 	}
 

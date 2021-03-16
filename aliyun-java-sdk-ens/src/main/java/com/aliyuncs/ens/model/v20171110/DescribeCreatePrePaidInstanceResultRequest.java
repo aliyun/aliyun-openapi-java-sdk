@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class DescribeCreatePrePaidInstanceResultRequest extends RpcAcsRequest<DescribeCreatePrePaidInstanceResultResponse> {
 	   
 
-	private String version;
-
 	private String instanceId;
 	public DescribeCreatePrePaidInstanceResultRequest() {
-		super("Ens", "2017-11-10", "DescribeCreatePrePaidInstanceResult", "ens");
+		super("Ens", "2017-11-10", "DescribeCreatePrePaidInstanceResult");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	public String getInstanceId() {

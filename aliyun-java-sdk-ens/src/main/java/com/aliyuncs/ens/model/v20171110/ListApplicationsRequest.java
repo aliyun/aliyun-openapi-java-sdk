@@ -24,24 +24,57 @@ import com.aliyuncs.http.MethodType;
 public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsResponse> {
 	   
 
-	private String maxDate;
-
-	private Integer pageNumber;
-
 	private String clusterNames;
-
-	private String appVersions;
-
-	private Integer pageSize;
 
 	private String level;
 
 	private String outAppInfoParams;
 
+	private String maxDate;
+
+	private Integer pageNumber;
+
+	private String appVersions;
+
+	private Integer pageSize;
+
 	private String minDate;
 	public ListApplicationsRequest() {
-		super("Ens", "2017-11-10", "ListApplications", "ens");
+		super("Ens", "2017-11-10", "ListApplications");
 		setMethod(MethodType.POST);
+	}
+
+	public String getClusterNames() {
+		return this.clusterNames;
+	}
+
+	public void setClusterNames(String clusterNames) {
+		this.clusterNames = clusterNames;
+		if(clusterNames != null){
+			putQueryParameter("ClusterNames", clusterNames);
+		}
+	}
+
+	public String getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+		if(level != null){
+			putQueryParameter("Level", level);
+		}
+	}
+
+	public String getOutAppInfoParams() {
+		return this.outAppInfoParams;
+	}
+
+	public void setOutAppInfoParams(String outAppInfoParams) {
+		this.outAppInfoParams = outAppInfoParams;
+		if(outAppInfoParams != null){
+			putQueryParameter("OutAppInfoParams", outAppInfoParams);
+		}
 	}
 
 	public String getMaxDate() {
@@ -66,17 +99,6 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 		}
 	}
 
-	public String getClusterNames() {
-		return this.clusterNames;
-	}
-
-	public void setClusterNames(String clusterNames) {
-		this.clusterNames = clusterNames;
-		if(clusterNames != null){
-			putQueryParameter("ClusterNames", clusterNames);
-		}
-	}
-
 	public String getAppVersions() {
 		return this.appVersions;
 	}
@@ -96,28 +118,6 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(String level) {
-		this.level = level;
-		if(level != null){
-			putQueryParameter("Level", level);
-		}
-	}
-
-	public String getOutAppInfoParams() {
-		return this.outAppInfoParams;
-	}
-
-	public void setOutAppInfoParams(String outAppInfoParams) {
-		this.outAppInfoParams = outAppInfoParams;
-		if(outAppInfoParams != null){
-			putQueryParameter("OutAppInfoParams", outAppInfoParams);
 		}
 	}
 

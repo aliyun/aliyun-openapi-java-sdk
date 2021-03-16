@@ -24,48 +24,26 @@ import com.aliyuncs.http.MethodType;
 public class RunServiceScheduleRequest extends RpcAcsRequest<RunServiceScheduleResponse> {
 	   
 
-	private String directorys;
-
-	private Integer preLockedTimeout;
-
 	private String uuid;
 
 	private String clientIp;
 
 	private String podConfigName;
 
-	private String serviceAction;
-
 	private String serviceCommands;
 
 	private String scheduleStrategy;
 
+	private String directorys;
+
+	private Integer preLockedTimeout;
+
+	private String serviceAction;
+
 	private String appId;
 	public RunServiceScheduleRequest() {
-		super("Ens", "2017-11-10", "RunServiceSchedule", "ens");
+		super("Ens", "2017-11-10", "RunServiceSchedule");
 		setMethod(MethodType.POST);
-	}
-
-	public String getDirectorys() {
-		return this.directorys;
-	}
-
-	public void setDirectorys(String directorys) {
-		this.directorys = directorys;
-		if(directorys != null){
-			putQueryParameter("Directorys", directorys);
-		}
-	}
-
-	public Integer getPreLockedTimeout() {
-		return this.preLockedTimeout;
-	}
-
-	public void setPreLockedTimeout(Integer preLockedTimeout) {
-		this.preLockedTimeout = preLockedTimeout;
-		if(preLockedTimeout != null){
-			putQueryParameter("PreLockedTimeout", preLockedTimeout.toString());
-		}
 	}
 
 	public String getUuid() {
@@ -101,17 +79,6 @@ public class RunServiceScheduleRequest extends RpcAcsRequest<RunServiceScheduleR
 		}
 	}
 
-	public String getServiceAction() {
-		return this.serviceAction;
-	}
-
-	public void setServiceAction(String serviceAction) {
-		this.serviceAction = serviceAction;
-		if(serviceAction != null){
-			putQueryParameter("ServiceAction", serviceAction);
-		}
-	}
-
 	public String getServiceCommands() {
 		return this.serviceCommands;
 	}
@@ -131,6 +98,39 @@ public class RunServiceScheduleRequest extends RpcAcsRequest<RunServiceScheduleR
 		this.scheduleStrategy = scheduleStrategy;
 		if(scheduleStrategy != null){
 			putQueryParameter("ScheduleStrategy", scheduleStrategy);
+		}
+	}
+
+	public String getDirectorys() {
+		return this.directorys;
+	}
+
+	public void setDirectorys(String directorys) {
+		this.directorys = directorys;
+		if(directorys != null){
+			putQueryParameter("Directorys", directorys);
+		}
+	}
+
+	public Integer getPreLockedTimeout() {
+		return this.preLockedTimeout;
+	}
+
+	public void setPreLockedTimeout(Integer preLockedTimeout) {
+		this.preLockedTimeout = preLockedTimeout;
+		if(preLockedTimeout != null){
+			putQueryParameter("PreLockedTimeout", preLockedTimeout.toString());
+		}
+	}
+
+	public String getServiceAction() {
+		return this.serviceAction;
+	}
+
+	public void setServiceAction(String serviceAction) {
+		this.serviceAction = serviceAction;
+		if(serviceAction != null){
+			putQueryParameter("ServiceAction", serviceAction);
 		}
 	}
 

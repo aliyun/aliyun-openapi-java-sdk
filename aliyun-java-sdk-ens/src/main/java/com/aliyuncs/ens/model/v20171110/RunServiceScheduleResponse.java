@@ -25,11 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RunServiceScheduleResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String requestRepeated;
 
 	private Boolean tcpPorts;
+
+	private String requestId;
 
 	private String instanceId;
 
@@ -40,14 +40,6 @@ public class RunServiceScheduleResponse extends AcsResponse {
 	private Integer index;
 
 	private List<CommandResult> commandResults;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRequestRepeated() {
 		return this.requestRepeated;
@@ -63,6 +55,14 @@ public class RunServiceScheduleResponse extends AcsResponse {
 
 	public void setTcpPorts(Boolean tcpPorts) {
 		this.tcpPorts = tcpPorts;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getInstanceId() {

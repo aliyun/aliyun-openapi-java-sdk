@@ -26,10 +26,6 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private String sourcePortRange;
 
-	private String securityGroupId;
-
-	private String policy;
-
 	private String portRange;
 
 	private String ipProtocol;
@@ -38,9 +34,11 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private Integer priority;
 
-	private String version;
+	private String securityGroupId;
+
+	private String policy;
 	public RevokeSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "RevokeSecurityGroup", "ens");
+		super("Ens", "2017-11-10", "RevokeSecurityGroup");
 		setMethod(MethodType.POST);
 	}
 
@@ -52,28 +50,6 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 		this.sourcePortRange = sourcePortRange;
 		if(sourcePortRange != null){
 			putQueryParameter("SourcePortRange", sourcePortRange);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 
@@ -121,14 +97,25 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
 	}
 
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<EnsRegionIdResource> ensRegionIdResources;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<EnsRegionIdResource> getEnsRegionIdResources() {
@@ -77,63 +77,23 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
 	public static class EnsRegionIdResource {
 
-		private String area;
-
-		private String areaCode;
-
-		private String ensRegionId;
-
-		private String ensRegionIdName;
-
-		private Integer vCpu;
-
 		private Integer internetBandwidth;
-
-		private String isp;
-
-		private String bizDate;
 
 		private Integer instanceCount;
 
-		public String getArea() {
-			return this.area;
-		}
+		private String area;
 
-		public void setArea(String area) {
-			this.area = area;
-		}
+		private String isp;
 
-		public String getAreaCode() {
-			return this.areaCode;
-		}
+		private String ensRegionIdName;
 
-		public void setAreaCode(String areaCode) {
-			this.areaCode = areaCode;
-		}
+		private String areaCode;
 
-		public String getEnsRegionId() {
-			return this.ensRegionId;
-		}
+		private Integer vCpu;
 
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
-		}
+		private String ensRegionId;
 
-		public String getEnsRegionIdName() {
-			return this.ensRegionIdName;
-		}
-
-		public void setEnsRegionIdName(String ensRegionIdName) {
-			this.ensRegionIdName = ensRegionIdName;
-		}
-
-		public Integer getVCpu() {
-			return this.vCpu;
-		}
-
-		public void setVCpu(Integer vCpu) {
-			this.vCpu = vCpu;
-		}
+		private String bizDate;
 
 		public Integer getInternetBandwidth() {
 			return this.internetBandwidth;
@@ -141,6 +101,22 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
 		public void setInternetBandwidth(Integer internetBandwidth) {
 			this.internetBandwidth = internetBandwidth;
+		}
+
+		public Integer getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Integer instanceCount) {
+			this.instanceCount = instanceCount;
+		}
+
+		public String getArea() {
+			return this.area;
+		}
+
+		public void setArea(String area) {
+			this.area = area;
 		}
 
 		public String getIsp() {
@@ -151,20 +127,44 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 			this.isp = isp;
 		}
 
+		public String getEnsRegionIdName() {
+			return this.ensRegionIdName;
+		}
+
+		public void setEnsRegionIdName(String ensRegionIdName) {
+			this.ensRegionIdName = ensRegionIdName;
+		}
+
+		public String getAreaCode() {
+			return this.areaCode;
+		}
+
+		public void setAreaCode(String areaCode) {
+			this.areaCode = areaCode;
+		}
+
+		public Integer getVCpu() {
+			return this.vCpu;
+		}
+
+		public void setVCpu(Integer vCpu) {
+			this.vCpu = vCpu;
+		}
+
+		public String getEnsRegionId() {
+			return this.ensRegionId;
+		}
+
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
+		}
+
 		public String getBizDate() {
 			return this.bizDate;
 		}
 
 		public void setBizDate(String bizDate) {
 			this.bizDate = bizDate;
-		}
-
-		public Integer getInstanceCount() {
-			return this.instanceCount;
-		}
-
-		public void setInstanceCount(Integer instanceCount) {
-			this.instanceCount = instanceCount;
 		}
 	}
 

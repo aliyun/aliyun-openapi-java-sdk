@@ -47,17 +47,9 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 	public static class EipAddress {
 
-		private String eip;
-
 		private String instanceIdInternetIp;
 
-		public String getEip() {
-			return this.eip;
-		}
-
-		public void setEip(String eip) {
-			this.eip = eip;
-		}
+		private String eip;
 
 		public String getInstanceIdInternetIp() {
 			return this.instanceIdInternetIp;
@@ -65,6 +57,14 @@ public class DescribeEipAddressesResponse extends AcsResponse {
 
 		public void setInstanceIdInternetIp(String instanceIdInternetIp) {
 			this.instanceIdInternetIp = instanceIdInternetIp;
+		}
+
+		public String getEip() {
+			return this.eip;
+		}
+
+		public void setEip(String eip) {
+			this.eip = eip;
 		}
 	}
 

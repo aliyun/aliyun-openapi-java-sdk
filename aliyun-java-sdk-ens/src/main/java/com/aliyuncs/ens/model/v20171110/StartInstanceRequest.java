@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class StartInstanceRequest extends RpcAcsRequest<StartInstanceResponse> {
 	   
 
-	private String version;
-
 	private String instanceId;
 	public StartInstanceRequest() {
-		super("Ens", "2017-11-10", "StartInstance", "ens");
+		super("Ens", "2017-11-10", "StartInstance");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	public String getInstanceId() {

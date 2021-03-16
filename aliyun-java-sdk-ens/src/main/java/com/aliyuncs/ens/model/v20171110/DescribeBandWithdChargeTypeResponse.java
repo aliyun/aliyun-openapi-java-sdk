@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBandWithdChargeTypeResponse extends AcsResponse {
 
+	private String chargeCycleInfo;
+
+	private String bandWithTypeInfo;
+
 	private String requestId;
 
 	private Integer code;
 
-	private String bandWithTypeInfo;
-
-	private String chargeCycleInfo;
-
 	private String chargeContractType;
+
+	public String getChargeCycleInfo() {
+		return this.chargeCycleInfo;
+	}
+
+	public void setChargeCycleInfo(String chargeCycleInfo) {
+		this.chargeCycleInfo = chargeCycleInfo;
+	}
+
+	public String getBandWithTypeInfo() {
+		return this.bandWithTypeInfo;
+	}
+
+	public void setBandWithTypeInfo(String bandWithTypeInfo) {
+		this.bandWithTypeInfo = bandWithTypeInfo;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,22 +64,6 @@ public class DescribeBandWithdChargeTypeResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public String getBandWithTypeInfo() {
-		return this.bandWithTypeInfo;
-	}
-
-	public void setBandWithTypeInfo(String bandWithTypeInfo) {
-		this.bandWithTypeInfo = bandWithTypeInfo;
-	}
-
-	public String getChargeCycleInfo() {
-		return this.chargeCycleInfo;
-	}
-
-	public void setChargeCycleInfo(String chargeCycleInfo) {
-		this.chargeCycleInfo = chargeCycleInfo;
 	}
 
 	public String getChargeContractType() {

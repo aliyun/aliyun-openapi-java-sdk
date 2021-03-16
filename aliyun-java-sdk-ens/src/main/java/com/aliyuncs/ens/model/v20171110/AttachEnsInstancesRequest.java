@@ -26,11 +26,9 @@ public class AttachEnsInstancesRequest extends RpcAcsRequest<AttachEnsInstancesR
 
 	private String scripts;
 
-	private String version;
-
 	private String instanceId;
 	public AttachEnsInstancesRequest() {
-		super("Ens", "2017-11-10", "AttachEnsInstances", "ens");
+		super("Ens", "2017-11-10", "AttachEnsInstances");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class AttachEnsInstancesRequest extends RpcAcsRequest<AttachEnsInstancesR
 		this.scripts = scripts;
 		if(scripts != null){
 			putQueryParameter("Scripts", scripts);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

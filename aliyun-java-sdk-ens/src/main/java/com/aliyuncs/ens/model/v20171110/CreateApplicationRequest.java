@@ -28,7 +28,7 @@ public class CreateApplicationRequest extends RpcAcsRequest<CreateApplicationRes
 
 	private Integer timeout;
 	public CreateApplicationRequest() {
-		super("Ens", "2017-11-10", "CreateApplication", "ens");
+		super("Ens", "2017-11-10", "CreateApplication");
 		setMethod(MethodType.POST);
 	}
 

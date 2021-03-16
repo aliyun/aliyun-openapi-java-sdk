@@ -25,10 +25,8 @@ public class DescribeImageInfosRequest extends RpcAcsRequest<DescribeImageInfosR
 	   
 
 	private String osType;
-
-	private String version;
 	public DescribeImageInfosRequest() {
-		super("Ens", "2017-11-10", "DescribeImageInfos", "ens");
+		super("Ens", "2017-11-10", "DescribeImageInfos");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DescribeImageInfosRequest extends RpcAcsRequest<DescribeImageInfosR
 		this.osType = osType;
 		if(osType != null){
 			putQueryParameter("OsType", osType);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

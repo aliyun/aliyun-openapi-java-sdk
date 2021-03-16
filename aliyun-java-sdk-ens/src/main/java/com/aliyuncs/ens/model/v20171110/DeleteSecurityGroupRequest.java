@@ -25,10 +25,8 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 	   
 
 	private String securityGroupId;
-
-	private String version;
 	public DeleteSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "DeleteSecurityGroup", "ens");
+		super("Ens", "2017-11-10", "DeleteSecurityGroup");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

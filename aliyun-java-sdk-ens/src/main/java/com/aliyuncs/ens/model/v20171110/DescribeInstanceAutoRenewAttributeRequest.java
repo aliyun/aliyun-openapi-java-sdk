@@ -26,11 +26,9 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 
 	private Long ownerId;
 
-	private String version;
-
 	private String instanceIds;
 	public DescribeInstanceAutoRenewAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceAutoRenewAttribute", "ens");
+		super("Ens", "2017-11-10", "DescribeInstanceAutoRenewAttribute");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

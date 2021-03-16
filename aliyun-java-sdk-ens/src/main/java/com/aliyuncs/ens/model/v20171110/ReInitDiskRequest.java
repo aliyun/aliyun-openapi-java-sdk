@@ -27,10 +27,8 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 	private String imageId;
 
 	private String diskId;
-
-	private String version;
 	public ReInitDiskRequest() {
-		super("Ens", "2017-11-10", "ReInitDisk", "ens");
+		super("Ens", "2017-11-10", "ReInitDisk");
 		setMethod(MethodType.POST);
 	}
 
@@ -53,17 +51,6 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 		this.diskId = diskId;
 		if(diskId != null){
 			putQueryParameter("DiskId", diskId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

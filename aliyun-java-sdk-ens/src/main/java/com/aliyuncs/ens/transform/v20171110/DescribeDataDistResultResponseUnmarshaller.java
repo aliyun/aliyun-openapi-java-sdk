@@ -29,10 +29,9 @@ public class DescribeDataDistResultResponseUnmarshaller {
 	public static DescribeDataDistResultResponse unmarshall(DescribeDataDistResultResponse describeDataDistResultResponse, UnmarshallerContext _ctx) {
 		
 		describeDataDistResultResponse.setRequestId(_ctx.stringValue("DescribeDataDistResultResponse.RequestId"));
-		describeDataDistResultResponse.setRequestId1(_ctx.stringValue("DescribeDataDistResultResponse.RequestId"));
 		describeDataDistResultResponse.setTotalCount(_ctx.integerValue("DescribeDataDistResultResponse.TotalCount"));
-		describeDataDistResultResponse.setPageNumber(_ctx.integerValue("DescribeDataDistResultResponse.PageNumber"));
 		describeDataDistResultResponse.setPageSize(_ctx.integerValue("DescribeDataDistResultResponse.PageSize"));
+		describeDataDistResultResponse.setPageNumber(_ctx.integerValue("DescribeDataDistResultResponse.PageNumber"));
 
 		List<DistResult> distResults = new ArrayList<DistResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataDistResultResponse.DistResults.Length"); i++) {
@@ -50,8 +49,8 @@ public class DescribeDataDistResultResponseUnmarshaller {
 				for (int k = 0; k < _ctx.lengthValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances.Length"); k++) {
 					Instance instance = new Instance();
 					instance.setInstanceId(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].InstanceId"));
-					instance.setStartTime(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].StartTime"));
 					instance.setUpdateTime(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].UpdateTime"));
+					instance.setStartTime(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].StartTime"));
 					instance.setStatusDescrip(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].StatusDescrip"));
 
 					instances.add(instance);

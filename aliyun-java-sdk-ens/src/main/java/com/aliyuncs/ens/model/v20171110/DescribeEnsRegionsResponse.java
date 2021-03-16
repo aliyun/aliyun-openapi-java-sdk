@@ -57,30 +57,22 @@ public class DescribeEnsRegionsResponse extends AcsResponse {
 
 	public static class EnsRegionsItem {
 
-		private String ensRegionId;
-
-		private String name;
+		private String area;
 
 		private String enName;
 
-		private String area;
+		private String ensRegionId;
 
 		private String province;
 
-		public String getEnsRegionId() {
-			return this.ensRegionId;
+		private String name;
+
+		public String getArea() {
+			return this.area;
 		}
 
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setArea(String area) {
+			this.area = area;
 		}
 
 		public String getEnName() {
@@ -91,12 +83,12 @@ public class DescribeEnsRegionsResponse extends AcsResponse {
 			this.enName = enName;
 		}
 
-		public String getArea() {
-			return this.area;
+		public String getEnsRegionId() {
+			return this.ensRegionId;
 		}
 
-		public void setArea(String area) {
-			this.area = area;
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
 		}
 
 		public String getProvince() {
@@ -105,6 +97,14 @@ public class DescribeEnsRegionsResponse extends AcsResponse {
 
 		public void setProvince(String province) {
 			this.province = province;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

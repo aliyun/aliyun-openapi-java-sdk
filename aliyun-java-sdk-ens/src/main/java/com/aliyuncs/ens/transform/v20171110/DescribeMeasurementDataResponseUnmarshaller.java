@@ -61,8 +61,8 @@ public class DescribeMeasurementDataResponseUnmarshaller {
 				ResourceFeeDataDetail resourceFeeDataDetail = new ResourceFeeDataDetail();
 				resourceFeeDataDetail.setCostVal(_ctx.integerValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostVal"));
 				resourceFeeDataDetail.setCostCode(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostCode"));
-				resourceFeeDataDetail.setCostName(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostName"));
 				resourceFeeDataDetail.setResourceType(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].ResourceType"));
+				resourceFeeDataDetail.setCostName(_ctx.stringValue("DescribeMeasurementDataResponse.MeasurementDatas["+ i +"].ResourceFeeDataDetails["+ j +"].CostName"));
 
 				resourceFeeDataDetails.add(resourceFeeDataDetail);
 			}

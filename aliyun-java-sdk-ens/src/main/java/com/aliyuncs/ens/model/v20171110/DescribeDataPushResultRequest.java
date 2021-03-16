@@ -24,24 +24,46 @@ import com.aliyuncs.http.MethodType;
 public class DescribeDataPushResultRequest extends RpcAcsRequest<DescribeDataPushResultResponse> {
 	   
 
+	private String regionIds;
+
+	private String dataVersions;
+
 	private String maxDate;
 
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private String regionIds;
-
 	private String minDate;
-
-	private String dataVersions;
 
 	private String appId;
 
 	private String dataNames;
 	public DescribeDataPushResultRequest() {
-		super("Ens", "2017-11-10", "DescribeDataPushResult", "ens");
+		super("Ens", "2017-11-10", "DescribeDataPushResult");
 		setMethod(MethodType.POST);
+	}
+
+	public String getRegionIds() {
+		return this.regionIds;
+	}
+
+	public void setRegionIds(String regionIds) {
+		this.regionIds = regionIds;
+		if(regionIds != null){
+			putQueryParameter("RegionIds", regionIds);
+		}
+	}
+
+	public String getDataVersions() {
+		return this.dataVersions;
+	}
+
+	public void setDataVersions(String dataVersions) {
+		this.dataVersions = dataVersions;
+		if(dataVersions != null){
+			putQueryParameter("DataVersions", dataVersions);
+		}
 	}
 
 	public String getMaxDate() {
@@ -77,17 +99,6 @@ public class DescribeDataPushResultRequest extends RpcAcsRequest<DescribeDataPus
 		}
 	}
 
-	public String getRegionIds() {
-		return this.regionIds;
-	}
-
-	public void setRegionIds(String regionIds) {
-		this.regionIds = regionIds;
-		if(regionIds != null){
-			putQueryParameter("RegionIds", regionIds);
-		}
-	}
-
 	public String getMinDate() {
 		return this.minDate;
 	}
@@ -96,17 +107,6 @@ public class DescribeDataPushResultRequest extends RpcAcsRequest<DescribeDataPus
 		this.minDate = minDate;
 		if(minDate != null){
 			putQueryParameter("MinDate", minDate);
-		}
-	}
-
-	public String getDataVersions() {
-		return this.dataVersions;
-	}
-
-	public void setDataVersions(String dataVersions) {
-		this.dataVersions = dataVersions;
-		if(dataVersions != null){
-			putQueryParameter("DataVersions", dataVersions);
 		}
 	}
 

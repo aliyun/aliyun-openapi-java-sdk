@@ -25,10 +25,8 @@ public class DescribeEnsRegionIdIpv6InfoRequest extends RpcAcsRequest<DescribeEn
 	   
 
 	private String ensRegionId;
-
-	private String version;
 	public DescribeEnsRegionIdIpv6InfoRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsRegionIdIpv6Info", "ens");
+		super("Ens", "2017-11-10", "DescribeEnsRegionIdIpv6Info");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DescribeEnsRegionIdIpv6InfoRequest extends RpcAcsRequest<DescribeEn
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

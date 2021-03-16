@@ -91,9 +91,9 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
 			private Integer upBandWidth;
 
-			private Integer downBandWidth;
-
 			private Integer internetTX;
+
+			private Integer downBandWidth;
 
 			private Integer internetRX;
 
@@ -107,20 +107,20 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 				this.upBandWidth = upBandWidth;
 			}
 
-			public Integer getDownBandWidth() {
-				return this.downBandWidth;
-			}
-
-			public void setDownBandWidth(Integer downBandWidth) {
-				this.downBandWidth = downBandWidth;
-			}
-
 			public Integer getInternetTX() {
 				return this.internetTX;
 			}
 
 			public void setInternetTX(Integer internetTX) {
 				this.internetTX = internetTX;
+			}
+
+			public Integer getDownBandWidth() {
+				return this.downBandWidth;
+			}
+
+			public void setDownBandWidth(Integer downBandWidth) {
+				this.downBandWidth = downBandWidth;
 			}
 
 			public Integer getInternetRX() {

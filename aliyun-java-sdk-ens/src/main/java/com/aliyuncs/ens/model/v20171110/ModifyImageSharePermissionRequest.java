@@ -30,7 +30,7 @@ public class ModifyImageSharePermissionRequest extends RpcAcsRequest<ModifyImage
 
 	private String addAccounts;
 	public ModifyImageSharePermissionRequest() {
-		super("Ens", "2017-11-10", "ModifyImageSharePermission", "ens");
+		super("Ens", "2017-11-10", "ModifyImageSharePermission");
 		setMethod(MethodType.POST);
 	}
 

@@ -27,10 +27,8 @@ public class DescribeEnsNetSaleDistrictRequest extends RpcAcsRequest<DescribeEns
 	private String netLevelCode;
 
 	private String netDistrictCode;
-
-	private String version;
 	public DescribeEnsNetSaleDistrictRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsNetSaleDistrict", "ens");
+		super("Ens", "2017-11-10", "DescribeEnsNetSaleDistrict");
 		setMethod(MethodType.POST);
 	}
 
@@ -53,17 +51,6 @@ public class DescribeEnsNetSaleDistrictRequest extends RpcAcsRequest<DescribeEns
 		this.netDistrictCode = netDistrictCode;
 		if(netDistrictCode != null){
 			putQueryParameter("NetDistrictCode", netDistrictCode);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

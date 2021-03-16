@@ -23,22 +23,9 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeBandWithdChargeTypeRequest extends RpcAcsRequest<DescribeBandWithdChargeTypeResponse> {
 	   
-
-	private String version;
 	public DescribeBandWithdChargeTypeRequest() {
-		super("Ens", "2017-11-10", "DescribeBandWithdChargeType", "ens");
+		super("Ens", "2017-11-10", "DescribeBandWithdChargeType");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	@Override

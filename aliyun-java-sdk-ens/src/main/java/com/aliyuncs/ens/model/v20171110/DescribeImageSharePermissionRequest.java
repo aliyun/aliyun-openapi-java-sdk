@@ -29,8 +29,10 @@ public class DescribeImageSharePermissionRequest extends RpcAcsRequest<DescribeI
 	private String pageNumber;
 
 	private String pageSize;
+
+	private Long aliyunId;
 	public DescribeImageSharePermissionRequest() {
-		super("Ens", "2017-11-10", "DescribeImageSharePermission", "ens");
+		super("Ens", "2017-11-10", "DescribeImageSharePermission");
 		setMethod(MethodType.POST);
 	}
 
@@ -64,6 +66,17 @@ public class DescribeImageSharePermissionRequest extends RpcAcsRequest<DescribeI
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
+		}
+	}
+
+	public Long getAliyunId() {
+		return this.aliyunId;
+	}
+
+	public void setAliyunId(Long aliyunId) {
+		this.aliyunId = aliyunId;
+		if(aliyunId != null){
+			putQueryParameter("AliyunId", aliyunId.toString());
 		}
 	}
 

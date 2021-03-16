@@ -38,8 +38,8 @@ public class DescribeUserBandWidthDataResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData.Length"); i++) {
 			BandWidthMonitorDataItem bandWidthMonitorDataItem = new BandWidthMonitorDataItem();
 			bandWidthMonitorDataItem.setUpBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].UpBandWidth"));
-			bandWidthMonitorDataItem.setDownBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].DownBandWidth"));
 			bandWidthMonitorDataItem.setInternetTX(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetTX"));
+			bandWidthMonitorDataItem.setDownBandWidth(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].DownBandWidth"));
 			bandWidthMonitorDataItem.setInternetRX(_ctx.integerValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetRX"));
 			bandWidthMonitorDataItem.setTimeStamp(_ctx.stringValue("DescribeUserBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].TimeStamp"));
 

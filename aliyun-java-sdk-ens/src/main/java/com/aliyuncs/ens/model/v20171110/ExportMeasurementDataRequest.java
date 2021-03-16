@@ -26,11 +26,9 @@ public class ExportMeasurementDataRequest extends RpcAcsRequest<ExportMeasuremen
 
 	private String startDate;
 
-	private String version;
-
 	private String endDate;
 	public ExportMeasurementDataRequest() {
-		super("Ens", "2017-11-10", "ExportMeasurementData", "ens");
+		super("Ens", "2017-11-10", "ExportMeasurementData");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class ExportMeasurementDataRequest extends RpcAcsRequest<ExportMeasuremen
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

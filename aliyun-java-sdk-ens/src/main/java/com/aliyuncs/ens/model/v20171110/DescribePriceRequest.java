@@ -26,21 +26,19 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String ensRegionId;
 
+	private Integer period;
+
+	private String internetChargeType;
+
 	private String instanceType;
 
 	private Integer dataDisk1Size;
 
-	private Integer period;
-
 	private Integer quantity;
 
-	private String version;
-
 	private Integer systemDiskSize;
-
-	private String internetChargeType;
 	public DescribePriceRequest() {
-		super("Ens", "2017-11-10", "DescribePrice", "ens");
+		super("Ens", "2017-11-10", "DescribePrice");
 		setMethod(MethodType.POST);
 	}
 
@@ -52,6 +50,28 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
+		if(internetChargeType != null){
+			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 
@@ -77,17 +97,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
 	public Integer getQuantity() {
 		return this.quantity;
 	}
@@ -99,17 +108,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public Integer getSystemDiskSize() {
 		return this.systemDiskSize;
 	}
@@ -118,17 +116,6 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDisk.Size", systemDiskSize.toString());
-		}
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
-		if(internetChargeType != null){
-			putQueryParameter("InternetChargeType", internetChargeType);
 		}
 	}
 

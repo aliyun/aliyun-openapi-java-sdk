@@ -25,21 +25,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeServcieScheduleResponse extends AcsResponse {
 
+	private Boolean requestRepeated;
+
+	private String tcpPorts;
+
 	private String requestId;
 
 	private String instanceId;
 
-	private String instanceIp;
-
 	private Integer instancePort;
+
+	private String instanceIp;
 
 	private Integer index;
 
-	private String tcpPorts;
-
-	private Boolean requestRepeated;
-
 	private PodAbstractInfo podAbstractInfo;
+
+	public Boolean getRequestRepeated() {
+		return this.requestRepeated;
+	}
+
+	public void setRequestRepeated(Boolean requestRepeated) {
+		this.requestRepeated = requestRepeated;
+	}
+
+	public String getTcpPorts() {
+		return this.tcpPorts;
+	}
+
+	public void setTcpPorts(String tcpPorts) {
+		this.tcpPorts = tcpPorts;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,14 +73,6 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 		this.instanceId = instanceId;
 	}
 
-	public String getInstanceIp() {
-		return this.instanceIp;
-	}
-
-	public void setInstanceIp(String instanceIp) {
-		this.instanceIp = instanceIp;
-	}
-
 	public Integer getInstancePort() {
 		return this.instancePort;
 	}
@@ -73,28 +81,20 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 		this.instancePort = instancePort;
 	}
 
+	public String getInstanceIp() {
+		return this.instanceIp;
+	}
+
+	public void setInstanceIp(String instanceIp) {
+		this.instanceIp = instanceIp;
+	}
+
 	public Integer getIndex() {
 		return this.index;
 	}
 
 	public void setIndex(Integer index) {
 		this.index = index;
-	}
-
-	public String getTcpPorts() {
-		return this.tcpPorts;
-	}
-
-	public void setTcpPorts(String tcpPorts) {
-		this.tcpPorts = tcpPorts;
-	}
-
-	public Boolean getRequestRepeated() {
-		return this.requestRepeated;
-	}
-
-	public void setRequestRepeated(Boolean requestRepeated) {
-		this.requestRepeated = requestRepeated;
 	}
 
 	public PodAbstractInfo getPodAbstractInfo() {
@@ -107,7 +107,7 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 
 	public static class PodAbstractInfo {
 
-		private Boolean name;
+		private Boolean status;
 
 		private Boolean resourceScope;
 
@@ -115,16 +115,16 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 
 		private Boolean namespace;
 
-		private Boolean status;
+		private Boolean name;
 
 		private List<ContainerStatus> containerStatuses;
 
-		public Boolean getName() {
-			return this.name;
+		public Boolean getStatus() {
+			return this.status;
 		}
 
-		public void setName(Boolean name) {
-			this.name = name;
+		public void setStatus(Boolean status) {
+			this.status = status;
 		}
 
 		public Boolean getResourceScope() {
@@ -151,12 +151,12 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 			this.namespace = namespace;
 		}
 
-		public Boolean getStatus() {
-			return this.status;
+		public Boolean getName() {
+			return this.name;
 		}
 
-		public void setStatus(Boolean status) {
-			this.status = status;
+		public void setName(Boolean name) {
+			this.name = name;
 		}
 
 		public List<ContainerStatus> getContainerStatuses() {
@@ -169,17 +169,9 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 
 		public static class ContainerStatus {
 
-			private String name;
-
 			private String containerId;
 
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+			private String name;
 
 			public String getContainerId() {
 				return this.containerId;
@@ -187,6 +179,14 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 
 			public void setContainerId(String containerId) {
 				this.containerId = containerId;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
 			}
 		}
 	}

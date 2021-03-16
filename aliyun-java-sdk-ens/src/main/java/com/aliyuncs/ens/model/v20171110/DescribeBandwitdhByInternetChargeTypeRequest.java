@@ -31,10 +31,8 @@ public class DescribeBandwitdhByInternetChargeTypeRequest extends RpcAcsRequest<
 	private String ensRegionId;
 
 	private String endTime;
-
-	private String version;
 	public DescribeBandwitdhByInternetChargeTypeRequest() {
-		super("Ens", "2017-11-10", "DescribeBandwitdhByInternetChargeType", "ens");
+		super("Ens", "2017-11-10", "DescribeBandwitdhByInternetChargeType");
 		setMethod(MethodType.POST);
 	}
 
@@ -79,17 +77,6 @@ public class DescribeBandwitdhByInternetChargeTypeRequest extends RpcAcsRequest<
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

@@ -29,10 +29,8 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 	private String pageNumber;
 
 	private String pageSize;
-
-	private String version;
 	public DescribeKeyPairsRequest() {
-		super("Ens", "2017-11-10", "DescribeKeyPairs", "ens");
+		super("Ens", "2017-11-10", "DescribeKeyPairs");
 		setMethod(MethodType.POST);
 	}
 
@@ -66,17 +64,6 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

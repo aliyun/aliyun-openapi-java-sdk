@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 	   
 
-	private String version;
-
 	private String vSwitchId;
 	public DeleteVSwitchRequest() {
-		super("Ens", "2017-11-10", "DeleteVSwitch", "ens");
+		super("Ens", "2017-11-10", "DeleteVSwitch");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	public String getVSwitchId() {

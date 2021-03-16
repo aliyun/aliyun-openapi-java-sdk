@@ -30,14 +30,14 @@ public class DescribeDataPushResultResponseUnmarshaller {
 		
 		describeDataPushResultResponse.setRequestId(_ctx.stringValue("DescribeDataPushResultResponse.RequestId"));
 		describeDataPushResultResponse.setTotalCount(_ctx.integerValue("DescribeDataPushResultResponse.TotalCount"));
-		describeDataPushResultResponse.setPageNumber(_ctx.integerValue("DescribeDataPushResultResponse.PageNumber"));
 		describeDataPushResultResponse.setPageSize(_ctx.integerValue("DescribeDataPushResultResponse.PageSize"));
+		describeDataPushResultResponse.setPageNumber(_ctx.integerValue("DescribeDataPushResultResponse.PageNumber"));
 
 		List<PushResult> pushResults = new ArrayList<PushResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataPushResultResponse.PushResults.Length"); i++) {
 			PushResult pushResult = new PushResult();
-			pushResult.setName(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].Name"));
 			pushResult.setVersion(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].Version"));
+			pushResult.setName(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].Name"));
 
 			List<StatusStat> statusStatS = new ArrayList<StatusStat>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS.Length"); j++) {
@@ -48,8 +48,8 @@ public class DescribeDataPushResultResponseUnmarshaller {
 				List<RegionId> regionIds = new ArrayList<RegionId>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS["+ j +"].RegionIds.Length"); k++) {
 					RegionId regionId = new RegionId();
-					regionId.setStartTime(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS["+ j +"].RegionIds["+ k +"].StartTime"));
 					regionId.setUpdateTime(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS["+ j +"].RegionIds["+ k +"].UpdateTime"));
+					regionId.setStartTime(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS["+ j +"].RegionIds["+ k +"].StartTime"));
 					regionId.setRegionId(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS["+ j +"].RegionIds["+ k +"].RegionId"));
 					regionId.setStatusDescrip(_ctx.stringValue("DescribeDataPushResultResponse.PushResults["+ i +"].StatusStatS["+ j +"].RegionIds["+ k +"].StatusDescrip"));
 

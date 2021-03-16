@@ -25,10 +25,8 @@ public class CreateKeyPairRequest extends RpcAcsRequest<CreateKeyPairResponse> {
 	   
 
 	private String keyPairName;
-
-	private String version;
 	public CreateKeyPairRequest() {
-		super("Ens", "2017-11-10", "CreateKeyPair", "ens");
+		super("Ens", "2017-11-10", "CreateKeyPair");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class CreateKeyPairRequest extends RpcAcsRequest<CreateKeyPairResponse> {
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

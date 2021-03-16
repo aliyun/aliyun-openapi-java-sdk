@@ -26,11 +26,11 @@ public class PreCreateEnsServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Integer code;
-
 	private String ensServiceId;
 
 	private String netLevel;
+
+	private Integer code;
 
 	private String buyResourcesDetail;
 
@@ -40,14 +40,6 @@ public class PreCreateEnsServiceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	public String getEnsServiceId() {
@@ -64,6 +56,14 @@ public class PreCreateEnsServiceResponse extends AcsResponse {
 
 	public void setNetLevel(String netLevel) {
 		this.netLevel = netLevel;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getBuyResourcesDetail() {

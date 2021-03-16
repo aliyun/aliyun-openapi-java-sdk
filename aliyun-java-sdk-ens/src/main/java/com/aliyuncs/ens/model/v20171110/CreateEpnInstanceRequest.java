@@ -24,40 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class CreateEpnInstanceRequest extends RpcAcsRequest<CreateEpnInstanceResponse> {
 	   
 
-	private String networkingModel;
-
-	private Integer internetMaxBandwidthOut;
-
 	private String ePNInstanceType;
 
 	private String internetChargeType;
 
 	private String ePNInstanceName;
+
+	private String networkingModel;
+
+	private Integer internetMaxBandwidthOut;
 	public CreateEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "CreateEpnInstance", "ens");
+		super("Ens", "2017-11-10", "CreateEpnInstance");
 		setMethod(MethodType.POST);
-	}
-
-	public String getNetworkingModel() {
-		return this.networkingModel;
-	}
-
-	public void setNetworkingModel(String networkingModel) {
-		this.networkingModel = networkingModel;
-		if(networkingModel != null){
-			putQueryParameter("NetworkingModel", networkingModel);
-		}
-	}
-
-	public Integer getInternetMaxBandwidthOut() {
-		return this.internetMaxBandwidthOut;
-	}
-
-	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		if(internetMaxBandwidthOut != null){
-			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
-		}
 	}
 
 	public String getEPNInstanceType() {
@@ -90,6 +68,28 @@ public class CreateEpnInstanceRequest extends RpcAcsRequest<CreateEpnInstanceRes
 		this.ePNInstanceName = ePNInstanceName;
 		if(ePNInstanceName != null){
 			putQueryParameter("EPNInstanceName", ePNInstanceName);
+		}
+	}
+
+	public String getNetworkingModel() {
+		return this.networkingModel;
+	}
+
+	public void setNetworkingModel(String networkingModel) {
+		this.networkingModel = networkingModel;
+		if(networkingModel != null){
+			putQueryParameter("NetworkingModel", networkingModel);
+		}
+	}
+
+	public Integer getInternetMaxBandwidthOut() {
+		return this.internetMaxBandwidthOut;
+	}
+
+	public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		if(internetMaxBandwidthOut != null){
+			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
 		}
 	}
 

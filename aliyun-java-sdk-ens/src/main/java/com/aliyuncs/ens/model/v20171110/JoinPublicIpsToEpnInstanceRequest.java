@@ -28,7 +28,7 @@ public class JoinPublicIpsToEpnInstanceRequest extends RpcAcsRequest<JoinPublicI
 
 	private String instanceInfos;
 	public JoinPublicIpsToEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "JoinPublicIpsToEpnInstance", "ens");
+		super("Ens", "2017-11-10", "JoinPublicIpsToEpnInstance");
 		setMethod(MethodType.POST);
 	}
 

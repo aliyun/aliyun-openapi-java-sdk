@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer code;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
+	private Integer code;
+
 	private List<Image> images;
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,20 +53,12 @@ public class DescribeImagesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +69,12 @@ public class DescribeImagesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public List<Image> getImages() {
@@ -87,26 +87,26 @@ public class DescribeImagesResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String imageId;
+		private String imageOwnerAlias;
 
 		private String imageName;
-
-		private String imageOwnerAlias;
 
 		private String platform;
 
 		private String architecture;
 
-		private String creationTime;
-
 		private String imageSize;
 
-		public String getImageId() {
-			return this.imageId;
+		private String imageId;
+
+		private String creationTime;
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
 		}
 
 		public String getImageName() {
@@ -115,14 +115,6 @@ public class DescribeImagesResponse extends AcsResponse {
 
 		public void setImageName(String imageName) {
 			this.imageName = imageName;
-		}
-
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
-
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
 		}
 
 		public String getPlatform() {
@@ -141,20 +133,28 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.architecture = architecture;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
 		public String getImageSize() {
 			return this.imageSize;
 		}
 
 		public void setImageSize(String imageSize) {
 			this.imageSize = imageSize;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 	}
 

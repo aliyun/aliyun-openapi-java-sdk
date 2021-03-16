@@ -26,11 +26,11 @@ public class DescribeBandwitdhByInternetChargeTypeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String internetChargeType;
-
 	private Long bandwidthValue;
 
 	private String timeStamp;
+
+	private String internetChargeType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +38,6 @@ public class DescribeBandwitdhByInternetChargeTypeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getInternetChargeType() {
-		return this.internetChargeType;
-	}
-
-	public void setInternetChargeType(String internetChargeType) {
-		this.internetChargeType = internetChargeType;
 	}
 
 	public Long getBandwidthValue() {
@@ -62,6 +54,14 @@ public class DescribeBandwitdhByInternetChargeTypeResponse extends AcsResponse {
 
 	public void setTimeStamp(String timeStamp) {
 		this.timeStamp = timeStamp;
+	}
+
+	public String getInternetChargeType() {
+		return this.internetChargeType;
+	}
+
+	public void setInternetChargeType(String internetChargeType) {
+		this.internetChargeType = internetChargeType;
 	}
 
 	@Override

@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataPushResultResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<PushResult> pushResults;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<PushResult> getPushResults() {
@@ -77,19 +77,11 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 	public static class PushResult {
 
-		private String name;
-
 		private String version;
 
+		private String name;
+
 		private List<StatusStat> statusStatS;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getVersion() {
 			return this.version;
@@ -97,6 +89,14 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<StatusStat> getStatusStatS() {
@@ -141,21 +141,13 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 			public static class RegionId {
 
-				private String startTime;
-
 				private String updateTime;
+
+				private String startTime;
 
 				private String regionId;
 
 				private String statusDescrip;
-
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
 
 				public String getUpdateTime() {
 					return this.updateTime;
@@ -163,6 +155,14 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 				public void setUpdateTime(String updateTime) {
 					this.updateTime = updateTime;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 
 				public String getRegionId() {

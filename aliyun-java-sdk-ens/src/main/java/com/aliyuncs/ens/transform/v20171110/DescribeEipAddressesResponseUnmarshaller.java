@@ -31,8 +31,8 @@ public class DescribeEipAddressesResponseUnmarshaller {
 		List<EipAddress> eipAddresses = new ArrayList<EipAddress>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEipAddressesResponse.EipAddresses.Length"); i++) {
 			EipAddress eipAddress = new EipAddress();
-			eipAddress.setEip(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Eip"));
 			eipAddress.setInstanceIdInternetIp(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].InstanceIdInternetIp"));
+			eipAddress.setEip(_ctx.stringValue("DescribeEipAddressesResponse.EipAddresses["+ i +"].Eip"));
 
 			eipAddresses.add(eipAddress);
 		}

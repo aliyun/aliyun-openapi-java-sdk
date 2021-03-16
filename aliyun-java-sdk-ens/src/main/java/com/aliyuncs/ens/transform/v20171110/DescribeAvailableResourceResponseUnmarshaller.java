@@ -30,28 +30,28 @@ public class DescribeAvailableResourceResponseUnmarshaller {
 		describeAvailableResourceResponse.setRequestId(_ctx.stringValue("DescribeAvailableResourceResponse.RequestId"));
 		describeAvailableResourceResponse.setCode(_ctx.integerValue("DescribeAvailableResourceResponse.Code"));
 
-		List<Image> images = new ArrayList<Image>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.Images.Length"); i++) {
-			Image image = new Image();
-			image.setImageId(_ctx.stringValue("DescribeAvailableResourceResponse.Images["+ i +"].ImageId"));
-			image.setImageName(_ctx.stringValue("DescribeAvailableResourceResponse.Images["+ i +"].ImageName"));
-
-			images.add(image);
-		}
-		describeAvailableResourceResponse.setImages(images);
-
 		List<SupportResource> supportResources = new ArrayList<SupportResource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.SupportResources.Length"); i++) {
 			SupportResource supportResource = new SupportResource();
-			supportResource.setDataDiskSize(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].DataDiskSize"));
-			supportResource.setEnsRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].EnsRegionId"));
-			supportResource.setSupportResourcesCount(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].SupportResourcesCount"));
 			supportResource.setInstanceSpec(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].InstanceSpec"));
 			supportResource.setSystemDiskSize(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].SystemDiskSize"));
+			supportResource.setSupportResourcesCount(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].SupportResourcesCount"));
+			supportResource.setDataDiskSize(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].DataDiskSize"));
+			supportResource.setEnsRegionId(_ctx.stringValue("DescribeAvailableResourceResponse.SupportResources["+ i +"].EnsRegionId"));
 
 			supportResources.add(supportResource);
 		}
 		describeAvailableResourceResponse.setSupportResources(supportResources);
+
+		List<Image> images = new ArrayList<Image>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAvailableResourceResponse.Images.Length"); i++) {
+			Image image = new Image();
+			image.setImageName(_ctx.stringValue("DescribeAvailableResourceResponse.Images["+ i +"].ImageName"));
+			image.setImageId(_ctx.stringValue("DescribeAvailableResourceResponse.Images["+ i +"].ImageId"));
+
+			images.add(image);
+		}
+		describeAvailableResourceResponse.setImages(images);
 	 
 	 	return describeAvailableResourceResponse;
 	}

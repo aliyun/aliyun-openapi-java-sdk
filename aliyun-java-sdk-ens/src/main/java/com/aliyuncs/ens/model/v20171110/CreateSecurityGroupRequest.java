@@ -25,10 +25,8 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 	   
 
 	private String securityGroupName;
-
-	private String version;
 	public CreateSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "CreateSecurityGroup", "ens");
+		super("Ens", "2017-11-10", "CreateSecurityGroup");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGrou
 		this.securityGroupName = securityGroupName;
 		if(securityGroupName != null){
 			putQueryParameter("SecurityGroupName", securityGroupName);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

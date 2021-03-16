@@ -24,23 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class ReleasePostPaidInstanceRequest extends RpcAcsRequest<ReleasePostPaidInstanceResponse> {
 	   
 
-	private String version;
-
 	private String instanceId;
 	public ReleasePostPaidInstanceRequest() {
-		super("Ens", "2017-11-10", "ReleasePostPaidInstance", "ens");
+		super("Ens", "2017-11-10", "ReleasePostPaidInstance");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	public String getInstanceId() {

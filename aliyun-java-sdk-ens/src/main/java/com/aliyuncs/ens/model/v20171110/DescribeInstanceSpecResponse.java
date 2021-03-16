@@ -25,19 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceSpecResponse extends AcsResponse {
 
+	private Integer dataDiskMinSize;
+
 	private String requestId;
 
-	private Integer code;
-
-	private Integer dataDiskMinSize;
+	private Integer systemDiskMaxSize;
 
 	private Integer dataDiskMaxSize;
 
-	private Integer systemDiskMaxSize;
+	private Integer code;
 
 	private Integer bandwidthLimit;
 
 	private List<InstanceSpec> instanceSpecs;
+
+	public Integer getDataDiskMinSize() {
+		return this.dataDiskMinSize;
+	}
+
+	public void setDataDiskMinSize(Integer dataDiskMinSize) {
+		this.dataDiskMinSize = dataDiskMinSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,20 +55,12 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public Integer getSystemDiskMaxSize() {
+		return this.systemDiskMaxSize;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public Integer getDataDiskMinSize() {
-		return this.dataDiskMinSize;
-	}
-
-	public void setDataDiskMinSize(Integer dataDiskMinSize) {
-		this.dataDiskMinSize = dataDiskMinSize;
+	public void setSystemDiskMaxSize(Integer systemDiskMaxSize) {
+		this.systemDiskMaxSize = systemDiskMaxSize;
 	}
 
 	public Integer getDataDiskMaxSize() {
@@ -71,12 +71,12 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 		this.dataDiskMaxSize = dataDiskMaxSize;
 	}
 
-	public Integer getSystemDiskMaxSize() {
-		return this.systemDiskMaxSize;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setSystemDiskMaxSize(Integer systemDiskMaxSize) {
-		this.systemDiskMaxSize = systemDiskMaxSize;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Integer getBandwidthLimit() {
@@ -97,29 +97,13 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 
 	public static class InstanceSpec {
 
-		private String instanceType;
-
-		private String core;
-
 		private String memory;
 
 		private String displayName;
 
-		public String getInstanceType() {
-			return this.instanceType;
-		}
+		private String instanceType;
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
-		}
-
-		public String getCore() {
-			return this.core;
-		}
-
-		public void setCore(String core) {
-			this.core = core;
-		}
+		private String core;
 
 		public String getMemory() {
 			return this.memory;
@@ -135,6 +119,22 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
+		}
+
+		public String getCore() {
+			return this.core;
+		}
+
+		public void setCore(String core) {
+			this.core = core;
 		}
 	}
 

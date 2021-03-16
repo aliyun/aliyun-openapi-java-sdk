@@ -26,11 +26,9 @@ public class CreateEnsServiceRequest extends RpcAcsRequest<CreateEnsServiceRespo
 
 	private String ensServiceId;
 
-	private String version;
-
 	private String orderType;
 	public CreateEnsServiceRequest() {
-		super("Ens", "2017-11-10", "CreateEnsService", "ens");
+		super("Ens", "2017-11-10", "CreateEnsService");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class CreateEnsServiceRequest extends RpcAcsRequest<CreateEnsServiceRespo
 		this.ensServiceId = ensServiceId;
 		if(ensServiceId != null){
 			putQueryParameter("EnsServiceId", ensServiceId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

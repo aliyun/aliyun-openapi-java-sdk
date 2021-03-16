@@ -29,10 +29,8 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 	private String ensRegionId;
 
 	private Integer count;
-
-	private String version;
 	public AllocateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AllocateEipAddress", "ens");
+		super("Ens", "2017-11-10", "AllocateEipAddress");
 		setMethod(MethodType.POST);
 	}
 
@@ -66,17 +64,6 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 		this.count = count;
 		if(count != null){
 			putQueryParameter("Count", count.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

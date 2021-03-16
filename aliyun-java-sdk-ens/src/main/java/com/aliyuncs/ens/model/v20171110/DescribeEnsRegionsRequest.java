@@ -25,10 +25,8 @@ public class DescribeEnsRegionsRequest extends RpcAcsRequest<DescribeEnsRegionsR
 	   
 
 	private String ensRegionId;
-
-	private String version;
 	public DescribeEnsRegionsRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsRegions", "ens");
+		super("Ens", "2017-11-10", "DescribeEnsRegions");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DescribeEnsRegionsRequest extends RpcAcsRequest<DescribeEnsRegionsR
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

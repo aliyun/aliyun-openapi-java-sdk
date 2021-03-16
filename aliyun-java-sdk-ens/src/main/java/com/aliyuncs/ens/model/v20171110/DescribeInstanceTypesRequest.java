@@ -23,22 +23,9 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
 	   
-
-	private String version;
 	public DescribeInstanceTypesRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceTypes", "ens");
+		super("Ens", "2017-11-10", "DescribeInstanceTypes");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	@Override

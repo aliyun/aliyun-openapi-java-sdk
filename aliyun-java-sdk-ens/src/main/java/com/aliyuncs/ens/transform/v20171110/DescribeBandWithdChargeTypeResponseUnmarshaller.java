@@ -23,9 +23,9 @@ public class DescribeBandWithdChargeTypeResponseUnmarshaller {
 	public static DescribeBandWithdChargeTypeResponse unmarshall(DescribeBandWithdChargeTypeResponse describeBandWithdChargeTypeResponse, UnmarshallerContext _ctx) {
 		
 		describeBandWithdChargeTypeResponse.setRequestId(_ctx.stringValue("DescribeBandWithdChargeTypeResponse.RequestId"));
-		describeBandWithdChargeTypeResponse.setCode(_ctx.integerValue("DescribeBandWithdChargeTypeResponse.Code"));
-		describeBandWithdChargeTypeResponse.setBandWithTypeInfo(_ctx.stringValue("DescribeBandWithdChargeTypeResponse.BandWithTypeInfo"));
 		describeBandWithdChargeTypeResponse.setChargeCycleInfo(_ctx.stringValue("DescribeBandWithdChargeTypeResponse.ChargeCycleInfo"));
+		describeBandWithdChargeTypeResponse.setBandWithTypeInfo(_ctx.stringValue("DescribeBandWithdChargeTypeResponse.BandWithTypeInfo"));
+		describeBandWithdChargeTypeResponse.setCode(_ctx.integerValue("DescribeBandWithdChargeTypeResponse.Code"));
 		describeBandWithdChargeTypeResponse.setChargeContractType(_ctx.stringValue("DescribeBandWithdChargeTypeResponse.ChargeContractType"));
 	 
 	 	return describeBandWithdChargeTypeResponse;

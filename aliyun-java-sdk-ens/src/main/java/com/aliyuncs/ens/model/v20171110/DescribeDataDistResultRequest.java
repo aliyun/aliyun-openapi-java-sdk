@@ -24,6 +24,10 @@ import com.aliyuncs.http.MethodType;
 public class DescribeDataDistResultRequest extends RpcAcsRequest<DescribeDataDistResultResponse> {
 	   
 
+	private String dataVersions;
+
+	private String instanceIds;
+
 	private String maxDate;
 
 	private Integer pageNumber;
@@ -32,16 +36,34 @@ public class DescribeDataDistResultRequest extends RpcAcsRequest<DescribeDataDis
 
 	private String minDate;
 
-	private String dataVersions;
-
-	private String instanceIds;
-
 	private String appId;
 
 	private String dataNames;
 	public DescribeDataDistResultRequest() {
-		super("Ens", "2017-11-10", "DescribeDataDistResult", "ens");
+		super("Ens", "2017-11-10", "DescribeDataDistResult");
 		setMethod(MethodType.POST);
+	}
+
+	public String getDataVersions() {
+		return this.dataVersions;
+	}
+
+	public void setDataVersions(String dataVersions) {
+		this.dataVersions = dataVersions;
+		if(dataVersions != null){
+			putQueryParameter("DataVersions", dataVersions);
+		}
+	}
+
+	public String getInstanceIds() {
+		return this.instanceIds;
+	}
+
+	public void setInstanceIds(String instanceIds) {
+		this.instanceIds = instanceIds;
+		if(instanceIds != null){
+			putQueryParameter("InstanceIds", instanceIds);
+		}
 	}
 
 	public String getMaxDate() {
@@ -85,28 +107,6 @@ public class DescribeDataDistResultRequest extends RpcAcsRequest<DescribeDataDis
 		this.minDate = minDate;
 		if(minDate != null){
 			putQueryParameter("MinDate", minDate);
-		}
-	}
-
-	public String getDataVersions() {
-		return this.dataVersions;
-	}
-
-	public void setDataVersions(String dataVersions) {
-		this.dataVersions = dataVersions;
-		if(dataVersions != null){
-			putQueryParameter("DataVersions", dataVersions);
-		}
-	}
-
-	public String getInstanceIds() {
-		return this.instanceIds;
-	}
-
-	public void setInstanceIds(String instanceIds) {
-		this.instanceIds = instanceIds;
-		if(instanceIds != null){
-			putQueryParameter("InstanceIds", instanceIds);
 		}
 	}
 

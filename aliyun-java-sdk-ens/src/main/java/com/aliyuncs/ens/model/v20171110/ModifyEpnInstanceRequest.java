@@ -32,7 +32,7 @@ public class ModifyEpnInstanceRequest extends RpcAcsRequest<ModifyEpnInstanceRes
 
 	private String ePNInstanceName;
 	public ModifyEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "ModifyEpnInstance", "ens");
+		super("Ens", "2017-11-10", "ModifyEpnInstance");
 		setMethod(MethodType.POST);
 	}
 

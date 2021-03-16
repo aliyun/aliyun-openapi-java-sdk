@@ -26,11 +26,9 @@ public class DescribeMeasurementDataRequest extends RpcAcsRequest<DescribeMeasur
 
 	private String startDate;
 
-	private String version;
-
 	private String endDate;
 	public DescribeMeasurementDataRequest() {
-		super("Ens", "2017-11-10", "DescribeMeasurementData", "ens");
+		super("Ens", "2017-11-10", "DescribeMeasurementData");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class DescribeMeasurementDataRequest extends RpcAcsRequest<DescribeMeasur
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

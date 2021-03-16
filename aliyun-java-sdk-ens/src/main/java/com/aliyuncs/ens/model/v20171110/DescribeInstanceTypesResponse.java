@@ -57,21 +57,13 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 	public static class InstanceType {
 
-		private Integer cpuCoreCount;
-
 		private Integer memorySize;
 
-		private String instanceTypeId;
+		private Integer cpuCoreCount;
 
 		private String instanceTypeName;
 
-		public Integer getCpuCoreCount() {
-			return this.cpuCoreCount;
-		}
-
-		public void setCpuCoreCount(Integer cpuCoreCount) {
-			this.cpuCoreCount = cpuCoreCount;
-		}
+		private String instanceTypeId;
 
 		public Integer getMemorySize() {
 			return this.memorySize;
@@ -81,12 +73,12 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.memorySize = memorySize;
 		}
 
-		public String getInstanceTypeId() {
-			return this.instanceTypeId;
+		public Integer getCpuCoreCount() {
+			return this.cpuCoreCount;
 		}
 
-		public void setInstanceTypeId(String instanceTypeId) {
-			this.instanceTypeId = instanceTypeId;
+		public void setCpuCoreCount(Integer cpuCoreCount) {
+			this.cpuCoreCount = cpuCoreCount;
 		}
 
 		public String getInstanceTypeName() {
@@ -95,6 +87,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setInstanceTypeName(String instanceTypeName) {
 			this.instanceTypeName = instanceTypeName;
+		}
+
+		public String getInstanceTypeId() {
+			return this.instanceTypeId;
+		}
+
+		public void setInstanceTypeId(String instanceTypeId) {
+			this.instanceTypeId = instanceTypeId;
 		}
 	}
 

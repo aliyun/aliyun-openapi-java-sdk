@@ -28,7 +28,7 @@ public class DeleteApplicationRequest extends RpcAcsRequest<DeleteApplicationRes
 
 	private String appId;
 	public DeleteApplicationRequest() {
-		super("Ens", "2017-11-10", "DeleteApplication", "ens");
+		super("Ens", "2017-11-10", "DeleteApplication");
 		setMethod(MethodType.POST);
 	}
 

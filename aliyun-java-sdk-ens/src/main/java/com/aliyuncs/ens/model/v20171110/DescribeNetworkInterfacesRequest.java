@@ -24,31 +24,20 @@ import com.aliyuncs.http.MethodType;
 public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetworkInterfacesResponse> {
 	   
 
-	private String pageNumber;
-
 	private String ensRegionId;
-
-	private String pageSize;
 
 	private String vSwitchId;
 
 	private String instanceId;
 
+	private String pageNumber;
+
+	private String pageSize;
+
 	private String primaryIpAddress;
 	public DescribeNetworkInterfacesRequest() {
-		super("Ens", "2017-11-10", "DescribeNetworkInterfaces", "ens");
+		super("Ens", "2017-11-10", "DescribeNetworkInterfaces");
 		setMethod(MethodType.POST);
-	}
-
-	public String getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(String pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber);
-		}
 	}
 
 	public String getEnsRegionId() {
@@ -59,17 +48,6 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(String pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -92,6 +70,28 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 

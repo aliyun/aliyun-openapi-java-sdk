@@ -27,8 +27,8 @@ public class DescribeImageSharePermissionResponseUnmarshaller {
 		
 		describeImageSharePermissionResponse.setRequestId(_ctx.stringValue("DescribeImageSharePermissionResponse.RequestId"));
 		describeImageSharePermissionResponse.setTotalCount(_ctx.integerValue("DescribeImageSharePermissionResponse.TotalCount"));
-		describeImageSharePermissionResponse.setPageNumber(_ctx.integerValue("DescribeImageSharePermissionResponse.PageNumber"));
 		describeImageSharePermissionResponse.setPageSize(_ctx.integerValue("DescribeImageSharePermissionResponse.PageSize"));
+		describeImageSharePermissionResponse.setPageNumber(_ctx.integerValue("DescribeImageSharePermissionResponse.PageNumber"));
 		describeImageSharePermissionResponse.setImageId(_ctx.stringValue("DescribeImageSharePermissionResponse.ImageId"));
 
 		List<String> accounts = new ArrayList<String>();

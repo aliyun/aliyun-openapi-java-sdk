@@ -27,21 +27,21 @@ public class DescribeImagesResponseUnmarshaller {
 	public static DescribeImagesResponse unmarshall(DescribeImagesResponse describeImagesResponse, UnmarshallerContext _ctx) {
 		
 		describeImagesResponse.setRequestId(_ctx.stringValue("DescribeImagesResponse.RequestId"));
-		describeImagesResponse.setCode(_ctx.integerValue("DescribeImagesResponse.Code"));
 		describeImagesResponse.setTotalCount(_ctx.integerValue("DescribeImagesResponse.TotalCount"));
-		describeImagesResponse.setPageNumber(_ctx.integerValue("DescribeImagesResponse.PageNumber"));
 		describeImagesResponse.setPageSize(_ctx.integerValue("DescribeImagesResponse.PageSize"));
+		describeImagesResponse.setPageNumber(_ctx.integerValue("DescribeImagesResponse.PageNumber"));
+		describeImagesResponse.setCode(_ctx.integerValue("DescribeImagesResponse.Code"));
 
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeImagesResponse.Images.Length"); i++) {
 			Image image = new Image();
-			image.setImageId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageId"));
-			image.setImageName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageName"));
 			image.setImageOwnerAlias(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageOwnerAlias"));
+			image.setImageName(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageName"));
 			image.setPlatform(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Platform"));
 			image.setArchitecture(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].Architecture"));
-			image.setCreationTime(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].CreationTime"));
 			image.setImageSize(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageSize"));
+			image.setImageId(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].ImageId"));
+			image.setCreationTime(_ctx.stringValue("DescribeImagesResponse.Images["+ i +"].CreationTime"));
 
 			images.add(image);
 		}

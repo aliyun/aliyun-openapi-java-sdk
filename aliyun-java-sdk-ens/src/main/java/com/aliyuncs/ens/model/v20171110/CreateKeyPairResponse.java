@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateKeyPairResponse extends AcsResponse {
 
+	private String keyPairFingerPrint;
+
+	private String keyPairName;
+
 	private String requestId;
 
 	private String keyPairId;
 
 	private String privateKeyBody;
 
-	private String keyPairName;
+	public String getKeyPairFingerPrint() {
+		return this.keyPairFingerPrint;
+	}
 
-	private String keyPairFingerPrint;
+	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
+		this.keyPairFingerPrint = keyPairFingerPrint;
+	}
+
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,22 +72,6 @@ public class CreateKeyPairResponse extends AcsResponse {
 
 	public void setPrivateKeyBody(String privateKeyBody) {
 		this.privateKeyBody = privateKeyBody;
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-	}
-
-	public String getKeyPairFingerPrint() {
-		return this.keyPairFingerPrint;
-	}
-
-	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
-		this.keyPairFingerPrint = keyPairFingerPrint;
 	}
 
 	@Override

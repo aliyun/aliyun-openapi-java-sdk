@@ -26,7 +26,7 @@ public class DeleteEpnInstanceRequest extends RpcAcsRequest<DeleteEpnInstanceRes
 
 	private String ePNInstanceId;
 	public DeleteEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "DeleteEpnInstance", "ens");
+		super("Ens", "2017-11-10", "DeleteEpnInstance");
 		setMethod(MethodType.POST);
 	}
 

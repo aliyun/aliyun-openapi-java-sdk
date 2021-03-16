@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEpnInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<EPNInstance> ePNInstances;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeEpnInstancesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeEpnInstancesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<EPNInstance> getEPNInstances() {
@@ -77,25 +77,89 @@ public class DescribeEpnInstancesResponse extends AcsResponse {
 
 	public static class EPNInstance {
 
+		private String status;
+
+		private String ePNInstanceType;
+
+		private String modifyTime;
+
+		private Integer internetMaxBandwidthOut;
+
+		private String endTime;
+
+		private String networkingModel;
+
+		private String startTime;
+
+		private String creationTime;
+
 		private String ePNInstanceId;
 
 		private String ePNInstanceName;
 
-		private String networkingModel;
+		public String getStatus() {
+			return this.status;
+		}
 
-		private String modifyTime;
+		public void setStatus(String status) {
+			this.status = status;
+		}
 
-		private String ePNInstanceType;
+		public String getEPNInstanceType() {
+			return this.ePNInstanceType;
+		}
 
-		private String status;
+		public void setEPNInstanceType(String ePNInstanceType) {
+			this.ePNInstanceType = ePNInstanceType;
+		}
 
-		private Integer internetMaxBandwidthOut;
+		public String getModifyTime() {
+			return this.modifyTime;
+		}
 
-		private String creationTime;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
 
-		private String startTime;
+		public Integer getInternetMaxBandwidthOut() {
+			return this.internetMaxBandwidthOut;
+		}
 
-		private String endTime;
+		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
+			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getNetworkingModel() {
+			return this.networkingModel;
+		}
+
+		public void setNetworkingModel(String networkingModel) {
+			this.networkingModel = networkingModel;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getEPNInstanceId() {
 			return this.ePNInstanceId;
@@ -111,70 +175,6 @@ public class DescribeEpnInstancesResponse extends AcsResponse {
 
 		public void setEPNInstanceName(String ePNInstanceName) {
 			this.ePNInstanceName = ePNInstanceName;
-		}
-
-		public String getNetworkingModel() {
-			return this.networkingModel;
-		}
-
-		public void setNetworkingModel(String networkingModel) {
-			this.networkingModel = networkingModel;
-		}
-
-		public String getModifyTime() {
-			return this.modifyTime;
-		}
-
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
-		}
-
-		public String getEPNInstanceType() {
-			return this.ePNInstanceType;
-		}
-
-		public void setEPNInstanceType(String ePNInstanceType) {
-			this.ePNInstanceType = ePNInstanceType;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Integer getInternetMaxBandwidthOut() {
-			return this.internetMaxBandwidthOut;
-		}
-
-		public void setInternetMaxBandwidthOut(Integer internetMaxBandwidthOut) {
-			this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndTime() {
-			return this.endTime;
-		}
-
-		public void setEndTime(String endTime) {
-			this.endTime = endTime;
 		}
 	}
 

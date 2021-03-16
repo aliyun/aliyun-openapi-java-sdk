@@ -26,7 +26,7 @@ public class StartEpnInstanceRequest extends RpcAcsRequest<StartEpnInstanceRespo
 
 	private String ePNInstanceId;
 	public StartEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "StartEpnInstance", "ens");
+		super("Ens", "2017-11-10", "StartEpnInstance");
 		setMethod(MethodType.POST);
 	}
 

@@ -23,22 +23,9 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeReservedResourceRequest extends RpcAcsRequest<DescribeReservedResourceResponse> {
 	   
-
-	private String version;
 	public DescribeReservedResourceRequest() {
-		super("Ens", "2017-11-10", "DescribeReservedResource", "ens");
+		super("Ens", "2017-11-10", "DescribeReservedResource");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	@Override

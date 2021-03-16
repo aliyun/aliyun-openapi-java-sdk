@@ -30,11 +30,9 @@ public class DescribePrePaidInstanceStockRequest extends RpcAcsRequest<DescribeP
 
 	private Integer systemDiskSize;
 
-	private String version;
-
 	private Integer dataDiskSize;
 	public DescribePrePaidInstanceStockRequest() {
-		super("Ens", "2017-11-10", "DescribePrePaidInstanceStock", "ens");
+		super("Ens", "2017-11-10", "DescribePrePaidInstanceStock");
 		setMethod(MethodType.POST);
 	}
 
@@ -68,17 +66,6 @@ public class DescribePrePaidInstanceStockRequest extends RpcAcsRequest<DescribeP
 		this.systemDiskSize = systemDiskSize;
 		if(systemDiskSize != null){
 			putQueryParameter("SystemDiskSize", systemDiskSize.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

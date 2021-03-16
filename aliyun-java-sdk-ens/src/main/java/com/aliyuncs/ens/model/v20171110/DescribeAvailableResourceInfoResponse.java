@@ -59,19 +59,19 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 
 		private Integer dataDiskMinSize;
 
-		private Integer dataDiskMaxSize;
-
 		private Integer systemDiskMinSize;
 
 		private Integer systemDiskMaxSize;
 
-		private List<EnsRegionId> ensRegionIdsExtends;
+		private Integer dataDiskMaxSize;
 
-		private List<String> ensRegionIds;
+		private List<EnsRegionId> ensRegionIdsExtends;
 
 		private List<String> instanceSpeces;
 
 		private List<String> bandwidthTypes;
+
+		private List<String> ensRegionIds;
 
 		public Integer getDataDiskMinSize() {
 			return this.dataDiskMinSize;
@@ -79,14 +79,6 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 
 		public void setDataDiskMinSize(Integer dataDiskMinSize) {
 			this.dataDiskMinSize = dataDiskMinSize;
-		}
-
-		public Integer getDataDiskMaxSize() {
-			return this.dataDiskMaxSize;
-		}
-
-		public void setDataDiskMaxSize(Integer dataDiskMaxSize) {
-			this.dataDiskMaxSize = dataDiskMaxSize;
 		}
 
 		public Integer getSystemDiskMinSize() {
@@ -105,20 +97,20 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 			this.systemDiskMaxSize = systemDiskMaxSize;
 		}
 
+		public Integer getDataDiskMaxSize() {
+			return this.dataDiskMaxSize;
+		}
+
+		public void setDataDiskMaxSize(Integer dataDiskMaxSize) {
+			this.dataDiskMaxSize = dataDiskMaxSize;
+		}
+
 		public List<EnsRegionId> getEnsRegionIdsExtends() {
 			return this.ensRegionIdsExtends;
 		}
 
 		public void setEnsRegionIdsExtends(List<EnsRegionId> ensRegionIdsExtends) {
 			this.ensRegionIdsExtends = ensRegionIdsExtends;
-		}
-
-		public List<String> getEnsRegionIds() {
-			return this.ensRegionIds;
-		}
-
-		public void setEnsRegionIds(List<String> ensRegionIds) {
-			this.ensRegionIds = ensRegionIds;
 		}
 
 		public List<String> getInstanceSpeces() {
@@ -137,32 +129,32 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 			this.bandwidthTypes = bandwidthTypes;
 		}
 
+		public List<String> getEnsRegionIds() {
+			return this.ensRegionIds;
+		}
+
+		public void setEnsRegionIds(List<String> ensRegionIds) {
+			this.ensRegionIds = ensRegionIds;
+		}
+
 		public static class EnsRegionId {
-
-			private String ensRegionId;
-
-			private String name;
-
-			private String enName;
 
 			private String area;
 
+			private String enName;
+
+			private String ensRegionId;
+
 			private String province;
 
-			public String getEnsRegionId() {
-				return this.ensRegionId;
+			private String name;
+
+			public String getArea() {
+				return this.area;
 			}
 
-			public void setEnsRegionId(String ensRegionId) {
-				this.ensRegionId = ensRegionId;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
+			public void setArea(String area) {
+				this.area = area;
 			}
 
 			public String getEnName() {
@@ -173,12 +165,12 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 				this.enName = enName;
 			}
 
-			public String getArea() {
-				return this.area;
+			public String getEnsRegionId() {
+				return this.ensRegionId;
 			}
 
-			public void setArea(String area) {
-				this.area = area;
+			public void setEnsRegionId(String ensRegionId) {
+				this.ensRegionId = ensRegionId;
 			}
 
 			public String getProvince() {
@@ -188,24 +180,24 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 			public void setProvince(String province) {
 				this.province = province;
 			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
 		}
 	}
 
 	public static class Image {
 
-		private String imageId;
-
 		private String imageName;
 
 		private Integer imageSize;
 
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
+		private String imageId;
 
 		public String getImageName() {
 			return this.imageName;
@@ -221,6 +213,14 @@ public class DescribeAvailableResourceInfoResponse extends AcsResponse {
 
 		public void setImageSize(Integer imageSize) {
 			this.imageSize = imageSize;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
 		}
 	}
 

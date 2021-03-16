@@ -32,11 +32,11 @@ public class DescribeEnsRegionsResponseUnmarshaller {
 		List<EnsRegionsItem> ensRegions = new ArrayList<EnsRegionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEnsRegionsResponse.EnsRegions.Length"); i++) {
 			EnsRegionsItem ensRegionsItem = new EnsRegionsItem();
-			ensRegionsItem.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].EnsRegionId"));
-			ensRegionsItem.setName(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Name"));
-			ensRegionsItem.setEnName(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].EnName"));
 			ensRegionsItem.setArea(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Area"));
+			ensRegionsItem.setEnName(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].EnName"));
+			ensRegionsItem.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].EnsRegionId"));
 			ensRegionsItem.setProvince(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Province"));
+			ensRegionsItem.setName(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Name"));
 
 			ensRegions.add(ensRegionsItem);
 		}

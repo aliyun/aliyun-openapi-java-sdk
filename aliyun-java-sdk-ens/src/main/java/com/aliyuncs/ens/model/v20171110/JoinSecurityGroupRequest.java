@@ -26,11 +26,9 @@ public class JoinSecurityGroupRequest extends RpcAcsRequest<JoinSecurityGroupRes
 
 	private String securityGroupId;
 
-	private String version;
-
 	private String instanceId;
 	public JoinSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "JoinSecurityGroup", "ens");
+		super("Ens", "2017-11-10", "JoinSecurityGroup");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class JoinSecurityGroupRequest extends RpcAcsRequest<JoinSecurityGroupRes
 		this.securityGroupId = securityGroupId;
 		if(securityGroupId != null){
 			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

@@ -23,22 +23,9 @@ import com.aliyuncs.http.MethodType;
  */
 public class DescribeAvailableResourceInfoRequest extends RpcAcsRequest<DescribeAvailableResourceInfoResponse> {
 	   
-
-	private String version;
 	public DescribeAvailableResourceInfoRequest() {
-		super("Ens", "2017-11-10", "DescribeAvailableResourceInfo", "ens");
+		super("Ens", "2017-11-10", "DescribeAvailableResourceInfo");
 		setMethod(MethodType.POST);
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
 	}
 
 	@Override

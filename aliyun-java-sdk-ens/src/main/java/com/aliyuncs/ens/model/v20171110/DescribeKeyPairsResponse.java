@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeKeyPairsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<KeyPair> keyPairs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<KeyPair> getKeyPairs() {
@@ -77,18 +77,18 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 
 	public static class KeyPair {
 
-		private String creationTime;
+		private String keyPairFingerPrint;
 
 		private String keyPairName;
 
-		private String keyPairFingerPrint;
+		private String creationTime;
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getKeyPairFingerPrint() {
+			return this.keyPairFingerPrint;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setKeyPairFingerPrint(String keyPairFingerPrint) {
+			this.keyPairFingerPrint = keyPairFingerPrint;
 		}
 
 		public String getKeyPairName() {
@@ -99,12 +99,12 @@ public class DescribeKeyPairsResponse extends AcsResponse {
 			this.keyPairName = keyPairName;
 		}
 
-		public String getKeyPairFingerPrint() {
-			return this.keyPairFingerPrint;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setKeyPairFingerPrint(String keyPairFingerPrint) {
-			this.keyPairFingerPrint = keyPairFingerPrint;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 	}
 

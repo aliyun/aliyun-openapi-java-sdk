@@ -32,7 +32,7 @@ public class PushApplicationDataRequest extends RpcAcsRequest<PushApplicationDat
 
 	private String appId;
 	public PushApplicationDataRequest() {
-		super("Ens", "2017-11-10", "PushApplicationData", "ens");
+		super("Ens", "2017-11-10", "PushApplicationData");
 		setMethod(MethodType.POST);
 	}
 

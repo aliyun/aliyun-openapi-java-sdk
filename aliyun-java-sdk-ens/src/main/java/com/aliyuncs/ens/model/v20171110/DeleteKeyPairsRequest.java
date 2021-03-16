@@ -25,10 +25,8 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 	   
 
 	private String keyPairName;
-
-	private String version;
 	public DeleteKeyPairsRequest() {
-		super("Ens", "2017-11-10", "DeleteKeyPairs", "ens");
+		super("Ens", "2017-11-10", "DeleteKeyPairs");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

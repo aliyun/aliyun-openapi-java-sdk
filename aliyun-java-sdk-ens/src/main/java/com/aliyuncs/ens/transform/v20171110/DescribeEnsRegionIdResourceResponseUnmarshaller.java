@@ -28,21 +28,21 @@ public class DescribeEnsRegionIdResourceResponseUnmarshaller {
 		
 		describeEnsRegionIdResourceResponse.setRequestId(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.RequestId"));
 		describeEnsRegionIdResourceResponse.setTotalCount(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.TotalCount"));
-		describeEnsRegionIdResourceResponse.setPageNumber(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.PageNumber"));
 		describeEnsRegionIdResourceResponse.setPageSize(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.PageSize"));
+		describeEnsRegionIdResourceResponse.setPageNumber(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.PageNumber"));
 
 		List<EnsRegionIdResource> ensRegionIdResources = new ArrayList<EnsRegionIdResource>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources.Length"); i++) {
 			EnsRegionIdResource ensRegionIdResource = new EnsRegionIdResource();
-			ensRegionIdResource.setArea(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].Area"));
-			ensRegionIdResource.setAreaCode(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].AreaCode"));
-			ensRegionIdResource.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].EnsRegionId"));
-			ensRegionIdResource.setEnsRegionIdName(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].EnsRegionIdName"));
-			ensRegionIdResource.setVCpu(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].VCpu"));
 			ensRegionIdResource.setInternetBandwidth(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].InternetBandwidth"));
-			ensRegionIdResource.setIsp(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].Isp"));
-			ensRegionIdResource.setBizDate(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].BizDate"));
 			ensRegionIdResource.setInstanceCount(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].InstanceCount"));
+			ensRegionIdResource.setArea(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].Area"));
+			ensRegionIdResource.setIsp(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].Isp"));
+			ensRegionIdResource.setEnsRegionIdName(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].EnsRegionIdName"));
+			ensRegionIdResource.setAreaCode(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].AreaCode"));
+			ensRegionIdResource.setVCpu(_ctx.integerValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].VCpu"));
+			ensRegionIdResource.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].EnsRegionId"));
+			ensRegionIdResource.setBizDate(_ctx.stringValue("DescribeEnsRegionIdResourceResponse.EnsRegionIdResources["+ i +"].BizDate"));
 
 			ensRegionIdResources.add(ensRegionIdResource);
 		}

@@ -28,17 +28,15 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 
 	private String startTime;
 
-	private Integer pageNumber;
-
 	private String orderByParams;
+
+	private Integer pageNumber;
 
 	private String pageSize;
 
 	private String endTime;
-
-	private String version;
 	public DescribeEnsRegionIdResourceRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsRegionIdResource", "ens");
+		super("Ens", "2017-11-10", "DescribeEnsRegionIdResource");
 		setMethod(MethodType.POST);
 	}
 
@@ -64,17 +62,6 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
 	public String getOrderByParams() {
 		return this.orderByParams;
 	}
@@ -83,6 +70,17 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 		this.orderByParams = orderByParams;
 		if(orderByParams != null){
 			putQueryParameter("OrderByParams", orderByParams);
+		}
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -105,17 +103,6 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

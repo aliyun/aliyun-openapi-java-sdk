@@ -32,12 +32,12 @@ public class DescribeEnsNetDistrictResponseUnmarshaller {
 		List<EnsNetDistrict> ensNetDistricts = new ArrayList<EnsNetDistrict>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEnsNetDistrictResponse.EnsNetDistricts.Length"); i++) {
 			EnsNetDistrict ensNetDistrict = new EnsNetDistrict();
-			ensNetDistrict.setNetDistrictCode(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictCode"));
+			ensNetDistrict.setNetDistrictEnName(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictEnName"));
 			ensNetDistrict.setNetDistrictName(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictName"));
 			ensNetDistrict.setNetDistrictFatherCode(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictFatherCode"));
-			ensNetDistrict.setEnsRegionIdCount(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].EnsRegionIdCount"));
+			ensNetDistrict.setNetDistrictCode(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictCode"));
 			ensNetDistrict.setNetDistrictLevel(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictLevel"));
-			ensNetDistrict.setNetDistrictEnName(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictEnName"));
+			ensNetDistrict.setEnsRegionIdCount(_ctx.stringValue("DescribeEnsNetDistrictResponse.EnsNetDistricts["+ i +"].EnsRegionIdCount"));
 
 			ensNetDistricts.add(ensNetDistrict);
 		}

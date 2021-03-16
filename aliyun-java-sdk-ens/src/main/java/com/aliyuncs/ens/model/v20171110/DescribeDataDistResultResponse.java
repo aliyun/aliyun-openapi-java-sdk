@@ -25,33 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataDistResultResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String requestId1;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<DistResult> distResults;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getRequestId1() {
-		return this.requestId1;
-	}
-
-	public void setRequestId1(String requestId1) {
-		this.requestId1 = requestId1;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -61,12 +43,12 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -75,6 +57,14 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<DistResult> getDistResults() {
@@ -153,9 +143,9 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 				private String instanceId;
 
-				private String startTime;
-
 				private String updateTime;
+
+				private String startTime;
 
 				private String statusDescrip;
 
@@ -167,20 +157,20 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 					this.instanceId = instanceId;
 				}
 
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
-
 				public String getUpdateTime() {
 					return this.updateTime;
 				}
 
 				public void setUpdateTime(String updateTime) {
 					this.updateTime = updateTime;
+				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 
 				public String getStatusDescrip() {

@@ -57,25 +57,17 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String imageId;
-
 		private String description;
 
 		private String imageVersion;
 
-		private String oSType;
-
-		private String oSName;
-
 		private String imageSize;
 
-		public String getImageId() {
-			return this.imageId;
-		}
+		private String oSType;
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
-		}
+		private String imageId;
+
+		private String oSName;
 
 		public String getDescription() {
 			return this.description;
@@ -93,6 +85,14 @@ public class DescribeImageInfosResponse extends AcsResponse {
 			this.imageVersion = imageVersion;
 		}
 
+		public String getImageSize() {
+			return this.imageSize;
+		}
+
+		public void setImageSize(String imageSize) {
+			this.imageSize = imageSize;
+		}
+
 		public String getOSType() {
 			return this.oSType;
 		}
@@ -101,20 +101,20 @@ public class DescribeImageInfosResponse extends AcsResponse {
 			this.oSType = oSType;
 		}
 
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
 		public String getOSName() {
 			return this.oSName;
 		}
 
 		public void setOSName(String oSName) {
 			this.oSName = oSName;
-		}
-
-		public String getImageSize() {
-			return this.imageSize;
-		}
-
-		public void setImageSize(String imageSize) {
-			this.imageSize = imageSize;
 		}
 	}
 

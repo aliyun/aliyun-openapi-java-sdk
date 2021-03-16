@@ -30,11 +30,9 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	private String endTime;
 
-	private String version;
-
 	private String instanceId;
 	public DescribeInstanceMonitorDataRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceMonitorData", "ens");
+		super("Ens", "2017-11-10", "DescribeInstanceMonitorData");
 		setMethod(MethodType.POST);
 	}
 
@@ -68,17 +66,6 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 		this.endTime = endTime;
 		if(endTime != null){
 			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

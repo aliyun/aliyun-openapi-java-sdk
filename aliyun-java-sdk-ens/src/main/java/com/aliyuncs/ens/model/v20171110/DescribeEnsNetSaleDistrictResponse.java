@@ -57,59 +57,19 @@ public class DescribeEnsNetSaleDistrictResponse extends AcsResponse {
 
 	public static class EnsNetDistrict {
 
-		private String netDistrictCode;
-
-		private String netDistrictName;
-
-		private String ensRegionIdCount;
-
-		private String netDistrictLevel;
-
-		private String netDistrictFatherCode;
-
 		private String netDistrictEnName;
 
 		private String instanceCount;
 
-		public String getNetDistrictCode() {
-			return this.netDistrictCode;
-		}
+		private String netDistrictName;
 
-		public void setNetDistrictCode(String netDistrictCode) {
-			this.netDistrictCode = netDistrictCode;
-		}
+		private String netDistrictFatherCode;
 
-		public String getNetDistrictName() {
-			return this.netDistrictName;
-		}
+		private String netDistrictCode;
 
-		public void setNetDistrictName(String netDistrictName) {
-			this.netDistrictName = netDistrictName;
-		}
+		private String netDistrictLevel;
 
-		public String getEnsRegionIdCount() {
-			return this.ensRegionIdCount;
-		}
-
-		public void setEnsRegionIdCount(String ensRegionIdCount) {
-			this.ensRegionIdCount = ensRegionIdCount;
-		}
-
-		public String getNetDistrictLevel() {
-			return this.netDistrictLevel;
-		}
-
-		public void setNetDistrictLevel(String netDistrictLevel) {
-			this.netDistrictLevel = netDistrictLevel;
-		}
-
-		public String getNetDistrictFatherCode() {
-			return this.netDistrictFatherCode;
-		}
-
-		public void setNetDistrictFatherCode(String netDistrictFatherCode) {
-			this.netDistrictFatherCode = netDistrictFatherCode;
-		}
+		private String ensRegionIdCount;
 
 		public String getNetDistrictEnName() {
 			return this.netDistrictEnName;
@@ -125,6 +85,46 @@ public class DescribeEnsNetSaleDistrictResponse extends AcsResponse {
 
 		public void setInstanceCount(String instanceCount) {
 			this.instanceCount = instanceCount;
+		}
+
+		public String getNetDistrictName() {
+			return this.netDistrictName;
+		}
+
+		public void setNetDistrictName(String netDistrictName) {
+			this.netDistrictName = netDistrictName;
+		}
+
+		public String getNetDistrictFatherCode() {
+			return this.netDistrictFatherCode;
+		}
+
+		public void setNetDistrictFatherCode(String netDistrictFatherCode) {
+			this.netDistrictFatherCode = netDistrictFatherCode;
+		}
+
+		public String getNetDistrictCode() {
+			return this.netDistrictCode;
+		}
+
+		public void setNetDistrictCode(String netDistrictCode) {
+			this.netDistrictCode = netDistrictCode;
+		}
+
+		public String getNetDistrictLevel() {
+			return this.netDistrictLevel;
+		}
+
+		public void setNetDistrictLevel(String netDistrictLevel) {
+			this.netDistrictLevel = netDistrictLevel;
+		}
+
+		public String getEnsRegionIdCount() {
+			return this.ensRegionIdCount;
+		}
+
+		public void setEnsRegionIdCount(String ensRegionIdCount) {
+			this.ensRegionIdCount = ensRegionIdCount;
 		}
 	}
 

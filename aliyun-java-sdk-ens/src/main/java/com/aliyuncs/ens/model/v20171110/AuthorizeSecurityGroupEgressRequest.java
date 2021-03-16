@@ -26,21 +26,19 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 
 	private String sourcePortRange;
 
-	private String securityGroupId;
-
-	private String policy;
-
 	private String portRange;
 
 	private String ipProtocol;
 
 	private Integer priority;
 
-	private String version;
-
 	private String destCidrIp;
+
+	private String securityGroupId;
+
+	private String policy;
 	public AuthorizeSecurityGroupEgressRequest() {
-		super("Ens", "2017-11-10", "AuthorizeSecurityGroupEgress", "ens");
+		super("Ens", "2017-11-10", "AuthorizeSecurityGroupEgress");
 		setMethod(MethodType.POST);
 	}
 
@@ -52,28 +50,6 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		this.sourcePortRange = sourcePortRange;
 		if(sourcePortRange != null){
 			putQueryParameter("SourcePortRange", sourcePortRange);
-		}
-	}
-
-	public String getSecurityGroupId() {
-		return this.securityGroupId;
-	}
-
-	public void setSecurityGroupId(String securityGroupId) {
-		this.securityGroupId = securityGroupId;
-		if(securityGroupId != null){
-			putQueryParameter("SecurityGroupId", securityGroupId);
-		}
-	}
-
-	public String getPolicy() {
-		return this.policy;
-	}
-
-	public void setPolicy(String policy) {
-		this.policy = policy;
-		if(policy != null){
-			putQueryParameter("Policy", policy);
 		}
 	}
 
@@ -110,17 +86,6 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public String getDestCidrIp() {
 		return this.destCidrIp;
 	}
@@ -129,6 +94,28 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		this.destCidrIp = destCidrIp;
 		if(destCidrIp != null){
 			putQueryParameter("DestCidrIp", destCidrIp);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
 		}
 	}
 

@@ -28,22 +28,22 @@ public class DescribeEpnInstancesResponseUnmarshaller {
 		
 		describeEpnInstancesResponse.setRequestId(_ctx.stringValue("DescribeEpnInstancesResponse.RequestId"));
 		describeEpnInstancesResponse.setTotalCount(_ctx.integerValue("DescribeEpnInstancesResponse.TotalCount"));
-		describeEpnInstancesResponse.setPageNumber(_ctx.integerValue("DescribeEpnInstancesResponse.PageNumber"));
 		describeEpnInstancesResponse.setPageSize(_ctx.integerValue("DescribeEpnInstancesResponse.PageSize"));
+		describeEpnInstancesResponse.setPageNumber(_ctx.integerValue("DescribeEpnInstancesResponse.PageNumber"));
 
 		List<EPNInstance> ePNInstances = new ArrayList<EPNInstance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEpnInstancesResponse.EPNInstances.Length"); i++) {
 			EPNInstance ePNInstance = new EPNInstance();
+			ePNInstance.setStatus(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].Status"));
+			ePNInstance.setEPNInstanceType(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].EPNInstanceType"));
+			ePNInstance.setModifyTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].ModifyTime"));
+			ePNInstance.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].InternetMaxBandwidthOut"));
+			ePNInstance.setEndTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].EndTime"));
+			ePNInstance.setNetworkingModel(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].NetworkingModel"));
+			ePNInstance.setStartTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].StartTime"));
+			ePNInstance.setCreationTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].CreationTime"));
 			ePNInstance.setEPNInstanceId(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].EPNInstanceId"));
 			ePNInstance.setEPNInstanceName(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].EPNInstanceName"));
-			ePNInstance.setNetworkingModel(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].NetworkingModel"));
-			ePNInstance.setModifyTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].ModifyTime"));
-			ePNInstance.setEPNInstanceType(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].EPNInstanceType"));
-			ePNInstance.setStatus(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].Status"));
-			ePNInstance.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].InternetMaxBandwidthOut"));
-			ePNInstance.setCreationTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].CreationTime"));
-			ePNInstance.setStartTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].StartTime"));
-			ePNInstance.setEndTime(_ctx.stringValue("DescribeEpnInstancesResponse.EPNInstances["+ i +"].EndTime"));
 
 			ePNInstances.add(ePNInstance);
 		}

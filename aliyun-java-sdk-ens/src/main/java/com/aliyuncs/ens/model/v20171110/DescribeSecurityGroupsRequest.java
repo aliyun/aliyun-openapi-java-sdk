@@ -31,10 +31,8 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 	private Integer pageNumber;
 
 	private Integer pageSize;
-
-	private String version;
 	public DescribeSecurityGroupsRequest() {
-		super("Ens", "2017-11-10", "DescribeSecurityGroups", "ens");
+		super("Ens", "2017-11-10", "DescribeSecurityGroups");
 		setMethod(MethodType.POST);
 	}
 
@@ -79,17 +77,6 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

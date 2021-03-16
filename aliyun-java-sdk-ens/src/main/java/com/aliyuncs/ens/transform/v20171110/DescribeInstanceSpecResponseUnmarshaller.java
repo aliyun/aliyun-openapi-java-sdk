@@ -27,19 +27,19 @@ public class DescribeInstanceSpecResponseUnmarshaller {
 	public static DescribeInstanceSpecResponse unmarshall(DescribeInstanceSpecResponse describeInstanceSpecResponse, UnmarshallerContext _ctx) {
 		
 		describeInstanceSpecResponse.setRequestId(_ctx.stringValue("DescribeInstanceSpecResponse.RequestId"));
-		describeInstanceSpecResponse.setCode(_ctx.integerValue("DescribeInstanceSpecResponse.Code"));
 		describeInstanceSpecResponse.setDataDiskMinSize(_ctx.integerValue("DescribeInstanceSpecResponse.DataDiskMinSize"));
-		describeInstanceSpecResponse.setDataDiskMaxSize(_ctx.integerValue("DescribeInstanceSpecResponse.DataDiskMaxSize"));
 		describeInstanceSpecResponse.setSystemDiskMaxSize(_ctx.integerValue("DescribeInstanceSpecResponse.SystemDiskMaxSize"));
+		describeInstanceSpecResponse.setDataDiskMaxSize(_ctx.integerValue("DescribeInstanceSpecResponse.DataDiskMaxSize"));
+		describeInstanceSpecResponse.setCode(_ctx.integerValue("DescribeInstanceSpecResponse.Code"));
 		describeInstanceSpecResponse.setBandwidthLimit(_ctx.integerValue("DescribeInstanceSpecResponse.BandwidthLimit"));
 
 		List<InstanceSpec> instanceSpecs = new ArrayList<InstanceSpec>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceSpecResponse.InstanceSpecs.Length"); i++) {
 			InstanceSpec instanceSpec = new InstanceSpec();
-			instanceSpec.setInstanceType(_ctx.stringValue("DescribeInstanceSpecResponse.InstanceSpecs["+ i +"].InstanceType"));
-			instanceSpec.setCore(_ctx.stringValue("DescribeInstanceSpecResponse.InstanceSpecs["+ i +"].Core"));
 			instanceSpec.setMemory(_ctx.stringValue("DescribeInstanceSpecResponse.InstanceSpecs["+ i +"].Memory"));
 			instanceSpec.setDisplayName(_ctx.stringValue("DescribeInstanceSpecResponse.InstanceSpecs["+ i +"].DisplayName"));
+			instanceSpec.setInstanceType(_ctx.stringValue("DescribeInstanceSpecResponse.InstanceSpecs["+ i +"].InstanceType"));
+			instanceSpec.setCore(_ctx.stringValue("DescribeInstanceSpecResponse.InstanceSpecs["+ i +"].Core"));
 
 			instanceSpecs.add(instanceSpec);
 		}

@@ -25,10 +25,8 @@ public class DescribeExportImageStatusRequest extends RpcAcsRequest<DescribeExpo
 	   
 
 	private String imageId;
-
-	private String version;
 	public DescribeExportImageStatusRequest() {
-		super("Ens", "2017-11-10", "DescribeExportImageStatus", "ens");
+		super("Ens", "2017-11-10", "DescribeExportImageStatus");
 		setMethod(MethodType.POST);
 	}
 
@@ -40,17 +38,6 @@ public class DescribeExportImageStatusRequest extends RpcAcsRequest<DescribeExpo
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

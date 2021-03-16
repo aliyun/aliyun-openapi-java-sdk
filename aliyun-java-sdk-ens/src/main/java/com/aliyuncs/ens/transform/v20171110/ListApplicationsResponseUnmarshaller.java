@@ -29,8 +29,8 @@ public class ListApplicationsResponseUnmarshaller {
 		
 		listApplicationsResponse.setRequestId(_ctx.stringValue("ListApplicationsResponse.RequestId"));
 		listApplicationsResponse.setTotalCount(_ctx.integerValue("ListApplicationsResponse.TotalCount"));
-		listApplicationsResponse.setPageNumber(_ctx.integerValue("ListApplicationsResponse.PageNumber"));
 		listApplicationsResponse.setPageSize(_ctx.integerValue("ListApplicationsResponse.PageSize"));
+		listApplicationsResponse.setPageNumber(_ctx.integerValue("ListApplicationsResponse.PageNumber"));
 
 		List<Application> applications = new ArrayList<Application>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationsResponse.Applications.Length"); i++) {

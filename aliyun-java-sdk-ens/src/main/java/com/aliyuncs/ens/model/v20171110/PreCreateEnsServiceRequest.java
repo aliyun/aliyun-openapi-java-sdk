@@ -26,15 +26,7 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 
 	private String bandwidthType;
 
-	private String schedulingPriceStrategy;
-
-	private String imageId;
-
-	private String instanceSpec;
-
 	private String keyPairName;
-
-	private String userData;
 
 	private String password;
 
@@ -46,15 +38,21 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 
 	private String ensServiceName;
 
-	private String version;
-
 	private String netLevel;
 
-	private String schedulingStrategy;
-
 	private String dataDiskSize;
+
+	private String schedulingPriceStrategy;
+
+	private String imageId;
+
+	private String instanceSpec;
+
+	private String userData;
+
+	private String schedulingStrategy;
 	public PreCreateEnsServiceRequest() {
-		super("Ens", "2017-11-10", "PreCreateEnsService", "ens");
+		super("Ens", "2017-11-10", "PreCreateEnsService");
 		setMethod(MethodType.POST);
 	}
 
@@ -69,39 +67,6 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 		}
 	}
 
-	public String getSchedulingPriceStrategy() {
-		return this.schedulingPriceStrategy;
-	}
-
-	public void setSchedulingPriceStrategy(String schedulingPriceStrategy) {
-		this.schedulingPriceStrategy = schedulingPriceStrategy;
-		if(schedulingPriceStrategy != null){
-			putQueryParameter("SchedulingPriceStrategy", schedulingPriceStrategy);
-		}
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
-	}
-
-	public String getInstanceSpec() {
-		return this.instanceSpec;
-	}
-
-	public void setInstanceSpec(String instanceSpec) {
-		this.instanceSpec = instanceSpec;
-		if(instanceSpec != null){
-			putQueryParameter("InstanceSpec", instanceSpec);
-		}
-	}
-
 	public String getKeyPairName() {
 		return this.keyPairName;
 	}
@@ -110,17 +75,6 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
-		}
-	}
-
-	public String getUserData() {
-		return this.userData;
-	}
-
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
 		}
 	}
 
@@ -179,17 +133,6 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public String getNetLevel() {
 		return this.netLevel;
 	}
@@ -201,17 +144,6 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 		}
 	}
 
-	public String getSchedulingStrategy() {
-		return this.schedulingStrategy;
-	}
-
-	public void setSchedulingStrategy(String schedulingStrategy) {
-		this.schedulingStrategy = schedulingStrategy;
-		if(schedulingStrategy != null){
-			putQueryParameter("SchedulingStrategy", schedulingStrategy);
-		}
-	}
-
 	public String getDataDiskSize() {
 		return this.dataDiskSize;
 	}
@@ -220,6 +152,61 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 		this.dataDiskSize = dataDiskSize;
 		if(dataDiskSize != null){
 			putQueryParameter("DataDiskSize", dataDiskSize);
+		}
+	}
+
+	public String getSchedulingPriceStrategy() {
+		return this.schedulingPriceStrategy;
+	}
+
+	public void setSchedulingPriceStrategy(String schedulingPriceStrategy) {
+		this.schedulingPriceStrategy = schedulingPriceStrategy;
+		if(schedulingPriceStrategy != null){
+			putQueryParameter("SchedulingPriceStrategy", schedulingPriceStrategy);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getInstanceSpec() {
+		return this.instanceSpec;
+	}
+
+	public void setInstanceSpec(String instanceSpec) {
+		this.instanceSpec = instanceSpec;
+		if(instanceSpec != null){
+			putQueryParameter("InstanceSpec", instanceSpec);
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
+		}
+	}
+
+	public String getSchedulingStrategy() {
+		return this.schedulingStrategy;
+	}
+
+	public void setSchedulingStrategy(String schedulingStrategy) {
+		this.schedulingStrategy = schedulingStrategy;
+		if(schedulingStrategy != null){
+			putQueryParameter("SchedulingStrategy", schedulingStrategy);
 		}
 	}
 

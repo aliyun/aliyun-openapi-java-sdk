@@ -26,13 +26,11 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 
 	private String ensRegionId;
 
-	private String version;
-
 	private String vSwitchName;
 
 	private String cidrBlock;
 	public CreateVSwitchRequest() {
-		super("Ens", "2017-11-10", "CreateVSwitch", "ens");
+		super("Ens", "2017-11-10", "CreateVSwitch");
 		setMethod(MethodType.POST);
 	}
 
@@ -44,17 +42,6 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		this.ensRegionId = ensRegionId;
 		if(ensRegionId != null){
 			putQueryParameter("EnsRegionId", ensRegionId);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

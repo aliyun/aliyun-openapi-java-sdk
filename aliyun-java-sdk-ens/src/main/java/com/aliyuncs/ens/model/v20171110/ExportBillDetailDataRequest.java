@@ -26,11 +26,9 @@ public class ExportBillDetailDataRequest extends RpcAcsRequest<ExportBillDetailD
 
 	private String startDate;
 
-	private String version;
-
 	private String endDate;
 	public ExportBillDetailDataRequest() {
-		super("Ens", "2017-11-10", "ExportBillDetailData", "ens");
+		super("Ens", "2017-11-10", "ExportBillDetailData");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class ExportBillDetailDataRequest extends RpcAcsRequest<ExportBillDetailD
 		this.startDate = startDate;
 		if(startDate != null){
 			putQueryParameter("StartDate", startDate);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

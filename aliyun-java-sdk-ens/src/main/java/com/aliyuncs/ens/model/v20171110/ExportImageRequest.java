@@ -24,31 +24,18 @@ import com.aliyuncs.http.MethodType;
 public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 	   
 
-	private String imageId;
-
 	private String oSSRegionId;
 
 	private String oSSBucket;
 
 	private String roleName;
 
-	private String version;
-
 	private String oSSPrefix;
+
+	private String imageId;
 	public ExportImageRequest() {
-		super("Ens", "2017-11-10", "ExportImage", "ens");
+		super("Ens", "2017-11-10", "ExportImage");
 		setMethod(MethodType.POST);
-	}
-
-	public String getImageId() {
-		return this.imageId;
-	}
-
-	public void setImageId(String imageId) {
-		this.imageId = imageId;
-		if(imageId != null){
-			putQueryParameter("ImageId", imageId);
-		}
 	}
 
 	public String getOSSRegionId() {
@@ -84,17 +71,6 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		}
 	}
 
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
-		}
-	}
-
 	public String getOSSPrefix() {
 		return this.oSSPrefix;
 	}
@@ -103,6 +79,17 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 		this.oSSPrefix = oSSPrefix;
 		if(oSSPrefix != null){
 			putQueryParameter("OSSPrefix", oSSPrefix);
+		}
+	}
+
+	public String getImageId() {
+		return this.imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
+		if(imageId != null){
+			putQueryParameter("ImageId", imageId);
 		}
 	}
 

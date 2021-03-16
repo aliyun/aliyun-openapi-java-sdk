@@ -66,7 +66,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String paymentType;
 	public CreateInstanceRequest() {
-		super("Ens", "2017-11-10", "CreateInstance", "ens");
+		super("Ens", "2017-11-10", "CreateInstance");
 		setMethod(MethodType.POST);
 	}
 

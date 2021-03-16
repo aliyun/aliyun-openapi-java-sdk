@@ -27,10 +27,8 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 	private String keyPairName;
 
 	private String publicKeyBody;
-
-	private String version;
 	public ImportKeyPairRequest() {
-		super("Ens", "2017-11-10", "ImportKeyPair", "ens");
+		super("Ens", "2017-11-10", "ImportKeyPair");
 		setMethod(MethodType.POST);
 	}
 
@@ -53,17 +51,6 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 		this.publicKeyBody = publicKeyBody;
 		if(publicKeyBody != null){
 			putQueryParameter("PublicKeyBody", publicKeyBody);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

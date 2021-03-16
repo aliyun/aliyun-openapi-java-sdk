@@ -58,21 +58,13 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public static class Price {
 
-			private Float discountPrice;
-
 			private Float originalPrice;
 
-			private Float tradePrice;
+			private Float discountPrice;
 
 			private String currency;
 
-			public Float getDiscountPrice() {
-				return this.discountPrice;
-			}
-
-			public void setDiscountPrice(Float discountPrice) {
-				this.discountPrice = discountPrice;
-			}
+			private Float tradePrice;
 
 			public Float getOriginalPrice() {
 				return this.originalPrice;
@@ -82,12 +74,12 @@ public class DescribePriceResponse extends AcsResponse {
 				this.originalPrice = originalPrice;
 			}
 
-			public Float getTradePrice() {
-				return this.tradePrice;
+			public Float getDiscountPrice() {
+				return this.discountPrice;
 			}
 
-			public void setTradePrice(Float tradePrice) {
-				this.tradePrice = tradePrice;
+			public void setDiscountPrice(Float discountPrice) {
+				this.discountPrice = discountPrice;
 			}
 
 			public String getCurrency() {
@@ -96,6 +88,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 			public void setCurrency(String currency) {
 				this.currency = currency;
+			}
+
+			public Float getTradePrice() {
+				return this.tradePrice;
+			}
+
+			public void setTradePrice(Float tradePrice) {
+				this.tradePrice = tradePrice;
 			}
 		}
 	}

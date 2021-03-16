@@ -57,19 +57,11 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 	public static class InstanceRenewAttribute {
 
-		private String instanceId;
-
 		private Boolean autoRenewal;
 
+		private String instanceId;
+
 		private String duration;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
 
 		public Boolean getAutoRenewal() {
 			return this.autoRenewal;
@@ -77,6 +69,14 @@ public class DescribeInstanceAutoRenewAttributeResponse extends AcsResponse {
 
 		public void setAutoRenewal(Boolean autoRenewal) {
 			this.autoRenewal = autoRenewal;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getDuration() {

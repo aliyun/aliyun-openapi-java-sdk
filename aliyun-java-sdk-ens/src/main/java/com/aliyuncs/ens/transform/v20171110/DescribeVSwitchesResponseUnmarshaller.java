@@ -28,19 +28,19 @@ public class DescribeVSwitchesResponseUnmarshaller {
 		
 		describeVSwitchesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchesResponse.RequestId"));
 		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
-		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
 		describeVSwitchesResponse.setPageSize(_ctx.integerValue("DescribeVSwitchesResponse.PageSize"));
+		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
 
 		List<VSwitch> vSwitches = new ArrayList<VSwitch>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchesResponse.VSwitches.Length"); i++) {
 			VSwitch vSwitch = new VSwitch();
-			vSwitch.setVSwitchId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchId"));
-			vSwitch.setVSwitchName(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchName"));
 			vSwitch.setStatus(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Status"));
-			vSwitch.setCidrBlock(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CidrBlock"));
-			vSwitch.setEnsRegionId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].EnsRegionId"));
 			vSwitch.setFreeIpCount(_ctx.longValue("DescribeVSwitchesResponse.VSwitches["+ i +"].FreeIpCount"));
 			vSwitch.setCreatedTime(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CreatedTime"));
+			vSwitch.setVSwitchId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchId"));
+			vSwitch.setCidrBlock(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CidrBlock"));
+			vSwitch.setVSwitchName(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchName"));
+			vSwitch.setEnsRegionId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].EnsRegionId"));
 
 			vSwitches.add(vSwitch);
 		}

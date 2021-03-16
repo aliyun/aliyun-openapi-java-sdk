@@ -26,11 +26,9 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 
 	private String forceStop;
 
-	private String version;
-
 	private String instanceId;
 	public RebootInstanceRequest() {
-		super("Ens", "2017-11-10", "RebootInstance", "ens");
+		super("Ens", "2017-11-10", "RebootInstance");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,17 +40,6 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 		this.forceStop = forceStop;
 		if(forceStop != null){
 			putQueryParameter("ForceStop", forceStop);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 

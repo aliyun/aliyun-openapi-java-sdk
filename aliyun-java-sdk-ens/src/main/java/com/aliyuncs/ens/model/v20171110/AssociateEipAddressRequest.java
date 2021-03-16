@@ -29,10 +29,8 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 	private String ensRegionId;
 
 	private String instanceIdInternetIp;
-
-	private String version;
 	public AssociateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AssociateEipAddress", "ens");
+		super("Ens", "2017-11-10", "AssociateEipAddress");
 		setMethod(MethodType.POST);
 	}
 
@@ -66,17 +64,6 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 		this.instanceIdInternetIp = instanceIdInternetIp;
 		if(instanceIdInternetIp != null){
 			putQueryParameter("InstanceIdInternetIp", instanceIdInternetIp);
-		}
-	}
-
-	public String getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-		if(version != null){
-			putQueryParameter("Version", version);
 		}
 	}
 
