@@ -27,6 +27,8 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 
 	private Long resourceOwnerId;
 
+	private String productType;
+
 	private String resourceGroupId;
 
 	private String securityToken;
@@ -65,6 +67,17 @@ public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvai
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getProductType() {
+		return this.productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+		if(productType != null){
+			putQueryParameter("ProductType", productType);
 		}
 	}
 
