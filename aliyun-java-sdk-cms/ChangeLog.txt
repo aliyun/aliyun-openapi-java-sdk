@@ -1,3 +1,6 @@
+2021-03-17 Version: 7.0.21
+- Add group alarm rule resource extension parameter.
+
 2021-03-05 Version: 7.0.20
 - Increase availability monitoring increase HTP header.
 

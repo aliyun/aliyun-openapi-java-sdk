@@ -58,6 +58,8 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 
 	private Integer escalationsInfoTimes;
 
+	private String extraDimensionJson;
+
 	private Integer escalationsCriticalTimes;
 
 	private String escalationsWarnStatistics;
@@ -266,6 +268,17 @@ public class PutGroupMetricRuleRequest extends RpcAcsRequest<PutGroupMetricRuleR
 		this.escalationsInfoTimes = escalationsInfoTimes;
 		if(escalationsInfoTimes != null){
 			putQueryParameter("Escalations.Info.Times", escalationsInfoTimes.toString());
+		}
+	}
+
+	public String getExtraDimensionJson() {
+		return this.extraDimensionJson;
+	}
+
+	public void setExtraDimensionJson(String extraDimensionJson) {
+		this.extraDimensionJson = extraDimensionJson;
+		if(extraDimensionJson != null){
+			putQueryParameter("ExtraDimensionJson", extraDimensionJson);
 		}
 	}
 
