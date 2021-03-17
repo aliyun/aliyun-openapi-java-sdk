@@ -25,6 +25,10 @@ import com.aliyuncs.imageenhan.Endpoint;
 public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperResolutionImageResponse> {
 	   
 
+	private Long upscaleFactor;
+
+	private String mode;
+
 	private String url;
 	public MakeSuperResolutionImageRequest() {
 		super("imageenhan", "2019-09-30", "MakeSuperResolutionImage", "imageenhan");
@@ -33,6 +37,28 @@ public class MakeSuperResolutionImageRequest extends RpcAcsRequest<MakeSuperReso
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getUpscaleFactor() {
+		return this.upscaleFactor;
+	}
+
+	public void setUpscaleFactor(Long upscaleFactor) {
+		this.upscaleFactor = upscaleFactor;
+		if(upscaleFactor != null){
+			putBodyParameter("UpscaleFactor", upscaleFactor.toString());
+		}
+	}
+
+	public String getMode() {
+		return this.mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+		if(mode != null){
+			putBodyParameter("Mode", mode);
+		}
 	}
 
 	public String getUrl() {
