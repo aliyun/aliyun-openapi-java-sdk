@@ -89,6 +89,10 @@ public class GetMultipleTraceResponse extends AcsResponse {
 
 			private Integer rpcType;
 
+			private String spanId;
+
+			private String parentSpanId;
+
 			private List<TagEntry> tagEntryList;
 
 			private List<LogEvent> logEventList;
@@ -171,6 +175,22 @@ public class GetMultipleTraceResponse extends AcsResponse {
 
 			public void setRpcType(Integer rpcType) {
 				this.rpcType = rpcType;
+			}
+
+			public String getSpanId() {
+				return this.spanId;
+			}
+
+			public void setSpanId(String spanId) {
+				this.spanId = spanId;
+			}
+
+			public String getParentSpanId() {
+				return this.parentSpanId;
+			}
+
+			public void setParentSpanId(String parentSpanId) {
+				this.parentSpanId = parentSpanId;
 			}
 
 			public List<TagEntry> getTagEntryList() {

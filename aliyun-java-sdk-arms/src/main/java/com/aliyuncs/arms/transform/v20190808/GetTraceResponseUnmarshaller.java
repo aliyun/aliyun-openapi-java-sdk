@@ -44,6 +44,8 @@ public class GetTraceResponseUnmarshaller {
 			span.setResultCode(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ResultCode"));
 			span.setHaveStack(_ctx.booleanValue("GetTraceResponse.Spans["+ i +"].HaveStack"));
 			span.setRpcType(_ctx.integerValue("GetTraceResponse.Spans["+ i +"].RpcType"));
+			span.setSpanId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].SpanId"));
+			span.setParentSpanId(_ctx.stringValue("GetTraceResponse.Spans["+ i +"].ParentSpanId"));
 
 			List<TagEntry> tagEntryList = new ArrayList<TagEntry>();
 			for (int j = 0; j < _ctx.lengthValue("GetTraceResponse.Spans["+ i +"].TagEntryList.Length"); j++) {
