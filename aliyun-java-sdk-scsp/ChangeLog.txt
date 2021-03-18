@@ -1,3 +1,6 @@
+2021-03-18 Version: 1.2.8
+- Add getCallsPerDay.
+
 2021-03-16 Version: 1.2.7
 - S AAA.
 - D BBB.
