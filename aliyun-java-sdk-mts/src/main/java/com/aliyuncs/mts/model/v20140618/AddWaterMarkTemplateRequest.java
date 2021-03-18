@@ -37,7 +37,7 @@ public class AddWaterMarkTemplateRequest extends RpcAcsRequest<AddWaterMarkTempl
 
 	private String config;
 	public AddWaterMarkTemplateRequest() {
-		super("Mts", "2014-06-18", "AddWaterMarkTemplate", "mts");
+		super("Mts", "2014-06-18", "AddWaterMarkTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

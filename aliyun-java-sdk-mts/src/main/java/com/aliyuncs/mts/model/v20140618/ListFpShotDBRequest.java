@@ -35,7 +35,7 @@ public class ListFpShotDBRequest extends RpcAcsRequest<ListFpShotDBResponse> {
 
 	private String fpDBIds;
 	public ListFpShotDBRequest() {
-		super("Mts", "2014-06-18", "ListFpShotDB", "mts");
+		super("Mts", "2014-06-18", "ListFpShotDB");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class QueryVideoQualityJobRequest extends RpcAcsRequest<QueryVideoQuality
 
 	private String jobId;
 	public QueryVideoQualityJobRequest() {
-		super("Mts", "2014-06-18", "QueryVideoQualityJob", "mts");
+		super("Mts", "2014-06-18", "QueryVideoQualityJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

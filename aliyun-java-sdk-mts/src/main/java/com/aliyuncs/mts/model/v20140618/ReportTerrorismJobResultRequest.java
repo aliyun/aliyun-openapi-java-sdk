@@ -39,7 +39,7 @@ public class ReportTerrorismJobResultRequest extends RpcAcsRequest<ReportTerrori
 
 	private String detail;
 	public ReportTerrorismJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportTerrorismJobResult", "mts");
+		super("Mts", "2014-06-18", "ReportTerrorismJobResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

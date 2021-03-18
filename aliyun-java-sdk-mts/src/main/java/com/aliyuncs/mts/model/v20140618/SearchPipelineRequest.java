@@ -39,7 +39,7 @@ public class SearchPipelineRequest extends RpcAcsRequest<SearchPipelineResponse>
 
 	private Long ownerId;
 	public SearchPipelineRequest() {
-		super("Mts", "2014-06-18", "SearchPipeline", "mts");
+		super("Mts", "2014-06-18", "SearchPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

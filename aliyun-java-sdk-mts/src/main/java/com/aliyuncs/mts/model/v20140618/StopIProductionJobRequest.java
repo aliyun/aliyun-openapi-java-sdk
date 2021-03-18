@@ -35,7 +35,7 @@ public class StopIProductionJobRequest extends RpcAcsRequest<StopIProductionJobR
 
 	private String jobId;
 	public StopIProductionJobRequest() {
-		super("Mts", "2014-06-18", "StopIProductionJob", "mts");
+		super("Mts", "2014-06-18", "StopIProductionJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

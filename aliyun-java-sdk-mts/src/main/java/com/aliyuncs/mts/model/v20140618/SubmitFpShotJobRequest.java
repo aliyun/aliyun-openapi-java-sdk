@@ -41,7 +41,7 @@ public class SubmitFpShotJobRequest extends RpcAcsRequest<SubmitFpShotJobRespons
 
 	private String input;
 	public SubmitFpShotJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFpShotJob", "mts");
+		super("Mts", "2014-06-18", "SubmitFpShotJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

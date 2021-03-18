@@ -39,7 +39,7 @@ public class SearchWaterMarkTemplateRequest extends RpcAcsRequest<SearchWaterMar
 
 	private Long ownerId;
 	public SearchWaterMarkTemplateRequest() {
-		super("Mts", "2014-06-18", "SearchWaterMarkTemplate", "mts");
+		super("Mts", "2014-06-18", "SearchWaterMarkTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

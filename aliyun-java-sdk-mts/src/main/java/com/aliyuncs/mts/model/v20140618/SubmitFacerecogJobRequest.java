@@ -41,7 +41,7 @@ public class SubmitFacerecogJobRequest extends RpcAcsRequest<SubmitFacerecogJobR
 
 	private String input;
 	public SubmitFacerecogJobRequest() {
-		super("Mts", "2014-06-18", "SubmitFacerecogJob", "mts");
+		super("Mts", "2014-06-18", "SubmitFacerecogJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

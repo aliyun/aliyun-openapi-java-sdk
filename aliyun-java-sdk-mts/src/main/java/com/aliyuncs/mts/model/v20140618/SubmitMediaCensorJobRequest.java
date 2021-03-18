@@ -49,7 +49,7 @@ public class SubmitMediaCensorJobRequest extends RpcAcsRequest<SubmitMediaCensor
 
 	private String barrages;
 	public SubmitMediaCensorJobRequest() {
-		super("Mts", "2014-06-18", "SubmitMediaCensorJob", "mts");
+		super("Mts", "2014-06-18", "SubmitMediaCensorJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

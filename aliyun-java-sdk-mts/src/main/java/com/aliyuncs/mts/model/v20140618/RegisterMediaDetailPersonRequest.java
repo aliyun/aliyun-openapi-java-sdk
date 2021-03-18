@@ -41,7 +41,7 @@ public class RegisterMediaDetailPersonRequest extends RpcAcsRequest<RegisterMedi
 
 	private String category;
 	public RegisterMediaDetailPersonRequest() {
-		super("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts");
+		super("Mts", "2014-06-18", "RegisterMediaDetailPerson");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

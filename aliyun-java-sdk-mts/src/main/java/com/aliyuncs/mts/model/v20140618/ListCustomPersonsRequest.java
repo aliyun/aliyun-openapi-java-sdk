@@ -37,7 +37,7 @@ public class ListCustomPersonsRequest extends RpcAcsRequest<ListCustomPersonsRes
 
 	private Long ownerId;
 	public ListCustomPersonsRequest() {
-		super("Mts", "2014-06-18", "ListCustomPersons", "mts");
+		super("Mts", "2014-06-18", "ListCustomPersons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

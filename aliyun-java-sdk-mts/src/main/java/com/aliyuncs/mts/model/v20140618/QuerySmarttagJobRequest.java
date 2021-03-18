@@ -35,7 +35,7 @@ public class QuerySmarttagJobRequest extends RpcAcsRequest<QuerySmarttagJobRespo
 
 	private String jobId;
 	public QuerySmarttagJobRequest() {
-		super("Mts", "2014-06-18", "QuerySmarttagJob", "mts");
+		super("Mts", "2014-06-18", "QuerySmarttagJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

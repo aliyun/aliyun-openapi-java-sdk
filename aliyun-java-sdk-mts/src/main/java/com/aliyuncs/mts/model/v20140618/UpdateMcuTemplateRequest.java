@@ -37,7 +37,7 @@ public class UpdateMcuTemplateRequest extends RpcAcsRequest<UpdateMcuTemplateRes
 
 	private String templateId;
 	public UpdateMcuTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateMcuTemplate", "mts");
+		super("Mts", "2014-06-18", "UpdateMcuTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class UpdateAsrPipelineRequest extends RpcAcsRequest<UpdateAsrPipelineRes
 
 	private String name;
 	public UpdateAsrPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdateAsrPipeline", "mts");
+		super("Mts", "2014-06-18", "UpdateAsrPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -47,7 +47,7 @@ public class UpdateSmarttagTemplateRequest extends RpcAcsRequest<UpdateSmarttagT
 
 	private String analyseTypes;
 	public UpdateSmarttagTemplateRequest() {
-		super("Mts", "2014-06-18", "UpdateSmarttagTemplate", "mts");
+		super("Mts", "2014-06-18", "UpdateSmarttagTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

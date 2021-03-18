@@ -35,7 +35,7 @@ public class QueryMcuTemplateRequest extends RpcAcsRequest<QueryMcuTemplateRespo
 
 	private String templateId;
 	public QueryMcuTemplateRequest() {
-		super("Mts", "2014-06-18", "QueryMcuTemplate", "mts");
+		super("Mts", "2014-06-18", "QueryMcuTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

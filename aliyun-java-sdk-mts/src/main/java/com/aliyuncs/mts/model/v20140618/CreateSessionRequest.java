@@ -39,7 +39,7 @@ public class CreateSessionRequest extends RpcAcsRequest<CreateSessionResponse> {
 
 	private String mediaId;
 	public CreateSessionRequest() {
-		super("Mts", "2014-06-18", "CreateSession", "mts");
+		super("Mts", "2014-06-18", "CreateSession");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

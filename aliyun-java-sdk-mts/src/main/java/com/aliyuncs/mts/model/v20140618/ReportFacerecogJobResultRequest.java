@@ -39,7 +39,7 @@ public class ReportFacerecogJobResultRequest extends RpcAcsRequest<ReportFacerec
 
 	private Long ownerId;
 	public ReportFacerecogJobResultRequest() {
-		super("Mts", "2014-06-18", "ReportFacerecogJobResult", "mts");
+		super("Mts", "2014-06-18", "ReportFacerecogJobResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2021-03-18 Version: 3.3.13-inner
+- Add pai_public api.
+
 2021-01-25 Version: 3.3.12-inner
 - VideoQualitySubmit and Query.
 

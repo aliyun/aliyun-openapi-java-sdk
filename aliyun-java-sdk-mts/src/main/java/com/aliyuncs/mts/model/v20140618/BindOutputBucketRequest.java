@@ -37,7 +37,7 @@ public class BindOutputBucketRequest extends RpcAcsRequest<BindOutputBucketRespo
 
 	private String roleArn;
 	public BindOutputBucketRequest() {
-		super("Mts", "2014-06-18", "BindOutputBucket", "mts");
+		super("Mts", "2014-06-18", "BindOutputBucket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

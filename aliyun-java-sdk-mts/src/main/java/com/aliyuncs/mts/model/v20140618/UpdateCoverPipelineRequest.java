@@ -45,7 +45,7 @@ public class UpdateCoverPipelineRequest extends RpcAcsRequest<UpdateCoverPipelin
 
 	private String name;
 	public UpdateCoverPipelineRequest() {
-		super("Mts", "2014-06-18", "UpdateCoverPipeline", "mts");
+		super("Mts", "2014-06-18", "UpdateCoverPipeline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class QueryTagJobListRequest extends RpcAcsRequest<QueryTagJobListRespons
 
 	private String tagJobIds;
 	public QueryTagJobListRequest() {
-		super("Mts", "2014-06-18", "QueryTagJobList", "mts");
+		super("Mts", "2014-06-18", "QueryTagJobList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

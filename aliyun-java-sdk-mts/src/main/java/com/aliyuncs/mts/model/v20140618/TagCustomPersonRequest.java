@@ -45,7 +45,7 @@ public class TagCustomPersonRequest extends RpcAcsRequest<TagCustomPersonRespons
 
 	private String categoryName;
 	public TagCustomPersonRequest() {
-		super("Mts", "2014-06-18", "TagCustomPerson", "mts");
+		super("Mts", "2014-06-18", "TagCustomPerson");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

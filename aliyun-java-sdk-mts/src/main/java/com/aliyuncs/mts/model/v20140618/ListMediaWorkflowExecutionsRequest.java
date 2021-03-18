@@ -43,7 +43,7 @@ public class ListMediaWorkflowExecutionsRequest extends RpcAcsRequest<ListMediaW
 
 	private String inputFileURL;
 	public ListMediaWorkflowExecutionsRequest() {
-		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts");
+		super("Mts", "2014-06-18", "ListMediaWorkflowExecutions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
