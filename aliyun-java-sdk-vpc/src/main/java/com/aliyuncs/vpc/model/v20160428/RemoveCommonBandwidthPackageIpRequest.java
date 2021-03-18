@@ -27,6 +27,8 @@ public class RemoveCommonBandwidthPackageIpRequest extends RpcAcsRequest<RemoveC
 
 	private Long resourceOwnerId;
 
+	private String clientToken;
+
 	private String bandwidthPackageId;
 
 	private String resourceOwnerAccount;
@@ -53,6 +55,17 @@ public class RemoveCommonBandwidthPackageIpRequest extends RpcAcsRequest<RemoveC
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 

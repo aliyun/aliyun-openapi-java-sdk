@@ -134,6 +134,10 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 		private String domainName;
 
+		private String tFTPServerName;
+
+		private String bootFileName;
+
 		public String getDomainNameServers() {
 			return this.domainNameServers;
 		}
@@ -148,6 +152,22 @@ public class GetDhcpOptionsSetResponse extends AcsResponse {
 
 		public void setDomainName(String domainName) {
 			this.domainName = domainName;
+		}
+
+		public String getTFTPServerName() {
+			return this.tFTPServerName;
+		}
+
+		public void setTFTPServerName(String tFTPServerName) {
+			this.tFTPServerName = tFTPServerName;
+		}
+
+		public String getBootFileName() {
+			return this.bootFileName;
+		}
+
+		public void setBootFileName(String bootFileName) {
+			this.bootFileName = bootFileName;
 		}
 	}
 

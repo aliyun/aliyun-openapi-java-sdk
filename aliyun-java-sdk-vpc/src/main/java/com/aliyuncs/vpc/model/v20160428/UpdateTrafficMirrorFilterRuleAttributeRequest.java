@@ -22,34 +22,38 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptionsSetResponse> {
+public class UpdateTrafficMirrorFilterRuleAttributeRequest extends RpcAcsRequest<UpdateTrafficMirrorFilterRuleAttributeResponse> {
 	   
 
-	private String bootFileName;
+	private String sourcePortRange;
 
 	private Long resourceOwnerId;
 
+	private String destinationPortRange;
+
 	private String clientToken;
 
-	private String tFTPServerName;
+	private String ruleAction;
 
-	private String domainNameServers;
+	private String protocol;
 
-	private String dhcpOptionsSetDescription;
+	private String sourceCidrBlock;
 
 	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
+	private String destinationCidrBlock;
+
 	private String ownerAccount;
 
-	private String domainName;
+	private Integer priority;
 
 	private Long ownerId;
 
-	private String dhcpOptionsSetName;
-	public CreateDhcpOptionsSetRequest() {
-		super("Vpc", "2016-04-28", "CreateDhcpOptionsSet", "vpc");
+	private String trafficMirrorFilterRuleId;
+	public UpdateTrafficMirrorFilterRuleAttributeRequest() {
+		super("Vpc", "2016-04-28", "UpdateTrafficMirrorFilterRuleAttribute", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,14 +61,14 @@ public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptions
 		} catch (Exception e) {}
 	}
 
-	public String getBootFileName() {
-		return this.bootFileName;
+	public String getSourcePortRange() {
+		return this.sourcePortRange;
 	}
 
-	public void setBootFileName(String bootFileName) {
-		this.bootFileName = bootFileName;
-		if(bootFileName != null){
-			putQueryParameter("BootFileName", bootFileName);
+	public void setSourcePortRange(String sourcePortRange) {
+		this.sourcePortRange = sourcePortRange;
+		if(sourcePortRange != null){
+			putQueryParameter("SourcePortRange", sourcePortRange);
 		}
 	}
 
@@ -79,6 +83,17 @@ public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptions
 		}
 	}
 
+	public String getDestinationPortRange() {
+		return this.destinationPortRange;
+	}
+
+	public void setDestinationPortRange(String destinationPortRange) {
+		this.destinationPortRange = destinationPortRange;
+		if(destinationPortRange != null){
+			putQueryParameter("DestinationPortRange", destinationPortRange);
+		}
+	}
+
 	public String getClientToken() {
 		return this.clientToken;
 	}
@@ -90,36 +105,36 @@ public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptions
 		}
 	}
 
-	public String getTFTPServerName() {
-		return this.tFTPServerName;
+	public String getRuleAction() {
+		return this.ruleAction;
 	}
 
-	public void setTFTPServerName(String tFTPServerName) {
-		this.tFTPServerName = tFTPServerName;
-		if(tFTPServerName != null){
-			putQueryParameter("TFTPServerName", tFTPServerName);
+	public void setRuleAction(String ruleAction) {
+		this.ruleAction = ruleAction;
+		if(ruleAction != null){
+			putQueryParameter("RuleAction", ruleAction);
 		}
 	}
 
-	public String getDomainNameServers() {
-		return this.domainNameServers;
+	public String getBizProtocol() {
+		return this.protocol;
 	}
 
-	public void setDomainNameServers(String domainNameServers) {
-		this.domainNameServers = domainNameServers;
-		if(domainNameServers != null){
-			putQueryParameter("DomainNameServers", domainNameServers);
+	public void setBizProtocol(String protocol) {
+		this.protocol = protocol;
+		if(protocol != null){
+			putQueryParameter("Protocol", protocol);
 		}
 	}
 
-	public String getDhcpOptionsSetDescription() {
-		return this.dhcpOptionsSetDescription;
+	public String getSourceCidrBlock() {
+		return this.sourceCidrBlock;
 	}
 
-	public void setDhcpOptionsSetDescription(String dhcpOptionsSetDescription) {
-		this.dhcpOptionsSetDescription = dhcpOptionsSetDescription;
-		if(dhcpOptionsSetDescription != null){
-			putQueryParameter("DhcpOptionsSetDescription", dhcpOptionsSetDescription);
+	public void setSourceCidrBlock(String sourceCidrBlock) {
+		this.sourceCidrBlock = sourceCidrBlock;
+		if(sourceCidrBlock != null){
+			putQueryParameter("SourceCidrBlock", sourceCidrBlock);
 		}
 	}
 
@@ -145,6 +160,17 @@ public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptions
 		}
 	}
 
+	public String getDestinationCidrBlock() {
+		return this.destinationCidrBlock;
+	}
+
+	public void setDestinationCidrBlock(String destinationCidrBlock) {
+		this.destinationCidrBlock = destinationCidrBlock;
+		if(destinationCidrBlock != null){
+			putQueryParameter("DestinationCidrBlock", destinationCidrBlock);
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -156,14 +182,14 @@ public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptions
 		}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public Integer getPriority() {
+		return this.priority;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+		if(priority != null){
+			putQueryParameter("Priority", priority.toString());
 		}
 	}
 
@@ -178,20 +204,20 @@ public class CreateDhcpOptionsSetRequest extends RpcAcsRequest<CreateDhcpOptions
 		}
 	}
 
-	public String getDhcpOptionsSetName() {
-		return this.dhcpOptionsSetName;
+	public String getTrafficMirrorFilterRuleId() {
+		return this.trafficMirrorFilterRuleId;
 	}
 
-	public void setDhcpOptionsSetName(String dhcpOptionsSetName) {
-		this.dhcpOptionsSetName = dhcpOptionsSetName;
-		if(dhcpOptionsSetName != null){
-			putQueryParameter("DhcpOptionsSetName", dhcpOptionsSetName);
+	public void setTrafficMirrorFilterRuleId(String trafficMirrorFilterRuleId) {
+		this.trafficMirrorFilterRuleId = trafficMirrorFilterRuleId;
+		if(trafficMirrorFilterRuleId != null){
+			putQueryParameter("TrafficMirrorFilterRuleId", trafficMirrorFilterRuleId);
 		}
 	}
 
 	@Override
-	public Class<CreateDhcpOptionsSetResponse> getResponseClass() {
-		return CreateDhcpOptionsSetResponse.class;
+	public Class<UpdateTrafficMirrorFilterRuleAttributeResponse> getResponseClass() {
+		return UpdateTrafficMirrorFilterRuleAttributeResponse.class;
 	}
 
 }

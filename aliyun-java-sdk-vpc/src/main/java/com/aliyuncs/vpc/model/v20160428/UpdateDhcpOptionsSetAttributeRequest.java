@@ -25,9 +25,13 @@ import com.aliyuncs.vpc.Endpoint;
 public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDhcpOptionsSetAttributeResponse> {
 	   
 
+	private String bootFileName;
+
 	private Long resourceOwnerId;
 
 	private String clientToken;
+
+	private String tFTPServerName;
 
 	private String domainNameServers;
 
@@ -55,6 +59,17 @@ public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDh
 		} catch (Exception e) {}
 	}
 
+	public String getBootFileName() {
+		return this.bootFileName;
+	}
+
+	public void setBootFileName(String bootFileName) {
+		this.bootFileName = bootFileName;
+		if(bootFileName != null){
+			putQueryParameter("BootFileName", bootFileName);
+		}
+	}
+
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -74,6 +89,17 @@ public class UpdateDhcpOptionsSetAttributeRequest extends RpcAcsRequest<UpdateDh
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getTFTPServerName() {
+		return this.tFTPServerName;
+	}
+
+	public void setTFTPServerName(String tFTPServerName) {
+		this.tFTPServerName = tFTPServerName;
+		if(tFTPServerName != null){
+			putQueryParameter("TFTPServerName", tFTPServerName);
 		}
 	}
 

@@ -33,6 +33,7 @@ public class DescribeZonesResponseUnmarshaller {
 			Zone zone = new Zone();
 			zone.setZoneId(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneId"));
 			zone.setLocalName(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].LocalName"));
+			zone.setZoneType(_ctx.stringValue("DescribeZonesResponse.Zones["+ i +"].ZoneType"));
 
 			zones.add(zone);
 		}

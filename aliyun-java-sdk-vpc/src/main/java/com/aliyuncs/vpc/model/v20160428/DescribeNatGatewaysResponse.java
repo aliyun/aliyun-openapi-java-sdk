@@ -309,6 +309,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			private Boolean snatEntryEnabled;
 
+			private String privateIpAddress;
+
 			public String getAllocationId() {
 				return this.allocationId;
 			}
@@ -348,6 +350,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			public void setSnatEntryEnabled(Boolean snatEntryEnabled) {
 				this.snatEntryEnabled = snatEntryEnabled;
 			}
+
+			public String getPrivateIpAddress() {
+				return this.privateIpAddress;
+			}
+
+			public void setPrivateIpAddress(String privateIpAddress) {
+				this.privateIpAddress = privateIpAddress;
+			}
 		}
 
 		public static class NatGatewayPrivateInfo {
@@ -361,6 +371,8 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 			private String izNo;
 
 			private Integer maxBandwidth;
+
+			private String eniType;
 
 			public String getEniInstanceId() {
 				return this.eniInstanceId;
@@ -400,6 +412,14 @@ public class DescribeNatGatewaysResponse extends AcsResponse {
 
 			public void setMaxBandwidth(Integer maxBandwidth) {
 				this.maxBandwidth = maxBandwidth;
+			}
+
+			public String getEniType() {
+				return this.eniType;
+			}
+
+			public void setEniType(String eniType) {
+				this.eniType = eniType;
 			}
 		}
 	}

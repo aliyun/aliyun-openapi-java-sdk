@@ -78,6 +78,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 			natGatewayPrivateInfo.setVswitchId(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId"));
 			natGatewayPrivateInfo.setIzNo(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo"));
 			natGatewayPrivateInfo.setMaxBandwidth(_ctx.integerValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxBandwidth"));
+			natGatewayPrivateInfo.setEniType(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].NatGatewayPrivateInfo.EniType"));
 			natGateway.setNatGatewayPrivateInfo(natGatewayPrivateInfo);
 
 			List<IpList> ipLists = new ArrayList<IpList>();
@@ -88,6 +89,7 @@ public class DescribeNatGatewaysResponseUnmarshaller {
 				ipList.setUsingStatus(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].UsingStatus"));
 				ipList.setApAccessEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].ApAccessEnabled"));
 				ipList.setSnatEntryEnabled(_ctx.booleanValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].SnatEntryEnabled"));
+				ipList.setPrivateIpAddress(_ctx.stringValue("DescribeNatGatewaysResponse.NatGateways["+ i +"].IpLists["+ j +"].PrivateIpAddress"));
 
 				ipLists.add(ipList);
 			}

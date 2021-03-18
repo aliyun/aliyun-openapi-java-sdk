@@ -15,6 +15,7 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vpc.Endpoint;
 
@@ -22,10 +23,16 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
+public class ListTrafficMirrorFiltersRequest extends RpcAcsRequest<ListTrafficMirrorFiltersResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private List<String> trafficMirrorFilterIdss;
+
+	private String trafficMirrorFilterName;
+
+	private String nextToken;
 
 	private String resourceOwnerAccount;
 
@@ -33,11 +40,9 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 
 	private Long ownerId;
 
-	private String acceptLanguage;
-
-	private String zoneType;
-	public DescribeZonesRequest() {
-		super("Vpc", "2016-04-28", "DescribeZones", "vpc");
+	private Integer maxResults;
+	public ListTrafficMirrorFiltersRequest() {
+		super("Vpc", "2016-04-28", "ListTrafficMirrorFilters", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +58,41 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<String> getTrafficMirrorFilterIdss() {
+		return this.trafficMirrorFilterIdss;
+	}
+
+	public void setTrafficMirrorFilterIdss(List<String> trafficMirrorFilterIdss) {
+		this.trafficMirrorFilterIdss = trafficMirrorFilterIdss;	
+		if (trafficMirrorFilterIdss != null) {
+			for (int i = 0; i < trafficMirrorFilterIdss.size(); i++) {
+				putQueryParameter("TrafficMirrorFilterIds." + (i + 1) , trafficMirrorFilterIdss.get(i));
+			}
+		}	
+	}
+
+	public String getTrafficMirrorFilterName() {
+		return this.trafficMirrorFilterName;
+	}
+
+	public void setTrafficMirrorFilterName(String trafficMirrorFilterName) {
+		this.trafficMirrorFilterName = trafficMirrorFilterName;
+		if(trafficMirrorFilterName != null){
+			putQueryParameter("TrafficMirrorFilterName", trafficMirrorFilterName);
+		}
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
 		}
 	}
 
@@ -89,31 +129,20 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public Integer getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getZoneType() {
-		return this.zoneType;
-	}
-
-	public void setZoneType(String zoneType) {
-		this.zoneType = zoneType;
-		if(zoneType != null){
-			putQueryParameter("ZoneType", zoneType);
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	@Override
-	public Class<DescribeZonesResponse> getResponseClass() {
-		return DescribeZonesResponse.class;
+	public Class<ListTrafficMirrorFiltersResponse> getResponseClass() {
+		return ListTrafficMirrorFiltersResponse.class;
 	}
 
 }

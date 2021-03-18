@@ -22,22 +22,24 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
+public class DeleteTrafficMirrorSessionRequest extends RpcAcsRequest<DeleteTrafficMirrorSessionResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String clientToken;
+
+	private Boolean dryRun;
+
+	private String trafficMirrorSessionId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String acceptLanguage;
-
-	private String zoneType;
-	public DescribeZonesRequest() {
-		super("Vpc", "2016-04-28", "DescribeZones", "vpc");
+	public DeleteTrafficMirrorSessionRequest() {
+		super("Vpc", "2016-04-28", "DeleteTrafficMirrorSession", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,6 +55,39 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getTrafficMirrorSessionId() {
+		return this.trafficMirrorSessionId;
+	}
+
+	public void setTrafficMirrorSessionId(String trafficMirrorSessionId) {
+		this.trafficMirrorSessionId = trafficMirrorSessionId;
+		if(trafficMirrorSessionId != null){
+			putQueryParameter("TrafficMirrorSessionId", trafficMirrorSessionId);
 		}
 	}
 
@@ -89,31 +124,9 @@ public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
-	}
-
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
-		}
-	}
-
-	public String getZoneType() {
-		return this.zoneType;
-	}
-
-	public void setZoneType(String zoneType) {
-		this.zoneType = zoneType;
-		if(zoneType != null){
-			putQueryParameter("ZoneType", zoneType);
-		}
-	}
-
 	@Override
-	public Class<DescribeZonesResponse> getResponseClass() {
-		return DescribeZonesResponse.class;
+	public Class<DeleteTrafficMirrorSessionResponse> getResponseClass() {
+		return DeleteTrafficMirrorSessionResponse.class;
 	}
 
 }
