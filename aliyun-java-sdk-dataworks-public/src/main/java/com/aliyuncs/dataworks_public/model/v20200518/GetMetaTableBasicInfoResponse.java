@@ -126,6 +126,14 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		private String caption;
 
+		private Boolean isPartitionTable;
+
+		private Long readCount;
+
+		private Long viewCount;
+
+		private Long favoriteCount;
+
 		public String getTableName() {
 			return this.tableName;
 		}
@@ -284,6 +292,38 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		public void setCaption(String caption) {
 			this.caption = caption;
+		}
+
+		public Boolean getIsPartitionTable() {
+			return this.isPartitionTable;
+		}
+
+		public void setIsPartitionTable(Boolean isPartitionTable) {
+			this.isPartitionTable = isPartitionTable;
+		}
+
+		public Long getReadCount() {
+			return this.readCount;
+		}
+
+		public void setReadCount(Long readCount) {
+			this.readCount = readCount;
+		}
+
+		public Long getViewCount() {
+			return this.viewCount;
+		}
+
+		public void setViewCount(Long viewCount) {
+			this.viewCount = viewCount;
+		}
+
+		public Long getFavoriteCount() {
+			return this.favoriteCount;
+		}
+
+		public void setFavoriteCount(Long favoriteCount) {
+			this.favoriteCount = favoriteCount;
 		}
 	}
 

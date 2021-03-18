@@ -26,13 +26,9 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 	   
 
-	private Integer visibility;
-
-	private Long physicsLevelId;
+	private String clientToken;
 
 	private List<Columns> columnss;
-
-	private String ownerId;
 
 	private Integer lifeCycle;
 
@@ -42,17 +38,9 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 
 	private String endpoint;
 
-	private Integer isView;
-
-	private String externalTableType;
-
 	private Integer envType;
 
 	private Integer hasPart;
-
-	private String location;
-
-	private String comment;
 
 	private String tableName;
 
@@ -61,6 +49,20 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 	private Long projectId;
 
 	private Long categoryId;
+
+	private Integer visibility;
+
+	private Long physicsLevelId;
+
+	private String ownerId;
+
+	private Integer isView;
+
+	private String externalTableType;
+
+	private String location;
+
+	private String comment;
 	public CreateTableRequest() {
 		super("dataworks-public", "2020-05-18", "CreateTable");
 		setMethod(MethodType.POST);
@@ -70,25 +72,14 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Integer getVisibility() {
-		return this.visibility;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setVisibility(Integer visibility) {
-		this.visibility = visibility;
-		if(visibility != null){
-			putQueryParameter("Visibility", visibility.toString());
-		}
-	}
-
-	public Long getPhysicsLevelId() {
-		return this.physicsLevelId;
-	}
-
-	public void setPhysicsLevelId(Long physicsLevelId) {
-		this.physicsLevelId = physicsLevelId;
-		if(physicsLevelId != null){
-			putQueryParameter("PhysicsLevelId", physicsLevelId.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
@@ -104,24 +95,11 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 				putBodyParameter("Columns." + (depth1 + 1) + ".IsPartitionCol" , columnss.get(depth1).getIsPartitionCol());
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnNameCn" , columnss.get(depth1).getColumnNameCn());
 				putBodyParameter("Columns." + (depth1 + 1) + ".Length" , columnss.get(depth1).getLength());
-				putBodyParameter("Columns." + (depth1 + 1) + ".IsNullable" , columnss.get(depth1).getIsNullable());
 				putBodyParameter("Columns." + (depth1 + 1) + ".Comment" , columnss.get(depth1).getComment());
-				putBodyParameter("Columns." + (depth1 + 1) + ".IsPrimaryKey" , columnss.get(depth1).getIsPrimaryKey());
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnName" , columnss.get(depth1).getColumnName());
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnType" , columnss.get(depth1).getColumnType());
 			}
 		}	
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
 	}
 
 	public Integer getLifeCycle() {
@@ -171,28 +149,6 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 		}
 	}
 
-	public Integer getIsView() {
-		return this.isView;
-	}
-
-	public void setIsView(Integer isView) {
-		this.isView = isView;
-		if(isView != null){
-			putQueryParameter("IsView", isView.toString());
-		}
-	}
-
-	public String getExternalTableType() {
-		return this.externalTableType;
-	}
-
-	public void setExternalTableType(String externalTableType) {
-		this.externalTableType = externalTableType;
-		if(externalTableType != null){
-			putQueryParameter("ExternalTableType", externalTableType);
-		}
-	}
-
 	public Integer getEnvType() {
 		return this.envType;
 	}
@@ -212,28 +168,6 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 		this.hasPart = hasPart;
 		if(hasPart != null){
 			putQueryParameter("HasPart", hasPart.toString());
-		}
-	}
-
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-		if(location != null){
-			putQueryParameter("Location", location);
-		}
-	}
-
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
 		}
 	}
 
@@ -281,21 +215,94 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 		}
 	}
 
+	public Integer getVisibility() {
+		return this.visibility;
+	}
+
+	public void setVisibility(Integer visibility) {
+		this.visibility = visibility;
+		if(visibility != null){
+			putQueryParameter("Visibility", visibility.toString());
+		}
+	}
+
+	public Long getPhysicsLevelId() {
+		return this.physicsLevelId;
+	}
+
+	public void setPhysicsLevelId(Long physicsLevelId) {
+		this.physicsLevelId = physicsLevelId;
+		if(physicsLevelId != null){
+			putQueryParameter("PhysicsLevelId", physicsLevelId.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getIsView() {
+		return this.isView;
+	}
+
+	public void setIsView(Integer isView) {
+		this.isView = isView;
+		if(isView != null){
+			putQueryParameter("IsView", isView.toString());
+		}
+	}
+
+	public String getExternalTableType() {
+		return this.externalTableType;
+	}
+
+	public void setExternalTableType(String externalTableType) {
+		this.externalTableType = externalTableType;
+		if(externalTableType != null){
+			putQueryParameter("ExternalTableType", externalTableType);
+		}
+	}
+
+	public String getLocation() {
+		return this.location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+		if(location != null){
+			putQueryParameter("Location", location);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
+		}
+	}
+
 	public static class Columns {
 
 		private Integer seqNumber;
 
-		private Integer isPartitionCol;
+		private Boolean isPartitionCol;
 
 		private String columnNameCn;
 
 		private Integer length;
 
-		private Integer isNullable;
-
 		private String comment;
-
-		private Integer isPrimaryKey;
 
 		private String columnName;
 
@@ -309,11 +316,11 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 			this.seqNumber = seqNumber;
 		}
 
-		public Integer getIsPartitionCol() {
+		public Boolean getIsPartitionCol() {
 			return this.isPartitionCol;
 		}
 
-		public void setIsPartitionCol(Integer isPartitionCol) {
+		public void setIsPartitionCol(Boolean isPartitionCol) {
 			this.isPartitionCol = isPartitionCol;
 		}
 
@@ -333,28 +340,12 @@ public class CreateTableRequest extends RpcAcsRequest<CreateTableResponse> {
 			this.length = length;
 		}
 
-		public Integer getIsNullable() {
-			return this.isNullable;
-		}
-
-		public void setIsNullable(Integer isNullable) {
-			this.isNullable = isNullable;
-		}
-
 		public String getComment() {
 			return this.comment;
 		}
 
 		public void setComment(String comment) {
 			this.comment = comment;
-		}
-
-		public Integer getIsPrimaryKey() {
-			return this.isPrimaryKey;
-		}
-
-		public void setIsPrimaryKey(Integer isPrimaryKey) {
-			this.isPrimaryKey = isPrimaryKey;
 		}
 
 		public String getColumnName() {

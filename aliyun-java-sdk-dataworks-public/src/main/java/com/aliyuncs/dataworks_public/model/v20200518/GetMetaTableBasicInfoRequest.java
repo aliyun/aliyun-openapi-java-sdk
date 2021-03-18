@@ -27,6 +27,8 @@ public class GetMetaTableBasicInfoRequest extends RpcAcsRequest<GetMetaTableBasi
 
 	private String dataSourceType;
 
+	private Boolean extension;
+
 	private String tableGuid;
 
 	private String databaseName;
@@ -51,6 +53,17 @@ public class GetMetaTableBasicInfoRequest extends RpcAcsRequest<GetMetaTableBasi
 		this.dataSourceType = dataSourceType;
 		if(dataSourceType != null){
 			putQueryParameter("DataSourceType", dataSourceType);
+		}
+	}
+
+	public Boolean getExtension() {
+		return this.extension;
+	}
+
+	public void setExtension(Boolean extension) {
+		this.extension = extension;
+		if(extension != null){
+			putQueryParameter("Extension", extension.toString());
 		}
 	}
 

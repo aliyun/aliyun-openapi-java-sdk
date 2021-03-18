@@ -27,6 +27,10 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 
 	private Integer levelType;
 
+	private Integer pageSize;
+
+	private Integer pageNum;
+
 	private Long projectId;
 	public ListTableLevelRequest() {
 		super("dataworks-public", "2020-05-18", "ListTableLevel");
@@ -45,6 +49,28 @@ public class ListTableLevelRequest extends RpcAcsRequest<ListTableLevelResponse>
 		this.levelType = levelType;
 		if(levelType != null){
 			putQueryParameter("LevelType", levelType.toString());
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 

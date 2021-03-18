@@ -48,9 +48,9 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 
 	private Integer envType;
 
-	private Integer hasPart;
-
 	private String location;
+
+	private Integer hasPart;
 
 	private String tableName;
 
@@ -104,9 +104,7 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 				putBodyParameter("Columns." + (depth1 + 1) + ".IsPartitionCol" , columnss.get(depth1).getIsPartitionCol());
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnNameCn" , columnss.get(depth1).getColumnNameCn());
 				putBodyParameter("Columns." + (depth1 + 1) + ".Length" , columnss.get(depth1).getLength());
-				putBodyParameter("Columns." + (depth1 + 1) + ".IsNullable" , columnss.get(depth1).getIsNullable());
 				putBodyParameter("Columns." + (depth1 + 1) + ".Comment" , columnss.get(depth1).getComment());
-				putBodyParameter("Columns." + (depth1 + 1) + ".IsPrimaryKey" , columnss.get(depth1).getIsPrimaryKey());
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnName" , columnss.get(depth1).getColumnName());
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnType" , columnss.get(depth1).getColumnType());
 			}
@@ -204,17 +202,6 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 		}
 	}
 
-	public Integer getHasPart() {
-		return this.hasPart;
-	}
-
-	public void setHasPart(Integer hasPart) {
-		this.hasPart = hasPart;
-		if(hasPart != null){
-			putQueryParameter("HasPart", hasPart.toString());
-		}
-	}
-
 	public String getLocation() {
 		return this.location;
 	}
@@ -223,6 +210,17 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 		this.location = location;
 		if(location != null){
 			putQueryParameter("Location", location);
+		}
+	}
+
+	public Integer getHasPart() {
+		return this.hasPart;
+	}
+
+	public void setHasPart(Integer hasPart) {
+		this.hasPart = hasPart;
+		if(hasPart != null){
+			putQueryParameter("HasPart", hasPart.toString());
 		}
 	}
 
@@ -285,17 +283,13 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 
 		private Integer seqNumber;
 
-		private Integer isPartitionCol;
+		private Boolean isPartitionCol;
 
 		private String columnNameCn;
 
 		private Integer length;
 
-		private Integer isNullable;
-
 		private String comment;
-
-		private Integer isPrimaryKey;
 
 		private String columnName;
 
@@ -309,11 +303,11 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 			this.seqNumber = seqNumber;
 		}
 
-		public Integer getIsPartitionCol() {
+		public Boolean getIsPartitionCol() {
 			return this.isPartitionCol;
 		}
 
-		public void setIsPartitionCol(Integer isPartitionCol) {
+		public void setIsPartitionCol(Boolean isPartitionCol) {
 			this.isPartitionCol = isPartitionCol;
 		}
 
@@ -333,28 +327,12 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 			this.length = length;
 		}
 
-		public Integer getIsNullable() {
-			return this.isNullable;
-		}
-
-		public void setIsNullable(Integer isNullable) {
-			this.isNullable = isNullable;
-		}
-
 		public String getComment() {
 			return this.comment;
 		}
 
 		public void setComment(String comment) {
 			this.comment = comment;
-		}
-
-		public Integer getIsPrimaryKey() {
-			return this.isPrimaryKey;
-		}
-
-		public void setIsPrimaryKey(Integer isPrimaryKey) {
-			this.isPrimaryKey = isPrimaryKey;
 		}
 
 		public String getColumnName() {

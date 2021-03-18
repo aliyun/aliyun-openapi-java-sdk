@@ -50,6 +50,10 @@ public class GetMetaTableBasicInfoResponseUnmarshaller {
 		data.setLocation(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Location"));
 		data.setClusterId(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.ClusterId"));
 		data.setCaption(_ctx.stringValue("GetMetaTableBasicInfoResponse.Data.Caption"));
+		data.setIsPartitionTable(_ctx.booleanValue("GetMetaTableBasicInfoResponse.Data.IsPartitionTable"));
+		data.setReadCount(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.ReadCount"));
+		data.setViewCount(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.ViewCount"));
+		data.setFavoriteCount(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.FavoriteCount"));
 		getMetaTableBasicInfoResponse.setData(data);
 	 
 	 	return getMetaTableBasicInfoResponse;
