@@ -15,20 +15,22 @@
 package com.aliyuncs.marketing_event.model.v20210101;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.marketing_event.transform.v20210101.TestAddRealCostResponseUnmarshaller;
+import com.aliyuncs.marketing_event.transform.v20210101.SyncSignInInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TestAddRealCostResponse extends AcsResponse {
+public class SyncSignInInfoResponse extends AcsResponse {
 
 	private String code;
 
 	private Boolean success;
 
 	private String message;
+
+	private Integer data;
 
 	private String requestId;
 
@@ -56,6 +58,14 @@ public class TestAddRealCostResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Integer getData() {
+		return this.data;
+	}
+
+	public void setData(Integer data) {
+		this.data = data;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -65,8 +75,8 @@ public class TestAddRealCostResponse extends AcsResponse {
 	}
 
 	@Override
-	public TestAddRealCostResponse getInstance(UnmarshallerContext context) {
-		return	TestAddRealCostResponseUnmarshaller.unmarshall(this, context);
+	public SyncSignInInfoResponse getInstance(UnmarshallerContext context) {
+		return	SyncSignInInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
