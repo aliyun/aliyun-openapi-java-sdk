@@ -27,6 +27,10 @@ public class OpenVClusterRequest extends RpcAcsRequest<OpenVClusterResponse> {
 
 	private String clusterType;
 
+	private String product;
+
+	private Boolean recreateSwitch;
+
 	private Integer length;
 	public OpenVClusterRequest() {
 		super("ARMS", "2019-08-08", "OpenVCluster", "arms");
@@ -45,6 +49,28 @@ public class OpenVClusterRequest extends RpcAcsRequest<OpenVClusterResponse> {
 		this.clusterType = clusterType;
 		if(clusterType != null){
 			putQueryParameter("ClusterType", clusterType);
+		}
+	}
+
+	public String getProduct() {
+		return this.product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
+	public Boolean getRecreateSwitch() {
+		return this.recreateSwitch;
+	}
+
+	public void setRecreateSwitch(Boolean recreateSwitch) {
+		this.recreateSwitch = recreateSwitch;
+		if(recreateSwitch != null){
+			putQueryParameter("RecreateSwitch", recreateSwitch.toString());
 		}
 	}
 

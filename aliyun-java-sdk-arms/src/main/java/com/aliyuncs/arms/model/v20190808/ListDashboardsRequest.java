@@ -25,11 +25,15 @@ import com.aliyuncs.arms.Endpoint;
 public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse> {
 	   
 
-	private String clusterType;
+	private String product;
+
+	private Boolean recreateSwitch;
 
 	private String clusterId;
 
 	private String title;
+
+	private String clusterType;
 	public ListDashboardsRequest() {
 		super("ARMS", "2019-08-08", "ListDashboards", "arms");
 		setMethod(MethodType.POST);
@@ -39,14 +43,25 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getClusterType() {
-		return this.clusterType;
+	public String getProduct() {
+		return this.product;
 	}
 
-	public void setClusterType(String clusterType) {
-		this.clusterType = clusterType;
-		if(clusterType != null){
-			putQueryParameter("ClusterType", clusterType);
+	public void setProduct(String product) {
+		this.product = product;
+		if(product != null){
+			putQueryParameter("Product", product);
+		}
+	}
+
+	public Boolean getRecreateSwitch() {
+		return this.recreateSwitch;
+	}
+
+	public void setRecreateSwitch(Boolean recreateSwitch) {
+		this.recreateSwitch = recreateSwitch;
+		if(recreateSwitch != null){
+			putQueryParameter("RecreateSwitch", recreateSwitch.toString());
 		}
 	}
 
@@ -69,6 +84,17 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 		this.title = title;
 		if(title != null){
 			putQueryParameter("Title", title);
+		}
+	}
+
+	public String getClusterType() {
+		return this.clusterType;
+	}
+
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
 		}
 	}
 
