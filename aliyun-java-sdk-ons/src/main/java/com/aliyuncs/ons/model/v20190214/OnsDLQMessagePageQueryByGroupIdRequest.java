@@ -39,7 +39,7 @@ public class OnsDLQMessagePageQueryByGroupIdRequest extends RpcAcsRequest<OnsDLQ
 
 	private String taskId;
 	public OnsDLQMessagePageQueryByGroupIdRequest() {
-		super("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId");
+		super("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

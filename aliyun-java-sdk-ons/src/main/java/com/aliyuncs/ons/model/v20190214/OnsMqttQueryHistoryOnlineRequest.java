@@ -33,7 +33,7 @@ public class OnsMqttQueryHistoryOnlineRequest extends RpcAcsRequest<OnsMqttQuery
 
 	private String instanceId;
 	public OnsMqttQueryHistoryOnlineRequest() {
-		super("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline");
+		super("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

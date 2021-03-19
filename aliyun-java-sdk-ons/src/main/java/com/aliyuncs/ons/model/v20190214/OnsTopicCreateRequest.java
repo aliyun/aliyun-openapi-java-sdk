@@ -33,7 +33,7 @@ public class OnsTopicCreateRequest extends RpcAcsRequest<OnsTopicCreateResponse>
 
 	private String topic;
 	public OnsTopicCreateRequest() {
-		super("Ons", "2019-02-14", "OnsTopicCreate");
+		super("Ons", "2019-02-14", "OnsTopicCreate", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

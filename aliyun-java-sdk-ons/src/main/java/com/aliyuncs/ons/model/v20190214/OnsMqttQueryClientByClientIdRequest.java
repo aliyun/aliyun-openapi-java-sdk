@@ -29,7 +29,7 @@ public class OnsMqttQueryClientByClientIdRequest extends RpcAcsRequest<OnsMqttQu
 
 	private String instanceId;
 	public OnsMqttQueryClientByClientIdRequest() {
-		super("Ons", "2019-02-14", "OnsMqttQueryClientByClientId");
+		super("Ons", "2019-02-14", "OnsMqttQueryClientByClientId", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

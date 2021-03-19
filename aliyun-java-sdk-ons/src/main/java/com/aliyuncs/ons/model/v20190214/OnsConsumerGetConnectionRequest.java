@@ -29,7 +29,7 @@ public class OnsConsumerGetConnectionRequest extends RpcAcsRequest<OnsConsumerGe
 
 	private String instanceId;
 	public OnsConsumerGetConnectionRequest() {
-		super("Ons", "2019-02-14", "OnsConsumerGetConnection");
+		super("Ons", "2019-02-14", "OnsConsumerGetConnection", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

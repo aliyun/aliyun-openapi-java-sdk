@@ -28,7 +28,7 @@ public class OnsInstanceInServiceListRequest extends RpcAcsRequest<OnsInstanceIn
 
 	private List<Tag> tags;
 	public OnsInstanceInServiceListRequest() {
-		super("Ons", "2019-02-14", "OnsInstanceInServiceList");
+		super("Ons", "2019-02-14", "OnsInstanceInServiceList", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,7 +25,7 @@ import com.aliyuncs.ons.Endpoint;
 public class OpenOnsServiceRequest extends RpcAcsRequest<OpenOnsServiceResponse> {
 	   
 	public OpenOnsServiceRequest() {
-		super("Ons", "2019-02-14", "OpenOnsService");
+		super("Ons", "2019-02-14", "OpenOnsService", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

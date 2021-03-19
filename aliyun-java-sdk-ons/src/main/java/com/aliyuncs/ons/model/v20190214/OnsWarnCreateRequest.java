@@ -41,7 +41,7 @@ public class OnsWarnCreateRequest extends RpcAcsRequest<OnsWarnCreateResponse> {
 
 	private String contacts;
 	public OnsWarnCreateRequest() {
-		super("Ons", "2019-02-14", "OnsWarnCreate");
+		super("Ons", "2019-02-14", "OnsWarnCreate", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class OnsTopicSubDetailRequest extends RpcAcsRequest<OnsTopicSubDetailRes
 
 	private String topic;
 	public OnsTopicSubDetailRequest() {
-		super("Ons", "2019-02-14", "OnsTopicSubDetail");
+		super("Ons", "2019-02-14", "OnsTopicSubDetail", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

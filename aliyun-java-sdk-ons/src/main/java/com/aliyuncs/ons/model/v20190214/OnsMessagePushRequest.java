@@ -35,7 +35,7 @@ public class OnsMessagePushRequest extends RpcAcsRequest<OnsMessagePushResponse>
 
 	private String topic;
 	public OnsMessagePushRequest() {
-		super("Ons", "2019-02-14", "OnsMessagePush");
+		super("Ons", "2019-02-14", "OnsMessagePush", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

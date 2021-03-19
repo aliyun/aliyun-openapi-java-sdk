@@ -1,3 +1,6 @@
+2021-03-19 Version: 3.1.7
+- Modify the helpUrl parameter of OnsTopicList and OnsGroupList API to be invisible.
+
 2020-09-29 Version: 3.1.6
 - Add API OpenOnsService which can active ons service.
 

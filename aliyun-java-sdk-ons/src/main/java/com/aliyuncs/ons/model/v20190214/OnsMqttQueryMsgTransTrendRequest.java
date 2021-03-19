@@ -43,7 +43,7 @@ public class OnsMqttQueryMsgTransTrendRequest extends RpcAcsRequest<OnsMqttQuery
 
 	private String subTopic;
 	public OnsMqttQueryMsgTransTrendRequest() {
-		super("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend");
+		super("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -39,7 +39,7 @@ public class OnsTrendGroupOutputTpsRequest extends RpcAcsRequest<OnsTrendGroupOu
 
 	private String topic;
 	public OnsTrendGroupOutputTpsRequest() {
-		super("Ons", "2019-02-14", "OnsTrendGroupOutputTps");
+		super("Ons", "2019-02-14", "OnsTrendGroupOutputTps", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

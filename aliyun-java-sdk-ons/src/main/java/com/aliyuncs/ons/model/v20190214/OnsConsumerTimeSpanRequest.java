@@ -31,7 +31,7 @@ public class OnsConsumerTimeSpanRequest extends RpcAcsRequest<OnsConsumerTimeSpa
 
 	private String topic;
 	public OnsConsumerTimeSpanRequest() {
-		super("Ons", "2019-02-14", "OnsConsumerTimeSpan");
+		super("Ons", "2019-02-14", "OnsConsumerTimeSpan", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

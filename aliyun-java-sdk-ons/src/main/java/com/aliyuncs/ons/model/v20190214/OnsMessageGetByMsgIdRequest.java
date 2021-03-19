@@ -31,7 +31,7 @@ public class OnsMessageGetByMsgIdRequest extends RpcAcsRequest<OnsMessageGetByMs
 
 	private String topic;
 	public OnsMessageGetByMsgIdRequest() {
-		super("Ons", "2019-02-14", "OnsMessageGetByMsgId");
+		super("Ons", "2019-02-14", "OnsMessageGetByMsgId", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

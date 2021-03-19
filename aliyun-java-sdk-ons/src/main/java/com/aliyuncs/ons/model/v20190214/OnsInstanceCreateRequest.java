@@ -29,7 +29,7 @@ public class OnsInstanceCreateRequest extends RpcAcsRequest<OnsInstanceCreateRes
 
 	private String instanceName;
 	public OnsInstanceCreateRequest() {
-		super("Ons", "2019-02-14", "OnsInstanceCreate");
+		super("Ons", "2019-02-14", "OnsInstanceCreate", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

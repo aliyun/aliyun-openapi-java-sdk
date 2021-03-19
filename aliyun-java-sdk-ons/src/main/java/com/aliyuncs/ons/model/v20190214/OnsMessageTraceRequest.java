@@ -31,7 +31,7 @@ public class OnsMessageTraceRequest extends RpcAcsRequest<OnsMessageTraceRespons
 
 	private String topic;
 	public OnsMessageTraceRequest() {
-		super("Ons", "2019-02-14", "OnsMessageTrace");
+		super("Ons", "2019-02-14", "OnsMessageTrace", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

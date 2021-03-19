@@ -31,7 +31,7 @@ public class OnsMqttQueryClientByTopicRequest extends RpcAcsRequest<OnsMqttQuery
 
 	private String subTopic;
 	public OnsMqttQueryClientByTopicRequest() {
-		super("Ons", "2019-02-14", "OnsMqttQueryClientByTopic");
+		super("Ons", "2019-02-14", "OnsMqttQueryClientByTopic", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

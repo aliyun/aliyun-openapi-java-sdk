@@ -31,7 +31,7 @@ public class OnsDLQMessageGetByIdRequest extends RpcAcsRequest<OnsDLQMessageGetB
 
 	private String instanceId;
 	public OnsDLQMessageGetByIdRequest() {
-		super("Ons", "2019-02-14", "OnsDLQMessageGetById");
+		super("Ons", "2019-02-14", "OnsDLQMessageGetById", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

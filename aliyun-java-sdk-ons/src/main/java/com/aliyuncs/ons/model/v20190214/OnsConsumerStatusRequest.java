@@ -33,7 +33,7 @@ public class OnsConsumerStatusRequest extends RpcAcsRequest<OnsConsumerStatusRes
 
 	private Boolean detail;
 	public OnsConsumerStatusRequest() {
-		super("Ons", "2019-02-14", "OnsConsumerStatus");
+		super("Ons", "2019-02-14", "OnsConsumerStatus", "ons");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
