@@ -31,7 +31,7 @@ public class GetSecretAsrDetailRequest extends RpcAcsRequest<GetSecretAsrDetailR
 
 	private String poolKey;
 	public GetSecretAsrDetailRequest() {
-		super("Dyplsapi", "2017-05-25", "GetSecretAsrDetail", "dypls");
+		super("Dyplsapi", "2017-05-25", "GetSecretAsrDetail", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

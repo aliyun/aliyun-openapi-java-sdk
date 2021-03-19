@@ -39,7 +39,7 @@ public class OperateBlackNoRequest extends RpcAcsRequest<OperateBlackNoResponse>
 
 	private String operateType;
 	public OperateBlackNoRequest() {
-		super("Dyplsapi", "2017-05-25", "OperateBlackNo", "dypls");
+		super("Dyplsapi", "2017-05-25", "OperateBlackNo", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

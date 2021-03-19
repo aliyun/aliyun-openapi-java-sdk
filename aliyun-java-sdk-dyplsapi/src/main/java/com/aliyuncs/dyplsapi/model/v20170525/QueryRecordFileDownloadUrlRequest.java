@@ -39,7 +39,7 @@ public class QueryRecordFileDownloadUrlRequest extends RpcAcsRequest<QueryRecord
 
 	private String poolKey;
 	public QueryRecordFileDownloadUrlRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dypls");
+		super("Dyplsapi", "2017-05-25", "QueryRecordFileDownloadUrl", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

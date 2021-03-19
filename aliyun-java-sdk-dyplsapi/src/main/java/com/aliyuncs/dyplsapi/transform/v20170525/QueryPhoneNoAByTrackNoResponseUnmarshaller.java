@@ -35,6 +35,7 @@ public class QueryPhoneNoAByTrackNoResponseUnmarshaller {
 			PhoneNoAInfo phoneNoAInfo = new PhoneNoAInfo();
 			phoneNoAInfo.setPhoneNoA(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].PhoneNoA"));
 			phoneNoAInfo.setPhoneNoX(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].PhoneNoX"));
+			phoneNoAInfo.setExtension(_ctx.stringValue("QueryPhoneNoAByTrackNoResponse.Module["+ i +"].Extension"));
 
 			module.add(phoneNoAInfo);
 		}

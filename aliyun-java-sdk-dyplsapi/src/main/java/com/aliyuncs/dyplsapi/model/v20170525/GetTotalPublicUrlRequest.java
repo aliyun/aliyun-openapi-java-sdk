@@ -22,26 +22,24 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
+public class GetTotalPublicUrlRequest extends RpcAcsRequest<GetTotalPublicUrlResponse> {
 	   
 
-	private Long specId;
+	private String callId;
 
 	private Long resourceOwnerId;
 
-	private String city;
-
-	private String secretNo;
-
 	private String resourceOwnerAccount;
 
-	private Boolean displayPool;
+	private Boolean checkSubs;
 
 	private Long ownerId;
 
-	private String poolKey;
-	public BuySecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "BuySecretNo", "dyplsapi");
+	private String callTime;
+
+	private String partnerKey;
+	public GetTotalPublicUrlRequest() {
+		super("Dyplsapi", "2017-05-25", "GetTotalPublicUrl", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,14 +47,14 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Long getSpecId() {
-		return this.specId;
+	public String getCallId() {
+		return this.callId;
 	}
 
-	public void setSpecId(Long specId) {
-		this.specId = specId;
-		if(specId != null){
-			putQueryParameter("SpecId", specId.toString());
+	public void setCallId(String callId) {
+		this.callId = callId;
+		if(callId != null){
+			putQueryParameter("CallId", callId);
 		}
 	}
 
@@ -71,28 +69,6 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		}
 	}
 
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
-		}
-	}
-
-	public String getSecretNo() {
-		return this.secretNo;
-	}
-
-	public void setSecretNo(String secretNo) {
-		this.secretNo = secretNo;
-		if(secretNo != null){
-			putQueryParameter("SecretNo", secretNo);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -104,14 +80,14 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		}
 	}
 
-	public Boolean getDisplayPool() {
-		return this.displayPool;
+	public Boolean getCheckSubs() {
+		return this.checkSubs;
 	}
 
-	public void setDisplayPool(Boolean displayPool) {
-		this.displayPool = displayPool;
-		if(displayPool != null){
-			putQueryParameter("DisplayPool", displayPool.toString());
+	public void setCheckSubs(Boolean checkSubs) {
+		this.checkSubs = checkSubs;
+		if(checkSubs != null){
+			putQueryParameter("CheckSubs", checkSubs.toString());
 		}
 	}
 
@@ -126,20 +102,31 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		}
 	}
 
-	public String getPoolKey() {
-		return this.poolKey;
+	public String getCallTime() {
+		return this.callTime;
 	}
 
-	public void setPoolKey(String poolKey) {
-		this.poolKey = poolKey;
-		if(poolKey != null){
-			putQueryParameter("PoolKey", poolKey);
+	public void setCallTime(String callTime) {
+		this.callTime = callTime;
+		if(callTime != null){
+			putQueryParameter("CallTime", callTime);
+		}
+	}
+
+	public String getPartnerKey() {
+		return this.partnerKey;
+	}
+
+	public void setPartnerKey(String partnerKey) {
+		this.partnerKey = partnerKey;
+		if(partnerKey != null){
+			putQueryParameter("PartnerKey", partnerKey);
 		}
 	}
 
 	@Override
-	public Class<BuySecretNoResponse> getResponseClass() {
-		return BuySecretNoResponse.class;
+	public Class<GetTotalPublicUrlResponse> getResponseClass() {
+		return GetTotalPublicUrlResponse.class;
 	}
 
 }

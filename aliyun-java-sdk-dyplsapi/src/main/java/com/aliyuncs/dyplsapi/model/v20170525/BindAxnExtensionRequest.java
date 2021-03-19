@@ -58,8 +58,10 @@ public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionRespo
 	private String outId;
 
 	private String aSRModelId;
+
+	private String callRestrict;
 	public BindAxnExtensionRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxnExtension", "dypls");
+		super("Dyplsapi", "2017-05-25", "BindAxnExtension", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -251,6 +253,17 @@ public class BindAxnExtensionRequest extends RpcAcsRequest<BindAxnExtensionRespo
 		this.aSRModelId = aSRModelId;
 		if(aSRModelId != null){
 			putQueryParameter("ASRModelId", aSRModelId);
+		}
+	}
+
+	public String getCallRestrict() {
+		return this.callRestrict;
+	}
+
+	public void setCallRestrict(String callRestrict) {
+		this.callRestrict = callRestrict;
+		if(callRestrict != null){
+			putQueryParameter("CallRestrict", callRestrict);
 		}
 	}
 

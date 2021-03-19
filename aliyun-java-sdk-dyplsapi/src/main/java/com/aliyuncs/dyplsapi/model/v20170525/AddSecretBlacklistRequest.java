@@ -32,8 +32,10 @@ public class AddSecretBlacklistRequest extends RpcAcsRequest<AddSecretBlacklistR
 	private String poolKey;
 
 	private String blackNo;
+
+	private String wayControl;
 	public AddSecretBlacklistRequest() {
-		super("Dyplsapi", "2017-05-25", "AddSecretBlacklist", "dypls");
+		super("Dyplsapi", "2017-05-25", "AddSecretBlacklist", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,6 +84,17 @@ public class AddSecretBlacklistRequest extends RpcAcsRequest<AddSecretBlacklistR
 		this.blackNo = blackNo;
 		if(blackNo != null){
 			putQueryParameter("BlackNo", blackNo);
+		}
+	}
+
+	public String getWayControl() {
+		return this.wayControl;
+	}
+
+	public void setWayControl(String wayControl) {
+		this.wayControl = wayControl;
+		if(wayControl != null){
+			putQueryParameter("WayControl", wayControl);
 		}
 	}
 

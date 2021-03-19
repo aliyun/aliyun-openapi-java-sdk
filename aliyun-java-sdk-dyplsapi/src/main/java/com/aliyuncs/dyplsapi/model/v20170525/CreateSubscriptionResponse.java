@@ -14,16 +14,15 @@
 
 package com.aliyuncs.dyplsapi.model.v20170525;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dyplsapi.transform.v20170525.QueryPhoneNoAByTrackNoResponseUnmarshaller;
+import com.aliyuncs.dyplsapi.transform.v20170525.CreateSubscriptionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
+public class CreateSubscriptionResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +30,7 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 
 	private String message;
 
-	private List<PhoneNoAInfo> module;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,50 +56,30 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<PhoneNoAInfo> getModule() {
-		return this.module;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setModule(List<PhoneNoAInfo> module) {
-		this.module = module;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class PhoneNoAInfo {
+	public static class Data {
 
-		private String phoneNoA;
+		private String subsId;
 
-		private String phoneNoX;
-
-		private String extension;
-
-		public String getPhoneNoA() {
-			return this.phoneNoA;
+		public String getSubsId() {
+			return this.subsId;
 		}
 
-		public void setPhoneNoA(String phoneNoA) {
-			this.phoneNoA = phoneNoA;
-		}
-
-		public String getPhoneNoX() {
-			return this.phoneNoX;
-		}
-
-		public void setPhoneNoX(String phoneNoX) {
-			this.phoneNoX = phoneNoX;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
+		public void setSubsId(String subsId) {
+			this.subsId = subsId;
 		}
 	}
 
 	@Override
-	public QueryPhoneNoAByTrackNoResponse getInstance(UnmarshallerContext context) {
-		return	QueryPhoneNoAByTrackNoResponseUnmarshaller.unmarshall(this, context);
+	public CreateSubscriptionResponse getInstance(UnmarshallerContext context) {
+		return	CreateSubscriptionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

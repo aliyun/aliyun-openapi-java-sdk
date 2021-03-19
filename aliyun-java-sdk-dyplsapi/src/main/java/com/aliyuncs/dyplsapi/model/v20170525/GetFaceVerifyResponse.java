@@ -14,16 +14,15 @@
 
 package com.aliyuncs.dyplsapi.model.v20170525;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dyplsapi.transform.v20170525.QueryPhoneNoAByTrackNoResponseUnmarshaller;
+import com.aliyuncs.dyplsapi.transform.v20170525.GetFaceVerifyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
+public class GetFaceVerifyResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +30,7 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 
 	private String message;
 
-	private List<PhoneNoAInfo> module;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,50 +56,30 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<PhoneNoAInfo> getModule() {
-		return this.module;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setModule(List<PhoneNoAInfo> module) {
-		this.module = module;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class PhoneNoAInfo {
+	public static class Data {
 
-		private String phoneNoA;
+		private String verifyResult;
 
-		private String phoneNoX;
-
-		private String extension;
-
-		public String getPhoneNoA() {
-			return this.phoneNoA;
+		public String getVerifyResult() {
+			return this.verifyResult;
 		}
 
-		public void setPhoneNoA(String phoneNoA) {
-			this.phoneNoA = phoneNoA;
-		}
-
-		public String getPhoneNoX() {
-			return this.phoneNoX;
-		}
-
-		public void setPhoneNoX(String phoneNoX) {
-			this.phoneNoX = phoneNoX;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
+		public void setVerifyResult(String verifyResult) {
+			this.verifyResult = verifyResult;
 		}
 	}
 
 	@Override
-	public QueryPhoneNoAByTrackNoResponse getInstance(UnmarshallerContext context) {
-		return	QueryPhoneNoAByTrackNoResponseUnmarshaller.unmarshall(this, context);
+	public GetFaceVerifyResponse getInstance(UnmarshallerContext context) {
+		return	GetFaceVerifyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

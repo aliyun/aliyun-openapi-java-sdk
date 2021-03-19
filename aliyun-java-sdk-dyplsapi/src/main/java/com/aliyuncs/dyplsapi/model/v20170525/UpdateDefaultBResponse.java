@@ -14,16 +14,15 @@
 
 package com.aliyuncs.dyplsapi.model.v20170525;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dyplsapi.transform.v20170525.QueryPhoneNoAByTrackNoResponseUnmarshaller;
+import com.aliyuncs.dyplsapi.transform.v20170525.UpdateDefaultBResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
+public class UpdateDefaultBResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +30,7 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 
 	private String message;
 
-	private List<PhoneNoAInfo> module;
+	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,50 +56,17 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<PhoneNoAInfo> getModule() {
-		return this.module;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setModule(List<PhoneNoAInfo> module) {
-		this.module = module;
-	}
-
-	public static class PhoneNoAInfo {
-
-		private String phoneNoA;
-
-		private String phoneNoX;
-
-		private String extension;
-
-		public String getPhoneNoA() {
-			return this.phoneNoA;
-		}
-
-		public void setPhoneNoA(String phoneNoA) {
-			this.phoneNoA = phoneNoA;
-		}
-
-		public String getPhoneNoX() {
-			return this.phoneNoX;
-		}
-
-		public void setPhoneNoX(String phoneNoX) {
-			this.phoneNoX = phoneNoX;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
-		}
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	@Override
-	public QueryPhoneNoAByTrackNoResponse getInstance(UnmarshallerContext context) {
-		return	QueryPhoneNoAByTrackNoResponseUnmarshaller.unmarshall(this, context);
+	public UpdateDefaultBResponse getInstance(UnmarshallerContext context) {
+		return	UpdateDefaultBResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

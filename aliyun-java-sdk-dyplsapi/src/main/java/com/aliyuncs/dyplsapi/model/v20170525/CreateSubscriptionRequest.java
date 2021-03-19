@@ -22,42 +22,29 @@ import com.aliyuncs.dyplsapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
+public class CreateSubscriptionRequest extends RpcAcsRequest<CreateSubscriptionResponse> {
 	   
 
-	private Long specId;
-
 	private Long resourceOwnerId;
-
-	private String city;
 
 	private String secretNo;
 
 	private String resourceOwnerAccount;
 
-	private Boolean displayPool;
+	private String bindToken;
 
 	private Long ownerId;
 
+	private String phoneNo;
+
 	private String poolKey;
-	public BuySecretNoRequest() {
-		super("Dyplsapi", "2017-05-25", "BuySecretNo", "dyplsapi");
+	public CreateSubscriptionRequest() {
+		super("Dyplsapi", "2017-05-25", "CreateSubscription", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getSpecId() {
-		return this.specId;
-	}
-
-	public void setSpecId(Long specId) {
-		this.specId = specId;
-		if(specId != null){
-			putQueryParameter("SpecId", specId.toString());
-		}
 	}
 
 	public Long getResourceOwnerId() {
@@ -68,17 +55,6 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getCity() {
-		return this.city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-		if(city != null){
-			putQueryParameter("City", city);
 		}
 	}
 
@@ -104,14 +80,14 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		}
 	}
 
-	public Boolean getDisplayPool() {
-		return this.displayPool;
+	public String getBindToken() {
+		return this.bindToken;
 	}
 
-	public void setDisplayPool(Boolean displayPool) {
-		this.displayPool = displayPool;
-		if(displayPool != null){
-			putQueryParameter("DisplayPool", displayPool.toString());
+	public void setBindToken(String bindToken) {
+		this.bindToken = bindToken;
+		if(bindToken != null){
+			putQueryParameter("BindToken", bindToken);
 		}
 	}
 
@@ -123,6 +99,17 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPhoneNo() {
+		return this.phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+		if(phoneNo != null){
+			putQueryParameter("PhoneNo", phoneNo);
 		}
 	}
 
@@ -138,8 +125,8 @@ public class BuySecretNoRequest extends RpcAcsRequest<BuySecretNoResponse> {
 	}
 
 	@Override
-	public Class<BuySecretNoResponse> getResponseClass() {
-		return BuySecretNoResponse.class;
+	public Class<CreateSubscriptionResponse> getResponseClass() {
+		return CreateSubscriptionResponse.class;
 	}
 
 }

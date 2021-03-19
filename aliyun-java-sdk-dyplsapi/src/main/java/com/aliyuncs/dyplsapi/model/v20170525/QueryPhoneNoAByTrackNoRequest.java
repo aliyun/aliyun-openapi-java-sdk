@@ -27,15 +27,17 @@ public class QueryPhoneNoAByTrackNoRequest extends RpcAcsRequest<QueryPhoneNoABy
 
 	private Long resourceOwnerId;
 
+	private String cabinetNo;
+
+	private String phoneNoX;
+
 	private String resourceOwnerAccount;
 
 	private Long ownerId;
 
 	private String trackNo;
-
-	private String phoneNoX;
 	public QueryPhoneNoAByTrackNoRequest() {
-		super("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "dypls");
+		super("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,6 +53,28 @@ public class QueryPhoneNoAByTrackNoRequest extends RpcAcsRequest<QueryPhoneNoABy
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getCabinetNo() {
+		return this.cabinetNo;
+	}
+
+	public void setCabinetNo(String cabinetNo) {
+		this.cabinetNo = cabinetNo;
+		if(cabinetNo != null){
+			putQueryParameter("CabinetNo", cabinetNo);
+		}
+	}
+
+	public String getPhoneNoX() {
+		return this.phoneNoX;
+	}
+
+	public void setPhoneNoX(String phoneNoX) {
+		this.phoneNoX = phoneNoX;
+		if(phoneNoX != null){
+			putQueryParameter("PhoneNoX", phoneNoX);
 		}
 	}
 
@@ -84,17 +108,6 @@ public class QueryPhoneNoAByTrackNoRequest extends RpcAcsRequest<QueryPhoneNoABy
 		this.trackNo = trackNo;
 		if(trackNo != null){
 			putQueryParameter("trackNo", trackNo);
-		}
-	}
-
-	public String getPhoneNoX() {
-		return this.phoneNoX;
-	}
-
-	public void setPhoneNoX(String phoneNoX) {
-		this.phoneNoX = phoneNoX;
-		if(phoneNoX != null){
-			putQueryParameter("PhoneNoX", phoneNoX);
 		}
 	}
 

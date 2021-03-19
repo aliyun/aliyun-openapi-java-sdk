@@ -14,16 +14,15 @@
 
 package com.aliyuncs.dyplsapi.model.v20170525;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dyplsapi.transform.v20170525.QueryPhoneNoAByTrackNoResponseUnmarshaller;
+import com.aliyuncs.dyplsapi.transform.v20170525.GetTotalPublicUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
+public class GetTotalPublicUrlResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -31,7 +30,7 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 
 	private String message;
 
-	private List<PhoneNoAInfo> module;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,50 +56,40 @@ public class QueryPhoneNoAByTrackNoResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public List<PhoneNoAInfo> getModule() {
-		return this.module;
+	public Data getData() {
+		return this.data;
 	}
 
-	public void setModule(List<PhoneNoAInfo> module) {
-		this.module = module;
+	public void setData(Data data) {
+		this.data = data;
 	}
 
-	public static class PhoneNoAInfo {
+	public static class Data {
 
-		private String phoneNoA;
+		private String phonePublicUrl;
 
-		private String phoneNoX;
+		private String ringPublicUrl;
 
-		private String extension;
-
-		public String getPhoneNoA() {
-			return this.phoneNoA;
+		public String getPhonePublicUrl() {
+			return this.phonePublicUrl;
 		}
 
-		public void setPhoneNoA(String phoneNoA) {
-			this.phoneNoA = phoneNoA;
+		public void setPhonePublicUrl(String phonePublicUrl) {
+			this.phonePublicUrl = phonePublicUrl;
 		}
 
-		public String getPhoneNoX() {
-			return this.phoneNoX;
+		public String getRingPublicUrl() {
+			return this.ringPublicUrl;
 		}
 
-		public void setPhoneNoX(String phoneNoX) {
-			this.phoneNoX = phoneNoX;
-		}
-
-		public String getExtension() {
-			return this.extension;
-		}
-
-		public void setExtension(String extension) {
-			this.extension = extension;
+		public void setRingPublicUrl(String ringPublicUrl) {
+			this.ringPublicUrl = ringPublicUrl;
 		}
 	}
 
 	@Override
-	public QueryPhoneNoAByTrackNoResponse getInstance(UnmarshallerContext context) {
-		return	QueryPhoneNoAByTrackNoResponseUnmarshaller.unmarshall(this, context);
+	public GetTotalPublicUrlResponse getInstance(UnmarshallerContext context) {
+		return	GetTotalPublicUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

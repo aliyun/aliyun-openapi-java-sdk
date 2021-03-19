@@ -1,3 +1,6 @@
+2021-03-19 Version: 1.3.1
+- Generated 2017-05-25 for `Dyplsapi`.
+
 2020-07-23 Version: 1.3.0
 - Add AddSecretBlacklist and DeleteSecretBlacklist.
 - Suppoort ASR.

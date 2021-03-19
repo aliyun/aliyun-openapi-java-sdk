@@ -29,6 +29,8 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 
 	private Integer callDisplayType;
 
+	private Integer callTimeout;
+
 	private String phoneNoX;
 
 	private String ringConfig;
@@ -59,7 +61,7 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 
 	private String callRestrict;
 	public BindAxbRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxb", "dypls");
+		super("Dyplsapi", "2017-05-25", "BindAxb", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,17 @@ public class BindAxbRequest extends RpcAcsRequest<BindAxbResponse> {
 		this.callDisplayType = callDisplayType;
 		if(callDisplayType != null){
 			putQueryParameter("CallDisplayType", callDisplayType.toString());
+		}
+	}
+
+	public Integer getCallTimeout() {
+		return this.callTimeout;
+	}
+
+	public void setCallTimeout(Integer callTimeout) {
+		this.callTimeout = callTimeout;
+		if(callTimeout != null){
+			putQueryParameter("CallTimeout", callTimeout.toString());
 		}
 	}
 

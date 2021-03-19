@@ -29,6 +29,8 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 
 	private Integer callDisplayType;
 
+	private Integer callTimeout;
+
 	private String phoneNoX;
 
 	private String ringConfig;
@@ -58,8 +60,10 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 	private String noType;
 
 	private String aSRModelId;
+
+	private String callRestrict;
 	public BindAxnRequest() {
-		super("Dyplsapi", "2017-05-25", "BindAxn", "dypls");
+		super("Dyplsapi", "2017-05-25", "BindAxn", "dyplsapi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +90,17 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 		this.callDisplayType = callDisplayType;
 		if(callDisplayType != null){
 			putQueryParameter("CallDisplayType", callDisplayType.toString());
+		}
+	}
+
+	public Integer getCallTimeout() {
+		return this.callTimeout;
+	}
+
+	public void setCallTimeout(Integer callTimeout) {
+		this.callTimeout = callTimeout;
+		if(callTimeout != null){
+			putQueryParameter("CallTimeout", callTimeout.toString());
 		}
 	}
 
@@ -251,6 +266,17 @@ public class BindAxnRequest extends RpcAcsRequest<BindAxnResponse> {
 		this.aSRModelId = aSRModelId;
 		if(aSRModelId != null){
 			putQueryParameter("ASRModelId", aSRModelId);
+		}
+	}
+
+	public String getCallRestrict() {
+		return this.callRestrict;
+	}
+
+	public void setCallRestrict(String callRestrict) {
+		this.callRestrict = callRestrict;
+		if(callRestrict != null){
+			putQueryParameter("CallRestrict", callRestrict);
 		}
 	}
 
