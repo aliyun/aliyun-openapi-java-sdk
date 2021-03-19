@@ -41,7 +41,7 @@ public class UpdateInstanceInformationRequest extends RpcAcsRequest<UpdateInstan
 
 	private String platformVersion;
 	public UpdateInstanceInformationRequest() {
-		super("oos", "2019-06-01", "UpdateInstanceInformation", "oos");
+		super("oos", "2019-06-01", "UpdateInstanceInformation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

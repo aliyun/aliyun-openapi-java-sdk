@@ -31,7 +31,7 @@ public class UpdateExecutionRequest extends RpcAcsRequest<UpdateExecutionRespons
 
 	private String parameters;
 	public UpdateExecutionRequest() {
-		super("oos", "2019-06-01", "UpdateExecution", "oos");
+		super("oos", "2019-06-01", "UpdateExecution");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class ListSecretParameterVersionsRequest extends RpcAcsRequest<ListSecret
 
 	private String shareType;
 	public ListSecretParameterVersionsRequest() {
-		super("oos", "2019-06-01", "ListSecretParameterVersions", "oos");
+		super("oos", "2019-06-01", "ListSecretParameterVersions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

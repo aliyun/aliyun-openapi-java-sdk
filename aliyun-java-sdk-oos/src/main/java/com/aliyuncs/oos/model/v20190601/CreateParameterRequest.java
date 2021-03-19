@@ -33,11 +33,13 @@ public class CreateParameterRequest extends RpcAcsRequest<CreateParameterRespons
 
 	private String constraints;
 
+	private String tags;
+
 	private String name;
 
 	private String value;
 	public CreateParameterRequest() {
-		super("oos", "2019-06-01", "CreateParameter", "oos");
+		super("oos", "2019-06-01", "CreateParameter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,6 +88,17 @@ public class CreateParameterRequest extends RpcAcsRequest<CreateParameterRespons
 		this.constraints = constraints;
 		if(constraints != null){
 			putQueryParameter("Constraints", constraints);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

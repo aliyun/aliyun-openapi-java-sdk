@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.ListParametersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -97,6 +98,8 @@ public class ListParametersResponse extends AcsResponse {
 
 		private String type;
 
+		private Map<Object,Object> tags;
+
 		public String getName() {
 			return this.name;
 		}
@@ -175,6 +178,14 @@ public class ListParametersResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 	}
 

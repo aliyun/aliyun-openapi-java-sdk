@@ -68,6 +68,8 @@ public class UpdateParameterResponse extends AcsResponse {
 
 		private String constraints;
 
+		private String tags;
+
 		public String getId() {
 			return this.id;
 		}
@@ -154,6 +156,14 @@ public class UpdateParameterResponse extends AcsResponse {
 
 		public void setConstraints(String constraints) {
 			this.constraints = constraints;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
 		}
 	}
 

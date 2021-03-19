@@ -43,7 +43,7 @@ public class UpdateStateConfigurationRequest extends RpcAcsRequest<UpdateStateCo
 
 	private String stateConfigurationId;
 	public UpdateStateConfigurationRequest() {
-		super("oos", "2019-06-01", "UpdateStateConfiguration", "oos");
+		super("oos", "2019-06-01", "UpdateStateConfiguration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

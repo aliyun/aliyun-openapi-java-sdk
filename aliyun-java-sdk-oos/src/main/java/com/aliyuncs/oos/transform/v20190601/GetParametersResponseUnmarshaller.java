@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.GetParametersResponse;
 import com.aliyuncs.oos.model.v20190601.GetParametersResponse.Parameter;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -49,6 +50,7 @@ public class GetParametersResponseUnmarshaller {
 			parameter.setType(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Type"));
 			parameter.setValue(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Value"));
 			parameter.setConstraints(_ctx.stringValue("GetParametersResponse.Parameters["+ i +"].Constraints"));
+			parameter.setTags(_ctx.mapValue("GetParametersResponse.Parameters["+ i +"].Tags"));
 
 			parameters.add(parameter);
 		}

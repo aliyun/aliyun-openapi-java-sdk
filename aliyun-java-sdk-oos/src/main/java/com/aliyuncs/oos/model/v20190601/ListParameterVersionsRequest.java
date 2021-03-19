@@ -33,7 +33,7 @@ public class ListParameterVersionsRequest extends RpcAcsRequest<ListParameterVer
 
 	private String shareType;
 	public ListParameterVersionsRequest() {
-		super("oos", "2019-06-01", "ListParameterVersions", "oos");
+		super("oos", "2019-06-01", "ListParameterVersions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

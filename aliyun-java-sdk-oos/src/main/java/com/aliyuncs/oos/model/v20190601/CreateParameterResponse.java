@@ -14,6 +14,7 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.CreateParameterResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -67,6 +68,8 @@ public class CreateParameterResponse extends AcsResponse {
 		private String type;
 
 		private String constraints;
+
+		private Map<Object,Object> tags;
 
 		public String getId() {
 			return this.id;
@@ -154,6 +157,14 @@ public class CreateParameterResponse extends AcsResponse {
 
 		public void setConstraints(String constraints) {
 			this.constraints = constraints;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 	}
 

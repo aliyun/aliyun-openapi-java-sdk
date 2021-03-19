@@ -35,7 +35,7 @@ public class CreatePatchBaselineRequest extends RpcAcsRequest<CreatePatchBaselin
 
 	private String name;
 	public CreatePatchBaselineRequest() {
-		super("oos", "2019-06-01", "CreatePatchBaseline", "oos");
+		super("oos", "2019-06-01", "CreatePatchBaseline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

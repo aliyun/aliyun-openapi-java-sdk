@@ -33,7 +33,7 @@ public class GetParametersByPathRequest extends RpcAcsRequest<GetParametersByPat
 
 	private Integer maxResults;
 	public GetParametersByPathRequest() {
-		super("oos", "2019-06-01", "GetParametersByPath", "oos");
+		super("oos", "2019-06-01", "GetParametersByPath");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

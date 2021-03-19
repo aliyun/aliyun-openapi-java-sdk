@@ -1,3 +1,6 @@
+2021-03-19 Version: 1.5.0
+- StateConfiguration in CreateStateConfigurationResponse changes from list to single object.
+
 2021-02-07 Version: 1.4.0
 - Support patch manager apis.
 

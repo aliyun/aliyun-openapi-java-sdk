@@ -15,6 +15,7 @@
 package com.aliyuncs.oos.model.v20190601;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.GetSecretParametersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -82,6 +83,8 @@ public class GetSecretParametersResponse extends AcsResponse {
 		private String constraints;
 
 		private String keyId;
+
+		private Map<Object,Object> tags;
 
 		public String getId() {
 			return this.id;
@@ -185,6 +188,14 @@ public class GetSecretParametersResponse extends AcsResponse {
 
 		public void setKeyId(String keyId) {
 			this.keyId = keyId;
+		}
+
+		public Map<Object,Object> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(Map<Object,Object> tags) {
+			this.tags = tags;
 		}
 	}
 

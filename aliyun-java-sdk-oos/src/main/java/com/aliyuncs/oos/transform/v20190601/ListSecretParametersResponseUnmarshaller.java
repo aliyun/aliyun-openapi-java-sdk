@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.ListSecretParametersResponse;
 import com.aliyuncs.oos.model.v20190601.ListSecretParametersResponse.Parameter;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -44,6 +45,7 @@ public class ListSecretParametersResponseUnmarshaller {
 			parameter.setParameterVersion(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].ParameterVersion"));
 			parameter.setType(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].Type"));
 			parameter.setKeyId(_ctx.stringValue("ListSecretParametersResponse.Parameters["+ i +"].KeyId"));
+			parameter.setTags(_ctx.mapValue("ListSecretParametersResponse.Parameters["+ i +"].Tags"));
 
 			parameters.add(parameter);
 		}

@@ -33,15 +33,17 @@ public class ListParametersRequest extends RpcAcsRequest<ListParametersResponse>
 
 	private String nextToken;
 
+	private String sortOrder;
+
+	private String tags;
+
 	private String name;
 
 	private Integer maxResults;
 
-	private String sortOrder;
-
 	private String sortField;
 	public ListParametersRequest() {
-		super("oos", "2019-06-01", "ListParameters", "oos");
+		super("oos", "2019-06-01", "ListParameters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,6 +95,28 @@ public class ListParametersRequest extends RpcAcsRequest<ListParametersResponse>
 		}
 	}
 
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+		if(sortOrder != null){
+			putQueryParameter("SortOrder", sortOrder);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -112,17 +136,6 @@ public class ListParametersRequest extends RpcAcsRequest<ListParametersResponse>
 		this.maxResults = maxResults;
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
-		}
-	}
-
-	public String getSortOrder() {
-		return this.sortOrder;
-	}
-
-	public void setSortOrder(String sortOrder) {
-		this.sortOrder = sortOrder;
-		if(sortOrder != null){
-			putQueryParameter("SortOrder", sortOrder);
 		}
 	}
 

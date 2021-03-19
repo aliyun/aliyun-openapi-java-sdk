@@ -36,7 +36,7 @@ public class ListInventoryEntriesRequest extends RpcAcsRequest<ListInventoryEntr
 
 	private String typeName;
 	public ListInventoryEntriesRequest() {
-		super("oos", "2019-06-01", "ListInventoryEntries", "oos");
+		super("oos", "2019-06-01", "ListInventoryEntries");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

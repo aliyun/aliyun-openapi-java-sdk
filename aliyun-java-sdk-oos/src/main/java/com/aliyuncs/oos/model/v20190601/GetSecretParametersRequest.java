@@ -29,7 +29,7 @@ public class GetSecretParametersRequest extends RpcAcsRequest<GetSecretParameter
 
 	private String names;
 	public GetSecretParametersRequest() {
-		super("oos", "2019-06-01", "GetSecretParameters", "oos");
+		super("oos", "2019-06-01", "GetSecretParameters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

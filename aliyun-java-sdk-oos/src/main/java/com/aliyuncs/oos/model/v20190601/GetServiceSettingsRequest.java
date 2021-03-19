@@ -25,7 +25,7 @@ import com.aliyuncs.oos.Endpoint;
 public class GetServiceSettingsRequest extends RpcAcsRequest<GetServiceSettingsResponse> {
 	   
 	public GetServiceSettingsRequest() {
-		super("oos", "2019-06-01", "GetServiceSettings", "oos");
+		super("oos", "2019-06-01", "GetServiceSettings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

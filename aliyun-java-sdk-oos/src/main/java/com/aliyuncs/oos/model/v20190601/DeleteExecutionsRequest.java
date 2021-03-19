@@ -27,7 +27,7 @@ public class DeleteExecutionsRequest extends RpcAcsRequest<DeleteExecutionsRespo
 
 	private String executionIds;
 	public DeleteExecutionsRequest() {
-		super("oos", "2019-06-01", "DeleteExecutions", "oos");
+		super("oos", "2019-06-01", "DeleteExecutions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.oos.model.v20190601;
 
-import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.oos.transform.v20190601.CreateStateConfigurationResponseUnmarshaller;
@@ -28,7 +27,7 @@ public class CreateStateConfigurationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<StateConfigurationItem> stateConfiguration;
+	private StateConfiguration stateConfiguration;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,15 +37,15 @@ public class CreateStateConfigurationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<StateConfigurationItem> getStateConfiguration() {
+	public StateConfiguration getStateConfiguration() {
 		return this.stateConfiguration;
 	}
 
-	public void setStateConfiguration(List<StateConfigurationItem> stateConfiguration) {
+	public void setStateConfiguration(StateConfiguration stateConfiguration) {
 		this.stateConfiguration = stateConfiguration;
 	}
 
-	public static class StateConfigurationItem {
+	public static class StateConfiguration {
 
 		private String createTime;
 

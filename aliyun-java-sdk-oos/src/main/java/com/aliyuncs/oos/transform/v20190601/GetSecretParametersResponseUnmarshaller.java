@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.oos.model.v20190601.GetSecretParametersResponse;
 import com.aliyuncs.oos.model.v20190601.GetSecretParametersResponse.Parameter;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -50,6 +51,7 @@ public class GetSecretParametersResponseUnmarshaller {
 			parameter.setValue(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Value"));
 			parameter.setConstraints(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].Constraints"));
 			parameter.setKeyId(_ctx.stringValue("GetSecretParametersResponse.Parameters["+ i +"].KeyId"));
+			parameter.setTags(_ctx.mapValue("GetSecretParametersResponse.Parameters["+ i +"].Tags"));
 
 			parameters.add(parameter);
 		}

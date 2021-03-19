@@ -29,17 +29,19 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 
 	private String description;
 
-	private String keyId;
-
 	private String type;
 
 	private String constraints;
 
-	private String name;
-
 	private String value;
+
+	private String keyId;
+
+	private String tags;
+
+	private String name;
 	public CreateSecretParameterRequest() {
-		super("oos", "2019-06-01", "CreateSecretParameter", "oos");
+		super("oos", "2019-06-01", "CreateSecretParameter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,17 +71,6 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 		}
 	}
 
-	public String getKeyId() {
-		return this.keyId;
-	}
-
-	public void setKeyId(String keyId) {
-		this.keyId = keyId;
-		if(keyId != null){
-			putQueryParameter("KeyId", keyId);
-		}
-	}
-
 	public String getType() {
 		return this.type;
 	}
@@ -102,17 +93,6 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 		}
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public String getValue() {
 		return this.value;
 	}
@@ -121,6 +101,39 @@ public class CreateSecretParameterRequest extends RpcAcsRequest<CreateSecretPara
 		this.value = value;
 		if(value != null){
 			putQueryParameter("Value", value);
+		}
+	}
+
+	public String getKeyId() {
+		return this.keyId;
+	}
+
+	public void setKeyId(String keyId) {
+		this.keyId = keyId;
+		if(keyId != null){
+			putQueryParameter("KeyId", keyId);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 

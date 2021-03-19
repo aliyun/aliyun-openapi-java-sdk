@@ -37,6 +37,7 @@ public class UpdateParameterResponseUnmarshaller {
 		parameter.setParameterVersion(_ctx.integerValue("UpdateParameterResponse.Parameter.ParameterVersion"));
 		parameter.setType(_ctx.stringValue("UpdateParameterResponse.Parameter.Type"));
 		parameter.setConstraints(_ctx.stringValue("UpdateParameterResponse.Parameter.Constraints"));
+		parameter.setTags(_ctx.stringValue("UpdateParameterResponse.Parameter.Tags"));
 		updateParameterResponse.setParameter(parameter);
 	 
 	 	return updateParameterResponse;

@@ -14,11 +14,8 @@
 
 package com.aliyuncs.oos.transform.v20190601;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.oos.model.v20190601.CreateStateConfigurationResponse;
-import com.aliyuncs.oos.model.v20190601.CreateStateConfigurationResponse.StateConfigurationItem;
+import com.aliyuncs.oos.model.v20190601.CreateStateConfigurationResponse.StateConfiguration;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,24 +26,19 @@ public class CreateStateConfigurationResponseUnmarshaller {
 		
 		createStateConfigurationResponse.setRequestId(_ctx.stringValue("CreateStateConfigurationResponse.RequestId"));
 
-		List<StateConfigurationItem> stateConfiguration = new ArrayList<StateConfigurationItem>();
-		for (int i = 0; i < _ctx.lengthValue("CreateStateConfigurationResponse.StateConfiguration.Length"); i++) {
-			StateConfigurationItem stateConfigurationItem = new StateConfigurationItem();
-			stateConfigurationItem.setCreateTime(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].CreateTime"));
-			stateConfigurationItem.setDescription(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].Description"));
-			stateConfigurationItem.setStateConfigurationId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].StateConfigurationId"));
-			stateConfigurationItem.setTemplateId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].TemplateId"));
-			stateConfigurationItem.setTemplateName(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].TemplateName"));
-			stateConfigurationItem.setTemplateVersion(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].TemplateVersion"));
-			stateConfigurationItem.setParameters(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].Parameters"));
-			stateConfigurationItem.setConfigureMode(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].ConfigureMode"));
-			stateConfigurationItem.setScheduleType(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].ScheduleType"));
-			stateConfigurationItem.setScheduleExpression(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].ScheduleExpression"));
-			stateConfigurationItem.setTargets(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].Targets"));
-			stateConfigurationItem.setTags(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration["+ i +"].Tags"));
-
-			stateConfiguration.add(stateConfigurationItem);
-		}
+		StateConfiguration stateConfiguration = new StateConfiguration();
+		stateConfiguration.setCreateTime(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.CreateTime"));
+		stateConfiguration.setDescription(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.Description"));
+		stateConfiguration.setStateConfigurationId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.StateConfigurationId"));
+		stateConfiguration.setTemplateId(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateId"));
+		stateConfiguration.setTemplateName(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateName"));
+		stateConfiguration.setTemplateVersion(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.TemplateVersion"));
+		stateConfiguration.setParameters(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration.Parameters"));
+		stateConfiguration.setConfigureMode(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ConfigureMode"));
+		stateConfiguration.setScheduleType(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleType"));
+		stateConfiguration.setScheduleExpression(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.ScheduleExpression"));
+		stateConfiguration.setTargets(_ctx.stringValue("CreateStateConfigurationResponse.StateConfiguration.Targets"));
+		stateConfiguration.setTags(_ctx.mapValue("CreateStateConfigurationResponse.StateConfiguration.Tags"));
 		createStateConfigurationResponse.setStateConfiguration(stateConfiguration);
 	 
 	 	return createStateConfigurationResponse;

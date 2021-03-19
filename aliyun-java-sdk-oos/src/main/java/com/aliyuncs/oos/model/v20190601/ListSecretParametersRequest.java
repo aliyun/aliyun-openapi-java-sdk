@@ -27,6 +27,8 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 
 	private Boolean recursive;
 
+	private String tags;
+
 	private String path;
 
 	private String nextToken;
@@ -39,7 +41,7 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 
 	private String sortField;
 	public ListSecretParametersRequest() {
-		super("oos", "2019-06-01", "ListSecretParameters", "oos");
+		super("oos", "2019-06-01", "ListSecretParameters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -55,6 +57,17 @@ public class ListSecretParametersRequest extends RpcAcsRequest<ListSecretParamet
 		this.recursive = recursive;
 		if(recursive != null){
 			putQueryParameter("Recursive", recursive.toString());
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

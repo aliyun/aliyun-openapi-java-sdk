@@ -70,6 +70,8 @@ public class CreateSecretParameterResponse extends AcsResponse {
 
 		private String keyId;
 
+		private String tags;
+
 		public String getId() {
 			return this.id;
 		}
@@ -164,6 +166,14 @@ public class CreateSecretParameterResponse extends AcsResponse {
 
 		public void setKeyId(String keyId) {
 			this.keyId = keyId;
+		}
+
+		public String getTags() {
+			return this.tags;
+		}
+
+		public void setTags(String tags) {
+			this.tags = tags;
 		}
 	}
 

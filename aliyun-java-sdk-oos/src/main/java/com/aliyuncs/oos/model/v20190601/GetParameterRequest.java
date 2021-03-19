@@ -29,7 +29,7 @@ public class GetParameterRequest extends RpcAcsRequest<GetParameterResponse> {
 
 	private String name;
 	public GetParameterRequest() {
-		super("oos", "2019-06-01", "GetParameter", "oos");
+		super("oos", "2019-06-01", "GetParameter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

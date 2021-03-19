@@ -45,7 +45,7 @@ public class CreateStateConfigurationRequest extends RpcAcsRequest<CreateStateCo
 
 	private String parameters;
 	public CreateStateConfigurationRequest() {
-		super("oos", "2019-06-01", "CreateStateConfiguration", "oos");
+		super("oos", "2019-06-01", "CreateStateConfiguration");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

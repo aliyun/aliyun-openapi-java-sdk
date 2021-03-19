@@ -27,11 +27,13 @@ public class UpdateParameterRequest extends RpcAcsRequest<UpdateParameterRespons
 
 	private String description;
 
+	private String tags;
+
 	private String name;
 
 	private String value;
 	public UpdateParameterRequest() {
-		super("oos", "2019-06-01", "UpdateParameter", "oos");
+		super("oos", "2019-06-01", "UpdateParameter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class UpdateParameterRequest extends RpcAcsRequest<UpdateParameterRespons
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

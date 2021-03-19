@@ -27,11 +27,13 @@ public class UpdateSecretParameterRequest extends RpcAcsRequest<UpdateSecretPara
 
 	private String description;
 
+	private String tags;
+
 	private String name;
 
 	private String value;
 	public UpdateSecretParameterRequest() {
-		super("oos", "2019-06-01", "UpdateSecretParameter", "oos");
+		super("oos", "2019-06-01", "UpdateSecretParameter");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class UpdateSecretParameterRequest extends RpcAcsRequest<UpdateSecretPara
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

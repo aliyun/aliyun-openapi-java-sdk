@@ -35,7 +35,7 @@ public class ListPatchBaselinesRequest extends RpcAcsRequest<ListPatchBaselinesR
 
 	private String shareType;
 	public ListPatchBaselinesRequest() {
-		super("oos", "2019-06-01", "ListPatchBaselines", "oos");
+		super("oos", "2019-06-01", "ListPatchBaselines");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

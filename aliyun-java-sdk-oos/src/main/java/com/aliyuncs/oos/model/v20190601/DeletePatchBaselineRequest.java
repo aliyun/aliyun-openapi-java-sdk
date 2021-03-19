@@ -27,7 +27,7 @@ public class DeletePatchBaselineRequest extends RpcAcsRequest<DeletePatchBaselin
 
 	private String name;
 	public DeletePatchBaselineRequest() {
-		super("oos", "2019-06-01", "DeletePatchBaseline", "oos");
+		super("oos", "2019-06-01", "DeletePatchBaseline");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

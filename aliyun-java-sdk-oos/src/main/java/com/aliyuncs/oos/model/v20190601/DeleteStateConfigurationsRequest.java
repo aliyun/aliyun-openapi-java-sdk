@@ -29,7 +29,7 @@ public class DeleteStateConfigurationsRequest extends RpcAcsRequest<DeleteStateC
 
 	private String clientToken;
 	public DeleteStateConfigurationsRequest() {
-		super("oos", "2019-06-01", "DeleteStateConfigurations", "oos");
+		super("oos", "2019-06-01", "DeleteStateConfigurations");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

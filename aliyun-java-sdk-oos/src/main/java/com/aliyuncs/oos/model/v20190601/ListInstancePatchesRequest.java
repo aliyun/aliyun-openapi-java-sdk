@@ -31,7 +31,7 @@ public class ListInstancePatchesRequest extends RpcAcsRequest<ListInstancePatche
 
 	private Integer maxResults;
 	public ListInstancePatchesRequest() {
-		super("oos", "2019-06-01", "ListInstancePatches", "oos");
+		super("oos", "2019-06-01", "ListInstancePatches");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CancelExecutionRequest extends RpcAcsRequest<CancelExecutionRespons
 
 	private String executionId;
 	public CancelExecutionRequest() {
-		super("oos", "2019-06-01", "CancelExecution", "oos");
+		super("oos", "2019-06-01", "CancelExecution");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

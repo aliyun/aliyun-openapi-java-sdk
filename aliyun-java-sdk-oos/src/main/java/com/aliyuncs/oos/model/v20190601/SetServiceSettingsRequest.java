@@ -35,7 +35,7 @@ public class SetServiceSettingsRequest extends RpcAcsRequest<SetServiceSettingsR
 
 	private String deliveryOssBucketName;
 	public SetServiceSettingsRequest() {
-		super("oos", "2019-06-01", "SetServiceSettings", "oos");
+		super("oos", "2019-06-01", "SetServiceSettings");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
