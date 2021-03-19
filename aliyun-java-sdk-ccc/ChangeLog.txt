@@ -1,3 +1,6 @@
+2021-03-19 Version: 2.0.5
+- Export new API.
+
 2021-03-19 Version: 1.0.26
 - Export new API for predictive dialer.
 
