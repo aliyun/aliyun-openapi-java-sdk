@@ -29,7 +29,7 @@ public class ListLinkeBahamutVcsmembersRequest extends RpcAcsRequest<ListLinkeBa
 
 	private String tenantId;
 	public ListLinkeBahamutVcsmembersRequest() {
-		super("SOFA", "2019-08-15", "ListLinkeBahamutVcsmembers", "sofacafedeps");
+		super("SOFA", "2019-08-15", "ListLinkeBahamutVcsmembers", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

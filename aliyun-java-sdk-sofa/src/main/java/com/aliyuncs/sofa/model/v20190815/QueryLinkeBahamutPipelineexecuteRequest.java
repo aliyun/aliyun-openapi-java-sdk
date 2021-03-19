@@ -31,7 +31,7 @@ public class QueryLinkeBahamutPipelineexecuteRequest extends RpcAcsRequest<Query
 
 	private String stageId;
 	public QueryLinkeBahamutPipelineexecuteRequest() {
-		super("SOFA", "2019-08-15", "QueryLinkeBahamutPipelineexecute", "sofacafedeps");
+		super("SOFA", "2019-08-15", "QueryLinkeBahamutPipelineexecute", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

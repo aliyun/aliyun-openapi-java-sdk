@@ -27,13 +27,15 @@ public class ListMqSofamqGroupRequest extends RpcAcsRequest<ListMqSofamqGroupRes
 
 	private Long pageNum;
 
+	private String groupType;
+
 	private Long pageSize;
 
 	private String groupId;
 
 	private String instanceId;
 	public ListMqSofamqGroupRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqGroup", "sofacafedeps");
+		super("SOFA", "2019-08-15", "ListMqSofamqGroup", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +51,17 @@ public class ListMqSofamqGroupRequest extends RpcAcsRequest<ListMqSofamqGroupRes
 		this.pageNum = pageNum;
 		if(pageNum != null){
 			putBodyParameter("PageNum", pageNum.toString());
+		}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putBodyParameter("GroupType", groupType);
 		}
 	}
 

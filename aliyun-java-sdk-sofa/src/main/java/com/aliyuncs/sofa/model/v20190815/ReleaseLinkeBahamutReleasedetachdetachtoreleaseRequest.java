@@ -38,7 +38,7 @@ public class ReleaseLinkeBahamutReleasedetachdetachtoreleaseRequest extends RpcA
 
 	private String overdueMes;
 	public ReleaseLinkeBahamutReleasedetachdetachtoreleaseRequest() {
-		super("SOFA", "2019-08-15", "ReleaseLinkeBahamutReleasedetachdetachtorelease", "sofacafedeps");
+		super("SOFA", "2019-08-15", "ReleaseLinkeBahamutReleasedetachdetachtorelease", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

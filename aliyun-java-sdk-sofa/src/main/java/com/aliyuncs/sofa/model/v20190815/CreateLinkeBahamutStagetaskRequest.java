@@ -31,7 +31,7 @@ public class CreateLinkeBahamutStagetaskRequest extends RpcAcsRequest<CreateLink
 
 	private String iterationId;
 	public CreateLinkeBahamutStagetaskRequest() {
-		super("SOFA", "2019-08-15", "CreateLinkeBahamutStagetask", "sofacafedeps");
+		super("SOFA", "2019-08-15", "CreateLinkeBahamutStagetask", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

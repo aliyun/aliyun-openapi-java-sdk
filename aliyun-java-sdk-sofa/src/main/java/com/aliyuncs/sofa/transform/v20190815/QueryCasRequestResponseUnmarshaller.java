@@ -31,6 +31,9 @@ public class QueryCasRequestResponseUnmarshaller {
 		queryCasRequestResponse.setRequestId(_ctx.stringValue("QueryCasRequestResponse.RequestId"));
 		queryCasRequestResponse.setResultCode(_ctx.stringValue("QueryCasRequestResponse.ResultCode"));
 		queryCasRequestResponse.setResultMessage(_ctx.stringValue("QueryCasRequestResponse.ResultMessage"));
+		queryCasRequestResponse.setTotalCount(_ctx.longValue("QueryCasRequestResponse.TotalCount"));
+		queryCasRequestResponse.setCurrentPage(_ctx.longValue("QueryCasRequestResponse.CurrentPage"));
+		queryCasRequestResponse.setPageSize(_ctx.longValue("QueryCasRequestResponse.PageSize"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCasRequestResponse.Data.Length"); i++) {
@@ -63,6 +66,8 @@ public class QueryCasRequestResponseUnmarshaller {
 				request.setId(_ctx.stringValue("QueryCasRequestResponse.Data["+ i +"].Tasks["+ j +"].Request.Id"));
 				request.setOperator(_ctx.stringValue("QueryCasRequestResponse.Data["+ i +"].Tasks["+ j +"].Request.Operator"));
 				request.setToken(_ctx.stringValue("QueryCasRequestResponse.Data["+ i +"].Tasks["+ j +"].Request.Token"));
+				request.setType(_ctx.stringValue("QueryCasRequestResponse.Data["+ i +"].Tasks["+ j +"].Request.Type"));
+				request.setStatus(_ctx.stringValue("QueryCasRequestResponse.Data["+ i +"].Tasks["+ j +"].Request.Status"));
 				tasksItem.setRequest(request);
 
 				tasks.add(tasksItem);

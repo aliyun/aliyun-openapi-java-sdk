@@ -29,7 +29,7 @@ public class DeleteLinkeBahamutReleasemanageiterationrelationshipappRequest exte
 
 	private String releaseExternalId;
 	public DeleteLinkeBahamutReleasemanageiterationrelationshipappRequest() {
-		super("SOFA", "2019-08-15", "DeleteLinkeBahamutReleasemanageiterationrelationshipapp", "sofacafedeps");
+		super("SOFA", "2019-08-15", "DeleteLinkeBahamutReleasemanageiterationrelationshipapp", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

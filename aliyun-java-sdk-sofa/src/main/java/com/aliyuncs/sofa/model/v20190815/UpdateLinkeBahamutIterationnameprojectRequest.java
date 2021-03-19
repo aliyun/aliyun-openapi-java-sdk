@@ -35,7 +35,7 @@ public class UpdateLinkeBahamutIterationnameprojectRequest extends RpcAcsRequest
 
 	private String name;
 	public UpdateLinkeBahamutIterationnameprojectRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutIterationnameproject", "sofacafedeps");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutIterationnameproject", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

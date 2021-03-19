@@ -29,7 +29,7 @@ public class GetMsConfigAttributesRequest extends RpcAcsRequest<GetMsConfigAttri
 
 	private String instanceId;
 	public GetMsConfigAttributesRequest() {
-		super("SOFA", "2019-08-15", "GetMsConfigAttributes", "sofacafedeps");
+		super("SOFA", "2019-08-15", "GetMsConfigAttributes", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

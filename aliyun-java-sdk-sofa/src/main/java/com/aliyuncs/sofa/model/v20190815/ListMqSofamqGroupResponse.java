@@ -111,11 +111,15 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 			private String cluster;
 
+			private String deleteMark;
+
 			private Long gmtCreate;
 
 			private Long gmtModified;
 
 			private String groupId;
+
+			private String groupType;
 
 			private Long id;
 
@@ -127,12 +131,30 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 			private String remark;
 
+			private Long retryPerm;
+
+			private Long retryReadQueueNum;
+
+			private Long retryWriteQueueNum;
+
+			private String scope;
+
+			private Long version;
+
 			public String getCluster() {
 				return this.cluster;
 			}
 
 			public void setCluster(String cluster) {
 				this.cluster = cluster;
+			}
+
+			public String getDeleteMark() {
+				return this.deleteMark;
+			}
+
+			public void setDeleteMark(String deleteMark) {
+				this.deleteMark = deleteMark;
 			}
 
 			public Long getGmtCreate() {
@@ -157,6 +179,14 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 			public void setGroupId(String groupId) {
 				this.groupId = groupId;
+			}
+
+			public String getGroupType() {
+				return this.groupType;
+			}
+
+			public void setGroupType(String groupType) {
+				this.groupType = groupType;
 			}
 
 			public Long getId() {
@@ -197,6 +227,46 @@ public class ListMqSofamqGroupResponse extends AcsResponse {
 
 			public void setRemark(String remark) {
 				this.remark = remark;
+			}
+
+			public Long getRetryPerm() {
+				return this.retryPerm;
+			}
+
+			public void setRetryPerm(Long retryPerm) {
+				this.retryPerm = retryPerm;
+			}
+
+			public Long getRetryReadQueueNum() {
+				return this.retryReadQueueNum;
+			}
+
+			public void setRetryReadQueueNum(Long retryReadQueueNum) {
+				this.retryReadQueueNum = retryReadQueueNum;
+			}
+
+			public Long getRetryWriteQueueNum() {
+				return this.retryWriteQueueNum;
+			}
+
+			public void setRetryWriteQueueNum(Long retryWriteQueueNum) {
+				this.retryWriteQueueNum = retryWriteQueueNum;
+			}
+
+			public String getScope() {
+				return this.scope;
+			}
+
+			public void setScope(String scope) {
+				this.scope = scope;
+			}
+
+			public Long getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(Long version) {
+				this.version = version;
 			}
 		}
 	}

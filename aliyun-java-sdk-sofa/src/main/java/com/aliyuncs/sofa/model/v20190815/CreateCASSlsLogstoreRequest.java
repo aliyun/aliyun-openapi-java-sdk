@@ -36,8 +36,10 @@ public class CreateCASSlsLogstoreRequest extends RpcAcsRequest<CreateCASSlsLogst
 	private String logstoreName;
 
 	private Long ttl;
+
+	private Boolean addIndex;
 	public CreateCASSlsLogstoreRequest() {
-		super("SOFA", "2019-08-15", "CreateCASSlsLogstore", "sofacafedeps");
+		super("SOFA", "2019-08-15", "CreateCASSlsLogstore", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -108,6 +110,17 @@ public class CreateCASSlsLogstoreRequest extends RpcAcsRequest<CreateCASSlsLogst
 		this.ttl = ttl;
 		if(ttl != null){
 			putBodyParameter("Ttl", ttl.toString());
+		}
+	}
+
+	public Boolean getAddIndex() {
+		return this.addIndex;
+	}
+
+	public void setAddIndex(Boolean addIndex) {
+		this.addIndex = addIndex;
+		if(addIndex != null){
+			putBodyParameter("AddIndex", addIndex.toString());
 		}
 	}
 

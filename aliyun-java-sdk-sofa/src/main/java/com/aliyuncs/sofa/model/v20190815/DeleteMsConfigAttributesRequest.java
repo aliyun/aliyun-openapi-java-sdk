@@ -29,7 +29,7 @@ public class DeleteMsConfigAttributesRequest extends RpcAcsRequest<DeleteMsConfi
 
 	private String instanceId;
 	public DeleteMsConfigAttributesRequest() {
-		super("SOFA", "2019-08-15", "DeleteMsConfigAttributes", "sofacafedeps");
+		super("SOFA", "2019-08-15", "DeleteMsConfigAttributes", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

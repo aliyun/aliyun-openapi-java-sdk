@@ -31,7 +31,7 @@ public class UpdateMqSofamqGroupRemarkRequest extends RpcAcsRequest<UpdateMqSofa
 
 	private String instanceId;
 	public UpdateMqSofamqGroupRemarkRequest() {
-		super("SOFA", "2019-08-15", "UpdateMqSofamqGroupRemark", "sofacafedeps");
+		super("SOFA", "2019-08-15", "UpdateMqSofamqGroupRemark", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -53,6 +53,26 @@ public class GetClriskModelResponse extends AcsResponse {
 
 	private String triggerMode;
 
+	private String templateCode;
+
+	private String version;
+
+	private String alertDelayTime;
+
+	private String dayType;
+
+	private String cronExpression;
+
+	private String checkMethod;
+
+	private String fileAttributeMappings;
+
+	private String modelDefineId;
+
+	private String firstModelLoaderId;
+
+	private String secondModelLoaderId;
+
 	private List<DataNodesItem> dataNodes;
 
 	private List<ExtMapItem> extMap;
@@ -177,6 +197,86 @@ public class GetClriskModelResponse extends AcsResponse {
 		this.triggerMode = triggerMode;
 	}
 
+	public String getTemplateCode() {
+		return this.templateCode;
+	}
+
+	public void setTemplateCode(String templateCode) {
+		this.templateCode = templateCode;
+	}
+
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public String getAlertDelayTime() {
+		return this.alertDelayTime;
+	}
+
+	public void setAlertDelayTime(String alertDelayTime) {
+		this.alertDelayTime = alertDelayTime;
+	}
+
+	public String getDayType() {
+		return this.dayType;
+	}
+
+	public void setDayType(String dayType) {
+		this.dayType = dayType;
+	}
+
+	public String getCronExpression() {
+		return this.cronExpression;
+	}
+
+	public void setCronExpression(String cronExpression) {
+		this.cronExpression = cronExpression;
+	}
+
+	public String getCheckMethod() {
+		return this.checkMethod;
+	}
+
+	public void setCheckMethod(String checkMethod) {
+		this.checkMethod = checkMethod;
+	}
+
+	public String getFileAttributeMappings() {
+		return this.fileAttributeMappings;
+	}
+
+	public void setFileAttributeMappings(String fileAttributeMappings) {
+		this.fileAttributeMappings = fileAttributeMappings;
+	}
+
+	public String getModelDefineId() {
+		return this.modelDefineId;
+	}
+
+	public void setModelDefineId(String modelDefineId) {
+		this.modelDefineId = modelDefineId;
+	}
+
+	public String getFirstModelLoaderId() {
+		return this.firstModelLoaderId;
+	}
+
+	public void setFirstModelLoaderId(String firstModelLoaderId) {
+		this.firstModelLoaderId = firstModelLoaderId;
+	}
+
+	public String getSecondModelLoaderId() {
+		return this.secondModelLoaderId;
+	}
+
+	public void setSecondModelLoaderId(String secondModelLoaderId) {
+		this.secondModelLoaderId = secondModelLoaderId;
+	}
+
 	public List<DataNodesItem> getDataNodes() {
 		return this.dataNodes;
 	}
@@ -244,6 +344,16 @@ public class GetClriskModelResponse extends AcsResponse {
 		private String updateTime;
 
 		private String updateUser;
+
+		private String type;
+
+		private String checkField;
+
+		private String mappingField;
+
+		private String aliasName;
+
+		private String nodeType;
 
 		public String getDescription() {
 			return this.description;
@@ -315,6 +425,46 @@ public class GetClriskModelResponse extends AcsResponse {
 
 		public void setUpdateUser(String updateUser) {
 			this.updateUser = updateUser;
+		}
+
+		public String getType() {
+			return this.type;
+		}
+
+		public void setType(String type) {
+			this.type = type;
+		}
+
+		public String getCheckField() {
+			return this.checkField;
+		}
+
+		public void setCheckField(String checkField) {
+			this.checkField = checkField;
+		}
+
+		public String getMappingField() {
+			return this.mappingField;
+		}
+
+		public void setMappingField(String mappingField) {
+			this.mappingField = mappingField;
+		}
+
+		public String getAliasName() {
+			return this.aliasName;
+		}
+
+		public void setAliasName(String aliasName) {
+			this.aliasName = aliasName;
+		}
+
+		public String getNodeType() {
+			return this.nodeType;
+		}
+
+		public void setNodeType(String nodeType) {
+			this.nodeType = nodeType;
 		}
 	}
 

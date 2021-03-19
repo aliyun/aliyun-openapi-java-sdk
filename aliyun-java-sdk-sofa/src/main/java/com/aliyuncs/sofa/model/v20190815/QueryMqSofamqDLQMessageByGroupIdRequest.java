@@ -41,7 +41,7 @@ public class QueryMqSofamqDLQMessageByGroupIdRequest extends RpcAcsRequest<Query
 
 	private String instanceId;
 	public QueryMqSofamqDLQMessageByGroupIdRequest() {
-		super("SOFA", "2019-08-15", "QueryMqSofamqDLQMessageByGroupId", "sofacafedeps");
+		super("SOFA", "2019-08-15", "QueryMqSofamqDLQMessageByGroupId", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -82,6 +82,8 @@ public class SaveClriskRuleResponse extends AcsResponse {
 
 		private String ruleName;
 
+		private String checkType;
+
 		public String getContent() {
 			return this.content;
 		}
@@ -144,6 +146,14 @@ public class SaveClriskRuleResponse extends AcsResponse {
 
 		public void setRuleName(String ruleName) {
 			this.ruleName = ruleName;
+		}
+
+		public String getCheckType() {
+			return this.checkType;
+		}
+
+		public void setCheckType(String checkType) {
+			this.checkType = checkType;
 		}
 	}
 

@@ -46,6 +46,16 @@ public class GetClriskModelResponseUnmarshaller {
 		getClriskModelResponse.setStatus(_ctx.stringValue("GetClriskModelResponse.Status"));
 		getClriskModelResponse.setTriggerDelay(_ctx.stringValue("GetClriskModelResponse.TriggerDelay"));
 		getClriskModelResponse.setTriggerMode(_ctx.stringValue("GetClriskModelResponse.TriggerMode"));
+		getClriskModelResponse.setTemplateCode(_ctx.stringValue("GetClriskModelResponse.TemplateCode"));
+		getClriskModelResponse.setVersion(_ctx.stringValue("GetClriskModelResponse.Version"));
+		getClriskModelResponse.setAlertDelayTime(_ctx.stringValue("GetClriskModelResponse.AlertDelayTime"));
+		getClriskModelResponse.setDayType(_ctx.stringValue("GetClriskModelResponse.DayType"));
+		getClriskModelResponse.setCronExpression(_ctx.stringValue("GetClriskModelResponse.CronExpression"));
+		getClriskModelResponse.setCheckMethod(_ctx.stringValue("GetClriskModelResponse.CheckMethod"));
+		getClriskModelResponse.setFileAttributeMappings(_ctx.stringValue("GetClriskModelResponse.FileAttributeMappings"));
+		getClriskModelResponse.setModelDefineId(_ctx.stringValue("GetClriskModelResponse.ModelDefineId"));
+		getClriskModelResponse.setFirstModelLoaderId(_ctx.stringValue("GetClriskModelResponse.FirstModelLoaderId"));
+		getClriskModelResponse.setSecondModelLoaderId(_ctx.stringValue("GetClriskModelResponse.SecondModelLoaderId"));
 
 		LastModifier lastModifier = new LastModifier();
 		lastModifier.setEmail(_ctx.stringValue("GetClriskModelResponse.LastModifier.Email"));
@@ -82,6 +92,11 @@ public class GetClriskModelResponseUnmarshaller {
 			dataNodesItem.setTableName(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].TableName"));
 			dataNodesItem.setUpdateTime(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].UpdateTime"));
 			dataNodesItem.setUpdateUser(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].UpdateUser"));
+			dataNodesItem.setType(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].Type"));
+			dataNodesItem.setCheckField(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].CheckField"));
+			dataNodesItem.setMappingField(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].MappingField"));
+			dataNodesItem.setAliasName(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].AliasName"));
+			dataNodesItem.setNodeType(_ctx.stringValue("GetClriskModelResponse.DataNodes["+ i +"].NodeType"));
 
 			dataNodes.add(dataNodesItem);
 		}

@@ -39,7 +39,7 @@ public class ListMqSofamqWarnHistoryRequest extends RpcAcsRequest<ListMqSofamqWa
 
 	private Long warnId;
 	public ListMqSofamqWarnHistoryRequest() {
-		super("SOFA", "2019-08-15", "ListMqSofamqWarnHistory", "sofacafedeps");
+		super("SOFA", "2019-08-15", "ListMqSofamqWarnHistory", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

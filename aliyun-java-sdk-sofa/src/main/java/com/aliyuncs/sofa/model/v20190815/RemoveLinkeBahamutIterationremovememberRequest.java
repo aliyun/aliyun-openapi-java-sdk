@@ -31,7 +31,7 @@ public class RemoveLinkeBahamutIterationremovememberRequest extends RpcAcsReques
 
 	private String iterationUnitId;
 	public RemoveLinkeBahamutIterationremovememberRequest() {
-		super("SOFA", "2019-08-15", "RemoveLinkeBahamutIterationremovemember", "sofacafedeps");
+		super("SOFA", "2019-08-15", "RemoveLinkeBahamutIterationremovemember", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

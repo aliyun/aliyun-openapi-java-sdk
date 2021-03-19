@@ -31,7 +31,7 @@ public class QueryRmsAlarmHistorycountRequest extends RpcAcsRequest<QueryRmsAlar
 
 	private Long to;
 	public QueryRmsAlarmHistorycountRequest() {
-		super("SOFA", "2019-08-15", "QueryRmsAlarmHistorycount", "sofacafedeps");
+		super("SOFA", "2019-08-15", "QueryRmsAlarmHistorycount", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

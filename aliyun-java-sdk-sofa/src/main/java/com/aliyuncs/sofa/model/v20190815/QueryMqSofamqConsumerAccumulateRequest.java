@@ -33,7 +33,7 @@ public class QueryMqSofamqConsumerAccumulateRequest extends RpcAcsRequest<QueryM
 
 	private Boolean detail;
 	public QueryMqSofamqConsumerAccumulateRequest() {
-		super("SOFA", "2019-08-15", "QueryMqSofamqConsumerAccumulate", "sofacafedeps");
+		super("SOFA", "2019-08-15", "QueryMqSofamqConsumerAccumulate", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

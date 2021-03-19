@@ -27,11 +27,13 @@ public class CreateMqSofamqGroupRequest extends RpcAcsRequest<CreateMqSofamqGrou
 
 	private String remark;
 
+	private String groupType;
+
 	private String groupId;
 
 	private String instanceId;
 	public CreateMqSofamqGroupRequest() {
-		super("SOFA", "2019-08-15", "CreateMqSofamqGroup", "sofacafedeps");
+		super("SOFA", "2019-08-15", "CreateMqSofamqGroup", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,6 +49,17 @@ public class CreateMqSofamqGroupRequest extends RpcAcsRequest<CreateMqSofamqGrou
 		this.remark = remark;
 		if(remark != null){
 			putBodyParameter("Remark", remark);
+		}
+	}
+
+	public String getGroupType() {
+		return this.groupType;
+	}
+
+	public void setGroupType(String groupType) {
+		this.groupType = groupType;
+		if(groupType != null){
+			putBodyParameter("GroupType", groupType);
 		}
 	}
 

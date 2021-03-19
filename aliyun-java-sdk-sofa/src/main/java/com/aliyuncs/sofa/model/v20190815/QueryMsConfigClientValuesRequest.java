@@ -31,7 +31,7 @@ public class QueryMsConfigClientValuesRequest extends RpcAcsRequest<QueryMsConfi
 
 	private String instanceId;
 	public QueryMsConfigClientValuesRequest() {
-		super("SOFA", "2019-08-15", "QueryMsConfigClientValues", "sofacafedeps");
+		super("SOFA", "2019-08-15", "QueryMsConfigClientValues", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

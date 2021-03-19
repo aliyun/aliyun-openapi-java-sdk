@@ -40,14 +40,21 @@ public class ListMqSofamqGroupResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListMqSofamqGroupResponse.Data.Content.Length"); i++) {
 			ContentItem contentItem = new ContentItem();
 			contentItem.setCluster(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Cluster"));
+			contentItem.setDeleteMark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].DeleteMark"));
 			contentItem.setGmtCreate(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtCreate"));
 			contentItem.setGmtModified(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GmtModified"));
 			contentItem.setGroupId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupId"));
+			contentItem.setGroupType(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].GroupType"));
 			contentItem.setId(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Id"));
 			contentItem.setInstanceId(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].InstanceId"));
 			contentItem.setOperator(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Operator"));
 			contentItem.setReadEnable(_ctx.booleanValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].ReadEnable"));
 			contentItem.setRemark(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Remark"));
+			contentItem.setRetryPerm(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryPerm"));
+			contentItem.setRetryReadQueueNum(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryReadQueueNum"));
+			contentItem.setRetryWriteQueueNum(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].RetryWriteQueueNum"));
+			contentItem.setScope(_ctx.stringValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Scope"));
+			contentItem.setVersion(_ctx.longValue("ListMqSofamqGroupResponse.Data.Content["+ i +"].Version"));
 
 			content.add(contentItem);
 		}

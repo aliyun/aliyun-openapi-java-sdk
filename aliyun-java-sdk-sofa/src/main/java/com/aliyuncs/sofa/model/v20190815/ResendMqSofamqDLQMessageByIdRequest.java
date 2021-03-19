@@ -33,7 +33,7 @@ public class ResendMqSofamqDLQMessageByIdRequest extends RpcAcsRequest<ResendMqS
 
 	private String instanceId;
 	public ResendMqSofamqDLQMessageByIdRequest() {
-		super("SOFA", "2019-08-15", "ResendMqSofamqDLQMessageById", "sofacafedeps");
+		super("SOFA", "2019-08-15", "ResendMqSofamqDLQMessageById", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

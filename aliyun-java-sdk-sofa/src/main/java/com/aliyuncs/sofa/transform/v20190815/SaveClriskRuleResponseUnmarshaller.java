@@ -36,6 +36,7 @@ public class SaveClriskRuleResponseUnmarshaller {
 		ruleInfo.setModelCode(_ctx.stringValue("SaveClriskRuleResponse.RuleInfo.ModelCode"));
 		ruleInfo.setRuleCode(_ctx.stringValue("SaveClriskRuleResponse.RuleInfo.RuleCode"));
 		ruleInfo.setRuleName(_ctx.stringValue("SaveClriskRuleResponse.RuleInfo.RuleName"));
+		ruleInfo.setCheckType(_ctx.stringValue("SaveClriskRuleResponse.RuleInfo.CheckType"));
 		saveClriskRuleResponse.setRuleInfo(ruleInfo);
 	 
 	 	return saveClriskRuleResponse;

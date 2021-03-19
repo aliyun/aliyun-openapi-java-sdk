@@ -34,7 +34,7 @@ public class SaveLinkeBahamutBuildconfigregistryRequest extends RpcAcsRequest<Sa
 
 	private String user;
 	public SaveLinkeBahamutBuildconfigregistryRequest() {
-		super("SOFA", "2019-08-15", "SaveLinkeBahamutBuildconfigregistry", "sofacafedeps");
+		super("SOFA", "2019-08-15", "SaveLinkeBahamutBuildconfigregistry", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

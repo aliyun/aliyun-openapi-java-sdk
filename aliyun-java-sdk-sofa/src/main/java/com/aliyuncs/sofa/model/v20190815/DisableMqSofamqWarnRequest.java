@@ -29,7 +29,7 @@ public class DisableMqSofamqWarnRequest extends RpcAcsRequest<DisableMqSofamqWar
 
 	private Long warnId;
 	public DisableMqSofamqWarnRequest() {
-		super("SOFA", "2019-08-15", "DisableMqSofamqWarn", "sofacafedeps");
+		super("SOFA", "2019-08-15", "DisableMqSofamqWarn", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

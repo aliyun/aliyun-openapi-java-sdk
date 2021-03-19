@@ -30,7 +30,7 @@ public class UpdateLinkeBahamutIterationupdateiterationworkitemsRequest extends 
 
 	private String iterationExternalId;
 	public UpdateLinkeBahamutIterationupdateiterationworkitemsRequest() {
-		super("SOFA", "2019-08-15", "UpdateLinkeBahamutIterationupdateiterationworkitems", "sofacafedeps");
+		super("SOFA", "2019-08-15", "UpdateLinkeBahamutIterationupdateiterationworkitems", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

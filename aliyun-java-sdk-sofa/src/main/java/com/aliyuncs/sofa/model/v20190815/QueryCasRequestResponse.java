@@ -31,6 +31,12 @@ public class QueryCasRequestResponse extends AcsResponse {
 
 	private String resultMessage;
 
+	private Long totalCount;
+
+	private Long currentPage;
+
+	private Long pageSize;
+
 	private List<DataItem> data;
 
 	public String getRequestId() {
@@ -55,6 +61,30 @@ public class QueryCasRequestResponse extends AcsResponse {
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Long getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public List<DataItem> getData() {
@@ -287,6 +317,10 @@ public class QueryCasRequestResponse extends AcsResponse {
 
 				private String token;
 
+				private String type;
+
+				private String status;
+
 				public String getId() {
 					return this.id;
 				}
@@ -309,6 +343,22 @@ public class QueryCasRequestResponse extends AcsResponse {
 
 				public void setToken(String token) {
 					this.token = token;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public String getStatus() {
+					return this.status;
+				}
+
+				public void setStatus(String status) {
+					this.status = status;
 				}
 			}
 		}

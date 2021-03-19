@@ -29,13 +29,15 @@ public class SaveClriskRuleRequest extends RpcAcsRequest<SaveClriskRuleResponse>
 
 	private String content;
 
+	private String checkType;
+
 	private String ruleCode;
 
 	private String modelCode;
 
 	private String desc;
 	public SaveClriskRuleRequest() {
-		super("SOFA", "2019-08-15", "SaveClriskRule", "sofacafedeps");
+		super("SOFA", "2019-08-15", "SaveClriskRule", "sofacaferms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,6 +64,17 @@ public class SaveClriskRuleRequest extends RpcAcsRequest<SaveClriskRuleResponse>
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
+		}
+	}
+
+	public String getCheckType() {
+		return this.checkType;
+	}
+
+	public void setCheckType(String checkType) {
+		this.checkType = checkType;
+		if(checkType != null){
+			putBodyParameter("CheckType", checkType);
 		}
 	}
 
