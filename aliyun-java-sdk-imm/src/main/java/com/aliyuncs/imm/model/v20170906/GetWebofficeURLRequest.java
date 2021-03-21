@@ -31,9 +31,13 @@ public class GetWebofficeURLRequest extends RpcAcsRequest<GetWebofficeURLRespons
 
 	private String file;
 
+	private Boolean hidecmb;
+
 	private String notifyEndpoint;
 
 	private String fileID;
+
+	private String watermark;
 
 	private String notifyTopicName;
 
@@ -82,6 +86,17 @@ public class GetWebofficeURLRequest extends RpcAcsRequest<GetWebofficeURLRespons
 		}
 	}
 
+	public Boolean getHidecmb() {
+		return this.hidecmb;
+	}
+
+	public void setHidecmb(Boolean hidecmb) {
+		this.hidecmb = hidecmb;
+		if(hidecmb != null){
+			putQueryParameter("Hidecmb", hidecmb.toString());
+		}
+	}
+
 	public String getNotifyEndpoint() {
 		return this.notifyEndpoint;
 	}
@@ -101,6 +116,17 @@ public class GetWebofficeURLRequest extends RpcAcsRequest<GetWebofficeURLRespons
 		this.fileID = fileID;
 		if(fileID != null){
 			putQueryParameter("FileID", fileID);
+		}
+	}
+
+	public String getWatermark() {
+		return this.watermark;
+	}
+
+	public void setWatermark(String watermark) {
+		this.watermark = watermark;
+		if(watermark != null){
+			putQueryParameter("Watermark", watermark);
 		}
 	}
 

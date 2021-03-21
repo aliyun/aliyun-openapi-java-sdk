@@ -23,8 +23,8 @@ public class DeleteImageResponseUnmarshaller {
 	public static DeleteImageResponse unmarshall(DeleteImageResponse deleteImageResponse, UnmarshallerContext _ctx) {
 		
 		deleteImageResponse.setRequestId(_ctx.stringValue("DeleteImageResponse.RequestId"));
-		deleteImageResponse.setSetId(_ctx.stringValue("DeleteImageResponse.SetId"));
 		deleteImageResponse.setImageUri(_ctx.stringValue("DeleteImageResponse.ImageUri"));
+		deleteImageResponse.setSetId(_ctx.stringValue("DeleteImageResponse.SetId"));
 	 
 	 	return deleteImageResponse;
 	}

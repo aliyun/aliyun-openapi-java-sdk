@@ -24,85 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class IndexVideoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String setId;
-
-	private String videoUri;
-
-	private String remarksA;
-
-	private String remarksB;
-
-	private String createTime;
-
 	private String modifyTime;
 
-	private Float interval;
-
-	private String grabType;
-
-	private String startTime;
+	private String requestId;
 
 	private String endTime;
 
 	private Boolean saveType;
 
-	private String tgtUri;
+	private String externalId;
+
+	private String createTime;
+
+	private String startTime;
+
+	private String videoUri;
+
+	private String grabType;
+
+	private String remarksA;
+
+	private String remarksB;
 
 	private String remarksC;
 
+	private String tgtUri;
+
 	private String remarksD;
 
-	private String externalId;
+	private String setId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
-	public String getVideoUri() {
-		return this.videoUri;
-	}
-
-	public void setVideoUri(String videoUri) {
-		this.videoUri = videoUri;
-	}
-
-	public String getRemarksA() {
-		return this.remarksA;
-	}
-
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
-	}
-
-	public String getRemarksB() {
-		return this.remarksB;
-	}
-
-	public void setRemarksB(String remarksB) {
-		this.remarksB = remarksB;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
+	private Float interval;
 
 	public String getModifyTime() {
 		return this.modifyTime;
@@ -112,28 +64,12 @@ public class IndexVideoResponse extends AcsResponse {
 		this.modifyTime = modifyTime;
 	}
 
-	public Float getInterval() {
-		return this.interval;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setInterval(Float interval) {
-		this.interval = interval;
-	}
-
-	public String getGrabType() {
-		return this.grabType;
-	}
-
-	public void setGrabType(String grabType) {
-		this.grabType = grabType;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getEndTime() {
@@ -152,12 +88,60 @@ public class IndexVideoResponse extends AcsResponse {
 		this.saveType = saveType;
 	}
 
-	public String getTgtUri() {
-		return this.tgtUri;
+	public String getExternalId() {
+		return this.externalId;
 	}
 
-	public void setTgtUri(String tgtUri) {
-		this.tgtUri = tgtUri;
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+	}
+
+	public String getGrabType() {
+		return this.grabType;
+	}
+
+	public void setGrabType(String grabType) {
+		this.grabType = grabType;
+	}
+
+	public String getRemarksA() {
+		return this.remarksA;
+	}
+
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
+	}
+
+	public String getRemarksB() {
+		return this.remarksB;
+	}
+
+	public void setRemarksB(String remarksB) {
+		this.remarksB = remarksB;
 	}
 
 	public String getRemarksC() {
@@ -168,6 +152,14 @@ public class IndexVideoResponse extends AcsResponse {
 		this.remarksC = remarksC;
 	}
 
+	public String getTgtUri() {
+		return this.tgtUri;
+	}
+
+	public void setTgtUri(String tgtUri) {
+		this.tgtUri = tgtUri;
+	}
+
 	public String getRemarksD() {
 		return this.remarksD;
 	}
@@ -176,12 +168,20 @@ public class IndexVideoResponse extends AcsResponse {
 		this.remarksD = remarksD;
 	}
 
-	public String getExternalId() {
-		return this.externalId;
+	public String getSetId() {
+		return this.setId;
 	}
 
-	public void setExternalId(String externalId) {
-		this.externalId = externalId;
+	public void setSetId(String setId) {
+		this.setId = setId;
+	}
+
+	public Float getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(Float interval) {
+		this.interval = interval;
 	}
 
 	@Override

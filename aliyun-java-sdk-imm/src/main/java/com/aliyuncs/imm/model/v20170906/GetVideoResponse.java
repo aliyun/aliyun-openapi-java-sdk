@@ -25,141 +25,93 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVideoResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String setId;
-
-	private String videoUri;
-
-	private String remarksA;
-
-	private String remarksB;
-
-	private String createTime;
-
 	private String modifyTime;
-
-	private Integer videoWidth;
-
-	private Integer videoHeight;
-
-	private String videoFormat;
-
-	private Float videoDuration;
-
-	private Integer fileSize;
-
-	private Integer videoFrames;
-
-	private String sourceType;
-
-	private String sourceUri;
-
-	private String sourcePosition;
 
 	private String processStatus;
 
-	private String processModifyTime;
+	private Integer videoWidth;
 
-	private String videoTagsStatus;
+	private String sourceUri;
 
-	private String videoTagsModifyTime;
+	private String sourceType;
 
-	private String celebrityStatus;
+	private String videoInfo;
 
-	private String celebrityModifyTime;
+	private String remarksA;
 
-	private String processFailReason;
+	private String videoFrameTagsModifyTime;
 
-	private String videoTagsFailReason;
+	private String remarksB;
 
-	private String celebrityFailReason;
+	private String videoFacesFailReason;
+
+	private String videoFacesStatus;
+
+	private String videoOCRModifyTime;
 
 	private String remarksC;
 
 	private String remarksD;
 
-	private String externalId;
+	private Integer videoHeight;
 
-	private String videoFacesStatus;
-
-	private String videoFacesFailReason;
-
-	private String videoFacesModifyTime;
-
-	private String videoFrameTagsStatus;
-
-	private String videoFrameTagsFailReason;
-
-	private String videoFrameTagsModifyTime;
-
-	private String videoSTTStatus;
-
-	private String videoSTTFailReason;
-
-	private String videoSTTModifyTime;
-
-	private String videoOCRStatus;
+	private String sourcePosition;
 
 	private String videoOCRFailReason;
 
-	private String videoOCRModifyTime;
+	private String videoFrameTagsStatus;
 
-	private String videoInfo;
+	private String videoTagsFailReason;
 
-	private List<CelebrityItem> celebrity;
+	private String videoTagsModifyTime;
+
+	private String videoOCRStatus;
+
+	private Integer videoFrames;
+
+	private String requestId;
+
+	private String videoSTTModifyTime;
+
+	private String processModifyTime;
+
+	private String processFailReason;
+
+	private String videoSTTFailReason;
+
+	private String externalId;
+
+	private String createTime;
+
+	private String videoUri;
+
+	private String videoFormat;
+
+	private String videoFrameTagsFailReason;
+
+	private String videoSTTStatus;
+
+	private String videoFacesModifyTime;
+
+	private String celebrityModifyTime;
+
+	private Float videoDuration;
+
+	private String celebrityFailReason;
+
+	private String celebrityStatus;
+
+	private String setId;
+
+	private String videoTagsStatus;
+
+	private Integer fileSize;
 
 	private List<VideoTagsItem> videoTags;
 
 	private List<PersonsItem> persons;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
-	public String getVideoUri() {
-		return this.videoUri;
-	}
-
-	public void setVideoUri(String videoUri) {
-		this.videoUri = videoUri;
-	}
-
-	public String getRemarksA() {
-		return this.remarksA;
-	}
-
-	public void setRemarksA(String remarksA) {
-		this.remarksA = remarksA;
-	}
-
-	public String getRemarksB() {
-		return this.remarksB;
-	}
-
-	public void setRemarksB(String remarksB) {
-		this.remarksB = remarksB;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
+	private List<CelebrityItem> celebrity;
 
 	public String getModifyTime() {
 		return this.modifyTime;
@@ -167,78 +119,6 @@ public class GetVideoResponse extends AcsResponse {
 
 	public void setModifyTime(String modifyTime) {
 		this.modifyTime = modifyTime;
-	}
-
-	public Integer getVideoWidth() {
-		return this.videoWidth;
-	}
-
-	public void setVideoWidth(Integer videoWidth) {
-		this.videoWidth = videoWidth;
-	}
-
-	public Integer getVideoHeight() {
-		return this.videoHeight;
-	}
-
-	public void setVideoHeight(Integer videoHeight) {
-		this.videoHeight = videoHeight;
-	}
-
-	public String getVideoFormat() {
-		return this.videoFormat;
-	}
-
-	public void setVideoFormat(String videoFormat) {
-		this.videoFormat = videoFormat;
-	}
-
-	public Float getVideoDuration() {
-		return this.videoDuration;
-	}
-
-	public void setVideoDuration(Float videoDuration) {
-		this.videoDuration = videoDuration;
-	}
-
-	public Integer getFileSize() {
-		return this.fileSize;
-	}
-
-	public void setFileSize(Integer fileSize) {
-		this.fileSize = fileSize;
-	}
-
-	public Integer getVideoFrames() {
-		return this.videoFrames;
-	}
-
-	public void setVideoFrames(Integer videoFrames) {
-		this.videoFrames = videoFrames;
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-	}
-
-	public String getSourceUri() {
-		return this.sourceUri;
-	}
-
-	public void setSourceUri(String sourceUri) {
-		this.sourceUri = sourceUri;
-	}
-
-	public String getSourcePosition() {
-		return this.sourcePosition;
-	}
-
-	public void setSourcePosition(String sourcePosition) {
-		this.sourcePosition = sourcePosition;
 	}
 
 	public String getProcessStatus() {
@@ -249,68 +129,84 @@ public class GetVideoResponse extends AcsResponse {
 		this.processStatus = processStatus;
 	}
 
-	public String getProcessModifyTime() {
-		return this.processModifyTime;
+	public Integer getVideoWidth() {
+		return this.videoWidth;
 	}
 
-	public void setProcessModifyTime(String processModifyTime) {
-		this.processModifyTime = processModifyTime;
+	public void setVideoWidth(Integer videoWidth) {
+		this.videoWidth = videoWidth;
 	}
 
-	public String getVideoTagsStatus() {
-		return this.videoTagsStatus;
+	public String getSourceUri() {
+		return this.sourceUri;
 	}
 
-	public void setVideoTagsStatus(String videoTagsStatus) {
-		this.videoTagsStatus = videoTagsStatus;
+	public void setSourceUri(String sourceUri) {
+		this.sourceUri = sourceUri;
 	}
 
-	public String getVideoTagsModifyTime() {
-		return this.videoTagsModifyTime;
+	public String getSourceType() {
+		return this.sourceType;
 	}
 
-	public void setVideoTagsModifyTime(String videoTagsModifyTime) {
-		this.videoTagsModifyTime = videoTagsModifyTime;
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
 	}
 
-	public String getCelebrityStatus() {
-		return this.celebrityStatus;
+	public String getVideoInfo() {
+		return this.videoInfo;
 	}
 
-	public void setCelebrityStatus(String celebrityStatus) {
-		this.celebrityStatus = celebrityStatus;
+	public void setVideoInfo(String videoInfo) {
+		this.videoInfo = videoInfo;
 	}
 
-	public String getCelebrityModifyTime() {
-		return this.celebrityModifyTime;
+	public String getRemarksA() {
+		return this.remarksA;
 	}
 
-	public void setCelebrityModifyTime(String celebrityModifyTime) {
-		this.celebrityModifyTime = celebrityModifyTime;
+	public void setRemarksA(String remarksA) {
+		this.remarksA = remarksA;
 	}
 
-	public String getProcessFailReason() {
-		return this.processFailReason;
+	public String getVideoFrameTagsModifyTime() {
+		return this.videoFrameTagsModifyTime;
 	}
 
-	public void setProcessFailReason(String processFailReason) {
-		this.processFailReason = processFailReason;
+	public void setVideoFrameTagsModifyTime(String videoFrameTagsModifyTime) {
+		this.videoFrameTagsModifyTime = videoFrameTagsModifyTime;
 	}
 
-	public String getVideoTagsFailReason() {
-		return this.videoTagsFailReason;
+	public String getRemarksB() {
+		return this.remarksB;
 	}
 
-	public void setVideoTagsFailReason(String videoTagsFailReason) {
-		this.videoTagsFailReason = videoTagsFailReason;
+	public void setRemarksB(String remarksB) {
+		this.remarksB = remarksB;
 	}
 
-	public String getCelebrityFailReason() {
-		return this.celebrityFailReason;
+	public String getVideoFacesFailReason() {
+		return this.videoFacesFailReason;
 	}
 
-	public void setCelebrityFailReason(String celebrityFailReason) {
-		this.celebrityFailReason = celebrityFailReason;
+	public void setVideoFacesFailReason(String videoFacesFailReason) {
+		this.videoFacesFailReason = videoFacesFailReason;
+	}
+
+	public String getVideoFacesStatus() {
+		return this.videoFacesStatus;
+	}
+
+	public void setVideoFacesStatus(String videoFacesStatus) {
+		this.videoFacesStatus = videoFacesStatus;
+	}
+
+	public String getVideoOCRModifyTime() {
+		return this.videoOCRModifyTime;
+	}
+
+	public void setVideoOCRModifyTime(String videoOCRModifyTime) {
+		this.videoOCRModifyTime = videoOCRModifyTime;
 	}
 
 	public String getRemarksC() {
@@ -329,92 +225,20 @@ public class GetVideoResponse extends AcsResponse {
 		this.remarksD = remarksD;
 	}
 
-	public String getExternalId() {
-		return this.externalId;
+	public Integer getVideoHeight() {
+		return this.videoHeight;
 	}
 
-	public void setExternalId(String externalId) {
-		this.externalId = externalId;
+	public void setVideoHeight(Integer videoHeight) {
+		this.videoHeight = videoHeight;
 	}
 
-	public String getVideoFacesStatus() {
-		return this.videoFacesStatus;
+	public String getSourcePosition() {
+		return this.sourcePosition;
 	}
 
-	public void setVideoFacesStatus(String videoFacesStatus) {
-		this.videoFacesStatus = videoFacesStatus;
-	}
-
-	public String getVideoFacesFailReason() {
-		return this.videoFacesFailReason;
-	}
-
-	public void setVideoFacesFailReason(String videoFacesFailReason) {
-		this.videoFacesFailReason = videoFacesFailReason;
-	}
-
-	public String getVideoFacesModifyTime() {
-		return this.videoFacesModifyTime;
-	}
-
-	public void setVideoFacesModifyTime(String videoFacesModifyTime) {
-		this.videoFacesModifyTime = videoFacesModifyTime;
-	}
-
-	public String getVideoFrameTagsStatus() {
-		return this.videoFrameTagsStatus;
-	}
-
-	public void setVideoFrameTagsStatus(String videoFrameTagsStatus) {
-		this.videoFrameTagsStatus = videoFrameTagsStatus;
-	}
-
-	public String getVideoFrameTagsFailReason() {
-		return this.videoFrameTagsFailReason;
-	}
-
-	public void setVideoFrameTagsFailReason(String videoFrameTagsFailReason) {
-		this.videoFrameTagsFailReason = videoFrameTagsFailReason;
-	}
-
-	public String getVideoFrameTagsModifyTime() {
-		return this.videoFrameTagsModifyTime;
-	}
-
-	public void setVideoFrameTagsModifyTime(String videoFrameTagsModifyTime) {
-		this.videoFrameTagsModifyTime = videoFrameTagsModifyTime;
-	}
-
-	public String getVideoSTTStatus() {
-		return this.videoSTTStatus;
-	}
-
-	public void setVideoSTTStatus(String videoSTTStatus) {
-		this.videoSTTStatus = videoSTTStatus;
-	}
-
-	public String getVideoSTTFailReason() {
-		return this.videoSTTFailReason;
-	}
-
-	public void setVideoSTTFailReason(String videoSTTFailReason) {
-		this.videoSTTFailReason = videoSTTFailReason;
-	}
-
-	public String getVideoSTTModifyTime() {
-		return this.videoSTTModifyTime;
-	}
-
-	public void setVideoSTTModifyTime(String videoSTTModifyTime) {
-		this.videoSTTModifyTime = videoSTTModifyTime;
-	}
-
-	public String getVideoOCRStatus() {
-		return this.videoOCRStatus;
-	}
-
-	public void setVideoOCRStatus(String videoOCRStatus) {
-		this.videoOCRStatus = videoOCRStatus;
+	public void setSourcePosition(String sourcePosition) {
+		this.sourcePosition = sourcePosition;
 	}
 
 	public String getVideoOCRFailReason() {
@@ -425,28 +249,196 @@ public class GetVideoResponse extends AcsResponse {
 		this.videoOCRFailReason = videoOCRFailReason;
 	}
 
-	public String getVideoOCRModifyTime() {
-		return this.videoOCRModifyTime;
+	public String getVideoFrameTagsStatus() {
+		return this.videoFrameTagsStatus;
 	}
 
-	public void setVideoOCRModifyTime(String videoOCRModifyTime) {
-		this.videoOCRModifyTime = videoOCRModifyTime;
+	public void setVideoFrameTagsStatus(String videoFrameTagsStatus) {
+		this.videoFrameTagsStatus = videoFrameTagsStatus;
 	}
 
-	public String getVideoInfo() {
-		return this.videoInfo;
+	public String getVideoTagsFailReason() {
+		return this.videoTagsFailReason;
 	}
 
-	public void setVideoInfo(String videoInfo) {
-		this.videoInfo = videoInfo;
+	public void setVideoTagsFailReason(String videoTagsFailReason) {
+		this.videoTagsFailReason = videoTagsFailReason;
 	}
 
-	public List<CelebrityItem> getCelebrity() {
-		return this.celebrity;
+	public String getVideoTagsModifyTime() {
+		return this.videoTagsModifyTime;
 	}
 
-	public void setCelebrity(List<CelebrityItem> celebrity) {
-		this.celebrity = celebrity;
+	public void setVideoTagsModifyTime(String videoTagsModifyTime) {
+		this.videoTagsModifyTime = videoTagsModifyTime;
+	}
+
+	public String getVideoOCRStatus() {
+		return this.videoOCRStatus;
+	}
+
+	public void setVideoOCRStatus(String videoOCRStatus) {
+		this.videoOCRStatus = videoOCRStatus;
+	}
+
+	public Integer getVideoFrames() {
+		return this.videoFrames;
+	}
+
+	public void setVideoFrames(Integer videoFrames) {
+		this.videoFrames = videoFrames;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getVideoSTTModifyTime() {
+		return this.videoSTTModifyTime;
+	}
+
+	public void setVideoSTTModifyTime(String videoSTTModifyTime) {
+		this.videoSTTModifyTime = videoSTTModifyTime;
+	}
+
+	public String getProcessModifyTime() {
+		return this.processModifyTime;
+	}
+
+	public void setProcessModifyTime(String processModifyTime) {
+		this.processModifyTime = processModifyTime;
+	}
+
+	public String getProcessFailReason() {
+		return this.processFailReason;
+	}
+
+	public void setProcessFailReason(String processFailReason) {
+		this.processFailReason = processFailReason;
+	}
+
+	public String getVideoSTTFailReason() {
+		return this.videoSTTFailReason;
+	}
+
+	public void setVideoSTTFailReason(String videoSTTFailReason) {
+		this.videoSTTFailReason = videoSTTFailReason;
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getVideoUri() {
+		return this.videoUri;
+	}
+
+	public void setVideoUri(String videoUri) {
+		this.videoUri = videoUri;
+	}
+
+	public String getVideoFormat() {
+		return this.videoFormat;
+	}
+
+	public void setVideoFormat(String videoFormat) {
+		this.videoFormat = videoFormat;
+	}
+
+	public String getVideoFrameTagsFailReason() {
+		return this.videoFrameTagsFailReason;
+	}
+
+	public void setVideoFrameTagsFailReason(String videoFrameTagsFailReason) {
+		this.videoFrameTagsFailReason = videoFrameTagsFailReason;
+	}
+
+	public String getVideoSTTStatus() {
+		return this.videoSTTStatus;
+	}
+
+	public void setVideoSTTStatus(String videoSTTStatus) {
+		this.videoSTTStatus = videoSTTStatus;
+	}
+
+	public String getVideoFacesModifyTime() {
+		return this.videoFacesModifyTime;
+	}
+
+	public void setVideoFacesModifyTime(String videoFacesModifyTime) {
+		this.videoFacesModifyTime = videoFacesModifyTime;
+	}
+
+	public String getCelebrityModifyTime() {
+		return this.celebrityModifyTime;
+	}
+
+	public void setCelebrityModifyTime(String celebrityModifyTime) {
+		this.celebrityModifyTime = celebrityModifyTime;
+	}
+
+	public Float getVideoDuration() {
+		return this.videoDuration;
+	}
+
+	public void setVideoDuration(Float videoDuration) {
+		this.videoDuration = videoDuration;
+	}
+
+	public String getCelebrityFailReason() {
+		return this.celebrityFailReason;
+	}
+
+	public void setCelebrityFailReason(String celebrityFailReason) {
+		this.celebrityFailReason = celebrityFailReason;
+	}
+
+	public String getCelebrityStatus() {
+		return this.celebrityStatus;
+	}
+
+	public void setCelebrityStatus(String celebrityStatus) {
+		this.celebrityStatus = celebrityStatus;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+	}
+
+	public String getVideoTagsStatus() {
+		return this.videoTagsStatus;
+	}
+
+	public void setVideoTagsStatus(String videoTagsStatus) {
+		this.videoTagsStatus = videoTagsStatus;
+	}
+
+	public Integer getFileSize() {
+		return this.fileSize;
+	}
+
+	public void setFileSize(Integer fileSize) {
+		this.fileSize = fileSize;
 	}
 
 	public List<VideoTagsItem> getVideoTags() {
@@ -463,6 +455,110 @@ public class GetVideoResponse extends AcsResponse {
 
 	public void setPersons(List<PersonsItem> persons) {
 		this.persons = persons;
+	}
+
+	public List<CelebrityItem> getCelebrity() {
+		return this.celebrity;
+	}
+
+	public void setCelebrity(List<CelebrityItem> celebrity) {
+		this.celebrity = celebrity;
+	}
+
+	public static class VideoTagsItem {
+
+		private Float tagConfidence;
+
+		private String tagName;
+
+		private Integer tagLevel;
+
+		private String parentTagName;
+
+		public Float getTagConfidence() {
+			return this.tagConfidence;
+		}
+
+		public void setTagConfidence(Float tagConfidence) {
+			this.tagConfidence = tagConfidence;
+		}
+
+		public String getTagName() {
+			return this.tagName;
+		}
+
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
+		}
+
+		public Integer getTagLevel() {
+			return this.tagLevel;
+		}
+
+		public void setTagLevel(Integer tagLevel) {
+			this.tagLevel = tagLevel;
+		}
+
+		public String getParentTagName() {
+			return this.parentTagName;
+		}
+
+		public void setParentTagName(String parentTagName) {
+			this.parentTagName = parentTagName;
+		}
+	}
+
+	public static class PersonsItem {
+
+		private String personId;
+
+		private Float genderConfidence;
+
+		private String gender;
+
+		private Integer age;
+
+		private Float ageConfidence;
+
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
+		}
+
+		public Float getGenderConfidence() {
+			return this.genderConfidence;
+		}
+
+		public void setGenderConfidence(Float genderConfidence) {
+			this.genderConfidence = genderConfidence;
+		}
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
+
+		public Integer getAge() {
+			return this.age;
+		}
+
+		public void setAge(Integer age) {
+			this.age = age;
+		}
+
+		public Float getAgeConfidence() {
+			return this.ageConfidence;
+		}
+
+		public void setAgeConfidence(Float ageConfidence) {
+			this.ageConfidence = ageConfidence;
+		}
 	}
 
 	public static class CelebrityItem {
@@ -495,102 +591,6 @@ public class GetVideoResponse extends AcsResponse {
 
 		public void setCelebrityLibraryName(String celebrityLibraryName) {
 			this.celebrityLibraryName = celebrityLibraryName;
-		}
-	}
-
-	public static class VideoTagsItem {
-
-		private String tagName;
-
-		private String parentTagName;
-
-		private Float tagConfidence;
-
-		private Integer tagLevel;
-
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
-		}
-
-		public String getParentTagName() {
-			return this.parentTagName;
-		}
-
-		public void setParentTagName(String parentTagName) {
-			this.parentTagName = parentTagName;
-		}
-
-		public Float getTagConfidence() {
-			return this.tagConfidence;
-		}
-
-		public void setTagConfidence(Float tagConfidence) {
-			this.tagConfidence = tagConfidence;
-		}
-
-		public Integer getTagLevel() {
-			return this.tagLevel;
-		}
-
-		public void setTagLevel(Integer tagLevel) {
-			this.tagLevel = tagLevel;
-		}
-	}
-
-	public static class PersonsItem {
-
-		private String personId;
-
-		private Integer age;
-
-		private Float ageConfidence;
-
-		private String gender;
-
-		private Float genderConfidence;
-
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
-		}
-
-		public Integer getAge() {
-			return this.age;
-		}
-
-		public void setAge(Integer age) {
-			this.age = age;
-		}
-
-		public Float getAgeConfidence() {
-			return this.ageConfidence;
-		}
-
-		public void setAgeConfidence(Float ageConfidence) {
-			this.ageConfidence = ageConfidence;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public Float getGenderConfidence() {
-			return this.genderConfidence;
-		}
-
-		public void setGenderConfidence(Float genderConfidence) {
-			this.genderConfidence = genderConfidence;
 		}
 	}
 

@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVideoCompressTaskResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String taskId;
 
+	private String requestId;
+
 	private String taskType;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getTaskId() {
 		return this.taskId;
@@ -44,6 +36,14 @@ public class CreateVideoCompressTaskResponse extends AcsResponse {
 
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTaskType() {

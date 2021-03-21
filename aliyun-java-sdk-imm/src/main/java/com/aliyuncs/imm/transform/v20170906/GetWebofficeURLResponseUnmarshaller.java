@@ -23,11 +23,11 @@ public class GetWebofficeURLResponseUnmarshaller {
 	public static GetWebofficeURLResponse unmarshall(GetWebofficeURLResponse getWebofficeURLResponse, UnmarshallerContext _ctx) {
 		
 		getWebofficeURLResponse.setRequestId(_ctx.stringValue("GetWebofficeURLResponse.RequestId"));
-		getWebofficeURLResponse.setWebofficeURL(_ctx.stringValue("GetWebofficeURLResponse.WebofficeURL"));
-		getWebofficeURLResponse.setAccessToken(_ctx.stringValue("GetWebofficeURLResponse.AccessToken"));
 		getWebofficeURLResponse.setRefreshToken(_ctx.stringValue("GetWebofficeURLResponse.RefreshToken"));
-		getWebofficeURLResponse.setAccessTokenExpiredTime(_ctx.stringValue("GetWebofficeURLResponse.AccessTokenExpiredTime"));
+		getWebofficeURLResponse.setAccessToken(_ctx.stringValue("GetWebofficeURLResponse.AccessToken"));
 		getWebofficeURLResponse.setRefreshTokenExpiredTime(_ctx.stringValue("GetWebofficeURLResponse.RefreshTokenExpiredTime"));
+		getWebofficeURLResponse.setWebofficeURL(_ctx.stringValue("GetWebofficeURLResponse.WebofficeURL"));
+		getWebofficeURLResponse.setAccessTokenExpiredTime(_ctx.stringValue("GetWebofficeURLResponse.AccessTokenExpiredTime"));
 	 
 	 	return getWebofficeURLResponse;
 	}

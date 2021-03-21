@@ -23,17 +23,17 @@ public class IndexImageResponseUnmarshaller {
 	public static IndexImageResponse unmarshall(IndexImageResponse indexImageResponse, UnmarshallerContext _ctx) {
 		
 		indexImageResponse.setRequestId(_ctx.stringValue("IndexImageResponse.RequestId"));
+		indexImageResponse.setRemarksArrayB(_ctx.stringValue("IndexImageResponse.RemarksArrayB"));
+		indexImageResponse.setModifyTime(_ctx.stringValue("IndexImageResponse.ModifyTime"));
+		indexImageResponse.setRemarksC(_ctx.stringValue("IndexImageResponse.RemarksC"));
+		indexImageResponse.setRemarksD(_ctx.stringValue("IndexImageResponse.RemarksD"));
+		indexImageResponse.setRemarksArrayA(_ctx.stringValue("IndexImageResponse.RemarksArrayA"));
+		indexImageResponse.setExternalId(_ctx.stringValue("IndexImageResponse.ExternalId"));
+		indexImageResponse.setCreateTime(_ctx.stringValue("IndexImageResponse.CreateTime"));
 		indexImageResponse.setSetId(_ctx.stringValue("IndexImageResponse.SetId"));
 		indexImageResponse.setImageUri(_ctx.stringValue("IndexImageResponse.ImageUri"));
 		indexImageResponse.setRemarksA(_ctx.stringValue("IndexImageResponse.RemarksA"));
 		indexImageResponse.setRemarksB(_ctx.stringValue("IndexImageResponse.RemarksB"));
-		indexImageResponse.setCreateTime(_ctx.stringValue("IndexImageResponse.CreateTime"));
-		indexImageResponse.setModifyTime(_ctx.stringValue("IndexImageResponse.ModifyTime"));
-		indexImageResponse.setRemarksC(_ctx.stringValue("IndexImageResponse.RemarksC"));
-		indexImageResponse.setRemarksD(_ctx.stringValue("IndexImageResponse.RemarksD"));
-		indexImageResponse.setExternalId(_ctx.stringValue("IndexImageResponse.ExternalId"));
-		indexImageResponse.setRemarksArrayA(_ctx.stringValue("IndexImageResponse.RemarksArrayA"));
-		indexImageResponse.setRemarksArrayB(_ctx.stringValue("IndexImageResponse.RemarksArrayB"));
 	 
 	 	return indexImageResponse;
 	}

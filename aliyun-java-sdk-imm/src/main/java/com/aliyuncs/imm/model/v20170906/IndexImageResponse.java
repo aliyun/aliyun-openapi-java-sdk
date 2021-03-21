@@ -24,7 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class IndexImageResponse extends AcsResponse {
 
+	private String remarksArrayB;
+
+	private String modifyTime;
+
+	private String remarksC;
+
+	private String remarksD;
+
 	private String requestId;
+
+	private String remarksArrayA;
+
+	private String externalId;
+
+	private String createTime;
 
 	private String setId;
 
@@ -34,19 +48,37 @@ public class IndexImageResponse extends AcsResponse {
 
 	private String remarksB;
 
-	private String createTime;
+	public String getRemarksArrayB() {
+		return this.remarksArrayB;
+	}
 
-	private String modifyTime;
+	public void setRemarksArrayB(String remarksArrayB) {
+		this.remarksArrayB = remarksArrayB;
+	}
 
-	private String remarksC;
+	public String getModifyTime() {
+		return this.modifyTime;
+	}
 
-	private String remarksD;
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
+	}
 
-	private String externalId;
+	public String getRemarksC() {
+		return this.remarksC;
+	}
 
-	private String remarksArrayA;
+	public void setRemarksC(String remarksC) {
+		this.remarksC = remarksC;
+	}
 
-	private String remarksArrayB;
+	public String getRemarksD() {
+		return this.remarksD;
+	}
+
+	public void setRemarksD(String remarksD) {
+		this.remarksD = remarksD;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -54,6 +86,30 @@ public class IndexImageResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getRemarksArrayA() {
+		return this.remarksArrayA;
+	}
+
+	public void setRemarksArrayA(String remarksArrayA) {
+		this.remarksArrayA = remarksArrayA;
+	}
+
+	public String getExternalId() {
+		return this.externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	public String getSetId() {
@@ -86,62 +142,6 @@ public class IndexImageResponse extends AcsResponse {
 
 	public void setRemarksB(String remarksB) {
 		this.remarksB = remarksB;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getModifyTime() {
-		return this.modifyTime;
-	}
-
-	public void setModifyTime(String modifyTime) {
-		this.modifyTime = modifyTime;
-	}
-
-	public String getRemarksC() {
-		return this.remarksC;
-	}
-
-	public void setRemarksC(String remarksC) {
-		this.remarksC = remarksC;
-	}
-
-	public String getRemarksD() {
-		return this.remarksD;
-	}
-
-	public void setRemarksD(String remarksD) {
-		this.remarksD = remarksD;
-	}
-
-	public String getExternalId() {
-		return this.externalId;
-	}
-
-	public void setExternalId(String externalId) {
-		this.externalId = externalId;
-	}
-
-	public String getRemarksArrayA() {
-		return this.remarksArrayA;
-	}
-
-	public void setRemarksArrayA(String remarksArrayA) {
-		this.remarksArrayA = remarksArrayA;
-	}
-
-	public String getRemarksArrayB() {
-		return this.remarksArrayB;
-	}
-
-	public void setRemarksArrayB(String remarksArrayB) {
-		this.remarksArrayB = remarksArrayB;
 	}
 
 	@Override

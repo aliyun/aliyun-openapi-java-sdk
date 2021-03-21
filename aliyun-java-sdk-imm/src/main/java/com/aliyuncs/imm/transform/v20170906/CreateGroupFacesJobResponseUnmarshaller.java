@@ -23,9 +23,9 @@ public class CreateGroupFacesJobResponseUnmarshaller {
 	public static CreateGroupFacesJobResponse unmarshall(CreateGroupFacesJobResponse createGroupFacesJobResponse, UnmarshallerContext _ctx) {
 		
 		createGroupFacesJobResponse.setRequestId(_ctx.stringValue("CreateGroupFacesJobResponse.RequestId"));
-		createGroupFacesJobResponse.setJobId(_ctx.stringValue("CreateGroupFacesJobResponse.JobId"));
-		createGroupFacesJobResponse.setSetId(_ctx.stringValue("CreateGroupFacesJobResponse.SetId"));
 		createGroupFacesJobResponse.setJobType(_ctx.stringValue("CreateGroupFacesJobResponse.JobType"));
+		createGroupFacesJobResponse.setSetId(_ctx.stringValue("CreateGroupFacesJobResponse.SetId"));
+		createGroupFacesJobResponse.setJobId(_ctx.stringValue("CreateGroupFacesJobResponse.JobId"));
 	 
 	 	return createGroupFacesJobResponse;
 	}

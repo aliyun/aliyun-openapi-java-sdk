@@ -24,17 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetWebofficeURLResponse extends AcsResponse {
 
-	private String requestId;
+	private String refreshToken;
 
-	private String webofficeURL;
+	private String requestId;
 
 	private String accessToken;
 
-	private String refreshToken;
+	private String refreshTokenExpiredTime;
+
+	private String webofficeURL;
 
 	private String accessTokenExpiredTime;
 
-	private String refreshTokenExpiredTime;
+	public String getRefreshToken() {
+		return this.refreshToken;
+	}
+
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,14 +50,6 @@ public class GetWebofficeURLResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getWebofficeURL() {
-		return this.webofficeURL;
-	}
-
-	public void setWebofficeURL(String webofficeURL) {
-		this.webofficeURL = webofficeURL;
 	}
 
 	public String getAccessToken() {
@@ -60,12 +60,20 @@ public class GetWebofficeURLResponse extends AcsResponse {
 		this.accessToken = accessToken;
 	}
 
-	public String getRefreshToken() {
-		return this.refreshToken;
+	public String getRefreshTokenExpiredTime() {
+		return this.refreshTokenExpiredTime;
 	}
 
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
+	public void setRefreshTokenExpiredTime(String refreshTokenExpiredTime) {
+		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
+	}
+
+	public String getWebofficeURL() {
+		return this.webofficeURL;
+	}
+
+	public void setWebofficeURL(String webofficeURL) {
+		this.webofficeURL = webofficeURL;
 	}
 
 	public String getAccessTokenExpiredTime() {
@@ -74,14 +82,6 @@ public class GetWebofficeURLResponse extends AcsResponse {
 
 	public void setAccessTokenExpiredTime(String accessTokenExpiredTime) {
 		this.accessTokenExpiredTime = accessTokenExpiredTime;
-	}
-
-	public String getRefreshTokenExpiredTime() {
-		return this.refreshTokenExpiredTime;
-	}
-
-	public void setRefreshTokenExpiredTime(String refreshTokenExpiredTime) {
-		this.refreshTokenExpiredTime = refreshTokenExpiredTime;
 	}
 
 	@Override

@@ -26,9 +26,9 @@ public class DeleteImageResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String setId;
-
 	private String imageUri;
+
+	private String setId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class DeleteImageResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
-	}
-
 	public String getImageUri() {
 		return this.imageUri;
 	}
 
 	public void setImageUri(String imageUri) {
 		this.imageUri = imageUri;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
 	}
 
 	@Override

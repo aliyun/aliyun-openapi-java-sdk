@@ -24,13 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateGroupFacesJobResponse extends AcsResponse {
 
-	private String requestId;
+	private String jobType;
 
-	private String jobId;
+	private String requestId;
 
 	private String setId;
 
-	private String jobType;
+	private String jobId;
+
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,14 +46,6 @@ public class CreateGroupFacesJobResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
 	}
 
 	public String getSetId() {
@@ -56,12 +56,12 @@ public class CreateGroupFacesJobResponse extends AcsResponse {
 		this.setId = setId;
 	}
 
-	public String getJobType() {
-		return this.jobType;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setJobType(String jobType) {
-		this.jobType = jobType;
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

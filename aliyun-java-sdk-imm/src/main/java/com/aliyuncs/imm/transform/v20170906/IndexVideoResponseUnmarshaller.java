@@ -23,21 +23,21 @@ public class IndexVideoResponseUnmarshaller {
 	public static IndexVideoResponse unmarshall(IndexVideoResponse indexVideoResponse, UnmarshallerContext _ctx) {
 		
 		indexVideoResponse.setRequestId(_ctx.stringValue("IndexVideoResponse.RequestId"));
-		indexVideoResponse.setSetId(_ctx.stringValue("IndexVideoResponse.SetId"));
-		indexVideoResponse.setVideoUri(_ctx.stringValue("IndexVideoResponse.VideoUri"));
-		indexVideoResponse.setRemarksA(_ctx.stringValue("IndexVideoResponse.RemarksA"));
-		indexVideoResponse.setRemarksB(_ctx.stringValue("IndexVideoResponse.RemarksB"));
-		indexVideoResponse.setCreateTime(_ctx.stringValue("IndexVideoResponse.CreateTime"));
 		indexVideoResponse.setModifyTime(_ctx.stringValue("IndexVideoResponse.ModifyTime"));
-		indexVideoResponse.setInterval(_ctx.floatValue("IndexVideoResponse.Interval"));
-		indexVideoResponse.setGrabType(_ctx.stringValue("IndexVideoResponse.GrabType"));
-		indexVideoResponse.setStartTime(_ctx.stringValue("IndexVideoResponse.StartTime"));
 		indexVideoResponse.setEndTime(_ctx.stringValue("IndexVideoResponse.EndTime"));
 		indexVideoResponse.setSaveType(_ctx.booleanValue("IndexVideoResponse.SaveType"));
-		indexVideoResponse.setTgtUri(_ctx.stringValue("IndexVideoResponse.TgtUri"));
-		indexVideoResponse.setRemarksC(_ctx.stringValue("IndexVideoResponse.RemarksC"));
-		indexVideoResponse.setRemarksD(_ctx.stringValue("IndexVideoResponse.RemarksD"));
 		indexVideoResponse.setExternalId(_ctx.stringValue("IndexVideoResponse.ExternalId"));
+		indexVideoResponse.setCreateTime(_ctx.stringValue("IndexVideoResponse.CreateTime"));
+		indexVideoResponse.setStartTime(_ctx.stringValue("IndexVideoResponse.StartTime"));
+		indexVideoResponse.setVideoUri(_ctx.stringValue("IndexVideoResponse.VideoUri"));
+		indexVideoResponse.setGrabType(_ctx.stringValue("IndexVideoResponse.GrabType"));
+		indexVideoResponse.setRemarksA(_ctx.stringValue("IndexVideoResponse.RemarksA"));
+		indexVideoResponse.setRemarksB(_ctx.stringValue("IndexVideoResponse.RemarksB"));
+		indexVideoResponse.setRemarksC(_ctx.stringValue("IndexVideoResponse.RemarksC"));
+		indexVideoResponse.setTgtUri(_ctx.stringValue("IndexVideoResponse.TgtUri"));
+		indexVideoResponse.setRemarksD(_ctx.stringValue("IndexVideoResponse.RemarksD"));
+		indexVideoResponse.setSetId(_ctx.stringValue("IndexVideoResponse.SetId"));
+		indexVideoResponse.setInterval(_ctx.floatValue("IndexVideoResponse.Interval"));
 	 
 	 	return indexVideoResponse;
 	}
