@@ -27,6 +27,10 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 
 	private String clientToken;
 
+	private String securityGroupId;
+
+	private String vSwitchId;
+
 	private String instanceName;
 
 	private String instanceType;
@@ -47,6 +51,28 @@ public class CreateEaiRequest extends RpcAcsRequest<CreateEaiResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
+		}
+	}
+
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
 		}
 	}
 
