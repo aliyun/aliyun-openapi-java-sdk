@@ -63,6 +63,8 @@ public class ListCrawlerWorkflowInstanceResponseUnmarshaller {
 			workflowInstanceList.setFailureInfo(_ctx.stringValue("ListCrawlerWorkflowInstanceResponse.Data["+ i +"].FailureInfo"));
 			workflowInstanceList.setFlowExtendResult(_ctx.stringValue("ListCrawlerWorkflowInstanceResponse.Data["+ i +"].FlowExtendResult"));
 			workflowInstanceList.setCrawlerIsDelete(_ctx.booleanValue("ListCrawlerWorkflowInstanceResponse.Data["+ i +"].CrawlerIsDelete"));
+			workflowInstanceList.setBatchProgress(_ctx.integerValue("ListCrawlerWorkflowInstanceResponse.Data["+ i +"].BatchProgress"));
+			workflowInstanceList.setExecuteMode(_ctx.stringValue("ListCrawlerWorkflowInstanceResponse.Data["+ i +"].ExecuteMode"));
 
 			data.add(workflowInstanceList);
 		}

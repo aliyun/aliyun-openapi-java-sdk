@@ -62,6 +62,10 @@ public class GetRegionStatusResponse extends AcsResponse {
 
 		private String regionStatus;
 
+		private Boolean isDependencyReady;
+
+		private String accountStatus;
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -84,6 +88,22 @@ public class GetRegionStatusResponse extends AcsResponse {
 
 		public void setRegionStatus(String regionStatus) {
 			this.regionStatus = regionStatus;
+		}
+
+		public Boolean getIsDependencyReady() {
+			return this.isDependencyReady;
+		}
+
+		public void setIsDependencyReady(Boolean isDependencyReady) {
+			this.isDependencyReady = isDependencyReady;
+		}
+
+		public String getAccountStatus() {
+			return this.accountStatus;
+		}
+
+		public void setAccountStatus(String accountStatus) {
+			this.accountStatus = accountStatus;
 		}
 	}
 

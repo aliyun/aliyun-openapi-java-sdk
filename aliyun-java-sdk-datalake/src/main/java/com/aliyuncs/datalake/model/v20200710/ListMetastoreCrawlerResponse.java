@@ -107,6 +107,8 @@ public class ListMetastoreCrawlerResponse extends AcsResponse {
 
 		private String creatorLoginName;
 
+		private String executeMode;
+
 		private WorkflowLastRunInstance workflowLastRunInstance;
 
 		public String getOwner() {
@@ -269,6 +271,14 @@ public class ListMetastoreCrawlerResponse extends AcsResponse {
 			this.creatorLoginName = creatorLoginName;
 		}
 
+		public String getExecuteMode() {
+			return this.executeMode;
+		}
+
+		public void setExecuteMode(String executeMode) {
+			this.executeMode = executeMode;
+		}
+
 		public WorkflowLastRunInstance getWorkflowLastRunInstance() {
 			return this.workflowLastRunInstance;
 		}
@@ -300,6 +310,8 @@ public class ListMetastoreCrawlerResponse extends AcsResponse {
 			private String failureInfo;
 
 			private String flowExtendResult;
+
+			private Integer batchProgress;
 
 			public String getFlowId() {
 				return this.flowId;
@@ -387,6 +399,14 @@ public class ListMetastoreCrawlerResponse extends AcsResponse {
 
 			public void setFlowExtendResult(String flowExtendResult) {
 				this.flowExtendResult = flowExtendResult;
+			}
+
+			public Integer getBatchProgress() {
+				return this.batchProgress;
+			}
+
+			public void setBatchProgress(Integer batchProgress) {
+				this.batchProgress = batchProgress;
 			}
 		}
 	}

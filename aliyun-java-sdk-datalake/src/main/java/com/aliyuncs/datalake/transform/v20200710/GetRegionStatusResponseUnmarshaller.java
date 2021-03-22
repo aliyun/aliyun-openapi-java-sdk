@@ -30,6 +30,8 @@ public class GetRegionStatusResponseUnmarshaller {
 		data.setRegionId(_ctx.stringValue("GetRegionStatusResponse.Data.RegionId"));
 		data.setIsDlfServiceOpen(_ctx.booleanValue("GetRegionStatusResponse.Data.IsDlfServiceOpen"));
 		data.setRegionStatus(_ctx.stringValue("GetRegionStatusResponse.Data.RegionStatus"));
+		data.setIsDependencyReady(_ctx.booleanValue("GetRegionStatusResponse.Data.IsDependencyReady"));
+		data.setAccountStatus(_ctx.stringValue("GetRegionStatusResponse.Data.AccountStatus"));
 		getRegionStatusResponse.setData(data);
 	 
 	 	return getRegionStatusResponse;

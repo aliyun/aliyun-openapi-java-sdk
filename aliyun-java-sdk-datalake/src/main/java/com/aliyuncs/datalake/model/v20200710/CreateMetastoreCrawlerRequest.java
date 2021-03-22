@@ -39,6 +39,8 @@ public class CreateMetastoreCrawlerRequest extends RoaAcsRequest<CreateMetastore
 
 	private Boolean immediatelyRun;
 
+	private String executeMode;
+
 	private String targetUpdateStrategy;
 
 	private String datasourcePath;
@@ -134,6 +136,17 @@ public class CreateMetastoreCrawlerRequest extends RoaAcsRequest<CreateMetastore
 		this.immediatelyRun = immediatelyRun;
 		if(immediatelyRun != null){
 			putBodyParameter("ImmediatelyRun", immediatelyRun.toString());
+		}
+	}
+
+	public String getExecuteMode() {
+		return this.executeMode;
+	}
+
+	public void setExecuteMode(String executeMode) {
+		this.executeMode = executeMode;
+		if(executeMode != null){
+			putBodyParameter("ExecuteMode", executeMode);
 		}
 	}
 

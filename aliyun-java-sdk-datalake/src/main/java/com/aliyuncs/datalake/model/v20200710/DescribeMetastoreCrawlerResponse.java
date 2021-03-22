@@ -66,6 +66,8 @@ public class DescribeMetastoreCrawlerResponse extends AcsResponse {
 
 	private String status;
 
+	private String executeMode;
+
 	private WorkflowLastRunInstance workflowLastRunInstance;
 
 	public String getRegionId() {
@@ -236,6 +238,14 @@ public class DescribeMetastoreCrawlerResponse extends AcsResponse {
 		this.status = status;
 	}
 
+	public String getExecuteMode() {
+		return this.executeMode;
+	}
+
+	public void setExecuteMode(String executeMode) {
+		this.executeMode = executeMode;
+	}
+
 	public WorkflowLastRunInstance getWorkflowLastRunInstance() {
 		return this.workflowLastRunInstance;
 	}
@@ -267,6 +277,8 @@ public class DescribeMetastoreCrawlerResponse extends AcsResponse {
 		private String failureInfo;
 
 		private String flowExtendResult;
+
+		private Integer batchProgress;
 
 		public String getFlowInstanceId() {
 			return this.flowInstanceId;
@@ -354,6 +366,14 @@ public class DescribeMetastoreCrawlerResponse extends AcsResponse {
 
 		public void setFlowExtendResult(String flowExtendResult) {
 			this.flowExtendResult = flowExtendResult;
+		}
+
+		public Integer getBatchProgress() {
+			return this.batchProgress;
+		}
+
+		public void setBatchProgress(Integer batchProgress) {
+			this.batchProgress = batchProgress;
 		}
 	}
 

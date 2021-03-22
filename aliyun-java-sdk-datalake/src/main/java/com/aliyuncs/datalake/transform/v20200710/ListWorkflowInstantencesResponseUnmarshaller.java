@@ -42,6 +42,9 @@ public class ListWorkflowInstantencesResponseUnmarshaller {
 			flowInstance.setStatus(_ctx.stringValue("ListWorkflowInstantencesResponse.FlowInstances["+ i +"].Status"));
 			flowInstance.setProjectId(_ctx.stringValue("ListWorkflowInstantencesResponse.FlowInstances["+ i +"].ProjectId"));
 			flowInstance.setClusterId(_ctx.stringValue("ListWorkflowInstantencesResponse.FlowInstances["+ i +"].ClusterId"));
+			flowInstance.setTotalCuUsage(_ctx.floatValue("ListWorkflowInstantencesResponse.FlowInstances["+ i +"].TotalCuUsage"));
+			flowInstance.setOffsetTime(_ctx.integerValue("ListWorkflowInstantencesResponse.FlowInstances["+ i +"].OffsetTime"));
+			flowInstance.setBatchProgress(_ctx.integerValue("ListWorkflowInstantencesResponse.FlowInstances["+ i +"].BatchProgress"));
 
 			flowInstances.add(flowInstance);
 		}

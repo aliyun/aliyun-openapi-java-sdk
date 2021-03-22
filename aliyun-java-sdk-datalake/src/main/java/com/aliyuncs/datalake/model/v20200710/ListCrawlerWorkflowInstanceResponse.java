@@ -127,6 +127,10 @@ public class ListCrawlerWorkflowInstanceResponse extends AcsResponse {
 
 		private Boolean crawlerIsDelete;
 
+		private Integer batchProgress;
+
+		private String executeMode;
+
 		public String getGmtModified() {
 			return this.gmtModified;
 		}
@@ -365,6 +369,22 @@ public class ListCrawlerWorkflowInstanceResponse extends AcsResponse {
 
 		public void setCrawlerIsDelete(Boolean crawlerIsDelete) {
 			this.crawlerIsDelete = crawlerIsDelete;
+		}
+
+		public Integer getBatchProgress() {
+			return this.batchProgress;
+		}
+
+		public void setBatchProgress(Integer batchProgress) {
+			this.batchProgress = batchProgress;
+		}
+
+		public String getExecuteMode() {
+			return this.executeMode;
+		}
+
+		public void setExecuteMode(String executeMode) {
+			this.executeMode = executeMode;
 		}
 	}
 

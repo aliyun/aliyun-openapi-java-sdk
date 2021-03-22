@@ -54,6 +54,7 @@ public class ListMetastoreCrawlerResponseUnmarshaller {
 			metastoreCrawlerList.setDatasourcePath(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].DatasourcePath"));
 			metastoreCrawlerList.setStatus(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].Status"));
 			metastoreCrawlerList.setCreatorLoginName(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].CreatorLoginName"));
+			metastoreCrawlerList.setExecuteMode(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].ExecuteMode"));
 
 			WorkflowLastRunInstance workflowLastRunInstance = new WorkflowLastRunInstance();
 			workflowLastRunInstance.setFlowId(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].WorkflowLastRunInstance.FlowId"));
@@ -67,6 +68,7 @@ public class ListMetastoreCrawlerResponseUnmarshaller {
 			workflowLastRunInstance.setDuration(_ctx.integerValue("ListMetastoreCrawlerResponse.Data["+ i +"].WorkflowLastRunInstance.Duration"));
 			workflowLastRunInstance.setFailureInfo(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].WorkflowLastRunInstance.FailureInfo"));
 			workflowLastRunInstance.setFlowExtendResult(_ctx.stringValue("ListMetastoreCrawlerResponse.Data["+ i +"].WorkflowLastRunInstance.FlowExtendResult"));
+			workflowLastRunInstance.setBatchProgress(_ctx.integerValue("ListMetastoreCrawlerResponse.Data["+ i +"].WorkflowLastRunInstance.BatchProgress"));
 			metastoreCrawlerList.setWorkflowLastRunInstance(workflowLastRunInstance);
 
 			data.add(metastoreCrawlerList);

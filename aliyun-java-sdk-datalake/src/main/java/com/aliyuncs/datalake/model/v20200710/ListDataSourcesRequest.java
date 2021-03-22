@@ -25,6 +25,8 @@ import com.aliyuncs.datalake.Endpoint;
 public class ListDataSourcesRequest extends RoaAcsRequest<ListDataSourcesResponse> {
 	   
 
+	private String orderCol;
+
 	private String dataSourceType;
 
 	private Integer pageSize;
@@ -32,6 +34,8 @@ public class ListDataSourcesRequest extends RoaAcsRequest<ListDataSourcesRespons
 	private String name;
 
 	private Integer pageNumber;
+
+	private String orderType;
 	public ListDataSourcesRequest() {
 		super("DataLake", "2020-07-10", "ListDataSources");
 		setUriPattern("/webapi/datasource/list");
@@ -40,6 +44,17 @@ public class ListDataSourcesRequest extends RoaAcsRequest<ListDataSourcesRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrderCol() {
+		return this.orderCol;
+	}
+
+	public void setOrderCol(String orderCol) {
+		this.orderCol = orderCol;
+		if(orderCol != null){
+			putQueryParameter("OrderCol", orderCol);
+		}
 	}
 
 	public String getDataSourceType() {
@@ -83,6 +98,17 @@ public class ListDataSourcesRequest extends RoaAcsRequest<ListDataSourcesRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

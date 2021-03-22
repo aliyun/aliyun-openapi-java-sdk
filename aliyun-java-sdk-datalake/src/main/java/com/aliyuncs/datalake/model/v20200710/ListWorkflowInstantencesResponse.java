@@ -85,6 +85,12 @@ public class ListWorkflowInstantencesResponse extends AcsResponse {
 
 		private String clusterId;
 
+		private Float totalCuUsage;
+
+		private Integer offsetTime;
+
+		private Integer batchProgress;
+
 		public String getFlowInstanceId() {
 			return this.flowInstanceId;
 		}
@@ -155,6 +161,30 @@ public class ListWorkflowInstantencesResponse extends AcsResponse {
 
 		public void setClusterId(String clusterId) {
 			this.clusterId = clusterId;
+		}
+
+		public Float getTotalCuUsage() {
+			return this.totalCuUsage;
+		}
+
+		public void setTotalCuUsage(Float totalCuUsage) {
+			this.totalCuUsage = totalCuUsage;
+		}
+
+		public Integer getOffsetTime() {
+			return this.offsetTime;
+		}
+
+		public void setOffsetTime(Integer offsetTime) {
+			this.offsetTime = offsetTime;
+		}
+
+		public Integer getBatchProgress() {
+			return this.batchProgress;
+		}
+
+		public void setBatchProgress(Integer batchProgress) {
+			this.batchProgress = batchProgress;
 		}
 	}
 

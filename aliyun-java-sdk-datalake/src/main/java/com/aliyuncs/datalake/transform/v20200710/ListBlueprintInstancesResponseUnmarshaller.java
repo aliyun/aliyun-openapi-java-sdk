@@ -59,6 +59,7 @@ public class ListBlueprintInstancesResponseUnmarshaller {
 			blueprintInstance.setOffsetTime(_ctx.integerValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].OffsetTime"));
 			blueprintInstance.setBatchProgress(_ctx.integerValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].BatchProgress"));
 			blueprintInstance.setTargetPartitions(_ctx.stringValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].TargetPartitions"));
+			blueprintInstance.setCreatorLoginName(_ctx.stringValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].CreatorLoginName"));
 
 			WorkflowLastRunInstance workflowLastRunInstance = new WorkflowLastRunInstance();
 			workflowLastRunInstance.setFlowInstanceId(_ctx.stringValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].WorkflowLastRunInstance.FlowInstanceId"));
@@ -71,6 +72,8 @@ public class ListBlueprintInstancesResponseUnmarshaller {
 			workflowLastRunInstance.setProjectId(_ctx.stringValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].WorkflowLastRunInstance.ProjectId"));
 			workflowLastRunInstance.setClusterId(_ctx.stringValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].WorkflowLastRunInstance.ClusterId"));
 			workflowLastRunInstance.setFailureInfo(_ctx.stringValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].WorkflowLastRunInstance.FailureInfo"));
+			workflowLastRunInstance.setOffsetTime(_ctx.integerValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].WorkflowLastRunInstance.OffsetTime"));
+			workflowLastRunInstance.setBatchProgress(_ctx.integerValue("ListBlueprintInstancesResponse.BlueprintInstances["+ i +"].WorkflowLastRunInstance.BatchProgress"));
 			blueprintInstance.setWorkflowLastRunInstance(workflowLastRunInstance);
 
 			Workflow workflow = new Workflow();

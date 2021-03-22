@@ -115,6 +115,8 @@ public class ListBlueprintInstancesResponse extends AcsResponse {
 
 		private String targetPartitions;
 
+		private String creatorLoginName;
+
 		private WorkflowLastRunInstance workflowLastRunInstance;
 
 		private Workflow workflow;
@@ -311,6 +313,14 @@ public class ListBlueprintInstancesResponse extends AcsResponse {
 			this.targetPartitions = targetPartitions;
 		}
 
+		public String getCreatorLoginName() {
+			return this.creatorLoginName;
+		}
+
+		public void setCreatorLoginName(String creatorLoginName) {
+			this.creatorLoginName = creatorLoginName;
+		}
+
 		public WorkflowLastRunInstance getWorkflowLastRunInstance() {
 			return this.workflowLastRunInstance;
 		}
@@ -348,6 +358,10 @@ public class ListBlueprintInstancesResponse extends AcsResponse {
 			private String clusterId;
 
 			private String failureInfo;
+
+			private Integer offsetTime;
+
+			private Integer batchProgress;
 
 			public String getFlowInstanceId() {
 				return this.flowInstanceId;
@@ -427,6 +441,22 @@ public class ListBlueprintInstancesResponse extends AcsResponse {
 
 			public void setFailureInfo(String failureInfo) {
 				this.failureInfo = failureInfo;
+			}
+
+			public Integer getOffsetTime() {
+				return this.offsetTime;
+			}
+
+			public void setOffsetTime(Integer offsetTime) {
+				this.offsetTime = offsetTime;
+			}
+
+			public Integer getBatchProgress() {
+				return this.batchProgress;
+			}
+
+			public void setBatchProgress(Integer batchProgress) {
+				this.batchProgress = batchProgress;
 			}
 		}
 

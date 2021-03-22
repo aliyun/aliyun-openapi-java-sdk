@@ -44,6 +44,7 @@ public class DescribeMetastoreCrawlerResponseUnmarshaller {
 		describeMetastoreCrawlerResponse.setGmtCreate(_ctx.stringValue("DescribeMetastoreCrawlerResponse.GmtCreate"));
 		describeMetastoreCrawlerResponse.setSuccess(_ctx.booleanValue("DescribeMetastoreCrawlerResponse.Success"));
 		describeMetastoreCrawlerResponse.setStatus(_ctx.stringValue("DescribeMetastoreCrawlerResponse.Status"));
+		describeMetastoreCrawlerResponse.setExecuteMode(_ctx.stringValue("DescribeMetastoreCrawlerResponse.ExecuteMode"));
 
 		WorkflowLastRunInstance workflowLastRunInstance = new WorkflowLastRunInstance();
 		workflowLastRunInstance.setFlowInstanceId(_ctx.stringValue("DescribeMetastoreCrawlerResponse.WorkflowLastRunInstance.FlowInstanceId"));
@@ -57,6 +58,7 @@ public class DescribeMetastoreCrawlerResponseUnmarshaller {
 		workflowLastRunInstance.setClusterId(_ctx.stringValue("DescribeMetastoreCrawlerResponse.WorkflowLastRunInstance.ClusterId"));
 		workflowLastRunInstance.setFailureInfo(_ctx.stringValue("DescribeMetastoreCrawlerResponse.WorkflowLastRunInstance.FailureInfo"));
 		workflowLastRunInstance.setFlowExtendResult(_ctx.stringValue("DescribeMetastoreCrawlerResponse.WorkflowLastRunInstance.FlowExtendResult"));
+		workflowLastRunInstance.setBatchProgress(_ctx.integerValue("DescribeMetastoreCrawlerResponse.WorkflowLastRunInstance.BatchProgress"));
 		describeMetastoreCrawlerResponse.setWorkflowLastRunInstance(workflowLastRunInstance);
 	 
 	 	return describeMetastoreCrawlerResponse;

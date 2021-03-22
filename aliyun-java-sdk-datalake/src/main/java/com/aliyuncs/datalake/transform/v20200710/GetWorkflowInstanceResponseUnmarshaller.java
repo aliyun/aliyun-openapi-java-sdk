@@ -14,9 +14,13 @@
 
 package com.aliyuncs.datalake.transform.v20200710;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.datalake.model.v20200710.GetWorkflowInstanceResponse;
 import com.aliyuncs.datalake.model.v20200710.GetWorkflowInstanceResponse.WorkflowInstanceDetail;
 import com.aliyuncs.datalake.model.v20200710.GetWorkflowInstanceResponse.WorkflowInstanceDetail.FailedNodeInstance;
+import com.aliyuncs.datalake.model.v20200710.GetWorkflowInstanceResponse.WorkflowInstanceDetail.LogItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -40,6 +44,21 @@ public class GetWorkflowInstanceResponseUnmarshaller {
 		failedNodeInstance.setExternalId(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.FailedNodeInstance.ExternalId"));
 		failedNodeInstance.setExternalInfo(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.FailedNodeInstance.ExternalInfo"));
 		workflowInstanceDetail.setFailedNodeInstance(failedNodeInstance);
+
+		List<LogItem> runtimeLogs = new ArrayList<LogItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs.Length"); i++) {
+			LogItem logItem = new LogItem();
+			logItem.setInstanceId(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].InstanceId"));
+			logItem.setBizTime(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].BizTime"));
+			logItem.setLogType(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].LogType"));
+			logItem.setLogId(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].LogId"));
+			logItem.setLogSummary(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].LogSummary"));
+			logItem.setLogContent(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].LogContent"));
+			logItem.setTrigger(_ctx.stringValue("GetWorkflowInstanceResponse.WorkflowInstanceDetail.RuntimeLogs["+ i +"].Trigger"));
+
+			runtimeLogs.add(logItem);
+		}
+		workflowInstanceDetail.setRuntimeLogs(runtimeLogs);
 		getWorkflowInstanceResponse.setWorkflowInstanceDetail(workflowInstanceDetail);
 	 
 	 	return getWorkflowInstanceResponse;

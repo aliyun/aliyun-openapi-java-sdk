@@ -25,7 +25,13 @@ import com.aliyuncs.datalake.Endpoint;
 public class ListBlueprintInstancesRequest extends RoaAcsRequest<ListBlueprintInstancesResponse> {
 	   
 
+	private String orderCol;
+
 	private String blueprintType;
+
+	private String executeType;
+
+	private String creatorUid;
 
 	private Integer pageSize;
 
@@ -34,6 +40,8 @@ public class ListBlueprintInstancesRequest extends RoaAcsRequest<ListBlueprintIn
 	private Integer pageNumber;
 
 	private String status;
+
+	private String orderType;
 	public ListBlueprintInstancesRequest() {
 		super("DataLake", "2020-07-10", "ListBlueprintInstances");
 		setUriPattern("/webapi/blueprintinstance/list");
@@ -44,6 +52,17 @@ public class ListBlueprintInstancesRequest extends RoaAcsRequest<ListBlueprintIn
 		} catch (Exception e) {}
 	}
 
+	public String getOrderCol() {
+		return this.orderCol;
+	}
+
+	public void setOrderCol(String orderCol) {
+		this.orderCol = orderCol;
+		if(orderCol != null){
+			putQueryParameter("OrderCol", orderCol);
+		}
+	}
+
 	public String getBlueprintType() {
 		return this.blueprintType;
 	}
@@ -52,6 +71,28 @@ public class ListBlueprintInstancesRequest extends RoaAcsRequest<ListBlueprintIn
 		this.blueprintType = blueprintType;
 		if(blueprintType != null){
 			putQueryParameter("BlueprintType", blueprintType);
+		}
+	}
+
+	public String getExecuteType() {
+		return this.executeType;
+	}
+
+	public void setExecuteType(String executeType) {
+		this.executeType = executeType;
+		if(executeType != null){
+			putQueryParameter("ExecuteType", executeType);
+		}
+	}
+
+	public String getCreatorUid() {
+		return this.creatorUid;
+	}
+
+	public void setCreatorUid(String creatorUid) {
+		this.creatorUid = creatorUid;
+		if(creatorUid != null){
+			putQueryParameter("CreatorUid", creatorUid);
 		}
 	}
 
@@ -96,6 +137,17 @@ public class ListBlueprintInstancesRequest extends RoaAcsRequest<ListBlueprintIn
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public String getOrderType() {
+		return this.orderType;
+	}
+
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+		if(orderType != null){
+			putQueryParameter("OrderType", orderType);
 		}
 	}
 

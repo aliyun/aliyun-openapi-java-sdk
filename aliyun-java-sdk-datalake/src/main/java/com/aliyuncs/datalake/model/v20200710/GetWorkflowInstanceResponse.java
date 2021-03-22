@@ -14,6 +14,7 @@
 
 package com.aliyuncs.datalake.model.v20200710;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.datalake.transform.v20200710.GetWorkflowInstanceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -62,6 +63,8 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 
 		private String hasFailedNode;
 
+		private List<LogItem> runtimeLogs;
+
 		private FailedNodeInstance failedNodeInstance;
 
 		public String getFlowInstanceId() {
@@ -88,12 +91,93 @@ public class GetWorkflowInstanceResponse extends AcsResponse {
 			this.hasFailedNode = hasFailedNode;
 		}
 
+		public List<LogItem> getRuntimeLogs() {
+			return this.runtimeLogs;
+		}
+
+		public void setRuntimeLogs(List<LogItem> runtimeLogs) {
+			this.runtimeLogs = runtimeLogs;
+		}
+
 		public FailedNodeInstance getFailedNodeInstance() {
 			return this.failedNodeInstance;
 		}
 
 		public void setFailedNodeInstance(FailedNodeInstance failedNodeInstance) {
 			this.failedNodeInstance = failedNodeInstance;
+		}
+
+		public static class LogItem {
+
+			private String instanceId;
+
+			private String bizTime;
+
+			private String logType;
+
+			private String logId;
+
+			private String logSummary;
+
+			private String logContent;
+
+			private String trigger;
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
+			}
+
+			public String getBizTime() {
+				return this.bizTime;
+			}
+
+			public void setBizTime(String bizTime) {
+				this.bizTime = bizTime;
+			}
+
+			public String getLogType() {
+				return this.logType;
+			}
+
+			public void setLogType(String logType) {
+				this.logType = logType;
+			}
+
+			public String getLogId() {
+				return this.logId;
+			}
+
+			public void setLogId(String logId) {
+				this.logId = logId;
+			}
+
+			public String getLogSummary() {
+				return this.logSummary;
+			}
+
+			public void setLogSummary(String logSummary) {
+				this.logSummary = logSummary;
+			}
+
+			public String getLogContent() {
+				return this.logContent;
+			}
+
+			public void setLogContent(String logContent) {
+				this.logContent = logContent;
+			}
+
+			public String getTrigger() {
+				return this.trigger;
+			}
+
+			public void setTrigger(String trigger) {
+				this.trigger = trigger;
+			}
 		}
 
 		public static class FailedNodeInstance {
