@@ -22,16 +22,16 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class CancelLogstashDeletionRequest extends RoaAcsRequest<CancelLogstashDeletionResponse> {
 	   
 
 	private String instanceId;
 
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
-		setMethod(MethodType.GET);
+	private String clientToken;
+	public CancelLogstashDeletionRequest() {
+		super("elasticsearch", "2017-06-13", "CancelLogstashDeletion", "elasticsearch");
+		setUriPattern("/openapi/logstashes/[InstanceId]/actions/cancel-deletion");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -49,20 +49,20 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("clientToken", clientToken);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<CancelLogstashDeletionResponse> getResponseClass() {
+		return CancelLogstashDeletionResponse.class;
 	}
 
 }

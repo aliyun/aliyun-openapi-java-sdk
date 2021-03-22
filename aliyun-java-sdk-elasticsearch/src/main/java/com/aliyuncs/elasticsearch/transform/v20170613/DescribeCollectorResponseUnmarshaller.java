@@ -70,6 +70,10 @@ public class DescribeCollectorResponseUnmarshaller {
 			extendConfigsItem.setEnableMonitoring(_ctx.booleanValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].enableMonitoring"));
 			extendConfigsItem.setType(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].type"));
 			extendConfigsItem.setGroupId(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].groupId"));
+			extendConfigsItem.setHost(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].host"));
+			extendConfigsItem.setKibanaHost(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].kibanaHost"));
+			extendConfigsItem.setTotalPodsCount(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].totalPodsCount"));
+			extendConfigsItem.setSuccessPodsCount(_ctx.stringValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].successPodsCount"));
 
 			List<String> hosts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCollectorResponse.Result.extendConfigs["+ i +"].hosts.Length"); j++) {

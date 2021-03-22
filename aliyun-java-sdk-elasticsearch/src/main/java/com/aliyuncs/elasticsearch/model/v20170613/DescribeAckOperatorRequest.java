@@ -22,15 +22,13 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class DescribeAckOperatorRequest extends RoaAcsRequest<DescribeAckOperatorResponse> {
 	   
 
-	private String instanceId;
-
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	private String clusterId;
+	public DescribeAckOperatorRequest() {
+		super("elasticsearch", "2017-06-13", "DescribeAckOperator", "elasticsearch");
+		setUriPattern("/openapi/ack-clusters/[ClusterId]/operator");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,31 +36,20 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putPathParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putPathParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<DescribeAckOperatorResponse> getResponseClass() {
+		return DescribeAckOperatorResponse.class;
 	}
 
 }

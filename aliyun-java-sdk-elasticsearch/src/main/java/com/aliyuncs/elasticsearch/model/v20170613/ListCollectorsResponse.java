@@ -228,6 +228,14 @@ public class ListCollectorsResponse extends AcsResponse {
 
 			private String groupId;
 
+			private String host;
+
+			private String kibanaHost;
+
+			private String totalPodsCount;
+
+			private String successPodsCount;
+
 			private List<MachinesItem> machines;
 
 			private List<String> hosts;
@@ -294,6 +302,38 @@ public class ListCollectorsResponse extends AcsResponse {
 
 			public void setGroupId(String groupId) {
 				this.groupId = groupId;
+			}
+
+			public String getHost() {
+				return this.host;
+			}
+
+			public void setHost(String host) {
+				this.host = host;
+			}
+
+			public String getKibanaHost() {
+				return this.kibanaHost;
+			}
+
+			public void setKibanaHost(String kibanaHost) {
+				this.kibanaHost = kibanaHost;
+			}
+
+			public String getTotalPodsCount() {
+				return this.totalPodsCount;
+			}
+
+			public void setTotalPodsCount(String totalPodsCount) {
+				this.totalPodsCount = totalPodsCount;
+			}
+
+			public String getSuccessPodsCount() {
+				return this.successPodsCount;
+			}
+
+			public void setSuccessPodsCount(String successPodsCount) {
+				this.successPodsCount = successPodsCount;
 			}
 
 			public List<MachinesItem> getMachines() {

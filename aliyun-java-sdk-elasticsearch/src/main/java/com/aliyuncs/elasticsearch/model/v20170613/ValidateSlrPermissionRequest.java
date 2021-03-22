@@ -22,15 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class ValidateSlrPermissionRequest extends RoaAcsRequest<ValidateSlrPermissionResponse> {
 	   
 
-	private String instanceId;
+	private String clientToken;
 
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	private String rolename;
+	public ValidateSlrPermissionRequest() {
+		super("elasticsearch", "2017-06-13", "ValidateSlrPermission", "elasticsearch");
+		setUriPattern("/openapi/user/servicerolepermission");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,31 +38,31 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putPathParameter("InstanceId", instanceId);
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getRolename() {
+		return this.rolename;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
+		if(rolename != null){
+			putQueryParameter("rolename", rolename);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<ValidateSlrPermissionResponse> getResponseClass() {
+		return ValidateSlrPermissionResponse.class;
 	}
 
 }

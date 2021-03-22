@@ -58,50 +58,66 @@ public class ListInstanceResponse extends AcsResponse {
 
 	public static class Instance {
 
-		private String instanceId;
+		private Boolean advancedDedicateMaster;
+
+		private String createdAt;
+
+		private Boolean dedicateMaster;
 
 		private String description;
+
+		private String esVersion;
+
+		private String instanceId;
 
 		private Integer nodeAmount;
 
 		private String paymentType;
 
+		private String resourceGroupId;
+
 		private String status;
 
-		private String esVersion;
-
-		private String createdAt;
-
 		private String updatedAt;
-
-		private Boolean advancedDedicateMaster;
-
-		private Boolean dedicateMaster;
-
-		private String resourceGroupId;
 
 		private List<Tag> tags;
 
 		private List<Map<Object,Object>> extendConfigs;
 
-		private NodeSpec nodeSpec;
-
-		private NetworkConfig networkConfig;
-
-		private MasterConfiguration masterConfiguration;
-
-		private KibanaConfiguration kibanaConfiguration;
+		private ClientNodeConfiguration clientNodeConfiguration;
 
 		private ElasticDataNodeConfiguration elasticDataNodeConfiguration;
 
-		private ClientNodeConfiguration clientNodeConfiguration;
+		private KibanaConfiguration kibanaConfiguration;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		private MasterConfiguration masterConfiguration;
+
+		private NetworkConfig networkConfig;
+
+		private NodeSpec nodeSpec;
+
+		public Boolean getAdvancedDedicateMaster() {
+			return this.advancedDedicateMaster;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setAdvancedDedicateMaster(Boolean advancedDedicateMaster) {
+			this.advancedDedicateMaster = advancedDedicateMaster;
+		}
+
+		public String getCreatedAt() {
+			return this.createdAt;
+		}
+
+		public void setCreatedAt(String createdAt) {
+			this.createdAt = createdAt;
+		}
+
+		public Boolean getDedicateMaster() {
+			return this.dedicateMaster;
+		}
+
+		public void setDedicateMaster(Boolean dedicateMaster) {
+			this.dedicateMaster = dedicateMaster;
 		}
 
 		public String getDescription() {
@@ -110,6 +126,22 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getEsVersion() {
+			return this.esVersion;
+		}
+
+		public void setEsVersion(String esVersion) {
+			this.esVersion = esVersion;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getNodeAmount() {
@@ -128,6 +160,14 @@ public class ListInstanceResponse extends AcsResponse {
 			this.paymentType = paymentType;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public String getStatus() {
 			return this.status;
 		}
@@ -136,52 +176,12 @@ public class ListInstanceResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getEsVersion() {
-			return this.esVersion;
-		}
-
-		public void setEsVersion(String esVersion) {
-			this.esVersion = esVersion;
-		}
-
-		public String getCreatedAt() {
-			return this.createdAt;
-		}
-
-		public void setCreatedAt(String createdAt) {
-			this.createdAt = createdAt;
-		}
-
 		public String getUpdatedAt() {
 			return this.updatedAt;
 		}
 
 		public void setUpdatedAt(String updatedAt) {
 			this.updatedAt = updatedAt;
-		}
-
-		public Boolean getAdvancedDedicateMaster() {
-			return this.advancedDedicateMaster;
-		}
-
-		public void setAdvancedDedicateMaster(Boolean advancedDedicateMaster) {
-			this.advancedDedicateMaster = advancedDedicateMaster;
-		}
-
-		public Boolean getDedicateMaster() {
-			return this.dedicateMaster;
-		}
-
-		public void setDedicateMaster(Boolean dedicateMaster) {
-			this.dedicateMaster = dedicateMaster;
-		}
-
-		public String getResourceGroupId() {
-			return this.resourceGroupId;
-		}
-
-		public void setResourceGroupId(String resourceGroupId) {
-			this.resourceGroupId = resourceGroupId;
 		}
 
 		public List<Tag> getTags() {
@@ -200,36 +200,12 @@ public class ListInstanceResponse extends AcsResponse {
 			this.extendConfigs = extendConfigs;
 		}
 
-		public NodeSpec getNodeSpec() {
-			return this.nodeSpec;
+		public ClientNodeConfiguration getClientNodeConfiguration() {
+			return this.clientNodeConfiguration;
 		}
 
-		public void setNodeSpec(NodeSpec nodeSpec) {
-			this.nodeSpec = nodeSpec;
-		}
-
-		public NetworkConfig getNetworkConfig() {
-			return this.networkConfig;
-		}
-
-		public void setNetworkConfig(NetworkConfig networkConfig) {
-			this.networkConfig = networkConfig;
-		}
-
-		public MasterConfiguration getMasterConfiguration() {
-			return this.masterConfiguration;
-		}
-
-		public void setMasterConfiguration(MasterConfiguration masterConfiguration) {
-			this.masterConfiguration = masterConfiguration;
-		}
-
-		public KibanaConfiguration getKibanaConfiguration() {
-			return this.kibanaConfiguration;
-		}
-
-		public void setKibanaConfiguration(KibanaConfiguration kibanaConfiguration) {
-			this.kibanaConfiguration = kibanaConfiguration;
+		public void setClientNodeConfiguration(ClientNodeConfiguration clientNodeConfiguration) {
+			this.clientNodeConfiguration = clientNodeConfiguration;
 		}
 
 		public ElasticDataNodeConfiguration getElasticDataNodeConfiguration() {
@@ -240,12 +216,36 @@ public class ListInstanceResponse extends AcsResponse {
 			this.elasticDataNodeConfiguration = elasticDataNodeConfiguration;
 		}
 
-		public ClientNodeConfiguration getClientNodeConfiguration() {
-			return this.clientNodeConfiguration;
+		public KibanaConfiguration getKibanaConfiguration() {
+			return this.kibanaConfiguration;
 		}
 
-		public void setClientNodeConfiguration(ClientNodeConfiguration clientNodeConfiguration) {
-			this.clientNodeConfiguration = clientNodeConfiguration;
+		public void setKibanaConfiguration(KibanaConfiguration kibanaConfiguration) {
+			this.kibanaConfiguration = kibanaConfiguration;
+		}
+
+		public MasterConfiguration getMasterConfiguration() {
+			return this.masterConfiguration;
+		}
+
+		public void setMasterConfiguration(MasterConfiguration masterConfiguration) {
+			this.masterConfiguration = masterConfiguration;
+		}
+
+		public NetworkConfig getNetworkConfig() {
+			return this.networkConfig;
+		}
+
+		public void setNetworkConfig(NetworkConfig networkConfig) {
+			this.networkConfig = networkConfig;
+		}
+
+		public NodeSpec getNodeSpec() {
+			return this.nodeSpec;
+		}
+
+		public void setNodeSpec(NodeSpec nodeSpec) {
+			this.nodeSpec = nodeSpec;
 		}
 
 		public static class Tag {
@@ -271,22 +271,22 @@ public class ListInstanceResponse extends AcsResponse {
 			}
 		}
 
-		public static class NodeSpec {
+		public static class ClientNodeConfiguration {
 
-			private String spec;
+			private Integer amount;
 
 			private Integer disk;
 
 			private String diskType;
 
-			private Boolean diskEncryption;
+			private String spec;
 
-			public String getSpec() {
-				return this.spec;
+			public Integer getAmount() {
+				return this.amount;
 			}
 
-			public void setSpec(String spec) {
-				this.spec = spec;
+			public void setAmount(Integer amount) {
+				this.amount = amount;
 			}
 
 			public Integer getDisk() {
@@ -305,12 +305,151 @@ public class ListInstanceResponse extends AcsResponse {
 				this.diskType = diskType;
 			}
 
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+		}
+
+		public static class ElasticDataNodeConfiguration {
+
+			private Integer amount;
+
+			private Integer disk;
+
+			private Boolean diskEncryption;
+
+			private String diskType;
+
+			private String spec;
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+
 			public Boolean getDiskEncryption() {
 				return this.diskEncryption;
 			}
 
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+		}
+
+		public static class KibanaConfiguration {
+
+			private Integer amount;
+
+			private Integer disk;
+
+			private String diskType;
+
+			private String spec;
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
+			}
+		}
+
+		public static class MasterConfiguration {
+
+			private Integer amount;
+
+			private Integer disk;
+
+			private String diskType;
+
+			private String spec;
+
+			public Integer getAmount() {
+				return this.amount;
+			}
+
+			public void setAmount(Integer amount) {
+				this.amount = amount;
+			}
+
+			public Integer getDisk() {
+				return this.disk;
+			}
+
+			public void setDisk(Integer disk) {
+				this.disk = disk;
+			}
+
+			public String getDiskType() {
+				return this.diskType;
+			}
+
+			public void setDiskType(String diskType) {
+				this.diskType = diskType;
+			}
+
+			public String getSpec() {
+				return this.spec;
+			}
+
+			public void setSpec(String spec) {
+				this.spec = spec;
 			}
 		}
 
@@ -320,9 +459,9 @@ public class ListInstanceResponse extends AcsResponse {
 
 			private String vpcId;
 
-			private String vswitchId;
-
 			private String vsArea;
+
+			private String vswitchId;
 
 			public String getType() {
 				return this.type;
@@ -340,14 +479,6 @@ public class ListInstanceResponse extends AcsResponse {
 				this.vpcId = vpcId;
 			}
 
-			public String getVswitchId() {
-				return this.vswitchId;
-			}
-
-			public void setVswitchId(String vswitchId) {
-				this.vswitchId = vswitchId;
-			}
-
 			public String getVsArea() {
 				return this.vsArea;
 			}
@@ -355,129 +486,25 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setVsArea(String vsArea) {
 				this.vsArea = vsArea;
 			}
-		}
 
-		public static class MasterConfiguration {
-
-			private String spec;
-
-			private Integer amount;
-
-			private String diskType;
-
-			private Integer disk;
-
-			public String getSpec() {
-				return this.spec;
+			public String getVswitchId() {
+				return this.vswitchId;
 			}
 
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
-
-			public Integer getAmount() {
-				return this.amount;
-			}
-
-			public void setAmount(Integer amount) {
-				this.amount = amount;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-
-			public Integer getDisk() {
-				return this.disk;
-			}
-
-			public void setDisk(Integer disk) {
-				this.disk = disk;
+			public void setVswitchId(String vswitchId) {
+				this.vswitchId = vswitchId;
 			}
 		}
 
-		public static class KibanaConfiguration {
-
-			private String spec;
-
-			private Integer disk;
-
-			private Integer amount;
-
-			private String diskType;
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
-
-			public Integer getDisk() {
-				return this.disk;
-			}
-
-			public void setDisk(Integer disk) {
-				this.disk = disk;
-			}
-
-			public Integer getAmount() {
-				return this.amount;
-			}
-
-			public void setAmount(Integer amount) {
-				this.amount = amount;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
-		}
-
-		public static class ElasticDataNodeConfiguration {
-
-			private String spec;
-
-			private Integer amount;
-
-			private String diskType;
+		public static class NodeSpec {
 
 			private Integer disk;
 
 			private Boolean diskEncryption;
 
-			public String getSpec() {
-				return this.spec;
-			}
+			private String diskType;
 
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
-
-			public Integer getAmount() {
-				return this.amount;
-			}
-
-			public void setAmount(Integer amount) {
-				this.amount = amount;
-			}
-
-			public String getDiskType() {
-				return this.diskType;
-			}
-
-			public void setDiskType(String diskType) {
-				this.diskType = diskType;
-			}
+			private String spec;
 
 			public Integer getDisk() {
 				return this.disk;
@@ -494,33 +521,6 @@ public class ListInstanceResponse extends AcsResponse {
 			public void setDiskEncryption(Boolean diskEncryption) {
 				this.diskEncryption = diskEncryption;
 			}
-		}
-
-		public static class ClientNodeConfiguration {
-
-			private String spec;
-
-			private Integer amount;
-
-			private String diskType;
-
-			private Integer disk;
-
-			public String getSpec() {
-				return this.spec;
-			}
-
-			public void setSpec(String spec) {
-				this.spec = spec;
-			}
-
-			public Integer getAmount() {
-				return this.amount;
-			}
-
-			public void setAmount(Integer amount) {
-				this.amount = amount;
-			}
 
 			public String getDiskType() {
 				return this.diskType;
@@ -530,12 +530,12 @@ public class ListInstanceResponse extends AcsResponse {
 				this.diskType = diskType;
 			}
 
-			public Integer getDisk() {
-				return this.disk;
+			public String getSpec() {
+				return this.spec;
 			}
 
-			public void setDisk(Integer disk) {
-				this.disk = disk;
+			public void setSpec(String spec) {
+				this.spec = spec;
 			}
 		}
 	}

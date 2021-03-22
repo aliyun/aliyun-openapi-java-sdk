@@ -30,6 +30,8 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 	private String instanceId;
 
 	private String clientToken;
+
+	private String orderActionType;
 	public UpdateInstanceRequest() {
 		super("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch");
 		setUriPattern("/openapi/instances/[InstanceId]");
@@ -70,6 +72,17 @@ public class UpdateInstanceRequest extends RoaAcsRequest<UpdateInstanceResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getOrderActionType() {
+		return this.orderActionType;
+	}
+
+	public void setOrderActionType(String orderActionType) {
+		this.orderActionType = orderActionType;
+		if(orderActionType != null){
+			putQueryParameter("orderActionType", orderActionType);
 		}
 	}
 

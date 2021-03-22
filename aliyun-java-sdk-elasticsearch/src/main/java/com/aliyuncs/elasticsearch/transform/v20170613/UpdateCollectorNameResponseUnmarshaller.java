@@ -72,6 +72,8 @@ public class UpdateCollectorNameResponseUnmarshaller {
 			extendConfigsItem.setGroupId(_ctx.stringValue("UpdateCollectorNameResponse.Result.extendConfigs["+ i +"].groupId"));
 			extendConfigsItem.setHost(_ctx.stringValue("UpdateCollectorNameResponse.Result.extendConfigs["+ i +"].host"));
 			extendConfigsItem.setKibanaHost(_ctx.stringValue("UpdateCollectorNameResponse.Result.extendConfigs["+ i +"].kibanaHost"));
+			extendConfigsItem.setTotalPodsCount(_ctx.stringValue("UpdateCollectorNameResponse.Result.extendConfigs["+ i +"].totalPodsCount"));
+			extendConfigsItem.setSuccessPodsCount(_ctx.stringValue("UpdateCollectorNameResponse.Result.extendConfigs["+ i +"].successPodsCount"));
 
 			List<String> hosts = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("UpdateCollectorNameResponse.Result.extendConfigs["+ i +"].hosts.Length"); j++) {

@@ -22,15 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class ListDiagnoseIndicesRequest extends RoaAcsRequest<ListDiagnoseIndicesResponse> {
 	   
 
 	private String instanceId;
 
 	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	public ListDiagnoseIndicesRequest() {
+		super("elasticsearch", "2017-06-13", "ListDiagnoseIndices", "elasticsearch");
+		setUriPattern("/openapi/diagnosis/instances/[InstanceId]/indices");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,8 +61,8 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<ListDiagnoseIndicesResponse> getResponseClass() {
+		return ListDiagnoseIndicesResponse.class;
 	}
 
 }

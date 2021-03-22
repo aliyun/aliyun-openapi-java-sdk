@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.elasticsearch.model.v20170613.ListSearchLogResponse;
 import com.aliyuncs.elasticsearch.model.v20170613.ListSearchLogResponse.Headers;
 import com.aliyuncs.elasticsearch.model.v20170613.ListSearchLogResponse.ResultItem;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,9 +39,10 @@ public class ListSearchLogResponseUnmarshaller {
 			ResultItem resultItem = new ResultItem();
 			resultItem.setTimestamp(_ctx.longValue("ListSearchLogResponse.Result["+ i +"].timestamp"));
 			resultItem.setHost(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].host"));
+			resultItem.setInstanceId(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].instanceId"));
+			resultItem.setContentCollection(_ctx.mapValue("ListSearchLogResponse.Result["+ i +"].contentCollection"));
 			resultItem.setLevel(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].level"));
 			resultItem.setContent(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].content"));
-			resultItem.setInstanceId(_ctx.stringValue("ListSearchLogResponse.Result["+ i +"].instanceId"));
 
 			result.add(resultItem);
 		}

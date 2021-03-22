@@ -15,6 +15,7 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.elasticsearch.transform.v20170613.ListSearchLogResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -61,11 +62,13 @@ public class ListSearchLogResponse extends AcsResponse {
 
 		private String host;
 
+		private String instanceId;
+
+		private Map<Object,Object> contentCollection;
+
 		private String level;
 
 		private String content;
-
-		private String instanceId;
 
 		public Long getTimestamp() {
 			return this.timestamp;
@@ -83,6 +86,22 @@ public class ListSearchLogResponse extends AcsResponse {
 			this.host = host;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Map<Object,Object> getContentCollection() {
+			return this.contentCollection;
+		}
+
+		public void setContentCollection(Map<Object,Object> contentCollection) {
+			this.contentCollection = contentCollection;
+		}
+
 		public String getLevel() {
 			return this.level;
 		}
@@ -97,14 +116,6 @@ public class ListSearchLogResponse extends AcsResponse {
 
 		public void setContent(String content) {
 			this.content = content;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
 		}
 	}
 

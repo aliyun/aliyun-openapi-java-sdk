@@ -222,6 +222,10 @@ public class UpdateCollectorNameResponse extends AcsResponse {
 
 			private String kibanaHost;
 
+			private String totalPodsCount;
+
+			private String successPodsCount;
+
 			private List<MachinesItem> machines;
 
 			private List<String> hosts;
@@ -304,6 +308,22 @@ public class UpdateCollectorNameResponse extends AcsResponse {
 
 			public void setKibanaHost(String kibanaHost) {
 				this.kibanaHost = kibanaHost;
+			}
+
+			public String getTotalPodsCount() {
+				return this.totalPodsCount;
+			}
+
+			public void setTotalPodsCount(String totalPodsCount) {
+				this.totalPodsCount = totalPodsCount;
+			}
+
+			public String getSuccessPodsCount() {
+				return this.successPodsCount;
+			}
+
+			public void setSuccessPodsCount(String successPodsCount) {
+				this.successPodsCount = successPodsCount;
 			}
 
 			public List<MachinesItem> getMachines() {

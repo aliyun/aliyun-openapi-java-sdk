@@ -22,15 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class RecommendTemplatesRequest extends RoaAcsRequest<RecommendTemplatesResponse> {
 	   
 
 	private String instanceId;
 
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	private String usageScenario;
+	public RecommendTemplatesRequest() {
+		super("elasticsearch", "2017-06-13", "RecommendTemplates", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/recommended-templates");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,20 +49,20 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
+	public String getUsageScenario() {
+		return this.usageScenario;
 	}
 
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setUsageScenario(String usageScenario) {
+		this.usageScenario = usageScenario;
+		if(usageScenario != null){
+			putQueryParameter("usageScenario", usageScenario);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<RecommendTemplatesResponse> getResponseClass() {
+		return RecommendTemplatesResponse.class;
 	}
 
 }

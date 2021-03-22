@@ -22,39 +22,22 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCollectorsRequest extends RoaAcsRequest<ListCollectorsResponse> {
+public class ListAckClustersRequest extends RoaAcsRequest<ListAckClustersResponse> {
 	   
-
-	private String instanceId;
 
 	private Integer size;
 
-	private String name;
-
-	private String sourceType;
+	private String vpcId;
 
 	private Integer page;
-
-	private String resId;
-	public ListCollectorsRequest() {
-		super("elasticsearch", "2017-06-13", "ListCollectors", "elasticsearch");
-		setUriPattern("/openapi/collectors");
+	public ListAckClustersRequest() {
+		super("elasticsearch", "2017-06-13", "ListAckClusters", "elasticsearch");
+		setUriPattern("/openapi/ack-clusters");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("instanceId", instanceId);
-		}
 	}
 
 	public Integer getSize() {
@@ -68,25 +51,14 @@ public class ListCollectorsRequest extends RoaAcsRequest<ListCollectorsResponse>
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getVpcId() {
+		return this.vpcId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putQueryParameter("sourceType", sourceType);
+	public void setVpcId(String vpcId) {
+		this.vpcId = vpcId;
+		if(vpcId != null){
+			putQueryParameter("vpcId", vpcId);
 		}
 	}
 
@@ -101,20 +73,9 @@ public class ListCollectorsRequest extends RoaAcsRequest<ListCollectorsResponse>
 		}
 	}
 
-	public String getResId() {
-		return this.resId;
-	}
-
-	public void setResId(String resId) {
-		this.resId = resId;
-		if(resId != null){
-			putQueryParameter("resId", resId);
-		}
-	}
-
 	@Override
-	public Class<ListCollectorsResponse> getResponseClass() {
-		return ListCollectorsResponse.class;
+	public Class<ListAckClustersResponse> getResponseClass() {
+		return ListAckClustersResponse.class;
 	}
 
 }

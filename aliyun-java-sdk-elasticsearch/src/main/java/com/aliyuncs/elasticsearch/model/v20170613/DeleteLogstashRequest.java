@@ -28,6 +28,8 @@ public class DeleteLogstashRequest extends RoaAcsRequest<DeleteLogstashResponse>
 	private String instanceId;
 
 	private String clientToken;
+
+	private String deleteType;
 	public DeleteLogstashRequest() {
 		super("elasticsearch", "2017-06-13", "DeleteLogstash", "elasticsearch");
 		setUriPattern("/openapi/logstashes/[InstanceId]");
@@ -57,6 +59,17 @@ public class DeleteLogstashRequest extends RoaAcsRequest<DeleteLogstashResponse>
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("clientToken", clientToken);
+		}
+	}
+
+	public String getDeleteType() {
+		return this.deleteType;
+	}
+
+	public void setDeleteType(String deleteType) {
+		this.deleteType = deleteType;
+		if(deleteType != null){
+			putQueryParameter("deleteType", deleteType);
 		}
 	}
 
