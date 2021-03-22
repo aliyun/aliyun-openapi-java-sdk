@@ -25,6 +25,8 @@ public class DecryptTextRequest extends RpcAcsRequest<DecryptTextResponse> {
 	   
 
 	private String plainText;
+
+	private Long activityId;
 	public DecryptTextRequest() {
 		super("marketing_event", "2021-01-01", "DecryptText");
 		setMethod(MethodType.GET);
@@ -38,6 +40,17 @@ public class DecryptTextRequest extends RpcAcsRequest<DecryptTextResponse> {
 		this.plainText = plainText;
 		if(plainText != null){
 			putQueryParameter("PlainText", plainText);
+		}
+	}
+
+	public Long getActivityId() {
+		return this.activityId;
+	}
+
+	public void setActivityId(Long activityId) {
+		this.activityId = activityId;
+		if(activityId != null){
+			putQueryParameter("ActivityId", activityId.toString());
 		}
 	}
 
