@@ -29,6 +29,8 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 
 	private String connectionStringPrefix;
 
+	private String addressType;
+
 	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
@@ -64,6 +66,17 @@ public class AllocateInstancePublicConnectionRequest extends RpcAcsRequest<Alloc
 		this.connectionStringPrefix = connectionStringPrefix;
 		if(connectionStringPrefix != null){
 			putQueryParameter("ConnectionStringPrefix", connectionStringPrefix);
+		}
+	}
+
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
 		}
 	}
 

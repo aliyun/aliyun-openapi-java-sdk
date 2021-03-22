@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBInstancesResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer pageNumber;
-
 	private Integer totalRecordCount;
 
 	private Integer pageRecordCount;
 
+	private String requestId;
+
+	private Integer pageNumber;
+
 	private List<DBInstance> items;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
 
 	public Integer getTotalRecordCount() {
 		return this.totalRecordCount;
@@ -67,6 +51,22 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		this.pageRecordCount = pageRecordCount;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
 	public List<DBInstance> getItems() {
 		return this.items;
 	}
@@ -77,58 +77,108 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 	public static class DBInstance {
 
-		private String dBInstanceId;
+		private String engineVersion;
 
-		private String dBInstanceDescription;
+		private String storageType;
+
+		private String zoneId;
+
+		private String dBInstanceStatus;
+
+		private String dBInstanceNetType;
+
+		private String vSwitchId;
+
+		private String createTime;
+
+		private String lockMode;
 
 		private String payType;
 
 		private String instanceNetworkType;
 
-		private String connectionMode;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private String expireTime;
-
-		private String dBInstanceStatus;
-
-		private String engine;
-
-		private String engineVersion;
-
-		private String dBInstanceNetType;
-
-		private String lockMode;
-
-		private String lockReason;
-
-		private String createTime;
-
 		private String vpcId;
 
-		private String vSwitchId;
+		private String dBInstanceId;
+
+		private String connectionMode;
 
 		private String instanceDeployType;
 
+		private String regionId;
+
+		private String lockReason;
+
+		private String expireTime;
+
+		private String dBInstanceDescription;
+
+		private String engine;
+
 		private List<Tag> tags;
 
-		public String getDBInstanceId() {
-			return this.dBInstanceId;
+		public String getEngineVersion() {
+			return this.engineVersion;
 		}
 
-		public void setDBInstanceId(String dBInstanceId) {
-			this.dBInstanceId = dBInstanceId;
+		public void setEngineVersion(String engineVersion) {
+			this.engineVersion = engineVersion;
 		}
 
-		public String getDBInstanceDescription() {
-			return this.dBInstanceDescription;
+		public String getStorageType() {
+			return this.storageType;
 		}
 
-		public void setDBInstanceDescription(String dBInstanceDescription) {
-			this.dBInstanceDescription = dBInstanceDescription;
+		public void setStorageType(String storageType) {
+			this.storageType = storageType;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getDBInstanceStatus() {
+			return this.dBInstanceStatus;
+		}
+
+		public void setDBInstanceStatus(String dBInstanceStatus) {
+			this.dBInstanceStatus = dBInstanceStatus;
+		}
+
+		public String getDBInstanceNetType() {
+			return this.dBInstanceNetType;
+		}
+
+		public void setDBInstanceNetType(String dBInstanceNetType) {
+			this.dBInstanceNetType = dBInstanceNetType;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
 		}
 
 		public String getPayType() {
@@ -147,12 +197,36 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.instanceNetworkType = instanceNetworkType;
 		}
 
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getDBInstanceId() {
+			return this.dBInstanceId;
+		}
+
+		public void setDBInstanceId(String dBInstanceId) {
+			this.dBInstanceId = dBInstanceId;
+		}
+
 		public String getConnectionMode() {
 			return this.connectionMode;
 		}
 
 		public void setConnectionMode(String connectionMode) {
 			this.connectionMode = connectionMode;
+		}
+
+		public String getInstanceDeployType() {
+			return this.instanceDeployType;
+		}
+
+		public void setInstanceDeployType(String instanceDeployType) {
+			this.instanceDeployType = instanceDeployType;
 		}
 
 		public String getRegionId() {
@@ -163,12 +237,12 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public String getZoneId() {
-			return this.zoneId;
+		public String getLockReason() {
+			return this.lockReason;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setLockReason(String lockReason) {
+			this.lockReason = lockReason;
 		}
 
 		public String getExpireTime() {
@@ -179,12 +253,12 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.expireTime = expireTime;
 		}
 
-		public String getDBInstanceStatus() {
-			return this.dBInstanceStatus;
+		public String getDBInstanceDescription() {
+			return this.dBInstanceDescription;
 		}
 
-		public void setDBInstanceStatus(String dBInstanceStatus) {
-			this.dBInstanceStatus = dBInstanceStatus;
+		public void setDBInstanceDescription(String dBInstanceDescription) {
+			this.dBInstanceDescription = dBInstanceDescription;
 		}
 
 		public String getEngine() {
@@ -193,70 +267,6 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setEngine(String engine) {
 			this.engine = engine;
-		}
-
-		public String getEngineVersion() {
-			return this.engineVersion;
-		}
-
-		public void setEngineVersion(String engineVersion) {
-			this.engineVersion = engineVersion;
-		}
-
-		public String getDBInstanceNetType() {
-			return this.dBInstanceNetType;
-		}
-
-		public void setDBInstanceNetType(String dBInstanceNetType) {
-			this.dBInstanceNetType = dBInstanceNetType;
-		}
-
-		public String getLockMode() {
-			return this.lockMode;
-		}
-
-		public void setLockMode(String lockMode) {
-			this.lockMode = lockMode;
-		}
-
-		public String getLockReason() {
-			return this.lockReason;
-		}
-
-		public void setLockReason(String lockReason) {
-			this.lockReason = lockReason;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getInstanceDeployType() {
-			return this.instanceDeployType;
-		}
-
-		public void setInstanceDeployType(String instanceDeployType) {
-			this.instanceDeployType = instanceDeployType;
 		}
 
 		public List<Tag> getTags() {
@@ -269,17 +279,9 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public static class Tag {
 
-			private String key;
-
 			private String value;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getValue() {
 				return this.value;
@@ -287,6 +289,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

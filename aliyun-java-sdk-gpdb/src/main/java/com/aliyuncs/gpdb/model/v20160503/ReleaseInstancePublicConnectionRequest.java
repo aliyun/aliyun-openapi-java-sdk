@@ -25,6 +25,8 @@ import com.aliyuncs.gpdb.Endpoint;
 public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<ReleaseInstancePublicConnectionResponse> {
 	   
 
+	private String addressType;
+
 	private String dBInstanceId;
 
 	private String currentConnectionString;
@@ -35,6 +37,17 @@ public class ReleaseInstancePublicConnectionRequest extends RpcAcsRequest<Releas
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getAddressType() {
+		return this.addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+		if(addressType != null){
+			putQueryParameter("AddressType", addressType);
+		}
 	}
 
 	public String getDBInstanceId() {

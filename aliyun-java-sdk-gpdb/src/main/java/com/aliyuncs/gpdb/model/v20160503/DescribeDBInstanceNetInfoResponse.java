@@ -57,35 +57,21 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 	public static class DBInstanceNetInfo {
 
-		private String connectionString;
-
-		private String iPAddress;
-
 		private String iPType;
 
-		private String port;
-
 		private String vPCId;
+
+		private String port;
 
 		private String vSwitchId;
 
 		private String vpcInstanceId;
 
-		public String getConnectionString() {
-			return this.connectionString;
-		}
+		private String addressType;
 
-		public void setConnectionString(String connectionString) {
-			this.connectionString = connectionString;
-		}
+		private String iPAddress;
 
-		public String getIPAddress() {
-			return this.iPAddress;
-		}
-
-		public void setIPAddress(String iPAddress) {
-			this.iPAddress = iPAddress;
-		}
+		private String connectionString;
 
 		public String getIPType() {
 			return this.iPType;
@@ -95,20 +81,20 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 			this.iPType = iPType;
 		}
 
-		public String getPort() {
-			return this.port;
-		}
-
-		public void setPort(String port) {
-			this.port = port;
-		}
-
 		public String getVPCId() {
 			return this.vPCId;
 		}
 
 		public void setVPCId(String vPCId) {
 			this.vPCId = vPCId;
+		}
+
+		public String getPort() {
+			return this.port;
+		}
+
+		public void setPort(String port) {
+			this.port = port;
 		}
 
 		public String getVSwitchId() {
@@ -125,6 +111,30 @@ public class DescribeDBInstanceNetInfoResponse extends AcsResponse {
 
 		public void setVpcInstanceId(String vpcInstanceId) {
 			this.vpcInstanceId = vpcInstanceId;
+		}
+
+		public String getAddressType() {
+			return this.addressType;
+		}
+
+		public void setAddressType(String addressType) {
+			this.addressType = addressType;
+		}
+
+		public String getIPAddress() {
+			return this.iPAddress;
+		}
+
+		public void setIPAddress(String iPAddress) {
+			this.iPAddress = iPAddress;
+		}
+
+		public String getConnectionString() {
+			return this.connectionString;
+		}
+
+		public void setConnectionString(String connectionString) {
+			this.connectionString = connectionString;
 		}
 	}
 

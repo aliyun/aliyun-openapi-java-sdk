@@ -33,6 +33,8 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 
 	private String segStorageType;
 
+	private Integer masterNodeNum;
+
 	private String engineVersion;
 
 	private Integer segNodeNum;
@@ -114,6 +116,17 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		this.segStorageType = segStorageType;
 		if(segStorageType != null){
 			putQueryParameter("SegStorageType", segStorageType);
+		}
+	}
+
+	public Integer getMasterNodeNum() {
+		return this.masterNodeNum;
+	}
+
+	public void setMasterNodeNum(Integer masterNodeNum) {
+		this.masterNodeNum = masterNodeNum;
+		if(masterNodeNum != null){
+			putQueryParameter("MasterNodeNum", masterNodeNum.toString());
 		}
 	}
 
