@@ -1,3 +1,6 @@
+2021-03-22 Version: 1.0.3
+- Supported Decrypt And Encrypt.
+
 2021-03-18 Version: 1.0.2
 - Supported sing up init.
 
