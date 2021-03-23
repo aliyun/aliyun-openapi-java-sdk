@@ -1,4 +1,7 @@
-﻿2021-01-22 Version: 4.5.18
+﻿2021-01-23 Version:4.5.19
+1, The throw keyword is added to the catch method of the xmlReader class
+
+2021-01-22 Version: 4.5.18
 1, Fix default content type while has bodyParameters
 
 2020-11-27 Version: 4.5.17
