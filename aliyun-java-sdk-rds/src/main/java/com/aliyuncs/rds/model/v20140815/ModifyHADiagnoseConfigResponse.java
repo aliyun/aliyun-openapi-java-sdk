@@ -15,20 +15,16 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.ModifyDBInstanceNetworkTypeResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.ModifyHADiagnoseConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceNetworkTypeResponse extends AcsResponse {
+public class ModifyHADiagnoseConfigResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String taskId;
-
-	private String connectionString;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +34,8 @@ public class ModifyDBInstanceNetworkTypeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
-	}
-
 	@Override
-	public ModifyDBInstanceNetworkTypeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBInstanceNetworkTypeResponseUnmarshaller.unmarshall(this, context);
+	public ModifyHADiagnoseConfigResponse getInstance(UnmarshallerContext context) {
+		return	ModifyHADiagnoseConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

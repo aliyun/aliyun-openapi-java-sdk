@@ -24,6 +24,7 @@ public class ModifyDBInstanceNetworkTypeResponseUnmarshaller {
 		
 		modifyDBInstanceNetworkTypeResponse.setRequestId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.RequestId"));
 		modifyDBInstanceNetworkTypeResponse.setTaskId(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.TaskId"));
+		modifyDBInstanceNetworkTypeResponse.setConnectionString(_ctx.stringValue("ModifyDBInstanceNetworkTypeResponse.ConnectionString"));
 	 
 	 	return modifyDBInstanceNetworkTypeResponse;
 	}

@@ -23,6 +23,8 @@ public class AllocateInstancePublicConnectionResponseUnmarshaller {
 	public static AllocateInstancePublicConnectionResponse unmarshall(AllocateInstancePublicConnectionResponse allocateInstancePublicConnectionResponse, UnmarshallerContext _ctx) {
 		
 		allocateInstancePublicConnectionResponse.setRequestId(_ctx.stringValue("AllocateInstancePublicConnectionResponse.RequestId"));
+		allocateInstancePublicConnectionResponse.setConnectionString(_ctx.stringValue("AllocateInstancePublicConnectionResponse.ConnectionString"));
+		allocateInstancePublicConnectionResponse.setDbInstanceName(_ctx.stringValue("AllocateInstancePublicConnectionResponse.DbInstanceName"));
 	 
 	 	return allocateInstancePublicConnectionResponse;
 	}

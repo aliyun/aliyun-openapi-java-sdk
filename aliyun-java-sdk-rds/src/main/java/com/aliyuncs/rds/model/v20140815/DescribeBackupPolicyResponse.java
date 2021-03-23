@@ -70,6 +70,10 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	private String backupInterval;
 
+	private Integer supportVolumeShadowCopy;
+
+	private String backupMethod;
+
 	private DuplicationLocation duplicationLocation;
 
 	public String getRequestId() {
@@ -254,6 +258,22 @@ public class DescribeBackupPolicyResponse extends AcsResponse {
 
 	public void setBackupInterval(String backupInterval) {
 		this.backupInterval = backupInterval;
+	}
+
+	public Integer getSupportVolumeShadowCopy() {
+		return this.supportVolumeShadowCopy;
+	}
+
+	public void setSupportVolumeShadowCopy(Integer supportVolumeShadowCopy) {
+		this.supportVolumeShadowCopy = supportVolumeShadowCopy;
+	}
+
+	public String getBackupMethod() {
+		return this.backupMethod;
+	}
+
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
 	}
 
 	public DuplicationLocation getDuplicationLocation() {

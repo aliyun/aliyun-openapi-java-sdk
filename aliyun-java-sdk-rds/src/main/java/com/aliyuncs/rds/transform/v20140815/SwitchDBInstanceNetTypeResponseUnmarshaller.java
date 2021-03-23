@@ -23,6 +23,8 @@ public class SwitchDBInstanceNetTypeResponseUnmarshaller {
 	public static SwitchDBInstanceNetTypeResponse unmarshall(SwitchDBInstanceNetTypeResponse switchDBInstanceNetTypeResponse, UnmarshallerContext _ctx) {
 		
 		switchDBInstanceNetTypeResponse.setRequestId(_ctx.stringValue("SwitchDBInstanceNetTypeResponse.RequestId"));
+		switchDBInstanceNetTypeResponse.setOldConnectionString(_ctx.stringValue("SwitchDBInstanceNetTypeResponse.OldConnectionString"));
+		switchDBInstanceNetTypeResponse.setNewConnectionString(_ctx.stringValue("SwitchDBInstanceNetTypeResponse.NewConnectionString"));
 	 
 	 	return switchDBInstanceNetTypeResponse;
 	}

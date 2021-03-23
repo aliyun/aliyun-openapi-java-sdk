@@ -26,12 +26,32 @@ public class SwitchDBInstanceNetTypeResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String oldConnectionString;
+
+	private String newConnectionString;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getOldConnectionString() {
+		return this.oldConnectionString;
+	}
+
+	public void setOldConnectionString(String oldConnectionString) {
+		this.oldConnectionString = oldConnectionString;
+	}
+
+	public String getNewConnectionString() {
+		return this.newConnectionString;
+	}
+
+	public void setNewConnectionString(String newConnectionString) {
+		this.newConnectionString = newConnectionString;
 	}
 
 	@Override

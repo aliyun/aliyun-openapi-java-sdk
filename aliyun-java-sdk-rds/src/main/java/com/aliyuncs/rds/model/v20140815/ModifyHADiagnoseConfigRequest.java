@@ -22,16 +22,20 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<UpgradeDBInstanceMajorVersionPrecheckResponse> {
+public class ModifyHADiagnoseConfigRequest extends RpcAcsRequest<ModifyHADiagnoseConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
+	private String resourceOwnerAccount;
+
+	private Long ownerId;
+
 	private String dBInstanceId;
 
-	private String targetMajorVersion;
-	public UpgradeDBInstanceMajorVersionPrecheckRequest() {
-		super("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck", "rds");
+	private String tcpConnectionType;
+	public ModifyHADiagnoseConfigRequest() {
+		super("Rds", "2014-08-15", "ModifyHADiagnoseConfig", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,6 +54,28 @@ public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<
 		}
 	}
 
+	public String getResourceOwnerAccount() {
+		return this.resourceOwnerAccount;
+	}
+
+	public void setResourceOwnerAccount(String resourceOwnerAccount) {
+		this.resourceOwnerAccount = resourceOwnerAccount;
+		if(resourceOwnerAccount != null){
+			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -61,20 +87,20 @@ public class UpgradeDBInstanceMajorVersionPrecheckRequest extends RpcAcsRequest<
 		}
 	}
 
-	public String getTargetMajorVersion() {
-		return this.targetMajorVersion;
+	public String getTcpConnectionType() {
+		return this.tcpConnectionType;
 	}
 
-	public void setTargetMajorVersion(String targetMajorVersion) {
-		this.targetMajorVersion = targetMajorVersion;
-		if(targetMajorVersion != null){
-			putQueryParameter("TargetMajorVersion", targetMajorVersion);
+	public void setTcpConnectionType(String tcpConnectionType) {
+		this.tcpConnectionType = tcpConnectionType;
+		if(tcpConnectionType != null){
+			putQueryParameter("TcpConnectionType", tcpConnectionType);
 		}
 	}
 
 	@Override
-	public Class<UpgradeDBInstanceMajorVersionPrecheckResponse> getResponseClass() {
-		return UpgradeDBInstanceMajorVersionPrecheckResponse.class;
+	public Class<ModifyHADiagnoseConfigResponse> getResponseClass() {
+		return ModifyHADiagnoseConfigResponse.class;
 	}
 
 }

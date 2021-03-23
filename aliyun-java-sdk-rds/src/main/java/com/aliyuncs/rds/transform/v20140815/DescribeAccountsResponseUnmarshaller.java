@@ -30,6 +30,8 @@ public class DescribeAccountsResponseUnmarshaller {
 		describeAccountsResponse.setRequestId(_ctx.stringValue("DescribeAccountsResponse.RequestId"));
 		describeAccountsResponse.setSystemAdminAccountStatus(_ctx.stringValue("DescribeAccountsResponse.SystemAdminAccountStatus"));
 		describeAccountsResponse.setSystemAdminAccountFirstActivationTime(_ctx.stringValue("DescribeAccountsResponse.SystemAdminAccountFirstActivationTime"));
+		describeAccountsResponse.setPageNumber(_ctx.integerValue("DescribeAccountsResponse.PageNumber"));
+		describeAccountsResponse.setTotalRecordCount(_ctx.integerValue("DescribeAccountsResponse.TotalRecordCount"));
 
 		List<DBInstanceAccount> accounts = new ArrayList<DBInstanceAccount>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeAccountsResponse.Accounts.Length"); i++) {

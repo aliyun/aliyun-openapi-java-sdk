@@ -31,7 +31,7 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 
 	private String logBackupFrequency;
 
-	private String archiveBackupKeepCount;
+	private Integer archiveBackupKeepCount;
 
 	private String backupLog;
 
@@ -66,6 +66,8 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 	private String preferredBackupTime;
 
 	private String backupRetentionPeriod;
+
+	private String backupMethod;
 
 	private String archiveBackupRetentionPeriod;
 
@@ -114,14 +116,14 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		}
 	}
 
-	public String getArchiveBackupKeepCount() {
+	public Integer getArchiveBackupKeepCount() {
 		return this.archiveBackupKeepCount;
 	}
 
-	public void setArchiveBackupKeepCount(String archiveBackupKeepCount) {
+	public void setArchiveBackupKeepCount(Integer archiveBackupKeepCount) {
 		this.archiveBackupKeepCount = archiveBackupKeepCount;
 		if(archiveBackupKeepCount != null){
-			putQueryParameter("ArchiveBackupKeepCount", archiveBackupKeepCount);
+			putQueryParameter("ArchiveBackupKeepCount", archiveBackupKeepCount.toString());
 		}
 	}
 
@@ -309,6 +311,17 @@ public class ModifyBackupPolicyRequest extends RpcAcsRequest<ModifyBackupPolicyR
 		this.backupRetentionPeriod = backupRetentionPeriod;
 		if(backupRetentionPeriod != null){
 			putQueryParameter("BackupRetentionPeriod", backupRetentionPeriod);
+		}
+	}
+
+	public String getBackupMethod() {
+		return this.backupMethod;
+	}
+
+	public void setBackupMethod(String backupMethod) {
+		this.backupMethod = backupMethod;
+		if(backupMethod != null){
+			putQueryParameter("BackupMethod", backupMethod);
 		}
 	}
 

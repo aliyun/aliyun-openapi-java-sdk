@@ -26,12 +26,32 @@ public class AllocateInstancePublicConnectionResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String connectionString;
+
+	private String dbInstanceName;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getConnectionString() {
+		return this.connectionString;
+	}
+
+	public void setConnectionString(String connectionString) {
+		this.connectionString = connectionString;
+	}
+
+	public String getDbInstanceName() {
+		return this.dbInstanceName;
+	}
+
+	public void setDbInstanceName(String dbInstanceName) {
+		this.dbInstanceName = dbInstanceName;
 	}
 
 	@Override

@@ -22,28 +22,18 @@ import com.aliyuncs.rds.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLReportsRequest extends RpcAcsRequest<DescribeSQLReportsResponse> {
+public class DescribeHADiagnoseConfigRequest extends RpcAcsRequest<DescribeHADiagnoseConfigResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String startTime;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String dBInstanceId;
-
 	private String resourceOwnerAccount;
 
-	private String ownerAccount;
-
-	private String endTime;
-
 	private Long ownerId;
-	public DescribeSQLReportsRequest() {
-		super("Rds", "2014-08-15", "DescribeSQLReports", "rds");
+
+	private String dBInstanceId;
+	public DescribeHADiagnoseConfigRequest() {
+		super("Rds", "2014-08-15", "DescribeHADiagnoseConfig", "rds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,50 +52,6 @@ public class DescribeSQLReportsRequest extends RpcAcsRequest<DescribeSQLReportsR
 		}
 	}
 
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -114,28 +60,6 @@ public class DescribeSQLReportsRequest extends RpcAcsRequest<DescribeSQLReportsR
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
-		}
-	}
-
-	public String getOwnerAccount() {
-		return this.ownerAccount;
-	}
-
-	public void setOwnerAccount(String ownerAccount) {
-		this.ownerAccount = ownerAccount;
-		if(ownerAccount != null){
-			putQueryParameter("OwnerAccount", ownerAccount);
-		}
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
 		}
 	}
 
@@ -150,9 +74,20 @@ public class DescribeSQLReportsRequest extends RpcAcsRequest<DescribeSQLReportsR
 		}
 	}
 
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
+	}
+
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLReportsResponse> getResponseClass() {
-		return DescribeSQLReportsResponse.class;
+	public Class<DescribeHADiagnoseConfigResponse> getResponseClass() {
+		return DescribeHADiagnoseConfigResponse.class;
 	}
 
 }

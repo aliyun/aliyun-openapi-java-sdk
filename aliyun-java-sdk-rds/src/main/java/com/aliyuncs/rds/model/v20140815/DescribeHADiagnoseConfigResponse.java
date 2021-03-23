@@ -15,20 +15,18 @@
 package com.aliyuncs.rds.model.v20140815;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.rds.transform.v20140815.ModifyDBInstanceNetworkTypeResponseUnmarshaller;
+import com.aliyuncs.rds.transform.v20140815.DescribeHADiagnoseConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDBInstanceNetworkTypeResponse extends AcsResponse {
+public class DescribeHADiagnoseConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskId;
-
-	private String connectionString;
+	private String tcpConnectionType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,24 +36,16 @@ public class ModifyDBInstanceNetworkTypeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getTcpConnectionType() {
+		return this.tcpConnectionType;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getConnectionString() {
-		return this.connectionString;
-	}
-
-	public void setConnectionString(String connectionString) {
-		this.connectionString = connectionString;
+	public void setTcpConnectionType(String tcpConnectionType) {
+		this.tcpConnectionType = tcpConnectionType;
 	}
 
 	@Override
-	public ModifyDBInstanceNetworkTypeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDBInstanceNetworkTypeResponseUnmarshaller.unmarshall(this, context);
+	public DescribeHADiagnoseConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeHADiagnoseConfigResponseUnmarshaller.unmarshall(this, context);
 	}
 }

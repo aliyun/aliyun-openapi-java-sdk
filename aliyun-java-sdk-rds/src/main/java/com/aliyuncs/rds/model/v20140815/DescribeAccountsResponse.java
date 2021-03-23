@@ -31,6 +31,10 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	private String systemAdminAccountFirstActivationTime;
 
+	private Integer pageNumber;
+
+	private Integer totalRecordCount;
+
 	private List<DBInstanceAccount> accounts;
 
 	public String getRequestId() {
@@ -55,6 +59,22 @@ public class DescribeAccountsResponse extends AcsResponse {
 
 	public void setSystemAdminAccountFirstActivationTime(String systemAdminAccountFirstActivationTime) {
 		this.systemAdminAccountFirstActivationTime = systemAdminAccountFirstActivationTime;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public Integer getTotalRecordCount() {
+		return this.totalRecordCount;
+	}
+
+	public void setTotalRecordCount(Integer totalRecordCount) {
+		this.totalRecordCount = totalRecordCount;
 	}
 
 	public List<DBInstanceAccount> getAccounts() {
