@@ -24,24 +24,62 @@ public class XmlReaderTest {
             + "><ClusterId></ClusterId></Instance></Instances><PageNumber>1</PageNumber><PageSize>10</PageSize"
             + "><TotalCount>1</TotalCount><RequestId>555FF875-0341-4D16-BFD1-E5B96FFEACC5</RequestId"
             + "></DescribeInstancesResponse>";
+
+    String xmlTest = "<NodeEntity>\n" +
+            "            <Owner></Owner>\n" +
+            "            <OwnerName></OwnerName>\n" +
+            "            <Description></Description>\n" +
+            "            <NodeName>adm_alipayrec_bgwords_exp_clk_detail_di</NodeName>\n" +
+            "            <BaseLineId></BaseLineId>\n" +
+            "            <CronExpress>day</CronExpress>\n" +
+            "            <RerunAble>true</RerunAble>\n" +
+            "            <AppName></AppName>\n" +
+            "            <FlowId>1</FlowId>\n" +
+            "            <PrgType>10</PrgType>\n" +
+            "            <ExecName></ExecName>\n" +
+            "            <BaseLineName></BaseLineName>\n" +
+            "            <ParentNodeRelations />\n" +
+            "            <DqcDescription></DqcDescription>\n" +
+            "            <Inputs />\n" +
+            "            <ResGroupName></ResGroupName>\n" +
+            "            <ResGroupIdentifier></ResGroupIdentifier>\n" +
+            "            <Priority>1</Priority>\n" +
+            "            <DependentType>0</DependentType>\n" +
+            "            <Connection>odps_first</Connection>\n" +
+            "            <scheduleExpress></scheduleExpress>\n" +
+            "            <CycType>0</CycType>\n" +
+            "            <AppId>21493</AppId>\n" +
+            "            <OdpsProjectName>ant_p13n</OdpsProjectName>\n" +
+            "            <NodeType>0</NodeType>\n" +
+            "            <NodeId>142824873</NodeId>\n" +
+            "            <Outputs />\n" +
+            "            <ResGroupId>6413</ResGroupId>\n" +
+            "            <ParaValue>\n" +
+            "                <![CDATA[\bbizdate=$bizdate]]>\n" +
+            "            </ParaValue>\n" +
+            "        </NodeEntity>";
     Map<String, String> map = null;
+    Map<String, String> mapTest = null;
 
     @Before
     public void init() throws ClientException {
         XmlReader xmlReader = new XmlReader();
         map = xmlReader.read(xml, "DescribeInstancesResponse");
+        mapTest = xmlReader.read(xml, "DescribeInstancesResponse");
     }
 
     @Test
     public void numberTest() {
         Assert.assertTrue(map.get("DescribeInstancesResponse.TotalCount").equals("1"));
         Assert.assertTrue(map.get("DescribeInstancesResponse.Instances[0].InternetMaxBandwidthIn").equals("-1"));
+
     }
 
     @Test
     public void structTest() {
         Assert.assertTrue(map.get("DescribeInstancesResponse.Instances[0].EipAddress.AllocationId").equals(""));
         Assert.assertTrue(map.get("DescribeInstancesResponse.Instances[0].EipAddress.IpAddress").equals("127.0.0.1"));
+        Assert.assertTrue(mapTest.get("DescribeInstancesResponse.Instances[0].EipAddress.AllocationId").equals(""));
     }
 
     @Test

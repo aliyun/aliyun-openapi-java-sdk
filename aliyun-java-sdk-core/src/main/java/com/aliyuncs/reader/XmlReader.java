@@ -22,11 +22,11 @@ public class XmlReader implements Reader {
             root = XmlUtils.getRootElementFromString(response);
             read(root, endpoint, false);
         } catch (ParserConfigurationException e) {
-            new ClientException("SDK.InvalidXMLParser", e.toString());
+            throw new ClientException("SDK.InvalidXMLParser", e.toString());
         } catch (SAXException e) {
-            new ClientException("SDK.InvalidXMLFormat", e.toString());
+            throw new ClientException("SDK.InvalidXMLFormat", e.toString());
         } catch (IOException e) {
-            new ClientException("SDK.InvalidContent", e.toString());
+            throw new ClientException("SDK.InvalidContent", e.toString());
         }
         return map;
     }
