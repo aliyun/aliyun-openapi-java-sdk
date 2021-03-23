@@ -182,7 +182,7 @@ public class DefaultAcsClient implements IAcsClient {
 
     @Override
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryCounts,
-            IClientProfile profile) throws ClientException, ServerException {
+                                                         IClientProfile profile) throws ClientException, ServerException {
         if (null == profile) {
             throw new ClientException("SDK.InvalidProfile", "No active profile found.");
         }
@@ -209,7 +209,7 @@ public class DefaultAcsClient implements IAcsClient {
         FormatType format = baseResponse.getHttpContentType();
         if (FormatType.JSON != format && FormatType.XML != format) {
             throw new ClientException(String.format("Server response has a bad format type: %s;\nThe original return is: %s;\n" +
-                            "The original header is: %s;" ,
+                            "The original header is: %s;",
                     format, baseResponse.getHttpContentString(), baseResponse.getSysHeaders().toString()));
         }
         if (baseResponse.isSuccess()) {
@@ -241,7 +241,7 @@ public class DefaultAcsClient implements IAcsClient {
      */
     @Deprecated
     public <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, Credential credential, Signer signer, FormatType format)
+                                                         String regionId, Credential credential, Signer signer, FormatType format)
             throws ClientException, ServerException {
         return doAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
                 format);
@@ -271,22 +271,27 @@ public class DefaultAcsClient implements IAcsClient {
 
         return domain;
     }
+
     private <T extends AcsResponse> HttpResponse doAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
                                                           String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
-        if (!GlobalTracer.isRegistered() || clientProfile.isCloseTrace() ) {
-            return doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer,format);
+        if (!GlobalTracer.isRegistered() || clientProfile.isCloseTrace()) {
+            return doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer, format);
         }
 
         Tracer tracer = GlobalTracer.get();
-        Span  span = tracer.buildSpan(request.getSysUrl())
-                    .withTag(Tags.COMPONENT.getKey(), "aliyunApi")
-                    .withTag("actionName", request.getSysActionName())
-                    .withTag("queryParam", MapUtils.getMapString(request.getQueryParameters()))
-                    .start();
+        Span activeSpan = tracer.activeSpan();
+        Tracer.SpanBuilder sb = tracer.buildSpan(request.getSysUrl());
+        if (activeSpan != null) {
+            sb.asChildOf(activeSpan);
+        }
+        Span span = sb.withTag(Tags.COMPONENT.getKey(), "aliyunApi")
+                .withTag("actionName", request.getSysActionName())
+                .withTag("queryParam", MapUtils.getMapString(request.getQueryParameters()))
+                .start();
         tracer.inject(span.context(), Format.Builtin.HTTP_HEADERS, new HttpHeadersInjectAdapter(request));
         try {
-            HttpResponse response = doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer,format);
+            HttpResponse response = doRealAction(request, autoRetry, maxRetryNumber, regionId, credentials, signer, format);
             span.setTag("status", response.getStatus());
             span.setTag("ReasonPhrase", response.getReasonPhrase());
             return response;
@@ -300,7 +305,7 @@ public class DefaultAcsClient implements IAcsClient {
     }
 
     private <T extends AcsResponse> HttpResponse doRealAction(AcsRequest<T> request, boolean autoRetry, int maxRetryNumber,
-            String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
+                                                              String regionId, AlibabaCloudCredentials credentials, Signer signer, FormatType format)
             throws ClientException, ServerException {
 
 

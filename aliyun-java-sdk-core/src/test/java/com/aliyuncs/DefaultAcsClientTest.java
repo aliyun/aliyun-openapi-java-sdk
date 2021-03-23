@@ -835,7 +835,7 @@ public class DefaultAcsClientTest {
     }
 
     @Test
-    public void parseAcsResponseTest() throws Exception{
+    public void parseAcsResponseTest() throws Exception {
         HttpResponse httpResponse = new HttpResponse();
         httpResponse.setHttpContentType(FormatType.RAW);
         httpResponse.setHttpContent("test".getBytes("UTF-8"), "UTF-8", FormatType.RAW);
@@ -869,9 +869,10 @@ public class DefaultAcsClientTest {
         Assert.assertTrue(client.doAction(request) instanceof HttpResponse);
     }
 
-    private Tracer initTracer(){
+    private Tracer initTracer() {
         Tracer tracer = new Tracer() {
             ScopeManager scopeManager = new ThreadLocalScopeManager();
+
             @Override
             public ScopeManager scopeManager() {
                 return scopeManager;
