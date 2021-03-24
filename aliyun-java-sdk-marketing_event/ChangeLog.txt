@@ -1,3 +1,6 @@
+2021-03-24 Version: 1.0.5
+- Supported Keyword Converting.
+
 2021-03-22 Version: 1.0.4
 - Supported Access Hid.
 
