@@ -26,545 +26,735 @@ import java.util.List;
  */
 public class DescribeContainerGroupsResponse extends AcsResponse {
 
-	private String requestId;
+    private String requestId;
 
-	private String nextToken;
+    private String nextToken;
 
-	private Integer totalCount;
+    private Integer totalCount;
 
-	private List<ContainerGroup> containerGroups;
+    private List<ContainerGroup> containerGroups;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+    public String getRequestId() {
+        return this.requestId;
+    }
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
-	public String getNextToken() {
-		return this.nextToken;
-	}
+    public String getNextToken() {
+        return this.nextToken;
+    }
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-	}
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
+    public Integer getTotalCount() {
+        return this.totalCount;
+    }
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
 
-	public List<ContainerGroup> getContainerGroups() {
-		return this.containerGroups;
-	}
+    public List<ContainerGroup> getContainerGroups() {
+        return this.containerGroups;
+    }
 
-	public void setContainerGroups(List<ContainerGroup> containerGroups) {
-		this.containerGroups = containerGroups;
-	}
+    public void setContainerGroups(List<ContainerGroup> containerGroups) {
+        this.containerGroups = containerGroups;
+    }
 
-	public static class ContainerGroup {
+    public static class ContainerGroup {
 
-		private String containerGroupId;
+        private String containerGroupId;
 
-		private String containerGroupName;
+        private String containerGroupName;
 
-		private String regionId;
+        private String regionId;
 
-		private String zoneId;
+        private String zoneId;
 
-		private Float memory;
+        private Float memory;
 
-		private Float cpu;
+        private Float cpu;
 
-		private String vSwitchId;
+        private String vSwitchId;
 
-		private String securityGroupId;
+        private String securityGroupId;
 
-		private String restartPolicy;
+        private String restartPolicy;
 
-		private String intranetIp;
+        private String intranetIp;
 
-		private String status;
+        private String status;
 
-		private String internetIp;
+        private String internetIp;
 
-		private String creationTime;
+        private String creationTime;
 
-		private String succeededTime;
+        private String succeededTime;
 
-		private String eniInstanceId;
+        private String eniInstanceId;
 
-		private List<Label> tags;
+        private String instanceType;
 
-		private List<Event> events;
+        private String expiredTime;
 
-		private List<Container> containers;
+        private String failedTime;
 
-		private List<Volume> volumes;
+        private String ramRoleName;
 
-		private List<Container> initContainers;
+        private String ipv6Address;
 
-		private DnsConfig dnsConfig;
+        private String vpcId;
 
-		private List<HostAliase> hostAliases;
+        private String discount;
 
-		private Integer ephemeralStorage;
+        private String resourceGroupId;
 
-		public Integer getEphemeralStorage() {
-			return ephemeralStorage;
-		}
+        private String tenantEniInstanceId;
 
-		public void setEphemeralStorage(Integer ephemeralStorage) {
-			this.ephemeralStorage = ephemeralStorage;
-		}
+        private String tenantVSwitchId;
 
-		public String getContainerGroupId() {
-			return this.containerGroupId;
-		}
+        private String tenantSecurityGroupId;
 
-		public void setContainerGroupId(String containerGroupId) {
-			this.containerGroupId = containerGroupId;
-		}
-
-		public String getContainerGroupName() {
-			return this.containerGroupName;
-		}
-
-		public void setContainerGroupName(String containerGroupName) {
-			this.containerGroupName = containerGroupName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Float getMemory() {
-			return this.memory;
-		}
-
-		public void setMemory(Float memory) {
-			this.memory = memory;
-		}
-
-		public Float getCpu() {
-			return this.cpu;
-		}
-
-		public void setCpu(Float cpu) {
-			this.cpu = cpu;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getSecurityGroupId() {
-			return this.securityGroupId;
-		}
-
-		public void setSecurityGroupId(String securityGroupId) {
-			this.securityGroupId = securityGroupId;
-		}
-
-		public String getRestartPolicy() {
-			return this.restartPolicy;
-		}
-
-		public void setRestartPolicy(String restartPolicy) {
-			this.restartPolicy = restartPolicy;
-		}
-
-		public String getIntranetIp() {
-			return this.intranetIp;
-		}
-
-		public void setIntranetIp(String intranetIp) {
-			this.intranetIp = intranetIp;
-		}
+        private String spotStrategy;
 
-		public String getStatus() {
-			return this.status;
-		}
+        private String tenantEniIp;
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
+        private List<Label> tags;
 
-		public String getInternetIp() {
-			return this.internetIp;
-		}
+        private List<Event> events;
 
-		public void setInternetIp(String internetIp) {
-			this.internetIp = internetIp;
-		}
+        private List<Container> containers;
 
-		public String getCreationTime() {
-			return this.creationTime;
-		}
+        private List<Volume> volumes;
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
+        private List<Container> initContainers;
 
-		public String getSucceededTime() {
-			return this.succeededTime;
-		}
+        private DnsConfig dnsConfig;
 
-		public void setSucceededTime(String succeededTime) {
-			this.succeededTime = succeededTime;
-		}
+        private EciSecurityContext eciSecurityContext;
 
-		public String getEniInstanceId() {
-			return this.eniInstanceId;
-		}
+        private List<HostAliase> hostAliases;
 
-		public void setEniInstanceId(String eniInstanceId) {
-			this.eniInstanceId = eniInstanceId;
-		}
+        private Integer ephemeralStorage;
 
-		public List<Label> getTags() {
-			return this.tags;
-		}
+        public String getContainerGroupId() {
+            return this.containerGroupId;
+        }
 
-		public void setTags(List<Label> tags) {
-			this.tags = tags;
-		}
+        public void setContainerGroupId(String containerGroupId) {
+            this.containerGroupId = containerGroupId;
+        }
 
-		public List<Event> getEvents() {
-			return this.events;
-		}
+        public String getContainerGroupName() {
+            return this.containerGroupName;
+        }
 
-		public void setEvents(List<Event> events) {
-			this.events = events;
-		}
+        public void setContainerGroupName(String containerGroupName) {
+            this.containerGroupName = containerGroupName;
+        }
 
-		public List<Container> getContainers() {
-			return this.containers;
-		}
+        public String getRegionId() {
+            return this.regionId;
+        }
 
-		public void setContainers(List<Container> containers) {
-			this.containers = containers;
-		}
+        public void setRegionId(String regionId) {
+            this.regionId = regionId;
+        }
 
-		public List<Volume> getVolumes() {
-			return this.volumes;
-		}
+        public String getZoneId() {
+            return this.zoneId;
+        }
 
-		public void setVolumes(List<Volume> volumes) {
-			this.volumes = volumes;
-		}
+        public void setZoneId(String zoneId) {
+            this.zoneId = zoneId;
+        }
 
-		public List<Container> getInitContainers() {
-			return this.initContainers;
-		}
+        public Float getMemory() {
+            return this.memory;
+        }
 
-		public void setInitContainers(List<Container> initContainers) {
-			this.initContainers = initContainers;
-		}
+        public void setMemory(Float memory) {
+            this.memory = memory;
+        }
 
-		public DnsConfig getDnsConfig() {
-			return this.dnsConfig;
-		}
+        public Float getCpu() {
+            return this.cpu;
+        }
 
-		public void setDnsConfig(DnsConfig dnsConfig) {
-			this.dnsConfig = dnsConfig;
-		}
+        public void setCpu(Float cpu) {
+            this.cpu = cpu;
+        }
 
-		public List<HostAliase> getHostAliases() {
-			return hostAliases;
-		}
+        public String getVSwitchId() {
+            return this.vSwitchId;
+        }
 
-		public void setHostAliases(List<HostAliase> hostAliases) {
-			this.hostAliases = hostAliases;
-		}
+        public void setVSwitchId(String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+        }
 
-		public static class Label {
+        public String getSecurityGroupId() {
+            return this.securityGroupId;
+        }
 
-			private String key;
+        public void setSecurityGroupId(String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+        }
 
-			private String value;
+        public String getRestartPolicy() {
+            return this.restartPolicy;
+        }
 
-			public String getKey() {
-				return this.key;
-			}
+        public void setRestartPolicy(String restartPolicy) {
+            this.restartPolicy = restartPolicy;
+        }
 
-			public void setKey(String key) {
-				this.key = key;
-			}
+        public String getIntranetIp() {
+            return this.intranetIp;
+        }
 
-			public String getValue() {
-				return this.value;
-			}
+        public void setIntranetIp(String intranetIp) {
+            this.intranetIp = intranetIp;
+        }
 
-			public void setValue(String value) {
-				this.value = value;
-			}
-		}
+        public String getStatus() {
+            return this.status;
+        }
 
-		public static class Event {
+        public void setStatus(String status) {
+            this.status = status;
+        }
 
-			private Integer count;
+        public String getInternetIp() {
+            return this.internetIp;
+        }
 
-			private String type;
+        public void setInternetIp(String internetIp) {
+            this.internetIp = internetIp;
+        }
 
-			private String name;
+        public String getCreationTime() {
+            return this.creationTime;
+        }
 
-			private String message;
+        public void setCreationTime(String creationTime) {
+            this.creationTime = creationTime;
+        }
 
-			private String firstTimestamp;
+        public String getSucceededTime() {
+            return this.succeededTime;
+        }
 
-			private String lastTimestamp;
+        public void setSucceededTime(String succeededTime) {
+            this.succeededTime = succeededTime;
+        }
 
-			private String reason;
+        public String getEniInstanceId() {
+            return this.eniInstanceId;
+        }
 
-			public Integer getCount() {
-				return this.count;
-			}
+        public void setEniInstanceId(String eniInstanceId) {
+            this.eniInstanceId = eniInstanceId;
+        }
 
-			public void setCount(Integer count) {
-				this.count = count;
-			}
+        public List<Label> getTags() {
+            return this.tags;
+        }
 
-			public String getType() {
-				return this.type;
-			}
+        public void setTags(List<Label> tags) {
+            this.tags = tags;
+        }
 
-			public void setType(String type) {
-				this.type = type;
-			}
+        public List<Event> getEvents() {
+            return this.events;
+        }
 
-			public String getName() {
-				return this.name;
-			}
+        public void setEvents(List<Event> events) {
+            this.events = events;
+        }
 
-			public void setName(String name) {
-				this.name = name;
-			}
+        public List<Container> getContainers() {
+            return this.containers;
+        }
 
-			public String getMessage() {
-				return this.message;
-			}
+        public void setContainers(List<Container> containers) {
+            this.containers = containers;
+        }
 
-			public void setMessage(String message) {
-				this.message = message;
-			}
+        public List<Volume> getVolumes() {
+            return this.volumes;
+        }
 
-			public String getFirstTimestamp() {
-				return this.firstTimestamp;
-			}
+        public void setVolumes(List<Volume> volumes) {
+            this.volumes = volumes;
+        }
 
-			public void setFirstTimestamp(String firstTimestamp) {
-				this.firstTimestamp = firstTimestamp;
-			}
+        public List<Container> getInitContainers() {
+            return this.initContainers;
+        }
 
-			public String getLastTimestamp() {
-				return this.lastTimestamp;
-			}
+        public void setInitContainers(List<Container> initContainers) {
+            this.initContainers = initContainers;
+        }
 
-			public void setLastTimestamp(String lastTimestamp) {
-				this.lastTimestamp = lastTimestamp;
-			}
+        public DnsConfig getDnsConfig() {
+            return this.dnsConfig;
+        }
 
-			public String getReason() {
-				return this.reason;
-			}
+        public void setDnsConfig(DnsConfig dnsConfig) {
+            this.dnsConfig = dnsConfig;
+        }
 
-			public void setReason(String reason) {
-				this.reason = reason;
-			}
-		}
+        public List<HostAliase> getHostAliases() {
+            return hostAliases;
+        }
 
-		public static class Container {
+        public void setHostAliases(List<HostAliase> hostAliases) {
+            this.hostAliases = hostAliases;
+        }
 
-			private String name;
+        public Integer getEphemeralStorage() {
+            return this.ephemeralStorage;
+        }
 
-			private String image;
+        public void setEphemeralStorage(Integer ephemeralStorage) {
+            this.ephemeralStorage = ephemeralStorage;
+        }
 
-			private Float memory;
+        public String getInstanceType() {
+            return this.instanceType;
+        }
 
-			private Float cpu;
+        public void setInstanceType(String instanceType) {
+            this.instanceType = instanceType;
+        }
 
-			private Integer restartCount;
+        public String getExpiredTime() {
+            return this.expiredTime;
+        }
 
-			private String workingDir;
+        public void setExpiredTime(String expiredTime) {
+            this.expiredTime = expiredTime;
+        }
 
-			private String imagePullPolicy;
+        public String getFailedTime() {
+            return this.failedTime;
+        }
 
-			private List<VolumeMount> volumeMounts;
+        public void setFailedTime(String failedTime) {
+            this.failedTime = failedTime;
+        }
 
-			private List<Port> ports;
+        public String getRamRoleName() {
+            return this.ramRoleName;
+        }
 
-			private List<EnvironmentVar> environmentVars;
+        public void setRamRoleName(String ramRoleName) {
+            this.ramRoleName = ramRoleName;
+        }
 
-			private List<String> commands;
+        public String getIpv6Address() {
+            return this.ipv6Address;
+        }
 
-			private List<String> args;
+        public void setIpv6Address(String ipv6Address) {
+            this.ipv6Address = ipv6Address;
+        }
 
-			private ContainerState previousState;
+        public String getVpcId() {
+            return this.vpcId;
+        }
 
-			private ContainerState currentState;
+        public void setVpcId(String vpcId) {
+            this.vpcId = vpcId;
+        }
 
-			private ContainerProbe readinessProbe;
+        public String getDiscount() {
+            return this.discount;
+        }
 
-			private ContainerProbe livenessProbe;
+        public void setDiscount(String discount) {
+            this.discount = discount;
+        }
 
-			private SecurityContext securityContext;
+        public String getResourceGroupId() {
+            return this.resourceGroupId;
+        }
 
-			public String getName() {
-				return this.name;
-			}
+        public void setResourceGroupId(String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+        }
 
-			public void setName(String name) {
-				this.name = name;
-			}
+        public String getTenantEniInstanceId() {
+            return this.tenantEniInstanceId;
+        }
 
-			public String getImage() {
-				return this.image;
-			}
+        public void setTenantEniInstanceId(String tenantEniInstanceId) {
+            this.tenantEniInstanceId = tenantEniInstanceId;
+        }
 
-			public void setImage(String image) {
-				this.image = image;
-			}
+        public String getTenantVSwitchId() {
+            return this.tenantVSwitchId;
+        }
 
-			public Float getMemory() {
-				return this.memory;
-			}
+        public void setTenantVSwitchId(String tenantVSwitchId) {
+            this.tenantVSwitchId = tenantVSwitchId;
+        }
 
-			public void setMemory(Float memory) {
-				this.memory = memory;
-			}
+        public String getTenantSecurityGroupId() {
+            return this.tenantSecurityGroupId;
+        }
 
-			public Float getCpu() {
-				return this.cpu;
-			}
+        public void setTenantSecurityGroupId(String tenantSecurityGroupId) {
+            this.tenantSecurityGroupId = tenantSecurityGroupId;
+        }
 
-			public void setCpu(Float cpu) {
-				this.cpu = cpu;
-			}
+        public String getSpotStrategy() {
+            return this.spotStrategy;
+        }
 
-			public Integer getRestartCount() {
-				return this.restartCount;
-			}
+        public void setSpotStrategy(String spotStrategy) {
+            this.spotStrategy = spotStrategy;
+        }
 
-			public void setRestartCount(Integer restartCount) {
-				this.restartCount = restartCount;
-			}
+        public String getTenantEniIp() {
+            return this.tenantEniIp;
+        }
 
-			public String getWorkingDir() {
-				return this.workingDir;
-			}
+        public void setTenantEniIp(String tenantEniIp) {
+            this.tenantEniIp = tenantEniIp;
+        }
 
-			public void setWorkingDir(String workingDir) {
-				this.workingDir = workingDir;
-			}
+        public EciSecurityContext getEciSecurityContext() {
+            return this.eciSecurityContext;
+        }
 
-			public String getImagePullPolicy() {
-				return this.imagePullPolicy;
-			}
+        public void setEciSecurityContext(EciSecurityContext eciSecurityContext) {
+            this.eciSecurityContext = eciSecurityContext;
+        }
 
-			public void setImagePullPolicy(String imagePullPolicy) {
-				this.imagePullPolicy = imagePullPolicy;
-			}
+        public static class Label {
 
-			public List<VolumeMount> getVolumeMounts() {
-				return this.volumeMounts;
-			}
+            private String key;
 
-			public void setVolumeMounts(List<VolumeMount> volumeMounts) {
-				this.volumeMounts = volumeMounts;
-			}
+            private String value;
 
-			public List<Port> getPorts() {
-				return this.ports;
-			}
+            public String getKey() {
+                return this.key;
+            }
 
-			public void setPorts(List<Port> ports) {
-				this.ports = ports;
-			}
+            public void setKey(String key) {
+                this.key = key;
+            }
 
-			public List<EnvironmentVar> getEnvironmentVars() {
-				return this.environmentVars;
-			}
+            public String getValue() {
+                return this.value;
+            }
 
-			public void setEnvironmentVars(List<EnvironmentVar> environmentVars) {
-				this.environmentVars = environmentVars;
-			}
+            public void setValue(String value) {
+                this.value = value;
+            }
+        }
 
-			public List<String> getCommands() {
-				return this.commands;
-			}
+        public static class Event {
 
-			public void setCommands(List<String> commands) {
-				this.commands = commands;
-			}
+            private Integer count;
 
-			public List<String> getArgs() {
-				return this.args;
-			}
+            private String type;
 
-			public void setArgs(List<String> args) {
-				this.args = args;
-			}
+            private String name;
 
-			public ContainerState getPreviousState() {
-				return this.previousState;
-			}
+            private String message;
 
-			public void setPreviousState(ContainerState previousState) {
-				this.previousState = previousState;
-			}
+            private String firstTimestamp;
 
-			public ContainerState getCurrentState() {
-				return this.currentState;
-			}
+            private String lastTimestamp;
 
-			public void setCurrentState(ContainerState currentState) {
-				this.currentState = currentState;
-			}
+            private String reason;
 
-			public ContainerProbe getReadinessProbe() {
-				return this.readinessProbe;
-			}
+            public Integer getCount() {
+                return this.count;
+            }
 
-			public void setReadinessProbe(ContainerProbe readinessProbe) {
-				this.readinessProbe = readinessProbe;
-			}
+            public void setCount(Integer count) {
+                this.count = count;
+            }
 
-			public ContainerProbe getLivenessProbe() {
-				return this.livenessProbe;
-			}
+            public String getType() {
+                return this.type;
+            }
 
-			public void setLivenessProbe(ContainerProbe livenessProbe) {
-				this.livenessProbe = livenessProbe;
-			}
+            public void setType(String type) {
+                this.type = type;
+            }
 
-			public SecurityContext getSecurityContext() {
-				return this.securityContext;
-			}
+            public String getName() {
+                return this.name;
+            }
 
-			public void setSecurityContext(SecurityContext securityContext) {
-				this.securityContext = securityContext;
-			}
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getMessage() {
+                return this.message;
+            }
+
+            public void setMessage(String message) {
+                this.message = message;
+            }
+
+            public String getFirstTimestamp() {
+                return this.firstTimestamp;
+            }
+
+            public void setFirstTimestamp(String firstTimestamp) {
+                this.firstTimestamp = firstTimestamp;
+            }
+
+            public String getLastTimestamp() {
+                return this.lastTimestamp;
+            }
+
+            public void setLastTimestamp(String lastTimestamp) {
+                this.lastTimestamp = lastTimestamp;
+            }
+
+            public String getReason() {
+                return this.reason;
+            }
+
+            public void setReason(String reason) {
+                this.reason = reason;
+            }
+        }
+
+        public static class Container {
+
+            private String name;
+
+            private String image;
+
+            private Float memory;
+
+            private Float cpu;
+
+            private Integer restartCount;
+
+            private String workingDir;
+
+            private String imagePullPolicy;
+
+            private Boolean ready;
+
+            private Integer gpu;
+
+            private Boolean stdin;
+
+            private Boolean stdinOnce;
+
+            private Boolean tty;
+
+            private List<VolumeMount> volumeMounts;
+
+            private List<Port> ports;
+
+            private List<EnvironmentVar> environmentVars;
+
+            private List<String> commands;
+
+            private List<String> args;
+
+            private ContainerState previousState;
+
+            private ContainerState currentState;
+
+            private ContainerProbe readinessProbe;
+
+            private ContainerProbe livenessProbe;
+
+            private SecurityContext securityContext;
+
+            public String getName() {
+                return this.name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getImage() {
+                return this.image;
+            }
+
+            public void setImage(String image) {
+                this.image = image;
+            }
+
+            public Float getMemory() {
+                return this.memory;
+            }
+
+            public void setMemory(Float memory) {
+                this.memory = memory;
+            }
+
+            public Float getCpu() {
+                return this.cpu;
+            }
+
+            public void setCpu(Float cpu) {
+                this.cpu = cpu;
+            }
+
+            public Integer getRestartCount() {
+                return this.restartCount;
+            }
+
+            public void setRestartCount(Integer restartCount) {
+                this.restartCount = restartCount;
+            }
+
+            public String getWorkingDir() {
+                return this.workingDir;
+            }
+
+            public void setWorkingDir(String workingDir) {
+                this.workingDir = workingDir;
+            }
+
+            public String getImagePullPolicy() {
+                return this.imagePullPolicy;
+            }
+
+            public void setImagePullPolicy(String imagePullPolicy) {
+                this.imagePullPolicy = imagePullPolicy;
+            }
+
+            public Boolean getReady() {
+                return this.ready;
+            }
+
+            public void setReady(Boolean ready) {
+                this.ready = ready;
+            }
+
+            public Integer getGpu() {
+                return this.gpu;
+            }
+
+            public void setGpu(Integer gpu) {
+                this.gpu = gpu;
+            }
+
+            public Boolean getStdin() {
+                return this.stdin;
+            }
+
+            public void setStdin(Boolean stdin) {
+                this.stdin = stdin;
+            }
+
+            public Boolean getStdinOnce() {
+                return this.stdinOnce;
+            }
+
+            public void setStdinOnce(Boolean stdinOnce) {
+                this.stdinOnce = stdinOnce;
+            }
+
+            public Boolean getTty() {
+                return this.tty;
+            }
+
+            public void setTty(Boolean tty) {
+                this.tty = tty;
+            }
+
+            public List<VolumeMount> getVolumeMounts() {
+                return this.volumeMounts;
+            }
+
+            public void setVolumeMounts(List<VolumeMount> volumeMounts) {
+                this.volumeMounts = volumeMounts;
+            }
+
+            public List<Port> getPorts() {
+                return this.ports;
+            }
+
+            public void setPorts(List<Port> ports) {
+                this.ports = ports;
+            }
+
+            public List<EnvironmentVar> getEnvironmentVars() {
+                return this.environmentVars;
+            }
+
+            public void setEnvironmentVars(List<EnvironmentVar> environmentVars) {
+                this.environmentVars = environmentVars;
+            }
+
+            public List<String> getCommands() {
+                return this.commands;
+            }
+
+            public void setCommands(List<String> commands) {
+                this.commands = commands;
+            }
+
+            public List<String> getArgs() {
+                return this.args;
+            }
+
+            public void setArgs(List<String> args) {
+                this.args = args;
+            }
+
+            public ContainerState getPreviousState() {
+                return this.previousState;
+            }
+
+            public void setPreviousState(ContainerState previousState) {
+                this.previousState = previousState;
+            }
+
+            public ContainerState getCurrentState() {
+                return this.currentState;
+            }
+
+            public void setCurrentState(ContainerState currentState) {
+                this.currentState = currentState;
+            }
+
+            public ContainerProbe getReadinessProbe() {
+                return this.readinessProbe;
+            }
+
+            public void setReadinessProbe(ContainerProbe readinessProbe) {
+                this.readinessProbe = readinessProbe;
+            }
+
+            public ContainerProbe getLivenessProbe() {
+                return this.livenessProbe;
+            }
+
+            public void setLivenessProbe(ContainerProbe livenessProbe) {
+                this.livenessProbe = livenessProbe;
+            }
+
+            public SecurityContext getSecurityContext() {
+                return this.securityContext;
+            }
+
+            public void setSecurityContext(SecurityContext securityContext) {
+                this.securityContext = securityContext;
+            }
 
             public static class VolumeMount {
 
@@ -574,7 +764,7 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
 
                 private String name;
 
-                private String subPath;
+                private String mountPropagation;
 
                 public String getMountPath() {
                     return this.mountPath;
@@ -600,475 +790,631 @@ public class DescribeContainerGroupsResponse extends AcsResponse {
                     this.name = name;
                 }
 
-                public String getSubPath() {
-                    return subPath;
+                public String getMountPropagation() {
+                    return mountPropagation;
                 }
 
-                public void setSubPath(String subPath) {
-                    this.subPath = subPath;
+                public void setMountPropagation(String mountPropagation) {
+                    this.mountPropagation = mountPropagation;
                 }
 
             }
 
-			public static class Port {
+            public static class Port {
 
-				private Integer port;
+                private Integer port;
 
-				private String protocol;
+                private String protocol;
 
-				public Integer getPort() {
-					return this.port;
-				}
+                public Integer getPort() {
+                    return this.port;
+                }
 
-				public void setPort(Integer port) {
-					this.port = port;
-				}
+                public void setPort(Integer port) {
+                    this.port = port;
+                }
 
-				public String getProtocol() {
-					return this.protocol;
-				}
+                public String getProtocol() {
+                    return this.protocol;
+                }
 
-				public void setProtocol(String protocol) {
-					this.protocol = protocol;
-				}
-			}
+                public void setProtocol(String protocol) {
+                    this.protocol = protocol;
+                }
+            }
 
-			public static class EnvironmentVar {
+            public static class EnvironmentVar {
 
-				private String key;
+                private String key;
 
-				private String value;
+                private String value;
 
-				public String getKey() {
-					return this.key;
-				}
+                private ValueFrom valueFrom;
 
-				public void setKey(String key) {
-					this.key = key;
-				}
+                public String getKey() {
+                    return this.key;
+                }
 
-				public String getValue() {
-					return this.value;
-				}
+                public void setKey(String key) {
+                    this.key = key;
+                }
 
-				public void setValue(String value) {
-					this.value = value;
-				}
-			}
+                public String getValue() {
+                    return this.value;
+                }
 
-			public static class ContainerState {
+                public void setValue(String value) {
+                    this.value = value;
+                }
 
-				private String state;
+                public ValueFrom getValueFrom() {
+                    return this.valueFrom;
+                }
 
-				private String detailStatus;
+                public void setValueFrom(ValueFrom valueFrom) {
+                    this.valueFrom = valueFrom;
+                }
 
-				private Integer exitCode;
+                public static class ValueFrom {
 
-				private String startTime;
+                    private FieldRef fieldRef;
 
-				private String finishTime;
+                    public FieldRef getFieldRef() {
+                        return this.fieldRef;
+                    }
 
-				public String getState() {
-					return this.state;
-				}
+                    public void setFieldRef(FieldRef fieldRef) {
+                        this.fieldRef = fieldRef;
+                    }
 
-				public void setState(String state) {
-					this.state = state;
-				}
+                    public static class FieldRef {
 
-				public String getDetailStatus() {
-					return this.detailStatus;
-				}
+                        private String fieldPath;
 
-				public void setDetailStatus(String detailStatus) {
-					this.detailStatus = detailStatus;
-				}
+                        public String getFieldPath() {
+                            return this.fieldPath;
+                        }
 
-				public Integer getExitCode() {
-					return this.exitCode;
-				}
+                        public void setFieldPath(String fieldPath) {
+                            this.fieldPath = fieldPath;
+                        }
+                    }
 
-				public void setExitCode(Integer exitCode) {
-					this.exitCode = exitCode;
-				}
+                }
+            }
 
-				public String getStartTime() {
-					return this.startTime;
-				}
+            public static class ContainerState {
 
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
+                private String state;
 
-				public String getFinishTime() {
-					return this.finishTime;
-				}
+                private String detailStatus;
 
-				public void setFinishTime(String finishTime) {
-					this.finishTime = finishTime;
-				}
-			}
+                private Integer exitCode;
 
-			public static class ContainerProbe {
+                private String startTime;
 
-				private Integer initialDelaySeconds;
+                private String finishTime;
 
-				private Integer periodSeconds;
+                private String reason;
 
-				private Integer timeoutSeconds;
+                private String message;
 
-				private Integer successThreshold;
+                private Integer signal;
 
-				private Integer failureThreshold;
+                public String getState() {
+                    return this.state;
+                }
 
-				private List<String> execs;
+                public void setState(String state) {
+                    this.state = state;
+                }
 
-				private HttpGet httpGet;
+                public String getDetailStatus() {
+                    return this.detailStatus;
+                }
 
-				private TcpSocket tcpSocket;
+                public void setDetailStatus(String detailStatus) {
+                    this.detailStatus = detailStatus;
+                }
 
-				public Integer getInitialDelaySeconds() {
-					return this.initialDelaySeconds;
-				}
+                public Integer getExitCode() {
+                    return this.exitCode;
+                }
 
-				public void setInitialDelaySeconds(Integer initialDelaySeconds) {
-					this.initialDelaySeconds = initialDelaySeconds;
-				}
+                public void setExitCode(Integer exitCode) {
+                    this.exitCode = exitCode;
+                }
 
-				public Integer getPeriodSeconds() {
-					return this.periodSeconds;
-				}
+                public String getStartTime() {
+                    return this.startTime;
+                }
 
-				public void setPeriodSeconds(Integer periodSeconds) {
-					this.periodSeconds = periodSeconds;
-				}
+                public void setStartTime(String startTime) {
+                    this.startTime = startTime;
+                }
 
-				public Integer getTimeoutSeconds() {
-					return this.timeoutSeconds;
-				}
+                public String getFinishTime() {
+                    return this.finishTime;
+                }
 
-				public void setTimeoutSeconds(Integer timeoutSeconds) {
-					this.timeoutSeconds = timeoutSeconds;
-				}
+                public void setFinishTime(String finishTime) {
+                    this.finishTime = finishTime;
+                }
 
-				public Integer getSuccessThreshold() {
-					return this.successThreshold;
-				}
+                public String getReason() {
+                    return this.reason;
+                }
 
-				public void setSuccessThreshold(Integer successThreshold) {
-					this.successThreshold = successThreshold;
-				}
+                public void setReason(String reason) {
+                    this.reason = reason;
+                }
 
-				public Integer getFailureThreshold() {
-					return this.failureThreshold;
-				}
+                public String getMessage() {
+                    return this.message;
+                }
 
-				public void setFailureThreshold(Integer failureThreshold) {
-					this.failureThreshold = failureThreshold;
-				}
+                public void setMessage(String message) {
+                    this.message = message;
+                }
 
-				public List<String> getExecs() {
-					return this.execs;
-				}
+                public Integer getSignal() {
+                    return this.signal;
+                }
 
-				public void setExecs(List<String> execs) {
-					this.execs = execs;
-				}
+                public void setSignal(Integer signal) {
+                    this.signal = signal;
+                }
+            }
 
-				public HttpGet getHttpGet() {
-					return this.httpGet;
-				}
+            public static class ContainerProbe {
 
-				public void setHttpGet(HttpGet httpGet) {
-					this.httpGet = httpGet;
-				}
+                private Integer initialDelaySeconds;
 
-				public TcpSocket getTcpSocket() {
-					return this.tcpSocket;
-				}
+                private Integer periodSeconds;
 
-				public void setTcpSocket(TcpSocket tcpSocket) {
-					this.tcpSocket = tcpSocket;
-				}
+                private Integer timeoutSeconds;
 
-				public static class HttpGet {
+                private Integer successThreshold;
 
-					private String path;
+                private Integer failureThreshold;
 
-					private Integer port;
+                private List<String> execs;
 
-					private String scheme;
+                private HttpGet httpGet;
 
-					public String getPath() {
-						return this.path;
-					}
+                private TcpSocket tcpSocket;
 
-					public void setPath(String path) {
-						this.path = path;
-					}
+                public Integer getInitialDelaySeconds() {
+                    return this.initialDelaySeconds;
+                }
 
-					public Integer getPort() {
-						return this.port;
-					}
+                public void setInitialDelaySeconds(Integer initialDelaySeconds) {
+                    this.initialDelaySeconds = initialDelaySeconds;
+                }
 
-					public void setPort(Integer port) {
-						this.port = port;
-					}
+                public Integer getPeriodSeconds() {
+                    return this.periodSeconds;
+                }
 
-					public String getScheme() {
-						return this.scheme;
-					}
+                public void setPeriodSeconds(Integer periodSeconds) {
+                    this.periodSeconds = periodSeconds;
+                }
 
-					public void setScheme(String scheme) {
-						this.scheme = scheme;
-					}
-				}
+                public Integer getTimeoutSeconds() {
+                    return this.timeoutSeconds;
+                }
 
-				public static class TcpSocket {
+                public void setTimeoutSeconds(Integer timeoutSeconds) {
+                    this.timeoutSeconds = timeoutSeconds;
+                }
 
-					private String host;
+                public Integer getSuccessThreshold() {
+                    return this.successThreshold;
+                }
 
-					private Integer port;
+                public void setSuccessThreshold(Integer successThreshold) {
+                    this.successThreshold = successThreshold;
+                }
 
-					public String getHost() {
-						return this.host;
-					}
+                public Integer getFailureThreshold() {
+                    return this.failureThreshold;
+                }
 
-					public void setHost(String host) {
-						this.host = host;
-					}
+                public void setFailureThreshold(Integer failureThreshold) {
+                    this.failureThreshold = failureThreshold;
+                }
 
-					public Integer getPort() {
-						return this.port;
-					}
+                public List<String> getExecs() {
+                    return this.execs;
+                }
 
-					public void setPort(Integer port) {
-						this.port = port;
-					}
-				}
-			}
+                public void setExecs(List<String> execs) {
+                    this.execs = execs;
+                }
 
+                public HttpGet getHttpGet() {
+                    return this.httpGet;
+                }
 
-			public static class SecurityContext {
+                public void setHttpGet(HttpGet httpGet) {
+                    this.httpGet = httpGet;
+                }
 
-				private Boolean readOnlyRootFilesystem;
+                public TcpSocket getTcpSocket() {
+                    return this.tcpSocket;
+                }
 
-				private Long runAsUser;
+                public void setTcpSocket(TcpSocket tcpSocket) {
+                    this.tcpSocket = tcpSocket;
+                }
 
-				private Capability capability;
+                public static class HttpGet {
 
-				public Boolean getReadOnlyRootFilesystem() {
-					return this.readOnlyRootFilesystem;
-				}
+                    private String path;
 
-				public void setReadOnlyRootFilesystem(Boolean readOnlyRootFilesystem) {
-					this.readOnlyRootFilesystem = readOnlyRootFilesystem;
-				}
+                    private Integer port;
 
-				public Long getRunAsUser() {
-					return this.runAsUser;
-				}
+                    private String scheme;
 
-				public void setRunAsUser(Long runAsUser) {
-					this.runAsUser = runAsUser;
-				}
+                    public String getPath() {
+                        return this.path;
+                    }
 
-				public Capability getCapability() {
-					return this.capability;
-				}
+                    public void setPath(String path) {
+                        this.path = path;
+                    }
 
-				public void setCapability(Capability capability) {
-					this.capability = capability;
-				}
+                    public Integer getPort() {
+                        return this.port;
+                    }
 
-				public static class Capability {
+                    public void setPort(Integer port) {
+                        this.port = port;
+                    }
 
-					private List<String> adds;
+                    public String getScheme() {
+                        return this.scheme;
+                    }
 
-					public List<String> getAdds() {
-						return this.adds;
-					}
+                    public void setScheme(String scheme) {
+                        this.scheme = scheme;
+                    }
+                }
 
-					public void setAdds(List<String> adds) {
-						this.adds = adds;
-					}
-				}
-			}
-		}
+                public static class TcpSocket {
 
-		public static class Volume {
+                    private String host;
 
-			private String type;
+                    private Integer port;
 
-			private String name;
+                    public String getHost() {
+                        return this.host;
+                    }
 
-			private String nFSVolumePath;
+                    public void setHost(String host) {
+                        this.host = host;
+                    }
 
-			private String nFSVolumeServer;
+                    public Integer getPort() {
+                        return this.port;
+                    }
 
-			private Boolean nFSVolumeReadOnly;
+                    public void setPort(Integer port) {
+                        this.port = port;
+                    }
+                }
+            }
 
-			private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
-			public String getType() {
-				return this.type;
-			}
+            public static class SecurityContext {
 
-			public void setType(String type) {
-				this.type = type;
-			}
+                private Boolean readOnlyRootFilesystem;
 
-			public String getName() {
-				return this.name;
-			}
+                private Long runAsUser;
 
-			public void setName(String name) {
-				this.name = name;
-			}
+                private Capability capability;
 
-			public String getNFSVolumePath() {
-				return this.nFSVolumePath;
-			}
+                public Boolean getReadOnlyRootFilesystem() {
+                    return this.readOnlyRootFilesystem;
+                }
 
-			public void setNFSVolumePath(String nFSVolumePath) {
-				this.nFSVolumePath = nFSVolumePath;
-			}
+                public void setReadOnlyRootFilesystem(Boolean readOnlyRootFilesystem) {
+                    this.readOnlyRootFilesystem = readOnlyRootFilesystem;
+                }
 
-			public String getNFSVolumeServer() {
-				return this.nFSVolumeServer;
-			}
+                public Long getRunAsUser() {
+                    return this.runAsUser;
+                }
 
-			public void setNFSVolumeServer(String nFSVolumeServer) {
-				this.nFSVolumeServer = nFSVolumeServer;
-			}
+                public void setRunAsUser(Long runAsUser) {
+                    this.runAsUser = runAsUser;
+                }
 
-			public Boolean getNFSVolumeReadOnly() {
-				return this.nFSVolumeReadOnly;
-			}
+                public Capability getCapability() {
+                    return this.capability;
+                }
 
-			public void setNFSVolumeReadOnly(Boolean nFSVolumeReadOnly) {
-				this.nFSVolumeReadOnly = nFSVolumeReadOnly;
-			}
+                public void setCapability(Capability capability) {
+                    this.capability = capability;
+                }
 
-			public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
-				return this.configFileVolumeConfigFileToPaths;
-			}
+                public static class Capability {
 
-			public void setConfigFileVolumeConfigFileToPaths(List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths) {
-				this.configFileVolumeConfigFileToPaths = configFileVolumeConfigFileToPaths;
-			}
+                    private List<String> adds;
 
-			public static class ConfigFileVolumeConfigFileToPath {
+                    public List<String> getAdds() {
+                        return this.adds;
+                    }
 
-				private String content;
+                    public void setAdds(List<String> adds) {
+                        this.adds = adds;
+                    }
+                }
+            }
+        }
 
-				private String path;
+        public static class Volume {
 
-				public String getContent() {
-					return this.content;
-				}
+            private String type;
 
-				public void setContent(String content) {
-					this.content = content;
-				}
+            private String name;
 
-				public String getPath() {
-					return this.path;
-				}
+            private String nFSVolumePath;
 
-				public void setPath(String path) {
-					this.path = path;
-				}
-			}
-		}
+            private String nFSVolumeServer;
 
-		public static class DnsConfig {
+            private Boolean nFSVolumeReadOnly;
 
-			private List<Option> options;
+            private String diskVolumeDiskId;
 
-			private List<String> nameServers;
+            private String diskVolumeFsType;
 
-			private List<String> searches;
+            private String flexVolumeDriver;
 
-			public List<Option> getOptions() {
-				return this.options;
-			}
+            private String flexVolumeFsType;
 
-			public void setOptions(List<Option> options) {
-				this.options = options;
-			}
+            private String flexVolumeOptions;
 
-			public List<String> getNameServers() {
-				return this.nameServers;
-			}
+            private List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths;
 
-			public void setNameServers(List<String> nameServers) {
-				this.nameServers = nameServers;
-			}
+            public String getType() {
+                return this.type;
+            }
 
-			public List<String> getSearches() {
-				return this.searches;
-			}
+            public void setType(String type) {
+                this.type = type;
+            }
 
-			public void setSearches(List<String> searches) {
-				this.searches = searches;
-			}
+            public String getName() {
+                return this.name;
+            }
 
-			public static class Option {
+            public void setName(String name) {
+                this.name = name;
+            }
 
-				private String name;
+            public String getNFSVolumePath() {
+                return this.nFSVolumePath;
+            }
 
-				private String value;
+            public void setNFSVolumePath(String nFSVolumePath) {
+                this.nFSVolumePath = nFSVolumePath;
+            }
 
-				public String getName() {
-					return this.name;
-				}
+            public String getNFSVolumeServer() {
+                return this.nFSVolumeServer;
+            }
 
-				public void setName(String name) {
-					this.name = name;
-				}
+            public void setNFSVolumeServer(String nFSVolumeServer) {
+                this.nFSVolumeServer = nFSVolumeServer;
+            }
 
-				public String getValue() {
-					return this.value;
-				}
+            public Boolean getNFSVolumeReadOnly() {
+                return this.nFSVolumeReadOnly;
+            }
 
-				public void setValue(String value) {
-					this.value = value;
-				}
-			}
-		}
+            public void setNFSVolumeReadOnly(Boolean nFSVolumeReadOnly) {
+                this.nFSVolumeReadOnly = nFSVolumeReadOnly;
+            }
 
-		public static class HostAliase {
 
-			private String ip;
+            public String getDiskVolumeDiskId() {
+                return this.diskVolumeDiskId;
+            }
 
-			private List<String> hostnames;
+            public void setDiskVolumeDiskId(String diskVolumeDiskId) {
+                this.diskVolumeDiskId = diskVolumeDiskId;
+            }
 
-			public String getIp() {
-				return this.ip;
-			}
+            public String getDiskVolumeFsType() {
+                return this.diskVolumeFsType;
+            }
 
-			public void setIp(String ip) {
-				this.ip = ip;
-			}
+            public void setDiskVolumeFsType(String diskVolumeFsType) {
+                this.diskVolumeFsType = diskVolumeFsType;
+            }
 
-			public List<String> getHostnames() {
-				return this.hostnames;
-			}
+            public String getFlexVolumeDriver() {
+                return this.flexVolumeDriver;
+            }
 
-			public void setHostnames(List<String> hostnames) {
-				this.hostnames = hostnames;
-			}
-		}
-	}
+            public void setFlexVolumeDriver(String flexVolumeDriver) {
+                this.flexVolumeDriver = flexVolumeDriver;
+            }
 
-	@Override
-	public DescribeContainerGroupsResponse getInstance(UnmarshallerContext context) {
-		return	DescribeContainerGroupsResponseUnmarshaller.unmarshall(this, context);
-	}
+            public String getFlexVolumeFsType() {
+                return this.flexVolumeFsType;
+            }
 
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
-	}
+            public void setFlexVolumeFsType(String flexVolumeFsType) {
+                this.flexVolumeFsType = flexVolumeFsType;
+            }
+
+            public String getFlexVolumeOptions() {
+                return this.flexVolumeOptions;
+            }
+
+            public void setFlexVolumeOptions(String flexVolumeOptions) {
+                this.flexVolumeOptions = flexVolumeOptions;
+            }
+
+            public List<ConfigFileVolumeConfigFileToPath> getConfigFileVolumeConfigFileToPaths() {
+                return this.configFileVolumeConfigFileToPaths;
+            }
+
+            public void setConfigFileVolumeConfigFileToPaths(List<ConfigFileVolumeConfigFileToPath> configFileVolumeConfigFileToPaths) {
+                this.configFileVolumeConfigFileToPaths = configFileVolumeConfigFileToPaths;
+            }
+
+            public static class ConfigFileVolumeConfigFileToPath {
+
+                private String content;
+
+                private String path;
+
+                public String getContent() {
+                    return this.content;
+                }
+
+                public void setContent(String content) {
+                    this.content = content;
+                }
+
+                public String getPath() {
+                    return this.path;
+                }
+
+                public void setPath(String path) {
+                    this.path = path;
+                }
+            }
+        }
+
+        public static class DnsConfig {
+
+            private List<Option> options;
+
+            private List<String> nameServers;
+
+            private List<String> searches;
+
+            public List<Option> getOptions() {
+                return this.options;
+            }
+
+            public void setOptions(List<Option> options) {
+                this.options = options;
+            }
+
+            public List<String> getNameServers() {
+                return this.nameServers;
+            }
+
+            public void setNameServers(List<String> nameServers) {
+                this.nameServers = nameServers;
+            }
+
+            public List<String> getSearches() {
+                return this.searches;
+            }
+
+            public void setSearches(List<String> searches) {
+                this.searches = searches;
+            }
+
+            public static class Option {
+
+                private String name;
+
+                private String value;
+
+                public String getName() {
+                    return this.name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getValue() {
+                    return this.value;
+                }
+
+                public void setValue(String value) {
+                    this.value = value;
+                }
+            }
+        }
+
+        public static class EciSecurityContext {
+
+            private List<Sysctls> sysctls;
+
+            public List<Sysctls> getSysctls() {
+                return this.sysctls;
+            }
+
+            public void setSysctls(List<Sysctls> sysctls) {
+                this.sysctls = sysctls;
+            }
+
+            public static class Sysctls {
+
+                private String name;
+
+                private String value;
+
+                public String getName() {
+                    return this.name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getValue() {
+                    return this.value;
+                }
+
+                public void setValue(String value) {
+                    this.value = value;
+                }
+
+            }
+
+        }
+
+        public static class HostAliase {
+
+            private String ip;
+
+            private List<String> hostnames;
+
+            public String getIp() {
+                return this.ip;
+            }
+
+            public void setIp(String ip) {
+                this.ip = ip;
+            }
+
+            public List<String> getHostnames() {
+                return this.hostnames;
+            }
+
+            public void setHostnames(List<String> hostnames) {
+                this.hostnames = hostnames;
+            }
+        }
+    }
+
+    @Override
+    public DescribeContainerGroupsResponse getInstance(UnmarshallerContext context) {
+        return DescribeContainerGroupsResponseUnmarshaller.unmarshall(this, context);
+    }
+
+    @Override
+    public boolean checkShowJsonItemName() {
+        return false;
+    }
 }
