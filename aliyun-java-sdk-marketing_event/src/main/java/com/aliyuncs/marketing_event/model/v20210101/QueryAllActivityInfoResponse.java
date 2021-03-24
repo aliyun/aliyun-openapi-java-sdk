@@ -91,7 +91,7 @@ public class QueryAllActivityInfoResponse extends AcsResponse {
 
 		private String channelName;
 
-		private Integer isVipCustomer;
+		private String isVipCustomer;
 
 		public Long getId() {
 			return this.id;
@@ -149,11 +149,11 @@ public class QueryAllActivityInfoResponse extends AcsResponse {
 			this.channelName = channelName;
 		}
 
-		public Integer getIsVipCustomer() {
+		public String getIsVipCustomer() {
 			return this.isVipCustomer;
 		}
 
-		public void setIsVipCustomer(Integer isVipCustomer) {
+		public void setIsVipCustomer(String isVipCustomer) {
 			this.isVipCustomer = isVipCustomer;
 		}
 	}

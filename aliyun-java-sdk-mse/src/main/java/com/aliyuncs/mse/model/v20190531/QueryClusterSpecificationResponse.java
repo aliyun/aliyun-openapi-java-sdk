@@ -33,7 +33,11 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private List<ClusterSpecificationData> data;
+	private Integer code;
+
+	private Integer httpStatusCode;
+
+	private List<DataItem> data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,21 +71,37 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public List<ClusterSpecificationData> getData() {
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(List<ClusterSpecificationData> data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
 	}
 
-	public static class ClusterSpecificationData {
+	public static class DataItem {
 
 		private String clusterSpecificationName;
 
-		private String cpuCapacity;
-
 		private String memoryCapacity;
+
+		private String cpuCapacity;
 
 		private String diskCapacity;
 
@@ -99,20 +119,20 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 			this.clusterSpecificationName = clusterSpecificationName;
 		}
 
-		public String getCpuCapacity() {
-			return this.cpuCapacity;
-		}
-
-		public void setCpuCapacity(String cpuCapacity) {
-			this.cpuCapacity = cpuCapacity;
-		}
-
 		public String getMemoryCapacity() {
 			return this.memoryCapacity;
 		}
 
 		public void setMemoryCapacity(String memoryCapacity) {
 			this.memoryCapacity = memoryCapacity;
+		}
+
+		public String getCpuCapacity() {
+			return this.cpuCapacity;
+		}
+
+		public void setCpuCapacity(String cpuCapacity) {
+			this.cpuCapacity = cpuCapacity;
 		}
 
 		public String getDiskCapacity() {

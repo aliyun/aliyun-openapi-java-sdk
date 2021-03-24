@@ -34,6 +34,8 @@ public class DeleteNacosConfigResponse extends AcsResponse {
 
 	private String httpCode;
 
+	private String code;
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -72,6 +74,14 @@ public class DeleteNacosConfigResponse extends AcsResponse {
 
 	public void setHttpCode(String httpCode) {
 		this.httpCode = httpCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

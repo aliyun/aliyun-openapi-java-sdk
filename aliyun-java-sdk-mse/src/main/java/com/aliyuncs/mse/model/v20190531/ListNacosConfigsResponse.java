@@ -41,6 +41,8 @@ public class ListNacosConfigsResponse extends AcsResponse {
 
 	private String httpCode;
 
+	private Integer code;
+
 	private List<NacosConfigForListModel> configurations;
 
 	public String getRequestId() {
@@ -105,6 +107,14 @@ public class ListNacosConfigsResponse extends AcsResponse {
 
 	public void setHttpCode(String httpCode) {
 		this.httpCode = httpCode;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public List<NacosConfigForListModel> getConfigurations() {

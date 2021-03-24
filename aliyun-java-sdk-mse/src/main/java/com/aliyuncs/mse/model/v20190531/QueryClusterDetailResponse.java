@@ -359,17 +359,9 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 		public static class InstanceModel {
 
-			private String instanceType;
-
-			private String instanceId;
-
 			private String ip;
 
-			private String vip;
-
 			private String healthStatus;
-
-			private String clusterId;
 
 			private String role;
 
@@ -379,24 +371,6 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 			private String singleTunnelVip;
 
-			private String zkClientPort;
-
-			public String getInstanceType() {
-				return this.instanceType;
-			}
-
-			public void setInstanceType(String instanceType) {
-				this.instanceType = instanceType;
-			}
-
-			public String getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(String instanceId) {
-				this.instanceId = instanceId;
-			}
-
 			public String getIp() {
 				return this.ip;
 			}
@@ -405,28 +379,12 @@ public class QueryClusterDetailResponse extends AcsResponse {
 				this.ip = ip;
 			}
 
-			public String getVip() {
-				return this.vip;
-			}
-
-			public void setVip(String vip) {
-				this.vip = vip;
-			}
-
 			public String getHealthStatus() {
 				return this.healthStatus;
 			}
 
 			public void setHealthStatus(String healthStatus) {
 				this.healthStatus = healthStatus;
-			}
-
-			public String getClusterId() {
-				return this.clusterId;
-			}
-
-			public void setClusterId(String clusterId) {
-				this.clusterId = clusterId;
 			}
 
 			public String getRole() {
@@ -459,14 +417,6 @@ public class QueryClusterDetailResponse extends AcsResponse {
 
 			public void setSingleTunnelVip(String singleTunnelVip) {
 				this.singleTunnelVip = singleTunnelVip;
-			}
-
-			public String getZkClientPort() {
-				return this.zkClientPort;
-			}
-
-			public void setZkClientPort(String zkClientPort) {
-				this.zkClientPort = zkClientPort;
 			}
 		}
 	}

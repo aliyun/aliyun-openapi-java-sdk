@@ -33,6 +33,10 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 
 	private String hasIpCount;
 
+	private String instanceId;
+
+	private String namespaceId;
+
 	private String requestPars;
 
 	private Integer pageSize;
@@ -88,6 +92,28 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		this.hasIpCount = hasIpCount;
 		if(hasIpCount != null){
 			putQueryParameter("HasIpCount", hasIpCount);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 

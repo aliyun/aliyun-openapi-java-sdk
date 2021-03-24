@@ -33,7 +33,13 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer instanceCount;
 
+	private String requestPars;
+
+	private String connectionType;
+
 	private String clusterVersion;
+
+	private Integer diskCapacity;
 
 	private String diskType;
 
@@ -101,6 +107,28 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		}
 	}
 
+	public String getRequestPars() {
+		return this.requestPars;
+	}
+
+	public void setRequestPars(String requestPars) {
+		this.requestPars = requestPars;
+		if(requestPars != null){
+			putQueryParameter("RequestPars", requestPars);
+		}
+	}
+
+	public String getConnectionType() {
+		return this.connectionType;
+	}
+
+	public void setConnectionType(String connectionType) {
+		this.connectionType = connectionType;
+		if(connectionType != null){
+			putQueryParameter("ConnectionType", connectionType);
+		}
+	}
+
 	public String getClusterVersion() {
 		return this.clusterVersion;
 	}
@@ -109,6 +137,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.clusterVersion = clusterVersion;
 		if(clusterVersion != null){
 			putQueryParameter("ClusterVersion", clusterVersion);
+		}
+	}
+
+	public Integer getDiskCapacity() {
+		return this.diskCapacity;
+	}
+
+	public void setDiskCapacity(Integer diskCapacity) {
+		this.diskCapacity = diskCapacity;
+		if(diskCapacity != null){
+			putQueryParameter("DiskCapacity", diskCapacity.toString());
 		}
 	}
 

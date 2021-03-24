@@ -41,7 +41,7 @@ public class QueryAllActivityInfoResponseUnmarshaller {
 			dataItem.setCompanyName(_ctx.stringValue("QueryAllActivityInfoResponse.Data["+ i +"].CompanyName"));
 			dataItem.setQRCode(_ctx.stringValue("QueryAllActivityInfoResponse.Data["+ i +"].QRCode"));
 			dataItem.setChannelName(_ctx.stringValue("QueryAllActivityInfoResponse.Data["+ i +"].ChannelName"));
-			dataItem.setIsVipCustomer(_ctx.integerValue("QueryAllActivityInfoResponse.Data["+ i +"].IsVipCustomer"));
+			dataItem.setIsVipCustomer(_ctx.stringValue("QueryAllActivityInfoResponse.Data["+ i +"].IsVipCustomer"));
 
 			data.add(dataItem);
 		}

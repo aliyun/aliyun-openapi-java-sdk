@@ -29,6 +29,8 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 
 	private String clusterId;
 
+	private String instanceId;
+
 	private String requestPars;
 	public QueryConfigRequest() {
 		super("mse", "2019-05-31", "QueryConfig", "mse");
@@ -58,6 +60,17 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

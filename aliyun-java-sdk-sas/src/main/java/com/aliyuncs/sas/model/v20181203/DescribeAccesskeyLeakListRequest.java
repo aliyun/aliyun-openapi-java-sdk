@@ -16,7 +16,6 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -31,18 +30,12 @@ public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAcce
 
 	private Integer currentPage;
 
-	private String sourceIp;
-
 	private Integer pageSize;
 
 	private String status;
 	public DescribeAccesskeyLeakListRequest() {
 		super("Sas", "2018-12-03", "DescribeAccesskeyLeakList", "sas");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getQuery() {
@@ -75,17 +68,6 @@ public class DescribeAccesskeyLeakListRequest extends RpcAcsRequest<DescribeAcce
 		this.currentPage = currentPage;
 		if(currentPage != null){
 			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getSourceIp() {
-		return this.sourceIp;
-	}
-
-	public void setSourceIp(String sourceIp) {
-		this.sourceIp = sourceIp;
-		if(sourceIp != null){
-			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 

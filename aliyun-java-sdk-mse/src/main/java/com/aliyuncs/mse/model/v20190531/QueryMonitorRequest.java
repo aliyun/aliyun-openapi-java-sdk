@@ -27,15 +27,15 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 
 	private String monitorType;
 
-	private String endTime;
+	private Long endTime;
 
-	private String clusterId;
+	private Long startTime;
 
-	private String startTime;
+	private String instanceId;
 
 	private String requestPars;
 
-	private String step;
+	private Long step;
 	public QueryMonitorRequest() {
 		super("mse", "2019-05-31", "QueryMonitor", "mse");
 		setMethod(MethodType.GET);
@@ -56,36 +56,36 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		}
 	}
 
-	public String getEndTime() {
+	public Long getEndTime() {
 		return this.endTime;
 	}
 
-	public void setEndTime(String endTime) {
+	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
 		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
-		}
-	}
-
-	public String getStartTime() {
+	public Long getStartTime() {
 		return this.startTime;
 	}
 
-	public void setStartTime(String startTime) {
+	public void setStartTime(Long startTime) {
 		this.startTime = startTime;
 		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -100,14 +100,14 @@ public class QueryMonitorRequest extends RpcAcsRequest<QueryMonitorResponse> {
 		}
 	}
 
-	public String getStep() {
+	public Long getStep() {
 		return this.step;
 	}
 
-	public void setStep(String step) {
+	public void setStep(Long step) {
 		this.step = step;
 		if(step != null){
-			putQueryParameter("Step", step);
+			putQueryParameter("Step", step.toString());
 		}
 	}
 

@@ -102,6 +102,14 @@ public class QueryConfigResponse extends AcsResponse {
 
 		private Boolean restartFlag;
 
+		private Boolean configAuthSupported;
+
+		private Boolean configAuthEnabled;
+
+		private Boolean mCPSupported;
+
+		private Boolean mCPEnabled;
+
 		public String getClusterName() {
 			return this.clusterName;
 		}
@@ -204,6 +212,38 @@ public class QueryConfigResponse extends AcsResponse {
 
 		public void setRestartFlag(Boolean restartFlag) {
 			this.restartFlag = restartFlag;
+		}
+
+		public Boolean getConfigAuthSupported() {
+			return this.configAuthSupported;
+		}
+
+		public void setConfigAuthSupported(Boolean configAuthSupported) {
+			this.configAuthSupported = configAuthSupported;
+		}
+
+		public Boolean getConfigAuthEnabled() {
+			return this.configAuthEnabled;
+		}
+
+		public void setConfigAuthEnabled(Boolean configAuthEnabled) {
+			this.configAuthEnabled = configAuthEnabled;
+		}
+
+		public Boolean getMCPSupported() {
+			return this.mCPSupported;
+		}
+
+		public void setMCPSupported(Boolean mCPSupported) {
+			this.mCPSupported = mCPSupported;
+		}
+
+		public Boolean getMCPEnabled() {
+			return this.mCPEnabled;
+		}
+
+		public void setMCPEnabled(Boolean mCPEnabled) {
+			this.mCPEnabled = mCPEnabled;
 		}
 	}
 

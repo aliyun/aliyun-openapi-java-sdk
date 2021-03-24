@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse;
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse.WarningSummary;
+import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse.WarningSummary.EventNote;
 import com.aliyuncs.sas.model.v20181203.DescribeSuspEventsResponse.WarningSummary.QuaraFile;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -44,6 +45,7 @@ public class DescribeSuspEventsResponseUnmarshaller {
 			warningSummary.setSecurityEventIds(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].SecurityEventIds"));
 			warningSummary.setUniqueInfo(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].UniqueInfo"));
 			warningSummary.setInstanceName(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InstanceName"));
+			warningSummary.setInstanceId(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InstanceId"));
 			warningSummary.setInternetIp(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].InternetIp"));
 			warningSummary.setIntranetIp(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].IntranetIp"));
 			warningSummary.setUuid(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].Uuid"));
@@ -94,6 +96,17 @@ public class DescribeSuspEventsResponseUnmarshaller {
 				details.add(quaraFile);
 			}
 			warningSummary.setDetails(details);
+
+			List<EventNote> eventNotes = new ArrayList<EventNote>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventNotes.Length"); j++) {
+				EventNote eventNote = new EventNote();
+				eventNote.setNoteTime(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventNotes["+ j +"].NoteTime"));
+				eventNote.setNote(_ctx.stringValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventNotes["+ j +"].Note"));
+				eventNote.setNoteId(_ctx.longValue("DescribeSuspEventsResponse.SuspEvents["+ i +"].EventNotes["+ j +"].NoteId"));
+
+				eventNotes.add(eventNote);
+			}
+			warningSummary.setEventNotes(eventNotes);
 
 			suspEvents.add(warningSummary);
 		}

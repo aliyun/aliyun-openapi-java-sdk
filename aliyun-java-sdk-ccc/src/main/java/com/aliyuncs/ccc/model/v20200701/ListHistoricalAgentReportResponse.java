@@ -201,7 +201,7 @@ public class ListHistoricalAgentReportResponse extends AcsResponse {
 
 				private Long satisfactionSurveysResponded;
 
-				private Long serviceLevel20;
+				private Float serviceLevel20;
 
 				private Long totalHoldTime;
 
@@ -331,11 +331,11 @@ public class ListHistoricalAgentReportResponse extends AcsResponse {
 					this.satisfactionSurveysResponded = satisfactionSurveysResponded;
 				}
 
-				public Long getServiceLevel20() {
+				public Float getServiceLevel20() {
 					return this.serviceLevel20;
 				}
 
-				public void setServiceLevel20(Long serviceLevel20) {
+				public void setServiceLevel20(Float serviceLevel20) {
 					this.serviceLevel20 = serviceLevel20;
 				}
 
