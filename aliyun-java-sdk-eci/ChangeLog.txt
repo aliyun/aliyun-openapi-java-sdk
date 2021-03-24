@@ -1,3 +1,6 @@
+2021-03-24 Version: 1.2.2
+1, fixup acrRegistryInfos
+
 2021-03-24 Version: 1.2.1
 1, completion describe response
 

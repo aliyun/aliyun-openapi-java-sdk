@@ -94,7 +94,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Integer ephemeralStorage;
 
-	private List<AcrRegistryInfo> AcrRegistryInfos;
+	private List<AcrRegistryInfo> acrRegistryInfos;
 
     public Integer getEphemeralStorage() {
         return ephemeralStorage;
@@ -1409,15 +1409,15 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	}
 
 	public List<AcrRegistryInfo> getAcrRegistryInfos() {
-        return this.AcrRegistryInfos;
+        return this.acrRegistryInfos;
     }
 
     public void setAcrRegistryInfos(List<AcrRegistryInfo> acrRegistryInfos) {
-        AcrRegistryInfos = acrRegistryInfos;
+        this.acrRegistryInfos = acrRegistryInfos;
         if (acrRegistryInfos != null) {
             for (int depth1 = 0; depth1 < acrRegistryInfos.size(); depth1++) {
-                if (AcrRegistryInfos.get(depth1).getDomains() != null) {
-                    for (int i = 0; i < AcrRegistryInfos.get(depth1).getDomains().size(); i++) {
+                if (acrRegistryInfos.get(depth1).getDomains() != null) {
+                    for (int i = 0; i < acrRegistryInfos.get(depth1).getDomains().size(); i++) {
                         putQueryParameter("AcrRegistryInfo." + (depth1 + 1) + ".Domain." + (i + 1), acrRegistryInfos.get(depth1).getDomains().get(i));
                     }
                 }
