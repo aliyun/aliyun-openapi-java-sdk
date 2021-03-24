@@ -103,6 +103,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private String instanceName;
 
+		private String instanceId;
+
 		private String internetIp;
 
 		private String intranetIp;
@@ -177,6 +179,8 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		private List<QuaraFile> details;
 
+		private List<EventNote> eventNotes;
+
 		public String getLastTime() {
 			return this.lastTime;
 		}
@@ -239,6 +243,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 		public void setInstanceName(String instanceName) {
 			this.instanceName = instanceName;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public String getInternetIp() {
@@ -537,6 +549,14 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 			this.details = details;
 		}
 
+		public List<EventNote> getEventNotes() {
+			return this.eventNotes;
+		}
+
+		public void setEventNotes(List<EventNote> eventNotes) {
+			this.eventNotes = eventNotes;
+		}
+
 		public static class QuaraFile {
 
 			private String name;
@@ -597,6 +617,39 @@ public class DescribeSuspEventsResponse extends AcsResponse {
 
 			public void setValueDisplay(String valueDisplay) {
 				this.valueDisplay = valueDisplay;
+			}
+		}
+
+		public static class EventNote {
+
+			private String noteTime;
+
+			private String note;
+
+			private Long noteId;
+
+			public String getNoteTime() {
+				return this.noteTime;
+			}
+
+			public void setNoteTime(String noteTime) {
+				this.noteTime = noteTime;
+			}
+
+			public String getNote() {
+				return this.note;
+			}
+
+			public void setNote(String note) {
+				this.note = note;
+			}
+
+			public Long getNoteId() {
+				return this.noteId;
+			}
+
+			public void setNoteId(Long noteId) {
+				this.noteId = noteId;
 			}
 		}
 	}

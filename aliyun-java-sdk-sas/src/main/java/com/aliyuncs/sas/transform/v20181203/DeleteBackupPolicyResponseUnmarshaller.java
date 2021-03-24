@@ -12,17 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.sas;
+package com.aliyuncs.sas.transform.v20181203;
 
-import java.util.HashMap;
+import com.aliyuncs.sas.model.v20181203.DeleteBackupPolicyResponse;
+import com.aliyuncs.transform.UnmarshallerContext;
 
-public class Endpoint {
-    public static HashMap<String, String> endpointMap = new HashMap<String, String>() {
-        {
-            put("ap-southeast-3", "tds.ap-southeast-3.aliyuncs.com");
-            put("cn-hangzhou", "tds.aliyuncs.com");
-        }
-    };
 
-    public static String endpointRegionalType = "central";
+public class DeleteBackupPolicyResponseUnmarshaller {
+
+	public static DeleteBackupPolicyResponse unmarshall(DeleteBackupPolicyResponse deleteBackupPolicyResponse, UnmarshallerContext _ctx) {
+		
+		deleteBackupPolicyResponse.setRequestId(_ctx.stringValue("DeleteBackupPolicyResponse.RequestId"));
+	 
+	 	return deleteBackupPolicyResponse;
+	}
 }

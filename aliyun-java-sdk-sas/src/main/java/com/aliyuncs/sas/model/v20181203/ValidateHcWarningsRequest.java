@@ -16,7 +16,6 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -33,10 +32,6 @@ public class ValidateHcWarningsRequest extends RpcAcsRequest<ValidateHcWarningsR
 	public ValidateHcWarningsRequest() {
 		super("Sas", "2018-12-03", "ValidateHcWarnings", "sas");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getRiskIds() {
