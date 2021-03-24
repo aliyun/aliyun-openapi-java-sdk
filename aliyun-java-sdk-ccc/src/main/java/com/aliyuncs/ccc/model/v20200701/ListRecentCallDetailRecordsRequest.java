@@ -25,6 +25,8 @@ import com.aliyuncs.ccc.Endpoint;
 public class ListRecentCallDetailRecordsRequest extends RpcAcsRequest<ListRecentCallDetailRecordsResponse> {
 	   
 
+	private String criteria;
+
 	private Long endTime;
 
 	private Long startTime;
@@ -41,6 +43,17 @@ public class ListRecentCallDetailRecordsRequest extends RpcAcsRequest<ListRecent
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCriteria() {
+		return this.criteria;
+	}
+
+	public void setCriteria(String criteria) {
+		this.criteria = criteria;
+		if(criteria != null){
+			putQueryParameter("Criteria", criteria);
+		}
 	}
 
 	public Long getEndTime() {

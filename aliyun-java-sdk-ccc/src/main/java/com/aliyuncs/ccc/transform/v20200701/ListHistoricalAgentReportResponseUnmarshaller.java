@@ -62,7 +62,7 @@ public class ListHistoricalAgentReportResponseUnmarshaller {
 			inbound.setSatisfactionIndex(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.SatisfactionIndex"));
 			inbound.setSatisfactionSurveysOffered(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.SatisfactionSurveysOffered"));
 			inbound.setSatisfactionSurveysResponded(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.SatisfactionSurveysResponded"));
-			inbound.setServiceLevel20(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.ServiceLevel20"));
+			inbound.setServiceLevel20(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.ServiceLevel20"));
 			inbound.setTotalHoldTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.TotalHoldTime"));
 			inbound.setTotalRingTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.TotalRingTime"));
 			inbound.setTotalTalkTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Inbound.TotalTalkTime"));
