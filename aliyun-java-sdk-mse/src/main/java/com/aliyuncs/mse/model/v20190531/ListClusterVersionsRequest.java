@@ -22,33 +22,33 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
+public class ListClusterVersionsRequest extends RpcAcsRequest<ListClusterVersionsResponse> {
 	   
 
-	private String instanceId;
-	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+	private String clusterType;
+	public ListClusterVersionsRequest() {
+		super("mse", "2019-05-31", "ListClusterVersions", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getClusterType() {
+		return this.clusterType;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setClusterType(String clusterType) {
+		this.clusterType = clusterType;
+		if(clusterType != null){
+			putQueryParameter("ClusterType", clusterType);
 		}
 	}
 
 	@Override
-	public Class<ListEngineNamespacesResponse> getResponseClass() {
-		return ListEngineNamespacesResponse.class;
+	public Class<ListClusterVersionsResponse> getResponseClass() {
+		return ListClusterVersionsResponse.class;
 	}
 
 }

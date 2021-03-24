@@ -16,14 +16,14 @@ package com.aliyuncs.mse.model.v20190531;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.QueryClusterSpecificationResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListClusterVersionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryClusterSpecificationResponse extends AcsResponse {
+public class ListClusterVersionsResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,9 +33,11 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 
 	private String errorCode;
 
+	private Integer httpStatusCode;
+
 	private Integer code;
 
-	private Integer httpStatusCode;
+	private String dynamicMessage;
 
 	private List<DataItem> data;
 
@@ -71,6 +73,14 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Integer getCode() {
 		return this.code;
 	}
@@ -79,12 +89,12 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public Integer getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
 	}
 
 	public List<DataItem> getData() {
@@ -97,80 +107,40 @@ public class QueryClusterSpecificationResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String clusterSpecificationName;
+		private String clusterType;
 
-		private String memoryCapacity;
+		private String code;
 
-		private String cpuCapacity;
+		private String showName;
 
-		private String diskCapacity;
-
-		private String instanceCount;
-
-		private String maxTps;
-
-		private String maxCon;
-
-		public String getClusterSpecificationName() {
-			return this.clusterSpecificationName;
+		public String getClusterType() {
+			return this.clusterType;
 		}
 
-		public void setClusterSpecificationName(String clusterSpecificationName) {
-			this.clusterSpecificationName = clusterSpecificationName;
+		public void setClusterType(String clusterType) {
+			this.clusterType = clusterType;
 		}
 
-		public String getMemoryCapacity() {
-			return this.memoryCapacity;
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setMemoryCapacity(String memoryCapacity) {
-			this.memoryCapacity = memoryCapacity;
+		public void setCode(String code) {
+			this.code = code;
 		}
 
-		public String getCpuCapacity() {
-			return this.cpuCapacity;
+		public String getShowName() {
+			return this.showName;
 		}
 
-		public void setCpuCapacity(String cpuCapacity) {
-			this.cpuCapacity = cpuCapacity;
-		}
-
-		public String getDiskCapacity() {
-			return this.diskCapacity;
-		}
-
-		public void setDiskCapacity(String diskCapacity) {
-			this.diskCapacity = diskCapacity;
-		}
-
-		public String getInstanceCount() {
-			return this.instanceCount;
-		}
-
-		public void setInstanceCount(String instanceCount) {
-			this.instanceCount = instanceCount;
-		}
-
-		public String getMaxTps() {
-			return this.maxTps;
-		}
-
-		public void setMaxTps(String maxTps) {
-			this.maxTps = maxTps;
-		}
-
-		public String getMaxCon() {
-			return this.maxCon;
-		}
-
-		public void setMaxCon(String maxCon) {
-			this.maxCon = maxCon;
+		public void setShowName(String showName) {
+			this.showName = showName;
 		}
 	}
 
 	@Override
-	public QueryClusterSpecificationResponse getInstance(UnmarshallerContext context) {
-		return	QueryClusterSpecificationResponseUnmarshaller.unmarshall(this, context);
+	public ListClusterVersionsResponse getInstance(UnmarshallerContext context) {
+		return	ListClusterVersionsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

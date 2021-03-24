@@ -15,33 +15,33 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.DeleteNacosConfigsResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.GetOverviewResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteNacosConfigsResponse extends AcsResponse {
-
-	private Boolean success;
-
-	private String message;
-
-	private String errorCode;
+public class GetOverviewResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String httpCode;
+	private String message;
+
+	private Integer httpStatusCode;
+
+	private String data;
 
 	private Integer code;
 
-	public Boolean getSuccess() {
-		return this.success;
+	private String success;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -52,28 +52,20 @@ public class DeleteNacosConfigsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public Integer getCode() {
@@ -84,9 +76,17 @@ public class DeleteNacosConfigsResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+
 	@Override
-	public DeleteNacosConfigsResponse getInstance(UnmarshallerContext context) {
-		return	DeleteNacosConfigsResponseUnmarshaller.unmarshall(this, context);
+	public GetOverviewResponse getInstance(UnmarshallerContext context) {
+		return	GetOverviewResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

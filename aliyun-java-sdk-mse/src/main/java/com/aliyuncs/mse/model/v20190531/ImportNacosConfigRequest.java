@@ -22,13 +22,19 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
+public class ImportNacosConfigRequest extends RpcAcsRequest<ImportNacosConfigResponse> {
 	   
 
 	private String instanceId;
-	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+
+	private String namespaceId;
+
+	private String fileUrl;
+
+	private String policy;
+	public ImportNacosConfigRequest() {
+		super("mse", "2019-05-31", "ImportNacosConfig", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -46,9 +52,42 @@ public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespa
 		}
 	}
 
+	public String getNamespaceId() {
+		return this.namespaceId;
+	}
+
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
+		}
+	}
+
+	public String getFileUrl() {
+		return this.fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+		if(fileUrl != null){
+			putQueryParameter("FileUrl", fileUrl);
+		}
+	}
+
+	public String getPolicy() {
+		return this.policy;
+	}
+
+	public void setPolicy(String policy) {
+		this.policy = policy;
+		if(policy != null){
+			putQueryParameter("Policy", policy);
+		}
+	}
+
 	@Override
-	public Class<ListEngineNamespacesResponse> getResponseClass() {
-		return ListEngineNamespacesResponse.class;
+	public Class<ImportNacosConfigResponse> getResponseClass() {
+		return ImportNacosConfigResponse.class;
 	}
 
 }

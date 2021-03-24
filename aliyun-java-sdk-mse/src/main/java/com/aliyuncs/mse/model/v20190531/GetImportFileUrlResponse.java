@@ -15,14 +15,16 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.DeleteNacosConfigResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.GetImportFileUrlResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteNacosConfigResponse extends AcsResponse {
+public class GetImportFileUrlResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -30,11 +32,21 @@ public class DeleteNacosConfigResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private String requestId;
+	private Integer httpStatusCode;
 
-	private String httpCode;
+	private Integer code;
 
-	private String code;
+	private String dynamicMessage;
+
+	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -60,33 +72,54 @@ public class DeleteNacosConfigResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
-	}
-
-	public String getCode() {
+	public Integer getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String url;
+
+		public String getUrl() {
+			return this.url;
+		}
+
+		public void setUrl(String url) {
+			this.url = url;
+		}
+	}
+
 	@Override
-	public DeleteNacosConfigResponse getInstance(UnmarshallerContext context) {
-		return	DeleteNacosConfigResponseUnmarshaller.unmarshall(this, context);
+	public GetImportFileUrlResponse getInstance(UnmarshallerContext context) {
+		return	GetImportFileUrlResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

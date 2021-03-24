@@ -22,33 +22,20 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
+public class ListClusterTypesRequest extends RpcAcsRequest<ListClusterTypesResponse> {
 	   
-
-	private String instanceId;
-	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+	public ListClusterTypesRequest() {
+		super("mse", "2019-05-31", "ListClusterTypes", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<ListEngineNamespacesResponse> getResponseClass() {
-		return ListEngineNamespacesResponse.class;
+	public Class<ListClusterTypesResponse> getResponseClass() {
+		return ListClusterTypesResponse.class;
 	}
 
 }

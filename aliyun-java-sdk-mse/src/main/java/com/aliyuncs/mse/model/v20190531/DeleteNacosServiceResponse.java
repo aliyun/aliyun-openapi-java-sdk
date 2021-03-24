@@ -15,34 +15,26 @@
 package com.aliyuncs.mse.model.v20190531;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.DeleteNacosConfigResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.DeleteNacosServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteNacosConfigResponse extends AcsResponse {
-
-	private Boolean success;
+public class DeleteNacosServiceResponse extends AcsResponse {
 
 	private String message;
 
-	private String errorCode;
-
 	private String requestId;
 
-	private String httpCode;
+	private Integer httpStatusCode;
 
-	private String code;
+	private String data;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private Integer code;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -50,14 +42,6 @@ public class DeleteNacosConfigResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getRequestId() {
@@ -68,25 +52,41 @@ public class DeleteNacosConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getHttpCode() {
-		return this.httpCode;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getCode() {
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public Integer getCode() {
 		return this.code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public DeleteNacosConfigResponse getInstance(UnmarshallerContext context) {
-		return	DeleteNacosConfigResponseUnmarshaller.unmarshall(this, context);
+	public DeleteNacosServiceResponse getInstance(UnmarshallerContext context) {
+		return	DeleteNacosServiceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

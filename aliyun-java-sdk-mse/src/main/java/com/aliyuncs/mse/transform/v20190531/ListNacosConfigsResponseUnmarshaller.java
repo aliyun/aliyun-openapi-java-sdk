@@ -34,6 +34,7 @@ public class ListNacosConfigsResponseUnmarshaller {
 		listNacosConfigsResponse.setPageSize(_ctx.integerValue("ListNacosConfigsResponse.PageSize"));
 		listNacosConfigsResponse.setTotalCount(_ctx.integerValue("ListNacosConfigsResponse.TotalCount"));
 		listNacosConfigsResponse.setHttpCode(_ctx.stringValue("ListNacosConfigsResponse.HttpCode"));
+		listNacosConfigsResponse.setCode(_ctx.integerValue("ListNacosConfigsResponse.Code"));
 
 		List<NacosConfigForListModel> configurations = new ArrayList<NacosConfigForListModel>();
 		for (int i = 0; i < _ctx.lengthValue("ListNacosConfigsResponse.Configurations.Length"); i++) {

@@ -22,54 +22,91 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesResponse> {
+public class UpdateNacosInstanceRequest extends RpcAcsRequest<UpdateNacosInstanceResponse> {
 	   
 
-	private String clusterId;
+	private String metadata;
 
-	private Integer pageNum;
+	private String clusterName;
+
+	private String ip;
+
+	private Boolean ephemeral;
+
+	private String weight;
 
 	private String groupName;
 
-	private String hasIpCount;
+	private Boolean enabled;
 
 	private String instanceId;
 
 	private String namespaceId;
 
-	private String requestPars;
-
-	private Integer pageSize;
+	private Integer port;
 
 	private String serviceName;
-	public ListAnsServicesRequest() {
-		super("mse", "2019-05-31", "ListAnsServices", "mse");
-		setMethod(MethodType.GET);
+	public UpdateNacosInstanceRequest() {
+		super("mse", "2019-05-31", "UpdateNacosInstance", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClusterId() {
-		return this.clusterId;
+	public String getMetadata() {
+		return this.metadata;
 	}
 
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setMetadata(String metadata) {
+		this.metadata = metadata;
+		if(metadata != null){
+			putBodyParameter("Metadata", metadata);
 		}
 	}
 
-	public Integer getPageNum() {
-		return this.pageNum;
+	public String getClusterName() {
+		return this.clusterName;
 	}
 
-	public void setPageNum(Integer pageNum) {
-		this.pageNum = pageNum;
-		if(pageNum != null){
-			putQueryParameter("PageNum", pageNum.toString());
+	public void setClusterName(String clusterName) {
+		this.clusterName = clusterName;
+		if(clusterName != null){
+			putQueryParameter("ClusterName", clusterName);
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("Ip", ip);
+		}
+	}
+
+	public Boolean getEphemeral() {
+		return this.ephemeral;
+	}
+
+	public void setEphemeral(Boolean ephemeral) {
+		this.ephemeral = ephemeral;
+		if(ephemeral != null){
+			putQueryParameter("Ephemeral", ephemeral.toString());
+		}
+	}
+
+	public String getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+		if(weight != null){
+			putQueryParameter("Weight", weight);
 		}
 	}
 
@@ -84,14 +121,14 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		}
 	}
 
-	public String getHasIpCount() {
-		return this.hasIpCount;
+	public Boolean getEnabled() {
+		return this.enabled;
 	}
 
-	public void setHasIpCount(String hasIpCount) {
-		this.hasIpCount = hasIpCount;
-		if(hasIpCount != null){
-			putQueryParameter("HasIpCount", hasIpCount);
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+		if(enabled != null){
+			putQueryParameter("Enabled", enabled.toString());
 		}
 	}
 
@@ -117,25 +154,14 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
+	public Integer getPort() {
+		return this.port;
 	}
 
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setPort(Integer port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port.toString());
 		}
 	}
 
@@ -151,8 +177,8 @@ public class ListAnsServicesRequest extends RpcAcsRequest<ListAnsServicesRespons
 	}
 
 	@Override
-	public Class<ListAnsServicesResponse> getResponseClass() {
-		return ListAnsServicesResponse.class;
+	public Class<UpdateNacosInstanceResponse> getResponseClass() {
+		return UpdateNacosInstanceResponse.class;
 	}
 
 }

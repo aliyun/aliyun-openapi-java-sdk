@@ -14,15 +14,18 @@
 
 package com.aliyuncs.mse.model.v20190531;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.mse.transform.v20190531.DeleteNacosConfigsResponseUnmarshaller;
+import com.aliyuncs.mse.transform.v20190531.ListClusterConnectionTypesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteNacosConfigsResponse extends AcsResponse {
+public class ListClusterConnectionTypesResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Boolean success;
 
@@ -30,11 +33,21 @@ public class DeleteNacosConfigsResponse extends AcsResponse {
 
 	private String errorCode;
 
-	private String requestId;
-
-	private String httpCode;
+	private Integer httpStatusCode;
 
 	private Integer code;
+
+	private String dynamicMessage;
+
+	private List<DataItem> data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -60,20 +73,12 @@ public class DeleteNacosConfigsResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(String httpCode) {
-		this.httpCode = httpCode;
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Integer getCode() {
@@ -84,9 +89,48 @@ public class DeleteNacosConfigsResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
+
+	public List<DataItem> getData() {
+		return this.data;
+	}
+
+	public void setData(List<DataItem> data) {
+		this.data = data;
+	}
+
+	public static class DataItem {
+
+		private String code;
+
+		private String showName;
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getShowName() {
+			return this.showName;
+		}
+
+		public void setShowName(String showName) {
+			this.showName = showName;
+		}
+	}
+
 	@Override
-	public DeleteNacosConfigsResponse getInstance(UnmarshallerContext context) {
-		return	DeleteNacosConfigsResponseUnmarshaller.unmarshall(this, context);
+	public ListClusterConnectionTypesResponse getInstance(UnmarshallerContext context) {
+		return	ListClusterConnectionTypesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

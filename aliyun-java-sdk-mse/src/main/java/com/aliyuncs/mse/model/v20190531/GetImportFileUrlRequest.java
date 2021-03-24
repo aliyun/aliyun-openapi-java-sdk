@@ -22,44 +22,31 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
+public class GetImportFileUrlRequest extends RpcAcsRequest<GetImportFileUrlResponse> {
 	   
 
-	private String configType;
-
-	private String clusterId;
+	private String contentType;
 
 	private String instanceId;
 
-	private String requestPars;
-	public QueryConfigRequest() {
-		super("mse", "2019-05-31", "QueryConfig", "mse");
-		setMethod(MethodType.GET);
+	private String namespaceId;
+	public GetImportFileUrlRequest() {
+		super("mse", "2019-05-31", "GetImportFileUrl", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getConfigType() {
-		return this.configType;
+	public String getContentType() {
+		return this.contentType;
 	}
 
-	public void setConfigType(String configType) {
-		this.configType = configType;
-		if(configType != null){
-			putQueryParameter("ConfigType", configType);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+		if(contentType != null){
+			putQueryParameter("ContentType", contentType);
 		}
 	}
 
@@ -74,20 +61,20 @@ public class QueryConfigRequest extends RpcAcsRequest<QueryConfigResponse> {
 		}
 	}
 
-	public String getRequestPars() {
-		return this.requestPars;
+	public String getNamespaceId() {
+		return this.namespaceId;
 	}
 
-	public void setRequestPars(String requestPars) {
-		this.requestPars = requestPars;
-		if(requestPars != null){
-			putQueryParameter("RequestPars", requestPars);
+	public void setNamespaceId(String namespaceId) {
+		this.namespaceId = namespaceId;
+		if(namespaceId != null){
+			putQueryParameter("NamespaceId", namespaceId);
 		}
 	}
 
 	@Override
-	public Class<QueryConfigResponse> getResponseClass() {
-		return QueryConfigResponse.class;
+	public Class<GetImportFileUrlResponse> getResponseClass() {
+		return GetImportFileUrlResponse.class;
 	}
 
 }

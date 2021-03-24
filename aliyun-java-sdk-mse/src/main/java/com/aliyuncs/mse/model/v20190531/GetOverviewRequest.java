@@ -22,33 +22,46 @@ import com.aliyuncs.mse.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEngineNamespacesRequest extends RpcAcsRequest<ListEngineNamespacesResponse> {
+public class GetOverviewRequest extends RpcAcsRequest<GetOverviewResponse> {
 	   
 
-	private String instanceId;
-	public ListEngineNamespacesRequest() {
-		super("mse", "2019-05-31", "ListEngineNamespaces", "mse");
-		setMethod(MethodType.GET);
+	private Integer period;
+
+	private String region;
+	public GetOverviewRequest() {
+		super("mse", "2019-05-31", "GetOverview", "mse");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Integer getPeriod() {
+		return this.period;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public String getRegion() {
+		return this.region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+		if(region != null){
+			putQueryParameter("Region", region);
 		}
 	}
 
 	@Override
-	public Class<ListEngineNamespacesResponse> getResponseClass() {
-		return ListEngineNamespacesResponse.class;
+	public Class<GetOverviewResponse> getResponseClass() {
+		return GetOverviewResponse.class;
 	}
 
 }

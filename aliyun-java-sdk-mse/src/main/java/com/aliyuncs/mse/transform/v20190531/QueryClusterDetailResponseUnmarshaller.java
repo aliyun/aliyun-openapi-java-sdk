@@ -64,17 +64,12 @@ public class QueryClusterDetailResponseUnmarshaller {
 		List<InstanceModel> instanceModels = new ArrayList<InstanceModel>();
 		for (int i = 0; i < _ctx.lengthValue("QueryClusterDetailResponse.Data.InstanceModels.Length"); i++) {
 			InstanceModel instanceModel = new InstanceModel();
-			instanceModel.setInstanceType(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].InstanceType"));
-			instanceModel.setInstanceId(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].InstanceId"));
 			instanceModel.setIp(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].Ip"));
-			instanceModel.setVip(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].Vip"));
 			instanceModel.setHealthStatus(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].HealthStatus"));
-			instanceModel.setClusterId(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].ClusterId"));
 			instanceModel.setRole(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].Role"));
 			instanceModel.setPodName(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].PodName"));
 			instanceModel.setInternetIp(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].InternetIp"));
 			instanceModel.setSingleTunnelVip(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].SingleTunnelVip"));
-			instanceModel.setZkClientPort(_ctx.stringValue("QueryClusterDetailResponse.Data.InstanceModels["+ i +"].ZkClientPort"));
 
 			instanceModels.add(instanceModel);
 		}

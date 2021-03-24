@@ -27,6 +27,7 @@ public class DeleteNacosConfigResponseUnmarshaller {
 		deleteNacosConfigResponse.setMessage(_ctx.stringValue("DeleteNacosConfigResponse.Message"));
 		deleteNacosConfigResponse.setErrorCode(_ctx.stringValue("DeleteNacosConfigResponse.ErrorCode"));
 		deleteNacosConfigResponse.setHttpCode(_ctx.stringValue("DeleteNacosConfigResponse.HttpCode"));
+		deleteNacosConfigResponse.setCode(_ctx.stringValue("DeleteNacosConfigResponse.Code"));
 	 
 	 	return deleteNacosConfigResponse;
 	}

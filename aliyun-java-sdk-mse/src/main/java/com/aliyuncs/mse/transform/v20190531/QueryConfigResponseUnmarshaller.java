@@ -42,6 +42,10 @@ public class QueryConfigResponseUnmarshaller {
 		data.setAutopurgePurgeInterval(_ctx.stringValue("QueryConfigResponse.Data.AutopurgePurgeInterval"));
 		data.setAutopurgeSnapRetainCount(_ctx.stringValue("QueryConfigResponse.Data.AutopurgeSnapRetainCount"));
 		data.setRestartFlag(_ctx.booleanValue("QueryConfigResponse.Data.RestartFlag"));
+		data.setConfigAuthSupported(_ctx.booleanValue("QueryConfigResponse.Data.ConfigAuthSupported"));
+		data.setConfigAuthEnabled(_ctx.booleanValue("QueryConfigResponse.Data.ConfigAuthEnabled"));
+		data.setMCPSupported(_ctx.booleanValue("QueryConfigResponse.Data.MCPSupported"));
+		data.setMCPEnabled(_ctx.booleanValue("QueryConfigResponse.Data.MCPEnabled"));
 		queryConfigResponse.setData(data);
 	 
 	 	return queryConfigResponse;

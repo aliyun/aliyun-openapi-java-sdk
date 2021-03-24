@@ -27,6 +27,8 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String openSuperAcl;
 
+	private Boolean configAuthEnabled;
+
 	private String passWord;
 
 	private String maxClientCnxns;
@@ -39,11 +41,15 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 
 	private String autopurgeSnapRetainCount;
 
+	private Boolean mCPEnabled;
+
 	private String tickTime;
 
 	private String clusterId;
 
 	private String syncLimit;
+
+	private String instanceId;
 
 	private String autopurgePurgeInterval;
 
@@ -67,6 +73,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.openSuperAcl = openSuperAcl;
 		if(openSuperAcl != null){
 			putBodyParameter("OpenSuperAcl", openSuperAcl);
+		}
+	}
+
+	public Boolean getConfigAuthEnabled() {
+		return this.configAuthEnabled;
+	}
+
+	public void setConfigAuthEnabled(Boolean configAuthEnabled) {
+		this.configAuthEnabled = configAuthEnabled;
+		if(configAuthEnabled != null){
+			putQueryParameter("ConfigAuthEnabled", configAuthEnabled.toString());
 		}
 	}
 
@@ -136,6 +153,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		}
 	}
 
+	public Boolean getMCPEnabled() {
+		return this.mCPEnabled;
+	}
+
+	public void setMCPEnabled(Boolean mCPEnabled) {
+		this.mCPEnabled = mCPEnabled;
+		if(mCPEnabled != null){
+			putQueryParameter("MCPEnabled", mCPEnabled.toString());
+		}
+	}
+
 	public String getTickTime() {
 		return this.tickTime;
 	}
@@ -166,6 +194,17 @@ public class UpdateConfigRequest extends RpcAcsRequest<UpdateConfigResponse> {
 		this.syncLimit = syncLimit;
 		if(syncLimit != null){
 			putQueryParameter("SyncLimit", syncLimit);
+		}
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
