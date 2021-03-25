@@ -22,34 +22,30 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class BindDebugSlbRequest extends RoaAcsRequest<BindDebugSlbResponse> {
+public class EnableApplicationScalingRuleRequest extends RoaAcsRequest<EnableApplicationScalingRuleResponse> {
 	   
 
-	private String slbId;
+	private String scalingRuleName;
 
 	private String appId;
-
-	private String podName;
-
-	private String debugPort;
-	public BindDebugSlbRequest() {
-		super("sae", "2019-05-06", "BindDebugSlb", "serverless");
-		setUriPattern("/pop/v1/sam/app/debugSlb");
-		setMethod(MethodType.POST);
+	public EnableApplicationScalingRuleRequest() {
+		super("sae", "2019-05-06", "EnableApplicationScalingRule", "serverless");
+		setUriPattern("/pop/v1/sam/scale/enableApplicationScalingRule");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getSlbId() {
-		return this.slbId;
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
 	}
 
-	public void setSlbId(String slbId) {
-		this.slbId = slbId;
-		if(slbId != null){
-			putQueryParameter("SlbId", slbId);
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
 		}
 	}
 
@@ -64,31 +60,9 @@ public class BindDebugSlbRequest extends RoaAcsRequest<BindDebugSlbResponse> {
 		}
 	}
 
-	public String getPodName() {
-		return this.podName;
-	}
-
-	public void setPodName(String podName) {
-		this.podName = podName;
-		if(podName != null){
-			putQueryParameter("PodName", podName);
-		}
-	}
-
-	public String getDebugPort() {
-		return this.debugPort;
-	}
-
-	public void setDebugPort(String debugPort) {
-		this.debugPort = debugPort;
-		if(debugPort != null){
-			putQueryParameter("DebugPort", debugPort);
-		}
-	}
-
 	@Override
-	public Class<BindDebugSlbResponse> getResponseClass() {
-		return BindDebugSlbResponse.class;
+	public Class<EnableApplicationScalingRuleResponse> getResponseClass() {
+		return EnableApplicationScalingRuleResponse.class;
 	}
 
 }

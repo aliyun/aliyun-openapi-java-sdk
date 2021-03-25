@@ -28,28 +28,28 @@ public class DescribeChangeOrderResponseUnmarshaller {
 	public static DescribeChangeOrderResponse unmarshall(DescribeChangeOrderResponse describeChangeOrderResponse, UnmarshallerContext _ctx) {
 		
 		describeChangeOrderResponse.setRequestId(_ctx.stringValue("DescribeChangeOrderResponse.RequestId"));
-		describeChangeOrderResponse.setCode(_ctx.stringValue("DescribeChangeOrderResponse.Code"));
-		describeChangeOrderResponse.setErrorCode(_ctx.stringValue("DescribeChangeOrderResponse.ErrorCode"));
 		describeChangeOrderResponse.setMessage(_ctx.stringValue("DescribeChangeOrderResponse.Message"));
-		describeChangeOrderResponse.setSuccess(_ctx.booleanValue("DescribeChangeOrderResponse.Success"));
 		describeChangeOrderResponse.setTraceId(_ctx.stringValue("DescribeChangeOrderResponse.TraceId"));
+		describeChangeOrderResponse.setErrorCode(_ctx.stringValue("DescribeChangeOrderResponse.ErrorCode"));
+		describeChangeOrderResponse.setCode(_ctx.stringValue("DescribeChangeOrderResponse.Code"));
+		describeChangeOrderResponse.setSuccess(_ctx.booleanValue("DescribeChangeOrderResponse.Success"));
 
 		Data data = new Data();
+		data.setStatus(_ctx.integerValue("DescribeChangeOrderResponse.Data.Status"));
+		data.setDescription(_ctx.stringValue("DescribeChangeOrderResponse.Data.Description"));
+		data.setSupportAbortFreeze(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportAbortFreeze"));
+		data.setCreateTime(_ctx.stringValue("DescribeChangeOrderResponse.Data.CreateTime"));
+		data.setChangeOrderId(_ctx.stringValue("DescribeChangeOrderResponse.Data.ChangeOrderId"));
+		data.setBatchType(_ctx.stringValue("DescribeChangeOrderResponse.Data.BatchType"));
 		data.setAppName(_ctx.stringValue("DescribeChangeOrderResponse.Data.AppName"));
 		data.setAuto(_ctx.booleanValue("DescribeChangeOrderResponse.Data.Auto"));
-		data.setBatchCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchCount"));
-		data.setBatchType(_ctx.stringValue("DescribeChangeOrderResponse.Data.BatchType"));
-		data.setBatchWaitTime(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchWaitTime"));
-		data.setChangeOrderId(_ctx.stringValue("DescribeChangeOrderResponse.Data.ChangeOrderId"));
-		data.setCoType(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoType"));
-		data.setCoTypeCode(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoTypeCode"));
-		data.setCreateTime(_ctx.stringValue("DescribeChangeOrderResponse.Data.CreateTime"));
 		data.setCurrentPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.CurrentPipelineId"));
-		data.setDescription(_ctx.stringValue("DescribeChangeOrderResponse.Data.Description"));
-		data.setStatus(_ctx.integerValue("DescribeChangeOrderResponse.Data.Status"));
-		data.setSupportAbortFreeze(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportAbortFreeze"));
+		data.setCoTypeCode(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoTypeCode"));
 		data.setSupportRollback(_ctx.booleanValue("DescribeChangeOrderResponse.Data.SupportRollback"));
+		data.setBatchWaitTime(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchWaitTime"));
 		data.setErrorMessage(_ctx.stringValue("DescribeChangeOrderResponse.Data.ErrorMessage"));
+		data.setCoType(_ctx.stringValue("DescribeChangeOrderResponse.Data.CoType"));
+		data.setBatchCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.BatchCount"));
 
 		List<String> coTargets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChangeOrderResponse.Data.CoTargets.Length"); i++) {
@@ -60,13 +60,13 @@ public class DescribeChangeOrderResponseUnmarshaller {
 		List<Pipeline> pipelines = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeChangeOrderResponse.Data.Pipelines.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setBatchType(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].BatchType"));
-			pipeline.setParallelCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].ParallelCount"));
-			pipeline.setPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineId"));
-			pipeline.setPipelineName(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineName"));
-			pipeline.setStartTime(_ctx.longValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].StartTime"));
 			pipeline.setStatus(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].Status"));
+			pipeline.setPipelineName(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineName"));
+			pipeline.setParallelCount(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].ParallelCount"));
 			pipeline.setUpdateTime(_ctx.longValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].UpdateTime"));
+			pipeline.setStartTime(_ctx.longValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].StartTime"));
+			pipeline.setPipelineId(_ctx.stringValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].PipelineId"));
+			pipeline.setBatchType(_ctx.integerValue("DescribeChangeOrderResponse.Data.Pipelines["+ i +"].BatchType"));
 
 			pipelines.add(pipeline);
 		}

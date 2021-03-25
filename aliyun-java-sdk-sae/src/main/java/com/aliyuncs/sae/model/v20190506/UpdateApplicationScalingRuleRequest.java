@@ -22,18 +22,44 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindDebugSlbRequest extends RoaAcsRequest<UnbindDebugSlbResponse> {
+public class UpdateApplicationScalingRuleRequest extends RoaAcsRequest<UpdateApplicationScalingRuleResponse> {
 	   
 
+	private String scalingRuleName;
+
+	private String scalingRuleTimer;
+
 	private String appId;
-	public UnbindDebugSlbRequest() {
-		super("sae", "2019-05-06", "UnbindDebugSlb", "serverless");
-		setUriPattern("/pop/v1/sam/app/debugSlb");
-		setMethod(MethodType.DELETE);
+	public UpdateApplicationScalingRuleRequest() {
+		super("sae", "2019-05-06", "UpdateApplicationScalingRule", "serverless");
+		setUriPattern("/pop/v1/sam/scale/applicationScalingRule");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
+	}
+
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public String getScalingRuleTimer() {
+		return this.scalingRuleTimer;
+	}
+
+	public void setScalingRuleTimer(String scalingRuleTimer) {
+		this.scalingRuleTimer = scalingRuleTimer;
+		if(scalingRuleTimer != null){
+			putQueryParameter("ScalingRuleTimer", scalingRuleTimer);
+		}
 	}
 
 	public String getAppId() {
@@ -48,8 +74,8 @@ public class UnbindDebugSlbRequest extends RoaAcsRequest<UnbindDebugSlbResponse>
 	}
 
 	@Override
-	public Class<UnbindDebugSlbResponse> getResponseClass() {
-		return UnbindDebugSlbResponse.class;
+	public Class<UpdateApplicationScalingRuleResponse> getResponseClass() {
+		return UpdateApplicationScalingRuleResponse.class;
 	}
 
 }

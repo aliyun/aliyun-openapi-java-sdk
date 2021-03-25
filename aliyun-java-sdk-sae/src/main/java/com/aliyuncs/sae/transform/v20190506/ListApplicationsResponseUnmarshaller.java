@@ -29,34 +29,35 @@ public class ListApplicationsResponseUnmarshaller {
 	public static ListApplicationsResponse unmarshall(ListApplicationsResponse listApplicationsResponse, UnmarshallerContext _ctx) {
 		
 		listApplicationsResponse.setRequestId(_ctx.stringValue("ListApplicationsResponse.RequestId"));
-		listApplicationsResponse.setCode(_ctx.stringValue("ListApplicationsResponse.Code"));
 		listApplicationsResponse.setMessage(_ctx.stringValue("ListApplicationsResponse.Message"));
-		listApplicationsResponse.setSuccess(_ctx.booleanValue("ListApplicationsResponse.Success"));
 		listApplicationsResponse.setErrorCode(_ctx.stringValue("ListApplicationsResponse.ErrorCode"));
+		listApplicationsResponse.setCode(_ctx.stringValue("ListApplicationsResponse.Code"));
+		listApplicationsResponse.setSuccess(_ctx.booleanValue("ListApplicationsResponse.Success"));
 
 		Data data = new Data();
-		data.setCurrentPage(_ctx.integerValue("ListApplicationsResponse.Data.CurrentPage"));
 		data.setPageSize(_ctx.integerValue("ListApplicationsResponse.Data.PageSize"));
+		data.setCurrentPage(_ctx.integerValue("ListApplicationsResponse.Data.CurrentPage"));
 		data.setTotalSize(_ctx.integerValue("ListApplicationsResponse.Data.TotalSize"));
 
 		List<Application> applications = new ArrayList<Application>();
 		for (int i = 0; i < _ctx.lengthValue("ListApplicationsResponse.Data.Applications.Length"); i++) {
 			Application application = new Application();
-			application.setAppDeletingStatus(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDeletingStatus"));
-			application.setAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppId"));
-			application.setAppName(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppName"));
-			application.setRegionId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].RegionId"));
-			application.setRunningInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].RunningInstances"));
 			application.setInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].Instances"));
+			application.setScaleRuleEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleEnabled"));
+			application.setAppDescription(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDescription"));
+			application.setAppId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppId"));
+			application.setRunningInstances(_ctx.integerValue("ListApplicationsResponse.Data.Applications["+ i +"].RunningInstances"));
+			application.setRegionId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].RegionId"));
 			application.setNamespaceId(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].NamespaceId"));
 			application.setScaleRuleType(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleType"));
-			application.setScaleRuleEnabled(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].ScaleRuleEnabled"));
+			application.setAppDeletingStatus(_ctx.booleanValue("ListApplicationsResponse.Data.Applications["+ i +"].AppDeletingStatus"));
+			application.setAppName(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].AppName"));
 
 			List<TagsItem> tags = new ArrayList<TagsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags.Length"); j++) {
 				TagsItem tagsItem = new TagsItem();
-				tagsItem.setKey(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Key"));
 				tagsItem.setValue(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Value"));
+				tagsItem.setKey(_ctx.stringValue("ListApplicationsResponse.Data.Applications["+ i +"].Tags["+ j +"].Key"));
 
 				tags.add(tagsItem);
 			}

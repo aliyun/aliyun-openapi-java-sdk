@@ -22,15 +22,15 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateApplicationVswitchesRequest extends RoaAcsRequest<UpdateApplicationVswitchesResponse> {
+public class DisableApplicationScalingRuleRequest extends RoaAcsRequest<DisableApplicationScalingRuleResponse> {
 	   
 
-	private String vSwitchId;
+	private String scalingRuleName;
 
 	private String appId;
-	public UpdateApplicationVswitchesRequest() {
-		super("sae", "2019-05-06", "UpdateApplicationVswitches", "serverless");
-		setUriPattern("/pop/v1/sam/app/updateAppVswitches");
+	public DisableApplicationScalingRuleRequest() {
+		super("sae", "2019-05-06", "DisableApplicationScalingRule", "serverless");
+		setUriPattern("/pop/v1/sam/scale/disableApplicationScalingRule");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,14 +38,14 @@ public class UpdateApplicationVswitchesRequest extends RoaAcsRequest<UpdateAppli
 		} catch (Exception e) {}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
 		}
 	}
 
@@ -61,8 +61,8 @@ public class UpdateApplicationVswitchesRequest extends RoaAcsRequest<UpdateAppli
 	}
 
 	@Override
-	public Class<UpdateApplicationVswitchesResponse> getResponseClass() {
-		return UpdateApplicationVswitchesResponse.class;
+	public Class<DisableApplicationScalingRuleResponse> getResponseClass() {
+		return DisableApplicationScalingRuleResponse.class;
 	}
 
 }

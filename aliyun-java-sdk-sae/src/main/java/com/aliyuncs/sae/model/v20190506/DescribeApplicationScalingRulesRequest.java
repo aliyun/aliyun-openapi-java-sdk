@@ -22,13 +22,13 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDebugSlbRequest extends RoaAcsRequest<DescribeDebugSlbResponse> {
+public class DescribeApplicationScalingRulesRequest extends RoaAcsRequest<DescribeApplicationScalingRulesResponse> {
 	   
 
 	private String appId;
-	public DescribeDebugSlbRequest() {
-		super("sae", "2019-05-06", "DescribeDebugSlb", "serverless");
-		setUriPattern("/pop/v1/sam/app/debugSlb");
+	public DescribeApplicationScalingRulesRequest() {
+		super("sae", "2019-05-06", "DescribeApplicationScalingRules", "serverless");
+		setUriPattern("/pop/v1/sam/scale/applicationScalingRules");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,8 +48,8 @@ public class DescribeDebugSlbRequest extends RoaAcsRequest<DescribeDebugSlbRespo
 	}
 
 	@Override
-	public Class<DescribeDebugSlbResponse> getResponseClass() {
-		return DescribeDebugSlbResponse.class;
+	public Class<DescribeApplicationScalingRulesResponse> getResponseClass() {
+		return DescribeApplicationScalingRulesResponse.class;
 	}
 
 }

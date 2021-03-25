@@ -27,20 +27,20 @@ public class ListPublishedServicesResponseUnmarshaller {
 	public static ListPublishedServicesResponse unmarshall(ListPublishedServicesResponse listPublishedServicesResponse, UnmarshallerContext _ctx) {
 		
 		listPublishedServicesResponse.setRequestId(_ctx.stringValue("ListPublishedServicesResponse.RequestId"));
-		listPublishedServicesResponse.setCode(_ctx.stringValue("ListPublishedServicesResponse.Code"));
 		listPublishedServicesResponse.setMessage(_ctx.stringValue("ListPublishedServicesResponse.Message"));
-		listPublishedServicesResponse.setSuccess(_ctx.booleanValue("ListPublishedServicesResponse.Success"));
-		listPublishedServicesResponse.setErrorCode(_ctx.stringValue("ListPublishedServicesResponse.ErrorCode"));
 		listPublishedServicesResponse.setTraceId(_ctx.stringValue("ListPublishedServicesResponse.TraceId"));
+		listPublishedServicesResponse.setErrorCode(_ctx.stringValue("ListPublishedServicesResponse.ErrorCode"));
+		listPublishedServicesResponse.setCode(_ctx.stringValue("ListPublishedServicesResponse.Code"));
+		listPublishedServicesResponse.setSuccess(_ctx.booleanValue("ListPublishedServicesResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPublishedServicesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setAppId(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].AppId"));
 			dataItem.setGroup2Ip(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Group2Ip"));
-			dataItem.setName(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Name"));
 			dataItem.setType(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Type"));
+			dataItem.setAppId(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].AppId"));
 			dataItem.setVersion(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Version"));
+			dataItem.setName(_ctx.stringValue("ListPublishedServicesResponse.Data["+ i +"].Name"));
 
 			List<String> groups = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListPublishedServicesResponse.Data["+ i +"].Groups.Length"); j++) {

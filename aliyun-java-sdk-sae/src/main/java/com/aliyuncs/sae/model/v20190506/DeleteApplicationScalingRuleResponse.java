@@ -15,24 +15,16 @@
 package com.aliyuncs.sae.model.v20190506;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sae.transform.v20190506.DeleteTimerRuleResponseUnmarshaller;
+import com.aliyuncs.sae.transform.v20190506.DeleteApplicationScalingRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteTimerRuleResponse extends AcsResponse {
+public class DeleteApplicationScalingRuleResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String code;
-
-	private String errorCode;
-
-	private String message;
-
-	private Boolean success;
 
 	private String traceId;
 
@@ -44,38 +36,6 @@ public class DeleteTimerRuleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public String getTraceId() {
 		return this.traceId;
 	}
@@ -85,8 +45,8 @@ public class DeleteTimerRuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteTimerRuleResponse getInstance(UnmarshallerContext context) {
-		return	DeleteTimerRuleResponseUnmarshaller.unmarshall(this, context);
+	public DeleteApplicationScalingRuleResponse getInstance(UnmarshallerContext context) {
+		return	DeleteApplicationScalingRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

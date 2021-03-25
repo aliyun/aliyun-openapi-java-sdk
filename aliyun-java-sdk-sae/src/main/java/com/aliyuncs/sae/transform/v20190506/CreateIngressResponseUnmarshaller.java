@@ -24,11 +24,11 @@ public class CreateIngressResponseUnmarshaller {
 	public static CreateIngressResponse unmarshall(CreateIngressResponse createIngressResponse, UnmarshallerContext _ctx) {
 		
 		createIngressResponse.setRequestId(_ctx.stringValue("CreateIngressResponse.RequestId"));
-		createIngressResponse.setCode(_ctx.stringValue("CreateIngressResponse.Code"));
 		createIngressResponse.setMessage(_ctx.stringValue("CreateIngressResponse.Message"));
-		createIngressResponse.setSuccess(_ctx.booleanValue("CreateIngressResponse.Success"));
-		createIngressResponse.setErrorCode(_ctx.stringValue("CreateIngressResponse.ErrorCode"));
 		createIngressResponse.setTraceId(_ctx.stringValue("CreateIngressResponse.TraceId"));
+		createIngressResponse.setErrorCode(_ctx.stringValue("CreateIngressResponse.ErrorCode"));
+		createIngressResponse.setCode(_ctx.stringValue("CreateIngressResponse.Code"));
+		createIngressResponse.setSuccess(_ctx.booleanValue("CreateIngressResponse.Success"));
 
 		Data data = new Data();
 		data.setIngressId(_ctx.longValue("CreateIngressResponse.Data.IngressId"));

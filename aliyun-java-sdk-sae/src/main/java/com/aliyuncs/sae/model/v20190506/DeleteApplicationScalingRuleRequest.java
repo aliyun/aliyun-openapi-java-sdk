@@ -22,13 +22,15 @@ import com.aliyuncs.sae.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteTimerRuleRequest extends RoaAcsRequest<DeleteTimerRuleResponse> {
+public class DeleteApplicationScalingRuleRequest extends RoaAcsRequest<DeleteApplicationScalingRuleResponse> {
 	   
 
-	private String ruleId;
-	public DeleteTimerRuleRequest() {
-		super("sae", "2019-05-06", "DeleteTimerRule", "serverless");
-		setUriPattern("/pop/v1/sam/app/timerRule");
+	private String scalingRuleName;
+
+	private String appId;
+	public DeleteApplicationScalingRuleRequest() {
+		super("sae", "2019-05-06", "DeleteApplicationScalingRule", "serverless");
+		setUriPattern("/pop/v1/sam/scale/applicationScalingRule");
 		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,20 +38,31 @@ public class DeleteTimerRuleRequest extends RoaAcsRequest<DeleteTimerRuleRespons
 		} catch (Exception e) {}
 	}
 
-	public String getRuleId() {
-		return this.ruleId;
+	public String getScalingRuleName() {
+		return this.scalingRuleName;
 	}
 
-	public void setRuleId(String ruleId) {
-		this.ruleId = ruleId;
-		if(ruleId != null){
-			putQueryParameter("RuleId", ruleId);
+	public void setScalingRuleName(String scalingRuleName) {
+		this.scalingRuleName = scalingRuleName;
+		if(scalingRuleName != null){
+			putQueryParameter("ScalingRuleName", scalingRuleName);
+		}
+	}
+
+	public String getAppId() {
+		return this.appId;
+	}
+
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
 	@Override
-	public Class<DeleteTimerRuleResponse> getResponseClass() {
-		return DeleteTimerRuleResponse.class;
+	public Class<DeleteApplicationScalingRuleResponse> getResponseClass() {
+		return DeleteApplicationScalingRuleResponse.class;
 	}
 
 }

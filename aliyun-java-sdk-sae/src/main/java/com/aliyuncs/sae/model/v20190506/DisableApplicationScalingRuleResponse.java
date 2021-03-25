@@ -15,26 +15,18 @@
 package com.aliyuncs.sae.model.v20190506;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sae.transform.v20190506.UpdateApplicationVswitchesResponseUnmarshaller;
+import com.aliyuncs.sae.transform.v20190506.DisableApplicationScalingRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateApplicationVswitchesResponse extends AcsResponse {
+public class DisableApplicationScalingRuleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private String message;
-
-	private String errorCode;
-
 	private String traceId;
-
-	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,30 +34,6 @@ public class UpdateApplicationVswitchesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
 	}
 
 	public String getTraceId() {
@@ -76,17 +44,9 @@ public class UpdateApplicationVswitchesResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	@Override
-	public UpdateApplicationVswitchesResponse getInstance(UnmarshallerContext context) {
-		return	UpdateApplicationVswitchesResponseUnmarshaller.unmarshall(this, context);
+	public DisableApplicationScalingRuleResponse getInstance(UnmarshallerContext context) {
+		return	DisableApplicationScalingRuleResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
