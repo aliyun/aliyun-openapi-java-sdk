@@ -1,3 +1,6 @@
+2021-03-25 Version: 2.0.7
+- Change indicator date type of ListHistoriticalAgentReport.
+
 2021-03-24 Version: 2.0.6
 - Export new API.
 
