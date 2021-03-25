@@ -22,33 +22,52 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
+public class ListTenantNameRequest extends RpcAcsRequest<ListTenantNameResponse> {
 	   
 
+	private Long endCreateTime;
+
 	private String business;
-
-	private String clientToken;
-
-	private String media;
 
 	private String userId;
 
 	private String originSiteUserId;
 
+	private Integer pageNumber;
+
 	private String environment;
 
 	private String appName;
 
+	private Long startCreateTime;
+
 	private String tenantId;
 
+	private Integer pageSize;
+
 	private String userSite;
-	public CreateMediaRequest() {
-		super("UniMkt", "2018-12-12", "CreateMedia");
+
+	private String tenantName;
+
+	private String status;
+	public ListTenantNameRequest() {
+		super("UniMkt", "2018-12-12", "ListTenantName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getEndCreateTime() {
+		return this.endCreateTime;
+	}
+
+	public void setEndCreateTime(Long endCreateTime) {
+		this.endCreateTime = endCreateTime;
+		if(endCreateTime != null){
+			putQueryParameter("EndCreateTime", endCreateTime.toString());
+		}
 	}
 
 	public String getBusiness() {
@@ -59,28 +78,6 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		this.business = business;
 		if(business != null){
 			putQueryParameter("Business", business);
-		}
-	}
-
-	public String getClientToken() {
-		return this.clientToken;
-	}
-
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getMedia() {
-		return this.media;
-	}
-
-	public void setMedia(String media) {
-		this.media = media;
-		if(media != null){
-			putBodyParameter("Media", media);
 		}
 	}
 
@@ -106,6 +103,17 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
 	public String getEnvironment() {
 		return this.environment;
 	}
@@ -128,6 +136,17 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		}
 	}
 
+	public Long getStartCreateTime() {
+		return this.startCreateTime;
+	}
+
+	public void setStartCreateTime(Long startCreateTime) {
+		this.startCreateTime = startCreateTime;
+		if(startCreateTime != null){
+			putQueryParameter("StartCreateTime", startCreateTime.toString());
+		}
+	}
+
 	public String getTenantId() {
 		return this.tenantId;
 	}
@@ -136,6 +155,17 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		this.tenantId = tenantId;
 		if(tenantId != null){
 			putQueryParameter("TenantId", tenantId);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -150,9 +180,31 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 		}
 	}
 
+	public String getTenantName() {
+		return this.tenantName;
+	}
+
+	public void setTenantName(String tenantName) {
+		this.tenantName = tenantName;
+		if(tenantName != null){
+			putQueryParameter("TenantName", tenantName);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
 	@Override
-	public Class<CreateMediaResponse> getResponseClass() {
-		return CreateMediaResponse.class;
+	public Class<ListTenantNameResponse> getResponseClass() {
+		return ListTenantNameResponse.class;
 	}
 
 }

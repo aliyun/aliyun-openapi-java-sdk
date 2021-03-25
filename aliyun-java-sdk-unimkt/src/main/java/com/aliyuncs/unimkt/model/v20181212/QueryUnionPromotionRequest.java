@@ -27,13 +27,17 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 
 	private String unionBizType;
 
+	private String userNick;
+
 	private String sign;
 
 	private Long alipayOpenId;
 
+	private Long userId;
+
 	private String channelId;
 	public QueryUnionPromotionRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionPromotion", "uniMkt");
+		super("UniMkt", "2018-12-12", "QueryUnionPromotion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,6 +53,17 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 		this.unionBizType = unionBizType;
 		if(unionBizType != null){
 			putQueryParameter("UnionBizType", unionBizType);
+		}
+	}
+
+	public String getUserNick() {
+		return this.userNick;
+	}
+
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
+		if(userNick != null){
+			putQueryParameter("UserNick", userNick);
 		}
 	}
 
@@ -71,6 +86,17 @@ public class QueryUnionPromotionRequest extends RpcAcsRequest<QueryUnionPromotio
 		this.alipayOpenId = alipayOpenId;
 		if(alipayOpenId != null){
 			putQueryParameter("AlipayOpenId", alipayOpenId.toString());
+		}
+	}
+
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
 		}
 	}
 

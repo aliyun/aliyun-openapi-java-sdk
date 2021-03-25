@@ -25,18 +25,33 @@ import com.aliyuncs.unimkt.Endpoint;
 public class GetUnionTaskStatusRequest extends RpcAcsRequest<GetUnionTaskStatusResponse> {
 	   
 
+	private String userNick;
+
 	private String sign;
 
 	private Long alipayOpenId;
 
+	private Long userId;
+
 	private Long taskId;
 	public GetUnionTaskStatusRequest() {
-		super("UniMkt", "2018-12-12", "GetUnionTaskStatus", "uniMkt");
+		super("UniMkt", "2018-12-12", "GetUnionTaskStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getUserNick() {
+		return this.userNick;
+	}
+
+	public void setUserNick(String userNick) {
+		this.userNick = userNick;
+		if(userNick != null){
+			putQueryParameter("UserNick", userNick);
+		}
 	}
 
 	public String getSign() {
@@ -58,6 +73,17 @@ public class GetUnionTaskStatusRequest extends RpcAcsRequest<GetUnionTaskStatusR
 		this.alipayOpenId = alipayOpenId;
 		if(alipayOpenId != null){
 			putQueryParameter("AlipayOpenId", alipayOpenId.toString());
+		}
+	}
+
+	public Long getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
 		}
 	}
 

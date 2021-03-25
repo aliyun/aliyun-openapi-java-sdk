@@ -22,10 +22,10 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListSlotTemplateRequest extends RpcAcsRequest<ListSlotTemplateResponse> {
+public class ListTenantRequest extends RpcAcsRequest<ListTenantResponse> {
 	   
 
-	private String adSlotType;
+	private Long endCreateTime;
 
 	private String business;
 
@@ -39,13 +39,19 @@ public class ListSlotTemplateRequest extends RpcAcsRequest<ListSlotTemplateRespo
 
 	private String appName;
 
+	private Long startCreateTime;
+
 	private String tenantId;
 
 	private Integer pageSize;
 
 	private String userSite;
-	public ListSlotTemplateRequest() {
-		super("UniMkt", "2018-12-12", "ListSlotTemplate", "uniMkt");
+
+	private String tenantName;
+
+	private String status;
+	public ListTenantRequest() {
+		super("UniMkt", "2018-12-12", "ListTenant");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,14 +59,14 @@ public class ListSlotTemplateRequest extends RpcAcsRequest<ListSlotTemplateRespo
 		} catch (Exception e) {}
 	}
 
-	public String getAdSlotType() {
-		return this.adSlotType;
+	public Long getEndCreateTime() {
+		return this.endCreateTime;
 	}
 
-	public void setAdSlotType(String adSlotType) {
-		this.adSlotType = adSlotType;
-		if(adSlotType != null){
-			putQueryParameter("AdSlotType", adSlotType);
+	public void setEndCreateTime(Long endCreateTime) {
+		this.endCreateTime = endCreateTime;
+		if(endCreateTime != null){
+			putQueryParameter("EndCreateTime", endCreateTime.toString());
 		}
 	}
 
@@ -130,6 +136,17 @@ public class ListSlotTemplateRequest extends RpcAcsRequest<ListSlotTemplateRespo
 		}
 	}
 
+	public Long getStartCreateTime() {
+		return this.startCreateTime;
+	}
+
+	public void setStartCreateTime(Long startCreateTime) {
+		this.startCreateTime = startCreateTime;
+		if(startCreateTime != null){
+			putQueryParameter("StartCreateTime", startCreateTime.toString());
+		}
+	}
+
 	public String getTenantId() {
 		return this.tenantId;
 	}
@@ -163,9 +180,31 @@ public class ListSlotTemplateRequest extends RpcAcsRequest<ListSlotTemplateRespo
 		}
 	}
 
+	public String getTenantName() {
+		return this.tenantName;
+	}
+
+	public void setTenantName(String tenantName) {
+		this.tenantName = tenantName;
+		if(tenantName != null){
+			putQueryParameter("TenantName", tenantName);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
+		}
+	}
+
 	@Override
-	public Class<ListSlotTemplateResponse> getResponseClass() {
-		return ListSlotTemplateResponse.class;
+	public Class<ListTenantResponse> getResponseClass() {
+		return ListTenantResponse.class;
 	}
 
 }

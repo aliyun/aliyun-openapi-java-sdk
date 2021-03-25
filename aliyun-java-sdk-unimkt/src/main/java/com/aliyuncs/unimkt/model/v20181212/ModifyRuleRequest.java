@@ -41,7 +41,7 @@ public class ModifyRuleRequest extends RpcAcsRequest<ModifyRuleResponse> {
 
 	private String userSite;
 	public ModifyRuleRequest() {
-		super("UniMkt", "2018-12-12", "ModifyRule", "uniMkt");
+		super("UniMkt", "2018-12-12", "ModifyRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

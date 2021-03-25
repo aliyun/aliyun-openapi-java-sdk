@@ -52,7 +52,7 @@ public class RegistDeviceRequest extends RpcAcsRequest<RegistDeviceResponse> {
 
 	private String outerCode;
 	public RegistDeviceRequest() {
-		super("UniMkt", "2018-12-12", "RegistDevice", "uniMkt");
+		super("UniMkt", "2018-12-12", "RegistDevice");
 		setProtocol(ProtocolType.HTTPS);
 		setMethod(MethodType.POST);
 		try {

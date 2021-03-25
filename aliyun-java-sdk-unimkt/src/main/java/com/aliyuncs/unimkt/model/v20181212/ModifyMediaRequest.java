@@ -41,7 +41,7 @@ public class ModifyMediaRequest extends RpcAcsRequest<ModifyMediaResponse> {
 
 	private String userSite;
 	public ModifyMediaRequest() {
-		super("UniMkt", "2018-12-12", "ModifyMedia", "uniMkt");
+		super("UniMkt", "2018-12-12", "ModifyMedia");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

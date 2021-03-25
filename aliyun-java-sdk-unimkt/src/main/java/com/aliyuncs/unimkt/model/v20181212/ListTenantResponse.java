@@ -16,14 +16,14 @@ package com.aliyuncs.unimkt.model.v20181212;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.ListSlotTemplateResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181212.ListTenantResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListSlotTemplateResponse extends AcsResponse {
+public class ListTenantResponse extends AcsResponse {
 
 	private String code;
 
@@ -39,7 +39,7 @@ public class ListSlotTemplateResponse extends AcsResponse {
 
 	private Long total;
 
-	private List<AdSlotTemplate> model;
+	private List<Tenant> model;
 
 	public String getCode() {
 		return this.code;
@@ -97,15 +97,15 @@ public class ListSlotTemplateResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public List<AdSlotTemplate> getModel() {
+	public List<Tenant> getModel() {
 		return this.model;
 	}
 
-	public void setModel(List<AdSlotTemplate> model) {
+	public void setModel(List<Tenant> model) {
 		this.model = model;
 	}
 
-	public static class AdSlotTemplate {
+	public static class Tenant {
 
 		private Long createTime;
 
@@ -113,31 +113,21 @@ public class ListSlotTemplateResponse extends AcsResponse {
 
 		private String tenantId;
 
-		private String mediaName;
+		private String business;
 
-		private String mediaId;
+		private String tenantName;
 
-		private String mediaType;
+		private String status;
 
-		private String firstScene;
-
-		private String secondScene;
-
-		private String mediaStatus;
-
-		private String accessStatus;
-
-		private String os;
-
-		private String config;
-
-		private String keyWords;
-
-		private String accessWay;
+		private String settleInfo;
 
 		private String extInfo;
 
+		private String bizId;
+
 		private Long version;
+
+		private String tenantDescription;
 
 		public Long getCreateTime() {
 			return this.createTime;
@@ -163,92 +153,36 @@ public class ListSlotTemplateResponse extends AcsResponse {
 			this.tenantId = tenantId;
 		}
 
-		public String getMediaName() {
-			return this.mediaName;
+		public String getBusiness() {
+			return this.business;
 		}
 
-		public void setMediaName(String mediaName) {
-			this.mediaName = mediaName;
+		public void setBusiness(String business) {
+			this.business = business;
 		}
 
-		public String getMediaId() {
-			return this.mediaId;
+		public String getTenantName() {
+			return this.tenantName;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
 		}
 
-		public String getMediaType() {
-			return this.mediaType;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setMediaType(String mediaType) {
-			this.mediaType = mediaType;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public String getFirstScene() {
-			return this.firstScene;
+		public String getSettleInfo() {
+			return this.settleInfo;
 		}
 
-		public void setFirstScene(String firstScene) {
-			this.firstScene = firstScene;
-		}
-
-		public String getSecondScene() {
-			return this.secondScene;
-		}
-
-		public void setSecondScene(String secondScene) {
-			this.secondScene = secondScene;
-		}
-
-		public String getMediaStatus() {
-			return this.mediaStatus;
-		}
-
-		public void setMediaStatus(String mediaStatus) {
-			this.mediaStatus = mediaStatus;
-		}
-
-		public String getAccessStatus() {
-			return this.accessStatus;
-		}
-
-		public void setAccessStatus(String accessStatus) {
-			this.accessStatus = accessStatus;
-		}
-
-		public String getOs() {
-			return this.os;
-		}
-
-		public void setOs(String os) {
-			this.os = os;
-		}
-
-		public String getConfig() {
-			return this.config;
-		}
-
-		public void setConfig(String config) {
-			this.config = config;
-		}
-
-		public String getKeyWords() {
-			return this.keyWords;
-		}
-
-		public void setKeyWords(String keyWords) {
-			this.keyWords = keyWords;
-		}
-
-		public String getAccessWay() {
-			return this.accessWay;
-		}
-
-		public void setAccessWay(String accessWay) {
-			this.accessWay = accessWay;
+		public void setSettleInfo(String settleInfo) {
+			this.settleInfo = settleInfo;
 		}
 
 		public String getExtInfo() {
@@ -259,6 +193,14 @@ public class ListSlotTemplateResponse extends AcsResponse {
 			this.extInfo = extInfo;
 		}
 
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
 		public Long getVersion() {
 			return this.version;
 		}
@@ -266,11 +208,19 @@ public class ListSlotTemplateResponse extends AcsResponse {
 		public void setVersion(Long version) {
 			this.version = version;
 		}
+
+		public String getTenantDescription() {
+			return this.tenantDescription;
+		}
+
+		public void setTenantDescription(String tenantDescription) {
+			this.tenantDescription = tenantDescription;
+		}
 	}
 
 	@Override
-	public ListSlotTemplateResponse getInstance(UnmarshallerContext context) {
-		return	ListSlotTemplateResponseUnmarshaller.unmarshall(this, context);
+	public ListTenantResponse getInstance(UnmarshallerContext context) {
+		return	ListTenantResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
