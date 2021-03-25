@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
@@ -22,22 +23,18 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavingsPlansInstanceResponse> {
+public class QueryRelationListRequest extends RpcAcsRequest<QueryRelationListResponse> {
 	   
 
-	private String endTime;
-
-	private String startTime;
-
-	private String locale;
+	private List<String> statusLists;
 
 	private Integer pageNum;
 
-	private String instanceId;
+	private Long userId;
 
 	private Integer pageSize;
-	public QuerySavingsPlansInstanceRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance");
+	public QueryRelationListRequest() {
+		super("BssOpenApi", "2017-12-14", "QueryRelationList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -45,37 +42,17 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 		} catch (Exception e) {}
 	}
 
-	public String getEndTime() {
-		return this.endTime;
+	public List<String> getStatusLists() {
+		return this.statusLists;
 	}
 
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime);
-		}
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime);
-		}
-	}
-
-	public String getLocale() {
-		return this.locale;
-	}
-
-	public void setLocale(String locale) {
-		this.locale = locale;
-		if(locale != null){
-			putQueryParameter("Locale", locale);
-		}
+	public void setStatusLists(List<String> statusLists) {
+		this.statusLists = statusLists;	
+		if (statusLists != null) {
+			for (int i = 0; i < statusLists.size(); i++) {
+				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
+			}
+		}	
 	}
 
 	public Integer getPageNum() {
@@ -89,14 +66,14 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public Long getUserId() {
+		return this.userId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setUserId(Long userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId.toString());
 		}
 	}
 
@@ -112,8 +89,8 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 	}
 
 	@Override
-	public Class<QuerySavingsPlansInstanceResponse> getResponseClass() {
-		return QuerySavingsPlansInstanceResponse.class;
+	public Class<QueryRelationListResponse> getResponseClass() {
+		return QueryRelationListResponse.class;
 	}
 
 }

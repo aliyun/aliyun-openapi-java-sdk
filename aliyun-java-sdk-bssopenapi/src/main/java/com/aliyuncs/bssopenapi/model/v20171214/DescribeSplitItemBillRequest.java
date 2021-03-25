@@ -15,6 +15,7 @@
 package com.aliyuncs.bssopenapi.model.v20171214;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.bssopenapi.Endpoint;
 
@@ -22,39 +23,48 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillResponse> {
+public class DescribeSplitItemBillRequest extends RpcAcsRequest<DescribeSplitItemBillResponse> {
 	   
 
+	private String splitItemID;
+
 	private String productCode;
-
-	private Boolean isHideZeroCharge;
-
-	private Boolean isDisplayLocalCurrency;
 
 	private String subscriptionType;
 
 	private String billingCycle;
 
-	private String type;
-
 	private Long ownerId;
 
 	private Long billOwnerId;
 
+	private List<TagFilter> tagFilters;
+
 	private String productType;
 
-	private String recordID;
+	private String instanceID;
 
 	private String nextToken;
 
 	private Integer maxResults;
-	public QuerySettleBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySettleBill");
+	public DescribeSplitItemBillRequest() {
+		super("BssOpenApi", "2017-12-14", "DescribeSplitItemBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getSplitItemID() {
+		return this.splitItemID;
+	}
+
+	public void setSplitItemID(String splitItemID) {
+		this.splitItemID = splitItemID;
+		if(splitItemID != null){
+			putQueryParameter("SplitItemID", splitItemID);
+		}
 	}
 
 	public String getProductCode() {
@@ -65,28 +75,6 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		this.productCode = productCode;
 		if(productCode != null){
 			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public Boolean getIsHideZeroCharge() {
-		return this.isHideZeroCharge;
-	}
-
-	public void setIsHideZeroCharge(Boolean isHideZeroCharge) {
-		this.isHideZeroCharge = isHideZeroCharge;
-		if(isHideZeroCharge != null){
-			putQueryParameter("IsHideZeroCharge", isHideZeroCharge.toString());
-		}
-	}
-
-	public Boolean getIsDisplayLocalCurrency() {
-		return this.isDisplayLocalCurrency;
-	}
-
-	public void setIsDisplayLocalCurrency(Boolean isDisplayLocalCurrency) {
-		this.isDisplayLocalCurrency = isDisplayLocalCurrency;
-		if(isDisplayLocalCurrency != null){
-			putQueryParameter("IsDisplayLocalCurrency", isDisplayLocalCurrency.toString());
 		}
 	}
 
@@ -112,17 +100,6 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		}
 	}
 
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -145,6 +122,24 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		}
 	}
 
+	public List<TagFilter> getTagFilters() {
+		return this.tagFilters;
+	}
+
+	public void setTagFilters(List<TagFilter> tagFilters) {
+		this.tagFilters = tagFilters;	
+		if (tagFilters != null) {
+			for (int depth1 = 0; depth1 < tagFilters.size(); depth1++) {
+				if (tagFilters.get(depth1).getTagValuess() != null) {
+					for (int i = 0; i < tagFilters.get(depth1).getTagValuess().size(); i++) {
+						putQueryParameter("TagFilter." + (depth1 + 1) + ".TagValues." + (i + 1) , tagFilters.get(depth1).getTagValuess().get(i));
+					}
+				}
+				putQueryParameter("TagFilter." + (depth1 + 1) + ".TagKey" , tagFilters.get(depth1).getTagKey());
+			}
+		}	
+	}
+
 	public String getProductType() {
 		return this.productType;
 	}
@@ -156,14 +151,14 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		}
 	}
 
-	public String getRecordID() {
-		return this.recordID;
+	public String getInstanceID() {
+		return this.instanceID;
 	}
 
-	public void setRecordID(String recordID) {
-		this.recordID = recordID;
-		if(recordID != null){
-			putQueryParameter("RecordID", recordID);
+	public void setInstanceID(String instanceID) {
+		this.instanceID = instanceID;
+		if(instanceID != null){
+			putQueryParameter("InstanceID", instanceID);
 		}
 	}
 
@@ -189,9 +184,32 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		}
 	}
 
+	public static class TagFilter {
+
+		private List<String> tagValuess;
+
+		private String tagKey;
+
+		public List<String> getTagValuess() {
+			return this.tagValuess;
+		}
+
+		public void setTagValuess(List<String> tagValuess) {
+			this.tagValuess = tagValuess;
+		}
+
+		public String getTagKey() {
+			return this.tagKey;
+		}
+
+		public void setTagKey(String tagKey) {
+			this.tagKey = tagKey;
+		}
+	}
+
 	@Override
-	public Class<QuerySettleBillResponse> getResponseClass() {
-		return QuerySettleBillResponse.class;
+	public Class<DescribeSplitItemBillResponse> getResponseClass() {
+		return DescribeSplitItemBillResponse.class;
 	}
 
 }

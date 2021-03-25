@@ -22,34 +22,36 @@ import com.aliyuncs.bssopenapi.Endpoint;
  * @author auto create
  * @version 
  */
-public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillResponse> {
+public class DescribeInstanceBillRequest extends RpcAcsRequest<DescribeInstanceBillResponse> {
 	   
 
 	private String productCode;
 
 	private Boolean isHideZeroCharge;
 
-	private Boolean isDisplayLocalCurrency;
-
 	private String subscriptionType;
-
-	private String billingCycle;
-
-	private String type;
-
-	private Long ownerId;
 
 	private Long billOwnerId;
 
 	private String productType;
 
-	private String recordID;
-
 	private String nextToken;
 
+	private String billingCycle;
+
+	private Long ownerId;
+
+	private String billingDate;
+
+	private Boolean isBillingItem;
+
+	private String instanceID;
+
+	private String granularity;
+
 	private Integer maxResults;
-	public QuerySettleBillRequest() {
-		super("BssOpenApi", "2017-12-14", "QuerySettleBill");
+	public DescribeInstanceBillRequest() {
+		super("BssOpenApi", "2017-12-14", "DescribeInstanceBill");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,17 +81,6 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		}
 	}
 
-	public Boolean getIsDisplayLocalCurrency() {
-		return this.isDisplayLocalCurrency;
-	}
-
-	public void setIsDisplayLocalCurrency(Boolean isDisplayLocalCurrency) {
-		this.isDisplayLocalCurrency = isDisplayLocalCurrency;
-		if(isDisplayLocalCurrency != null){
-			putQueryParameter("IsDisplayLocalCurrency", isDisplayLocalCurrency.toString());
-		}
-	}
-
 	public String getSubscriptionType() {
 		return this.subscriptionType;
 	}
@@ -98,39 +89,6 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		this.subscriptionType = subscriptionType;
 		if(subscriptionType != null){
 			putQueryParameter("SubscriptionType", subscriptionType);
-		}
-	}
-
-	public String getBillingCycle() {
-		return this.billingCycle;
-	}
-
-	public void setBillingCycle(String billingCycle) {
-		this.billingCycle = billingCycle;
-		if(billingCycle != null){
-			putQueryParameter("BillingCycle", billingCycle);
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
@@ -156,17 +114,6 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		}
 	}
 
-	public String getRecordID() {
-		return this.recordID;
-	}
-
-	public void setRecordID(String recordID) {
-		this.recordID = recordID;
-		if(recordID != null){
-			putQueryParameter("RecordID", recordID);
-		}
-	}
-
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -175,6 +122,72 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getBillingCycle() {
+		return this.billingCycle;
+	}
+
+	public void setBillingCycle(String billingCycle) {
+		this.billingCycle = billingCycle;
+		if(billingCycle != null){
+			putQueryParameter("BillingCycle", billingCycle);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getBillingDate() {
+		return this.billingDate;
+	}
+
+	public void setBillingDate(String billingDate) {
+		this.billingDate = billingDate;
+		if(billingDate != null){
+			putQueryParameter("BillingDate", billingDate);
+		}
+	}
+
+	public Boolean getIsBillingItem() {
+		return this.isBillingItem;
+	}
+
+	public void setIsBillingItem(Boolean isBillingItem) {
+		this.isBillingItem = isBillingItem;
+		if(isBillingItem != null){
+			putQueryParameter("IsBillingItem", isBillingItem.toString());
+		}
+	}
+
+	public String getInstanceID() {
+		return this.instanceID;
+	}
+
+	public void setInstanceID(String instanceID) {
+		this.instanceID = instanceID;
+		if(instanceID != null){
+			putQueryParameter("InstanceID", instanceID);
+		}
+	}
+
+	public String getGranularity() {
+		return this.granularity;
+	}
+
+	public void setGranularity(String granularity) {
+		this.granularity = granularity;
+		if(granularity != null){
+			putQueryParameter("Granularity", granularity);
 		}
 	}
 
@@ -190,8 +203,8 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 	}
 
 	@Override
-	public Class<QuerySettleBillResponse> getResponseClass() {
-		return QuerySettleBillResponse.class;
+	public Class<DescribeInstanceBillResponse> getResponseClass() {
+		return DescribeInstanceBillResponse.class;
 	}
 
 }
