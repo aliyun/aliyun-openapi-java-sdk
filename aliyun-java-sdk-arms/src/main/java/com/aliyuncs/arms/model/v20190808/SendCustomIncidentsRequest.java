@@ -29,7 +29,7 @@ public class SendCustomIncidentsRequest extends RpcAcsRequest<SendCustomIncident
 
 	private String productType;
 	public SendCustomIncidentsRequest() {
-		super("ARMS", "2019-08-08", "SendCustomIncidents", "arms");
+		super("ARMS", "2019-08-08", "SendCustomIncidents");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -52,7 +52,7 @@ public class QueryMetricRequest extends RpcAcsRequest<QueryMetricResponse> {
 
 	private String order;
 	public QueryMetricRequest() {
-		super("ARMS", "2019-08-08", "QueryMetric", "arms");
+		super("ARMS", "2019-08-08", "QueryMetric");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

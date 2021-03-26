@@ -29,7 +29,7 @@ public class OpenArmsServiceRequest extends RpcAcsRequest<OpenArmsServiceRespons
 
 	private String type;
 	public OpenArmsServiceRequest() {
-		super("ARMS", "2019-08-08", "OpenArmsService", "arms");
+		super("ARMS", "2019-08-08", "OpenArmsService");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

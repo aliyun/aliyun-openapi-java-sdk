@@ -30,7 +30,7 @@ public class SaveTraceAppConfigRequest extends RpcAcsRequest<SaveTraceAppConfigR
 
 	private String pid;
 	public SaveTraceAppConfigRequest() {
-		super("ARMS", "2019-08-08", "SaveTraceAppConfig", "arms");
+		super("ARMS", "2019-08-08", "SaveTraceAppConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

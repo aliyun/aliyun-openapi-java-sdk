@@ -29,7 +29,7 @@ public class SetRetcodeShareStatusRequest extends RpcAcsRequest<SetRetcodeShareS
 
 	private Boolean status;
 	public SetRetcodeShareStatusRequest() {
-		super("ARMS", "2019-08-08", "SetRetcodeShareStatus", "arms");
+		super("ARMS", "2019-08-08", "SetRetcodeShareStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteAlertContactGroupRequest extends RpcAcsRequest<DeleteAlertCon
 
 	private Long contactGroupId;
 	public DeleteAlertContactGroupRequest() {
-		super("ARMS", "2019-08-08", "DeleteAlertContactGroup", "arms");
+		super("ARMS", "2019-08-08", "DeleteAlertContactGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
