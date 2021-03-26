@@ -24,20 +24,20 @@ import com.aliyuncs.http.MethodType;
 public class ReportDevConfigRequest extends RpcAcsRequest<ReportDevConfigResponse> {
 	   
 
-	private String reportDevConfigParam;
+	private String logLevel;
 	public ReportDevConfigRequest() {
 		super("MindLive", "2021-03-01", "ReportDevConfig");
 		setMethod(MethodType.POST);
 	}
 
-	public String getReportDevConfigParam() {
-		return this.reportDevConfigParam;
+	public String getLogLevel() {
+		return this.logLevel;
 	}
 
-	public void setReportDevConfigParam(String reportDevConfigParam) {
-		this.reportDevConfigParam = reportDevConfigParam;
-		if(reportDevConfigParam != null){
-			putQueryParameter("ReportDevConfigParam", reportDevConfigParam);
+	public void setLogLevel(String logLevel) {
+		this.logLevel = logLevel;
+		if(logLevel != null){
+			putQueryParameter("LogLevel", logLevel);
 		}
 	}
 

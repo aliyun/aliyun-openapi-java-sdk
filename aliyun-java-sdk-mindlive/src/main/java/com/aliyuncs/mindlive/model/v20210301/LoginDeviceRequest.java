@@ -24,20 +24,33 @@ import com.aliyuncs.http.MethodType;
 public class LoginDeviceRequest extends RpcAcsRequest<LoginDeviceResponse> {
 	   
 
-	private String user;
+	private String userSource;
+
+	private String userId;
 	public LoginDeviceRequest() {
 		super("MindLive", "2021-03-01", "LoginDevice");
 		setMethod(MethodType.POST);
 	}
 
-	public String getUser() {
-		return this.user;
+	public String getUserSource() {
+		return this.userSource;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
-		if(user != null){
-			putQueryParameter("User", user);
+	public void setUserSource(String userSource) {
+		this.userSource = userSource;
+		if(userSource != null){
+			putQueryParameter("UserSource", userSource);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 

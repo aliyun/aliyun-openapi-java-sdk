@@ -24,20 +24,33 @@ import com.aliyuncs.http.MethodType;
 public class RequestOssStsRequest extends RpcAcsRequest<RequestOssStsResponse> {
 	   
 
-	private String ossStsRequest;
+	private Long expireSeconds;
+
+	private String appCode;
 	public RequestOssStsRequest() {
 		super("MindLive", "2021-03-01", "RequestOssSts");
 		setMethod(MethodType.POST);
 	}
 
-	public String getOssStsRequest() {
-		return this.ossStsRequest;
+	public Long getExpireSeconds() {
+		return this.expireSeconds;
 	}
 
-	public void setOssStsRequest(String ossStsRequest) {
-		this.ossStsRequest = ossStsRequest;
-		if(ossStsRequest != null){
-			putQueryParameter("OssStsRequest", ossStsRequest);
+	public void setExpireSeconds(Long expireSeconds) {
+		this.expireSeconds = expireSeconds;
+		if(expireSeconds != null){
+			putQueryParameter("ExpireSeconds", expireSeconds.toString());
+		}
+	}
+
+	public String getAppCode() {
+		return this.appCode;
+	}
+
+	public void setAppCode(String appCode) {
+		this.appCode = appCode;
+		if(appCode != null){
+			putQueryParameter("AppCode", appCode);
 		}
 	}
 

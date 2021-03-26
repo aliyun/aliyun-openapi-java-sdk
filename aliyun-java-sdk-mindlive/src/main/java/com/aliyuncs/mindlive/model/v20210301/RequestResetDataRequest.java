@@ -24,20 +24,20 @@ import com.aliyuncs.http.MethodType;
 public class RequestResetDataRequest extends RpcAcsRequest<RequestResetDataResponse> {
 	   
 
-	private String resetAddressRequest;
+	private String liveSource;
 	public RequestResetDataRequest() {
 		super("MindLive", "2021-03-01", "RequestResetData");
 		setMethod(MethodType.POST);
 	}
 
-	public String getResetAddressRequest() {
-		return this.resetAddressRequest;
+	public String getLiveSource() {
+		return this.liveSource;
 	}
 
-	public void setResetAddressRequest(String resetAddressRequest) {
-		this.resetAddressRequest = resetAddressRequest;
-		if(resetAddressRequest != null){
-			putQueryParameter("ResetAddressRequest", resetAddressRequest);
+	public void setLiveSource(String liveSource) {
+		this.liveSource = liveSource;
+		if(liveSource != null){
+			putQueryParameter("LiveSource", liveSource);
 		}
 	}
 

@@ -33,6 +33,8 @@ public class RequestBindingStateResponseUnmarshaller {
 		data.setUserSource(_ctx.stringValue("RequestBindingStateResponse.Data.UserSource"));
 		data.setUserId(_ctx.stringValue("RequestBindingStateResponse.Data.UserId"));
 		data.setBindAt(_ctx.longValue("RequestBindingStateResponse.Data.BindAt"));
+		data.setUserNick(_ctx.stringValue("RequestBindingStateResponse.Data.UserNick"));
+		data.setUserAvatar(_ctx.stringValue("RequestBindingStateResponse.Data.UserAvatar"));
 		requestBindingStateResponse.setData(data);
 	 
 	 	return requestBindingStateResponse;

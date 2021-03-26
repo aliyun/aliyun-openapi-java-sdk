@@ -84,6 +84,10 @@ public class RequestBindingStateResponse extends AcsResponse {
 
 		private Long bindAt;
 
+		private String userNick;
+
+		private String userAvatar;
+
 		public String getDeviceId() {
 			return this.deviceId;
 		}
@@ -114,6 +118,22 @@ public class RequestBindingStateResponse extends AcsResponse {
 
 		public void setBindAt(Long bindAt) {
 			this.bindAt = bindAt;
+		}
+
+		public String getUserNick() {
+			return this.userNick;
+		}
+
+		public void setUserNick(String userNick) {
+			this.userNick = userNick;
+		}
+
+		public String getUserAvatar() {
+			return this.userAvatar;
+		}
+
+		public void setUserAvatar(String userAvatar) {
+			this.userAvatar = userAvatar;
 		}
 	}
 
