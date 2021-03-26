@@ -22,7 +22,7 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeResponse> {
+public class RenewAdditionalBandwidthRequest extends RpcAcsRequest<RenewAdditionalBandwidthResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -33,9 +33,7 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 
 	private String sourceBiz;
 
-	private Integer shardCount;
-
-	private String businessInfo;
+	private String orderTimeLength;
 
 	private Boolean autoPay;
 
@@ -46,10 +44,8 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 	private Long ownerId;
 
 	private String instanceId;
-
-	private String shardClass;
-	public AddShardingNodeRequest() {
-		super("R-kvstore", "2015-01-01", "AddShardingNode", "redisa");
+	public RenewAdditionalBandwidthRequest() {
+		super("R-kvstore", "2015-01-01", "RenewAdditionalBandwidth", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -101,25 +97,14 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		}
 	}
 
-	public Integer getShardCount() {
-		return this.shardCount;
+	public String getOrderTimeLength() {
+		return this.orderTimeLength;
 	}
 
-	public void setShardCount(Integer shardCount) {
-		this.shardCount = shardCount;
-		if(shardCount != null){
-			putQueryParameter("ShardCount", shardCount.toString());
-		}
-	}
-
-	public String getBusinessInfo() {
-		return this.businessInfo;
-	}
-
-	public void setBusinessInfo(String businessInfo) {
-		this.businessInfo = businessInfo;
-		if(businessInfo != null){
-			putQueryParameter("BusinessInfo", businessInfo);
+	public void setOrderTimeLength(String orderTimeLength) {
+		this.orderTimeLength = orderTimeLength;
+		if(orderTimeLength != null){
+			putQueryParameter("OrderTimeLength", orderTimeLength);
 		}
 	}
 
@@ -178,20 +163,9 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		}
 	}
 
-	public String getShardClass() {
-		return this.shardClass;
-	}
-
-	public void setShardClass(String shardClass) {
-		this.shardClass = shardClass;
-		if(shardClass != null){
-			putQueryParameter("ShardClass", shardClass);
-		}
-	}
-
 	@Override
-	public Class<AddShardingNodeResponse> getResponseClass() {
-		return AddShardingNodeResponse.class;
+	public Class<RenewAdditionalBandwidthResponse> getResponseClass() {
+		return RenewAdditionalBandwidthResponse.class;
 	}
 
 }
