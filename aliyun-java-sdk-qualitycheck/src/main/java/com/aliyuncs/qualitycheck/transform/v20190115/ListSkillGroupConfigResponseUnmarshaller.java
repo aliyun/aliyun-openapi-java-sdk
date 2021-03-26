@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.qualitycheck.model.v20190115.ListSkillGroupConfigResponse;
 import com.aliyuncs.qualitycheck.model.v20190115.ListSkillGroupConfigResponse.SkillGroupConfig;
 import com.aliyuncs.qualitycheck.model.v20190115.ListSkillGroupConfigResponse.SkillGroupConfig.RuleNameInfo;
+import com.aliyuncs.qualitycheck.model.v20190115.ListSkillGroupConfigResponse.SkillGroupConfig.SkillGroupScreen;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,6 +54,7 @@ public class ListSkillGroupConfigResponseUnmarshaller {
 			skillGroupConfig.setAllContentQualityCheck(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].AllContentQualityCheck"));
 			skillGroupConfig.setAllRids(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].AllRids"));
 			skillGroupConfig.setSkillGroupFrom(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupFrom"));
+			skillGroupConfig.setScreenSwitch(_ctx.booleanValue("ListSkillGroupConfigResponse.Data["+ i +"].ScreenSwitch"));
 
 			List<RuleNameInfo> ruleList = new ArrayList<RuleNameInfo>();
 			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].RuleList.Length"); j++) {
@@ -73,6 +75,18 @@ public class ListSkillGroupConfigResponseUnmarshaller {
 				allRuleList.add(ruleNameInfo_);
 			}
 			skillGroupConfig.setAllRuleList(allRuleList);
+
+			List<SkillGroupScreen> skillGroupScreens = new ArrayList<SkillGroupScreen>();
+			for (int j = 0; j < _ctx.lengthValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupScreens.Length"); j++) {
+				SkillGroupScreen skillGroupScreen = new SkillGroupScreen();
+				skillGroupScreen.setName(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupScreens["+ j +"].Name"));
+				skillGroupScreen.setDataType(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupScreens["+ j +"].DataType"));
+				skillGroupScreen.setSymbol(_ctx.integerValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupScreens["+ j +"].Symbol"));
+				skillGroupScreen.setValue(_ctx.stringValue("ListSkillGroupConfigResponse.Data["+ i +"].SkillGroupScreens["+ j +"].Value"));
+
+				skillGroupScreens.add(skillGroupScreen);
+			}
+			skillGroupConfig.setSkillGroupScreens(skillGroupScreens);
 
 			data.add(skillGroupConfig);
 		}

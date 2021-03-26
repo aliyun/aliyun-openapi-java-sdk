@@ -60,6 +60,9 @@ public class GetResultResponseUnmarshaller {
 			resultInfo.setReviewTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewTime"));
 			resultInfo.setCreateTimeLong(_ctx.stringValue("GetResultResponse.Data["+ i +"].CreateTimeLong"));
 			resultInfo.setReviewTimeLong(_ctx.stringValue("GetResultResponse.Data["+ i +"].ReviewTimeLong"));
+			resultInfo.setReviewType(_ctx.integerValue("GetResultResponse.Data["+ i +"].ReviewType"));
+			resultInfo.setAssignmentTime(_ctx.stringValue("GetResultResponse.Data["+ i +"].AssignmentTime"));
+			resultInfo.setLastDataId(_ctx.stringValue("GetResultResponse.Data["+ i +"].LastDataId"));
 
 			Recording recording = new Recording();
 			recording.setId(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Id"));
@@ -87,6 +90,7 @@ public class GetResultResponseUnmarshaller {
 			recording.setRemark11(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark11"));
 			recording.setRemark12(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark12"));
 			recording.setRemark13(_ctx.stringValue("GetResultResponse.Data["+ i +"].Recording.Remark13"));
+			recording.setDialogueSize(_ctx.integerValue("GetResultResponse.Data["+ i +"].Recording.DialogueSize"));
 			resultInfo.setRecording(recording);
 
 			Agent agent = new Agent();
