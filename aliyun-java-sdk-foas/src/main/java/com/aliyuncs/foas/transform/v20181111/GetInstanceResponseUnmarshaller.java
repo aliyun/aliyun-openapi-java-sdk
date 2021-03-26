@@ -50,6 +50,7 @@ public class GetInstanceResponseUnmarshaller {
 		instance.setQueueName(_ctx.stringValue("GetInstanceResponse.Instance.QueueName"));
 		instance.setEndTime(_ctx.longValue("GetInstanceResponse.Instance.EndTime"));
 		instance.setAutoScaleParams(_ctx.stringValue("GetInstanceResponse.Instance.AutoScaleParams"));
+		instance.setPriority(_ctx.integerValue("GetInstanceResponse.Instance.Priority"));
 		getInstanceResponse.setInstance(instance);
 	 
 	 	return getInstanceResponse;

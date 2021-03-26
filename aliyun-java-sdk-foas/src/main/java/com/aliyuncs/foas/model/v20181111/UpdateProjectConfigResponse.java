@@ -15,18 +15,18 @@
 package com.aliyuncs.foas.model.v20181111;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.foas.transform.v20181111.GetInstanceVertexTaskManagersResponseUnmarshaller;
+import com.aliyuncs.foas.transform.v20181111.UpdateProjectConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetInstanceVertexTaskManagersResponse extends AcsResponse {
+public class UpdateProjectConfigResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String taskManagers;
+	private Boolean data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +36,21 @@ public class GetInstanceVertexTaskManagersResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTaskManagers() {
-		return this.taskManagers;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setTaskManagers(String taskManagers) {
-		this.taskManagers = taskManagers;
+	public void setData(Boolean data) {
+		this.data = data;
 	}
 
 	@Override
-	public GetInstanceVertexTaskManagersResponse getInstance(UnmarshallerContext context) {
-		return	GetInstanceVertexTaskManagersResponseUnmarshaller.unmarshall(this, context);
+	public UpdateProjectConfigResponse getInstance(UnmarshallerContext context) {
+		return	UpdateProjectConfigResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

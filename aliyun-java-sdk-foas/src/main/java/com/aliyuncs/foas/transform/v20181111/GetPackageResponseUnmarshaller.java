@@ -41,6 +41,10 @@ public class GetPackageResponseUnmarshaller {
 		_package.setOssOwner(_ctx.stringValue("GetPackageResponse.Package.OssOwner"));
 		_package.setOssPath(_ctx.stringValue("GetPackageResponse.Package.OssPath"));
 		_package.setTag(_ctx.stringValue("GetPackageResponse.Package.Tag"));
+		_package.setScanLink(_ctx.stringValue("GetPackageResponse.Package.ScanLink"));
+		_package.setScanState(_ctx.stringValue("GetPackageResponse.Package.ScanState"));
+		_package.setScanErrorMessage(_ctx.stringValue("GetPackageResponse.Package.ScanErrorMessage"));
+		_package.setScanExtBizNo(_ctx.stringValue("GetPackageResponse.Package.ScanExtBizNo"));
 		getPackageResponse.set_Package(_package);
 	 
 	 	return getPackageResponse;

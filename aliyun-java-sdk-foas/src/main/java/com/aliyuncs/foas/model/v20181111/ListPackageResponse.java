@@ -117,6 +117,14 @@ public class ListPackageResponse extends AcsResponse {
 
 		private String tag;
 
+		private String scanState;
+
+		private String scanLink;
+
+		private String scanExtBizNo;
+
+		private String scanErrorMessage;
+
 		public String getProjectName() {
 			return this.projectName;
 		}
@@ -235,6 +243,38 @@ public class ListPackageResponse extends AcsResponse {
 
 		public void setTag(String tag) {
 			this.tag = tag;
+		}
+
+		public String getScanState() {
+			return this.scanState;
+		}
+
+		public void setScanState(String scanState) {
+			this.scanState = scanState;
+		}
+
+		public String getScanLink() {
+			return this.scanLink;
+		}
+
+		public void setScanLink(String scanLink) {
+			this.scanLink = scanLink;
+		}
+
+		public String getScanExtBizNo() {
+			return this.scanExtBizNo;
+		}
+
+		public void setScanExtBizNo(String scanExtBizNo) {
+			this.scanExtBizNo = scanExtBizNo;
+		}
+
+		public String getScanErrorMessage() {
+			return this.scanErrorMessage;
+		}
+
+		public void setScanErrorMessage(String scanErrorMessage) {
+			this.scanErrorMessage = scanErrorMessage;
 		}
 	}
 

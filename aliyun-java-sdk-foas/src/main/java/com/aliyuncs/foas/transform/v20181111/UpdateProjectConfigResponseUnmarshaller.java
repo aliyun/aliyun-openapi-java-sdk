@@ -14,17 +14,17 @@
 
 package com.aliyuncs.foas.transform.v20181111;
 
-import com.aliyuncs.foas.model.v20181111.GetInstanceVertexTaskManagersResponse;
+import com.aliyuncs.foas.model.v20181111.UpdateProjectConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetInstanceVertexTaskManagersResponseUnmarshaller {
+public class UpdateProjectConfigResponseUnmarshaller {
 
-	public static GetInstanceVertexTaskManagersResponse unmarshall(GetInstanceVertexTaskManagersResponse getInstanceVertexTaskManagersResponse, UnmarshallerContext _ctx) {
+	public static UpdateProjectConfigResponse unmarshall(UpdateProjectConfigResponse updateProjectConfigResponse, UnmarshallerContext _ctx) {
 		
-		getInstanceVertexTaskManagersResponse.setRequestId(_ctx.stringValue("GetInstanceVertexTaskManagersResponse.RequestId"));
-		getInstanceVertexTaskManagersResponse.setTaskManagers(_ctx.stringValue("GetInstanceVertexTaskManagersResponse.TaskManagers"));
+		updateProjectConfigResponse.setRequestId(_ctx.stringValue("UpdateProjectConfigResponse.RequestId"));
+		updateProjectConfigResponse.setData(_ctx.booleanValue("UpdateProjectConfigResponse.Data"));
 	 
-	 	return getInstanceVertexTaskManagersResponse;
+	 	return updateProjectConfigResponse;
 	}
 }
