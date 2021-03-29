@@ -1,3 +1,6 @@
+2021-03-29 Version: 1.1.5-SNAPSHOT
+- Add some new Api.
+
 2021-03-22 Version: 1.1.4-SNAPSHOT
 - Support execute mode.
 

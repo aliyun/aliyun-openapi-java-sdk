@@ -24,6 +24,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RenameTableResponse extends AcsResponse {
 
+	private String taskId;
+
 	private String requestId;
 
 	private String message;
@@ -31,6 +33,14 @@ public class RenameTableResponse extends AcsResponse {
 	private String code;
 
 	private Boolean success;
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
 
 	public String getRequestId() {
 		return this.requestId;

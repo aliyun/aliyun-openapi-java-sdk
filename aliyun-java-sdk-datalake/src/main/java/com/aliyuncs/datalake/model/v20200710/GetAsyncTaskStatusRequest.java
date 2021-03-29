@@ -22,34 +22,47 @@ import com.aliyuncs.datalake.Endpoint;
  * @author auto create
  * @version 
  */
-public class RenameTableRequest extends RoaAcsRequest<RenameTableResponse> {
+public class GetAsyncTaskStatusRequest extends RoaAcsRequest<GetAsyncTaskStatusResponse> {
 	   
 
-	private String body;
-	public RenameTableRequest() {
-		super("DataLake", "2020-07-10", "RenameTable");
-		setUriPattern("/api/metastore/catalogs/databases/tables/rename");
-		setMethod(MethodType.PUT);
+	private String catalogId;
+
+	private String taskId;
+	public GetAsyncTaskStatusRequest() {
+		super("DataLake", "2020-07-10", "GetAsyncTaskStatus");
+		setUriPattern("/api/metastore/catalogs/tasks");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getBody() {
-		return this.body;
+	public String getCatalogId() {
+		return this.catalogId;
 	}
 
-	public void setBody(String body) {
-		this.body = body;
-		if(body != null){
-			putBodyParameter("Body", body);
+	public void setCatalogId(String catalogId) {
+		this.catalogId = catalogId;
+		if(catalogId != null){
+			putQueryParameter("CatalogId", catalogId);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<RenameTableResponse> getResponseClass() {
-		return RenameTableResponse.class;
+	public Class<GetAsyncTaskStatusResponse> getResponseClass() {
+		return GetAsyncTaskStatusResponse.class;
 	}
 
 }
