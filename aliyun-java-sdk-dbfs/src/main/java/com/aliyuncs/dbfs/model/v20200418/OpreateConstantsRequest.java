@@ -22,16 +22,16 @@ import com.aliyuncs.dbfs.Endpoint;
  * @author auto create
  * @version 
  */
-public class AttachDbfsRequest extends RpcAcsRequest<AttachDbfsResponse> {
+public class OpreateConstantsRequest extends RpcAcsRequest<OpreateConstantsResponse> {
 	   
 
-	private String eCSInstanceId;
+	private Integer pageNumber;
 
-	private String serverUrl;
+	private String constantsData;
 
-	private String fsId;
-	public AttachDbfsRequest() {
-		super("DBFS", "2020-04-18", "AttachDbfs");
+	private Integer pageSize;
+	public OpreateConstantsRequest() {
+		super("DBFS", "2020-04-18", "OpreateConstants");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class AttachDbfsRequest extends RpcAcsRequest<AttachDbfsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getECSInstanceId() {
-		return this.eCSInstanceId;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setECSInstanceId(String eCSInstanceId) {
-		this.eCSInstanceId = eCSInstanceId;
-		if(eCSInstanceId != null){
-			putQueryParameter("ECSInstanceId", eCSInstanceId);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getServerUrl() {
-		return this.serverUrl;
+	public String getConstantsData() {
+		return this.constantsData;
 	}
 
-	public void setServerUrl(String serverUrl) {
-		this.serverUrl = serverUrl;
-		if(serverUrl != null){
-			putQueryParameter("ServerUrl", serverUrl);
+	public void setConstantsData(String constantsData) {
+		this.constantsData = constantsData;
+		if(constantsData != null){
+			putQueryParameter("ConstantsData", constantsData);
 		}
 	}
 
-	public String getFsId() {
-		return this.fsId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setFsId(String fsId) {
-		this.fsId = fsId;
-		if(fsId != null){
-			putQueryParameter("FsId", fsId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
 	@Override
-	public Class<AttachDbfsResponse> getResponseClass() {
-		return AttachDbfsResponse.class;
+	public Class<OpreateConstantsResponse> getResponseClass() {
+		return OpreateConstantsResponse.class;
 	}
 
 }
