@@ -27,7 +27,7 @@ public class DeleteServiceTimeConfigRequest extends RoaAcsRequest<DeleteServiceT
 
 	private String id;
 	public DeleteServiceTimeConfigRequest() {
-		super("Edas", "2017-08-01", "DeleteServiceTimeConfig", "edas");
+		super("Edas", "2017-08-01", "DeleteServiceTimeConfig", "Edas");
 		setUriPattern("/pop/sp/api/timeout/remove");
 		setMethod(MethodType.POST);
 		try {

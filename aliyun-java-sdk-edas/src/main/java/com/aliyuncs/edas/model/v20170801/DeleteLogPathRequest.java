@@ -29,7 +29,7 @@ public class DeleteLogPathRequest extends RoaAcsRequest<DeleteLogPathResponse> {
 
 	private String appId;
 	public DeleteLogPathRequest() {
-		super("Edas", "2017-08-01", "DeleteLogPath", "edas");
+		super("Edas", "2017-08-01", "DeleteLogPath", "Edas");
 		setUriPattern("/pop/v5/log/popListLogDirs");
 		setMethod(MethodType.DELETE);
 		try {

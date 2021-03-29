@@ -1,3 +1,6 @@
+2021-03-29 Version: 3.18.0
+- Modify API CreateGrayEnviroment.
+
 2021-01-16 Version: 3.15.2
 - Generated 2017-08-01 for `Edas`.
 

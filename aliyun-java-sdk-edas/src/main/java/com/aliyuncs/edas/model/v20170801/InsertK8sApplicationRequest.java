@@ -117,6 +117,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String imageUrl;
 
+	private String pvcMountDescs;
+
 	private String namespace;
 
 	private String applicationDescription;
@@ -125,7 +127,7 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String javaStartUpConfig;
 	public InsertK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "InsertK8sApplication", "edas");
+		super("Edas", "2017-08-01", "InsertK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/create_k8s_app");
 		setMethod(MethodType.POST);
 		try {
@@ -637,6 +639,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public String getPvcMountDescs() {
+		return this.pvcMountDescs;
+	}
+
+	public void setPvcMountDescs(String pvcMountDescs) {
+		this.pvcMountDescs = pvcMountDescs;
+		if(pvcMountDescs != null){
+			putQueryParameter("PvcMountDescs", pvcMountDescs);
 		}
 	}
 

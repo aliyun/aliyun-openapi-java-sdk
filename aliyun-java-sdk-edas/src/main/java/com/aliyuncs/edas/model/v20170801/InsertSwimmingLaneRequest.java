@@ -39,7 +39,7 @@ public class InsertSwimmingLaneRequest extends RoaAcsRequest<InsertSwimmingLaneR
 
 	private String tag;
 	public InsertSwimmingLaneRequest() {
-		super("Edas", "2017-08-01", "InsertSwimmingLane", "edas");
+		super("Edas", "2017-08-01", "InsertSwimmingLane", "Edas");
 		setUriPattern("/pop/v5/trafficmgnt/swimming_lanes");
 		setMethod(MethodType.POST);
 		try {

@@ -27,7 +27,7 @@ public class ListConvertableEcuRequest extends RoaAcsRequest<ListConvertableEcuR
 
 	private String clusterId;
 	public ListConvertableEcuRequest() {
-		super("Edas", "2017-08-01", "ListConvertableEcu", "edas");
+		super("Edas", "2017-08-01", "ListConvertableEcu", "Edas");
 		setUriPattern("/pop/v5/resource/convertable_ecu_list");
 		setMethod(MethodType.GET);
 		try {
