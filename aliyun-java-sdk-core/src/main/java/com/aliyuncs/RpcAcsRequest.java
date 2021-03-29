@@ -113,7 +113,7 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
 
     @Override
     public HttpRequest signRequest(Signer signer, AlibabaCloudCredentials credentials, FormatType format,
-            ProductDomain domain) throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
+                                   ProductDomain domain) throws InvalidKeyException, IllegalStateException, UnsupportedEncodingException {
 
         Map<String, String> imutableMap = new HashMap<String, String>(this.getSysQueryParameters());
         if (null != signer && null != credentials) {
@@ -131,12 +131,8 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                     this.putQueryParameter("BearerToken", bearerToken);
                 }
             }
-            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
-            if (imutableMap.get("RegionId") == null) {
-                imutableMap.put("RegionId", getSysRegionId());
-            }
 
-            Map<String, String> paramsToSign = new HashMap<String, String>(imutableMap);
+            Map<String, String> paramsToSign = new HashMap<String, String>();
             Map<String, String> bodyParams = this.getSysBodyParameters();
             if (bodyParams != null && !bodyParams.isEmpty()) {
                 byte[] data;
@@ -151,6 +147,15 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 this.setHttpContent(data, "UTF-8", null);
                 paramsToSign.putAll(bodyParams);
             }
+
+            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
+            if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
+                if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
+                    imutableMap.put("RegionId", getSysRegionId());
+                }
+            }
+            paramsToSign.putAll(imutableMap);
+
             String strToSign = this.composer.composeStringToSign(
                     this.getSysMethod(), null, signer, paramsToSign, null, null);
             String signature;
