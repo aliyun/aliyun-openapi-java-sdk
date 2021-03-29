@@ -1,4 +1,7 @@
-﻿2021-03-23 Version:4.5.19
+﻿2021-03-29 Version:4.5.20
+1, Fix signature error when RegionId null
+
+2021-03-23 Version:4.5.19
 1, The throw keyword is added to the catch method of the xmlReader class
 2, Fix opentracing when tracing exists
 
