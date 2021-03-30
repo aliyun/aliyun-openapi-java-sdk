@@ -22,16 +22,18 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CloseDLAServiceRequest extends RpcAcsRequest<CloseDLAServiceResponse> {
+public class DescribeFullBackupSetRequest extends RpcAcsRequest<DescribeFullBackupSetResponse> {
 	   
 
 	private String clientToken;
 
 	private String backupPlanId;
 
+	private String backupsetId;
+
 	private String ownerId;
-	public CloseDLAServiceRequest() {
-		super("Dbs", "2019-03-06", "CloseDLAService", "cbs");
+	public DescribeFullBackupSetRequest() {
+		super("Dbs", "2019-03-06", "DescribeFullBackupSet", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,6 +63,17 @@ public class CloseDLAServiceRequest extends RpcAcsRequest<CloseDLAServiceRespons
 		}
 	}
 
+	public String getBackupsetId() {
+		return this.backupsetId;
+	}
+
+	public void setBackupsetId(String backupsetId) {
+		this.backupsetId = backupsetId;
+		if(backupsetId != null){
+			putQueryParameter("BackupsetId", backupsetId);
+		}
+	}
+
 	public String getOwnerId() {
 		return this.ownerId;
 	}
@@ -73,8 +86,8 @@ public class CloseDLAServiceRequest extends RpcAcsRequest<CloseDLAServiceRespons
 	}
 
 	@Override
-	public Class<CloseDLAServiceResponse> getResponseClass() {
-		return CloseDLAServiceResponse.class;
+	public Class<DescribeFullBackupSetResponse> getResponseClass() {
+		return DescribeFullBackupSetResponse.class;
 	}
 
 }

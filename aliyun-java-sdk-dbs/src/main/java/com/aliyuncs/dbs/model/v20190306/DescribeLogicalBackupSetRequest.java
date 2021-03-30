@@ -22,20 +22,18 @@ import com.aliyuncs.dbs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateDLAServiceRequest extends RpcAcsRequest<CreateDLAServiceResponse> {
+public class DescribeLogicalBackupSetRequest extends RpcAcsRequest<DescribeLogicalBackupSetResponse> {
 	   
 
 	private String clientToken;
 
-	private Boolean autoAdd;
-
-	private String backupSetIds;
-
 	private String backupPlanId;
 
+	private String backupsetId;
+
 	private String ownerId;
-	public CreateDLAServiceRequest() {
-		super("Dbs", "2019-03-06", "CreateDLAService", "cbs");
+	public DescribeLogicalBackupSetRequest() {
+		super("Dbs", "2019-03-06", "DescribeLogicalBackupSet", "cbs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,28 +52,6 @@ public class CreateDLAServiceRequest extends RpcAcsRequest<CreateDLAServiceRespo
 		}
 	}
 
-	public Boolean getAutoAdd() {
-		return this.autoAdd;
-	}
-
-	public void setAutoAdd(Boolean autoAdd) {
-		this.autoAdd = autoAdd;
-		if(autoAdd != null){
-			putQueryParameter("AutoAdd", autoAdd.toString());
-		}
-	}
-
-	public String getBackupSetIds() {
-		return this.backupSetIds;
-	}
-
-	public void setBackupSetIds(String backupSetIds) {
-		this.backupSetIds = backupSetIds;
-		if(backupSetIds != null){
-			putQueryParameter("BackupSetIds", backupSetIds);
-		}
-	}
-
 	public String getBackupPlanId() {
 		return this.backupPlanId;
 	}
@@ -84,6 +60,17 @@ public class CreateDLAServiceRequest extends RpcAcsRequest<CreateDLAServiceRespo
 		this.backupPlanId = backupPlanId;
 		if(backupPlanId != null){
 			putQueryParameter("BackupPlanId", backupPlanId);
+		}
+	}
+
+	public String getBackupsetId() {
+		return this.backupsetId;
+	}
+
+	public void setBackupsetId(String backupsetId) {
+		this.backupsetId = backupsetId;
+		if(backupsetId != null){
+			putQueryParameter("BackupsetId", backupsetId);
 		}
 	}
 
@@ -99,8 +86,8 @@ public class CreateDLAServiceRequest extends RpcAcsRequest<CreateDLAServiceRespo
 	}
 
 	@Override
-	public Class<CreateDLAServiceResponse> getResponseClass() {
-		return CreateDLAServiceResponse.class;
+	public Class<DescribeLogicalBackupSetResponse> getResponseClass() {
+		return DescribeLogicalBackupSetResponse.class;
 	}
 
 }

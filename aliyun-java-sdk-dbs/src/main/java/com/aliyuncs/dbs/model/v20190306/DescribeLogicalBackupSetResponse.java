@@ -15,14 +15,14 @@
 package com.aliyuncs.dbs.model.v20190306;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dbs.transform.v20190306.CreateDLAServiceResponseUnmarshaller;
+import com.aliyuncs.dbs.transform.v20190306.DescribeLogicalBackupSetResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDLAServiceResponse extends AcsResponse {
+public class DescribeLogicalBackupSetResponse extends AcsResponse {
 
 	private Boolean success;
 
@@ -33,6 +33,10 @@ public class CreateDLAServiceResponse extends AcsResponse {
 	private Integer httpStatusCode;
 
 	private String requestId;
+
+	private Long rowNum;
+
+	private String status;
 
 	public Boolean getSuccess() {
 		return this.success;
@@ -74,8 +78,24 @@ public class CreateDLAServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Long getRowNum() {
+		return this.rowNum;
+	}
+
+	public void setRowNum(Long rowNum) {
+		this.rowNum = rowNum;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
-	public CreateDLAServiceResponse getInstance(UnmarshallerContext context) {
-		return	CreateDLAServiceResponseUnmarshaller.unmarshall(this, context);
+	public DescribeLogicalBackupSetResponse getInstance(UnmarshallerContext context) {
+		return	DescribeLogicalBackupSetResponseUnmarshaller.unmarshall(this, context);
 	}
 }
