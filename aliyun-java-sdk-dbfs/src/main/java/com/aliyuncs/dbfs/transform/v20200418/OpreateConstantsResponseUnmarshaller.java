@@ -23,8 +23,11 @@ public class OpreateConstantsResponseUnmarshaller {
 	public static OpreateConstantsResponse unmarshall(OpreateConstantsResponse opreateConstantsResponse, UnmarshallerContext _ctx) {
 		
 		opreateConstantsResponse.setRequestId(_ctx.stringValue("OpreateConstantsResponse.RequestId"));
+		opreateConstantsResponse.setTotalCount(_ctx.longValue("OpreateConstantsResponse.TotalCount"));
 		opreateConstantsResponse.setMasterData(_ctx.stringValue("OpreateConstantsResponse.MasterData"));
+		opreateConstantsResponse.setPageSize(_ctx.longValue("OpreateConstantsResponse.PageSize"));
 		opreateConstantsResponse.setZoneData(_ctx.stringValue("OpreateConstantsResponse.ZoneData"));
+		opreateConstantsResponse.setPageNumber(_ctx.longValue("OpreateConstantsResponse.PageNumber"));
 		opreateConstantsResponse.setAccessData(_ctx.stringValue("OpreateConstantsResponse.AccessData"));
 		opreateConstantsResponse.setProductCodeData(_ctx.stringValue("OpreateConstantsResponse.ProductCodeData"));
 		opreateConstantsResponse.setOsversionData(_ctx.stringValue("OpreateConstantsResponse.OsversionData"));

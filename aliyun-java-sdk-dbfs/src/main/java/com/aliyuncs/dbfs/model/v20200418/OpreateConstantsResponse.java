@@ -24,11 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class OpreateConstantsResponse extends AcsResponse {
 
+	private Long totalCount;
+
 	private String masterData;
+
+	private Long pageSize;
 
 	private String zoneData;
 
 	private String requestId;
+
+	private Long pageNumber;
 
 	private String accessData;
 
@@ -42,12 +48,28 @@ public class OpreateConstantsResponse extends AcsResponse {
 
 	private String endpointData;
 
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
 	public String getMasterData() {
 		return this.masterData;
 	}
 
 	public void setMasterData(String masterData) {
 		this.masterData = masterData;
+	}
+
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getZoneData() {
@@ -64,6 +86,14 @@ public class OpreateConstantsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public String getAccessData() {
