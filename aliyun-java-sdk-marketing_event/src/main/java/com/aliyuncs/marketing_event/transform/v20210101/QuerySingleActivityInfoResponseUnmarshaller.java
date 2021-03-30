@@ -42,6 +42,7 @@ public class QuerySingleActivityInfoResponseUnmarshaller {
 			dataItem.setQRCode(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].QRCode"));
 			dataItem.setChannelName(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].ChannelName"));
 			dataItem.setIsVipCustomer(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].IsVipCustomer"));
+			dataItem.setReportFields(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].ReportFields"));
 
 			data.add(dataItem);
 		}

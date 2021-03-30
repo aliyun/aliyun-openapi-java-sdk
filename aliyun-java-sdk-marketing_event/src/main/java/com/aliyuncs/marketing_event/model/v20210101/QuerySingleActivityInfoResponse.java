@@ -93,6 +93,8 @@ public class QuerySingleActivityInfoResponse extends AcsResponse {
 
 		private String isVipCustomer;
 
+		private String reportFields;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -155,6 +157,14 @@ public class QuerySingleActivityInfoResponse extends AcsResponse {
 
 		public void setIsVipCustomer(String isVipCustomer) {
 			this.isVipCustomer = isVipCustomer;
+		}
+
+		public String getReportFields() {
+			return this.reportFields;
+		}
+
+		public void setReportFields(String reportFields) {
+			this.reportFields = reportFields;
 		}
 	}
 
