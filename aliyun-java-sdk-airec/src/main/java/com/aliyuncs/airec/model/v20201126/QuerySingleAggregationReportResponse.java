@@ -14,23 +14,24 @@
 
 package com.aliyuncs.airec.model.v20201126;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.airec.transform.v20201126.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.airec.transform.v20201126.QuerySingleAggregationReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class QuerySingleAggregationReportResponse extends AcsResponse {
 
 	private String code;
 
-	private String requestId;
-
 	private String message;
 
-	private Result result;
+	private String requestId;
+
+	private Map<Object,Object> result;
 
 	public String getCode() {
 		return this.code;
@@ -38,14 +39,6 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -56,29 +49,29 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Result getResult() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Map<Object,Object> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(Map<Object,Object> result) {
 		this.result = result;
 	}
 
-	public static class Result {
-
-		private String instanceId;
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+	@Override
+	public QuerySingleAggregationReportResponse getInstance(UnmarshallerContext context) {
+		return	QuerySingleAggregationReportResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

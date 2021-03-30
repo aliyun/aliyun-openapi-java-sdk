@@ -27,9 +27,9 @@ public class CreateRankingModelResponse extends AcsResponse {
 
 	private String code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Result result;
 
@@ -41,20 +41,20 @@ public class CreateRankingModelResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Result getResult() {
@@ -67,20 +67,20 @@ public class CreateRankingModelResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtCreate;
+		private String rankingModelId;
 
 		private String gmtModified;
 
 		private Map<Object,Object> meta;
 
-		private String rankingModelId;
+		private String gmtCreate;
 
-		public String getGmtCreate() {
-			return this.gmtCreate;
+		public String getRankingModelId() {
+			return this.rankingModelId;
 		}
 
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
+		public void setRankingModelId(String rankingModelId) {
+			this.rankingModelId = rankingModelId;
 		}
 
 		public String getGmtModified() {
@@ -99,12 +99,12 @@ public class CreateRankingModelResponse extends AcsResponse {
 			this.meta = meta;
 		}
 
-		public String getRankingModelId() {
-			return this.rankingModelId;
+		public String getGmtCreate() {
+			return this.gmtCreate;
 		}
 
-		public void setRankingModelId(String rankingModelId) {
-			this.rankingModelId = rankingModelId;
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 	}
 

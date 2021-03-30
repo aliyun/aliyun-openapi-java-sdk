@@ -14,23 +14,24 @@
 
 package com.aliyuncs.airec.model.v20201126;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.airec.transform.v20201126.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.airec.transform.v20201126.ListMixCategoriesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
+public class ListMixCategoriesResponse extends AcsResponse {
 
 	private String code;
 
-	private String requestId;
-
 	private String message;
 
-	private Result result;
+	private String requestId;
+
+	private List<ResultItem> result;
 
 	public String getCode() {
 		return this.code;
@@ -38,14 +39,6 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -56,29 +49,42 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Result getResult() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<ResultItem> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public static class ResultItem {
 
-		private String instanceId;
+		private List<Long> categories;
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public List<Long> getCategories() {
+			return this.categories;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setCategories(List<Long> categories) {
+			this.categories = categories;
 		}
 	}
 
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public ListMixCategoriesResponse getInstance(UnmarshallerContext context) {
+		return	ListMixCategoriesResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

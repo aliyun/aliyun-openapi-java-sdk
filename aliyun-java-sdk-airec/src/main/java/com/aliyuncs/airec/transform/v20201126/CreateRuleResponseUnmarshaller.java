@@ -23,13 +23,13 @@ public class CreateRuleResponseUnmarshaller {
 
 	public static CreateRuleResponse unmarshall(CreateRuleResponse createRuleResponse, UnmarshallerContext _ctx) {
 		
-		createRuleResponse.setRequestId(_ctx.stringValue("CreateRuleResponse.requestId"));
 		createRuleResponse.setCode(_ctx.stringValue("CreateRuleResponse.code"));
+		createRuleResponse.setRequestId(_ctx.stringValue("CreateRuleResponse.requestId"));
 		createRuleResponse.setMessage(_ctx.stringValue("CreateRuleResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("CreateRuleResponse.result.gmtCreate"));
 		result.setGmtModified(_ctx.stringValue("CreateRuleResponse.result.gmtModified"));
+		result.setGmtCreate(_ctx.stringValue("CreateRuleResponse.result.gmtCreate"));
 		result.setRuleId(_ctx.stringValue("CreateRuleResponse.result.ruleId"));
 		result.setStatus(_ctx.stringValue("CreateRuleResponse.result.status"));
 		createRuleResponse.setResult(result);

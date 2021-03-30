@@ -24,8 +24,8 @@ public class CreateInstanceResponseUnmarshaller {
 	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
 		
 		createInstanceResponse.setCode(_ctx.stringValue("CreateInstanceResponse.code"));
-		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.message"));
 		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.requestId"));
+		createInstanceResponse.setMessage(_ctx.stringValue("CreateInstanceResponse.message"));
 
 		Result result = new Result();
 		result.setInstanceId(_ctx.stringValue("CreateInstanceResponse.result.instanceId"));

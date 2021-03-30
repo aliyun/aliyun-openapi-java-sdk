@@ -14,31 +14,27 @@
 
 package com.aliyuncs.airec.model.v20201126;
 
+import java.util.List;
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.airec.transform.v20201126.CreateInstanceResponseUnmarshaller;
+import com.aliyuncs.airec.transform.v20201126.ListLogsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateInstanceResponse extends AcsResponse {
-
-	private String code;
+public class ListLogsResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
 	private String message;
 
-	private Result result;
+	private List<Map<Object,Object>> result;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Headers headers;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +42,14 @@ public class CreateInstanceResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -56,29 +60,42 @@ public class CreateInstanceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Result getResult() {
+	public List<Map<Object,Object>> getResult() {
 		return this.result;
 	}
 
-	public void setResult(Result result) {
+	public void setResult(List<Map<Object,Object>> result) {
 		this.result = result;
 	}
 
-	public static class Result {
+	public Headers getHeaders() {
+		return this.headers;
+	}
 
-		private String instanceId;
+	public void setHeaders(Headers headers) {
+		this.headers = headers;
+	}
 
-		public String getInstanceId() {
-			return this.instanceId;
+	public static class Headers {
+
+		private Integer xTotalCount;
+
+		public Integer getXTotalCount() {
+			return this.xTotalCount;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setXTotalCount(Integer xTotalCount) {
+			this.xTotalCount = xTotalCount;
 		}
 	}
 
 	@Override
-	public CreateInstanceResponse getInstance(UnmarshallerContext context) {
-		return	CreateInstanceResponseUnmarshaller.unmarshall(this, context);
+	public ListLogsResponse getInstance(UnmarshallerContext context) {
+		return	ListLogsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
