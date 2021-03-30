@@ -28,11 +28,11 @@ public class QueryRingDetailListResponse extends AcsResponse {
 
 	private String message;
 
+	private String data;
+
 	private String code;
 
 	private Boolean success;
-
-	private String data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,6 +50,14 @@ public class QueryRingDetailListResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -64,14 +72,6 @@ public class QueryRingDetailListResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
 	}
 
 	@Override

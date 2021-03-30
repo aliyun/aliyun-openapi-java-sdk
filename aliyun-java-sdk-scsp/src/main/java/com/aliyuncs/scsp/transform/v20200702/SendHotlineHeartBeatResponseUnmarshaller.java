@@ -23,9 +23,9 @@ public class SendHotlineHeartBeatResponseUnmarshaller {
 	public static SendHotlineHeartBeatResponse unmarshall(SendHotlineHeartBeatResponse sendHotlineHeartBeatResponse, UnmarshallerContext _ctx) {
 		
 		sendHotlineHeartBeatResponse.setRequestId(_ctx.stringValue("SendHotlineHeartBeatResponse.RequestId"));
-		sendHotlineHeartBeatResponse.setSuccess(_ctx.booleanValue("SendHotlineHeartBeatResponse.Success"));
-		sendHotlineHeartBeatResponse.setCode(_ctx.stringValue("SendHotlineHeartBeatResponse.Code"));
 		sendHotlineHeartBeatResponse.setMessage(_ctx.stringValue("SendHotlineHeartBeatResponse.Message"));
+		sendHotlineHeartBeatResponse.setCode(_ctx.stringValue("SendHotlineHeartBeatResponse.Code"));
+		sendHotlineHeartBeatResponse.setSuccess(_ctx.booleanValue("SendHotlineHeartBeatResponse.Success"));
 	 
 	 	return sendHotlineHeartBeatResponse;
 	}

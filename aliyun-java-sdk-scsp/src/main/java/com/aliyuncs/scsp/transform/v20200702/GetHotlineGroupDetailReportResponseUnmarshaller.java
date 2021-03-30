@@ -29,14 +29,14 @@ public class GetHotlineGroupDetailReportResponseUnmarshaller {
 	public static GetHotlineGroupDetailReportResponse unmarshall(GetHotlineGroupDetailReportResponse getHotlineGroupDetailReportResponse, UnmarshallerContext _ctx) {
 		
 		getHotlineGroupDetailReportResponse.setRequestId(_ctx.stringValue("GetHotlineGroupDetailReportResponse.RequestId"));
-		getHotlineGroupDetailReportResponse.setCode(_ctx.stringValue("GetHotlineGroupDetailReportResponse.Code"));
 		getHotlineGroupDetailReportResponse.setMessage(_ctx.stringValue("GetHotlineGroupDetailReportResponse.Message"));
+		getHotlineGroupDetailReportResponse.setCode(_ctx.stringValue("GetHotlineGroupDetailReportResponse.Code"));
 		getHotlineGroupDetailReportResponse.setSuccess(_ctx.stringValue("GetHotlineGroupDetailReportResponse.Success"));
 
 		Data data = new Data();
-		data.setPage(_ctx.integerValue("GetHotlineGroupDetailReportResponse.Data.Page"));
 		data.setPageSize(_ctx.integerValue("GetHotlineGroupDetailReportResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("GetHotlineGroupDetailReportResponse.Data.Total"));
+		data.setPage(_ctx.integerValue("GetHotlineGroupDetailReportResponse.Data.Page"));
 
 		List<Map<Object, Object>> rows = _ctx.listMapValue("GetHotlineGroupDetailReportResponse.Data.Rows");
 		data.setRows(rows);

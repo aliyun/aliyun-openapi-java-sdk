@@ -23,10 +23,10 @@ public class UpdateEntityTagRelationResponseUnmarshaller {
 	public static UpdateEntityTagRelationResponse unmarshall(UpdateEntityTagRelationResponse updateEntityTagRelationResponse, UnmarshallerContext _ctx) {
 		
 		updateEntityTagRelationResponse.setRequestId(_ctx.stringValue("UpdateEntityTagRelationResponse.RequestId"));
-		updateEntityTagRelationResponse.setCode(_ctx.stringValue("UpdateEntityTagRelationResponse.Code"));
 		updateEntityTagRelationResponse.setMessage(_ctx.stringValue("UpdateEntityTagRelationResponse.Message"));
-		updateEntityTagRelationResponse.setSuccess(_ctx.booleanValue("UpdateEntityTagRelationResponse.Success"));
 		updateEntityTagRelationResponse.setData(_ctx.stringValue("UpdateEntityTagRelationResponse.Data"));
+		updateEntityTagRelationResponse.setCode(_ctx.stringValue("UpdateEntityTagRelationResponse.Code"));
+		updateEntityTagRelationResponse.setSuccess(_ctx.booleanValue("UpdateEntityTagRelationResponse.Success"));
 	 
 	 	return updateEntityTagRelationResponse;
 	}

@@ -26,11 +26,11 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -42,12 +42,12 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -58,12 +58,12 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,43 +76,19 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long tenantId;
-
-		private Long agentId;
-
-		private Integer agentStatus;
-
 		private Boolean assigned;
 
-		private String token;
+		private Long tenantId;
+
+		private Integer agentStatus;
 
 		private Integer restType;
 
 		private String agentStatusCode;
 
-		public Long getTenantId() {
-			return this.tenantId;
-		}
+		private String token;
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public Long getAgentId() {
-			return this.agentId;
-		}
-
-		public void setAgentId(Long agentId) {
-			this.agentId = agentId;
-		}
-
-		public Integer getAgentStatus() {
-			return this.agentStatus;
-		}
-
-		public void setAgentStatus(Integer agentStatus) {
-			this.agentStatus = agentStatus;
-		}
+		private Long agentId;
 
 		public Boolean getAssigned() {
 			return this.assigned;
@@ -122,12 +98,20 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 			this.assigned = assigned;
 		}
 
-		public String getToken() {
-			return this.token;
+		public Long getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setToken(String token) {
-			this.token = token;
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
+		}
+
+		public Integer getAgentStatus() {
+			return this.agentStatus;
+		}
+
+		public void setAgentStatus(Integer agentStatus) {
+			this.agentStatus = agentStatus;
 		}
 
 		public Integer getRestType() {
@@ -144,6 +128,22 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 		public void setAgentStatusCode(String agentStatusCode) {
 			this.agentStatusCode = agentStatusCode;
+		}
+
+		public String getToken() {
+			return this.token;
+		}
+
+		public void setToken(String token) {
+			this.token = token;
+		}
+
+		public Long getAgentId() {
+			return this.agentId;
+		}
+
+		public void setAgentId(Long agentId) {
+			this.agentId = agentId;
 		}
 	}
 

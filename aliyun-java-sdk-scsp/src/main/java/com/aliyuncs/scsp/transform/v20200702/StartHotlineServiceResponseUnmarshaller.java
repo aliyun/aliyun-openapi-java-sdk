@@ -23,10 +23,10 @@ public class StartHotlineServiceResponseUnmarshaller {
 	public static StartHotlineServiceResponse unmarshall(StartHotlineServiceResponse startHotlineServiceResponse, UnmarshallerContext _ctx) {
 		
 		startHotlineServiceResponse.setRequestId(_ctx.stringValue("StartHotlineServiceResponse.RequestId"));
-		startHotlineServiceResponse.setSuccess(_ctx.booleanValue("StartHotlineServiceResponse.Success"));
-		startHotlineServiceResponse.setCode(_ctx.stringValue("StartHotlineServiceResponse.Code"));
 		startHotlineServiceResponse.setMessage(_ctx.stringValue("StartHotlineServiceResponse.Message"));
 		startHotlineServiceResponse.setData(_ctx.stringValue("StartHotlineServiceResponse.Data"));
+		startHotlineServiceResponse.setCode(_ctx.stringValue("StartHotlineServiceResponse.Code"));
+		startHotlineServiceResponse.setSuccess(_ctx.booleanValue("StartHotlineServiceResponse.Success"));
 	 
 	 	return startHotlineServiceResponse;
 	}

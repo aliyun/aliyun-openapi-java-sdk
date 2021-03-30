@@ -23,8 +23,8 @@ public class CreateEntityIvrRouteResponseUnmarshaller {
 	public static CreateEntityIvrRouteResponse unmarshall(CreateEntityIvrRouteResponse createEntityIvrRouteResponse, UnmarshallerContext _ctx) {
 		
 		createEntityIvrRouteResponse.setRequestId(_ctx.stringValue("CreateEntityIvrRouteResponse.RequestId"));
-		createEntityIvrRouteResponse.setCode(_ctx.stringValue("CreateEntityIvrRouteResponse.Code"));
 		createEntityIvrRouteResponse.setMessage(_ctx.stringValue("CreateEntityIvrRouteResponse.Message"));
+		createEntityIvrRouteResponse.setCode(_ctx.stringValue("CreateEntityIvrRouteResponse.Code"));
 		createEntityIvrRouteResponse.setSuccess(_ctx.booleanValue("CreateEntityIvrRouteResponse.Success"));
 	 
 	 	return createEntityIvrRouteResponse;

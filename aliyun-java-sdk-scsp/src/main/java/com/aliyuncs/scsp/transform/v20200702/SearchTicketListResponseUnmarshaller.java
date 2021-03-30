@@ -27,34 +27,34 @@ public class SearchTicketListResponseUnmarshaller {
 	public static SearchTicketListResponse unmarshall(SearchTicketListResponse searchTicketListResponse, UnmarshallerContext _ctx) {
 		
 		searchTicketListResponse.setRequestId(_ctx.stringValue("SearchTicketListResponse.RequestId"));
-		searchTicketListResponse.setSuccess(_ctx.booleanValue("SearchTicketListResponse.Success"));
-		searchTicketListResponse.setCode(_ctx.stringValue("SearchTicketListResponse.Code"));
-		searchTicketListResponse.setMessage(_ctx.stringValue("SearchTicketListResponse.Message"));
-		searchTicketListResponse.setPageNo(_ctx.integerValue("SearchTicketListResponse.PageNo"));
-		searchTicketListResponse.setTotalResults(_ctx.integerValue("SearchTicketListResponse.TotalResults"));
 		searchTicketListResponse.setOnePageSize(_ctx.integerValue("SearchTicketListResponse.OnePageSize"));
 		searchTicketListResponse.setTotalPage(_ctx.integerValue("SearchTicketListResponse.TotalPage"));
+		searchTicketListResponse.setMessage(_ctx.stringValue("SearchTicketListResponse.Message"));
+		searchTicketListResponse.setTotalResults(_ctx.integerValue("SearchTicketListResponse.TotalResults"));
+		searchTicketListResponse.setPageNo(_ctx.integerValue("SearchTicketListResponse.PageNo"));
+		searchTicketListResponse.setCode(_ctx.stringValue("SearchTicketListResponse.Code"));
+		searchTicketListResponse.setSuccess(_ctx.booleanValue("SearchTicketListResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTicketListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTicketId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TicketId"));
-			dataItem.setTemplateId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TemplateId"));
 			dataItem.setCategoryId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CategoryId"));
+			dataItem.setFormData(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FormData"));
+			dataItem.setCarbonCopy(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CarbonCopy"));
 			dataItem.setCreatorId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreatorId"));
+			dataItem.setPriority(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].Priority"));
+			dataItem.setCreateTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreateTime"));
 			dataItem.setCreatorType(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CreatorType"));
-			dataItem.setCreatorName(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CreatorName"));
+			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].TaskStatus"));
+			dataItem.setServiceId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ServiceId"));
 			dataItem.setMemberId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].MemberId"));
+			dataItem.setTicketId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TicketId"));
+			dataItem.setModifiedTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ModifiedTime"));
+			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CaseStatus"));
 			dataItem.setMemberName(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].MemberName"));
 			dataItem.setFromInfo(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FromInfo"));
-			dataItem.setPriority(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].Priority"));
-			dataItem.setCarbonCopy(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CarbonCopy"));
-			dataItem.setCreateTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreateTime"));
-			dataItem.setModifiedTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ModifiedTime"));
-			dataItem.setFormData(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FormData"));
-			dataItem.setServiceId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ServiceId"));
-			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CaseStatus"));
-			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].TaskStatus"));
+			dataItem.setTemplateId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TemplateId"));
+			dataItem.setCreatorName(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CreatorName"));
 
 			data.add(dataItem);
 		}

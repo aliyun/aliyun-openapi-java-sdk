@@ -27,11 +27,11 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Agents> data;
 
@@ -43,12 +43,12 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Agents> getData() {
@@ -77,15 +77,23 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 	public static class Agents {
 
+		private Integer status;
+
 		private Long tenantId;
+
+		private String displayName;
 
 		private Long agentId;
 
 		private String accountName;
 
-		private String displayName;
+		public Integer getStatus() {
+			return this.status;
+		}
 
-		private Integer status;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public Long getTenantId() {
 			return this.tenantId;
@@ -93,6 +101,14 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 		public void setTenantId(Long tenantId) {
 			this.tenantId = tenantId;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public Long getAgentId() {
@@ -109,22 +125,6 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
 		}
 	}
 

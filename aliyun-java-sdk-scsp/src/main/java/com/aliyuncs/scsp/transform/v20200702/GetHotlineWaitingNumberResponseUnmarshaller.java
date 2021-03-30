@@ -23,10 +23,10 @@ public class GetHotlineWaitingNumberResponseUnmarshaller {
 	public static GetHotlineWaitingNumberResponse unmarshall(GetHotlineWaitingNumberResponse getHotlineWaitingNumberResponse, UnmarshallerContext _ctx) {
 		
 		getHotlineWaitingNumberResponse.setRequestId(_ctx.stringValue("GetHotlineWaitingNumberResponse.RequestId"));
-		getHotlineWaitingNumberResponse.setSuccess(_ctx.booleanValue("GetHotlineWaitingNumberResponse.Success"));
-		getHotlineWaitingNumberResponse.setCode(_ctx.stringValue("GetHotlineWaitingNumberResponse.Code"));
 		getHotlineWaitingNumberResponse.setMessage(_ctx.stringValue("GetHotlineWaitingNumberResponse.Message"));
 		getHotlineWaitingNumberResponse.setData(_ctx.longValue("GetHotlineWaitingNumberResponse.Data"));
+		getHotlineWaitingNumberResponse.setCode(_ctx.stringValue("GetHotlineWaitingNumberResponse.Code"));
+		getHotlineWaitingNumberResponse.setSuccess(_ctx.booleanValue("GetHotlineWaitingNumberResponse.Success"));
 	 
 	 	return getHotlineWaitingNumberResponse;
 	}

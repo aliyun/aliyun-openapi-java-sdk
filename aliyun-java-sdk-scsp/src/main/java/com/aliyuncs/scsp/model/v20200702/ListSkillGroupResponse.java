@@ -27,11 +27,11 @@ public class ListSkillGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<SkillGroups> data;
 
@@ -43,12 +43,12 @@ public class ListSkillGroupResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class ListSkillGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<SkillGroups> getData() {
@@ -77,30 +77,22 @@ public class ListSkillGroupResponse extends AcsResponse {
 
 	public static class SkillGroups {
 
-		private Long skillGroupId;
-
-		private String name;
+		private String description;
 
 		private String displayName;
 
-		private String description;
+		private Long skillGroupId;
 
 		private Integer channelType;
 
-		public Long getSkillGroupId() {
-			return this.skillGroupId;
+		private String name;
+
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSkillGroupId(Long skillGroupId) {
-			this.skillGroupId = skillGroupId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getDisplayName() {
@@ -111,12 +103,12 @@ public class ListSkillGroupResponse extends AcsResponse {
 			this.displayName = displayName;
 		}
 
-		public String getDescription() {
-			return this.description;
+		public Long getSkillGroupId() {
+			return this.skillGroupId;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setSkillGroupId(Long skillGroupId) {
+			this.skillGroupId = skillGroupId;
 		}
 
 		public Integer getChannelType() {
@@ -125,6 +117,14 @@ public class ListSkillGroupResponse extends AcsResponse {
 
 		public void setChannelType(Integer channelType) {
 			this.channelType = channelType;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

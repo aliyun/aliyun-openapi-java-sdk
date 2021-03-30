@@ -23,9 +23,9 @@ public class SuspendHotlineServiceResponseUnmarshaller {
 	public static SuspendHotlineServiceResponse unmarshall(SuspendHotlineServiceResponse suspendHotlineServiceResponse, UnmarshallerContext _ctx) {
 		
 		suspendHotlineServiceResponse.setRequestId(_ctx.stringValue("SuspendHotlineServiceResponse.RequestId"));
-		suspendHotlineServiceResponse.setSuccess(_ctx.booleanValue("SuspendHotlineServiceResponse.Success"));
-		suspendHotlineServiceResponse.setCode(_ctx.stringValue("SuspendHotlineServiceResponse.Code"));
 		suspendHotlineServiceResponse.setMessage(_ctx.stringValue("SuspendHotlineServiceResponse.Message"));
+		suspendHotlineServiceResponse.setCode(_ctx.stringValue("SuspendHotlineServiceResponse.Code"));
+		suspendHotlineServiceResponse.setSuccess(_ctx.booleanValue("SuspendHotlineServiceResponse.Success"));
 	 
 	 	return suspendHotlineServiceResponse;
 	}

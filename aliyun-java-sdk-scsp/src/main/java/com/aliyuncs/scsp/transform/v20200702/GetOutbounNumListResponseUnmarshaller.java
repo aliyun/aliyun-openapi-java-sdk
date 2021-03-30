@@ -29,8 +29,8 @@ public class GetOutbounNumListResponseUnmarshaller {
 	public static GetOutbounNumListResponse unmarshall(GetOutbounNumListResponse getOutbounNumListResponse, UnmarshallerContext _ctx) {
 		
 		getOutbounNumListResponse.setRequestId(_ctx.stringValue("GetOutbounNumListResponse.RequestId"));
-		getOutbounNumListResponse.setCode(_ctx.stringValue("GetOutbounNumListResponse.Code"));
 		getOutbounNumListResponse.setMessage(_ctx.stringValue("GetOutbounNumListResponse.Message"));
+		getOutbounNumListResponse.setCode(_ctx.stringValue("GetOutbounNumListResponse.Code"));
 		getOutbounNumListResponse.setSuccess(_ctx.booleanValue("GetOutbounNumListResponse.Success"));
 
 		Data data = new Data();
@@ -38,8 +38,8 @@ public class GetOutbounNumListResponseUnmarshaller {
 		List<NumItem> num = new ArrayList<NumItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.Num.Length"); i++) {
 			NumItem numItem = new NumItem();
-			numItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Description"));
 			numItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.Num["+ i +"].Type"));
+			numItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Description"));
 			numItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Value"));
 
 			num.add(numItem);
@@ -49,8 +49,8 @@ public class GetOutbounNumListResponseUnmarshaller {
 		List<NumGroupItem> numGroup = new ArrayList<NumGroupItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.NumGroup.Length"); i++) {
 			NumGroupItem numGroupItem = new NumGroupItem();
-			numGroupItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Description"));
 			numGroupItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Type"));
+			numGroupItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Description"));
 			numGroupItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Value"));
 
 			numGroup.add(numGroupItem);

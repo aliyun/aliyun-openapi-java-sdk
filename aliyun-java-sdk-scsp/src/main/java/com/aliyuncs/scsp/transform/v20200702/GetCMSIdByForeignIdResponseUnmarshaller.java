@@ -24,20 +24,20 @@ public class GetCMSIdByForeignIdResponseUnmarshaller {
 	public static GetCMSIdByForeignIdResponse unmarshall(GetCMSIdByForeignIdResponse getCMSIdByForeignIdResponse, UnmarshallerContext _ctx) {
 		
 		getCMSIdByForeignIdResponse.setRequestId(_ctx.stringValue("GetCMSIdByForeignIdResponse.RequestId"));
-		getCMSIdByForeignIdResponse.setCode(_ctx.stringValue("GetCMSIdByForeignIdResponse.Code"));
 		getCMSIdByForeignIdResponse.setMessage(_ctx.stringValue("GetCMSIdByForeignIdResponse.Message"));
+		getCMSIdByForeignIdResponse.setCode(_ctx.stringValue("GetCMSIdByForeignIdResponse.Code"));
 		getCMSIdByForeignIdResponse.setSuccess(_ctx.booleanValue("GetCMSIdByForeignIdResponse.Success"));
 
 		Data data = new Data();
-		data.setUserId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.UserId"));
-		data.setNick(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Nick"));
-		data.setPhone(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Phone"));
-		data.setForeignId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.ForeignId"));
-		data.setAvatar(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Avatar"));
-		data.setGender(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Gender"));
-		data.setCustomerTypeId(_ctx.integerValue("GetCMSIdByForeignIdResponse.Data.CustomerTypeId"));
-		data.setAnonymity(_ctx.booleanValue("GetCMSIdByForeignIdResponse.Data.Anonymity"));
 		data.setStatus(_ctx.integerValue("GetCMSIdByForeignIdResponse.Data.Status"));
+		data.setPhone(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Phone"));
+		data.setNick(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Nick"));
+		data.setUserId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.UserId"));
+		data.setAnonymity(_ctx.booleanValue("GetCMSIdByForeignIdResponse.Data.Anonymity"));
+		data.setCustomerTypeId(_ctx.integerValue("GetCMSIdByForeignIdResponse.Data.CustomerTypeId"));
+		data.setGender(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Gender"));
+		data.setAvatar(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Avatar"));
+		data.setForeignId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.ForeignId"));
 		getCMSIdByForeignIdResponse.setData(data);
 	 
 	 	return getCMSIdByForeignIdResponse;

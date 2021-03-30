@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCMSIdByForeignIdResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -50,12 +50,12 @@ public class GetCMSIdByForeignIdResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,38 +76,30 @@ public class GetCMSIdByForeignIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String userId;
-
-		private String nick;
+		private Integer status;
 
 		private String phone;
 
-		private String foreignId;
+		private String nick;
 
-		private String avatar;
-
-		private String gender;
-
-		private Integer customerTypeId;
+		private String userId;
 
 		private Boolean anonymity;
 
-		private Integer status;
+		private Integer customerTypeId;
 
-		public String getUserId() {
-			return this.userId;
+		private String gender;
+
+		private String avatar;
+
+		private String foreignId;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getNick() {
-			return this.nick;
-		}
-
-		public void setNick(String nick) {
-			this.nick = nick;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public String getPhone() {
@@ -118,36 +110,20 @@ public class GetCMSIdByForeignIdResponse extends AcsResponse {
 			this.phone = phone;
 		}
 
-		public String getForeignId() {
-			return this.foreignId;
+		public String getNick() {
+			return this.nick;
 		}
 
-		public void setForeignId(String foreignId) {
-			this.foreignId = foreignId;
+		public void setNick(String nick) {
+			this.nick = nick;
 		}
 
-		public String getAvatar() {
-			return this.avatar;
+		public String getUserId() {
+			return this.userId;
 		}
 
-		public void setAvatar(String avatar) {
-			this.avatar = avatar;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public Integer getCustomerTypeId() {
-			return this.customerTypeId;
-		}
-
-		public void setCustomerTypeId(Integer customerTypeId) {
-			this.customerTypeId = customerTypeId;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public Boolean getAnonymity() {
@@ -158,12 +134,36 @@ public class GetCMSIdByForeignIdResponse extends AcsResponse {
 			this.anonymity = anonymity;
 		}
 
-		public Integer getStatus() {
-			return this.status;
+		public Integer getCustomerTypeId() {
+			return this.customerTypeId;
 		}
 
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setCustomerTypeId(Integer customerTypeId) {
+			this.customerTypeId = customerTypeId;
+		}
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
+
+		public String getAvatar() {
+			return this.avatar;
+		}
+
+		public void setAvatar(String avatar) {
+			this.avatar = avatar;
+		}
+
+		public String getForeignId() {
+			return this.foreignId;
+		}
+
+		public void setForeignId(String foreignId) {
+			this.foreignId = foreignId;
 		}
 	}
 

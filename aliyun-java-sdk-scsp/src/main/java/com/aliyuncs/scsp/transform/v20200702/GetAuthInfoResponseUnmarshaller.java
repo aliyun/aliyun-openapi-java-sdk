@@ -24,20 +24,20 @@ public class GetAuthInfoResponseUnmarshaller {
 	public static GetAuthInfoResponse unmarshall(GetAuthInfoResponse getAuthInfoResponse, UnmarshallerContext _ctx) {
 		
 		getAuthInfoResponse.setRequestId(_ctx.stringValue("GetAuthInfoResponse.RequestId"));
-		getAuthInfoResponse.setSuccess(_ctx.booleanValue("GetAuthInfoResponse.Success"));
-		getAuthInfoResponse.setCode(_ctx.stringValue("GetAuthInfoResponse.Code"));
 		getAuthInfoResponse.setMessage(_ctx.stringValue("GetAuthInfoResponse.Message"));
+		getAuthInfoResponse.setCode(_ctx.stringValue("GetAuthInfoResponse.Code"));
+		getAuthInfoResponse.setSuccess(_ctx.booleanValue("GetAuthInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setCode(_ctx.stringValue("GetAuthInfoResponse.Data.Code"));
-		data.setTenantId(_ctx.stringValue("GetAuthInfoResponse.Data.TenantId"));
-		data.setUserId(_ctx.stringValue("GetAuthInfoResponse.Data.UserId"));
-		data.setUserName(_ctx.stringValue("GetAuthInfoResponse.Data.UserName"));
-		data.setTime(_ctx.longValue("GetAuthInfoResponse.Data.Time"));
-		data.setAppKey(_ctx.stringValue("GetAuthInfoResponse.Data.AppKey"));
 		data.setApp(_ctx.stringValue("GetAuthInfoResponse.Data.App"));
-		data.setAppName(_ctx.stringValue("GetAuthInfoResponse.Data.AppName"));
+		data.setTenantId(_ctx.stringValue("GetAuthInfoResponse.Data.TenantId"));
+		data.setUserName(_ctx.stringValue("GetAuthInfoResponse.Data.UserName"));
+		data.setUserId(_ctx.stringValue("GetAuthInfoResponse.Data.UserId"));
+		data.setAppKey(_ctx.stringValue("GetAuthInfoResponse.Data.AppKey"));
+		data.setTime(_ctx.longValue("GetAuthInfoResponse.Data.Time"));
 		data.setSessionId(_ctx.stringValue("GetAuthInfoResponse.Data.SessionId"));
+		data.setCode(_ctx.stringValue("GetAuthInfoResponse.Data.Code"));
+		data.setAppName(_ctx.stringValue("GetAuthInfoResponse.Data.AppName"));
 		getAuthInfoResponse.setData(data);
 	 
 	 	return getAuthInfoResponse;

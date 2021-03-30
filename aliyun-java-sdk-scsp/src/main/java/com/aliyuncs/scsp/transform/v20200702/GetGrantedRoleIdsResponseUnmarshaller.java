@@ -26,9 +26,9 @@ public class GetGrantedRoleIdsResponseUnmarshaller {
 	public static GetGrantedRoleIdsResponse unmarshall(GetGrantedRoleIdsResponse getGrantedRoleIdsResponse, UnmarshallerContext _ctx) {
 		
 		getGrantedRoleIdsResponse.setRequestId(_ctx.stringValue("GetGrantedRoleIdsResponse.RequestId"));
-		getGrantedRoleIdsResponse.setSuccess(_ctx.booleanValue("GetGrantedRoleIdsResponse.Success"));
-		getGrantedRoleIdsResponse.setCode(_ctx.stringValue("GetGrantedRoleIdsResponse.Code"));
 		getGrantedRoleIdsResponse.setMessage(_ctx.stringValue("GetGrantedRoleIdsResponse.Message"));
+		getGrantedRoleIdsResponse.setCode(_ctx.stringValue("GetGrantedRoleIdsResponse.Code"));
+		getGrantedRoleIdsResponse.setSuccess(_ctx.booleanValue("GetGrantedRoleIdsResponse.Success"));
 
 		List<Long> data = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("GetGrantedRoleIdsResponse.Data.Length"); i++) {

@@ -27,19 +27,19 @@ public class GetEntityTagRelationResponseUnmarshaller {
 	public static GetEntityTagRelationResponse unmarshall(GetEntityTagRelationResponse getEntityTagRelationResponse, UnmarshallerContext _ctx) {
 		
 		getEntityTagRelationResponse.setRequestId(_ctx.stringValue("GetEntityTagRelationResponse.RequestId"));
-		getEntityTagRelationResponse.setCode(_ctx.stringValue("GetEntityTagRelationResponse.Code"));
 		getEntityTagRelationResponse.setMessage(_ctx.stringValue("GetEntityTagRelationResponse.Message"));
+		getEntityTagRelationResponse.setCode(_ctx.stringValue("GetEntityTagRelationResponse.Code"));
 		getEntityTagRelationResponse.setSuccess(_ctx.booleanValue("GetEntityTagRelationResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetEntityTagRelationResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTagGroupName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupName"));
-			dataItem.setTagGroupCode(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupCode"));
-			dataItem.setTagCode(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagCode"));
-			dataItem.setTagName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagName"));
-			dataItem.setEntityId(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityId"));
 			dataItem.setEntityType(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityType"));
+			dataItem.setEntityId(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityId"));
+			dataItem.setTagName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagName"));
+			dataItem.setTagGroupCode(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupCode"));
+			dataItem.setTagGroupName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupName"));
+			dataItem.setTagCode(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagCode"));
 
 			data.add(dataItem);
 		}

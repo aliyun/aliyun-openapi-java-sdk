@@ -32,7 +32,7 @@ public class DeleteAgentRequest extends RpcAcsRequest<DeleteAgentResponse> {
 	private String accountName;
 	public DeleteAgentRequest() {
 		super("scsp", "2020-07-02", "DeleteAgent");
-		setMethod(MethodType.DELETE);
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);

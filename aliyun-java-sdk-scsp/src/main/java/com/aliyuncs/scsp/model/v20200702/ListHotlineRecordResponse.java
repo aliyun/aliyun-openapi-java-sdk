@@ -27,11 +27,11 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DataItem> data;
 
@@ -43,12 +43,12 @@ public class ListHotlineRecordResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class ListHotlineRecordResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -77,23 +77,15 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String callId;
-
 		private String connectionId;
-
-		private String url;
-
-		private Boolean startTime;
 
 		private Boolean endTime;
 
-		public String getCallId() {
-			return this.callId;
-		}
+		private String callId;
 
-		public void setCallId(String callId) {
-			this.callId = callId;
-		}
+		private Boolean startTime;
+
+		private String url;
 
 		public String getConnectionId() {
 			return this.connectionId;
@@ -103,12 +95,20 @@ public class ListHotlineRecordResponse extends AcsResponse {
 			this.connectionId = connectionId;
 		}
 
-		public String getUrl() {
-			return this.url;
+		public Boolean getEndTime() {
+			return this.endTime;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
+		public void setEndTime(Boolean endTime) {
+			this.endTime = endTime;
+		}
+
+		public String getCallId() {
+			return this.callId;
+		}
+
+		public void setCallId(String callId) {
+			this.callId = callId;
 		}
 
 		public Boolean getStartTime() {
@@ -119,12 +119,12 @@ public class ListHotlineRecordResponse extends AcsResponse {
 			this.startTime = startTime;
 		}
 
-		public Boolean getEndTime() {
-			return this.endTime;
+		public String getUrl() {
+			return this.url;
 		}
 
-		public void setEndTime(Boolean endTime) {
-			this.endTime = endTime;
+		public void setUrl(String url) {
+			this.url = url;
 		}
 	}
 

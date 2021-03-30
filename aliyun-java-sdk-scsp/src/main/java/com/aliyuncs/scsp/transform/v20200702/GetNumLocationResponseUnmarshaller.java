@@ -23,9 +23,9 @@ public class GetNumLocationResponseUnmarshaller {
 	public static GetNumLocationResponse unmarshall(GetNumLocationResponse getNumLocationResponse, UnmarshallerContext _ctx) {
 		
 		getNumLocationResponse.setRequestId(_ctx.stringValue("GetNumLocationResponse.RequestId"));
-		getNumLocationResponse.setCode(_ctx.stringValue("GetNumLocationResponse.Code"));
-		getNumLocationResponse.setData(_ctx.stringValue("GetNumLocationResponse.Data"));
 		getNumLocationResponse.setMessage(_ctx.stringValue("GetNumLocationResponse.Message"));
+		getNumLocationResponse.setData(_ctx.stringValue("GetNumLocationResponse.Data"));
+		getNumLocationResponse.setCode(_ctx.stringValue("GetNumLocationResponse.Code"));
 		getNumLocationResponse.setSuccess(_ctx.booleanValue("GetNumLocationResponse.Success"));
 	 
 	 	return getNumLocationResponse;

@@ -28,27 +28,27 @@ public class GetTagListResponseUnmarshaller {
 	public static GetTagListResponse unmarshall(GetTagListResponse getTagListResponse, UnmarshallerContext _ctx) {
 		
 		getTagListResponse.setRequestId(_ctx.stringValue("GetTagListResponse.RequestId"));
-		getTagListResponse.setCode(_ctx.stringValue("GetTagListResponse.Code"));
 		getTagListResponse.setMessage(_ctx.stringValue("GetTagListResponse.Message"));
+		getTagListResponse.setCode(_ctx.stringValue("GetTagListResponse.Code"));
 		getTagListResponse.setSuccess(_ctx.booleanValue("GetTagListResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetTagListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTagGroupName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagGroupName"));
-			dataItem.setTagGroupCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagGroupCode"));
 			dataItem.setScenarioCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].ScenarioCode"));
+			dataItem.setTagGroupCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagGroupCode"));
+			dataItem.setTagGroupName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagGroupName"));
 
 			List<TagValuesItem> tagValues = new ArrayList<TagValuesItem>();
 			for (int j = 0; j < _ctx.lengthValue("GetTagListResponse.Data["+ i +"].TagValues.Length"); j++) {
 				TagValuesItem tagValuesItem = new TagValuesItem();
+				tagValuesItem.setStatus(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].Status"));
+				tagValuesItem.setDescription(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].Description"));
 				tagValuesItem.setTagName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagName"));
-				tagValuesItem.setTagCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagCode"));
 				tagValuesItem.setTagGroupCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagGroupCode"));
 				tagValuesItem.setTagGroupName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagGroupName"));
-				tagValuesItem.setStatus(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].Status"));
+				tagValuesItem.setTagCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagCode"));
 				tagValuesItem.setEntityRelationNumber(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].EntityRelationNumber"));
-				tagValuesItem.setDescription(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].Description"));
 
 				tagValues.add(tagValuesItem);
 			}

@@ -24,9 +24,9 @@ public class QueryTicketsResponseUnmarshaller {
 		
 		queryTicketsResponse.setRequestId(_ctx.stringValue("QueryTicketsResponse.RequestId"));
 		queryTicketsResponse.setMessage(_ctx.stringValue("QueryTicketsResponse.Message"));
+		queryTicketsResponse.setData(_ctx.stringValue("QueryTicketsResponse.Data"));
 		queryTicketsResponse.setCode(_ctx.stringValue("QueryTicketsResponse.Code"));
 		queryTicketsResponse.setSuccess(_ctx.booleanValue("QueryTicketsResponse.Success"));
-		queryTicketsResponse.setData(_ctx.stringValue("QueryTicketsResponse.Data"));
 	 
 	 	return queryTicketsResponse;
 	}

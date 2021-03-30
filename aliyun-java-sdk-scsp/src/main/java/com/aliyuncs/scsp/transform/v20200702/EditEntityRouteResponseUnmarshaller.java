@@ -23,8 +23,8 @@ public class EditEntityRouteResponseUnmarshaller {
 	public static EditEntityRouteResponse unmarshall(EditEntityRouteResponse editEntityRouteResponse, UnmarshallerContext _ctx) {
 		
 		editEntityRouteResponse.setRequestId(_ctx.stringValue("EditEntityRouteResponse.RequestId"));
-		editEntityRouteResponse.setCode(_ctx.stringValue("EditEntityRouteResponse.Code"));
 		editEntityRouteResponse.setMessage(_ctx.stringValue("EditEntityRouteResponse.Message"));
+		editEntityRouteResponse.setCode(_ctx.stringValue("EditEntityRouteResponse.Code"));
 		editEntityRouteResponse.setSuccess(_ctx.booleanValue("EditEntityRouteResponse.Success"));
 	 
 	 	return editEntityRouteResponse;

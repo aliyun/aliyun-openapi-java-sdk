@@ -27,34 +27,34 @@ public class SearchTicketByPhoneResponseUnmarshaller {
 	public static SearchTicketByPhoneResponse unmarshall(SearchTicketByPhoneResponse searchTicketByPhoneResponse, UnmarshallerContext _ctx) {
 		
 		searchTicketByPhoneResponse.setRequestId(_ctx.stringValue("SearchTicketByPhoneResponse.RequestId"));
-		searchTicketByPhoneResponse.setSuccess(_ctx.booleanValue("SearchTicketByPhoneResponse.Success"));
-		searchTicketByPhoneResponse.setCode(_ctx.stringValue("SearchTicketByPhoneResponse.Code"));
-		searchTicketByPhoneResponse.setMessage(_ctx.stringValue("SearchTicketByPhoneResponse.Message"));
-		searchTicketByPhoneResponse.setPageNo(_ctx.integerValue("SearchTicketByPhoneResponse.PageNo"));
-		searchTicketByPhoneResponse.setTotalResults(_ctx.integerValue("SearchTicketByPhoneResponse.TotalResults"));
 		searchTicketByPhoneResponse.setOnePageSize(_ctx.integerValue("SearchTicketByPhoneResponse.OnePageSize"));
 		searchTicketByPhoneResponse.setTotalPage(_ctx.integerValue("SearchTicketByPhoneResponse.TotalPage"));
+		searchTicketByPhoneResponse.setMessage(_ctx.stringValue("SearchTicketByPhoneResponse.Message"));
+		searchTicketByPhoneResponse.setTotalResults(_ctx.integerValue("SearchTicketByPhoneResponse.TotalResults"));
+		searchTicketByPhoneResponse.setPageNo(_ctx.integerValue("SearchTicketByPhoneResponse.PageNo"));
+		searchTicketByPhoneResponse.setCode(_ctx.stringValue("SearchTicketByPhoneResponse.Code"));
+		searchTicketByPhoneResponse.setSuccess(_ctx.booleanValue("SearchTicketByPhoneResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTicketByPhoneResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTicketId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].TicketId"));
-			dataItem.setTemplateId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].TemplateId"));
 			dataItem.setCategoryId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].CategoryId"));
+			dataItem.setFormData(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].FormData"));
+			dataItem.setCarbonCopy(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].CarbonCopy"));
 			dataItem.setCreatorId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].CreatorId"));
+			dataItem.setPriority(_ctx.integerValue("SearchTicketByPhoneResponse.Data["+ i +"].Priority"));
+			dataItem.setCreateTime(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].CreateTime"));
 			dataItem.setCreatorType(_ctx.integerValue("SearchTicketByPhoneResponse.Data["+ i +"].CreatorType"));
-			dataItem.setCreatorName(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].CreatorName"));
+			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].TaskStatus"));
+			dataItem.setServiceId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].ServiceId"));
 			dataItem.setMemberId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].MemberId"));
+			dataItem.setTicketId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].TicketId"));
+			dataItem.setModifiedTime(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].ModifiedTime"));
+			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketByPhoneResponse.Data["+ i +"].CaseStatus"));
 			dataItem.setMemberName(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].MemberName"));
 			dataItem.setFromInfo(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].FromInfo"));
-			dataItem.setPriority(_ctx.integerValue("SearchTicketByPhoneResponse.Data["+ i +"].Priority"));
-			dataItem.setCarbonCopy(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].CarbonCopy"));
-			dataItem.setCreateTime(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].CreateTime"));
-			dataItem.setModifiedTime(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].ModifiedTime"));
-			dataItem.setFormData(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].FormData"));
-			dataItem.setServiceId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].ServiceId"));
-			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketByPhoneResponse.Data["+ i +"].CaseStatus"));
-			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].TaskStatus"));
+			dataItem.setTemplateId(_ctx.longValue("SearchTicketByPhoneResponse.Data["+ i +"].TemplateId"));
+			dataItem.setCreatorName(_ctx.stringValue("SearchTicketByPhoneResponse.Data["+ i +"].CreatorName"));
 
 			data.add(dataItem);
 		}

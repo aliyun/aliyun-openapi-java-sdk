@@ -23,8 +23,8 @@ public class DeleteEntityRouteResponseUnmarshaller {
 	public static DeleteEntityRouteResponse unmarshall(DeleteEntityRouteResponse deleteEntityRouteResponse, UnmarshallerContext _ctx) {
 		
 		deleteEntityRouteResponse.setRequestId(_ctx.stringValue("DeleteEntityRouteResponse.RequestId"));
-		deleteEntityRouteResponse.setCode(_ctx.stringValue("DeleteEntityRouteResponse.Code"));
 		deleteEntityRouteResponse.setMessage(_ctx.stringValue("DeleteEntityRouteResponse.Message"));
+		deleteEntityRouteResponse.setCode(_ctx.stringValue("DeleteEntityRouteResponse.Code"));
 		deleteEntityRouteResponse.setSuccess(_ctx.booleanValue("DeleteEntityRouteResponse.Success"));
 	 
 	 	return deleteEntityRouteResponse;
