@@ -179,6 +179,8 @@ public class ListInstancesResponse extends AcsResponse {
 
 			private String taskType;
 
+			private Integer taskRerunTime;
+
 			public Long getNodeId() {
 				return this.nodeId;
 			}
@@ -377,6 +379,14 @@ public class ListInstancesResponse extends AcsResponse {
 
 			public void setTaskType(String taskType) {
 				this.taskType = taskType;
+			}
+
+			public Integer getTaskRerunTime() {
+				return this.taskRerunTime;
+			}
+
+			public void setTaskRerunTime(Integer taskRerunTime) {
+				this.taskRerunTime = taskRerunTime;
 			}
 		}
 	}
