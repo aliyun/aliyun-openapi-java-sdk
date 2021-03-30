@@ -41,7 +41,7 @@ public class GetMetaTableColumnResponseUnmarshaller {
 			column.setPosition(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Position"));
 			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].AutoIncrement"));
 			column.setSecurityLevel(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].SecurityLevel"));
-			column.setDataLength(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataLength"));
+			column.setDataLength(_ctx.longValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataLength"));
 			column.setDataScale(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataScale"));
 			column.setDataPrecision(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataPrecision"));
 			column.setPrimaryKey(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].PrimaryKey"));
