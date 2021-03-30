@@ -1,11 +1,17 @@
 [← Timeout](4-Timeout-EN.md) | HTTPS Configurations[(中文)](5-HTTPS-CN.md) | [Proxy Configurations →](6-Proxy-EN.md)
 ***
 
+## Use HTTPS for request
+
+```java
+request.setSysProtocol(com.aliyuncs.http.ProtocolType.HTTPS);
+```
+
 ## HTTPS Configurations
+
 Priority: Client > Default
 
-
-1.  Ignore certificate
+1. Ignore certificate
 
 This must be set when the project first creates the client.
 Otherwise you need to close the last client with the command `ApacheHttpClient.getInstance().close()`.
@@ -22,7 +28,7 @@ DefaultAcsClient client = new DefaultAcsClient(profile);
  
 ```
 
-2.  Customize the configuration of certificate validation
+2. Customize the configuration of certificate validation
 
 `KeyManager` and `X509TrustManager` are the interface. User implementation is required.
 

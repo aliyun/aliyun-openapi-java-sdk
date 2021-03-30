@@ -1,10 +1,17 @@
 [← 超时机制](4-Timeout-CN.md) | HTTPS 配置[(English)](5-HTTPS-EN.md) | [代理配置 →](6-Proxy-CN.md)
 ***
 
+## 使用 HTTPS 请求方式
+
+```java
+request.setSysProtocol(com.aliyuncs.http.ProtocolType.HTTPS);
+```
+
 ## HTTPS配置
+
 优先级: Client > Default
 
-1. 忽略证书 
+1. 忽略证书
 
 必须在第一次创建 client 的时候进行设置，否则需要使用 `ApacheHttpClient.getInstance().close()` 来关闭上一个 client 才能生效。
 
@@ -37,7 +44,6 @@ profile.setHttpClientConfig(clientConfig);
 DefaultAcsClient client = new DefaultAcsClient(profile);
  
 ```
-
 
 ***
 [← 超时机制](4-Timeout-CN.md) | HTTPS 配置[(English)](5-HTTPS-EN.md) | [代理配置 →](6-Proxy-CN.md)
