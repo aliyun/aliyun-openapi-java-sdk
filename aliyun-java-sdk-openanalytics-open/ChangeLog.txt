@@ -1,3 +1,6 @@
+2021-03-30 Version: 2.0.2
+- Supported Open Api.
+
 2021-03-30 Version: 1.8.6
 - Supported Open Api.
 
