@@ -25,6 +25,7 @@ public class DescribeAuditCallbackResponseUnmarshaller {
 		describeAuditCallbackResponse.setRequestId(_ctx.stringValue("DescribeAuditCallbackResponse.RequestId"));
 		describeAuditCallbackResponse.setSeed(_ctx.stringValue("DescribeAuditCallbackResponse.Seed"));
 		describeAuditCallbackResponse.setCallback(_ctx.stringValue("DescribeAuditCallbackResponse.Callback"));
+		describeAuditCallbackResponse.setCryptType(_ctx.integerValue("DescribeAuditCallbackResponse.CryptType"));
 	 
 	 	return describeAuditCallbackResponse;
 	}

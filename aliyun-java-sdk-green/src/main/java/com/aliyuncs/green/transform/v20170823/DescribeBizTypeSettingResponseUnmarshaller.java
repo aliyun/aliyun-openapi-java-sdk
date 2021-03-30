@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.green.model.v20170823.DescribeBizTypeSettingResponse;
 import com.aliyuncs.green.model.v20170823.DescribeBizTypeSettingResponse.Ad;
 import com.aliyuncs.green.model.v20170823.DescribeBizTypeSettingResponse.Antispam;
+import com.aliyuncs.green.model.v20170823.DescribeBizTypeSettingResponse.Live;
 import com.aliyuncs.green.model.v20170823.DescribeBizTypeSettingResponse.Porn;
 import com.aliyuncs.green.model.v20170823.DescribeBizTypeSettingResponse.Terrorism;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -66,6 +67,15 @@ public class DescribeBizTypeSettingResponseUnmarshaller {
 		}
 		ad.setCategories3(categories3);
 		describeBizTypeSettingResponse.setAd(ad);
+
+		Live live = new Live();
+
+		List<String> categories4 = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeBizTypeSettingResponse.Live.Categories.Length"); i++) {
+			categories4.add(_ctx.stringValue("DescribeBizTypeSettingResponse.Live.Categories["+ i +"]"));
+		}
+		live.setCategories4(categories4);
+		describeBizTypeSettingResponse.setLive(live);
 	 
 	 	return describeBizTypeSettingResponse;
 	}

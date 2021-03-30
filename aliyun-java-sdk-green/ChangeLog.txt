@@ -1,3 +1,6 @@
+2021-03-30 Version: 3.6.4
+- Supported MultiMedia Post scan.
+
 2020-12-04 Version: 3.6.3
 - Support manual scan interface.
 

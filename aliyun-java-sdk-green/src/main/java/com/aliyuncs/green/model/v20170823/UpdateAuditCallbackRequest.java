@@ -27,6 +27,8 @@ public class UpdateAuditCallbackRequest extends RpcAcsRequest<UpdateAuditCallbac
 
 	private String seed;
 
+	private Integer cryptType;
+
 	private String callback;
 	public UpdateAuditCallbackRequest() {
 		super("Green", "2017-08-23", "UpdateAuditCallback", "green");
@@ -45,6 +47,17 @@ public class UpdateAuditCallbackRequest extends RpcAcsRequest<UpdateAuditCallbac
 		this.seed = seed;
 		if(seed != null){
 			putQueryParameter("Seed", seed);
+		}
+	}
+
+	public Integer getCryptType() {
+		return this.cryptType;
+	}
+
+	public void setCryptType(Integer cryptType) {
+		this.cryptType = cryptType;
+		if(cryptType != null){
+			putQueryParameter("CryptType", cryptType.toString());
 		}
 	}
 

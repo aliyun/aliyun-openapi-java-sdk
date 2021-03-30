@@ -27,6 +27,8 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 
 	private String videoSceneList;
 
+	private Boolean scanImageNoFileType;
+
 	private String imageSceneList;
 
 	private String audioSceneList;
@@ -75,6 +77,17 @@ public class UpdateOssIncrementCheckSettingRequest extends RpcAcsRequest<UpdateO
 		this.videoSceneList = videoSceneList;
 		if(videoSceneList != null){
 			putQueryParameter("VideoSceneList", videoSceneList);
+		}
+	}
+
+	public Boolean getScanImageNoFileType() {
+		return this.scanImageNoFileType;
+	}
+
+	public void setScanImageNoFileType(Boolean scanImageNoFileType) {
+		this.scanImageNoFileType = scanImageNoFileType;
+		if(scanImageNoFileType != null){
+			putQueryParameter("ScanImageNoFileType", scanImageNoFileType.toString());
 		}
 	}
 

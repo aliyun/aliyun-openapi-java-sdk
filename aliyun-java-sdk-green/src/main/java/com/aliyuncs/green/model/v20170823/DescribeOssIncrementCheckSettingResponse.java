@@ -31,6 +31,8 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 	private Long imageScanLimit;
 
+	private Boolean scanImageNoFileType;
+
 	private Integer videoFrameInterval;
 
 	private Integer videoMaxFrames;
@@ -83,6 +85,14 @@ public class DescribeOssIncrementCheckSettingResponse extends AcsResponse {
 
 	public void setImageScanLimit(Long imageScanLimit) {
 		this.imageScanLimit = imageScanLimit;
+	}
+
+	public Boolean getScanImageNoFileType() {
+		return this.scanImageNoFileType;
+	}
+
+	public void setScanImageNoFileType(Boolean scanImageNoFileType) {
+		this.scanImageNoFileType = scanImageNoFileType;
 	}
 
 	public Integer getVideoFrameInterval() {

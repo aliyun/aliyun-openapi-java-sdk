@@ -19,6 +19,19 @@ import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse;
 import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Age;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Bang;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Gender;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Glasses;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Hairstyle;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Hat;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Image;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Location;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Mustache;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Quality;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Respirator;
+import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FaceResult.Smile;
 import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.FrameResult;
 import com.aliyuncs.green.model.v20170823.DescribeViewContentResponse.ViewContent.Result;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -65,10 +78,84 @@ public class DescribeViewContentResponseUnmarshaller {
 				FrameResult frameResult = new FrameResult();
 				frameResult.setUrl(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FrameResults["+ j +"].Url"));
 				frameResult.setOffset(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FrameResults["+ j +"].Offset"));
+				frameResult.setLabel(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FrameResults["+ j +"].Label"));
 
 				frameResults.add(frameResult);
 			}
 			viewContent.setFrameResults(frameResults);
+
+			List<FaceResult> faceResults = new ArrayList<FaceResult>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults.Length"); j++) {
+				FaceResult faceResult = new FaceResult();
+				faceResult.setBualified(_ctx.booleanValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Bualified"));
+
+				Location location = new Location();
+				location.setX(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Location.X"));
+				location.setY(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Location.Y"));
+				location.setW(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Location.W"));
+				location.setH(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Location.H"));
+				faceResult.setLocation(location);
+
+				Gender gender = new Gender();
+				gender.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Gender.Rate"));
+				gender.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Gender.Value"));
+				faceResult.setGender(gender);
+
+				Glasses glasses = new Glasses();
+				glasses.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Glasses.Rate"));
+				glasses.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Glasses.Value"));
+				faceResult.setGlasses(glasses);
+
+				Age age = new Age();
+				age.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Age.Rate"));
+				age.setValue(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Age.Value"));
+				faceResult.setAge(age);
+
+				Smile smile = new Smile();
+				smile.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Smile.Rate"));
+				smile.setValue(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Smile.Value"));
+				faceResult.setSmile(smile);
+
+				Quality quality = new Quality();
+				quality.setBlur(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Blur"));
+				quality.setPitch(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Pitch"));
+				quality.setYaw(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Yaw"));
+				quality.setRoll(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Roll"));
+				faceResult.setQuality(quality);
+
+				Respirator respirator = new Respirator();
+				respirator.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Respirator.Rate"));
+				respirator.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Respirator.Value"));
+				faceResult.setRespirator(respirator);
+
+				Hat hat = new Hat();
+				hat.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Hat.Rate"));
+				hat.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Hat.Value"));
+				faceResult.setHat(hat);
+
+				Mustache mustache = new Mustache();
+				mustache.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Mustache.Rate"));
+				mustache.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Mustache.Value"));
+				faceResult.setMustache(mustache);
+
+				Bang bang = new Bang();
+				bang.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Bang.Rate"));
+				bang.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Bang.Value"));
+				faceResult.setBang(bang);
+
+				Hairstyle hairstyle = new Hairstyle();
+				hairstyle.setRate(_ctx.floatValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Hairstyle.Rate"));
+				hairstyle.setValue(_ctx.stringValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Hairstyle.Value"));
+				faceResult.setHairstyle(hairstyle);
+
+				Image image = new Image();
+				image.setWidth(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Image.Width"));
+				image.setHeight(_ctx.integerValue("DescribeViewContentResponse.ViewContentList["+ i +"].FaceResults["+ j +"].Image.Height"));
+				faceResult.setImage(image);
+
+				faceResults.add(faceResult);
+			}
+			viewContent.setFaceResults(faceResults);
 
 			viewContentList.add(viewContent);
 		}

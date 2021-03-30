@@ -15,22 +15,16 @@
 package com.aliyuncs.green.model.v20170823;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.green.transform.v20170823.DescribeAuditCallbackResponseUnmarshaller;
+import com.aliyuncs.green.transform.v20170823.UpdateBizTypeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeAuditCallbackResponse extends AcsResponse {
+public class UpdateBizTypeResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String seed;
-
-	private String callback;
-
-	private Integer cryptType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,33 +34,9 @@ public class DescribeAuditCallbackResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSeed() {
-		return this.seed;
-	}
-
-	public void setSeed(String seed) {
-		this.seed = seed;
-	}
-
-	public String getCallback() {
-		return this.callback;
-	}
-
-	public void setCallback(String callback) {
-		this.callback = callback;
-	}
-
-	public Integer getCryptType() {
-		return this.cryptType;
-	}
-
-	public void setCryptType(Integer cryptType) {
-		this.cryptType = cryptType;
-	}
-
 	@Override
-	public DescribeAuditCallbackResponse getInstance(UnmarshallerContext context) {
-		return	DescribeAuditCallbackResponseUnmarshaller.unmarshall(this, context);
+	public UpdateBizTypeResponse getInstance(UnmarshallerContext context) {
+		return	UpdateBizTypeResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

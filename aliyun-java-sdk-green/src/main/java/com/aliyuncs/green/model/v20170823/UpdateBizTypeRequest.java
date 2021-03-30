@@ -22,20 +22,14 @@ import com.aliyuncs.green.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
+public class UpdateBizTypeRequest extends RpcAcsRequest<UpdateBizTypeResponse> {
 	   
 
 	private String description;
 
-	private String bizTypeImport;
-
-	private Boolean citeTemplate;
-
-	private String industryInfo;
-
 	private String bizTypeName;
-	public CreateBizTypeRequest() {
-		super("Green", "2017-08-23", "CreateBizType", "green");
+	public UpdateBizTypeRequest() {
+		super("Green", "2017-08-23", "UpdateBizType", "green");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -54,39 +48,6 @@ public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
 		}
 	}
 
-	public String getBizTypeImport() {
-		return this.bizTypeImport;
-	}
-
-	public void setBizTypeImport(String bizTypeImport) {
-		this.bizTypeImport = bizTypeImport;
-		if(bizTypeImport != null){
-			putQueryParameter("BizTypeImport", bizTypeImport);
-		}
-	}
-
-	public Boolean getCiteTemplate() {
-		return this.citeTemplate;
-	}
-
-	public void setCiteTemplate(Boolean citeTemplate) {
-		this.citeTemplate = citeTemplate;
-		if(citeTemplate != null){
-			putQueryParameter("CiteTemplate", citeTemplate.toString());
-		}
-	}
-
-	public String getIndustryInfo() {
-		return this.industryInfo;
-	}
-
-	public void setIndustryInfo(String industryInfo) {
-		this.industryInfo = industryInfo;
-		if(industryInfo != null){
-			putQueryParameter("IndustryInfo", industryInfo);
-		}
-	}
-
 	public String getBizTypeName() {
 		return this.bizTypeName;
 	}
@@ -99,8 +60,8 @@ public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
 	}
 
 	@Override
-	public Class<CreateBizTypeResponse> getResponseClass() {
-		return CreateBizTypeResponse.class;
+	public Class<UpdateBizTypeResponse> getResponseClass() {
+		return UpdateBizTypeResponse.class;
 	}
 
 }

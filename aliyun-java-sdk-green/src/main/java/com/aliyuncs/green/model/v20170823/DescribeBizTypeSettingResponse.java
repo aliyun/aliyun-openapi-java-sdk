@@ -35,6 +35,8 @@ public class DescribeBizTypeSettingResponse extends AcsResponse {
 
 	private Ad ad;
 
+	private Live live;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -73,6 +75,14 @@ public class DescribeBizTypeSettingResponse extends AcsResponse {
 
 	public void setAd(Ad ad) {
 		this.ad = ad;
+	}
+
+	public Live getLive() {
+		return this.live;
+	}
+
+	public void setLive(Live live) {
+		this.live = live;
 	}
 
 	public static class Terrorism {
@@ -124,6 +134,19 @@ public class DescribeBizTypeSettingResponse extends AcsResponse {
 
 		public void setCategories3(List<String> categories3) {
 			this.categories3 = categories3;
+		}
+	}
+
+	public static class Live {
+
+		private List<String> categories4;
+
+		public List<String> getCategories4() {
+			return this.categories4;
+		}
+
+		public void setCategories4(List<String> categories4) {
+			this.categories4 = categories4;
 		}
 	}
 
