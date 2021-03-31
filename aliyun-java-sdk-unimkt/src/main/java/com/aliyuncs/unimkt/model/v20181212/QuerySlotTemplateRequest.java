@@ -41,7 +41,7 @@ public class QuerySlotTemplateRequest extends RpcAcsRequest<QuerySlotTemplateRes
 
 	private String userSite;
 	public QuerySlotTemplateRequest() {
-		super("UniMkt", "2018-12-12", "QuerySlotTemplate", "uniMkt");
+		super("UniMkt", "2018-12-12", "QuerySlotTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

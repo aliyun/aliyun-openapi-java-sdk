@@ -1,3 +1,9 @@
+2021-03-25 Version: 2.12.19
+- Update QueryBizItemList.
+- Add QueryItemInSubBizs.
+- Add AddItemToSubBizs.
+- Add QueryInventoryOfItemsInBizItemGroup.
+
 2021-03-12 Version: 2.12.18
 - Add settlement interface,eg QueryMediaSettleInfo, QueryAdvertisementSettleInfo.
 

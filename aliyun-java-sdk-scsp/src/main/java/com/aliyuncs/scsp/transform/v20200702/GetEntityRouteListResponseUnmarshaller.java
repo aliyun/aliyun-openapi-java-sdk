@@ -28,28 +28,28 @@ public class GetEntityRouteListResponseUnmarshaller {
 	public static GetEntityRouteListResponse unmarshall(GetEntityRouteListResponse getEntityRouteListResponse, UnmarshallerContext _ctx) {
 		
 		getEntityRouteListResponse.setRequestId(_ctx.stringValue("GetEntityRouteListResponse.RequestId"));
-		getEntityRouteListResponse.setCode(_ctx.stringValue("GetEntityRouteListResponse.Code"));
 		getEntityRouteListResponse.setMessage(_ctx.stringValue("GetEntityRouteListResponse.Message"));
+		getEntityRouteListResponse.setCode(_ctx.stringValue("GetEntityRouteListResponse.Code"));
 		getEntityRouteListResponse.setSuccess(_ctx.booleanValue("GetEntityRouteListResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.longValue("GetEntityRouteListResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("GetEntityRouteListResponse.Data.PageSize"));
+		data.setTotal(_ctx.longValue("GetEntityRouteListResponse.Data.Total"));
 		data.setPageNo(_ctx.integerValue("GetEntityRouteListResponse.Data.PageNo"));
 
 		List<EntityRouteListItem> entityRouteList = new ArrayList<EntityRouteListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetEntityRouteListResponse.Data.EntityRouteList.Length"); i++) {
 			EntityRouteListItem entityRouteListItem = new EntityRouteListItem();
-			entityRouteListItem.setUniqueId(_ctx.longValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].UniqueId"));
 			entityRouteListItem.setEntityId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityId"));
+			entityRouteListItem.setUniqueId(_ctx.longValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].UniqueId"));
 			entityRouteListItem.setEntityName(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityName"));
-			entityRouteListItem.setEntityBizCode(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityBizCode"));
-			entityRouteListItem.setEntityBizCodeType(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityBizCodeType"));
-			entityRouteListItem.setEntityRelationNumber(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityRelationNumber"));
-			entityRouteListItem.setDepartmentId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].DepartmentId"));
-			entityRouteListItem.setGroupId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].GroupId"));
-			entityRouteListItem.setServiceId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].ServiceId"));
 			entityRouteListItem.setExtInfo(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].ExtInfo"));
+			entityRouteListItem.setEntityBizCodeType(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityBizCodeType"));
+			entityRouteListItem.setEntityBizCode(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityBizCode"));
+			entityRouteListItem.setDepartmentId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].DepartmentId"));
+			entityRouteListItem.setEntityRelationNumber(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].EntityRelationNumber"));
+			entityRouteListItem.setServiceId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].ServiceId"));
+			entityRouteListItem.setGroupId(_ctx.stringValue("GetEntityRouteListResponse.Data.EntityRouteList["+ i +"].GroupId"));
 
 			entityRouteList.add(entityRouteListItem);
 		}

@@ -23,9 +23,9 @@ public class TransferToThirdCallResponseUnmarshaller {
 	public static TransferToThirdCallResponse unmarshall(TransferToThirdCallResponse transferToThirdCallResponse, UnmarshallerContext _ctx) {
 		
 		transferToThirdCallResponse.setRequestId(_ctx.stringValue("TransferToThirdCallResponse.RequestId"));
-		transferToThirdCallResponse.setSuccess(_ctx.booleanValue("TransferToThirdCallResponse.Success"));
-		transferToThirdCallResponse.setCode(_ctx.stringValue("TransferToThirdCallResponse.Code"));
 		transferToThirdCallResponse.setMessage(_ctx.stringValue("TransferToThirdCallResponse.Message"));
+		transferToThirdCallResponse.setCode(_ctx.stringValue("TransferToThirdCallResponse.Code"));
+		transferToThirdCallResponse.setSuccess(_ctx.booleanValue("TransferToThirdCallResponse.Success"));
 	 
 	 	return transferToThirdCallResponse;
 	}

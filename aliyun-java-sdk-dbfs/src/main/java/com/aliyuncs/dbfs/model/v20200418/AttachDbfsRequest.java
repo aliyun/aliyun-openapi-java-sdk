@@ -27,6 +27,8 @@ public class AttachDbfsRequest extends RpcAcsRequest<AttachDbfsResponse> {
 
 	private String eCSInstanceId;
 
+	private String serverUrl;
+
 	private String fsId;
 	public AttachDbfsRequest() {
 		super("DBFS", "2020-04-18", "AttachDbfs");
@@ -45,6 +47,17 @@ public class AttachDbfsRequest extends RpcAcsRequest<AttachDbfsResponse> {
 		this.eCSInstanceId = eCSInstanceId;
 		if(eCSInstanceId != null){
 			putQueryParameter("ECSInstanceId", eCSInstanceId);
+		}
+	}
+
+	public String getServerUrl() {
+		return this.serverUrl;
+	}
+
+	public void setServerUrl(String serverUrl) {
+		this.serverUrl = serverUrl;
+		if(serverUrl != null){
+			putQueryParameter("ServerUrl", serverUrl);
 		}
 	}
 

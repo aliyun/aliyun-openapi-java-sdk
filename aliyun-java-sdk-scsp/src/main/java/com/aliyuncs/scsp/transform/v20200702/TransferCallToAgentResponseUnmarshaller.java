@@ -23,9 +23,9 @@ public class TransferCallToAgentResponseUnmarshaller {
 	public static TransferCallToAgentResponse unmarshall(TransferCallToAgentResponse transferCallToAgentResponse, UnmarshallerContext _ctx) {
 		
 		transferCallToAgentResponse.setRequestId(_ctx.stringValue("TransferCallToAgentResponse.RequestId"));
-		transferCallToAgentResponse.setSuccess(_ctx.booleanValue("TransferCallToAgentResponse.Success"));
-		transferCallToAgentResponse.setCode(_ctx.stringValue("TransferCallToAgentResponse.Code"));
 		transferCallToAgentResponse.setMessage(_ctx.stringValue("TransferCallToAgentResponse.Message"));
+		transferCallToAgentResponse.setCode(_ctx.stringValue("TransferCallToAgentResponse.Code"));
+		transferCallToAgentResponse.setSuccess(_ctx.booleanValue("TransferCallToAgentResponse.Success"));
 	 
 	 	return transferCallToAgentResponse;
 	}

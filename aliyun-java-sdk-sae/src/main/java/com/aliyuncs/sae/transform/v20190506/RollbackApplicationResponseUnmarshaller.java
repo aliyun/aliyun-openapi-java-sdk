@@ -24,11 +24,11 @@ public class RollbackApplicationResponseUnmarshaller {
 	public static RollbackApplicationResponse unmarshall(RollbackApplicationResponse rollbackApplicationResponse, UnmarshallerContext _ctx) {
 		
 		rollbackApplicationResponse.setRequestId(_ctx.stringValue("RollbackApplicationResponse.RequestId"));
-		rollbackApplicationResponse.setCode(_ctx.stringValue("RollbackApplicationResponse.Code"));
-		rollbackApplicationResponse.setSuccess(_ctx.booleanValue("RollbackApplicationResponse.Success"));
-		rollbackApplicationResponse.setErrorCode(_ctx.stringValue("RollbackApplicationResponse.ErrorCode"));
 		rollbackApplicationResponse.setMessage(_ctx.stringValue("RollbackApplicationResponse.Message"));
 		rollbackApplicationResponse.setTraceId(_ctx.stringValue("RollbackApplicationResponse.TraceId"));
+		rollbackApplicationResponse.setErrorCode(_ctx.stringValue("RollbackApplicationResponse.ErrorCode"));
+		rollbackApplicationResponse.setCode(_ctx.stringValue("RollbackApplicationResponse.Code"));
+		rollbackApplicationResponse.setSuccess(_ctx.booleanValue("RollbackApplicationResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("RollbackApplicationResponse.Data.ChangeOrderId"));

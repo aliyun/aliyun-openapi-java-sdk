@@ -25,6 +25,8 @@ import com.aliyuncs.green.Endpoint;
 public class MarkAuditContentItemRequest extends RpcAcsRequest<MarkAuditContentItemResponse> {
 	   
 
+	private String bizTypes;
+
 	private String auditIllegalReasons;
 
 	private String sourceIp;
@@ -41,6 +43,17 @@ public class MarkAuditContentItemRequest extends RpcAcsRequest<MarkAuditContentI
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBizTypes() {
+		return this.bizTypes;
+	}
+
+	public void setBizTypes(String bizTypes) {
+		this.bizTypes = bizTypes;
+		if(bizTypes != null){
+			putQueryParameter("BizTypes", bizTypes);
+		}
 	}
 
 	public String getAuditIllegalReasons() {

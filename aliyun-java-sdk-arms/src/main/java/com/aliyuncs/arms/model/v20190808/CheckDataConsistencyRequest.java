@@ -33,7 +33,7 @@ public class CheckDataConsistencyRequest extends RpcAcsRequest<CheckDataConsiste
 
 	private String proxyUserId;
 	public CheckDataConsistencyRequest() {
-		super("ARMS", "2019-08-08", "CheckDataConsistency", "arms");
+		super("ARMS", "2019-08-08", "CheckDataConsistency");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

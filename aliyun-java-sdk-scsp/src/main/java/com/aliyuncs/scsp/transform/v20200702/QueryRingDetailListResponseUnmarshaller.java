@@ -24,9 +24,9 @@ public class QueryRingDetailListResponseUnmarshaller {
 		
 		queryRingDetailListResponse.setRequestId(_ctx.stringValue("QueryRingDetailListResponse.RequestId"));
 		queryRingDetailListResponse.setMessage(_ctx.stringValue("QueryRingDetailListResponse.Message"));
+		queryRingDetailListResponse.setData(_ctx.stringValue("QueryRingDetailListResponse.Data"));
 		queryRingDetailListResponse.setCode(_ctx.stringValue("QueryRingDetailListResponse.Code"));
 		queryRingDetailListResponse.setSuccess(_ctx.booleanValue("QueryRingDetailListResponse.Success"));
-		queryRingDetailListResponse.setData(_ctx.stringValue("QueryRingDetailListResponse.Data"));
 	 
 	 	return queryRingDetailListResponse;
 	}

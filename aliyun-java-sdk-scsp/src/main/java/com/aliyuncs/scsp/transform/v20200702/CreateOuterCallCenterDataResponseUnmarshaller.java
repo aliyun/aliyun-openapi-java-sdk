@@ -23,8 +23,8 @@ public class CreateOuterCallCenterDataResponseUnmarshaller {
 	public static CreateOuterCallCenterDataResponse unmarshall(CreateOuterCallCenterDataResponse createOuterCallCenterDataResponse, UnmarshallerContext _ctx) {
 		
 		createOuterCallCenterDataResponse.setRequestId(_ctx.stringValue("CreateOuterCallCenterDataResponse.RequestId"));
-		createOuterCallCenterDataResponse.setCode(_ctx.stringValue("CreateOuterCallCenterDataResponse.Code"));
 		createOuterCallCenterDataResponse.setMessage(_ctx.stringValue("CreateOuterCallCenterDataResponse.Message"));
+		createOuterCallCenterDataResponse.setCode(_ctx.stringValue("CreateOuterCallCenterDataResponse.Code"));
 		createOuterCallCenterDataResponse.setSuccess(_ctx.booleanValue("CreateOuterCallCenterDataResponse.Success"));
 	 
 	 	return createOuterCallCenterDataResponse;

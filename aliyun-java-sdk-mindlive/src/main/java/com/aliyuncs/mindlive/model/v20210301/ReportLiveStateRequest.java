@@ -24,20 +24,85 @@ import com.aliyuncs.http.MethodType;
 public class ReportLiveStateRequest extends RpcAcsRequest<ReportLiveStateResponse> {
 	   
 
-	private String liveStateDetail;
+	private String liveMode;
+
+	private String liveState;
+
+	private String id;
+
+	private Long startTime;
+
+	private String type;
+
+	private String anchorId;
 	public ReportLiveStateRequest() {
 		super("MindLive", "2021-03-01", "ReportLiveState");
 		setMethod(MethodType.POST);
 	}
 
-	public String getLiveStateDetail() {
-		return this.liveStateDetail;
+	public String getLiveMode() {
+		return this.liveMode;
 	}
 
-	public void setLiveStateDetail(String liveStateDetail) {
-		this.liveStateDetail = liveStateDetail;
-		if(liveStateDetail != null){
-			putQueryParameter("LiveStateDetail", liveStateDetail);
+	public void setLiveMode(String liveMode) {
+		this.liveMode = liveMode;
+		if(liveMode != null){
+			putQueryParameter("LiveMode", liveMode);
+		}
+	}
+
+	public String getLiveState() {
+		return this.liveState;
+	}
+
+	public void setLiveState(String liveState) {
+		this.liveState = liveState;
+		if(liveState != null){
+			putQueryParameter("LiveState", liveState);
+		}
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+		if(id != null){
+			putQueryParameter("Id", id);
+		}
+	}
+
+	public Long getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
+		}
+	}
+
+	public String getAnchorId() {
+		return this.anchorId;
+	}
+
+	public void setAnchorId(String anchorId) {
+		this.anchorId = anchorId;
+		if(anchorId != null){
+			putQueryParameter("AnchorId", anchorId);
 		}
 	}
 

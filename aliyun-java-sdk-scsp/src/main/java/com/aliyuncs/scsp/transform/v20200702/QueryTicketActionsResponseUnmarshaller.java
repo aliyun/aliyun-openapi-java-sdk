@@ -23,10 +23,10 @@ public class QueryTicketActionsResponseUnmarshaller {
 	public static QueryTicketActionsResponse unmarshall(QueryTicketActionsResponse queryTicketActionsResponse, UnmarshallerContext _ctx) {
 		
 		queryTicketActionsResponse.setRequestId(_ctx.stringValue("QueryTicketActionsResponse.RequestId"));
-		queryTicketActionsResponse.setSuccess(_ctx.booleanValue("QueryTicketActionsResponse.Success"));
 		queryTicketActionsResponse.setMessage(_ctx.stringValue("QueryTicketActionsResponse.Message"));
-		queryTicketActionsResponse.setCode(_ctx.stringValue("QueryTicketActionsResponse.Code"));
 		queryTicketActionsResponse.setData(_ctx.stringValue("QueryTicketActionsResponse.Data"));
+		queryTicketActionsResponse.setCode(_ctx.stringValue("QueryTicketActionsResponse.Code"));
+		queryTicketActionsResponse.setSuccess(_ctx.booleanValue("QueryTicketActionsResponse.Success"));
 	 
 	 	return queryTicketActionsResponse;
 	}

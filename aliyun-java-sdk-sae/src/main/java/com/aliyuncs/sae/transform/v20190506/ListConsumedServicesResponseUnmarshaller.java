@@ -27,20 +27,20 @@ public class ListConsumedServicesResponseUnmarshaller {
 	public static ListConsumedServicesResponse unmarshall(ListConsumedServicesResponse listConsumedServicesResponse, UnmarshallerContext _ctx) {
 		
 		listConsumedServicesResponse.setRequestId(_ctx.stringValue("ListConsumedServicesResponse.RequestId"));
-		listConsumedServicesResponse.setCode(_ctx.stringValue("ListConsumedServicesResponse.Code"));
 		listConsumedServicesResponse.setMessage(_ctx.stringValue("ListConsumedServicesResponse.Message"));
-		listConsumedServicesResponse.setSuccess(_ctx.booleanValue("ListConsumedServicesResponse.Success"));
-		listConsumedServicesResponse.setErrorCode(_ctx.stringValue("ListConsumedServicesResponse.ErrorCode"));
 		listConsumedServicesResponse.setTraceId(_ctx.stringValue("ListConsumedServicesResponse.TraceId"));
+		listConsumedServicesResponse.setErrorCode(_ctx.stringValue("ListConsumedServicesResponse.ErrorCode"));
+		listConsumedServicesResponse.setCode(_ctx.stringValue("ListConsumedServicesResponse.Code"));
+		listConsumedServicesResponse.setSuccess(_ctx.booleanValue("ListConsumedServicesResponse.Success"));
 
 		List<ListConsumedServices> data = new ArrayList<ListConsumedServices>();
 		for (int i = 0; i < _ctx.lengthValue("ListConsumedServicesResponse.Data.Length"); i++) {
 			ListConsumedServices listConsumedServices = new ListConsumedServices();
-			listConsumedServices.setAppId(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].AppId"));
 			listConsumedServices.setGroup2Ip(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Group2Ip"));
-			listConsumedServices.setName(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Name"));
 			listConsumedServices.setType(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Type"));
+			listConsumedServices.setAppId(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].AppId"));
 			listConsumedServices.setVersion(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Version"));
+			listConsumedServices.setName(_ctx.stringValue("ListConsumedServicesResponse.Data["+ i +"].Name"));
 
 			List<String> groups = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListConsumedServicesResponse.Data["+ i +"].Groups.Length"); j++) {

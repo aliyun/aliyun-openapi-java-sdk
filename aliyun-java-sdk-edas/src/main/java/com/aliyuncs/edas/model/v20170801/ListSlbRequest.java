@@ -25,7 +25,7 @@ import com.aliyuncs.edas.Endpoint;
 public class ListSlbRequest extends RoaAcsRequest<ListSlbResponse> {
 	   
 	public ListSlbRequest() {
-		super("Edas", "2017-08-01", "ListSlb", "edas");
+		super("Edas", "2017-08-01", "ListSlb", "Edas");
 		setUriPattern("/pop/v5/slb_list");
 		setMethod(MethodType.GET);
 		try {

@@ -24,13 +24,13 @@ public class GetUserTokenResponseUnmarshaller {
 	public static GetUserTokenResponse unmarshall(GetUserTokenResponse getUserTokenResponse, UnmarshallerContext _ctx) {
 		
 		getUserTokenResponse.setRequestId(_ctx.stringValue("GetUserTokenResponse.RequestId"));
-		getUserTokenResponse.setCode(_ctx.stringValue("GetUserTokenResponse.Code"));
 		getUserTokenResponse.setMessage(_ctx.stringValue("GetUserTokenResponse.Message"));
+		getUserTokenResponse.setCode(_ctx.stringValue("GetUserTokenResponse.Code"));
 		getUserTokenResponse.setSuccess(_ctx.booleanValue("GetUserTokenResponse.Success"));
 
 		Data data = new Data();
-		data.setExpires(_ctx.longValue("GetUserTokenResponse.Data.Expires"));
 		data.setToken(_ctx.stringValue("GetUserTokenResponse.Data.Token"));
+		data.setExpires(_ctx.longValue("GetUserTokenResponse.Data.Expires"));
 		getUserTokenResponse.setData(data);
 	 
 	 	return getUserTokenResponse;

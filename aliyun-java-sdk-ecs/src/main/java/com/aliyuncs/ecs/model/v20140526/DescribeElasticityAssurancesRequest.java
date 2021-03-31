@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -29,9 +30,13 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 
 	private String platform;
 
+	private String resourceGroupId;
+
 	private String nextToken;
 
 	private String instanceType;
+
+	private List<Tag> tags;
 
 	private String instanceChargeType;
 
@@ -79,6 +84,17 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		}
 	}
 
+	public String getResourceGroupId() {
+		return this.resourceGroupId;
+	}
+
+	public void setResourceGroupId(String resourceGroupId) {
+		this.resourceGroupId = resourceGroupId;
+		if(resourceGroupId != null){
+			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
 	public String getNextToken() {
 		return this.nextToken;
 	}
@@ -99,6 +115,20 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
 		}
+	}
+
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+			}
+		}	
 	}
 
 	public String getInstanceChargeType() {
@@ -186,6 +216,29 @@ public class DescribeElasticityAssurancesRequest extends RpcAcsRequest<DescribeE
 		this.status = status;
 		if(status != null){
 			putQueryParameter("Status", status);
+		}
+	}
+
+	public static class Tag {
+
+		private String key;
+
+		private String value;
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
 		}
 	}
 

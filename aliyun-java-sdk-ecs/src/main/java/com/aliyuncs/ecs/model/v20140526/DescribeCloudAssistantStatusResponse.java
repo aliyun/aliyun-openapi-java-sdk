@@ -79,9 +79,17 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String oSType;
+
 		private String cloudAssistantStatus;
 
 		private String cloudAssistantVersion;
+
+		private Long invocationCount;
+
+		private Long activeTaskCount;
+
+		private String lastInvokedTime;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -89,6 +97,14 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
 		}
 
 		public String getCloudAssistantStatus() {
@@ -105,6 +121,30 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		public void setCloudAssistantVersion(String cloudAssistantVersion) {
 			this.cloudAssistantVersion = cloudAssistantVersion;
+		}
+
+		public Long getInvocationCount() {
+			return this.invocationCount;
+		}
+
+		public void setInvocationCount(Long invocationCount) {
+			this.invocationCount = invocationCount;
+		}
+
+		public Long getActiveTaskCount() {
+			return this.activeTaskCount;
+		}
+
+		public void setActiveTaskCount(Long activeTaskCount) {
+			this.activeTaskCount = activeTaskCount;
+		}
+
+		public String getLastInvokedTime() {
+			return this.lastInvokedTime;
+		}
+
+		public void setLastInvokedTime(String lastInvokedTime) {
+			this.lastInvokedTime = lastInvokedTime;
 		}
 	}
 

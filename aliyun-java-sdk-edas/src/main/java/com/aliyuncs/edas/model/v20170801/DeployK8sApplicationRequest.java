@@ -95,6 +95,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private Integer batchTimeout;
 
+	private String pvcMountDescs;
+
 	private Integer mcpuRequest;
 
 	private Integer mcpuLimit;
@@ -109,7 +111,7 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String javaStartUpConfig;
 	public DeployK8sApplicationRequest() {
-		super("Edas", "2017-08-01", "DeployK8sApplication", "edas");
+		super("Edas", "2017-08-01", "DeployK8sApplication", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_apps");
 		setMethod(MethodType.POST);
 		try {
@@ -500,6 +502,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.batchTimeout = batchTimeout;
 		if(batchTimeout != null){
 			putQueryParameter("BatchTimeout", batchTimeout.toString());
+		}
+	}
+
+	public String getPvcMountDescs() {
+		return this.pvcMountDescs;
+	}
+
+	public void setPvcMountDescs(String pvcMountDescs) {
+		this.pvcMountDescs = pvcMountDescs;
+		if(pvcMountDescs != null){
+			putQueryParameter("PvcMountDescs", pvcMountDescs);
 		}
 	}
 

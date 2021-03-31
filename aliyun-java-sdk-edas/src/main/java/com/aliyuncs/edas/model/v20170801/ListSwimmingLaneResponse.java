@@ -81,6 +81,8 @@ public class ListSwimmingLaneResponse extends AcsResponse {
 
 		private Boolean enableRules;
 
+		private String scenarioSign;
+
 		private List<SwimmingLaneAppRelationShip> swimmingLaneAppRelationShipList;
 
 		public Long getId() {
@@ -137,6 +139,14 @@ public class ListSwimmingLaneResponse extends AcsResponse {
 
 		public void setEnableRules(Boolean enableRules) {
 			this.enableRules = enableRules;
+		}
+
+		public String getScenarioSign() {
+			return this.scenarioSign;
+		}
+
+		public void setScenarioSign(String scenarioSign) {
+			this.scenarioSign = scenarioSign;
 		}
 
 		public List<SwimmingLaneAppRelationShip> getSwimmingLaneAppRelationShipList() {

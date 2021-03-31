@@ -31,6 +31,7 @@ public class DescribeOssIncrementCheckSettingResponseUnmarshaller {
 		describeOssIncrementCheckSettingResponse.setRequestId(_ctx.stringValue("DescribeOssIncrementCheckSettingResponse.RequestId"));
 		describeOssIncrementCheckSettingResponse.setImageEnableLimit(_ctx.booleanValue("DescribeOssIncrementCheckSettingResponse.ImageEnableLimit"));
 		describeOssIncrementCheckSettingResponse.setImageScanLimit(_ctx.longValue("DescribeOssIncrementCheckSettingResponse.ImageScanLimit"));
+		describeOssIncrementCheckSettingResponse.setScanImageNoFileType(_ctx.booleanValue("DescribeOssIncrementCheckSettingResponse.ScanImageNoFileType"));
 		describeOssIncrementCheckSettingResponse.setVideoFrameInterval(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoFrameInterval"));
 		describeOssIncrementCheckSettingResponse.setVideoMaxFrames(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxFrames"));
 		describeOssIncrementCheckSettingResponse.setVideoMaxSize(_ctx.integerValue("DescribeOssIncrementCheckSettingResponse.VideoMaxSize"));

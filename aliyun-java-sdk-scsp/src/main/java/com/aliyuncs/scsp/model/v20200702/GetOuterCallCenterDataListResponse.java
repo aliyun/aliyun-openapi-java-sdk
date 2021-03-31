@@ -27,9 +27,9 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,42 +77,58 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String sessionId;
+		private String fromPhoneNum;
 
-		private String interveneTime;
+		private String toPhoneNum;
+
+		private String acid;
+
+		private String endReason;
 
 		private String extInfo;
 
-		private String bizId;
+		private String callType;
 
 		private String bizType;
 
 		private String userInfo;
 
-		private String endReason;
+		private String sessionId;
 
-		private String toPhoneNum;
+		private String bizId;
 
-		private String fromPhoneNum;
+		private String interveneTime;
 
-		private String callType;
-
-		private String acid;
-
-		public String getSessionId() {
-			return this.sessionId;
+		public String getFromPhoneNum() {
+			return this.fromPhoneNum;
 		}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
+		public void setFromPhoneNum(String fromPhoneNum) {
+			this.fromPhoneNum = fromPhoneNum;
 		}
 
-		public String getInterveneTime() {
-			return this.interveneTime;
+		public String getToPhoneNum() {
+			return this.toPhoneNum;
 		}
 
-		public void setInterveneTime(String interveneTime) {
-			this.interveneTime = interveneTime;
+		public void setToPhoneNum(String toPhoneNum) {
+			this.toPhoneNum = toPhoneNum;
+		}
+
+		public String getAcid() {
+			return this.acid;
+		}
+
+		public void setAcid(String acid) {
+			this.acid = acid;
+		}
+
+		public String getEndReason() {
+			return this.endReason;
+		}
+
+		public void setEndReason(String endReason) {
+			this.endReason = endReason;
 		}
 
 		public String getExtInfo() {
@@ -123,12 +139,12 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 			this.extInfo = extInfo;
 		}
 
-		public String getBizId() {
-			return this.bizId;
+		public String getCallType() {
+			return this.callType;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setCallType(String callType) {
+			this.callType = callType;
 		}
 
 		public String getBizType() {
@@ -147,44 +163,28 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 			this.userInfo = userInfo;
 		}
 
-		public String getEndReason() {
-			return this.endReason;
+		public String getSessionId() {
+			return this.sessionId;
 		}
 
-		public void setEndReason(String endReason) {
-			this.endReason = endReason;
+		public void setSessionId(String sessionId) {
+			this.sessionId = sessionId;
 		}
 
-		public String getToPhoneNum() {
-			return this.toPhoneNum;
+		public String getBizId() {
+			return this.bizId;
 		}
 
-		public void setToPhoneNum(String toPhoneNum) {
-			this.toPhoneNum = toPhoneNum;
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
 		}
 
-		public String getFromPhoneNum() {
-			return this.fromPhoneNum;
+		public String getInterveneTime() {
+			return this.interveneTime;
 		}
 
-		public void setFromPhoneNum(String fromPhoneNum) {
-			this.fromPhoneNum = fromPhoneNum;
-		}
-
-		public String getCallType() {
-			return this.callType;
-		}
-
-		public void setCallType(String callType) {
-			this.callType = callType;
-		}
-
-		public String getAcid() {
-			return this.acid;
-		}
-
-		public void setAcid(String acid) {
-			this.acid = acid;
+		public void setInterveneTime(String interveneTime) {
+			this.interveneTime = interveneTime;
 		}
 	}
 

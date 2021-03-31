@@ -23,8 +23,8 @@ public class AssignTicketResponseUnmarshaller {
 	public static AssignTicketResponse unmarshall(AssignTicketResponse assignTicketResponse, UnmarshallerContext _ctx) {
 		
 		assignTicketResponse.setRequestId(_ctx.stringValue("AssignTicketResponse.RequestId"));
-		assignTicketResponse.setCode(_ctx.stringValue("AssignTicketResponse.Code"));
 		assignTicketResponse.setMessage(_ctx.stringValue("AssignTicketResponse.Message"));
+		assignTicketResponse.setCode(_ctx.stringValue("AssignTicketResponse.Code"));
 		assignTicketResponse.setSuccess(_ctx.booleanValue("AssignTicketResponse.Success"));
 	 
 	 	return assignTicketResponse;

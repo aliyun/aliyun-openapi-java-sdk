@@ -33,6 +33,8 @@ public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSett
 
 	private String bizTypeName;
 
+	private String live;
+
 	private String ad;
 
 	private String resourceType;
@@ -86,6 +88,17 @@ public class UpdateBizTypeSettingRequest extends RpcAcsRequest<UpdateBizTypeSett
 		this.bizTypeName = bizTypeName;
 		if(bizTypeName != null){
 			putQueryParameter("BizTypeName", bizTypeName);
+		}
+	}
+
+	public String getLive() {
+		return this.live;
+	}
+
+	public void setLive(String live) {
+		this.live = live;
+		if(live != null){
+			putQueryParameter("Live", live);
 		}
 	}
 

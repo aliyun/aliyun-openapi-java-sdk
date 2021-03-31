@@ -145,6 +145,12 @@ public class GetResultResponse extends AcsResponse {
 
 		private String reviewTimeLong;
 
+		private Integer reviewType;
+
+		private String assignmentTime;
+
+		private String lastDataId;
+
 		private List<AsrResultItem> asrResult;
 
 		private List<HitResultItem> hitResult;
@@ -265,6 +271,30 @@ public class GetResultResponse extends AcsResponse {
 
 		public void setReviewTimeLong(String reviewTimeLong) {
 			this.reviewTimeLong = reviewTimeLong;
+		}
+
+		public Integer getReviewType() {
+			return this.reviewType;
+		}
+
+		public void setReviewType(Integer reviewType) {
+			this.reviewType = reviewType;
+		}
+
+		public String getAssignmentTime() {
+			return this.assignmentTime;
+		}
+
+		public void setAssignmentTime(String assignmentTime) {
+			this.assignmentTime = assignmentTime;
+		}
+
+		public String getLastDataId() {
+			return this.lastDataId;
+		}
+
+		public void setLastDataId(String lastDataId) {
+			this.lastDataId = lastDataId;
 		}
 
 		public List<AsrResultItem> getAsrResult() {
@@ -647,6 +677,8 @@ public class GetResultResponse extends AcsResponse {
 
 			private String remark13;
 
+			private Integer dialogueSize;
+
 			public String getId() {
 				return this.id;
 			}
@@ -845,6 +877,14 @@ public class GetResultResponse extends AcsResponse {
 
 			public void setRemark13(String remark13) {
 				this.remark13 = remark13;
+			}
+
+			public Integer getDialogueSize() {
+				return this.dialogueSize;
+			}
+
+			public void setDialogueSize(Integer dialogueSize) {
+				this.dialogueSize = dialogueSize;
 			}
 		}
 

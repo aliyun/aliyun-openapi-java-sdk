@@ -60,6 +60,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Boolean globalInstance;
 
+	private String privateIp;
+
 	private Long ownerId;
 
 	private String vSwitchId;
@@ -269,6 +271,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.globalInstance = globalInstance;
 		if(globalInstance != null){
 			putQueryParameter("GlobalInstance", globalInstance.toString());
+		}
+	}
+
+	public String getPrivateIp() {
+		return this.privateIp;
+	}
+
+	public void setPrivateIp(String privateIp) {
+		this.privateIp = privateIp;
+		if(privateIp != null){
+			putQueryParameter("PrivateIp", privateIp);
 		}
 	}
 

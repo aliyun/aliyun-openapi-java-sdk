@@ -50,6 +50,10 @@ public class ListPackageResponseUnmarshaller {
 			_package.setOssOwner(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].OssOwner"));
 			_package.setOssPath(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].OssPath"));
 			_package.setTag(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].Tag"));
+			_package.setScanState(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].ScanState"));
+			_package.setScanLink(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].ScanLink"));
+			_package.setScanExtBizNo(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].ScanExtBizNo"));
+			_package.setScanErrorMessage(_ctx.stringValue("ListPackageResponse.Packages["+ i +"].ScanErrorMessage"));
 
 			packages.add(_package);
 		}

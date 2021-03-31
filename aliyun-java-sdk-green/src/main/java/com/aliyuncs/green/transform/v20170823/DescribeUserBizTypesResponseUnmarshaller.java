@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.green.model.v20170823.DescribeUserBizTypesResponse;
+import com.aliyuncs.green.model.v20170823.DescribeUserBizTypesResponse.ImportItem;
 import com.aliyuncs.green.model.v20170823.DescribeUserBizTypesResponse.Item;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -37,22 +38,24 @@ public class DescribeUserBizTypesResponseUnmarshaller {
 			item.setSource(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].Source"));
 			item.setCiteTemplate(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].CiteTemplate"));
 			item.setIndustryInfo(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].IndustryInfo"));
+			item.setDescription(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeList["+ i +"].Description"));
 
 			bizTypeList.add(item);
 		}
 		describeUserBizTypesResponse.setBizTypeList(bizTypeList);
 
-		List<Item> bizTypeListImport = new ArrayList<Item>();
+		List<ImportItem> bizTypeListImport = new ArrayList<ImportItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserBizTypesResponse.BizTypeListImport.Length"); i++) {
-			Item item_ = new Item();
-			item_.setBizType(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].BizType"));
-			item_.setSourceBizType(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].SourceBizType"));
-			item_.setGray(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Gray"));
-			item_.setSource(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Source"));
-			item_.setCiteTemplate(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].CiteTemplate"));
-			item_.setIndustryInfo(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].IndustryInfo"));
+			ImportItem importItem = new ImportItem();
+			importItem.setBizType(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].BizType"));
+			importItem.setSourceBizType(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].SourceBizType"));
+			importItem.setGray(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Gray"));
+			importItem.setSource(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Source"));
+			importItem.setCiteTemplate(_ctx.booleanValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].CiteTemplate"));
+			importItem.setIndustryInfo(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].IndustryInfo"));
+			importItem.setDescription(_ctx.stringValue("DescribeUserBizTypesResponse.BizTypeListImport["+ i +"].Description"));
 
-			bizTypeListImport.add(item_);
+			bizTypeListImport.add(importItem);
 		}
 		describeUserBizTypesResponse.setBizTypeListImport(bizTypeListImport);
 	 

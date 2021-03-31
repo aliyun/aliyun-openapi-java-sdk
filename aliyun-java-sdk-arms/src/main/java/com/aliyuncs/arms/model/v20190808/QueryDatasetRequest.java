@@ -56,7 +56,7 @@ public class QueryDatasetRequest extends RpcAcsRequest<QueryDatasetResponse> {
 
 	private List<Dimensions> dimensionss;
 	public QueryDatasetRequest() {
-		super("ARMS", "2019-08-08", "QueryDataset", "arms");
+		super("ARMS", "2019-08-08", "QueryDataset");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

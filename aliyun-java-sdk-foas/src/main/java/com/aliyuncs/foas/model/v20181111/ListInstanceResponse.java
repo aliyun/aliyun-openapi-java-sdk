@@ -133,6 +133,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private Long endTime;
 
+		private Integer priority;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -315,6 +317,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setEndTime(Long endTime) {
 			this.endTime = endTime;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
 		}
 	}
 

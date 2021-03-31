@@ -41,6 +41,7 @@ public class ListSwimmingLaneResponseUnmarshaller {
 			swimmingLane.setGroupId(_ctx.longValue("ListSwimmingLaneResponse.Data["+ i +"].GroupId"));
 			swimmingLane.setEntryRule(_ctx.stringValue("ListSwimmingLaneResponse.Data["+ i +"].EntryRule"));
 			swimmingLane.setEnableRules(_ctx.booleanValue("ListSwimmingLaneResponse.Data["+ i +"].EnableRules"));
+			swimmingLane.setScenarioSign(_ctx.stringValue("ListSwimmingLaneResponse.Data["+ i +"].ScenarioSign"));
 
 			List<SwimmingLaneAppRelationShip> swimmingLaneAppRelationShipList = new ArrayList<SwimmingLaneAppRelationShip>();
 			for (int j = 0; j < _ctx.lengthValue("ListSwimmingLaneResponse.Data["+ i +"].SwimmingLaneAppRelationShipList.Length"); j++) {

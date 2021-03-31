@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSceneResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String code;
+
+	private String requestId;
 
 	private String message;
 
 	private Result result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getCode() {
 		return this.code;
@@ -46,6 +38,14 @@ public class CreateSceneResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -66,21 +66,13 @@ public class CreateSceneResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String gmtCreate;
-
 		private String gmtModified;
 
 		private String sceneId;
 
+		private String gmtCreate;
+
 		private String status;
-
-		public String getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(String gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
 
 		public String getGmtModified() {
 			return this.gmtModified;
@@ -96,6 +88,14 @@ public class CreateSceneResponse extends AcsResponse {
 
 		public void setSceneId(String sceneId) {
 			this.sceneId = sceneId;
+		}
+
+		public String getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(String gmtCreate) {
+			this.gmtCreate = gmtCreate;
 		}
 
 		public String getStatus() {

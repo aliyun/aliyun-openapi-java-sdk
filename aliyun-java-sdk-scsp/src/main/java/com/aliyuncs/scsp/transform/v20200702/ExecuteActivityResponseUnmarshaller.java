@@ -23,9 +23,9 @@ public class ExecuteActivityResponseUnmarshaller {
 	public static ExecuteActivityResponse unmarshall(ExecuteActivityResponse executeActivityResponse, UnmarshallerContext _ctx) {
 		
 		executeActivityResponse.setRequestId(_ctx.stringValue("ExecuteActivityResponse.RequestId"));
-		executeActivityResponse.setSuccess(_ctx.booleanValue("ExecuteActivityResponse.Success"));
-		executeActivityResponse.setCode(_ctx.stringValue("ExecuteActivityResponse.Code"));
 		executeActivityResponse.setMessage(_ctx.stringValue("ExecuteActivityResponse.Message"));
+		executeActivityResponse.setCode(_ctx.stringValue("ExecuteActivityResponse.Code"));
+		executeActivityResponse.setSuccess(_ctx.booleanValue("ExecuteActivityResponse.Success"));
 	 
 	 	return executeActivityResponse;
 	}

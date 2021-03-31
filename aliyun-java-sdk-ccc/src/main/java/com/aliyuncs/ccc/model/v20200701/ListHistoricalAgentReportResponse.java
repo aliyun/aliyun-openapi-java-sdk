@@ -380,7 +380,7 @@ public class ListHistoricalAgentReportResponse extends AcsResponse {
 
 				private Float averageTalkTime;
 
-				private Long averageWorkTime;
+				private Float averageWorkTime;
 
 				private Long callsAnswered;
 
@@ -430,11 +430,11 @@ public class ListHistoricalAgentReportResponse extends AcsResponse {
 					this.averageTalkTime = averageTalkTime;
 				}
 
-				public Long getAverageWorkTime() {
+				public Float getAverageWorkTime() {
 					return this.averageWorkTime;
 				}
 
-				public void setAverageWorkTime(Long averageWorkTime) {
+				public void setAverageWorkTime(Float averageWorkTime) {
 					this.averageWorkTime = averageWorkTime;
 				}
 

@@ -23,10 +23,10 @@ public class GetTicketTemplateSchemaResponseUnmarshaller {
 	public static GetTicketTemplateSchemaResponse unmarshall(GetTicketTemplateSchemaResponse getTicketTemplateSchemaResponse, UnmarshallerContext _ctx) {
 		
 		getTicketTemplateSchemaResponse.setRequestId(_ctx.stringValue("GetTicketTemplateSchemaResponse.RequestId"));
-		getTicketTemplateSchemaResponse.setSuccess(_ctx.booleanValue("GetTicketTemplateSchemaResponse.Success"));
-		getTicketTemplateSchemaResponse.setCode(_ctx.stringValue("GetTicketTemplateSchemaResponse.Code"));
 		getTicketTemplateSchemaResponse.setMessage(_ctx.stringValue("GetTicketTemplateSchemaResponse.Message"));
 		getTicketTemplateSchemaResponse.setData(_ctx.stringValue("GetTicketTemplateSchemaResponse.Data"));
+		getTicketTemplateSchemaResponse.setCode(_ctx.stringValue("GetTicketTemplateSchemaResponse.Code"));
+		getTicketTemplateSchemaResponse.setSuccess(_ctx.booleanValue("GetTicketTemplateSchemaResponse.Success"));
 	 
 	 	return getTicketTemplateSchemaResponse;
 	}

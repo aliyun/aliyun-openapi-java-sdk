@@ -33,13 +33,13 @@ public class CreateImportMigrationRequest extends RpcAcsRequest<CreateImportMigr
 
 	private String calculateEngineMap;
 
+	private String packageFile;
+
 	private String name;
 
 	private String packageType;
 
 	private Long projectId;
-
-	private String packageOssDownloadLink;
 	public CreateImportMigrationRequest() {
 		super("dataworks-public", "2020-05-18", "CreateImportMigration");
 		setMethod(MethodType.POST);
@@ -93,6 +93,17 @@ public class CreateImportMigrationRequest extends RpcAcsRequest<CreateImportMigr
 		}
 	}
 
+	public String getPackageFile() {
+		return this.packageFile;
+	}
+
+	public void setPackageFile(String packageFile) {
+		this.packageFile = packageFile;
+		if(packageFile != null){
+			putBodyParameter("PackageFile", packageFile);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -123,17 +134,6 @@ public class CreateImportMigrationRequest extends RpcAcsRequest<CreateImportMigr
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
-		}
-	}
-
-	public String getPackageOssDownloadLink() {
-		return this.packageOssDownloadLink;
-	}
-
-	public void setPackageOssDownloadLink(String packageOssDownloadLink) {
-		this.packageOssDownloadLink = packageOssDownloadLink;
-		if(packageOssDownloadLink != null){
-			putBodyParameter("PackageOssDownloadLink", packageOssDownloadLink);
 		}
 	}
 

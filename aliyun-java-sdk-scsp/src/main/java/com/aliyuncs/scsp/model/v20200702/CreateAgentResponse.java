@@ -26,13 +26,15 @@ public class CreateAgentResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
+
+	private Long httpStatusCode;
+
+	private Long data;
 
 	private String code;
 
-	private String message;
-
-	private Long data;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +42,6 @@ public class CreateAgentResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -66,12 +52,36 @@ public class CreateAgentResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Long getData() {
 		return this.data;
 	}
 
 	public void setData(Long data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

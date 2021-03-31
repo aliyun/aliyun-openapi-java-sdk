@@ -23,10 +23,10 @@ public class SendOutboundCommandResponseUnmarshaller {
 	public static SendOutboundCommandResponse unmarshall(SendOutboundCommandResponse sendOutboundCommandResponse, UnmarshallerContext _ctx) {
 		
 		sendOutboundCommandResponse.setRequestId(_ctx.stringValue("SendOutboundCommandResponse.RequestId"));
-		sendOutboundCommandResponse.setCode(_ctx.stringValue("SendOutboundCommandResponse.Code"));
 		sendOutboundCommandResponse.setMessage(_ctx.stringValue("SendOutboundCommandResponse.Message"));
-		sendOutboundCommandResponse.setSuccess(_ctx.booleanValue("SendOutboundCommandResponse.Success"));
 		sendOutboundCommandResponse.setData(_ctx.stringValue("SendOutboundCommandResponse.Data"));
+		sendOutboundCommandResponse.setCode(_ctx.stringValue("SendOutboundCommandResponse.Code"));
+		sendOutboundCommandResponse.setSuccess(_ctx.booleanValue("SendOutboundCommandResponse.Success"));
 	 
 	 	return sendOutboundCommandResponse;
 	}

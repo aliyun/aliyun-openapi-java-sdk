@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTagListResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
 	private List<DataItem> data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class GetTagListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,20 +77,20 @@ public class GetTagListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String tagGroupName;
+		private String scenarioCode;
 
 		private String tagGroupCode;
 
-		private String scenarioCode;
+		private String tagGroupName;
 
 		private List<TagValuesItem> tagValues;
 
-		public String getTagGroupName() {
-			return this.tagGroupName;
+		public String getScenarioCode() {
+			return this.scenarioCode;
 		}
 
-		public void setTagGroupName(String tagGroupName) {
-			this.tagGroupName = tagGroupName;
+		public void setScenarioCode(String scenarioCode) {
+			this.scenarioCode = scenarioCode;
 		}
 
 		public String getTagGroupCode() {
@@ -101,12 +101,12 @@ public class GetTagListResponse extends AcsResponse {
 			this.tagGroupCode = tagGroupCode;
 		}
 
-		public String getScenarioCode() {
-			return this.scenarioCode;
+		public String getTagGroupName() {
+			return this.tagGroupName;
 		}
 
-		public void setScenarioCode(String scenarioCode) {
-			this.scenarioCode = scenarioCode;
+		public void setTagGroupName(String tagGroupName) {
+			this.tagGroupName = tagGroupName;
 		}
 
 		public List<TagValuesItem> getTagValues() {
@@ -119,19 +119,35 @@ public class GetTagListResponse extends AcsResponse {
 
 		public static class TagValuesItem {
 
-			private String tagName;
+			private String status;
 
-			private String tagCode;
+			private String description;
+
+			private String tagName;
 
 			private String tagGroupCode;
 
 			private String tagGroupName;
 
-			private String status;
+			private String tagCode;
 
 			private String entityRelationNumber;
 
-			private String description;
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
 
 			public String getTagName() {
 				return this.tagName;
@@ -139,14 +155,6 @@ public class GetTagListResponse extends AcsResponse {
 
 			public void setTagName(String tagName) {
 				this.tagName = tagName;
-			}
-
-			public String getTagCode() {
-				return this.tagCode;
-			}
-
-			public void setTagCode(String tagCode) {
-				this.tagCode = tagCode;
 			}
 
 			public String getTagGroupCode() {
@@ -165,12 +173,12 @@ public class GetTagListResponse extends AcsResponse {
 				this.tagGroupName = tagGroupName;
 			}
 
-			public String getStatus() {
-				return this.status;
+			public String getTagCode() {
+				return this.tagCode;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setTagCode(String tagCode) {
+				this.tagCode = tagCode;
 			}
 
 			public String getEntityRelationNumber() {
@@ -179,14 +187,6 @@ public class GetTagListResponse extends AcsResponse {
 
 			public void setEntityRelationNumber(String entityRelationNumber) {
 				this.entityRelationNumber = entityRelationNumber;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
 			}
 		}
 	}

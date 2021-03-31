@@ -67,27 +67,50 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 
 	public static class Black {
 
-		private List<Item> selected;
+		private List<WhiteSelectedItem> selected;
 
-		private List<Item> all;
+		private List<WhiteAllItem> all;
 
-		public List<Item> getSelected() {
+		public List<WhiteSelectedItem> getSelected() {
 			return this.selected;
 		}
 
-		public void setSelected(List<Item> selected) {
+		public void setSelected(List<WhiteSelectedItem> selected) {
 			this.selected = selected;
 		}
 
-		public List<Item> getAll() {
+		public List<WhiteAllItem> getAll() {
 			return this.all;
 		}
 
-		public void setAll(List<Item> all) {
+		public void setAll(List<WhiteAllItem> all) {
 			this.all = all;
 		}
 
-		public static class Item {
+		public static class WhiteSelectedItem {
+
+			private String name;
+
+			private String code;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+		}
+
+		public static class WhiteAllItem {
 
 			private String name;
 
@@ -113,27 +136,50 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 
 	public static class Review {
 
-		private List<Item3> selected1;
+		private List<WhiteSelectedItem3> selected1;
 
-		private List<Item3> all2;
+		private List<WhiteAllItem4> all2;
 
-		public List<Item3> getSelected1() {
+		public List<WhiteSelectedItem3> getSelected1() {
 			return this.selected1;
 		}
 
-		public void setSelected1(List<Item3> selected1) {
+		public void setSelected1(List<WhiteSelectedItem3> selected1) {
 			this.selected1 = selected1;
 		}
 
-		public List<Item3> getAll2() {
+		public List<WhiteAllItem4> getAll2() {
 			return this.all2;
 		}
 
-		public void setAll2(List<Item3> all2) {
+		public void setAll2(List<WhiteAllItem4> all2) {
 			this.all2 = all2;
 		}
 
-		public static class Item3 {
+		public static class WhiteSelectedItem3 {
+
+			private String name;
+
+			private String code;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+		}
+
+		public static class WhiteAllItem4 {
 
 			private String name;
 
@@ -159,27 +205,50 @@ public class DescribeBizTypeImageLibResponse extends AcsResponse {
 
 	public static class White {
 
-		private List<Item6> selected4;
+		private List<WhiteSelectedItem7> selected5;
 
-		private List<Item6> all5;
+		private List<WhiteAllItem8> all6;
 
-		public List<Item6> getSelected4() {
-			return this.selected4;
+		public List<WhiteSelectedItem7> getSelected5() {
+			return this.selected5;
 		}
 
-		public void setSelected4(List<Item6> selected4) {
-			this.selected4 = selected4;
+		public void setSelected5(List<WhiteSelectedItem7> selected5) {
+			this.selected5 = selected5;
 		}
 
-		public List<Item6> getAll5() {
-			return this.all5;
+		public List<WhiteAllItem8> getAll6() {
+			return this.all6;
 		}
 
-		public void setAll5(List<Item6> all5) {
-			this.all5 = all5;
+		public void setAll6(List<WhiteAllItem8> all6) {
+			this.all6 = all6;
 		}
 
-		public static class Item6 {
+		public static class WhiteSelectedItem7 {
+
+			private String name;
+
+			private String code;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+		}
+
+		public static class WhiteAllItem8 {
 
 			private String name;
 

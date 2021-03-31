@@ -27,6 +27,8 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 
 	private Integer pageNumber;
 
+	private String condition;
+
 	private Integer pageSize;
 
 	private String vcName;
@@ -47,6 +49,17 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getCondition() {
+		return this.condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+		if(condition != null){
+			putQueryParameter("Condition", condition);
 		}
 	}
 

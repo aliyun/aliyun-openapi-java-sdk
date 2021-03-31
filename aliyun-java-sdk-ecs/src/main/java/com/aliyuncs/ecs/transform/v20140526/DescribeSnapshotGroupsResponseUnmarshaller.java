@@ -39,6 +39,7 @@ public class DescribeSnapshotGroupsResponseUnmarshaller {
 			snapshotGroup.setName(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Name"));
 			snapshotGroup.setDescription(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Description"));
 			snapshotGroup.setCreationTime(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].CreationTime"));
+			snapshotGroup.setProgressStatus(_ctx.stringValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].ProgressStatus"));
 
 			List<Snapshot> snapshots = new ArrayList<Snapshot>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSnapshotGroupsResponse.SnapshotGroups["+ i +"].Snapshots.Length"); j++) {

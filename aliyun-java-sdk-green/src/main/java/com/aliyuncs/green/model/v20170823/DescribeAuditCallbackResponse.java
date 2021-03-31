@@ -30,6 +30,8 @@ public class DescribeAuditCallbackResponse extends AcsResponse {
 
 	private String callback;
 
+	private Integer cryptType;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -52,6 +54,14 @@ public class DescribeAuditCallbackResponse extends AcsResponse {
 
 	public void setCallback(String callback) {
 		this.callback = callback;
+	}
+
+	public Integer getCryptType() {
+		return this.cryptType;
+	}
+
+	public void setCryptType(Integer cryptType) {
+		this.cryptType = cryptType;
 	}
 
 	@Override

@@ -24,11 +24,11 @@ public class BindSlbResponseUnmarshaller {
 	public static BindSlbResponse unmarshall(BindSlbResponse bindSlbResponse, UnmarshallerContext _ctx) {
 		
 		bindSlbResponse.setRequestId(_ctx.stringValue("BindSlbResponse.RequestId"));
-		bindSlbResponse.setCode(_ctx.stringValue("BindSlbResponse.Code"));
 		bindSlbResponse.setMessage(_ctx.stringValue("BindSlbResponse.Message"));
-		bindSlbResponse.setErrorCode(_ctx.stringValue("BindSlbResponse.ErrorCode"));
-		bindSlbResponse.setSuccess(_ctx.booleanValue("BindSlbResponse.Success"));
 		bindSlbResponse.setTraceId(_ctx.stringValue("BindSlbResponse.TraceId"));
+		bindSlbResponse.setErrorCode(_ctx.stringValue("BindSlbResponse.ErrorCode"));
+		bindSlbResponse.setCode(_ctx.stringValue("BindSlbResponse.Code"));
+		bindSlbResponse.setSuccess(_ctx.booleanValue("BindSlbResponse.Success"));
 
 		Data data = new Data();
 		data.setChangeOrderId(_ctx.stringValue("BindSlbResponse.Data.ChangeOrderId"));

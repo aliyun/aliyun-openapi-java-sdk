@@ -43,6 +43,8 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 
 	private String productType;
 
+	private String recordID;
+
 	private String nextToken;
 
 	private Integer maxResults;
@@ -151,6 +153,17 @@ public class QuerySettleBillRequest extends RpcAcsRequest<QuerySettleBillRespons
 		this.productType = productType;
 		if(productType != null){
 			putQueryParameter("ProductType", productType);
+		}
+	}
+
+	public String getRecordID() {
+		return this.recordID;
+	}
+
+	public void setRecordID(String recordID) {
+		this.recordID = recordID;
+		if(recordID != null){
+			putQueryParameter("RecordID", recordID);
 		}
 	}
 

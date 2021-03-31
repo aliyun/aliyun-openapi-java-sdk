@@ -23,14 +23,14 @@ public class CreateSceneResponseUnmarshaller {
 
 	public static CreateSceneResponse unmarshall(CreateSceneResponse createSceneResponse, UnmarshallerContext _ctx) {
 		
-		createSceneResponse.setRequestId(_ctx.stringValue("CreateSceneResponse.requestId"));
 		createSceneResponse.setCode(_ctx.stringValue("CreateSceneResponse.code"));
+		createSceneResponse.setRequestId(_ctx.stringValue("CreateSceneResponse.requestId"));
 		createSceneResponse.setMessage(_ctx.stringValue("CreateSceneResponse.message"));
 
 		Result result = new Result();
-		result.setGmtCreate(_ctx.stringValue("CreateSceneResponse.result.gmtCreate"));
 		result.setGmtModified(_ctx.stringValue("CreateSceneResponse.result.gmtModified"));
 		result.setSceneId(_ctx.stringValue("CreateSceneResponse.result.sceneId"));
+		result.setGmtCreate(_ctx.stringValue("CreateSceneResponse.result.gmtCreate"));
 		result.setStatus(_ctx.stringValue("CreateSceneResponse.result.status"));
 		createSceneResponse.setResult(result);
 	 

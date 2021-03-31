@@ -23,10 +23,10 @@ public class QueryTicketCountResponseUnmarshaller {
 	public static QueryTicketCountResponse unmarshall(QueryTicketCountResponse queryTicketCountResponse, UnmarshallerContext _ctx) {
 		
 		queryTicketCountResponse.setRequestId(_ctx.stringValue("QueryTicketCountResponse.RequestId"));
-		queryTicketCountResponse.setSuccess(_ctx.booleanValue("QueryTicketCountResponse.Success"));
-		queryTicketCountResponse.setCode(_ctx.stringValue("QueryTicketCountResponse.Code"));
 		queryTicketCountResponse.setMessage(_ctx.stringValue("QueryTicketCountResponse.Message"));
 		queryTicketCountResponse.setData(_ctx.stringValue("QueryTicketCountResponse.Data"));
+		queryTicketCountResponse.setCode(_ctx.stringValue("QueryTicketCountResponse.Code"));
+		queryTicketCountResponse.setSuccess(_ctx.booleanValue("QueryTicketCountResponse.Success"));
 	 
 	 	return queryTicketCountResponse;
 	}

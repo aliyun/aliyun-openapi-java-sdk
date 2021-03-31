@@ -1,3 +1,7 @@
+2021-03-25 Version: 2.3.0
+- Support Query Tenant List.
+- Remove Query AdSlot Template List.
+
 2021-03-16 Version: 2.3.1
 - Generated 2018-12-12, 2018-12-07 for `UniMkt`.
 

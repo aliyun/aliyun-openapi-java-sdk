@@ -33,6 +33,8 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 
 	private Integer batchWaitTime;
 
+	private String autoEnableApplicationScalingRule;
+
 	private String updateStrategy;
 	public RollbackApplicationRequest() {
 		super("sae", "2019-05-06", "RollbackApplication", "serverless");
@@ -85,6 +87,17 @@ public class RollbackApplicationRequest extends RoaAcsRequest<RollbackApplicatio
 		this.batchWaitTime = batchWaitTime;
 		if(batchWaitTime != null){
 			putQueryParameter("BatchWaitTime", batchWaitTime.toString());
+		}
+	}
+
+	public String getAutoEnableApplicationScalingRule() {
+		return this.autoEnableApplicationScalingRule;
+	}
+
+	public void setAutoEnableApplicationScalingRule(String autoEnableApplicationScalingRule) {
+		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
+		if(autoEnableApplicationScalingRule != null){
+			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule);
 		}
 	}
 

@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUserTokenResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -50,12 +50,12 @@ public class GetUserTokenResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,17 +76,9 @@ public class GetUserTokenResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long expires;
-
 		private String token;
 
-		public Long getExpires() {
-			return this.expires;
-		}
-
-		public void setExpires(Long expires) {
-			this.expires = expires;
-		}
+		private Long expires;
 
 		public String getToken() {
 			return this.token;
@@ -94,6 +86,14 @@ public class GetUserTokenResponse extends AcsResponse {
 
 		public void setToken(String token) {
 			this.token = token;
+		}
+
+		public Long getExpires() {
+			return this.expires;
+		}
+
+		public void setExpires(Long expires) {
+			this.expires = expires;
 		}
 	}
 

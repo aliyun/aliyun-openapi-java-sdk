@@ -32,6 +32,8 @@ public class GetRawPlanJsonRequest extends RoaAcsRequest<GetRawPlanJsonResponse>
 
 	private Float expectedCore;
 
+	private String advisorAction;
+
 	private String jobName;
 
 	private Boolean autoconfEnable;
@@ -76,6 +78,17 @@ public class GetRawPlanJsonRequest extends RoaAcsRequest<GetRawPlanJsonResponse>
 		this.expectedCore = expectedCore;
 		if(expectedCore != null){
 			putQueryParameter("expectedCore", expectedCore.toString());
+		}
+	}
+
+	public String getAdvisorAction() {
+		return this.advisorAction;
+	}
+
+	public void setAdvisorAction(String advisorAction) {
+		this.advisorAction = advisorAction;
+		if(advisorAction != null){
+			putQueryParameter("AdvisorAction", advisorAction);
 		}
 	}
 

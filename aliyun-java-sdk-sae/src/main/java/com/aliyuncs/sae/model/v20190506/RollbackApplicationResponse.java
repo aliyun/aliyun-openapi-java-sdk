@@ -24,19 +24,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RollbackApplicationResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
+
+	private String traceId;
+
+	private String errorCode;
 
 	private String code;
 
 	private Boolean success;
 
-	private String errorCode;
-
-	private String message;
-
-	private String traceId;
-
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +52,22 @@ public class RollbackApplicationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
+	}
+
+	public String getErrorCode() {
+		return this.errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public String getCode() {
@@ -60,30 +84,6 @@ public class RollbackApplicationResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
 	}
 
 	public Data getData() {

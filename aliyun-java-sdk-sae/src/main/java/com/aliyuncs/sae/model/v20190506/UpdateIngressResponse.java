@@ -24,35 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateIngressResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
-
 	private String message;
 
-	private Boolean success;
-
-	private String errorCode;
+	private String requestId;
 
 	private String traceId;
 
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -62,12 +46,20 @@ public class UpdateIngressResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTraceId() {
+		return this.traceId;
+	}
+
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -78,12 +70,20 @@ public class UpdateIngressResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {

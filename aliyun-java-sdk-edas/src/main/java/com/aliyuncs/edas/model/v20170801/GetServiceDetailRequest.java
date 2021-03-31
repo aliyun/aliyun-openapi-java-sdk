@@ -49,7 +49,7 @@ public class GetServiceDetailRequest extends RoaAcsRequest<GetServiceDetailRespo
 
 	private String group;
 	public GetServiceDetailRequest() {
-		super("Edas", "2017-08-01", "GetServiceDetail", "edas");
+		super("Edas", "2017-08-01", "GetServiceDetail", "Edas");
 		setUriPattern("/pop/sp/api/mseForOam/getServiceDetail");
 		setMethod(MethodType.POST);
 		try {

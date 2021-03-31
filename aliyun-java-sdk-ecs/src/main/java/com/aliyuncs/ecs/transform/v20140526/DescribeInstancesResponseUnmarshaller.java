@@ -24,6 +24,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.Dedic
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.DedicatedInstanceAttribute;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EcsCapacityReservationAttr;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.EipAddress;
+import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.HibernationOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.LockReason;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.MetadataOptions;
 import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse.Instance.NetworkInterface;
@@ -138,6 +139,10 @@ public class DescribeInstancesResponseUnmarshaller {
 			eipAddress.setInternetChargeType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.InternetChargeType"));
 			eipAddress.setIsSupportUnassociate(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].EipAddress.IsSupportUnassociate"));
 			instance.setEipAddress(eipAddress);
+
+			HibernationOptions hibernationOptions = new HibernationOptions();
+			hibernationOptions.setConfigured(_ctx.booleanValue("DescribeInstancesResponse.Instances["+ i +"].HibernationOptions.Configured"));
+			instance.setHibernationOptions(hibernationOptions);
 
 			DedicatedHostAttribute dedicatedHostAttribute = new DedicatedHostAttribute();
 			dedicatedHostAttribute.setDedicatedHostId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostId"));

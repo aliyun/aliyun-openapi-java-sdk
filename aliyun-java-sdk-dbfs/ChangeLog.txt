@@ -1,3 +1,9 @@
+2021-03-30 Version: 1.8.1
+- Support chiji.
+
+2021-03-29 Version: 1.8.0
+- Support chiji.
+
 2021-01-19 Version: 1.0.2
 - OpenAPI release.
 

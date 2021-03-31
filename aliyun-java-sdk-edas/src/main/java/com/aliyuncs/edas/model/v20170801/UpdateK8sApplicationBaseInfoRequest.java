@@ -35,7 +35,7 @@ public class UpdateK8sApplicationBaseInfoRequest extends RoaAcsRequest<UpdateK8s
 
 	private String email;
 	public UpdateK8sApplicationBaseInfoRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sApplicationBaseInfo", "edas");
+		super("Edas", "2017-08-01", "UpdateK8sApplicationBaseInfo", "Edas");
 		setUriPattern("/pop/v5/oam/update_app_basic_info");
 		setMethod(MethodType.POST);
 		try {

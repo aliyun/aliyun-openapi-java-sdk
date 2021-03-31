@@ -1,3 +1,7 @@
+2021-03-30 Version: 1.15.0
+- Support ListDDLPublishRecords API.
+- Fixed GetMetaTableColumn, GetMetaTableDetailInfo API response param DataLength lack of precision.
+
 2021-03-10 Version: 1.14.0
 - Support CreateDataCorrectOrder, CreateDataImportOrder, CreateFreeLockCorrectOrder, CreateDataCronClearOrder API.
 - Support GetDataCorrectTaskDetail API.

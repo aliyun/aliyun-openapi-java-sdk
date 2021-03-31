@@ -26,13 +26,7 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 	   
 
-	private Integer visibility;
-
-	private Long physicsLevelId;
-
 	private List<Columns> columnss;
-
-	private String ownerId;
 
 	private Integer lifeCycle;
 
@@ -42,13 +36,7 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 
 	private String endpoint;
 
-	private Integer isView;
-
-	private String externalTableType;
-
 	private Integer envType;
-
-	private String location;
 
 	private Integer hasPart;
 
@@ -60,6 +48,20 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 
 	private Long categoryId;
 
+	private Integer visibility;
+
+	private Long physicsLevelId;
+
+	private String ownerId;
+
+	private Integer isView;
+
+	private String externalTableType;
+
+	private String location;
+
+	private String comment;
+
 	private Boolean createIfNotExists;
 	public UpdateTableRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateTable");
@@ -68,28 +70,6 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getVisibility() {
-		return this.visibility;
-	}
-
-	public void setVisibility(Integer visibility) {
-		this.visibility = visibility;
-		if(visibility != null){
-			putQueryParameter("Visibility", visibility.toString());
-		}
-	}
-
-	public Long getPhysicsLevelId() {
-		return this.physicsLevelId;
-	}
-
-	public void setPhysicsLevelId(Long physicsLevelId) {
-		this.physicsLevelId = physicsLevelId;
-		if(physicsLevelId != null){
-			putQueryParameter("PhysicsLevelId", physicsLevelId.toString());
-		}
 	}
 
 	public List<Columns> getColumnss() {
@@ -109,17 +89,6 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 				putBodyParameter("Columns." + (depth1 + 1) + ".ColumnType" , columnss.get(depth1).getColumnType());
 			}
 		}	
-	}
-
-	public String getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId);
-		}
 	}
 
 	public Integer getLifeCycle() {
@@ -169,28 +138,6 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 		}
 	}
 
-	public Integer getIsView() {
-		return this.isView;
-	}
-
-	public void setIsView(Integer isView) {
-		this.isView = isView;
-		if(isView != null){
-			putQueryParameter("IsView", isView.toString());
-		}
-	}
-
-	public String getExternalTableType() {
-		return this.externalTableType;
-	}
-
-	public void setExternalTableType(String externalTableType) {
-		this.externalTableType = externalTableType;
-		if(externalTableType != null){
-			putQueryParameter("ExternalTableType", externalTableType);
-		}
-	}
-
 	public Integer getEnvType() {
 		return this.envType;
 	}
@@ -199,17 +146,6 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 		this.envType = envType;
 		if(envType != null){
 			putBodyParameter("EnvType", envType.toString());
-		}
-	}
-
-	public String getLocation() {
-		return this.location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-		if(location != null){
-			putQueryParameter("Location", location);
 		}
 	}
 
@@ -265,6 +201,83 @@ public class UpdateTableRequest extends RpcAcsRequest<UpdateTableResponse> {
 		this.categoryId = categoryId;
 		if(categoryId != null){
 			putQueryParameter("CategoryId", categoryId.toString());
+		}
+	}
+
+	public Integer getVisibility() {
+		return this.visibility;
+	}
+
+	public void setVisibility(Integer visibility) {
+		this.visibility = visibility;
+		if(visibility != null){
+			putQueryParameter("Visibility", visibility.toString());
+		}
+	}
+
+	public Long getPhysicsLevelId() {
+		return this.physicsLevelId;
+	}
+
+	public void setPhysicsLevelId(Long physicsLevelId) {
+		this.physicsLevelId = physicsLevelId;
+		if(physicsLevelId != null){
+			putQueryParameter("PhysicsLevelId", physicsLevelId.toString());
+		}
+	}
+
+	public String getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId);
+		}
+	}
+
+	public Integer getIsView() {
+		return this.isView;
+	}
+
+	public void setIsView(Integer isView) {
+		this.isView = isView;
+		if(isView != null){
+			putQueryParameter("IsView", isView.toString());
+		}
+	}
+
+	public String getExternalTableType() {
+		return this.externalTableType;
+	}
+
+	public void setExternalTableType(String externalTableType) {
+		this.externalTableType = externalTableType;
+		if(externalTableType != null){
+			putQueryParameter("ExternalTableType", externalTableType);
+		}
+	}
+
+	public String getLocation() {
+		return this.location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+		if(location != null){
+			putQueryParameter("Location", location);
+		}
+	}
+
+	public String getComment() {
+		return this.comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+		if(comment != null){
+			putQueryParameter("Comment", comment);
 		}
 	}
 

@@ -31,6 +31,8 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 
 	private String securityToken;
 
+	private String sourceBiz;
+
 	private Integer shardCount;
 
 	private String businessInfo;
@@ -85,6 +87,17 @@ public class AddShardingNodeRequest extends RpcAcsRequest<AddShardingNodeRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getSourceBiz() {
+		return this.sourceBiz;
+	}
+
+	public void setSourceBiz(String sourceBiz) {
+		this.sourceBiz = sourceBiz;
+		if(sourceBiz != null){
+			putQueryParameter("SourceBiz", sourceBiz);
 		}
 	}
 

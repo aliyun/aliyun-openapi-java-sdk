@@ -35,8 +35,6 @@ public class QuerySavingsPlansDeductLogRequest extends RpcAcsRequest<QuerySaving
 
 	private String instanceId;
 
-	private String requestId;
-
 	private Integer pageSize;
 
 	private String instanceType;
@@ -101,17 +99,6 @@ public class QuerySavingsPlansDeductLogRequest extends RpcAcsRequest<QuerySaving
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

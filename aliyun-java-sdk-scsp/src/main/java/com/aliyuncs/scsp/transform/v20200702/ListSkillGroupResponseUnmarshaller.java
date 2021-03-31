@@ -27,18 +27,18 @@ public class ListSkillGroupResponseUnmarshaller {
 	public static ListSkillGroupResponse unmarshall(ListSkillGroupResponse listSkillGroupResponse, UnmarshallerContext _ctx) {
 		
 		listSkillGroupResponse.setRequestId(_ctx.stringValue("ListSkillGroupResponse.RequestId"));
-		listSkillGroupResponse.setSuccess(_ctx.booleanValue("ListSkillGroupResponse.Success"));
-		listSkillGroupResponse.setCode(_ctx.stringValue("ListSkillGroupResponse.Code"));
 		listSkillGroupResponse.setMessage(_ctx.stringValue("ListSkillGroupResponse.Message"));
+		listSkillGroupResponse.setCode(_ctx.stringValue("ListSkillGroupResponse.Code"));
+		listSkillGroupResponse.setSuccess(_ctx.booleanValue("ListSkillGroupResponse.Success"));
 
 		List<SkillGroups> data = new ArrayList<SkillGroups>();
 		for (int i = 0; i < _ctx.lengthValue("ListSkillGroupResponse.Data.Length"); i++) {
 			SkillGroups skillGroups = new SkillGroups();
-			skillGroups.setSkillGroupId(_ctx.longValue("ListSkillGroupResponse.Data["+ i +"].SkillGroupId"));
-			skillGroups.setName(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].Name"));
-			skillGroups.setDisplayName(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].DisplayName"));
 			skillGroups.setDescription(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].Description"));
+			skillGroups.setDisplayName(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].DisplayName"));
+			skillGroups.setSkillGroupId(_ctx.longValue("ListSkillGroupResponse.Data["+ i +"].SkillGroupId"));
 			skillGroups.setChannelType(_ctx.integerValue("ListSkillGroupResponse.Data["+ i +"].ChannelType"));
+			skillGroups.setName(_ctx.stringValue("ListSkillGroupResponse.Data["+ i +"].Name"));
 
 			data.add(skillGroups);
 		}

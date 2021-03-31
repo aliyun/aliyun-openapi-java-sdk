@@ -25,6 +25,8 @@ import com.aliyuncs.green.Endpoint;
 public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
 	   
 
+	private String description;
+
 	private String bizTypeImport;
 
 	private Boolean citeTemplate;
@@ -39,6 +41,17 @@ public class CreateBizTypeRequest extends RpcAcsRequest<CreateBizTypeResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getBizTypeImport() {

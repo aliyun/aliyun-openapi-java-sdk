@@ -91,7 +91,7 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 
 		private String securityLevel;
 
-		private Integer dataLength;
+		private Long dataLength;
 
 		private Integer dataScale;
 
@@ -157,11 +157,11 @@ public class GetMetaTableColumnResponse extends AcsResponse {
 			this.securityLevel = securityLevel;
 		}
 
-		public Integer getDataLength() {
+		public Long getDataLength() {
 			return this.dataLength;
 		}
 
-		public void setDataLength(Integer dataLength) {
+		public void setDataLength(Long dataLength) {
 			this.dataLength = dataLength;
 		}
 

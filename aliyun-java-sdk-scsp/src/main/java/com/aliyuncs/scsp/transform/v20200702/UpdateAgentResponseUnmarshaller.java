@@ -23,9 +23,10 @@ public class UpdateAgentResponseUnmarshaller {
 	public static UpdateAgentResponse unmarshall(UpdateAgentResponse updateAgentResponse, UnmarshallerContext _ctx) {
 		
 		updateAgentResponse.setRequestId(_ctx.stringValue("UpdateAgentResponse.RequestId"));
-		updateAgentResponse.setSuccess(_ctx.booleanValue("UpdateAgentResponse.Success"));
-		updateAgentResponse.setCode(_ctx.stringValue("UpdateAgentResponse.Code"));
 		updateAgentResponse.setMessage(_ctx.stringValue("UpdateAgentResponse.Message"));
+		updateAgentResponse.setHttpStatusCode(_ctx.longValue("UpdateAgentResponse.HttpStatusCode"));
+		updateAgentResponse.setCode(_ctx.stringValue("UpdateAgentResponse.Code"));
+		updateAgentResponse.setSuccess(_ctx.booleanValue("UpdateAgentResponse.Success"));
 	 
 	 	return updateAgentResponse;
 	}

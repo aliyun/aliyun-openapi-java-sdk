@@ -29,6 +29,8 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 
 	private String stoppedMode;
 
+	private Boolean hibernate;
+
 	private Boolean forceStop;
 
 	private Boolean confirmStop;
@@ -70,6 +72,17 @@ public class StopInstanceRequest extends RpcAcsRequest<StopInstanceResponse> {
 		this.stoppedMode = stoppedMode;
 		if(stoppedMode != null){
 			putQueryParameter("StoppedMode", stoppedMode);
+		}
+	}
+
+	public Boolean getHibernate() {
+		return this.hibernate;
+	}
+
+	public void setHibernate(Boolean hibernate) {
+		this.hibernate = hibernate;
+		if(hibernate != null){
+			putQueryParameter("Hibernate", hibernate.toString());
 		}
 	}
 

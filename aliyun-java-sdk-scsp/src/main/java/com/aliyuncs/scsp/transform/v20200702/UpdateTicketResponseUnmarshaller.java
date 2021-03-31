@@ -23,9 +23,9 @@ public class UpdateTicketResponseUnmarshaller {
 	public static UpdateTicketResponse unmarshall(UpdateTicketResponse updateTicketResponse, UnmarshallerContext _ctx) {
 		
 		updateTicketResponse.setRequestId(_ctx.stringValue("UpdateTicketResponse.RequestId"));
-		updateTicketResponse.setSuccess(_ctx.booleanValue("UpdateTicketResponse.Success"));
-		updateTicketResponse.setCode(_ctx.stringValue("UpdateTicketResponse.Code"));
 		updateTicketResponse.setMessage(_ctx.stringValue("UpdateTicketResponse.Message"));
+		updateTicketResponse.setCode(_ctx.stringValue("UpdateTicketResponse.Code"));
+		updateTicketResponse.setSuccess(_ctx.booleanValue("UpdateTicketResponse.Success"));
 	 
 	 	return updateTicketResponse;
 	}

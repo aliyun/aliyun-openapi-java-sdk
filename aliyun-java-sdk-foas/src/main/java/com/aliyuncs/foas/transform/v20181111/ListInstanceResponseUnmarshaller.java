@@ -58,6 +58,7 @@ public class ListInstanceResponseUnmarshaller {
 			instance.setClusterId(_ctx.stringValue("ListInstanceResponse.Instances["+ i +"].ClusterId"));
 			instance.setQueueName(_ctx.stringValue("ListInstanceResponse.Instances["+ i +"].QueueName"));
 			instance.setEndTime(_ctx.longValue("ListInstanceResponse.Instances["+ i +"].EndTime"));
+			instance.setPriority(_ctx.integerValue("ListInstanceResponse.Instances["+ i +"].Priority"));
 
 			instances.add(instance);
 		}

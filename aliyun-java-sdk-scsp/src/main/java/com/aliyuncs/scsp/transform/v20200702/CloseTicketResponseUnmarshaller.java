@@ -23,9 +23,9 @@ public class CloseTicketResponseUnmarshaller {
 	public static CloseTicketResponse unmarshall(CloseTicketResponse closeTicketResponse, UnmarshallerContext _ctx) {
 		
 		closeTicketResponse.setRequestId(_ctx.stringValue("CloseTicketResponse.RequestId"));
-		closeTicketResponse.setSuccess(_ctx.booleanValue("CloseTicketResponse.Success"));
-		closeTicketResponse.setCode(_ctx.stringValue("CloseTicketResponse.Code"));
 		closeTicketResponse.setMessage(_ctx.stringValue("CloseTicketResponse.Message"));
+		closeTicketResponse.setCode(_ctx.stringValue("CloseTicketResponse.Code"));
+		closeTicketResponse.setSuccess(_ctx.booleanValue("CloseTicketResponse.Success"));
 	 
 	 	return closeTicketResponse;
 	}

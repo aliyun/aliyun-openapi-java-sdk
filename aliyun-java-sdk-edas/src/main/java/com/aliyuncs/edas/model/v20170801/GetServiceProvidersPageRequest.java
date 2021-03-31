@@ -53,7 +53,7 @@ public class GetServiceProvidersPageRequest extends RoaAcsRequest<GetServiceProv
 
 	private String group;
 	public GetServiceProvidersPageRequest() {
-		super("Edas", "2017-08-01", "GetServiceProvidersPage", "edas");
+		super("Edas", "2017-08-01", "GetServiceProvidersPage", "Edas");
 		setUriPattern("/pop/sp/api/mseForOam/getServiceProvidersPage");
 		setMethod(MethodType.POST);
 		try {

@@ -33,6 +33,8 @@ public class UpdateSkillGroupRequest extends RpcAcsRequest<UpdateSkillGroupRespo
 
 	private String displayName;
 
+	private Long channelType;
+
 	private String skillGroupName;
 
 	private String description;
@@ -86,6 +88,17 @@ public class UpdateSkillGroupRequest extends RpcAcsRequest<UpdateSkillGroupRespo
 		this.displayName = displayName;
 		if(displayName != null){
 			putQueryParameter("DisplayName", displayName);
+		}
+	}
+
+	public Long getChannelType() {
+		return this.channelType;
+	}
+
+	public void setChannelType(Long channelType) {
+		this.channelType = channelType;
+		if(channelType != null){
+			putQueryParameter("ChannelType", channelType.toString());
 		}
 	}
 

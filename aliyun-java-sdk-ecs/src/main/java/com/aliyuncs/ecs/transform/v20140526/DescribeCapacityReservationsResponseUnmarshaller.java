@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem;
 import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem.AllocatedResource;
+import com.aliyuncs.ecs.model.v20140526.DescribeCapacityReservationsResponse.CapacityReservationItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -47,6 +48,7 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 			capacityReservationItem.setInstanceChargeType(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].InstanceChargeType"));
 			capacityReservationItem.setPlatform(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Platform"));
 			capacityReservationItem.setTimeSlot(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].TimeSlot"));
+			capacityReservationItem.setResourceGroupId(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].ResourceGroupId"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
@@ -59,6 +61,16 @@ public class DescribeCapacityReservationsResponseUnmarshaller {
 				allocatedResources.add(allocatedResource);
 			}
 			capacityReservationItem.setAllocatedResources(allocatedResources);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeCapacityReservationsResponse.CapacityReservationSet["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			capacityReservationItem.setTags(tags);
 
 			capacityReservationSet.add(capacityReservationItem);
 		}

@@ -35,8 +35,6 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 
 	private String instanceId;
 
-	private String requestId;
-
 	private Integer pageSize;
 	public QuerySavingsPlansInstanceRequest() {
 		super("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance");
@@ -99,17 +97,6 @@ public class QuerySavingsPlansInstanceRequest extends RpcAcsRequest<QuerySavings
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-		if(requestId != null){
-			putQueryParameter("RequestId", requestId);
 		}
 	}
 

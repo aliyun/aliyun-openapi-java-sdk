@@ -113,9 +113,13 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 
 		private Integer skillGroupFrom;
 
+		private Boolean screenSwitch;
+
 		private List<RuleNameInfo> ruleList;
 
 		private List<RuleNameInfo> allRuleList;
+
+		private List<SkillGroupScreen> skillGroupScreens;
 
 		public Long getId() {
 			return this.id;
@@ -261,6 +265,14 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 			this.skillGroupFrom = skillGroupFrom;
 		}
 
+		public Boolean getScreenSwitch() {
+			return this.screenSwitch;
+		}
+
+		public void setScreenSwitch(Boolean screenSwitch) {
+			this.screenSwitch = screenSwitch;
+		}
+
 		public List<RuleNameInfo> getRuleList() {
 			return this.ruleList;
 		}
@@ -275,6 +287,14 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 
 		public void setAllRuleList(List<RuleNameInfo> allRuleList) {
 			this.allRuleList = allRuleList;
+		}
+
+		public List<SkillGroupScreen> getSkillGroupScreens() {
+			return this.skillGroupScreens;
+		}
+
+		public void setSkillGroupScreens(List<SkillGroupScreen> skillGroupScreens) {
+			this.skillGroupScreens = skillGroupScreens;
 		}
 
 		public static class RuleNameInfo {
@@ -297,6 +317,49 @@ public class ListSkillGroupConfigResponse extends AcsResponse {
 
 			public void setRuleName(String ruleName) {
 				this.ruleName = ruleName;
+			}
+		}
+
+		public static class SkillGroupScreen {
+
+			private String name;
+
+			private Integer dataType;
+
+			private Integer symbol;
+
+			private String value;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public Integer getDataType() {
+				return this.dataType;
+			}
+
+			public void setDataType(Integer dataType) {
+				this.dataType = dataType;
+			}
+
+			public Integer getSymbol() {
+				return this.symbol;
+			}
+
+			public void setSymbol(Integer symbol) {
+				this.symbol = symbol;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

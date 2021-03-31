@@ -23,10 +23,11 @@ public class CreateRoleResponseUnmarshaller {
 	public static CreateRoleResponse unmarshall(CreateRoleResponse createRoleResponse, UnmarshallerContext _ctx) {
 		
 		createRoleResponse.setRequestId(_ctx.stringValue("CreateRoleResponse.RequestId"));
-		createRoleResponse.setSuccess(_ctx.booleanValue("CreateRoleResponse.Success"));
-		createRoleResponse.setCode(_ctx.stringValue("CreateRoleResponse.Code"));
 		createRoleResponse.setMessage(_ctx.stringValue("CreateRoleResponse.Message"));
+		createRoleResponse.setHttpStatusCode(_ctx.longValue("CreateRoleResponse.HttpStatusCode"));
 		createRoleResponse.setData(_ctx.longValue("CreateRoleResponse.Data"));
+		createRoleResponse.setCode(_ctx.stringValue("CreateRoleResponse.Code"));
+		createRoleResponse.setSuccess(_ctx.booleanValue("CreateRoleResponse.Success"));
 	 
 	 	return createRoleResponse;
 	}

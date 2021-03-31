@@ -23,9 +23,9 @@ public class EnableRoleResponseUnmarshaller {
 	public static EnableRoleResponse unmarshall(EnableRoleResponse enableRoleResponse, UnmarshallerContext _ctx) {
 		
 		enableRoleResponse.setRequestId(_ctx.stringValue("EnableRoleResponse.RequestId"));
-		enableRoleResponse.setSuccess(_ctx.booleanValue("EnableRoleResponse.Success"));
-		enableRoleResponse.setCode(_ctx.stringValue("EnableRoleResponse.Code"));
 		enableRoleResponse.setMessage(_ctx.stringValue("EnableRoleResponse.Message"));
+		enableRoleResponse.setCode(_ctx.stringValue("EnableRoleResponse.Code"));
+		enableRoleResponse.setSuccess(_ctx.booleanValue("EnableRoleResponse.Success"));
 	 
 	 	return enableRoleResponse;
 	}

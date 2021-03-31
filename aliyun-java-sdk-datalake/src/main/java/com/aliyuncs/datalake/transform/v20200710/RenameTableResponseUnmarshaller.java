@@ -23,6 +23,7 @@ public class RenameTableResponseUnmarshaller {
 	public static RenameTableResponse unmarshall(RenameTableResponse renameTableResponse, UnmarshallerContext _ctx) {
 		
 		renameTableResponse.setRequestId(_ctx.stringValue("RenameTableResponse.RequestId"));
+		renameTableResponse.setTaskId(_ctx.stringValue("RenameTableResponse.TaskId"));
 		renameTableResponse.setMessage(_ctx.stringValue("RenameTableResponse.Message"));
 		renameTableResponse.setCode(_ctx.stringValue("RenameTableResponse.Code"));
 		renameTableResponse.setSuccess(_ctx.booleanValue("RenameTableResponse.Success"));

@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEntityTagRelationResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
 	private List<DataItem> data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,48 +77,24 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String tagGroupName;
-
-		private String tagGroupCode;
-
-		private String tagCode;
-
-		private String tagName;
+		private String entityType;
 
 		private String entityId;
 
-		private String entityType;
+		private String tagName;
 
-		public String getTagGroupName() {
-			return this.tagGroupName;
+		private String tagGroupCode;
+
+		private String tagGroupName;
+
+		private String tagCode;
+
+		public String getEntityType() {
+			return this.entityType;
 		}
 
-		public void setTagGroupName(String tagGroupName) {
-			this.tagGroupName = tagGroupName;
-		}
-
-		public String getTagGroupCode() {
-			return this.tagGroupCode;
-		}
-
-		public void setTagGroupCode(String tagGroupCode) {
-			this.tagGroupCode = tagGroupCode;
-		}
-
-		public String getTagCode() {
-			return this.tagCode;
-		}
-
-		public void setTagCode(String tagCode) {
-			this.tagCode = tagCode;
-		}
-
-		public String getTagName() {
-			return this.tagName;
-		}
-
-		public void setTagName(String tagName) {
-			this.tagName = tagName;
+		public void setEntityType(String entityType) {
+			this.entityType = entityType;
 		}
 
 		public String getEntityId() {
@@ -129,12 +105,36 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 			this.entityId = entityId;
 		}
 
-		public String getEntityType() {
-			return this.entityType;
+		public String getTagName() {
+			return this.tagName;
 		}
 
-		public void setEntityType(String entityType) {
-			this.entityType = entityType;
+		public void setTagName(String tagName) {
+			this.tagName = tagName;
+		}
+
+		public String getTagGroupCode() {
+			return this.tagGroupCode;
+		}
+
+		public void setTagGroupCode(String tagGroupCode) {
+			this.tagGroupCode = tagGroupCode;
+		}
+
+		public String getTagGroupName() {
+			return this.tagGroupName;
+		}
+
+		public void setTagGroupName(String tagGroupName) {
+			this.tagGroupName = tagGroupName;
+		}
+
+		public String getTagCode() {
+			return this.tagCode;
+		}
+
+		public void setTagCode(String tagCode) {
+			this.tagCode = tagCode;
 		}
 	}
 

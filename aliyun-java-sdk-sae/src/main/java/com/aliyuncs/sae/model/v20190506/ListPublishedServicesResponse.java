@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPublishedServicesResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
-	private String traceId;
+	private String code;
+
+	private Boolean success;
 
 	private List<DataItem> data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -63,12 +55,12 @@ public class ListPublishedServicesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -79,12 +71,20 @@ public class ListPublishedServicesResponse extends AcsResponse {
 		this.errorCode = errorCode;
 	}
 
-	public String getTraceId() {
-		return this.traceId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -97,27 +97,19 @@ public class ListPublishedServicesResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String appId;
-
 		private String group2Ip;
-
-		private String name;
 
 		private String type;
 
+		private String appId;
+
 		private String version;
+
+		private String name;
 
 		private List<String> groups;
 
 		private List<String> ips;
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
 
 		public String getGroup2Ip() {
 			return this.group2Ip;
@@ -125,14 +117,6 @@ public class ListPublishedServicesResponse extends AcsResponse {
 
 		public void setGroup2Ip(String group2Ip) {
 			this.group2Ip = group2Ip;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getType() {
@@ -143,12 +127,28 @@ public class ListPublishedServicesResponse extends AcsResponse {
 			this.type = type;
 		}
 
+		public String getAppId() {
+			return this.appId;
+		}
+
+		public void setAppId(String appId) {
+			this.appId = appId;
+		}
+
 		public String getVersion() {
 			return this.version;
 		}
 
 		public void setVersion(String version) {
 			this.version = version;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getGroups() {

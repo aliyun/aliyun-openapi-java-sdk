@@ -24,33 +24,59 @@ import com.aliyuncs.http.MethodType;
 public class ReportScreenRequest extends RpcAcsRequest<ReportScreenResponse> {
 	   
 
-	private String screenShotReportRequest;
+	private String ossObjectKey;
 
-	private String user;
+	private String ossBucketName;
+
+	private String userSource;
+
+	private String userId;
 	public ReportScreenRequest() {
 		super("MindLive", "2021-03-01", "ReportScreen");
 		setMethod(MethodType.POST);
 	}
 
-	public String getScreenShotReportRequest() {
-		return this.screenShotReportRequest;
+	public String getOssObjectKey() {
+		return this.ossObjectKey;
 	}
 
-	public void setScreenShotReportRequest(String screenShotReportRequest) {
-		this.screenShotReportRequest = screenShotReportRequest;
-		if(screenShotReportRequest != null){
-			putQueryParameter("ScreenShotReportRequest", screenShotReportRequest);
+	public void setOssObjectKey(String ossObjectKey) {
+		this.ossObjectKey = ossObjectKey;
+		if(ossObjectKey != null){
+			putQueryParameter("OssObjectKey", ossObjectKey);
 		}
 	}
 
-	public String getUser() {
-		return this.user;
+	public String getOssBucketName() {
+		return this.ossBucketName;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
-		if(user != null){
-			putQueryParameter("User", user);
+	public void setOssBucketName(String ossBucketName) {
+		this.ossBucketName = ossBucketName;
+		if(ossBucketName != null){
+			putQueryParameter("OssBucketName", ossBucketName);
+		}
+	}
+
+	public String getUserSource() {
+		return this.userSource;
+	}
+
+	public void setUserSource(String userSource) {
+		this.userSource = userSource;
+		if(userSource != null){
+			putQueryParameter("UserSource", userSource);
+		}
+	}
+
+	public String getUserId() {
+		return this.userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
 		}
 	}
 

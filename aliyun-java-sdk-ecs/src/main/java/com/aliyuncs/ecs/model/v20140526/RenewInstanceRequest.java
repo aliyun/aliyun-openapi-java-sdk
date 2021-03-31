@@ -35,6 +35,8 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 
 	private String ownerAccount;
 
+	private Integer expectedRenewDay;
+
 	private Long ownerId;
 
 	private String periodUnit;
@@ -101,6 +103,17 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getExpectedRenewDay() {
+		return this.expectedRenewDay;
+	}
+
+	public void setExpectedRenewDay(Integer expectedRenewDay) {
+		this.expectedRenewDay = expectedRenewDay;
+		if(expectedRenewDay != null){
+			putQueryParameter("ExpectedRenewDay", expectedRenewDay.toString());
 		}
 	}
 

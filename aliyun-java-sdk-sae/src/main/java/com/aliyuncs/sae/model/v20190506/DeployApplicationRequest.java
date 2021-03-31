@@ -91,6 +91,8 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 
 	private String imageUrl;
 
+	private Boolean autoEnableApplicationScalingRule;
+
 	private String phpConfigLocation;
 
 	private String postStart;
@@ -464,6 +466,17 @@ public class DeployApplicationRequest extends RoaAcsRequest<DeployApplicationRes
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putQueryParameter("ImageUrl", imageUrl);
+		}
+	}
+
+	public Boolean getAutoEnableApplicationScalingRule() {
+		return this.autoEnableApplicationScalingRule;
+	}
+
+	public void setAutoEnableApplicationScalingRule(Boolean autoEnableApplicationScalingRule) {
+		this.autoEnableApplicationScalingRule = autoEnableApplicationScalingRule;
+		if(autoEnableApplicationScalingRule != null){
+			putQueryParameter("AutoEnableApplicationScalingRule", autoEnableApplicationScalingRule.toString());
 		}
 	}
 

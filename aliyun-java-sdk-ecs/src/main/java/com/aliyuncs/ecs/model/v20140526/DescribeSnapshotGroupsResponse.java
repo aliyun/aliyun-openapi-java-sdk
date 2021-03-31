@@ -69,6 +69,8 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 		private String creationTime;
 
+		private String progressStatus;
+
 		private List<Snapshot> snapshots;
 
 		public String getInstanceId() {
@@ -117,6 +119,14 @@ public class DescribeSnapshotGroupsResponse extends AcsResponse {
 
 		public void setCreationTime(String creationTime) {
 			this.creationTime = creationTime;
+		}
+
+		public String getProgressStatus() {
+			return this.progressStatus;
+		}
+
+		public void setProgressStatus(String progressStatus) {
+			this.progressStatus = progressStatus;
 		}
 
 		public List<Snapshot> getSnapshots() {

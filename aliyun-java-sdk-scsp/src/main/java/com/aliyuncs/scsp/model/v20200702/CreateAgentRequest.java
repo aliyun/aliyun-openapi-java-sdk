@@ -34,9 +34,9 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 
 	private String displayName;
 
-	private List<Long> skillGroupIds;
+	private List<Long> skillGroupId;
 
-	private List<Long> skillGroupIdLists;
+	private List<Long> skillGroupIdList;
 	public CreateAgentRequest() {
 		super("scsp", "2020-07-02", "CreateAgent");
 		setMethod(MethodType.POST);
@@ -90,28 +90,28 @@ public class CreateAgentRequest extends RpcAcsRequest<CreateAgentResponse> {
 		}
 	}
 
-	public List<Long> getSkillGroupIds() {
-		return this.skillGroupIds;
+	public List<Long> getSkillGroupId() {
+		return this.skillGroupId;
 	}
 
-	public void setSkillGroupIds(List<Long> skillGroupIds) {
-		this.skillGroupIds = skillGroupIds;	
-		if (skillGroupIds != null) {
-			for (int i = 0; i < skillGroupIds.size(); i++) {
-				putBodyParameter("SkillGroupId." + (i + 1) , skillGroupIds.get(i));
+	public void setSkillGroupId(List<Long> skillGroupId) {
+		this.skillGroupId = skillGroupId;	
+		if (skillGroupId != null) {
+			for (int depth1 = 0; depth1 < skillGroupId.size(); depth1++) {
+				putBodyParameter("SkillGroupId." + (depth1 + 1) , skillGroupId.get(depth1));
 			}
 		}	
 	}
 
-	public List<Long> getSkillGroupIdLists() {
-		return this.skillGroupIdLists;
+	public List<Long> getSkillGroupIdList() {
+		return this.skillGroupIdList;
 	}
 
-	public void setSkillGroupIdLists(List<Long> skillGroupIdLists) {
-		this.skillGroupIdLists = skillGroupIdLists;	
-		if (skillGroupIdLists != null) {
-			for (int i = 0; i < skillGroupIdLists.size(); i++) {
-				putBodyParameter("SkillGroupIdList." + (i + 1) , skillGroupIdLists.get(i));
+	public void setSkillGroupIdList(List<Long> skillGroupIdList) {
+		this.skillGroupIdList = skillGroupIdList;	
+		if (skillGroupIdList != null) {
+			for (int depth1 = 0; depth1 < skillGroupIdList.size(); depth1++) {
+				putBodyParameter("SkillGroupIdList." + (depth1 + 1) , skillGroupIdList.get(depth1));
 			}
 		}	
 	}

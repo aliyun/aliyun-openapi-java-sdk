@@ -29,6 +29,8 @@ public class RunInstancesResponse extends AcsResponse {
 
 	private Float tradePrice;
 
+	private String orderId;
+
 	private List<String> instanceIdSets;
 
 	public String getRequestId() {
@@ -45,6 +47,14 @@ public class RunInstancesResponse extends AcsResponse {
 
 	public void setTradePrice(Float tradePrice) {
 		this.tradePrice = tradePrice;
+	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public List<String> getInstanceIdSets() {

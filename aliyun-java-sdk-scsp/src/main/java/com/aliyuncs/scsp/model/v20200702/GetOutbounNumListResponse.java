@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOutbounNumListResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -51,12 +51,12 @@ public class GetOutbounNumListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -99,19 +99,11 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 		public static class NumItem {
 
-			private String description;
-
 			private Integer type;
 
+			private String description;
+
 			private String value;
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
 
 			public Integer getType() {
 				return this.type;
@@ -119,6 +111,14 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 			public void setType(Integer type) {
 				this.type = type;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getValue() {
@@ -132,19 +132,11 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 		public static class NumGroupItem {
 
-			private String description;
-
 			private Integer type;
 
+			private String description;
+
 			private String value;
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
 
 			public Integer getType() {
 				return this.type;
@@ -152,6 +144,14 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 			public void setType(Integer type) {
 				this.type = type;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public String getValue() {

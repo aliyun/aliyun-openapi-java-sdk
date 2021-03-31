@@ -25,35 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeChangeOrderResponse extends AcsResponse {
 
-	private String code;
-
-	private String errorCode;
-
 	private String message;
-
-	private Boolean success;
-
-	private String traceId;
 
 	private String requestId;
 
+	private String traceId;
+
+	private String errorCode;
+
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -63,12 +47,12 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getTraceId() {
@@ -79,12 +63,28 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 		this.traceId = traceId;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -97,39 +97,87 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer status;
+
+		private String description;
+
+		private Boolean supportAbortFreeze;
+
+		private String createTime;
+
+		private String changeOrderId;
+
+		private String batchType;
+
 		private String appName;
 
 		private Boolean auto;
 
-		private Integer batchCount;
-
-		private String batchType;
-
-		private Integer batchWaitTime;
-
-		private String changeOrderId;
-
-		private String coType;
+		private String currentPipelineId;
 
 		private String coTypeCode;
 
-		private String createTime;
-
-		private String currentPipelineId;
-
-		private String description;
-
-		private Integer status;
-
-		private Boolean supportAbortFreeze;
-
 		private Boolean supportRollback;
 
+		private Integer batchWaitTime;
+
 		private String errorMessage;
+
+		private String coType;
+
+		private Integer batchCount;
 
 		private List<Pipeline> pipelines;
 
 		private List<String> coTargets;
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Boolean getSupportAbortFreeze() {
+			return this.supportAbortFreeze;
+		}
+
+		public void setSupportAbortFreeze(Boolean supportAbortFreeze) {
+			this.supportAbortFreeze = supportAbortFreeze;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getChangeOrderId() {
+			return this.changeOrderId;
+		}
+
+		public void setChangeOrderId(String changeOrderId) {
+			this.changeOrderId = changeOrderId;
+		}
+
+		public String getBatchType() {
+			return this.batchType;
+		}
+
+		public void setBatchType(String batchType) {
+			this.batchType = batchType;
+		}
 
 		public String getAppName() {
 			return this.appName;
@@ -147,44 +195,12 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 			this.auto = auto;
 		}
 
-		public Integer getBatchCount() {
-			return this.batchCount;
+		public String getCurrentPipelineId() {
+			return this.currentPipelineId;
 		}
 
-		public void setBatchCount(Integer batchCount) {
-			this.batchCount = batchCount;
-		}
-
-		public String getBatchType() {
-			return this.batchType;
-		}
-
-		public void setBatchType(String batchType) {
-			this.batchType = batchType;
-		}
-
-		public Integer getBatchWaitTime() {
-			return this.batchWaitTime;
-		}
-
-		public void setBatchWaitTime(Integer batchWaitTime) {
-			this.batchWaitTime = batchWaitTime;
-		}
-
-		public String getChangeOrderId() {
-			return this.changeOrderId;
-		}
-
-		public void setChangeOrderId(String changeOrderId) {
-			this.changeOrderId = changeOrderId;
-		}
-
-		public String getCoType() {
-			return this.coType;
-		}
-
-		public void setCoType(String coType) {
-			this.coType = coType;
+		public void setCurrentPipelineId(String currentPipelineId) {
+			this.currentPipelineId = currentPipelineId;
 		}
 
 		public String getCoTypeCode() {
@@ -195,46 +211,6 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 			this.coTypeCode = coTypeCode;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getCurrentPipelineId() {
-			return this.currentPipelineId;
-		}
-
-		public void setCurrentPipelineId(String currentPipelineId) {
-			this.currentPipelineId = currentPipelineId;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public Boolean getSupportAbortFreeze() {
-			return this.supportAbortFreeze;
-		}
-
-		public void setSupportAbortFreeze(Boolean supportAbortFreeze) {
-			this.supportAbortFreeze = supportAbortFreeze;
-		}
-
 		public Boolean getSupportRollback() {
 			return this.supportRollback;
 		}
@@ -243,12 +219,36 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 			this.supportRollback = supportRollback;
 		}
 
+		public Integer getBatchWaitTime() {
+			return this.batchWaitTime;
+		}
+
+		public void setBatchWaitTime(Integer batchWaitTime) {
+			this.batchWaitTime = batchWaitTime;
+		}
+
 		public String getErrorMessage() {
 			return this.errorMessage;
 		}
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
+		}
+
+		public String getCoType() {
+			return this.coType;
+		}
+
+		public void setCoType(String coType) {
+			this.coType = coType;
+		}
+
+		public Integer getBatchCount() {
+			return this.batchCount;
+		}
+
+		public void setBatchCount(Integer batchCount) {
+			this.batchCount = batchCount;
 		}
 
 		public List<Pipeline> getPipelines() {
@@ -269,42 +269,26 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 
 		public static class Pipeline {
 
-			private Integer batchType;
-
-			private Integer parallelCount;
-
-			private String pipelineId;
+			private Integer status;
 
 			private String pipelineName;
 
-			private Long startTime;
-
-			private Integer status;
+			private Integer parallelCount;
 
 			private Long updateTime;
 
-			public Integer getBatchType() {
-				return this.batchType;
+			private Long startTime;
+
+			private String pipelineId;
+
+			private Integer batchType;
+
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setBatchType(Integer batchType) {
-				this.batchType = batchType;
-			}
-
-			public Integer getParallelCount() {
-				return this.parallelCount;
-			}
-
-			public void setParallelCount(Integer parallelCount) {
-				this.parallelCount = parallelCount;
-			}
-
-			public String getPipelineId() {
-				return this.pipelineId;
-			}
-
-			public void setPipelineId(String pipelineId) {
-				this.pipelineId = pipelineId;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
 			public String getPipelineName() {
@@ -315,20 +299,12 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 				this.pipelineName = pipelineName;
 			}
 
-			public Long getStartTime() {
-				return this.startTime;
+			public Integer getParallelCount() {
+				return this.parallelCount;
 			}
 
-			public void setStartTime(Long startTime) {
-				this.startTime = startTime;
-			}
-
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setParallelCount(Integer parallelCount) {
+				this.parallelCount = parallelCount;
 			}
 
 			public Long getUpdateTime() {
@@ -337,6 +313,30 @@ public class DescribeChangeOrderResponse extends AcsResponse {
 
 			public void setUpdateTime(Long updateTime) {
 				this.updateTime = updateTime;
+			}
+
+			public Long getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(Long startTime) {
+				this.startTime = startTime;
+			}
+
+			public String getPipelineId() {
+				return this.pipelineId;
+			}
+
+			public void setPipelineId(String pipelineId) {
+				this.pipelineId = pipelineId;
+			}
+
+			public Integer getBatchType() {
+				return this.batchType;
+			}
+
+			public void setBatchType(Integer batchType) {
+				this.batchType = batchType;
 			}
 		}
 	}

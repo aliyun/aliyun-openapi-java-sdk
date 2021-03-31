@@ -26,13 +26,13 @@ public class QueryTicketActionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private String message;
+
+	private String data;
 
 	private String code;
 
-	private String data;
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +40,6 @@ public class QueryTicketActionsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -58,6 +50,14 @@ public class QueryTicketActionsResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
@@ -66,12 +66,12 @@ public class QueryTicketActionsResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getData() {
-		return this.data;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

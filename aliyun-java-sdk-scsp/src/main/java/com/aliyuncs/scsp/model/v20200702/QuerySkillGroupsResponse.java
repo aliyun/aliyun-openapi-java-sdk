@@ -25,17 +25,27 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QuerySkillGroupsResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Integer currentPage;
-
 	private Integer onePageSize;
 
-	private Integer totalResults;
+	private String requestId;
 
 	private Integer totalPage;
 
+	private Integer currentPage;
+
+	private Long httpStatusCode;
+
+	private Integer totalResults;
+
 	private List<DataItem> data;
+
+	public Integer getOnePageSize() {
+		return this.onePageSize;
+	}
+
+	public void setOnePageSize(Integer onePageSize) {
+		this.onePageSize = onePageSize;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,6 +53,14 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotalPage() {
+		return this.totalPage;
+	}
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
 	}
 
 	public Integer getCurrentPage() {
@@ -53,12 +71,12 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 		this.currentPage = currentPage;
 	}
 
-	public Integer getOnePageSize() {
-		return this.onePageSize;
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
 	}
 
-	public void setOnePageSize(Integer onePageSize) {
-		this.onePageSize = onePageSize;
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Integer getTotalResults() {
@@ -67,14 +85,6 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	public void setTotalResults(Integer totalResults) {
 		this.totalResults = totalResults;
-	}
-
-	public Integer getTotalPage() {
-		return this.totalPage;
-	}
-
-	public void setTotalPage(Integer totalPage) {
-		this.totalPage = totalPage;
 	}
 
 	public List<DataItem> getData() {
@@ -87,23 +97,15 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long skillGroupId;
-
 		private String skillGroupName;
 
 		private String description;
 
 		private String displayName;
 
+		private Long skillGroupId;
+
 		private Integer channelType;
-
-		public Long getSkillGroupId() {
-			return this.skillGroupId;
-		}
-
-		public void setSkillGroupId(Long skillGroupId) {
-			this.skillGroupId = skillGroupId;
-		}
 
 		public String getSkillGroupName() {
 			return this.skillGroupName;
@@ -127,6 +129,14 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 		public void setDisplayName(String displayName) {
 			this.displayName = displayName;
+		}
+
+		public Long getSkillGroupId() {
+			return this.skillGroupId;
+		}
+
+		public void setSkillGroupId(Long skillGroupId) {
+			this.skillGroupId = skillGroupId;
 		}
 
 		public Integer getChannelType() {

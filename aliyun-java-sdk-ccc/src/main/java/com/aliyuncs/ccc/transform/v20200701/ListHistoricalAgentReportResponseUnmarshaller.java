@@ -73,7 +73,7 @@ public class ListHistoricalAgentReportResponseUnmarshaller {
 			outbound.setAnswerRate(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.AnswerRate"));
 			outbound.setAverageDialingTime(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.AverageDialingTime"));
 			outbound.setAverageTalkTime(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.AverageTalkTime"));
-			outbound.setAverageWorkTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.AverageWorkTime"));
+			outbound.setAverageWorkTime(_ctx.floatValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.AverageWorkTime"));
 			outbound.setCallsAnswered(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.CallsAnswered"));
 			outbound.setCallsDialed(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.CallsDialed"));
 			outbound.setMaxDialingTime(_ctx.longValue("ListHistoricalAgentReportResponse.Data.List["+ i +"].Outbound.MaxDialingTime"));

@@ -32,8 +32,10 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 	private String logicalRegionId;
 
 	private String clusterId;
+
+	private String logicalRegionIdFilter;
 	public ListApplicationRequest() {
-		super("Edas", "2017-08-01", "ListApplication", "edas");
+		super("Edas", "2017-08-01", "ListApplication", "Edas");
 		setUriPattern("/pop/v5/app/app_list");
 		setMethod(MethodType.POST);
 		try {
@@ -83,6 +85,17 @@ public class ListApplicationRequest extends RoaAcsRequest<ListApplicationRespons
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public String getLogicalRegionIdFilter() {
+		return this.logicalRegionIdFilter;
+	}
+
+	public void setLogicalRegionIdFilter(String logicalRegionIdFilter) {
+		this.logicalRegionIdFilter = logicalRegionIdFilter;
+		if(logicalRegionIdFilter != null){
+			putQueryParameter("LogicalRegionIdFilter", logicalRegionIdFilter);
 		}
 	}
 

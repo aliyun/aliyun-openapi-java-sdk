@@ -37,7 +37,7 @@ public class BindSlbRequest extends RoaAcsRequest<BindSlbResponse> {
 
 	private String type;
 	public BindSlbRequest() {
-		super("Edas", "2017-08-01", "BindSlb", "edas");
+		super("Edas", "2017-08-01", "BindSlb", "Edas");
 		setUriPattern("/pop/app/bind_slb_json");
 		setMethod(MethodType.POST);
 		try {

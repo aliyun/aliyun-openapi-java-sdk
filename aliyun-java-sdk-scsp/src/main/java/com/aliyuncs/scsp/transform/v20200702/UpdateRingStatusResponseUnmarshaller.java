@@ -23,9 +23,9 @@ public class UpdateRingStatusResponseUnmarshaller {
 	public static UpdateRingStatusResponse unmarshall(UpdateRingStatusResponse updateRingStatusResponse, UnmarshallerContext _ctx) {
 		
 		updateRingStatusResponse.setRequestId(_ctx.stringValue("UpdateRingStatusResponse.RequestId"));
-		updateRingStatusResponse.setCode(_ctx.stringValue("UpdateRingStatusResponse.Code"));
-		updateRingStatusResponse.setData(_ctx.stringValue("UpdateRingStatusResponse.Data"));
 		updateRingStatusResponse.setMessage(_ctx.stringValue("UpdateRingStatusResponse.Message"));
+		updateRingStatusResponse.setData(_ctx.stringValue("UpdateRingStatusResponse.Data"));
+		updateRingStatusResponse.setCode(_ctx.stringValue("UpdateRingStatusResponse.Code"));
 		updateRingStatusResponse.setSuccess(_ctx.booleanValue("UpdateRingStatusResponse.Success"));
 	 
 	 	return updateRingStatusResponse;

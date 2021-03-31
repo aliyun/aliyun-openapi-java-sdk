@@ -23,10 +23,10 @@ public class UpdateCustomerResponseUnmarshaller {
 	public static UpdateCustomerResponse unmarshall(UpdateCustomerResponse updateCustomerResponse, UnmarshallerContext _ctx) {
 		
 		updateCustomerResponse.setRequestId(_ctx.stringValue("UpdateCustomerResponse.RequestId"));
-		updateCustomerResponse.setCode(_ctx.stringValue("UpdateCustomerResponse.Code"));
 		updateCustomerResponse.setMessage(_ctx.stringValue("UpdateCustomerResponse.Message"));
-		updateCustomerResponse.setSuccess(_ctx.booleanValue("UpdateCustomerResponse.Success"));
 		updateCustomerResponse.setData(_ctx.longValue("UpdateCustomerResponse.Data"));
+		updateCustomerResponse.setCode(_ctx.stringValue("UpdateCustomerResponse.Code"));
+		updateCustomerResponse.setSuccess(_ctx.booleanValue("UpdateCustomerResponse.Success"));
 	 
 	 	return updateCustomerResponse;
 	}

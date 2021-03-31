@@ -37,6 +37,8 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 
 	private String ownerAccount;
 
+	private Integer expectedRenewDay;
+
 	private Long ownerId;
 
 	private String resourceType;
@@ -112,6 +114,17 @@ public class DescribeRenewalPriceRequest extends RpcAcsRequest<DescribeRenewalPr
 		this.ownerAccount = ownerAccount;
 		if(ownerAccount != null){
 			putQueryParameter("OwnerAccount", ownerAccount);
+		}
+	}
+
+	public Integer getExpectedRenewDay() {
+		return this.expectedRenewDay;
+	}
+
+	public void setExpectedRenewDay(Integer expectedRenewDay) {
+		this.expectedRenewDay = expectedRenewDay;
+		if(expectedRenewDay != null){
+			putQueryParameter("ExpectedRenewDay", expectedRenewDay.toString());
 		}
 	}
 

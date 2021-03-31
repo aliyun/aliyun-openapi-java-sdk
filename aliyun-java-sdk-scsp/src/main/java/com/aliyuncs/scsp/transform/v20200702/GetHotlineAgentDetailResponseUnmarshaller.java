@@ -24,18 +24,18 @@ public class GetHotlineAgentDetailResponseUnmarshaller {
 	public static GetHotlineAgentDetailResponse unmarshall(GetHotlineAgentDetailResponse getHotlineAgentDetailResponse, UnmarshallerContext _ctx) {
 		
 		getHotlineAgentDetailResponse.setRequestId(_ctx.stringValue("GetHotlineAgentDetailResponse.RequestId"));
-		getHotlineAgentDetailResponse.setSuccess(_ctx.booleanValue("GetHotlineAgentDetailResponse.Success"));
-		getHotlineAgentDetailResponse.setCode(_ctx.stringValue("GetHotlineAgentDetailResponse.Code"));
 		getHotlineAgentDetailResponse.setMessage(_ctx.stringValue("GetHotlineAgentDetailResponse.Message"));
+		getHotlineAgentDetailResponse.setCode(_ctx.stringValue("GetHotlineAgentDetailResponse.Code"));
+		getHotlineAgentDetailResponse.setSuccess(_ctx.booleanValue("GetHotlineAgentDetailResponse.Success"));
 
 		Data data = new Data();
-		data.setTenantId(_ctx.longValue("GetHotlineAgentDetailResponse.Data.TenantId"));
-		data.setAgentId(_ctx.longValue("GetHotlineAgentDetailResponse.Data.AgentId"));
-		data.setAgentStatus(_ctx.integerValue("GetHotlineAgentDetailResponse.Data.AgentStatus"));
 		data.setAssigned(_ctx.booleanValue("GetHotlineAgentDetailResponse.Data.Assigned"));
-		data.setToken(_ctx.stringValue("GetHotlineAgentDetailResponse.Data.Token"));
+		data.setTenantId(_ctx.longValue("GetHotlineAgentDetailResponse.Data.TenantId"));
+		data.setAgentStatus(_ctx.integerValue("GetHotlineAgentDetailResponse.Data.AgentStatus"));
 		data.setRestType(_ctx.integerValue("GetHotlineAgentDetailResponse.Data.RestType"));
 		data.setAgentStatusCode(_ctx.stringValue("GetHotlineAgentDetailResponse.Data.AgentStatusCode"));
+		data.setToken(_ctx.stringValue("GetHotlineAgentDetailResponse.Data.Token"));
+		data.setAgentId(_ctx.longValue("GetHotlineAgentDetailResponse.Data.AgentId"));
 		getHotlineAgentDetailResponse.setData(data);
 	 
 	 	return getHotlineAgentDetailResponse;

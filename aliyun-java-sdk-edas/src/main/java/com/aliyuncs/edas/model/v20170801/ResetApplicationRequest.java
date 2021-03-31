@@ -29,7 +29,7 @@ public class ResetApplicationRequest extends RoaAcsRequest<ResetApplicationRespo
 
 	private String eccInfo;
 	public ResetApplicationRequest() {
-		super("Edas", "2017-08-01", "ResetApplication", "edas");
+		super("Edas", "2017-08-01", "ResetApplication", "Edas");
 		setUriPattern("/pop/v5/changeorder/co_reset");
 		setMethod(MethodType.POST);
 		try {

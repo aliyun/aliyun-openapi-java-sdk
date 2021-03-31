@@ -25,27 +25,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApplicationInstancesResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
-
-	private String traceId;
 
 	private String requestId;
 
-	private Boolean success;
+	private String traceId;
 
 	private String errorCode;
 
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -53,14 +45,6 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getTraceId() {
-		return this.traceId;
-	}
-
-	public void setTraceId(String traceId) {
-		this.traceId = traceId;
 	}
 
 	public String getRequestId() {
@@ -71,12 +55,12 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getTraceId() {
+		return this.traceId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setTraceId(String traceId) {
+		this.traceId = traceId;
 	}
 
 	public String getErrorCode() {
@@ -85,6 +69,22 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -97,21 +97,13 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer currentPage;
-
 		private Integer pageSize;
+
+		private Integer currentPage;
 
 		private Integer totalSize;
 
 		private List<Instance> instances;
-
-		public Integer getCurrentPage() {
-			return this.currentPage;
-		}
-
-		public void setCurrentPage(Integer currentPage) {
-			this.currentPage = currentPage;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -119,6 +111,14 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 		public void setPageSize(Integer pageSize) {
 			this.pageSize = pageSize;
+		}
+
+		public Integer getCurrentPage() {
+			return this.currentPage;
+		}
+
+		public void setCurrentPage(Integer currentPage) {
+			this.currentPage = currentPage;
 		}
 
 		public Integer getTotalSize() {
@@ -139,28 +139,40 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 
 		public static class Instance {
 
-			private String groupId;
+			private String instanceContainerIp;
+
+			private String instanceHealthStatus;
 
 			private String instanceId;
 
-			private String instanceContainerStatus;
-
-			private String instanceContainerIp;
-
-			private Long createTimeStamp;
-
-			private String groupId1;
-
 			private String vSwitchId;
+
+			private String imageUrl;
 
 			private Long instanceContainerRestarts;
 
-			public String getGroupId() {
-				return this.groupId;
+			private String packageVersion;
+
+			private String instanceContainerStatus;
+
+			private Long createTimeStamp;
+
+			private String groupId;
+
+			public String getInstanceContainerIp() {
+				return this.instanceContainerIp;
 			}
 
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
+			public void setInstanceContainerIp(String instanceContainerIp) {
+				this.instanceContainerIp = instanceContainerIp;
+			}
+
+			public String getInstanceHealthStatus() {
+				return this.instanceHealthStatus;
+			}
+
+			public void setInstanceHealthStatus(String instanceHealthStatus) {
+				this.instanceHealthStatus = instanceHealthStatus;
 			}
 
 			public String getInstanceId() {
@@ -171,20 +183,44 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 				this.instanceId = instanceId;
 			}
 
+			public String getVSwitchId() {
+				return this.vSwitchId;
+			}
+
+			public void setVSwitchId(String vSwitchId) {
+				this.vSwitchId = vSwitchId;
+			}
+
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
+
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
+
+			public Long getInstanceContainerRestarts() {
+				return this.instanceContainerRestarts;
+			}
+
+			public void setInstanceContainerRestarts(Long instanceContainerRestarts) {
+				this.instanceContainerRestarts = instanceContainerRestarts;
+			}
+
+			public String getPackageVersion() {
+				return this.packageVersion;
+			}
+
+			public void setPackageVersion(String packageVersion) {
+				this.packageVersion = packageVersion;
+			}
+
 			public String getInstanceContainerStatus() {
 				return this.instanceContainerStatus;
 			}
 
 			public void setInstanceContainerStatus(String instanceContainerStatus) {
 				this.instanceContainerStatus = instanceContainerStatus;
-			}
-
-			public String getInstanceContainerIp() {
-				return this.instanceContainerIp;
-			}
-
-			public void setInstanceContainerIp(String instanceContainerIp) {
-				this.instanceContainerIp = instanceContainerIp;
 			}
 
 			public Long getCreateTimeStamp() {
@@ -195,28 +231,12 @@ public class DescribeApplicationInstancesResponse extends AcsResponse {
 				this.createTimeStamp = createTimeStamp;
 			}
 
-			public String getGroupId1() {
-				return this.groupId1;
+			public String getGroupId() {
+				return this.groupId;
 			}
 
-			public void setGroupId1(String groupId1) {
-				this.groupId1 = groupId1;
-			}
-
-			public String getVSwitchId() {
-				return this.vSwitchId;
-			}
-
-			public void setVSwitchId(String vSwitchId) {
-				this.vSwitchId = vSwitchId;
-			}
-
-			public Long getInstanceContainerRestarts() {
-				return this.instanceContainerRestarts;
-			}
-
-			public void setInstanceContainerRestarts(Long instanceContainerRestarts) {
-				this.instanceContainerRestarts = instanceContainerRestarts;
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
 			}
 		}
 	}

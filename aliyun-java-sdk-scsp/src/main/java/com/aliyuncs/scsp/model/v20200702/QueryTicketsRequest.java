@@ -15,8 +15,6 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.Map;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.scsp.Endpoint;
 
@@ -43,7 +41,7 @@ public class QueryTicketsRequest extends RpcAcsRequest<QueryTicketsResponse> {
 
 	private Long caseId;
 
-	private Map<Object,Object> extra;
+	private String extra;
 
 	private Integer channelType;
 
@@ -151,14 +149,14 @@ public class QueryTicketsRequest extends RpcAcsRequest<QueryTicketsResponse> {
 		}
 	}
 
-	public Map<Object,Object> getExtra() {
+	public String getExtra() {
 		return this.extra;
 	}
 
-	public void setExtra(Map<Object,Object> extra) {
+	public void setExtra(String extra) {
 		this.extra = extra;
 		if(extra != null){
-			putBodyParameter("Extra", new Gson().toJson(extra));
+			putBodyParameter("Extra", extra);
 		}
 	}
 

@@ -29,7 +29,7 @@ public class DescribeUserBizTypesResponse extends AcsResponse {
 
 	private List<Item> bizTypeList;
 
-	private List<Item> bizTypeListImport;
+	private List<ImportItem> bizTypeListImport;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -47,11 +47,11 @@ public class DescribeUserBizTypesResponse extends AcsResponse {
 		this.bizTypeList = bizTypeList;
 	}
 
-	public List<Item> getBizTypeListImport() {
+	public List<ImportItem> getBizTypeListImport() {
 		return this.bizTypeListImport;
 	}
 
-	public void setBizTypeListImport(List<Item> bizTypeListImport) {
+	public void setBizTypeListImport(List<ImportItem> bizTypeListImport) {
 		this.bizTypeListImport = bizTypeListImport;
 	}
 
@@ -68,6 +68,8 @@ public class DescribeUserBizTypesResponse extends AcsResponse {
 		private Boolean citeTemplate;
 
 		private String industryInfo;
+
+		private String description;
 
 		public String getBizType() {
 			return this.bizType;
@@ -115,6 +117,87 @@ public class DescribeUserBizTypesResponse extends AcsResponse {
 
 		public void setIndustryInfo(String industryInfo) {
 			this.industryInfo = industryInfo;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+	}
+
+	public static class ImportItem {
+
+		private String bizType;
+
+		private String sourceBizType;
+
+		private Boolean gray;
+
+		private String source;
+
+		private Boolean citeTemplate;
+
+		private String industryInfo;
+
+		private String description;
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
+		}
+
+		public String getSourceBizType() {
+			return this.sourceBizType;
+		}
+
+		public void setSourceBizType(String sourceBizType) {
+			this.sourceBizType = sourceBizType;
+		}
+
+		public Boolean getGray() {
+			return this.gray;
+		}
+
+		public void setGray(Boolean gray) {
+			this.gray = gray;
+		}
+
+		public String getSource() {
+			return this.source;
+		}
+
+		public void setSource(String source) {
+			this.source = source;
+		}
+
+		public Boolean getCiteTemplate() {
+			return this.citeTemplate;
+		}
+
+		public void setCiteTemplate(Boolean citeTemplate) {
+			this.citeTemplate = citeTemplate;
+		}
+
+		public String getIndustryInfo() {
+			return this.industryInfo;
+		}
+
+		public void setIndustryInfo(String industryInfo) {
+			this.industryInfo = industryInfo;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 	}
 

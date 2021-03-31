@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class DescribeTraceLocationRequest extends RpcAcsRequest<DescribeTraceLocationResponse> {
 	   
 	public DescribeTraceLocationRequest() {
-		super("ARMS", "2019-08-08", "DescribeTraceLocation", "arms");
+		super("ARMS", "2019-08-08", "DescribeTraceLocation");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
