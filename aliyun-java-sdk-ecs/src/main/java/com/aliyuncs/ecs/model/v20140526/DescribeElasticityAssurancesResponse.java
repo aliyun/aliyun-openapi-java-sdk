@@ -99,7 +99,11 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 		private String latestStartTime;
 
+		private String resourceGroupId;
+
 		private List<AllocatedResource> allocatedResources;
+
+		private List<Tag> tags;
 
 		public String getPrivatePoolOptionsId() {
 			return this.privatePoolOptionsId;
@@ -189,12 +193,28 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 			this.latestStartTime = latestStartTime;
 		}
 
+		public String getResourceGroupId() {
+			return this.resourceGroupId;
+		}
+
+		public void setResourceGroupId(String resourceGroupId) {
+			this.resourceGroupId = resourceGroupId;
+		}
+
 		public List<AllocatedResource> getAllocatedResources() {
 			return this.allocatedResources;
 		}
 
 		public void setAllocatedResources(List<AllocatedResource> allocatedResources) {
 			this.allocatedResources = allocatedResources;
+		}
+
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
 		}
 
 		public static class AllocatedResource {
@@ -237,6 +257,29 @@ public class DescribeElasticityAssurancesResponse extends AcsResponse {
 
 			public void setUsedAmount(Integer usedAmount) {
 				this.usedAmount = usedAmount;
+			}
+		}
+
+		public static class Tag {
+
+			private String tagKey;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

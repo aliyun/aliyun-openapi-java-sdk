@@ -199,6 +199,8 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 		private EipAddress eipAddress;
 
+		private HibernationOptions hibernationOptions;
+
 		private DedicatedHostAttribute dedicatedHostAttribute;
 
 		private EcsCapacityReservationAttr ecsCapacityReservationAttr;
@@ -657,6 +659,14 @@ public class DescribeInstancesResponse extends AcsResponse {
 			this.eipAddress = eipAddress;
 		}
 
+		public HibernationOptions getHibernationOptions() {
+			return this.hibernationOptions;
+		}
+
+		public void setHibernationOptions(HibernationOptions hibernationOptions) {
+			this.hibernationOptions = hibernationOptions;
+		}
+
 		public DedicatedHostAttribute getDedicatedHostAttribute() {
 			return this.dedicatedHostAttribute;
 		}
@@ -935,6 +945,19 @@ public class DescribeInstancesResponse extends AcsResponse {
 
 			public void setIsSupportUnassociate(Boolean isSupportUnassociate) {
 				this.isSupportUnassociate = isSupportUnassociate;
+			}
+		}
+
+		public static class HibernationOptions {
+
+			private Boolean configured;
+
+			public Boolean getConfigured() {
+				return this.configured;
+			}
+
+			public void setConfigured(Boolean configured) {
+				this.configured = configured;
 			}
 		}
 

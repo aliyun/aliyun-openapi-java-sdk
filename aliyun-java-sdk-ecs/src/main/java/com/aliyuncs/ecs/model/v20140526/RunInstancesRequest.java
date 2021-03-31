@@ -80,6 +80,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private String securityGroupId;
 
+	private Boolean hibernationOptionsConfigured;
+
 	private String systemDiskPerformanceLevel;
 
 	private Boolean passwordInherit;
@@ -130,6 +132,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 
 	private Integer ipv6AddressCount;
 
+	private List<String> hostNamess;
+
 	private String vSwitchId;
 
 	private String instanceName;
@@ -147,6 +151,8 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 	private Integer cpuOptionsThreadsPerCore;
 
 	private String systemDiskCategory;
+
+	private String securityOptionsTrustedSystemMode;
 
 	private String userData;
 
@@ -485,6 +491,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public Boolean getHibernationOptionsConfigured() {
+		return this.hibernationOptionsConfigured;
+	}
+
+	public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
+		this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		if(hibernationOptionsConfigured != null){
+			putQueryParameter("HibernationOptions.Configured", hibernationOptionsConfigured.toString());
+		}
+	}
+
 	public String getSystemDiskPerformanceLevel() {
 		return this.systemDiskPerformanceLevel;
 	}
@@ -769,6 +786,19 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		}
 	}
 
+	public List<String> getHostNamess() {
+		return this.hostNamess;
+	}
+
+	public void setHostNamess(List<String> hostNamess) {
+		this.hostNamess = hostNamess;	
+		if (hostNamess != null) {
+			for (int i = 0; i < hostNamess.size(); i++) {
+				putQueryParameter("HostNames." + (i + 1) , hostNamess.get(i));
+			}
+		}	
+	}
+
 	public String getVSwitchId() {
 		return this.vSwitchId;
 	}
@@ -867,6 +897,17 @@ public class RunInstancesRequest extends RpcAcsRequest<RunInstancesResponse> {
 		this.systemDiskCategory = systemDiskCategory;
 		if(systemDiskCategory != null){
 			putQueryParameter("SystemDisk.Category", systemDiskCategory);
+		}
+	}
+
+	public String getSecurityOptionsTrustedSystemMode() {
+		return this.securityOptionsTrustedSystemMode;
+	}
+
+	public void setSecurityOptionsTrustedSystemMode(String securityOptionsTrustedSystemMode) {
+		this.securityOptionsTrustedSystemMode = securityOptionsTrustedSystemMode;
+		if(securityOptionsTrustedSystemMode != null){
+			putQueryParameter("SecurityOptions.TrustedSystemMode", securityOptionsTrustedSystemMode);
 		}
 	}
 

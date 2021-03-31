@@ -80,6 +80,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private String instanceType;
 
+	private String dedicatedHostType;
+
 	private String dataDisk2Category;
 
 	private Integer dataDisk1Size;
@@ -406,6 +408,17 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 		this.instanceType = instanceType;
 		if(instanceType != null){
 			putQueryParameter("InstanceType", instanceType);
+		}
+	}
+
+	public String getDedicatedHostType() {
+		return this.dedicatedHostType;
+	}
+
+	public void setDedicatedHostType(String dedicatedHostType) {
+		this.dedicatedHostType = dedicatedHostType;
+		if(dedicatedHostType != null){
+			putQueryParameter("DedicatedHostType", dedicatedHostType);
 		}
 	}
 

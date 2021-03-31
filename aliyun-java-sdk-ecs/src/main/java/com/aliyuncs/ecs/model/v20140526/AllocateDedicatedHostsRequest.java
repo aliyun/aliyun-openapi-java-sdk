@@ -36,6 +36,8 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 
 	private String resourceGroupId;
 
+	private Integer minQuantity;
+
 	private String actionOnMaintenance;
 
 	private String dedicatedHostClusterId;
@@ -134,6 +136,17 @@ public class AllocateDedicatedHostsRequest extends RpcAcsRequest<AllocateDedicat
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
+		}
+	}
+
+	public Integer getMinQuantity() {
+		return this.minQuantity;
+	}
+
+	public void setMinQuantity(Integer minQuantity) {
+		this.minQuantity = minQuantity;
+		if(minQuantity != null){
+			putQueryParameter("MinQuantity", minQuantity.toString());
 		}
 	}
 

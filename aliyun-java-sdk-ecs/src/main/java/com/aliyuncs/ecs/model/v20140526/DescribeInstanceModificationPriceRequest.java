@@ -15,6 +15,7 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.ecs.Endpoint;
 
@@ -22,28 +23,26 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
+public class DescribeInstanceModificationPriceRequest extends RpcAcsRequest<DescribeInstanceModificationPriceResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String clientToken;
+	private String systemDiskCategory;
 
-	private Integer period;
+	private String instanceType;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
-	private Integer expectedRenewDay;
-
 	private Long ownerId;
 
-	private String periodUnit;
+	private List<DataDisk> dataDisks;
 
 	private String instanceId;
-	public RenewInstanceRequest() {
-		super("Ecs", "2014-05-26", "RenewInstance", "ecs");
+	public DescribeInstanceModificationPriceRequest() {
+		super("Ecs", "2014-05-26", "DescribeInstanceModificationPrice", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -62,25 +61,25 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getSystemDiskCategory() {
+		return this.systemDiskCategory;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("ClientToken", clientToken);
+	public void setSystemDiskCategory(String systemDiskCategory) {
+		this.systemDiskCategory = systemDiskCategory;
+		if(systemDiskCategory != null){
+			putQueryParameter("SystemDisk.Category", systemDiskCategory);
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
+	public String getInstanceType() {
+		return this.instanceType;
 	}
 
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
+	public void setInstanceType(String instanceType) {
+		this.instanceType = instanceType;
+		if(instanceType != null){
+			putQueryParameter("InstanceType", instanceType);
 		}
 	}
 
@@ -106,17 +105,6 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
-	public Integer getExpectedRenewDay() {
-		return this.expectedRenewDay;
-	}
-
-	public void setExpectedRenewDay(Integer expectedRenewDay) {
-		this.expectedRenewDay = expectedRenewDay;
-		if(expectedRenewDay != null){
-			putQueryParameter("ExpectedRenewDay", expectedRenewDay.toString());
-		}
-	}
-
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -128,15 +116,19 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
-	public String getPeriodUnit() {
-		return this.periodUnit;
+	public List<DataDisk> getDataDisks() {
+		return this.dataDisks;
 	}
 
-	public void setPeriodUnit(String periodUnit) {
-		this.periodUnit = periodUnit;
-		if(periodUnit != null){
-			putQueryParameter("PeriodUnit", periodUnit);
-		}
+	public void setDataDisks(List<DataDisk> dataDisks) {
+		this.dataDisks = dataDisks;	
+		if (dataDisks != null) {
+			for (int depth1 = 0; depth1 < dataDisks.size(); depth1++) {
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Size" , dataDisks.get(depth1).getSize());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".Category" , dataDisks.get(depth1).getCategory());
+				putQueryParameter("DataDisk." + (depth1 + 1) + ".PerformanceLevel" , dataDisks.get(depth1).getPerformanceLevel());
+			}
+		}	
 	}
 
 	public String getInstanceId() {
@@ -150,9 +142,42 @@ public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 		}
 	}
 
+	public static class DataDisk {
+
+		private Integer size;
+
+		private String category;
+
+		private String performanceLevel;
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+	}
+
 	@Override
-	public Class<RenewInstanceResponse> getResponseClass() {
-		return RenewInstanceResponse.class;
+	public Class<DescribeInstanceModificationPriceResponse> getResponseClass() {
+		return DescribeInstanceModificationPriceResponse.class;
 	}
 
 }

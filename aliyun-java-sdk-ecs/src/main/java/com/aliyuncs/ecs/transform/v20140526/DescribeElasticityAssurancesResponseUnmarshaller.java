@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem;
 import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.AllocatedResource;
+import com.aliyuncs.ecs.model.v20140526.DescribeElasticityAssurancesResponse.ElasticityAssuranceItem.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -46,6 +47,7 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 			elasticityAssuranceItem.setStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].StartTime"));
 			elasticityAssuranceItem.setEndTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].EndTime"));
 			elasticityAssuranceItem.setLatestStartTime(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].LatestStartTime"));
+			elasticityAssuranceItem.setResourceGroupId(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].ResourceGroupId"));
 
 			List<AllocatedResource> allocatedResources = new ArrayList<AllocatedResource>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {
@@ -58,6 +60,16 @@ public class DescribeElasticityAssurancesResponseUnmarshaller {
 				allocatedResources.add(allocatedResource);
 			}
 			elasticityAssuranceItem.setAllocatedResources(allocatedResources);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setTagKey(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagKey"));
+				tag.setTagValue(_ctx.stringValue("DescribeElasticityAssurancesResponse.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagValue"));
+
+				tags.add(tag);
+			}
+			elasticityAssuranceItem.setTags(tags);
 
 			elasticityAssuranceSet.add(elasticityAssuranceItem);
 		}

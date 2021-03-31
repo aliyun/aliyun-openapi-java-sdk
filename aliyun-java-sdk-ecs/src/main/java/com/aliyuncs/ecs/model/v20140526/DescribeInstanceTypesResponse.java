@@ -97,6 +97,8 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer secondaryEniQueueNumber;
 
+		private Integer diskQuantity;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -295,6 +297,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setSecondaryEniQueueNumber(Integer secondaryEniQueueNumber) {
 			this.secondaryEniQueueNumber = secondaryEniQueueNumber;
+		}
+
+		public Integer getDiskQuantity() {
+			return this.diskQuantity;
+		}
+
+		public void setDiskQuantity(Integer diskQuantity) {
+			this.diskQuantity = diskQuantity;
 		}
 	}
 

@@ -102,6 +102,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Integer internetMaxBandwidthOut;
 
+	private Boolean hibernationOptionsConfigured;
+
 	private String description;
 
 	private String systemDiskCategory;
@@ -580,6 +582,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.internetMaxBandwidthOut = internetMaxBandwidthOut;
 		if(internetMaxBandwidthOut != null){
 			putQueryParameter("InternetMaxBandwidthOut", internetMaxBandwidthOut.toString());
+		}
+	}
+
+	public Boolean getHibernationOptionsConfigured() {
+		return this.hibernationOptionsConfigured;
+	}
+
+	public void setHibernationOptionsConfigured(Boolean hibernationOptionsConfigured) {
+		this.hibernationOptionsConfigured = hibernationOptionsConfigured;
+		if(hibernationOptionsConfigured != null){
+			putQueryParameter("HibernationOptions.Configured", hibernationOptionsConfigured.toString());
 		}
 	}
 

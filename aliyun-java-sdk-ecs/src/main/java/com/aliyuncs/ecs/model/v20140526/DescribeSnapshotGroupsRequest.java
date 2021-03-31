@@ -38,6 +38,8 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 
 	private Long ownerId;
 
+	private List<String> additionalAttributess;
+
 	private String instanceId;
 
 	private String name;
@@ -120,6 +122,19 @@ public class DescribeSnapshotGroupsRequest extends RpcAcsRequest<DescribeSnapsho
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
 		}
+	}
+
+	public List<String> getAdditionalAttributess() {
+		return this.additionalAttributess;
+	}
+
+	public void setAdditionalAttributess(List<String> additionalAttributess) {
+		this.additionalAttributess = additionalAttributess;	
+		if (additionalAttributess != null) {
+			for (int i = 0; i < additionalAttributess.size(); i++) {
+				putQueryParameter("AdditionalAttributes." + (i + 1) , additionalAttributess.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceId() {

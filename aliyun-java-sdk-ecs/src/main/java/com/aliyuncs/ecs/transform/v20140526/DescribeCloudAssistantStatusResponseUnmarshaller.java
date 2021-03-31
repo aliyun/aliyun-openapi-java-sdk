@@ -35,8 +35,12 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet.Length"); i++) {
 			InstanceCloudAssistantStatus instanceCloudAssistantStatus = new InstanceCloudAssistantStatus();
 			instanceCloudAssistantStatus.setInstanceId(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InstanceId"));
+			instanceCloudAssistantStatus.setOSType(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].OSType"));
 			instanceCloudAssistantStatus.setCloudAssistantStatus(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus"));
 			instanceCloudAssistantStatus.setCloudAssistantVersion(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion"));
+			instanceCloudAssistantStatus.setInvocationCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InvocationCount"));
+			instanceCloudAssistantStatus.setActiveTaskCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].ActiveTaskCount"));
+			instanceCloudAssistantStatus.setLastInvokedTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastInvokedTime"));
 
 			instanceCloudAssistantStatusSet.add(instanceCloudAssistantStatus);
 		}

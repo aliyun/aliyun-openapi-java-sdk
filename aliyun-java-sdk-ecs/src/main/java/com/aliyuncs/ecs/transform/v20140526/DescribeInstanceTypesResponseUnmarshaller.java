@@ -56,6 +56,7 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 			instanceType.setMaximumQueueNumberPerEni(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MaximumQueueNumberPerEni"));
 			instanceType.setPrimaryEniQueueNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].PrimaryEniQueueNumber"));
 			instanceType.setSecondaryEniQueueNumber(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].SecondaryEniQueueNumber"));
+			instanceType.setDiskQuantity(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].DiskQuantity"));
 
 			instanceTypes.add(instanceType);
 		}
