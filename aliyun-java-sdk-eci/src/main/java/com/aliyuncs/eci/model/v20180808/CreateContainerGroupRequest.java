@@ -28,76 +28,100 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		super("Eci", "2018-08-08", "CreateContainerGroup", "eci");
 	}
 
-	private Float cpu;
-
-	private Float memory;
-
-	private List<Container> containers;
-
 	private Long resourceOwnerId;
 
-	private String securityGroupId;
-
-	private List<Container> initContainers;
-
-	private List<ImageRegistryCredential> imageRegistryCredentials;
-
-	private List<Tag> tags;
-
-	private String eipInstanceId;
-
 	private String resourceOwnerAccount;
-
-	private String restartPolicy;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String vSwitchId;
+	private String zoneId;
 
-	private List<Volume> volumes;
+	private String securityGroupId;
+
+	private String vSwitchId;
 
 	private String containerGroupName;
 
-	private String zoneId;
+	private String restartPolicy;
 
-	private DnsConfig dnsConfig;
+	private String eipInstanceId;
+
+	private Float cpu;
+
+	private Float memory;
+
+	private String resourceGroupId;
 
 	private String dnsPolicy;
+
+	private String clientToken;
+
+	private String instanceType;
+
+	private Boolean slsEnable;
+
+	private String imageSnapshotId;
+
+	private String ramRoleName;
+
+	private Long terminationGracePeriodSeconds;
+
+	private Boolean autoMatchImageCache;
+
+	private Integer ipv6AddressCount;
+
+	private Integer activeDeadlineSeconds;
 
 	private String spotStrategy;
 
 	private Float spotPriceLimit;
 
+	private String scheduleStrategy;
+
+	private String corePattern;
+
+	private Boolean autoCreateEip;
+
+	private Integer eipBandwidth;
+
+	private String eipISP;
+
+	private String eipCommonBandwidthPackage;
+
+	private String hostName;
+
+	private Integer cpuOptionsCore;
+
+	private Integer cpuOptionsHt;
+
+	private Integer ephemeralStorage;
+
+	private List<Tag> tags;
+
+	private List<ImageRegistryCredential> imageRegistryCredentials;
+
+	private List<Container> containers;
+
+	private List<Volume> volumes;
+
+	private List<Container> initContainers;
+
+	private DnsConfig dnsConfig;
+
 	private List<HostAliase> hostAliases;
 
-	private Boolean slsEnable;
-
-	private String clientToken;
-
-	private String imageSnapshotId;
-
-	private Boolean autoMatchImageCache;
-
-	private String resourceGroupId;
-
-	private String instanceType;
+	private List<Arn> arns;
 
 	private List<SecurityContextSysctl> securityContextSysctls;
 
-	private String ramRoleName;
-
 	private List<String> ntpServers;
-
-	private Long terminationGracePeriodSeconds;
-
-	private Integer ephemeralStorage;
 
 	private List<AcrRegistryInfo> acrRegistryInfos;
 
     public Integer getEphemeralStorage() {
-        return ephemeralStorage;
+        return this.ephemeralStorage;
     }
 
     public void setEphemeralStorage(Integer ephemeralStorage) {
@@ -106,7 +130,6 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
             putQueryParameter("EphemeralStorage", ephemeralStorage);
         }
     }
-
 
 	public Float getCpu() {
 		return cpu;
@@ -152,6 +175,105 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		}
 	}
 
+	public String getScheduleStrategy() {
+		return this.scheduleStrategy;
+	}
+
+	public void setScheduleStrategy(String scheduleStrategy) {
+		this.scheduleStrategy = scheduleStrategy;
+		if (null != scheduleStrategy) {
+			putQueryParameter("ScheduleStrategy", scheduleStrategy);
+		}
+	}
+
+	public String getCorePattern() {
+		return this.corePattern;
+	}
+
+	public void setCorePattern(String corePattern) {
+		this.corePattern = corePattern;
+		if (null != corePattern) {
+			putQueryParameter("CorePattern", corePattern);
+		}
+	}
+
+
+	public Boolean getAutoCreateEip() {
+		return this.autoCreateEip;
+	}
+
+	public void setAutoCreateEip(Boolean autoCreateEip) {
+		this.autoCreateEip = autoCreateEip;
+		if (null != autoCreateEip) {
+			putQueryParameter("AutoCreateEip", autoCreateEip);
+		}
+	}
+
+	public Integer getEipBandwidth() {
+		return this.eipBandwidth;
+	}
+
+	public void setEipBandwidth(Integer eipBandwidth) {
+		this.eipBandwidth = eipBandwidth;
+		if (null != eipBandwidth) {
+			putQueryParameter("EipBandwidth", eipBandwidth);
+		}
+	}
+
+	public String getEipISP() {
+		return this.eipISP;
+	}
+
+	public void setEipISP(String eipISP) {
+		this.eipISP = eipISP;
+		if (null != eipISP) {
+			putQueryParameter("EipISP", eipISP);
+		}
+	}
+
+	public String getEipCommonBandwidthPackage() {
+		return this.eipCommonBandwidthPackage;
+	}
+
+	public void setEipCommonBandwidthPackage(String eipCommonBandwidthPackage) {
+		this.eipCommonBandwidthPackage = eipCommonBandwidthPackage;
+		if (null != eipCommonBandwidthPackage) {
+			putQueryParameter("EipCommonBandwidthPackage", eipCommonBandwidthPackage);
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if (null != hostName) {
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Integer getCpuOptionsCore() {
+		return this.cpuOptionsCore;
+	}
+
+	public void setCpuOptionsCore(Integer cpuOptionsCore) {
+		this.cpuOptionsCore = cpuOptionsCore;
+		if (null != cpuOptionsCore) {
+			putQueryParameter("CpuOptionsCore", cpuOptionsCore);
+		}
+	}
+
+	public Integer getCpuOptionsHt() {
+		return this.cpuOptionsHt;
+	}
+
+	public void setCpuOptionsHt(Integer cpuOptionsHt) {
+		this.cpuOptionsHt = cpuOptionsHt;
+		if (null != cpuOptionsHt) {
+			putQueryParameter("CpuOptionsHt", cpuOptionsHt);
+		}
+	}
 
 	public List<Container> getContainers() {
 		return this.containers;
@@ -679,6 +801,21 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		}
 	}
 
+	public List<Arn> getArns() {
+		return this.arns;
+	}
+
+	public void setArns(List<Arn> arns) {
+		this.arns = arns;
+		if (null != arns) {
+			for (int depth1 = 0; depth1 < arns.size(); depth1++) {
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleArn", arns.get(depth1).getRoleArn());
+				putQueryParameter("Arn." + (depth1 + 1) + ".RoleType", arns.get(depth1).getRoleType());
+				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor", arns.get(depth1).getAssumeRoleFor());
+			}
+		}
+	}
+
 	public Boolean getSlsEnable() {
 		return slsEnable;
 	}
@@ -721,6 +858,28 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.autoMatchImageCache = autoMatchImageCache;
 		if (autoMatchImageCache != null) {
 			putQueryParameter("AutoMatchImageCache", autoMatchImageCache.toString());
+		}
+	}
+
+	public Integer getIpv6AddressCount() {
+		return this.ipv6AddressCount;
+	}
+
+	public void setIpv6AddressCount(Integer ipv6AddressCount) {
+		this.ipv6AddressCount = ipv6AddressCount;
+		if (null != ipv6AddressCount) {
+			putQueryParameter("Ipv6AddressCount", ipv6AddressCount);
+		}
+	}
+
+	public Integer getActiveDeadlineSeconds() {
+		return this.activeDeadlineSeconds;
+	}
+
+	public void setActiveDeadlineSeconds(Integer activeDeadlineSeconds) {
+		this.activeDeadlineSeconds = activeDeadlineSeconds;
+		if (null != activeDeadlineSeconds) {
+			putQueryParameter("ActiveDeadlineSeconds", activeDeadlineSeconds);
 		}
 	}
 
@@ -1407,6 +1566,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 			this.password = password;
 		}
 	}
+
 
 	public List<AcrRegistryInfo> getAcrRegistryInfos() {
         return this.acrRegistryInfos;
