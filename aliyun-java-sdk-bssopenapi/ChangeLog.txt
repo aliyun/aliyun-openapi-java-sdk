@@ -1,3 +1,6 @@
+2021-04-01 Version: 1.6.9
+- Query saving plan instance support tag.
+
 2021-03-25 Version: 1.6.8
 - Add DescribeInstanceBill.
 - Update QuerySettleBill to support RecordID filter.
