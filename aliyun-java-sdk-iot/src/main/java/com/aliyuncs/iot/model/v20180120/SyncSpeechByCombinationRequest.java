@@ -36,7 +36,7 @@ public class SyncSpeechByCombinationRequest extends RpcAcsRequest<SyncSpeechByCo
 
 	private String deviceName;
 	public SyncSpeechByCombinationRequest() {
-		super("Iot", "2018-01-20", "SyncSpeechByCombination");
+		super("Iot", "2018-01-20", "SyncSpeechByCombination", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

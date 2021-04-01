@@ -57,7 +57,7 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private String protocolType;
 	public CreateProductRequest() {
-		super("Iot", "2018-01-20", "CreateProduct");
+		super("Iot", "2018-01-20", "CreateProduct", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

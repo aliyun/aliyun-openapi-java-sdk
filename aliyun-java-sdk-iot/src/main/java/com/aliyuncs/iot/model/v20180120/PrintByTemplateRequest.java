@@ -22,8 +22,12 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDevicePropertyStatusResponse> {
+public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateResponse> {
 	   
+
+	private String projectCode;
+
+	private String templateBizCode;
 
 	private String iotId;
 
@@ -31,16 +35,38 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 
 	private String productKey;
 
-	private String deviceName;
+	private String paramsJsonString;
 
-	private String functionBlockId;
-	public QueryDevicePropertyStatusRequest() {
-		super("Iot", "2018-01-20", "QueryDevicePropertyStatus", "iot");
+	private String deviceName;
+	public PrintByTemplateRequest() {
+		super("Iot", "2018-01-20", "PrintByTemplate", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getProjectCode() {
+		return this.projectCode;
+	}
+
+	public void setProjectCode(String projectCode) {
+		this.projectCode = projectCode;
+		if(projectCode != null){
+			putBodyParameter("ProjectCode", projectCode);
+		}
+	}
+
+	public String getTemplateBizCode() {
+		return this.templateBizCode;
+	}
+
+	public void setTemplateBizCode(String templateBizCode) {
+		this.templateBizCode = templateBizCode;
+		if(templateBizCode != null){
+			putBodyParameter("TemplateBizCode", templateBizCode);
+		}
 	}
 
 	public String getIotId() {
@@ -50,7 +76,7 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 	public void setIotId(String iotId) {
 		this.iotId = iotId;
 		if(iotId != null){
-			putQueryParameter("IotId", iotId);
+			putBodyParameter("IotId", iotId);
 		}
 	}
 
@@ -61,7 +87,7 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 	public void setIotInstanceId(String iotInstanceId) {
 		this.iotInstanceId = iotInstanceId;
 		if(iotInstanceId != null){
-			putQueryParameter("IotInstanceId", iotInstanceId);
+			putBodyParameter("IotInstanceId", iotInstanceId);
 		}
 	}
 
@@ -72,7 +98,18 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 	public void setProductKey(String productKey) {
 		this.productKey = productKey;
 		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
+			putBodyParameter("ProductKey", productKey);
+		}
+	}
+
+	public String getParamsJsonString() {
+		return this.paramsJsonString;
+	}
+
+	public void setParamsJsonString(String paramsJsonString) {
+		this.paramsJsonString = paramsJsonString;
+		if(paramsJsonString != null){
+			putBodyParameter("ParamsJsonString", paramsJsonString);
 		}
 	}
 
@@ -83,24 +120,13 @@ public class QueryDevicePropertyStatusRequest extends RpcAcsRequest<QueryDeviceP
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
 		if(deviceName != null){
-			putQueryParameter("DeviceName", deviceName);
-		}
-	}
-
-	public String getFunctionBlockId() {
-		return this.functionBlockId;
-	}
-
-	public void setFunctionBlockId(String functionBlockId) {
-		this.functionBlockId = functionBlockId;
-		if(functionBlockId != null){
-			putQueryParameter("FunctionBlockId", functionBlockId);
+			putBodyParameter("DeviceName", deviceName);
 		}
 	}
 
 	@Override
-	public Class<QueryDevicePropertyStatusResponse> getResponseClass() {
-		return QueryDevicePropertyStatusResponse.class;
+	public Class<PrintByTemplateResponse> getResponseClass() {
+		return PrintByTemplateResponse.class;
 	}
 
 }

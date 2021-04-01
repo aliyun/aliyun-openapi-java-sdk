@@ -51,7 +51,7 @@ public class CreateOTAFirmwareRequest extends RpcAcsRequest<CreateOTAFirmwareRes
 
 	private String destVersion;
 	public CreateOTAFirmwareRequest() {
-		super("Iot", "2018-01-20", "CreateOTAFirmware");
+		super("Iot", "2018-01-20", "CreateOTAFirmware", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

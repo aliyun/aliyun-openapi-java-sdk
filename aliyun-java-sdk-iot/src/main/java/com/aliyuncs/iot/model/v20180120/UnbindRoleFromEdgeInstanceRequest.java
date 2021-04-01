@@ -29,7 +29,7 @@ public class UnbindRoleFromEdgeInstanceRequest extends RpcAcsRequest<UnbindRoleF
 
 	private String instanceId;
 	public UnbindRoleFromEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "UnbindRoleFromEdgeInstance");
+		super("Iot", "2018-01-20", "UnbindRoleFromEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

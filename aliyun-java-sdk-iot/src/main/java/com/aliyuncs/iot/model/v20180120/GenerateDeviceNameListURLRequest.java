@@ -27,7 +27,7 @@ public class GenerateDeviceNameListURLRequest extends RpcAcsRequest<GenerateDevi
 
 	private String iotInstanceId;
 	public GenerateDeviceNameListURLRequest() {
-		super("Iot", "2018-01-20", "GenerateDeviceNameListURL");
+		super("Iot", "2018-01-20", "GenerateDeviceNameListURL", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

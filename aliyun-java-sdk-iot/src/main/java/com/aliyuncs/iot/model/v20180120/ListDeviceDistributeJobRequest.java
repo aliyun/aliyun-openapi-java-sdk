@@ -33,7 +33,7 @@ public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDist
 
 	private Integer status;
 	public ListDeviceDistributeJobRequest() {
-		super("Iot", "2018-01-20", "ListDeviceDistributeJob");
+		super("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
