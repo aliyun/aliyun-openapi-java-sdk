@@ -37,7 +37,7 @@ public class RequestPasterResponseUnmarshaller {
 			PasterConfig pasterConfig = new PasterConfig();
 			pasterConfig.setResourceUuid(_ctx.stringValue("RequestPasterResponse.Data["+ i +"].ResourceUuid"));
 			pasterConfig.setDownloadUrl(_ctx.stringValue("RequestPasterResponse.Data["+ i +"].DownloadUrl"));
-			pasterConfig.setConfig(_ctx.mapValue("RequestPasterResponse.Data["+ i +"].Config"));
+			pasterConfig.setConfigs(_ctx.mapValue("RequestPasterResponse.Data["+ i +"].Configs"));
 
 			data.add(pasterConfig);
 		}
