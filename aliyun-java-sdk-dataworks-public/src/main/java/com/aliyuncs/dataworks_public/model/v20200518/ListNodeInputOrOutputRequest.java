@@ -22,16 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
+public class ListNodeInputOrOutputRequest extends RpcAcsRequest<ListNodeInputOrOutputResponse> {
 	   
 
-	private String bizExtKey;
+	private String projectEnv;
 
-	private Integer resourceGroupType;
+	private Long nodeId;
 
-	private String keyword;
-	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+	private String ioType;
+	public ListNodeInputOrOutputRequest() {
+		super("dataworks-public", "2020-05-18", "ListNodeInputOrOutput");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		} catch (Exception e) {}
 	}
 
-	public String getBizExtKey() {
-		return this.bizExtKey;
+	public String getProjectEnv() {
+		return this.projectEnv;
 	}
 
-	public void setBizExtKey(String bizExtKey) {
-		this.bizExtKey = bizExtKey;
-		if(bizExtKey != null){
-			putQueryParameter("BizExtKey", bizExtKey);
+	public void setProjectEnv(String projectEnv) {
+		this.projectEnv = projectEnv;
+		if(projectEnv != null){
+			putBodyParameter("ProjectEnv", projectEnv);
 		}
 	}
 
-	public Integer getResourceGroupType() {
-		return this.resourceGroupType;
+	public Long getNodeId() {
+		return this.nodeId;
 	}
 
-	public void setResourceGroupType(Integer resourceGroupType) {
-		this.resourceGroupType = resourceGroupType;
-		if(resourceGroupType != null){
-			putQueryParameter("ResourceGroupType", resourceGroupType.toString());
+	public void setNodeId(Long nodeId) {
+		this.nodeId = nodeId;
+		if(nodeId != null){
+			putBodyParameter("NodeId", nodeId.toString());
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
+	public String getIoType() {
+		return this.ioType;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setIoType(String ioType) {
+		this.ioType = ioType;
+		if(ioType != null){
+			putBodyParameter("IoType", ioType);
 		}
 	}
 
 	@Override
-	public Class<ListResourceGroupsResponse> getResponseClass() {
-		return ListResourceGroupsResponse.class;
+	public Class<ListNodeInputOrOutputResponse> getResponseClass() {
+		return ListNodeInputOrOutputResponse.class;
 	}
 
 }

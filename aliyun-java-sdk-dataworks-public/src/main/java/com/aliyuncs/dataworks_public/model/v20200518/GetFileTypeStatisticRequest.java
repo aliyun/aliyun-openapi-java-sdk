@@ -22,16 +22,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
+public class GetFileTypeStatisticRequest extends RpcAcsRequest<GetFileTypeStatisticResponse> {
 	   
 
-	private String bizExtKey;
+	private String projectEnv;
 
-	private Integer resourceGroupType;
-
-	private String keyword;
-	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+	private Long projectId;
+	public GetFileTypeStatisticRequest() {
+		super("dataworks-public", "2020-05-18", "GetFileTypeStatistic");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		} catch (Exception e) {}
 	}
 
-	public String getBizExtKey() {
-		return this.bizExtKey;
+	public String getProjectEnv() {
+		return this.projectEnv;
 	}
 
-	public void setBizExtKey(String bizExtKey) {
-		this.bizExtKey = bizExtKey;
-		if(bizExtKey != null){
-			putQueryParameter("BizExtKey", bizExtKey);
+	public void setProjectEnv(String projectEnv) {
+		this.projectEnv = projectEnv;
+		if(projectEnv != null){
+			putBodyParameter("ProjectEnv", projectEnv);
 		}
 	}
 
-	public Integer getResourceGroupType() {
-		return this.resourceGroupType;
+	public Long getProjectId() {
+		return this.projectId;
 	}
 
-	public void setResourceGroupType(Integer resourceGroupType) {
-		this.resourceGroupType = resourceGroupType;
-		if(resourceGroupType != null){
-			putQueryParameter("ResourceGroupType", resourceGroupType.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<ListResourceGroupsResponse> getResponseClass() {
-		return ListResourceGroupsResponse.class;
+	public Class<GetFileTypeStatisticResponse> getResponseClass() {
+		return GetFileTypeStatisticResponse.class;
 	}
 
 }

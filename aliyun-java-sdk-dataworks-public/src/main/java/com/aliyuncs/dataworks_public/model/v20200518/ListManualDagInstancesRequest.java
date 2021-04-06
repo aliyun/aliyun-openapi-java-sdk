@@ -22,16 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
+public class ListManualDagInstancesRequest extends RpcAcsRequest<ListManualDagInstancesResponse> {
 	   
 
-	private String bizExtKey;
+	private String projectEnv;
 
-	private Integer resourceGroupType;
+	private String projectName;
 
-	private String keyword;
-	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+	private String dagId;
+	public ListManualDagInstancesRequest() {
+		super("dataworks-public", "2020-05-18", "ListManualDagInstances");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		} catch (Exception e) {}
 	}
 
-	public String getBizExtKey() {
-		return this.bizExtKey;
+	public String getProjectEnv() {
+		return this.projectEnv;
 	}
 
-	public void setBizExtKey(String bizExtKey) {
-		this.bizExtKey = bizExtKey;
-		if(bizExtKey != null){
-			putQueryParameter("BizExtKey", bizExtKey);
+	public void setProjectEnv(String projectEnv) {
+		this.projectEnv = projectEnv;
+		if(projectEnv != null){
+			putBodyParameter("ProjectEnv", projectEnv);
 		}
 	}
 
-	public Integer getResourceGroupType() {
-		return this.resourceGroupType;
+	public String getProjectName() {
+		return this.projectName;
 	}
 
-	public void setResourceGroupType(Integer resourceGroupType) {
-		this.resourceGroupType = resourceGroupType;
-		if(resourceGroupType != null){
-			putQueryParameter("ResourceGroupType", resourceGroupType.toString());
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+		if(projectName != null){
+			putBodyParameter("ProjectName", projectName);
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
+	public String getDagId() {
+		return this.dagId;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setDagId(String dagId) {
+		this.dagId = dagId;
+		if(dagId != null){
+			putBodyParameter("DagId", dagId);
 		}
 	}
 
 	@Override
-	public Class<ListResourceGroupsResponse> getResponseClass() {
-		return ListResourceGroupsResponse.class;
+	public Class<ListManualDagInstancesResponse> getResponseClass() {
+		return ListManualDagInstancesResponse.class;
 	}
 
 }

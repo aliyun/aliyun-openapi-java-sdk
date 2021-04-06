@@ -22,16 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
+public class ListNodesByOutputRequest extends RpcAcsRequest<ListNodesByOutputResponse> {
 	   
 
-	private String bizExtKey;
+	private String projectEnv;
 
-	private Integer resourceGroupType;
+	private String outputs;
 
-	private String keyword;
-	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+	private Boolean outputNodeListAsMap;
+	public ListNodesByOutputRequest() {
+		super("dataworks-public", "2020-05-18", "ListNodesByOutput");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		} catch (Exception e) {}
 	}
 
-	public String getBizExtKey() {
-		return this.bizExtKey;
+	public String getProjectEnv() {
+		return this.projectEnv;
 	}
 
-	public void setBizExtKey(String bizExtKey) {
-		this.bizExtKey = bizExtKey;
-		if(bizExtKey != null){
-			putQueryParameter("BizExtKey", bizExtKey);
+	public void setProjectEnv(String projectEnv) {
+		this.projectEnv = projectEnv;
+		if(projectEnv != null){
+			putBodyParameter("ProjectEnv", projectEnv);
 		}
 	}
 
-	public Integer getResourceGroupType() {
-		return this.resourceGroupType;
+	public String getOutputs() {
+		return this.outputs;
 	}
 
-	public void setResourceGroupType(Integer resourceGroupType) {
-		this.resourceGroupType = resourceGroupType;
-		if(resourceGroupType != null){
-			putQueryParameter("ResourceGroupType", resourceGroupType.toString());
+	public void setOutputs(String outputs) {
+		this.outputs = outputs;
+		if(outputs != null){
+			putBodyParameter("Outputs", outputs);
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
+	public Boolean getOutputNodeListAsMap() {
+		return this.outputNodeListAsMap;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setOutputNodeListAsMap(Boolean outputNodeListAsMap) {
+		this.outputNodeListAsMap = outputNodeListAsMap;
+		if(outputNodeListAsMap != null){
+			putBodyParameter("OutputNodeListAsMap", outputNodeListAsMap.toString());
 		}
 	}
 
 	@Override
-	public Class<ListResourceGroupsResponse> getResponseClass() {
-		return ListResourceGroupsResponse.class;
+	public Class<ListNodesByOutputResponse> getResponseClass() {
+		return ListNodesByOutputResponse.class;
 	}
 
 }

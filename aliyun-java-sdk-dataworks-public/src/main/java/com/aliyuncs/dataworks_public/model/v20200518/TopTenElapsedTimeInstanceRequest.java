@@ -22,16 +22,14 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
+public class TopTenElapsedTimeInstanceRequest extends RpcAcsRequest<TopTenElapsedTimeInstanceResponse> {
 	   
 
-	private String bizExtKey;
+	private String businessDate;
 
-	private Integer resourceGroupType;
-
-	private String keyword;
-	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+	private Long projectId;
+	public TopTenElapsedTimeInstanceRequest() {
+		super("dataworks-public", "2020-05-18", "TopTenElapsedTimeInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +37,31 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		} catch (Exception e) {}
 	}
 
-	public String getBizExtKey() {
-		return this.bizExtKey;
+	public String getBusinessDate() {
+		return this.businessDate;
 	}
 
-	public void setBizExtKey(String bizExtKey) {
-		this.bizExtKey = bizExtKey;
-		if(bizExtKey != null){
-			putQueryParameter("BizExtKey", bizExtKey);
+	public void setBusinessDate(String businessDate) {
+		this.businessDate = businessDate;
+		if(businessDate != null){
+			putBodyParameter("BusinessDate", businessDate);
 		}
 	}
 
-	public Integer getResourceGroupType() {
-		return this.resourceGroupType;
+	public Long getProjectId() {
+		return this.projectId;
 	}
 
-	public void setResourceGroupType(Integer resourceGroupType) {
-		this.resourceGroupType = resourceGroupType;
-		if(resourceGroupType != null){
-			putQueryParameter("ResourceGroupType", resourceGroupType.toString());
-		}
-	}
-
-	public String getKeyword() {
-		return this.keyword;
-	}
-
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putBodyParameter("ProjectId", projectId.toString());
 		}
 	}
 
 	@Override
-	public Class<ListResourceGroupsResponse> getResponseClass() {
-		return ListResourceGroupsResponse.class;
+	public Class<TopTenElapsedTimeInstanceResponse> getResponseClass() {
+		return TopTenElapsedTimeInstanceResponse.class;
 	}
 
 }

@@ -22,16 +22,16 @@ import com.aliyuncs.dataworks_public.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
+public class ApprovePermissionApplyOrderRequest extends RpcAcsRequest<ApprovePermissionApplyOrderResponse> {
 	   
 
-	private String bizExtKey;
+	private String flowId;
 
-	private Integer resourceGroupType;
+	private String approveComment;
 
-	private String keyword;
-	public ListResourceGroupsRequest() {
-		super("dataworks-public", "2020-05-18", "ListResourceGroups");
+	private Integer approveAction;
+	public ApprovePermissionApplyOrderRequest() {
+		super("dataworks-public", "2020-05-18", "ApprovePermissionApplyOrder");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 		} catch (Exception e) {}
 	}
 
-	public String getBizExtKey() {
-		return this.bizExtKey;
+	public String getFlowId() {
+		return this.flowId;
 	}
 
-	public void setBizExtKey(String bizExtKey) {
-		this.bizExtKey = bizExtKey;
-		if(bizExtKey != null){
-			putQueryParameter("BizExtKey", bizExtKey);
+	public void setFlowId(String flowId) {
+		this.flowId = flowId;
+		if(flowId != null){
+			putQueryParameter("FlowId", flowId);
 		}
 	}
 
-	public Integer getResourceGroupType() {
-		return this.resourceGroupType;
+	public String getApproveComment() {
+		return this.approveComment;
 	}
 
-	public void setResourceGroupType(Integer resourceGroupType) {
-		this.resourceGroupType = resourceGroupType;
-		if(resourceGroupType != null){
-			putQueryParameter("ResourceGroupType", resourceGroupType.toString());
+	public void setApproveComment(String approveComment) {
+		this.approveComment = approveComment;
+		if(approveComment != null){
+			putQueryParameter("ApproveComment", approveComment);
 		}
 	}
 
-	public String getKeyword() {
-		return this.keyword;
+	public Integer getApproveAction() {
+		return this.approveAction;
 	}
 
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+	public void setApproveAction(Integer approveAction) {
+		this.approveAction = approveAction;
+		if(approveAction != null){
+			putQueryParameter("ApproveAction", approveAction.toString());
 		}
 	}
 
 	@Override
-	public Class<ListResourceGroupsResponse> getResponseClass() {
-		return ListResourceGroupsResponse.class;
+	public Class<ApprovePermissionApplyOrderResponse> getResponseClass() {
+		return ApprovePermissionApplyOrderResponse.class;
 	}
 
 }

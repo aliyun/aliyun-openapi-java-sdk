@@ -167,6 +167,8 @@ public class ListFilesResponse extends AcsResponse {
 
 			private Long fileId;
 
+			private Long businessId;
+
 			public String getConnectionName() {
 				return this.connectionName;
 			}
@@ -317,6 +319,14 @@ public class ListFilesResponse extends AcsResponse {
 
 			public void setFileId(Long fileId) {
 				this.fileId = fileId;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
 			}
 		}
 	}
