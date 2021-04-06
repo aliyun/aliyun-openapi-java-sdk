@@ -119,6 +119,8 @@ public class ScreenChestCTResponseUnmarshaller {
 			DetectionsItem detectionsItem = new DetectionsItem();
 			detectionsItem.setFractureCategory(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureCategory"));
 			detectionsItem.setFractureConfidence(_ctx.floatValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureConfidence"));
+			detectionsItem.setFractureLocation(_ctx.stringValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureLocation"));
+			detectionsItem.setFractureSegment(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureSegment"));
 			detectionsItem.setFractureId(_ctx.longValue("ScreenChestCTResponse.Data.DetectRibFracture.Detections["+ i +"].FractureId"));
 
 			List<Long> coordinateImage = new ArrayList<Long>();

@@ -440,6 +440,10 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 				private Float fractureConfidence;
 
+				private String fractureLocation;
+
+				private Long fractureSegment;
+
 				private Long fractureId;
 
 				private List<Long> coordinateImage;
@@ -460,6 +464,22 @@ public class ScreenChestCTResponse extends AcsResponse {
 
 				public void setFractureConfidence(Float fractureConfidence) {
 					this.fractureConfidence = fractureConfidence;
+				}
+
+				public String getFractureLocation() {
+					return this.fractureLocation;
+				}
+
+				public void setFractureLocation(String fractureLocation) {
+					this.fractureLocation = fractureLocation;
+				}
+
+				public Long getFractureSegment() {
+					return this.fractureSegment;
+				}
+
+				public void setFractureSegment(Long fractureSegment) {
+					this.fractureSegment = fractureSegment;
 				}
 
 				public Long getFractureId() {

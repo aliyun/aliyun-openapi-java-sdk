@@ -26,15 +26,15 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleResponse> {
 	   
 
-	private String dataFormat;
-
 	private Float threshold;
+
+	private String orgName;
+
+	private String dataFormat;
 
 	private List<URLList> uRLLists;
 
 	private String orgId;
-
-	private String orgName;
 	public DetectLungNoduleRequest() {
 		super("imageprocess", "2020-03-20", "DetectLungNodule", "imageprocess");
 		setMethod(MethodType.POST);
@@ -42,17 +42,6 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDataFormat() {
-		return this.dataFormat;
-	}
-
-	public void setDataFormat(String dataFormat) {
-		this.dataFormat = dataFormat;
-		if(dataFormat != null){
-			putBodyParameter("DataFormat", dataFormat);
-		}
 	}
 
 	public Float getThreshold() {
@@ -63,6 +52,28 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 		this.threshold = threshold;
 		if(threshold != null){
 			putBodyParameter("Threshold", threshold.toString());
+		}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
+	}
+
+	public String getDataFormat() {
+		return this.dataFormat;
+	}
+
+	public void setDataFormat(String dataFormat) {
+		this.dataFormat = dataFormat;
+		if(dataFormat != null){
+			putBodyParameter("DataFormat", dataFormat);
 		}
 	}
 
@@ -87,17 +98,6 @@ public class DetectLungNoduleRequest extends RpcAcsRequest<DetectLungNoduleRespo
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
-		}
-	}
-
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
 		}
 	}
 

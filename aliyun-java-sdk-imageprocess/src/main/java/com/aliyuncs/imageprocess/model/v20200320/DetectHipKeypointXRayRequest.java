@@ -25,15 +25,15 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectHipKeypointXRayRequest extends RpcAcsRequest<DetectHipKeypointXRayResponse> {
 	   
 
+	private String orgName;
+
+	private String tracerId;
+
 	private String dataFormat;
 
 	private String orgId;
 
-	private String orgName;
-
 	private String imageUrl;
-
-	private String tracerId;
 	public DetectHipKeypointXRayRequest() {
 		super("imageprocess", "2020-03-20", "DetectHipKeypointXRay", "imageprocess");
 		setMethod(MethodType.POST);
@@ -41,6 +41,28 @@ public class DetectHipKeypointXRayRequest extends RpcAcsRequest<DetectHipKeypoin
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
+	}
+
+	public String getTracerId() {
+		return this.tracerId;
+	}
+
+	public void setTracerId(String tracerId) {
+		this.tracerId = tracerId;
+		if(tracerId != null){
+			putBodyParameter("TracerId", tracerId);
+		}
 	}
 
 	public String getDataFormat() {
@@ -65,17 +87,6 @@ public class DetectHipKeypointXRayRequest extends RpcAcsRequest<DetectHipKeypoin
 		}
 	}
 
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
-		}
-	}
-
 	public String getImageUrl() {
 		return this.imageUrl;
 	}
@@ -84,17 +95,6 @@ public class DetectHipKeypointXRayRequest extends RpcAcsRequest<DetectHipKeypoin
 		this.imageUrl = imageUrl;
 		if(imageUrl != null){
 			putBodyParameter("ImageUrl", imageUrl);
-		}
-	}
-
-	public String getTracerId() {
-		return this.tracerId;
-	}
-
-	public void setTracerId(String tracerId) {
-		this.tracerId = tracerId;
-		if(tracerId != null){
-			putBodyParameter("TracerId", tracerId);
 		}
 	}
 

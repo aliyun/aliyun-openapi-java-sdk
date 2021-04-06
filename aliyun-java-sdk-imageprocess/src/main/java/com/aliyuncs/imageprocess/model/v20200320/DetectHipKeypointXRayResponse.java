@@ -47,21 +47,13 @@ public class DetectHipKeypointXRayResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String imageUrl;
-
 		private String orgId;
+
+		private String imageUrl;
 
 		private String orgName;
 
 		private List<KeyPointsItem> keyPoints;
-
-		public String getImageUrl() {
-			return this.imageUrl;
-		}
-
-		public void setImageUrl(String imageUrl) {
-			this.imageUrl = imageUrl;
-		}
 
 		public String getOrgId() {
 			return this.orgId;
@@ -69,6 +61,14 @@ public class DetectHipKeypointXRayResponse extends AcsResponse {
 
 		public void setOrgId(String orgId) {
 			this.orgId = orgId;
+		}
+
+		public String getImageUrl() {
+			return this.imageUrl;
+		}
+
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
 		}
 
 		public String getOrgName() {
@@ -121,17 +121,9 @@ public class DetectHipKeypointXRayResponse extends AcsResponse {
 
 			public static class Tag {
 
-				private String direction;
-
 				private String label;
 
-				public String getDirection() {
-					return this.direction;
-				}
-
-				public void setDirection(String direction) {
-					this.direction = direction;
-				}
+				private String direction;
 
 				public String getLabel() {
 					return this.label;
@@ -139,6 +131,14 @@ public class DetectHipKeypointXRayResponse extends AcsResponse {
 
 				public void setLabel(String label) {
 					this.label = label;
+				}
+
+				public String getDirection() {
+					return this.direction;
+				}
+
+				public void setDirection(String direction) {
+					this.direction = direction;
 				}
 			}
 		}

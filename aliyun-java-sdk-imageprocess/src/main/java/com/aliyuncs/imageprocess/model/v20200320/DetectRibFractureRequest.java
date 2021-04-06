@@ -26,15 +26,15 @@ import com.aliyuncs.imageprocess.Endpoint;
 public class DetectRibFractureRequest extends RpcAcsRequest<DetectRibFractureResponse> {
 	   
 
+	private String orgName;
+
+	private String sourceType;
+
 	private String dataFormat;
 
 	private List<URLList> uRLLists;
 
 	private String orgId;
-
-	private String orgName;
-
-	private String sourceType;
 	public DetectRibFractureRequest() {
 		super("imageprocess", "2020-03-20", "DetectRibFracture", "imageprocess");
 		setMethod(MethodType.POST);
@@ -42,6 +42,28 @@ public class DetectRibFractureRequest extends RpcAcsRequest<DetectRibFractureRes
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getOrgName() {
+		return this.orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+		if(orgName != null){
+			putBodyParameter("OrgName", orgName);
+		}
+	}
+
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putBodyParameter("SourceType", sourceType);
+		}
 	}
 
 	public String getDataFormat() {
@@ -76,28 +98,6 @@ public class DetectRibFractureRequest extends RpcAcsRequest<DetectRibFractureRes
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
-		}
-	}
-
-	public String getOrgName() {
-		return this.orgName;
-	}
-
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
-		if(orgName != null){
-			putBodyParameter("OrgName", orgName);
-		}
-	}
-
-	public String getSourceType() {
-		return this.sourceType;
-	}
-
-	public void setSourceType(String sourceType) {
-		this.sourceType = sourceType;
-		if(sourceType != null){
-			putBodyParameter("SourceType", sourceType);
 		}
 	}
 
