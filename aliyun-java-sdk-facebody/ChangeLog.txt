@@ -1,3 +1,6 @@
+2021-04-06 Version: 1.2.17
+- Release MonitorExamination.
+
 2021-03-11 Version: 1.2.16
 - Update DetectIPCPedestrian.
 
