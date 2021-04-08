@@ -27,7 +27,7 @@ public class DetectVideoIPCObjectRequest extends RpcAcsRequest<DetectVideoIPCObj
 
 	private String videoURL;
 	public DetectVideoIPCObjectRequest() {
-		super("objectdet", "2019-12-30", "DetectVideoIPCObject", "objectdet");
+		super("objectdet", "2019-12-30", "DetectVideoIPCObject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

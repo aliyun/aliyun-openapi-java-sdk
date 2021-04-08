@@ -1,4 +1,7 @@
 2021-04-08 Version: 1.0.12
+- Add DetectIPCVideoObject.
+
+2021-04-08 Version: 1.0.12
 - Release DetectVideoIPCObject.
 
 2021-02-18 Version: 1.0.11
