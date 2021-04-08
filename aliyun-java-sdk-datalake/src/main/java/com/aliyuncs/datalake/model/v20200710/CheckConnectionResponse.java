@@ -15,18 +15,20 @@
 package com.aliyuncs.datalake.model.v20200710;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.datalake.transform.v20200710.UpdateBlueprintInstanceResponseUnmarshaller;
+import com.aliyuncs.datalake.transform.v20200710.CheckConnectionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateBlueprintInstanceResponse extends AcsResponse {
+public class CheckConnectionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
+	private Boolean success;
+
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,17 +38,58 @@ public class UpdateBlueprintInstanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
+	public Boolean getSuccess() {
 		return this.success;
 	}
 
-	public void setSuccess(String success) {
+	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
 
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private Boolean isValid;
+
+		private String code;
+
+		private String msg;
+
+		public Boolean getIsValid() {
+			return this.isValid;
+		}
+
+		public void setIsValid(Boolean isValid) {
+			this.isValid = isValid;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMsg() {
+			return this.msg;
+		}
+
+		public void setMsg(String msg) {
+			this.msg = msg;
+		}
+	}
+
 	@Override
-	public UpdateBlueprintInstanceResponse getInstance(UnmarshallerContext context) {
-		return	UpdateBlueprintInstanceResponseUnmarshaller.unmarshall(this, context);
+	public CheckConnectionResponse getInstance(UnmarshallerContext context) {
+		return	CheckConnectionResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
