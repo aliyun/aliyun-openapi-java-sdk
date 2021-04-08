@@ -43,9 +43,9 @@ public class DescribeConnectionStatusRequest extends RpcAcsRequest<DescribeConne
 
 	private String destinationEndpointUserName;
 
-	private Boolean destinationEndpointArchitecture;
+	private String destinationEndpointArchitecture;
 
-	private Boolean destinationEndpointOracleSID;
+	private String destinationEndpointOracleSID;
 
 	private String destinationEndpointEngineName;
 
@@ -176,25 +176,25 @@ public class DescribeConnectionStatusRequest extends RpcAcsRequest<DescribeConne
 		}
 	}
 
-	public Boolean getDestinationEndpointArchitecture() {
+	public String getDestinationEndpointArchitecture() {
 		return this.destinationEndpointArchitecture;
 	}
 
-	public void setDestinationEndpointArchitecture(Boolean destinationEndpointArchitecture) {
+	public void setDestinationEndpointArchitecture(String destinationEndpointArchitecture) {
 		this.destinationEndpointArchitecture = destinationEndpointArchitecture;
 		if(destinationEndpointArchitecture != null){
-			putQueryParameter("DestinationEndpointArchitecture", destinationEndpointArchitecture.toString());
+			putQueryParameter("DestinationEndpointArchitecture", destinationEndpointArchitecture);
 		}
 	}
 
-	public Boolean getDestinationEndpointOracleSID() {
+	public String getDestinationEndpointOracleSID() {
 		return this.destinationEndpointOracleSID;
 	}
 
-	public void setDestinationEndpointOracleSID(Boolean destinationEndpointOracleSID) {
+	public void setDestinationEndpointOracleSID(String destinationEndpointOracleSID) {
 		this.destinationEndpointOracleSID = destinationEndpointOracleSID;
 		if(destinationEndpointOracleSID != null){
-			putQueryParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID.toString());
+			putQueryParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID);
 		}
 	}
 

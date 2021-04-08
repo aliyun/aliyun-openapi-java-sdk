@@ -1,3 +1,6 @@
+2021-04-08 Version: 5.1.11
+- Supported ModifyDtsJob and DeleteDtsJob.
+
 2021-02-26 Version: 5.1.10
 - Add TaskId for DescribeMigrationJobStatus, DescribeSubscriptionInstanceStatus, DescribeSynchronizationJobStatus.
 - Add API CreateDtsInstance, ConfigureDtsJob, StartDtsJob.
