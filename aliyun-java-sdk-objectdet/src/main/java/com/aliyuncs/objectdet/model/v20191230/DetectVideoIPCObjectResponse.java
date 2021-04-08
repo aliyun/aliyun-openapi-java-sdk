@@ -71,6 +71,8 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 
 		private Long width;
 
+		private String inputFile;
+
 		private List<Frame> frames;
 
 		public Long getHeight() {
@@ -87,6 +89,14 @@ public class DetectVideoIPCObjectResponse extends AcsResponse {
 
 		public void setWidth(Long width) {
 			this.width = width;
+		}
+
+		public String getInputFile() {
+			return this.inputFile;
+		}
+
+		public void setInputFile(String inputFile) {
+			this.inputFile = inputFile;
 		}
 
 		public List<Frame> getFrames() {

@@ -35,6 +35,7 @@ public class DetectVideoIPCObjectResponseUnmarshaller {
 		Data data = new Data();
 		data.setHeight(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Height"));
 		data.setWidth(_ctx.longValue("DetectVideoIPCObjectResponse.Data.Width"));
+		data.setInputFile(_ctx.stringValue("DetectVideoIPCObjectResponse.Data.InputFile"));
 
 		List<Frame> frames = new ArrayList<Frame>();
 		for (int i = 0; i < _ctx.lengthValue("DetectVideoIPCObjectResponse.Data.Frames.Length"); i++) {
