@@ -24,25 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GenerateVehicleRepairPlanResponse extends AcsResponse {
 
-	private Integer httpCode;
-
 	private String requestId;
 
-	private String errorMessage;
+	private Integer httpCode;
 
 	private String code;
+
+	private String errorMessage;
 
 	private Boolean success;
 
 	private Data data;
-
-	public Integer getHttpCode() {
-		return this.httpCode;
-	}
-
-	public void setHttpCode(Integer httpCode) {
-		this.httpCode = httpCode;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -52,12 +44,12 @@ public class GenerateVehicleRepairPlanResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorMessage() {
-		return this.errorMessage;
+	public Integer getHttpCode() {
+		return this.httpCode;
 	}
 
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
+	public void setHttpCode(Integer httpCode) {
+		this.httpCode = httpCode;
 	}
 
 	public String getCode() {
@@ -66,6 +58,14 @@ public class GenerateVehicleRepairPlanResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 	public Boolean getSuccess() {

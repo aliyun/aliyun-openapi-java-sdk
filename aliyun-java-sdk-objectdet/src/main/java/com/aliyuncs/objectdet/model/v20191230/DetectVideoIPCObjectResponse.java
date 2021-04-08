@@ -16,14 +16,14 @@ package com.aliyuncs.objectdet.model.v20191230;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.objectdet.transform.v20191230.DetectIPCObjectResponseUnmarshaller;
+import com.aliyuncs.objectdet.transform.v20191230.DetectVideoIPCObjectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DetectIPCObjectResponse extends AcsResponse {
+public class DetectVideoIPCObjectResponse extends AcsResponse {
 
 	private String message;
 
@@ -71,7 +71,7 @@ public class DetectIPCObjectResponse extends AcsResponse {
 
 		private Long width;
 
-		private List<Element> elements;
+		private List<Frame> frames;
 
 		public Long getHeight() {
 			return this.height;
@@ -89,61 +89,104 @@ public class DetectIPCObjectResponse extends AcsResponse {
 			this.width = width;
 		}
 
-		public List<Element> getElements() {
-			return this.elements;
+		public List<Frame> getFrames() {
+			return this.frames;
 		}
 
-		public void setElements(List<Element> elements) {
-			this.elements = elements;
+		public void setFrames(List<Frame> frames) {
+			this.frames = frames;
 		}
 
-		public static class Element {
+		public static class Frame {
 
-			private Float targetRate;
+			private Long time;
 
-			private Float score;
+			private List<ElementsItem> elements;
 
-			private String type;
-
-			private List<Long> box;
-
-			public Float getTargetRate() {
-				return this.targetRate;
+			public Long getTime() {
+				return this.time;
 			}
 
-			public void setTargetRate(Float targetRate) {
-				this.targetRate = targetRate;
+			public void setTime(Long time) {
+				this.time = time;
 			}
 
-			public Float getScore() {
-				return this.score;
+			public List<ElementsItem> getElements() {
+				return this.elements;
 			}
 
-			public void setScore(Float score) {
-				this.score = score;
+			public void setElements(List<ElementsItem> elements) {
+				this.elements = elements;
 			}
 
-			public String getType() {
-				return this.type;
-			}
+			public static class ElementsItem {
 
-			public void setType(String type) {
-				this.type = type;
-			}
+				private Float score;
 
-			public List<Long> getBox() {
-				return this.box;
-			}
+				private String type;
 
-			public void setBox(List<Long> box) {
-				this.box = box;
+				private Long x;
+
+				private Long y;
+
+				private Long height;
+
+				private Long width;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public String getType() {
+					return this.type;
+				}
+
+				public void setType(String type) {
+					this.type = type;
+				}
+
+				public Long getX() {
+					return this.x;
+				}
+
+				public void setX(Long x) {
+					this.x = x;
+				}
+
+				public Long getY() {
+					return this.y;
+				}
+
+				public void setY(Long y) {
+					this.y = y;
+				}
+
+				public Long getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(Long height) {
+					this.height = height;
+				}
+
+				public Long getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Long width) {
+					this.width = width;
+				}
 			}
 		}
 	}
 
 	@Override
-	public DetectIPCObjectResponse getInstance(UnmarshallerContext context) {
-		return	DetectIPCObjectResponseUnmarshaller.unmarshall(this, context);
+	public DetectVideoIPCObjectResponse getInstance(UnmarshallerContext context) {
+		return	DetectVideoIPCObjectResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

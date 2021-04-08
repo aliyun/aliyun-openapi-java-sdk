@@ -27,7 +27,7 @@ public class ClassifyVehicleInsuranceRequest extends RpcAcsRequest<ClassifyVehic
 
 	private String imageURL;
 	public ClassifyVehicleInsuranceRequest() {
-		super("objectdet", "2019-12-30", "ClassifyVehicleInsurance");
+		super("objectdet", "2019-12-30", "ClassifyVehicleInsurance", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

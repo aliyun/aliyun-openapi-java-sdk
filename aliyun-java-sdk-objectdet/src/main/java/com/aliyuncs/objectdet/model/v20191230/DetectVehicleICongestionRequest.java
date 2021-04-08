@@ -15,9 +15,6 @@
 package com.aliyuncs.objectdet.model.v20191230;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.objectdet.Endpoint;
 
@@ -28,15 +25,13 @@ import com.aliyuncs.objectdet.Endpoint;
 public class DetectVehicleICongestionRequest extends RpcAcsRequest<DetectVehicleICongestionResponse> {
 	   
 
-	@SerializedName("roadRegions")
-	private List<RoadRegions> roadRegions;
+	private Array roadRegions;
 
-	@SerializedName("preRegionIntersectFeatures")
-	private List<PreRegionIntersectFeatures> preRegionIntersectFeatures;
+	private Array preRegionIntersectFeatures;
 
 	private String imageURL;
 	public DetectVehicleICongestionRequest() {
-		super("objectdet", "2019-12-30", "DetectVehicleICongestion");
+		super("objectdet", "2019-12-30", "DetectVehicleICongestion", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -44,26 +39,26 @@ public class DetectVehicleICongestionRequest extends RpcAcsRequest<DetectVehicle
 		} catch (Exception e) {}
 	}
 
-	public List<RoadRegions> getRoadRegions() {
+	public Array getRoadRegions() {
 		return this.roadRegions;
 	}
 
-	public void setRoadRegions(List<RoadRegions> roadRegions) {
-		this.roadRegions = roadRegions;	
-		if (roadRegions != null) {
-			putBodyParameter("RoadRegions" , new Gson().toJson(roadRegions));
-		}	
+	public void setRoadRegions(Array roadRegions) {
+		this.roadRegions = roadRegions;
+		if(roadRegions != null){
+			putBodyParameter("RoadRegions", roadRegions.toString());
+		}
 	}
 
-	public List<PreRegionIntersectFeatures> getPreRegionIntersectFeatures() {
+	public Array getPreRegionIntersectFeatures() {
 		return this.preRegionIntersectFeatures;
 	}
 
-	public void setPreRegionIntersectFeatures(List<PreRegionIntersectFeatures> preRegionIntersectFeatures) {
-		this.preRegionIntersectFeatures = preRegionIntersectFeatures;	
-		if (preRegionIntersectFeatures != null) {
-			putBodyParameter("PreRegionIntersectFeatures" , new Gson().toJson(preRegionIntersectFeatures));
-		}	
+	public void setPreRegionIntersectFeatures(Array preRegionIntersectFeatures) {
+		this.preRegionIntersectFeatures = preRegionIntersectFeatures;
+		if(preRegionIntersectFeatures != null){
+			putBodyParameter("PreRegionIntersectFeatures", preRegionIntersectFeatures.toString());
+		}
 	}
 
 	public String getImageURL() {
@@ -74,73 +69,6 @@ public class DetectVehicleICongestionRequest extends RpcAcsRequest<DetectVehicle
 		this.imageURL = imageURL;
 		if(imageURL != null){
 			putBodyParameter("ImageURL", imageURL);
-		}
-	}
-
-	public static class RoadRegions {
-
-		@SerializedName("RoadRegion")
-		private List<RoadRegionItem> roadRegion;
-
-		public List<RoadRegionItem> getRoadRegion() {
-			return this.roadRegion;
-		}
-
-		public void setRoadRegion(List<RoadRegionItem> roadRegion) {
-			this.roadRegion = roadRegion;
-		}
-
-		public static class RoadRegionItem {
-
-			@SerializedName("Point")
-			private Point point;
-
-			public Point getPoint() {
-				return this.point;
-			}
-
-			public void setPoint(Point point) {
-				this.point = point;
-			}
-
-			public static class Point {
-
-				@SerializedName("X")
-				private Long x;
-
-				@SerializedName("Y")
-				private Long y;
-
-				public Long getX() {
-					return this.x;
-				}
-
-				public void setX(Long x) {
-					this.x = x;
-				}
-
-				public Long getY() {
-					return this.y;
-				}
-
-				public void setY(Long y) {
-					this.y = y;
-				}
-			}
-		}
-	}
-
-	public static class PreRegionIntersectFeatures {
-
-		@SerializedName("Features")
-		private List<String> features;
-
-		public List<String> getFeatures() {
-			return this.features;
-		}
-
-		public void setFeatures(List<String> features) {
-			this.features = features;
 		}
 	}
 

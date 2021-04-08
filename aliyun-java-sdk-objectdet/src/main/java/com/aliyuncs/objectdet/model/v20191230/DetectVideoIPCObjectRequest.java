@@ -22,12 +22,12 @@ import com.aliyuncs.objectdet.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetectObjectRequest extends RpcAcsRequest<DetectObjectResponse> {
+public class DetectVideoIPCObjectRequest extends RpcAcsRequest<DetectVideoIPCObjectResponse> {
 	   
 
-	private String imageURL;
-	public DetectObjectRequest() {
-		super("objectdet", "2019-12-30", "DetectObject", "objectdet");
+	private String videoURL;
+	public DetectVideoIPCObjectRequest() {
+		super("objectdet", "2019-12-30", "DetectVideoIPCObject", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DetectObjectRequest extends RpcAcsRequest<DetectObjectResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
+	public String getVideoURL() {
+		return this.videoURL;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+	public void setVideoURL(String videoURL) {
+		this.videoURL = videoURL;
+		if(videoURL != null){
+			putBodyParameter("VideoURL", videoURL);
 		}
 	}
 
 	@Override
-	public Class<DetectObjectResponse> getResponseClass() {
-		return DetectObjectResponse.class;
+	public Class<DetectVideoIPCObjectResponse> getResponseClass() {
+		return DetectVideoIPCObjectResponse.class;
 	}
 
 }

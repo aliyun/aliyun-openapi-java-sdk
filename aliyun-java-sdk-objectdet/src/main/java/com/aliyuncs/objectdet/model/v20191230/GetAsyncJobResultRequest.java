@@ -22,12 +22,12 @@ import com.aliyuncs.objectdet.Endpoint;
  * @author auto create
  * @version 
  */
-public class DetectObjectRequest extends RpcAcsRequest<DetectObjectResponse> {
+public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultResponse> {
 	   
 
-	private String imageURL;
-	public DetectObjectRequest() {
-		super("objectdet", "2019-12-30", "DetectObject", "objectdet");
+	private String jobId;
+	public GetAsyncJobResultRequest() {
+		super("objectdet", "2019-12-30", "GetAsyncJobResult", "objectdet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class DetectObjectRequest extends RpcAcsRequest<DetectObjectResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getImageURL() {
-		return this.imageURL;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-		if(imageURL != null){
-			putBodyParameter("ImageURL", imageURL);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
 		}
 	}
 
 	@Override
-	public Class<DetectObjectResponse> getResponseClass() {
-		return DetectObjectResponse.class;
+	public Class<GetAsyncJobResultResponse> getResponseClass() {
+		return GetAsyncJobResultResponse.class;
 	}
 
 }

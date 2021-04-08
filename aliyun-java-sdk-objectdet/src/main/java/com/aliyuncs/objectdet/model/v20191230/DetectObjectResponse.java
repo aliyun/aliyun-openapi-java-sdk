@@ -47,19 +47,11 @@ public class DetectObjectResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer height;
-
 		private Integer width;
 
+		private Integer height;
+
 		private List<Element> elements;
-
-		public Integer getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Integer height) {
-			this.height = height;
-		}
 
 		public Integer getWidth() {
 			return this.width;
@@ -67,6 +59,14 @@ public class DetectObjectResponse extends AcsResponse {
 
 		public void setWidth(Integer width) {
 			this.width = width;
+		}
+
+		public Integer getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Integer height) {
+			this.height = height;
 		}
 
 		public List<Element> getElements() {

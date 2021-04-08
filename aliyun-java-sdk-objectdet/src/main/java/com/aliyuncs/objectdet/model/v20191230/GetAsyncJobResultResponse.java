@@ -15,14 +15,14 @@
 package com.aliyuncs.objectdet.model.v20191230;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.objectdet.transform.v20191230.DetectMainBodyResponseUnmarshaller;
+import com.aliyuncs.objectdet.transform.v20191230.GetAsyncJobResultResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DetectMainBodyResponse extends AcsResponse {
+public class GetAsyncJobResultResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -46,63 +46,60 @@ public class DetectMainBodyResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Location location;
+		private String status;
 
-		public Location getLocation() {
-			return this.location;
+		private String errorCode;
+
+		private String errorMessage;
+
+		private String jobId;
+
+		private String result;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setLocation(Location location) {
-			this.location = location;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
-		public static class Location {
+		public String getErrorCode() {
+			return this.errorCode;
+		}
 
-			private Integer x;
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
 
-			private Integer y;
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
 
-			private Integer width;
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
 
-			private Integer height;
+		public String getJobId() {
+			return this.jobId;
+		}
 
-			public Integer getX() {
-				return this.x;
-			}
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
 
-			public void setX(Integer x) {
-				this.x = x;
-			}
+		public String getResult() {
+			return this.result;
+		}
 
-			public Integer getY() {
-				return this.y;
-			}
-
-			public void setY(Integer y) {
-				this.y = y;
-			}
-
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
-
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
+		public void setResult(String result) {
+			this.result = result;
 		}
 	}
 
 	@Override
-	public DetectMainBodyResponse getInstance(UnmarshallerContext context) {
-		return	DetectMainBodyResponseUnmarshaller.unmarshall(this, context);
+	public GetAsyncJobResultResponse getInstance(UnmarshallerContext context) {
+		return	GetAsyncJobResultResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
