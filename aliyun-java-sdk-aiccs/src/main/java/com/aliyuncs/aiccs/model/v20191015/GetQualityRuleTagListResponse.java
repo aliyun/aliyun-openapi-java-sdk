@@ -27,9 +27,9 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,17 +77,9 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long ruleTagId;
-
 		private String ruleTagName;
 
-		public Long getRuleTagId() {
-			return this.ruleTagId;
-		}
-
-		public void setRuleTagId(Long ruleTagId) {
-			this.ruleTagId = ruleTagId;
-		}
+		private Long ruleTagId;
 
 		public String getRuleTagName() {
 			return this.ruleTagName;
@@ -95,6 +87,14 @@ public class GetQualityRuleTagListResponse extends AcsResponse {
 
 		public void setRuleTagName(String ruleTagName) {
 			this.ruleTagName = ruleTagName;
+		}
+
+		public Long getRuleTagId() {
+			return this.ruleTagId;
+		}
+
+		public void setRuleTagId(Long ruleTagId) {
+			this.ruleTagId = ruleTagId;
 		}
 	}
 

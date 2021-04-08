@@ -23,9 +23,9 @@ public class SendCcoSmartCallOperateResponseUnmarshaller {
 	public static SendCcoSmartCallOperateResponse unmarshall(SendCcoSmartCallOperateResponse sendCcoSmartCallOperateResponse, UnmarshallerContext _ctx) {
 		
 		sendCcoSmartCallOperateResponse.setRequestId(_ctx.stringValue("SendCcoSmartCallOperateResponse.RequestId"));
-		sendCcoSmartCallOperateResponse.setCode(_ctx.stringValue("SendCcoSmartCallOperateResponse.Code"));
 		sendCcoSmartCallOperateResponse.setMessage(_ctx.stringValue("SendCcoSmartCallOperateResponse.Message"));
 		sendCcoSmartCallOperateResponse.setData(_ctx.stringValue("SendCcoSmartCallOperateResponse.Data"));
+		sendCcoSmartCallOperateResponse.setCode(_ctx.stringValue("SendCcoSmartCallOperateResponse.Code"));
 	 
 	 	return sendCcoSmartCallOperateResponse;
 	}

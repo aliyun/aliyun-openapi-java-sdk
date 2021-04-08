@@ -27,13 +27,13 @@ public class GetInstanceListResponseUnmarshaller {
 	public static GetInstanceListResponse unmarshall(GetInstanceListResponse getInstanceListResponse, UnmarshallerContext _ctx) {
 		
 		getInstanceListResponse.setRequestId(_ctx.stringValue("GetInstanceListResponse.RequestId"));
-		getInstanceListResponse.setSuccess(_ctx.booleanValue("GetInstanceListResponse.Success"));
-		getInstanceListResponse.setCode(_ctx.stringValue("GetInstanceListResponse.Code"));
-		getInstanceListResponse.setMessage(_ctx.stringValue("GetInstanceListResponse.Message"));
-		getInstanceListResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceListResponse.HttpStatusCode"));
 		getInstanceListResponse.setTotalCount(_ctx.integerValue("GetInstanceListResponse.TotalCount"));
-		getInstanceListResponse.setPageNumber(_ctx.integerValue("GetInstanceListResponse.PageNumber"));
 		getInstanceListResponse.setPageSize(_ctx.integerValue("GetInstanceListResponse.PageSize"));
+		getInstanceListResponse.setMessage(_ctx.stringValue("GetInstanceListResponse.Message"));
+		getInstanceListResponse.setPageNumber(_ctx.integerValue("GetInstanceListResponse.PageNumber"));
+		getInstanceListResponse.setHttpStatusCode(_ctx.integerValue("GetInstanceListResponse.HttpStatusCode"));
+		getInstanceListResponse.setCode(_ctx.stringValue("GetInstanceListResponse.Code"));
+		getInstanceListResponse.setSuccess(_ctx.booleanValue("GetInstanceListResponse.Success"));
 
 		List<CommodityInstancesItem> commodityInstances = new ArrayList<CommodityInstancesItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceListResponse.CommodityInstances.Length"); i++) {

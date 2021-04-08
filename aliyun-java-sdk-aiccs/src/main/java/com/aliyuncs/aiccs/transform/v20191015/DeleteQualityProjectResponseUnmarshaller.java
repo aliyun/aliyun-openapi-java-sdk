@@ -23,10 +23,10 @@ public class DeleteQualityProjectResponseUnmarshaller {
 	public static DeleteQualityProjectResponse unmarshall(DeleteQualityProjectResponse deleteQualityProjectResponse, UnmarshallerContext _ctx) {
 		
 		deleteQualityProjectResponse.setRequestId(_ctx.stringValue("DeleteQualityProjectResponse.RequestId"));
-		deleteQualityProjectResponse.setCode(_ctx.stringValue("DeleteQualityProjectResponse.Code"));
 		deleteQualityProjectResponse.setMessage(_ctx.stringValue("DeleteQualityProjectResponse.Message"));
-		deleteQualityProjectResponse.setSuccess(_ctx.booleanValue("DeleteQualityProjectResponse.Success"));
 		deleteQualityProjectResponse.setData(_ctx.stringValue("DeleteQualityProjectResponse.Data"));
+		deleteQualityProjectResponse.setCode(_ctx.stringValue("DeleteQualityProjectResponse.Code"));
+		deleteQualityProjectResponse.setSuccess(_ctx.booleanValue("DeleteQualityProjectResponse.Success"));
 	 
 	 	return deleteQualityProjectResponse;
 	}

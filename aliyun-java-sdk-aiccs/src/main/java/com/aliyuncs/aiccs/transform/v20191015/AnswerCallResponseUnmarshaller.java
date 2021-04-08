@@ -23,9 +23,9 @@ public class AnswerCallResponseUnmarshaller {
 	public static AnswerCallResponse unmarshall(AnswerCallResponse answerCallResponse, UnmarshallerContext _ctx) {
 		
 		answerCallResponse.setRequestId(_ctx.stringValue("AnswerCallResponse.RequestId"));
-		answerCallResponse.setSuccess(_ctx.booleanValue("AnswerCallResponse.Success"));
-		answerCallResponse.setCode(_ctx.stringValue("AnswerCallResponse.Code"));
 		answerCallResponse.setMessage(_ctx.stringValue("AnswerCallResponse.Message"));
+		answerCallResponse.setCode(_ctx.stringValue("AnswerCallResponse.Code"));
+		answerCallResponse.setSuccess(_ctx.booleanValue("AnswerCallResponse.Success"));
 	 
 	 	return answerCallResponse;
 	}

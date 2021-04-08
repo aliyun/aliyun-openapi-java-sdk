@@ -23,9 +23,9 @@ public class HangupThirdCallResponseUnmarshaller {
 	public static HangupThirdCallResponse unmarshall(HangupThirdCallResponse hangupThirdCallResponse, UnmarshallerContext _ctx) {
 		
 		hangupThirdCallResponse.setRequestId(_ctx.stringValue("HangupThirdCallResponse.RequestId"));
-		hangupThirdCallResponse.setSuccess(_ctx.booleanValue("HangupThirdCallResponse.Success"));
-		hangupThirdCallResponse.setCode(_ctx.stringValue("HangupThirdCallResponse.Code"));
 		hangupThirdCallResponse.setMessage(_ctx.stringValue("HangupThirdCallResponse.Message"));
+		hangupThirdCallResponse.setCode(_ctx.stringValue("HangupThirdCallResponse.Code"));
+		hangupThirdCallResponse.setSuccess(_ctx.booleanValue("HangupThirdCallResponse.Success"));
 	 
 	 	return hangupThirdCallResponse;
 	}

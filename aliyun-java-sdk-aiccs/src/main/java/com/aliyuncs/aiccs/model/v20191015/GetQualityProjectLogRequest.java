@@ -29,7 +29,7 @@ public class GetQualityProjectLogRequest extends RpcAcsRequest<GetQualityProject
 
 	private Long projectId;
 	public GetQualityProjectLogRequest() {
-		super("aiccs", "2019-10-15", "GetQualityProjectLog", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetQualityProjectLog");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

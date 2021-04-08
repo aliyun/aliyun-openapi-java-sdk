@@ -23,9 +23,9 @@ public class QueryHotlineInQueueResponseUnmarshaller {
 	public static QueryHotlineInQueueResponse unmarshall(QueryHotlineInQueueResponse queryHotlineInQueueResponse, UnmarshallerContext _ctx) {
 		
 		queryHotlineInQueueResponse.setRequestId(_ctx.stringValue("QueryHotlineInQueueResponse.RequestId"));
-		queryHotlineInQueueResponse.setCode(_ctx.stringValue("QueryHotlineInQueueResponse.Code"));
 		queryHotlineInQueueResponse.setMessage(_ctx.stringValue("QueryHotlineInQueueResponse.Message"));
 		queryHotlineInQueueResponse.setData(_ctx.stringValue("QueryHotlineInQueueResponse.Data"));
+		queryHotlineInQueueResponse.setCode(_ctx.stringValue("QueryHotlineInQueueResponse.Code"));
 		queryHotlineInQueueResponse.setSuccess(_ctx.booleanValue("QueryHotlineInQueueResponse.Success"));
 	 
 	 	return queryHotlineInQueueResponse;

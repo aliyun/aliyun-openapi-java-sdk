@@ -36,7 +36,7 @@ public class CreateQualityRuleRequest extends RpcAcsRequest<CreateQualityRuleRes
 
 	private Integer matchType;
 	public CreateQualityRuleRequest() {
-		super("aiccs", "2019-10-15", "CreateQualityRule", "aiccs-service");
+		super("aiccs", "2019-10-15", "CreateQualityRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

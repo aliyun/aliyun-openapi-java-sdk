@@ -28,11 +28,11 @@ public class GetRtcTokenResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String data;
-
 	private String code;
 
 	private Boolean success;
+
+	private Data data;
 
 	public String getMessage() {
 		return this.message;
@@ -50,14 +50,6 @@ public class GetRtcTokenResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -72,6 +64,47 @@ public class GetRtcTokenResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Data getData() {
+		return this.data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public static class Data {
+
+		private String rtcId;
+
+		private String token;
+
+		private String accountName;
+
+		public String getRtcId() {
+			return this.rtcId;
+		}
+
+		public void setRtcId(String rtcId) {
+			this.rtcId = rtcId;
+		}
+
+		public String getToken() {
+			return this.token;
+		}
+
+		public void setToken(String token) {
+			this.token = token;
+		}
+
+		public String getAccountName() {
+			return this.accountName;
+		}
+
+		public void setAccountName(String accountName) {
+			this.accountName = accountName;
+		}
 	}
 
 	@Override

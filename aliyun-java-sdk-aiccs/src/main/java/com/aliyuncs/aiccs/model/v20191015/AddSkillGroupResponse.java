@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddSkillGroupResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private Boolean success;
 
 	private String message;
 
 	private String data;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -48,14 +40,6 @@ public class AddSkillGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -72,6 +56,22 @@ public class AddSkillGroupResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

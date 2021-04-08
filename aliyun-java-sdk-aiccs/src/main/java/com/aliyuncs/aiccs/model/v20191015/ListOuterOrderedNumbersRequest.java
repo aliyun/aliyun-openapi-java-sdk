@@ -33,7 +33,7 @@ public class ListOuterOrderedNumbersRequest extends RpcAcsRequest<ListOuterOrder
 
 	private Long ownerId;
 	public ListOuterOrderedNumbersRequest() {
-		super("aiccs", "2019-10-15", "ListOuterOrderedNumbers", "aiccs-service");
+		super("aiccs", "2019-10-15", "ListOuterOrderedNumbers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

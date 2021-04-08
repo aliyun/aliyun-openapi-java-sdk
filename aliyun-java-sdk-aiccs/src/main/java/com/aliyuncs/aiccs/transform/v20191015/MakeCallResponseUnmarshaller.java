@@ -23,9 +23,9 @@ public class MakeCallResponseUnmarshaller {
 	public static MakeCallResponse unmarshall(MakeCallResponse makeCallResponse, UnmarshallerContext _ctx) {
 		
 		makeCallResponse.setRequestId(_ctx.stringValue("MakeCallResponse.RequestId"));
-		makeCallResponse.setCode(_ctx.stringValue("MakeCallResponse.Code"));
-		makeCallResponse.setData(_ctx.stringValue("MakeCallResponse.Data"));
 		makeCallResponse.setMessage(_ctx.stringValue("MakeCallResponse.Message"));
+		makeCallResponse.setData(_ctx.stringValue("MakeCallResponse.Data"));
+		makeCallResponse.setCode(_ctx.stringValue("MakeCallResponse.Code"));
 		makeCallResponse.setSuccess(_ctx.booleanValue("MakeCallResponse.Success"));
 	 
 	 	return makeCallResponse;

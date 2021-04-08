@@ -26,22 +26,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private String success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -52,12 +52,12 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -78,23 +78,15 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer page;
-
 		private Integer pageSize;
 
 		private Integer total;
 
+		private Integer page;
+
 		private List<ColumnsItem> columns;
 
 		private List<Map<Object,Object>> rows;
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -110,6 +102,14 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
 		}
 
 		public List<ColumnsItem> getColumns() {
@@ -130,17 +130,9 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 		public static class ColumnsItem {
 
-			private String key;
-
 			private String title;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getTitle() {
 				return this.title;
@@ -148,6 +140,14 @@ public class GetHotlineAgentDetailReportResponse extends AcsResponse {
 
 			public void setTitle(String title) {
 				this.title = title;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

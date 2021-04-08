@@ -28,9 +28,9 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private String success;
 
@@ -44,20 +44,20 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -78,23 +78,15 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer page;
-
 		private Integer pageSize;
 
 		private Integer total;
 
+		private Integer page;
+
 		private List<ColumnsItem> columns;
 
 		private List<Map<Object,Object>> rows;
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -110,6 +102,14 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
 		}
 
 		public List<ColumnsItem> getColumns() {

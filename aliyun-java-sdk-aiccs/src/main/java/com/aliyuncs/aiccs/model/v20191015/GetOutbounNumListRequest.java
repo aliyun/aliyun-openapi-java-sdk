@@ -31,7 +31,7 @@ public class GetOutbounNumListRequest extends RpcAcsRequest<GetOutbounNumListRes
 
 	private String accountName;
 	public GetOutbounNumListRequest() {
-		super("aiccs", "2019-10-15", "GetOutbounNumList", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetOutbounNumList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -23,9 +23,9 @@ public class FinishHotlineServiceResponseUnmarshaller {
 	public static FinishHotlineServiceResponse unmarshall(FinishHotlineServiceResponse finishHotlineServiceResponse, UnmarshallerContext _ctx) {
 		
 		finishHotlineServiceResponse.setRequestId(_ctx.stringValue("FinishHotlineServiceResponse.RequestId"));
-		finishHotlineServiceResponse.setSuccess(_ctx.booleanValue("FinishHotlineServiceResponse.Success"));
-		finishHotlineServiceResponse.setCode(_ctx.stringValue("FinishHotlineServiceResponse.Code"));
 		finishHotlineServiceResponse.setMessage(_ctx.stringValue("FinishHotlineServiceResponse.Message"));
+		finishHotlineServiceResponse.setCode(_ctx.stringValue("FinishHotlineServiceResponse.Code"));
+		finishHotlineServiceResponse.setSuccess(_ctx.booleanValue("FinishHotlineServiceResponse.Success"));
 	 
 	 	return finishHotlineServiceResponse;
 	}

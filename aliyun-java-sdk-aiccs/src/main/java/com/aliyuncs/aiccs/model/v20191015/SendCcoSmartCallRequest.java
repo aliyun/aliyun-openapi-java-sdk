@@ -81,7 +81,7 @@ public class SendCcoSmartCallRequest extends RpcAcsRequest<SendCcoSmartCallRespo
 
 	private String ttsStyle;
 	public SendCcoSmartCallRequest() {
-		super("aiccs", "2019-10-15", "SendCcoSmartCall", "aiccs-service");
+		super("aiccs", "2019-10-15", "SendCcoSmartCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

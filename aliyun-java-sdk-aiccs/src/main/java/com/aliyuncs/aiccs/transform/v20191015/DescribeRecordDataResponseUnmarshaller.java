@@ -23,11 +23,11 @@ public class DescribeRecordDataResponseUnmarshaller {
 	public static DescribeRecordDataResponse unmarshall(DescribeRecordDataResponse describeRecordDataResponse, UnmarshallerContext _ctx) {
 		
 		describeRecordDataResponse.setRequestId(_ctx.stringValue("DescribeRecordDataResponse.RequestId"));
-		describeRecordDataResponse.setCode(_ctx.stringValue("DescribeRecordDataResponse.Code"));
-		describeRecordDataResponse.setMessage(_ctx.stringValue("DescribeRecordDataResponse.Message"));
-		describeRecordDataResponse.setOssLink(_ctx.stringValue("DescribeRecordDataResponse.OssLink"));
 		describeRecordDataResponse.setAcid(_ctx.stringValue("DescribeRecordDataResponse.Acid"));
+		describeRecordDataResponse.setMessage(_ctx.stringValue("DescribeRecordDataResponse.Message"));
 		describeRecordDataResponse.setAgentId(_ctx.stringValue("DescribeRecordDataResponse.AgentId"));
+		describeRecordDataResponse.setOssLink(_ctx.stringValue("DescribeRecordDataResponse.OssLink"));
+		describeRecordDataResponse.setCode(_ctx.stringValue("DescribeRecordDataResponse.Code"));
 	 
 	 	return describeRecordDataResponse;
 	}

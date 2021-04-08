@@ -23,10 +23,10 @@ public class GenerateWebSocketSignResponseUnmarshaller {
 	public static GenerateWebSocketSignResponse unmarshall(GenerateWebSocketSignResponse generateWebSocketSignResponse, UnmarshallerContext _ctx) {
 		
 		generateWebSocketSignResponse.setRequestId(_ctx.stringValue("GenerateWebSocketSignResponse.RequestId"));
-		generateWebSocketSignResponse.setSuccess(_ctx.booleanValue("GenerateWebSocketSignResponse.Success"));
-		generateWebSocketSignResponse.setCode(_ctx.stringValue("GenerateWebSocketSignResponse.Code"));
 		generateWebSocketSignResponse.setMessage(_ctx.stringValue("GenerateWebSocketSignResponse.Message"));
 		generateWebSocketSignResponse.setData(_ctx.stringValue("GenerateWebSocketSignResponse.Data"));
+		generateWebSocketSignResponse.setCode(_ctx.stringValue("GenerateWebSocketSignResponse.Code"));
+		generateWebSocketSignResponse.setSuccess(_ctx.booleanValue("GenerateWebSocketSignResponse.Success"));
 	 
 	 	return generateWebSocketSignResponse;
 	}

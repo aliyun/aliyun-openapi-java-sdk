@@ -34,9 +34,9 @@ public class EditQualityProjectRequest extends RpcAcsRequest<EditQualityProjectR
 
 	private List<String> servicerLists;
 
-	private List<Long> depLists;
-
 	private String timeRangeEnd;
+
+	private List<Long> depLists;
 
 	private List<Long> analysisIdss;
 
@@ -52,7 +52,7 @@ public class EditQualityProjectRequest extends RpcAcsRequest<EditQualityProjectR
 
 	private List<Integer> channelTouchTypes;
 	public EditQualityProjectRequest() {
-		super("aiccs", "2019-10-15", "EditQualityProject", "aiccs-service");
+		super("aiccs", "2019-10-15", "EditQualityProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -106,6 +106,17 @@ public class EditQualityProjectRequest extends RpcAcsRequest<EditQualityProjectR
 		}	
 	}
 
+	public String getTimeRangeEnd() {
+		return this.timeRangeEnd;
+	}
+
+	public void setTimeRangeEnd(String timeRangeEnd) {
+		this.timeRangeEnd = timeRangeEnd;
+		if(timeRangeEnd != null){
+			putQueryParameter("TimeRangeEnd", timeRangeEnd);
+		}
+	}
+
 	public List<Long> getDepLists() {
 		return this.depLists;
 	}
@@ -117,17 +128,6 @@ public class EditQualityProjectRequest extends RpcAcsRequest<EditQualityProjectR
 				putQueryParameter("DepList." + (i + 1) , depLists.get(i));
 			}
 		}	
-	}
-
-	public String getTimeRangeEnd() {
-		return this.timeRangeEnd;
-	}
-
-	public void setTimeRangeEnd(String timeRangeEnd) {
-		this.timeRangeEnd = timeRangeEnd;
-		if(timeRangeEnd != null){
-			putQueryParameter("TimeRangeEnd", timeRangeEnd);
-		}
 	}
 
 	public List<Long> getAnalysisIdss() {

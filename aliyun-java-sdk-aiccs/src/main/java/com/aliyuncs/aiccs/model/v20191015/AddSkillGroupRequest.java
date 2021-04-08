@@ -35,7 +35,7 @@ public class AddSkillGroupRequest extends RpcAcsRequest<AddSkillGroupResponse> {
 
 	private String outerGroupName;
 	public AddSkillGroupRequest() {
-		super("aiccs", "2019-10-15", "AddSkillGroup", "aiccs-service");
+		super("aiccs", "2019-10-15", "AddSkillGroup");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

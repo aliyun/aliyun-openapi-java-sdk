@@ -28,10 +28,10 @@ public class QueryOutboundTaskResponseUnmarshaller {
 	public static QueryOutboundTaskResponse unmarshall(QueryOutboundTaskResponse queryOutboundTaskResponse, UnmarshallerContext _ctx) {
 		
 		queryOutboundTaskResponse.setRequestId(_ctx.stringValue("QueryOutboundTaskResponse.RequestId"));
-		queryOutboundTaskResponse.setCode(_ctx.stringValue("QueryOutboundTaskResponse.Code"));
-		queryOutboundTaskResponse.setSuccess(_ctx.stringValue("QueryOutboundTaskResponse.Success"));
 		queryOutboundTaskResponse.setMessage(_ctx.stringValue("QueryOutboundTaskResponse.Message"));
 		queryOutboundTaskResponse.setHttpStatusCode(_ctx.stringValue("QueryOutboundTaskResponse.HttpStatusCode"));
+		queryOutboundTaskResponse.setCode(_ctx.stringValue("QueryOutboundTaskResponse.Code"));
+		queryOutboundTaskResponse.setSuccess(_ctx.stringValue("QueryOutboundTaskResponse.Success"));
 
 		Data data = new Data();
 		data.setPageSize(_ctx.stringValue("QueryOutboundTaskResponse.Data.PageSize"));
@@ -41,28 +41,28 @@ public class QueryOutboundTaskResponseUnmarshaller {
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOutboundTaskResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setId(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].Id"));
-			listItem.setGmtCreate(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].GmtCreate"));
-			listItem.setGmtModified(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].GmtModified"));
-			listItem.setName(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Name"));
-			listItem.setDescription(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Description"));
-			listItem.setStartDate(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].StartDate"));
-			listItem.setEndDate(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].EndDate"));
-			listItem.setStartTime(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].StartTime"));
-			listItem.setEndTime(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].EndTime"));
-			listItem.setRetryTime(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].RetryTime"));
-			listItem.setRetryInterval(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].RetryInterval"));
-			listItem.setSkillGroup(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].SkillGroup"));
-			listItem.setCallerNum(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].CallerNum"));
-			listItem.setStatus(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].Status"));
-			listItem.setExtAttrs(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].ExtAttrs"));
 			listItem.setGroupName(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].GroupName"));
-			listItem.setModel(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].Model"));
+			listItem.setStatus(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].Status"));
+			listItem.setSkillGroup(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].SkillGroup"));
+			listItem.setDescription(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Description"));
+			listItem.setEndTime(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].EndTime"));
+			listItem.setStartTime(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].StartTime"));
+			listItem.setGmtModified(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].GmtModified"));
 			listItem.setCreator(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Creator"));
-			listItem.setModifier(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Modifier"));
+			listItem.setEndDate(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].EndDate"));
+			listItem.setName(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Name"));
+			listItem.setCallerNum(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].CallerNum"));
+			listItem.setStartDate(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].StartDate"));
 			listItem.setBuId(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].BuId"));
+			listItem.setGmtCreate(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].GmtCreate"));
 			listItem.setType(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].Type"));
+			listItem.setExtAttrs(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].ExtAttrs"));
+			listItem.setModel(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].Model"));
+			listItem.setId(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].Id"));
 			listItem.setDepartmentId(_ctx.longValue("QueryOutboundTaskResponse.Data.List["+ i +"].DepartmentId"));
+			listItem.setRetryInterval(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].RetryInterval"));
+			listItem.setRetryTime(_ctx.integerValue("QueryOutboundTaskResponse.Data.List["+ i +"].RetryTime"));
+			listItem.setModifier(_ctx.stringValue("QueryOutboundTaskResponse.Data.List["+ i +"].Modifier"));
 
 			list.add(listItem);
 		}

@@ -29,7 +29,7 @@ public class HangUpDoubleCallRequest extends RpcAcsRequest<HangUpDoubleCallRespo
 
 	private String acid;
 	public HangUpDoubleCallRequest() {
-		super("aiccs", "2019-10-15", "HangUpDoubleCall", "aiccs-service");
+		super("aiccs", "2019-10-15", "HangUpDoubleCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

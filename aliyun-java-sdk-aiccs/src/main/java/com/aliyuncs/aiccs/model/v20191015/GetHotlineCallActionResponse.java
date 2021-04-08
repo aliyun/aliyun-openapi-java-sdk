@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHotlineCallActionResponse extends AcsResponse {
 
-	private Boolean success;
+	private String requestId;
 
 	private String message;
 
 	private String code;
 
-	private String requestId;
+	private Boolean success;
 
 	private Data data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -58,12 +58,12 @@ public class GetHotlineCallActionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -76,70 +76,70 @@ public class GetHotlineCallActionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long actionId;
+		private Long taskId;
 
-		private Long buId;
+		private Long subTouchId;
 
-		private Long calloutId;
+		private String memberList;
 
-		private String calloutName;
+		private Long depId;
 
 		private Long caseId;
 
 		private String channelId;
 
-		private Long channelType;
-
-		private Long depId;
-
-		private String isTransfer;
+		private Long touchId;
 
 		private Long memberId;
 
-		private String memberList;
+		private Long calloutId;
+
+		private Long buId;
+
+		private Long actionId;
+
+		private String servicerName;
+
+		private String calloutName;
+
+		private String isTransfer;
 
 		private String memberName;
 
 		private Long servicerId;
 
-		private String servicerName;
+		private Long channelType;
 
-		private Long subTouchId;
-
-		private Long taskId;
-
-		private Long touchId;
-
-		public Long getActionId() {
-			return this.actionId;
+		public Long getTaskId() {
+			return this.taskId;
 		}
 
-		public void setActionId(Long actionId) {
-			this.actionId = actionId;
+		public void setTaskId(Long taskId) {
+			this.taskId = taskId;
 		}
 
-		public Long getBuId() {
-			return this.buId;
+		public Long getSubTouchId() {
+			return this.subTouchId;
 		}
 
-		public void setBuId(Long buId) {
-			this.buId = buId;
+		public void setSubTouchId(Long subTouchId) {
+			this.subTouchId = subTouchId;
 		}
 
-		public Long getCalloutId() {
-			return this.calloutId;
+		public String getMemberList() {
+			return this.memberList;
 		}
 
-		public void setCalloutId(Long calloutId) {
-			this.calloutId = calloutId;
+		public void setMemberList(String memberList) {
+			this.memberList = memberList;
 		}
 
-		public String getCalloutName() {
-			return this.calloutName;
+		public Long getDepId() {
+			return this.depId;
 		}
 
-		public void setCalloutName(String calloutName) {
-			this.calloutName = calloutName;
+		public void setDepId(Long depId) {
+			this.depId = depId;
 		}
 
 		public Long getCaseId() {
@@ -158,28 +158,12 @@ public class GetHotlineCallActionResponse extends AcsResponse {
 			this.channelId = channelId;
 		}
 
-		public Long getChannelType() {
-			return this.channelType;
+		public Long getTouchId() {
+			return this.touchId;
 		}
 
-		public void setChannelType(Long channelType) {
-			this.channelType = channelType;
-		}
-
-		public Long getDepId() {
-			return this.depId;
-		}
-
-		public void setDepId(Long depId) {
-			this.depId = depId;
-		}
-
-		public String getIsTransfer() {
-			return this.isTransfer;
-		}
-
-		public void setIsTransfer(String isTransfer) {
-			this.isTransfer = isTransfer;
+		public void setTouchId(Long touchId) {
+			this.touchId = touchId;
 		}
 
 		public Long getMemberId() {
@@ -190,12 +174,52 @@ public class GetHotlineCallActionResponse extends AcsResponse {
 			this.memberId = memberId;
 		}
 
-		public String getMemberList() {
-			return this.memberList;
+		public Long getCalloutId() {
+			return this.calloutId;
 		}
 
-		public void setMemberList(String memberList) {
-			this.memberList = memberList;
+		public void setCalloutId(Long calloutId) {
+			this.calloutId = calloutId;
+		}
+
+		public Long getBuId() {
+			return this.buId;
+		}
+
+		public void setBuId(Long buId) {
+			this.buId = buId;
+		}
+
+		public Long getActionId() {
+			return this.actionId;
+		}
+
+		public void setActionId(Long actionId) {
+			this.actionId = actionId;
+		}
+
+		public String getServicerName() {
+			return this.servicerName;
+		}
+
+		public void setServicerName(String servicerName) {
+			this.servicerName = servicerName;
+		}
+
+		public String getCalloutName() {
+			return this.calloutName;
+		}
+
+		public void setCalloutName(String calloutName) {
+			this.calloutName = calloutName;
+		}
+
+		public String getIsTransfer() {
+			return this.isTransfer;
+		}
+
+		public void setIsTransfer(String isTransfer) {
+			this.isTransfer = isTransfer;
 		}
 
 		public String getMemberName() {
@@ -214,36 +238,12 @@ public class GetHotlineCallActionResponse extends AcsResponse {
 			this.servicerId = servicerId;
 		}
 
-		public String getServicerName() {
-			return this.servicerName;
+		public Long getChannelType() {
+			return this.channelType;
 		}
 
-		public void setServicerName(String servicerName) {
-			this.servicerName = servicerName;
-		}
-
-		public Long getSubTouchId() {
-			return this.subTouchId;
-		}
-
-		public void setSubTouchId(Long subTouchId) {
-			this.subTouchId = subTouchId;
-		}
-
-		public Long getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(Long taskId) {
-			this.taskId = taskId;
-		}
-
-		public Long getTouchId() {
-			return this.touchId;
-		}
-
-		public void setTouchId(Long touchId) {
-			this.touchId = touchId;
+		public void setChannelType(Long channelType) {
+			this.channelType = channelType;
 		}
 	}
 

@@ -30,9 +30,9 @@ public class GetQualityResultRequest extends RpcAcsRequest<GetQualityResultRespo
 
 	private List<Long> projectIdss;
 
-	private List<Long> qualityRuleIdss;
-
 	private Integer hitStatus;
+
+	private List<Long> qualityRuleIdss;
 
 	private String instanceId;
 
@@ -46,7 +46,7 @@ public class GetQualityResultRequest extends RpcAcsRequest<GetQualityResultRespo
 
 	private String touchStartTime;
 	public GetQualityResultRequest() {
-		super("aiccs", "2019-10-15", "GetQualityResult", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetQualityResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -78,6 +78,17 @@ public class GetQualityResultRequest extends RpcAcsRequest<GetQualityResultRespo
 		}	
 	}
 
+	public Integer getHitStatus() {
+		return this.hitStatus;
+	}
+
+	public void setHitStatus(Integer hitStatus) {
+		this.hitStatus = hitStatus;
+		if(hitStatus != null){
+			putQueryParameter("HitStatus", hitStatus.toString());
+		}
+	}
+
 	public List<Long> getQualityRuleIdss() {
 		return this.qualityRuleIdss;
 	}
@@ -89,17 +100,6 @@ public class GetQualityResultRequest extends RpcAcsRequest<GetQualityResultRespo
 				putQueryParameter("QualityRuleIds." + (i + 1) , qualityRuleIdss.get(i));
 			}
 		}	
-	}
-
-	public Integer getHitStatus() {
-		return this.hitStatus;
-	}
-
-	public void setHitStatus(Integer hitStatus) {
-		this.hitStatus = hitStatus;
-		if(hitStatus != null){
-			putQueryParameter("HitStatus", hitStatus.toString());
-		}
 	}
 
 	public String getInstanceId() {

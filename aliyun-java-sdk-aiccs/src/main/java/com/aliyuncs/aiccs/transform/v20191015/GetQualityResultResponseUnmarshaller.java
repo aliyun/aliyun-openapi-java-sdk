@@ -28,8 +28,8 @@ public class GetQualityResultResponseUnmarshaller {
 	public static GetQualityResultResponse unmarshall(GetQualityResultResponse getQualityResultResponse, UnmarshallerContext _ctx) {
 		
 		getQualityResultResponse.setRequestId(_ctx.stringValue("GetQualityResultResponse.RequestId"));
-		getQualityResultResponse.setCode(_ctx.stringValue("GetQualityResultResponse.Code"));
 		getQualityResultResponse.setMessage(_ctx.stringValue("GetQualityResultResponse.Message"));
+		getQualityResultResponse.setCode(_ctx.stringValue("GetQualityResultResponse.Code"));
 		getQualityResultResponse.setSuccess(_ctx.booleanValue("GetQualityResultResponse.Success"));
 		getQualityResultResponse.setChannelTypeName(_ctx.stringValue("GetQualityResultResponse.ChannelTypeName"));
 
@@ -41,22 +41,22 @@ public class GetQualityResultResponseUnmarshaller {
 		List<QualityResultResponseListItem> qualityResultResponseList = new ArrayList<QualityResultResponseListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityResultResponse.Data.QualityResultResponseList.Length"); i++) {
 			QualityResultResponseListItem qualityResultResponseListItem = new QualityResultResponseListItem();
-			qualityResultResponseListItem.setInstanceName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].InstanceName"));
-			qualityResultResponseListItem.setMemberName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].MemberName"));
-			qualityResultResponseListItem.setTouchStartTime(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].TouchStartTime"));
-			qualityResultResponseListItem.setTouchId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].TouchId"));
-			qualityResultResponseListItem.setHitDetail(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].HitDetail"));
-			qualityResultResponseListItem.setChannelTypeName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ChannelTypeName"));
-			qualityResultResponseListItem.setHitStatus(_ctx.booleanValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].HitStatus"));
-			qualityResultResponseListItem.setRuleId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].RuleId"));
-			qualityResultResponseListItem.setRuleName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].RuleName"));
-			qualityResultResponseListItem.setServicerName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ServicerName"));
-			qualityResultResponseListItem.setServicerId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ServicerId"));
-			qualityResultResponseListItem.setGroupId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].GroupId"));
 			qualityResultResponseListItem.setGroupName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].GroupName"));
+			qualityResultResponseListItem.setHitStatus(_ctx.booleanValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].HitStatus"));
+			qualityResultResponseListItem.setTouchStartTime(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].TouchStartTime"));
 			qualityResultResponseListItem.setProjectName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ProjectName"));
+			qualityResultResponseListItem.setRuleId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].RuleId"));
 			qualityResultResponseListItem.setProjectId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ProjectId"));
+			qualityResultResponseListItem.setChannelTypeName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ChannelTypeName"));
+			qualityResultResponseListItem.setTouchId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].TouchId"));
+			qualityResultResponseListItem.setGroupId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].GroupId"));
+			qualityResultResponseListItem.setInstanceName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].InstanceName"));
+			qualityResultResponseListItem.setServicerName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ServicerName"));
+			qualityResultResponseListItem.setHitDetail(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].HitDetail"));
+			qualityResultResponseListItem.setMemberName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].MemberName"));
+			qualityResultResponseListItem.setServicerId(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ServicerId"));
 			qualityResultResponseListItem.setChannelType(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].ChannelType"));
+			qualityResultResponseListItem.setRuleName(_ctx.stringValue("GetQualityResultResponse.Data.QualityResultResponseList["+ i +"].RuleName"));
 
 			qualityResultResponseList.add(qualityResultResponseListItem);
 		}

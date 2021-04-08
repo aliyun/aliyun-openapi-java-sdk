@@ -23,10 +23,10 @@ public class RestartOutboundTaskResponseUnmarshaller {
 	public static RestartOutboundTaskResponse unmarshall(RestartOutboundTaskResponse restartOutboundTaskResponse, UnmarshallerContext _ctx) {
 		
 		restartOutboundTaskResponse.setRequestId(_ctx.stringValue("RestartOutboundTaskResponse.RequestId"));
-		restartOutboundTaskResponse.setSuccess(_ctx.booleanValue("RestartOutboundTaskResponse.Success"));
-		restartOutboundTaskResponse.setCode(_ctx.stringValue("RestartOutboundTaskResponse.Code"));
 		restartOutboundTaskResponse.setMessage(_ctx.stringValue("RestartOutboundTaskResponse.Message"));
 		restartOutboundTaskResponse.setData(_ctx.stringValue("RestartOutboundTaskResponse.Data"));
+		restartOutboundTaskResponse.setCode(_ctx.stringValue("RestartOutboundTaskResponse.Code"));
+		restartOutboundTaskResponse.setSuccess(_ctx.booleanValue("RestartOutboundTaskResponse.Success"));
 	 
 	 	return restartOutboundTaskResponse;
 	}

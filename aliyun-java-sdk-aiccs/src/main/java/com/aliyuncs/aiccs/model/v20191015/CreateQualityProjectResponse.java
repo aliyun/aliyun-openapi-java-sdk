@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateQualityProjectResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Boolean success;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -50,12 +50,12 @@ public class CreateQualityProjectResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -78,9 +78,9 @@ public class CreateQualityProjectResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private Long projectId;
-
 		private Integer version;
+
+		private Long projectId;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -90,20 +90,20 @@ public class CreateQualityProjectResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
 		public Integer getVersion() {
 			return this.version;
 		}
 
 		public void setVersion(Integer version) {
 			this.version = version;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 	}
 

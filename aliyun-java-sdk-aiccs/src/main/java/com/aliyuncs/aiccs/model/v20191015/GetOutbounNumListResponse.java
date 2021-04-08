@@ -27,11 +27,11 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
@@ -43,12 +43,12 @@ public class GetOutbounNumListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class GetOutbounNumListResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -101,9 +101,9 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 			private Integer type;
 
-			private String value;
-
 			private String description;
+
+			private String value;
 
 			public Integer getType() {
 				return this.type;
@@ -113,20 +113,20 @@ public class GetOutbounNumListResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 
@@ -134,9 +134,9 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 			private Integer type;
 
-			private String value;
-
 			private String description;
+
+			private String value;
 
 			public Integer getType() {
 				return this.type;
@@ -146,20 +146,20 @@ public class GetOutbounNumListResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

@@ -27,9 +27,9 @@ public class EditQualityProjectResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class EditQualityProjectResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,18 +77,18 @@ public class EditQualityProjectResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long projectId;
+		private String instanceId;
 
 		private Integer version;
 
-		private String instanceId;
+		private Long projectId;
 
-		public Long getProjectId() {
-			return this.projectId;
+		public String getInstanceId() {
+			return this.instanceId;
 		}
 
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 
 		public Integer getVersion() {
@@ -99,12 +99,12 @@ public class EditQualityProjectResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public String getInstanceId() {
-			return this.instanceId;
+		public Long getProjectId() {
+			return this.projectId;
 		}
 
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 	}
 

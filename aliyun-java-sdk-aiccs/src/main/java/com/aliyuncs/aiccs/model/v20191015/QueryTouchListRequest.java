@@ -64,7 +64,7 @@ public class QueryTouchListRequest extends RpcAcsRequest<QueryTouchListResponse>
 
 	private List<Long> memberIds;
 	public QueryTouchListRequest() {
-		super("aiccs", "2019-10-15", "QueryTouchList", "aiccs-service");
+		super("aiccs", "2019-10-15", "QueryTouchList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

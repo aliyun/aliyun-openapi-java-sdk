@@ -41,7 +41,7 @@ public class DescribeRecordDataRequest extends RpcAcsRequest<DescribeRecordDataR
 
 	private Long ownerId;
 	public DescribeRecordDataRequest() {
-		super("aiccs", "2019-10-15", "DescribeRecordData", "aiccs-service");
+		super("aiccs", "2019-10-15", "DescribeRecordData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

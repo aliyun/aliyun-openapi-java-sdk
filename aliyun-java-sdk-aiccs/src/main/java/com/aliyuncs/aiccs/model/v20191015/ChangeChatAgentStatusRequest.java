@@ -33,7 +33,7 @@ public class ChangeChatAgentStatusRequest extends RpcAcsRequest<ChangeChatAgentS
 
 	private String method;
 	public ChangeChatAgentStatusRequest() {
-		super("aiccs", "2019-10-15", "ChangeChatAgentStatus", "aiccs-service");
+		super("aiccs", "2019-10-15", "ChangeChatAgentStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

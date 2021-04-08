@@ -47,7 +47,7 @@ public class StartMicroOutboundRequest extends RpcAcsRequest<StartMicroOutboundR
 
 	private String callingNumber;
 	public StartMicroOutboundRequest() {
-		super("aiccs", "2019-10-15", "StartMicroOutbound", "aiccs-service");
+		super("aiccs", "2019-10-15", "StartMicroOutbound");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

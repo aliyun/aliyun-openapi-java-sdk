@@ -27,16 +27,16 @@ public class GetQualityRuleDetailResponseUnmarshaller {
 	public static GetQualityRuleDetailResponse unmarshall(GetQualityRuleDetailResponse getQualityRuleDetailResponse, UnmarshallerContext _ctx) {
 		
 		getQualityRuleDetailResponse.setRequestId(_ctx.stringValue("GetQualityRuleDetailResponse.RequestId"));
-		getQualityRuleDetailResponse.setCode(_ctx.stringValue("GetQualityRuleDetailResponse.Code"));
 		getQualityRuleDetailResponse.setMessage(_ctx.stringValue("GetQualityRuleDetailResponse.Message"));
+		getQualityRuleDetailResponse.setCode(_ctx.stringValue("GetQualityRuleDetailResponse.Code"));
 		getQualityRuleDetailResponse.setSuccess(_ctx.booleanValue("GetQualityRuleDetailResponse.Success"));
 
 		Data data = new Data();
+		data.setRuleCreateTime(_ctx.stringValue("GetQualityRuleDetailResponse.Data.RuleCreateTime"));
 		data.setMatchType(_ctx.integerValue("GetQualityRuleDetailResponse.Data.MatchType"));
 		data.setRuleId(_ctx.longValue("GetQualityRuleDetailResponse.Data.RuleId"));
-		data.setName(_ctx.stringValue("GetQualityRuleDetailResponse.Data.Name"));
-		data.setRuleCreateTime(_ctx.stringValue("GetQualityRuleDetailResponse.Data.RuleCreateTime"));
 		data.setRuleTag(_ctx.integerValue("GetQualityRuleDetailResponse.Data.RuleTag"));
+		data.setName(_ctx.stringValue("GetQualityRuleDetailResponse.Data.Name"));
 
 		List<String> keyWords = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityRuleDetailResponse.Data.KeyWords.Length"); i++) {

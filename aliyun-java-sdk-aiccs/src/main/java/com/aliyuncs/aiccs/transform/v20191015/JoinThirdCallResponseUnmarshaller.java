@@ -23,9 +23,9 @@ public class JoinThirdCallResponseUnmarshaller {
 	public static JoinThirdCallResponse unmarshall(JoinThirdCallResponse joinThirdCallResponse, UnmarshallerContext _ctx) {
 		
 		joinThirdCallResponse.setRequestId(_ctx.stringValue("JoinThirdCallResponse.RequestId"));
-		joinThirdCallResponse.setSuccess(_ctx.booleanValue("JoinThirdCallResponse.Success"));
-		joinThirdCallResponse.setCode(_ctx.stringValue("JoinThirdCallResponse.Code"));
 		joinThirdCallResponse.setMessage(_ctx.stringValue("JoinThirdCallResponse.Message"));
+		joinThirdCallResponse.setCode(_ctx.stringValue("JoinThirdCallResponse.Code"));
+		joinThirdCallResponse.setSuccess(_ctx.booleanValue("JoinThirdCallResponse.Success"));
 	 
 	 	return joinThirdCallResponse;
 	}

@@ -36,7 +36,7 @@ public class GetAgentIndexRealTimeRequest extends RpcAcsRequest<GetAgentIndexRea
 
 	private Integer currentPage;
 	public GetAgentIndexRealTimeRequest() {
-		super("aiccs", "2019-10-15", "GetAgentIndexRealTime", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetAgentIndexRealTime");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

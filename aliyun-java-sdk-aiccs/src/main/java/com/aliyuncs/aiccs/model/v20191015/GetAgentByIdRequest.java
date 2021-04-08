@@ -29,7 +29,7 @@ public class GetAgentByIdRequest extends RpcAcsRequest<GetAgentByIdResponse> {
 
 	private Long agentId;
 	public GetAgentByIdRequest() {
-		super("aiccs", "2019-10-15", "GetAgentById", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetAgentById");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

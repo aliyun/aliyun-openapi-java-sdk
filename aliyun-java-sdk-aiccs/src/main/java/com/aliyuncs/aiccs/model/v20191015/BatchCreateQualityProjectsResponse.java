@@ -27,9 +27,9 @@ public class BatchCreateQualityProjectsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class BatchCreateQualityProjectsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -79,9 +79,9 @@ public class BatchCreateQualityProjectsResponse extends AcsResponse {
 
 		private String instanceId;
 
-		private Long projectId;
-
 		private Integer version;
+
+		private Long projectId;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -91,20 +91,20 @@ public class BatchCreateQualityProjectsResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public Long getProjectId() {
-			return this.projectId;
-		}
-
-		public void setProjectId(Long projectId) {
-			this.projectId = projectId;
-		}
-
 		public Integer getVersion() {
 			return this.version;
 		}
 
 		public void setVersion(Integer version) {
 			this.version = version;
+		}
+
+		public Long getProjectId() {
+			return this.projectId;
+		}
+
+		public void setProjectId(Long projectId) {
+			this.projectId = projectId;
 		}
 	}
 

@@ -55,7 +55,7 @@ public class QueryTaskDetailRequest extends RpcAcsRequest<QueryTaskDetailRespons
 
 	private String priorityList;
 	public QueryTaskDetailRequest() {
-		super("aiccs", "2019-10-15", "QueryTaskDetail", "aiccs-service");
+		super("aiccs", "2019-10-15", "QueryTaskDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

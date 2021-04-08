@@ -26,11 +26,11 @@ public class QueryHotlineInQueueResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
 	private String data;
+
+	private String code;
 
 	private Boolean success;
 
@@ -40,14 +40,6 @@ public class QueryHotlineInQueueResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -64,6 +56,14 @@ public class QueryHotlineInQueueResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {

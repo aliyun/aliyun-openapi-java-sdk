@@ -29,9 +29,9 @@ public class GetOutbounNumListResponseUnmarshaller {
 	public static GetOutbounNumListResponse unmarshall(GetOutbounNumListResponse getOutbounNumListResponse, UnmarshallerContext _ctx) {
 		
 		getOutbounNumListResponse.setRequestId(_ctx.stringValue("GetOutbounNumListResponse.RequestId"));
-		getOutbounNumListResponse.setSuccess(_ctx.booleanValue("GetOutbounNumListResponse.Success"));
-		getOutbounNumListResponse.setCode(_ctx.stringValue("GetOutbounNumListResponse.Code"));
 		getOutbounNumListResponse.setMessage(_ctx.stringValue("GetOutbounNumListResponse.Message"));
+		getOutbounNumListResponse.setCode(_ctx.stringValue("GetOutbounNumListResponse.Code"));
+		getOutbounNumListResponse.setSuccess(_ctx.booleanValue("GetOutbounNumListResponse.Success"));
 
 		Data data = new Data();
 
@@ -39,8 +39,8 @@ public class GetOutbounNumListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.Num.Length"); i++) {
 			NumItem numItem = new NumItem();
 			numItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.Num["+ i +"].Type"));
-			numItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Value"));
 			numItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Description"));
+			numItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.Num["+ i +"].Value"));
 
 			num.add(numItem);
 		}
@@ -50,8 +50,8 @@ public class GetOutbounNumListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetOutbounNumListResponse.Data.NumGroup.Length"); i++) {
 			NumGroupItem numGroupItem = new NumGroupItem();
 			numGroupItem.setType(_ctx.integerValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Type"));
-			numGroupItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Value"));
 			numGroupItem.setDescription(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Description"));
+			numGroupItem.setValue(_ctx.stringValue("GetOutbounNumListResponse.Data.NumGroup["+ i +"].Value"));
 
 			numGroup.add(numGroupItem);
 		}

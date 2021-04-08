@@ -48,7 +48,7 @@ public class CreateQualityProjectRequest extends RpcAcsRequest<CreateQualityProj
 
 	private List<Integer> channelTouchTypes;
 	public CreateQualityProjectRequest() {
-		super("aiccs", "2019-10-15", "CreateQualityProject", "aiccs-service");
+		super("aiccs", "2019-10-15", "CreateQualityProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

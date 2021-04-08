@@ -34,9 +34,9 @@ public class GetAgentIndexRealTimeResponseUnmarshaller {
 		getAgentIndexRealTimeResponse.setSuccess(_ctx.booleanValue("GetAgentIndexRealTimeResponse.Success"));
 
 		Data data = new Data();
-		data.setPage(_ctx.integerValue("GetAgentIndexRealTimeResponse.Data.Page"));
 		data.setPageSize(_ctx.integerValue("GetAgentIndexRealTimeResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("GetAgentIndexRealTimeResponse.Data.Total"));
+		data.setPage(_ctx.integerValue("GetAgentIndexRealTimeResponse.Data.Page"));
 
 		List<Map<Object, Object>> rows = _ctx.listMapValue("GetAgentIndexRealTimeResponse.Data.Rows");
 		data.setRows(rows);
@@ -44,8 +44,8 @@ public class GetAgentIndexRealTimeResponseUnmarshaller {
 		List<ColumnsItem> columns = new ArrayList<ColumnsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAgentIndexRealTimeResponse.Data.Columns.Length"); i++) {
 			ColumnsItem columnsItem = new ColumnsItem();
-			columnsItem.setKey(_ctx.stringValue("GetAgentIndexRealTimeResponse.Data.Columns["+ i +"].Key"));
 			columnsItem.setTitle(_ctx.stringValue("GetAgentIndexRealTimeResponse.Data.Columns["+ i +"].Title"));
+			columnsItem.setKey(_ctx.stringValue("GetAgentIndexRealTimeResponse.Data.Columns["+ i +"].Key"));
 
 			columns.add(columnsItem);
 		}

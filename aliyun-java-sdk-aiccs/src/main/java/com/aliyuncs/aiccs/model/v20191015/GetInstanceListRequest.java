@@ -31,7 +31,7 @@ public class GetInstanceListRequest extends RpcAcsRequest<GetInstanceListRespons
 
 	private Integer pageNumber;
 	public GetInstanceListRequest() {
-		super("aiccs", "2019-10-15", "GetInstanceList", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetInstanceList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

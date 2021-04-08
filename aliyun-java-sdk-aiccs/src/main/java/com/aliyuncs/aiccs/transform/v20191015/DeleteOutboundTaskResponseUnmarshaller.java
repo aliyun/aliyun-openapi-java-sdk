@@ -23,10 +23,10 @@ public class DeleteOutboundTaskResponseUnmarshaller {
 	public static DeleteOutboundTaskResponse unmarshall(DeleteOutboundTaskResponse deleteOutboundTaskResponse, UnmarshallerContext _ctx) {
 		
 		deleteOutboundTaskResponse.setRequestId(_ctx.stringValue("DeleteOutboundTaskResponse.RequestId"));
-		deleteOutboundTaskResponse.setSuccess(_ctx.booleanValue("DeleteOutboundTaskResponse.Success"));
-		deleteOutboundTaskResponse.setCode(_ctx.stringValue("DeleteOutboundTaskResponse.Code"));
 		deleteOutboundTaskResponse.setMessage(_ctx.stringValue("DeleteOutboundTaskResponse.Message"));
 		deleteOutboundTaskResponse.setData(_ctx.stringValue("DeleteOutboundTaskResponse.Data"));
+		deleteOutboundTaskResponse.setCode(_ctx.stringValue("DeleteOutboundTaskResponse.Code"));
+		deleteOutboundTaskResponse.setSuccess(_ctx.booleanValue("DeleteOutboundTaskResponse.Success"));
 	 
 	 	return deleteOutboundTaskResponse;
 	}
