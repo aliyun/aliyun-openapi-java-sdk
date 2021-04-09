@@ -27,7 +27,7 @@ public class UploadDataSyncRequest extends RpcAcsRequest<UploadDataSyncResponse>
 
 	private String jsonStr;
 	public UploadDataSyncRequest() {
-		super("Qualitycheck", "2019-01-15", "UploadDataSync", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "UploadDataSync");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

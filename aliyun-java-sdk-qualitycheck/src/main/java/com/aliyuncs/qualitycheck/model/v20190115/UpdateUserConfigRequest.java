@@ -27,7 +27,7 @@ public class UpdateUserConfigRequest extends RpcAcsRequest<UpdateUserConfigRespo
 
 	private String jsonStr;
 	public UpdateUserConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "UpdateUserConfig", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "UpdateUserConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

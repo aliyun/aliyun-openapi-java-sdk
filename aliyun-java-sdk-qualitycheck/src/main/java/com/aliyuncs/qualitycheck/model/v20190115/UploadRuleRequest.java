@@ -27,7 +27,7 @@ public class UploadRuleRequest extends RpcAcsRequest<UploadRuleResponse> {
 
 	private String jsonStr;
 	public UploadRuleRequest() {
-		super("Qualitycheck", "2019-01-15", "UploadRule", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "UploadRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

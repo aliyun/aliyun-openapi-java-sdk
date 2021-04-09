@@ -27,7 +27,7 @@ public class GetBusinessCategoryListRequest extends RpcAcsRequest<GetBusinessCat
 
 	private String jsonStr;
 	public GetBusinessCategoryListRequest() {
-		super("Qualitycheck", "2019-01-15", "GetBusinessCategoryList", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "GetBusinessCategoryList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

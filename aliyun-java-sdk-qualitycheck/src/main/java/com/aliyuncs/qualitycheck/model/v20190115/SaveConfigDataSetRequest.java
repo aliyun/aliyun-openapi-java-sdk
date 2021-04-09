@@ -27,7 +27,7 @@ public class SaveConfigDataSetRequest extends RpcAcsRequest<SaveConfigDataSetRes
 
 	private String jsonStr;
 	public SaveConfigDataSetRequest() {
-		super("Qualitycheck", "2019-01-15", "SaveConfigDataSet", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "SaveConfigDataSet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

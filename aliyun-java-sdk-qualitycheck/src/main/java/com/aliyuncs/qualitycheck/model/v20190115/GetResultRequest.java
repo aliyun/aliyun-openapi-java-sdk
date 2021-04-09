@@ -27,7 +27,7 @@ public class GetResultRequest extends RpcAcsRequest<GetResultResponse> {
 
 	private String jsonStr;
 	public GetResultRequest() {
-		super("Qualitycheck", "2019-01-15", "GetResult", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "GetResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CreateTaskAssignRuleRequest extends RpcAcsRequest<CreateTaskAssignR
 
 	private String jsonStr;
 	public CreateTaskAssignRuleRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateTaskAssignRule", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "CreateTaskAssignRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

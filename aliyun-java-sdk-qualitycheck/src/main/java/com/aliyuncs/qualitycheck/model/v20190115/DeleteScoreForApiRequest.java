@@ -27,7 +27,7 @@ public class DeleteScoreForApiRequest extends RpcAcsRequest<DeleteScoreForApiRes
 
 	private String jsonStr;
 	public DeleteScoreForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteScoreForApi", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "DeleteScoreForApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

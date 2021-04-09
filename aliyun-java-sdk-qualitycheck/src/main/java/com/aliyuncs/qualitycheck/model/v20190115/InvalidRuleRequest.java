@@ -27,7 +27,7 @@ public class InvalidRuleRequest extends RpcAcsRequest<InvalidRuleResponse> {
 
 	private String jsonStr;
 	public InvalidRuleRequest() {
-		super("Qualitycheck", "2019-01-15", "InvalidRule", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "InvalidRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class AssignReviewerRequest extends RpcAcsRequest<AssignReviewerResponse>
 
 	private String jsonStr;
 	public AssignReviewerRequest() {
-		super("Qualitycheck", "2019-01-15", "AssignReviewer", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "AssignReviewer");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

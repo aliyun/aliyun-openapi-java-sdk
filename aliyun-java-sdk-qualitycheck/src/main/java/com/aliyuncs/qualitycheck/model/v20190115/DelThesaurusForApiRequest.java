@@ -27,7 +27,7 @@ public class DelThesaurusForApiRequest extends RpcAcsRequest<DelThesaurusForApiR
 
 	private String jsonStr;
 	public DelThesaurusForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "DelThesaurusForApi", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "DelThesaurusForApi");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

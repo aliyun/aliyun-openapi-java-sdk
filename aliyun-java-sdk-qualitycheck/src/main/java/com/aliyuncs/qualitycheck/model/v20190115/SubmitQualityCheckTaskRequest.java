@@ -27,7 +27,7 @@ public class SubmitQualityCheckTaskRequest extends RpcAcsRequest<SubmitQualityCh
 
 	private String jsonStr;
 	public SubmitQualityCheckTaskRequest() {
-		super("Qualitycheck", "2019-01-15", "SubmitQualityCheckTask", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "SubmitQualityCheckTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

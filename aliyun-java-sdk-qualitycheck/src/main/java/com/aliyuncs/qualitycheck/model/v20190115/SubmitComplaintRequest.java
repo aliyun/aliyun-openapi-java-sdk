@@ -27,7 +27,7 @@ public class SubmitComplaintRequest extends RpcAcsRequest<SubmitComplaintRespons
 
 	private String jsonStr;
 	public SubmitComplaintRequest() {
-		super("Qualitycheck", "2019-01-15", "SubmitComplaint", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "SubmitComplaint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteUserRequest extends RpcAcsRequest<DeleteUserResponse> {
 
 	private String jsonStr;
 	public DeleteUserRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteUser", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "DeleteUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

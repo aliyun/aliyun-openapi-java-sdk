@@ -27,7 +27,7 @@ public class ListRulesRequest extends RpcAcsRequest<ListRulesResponse> {
 
 	private String jsonStr;
 	public ListRulesRequest() {
-		super("Qualitycheck", "2019-01-15", "ListRules", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "ListRules");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

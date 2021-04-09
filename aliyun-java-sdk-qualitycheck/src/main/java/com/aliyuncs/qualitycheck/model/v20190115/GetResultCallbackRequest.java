@@ -27,7 +27,7 @@ public class GetResultCallbackRequest extends RpcAcsRequest<GetResultCallbackRes
 
 	private String jsonStr;
 	public GetResultCallbackRequest() {
-		super("Qualitycheck", "2019-01-15", "GetResultCallback", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "GetResultCallback");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

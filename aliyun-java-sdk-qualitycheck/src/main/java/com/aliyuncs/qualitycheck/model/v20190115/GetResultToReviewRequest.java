@@ -27,7 +27,7 @@ public class GetResultToReviewRequest extends RpcAcsRequest<GetResultToReviewRes
 
 	private String jsonStr;
 	public GetResultToReviewRequest() {
-		super("Qualitycheck", "2019-01-15", "GetResultToReview", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "GetResultToReview");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

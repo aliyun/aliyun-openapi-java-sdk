@@ -27,7 +27,7 @@ public class DeleteDataSetRequest extends RpcAcsRequest<DeleteDataSetResponse> {
 
 	private String jsonStr;
 	public DeleteDataSetRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteDataSet", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "DeleteDataSet");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

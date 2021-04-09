@@ -27,7 +27,7 @@ public class SubmitReviewInfoRequest extends RpcAcsRequest<SubmitReviewInfoRespo
 
 	private String jsonStr;
 	public SubmitReviewInfoRequest() {
-		super("Qualitycheck", "2019-01-15", "SubmitReviewInfo", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "SubmitReviewInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class DeleteWarningConfigRequest extends RpcAcsRequest<DeleteWarningConfi
 
 	private String jsonStr;
 	public DeleteWarningConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteWarningConfig", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "DeleteWarningConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

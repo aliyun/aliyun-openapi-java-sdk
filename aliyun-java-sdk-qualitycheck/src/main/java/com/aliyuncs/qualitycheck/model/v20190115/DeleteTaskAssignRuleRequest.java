@@ -27,7 +27,7 @@ public class DeleteTaskAssignRuleRequest extends RpcAcsRequest<DeleteTaskAssignR
 
 	private String jsonStr;
 	public DeleteTaskAssignRuleRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteTaskAssignRule", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "DeleteTaskAssignRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

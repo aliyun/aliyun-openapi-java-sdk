@@ -27,7 +27,7 @@ public class RestartAsrTaskRequest extends RpcAcsRequest<RestartAsrTaskResponse>
 
 	private String jsonStr;
 	public RestartAsrTaskRequest() {
-		super("Qualitycheck", "2019-01-15", "RestartAsrTask", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "RestartAsrTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

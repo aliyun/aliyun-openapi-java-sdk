@@ -27,7 +27,7 @@ public class ListPrecisionTaskRequest extends RpcAcsRequest<ListPrecisionTaskRes
 
 	private String jsonStr;
 	public ListPrecisionTaskRequest() {
-		super("Qualitycheck", "2019-01-15", "ListPrecisionTask", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "ListPrecisionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
