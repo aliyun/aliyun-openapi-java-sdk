@@ -12,23 +12,23 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20201112;
+package com.aliyuncs.cloudauth.model.v20200618;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20201112.LivenessDetectResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20200618.VerifyBankElementResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class LivenessDetectResponse extends AcsResponse {
+public class VerifyBankElementResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private ResultObject resultObject;
 
@@ -40,20 +40,20 @@ public class LivenessDetectResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public ResultObject getResultObject() {
@@ -68,9 +68,11 @@ public class LivenessDetectResponse extends AcsResponse {
 
 		private String passed;
 
-		private Float score;
+		private String subCode;
 
-		private String frameUrl;
+		private String materialInfo;
+
+		private String certifyId;
 
 		public String getPassed() {
 			return this.passed;
@@ -80,26 +82,34 @@ public class LivenessDetectResponse extends AcsResponse {
 			this.passed = passed;
 		}
 
-		public Float getScore() {
-			return this.score;
+		public String getSubCode() {
+			return this.subCode;
 		}
 
-		public void setScore(Float score) {
-			this.score = score;
+		public void setSubCode(String subCode) {
+			this.subCode = subCode;
 		}
 
-		public String getFrameUrl() {
-			return this.frameUrl;
+		public String getMaterialInfo() {
+			return this.materialInfo;
 		}
 
-		public void setFrameUrl(String frameUrl) {
-			this.frameUrl = frameUrl;
+		public void setMaterialInfo(String materialInfo) {
+			this.materialInfo = materialInfo;
+		}
+
+		public String getCertifyId() {
+			return this.certifyId;
+		}
+
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
 		}
 	}
 
 	@Override
-	public LivenessDetectResponse getInstance(UnmarshallerContext context) {
-		return	LivenessDetectResponseUnmarshaller.unmarshall(this, context);
+	public VerifyBankElementResponse getInstance(UnmarshallerContext context) {
+		return	VerifyBankElementResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

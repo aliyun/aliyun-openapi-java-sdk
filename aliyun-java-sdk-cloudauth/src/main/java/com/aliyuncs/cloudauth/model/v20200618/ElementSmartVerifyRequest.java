@@ -27,6 +27,8 @@ public class ElementSmartVerifyRequest extends RpcAcsRequest<ElementSmartVerifyR
 
 	private String certFile;
 
+	private String certNationalEmblemUrl;
+
 	private String certName;
 
 	private String mode;
@@ -57,6 +59,17 @@ public class ElementSmartVerifyRequest extends RpcAcsRequest<ElementSmartVerifyR
 		this.certFile = certFile;
 		if(certFile != null){
 			putBodyParameter("CertFile", certFile);
+		}
+	}
+
+	public String getCertNationalEmblemUrl() {
+		return this.certNationalEmblemUrl;
+	}
+
+	public void setCertNationalEmblemUrl(String certNationalEmblemUrl) {
+		this.certNationalEmblemUrl = certNationalEmblemUrl;
+		if(certNationalEmblemUrl != null){
+			putBodyParameter("CertNationalEmblemUrl", certNationalEmblemUrl);
 		}
 	}
 
