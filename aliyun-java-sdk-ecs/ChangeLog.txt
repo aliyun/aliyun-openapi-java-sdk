@@ -1,3 +1,6 @@
+2021-04-09 Version: 4.23.12
+- Add aliyun cloud assistant add lastHeartbeatTime.
+
 2021-03-31 Version: 4.23.11
 - Ecs support hibernation.
 - DescribeSnapshotGroups add ProgressStatus.

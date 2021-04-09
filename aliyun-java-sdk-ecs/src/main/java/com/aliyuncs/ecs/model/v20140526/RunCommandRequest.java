@@ -44,6 +44,8 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 
 	private String contentEncoding;
 
+	private String repeatMode;
+
 	private String windowsPasswordName;
 
 	private Boolean keepCommand;
@@ -159,6 +161,17 @@ public class RunCommandRequest extends RpcAcsRequest<RunCommandResponse> {
 		this.contentEncoding = contentEncoding;
 		if(contentEncoding != null){
 			putQueryParameter("ContentEncoding", contentEncoding);
+		}
+	}
+
+	public String getRepeatMode() {
+		return this.repeatMode;
+	}
+
+	public void setRepeatMode(String repeatMode) {
+		this.repeatMode = repeatMode;
+		if(repeatMode != null){
+			putQueryParameter("RepeatMode", repeatMode);
 		}
 	}
 

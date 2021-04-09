@@ -91,6 +91,8 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		private String lastInvokedTime;
 
+		private String lastHeartbeatTime;
+
 		public String getInstanceId() {
 			return this.instanceId;
 		}
@@ -145,6 +147,14 @@ public class DescribeCloudAssistantStatusResponse extends AcsResponse {
 
 		public void setLastInvokedTime(String lastInvokedTime) {
 			this.lastInvokedTime = lastInvokedTime;
+		}
+
+		public String getLastHeartbeatTime() {
+			return this.lastHeartbeatTime;
+		}
+
+		public void setLastHeartbeatTime(String lastHeartbeatTime) {
+			this.lastHeartbeatTime = lastHeartbeatTime;
 		}
 	}
 
