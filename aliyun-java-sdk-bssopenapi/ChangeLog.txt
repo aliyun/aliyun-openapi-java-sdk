@@ -1,3 +1,6 @@
+2021-04-12 Version: 1.7.0
+- Support allocation status.
+
 2021-04-01 Version: 1.6.9
 - Query saving plan instance support tag.
 

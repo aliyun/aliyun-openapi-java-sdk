@@ -54,7 +54,7 @@ public class QuerySavingsPlansInstanceResponseUnmarshaller {
 			savingsPlansDetailResponse.setPrepayFee(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PrepayFee"));
 			savingsPlansDetailResponse.setTotalSave(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].TotalSave"));
 			savingsPlansDetailResponse.setUtilization(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Utilization"));
-			savingsPlansDetailResponse.setShare(_ctx.booleanValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Share"));
+			savingsPlansDetailResponse.setAllocationStatus(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].AllocationStatus"));
 
 			List<Tag> tags = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Tags.Length"); j++) {
