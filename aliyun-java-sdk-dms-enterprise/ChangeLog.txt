@@ -1,3 +1,6 @@
+2021-04-12 Version: 1.16.0
+- Support GetDBTopology API.
+
 2021-03-30 Version: 1.15.0
 - Support ListDDLPublishRecords API.
 - Fixed GetMetaTableColumn, GetMetaTableDetailInfo API response param DataLength lack of precision.
