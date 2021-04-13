@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.openanalytics_open.model.v20200928;
+package com.aliyuncs.openanalytics_open.model.v20180619;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,14 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class GrantPrivilegesRequest extends RpcAcsRequest<GrantPrivilegesResponse> {
+public class SubmitSparkSQLRequest extends RpcAcsRequest<SubmitSparkSQLResponse> {
 	   
 
-	private Struct privilegeBag;
-	public GrantPrivilegesRequest() {
-		super("openanalytics-open", "2020-09-28", "GrantPrivileges", "openanalytics");
+	private String sql;
+
+	private String vcName;
+	public SubmitSparkSQLRequest() {
+		super("openanalytics-open", "2018-06-19", "SubmitSparkSQL", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GrantPrivilegesRequest extends RpcAcsRequest<GrantPrivilegesRespons
 		} catch (Exception e) {}
 	}
 
-	public Struct getPrivilegeBag() {
-		return this.privilegeBag;
+	public String getSql() {
+		return this.sql;
 	}
 
-	public void setPrivilegeBag(Struct privilegeBag) {
-		this.privilegeBag = privilegeBag;
-		if(privilegeBag != null){
-			putQueryParameter("PrivilegeBag", privilegeBag.toString());
+	public void setSql(String sql) {
+		this.sql = sql;
+		if(sql != null){
+			putBodyParameter("Sql", sql);
+		}
+	}
+
+	public String getVcName() {
+		return this.vcName;
+	}
+
+	public void setVcName(String vcName) {
+		this.vcName = vcName;
+		if(vcName != null){
+			putBodyParameter("VcName", vcName);
 		}
 	}
 
 	@Override
-	public Class<GrantPrivilegesResponse> getResponseClass() {
-		return GrantPrivilegesResponse.class;
+	public Class<SubmitSparkSQLResponse> getResponseClass() {
+		return SubmitSparkSQLResponse.class;
 	}
 
 }
