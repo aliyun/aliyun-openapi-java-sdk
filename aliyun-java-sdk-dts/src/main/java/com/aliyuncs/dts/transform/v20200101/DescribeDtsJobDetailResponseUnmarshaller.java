@@ -47,6 +47,7 @@ public class DescribeDtsJobDetailResponseUnmarshaller {
 		describeDtsJobDetailResponse.setReserved(_ctx.stringValue("DescribeDtsJobDetailResponse.Reserved"));
 		describeDtsJobDetailResponse.setErrorMessage(_ctx.stringValue("DescribeDtsJobDetailResponse.ErrorMessage"));
 		describeDtsJobDetailResponse.setDbObject(_ctx.stringValue("DescribeDtsJobDetailResponse.DbObject"));
+		describeDtsJobDetailResponse.setSynchronizationDirection(_ctx.stringValue("DescribeDtsJobDetailResponse.SynchronizationDirection"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
 		sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeDtsJobDetailResponse.SourceEndpoint.InstanceID"));

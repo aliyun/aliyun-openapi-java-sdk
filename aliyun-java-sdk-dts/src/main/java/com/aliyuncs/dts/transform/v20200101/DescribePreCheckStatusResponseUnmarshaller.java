@@ -39,10 +39,10 @@ public class DescribePreCheckStatusResponseUnmarshaller {
 		List<ProgressInfo> jobProgress = new ArrayList<ProgressInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePreCheckStatusResponse.JobProgress.Length"); i++) {
 			ProgressInfo progressInfo = new ProgressInfo();
-			progressInfo.setBootTime(_ctx.longValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].BootTime"));
+			progressInfo.setBootTime(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].BootTime"));
 			progressInfo.setCanSkip(_ctx.booleanValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].CanSkip"));
 			progressInfo.setDelaySeconds(_ctx.integerValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].DelaySeconds"));
-			progressInfo.setFinishTime(_ctx.longValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].FinishTime"));
+			progressInfo.setFinishTime(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].FinishTime"));
 			progressInfo.setIgnoreFlag(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].IgnoreFlag"));
 			progressInfo.setItem(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].Item"));
 			progressInfo.setJobId(_ctx.stringValue("DescribePreCheckStatusResponse.JobProgress["+ i +"].JobId"));

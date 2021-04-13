@@ -26,6 +26,10 @@ public class DescribeDtsJobDetailRequest extends RpcAcsRequest<DescribeDtsJobDet
 	   
 
 	private String dtsJobId;
+
+	private String dtsInstanceID;
+
+	private String synchronizationDirection;
 	public DescribeDtsJobDetailRequest() {
 		super("Dts", "2020-01-01", "DescribeDtsJobDetail", "dts");
 		setMethod(MethodType.POST);
@@ -43,6 +47,28 @@ public class DescribeDtsJobDetailRequest extends RpcAcsRequest<DescribeDtsJobDet
 		this.dtsJobId = dtsJobId;
 		if(dtsJobId != null){
 			putQueryParameter("DtsJobId", dtsJobId);
+		}
+	}
+
+	public String getDtsInstanceID() {
+		return this.dtsInstanceID;
+	}
+
+	public void setDtsInstanceID(String dtsInstanceID) {
+		this.dtsInstanceID = dtsInstanceID;
+		if(dtsInstanceID != null){
+			putQueryParameter("DtsInstanceID", dtsInstanceID);
+		}
+	}
+
+	public String getSynchronizationDirection() {
+		return this.synchronizationDirection;
+	}
+
+	public void setSynchronizationDirection(String synchronizationDirection) {
+		this.synchronizationDirection = synchronizationDirection;
+		if(synchronizationDirection != null){
+			putQueryParameter("SynchronizationDirection", synchronizationDirection);
 		}
 	}
 

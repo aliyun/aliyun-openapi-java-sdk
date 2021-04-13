@@ -1,3 +1,7 @@
+2021-04-13 Version: 5.1.12
+- Supported ConfigureDtsJob SynchronizationDirection.
+- Fixed DescribePreCheckStatus JobProgress bootTime.
+
 2021-04-08 Version: 5.1.11
 - Supported ModifyDtsJob and DeleteDtsJob.
 

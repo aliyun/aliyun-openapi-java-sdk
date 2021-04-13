@@ -68,6 +68,8 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	private String dbObject;
 
+	private String synchronizationDirection;
+
 	private SourceEndpoint sourceEndpoint;
 
 	private DestinationEndpoint destinationEndpoint;
@@ -248,6 +250,14 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	public void setDbObject(String dbObject) {
 		this.dbObject = dbObject;
+	}
+
+	public String getSynchronizationDirection() {
+		return this.synchronizationDirection;
+	}
+
+	public void setSynchronizationDirection(String synchronizationDirection) {
+		this.synchronizationDirection = synchronizationDirection;
 	}
 
 	public SourceEndpoint getSourceEndpoint() {

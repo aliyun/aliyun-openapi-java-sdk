@@ -117,13 +117,13 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 	public static class ProgressInfo {
 
-		private Long bootTime;
+		private String bootTime;
 
 		private Boolean canSkip;
 
 		private Integer delaySeconds;
 
-		private Long finishTime;
+		private String finishTime;
 
 		private String ignoreFlag;
 
@@ -163,11 +163,11 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 
 		private List<JobLog> logs;
 
-		public Long getBootTime() {
+		public String getBootTime() {
 			return this.bootTime;
 		}
 
-		public void setBootTime(Long bootTime) {
+		public void setBootTime(String bootTime) {
 			this.bootTime = bootTime;
 		}
 
@@ -187,11 +187,11 @@ public class DescribePreCheckStatusResponse extends AcsResponse {
 			this.delaySeconds = delaySeconds;
 		}
 
-		public Long getFinishTime() {
+		public String getFinishTime() {
 			return this.finishTime;
 		}
 
-		public void setFinishTime(Long finishTime) {
+		public void setFinishTime(String finishTime) {
 			this.finishTime = finishTime;
 		}
 
