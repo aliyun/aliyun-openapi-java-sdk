@@ -30,7 +30,7 @@ public class EraseVideoLogoRequest extends RpcAcsRequest<EraseVideoLogoResponse>
 
 	private String videoUrl;
 	public EraseVideoLogoRequest() {
-		super("videoenhan", "2020-03-20", "EraseVideoLogo");
+		super("videoenhan", "2020-03-20", "EraseVideoLogo", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

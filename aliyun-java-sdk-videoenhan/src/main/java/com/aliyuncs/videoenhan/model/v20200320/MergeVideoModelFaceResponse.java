@@ -15,18 +15,30 @@
 package com.aliyuncs.videoenhan.model.v20200320;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.videoenhan.transform.v20200320.ChangeVideoSizeResponseUnmarshaller;
+import com.aliyuncs.videoenhan.transform.v20200320.MergeVideoModelFaceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ChangeVideoSizeResponse extends AcsResponse {
+public class MergeVideoModelFaceResponse extends AcsResponse {
+
+	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,6 +46,14 @@ public class ChangeVideoSizeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -46,30 +66,20 @@ public class ChangeVideoSizeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String videoUrl;
+		private String videoURL;
 
-		private String videoCoverUrl;
-
-		public String getVideoUrl() {
-			return this.videoUrl;
+		public String getVideoURL() {
+			return this.videoURL;
 		}
 
-		public void setVideoUrl(String videoUrl) {
-			this.videoUrl = videoUrl;
-		}
-
-		public String getVideoCoverUrl() {
-			return this.videoCoverUrl;
-		}
-
-		public void setVideoCoverUrl(String videoCoverUrl) {
-			this.videoCoverUrl = videoCoverUrl;
+		public void setVideoURL(String videoURL) {
+			this.videoURL = videoURL;
 		}
 	}
 
 	@Override
-	public ChangeVideoSizeResponse getInstance(UnmarshallerContext context) {
-		return	ChangeVideoSizeResponseUnmarshaller.unmarshall(this, context);
+	public MergeVideoModelFaceResponse getInstance(UnmarshallerContext context) {
+		return	MergeVideoModelFaceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

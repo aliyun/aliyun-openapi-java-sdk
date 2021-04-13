@@ -31,7 +31,7 @@ public class InterpolateVideoFrameRequest extends RpcAcsRequest<InterpolateVideo
 
 	private String videoURL;
 	public InterpolateVideoFrameRequest() {
-		super("videoenhan", "2020-03-20", "InterpolateVideoFrame");
+		super("videoenhan", "2020-03-20", "InterpolateVideoFrame", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

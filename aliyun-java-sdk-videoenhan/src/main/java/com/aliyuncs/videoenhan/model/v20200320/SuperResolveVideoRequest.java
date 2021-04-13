@@ -29,7 +29,7 @@ public class SuperResolveVideoRequest extends RpcAcsRequest<SuperResolveVideoRes
 
 	private String videoUrl;
 	public SuperResolveVideoRequest() {
-		super("videoenhan", "2020-03-20", "SuperResolveVideo");
+		super("videoenhan", "2020-03-20", "SuperResolveVideo", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,12 +22,14 @@ import com.aliyuncs.videoenhan.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultResponse> {
+public class QueryFaceVideoTemplateRequest extends RpcAcsRequest<QueryFaceVideoTemplateResponse> {
 	   
 
-	private String jobId;
-	public GetAsyncJobResultRequest() {
-		super("videoenhan", "2020-03-20", "GetAsyncJobResult", "videoenhan");
+	private String userId;
+
+	private String templateId;
+	public QueryFaceVideoTemplateRequest() {
+		super("videoenhan", "2020-03-20", "QueryFaceVideoTemplate", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultRes
 		} catch (Exception e) {}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putBodyParameter("JobId", jobId);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getTemplateId() {
+		return this.templateId;
+	}
+
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+		if(templateId != null){
+			putQueryParameter("TemplateId", templateId);
 		}
 	}
 
 	@Override
-	public Class<GetAsyncJobResultResponse> getResponseClass() {
-		return GetAsyncJobResultResponse.class;
+	public Class<QueryFaceVideoTemplateResponse> getResponseClass() {
+		return QueryFaceVideoTemplateResponse.class;
 	}
 
 }

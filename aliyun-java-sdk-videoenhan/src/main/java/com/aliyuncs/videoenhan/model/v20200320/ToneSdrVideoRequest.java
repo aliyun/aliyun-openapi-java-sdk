@@ -25,29 +25,18 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class ToneSdrVideoRequest extends RpcAcsRequest<ToneSdrVideoResponse> {
 	   
 
-	private Integer bitrate;
-
 	private String recolorModel;
+
+	private Integer bitrate;
 
 	private String videoURL;
 	public ToneSdrVideoRequest() {
-		super("videoenhan", "2020-03-20", "ToneSdrVideo");
+		super("videoenhan", "2020-03-20", "ToneSdrVideo", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Integer getBitrate() {
-		return this.bitrate;
-	}
-
-	public void setBitrate(Integer bitrate) {
-		this.bitrate = bitrate;
-		if(bitrate != null){
-			putBodyParameter("Bitrate", bitrate.toString());
-		}
 	}
 
 	public String getRecolorModel() {
@@ -58,6 +47,17 @@ public class ToneSdrVideoRequest extends RpcAcsRequest<ToneSdrVideoResponse> {
 		this.recolorModel = recolorModel;
 		if(recolorModel != null){
 			putBodyParameter("RecolorModel", recolorModel);
+		}
+	}
+
+	public Integer getBitrate() {
+		return this.bitrate;
+	}
+
+	public void setBitrate(Integer bitrate) {
+		this.bitrate = bitrate;
+		if(bitrate != null){
+			putBodyParameter("Bitrate", bitrate.toString());
 		}
 	}
 

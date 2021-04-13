@@ -15,18 +15,30 @@
 package com.aliyuncs.videoenhan.model.v20200320;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.videoenhan.transform.v20200320.ChangeVideoSizeResponseUnmarshaller;
+import com.aliyuncs.videoenhan.transform.v20200320.AddFaceVideoTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ChangeVideoSizeResponse extends AcsResponse {
+public class AddFaceVideoTemplateResponse extends AcsResponse {
+
+	private String message;
 
 	private String requestId;
 
-	private Data data;
+	private String code;
+
+	private Date date;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,40 +48,38 @@ public class ChangeVideoSizeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public static class Data {
+	public Date getDate() {
+		return this.date;
+	}
 
-		private String videoUrl;
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-		private String videoCoverUrl;
+	public static class Date {
 
-		public String getVideoUrl() {
-			return this.videoUrl;
+		private String templateId;
+
+		public String getTemplateId() {
+			return this.templateId;
 		}
 
-		public void setVideoUrl(String videoUrl) {
-			this.videoUrl = videoUrl;
-		}
-
-		public String getVideoCoverUrl() {
-			return this.videoCoverUrl;
-		}
-
-		public void setVideoCoverUrl(String videoCoverUrl) {
-			this.videoCoverUrl = videoCoverUrl;
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 
 	@Override
-	public ChangeVideoSizeResponse getInstance(UnmarshallerContext context) {
-		return	ChangeVideoSizeResponseUnmarshaller.unmarshall(this, context);
+	public AddFaceVideoTemplateResponse getInstance(UnmarshallerContext context) {
+		return	AddFaceVideoTemplateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

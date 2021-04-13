@@ -14,22 +14,18 @@
 
 package com.aliyuncs.videoenhan.transform.v20200320;
 
-import com.aliyuncs.videoenhan.model.v20200320.GenerateVideoResponse;
-import com.aliyuncs.videoenhan.model.v20200320.GenerateVideoResponse.Data;
+import com.aliyuncs.videoenhan.model.v20200320.DeleteFaceVideoTemplateResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GenerateVideoResponseUnmarshaller {
+public class DeleteFaceVideoTemplateResponseUnmarshaller {
 
-	public static GenerateVideoResponse unmarshall(GenerateVideoResponse generateVideoResponse, UnmarshallerContext _ctx) {
+	public static DeleteFaceVideoTemplateResponse unmarshall(DeleteFaceVideoTemplateResponse deleteFaceVideoTemplateResponse, UnmarshallerContext _ctx) {
 		
-		generateVideoResponse.setRequestId(_ctx.stringValue("GenerateVideoResponse.RequestId"));
-
-		Data data = new Data();
-		data.setVideoUrl(_ctx.stringValue("GenerateVideoResponse.Data.VideoUrl"));
-		data.setVideoCoverUrl(_ctx.stringValue("GenerateVideoResponse.Data.VideoCoverUrl"));
-		generateVideoResponse.setData(data);
+		deleteFaceVideoTemplateResponse.setRequestId(_ctx.stringValue("DeleteFaceVideoTemplateResponse.RequestId"));
+		deleteFaceVideoTemplateResponse.setMessage(_ctx.stringValue("DeleteFaceVideoTemplateResponse.Message"));
+		deleteFaceVideoTemplateResponse.setCode(_ctx.stringValue("DeleteFaceVideoTemplateResponse.Code"));
 	 
-	 	return generateVideoResponse;
+	 	return deleteFaceVideoTemplateResponse;
 	}
 }

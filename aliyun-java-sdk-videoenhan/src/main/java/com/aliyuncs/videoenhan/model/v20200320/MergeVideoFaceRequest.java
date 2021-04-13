@@ -25,29 +25,18 @@ import com.aliyuncs.videoenhan.Endpoint;
 public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse> {
 	   
 
-	private String referenceURL;
-
 	private String postURL;
+
+	private String referenceURL;
 
 	private String videoURL;
 	public MergeVideoFaceRequest() {
-		super("videoenhan", "2020-03-20", "MergeVideoFace");
+		super("videoenhan", "2020-03-20", "MergeVideoFace", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReferenceURL() {
-		return this.referenceURL;
-	}
-
-	public void setReferenceURL(String referenceURL) {
-		this.referenceURL = referenceURL;
-		if(referenceURL != null){
-			putBodyParameter("ReferenceURL", referenceURL);
-		}
 	}
 
 	public String getPostURL() {
@@ -58,6 +47,17 @@ public class MergeVideoFaceRequest extends RpcAcsRequest<MergeVideoFaceResponse>
 		this.postURL = postURL;
 		if(postURL != null){
 			putBodyParameter("PostURL", postURL);
+		}
+	}
+
+	public String getReferenceURL() {
+		return this.referenceURL;
+	}
+
+	public void setReferenceURL(String referenceURL) {
+		this.referenceURL = referenceURL;
+		if(referenceURL != null){
+			putBodyParameter("ReferenceURL", referenceURL);
 		}
 	}
 

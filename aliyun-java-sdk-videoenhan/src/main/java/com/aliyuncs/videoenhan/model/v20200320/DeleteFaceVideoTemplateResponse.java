@@ -15,18 +15,28 @@
 package com.aliyuncs.videoenhan.model.v20200320;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.videoenhan.transform.v20200320.ChangeVideoSizeResponseUnmarshaller;
+import com.aliyuncs.videoenhan.transform.v20200320.DeleteFaceVideoTemplateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ChangeVideoSizeResponse extends AcsResponse {
+public class DeleteFaceVideoTemplateResponse extends AcsResponse {
+
+	private String message;
 
 	private String requestId;
 
-	private Data data;
+	private String code;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,40 +46,17 @@ public class ChangeVideoSizeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Data getData() {
-		return this.data;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setData(Data data) {
-		this.data = data;
-	}
-
-	public static class Data {
-
-		private String videoUrl;
-
-		private String videoCoverUrl;
-
-		public String getVideoUrl() {
-			return this.videoUrl;
-		}
-
-		public void setVideoUrl(String videoUrl) {
-			this.videoUrl = videoUrl;
-		}
-
-		public String getVideoCoverUrl() {
-			return this.videoCoverUrl;
-		}
-
-		public void setVideoCoverUrl(String videoCoverUrl) {
-			this.videoCoverUrl = videoCoverUrl;
-		}
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override
-	public ChangeVideoSizeResponse getInstance(UnmarshallerContext context) {
-		return	ChangeVideoSizeResponseUnmarshaller.unmarshall(this, context);
+	public DeleteFaceVideoTemplateResponse getInstance(UnmarshallerContext context) {
+		return	DeleteFaceVideoTemplateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

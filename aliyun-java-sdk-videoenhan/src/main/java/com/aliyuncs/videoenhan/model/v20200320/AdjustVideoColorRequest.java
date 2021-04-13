@@ -29,13 +29,13 @@ public class AdjustVideoColorRequest extends RpcAcsRequest<AdjustVideoColorRespo
 
 	private String videoUrl;
 
-	private String videoBitrate;
+	private Long videoBitrate;
 
 	private String videoCodec;
 
 	private String videoFormat;
 	public AdjustVideoColorRequest() {
-		super("videoenhan", "2020-03-20", "AdjustVideoColor");
+		super("videoenhan", "2020-03-20", "AdjustVideoColor", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,14 +65,14 @@ public class AdjustVideoColorRequest extends RpcAcsRequest<AdjustVideoColorRespo
 		}
 	}
 
-	public String getVideoBitrate() {
+	public Long getVideoBitrate() {
 		return this.videoBitrate;
 	}
 
-	public void setVideoBitrate(String videoBitrate) {
+	public void setVideoBitrate(Long videoBitrate) {
 		this.videoBitrate = videoBitrate;
 		if(videoBitrate != null){
-			putBodyParameter("VideoBitrate", videoBitrate);
+			putBodyParameter("VideoBitrate", videoBitrate.toString());
 		}
 	}
 

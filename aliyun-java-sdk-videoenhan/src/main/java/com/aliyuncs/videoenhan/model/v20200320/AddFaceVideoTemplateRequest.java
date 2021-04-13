@@ -22,12 +22,14 @@ import com.aliyuncs.videoenhan.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultResponse> {
+public class AddFaceVideoTemplateRequest extends RpcAcsRequest<AddFaceVideoTemplateResponse> {
 	   
 
-	private String jobId;
-	public GetAsyncJobResultRequest() {
-		super("videoenhan", "2020-03-20", "GetAsyncJobResult", "videoenhan");
+	private String userId;
+
+	private String videoURL;
+	public AddFaceVideoTemplateRequest() {
+		super("videoenhan", "2020-03-20", "AddFaceVideoTemplate", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class GetAsyncJobResultRequest extends RpcAcsRequest<GetAsyncJobResultRes
 		} catch (Exception e) {}
 	}
 
-	public String getJobId() {
-		return this.jobId;
+	public String getUserId() {
+		return this.userId;
 	}
 
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-		if(jobId != null){
-			putBodyParameter("JobId", jobId);
+	public void setUserId(String userId) {
+		this.userId = userId;
+		if(userId != null){
+			putBodyParameter("UserId", userId);
+		}
+	}
+
+	public String getVideoURL() {
+		return this.videoURL;
+	}
+
+	public void setVideoURL(String videoURL) {
+		this.videoURL = videoURL;
+		if(videoURL != null){
+			putBodyParameter("VideoURL", videoURL);
 		}
 	}
 
 	@Override
-	public Class<GetAsyncJobResultResponse> getResponseClass() {
-		return GetAsyncJobResultResponse.class;
+	public Class<AddFaceVideoTemplateResponse> getResponseClass() {
+		return AddFaceVideoTemplateResponse.class;
 	}
 
 }

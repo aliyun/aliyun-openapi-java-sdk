@@ -48,7 +48,7 @@ public class GenerateVideoRequest extends RpcAcsRequest<GenerateVideoResponse> {
 
 	private String style;
 	public GenerateVideoRequest() {
-		super("videoenhan", "2020-03-20", "GenerateVideo");
+		super("videoenhan", "2020-03-20", "GenerateVideo", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
