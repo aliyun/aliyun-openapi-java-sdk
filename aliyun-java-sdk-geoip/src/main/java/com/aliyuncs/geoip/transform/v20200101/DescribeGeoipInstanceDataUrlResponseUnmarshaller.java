@@ -23,6 +23,7 @@ public class DescribeGeoipInstanceDataUrlResponseUnmarshaller {
 	public static DescribeGeoipInstanceDataUrlResponse unmarshall(DescribeGeoipInstanceDataUrlResponse describeGeoipInstanceDataUrlResponse, UnmarshallerContext _ctx) {
 		
 		describeGeoipInstanceDataUrlResponse.setRequestId(_ctx.stringValue("DescribeGeoipInstanceDataUrlResponse.RequestId"));
+		describeGeoipInstanceDataUrlResponse.setFixedDomainDownloadUrl(_ctx.stringValue("DescribeGeoipInstanceDataUrlResponse.FixedDomainDownloadUrl"));
 		describeGeoipInstanceDataUrlResponse.setDownloadUrl(_ctx.stringValue("DescribeGeoipInstanceDataUrlResponse.DownloadUrl"));
 	 
 	 	return describeGeoipInstanceDataUrlResponse;
