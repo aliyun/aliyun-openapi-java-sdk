@@ -1,3 +1,6 @@
+2021-04-14 Version: 3.6.5
+- Delete MultiMedia Post Scan API.
+
 2021-03-30 Version: 3.6.4
 - Supported MultiMedia Post scan.
 

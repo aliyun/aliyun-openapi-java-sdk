@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.green.model.v20180509;
+package com.aliyuncs.green.model.v20170823;
 
-import com.aliyuncs.RoaAcsRequest;
+import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.green.Endpoint;
 
@@ -22,13 +22,10 @@ import com.aliyuncs.green.Endpoint;
  * @author auto create
  * @version 
  */
-public class PostAsyncScanResultsRequest extends RoaAcsRequest<PostAsyncScanResultsResponse> {
+public class DescribeAuditCallbackListRequest extends RpcAcsRequest<DescribeAuditCallbackListResponse> {
 	   
-
-	private String clientInfo;
-	public PostAsyncScanResultsRequest() {
-		super("Green", "2018-05-09", "PostAsyncScanResults", "green");
-		setUriPattern("/green/post/results");
+	public DescribeAuditCallbackListRequest() {
+		super("Green", "2017-08-23", "DescribeAuditCallbackList", "green");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -36,20 +33,9 @@ public class PostAsyncScanResultsRequest extends RoaAcsRequest<PostAsyncScanResu
 		} catch (Exception e) {}
 	}
 
-	public String getClientInfo() {
-		return this.clientInfo;
-	}
-
-	public void setClientInfo(String clientInfo) {
-		this.clientInfo = clientInfo;
-		if(clientInfo != null){
-			putQueryParameter("ClientInfo", clientInfo);
-		}
-	}
-
 	@Override
-	public Class<PostAsyncScanResultsResponse> getResponseClass() {
-		return PostAsyncScanResultsResponse.class;
+	public Class<DescribeAuditCallbackListResponse> getResponseClass() {
+		return DescribeAuditCallbackListResponse.class;
 	}
 
 }
