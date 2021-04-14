@@ -119,6 +119,12 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String modificationProtectionReason;
 
+		private Integer bandwidth;
+
+		private String internetChargeTypeAlias;
+
+		private String loadBalancerSpec;
+
 		private List<Tag> tags;
 
 		public String getLoadBalancerId() {
@@ -287,6 +293,30 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setModificationProtectionReason(String modificationProtectionReason) {
 			this.modificationProtectionReason = modificationProtectionReason;
+		}
+
+		public Integer getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Integer bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
+		public String getInternetChargeTypeAlias() {
+			return this.internetChargeTypeAlias;
+		}
+
+		public void setInternetChargeTypeAlias(String internetChargeTypeAlias) {
+			this.internetChargeTypeAlias = internetChargeTypeAlias;
+		}
+
+		public String getLoadBalancerSpec() {
+			return this.loadBalancerSpec;
+		}
+
+		public void setLoadBalancerSpec(String loadBalancerSpec) {
+			this.loadBalancerSpec = loadBalancerSpec;
 		}
 
 		public List<Tag> getTags() {
