@@ -30,6 +30,7 @@ public class GetOutbounNumListResponseUnmarshaller {
 		
 		getOutbounNumListResponse.setRequestId(_ctx.stringValue("GetOutbounNumListResponse.RequestId"));
 		getOutbounNumListResponse.setMessage(_ctx.stringValue("GetOutbounNumListResponse.Message"));
+		getOutbounNumListResponse.setHttpStatusCode(_ctx.longValue("GetOutbounNumListResponse.HttpStatusCode"));
 		getOutbounNumListResponse.setCode(_ctx.stringValue("GetOutbounNumListResponse.Code"));
 		getOutbounNumListResponse.setSuccess(_ctx.booleanValue("GetOutbounNumListResponse.Success"));
 

@@ -33,8 +33,6 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	private Integer currentPage;
 
-	private Long httpStatusCode;
-
 	private Integer totalResults;
 
 	private List<DataItem> data;
@@ -69,14 +67,6 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	public void setCurrentPage(Integer currentPage) {
 		this.currentPage = currentPage;
-	}
-
-	public Long getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Long httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
 	}
 
 	public Integer getTotalResults() {

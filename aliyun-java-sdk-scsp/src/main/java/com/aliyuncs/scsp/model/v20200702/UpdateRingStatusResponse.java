@@ -28,6 +28,8 @@ public class UpdateRingStatusResponse extends AcsResponse {
 
 	private String message;
 
+	private Long httpStatusCode;
+
 	private String data;
 
 	private String code;
@@ -48,6 +50,14 @@ public class UpdateRingStatusResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getData() {

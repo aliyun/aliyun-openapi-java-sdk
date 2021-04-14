@@ -24,6 +24,7 @@ public class UpdateTicketResponseUnmarshaller {
 		
 		updateTicketResponse.setRequestId(_ctx.stringValue("UpdateTicketResponse.RequestId"));
 		updateTicketResponse.setMessage(_ctx.stringValue("UpdateTicketResponse.Message"));
+		updateTicketResponse.setHttpStatusCode(_ctx.longValue("UpdateTicketResponse.HttpStatusCode"));
 		updateTicketResponse.setCode(_ctx.stringValue("UpdateTicketResponse.Code"));
 		updateTicketResponse.setSuccess(_ctx.booleanValue("UpdateTicketResponse.Success"));
 	 

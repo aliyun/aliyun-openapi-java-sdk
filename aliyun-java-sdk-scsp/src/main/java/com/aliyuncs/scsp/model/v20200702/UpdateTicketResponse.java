@@ -28,6 +28,8 @@ public class UpdateTicketResponse extends AcsResponse {
 
 	private String message;
 
+	private Long httpStatusCode;
+
 	private String code;
 
 	private Boolean success;
@@ -46,6 +48,14 @@ public class UpdateTicketResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getCode() {

@@ -30,7 +30,6 @@ public class QuerySkillGroupsResponseUnmarshaller {
 		querySkillGroupsResponse.setOnePageSize(_ctx.integerValue("QuerySkillGroupsResponse.OnePageSize"));
 		querySkillGroupsResponse.setTotalPage(_ctx.integerValue("QuerySkillGroupsResponse.TotalPage"));
 		querySkillGroupsResponse.setCurrentPage(_ctx.integerValue("QuerySkillGroupsResponse.CurrentPage"));
-		querySkillGroupsResponse.setHttpStatusCode(_ctx.longValue("QuerySkillGroupsResponse.HttpStatusCode"));
 		querySkillGroupsResponse.setTotalResults(_ctx.integerValue("QuerySkillGroupsResponse.TotalResults"));
 
 		List<DataItem> data = new ArrayList<DataItem>();

@@ -1,3 +1,6 @@
+2021-04-14 Version: 1.2.12
+- Add httpStatusCode in reponse.
+
 2021-04-07 Version: 1.2.11
 - Add new API createTicketWithBizData.
 
