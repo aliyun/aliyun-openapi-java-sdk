@@ -1,3 +1,6 @@
+2021-04-14 Version: 2.3.2
+- Add param QueryType for QueryIncomeTrend and QueryIncomData.
+
 2021-03-25 Version: 2.3.0
 - Support Query Tenant List.
 - Remove Query AdSlot Template List.

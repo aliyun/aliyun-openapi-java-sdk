@@ -54,6 +54,10 @@ public class QueryIncomeDataResponseUnmarshaller {
 		model.setAdSlotClickRate(_ctx.stringValue("QueryIncomeDataResponse.Model.AdSlotClickRate"));
 		model.setEcpm(_ctx.longValue("QueryIncomeDataResponse.Model.Ecpm"));
 		model.setEcpmRate(_ctx.stringValue("QueryIncomeDataResponse.Model.EcpmRate"));
+		model.setThisDaysEstIncomeRate(_ctx.stringValue("QueryIncomeDataResponse.Model.ThisDaysEstIncomeRate"));
+		model.setThisMonEstIncomeRate(_ctx.stringValue("QueryIncomeDataResponse.Model.ThisMonEstIncomeRate"));
+		model.setThisYearEstIncomeRate(_ctx.stringValue("QueryIncomeDataResponse.Model.ThisYearEstIncomeRate"));
+		model.setAccEstIncomeRate(_ctx.stringValue("QueryIncomeDataResponse.Model.AccEstIncomeRate"));
 		queryIncomeDataResponse.setModel(model);
 	 
 	 	return queryIncomeDataResponse;
