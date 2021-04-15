@@ -40,6 +40,8 @@ public class CreateImportMigrationRequest extends RpcAcsRequest<CreateImportMigr
 	private String packageType;
 
 	private Long projectId;
+
+	private String resourceGroupMap;
 	public CreateImportMigrationRequest() {
 		super("dataworks-public", "2020-05-18", "CreateImportMigration");
 		setMethod(MethodType.POST);
@@ -134,6 +136,17 @@ public class CreateImportMigrationRequest extends RpcAcsRequest<CreateImportMigr
 		this.projectId = projectId;
 		if(projectId != null){
 			putBodyParameter("ProjectId", projectId.toString());
+		}
+	}
+
+	public String getResourceGroupMap() {
+		return this.resourceGroupMap;
+	}
+
+	public void setResourceGroupMap(String resourceGroupMap) {
+		this.resourceGroupMap = resourceGroupMap;
+		if(resourceGroupMap != null){
+			putBodyParameter("ResourceGroupMap", resourceGroupMap);
 		}
 	}
 

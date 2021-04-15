@@ -28,8 +28,6 @@ public class ListNodesByOutputRequest extends RpcAcsRequest<ListNodesByOutputRes
 	private String projectEnv;
 
 	private String outputs;
-
-	private Boolean outputNodeListAsMap;
 	public ListNodesByOutputRequest() {
 		super("dataworks-public", "2020-05-18", "ListNodesByOutput");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class ListNodesByOutputRequest extends RpcAcsRequest<ListNodesByOutputRes
 		this.outputs = outputs;
 		if(outputs != null){
 			putBodyParameter("Outputs", outputs);
-		}
-	}
-
-	public Boolean getOutputNodeListAsMap() {
-		return this.outputNodeListAsMap;
-	}
-
-	public void setOutputNodeListAsMap(Boolean outputNodeListAsMap) {
-		this.outputNodeListAsMap = outputNodeListAsMap;
-		if(outputNodeListAsMap != null){
-			putBodyParameter("OutputNodeListAsMap", outputNodeListAsMap.toString());
 		}
 	}
 
