@@ -33,7 +33,7 @@ public class ListSparkJobRequest extends RpcAcsRequest<ListSparkJobResponse> {
 
 	private String vcName;
 	public ListSparkJobRequest() {
-		super("openanalytics-open", "2018-06-19", "ListSparkJob", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "ListSparkJob", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

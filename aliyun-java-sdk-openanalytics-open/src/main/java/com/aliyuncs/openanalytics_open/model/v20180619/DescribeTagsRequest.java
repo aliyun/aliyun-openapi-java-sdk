@@ -27,7 +27,7 @@ public class DescribeTagsRequest extends RpcAcsRequest<DescribeTagsResponse> {
 
 	private String resourceType;
 	public DescribeTagsRequest() {
-		super("openanalytics-open", "2018-06-19", "DescribeTags", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "DescribeTags", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

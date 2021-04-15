@@ -39,7 +39,7 @@ public class AddAccountRequest extends RpcAcsRequest<AddAccountResponse> {
 
 	private Boolean useRandomPassword;
 	public AddAccountRequest() {
-		super("openanalytics-open", "2018-06-19", "AddAccount", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "AddAccount", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

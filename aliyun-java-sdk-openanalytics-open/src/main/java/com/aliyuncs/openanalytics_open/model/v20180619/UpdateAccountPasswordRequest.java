@@ -35,7 +35,7 @@ public class UpdateAccountPasswordRequest extends RpcAcsRequest<UpdateAccountPas
 
 	private Boolean useRandomPassword;
 	public UpdateAccountPasswordRequest() {
-		super("openanalytics-open", "2018-06-19", "UpdateAccountPassword", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "UpdateAccountPassword", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

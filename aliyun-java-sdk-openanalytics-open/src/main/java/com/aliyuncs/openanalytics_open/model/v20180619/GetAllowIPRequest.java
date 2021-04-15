@@ -29,7 +29,7 @@ public class GetAllowIPRequest extends RpcAcsRequest<GetAllowIPResponse> {
 
 	private String product;
 	public GetAllowIPRequest() {
-		super("openanalytics-open", "2018-06-19", "GetAllowIP", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "GetAllowIP", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

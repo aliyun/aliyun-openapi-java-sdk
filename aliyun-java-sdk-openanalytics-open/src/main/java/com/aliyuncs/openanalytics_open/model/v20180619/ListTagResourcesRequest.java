@@ -36,7 +36,7 @@ public class ListTagResourcesRequest extends RpcAcsRequest<ListTagResourcesRespo
 
 	private String category;
 	public ListTagResourcesRequest() {
-		super("openanalytics-open", "2018-06-19", "ListTagResources", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "ListTagResources", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

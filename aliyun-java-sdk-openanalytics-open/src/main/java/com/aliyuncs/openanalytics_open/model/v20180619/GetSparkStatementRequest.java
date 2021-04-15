@@ -22,12 +22,14 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelQueryByExecuteIdRequest extends RpcAcsRequest<CancelQueryByExecuteIdResponse> {
+public class GetSparkStatementRequest extends RpcAcsRequest<GetSparkStatementResponse> {
 	   
 
-	private String executeId;
-	public CancelQueryByExecuteIdRequest() {
-		super("openanalytics-open", "2018-06-19", "CancelQueryByExecuteId", "openanalytics-cap");
+	private String jobId;
+
+	private Integer statementId;
+	public GetSparkStatementRequest() {
+		super("openanalytics-open", "2018-06-19", "GetSparkStatement", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class CancelQueryByExecuteIdRequest extends RpcAcsRequest<CancelQueryByEx
 		} catch (Exception e) {}
 	}
 
-	public String getExecuteId() {
-		return this.executeId;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setExecuteId(String executeId) {
-		this.executeId = executeId;
-		if(executeId != null){
-			putBodyParameter("ExecuteId", executeId);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
+		}
+	}
+
+	public Integer getStatementId() {
+		return this.statementId;
+	}
+
+	public void setStatementId(Integer statementId) {
+		this.statementId = statementId;
+		if(statementId != null){
+			putBodyParameter("StatementId", statementId.toString());
 		}
 	}
 
 	@Override
-	public Class<CancelQueryByExecuteIdResponse> getResponseClass() {
-		return CancelQueryByExecuteIdResponse.class;
+	public Class<GetSparkStatementResponse> getResponseClass() {
+		return GetSparkStatementResponse.class;
 	}
 
 }

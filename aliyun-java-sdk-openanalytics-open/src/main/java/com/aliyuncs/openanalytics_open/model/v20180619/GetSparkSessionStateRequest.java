@@ -22,12 +22,12 @@ import com.aliyuncs.openanalytics_open.Endpoint;
  * @author auto create
  * @version 
  */
-public class CancelQueryByExecuteIdRequest extends RpcAcsRequest<CancelQueryByExecuteIdResponse> {
+public class GetSparkSessionStateRequest extends RpcAcsRequest<GetSparkSessionStateResponse> {
 	   
 
-	private String executeId;
-	public CancelQueryByExecuteIdRequest() {
-		super("openanalytics-open", "2018-06-19", "CancelQueryByExecuteId", "openanalytics-cap");
+	private String jobId;
+	public GetSparkSessionStateRequest() {
+		super("openanalytics-open", "2018-06-19", "GetSparkSessionState", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +35,20 @@ public class CancelQueryByExecuteIdRequest extends RpcAcsRequest<CancelQueryByEx
 		} catch (Exception e) {}
 	}
 
-	public String getExecuteId() {
-		return this.executeId;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setExecuteId(String executeId) {
-		this.executeId = executeId;
-		if(executeId != null){
-			putBodyParameter("ExecuteId", executeId);
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
 		}
 	}
 
 	@Override
-	public Class<CancelQueryByExecuteIdResponse> getResponseClass() {
-		return CancelQueryByExecuteIdResponse.class;
+	public Class<GetSparkSessionStateResponse> getResponseClass() {
+		return GetSparkSessionStateResponse.class;
 	}
 
 }
