@@ -67,6 +67,8 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		private String region;
 
+		private String regionId;
+
 		private String regionName;
 
 		private String tag;
@@ -179,6 +181,14 @@ public class DescribeAssetDetailByUuidResponse extends AcsResponse {
 
 		public void setRegion(String region) {
 			this.region = region;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getRegionName() {

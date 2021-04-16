@@ -71,6 +71,8 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 
 		private Integer totalVulCount;
 
+		private Integer exploitHealthCount;
+
 		private String exposureComponent;
 
 		private String exposureType;
@@ -145,6 +147,14 @@ public class DescribeExposedInstanceListResponse extends AcsResponse {
 
 		public void setTotalVulCount(Integer totalVulCount) {
 			this.totalVulCount = totalVulCount;
+		}
+
+		public Integer getExploitHealthCount() {
+			return this.exploitHealthCount;
+		}
+
+		public void setExploitHealthCount(Integer exploitHealthCount) {
+			this.exploitHealthCount = exploitHealthCount;
 		}
 
 		public String getExposureComponent() {

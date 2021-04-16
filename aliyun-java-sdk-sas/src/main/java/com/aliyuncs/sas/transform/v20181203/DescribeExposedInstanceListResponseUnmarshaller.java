@@ -46,6 +46,7 @@ public class DescribeExposedInstanceListResponseUnmarshaller {
 			exposedInstance.setLaterVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].LaterVulCount"));
 			exposedInstance.setNntfVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].NntfVulCount"));
 			exposedInstance.setTotalVulCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].TotalVulCount"));
+			exposedInstance.setExploitHealthCount(_ctx.integerValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExploitHealthCount"));
 			exposedInstance.setExposureComponent(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureComponent"));
 			exposedInstance.setExposureType(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureType"));
 			exposedInstance.setExposureTypeId(_ctx.stringValue("DescribeExposedInstanceListResponse.ExposedInstances["+ i +"].ExposureTypeId"));

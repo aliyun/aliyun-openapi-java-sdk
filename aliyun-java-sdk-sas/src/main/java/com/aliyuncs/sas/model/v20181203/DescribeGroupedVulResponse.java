@@ -95,6 +95,8 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		private String tags;
 
+		private Long totalFixCount;
+
 		public String getName() {
 			return this.name;
 		}
@@ -165,6 +167,14 @@ public class DescribeGroupedVulResponse extends AcsResponse {
 
 		public void setTags(String tags) {
 			this.tags = tags;
+		}
+
+		public Long getTotalFixCount() {
+			return this.totalFixCount;
+		}
+
+		public void setTotalFixCount(Long totalFixCount) {
+			this.totalFixCount = totalFixCount;
 		}
 	}
 

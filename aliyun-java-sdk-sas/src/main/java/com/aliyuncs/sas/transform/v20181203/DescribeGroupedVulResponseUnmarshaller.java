@@ -43,6 +43,7 @@ public class DescribeGroupedVulResponseUnmarshaller {
 			groupedVulItem.setNntfCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].NntfCount"));
 			groupedVulItem.setHandledCount(_ctx.integerValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].HandledCount"));
 			groupedVulItem.setTags(_ctx.stringValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].Tags"));
+			groupedVulItem.setTotalFixCount(_ctx.longValue("DescribeGroupedVulResponse.GroupedVulItems["+ i +"].TotalFixCount"));
 
 			groupedVulItems.add(groupedVulItem);
 		}
