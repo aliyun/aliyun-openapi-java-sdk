@@ -1,3 +1,6 @@
+2021-04-16 Version: 1.9.3
+- Support devops organization deletion.
+
 2021-02-02 Version: 1.9.0
 - Add.
 
