@@ -50,6 +50,7 @@ public class CreateAppGroupResponseUnmarshaller {
 		result.setUpdated(_ctx.integerValue("CreateAppGroupResponse.result.updated"));
 		result.setStatus(_ctx.stringValue("CreateAppGroupResponse.result.status"));
 		result.setLockMode(_ctx.stringValue("CreateAppGroupResponse.result.lockMode"));
+		result.setDomain(_ctx.stringValue("CreateAppGroupResponse.result.domain"));
 
 		Quota quota = new Quota();
 		quota.setDocSize(_ctx.integerValue("CreateAppGroupResponse.result.quota.docSize"));

@@ -72,6 +72,8 @@ public class DescribeAppResponse extends AcsResponse {
 
 		private Quota quota;
 
+		private Domain domain;
+
 		public String getId() {
 			return this.id;
 		}
@@ -168,6 +170,14 @@ public class DescribeAppResponse extends AcsResponse {
 			this.quota = quota;
 		}
 
+		public Domain getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(Domain domain) {
+			this.domain = domain;
+		}
+
 		public static class Quota {
 
 			private Integer docSize;
@@ -208,6 +218,72 @@ public class DescribeAppResponse extends AcsResponse {
 
 			public void setSpec(String spec) {
 				this.spec = spec;
+			}
+		}
+
+		public static class Domain {
+
+			private String name;
+
+			private String category;
+
+			private Functions functions;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
+			}
+
+			public Functions getFunctions() {
+				return this.functions;
+			}
+
+			public void setFunctions(Functions functions) {
+				this.functions = functions;
+			}
+
+			public static class Functions {
+
+				private List<String> qp;
+
+				private List<String> algo;
+
+				private List<String> service;
+
+				public List<String> getQp() {
+					return this.qp;
+				}
+
+				public void setQp(List<String> qp) {
+					this.qp = qp;
+				}
+
+				public List<String> getAlgo() {
+					return this.algo;
+				}
+
+				public void setAlgo(List<String> algo) {
+					this.algo = algo;
+				}
+
+				public List<String> getService() {
+					return this.service;
+				}
+
+				public void setService(List<String> service) {
+					this.service = service;
+				}
 			}
 		}
 	}

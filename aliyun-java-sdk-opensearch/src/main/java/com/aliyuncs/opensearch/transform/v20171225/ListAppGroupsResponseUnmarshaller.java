@@ -56,6 +56,7 @@ public class ListAppGroupsResponseUnmarshaller {
 			resultItem.setUpdated(_ctx.integerValue("ListAppGroupsResponse.result["+ i +"].updated"));
 			resultItem.setStatus(_ctx.stringValue("ListAppGroupsResponse.result["+ i +"].status"));
 			resultItem.setLockMode(_ctx.stringValue("ListAppGroupsResponse.result["+ i +"].lockMode"));
+			resultItem.setDomain(_ctx.stringValue("ListAppGroupsResponse.result["+ i +"].domain"));
 
 			Quota quota = new Quota();
 			quota.setDocSize(_ctx.integerValue("ListAppGroupsResponse.result["+ i +"].quota.docSize"));
