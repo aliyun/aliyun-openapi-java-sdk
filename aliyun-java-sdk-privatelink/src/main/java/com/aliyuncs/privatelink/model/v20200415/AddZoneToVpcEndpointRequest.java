@@ -32,6 +32,8 @@ public class AddZoneToVpcEndpointRequest extends RpcAcsRequest<AddZoneToVpcEndpo
 
 	private Boolean dryRun;
 
+	private String ip;
+
 	private String vSwitchId;
 
 	private String zoneId;
@@ -75,6 +77,17 @@ public class AddZoneToVpcEndpointRequest extends RpcAcsRequest<AddZoneToVpcEndpo
 		this.dryRun = dryRun;
 		if(dryRun != null){
 			putQueryParameter("DryRun", dryRun.toString());
+		}
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+		if(ip != null){
+			putQueryParameter("ip", ip);
 		}
 	}
 

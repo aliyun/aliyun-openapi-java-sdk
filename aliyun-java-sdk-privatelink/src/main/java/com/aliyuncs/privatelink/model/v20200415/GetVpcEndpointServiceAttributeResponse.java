@@ -25,35 +25,45 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
+	private String payer;
+
 	private String requestId;
-
-	private String serviceId;
-
-	private String serviceName;
-
-	private String serviceDomain;
 
 	private String serviceDescription;
 
-	private String serviceBusinessStatus;
-
-	private String serviceStatus;
-
-	private Boolean autoAcceptEnabled;
+	private Integer maxBandwidth;
 
 	private String createTime;
 
-	private Integer maxBandwidth;
+	private String serviceDomain;
 
 	private Integer minBandwidth;
+
+	private String serviceId;
+
+	private Boolean autoAcceptEnabled;
+
+	private String serviceBusinessStatus;
+
+	private String serviceName;
+
+	private String serviceStatus;
 
 	private Integer connectBandwidth;
 
 	private String regionId;
 
-	private String payer;
+	private Boolean zoneAffinityEnabled;
 
 	private List<String> zones;
+
+	public String getPayer() {
+		return this.payer;
+	}
+
+	public void setPayer(String payer) {
+		this.payer = payer;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -61,30 +71,6 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-	}
-
-	public String getServiceDomain() {
-		return this.serviceDomain;
-	}
-
-	public void setServiceDomain(String serviceDomain) {
-		this.serviceDomain = serviceDomain;
 	}
 
 	public String getServiceDescription() {
@@ -95,28 +81,12 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.serviceDescription = serviceDescription;
 	}
 
-	public String getServiceBusinessStatus() {
-		return this.serviceBusinessStatus;
+	public Integer getMaxBandwidth() {
+		return this.maxBandwidth;
 	}
 
-	public void setServiceBusinessStatus(String serviceBusinessStatus) {
-		this.serviceBusinessStatus = serviceBusinessStatus;
-	}
-
-	public String getServiceStatus() {
-		return this.serviceStatus;
-	}
-
-	public void setServiceStatus(String serviceStatus) {
-		this.serviceStatus = serviceStatus;
-	}
-
-	public Boolean getAutoAcceptEnabled() {
-		return this.autoAcceptEnabled;
-	}
-
-	public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
-		this.autoAcceptEnabled = autoAcceptEnabled;
+	public void setMaxBandwidth(Integer maxBandwidth) {
+		this.maxBandwidth = maxBandwidth;
 	}
 
 	public String getCreateTime() {
@@ -127,12 +97,12 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.createTime = createTime;
 	}
 
-	public Integer getMaxBandwidth() {
-		return this.maxBandwidth;
+	public String getServiceDomain() {
+		return this.serviceDomain;
 	}
 
-	public void setMaxBandwidth(Integer maxBandwidth) {
-		this.maxBandwidth = maxBandwidth;
+	public void setServiceDomain(String serviceDomain) {
+		this.serviceDomain = serviceDomain;
 	}
 
 	public Integer getMinBandwidth() {
@@ -141,6 +111,46 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 
 	public void setMinBandwidth(Integer minBandwidth) {
 		this.minBandwidth = minBandwidth;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
+	}
+
+	public Boolean getAutoAcceptEnabled() {
+		return this.autoAcceptEnabled;
+	}
+
+	public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
+		this.autoAcceptEnabled = autoAcceptEnabled;
+	}
+
+	public String getServiceBusinessStatus() {
+		return this.serviceBusinessStatus;
+	}
+
+	public void setServiceBusinessStatus(String serviceBusinessStatus) {
+		this.serviceBusinessStatus = serviceBusinessStatus;
+	}
+
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
+
+	public String getServiceStatus() {
+		return this.serviceStatus;
+	}
+
+	public void setServiceStatus(String serviceStatus) {
+		this.serviceStatus = serviceStatus;
 	}
 
 	public Integer getConnectBandwidth() {
@@ -159,12 +169,12 @@ public class GetVpcEndpointServiceAttributeResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public String getPayer() {
-		return this.payer;
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
 	}
 
-	public void setPayer(String payer) {
-		this.payer = payer;
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
 	}
 
 	public List<String> getZones() {

@@ -24,54 +24,38 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVpcEndpointResponse extends AcsResponse {
 
-	private String endpointId;
-
-	private String createTime;
-
-	private String requestId;
+	private String endpointStatus;
 
 	private String endpointName;
 
 	private String vpcId;
 
-	private String endpointDescription;
-
-	private String serviceId;
-
-	private String serviceName;
-
-	private String endpointBusinessStatus;
-
-	private String endpointStatus;
-
-	private String connectionStatus;
+	private String requestId;
 
 	private String endpointDomain;
 
+	private String serviceName;
+
+	private String endpointId;
+
 	private Long bandwidth;
 
-	public String getEndpointId() {
-		return this.endpointId;
+	private String createTime;
+
+	private String endpointBusinessStatus;
+
+	private String endpointDescription;
+
+	private String connectionStatus;
+
+	private String serviceId;
+
+	public String getEndpointStatus() {
+		return this.endpointStatus;
 	}
 
-	public void setEndpointId(String endpointId) {
-		this.endpointId = endpointId;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndpointStatus(String endpointStatus) {
+		this.endpointStatus = endpointStatus;
 	}
 
 	public String getEndpointName() {
@@ -90,52 +74,12 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
-	public String getEndpointDescription() {
-		return this.endpointDescription;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setEndpointDescription(String endpointDescription) {
-		this.endpointDescription = endpointDescription;
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-	}
-
-	public String getEndpointBusinessStatus() {
-		return this.endpointBusinessStatus;
-	}
-
-	public void setEndpointBusinessStatus(String endpointBusinessStatus) {
-		this.endpointBusinessStatus = endpointBusinessStatus;
-	}
-
-	public String getEndpointStatus() {
-		return this.endpointStatus;
-	}
-
-	public void setEndpointStatus(String endpointStatus) {
-		this.endpointStatus = endpointStatus;
-	}
-
-	public String getConnectionStatus() {
-		return this.connectionStatus;
-	}
-
-	public void setConnectionStatus(String connectionStatus) {
-		this.connectionStatus = connectionStatus;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getEndpointDomain() {
@@ -146,12 +90,68 @@ public class CreateVpcEndpointResponse extends AcsResponse {
 		this.endpointDomain = endpointDomain;
 	}
 
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
+
+	public String getEndpointId() {
+		return this.endpointId;
+	}
+
+	public void setEndpointId(String endpointId) {
+		this.endpointId = endpointId;
+	}
+
 	public Long getBandwidth() {
 		return this.bandwidth;
 	}
 
 	public void setBandwidth(Long bandwidth) {
 		this.bandwidth = bandwidth;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getEndpointBusinessStatus() {
+		return this.endpointBusinessStatus;
+	}
+
+	public void setEndpointBusinessStatus(String endpointBusinessStatus) {
+		this.endpointBusinessStatus = endpointBusinessStatus;
+	}
+
+	public String getEndpointDescription() {
+		return this.endpointDescription;
+	}
+
+	public void setEndpointDescription(String endpointDescription) {
+		this.endpointDescription = endpointDescription;
+	}
+
+	public String getConnectionStatus() {
+		return this.connectionStatus;
+	}
+
+	public void setConnectionStatus(String connectionStatus) {
+		this.connectionStatus = connectionStatus;
+	}
+
+	public String getServiceId() {
+		return this.serviceId;
+	}
+
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
 	}
 
 	@Override

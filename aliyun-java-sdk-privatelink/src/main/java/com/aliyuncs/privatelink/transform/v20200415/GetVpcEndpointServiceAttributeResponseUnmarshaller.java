@@ -26,19 +26,20 @@ public class GetVpcEndpointServiceAttributeResponseUnmarshaller {
 	public static GetVpcEndpointServiceAttributeResponse unmarshall(GetVpcEndpointServiceAttributeResponse getVpcEndpointServiceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		getVpcEndpointServiceAttributeResponse.setRequestId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.RequestId"));
-		getVpcEndpointServiceAttributeResponse.setServiceId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceId"));
-		getVpcEndpointServiceAttributeResponse.setServiceName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceName"));
-		getVpcEndpointServiceAttributeResponse.setServiceDomain(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceDomain"));
+		getVpcEndpointServiceAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.Payer"));
 		getVpcEndpointServiceAttributeResponse.setServiceDescription(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceDescription"));
-		getVpcEndpointServiceAttributeResponse.setServiceBusinessStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceBusinessStatus"));
-		getVpcEndpointServiceAttributeResponse.setServiceStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceStatus"));
-		getVpcEndpointServiceAttributeResponse.setAutoAcceptEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.AutoAcceptEnabled"));
-		getVpcEndpointServiceAttributeResponse.setCreateTime(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.CreateTime"));
 		getVpcEndpointServiceAttributeResponse.setMaxBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.MaxBandwidth"));
+		getVpcEndpointServiceAttributeResponse.setCreateTime(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.CreateTime"));
+		getVpcEndpointServiceAttributeResponse.setServiceDomain(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceDomain"));
 		getVpcEndpointServiceAttributeResponse.setMinBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.MinBandwidth"));
+		getVpcEndpointServiceAttributeResponse.setServiceId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceId"));
+		getVpcEndpointServiceAttributeResponse.setAutoAcceptEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.AutoAcceptEnabled"));
+		getVpcEndpointServiceAttributeResponse.setServiceBusinessStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceBusinessStatus"));
+		getVpcEndpointServiceAttributeResponse.setServiceName(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceName"));
+		getVpcEndpointServiceAttributeResponse.setServiceStatus(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.ServiceStatus"));
 		getVpcEndpointServiceAttributeResponse.setConnectBandwidth(_ctx.integerValue("GetVpcEndpointServiceAttributeResponse.ConnectBandwidth"));
 		getVpcEndpointServiceAttributeResponse.setRegionId(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.RegionId"));
-		getVpcEndpointServiceAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointServiceAttributeResponse.Payer"));
+		getVpcEndpointServiceAttributeResponse.setZoneAffinityEnabled(_ctx.booleanValue("GetVpcEndpointServiceAttributeResponse.ZoneAffinityEnabled"));
 
 		List<String> zones = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetVpcEndpointServiceAttributeResponse.Zones.Length"); i++) {

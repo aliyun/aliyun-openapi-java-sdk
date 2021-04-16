@@ -24,38 +24,32 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVpcEndpointServiceResponse extends AcsResponse {
 
-	private Boolean autoAcceptEnabled;
-
-	private String createTime;
+	private String serviceBusinessStatus;
 
 	private String requestId;
 
-	private String serviceBusinessStatus;
+	private String serviceName;
 
 	private String serviceDescription;
+
+	private String serviceStatus;
+
+	private String createTime;
+
+	private Boolean zoneAffinityEnabled;
 
 	private String serviceDomain;
 
 	private String serviceId;
 
-	private String serviceName;
+	private Boolean autoAcceptEnabled;
 
-	private String serviceStatus;
-
-	public Boolean getAutoAcceptEnabled() {
-		return this.autoAcceptEnabled;
+	public String getServiceBusinessStatus() {
+		return this.serviceBusinessStatus;
 	}
 
-	public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
-		this.autoAcceptEnabled = autoAcceptEnabled;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setServiceBusinessStatus(String serviceBusinessStatus) {
+		this.serviceBusinessStatus = serviceBusinessStatus;
 	}
 
 	public String getRequestId() {
@@ -66,12 +60,12 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getServiceBusinessStatus() {
-		return this.serviceBusinessStatus;
+	public String getServiceName() {
+		return this.serviceName;
 	}
 
-	public void setServiceBusinessStatus(String serviceBusinessStatus) {
-		this.serviceBusinessStatus = serviceBusinessStatus;
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
 	}
 
 	public String getServiceDescription() {
@@ -80,6 +74,30 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 
 	public void setServiceDescription(String serviceDescription) {
 		this.serviceDescription = serviceDescription;
+	}
+
+	public String getServiceStatus() {
+		return this.serviceStatus;
+	}
+
+	public void setServiceStatus(String serviceStatus) {
+		this.serviceStatus = serviceStatus;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
+	}
+
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
 	}
 
 	public String getServiceDomain() {
@@ -98,20 +116,12 @@ public class CreateVpcEndpointServiceResponse extends AcsResponse {
 		this.serviceId = serviceId;
 	}
 
-	public String getServiceName() {
-		return this.serviceName;
+	public Boolean getAutoAcceptEnabled() {
+		return this.autoAcceptEnabled;
 	}
 
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-	}
-
-	public String getServiceStatus() {
-		return this.serviceStatus;
-	}
-
-	public void setServiceStatus(String serviceStatus) {
-		this.serviceStatus = serviceStatus;
+	public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
+		this.autoAcceptEnabled = autoAcceptEnabled;
 	}
 
 	@Override

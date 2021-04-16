@@ -24,9 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
-	private Integer bandwidth;
+	private String payer;
 
-	private String connectionStatus;
+	private String requestId;
+
+	private String endpointDomain;
+
+	private Boolean resourceOwner;
 
 	private String createTime;
 
@@ -34,42 +38,56 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 
 	private String endpointDescription;
 
-	private String endpointDomain;
-
-	private String endpointId;
-
-	private String endpointName;
+	private String serviceId;
 
 	private String endpointStatus;
 
-	private String requestId;
-
-	private String serviceId;
-
-	private String serviceName;
+	private String endpointName;
 
 	private String vpcId;
 
+	private String serviceName;
+
+	private String endpointId;
+
+	private Integer bandwidth;
+
 	private String regionId;
 
-	private String payer;
+	private String connectionStatus;
 
-	private Boolean resourceOwner;
+	private Boolean zoneAffinityEnabled;
 
-	public Integer getBandwidth() {
-		return this.bandwidth;
+	public String getPayer() {
+		return this.payer;
 	}
 
-	public void setBandwidth(Integer bandwidth) {
-		this.bandwidth = bandwidth;
+	public void setPayer(String payer) {
+		this.payer = payer;
 	}
 
-	public String getConnectionStatus() {
-		return this.connectionStatus;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setConnectionStatus(String connectionStatus) {
-		this.connectionStatus = connectionStatus;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getEndpointDomain() {
+		return this.endpointDomain;
+	}
+
+	public void setEndpointDomain(String endpointDomain) {
+		this.endpointDomain = endpointDomain;
+	}
+
+	public Boolean getResourceOwner() {
+		return this.resourceOwner;
+	}
+
+	public void setResourceOwner(Boolean resourceOwner) {
+		this.resourceOwner = resourceOwner;
 	}
 
 	public String getCreateTime() {
@@ -96,28 +114,12 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.endpointDescription = endpointDescription;
 	}
 
-	public String getEndpointDomain() {
-		return this.endpointDomain;
+	public String getServiceId() {
+		return this.serviceId;
 	}
 
-	public void setEndpointDomain(String endpointDomain) {
-		this.endpointDomain = endpointDomain;
-	}
-
-	public String getEndpointId() {
-		return this.endpointId;
-	}
-
-	public void setEndpointId(String endpointId) {
-		this.endpointId = endpointId;
-	}
-
-	public String getEndpointName() {
-		return this.endpointName;
-	}
-
-	public void setEndpointName(String endpointName) {
-		this.endpointName = endpointName;
+	public void setServiceId(String serviceId) {
+		this.serviceId = serviceId;
 	}
 
 	public String getEndpointStatus() {
@@ -128,28 +130,12 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.endpointStatus = endpointStatus;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndpointName() {
+		return this.endpointName;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getServiceId() {
-		return this.serviceId;
-	}
-
-	public void setServiceId(String serviceId) {
-		this.serviceId = serviceId;
-	}
-
-	public String getServiceName() {
-		return this.serviceName;
-	}
-
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
+	public void setEndpointName(String endpointName) {
+		this.endpointName = endpointName;
 	}
 
 	public String getVpcId() {
@@ -160,6 +146,30 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.vpcId = vpcId;
 	}
 
+	public String getServiceName() {
+		return this.serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
+
+	public String getEndpointId() {
+		return this.endpointId;
+	}
+
+	public void setEndpointId(String endpointId) {
+		this.endpointId = endpointId;
+	}
+
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+	}
+
 	public String getRegionId() {
 		return this.regionId;
 	}
@@ -168,20 +178,20 @@ public class GetVpcEndpointAttributeResponse extends AcsResponse {
 		this.regionId = regionId;
 	}
 
-	public String getPayer() {
-		return this.payer;
+	public String getConnectionStatus() {
+		return this.connectionStatus;
 	}
 
-	public void setPayer(String payer) {
-		this.payer = payer;
+	public void setConnectionStatus(String connectionStatus) {
+		this.connectionStatus = connectionStatus;
 	}
 
-	public Boolean getResourceOwner() {
-		return this.resourceOwner;
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
 	}
 
-	public void setResourceOwner(Boolean resourceOwner) {
-		this.resourceOwner = resourceOwner;
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
 	}
 
 	@Override

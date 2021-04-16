@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointServicesResponse extends AcsResponse {
 
-	private String maxResults;
+	private String requestId;
 
 	private String nextToken;
 
-	private String requestId;
+	private String maxResults;
 
 	private List<Service> services;
 
-	public String getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getNextToken() {
@@ -49,12 +49,12 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Service> getServices() {
@@ -67,86 +67,40 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 
 	public static class Service {
 
-		private Boolean autoAcceptEnabled;
-
-		private Integer connectBandwidth;
-
-		private String createTime;
-
-		private Integer maxBandwidth;
-
-		private Integer minBandwidth;
-
-		private String regionId;
-
-		private String serviceBusinessStatus;
+		private String payer;
 
 		private String serviceDescription;
 
+		private Integer maxBandwidth;
+
+		private String createTime;
+
 		private String serviceDomain;
 
+		private Integer minBandwidth;
+
 		private String serviceId;
+
+		private Boolean autoAcceptEnabled;
+
+		private String serviceBusinessStatus;
 
 		private String serviceName;
 
 		private String serviceStatus;
 
-		private String payer;
+		private Integer connectBandwidth;
 
-		public Boolean getAutoAcceptEnabled() {
-			return this.autoAcceptEnabled;
+		private String regionId;
+
+		private Boolean zoneAffinityEnabled;
+
+		public String getPayer() {
+			return this.payer;
 		}
 
-		public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
-			this.autoAcceptEnabled = autoAcceptEnabled;
-		}
-
-		public Integer getConnectBandwidth() {
-			return this.connectBandwidth;
-		}
-
-		public void setConnectBandwidth(Integer connectBandwidth) {
-			this.connectBandwidth = connectBandwidth;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getMaxBandwidth() {
-			return this.maxBandwidth;
-		}
-
-		public void setMaxBandwidth(Integer maxBandwidth) {
-			this.maxBandwidth = maxBandwidth;
-		}
-
-		public Integer getMinBandwidth() {
-			return this.minBandwidth;
-		}
-
-		public void setMinBandwidth(Integer minBandwidth) {
-			this.minBandwidth = minBandwidth;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getServiceBusinessStatus() {
-			return this.serviceBusinessStatus;
-		}
-
-		public void setServiceBusinessStatus(String serviceBusinessStatus) {
-			this.serviceBusinessStatus = serviceBusinessStatus;
+		public void setPayer(String payer) {
+			this.payer = payer;
 		}
 
 		public String getServiceDescription() {
@@ -157,6 +111,22 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 			this.serviceDescription = serviceDescription;
 		}
 
+		public Integer getMaxBandwidth() {
+			return this.maxBandwidth;
+		}
+
+		public void setMaxBandwidth(Integer maxBandwidth) {
+			this.maxBandwidth = maxBandwidth;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getServiceDomain() {
 			return this.serviceDomain;
 		}
@@ -165,12 +135,36 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 			this.serviceDomain = serviceDomain;
 		}
 
+		public Integer getMinBandwidth() {
+			return this.minBandwidth;
+		}
+
+		public void setMinBandwidth(Integer minBandwidth) {
+			this.minBandwidth = minBandwidth;
+		}
+
 		public String getServiceId() {
 			return this.serviceId;
 		}
 
 		public void setServiceId(String serviceId) {
 			this.serviceId = serviceId;
+		}
+
+		public Boolean getAutoAcceptEnabled() {
+			return this.autoAcceptEnabled;
+		}
+
+		public void setAutoAcceptEnabled(Boolean autoAcceptEnabled) {
+			this.autoAcceptEnabled = autoAcceptEnabled;
+		}
+
+		public String getServiceBusinessStatus() {
+			return this.serviceBusinessStatus;
+		}
+
+		public void setServiceBusinessStatus(String serviceBusinessStatus) {
+			this.serviceBusinessStatus = serviceBusinessStatus;
 		}
 
 		public String getServiceName() {
@@ -189,12 +183,28 @@ public class ListVpcEndpointServicesResponse extends AcsResponse {
 			this.serviceStatus = serviceStatus;
 		}
 
-		public String getPayer() {
-			return this.payer;
+		public Integer getConnectBandwidth() {
+			return this.connectBandwidth;
 		}
 
-		public void setPayer(String payer) {
-			this.payer = payer;
+		public void setConnectBandwidth(Integer connectBandwidth) {
+			this.connectBandwidth = connectBandwidth;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
+		}
+
+		public Boolean getZoneAffinityEnabled() {
+			return this.zoneAffinityEnabled;
+		}
+
+		public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+			this.zoneAffinityEnabled = zoneAffinityEnabled;
 		}
 	}
 

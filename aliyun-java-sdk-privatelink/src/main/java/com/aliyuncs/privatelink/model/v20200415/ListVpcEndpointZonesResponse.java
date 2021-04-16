@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointZonesResponse extends AcsResponse {
 
-	private String maxResults;
+	private String requestId;
 
 	private String nextToken;
 
-	private String requestId;
+	private String maxResults;
 
 	private List<Zone> zones;
 
-	public String getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getNextToken() {
@@ -49,12 +49,12 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Zone> getZones() {
@@ -67,35 +67,21 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 
 	public static class Zone {
 
-		private String zoneDomain;
-
-		private String zoneStatus;
-
 		private String eniId;
-
-		private String eniIp;
-
-		private String vSwitchId;
 
 		private String zoneId;
 
+		private String serviceStatus;
+
+		private String vSwitchId;
+
+		private String eniIp;
+
+		private String zoneStatus;
+
 		private String regionId;
 
-		public String getZoneDomain() {
-			return this.zoneDomain;
-		}
-
-		public void setZoneDomain(String zoneDomain) {
-			this.zoneDomain = zoneDomain;
-		}
-
-		public String getZoneStatus() {
-			return this.zoneStatus;
-		}
-
-		public void setZoneStatus(String zoneStatus) {
-			this.zoneStatus = zoneStatus;
-		}
+		private String zoneDomain;
 
 		public String getEniId() {
 			return this.eniId;
@@ -103,22 +89,6 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 
 		public void setEniId(String eniId) {
 			this.eniId = eniId;
-		}
-
-		public String getEniIp() {
-			return this.eniIp;
-		}
-
-		public void setEniIp(String eniIp) {
-			this.eniIp = eniIp;
-		}
-
-		public String getVSwitchId() {
-			return this.vSwitchId;
-		}
-
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
 		}
 
 		public String getZoneId() {
@@ -129,12 +99,52 @@ public class ListVpcEndpointZonesResponse extends AcsResponse {
 			this.zoneId = zoneId;
 		}
 
+		public String getServiceStatus() {
+			return this.serviceStatus;
+		}
+
+		public void setServiceStatus(String serviceStatus) {
+			this.serviceStatus = serviceStatus;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
+		}
+
+		public String getEniIp() {
+			return this.eniIp;
+		}
+
+		public void setEniIp(String eniIp) {
+			this.eniIp = eniIp;
+		}
+
+		public String getZoneStatus() {
+			return this.zoneStatus;
+		}
+
+		public void setZoneStatus(String zoneStatus) {
+			this.zoneStatus = zoneStatus;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getZoneDomain() {
+			return this.zoneDomain;
+		}
+
+		public void setZoneDomain(String zoneDomain) {
+			this.zoneDomain = zoneDomain;
 		}
 	}
 
