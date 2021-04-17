@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.imageprocess.model.v20200320.RunMedQAResponse;
 import com.aliyuncs.imageprocess.model.v20200320.RunMedQAResponse.Data;
+import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,15 +28,21 @@ public class RunMedQAResponseUnmarshaller {
 	public static RunMedQAResponse unmarshall(RunMedQAResponse runMedQAResponse, UnmarshallerContext _ctx) {
 		
 		runMedQAResponse.setRequestId(_ctx.stringValue("RunMedQAResponse.RequestId"));
+		runMedQAResponse.setMessage(_ctx.stringValue("RunMedQAResponse.Message"));
+		runMedQAResponse.setCode(_ctx.stringValue("RunMedQAResponse.Code"));
 
 		Data data = new Data();
-		data.setAnswer(_ctx.stringValue("RunMedQAResponse.Data.Answer"));
+		data.setReports(_ctx.mapValue("RunMedQAResponse.Data.Reports"));
+		data.setQuestionType(_ctx.stringValue("RunMedQAResponse.Data.QuestionType"));
+		data.setAnswerType(_ctx.stringValue("RunMedQAResponse.Data.AnswerType"));
+		data.setQuestion(_ctx.stringValue("RunMedQAResponse.Data.Question"));
+		data.setSessionId(_ctx.stringValue("RunMedQAResponse.Data.SessionId"));
 
-		List<String> similarQuestion = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("RunMedQAResponse.Data.SimilarQuestion.Length"); i++) {
-			similarQuestion.add(_ctx.stringValue("RunMedQAResponse.Data.SimilarQuestion["+ i +"]"));
+		List<String> options = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("RunMedQAResponse.Data.Options.Length"); i++) {
+			options.add(_ctx.stringValue("RunMedQAResponse.Data.Options["+ i +"]"));
 		}
-		data.setSimilarQuestion(similarQuestion);
+		data.setOptions(options);
 		runMedQAResponse.setData(data);
 	 
 	 	return runMedQAResponse;
