@@ -31,6 +31,8 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 
 	private String userId;
 
+	private String deviceId;
+
 	private String additionalBroker;
 
 	private String tags;
@@ -79,6 +81,17 @@ public class StartBack2BackCallRequest extends RpcAcsRequest<StartBack2BackCallR
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId);
+		}
+	}
+
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+		if(deviceId != null){
+			putQueryParameter("DeviceId", deviceId);
 		}
 	}
 
