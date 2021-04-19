@@ -16,14 +16,14 @@ package com.aliyuncs.reid_cloud.model.v20201029;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.reid_cloud.transform.v20201029.ImportSpecialPersonnelResponseUnmarshaller;
+import com.aliyuncs.reid_cloud.transform.v20201029.ListSpecialPersonnelByImageResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ImportSpecialPersonnelResponse extends AcsResponse {
+public class ListSpecialPersonnelByImageResponse extends AcsResponse {
 
 	private String message;
 
@@ -41,7 +41,7 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private List<SpecialPersonnelMap> specialPersonnelMaps;
+	private List<ListPersonResultItem> listPersonResultItems;
 
 	public String getMessage() {
 		return this.message;
@@ -107,26 +107,26 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<SpecialPersonnelMap> getSpecialPersonnelMaps() {
-		return this.specialPersonnelMaps;
+	public List<ListPersonResultItem> getListPersonResultItems() {
+		return this.listPersonResultItems;
 	}
 
-	public void setSpecialPersonnelMaps(List<SpecialPersonnelMap> specialPersonnelMaps) {
-		this.specialPersonnelMaps = specialPersonnelMaps;
+	public void setListPersonResultItems(List<ListPersonResultItem> listPersonResultItems) {
+		this.listPersonResultItems = listPersonResultItems;
 	}
 
-	public static class SpecialPersonnelMap {
+	public static class ListPersonResultItem {
 
-		private Long storeId;
+		private Float score;
 
 		private Long ukId;
 
-		public Long getStoreId() {
-			return this.storeId;
+		public Float getScore() {
+			return this.score;
 		}
 
-		public void setStoreId(Long storeId) {
-			this.storeId = storeId;
+		public void setScore(Float score) {
+			this.score = score;
 		}
 
 		public Long getUkId() {
@@ -139,8 +139,8 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 	}
 
 	@Override
-	public ImportSpecialPersonnelResponse getInstance(UnmarshallerContext context) {
-		return	ImportSpecialPersonnelResponseUnmarshaller.unmarshall(this, context);
+	public ListSpecialPersonnelByImageResponse getInstance(UnmarshallerContext context) {
+		return	ListSpecialPersonnelByImageResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -33,7 +33,7 @@ public class DescribeCameraStatisticsRequest extends RpcAcsRequest<DescribeCamer
 
 	private Long locationId;
 	public DescribeCameraStatisticsRequest() {
-		super("reid_cloud", "2020-10-29", "DescribeCameraStatistics", "1.1.9");
+		super("reid_cloud", "2020-10-29", "DescribeCameraStatistics", "1.2.1");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -1,3 +1,6 @@
+2021-04-19 Version: 1.2.1
+- Generated 2020-10-29 for `reid_cloud`.
+
 2021-03-16 Version: 1.1.9
 - Supported aliyun cloud environment.
 

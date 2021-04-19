@@ -31,6 +31,8 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 
 	private String externalId;
 
+	private Long source;
+
 	private String personType;
 
 	private String urls;
@@ -41,7 +43,7 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 
 	private String status;
 	public ImportSpecialPersonnelRequest() {
-		super("reid_cloud", "2020-10-29", "ImportSpecialPersonnel", "1.1.9");
+		super("reid_cloud", "2020-10-29", "ImportSpecialPersonnel", "1.2.1");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,6 +81,17 @@ public class ImportSpecialPersonnelRequest extends RpcAcsRequest<ImportSpecialPe
 		this.externalId = externalId;
 		if(externalId != null){
 			putBodyParameter("ExternalId", externalId);
+		}
+	}
+
+	public Long getSource() {
+		return this.source;
+	}
+
+	public void setSource(Long source) {
+		this.source = source;
+		if(source != null){
+			putBodyParameter("Source", source.toString());
 		}
 	}
 

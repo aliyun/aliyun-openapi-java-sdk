@@ -22,17 +22,34 @@ import com.aliyuncs.reid_cloud.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListEmapRequest extends RpcAcsRequest<ListEmapResponse> {
+public class ListSpecialPersonnelByImageRequest extends RpcAcsRequest<ListSpecialPersonnelByImageResponse> {
 	   
 
+	private Long source;
+
 	private Long storeId;
-	public ListEmapRequest() {
-		super("reid_cloud", "2020-10-29", "ListEmap", "1.2.1");
+
+	private String personType;
+
+	private String imageUrl;
+	public ListSpecialPersonnelByImageRequest() {
+		super("reid_cloud", "2020-10-29", "ListSpecialPersonnelByImage", "1.2.1");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getSource() {
+		return this.source;
+	}
+
+	public void setSource(Long source) {
+		this.source = source;
+		if(source != null){
+			putBodyParameter("Source", source.toString());
+		}
 	}
 
 	public Long getStoreId() {
@@ -46,9 +63,31 @@ public class ListEmapRequest extends RpcAcsRequest<ListEmapResponse> {
 		}
 	}
 
+	public String getPersonType() {
+		return this.personType;
+	}
+
+	public void setPersonType(String personType) {
+		this.personType = personType;
+		if(personType != null){
+			putBodyParameter("PersonType", personType);
+		}
+	}
+
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+		if(imageUrl != null){
+			putBodyParameter("ImageUrl", imageUrl);
+		}
+	}
+
 	@Override
-	public Class<ListEmapResponse> getResponseClass() {
-		return ListEmapResponse.class;
+	public Class<ListSpecialPersonnelByImageResponse> getResponseClass() {
+		return ListSpecialPersonnelByImageResponse.class;
 	}
 
 }
