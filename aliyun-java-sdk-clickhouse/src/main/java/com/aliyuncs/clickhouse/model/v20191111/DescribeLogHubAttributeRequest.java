@@ -29,6 +29,8 @@ public class DescribeLogHubAttributeRequest extends RpcAcsRequest<DescribeLogHub
 
 	private String deliverName;
 
+	private String taskId;
+
 	private String projectName;
 
 	private String logStoreName;
@@ -41,7 +43,7 @@ public class DescribeLogHubAttributeRequest extends RpcAcsRequest<DescribeLogHub
 
 	private Long ownerId;
 	public DescribeLogHubAttributeRequest() {
-		super("clickhouse", "2019-11-11", "DescribeLogHubAttribute", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeLogHubAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -68,6 +70,17 @@ public class DescribeLogHubAttributeRequest extends RpcAcsRequest<DescribeLogHub
 		this.deliverName = deliverName;
 		if(deliverName != null){
 			putQueryParameter("DeliverName", deliverName);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 

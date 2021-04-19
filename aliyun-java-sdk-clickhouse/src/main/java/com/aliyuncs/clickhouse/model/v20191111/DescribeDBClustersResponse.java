@@ -107,10 +107,6 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		private Long dBNodeCount;
 
-		private String expireTime1;
-
-		private String isExpired2;
-
 		private String storageType;
 
 		private String connectionString;
@@ -253,22 +249,6 @@ public class DescribeDBClustersResponse extends AcsResponse {
 
 		public void setDBNodeCount(Long dBNodeCount) {
 			this.dBNodeCount = dBNodeCount;
-		}
-
-		public String getExpireTime1() {
-			return this.expireTime1;
-		}
-
-		public void setExpireTime1(String expireTime1) {
-			this.expireTime1 = expireTime1;
-		}
-
-		public String getIsExpired2() {
-			return this.isExpired2;
-		}
-
-		public void setIsExpired2(String isExpired2) {
-			this.isExpired2 = isExpired2;
 		}
 
 		public String getStorageType() {

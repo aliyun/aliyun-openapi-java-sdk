@@ -14,6 +14,7 @@
 
 package com.aliyuncs.clickhouse.model.v20191111;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.clickhouse.transform.v20191111.DescribeLogHubAttributeResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -26,7 +27,7 @@ public class DescribeLogHubAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
-	private TaskDetail taskDetail;
+	private LoghubInfo loghubInfo;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,53 +37,49 @@ public class DescribeLogHubAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public TaskDetail getTaskDetail() {
-		return this.taskDetail;
+	public LoghubInfo getLoghubInfo() {
+		return this.loghubInfo;
 	}
 
-	public void setTaskDetail(TaskDetail taskDetail) {
-		this.taskDetail = taskDetail;
+	public void setLoghubInfo(LoghubInfo loghubInfo) {
+		this.loghubInfo = loghubInfo;
 	}
 
-	public static class TaskDetail {
+	public static class LoghubInfo {
 
 		private String id;
 
-		private String name;
+		private String deliverName;
 
 		private String description;
 
-		private String sourceType;
+		private String projectName;
 
-		private String sourceProject;
+		private String logStoreName;
 
-		private String sourceTopic;
+		private String dBType;
 
-		private String sourceRegion;
+		private String dBClusterId;
 
-		private String sinkType;
+		private String schemaName;
 
-		private String sinkInstance;
+		private String tableName;
 
-		private String sinkSchema;
+		private String userName;
 
-		private String sinkTable;
+		private String regionId;
 
-		private String sinkUser;
+		private String filterDirtyData;
 
-		private String sinkRegion;
+		private String deliverTime;
 
-		private String sinkVpcId;
+		private String zoneId;
 
-		private String state;
+		private String password;
 
-		private String strict;
+		private String domainUrl;
 
-		private String columnMapper;
-
-		private String checkpoint;
-
-		private String createTime;
+		private List<LogHubStore> logHubStores;
 
 		public String getId() {
 			return this.id;
@@ -92,12 +89,12 @@ public class DescribeLogHubAttributeResponse extends AcsResponse {
 			this.id = id;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getDeliverName() {
+			return this.deliverName;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setDeliverName(String deliverName) {
+			this.deliverName = deliverName;
 		}
 
 		public String getDescription() {
@@ -108,142 +105,154 @@ public class DescribeLogHubAttributeResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getSourceType() {
-			return this.sourceType;
+		public String getProjectName() {
+			return this.projectName;
 		}
 
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
 		}
 
-		public String getSourceProject() {
-			return this.sourceProject;
+		public String getLogStoreName() {
+			return this.logStoreName;
 		}
 
-		public void setSourceProject(String sourceProject) {
-			this.sourceProject = sourceProject;
+		public void setLogStoreName(String logStoreName) {
+			this.logStoreName = logStoreName;
 		}
 
-		public String getSourceTopic() {
-			return this.sourceTopic;
+		public String getDBType() {
+			return this.dBType;
 		}
 
-		public void setSourceTopic(String sourceTopic) {
-			this.sourceTopic = sourceTopic;
+		public void setDBType(String dBType) {
+			this.dBType = dBType;
 		}
 
-		public String getSourceRegion() {
-			return this.sourceRegion;
+		public String getDBClusterId() {
+			return this.dBClusterId;
 		}
 
-		public void setSourceRegion(String sourceRegion) {
-			this.sourceRegion = sourceRegion;
+		public void setDBClusterId(String dBClusterId) {
+			this.dBClusterId = dBClusterId;
 		}
 
-		public String getSinkType() {
-			return this.sinkType;
+		public String getSchemaName() {
+			return this.schemaName;
 		}
 
-		public void setSinkType(String sinkType) {
-			this.sinkType = sinkType;
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 
-		public String getSinkInstance() {
-			return this.sinkInstance;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setSinkInstance(String sinkInstance) {
-			this.sinkInstance = sinkInstance;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
-		public String getSinkSchema() {
-			return this.sinkSchema;
+		public String getUserName() {
+			return this.userName;
 		}
 
-		public void setSinkSchema(String sinkSchema) {
-			this.sinkSchema = sinkSchema;
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 
-		public String getSinkTable() {
-			return this.sinkTable;
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setSinkTable(String sinkTable) {
-			this.sinkTable = sinkTable;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public String getSinkUser() {
-			return this.sinkUser;
+		public String getFilterDirtyData() {
+			return this.filterDirtyData;
 		}
 
-		public void setSinkUser(String sinkUser) {
-			this.sinkUser = sinkUser;
+		public void setFilterDirtyData(String filterDirtyData) {
+			this.filterDirtyData = filterDirtyData;
 		}
 
-		public String getSinkRegion() {
-			return this.sinkRegion;
+		public String getDeliverTime() {
+			return this.deliverTime;
 		}
 
-		public void setSinkRegion(String sinkRegion) {
-			this.sinkRegion = sinkRegion;
+		public void setDeliverTime(String deliverTime) {
+			this.deliverTime = deliverTime;
 		}
 
-		public String getSinkVpcId() {
-			return this.sinkVpcId;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setSinkVpcId(String sinkVpcId) {
-			this.sinkVpcId = sinkVpcId;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getPassword() {
+			return this.password;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setPassword(String password) {
+			this.password = password;
 		}
 
-		public String getStrict() {
-			return this.strict;
+		public String getDomainUrl() {
+			return this.domainUrl;
 		}
 
-		public void setStrict(String strict) {
-			this.strict = strict;
+		public void setDomainUrl(String domainUrl) {
+			this.domainUrl = domainUrl;
 		}
 
-		public String getColumnMapper() {
-			return this.columnMapper;
+		public List<LogHubStore> getLogHubStores() {
+			return this.logHubStores;
 		}
 
-		public void setColumnMapper(String columnMapper) {
-			this.columnMapper = columnMapper;
+		public void setLogHubStores(List<LogHubStore> logHubStores) {
+			this.logHubStores = logHubStores;
 		}
 
-		public String getCheckpoint() {
-			return this.checkpoint;
-		}
+		public static class LogHubStore {
 
-		public void setCheckpoint(String checkpoint) {
-			this.checkpoint = checkpoint;
-		}
+			private String logKey;
 
-		public String getCreateTime() {
-			return this.createTime;
-		}
+			private String fieldKey;
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+			private String type;
+
+			public String getLogKey() {
+				return this.logKey;
+			}
+
+			public void setLogKey(String logKey) {
+				this.logKey = logKey;
+			}
+
+			public String getFieldKey() {
+				return this.fieldKey;
+			}
+
+			public void setFieldKey(String fieldKey) {
+				this.fieldKey = fieldKey;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
 		}
 	}
 
 	@Override
 	public DescribeLogHubAttributeResponse getInstance(UnmarshallerContext context) {
 		return	DescribeLogHubAttributeResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
 	}
 }

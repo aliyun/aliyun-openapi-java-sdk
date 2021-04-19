@@ -14,8 +14,12 @@
 
 package com.aliyuncs.clickhouse.transform.v20191111;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.clickhouse.model.v20191111.DescribeLogHubAttributeResponse;
-import com.aliyuncs.clickhouse.model.v20191111.DescribeLogHubAttributeResponse.TaskDetail;
+import com.aliyuncs.clickhouse.model.v20191111.DescribeLogHubAttributeResponse.LoghubInfo;
+import com.aliyuncs.clickhouse.model.v20191111.DescribeLogHubAttributeResponse.LoghubInfo.LogHubStore;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -25,27 +29,35 @@ public class DescribeLogHubAttributeResponseUnmarshaller {
 		
 		describeLogHubAttributeResponse.setRequestId(_ctx.stringValue("DescribeLogHubAttributeResponse.RequestId"));
 
-		TaskDetail taskDetail = new TaskDetail();
-		taskDetail.setId(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.Id"));
-		taskDetail.setName(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.Name"));
-		taskDetail.setDescription(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.Description"));
-		taskDetail.setSourceType(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SourceType"));
-		taskDetail.setSourceProject(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SourceProject"));
-		taskDetail.setSourceTopic(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SourceTopic"));
-		taskDetail.setSourceRegion(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SourceRegion"));
-		taskDetail.setSinkType(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkType"));
-		taskDetail.setSinkInstance(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkInstance"));
-		taskDetail.setSinkSchema(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkSchema"));
-		taskDetail.setSinkTable(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkTable"));
-		taskDetail.setSinkUser(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkUser"));
-		taskDetail.setSinkRegion(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkRegion"));
-		taskDetail.setSinkVpcId(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.SinkVpcId"));
-		taskDetail.setState(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.State"));
-		taskDetail.setStrict(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.Strict"));
-		taskDetail.setColumnMapper(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.ColumnMapper"));
-		taskDetail.setCheckpoint(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.Checkpoint"));
-		taskDetail.setCreateTime(_ctx.stringValue("DescribeLogHubAttributeResponse.TaskDetail.CreateTime"));
-		describeLogHubAttributeResponse.setTaskDetail(taskDetail);
+		LoghubInfo loghubInfo = new LoghubInfo();
+		loghubInfo.setId(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.Id"));
+		loghubInfo.setDeliverName(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.DeliverName"));
+		loghubInfo.setDescription(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.Description"));
+		loghubInfo.setProjectName(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.ProjectName"));
+		loghubInfo.setLogStoreName(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.LogStoreName"));
+		loghubInfo.setDBType(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.DBType"));
+		loghubInfo.setDBClusterId(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.DBClusterId"));
+		loghubInfo.setSchemaName(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.SchemaName"));
+		loghubInfo.setTableName(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.TableName"));
+		loghubInfo.setUserName(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.UserName"));
+		loghubInfo.setRegionId(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.RegionId"));
+		loghubInfo.setFilterDirtyData(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.FilterDirtyData"));
+		loghubInfo.setDeliverTime(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.DeliverTime"));
+		loghubInfo.setZoneId(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.ZoneId"));
+		loghubInfo.setPassword(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.Password"));
+		loghubInfo.setDomainUrl(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.DomainUrl"));
+
+		List<LogHubStore> logHubStores = new ArrayList<LogHubStore>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeLogHubAttributeResponse.LoghubInfo.LogHubStores.Length"); i++) {
+			LogHubStore logHubStore = new LogHubStore();
+			logHubStore.setLogKey(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.LogHubStores["+ i +"].LogKey"));
+			logHubStore.setFieldKey(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.LogHubStores["+ i +"].FieldKey"));
+			logHubStore.setType(_ctx.stringValue("DescribeLogHubAttributeResponse.LoghubInfo.LogHubStores["+ i +"].Type"));
+
+			logHubStores.add(logHubStore);
+		}
+		loghubInfo.setLogHubStores(logHubStores);
+		describeLogHubAttributeResponse.setLoghubInfo(loghubInfo);
 	 
 	 	return describeLogHubAttributeResponse;
 	}

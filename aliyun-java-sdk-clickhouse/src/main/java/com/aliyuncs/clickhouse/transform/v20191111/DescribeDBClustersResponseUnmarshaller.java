@@ -51,8 +51,6 @@ public class DescribeDBClustersResponseUnmarshaller {
 			dBCluster.setDBNodeStorage(_ctx.longValue("DescribeDBClustersResponse.DBClusters["+ i +"].DBNodeStorage"));
 			dBCluster.setDBNodeClass(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].DBNodeClass"));
 			dBCluster.setDBNodeCount(_ctx.longValue("DescribeDBClustersResponse.DBClusters["+ i +"].DBNodeCount"));
-			dBCluster.setExpireTime1(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ExpireTime"));
-			dBCluster.setIsExpired2(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].IsExpired"));
 			dBCluster.setStorageType(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].StorageType"));
 			dBCluster.setConnectionString(_ctx.stringValue("DescribeDBClustersResponse.DBClusters["+ i +"].ConnectionString"));
 			dBCluster.setPort(_ctx.integerValue("DescribeDBClustersResponse.DBClusters["+ i +"].Port"));

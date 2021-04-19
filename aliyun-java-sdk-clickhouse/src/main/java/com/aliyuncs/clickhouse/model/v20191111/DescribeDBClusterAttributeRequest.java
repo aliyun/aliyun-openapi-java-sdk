@@ -35,7 +35,7 @@ public class DescribeDBClusterAttributeRequest extends RpcAcsRequest<DescribeDBC
 
 	private Long ownerId;
 	public DescribeDBClusterAttributeRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBClusterAttribute", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeDBClusterAttribute");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

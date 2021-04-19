@@ -41,7 +41,7 @@ public class CreateAccountRequest extends RpcAcsRequest<CreateAccountResponse> {
 
 	private String accountPassword;
 	public CreateAccountRequest() {
-		super("clickhouse", "2019-11-11", "CreateAccount", "clickhouse");
+		super("clickhouse", "2019-11-11", "CreateAccount");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

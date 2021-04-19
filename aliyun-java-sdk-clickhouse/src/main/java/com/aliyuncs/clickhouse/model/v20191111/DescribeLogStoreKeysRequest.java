@@ -37,7 +37,7 @@ public class DescribeLogStoreKeysRequest extends RpcAcsRequest<DescribeLogStoreK
 
 	private Long ownerId;
 	public DescribeLogStoreKeysRequest() {
-		super("clickhouse", "2019-11-11", "DescribeLogStoreKeys", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeLogStoreKeys");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

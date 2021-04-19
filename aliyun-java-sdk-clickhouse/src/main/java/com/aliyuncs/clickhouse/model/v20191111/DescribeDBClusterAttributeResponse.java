@@ -97,12 +97,6 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		private String storageType;
 
-		private String vpcId1;
-
-		private String vSwitchId2;
-
-		private String vpcCloudInstanceId3;
-
 		private String publicConnectionString;
 
 		private String publicPort;
@@ -114,6 +108,12 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 		private String aliUid;
 
 		private String bid;
+
+		private String encryptionKey;
+
+		private String encryptionType;
+
+		private Integer supportBackup;
 
 		private List<Tag> tags;
 
@@ -319,30 +319,6 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 			this.storageType = storageType;
 		}
 
-		public String getVpcId1() {
-			return this.vpcId1;
-		}
-
-		public void setVpcId1(String vpcId1) {
-			this.vpcId1 = vpcId1;
-		}
-
-		public String getVSwitchId2() {
-			return this.vSwitchId2;
-		}
-
-		public void setVSwitchId2(String vSwitchId2) {
-			this.vSwitchId2 = vSwitchId2;
-		}
-
-		public String getVpcCloudInstanceId3() {
-			return this.vpcCloudInstanceId3;
-		}
-
-		public void setVpcCloudInstanceId3(String vpcCloudInstanceId3) {
-			this.vpcCloudInstanceId3 = vpcCloudInstanceId3;
-		}
-
 		public String getPublicConnectionString() {
 			return this.publicConnectionString;
 		}
@@ -389,6 +365,30 @@ public class DescribeDBClusterAttributeResponse extends AcsResponse {
 
 		public void setBid(String bid) {
 			this.bid = bid;
+		}
+
+		public String getEncryptionKey() {
+			return this.encryptionKey;
+		}
+
+		public void setEncryptionKey(String encryptionKey) {
+			this.encryptionKey = encryptionKey;
+		}
+
+		public String getEncryptionType() {
+			return this.encryptionType;
+		}
+
+		public void setEncryptionType(String encryptionType) {
+			this.encryptionType = encryptionType;
+		}
+
+		public Integer getSupportBackup() {
+			return this.supportBackup;
+		}
+
+		public void setSupportBackup(Integer supportBackup) {
+			this.supportBackup = supportBackup;
 		}
 
 		public List<Tag> getTags() {

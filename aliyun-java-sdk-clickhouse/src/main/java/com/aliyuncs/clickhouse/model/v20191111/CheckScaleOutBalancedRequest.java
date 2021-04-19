@@ -39,7 +39,7 @@ public class CheckScaleOutBalancedRequest extends RpcAcsRequest<CheckScaleOutBal
 
 	private Long ownerId;
 	public CheckScaleOutBalancedRequest() {
-		super("clickhouse", "2019-11-11", "CheckScaleOutBalanced", "clickhouse");
+		super("clickhouse", "2019-11-11", "CheckScaleOutBalanced");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

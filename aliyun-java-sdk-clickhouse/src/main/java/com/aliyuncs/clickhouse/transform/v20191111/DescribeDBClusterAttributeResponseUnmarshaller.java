@@ -56,15 +56,15 @@ public class DescribeDBClusterAttributeResponseUnmarshaller {
 		dBCluster.setCommodityCode(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.CommodityCode"));
 		dBCluster.setDBClusterNetworkType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.DBClusterNetworkType"));
 		dBCluster.setStorageType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.StorageType"));
-		dBCluster.setVpcId1(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.VpcId"));
-		dBCluster.setVSwitchId2(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.VSwitchId"));
-		dBCluster.setVpcCloudInstanceId3(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.VpcCloudInstanceId"));
 		dBCluster.setPublicConnectionString(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.PublicConnectionString"));
 		dBCluster.setPublicPort(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.PublicPort"));
 		dBCluster.setConnectionString(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ConnectionString"));
 		dBCluster.setPort(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBCluster.Port"));
 		dBCluster.setAliUid(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.AliUid"));
 		dBCluster.setBid(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.Bid"));
+		dBCluster.setEncryptionKey(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EncryptionKey"));
+		dBCluster.setEncryptionType(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.EncryptionType"));
+		dBCluster.setSupportBackup(_ctx.integerValue("DescribeDBClusterAttributeResponse.DBCluster.SupportBackup"));
 
 		ScaleOutStatus scaleOutStatus = new ScaleOutStatus();
 		scaleOutStatus.setProgress(_ctx.stringValue("DescribeDBClusterAttributeResponse.DBCluster.ScaleOutStatus.Progress"));

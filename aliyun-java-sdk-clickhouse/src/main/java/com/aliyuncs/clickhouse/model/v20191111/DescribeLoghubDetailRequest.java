@@ -37,7 +37,7 @@ public class DescribeLoghubDetailRequest extends RpcAcsRequest<DescribeLoghubDet
 
 	private String exportName;
 	public DescribeLoghubDetailRequest() {
-		super("clickhouse", "2019-11-11", "DescribeLoghubDetail", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeLoghubDetail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

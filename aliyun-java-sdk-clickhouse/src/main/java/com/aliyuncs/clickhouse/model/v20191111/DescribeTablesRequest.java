@@ -39,7 +39,7 @@ public class DescribeTablesRequest extends RpcAcsRequest<DescribeTablesResponse>
 
 	private Long ownerId;
 	public DescribeTablesRequest() {
-		super("clickhouse", "2019-11-11", "DescribeTables", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeTables");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
