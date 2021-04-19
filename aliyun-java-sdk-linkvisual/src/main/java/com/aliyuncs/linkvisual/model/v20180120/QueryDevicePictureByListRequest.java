@@ -23,21 +23,45 @@ import com.aliyuncs.linkvisual.Endpoint;
  * @author auto create
  * @version 
  */
-public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<UnbindPictureSearchAppWithDevicesResponse> {
+public class QueryDevicePictureByListRequest extends RpcAcsRequest<QueryDevicePictureByListResponse> {
 	   
+
+	private Integer pictureType;
+
+	private String iotId;
 
 	private String iotInstanceId;
 
-	private List<String> deviceIotIdss;
-
-	private String appInstanceId;
-	public UnbindPictureSearchAppWithDevicesRequest() {
-		super("Linkvisual", "2018-01-20", "UnbindPictureSearchAppWithDevices", "Linkvisual");
+	private List<String> pictureIdLists;
+	public QueryDevicePictureByListRequest() {
+		super("Linkvisual", "2018-01-20", "QueryDevicePictureByList", "Linkvisual");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Integer getPictureType() {
+		return this.pictureType;
+	}
+
+	public void setPictureType(Integer pictureType) {
+		this.pictureType = pictureType;
+		if(pictureType != null){
+			putQueryParameter("PictureType", pictureType.toString());
+		}
+	}
+
+	public String getIotId() {
+		return this.iotId;
+	}
+
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
+		}
 	}
 
 	public String getIotInstanceId() {
@@ -51,33 +75,22 @@ public class UnbindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<Unbi
 		}
 	}
 
-	public List<String> getDeviceIotIdss() {
-		return this.deviceIotIdss;
+	public List<String> getPictureIdLists() {
+		return this.pictureIdLists;
 	}
 
-	public void setDeviceIotIdss(List<String> deviceIotIdss) {
-		this.deviceIotIdss = deviceIotIdss;	
-		if (deviceIotIdss != null) {
-			for (int i = 0; i < deviceIotIdss.size(); i++) {
-				putQueryParameter("DeviceIotIds." + (i + 1) , deviceIotIdss.get(i));
+	public void setPictureIdLists(List<String> pictureIdLists) {
+		this.pictureIdLists = pictureIdLists;	
+		if (pictureIdLists != null) {
+			for (int i = 0; i < pictureIdLists.size(); i++) {
+				putQueryParameter("PictureIdList." + (i + 1) , pictureIdLists.get(i));
 			}
 		}	
 	}
 
-	public String getAppInstanceId() {
-		return this.appInstanceId;
-	}
-
-	public void setAppInstanceId(String appInstanceId) {
-		this.appInstanceId = appInstanceId;
-		if(appInstanceId != null){
-			putQueryParameter("AppInstanceId", appInstanceId);
-		}
-	}
-
 	@Override
-	public Class<UnbindPictureSearchAppWithDevicesResponse> getResponseClass() {
-		return UnbindPictureSearchAppWithDevicesResponse.class;
+	public Class<QueryDevicePictureByListResponse> getResponseClass() {
+		return QueryDevicePictureByListResponse.class;
 	}
 
 }

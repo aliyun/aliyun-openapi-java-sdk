@@ -31,6 +31,8 @@ public class PictureSearchPictureRequest extends RpcAcsRequest<PictureSearchPict
 
 	private Long startTime;
 
+	private Integer pictureSearchType;
+
 	private Integer pageSize;
 
 	private Long endTime;
@@ -79,6 +81,17 @@ public class PictureSearchPictureRequest extends RpcAcsRequest<PictureSearchPict
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getPictureSearchType() {
+		return this.pictureSearchType;
+	}
+
+	public void setPictureSearchType(Integer pictureSearchType) {
+		this.pictureSearchType = pictureSearchType;
+		if(pictureSearchType != null){
+			putQueryParameter("PictureSearchType", pictureSearchType.toString());
 		}
 	}
 

@@ -47,6 +47,7 @@ public class PictureSearchPictureResponseUnmarshaller {
 			searchData.setPicUrl(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].PicUrl"));
 			searchData.setIotId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].IotId"));
 			searchData.setGatewayIotId(_ctx.stringValue("PictureSearchPictureResponse.Data.PageData["+ i +"].GatewayIotId"));
+			searchData.setVectorType(_ctx.integerValue("PictureSearchPictureResponse.Data.PageData["+ i +"].VectorType"));
 
 			pageData.add(searchData);
 		}

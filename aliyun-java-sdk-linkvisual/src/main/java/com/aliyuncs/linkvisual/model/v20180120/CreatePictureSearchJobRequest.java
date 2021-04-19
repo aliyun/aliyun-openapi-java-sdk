@@ -31,6 +31,10 @@ public class CreatePictureSearchJobRequest extends RpcAcsRequest<CreatePictureSe
 
 	private Long startTime;
 
+	private Integer pictureSearchType;
+
+	private Float bodyThreshold;
+
 	private Long endTime;
 
 	private String appInstanceId;
@@ -73,6 +77,28 @@ public class CreatePictureSearchJobRequest extends RpcAcsRequest<CreatePictureSe
 		this.startTime = startTime;
 		if(startTime != null){
 			putQueryParameter("StartTime", startTime.toString());
+		}
+	}
+
+	public Integer getPictureSearchType() {
+		return this.pictureSearchType;
+	}
+
+	public void setPictureSearchType(Integer pictureSearchType) {
+		this.pictureSearchType = pictureSearchType;
+		if(pictureSearchType != null){
+			putQueryParameter("PictureSearchType", pictureSearchType.toString());
+		}
+	}
+
+	public Float getBodyThreshold() {
+		return this.bodyThreshold;
+	}
+
+	public void setBodyThreshold(Float bodyThreshold) {
+		this.bodyThreshold = bodyThreshold;
+		if(bodyThreshold != null){
+			putQueryParameter("BodyThreshold", bodyThreshold.toString());
 		}
 	}
 

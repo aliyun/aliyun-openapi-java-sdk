@@ -141,6 +141,8 @@ public class PictureSearchPictureResponse extends AcsResponse {
 
 			private String gatewayIotId;
 
+			private Integer vectorType;
+
 			public String getVectorId() {
 				return this.vectorId;
 			}
@@ -187,6 +189,14 @@ public class PictureSearchPictureResponse extends AcsResponse {
 
 			public void setGatewayIotId(String gatewayIotId) {
 				this.gatewayIotId = gatewayIotId;
+			}
+
+			public Integer getVectorType() {
+				return this.vectorType;
+			}
+
+			public void setVectorType(Integer vectorType) {
+				this.vectorType = vectorType;
 			}
 		}
 	}

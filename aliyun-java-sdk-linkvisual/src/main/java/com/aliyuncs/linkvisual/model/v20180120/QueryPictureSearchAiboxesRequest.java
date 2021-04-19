@@ -25,6 +25,8 @@ import com.aliyuncs.linkvisual.Endpoint;
 public class QueryPictureSearchAiboxesRequest extends RpcAcsRequest<QueryPictureSearchAiboxesResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
@@ -37,6 +39,17 @@ public class QueryPictureSearchAiboxesRequest extends RpcAcsRequest<QueryPicture
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public Integer getPageSize() {
