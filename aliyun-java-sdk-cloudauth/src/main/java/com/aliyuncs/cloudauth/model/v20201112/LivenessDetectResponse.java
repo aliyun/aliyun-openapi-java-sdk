@@ -12,23 +12,23 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudauth.model.v20190307;
+package com.aliyuncs.cloudauth.model.v20201112;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cloudauth.transform.v20190307.CompareFaceVerifyResponseUnmarshaller;
+import com.aliyuncs.cloudauth.transform.v20201112.LivenessDetectResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CompareFaceVerifyResponse extends AcsResponse {
+public class LivenessDetectResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String message;
-
 	private String code;
+
+	private String message;
 
 	private ResultObject resultObject;
 
@@ -40,20 +40,20 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public ResultObject getResultObject() {
@@ -68,9 +68,9 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 
 		private String passed;
 
-		private Float verifyScore;
+		private Float score;
 
-		private String certifyId;
+		private String frameUrl;
 
 		public String getPassed() {
 			return this.passed;
@@ -80,26 +80,26 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 			this.passed = passed;
 		}
 
-		public Float getVerifyScore() {
-			return this.verifyScore;
+		public Float getScore() {
+			return this.score;
 		}
 
-		public void setVerifyScore(Float verifyScore) {
-			this.verifyScore = verifyScore;
+		public void setScore(Float score) {
+			this.score = score;
 		}
 
-		public String getCertifyId() {
-			return this.certifyId;
+		public String getFrameUrl() {
+			return this.frameUrl;
 		}
 
-		public void setCertifyId(String certifyId) {
-			this.certifyId = certifyId;
+		public void setFrameUrl(String frameUrl) {
+			this.frameUrl = frameUrl;
 		}
 	}
 
 	@Override
-	public CompareFaceVerifyResponse getInstance(UnmarshallerContext context) {
-		return	CompareFaceVerifyResponseUnmarshaller.unmarshall(this, context);
+	public LivenessDetectResponse getInstance(UnmarshallerContext context) {
+		return	LivenessDetectResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

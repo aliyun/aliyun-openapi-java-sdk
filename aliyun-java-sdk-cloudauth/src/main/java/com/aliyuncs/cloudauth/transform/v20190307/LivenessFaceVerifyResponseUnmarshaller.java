@@ -31,6 +31,7 @@ public class LivenessFaceVerifyResponseUnmarshaller {
 		resultObject.setPassed(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.Passed"));
 		resultObject.setMaterialInfo(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.MaterialInfo"));
 		resultObject.setSubCode(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.SubCode"));
+		resultObject.setCertifyId(_ctx.stringValue("LivenessFaceVerifyResponse.ResultObject.CertifyId"));
 		livenessFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return livenessFaceVerifyResponse;

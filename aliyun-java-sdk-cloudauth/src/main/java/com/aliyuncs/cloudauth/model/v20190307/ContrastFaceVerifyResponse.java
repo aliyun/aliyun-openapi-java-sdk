@@ -74,6 +74,8 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 
 		private String subCode;
 
+		private String certifyId;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -104,6 +106,14 @@ public class ContrastFaceVerifyResponse extends AcsResponse {
 
 		public void setSubCode(String subCode) {
 			this.subCode = subCode;
+		}
+
+		public String getCertifyId() {
+			return this.certifyId;
+		}
+
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
 		}
 	}
 
