@@ -12,13 +12,13 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.transform.v20200615;
+package com.aliyuncs.hitsdb.transform.v20170601;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.hitsdb.model.v20200615.DescribeRegionsResponse;
-import com.aliyuncs.hitsdb.model.v20200615.DescribeRegionsResponse.Region;
+import com.aliyuncs.hitsdb.model.v20170601.DescribeRegionsResponse;
+import com.aliyuncs.hitsdb.model.v20170601.DescribeRegionsResponse.Region;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

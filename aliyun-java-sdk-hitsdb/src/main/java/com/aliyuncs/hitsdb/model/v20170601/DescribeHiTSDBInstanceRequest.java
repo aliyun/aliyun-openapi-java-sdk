@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20200615;
+package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,7 +22,7 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetLindormInstanceEngineListRequest extends RpcAcsRequest<GetLindormInstanceEngineListResponse> {
+public class DescribeHiTSDBInstanceRequest extends RpcAcsRequest<DescribeHiTSDBInstanceResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -36,8 +36,10 @@ public class GetLindormInstanceEngineListRequest extends RpcAcsRequest<GetLindor
 	private Long ownerId;
 
 	private String instanceId;
-	public GetLindormInstanceEngineListRequest() {
-		super("hitsdb", "2020-06-15", "GetLindormInstanceEngineList", "hitsdb");
+
+	private String appKey;
+	public DescribeHiTSDBInstanceRequest() {
+		super("hitsdb", "2017-06-01", "DescribeHiTSDBInstance", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -111,9 +113,20 @@ public class GetLindormInstanceEngineListRequest extends RpcAcsRequest<GetLindor
 		}
 	}
 
+	public String getAppKey() {
+		return this.appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+		if(appKey != null){
+			putQueryParameter("AppKey", appKey);
+		}
+	}
+
 	@Override
-	public Class<GetLindormInstanceEngineListResponse> getResponseClass() {
-		return GetLindormInstanceEngineListResponse.class;
+	public Class<DescribeHiTSDBInstanceResponse> getResponseClass() {
+		return DescribeHiTSDBInstanceResponse.class;
 	}
 
 }

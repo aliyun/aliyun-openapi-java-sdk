@@ -12,24 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20200615;
+package com.aliyuncs.hitsdb.model.v20170601;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hitsdb.transform.v20200615.GetInstanceIpWhiteListResponseUnmarshaller;
+import com.aliyuncs.hitsdb.transform.v20170601.RenameHiTSDBInstanceAliasResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetInstanceIpWhiteListResponse extends AcsResponse {
+public class RenameHiTSDBInstanceAliasResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String instanceId;
-
-	private List<String> ipList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -39,25 +34,9 @@ public class GetInstanceIpWhiteListResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public List<String> getIpList() {
-		return this.ipList;
-	}
-
-	public void setIpList(List<String> ipList) {
-		this.ipList = ipList;
-	}
-
 	@Override
-	public GetInstanceIpWhiteListResponse getInstance(UnmarshallerContext context) {
-		return	GetInstanceIpWhiteListResponseUnmarshaller.unmarshall(this, context);
+	public RenameHiTSDBInstanceAliasResponse getInstance(UnmarshallerContext context) {
+		return	RenameHiTSDBInstanceAliasResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

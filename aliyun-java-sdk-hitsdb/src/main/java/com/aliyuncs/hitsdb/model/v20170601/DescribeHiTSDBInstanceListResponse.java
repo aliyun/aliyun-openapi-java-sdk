@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20200615;
+package com.aliyuncs.hitsdb.model.v20170601;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hitsdb.transform.v20200615.GetLindormInstanceListResponseUnmarshaller;
+import com.aliyuncs.hitsdb.transform.v20170601.DescribeHiTSDBInstanceListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetLindormInstanceListResponse extends AcsResponse {
+public class DescribeHiTSDBInstanceListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -33,7 +33,7 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 	private Integer total;
 
-	private List<LindormInstanceSummary> instanceList;
+	private List<Instance> instanceList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -67,19 +67,23 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 		this.total = total;
 	}
 
-	public List<LindormInstanceSummary> getInstanceList() {
+	public List<Instance> getInstanceList() {
 		return this.instanceList;
 	}
 
-	public void setInstanceList(List<LindormInstanceSummary> instanceList) {
+	public void setInstanceList(List<Instance> instanceList) {
 		this.instanceList = instanceList;
 	}
 
-	public static class LindormInstanceSummary {
+	public static class Instance {
 
 		private String instanceId;
 
 		private String instanceAlias;
+
+		private String instanceDescription;
+
+		private String userId;
 
 		private String regionId;
 
@@ -87,23 +91,37 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		private String instanceStatus;
 
-		private String payType;
+		private String chargeType;
 
 		private String networkType;
 
-		private String createTime;
+		private String gmtCreated;
 
-		private String expireTime;
+		private String gmtExpire;
+
+		private String instanceClass;
 
 		private String instanceStorage;
 
-		private String serviceType;
+		private String instanceTps;
+
+		private String lockMode;
 
 		private String engineType;
 
-		private Long aliUid;
+		private String maxSeriesPerDatabase;
 
 		private String vpcId;
+
+		private String vswitchId;
+
+		private String status;
+
+		private String paymentType;
+
+		private Long createTime;
+
+		private Long expiredTime;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -119,6 +137,22 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 
 		public void setInstanceAlias(String instanceAlias) {
 			this.instanceAlias = instanceAlias;
+		}
+
+		public String getInstanceDescription() {
+			return this.instanceDescription;
+		}
+
+		public void setInstanceDescription(String instanceDescription) {
+			this.instanceDescription = instanceDescription;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getRegionId() {
@@ -145,12 +179,12 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 			this.instanceStatus = instanceStatus;
 		}
 
-		public String getPayType() {
-			return this.payType;
+		public String getChargeType() {
+			return this.chargeType;
 		}
 
-		public void setPayType(String payType) {
-			this.payType = payType;
+		public void setChargeType(String chargeType) {
+			this.chargeType = chargeType;
 		}
 
 		public String getNetworkType() {
@@ -161,20 +195,28 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 			this.networkType = networkType;
 		}
 
-		public String getCreateTime() {
-			return this.createTime;
+		public String getGmtCreated() {
+			return this.gmtCreated;
 		}
 
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
+		public void setGmtCreated(String gmtCreated) {
+			this.gmtCreated = gmtCreated;
 		}
 
-		public String getExpireTime() {
-			return this.expireTime;
+		public String getGmtExpire() {
+			return this.gmtExpire;
 		}
 
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
+		public void setGmtExpire(String gmtExpire) {
+			this.gmtExpire = gmtExpire;
+		}
+
+		public String getInstanceClass() {
+			return this.instanceClass;
+		}
+
+		public void setInstanceClass(String instanceClass) {
+			this.instanceClass = instanceClass;
 		}
 
 		public String getInstanceStorage() {
@@ -185,12 +227,20 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 			this.instanceStorage = instanceStorage;
 		}
 
-		public String getServiceType() {
-			return this.serviceType;
+		public String getInstanceTps() {
+			return this.instanceTps;
 		}
 
-		public void setServiceType(String serviceType) {
-			this.serviceType = serviceType;
+		public void setInstanceTps(String instanceTps) {
+			this.instanceTps = instanceTps;
+		}
+
+		public String getLockMode() {
+			return this.lockMode;
+		}
+
+		public void setLockMode(String lockMode) {
+			this.lockMode = lockMode;
 		}
 
 		public String getEngineType() {
@@ -201,12 +251,12 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 			this.engineType = engineType;
 		}
 
-		public Long getAliUid() {
-			return this.aliUid;
+		public String getMaxSeriesPerDatabase() {
+			return this.maxSeriesPerDatabase;
 		}
 
-		public void setAliUid(Long aliUid) {
-			this.aliUid = aliUid;
+		public void setMaxSeriesPerDatabase(String maxSeriesPerDatabase) {
+			this.maxSeriesPerDatabase = maxSeriesPerDatabase;
 		}
 
 		public String getVpcId() {
@@ -216,11 +266,51 @@ public class GetLindormInstanceListResponse extends AcsResponse {
 		public void setVpcId(String vpcId) {
 			this.vpcId = vpcId;
 		}
+
+		public String getVswitchId() {
+			return this.vswitchId;
+		}
+
+		public void setVswitchId(String vswitchId) {
+			this.vswitchId = vswitchId;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getPaymentType() {
+			return this.paymentType;
+		}
+
+		public void setPaymentType(String paymentType) {
+			this.paymentType = paymentType;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getExpiredTime() {
+			return this.expiredTime;
+		}
+
+		public void setExpiredTime(Long expiredTime) {
+			this.expiredTime = expiredTime;
+		}
 	}
 
 	@Override
-	public GetLindormInstanceListResponse getInstance(UnmarshallerContext context) {
-		return	GetLindormInstanceListResponseUnmarshaller.unmarshall(this, context);
+	public DescribeHiTSDBInstanceListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeHiTSDBInstanceListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

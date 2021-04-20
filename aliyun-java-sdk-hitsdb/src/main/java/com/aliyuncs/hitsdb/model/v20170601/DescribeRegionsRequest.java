@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20200615;
+package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,7 +22,7 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetLindormInstanceRequest extends RpcAcsRequest<GetLindormInstanceResponse> {
+public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -35,9 +35,9 @@ public class GetLindormInstanceRequest extends RpcAcsRequest<GetLindormInstanceR
 
 	private Long ownerId;
 
-	private String instanceId;
-	public GetLindormInstanceRequest() {
-		super("hitsdb", "2020-06-15", "GetLindormInstance", "hitsdb");
+	private String acceptLanguage;
+	public DescribeRegionsRequest() {
+		super("hitsdb", "2017-06-01", "DescribeRegions", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -100,20 +100,20 @@ public class GetLindormInstanceRequest extends RpcAcsRequest<GetLindormInstanceR
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
 	@Override
-	public Class<GetLindormInstanceResponse> getResponseClass() {
-		return GetLindormInstanceResponse.class;
+	public Class<DescribeRegionsResponse> getResponseClass() {
+		return DescribeRegionsResponse.class;
 	}
 
 }
