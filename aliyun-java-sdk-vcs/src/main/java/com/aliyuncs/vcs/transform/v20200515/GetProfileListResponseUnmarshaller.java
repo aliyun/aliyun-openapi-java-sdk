@@ -28,28 +28,28 @@ public class GetProfileListResponseUnmarshaller {
 	public static GetProfileListResponse unmarshall(GetProfileListResponse getProfileListResponse, UnmarshallerContext _ctx) {
 		
 		getProfileListResponse.setRequestId(_ctx.stringValue("GetProfileListResponse.RequestId"));
-		getProfileListResponse.setCode(_ctx.stringValue("GetProfileListResponse.Code"));
 		getProfileListResponse.setMessage(_ctx.stringValue("GetProfileListResponse.Message"));
+		getProfileListResponse.setCode(_ctx.stringValue("GetProfileListResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.longValue("GetProfileListResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.longValue("GetProfileListResponse.Data.PageSize"));
-		data.setSuccess(_ctx.booleanValue("GetProfileListResponse.Data.Success"));
+		data.setPageNumber(_ctx.longValue("GetProfileListResponse.Data.PageNumber"));
 		data.setTotal(_ctx.longValue("GetProfileListResponse.Data.Total"));
+		data.setSuccess(_ctx.booleanValue("GetProfileListResponse.Data.Success"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetProfileListResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
 			recordsItem.setSceneType(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].SceneType"));
-			recordsItem.setBizId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].BizId"));
-			recordsItem.setFaceUrl(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].FaceUrl"));
-			recordsItem.setGender(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].Gender"));
+			recordsItem.setProfileId(_ctx.integerValue("GetProfileListResponse.Data.Records["+ i +"].ProfileId"));
+			recordsItem.setPersonId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].PersonId"));
 			recordsItem.setIdNumber(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].IdNumber"));
 			recordsItem.setIsvSubId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].IsvSubId"));
 			recordsItem.setSearchMatchingRate(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].SearchMatchingRate"));
-			recordsItem.setPersonId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].PersonId"));
+			recordsItem.setGender(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].Gender"));
+			recordsItem.setBizId(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].BizId"));
 			recordsItem.setCatalogId(_ctx.integerValue("GetProfileListResponse.Data.Records["+ i +"].CatalogId"));
-			recordsItem.setProfileId(_ctx.integerValue("GetProfileListResponse.Data.Records["+ i +"].ProfileId"));
+			recordsItem.setFaceUrl(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].FaceUrl"));
 			recordsItem.setName(_ctx.stringValue("GetProfileListResponse.Data.Records["+ i +"].Name"));
 
 			records.add(recordsItem);

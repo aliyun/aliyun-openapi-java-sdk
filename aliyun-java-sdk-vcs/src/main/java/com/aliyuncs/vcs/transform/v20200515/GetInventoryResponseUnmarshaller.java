@@ -35,11 +35,11 @@ public class GetInventoryResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetInventoryResponse.Data.ResultObject.Length"); i++) {
 			ResultObjectItem resultObjectItem = new ResultObjectItem();
 			resultObjectItem.setBuyerId(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].BuyerId"));
-			resultObjectItem.setCommodityCode(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].CommodityCode"));
+			resultObjectItem.setInstanceId(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].InstanceId"));
 			resultObjectItem.setCurrentInventory(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].CurrentInventory"));
 			resultObjectItem.setValidEndTime(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].ValidEndTime"));
+			resultObjectItem.setCommodityCode(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].CommodityCode"));
 			resultObjectItem.setValidStartTime(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].ValidStartTime"));
-			resultObjectItem.setInstanceId(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].InstanceId"));
 			resultObjectItem.setInventoryId(_ctx.stringValue("GetInventoryResponse.Data.ResultObject["+ i +"].InventoryId"));
 
 			resultObject.add(resultObjectItem);

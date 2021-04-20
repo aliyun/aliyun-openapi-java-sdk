@@ -23,9 +23,9 @@ public class RegisterDeviceResponseUnmarshaller {
 	public static RegisterDeviceResponse unmarshall(RegisterDeviceResponse registerDeviceResponse, UnmarshallerContext _ctx) {
 		
 		registerDeviceResponse.setRequestId(_ctx.stringValue("RegisterDeviceResponse.RequestId"));
-		registerDeviceResponse.setCode(_ctx.stringValue("RegisterDeviceResponse.Code"));
 		registerDeviceResponse.setMessage(_ctx.stringValue("RegisterDeviceResponse.Message"));
 		registerDeviceResponse.setRetryInterval(_ctx.stringValue("RegisterDeviceResponse.RetryInterval"));
+		registerDeviceResponse.setCode(_ctx.stringValue("RegisterDeviceResponse.Code"));
 	 
 	 	return registerDeviceResponse;
 	}

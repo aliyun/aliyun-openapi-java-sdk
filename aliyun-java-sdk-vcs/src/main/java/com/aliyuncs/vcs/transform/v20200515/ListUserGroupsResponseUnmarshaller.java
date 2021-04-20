@@ -27,20 +27,20 @@ public class ListUserGroupsResponseUnmarshaller {
 	public static ListUserGroupsResponse unmarshall(ListUserGroupsResponse listUserGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listUserGroupsResponse.setRequestId(_ctx.stringValue("ListUserGroupsResponse.RequestId"));
-		listUserGroupsResponse.setCode(_ctx.stringValue("ListUserGroupsResponse.Code"));
 		listUserGroupsResponse.setMessage(_ctx.stringValue("ListUserGroupsResponse.Message"));
+		listUserGroupsResponse.setCode(_ctx.stringValue("ListUserGroupsResponse.Code"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUserGroupsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCreator(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].Creator"));
-			dataItem.setUserGroupName(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UserGroupName"));
-			dataItem.setIsvSubId(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].IsvSubId"));
-			dataItem.setUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserGroupId"));
-			dataItem.setUserCount(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserCount"));
-			dataItem.setCreateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].CreateTime"));
-			dataItem.setUpdateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UpdateTime"));
 			dataItem.setParentUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].ParentUserGroupId"));
+			dataItem.setUserCount(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserCount"));
+			dataItem.setUserGroupName(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UserGroupName"));
+			dataItem.setCreateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].CreateTime"));
+			dataItem.setUserGroupId(_ctx.longValue("ListUserGroupsResponse.Data["+ i +"].UserGroupId"));
+			dataItem.setUpdateTime(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].UpdateTime"));
+			dataItem.setIsvSubId(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].IsvSubId"));
+			dataItem.setCreator(_ctx.stringValue("ListUserGroupsResponse.Data["+ i +"].Creator"));
 
 			data.add(dataItem);
 		}

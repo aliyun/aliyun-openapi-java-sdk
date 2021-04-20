@@ -24,26 +24,26 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SyncDeviceTimeResponse extends AcsResponse {
 
-	private String code;
+	private String syncInterval;
 
 	private String message;
 
-	private String nTPServer;
-
 	private String requestId;
+
+	private String nTPServer;
 
 	private String retryInterval;
 
-	private String syncInterval;
+	private String code;
 
 	private String timeStamp;
 
-	public String getCode() {
-		return this.code;
+	public String getSyncInterval() {
+		return this.syncInterval;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setSyncInterval(String syncInterval) {
+		this.syncInterval = syncInterval;
 	}
 
 	public String getMessage() {
@@ -54,20 +54,20 @@ public class SyncDeviceTimeResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getNTPServer() {
-		return this.nTPServer;
-	}
-
-	public void setNTPServer(String nTPServer) {
-		this.nTPServer = nTPServer;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getNTPServer() {
+		return this.nTPServer;
+	}
+
+	public void setNTPServer(String nTPServer) {
+		this.nTPServer = nTPServer;
 	}
 
 	public String getRetryInterval() {
@@ -78,12 +78,12 @@ public class SyncDeviceTimeResponse extends AcsResponse {
 		this.retryInterval = retryInterval;
 	}
 
-	public String getSyncInterval() {
-		return this.syncInterval;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setSyncInterval(String syncInterval) {
-		this.syncInterval = syncInterval;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getTimeStamp() {

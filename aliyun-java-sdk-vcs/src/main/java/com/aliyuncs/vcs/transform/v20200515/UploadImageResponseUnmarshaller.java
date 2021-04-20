@@ -23,9 +23,9 @@ public class UploadImageResponseUnmarshaller {
 	public static UploadImageResponse unmarshall(UploadImageResponse uploadImageResponse, UnmarshallerContext _ctx) {
 		
 		uploadImageResponse.setRequestId(_ctx.stringValue("UploadImageResponse.RequestId"));
-		uploadImageResponse.setCode(_ctx.stringValue("UploadImageResponse.Code"));
 		uploadImageResponse.setMessage(_ctx.stringValue("UploadImageResponse.Message"));
 		uploadImageResponse.setData(_ctx.stringValue("UploadImageResponse.Data"));
+		uploadImageResponse.setCode(_ctx.stringValue("UploadImageResponse.Code"));
 	 
 	 	return uploadImageResponse;
 	}

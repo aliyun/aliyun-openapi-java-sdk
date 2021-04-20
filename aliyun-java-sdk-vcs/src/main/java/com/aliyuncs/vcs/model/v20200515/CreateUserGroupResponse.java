@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateUserGroupResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class CreateUserGroupResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -68,9 +68,9 @@ public class CreateUserGroupResponse extends AcsResponse {
 
 		private String userGroupName;
 
-		private String isvSubId;
-
 		private Long userGroupId;
+
+		private String isvSubId;
 
 		public String getUserGroupName() {
 			return this.userGroupName;
@@ -80,20 +80,20 @@ public class CreateUserGroupResponse extends AcsResponse {
 			this.userGroupName = userGroupName;
 		}
 
-		public String getIsvSubId() {
-			return this.isvSubId;
-		}
-
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
-		}
-
 		public Long getUserGroupId() {
 			return this.userGroupId;
 		}
 
 		public void setUserGroupId(Long userGroupId) {
 			this.userGroupId = userGroupId;
+		}
+
+		public String getIsvSubId() {
+			return this.isvSubId;
+		}
+
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
 		}
 	}
 

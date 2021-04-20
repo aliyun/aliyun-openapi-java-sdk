@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.vcs.model.v20200515.GetDeviceConfigResponse;
+import com.aliyuncs.vcs.model.v20200515.GetDeviceConfigResponse.ChannelListItem;
 import com.aliyuncs.vcs.model.v20200515.GetDeviceConfigResponse.OSDListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -27,38 +28,54 @@ public class GetDeviceConfigResponseUnmarshaller {
 	public static GetDeviceConfigResponse unmarshall(GetDeviceConfigResponse getDeviceConfigResponse, UnmarshallerContext _ctx) {
 		
 		getDeviceConfigResponse.setRequestId(_ctx.stringValue("GetDeviceConfigResponse.RequestId"));
-		getDeviceConfigResponse.setAudioEnable(_ctx.booleanValue("GetDeviceConfigResponse.AudioEnable"));
-		getDeviceConfigResponse.setAudioFormat(_ctx.stringValue("GetDeviceConfigResponse.AudioFormat"));
-		getDeviceConfigResponse.setBitRate(_ctx.stringValue("GetDeviceConfigResponse.BitRate"));
-		getDeviceConfigResponse.setCode(_ctx.stringValue("GetDeviceConfigResponse.Code"));
-		getDeviceConfigResponse.setDeviceAddress(_ctx.stringValue("GetDeviceConfigResponse.DeviceAddress"));
-		getDeviceConfigResponse.setDeviceName(_ctx.stringValue("GetDeviceConfigResponse.DeviceName"));
 		getDeviceConfigResponse.setEncodeFormat(_ctx.stringValue("GetDeviceConfigResponse.EncodeFormat"));
-		getDeviceConfigResponse.setFrameRate(_ctx.stringValue("GetDeviceConfigResponse.FrameRate"));
-		getDeviceConfigResponse.setGovLength(_ctx.integerValue("GetDeviceConfigResponse.GovLength"));
-		getDeviceConfigResponse.setLatitude(_ctx.stringValue("GetDeviceConfigResponse.Latitude"));
-		getDeviceConfigResponse.setLongitude(_ctx.stringValue("GetDeviceConfigResponse.Longitude"));
 		getDeviceConfigResponse.setMessage(_ctx.stringValue("GetDeviceConfigResponse.Message"));
-		getDeviceConfigResponse.setOSDTimeEnable(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeEnable"));
-		getDeviceConfigResponse.setOSDTimeType(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeType"));
-		getDeviceConfigResponse.setOSDTimeX(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeX"));
-		getDeviceConfigResponse.setOSDTimeY(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeY"));
-		getDeviceConfigResponse.setResolution(_ctx.stringValue("GetDeviceConfigResponse.Resolution"));
-		getDeviceConfigResponse.setRetryInterval(_ctx.stringValue("GetDeviceConfigResponse.RetryInterval"));
 		getDeviceConfigResponse.setDeviceId(_ctx.stringValue("GetDeviceConfigResponse.DeviceId"));
-		getDeviceConfigResponse.setUserName(_ctx.stringValue("GetDeviceConfigResponse.UserName"));
+		getDeviceConfigResponse.setLatitude(_ctx.stringValue("GetDeviceConfigResponse.Latitude"));
 		getDeviceConfigResponse.setPassWord(_ctx.stringValue("GetDeviceConfigResponse.PassWord"));
-		getDeviceConfigResponse.setBizProtocol(_ctx.stringValue("GetDeviceConfigResponse.Protocol"));
+		getDeviceConfigResponse.setOSDTimeY(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeY"));
+		getDeviceConfigResponse.setOSDTimeEnable(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeEnable"));
 		getDeviceConfigResponse.setServerId(_ctx.stringValue("GetDeviceConfigResponse.ServerId"));
-		getDeviceConfigResponse.setServerPort(_ctx.stringValue("GetDeviceConfigResponse.ServerPort"));
+		getDeviceConfigResponse.setDeviceAddress(_ctx.stringValue("GetDeviceConfigResponse.DeviceAddress"));
+		getDeviceConfigResponse.setOSDTimeX(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeX"));
+		getDeviceConfigResponse.setGovLength(_ctx.longValue("GetDeviceConfigResponse.GovLength"));
+		getDeviceConfigResponse.setBizProtocol(_ctx.stringValue("GetDeviceConfigResponse.Protocol"));
+		getDeviceConfigResponse.setAudioFormat(_ctx.stringValue("GetDeviceConfigResponse.AudioFormat"));
+		getDeviceConfigResponse.setAudioEnable(_ctx.stringValue("GetDeviceConfigResponse.AudioEnable"));
+		getDeviceConfigResponse.setFrameRate(_ctx.stringValue("GetDeviceConfigResponse.FrameRate"));
+		getDeviceConfigResponse.setUserName(_ctx.stringValue("GetDeviceConfigResponse.UserName"));
 		getDeviceConfigResponse.setServerIp(_ctx.stringValue("GetDeviceConfigResponse.ServerIp"));
+		getDeviceConfigResponse.setLongitude(_ctx.stringValue("GetDeviceConfigResponse.Longitude"));
+		getDeviceConfigResponse.setCode(_ctx.stringValue("GetDeviceConfigResponse.Code"));
+		getDeviceConfigResponse.setRetryInterval(_ctx.stringValue("GetDeviceConfigResponse.RetryInterval"));
+		getDeviceConfigResponse.setBitRate(_ctx.stringValue("GetDeviceConfigResponse.BitRate"));
+		getDeviceConfigResponse.setServerPort(_ctx.stringValue("GetDeviceConfigResponse.ServerPort"));
+		getDeviceConfigResponse.setResolution(_ctx.stringValue("GetDeviceConfigResponse.Resolution"));
+		getDeviceConfigResponse.setOSDTimeType(_ctx.stringValue("GetDeviceConfigResponse.OSDTimeType"));
+		getDeviceConfigResponse.setDeviceName(_ctx.stringValue("GetDeviceConfigResponse.DeviceName"));
+
+		List<ChannelListItem> channelList = new ArrayList<ChannelListItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetDeviceConfigResponse.ChannelList.Length"); i++) {
+			ChannelListItem channelListItem = new ChannelListItem();
+			channelListItem.setSundayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].SundayCaptureStrategy"));
+			channelListItem.setMondayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].MondayCaptureStrategy"));
+			channelListItem.setChannelGbId(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].ChannelGbId"));
+			channelListItem.setFridayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].FridayCaptureStrategy"));
+			channelListItem.setTuesdayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].TuesdayCaptureStrategy"));
+			channelListItem.setWednesdayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].WednesdayCaptureStrategy"));
+			channelListItem.setThursdayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].ThursdayCaptureStrategy"));
+			channelListItem.setSaturdayCaptureStrategy(_ctx.stringValue("GetDeviceConfigResponse.ChannelList["+ i +"].SaturdayCaptureStrategy"));
+
+			channelList.add(channelListItem);
+		}
+		getDeviceConfigResponse.setChannelList(channelList);
 
 		List<OSDListItem> oSDList = new ArrayList<OSDListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetDeviceConfigResponse.OSDList.Length"); i++) {
 			OSDListItem oSDListItem = new OSDListItem();
 			oSDListItem.setText(_ctx.stringValue("GetDeviceConfigResponse.OSDList["+ i +"].Text"));
-			oSDListItem.setLeftTopX(_ctx.stringValue("GetDeviceConfigResponse.OSDList["+ i +"].LeftTopX"));
 			oSDListItem.setLeftTopY(_ctx.stringValue("GetDeviceConfigResponse.OSDList["+ i +"].LeftTopY"));
+			oSDListItem.setLeftTopX(_ctx.stringValue("GetDeviceConfigResponse.OSDList["+ i +"].LeftTopX"));
 
 			oSDList.add(oSDListItem);
 		}

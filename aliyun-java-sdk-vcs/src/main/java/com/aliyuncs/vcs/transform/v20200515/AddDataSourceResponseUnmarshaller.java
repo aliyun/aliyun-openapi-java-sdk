@@ -23,13 +23,13 @@ public class AddDataSourceResponseUnmarshaller {
 
 	public static AddDataSourceResponse unmarshall(AddDataSourceResponse addDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		addDataSourceResponse.setCode(_ctx.stringValue("AddDataSourceResponse.Code"));
 		addDataSourceResponse.setMessage(_ctx.stringValue("AddDataSourceResponse.Message"));
+		addDataSourceResponse.setCode(_ctx.stringValue("AddDataSourceResponse.Code"));
 
 		Data data = new Data();
-		data.setDataSourceId(_ctx.stringValue("AddDataSourceResponse.Data.DataSourceId"));
-		data.setKafkaTopic(_ctx.stringValue("AddDataSourceResponse.Data.KafkaTopic"));
 		data.setOssPath(_ctx.stringValue("AddDataSourceResponse.Data.OssPath"));
+		data.setKafkaTopic(_ctx.stringValue("AddDataSourceResponse.Data.KafkaTopic"));
+		data.setDataSourceId(_ctx.stringValue("AddDataSourceResponse.Data.DataSourceId"));
 		addDataSourceResponse.setData(data);
 	 
 	 	return addDataSourceResponse;

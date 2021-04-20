@@ -23,9 +23,9 @@ public class DeleteDeviceResponseUnmarshaller {
 	public static DeleteDeviceResponse unmarshall(DeleteDeviceResponse deleteDeviceResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeviceResponse.setRequestId(_ctx.stringValue("DeleteDeviceResponse.RequestId"));
-		deleteDeviceResponse.setCode(_ctx.stringValue("DeleteDeviceResponse.Code"));
-		deleteDeviceResponse.setData(_ctx.stringValue("DeleteDeviceResponse.Data"));
 		deleteDeviceResponse.setMessage(_ctx.stringValue("DeleteDeviceResponse.Message"));
+		deleteDeviceResponse.setData(_ctx.stringValue("DeleteDeviceResponse.Data"));
+		deleteDeviceResponse.setCode(_ctx.stringValue("DeleteDeviceResponse.Code"));
 	 
 	 	return deleteDeviceResponse;
 	}

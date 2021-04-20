@@ -28,20 +28,20 @@ public class GetPersonDetailResponseUnmarshaller {
 	public static GetPersonDetailResponse unmarshall(GetPersonDetailResponse getPersonDetailResponse, UnmarshallerContext _ctx) {
 		
 		getPersonDetailResponse.setRequestId(_ctx.stringValue("GetPersonDetailResponse.RequestId"));
-		getPersonDetailResponse.setCode(_ctx.stringValue("GetPersonDetailResponse.Code"));
 		getPersonDetailResponse.setMessage(_ctx.stringValue("GetPersonDetailResponse.Message"));
+		getPersonDetailResponse.setCode(_ctx.stringValue("GetPersonDetailResponse.Code"));
 
 		Data data = new Data();
-		data.setPicUrl(_ctx.stringValue("GetPersonDetailResponse.Data.PicUrl"));
 		data.setPersonId(_ctx.stringValue("GetPersonDetailResponse.Data.PersonId"));
+		data.setPicUrl(_ctx.stringValue("GetPersonDetailResponse.Data.PicUrl"));
 
 		List<TagListItem> tagList = new ArrayList<TagListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPersonDetailResponse.Data.TagList.Length"); i++) {
 			TagListItem tagListItem = new TagListItem();
-			tagListItem.setTagCode(_ctx.stringValue("GetPersonDetailResponse.Data.TagList["+ i +"].TagCode"));
 			tagListItem.setTagName(_ctx.stringValue("GetPersonDetailResponse.Data.TagList["+ i +"].TagName"));
-			tagListItem.setTagValue(_ctx.stringValue("GetPersonDetailResponse.Data.TagList["+ i +"].TagValue"));
 			tagListItem.setTagValueId(_ctx.stringValue("GetPersonDetailResponse.Data.TagList["+ i +"].TagValueId"));
+			tagListItem.setTagCode(_ctx.stringValue("GetPersonDetailResponse.Data.TagList["+ i +"].TagCode"));
+			tagListItem.setTagValue(_ctx.stringValue("GetPersonDetailResponse.Data.TagList["+ i +"].TagValue"));
 
 			tagList.add(tagListItem);
 		}

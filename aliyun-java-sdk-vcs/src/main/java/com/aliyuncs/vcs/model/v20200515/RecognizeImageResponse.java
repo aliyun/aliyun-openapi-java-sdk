@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RecognizeImageResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class RecognizeImageResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -89,38 +89,30 @@ public class RecognizeImageResponse extends AcsResponse {
 
 		public static class Body {
 
-			private String feature;
-
-			private String fileName;
+			private String respiratorColor;
 
 			private String imageBaseSixFour;
-
-			private String leftTopX;
-
-			private String leftTopY;
-
-			private String localFeature;
-
-			private String respiratorColor;
 
 			private String rightBottomX;
 
 			private String rightBottomY;
 
-			public String getFeature() {
-				return this.feature;
+			private String fileName;
+
+			private String leftTopY;
+
+			private String leftTopX;
+
+			private String feature;
+
+			private String localFeature;
+
+			public String getRespiratorColor() {
+				return this.respiratorColor;
 			}
 
-			public void setFeature(String feature) {
-				this.feature = feature;
-			}
-
-			public String getFileName() {
-				return this.fileName;
-			}
-
-			public void setFileName(String fileName) {
-				this.fileName = fileName;
+			public void setRespiratorColor(String respiratorColor) {
+				this.respiratorColor = respiratorColor;
 			}
 
 			public String getImageBaseSixFour() {
@@ -129,38 +121,6 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			public void setImageBaseSixFour(String imageBaseSixFour) {
 				this.imageBaseSixFour = imageBaseSixFour;
-			}
-
-			public String getLeftTopX() {
-				return this.leftTopX;
-			}
-
-			public void setLeftTopX(String leftTopX) {
-				this.leftTopX = leftTopX;
-			}
-
-			public String getLeftTopY() {
-				return this.leftTopY;
-			}
-
-			public void setLeftTopY(String leftTopY) {
-				this.leftTopY = leftTopY;
-			}
-
-			public String getLocalFeature() {
-				return this.localFeature;
-			}
-
-			public void setLocalFeature(String localFeature) {
-				this.localFeature = localFeature;
-			}
-
-			public String getRespiratorColor() {
-				return this.respiratorColor;
-			}
-
-			public void setRespiratorColor(String respiratorColor) {
-				this.respiratorColor = respiratorColor;
 			}
 
 			public String getRightBottomX() {
@@ -178,39 +138,6 @@ public class RecognizeImageResponse extends AcsResponse {
 			public void setRightBottomY(String rightBottomY) {
 				this.rightBottomY = rightBottomY;
 			}
-		}
-
-		public static class Face {
-
-			private String feature;
-
-			private String fileName;
-
-			private String imageBaseSixFour;
-
-			private String leftTopX;
-
-			private String leftTopY;
-
-			private String localFeature;
-
-			private String respiratorColor;
-
-			private String rightBottomX;
-
-			private String rightBottomY;
-
-			private Float quality;
-
-			private Float keyPointQuality;
-
-			public String getFeature() {
-				return this.feature;
-			}
-
-			public void setFeature(String feature) {
-				this.feature = feature;
-			}
 
 			public String getFileName() {
 				return this.fileName;
@@ -218,22 +145,6 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			public void setFileName(String fileName) {
 				this.fileName = fileName;
-			}
-
-			public String getImageBaseSixFour() {
-				return this.imageBaseSixFour;
-			}
-
-			public void setImageBaseSixFour(String imageBaseSixFour) {
-				this.imageBaseSixFour = imageBaseSixFour;
-			}
-
-			public String getLeftTopX() {
-				return this.leftTopX;
-			}
-
-			public void setLeftTopX(String leftTopX) {
-				this.leftTopX = leftTopX;
 			}
 
 			public String getLeftTopY() {
@@ -244,6 +155,22 @@ public class RecognizeImageResponse extends AcsResponse {
 				this.leftTopY = leftTopY;
 			}
 
+			public String getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(String leftTopX) {
+				this.leftTopX = leftTopX;
+			}
+
+			public String getFeature() {
+				return this.feature;
+			}
+
+			public void setFeature(String feature) {
+				this.feature = feature;
+			}
+
 			public String getLocalFeature() {
 				return this.localFeature;
 			}
@@ -251,6 +178,31 @@ public class RecognizeImageResponse extends AcsResponse {
 			public void setLocalFeature(String localFeature) {
 				this.localFeature = localFeature;
 			}
+		}
+
+		public static class Face {
+
+			private String respiratorColor;
+
+			private Float keyPointQuality;
+
+			private String imageBaseSixFour;
+
+			private String rightBottomX;
+
+			private String rightBottomY;
+
+			private Float quality;
+
+			private String fileName;
+
+			private String leftTopY;
+
+			private String leftTopX;
+
+			private String feature;
+
+			private String localFeature;
 
 			public String getRespiratorColor() {
 				return this.respiratorColor;
@@ -258,6 +210,22 @@ public class RecognizeImageResponse extends AcsResponse {
 
 			public void setRespiratorColor(String respiratorColor) {
 				this.respiratorColor = respiratorColor;
+			}
+
+			public Float getKeyPointQuality() {
+				return this.keyPointQuality;
+			}
+
+			public void setKeyPointQuality(Float keyPointQuality) {
+				this.keyPointQuality = keyPointQuality;
+			}
+
+			public String getImageBaseSixFour() {
+				return this.imageBaseSixFour;
+			}
+
+			public void setImageBaseSixFour(String imageBaseSixFour) {
+				this.imageBaseSixFour = imageBaseSixFour;
 			}
 
 			public String getRightBottomX() {
@@ -284,12 +252,44 @@ public class RecognizeImageResponse extends AcsResponse {
 				this.quality = quality;
 			}
 
-			public Float getKeyPointQuality() {
-				return this.keyPointQuality;
+			public String getFileName() {
+				return this.fileName;
 			}
 
-			public void setKeyPointQuality(Float keyPointQuality) {
-				this.keyPointQuality = keyPointQuality;
+			public void setFileName(String fileName) {
+				this.fileName = fileName;
+			}
+
+			public String getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(String leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
+			public String getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(String leftTopX) {
+				this.leftTopX = leftTopX;
+			}
+
+			public String getFeature() {
+				return this.feature;
+			}
+
+			public void setFeature(String feature) {
+				this.feature = feature;
+			}
+
+			public String getLocalFeature() {
+				return this.localFeature;
+			}
+
+			public void setLocalFeature(String localFeature) {
+				this.localFeature = localFeature;
 			}
 		}
 	}

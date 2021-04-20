@@ -29,7 +29,7 @@ public class BindCorpGroupRequest extends RpcAcsRequest<BindCorpGroupResponse> {
 
 	private String corpGroupId;
 	public BindCorpGroupRequest() {
-		super("Vcs", "2020-05-15", "BindCorpGroup", "vcs");
+		super("Vcs", "2020-05-15", "BindCorpGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

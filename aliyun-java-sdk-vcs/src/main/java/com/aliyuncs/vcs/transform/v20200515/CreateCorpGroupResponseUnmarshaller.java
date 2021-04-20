@@ -23,8 +23,8 @@ public class CreateCorpGroupResponseUnmarshaller {
 	public static CreateCorpGroupResponse unmarshall(CreateCorpGroupResponse createCorpGroupResponse, UnmarshallerContext _ctx) {
 		
 		createCorpGroupResponse.setRequestId(_ctx.stringValue("CreateCorpGroupResponse.RequestId"));
-		createCorpGroupResponse.setCode(_ctx.stringValue("CreateCorpGroupResponse.Code"));
 		createCorpGroupResponse.setMessage(_ctx.stringValue("CreateCorpGroupResponse.Message"));
+		createCorpGroupResponse.setCode(_ctx.stringValue("CreateCorpGroupResponse.Code"));
 		createCorpGroupResponse.setSuccess(_ctx.booleanValue("CreateCorpGroupResponse.Success"));
 	 
 	 	return createCorpGroupResponse;

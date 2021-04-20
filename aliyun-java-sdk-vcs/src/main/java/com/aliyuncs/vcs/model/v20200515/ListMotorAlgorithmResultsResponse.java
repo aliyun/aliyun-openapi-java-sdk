@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNumber;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNumber;
 
 		private List<RecordsItem> records;
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -119,87 +119,47 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String corpId;
-
-			private String dataSourceId;
-
-			private Float leftTopX;
-
-			private Float leftTopY;
-
-			private String motorId;
-
 			private String picUrlPath;
 
 			private String plateNumber;
 
-			private Float rightBottomX;
-
-			private Float rightBottomY;
-
-			private String shotTime;
-
-			private String targetPicUrlPath;
-
-			private String motorStyle;
-
-			private String motorModel;
+			private String corpId;
 
 			private String motorColor;
 
-			private String motorClass;
+			private Float rightBottomX;
 
-			private String motorBrand;
+			private String targetPicUrlPath;
 
-			private String plateColor;
-
-			private String plateClass;
-
-			private String safetyBelt;
-
-			private String calling;
+			private Float rightBottomY;
 
 			private String sourceId;
 
-			public String getCorpId() {
-				return this.corpId;
-			}
+			private String calling;
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
-			}
+			private String motorClass;
 
-			public String getDataSourceId() {
-				return this.dataSourceId;
-			}
+			private String motorModel;
 
-			public void setDataSourceId(String dataSourceId) {
-				this.dataSourceId = dataSourceId;
-			}
+			private Float leftTopY;
 
-			public Float getLeftTopX() {
-				return this.leftTopX;
-			}
+			private String motorBrand;
 
-			public void setLeftTopX(Float leftTopX) {
-				this.leftTopX = leftTopX;
-			}
+			private Float leftTopX;
 
-			public Float getLeftTopY() {
-				return this.leftTopY;
-			}
+			private String motorId;
 
-			public void setLeftTopY(Float leftTopY) {
-				this.leftTopY = leftTopY;
-			}
+			private String plateClass;
 
-			public String getMotorId() {
-				return this.motorId;
-			}
+			private String motorStyle;
 
-			public void setMotorId(String motorId) {
-				this.motorId = motorId;
-			}
+			private String safetyBelt;
+
+			private String plateColor;
+
+			private String shotTime;
+
+			private String dataSourceId;
 
 			public String getPicUrlPath() {
 				return this.picUrlPath;
@@ -217,52 +177,12 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 				this.plateNumber = plateNumber;
 			}
 
-			public Float getRightBottomX() {
-				return this.rightBottomX;
+			public String getCorpId() {
+				return this.corpId;
 			}
 
-			public void setRightBottomX(Float rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
-			public Float getRightBottomY() {
-				return this.rightBottomY;
-			}
-
-			public void setRightBottomY(Float rightBottomY) {
-				this.rightBottomY = rightBottomY;
-			}
-
-			public String getShotTime() {
-				return this.shotTime;
-			}
-
-			public void setShotTime(String shotTime) {
-				this.shotTime = shotTime;
-			}
-
-			public String getTargetPicUrlPath() {
-				return this.targetPicUrlPath;
-			}
-
-			public void setTargetPicUrlPath(String targetPicUrlPath) {
-				this.targetPicUrlPath = targetPicUrlPath;
-			}
-
-			public String getMotorStyle() {
-				return this.motorStyle;
-			}
-
-			public void setMotorStyle(String motorStyle) {
-				this.motorStyle = motorStyle;
-			}
-
-			public String getMotorModel() {
-				return this.motorModel;
-			}
-
-			public void setMotorModel(String motorModel) {
-				this.motorModel = motorModel;
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
 			}
 
 			public String getMotorColor() {
@@ -273,44 +193,36 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 				this.motorColor = motorColor;
 			}
 
-			public String getMotorClass() {
-				return this.motorClass;
+			public Float getRightBottomX() {
+				return this.rightBottomX;
 			}
 
-			public void setMotorClass(String motorClass) {
-				this.motorClass = motorClass;
+			public void setRightBottomX(Float rightBottomX) {
+				this.rightBottomX = rightBottomX;
 			}
 
-			public String getMotorBrand() {
-				return this.motorBrand;
+			public String getTargetPicUrlPath() {
+				return this.targetPicUrlPath;
 			}
 
-			public void setMotorBrand(String motorBrand) {
-				this.motorBrand = motorBrand;
+			public void setTargetPicUrlPath(String targetPicUrlPath) {
+				this.targetPicUrlPath = targetPicUrlPath;
 			}
 
-			public String getPlateColor() {
-				return this.plateColor;
+			public Float getRightBottomY() {
+				return this.rightBottomY;
 			}
 
-			public void setPlateColor(String plateColor) {
-				this.plateColor = plateColor;
+			public void setRightBottomY(Float rightBottomY) {
+				this.rightBottomY = rightBottomY;
 			}
 
-			public String getPlateClass() {
-				return this.plateClass;
+			public String getSourceId() {
+				return this.sourceId;
 			}
 
-			public void setPlateClass(String plateClass) {
-				this.plateClass = plateClass;
-			}
-
-			public String getSafetyBelt() {
-				return this.safetyBelt;
-			}
-
-			public void setSafetyBelt(String safetyBelt) {
-				this.safetyBelt = safetyBelt;
+			public void setSourceId(String sourceId) {
+				this.sourceId = sourceId;
 			}
 
 			public String getCalling() {
@@ -321,12 +233,100 @@ public class ListMotorAlgorithmResultsResponse extends AcsResponse {
 				this.calling = calling;
 			}
 
-			public String getSourceId() {
-				return this.sourceId;
+			public String getMotorClass() {
+				return this.motorClass;
 			}
 
-			public void setSourceId(String sourceId) {
-				this.sourceId = sourceId;
+			public void setMotorClass(String motorClass) {
+				this.motorClass = motorClass;
+			}
+
+			public String getMotorModel() {
+				return this.motorModel;
+			}
+
+			public void setMotorModel(String motorModel) {
+				this.motorModel = motorModel;
+			}
+
+			public Float getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Float leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
+			public String getMotorBrand() {
+				return this.motorBrand;
+			}
+
+			public void setMotorBrand(String motorBrand) {
+				this.motorBrand = motorBrand;
+			}
+
+			public Float getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(Float leftTopX) {
+				this.leftTopX = leftTopX;
+			}
+
+			public String getMotorId() {
+				return this.motorId;
+			}
+
+			public void setMotorId(String motorId) {
+				this.motorId = motorId;
+			}
+
+			public String getPlateClass() {
+				return this.plateClass;
+			}
+
+			public void setPlateClass(String plateClass) {
+				this.plateClass = plateClass;
+			}
+
+			public String getMotorStyle() {
+				return this.motorStyle;
+			}
+
+			public void setMotorStyle(String motorStyle) {
+				this.motorStyle = motorStyle;
+			}
+
+			public String getSafetyBelt() {
+				return this.safetyBelt;
+			}
+
+			public void setSafetyBelt(String safetyBelt) {
+				this.safetyBelt = safetyBelt;
+			}
+
+			public String getPlateColor() {
+				return this.plateColor;
+			}
+
+			public void setPlateColor(String plateColor) {
+				this.plateColor = plateColor;
+			}
+
+			public String getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(String shotTime) {
+				this.shotTime = shotTime;
+			}
+
+			public String getDataSourceId() {
+				return this.dataSourceId;
+			}
+
+			public void setDataSourceId(String dataSourceId) {
+				this.dataSourceId = dataSourceId;
 			}
 		}
 	}

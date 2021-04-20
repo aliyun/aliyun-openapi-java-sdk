@@ -23,9 +23,9 @@ public class UpdateDeviceResponseUnmarshaller {
 	public static UpdateDeviceResponse unmarshall(UpdateDeviceResponse updateDeviceResponse, UnmarshallerContext _ctx) {
 		
 		updateDeviceResponse.setRequestId(_ctx.stringValue("UpdateDeviceResponse.RequestId"));
-		updateDeviceResponse.setCode(_ctx.stringValue("UpdateDeviceResponse.Code"));
 		updateDeviceResponse.setMessage(_ctx.stringValue("UpdateDeviceResponse.Message"));
 		updateDeviceResponse.setData(_ctx.stringValue("UpdateDeviceResponse.Data"));
+		updateDeviceResponse.setCode(_ctx.stringValue("UpdateDeviceResponse.Code"));
 	 
 	 	return updateDeviceResponse;
 	}

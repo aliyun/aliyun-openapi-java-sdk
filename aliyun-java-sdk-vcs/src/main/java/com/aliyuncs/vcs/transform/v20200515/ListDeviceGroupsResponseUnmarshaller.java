@@ -28,8 +28,8 @@ public class ListDeviceGroupsResponseUnmarshaller {
 	public static ListDeviceGroupsResponse unmarshall(ListDeviceGroupsResponse listDeviceGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listDeviceGroupsResponse.setRequestId(_ctx.stringValue("ListDeviceGroupsResponse.RequestId"));
-		listDeviceGroupsResponse.setCode(_ctx.stringValue("ListDeviceGroupsResponse.Code"));
 		listDeviceGroupsResponse.setMessage(_ctx.stringValue("ListDeviceGroupsResponse.Message"));
+		listDeviceGroupsResponse.setCode(_ctx.stringValue("ListDeviceGroupsResponse.Code"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListDeviceGroupsResponse.Data.Length"); i++) {
@@ -39,20 +39,21 @@ public class ListDeviceGroupsResponseUnmarshaller {
 			List<ListItem> list = new ArrayList<ListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDeviceGroupsResponse.Data["+ i +"].List.Length"); j++) {
 				ListItem listItem = new ListItem();
-				listItem.setDeviceGroup(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceGroup"));
-				listItem.setDeviceName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceName"));
-				listItem.setDeviceCode(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceCode"));
-				listItem.setBitRate(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].BitRate"));
-				listItem.setCodingFormat(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].CodingFormat"));
-				listItem.setResolvingPower(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].ResolvingPower"));
-				listItem.setDataSourceType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DataSourceType"));
-				listItem.setRegionName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionName"));
-				listItem.setRegionId(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionId"));
 				listItem.setInstallAddress(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].InstallAddress"));
-				listItem.setDeviceSn(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceSn"));
-				listItem.setDeviceStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStatus"));
-				listItem.setDeviceStreamStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStreamStatus"));
 				listItem.setDeviceComputeStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceComputeStatus"));
+				listItem.setDeviceSn(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceSn"));
+				listItem.setDeviceStreamStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStreamStatus"));
+				listItem.setDeviceGroup(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceGroup"));
+				listItem.setCodingFormat(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].CodingFormat"));
+				listItem.setType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].Type"));
+				listItem.setRegionName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionName"));
+				listItem.setDataSourceType(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DataSourceType"));
+				listItem.setDeviceCode(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceCode"));
+				listItem.setDeviceStatus(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceStatus"));
+				listItem.setRegionId(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].RegionId"));
+				listItem.setBitRate(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].BitRate"));
+				listItem.setResolvingPower(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].ResolvingPower"));
+				listItem.setDeviceName(_ctx.stringValue("ListDeviceGroupsResponse.Data["+ i +"].List["+ j +"].DeviceName"));
 
 				list.add(listItem);
 			}

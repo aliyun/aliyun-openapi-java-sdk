@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPersonDetailResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetPersonDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,19 +67,11 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String picUrl;
-
 		private String personId;
 
+		private String picUrl;
+
 		private List<TagListItem> tagList;
-
-		public String getPicUrl() {
-			return this.picUrl;
-		}
-
-		public void setPicUrl(String picUrl) {
-			this.picUrl = picUrl;
-		}
 
 		public String getPersonId() {
 			return this.personId;
@@ -87,6 +79,14 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 		public void setPersonId(String personId) {
 			this.personId = personId;
+		}
+
+		public String getPicUrl() {
+			return this.picUrl;
+		}
+
+		public void setPicUrl(String picUrl) {
+			this.picUrl = picUrl;
 		}
 
 		public List<TagListItem> getTagList() {
@@ -99,21 +99,13 @@ public class GetPersonDetailResponse extends AcsResponse {
 
 		public static class TagListItem {
 
-			private String tagCode;
-
 			private String tagName;
-
-			private String tagValue;
 
 			private String tagValueId;
 
-			public String getTagCode() {
-				return this.tagCode;
-			}
+			private String tagCode;
 
-			public void setTagCode(String tagCode) {
-				this.tagCode = tagCode;
-			}
+			private String tagValue;
 
 			public String getTagName() {
 				return this.tagName;
@@ -123,20 +115,28 @@ public class GetPersonDetailResponse extends AcsResponse {
 				this.tagName = tagName;
 			}
 
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
-
 			public String getTagValueId() {
 				return this.tagValueId;
 			}
 
 			public void setTagValueId(String tagValueId) {
 				this.tagValueId = tagValueId;
+			}
+
+			public String getTagCode() {
+				return this.tagCode;
+			}
+
+			public void setTagCode(String tagCode) {
+				this.tagCode = tagCode;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

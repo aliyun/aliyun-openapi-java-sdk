@@ -23,9 +23,9 @@ public class UpdateUserResponseUnmarshaller {
 	public static UpdateUserResponse unmarshall(UpdateUserResponse updateUserResponse, UnmarshallerContext _ctx) {
 		
 		updateUserResponse.setRequestId(_ctx.stringValue("UpdateUserResponse.RequestId"));
-		updateUserResponse.setCode(_ctx.stringValue("UpdateUserResponse.Code"));
 		updateUserResponse.setMessage(_ctx.stringValue("UpdateUserResponse.Message"));
 		updateUserResponse.setData(_ctx.stringValue("UpdateUserResponse.Data"));
+		updateUserResponse.setCode(_ctx.stringValue("UpdateUserResponse.Code"));
 	 
 	 	return updateUserResponse;
 	}

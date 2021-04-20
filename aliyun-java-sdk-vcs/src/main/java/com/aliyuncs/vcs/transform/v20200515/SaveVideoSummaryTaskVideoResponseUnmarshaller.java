@@ -23,9 +23,9 @@ public class SaveVideoSummaryTaskVideoResponseUnmarshaller {
 	public static SaveVideoSummaryTaskVideoResponse unmarshall(SaveVideoSummaryTaskVideoResponse saveVideoSummaryTaskVideoResponse, UnmarshallerContext _ctx) {
 		
 		saveVideoSummaryTaskVideoResponse.setRequestId(_ctx.stringValue("SaveVideoSummaryTaskVideoResponse.RequestId"));
-		saveVideoSummaryTaskVideoResponse.setCode(_ctx.stringValue("SaveVideoSummaryTaskVideoResponse.Code"));
-		saveVideoSummaryTaskVideoResponse.setData(_ctx.stringValue("SaveVideoSummaryTaskVideoResponse.Data"));
 		saveVideoSummaryTaskVideoResponse.setMessage(_ctx.stringValue("SaveVideoSummaryTaskVideoResponse.Message"));
+		saveVideoSummaryTaskVideoResponse.setData(_ctx.stringValue("SaveVideoSummaryTaskVideoResponse.Data"));
+		saveVideoSummaryTaskVideoResponse.setCode(_ctx.stringValue("SaveVideoSummaryTaskVideoResponse.Code"));
 	 
 	 	return saveVideoSummaryTaskVideoResponse;
 	}

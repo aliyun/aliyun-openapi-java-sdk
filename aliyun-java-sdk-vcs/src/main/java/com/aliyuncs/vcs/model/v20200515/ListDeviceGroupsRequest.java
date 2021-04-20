@@ -25,6 +25,8 @@ import com.aliyuncs.vcs.Endpoint;
 public class ListDeviceGroupsRequest extends RpcAcsRequest<ListDeviceGroupsResponse> {
 	   
 
+	private String dataSourceType;
+
 	private Integer isPage;
 
 	private Integer pageNum;
@@ -39,12 +41,23 @@ public class ListDeviceGroupsRequest extends RpcAcsRequest<ListDeviceGroupsRespo
 
 	private String group;
 	public ListDeviceGroupsRequest() {
-		super("Vcs", "2020-05-15", "ListDeviceGroups", "vcs");
+		super("Vcs", "2020-05-15", "ListDeviceGroups");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDataSourceType() {
+		return this.dataSourceType;
+	}
+
+	public void setDataSourceType(String dataSourceType) {
+		this.dataSourceType = dataSourceType;
+		if(dataSourceType != null){
+			putBodyParameter("DataSourceType", dataSourceType);
+		}
 	}
 
 	public Integer getIsPage() {

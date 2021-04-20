@@ -24,15 +24,15 @@ public class UpdateUserGroupResponseUnmarshaller {
 	public static UpdateUserGroupResponse unmarshall(UpdateUserGroupResponse updateUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		updateUserGroupResponse.setRequestId(_ctx.stringValue("UpdateUserGroupResponse.RequestId"));
-		updateUserGroupResponse.setCode(_ctx.stringValue("UpdateUserGroupResponse.Code"));
 		updateUserGroupResponse.setMessage(_ctx.stringValue("UpdateUserGroupResponse.Message"));
+		updateUserGroupResponse.setCode(_ctx.stringValue("UpdateUserGroupResponse.Code"));
 
 		Data data = new Data();
+		data.setParentUserGroupId(_ctx.stringValue("UpdateUserGroupResponse.Data.ParentUserGroupId"));
+		data.setUserCount(_ctx.longValue("UpdateUserGroupResponse.Data.UserCount"));
+		data.setUserGroupName(_ctx.stringValue("UpdateUserGroupResponse.Data.UserGroupName"));
 		data.setUserGroupId(_ctx.longValue("UpdateUserGroupResponse.Data.UserGroupId"));
 		data.setIsvSubId(_ctx.stringValue("UpdateUserGroupResponse.Data.IsvSubId"));
-		data.setUserGroupName(_ctx.stringValue("UpdateUserGroupResponse.Data.UserGroupName"));
-		data.setUserCount(_ctx.longValue("UpdateUserGroupResponse.Data.UserCount"));
-		data.setParentUserGroupId(_ctx.stringValue("UpdateUserGroupResponse.Data.ParentUserGroupId"));
 		updateUserGroupResponse.setData(data);
 	 
 	 	return updateUserGroupResponse;

@@ -15,8 +15,6 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -27,7 +25,7 @@ import com.aliyuncs.vcs.Endpoint;
 public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 	   
 
-	private List<Object> userList;
+	private String userList;
 
 	private String corpId;
 
@@ -39,7 +37,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private String faceImageUrl;
 
-	private List<Object> personList;
+	private String personList;
 
 	private Long pageNumber;
 
@@ -63,7 +61,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private String userName;
 	public ListUsersRequest() {
-		super("Vcs", "2020-05-15", "ListUsers", "vcs");
+		super("Vcs", "2020-05-15", "ListUsers");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,14 +69,14 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		} catch (Exception e) {}
 	}
 
-	public List<Object> getUserList() {
+	public String getUserList() {
 		return this.userList;
 	}
 
-	public void setUserList(List<Object> userList) {
+	public void setUserList(String userList) {
 		this.userList = userList;
 		if(userList != null){
-			putBodyParameter("UserList", new Gson().toJson(userList));
+			putBodyParameter("UserList", userList);
 		}
 	}
 
@@ -137,14 +135,14 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 		}
 	}
 
-	public List<Object> getPersonList() {
+	public String getPersonList() {
 		return this.personList;
 	}
 
-	public void setPersonList(List<Object> personList) {
+	public void setPersonList(String personList) {
 		this.personList = personList;
 		if(personList != null){
-			putBodyParameter("PersonList", new Gson().toJson(personList));
+			putBodyParameter("PersonList", personList);
 		}
 	}
 

@@ -29,8 +29,8 @@ public class GetMonitorResultResponseUnmarshaller {
 	public static GetMonitorResultResponse unmarshall(GetMonitorResultResponse getMonitorResultResponse, UnmarshallerContext _ctx) {
 		
 		getMonitorResultResponse.setRequestId(_ctx.stringValue("GetMonitorResultResponse.RequestId"));
-		getMonitorResultResponse.setCode(_ctx.stringValue("GetMonitorResultResponse.Code"));
 		getMonitorResultResponse.setMessage(_ctx.stringValue("GetMonitorResultResponse.Message"));
+		getMonitorResultResponse.setCode(_ctx.stringValue("GetMonitorResultResponse.Code"));
 
 		Data data = new Data();
 		data.setMaxId(_ctx.stringValue("GetMonitorResultResponse.Data.MaxId"));
@@ -38,17 +38,17 @@ public class GetMonitorResultResponseUnmarshaller {
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetMonitorResultResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setRightBottomY(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].RightBottomY"));
-			recordsItem.setRightBottomX(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].RightBottomX"));
-			recordsItem.setLeftUpY(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].LeftUpY"));
 			recordsItem.setLeftUpX(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].LeftUpX"));
-			recordsItem.setGbId(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].GbId"));
+			recordsItem.setLeftUpY(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].LeftUpY"));
 			recordsItem.setScore(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].Score"));
-			recordsItem.setPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].PicUrl"));
-			recordsItem.setShotTime(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ShotTime"));
-			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].MonitorPicUrl"));
-			recordsItem.setTargetPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].TargetPicUrl"));
 			recordsItem.setTaskId(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].TaskId"));
+			recordsItem.setTargetPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].TargetPicUrl"));
+			recordsItem.setRightBottomX(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].RightBottomX"));
+			recordsItem.setRightBottomY(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].RightBottomY"));
+			recordsItem.setGbId(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].GbId"));
+			recordsItem.setMonitorPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].MonitorPicUrl"));
+			recordsItem.setShotTime(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setPicUrl(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].PicUrl"));
 
 			ExtendInfo extendInfo = new ExtendInfo();
 			extendInfo.setPlateNo(_ctx.stringValue("GetMonitorResultResponse.Data.Records["+ i +"].ExtendInfo.PlateNo"));

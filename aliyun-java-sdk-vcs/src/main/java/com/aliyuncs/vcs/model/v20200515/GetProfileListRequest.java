@@ -15,8 +15,6 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -27,7 +25,7 @@ import com.aliyuncs.vcs.Endpoint;
 public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse> {
 	   
 
-	private List<Object> profileIdList;
+	private String profileIdList;
 
 	private String corpId;
 
@@ -45,7 +43,7 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 
 	private Long pageSize;
 
-	private List<Object> personIdList;
+	private String personIdList;
 
 	private String liveAddress;
 
@@ -63,7 +61,7 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 
 	private String matchingRateThreshold;
 	public GetProfileListRequest() {
-		super("Vcs", "2020-05-15", "GetProfileList", "vcs");
+		super("Vcs", "2020-05-15", "GetProfileList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -71,14 +69,14 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 		} catch (Exception e) {}
 	}
 
-	public List<Object> getProfileIdList() {
+	public String getProfileIdList() {
 		return this.profileIdList;
 	}
 
-	public void setProfileIdList(List<Object> profileIdList) {
+	public void setProfileIdList(String profileIdList) {
 		this.profileIdList = profileIdList;
 		if(profileIdList != null){
-			putBodyParameter("ProfileIdList", new Gson().toJson(profileIdList));
+			putBodyParameter("ProfileIdList", profileIdList);
 		}
 	}
 
@@ -170,14 +168,14 @@ public class GetProfileListRequest extends RpcAcsRequest<GetProfileListResponse>
 		}
 	}
 
-	public List<Object> getPersonIdList() {
+	public String getPersonIdList() {
 		return this.personIdList;
 	}
 
-	public void setPersonIdList(List<Object> personIdList) {
+	public void setPersonIdList(String personIdList) {
 		this.personIdList = personIdList;
 		if(personIdList != null){
-			putBodyParameter("PersonIdList", new Gson().toJson(personIdList));
+			putBodyParameter("PersonIdList", personIdList);
 		}
 	}
 

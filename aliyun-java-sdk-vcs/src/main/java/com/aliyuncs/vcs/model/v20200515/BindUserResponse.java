@@ -24,28 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class BindUserResponse extends AcsResponse {
 
-	private String code;
-
-	private Boolean data;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private Boolean data;
 
-	public String getCode() {
-		return this.code;
+	private String code;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getData() {
-		return this.data;
-	}
-
-	public void setData(Boolean data) {
-		this.data = data;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -56,12 +48,20 @@ public class BindUserResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public Boolean getData() {
+		return this.data;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setData(Boolean data) {
+		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

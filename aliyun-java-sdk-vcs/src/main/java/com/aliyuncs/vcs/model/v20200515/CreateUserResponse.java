@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateUserResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class CreateUserResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,47 +66,31 @@ public class CreateUserResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer userId;
-
-		private String isvSubId;
-
 		private String userName;
-
-		private Integer userGroupId;
-
-		private String idNumber;
-
-		private String faceImageUrl;
 
 		private String address;
 
-		private String age;
+		private String phoneNo;
+
+		private String idNumber;
+
+		private Integer userId;
+
+		private Integer userGroupId;
+
+		private String isvSubId;
+
+		private String attachment;
 
 		private String gender;
 
 		private String plateNo;
 
-		private String phoneNo;
-
-		private String attachment;
-
 		private String bizId;
 
-		public Integer getUserId() {
-			return this.userId;
-		}
+		private String age;
 
-		public void setUserId(Integer userId) {
-			this.userId = userId;
-		}
-
-		public String getIsvSubId() {
-			return this.isvSubId;
-		}
-
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
-		}
+		private String faceImageUrl;
 
 		public String getUserName() {
 			return this.userName;
@@ -114,30 +98,6 @@ public class CreateUserResponse extends AcsResponse {
 
 		public void setUserName(String userName) {
 			this.userName = userName;
-		}
-
-		public Integer getUserGroupId() {
-			return this.userGroupId;
-		}
-
-		public void setUserGroupId(Integer userGroupId) {
-			this.userGroupId = userGroupId;
-		}
-
-		public String getIdNumber() {
-			return this.idNumber;
-		}
-
-		public void setIdNumber(String idNumber) {
-			this.idNumber = idNumber;
-		}
-
-		public String getFaceImageUrl() {
-			return this.faceImageUrl;
-		}
-
-		public void setFaceImageUrl(String faceImageUrl) {
-			this.faceImageUrl = faceImageUrl;
 		}
 
 		public String getAddress() {
@@ -148,12 +108,52 @@ public class CreateUserResponse extends AcsResponse {
 			this.address = address;
 		}
 
-		public String getAge() {
-			return this.age;
+		public String getPhoneNo() {
+			return this.phoneNo;
 		}
 
-		public void setAge(String age) {
-			this.age = age;
+		public void setPhoneNo(String phoneNo) {
+			this.phoneNo = phoneNo;
+		}
+
+		public String getIdNumber() {
+			return this.idNumber;
+		}
+
+		public void setIdNumber(String idNumber) {
+			this.idNumber = idNumber;
+		}
+
+		public Integer getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Integer userId) {
+			this.userId = userId;
+		}
+
+		public Integer getUserGroupId() {
+			return this.userGroupId;
+		}
+
+		public void setUserGroupId(Integer userGroupId) {
+			this.userGroupId = userGroupId;
+		}
+
+		public String getIsvSubId() {
+			return this.isvSubId;
+		}
+
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
+		}
+
+		public String getAttachment() {
+			return this.attachment;
+		}
+
+		public void setAttachment(String attachment) {
+			this.attachment = attachment;
 		}
 
 		public String getGender() {
@@ -172,28 +172,28 @@ public class CreateUserResponse extends AcsResponse {
 			this.plateNo = plateNo;
 		}
 
-		public String getPhoneNo() {
-			return this.phoneNo;
-		}
-
-		public void setPhoneNo(String phoneNo) {
-			this.phoneNo = phoneNo;
-		}
-
-		public String getAttachment() {
-			return this.attachment;
-		}
-
-		public void setAttachment(String attachment) {
-			this.attachment = attachment;
-		}
-
 		public String getBizId() {
 			return this.bizId;
 		}
 
 		public void setBizId(String bizId) {
 			this.bizId = bizId;
+		}
+
+		public String getAge() {
+			return this.age;
+		}
+
+		public void setAge(String age) {
+			this.age = age;
+		}
+
+		public String getFaceImageUrl() {
+			return this.faceImageUrl;
+		}
+
+		public void setFaceImageUrl(String faceImageUrl) {
+			this.faceImageUrl = faceImageUrl;
 		}
 	}
 

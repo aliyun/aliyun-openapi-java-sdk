@@ -25,7 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCorpGroupMetricsResponse extends AcsResponse {
 
-	private String code;
+	private Integer totalCount;
+
+	private Integer pageSize;
 
 	private String message;
 
@@ -33,20 +35,26 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 	private Integer pageNumber;
 
-	private Integer pageSize;
-
-	private Integer totalCount;
+	private String code;
 
 	private String success;
 
 	private List<DataItem> data;
 
-	public String getCode() {
-		return this.code;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getMessage() {
@@ -73,20 +81,12 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -107,17 +107,11 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String dateId;
+		private String corpId;
 
-		private String tagMetrics;
-
-		private String tagCode;
-
-		private String tagValue;
+		private String personID;
 
 		private String corpGroupId;
-
-		private String corpId;
 
 		private String deviceGroupId;
 
@@ -125,38 +119,28 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 		private String userGroupId;
 
-		private String personID;
+		private String tagMetrics;
 
-		public String getDateId() {
-			return this.dateId;
+		private String tagCode;
+
+		private String tagValue;
+
+		private String dateId;
+
+		public String getCorpId() {
+			return this.corpId;
 		}
 
-		public void setDateId(String dateId) {
-			this.dateId = dateId;
+		public void setCorpId(String corpId) {
+			this.corpId = corpId;
 		}
 
-		public String getTagMetrics() {
-			return this.tagMetrics;
+		public String getPersonID() {
+			return this.personID;
 		}
 
-		public void setTagMetrics(String tagMetrics) {
-			this.tagMetrics = tagMetrics;
-		}
-
-		public String getTagCode() {
-			return this.tagCode;
-		}
-
-		public void setTagCode(String tagCode) {
-			this.tagCode = tagCode;
-		}
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setPersonID(String personID) {
+			this.personID = personID;
 		}
 
 		public String getCorpGroupId() {
@@ -165,14 +149,6 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 
 		public void setCorpGroupId(String corpGroupId) {
 			this.corpGroupId = corpGroupId;
-		}
-
-		public String getCorpId() {
-			return this.corpId;
-		}
-
-		public void setCorpId(String corpId) {
-			this.corpId = corpId;
 		}
 
 		public String getDeviceGroupId() {
@@ -199,12 +175,36 @@ public class ListCorpGroupMetricsResponse extends AcsResponse {
 			this.userGroupId = userGroupId;
 		}
 
-		public String getPersonID() {
-			return this.personID;
+		public String getTagMetrics() {
+			return this.tagMetrics;
 		}
 
-		public void setPersonID(String personID) {
-			this.personID = personID;
+		public void setTagMetrics(String tagMetrics) {
+			this.tagMetrics = tagMetrics;
+		}
+
+		public String getTagCode() {
+			return this.tagCode;
+		}
+
+		public void setTagCode(String tagCode) {
+			this.tagCode = tagCode;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
+		}
+
+		public String getDateId() {
+			return this.dateId;
+		}
+
+		public void setDateId(String dateId) {
+			this.dateId = dateId;
 		}
 	}
 

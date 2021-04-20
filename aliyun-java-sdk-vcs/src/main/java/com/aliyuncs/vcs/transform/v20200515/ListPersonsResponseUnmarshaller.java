@@ -29,14 +29,14 @@ public class ListPersonsResponseUnmarshaller {
 	public static ListPersonsResponse unmarshall(ListPersonsResponse listPersonsResponse, UnmarshallerContext _ctx) {
 		
 		listPersonsResponse.setRequestId(_ctx.stringValue("ListPersonsResponse.RequestId"));
-		listPersonsResponse.setCode(_ctx.stringValue("ListPersonsResponse.Code"));
 		listPersonsResponse.setMessage(_ctx.stringValue("ListPersonsResponse.Message"));
+		listPersonsResponse.setCode(_ctx.stringValue("ListPersonsResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNo(_ctx.stringValue("ListPersonsResponse.Data.PageNo"));
-		data.setPageSize(_ctx.stringValue("ListPersonsResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.stringValue("ListPersonsResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.stringValue("ListPersonsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.stringValue("ListPersonsResponse.Data.TotalPage"));
+		data.setPageNo(_ctx.stringValue("ListPersonsResponse.Data.PageNo"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonsResponse.Data.Records.Length"); i++) {
@@ -48,10 +48,10 @@ public class ListPersonsResponseUnmarshaller {
 			List<TagListItem> tagList = new ArrayList<TagListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListPersonsResponse.Data.Records["+ i +"].TagList.Length"); j++) {
 				TagListItem tagListItem = new TagListItem();
-				tagListItem.setTagCode(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagCode"));
 				tagListItem.setTagName(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagName"));
-				tagListItem.setTagValue(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagValue"));
 				tagListItem.setTagValueId(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagValueId"));
+				tagListItem.setTagCode(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagCode"));
+				tagListItem.setTagValue(_ctx.stringValue("ListPersonsResponse.Data.Records["+ i +"].TagList["+ j +"].TagValue"));
 
 				tagList.add(tagListItem);
 			}

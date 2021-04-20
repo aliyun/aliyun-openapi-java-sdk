@@ -23,9 +23,9 @@ public class GetVideoSummaryTaskResultResponseUnmarshaller {
 	public static GetVideoSummaryTaskResultResponse unmarshall(GetVideoSummaryTaskResultResponse getVideoSummaryTaskResultResponse, UnmarshallerContext _ctx) {
 		
 		getVideoSummaryTaskResultResponse.setRequestId(_ctx.stringValue("GetVideoSummaryTaskResultResponse.RequestId"));
-		getVideoSummaryTaskResultResponse.setCode(_ctx.stringValue("GetVideoSummaryTaskResultResponse.Code"));
-		getVideoSummaryTaskResultResponse.setData(_ctx.stringValue("GetVideoSummaryTaskResultResponse.Data"));
 		getVideoSummaryTaskResultResponse.setMessage(_ctx.stringValue("GetVideoSummaryTaskResultResponse.Message"));
+		getVideoSummaryTaskResultResponse.setData(_ctx.stringValue("GetVideoSummaryTaskResultResponse.Data"));
+		getVideoSummaryTaskResultResponse.setCode(_ctx.stringValue("GetVideoSummaryTaskResultResponse.Code"));
 	 
 	 	return getVideoSummaryTaskResultResponse;
 	}

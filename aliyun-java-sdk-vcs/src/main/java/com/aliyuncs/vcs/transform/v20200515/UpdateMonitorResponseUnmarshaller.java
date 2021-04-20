@@ -23,9 +23,9 @@ public class UpdateMonitorResponseUnmarshaller {
 	public static UpdateMonitorResponse unmarshall(UpdateMonitorResponse updateMonitorResponse, UnmarshallerContext _ctx) {
 		
 		updateMonitorResponse.setRequestId(_ctx.stringValue("UpdateMonitorResponse.RequestId"));
-		updateMonitorResponse.setCode(_ctx.stringValue("UpdateMonitorResponse.Code"));
-		updateMonitorResponse.setData(_ctx.stringValue("UpdateMonitorResponse.Data"));
 		updateMonitorResponse.setMessage(_ctx.stringValue("UpdateMonitorResponse.Message"));
+		updateMonitorResponse.setData(_ctx.stringValue("UpdateMonitorResponse.Data"));
+		updateMonitorResponse.setCode(_ctx.stringValue("UpdateMonitorResponse.Code"));
 	 
 	 	return updateMonitorResponse;
 	}

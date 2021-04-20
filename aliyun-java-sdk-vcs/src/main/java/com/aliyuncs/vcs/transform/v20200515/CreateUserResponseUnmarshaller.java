@@ -24,23 +24,23 @@ public class CreateUserResponseUnmarshaller {
 	public static CreateUserResponse unmarshall(CreateUserResponse createUserResponse, UnmarshallerContext _ctx) {
 		
 		createUserResponse.setRequestId(_ctx.stringValue("CreateUserResponse.RequestId"));
-		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
 		createUserResponse.setMessage(_ctx.stringValue("CreateUserResponse.Message"));
+		createUserResponse.setCode(_ctx.stringValue("CreateUserResponse.Code"));
 
 		Data data = new Data();
-		data.setUserId(_ctx.integerValue("CreateUserResponse.Data.UserId"));
-		data.setIsvSubId(_ctx.stringValue("CreateUserResponse.Data.IsvSubId"));
 		data.setUserName(_ctx.stringValue("CreateUserResponse.Data.UserName"));
-		data.setUserGroupId(_ctx.integerValue("CreateUserResponse.Data.UserGroupId"));
-		data.setIdNumber(_ctx.stringValue("CreateUserResponse.Data.IdNumber"));
-		data.setFaceImageUrl(_ctx.stringValue("CreateUserResponse.Data.FaceImageUrl"));
 		data.setAddress(_ctx.stringValue("CreateUserResponse.Data.Address"));
-		data.setAge(_ctx.stringValue("CreateUserResponse.Data.Age"));
+		data.setPhoneNo(_ctx.stringValue("CreateUserResponse.Data.PhoneNo"));
+		data.setIdNumber(_ctx.stringValue("CreateUserResponse.Data.IdNumber"));
+		data.setUserId(_ctx.integerValue("CreateUserResponse.Data.UserId"));
+		data.setUserGroupId(_ctx.integerValue("CreateUserResponse.Data.UserGroupId"));
+		data.setIsvSubId(_ctx.stringValue("CreateUserResponse.Data.IsvSubId"));
+		data.setAttachment(_ctx.stringValue("CreateUserResponse.Data.Attachment"));
 		data.setGender(_ctx.stringValue("CreateUserResponse.Data.Gender"));
 		data.setPlateNo(_ctx.stringValue("CreateUserResponse.Data.PlateNo"));
-		data.setPhoneNo(_ctx.stringValue("CreateUserResponse.Data.PhoneNo"));
-		data.setAttachment(_ctx.stringValue("CreateUserResponse.Data.Attachment"));
 		data.setBizId(_ctx.stringValue("CreateUserResponse.Data.BizId"));
+		data.setAge(_ctx.stringValue("CreateUserResponse.Data.Age"));
+		data.setFaceImageUrl(_ctx.stringValue("CreateUserResponse.Data.FaceImageUrl"));
 		createUserResponse.setData(data);
 	 
 	 	return createUserResponse;

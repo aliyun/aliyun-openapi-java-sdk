@@ -28,29 +28,30 @@ public class DescribeDevicesResponseUnmarshaller {
 	public static DescribeDevicesResponse unmarshall(DescribeDevicesResponse describeDevicesResponse, UnmarshallerContext _ctx) {
 		
 		describeDevicesResponse.setRequestId(_ctx.stringValue("DescribeDevicesResponse.RequestId"));
-		describeDevicesResponse.setCode(_ctx.stringValue("DescribeDevicesResponse.Code"));
 		describeDevicesResponse.setMessage(_ctx.stringValue("DescribeDevicesResponse.Message"));
+		describeDevicesResponse.setCode(_ctx.stringValue("DescribeDevicesResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNum(_ctx.integerValue("DescribeDevicesResponse.Data.PageNum"));
-		data.setPageSize(_ctx.integerValue("DescribeDevicesResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("DescribeDevicesResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("DescribeDevicesResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("DescribeDevicesResponse.Data.TotalPage"));
+		data.setPageNum(_ctx.integerValue("DescribeDevicesResponse.Data.PageNum"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDevicesResponse.Data.Records.Length"); i++) {
 			Record record = new Record();
 			record.setInProtocol(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].InProtocol"));
-			record.setCreateTime(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].CreateTime"));
+			record.setStatus(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Status"));
+			record.setDeviceType(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceType"));
+			record.setCorpId(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].CorpId"));
+			record.setCapturedPictureId(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].CapturedPictureId"));
 			record.setDeviceAddress(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceAddress"));
 			record.setDeviceId(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceId"));
-			record.setDeviceName(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceName"));
-			record.setDeviceType(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceType"));
+			record.setCreateTime(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].CreateTime"));
 			record.setLatitude(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Latitude"));
-			record.setLongitude(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Longitude"));
-			record.setStatus(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Status"));
 			record.setVendor(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Vendor"));
-			record.setCorpId(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].CorpId"));
+			record.setLongitude(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].Longitude"));
+			record.setDeviceName(_ctx.stringValue("DescribeDevicesResponse.Data.Records["+ i +"].DeviceName"));
 
 			records.add(record);
 		}

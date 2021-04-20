@@ -27,24 +27,24 @@ public class ListPersonVisitCountResponseUnmarshaller {
 	public static ListPersonVisitCountResponse unmarshall(ListPersonVisitCountResponse listPersonVisitCountResponse, UnmarshallerContext _ctx) {
 		
 		listPersonVisitCountResponse.setRequestId(_ctx.stringValue("ListPersonVisitCountResponse.RequestId"));
-		listPersonVisitCountResponse.setCode(_ctx.stringValue("ListPersonVisitCountResponse.Code"));
+		listPersonVisitCountResponse.setTotalCount(_ctx.stringValue("ListPersonVisitCountResponse.TotalCount"));
+		listPersonVisitCountResponse.setPageSize(_ctx.stringValue("ListPersonVisitCountResponse.PageSize"));
 		listPersonVisitCountResponse.setMessage(_ctx.stringValue("ListPersonVisitCountResponse.Message"));
 		listPersonVisitCountResponse.setPageNo(_ctx.stringValue("ListPersonVisitCountResponse.PageNo"));
-		listPersonVisitCountResponse.setPageSize(_ctx.stringValue("ListPersonVisitCountResponse.PageSize"));
+		listPersonVisitCountResponse.setCode(_ctx.stringValue("ListPersonVisitCountResponse.Code"));
 		listPersonVisitCountResponse.setSuccess(_ctx.stringValue("ListPersonVisitCountResponse.Success"));
-		listPersonVisitCountResponse.setTotalCount(_ctx.stringValue("ListPersonVisitCountResponse.TotalCount"));
 
 		List<Datas> data = new ArrayList<Datas>();
 		for (int i = 0; i < _ctx.lengthValue("ListPersonVisitCountResponse.Data.Length"); i++) {
 			Datas datas = new Datas();
 			datas.setCorpId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].CorpId"));
-			datas.setDeviceId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].DeviceId"));
-			datas.setGroupId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].GroupId"));
 			datas.setPersonId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].PersonId"));
-			datas.setTagCode(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].TagCode"));
+			datas.setDeviceId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].DeviceId"));
 			datas.setTagMetrics(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].TagMetrics"));
-			datas.setHourId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].HourId"));
+			datas.setTagCode(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].TagCode"));
 			datas.setDayId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].DayId"));
+			datas.setHourId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].HourId"));
+			datas.setGroupId(_ctx.stringValue("ListPersonVisitCountResponse.Data["+ i +"].GroupId"));
 
 			data.add(datas);
 		}

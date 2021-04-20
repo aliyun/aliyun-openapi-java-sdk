@@ -23,9 +23,9 @@ public class ReportDeviceCapacityResponseUnmarshaller {
 	public static ReportDeviceCapacityResponse unmarshall(ReportDeviceCapacityResponse reportDeviceCapacityResponse, UnmarshallerContext _ctx) {
 		
 		reportDeviceCapacityResponse.setRequestId(_ctx.stringValue("ReportDeviceCapacityResponse.RequestId"));
-		reportDeviceCapacityResponse.setCode(_ctx.stringValue("ReportDeviceCapacityResponse.Code"));
 		reportDeviceCapacityResponse.setMessage(_ctx.stringValue("ReportDeviceCapacityResponse.Message"));
 		reportDeviceCapacityResponse.setRetryInterval(_ctx.stringValue("ReportDeviceCapacityResponse.RetryInterval"));
+		reportDeviceCapacityResponse.setCode(_ctx.stringValue("ReportDeviceCapacityResponse.Code"));
 	 
 	 	return reportDeviceCapacityResponse;
 	}

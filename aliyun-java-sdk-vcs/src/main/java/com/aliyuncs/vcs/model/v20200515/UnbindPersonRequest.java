@@ -31,7 +31,7 @@ public class UnbindPersonRequest extends RpcAcsRequest<UnbindPersonResponse> {
 
 	private Long profileId;
 	public UnbindPersonRequest() {
-		super("Vcs", "2020-05-15", "UnbindPerson", "vcs");
+		super("Vcs", "2020-05-15", "UnbindPerson");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

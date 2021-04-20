@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCorpGroupsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListCorpGroupsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class ListCorpGroupsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNumber;
+		private Long totalCount;
 
 		private Long pageSize;
 
-		private Long totalCount;
-
 		private Long totalPage;
+
+		private Long pageNumber;
 
 		private List<String> records;
 
-		public Long getPageNumber() {
-			return this.pageNumber;
+		public Long getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Long pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Long getPageSize() {
@@ -93,20 +93,20 @@ public class ListCorpGroupsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Long getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Long totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Long getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Long pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<String> getRecords() {

@@ -24,23 +24,23 @@ public class GetProfileDetailResponseUnmarshaller {
 	public static GetProfileDetailResponse unmarshall(GetProfileDetailResponse getProfileDetailResponse, UnmarshallerContext _ctx) {
 		
 		getProfileDetailResponse.setRequestId(_ctx.stringValue("GetProfileDetailResponse.RequestId"));
-		getProfileDetailResponse.setCode(_ctx.stringValue("GetProfileDetailResponse.Code"));
 		getProfileDetailResponse.setMessage(_ctx.stringValue("GetProfileDetailResponse.Message"));
+		getProfileDetailResponse.setCode(_ctx.stringValue("GetProfileDetailResponse.Code"));
 
 		Data data = new Data();
-		data.setLiveAddress(_ctx.stringValue("GetProfileDetailResponse.Data.LiveAddress"));
 		data.setSceneType(_ctx.stringValue("GetProfileDetailResponse.Data.SceneType"));
-		data.setBizId(_ctx.stringValue("GetProfileDetailResponse.Data.BizId"));
-		data.setFaceUrl(_ctx.stringValue("GetProfileDetailResponse.Data.FaceUrl"));
-		data.setGender(_ctx.stringValue("GetProfileDetailResponse.Data.Gender"));
+		data.setProfileId(_ctx.integerValue("GetProfileDetailResponse.Data.ProfileId"));
+		data.setPersonId(_ctx.stringValue("GetProfileDetailResponse.Data.PersonId"));
+		data.setPhoneNo(_ctx.stringValue("GetProfileDetailResponse.Data.PhoneNo"));
 		data.setIdNumber(_ctx.stringValue("GetProfileDetailResponse.Data.IdNumber"));
 		data.setIsvSubId(_ctx.stringValue("GetProfileDetailResponse.Data.IsvSubId"));
-		data.setPhoneNo(_ctx.stringValue("GetProfileDetailResponse.Data.PhoneNo"));
+		data.setGender(_ctx.stringValue("GetProfileDetailResponse.Data.Gender"));
 		data.setPlateNo(_ctx.stringValue("GetProfileDetailResponse.Data.PlateNo"));
+		data.setBizId(_ctx.stringValue("GetProfileDetailResponse.Data.BizId"));
 		data.setCatalogId(_ctx.integerValue("GetProfileDetailResponse.Data.CatalogId"));
-		data.setProfileId(_ctx.integerValue("GetProfileDetailResponse.Data.ProfileId"));
+		data.setLiveAddress(_ctx.stringValue("GetProfileDetailResponse.Data.LiveAddress"));
+		data.setFaceUrl(_ctx.stringValue("GetProfileDetailResponse.Data.FaceUrl"));
 		data.setName(_ctx.stringValue("GetProfileDetailResponse.Data.Name"));
-		data.setPersonId(_ctx.stringValue("GetProfileDetailResponse.Data.PersonId"));
 		getProfileDetailResponse.setData(data);
 	 
 	 	return getProfileDetailResponse;

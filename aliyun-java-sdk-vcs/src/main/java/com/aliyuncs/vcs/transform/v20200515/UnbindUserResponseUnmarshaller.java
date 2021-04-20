@@ -23,9 +23,9 @@ public class UnbindUserResponseUnmarshaller {
 	public static UnbindUserResponse unmarshall(UnbindUserResponse unbindUserResponse, UnmarshallerContext _ctx) {
 		
 		unbindUserResponse.setRequestId(_ctx.stringValue("UnbindUserResponse.RequestId"));
-		unbindUserResponse.setCode(_ctx.stringValue("UnbindUserResponse.Code"));
-		unbindUserResponse.setData(_ctx.booleanValue("UnbindUserResponse.Data"));
 		unbindUserResponse.setMessage(_ctx.stringValue("UnbindUserResponse.Message"));
+		unbindUserResponse.setData(_ctx.booleanValue("UnbindUserResponse.Data"));
+		unbindUserResponse.setCode(_ctx.stringValue("UnbindUserResponse.Code"));
 	 
 	 	return unbindUserResponse;
 	}

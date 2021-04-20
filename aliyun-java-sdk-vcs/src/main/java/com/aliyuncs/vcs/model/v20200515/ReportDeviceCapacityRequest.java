@@ -42,7 +42,7 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 
 	private String longitude;
 	public ReportDeviceCapacityRequest() {
-		super("Vcs", "2020-05-15", "ReportDeviceCapacity", "vcs");
+		super("Vcs", "2020-05-15", "ReportDeviceCapacity");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -61,8 +61,8 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".BitrateRange" , streamCapacitiess.get(depth1).getBitrateRange());
 				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".MaxStream" , streamCapacitiess.get(depth1).getMaxStream());
 				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".EncodeFormat" , streamCapacitiess.get(depth1).getEncodeFormat());
-				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".MaxFrameRate" , streamCapacitiess.get(depth1).getMaxFrameRate());
 				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".GovLengthRange" , streamCapacitiess.get(depth1).getGovLengthRange());
+				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".MaxFrameRate" , streamCapacitiess.get(depth1).getMaxFrameRate());
 				putBodyParameter("StreamCapacities." + (depth1 + 1) + ".Resolution" , streamCapacitiess.get(depth1).getResolution());
 			}
 		}	
@@ -153,9 +153,9 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 
 		private String encodeFormat;
 
-		private String maxFrameRate;
-
 		private String govLengthRange;
+
+		private String maxFrameRate;
 
 		private String resolution;
 
@@ -183,20 +183,20 @@ public class ReportDeviceCapacityRequest extends RpcAcsRequest<ReportDeviceCapac
 			this.encodeFormat = encodeFormat;
 		}
 
-		public String getMaxFrameRate() {
-			return this.maxFrameRate;
-		}
-
-		public void setMaxFrameRate(String maxFrameRate) {
-			this.maxFrameRate = maxFrameRate;
-		}
-
 		public String getGovLengthRange() {
 			return this.govLengthRange;
 		}
 
 		public void setGovLengthRange(String govLengthRange) {
 			this.govLengthRange = govLengthRange;
+		}
+
+		public String getMaxFrameRate() {
+			return this.maxFrameRate;
+		}
+
+		public void setMaxFrameRate(String maxFrameRate) {
+			this.maxFrameRate = maxFrameRate;
 		}
 
 		public String getResolution() {

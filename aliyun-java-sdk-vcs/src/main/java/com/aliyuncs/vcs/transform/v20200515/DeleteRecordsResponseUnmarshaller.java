@@ -23,9 +23,9 @@ public class DeleteRecordsResponseUnmarshaller {
 	public static DeleteRecordsResponse unmarshall(DeleteRecordsResponse deleteRecordsResponse, UnmarshallerContext _ctx) {
 		
 		deleteRecordsResponse.setRequestId(_ctx.stringValue("DeleteRecordsResponse.RequestId"));
-		deleteRecordsResponse.setCode(_ctx.stringValue("DeleteRecordsResponse.Code"));
 		deleteRecordsResponse.setMessage(_ctx.stringValue("DeleteRecordsResponse.Message"));
 		deleteRecordsResponse.setData(_ctx.stringValue("DeleteRecordsResponse.Data"));
+		deleteRecordsResponse.setCode(_ctx.stringValue("DeleteRecordsResponse.Code"));
 	 
 	 	return deleteRecordsResponse;
 	}

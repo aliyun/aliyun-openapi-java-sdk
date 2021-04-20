@@ -29,23 +29,23 @@ public class RecognizeImageResponseUnmarshaller {
 	public static RecognizeImageResponse unmarshall(RecognizeImageResponse recognizeImageResponse, UnmarshallerContext _ctx) {
 		
 		recognizeImageResponse.setRequestId(_ctx.stringValue("RecognizeImageResponse.RequestId"));
-		recognizeImageResponse.setCode(_ctx.stringValue("RecognizeImageResponse.Code"));
 		recognizeImageResponse.setMessage(_ctx.stringValue("RecognizeImageResponse.Message"));
+		recognizeImageResponse.setCode(_ctx.stringValue("RecognizeImageResponse.Code"));
 
 		Data data = new Data();
 
 		List<Body> bodyList = new ArrayList<Body>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeImageResponse.Data.BodyList.Length"); i++) {
 			Body body = new Body();
-			body.setFeature(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].Feature"));
-			body.setFileName(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].FileName"));
-			body.setImageBaseSixFour(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].ImageBaseSixFour"));
-			body.setLeftTopX(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].LeftTopX"));
-			body.setLeftTopY(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].LeftTopY"));
-			body.setLocalFeature(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].LocalFeature"));
 			body.setRespiratorColor(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].RespiratorColor"));
+			body.setImageBaseSixFour(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].ImageBaseSixFour"));
 			body.setRightBottomX(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].RightBottomX"));
 			body.setRightBottomY(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].RightBottomY"));
+			body.setFileName(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].FileName"));
+			body.setLeftTopY(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].LeftTopY"));
+			body.setLeftTopX(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].LeftTopX"));
+			body.setFeature(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].Feature"));
+			body.setLocalFeature(_ctx.stringValue("RecognizeImageResponse.Data.BodyList["+ i +"].LocalFeature"));
 
 			bodyList.add(body);
 		}
@@ -54,17 +54,17 @@ public class RecognizeImageResponseUnmarshaller {
 		List<Face> faceList = new ArrayList<Face>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeImageResponse.Data.FaceList.Length"); i++) {
 			Face face = new Face();
-			face.setFeature(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].Feature"));
-			face.setFileName(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].FileName"));
-			face.setImageBaseSixFour(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].ImageBaseSixFour"));
-			face.setLeftTopX(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].LeftTopX"));
-			face.setLeftTopY(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].LeftTopY"));
-			face.setLocalFeature(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].LocalFeature"));
 			face.setRespiratorColor(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].RespiratorColor"));
+			face.setKeyPointQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].KeyPointQuality"));
+			face.setImageBaseSixFour(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].ImageBaseSixFour"));
 			face.setRightBottomX(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].RightBottomX"));
 			face.setRightBottomY(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].RightBottomY"));
 			face.setQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].Quality"));
-			face.setKeyPointQuality(_ctx.floatValue("RecognizeImageResponse.Data.FaceList["+ i +"].KeyPointQuality"));
+			face.setFileName(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].FileName"));
+			face.setLeftTopY(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].LeftTopY"));
+			face.setLeftTopX(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].LeftTopX"));
+			face.setFeature(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].Feature"));
+			face.setLocalFeature(_ctx.stringValue("RecognizeImageResponse.Data.FaceList["+ i +"].LocalFeature"));
 
 			faceList.add(face);
 		}

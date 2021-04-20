@@ -27,24 +27,24 @@ public class ListCorpMetricsResponseUnmarshaller {
 	public static ListCorpMetricsResponse unmarshall(ListCorpMetricsResponse listCorpMetricsResponse, UnmarshallerContext _ctx) {
 		
 		listCorpMetricsResponse.setRequestId(_ctx.stringValue("ListCorpMetricsResponse.RequestId"));
-		listCorpMetricsResponse.setCode(_ctx.stringValue("ListCorpMetricsResponse.Code"));
+		listCorpMetricsResponse.setTotalCount(_ctx.integerValue("ListCorpMetricsResponse.TotalCount"));
+		listCorpMetricsResponse.setPageSize(_ctx.integerValue("ListCorpMetricsResponse.PageSize"));
 		listCorpMetricsResponse.setMessage(_ctx.stringValue("ListCorpMetricsResponse.Message"));
 		listCorpMetricsResponse.setPageNumber(_ctx.integerValue("ListCorpMetricsResponse.PageNumber"));
-		listCorpMetricsResponse.setPageSize(_ctx.integerValue("ListCorpMetricsResponse.PageSize"));
+		listCorpMetricsResponse.setCode(_ctx.stringValue("ListCorpMetricsResponse.Code"));
 		listCorpMetricsResponse.setSuccess(_ctx.stringValue("ListCorpMetricsResponse.Success"));
-		listCorpMetricsResponse.setTotalCount(_ctx.integerValue("ListCorpMetricsResponse.TotalCount"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListCorpMetricsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setCorpId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].CorpId"));
-			dataItem.setTagCode(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagCode"));
-			dataItem.setTagMetrics(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagMetrics"));
-			dataItem.setTagValue(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagValue"));
+			dataItem.setPersonId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].PersonId"));
 			dataItem.setDeviceGroupId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DeviceGroupId"));
 			dataItem.setDeviceId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DeviceId"));
 			dataItem.setUserGroupId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].UserGroupId"));
-			dataItem.setPersonId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].PersonId"));
+			dataItem.setTagMetrics(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagMetrics"));
+			dataItem.setTagCode(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagCode"));
+			dataItem.setTagValue(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].TagValue"));
 			dataItem.setDateId(_ctx.stringValue("ListCorpMetricsResponse.Data["+ i +"].DateId"));
 
 			data.add(dataItem);

@@ -23,8 +23,8 @@ public class BindCorpGroupResponseUnmarshaller {
 	public static BindCorpGroupResponse unmarshall(BindCorpGroupResponse bindCorpGroupResponse, UnmarshallerContext _ctx) {
 		
 		bindCorpGroupResponse.setRequestId(_ctx.stringValue("BindCorpGroupResponse.RequestId"));
-		bindCorpGroupResponse.setCode(_ctx.stringValue("BindCorpGroupResponse.Code"));
 		bindCorpGroupResponse.setMessage(_ctx.stringValue("BindCorpGroupResponse.Message"));
+		bindCorpGroupResponse.setCode(_ctx.stringValue("BindCorpGroupResponse.Code"));
 		bindCorpGroupResponse.setSuccess(_ctx.booleanValue("BindCorpGroupResponse.Success"));
 	 
 	 	return bindCorpGroupResponse;

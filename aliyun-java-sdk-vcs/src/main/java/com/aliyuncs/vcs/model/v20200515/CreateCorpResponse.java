@@ -24,28 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCorpResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
+	private String corpId;
 
 	private String requestId;
 
-	private String corpId;
+	private String message;
 
-	public String getCode() {
-		return this.code;
+	private String code;
+
+	public String getCorpId() {
+		return this.corpId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setCorpId(String corpId) {
+		this.corpId = corpId;
 	}
 
 	public String getRequestId() {
@@ -56,12 +48,20 @@ public class CreateCorpResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCorpId() {
-		return this.corpId;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setCorpId(String corpId) {
-		this.corpId = corpId;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override
