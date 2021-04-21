@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDbfsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Info> dBFSInfo;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class ListDbfsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class ListDbfsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Info> getDBFSInfo() {
@@ -77,59 +77,47 @@ public class ListDbfsResponse extends AcsResponse {
 
 	public static class Info {
 
-		private String fsName;
-
-		private String dBFSClusterId;
-
-		private String category;
-
 		private String status;
-
-		private String regionId;
-
-		private String zoneId;
-
-		private Integer attachNodeNumber;
-
-		private String payType;
-
-		private String fsId;
-
-		private Integer sizeG;
-
-		private String createdTime;
 
 		private String kMSKeyId;
 
+		private String createdTime;
+
+		private String category;
+
+		private Boolean enableRaid;
+
+		private String zoneId;
+
+		private Integer sizeG;
+
+		private String performanceLevel;
+
+		private String dBFSClusterId;
+
+		private String fsId;
+
+		private String lastUmountTime;
+
+		private String payType;
+
 		private Boolean encryption;
 
-		private List<TagList> tags;
+		private String fsName;
+
+		private String usedScene;
+
+		private Integer raidStrip;
+
+		private String lastMountTime;
+
+		private Integer attachNodeNumber;
+
+		private String regionId;
 
 		private List<EcsListItem> ecsList;
 
-		public String getFsName() {
-			return this.fsName;
-		}
-
-		public void setFsName(String fsName) {
-			this.fsName = fsName;
-		}
-
-		public String getDBFSClusterId() {
-			return this.dBFSClusterId;
-		}
-
-		public void setDBFSClusterId(String dBFSClusterId) {
-			this.dBFSClusterId = dBFSClusterId;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
+		private List<TagList> tags;
 
 		public String getStatus() {
 			return this.status;
@@ -137,62 +125,6 @@ public class ListDbfsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Integer getAttachNodeNumber() {
-			return this.attachNodeNumber;
-		}
-
-		public void setAttachNodeNumber(Integer attachNodeNumber) {
-			this.attachNodeNumber = attachNodeNumber;
-		}
-
-		public String getPayType() {
-			return this.payType;
-		}
-
-		public void setPayType(String payType) {
-			this.payType = payType;
-		}
-
-		public String getFsId() {
-			return this.fsId;
-		}
-
-		public void setFsId(String fsId) {
-			this.fsId = fsId;
-		}
-
-		public Integer getSizeG() {
-			return this.sizeG;
-		}
-
-		public void setSizeG(Integer sizeG) {
-			this.sizeG = sizeG;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
 		}
 
 		public String getKMSKeyId() {
@@ -203,6 +135,86 @@ public class ListDbfsResponse extends AcsResponse {
 			this.kMSKeyId = kMSKeyId;
 		}
 
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
+		}
+
+		public Boolean getEnableRaid() {
+			return this.enableRaid;
+		}
+
+		public void setEnableRaid(Boolean enableRaid) {
+			this.enableRaid = enableRaid;
+		}
+
+		public String getZoneId() {
+			return this.zoneId;
+		}
+
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public Integer getSizeG() {
+			return this.sizeG;
+		}
+
+		public void setSizeG(Integer sizeG) {
+			this.sizeG = sizeG;
+		}
+
+		public String getPerformanceLevel() {
+			return this.performanceLevel;
+		}
+
+		public void setPerformanceLevel(String performanceLevel) {
+			this.performanceLevel = performanceLevel;
+		}
+
+		public String getDBFSClusterId() {
+			return this.dBFSClusterId;
+		}
+
+		public void setDBFSClusterId(String dBFSClusterId) {
+			this.dBFSClusterId = dBFSClusterId;
+		}
+
+		public String getFsId() {
+			return this.fsId;
+		}
+
+		public void setFsId(String fsId) {
+			this.fsId = fsId;
+		}
+
+		public String getLastUmountTime() {
+			return this.lastUmountTime;
+		}
+
+		public void setLastUmountTime(String lastUmountTime) {
+			this.lastUmountTime = lastUmountTime;
+		}
+
+		public String getPayType() {
+			return this.payType;
+		}
+
+		public void setPayType(String payType) {
+			this.payType = payType;
+		}
+
 		public Boolean getEncryption() {
 			return this.encryption;
 		}
@@ -211,12 +223,52 @@ public class ListDbfsResponse extends AcsResponse {
 			this.encryption = encryption;
 		}
 
-		public List<TagList> getTags() {
-			return this.tags;
+		public String getFsName() {
+			return this.fsName;
 		}
 
-		public void setTags(List<TagList> tags) {
-			this.tags = tags;
+		public void setFsName(String fsName) {
+			this.fsName = fsName;
+		}
+
+		public String getUsedScene() {
+			return this.usedScene;
+		}
+
+		public void setUsedScene(String usedScene) {
+			this.usedScene = usedScene;
+		}
+
+		public Integer getRaidStrip() {
+			return this.raidStrip;
+		}
+
+		public void setRaidStrip(Integer raidStrip) {
+			this.raidStrip = raidStrip;
+		}
+
+		public String getLastMountTime() {
+			return this.lastMountTime;
+		}
+
+		public void setLastMountTime(String lastMountTime) {
+			this.lastMountTime = lastMountTime;
+		}
+
+		public Integer getAttachNodeNumber() {
+			return this.attachNodeNumber;
+		}
+
+		public void setAttachNodeNumber(Integer attachNodeNumber) {
+			this.attachNodeNumber = attachNodeNumber;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public List<EcsListItem> getEcsList() {
@@ -227,37 +279,12 @@ public class ListDbfsResponse extends AcsResponse {
 			this.ecsList = ecsList;
 		}
 
-		public static class TagList {
+		public List<TagList> getTags() {
+			return this.tags;
+		}
 
-			private String tagKey;
-
-			private String tagValue;
-
-			private Long id;
-
-			public String getTagKey() {
-				return this.tagKey;
-			}
-
-			public void setTagKey(String tagKey) {
-				this.tagKey = tagKey;
-			}
-
-			public String getTagValue() {
-				return this.tagValue;
-			}
-
-			public void setTagValue(String tagValue) {
-				this.tagValue = tagValue;
-			}
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
+		public void setTags(List<TagList> tags) {
+			this.tags = tags;
 		}
 
 		public static class EcsListItem {
@@ -270,6 +297,39 @@ public class ListDbfsResponse extends AcsResponse {
 
 			public void setEcsId(String ecsId) {
 				this.ecsId = ecsId;
+			}
+		}
+
+		public static class TagList {
+
+			private String tagKey;
+
+			private Long id;
+
+			private String tagValue;
+
+			public String getTagKey() {
+				return this.tagKey;
+			}
+
+			public void setTagKey(String tagKey) {
+				this.tagKey = tagKey;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
+			public String getTagValue() {
+				return this.tagValue;
+			}
+
+			public void setTagValue(String tagValue) {
+				this.tagValue = tagValue;
 			}
 		}
 	}

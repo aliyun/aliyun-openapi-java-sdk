@@ -31,6 +31,8 @@ public class CreateDbfsRequest extends RpcAcsRequest<CreateDbfsResponse> {
 
 	private String clientToken;
 
+	private String usedScene;
+
 	private String fsName;
 
 	private Integer raidStripeUnitNumber;
@@ -87,6 +89,17 @@ public class CreateDbfsRequest extends RpcAcsRequest<CreateDbfsResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getUsedScene() {
+		return this.usedScene;
+	}
+
+	public void setUsedScene(String usedScene) {
+		this.usedScene = usedScene;
+		if(usedScene != null){
+			putQueryParameter("UsedScene", usedScene);
 		}
 	}
 
