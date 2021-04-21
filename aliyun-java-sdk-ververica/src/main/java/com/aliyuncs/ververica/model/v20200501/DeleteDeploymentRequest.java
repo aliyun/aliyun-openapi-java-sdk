@@ -31,7 +31,7 @@ public class DeleteDeploymentRequest extends RoaAcsRequest<DeleteDeploymentRespo
 
 	private String namespace;
 	public DeleteDeploymentRequest() {
-		super("ververica", "2020-05-01", "DeleteDeployment", "ververica");
+		super("ververica", "2020-05-01", "DeleteDeployment");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments/[deploymentId]");
 		setMethod(MethodType.DELETE);
 		try {

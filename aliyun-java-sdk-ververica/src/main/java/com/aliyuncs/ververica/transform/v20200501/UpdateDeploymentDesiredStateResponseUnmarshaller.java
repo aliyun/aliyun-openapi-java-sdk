@@ -24,6 +24,7 @@ public class UpdateDeploymentDesiredStateResponseUnmarshaller {
 		
 		updateDeploymentDesiredStateResponse.setRequestId(_ctx.stringValue("UpdateDeploymentDesiredStateResponse.requestId"));
 		updateDeploymentDesiredStateResponse.setData(_ctx.stringValue("UpdateDeploymentDesiredStateResponse.data"));
+		updateDeploymentDesiredStateResponse.setSuccess(_ctx.booleanValue("UpdateDeploymentDesiredStateResponse.success"));
 	 
 	 	return updateDeploymentDesiredStateResponse;
 	}

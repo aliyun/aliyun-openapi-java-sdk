@@ -35,7 +35,7 @@ public class TableExistsRequest extends RoaAcsRequest<TableExistsResponse> {
 
 	private String table;
 	public TableExistsRequest() {
-		super("ververica", "2020-05-01", "TableExists", "ververica");
+		super("ververica", "2020-05-01", "TableExists");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:tableExists");
 		setMethod(MethodType.GET);
 		try {

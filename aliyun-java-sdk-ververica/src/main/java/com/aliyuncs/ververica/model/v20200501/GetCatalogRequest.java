@@ -31,7 +31,7 @@ public class GetCatalogRequest extends RoaAcsRequest<GetCatalogResponse> {
 
 	private String namespace;
 	public GetCatalogRequest() {
-		super("ververica", "2020-05-01", "GetCatalog", "ververica");
+		super("ververica", "2020-05-01", "GetCatalog");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:getCatalog");
 		setMethod(MethodType.GET);
 		try {

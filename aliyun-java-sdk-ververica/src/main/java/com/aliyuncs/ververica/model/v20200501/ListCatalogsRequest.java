@@ -29,7 +29,7 @@ public class ListCatalogsRequest extends RoaAcsRequest<ListCatalogsResponse> {
 
 	private String namespace;
 	public ListCatalogsRequest() {
-		super("ververica", "2020-05-01", "ListCatalogs", "ververica");
+		super("ververica", "2020-05-01", "ListCatalogs");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs");
 		setMethod(MethodType.GET);
 		try {

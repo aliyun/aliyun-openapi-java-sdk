@@ -31,7 +31,7 @@ public class CreateSavepointRequest extends RoaAcsRequest<CreateSavepointRespons
 
 	private String namespace;
 	public CreateSavepointRequest() {
-		super("ververica", "2020-05-01", "CreateSavepoint", "ververica");
+		super("ververica", "2020-05-01", "CreateSavepoint");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/savepoints");
 		setMethod(MethodType.POST);
 		try {

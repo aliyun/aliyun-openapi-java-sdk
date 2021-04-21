@@ -33,7 +33,7 @@ public class GetUdfArtifactRequest extends RoaAcsRequest<GetUdfArtifactResponse>
 
 	private String udfArtifactName;
 	public GetUdfArtifactRequest() {
-		super("ververica", "2020-05-01", "GetUdfArtifact", "ververica");
+		super("ververica", "2020-05-01", "GetUdfArtifact");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/udfartifacts/[udfArtifactName]");
 		setMethod(MethodType.GET);
 		try {

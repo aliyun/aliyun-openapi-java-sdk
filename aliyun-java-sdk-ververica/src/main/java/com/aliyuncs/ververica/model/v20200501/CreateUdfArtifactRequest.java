@@ -31,7 +31,7 @@ public class CreateUdfArtifactRequest extends RoaAcsRequest<CreateUdfArtifactRes
 
 	private String namespace;
 	public CreateUdfArtifactRequest() {
-		super("ververica", "2020-05-01", "CreateUdfArtifact", "ververica");
+		super("ververica", "2020-05-01", "CreateUdfArtifact");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/udfartifacts");
 		setMethod(MethodType.POST);
 		try {

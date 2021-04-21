@@ -24,6 +24,7 @@ public class ListArtifactsResponseUnmarshaller {
 		
 		listArtifactsResponse.setRequestId(_ctx.stringValue("ListArtifactsResponse.requestId"));
 		listArtifactsResponse.setData(_ctx.stringValue("ListArtifactsResponse.data"));
+		listArtifactsResponse.setSuccess(_ctx.booleanValue("ListArtifactsResponse.success"));
 	 
 	 	return listArtifactsResponse;
 	}

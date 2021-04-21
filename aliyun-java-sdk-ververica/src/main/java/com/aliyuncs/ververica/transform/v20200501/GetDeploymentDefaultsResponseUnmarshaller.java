@@ -24,6 +24,7 @@ public class GetDeploymentDefaultsResponseUnmarshaller {
 		
 		getDeploymentDefaultsResponse.setRequestId(_ctx.stringValue("GetDeploymentDefaultsResponse.requestId"));
 		getDeploymentDefaultsResponse.setData(_ctx.stringValue("GetDeploymentDefaultsResponse.data"));
+		getDeploymentDefaultsResponse.setSuccess(_ctx.booleanValue("GetDeploymentDefaultsResponse.success"));
 	 
 	 	return getDeploymentDefaultsResponse;
 	}

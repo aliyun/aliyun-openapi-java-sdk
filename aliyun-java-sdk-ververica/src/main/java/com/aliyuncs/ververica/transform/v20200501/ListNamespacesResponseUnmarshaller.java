@@ -24,6 +24,7 @@ public class ListNamespacesResponseUnmarshaller {
 		
 		listNamespacesResponse.setRequestId(_ctx.stringValue("ListNamespacesResponse.requestId"));
 		listNamespacesResponse.setData(_ctx.stringValue("ListNamespacesResponse.data"));
+		listNamespacesResponse.setSuccess(_ctx.booleanValue("ListNamespacesResponse.success"));
 	 
 	 	return listNamespacesResponse;
 	}

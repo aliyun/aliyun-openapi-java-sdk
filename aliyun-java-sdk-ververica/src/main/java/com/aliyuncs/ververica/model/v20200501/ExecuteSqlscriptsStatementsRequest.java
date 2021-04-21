@@ -31,7 +31,7 @@ public class ExecuteSqlscriptsStatementsRequest extends RoaAcsRequest<ExecuteSql
 
 	private String namespace;
 	public ExecuteSqlscriptsStatementsRequest() {
-		super("ververica", "2020-05-01", "ExecuteSqlscriptsStatements", "ververica");
+		super("ververica", "2020-05-01", "ExecuteSqlscriptsStatements");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/sqlscripts:execute-multi");
 		setMethod(MethodType.POST);
 		try {

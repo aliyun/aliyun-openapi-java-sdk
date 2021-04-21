@@ -28,6 +28,8 @@ public class CreateDeploymentResponse extends AcsResponse {
 
 	private String data;
 
+	private Boolean success;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -42,6 +44,14 @@ public class CreateDeploymentResponse extends AcsResponse {
 
 	public void setData(String data) {
 		this.data = data;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

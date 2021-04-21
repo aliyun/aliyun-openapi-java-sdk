@@ -29,7 +29,7 @@ public class GetDeploymentDefaultsRequest extends RoaAcsRequest<GetDeploymentDef
 
 	private String namespace;
 	public GetDeploymentDefaultsRequest() {
-		super("ververica", "2020-05-01", "GetDeploymentDefaults", "ververica");
+		super("ververica", "2020-05-01", "GetDeploymentDefaults");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployment-defaults");
 		setMethod(MethodType.GET);
 		try {

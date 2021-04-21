@@ -27,7 +27,7 @@ public class ListFlinkVersionsRequest extends RoaAcsRequest<ListFlinkVersionsRes
 
 	private String workspace;
 	public ListFlinkVersionsRequest() {
-		super("ververica", "2020-05-01", "ListFlinkVersions", "ververica");
+		super("ververica", "2020-05-01", "ListFlinkVersions");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/flink-version-meta.json");
 		setMethod(MethodType.GET);
 		try {

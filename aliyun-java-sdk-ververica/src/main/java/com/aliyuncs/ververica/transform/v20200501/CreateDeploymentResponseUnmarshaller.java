@@ -24,6 +24,7 @@ public class CreateDeploymentResponseUnmarshaller {
 		
 		createDeploymentResponse.setRequestId(_ctx.stringValue("CreateDeploymentResponse.requestId"));
 		createDeploymentResponse.setData(_ctx.stringValue("CreateDeploymentResponse.data"));
+		createDeploymentResponse.setSuccess(_ctx.booleanValue("CreateDeploymentResponse.success"));
 	 
 	 	return createDeploymentResponse;
 	}

@@ -33,7 +33,7 @@ public class ListSavepointsRequest extends RoaAcsRequest<ListSavepointsResponse>
 
 	private String namespace;
 	public ListSavepointsRequest() {
-		super("ververica", "2020-05-01", "ListSavepoints", "ververica");
+		super("ververica", "2020-05-01", "ListSavepoints");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/savepoints");
 		setMethod(MethodType.GET);
 		try {

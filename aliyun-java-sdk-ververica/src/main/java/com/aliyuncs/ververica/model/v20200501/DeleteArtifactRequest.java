@@ -31,7 +31,7 @@ public class DeleteArtifactRequest extends RoaAcsRequest<DeleteArtifactResponse>
 
 	private String namespace;
 	public DeleteArtifactRequest() {
-		super("ververica", "2020-05-01", "DeleteArtifact", "ververica");
+		super("ververica", "2020-05-01", "DeleteArtifact");
 		setUriPattern("/pop/workspaces/[workspace]/artifacts/v1/namespaces/[namespace]/artifacts:delete");
 		setMethod(MethodType.DELETE);
 		try {

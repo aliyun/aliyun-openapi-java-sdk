@@ -29,7 +29,7 @@ public class ListSessionClustersRequest extends RoaAcsRequest<ListSessionCluster
 
 	private String namespace;
 	public ListSessionClustersRequest() {
-		super("ververica", "2020-05-01", "ListSessionClusters", "ververica");
+		super("ververica", "2020-05-01", "ListSessionClusters");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/sessionclusters");
 		setMethod(MethodType.GET);
 		try {

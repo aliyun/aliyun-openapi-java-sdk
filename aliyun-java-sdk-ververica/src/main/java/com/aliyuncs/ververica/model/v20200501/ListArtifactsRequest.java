@@ -29,7 +29,7 @@ public class ListArtifactsRequest extends RoaAcsRequest<ListArtifactsResponse> {
 
 	private String namespace;
 	public ListArtifactsRequest() {
-		super("ververica", "2020-05-01", "ListArtifacts", "ververica");
+		super("ververica", "2020-05-01", "ListArtifacts");
 		setUriPattern("/pop/workspaces/[workspace]/artifacts/v1/namespaces/[namespace]/artifacts:list");
 		setMethod(MethodType.GET);
 		try {

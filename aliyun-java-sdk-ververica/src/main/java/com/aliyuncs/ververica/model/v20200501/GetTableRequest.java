@@ -35,7 +35,7 @@ public class GetTableRequest extends RoaAcsRequest<GetTableResponse> {
 
 	private String table;
 	public GetTableRequest() {
-		super("ververica", "2020-05-01", "GetTable", "ververica");
+		super("ververica", "2020-05-01", "GetTable");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:getTable");
 		setMethod(MethodType.GET);
 		try {

@@ -31,7 +31,7 @@ public class ExecuteSqlScriptRequest extends RoaAcsRequest<ExecuteSqlScriptRespo
 
 	private String namespace;
 	public ExecuteSqlScriptRequest() {
-		super("ververica", "2020-05-01", "ExecuteSqlScript", "ververica");
+		super("ververica", "2020-05-01", "ExecuteSqlScript");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/sqlscripts:execute");
 		setMethod(MethodType.POST);
 		try {

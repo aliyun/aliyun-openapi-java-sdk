@@ -29,7 +29,7 @@ public class ListDeploymentsRequest extends RoaAcsRequest<ListDeploymentsRespons
 
 	private String namespace;
 	public ListDeploymentsRequest() {
-		super("ververica", "2020-05-01", "ListDeployments", "ververica");
+		super("ververica", "2020-05-01", "ListDeployments");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments");
 		setMethod(MethodType.GET);
 		try {

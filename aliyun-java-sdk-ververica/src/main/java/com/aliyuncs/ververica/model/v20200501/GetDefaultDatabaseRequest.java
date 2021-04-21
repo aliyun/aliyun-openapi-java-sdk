@@ -31,7 +31,7 @@ public class GetDefaultDatabaseRequest extends RoaAcsRequest<GetDefaultDatabaseR
 
 	private String namespace;
 	public GetDefaultDatabaseRequest() {
-		super("ververica", "2020-05-01", "GetDefaultDatabase", "ververica");
+		super("ververica", "2020-05-01", "GetDefaultDatabase");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:getDefaultDatabase");
 		setMethod(MethodType.GET);
 		try {

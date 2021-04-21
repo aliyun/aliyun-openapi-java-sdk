@@ -28,6 +28,8 @@ public class CreateSavepointResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Boolean success;
+
 	public String getData() {
 		return this.data;
 	}
@@ -42,6 +44,14 @@ public class CreateSavepointResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

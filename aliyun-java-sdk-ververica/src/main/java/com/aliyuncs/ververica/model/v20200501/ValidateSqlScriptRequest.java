@@ -31,7 +31,7 @@ public class ValidateSqlScriptRequest extends RoaAcsRequest<ValidateSqlScriptRes
 
 	private String namespace;
 	public ValidateSqlScriptRequest() {
-		super("ververica", "2020-05-01", "ValidateSqlScript", "ververica");
+		super("ververica", "2020-05-01", "ValidateSqlScript");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/sqlscripts:validate");
 		setMethod(MethodType.POST);
 		try {

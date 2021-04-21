@@ -31,7 +31,7 @@ public class DeleteUdfArtifactRequest extends RoaAcsRequest<DeleteUdfArtifactRes
 
 	private String udfArtifactName;
 	public DeleteUdfArtifactRequest() {
-		super("ververica", "2020-05-01", "DeleteUdfArtifact", "ververica");
+		super("ververica", "2020-05-01", "DeleteUdfArtifact");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/udfartifacts/[udfArtifactName]");
 		setMethod(MethodType.DELETE);
 		try {

@@ -33,7 +33,7 @@ public class ListFunctionsRequest extends RoaAcsRequest<ListFunctionsResponse> {
 
 	private String namespace;
 	public ListFunctionsRequest() {
-		super("ververica", "2020-05-01", "ListFunctions", "ververica");
+		super("ververica", "2020-05-01", "ListFunctions");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:listFunctions");
 		setMethod(MethodType.GET);
 		try {

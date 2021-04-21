@@ -24,6 +24,7 @@ public class ListJobsResponseUnmarshaller {
 		
 		listJobsResponse.setData(_ctx.stringValue("ListJobsResponse.data"));
 		listJobsResponse.setRequestId(_ctx.stringValue("ListJobsResponse.requestId"));
+		listJobsResponse.setSuccess(_ctx.booleanValue("ListJobsResponse.success"));
 	 
 	 	return listJobsResponse;
 	}

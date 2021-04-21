@@ -29,7 +29,7 @@ public class GetGlobalDeploymentDefaultsRequest extends RoaAcsRequest<GetGlobalD
 
 	private String namespace;
 	public GetGlobalDeploymentDefaultsRequest() {
-		super("ververica", "2020-05-01", "GetGlobalDeploymentDefaults", "ververica");
+		super("ververica", "2020-05-01", "GetGlobalDeploymentDefaults");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/global-deployment-defaults");
 		setMethod(MethodType.GET);
 		try {

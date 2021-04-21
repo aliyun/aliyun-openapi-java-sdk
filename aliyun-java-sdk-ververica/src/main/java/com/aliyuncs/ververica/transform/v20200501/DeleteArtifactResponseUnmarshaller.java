@@ -23,6 +23,7 @@ public class DeleteArtifactResponseUnmarshaller {
 	public static DeleteArtifactResponse unmarshall(DeleteArtifactResponse deleteArtifactResponse, UnmarshallerContext _ctx) {
 		
 		deleteArtifactResponse.setRequestId(_ctx.stringValue("DeleteArtifactResponse.requestId"));
+		deleteArtifactResponse.setSuccess(_ctx.booleanValue("DeleteArtifactResponse.success"));
 	 
 	 	return deleteArtifactResponse;
 	}

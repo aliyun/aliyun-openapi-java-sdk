@@ -31,7 +31,7 @@ public class CreateDeploymentRequest extends RoaAcsRequest<CreateDeploymentRespo
 
 	private String namespace;
 	public CreateDeploymentRequest() {
-		super("ververica", "2020-05-01", "CreateDeployment", "ververica");
+		super("ververica", "2020-05-01", "CreateDeployment");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments");
 		setMethod(MethodType.POST);
 		try {

@@ -31,7 +31,7 @@ public class GetArtifactMetadataRequest extends RoaAcsRequest<GetArtifactMetadat
 
 	private String namespace;
 	public GetArtifactMetadataRequest() {
-		super("ververica", "2020-05-01", "GetArtifactMetadata", "ververica");
+		super("ververica", "2020-05-01", "GetArtifactMetadata");
 		setUriPattern("/pop/workspaces/[workspace]/artifacts/v1/namespaces/[namespace]/artifacts:getMetadata");
 		setMethod(MethodType.GET);
 		try {
