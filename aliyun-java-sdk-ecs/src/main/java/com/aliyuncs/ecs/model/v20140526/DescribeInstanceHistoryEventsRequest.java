@@ -42,6 +42,8 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 
 	private String eventPublishTimeEnd;
 
+	private List<String> resourceIds;
+
 	private List<String> instanceEventTypes;
 
 	private String resourceOwnerAccount;
@@ -51,6 +53,8 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 	private String notBeforeStart;
 
 	private Long ownerId;
+
+	private String resourceType;
 
 	private String eventPublishTimeStart;
 
@@ -160,6 +164,19 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		}
 	}
 
+	public List<String> getResourceIds() {
+		return this.resourceIds;
+	}
+
+	public void setResourceIds(List<String> resourceIds) {
+		this.resourceIds = resourceIds;	
+		if (resourceIds != null) {
+			for (int i = 0; i < resourceIds.size(); i++) {
+				putQueryParameter("ResourceId." + (i + 1) , resourceIds.get(i));
+			}
+		}	
+	}
+
 	public List<String> getInstanceEventTypes() {
 		return this.instanceEventTypes;
 	}
@@ -214,6 +231,17 @@ public class DescribeInstanceHistoryEventsRequest extends RpcAcsRequest<Describe
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getResourceType() {
+		return this.resourceType;
+	}
+
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+		if(resourceType != null){
+			putQueryParameter("ResourceType", resourceType);
 		}
 	}
 

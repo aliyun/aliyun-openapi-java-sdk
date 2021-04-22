@@ -99,6 +99,12 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		private Integer diskQuantity;
 
+		private Integer eriQuantity;
+
+		private Integer queuePairNumber;
+
+		private String nvmeSupport;
+
 		public String getInstanceTypeId() {
 			return this.instanceTypeId;
 		}
@@ -305,6 +311,30 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setDiskQuantity(Integer diskQuantity) {
 			this.diskQuantity = diskQuantity;
+		}
+
+		public Integer getEriQuantity() {
+			return this.eriQuantity;
+		}
+
+		public void setEriQuantity(Integer eriQuantity) {
+			this.eriQuantity = eriQuantity;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
+		}
+
+		public String getNvmeSupport() {
+			return this.nvmeSupport;
+		}
+
+		public void setNvmeSupport(String nvmeSupport) {
+			this.nvmeSupport = nvmeSupport;
 		}
 	}
 

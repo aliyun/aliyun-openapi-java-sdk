@@ -91,6 +91,8 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		private String impactLevel;
 
+		private String resourceType;
+
 		private EventType eventType;
 
 		private EventCycleStatus eventCycleStatus;
@@ -151,6 +153,14 @@ public class DescribeInstanceHistoryEventsResponse extends AcsResponse {
 
 		public void setImpactLevel(String impactLevel) {
 			this.impactLevel = impactLevel;
+		}
+
+		public String getResourceType() {
+			return this.resourceType;
+		}
+
+		public void setResourceType(String resourceType) {
+			this.resourceType = resourceType;
 		}
 
 		public EventType getEventType() {

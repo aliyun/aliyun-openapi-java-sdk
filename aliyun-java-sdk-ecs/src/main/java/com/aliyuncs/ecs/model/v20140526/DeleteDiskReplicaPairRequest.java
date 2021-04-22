@@ -22,7 +22,7 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteReplicaPairRequest extends RpcAcsRequest<DeleteReplicaPairResponse> {
+public class DeleteDiskReplicaPairRequest extends RpcAcsRequest<DeleteDiskReplicaPairResponse> {
 	   
 
 	private Long resourceOwnerId;
@@ -34,8 +34,8 @@ public class DeleteReplicaPairRequest extends RpcAcsRequest<DeleteReplicaPairRes
 	private Long ownerId;
 
 	private String replicaPairId;
-	public DeleteReplicaPairRequest() {
-		super("Ecs", "2014-05-26", "DeleteReplicaPair", "ecs");
+	public DeleteDiskReplicaPairRequest() {
+		super("Ecs", "2014-05-26", "DeleteDiskReplicaPair", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,8 +99,8 @@ public class DeleteReplicaPairRequest extends RpcAcsRequest<DeleteReplicaPairRes
 	}
 
 	@Override
-	public Class<DeleteReplicaPairResponse> getResponseClass() {
-		return DeleteReplicaPairResponse.class;
+	public Class<DeleteDiskReplicaPairResponse> getResponseClass() {
+		return DeleteDiskReplicaPairResponse.class;
 	}
 
 }

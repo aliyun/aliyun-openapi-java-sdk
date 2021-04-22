@@ -15,14 +15,14 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.DeleteReplicaPairResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.DeleteDiskReplicaPairResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteReplicaPairResponse extends AcsResponse {
+public class DeleteDiskReplicaPairResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class DeleteReplicaPairResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteReplicaPairResponse getInstance(UnmarshallerContext context) {
-		return	DeleteReplicaPairResponseUnmarshaller.unmarshall(this, context);
+	public DeleteDiskReplicaPairResponse getInstance(UnmarshallerContext context) {
+		return	DeleteDiskReplicaPairResponseUnmarshaller.unmarshall(this, context);
 	}
 }

@@ -14,16 +14,16 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.DeleteReplicaPairResponse;
+import com.aliyuncs.ecs.model.v20140526.DeleteDiskReplicaPairResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DeleteReplicaPairResponseUnmarshaller {
+public class DeleteDiskReplicaPairResponseUnmarshaller {
 
-	public static DeleteReplicaPairResponse unmarshall(DeleteReplicaPairResponse deleteReplicaPairResponse, UnmarshallerContext _ctx) {
+	public static DeleteDiskReplicaPairResponse unmarshall(DeleteDiskReplicaPairResponse deleteDiskReplicaPairResponse, UnmarshallerContext _ctx) {
 		
-		deleteReplicaPairResponse.setRequestId(_ctx.stringValue("DeleteReplicaPairResponse.RequestId"));
+		deleteDiskReplicaPairResponse.setRequestId(_ctx.stringValue("DeleteDiskReplicaPairResponse.RequestId"));
 	 
-	 	return deleteReplicaPairResponse;
+	 	return deleteDiskReplicaPairResponse;
 	}
 }
