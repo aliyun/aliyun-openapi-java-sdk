@@ -119,6 +119,8 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 		private List<OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
 
+		private List<Tag> tags;
+
 		private List<String> cenIds;
 
 		public String getCenBandwidthPackageId() {
@@ -289,6 +291,14 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 			this.orginInterRegionBandwidthLimits = orginInterRegionBandwidthLimits;
 		}
 
+		public List<Tag> getTags() {
+			return this.tags;
+		}
+
+		public void setTags(List<Tag> tags) {
+			this.tags = tags;
+		}
+
 		public List<String> getCenIds() {
 			return this.cenIds;
 		}
@@ -337,6 +347,29 @@ public class DescribeCenBandwidthPackagesResponse extends AcsResponse {
 
 			public void setBandwidthLimit(String bandwidthLimit) {
 				this.bandwidthLimit = bandwidthLimit;
+			}
+		}
+
+		public static class Tag {
+
+			private String key;
+
+			private String value;
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
+			}
+
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
 			}
 		}
 	}

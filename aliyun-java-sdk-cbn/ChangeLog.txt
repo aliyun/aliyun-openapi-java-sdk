@@ -1,3 +1,6 @@
+2021-04-22 Version: 1.0.7
+- Support CEN latest Apis.
+
 2020-12-25 Version: 1.0.6
 - Support CenChildInstanceRouteEntryToCen Operation.
 

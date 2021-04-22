@@ -89,6 +89,8 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 		private String status;
 
+		private String transitRouterAttachmentId;
+
 		private String bandwidthPackageId;
 
 		public String getCenId() {
@@ -137,6 +139,14 @@ public class DescribeCenInterRegionBandwidthLimitsResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getTransitRouterAttachmentId() {
+			return this.transitRouterAttachmentId;
+		}
+
+		public void setTransitRouterAttachmentId(String transitRouterAttachmentId) {
+			this.transitRouterAttachmentId = transitRouterAttachmentId;
 		}
 
 		public String getBandwidthPackageId() {

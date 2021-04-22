@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse.CenBandwidthPackage;
 import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse.CenBandwidthPackage.OrginInterRegionBandwidthLimit;
+import com.aliyuncs.cbn.model.v20170912.DescribeCenBandwidthPackagesResponse.CenBandwidthPackage.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -73,6 +74,16 @@ public class DescribeCenBandwidthPackagesResponseUnmarshaller {
 				orginInterRegionBandwidthLimits.add(orginInterRegionBandwidthLimit);
 			}
 			cenBandwidthPackage.setOrginInterRegionBandwidthLimits(orginInterRegionBandwidthLimits);
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("DescribeCenBandwidthPackagesResponse.CenBandwidthPackages["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			cenBandwidthPackage.setTags(tags);
 
 			cenBandwidthPackages.add(cenBandwidthPackage);
 		}
