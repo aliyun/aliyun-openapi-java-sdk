@@ -40,7 +40,7 @@ public class CreateFreeLockCorrectOrderRequest extends RpcAcsRequest<CreateFreeL
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
 	public CreateFreeLockCorrectOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateFreeLockCorrectOrder");
+		super("dms-enterprise", "2018-11-01", "CreateFreeLockCorrectOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

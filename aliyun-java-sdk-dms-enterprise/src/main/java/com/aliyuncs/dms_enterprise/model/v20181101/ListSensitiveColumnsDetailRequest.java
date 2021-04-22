@@ -33,7 +33,7 @@ public class ListSensitiveColumnsDetailRequest extends RpcAcsRequest<ListSensiti
 
 	private String tableName;
 	public ListSensitiveColumnsDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail");
+		super("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

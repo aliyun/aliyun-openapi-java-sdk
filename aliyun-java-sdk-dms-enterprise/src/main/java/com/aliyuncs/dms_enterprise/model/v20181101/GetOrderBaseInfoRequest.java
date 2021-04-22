@@ -29,7 +29,7 @@ public class GetOrderBaseInfoRequest extends RpcAcsRequest<GetOrderBaseInfoRespo
 
 	private Long tid;
 	public GetOrderBaseInfoRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOrderBaseInfo");
+		super("dms-enterprise", "2018-11-01", "GetOrderBaseInfo", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

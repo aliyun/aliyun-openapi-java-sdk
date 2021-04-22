@@ -1,3 +1,6 @@
+2021-04-22 Version: 1.17.0
+- Support GetPhysicalDatabase API.
+
 2021-04-12 Version: 1.16.0
 - Support GetDBTopology API.
 

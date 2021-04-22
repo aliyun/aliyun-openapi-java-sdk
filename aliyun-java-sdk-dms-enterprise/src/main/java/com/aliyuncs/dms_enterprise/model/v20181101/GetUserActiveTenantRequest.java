@@ -27,7 +27,7 @@ public class GetUserActiveTenantRequest extends RpcAcsRequest<GetUserActiveTenan
 
 	private Long tid;
 	public GetUserActiveTenantRequest() {
-		super("dms-enterprise", "2018-11-01", "GetUserActiveTenant");
+		super("dms-enterprise", "2018-11-01", "GetUserActiveTenant", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

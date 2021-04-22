@@ -36,7 +36,7 @@ public class CreateUploadOSSFileJobRequest extends RpcAcsRequest<CreateUploadOSS
 	@SerializedName("uploadTarget")
 	private UploadTarget uploadTarget;
 	public CreateUploadOSSFileJobRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateUploadOSSFileJob");
+		super("dms-enterprise", "2018-11-01", "CreateUploadOSSFileJob", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

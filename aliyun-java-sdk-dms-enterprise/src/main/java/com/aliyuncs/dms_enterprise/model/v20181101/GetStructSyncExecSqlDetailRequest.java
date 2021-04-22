@@ -33,7 +33,7 @@ public class GetStructSyncExecSqlDetailRequest extends RpcAcsRequest<GetStructSy
 
 	private Long pageSize;
 	public GetStructSyncExecSqlDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "GetStructSyncExecSqlDetail");
+		super("dms-enterprise", "2018-11-01", "GetStructSyncExecSqlDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

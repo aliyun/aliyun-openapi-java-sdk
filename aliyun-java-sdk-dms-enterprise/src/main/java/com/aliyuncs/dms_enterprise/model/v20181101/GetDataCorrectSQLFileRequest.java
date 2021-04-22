@@ -29,7 +29,7 @@ public class GetDataCorrectSQLFileRequest extends RpcAcsRequest<GetDataCorrectSQ
 
 	private Long tid;
 	public GetDataCorrectSQLFileRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDataCorrectSQLFile");
+		super("dms-enterprise", "2018-11-01", "GetDataCorrectSQLFile", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

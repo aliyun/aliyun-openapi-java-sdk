@@ -40,7 +40,7 @@ public class CreateStructSyncOrderRequest extends RpcAcsRequest<CreateStructSync
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
 	public CreateStructSyncOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateStructSyncOrder");
+		super("dms-enterprise", "2018-11-01", "CreateStructSyncOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

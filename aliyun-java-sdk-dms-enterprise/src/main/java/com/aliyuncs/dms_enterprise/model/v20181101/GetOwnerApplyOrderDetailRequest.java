@@ -29,7 +29,7 @@ public class GetOwnerApplyOrderDetailRequest extends RpcAcsRequest<GetOwnerApply
 
 	private Long tid;
 	public GetOwnerApplyOrderDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOwnerApplyOrderDetail");
+		super("dms-enterprise", "2018-11-01", "GetOwnerApplyOrderDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,7 +33,7 @@ public class ExecuteScriptRequest extends RpcAcsRequest<ExecuteScriptResponse> {
 
 	private Boolean logic;
 	public ExecuteScriptRequest() {
-		super("dms-enterprise", "2018-11-01", "ExecuteScript");
+		super("dms-enterprise", "2018-11-01", "ExecuteScript", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

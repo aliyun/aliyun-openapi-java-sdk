@@ -22,23 +22,30 @@ import com.aliyuncs.dms_enterprise.Endpoint;
  * @author auto create
  * @version 
  */
-public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
+public class GetPhysicalDatabaseRequest extends RpcAcsRequest<GetPhysicalDatabaseResponse> {
 	   
 
+	private Long dbId;
+
 	private Long tid;
-
-	private Long workflowInstanceId;
-
-	private String approvalType;
-
-	private String comment;
-	public ApproveOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "ApproveOrder", "dms-enterprise");
+	public GetPhysicalDatabaseRequest() {
+		super("dms-enterprise", "2018-11-01", "GetPhysicalDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getDbId() {
+		return this.dbId;
+	}
+
+	public void setDbId(Long dbId) {
+		this.dbId = dbId;
+		if(dbId != null){
+			putQueryParameter("DbId", dbId.toString());
+		}
 	}
 
 	public Long getTid() {
@@ -52,42 +59,9 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 		}
 	}
 
-	public Long getWorkflowInstanceId() {
-		return this.workflowInstanceId;
-	}
-
-	public void setWorkflowInstanceId(Long workflowInstanceId) {
-		this.workflowInstanceId = workflowInstanceId;
-		if(workflowInstanceId != null){
-			putQueryParameter("WorkflowInstanceId", workflowInstanceId.toString());
-		}
-	}
-
-	public String getApprovalType() {
-		return this.approvalType;
-	}
-
-	public void setApprovalType(String approvalType) {
-		this.approvalType = approvalType;
-		if(approvalType != null){
-			putQueryParameter("ApprovalType", approvalType);
-		}
-	}
-
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-		if(comment != null){
-			putQueryParameter("Comment", comment);
-		}
-	}
-
 	@Override
-	public Class<ApproveOrderResponse> getResponseClass() {
-		return ApproveOrderResponse.class;
+	public Class<GetPhysicalDatabaseResponse> getResponseClass() {
+		return GetPhysicalDatabaseResponse.class;
 	}
 
 }

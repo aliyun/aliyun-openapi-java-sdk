@@ -31,7 +31,7 @@ public class ListColumnsRequest extends RpcAcsRequest<ListColumnsResponse> {
 
 	private Boolean logic;
 	public ListColumnsRequest() {
-		super("dms-enterprise", "2018-11-01", "ListColumns");
+		super("dms-enterprise", "2018-11-01", "ListColumns", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

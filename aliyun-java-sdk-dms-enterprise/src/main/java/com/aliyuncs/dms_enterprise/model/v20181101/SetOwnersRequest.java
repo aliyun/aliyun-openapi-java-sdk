@@ -33,7 +33,7 @@ public class SetOwnersRequest extends RpcAcsRequest<SetOwnersResponse> {
 
 	private String ownerType;
 	public SetOwnersRequest() {
-		super("dms-enterprise", "2018-11-01", "SetOwners");
+		super("dms-enterprise", "2018-11-01", "SetOwners", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -29,7 +29,7 @@ public class GetDBTopologyRequest extends RpcAcsRequest<GetDBTopologyResponse> {
 
 	private Long tid;
 	public GetDBTopologyRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDBTopology");
+		super("dms-enterprise", "2018-11-01", "GetDBTopology", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

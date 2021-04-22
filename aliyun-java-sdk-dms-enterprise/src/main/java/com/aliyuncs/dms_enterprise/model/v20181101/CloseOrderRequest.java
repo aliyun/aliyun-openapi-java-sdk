@@ -31,7 +31,7 @@ public class CloseOrderRequest extends RpcAcsRequest<CloseOrderResponse> {
 
 	private Long tid;
 	public CloseOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CloseOrder");
+		super("dms-enterprise", "2018-11-01", "CloseOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

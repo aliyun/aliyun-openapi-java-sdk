@@ -40,7 +40,7 @@ public class CreateDataImportOrderRequest extends RpcAcsRequest<CreateDataImport
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
 	public CreateDataImportOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateDataImportOrder");
+		super("dms-enterprise", "2018-11-01", "CreateDataImportOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

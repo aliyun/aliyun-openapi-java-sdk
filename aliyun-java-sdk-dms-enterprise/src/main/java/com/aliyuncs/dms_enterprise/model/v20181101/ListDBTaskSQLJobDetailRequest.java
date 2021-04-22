@@ -33,7 +33,7 @@ public class ListDBTaskSQLJobDetailRequest extends RpcAcsRequest<ListDBTaskSQLJo
 
 	private Long pageSize;
 	public ListDBTaskSQLJobDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "ListDBTaskSQLJobDetail");
+		super("dms-enterprise", "2018-11-01", "ListDBTaskSQLJobDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
