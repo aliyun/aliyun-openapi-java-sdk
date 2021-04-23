@@ -51,7 +51,7 @@ public class CreateStreamPredictRequest extends RpcAcsRequest<CreateStreamPredic
 
 	private String modelUserData;
 	public CreateStreamPredictRequest() {
-		super("ivision", "2019-03-08", "CreateStreamPredict", "ivision");
+		super("ivision", "2019-03-08", "CreateStreamPredict");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class DescribeStreamPredictResultRequest extends RpcAcsRequest<DescribeSt
 
 	private Long ownerId;
 	public DescribeStreamPredictResultRequest() {
-		super("ivision", "2019-03-08", "DescribeStreamPredictResult", "ivision");
+		super("ivision", "2019-03-08", "DescribeStreamPredictResult");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

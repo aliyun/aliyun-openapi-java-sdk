@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeStreamPredictsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalNum;
 
-	private Long currentPage;
+	private String requestId;
 
 	private Long pageSize;
+
+	private Long currentPage;
 
 	private String nextPageToken;
 
 	private List<StreamPredict> streamPredicts;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalNum() {
 		return this.totalNum;
@@ -53,12 +45,12 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Long getCurrentPage() {
-		return this.currentPage;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCurrentPage(Long currentPage) {
-		this.currentPage = currentPage;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getPageSize() {
@@ -67,6 +59,14 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Long getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public String getNextPageToken() {
@@ -87,50 +87,42 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 
 	public static class StreamPredict {
 
-		private String predictId;
-
-		private String predictTemplateId;
+		private String status;
 
 		private String streamType;
 
-		private String streamId;
-
-		private String modelIds;
-
 		private String probabilityThresholds;
 
-		private String detectIntervals;
-
-		private String output;
-
-		private String notify;
+		private String streamId;
 
 		private String userData;
 
-		private String faceGroupId;
+		private String notify;
+
+		private String predictId;
+
+		private String detectIntervals;
 
 		private String modelUserData;
 
+		private String predictTemplateId;
+
+		private String output;
+
 		private String creationTime;
+
+		private String modelIds;
+
+		private String faceGroupId;
 
 		private String autoStart;
 
-		private String status;
-
-		public String getPredictId() {
-			return this.predictId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setPredictId(String predictId) {
-			this.predictId = predictId;
-		}
-
-		public String getPredictTemplateId() {
-			return this.predictTemplateId;
-		}
-
-		public void setPredictTemplateId(String predictTemplateId) {
-			this.predictTemplateId = predictTemplateId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getStreamType() {
@@ -141,22 +133,6 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.streamType = streamType;
 		}
 
-		public String getStreamId() {
-			return this.streamId;
-		}
-
-		public void setStreamId(String streamId) {
-			this.streamId = streamId;
-		}
-
-		public String getModelIds() {
-			return this.modelIds;
-		}
-
-		public void setModelIds(String modelIds) {
-			this.modelIds = modelIds;
-		}
-
 		public String getProbabilityThresholds() {
 			return this.probabilityThresholds;
 		}
@@ -165,28 +141,12 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.probabilityThresholds = probabilityThresholds;
 		}
 
-		public String getDetectIntervals() {
-			return this.detectIntervals;
+		public String getStreamId() {
+			return this.streamId;
 		}
 
-		public void setDetectIntervals(String detectIntervals) {
-			this.detectIntervals = detectIntervals;
-		}
-
-		public String getOutput() {
-			return this.output;
-		}
-
-		public void setOutput(String output) {
-			this.output = output;
-		}
-
-		public String getNotify() {
-			return this.notify;
-		}
-
-		public void setNotify(String notify) {
-			this.notify = notify;
+		public void setStreamId(String streamId) {
+			this.streamId = streamId;
 		}
 
 		public String getUserData() {
@@ -197,12 +157,28 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.userData = userData;
 		}
 
-		public String getFaceGroupId() {
-			return this.faceGroupId;
+		public String getNotify() {
+			return this.notify;
 		}
 
-		public void setFaceGroupId(String faceGroupId) {
-			this.faceGroupId = faceGroupId;
+		public void setNotify(String notify) {
+			this.notify = notify;
+		}
+
+		public String getPredictId() {
+			return this.predictId;
+		}
+
+		public void setPredictId(String predictId) {
+			this.predictId = predictId;
+		}
+
+		public String getDetectIntervals() {
+			return this.detectIntervals;
+		}
+
+		public void setDetectIntervals(String detectIntervals) {
+			this.detectIntervals = detectIntervals;
 		}
 
 		public String getModelUserData() {
@@ -213,6 +189,22 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.modelUserData = modelUserData;
 		}
 
+		public String getPredictTemplateId() {
+			return this.predictTemplateId;
+		}
+
+		public void setPredictTemplateId(String predictTemplateId) {
+			this.predictTemplateId = predictTemplateId;
+		}
+
+		public String getOutput() {
+			return this.output;
+		}
+
+		public void setOutput(String output) {
+			this.output = output;
+		}
+
 		public String getCreationTime() {
 			return this.creationTime;
 		}
@@ -221,20 +213,28 @@ public class DescribeStreamPredictsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getModelIds() {
+			return this.modelIds;
+		}
+
+		public void setModelIds(String modelIds) {
+			this.modelIds = modelIds;
+		}
+
+		public String getFaceGroupId() {
+			return this.faceGroupId;
+		}
+
+		public void setFaceGroupId(String faceGroupId) {
+			this.faceGroupId = faceGroupId;
+		}
+
 		public String getAutoStart() {
 			return this.autoStart;
 		}
 
 		public void setAutoStart(String autoStart) {
 			this.autoStart = autoStart;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

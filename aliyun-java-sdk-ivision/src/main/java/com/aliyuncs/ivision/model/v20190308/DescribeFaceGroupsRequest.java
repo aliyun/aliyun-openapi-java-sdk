@@ -33,7 +33,7 @@ public class DescribeFaceGroupsRequest extends RpcAcsRequest<DescribeFaceGroupsR
 
 	private Long ownerId;
 	public DescribeFaceGroupsRequest() {
-		super("ivision", "2019-03-08", "DescribeFaceGroups", "ivision");
+		super("ivision", "2019-03-08", "DescribeFaceGroups");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

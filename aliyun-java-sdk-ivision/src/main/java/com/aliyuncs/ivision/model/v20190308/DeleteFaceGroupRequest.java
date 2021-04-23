@@ -29,7 +29,7 @@ public class DeleteFaceGroupRequest extends RpcAcsRequest<DeleteFaceGroupRespons
 
 	private Long ownerId;
 	public DeleteFaceGroupRequest() {
-		super("ivision", "2019-03-08", "DeleteFaceGroup", "ivision");
+		super("ivision", "2019-03-08", "DeleteFaceGroup");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,17 +25,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeFaceGroupsResponse extends AcsResponse {
 
-	private String requestId;
+	private Long totalNum;
 
-	private Long currentPage;
+	private String requestId;
 
 	private Long pageSize;
 
+	private Long currentPage;
+
 	private String nextPageToken;
 
-	private Long totalNum;
-
 	private List<Group> groups;
+
+	public Long getTotalNum() {
+		return this.totalNum;
+	}
+
+	public void setTotalNum(Long totalNum) {
+		this.totalNum = totalNum;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,14 +51,6 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Long getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Long currentPage) {
-		this.currentPage = currentPage;
 	}
 
 	public Long getPageSize() {
@@ -61,20 +61,20 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public Long getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+	}
+
 	public String getNextPageToken() {
 		return this.nextPageToken;
 	}
 
 	public void setNextPageToken(String nextPageToken) {
 		this.nextPageToken = nextPageToken;
-	}
-
-	public Long getTotalNum() {
-		return this.totalNum;
-	}
-
-	public void setTotalNum(Long totalNum) {
-		this.totalNum = totalNum;
 	}
 
 	public List<Group> getGroups() {
@@ -87,18 +87,18 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 
 	public static class Group {
 
-		private String groupId;
+		private String creationTime;
 
 		private String name;
 
-		private String creationTime;
+		private String groupId;
 
-		public String getGroupId() {
-			return this.groupId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getName() {
@@ -109,12 +109,12 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 			this.name = name;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getGroupId() {
+			return this.groupId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

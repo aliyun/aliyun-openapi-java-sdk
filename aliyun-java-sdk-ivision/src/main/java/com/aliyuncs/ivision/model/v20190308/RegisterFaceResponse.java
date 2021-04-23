@@ -83,9 +83,9 @@ public class RegisterFaceResponse extends AcsResponse {
 
 			private Integer top;
 
-			private Integer width;
-
 			private Integer height;
+
+			private Integer width;
 
 			public Integer getLeft() {
 				return this.left;
@@ -103,20 +103,20 @@ public class RegisterFaceResponse extends AcsResponse {
 				this.top = top;
 			}
 
-			public Integer getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(Integer width) {
-				this.width = width;
-			}
-
 			public Integer getHeight() {
 				return this.height;
 			}
 
 			public void setHeight(Integer height) {
 				this.height = height;
+			}
+
+			public Integer getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(Integer width) {
+				this.width = width;
 			}
 		}
 	}

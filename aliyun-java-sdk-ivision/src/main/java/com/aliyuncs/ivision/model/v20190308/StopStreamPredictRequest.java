@@ -29,7 +29,7 @@ public class StopStreamPredictRequest extends RpcAcsRequest<StopStreamPredictRes
 
 	private Long ownerId;
 	public StopStreamPredictRequest() {
-		super("ivision", "2019-03-08", "StopStreamPredict", "ivision");
+		super("ivision", "2019-03-08", "StopStreamPredict");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

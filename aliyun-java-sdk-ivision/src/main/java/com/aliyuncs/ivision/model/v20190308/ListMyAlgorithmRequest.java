@@ -22,59 +22,59 @@ import com.aliyuncs.ivision.Endpoint;
  * @author auto create
  * @version 
  */
-public class ImagePredictRequest extends RpcAcsRequest<ImagePredictResponse> {
+public class ListMyAlgorithmRequest extends RpcAcsRequest<ListMyAlgorithmResponse> {
 	   
 
-	private String dataUrl;
+	private Integer pageNumber;
 
-	private String modelId;
+	private Integer pageSize;
 
-	private Long ownerId;
-	public ImagePredictRequest() {
-		super("ivision", "2019-03-08", "ImagePredict");
-		setMethod(MethodType.GET);
+	private String algorithmName;
+	public ListMyAlgorithmRequest() {
+		super("ivision", "2019-03-08", "ListMyAlgorithm");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getDataUrl() {
-		return this.dataUrl;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setDataUrl(String dataUrl) {
-		this.dataUrl = dataUrl;
-		if(dataUrl != null){
-			putQueryParameter("DataUrl", dataUrl);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getModelId() {
-		return this.modelId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setModelId(String modelId) {
-		this.modelId = modelId;
-		if(modelId != null){
-			putQueryParameter("ModelId", modelId);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
+	public String getAlgorithmName() {
+		return this.algorithmName;
 	}
 
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
+	public void setAlgorithmName(String algorithmName) {
+		this.algorithmName = algorithmName;
+		if(algorithmName != null){
+			putQueryParameter("AlgorithmName", algorithmName);
 		}
 	}
 
 	@Override
-	public Class<ImagePredictResponse> getResponseClass() {
-		return ImagePredictResponse.class;
+	public Class<ListMyAlgorithmResponse> getResponseClass() {
+		return ListMyAlgorithmResponse.class;
 	}
 
 }

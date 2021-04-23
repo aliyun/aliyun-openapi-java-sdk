@@ -31,7 +31,7 @@ public class UnregisterFaceRequest extends RpcAcsRequest<UnregisterFaceResponse>
 
 	private String faceToken;
 	public UnregisterFaceRequest() {
-		super("ivision", "2019-03-08", "UnregisterFace", "ivision");
+		super("ivision", "2019-03-08", "UnregisterFace");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -33,8 +33,8 @@ public class SearchFaceResponseUnmarshaller {
 		Rect rect = new Rect();
 		rect.setLeft(_ctx.integerValue("SearchFaceResponse.Rect.Left"));
 		rect.setTop(_ctx.integerValue("SearchFaceResponse.Rect.Top"));
-		rect.setWidth(_ctx.integerValue("SearchFaceResponse.Rect.Width"));
 		rect.setHeight(_ctx.integerValue("SearchFaceResponse.Rect.Height"));
+		rect.setWidth(_ctx.integerValue("SearchFaceResponse.Rect.Width"));
 		searchFaceResponse.setRect(rect);
 
 		List<FaceResult> faceResults = new ArrayList<FaceResult>();
