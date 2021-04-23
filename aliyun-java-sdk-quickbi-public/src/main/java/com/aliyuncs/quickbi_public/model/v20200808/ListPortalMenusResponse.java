@@ -12,21 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200808;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.quickbi_public.transform.v20200803.UpdateWorkspaceUserRoleResponseUnmarshaller;
+import com.aliyuncs.quickbi_public.transform.v20200808.ListPortalMenusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
+public class ListPortalMenusResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean result;
+	private String result;
 
 	private Boolean success;
 
@@ -38,11 +38,11 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getResult() {
+	public String getResult() {
 		return this.result;
 	}
 
-	public void setResult(Boolean result) {
+	public void setResult(String result) {
 		this.result = result;
 	}
 
@@ -55,8 +55,8 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateWorkspaceUserRoleResponse getInstance(UnmarshallerContext context) {
-		return	UpdateWorkspaceUserRoleResponseUnmarshaller.unmarshall(this, context);
+	public ListPortalMenusResponse getInstance(UnmarshallerContext context) {
+		return	ListPortalMenusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

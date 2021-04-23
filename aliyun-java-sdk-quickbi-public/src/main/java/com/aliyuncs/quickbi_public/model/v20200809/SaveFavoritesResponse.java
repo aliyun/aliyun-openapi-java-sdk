@@ -12,23 +12,23 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200809;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.quickbi_public.transform.v20200803.UpdateWorkspaceUserRoleResponseUnmarshaller;
+import com.aliyuncs.quickbi_public.transform.v20200809.SaveFavoritesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
+public class SaveFavoritesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean result;
-
 	private Boolean success;
+
+	private Boolean result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,14 +36,6 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getResult() {
-		return this.result;
-	}
-
-	public void setResult(Boolean result) {
-		this.result = result;
 	}
 
 	public Boolean getSuccess() {
@@ -54,9 +46,17 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Boolean getResult() {
+		return this.result;
+	}
+
+	public void setResult(Boolean result) {
+		this.result = result;
+	}
+
 	@Override
-	public UpdateWorkspaceUserRoleResponse getInstance(UnmarshallerContext context) {
-		return	UpdateWorkspaceUserRoleResponseUnmarshaller.unmarshall(this, context);
+	public SaveFavoritesResponse getInstance(UnmarshallerContext context) {
+		return	SaveFavoritesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.quickbi_public.model.v20200803;
+package com.aliyuncs.quickbi_public.model.v20200731;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.quickbi_public.transform.v20200803.UpdateWorkspaceUserRoleResponseUnmarshaller;
+import com.aliyuncs.quickbi_public.transform.v20200731.DeleteUserGroupMembersResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
+public class DeleteUserGroupMembersResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -55,8 +55,8 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateWorkspaceUserRoleResponse getInstance(UnmarshallerContext context) {
-		return	UpdateWorkspaceUserRoleResponseUnmarshaller.unmarshall(this, context);
+	public DeleteUserGroupMembersResponse getInstance(UnmarshallerContext context) {
+		return	DeleteUserGroupMembersResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

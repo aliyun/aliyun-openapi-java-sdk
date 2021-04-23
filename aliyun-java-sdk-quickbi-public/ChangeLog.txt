@@ -1,3 +1,6 @@
+2021-04-23 Version: 1.5.0
+- Add apis,includes, DeleteUserGroupMembers, WithdrawAllUserGroups, ListUserGroupsByUserId, GetUserGroupInfo,ListCollections, SaveFavorites, CancelCollection,AddWorkspaceUsers,UpdateWorkspaceUsersRole,ListPortalMenus, ListPortalMenuAuthorization, AuthorizeMenu, CancelAuthorizationMenu, ChangeVisibilityModel.
+
 2021-02-24 Version: 1.4.1
 - Fix the bugs for missing some interfaces in version 1_4_0, Version 1_4_0 is not recommended.
 
