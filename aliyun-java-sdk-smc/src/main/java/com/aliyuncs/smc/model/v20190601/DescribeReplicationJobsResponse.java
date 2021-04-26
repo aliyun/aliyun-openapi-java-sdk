@@ -147,6 +147,8 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 
 		private String containerTag;
 
+		private String licenseType;
+
 		private List<SystemDiskPart> systemDiskParts;
 
 		private List<DataDisk> dataDisks;
@@ -431,6 +433,14 @@ public class DescribeReplicationJobsResponse extends AcsResponse {
 
 		public void setContainerTag(String containerTag) {
 			this.containerTag = containerTag;
+		}
+
+		public String getLicenseType() {
+			return this.licenseType;
+		}
+
+		public void setLicenseType(String licenseType) {
+			this.licenseType = licenseType;
 		}
 
 		public List<SystemDiskPart> getSystemDiskParts() {

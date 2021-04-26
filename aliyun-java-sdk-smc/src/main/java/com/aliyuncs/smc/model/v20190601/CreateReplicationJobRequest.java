@@ -36,6 +36,8 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 
 	private Integer netMode;
 
+	private String licenseType;
+
 	private String containerNamespace;
 
 	private String launchTemplateId;
@@ -147,6 +149,17 @@ public class CreateReplicationJobRequest extends RpcAcsRequest<CreateReplication
 		this.netMode = netMode;
 		if(netMode != null){
 			putQueryParameter("NetMode", netMode.toString());
+		}
+	}
+
+	public String getLicenseType() {
+		return this.licenseType;
+	}
+
+	public void setLicenseType(String licenseType) {
+		this.licenseType = licenseType;
+		if(licenseType != null){
+			putQueryParameter("LicenseType", licenseType);
 		}
 	}
 

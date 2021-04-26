@@ -73,6 +73,7 @@ public class DescribeReplicationJobsResponseUnmarshaller {
 			replicationJob.setContainerNamespace(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].ContainerNamespace"));
 			replicationJob.setContainerRepository(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].ContainerRepository"));
 			replicationJob.setContainerTag(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].ContainerTag"));
+			replicationJob.setLicenseType(_ctx.stringValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].LicenseType"));
 
 			List<SystemDiskPart> systemDiskParts = new ArrayList<SystemDiskPart>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeReplicationJobsResponse.ReplicationJobs["+ i +"].SystemDiskParts.Length"); j++) {
