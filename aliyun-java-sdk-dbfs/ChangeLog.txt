@@ -1,3 +1,6 @@
+2021-04-26 Version: 1.8.5-beta
+- Support upgrade.
+
 2021-04-25 Version: 1.8.4-beta
 - Support upgrade.
 
