@@ -25,13 +25,13 @@ import com.aliyuncs.live.Endpoint;
 public class AddLiveDetectNotifyConfigRequest extends RpcAcsRequest<AddLiveDetectNotifyConfigResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String securityToken;
 
 	private String notifyUrl;
+
+	private String domainName;
+
+	private Long ownerId;
 	public AddLiveDetectNotifyConfigRequest() {
 		super("live", "2016-11-01", "AddLiveDetectNotifyConfig", "live");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class AddLiveDetectNotifyConfigRequest extends RpcAcsRequest<AddLiveDetec
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getSecurityToken() {
@@ -82,6 +60,28 @@ public class AddLiveDetectNotifyConfigRequest extends RpcAcsRequest<AddLiveDetec
 		this.notifyUrl = notifyUrl;
 		if(notifyUrl != null){
 			putQueryParameter("NotifyUrl", notifyUrl);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 

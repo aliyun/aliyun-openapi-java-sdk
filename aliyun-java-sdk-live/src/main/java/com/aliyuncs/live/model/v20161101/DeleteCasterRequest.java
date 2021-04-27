@@ -28,8 +28,6 @@ public class DeleteCasterRequest extends RpcAcsRequest<DeleteCasterResponse> {
 	private String casterId;
 
 	private Long ownerId;
-
-	private String securityToken;
 	public DeleteCasterRequest() {
 		super("live", "2016-11-01", "DeleteCaster", "live");
 		setMethod(MethodType.POST);
@@ -58,17 +56,6 @@ public class DeleteCasterRequest extends RpcAcsRequest<DeleteCasterResponse> {
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
 		}
 	}
 

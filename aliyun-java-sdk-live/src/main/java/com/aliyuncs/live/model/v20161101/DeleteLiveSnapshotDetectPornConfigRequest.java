@@ -25,13 +25,13 @@ import com.aliyuncs.live.Endpoint;
 public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<DeleteLiveSnapshotDetectPornConfigResponse> {
 	   
 
-	private String domainName;
-
-	private Long ownerId;
-
 	private String appName;
 
 	private String securityToken;
+
+	private String domainName;
+
+	private Long ownerId;
 	public DeleteLiveSnapshotDetectPornConfigRequest() {
 		super("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Del
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getDomainName() {
-		return this.domainName;
-	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
-		}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
 	}
 
 	public String getAppName() {
@@ -82,6 +60,28 @@ public class DeleteLiveSnapshotDetectPornConfigRequest extends RpcAcsRequest<Del
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public String getDomainName() {
+		return this.domainName;
+	}
+
+	public void setDomainName(String domainName) {
+		this.domainName = domainName;
+		if(domainName != null){
+			putQueryParameter("DomainName", domainName);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
 		}
 	}
 
