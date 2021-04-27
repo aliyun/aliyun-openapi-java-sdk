@@ -24,69 +24,29 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVideoTaskResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String taskId;
-
-	private String taskType;
-
-	private String parameters;
-
-	private String result;
-
 	private String status;
-
-	private String startTime;
-
-	private String endTime;
-
-	private String errorMessage;
 
 	private String notifyEndpoint;
 
-	private String notifyTopicName;
-
 	private Integer progress;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String taskId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String parameters;
 
-	public String getTaskId() {
-		return this.taskId;
-	}
+	private String requestId;
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
+	private String endTime;
 
-	public String getTaskType() {
-		return this.taskType;
-	}
+	private String taskType;
 
-	public void setTaskType(String taskType) {
-		this.taskType = taskType;
-	}
+	private String startTime;
 
-	public String getParameters() {
-		return this.parameters;
-	}
+	private String notifyTopicName;
 
-	public void setParameters(String parameters) {
-		this.parameters = parameters;
-	}
+	private String errorMessage;
 
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
+	private String result;
 
 	public String getStatus() {
 		return this.status;
@@ -94,30 +54,6 @@ public class GetVideoTaskResponse extends AcsResponse {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-
-	public String getErrorMessage() {
-		return this.errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
 	}
 
 	public String getNotifyEndpoint() {
@@ -128,6 +64,62 @@ public class GetVideoTaskResponse extends AcsResponse {
 		this.notifyEndpoint = notifyEndpoint;
 	}
 
+	public Integer getProgress() {
+		return this.progress;
+	}
+
+	public void setProgress(Integer progress) {
+		this.progress = progress;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getParameters() {
+		return this.parameters;
+	}
+
+	public void setParameters(String parameters) {
+		this.parameters = parameters;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getTaskType() {
+		return this.taskType;
+	}
+
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
 	public String getNotifyTopicName() {
 		return this.notifyTopicName;
 	}
@@ -136,12 +128,20 @@ public class GetVideoTaskResponse extends AcsResponse {
 		this.notifyTopicName = notifyTopicName;
 	}
 
-	public Integer getProgress() {
-		return this.progress;
+	public String getErrorMessage() {
+		return this.errorMessage;
 	}
 
-	public void setProgress(Integer progress) {
-		this.progress = progress;
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public String getResult() {
+		return this.result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	@Override

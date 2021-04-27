@@ -23,17 +23,17 @@ public class GetVideoTaskResponseUnmarshaller {
 	public static GetVideoTaskResponse unmarshall(GetVideoTaskResponse getVideoTaskResponse, UnmarshallerContext _ctx) {
 		
 		getVideoTaskResponse.setRequestId(_ctx.stringValue("GetVideoTaskResponse.RequestId"));
-		getVideoTaskResponse.setTaskId(_ctx.stringValue("GetVideoTaskResponse.TaskId"));
-		getVideoTaskResponse.setTaskType(_ctx.stringValue("GetVideoTaskResponse.TaskType"));
-		getVideoTaskResponse.setParameters(_ctx.stringValue("GetVideoTaskResponse.Parameters"));
-		getVideoTaskResponse.setResult(_ctx.stringValue("GetVideoTaskResponse.Result"));
 		getVideoTaskResponse.setStatus(_ctx.stringValue("GetVideoTaskResponse.Status"));
-		getVideoTaskResponse.setStartTime(_ctx.stringValue("GetVideoTaskResponse.StartTime"));
-		getVideoTaskResponse.setEndTime(_ctx.stringValue("GetVideoTaskResponse.EndTime"));
-		getVideoTaskResponse.setErrorMessage(_ctx.stringValue("GetVideoTaskResponse.ErrorMessage"));
 		getVideoTaskResponse.setNotifyEndpoint(_ctx.stringValue("GetVideoTaskResponse.NotifyEndpoint"));
-		getVideoTaskResponse.setNotifyTopicName(_ctx.stringValue("GetVideoTaskResponse.NotifyTopicName"));
 		getVideoTaskResponse.setProgress(_ctx.integerValue("GetVideoTaskResponse.Progress"));
+		getVideoTaskResponse.setTaskId(_ctx.stringValue("GetVideoTaskResponse.TaskId"));
+		getVideoTaskResponse.setParameters(_ctx.stringValue("GetVideoTaskResponse.Parameters"));
+		getVideoTaskResponse.setEndTime(_ctx.stringValue("GetVideoTaskResponse.EndTime"));
+		getVideoTaskResponse.setTaskType(_ctx.stringValue("GetVideoTaskResponse.TaskType"));
+		getVideoTaskResponse.setStartTime(_ctx.stringValue("GetVideoTaskResponse.StartTime"));
+		getVideoTaskResponse.setNotifyTopicName(_ctx.stringValue("GetVideoTaskResponse.NotifyTopicName"));
+		getVideoTaskResponse.setErrorMessage(_ctx.stringValue("GetVideoTaskResponse.ErrorMessage"));
+		getVideoTaskResponse.setResult(_ctx.stringValue("GetVideoTaskResponse.Result"));
 	 
 	 	return getVideoTaskResponse;
 	}

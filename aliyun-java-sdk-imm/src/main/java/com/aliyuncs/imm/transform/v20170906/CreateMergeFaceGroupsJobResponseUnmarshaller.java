@@ -23,11 +23,11 @@ public class CreateMergeFaceGroupsJobResponseUnmarshaller {
 	public static CreateMergeFaceGroupsJobResponse unmarshall(CreateMergeFaceGroupsJobResponse createMergeFaceGroupsJobResponse, UnmarshallerContext _ctx) {
 		
 		createMergeFaceGroupsJobResponse.setRequestId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.RequestId"));
-		createMergeFaceGroupsJobResponse.setJobId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.JobId"));
-		createMergeFaceGroupsJobResponse.setSetId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.SetId"));
-		createMergeFaceGroupsJobResponse.setJobType(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.JobType"));
-		createMergeFaceGroupsJobResponse.setGroupIdTo(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdTo"));
 		createMergeFaceGroupsJobResponse.setGroupIdFrom(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdFrom"));
+		createMergeFaceGroupsJobResponse.setJobType(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.JobType"));
+		createMergeFaceGroupsJobResponse.setSetId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.SetId"));
+		createMergeFaceGroupsJobResponse.setGroupIdTo(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.GroupIdTo"));
+		createMergeFaceGroupsJobResponse.setJobId(_ctx.stringValue("CreateMergeFaceGroupsJobResponse.JobId"));
 	 
 	 	return createMergeFaceGroupsJobResponse;
 	}

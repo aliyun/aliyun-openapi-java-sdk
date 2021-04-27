@@ -38,6 +38,8 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 	private String targetList;
 
 	private String videoUri;
+
+	private String targetSegment;
 	public CreateVideoCompressTaskRequest() {
 		super("imm", "2017-09-06", "CreateVideoCompressTask", "imm");
 		setMethod(MethodType.POST);
@@ -121,6 +123,17 @@ public class CreateVideoCompressTaskRequest extends RpcAcsRequest<CreateVideoCom
 		this.videoUri = videoUri;
 		if(videoUri != null){
 			putQueryParameter("VideoUri", videoUri);
+		}
+	}
+
+	public String getTargetSegment() {
+		return this.targetSegment;
+	}
+
+	public void setTargetSegment(String targetSegment) {
+		this.targetSegment = targetSegment;
+		if(targetSegment != null){
+			putQueryParameter("TargetSegment", targetSegment);
 		}
 	}
 

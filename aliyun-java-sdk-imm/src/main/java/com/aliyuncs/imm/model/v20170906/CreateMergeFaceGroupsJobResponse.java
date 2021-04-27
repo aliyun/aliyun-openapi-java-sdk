@@ -24,40 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateMergeFaceGroupsJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String jobId;
-
-	private String setId;
+	private String groupIdFrom;
 
 	private String jobType;
 
+	private String requestId;
+
+	private String setId;
+
 	private String groupIdTo;
 
-	private String groupIdFrom;
+	private String jobId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getGroupIdFrom() {
+		return this.groupIdFrom;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
-	public String getSetId() {
-		return this.setId;
-	}
-
-	public void setSetId(String setId) {
-		this.setId = setId;
+	public void setGroupIdFrom(String groupIdFrom) {
+		this.groupIdFrom = groupIdFrom;
 	}
 
 	public String getJobType() {
@@ -68,6 +52,22 @@ public class CreateMergeFaceGroupsJobResponse extends AcsResponse {
 		this.jobType = jobType;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getSetId() {
+		return this.setId;
+	}
+
+	public void setSetId(String setId) {
+		this.setId = setId;
+	}
+
 	public String getGroupIdTo() {
 		return this.groupIdTo;
 	}
@@ -76,12 +76,12 @@ public class CreateMergeFaceGroupsJobResponse extends AcsResponse {
 		this.groupIdTo = groupIdTo;
 	}
 
-	public String getGroupIdFrom() {
-		return this.groupIdFrom;
+	public String getJobId() {
+		return this.jobId;
 	}
 
-	public void setGroupIdFrom(String groupIdFrom) {
-		this.groupIdFrom = groupIdFrom;
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

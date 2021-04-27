@@ -1,3 +1,6 @@
+2021-04-27 Version: 1.23.4
+- Add CustomMessage to CreateMergeFaceGroupsJob.
+
 2021-03-22 Version: 1.23.2
 - Support watermark.
 - Support pdf preview.
