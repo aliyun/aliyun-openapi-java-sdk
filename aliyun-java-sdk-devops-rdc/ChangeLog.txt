@@ -1,3 +1,6 @@
+2021-04-27 Version: 1.9.5
+- GetProjectMember support pageSize.
+
 2021-04-16 Version: 1.9.3
 - Support devops organization deletion.
 

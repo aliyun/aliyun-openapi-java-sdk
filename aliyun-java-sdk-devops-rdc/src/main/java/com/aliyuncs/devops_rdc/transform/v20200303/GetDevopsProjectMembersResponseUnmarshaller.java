@@ -30,6 +30,8 @@ public class GetDevopsProjectMembersResponseUnmarshaller {
 		getDevopsProjectMembersResponse.setSuccessful(_ctx.booleanValue("GetDevopsProjectMembersResponse.Successful"));
 		getDevopsProjectMembersResponse.setErrorCode(_ctx.stringValue("GetDevopsProjectMembersResponse.ErrorCode"));
 		getDevopsProjectMembersResponse.setErrorMsg(_ctx.stringValue("GetDevopsProjectMembersResponse.ErrorMsg"));
+		getDevopsProjectMembersResponse.setTotal(_ctx.integerValue("GetDevopsProjectMembersResponse.Total"));
+		getDevopsProjectMembersResponse.setNextPageToken(_ctx.stringValue("GetDevopsProjectMembersResponse.NextPageToken"));
 
 		List<Member> object = new ArrayList<Member>();
 		for (int i = 0; i < _ctx.lengthValue("GetDevopsProjectMembersResponse.Object.Length"); i++) {

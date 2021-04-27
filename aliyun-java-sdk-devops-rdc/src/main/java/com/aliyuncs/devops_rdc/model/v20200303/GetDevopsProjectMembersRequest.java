@@ -24,12 +24,27 @@ import com.aliyuncs.http.MethodType;
 public class GetDevopsProjectMembersRequest extends RpcAcsRequest<GetDevopsProjectMembersResponse> {
 	   
 
+	private Integer pageSize;
+
 	private String projectId;
 
 	private String orgId;
+
+	private String pageToken;
 	public GetDevopsProjectMembersRequest() {
 		super("devops-rdc", "2020-03-03", "GetDevopsProjectMembers");
 		setMethod(MethodType.POST);
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putBodyParameter("PageSize", pageSize.toString());
+		}
 	}
 
 	public String getProjectId() {
@@ -51,6 +66,17 @@ public class GetDevopsProjectMembersRequest extends RpcAcsRequest<GetDevopsProje
 		this.orgId = orgId;
 		if(orgId != null){
 			putBodyParameter("OrgId", orgId);
+		}
+	}
+
+	public String getPageToken() {
+		return this.pageToken;
+	}
+
+	public void setPageToken(String pageToken) {
+		this.pageToken = pageToken;
+		if(pageToken != null){
+			putBodyParameter("PageToken", pageToken);
 		}
 	}
 
