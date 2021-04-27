@@ -16,24 +16,30 @@ package com.aliyuncs.edas.model.v20170801;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.ListK8sSecretsResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.ListK8sConfigMapsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListK8sSecretsResponse extends AcsResponse {
+public class ListK8sConfigMapsResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Integer code;
 
 	private String message;
 
-	private String requestId;
-
-	private List<K8sSecretsItem> k8sSecrets;
-
 	private List<ResultItem> result;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -51,22 +57,6 @@ public class ListK8sSecretsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public List<K8sSecretsItem> getK8sSecrets() {
-		return this.k8sSecrets;
-	}
-
-	public void setK8sSecrets(List<K8sSecretsItem> k8sSecrets) {
-		this.k8sSecrets = k8sSecrets;
-	}
-
 	public List<ResultItem> getResult() {
 		return this.result;
 	}
@@ -75,54 +65,11 @@ public class ListK8sSecretsResponse extends AcsResponse {
 		this.result = result;
 	}
 
-	public static class K8sSecretsItem {
-
-		private String name;
-
-		private String namespace;
-
-		private String creationTime;
-
-		private String type;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
-	}
-
 	public static class ResultItem {
 
 		private Integer total;
 
-		private List<SecretsItem> secrets;
+		private List<ConfigMapsItem> configMaps;
 
 		public Integer getTotal() {
 			return this.total;
@@ -132,27 +79,25 @@ public class ListK8sSecretsResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public List<SecretsItem> getSecrets() {
-			return this.secrets;
+		public List<ConfigMapsItem> getConfigMaps() {
+			return this.configMaps;
 		}
 
-		public void setSecrets(List<SecretsItem> secrets) {
-			this.secrets = secrets;
+		public void setConfigMaps(List<ConfigMapsItem> configMaps) {
+			this.configMaps = configMaps;
 		}
 
-		public static class SecretsItem {
+		public static class ConfigMapsItem {
 
 			private String name;
 
 			private String namespace;
 
-			private String creationTime;
-
-			private String type;
-
 			private String clusterId;
 
 			private String clusterName;
+
+			private String creationTime;
 
 			private List<DataItem> data;
 
@@ -174,22 +119,6 @@ public class ListK8sSecretsResponse extends AcsResponse {
 				this.namespace = namespace;
 			}
 
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
 			public String getClusterId() {
 				return this.clusterId;
 			}
@@ -204,6 +133,14 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 			public void setClusterName(String clusterName) {
 				this.clusterName = clusterName;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
 			}
 
 			public List<DataItem> getData() {
@@ -271,8 +208,8 @@ public class ListK8sSecretsResponse extends AcsResponse {
 	}
 
 	@Override
-	public ListK8sSecretsResponse getInstance(UnmarshallerContext context) {
-		return	ListK8sSecretsResponseUnmarshaller.unmarshall(this, context);
+	public ListK8sConfigMapsResponse getInstance(UnmarshallerContext context) {
+		return	ListK8sConfigMapsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

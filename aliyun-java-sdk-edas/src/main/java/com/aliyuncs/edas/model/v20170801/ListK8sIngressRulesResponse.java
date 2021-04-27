@@ -31,8 +31,6 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<IngressConfigsItem> ingressConfigs;
-
 	private List<DataItem> data;
 
 	public Integer getCode() {
@@ -59,189 +57,12 @@ public class ListK8sIngressRulesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<IngressConfigsItem> getIngressConfigs() {
-		return this.ingressConfigs;
-	}
-
-	public void setIngressConfigs(List<IngressConfigsItem> ingressConfigs) {
-		this.ingressConfigs = ingressConfigs;
-	}
-
 	public List<DataItem> getData() {
 		return this.data;
 	}
 
 	public void setData(List<DataItem> data) {
 		this.data = data;
-	}
-
-	public static class IngressConfigsItem {
-
-		private String clusterId;
-
-		private String clusterName;
-
-		private String regionId;
-
-		private List<IngressRulesItem> ingressRules;
-
-		public String getClusterId() {
-			return this.clusterId;
-		}
-
-		public void setClusterId(String clusterId) {
-			this.clusterId = clusterId;
-		}
-
-		public String getClusterName() {
-			return this.clusterName;
-		}
-
-		public void setClusterName(String clusterName) {
-			this.clusterName = clusterName;
-		}
-
-		public String getRegionId() {
-			return this.regionId;
-		}
-
-		public void setRegionId(String regionId) {
-			this.regionId = regionId;
-		}
-
-		public List<IngressRulesItem> getIngressRules() {
-			return this.ingressRules;
-		}
-
-		public void setIngressRules(List<IngressRulesItem> ingressRules) {
-			this.ingressRules = ingressRules;
-		}
-
-		public static class IngressRulesItem {
-
-			private String name;
-
-			private String namespace;
-
-			private String endpoint;
-
-			private String creationTime;
-
-			private List<IngressPathsItem> ingressPaths;
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getNamespace() {
-				return this.namespace;
-			}
-
-			public void setNamespace(String namespace) {
-				this.namespace = namespace;
-			}
-
-			public String getEndpoint() {
-				return this.endpoint;
-			}
-
-			public void setEndpoint(String endpoint) {
-				this.endpoint = endpoint;
-			}
-
-			public String getCreationTime() {
-				return this.creationTime;
-			}
-
-			public void setCreationTime(String creationTime) {
-				this.creationTime = creationTime;
-			}
-
-			public List<IngressPathsItem> getIngressPaths() {
-				return this.ingressPaths;
-			}
-
-			public void setIngressPaths(List<IngressPathsItem> ingressPaths) {
-				this.ingressPaths = ingressPaths;
-			}
-
-			public static class IngressPathsItem {
-
-				private String host;
-
-				private String path;
-
-				private String appName;
-
-				private String serviceName;
-
-				private Integer servicePort;
-
-				private String appId;
-
-				private String status;
-
-				public String getHost() {
-					return this.host;
-				}
-
-				public void setHost(String host) {
-					this.host = host;
-				}
-
-				public String getPath() {
-					return this.path;
-				}
-
-				public void setPath(String path) {
-					this.path = path;
-				}
-
-				public String getAppName() {
-					return this.appName;
-				}
-
-				public void setAppName(String appName) {
-					this.appName = appName;
-				}
-
-				public String getServiceName() {
-					return this.serviceName;
-				}
-
-				public void setServiceName(String serviceName) {
-					this.serviceName = serviceName;
-				}
-
-				public Integer getServicePort() {
-					return this.servicePort;
-				}
-
-				public void setServicePort(Integer servicePort) {
-					this.servicePort = servicePort;
-				}
-
-				public String getAppId() {
-					return this.appId;
-				}
-
-				public void setAppId(String appId) {
-					this.appId = appId;
-				}
-
-				public String getStatus() {
-					return this.status;
-				}
-
-				public void setStatus(String status) {
-					this.status = status;
-				}
-			}
-		}
 	}
 
 	public static class DataItem {

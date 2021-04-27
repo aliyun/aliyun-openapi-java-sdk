@@ -1,3 +1,7 @@
+2021-04-27 Version: 3.20.0
+- Add API GetAppDeployment.
+- Modify API DescribeAppInstanceList.
+
 2021-03-29 Version: 3.18.0
 - Modify API CreateGrayEnviroment.
 

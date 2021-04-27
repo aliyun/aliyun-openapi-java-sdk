@@ -22,50 +22,22 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse> {
+public class DeleteK8sConfigMapRequest extends RoaAcsRequest<DeleteK8sConfigMapResponse> {
 	   
-
-	private String condition;
-
-	private Integer pageNo;
 
 	private String namespace;
 
-	private Integer pageSize;
+	private String name;
 
 	private String clusterId;
-
-	private Boolean showRelatedApps;
-	public ListK8sSecretsRequest() {
-		super("Edas", "2017-08-01", "ListK8sSecrets", "Edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
-		setMethod(MethodType.GET);
+	public DeleteK8sConfigMapRequest() {
+		super("Edas", "2017-08-01", "DeleteK8sConfigMap", "Edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_config_map");
+		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getCondition() {
-		return this.condition;
-	}
-
-	public void setCondition(String condition) {
-		this.condition = condition;
-		if(condition != null){
-			putQueryParameter("Condition", condition);
-		}
-	}
-
-	public Integer getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
-		}
 	}
 
 	public String getNamespace() {
@@ -79,14 +51,14 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
@@ -101,20 +73,9 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 		}
 	}
 
-	public Boolean getShowRelatedApps() {
-		return this.showRelatedApps;
-	}
-
-	public void setShowRelatedApps(Boolean showRelatedApps) {
-		this.showRelatedApps = showRelatedApps;
-		if(showRelatedApps != null){
-			putQueryParameter("ShowRelatedApps", showRelatedApps.toString());
-		}
-	}
-
 	@Override
-	public Class<ListK8sSecretsResponse> getResponseClass() {
-		return ListK8sSecretsResponse.class;
+	public Class<DeleteK8sConfigMapResponse> getResponseClass() {
+		return DeleteK8sConfigMapResponse.class;
 	}
 
 }

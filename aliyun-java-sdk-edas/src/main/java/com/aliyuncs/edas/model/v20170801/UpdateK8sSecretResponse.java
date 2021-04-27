@@ -15,18 +15,28 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.UpdateK8sIngressRuleResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.UpdateK8sSecretResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateK8sIngressRuleResponse extends AcsResponse {
+public class UpdateK8sSecretResponse extends AcsResponse {
+
+	private String requestId;
 
 	private Integer code;
 
 	private String message;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,8 +55,8 @@ public class UpdateK8sIngressRuleResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateK8sIngressRuleResponse getInstance(UnmarshallerContext context) {
-		return	UpdateK8sIngressRuleResponseUnmarshaller.unmarshall(this, context);
+	public UpdateK8sSecretResponse getInstance(UnmarshallerContext context) {
+		return	UpdateK8sSecretResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

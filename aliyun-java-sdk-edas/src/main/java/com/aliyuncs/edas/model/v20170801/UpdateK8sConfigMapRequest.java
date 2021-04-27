@@ -22,24 +22,35 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressRuleResponse> {
+public class UpdateK8sConfigMapRequest extends RoaAcsRequest<UpdateK8sConfigMapResponse> {
 	   
+
+	private String data;
 
 	private String namespace;
 
 	private String name;
 
-	private String ingressConf;
-
 	private String clusterId;
-	public UpdateK8sIngressRuleRequest() {
-		super("Edas", "2017-08-01", "UpdateK8sIngressRule", "Edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
+	public UpdateK8sConfigMapRequest() {
+		super("Edas", "2017-08-01", "UpdateK8sConfigMap", "Edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_config_map");
 		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
+		}
 	}
 
 	public String getNamespace() {
@@ -49,7 +60,7 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
 		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
@@ -60,18 +71,7 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 	public void setName(String name) {
 		this.name = name;
 		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getIngressConf() {
-		return this.ingressConf;
-	}
-
-	public void setIngressConf(String ingressConf) {
-		this.ingressConf = ingressConf;
-		if(ingressConf != null){
-			putQueryParameter("IngressConf", ingressConf);
+			putBodyParameter("Name", name);
 		}
 	}
 
@@ -82,13 +82,13 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+			putBodyParameter("ClusterId", clusterId);
 		}
 	}
 
 	@Override
-	public Class<UpdateK8sIngressRuleResponse> getResponseClass() {
-		return UpdateK8sIngressRuleResponse.class;
+	public Class<UpdateK8sConfigMapResponse> getResponseClass() {
+		return UpdateK8sConfigMapResponse.class;
 	}
 
 }

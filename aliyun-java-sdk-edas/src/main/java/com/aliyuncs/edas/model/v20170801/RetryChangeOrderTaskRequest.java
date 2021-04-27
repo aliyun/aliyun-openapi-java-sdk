@@ -22,17 +22,15 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListK8sIngressRulesRequest extends RoaAcsRequest<ListK8sIngressRulesResponse> {
+public class RetryChangeOrderTaskRequest extends RoaAcsRequest<RetryChangeOrderTaskResponse> {
 	   
 
-	private String condition;
+	private Boolean retryStatus;
 
-	private String namespace;
-
-	private String clusterId;
-	public ListK8sIngressRulesRequest() {
-		super("Edas", "2017-08-01", "ListK8sIngressRules", "Edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
+	private String taskId;
+	public RetryChangeOrderTaskRequest() {
+		super("Edas", "2017-08-01", "RetryChangeOrderTask", "Edas");
+		setUriPattern("/pop/v5/changeorder/task_retry");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +38,31 @@ public class ListK8sIngressRulesRequest extends RoaAcsRequest<ListK8sIngressRule
 		} catch (Exception e) {}
 	}
 
-	public String getCondition() {
-		return this.condition;
+	public Boolean getRetryStatus() {
+		return this.retryStatus;
 	}
 
-	public void setCondition(String condition) {
-		this.condition = condition;
-		if(condition != null){
-			putQueryParameter("Condition", condition);
+	public void setRetryStatus(Boolean retryStatus) {
+		this.retryStatus = retryStatus;
+		if(retryStatus != null){
+			putQueryParameter("RetryStatus", retryStatus.toString());
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
 	@Override
-	public Class<ListK8sIngressRulesResponse> getResponseClass() {
-		return ListK8sIngressRulesResponse.class;
+	public Class<RetryChangeOrderTaskResponse> getResponseClass() {
+		return RetryChangeOrderTaskResponse.class;
 	}
 
 }

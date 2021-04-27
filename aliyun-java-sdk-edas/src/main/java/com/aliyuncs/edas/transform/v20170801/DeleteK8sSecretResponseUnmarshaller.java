@@ -14,17 +14,18 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
-import com.aliyuncs.edas.model.v20170801.UpdateK8sIngressRuleResponse;
+import com.aliyuncs.edas.model.v20170801.DeleteK8sSecretResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateK8sIngressRuleResponseUnmarshaller {
+public class DeleteK8sSecretResponseUnmarshaller {
 
-	public static UpdateK8sIngressRuleResponse unmarshall(UpdateK8sIngressRuleResponse updateK8sIngressRuleResponse, UnmarshallerContext _ctx) {
+	public static DeleteK8sSecretResponse unmarshall(DeleteK8sSecretResponse deleteK8sSecretResponse, UnmarshallerContext _ctx) {
 		
-		updateK8sIngressRuleResponse.setCode(_ctx.integerValue("UpdateK8sIngressRuleResponse.Code"));
-		updateK8sIngressRuleResponse.setMessage(_ctx.stringValue("UpdateK8sIngressRuleResponse.Message"));
+		deleteK8sSecretResponse.setRequestId(_ctx.stringValue("DeleteK8sSecretResponse.RequestId"));
+		deleteK8sSecretResponse.setCode(_ctx.integerValue("DeleteK8sSecretResponse.Code"));
+		deleteK8sSecretResponse.setMessage(_ctx.stringValue("DeleteK8sSecretResponse.Message"));
 	 
-	 	return updateK8sIngressRuleResponse;
+	 	return deleteK8sSecretResponse;
 	}
 }

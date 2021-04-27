@@ -22,49 +22,47 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse> {
+public class UpdateK8sSecretRequest extends RoaAcsRequest<UpdateK8sSecretResponse> {
 	   
 
-	private String condition;
+	private String data;
 
-	private Integer pageNo;
+	private String name;
 
 	private String namespace;
 
-	private Integer pageSize;
-
 	private String clusterId;
 
-	private Boolean showRelatedApps;
-	public ListK8sSecretsRequest() {
-		super("Edas", "2017-08-01", "ListK8sSecrets", "Edas");
+	private String type;
+	public UpdateK8sSecretRequest() {
+		super("Edas", "2017-08-01", "UpdateK8sSecret", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
-		setMethod(MethodType.GET);
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getCondition() {
-		return this.condition;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setCondition(String condition) {
-		this.condition = condition;
-		if(condition != null){
-			putQueryParameter("Condition", condition);
+	public void setData(String data) {
+		this.data = data;
+		if(data != null){
+			putBodyParameter("Data", data);
 		}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putQueryParameter("PageNo", pageNo.toString());
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
 		}
 	}
 
@@ -75,18 +73,7 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 	public void setNamespace(String namespace) {
 		this.namespace = namespace;
 		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
+			putBodyParameter("Namespace", namespace);
 		}
 	}
 
@@ -97,24 +84,24 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 	public void setClusterId(String clusterId) {
 		this.clusterId = clusterId;
 		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+			putBodyParameter("ClusterId", clusterId);
 		}
 	}
 
-	public Boolean getShowRelatedApps() {
-		return this.showRelatedApps;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setShowRelatedApps(Boolean showRelatedApps) {
-		this.showRelatedApps = showRelatedApps;
-		if(showRelatedApps != null){
-			putQueryParameter("ShowRelatedApps", showRelatedApps.toString());
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putBodyParameter("Type", type);
 		}
 	}
 
 	@Override
-	public Class<ListK8sSecretsResponse> getResponseClass() {
-		return ListK8sSecretsResponse.class;
+	public Class<UpdateK8sSecretResponse> getResponseClass() {
+		return UpdateK8sSecretResponse.class;
 	}
 
 }

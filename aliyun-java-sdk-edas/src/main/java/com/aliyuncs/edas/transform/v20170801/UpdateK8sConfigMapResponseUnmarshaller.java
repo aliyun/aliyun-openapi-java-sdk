@@ -14,17 +14,18 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
-import com.aliyuncs.edas.model.v20170801.UpdateK8sIngressRuleResponse;
+import com.aliyuncs.edas.model.v20170801.UpdateK8sConfigMapResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class UpdateK8sIngressRuleResponseUnmarshaller {
+public class UpdateK8sConfigMapResponseUnmarshaller {
 
-	public static UpdateK8sIngressRuleResponse unmarshall(UpdateK8sIngressRuleResponse updateK8sIngressRuleResponse, UnmarshallerContext _ctx) {
+	public static UpdateK8sConfigMapResponse unmarshall(UpdateK8sConfigMapResponse updateK8sConfigMapResponse, UnmarshallerContext _ctx) {
 		
-		updateK8sIngressRuleResponse.setCode(_ctx.integerValue("UpdateK8sIngressRuleResponse.Code"));
-		updateK8sIngressRuleResponse.setMessage(_ctx.stringValue("UpdateK8sIngressRuleResponse.Message"));
+		updateK8sConfigMapResponse.setRequestId(_ctx.stringValue("UpdateK8sConfigMapResponse.RequestId"));
+		updateK8sConfigMapResponse.setCode(_ctx.integerValue("UpdateK8sConfigMapResponse.Code"));
+		updateK8sConfigMapResponse.setMessage(_ctx.stringValue("UpdateK8sConfigMapResponse.Message"));
 	 
-	 	return updateK8sIngressRuleResponse;
+	 	return updateK8sConfigMapResponse;
 	}
 }

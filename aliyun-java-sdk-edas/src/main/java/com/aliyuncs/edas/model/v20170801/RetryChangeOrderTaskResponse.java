@@ -15,20 +15,20 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.QueryMonitorInfoResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.RetryChangeOrderTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryMonitorInfoResponse extends AcsResponse {
+public class RetryChangeOrderTaskResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String message;
+	private String data;
 
-	private String monitorInfo;
+	private String message;
 
 	private String requestId;
 
@@ -40,20 +40,20 @@ public class QueryMonitorInfoResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getMonitorInfo() {
-		return this.monitorInfo;
-	}
-
-	public void setMonitorInfo(String monitorInfo) {
-		this.monitorInfo = monitorInfo;
 	}
 
 	public String getRequestId() {
@@ -65,7 +65,12 @@ public class QueryMonitorInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public QueryMonitorInfoResponse getInstance(UnmarshallerContext context) {
-		return	QueryMonitorInfoResponseUnmarshaller.unmarshall(this, context);
+	public RetryChangeOrderTaskResponse getInstance(UnmarshallerContext context) {
+		return	RetryChangeOrderTaskResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

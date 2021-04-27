@@ -14,7 +14,6 @@
 
 package com.aliyuncs.edas.model.v20170801;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.edas.transform.v20170801.DeleteK8sIngressRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -28,8 +27,6 @@ public class DeleteK8sIngressRuleResponse extends AcsResponse {
 	private Integer code;
 
 	private String message;
-
-	private List<ChangeOrderIdsItem> changeOrderIds;
 
 	public Integer getCode() {
 		return this.code;
@@ -45,37 +42,6 @@ public class DeleteK8sIngressRuleResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public List<ChangeOrderIdsItem> getChangeOrderIds() {
-		return this.changeOrderIds;
-	}
-
-	public void setChangeOrderIds(List<ChangeOrderIdsItem> changeOrderIds) {
-		this.changeOrderIds = changeOrderIds;
-	}
-
-	public static class ChangeOrderIdsItem {
-
-		private String appId;
-
-		private String changeOrderId;
-
-		public String getAppId() {
-			return this.appId;
-		}
-
-		public void setAppId(String appId) {
-			this.appId = appId;
-		}
-
-		public String getChangeOrderId() {
-			return this.changeOrderId;
-		}
-
-		public void setChangeOrderId(String changeOrderId) {
-			this.changeOrderId = changeOrderId;
-		}
 	}
 
 	@Override

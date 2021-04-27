@@ -15,18 +15,22 @@
 package com.aliyuncs.edas.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.edas.transform.v20170801.UpdateK8sIngressRuleResponseUnmarshaller;
+import com.aliyuncs.edas.transform.v20170801.GetK8sStorageInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateK8sIngressRuleResponse extends AcsResponse {
+public class GetK8sStorageInfoResponse extends AcsResponse {
 
 	private Integer code;
 
 	private String message;
+
+	private String requestId;
+
+	private StorageInfo storageInfo;
 
 	public Integer getCode() {
 		return this.code;
@@ -44,9 +48,38 @@ public class UpdateK8sIngressRuleResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public StorageInfo getStorageInfo() {
+		return this.storageInfo;
+	}
+
+	public void setStorageInfo(StorageInfo storageInfo) {
+		this.storageInfo = storageInfo;
+	}
+
+	public static class StorageInfo {
+
+		private String volumePlugin;
+
+		public String getVolumePlugin() {
+			return this.volumePlugin;
+		}
+
+		public void setVolumePlugin(String volumePlugin) {
+			this.volumePlugin = volumePlugin;
+		}
+	}
+
 	@Override
-	public UpdateK8sIngressRuleResponse getInstance(UnmarshallerContext context) {
-		return	UpdateK8sIngressRuleResponseUnmarshaller.unmarshall(this, context);
+	public GetK8sStorageInfoResponse getInstance(UnmarshallerContext context) {
+		return	GetK8sStorageInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

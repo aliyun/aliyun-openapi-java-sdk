@@ -22,7 +22,7 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse> {
+public class ListK8sConfigMapsRequest extends RoaAcsRequest<ListK8sConfigMapsResponse> {
 	   
 
 	private String condition;
@@ -36,9 +36,9 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 	private String clusterId;
 
 	private Boolean showRelatedApps;
-	public ListK8sSecretsRequest() {
-		super("Edas", "2017-08-01", "ListK8sSecrets", "Edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
+	public ListK8sConfigMapsRequest() {
+		super("Edas", "2017-08-01", "ListK8sConfigMaps", "Edas");
+		setUriPattern("/pop/v5/k8s/acs/k8s_config_map");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -113,8 +113,8 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 	}
 
 	@Override
-	public Class<ListK8sSecretsResponse> getResponseClass() {
-		return ListK8sSecretsResponse.class;
+	public Class<ListK8sConfigMapsResponse> getResponseClass() {
+		return ListK8sConfigMapsResponse.class;
 	}
 
 }

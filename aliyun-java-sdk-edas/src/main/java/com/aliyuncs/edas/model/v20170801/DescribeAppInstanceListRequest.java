@@ -22,17 +22,15 @@ import com.aliyuncs.edas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListK8sIngressRulesRequest extends RoaAcsRequest<ListK8sIngressRulesResponse> {
+public class DescribeAppInstanceListRequest extends RoaAcsRequest<DescribeAppInstanceListResponse> {
 	   
 
-	private String condition;
+	private String appId;
 
-	private String namespace;
-
-	private String clusterId;
-	public ListK8sIngressRulesRequest() {
-		super("Edas", "2017-08-01", "ListK8sIngressRules", "Edas");
-		setUriPattern("/pop/v5/k8s/acs/k8s_ingress");
+	private Boolean withNodeInfo;
+	public DescribeAppInstanceListRequest() {
+		super("Edas", "2017-08-01", "DescribeAppInstanceList", "Edas");
+		setUriPattern("/pop/v5/oam/app_instance_list");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -40,42 +38,31 @@ public class ListK8sIngressRulesRequest extends RoaAcsRequest<ListK8sIngressRule
 		} catch (Exception e) {}
 	}
 
-	public String getCondition() {
-		return this.condition;
+	public String getAppId() {
+		return this.appId;
 	}
 
-	public void setCondition(String condition) {
-		this.condition = condition;
-		if(condition != null){
-			putQueryParameter("Condition", condition);
+	public void setAppId(String appId) {
+		this.appId = appId;
+		if(appId != null){
+			putQueryParameter("AppId", appId);
 		}
 	}
 
-	public String getNamespace() {
-		return this.namespace;
+	public Boolean getWithNodeInfo() {
+		return this.withNodeInfo;
 	}
 
-	public void setNamespace(String namespace) {
-		this.namespace = namespace;
-		if(namespace != null){
-			putQueryParameter("Namespace", namespace);
-		}
-	}
-
-	public String getClusterId() {
-		return this.clusterId;
-	}
-
-	public void setClusterId(String clusterId) {
-		this.clusterId = clusterId;
-		if(clusterId != null){
-			putQueryParameter("ClusterId", clusterId);
+	public void setWithNodeInfo(Boolean withNodeInfo) {
+		this.withNodeInfo = withNodeInfo;
+		if(withNodeInfo != null){
+			putQueryParameter("WithNodeInfo", withNodeInfo.toString());
 		}
 	}
 
 	@Override
-	public Class<ListK8sIngressRulesResponse> getResponseClass() {
-		return ListK8sIngressRulesResponse.class;
+	public Class<DescribeAppInstanceListResponse> getResponseClass() {
+		return DescribeAppInstanceListResponse.class;
 	}
 
 }

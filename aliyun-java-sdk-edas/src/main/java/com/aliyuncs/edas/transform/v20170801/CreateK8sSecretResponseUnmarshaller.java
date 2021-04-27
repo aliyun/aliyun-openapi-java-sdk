@@ -14,19 +14,18 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
-import com.aliyuncs.edas.model.v20170801.QueryMonitorInfoResponse;
+import com.aliyuncs.edas.model.v20170801.CreateK8sSecretResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class QueryMonitorInfoResponseUnmarshaller {
+public class CreateK8sSecretResponseUnmarshaller {
 
-	public static QueryMonitorInfoResponse unmarshall(QueryMonitorInfoResponse queryMonitorInfoResponse, UnmarshallerContext _ctx) {
+	public static CreateK8sSecretResponse unmarshall(CreateK8sSecretResponse createK8sSecretResponse, UnmarshallerContext _ctx) {
 		
-		queryMonitorInfoResponse.setRequestId(_ctx.stringValue("QueryMonitorInfoResponse.RequestId"));
-		queryMonitorInfoResponse.setCode(_ctx.integerValue("QueryMonitorInfoResponse.Code"));
-		queryMonitorInfoResponse.setMessage(_ctx.stringValue("QueryMonitorInfoResponse.Message"));
-		queryMonitorInfoResponse.setMonitorInfo(_ctx.stringValue("QueryMonitorInfoResponse.MonitorInfo"));
+		createK8sSecretResponse.setRequestId(_ctx.stringValue("CreateK8sSecretResponse.RequestId"));
+		createK8sSecretResponse.setCode(_ctx.integerValue("CreateK8sSecretResponse.Code"));
+		createK8sSecretResponse.setMessage(_ctx.stringValue("CreateK8sSecretResponse.Message"));
 	 
-	 	return queryMonitorInfoResponse;
+	 	return createK8sSecretResponse;
 	}
 }
