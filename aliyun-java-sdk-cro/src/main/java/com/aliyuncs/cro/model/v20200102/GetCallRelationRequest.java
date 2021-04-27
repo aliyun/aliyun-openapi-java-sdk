@@ -21,29 +21,42 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ScanOpenSourceComplianceRequest extends RpcAcsRequest<ScanOpenSourceComplianceResponse> {
+public class GetCallRelationRequest extends RpcAcsRequest<GetCallRelationResponse> {
 	   
 
-	private String data;
-	public ScanOpenSourceComplianceRequest() {
-		super("CRO", "2020-01-02", "ScanOpenSourceCompliance", "cro");
+	private String appName;
+
+	private String appSource;
+	public GetCallRelationRequest() {
+		super("CRO", "2020-01-02", "GetCallRelation", "cro");
 		setMethod(MethodType.POST);
 	}
 
-	public String getData() {
-		return this.data;
+	public String getAppName() {
+		return this.appName;
 	}
 
-	public void setData(String data) {
-		this.data = data;
-		if(data != null){
-			putBodyParameter("Data", data);
+	public void setAppName(String appName) {
+		this.appName = appName;
+		if(appName != null){
+			putQueryParameter("AppName", appName);
+		}
+	}
+
+	public String getAppSource() {
+		return this.appSource;
+	}
+
+	public void setAppSource(String appSource) {
+		this.appSource = appSource;
+		if(appSource != null){
+			putQueryParameter("AppSource", appSource);
 		}
 	}
 
 	@Override
-	public Class<ScanOpenSourceComplianceResponse> getResponseClass() {
-		return ScanOpenSourceComplianceResponse.class;
+	public Class<GetCallRelationResponse> getResponseClass() {
+		return GetCallRelationResponse.class;
 	}
 
 }

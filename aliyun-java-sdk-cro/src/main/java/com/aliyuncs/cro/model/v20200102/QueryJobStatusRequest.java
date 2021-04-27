@@ -21,12 +21,12 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class ScanOpenSourceComplianceRequest extends RpcAcsRequest<ScanOpenSourceComplianceResponse> {
+public class QueryJobStatusRequest extends RpcAcsRequest<QueryJobStatusResponse> {
 	   
 
 	private String data;
-	public ScanOpenSourceComplianceRequest() {
-		super("CRO", "2020-01-02", "ScanOpenSourceCompliance", "cro");
+	public QueryJobStatusRequest() {
+		super("CRO", "2020-01-02", "QueryJobStatus", "cro");
 		setMethod(MethodType.POST);
 	}
 
@@ -42,8 +42,8 @@ public class ScanOpenSourceComplianceRequest extends RpcAcsRequest<ScanOpenSourc
 	}
 
 	@Override
-	public Class<ScanOpenSourceComplianceResponse> getResponseClass() {
-		return ScanOpenSourceComplianceResponse.class;
+	public Class<QueryJobStatusResponse> getResponseClass() {
+		return QueryJobStatusResponse.class;
 	}
 
 }

@@ -32,7 +32,7 @@ public class ExtractWatermarkRequest extends RpcAcsRequest<ExtractWatermarkRespo
 
 	private String scene;
 	public ExtractWatermarkRequest() {
-		super("CRO", "2020-01-02", "ExtractWatermark");
+		super("CRO", "2020-01-02", "ExtractWatermark", "cro");
 		setMethod(MethodType.POST);
 	}
 

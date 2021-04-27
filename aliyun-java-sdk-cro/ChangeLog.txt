@@ -1,3 +1,6 @@
+2021-04-27 Version: 1.0.8
+- Support identify.
+
 2020-05-14 Version: 1.0.0
 - Support watermark.
 

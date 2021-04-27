@@ -38,7 +38,7 @@ public class EmbedWatermarkRequest extends RpcAcsRequest<EmbedWatermarkResponse>
 
 	private String scene;
 	public EmbedWatermarkRequest() {
-		super("CRO", "2020-01-02", "EmbedWatermark");
+		super("CRO", "2020-01-02", "EmbedWatermark", "cro");
 		setMethod(MethodType.POST);
 	}
 
