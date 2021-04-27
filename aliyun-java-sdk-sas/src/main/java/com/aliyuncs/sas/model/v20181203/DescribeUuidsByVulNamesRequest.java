@@ -17,6 +17,7 @@ package com.aliyuncs.sas.model.v20181203;
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -25,7 +26,11 @@ import com.aliyuncs.http.MethodType;
 public class DescribeUuidsByVulNamesRequest extends RpcAcsRequest<DescribeUuidsByVulNamesResponse> {
 	   
 
+	private String statusList;
+
 	private String targetType;
+
+	private String remark;
 
 	private String type;
 
@@ -50,11 +55,24 @@ public class DescribeUuidsByVulNamesRequest extends RpcAcsRequest<DescribeUuidsB
 	private String searchTags;
 
 	private String necessity;
-
-	private String status;
 	public DescribeUuidsByVulNamesRequest() {
 		super("Sas", "2018-12-03", "DescribeUuidsByVulNames", "sas");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
+	}
+
+	public String getStatusList() {
+		return this.statusList;
+	}
+
+	public void setStatusList(String statusList) {
+		this.statusList = statusList;
+		if(statusList != null){
+			putQueryParameter("StatusList", statusList);
+		}
 	}
 
 	public String getTargetType() {
@@ -65,6 +83,17 @@ public class DescribeUuidsByVulNamesRequest extends RpcAcsRequest<DescribeUuidsB
 		this.targetType = targetType;
 		if(targetType != null){
 			putQueryParameter("TargetType", targetType);
+		}
+	}
+
+	public String getRemark() {
+		return this.remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+		if(remark != null){
+			putQueryParameter("Remark", remark);
 		}
 	}
 
@@ -199,17 +228,6 @@ public class DescribeUuidsByVulNamesRequest extends RpcAcsRequest<DescribeUuidsB
 		this.necessity = necessity;
 		if(necessity != null){
 			putQueryParameter("Necessity", necessity);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 
