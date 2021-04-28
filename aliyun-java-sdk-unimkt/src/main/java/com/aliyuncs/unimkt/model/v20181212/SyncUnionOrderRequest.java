@@ -61,7 +61,7 @@ public class SyncUnionOrderRequest extends RpcAcsRequest<SyncUnionOrderResponse>
 
 	private String status;
 	public SyncUnionOrderRequest() {
-		super("UniMkt", "2018-12-12", "SyncUnionOrder");
+		super("UniMkt", "2018-12-12", "SyncUnionOrder", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -61,7 +61,7 @@ public class ListRuleAreaRequest extends RpcAcsRequest<ListRuleAreaResponse> {
 
 	private String ruleId;
 	public ListRuleAreaRequest() {
-		super("UniMkt", "2018-12-12", "ListRuleArea");
+		super("UniMkt", "2018-12-12", "ListRuleArea", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

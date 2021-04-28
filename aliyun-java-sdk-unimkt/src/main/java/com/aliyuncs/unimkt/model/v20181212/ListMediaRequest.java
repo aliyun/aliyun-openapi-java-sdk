@@ -57,7 +57,7 @@ public class ListMediaRequest extends RpcAcsRequest<ListMediaResponse> {
 
 	private String accessStatus;
 	public ListMediaRequest() {
-		super("UniMkt", "2018-12-12", "ListMedia");
+		super("UniMkt", "2018-12-12", "ListMedia", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

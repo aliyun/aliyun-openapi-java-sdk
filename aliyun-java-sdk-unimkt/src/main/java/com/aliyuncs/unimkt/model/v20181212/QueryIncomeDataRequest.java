@@ -57,7 +57,7 @@ public class QueryIncomeDataRequest extends RpcAcsRequest<QueryIncomeDataRespons
 
 	private String queryType;
 	public QueryIncomeDataRequest() {
-		super("UniMkt", "2018-12-12", "QueryIncomeData");
+		super("UniMkt", "2018-12-12", "QueryIncomeData", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -43,7 +43,7 @@ public class CreateMediaRequest extends RpcAcsRequest<CreateMediaResponse> {
 
 	private String userSite;
 	public CreateMediaRequest() {
-		super("UniMkt", "2018-12-12", "CreateMedia");
+		super("UniMkt", "2018-12-12", "CreateMedia", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

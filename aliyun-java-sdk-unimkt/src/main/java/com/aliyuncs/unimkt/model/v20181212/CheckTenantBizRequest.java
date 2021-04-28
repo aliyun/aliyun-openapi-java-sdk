@@ -43,7 +43,7 @@ public class CheckTenantBizRequest extends RpcAcsRequest<CheckTenantBizResponse>
 
 	private String userSite;
 	public CheckTenantBizRequest() {
-		super("UniMkt", "2018-12-12", "CheckTenantBiz");
+		super("UniMkt", "2018-12-12", "CheckTenantBiz", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

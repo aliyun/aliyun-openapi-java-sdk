@@ -43,7 +43,7 @@ public class CreatesSlotTemplateRequest extends RpcAcsRequest<CreatesSlotTemplat
 
 	private String userSite;
 	public CreatesSlotTemplateRequest() {
-		super("UniMkt", "2018-12-12", "CreatesSlotTemplate");
+		super("UniMkt", "2018-12-12", "CreatesSlotTemplate", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -49,7 +49,7 @@ public class ChangeSlotStatusRequest extends RpcAcsRequest<ChangeSlotStatusRespo
 
 	private String adSlotCorporateStatus;
 	public ChangeSlotStatusRequest() {
-		super("UniMkt", "2018-12-12", "ChangeSlotStatus");
+		super("UniMkt", "2018-12-12", "ChangeSlotStatus", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

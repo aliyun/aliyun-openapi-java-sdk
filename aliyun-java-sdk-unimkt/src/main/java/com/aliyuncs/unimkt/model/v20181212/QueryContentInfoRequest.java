@@ -27,7 +27,7 @@ public class QueryContentInfoRequest extends RpcAcsRequest<QueryContentInfoRespo
 
 	private Long contentId;
 	public QueryContentInfoRequest() {
-		super("UniMkt", "2018-12-12", "QueryContentInfo");
+		super("UniMkt", "2018-12-12", "QueryContentInfo", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

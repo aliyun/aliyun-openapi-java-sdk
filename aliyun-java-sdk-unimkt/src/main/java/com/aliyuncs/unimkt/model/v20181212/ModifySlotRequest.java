@@ -41,7 +41,7 @@ public class ModifySlotRequest extends RpcAcsRequest<ModifySlotResponse> {
 
 	private String adSlot;
 	public ModifySlotRequest() {
-		super("UniMkt", "2018-12-12", "ModifySlot");
+		super("UniMkt", "2018-12-12", "ModifySlot", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

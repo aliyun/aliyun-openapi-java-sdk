@@ -33,7 +33,7 @@ public class ReduceAmountRequest extends RpcAcsRequest<ReduceAmountResponse> {
 
 	private String channelId;
 	public ReduceAmountRequest() {
-		super("UniMkt", "2018-12-12", "ReduceAmount");
+		super("UniMkt", "2018-12-12", "ReduceAmount", "uniMkt");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
