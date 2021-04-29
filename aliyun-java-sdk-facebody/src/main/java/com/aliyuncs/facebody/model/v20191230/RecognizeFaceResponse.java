@@ -57,11 +57,11 @@ public class RecognizeFaceResponse extends AcsResponse {
 
 		private List<Float> faceProbabilityList;
 
+		private List<Float> beautyList;
+
 		private List<Integer> hatList;
 
 		private List<Integer> ageList;
-
-		private List<Float> beuatyList;
 
 		private List<Integer> faceRectangles;
 
@@ -70,6 +70,8 @@ public class RecognizeFaceResponse extends AcsResponse {
 		private List<Float> landmarks;
 
 		private List<Integer> expressions;
+
+		private List<Long> masks;
 
 		private List<Float> poseList;
 
@@ -119,6 +121,14 @@ public class RecognizeFaceResponse extends AcsResponse {
 			this.faceProbabilityList = faceProbabilityList;
 		}
 
+		public List<Float> getBeautyList() {
+			return this.beautyList;
+		}
+
+		public void setBeautyList(List<Float> beautyList) {
+			this.beautyList = beautyList;
+		}
+
 		public List<Integer> getHatList() {
 			return this.hatList;
 		}
@@ -133,14 +143,6 @@ public class RecognizeFaceResponse extends AcsResponse {
 
 		public void setAgeList(List<Integer> ageList) {
 			this.ageList = ageList;
-		}
-
-		public List<Float> getBeuatyList() {
-			return this.beuatyList;
-		}
-
-		public void setBeuatyList(List<Float> beuatyList) {
-			this.beuatyList = beuatyList;
 		}
 
 		public List<Integer> getFaceRectangles() {
@@ -173,6 +175,14 @@ public class RecognizeFaceResponse extends AcsResponse {
 
 		public void setExpressions(List<Integer> expressions) {
 			this.expressions = expressions;
+		}
+
+		public List<Long> getMasks() {
+			return this.masks;
+		}
+
+		public void setMasks(List<Long> masks) {
+			this.masks = masks;
 		}
 
 		public List<Float> getPoseList() {

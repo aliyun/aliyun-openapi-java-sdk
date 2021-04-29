@@ -24,9 +24,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExtractPedestrianFeatureAttrResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
+	private String code;
+
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,6 +46,14 @@ public class ExtractPedestrianFeatureAttrResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -58,7 +78,11 @@ public class ExtractPedestrianFeatureAttrResponse extends AcsResponse {
 
 		private String gender;
 
+		private String orientation;
+
 		private String feature;
+
+		private Float orientationScore;
 
 		private Float upperColorScore;
 
@@ -130,12 +154,28 @@ public class ExtractPedestrianFeatureAttrResponse extends AcsResponse {
 			this.gender = gender;
 		}
 
+		public String getOrientation() {
+			return this.orientation;
+		}
+
+		public void setOrientation(String orientation) {
+			this.orientation = orientation;
+		}
+
 		public String getFeature() {
 			return this.feature;
 		}
 
 		public void setFeature(String feature) {
 			this.feature = feature;
+		}
+
+		public Float getOrientationScore() {
+			return this.orientationScore;
+		}
+
+		public void setOrientationScore(Float orientationScore) {
+			this.orientationScore = orientationScore;
 		}
 
 		public Float getUpperColorScore() {
