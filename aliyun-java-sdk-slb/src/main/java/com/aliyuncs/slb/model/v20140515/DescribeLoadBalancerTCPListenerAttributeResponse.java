@@ -83,8 +83,6 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	private Boolean proxyProtocolV2Enabled;
 
-	private Boolean proxyProtocolVpcIdEnabled;
-
 	private String requestId;
 
 	private String scheduler;
@@ -337,14 +335,6 @@ public class DescribeLoadBalancerTCPListenerAttributeResponse extends AcsRespons
 
 	public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
 		this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
-	}
-
-	public Boolean getProxyProtocolVpcIdEnabled() {
-		return this.proxyProtocolVpcIdEnabled;
-	}
-
-	public void setProxyProtocolVpcIdEnabled(Boolean proxyProtocolVpcIdEnabled) {
-		this.proxyProtocolVpcIdEnabled = proxyProtocolVpcIdEnabled;
 	}
 
 	public String getRequestId() {

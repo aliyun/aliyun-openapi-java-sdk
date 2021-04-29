@@ -83,8 +83,6 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	private Boolean proxyProtocolV2Enabled;
 
-	private Boolean proxyProtocolVpcIdEnabled;
-
 	private String quicVersion;
 
 	private String requestId;
@@ -339,14 +337,6 @@ public class DescribeLoadBalancerUDPListenerAttributeResponse extends AcsRespons
 
 	public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
 		this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
-	}
-
-	public Boolean getProxyProtocolVpcIdEnabled() {
-		return this.proxyProtocolVpcIdEnabled;
-	}
-
-	public void setProxyProtocolVpcIdEnabled(Boolean proxyProtocolVpcIdEnabled) {
-		this.proxyProtocolVpcIdEnabled = proxyProtocolVpcIdEnabled;
 	}
 
 	public String getQuicVersion() {
