@@ -28,18 +28,18 @@ public class DescribeNetworkOptimizationSagsResponseUnmarshaller {
 		
 		describeNetworkOptimizationSagsResponse.setRequestId(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.RequestId"));
 		describeNetworkOptimizationSagsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.TotalCount"));
-		describeNetworkOptimizationSagsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.PageNumber"));
 		describeNetworkOptimizationSagsResponse.setPageSize(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.PageSize"));
+		describeNetworkOptimizationSagsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationSagsResponse.PageNumber"));
 
 		List<SmartAccessGateway> smartAccessGateways = new ArrayList<SmartAccessGateway>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways.Length"); i++) {
 			SmartAccessGateway smartAccessGateway = new SmartAccessGateway();
-			smartAccessGateway.setInstanceId(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].InstanceId"));
-			smartAccessGateway.setName(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].Name"));
-			smartAccessGateway.setState(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].State"));
-			smartAccessGateway.setCreateTime(_ctx.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].CreateTime"));
 			smartAccessGateway.setEndTime(_ctx.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].EndTime"));
+			smartAccessGateway.setInstanceId(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].InstanceId"));
+			smartAccessGateway.setState(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].State"));
 			smartAccessGateway.setMaxBandwidth(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].MaxBandwidth"));
+			smartAccessGateway.setCreateTime(_ctx.longValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].CreateTime"));
+			smartAccessGateway.setName(_ctx.stringValue("DescribeNetworkOptimizationSagsResponse.SmartAccessGateways["+ i +"].Name"));
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

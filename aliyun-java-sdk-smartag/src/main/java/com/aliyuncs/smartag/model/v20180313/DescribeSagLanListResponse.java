@@ -27,9 +27,9 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Lan> lans;
-
 	private List<TaskState> taskStates;
+
+	private List<Lan> lans;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,14 +37,6 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public List<Lan> getLans() {
-		return this.lans;
-	}
-
-	public void setLans(List<Lan> lans) {
-		this.lans = lans;
 	}
 
 	public List<TaskState> getTaskStates() {
@@ -55,11 +47,62 @@ public class DescribeSagLanListResponse extends AcsResponse {
 		this.taskStates = taskStates;
 	}
 
+	public List<Lan> getLans() {
+		return this.lans;
+	}
+
+	public void setLans(List<Lan> lans) {
+		this.lans = lans;
+	}
+
+	public static class TaskState {
+
+		private String state;
+
+		private String createTime;
+
+		private String errorCode;
+
+		private String errorMessage;
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public String getErrorCode() {
+			return this.errorCode;
+		}
+
+		public void setErrorCode(String errorCode) {
+			this.errorCode = errorCode;
+		}
+
+		public String getErrorMessage() {
+			return this.errorMessage;
+		}
+
+		public void setErrorMessage(String errorMessage) {
+			this.errorMessage = errorMessage;
+		}
+	}
+
 	public static class Lan {
 
-		private String portName;
-
 		private String iPType;
+
+		private String lease;
 
 		private String iP;
 
@@ -67,17 +110,9 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 		private String startIp;
 
+		private String portName;
+
 		private String endIp;
-
-		private String lease;
-
-		public String getPortName() {
-			return this.portName;
-		}
-
-		public void setPortName(String portName) {
-			this.portName = portName;
-		}
 
 		public String getIPType() {
 			return this.iPType;
@@ -85,6 +120,14 @@ public class DescribeSagLanListResponse extends AcsResponse {
 
 		public void setIPType(String iPType) {
 			this.iPType = iPType;
+		}
+
+		public String getLease() {
+			return this.lease;
+		}
+
+		public void setLease(String lease) {
+			this.lease = lease;
 		}
 
 		public String getIP() {
@@ -111,63 +154,20 @@ public class DescribeSagLanListResponse extends AcsResponse {
 			this.startIp = startIp;
 		}
 
+		public String getPortName() {
+			return this.portName;
+		}
+
+		public void setPortName(String portName) {
+			this.portName = portName;
+		}
+
 		public String getEndIp() {
 			return this.endIp;
 		}
 
 		public void setEndIp(String endIp) {
 			this.endIp = endIp;
-		}
-
-		public String getLease() {
-			return this.lease;
-		}
-
-		public void setLease(String lease) {
-			this.lease = lease;
-		}
-	}
-
-	public static class TaskState {
-
-		private String state;
-
-		private String errorCode;
-
-		private String errorMessage;
-
-		private String createTime;
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getErrorCode() {
-			return this.errorCode;
-		}
-
-		public void setErrorCode(String errorCode) {
-			this.errorCode = errorCode;
-		}
-
-		public String getErrorMessage() {
-			return this.errorMessage;
-		}
-
-		public void setErrorMessage(String errorMessage) {
-			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

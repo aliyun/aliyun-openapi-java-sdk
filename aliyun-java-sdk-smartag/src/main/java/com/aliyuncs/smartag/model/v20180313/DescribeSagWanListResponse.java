@@ -57,29 +57,35 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 	public static class Wan {
 
-		private String portName;
-
 		private String iPType;
-
-		private String iP;
-
-		private String mask;
-
-		private String gateway;
-
-		private String username;
 
 		private String trafficState;
 
 		private Integer priority;
 
-		public String getPortName() {
-			return this.portName;
-		}
+		private String sourceIps;
 
-		public void setPortName(String portName) {
-			this.portName = portName;
-		}
+		private String iSP;
+
+		private String iP;
+
+		private String mask;
+
+		private String startIp;
+
+		private String vlan;
+
+		private String portName;
+
+		private Integer weight;
+
+		private String stopIp;
+
+		private Integer bandWidth;
+
+		private String username;
+
+		private String gateway;
 
 		public String getIPType() {
 			return this.iPType;
@@ -87,6 +93,38 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		public void setIPType(String iPType) {
 			this.iPType = iPType;
+		}
+
+		public String getTrafficState() {
+			return this.trafficState;
+		}
+
+		public void setTrafficState(String trafficState) {
+			this.trafficState = trafficState;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getSourceIps() {
+			return this.sourceIps;
+		}
+
+		public void setSourceIps(String sourceIps) {
+			this.sourceIps = sourceIps;
+		}
+
+		public String getISP() {
+			return this.iSP;
+		}
+
+		public void setISP(String iSP) {
+			this.iSP = iSP;
 		}
 
 		public String getIP() {
@@ -105,12 +143,52 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.mask = mask;
 		}
 
-		public String getGateway() {
-			return this.gateway;
+		public String getStartIp() {
+			return this.startIp;
 		}
 
-		public void setGateway(String gateway) {
-			this.gateway = gateway;
+		public void setStartIp(String startIp) {
+			this.startIp = startIp;
+		}
+
+		public String getVlan() {
+			return this.vlan;
+		}
+
+		public void setVlan(String vlan) {
+			this.vlan = vlan;
+		}
+
+		public String getPortName() {
+			return this.portName;
+		}
+
+		public void setPortName(String portName) {
+			this.portName = portName;
+		}
+
+		public Integer getWeight() {
+			return this.weight;
+		}
+
+		public void setWeight(Integer weight) {
+			this.weight = weight;
+		}
+
+		public String getStopIp() {
+			return this.stopIp;
+		}
+
+		public void setStopIp(String stopIp) {
+			this.stopIp = stopIp;
+		}
+
+		public Integer getBandWidth() {
+			return this.bandWidth;
+		}
+
+		public void setBandWidth(Integer bandWidth) {
+			this.bandWidth = bandWidth;
 		}
 
 		public String getUsername() {
@@ -121,20 +199,12 @@ public class DescribeSagWanListResponse extends AcsResponse {
 			this.username = username;
 		}
 
-		public String getTrafficState() {
-			return this.trafficState;
+		public String getGateway() {
+			return this.gateway;
 		}
 
-		public void setTrafficState(String trafficState) {
-			this.trafficState = trafficState;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
+		public void setGateway(String gateway) {
+			this.gateway = gateway;
 		}
 	}
 
@@ -142,11 +212,11 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -154,6 +224,14 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -170,14 +248,6 @@ public class DescribeSagWanListResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

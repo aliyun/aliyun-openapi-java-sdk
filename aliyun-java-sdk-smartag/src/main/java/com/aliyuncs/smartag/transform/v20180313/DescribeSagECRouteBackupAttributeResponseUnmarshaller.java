@@ -27,18 +27,18 @@ public class DescribeSagECRouteBackupAttributeResponseUnmarshaller {
 	public static DescribeSagECRouteBackupAttributeResponse unmarshall(DescribeSagECRouteBackupAttributeResponse describeSagECRouteBackupAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeSagECRouteBackupAttributeResponse.setRequestId(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.RequestId"));
-		describeSagECRouteBackupAttributeResponse.setSagId(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.SagId"));
 		describeSagECRouteBackupAttributeResponse.setHcIp(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.HcIp"));
-		describeSagECRouteBackupAttributeResponse.setExpressConnectionInterface(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.ExpressConnectionInterface"));
-		describeSagECRouteBackupAttributeResponse.setExpressConnectionNexthop(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.ExpressConnectionNexthop"));
-		describeSagECRouteBackupAttributeResponse.setRouteBackup(_ctx.booleanValue("DescribeSagECRouteBackupAttributeResponse.RouteBackup"));
 		describeSagECRouteBackupAttributeResponse.setStatus(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.Status"));
+		describeSagECRouteBackupAttributeResponse.setExpressConnectionInterface(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.ExpressConnectionInterface"));
+		describeSagECRouteBackupAttributeResponse.setRouteBackup(_ctx.booleanValue("DescribeSagECRouteBackupAttributeResponse.RouteBackup"));
+		describeSagECRouteBackupAttributeResponse.setExpressConnectionNexthop(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.ExpressConnectionNexthop"));
+		describeSagECRouteBackupAttributeResponse.setSagId(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.SagId"));
 
 		List<Cidr> cidrs = new ArrayList<Cidr>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagECRouteBackupAttributeResponse.Cidrs.Length"); i++) {
 			Cidr cidr = new Cidr();
-			cidr.setCidr(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.Cidrs["+ i +"].Cidr"));
 			cidr.setEnableBackup(_ctx.booleanValue("DescribeSagECRouteBackupAttributeResponse.Cidrs["+ i +"].EnableBackup"));
+			cidr.setCidr(_ctx.stringValue("DescribeSagECRouteBackupAttributeResponse.Cidrs["+ i +"].Cidr"));
 
 			cidrs.add(cidr);
 		}

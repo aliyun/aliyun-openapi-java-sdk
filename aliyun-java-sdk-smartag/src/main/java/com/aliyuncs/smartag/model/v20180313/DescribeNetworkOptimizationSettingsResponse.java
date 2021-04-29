@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Setting> settings;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Setting> getSettings() {
@@ -77,17 +77,9 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 
 	public static class Setting {
 
-		private String domain;
-
 		private String type;
 
-		public String getDomain() {
-			return this.domain;
-		}
-
-		public void setDomain(String domain) {
-			this.domain = domain;
-		}
+		private String domain;
 
 		public String getType() {
 			return this.type;
@@ -95,6 +87,14 @@ public class DescribeNetworkOptimizationSettingsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 	}
 

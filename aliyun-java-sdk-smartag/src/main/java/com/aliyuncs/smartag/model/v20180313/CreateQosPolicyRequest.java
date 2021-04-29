@@ -15,6 +15,7 @@
 package com.aliyuncs.smartag.model.v20180313;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.smartag.Endpoint;
 
@@ -24,6 +25,8 @@ import com.aliyuncs.smartag.Endpoint;
  */
 public class CreateQosPolicyRequest extends RpcAcsRequest<CreateQosPolicyResponse> {
 	   
+
+	private List<String> dpiGroupIdss;
 
 	private Long resourceOwnerId;
 
@@ -36,6 +39,8 @@ public class CreateQosPolicyRequest extends RpcAcsRequest<CreateQosPolicyRespons
 	private String startTime;
 
 	private String destCidr;
+
+	private List<String> dpiSignatureIdss;
 
 	private String qosId;
 
@@ -61,6 +66,19 @@ public class CreateQosPolicyRequest extends RpcAcsRequest<CreateQosPolicyRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public List<String> getDpiGroupIdss() {
+		return this.dpiGroupIdss;
+	}
+
+	public void setDpiGroupIdss(List<String> dpiGroupIdss) {
+		this.dpiGroupIdss = dpiGroupIdss;	
+		if (dpiGroupIdss != null) {
+			for (int i = 0; i < dpiGroupIdss.size(); i++) {
+				putQueryParameter("DpiGroupIds." + (i + 1) , dpiGroupIdss.get(i));
+			}
+		}	
 	}
 
 	public Long getResourceOwnerId() {
@@ -127,6 +145,19 @@ public class CreateQosPolicyRequest extends RpcAcsRequest<CreateQosPolicyRespons
 		if(destCidr != null){
 			putQueryParameter("DestCidr", destCidr);
 		}
+	}
+
+	public List<String> getDpiSignatureIdss() {
+		return this.dpiSignatureIdss;
+	}
+
+	public void setDpiSignatureIdss(List<String> dpiSignatureIdss) {
+		this.dpiSignatureIdss = dpiSignatureIdss;	
+		if (dpiSignatureIdss != null) {
+			for (int i = 0; i < dpiSignatureIdss.size(); i++) {
+				putQueryParameter("DpiSignatureIds." + (i + 1) , dpiSignatureIdss.get(i));
+			}
+		}	
 	}
 
 	public String getQosId() {

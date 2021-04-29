@@ -25,37 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagECRouteBackupAttributeResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String sagId;
-
 	private String hcIp;
-
-	private String expressConnectionInterface;
-
-	private String expressConnectionNexthop;
-
-	private Boolean routeBackup;
 
 	private String status;
 
+	private String requestId;
+
+	private String expressConnectionInterface;
+
+	private Boolean routeBackup;
+
+	private String expressConnectionNexthop;
+
+	private String sagId;
+
 	private List<Cidr> cidrs;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getSagId() {
-		return this.sagId;
-	}
-
-	public void setSagId(String sagId) {
-		this.sagId = sagId;
-	}
 
 	public String getHcIp() {
 		return this.hcIp;
@@ -63,6 +47,22 @@ public class DescribeSagECRouteBackupAttributeResponse extends AcsResponse {
 
 	public void setHcIp(String hcIp) {
 		this.hcIp = hcIp;
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getExpressConnectionInterface() {
@@ -73,14 +73,6 @@ public class DescribeSagECRouteBackupAttributeResponse extends AcsResponse {
 		this.expressConnectionInterface = expressConnectionInterface;
 	}
 
-	public String getExpressConnectionNexthop() {
-		return this.expressConnectionNexthop;
-	}
-
-	public void setExpressConnectionNexthop(String expressConnectionNexthop) {
-		this.expressConnectionNexthop = expressConnectionNexthop;
-	}
-
 	public Boolean getRouteBackup() {
 		return this.routeBackup;
 	}
@@ -89,12 +81,20 @@ public class DescribeSagECRouteBackupAttributeResponse extends AcsResponse {
 		this.routeBackup = routeBackup;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getExpressConnectionNexthop() {
+		return this.expressConnectionNexthop;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setExpressConnectionNexthop(String expressConnectionNexthop) {
+		this.expressConnectionNexthop = expressConnectionNexthop;
+	}
+
+	public String getSagId() {
+		return this.sagId;
+	}
+
+	public void setSagId(String sagId) {
+		this.sagId = sagId;
 	}
 
 	public List<Cidr> getCidrs() {
@@ -107,17 +107,9 @@ public class DescribeSagECRouteBackupAttributeResponse extends AcsResponse {
 
 	public static class Cidr {
 
-		private String cidr;
-
 		private Boolean enableBackup;
 
-		public String getCidr() {
-			return this.cidr;
-		}
-
-		public void setCidr(String cidr) {
-			this.cidr = cidr;
-		}
+		private String cidr;
 
 		public Boolean getEnableBackup() {
 			return this.enableBackup;
@@ -125,6 +117,14 @@ public class DescribeSagECRouteBackupAttributeResponse extends AcsResponse {
 
 		public void setEnableBackup(Boolean enableBackup) {
 			this.enableBackup = enableBackup;
+		}
+
+		public String getCidr() {
+			return this.cidr;
+		}
+
+		public void setCidr(String cidr) {
+			this.cidr = cidr;
 		}
 	}
 

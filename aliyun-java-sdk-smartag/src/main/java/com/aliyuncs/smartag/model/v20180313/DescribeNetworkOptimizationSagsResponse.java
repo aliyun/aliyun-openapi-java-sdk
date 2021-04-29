@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<SmartAccessGateway> smartAccessGateways;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SmartAccessGateway> getSmartAccessGateways() {
@@ -77,17 +77,25 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 
 	public static class SmartAccessGateway {
 
-		private String instanceId;
+		private Long endTime;
 
-		private String name;
+		private String instanceId;
 
 		private String state;
 
+		private String maxBandwidth;
+
 		private Long createTime;
 
-		private Long endTime;
+		private String name;
 
-		private String maxBandwidth;
+		public Long getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(Long endTime) {
+			this.endTime = endTime;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -95,14 +103,6 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getState() {
@@ -113,6 +113,14 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getMaxBandwidth() {
+			return this.maxBandwidth;
+		}
+
+		public void setMaxBandwidth(String maxBandwidth) {
+			this.maxBandwidth = maxBandwidth;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -121,20 +129,12 @@ public class DescribeNetworkOptimizationSagsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getEndTime() {
-			return this.endTime;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setEndTime(Long endTime) {
-			this.endTime = endTime;
-		}
-
-		public String getMaxBandwidth() {
-			return this.maxBandwidth;
-		}
-
-		public void setMaxBandwidth(String maxBandwidth) {
-			this.maxBandwidth = maxBandwidth;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

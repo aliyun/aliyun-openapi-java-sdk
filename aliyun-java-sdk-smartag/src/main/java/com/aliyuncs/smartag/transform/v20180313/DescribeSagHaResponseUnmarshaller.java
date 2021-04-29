@@ -33,8 +33,8 @@ public class DescribeSagHaResponseUnmarshaller {
 		List<Port> ports = new ArrayList<Port>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagHaResponse.Ports.Length"); i++) {
 			Port port = new Port();
-			port.setPortName(_ctx.stringValue("DescribeSagHaResponse.Ports["+ i +"].PortName"));
 			port.setVirtualIp(_ctx.stringValue("DescribeSagHaResponse.Ports["+ i +"].VirtualIp"));
+			port.setPortName(_ctx.stringValue("DescribeSagHaResponse.Ports["+ i +"].PortName"));
 
 			ports.add(port);
 		}
@@ -44,9 +44,9 @@ public class DescribeSagHaResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagHaResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
 			taskState.setState(_ctx.stringValue("DescribeSagHaResponse.TaskStates["+ i +"].State"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagHaResponse.TaskStates["+ i +"].CreateTime"));
 			taskState.setErrorCode(_ctx.stringValue("DescribeSagHaResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagHaResponse.TaskStates["+ i +"].ErrorMessage"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagHaResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

@@ -25,17 +25,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagRouteProtocolBgpResponse extends AcsResponse {
 
+	private Integer holdTime;
+
+	private String advertiseIps;
+
 	private String requestId;
+
+	private Integer keepAlive;
 
 	private String routerId;
 
 	private Integer localAs;
 
-	private Integer holdTime;
-
-	private Integer keepAlive;
-
 	private List<TaskState> taskStates;
+
+	public Integer getHoldTime() {
+		return this.holdTime;
+	}
+
+	public void setHoldTime(Integer holdTime) {
+		this.holdTime = holdTime;
+	}
+
+	public String getAdvertiseIps() {
+		return this.advertiseIps;
+	}
+
+	public void setAdvertiseIps(String advertiseIps) {
+		this.advertiseIps = advertiseIps;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -43,6 +61,14 @@ public class DescribeSagRouteProtocolBgpResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getKeepAlive() {
+		return this.keepAlive;
+	}
+
+	public void setKeepAlive(Integer keepAlive) {
+		this.keepAlive = keepAlive;
 	}
 
 	public String getRouterId() {
@@ -61,22 +87,6 @@ public class DescribeSagRouteProtocolBgpResponse extends AcsResponse {
 		this.localAs = localAs;
 	}
 
-	public Integer getHoldTime() {
-		return this.holdTime;
-	}
-
-	public void setHoldTime(Integer holdTime) {
-		this.holdTime = holdTime;
-	}
-
-	public Integer getKeepAlive() {
-		return this.keepAlive;
-	}
-
-	public void setKeepAlive(Integer keepAlive) {
-		this.keepAlive = keepAlive;
-	}
-
 	public List<TaskState> getTaskStates() {
 		return this.taskStates;
 	}
@@ -89,11 +99,11 @@ public class DescribeSagRouteProtocolBgpResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -101,6 +111,14 @@ public class DescribeSagRouteProtocolBgpResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -117,14 +135,6 @@ public class DescribeSagRouteProtocolBgpResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

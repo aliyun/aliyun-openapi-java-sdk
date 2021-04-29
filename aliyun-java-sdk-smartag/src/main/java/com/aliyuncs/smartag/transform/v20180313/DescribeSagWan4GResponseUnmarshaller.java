@@ -23,12 +23,12 @@ public class DescribeSagWan4GResponseUnmarshaller {
 	public static DescribeSagWan4GResponse unmarshall(DescribeSagWan4GResponse describeSagWan4GResponse, UnmarshallerContext _ctx) {
 		
 		describeSagWan4GResponse.setRequestId(_ctx.stringValue("DescribeSagWan4GResponse.RequestId"));
+		describeSagWan4GResponse.setStatus(_ctx.stringValue("DescribeSagWan4GResponse.Status"));
+		describeSagWan4GResponse.setTrafficState(_ctx.stringValue("DescribeSagWan4GResponse.TrafficState"));
+		describeSagWan4GResponse.setPriority(_ctx.integerValue("DescribeSagWan4GResponse.Priority"));
 		describeSagWan4GResponse.setIp(_ctx.stringValue("DescribeSagWan4GResponse.Ip"));
 		describeSagWan4GResponse.setMac(_ctx.stringValue("DescribeSagWan4GResponse.Mac"));
-		describeSagWan4GResponse.setStatus(_ctx.stringValue("DescribeSagWan4GResponse.Status"));
 		describeSagWan4GResponse.setStrength(_ctx.stringValue("DescribeSagWan4GResponse.Strength"));
-		describeSagWan4GResponse.setPriority(_ctx.integerValue("DescribeSagWan4GResponse.Priority"));
-		describeSagWan4GResponse.setTrafficState(_ctx.stringValue("DescribeSagWan4GResponse.TrafficState"));
 	 
 	 	return describeSagWan4GResponse;
 	}

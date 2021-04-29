@@ -23,11 +23,11 @@ public class ModifySagRemoteAccessResponseUnmarshaller {
 	public static ModifySagRemoteAccessResponse unmarshall(ModifySagRemoteAccessResponse modifySagRemoteAccessResponse, UnmarshallerContext _ctx) {
 		
 		modifySagRemoteAccessResponse.setRequestId(_ctx.stringValue("ModifySagRemoteAccessResponse.RequestId"));
-		modifySagRemoteAccessResponse.setSuccess(_ctx.booleanValue("ModifySagRemoteAccessResponse.Success"));
-		modifySagRemoteAccessResponse.setCode(_ctx.stringValue("ModifySagRemoteAccessResponse.Code"));
 		modifySagRemoteAccessResponse.setMessage(_ctx.stringValue("ModifySagRemoteAccessResponse.Message"));
 		modifySagRemoteAccessResponse.setSerialNumber(_ctx.stringValue("ModifySagRemoteAccessResponse.SerialNumber"));
 		modifySagRemoteAccessResponse.setRemoteAccessIp(_ctx.stringValue("ModifySagRemoteAccessResponse.RemoteAccessIp"));
+		modifySagRemoteAccessResponse.setCode(_ctx.stringValue("ModifySagRemoteAccessResponse.Code"));
+		modifySagRemoteAccessResponse.setSuccess(_ctx.booleanValue("ModifySagRemoteAccessResponse.Success"));
 	 
 	 	return modifySagRemoteAccessResponse;
 	}

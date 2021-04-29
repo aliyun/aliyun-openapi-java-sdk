@@ -25,31 +25,43 @@ import com.aliyuncs.smartag.Endpoint;
 public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAccessGatewayResponse> {
 	   
 
-	private Integer maxBandWidth;
-
 	private Long resourceOwnerId;
-
-	private String description;
 
 	private String receiverTown;
 
 	private String receiverDistrict;
 
-	private String receiverAddress;
-
 	private String buyerMessage;
+
+	private String receiverState;
+
+	private Integer period;
+
+	private Long ownerId;
+
+	private String receiverPhone;
+
+	private String haType;
+
+	private String name;
+
+	private String receiverCountry;
+
+	private Integer maxBandWidth;
+
+	private String description;
+
+	private String receiverAddress;
 
 	private String hardWareSpec;
 
 	private String receiverEmail;
 
-	private String receiverState;
-
 	private String receiverCity;
 
-	private Integer period;
-
 	private Boolean autoPay;
+
+	private String cPEVersion;
 
 	private String receiverMobile;
 
@@ -57,19 +69,9 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 
 	private String ownerAccount;
 
-	private Long ownerId;
-
-	private String receiverPhone;
-
 	private String receiverName;
 
-	private String haType;
-
-	private String name;
-
 	private Boolean alreadyHaveSag;
-
-	private String receiverCountry;
 
 	private String chargeType;
 
@@ -83,17 +85,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		} catch (Exception e) {}
 	}
 
-	public Integer getMaxBandWidth() {
-		return this.maxBandWidth;
-	}
-
-	public void setMaxBandWidth(Integer maxBandWidth) {
-		this.maxBandWidth = maxBandWidth;
-		if(maxBandWidth != null){
-			putQueryParameter("MaxBandWidth", maxBandWidth.toString());
-		}
-	}
-
 	public Long getResourceOwnerId() {
 		return this.resourceOwnerId;
 	}
@@ -102,17 +93,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -138,17 +118,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
-	public String getReceiverAddress() {
-		return this.receiverAddress;
-	}
-
-	public void setReceiverAddress(String receiverAddress) {
-		this.receiverAddress = receiverAddress;
-		if(receiverAddress != null){
-			putQueryParameter("ReceiverAddress", receiverAddress);
-		}
-	}
-
 	public String getBuyerMessage() {
 		return this.buyerMessage;
 	}
@@ -157,6 +126,116 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.buyerMessage = buyerMessage;
 		if(buyerMessage != null){
 			putQueryParameter("BuyerMessage", buyerMessage);
+		}
+	}
+
+	public String getReceiverState() {
+		return this.receiverState;
+	}
+
+	public void setReceiverState(String receiverState) {
+		this.receiverState = receiverState;
+		if(receiverState != null){
+			putQueryParameter("ReceiverState", receiverState);
+		}
+	}
+
+	public Integer getPeriod() {
+		return this.period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getReceiverPhone() {
+		return this.receiverPhone;
+	}
+
+	public void setReceiverPhone(String receiverPhone) {
+		this.receiverPhone = receiverPhone;
+		if(receiverPhone != null){
+			putQueryParameter("ReceiverPhone", receiverPhone);
+		}
+	}
+
+	public String getHaType() {
+		return this.haType;
+	}
+
+	public void setHaType(String haType) {
+		this.haType = haType;
+		if(haType != null){
+			putQueryParameter("HaType", haType);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getReceiverCountry() {
+		return this.receiverCountry;
+	}
+
+	public void setReceiverCountry(String receiverCountry) {
+		this.receiverCountry = receiverCountry;
+		if(receiverCountry != null){
+			putQueryParameter("ReceiverCountry", receiverCountry);
+		}
+	}
+
+	public Integer getMaxBandWidth() {
+		return this.maxBandWidth;
+	}
+
+	public void setMaxBandWidth(Integer maxBandWidth) {
+		this.maxBandWidth = maxBandWidth;
+		if(maxBandWidth != null){
+			putQueryParameter("MaxBandWidth", maxBandWidth.toString());
+		}
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getReceiverAddress() {
+		return this.receiverAddress;
+	}
+
+	public void setReceiverAddress(String receiverAddress) {
+		this.receiverAddress = receiverAddress;
+		if(receiverAddress != null){
+			putQueryParameter("ReceiverAddress", receiverAddress);
 		}
 	}
 
@@ -182,17 +261,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
-	public String getReceiverState() {
-		return this.receiverState;
-	}
-
-	public void setReceiverState(String receiverState) {
-		this.receiverState = receiverState;
-		if(receiverState != null){
-			putQueryParameter("ReceiverState", receiverState);
-		}
-	}
-
 	public String getReceiverCity() {
 		return this.receiverCity;
 	}
@@ -204,17 +272,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
-	public Integer getPeriod() {
-		return this.period;
-	}
-
-	public void setPeriod(Integer period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period.toString());
-		}
-	}
-
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -223,6 +280,17 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.autoPay = autoPay;
 		if(autoPay != null){
 			putQueryParameter("AutoPay", autoPay.toString());
+		}
+	}
+
+	public String getCPEVersion() {
+		return this.cPEVersion;
+	}
+
+	public void setCPEVersion(String cPEVersion) {
+		this.cPEVersion = cPEVersion;
+		if(cPEVersion != null){
+			putQueryParameter("CPEVersion", cPEVersion);
 		}
 	}
 
@@ -259,28 +327,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getReceiverPhone() {
-		return this.receiverPhone;
-	}
-
-	public void setReceiverPhone(String receiverPhone) {
-		this.receiverPhone = receiverPhone;
-		if(receiverPhone != null){
-			putQueryParameter("ReceiverPhone", receiverPhone);
-		}
-	}
-
 	public String getReceiverName() {
 		return this.receiverName;
 	}
@@ -292,28 +338,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		}
 	}
 
-	public String getHaType() {
-		return this.haType;
-	}
-
-	public void setHaType(String haType) {
-		this.haType = haType;
-		if(haType != null){
-			putQueryParameter("HaType", haType);
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
-		}
-	}
-
 	public Boolean getAlreadyHaveSag() {
 		return this.alreadyHaveSag;
 	}
@@ -322,17 +346,6 @@ public class CreateSmartAccessGatewayRequest extends RpcAcsRequest<CreateSmartAc
 		this.alreadyHaveSag = alreadyHaveSag;
 		if(alreadyHaveSag != null){
 			putQueryParameter("AlreadyHaveSag", alreadyHaveSag.toString());
-		}
-	}
-
-	public String getReceiverCountry() {
-		return this.receiverCountry;
-	}
-
-	public void setReceiverCountry(String receiverCountry) {
-		this.receiverCountry = receiverCountry;
-		if(receiverCountry != null){
-			putQueryParameter("ReceiverCountry", receiverCountry);
 		}
 	}
 

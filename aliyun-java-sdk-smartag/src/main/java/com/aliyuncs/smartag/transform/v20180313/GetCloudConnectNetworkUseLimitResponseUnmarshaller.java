@@ -23,8 +23,8 @@ public class GetCloudConnectNetworkUseLimitResponseUnmarshaller {
 	public static GetCloudConnectNetworkUseLimitResponse unmarshall(GetCloudConnectNetworkUseLimitResponse getCloudConnectNetworkUseLimitResponse, UnmarshallerContext _ctx) {
 		
 		getCloudConnectNetworkUseLimitResponse.setRequestId(_ctx.stringValue("GetCloudConnectNetworkUseLimitResponse.RequestId"));
-		getCloudConnectNetworkUseLimitResponse.setTotalAmount(_ctx.integerValue("GetCloudConnectNetworkUseLimitResponse.TotalAmount"));
 		getCloudConnectNetworkUseLimitResponse.setUsedAmount(_ctx.integerValue("GetCloudConnectNetworkUseLimitResponse.UsedAmount"));
+		getCloudConnectNetworkUseLimitResponse.setTotalAmount(_ctx.integerValue("GetCloudConnectNetworkUseLimitResponse.TotalAmount"));
 	 
 	 	return getCloudConnectNetworkUseLimitResponse;
 	}

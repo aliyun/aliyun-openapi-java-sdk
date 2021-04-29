@@ -23,8 +23,8 @@ public class UnicomOrderConfirmResponseUnmarshaller {
 	public static UnicomOrderConfirmResponse unmarshall(UnicomOrderConfirmResponse unicomOrderConfirmResponse, UnmarshallerContext _ctx) {
 		
 		unicomOrderConfirmResponse.setRequestId(_ctx.stringValue("UnicomOrderConfirmResponse.RequestId"));
-		unicomOrderConfirmResponse.setCode(_ctx.stringValue("UnicomOrderConfirmResponse.Code"));
 		unicomOrderConfirmResponse.setMessage(_ctx.stringValue("UnicomOrderConfirmResponse.Message"));
+		unicomOrderConfirmResponse.setCode(_ctx.stringValue("UnicomOrderConfirmResponse.Code"));
 		unicomOrderConfirmResponse.setSuccess(_ctx.booleanValue("UnicomOrderConfirmResponse.Success"));
 	 
 	 	return unicomOrderConfirmResponse;

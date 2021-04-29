@@ -25,13 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagWifiResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String isEnable;
 
-	private String ssid;
-
-	private String isBroadcast;
+	private String requestId;
 
 	private String channel;
 
@@ -39,19 +35,15 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 	private String isAuth;
 
-	private String authenticationType;
+	private String ssid;
+
+	private String isBroadcast;
 
 	private String encryptAlgorithm;
 
+	private String authenticationType;
+
 	private List<TaskState> taskStates;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getIsEnable() {
 		return this.isEnable;
@@ -61,20 +53,12 @@ public class DescribeSagWifiResponse extends AcsResponse {
 		this.isEnable = isEnable;
 	}
 
-	public String getSsid() {
-		return this.ssid;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSsid(String ssid) {
-		this.ssid = ssid;
-	}
-
-	public String getIsBroadcast() {
-		return this.isBroadcast;
-	}
-
-	public void setIsBroadcast(String isBroadcast) {
-		this.isBroadcast = isBroadcast;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getChannel() {
@@ -101,12 +85,20 @@ public class DescribeSagWifiResponse extends AcsResponse {
 		this.isAuth = isAuth;
 	}
 
-	public String getAuthenticationType() {
-		return this.authenticationType;
+	public String getSsid() {
+		return this.ssid;
 	}
 
-	public void setAuthenticationType(String authenticationType) {
-		this.authenticationType = authenticationType;
+	public void setSsid(String ssid) {
+		this.ssid = ssid;
+	}
+
+	public String getIsBroadcast() {
+		return this.isBroadcast;
+	}
+
+	public void setIsBroadcast(String isBroadcast) {
+		this.isBroadcast = isBroadcast;
 	}
 
 	public String getEncryptAlgorithm() {
@@ -115,6 +107,14 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 	public void setEncryptAlgorithm(String encryptAlgorithm) {
 		this.encryptAlgorithm = encryptAlgorithm;
+	}
+
+	public String getAuthenticationType() {
+		return this.authenticationType;
+	}
+
+	public void setAuthenticationType(String authenticationType) {
+		this.authenticationType = authenticationType;
 	}
 
 	public List<TaskState> getTaskStates() {
@@ -129,11 +129,11 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -141,6 +141,14 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -157,14 +165,6 @@ public class DescribeSagWifiResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

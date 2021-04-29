@@ -28,26 +28,26 @@ public class DescribeFlowLogsResponseUnmarshaller {
 		
 		describeFlowLogsResponse.setRequestId(_ctx.stringValue("DescribeFlowLogsResponse.RequestId"));
 		describeFlowLogsResponse.setTotalCount(_ctx.integerValue("DescribeFlowLogsResponse.TotalCount"));
-		describeFlowLogsResponse.setPageNumber(_ctx.integerValue("DescribeFlowLogsResponse.PageNumber"));
 		describeFlowLogsResponse.setPageSize(_ctx.integerValue("DescribeFlowLogsResponse.PageSize"));
+		describeFlowLogsResponse.setPageNumber(_ctx.integerValue("DescribeFlowLogsResponse.PageNumber"));
 
 		List<FlowLogSetType> flowLogs = new ArrayList<FlowLogSetType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFlowLogsResponse.FlowLogs.Length"); i++) {
 			FlowLogSetType flowLogSetType = new FlowLogSetType();
-			flowLogSetType.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
+			flowLogSetType.setNetflowServerPort(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].NetflowServerPort"));
+			flowLogSetType.setStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Status"));
+			flowLogSetType.setLogstoreName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].LogstoreName"));
 			flowLogSetType.setDescription(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Description"));
 			flowLogSetType.setActiveAging(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ActiveAging"));
-			flowLogSetType.setInactiveAging(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].InactiveAging"));
-			flowLogSetType.setOutputType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].OutputType"));
-			flowLogSetType.setSlsRegionId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].SlsRegionId"));
 			flowLogSetType.setProjectName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].ProjectName"));
-			flowLogSetType.setLogstoreName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].LogstoreName"));
 			flowLogSetType.setNetflowServerIp(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].NetflowServerIp"));
-			flowLogSetType.setNetflowServerPort(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].NetflowServerPort"));
 			flowLogSetType.setNetflowVersion(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].NetflowVersion"));
-			flowLogSetType.setStatus(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Status"));
+			flowLogSetType.setInactiveAging(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].InactiveAging"));
+			flowLogSetType.setFlowLogId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].FlowLogId"));
 			flowLogSetType.setName(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].Name"));
 			flowLogSetType.setTotalSagNum(_ctx.integerValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].TotalSagNum"));
+			flowLogSetType.setSlsRegionId(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].SlsRegionId"));
+			flowLogSetType.setOutputType(_ctx.stringValue("DescribeFlowLogsResponse.FlowLogs["+ i +"].OutputType"));
 
 			flowLogs.add(flowLogSetType);
 		}

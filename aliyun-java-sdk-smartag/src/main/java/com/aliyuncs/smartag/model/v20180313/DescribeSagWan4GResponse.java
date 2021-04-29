@@ -24,19 +24,35 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagWan4GResponse extends AcsResponse {
 
+	private String status;
+
+	private String trafficState;
+
 	private String requestId;
+
+	private Integer priority;
 
 	private String ip;
 
 	private String mac;
 
-	private String status;
-
 	private String strength;
 
-	private Integer priority;
+	public String getStatus() {
+		return this.status;
+	}
 
-	private String trafficState;
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getTrafficState() {
+		return this.trafficState;
+	}
+
+	public void setTrafficState(String trafficState) {
+		this.trafficState = trafficState;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,6 +60,14 @@ public class DescribeSagWan4GResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getPriority() {
+		return this.priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
 	}
 
 	public String getIp() {
@@ -62,36 +86,12 @@ public class DescribeSagWan4GResponse extends AcsResponse {
 		this.mac = mac;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getStrength() {
 		return this.strength;
 	}
 
 	public void setStrength(String strength) {
 		this.strength = strength;
-	}
-
-	public Integer getPriority() {
-		return this.priority;
-	}
-
-	public void setPriority(Integer priority) {
-		this.priority = priority;
-	}
-
-	public String getTrafficState() {
-		return this.trafficState;
-	}
-
-	public void setTrafficState(String trafficState) {
-		this.trafficState = trafficState;
 	}
 
 	@Override

@@ -24,43 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCloudConnectNetworkResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String ccnId;
-
-	private String name;
-
 	private String status;
 
 	private String description;
 
-	private String snatCidrBlock;
+	private String requestId;
+
+	private String ccnId;
 
 	private String cidrBlock;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String snatCidrBlock;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCcnId() {
-		return this.ccnId;
-	}
-
-	public void setCcnId(String ccnId) {
-		this.ccnId = ccnId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+	private String name;
 
 	public String getStatus() {
 		return this.status;
@@ -78,12 +54,20 @@ public class CreateCloudConnectNetworkResponse extends AcsResponse {
 		this.description = description;
 	}
 
-	public String getSnatCidrBlock() {
-		return this.snatCidrBlock;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSnatCidrBlock(String snatCidrBlock) {
-		this.snatCidrBlock = snatCidrBlock;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getCcnId() {
+		return this.ccnId;
+	}
+
+	public void setCcnId(String ccnId) {
+		this.ccnId = ccnId;
 	}
 
 	public String getCidrBlock() {
@@ -92,6 +76,22 @@ public class CreateCloudConnectNetworkResponse extends AcsResponse {
 
 	public void setCidrBlock(String cidrBlock) {
 		this.cidrBlock = cidrBlock;
+	}
+
+	public String getSnatCidrBlock() {
+		return this.snatCidrBlock;
+	}
+
+	public void setSnatCidrBlock(String snatCidrBlock) {
+		this.snatCidrBlock = snatCidrBlock;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

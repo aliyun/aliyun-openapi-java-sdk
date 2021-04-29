@@ -28,14 +28,14 @@ public class DescribeFlowLogSagsResponseUnmarshaller {
 		
 		describeFlowLogSagsResponse.setRequestId(_ctx.stringValue("DescribeFlowLogSagsResponse.RequestId"));
 		describeFlowLogSagsResponse.setTotalCount(_ctx.integerValue("DescribeFlowLogSagsResponse.TotalCount"));
-		describeFlowLogSagsResponse.setPageNumber(_ctx.integerValue("DescribeFlowLogSagsResponse.PageNumber"));
 		describeFlowLogSagsResponse.setPageSize(_ctx.integerValue("DescribeFlowLogSagsResponse.PageSize"));
+		describeFlowLogSagsResponse.setPageNumber(_ctx.integerValue("DescribeFlowLogSagsResponse.PageNumber"));
 
 		List<Sag> sags = new ArrayList<Sag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFlowLogSagsResponse.Sags.Length"); i++) {
 			Sag sag = new Sag();
-			sag.setSmartAGId(_ctx.stringValue("DescribeFlowLogSagsResponse.Sags["+ i +"].SmartAGId"));
 			sag.setDescription(_ctx.stringValue("DescribeFlowLogSagsResponse.Sags["+ i +"].Description"));
+			sag.setSmartAGId(_ctx.stringValue("DescribeFlowLogSagsResponse.Sags["+ i +"].SmartAGId"));
 			sag.setName(_ctx.stringValue("DescribeFlowLogSagsResponse.Sags["+ i +"].Name"));
 
 			sags.add(sag);

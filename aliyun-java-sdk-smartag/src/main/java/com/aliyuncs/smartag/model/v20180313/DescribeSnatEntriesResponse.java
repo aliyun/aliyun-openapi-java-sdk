@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSnatEntriesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<SnatEntry> snatEntries;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SnatEntry> getSnatEntries() {
@@ -79,11 +79,11 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private Long createTime;
+
 		private String cidrBlock;
 
 		private String snatIp;
-
-		private Long createTime;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -91,6 +91,14 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getCidrBlock() {
@@ -107,14 +115,6 @@ public class DescribeSnatEntriesResponse extends AcsResponse {
 
 		public void setSnatIp(String snatIp) {
 			this.snatIp = snatIp;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
 		}
 	}
 

@@ -23,9 +23,9 @@ public class CreateNetworkOptimizationResponseUnmarshaller {
 	public static CreateNetworkOptimizationResponse unmarshall(CreateNetworkOptimizationResponse createNetworkOptimizationResponse, UnmarshallerContext _ctx) {
 		
 		createNetworkOptimizationResponse.setRequestId(_ctx.stringValue("CreateNetworkOptimizationResponse.RequestId"));
-		createNetworkOptimizationResponse.setNetworkOptId(_ctx.stringValue("CreateNetworkOptimizationResponse.NetworkOptId"));
-		createNetworkOptimizationResponse.setName(_ctx.stringValue("CreateNetworkOptimizationResponse.Name"));
 		createNetworkOptimizationResponse.setState(_ctx.stringValue("CreateNetworkOptimizationResponse.State"));
+		createNetworkOptimizationResponse.setName(_ctx.stringValue("CreateNetworkOptimizationResponse.Name"));
+		createNetworkOptimizationResponse.setNetworkOptId(_ctx.stringValue("CreateNetworkOptimizationResponse.NetworkOptId"));
 	 
 	 	return createNetworkOptimizationResponse;
 	}

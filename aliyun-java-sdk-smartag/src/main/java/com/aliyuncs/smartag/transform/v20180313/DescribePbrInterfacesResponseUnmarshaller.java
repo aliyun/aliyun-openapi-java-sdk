@@ -32,10 +32,10 @@ public class DescribePbrInterfacesResponseUnmarshaller {
 		List<PbrInterface> pbrInterfaces = new ArrayList<PbrInterface>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePbrInterfacesResponse.PbrInterfaces.Length"); i++) {
 			PbrInterface pbrInterface = new PbrInterface();
-			pbrInterface.setInterfaceName(_ctx.stringValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].InterfaceName"));
-			pbrInterface.setHealthCheckInstanceId(_ctx.stringValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].HealthCheckInstanceId"));
-			pbrInterface.setPriority(_ctx.integerValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].Priority"));
 			pbrInterface.setAction(_ctx.stringValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].Action"));
+			pbrInterface.setPriority(_ctx.integerValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].Priority"));
+			pbrInterface.setHealthCheckInstanceId(_ctx.stringValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].HealthCheckInstanceId"));
+			pbrInterface.setInterfaceName(_ctx.stringValue("DescribePbrInterfacesResponse.PbrInterfaces["+ i +"].InterfaceName"));
 
 			pbrInterfaces.add(pbrInterface);
 		}

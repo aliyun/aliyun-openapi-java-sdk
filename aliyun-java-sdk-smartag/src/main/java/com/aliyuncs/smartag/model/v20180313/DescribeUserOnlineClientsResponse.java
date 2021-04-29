@@ -47,17 +47,9 @@ public class DescribeUserOnlineClientsResponse extends AcsResponse {
 
 	public static class User {
 
-		private String clientIp;
-
 		private String onlineTime;
 
-		public String getClientIp() {
-			return this.clientIp;
-		}
-
-		public void setClientIp(String clientIp) {
-			this.clientIp = clientIp;
-		}
+		private String clientIp;
 
 		public String getOnlineTime() {
 			return this.onlineTime;
@@ -65,6 +57,14 @@ public class DescribeUserOnlineClientsResponse extends AcsResponse {
 
 		public void setOnlineTime(String onlineTime) {
 			this.onlineTime = onlineTime;
+		}
+
+		public String getClientIp() {
+			return this.clientIp;
+		}
+
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
 		}
 	}
 

@@ -31,11 +31,11 @@ public class DescribeSagRouteListResponseUnmarshaller {
 		List<Route> routes = new ArrayList<Route>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagRouteListResponse.Routes.Length"); i++) {
 			Route route = new Route();
-			route.setPortName(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].PortName"));
 			route.setRouteProtocol(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].RouteProtocol"));
-			route.setDestinationCidr(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].DestinationCidr"));
 			route.setNextHop(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].NextHop"));
+			route.setPortName(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].PortName"));
 			route.setCost(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].Cost"));
+			route.setDestinationCidr(_ctx.stringValue("DescribeSagRouteListResponse.Routes["+ i +"].DestinationCidr"));
 
 			List<String> conflictCidrs = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeSagRouteListResponse.Routes["+ i +"].ConflictCidrs.Length"); j++) {

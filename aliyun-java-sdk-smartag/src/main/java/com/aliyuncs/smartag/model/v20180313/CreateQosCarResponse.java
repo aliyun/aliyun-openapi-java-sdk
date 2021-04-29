@@ -24,50 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateQosCarResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String qosId;
-
-	private String qosCarId;
+	private Integer minBandwidthAbs;
 
 	private String description;
 
+	private String qosCarId;
+
+	private String requestId;
+
 	private Integer priority;
-
-	private String limitType;
-
-	private Integer minBandwidthAbs;
-
-	private Integer maxBandwidthAbs;
-
-	private Integer minBandwidthPercent;
 
 	private Integer maxBandwidthPercent;
 
+	private Integer maxBandwidthAbs;
+
+	private String qosId;
+
 	private String percentSourceType;
 
-	public String getRequestId() {
-		return this.requestId;
+	private Integer minBandwidthPercent;
+
+	private String limitType;
+
+	public Integer getMinBandwidthAbs() {
+		return this.minBandwidthAbs;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getQosId() {
-		return this.qosId;
-	}
-
-	public void setQosId(String qosId) {
-		this.qosId = qosId;
-	}
-
-	public String getQosCarId() {
-		return this.qosCarId;
-	}
-
-	public void setQosCarId(String qosCarId) {
-		this.qosCarId = qosCarId;
+	public void setMinBandwidthAbs(Integer minBandwidthAbs) {
+		this.minBandwidthAbs = minBandwidthAbs;
 	}
 
 	public String getDescription() {
@@ -78,44 +62,28 @@ public class CreateQosCarResponse extends AcsResponse {
 		this.description = description;
 	}
 
+	public String getQosCarId() {
+		return this.qosCarId;
+	}
+
+	public void setQosCarId(String qosCarId) {
+		this.qosCarId = qosCarId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public Integer getPriority() {
 		return this.priority;
 	}
 
 	public void setPriority(Integer priority) {
 		this.priority = priority;
-	}
-
-	public String getLimitType() {
-		return this.limitType;
-	}
-
-	public void setLimitType(String limitType) {
-		this.limitType = limitType;
-	}
-
-	public Integer getMinBandwidthAbs() {
-		return this.minBandwidthAbs;
-	}
-
-	public void setMinBandwidthAbs(Integer minBandwidthAbs) {
-		this.minBandwidthAbs = minBandwidthAbs;
-	}
-
-	public Integer getMaxBandwidthAbs() {
-		return this.maxBandwidthAbs;
-	}
-
-	public void setMaxBandwidthAbs(Integer maxBandwidthAbs) {
-		this.maxBandwidthAbs = maxBandwidthAbs;
-	}
-
-	public Integer getMinBandwidthPercent() {
-		return this.minBandwidthPercent;
-	}
-
-	public void setMinBandwidthPercent(Integer minBandwidthPercent) {
-		this.minBandwidthPercent = minBandwidthPercent;
 	}
 
 	public Integer getMaxBandwidthPercent() {
@@ -126,12 +94,44 @@ public class CreateQosCarResponse extends AcsResponse {
 		this.maxBandwidthPercent = maxBandwidthPercent;
 	}
 
+	public Integer getMaxBandwidthAbs() {
+		return this.maxBandwidthAbs;
+	}
+
+	public void setMaxBandwidthAbs(Integer maxBandwidthAbs) {
+		this.maxBandwidthAbs = maxBandwidthAbs;
+	}
+
+	public String getQosId() {
+		return this.qosId;
+	}
+
+	public void setQosId(String qosId) {
+		this.qosId = qosId;
+	}
+
 	public String getPercentSourceType() {
 		return this.percentSourceType;
 	}
 
 	public void setPercentSourceType(String percentSourceType) {
 		this.percentSourceType = percentSourceType;
+	}
+
+	public Integer getMinBandwidthPercent() {
+		return this.minBandwidthPercent;
+	}
+
+	public void setMinBandwidthPercent(Integer minBandwidthPercent) {
+		this.minBandwidthPercent = minBandwidthPercent;
+	}
+
+	public String getLimitType() {
+		return this.limitType;
+	}
+
+	public void setLimitType(String limitType) {
+		this.limitType = limitType;
 	}
 
 	@Override

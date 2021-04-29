@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSmartAGByAccessPointResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<SmartAccessGateway> smartAccessGateways;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<SmartAccessGateway> getSmartAccessGateways() {
@@ -59,17 +59,17 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 
 		private String smartAGName;
 
-		private String smartAGDescription;
-
-		private String hardwareVersion;
-
-		private String associatedCcnId;
+		private String smartAGStatus;
 
 		private String routingStrategy;
 
+		private String associatedCcnId;
+
 		private String smartAGId;
 
-		private String smartAGStatus;
+		private String hardwareVersion;
+
+		private String smartAGDescription;
 
 		public String getSmartAGName() {
 			return this.smartAGName;
@@ -79,28 +79,12 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 			this.smartAGName = smartAGName;
 		}
 
-		public String getSmartAGDescription() {
-			return this.smartAGDescription;
+		public String getSmartAGStatus() {
+			return this.smartAGStatus;
 		}
 
-		public void setSmartAGDescription(String smartAGDescription) {
-			this.smartAGDescription = smartAGDescription;
-		}
-
-		public String getHardwareVersion() {
-			return this.hardwareVersion;
-		}
-
-		public void setHardwareVersion(String hardwareVersion) {
-			this.hardwareVersion = hardwareVersion;
-		}
-
-		public String getAssociatedCcnId() {
-			return this.associatedCcnId;
-		}
-
-		public void setAssociatedCcnId(String associatedCcnId) {
-			this.associatedCcnId = associatedCcnId;
+		public void setSmartAGStatus(String smartAGStatus) {
+			this.smartAGStatus = smartAGStatus;
 		}
 
 		public String getRoutingStrategy() {
@@ -111,6 +95,14 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 			this.routingStrategy = routingStrategy;
 		}
 
+		public String getAssociatedCcnId() {
+			return this.associatedCcnId;
+		}
+
+		public void setAssociatedCcnId(String associatedCcnId) {
+			this.associatedCcnId = associatedCcnId;
+		}
+
 		public String getSmartAGId() {
 			return this.smartAGId;
 		}
@@ -119,12 +111,20 @@ public class ListSmartAGByAccessPointResponse extends AcsResponse {
 			this.smartAGId = smartAGId;
 		}
 
-		public String getSmartAGStatus() {
-			return this.smartAGStatus;
+		public String getHardwareVersion() {
+			return this.hardwareVersion;
 		}
 
-		public void setSmartAGStatus(String smartAGStatus) {
-			this.smartAGStatus = smartAGStatus;
+		public void setHardwareVersion(String hardwareVersion) {
+			this.hardwareVersion = hardwareVersion;
+		}
+
+		public String getSmartAGDescription() {
+			return this.smartAGDescription;
+		}
+
+		public void setSmartAGDescription(String smartAGDescription) {
+			this.smartAGDescription = smartAGDescription;
 		}
 	}
 

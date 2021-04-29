@@ -23,8 +23,8 @@ public class GetSmartAccessGatewayUseLimitResponseUnmarshaller {
 	public static GetSmartAccessGatewayUseLimitResponse unmarshall(GetSmartAccessGatewayUseLimitResponse getSmartAccessGatewayUseLimitResponse, UnmarshallerContext _ctx) {
 		
 		getSmartAccessGatewayUseLimitResponse.setRequestId(_ctx.stringValue("GetSmartAccessGatewayUseLimitResponse.RequestId"));
-		getSmartAccessGatewayUseLimitResponse.setTotalAmount(_ctx.integerValue("GetSmartAccessGatewayUseLimitResponse.TotalAmount"));
 		getSmartAccessGatewayUseLimitResponse.setUsedAmount(_ctx.integerValue("GetSmartAccessGatewayUseLimitResponse.UsedAmount"));
+		getSmartAccessGatewayUseLimitResponse.setTotalAmount(_ctx.integerValue("GetSmartAccessGatewayUseLimitResponse.TotalAmount"));
 	 
 	 	return getSmartAccessGatewayUseLimitResponse;
 	}

@@ -27,10 +27,10 @@ public class DescribeSagRemoteAccessResponseUnmarshaller {
 	public static DescribeSagRemoteAccessResponse unmarshall(DescribeSagRemoteAccessResponse describeSagRemoteAccessResponse, UnmarshallerContext _ctx) {
 		
 		describeSagRemoteAccessResponse.setRequestId(_ctx.stringValue("DescribeSagRemoteAccessResponse.RequestId"));
-		describeSagRemoteAccessResponse.setSuccess(_ctx.booleanValue("DescribeSagRemoteAccessResponse.Success"));
-		describeSagRemoteAccessResponse.setCode(_ctx.stringValue("DescribeSagRemoteAccessResponse.Code"));
 		describeSagRemoteAccessResponse.setMessage(_ctx.stringValue("DescribeSagRemoteAccessResponse.Message"));
 		describeSagRemoteAccessResponse.setSmartAGId(_ctx.stringValue("DescribeSagRemoteAccessResponse.SmartAGId"));
+		describeSagRemoteAccessResponse.setCode(_ctx.stringValue("DescribeSagRemoteAccessResponse.Code"));
+		describeSagRemoteAccessResponse.setSuccess(_ctx.booleanValue("DescribeSagRemoteAccessResponse.Success"));
 
 		List<RemoteAccess> remoteAccesses = new ArrayList<RemoteAccess>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagRemoteAccessResponse.RemoteAccesses.Length"); i++) {

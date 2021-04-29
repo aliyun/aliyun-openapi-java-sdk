@@ -32,9 +32,9 @@ public class DescribeSagDropTopNResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagDropTopNResponse.DropTopN.Length"); i++) {
 			DropTopNItem dropTopNItem = new DropTopNItem();
 			dropTopNItem.setInstanceId(_ctx.stringValue("DescribeSagDropTopNResponse.DropTopN["+ i +"].InstanceId"));
+			dropTopNItem.setRegionId(_ctx.stringValue("DescribeSagDropTopNResponse.DropTopN["+ i +"].RegionId"));
 			dropTopNItem.setDropRate(_ctx.stringValue("DescribeSagDropTopNResponse.DropTopN["+ i +"].DropRate"));
 			dropTopNItem.setName(_ctx.stringValue("DescribeSagDropTopNResponse.DropTopN["+ i +"].Name"));
-			dropTopNItem.setRegionId(_ctx.stringValue("DescribeSagDropTopNResponse.DropTopN["+ i +"].RegionId"));
 
 			dropTopN.add(dropTopNItem);
 		}

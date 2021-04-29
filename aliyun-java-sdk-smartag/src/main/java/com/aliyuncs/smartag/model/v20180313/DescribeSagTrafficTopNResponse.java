@@ -51,9 +51,9 @@ public class DescribeSagTrafficTopNResponse extends AcsResponse {
 
 		private String trafficRate;
 
-		private String name;
-
 		private String regionId;
+
+		private String name;
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -71,20 +71,20 @@ public class DescribeSagTrafficTopNResponse extends AcsResponse {
 			this.trafficRate = trafficRate;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getRegionId() {
 			return this.regionId;
 		}
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

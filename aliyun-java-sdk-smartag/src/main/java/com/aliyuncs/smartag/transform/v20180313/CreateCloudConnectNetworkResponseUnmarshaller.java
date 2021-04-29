@@ -23,12 +23,12 @@ public class CreateCloudConnectNetworkResponseUnmarshaller {
 	public static CreateCloudConnectNetworkResponse unmarshall(CreateCloudConnectNetworkResponse createCloudConnectNetworkResponse, UnmarshallerContext _ctx) {
 		
 		createCloudConnectNetworkResponse.setRequestId(_ctx.stringValue("CreateCloudConnectNetworkResponse.RequestId"));
-		createCloudConnectNetworkResponse.setCcnId(_ctx.stringValue("CreateCloudConnectNetworkResponse.CcnId"));
-		createCloudConnectNetworkResponse.setName(_ctx.stringValue("CreateCloudConnectNetworkResponse.Name"));
 		createCloudConnectNetworkResponse.setStatus(_ctx.stringValue("CreateCloudConnectNetworkResponse.Status"));
 		createCloudConnectNetworkResponse.setDescription(_ctx.stringValue("CreateCloudConnectNetworkResponse.Description"));
-		createCloudConnectNetworkResponse.setSnatCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.SnatCidrBlock"));
+		createCloudConnectNetworkResponse.setCcnId(_ctx.stringValue("CreateCloudConnectNetworkResponse.CcnId"));
 		createCloudConnectNetworkResponse.setCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.CidrBlock"));
+		createCloudConnectNetworkResponse.setSnatCidrBlock(_ctx.stringValue("CreateCloudConnectNetworkResponse.SnatCidrBlock"));
+		createCloudConnectNetworkResponse.setName(_ctx.stringValue("CreateCloudConnectNetworkResponse.Name"));
 	 
 	 	return createCloudConnectNetworkResponse;
 	}

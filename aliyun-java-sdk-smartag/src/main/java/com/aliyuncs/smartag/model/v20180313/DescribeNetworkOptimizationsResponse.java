@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<NetworkOptimization> networkOptimizations;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<NetworkOptimization> getNetworkOptimizations() {
@@ -77,17 +77,25 @@ public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 
 	public static class NetworkOptimization {
 
-		private String instanceId;
+		private Integer sagCount;
 
-		private String name;
+		private String instanceId;
 
 		private String state;
 
+		private String ccnId;
+
 		private Long createTime;
 
-		private Integer sagCount;
+		private String name;
 
-		private String ccnId;
+		public Integer getSagCount() {
+			return this.sagCount;
+		}
+
+		public void setSagCount(Integer sagCount) {
+			this.sagCount = sagCount;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -95,14 +103,6 @@ public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
 		}
 
 		public String getState() {
@@ -113,6 +113,14 @@ public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getCcnId() {
+			return this.ccnId;
+		}
+
+		public void setCcnId(String ccnId) {
+			this.ccnId = ccnId;
+		}
+
 		public Long getCreateTime() {
 			return this.createTime;
 		}
@@ -121,20 +129,12 @@ public class DescribeNetworkOptimizationsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Integer getSagCount() {
-			return this.sagCount;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setSagCount(Integer sagCount) {
-			this.sagCount = sagCount;
-		}
-
-		public String getCcnId() {
-			return this.ccnId;
-		}
-
-		public void setCcnId(String ccnId) {
-			this.ccnId = ccnId;
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

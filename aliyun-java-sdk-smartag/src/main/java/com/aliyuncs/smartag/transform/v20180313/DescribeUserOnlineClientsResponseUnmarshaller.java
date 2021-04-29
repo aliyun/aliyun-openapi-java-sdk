@@ -31,8 +31,8 @@ public class DescribeUserOnlineClientsResponseUnmarshaller {
 		List<User> users = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUserOnlineClientsResponse.Users.Length"); i++) {
 			User user = new User();
-			user.setClientIp(_ctx.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].ClientIp"));
 			user.setOnlineTime(_ctx.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].OnlineTime"));
+			user.setClientIp(_ctx.stringValue("DescribeUserOnlineClientsResponse.Users["+ i +"].ClientIp"));
 
 			users.add(user);
 		}

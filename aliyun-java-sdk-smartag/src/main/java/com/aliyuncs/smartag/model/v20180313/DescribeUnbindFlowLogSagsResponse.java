@@ -57,19 +57,11 @@ public class DescribeUnbindFlowLogSagsResponse extends AcsResponse {
 
 	public static class Sag {
 
-		private String smartAGId;
-
 		private String description;
 
+		private String smartAGId;
+
 		private String name;
-
-		public String getSmartAGId() {
-			return this.smartAGId;
-		}
-
-		public void setSmartAGId(String smartAGId) {
-			this.smartAGId = smartAGId;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -77,6 +69,14 @@ public class DescribeUnbindFlowLogSagsResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getSmartAGId() {
+			return this.smartAGId;
+		}
+
+		public void setSmartAGId(String smartAGId) {
+			this.smartAGId = smartAGId;
 		}
 
 		public String getName() {

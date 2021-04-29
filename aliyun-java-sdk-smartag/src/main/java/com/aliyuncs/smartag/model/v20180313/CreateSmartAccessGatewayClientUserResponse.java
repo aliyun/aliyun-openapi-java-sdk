@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSmartAccessGatewayClientUserResponse extends AcsResponse {
 
-	private String requestId;
+	private String userName;
 
-	private String clientIp;
+	private String requestId;
 
 	private String userMail;
 
-	private String userName;
-
 	private Integer bandwidth;
+
+	private String clientIp;
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,14 +48,6 @@ public class CreateSmartAccessGatewayClientUserResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getClientIp() {
-		return this.clientIp;
-	}
-
-	public void setClientIp(String clientIp) {
-		this.clientIp = clientIp;
 	}
 
 	public String getUserMail() {
@@ -58,20 +58,20 @@ public class CreateSmartAccessGatewayClientUserResponse extends AcsResponse {
 		this.userMail = userMail;
 	}
 
-	public String getUserName() {
-		return this.userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public Integer getBandwidth() {
 		return this.bandwidth;
 	}
 
 	public void setBandwidth(Integer bandwidth) {
 		this.bandwidth = bandwidth;
+	}
+
+	public String getClientIp() {
+		return this.clientIp;
+	}
+
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
 	}
 
 	@Override

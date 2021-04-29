@@ -31,6 +31,8 @@ public class GrantSagInstanceToCcnRequest extends RpcAcsRequest<GrantSagInstance
 
 	private String ccnInstanceId;
 
+	private Boolean grantTrafficService;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -77,6 +79,17 @@ public class GrantSagInstanceToCcnRequest extends RpcAcsRequest<GrantSagInstance
 		this.ccnInstanceId = ccnInstanceId;
 		if(ccnInstanceId != null){
 			putQueryParameter("CcnInstanceId", ccnInstanceId);
+		}
+	}
+
+	public Boolean getGrantTrafficService() {
+		return this.grantTrafficService;
+	}
+
+	public void setGrantTrafficService(Boolean grantTrafficService) {
+		this.grantTrafficService = grantTrafficService;
+		if(grantTrafficService != null){
+			putQueryParameter("GrantTrafficService", grantTrafficService.toString());
 		}
 	}
 

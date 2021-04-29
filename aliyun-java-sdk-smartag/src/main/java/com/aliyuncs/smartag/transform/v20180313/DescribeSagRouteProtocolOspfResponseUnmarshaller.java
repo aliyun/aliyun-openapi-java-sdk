@@ -27,22 +27,22 @@ public class DescribeSagRouteProtocolOspfResponseUnmarshaller {
 	public static DescribeSagRouteProtocolOspfResponse unmarshall(DescribeSagRouteProtocolOspfResponse describeSagRouteProtocolOspfResponse, UnmarshallerContext _ctx) {
 		
 		describeSagRouteProtocolOspfResponse.setRequestId(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.RequestId"));
-		describeSagRouteProtocolOspfResponse.setRouterId(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.RouterId"));
-		describeSagRouteProtocolOspfResponse.setAreaId(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.AreaId"));
-		describeSagRouteProtocolOspfResponse.setAreaType(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.AreaType"));
 		describeSagRouteProtocolOspfResponse.setDeadTime(_ctx.integerValue("DescribeSagRouteProtocolOspfResponse.DeadTime"));
-		describeSagRouteProtocolOspfResponse.setHelloTime(_ctx.integerValue("DescribeSagRouteProtocolOspfResponse.HelloTime"));
-		describeSagRouteProtocolOspfResponse.setAuthenticationType(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.AuthenticationType"));
 		describeSagRouteProtocolOspfResponse.setMd5KeyId(_ctx.integerValue("DescribeSagRouteProtocolOspfResponse.Md5KeyId"));
+		describeSagRouteProtocolOspfResponse.setAreaId(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.AreaId"));
+		describeSagRouteProtocolOspfResponse.setHelloTime(_ctx.integerValue("DescribeSagRouteProtocolOspfResponse.HelloTime"));
+		describeSagRouteProtocolOspfResponse.setRouterId(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.RouterId"));
+		describeSagRouteProtocolOspfResponse.setAreaType(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.AreaType"));
 		describeSagRouteProtocolOspfResponse.setMd5Key(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.Md5Key"));
+		describeSagRouteProtocolOspfResponse.setAuthenticationType(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.AuthenticationType"));
 
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagRouteProtocolOspfResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
 			taskState.setState(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.TaskStates["+ i +"].State"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.TaskStates["+ i +"].CreateTime"));
 			taskState.setErrorCode(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.TaskStates["+ i +"].ErrorMessage"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagRouteProtocolOspfResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

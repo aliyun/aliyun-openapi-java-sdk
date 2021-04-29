@@ -28,17 +28,18 @@ public class DescribeGrantSagRulesResponseUnmarshaller {
 		
 		describeGrantSagRulesResponse.setRequestId(_ctx.stringValue("DescribeGrantSagRulesResponse.RequestId"));
 		describeGrantSagRulesResponse.setTotalCount(_ctx.integerValue("DescribeGrantSagRulesResponse.TotalCount"));
-		describeGrantSagRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantSagRulesResponse.PageNumber"));
 		describeGrantSagRulesResponse.setPageSize(_ctx.integerValue("DescribeGrantSagRulesResponse.PageSize"));
+		describeGrantSagRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantSagRulesResponse.PageNumber"));
 
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantSagRulesResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
 			grantRule.setInstanceId(_ctx.stringValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].InstanceId"));
-			grantRule.setSmartAGId(_ctx.stringValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].SmartAGId"));
+			grantRule.setGrantTrafficService(_ctx.booleanValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].GrantTrafficService"));
+			grantRule.setCcnInstanceId(_ctx.stringValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].CcnInstanceId"));
 			grantRule.setCreateTime(_ctx.longValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].CreateTime"));
 			grantRule.setCcnUid(_ctx.longValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].CcnUid"));
-			grantRule.setCcnInstanceId(_ctx.stringValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].CcnInstanceId"));
+			grantRule.setSmartAGId(_ctx.stringValue("DescribeGrantSagRulesResponse.GrantRules["+ i +"].SmartAGId"));
 
 			grantRules.add(grantRule);
 		}

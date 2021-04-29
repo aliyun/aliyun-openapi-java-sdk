@@ -23,12 +23,13 @@ public class DescribeDeviceAutoUpgradePolicyResponseUnmarshaller {
 	public static DescribeDeviceAutoUpgradePolicyResponse unmarshall(DescribeDeviceAutoUpgradePolicyResponse describeDeviceAutoUpgradePolicyResponse, UnmarshallerContext _ctx) {
 		
 		describeDeviceAutoUpgradePolicyResponse.setRequestId(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.RequestId"));
-		describeDeviceAutoUpgradePolicyResponse.setSmartAGId(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.SmartAGId"));
-		describeDeviceAutoUpgradePolicyResponse.setSerialNumber(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.SerialNumber"));
 		describeDeviceAutoUpgradePolicyResponse.setUpgradeType(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.UpgradeType"));
-		describeDeviceAutoUpgradePolicyResponse.setCronExpression(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.CronExpression"));
-		describeDeviceAutoUpgradePolicyResponse.setDuration(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.Duration"));
 		describeDeviceAutoUpgradePolicyResponse.setTimeZone(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.TimeZone"));
+		describeDeviceAutoUpgradePolicyResponse.setSerialNumber(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.SerialNumber"));
+		describeDeviceAutoUpgradePolicyResponse.setJitter(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.Jitter"));
+		describeDeviceAutoUpgradePolicyResponse.setDuration(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.Duration"));
+		describeDeviceAutoUpgradePolicyResponse.setCronExpression(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.CronExpression"));
+		describeDeviceAutoUpgradePolicyResponse.setSmartAGId(_ctx.stringValue("DescribeDeviceAutoUpgradePolicyResponse.SmartAGId"));
 	 
 	 	return describeDeviceAutoUpgradePolicyResponse;
 	}

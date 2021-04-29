@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<GrantRule> grantRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<GrantRule> getGrantRules() {
@@ -77,37 +77,21 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
 	public static class GrantRule {
 
-		private Long createTime;
-
-		private String instanceId;
-
 		private Long vbrUid;
-
-		private String vbrInstanceId;
-
-		private String vbrRegionId;
 
 		private Long smartAGUid;
 
-		private String smartAGId;
+		private String vbrInstanceId;
+
+		private String instanceId;
+
+		private Long createTime;
 
 		private Boolean bound;
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
+		private String vbrRegionId;
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String smartAGId;
 
 		public Long getVbrUid() {
 			return this.vbrUid;
@@ -115,22 +99,6 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
 		public void setVbrUid(Long vbrUid) {
 			this.vbrUid = vbrUid;
-		}
-
-		public String getVbrInstanceId() {
-			return this.vbrInstanceId;
-		}
-
-		public void setVbrInstanceId(String vbrInstanceId) {
-			this.vbrInstanceId = vbrInstanceId;
-		}
-
-		public String getVbrRegionId() {
-			return this.vbrRegionId;
-		}
-
-		public void setVbrRegionId(String vbrRegionId) {
-			this.vbrRegionId = vbrRegionId;
 		}
 
 		public Long getSmartAGUid() {
@@ -141,12 +109,28 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 			this.smartAGUid = smartAGUid;
 		}
 
-		public String getSmartAGId() {
-			return this.smartAGId;
+		public String getVbrInstanceId() {
+			return this.vbrInstanceId;
 		}
 
-		public void setSmartAGId(String smartAGId) {
-			this.smartAGId = smartAGId;
+		public void setVbrInstanceId(String vbrInstanceId) {
+			this.vbrInstanceId = vbrInstanceId;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public Boolean getBound() {
@@ -155,6 +139,22 @@ public class DescribeGrantSagVbrRulesResponse extends AcsResponse {
 
 		public void setBound(Boolean bound) {
 			this.bound = bound;
+		}
+
+		public String getVbrRegionId() {
+			return this.vbrRegionId;
+		}
+
+		public void setVbrRegionId(String vbrRegionId) {
+			this.vbrRegionId = vbrRegionId;
+		}
+
+		public String getSmartAGId() {
+			return this.smartAGId;
+		}
+
+		public void setSmartAGId(String smartAGId) {
+			this.smartAGId = smartAGId;
 		}
 	}
 

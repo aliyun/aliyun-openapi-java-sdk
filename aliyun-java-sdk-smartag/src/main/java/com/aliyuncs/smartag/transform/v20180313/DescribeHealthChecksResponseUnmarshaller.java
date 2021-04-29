@@ -28,29 +28,29 @@ public class DescribeHealthChecksResponseUnmarshaller {
 		
 		describeHealthChecksResponse.setRequestId(_ctx.stringValue("DescribeHealthChecksResponse.RequestId"));
 		describeHealthChecksResponse.setTotalCount(_ctx.integerValue("DescribeHealthChecksResponse.TotalCount"));
-		describeHealthChecksResponse.setPageNumber(_ctx.integerValue("DescribeHealthChecksResponse.PageNumber"));
 		describeHealthChecksResponse.setPageSize(_ctx.integerValue("DescribeHealthChecksResponse.PageSize"));
+		describeHealthChecksResponse.setPageNumber(_ctx.integerValue("DescribeHealthChecksResponse.PageNumber"));
 
 		List<HealthCheck> healthChecks = new ArrayList<HealthCheck>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeHealthChecksResponse.HealthChecks.Length"); i++) {
 			HealthCheck healthCheck = new HealthCheck();
-			healthCheck.setHcInstanceId(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].HcInstanceId"));
-			healthCheck.setSmartAGId(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].SmartAGId"));
-			healthCheck.setName(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Name"));
-			healthCheck.setDescription(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Description"));
-			healthCheck.setType(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Type"));
-			healthCheck.setDstIpAddr(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].DstIpAddr"));
-			healthCheck.setDstPort(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].DstPort"));
-			healthCheck.setSrcIpAddr(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].SrcIpAddr"));
-			healthCheck.setSrcPort(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].SrcPort"));
-			healthCheck.setProbeInterval(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].ProbeInterval"));
-			healthCheck.setProbeCount(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].ProbeCount"));
-			healthCheck.setProbeTimeout(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].ProbeTimeout"));
-			healthCheck.setRttThreshold(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].RttThreshold"));
-			healthCheck.setRttFailThreshold(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].RttFailThreshold"));
-			healthCheck.setFailCountThreshold(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].FailCountThreshold"));
-			healthCheck.setRelationCount(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].RelationCount"));
 			healthCheck.setStatus(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Status"));
+			healthCheck.setDescription(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Description"));
+			healthCheck.setSrcPort(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].SrcPort"));
+			healthCheck.setSrcIpAddr(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].SrcIpAddr"));
+			healthCheck.setFailCountThreshold(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].FailCountThreshold"));
+			healthCheck.setDstPort(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].DstPort"));
+			healthCheck.setName(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Name"));
+			healthCheck.setProbeCount(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].ProbeCount"));
+			healthCheck.setType(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].Type"));
+			healthCheck.setProbeTimeout(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].ProbeTimeout"));
+			healthCheck.setHcInstanceId(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].HcInstanceId"));
+			healthCheck.setRttThreshold(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].RttThreshold"));
+			healthCheck.setProbeInterval(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].ProbeInterval"));
+			healthCheck.setRelationCount(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].RelationCount"));
+			healthCheck.setSmartAGId(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].SmartAGId"));
+			healthCheck.setRttFailThreshold(_ctx.integerValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].RttFailThreshold"));
+			healthCheck.setDstIpAddr(_ctx.stringValue("DescribeHealthChecksResponse.HealthChecks["+ i +"].DstIpAddr"));
 
 			healthChecks.add(healthCheck);
 		}

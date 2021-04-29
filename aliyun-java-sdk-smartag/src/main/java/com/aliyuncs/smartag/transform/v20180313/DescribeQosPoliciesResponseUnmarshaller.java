@@ -28,24 +28,36 @@ public class DescribeQosPoliciesResponseUnmarshaller {
 		
 		describeQosPoliciesResponse.setRequestId(_ctx.stringValue("DescribeQosPoliciesResponse.RequestId"));
 		describeQosPoliciesResponse.setTotalCount(_ctx.integerValue("DescribeQosPoliciesResponse.TotalCount"));
-		describeQosPoliciesResponse.setPageNumber(_ctx.integerValue("DescribeQosPoliciesResponse.PageNumber"));
 		describeQosPoliciesResponse.setPageSize(_ctx.integerValue("DescribeQosPoliciesResponse.PageSize"));
+		describeQosPoliciesResponse.setPageNumber(_ctx.integerValue("DescribeQosPoliciesResponse.PageNumber"));
 
 		List<QosPolicy> qosPolicies = new ArrayList<QosPolicy>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeQosPoliciesResponse.QosPolicies.Length"); i++) {
 			QosPolicy qosPolicy = new QosPolicy();
-			qosPolicy.setQosPolicyId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosPolicyId"));
-			qosPolicy.setQosId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosId"));
-			qosPolicy.setPriority(_ctx.integerValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Priority"));
-			qosPolicy.setDescription(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Description"));
-			qosPolicy.setSourceCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourceCidr"));
 			qosPolicy.setDestCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DestCidr"));
-			qosPolicy.setIpProtocol(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].IpProtocol"));
+			qosPolicy.setDescription(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Description"));
 			qosPolicy.setSourcePortRange(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourcePortRange"));
-			qosPolicy.setDestPortRange(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DestPortRange"));
-			qosPolicy.setStartTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].StartTime"));
+			qosPolicy.setQosPolicyId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosPolicyId"));
 			qosPolicy.setEndTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].EndTime"));
+			qosPolicy.setSourceCidr(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].SourceCidr"));
+			qosPolicy.setPriority(_ctx.integerValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Priority"));
+			qosPolicy.setStartTime(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].StartTime"));
+			qosPolicy.setQosId(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].QosId"));
+			qosPolicy.setIpProtocol(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].IpProtocol"));
+			qosPolicy.setDestPortRange(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DestPortRange"));
 			qosPolicy.setName(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].Name"));
+
+			List<String> dpiSignatureIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DpiSignatureIds.Length"); j++) {
+				dpiSignatureIds.add(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DpiSignatureIds["+ j +"]"));
+			}
+			qosPolicy.setDpiSignatureIds(dpiSignatureIds);
+
+			List<String> dpiGroupIds = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DpiGroupIds.Length"); j++) {
+				dpiGroupIds.add(_ctx.stringValue("DescribeQosPoliciesResponse.QosPolicies["+ i +"].DpiGroupIds["+ j +"]"));
+			}
+			qosPolicy.setDpiGroupIds(dpiGroupIds);
 
 			qosPolicies.add(qosPolicy);
 		}

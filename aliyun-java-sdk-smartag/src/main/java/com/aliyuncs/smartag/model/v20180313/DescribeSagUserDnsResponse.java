@@ -25,13 +25,21 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagUserDnsResponse extends AcsResponse {
 
+	private String slaveDns;
+
 	private String requestId;
 
 	private String masterDns;
 
-	private String slaveDns;
-
 	private List<TaskState> taskStates;
+
+	public String getSlaveDns() {
+		return this.slaveDns;
+	}
+
+	public void setSlaveDns(String slaveDns) {
+		this.slaveDns = slaveDns;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 		this.masterDns = masterDns;
 	}
 
-	public String getSlaveDns() {
-		return this.slaveDns;
-	}
-
-	public void setSlaveDns(String slaveDns) {
-		this.slaveDns = slaveDns;
-	}
-
 	public List<TaskState> getTaskStates() {
 		return this.taskStates;
 	}
@@ -69,11 +69,11 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -81,6 +81,14 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -97,14 +105,6 @@ public class DescribeSagUserDnsResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

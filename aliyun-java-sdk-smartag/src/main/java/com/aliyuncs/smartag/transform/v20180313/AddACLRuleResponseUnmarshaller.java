@@ -14,6 +14,9 @@
 
 package com.aliyuncs.smartag.transform.v20180313;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.smartag.model.v20180313.AddACLRuleResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,20 +26,32 @@ public class AddACLRuleResponseUnmarshaller {
 	public static AddACLRuleResponse unmarshall(AddACLRuleResponse addACLRuleResponse, UnmarshallerContext _ctx) {
 		
 		addACLRuleResponse.setRequestId(_ctx.stringValue("AddACLRuleResponse.RequestId"));
-		addACLRuleResponse.setAcrId(_ctx.stringValue("AddACLRuleResponse.AcrId"));
-		addACLRuleResponse.setAclId(_ctx.stringValue("AddACLRuleResponse.AclId"));
-		addACLRuleResponse.setDescription(_ctx.stringValue("AddACLRuleResponse.Description"));
-		addACLRuleResponse.setDirection(_ctx.stringValue("AddACLRuleResponse.Direction"));
-		addACLRuleResponse.setSourceCidr(_ctx.stringValue("AddACLRuleResponse.SourceCidr"));
-		addACLRuleResponse.setDestCidr(_ctx.stringValue("AddACLRuleResponse.DestCidr"));
-		addACLRuleResponse.setIpProtocol(_ctx.stringValue("AddACLRuleResponse.IpProtocol"));
-		addACLRuleResponse.setSourcePortRange(_ctx.stringValue("AddACLRuleResponse.SourcePortRange"));
-		addACLRuleResponse.setDestPortRange(_ctx.stringValue("AddACLRuleResponse.DestPortRange"));
 		addACLRuleResponse.setPolicy(_ctx.stringValue("AddACLRuleResponse.Policy"));
+		addACLRuleResponse.setDescription(_ctx.stringValue("AddACLRuleResponse.Description"));
+		addACLRuleResponse.setSourcePortRange(_ctx.stringValue("AddACLRuleResponse.SourcePortRange"));
+		addACLRuleResponse.setSourceCidr(_ctx.stringValue("AddACLRuleResponse.SourceCidr"));
 		addACLRuleResponse.setPriority(_ctx.integerValue("AddACLRuleResponse.Priority"));
+		addACLRuleResponse.setAclId(_ctx.stringValue("AddACLRuleResponse.AclId"));
+		addACLRuleResponse.setAcrId(_ctx.stringValue("AddACLRuleResponse.AcrId"));
+		addACLRuleResponse.setDestPortRange(_ctx.stringValue("AddACLRuleResponse.DestPortRange"));
+		addACLRuleResponse.setDirection(_ctx.stringValue("AddACLRuleResponse.Direction"));
+		addACLRuleResponse.setName(_ctx.stringValue("AddACLRuleResponse.Name"));
 		addACLRuleResponse.setGmtCreate(_ctx.longValue("AddACLRuleResponse.GmtCreate"));
 		addACLRuleResponse.setType(_ctx.stringValue("AddACLRuleResponse.Type"));
-		addACLRuleResponse.setName(_ctx.stringValue("AddACLRuleResponse.Name"));
+		addACLRuleResponse.setDestCidr(_ctx.stringValue("AddACLRuleResponse.DestCidr"));
+		addACLRuleResponse.setIpProtocol(_ctx.stringValue("AddACLRuleResponse.IpProtocol"));
+
+		List<String> dpiSignatureIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AddACLRuleResponse.DpiSignatureIds.Length"); i++) {
+			dpiSignatureIds.add(_ctx.stringValue("AddACLRuleResponse.DpiSignatureIds["+ i +"]"));
+		}
+		addACLRuleResponse.setDpiSignatureIds(dpiSignatureIds);
+
+		List<String> dpiGroupIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("AddACLRuleResponse.DpiGroupIds.Length"); i++) {
+			dpiGroupIds.add(_ctx.stringValue("AddACLRuleResponse.DpiGroupIds["+ i +"]"));
+		}
+		addACLRuleResponse.setDpiGroupIds(dpiGroupIds);
 	 
 	 	return addACLRuleResponse;
 	}

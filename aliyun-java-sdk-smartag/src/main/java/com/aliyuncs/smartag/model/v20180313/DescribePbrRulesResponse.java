@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePbrRulesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<PbrRule> pbrRules;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribePbrRulesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribePbrRulesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<PbrRule> getPbrRules() {
@@ -77,28 +77,36 @@ public class DescribePbrRulesResponse extends AcsResponse {
 
 	public static class PbrRule {
 
-		private String pbrRuleId;
-
-		private String srcCidr;
-
-		private String dstCidr;
-
 		private String srcPort;
-
-		private String dstPort;
-
-		private String protocol;
-
-		private String name;
 
 		private String description;
 
-		public String getPbrRuleId() {
-			return this.pbrRuleId;
+		private String srcCidr;
+
+		private String dstPort;
+
+		private String pbrRuleId;
+
+		private String protocol;
+
+		private String dstCidr;
+
+		private String name;
+
+		public String getSrcPort() {
+			return this.srcPort;
 		}
 
-		public void setPbrRuleId(String pbrRuleId) {
-			this.pbrRuleId = pbrRuleId;
+		public void setSrcPort(String srcPort) {
+			this.srcPort = srcPort;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSrcCidr() {
@@ -109,28 +117,20 @@ public class DescribePbrRulesResponse extends AcsResponse {
 			this.srcCidr = srcCidr;
 		}
 
-		public String getDstCidr() {
-			return this.dstCidr;
-		}
-
-		public void setDstCidr(String dstCidr) {
-			this.dstCidr = dstCidr;
-		}
-
-		public String getSrcPort() {
-			return this.srcPort;
-		}
-
-		public void setSrcPort(String srcPort) {
-			this.srcPort = srcPort;
-		}
-
 		public String getDstPort() {
 			return this.dstPort;
 		}
 
 		public void setDstPort(String dstPort) {
 			this.dstPort = dstPort;
+		}
+
+		public String getPbrRuleId() {
+			return this.pbrRuleId;
+		}
+
+		public void setPbrRuleId(String pbrRuleId) {
+			this.pbrRuleId = pbrRuleId;
 		}
 
 		public String getBizProtocol() {
@@ -141,20 +141,20 @@ public class DescribePbrRulesResponse extends AcsResponse {
 			this.protocol = protocol;
 		}
 
+		public String getDstCidr() {
+			return this.dstCidr;
+		}
+
+		public void setDstCidr(String dstCidr) {
+			this.dstCidr = dstCidr;
+		}
+
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePbrInterfacesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<PbrInterface> pbrInterfaces;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class DescribePbrInterfacesResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<PbrInterface> getPbrInterfaces() {
@@ -57,28 +57,20 @@ public class DescribePbrInterfacesResponse extends AcsResponse {
 
 	public static class PbrInterface {
 
-		private String interfaceName;
-
-		private String healthCheckInstanceId;
+		private String action;
 
 		private Integer priority;
 
-		private String action;
+		private String healthCheckInstanceId;
 
-		public String getInterfaceName() {
-			return this.interfaceName;
+		private String interfaceName;
+
+		public String getAction() {
+			return this.action;
 		}
 
-		public void setInterfaceName(String interfaceName) {
-			this.interfaceName = interfaceName;
-		}
-
-		public String getHealthCheckInstanceId() {
-			return this.healthCheckInstanceId;
-		}
-
-		public void setHealthCheckInstanceId(String healthCheckInstanceId) {
-			this.healthCheckInstanceId = healthCheckInstanceId;
+		public void setAction(String action) {
+			this.action = action;
 		}
 
 		public Integer getPriority() {
@@ -89,12 +81,20 @@ public class DescribePbrInterfacesResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getAction() {
-			return this.action;
+		public String getHealthCheckInstanceId() {
+			return this.healthCheckInstanceId;
 		}
 
-		public void setAction(String action) {
-			this.action = action;
+		public void setHealthCheckInstanceId(String healthCheckInstanceId) {
+			this.healthCheckInstanceId = healthCheckInstanceId;
+		}
+
+		public String getInterfaceName() {
+			return this.interfaceName;
+		}
+
+		public void setInterfaceName(String interfaceName) {
+			this.interfaceName = interfaceName;
 		}
 	}
 

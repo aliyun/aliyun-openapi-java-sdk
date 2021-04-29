@@ -23,23 +23,23 @@ public class CreateHealthCheckResponseUnmarshaller {
 	public static CreateHealthCheckResponse unmarshall(CreateHealthCheckResponse createHealthCheckResponse, UnmarshallerContext _ctx) {
 		
 		createHealthCheckResponse.setRequestId(_ctx.stringValue("CreateHealthCheckResponse.RequestId"));
-		createHealthCheckResponse.setCreateTime(_ctx.longValue("CreateHealthCheckResponse.CreateTime"));
-		createHealthCheckResponse.setInstanceId(_ctx.stringValue("CreateHealthCheckResponse.InstanceId"));
-		createHealthCheckResponse.setSmartAGId(_ctx.stringValue("CreateHealthCheckResponse.SmartAGId"));
-		createHealthCheckResponse.setName(_ctx.stringValue("CreateHealthCheckResponse.Name"));
-		createHealthCheckResponse.setRegionId(_ctx.stringValue("CreateHealthCheckResponse.RegionId"));
 		createHealthCheckResponse.setDescription(_ctx.stringValue("CreateHealthCheckResponse.Description"));
-		createHealthCheckResponse.setType(_ctx.stringValue("CreateHealthCheckResponse.Type"));
-		createHealthCheckResponse.setDstIpAddr(_ctx.stringValue("CreateHealthCheckResponse.DstIpAddr"));
-		createHealthCheckResponse.setDstPort(_ctx.integerValue("CreateHealthCheckResponse.DstPort"));
-		createHealthCheckResponse.setSrcIpAddr(_ctx.stringValue("CreateHealthCheckResponse.SrcIpAddr"));
 		createHealthCheckResponse.setSrcPort(_ctx.integerValue("CreateHealthCheckResponse.SrcPort"));
-		createHealthCheckResponse.setProbeInterval(_ctx.integerValue("CreateHealthCheckResponse.ProbeInterval"));
+		createHealthCheckResponse.setInstanceId(_ctx.stringValue("CreateHealthCheckResponse.InstanceId"));
+		createHealthCheckResponse.setSrcIpAddr(_ctx.stringValue("CreateHealthCheckResponse.SrcIpAddr"));
+		createHealthCheckResponse.setCreateTime(_ctx.longValue("CreateHealthCheckResponse.CreateTime"));
+		createHealthCheckResponse.setFailCountThreshold(_ctx.integerValue("CreateHealthCheckResponse.FailCountThreshold"));
+		createHealthCheckResponse.setDstPort(_ctx.integerValue("CreateHealthCheckResponse.DstPort"));
+		createHealthCheckResponse.setName(_ctx.stringValue("CreateHealthCheckResponse.Name"));
 		createHealthCheckResponse.setProbeCount(_ctx.integerValue("CreateHealthCheckResponse.ProbeCount"));
+		createHealthCheckResponse.setType(_ctx.stringValue("CreateHealthCheckResponse.Type"));
 		createHealthCheckResponse.setProbeTimeout(_ctx.integerValue("CreateHealthCheckResponse.ProbeTimeout"));
 		createHealthCheckResponse.setRttThreshold(_ctx.integerValue("CreateHealthCheckResponse.RttThreshold"));
+		createHealthCheckResponse.setProbeInterval(_ctx.integerValue("CreateHealthCheckResponse.ProbeInterval"));
+		createHealthCheckResponse.setRegionId(_ctx.stringValue("CreateHealthCheckResponse.RegionId"));
+		createHealthCheckResponse.setSmartAGId(_ctx.stringValue("CreateHealthCheckResponse.SmartAGId"));
 		createHealthCheckResponse.setRttFailThreshold(_ctx.integerValue("CreateHealthCheckResponse.RttFailThreshold"));
-		createHealthCheckResponse.setFailCountThreshold(_ctx.integerValue("CreateHealthCheckResponse.FailCountThreshold"));
+		createHealthCheckResponse.setDstIpAddr(_ctx.stringValue("CreateHealthCheckResponse.DstIpAddr"));
 	 
 	 	return createHealthCheckResponse;
 	}

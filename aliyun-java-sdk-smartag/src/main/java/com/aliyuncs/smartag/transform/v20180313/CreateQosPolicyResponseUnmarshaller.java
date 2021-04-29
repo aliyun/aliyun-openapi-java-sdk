@@ -14,6 +14,9 @@
 
 package com.aliyuncs.smartag.transform.v20180313;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.smartag.model.v20180313.CreateQosPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -23,18 +26,30 @@ public class CreateQosPolicyResponseUnmarshaller {
 	public static CreateQosPolicyResponse unmarshall(CreateQosPolicyResponse createQosPolicyResponse, UnmarshallerContext _ctx) {
 		
 		createQosPolicyResponse.setRequestId(_ctx.stringValue("CreateQosPolicyResponse.RequestId"));
-		createQosPolicyResponse.setQosId(_ctx.stringValue("CreateQosPolicyResponse.QosId"));
-		createQosPolicyResponse.setQosPolicyId(_ctx.stringValue("CreateQosPolicyResponse.QosPolicyId"));
-		createQosPolicyResponse.setDescription(_ctx.stringValue("CreateQosPolicyResponse.Description"));
-		createQosPolicyResponse.setPriority(_ctx.integerValue("CreateQosPolicyResponse.Priority"));
-		createQosPolicyResponse.setSourceCidr(_ctx.stringValue("CreateQosPolicyResponse.SourceCidr"));
 		createQosPolicyResponse.setDestCidr(_ctx.stringValue("CreateQosPolicyResponse.DestCidr"));
-		createQosPolicyResponse.setIpProtocol(_ctx.stringValue("CreateQosPolicyResponse.IpProtocol"));
+		createQosPolicyResponse.setDescription(_ctx.stringValue("CreateQosPolicyResponse.Description"));
 		createQosPolicyResponse.setSourcePortRange(_ctx.stringValue("CreateQosPolicyResponse.SourcePortRange"));
-		createQosPolicyResponse.setDestPortRange(_ctx.stringValue("CreateQosPolicyResponse.DestPortRange"));
-		createQosPolicyResponse.setStartTime(_ctx.stringValue("CreateQosPolicyResponse.StartTime"));
+		createQosPolicyResponse.setQosPolicyId(_ctx.stringValue("CreateQosPolicyResponse.QosPolicyId"));
 		createQosPolicyResponse.setEndTime(_ctx.stringValue("CreateQosPolicyResponse.EndTime"));
+		createQosPolicyResponse.setSourceCidr(_ctx.stringValue("CreateQosPolicyResponse.SourceCidr"));
+		createQosPolicyResponse.setPriority(_ctx.integerValue("CreateQosPolicyResponse.Priority"));
+		createQosPolicyResponse.setStartTime(_ctx.stringValue("CreateQosPolicyResponse.StartTime"));
+		createQosPolicyResponse.setIpProtocol(_ctx.stringValue("CreateQosPolicyResponse.IpProtocol"));
+		createQosPolicyResponse.setQosId(_ctx.stringValue("CreateQosPolicyResponse.QosId"));
+		createQosPolicyResponse.setDestPortRange(_ctx.stringValue("CreateQosPolicyResponse.DestPortRange"));
 		createQosPolicyResponse.setName(_ctx.stringValue("CreateQosPolicyResponse.Name"));
+
+		List<String> dpiSignatureIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateQosPolicyResponse.DpiSignatureIds.Length"); i++) {
+			dpiSignatureIds.add(_ctx.stringValue("CreateQosPolicyResponse.DpiSignatureIds["+ i +"]"));
+		}
+		createQosPolicyResponse.setDpiSignatureIds(dpiSignatureIds);
+
+		List<String> dpiGroupIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("CreateQosPolicyResponse.DpiGroupIds.Length"); i++) {
+			dpiGroupIds.add(_ctx.stringValue("CreateQosPolicyResponse.DpiGroupIds["+ i +"]"));
+		}
+		createQosPolicyResponse.setDpiGroupIds(dpiGroupIds);
 	 
 	 	return createQosPolicyResponse;
 	}

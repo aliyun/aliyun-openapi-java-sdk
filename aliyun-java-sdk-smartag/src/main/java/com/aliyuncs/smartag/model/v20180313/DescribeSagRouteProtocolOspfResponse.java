@@ -27,21 +27,21 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String routerId;
-
-	private String areaId;
-
-	private String areaType;
-
 	private Integer deadTime;
-
-	private Integer helloTime;
-
-	private String authenticationType;
 
 	private Integer md5KeyId;
 
+	private String areaId;
+
+	private Integer helloTime;
+
+	private String routerId;
+
+	private String areaType;
+
 	private String md5Key;
+
+	private String authenticationType;
 
 	private List<TaskState> taskStates;
 
@@ -53,52 +53,12 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRouterId() {
-		return this.routerId;
-	}
-
-	public void setRouterId(String routerId) {
-		this.routerId = routerId;
-	}
-
-	public String getAreaId() {
-		return this.areaId;
-	}
-
-	public void setAreaId(String areaId) {
-		this.areaId = areaId;
-	}
-
-	public String getAreaType() {
-		return this.areaType;
-	}
-
-	public void setAreaType(String areaType) {
-		this.areaType = areaType;
-	}
-
 	public Integer getDeadTime() {
 		return this.deadTime;
 	}
 
 	public void setDeadTime(Integer deadTime) {
 		this.deadTime = deadTime;
-	}
-
-	public Integer getHelloTime() {
-		return this.helloTime;
-	}
-
-	public void setHelloTime(Integer helloTime) {
-		this.helloTime = helloTime;
-	}
-
-	public String getAuthenticationType() {
-		return this.authenticationType;
-	}
-
-	public void setAuthenticationType(String authenticationType) {
-		this.authenticationType = authenticationType;
 	}
 
 	public Integer getMd5KeyId() {
@@ -109,12 +69,52 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 		this.md5KeyId = md5KeyId;
 	}
 
+	public String getAreaId() {
+		return this.areaId;
+	}
+
+	public void setAreaId(String areaId) {
+		this.areaId = areaId;
+	}
+
+	public Integer getHelloTime() {
+		return this.helloTime;
+	}
+
+	public void setHelloTime(Integer helloTime) {
+		this.helloTime = helloTime;
+	}
+
+	public String getRouterId() {
+		return this.routerId;
+	}
+
+	public void setRouterId(String routerId) {
+		this.routerId = routerId;
+	}
+
+	public String getAreaType() {
+		return this.areaType;
+	}
+
+	public void setAreaType(String areaType) {
+		this.areaType = areaType;
+	}
+
 	public String getMd5Key() {
 		return this.md5Key;
 	}
 
 	public void setMd5Key(String md5Key) {
 		this.md5Key = md5Key;
+	}
+
+	public String getAuthenticationType() {
+		return this.authenticationType;
+	}
+
+	public void setAuthenticationType(String authenticationType) {
+		this.authenticationType = authenticationType;
 	}
 
 	public List<TaskState> getTaskStates() {
@@ -129,11 +129,11 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -141,6 +141,14 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -157,14 +165,6 @@ public class DescribeSagRouteProtocolOspfResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 
