@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class OpenArmsDefaultSLRRequest extends RpcAcsRequest<OpenArmsDefaultSLRResponse> {
 	   
 	public OpenArmsDefaultSLRRequest() {
-		super("ARMS", "2019-08-08", "OpenArmsDefaultSLR");
+		super("ARMS", "2019-08-08", "OpenArmsDefaultSLR", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

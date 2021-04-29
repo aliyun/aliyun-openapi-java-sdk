@@ -33,7 +33,7 @@ public class ImportPrometheusRulesRequest extends RpcAcsRequest<ImportPrometheus
 
 	private String content;
 	public ImportPrometheusRulesRequest() {
-		super("ARMS", "2019-08-08", "ImportPrometheusRules");
+		super("ARMS", "2019-08-08", "ImportPrometheusRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

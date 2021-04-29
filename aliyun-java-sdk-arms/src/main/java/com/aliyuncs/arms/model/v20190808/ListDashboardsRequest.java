@@ -25,6 +25,8 @@ import com.aliyuncs.arms.Endpoint;
 public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse> {
 	   
 
+	private String dashboardName;
+
 	private String product;
 
 	private Boolean recreateSwitch;
@@ -35,12 +37,23 @@ public class ListDashboardsRequest extends RpcAcsRequest<ListDashboardsResponse>
 
 	private String clusterType;
 	public ListDashboardsRequest() {
-		super("ARMS", "2019-08-08", "ListDashboards");
+		super("ARMS", "2019-08-08", "ListDashboards", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getDashboardName() {
+		return this.dashboardName;
+	}
+
+	public void setDashboardName(String dashboardName) {
+		this.dashboardName = dashboardName;
+		if(dashboardName != null){
+			putQueryParameter("DashboardName", dashboardName);
+		}
 	}
 
 	public String getProduct() {

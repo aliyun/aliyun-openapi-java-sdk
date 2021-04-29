@@ -27,7 +27,7 @@ public class GetIntegrationTokenRequest extends RpcAcsRequest<GetIntegrationToke
 
 	private String productType;
 	public GetIntegrationTokenRequest() {
-		super("ARMS", "2019-08-08", "GetIntegrationToken");
+		super("ARMS", "2019-08-08", "GetIntegrationToken", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

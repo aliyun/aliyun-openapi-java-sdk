@@ -63,6 +63,16 @@ public class ListDashboardsResponse extends AcsResponse {
 
 		private Boolean isArmsExporter;
 
+		private String name;
+
+		private String version;
+
+		private String dashboardType;
+
+		private String kind;
+
+		private Boolean needUpdate;
+
 		private List<String> tags;
 
 		public String getId() {
@@ -127,6 +137,46 @@ public class ListDashboardsResponse extends AcsResponse {
 
 		public void setIsArmsExporter(Boolean isArmsExporter) {
 			this.isArmsExporter = isArmsExporter;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
+		}
+
+		public String getDashboardType() {
+			return this.dashboardType;
+		}
+
+		public void setDashboardType(String dashboardType) {
+			this.dashboardType = dashboardType;
+		}
+
+		public String getKind() {
+			return this.kind;
+		}
+
+		public void setKind(String kind) {
+			this.kind = kind;
+		}
+
+		public Boolean getNeedUpdate() {
+			return this.needUpdate;
+		}
+
+		public void setNeedUpdate(Boolean needUpdate) {
+			this.needUpdate = needUpdate;
 		}
 
 		public List<String> getTags() {

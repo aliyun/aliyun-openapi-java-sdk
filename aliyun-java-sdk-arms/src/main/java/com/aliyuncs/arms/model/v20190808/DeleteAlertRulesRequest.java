@@ -27,7 +27,7 @@ public class DeleteAlertRulesRequest extends RpcAcsRequest<DeleteAlertRulesRespo
 
 	private String alertIds;
 	public DeleteAlertRulesRequest() {
-		super("ARMS", "2019-08-08", "DeleteAlertRules");
+		super("ARMS", "2019-08-08", "DeleteAlertRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

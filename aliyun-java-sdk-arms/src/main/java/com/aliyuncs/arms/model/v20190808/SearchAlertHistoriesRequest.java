@@ -37,7 +37,7 @@ public class SearchAlertHistoriesRequest extends RpcAcsRequest<SearchAlertHistor
 
 	private Long alertId;
 	public SearchAlertHistoriesRequest() {
-		super("ARMS", "2019-08-08", "SearchAlertHistories");
+		super("ARMS", "2019-08-08", "SearchAlertHistories", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

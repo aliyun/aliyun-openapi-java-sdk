@@ -25,27 +25,14 @@ import com.aliyuncs.arms.Endpoint;
 public class ListPrometheusAlertTemplatesRequest extends RpcAcsRequest<ListPrometheusAlertTemplatesResponse> {
 	   
 
-	private String productCode;
-
 	private String clusterId;
 	public ListPrometheusAlertTemplatesRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusAlertTemplates");
+		super("ARMS", "2019-08-08", "ListPrometheusAlertTemplates", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
 	}
 
 	public String getClusterId() {

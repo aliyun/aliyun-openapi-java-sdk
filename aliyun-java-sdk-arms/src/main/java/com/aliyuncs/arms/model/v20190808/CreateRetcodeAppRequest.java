@@ -29,7 +29,7 @@ public class CreateRetcodeAppRequest extends RpcAcsRequest<CreateRetcodeAppRespo
 
 	private String retcodeAppType;
 	public CreateRetcodeAppRequest() {
-		super("ARMS", "2019-08-08", "CreateRetcodeApp");
+		super("ARMS", "2019-08-08", "CreateRetcodeApp", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

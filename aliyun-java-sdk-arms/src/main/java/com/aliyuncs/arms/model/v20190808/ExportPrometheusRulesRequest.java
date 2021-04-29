@@ -31,7 +31,7 @@ public class ExportPrometheusRulesRequest extends RpcAcsRequest<ExportPrometheus
 
 	private String clusterId;
 	public ExportPrometheusRulesRequest() {
-		super("ARMS", "2019-08-08", "ExportPrometheusRules");
+		super("ARMS", "2019-08-08", "ExportPrometheusRules", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
