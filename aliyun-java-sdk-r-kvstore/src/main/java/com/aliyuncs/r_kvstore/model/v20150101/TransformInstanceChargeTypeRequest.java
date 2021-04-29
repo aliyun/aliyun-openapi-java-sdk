@@ -22,18 +22,16 @@ import com.aliyuncs.r_kvstore.Endpoint;
  * @author auto create
  * @version 
  */
-public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneResponse> {
+public class TransformInstanceChargeTypeRequest extends RpcAcsRequest<TransformInstanceChargeTypeResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String secondaryZoneId;
-
 	private String securityToken;
 
-	private String effectiveTime;
+	private Long period;
 
-	private String dBInstanceId;
+	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
 
@@ -41,11 +39,11 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 
 	private Long ownerId;
 
-	private String vSwitchId;
+	private String instanceId;
 
-	private String zoneId;
-	public MigrateToOtherZoneRequest() {
-		super("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa");
+	private String chargeType;
+	public TransformInstanceChargeTypeRequest() {
+		super("R-kvstore", "2015-01-01", "TransformInstanceChargeType", "redisa");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,17 +62,6 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		}
 	}
 
-	public String getSecondaryZoneId() {
-		return this.secondaryZoneId;
-	}
-
-	public void setSecondaryZoneId(String secondaryZoneId) {
-		this.secondaryZoneId = secondaryZoneId;
-		if(secondaryZoneId != null){
-			putQueryParameter("SecondaryZoneId", secondaryZoneId);
-		}
-	}
-
 	public String getSecurityToken() {
 		return this.securityToken;
 	}
@@ -86,25 +73,25 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		}
 	}
 
-	public String getEffectiveTime() {
-		return this.effectiveTime;
+	public Long getPeriod() {
+		return this.period;
 	}
 
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
+	public void setPeriod(Long period) {
+		this.period = period;
+		if(period != null){
+			putQueryParameter("Period", period.toString());
 		}
 	}
 
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
+	public Boolean getAutoPay() {
+		return this.autoPay;
 	}
 
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
+	public void setAutoPay(Boolean autoPay) {
+		this.autoPay = autoPay;
+		if(autoPay != null){
+			putQueryParameter("AutoPay", autoPay.toString());
 		}
 	}
 
@@ -141,31 +128,31 @@ public class MigrateToOtherZoneRequest extends RpcAcsRequest<MigrateToOtherZoneR
 		}
 	}
 
-	public String getVSwitchId() {
-		return this.vSwitchId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setVSwitchId(String vSwitchId) {
-		this.vSwitchId = vSwitchId;
-		if(vSwitchId != null){
-			putQueryParameter("VSwitchId", vSwitchId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getZoneId() {
-		return this.zoneId;
+	public String getChargeType() {
+		return this.chargeType;
 	}
 
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 
 	@Override
-	public Class<MigrateToOtherZoneResponse> getResponseClass() {
-		return MigrateToOtherZoneResponse.class;
+	public Class<TransformInstanceChargeTypeResponse> getResponseClass() {
+		return TransformInstanceChargeTypeResponse.class;
 	}
 
 }

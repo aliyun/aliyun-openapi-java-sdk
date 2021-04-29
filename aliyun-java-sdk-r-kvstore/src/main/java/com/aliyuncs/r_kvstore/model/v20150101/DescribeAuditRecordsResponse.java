@@ -123,6 +123,8 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		private String accountName;
 
+		private String nodeId;
+
 		public String getHostAddress() {
 			return this.hostAddress;
 		}
@@ -185,6 +187,14 @@ public class DescribeAuditRecordsResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 

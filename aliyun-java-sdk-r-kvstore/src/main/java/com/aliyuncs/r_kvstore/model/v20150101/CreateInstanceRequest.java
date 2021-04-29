@@ -27,6 +27,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private Long resourceOwnerId;
 
+	private String secondaryZoneId;
+
 	private String couponNo;
 
 	private String networkType;
@@ -88,8 +90,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String vpcId;
 
 	private String chargeType;
-
-	private String config;
 	public CreateInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -107,6 +107,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 
@@ -448,17 +459,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.chargeType = chargeType;
 		if(chargeType != null){
 			putQueryParameter("ChargeType", chargeType);
-		}
-	}
-
-	public String getConfig() {
-		return this.config;
-	}
-
-	public void setConfig(String config) {
-		this.config = config;
-		if(config != null){
-			putQueryParameter("Config", config);
 		}
 	}
 

@@ -45,6 +45,7 @@ public class DescribeAuditRecordsResponseUnmarshaller {
 			sQL.setTotalExecutionTimes(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].TotalExecutionTimes"));
 			sQL.setExecuteTime(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].ExecuteTime"));
 			sQL.setAccountName(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].AccountName"));
+			sQL.setNodeId(_ctx.stringValue("DescribeAuditRecordsResponse.Items["+ i +"].NodeId"));
 
 			items.add(sQL);
 		}

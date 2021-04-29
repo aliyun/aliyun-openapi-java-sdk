@@ -171,6 +171,8 @@ public class DescribePriceResponse extends AcsResponse {
 
 		private String currency;
 
+		private String handlingFeeAmount;
+
 		private List<Coupon> coupons;
 
 		private List<String> ruleIds1;
@@ -205,6 +207,14 @@ public class DescribePriceResponse extends AcsResponse {
 
 		public void setCurrency(String currency) {
 			this.currency = currency;
+		}
+
+		public String getHandlingFeeAmount() {
+			return this.handlingFeeAmount;
+		}
+
+		public void setHandlingFeeAmount(String handlingFeeAmount) {
+			this.handlingFeeAmount = handlingFeeAmount;
 		}
 
 		public List<Coupon> getCoupons() {

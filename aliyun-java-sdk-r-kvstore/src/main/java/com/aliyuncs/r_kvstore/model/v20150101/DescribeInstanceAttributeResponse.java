@@ -133,6 +133,10 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		private String globalInstanceId;
 
+		private String secondaryZoneId;
+
+		private String zoneType;
+
 		private List<Tag> tags;
 
 		public String getInstanceId() {
@@ -477,6 +481,22 @@ public class DescribeInstanceAttributeResponse extends AcsResponse {
 
 		public void setGlobalInstanceId(String globalInstanceId) {
 			this.globalInstanceId = globalInstanceId;
+		}
+
+		public String getSecondaryZoneId() {
+			return this.secondaryZoneId;
+		}
+
+		public void setSecondaryZoneId(String secondaryZoneId) {
+			this.secondaryZoneId = secondaryZoneId;
+		}
+
+		public String getZoneType() {
+			return this.zoneType;
+		}
+
+		public void setZoneType(String zoneType) {
+			this.zoneType = zoneType;
 		}
 
 		public List<Tag> getTags() {

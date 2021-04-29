@@ -131,6 +131,8 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 		private String instanceId;
 
+		private String nodeId;
+
 		public String getLevel() {
 			return this.level;
 		}
@@ -185,6 +187,14 @@ public class DescribeRunningLogRecordsResponse extends AcsResponse {
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
+		}
+
+		public String getNodeId() {
+			return this.nodeId;
+		}
+
+		public void setNodeId(String nodeId) {
+			this.nodeId = nodeId;
 		}
 	}
 
