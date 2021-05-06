@@ -132,6 +132,7 @@ public class GetChangeOrderInfoResponseUnmarshaller {
 					taskInfoDTO.setTaskErrorMessage(_ctx.stringValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskErrorMessage"));
 					taskInfoDTO.setShowManualIgnorance(_ctx.booleanValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].ShowManualIgnorance"));
 					taskInfoDTO.setTaskErrorIgnorance(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].TaskErrorIgnorance"));
+					taskInfoDTO.setRetryType(_ctx.integerValue("GetChangeOrderInfoResponse.changeOrderInfo.PipelineInfoList["+ i +"].StageDetailList["+ j +"].TaskList["+ k +"].RetryType"));
 
 					taskList.add(taskInfoDTO);
 				}

@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-edas</artifactId>
   <packaging>jar</packaging>
-  <version>3.20.0</version>
+  <version>3.20.1</version>
   <name>aliyun-java-sdk-edas</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
