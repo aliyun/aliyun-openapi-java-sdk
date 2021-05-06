@@ -22,23 +22,21 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLExplorerRetentionRequest extends RpcAcsRequest<DescribeSQLExplorerRetentionResponse> {
+public class DescribePolarSQLCollectorPolicyRequest extends RpcAcsRequest<DescribePolarSQLCollectorPolicyResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private String securityToken;
-
-	private String dBInstanceId;
-
 	private String resourceOwnerAccount;
+
+	private String dBClusterId;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeSQLExplorerRetentionRequest() {
-		super("polardb", "2017-08-01", "DescribeSQLExplorerRetention", "polardb");
-		setMethod(MethodType.POST);
+	public DescribePolarSQLCollectorPolicyRequest() {
+		super("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy", "polardb");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -56,28 +54,6 @@ public class DescribeSQLExplorerRetentionRequest extends RpcAcsRequest<DescribeS
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
-		}
-	}
-
 	public String getResourceOwnerAccount() {
 		return this.resourceOwnerAccount;
 	}
@@ -86,6 +62,17 @@ public class DescribeSQLExplorerRetentionRequest extends RpcAcsRequest<DescribeS
 		this.resourceOwnerAccount = resourceOwnerAccount;
 		if(resourceOwnerAccount != null){
 			putQueryParameter("ResourceOwnerAccount", resourceOwnerAccount);
+		}
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+		if(dBClusterId != null){
+			putQueryParameter("DBClusterId", dBClusterId);
 		}
 	}
 
@@ -112,8 +99,8 @@ public class DescribeSQLExplorerRetentionRequest extends RpcAcsRequest<DescribeS
 	}
 
 	@Override
-	public Class<DescribeSQLExplorerRetentionResponse> getResponseClass() {
-		return DescribeSQLExplorerRetentionResponse.class;
+	public Class<DescribePolarSQLCollectorPolicyResponse> getResponseClass() {
+		return DescribePolarSQLCollectorPolicyResponse.class;
 	}
 
 }

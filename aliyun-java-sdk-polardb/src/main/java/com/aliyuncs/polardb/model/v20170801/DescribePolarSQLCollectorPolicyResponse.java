@@ -15,14 +15,14 @@
 package com.aliyuncs.polardb.model.v20170801;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.polardb.transform.v20170801.DescribeSQLExplorerPolicyResponseUnmarshaller;
+import com.aliyuncs.polardb.transform.v20170801.DescribePolarSQLCollectorPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeSQLExplorerPolicyResponse extends AcsResponse {
+public class DescribePolarSQLCollectorPolicyResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,7 +45,12 @@ public class DescribeSQLExplorerPolicyResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeSQLExplorerPolicyResponse getInstance(UnmarshallerContext context) {
-		return	DescribeSQLExplorerPolicyResponseUnmarshaller.unmarshall(this, context);
+	public DescribePolarSQLCollectorPolicyResponse getInstance(UnmarshallerContext context) {
+		return	DescribePolarSQLCollectorPolicyResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

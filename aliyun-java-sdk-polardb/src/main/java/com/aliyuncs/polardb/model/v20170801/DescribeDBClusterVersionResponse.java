@@ -24,58 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDBClusterVersionResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String dBClusterId;
-
-	private String dBVersion;
-
-	private String dBMinorVersion;
-
-	private String dBVersionStatus;
+	private String proxyVersionStatus;
 
 	private String isLatestVersion;
 
+	private String dBVersion;
+
+	private String requestId;
+
 	private String dBRevisionVersion;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String dBVersionStatus;
+
+	private String dBClusterId;
+
+	private String dBLatestVersion;
+
+	private String proxyRevisionVersion;
+
+	private String dBMinorVersion;
+
+	private String proxyLatestVersion;
+
+	public String getProxyVersionStatus() {
+		return this.proxyVersionStatus;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getDBClusterId() {
-		return this.dBClusterId;
-	}
-
-	public void setDBClusterId(String dBClusterId) {
-		this.dBClusterId = dBClusterId;
-	}
-
-	public String getDBVersion() {
-		return this.dBVersion;
-	}
-
-	public void setDBVersion(String dBVersion) {
-		this.dBVersion = dBVersion;
-	}
-
-	public String getDBMinorVersion() {
-		return this.dBMinorVersion;
-	}
-
-	public void setDBMinorVersion(String dBMinorVersion) {
-		this.dBMinorVersion = dBMinorVersion;
-	}
-
-	public String getDBVersionStatus() {
-		return this.dBVersionStatus;
-	}
-
-	public void setDBVersionStatus(String dBVersionStatus) {
-		this.dBVersionStatus = dBVersionStatus;
+	public void setProxyVersionStatus(String proxyVersionStatus) {
+		this.proxyVersionStatus = proxyVersionStatus;
 	}
 
 	public String getIsLatestVersion() {
@@ -86,12 +62,76 @@ public class DescribeDBClusterVersionResponse extends AcsResponse {
 		this.isLatestVersion = isLatestVersion;
 	}
 
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getDBRevisionVersion() {
 		return this.dBRevisionVersion;
 	}
 
 	public void setDBRevisionVersion(String dBRevisionVersion) {
 		this.dBRevisionVersion = dBRevisionVersion;
+	}
+
+	public String getDBVersionStatus() {
+		return this.dBVersionStatus;
+	}
+
+	public void setDBVersionStatus(String dBVersionStatus) {
+		this.dBVersionStatus = dBVersionStatus;
+	}
+
+	public String getDBClusterId() {
+		return this.dBClusterId;
+	}
+
+	public void setDBClusterId(String dBClusterId) {
+		this.dBClusterId = dBClusterId;
+	}
+
+	public String getDBLatestVersion() {
+		return this.dBLatestVersion;
+	}
+
+	public void setDBLatestVersion(String dBLatestVersion) {
+		this.dBLatestVersion = dBLatestVersion;
+	}
+
+	public String getProxyRevisionVersion() {
+		return this.proxyRevisionVersion;
+	}
+
+	public void setProxyRevisionVersion(String proxyRevisionVersion) {
+		this.proxyRevisionVersion = proxyRevisionVersion;
+	}
+
+	public String getDBMinorVersion() {
+		return this.dBMinorVersion;
+	}
+
+	public void setDBMinorVersion(String dBMinorVersion) {
+		this.dBMinorVersion = dBMinorVersion;
+	}
+
+	public String getProxyLatestVersion() {
+		return this.proxyLatestVersion;
+	}
+
+	public void setProxyLatestVersion(String proxyLatestVersion) {
+		this.proxyLatestVersion = proxyLatestVersion;
 	}
 
 	@Override

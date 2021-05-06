@@ -22,20 +22,22 @@ import com.aliyuncs.polardb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLExplorerPolicyResponse> {
+public class DescribeParameterTemplatesRequest extends RpcAcsRequest<DescribeParameterTemplatesResponse> {
 	   
 
 	private Long resourceOwnerId;
-
-	private String dBInstanceId;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-	public DescribeSQLExplorerPolicyRequest() {
-		super("polardb", "2017-08-01", "DescribeSQLExplorerPolicy", "polardb");
+
+	private String dBType;
+
+	private String dBVersion;
+	public DescribeParameterTemplatesRequest() {
+		super("polardb", "2017-08-01", "DescribeParameterTemplates", "polardb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -51,17 +53,6 @@ public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLE
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getDBInstanceId() {
-		return this.dBInstanceId;
-	}
-
-	public void setDBInstanceId(String dBInstanceId) {
-		this.dBInstanceId = dBInstanceId;
-		if(dBInstanceId != null){
-			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
@@ -98,9 +89,31 @@ public class DescribeSQLExplorerPolicyRequest extends RpcAcsRequest<DescribeSQLE
 		}
 	}
 
+	public String getDBType() {
+		return this.dBType;
+	}
+
+	public void setDBType(String dBType) {
+		this.dBType = dBType;
+		if(dBType != null){
+			putQueryParameter("DBType", dBType);
+		}
+	}
+
+	public String getDBVersion() {
+		return this.dBVersion;
+	}
+
+	public void setDBVersion(String dBVersion) {
+		this.dBVersion = dBVersion;
+		if(dBVersion != null){
+			putQueryParameter("DBVersion", dBVersion);
+		}
+	}
+
 	@Override
-	public Class<DescribeSQLExplorerPolicyResponse> getResponseClass() {
-		return DescribeSQLExplorerPolicyResponse.class;
+	public Class<DescribeParameterTemplatesResponse> getResponseClass() {
+		return DescribeParameterTemplatesResponse.class;
 	}
 
 }

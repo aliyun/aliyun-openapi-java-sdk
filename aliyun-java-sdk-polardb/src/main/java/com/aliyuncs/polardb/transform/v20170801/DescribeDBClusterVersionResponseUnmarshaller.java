@@ -23,12 +23,16 @@ public class DescribeDBClusterVersionResponseUnmarshaller {
 	public static DescribeDBClusterVersionResponse unmarshall(DescribeDBClusterVersionResponse describeDBClusterVersionResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterVersionResponse.setRequestId(_ctx.stringValue("DescribeDBClusterVersionResponse.RequestId"));
-		describeDBClusterVersionResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterVersionResponse.DBClusterId"));
-		describeDBClusterVersionResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersion"));
-		describeDBClusterVersionResponse.setDBMinorVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBMinorVersion"));
-		describeDBClusterVersionResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersionStatus"));
+		describeDBClusterVersionResponse.setProxyVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyVersionStatus"));
 		describeDBClusterVersionResponse.setIsLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.IsLatestVersion"));
+		describeDBClusterVersionResponse.setDBVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersion"));
 		describeDBClusterVersionResponse.setDBRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBRevisionVersion"));
+		describeDBClusterVersionResponse.setDBVersionStatus(_ctx.stringValue("DescribeDBClusterVersionResponse.DBVersionStatus"));
+		describeDBClusterVersionResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterVersionResponse.DBClusterId"));
+		describeDBClusterVersionResponse.setDBLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBLatestVersion"));
+		describeDBClusterVersionResponse.setProxyRevisionVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyRevisionVersion"));
+		describeDBClusterVersionResponse.setDBMinorVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.DBMinorVersion"));
+		describeDBClusterVersionResponse.setProxyLatestVersion(_ctx.stringValue("DescribeDBClusterVersionResponse.ProxyLatestVersion"));
 	 
 	 	return describeDBClusterVersionResponse;
 	}

@@ -14,17 +14,17 @@
 
 package com.aliyuncs.polardb.transform.v20170801;
 
-import com.aliyuncs.polardb.model.v20170801.DescribeSQLExplorerPolicyResponse;
+import com.aliyuncs.polardb.model.v20170801.DescribePolarSQLCollectorPolicyResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeSQLExplorerPolicyResponseUnmarshaller {
+public class DescribePolarSQLCollectorPolicyResponseUnmarshaller {
 
-	public static DescribeSQLExplorerPolicyResponse unmarshall(DescribeSQLExplorerPolicyResponse describeSQLExplorerPolicyResponse, UnmarshallerContext _ctx) {
+	public static DescribePolarSQLCollectorPolicyResponse unmarshall(DescribePolarSQLCollectorPolicyResponse describePolarSQLCollectorPolicyResponse, UnmarshallerContext _ctx) {
 		
-		describeSQLExplorerPolicyResponse.setRequestId(_ctx.stringValue("DescribeSQLExplorerPolicyResponse.RequestId"));
-		describeSQLExplorerPolicyResponse.setSQLCollectorStatus(_ctx.stringValue("DescribeSQLExplorerPolicyResponse.SQLCollectorStatus"));
+		describePolarSQLCollectorPolicyResponse.setRequestId(_ctx.stringValue("DescribePolarSQLCollectorPolicyResponse.RequestId"));
+		describePolarSQLCollectorPolicyResponse.setSQLCollectorStatus(_ctx.stringValue("DescribePolarSQLCollectorPolicyResponse.SQLCollectorStatus"));
 	 
-	 	return describeSQLExplorerPolicyResponse;
+	 	return describePolarSQLCollectorPolicyResponse;
 	}
 }
