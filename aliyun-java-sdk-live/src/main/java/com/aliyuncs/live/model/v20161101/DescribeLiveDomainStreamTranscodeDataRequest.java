@@ -34,6 +34,8 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 	private String endTime;
 
 	private Long ownerId;
+
+	private String interval;
 	public DescribeLiveDomainStreamTranscodeDataRequest() {
 		super("live", "2016-11-01", "DescribeLiveDomainStreamTranscodeData", "live");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class DescribeLiveDomainStreamTranscodeDataRequest extends RpcAcsRequest<
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getInterval() {
+		return this.interval;
+	}
+
+	public void setInterval(String interval) {
+		this.interval = interval;
+		if(interval != null){
+			putQueryParameter("Interval", interval);
 		}
 	}
 
