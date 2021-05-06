@@ -27,7 +27,7 @@ public class DeleteCustomizationConfigRequest extends RpcAcsRequest<DeleteCustom
 
 	private String jsonStr;
 	public DeleteCustomizationConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteCustomizationConfig");
+		super("Qualitycheck", "2019-01-15", "DeleteCustomizationConfig", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

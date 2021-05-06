@@ -27,7 +27,7 @@ public class VerifySentenceRequest extends RpcAcsRequest<VerifySentenceResponse>
 
 	private String jsonStr;
 	public VerifySentenceRequest() {
-		super("Qualitycheck", "2019-01-15", "VerifySentence");
+		super("Qualitycheck", "2019-01-15", "VerifySentence", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

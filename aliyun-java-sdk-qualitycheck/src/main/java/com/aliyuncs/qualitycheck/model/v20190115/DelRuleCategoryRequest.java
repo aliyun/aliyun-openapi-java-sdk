@@ -27,7 +27,7 @@ public class DelRuleCategoryRequest extends RpcAcsRequest<DelRuleCategoryRespons
 
 	private String jsonStr;
 	public DelRuleCategoryRequest() {
-		super("Qualitycheck", "2019-01-15", "DelRuleCategory");
+		super("Qualitycheck", "2019-01-15", "DelRuleCategory", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

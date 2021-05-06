@@ -27,7 +27,7 @@ public class ListUsersRequest extends RpcAcsRequest<ListUsersResponse> {
 
 	private String jsonStr;
 	public ListUsersRequest() {
-		super("Qualitycheck", "2019-01-15", "ListUsers");
+		super("Qualitycheck", "2019-01-15", "ListUsers", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

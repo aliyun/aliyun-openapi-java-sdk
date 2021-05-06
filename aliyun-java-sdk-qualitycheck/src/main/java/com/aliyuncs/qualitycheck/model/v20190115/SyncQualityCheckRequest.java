@@ -27,7 +27,7 @@ public class SyncQualityCheckRequest extends RpcAcsRequest<SyncQualityCheckRespo
 
 	private String jsonStr;
 	public SyncQualityCheckRequest() {
-		super("Qualitycheck", "2019-01-15", "SyncQualityCheck");
+		super("Qualitycheck", "2019-01-15", "SyncQualityCheck", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetHitResultRequest extends RpcAcsRequest<GetHitResultResponse> {
 
 	private String jsonStr;
 	public GetHitResultRequest() {
-		super("Qualitycheck", "2019-01-15", "GetHitResult");
+		super("Qualitycheck", "2019-01-15", "GetHitResult", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

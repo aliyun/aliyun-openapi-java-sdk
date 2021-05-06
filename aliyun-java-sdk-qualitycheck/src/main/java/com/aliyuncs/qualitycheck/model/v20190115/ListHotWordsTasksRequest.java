@@ -27,7 +27,7 @@ public class ListHotWordsTasksRequest extends RpcAcsRequest<ListHotWordsTasksRes
 
 	private String jsonStr;
 	public ListHotWordsTasksRequest() {
-		super("Qualitycheck", "2019-01-15", "ListHotWordsTasks");
+		super("Qualitycheck", "2019-01-15", "ListHotWordsTasks", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

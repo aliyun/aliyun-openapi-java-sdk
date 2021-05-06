@@ -27,7 +27,7 @@ public class UploadAudioDataRequest extends RpcAcsRequest<UploadAudioDataRespons
 
 	private String jsonStr;
 	public UploadAudioDataRequest() {
-		super("Qualitycheck", "2019-01-15", "UploadAudioData");
+		super("Qualitycheck", "2019-01-15", "UploadAudioData", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

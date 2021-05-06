@@ -27,7 +27,7 @@ public class ListSkillGroupConfigRequest extends RpcAcsRequest<ListSkillGroupCon
 
 	private String jsonStr;
 	public ListSkillGroupConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "ListSkillGroupConfig");
+		super("Qualitycheck", "2019-01-15", "ListSkillGroupConfig", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

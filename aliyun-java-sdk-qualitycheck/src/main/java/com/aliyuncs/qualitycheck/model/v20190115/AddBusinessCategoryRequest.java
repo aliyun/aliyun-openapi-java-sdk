@@ -27,7 +27,7 @@ public class AddBusinessCategoryRequest extends RpcAcsRequest<AddBusinessCategor
 
 	private String jsonStr;
 	public AddBusinessCategoryRequest() {
-		super("Qualitycheck", "2019-01-15", "AddBusinessCategory");
+		super("Qualitycheck", "2019-01-15", "AddBusinessCategory", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

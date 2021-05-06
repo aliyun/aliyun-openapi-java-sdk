@@ -27,7 +27,7 @@ public class GetCustomizationConfigListRequest extends RpcAcsRequest<GetCustomiz
 
 	private String jsonStr;
 	public GetCustomizationConfigListRequest() {
-		super("Qualitycheck", "2019-01-15", "GetCustomizationConfigList");
+		super("Qualitycheck", "2019-01-15", "GetCustomizationConfigList", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

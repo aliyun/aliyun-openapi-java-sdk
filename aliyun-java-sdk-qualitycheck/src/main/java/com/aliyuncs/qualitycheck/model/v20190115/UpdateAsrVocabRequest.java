@@ -27,7 +27,7 @@ public class UpdateAsrVocabRequest extends RpcAcsRequest<UpdateAsrVocabResponse>
 
 	private String jsonStr;
 	public UpdateAsrVocabRequest() {
-		super("Qualitycheck", "2019-01-15", "UpdateAsrVocab");
+		super("Qualitycheck", "2019-01-15", "UpdateAsrVocab", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

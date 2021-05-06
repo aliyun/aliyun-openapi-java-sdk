@@ -27,7 +27,7 @@ public class DeleteSkillGroupConfigRequest extends RpcAcsRequest<DeleteSkillGrou
 
 	private String jsonStr;
 	public DeleteSkillGroupConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteSkillGroupConfig");
+		super("Qualitycheck", "2019-01-15", "DeleteSkillGroupConfig", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class CreateWarningConfigRequest extends RpcAcsRequest<CreateWarningConfi
 
 	private String jsonStr;
 	public CreateWarningConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateWarningConfig");
+		super("Qualitycheck", "2019-01-15", "CreateWarningConfig", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

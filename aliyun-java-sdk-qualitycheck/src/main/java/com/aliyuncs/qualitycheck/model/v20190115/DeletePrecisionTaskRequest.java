@@ -27,7 +27,7 @@ public class DeletePrecisionTaskRequest extends RpcAcsRequest<DeletePrecisionTas
 
 	private String jsonStr;
 	public DeletePrecisionTaskRequest() {
-		super("Qualitycheck", "2019-01-15", "DeletePrecisionTask");
+		super("Qualitycheck", "2019-01-15", "DeletePrecisionTask", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

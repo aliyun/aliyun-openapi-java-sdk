@@ -27,7 +27,7 @@ public class DeleteAsrVocabRequest extends RpcAcsRequest<DeleteAsrVocabResponse>
 
 	private String jsonStr;
 	public DeleteAsrVocabRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteAsrVocab");
+		super("Qualitycheck", "2019-01-15", "DeleteAsrVocab", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

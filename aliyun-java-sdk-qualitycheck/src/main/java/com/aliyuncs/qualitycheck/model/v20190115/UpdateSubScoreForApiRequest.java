@@ -27,7 +27,7 @@ public class UpdateSubScoreForApiRequest extends RpcAcsRequest<UpdateSubScoreFor
 
 	private String jsonStr;
 	public UpdateSubScoreForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "UpdateSubScoreForApi");
+		super("Qualitycheck", "2019-01-15", "UpdateSubScoreForApi", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

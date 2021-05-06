@@ -27,7 +27,7 @@ public class CreateUserRequest extends RpcAcsRequest<CreateUserResponse> {
 
 	private String jsonStr;
 	public CreateUserRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateUser");
+		super("Qualitycheck", "2019-01-15", "CreateUser", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

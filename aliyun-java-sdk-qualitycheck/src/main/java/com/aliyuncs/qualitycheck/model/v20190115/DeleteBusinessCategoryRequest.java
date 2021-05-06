@@ -27,7 +27,7 @@ public class DeleteBusinessCategoryRequest extends RpcAcsRequest<DeleteBusinessC
 
 	private String jsonStr;
 	public DeleteBusinessCategoryRequest() {
-		super("Qualitycheck", "2019-01-15", "DeleteBusinessCategory");
+		super("Qualitycheck", "2019-01-15", "DeleteBusinessCategory", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

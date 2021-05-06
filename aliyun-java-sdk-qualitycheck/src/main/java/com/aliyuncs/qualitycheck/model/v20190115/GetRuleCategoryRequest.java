@@ -27,7 +27,7 @@ public class GetRuleCategoryRequest extends RpcAcsRequest<GetRuleCategoryRespons
 
 	private String jsonStr;
 	public GetRuleCategoryRequest() {
-		super("Qualitycheck", "2019-01-15", "GetRuleCategory");
+		super("Qualitycheck", "2019-01-15", "GetRuleCategory", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

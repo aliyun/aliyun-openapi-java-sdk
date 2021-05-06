@@ -27,7 +27,7 @@ public class ListWarningConfigRequest extends RpcAcsRequest<ListWarningConfigRes
 
 	private String jsonStr;
 	public ListWarningConfigRequest() {
-		super("Qualitycheck", "2019-01-15", "ListWarningConfig");
+		super("Qualitycheck", "2019-01-15", "ListWarningConfig", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

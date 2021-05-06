@@ -27,7 +27,7 @@ public class VerifyFileRequest extends RpcAcsRequest<VerifyFileResponse> {
 
 	private String jsonStr;
 	public VerifyFileRequest() {
-		super("Qualitycheck", "2019-01-15", "VerifyFile");
+		super("Qualitycheck", "2019-01-15", "VerifyFile", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

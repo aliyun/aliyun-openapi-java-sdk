@@ -27,7 +27,7 @@ public class AddThesaurusForApiRequest extends RpcAcsRequest<AddThesaurusForApiR
 
 	private String jsonStr;
 	public AddThesaurusForApiRequest() {
-		super("Qualitycheck", "2019-01-15", "AddThesaurusForApi");
+		super("Qualitycheck", "2019-01-15", "AddThesaurusForApi", "Qualitycheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
