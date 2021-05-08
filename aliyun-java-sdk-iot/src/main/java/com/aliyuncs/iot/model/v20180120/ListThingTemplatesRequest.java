@@ -25,27 +25,14 @@ import com.aliyuncs.iot.Endpoint;
 public class ListThingTemplatesRequest extends RpcAcsRequest<ListThingTemplatesResponse> {
 	   
 
-	private String resourceGroupId;
-
 	private String iotInstanceId;
 	public ListThingTemplatesRequest() {
-		super("Iot", "2018-01-20", "ListThingTemplates", "iot");
+		super("Iot", "2018-01-20", "ListThingTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
 	}
 
 	public String getIotInstanceId() {

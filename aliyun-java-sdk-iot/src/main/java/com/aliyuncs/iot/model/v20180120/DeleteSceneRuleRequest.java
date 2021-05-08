@@ -29,7 +29,7 @@ public class DeleteSceneRuleRequest extends RpcAcsRequest<DeleteSceneRuleRespons
 
 	private String ruleId;
 	public DeleteSceneRuleRequest() {
-		super("Iot", "2018-01-20", "DeleteSceneRule", "iot");
+		super("Iot", "2018-01-20", "DeleteSceneRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

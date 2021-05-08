@@ -47,8 +47,6 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private Boolean publishAuto;
 
-	private Long categoryId;
-
 	private Integer dataFormat;
 
 	private Boolean id2;
@@ -57,7 +55,7 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 
 	private String protocolType;
 	public CreateProductRequest() {
-		super("Iot", "2018-01-20", "CreateProduct", "iot");
+		super("Iot", "2018-01-20", "CreateProduct");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -183,17 +181,6 @@ public class CreateProductRequest extends RpcAcsRequest<CreateProductResponse> {
 		this.publishAuto = publishAuto;
 		if(publishAuto != null){
 			putQueryParameter("PublishAuto", publishAuto.toString());
-		}
-	}
-
-	public Long getCategoryId() {
-		return this.categoryId;
-	}
-
-	public void setCategoryId(Long categoryId) {
-		this.categoryId = categoryId;
-		if(categoryId != null){
-			putQueryParameter("CategoryId", categoryId.toString());
 		}
 	}
 

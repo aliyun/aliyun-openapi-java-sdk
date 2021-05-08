@@ -29,7 +29,7 @@ public class GetThingScriptRequest extends RpcAcsRequest<GetThingScriptResponse>
 
 	private String iotInstanceId;
 	public GetThingScriptRequest() {
-		super("Iot", "2018-01-20", "GetThingScript", "iot");
+		super("Iot", "2018-01-20", "GetThingScript");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

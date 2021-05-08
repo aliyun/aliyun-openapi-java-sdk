@@ -93,6 +93,8 @@ public class QueryJobResponse extends AcsResponse {
 
 		private String utcModified;
 
+		private Long scheduledTime;
+
 		private RolloutConfig rolloutConfig;
 
 		private TimeoutConfig timeoutConfig;
@@ -163,6 +165,14 @@ public class QueryJobResponse extends AcsResponse {
 
 		public void setUtcModified(String utcModified) {
 			this.utcModified = utcModified;
+		}
+
+		public Long getScheduledTime() {
+			return this.scheduledTime;
+		}
+
+		public void setScheduledTime(Long scheduledTime) {
+			this.scheduledTime = scheduledTime;
 		}
 
 		public RolloutConfig getRolloutConfig() {

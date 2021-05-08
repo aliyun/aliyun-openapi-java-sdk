@@ -117,6 +117,10 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 			private Integer strategy;
 
+			private String sourceRegion;
+
+			private String sourceInstanceName;
+
 			private List<TargetInstanceConfigsItem> targetInstanceConfigs;
 
 			public Long getGmtCreate() {
@@ -191,6 +195,22 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 				this.strategy = strategy;
 			}
 
+			public String getSourceRegion() {
+				return this.sourceRegion;
+			}
+
+			public void setSourceRegion(String sourceRegion) {
+				this.sourceRegion = sourceRegion;
+			}
+
+			public String getSourceInstanceName() {
+				return this.sourceInstanceName;
+			}
+
+			public void setSourceInstanceName(String sourceInstanceName) {
+				this.sourceInstanceName = sourceInstanceName;
+			}
+
 			public List<TargetInstanceConfigsItem> getTargetInstanceConfigs() {
 				return this.targetInstanceConfigs;
 			}
@@ -203,12 +223,32 @@ public class ListDeviceDistributeJobResponse extends AcsResponse {
 
 				private String targetInstanceId;
 
+				private String targetRegion;
+
+				private String targetInstanceName;
+
 				public String getTargetInstanceId() {
 					return this.targetInstanceId;
 				}
 
 				public void setTargetInstanceId(String targetInstanceId) {
 					this.targetInstanceId = targetInstanceId;
+				}
+
+				public String getTargetRegion() {
+					return this.targetRegion;
+				}
+
+				public void setTargetRegion(String targetRegion) {
+					this.targetRegion = targetRegion;
+				}
+
+				public String getTargetInstanceName() {
+					return this.targetInstanceName;
+				}
+
+				public void setTargetInstanceName(String targetInstanceName) {
+					this.targetInstanceName = targetInstanceName;
 				}
 			}
 		}

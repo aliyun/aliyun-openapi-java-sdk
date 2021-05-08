@@ -31,7 +31,7 @@ public class DeleteEdgeDriverVersionRequest extends RpcAcsRequest<DeleteEdgeDriv
 
 	private String driverVersion;
 	public DeleteEdgeDriverVersionRequest() {
-		super("Iot", "2018-01-20", "DeleteEdgeDriverVersion", "iot");
+		super("Iot", "2018-01-20", "DeleteEdgeDriverVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

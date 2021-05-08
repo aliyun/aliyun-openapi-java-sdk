@@ -44,6 +44,7 @@ public class ListJobResponseUnmarshaller {
 			dataItem.setStatus(_ctx.stringValue("ListJobResponse.Data["+ i +"].Status"));
 			dataItem.setDescription(_ctx.stringValue("ListJobResponse.Data["+ i +"].Description"));
 			dataItem.setType(_ctx.stringValue("ListJobResponse.Data["+ i +"].Type"));
+			dataItem.setScheduledTime(_ctx.longValue("ListJobResponse.Data["+ i +"].ScheduledTime"));
 
 			data.add(dataItem);
 		}

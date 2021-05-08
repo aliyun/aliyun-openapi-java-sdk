@@ -78,12 +78,22 @@ public class GetDeviceStatusResponse extends AcsResponse {
 
 		private String status;
 
+		private Long timestamp;
+
 		public String getStatus() {
 			return this.status;
 		}
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public Long getTimestamp() {
+			return this.timestamp;
+		}
+
+		public void setTimestamp(Long timestamp) {
+			this.timestamp = timestamp;
 		}
 	}
 

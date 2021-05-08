@@ -48,11 +48,15 @@ public class ListDeviceDistributeJobResponseUnmarshaller {
 			items.setTotal(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Total"));
 			items.setStatus(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Status"));
 			items.setStrategy(_ctx.integerValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].Strategy"));
+			items.setSourceRegion(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceRegion"));
+			items.setSourceInstanceName(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].SourceInstanceName"));
 
 			List<TargetInstanceConfigsItem> targetInstanceConfigs = new ArrayList<TargetInstanceConfigsItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs.Length"); j++) {
 				TargetInstanceConfigsItem targetInstanceConfigsItem = new TargetInstanceConfigsItem();
 				targetInstanceConfigsItem.setTargetInstanceId(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceId"));
+				targetInstanceConfigsItem.setTargetRegion(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetRegion"));
+				targetInstanceConfigsItem.setTargetInstanceName(_ctx.stringValue("ListDeviceDistributeJobResponse.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceName"));
 
 				targetInstanceConfigs.add(targetInstanceConfigsItem);
 			}

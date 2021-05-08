@@ -42,8 +42,10 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 	private String targetConfig;
 
 	private String jobFile;
+
+	private Long scheduledTime;
 	public CreateJobRequest() {
-		super("Iot", "2018-01-20", "CreateJob", "iot");
+		super("Iot", "2018-01-20", "CreateJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -147,6 +149,17 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 		this.jobFile = jobFile;
 		if(jobFile != null){
 			putQueryParameter("JobFile", jobFile);
+		}
+	}
+
+	public Long getScheduledTime() {
+		return this.scheduledTime;
+	}
+
+	public void setScheduledTime(Long scheduledTime) {
+		this.scheduledTime = scheduledTime;
+		if(scheduledTime != null){
+			putQueryParameter("ScheduledTime", scheduledTime.toString());
 		}
 	}
 

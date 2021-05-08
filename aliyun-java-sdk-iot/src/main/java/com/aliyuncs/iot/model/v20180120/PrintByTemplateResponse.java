@@ -86,6 +86,8 @@ public class PrintByTemplateResponse extends AcsResponse {
 
 		private Integer retryCount;
 
+		private Integer maxRetryCount;
+
 		public Boolean getSuccess() {
 			return this.success;
 		}
@@ -124,6 +126,14 @@ public class PrintByTemplateResponse extends AcsResponse {
 
 		public void setRetryCount(Integer retryCount) {
 			this.retryCount = retryCount;
+		}
+
+		public Integer getMaxRetryCount() {
+			return this.maxRetryCount;
+		}
+
+		public void setMaxRetryCount(Integer maxRetryCount) {
+			this.maxRetryCount = maxRetryCount;
 		}
 	}
 

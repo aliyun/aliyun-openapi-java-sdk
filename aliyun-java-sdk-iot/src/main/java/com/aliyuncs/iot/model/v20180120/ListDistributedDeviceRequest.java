@@ -37,7 +37,7 @@ public class ListDistributedDeviceRequest extends RpcAcsRequest<ListDistributedD
 
 	private String targetUid;
 	public ListDistributedDeviceRequest() {
-		super("Iot", "2018-01-20", "ListDistributedDevice", "iot");
+		super("Iot", "2018-01-20", "ListDistributedDevice");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

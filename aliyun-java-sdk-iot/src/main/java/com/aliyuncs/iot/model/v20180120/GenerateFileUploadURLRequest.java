@@ -33,7 +33,7 @@ public class GenerateFileUploadURLRequest extends RpcAcsRequest<GenerateFileUplo
 
 	private String bizCode;
 	public GenerateFileUploadURLRequest() {
-		super("Iot", "2018-01-20", "GenerateFileUploadURL", "iot");
+		super("Iot", "2018-01-20", "GenerateFileUploadURL");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

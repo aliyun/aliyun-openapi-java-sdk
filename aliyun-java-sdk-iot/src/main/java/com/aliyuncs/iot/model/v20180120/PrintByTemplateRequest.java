@@ -39,7 +39,7 @@ public class PrintByTemplateRequest extends RpcAcsRequest<PrintByTemplateRespons
 
 	private String deviceName;
 	public PrintByTemplateRequest() {
-		super("Iot", "2018-01-20", "PrintByTemplate", "iot");
+		super("Iot", "2018-01-20", "PrintByTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -34,6 +34,7 @@ public class PrintByTemplateResponseUnmarshaller {
 		data.setDeviceErrorMessage(_ctx.stringValue("PrintByTemplateResponse.Data.DeviceErrorMessage"));
 		data.setId(_ctx.stringValue("PrintByTemplateResponse.Data.Id"));
 		data.setRetryCount(_ctx.integerValue("PrintByTemplateResponse.Data.RetryCount"));
+		data.setMaxRetryCount(_ctx.integerValue("PrintByTemplateResponse.Data.MaxRetryCount"));
 		printByTemplateResponse.setData(data);
 	 
 	 	return printByTemplateResponse;

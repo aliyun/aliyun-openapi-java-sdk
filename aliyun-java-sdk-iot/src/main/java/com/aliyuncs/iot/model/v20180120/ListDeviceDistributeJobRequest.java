@@ -25,6 +25,8 @@ import com.aliyuncs.iot.Endpoint;
 public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDistributeJobResponse> {
 	   
 
+	private String jobId;
+
 	private Integer pageSize;
 
 	private Integer currentPage;
@@ -33,12 +35,23 @@ public class ListDeviceDistributeJobRequest extends RpcAcsRequest<ListDeviceDist
 
 	private Integer status;
 	public ListDeviceDistributeJobRequest() {
-		super("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot");
+		super("Iot", "2018-01-20", "ListDeviceDistributeJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+		if(jobId != null){
+			putBodyParameter("JobId", jobId);
+		}
 	}
 
 	public Integer getPageSize() {
