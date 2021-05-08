@@ -145,6 +145,10 @@ public class GetFileResponse extends AcsResponse {
 
 			private Integer commitStatus;
 
+			private String deletedStatus;
+
+			private Long businessId;
+
 			public String getConnectionName() {
 				return this.connectionName;
 			}
@@ -287,6 +291,22 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setCommitStatus(Integer commitStatus) {
 				this.commitStatus = commitStatus;
+			}
+
+			public String getDeletedStatus() {
+				return this.deletedStatus;
+			}
+
+			public void setDeletedStatus(String deletedStatus) {
+				this.deletedStatus = deletedStatus;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
 			}
 		}
 

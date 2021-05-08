@@ -57,6 +57,8 @@ public class GetFileResponseUnmarshaller {
 		file.setLastEditUser(_ctx.stringValue("GetFileResponse.Data.File.LastEditUser"));
 		file.setLastEditTime(_ctx.longValue("GetFileResponse.Data.File.LastEditTime"));
 		file.setCommitStatus(_ctx.integerValue("GetFileResponse.Data.File.CommitStatus"));
+		file.setDeletedStatus(_ctx.stringValue("GetFileResponse.Data.File.DeletedStatus"));
+		file.setBusinessId(_ctx.longValue("GetFileResponse.Data.File.BusinessId"));
 		data.setFile(file);
 
 		NodeConfiguration nodeConfiguration = new NodeConfiguration();
