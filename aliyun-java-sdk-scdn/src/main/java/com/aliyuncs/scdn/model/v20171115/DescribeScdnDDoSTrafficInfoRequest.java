@@ -22,7 +22,7 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScdnDdosTrafficInfoRequest extends RpcAcsRequest<DescribeScdnDdosTrafficInfoResponse> {
+public class DescribeScdnDDoSTrafficInfoRequest extends RpcAcsRequest<DescribeScdnDDoSTrafficInfoResponse> {
 	   
 
 	private String line;
@@ -32,8 +32,8 @@ public class DescribeScdnDdosTrafficInfoRequest extends RpcAcsRequest<DescribeSc
 	private String endTime;
 
 	private Long ownerId;
-	public DescribeScdnDdosTrafficInfoRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDdosTrafficInfo");
+	public DescribeScdnDDoSTrafficInfoRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDDoSTrafficInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,8 +86,8 @@ public class DescribeScdnDdosTrafficInfoRequest extends RpcAcsRequest<DescribeSc
 	}
 
 	@Override
-	public Class<DescribeScdnDdosTrafficInfoResponse> getResponseClass() {
-		return DescribeScdnDdosTrafficInfoResponse.class;
+	public Class<DescribeScdnDDoSTrafficInfoResponse> getResponseClass() {
+		return DescribeScdnDDoSTrafficInfoResponse.class;
 	}
 
 }

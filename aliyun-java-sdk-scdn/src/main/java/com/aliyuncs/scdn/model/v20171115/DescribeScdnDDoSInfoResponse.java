@@ -15,14 +15,14 @@
 package com.aliyuncs.scdn.model.v20171115;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scdn.transform.v20171115.DescribeScdnDdosInfoResponseUnmarshaller;
+import com.aliyuncs.scdn.transform.v20171115.DescribeScdnDDoSInfoResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeScdnDdosInfoResponse extends AcsResponse {
+public class DescribeScdnDDoSInfoResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -55,7 +55,7 @@ public class DescribeScdnDdosInfoResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeScdnDdosInfoResponse getInstance(UnmarshallerContext context) {
-		return	DescribeScdnDdosInfoResponseUnmarshaller.unmarshall(this, context);
+	public DescribeScdnDDoSInfoResponse getInstance(UnmarshallerContext context) {
+		return	DescribeScdnDDoSInfoResponseUnmarshaller.unmarshall(this, context);
 	}
 }

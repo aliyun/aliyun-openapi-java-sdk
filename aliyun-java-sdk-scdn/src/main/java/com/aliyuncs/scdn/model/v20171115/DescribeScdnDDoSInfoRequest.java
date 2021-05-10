@@ -22,12 +22,12 @@ import com.aliyuncs.scdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeScdnDdosInfoRequest extends RpcAcsRequest<DescribeScdnDdosInfoResponse> {
+public class DescribeScdnDDoSInfoRequest extends RpcAcsRequest<DescribeScdnDDoSInfoResponse> {
 	   
 
 	private Long ownerId;
-	public DescribeScdnDdosInfoRequest() {
-		super("scdn", "2017-11-15", "DescribeScdnDdosInfo");
+	public DescribeScdnDDoSInfoRequest() {
+		super("scdn", "2017-11-15", "DescribeScdnDDoSInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -47,8 +47,8 @@ public class DescribeScdnDdosInfoRequest extends RpcAcsRequest<DescribeScdnDdosI
 	}
 
 	@Override
-	public Class<DescribeScdnDdosInfoResponse> getResponseClass() {
-		return DescribeScdnDdosInfoResponse.class;
+	public Class<DescribeScdnDDoSInfoResponse> getResponseClass() {
+		return DescribeScdnDDoSInfoResponse.class;
 	}
 
 }

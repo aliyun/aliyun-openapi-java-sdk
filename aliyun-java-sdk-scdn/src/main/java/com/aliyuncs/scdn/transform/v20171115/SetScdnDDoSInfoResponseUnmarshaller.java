@@ -14,16 +14,16 @@
 
 package com.aliyuncs.scdn.transform.v20171115;
 
-import com.aliyuncs.scdn.model.v20171115.SetScdnDdosInfoResponse;
+import com.aliyuncs.scdn.model.v20171115.SetScdnDDoSInfoResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetScdnDdosInfoResponseUnmarshaller {
+public class SetScdnDDoSInfoResponseUnmarshaller {
 
-	public static SetScdnDdosInfoResponse unmarshall(SetScdnDdosInfoResponse setScdnDdosInfoResponse, UnmarshallerContext _ctx) {
+	public static SetScdnDDoSInfoResponse unmarshall(SetScdnDDoSInfoResponse setScdnDDoSInfoResponse, UnmarshallerContext _ctx) {
 		
-		setScdnDdosInfoResponse.setRequestId(_ctx.stringValue("SetScdnDdosInfoResponse.RequestId"));
+		setScdnDDoSInfoResponse.setRequestId(_ctx.stringValue("SetScdnDDoSInfoResponse.RequestId"));
 	 
-	 	return setScdnDdosInfoResponse;
+	 	return setScdnDDoSInfoResponse;
 	}
 }

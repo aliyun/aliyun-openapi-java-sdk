@@ -14,18 +14,18 @@
 
 package com.aliyuncs.scdn.transform.v20171115;
 
-import com.aliyuncs.scdn.model.v20171115.DescribeScdnDdosInfoResponse;
+import com.aliyuncs.scdn.model.v20171115.DescribeScdnDDoSInfoResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeScdnDdosInfoResponseUnmarshaller {
+public class DescribeScdnDDoSInfoResponseUnmarshaller {
 
-	public static DescribeScdnDdosInfoResponse unmarshall(DescribeScdnDdosInfoResponse describeScdnDdosInfoResponse, UnmarshallerContext _ctx) {
+	public static DescribeScdnDDoSInfoResponse unmarshall(DescribeScdnDDoSInfoResponse describeScdnDDoSInfoResponse, UnmarshallerContext _ctx) {
 		
-		describeScdnDdosInfoResponse.setRequestId(_ctx.stringValue("DescribeScdnDdosInfoResponse.RequestId"));
-		describeScdnDdosInfoResponse.setSecBandwidth(_ctx.integerValue("DescribeScdnDdosInfoResponse.SecBandwidth"));
-		describeScdnDdosInfoResponse.setElasticBandwidth(_ctx.integerValue("DescribeScdnDdosInfoResponse.ElasticBandwidth"));
+		describeScdnDDoSInfoResponse.setRequestId(_ctx.stringValue("DescribeScdnDDoSInfoResponse.RequestId"));
+		describeScdnDDoSInfoResponse.setSecBandwidth(_ctx.integerValue("DescribeScdnDDoSInfoResponse.SecBandwidth"));
+		describeScdnDDoSInfoResponse.setElasticBandwidth(_ctx.integerValue("DescribeScdnDDoSInfoResponse.ElasticBandwidth"));
 	 
-	 	return describeScdnDdosInfoResponse;
+	 	return describeScdnDDoSInfoResponse;
 	}
 }
