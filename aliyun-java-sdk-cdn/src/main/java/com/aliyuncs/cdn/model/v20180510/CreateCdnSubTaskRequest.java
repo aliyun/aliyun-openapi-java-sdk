@@ -22,20 +22,22 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigResponse> {
+public class CreateCdnSubTaskRequest extends RpcAcsRequest<CreateCdnSubTaskResponse> {
 	   
 
-	private String pageType;
-
-	private String securityToken;
+	private String startTime;
 
 	private String domainName;
 
-	private String customPageUrl;
+	private String endTime;
 
 	private Long ownerId;
-	public SetErrorPageConfigRequest() {
-		super("Cdn", "2018-05-10", "SetErrorPageConfig");
+
+	private String reportIds;
+
+	private String status;
+	public CreateCdnSubTaskRequest() {
+		super("Cdn", "2018-05-10", "CreateCdnSubTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +45,14 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 		} catch (Exception e) {}
 	}
 
-	public String getPageType() {
-		return this.pageType;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setPageType(String pageType) {
-		this.pageType = pageType;
-		if(pageType != null){
-			putQueryParameter("PageType", pageType);
-		}
-	}
-
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putBodyParameter("StartTime", startTime);
 		}
 	}
 
@@ -72,18 +63,18 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+			putBodyParameter("DomainName", domainName);
 		}
 	}
 
-	public String getCustomPageUrl() {
-		return this.customPageUrl;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setCustomPageUrl(String customPageUrl) {
-		this.customPageUrl = customPageUrl;
-		if(customPageUrl != null){
-			putQueryParameter("CustomPageUrl", customPageUrl);
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putBodyParameter("EndTime", endTime);
 		}
 	}
 
@@ -98,9 +89,31 @@ public class SetErrorPageConfigRequest extends RpcAcsRequest<SetErrorPageConfigR
 		}
 	}
 
+	public String getReportIds() {
+		return this.reportIds;
+	}
+
+	public void setReportIds(String reportIds) {
+		this.reportIds = reportIds;
+		if(reportIds != null){
+			putBodyParameter("ReportIds", reportIds);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
+		}
+	}
+
 	@Override
-	public Class<SetErrorPageConfigResponse> getResponseClass() {
-		return SetErrorPageConfigResponse.class;
+	public Class<CreateCdnSubTaskResponse> getResponseClass() {
+		return CreateCdnSubTaskResponse.class;
 	}
 
 }

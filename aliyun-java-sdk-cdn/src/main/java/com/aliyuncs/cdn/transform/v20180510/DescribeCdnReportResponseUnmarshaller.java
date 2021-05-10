@@ -14,16 +14,17 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.SetHttpErrorPageConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.DescribeCdnReportResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetHttpErrorPageConfigResponseUnmarshaller {
+public class DescribeCdnReportResponseUnmarshaller {
 
-	public static SetHttpErrorPageConfigResponse unmarshall(SetHttpErrorPageConfigResponse setHttpErrorPageConfigResponse, UnmarshallerContext _ctx) {
+	public static DescribeCdnReportResponse unmarshall(DescribeCdnReportResponse describeCdnReportResponse, UnmarshallerContext _ctx) {
 		
-		setHttpErrorPageConfigResponse.setRequestId(_ctx.stringValue("SetHttpErrorPageConfigResponse.RequestId"));
+		describeCdnReportResponse.setRequestId(_ctx.stringValue("DescribeCdnReportResponse.RequestId"));
+		describeCdnReportResponse.setContent(_ctx.stringValue("DescribeCdnReportResponse.Content"));
 	 
-	 	return setHttpErrorPageConfigResponse;
+	 	return describeCdnReportResponse;
 	}
 }

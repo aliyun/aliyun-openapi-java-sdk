@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.SetVideoSeekConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.DeleteCdnDeliverTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetVideoSeekConfigResponse extends AcsResponse {
+public class DeleteCdnDeliverTaskResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class SetVideoSeekConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public SetVideoSeekConfigResponse getInstance(UnmarshallerContext context) {
-		return	SetVideoSeekConfigResponseUnmarshaller.unmarshall(this, context);
+	public DeleteCdnDeliverTaskResponse getInstance(UnmarshallerContext context) {
+		return	DeleteCdnDeliverTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

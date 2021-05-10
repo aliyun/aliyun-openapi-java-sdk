@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,18 +22,14 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetVideoSeekConfigRequest extends RpcAcsRequest<SetVideoSeekConfigResponse> {
+public class DeleteCdnDeliverTaskRequest extends RpcAcsRequest<DeleteCdnDeliverTaskResponse> {
 	   
 
-	private String domainName;
+	private Long deliverId;
 
 	private Long ownerId;
-
-	private String securityToken;
-
-	private String enable;
-	public SetVideoSeekConfigRequest() {
-		super("Cdn", "2014-11-11", "SetVideoSeekConfig");
+	public DeleteCdnDeliverTaskRequest() {
+		super("Cdn", "2018-05-10", "DeleteCdnDeliverTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +37,14 @@ public class SetVideoSeekConfigRequest extends RpcAcsRequest<SetVideoSeekConfigR
 		} catch (Exception e) {}
 	}
 
-	public String getDomainName() {
-		return this.domainName;
+	public Long getDeliverId() {
+		return this.deliverId;
 	}
 
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
-		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+	public void setDeliverId(Long deliverId) {
+		this.deliverId = deliverId;
+		if(deliverId != null){
+			putQueryParameter("DeliverId", deliverId.toString());
 		}
 	}
 
@@ -63,31 +59,9 @@ public class SetVideoSeekConfigRequest extends RpcAcsRequest<SetVideoSeekConfigR
 		}
 	}
 
-	public String getSecurityToken() {
-		return this.securityToken;
-	}
-
-	public void setSecurityToken(String securityToken) {
-		this.securityToken = securityToken;
-		if(securityToken != null){
-			putQueryParameter("SecurityToken", securityToken);
-		}
-	}
-
-	public String getEnable() {
-		return this.enable;
-	}
-
-	public void setEnable(String enable) {
-		this.enable = enable;
-		if(enable != null){
-			putQueryParameter("Enable", enable);
-		}
-	}
-
 	@Override
-	public Class<SetVideoSeekConfigResponse> getResponseClass() {
-		return SetVideoSeekConfigResponse.class;
+	public Class<DeleteCdnDeliverTaskResponse> getResponseClass() {
+		return DeleteCdnDeliverTaskResponse.class;
 	}
 
 }

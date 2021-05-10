@@ -12,18 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.transform.v20141111;
+package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20141111.ModifyPathCacheExpiredConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.DescribeCdnDeliverListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyPathCacheExpiredConfigResponseUnmarshaller {
+public class DescribeCdnDeliverListResponseUnmarshaller {
 
-	public static ModifyPathCacheExpiredConfigResponse unmarshall(ModifyPathCacheExpiredConfigResponse modifyPathCacheExpiredConfigResponse, UnmarshallerContext _ctx) {
+	public static DescribeCdnDeliverListResponse unmarshall(DescribeCdnDeliverListResponse describeCdnDeliverListResponse, UnmarshallerContext _ctx) {
 		
-		modifyPathCacheExpiredConfigResponse.setRequestId(_ctx.stringValue("ModifyPathCacheExpiredConfigResponse.RequestId"));
+		describeCdnDeliverListResponse.setRequestId(_ctx.stringValue("DescribeCdnDeliverListResponse.RequestId"));
+		describeCdnDeliverListResponse.setContent(_ctx.stringValue("DescribeCdnDeliverListResponse.Content"));
 	 
-	 	return modifyPathCacheExpiredConfigResponse;
+	 	return describeCdnDeliverListResponse;
 	}
 }

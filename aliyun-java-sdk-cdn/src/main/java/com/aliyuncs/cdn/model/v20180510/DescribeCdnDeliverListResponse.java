@@ -12,19 +12,21 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.AddLiveStreamTranscodeResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.DescribeCdnDeliverListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class AddLiveStreamTranscodeResponse extends AcsResponse {
+public class DescribeCdnDeliverListResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String content;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class AddLiveStreamTranscodeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	@Override
-	public AddLiveStreamTranscodeResponse getInstance(UnmarshallerContext context) {
-		return	AddLiveStreamTranscodeResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCdnDeliverListResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCdnDeliverListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

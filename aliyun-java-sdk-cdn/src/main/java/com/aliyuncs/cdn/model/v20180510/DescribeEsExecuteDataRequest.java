@@ -22,21 +22,45 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyUserCustomLogConfigRequest extends RpcAcsRequest<ModifyUserCustomLogConfigResponse> {
+public class DescribeEsExecuteDataRequest extends RpcAcsRequest<DescribeEsExecuteDataResponse> {
 	   
+
+	private String startTime;
+
+	private String endTime;
 
 	private Long ownerId;
 
-	private String configId;
-
-	private String tag;
-	public ModifyUserCustomLogConfigRequest() {
-		super("Cdn", "2018-05-10", "ModifyUserCustomLogConfig");
-		setMethod(MethodType.GET);
+	private String ruleId;
+	public DescribeEsExecuteDataRequest() {
+		super("Cdn", "2018-05-10", "DescribeEsExecuteData");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getStartTime() {
+		return this.startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
+		}
 	}
 
 	public Long getOwnerId() {
@@ -50,31 +74,20 @@ public class ModifyUserCustomLogConfigRequest extends RpcAcsRequest<ModifyUserCu
 		}
 	}
 
-	public String getConfigId() {
-		return this.configId;
+	public String getRuleId() {
+		return this.ruleId;
 	}
 
-	public void setConfigId(String configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId);
-		}
-	}
-
-	public String getTag() {
-		return this.tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
-		if(tag != null){
-			putQueryParameter("Tag", tag);
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+		if(ruleId != null){
+			putQueryParameter("RuleId", ruleId);
 		}
 	}
 
 	@Override
-	public Class<ModifyUserCustomLogConfigResponse> getResponseClass() {
-		return ModifyUserCustomLogConfigResponse.class;
+	public Class<DescribeEsExecuteDataResponse> getResponseClass() {
+		return DescribeEsExecuteDataResponse.class;
 	}
 
 }

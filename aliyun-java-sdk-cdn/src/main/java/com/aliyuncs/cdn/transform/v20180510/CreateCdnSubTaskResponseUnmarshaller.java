@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.transform.v20141111;
+package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20141111.SetVideoSeekConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.CreateCdnSubTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetVideoSeekConfigResponseUnmarshaller {
+public class CreateCdnSubTaskResponseUnmarshaller {
 
-	public static SetVideoSeekConfigResponse unmarshall(SetVideoSeekConfigResponse setVideoSeekConfigResponse, UnmarshallerContext _ctx) {
+	public static CreateCdnSubTaskResponse unmarshall(CreateCdnSubTaskResponse createCdnSubTaskResponse, UnmarshallerContext _ctx) {
 		
-		setVideoSeekConfigResponse.setRequestId(_ctx.stringValue("SetVideoSeekConfigResponse.RequestId"));
+		createCdnSubTaskResponse.setRequestId(_ctx.stringValue("CreateCdnSubTaskResponse.RequestId"));
 	 
-	 	return setVideoSeekConfigResponse;
+	 	return createCdnSubTaskResponse;
 	}
 }

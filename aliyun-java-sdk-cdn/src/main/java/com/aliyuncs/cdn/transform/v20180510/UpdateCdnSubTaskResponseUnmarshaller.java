@@ -14,16 +14,16 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.ModifyUserCustomLogConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.UpdateCdnSubTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyUserCustomLogConfigResponseUnmarshaller {
+public class UpdateCdnSubTaskResponseUnmarshaller {
 
-	public static ModifyUserCustomLogConfigResponse unmarshall(ModifyUserCustomLogConfigResponse modifyUserCustomLogConfigResponse, UnmarshallerContext _ctx) {
+	public static UpdateCdnSubTaskResponse unmarshall(UpdateCdnSubTaskResponse updateCdnSubTaskResponse, UnmarshallerContext _ctx) {
 		
-		modifyUserCustomLogConfigResponse.setRequestId(_ctx.stringValue("ModifyUserCustomLogConfigResponse.RequestId"));
+		updateCdnSubTaskResponse.setRequestId(_ctx.stringValue("UpdateCdnSubTaskResponse.RequestId"));
 	 
-	 	return modifyUserCustomLogConfigResponse;
+	 	return updateCdnSubTaskResponse;
 	}
 }

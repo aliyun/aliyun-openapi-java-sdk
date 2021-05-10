@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.ModifyPathCacheExpiredConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.CreateCdnSubTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyPathCacheExpiredConfigResponse extends AcsResponse {
+public class CreateCdnSubTaskResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ModifyPathCacheExpiredConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyPathCacheExpiredConfigResponse getInstance(UnmarshallerContext context) {
-		return	ModifyPathCacheExpiredConfigResponseUnmarshaller.unmarshall(this, context);
+	public CreateCdnSubTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateCdnSubTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

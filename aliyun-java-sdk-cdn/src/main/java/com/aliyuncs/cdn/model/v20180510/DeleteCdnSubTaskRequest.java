@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,15 +22,13 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListDomainsByLogConfigIdRequest extends RpcAcsRequest<ListDomainsByLogConfigIdResponse> {
+public class DeleteCdnSubTaskRequest extends RpcAcsRequest<DeleteCdnSubTaskResponse> {
 	   
 
 	private Long ownerId;
-
-	private String configId;
-	public ListDomainsByLogConfigIdRequest() {
-		super("Cdn", "2014-11-11", "ListDomainsByLogConfigId");
-		setMethod(MethodType.GET);
+	public DeleteCdnSubTaskRequest() {
+		super("Cdn", "2018-05-10", "DeleteCdnSubTask");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -48,20 +46,9 @@ public class ListDomainsByLogConfigIdRequest extends RpcAcsRequest<ListDomainsBy
 		}
 	}
 
-	public String getConfigId() {
-		return this.configId;
-	}
-
-	public void setConfigId(String configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId);
-		}
-	}
-
 	@Override
-	public Class<ListDomainsByLogConfigIdResponse> getResponseClass() {
-		return ListDomainsByLogConfigIdResponse.class;
+	public Class<DeleteCdnSubTaskResponse> getResponseClass() {
+		return DeleteCdnSubTaskResponse.class;
 	}
 
 }

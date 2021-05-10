@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.transform.v20141111;
+package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20141111.AddLiveStreamTranscodeResponse;
+import com.aliyuncs.cdn.model.v20180510.CreateCdnDeliverTaskResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class AddLiveStreamTranscodeResponseUnmarshaller {
+public class CreateCdnDeliverTaskResponseUnmarshaller {
 
-	public static AddLiveStreamTranscodeResponse unmarshall(AddLiveStreamTranscodeResponse addLiveStreamTranscodeResponse, UnmarshallerContext _ctx) {
+	public static CreateCdnDeliverTaskResponse unmarshall(CreateCdnDeliverTaskResponse createCdnDeliverTaskResponse, UnmarshallerContext _ctx) {
 		
-		addLiveStreamTranscodeResponse.setRequestId(_ctx.stringValue("AddLiveStreamTranscodeResponse.RequestId"));
+		createCdnDeliverTaskResponse.setRequestId(_ctx.stringValue("CreateCdnDeliverTaskResponse.RequestId"));
 	 
-	 	return addLiveStreamTranscodeResponse;
+	 	return createCdnDeliverTaskResponse;
 	}
 }

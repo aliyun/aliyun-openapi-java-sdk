@@ -15,16 +15,18 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.SetHttpErrorPageConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.DescribeCdnReportResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class SetHttpErrorPageConfigResponse extends AcsResponse {
+public class DescribeCdnReportResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String content;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,16 @@ public class SetHttpErrorPageConfigResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getContent() {
+		return this.content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	@Override
-	public SetHttpErrorPageConfigResponse getInstance(UnmarshallerContext context) {
-		return	SetHttpErrorPageConfigResponseUnmarshaller.unmarshall(this, context);
+	public DescribeCdnReportResponse getInstance(UnmarshallerContext context) {
+		return	DescribeCdnReportResponseUnmarshaller.unmarshall(this, context);
 	}
 }

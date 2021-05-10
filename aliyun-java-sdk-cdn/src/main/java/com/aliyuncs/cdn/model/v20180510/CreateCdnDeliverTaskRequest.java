@@ -22,20 +22,24 @@ import com.aliyuncs.cdn.Endpoint;
  * @author auto create
  * @version 
  */
-public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPageConfigResponse> {
+public class CreateCdnDeliverTaskRequest extends RpcAcsRequest<CreateCdnDeliverTaskResponse> {
 	   
 
-	private String pageUrl;
+	private String reports;
 
-	private String errorCode;
+	private String deliver;
 
 	private String domainName;
 
 	private Long ownerId;
 
-	private Long configId;
-	public SetHttpErrorPageConfigRequest() {
-		super("Cdn", "2018-05-10", "SetHttpErrorPageConfig");
+	private String schedule;
+
+	private String name;
+
+	private String status;
+	public CreateCdnDeliverTaskRequest() {
+		super("Cdn", "2018-05-10", "CreateCdnDeliverTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,25 +47,25 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 		} catch (Exception e) {}
 	}
 
-	public String getPageUrl() {
-		return this.pageUrl;
+	public String getReports() {
+		return this.reports;
 	}
 
-	public void setPageUrl(String pageUrl) {
-		this.pageUrl = pageUrl;
-		if(pageUrl != null){
-			putQueryParameter("PageUrl", pageUrl);
+	public void setReports(String reports) {
+		this.reports = reports;
+		if(reports != null){
+			putBodyParameter("Reports", reports);
 		}
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public String getDeliver() {
+		return this.deliver;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
-		if(errorCode != null){
-			putQueryParameter("ErrorCode", errorCode);
+	public void setDeliver(String deliver) {
+		this.deliver = deliver;
+		if(deliver != null){
+			putBodyParameter("Deliver", deliver);
 		}
 	}
 
@@ -72,7 +76,7 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 	public void setDomainName(String domainName) {
 		this.domainName = domainName;
 		if(domainName != null){
-			putQueryParameter("DomainName", domainName);
+			putBodyParameter("DomainName", domainName);
 		}
 	}
 
@@ -87,20 +91,42 @@ public class SetHttpErrorPageConfigRequest extends RpcAcsRequest<SetHttpErrorPag
 		}
 	}
 
-	public Long getConfigId() {
-		return this.configId;
+	public String getSchedule() {
+		return this.schedule;
 	}
 
-	public void setConfigId(Long configId) {
-		this.configId = configId;
-		if(configId != null){
-			putQueryParameter("ConfigId", configId.toString());
+	public void setSchedule(String schedule) {
+		this.schedule = schedule;
+		if(schedule != null){
+			putBodyParameter("Schedule", schedule);
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
+		}
+	}
+
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putBodyParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<SetHttpErrorPageConfigResponse> getResponseClass() {
-		return SetHttpErrorPageConfigResponse.class;
+	public Class<CreateCdnDeliverTaskResponse> getResponseClass() {
+		return CreateCdnDeliverTaskResponse.class;
 	}
 
 }

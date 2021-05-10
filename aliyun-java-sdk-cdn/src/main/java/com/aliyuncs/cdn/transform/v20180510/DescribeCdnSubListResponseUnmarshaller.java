@@ -14,16 +14,17 @@
 
 package com.aliyuncs.cdn.transform.v20180510;
 
-import com.aliyuncs.cdn.model.v20180510.SetErrorPageConfigResponse;
+import com.aliyuncs.cdn.model.v20180510.DescribeCdnSubListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class SetErrorPageConfigResponseUnmarshaller {
+public class DescribeCdnSubListResponseUnmarshaller {
 
-	public static SetErrorPageConfigResponse unmarshall(SetErrorPageConfigResponse setErrorPageConfigResponse, UnmarshallerContext _ctx) {
+	public static DescribeCdnSubListResponse unmarshall(DescribeCdnSubListResponse describeCdnSubListResponse, UnmarshallerContext _ctx) {
 		
-		setErrorPageConfigResponse.setRequestId(_ctx.stringValue("SetErrorPageConfigResponse.RequestId"));
+		describeCdnSubListResponse.setRequestId(_ctx.stringValue("DescribeCdnSubListResponse.RequestId"));
+		describeCdnSubListResponse.setContent(_ctx.stringValue("DescribeCdnSubListResponse.Content"));
 	 
-	 	return setErrorPageConfigResponse;
+	 	return describeCdnSubListResponse;
 	}
 }

@@ -12,22 +12,19 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cdn.model.v20141111;
+package com.aliyuncs.cdn.model.v20180510;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20141111.ListDomainsByLogConfigIdResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.CreateCdnDeliverTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListDomainsByLogConfigIdResponse extends AcsResponse {
+public class CreateCdnDeliverTaskResponse extends AcsResponse {
 
 	private String requestId;
-
-	private List<String> domains;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,16 +34,8 @@ public class ListDomainsByLogConfigIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<String> getDomains() {
-		return this.domains;
-	}
-
-	public void setDomains(List<String> domains) {
-		this.domains = domains;
-	}
-
 	@Override
-	public ListDomainsByLogConfigIdResponse getInstance(UnmarshallerContext context) {
-		return	ListDomainsByLogConfigIdResponseUnmarshaller.unmarshall(this, context);
+	public CreateCdnDeliverTaskResponse getInstance(UnmarshallerContext context) {
+		return	CreateCdnDeliverTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }

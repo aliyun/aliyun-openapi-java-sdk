@@ -15,14 +15,14 @@
 package com.aliyuncs.cdn.model.v20180510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.cdn.transform.v20180510.ModifyUserCustomLogConfigResponseUnmarshaller;
+import com.aliyuncs.cdn.transform.v20180510.UpdateCdnDeliverTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyUserCustomLogConfigResponse extends AcsResponse {
+public class UpdateCdnDeliverTaskResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,7 +35,7 @@ public class ModifyUserCustomLogConfigResponse extends AcsResponse {
 	}
 
 	@Override
-	public ModifyUserCustomLogConfigResponse getInstance(UnmarshallerContext context) {
-		return	ModifyUserCustomLogConfigResponseUnmarshaller.unmarshall(this, context);
+	public UpdateCdnDeliverTaskResponse getInstance(UnmarshallerContext context) {
+		return	UpdateCdnDeliverTaskResponseUnmarshaller.unmarshall(this, context);
 	}
 }
