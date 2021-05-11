@@ -39,10 +39,6 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 
 	private String businessInfo;
 
-	private String agentId;
-
-	private String restoreTime;
-
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -52,8 +48,6 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 	private Long ownerId;
 
 	private String token;
-
-	private String privateIpAddress;
 
 	private String autoRenew;
 	public CreateInstancesRequest() {
@@ -142,28 +136,6 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 		}
 	}
 
-	public String getAgentId() {
-		return this.agentId;
-	}
-
-	public void setAgentId(String agentId) {
-		this.agentId = agentId;
-		if(agentId != null){
-			putQueryParameter("AgentId", agentId);
-		}
-	}
-
-	public String getRestoreTime() {
-		return this.restoreTime;
-	}
-
-	public void setRestoreTime(String restoreTime) {
-		this.restoreTime = restoreTime;
-		if(restoreTime != null){
-			putQueryParameter("RestoreTime", restoreTime);
-		}
-	}
-
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -216,17 +188,6 @@ public class CreateInstancesRequest extends RpcAcsRequest<CreateInstancesRespons
 		this.token = token;
 		if(token != null){
 			putQueryParameter("Token", token);
-		}
-	}
-
-	public String getPrivateIpAddress() {
-		return this.privateIpAddress;
-	}
-
-	public void setPrivateIpAddress(String privateIpAddress) {
-		this.privateIpAddress = privateIpAddress;
-		if(privateIpAddress != null){
-			putQueryParameter("PrivateIpAddress", privateIpAddress);
 		}
 	}
 
