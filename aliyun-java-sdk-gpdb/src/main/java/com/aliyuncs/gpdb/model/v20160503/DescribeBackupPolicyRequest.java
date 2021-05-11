@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.gpdb.model.v20190620;
+package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstanceForDmsRequest extends RpcAcsRequest<DescribeDBInstanceForDmsResponse> {
+public class DescribeBackupPolicyRequest extends RpcAcsRequest<DescribeBackupPolicyResponse> {
 	   
 
-	private Long port;
-
-	private String host;
-	public DescribeDBInstanceForDmsRequest() {
-		super("gpdb", "2019-06-20", "DescribeDBInstanceForDms", "gpdb");
+	private String dBInstanceId;
+	public DescribeBackupPolicyRequest() {
+		super("gpdb", "2016-05-03", "DescribeBackupPolicy", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class DescribeDBInstanceForDmsRequest extends RpcAcsRequest<DescribeDBIns
 		} catch (Exception e) {}
 	}
 
-	public Long getPort() {
-		return this.port;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setPort(Long port) {
-		this.port = port;
-		if(port != null){
-			putQueryParameter("Port", port.toString());
-		}
-	}
-
-	public String getHost() {
-		return this.host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-		if(host != null){
-			putQueryParameter("Host", host);
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeDBInstanceForDmsResponse> getResponseClass() {
-		return DescribeDBInstanceForDmsResponse.class;
+	public Class<DescribeBackupPolicyResponse> getResponseClass() {
+		return DescribeBackupPolicyResponse.class;
 	}
 
 }

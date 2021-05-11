@@ -57,6 +57,8 @@ public class DescribeDBInstanceOnECSAttributeResponse extends AcsResponse {
 
 		private String instanceNetworkType;
 
+		private Boolean supportRestore;
+
 		private String dBInstanceId;
 
 		private String engine;
@@ -78,6 +80,8 @@ public class DescribeDBInstanceOnECSAttributeResponse extends AcsResponse {
 		private String dBInstanceClass;
 
 		private String vSwitchId;
+
+		private String minorVersion;
 
 		private Integer storageSize;
 
@@ -141,6 +145,14 @@ public class DescribeDBInstanceOnECSAttributeResponse extends AcsResponse {
 
 		public void setInstanceNetworkType(String instanceNetworkType) {
 			this.instanceNetworkType = instanceNetworkType;
+		}
+
+		public Boolean getSupportRestore() {
+			return this.supportRestore;
+		}
+
+		public void setSupportRestore(Boolean supportRestore) {
+			this.supportRestore = supportRestore;
 		}
 
 		public String getDBInstanceId() {
@@ -229,6 +241,14 @@ public class DescribeDBInstanceOnECSAttributeResponse extends AcsResponse {
 
 		public void setVSwitchId(String vSwitchId) {
 			this.vSwitchId = vSwitchId;
+		}
+
+		public String getMinorVersion() {
+			return this.minorVersion;
+		}
+
+		public void setMinorVersion(String minorVersion) {
+			this.minorVersion = minorVersion;
 		}
 
 		public Integer getStorageSize() {

@@ -77,6 +77,8 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 	public static class DBInstance {
 
+		private Integer masterNodeNum;
+
 		private String engineVersion;
 
 		private String storageType;
@@ -87,9 +89,13 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		private String dBInstanceNetType;
 
+		private String segNodeNum;
+
 		private String vSwitchId;
 
 		private String createTime;
+
+		private String storageSize;
 
 		private String lockMode;
 
@@ -116,6 +122,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 		private String engine;
 
 		private List<Tag> tags;
+
+		public Integer getMasterNodeNum() {
+			return this.masterNodeNum;
+		}
+
+		public void setMasterNodeNum(Integer masterNodeNum) {
+			this.masterNodeNum = masterNodeNum;
+		}
 
 		public String getEngineVersion() {
 			return this.engineVersion;
@@ -157,6 +171,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 			this.dBInstanceNetType = dBInstanceNetType;
 		}
 
+		public String getSegNodeNum() {
+			return this.segNodeNum;
+		}
+
+		public void setSegNodeNum(String segNodeNum) {
+			this.segNodeNum = segNodeNum;
+		}
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -171,6 +193,14 @@ public class DescribeDBInstancesResponse extends AcsResponse {
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public String getStorageSize() {
+			return this.storageSize;
+		}
+
+		public void setStorageSize(String storageSize) {
+			this.storageSize = storageSize;
 		}
 
 		public String getLockMode() {

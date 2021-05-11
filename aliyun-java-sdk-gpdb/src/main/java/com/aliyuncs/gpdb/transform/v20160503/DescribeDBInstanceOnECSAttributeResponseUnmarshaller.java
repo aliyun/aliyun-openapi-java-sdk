@@ -37,6 +37,7 @@ public class DescribeDBInstanceOnECSAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setPort(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Port"));
 			dBInstanceAttribute.setEncryptionKey(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].EncryptionKey"));
 			dBInstanceAttribute.setInstanceNetworkType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].InstanceNetworkType"));
+			dBInstanceAttribute.setSupportRestore(_ctx.booleanValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].SupportRestore"));
 			dBInstanceAttribute.setDBInstanceId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceId"));
 			dBInstanceAttribute.setEngine(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].Engine"));
 			dBInstanceAttribute.setDBInstanceDescription(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceDescription"));
@@ -48,6 +49,7 @@ public class DescribeDBInstanceOnECSAttributeResponseUnmarshaller {
 			dBInstanceAttribute.setDBInstanceStatus(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceStatus"));
 			dBInstanceAttribute.setDBInstanceClass(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].DBInstanceClass"));
 			dBInstanceAttribute.setVSwitchId(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].VSwitchId"));
+			dBInstanceAttribute.setMinorVersion(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].MinorVersion"));
 			dBInstanceAttribute.setStorageSize(_ctx.integerValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].StorageSize"));
 			dBInstanceAttribute.setLockMode(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].LockMode"));
 			dBInstanceAttribute.setPayType(_ctx.stringValue("DescribeDBInstanceOnECSAttributeResponse.Items["+ i +"].PayType"));

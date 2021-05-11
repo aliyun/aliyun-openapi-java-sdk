@@ -47,6 +47,8 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 
 	private String period;
 
+	private String backupId;
+
 	private String encryptionKey;
 
 	private Long ownerId;
@@ -66,6 +68,8 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 	private String payType;
 
 	private String instanceNetworkType;
+
+	private String srcDbInstanceName;
 	public CreateECSDBInstanceRequest() {
 		super("gpdb", "2016-05-03", "CreateECSDBInstance", "gpdb");
 		setMethod(MethodType.POST);
@@ -196,6 +200,17 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		}
 	}
 
+	public String getBackupId() {
+		return this.backupId;
+	}
+
+	public void setBackupId(String backupId) {
+		this.backupId = backupId;
+		if(backupId != null){
+			putQueryParameter("BackupId", backupId);
+		}
+	}
+
 	public String getEncryptionKey() {
 		return this.encryptionKey;
 	}
@@ -303,6 +318,17 @@ public class CreateECSDBInstanceRequest extends RpcAcsRequest<CreateECSDBInstanc
 		this.instanceNetworkType = instanceNetworkType;
 		if(instanceNetworkType != null){
 			putQueryParameter("InstanceNetworkType", instanceNetworkType);
+		}
+	}
+
+	public String getSrcDbInstanceName() {
+		return this.srcDbInstanceName;
+	}
+
+	public void setSrcDbInstanceName(String srcDbInstanceName) {
+		this.srcDbInstanceName = srcDbInstanceName;
+		if(srcDbInstanceName != null){
+			putQueryParameter("SrcDbInstanceName", srcDbInstanceName);
 		}
 	}
 

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.gpdb.model.v20190620;
+package com.aliyuncs.gpdb.model.v20160503;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,14 @@ import com.aliyuncs.gpdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDBInstancesForDmsRequest extends RpcAcsRequest<DescribeDBInstancesForDmsResponse> {
+public class DescribeSQLLogByQueryIdRequest extends RpcAcsRequest<DescribeSQLLogByQueryIdResponse> {
 	   
 
-	private Long aliUid;
-	public DescribeDBInstancesForDmsRequest() {
-		super("gpdb", "2019-06-20", "DescribeDBInstancesForDms", "gpdb");
+	private String dBInstanceId;
+
+	private String queryId;
+	public DescribeSQLLogByQueryIdRequest() {
+		super("gpdb", "2016-05-03", "DescribeSQLLogByQueryId", "gpdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +37,31 @@ public class DescribeDBInstancesForDmsRequest extends RpcAcsRequest<DescribeDBIn
 		} catch (Exception e) {}
 	}
 
-	public Long getAliUid() {
-		return this.aliUid;
+	public String getDBInstanceId() {
+		return this.dBInstanceId;
 	}
 
-	public void setAliUid(Long aliUid) {
-		this.aliUid = aliUid;
-		if(aliUid != null){
-			putQueryParameter("AliUid", aliUid.toString());
+	public void setDBInstanceId(String dBInstanceId) {
+		this.dBInstanceId = dBInstanceId;
+		if(dBInstanceId != null){
+			putQueryParameter("DBInstanceId", dBInstanceId);
+		}
+	}
+
+	public String getQueryId() {
+		return this.queryId;
+	}
+
+	public void setQueryId(String queryId) {
+		this.queryId = queryId;
+		if(queryId != null){
+			putQueryParameter("QueryId", queryId);
 		}
 	}
 
 	@Override
-	public Class<DescribeDBInstancesForDmsResponse> getResponseClass() {
-		return DescribeDBInstancesForDmsResponse.class;
+	public Class<DescribeSQLLogByQueryIdResponse> getResponseClass() {
+		return DescribeSQLLogByQueryIdResponse.class;
 	}
 
 }
