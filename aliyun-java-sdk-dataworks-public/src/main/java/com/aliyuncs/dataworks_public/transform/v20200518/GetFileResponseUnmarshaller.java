@@ -59,6 +59,7 @@ public class GetFileResponseUnmarshaller {
 		file.setCommitStatus(_ctx.integerValue("GetFileResponse.Data.File.CommitStatus"));
 		file.setDeletedStatus(_ctx.stringValue("GetFileResponse.Data.File.DeletedStatus"));
 		file.setBusinessId(_ctx.longValue("GetFileResponse.Data.File.BusinessId"));
+		file.setAutoParse(_ctx.booleanValue("GetFileResponse.Data.File.AutoParse"));
 		data.setFile(file);
 
 		NodeConfiguration nodeConfiguration = new NodeConfiguration();
@@ -79,6 +80,7 @@ public class GetFileResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetFileResponse.Data.NodeConfiguration.InputList.Length"); i++) {
 			NodeInputOutput nodeInputOutput = new NodeInputOutput();
 			nodeInputOutput.setInput(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.InputList["+ i +"].Input"));
+			nodeInputOutput.setParseType(_ctx.stringValue("GetFileResponse.Data.NodeConfiguration.InputList["+ i +"].ParseType"));
 
 			inputList.add(nodeInputOutput);
 		}
