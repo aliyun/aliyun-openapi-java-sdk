@@ -16,6 +16,7 @@ package com.aliyuncs.moguan_sdk.model.v20210415;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.moguan_sdk.Endpoint;
 
 /**
  * @author auto create
@@ -36,6 +37,10 @@ public class RegisterDeviceRequest extends RpcAcsRequest<RegisterDeviceResponse>
 	public RegisterDeviceRequest() {
 		super("moguan-sdk", "2021-04-15", "RegisterDevice", "visionai");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getUserDeviceId() {
