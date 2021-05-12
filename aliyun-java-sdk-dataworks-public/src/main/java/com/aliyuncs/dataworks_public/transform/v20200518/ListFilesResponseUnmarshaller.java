@@ -61,7 +61,6 @@ public class ListFilesResponseUnmarshaller {
 			file.setCommitStatus(_ctx.integerValue("ListFilesResponse.Data.Files["+ i +"].CommitStatus"));
 			file.setFileId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].FileId"));
 			file.setBusinessId(_ctx.longValue("ListFilesResponse.Data.Files["+ i +"].BusinessId"));
-			file.setAutoParse(_ctx.booleanValue("ListFilesResponse.Data.Files["+ i +"].AutoParse"));
 
 			files.add(file);
 		}

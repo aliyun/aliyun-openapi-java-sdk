@@ -29,8 +29,6 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 
 	private String dependentNodeIdList;
 
-	private Boolean autoParse;
-
 	private String content;
 
 	private String projectIdentifier;
@@ -100,17 +98,6 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.dependentNodeIdList = dependentNodeIdList;
 		if(dependentNodeIdList != null){
 			putBodyParameter("DependentNodeIdList", dependentNodeIdList);
-		}
-	}
-
-	public Boolean getAutoParse() {
-		return this.autoParse;
-	}
-
-	public void setAutoParse(Boolean autoParse) {
-		this.autoParse = autoParse;
-		if(autoParse != null){
-			putBodyParameter("AutoParse", autoParse.toString());
 		}
 	}
 
