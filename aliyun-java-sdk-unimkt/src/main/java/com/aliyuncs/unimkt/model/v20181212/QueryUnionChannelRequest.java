@@ -27,7 +27,7 @@ public class QueryUnionChannelRequest extends RpcAcsRequest<QueryUnionChannelRes
 
 	private String channelId;
 	public QueryUnionChannelRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionChannel", "uniMkt");
+		super("UniMkt", "2018-12-12", "QueryUnionChannel");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

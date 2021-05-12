@@ -22,20 +22,22 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListResponse> {
+public class QueryChannelHistoryDataRequest extends RpcAcsRequest<QueryChannelHistoryDataResponse> {
 	   
 
-	private Long brandUserId;
+	private String taskType;
 
 	private Integer pageSize;
 
-	private Integer pageIndex;
+	private String endTime;
 
-	private Long proxyUserId;
+	private String startTime;
+
+	private Integer pageNum;
 
 	private String channelId;
-	public QueryUnionTaskListRequest() {
-		super("UniMkt", "2018-12-12", "QueryUnionTaskList");
+	public QueryChannelHistoryDataRequest() {
+		super("UniMkt", "2018-12-12", "QueryChannelHistoryData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +45,14 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 		} catch (Exception e) {}
 	}
 
-	public Long getBrandUserId() {
-		return this.brandUserId;
+	public String getTaskType() {
+		return this.taskType;
 	}
 
-	public void setBrandUserId(Long brandUserId) {
-		this.brandUserId = brandUserId;
-		if(brandUserId != null){
-			putQueryParameter("BrandUserId", brandUserId.toString());
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
 		}
 	}
 
@@ -65,25 +67,36 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 		}
 	}
 
-	public Integer getPageIndex() {
-		return this.pageIndex;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setPageIndex(Integer pageIndex) {
-		this.pageIndex = pageIndex;
-		if(pageIndex != null){
-			putQueryParameter("PageIndex", pageIndex.toString());
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime);
 		}
 	}
 
-	public Long getProxyUserId() {
-		return this.proxyUserId;
+	public String getStartTime() {
+		return this.startTime;
 	}
 
-	public void setProxyUserId(Long proxyUserId) {
-		this.proxyUserId = proxyUserId;
-		if(proxyUserId != null){
-			putQueryParameter("ProxyUserId", proxyUserId.toString());
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+		if(startTime != null){
+			putQueryParameter("StartTime", startTime);
+		}
+	}
+
+	public Integer getPageNum() {
+		return this.pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+		if(pageNum != null){
+			putQueryParameter("PageNum", pageNum.toString());
 		}
 	}
 
@@ -99,8 +112,8 @@ public class QueryUnionTaskListRequest extends RpcAcsRequest<QueryUnionTaskListR
 	}
 
 	@Override
-	public Class<QueryUnionTaskListResponse> getResponseClass() {
-		return QueryUnionTaskListResponse.class;
+	public Class<QueryChannelHistoryDataResponse> getResponseClass() {
+		return QueryChannelHistoryDataResponse.class;
 	}
 
 }

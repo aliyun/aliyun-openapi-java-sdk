@@ -35,7 +35,7 @@ public class QueryContentListRequest extends RpcAcsRequest<QueryContentListRespo
 
 	private String channelId;
 	public QueryContentListRequest() {
-		super("UniMkt", "2018-12-12", "QueryContentList", "uniMkt");
+		super("UniMkt", "2018-12-12", "QueryContentList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

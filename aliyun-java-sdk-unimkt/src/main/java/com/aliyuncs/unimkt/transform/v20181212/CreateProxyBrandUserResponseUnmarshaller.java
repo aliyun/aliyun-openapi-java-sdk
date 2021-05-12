@@ -14,11 +14,7 @@
 
 package com.aliyuncs.unimkt.transform.v20181212;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.unimkt.model.v20181212.CreateProxyBrandUserResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,9 +26,7 @@ public class CreateProxyBrandUserResponseUnmarshaller {
 		createProxyBrandUserResponse.setCode(_ctx.integerValue("CreateProxyBrandUserResponse.Code"));
 		createProxyBrandUserResponse.setSuccess(_ctx.booleanValue("CreateProxyBrandUserResponse.Success"));
 		createProxyBrandUserResponse.setErrorMsg(_ctx.stringValue("CreateProxyBrandUserResponse.ErrorMsg"));
-
-		List<Map<Object, Object>> data = _ctx.listMapValue("CreateProxyBrandUserResponse.Data");
-		createProxyBrandUserResponse.setData(data);
+		createProxyBrandUserResponse.setData(_ctx.booleanValue("CreateProxyBrandUserResponse.Data"));
 	 
 	 	return createProxyBrandUserResponse;
 	}

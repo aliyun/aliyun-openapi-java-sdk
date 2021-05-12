@@ -71,7 +71,7 @@ public class SendTaokeInfoRequest extends RpcAcsRequest<SendTaokeInfoResponse> {
 
 	private String status;
 	public SendTaokeInfoRequest() {
-		super("UniMkt", "2018-12-12", "SendTaokeInfo", "uniMkt");
+		super("UniMkt", "2018-12-12", "SendTaokeInfo");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

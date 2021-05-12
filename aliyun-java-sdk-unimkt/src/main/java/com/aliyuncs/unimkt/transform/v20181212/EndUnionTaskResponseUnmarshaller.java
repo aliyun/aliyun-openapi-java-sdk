@@ -14,11 +14,7 @@
 
 package com.aliyuncs.unimkt.transform.v20181212;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.unimkt.model.v20181212.EndUnionTaskResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,9 +26,7 @@ public class EndUnionTaskResponseUnmarshaller {
 		endUnionTaskResponse.setCode(_ctx.integerValue("EndUnionTaskResponse.Code"));
 		endUnionTaskResponse.setSuccess(_ctx.booleanValue("EndUnionTaskResponse.Success"));
 		endUnionTaskResponse.setErrorMsg(_ctx.stringValue("EndUnionTaskResponse.ErrorMsg"));
-
-		List<Map<Object, Object>> data = _ctx.listMapValue("EndUnionTaskResponse.Data");
-		endUnionTaskResponse.setData(data);
+		endUnionTaskResponse.setData(_ctx.booleanValue("EndUnionTaskResponse.Data"));
 	 
 	 	return endUnionTaskResponse;
 	}

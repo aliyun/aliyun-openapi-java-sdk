@@ -41,7 +41,7 @@ public class CreateProxyBrandUserRequest extends RpcAcsRequest<CreateProxyBrandU
 
 	private String channelId;
 	public CreateProxyBrandUserRequest() {
-		super("UniMkt", "2018-12-12", "CreateProxyBrandUser", "uniMkt");
+		super("UniMkt", "2018-12-12", "CreateProxyBrandUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -14,7 +14,6 @@
 
 package com.aliyuncs.unimkt.model.v20181212;
 
-import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.unimkt.transform.v20181212.QueryUnionChannelResponseUnmarshaller;
@@ -34,7 +33,7 @@ public class QueryUnionChannelResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Map<Object,Object>> data;
+	private Map<Object,Object> data;
 
 	public Integer getCode() {
 		return this.code;
@@ -68,11 +67,11 @@ public class QueryUnionChannelResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Map<Object,Object>> getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Map<Object,Object>> data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 

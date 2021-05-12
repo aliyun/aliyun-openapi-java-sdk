@@ -14,9 +14,6 @@
 
 package com.aliyuncs.unimkt.transform.v20181212;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.unimkt.model.v20181212.QueryUnionTaskInfoResponse;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -30,9 +27,7 @@ public class QueryUnionTaskInfoResponseUnmarshaller {
 		queryUnionTaskInfoResponse.setCode(_ctx.integerValue("QueryUnionTaskInfoResponse.Code"));
 		queryUnionTaskInfoResponse.setSuccess(_ctx.booleanValue("QueryUnionTaskInfoResponse.Success"));
 		queryUnionTaskInfoResponse.setErrorMsg(_ctx.stringValue("QueryUnionTaskInfoResponse.ErrorMsg"));
-
-		List<Map<Object, Object>> data = _ctx.listMapValue("QueryUnionTaskInfoResponse.Data");
-		queryUnionTaskInfoResponse.setData(data);
+		queryUnionTaskInfoResponse.setData(_ctx.mapValue("QueryUnionTaskInfoResponse.Data"));
 	 
 	 	return queryUnionTaskInfoResponse;
 	}

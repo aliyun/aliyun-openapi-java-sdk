@@ -35,7 +35,7 @@ public class GetUnionTaskStatusRequest extends RpcAcsRequest<GetUnionTaskStatusR
 
 	private Long taskId;
 	public GetUnionTaskStatusRequest() {
-		super("UniMkt", "2018-12-12", "GetUnionTaskStatus", "uniMkt");
+		super("UniMkt", "2018-12-12", "GetUnionTaskStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

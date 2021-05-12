@@ -14,11 +14,7 @@
 
 package com.aliyuncs.unimkt.transform.v20181212;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.unimkt.model.v20181212.QueryAvailableBalanceResponse;
-import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -30,9 +26,7 @@ public class QueryAvailableBalanceResponseUnmarshaller {
 		queryAvailableBalanceResponse.setCode(_ctx.integerValue("QueryAvailableBalanceResponse.Code"));
 		queryAvailableBalanceResponse.setSuccess(_ctx.booleanValue("QueryAvailableBalanceResponse.Success"));
 		queryAvailableBalanceResponse.setErrorMsg(_ctx.stringValue("QueryAvailableBalanceResponse.ErrorMsg"));
-
-		List<Map<Object, Object>> data = _ctx.listMapValue("QueryAvailableBalanceResponse.Data");
-		queryAvailableBalanceResponse.setData(data);
+		queryAvailableBalanceResponse.setData(_ctx.longValue("QueryAvailableBalanceResponse.Data"));
 	 
 	 	return queryAvailableBalanceResponse;
 	}

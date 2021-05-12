@@ -14,15 +14,16 @@
 
 package com.aliyuncs.unimkt.model.v20181212;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.QueryAvailableBalanceResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181212.QueryUnionSumChannelDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class QueryAvailableBalanceResponse extends AcsResponse {
+public class QueryUnionSumChannelDataResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -32,7 +33,7 @@ public class QueryAvailableBalanceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long data;
+	private Map<Object,Object> data;
 
 	public Integer getCode() {
 		return this.code;
@@ -66,17 +67,17 @@ public class QueryAvailableBalanceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(Long data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 
 	@Override
-	public QueryAvailableBalanceResponse getInstance(UnmarshallerContext context) {
-		return	QueryAvailableBalanceResponseUnmarshaller.unmarshall(this, context);
+	public QueryUnionSumChannelDataResponse getInstance(UnmarshallerContext context) {
+		return	QueryUnionSumChannelDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

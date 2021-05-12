@@ -14,17 +14,16 @@
 
 package com.aliyuncs.unimkt.model.v20181212;
 
-import java.util.List;
 import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.unimkt.transform.v20181212.DeleteProxyBrandUserResponseUnmarshaller;
+import com.aliyuncs.unimkt.transform.v20181212.QueryChannelHistoryDataResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteProxyBrandUserResponse extends AcsResponse {
+public class QueryChannelHistoryDataResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -34,7 +33,7 @@ public class DeleteProxyBrandUserResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Map<Object,Object>> data;
+	private Map<Object,Object> data;
 
 	public Integer getCode() {
 		return this.code;
@@ -68,17 +67,17 @@ public class DeleteProxyBrandUserResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Map<Object,Object>> getData() {
+	public Map<Object,Object> getData() {
 		return this.data;
 	}
 
-	public void setData(List<Map<Object,Object>> data) {
+	public void setData(Map<Object,Object> data) {
 		this.data = data;
 	}
 
 	@Override
-	public DeleteProxyBrandUserResponse getInstance(UnmarshallerContext context) {
-		return	DeleteProxyBrandUserResponseUnmarshaller.unmarshall(this, context);
+	public QueryChannelHistoryDataResponse getInstance(UnmarshallerContext context) {
+		return	QueryChannelHistoryDataResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

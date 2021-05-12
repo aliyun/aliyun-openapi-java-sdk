@@ -57,7 +57,7 @@ public class CreateUnionTaskRequest extends RpcAcsRequest<CreateUnionTaskRespons
 
 	private String channelId;
 	public CreateUnionTaskRequest() {
-		super("UniMkt", "2018-12-12", "CreateUnionTask", "uniMkt");
+		super("UniMkt", "2018-12-12", "CreateUnionTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

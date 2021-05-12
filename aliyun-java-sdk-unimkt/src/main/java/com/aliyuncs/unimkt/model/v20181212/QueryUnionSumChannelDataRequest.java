@@ -12,10 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.unimkt.model.v20181207;
+package com.aliyuncs.unimkt.model.v20181212;
 
 import com.aliyuncs.RpcAcsRequest;
-import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.unimkt.Endpoint;
 
@@ -23,13 +22,14 @@ import com.aliyuncs.unimkt.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetImageUrlRequest extends RpcAcsRequest<GetImageUrlResponse> {
+public class QueryUnionSumChannelDataRequest extends RpcAcsRequest<QueryUnionSumChannelDataResponse> {
 	   
 
-	private String commodityId;
-	public GetImageUrlRequest() {
-		super("UniMkt", "2018-12-07", "GetImageUrl", "uniMkt");
-		setProtocol(ProtocolType.HTTPS);
+	private String taskType;
+
+	private String channelId;
+	public QueryUnionSumChannelDataRequest() {
+		super("UniMkt", "2018-12-12", "QueryUnionSumChannelData");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,20 +37,31 @@ public class GetImageUrlRequest extends RpcAcsRequest<GetImageUrlResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getCommodityId() {
-		return this.commodityId;
+	public String getTaskType() {
+		return this.taskType;
 	}
 
-	public void setCommodityId(String commodityId) {
-		this.commodityId = commodityId;
-		if(commodityId != null){
-			putQueryParameter("CommodityId", commodityId);
+	public void setTaskType(String taskType) {
+		this.taskType = taskType;
+		if(taskType != null){
+			putQueryParameter("TaskType", taskType);
+		}
+	}
+
+	public String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+		if(channelId != null){
+			putQueryParameter("ChannelId", channelId);
 		}
 	}
 
 	@Override
-	public Class<GetImageUrlResponse> getResponseClass() {
-		return GetImageUrlResponse.class;
+	public Class<QueryUnionSumChannelDataResponse> getResponseClass() {
+		return QueryUnionSumChannelDataResponse.class;
 	}
 
 }

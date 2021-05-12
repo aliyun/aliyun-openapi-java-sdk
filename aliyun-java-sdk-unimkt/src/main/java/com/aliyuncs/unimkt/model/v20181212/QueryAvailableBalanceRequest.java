@@ -29,7 +29,7 @@ public class QueryAvailableBalanceRequest extends RpcAcsRequest<QueryAvailableBa
 
 	private String channelId;
 	public QueryAvailableBalanceRequest() {
-		super("UniMkt", "2018-12-12", "QueryAvailableBalance", "uniMkt");
+		super("UniMkt", "2018-12-12", "QueryAvailableBalance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

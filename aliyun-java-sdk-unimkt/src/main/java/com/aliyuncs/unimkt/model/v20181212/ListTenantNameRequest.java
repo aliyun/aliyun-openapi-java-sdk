@@ -51,7 +51,7 @@ public class ListTenantNameRequest extends RpcAcsRequest<ListTenantNameResponse>
 
 	private String status;
 	public ListTenantNameRequest() {
-		super("UniMkt", "2018-12-12", "ListTenantName", "uniMkt");
+		super("UniMkt", "2018-12-12", "ListTenantName");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class QueryIndustryLabelBagRequest extends RpcAcsRequest<QueryIndustryLab
 
 	private String channelId;
 	public QueryIndustryLabelBagRequest() {
-		super("UniMkt", "2018-12-12", "QueryIndustryLabelBag", "uniMkt");
+		super("UniMkt", "2018-12-12", "QueryIndustryLabelBag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

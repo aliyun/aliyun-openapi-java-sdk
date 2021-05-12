@@ -14,8 +14,6 @@
 
 package com.aliyuncs.unimkt.model.v20181212;
 
-import java.util.List;
-import java.util.Map;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.unimkt.transform.v20181212.CreateUnionTaskResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -34,7 +32,7 @@ public class CreateUnionTaskResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<Map<Object,Object>> data;
+	private Long data;
 
 	public Integer getCode() {
 		return this.code;
@@ -68,11 +66,11 @@ public class CreateUnionTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<Map<Object,Object>> getData() {
+	public Long getData() {
 		return this.data;
 	}
 
-	public void setData(List<Map<Object,Object>> data) {
+	public void setData(Long data) {
 		this.data = data;
 	}
 
