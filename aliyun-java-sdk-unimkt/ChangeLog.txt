@@ -1,3 +1,6 @@
+2021-05-12 Version: 2.3.5
+- Supported AAA for BBB.
+
 2021-05-12 Version: 2.3.4
 - Add industry scene param for media list interface.
 
