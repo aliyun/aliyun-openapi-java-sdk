@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20170601;
+package com.aliyuncs.hitsdb.model.v20200615;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hitsdb.transform.v20170601.DeleteHiTSDBInstanceResponseUnmarshaller;
+import com.aliyuncs.hitsdb.transform.v20200615.UpdateInstanceIpWhiteListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteHiTSDBInstanceResponse extends AcsResponse {
+public class UpdateInstanceIpWhiteListResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -35,8 +35,8 @@ public class DeleteHiTSDBInstanceResponse extends AcsResponse {
 	}
 
 	@Override
-	public DeleteHiTSDBInstanceResponse getInstance(UnmarshallerContext context) {
-		return	DeleteHiTSDBInstanceResponseUnmarshaller.unmarshall(this, context);
+	public UpdateInstanceIpWhiteListResponse getInstance(UnmarshallerContext context) {
+		return	UpdateInstanceIpWhiteListResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

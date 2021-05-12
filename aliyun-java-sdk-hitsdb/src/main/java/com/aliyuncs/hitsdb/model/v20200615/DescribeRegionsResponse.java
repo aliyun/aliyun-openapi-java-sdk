@@ -12,22 +12,22 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20170601;
+package com.aliyuncs.hitsdb.model.v20200615;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.hitsdb.transform.v20170601.DescribeZonesResponseUnmarshaller;
+import com.aliyuncs.hitsdb.transform.v20200615.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeZonesResponse extends AcsResponse {
+public class DescribeRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<ZoneModel> zoneList;
+	private List<Region> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,26 +37,28 @@ public class DescribeZonesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<ZoneModel> getZoneList() {
-		return this.zoneList;
+	public List<Region> getRegions() {
+		return this.regions;
 	}
 
-	public void setZoneList(List<ZoneModel> zoneList) {
-		this.zoneList = zoneList;
+	public void setRegions(List<Region> regions) {
+		this.regions = regions;
 	}
 
-	public static class ZoneModel {
+	public static class Region {
 
-		private String zoneId;
+		private String regionId;
 
 		private String localName;
 
-		public String getZoneId() {
-			return this.zoneId;
+		private String regionEndpoint;
+
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
 		public String getLocalName() {
@@ -66,10 +68,23 @@ public class DescribeZonesResponse extends AcsResponse {
 		public void setLocalName(String localName) {
 			this.localName = localName;
 		}
+
+		public String getRegionEndpoint() {
+			return this.regionEndpoint;
+		}
+
+		public void setRegionEndpoint(String regionEndpoint) {
+			this.regionEndpoint = regionEndpoint;
+		}
 	}
 
 	@Override
-	public DescribeZonesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeZonesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
+		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
