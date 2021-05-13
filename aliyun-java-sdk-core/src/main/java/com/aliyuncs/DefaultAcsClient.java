@@ -195,7 +195,7 @@ public class DefaultAcsClient implements IAcsClient {
         AlibabaCloudCredentials credentials;
         if (null == credentialsProvider) {
             if (null == this.defaultCredentialsProvider) {
-                throw new ClientException("not found credentials");
+                throw new ClientException("no found credentials");
             }
             credentials = this.defaultCredentialsProvider.getCredentials();
         } else {
