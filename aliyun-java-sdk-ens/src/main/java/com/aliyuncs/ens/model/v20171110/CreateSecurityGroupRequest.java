@@ -24,10 +24,23 @@ import com.aliyuncs.http.MethodType;
 public class CreateSecurityGroupRequest extends RpcAcsRequest<CreateSecurityGroupResponse> {
 	   
 
+	private String description;
+
 	private String securityGroupName;
 	public CreateSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "CreateSecurityGroup");
+		super("Ens", "2017-11-10", "CreateSecurityGroup", "ens");
 		setMethod(MethodType.POST);
+	}
+
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putQueryParameter("Description", description);
+		}
 	}
 
 	public String getSecurityGroupName() {

@@ -38,8 +38,8 @@ public class DistApplicationDataResponseUnmarshaller {
 		List<DistResult> distResults = new ArrayList<DistResult>();
 		for (int i = 0; i < _ctx.lengthValue("DistApplicationDataResponse.DistResults.Length"); i++) {
 			DistResult distResult = new DistResult();
-			distResult.setVersion(_ctx.stringValue("DistApplicationDataResponse.DistResults["+ i +"].Version"));
 			distResult.setResultDescrip(_ctx.stringValue("DistApplicationDataResponse.DistResults["+ i +"].ResultDescrip"));
+			distResult.setVersion(_ctx.stringValue("DistApplicationDataResponse.DistResults["+ i +"].Version"));
 			distResult.setResultCode(_ctx.integerValue("DistApplicationDataResponse.DistResults["+ i +"].ResultCode"));
 			distResult.setName(_ctx.stringValue("DistApplicationDataResponse.DistResults["+ i +"].Name"));
 

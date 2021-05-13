@@ -28,7 +28,7 @@ public class ReInitDiskRequest extends RpcAcsRequest<ReInitDiskResponse> {
 
 	private String diskId;
 	public ReInitDiskRequest() {
-		super("Ens", "2017-11-10", "ReInitDisk");
+		super("Ens", "2017-11-10", "ReInitDisk", "ens");
 		setMethod(MethodType.POST);
 	}
 

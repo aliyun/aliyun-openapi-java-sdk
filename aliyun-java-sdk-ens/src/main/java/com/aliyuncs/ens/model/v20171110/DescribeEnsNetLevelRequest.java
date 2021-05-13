@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeEnsNetLevelRequest extends RpcAcsRequest<DescribeEnsNetLevelResponse> {
 	   
 	public DescribeEnsNetLevelRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsNetLevel");
+		super("Ens", "2017-11-10", "DescribeEnsNetLevel", "ens");
 		setMethod(MethodType.POST);
 	}
 

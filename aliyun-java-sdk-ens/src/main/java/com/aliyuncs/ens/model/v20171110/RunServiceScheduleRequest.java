@@ -42,7 +42,7 @@ public class RunServiceScheduleRequest extends RpcAcsRequest<RunServiceScheduleR
 
 	private String appId;
 	public RunServiceScheduleRequest() {
-		super("Ens", "2017-11-10", "RunServiceSchedule");
+		super("Ens", "2017-11-10", "RunServiceSchedule", "ens");
 		setMethod(MethodType.POST);
 	}
 

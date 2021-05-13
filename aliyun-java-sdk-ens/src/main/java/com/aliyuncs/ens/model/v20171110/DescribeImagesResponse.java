@@ -25,40 +25,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImagesResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
-
-	private Integer pageSize;
+	private Integer code;
 
 	private Integer pageNumber;
 
-	private Integer code;
+	private Integer pageSize;
+
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<Image> images;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getCode() {
+		return this.code;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public Integer getPageNumber() {
@@ -69,12 +53,28 @@ public class DescribeImagesResponse extends AcsResponse {
 		this.pageNumber = pageNumber;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Image> getImages() {
@@ -87,43 +87,19 @@ public class DescribeImagesResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String imageOwnerAlias;
-
-		private String imageName;
-
-		private String platform;
-
 		private String architecture;
-
-		private String imageSize;
-
-		private String imageId;
 
 		private String creationTime;
 
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
+		private String imageId;
 
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
-		}
+		private String imageName;
 
-		public String getImageName() {
-			return this.imageName;
-		}
+		private String imageOwnerAlias;
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
+		private String imageSize;
 
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
-		}
+		private String platform;
 
 		public String getArchitecture() {
 			return this.architecture;
@@ -133,12 +109,12 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.architecture = architecture;
 		}
 
-		public String getImageSize() {
-			return this.imageSize;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setImageSize(String imageSize) {
-			this.imageSize = imageSize;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getImageId() {
@@ -149,12 +125,36 @@ public class DescribeImagesResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getImageName() {
+			return this.imageName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public String getImageSize() {
+			return this.imageSize;
+		}
+
+		public void setImageSize(String imageSize) {
+			this.imageSize = imageSize;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 	}
 

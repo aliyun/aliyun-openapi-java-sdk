@@ -40,7 +40,7 @@ public class DescribeEpnBandWidthDataRequest extends RpcAcsRequest<DescribeEpnBa
 
 	private String endTime;
 	public DescribeEpnBandWidthDataRequest() {
-		super("Ens", "2017-11-10", "DescribeEpnBandWidthData");
+		super("Ens", "2017-11-10", "DescribeEpnBandWidthData", "ens");
 		setMethod(MethodType.POST);
 	}
 

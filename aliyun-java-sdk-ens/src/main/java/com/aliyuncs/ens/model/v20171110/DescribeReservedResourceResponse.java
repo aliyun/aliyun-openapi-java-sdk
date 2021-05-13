@@ -29,9 +29,9 @@ public class DescribeReservedResourceResponse extends AcsResponse {
 
 	private Integer code;
 
-	private List<SupportResource> supportResources;
-
 	private List<Image> images;
+
+	private List<SupportResource> supportResources;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +49,6 @@ public class DescribeReservedResourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public List<SupportResource> getSupportResources() {
-		return this.supportResources;
-	}
-
-	public void setSupportResources(List<SupportResource> supportResources) {
-		this.supportResources = supportResources;
-	}
-
 	public List<Image> getImages() {
 		return this.images;
 	}
@@ -65,57 +57,12 @@ public class DescribeReservedResourceResponse extends AcsResponse {
 		this.images = images;
 	}
 
-	public static class SupportResource {
+	public List<SupportResource> getSupportResources() {
+		return this.supportResources;
+	}
 
-		private String instanceSpec;
-
-		private String supportResourcesCount;
-
-		private String ensRegionId;
-
-		private List<String> systemDiskSizes;
-
-		private List<String> dataDiskSizes;
-
-		public String getInstanceSpec() {
-			return this.instanceSpec;
-		}
-
-		public void setInstanceSpec(String instanceSpec) {
-			this.instanceSpec = instanceSpec;
-		}
-
-		public String getSupportResourcesCount() {
-			return this.supportResourcesCount;
-		}
-
-		public void setSupportResourcesCount(String supportResourcesCount) {
-			this.supportResourcesCount = supportResourcesCount;
-		}
-
-		public String getEnsRegionId() {
-			return this.ensRegionId;
-		}
-
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
-		}
-
-		public List<String> getSystemDiskSizes() {
-			return this.systemDiskSizes;
-		}
-
-		public void setSystemDiskSizes(List<String> systemDiskSizes) {
-			this.systemDiskSizes = systemDiskSizes;
-		}
-
-		public List<String> getDataDiskSizes() {
-			return this.dataDiskSizes;
-		}
-
-		public void setDataDiskSizes(List<String> dataDiskSizes) {
-			this.dataDiskSizes = dataDiskSizes;
-		}
+	public void setSupportResources(List<SupportResource> supportResources) {
+		this.supportResources = supportResources;
 	}
 
 	public static class Image {
@@ -138,6 +85,59 @@ public class DescribeReservedResourceResponse extends AcsResponse {
 
 		public void setImageId(String imageId) {
 			this.imageId = imageId;
+		}
+	}
+
+	public static class SupportResource {
+
+		private String ensRegionId;
+
+		private String supportResourcesCount;
+
+		private String instanceSpec;
+
+		private List<String> dataDiskSizes;
+
+		private List<String> systemDiskSizes;
+
+		public String getEnsRegionId() {
+			return this.ensRegionId;
+		}
+
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
+		}
+
+		public String getSupportResourcesCount() {
+			return this.supportResourcesCount;
+		}
+
+		public void setSupportResourcesCount(String supportResourcesCount) {
+			this.supportResourcesCount = supportResourcesCount;
+		}
+
+		public String getInstanceSpec() {
+			return this.instanceSpec;
+		}
+
+		public void setInstanceSpec(String instanceSpec) {
+			this.instanceSpec = instanceSpec;
+		}
+
+		public List<String> getDataDiskSizes() {
+			return this.dataDiskSizes;
+		}
+
+		public void setDataDiskSizes(List<String> dataDiskSizes) {
+			this.dataDiskSizes = dataDiskSizes;
+		}
+
+		public List<String> getSystemDiskSizes() {
+			return this.systemDiskSizes;
+		}
+
+		public void setSystemDiskSizes(List<String> systemDiskSizes) {
+			this.systemDiskSizes = systemDiskSizes;
 		}
 	}
 

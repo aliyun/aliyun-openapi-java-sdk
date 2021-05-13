@@ -23,10 +23,10 @@ public class PreCreateEnsServiceResponseUnmarshaller {
 	public static PreCreateEnsServiceResponse unmarshall(PreCreateEnsServiceResponse preCreateEnsServiceResponse, UnmarshallerContext _ctx) {
 		
 		preCreateEnsServiceResponse.setRequestId(_ctx.stringValue("PreCreateEnsServiceResponse.RequestId"));
+		preCreateEnsServiceResponse.setBuyResourcesDetail(_ctx.stringValue("PreCreateEnsServiceResponse.BuyResourcesDetail"));
+		preCreateEnsServiceResponse.setCode(_ctx.integerValue("PreCreateEnsServiceResponse.Code"));
 		preCreateEnsServiceResponse.setEnsServiceId(_ctx.stringValue("PreCreateEnsServiceResponse.EnsServiceId"));
 		preCreateEnsServiceResponse.setNetLevel(_ctx.stringValue("PreCreateEnsServiceResponse.NetLevel"));
-		preCreateEnsServiceResponse.setCode(_ctx.integerValue("PreCreateEnsServiceResponse.Code"));
-		preCreateEnsServiceResponse.setBuyResourcesDetail(_ctx.stringValue("PreCreateEnsServiceResponse.BuyResourcesDetail"));
 	 
 	 	return preCreateEnsServiceResponse;
 	}

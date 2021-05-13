@@ -30,7 +30,7 @@ public class ModifyImageAttributeRequest extends RpcAcsRequest<ModifyImageAttrib
 
 	private String product;
 	public ModifyImageAttributeRequest() {
-		super("Ens", "2017-11-10", "ModifyImageAttribute");
+		super("Ens", "2017-11-10", "ModifyImageAttribute", "ens");
 		setMethod(MethodType.POST);
 	}
 

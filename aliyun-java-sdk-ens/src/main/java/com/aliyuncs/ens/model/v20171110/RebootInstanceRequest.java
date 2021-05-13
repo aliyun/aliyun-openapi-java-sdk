@@ -28,7 +28,7 @@ public class RebootInstanceRequest extends RpcAcsRequest<RebootInstanceResponse>
 
 	private String instanceId;
 	public RebootInstanceRequest() {
-		super("Ens", "2017-11-10", "RebootInstance");
+		super("Ens", "2017-11-10", "RebootInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

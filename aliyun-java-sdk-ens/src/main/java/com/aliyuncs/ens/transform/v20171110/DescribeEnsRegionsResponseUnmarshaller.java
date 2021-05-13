@@ -35,8 +35,8 @@ public class DescribeEnsRegionsResponseUnmarshaller {
 			ensRegionsItem.setArea(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Area"));
 			ensRegionsItem.setEnName(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].EnName"));
 			ensRegionsItem.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].EnsRegionId"));
-			ensRegionsItem.setProvince(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Province"));
 			ensRegionsItem.setName(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Name"));
+			ensRegionsItem.setProvince(_ctx.stringValue("DescribeEnsRegionsResponse.EnsRegions["+ i +"].Province"));
 
 			ensRegions.add(ensRegionsItem);
 		}

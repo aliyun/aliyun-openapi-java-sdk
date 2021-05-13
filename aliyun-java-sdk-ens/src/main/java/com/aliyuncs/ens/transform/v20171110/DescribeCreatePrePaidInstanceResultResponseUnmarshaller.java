@@ -26,8 +26,8 @@ public class DescribeCreatePrePaidInstanceResultResponseUnmarshaller {
 		describeCreatePrePaidInstanceResultResponse.setRequestId(_ctx.stringValue("DescribeCreatePrePaidInstanceResultResponse.RequestId"));
 
 		InstanceCreateResult instanceCreateResult = new InstanceCreateResult();
-		instanceCreateResult.setInstanceId(_ctx.stringValue("DescribeCreatePrePaidInstanceResultResponse.InstanceCreateResult.InstanceId"));
 		instanceCreateResult.setInstanceCreateStatus(_ctx.stringValue("DescribeCreatePrePaidInstanceResultResponse.InstanceCreateResult.InstanceCreateStatus"));
+		instanceCreateResult.setInstanceId(_ctx.stringValue("DescribeCreatePrePaidInstanceResultResponse.InstanceCreateResult.InstanceId"));
 		describeCreatePrePaidInstanceResultResponse.setInstanceCreateResult(instanceCreateResult);
 	 
 	 	return describeCreatePrePaidInstanceResultResponse;

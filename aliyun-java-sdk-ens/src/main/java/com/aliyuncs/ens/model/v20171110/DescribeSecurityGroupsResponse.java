@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSecurityGroupsResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private String requestId;
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private Integer totalCount;
 
 	private List<SecurityGroup> securityGroups;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -51,20 +51,20 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<SecurityGroup> getSecurityGroups() {
@@ -77,18 +77,38 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 
 	public static class SecurityGroup {
 
-		private String securityGroupName;
+		private String creationTime;
+
+		private Integer instanceCount;
+
+		private String description;
 
 		private String securityGroupId;
 
-		private String creationTime;
+		private String securityGroupName;
 
-		public String getSecurityGroupName() {
-			return this.securityGroupName;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setSecurityGroupName(String securityGroupName) {
-			this.securityGroupName = securityGroupName;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public Integer getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Integer instanceCount) {
+			this.instanceCount = instanceCount;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getSecurityGroupId() {
@@ -99,12 +119,12 @@ public class DescribeSecurityGroupsResponse extends AcsResponse {
 			this.securityGroupId = securityGroupId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getSecurityGroupName() {
+			return this.securityGroupName;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setSecurityGroupName(String securityGroupName) {
+			this.securityGroupName = securityGroupName;
 		}
 	}
 

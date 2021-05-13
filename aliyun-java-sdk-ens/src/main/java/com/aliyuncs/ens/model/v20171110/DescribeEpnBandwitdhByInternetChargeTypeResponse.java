@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEpnBandwitdhByInternetChargeTypeResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long bandwidthValue;
-
-	private String timeStamp;
 
 	private String internetChargeType;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
+	private String requestId;
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String timeStamp;
 
 	public Long getBandwidthValue() {
 		return this.bandwidthValue;
@@ -48,20 +40,28 @@ public class DescribeEpnBandwitdhByInternetChargeTypeResponse extends AcsRespons
 		this.bandwidthValue = bandwidthValue;
 	}
 
-	public String getTimeStamp() {
-		return this.timeStamp;
-	}
-
-	public void setTimeStamp(String timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
 	public String getInternetChargeType() {
 		return this.internetChargeType;
 	}
 
 	public void setInternetChargeType(String internetChargeType) {
 		this.internetChargeType = internetChargeType;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getTimeStamp() {
+		return this.timeStamp;
+	}
+
+	public void setTimeStamp(String timeStamp) {
+		this.timeStamp = timeStamp;
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class DescribeInstanceMonitorDataRequest extends RpcAcsRequest<DescribeIn
 
 	private String instanceId;
 	public DescribeInstanceMonitorDataRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceMonitorData");
+		super("Ens", "2017-11-10", "DescribeInstanceMonitorData", "ens");
 		setMethod(MethodType.POST);
 	}
 

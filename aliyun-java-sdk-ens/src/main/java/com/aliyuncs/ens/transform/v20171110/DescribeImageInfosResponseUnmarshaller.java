@@ -33,11 +33,11 @@ public class DescribeImageInfosResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeImageInfosResponse.Images.Length"); i++) {
 			Image image = new Image();
 			image.setDescription(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].Description"));
-			image.setImageVersion(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageVersion"));
-			image.setImageSize(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageSize"));
-			image.setOSType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSType"));
 			image.setImageId(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageId"));
+			image.setImageSize(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageSize"));
+			image.setImageVersion(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].ImageVersion"));
 			image.setOSName(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSName"));
+			image.setOSType(_ctx.stringValue("DescribeImageInfosResponse.Images["+ i +"].OSType"));
 
 			images.add(image);
 		}

@@ -32,7 +32,7 @@ public class DescribeExportImageInfoRequest extends RpcAcsRequest<DescribeExport
 
 	private Integer pageSize;
 	public DescribeExportImageInfoRequest() {
-		super("Ens", "2017-11-10", "DescribeExportImageInfo");
+		super("Ens", "2017-11-10", "DescribeExportImageInfo", "ens");
 		setMethod(MethodType.POST);
 	}
 

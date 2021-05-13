@@ -51,9 +51,9 @@ public class DescribeEpnMeasurementDataResponse extends AcsResponse {
 
 		private String costCycle;
 
-		private String costStartTime;
-
 		private String costEndTime;
+
+		private String costStartTime;
 
 		private List<BandWidthFeeData> bandWidthFeeDatas;
 
@@ -73,20 +73,20 @@ public class DescribeEpnMeasurementDataResponse extends AcsResponse {
 			this.costCycle = costCycle;
 		}
 
-		public String getCostStartTime() {
-			return this.costStartTime;
-		}
-
-		public void setCostStartTime(String costStartTime) {
-			this.costStartTime = costStartTime;
-		}
-
 		public String getCostEndTime() {
 			return this.costEndTime;
 		}
 
 		public void setCostEndTime(String costEndTime) {
 			this.costEndTime = costEndTime;
+		}
+
+		public String getCostStartTime() {
+			return this.costStartTime;
+		}
+
+		public void setCostStartTime(String costStartTime) {
+			this.costStartTime = costStartTime;
 		}
 
 		public List<BandWidthFeeData> getBandWidthFeeDatas() {
@@ -99,15 +99,39 @@ public class DescribeEpnMeasurementDataResponse extends AcsResponse {
 
 		public static class BandWidthFeeData {
 
+			private String costCode;
+
+			private String costName;
+
+			private String costType;
+
 			private Integer costVal;
 
 			private String ispLine;
 
-			private String costCode;
+			public String getCostCode() {
+				return this.costCode;
+			}
 
-			private String costType;
+			public void setCostCode(String costCode) {
+				this.costCode = costCode;
+			}
 
-			private String costName;
+			public String getCostName() {
+				return this.costName;
+			}
+
+			public void setCostName(String costName) {
+				this.costName = costName;
+			}
+
+			public String getCostType() {
+				return this.costType;
+			}
+
+			public void setCostType(String costType) {
+				this.costType = costType;
+			}
 
 			public Integer getCostVal() {
 				return this.costVal;
@@ -123,30 +147,6 @@ public class DescribeEpnMeasurementDataResponse extends AcsResponse {
 
 			public void setIspLine(String ispLine) {
 				this.ispLine = ispLine;
-			}
-
-			public String getCostCode() {
-				return this.costCode;
-			}
-
-			public void setCostCode(String costCode) {
-				this.costCode = costCode;
-			}
-
-			public String getCostType() {
-				return this.costType;
-			}
-
-			public void setCostType(String costType) {
-				this.costType = costType;
-			}
-
-			public String getCostName() {
-				return this.costName;
-			}
-
-			public void setCostName(String costName) {
-				this.costName = costName;
 			}
 		}
 	}

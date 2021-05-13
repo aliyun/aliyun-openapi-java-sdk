@@ -26,7 +26,7 @@ public class ReleasePostPaidInstanceRequest extends RpcAcsRequest<ReleasePostPai
 
 	private String instanceId;
 	public ReleasePostPaidInstanceRequest() {
-		super("Ens", "2017-11-10", "ReleasePostPaidInstance");
+		super("Ens", "2017-11-10", "ReleasePostPaidInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

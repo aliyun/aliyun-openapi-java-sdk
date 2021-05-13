@@ -38,7 +38,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 	private Integer systemDiskSize;
 	public DescribePriceRequest() {
-		super("Ens", "2017-11-10", "DescribePrice");
+		super("Ens", "2017-11-10", "DescribePrice", "ens");
 		setMethod(MethodType.POST);
 	}
 

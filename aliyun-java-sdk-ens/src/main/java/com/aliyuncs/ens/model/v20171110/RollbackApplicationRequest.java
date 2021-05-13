@@ -32,7 +32,7 @@ public class RollbackApplicationRequest extends RpcAcsRequest<RollbackApplicatio
 
 	private String toAppVersion;
 	public RollbackApplicationRequest() {
-		super("Ens", "2017-11-10", "RollbackApplication");
+		super("Ens", "2017-11-10", "RollbackApplication", "ens");
 		setMethod(MethodType.POST);
 	}
 

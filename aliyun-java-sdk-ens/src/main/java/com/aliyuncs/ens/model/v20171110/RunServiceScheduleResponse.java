@@ -25,21 +25,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RunServiceScheduleResponse extends AcsResponse {
 
+	private Integer index;
+
+	private String instanceId;
+
+	private String instanceIp;
+
+	private Integer instancePort;
+
+	private String requestId;
+
 	private String requestRepeated;
 
 	private Boolean tcpPorts;
 
-	private String requestId;
-
-	private String instanceId;
-
-	private Integer instancePort;
-
-	private String instanceIp;
-
-	private Integer index;
-
 	private List<CommandResult> commandResults;
+
+	public Integer getIndex() {
+		return this.index;
+	}
+
+	public void setIndex(Integer index) {
+		this.index = index;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getInstanceIp() {
+		return this.instanceIp;
+	}
+
+	public void setInstanceIp(String instanceIp) {
+		this.instanceIp = instanceIp;
+	}
+
+	public Integer getInstancePort() {
+		return this.instancePort;
+	}
+
+	public void setInstancePort(Integer instancePort) {
+		this.instancePort = instancePort;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getRequestRepeated() {
 		return this.requestRepeated;
@@ -57,46 +97,6 @@ public class RunServiceScheduleResponse extends AcsResponse {
 		this.tcpPorts = tcpPorts;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public Integer getInstancePort() {
-		return this.instancePort;
-	}
-
-	public void setInstancePort(Integer instancePort) {
-		this.instancePort = instancePort;
-	}
-
-	public String getInstanceIp() {
-		return this.instanceIp;
-	}
-
-	public void setInstanceIp(String instanceIp) {
-		this.instanceIp = instanceIp;
-	}
-
-	public Integer getIndex() {
-		return this.index;
-	}
-
-	public void setIndex(Integer index) {
-		this.index = index;
-	}
-
 	public List<CommandResult> getCommandResults() {
 		return this.commandResults;
 	}
@@ -107,19 +107,11 @@ public class RunServiceScheduleResponse extends AcsResponse {
 
 	public static class CommandResult {
 
-		private String containerName;
-
 		private String command;
 
+		private String containerName;
+
 		private String resultMsg;
-
-		public String getContainerName() {
-			return this.containerName;
-		}
-
-		public void setContainerName(String containerName) {
-			this.containerName = containerName;
-		}
 
 		public String getCommand() {
 			return this.command;
@@ -127,6 +119,14 @@ public class RunServiceScheduleResponse extends AcsResponse {
 
 		public void setCommand(String command) {
 			this.command = command;
+		}
+
+		public String getContainerName() {
+			return this.containerName;
+		}
+
+		public void setContainerName(String containerName) {
+			this.containerName = containerName;
 		}
 
 		public String getResultMsg() {

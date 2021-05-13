@@ -32,9 +32,9 @@ public class DescribeInstanceMonitorDataResponseUnmarshaller {
 		List<InstanceMonitorData> monitorData = new ArrayList<InstanceMonitorData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceMonitorDataResponse.MonitorData.Length"); i++) {
 			InstanceMonitorData instanceMonitorData = new InstanceMonitorData();
+			instanceMonitorData.setCPU(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPU"));
 			instanceMonitorData.setInstanceId(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].InstanceId"));
 			instanceMonitorData.setMemory(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].Memory"));
-			instanceMonitorData.setCPU(_ctx.stringValue("DescribeInstanceMonitorDataResponse.MonitorData["+ i +"].CPU"));
 
 			monitorData.add(instanceMonitorData);
 		}

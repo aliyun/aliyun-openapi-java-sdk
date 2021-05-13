@@ -27,7 +27,11 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String description;
+
 	private String securityGroupId;
+
+	private String securityGroupName;
 
 	private List<Permission> permissions;
 
@@ -39,12 +43,28 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public String getSecurityGroupId() {
 		return this.securityGroupId;
 	}
 
 	public void setSecurityGroupId(String securityGroupId) {
 		this.securityGroupId = securityGroupId;
+	}
+
+	public String getSecurityGroupName() {
+		return this.securityGroupName;
+	}
+
+	public void setSecurityGroupName(String securityGroupName) {
+		this.securityGroupName = securityGroupName;
 	}
 
 	public List<Permission> getPermissions() {
@@ -57,23 +77,39 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 
 	public static class Permission {
 
+		private String creationTime;
+
+		private String direction;
+
 		private String policy;
 
 		private String portRange;
 
-		private String sourcePortRange;
-
-		private Integer priority;
-
 		private String sourceCidrIp;
-
-		private String creationTime;
 
 		private String ipProtocol;
 
 		private String destCidrIp;
 
-		private String direction;
+		private Integer priority;
+
+		private String sourcePortRange;
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getDirection() {
+			return this.direction;
+		}
+
+		public void setDirection(String direction) {
+			this.direction = direction;
+		}
 
 		public String getPolicy() {
 			return this.policy;
@@ -91,36 +127,12 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 			this.portRange = portRange;
 		}
 
-		public String getSourcePortRange() {
-			return this.sourcePortRange;
-		}
-
-		public void setSourcePortRange(String sourcePortRange) {
-			this.sourcePortRange = sourcePortRange;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
 		public String getSourceCidrIp() {
 			return this.sourceCidrIp;
 		}
 
 		public void setSourceCidrIp(String sourceCidrIp) {
 			this.sourceCidrIp = sourceCidrIp;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 
 		public String getIpProtocol() {
@@ -139,12 +151,20 @@ public class DescribeSecurityGroupAttributeResponse extends AcsResponse {
 			this.destCidrIp = destCidrIp;
 		}
 
-		public String getDirection() {
-			return this.direction;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setDirection(String direction) {
-			this.direction = direction;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getSourcePortRange() {
+			return this.sourcePortRange;
+		}
+
+		public void setSourcePortRange(String sourcePortRange) {
+			this.sourcePortRange = sourcePortRange;
 		}
 	}
 

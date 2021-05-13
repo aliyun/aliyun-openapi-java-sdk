@@ -25,19 +25,43 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceSpecResponse extends AcsResponse {
 
+	private Integer bandwidthLimit;
+
+	private Integer code;
+
+	private Integer dataDiskMaxSize;
+
 	private Integer dataDiskMinSize;
 
 	private String requestId;
 
 	private Integer systemDiskMaxSize;
 
-	private Integer dataDiskMaxSize;
-
-	private Integer code;
-
-	private Integer bandwidthLimit;
-
 	private List<InstanceSpec> instanceSpecs;
+
+	public Integer getBandwidthLimit() {
+		return this.bandwidthLimit;
+	}
+
+	public void setBandwidthLimit(Integer bandwidthLimit) {
+		this.bandwidthLimit = bandwidthLimit;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public Integer getDataDiskMaxSize() {
+		return this.dataDiskMaxSize;
+	}
+
+	public void setDataDiskMaxSize(Integer dataDiskMaxSize) {
+		this.dataDiskMaxSize = dataDiskMaxSize;
+	}
 
 	public Integer getDataDiskMinSize() {
 		return this.dataDiskMinSize;
@@ -63,30 +87,6 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 		this.systemDiskMaxSize = systemDiskMaxSize;
 	}
 
-	public Integer getDataDiskMaxSize() {
-		return this.dataDiskMaxSize;
-	}
-
-	public void setDataDiskMaxSize(Integer dataDiskMaxSize) {
-		this.dataDiskMaxSize = dataDiskMaxSize;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public Integer getBandwidthLimit() {
-		return this.bandwidthLimit;
-	}
-
-	public void setBandwidthLimit(Integer bandwidthLimit) {
-		this.bandwidthLimit = bandwidthLimit;
-	}
-
 	public List<InstanceSpec> getInstanceSpecs() {
 		return this.instanceSpecs;
 	}
@@ -97,20 +97,20 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 
 	public static class InstanceSpec {
 
-		private String memory;
+		private String core;
 
 		private String displayName;
 
 		private String instanceType;
 
-		private String core;
+		private String memory;
 
-		public String getMemory() {
-			return this.memory;
+		public String getCore() {
+			return this.core;
 		}
 
-		public void setMemory(String memory) {
-			this.memory = memory;
+		public void setCore(String core) {
+			this.core = core;
 		}
 
 		public String getDisplayName() {
@@ -129,12 +129,12 @@ public class DescribeInstanceSpecResponse extends AcsResponse {
 			this.instanceType = instanceType;
 		}
 
-		public String getCore() {
-			return this.core;
+		public String getMemory() {
+			return this.memory;
 		}
 
-		public void setCore(String core) {
-			this.core = core;
+		public void setMemory(String memory) {
+			this.memory = memory;
 		}
 	}
 

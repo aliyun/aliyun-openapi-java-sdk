@@ -24,15 +24,39 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckQuotaResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Integer code;
+
+	private String data;
+
 	private String msg;
 
 	private String desc;
 
-	private String requestId;
+	public String getRequestId() {
+		return this.requestId;
+	}
 
-	private String data;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-	private Integer code;
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
 
 	public String getMsg() {
 		return this.msg;
@@ -48,30 +72,6 @@ public class CheckQuotaResponse extends AcsResponse {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	@Override

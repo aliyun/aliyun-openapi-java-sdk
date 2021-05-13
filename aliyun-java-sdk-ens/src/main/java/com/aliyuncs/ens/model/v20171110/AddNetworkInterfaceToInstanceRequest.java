@@ -28,7 +28,7 @@ public class AddNetworkInterfaceToInstanceRequest extends RpcAcsRequest<AddNetwo
 
 	private String instanceId;
 	public AddNetworkInterfaceToInstanceRequest() {
-		super("Ens", "2017-11-10", "AddNetworkInterfaceToInstance");
+		super("Ens", "2017-11-10", "AddNetworkInterfaceToInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

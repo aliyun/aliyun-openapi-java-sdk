@@ -32,7 +32,7 @@ public class DescribeImageSharePermissionRequest extends RpcAcsRequest<DescribeI
 
 	private Long aliyunId;
 	public DescribeImageSharePermissionRequest() {
-		super("Ens", "2017-11-10", "DescribeImageSharePermission");
+		super("Ens", "2017-11-10", "DescribeImageSharePermission", "ens");
 		setMethod(MethodType.POST);
 	}
 

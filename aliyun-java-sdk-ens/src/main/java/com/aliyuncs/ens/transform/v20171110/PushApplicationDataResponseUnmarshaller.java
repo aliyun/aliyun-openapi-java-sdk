@@ -31,10 +31,10 @@ public class PushApplicationDataResponseUnmarshaller {
 		List<PushResult> pushResults = new ArrayList<PushResult>();
 		for (int i = 0; i < _ctx.lengthValue("PushApplicationDataResponse.PushResults.Length"); i++) {
 			PushResult pushResult = new PushResult();
-			pushResult.setVersion(_ctx.stringValue("PushApplicationDataResponse.PushResults["+ i +"].Version"));
-			pushResult.setResultDescrip(_ctx.stringValue("PushApplicationDataResponse.PushResults["+ i +"].ResultDescrip"));
-			pushResult.setResultCode(_ctx.integerValue("PushApplicationDataResponse.PushResults["+ i +"].ResultCode"));
 			pushResult.setName(_ctx.stringValue("PushApplicationDataResponse.PushResults["+ i +"].Name"));
+			pushResult.setResultCode(_ctx.integerValue("PushApplicationDataResponse.PushResults["+ i +"].ResultCode"));
+			pushResult.setResultDescrip(_ctx.stringValue("PushApplicationDataResponse.PushResults["+ i +"].ResultDescrip"));
+			pushResult.setVersion(_ctx.stringValue("PushApplicationDataResponse.PushResults["+ i +"].Version"));
 
 			pushResults.add(pushResult);
 		}

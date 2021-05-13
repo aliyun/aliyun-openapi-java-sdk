@@ -36,7 +36,7 @@ public class RescaleApplicationRequest extends RpcAcsRequest<RescaleApplicationR
 
 	private String appId;
 	public RescaleApplicationRequest() {
-		super("Ens", "2017-11-10", "RescaleApplication");
+		super("Ens", "2017-11-10", "RescaleApplication", "ens");
 		setMethod(MethodType.POST);
 	}
 

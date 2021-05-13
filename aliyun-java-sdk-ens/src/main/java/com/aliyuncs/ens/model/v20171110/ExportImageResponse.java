@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ExportImageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String exportedImageURL;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getExportedImageURL() {
 		return this.exportedImageURL;
@@ -42,6 +34,14 @@ public class ExportImageResponse extends AcsResponse {
 
 	public void setExportedImageURL(String exportedImageURL) {
 		this.exportedImageURL = exportedImageURL;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

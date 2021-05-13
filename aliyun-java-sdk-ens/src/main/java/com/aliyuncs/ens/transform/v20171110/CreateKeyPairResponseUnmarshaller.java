@@ -24,8 +24,8 @@ public class CreateKeyPairResponseUnmarshaller {
 		
 		createKeyPairResponse.setRequestId(_ctx.stringValue("CreateKeyPairResponse.RequestId"));
 		createKeyPairResponse.setKeyPairFingerPrint(_ctx.stringValue("CreateKeyPairResponse.KeyPairFingerPrint"));
-		createKeyPairResponse.setKeyPairName(_ctx.stringValue("CreateKeyPairResponse.KeyPairName"));
 		createKeyPairResponse.setKeyPairId(_ctx.stringValue("CreateKeyPairResponse.KeyPairId"));
+		createKeyPairResponse.setKeyPairName(_ctx.stringValue("CreateKeyPairResponse.KeyPairName"));
 		createKeyPairResponse.setPrivateKeyBody(_ctx.stringValue("CreateKeyPairResponse.PrivateKeyBody"));
 	 
 	 	return createKeyPairResponse;

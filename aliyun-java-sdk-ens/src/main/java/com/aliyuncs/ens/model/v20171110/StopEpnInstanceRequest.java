@@ -26,7 +26,7 @@ public class StopEpnInstanceRequest extends RpcAcsRequest<StopEpnInstanceRespons
 
 	private String ePNInstanceId;
 	public StopEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "StopEpnInstance");
+		super("Ens", "2017-11-10", "StopEpnInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -47,28 +47,20 @@ public class PushApplicationDataResponse extends AcsResponse {
 
 	public static class PushResult {
 
-		private String version;
-
-		private String resultDescrip;
+		private String name;
 
 		private Integer resultCode;
 
-		private String name;
+		private String resultDescrip;
 
-		public String getVersion() {
-			return this.version;
+		private String version;
+
+		public String getName() {
+			return this.name;
 		}
 
-		public void setVersion(String version) {
-			this.version = version;
-		}
-
-		public String getResultDescrip() {
-			return this.resultDescrip;
-		}
-
-		public void setResultDescrip(String resultDescrip) {
-			this.resultDescrip = resultDescrip;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public Integer getResultCode() {
@@ -79,12 +71,20 @@ public class PushApplicationDataResponse extends AcsResponse {
 			this.resultCode = resultCode;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getResultDescrip() {
+			return this.resultDescrip;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setResultDescrip(String resultDescrip) {
+			this.resultDescrip = resultDescrip;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 	}
 

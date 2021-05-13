@@ -30,7 +30,7 @@ public class UnassociateEipAddressRequest extends RpcAcsRequest<UnassociateEipAd
 
 	private String instanceIdInternetIp;
 	public UnassociateEipAddressRequest() {
-		super("Ens", "2017-11-10", "UnassociateEipAddress");
+		super("Ens", "2017-11-10", "UnassociateEipAddress", "ens");
 		setMethod(MethodType.POST);
 	}
 

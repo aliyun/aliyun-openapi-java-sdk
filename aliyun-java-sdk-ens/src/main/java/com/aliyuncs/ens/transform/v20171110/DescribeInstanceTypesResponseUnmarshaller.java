@@ -32,10 +32,10 @@ public class DescribeInstanceTypesResponseUnmarshaller {
 		List<InstanceType> instanceTypes = new ArrayList<InstanceType>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceTypesResponse.InstanceTypes.Length"); i++) {
 			InstanceType instanceType = new InstanceType();
-			instanceType.setMemorySize(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
 			instanceType.setCpuCoreCount(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].CpuCoreCount"));
-			instanceType.setInstanceTypeName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeName"));
 			instanceType.setInstanceTypeId(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeId"));
+			instanceType.setInstanceTypeName(_ctx.stringValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].InstanceTypeName"));
+			instanceType.setMemorySize(_ctx.integerValue("DescribeInstanceTypesResponse.InstanceTypes["+ i +"].MemorySize"));
 
 			instanceTypes.add(instanceType);
 		}

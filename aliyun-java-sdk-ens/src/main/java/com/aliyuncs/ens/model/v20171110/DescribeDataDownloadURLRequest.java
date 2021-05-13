@@ -34,7 +34,7 @@ public class DescribeDataDownloadURLRequest extends RpcAcsRequest<DescribeDataDo
 
 	private String appId;
 	public DescribeDataDownloadURLRequest() {
-		super("Ens", "2017-11-10", "DescribeDataDownloadURL");
+		super("Ens", "2017-11-10", "DescribeDataDownloadURL", "ens");
 		setMethod(MethodType.GET);
 	}
 

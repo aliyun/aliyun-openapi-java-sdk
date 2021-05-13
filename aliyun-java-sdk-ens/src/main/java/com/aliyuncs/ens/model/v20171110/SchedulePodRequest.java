@@ -44,7 +44,7 @@ public class SchedulePodRequest extends RpcAcsRequest<SchedulePodResponse> {
 
 	private String requirements;
 	public SchedulePodRequest() {
-		super("Ens", "2017-11-10", "SchedulePod");
+		super("Ens", "2017-11-10", "SchedulePod", "ens");
 		setMethod(MethodType.POST);
 	}
 

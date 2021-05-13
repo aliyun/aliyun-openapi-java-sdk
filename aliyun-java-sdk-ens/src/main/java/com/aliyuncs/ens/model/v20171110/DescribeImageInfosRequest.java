@@ -26,7 +26,7 @@ public class DescribeImageInfosRequest extends RpcAcsRequest<DescribeImageInfosR
 
 	private String osType;
 	public DescribeImageInfosRequest() {
-		super("Ens", "2017-11-10", "DescribeImageInfos");
+		super("Ens", "2017-11-10", "DescribeImageInfos", "ens");
 		setMethod(MethodType.POST);
 	}
 

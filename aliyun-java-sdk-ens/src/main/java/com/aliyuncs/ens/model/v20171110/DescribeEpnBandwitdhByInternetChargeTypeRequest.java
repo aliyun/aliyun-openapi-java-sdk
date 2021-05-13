@@ -34,7 +34,7 @@ public class DescribeEpnBandwitdhByInternetChargeTypeRequest extends RpcAcsReque
 
 	private String endTime;
 	public DescribeEpnBandwitdhByInternetChargeTypeRequest() {
-		super("Ens", "2017-11-10", "DescribeEpnBandwitdhByInternetChargeType");
+		super("Ens", "2017-11-10", "DescribeEpnBandwitdhByInternetChargeType", "ens");
 		setMethod(MethodType.POST);
 	}
 

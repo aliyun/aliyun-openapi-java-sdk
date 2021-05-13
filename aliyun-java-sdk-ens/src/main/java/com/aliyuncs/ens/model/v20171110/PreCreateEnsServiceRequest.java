@@ -52,7 +52,7 @@ public class PreCreateEnsServiceRequest extends RpcAcsRequest<PreCreateEnsServic
 
 	private String schedulingStrategy;
 	public PreCreateEnsServiceRequest() {
-		super("Ens", "2017-11-10", "PreCreateEnsService");
+		super("Ens", "2017-11-10", "PreCreateEnsService", "ens");
 		setMethod(MethodType.POST);
 	}
 

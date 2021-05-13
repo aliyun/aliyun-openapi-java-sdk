@@ -29,36 +29,9 @@ public class DescribeEpnInstanceAttributeResponseUnmarshaller {
 	public static DescribeEpnInstanceAttributeResponse unmarshall(DescribeEpnInstanceAttributeResponse describeEpnInstanceAttributeResponse, UnmarshallerContext _ctx) {
 		
 		describeEpnInstanceAttributeResponse.setRequestId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.RequestId"));
-		describeEpnInstanceAttributeResponse.setNetworkingModel(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.NetworkingModel"));
 		describeEpnInstanceAttributeResponse.setEPNInstanceId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.EPNInstanceId"));
 		describeEpnInstanceAttributeResponse.setEPNInstanceName(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.EPNInstanceName"));
-
-		List<EPNInstance> instances = new ArrayList<EPNInstance>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeEpnInstanceAttributeResponse.Instances.Length"); i++) {
-			EPNInstance ePNInstance = new EPNInstance();
-			ePNInstance.setStatus(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].Status"));
-			ePNInstance.setPublicIpAddress(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].PublicIpAddress"));
-			ePNInstance.setInstanceName(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
-			ePNInstance.setPrivateIpAddress(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].PrivateIpAddress"));
-			ePNInstance.setInstanceId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].InstanceId"));
-			ePNInstance.setIsp(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].Isp"));
-			ePNInstance.setEnsRegionId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].EnsRegionId"));
-
-			instances.add(ePNInstance);
-		}
-		describeEpnInstanceAttributeResponse.setInstances(instances);
-
-		List<EPNInstance1> vSwitches = new ArrayList<EPNInstance1>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeEpnInstanceAttributeResponse.VSwitches.Length"); i++) {
-			EPNInstance1 ePNInstance1 = new EPNInstance1();
-			ePNInstance1.setVSwitchId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].VSwitchId"));
-			ePNInstance1.setCidrBlock(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].CidrBlock"));
-			ePNInstance1.setVSwitchName(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].VSwitchName"));
-			ePNInstance1.setEnsRegionId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].EnsRegionId"));
-
-			vSwitches.add(ePNInstance1);
-		}
-		describeEpnInstanceAttributeResponse.setVSwitches(vSwitches);
+		describeEpnInstanceAttributeResponse.setNetworkingModel(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.NetworkingModel"));
 
 		List<ConfVersionsItem> confVersions = new ArrayList<ConfVersionsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEpnInstanceAttributeResponse.ConfVersions.Length"); i++) {
@@ -69,6 +42,33 @@ public class DescribeEpnInstanceAttributeResponseUnmarshaller {
 			confVersions.add(confVersionsItem);
 		}
 		describeEpnInstanceAttributeResponse.setConfVersions(confVersions);
+
+		List<EPNInstance> instances = new ArrayList<EPNInstance>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEpnInstanceAttributeResponse.Instances.Length"); i++) {
+			EPNInstance ePNInstance = new EPNInstance();
+			ePNInstance.setEnsRegionId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].EnsRegionId"));
+			ePNInstance.setInstanceId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].InstanceId"));
+			ePNInstance.setInstanceName(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].InstanceName"));
+			ePNInstance.setIsp(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].Isp"));
+			ePNInstance.setPrivateIpAddress(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].PrivateIpAddress"));
+			ePNInstance.setPublicIpAddress(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].PublicIpAddress"));
+			ePNInstance.setStatus(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.Instances["+ i +"].Status"));
+
+			instances.add(ePNInstance);
+		}
+		describeEpnInstanceAttributeResponse.setInstances(instances);
+
+		List<EPNInstance1> vSwitches = new ArrayList<EPNInstance1>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeEpnInstanceAttributeResponse.VSwitches.Length"); i++) {
+			EPNInstance1 ePNInstance1 = new EPNInstance1();
+			ePNInstance1.setCidrBlock(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].CidrBlock"));
+			ePNInstance1.setEnsRegionId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].EnsRegionId"));
+			ePNInstance1.setVSwitchId(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].VSwitchId"));
+			ePNInstance1.setVSwitchName(_ctx.stringValue("DescribeEpnInstanceAttributeResponse.VSwitches["+ i +"].VSwitchName"));
+
+			vSwitches.add(ePNInstance1);
+		}
+		describeEpnInstanceAttributeResponse.setVSwitches(vSwitches);
 	 
 	 	return describeEpnInstanceAttributeResponse;
 	}

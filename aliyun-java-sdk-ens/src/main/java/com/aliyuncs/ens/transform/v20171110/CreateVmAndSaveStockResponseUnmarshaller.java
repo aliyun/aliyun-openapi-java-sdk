@@ -23,10 +23,10 @@ public class CreateVmAndSaveStockResponseUnmarshaller {
 	public static CreateVmAndSaveStockResponse unmarshall(CreateVmAndSaveStockResponse createVmAndSaveStockResponse, UnmarshallerContext _ctx) {
 		
 		createVmAndSaveStockResponse.setRequestId(_ctx.stringValue("CreateVmAndSaveStockResponse.RequestId"));
+		createVmAndSaveStockResponse.setCode(_ctx.integerValue("CreateVmAndSaveStockResponse.Code"));
 		createVmAndSaveStockResponse.setMsg(_ctx.stringValue("CreateVmAndSaveStockResponse.Msg"));
 		createVmAndSaveStockResponse.setDesc(_ctx.stringValue("CreateVmAndSaveStockResponse.Desc"));
 		createVmAndSaveStockResponse.setData(_ctx.stringValue("CreateVmAndSaveStockResponse.Data"));
-		createVmAndSaveStockResponse.setCode(_ctx.integerValue("CreateVmAndSaveStockResponse.Code"));
 	 
 	 	return createVmAndSaveStockResponse;
 	}

@@ -32,7 +32,7 @@ public class DescribeEpnInstancesRequest extends RpcAcsRequest<DescribeEpnInstan
 
 	private String ePNInstanceName;
 	public DescribeEpnInstancesRequest() {
-		super("Ens", "2017-11-10", "DescribeEpnInstances");
+		super("Ens", "2017-11-10", "DescribeEpnInstances", "ens");
 		setMethod(MethodType.POST);
 	}
 

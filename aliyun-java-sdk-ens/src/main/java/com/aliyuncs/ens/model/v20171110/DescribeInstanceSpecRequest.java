@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeInstanceSpecRequest extends RpcAcsRequest<DescribeInstanceSpecResponse> {
 	   
 	public DescribeInstanceSpecRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceSpec");
+		super("Ens", "2017-11-10", "DescribeInstanceSpec", "ens");
 		setMethod(MethodType.POST);
 	}
 

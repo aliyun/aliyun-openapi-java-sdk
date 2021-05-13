@@ -36,7 +36,7 @@ public class DescribeUserBandWidthDataRequest extends RpcAcsRequest<DescribeUser
 
 	private String endTime;
 	public DescribeUserBandWidthDataRequest() {
-		super("Ens", "2017-11-10", "DescribeUserBandWidthData");
+		super("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens");
 		setMethod(MethodType.POST);
 	}
 

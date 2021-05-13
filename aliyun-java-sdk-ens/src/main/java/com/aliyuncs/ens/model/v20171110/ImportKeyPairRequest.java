@@ -28,7 +28,7 @@ public class ImportKeyPairRequest extends RpcAcsRequest<ImportKeyPairResponse> {
 
 	private String publicKeyBody;
 	public ImportKeyPairRequest() {
-		super("Ens", "2017-11-10", "ImportKeyPair");
+		super("Ens", "2017-11-10", "ImportKeyPair", "ens");
 		setMethod(MethodType.POST);
 	}
 

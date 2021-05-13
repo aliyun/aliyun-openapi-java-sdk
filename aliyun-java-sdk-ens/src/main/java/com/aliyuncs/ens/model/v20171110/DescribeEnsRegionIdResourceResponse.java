@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<EnsRegionIdResource> ensRegionIdResources;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +51,20 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<EnsRegionIdResource> getEnsRegionIdResources() {
@@ -77,39 +77,23 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
 	public static class EnsRegionIdResource {
 
-		private Integer internetBandwidth;
-
-		private Integer instanceCount;
-
 		private String area;
-
-		private String isp;
-
-		private String ensRegionIdName;
 
 		private String areaCode;
 
-		private Integer vCpu;
+		private String bizDate;
 
 		private String ensRegionId;
 
-		private String bizDate;
+		private String ensRegionIdName;
 
-		public Integer getInternetBandwidth() {
-			return this.internetBandwidth;
-		}
+		private Integer instanceCount;
 
-		public void setInternetBandwidth(Integer internetBandwidth) {
-			this.internetBandwidth = internetBandwidth;
-		}
+		private Integer internetBandwidth;
 
-		public Integer getInstanceCount() {
-			return this.instanceCount;
-		}
+		private String isp;
 
-		public void setInstanceCount(Integer instanceCount) {
-			this.instanceCount = instanceCount;
-		}
+		private Integer vCpu;
 
 		public String getArea() {
 			return this.area;
@@ -117,22 +101,6 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 
 		public void setArea(String area) {
 			this.area = area;
-		}
-
-		public String getIsp() {
-			return this.isp;
-		}
-
-		public void setIsp(String isp) {
-			this.isp = isp;
-		}
-
-		public String getEnsRegionIdName() {
-			return this.ensRegionIdName;
-		}
-
-		public void setEnsRegionIdName(String ensRegionIdName) {
-			this.ensRegionIdName = ensRegionIdName;
 		}
 
 		public String getAreaCode() {
@@ -143,12 +111,12 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 			this.areaCode = areaCode;
 		}
 
-		public Integer getVCpu() {
-			return this.vCpu;
+		public String getBizDate() {
+			return this.bizDate;
 		}
 
-		public void setVCpu(Integer vCpu) {
-			this.vCpu = vCpu;
+		public void setBizDate(String bizDate) {
+			this.bizDate = bizDate;
 		}
 
 		public String getEnsRegionId() {
@@ -159,12 +127,44 @@ public class DescribeEnsRegionIdResourceResponse extends AcsResponse {
 			this.ensRegionId = ensRegionId;
 		}
 
-		public String getBizDate() {
-			return this.bizDate;
+		public String getEnsRegionIdName() {
+			return this.ensRegionIdName;
 		}
 
-		public void setBizDate(String bizDate) {
-			this.bizDate = bizDate;
+		public void setEnsRegionIdName(String ensRegionIdName) {
+			this.ensRegionIdName = ensRegionIdName;
+		}
+
+		public Integer getInstanceCount() {
+			return this.instanceCount;
+		}
+
+		public void setInstanceCount(Integer instanceCount) {
+			this.instanceCount = instanceCount;
+		}
+
+		public Integer getInternetBandwidth() {
+			return this.internetBandwidth;
+		}
+
+		public void setInternetBandwidth(Integer internetBandwidth) {
+			this.internetBandwidth = internetBandwidth;
+		}
+
+		public String getIsp() {
+			return this.isp;
+		}
+
+		public void setIsp(String isp) {
+			this.isp = isp;
+		}
+
+		public Integer getVCpu() {
+			return this.vCpu;
+		}
+
+		public void setVCpu(Integer vCpu) {
+			this.vCpu = vCpu;
 		}
 	}
 

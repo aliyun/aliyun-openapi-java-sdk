@@ -28,19 +28,19 @@ public class DescribeServcieScheduleResponseUnmarshaller {
 	public static DescribeServcieScheduleResponse unmarshall(DescribeServcieScheduleResponse describeServcieScheduleResponse, UnmarshallerContext _ctx) {
 		
 		describeServcieScheduleResponse.setRequestId(_ctx.stringValue("DescribeServcieScheduleResponse.RequestId"));
+		describeServcieScheduleResponse.setIndex(_ctx.integerValue("DescribeServcieScheduleResponse.Index"));
+		describeServcieScheduleResponse.setInstanceId(_ctx.stringValue("DescribeServcieScheduleResponse.InstanceId"));
+		describeServcieScheduleResponse.setInstanceIp(_ctx.stringValue("DescribeServcieScheduleResponse.InstanceIp"));
+		describeServcieScheduleResponse.setInstancePort(_ctx.integerValue("DescribeServcieScheduleResponse.InstancePort"));
 		describeServcieScheduleResponse.setRequestRepeated(_ctx.booleanValue("DescribeServcieScheduleResponse.RequestRepeated"));
 		describeServcieScheduleResponse.setTcpPorts(_ctx.stringValue("DescribeServcieScheduleResponse.TcpPorts"));
-		describeServcieScheduleResponse.setInstanceId(_ctx.stringValue("DescribeServcieScheduleResponse.InstanceId"));
-		describeServcieScheduleResponse.setInstancePort(_ctx.integerValue("DescribeServcieScheduleResponse.InstancePort"));
-		describeServcieScheduleResponse.setInstanceIp(_ctx.stringValue("DescribeServcieScheduleResponse.InstanceIp"));
-		describeServcieScheduleResponse.setIndex(_ctx.integerValue("DescribeServcieScheduleResponse.Index"));
 
 		PodAbstractInfo podAbstractInfo = new PodAbstractInfo();
-		podAbstractInfo.setStatus(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.Status"));
-		podAbstractInfo.setResourceScope(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.ResourceScope"));
 		podAbstractInfo.setContainerService(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.ContainerService"));
-		podAbstractInfo.setNamespace(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.Namespace"));
 		podAbstractInfo.setName(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.Name"));
+		podAbstractInfo.setNamespace(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.Namespace"));
+		podAbstractInfo.setResourceScope(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.ResourceScope"));
+		podAbstractInfo.setStatus(_ctx.booleanValue("DescribeServcieScheduleResponse.PodAbstractInfo.Status"));
 
 		List<ContainerStatus> containerStatuses = new ArrayList<ContainerStatus>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeServcieScheduleResponse.PodAbstractInfo.ContainerStatuses.Length"); i++) {

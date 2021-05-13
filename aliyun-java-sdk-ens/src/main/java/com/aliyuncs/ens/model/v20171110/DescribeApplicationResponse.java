@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApplicationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String application;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getApplication() {
 		return this.application;
@@ -42,6 +34,14 @@ public class DescribeApplicationResponse extends AcsResponse {
 
 	public void setApplication(String application) {
 		this.application = application;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

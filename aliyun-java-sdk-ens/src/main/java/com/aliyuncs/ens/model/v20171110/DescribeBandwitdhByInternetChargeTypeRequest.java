@@ -32,7 +32,7 @@ public class DescribeBandwitdhByInternetChargeTypeRequest extends RpcAcsRequest<
 
 	private String endTime;
 	public DescribeBandwitdhByInternetChargeTypeRequest() {
-		super("Ens", "2017-11-10", "DescribeBandwitdhByInternetChargeType");
+		super("Ens", "2017-11-10", "DescribeBandwitdhByInternetChargeType", "ens");
 		setMethod(MethodType.POST);
 	}
 

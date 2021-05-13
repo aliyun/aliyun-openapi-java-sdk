@@ -24,22 +24,30 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class PreCreateEnsServiceResponse extends AcsResponse {
 
-	private String requestId;
+	private String buyResourcesDetail;
+
+	private Integer code;
 
 	private String ensServiceId;
 
 	private String netLevel;
 
-	private Integer code;
+	private String requestId;
 
-	private String buyResourcesDetail;
-
-	public String getRequestId() {
-		return this.requestId;
+	public String getBuyResourcesDetail() {
+		return this.buyResourcesDetail;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setBuyResourcesDetail(String buyResourcesDetail) {
+		this.buyResourcesDetail = buyResourcesDetail;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
 	}
 
 	public String getEnsServiceId() {
@@ -58,20 +66,12 @@ public class PreCreateEnsServiceResponse extends AcsResponse {
 		this.netLevel = netLevel;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
-
-	public String getBuyResourcesDetail() {
-		return this.buyResourcesDetail;
-	}
-
-	public void setBuyResourcesDetail(String buyResourcesDetail) {
-		this.buyResourcesDetail = buyResourcesDetail;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

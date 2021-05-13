@@ -32,7 +32,7 @@ public class DescribeSecurityGroupsRequest extends RpcAcsRequest<DescribeSecurit
 
 	private Integer pageSize;
 	public DescribeSecurityGroupsRequest() {
-		super("Ens", "2017-11-10", "DescribeSecurityGroups");
+		super("Ens", "2017-11-10", "DescribeSecurityGroups", "ens");
 		setMethod(MethodType.POST);
 	}
 

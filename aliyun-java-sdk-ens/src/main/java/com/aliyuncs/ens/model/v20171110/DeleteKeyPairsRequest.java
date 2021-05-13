@@ -26,7 +26,7 @@ public class DeleteKeyPairsRequest extends RpcAcsRequest<DeleteKeyPairsResponse>
 
 	private String keyPairName;
 	public DeleteKeyPairsRequest() {
-		super("Ens", "2017-11-10", "DeleteKeyPairs");
+		super("Ens", "2017-11-10", "DeleteKeyPairs", "ens");
 		setMethod(MethodType.POST);
 	}
 

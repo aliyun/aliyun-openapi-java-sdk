@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
+	private String requestId;
+
 	private MonitorData monitorData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,6 +37,14 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public MonitorData getMonitorData() {
@@ -89,31 +89,15 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 
 		public static class BandWidthMonitorDataItem {
 
-			private Integer upBandWidth;
-
-			private Integer internetTX;
-
 			private Integer downBandWidth;
 
 			private Integer internetRX;
 
+			private Integer internetTX;
+
 			private String timeStamp;
 
-			public Integer getUpBandWidth() {
-				return this.upBandWidth;
-			}
-
-			public void setUpBandWidth(Integer upBandWidth) {
-				this.upBandWidth = upBandWidth;
-			}
-
-			public Integer getInternetTX() {
-				return this.internetTX;
-			}
-
-			public void setInternetTX(Integer internetTX) {
-				this.internetTX = internetTX;
-			}
+			private Integer upBandWidth;
 
 			public Integer getDownBandWidth() {
 				return this.downBandWidth;
@@ -131,12 +115,28 @@ public class DescribeUserBandWidthDataResponse extends AcsResponse {
 				this.internetRX = internetRX;
 			}
 
+			public Integer getInternetTX() {
+				return this.internetTX;
+			}
+
+			public void setInternetTX(Integer internetTX) {
+				this.internetTX = internetTX;
+			}
+
 			public String getTimeStamp() {
 				return this.timeStamp;
 			}
 
 			public void setTimeStamp(String timeStamp) {
 				this.timeStamp = timeStamp;
+			}
+
+			public Integer getUpBandWidth() {
+				return this.upBandWidth;
+			}
+
+			public void setUpBandWidth(Integer upBandWidth) {
+				this.upBandWidth = upBandWidth;
 			}
 		}
 	}

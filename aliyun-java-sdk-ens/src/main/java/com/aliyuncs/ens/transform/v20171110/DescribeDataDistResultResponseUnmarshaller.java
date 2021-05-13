@@ -29,29 +29,29 @@ public class DescribeDataDistResultResponseUnmarshaller {
 	public static DescribeDataDistResultResponse unmarshall(DescribeDataDistResultResponse describeDataDistResultResponse, UnmarshallerContext _ctx) {
 		
 		describeDataDistResultResponse.setRequestId(_ctx.stringValue("DescribeDataDistResultResponse.RequestId"));
-		describeDataDistResultResponse.setTotalCount(_ctx.integerValue("DescribeDataDistResultResponse.TotalCount"));
-		describeDataDistResultResponse.setPageSize(_ctx.integerValue("DescribeDataDistResultResponse.PageSize"));
 		describeDataDistResultResponse.setPageNumber(_ctx.integerValue("DescribeDataDistResultResponse.PageNumber"));
+		describeDataDistResultResponse.setPageSize(_ctx.integerValue("DescribeDataDistResultResponse.PageSize"));
+		describeDataDistResultResponse.setTotalCount(_ctx.integerValue("DescribeDataDistResultResponse.TotalCount"));
 
 		List<DistResult> distResults = new ArrayList<DistResult>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataDistResultResponse.DistResults.Length"); i++) {
 			DistResult distResult = new DistResult();
-			distResult.setVersion(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].Version"));
 			distResult.setName(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].Name"));
+			distResult.setVersion(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].Version"));
 
 			List<StatusStat> statusStats = new ArrayList<StatusStat>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats.Length"); j++) {
 				StatusStat statusStat = new StatusStat();
-				statusStat.setStatus(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Status"));
 				statusStat.setInstanceCount(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].InstanceCount"));
+				statusStat.setStatus(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Status"));
 
 				List<Instance> instances = new ArrayList<Instance>();
 				for (int k = 0; k < _ctx.lengthValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances.Length"); k++) {
 					Instance instance = new Instance();
 					instance.setInstanceId(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].InstanceId"));
-					instance.setUpdateTime(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].UpdateTime"));
 					instance.setStartTime(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].StartTime"));
 					instance.setStatusDescrip(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].StatusDescrip"));
+					instance.setUpdateTime(_ctx.stringValue("DescribeDataDistResultResponse.DistResults["+ i +"].StatusStats["+ j +"].Instances["+ k +"].UpdateTime"));
 
 					instances.add(instance);
 				}

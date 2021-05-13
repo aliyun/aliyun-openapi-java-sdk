@@ -34,7 +34,7 @@ public class CreateEpnInstanceRequest extends RpcAcsRequest<CreateEpnInstanceRes
 
 	private Integer internetMaxBandwidthOut;
 	public CreateEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "CreateEpnInstance");
+		super("Ens", "2017-11-10", "CreateEpnInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

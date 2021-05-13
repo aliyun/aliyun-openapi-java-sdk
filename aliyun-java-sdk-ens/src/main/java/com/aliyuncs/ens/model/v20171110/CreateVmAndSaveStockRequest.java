@@ -34,7 +34,7 @@ public class CreateVmAndSaveStockRequest extends RpcAcsRequest<CreateVmAndSaveSt
 
 	private String workloadUuid;
 	public CreateVmAndSaveStockRequest() {
-		super("Ens", "2017-11-10", "CreateVmAndSaveStock");
+		super("Ens", "2017-11-10", "CreateVmAndSaveStock", "ens");
 		setMethod(MethodType.POST);
 	}
 

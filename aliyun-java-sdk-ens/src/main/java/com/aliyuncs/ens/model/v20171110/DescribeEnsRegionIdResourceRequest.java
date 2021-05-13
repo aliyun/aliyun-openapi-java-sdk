@@ -36,7 +36,7 @@ public class DescribeEnsRegionIdResourceRequest extends RpcAcsRequest<DescribeEn
 
 	private String endTime;
 	public DescribeEnsRegionIdResourceRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsRegionIdResource");
+		super("Ens", "2017-11-10", "DescribeEnsRegionIdResource", "ens");
 		setMethod(MethodType.POST);
 	}
 

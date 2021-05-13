@@ -67,21 +67,13 @@ public class DistApplicationDataResponse extends AcsResponse {
 
 	public static class DistResult {
 
-		private String version;
-
 		private String resultDescrip;
+
+		private String version;
 
 		private Integer resultCode;
 
 		private String name;
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
 
 		public String getResultDescrip() {
 			return this.resultDescrip;
@@ -89,6 +81,14 @@ public class DistApplicationDataResponse extends AcsResponse {
 
 		public void setResultDescrip(String resultDescrip) {
 			this.resultDescrip = resultDescrip;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public Integer getResultCode() {

@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeAvailableResourceRequest extends RpcAcsRequest<DescribeAvailableResourceResponse> {
 	   
 	public DescribeAvailableResourceRequest() {
-		super("Ens", "2017-11-10", "DescribeAvailableResource");
+		super("Ens", "2017-11-10", "DescribeAvailableResource", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -32,7 +32,7 @@ public class DescribeApplicationRequest extends RpcAcsRequest<DescribeApplicatio
 
 	private String appId;
 	public DescribeApplicationRequest() {
-		super("Ens", "2017-11-10", "DescribeApplication");
+		super("Ens", "2017-11-10", "DescribeApplication", "ens");
 		setMethod(MethodType.POST);
 	}
 

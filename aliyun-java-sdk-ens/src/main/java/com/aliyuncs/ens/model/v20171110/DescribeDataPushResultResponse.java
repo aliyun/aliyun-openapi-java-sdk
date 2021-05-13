@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataPushResultResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<PushResult> pushResults;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +51,20 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<PushResult> getPushResults() {
@@ -77,19 +77,11 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 	public static class PushResult {
 
-		private String version;
-
 		private String name;
 
+		private String version;
+
 		private List<StatusStat> statusStatS;
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
 
 		public String getName() {
 			return this.name;
@@ -97,6 +89,14 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public List<StatusStat> getStatusStatS() {
@@ -109,19 +109,11 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 		public static class StatusStat {
 
-			private String status;
-
 			private Integer regionIdCount;
 
+			private String status;
+
 			private List<RegionId> regionIds;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
 
 			public Integer getRegionIdCount() {
 				return this.regionIdCount;
@@ -129,6 +121,14 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 			public void setRegionIdCount(Integer regionIdCount) {
 				this.regionIdCount = regionIdCount;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public List<RegionId> getRegionIds() {
@@ -141,20 +141,20 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 
 			public static class RegionId {
 
-				private String updateTime;
+				private String regionId;
 
 				private String startTime;
 
-				private String regionId;
-
 				private String statusDescrip;
 
-				public String getUpdateTime() {
-					return this.updateTime;
+				private String updateTime;
+
+				public String getRegionId() {
+					return this.regionId;
 				}
 
-				public void setUpdateTime(String updateTime) {
-					this.updateTime = updateTime;
+				public void setRegionId(String regionId) {
+					this.regionId = regionId;
 				}
 
 				public String getStartTime() {
@@ -165,20 +165,20 @@ public class DescribeDataPushResultResponse extends AcsResponse {
 					this.startTime = startTime;
 				}
 
-				public String getRegionId() {
-					return this.regionId;
-				}
-
-				public void setRegionId(String regionId) {
-					this.regionId = regionId;
-				}
-
 				public String getStatusDescrip() {
 					return this.statusDescrip;
 				}
 
 				public void setStatusDescrip(String statusDescrip) {
 					this.statusDescrip = statusDescrip;
+				}
+
+				public String getUpdateTime() {
+					return this.updateTime;
+				}
+
+				public void setUpdateTime(String updateTime) {
+					this.updateTime = updateTime;
 				}
 			}
 		}

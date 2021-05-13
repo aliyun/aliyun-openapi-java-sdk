@@ -26,7 +26,7 @@ public class DescribeEnsRegionsRequest extends RpcAcsRequest<DescribeEnsRegionsR
 
 	private String ensRegionId;
 	public DescribeEnsRegionsRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsRegions");
+		super("Ens", "2017-11-10", "DescribeEnsRegions", "ens");
 		setMethod(MethodType.POST);
 	}
 

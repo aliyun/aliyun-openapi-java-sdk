@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteVmResponse extends AcsResponse {
 
+	private Integer code;
+
 	private String msg;
 
 	private String desc;
 
-	private String requestId;
-
 	private String data;
 
-	private Integer code;
+	private String requestId;
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
 	public String getMsg() {
 		return this.msg;
@@ -50,14 +58,6 @@ public class DeleteVmResponse extends AcsResponse {
 		this.desc = desc;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -66,12 +66,12 @@ public class DeleteVmResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public Integer getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(Integer code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

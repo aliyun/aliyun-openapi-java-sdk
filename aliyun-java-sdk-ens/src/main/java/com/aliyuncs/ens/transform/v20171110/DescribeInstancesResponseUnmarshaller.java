@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.DataDiskItem;
+import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.NetworkAttributes;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.PrivateIpAddress;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.PublicIpAddress;
 import com.aliyuncs.ens.model.v20171110.DescribeInstancesResponse.Instance.SystemDisk;
@@ -31,42 +32,30 @@ public class DescribeInstancesResponseUnmarshaller {
 	public static DescribeInstancesResponse unmarshall(DescribeInstancesResponse describeInstancesResponse, UnmarshallerContext _ctx) {
 		
 		describeInstancesResponse.setRequestId(_ctx.stringValue("DescribeInstancesResponse.RequestId"));
-		describeInstancesResponse.setTotalCount(_ctx.integerValue("DescribeInstancesResponse.TotalCount"));
+		describeInstancesResponse.setCode(_ctx.integerValue("DescribeInstancesResponse.Code"));
 		describeInstancesResponse.setPageSize(_ctx.integerValue("DescribeInstancesResponse.PageSize"));
 		describeInstancesResponse.setPageNumber(_ctx.integerValue("DescribeInstancesResponse.PageNumber"));
-		describeInstancesResponse.setCode(_ctx.integerValue("DescribeInstancesResponse.Code"));
+		describeInstancesResponse.setTotalCount(_ctx.integerValue("DescribeInstancesResponse.TotalCount"));
 
 		List<Instance> instances = new ArrayList<Instance>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstancesResponse.Instances.Length"); i++) {
 			Instance instance = new Instance();
-			instance.setStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Status"));
-			instance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
-			instance.setMemory(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Memory"));
-			instance.setCpu(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Cpu"));
-			instance.setOSName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSName"));
-			instance.setSpecName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpecName"));
-			instance.setInstanceName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
-			instance.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthOut"));
-			instance.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthIn"));
-			instance.setExpiredTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpiredTime"));
-			instance.setImageId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ImageId"));
 			instance.setCreationTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].CreationTime"));
-			instance.setEnsRegionId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EnsRegionId"));
-			instance.setDisk(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Disk"));
-			instance.setHostName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].HostName"));
+			instance.setStatus(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Status"));
+			instance.setSpecName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SpecName"));
 			instance.setInstanceResourceType(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceResourceType"));
-
-			List<String> publicIpAddress = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddress.Length"); j++) {
-				publicIpAddress.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddress["+ j +"]"));
-			}
-			instance.setPublicIpAddress(publicIpAddress);
-
-			List<String> innerIpAddress = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].InnerIpAddress.Length"); j++) {
-				innerIpAddress.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InnerIpAddress["+ j +"]"));
-			}
-			instance.setInnerIpAddress(innerIpAddress);
+			instance.setHostName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].HostName"));
+			instance.setInstanceId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceId"));
+			instance.setInternetMaxBandwidthIn(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthIn"));
+			instance.setInternetMaxBandwidthOut(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].InternetMaxBandwidthOut"));
+			instance.setEnsRegionId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].EnsRegionId"));
+			instance.setCpu(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].Cpu"));
+			instance.setExpiredTime(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ExpiredTime"));
+			instance.setInstanceName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InstanceName"));
+			instance.setDisk(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Disk"));
+			instance.setMemory(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].Memory"));
+			instance.setOSName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].OSName"));
+			instance.setImageId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].ImageId"));
 
 			List<String> securityGroupIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].SecurityGroupIds.Length"); j++) {
@@ -74,56 +63,79 @@ public class DescribeInstancesResponseUnmarshaller {
 			}
 			instance.setSecurityGroupIds(securityGroupIds);
 
+			List<String> innerIpAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].InnerIpAddress.Length"); j++) {
+				innerIpAddress.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].InnerIpAddress["+ j +"]"));
+			}
+			instance.setInnerIpAddress(innerIpAddress);
+
+			List<String> publicIpAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddress.Length"); j++) {
+				publicIpAddress.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddress["+ j +"]"));
+			}
+			instance.setPublicIpAddress(publicIpAddress);
+
 			SystemDisk systemDisk = new SystemDisk();
-			systemDisk.setCategory(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.Category"));
-			systemDisk.setSize(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.Size"));
-			systemDisk.setDisk_type(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.disk_type"));
-			systemDisk.setName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.name"));
 			systemDisk.setDevice_type(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.device_type"));
-			systemDisk.setStorage(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.storage"));
+			systemDisk.setDisk_type(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.disk_type"));
+			systemDisk.setSize(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.Size"));
 			systemDisk.setDiskName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.DiskName"));
 			systemDisk.setUuid(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.uuid"));
+			systemDisk.setStorage(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.storage"));
 			systemDisk.setDiskId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.DiskId"));
+			systemDisk.setCategory(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.Category"));
+			systemDisk.setName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].SystemDisk.name"));
 			instance.setSystemDisk(systemDisk);
+
+			NetworkAttributes networkAttributes = new NetworkAttributes();
+			networkAttributes.setNetworkId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkAttributes.NetworkId"));
+			networkAttributes.setVSwitchId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkAttributes.VSwitchId"));
+
+			List<String> privateIpAddress = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].NetworkAttributes.PrivateIpAddress.Length"); j++) {
+				privateIpAddress.add(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].NetworkAttributes.PrivateIpAddress["+ j +"]"));
+			}
+			networkAttributes.setPrivateIpAddress(privateIpAddress);
+			instance.setNetworkAttributes(networkAttributes);
 
 			List<DataDiskItem> dataDisk = new ArrayList<DataDiskItem>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk.Length"); j++) {
 				DataDiskItem dataDiskItem = new DataDiskItem();
-				dataDiskItem.setCategory(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Category"));
-				dataDiskItem.setSize(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Size"));
-				dataDiskItem.setDisk_type(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].disk_type"));
-				dataDiskItem.setName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].name"));
 				dataDiskItem.setDevice_type(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].device_type"));
-				dataDiskItem.setStorage(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].storage"));
+				dataDiskItem.setDisk_type(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].disk_type"));
+				dataDiskItem.setSize(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Size"));
 				dataDiskItem.setDiskName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].DiskName"));
 				dataDiskItem.setUuid(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].uuid"));
+				dataDiskItem.setStorage(_ctx.integerValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].storage"));
 				dataDiskItem.setDiskId(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].DiskId"));
+				dataDiskItem.setCategory(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].Category"));
+				dataDiskItem.setName(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].DataDisk["+ j +"].name"));
 
 				dataDisk.add(dataDiskItem);
 			}
 			instance.setDataDisk(dataDisk);
 
-			List<PrivateIpAddress> privateIpAddresses = new ArrayList<PrivateIpAddress>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses.Length"); j++) {
-				PrivateIpAddress privateIpAddress = new PrivateIpAddress();
-				privateIpAddress.setGateWay(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].GateWay"));
-				privateIpAddress.setIsp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].Isp"));
-				privateIpAddress.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].Ip"));
-
-				privateIpAddresses.add(privateIpAddress);
-			}
-			instance.setPrivateIpAddresses(privateIpAddresses);
-
 			List<PublicIpAddress> publicIpAddresses = new ArrayList<PublicIpAddress>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses.Length"); j++) {
 				PublicIpAddress publicIpAddress_ = new PublicIpAddress();
+				publicIpAddress_.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].Ip"));
 				publicIpAddress_.setGateWay(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].GateWay"));
 				publicIpAddress_.setIsp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].Isp"));
-				publicIpAddress_.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PublicIpAddresses["+ j +"].Ip"));
 
 				publicIpAddresses.add(publicIpAddress_);
 			}
 			instance.setPublicIpAddresses(publicIpAddresses);
+
+			List<PrivateIpAddress> privateIpAddresses = new ArrayList<PrivateIpAddress>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses.Length"); j++) {
+				PrivateIpAddress privateIpAddress_ = new PrivateIpAddress();
+				privateIpAddress_.setIp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].Ip"));
+				privateIpAddress_.setGateWay(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].GateWay"));
+				privateIpAddress_.setIsp(_ctx.stringValue("DescribeInstancesResponse.Instances["+ i +"].PrivateIpAddresses["+ j +"].Isp"));
+
+				privateIpAddresses.add(privateIpAddress_);
+			}
+			instance.setPrivateIpAddresses(privateIpAddresses);
 
 			instances.add(instance);
 		}

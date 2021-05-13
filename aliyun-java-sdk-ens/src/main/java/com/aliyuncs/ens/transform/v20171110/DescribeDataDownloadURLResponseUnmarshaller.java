@@ -28,12 +28,12 @@ public class DescribeDataDownloadURLResponseUnmarshaller {
 	public static DescribeDataDownloadURLResponse unmarshall(DescribeDataDownloadURLResponse describeDataDownloadURLResponse, UnmarshallerContext _ctx) {
 		
 		describeDataDownloadURLResponse.setRequestId(_ctx.stringValue("DescribeDataDownloadURLResponse.RequestId"));
-		describeDataDownloadURLResponse.setMessage(_ctx.stringValue("DescribeDataDownloadURLResponse.Message"));
 		describeDataDownloadURLResponse.setCode(_ctx.longValue("DescribeDataDownloadURLResponse.Code"));
+		describeDataDownloadURLResponse.setMessage(_ctx.stringValue("DescribeDataDownloadURLResponse.Message"));
 
 		Data data = new Data();
-		data.setExpireTime(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ExpireTime"));
 		data.setUrl(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.Url"));
+		data.setExpireTime(_ctx.stringValue("DescribeDataDownloadURLResponse.Data.ExpireTime"));
 
 		List<文件服务器列表> serverList = new ArrayList<文件服务器列表>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDataDownloadURLResponse.Data.ServerList.Length"); i++) {

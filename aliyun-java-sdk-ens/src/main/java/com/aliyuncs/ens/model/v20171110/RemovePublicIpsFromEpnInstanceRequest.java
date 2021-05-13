@@ -28,7 +28,7 @@ public class RemovePublicIpsFromEpnInstanceRequest extends RpcAcsRequest<RemoveP
 
 	private String instanceInfos;
 	public RemovePublicIpsFromEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "RemovePublicIpsFromEpnInstance");
+		super("Ens", "2017-11-10", "RemovePublicIpsFromEpnInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

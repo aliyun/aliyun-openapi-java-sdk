@@ -30,7 +30,7 @@ public class CheckQuotaRequest extends RpcAcsRequest<CheckQuotaResponse> {
 
 	private Long aliUid;
 	public CheckQuotaRequest() {
-		super("Ens", "2017-11-10", "CheckQuota");
+		super("Ens", "2017-11-10", "CheckQuota", "ens");
 		setMethod(MethodType.POST);
 	}
 

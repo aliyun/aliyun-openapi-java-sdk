@@ -28,7 +28,7 @@ public class JoinVSwitchesToEpnInstanceRequest extends RpcAcsRequest<JoinVSwitch
 
 	private String ePNInstanceId;
 	public JoinVSwitchesToEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "JoinVSwitchesToEpnInstance");
+		super("Ens", "2017-11-10", "JoinVSwitchesToEpnInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

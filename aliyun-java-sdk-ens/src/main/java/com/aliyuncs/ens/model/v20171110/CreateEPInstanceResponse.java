@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateEPInstanceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String ePNInstanceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getEPNInstanceId() {
 		return this.ePNInstanceId;
@@ -42,6 +34,14 @@ public class CreateEPInstanceResponse extends AcsResponse {
 
 	public void setEPNInstanceId(String ePNInstanceId) {
 		this.ePNInstanceId = ePNInstanceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

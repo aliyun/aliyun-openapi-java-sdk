@@ -46,17 +46,9 @@ public class DescribeEnsRegionIdIpv6InfoResponse extends AcsResponse {
 
 	public static class SupportIpv6Info {
 
-		private Boolean supportIpv6;
-
 		private String ensRegionId;
 
-		public Boolean getSupportIpv6() {
-			return this.supportIpv6;
-		}
-
-		public void setSupportIpv6(Boolean supportIpv6) {
-			this.supportIpv6 = supportIpv6;
-		}
+		private Boolean supportIpv6;
 
 		public String getEnsRegionId() {
 			return this.ensRegionId;
@@ -64,6 +56,14 @@ public class DescribeEnsRegionIdIpv6InfoResponse extends AcsResponse {
 
 		public void setEnsRegionId(String ensRegionId) {
 			this.ensRegionId = ensRegionId;
+		}
+
+		public Boolean getSupportIpv6() {
+			return this.supportIpv6;
+		}
+
+		public void setSupportIpv6(Boolean supportIpv6) {
+			this.supportIpv6 = supportIpv6;
 		}
 	}
 

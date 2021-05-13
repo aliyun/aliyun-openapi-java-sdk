@@ -28,7 +28,7 @@ public class ReleaseEipAddressRequest extends RpcAcsRequest<ReleaseEipAddressRes
 
 	private String ensRegionId;
 	public ReleaseEipAddressRequest() {
-		super("Ens", "2017-11-10", "ReleaseEipAddress");
+		super("Ens", "2017-11-10", "ReleaseEipAddress", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -25,21 +25,61 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeServcieScheduleResponse extends AcsResponse {
 
+	private Integer index;
+
+	private String instanceId;
+
+	private String instanceIp;
+
+	private Integer instancePort;
+
+	private String requestId;
+
 	private Boolean requestRepeated;
 
 	private String tcpPorts;
 
-	private String requestId;
-
-	private String instanceId;
-
-	private Integer instancePort;
-
-	private String instanceIp;
-
-	private Integer index;
-
 	private PodAbstractInfo podAbstractInfo;
+
+	public Integer getIndex() {
+		return this.index;
+	}
+
+	public void setIndex(Integer index) {
+		this.index = index;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getInstanceIp() {
+		return this.instanceIp;
+	}
+
+	public void setInstanceIp(String instanceIp) {
+		this.instanceIp = instanceIp;
+	}
+
+	public Integer getInstancePort() {
+		return this.instancePort;
+	}
+
+	public void setInstancePort(Integer instancePort) {
+		this.instancePort = instancePort;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public Boolean getRequestRepeated() {
 		return this.requestRepeated;
@@ -57,46 +97,6 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 		this.tcpPorts = tcpPorts;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public Integer getInstancePort() {
-		return this.instancePort;
-	}
-
-	public void setInstancePort(Integer instancePort) {
-		this.instancePort = instancePort;
-	}
-
-	public String getInstanceIp() {
-		return this.instanceIp;
-	}
-
-	public void setInstanceIp(String instanceIp) {
-		this.instanceIp = instanceIp;
-	}
-
-	public Integer getIndex() {
-		return this.index;
-	}
-
-	public void setIndex(Integer index) {
-		this.index = index;
-	}
-
 	public PodAbstractInfo getPodAbstractInfo() {
 		return this.podAbstractInfo;
 	}
@@ -107,33 +107,17 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 
 	public static class PodAbstractInfo {
 
-		private Boolean status;
-
-		private Boolean resourceScope;
-
 		private Boolean containerService;
-
-		private Boolean namespace;
 
 		private Boolean name;
 
+		private Boolean namespace;
+
+		private Boolean resourceScope;
+
+		private Boolean status;
+
 		private List<ContainerStatus> containerStatuses;
-
-		public Boolean getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Boolean status) {
-			this.status = status;
-		}
-
-		public Boolean getResourceScope() {
-			return this.resourceScope;
-		}
-
-		public void setResourceScope(Boolean resourceScope) {
-			this.resourceScope = resourceScope;
-		}
 
 		public Boolean getContainerService() {
 			return this.containerService;
@@ -141,6 +125,14 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 
 		public void setContainerService(Boolean containerService) {
 			this.containerService = containerService;
+		}
+
+		public Boolean getName() {
+			return this.name;
+		}
+
+		public void setName(Boolean name) {
+			this.name = name;
 		}
 
 		public Boolean getNamespace() {
@@ -151,12 +143,20 @@ public class DescribeServcieScheduleResponse extends AcsResponse {
 			this.namespace = namespace;
 		}
 
-		public Boolean getName() {
-			return this.name;
+		public Boolean getResourceScope() {
+			return this.resourceScope;
 		}
 
-		public void setName(Boolean name) {
-			this.name = name;
+		public void setResourceScope(Boolean resourceScope) {
+			this.resourceScope = resourceScope;
+		}
+
+		public Boolean getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Boolean status) {
+			this.status = status;
 		}
 
 		public List<ContainerStatus> getContainerStatuses() {

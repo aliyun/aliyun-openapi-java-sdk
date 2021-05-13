@@ -32,7 +32,7 @@ public class CreateImageRequest extends RpcAcsRequest<CreateImageResponse> {
 
 	private String product;
 	public CreateImageRequest() {
-		super("Ens", "2017-11-10", "CreateImage");
+		super("Ens", "2017-11-10", "CreateImage", "ens");
 		setMethod(MethodType.POST);
 	}
 

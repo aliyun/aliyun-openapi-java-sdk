@@ -27,20 +27,22 @@ public class DescribeVSwitchesResponseUnmarshaller {
 	public static DescribeVSwitchesResponse unmarshall(DescribeVSwitchesResponse describeVSwitchesResponse, UnmarshallerContext _ctx) {
 		
 		describeVSwitchesResponse.setRequestId(_ctx.stringValue("DescribeVSwitchesResponse.RequestId"));
-		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
 		describeVSwitchesResponse.setPageSize(_ctx.integerValue("DescribeVSwitchesResponse.PageSize"));
 		describeVSwitchesResponse.setPageNumber(_ctx.integerValue("DescribeVSwitchesResponse.PageNumber"));
+		describeVSwitchesResponse.setTotalCount(_ctx.integerValue("DescribeVSwitchesResponse.TotalCount"));
 
 		List<VSwitch> vSwitches = new ArrayList<VSwitch>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeVSwitchesResponse.VSwitches.Length"); i++) {
 			VSwitch vSwitch = new VSwitch();
+			vSwitch.setEnsRegionId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].EnsRegionId"));
 			vSwitch.setStatus(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Status"));
 			vSwitch.setFreeIpCount(_ctx.longValue("DescribeVSwitchesResponse.VSwitches["+ i +"].FreeIpCount"));
-			vSwitch.setCreatedTime(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CreatedTime"));
 			vSwitch.setVSwitchId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchId"));
 			vSwitch.setCidrBlock(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CidrBlock"));
+			vSwitch.setDescription(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].Description"));
+			vSwitch.setNetworkId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].NetworkId"));
+			vSwitch.setCreatedTime(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].CreatedTime"));
 			vSwitch.setVSwitchName(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].VSwitchName"));
-			vSwitch.setEnsRegionId(_ctx.stringValue("DescribeVSwitchesResponse.VSwitches["+ i +"].EnsRegionId"));
 
 			vSwitches.add(vSwitch);
 		}

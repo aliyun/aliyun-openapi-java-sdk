@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceTypesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
+	private String requestId;
+
 	private List<InstanceType> instanceTypes;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,6 +37,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<InstanceType> getInstanceTypes() {
@@ -57,21 +57,13 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 	public static class InstanceType {
 
-		private Integer memorySize;
-
 		private Integer cpuCoreCount;
-
-		private String instanceTypeName;
 
 		private String instanceTypeId;
 
-		public Integer getMemorySize() {
-			return this.memorySize;
-		}
+		private String instanceTypeName;
 
-		public void setMemorySize(Integer memorySize) {
-			this.memorySize = memorySize;
-		}
+		private Integer memorySize;
 
 		public Integer getCpuCoreCount() {
 			return this.cpuCoreCount;
@@ -79,6 +71,14 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 
 		public void setCpuCoreCount(Integer cpuCoreCount) {
 			this.cpuCoreCount = cpuCoreCount;
+		}
+
+		public String getInstanceTypeId() {
+			return this.instanceTypeId;
+		}
+
+		public void setInstanceTypeId(String instanceTypeId) {
+			this.instanceTypeId = instanceTypeId;
 		}
 
 		public String getInstanceTypeName() {
@@ -89,12 +89,12 @@ public class DescribeInstanceTypesResponse extends AcsResponse {
 			this.instanceTypeName = instanceTypeName;
 		}
 
-		public String getInstanceTypeId() {
-			return this.instanceTypeId;
+		public Integer getMemorySize() {
+			return this.memorySize;
 		}
 
-		public void setInstanceTypeId(String instanceTypeId) {
-			this.instanceTypeId = instanceTypeId;
+		public void setMemorySize(Integer memorySize) {
+			this.memorySize = memorySize;
 		}
 	}
 

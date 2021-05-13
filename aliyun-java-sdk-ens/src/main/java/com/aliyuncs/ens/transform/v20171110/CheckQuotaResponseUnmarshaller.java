@@ -23,10 +23,10 @@ public class CheckQuotaResponseUnmarshaller {
 	public static CheckQuotaResponse unmarshall(CheckQuotaResponse checkQuotaResponse, UnmarshallerContext _ctx) {
 		
 		checkQuotaResponse.setRequestId(_ctx.stringValue("CheckQuotaResponse.RequestId"));
+		checkQuotaResponse.setCode(_ctx.integerValue("CheckQuotaResponse.Code"));
+		checkQuotaResponse.setData(_ctx.stringValue("CheckQuotaResponse.Data"));
 		checkQuotaResponse.setMsg(_ctx.stringValue("CheckQuotaResponse.Msg"));
 		checkQuotaResponse.setDesc(_ctx.stringValue("CheckQuotaResponse.Desc"));
-		checkQuotaResponse.setData(_ctx.stringValue("CheckQuotaResponse.Data"));
-		checkQuotaResponse.setCode(_ctx.integerValue("CheckQuotaResponse.Code"));
 	 
 	 	return checkQuotaResponse;
 	}

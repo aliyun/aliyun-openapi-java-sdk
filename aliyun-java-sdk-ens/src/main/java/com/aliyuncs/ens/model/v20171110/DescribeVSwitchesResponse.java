@@ -25,22 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeVSwitchesResponse extends AcsResponse {
 
-	private Integer totalCount;
+	private Integer pageSize;
 
 	private String requestId;
 
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private Integer totalCount;
 
 	private List<VSwitch> vSwitches;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getRequestId() {
@@ -51,20 +51,20 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<VSwitch> getVSwitches() {
@@ -77,19 +77,31 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 	public static class VSwitch {
 
+		private String ensRegionId;
+
 		private String status;
 
 		private Long freeIpCount;
-
-		private String createdTime;
 
 		private String vSwitchId;
 
 		private String cidrBlock;
 
+		private String description;
+
+		private String networkId;
+
+		private String createdTime;
+
 		private String vSwitchName;
 
-		private String ensRegionId;
+		public String getEnsRegionId() {
+			return this.ensRegionId;
+		}
+
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
+		}
 
 		public String getStatus() {
 			return this.status;
@@ -105,14 +117,6 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 
 		public void setFreeIpCount(Long freeIpCount) {
 			this.freeIpCount = freeIpCount;
-		}
-
-		public String getCreatedTime() {
-			return this.createdTime;
-		}
-
-		public void setCreatedTime(String createdTime) {
-			this.createdTime = createdTime;
 		}
 
 		public String getVSwitchId() {
@@ -131,20 +135,36 @@ public class DescribeVSwitchesResponse extends AcsResponse {
 			this.cidrBlock = cidrBlock;
 		}
 
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getNetworkId() {
+			return this.networkId;
+		}
+
+		public void setNetworkId(String networkId) {
+			this.networkId = networkId;
+		}
+
+		public String getCreatedTime() {
+			return this.createdTime;
+		}
+
+		public void setCreatedTime(String createdTime) {
+			this.createdTime = createdTime;
+		}
+
 		public String getVSwitchName() {
 			return this.vSwitchName;
 		}
 
 		public void setVSwitchName(String vSwitchName) {
 			this.vSwitchName = vSwitchName;
-		}
-
-		public String getEnsRegionId() {
-			return this.ensRegionId;
-		}
-
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
 		}
 	}
 

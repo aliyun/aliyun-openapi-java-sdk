@@ -23,10 +23,10 @@ public class MigrateVmResponseUnmarshaller {
 	public static MigrateVmResponse unmarshall(MigrateVmResponse migrateVmResponse, UnmarshallerContext _ctx) {
 		
 		migrateVmResponse.setRequestId(_ctx.stringValue("MigrateVmResponse.RequestId"));
+		migrateVmResponse.setCode(_ctx.integerValue("MigrateVmResponse.Code"));
+		migrateVmResponse.setData(_ctx.stringValue("MigrateVmResponse.Data"));
 		migrateVmResponse.setMsg(_ctx.stringValue("MigrateVmResponse.Msg"));
 		migrateVmResponse.setDesc(_ctx.stringValue("MigrateVmResponse.Desc"));
-		migrateVmResponse.setData(_ctx.stringValue("MigrateVmResponse.Data"));
-		migrateVmResponse.setCode(_ctx.integerValue("MigrateVmResponse.Code"));
 	 
 	 	return migrateVmResponse;
 	}

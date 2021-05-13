@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVmAndSaveStockResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Integer code;
+
 	private String msg;
 
 	private String desc;
 
-	private String requestId;
-
 	private String data;
 
-	private Integer code;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
 	public String getMsg() {
 		return this.msg;
@@ -50,28 +66,12 @@ public class CreateVmAndSaveStockResponse extends AcsResponse {
 		this.desc = desc;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getData() {
 		return this.data;
 	}
 
 	public void setData(String data) {
 		this.data = data;
-	}
-
-	public Integer getCode() {
-		return this.code;
-	}
-
-	public void setCode(Integer code) {
-		this.code = code;
 	}
 
 	@Override

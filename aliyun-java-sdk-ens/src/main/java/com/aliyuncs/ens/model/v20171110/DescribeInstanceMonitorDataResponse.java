@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
+	private String requestId;
+
 	private List<InstanceMonitorData> monitorData;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,6 +37,14 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<InstanceMonitorData> getMonitorData() {
@@ -57,11 +57,19 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 	public static class InstanceMonitorData {
 
+		private String cPU;
+
 		private String instanceId;
 
 		private String memory;
 
-		private String cPU;
+		public String getCPU() {
+			return this.cPU;
+		}
+
+		public void setCPU(String cPU) {
+			this.cPU = cPU;
+		}
 
 		public String getInstanceId() {
 			return this.instanceId;
@@ -77,14 +85,6 @@ public class DescribeInstanceMonitorDataResponse extends AcsResponse {
 
 		public void setMemory(String memory) {
 			this.memory = memory;
-		}
-
-		public String getCPU() {
-			return this.cPU;
-		}
-
-		public void setCPU(String cPU) {
-			this.cPU = cPU;
 		}
 	}
 
