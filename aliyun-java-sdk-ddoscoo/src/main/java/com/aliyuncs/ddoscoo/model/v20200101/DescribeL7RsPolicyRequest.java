@@ -23,40 +23,21 @@ import com.aliyuncs.ddoscoo.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
+public class DescribeL7RsPolicyRequest extends RpcAcsRequest<DescribeL7RsPolicyResponse> {
 	   
-
-	private String httpsExt;
 
 	private String resourceGroupId;
 
-	private Integer rsType;
-
 	private List<String> realServerss;
 
-	private String proxyTypes;
-
-	private List<String> instanceIdss;
-
 	private String domain;
-	public ModifyWebRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebRule");
+	public DescribeL7RsPolicyRequest() {
+		super("ddoscoo", "2020-01-01", "DescribeL7RsPolicy");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getHttpsExt() {
-		return this.httpsExt;
-	}
-
-	public void setHttpsExt(String httpsExt) {
-		this.httpsExt = httpsExt;
-		if(httpsExt != null){
-			putQueryParameter("HttpsExt", httpsExt);
-		}
 	}
 
 	public String getResourceGroupId() {
@@ -67,17 +48,6 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		this.resourceGroupId = resourceGroupId;
 		if(resourceGroupId != null){
 			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public Integer getRsType() {
-		return this.rsType;
-	}
-
-	public void setRsType(Integer rsType) {
-		this.rsType = rsType;
-		if(rsType != null){
-			putQueryParameter("RsType", rsType.toString());
 		}
 	}
 
@@ -94,30 +64,6 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		}	
 	}
 
-	public String getProxyTypes() {
-		return this.proxyTypes;
-	}
-
-	public void setProxyTypes(String proxyTypes) {
-		this.proxyTypes = proxyTypes;
-		if(proxyTypes != null){
-			putQueryParameter("ProxyTypes", proxyTypes);
-		}
-	}
-
-	public List<String> getInstanceIdss() {
-		return this.instanceIdss;
-	}
-
-	public void setInstanceIdss(List<String> instanceIdss) {
-		this.instanceIdss = instanceIdss;	
-		if (instanceIdss != null) {
-			for (int i = 0; i < instanceIdss.size(); i++) {
-				putQueryParameter("InstanceIds." + (i + 1) , instanceIdss.get(i));
-			}
-		}	
-	}
-
 	public String getDomain() {
 		return this.domain;
 	}
@@ -130,8 +76,8 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 	}
 
 	@Override
-	public Class<ModifyWebRuleResponse> getResponseClass() {
-		return ModifyWebRuleResponse.class;
+	public Class<DescribeL7RsPolicyResponse> getResponseClass() {
+		return DescribeL7RsPolicyResponse.class;
 	}
 
 }

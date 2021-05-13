@@ -23,24 +23,20 @@ import com.aliyuncs.ddoscoo.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
+public class DescribeDomainResourceRequest extends RpcAcsRequest<DescribeDomainResourceResponse> {
 	   
 
-	private String httpsExt;
+	private Integer pageNumber;
 
-	private String resourceGroupId;
-
-	private Integer rsType;
-
-	private List<String> realServerss;
-
-	private String proxyTypes;
+	private Integer pageSize;
 
 	private List<String> instanceIdss;
 
+	private String queryDomainPattern;
+
 	private String domain;
-	public ModifyWebRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebRule");
+	public DescribeDomainResourceRequest() {
+		super("ddoscoo", "2020-01-01", "DescribeDomainResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -48,60 +44,25 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getHttpsExt() {
-		return this.httpsExt;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setHttpsExt(String httpsExt) {
-		this.httpsExt = httpsExt;
-		if(httpsExt != null){
-			putQueryParameter("HttpsExt", httpsExt);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
-		}
-	}
-
-	public Integer getRsType() {
-		return this.rsType;
-	}
-
-	public void setRsType(Integer rsType) {
-		this.rsType = rsType;
-		if(rsType != null){
-			putQueryParameter("RsType", rsType.toString());
-		}
-	}
-
-	public List<String> getRealServerss() {
-		return this.realServerss;
-	}
-
-	public void setRealServerss(List<String> realServerss) {
-		this.realServerss = realServerss;	
-		if (realServerss != null) {
-			for (int i = 0; i < realServerss.size(); i++) {
-				putQueryParameter("RealServers." + (i + 1) , realServerss.get(i));
-			}
-		}	
-	}
-
-	public String getProxyTypes() {
-		return this.proxyTypes;
-	}
-
-	public void setProxyTypes(String proxyTypes) {
-		this.proxyTypes = proxyTypes;
-		if(proxyTypes != null){
-			putQueryParameter("ProxyTypes", proxyTypes);
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 
@@ -118,6 +79,17 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		}	
 	}
 
+	public String getQueryDomainPattern() {
+		return this.queryDomainPattern;
+	}
+
+	public void setQueryDomainPattern(String queryDomainPattern) {
+		this.queryDomainPattern = queryDomainPattern;
+		if(queryDomainPattern != null){
+			putQueryParameter("QueryDomainPattern", queryDomainPattern);
+		}
+	}
+
 	public String getDomain() {
 		return this.domain;
 	}
@@ -130,8 +102,8 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 	}
 
 	@Override
-	public Class<ModifyWebRuleResponse> getResponseClass() {
-		return ModifyWebRuleResponse.class;
+	public Class<DescribeDomainResourceResponse> getResponseClass() {
+		return DescribeDomainResourceResponse.class;
 	}
 
 }

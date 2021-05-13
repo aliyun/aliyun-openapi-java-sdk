@@ -16,14 +16,14 @@ package com.aliyuncs.ddoscoo.model.v20200101;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ddoscoo.transform.v20200101.DescribeWebRulesResponseUnmarshaller;
+import com.aliyuncs.ddoscoo.transform.v20200101.DescribeDomainResourceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeWebRulesResponse extends AcsResponse {
+public class DescribeDomainResourceResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -59,6 +59,8 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private String domain;
 
+		private Integer rsType;
+
 		private Boolean ccEnabled;
 
 		private Boolean ccRuleEnabled;
@@ -89,9 +91,11 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private String certName;
 
+		private String httpsExt;
+
 		private List<ProxyConfig> proxyTypes;
 
-		private List<RealServer> realServers;
+		private List<String> realServers;
 
 		private List<String> whiteList;
 
@@ -99,12 +103,22 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private List<String> customCiphers;
 
+		private List<String> instanceIds;
+
 		public String getDomain() {
 			return this.domain;
 		}
 
 		public void setDomain(String domain) {
 			this.domain = domain;
+		}
+
+		public Integer getRsType() {
+			return this.rsType;
+		}
+
+		public void setRsType(Integer rsType) {
+			this.rsType = rsType;
 		}
 
 		public Boolean getCcEnabled() {
@@ -227,6 +241,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 			this.certName = certName;
 		}
 
+		public String getHttpsExt() {
+			return this.httpsExt;
+		}
+
+		public void setHttpsExt(String httpsExt) {
+			this.httpsExt = httpsExt;
+		}
+
 		public List<ProxyConfig> getProxyTypes() {
 			return this.proxyTypes;
 		}
@@ -235,11 +257,11 @@ public class DescribeWebRulesResponse extends AcsResponse {
 			this.proxyTypes = proxyTypes;
 		}
 
-		public List<RealServer> getRealServers() {
+		public List<String> getRealServers() {
 			return this.realServers;
 		}
 
-		public void setRealServers(List<RealServer> realServers) {
+		public void setRealServers(List<String> realServers) {
 			this.realServers = realServers;
 		}
 
@@ -267,6 +289,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 			this.customCiphers = customCiphers;
 		}
 
+		public List<String> getInstanceIds() {
+			return this.instanceIds;
+		}
+
+		public void setInstanceIds(List<String> instanceIds) {
+			this.instanceIds = instanceIds;
+		}
+
 		public static class ProxyConfig {
 
 			private String proxyType;
@@ -289,34 +319,11 @@ public class DescribeWebRulesResponse extends AcsResponse {
 				this.proxyPorts = proxyPorts;
 			}
 		}
-
-		public static class RealServer {
-
-			private Integer rsType;
-
-			private String realServer;
-
-			public Integer getRsType() {
-				return this.rsType;
-			}
-
-			public void setRsType(Integer rsType) {
-				this.rsType = rsType;
-			}
-
-			public String getRealServer() {
-				return this.realServer;
-			}
-
-			public void setRealServer(String realServer) {
-				this.realServer = realServer;
-			}
-		}
 	}
 
 	@Override
-	public DescribeWebRulesResponse getInstance(UnmarshallerContext context) {
-		return	DescribeWebRulesResponseUnmarshaller.unmarshall(this, context);
+	public DescribeDomainResourceResponse getInstance(UnmarshallerContext context) {
+		return	DescribeDomainResourceResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

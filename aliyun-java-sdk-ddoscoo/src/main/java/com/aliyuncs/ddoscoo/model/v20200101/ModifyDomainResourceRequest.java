@@ -23,24 +23,22 @@ import com.aliyuncs.ddoscoo.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
+public class ModifyDomainResourceRequest extends RpcAcsRequest<ModifyDomainResourceResponse> {
 	   
 
 	private String httpsExt;
-
-	private String resourceGroupId;
 
 	private Integer rsType;
 
 	private List<String> realServerss;
 
-	private String proxyTypes;
+	private List<ProxyTypes> proxyTypess;
 
 	private List<String> instanceIdss;
 
 	private String domain;
-	public ModifyWebRuleRequest() {
-		super("ddoscoo", "2020-01-01", "ModifyWebRule");
+	public ModifyDomainResourceRequest() {
+		super("ddoscoo", "2020-01-01", "ModifyDomainResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -56,17 +54,6 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		this.httpsExt = httpsExt;
 		if(httpsExt != null){
 			putQueryParameter("HttpsExt", httpsExt);
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 
@@ -94,15 +81,22 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		}	
 	}
 
-	public String getProxyTypes() {
-		return this.proxyTypes;
+	public List<ProxyTypes> getProxyTypess() {
+		return this.proxyTypess;
 	}
 
-	public void setProxyTypes(String proxyTypes) {
-		this.proxyTypes = proxyTypes;
-		if(proxyTypes != null){
-			putQueryParameter("ProxyTypes", proxyTypes);
-		}
+	public void setProxyTypess(List<ProxyTypes> proxyTypess) {
+		this.proxyTypess = proxyTypess;	
+		if (proxyTypess != null) {
+			for (int depth1 = 0; depth1 < proxyTypess.size(); depth1++) {
+				if (proxyTypess.get(depth1).getProxyPortss() != null) {
+					for (int i = 0; i < proxyTypess.get(depth1).getProxyPortss().size(); i++) {
+						putQueryParameter("ProxyTypes." + (depth1 + 1) + ".ProxyPorts." + (i + 1) , proxyTypess.get(depth1).getProxyPortss().get(i));
+					}
+				}
+				putQueryParameter("ProxyTypes." + (depth1 + 1) + ".ProxyType" , proxyTypess.get(depth1).getProxyType());
+			}
+		}	
 	}
 
 	public List<String> getInstanceIdss() {
@@ -129,9 +123,32 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 		}
 	}
 
+	public static class ProxyTypes {
+
+		private List<Integer> proxyPortss;
+
+		private String proxyType;
+
+		public List<Integer> getProxyPortss() {
+			return this.proxyPortss;
+		}
+
+		public void setProxyPortss(List<Integer> proxyPortss) {
+			this.proxyPortss = proxyPortss;
+		}
+
+		public String getProxyType() {
+			return this.proxyType;
+		}
+
+		public void setProxyType(String proxyType) {
+			this.proxyType = proxyType;
+		}
+	}
+
 	@Override
-	public Class<ModifyWebRuleResponse> getResponseClass() {
-		return ModifyWebRuleResponse.class;
+	public Class<ModifyDomainResourceResponse> getResponseClass() {
+		return ModifyDomainResourceResponse.class;
 	}
 
 }

@@ -26,11 +26,15 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class CreateWebRuleRequest extends RpcAcsRequest<CreateWebRuleResponse> {
 	   
 
+	private String httpsExt;
+
 	private String rules;
 
 	private String resourceGroupId;
 
 	private Integer rsType;
+
+	private String defenseId;
 
 	private List<String> instanceIdss;
 
@@ -42,6 +46,17 @@ public class CreateWebRuleRequest extends RpcAcsRequest<CreateWebRuleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getHttpsExt() {
+		return this.httpsExt;
+	}
+
+	public void setHttpsExt(String httpsExt) {
+		this.httpsExt = httpsExt;
+		if(httpsExt != null){
+			putQueryParameter("HttpsExt", httpsExt);
+		}
 	}
 
 	public String getRules() {
@@ -74,6 +89,17 @@ public class CreateWebRuleRequest extends RpcAcsRequest<CreateWebRuleResponse> {
 		this.rsType = rsType;
 		if(rsType != null){
 			putQueryParameter("RsType", rsType.toString());
+		}
+	}
+
+	public String getDefenseId() {
+		return this.defenseId;
+	}
+
+	public void setDefenseId(String defenseId) {
+		this.defenseId = defenseId;
+		if(defenseId != null){
+			putQueryParameter("DefenseId", defenseId);
 		}
 	}
 
