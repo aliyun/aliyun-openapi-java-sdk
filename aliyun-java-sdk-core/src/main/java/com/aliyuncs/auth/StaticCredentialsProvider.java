@@ -1,4 +1,5 @@
 package com.aliyuncs.auth;
+
 import com.aliyuncs.profile.IClientProfile;
 
 public class StaticCredentialsProvider implements AlibabaCloudCredentialsProvider {
