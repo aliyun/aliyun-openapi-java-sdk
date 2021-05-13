@@ -1,4 +1,8 @@
-﻿2021-03-29 Version:4.5.20
+﻿2021-05-13 Version:4.5.21
+1, Fix StaticCredentialsProvider NPE when LegacyCredential null
+2, FIx DefaultAcsClient NPE when defaultCredentialsProvider null
+
+2021-03-29 Version:4.5.20
 1, Fix signature error when RegionId null
 
 2021-03-23 Version:4.5.19

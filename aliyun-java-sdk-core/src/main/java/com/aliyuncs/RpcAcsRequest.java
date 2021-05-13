@@ -6,7 +6,6 @@ import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.ParameterHelper;
-
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.util.HashMap;
@@ -132,8 +131,15 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 }
             }
 
+            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
+
+            if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
+
+                imutableMap.put("RegionId", this.getSysRegionId());
+            }
             Map<String, String> paramsToSign = new HashMap<String, String>();
             Map<String, String> bodyParams = this.getSysBodyParameters();
+
             if (bodyParams != null && !bodyParams.isEmpty()) {
                 byte[] data;
                 if (FormatType.JSON == this.getHttpContentType()) {
@@ -146,16 +152,13 @@ public abstract class RpcAcsRequest<T extends AcsResponse> extends AcsRequest<T>
                 }
                 this.setHttpContent(data, "UTF-8", null);
                 paramsToSign.putAll(bodyParams);
-            }
-
-            imutableMap = this.composer.refreshSignParameters(this.getSysQueryParameters(), signer, accessKeyId, format);
-            if (imutableMap.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
-                if ((bodyParams == null || bodyParams.get("RegionId") == null)) {
-                    imutableMap.put("RegionId", getSysRegionId());
+                if (imutableMap.get("RegionId") == null) {
+                    if (bodyParams.get("RegionId") == null && this.getSysRegionId() != null && !this.getSysRegionId().equals("")) {
+                        imutableMap.put("RegionId", this.getSysRegionId());
+                    }
                 }
             }
             paramsToSign.putAll(imutableMap);
-
             String strToSign = this.composer.composeStringToSign(
                     this.getSysMethod(), null, signer, paramsToSign, null, null);
             String signature;
