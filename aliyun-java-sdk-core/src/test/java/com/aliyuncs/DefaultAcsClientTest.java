@@ -44,8 +44,7 @@ import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Iterator;
-import java.util.Map;
+
 
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Matchers.any;
@@ -102,6 +101,15 @@ public class DefaultAcsClientTest {
         Assert.assertNotNull(client.getHttpClient());
         client.setHttpClient(client.getHttpClient());
         Assert.assertNotNull(client.getHttpClient());
+    }
+
+    @Test
+    public void testHttpClient() {
+        try {
+            DefaultAcsClient client = new DefaultAcsClient();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("deprecation")
