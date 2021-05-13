@@ -15,16 +15,18 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.RestartLogstashResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.CreateDataStreamResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RestartLogstashResponse extends AcsResponse {
+public class CreateDataStreamResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +36,30 @@ public class RestartLogstashResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Result getResult() {
+		return this.result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public static class Result {
+
+		private String name;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
+
 	@Override
-	public RestartLogstashResponse getInstance(UnmarshallerContext context) {
-		return	RestartLogstashResponseUnmarshaller.unmarshall(this, context);
+	public CreateDataStreamResponse getInstance(UnmarshallerContext context) {
+		return	CreateDataStreamResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

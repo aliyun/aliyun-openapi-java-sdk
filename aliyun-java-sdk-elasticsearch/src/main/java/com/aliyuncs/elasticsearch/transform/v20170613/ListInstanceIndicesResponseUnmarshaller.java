@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceIndicesResponse;
+import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceIndicesResponse.Headers;
+import com.aliyuncs.elasticsearch.model.v20170613.ListInstanceIndicesResponse.ResultItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -27,9 +29,22 @@ public class ListInstanceIndicesResponseUnmarshaller {
 		
 		listInstanceIndicesResponse.setRequestId(_ctx.stringValue("ListInstanceIndicesResponse.RequestId"));
 
-		List<String> result = new ArrayList<String>();
+		Headers headers = new Headers();
+		headers.setXManagedCount(_ctx.integerValue("ListInstanceIndicesResponse.Headers.X-Managed-Count"));
+		headers.setXManagedStorageSize(_ctx.longValue("ListInstanceIndicesResponse.Headers.X-Managed-StorageSize"));
+		listInstanceIndicesResponse.setHeaders(headers);
+
+		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInstanceIndicesResponse.Result.Length"); i++) {
-			result.add(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"]"));
+			ResultItem resultItem = new ResultItem();
+			resultItem.setName(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].name"));
+			resultItem.setHealth(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].health"));
+			resultItem.setSize(_ctx.longValue("ListInstanceIndicesResponse.Result["+ i +"].size"));
+			resultItem.setCreateTime(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].createTime"));
+			resultItem.setIsManaged(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].isManaged"));
+			resultItem.setManagedStatus(_ctx.stringValue("ListInstanceIndicesResponse.Result["+ i +"].managedStatus"));
+
+			result.add(resultItem);
 		}
 		listInstanceIndicesResponse.setResult(result);
 	 

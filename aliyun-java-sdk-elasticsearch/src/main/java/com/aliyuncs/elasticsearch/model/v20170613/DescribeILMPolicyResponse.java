@@ -14,17 +14,20 @@
 
 package com.aliyuncs.elasticsearch.model.v20170613;
 
+import java.util.Map;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.RestartLogstashResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.DescribeILMPolicyResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class RestartLogstashResponse extends AcsResponse {
+public class DescribeILMPolicyResponse extends AcsResponse {
 
 	private String requestId;
+
+	private Result result;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,9 +37,40 @@ public class RestartLogstashResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Result getResult() {
+		return this.result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
+	}
+
+	public static class Result {
+
+		private String name;
+
+		private Map<Object,Object> phases;
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public Map<Object,Object> getPhases() {
+			return this.phases;
+		}
+
+		public void setPhases(Map<Object,Object> phases) {
+			this.phases = phases;
+		}
+	}
+
 	@Override
-	public RestartLogstashResponse getInstance(UnmarshallerContext context) {
-		return	RestartLogstashResponseUnmarshaller.unmarshall(this, context);
+	public DescribeILMPolicyResponse getInstance(UnmarshallerContext context) {
+		return	DescribeILMPolicyResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -22,7 +22,7 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class ListDataStreamsRequest extends RoaAcsRequest<ListDataStreamsResponse> {
 	   
 
 	private String instanceId;
@@ -30,11 +30,9 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 	private Boolean isManaged;
 
 	private String name;
-
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	public ListDataStreamsRequest() {
+		super("elasticsearch", "2017-06-13", "ListDataStreams", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/data-streams");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,20 +73,9 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
-		}
-	}
-
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<ListDataStreamsResponse> getResponseClass() {
+		return ListDataStreamsResponse.class;
 	}
 
 }

@@ -22,19 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class DescribeILMPolicyRequest extends RoaAcsRequest<DescribeILMPolicyResponse> {
 	   
 
 	private String instanceId;
 
-	private Boolean isManaged;
-
-	private String name;
-
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	private String policyName;
+	public DescribeILMPolicyRequest() {
+		super("elasticsearch", "2017-06-13", "DescribeILMPolicy", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/ilm-policies/[PolicyName]");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,42 +49,20 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
+	public String getPolicyName() {
+		return this.policyName;
 	}
 
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setPolicyName(String policyName) {
+		this.policyName = policyName;
+		if(policyName != null){
+			putPathParameter("PolicyName", policyName);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<DescribeILMPolicyResponse> getResponseClass() {
+		return DescribeILMPolicyResponse.class;
 	}
 
 }

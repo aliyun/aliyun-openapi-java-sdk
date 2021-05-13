@@ -22,20 +22,18 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class UpdateIndexTemplateRequest extends RoaAcsRequest<UpdateIndexTemplateResponse> {
 	   
 
 	private String instanceId;
 
-	private Boolean isManaged;
+	private String clientToken;
 
-	private String name;
-
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
-		setMethod(MethodType.GET);
+	private String indexTemplate;
+	public UpdateIndexTemplateRequest() {
+		super("elasticsearch", "2017-06-13", "UpdateIndexTemplate", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/index-templates/[IndexTemplate]");
+		setMethod(MethodType.PUT);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -53,42 +51,31 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
+	public String getClientToken() {
+		return this.clientToken;
 	}
 
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putQueryParameter("ClientToken", clientToken);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getIndexTemplate() {
+		return this.indexTemplate;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setIndexTemplate(String indexTemplate) {
+		this.indexTemplate = indexTemplate;
+		if(indexTemplate != null){
+			putPathParameter("IndexTemplate", indexTemplate);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<UpdateIndexTemplateResponse> getResponseClass() {
+		return UpdateIndexTemplateResponse.class;
 	}
 
 }

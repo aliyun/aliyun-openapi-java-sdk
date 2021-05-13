@@ -22,19 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndicesResponse> {
+public class ListIndexTemplatesRequest extends RoaAcsRequest<ListIndexTemplatesResponse> {
 	   
 
 	private String instanceId;
 
-	private Boolean isManaged;
-
-	private String name;
-
-	private String lang;
-	public ListInstanceIndicesRequest() {
-		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/indices");
+	private String indexTemplate;
+	public ListIndexTemplatesRequest() {
+		super("elasticsearch", "2017-06-13", "ListIndexTemplates", "elasticsearch");
+		setUriPattern("/openapi/instances/[InstanceId]/index-templates");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,42 +49,20 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		}
 	}
 
-	public Boolean getIsManaged() {
-		return this.isManaged;
+	public String getIndexTemplate() {
+		return this.indexTemplate;
 	}
 
-	public void setIsManaged(Boolean isManaged) {
-		this.isManaged = isManaged;
-		if(isManaged != null){
-			putQueryParameter("isManaged", isManaged.toString());
-		}
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("name", name);
-		}
-	}
-
-	public String getLang() {
-		return this.lang;
-	}
-
-	public void setLang(String lang) {
-		this.lang = lang;
-		if(lang != null){
-			putQueryParameter("lang", lang);
+	public void setIndexTemplate(String indexTemplate) {
+		this.indexTemplate = indexTemplate;
+		if(indexTemplate != null){
+			putQueryParameter("indexTemplate", indexTemplate);
 		}
 	}
 
 	@Override
-	public Class<ListInstanceIndicesResponse> getResponseClass() {
-		return ListInstanceIndicesResponse.class;
+	public Class<ListIndexTemplatesResponse> getResponseClass() {
+		return ListIndexTemplatesResponse.class;
 	}
 
 }
