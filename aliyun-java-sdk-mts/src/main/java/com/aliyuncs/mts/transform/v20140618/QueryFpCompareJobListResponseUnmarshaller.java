@@ -47,88 +47,88 @@ public class QueryFpCompareJobListResponseUnmarshaller {
 		List<FpCompareJob> fpCompareJobList = new ArrayList<FpCompareJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFpCompareJobListResponse.FpCompareJobList.Length"); i++) {
 			FpCompareJob fpCompareJob = new FpCompareJob();
-			fpCompareJob.setId(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].Id"));
-			fpCompareJob.setUserData(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].UserData"));
-			fpCompareJob.setPipelineId(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].PipelineId"));
-			fpCompareJob.setFpDBId(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpDBId"));
-			fpCompareJob.setState(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].State"));
-			fpCompareJob.setCode(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].Code"));
-			fpCompareJob.setMessage(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].Message"));
 			fpCompareJob.setCreationTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].CreationTime"));
 			fpCompareJob.setFinishTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FinishTime"));
+			fpCompareJob.setState(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].State"));
+			fpCompareJob.setMessage(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].Message"));
+			fpCompareJob.setFpDBId(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpDBId"));
+			fpCompareJob.setUserData(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].UserData"));
+			fpCompareJob.setCode(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].Code"));
+			fpCompareJob.setPipelineId(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].PipelineId"));
+			fpCompareJob.setId(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].Id"));
 
 			MasterFile masterFile = new MasterFile();
-			masterFile.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MasterFile.Bucket"));
-			masterFile.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MasterFile.Location"));
 			masterFile.setObject(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MasterFile.Object"));
+			masterFile.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MasterFile.Location"));
+			masterFile.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MasterFile.Bucket"));
 			fpCompareJob.setMasterFile(masterFile);
 
 			QueryFile queryFile = new QueryFile();
-			queryFile.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].QueryFile.Bucket"));
-			queryFile.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].QueryFile.Location"));
 			queryFile.setObject(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].QueryFile.Object"));
+			queryFile.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].QueryFile.Location"));
+			queryFile.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].QueryFile.Bucket"));
 			fpCompareJob.setQueryFile(queryFile);
 
 			MatchFrameStorage matchFrameStorage = new MatchFrameStorage();
 
 			MasterMediaFrames masterMediaFrames = new MasterMediaFrames();
-			masterMediaFrames.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MasterMediaFrames.Bucket"));
-			masterMediaFrames.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MasterMediaFrames.Location"));
 			masterMediaFrames.setObject(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MasterMediaFrames.Object"));
+			masterMediaFrames.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MasterMediaFrames.Location"));
+			masterMediaFrames.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MasterMediaFrames.Bucket"));
 			matchFrameStorage.setMasterMediaFrames(masterMediaFrames);
 
-			QueryMediaFrames queryMediaFrames = new QueryMediaFrames();
-			queryMediaFrames.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.QueryMediaFrames.Bucket"));
-			queryMediaFrames.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.QueryMediaFrames.Location"));
-			queryMediaFrames.setObject(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.QueryMediaFrames.Object"));
-			matchFrameStorage.setQueryMediaFrames(queryMediaFrames);
-
 			MatchedFramesDescFile matchedFramesDescFile = new MatchedFramesDescFile();
-			matchedFramesDescFile.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MatchedFramesDescFile.Bucket"));
-			matchedFramesDescFile.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MatchedFramesDescFile.Location"));
 			matchedFramesDescFile.setObject(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MatchedFramesDescFile.Object"));
+			matchedFramesDescFile.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MatchedFramesDescFile.Location"));
+			matchedFramesDescFile.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.MatchedFramesDescFile.Bucket"));
 			matchFrameStorage.setMatchedFramesDescFile(matchedFramesDescFile);
+
+			QueryMediaFrames queryMediaFrames = new QueryMediaFrames();
+			queryMediaFrames.setObject(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.QueryMediaFrames.Object"));
+			queryMediaFrames.setLocation(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.QueryMediaFrames.Location"));
+			queryMediaFrames.setBucket(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].MatchFrameStorage.QueryMediaFrames.Bucket"));
+			matchFrameStorage.setQueryMediaFrames(queryMediaFrames);
 			fpCompareJob.setMatchFrameStorage(matchFrameStorage);
 
 			FpCompareResult fpCompareResult = new FpCompareResult();
 
-			MasterMediaInfo masterMediaInfo = new MasterMediaInfo();
-			masterMediaInfo.setDuration(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Duration"));
-			masterMediaInfo.setFpNum(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.FpNum"));
-			masterMediaInfo.setWidth(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Width"));
-			masterMediaInfo.setHeight(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Height"));
-			masterMediaInfo.setFps(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Fps"));
-			masterMediaInfo.setTotalVideoFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.TotalVideoFrame"));
-			masterMediaInfo.setAudioBitRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioBitRate"));
-			masterMediaInfo.setAudioChannels(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioChannels"));
-			masterMediaInfo.setAudioSampleRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioSampleRate"));
-			fpCompareResult.setMasterMediaInfo(masterMediaInfo);
-
 			QueryMediaInfo queryMediaInfo = new QueryMediaInfo();
-			queryMediaInfo.setDuration(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Duration"));
+			queryMediaInfo.setAudioSampleRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioSampleRate"));
+			queryMediaInfo.setAudioBitRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioBitRate"));
 			queryMediaInfo.setFpNum(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.FpNum"));
 			queryMediaInfo.setWidth(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Width"));
 			queryMediaInfo.setHeight(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Height"));
-			queryMediaInfo.setFps(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Fps"));
 			queryMediaInfo.setTotalVideoFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.TotalVideoFrame"));
-			queryMediaInfo.setAudioBitRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioBitRate"));
+			queryMediaInfo.setFps(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Fps"));
+			queryMediaInfo.setDuration(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Duration"));
 			queryMediaInfo.setAudioChannels(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioChannels"));
-			queryMediaInfo.setAudioSampleRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioSampleRate"));
 			fpCompareResult.setQueryMediaInfo(queryMediaInfo);
+
+			MasterMediaInfo masterMediaInfo = new MasterMediaInfo();
+			masterMediaInfo.setAudioSampleRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioSampleRate"));
+			masterMediaInfo.setAudioBitRate(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioBitRate"));
+			masterMediaInfo.setFpNum(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.FpNum"));
+			masterMediaInfo.setWidth(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Width"));
+			masterMediaInfo.setHeight(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Height"));
+			masterMediaInfo.setTotalVideoFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.TotalVideoFrame"));
+			masterMediaInfo.setFps(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Fps"));
+			masterMediaInfo.setDuration(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Duration"));
+			masterMediaInfo.setAudioChannels(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioChannels"));
+			fpCompareResult.setMasterMediaInfo(masterMediaInfo);
 
 			List<MediaMatchSegment> mediaMatchSegments = new ArrayList<MediaMatchSegment>();
 			for (int j = 0; j < _ctx.lengthValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments.Length"); j++) {
 				MediaMatchSegment mediaMatchSegment = new MediaMatchSegment();
-				mediaMatchSegment.setQueryStartFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryStartFrame"));
-				mediaMatchSegment.setQueryEndFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryEndFrame"));
-				mediaMatchSegment.setMasterStartFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterStartFrame"));
-				mediaMatchSegment.setMasterEndFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterEndFrame"));
 				mediaMatchSegment.setQueryStartTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryStartTime"));
-				mediaMatchSegment.setQueryEndTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryEndTime"));
-				mediaMatchSegment.setMasterStartTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterStartTime"));
-				mediaMatchSegment.setMasterEndTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterEndTime"));
-				mediaMatchSegment.setTotalMatchFrameNum(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].TotalMatchFrameNum"));
+				mediaMatchSegment.setQueryEndFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryEndFrame"));
 				mediaMatchSegment.setScore(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].Score"));
+				mediaMatchSegment.setTotalMatchFrameNum(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].TotalMatchFrameNum"));
+				mediaMatchSegment.setMasterEndTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterEndTime"));
+				mediaMatchSegment.setMasterStartTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterStartTime"));
+				mediaMatchSegment.setQueryStartFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryStartFrame"));
+				mediaMatchSegment.setMasterEndFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterEndFrame"));
+				mediaMatchSegment.setMasterStartFrame(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterStartFrame"));
+				mediaMatchSegment.setQueryEndTime(_ctx.stringValue("QueryFpCompareJobListResponse.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].QueryEndTime"));
 
 				mediaMatchSegments.add(mediaMatchSegment);
 			}

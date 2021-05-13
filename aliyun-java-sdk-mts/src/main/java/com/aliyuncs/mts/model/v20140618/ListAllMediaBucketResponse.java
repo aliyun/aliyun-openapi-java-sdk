@@ -57,17 +57,9 @@ public class ListAllMediaBucketResponse extends AcsResponse {
 
 	public static class MediaBucket {
 
-		private String bucket;
-
 		private String type;
 
-		public String getBucket() {
-			return this.bucket;
-		}
-
-		public void setBucket(String bucket) {
-			this.bucket = bucket;
-		}
+		private String bucket;
 
 		public String getType() {
 			return this.type;
@@ -75,6 +67,14 @@ public class ListAllMediaBucketResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public String getBucket() {
+			return this.bucket;
+		}
+
+		public void setBucket(String bucket) {
+			this.bucket = bucket;
 		}
 	}
 

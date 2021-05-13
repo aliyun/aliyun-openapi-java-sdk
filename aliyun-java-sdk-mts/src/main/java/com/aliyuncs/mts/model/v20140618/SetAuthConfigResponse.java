@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SetAuthConfigResponse extends AcsResponse {
 
-	private String requestId;
+	private String key2;
 
 	private String key1;
 
-	private String key2;
+	private String requestId;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getKey2() {
+		return this.key2;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setKey2(String key2) {
+		this.key2 = key2;
 	}
 
 	public String getKey1() {
@@ -46,12 +46,12 @@ public class SetAuthConfigResponse extends AcsResponse {
 		this.key1 = key1;
 	}
 
-	public String getKey2() {
-		return this.key2;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setKey2(String key2) {
-		this.key2 = key2;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

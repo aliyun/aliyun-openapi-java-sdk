@@ -46,31 +46,15 @@ public class UpdateAsrPipelineResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private String id;
-
-		private String name;
-
 		private String state;
 
 		private Integer priority;
 
+		private String name;
+
+		private String id;
+
 		private NotifyConfig notifyConfig;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getState() {
 			return this.state;
@@ -88,6 +72,22 @@ public class UpdateAsrPipelineResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public NotifyConfig getNotifyConfig() {
 			return this.notifyConfig;
 		}
@@ -98,17 +98,9 @@ public class UpdateAsrPipelineResponse extends AcsResponse {
 
 		public static class NotifyConfig {
 
-			private String topic;
-
 			private String queueName;
 
-			public String getTopic() {
-				return this.topic;
-			}
-
-			public void setTopic(String topic) {
-				this.topic = topic;
-			}
+			private String topic;
 
 			public String getQueueName() {
 				return this.queueName;
@@ -116,6 +108,14 @@ public class UpdateAsrPipelineResponse extends AcsResponse {
 
 			public void setQueueName(String queueName) {
 				this.queueName = queueName;
+			}
+
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
 			}
 		}
 	}

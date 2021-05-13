@@ -57,48 +57,32 @@ public class QueryAsrJobListResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
+		private String id;
 
 		private AsrConfig asrConfig;
 
+		private Input input;
+
 		private AsrResult asrResult;
 
-		public String getId() {
-			return this.id;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -107,6 +91,14 @@ public class QueryAsrJobListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -125,20 +117,20 @@ public class QueryAsrJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public AsrConfig getAsrConfig() {
@@ -149,45 +141,20 @@ public class QueryAsrJobListResponse extends AcsResponse {
 			this.asrConfig = asrConfig;
 		}
 
+		public Input getInput() {
+			return this.input;
+		}
+
+		public void setInput(Input input) {
+			this.input = input;
+		}
+
 		public AsrResult getAsrResult() {
 			return this.asrResult;
 		}
 
 		public void setAsrResult(AsrResult asrResult) {
 			this.asrResult = asrResult;
-		}
-
-		public static class Input {
-
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
 		}
 
 		public static class AsrConfig {
@@ -200,6 +167,39 @@ public class QueryAsrJobListResponse extends AcsResponse {
 
 			public void setScene(String scene) {
 				this.scene = scene;
+			}
+		}
+
+		public static class Input {
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 
@@ -227,23 +227,15 @@ public class QueryAsrJobListResponse extends AcsResponse {
 
 			public static class AsrText {
 
-				private Integer startTime;
-
 				private String endTime;
+
+				private Integer startTime;
 
 				private String channelId;
 
-				private String speechRate;
-
 				private String text;
 
-				public Integer getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(Integer startTime) {
-					this.startTime = startTime;
-				}
+				private String speechRate;
 
 				public String getEndTime() {
 					return this.endTime;
@@ -251,6 +243,14 @@ public class QueryAsrJobListResponse extends AcsResponse {
 
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
+				}
+
+				public Integer getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(Integer startTime) {
+					this.startTime = startTime;
 				}
 
 				public String getChannelId() {
@@ -261,20 +261,20 @@ public class QueryAsrJobListResponse extends AcsResponse {
 					this.channelId = channelId;
 				}
 
-				public String getSpeechRate() {
-					return this.speechRate;
-				}
-
-				public void setSpeechRate(String speechRate) {
-					this.speechRate = speechRate;
-				}
-
 				public String getText() {
 					return this.text;
 				}
 
 				public void setText(String text) {
 					this.text = text;
+				}
+
+				public String getSpeechRate() {
+					return this.speechRate;
+				}
+
+				public void setSpeechRate(String speechRate) {
+					this.speechRate = speechRate;
 				}
 			}
 		}

@@ -27,10 +27,10 @@ public class AddPornPipelineResponseUnmarshaller {
 		addPornPipelineResponse.setRequestId(_ctx.stringValue("AddPornPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("AddPornPipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("AddPornPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(_ctx.integerValue("AddPornPipelineResponse.Pipeline.Priority"));
 		pipeline.setState(_ctx.stringValue("AddPornPipelineResponse.Pipeline.State"));
+		pipeline.setPriority(_ctx.integerValue("AddPornPipelineResponse.Pipeline.Priority"));
+		pipeline.setName(_ctx.stringValue("AddPornPipelineResponse.Pipeline.Name"));
+		pipeline.setId(_ctx.stringValue("AddPornPipelineResponse.Pipeline.Id"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(_ctx.stringValue("AddPornPipelineResponse.Pipeline.NotifyConfig.Topic"));

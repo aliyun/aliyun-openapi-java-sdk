@@ -30,21 +30,21 @@ public class UpdateMediaResponseUnmarshaller {
 		updateMediaResponse.setRequestId(_ctx.stringValue("UpdateMediaResponse.RequestId"));
 
 		Media media = new Media();
-		media.setMediaId(_ctx.stringValue("UpdateMediaResponse.Media.MediaId"));
-		media.setTitle(_ctx.stringValue("UpdateMediaResponse.Media.Title"));
-		media.setDescription(_ctx.stringValue("UpdateMediaResponse.Media.Description"));
-		media.setCoverURL(_ctx.stringValue("UpdateMediaResponse.Media.CoverURL"));
-		media.setCateId(_ctx.longValue("UpdateMediaResponse.Media.CateId"));
-		media.setDuration(_ctx.stringValue("UpdateMediaResponse.Media.Duration"));
-		media.setFormat(_ctx.stringValue("UpdateMediaResponse.Media.Format"));
-		media.setSize(_ctx.stringValue("UpdateMediaResponse.Media.Size"));
-		media.setBitrate(_ctx.stringValue("UpdateMediaResponse.Media.Bitrate"));
-		media.setWidth(_ctx.stringValue("UpdateMediaResponse.Media.Width"));
-		media.setHeight(_ctx.stringValue("UpdateMediaResponse.Media.Height"));
-		media.setFps(_ctx.stringValue("UpdateMediaResponse.Media.Fps"));
-		media.setPublishState(_ctx.stringValue("UpdateMediaResponse.Media.PublishState"));
-		media.setCensorState(_ctx.stringValue("UpdateMediaResponse.Media.CensorState"));
 		media.setCreationTime(_ctx.stringValue("UpdateMediaResponse.Media.CreationTime"));
+		media.setCateId(_ctx.longValue("UpdateMediaResponse.Media.CateId"));
+		media.setHeight(_ctx.stringValue("UpdateMediaResponse.Media.Height"));
+		media.setCensorState(_ctx.stringValue("UpdateMediaResponse.Media.CensorState"));
+		media.setBitrate(_ctx.stringValue("UpdateMediaResponse.Media.Bitrate"));
+		media.setMediaId(_ctx.stringValue("UpdateMediaResponse.Media.MediaId"));
+		media.setPublishState(_ctx.stringValue("UpdateMediaResponse.Media.PublishState"));
+		media.setDescription(_ctx.stringValue("UpdateMediaResponse.Media.Description"));
+		media.setWidth(_ctx.stringValue("UpdateMediaResponse.Media.Width"));
+		media.setSize(_ctx.stringValue("UpdateMediaResponse.Media.Size"));
+		media.setCoverURL(_ctx.stringValue("UpdateMediaResponse.Media.CoverURL"));
+		media.setDuration(_ctx.stringValue("UpdateMediaResponse.Media.Duration"));
+		media.setFps(_ctx.stringValue("UpdateMediaResponse.Media.Fps"));
+		media.setTitle(_ctx.stringValue("UpdateMediaResponse.Media.Title"));
+		media.setFormat(_ctx.stringValue("UpdateMediaResponse.Media.Format"));
 
 		List<String> tags = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("UpdateMediaResponse.Media.Tags.Length"); i++) {
@@ -59,8 +59,8 @@ public class UpdateMediaResponseUnmarshaller {
 		media.setRunIdList(runIdList);
 
 		File file = new File();
-		file.setURL(_ctx.stringValue("UpdateMediaResponse.Media.File.URL"));
 		file.setState(_ctx.stringValue("UpdateMediaResponse.Media.File.State"));
+		file.setURL(_ctx.stringValue("UpdateMediaResponse.Media.File.URL"));
 		media.setFile(file);
 		updateMediaResponse.setMedia(media);
 	 

@@ -46,17 +46,25 @@ public class AddMediaWorkflowResponse extends AcsResponse {
 
 	public static class MediaWorkflow {
 
+		private String creationTime;
+
 		private String mediaWorkflowId;
+
+		private String state;
+
+		private String triggerMode;
 
 		private String name;
 
 		private String topology;
 
-		private String triggerMode;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-		private String state;
-
-		private String creationTime;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getMediaWorkflowId() {
 			return this.mediaWorkflowId;
@@ -64,6 +72,22 @@ public class AddMediaWorkflowResponse extends AcsResponse {
 
 		public void setMediaWorkflowId(String mediaWorkflowId) {
 			this.mediaWorkflowId = mediaWorkflowId;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getTriggerMode() {
+			return this.triggerMode;
+		}
+
+		public void setTriggerMode(String triggerMode) {
+			this.triggerMode = triggerMode;
 		}
 
 		public String getName() {
@@ -80,30 +104,6 @@ public class AddMediaWorkflowResponse extends AcsResponse {
 
 		public void setTopology(String topology) {
 			this.topology = topology;
-		}
-
-		public String getTriggerMode() {
-			return this.triggerMode;
-		}
-
-		public void setTriggerMode(String triggerMode) {
-			this.triggerMode = triggerMode;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 	}
 

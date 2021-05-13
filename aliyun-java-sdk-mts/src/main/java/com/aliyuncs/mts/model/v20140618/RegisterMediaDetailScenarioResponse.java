@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RegisterMediaDetailScenarioResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String scenarioId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getScenarioId() {
 		return this.scenarioId;
@@ -42,6 +34,14 @@ public class RegisterMediaDetailScenarioResponse extends AcsResponse {
 
 	public void setScenarioId(String scenarioId) {
 		this.scenarioId = scenarioId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryVideoQualityJobResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private Job job;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -56,6 +48,14 @@ public class QueryVideoQualityJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public Job getJob() {
 		return this.job;
 	}
@@ -66,24 +66,24 @@ public class QueryVideoQualityJobResponse extends AcsResponse {
 
 	public static class Job {
 
-		private Long userId;
+		private String status;
 
 		private String jobId;
 
-		private String status;
-
-		private String output;
-
-		private String message;
+		private Long userId;
 
 		private String videoQualityResults;
 
-		public Long getUserId() {
-			return this.userId;
+		private String message;
+
+		private String output;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setUserId(Long userId) {
-			this.userId = userId;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getJobId() {
@@ -94,20 +94,20 @@ public class QueryVideoQualityJobResponse extends AcsResponse {
 			this.jobId = jobId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getUserId() {
+			return this.userId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 
-		public String getOutput() {
-			return this.output;
+		public String getVideoQualityResults() {
+			return this.videoQualityResults;
 		}
 
-		public void setOutput(String output) {
-			this.output = output;
+		public void setVideoQualityResults(String videoQualityResults) {
+			this.videoQualityResults = videoQualityResults;
 		}
 
 		public String getMessage() {
@@ -118,12 +118,12 @@ public class QueryVideoQualityJobResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getVideoQualityResults() {
-			return this.videoQualityResults;
+		public String getOutput() {
+			return this.output;
 		}
 
-		public void setVideoQualityResults(String videoQualityResults) {
-			this.videoQualityResults = videoQualityResults;
+		public void setOutput(String output) {
+			this.output = output;
 		}
 	}
 

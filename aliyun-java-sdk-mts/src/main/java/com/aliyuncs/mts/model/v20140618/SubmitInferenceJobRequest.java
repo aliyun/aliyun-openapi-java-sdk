@@ -27,19 +27,11 @@ public class SubmitInferenceJobRequest extends RpcAcsRequest<SubmitInferenceJobR
 
 	private Long userId;
 
-	private String userData;
+	private String input;
 
 	private String modelType;
 
-	private String notifyUrl;
-
-	private String testId;
-
-	private String pipelineId;
-
-	private String input;
-
-	private String modelPath;
+	private String serverName;
 	public SubmitInferenceJobRequest() {
 		super("Mts", "2014-06-18", "SubmitInferenceJob");
 		setMethod(MethodType.POST);
@@ -60,14 +52,14 @@ public class SubmitInferenceJobRequest extends RpcAcsRequest<SubmitInferenceJobR
 		}
 	}
 
-	public String getUserData() {
-		return this.userData;
+	public String getInput() {
+		return this.input;
 	}
 
-	public void setUserData(String userData) {
-		this.userData = userData;
-		if(userData != null){
-			putQueryParameter("UserData", userData);
+	public void setInput(String input) {
+		this.input = input;
+		if(input != null){
+			putQueryParameter("Input", input);
 		}
 	}
 
@@ -82,58 +74,14 @@ public class SubmitInferenceJobRequest extends RpcAcsRequest<SubmitInferenceJobR
 		}
 	}
 
-	public String getNotifyUrl() {
-		return this.notifyUrl;
+	public String getServerName() {
+		return this.serverName;
 	}
 
-	public void setNotifyUrl(String notifyUrl) {
-		this.notifyUrl = notifyUrl;
-		if(notifyUrl != null){
-			putQueryParameter("NotifyUrl", notifyUrl);
-		}
-	}
-
-	public String getTestId() {
-		return this.testId;
-	}
-
-	public void setTestId(String testId) {
-		this.testId = testId;
-		if(testId != null){
-			putQueryParameter("TestId", testId);
-		}
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
-		if(pipelineId != null){
-			putQueryParameter("PipelineId", pipelineId);
-		}
-	}
-
-	public String getInput() {
-		return this.input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-		if(input != null){
-			putQueryParameter("Input", input);
-		}
-	}
-
-	public String getModelPath() {
-		return this.modelPath;
-	}
-
-	public void setModelPath(String modelPath) {
-		this.modelPath = modelPath;
-		if(modelPath != null){
-			putQueryParameter("ModelPath", modelPath);
+	public void setServerName(String serverName) {
+		this.serverName = serverName;
+		if(serverName != null){
+			putQueryParameter("ServerName", serverName);
 		}
 	}
 

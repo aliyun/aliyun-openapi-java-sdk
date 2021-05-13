@@ -31,9 +31,9 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 
 	private List<FpShotJob> fpShotJobList;
 
-	private List<String> nonExistIds;
-
 	private List<String> nonExistPrimaryKeys;
+
+	private List<String> nonExistIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -59,14 +59,6 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 		this.fpShotJobList = fpShotJobList;
 	}
 
-	public List<String> getNonExistIds() {
-		return this.nonExistIds;
-	}
-
-	public void setNonExistIds(List<String> nonExistIds) {
-		this.nonExistIds = nonExistIds;
-	}
-
 	public List<String> getNonExistPrimaryKeys() {
 		return this.nonExistPrimaryKeys;
 	}
@@ -75,107 +67,43 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 		this.nonExistPrimaryKeys = nonExistPrimaryKeys;
 	}
 
+	public List<String> getNonExistIds() {
+		return this.nonExistIds;
+	}
+
+	public void setNonExistIds(List<String> nonExistIds) {
+		this.nonExistIds = nonExistIds;
+	}
+
 	public static class FpShotJob {
-
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
-
-		private String fileId;
-
-		private String transactionId;
-
-		private String txHash;
-
-		private String state;
-
-		private String code;
-
-		private String message;
 
 		private String creationTime;
 
 		private String finishTime;
 
-		private InputFile inputFile;
+		private String state;
 
-		private FpShotConfig fpShotConfig;
+		private String message;
+
+		private String txHash;
+
+		private String transactionId;
+
+		private String fileId;
+
+		private String userData;
+
+		private String code;
+
+		private String pipelineId;
+
+		private String id;
 
 		private FpShotResult fpShotResult;
 
-		public String getId() {
-			return this.id;
-		}
+		private FpShotConfig fpShotConfig;
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
-		}
-
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
-
-		public String getTransactionId() {
-			return this.transactionId;
-		}
-
-		public void setTransactionId(String transactionId) {
-			this.transactionId = transactionId;
-		}
-
-		public String getTxHash() {
-			return this.txHash;
-		}
-
-		public void setTxHash(String txHash) {
-			this.txHash = txHash;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
+		private InputFile inputFile;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -193,20 +121,76 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 			this.finishTime = finishTime;
 		}
 
-		public InputFile getInputFile() {
-			return this.inputFile;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setInputFile(InputFile inputFile) {
-			this.inputFile = inputFile;
+		public void setState(String state) {
+			this.state = state;
 		}
 
-		public FpShotConfig getFpShotConfig() {
-			return this.fpShotConfig;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setFpShotConfig(FpShotConfig fpShotConfig) {
-			this.fpShotConfig = fpShotConfig;
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getTxHash() {
+			return this.txHash;
+		}
+
+		public void setTxHash(String txHash) {
+			this.txHash = txHash;
+		}
+
+		public String getTransactionId() {
+			return this.transactionId;
+		}
+
+		public void setTransactionId(String transactionId) {
+			this.transactionId = transactionId;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getPipelineId() {
+			return this.pipelineId;
+		}
+
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public FpShotResult getFpShotResult() {
@@ -217,36 +201,154 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 			this.fpShotResult = fpShotResult;
 		}
 
-		public static class InputFile {
+		public FpShotConfig getFpShotConfig() {
+			return this.fpShotConfig;
+		}
 
-			private String bucket;
+		public void setFpShotConfig(FpShotConfig fpShotConfig) {
+			this.fpShotConfig = fpShotConfig;
+		}
 
-			private String location;
+		public InputFile getInputFile() {
+			return this.inputFile;
+		}
 
-			private String object;
+		public void setInputFile(InputFile inputFile) {
+			this.inputFile = inputFile;
+		}
 
-			public String getBucket() {
-				return this.bucket;
+		public static class FpShotResult {
+
+			private List<FpShot> audioFpShots;
+
+			private List<FpShot> fpShots;
+
+			public List<FpShot> getAudioFpShots() {
+				return this.audioFpShots;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setAudioFpShots(List<FpShot> audioFpShots) {
+				this.audioFpShots = audioFpShots;
 			}
 
-			public String getLocation() {
-				return this.location;
+			public List<FpShot> getFpShots() {
+				return this.fpShots;
 			}
 
-			public void setLocation(String location) {
-				this.location = location;
+			public void setFpShots(List<FpShot> fpShots) {
+				this.fpShots = fpShots;
 			}
 
-			public String getObject() {
-				return this.object;
-			}
+			public static class FpShot {
 
-			public void setObject(String object) {
-				this.object = object;
+				private String primaryKey;
+
+				private String similarity;
+
+				private List<FpShotSlice> fpShotSlices;
+
+				public String getPrimaryKey() {
+					return this.primaryKey;
+				}
+
+				public void setPrimaryKey(String primaryKey) {
+					this.primaryKey = primaryKey;
+				}
+
+				public String getSimilarity() {
+					return this.similarity;
+				}
+
+				public void setSimilarity(String similarity) {
+					this.similarity = similarity;
+				}
+
+				public List<FpShotSlice> getFpShotSlices() {
+					return this.fpShotSlices;
+				}
+
+				public void setFpShotSlices(List<FpShotSlice> fpShotSlices) {
+					this.fpShotSlices = fpShotSlices;
+				}
+
+				public static class FpShotSlice {
+
+					private String similarity;
+
+					private Duplication duplication;
+
+					private Input input;
+
+					public String getSimilarity() {
+						return this.similarity;
+					}
+
+					public void setSimilarity(String similarity) {
+						this.similarity = similarity;
+					}
+
+					public Duplication getDuplication() {
+						return this.duplication;
+					}
+
+					public void setDuplication(Duplication duplication) {
+						this.duplication = duplication;
+					}
+
+					public Input getInput() {
+						return this.input;
+					}
+
+					public void setInput(Input input) {
+						this.input = input;
+					}
+
+					public static class Duplication {
+
+						private String start;
+
+						private String duration;
+
+						public String getStart() {
+							return this.start;
+						}
+
+						public void setStart(String start) {
+							this.start = start;
+						}
+
+						public String getDuration() {
+							return this.duration;
+						}
+
+						public void setDuration(String duration) {
+							this.duration = duration;
+						}
+					}
+
+					public static class Input {
+
+						private String start;
+
+						private String duration;
+
+						public String getStart() {
+							return this.start;
+						}
+
+						public void setStart(String start) {
+							this.start = start;
+						}
+
+						public String getDuration() {
+							return this.duration;
+						}
+
+						public void setDuration(String duration) {
+							this.duration = duration;
+						}
+					}
+				}
 			}
 		}
 
@@ -293,138 +395,36 @@ public class QueryFpShotJobListResponse extends AcsResponse {
 			}
 		}
 
-		public static class FpShotResult {
+		public static class InputFile {
 
-			private List<FpShot> fpShots;
+			private String object;
 
-			private List<FpShot> audioFpShots;
+			private String location;
 
-			public List<FpShot> getFpShots() {
-				return this.fpShots;
+			private String bucket;
+
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setFpShots(List<FpShot> fpShots) {
-				this.fpShots = fpShots;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
-			public List<FpShot> getAudioFpShots() {
-				return this.audioFpShots;
+			public String getLocation() {
+				return this.location;
 			}
 
-			public void setAudioFpShots(List<FpShot> audioFpShots) {
-				this.audioFpShots = audioFpShots;
+			public void setLocation(String location) {
+				this.location = location;
 			}
 
-			public static class FpShot {
+			public String getBucket() {
+				return this.bucket;
+			}
 
-				private String primaryKey;
-
-				private String similarity;
-
-				private List<FpShotSlice> fpShotSlices;
-
-				public String getPrimaryKey() {
-					return this.primaryKey;
-				}
-
-				public void setPrimaryKey(String primaryKey) {
-					this.primaryKey = primaryKey;
-				}
-
-				public String getSimilarity() {
-					return this.similarity;
-				}
-
-				public void setSimilarity(String similarity) {
-					this.similarity = similarity;
-				}
-
-				public List<FpShotSlice> getFpShotSlices() {
-					return this.fpShotSlices;
-				}
-
-				public void setFpShotSlices(List<FpShotSlice> fpShotSlices) {
-					this.fpShotSlices = fpShotSlices;
-				}
-
-				public static class FpShotSlice {
-
-					private String similarity;
-
-					private Input input;
-
-					private Duplication duplication;
-
-					public String getSimilarity() {
-						return this.similarity;
-					}
-
-					public void setSimilarity(String similarity) {
-						this.similarity = similarity;
-					}
-
-					public Input getInput() {
-						return this.input;
-					}
-
-					public void setInput(Input input) {
-						this.input = input;
-					}
-
-					public Duplication getDuplication() {
-						return this.duplication;
-					}
-
-					public void setDuplication(Duplication duplication) {
-						this.duplication = duplication;
-					}
-
-					public static class Input {
-
-						private String start;
-
-						private String duration;
-
-						public String getStart() {
-							return this.start;
-						}
-
-						public void setStart(String start) {
-							this.start = start;
-						}
-
-						public String getDuration() {
-							return this.duration;
-						}
-
-						public void setDuration(String duration) {
-							this.duration = duration;
-						}
-					}
-
-					public static class Duplication {
-
-						private String start;
-
-						private String duration;
-
-						public String getStart() {
-							return this.start;
-						}
-
-						public void setStart(String start) {
-							this.start = start;
-						}
-
-						public String getDuration() {
-							return this.duration;
-						}
-
-						public void setDuration(String duration) {
-							this.duration = duration;
-						}
-					}
-				}
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

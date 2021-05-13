@@ -37,12 +37,12 @@ public class QueryMediaWorkflowListResponseUnmarshaller {
 		List<MediaWorkflow> mediaWorkflowList = new ArrayList<MediaWorkflow>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMediaWorkflowListResponse.MediaWorkflowList.Length"); i++) {
 			MediaWorkflow mediaWorkflow = new MediaWorkflow();
+			mediaWorkflow.setCreationTime(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].CreationTime"));
 			mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].MediaWorkflowId"));
+			mediaWorkflow.setState(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].State"));
+			mediaWorkflow.setTriggerMode(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].TriggerMode"));
 			mediaWorkflow.setName(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].Name"));
 			mediaWorkflow.setTopology(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].Topology"));
-			mediaWorkflow.setTriggerMode(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].TriggerMode"));
-			mediaWorkflow.setState(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].State"));
-			mediaWorkflow.setCreationTime(_ctx.stringValue("QueryMediaWorkflowListResponse.MediaWorkflowList["+ i +"].CreationTime"));
 
 			mediaWorkflowList.add(mediaWorkflow);
 		}

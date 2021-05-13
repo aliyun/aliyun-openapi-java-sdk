@@ -28,17 +28,17 @@ public class QueryIProductionJobListResponseUnmarshaller {
 		queryIProductionJobListResponse.setRequestId(_ctx.stringValue("QueryIProductionJobListResponse.RequestId"));
 		queryIProductionJobListResponse.setNextPageToken(_ctx.stringValue("QueryIProductionJobListResponse.NextPageToken"));
 
-		List<String> nonExistIds = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("QueryIProductionJobListResponse.NonExistIds.Length"); i++) {
-			nonExistIds.add(_ctx.stringValue("QueryIProductionJobListResponse.NonExistIds["+ i +"]"));
-		}
-		queryIProductionJobListResponse.setNonExistIds(nonExistIds);
-
 		List<String> jobs = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryIProductionJobListResponse.Jobs.Length"); i++) {
 			jobs.add(_ctx.stringValue("QueryIProductionJobListResponse.Jobs["+ i +"]"));
 		}
 		queryIProductionJobListResponse.setJobs(jobs);
+
+		List<String> nonExistIds = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("QueryIProductionJobListResponse.NonExistIds.Length"); i++) {
+			nonExistIds.add(_ctx.stringValue("QueryIProductionJobListResponse.NonExistIds["+ i +"]"));
+		}
+		queryIProductionJobListResponse.setNonExistIds(nonExistIds);
 	 
 	 	return queryIProductionJobListResponse;
 	}

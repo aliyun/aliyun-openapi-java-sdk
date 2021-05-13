@@ -46,15 +46,23 @@ public class DeleteMediaWorkflowResponse extends AcsResponse {
 
 	public static class MediaWorkflow {
 
+		private String creationTime;
+
 		private String mediaWorkflowId;
+
+		private String state;
 
 		private String name;
 
 		private String topology;
 
-		private String state;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-		private String creationTime;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getMediaWorkflowId() {
 			return this.mediaWorkflowId;
@@ -62,6 +70,14 @@ public class DeleteMediaWorkflowResponse extends AcsResponse {
 
 		public void setMediaWorkflowId(String mediaWorkflowId) {
 			this.mediaWorkflowId = mediaWorkflowId;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getName() {
@@ -78,22 +94,6 @@ public class DeleteMediaWorkflowResponse extends AcsResponse {
 
 		public void setTopology(String topology) {
 			this.topology = topology;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 	}
 

@@ -38,10 +38,10 @@ public class QueryPornPipelineListResponseUnmarshaller {
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPornPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setName(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(_ctx.stringValue("QueryPornPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));

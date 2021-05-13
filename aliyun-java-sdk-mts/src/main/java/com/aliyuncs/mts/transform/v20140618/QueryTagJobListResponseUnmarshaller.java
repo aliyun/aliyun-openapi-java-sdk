@@ -42,19 +42,13 @@ public class QueryTagJobListResponseUnmarshaller {
 		List<TagJob> tagJobList = new ArrayList<TagJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTagJobListResponse.TagJobList.Length"); i++) {
 			TagJob tagJob = new TagJob();
-			tagJob.setId(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Id"));
-			tagJob.setUserData(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].UserData"));
-			tagJob.setPipelineId(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].PipelineId"));
+			tagJob.setCreationTime(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].CreationTime"));
 			tagJob.setState(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].State"));
+			tagJob.setUserData(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].UserData"));
 			tagJob.setCode(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Code"));
 			tagJob.setMessage(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Message"));
-			tagJob.setCreationTime(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Object"));
-			tagJob.setInput(input);
+			tagJob.setPipelineId(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].PipelineId"));
+			tagJob.setId(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Id"));
 
 			VideoTagResult videoTagResult = new VideoTagResult();
 			videoTagResult.setDetails(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.Details"));
@@ -62,8 +56,8 @@ public class QueryTagJobListResponseUnmarshaller {
 			List<TagAnResult> tagAnResults = new ArrayList<TagAnResult>();
 			for (int j = 0; j < _ctx.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults.Length"); j++) {
 				TagAnResult tagAnResult = new TagAnResult();
-				tagAnResult.setLabel(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Label"));
 				tagAnResult.setScore(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Score"));
+				tagAnResult.setLabel(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagAnResults["+ j +"].Label"));
 
 				tagAnResults.add(tagAnResult);
 			}
@@ -77,8 +71,8 @@ public class QueryTagJobListResponseUnmarshaller {
 				List<TagFace> tagFaces = new ArrayList<TagFace>();
 				for (int k = 0; k < _ctx.lengthValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces.Length"); k++) {
 					TagFace tagFace = new TagFace();
-					tagFace.setName(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Name"));
 					tagFace.setScore(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Score"));
+					tagFace.setName(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Name"));
 					tagFace.setTarget(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].VideoTagResult.TagFrResults["+ j +"].TagFaces["+ k +"].Target"));
 
 					tagFaces.add(tagFace);
@@ -89,6 +83,12 @@ public class QueryTagJobListResponseUnmarshaller {
 			}
 			videoTagResult.setTagFrResults(tagFrResults);
 			tagJob.setVideoTagResult(videoTagResult);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryTagJobListResponse.TagJobList["+ i +"].Input.Bucket"));
+			tagJob.setInput(input);
 
 			tagJobList.add(tagJob);
 		}

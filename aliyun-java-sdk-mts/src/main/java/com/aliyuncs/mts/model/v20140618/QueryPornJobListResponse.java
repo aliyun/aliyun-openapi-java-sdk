@@ -57,48 +57,32 @@ public class QueryPornJobListResponse extends AcsResponse {
 
 	public static class PornJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
+		private String id;
 
 		private PornConfig pornConfig;
 
 		private CensorPornResult censorPornResult;
 
-		public String getId() {
-			return this.id;
+		private Input input;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -107,6 +91,14 @@ public class QueryPornJobListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -125,20 +117,20 @@ public class QueryPornJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public PornConfig getPornConfig() {
@@ -157,37 +149,12 @@ public class QueryPornJobListResponse extends AcsResponse {
 			this.censorPornResult = censorPornResult;
 		}
 
-		public static class Input {
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
+		public void setInput(Input input) {
+			this.input = input;
 		}
 
 		public static class PornConfig {
@@ -224,18 +191,18 @@ public class QueryPornJobListResponse extends AcsResponse {
 
 			public static class OutputFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -246,37 +213,29 @@ public class QueryPornJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}
 
 		public static class CensorPornResult {
 
-			private String label;
-
 			private String suggestion;
 
-			private String maxScore;
-
 			private String averageScore;
+
+			private String label;
+
+			private String maxScore;
 
 			private List<Counter> pornCounterList;
 
 			private List<Top> pornTopList;
-
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
 
 			public String getSuggestion() {
 				return this.suggestion;
@@ -286,20 +245,28 @@ public class QueryPornJobListResponse extends AcsResponse {
 				this.suggestion = suggestion;
 			}
 
-			public String getMaxScore() {
-				return this.maxScore;
-			}
-
-			public void setMaxScore(String maxScore) {
-				this.maxScore = maxScore;
-			}
-
 			public String getAverageScore() {
 				return this.averageScore;
 			}
 
 			public void setAverageScore(String averageScore) {
 				this.averageScore = averageScore;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getMaxScore() {
+				return this.maxScore;
+			}
+
+			public void setMaxScore(String maxScore) {
+				this.maxScore = maxScore;
 			}
 
 			public List<Counter> getPornCounterList() {
@@ -320,9 +287,17 @@ public class QueryPornJobListResponse extends AcsResponse {
 
 			public static class Counter {
 
+				private String label;
+
 				private Integer count;
 
-				private String label;
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
 
 				public Integer getCount() {
 					return this.count;
@@ -331,34 +306,26 @@ public class QueryPornJobListResponse extends AcsResponse {
 				public void setCount(Integer count) {
 					this.count = count;
 				}
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
 			}
 
 			public static class Top {
 
-				private String label;
+				private String index;
 
 				private String score;
 
 				private String timestamp;
 
-				private String index;
-
 				private String object;
 
-				public String getLabel() {
-					return this.label;
+				private String label;
+
+				public String getIndex() {
+					return this.index;
 				}
 
-				public void setLabel(String label) {
-					this.label = label;
+				public void setIndex(String index) {
+					this.index = index;
 				}
 
 				public String getScore() {
@@ -377,14 +344,6 @@ public class QueryPornJobListResponse extends AcsResponse {
 					this.timestamp = timestamp;
 				}
 
-				public String getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(String index) {
-					this.index = index;
-				}
-
 				public String getObject() {
 					return this.object;
 				}
@@ -392,6 +351,47 @@ public class QueryPornJobListResponse extends AcsResponse {
 				public void setObject(String object) {
 					this.object = object;
 				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+			}
+		}
+
+		public static class Input {
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

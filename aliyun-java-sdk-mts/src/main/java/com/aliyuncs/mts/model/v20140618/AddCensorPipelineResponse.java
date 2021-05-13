@@ -46,30 +46,22 @@ public class AddCensorPipelineResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private String id;
-
-		private String name;
+		private String state;
 
 		private Integer priority;
 
-		private String state;
+		private String name;
+
+		private String id;
 
 		private NotifyConfig notifyConfig;
 
-		public String getId() {
-			return this.id;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public Integer getPriority() {
@@ -80,12 +72,20 @@ public class AddCensorPipelineResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public NotifyConfig getNotifyConfig() {

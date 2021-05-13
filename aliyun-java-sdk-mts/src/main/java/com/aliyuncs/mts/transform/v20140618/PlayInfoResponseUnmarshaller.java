@@ -37,22 +37,22 @@ public class PlayInfoResponseUnmarshaller {
 		List<PlayInfo> playInfoList = new ArrayList<PlayInfo>();
 		for (int i = 0; i < _ctx.lengthValue("PlayInfoResponse.PlayInfoList.Length"); i++) {
 			PlayInfo playInfo = new PlayInfo();
-			playInfo.setUrl(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].Url"));
-			playInfo.setDuration(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].duration"));
-			playInfo.setSize(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].size"));
-			playInfo.setWidth(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].width"));
-			playInfo.setHeight(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].height"));
-			playInfo.setBitrate(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].bitrate"));
-			playInfo.setFps(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].fps"));
-			playInfo.setFormat(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].format"));
-			playInfo.setDefinition(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].definition"));
-			playInfo.setEncryption(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryption"));
-			playInfo.setRand(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].rand"));
-			playInfo.setPlaintext(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].plaintext"));
-			playInfo.setComplexity(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].complexity"));
-			playInfo.setActivityName(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].activityName"));
-			playInfo.setEncryptionType(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryptionType"));
 			playInfo.setDownloadType(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].downloadType"));
+			playInfo.setWidth(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].width"));
+			playInfo.setDefinition(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].definition"));
+			playInfo.setRand(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].rand"));
+			playInfo.setUrl(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].Url"));
+			playInfo.setComplexity(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].complexity"));
+			playInfo.setEncryption(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryption"));
+			playInfo.setFps(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].fps"));
+			playInfo.setEncryptionType(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].encryptionType"));
+			playInfo.setHeight(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].height"));
+			playInfo.setActivityName(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].activityName"));
+			playInfo.setSize(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].size"));
+			playInfo.setBitrate(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].bitrate"));
+			playInfo.setPlaintext(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].plaintext"));
+			playInfo.setDuration(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].duration"));
+			playInfo.setFormat(_ctx.stringValue("PlayInfoResponse.PlayInfoList["+ i +"].format"));
 
 			playInfoList.add(playInfo);
 		}

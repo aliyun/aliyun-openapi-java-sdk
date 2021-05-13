@@ -24,41 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryIProductionJobResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String jobId;
-
 	private String functionName;
 
 	private String input;
 
-	private String output;
-
-	private String jobParams;
-
-	private String pipelineId;
+	private String requestId;
 
 	private String userData;
 
 	private String state;
 
+	private String output;
+
+	private String pipelineId;
+
+	private String jobParams;
+
+	private String jobId;
+
 	private String result;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
 
 	public String getFunctionName() {
 		return this.functionName;
@@ -76,28 +60,12 @@ public class QueryIProductionJobResponse extends AcsResponse {
 		this.input = input;
 	}
 
-	public String getOutput() {
-		return this.output;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setOutput(String output) {
-		this.output = output;
-	}
-
-	public String getJobParams() {
-		return this.jobParams;
-	}
-
-	public void setJobParams(String jobParams) {
-		this.jobParams = jobParams;
-	}
-
-	public String getPipelineId() {
-		return this.pipelineId;
-	}
-
-	public void setPipelineId(String pipelineId) {
-		this.pipelineId = pipelineId;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getUserData() {
@@ -114,6 +82,38 @@ public class QueryIProductionJobResponse extends AcsResponse {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getOutput() {
+		return this.output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
+	}
+
+	public String getPipelineId() {
+		return this.pipelineId;
+	}
+
+	public void setPipelineId(String pipelineId) {
+		this.pipelineId = pipelineId;
+	}
+
+	public String getJobParams() {
+		return this.jobParams;
+	}
+
+	public void setJobParams(String jobParams) {
+		this.jobParams = jobParams;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	public String getResult() {

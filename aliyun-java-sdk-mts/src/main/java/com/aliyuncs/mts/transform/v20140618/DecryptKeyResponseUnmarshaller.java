@@ -23,8 +23,8 @@ public class DecryptKeyResponseUnmarshaller {
 	public static DecryptKeyResponse unmarshall(DecryptKeyResponse decryptKeyResponse, UnmarshallerContext _ctx) {
 		
 		decryptKeyResponse.setRequestId(_ctx.stringValue("DecryptKeyResponse.RequestId"));
-		decryptKeyResponse.setPlaintext(_ctx.stringValue("DecryptKeyResponse.Plaintext"));
 		decryptKeyResponse.setRand(_ctx.stringValue("DecryptKeyResponse.Rand"));
+		decryptKeyResponse.setPlaintext(_ctx.stringValue("DecryptKeyResponse.Plaintext"));
 	 
 	 	return decryptKeyResponse;
 	}

@@ -57,33 +57,17 @@ public class QuerySubtitleJobListResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String jobId;
-
-		private String inputConfig;
-
 		private String outputConfig;
-
-		private String userData;
 
 		private String state;
 
+		private String jobId;
+
+		private String userData;
+
+		private String inputConfig;
+
 		private MNSMessageResult mNSMessageResult;
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getInputConfig() {
-			return this.inputConfig;
-		}
-
-		public void setInputConfig(String inputConfig) {
-			this.inputConfig = inputConfig;
-		}
 
 		public String getOutputConfig() {
 			return this.outputConfig;
@@ -91,6 +75,22 @@ public class QuerySubtitleJobListResponse extends AcsResponse {
 
 		public void setOutputConfig(String outputConfig) {
 			this.outputConfig = outputConfig;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
 		}
 
 		public String getUserData() {
@@ -101,12 +101,12 @@ public class QuerySubtitleJobListResponse extends AcsResponse {
 			this.userData = userData;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getInputConfig() {
+			return this.inputConfig;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setInputConfig(String inputConfig) {
+			this.inputConfig = inputConfig;
 		}
 
 		public MNSMessageResult getMNSMessageResult() {

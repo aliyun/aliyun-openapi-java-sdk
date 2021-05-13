@@ -57,46 +57,46 @@ public class QueryMCTemplateListResponse extends AcsResponse {
 
 	public static class Template {
 
-		private String templateId;
+		private String logo;
 
-		private String name;
+		private String abuse;
 
 		private String state;
-
-		private String porn;
 
 		private String terrorism;
 
 		private String politics;
 
-		private String ad;
-
 		private String qrcode;
 
 		private String live;
 
-		private String logo;
-
-		private String abuse;
+		private String spam;
 
 		private String contraband;
 
-		private String spam;
+		private String ad;
 
-		public String getTemplateId() {
-			return this.templateId;
+		private String porn;
+
+		private String name;
+
+		private String templateId;
+
+		public String getLogo() {
+			return this.logo;
 		}
 
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
+		public void setLogo(String logo) {
+			this.logo = logo;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getAbuse() {
+			return this.abuse;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setAbuse(String abuse) {
+			this.abuse = abuse;
 		}
 
 		public String getState() {
@@ -105,14 +105,6 @@ public class QueryMCTemplateListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getPorn() {
-			return this.porn;
-		}
-
-		public void setPorn(String porn) {
-			this.porn = porn;
 		}
 
 		public String getTerrorism() {
@@ -131,14 +123,6 @@ public class QueryMCTemplateListResponse extends AcsResponse {
 			this.politics = politics;
 		}
 
-		public String getAd() {
-			return this.ad;
-		}
-
-		public void setAd(String ad) {
-			this.ad = ad;
-		}
-
 		public String getQrcode() {
 			return this.qrcode;
 		}
@@ -155,20 +139,12 @@ public class QueryMCTemplateListResponse extends AcsResponse {
 			this.live = live;
 		}
 
-		public String getLogo() {
-			return this.logo;
+		public String getSpam() {
+			return this.spam;
 		}
 
-		public void setLogo(String logo) {
-			this.logo = logo;
-		}
-
-		public String getAbuse() {
-			return this.abuse;
-		}
-
-		public void setAbuse(String abuse) {
-			this.abuse = abuse;
+		public void setSpam(String spam) {
+			this.spam = spam;
 		}
 
 		public String getContraband() {
@@ -179,12 +155,36 @@ public class QueryMCTemplateListResponse extends AcsResponse {
 			this.contraband = contraband;
 		}
 
-		public String getSpam() {
-			return this.spam;
+		public String getAd() {
+			return this.ad;
 		}
 
-		public void setSpam(String spam) {
-			this.spam = spam;
+		public void setAd(String ad) {
+			this.ad = ad;
+		}
+
+		public String getPorn() {
+			return this.porn;
+		}
+
+		public void setPorn(String porn) {
+			this.porn = porn;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 

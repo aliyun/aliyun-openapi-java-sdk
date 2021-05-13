@@ -29,16 +29,16 @@ public class ListCensorPipelineResponseUnmarshaller {
 		
 		listCensorPipelineResponse.setRequestId(_ctx.stringValue("ListCensorPipelineResponse.RequestId"));
 		listCensorPipelineResponse.setTotalCount(_ctx.longValue("ListCensorPipelineResponse.TotalCount"));
-		listCensorPipelineResponse.setPageNumber(_ctx.longValue("ListCensorPipelineResponse.PageNumber"));
 		listCensorPipelineResponse.setPageSize(_ctx.longValue("ListCensorPipelineResponse.PageSize"));
+		listCensorPipelineResponse.setPageNumber(_ctx.longValue("ListCensorPipelineResponse.PageNumber"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("ListCensorPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setName(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(_ctx.stringValue("ListCensorPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));

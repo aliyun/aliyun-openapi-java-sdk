@@ -57,73 +57,25 @@ public class QueryMediaFpDeleteJobListResponse extends AcsResponse {
 
 	public static class MediaFpDeleteJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
-
-		private String state;
-
-		private String code;
-
-		private String message;
-
 		private String creationTime;
 
 		private String finishTime;
 
 		private String primaryKey;
 
+		private String state;
+
+		private String userData;
+
+		private String code;
+
+		private String message;
+
+		private String pipelineId;
+
 		private String fpDBId;
 
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
+		private String id;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -149,12 +101,60 @@ public class QueryMediaFpDeleteJobListResponse extends AcsResponse {
 			this.primaryKey = primaryKey;
 		}
 
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getPipelineId() {
+			return this.pipelineId;
+		}
+
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
+		}
+
 		public String getFpDBId() {
 			return this.fpDBId;
 		}
 
 		public void setFpDBId(String fpDBId) {
 			this.fpDBId = fpDBId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

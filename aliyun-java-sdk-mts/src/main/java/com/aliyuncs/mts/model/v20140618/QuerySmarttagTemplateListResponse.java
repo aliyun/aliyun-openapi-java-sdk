@@ -49,17 +49,17 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		private String analyseTypes;
 
-		private String faceCategoryIds;
-
 		private String industry;
 
 		private Boolean isDefault;
 
-		private String scene;
+		private String templateName;
 
 		private String templateId;
 
-		private String templateName;
+		private String faceCategoryIds;
+
+		private String scene;
 
 		public String getAnalyseTypes() {
 			return this.analyseTypes;
@@ -67,14 +67,6 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 
 		public void setAnalyseTypes(String analyseTypes) {
 			this.analyseTypes = analyseTypes;
-		}
-
-		public String getFaceCategoryIds() {
-			return this.faceCategoryIds;
-		}
-
-		public void setFaceCategoryIds(String faceCategoryIds) {
-			this.faceCategoryIds = faceCategoryIds;
 		}
 
 		public String getIndustry() {
@@ -93,12 +85,12 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 			this.isDefault = isDefault;
 		}
 
-		public String getScene() {
-			return this.scene;
+		public String getTemplateName() {
+			return this.templateName;
 		}
 
-		public void setScene(String scene) {
-			this.scene = scene;
+		public void setTemplateName(String templateName) {
+			this.templateName = templateName;
 		}
 
 		public String getTemplateId() {
@@ -109,12 +101,20 @@ public class QuerySmarttagTemplateListResponse extends AcsResponse {
 			this.templateId = templateId;
 		}
 
-		public String getTemplateName() {
-			return this.templateName;
+		public String getFaceCategoryIds() {
+			return this.faceCategoryIds;
 		}
 
-		public void setTemplateName(String templateName) {
-			this.templateName = templateName;
+		public void setFaceCategoryIds(String faceCategoryIds) {
+			this.faceCategoryIds = faceCategoryIds;
+		}
+
+		public String getScene() {
+			return this.scene;
+		}
+
+		public void setScene(String scene) {
+			this.scene = scene;
 		}
 	}
 

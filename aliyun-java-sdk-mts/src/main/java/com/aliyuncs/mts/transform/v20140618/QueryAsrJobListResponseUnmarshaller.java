@@ -41,23 +41,23 @@ public class QueryAsrJobListResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAsrJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].CreationTime"));
 			job.setState(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].State"));
+			job.setUserData(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].UserData"));
 			job.setCode(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Object"));
-			job.setInput(input);
+			job.setPipelineId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Id"));
 
 			AsrConfig asrConfig = new AsrConfig();
 			asrConfig.setScene(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrConfig.Scene"));
 			job.setAsrConfig(asrConfig);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].Input.Bucket"));
+			job.setInput(input);
 
 			AsrResult asrResult = new AsrResult();
 			asrResult.setDuration(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.Duration"));
@@ -65,11 +65,11 @@ public class QueryAsrJobListResponseUnmarshaller {
 			List<AsrText> asrTextList = new ArrayList<AsrText>();
 			for (int j = 0; j < _ctx.lengthValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList.Length"); j++) {
 				AsrText asrText = new AsrText();
-				asrText.setStartTime(_ctx.integerValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].StartTime"));
 				asrText.setEndTime(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].EndTime"));
+				asrText.setStartTime(_ctx.integerValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].StartTime"));
 				asrText.setChannelId(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].ChannelId"));
-				asrText.setSpeechRate(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].SpeechRate"));
 				asrText.setText(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].Text"));
+				asrText.setSpeechRate(_ctx.stringValue("QueryAsrJobListResponse.JobList["+ i +"].AsrResult.AsrTextList["+ j +"].SpeechRate"));
 
 				asrTextList.add(asrText);
 			}

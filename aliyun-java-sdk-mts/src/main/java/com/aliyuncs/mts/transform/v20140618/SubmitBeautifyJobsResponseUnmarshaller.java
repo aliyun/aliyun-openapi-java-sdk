@@ -35,30 +35,30 @@ public class SubmitBeautifyJobsResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("SubmitBeautifyJobsResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Id"));
-			job.setUserData(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].CreationTime"));
 			job.setState(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].State"));
+			job.setUserData(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].UserData"));
 			job.setCode(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Object"));
-			input.setRoleArn(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.RoleArn"));
-			job.setInput(input);
+			job.setPipelineId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].PipelineId"));
+			job.setId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Id"));
 
 			BeautifyConfig beautifyConfig = new BeautifyConfig();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Bucket"));
-			outputFile.setLocation(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Location"));
-			outputFile.setObject(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Object"));
 			outputFile.setRoleArn(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.RoleArn"));
+			outputFile.setObject(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Object"));
+			outputFile.setLocation(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Location"));
+			outputFile.setBucket(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].BeautifyConfig.OutputFile.Bucket"));
 			beautifyConfig.setOutputFile(outputFile);
 			job.setBeautifyConfig(beautifyConfig);
+
+			Input input = new Input();
+			input.setRoleArn(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.RoleArn"));
+			input.setObject(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].Input.Bucket"));
+			job.setInput(input);
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();
 			mNSMessageResult.setMessageId(_ctx.stringValue("SubmitBeautifyJobsResponse.JobList["+ i +"].MNSMessageResult.MessageId"));

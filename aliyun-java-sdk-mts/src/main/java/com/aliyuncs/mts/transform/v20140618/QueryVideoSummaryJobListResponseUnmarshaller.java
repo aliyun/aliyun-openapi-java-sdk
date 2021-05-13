@@ -41,38 +41,38 @@ public class QueryVideoSummaryJobListResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryVideoSummaryJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].CreationTime"));
 			job.setState(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].State"));
+			job.setUserData(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].UserData"));
 			job.setCode(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Object"));
-			job.setInput(input);
+			job.setPipelineId(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setId(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Id"));
 
 			VideoSummaryResult videoSummaryResult = new VideoSummaryResult();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Bucket"));
-			outputFile.setLocation(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Location"));
 			outputFile.setObject(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Object"));
+			outputFile.setLocation(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Location"));
+			outputFile.setBucket(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.OutputFile.Bucket"));
 			videoSummaryResult.setOutputFile(outputFile);
 
 			List<VideoSummary> videoSummaryList = new ArrayList<VideoSummary>();
 			for (int j = 0; j < _ctx.lengthValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList.Length"); j++) {
 				VideoSummary videoSummary = new VideoSummary();
-				videoSummary.setStartTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].StartTime"));
 				videoSummary.setEndTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].EndTime"));
+				videoSummary.setStartTime(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].VideoSummaryResult.VideoSummaryList["+ j +"].StartTime"));
 
 				videoSummaryList.add(videoSummary);
 			}
 			videoSummaryResult.setVideoSummaryList(videoSummaryList);
 			job.setVideoSummaryResult(videoSummaryResult);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryVideoSummaryJobListResponse.JobList["+ i +"].Input.Bucket"));
+			job.setInput(input);
 
 			jobList.add(job);
 		}

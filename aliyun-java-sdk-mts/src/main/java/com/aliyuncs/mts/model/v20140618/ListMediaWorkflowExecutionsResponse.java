@@ -57,28 +57,28 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 	public static class MediaWorkflowExecution {
 
-		private String runId;
+		private String creationTime;
 
 		private String mediaWorkflowId;
 
-		private String name;
-
 		private String state;
+
+		private String name;
 
 		private String mediaId;
 
-		private String creationTime;
+		private String runId;
 
 		private List<Activity> activityList;
 
 		private Input input;
 
-		public String getRunId() {
-			return this.runId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setRunId(String runId) {
-			this.runId = runId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getMediaWorkflowId() {
@@ -89,20 +89,20 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 			this.mediaWorkflowId = mediaWorkflowId;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getState() {
 			return this.state;
 		}
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getMediaId() {
@@ -113,12 +113,12 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 			this.mediaId = mediaId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getRunId() {
+			return this.runId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setRunId(String runId) {
+			this.runId = runId;
 		}
 
 		public List<Activity> getActivityList() {
@@ -139,30 +139,30 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 		public static class Activity {
 
-			private String name;
+			private String endTime;
 
 			private String type;
 
-			private String jobId;
+			private String startTime;
 
 			private String state;
+
+			private String jobId;
 
 			private String code;
 
 			private String message;
 
-			private String startTime;
-
-			private String endTime;
+			private String name;
 
 			private MNSMessageResult mNSMessageResult;
 
-			public String getName() {
-				return this.name;
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setName(String name) {
-				this.name = name;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
 			}
 
 			public String getType() {
@@ -173,12 +173,12 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public String getJobId() {
-				return this.jobId;
+			public String getStartTime() {
+				return this.startTime;
 			}
 
-			public void setJobId(String jobId) {
-				this.jobId = jobId;
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
 			}
 
 			public String getState() {
@@ -187,6 +187,14 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 			public void setState(String state) {
 				this.state = state;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
 			}
 
 			public String getCode() {
@@ -205,20 +213,12 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 				this.message = message;
 			}
 
-			public String getStartTime() {
-				return this.startTime;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public MNSMessageResult getMNSMessageResult() {
@@ -287,18 +287,18 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 
 			public static class InputFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -309,12 +309,12 @@ public class ListMediaWorkflowExecutionsResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}

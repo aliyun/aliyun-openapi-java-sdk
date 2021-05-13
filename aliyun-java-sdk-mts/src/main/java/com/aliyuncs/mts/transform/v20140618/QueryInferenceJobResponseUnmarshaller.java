@@ -24,15 +24,16 @@ public class QueryInferenceJobResponseUnmarshaller {
 	public static QueryInferenceJobResponse unmarshall(QueryInferenceJobResponse queryInferenceJobResponse, UnmarshallerContext _ctx) {
 		
 		queryInferenceJobResponse.setRequestId(_ctx.stringValue("QueryInferenceJobResponse.RequestId"));
-		queryInferenceJobResponse.setCode(_ctx.stringValue("QueryInferenceJobResponse.Code"));
 		queryInferenceJobResponse.setMessage(_ctx.stringValue("QueryInferenceJobResponse.Message"));
+		queryInferenceJobResponse.setCode(_ctx.stringValue("QueryInferenceJobResponse.Code"));
 
 		Job job = new Job();
-		job.setUserId(_ctx.longValue("QueryInferenceJobResponse.Job.UserId"));
-		job.setJobId(_ctx.stringValue("QueryInferenceJobResponse.Job.JobId"));
 		job.setStatus(_ctx.stringValue("QueryInferenceJobResponse.Job.Status"));
-		job.setMessage(_ctx.stringValue("QueryInferenceJobResponse.Job.Message"));
 		job.setResult(_ctx.stringValue("QueryInferenceJobResponse.Job.Result"));
+		job.setJobId(_ctx.stringValue("QueryInferenceJobResponse.Job.JobId"));
+		job.setUserId(_ctx.longValue("QueryInferenceJobResponse.Job.UserId"));
+		job.setMessage(_ctx.stringValue("QueryInferenceJobResponse.Job.Message"));
+		job.setJobTime(_ctx.longValue("QueryInferenceJobResponse.Job.JobTime"));
 		queryInferenceJobResponse.setJob(job);
 	 
 	 	return queryInferenceJobResponse;

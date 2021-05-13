@@ -57,19 +57,27 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 
 	public static class RegisteredPersonage {
 
+		private String quality;
+
 		private String personName;
+
+		private String gender;
 
 		private String faceId;
 
 		private String target;
 
-		private String quality;
-
-		private String gender;
-
 		private String imageId;
 
 		private ImageFile imageFile;
+
+		public String getQuality() {
+			return this.quality;
+		}
+
+		public void setQuality(String quality) {
+			this.quality = quality;
+		}
 
 		public String getPersonName() {
 			return this.personName;
@@ -77,6 +85,14 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 
 		public void setPersonName(String personName) {
 			this.personName = personName;
+		}
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
 		}
 
 		public String getFaceId() {
@@ -93,22 +109,6 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 
 		public void setTarget(String target) {
 			this.target = target;
-		}
-
-		public String getQuality() {
-			return this.quality;
-		}
-
-		public void setQuality(String quality) {
-			this.quality = quality;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
 		}
 
 		public String getImageId() {
@@ -129,18 +129,18 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 
 		public static class ImageFile {
 
-			private String bucket;
+			private String object;
 
 			private String location;
 
-			private String object;
+			private String bucket;
 
-			public String getBucket() {
-				return this.bucket;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
 			public String getLocation() {
@@ -151,31 +151,23 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}
 
 	public static class FailedImage {
 
-		private String code;
-
 		private String success;
 
+		private String code;
+
 		private ImageFile1 imageFile1;
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
 
 		public String getSuccess() {
 			return this.success;
@@ -183,6 +175,14 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 
 		public void setSuccess(String success) {
 			this.success = success;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 
 		public ImageFile1 getImageFile1() {
@@ -195,18 +195,18 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 
 		public static class ImageFile1 {
 
-			private String bucket;
+			private String object;
 
 			private String location;
 
-			private String object;
+			private String bucket;
 
-			public String getBucket() {
-				return this.bucket;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
 			public String getLocation() {
@@ -217,12 +217,12 @@ public class RegisterMediaDetailPersonResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

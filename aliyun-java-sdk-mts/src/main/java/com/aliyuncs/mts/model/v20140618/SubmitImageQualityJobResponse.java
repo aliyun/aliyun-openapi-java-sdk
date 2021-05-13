@@ -46,19 +46,35 @@ public class SubmitImageQualityJobResponse extends AcsResponse {
 
 	public static class ImageQualityJob {
 
+		private String creationTime;
+
+		private String state;
+
 		private String jobId;
 
 		private String userData;
 
 		private String pipelineId;
 
-		private String state;
-
-		private String creationTime;
+		private Result result;
 
 		private Input input;
 
-		private Result result;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
 
 		public String getJobId() {
 			return this.jobId;
@@ -84,30 +100,6 @@ public class SubmitImageQualityJobResponse extends AcsResponse {
 			this.pipelineId = pipelineId;
 		}
 
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public Input getInput() {
-			return this.input;
-		}
-
-		public void setInput(Input input) {
-			this.input = input;
-		}
-
 		public Result getResult() {
 			return this.result;
 		}
@@ -116,47 +108,12 @@ public class SubmitImageQualityJobResponse extends AcsResponse {
 			this.result = result;
 		}
 
-		public static class Input {
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			private String url;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
-
-			public String getUrl() {
-				return this.url;
-			}
-
-			public void setUrl(String url) {
-				this.url = url;
-			}
+		public void setInput(Input input) {
+			this.input = input;
 		}
 
 		public static class Result {
@@ -189,6 +146,49 @@ public class SubmitImageQualityJobResponse extends AcsResponse {
 
 			public void setScore(String score) {
 				this.score = score;
+			}
+		}
+
+		public static class Input {
+
+			private String url;
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getUrl() {
+				return this.url;
+			}
+
+			public void setUrl(String url) {
+				this.url = url;
+			}
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

@@ -32,8 +32,8 @@ public class ListAllMediaBucketResponseUnmarshaller {
 		List<MediaBucket> mediaBucketList = new ArrayList<MediaBucket>();
 		for (int i = 0; i < _ctx.lengthValue("ListAllMediaBucketResponse.MediaBucketList.Length"); i++) {
 			MediaBucket mediaBucket = new MediaBucket();
-			mediaBucket.setBucket(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Bucket"));
 			mediaBucket.setType(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Type"));
+			mediaBucket.setBucket(_ctx.stringValue("ListAllMediaBucketResponse.MediaBucketList["+ i +"].Bucket"));
 
 			mediaBucketList.add(mediaBucket);
 		}

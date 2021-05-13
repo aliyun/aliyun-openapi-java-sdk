@@ -32,10 +32,10 @@ public class PlayerAuthResponseUnmarshaller {
 		List<_Switch> switchList = new ArrayList<_Switch>();
 		for (int i = 0; i < _ctx.lengthValue("PlayerAuthResponse.SwitchList.Length"); i++) {
 			_Switch _switch = new _Switch();
-			_switch.setState(_ctx.stringValue("PlayerAuthResponse.SwitchList["+ i +"].State"));
 			_switch.setFunctionId(_ctx.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionId"));
-			_switch.setSwitchId(_ctx.stringValue("PlayerAuthResponse.SwitchList["+ i +"].SwitchId"));
 			_switch.setFunctionName(_ctx.stringValue("PlayerAuthResponse.SwitchList["+ i +"].FunctionName"));
+			_switch.setState(_ctx.stringValue("PlayerAuthResponse.SwitchList["+ i +"].State"));
+			_switch.setSwitchId(_ctx.stringValue("PlayerAuthResponse.SwitchList["+ i +"].SwitchId"));
 
 			switchList.add(_switch);
 		}

@@ -28,24 +28,24 @@ public class SubmitImageQualityJobResponseUnmarshaller {
 		submitImageQualityJobResponse.setRequestId(_ctx.stringValue("SubmitImageQualityJobResponse.RequestId"));
 
 		ImageQualityJob imageQualityJob = new ImageQualityJob();
+		imageQualityJob.setCreationTime(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.CreationTime"));
+		imageQualityJob.setState(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.State"));
 		imageQualityJob.setJobId(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.JobId"));
 		imageQualityJob.setUserData(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.UserData"));
 		imageQualityJob.setPipelineId(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.PipelineId"));
-		imageQualityJob.setState(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.State"));
-		imageQualityJob.setCreationTime(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.CreationTime"));
-
-		Input input = new Input();
-		input.setBucket(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Bucket"));
-		input.setLocation(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Location"));
-		input.setObject(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Object"));
-		input.setUrl(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Url"));
-		imageQualityJob.setInput(input);
 
 		Result result = new Result();
 		result.setCode(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Code"));
 		result.setMessage(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Message"));
 		result.setScore(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Result.Score"));
 		imageQualityJob.setResult(result);
+
+		Input input = new Input();
+		input.setUrl(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Url"));
+		input.setObject(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Object"));
+		input.setLocation(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Location"));
+		input.setBucket(_ctx.stringValue("SubmitImageQualityJobResponse.ImageQualityJob.Input.Bucket"));
+		imageQualityJob.setInput(input);
 		submitImageQualityJobResponse.setImageQualityJob(imageQualityJob);
 	 
 	 	return submitImageQualityJobResponse;

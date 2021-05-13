@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitVideoQualityJobResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
-
-	private String jobId;
 
 	private String requestId;
 
-	public String getCode() {
-		return this.code;
-	}
+	private String code;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private String jobId;
 
 	public String getMessage() {
 		return this.message;
@@ -48,20 +40,28 @@ public class SubmitVideoQualityJobResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

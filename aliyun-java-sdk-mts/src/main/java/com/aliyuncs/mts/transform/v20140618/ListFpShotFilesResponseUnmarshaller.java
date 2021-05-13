@@ -33,13 +33,13 @@ public class ListFpShotFilesResponseUnmarshaller {
 		List<FpShotFile> fpShotFileList = new ArrayList<FpShotFile>();
 		for (int i = 0; i < _ctx.lengthValue("ListFpShotFilesResponse.FpShotFileList.Length"); i++) {
 			FpShotFile fpShotFile = new FpShotFile();
-			fpShotFile.setFileId(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].FileId"));
 			fpShotFile.setPrimaryKey(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].PrimaryKey"));
+			fpShotFile.setFileId(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].FileId"));
 
 			InputFile inputFile = new InputFile();
-			inputFile.setBucket(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].InputFile.Bucket"));
-			inputFile.setLocation(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].InputFile.Location"));
 			inputFile.setObject(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].InputFile.Object"));
+			inputFile.setLocation(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].InputFile.Location"));
+			inputFile.setBucket(_ctx.stringValue("ListFpShotFilesResponse.FpShotFileList["+ i +"].InputFile.Bucket"));
 			fpShotFile.setInputFile(inputFile);
 
 			fpShotFileList.add(fpShotFile);

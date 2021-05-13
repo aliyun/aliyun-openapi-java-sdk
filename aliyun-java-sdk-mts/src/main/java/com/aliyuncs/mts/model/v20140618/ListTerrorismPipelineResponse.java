@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListTerrorismPipelineResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Pipeline> pipelineList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListTerrorismPipelineResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Pipeline> getPipelineList() {
@@ -77,31 +77,15 @@ public class ListTerrorismPipelineResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private String id;
-
-		private String name;
-
 		private String state;
 
 		private String priority;
 
+		private String name;
+
+		private String id;
+
 		private NotifyConfig notifyConfig;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getState() {
 			return this.state;
@@ -117,6 +101,22 @@ public class ListTerrorismPipelineResponse extends AcsResponse {
 
 		public void setPriority(String priority) {
 			this.priority = priority;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public NotifyConfig getNotifyConfig() {

@@ -37,16 +37,16 @@ public class QueryFpDBDeleteJobListResponseUnmarshaller {
 		List<FpDBDeleteJob> fpDBDeleteJobList = new ArrayList<FpDBDeleteJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList.Length"); i++) {
 			FpDBDeleteJob fpDBDeleteJob = new FpDBDeleteJob();
-			fpDBDeleteJob.setId(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].Id"));
-			fpDBDeleteJob.setUserData(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].UserData"));
-			fpDBDeleteJob.setPipelineId(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].PipelineId"));
+			fpDBDeleteJob.setCreationTime(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].CreationTime"));
 			fpDBDeleteJob.setStatus(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].Status"));
+			fpDBDeleteJob.setFinishTime(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].FinishTime"));
+			fpDBDeleteJob.setDelType(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].DelType"));
+			fpDBDeleteJob.setUserData(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].UserData"));
 			fpDBDeleteJob.setCode(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].Code"));
 			fpDBDeleteJob.setMessage(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].Message"));
-			fpDBDeleteJob.setDelType(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].DelType"));
+			fpDBDeleteJob.setPipelineId(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].PipelineId"));
 			fpDBDeleteJob.setFpDBId(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].FpDBId"));
-			fpDBDeleteJob.setCreationTime(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].CreationTime"));
-			fpDBDeleteJob.setFinishTime(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].FinishTime"));
+			fpDBDeleteJob.setId(_ctx.stringValue("QueryFpDBDeleteJobListResponse.FpDBDeleteJobList["+ i +"].Id"));
 
 			fpDBDeleteJobList.add(fpDBDeleteJob);
 		}

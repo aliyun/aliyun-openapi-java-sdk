@@ -48,30 +48,13 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].CreationTime"));
 			job.setState(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].State"));
+			job.setUserData(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].UserData"));
 			job.setCode(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Input.Object"));
-			job.setInput(input);
-
-			MediaDetailConfig mediaDetailConfig = new MediaDetailConfig();
-			mediaDetailConfig.setScenario(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.Scenario"));
-			mediaDetailConfig.setDetailType(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.DetailType"));
-
-			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.OutputFile.Bucket"));
-			outputFile.setLocation(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.OutputFile.Location"));
-			outputFile.setObject(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.OutputFile.Object"));
-			mediaDetailConfig.setOutputFile(outputFile);
-			job.setMediaDetailConfig(mediaDetailConfig);
+			job.setPipelineId(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setId(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Id"));
 
 			MediaDetailResult mediaDetailResult = new MediaDetailResult();
 			mediaDetailResult.setStatus(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.Status"));
@@ -85,8 +68,8 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 			List<MediaDetailRecgResult> mediaDetailRecgResults = new ArrayList<MediaDetailRecgResult>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults.Length"); j++) {
 				MediaDetailRecgResult mediaDetailRecgResult = new MediaDetailRecgResult();
-				mediaDetailRecgResult.setImageUrl(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].ImageUrl"));
 				mediaDetailRecgResult.setTime(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Time"));
+				mediaDetailRecgResult.setImageUrl(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].ImageUrl"));
 				mediaDetailRecgResult.setOcrText(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].OcrText"));
 
 				List<String> frameTags = new ArrayList<String>();
@@ -95,22 +78,11 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 				}
 				mediaDetailRecgResult.setFrameTags(frameTags);
 
-				List<Celebrity> celebrities = new ArrayList<Celebrity>();
-				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities.Length"); k++) {
-					Celebrity celebrity = new Celebrity();
-					celebrity.setName(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities["+ k +"].Name"));
-					celebrity.setScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities["+ k +"].Score"));
-					celebrity.setTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities["+ k +"].Target"));
-
-					celebrities.add(celebrity);
-				}
-				mediaDetailRecgResult.setCelebrities(celebrities);
-
 				List<Sensitive> sensitives = new ArrayList<Sensitive>();
 				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Sensitives.Length"); k++) {
 					Sensitive sensitive = new Sensitive();
-					sensitive.setName(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Sensitives["+ k +"].Name"));
 					sensitive.setScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Sensitives["+ k +"].Score"));
+					sensitive.setName(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Sensitives["+ k +"].Name"));
 					sensitive.setTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Sensitives["+ k +"].Target"));
 
 					sensitives.add(sensitive);
@@ -120,24 +92,13 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 				List<Politician> politicians = new ArrayList<Politician>();
 				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Politicians.Length"); k++) {
 					Politician politician = new Politician();
-					politician.setName(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Politicians["+ k +"].Name"));
 					politician.setScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Politicians["+ k +"].Score"));
+					politician.setName(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Politicians["+ k +"].Name"));
 					politician.setTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Politicians["+ k +"].Target"));
 
 					politicians.add(politician);
 				}
 				mediaDetailRecgResult.setPoliticians(politicians);
-
-				List<FrameTagInfo> frameTagInfos = new ArrayList<FrameTagInfo>();
-				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos.Length"); k++) {
-					FrameTagInfo frameTagInfo = new FrameTagInfo();
-					frameTagInfo.setTag(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos["+ k +"].Tag"));
-					frameTagInfo.setScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos["+ k +"].Score"));
-					frameTagInfo.setCategory(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos["+ k +"].Category"));
-
-					frameTagInfos.add(frameTagInfo);
-				}
-				mediaDetailRecgResult.setFrameTagInfos(frameTagInfos);
 
 				List<Custom> customs = new ArrayList<Custom>();
 				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs.Length"); k++) {
@@ -147,13 +108,13 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 					List<Clip> clips = new ArrayList<Clip>();
 					for (int l = 0; l < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips.Length"); l++) {
 						Clip clip = new Clip();
-						clip.setMinScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MinScore"));
-						clip.setMaxScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MaxScore"));
-						clip.setAvgScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].AvgScore"));
-						clip.setStartTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTarget"));
-						clip.setEndTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTarget"));
-						clip.setStartTime(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTime"));
 						clip.setEndTime(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTime"));
+						clip.setMinScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MinScore"));
+						clip.setStartTime(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTime"));
+						clip.setAvgScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].AvgScore"));
+						clip.setMaxScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].MaxScore"));
+						clip.setEndTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].EndTarget"));
+						clip.setStartTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Customs["+ k +"].Clips["+ l +"].StartTarget"));
 
 						clips.add(clip);
 					}
@@ -163,10 +124,49 @@ public class QueryMediaDetailJobListResponseUnmarshaller {
 				}
 				mediaDetailRecgResult.setCustoms(customs);
 
+				List<FrameTagInfo> frameTagInfos = new ArrayList<FrameTagInfo>();
+				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos.Length"); k++) {
+					FrameTagInfo frameTagInfo = new FrameTagInfo();
+					frameTagInfo.setScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos["+ k +"].Score"));
+					frameTagInfo.setCategory(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos["+ k +"].Category"));
+					frameTagInfo.setTag(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].FrameTagInfos["+ k +"].Tag"));
+
+					frameTagInfos.add(frameTagInfo);
+				}
+				mediaDetailRecgResult.setFrameTagInfos(frameTagInfos);
+
+				List<Celebrity> celebrities = new ArrayList<Celebrity>();
+				for (int k = 0; k < _ctx.lengthValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities.Length"); k++) {
+					Celebrity celebrity = new Celebrity();
+					celebrity.setScore(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities["+ k +"].Score"));
+					celebrity.setName(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities["+ k +"].Name"));
+					celebrity.setTarget(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailResult.MediaDetailRecgResults["+ j +"].Celebrities["+ k +"].Target"));
+
+					celebrities.add(celebrity);
+				}
+				mediaDetailRecgResult.setCelebrities(celebrities);
+
 				mediaDetailRecgResults.add(mediaDetailRecgResult);
 			}
 			mediaDetailResult.setMediaDetailRecgResults(mediaDetailRecgResults);
 			job.setMediaDetailResult(mediaDetailResult);
+
+			MediaDetailConfig mediaDetailConfig = new MediaDetailConfig();
+			mediaDetailConfig.setScenario(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.Scenario"));
+			mediaDetailConfig.setDetailType(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.DetailType"));
+
+			OutputFile outputFile = new OutputFile();
+			outputFile.setObject(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.OutputFile.Object"));
+			outputFile.setLocation(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.OutputFile.Location"));
+			outputFile.setBucket(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].MediaDetailConfig.OutputFile.Bucket"));
+			mediaDetailConfig.setOutputFile(outputFile);
+			job.setMediaDetailConfig(mediaDetailConfig);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryMediaDetailJobListResponse.JobList["+ i +"].Input.Bucket"));
+			job.setInput(input);
 
 			jobList.add(job);
 		}

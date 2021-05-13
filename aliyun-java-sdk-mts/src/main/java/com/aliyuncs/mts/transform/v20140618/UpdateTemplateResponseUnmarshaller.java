@@ -35,35 +35,31 @@ public class UpdateTemplateResponseUnmarshaller {
 		updateTemplateResponse.setRequestId(_ctx.stringValue("UpdateTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setId(_ctx.stringValue("UpdateTemplateResponse.Template.Id"));
-		template.setName(_ctx.stringValue("UpdateTemplateResponse.Template.Name"));
 		template.setState(_ctx.stringValue("UpdateTemplateResponse.Template.State"));
-
-		Container container = new Container();
-		container.setFormat(_ctx.stringValue("UpdateTemplateResponse.Template.Container.Format"));
-		template.setContainer(container);
+		template.setName(_ctx.stringValue("UpdateTemplateResponse.Template.Name"));
+		template.setId(_ctx.stringValue("UpdateTemplateResponse.Template.Id"));
 
 		Video video = new Video();
-		video.setCodec(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Codec"));
-		video.setProfile(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Profile"));
-		video.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Bitrate"));
-		video.setCrf(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Crf"));
-		video.setWidth(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Width"));
-		video.setHeight(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Height"));
 		video.setLongShortMode(_ctx.stringValue("UpdateTemplateResponse.Template.Video.LongShortMode"));
-		video.setFps(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Fps"));
+		video.setBufsize(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Bufsize"));
+		video.setDegrain(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Degrain"));
+		video.setPixFmt(_ctx.stringValue("UpdateTemplateResponse.Template.Video.PixFmt"));
+		video.setPad(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Pad"));
+		video.setCodec(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Codec"));
+		video.setHeight(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Height"));
+		video.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Qscale"));
+		video.setCrop(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Crop"));
+		video.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Bitrate"));
+		video.setMaxrate(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Maxrate"));
+		video.setMaxFps(_ctx.stringValue("UpdateTemplateResponse.Template.Video.MaxFps"));
+		video.setProfile(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Profile"));
+		video.setCrf(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Crf"));
+		video.setRemove(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Remove"));
 		video.setGop(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Gop"));
+		video.setWidth(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Width"));
+		video.setFps(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Fps"));
 		video.setPreset(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Preset"));
 		video.setScanMode(_ctx.stringValue("UpdateTemplateResponse.Template.Video.ScanMode"));
-		video.setBufsize(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Bufsize"));
-		video.setMaxrate(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Maxrate"));
-		video.setPixFmt(_ctx.stringValue("UpdateTemplateResponse.Template.Video.PixFmt"));
-		video.setDegrain(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Degrain"));
-		video.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Qscale"));
-		video.setRemove(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Remove"));
-		video.setCrop(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Crop"));
-		video.setPad(_ctx.stringValue("UpdateTemplateResponse.Template.Video.Pad"));
-		video.setMaxFps(_ctx.stringValue("UpdateTemplateResponse.Template.Video.MaxFps"));
 		video.setResoPriority(_ctx.stringValue("UpdateTemplateResponse.Template.Video.ResoPriority"));
 
 		BitrateBnd bitrateBnd = new BitrateBnd();
@@ -72,44 +68,48 @@ public class UpdateTemplateResponseUnmarshaller {
 		video.setBitrateBnd(bitrateBnd);
 		template.setVideo(video);
 
-		Audio audio = new Audio();
-		audio.setCodec(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Codec"));
-		audio.setProfile(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Profile"));
-		audio.setSamplerate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Samplerate"));
-		audio.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Bitrate"));
-		audio.setChannels(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Channels"));
-		audio.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Qscale"));
-		audio.setRemove(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Remove"));
-		template.setAudio(audio);
-
 		TransConfig transConfig = new TransConfig();
+		transConfig.setIsCheckAudioBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
 		transConfig.setTransMode(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.TransMode"));
 		transConfig.setIsCheckReso(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckReso"));
-		transConfig.setIsCheckResoFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckResoFail"));
-		transConfig.setIsCheckVideoBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
-		transConfig.setIsCheckAudioBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrate"));
-		transConfig.setAdjDarMethod(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.AdjDarMethod"));
 		transConfig.setIsCheckVideoBitrateFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrateFail"));
+		transConfig.setAdjDarMethod(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.AdjDarMethod"));
+		transConfig.setIsCheckVideoBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckVideoBitrate"));
+		transConfig.setIsCheckResoFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckResoFail"));
 		transConfig.setIsCheckAudioBitrateFail(_ctx.stringValue("UpdateTemplateResponse.Template.TransConfig.IsCheckAudioBitrateFail"));
 		template.setTransConfig(transConfig);
 
 		MuxConfig muxConfig = new MuxConfig();
 
-		Segment segment = new Segment();
-		segment.setDuration(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Segment.Duration"));
-		muxConfig.setSegment(segment);
-
-		Gif gif = new Gif();
-		gif.setLoop(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.Loop"));
-		gif.setFinalDelay(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.FinalDelay"));
-		gif.setIsCustomPalette(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
-		gif.setDitherMode(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
-		muxConfig.setGif(gif);
-
 		Webp webp = new Webp();
 		webp.setLoop(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Webp.Loop"));
 		muxConfig.setWebp(webp);
+
+		Gif gif = new Gif();
+		gif.setFinalDelay(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.FinalDelay"));
+		gif.setDitherMode(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.DitherMode"));
+		gif.setLoop(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.Loop"));
+		gif.setIsCustomPalette(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Gif.IsCustomPalette"));
+		muxConfig.setGif(gif);
+
+		Segment segment = new Segment();
+		segment.setDuration(_ctx.stringValue("UpdateTemplateResponse.Template.MuxConfig.Segment.Duration"));
+		muxConfig.setSegment(segment);
 		template.setMuxConfig(muxConfig);
+
+		Audio audio = new Audio();
+		audio.setProfile(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Profile"));
+		audio.setRemove(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Remove"));
+		audio.setCodec(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Codec"));
+		audio.setSamplerate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Samplerate"));
+		audio.setQscale(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Qscale"));
+		audio.setChannels(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Channels"));
+		audio.setBitrate(_ctx.stringValue("UpdateTemplateResponse.Template.Audio.Bitrate"));
+		template.setAudio(audio);
+
+		Container container = new Container();
+		container.setFormat(_ctx.stringValue("UpdateTemplateResponse.Template.Container.Format"));
+		template.setContainer(container);
 		updateTemplateResponse.setTemplate(template);
 	 
 	 	return updateTemplateResponse;

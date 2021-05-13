@@ -26,6 +26,8 @@ public class ListInferenceJobRequest extends RpcAcsRequest<ListInferenceJobRespo
 	   
 
 	private Long userId;
+
+	private String serverName;
 	public ListInferenceJobRequest() {
 		super("Mts", "2014-06-18", "ListInferenceJob");
 		setMethod(MethodType.POST);
@@ -43,6 +45,17 @@ public class ListInferenceJobRequest extends RpcAcsRequest<ListInferenceJobRespo
 		this.userId = userId;
 		if(userId != null){
 			putQueryParameter("UserId", userId.toString());
+		}
+	}
+
+	public String getServerName() {
+		return this.serverName;
+	}
+
+	public void setServerName(String serverName) {
+		this.serverName = serverName;
+		if(serverName != null){
+			putQueryParameter("ServerName", serverName);
 		}
 	}
 

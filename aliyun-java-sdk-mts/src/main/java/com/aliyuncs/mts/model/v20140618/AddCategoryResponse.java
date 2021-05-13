@@ -46,21 +46,13 @@ public class AddCategoryResponse extends AcsResponse {
 
 	public static class Category {
 
-		private String cateId;
-
 		private String cateName;
 
 		private String parentId;
 
+		private String cateId;
+
 		private String level;
-
-		public String getCateId() {
-			return this.cateId;
-		}
-
-		public void setCateId(String cateId) {
-			this.cateId = cateId;
-		}
 
 		public String getCateName() {
 			return this.cateName;
@@ -76,6 +68,14 @@ public class AddCategoryResponse extends AcsResponse {
 
 		public void setParentId(String parentId) {
 			this.parentId = parentId;
+		}
+
+		public String getCateId() {
+			return this.cateId;
+		}
+
+		public void setCateId(String cateId) {
+			this.cateId = cateId;
 		}
 
 		public String getLevel() {

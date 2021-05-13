@@ -38,10 +38,10 @@ public class QueryTerrorismPipelineListResponseUnmarshaller {
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTerrorismPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setName(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(_ctx.stringValue("QueryTerrorismPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));

@@ -29,16 +29,16 @@ public class ListTerrorismPipelineResponseUnmarshaller {
 		
 		listTerrorismPipelineResponse.setRequestId(_ctx.stringValue("ListTerrorismPipelineResponse.RequestId"));
 		listTerrorismPipelineResponse.setTotalCount(_ctx.longValue("ListTerrorismPipelineResponse.TotalCount"));
-		listTerrorismPipelineResponse.setPageNumber(_ctx.longValue("ListTerrorismPipelineResponse.PageNumber"));
 		listTerrorismPipelineResponse.setPageSize(_ctx.longValue("ListTerrorismPipelineResponse.PageSize"));
+		listTerrorismPipelineResponse.setPageNumber(_ctx.longValue("ListTerrorismPipelineResponse.PageNumber"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("ListTerrorismPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setName(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(_ctx.stringValue("ListTerrorismPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));

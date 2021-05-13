@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListInferenceJobResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
 	private List<JobsItem> jobs;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -57,6 +49,14 @@ public class ListInferenceJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public List<JobsItem> getJobs() {
 		return this.jobs;
 	}
@@ -67,22 +67,32 @@ public class ListInferenceJobResponse extends AcsResponse {
 
 	public static class JobsItem {
 
-		private Long userId;
-
-		private String jobId;
-
 		private String status;
-
-		private String message;
 
 		private String result;
 
-		public Long getUserId() {
-			return this.userId;
+		private String jobId;
+
+		private Long userId;
+
+		private String message;
+
+		private Long jobTime;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setUserId(Long userId) {
-			this.userId = userId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getResult() {
+			return this.result;
+		}
+
+		public void setResult(String result) {
+			this.result = result;
 		}
 
 		public String getJobId() {
@@ -93,12 +103,12 @@ public class ListInferenceJobResponse extends AcsResponse {
 			this.jobId = jobId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Long getUserId() {
+			return this.userId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 
 		public String getMessage() {
@@ -109,12 +119,12 @@ public class ListInferenceJobResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getResult() {
-			return this.result;
+		public Long getJobTime() {
+			return this.jobTime;
 		}
 
-		public void setResult(String result) {
-			this.result = result;
+		public void setJobTime(Long jobTime) {
+			this.jobTime = jobTime;
 		}
 	}
 

@@ -57,46 +57,30 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
+		private String id;
 
 		private VideoSummaryResult videoSummaryResult;
 
-		public String getId() {
-			return this.id;
+		private Input input;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -105,6 +89,14 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -123,20 +115,20 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public VideoSummaryResult getVideoSummaryResult() {
@@ -147,37 +139,12 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 			this.videoSummaryResult = videoSummaryResult;
 		}
 
-		public static class Input {
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
+		public void setInput(Input input) {
+			this.input = input;
 		}
 
 		public static class VideoSummaryResult {
@@ -204,17 +171,9 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 
 			public static class VideoSummary {
 
-				private String startTime;
-
 				private String endTime;
 
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
+				private String startTime;
 
 				public String getEndTime() {
 					return this.endTime;
@@ -223,22 +182,30 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 				public void setEndTime(String endTime) {
 					this.endTime = endTime;
 				}
+
+				public String getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
+				}
 			}
 
 			public static class OutputFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -249,13 +216,46 @@ public class QueryVideoSummaryJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
+			}
+		}
+
+		public static class Input {
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

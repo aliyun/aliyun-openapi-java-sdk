@@ -57,60 +57,44 @@ public class PlayInfoResponse extends AcsResponse {
 
 	public static class PlayInfo {
 
-		private String url;
-
-		private String duration;
-
-		private String size;
+		private String downloadType;
 
 		private String width;
 
-		private String height;
-
-		private String bitrate;
-
-		private String fps;
-
-		private String format;
-
 		private String definition;
-
-		private String encryption;
 
 		private String rand;
 
-		private String plaintext;
+		private String url;
 
 		private String complexity;
 
-		private String activityName;
+		private String encryption;
+
+		private String fps;
 
 		private String encryptionType;
 
-		private String downloadType;
+		private String height;
 
-		public String getUrl() {
-			return this.url;
+		private String activityName;
+
+		private String size;
+
+		private String bitrate;
+
+		private String plaintext;
+
+		private String duration;
+
+		private String format;
+
+		public String getDownloadType() {
+			return this.downloadType;
 		}
 
-		public void setUrl(String url) {
-			this.url = url;
-		}
-
-		public String getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(String duration) {
-			this.duration = duration;
-		}
-
-		public String getSize() {
-			return this.size;
-		}
-
-		public void setSize(String size) {
-			this.size = size;
+		public void setDownloadType(String downloadType) {
+			this.downloadType = downloadType;
 		}
 
 		public String getWidth() {
@@ -121,52 +105,12 @@ public class PlayInfoResponse extends AcsResponse {
 			this.width = width;
 		}
 
-		public String getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(String height) {
-			this.height = height;
-		}
-
-		public String getBitrate() {
-			return this.bitrate;
-		}
-
-		public void setBitrate(String bitrate) {
-			this.bitrate = bitrate;
-		}
-
-		public String getFps() {
-			return this.fps;
-		}
-
-		public void setFps(String fps) {
-			this.fps = fps;
-		}
-
-		public String getFormat() {
-			return this.format;
-		}
-
-		public void setFormat(String format) {
-			this.format = format;
-		}
-
 		public String getDefinition() {
 			return this.definition;
 		}
 
 		public void setDefinition(String definition) {
 			this.definition = definition;
-		}
-
-		public String getEncryption() {
-			return this.encryption;
-		}
-
-		public void setEncryption(String encryption) {
-			this.encryption = encryption;
 		}
 
 		public String getRand() {
@@ -177,12 +121,12 @@ public class PlayInfoResponse extends AcsResponse {
 			this.rand = rand;
 		}
 
-		public String getPlaintext() {
-			return this.plaintext;
+		public String getUrl() {
+			return this.url;
 		}
 
-		public void setPlaintext(String plaintext) {
-			this.plaintext = plaintext;
+		public void setUrl(String url) {
+			this.url = url;
 		}
 
 		public String getComplexity() {
@@ -193,12 +137,20 @@ public class PlayInfoResponse extends AcsResponse {
 			this.complexity = complexity;
 		}
 
-		public String getActivityName() {
-			return this.activityName;
+		public String getEncryption() {
+			return this.encryption;
 		}
 
-		public void setActivityName(String activityName) {
-			this.activityName = activityName;
+		public void setEncryption(String encryption) {
+			this.encryption = encryption;
+		}
+
+		public String getFps() {
+			return this.fps;
+		}
+
+		public void setFps(String fps) {
+			this.fps = fps;
 		}
 
 		public String getEncryptionType() {
@@ -209,12 +161,60 @@ public class PlayInfoResponse extends AcsResponse {
 			this.encryptionType = encryptionType;
 		}
 
-		public String getDownloadType() {
-			return this.downloadType;
+		public String getHeight() {
+			return this.height;
 		}
 
-		public void setDownloadType(String downloadType) {
-			this.downloadType = downloadType;
+		public void setHeight(String height) {
+			this.height = height;
+		}
+
+		public String getActivityName() {
+			return this.activityName;
+		}
+
+		public void setActivityName(String activityName) {
+			this.activityName = activityName;
+		}
+
+		public String getSize() {
+			return this.size;
+		}
+
+		public void setSize(String size) {
+			this.size = size;
+		}
+
+		public String getBitrate() {
+			return this.bitrate;
+		}
+
+		public void setBitrate(String bitrate) {
+			this.bitrate = bitrate;
+		}
+
+		public String getPlaintext() {
+			return this.plaintext;
+		}
+
+		public void setPlaintext(String plaintext) {
+			this.plaintext = plaintext;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
 		}
 	}
 

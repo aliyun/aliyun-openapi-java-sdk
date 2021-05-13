@@ -57,48 +57,32 @@ public class QueryFpDBDeleteJobListResponse extends AcsResponse {
 
 	public static class FpDBDeleteJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String status;
+
+		private String finishTime;
+
+		private String delType;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String delType;
+		private String pipelineId;
 
 		private String fpDBId;
 
-		private String creationTime;
+		private String id;
 
-		private String finishTime;
-
-		public String getId() {
-			return this.id;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -107,6 +91,30 @@ public class QueryFpDBDeleteJobListResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
+		}
+
+		public String getDelType() {
+			return this.delType;
+		}
+
+		public void setDelType(String delType) {
+			this.delType = delType;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -125,12 +133,12 @@ public class QueryFpDBDeleteJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getDelType() {
-			return this.delType;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setDelType(String delType) {
-			this.delType = delType;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
 		public String getFpDBId() {
@@ -141,20 +149,12 @@ public class QueryFpDBDeleteJobListResponse extends AcsResponse {
 			this.fpDBId = fpDBId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getFinishTime() {
-			return this.finishTime;
-		}
-
-		public void setFinishTime(String finishTime) {
-			this.finishTime = finishTime;
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

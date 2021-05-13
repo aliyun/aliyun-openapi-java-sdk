@@ -57,23 +57,23 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 	public static class FpCompareJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
-
-		private String fpDBId;
-
-		private String state;
-
-		private String code;
-
-		private String message;
-
 		private String creationTime;
 
 		private String finishTime;
+
+		private String state;
+
+		private String message;
+
+		private String fpDBId;
+
+		private String userData;
+
+		private String code;
+
+		private String pipelineId;
+
+		private String id;
 
 		private MasterFile masterFile;
 
@@ -82,62 +82,6 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 		private MatchFrameStorage matchFrameStorage;
 
 		private FpCompareResult fpCompareResult;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
-		}
-
-		public String getFpDBId() {
-			return this.fpDBId;
-		}
-
-		public void setFpDBId(String fpDBId) {
-			this.fpDBId = fpDBId;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
-
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -153,6 +97,62 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 		public void setFinishTime(String finishTime) {
 			this.finishTime = finishTime;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getMessage() {
+			return this.message;
+		}
+
+		public void setMessage(String message) {
+			this.message = message;
+		}
+
+		public String getFpDBId() {
+			return this.fpDBId;
+		}
+
+		public void setFpDBId(String fpDBId) {
+			this.fpDBId = fpDBId;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getPipelineId() {
+			return this.pipelineId;
+		}
+
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public MasterFile getMasterFile() {
@@ -189,18 +189,18 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 		public static class MasterFile {
 
-			private String bucket;
+			private String object;
 
 			private String location;
 
-			private String object;
+			private String bucket;
 
-			public String getBucket() {
-				return this.bucket;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
 			public String getLocation() {
@@ -211,29 +211,29 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 
 		public static class QueryFile {
 
-			private String bucket;
+			private String object;
 
 			private String location;
 
-			private String object;
+			private String bucket;
 
-			public String getBucket() {
-				return this.bucket;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
 			public String getLocation() {
@@ -244,12 +244,12 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 
@@ -257,9 +257,9 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 			private MasterMediaFrames masterMediaFrames;
 
-			private QueryMediaFrames queryMediaFrames;
-
 			private MatchedFramesDescFile matchedFramesDescFile;
+
+			private QueryMediaFrames queryMediaFrames;
 
 			public MasterMediaFrames getMasterMediaFrames() {
 				return this.masterMediaFrames;
@@ -267,14 +267,6 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 			public void setMasterMediaFrames(MasterMediaFrames masterMediaFrames) {
 				this.masterMediaFrames = masterMediaFrames;
-			}
-
-			public QueryMediaFrames getQueryMediaFrames() {
-				return this.queryMediaFrames;
-			}
-
-			public void setQueryMediaFrames(QueryMediaFrames queryMediaFrames) {
-				this.queryMediaFrames = queryMediaFrames;
 			}
 
 			public MatchedFramesDescFile getMatchedFramesDescFile() {
@@ -285,53 +277,28 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 				this.matchedFramesDescFile = matchedFramesDescFile;
 			}
 
-			public static class MasterMediaFrames {
-
-				private String bucket;
-
-				private String location;
-
-				private String object;
-
-				public String getBucket() {
-					return this.bucket;
-				}
-
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
-				}
-
-				public String getLocation() {
-					return this.location;
-				}
-
-				public void setLocation(String location) {
-					this.location = location;
-				}
-
-				public String getObject() {
-					return this.object;
-				}
-
-				public void setObject(String object) {
-					this.object = object;
-				}
+			public QueryMediaFrames getQueryMediaFrames() {
+				return this.queryMediaFrames;
 			}
 
-			public static class QueryMediaFrames {
+			public void setQueryMediaFrames(QueryMediaFrames queryMediaFrames) {
+				this.queryMediaFrames = queryMediaFrames;
+			}
 
-				private String bucket;
-
-				private String location;
+			public static class MasterMediaFrames {
 
 				private String object;
 
-				public String getBucket() {
-					return this.bucket;
+				private String location;
+
+				private String bucket;
+
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -342,29 +309,29 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 
 			public static class MatchedFramesDescFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -375,12 +342,45 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
+				public String getBucket() {
+					return this.bucket;
+				}
+
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
+				}
+			}
+
+			public static class QueryMediaFrames {
+
+				private String object;
+
+				private String location;
+
+				private String bucket;
+
 				public String getObject() {
 					return this.object;
 				}
 
 				public void setObject(String object) {
 					this.object = object;
+				}
+
+				public String getLocation() {
+					return this.location;
+				}
+
+				public void setLocation(String location) {
+					this.location = location;
+				}
+
+				public String getBucket() {
+					return this.bucket;
+				}
+
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}
@@ -389,9 +389,9 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 			private List<MediaMatchSegment> mediaMatchSegments;
 
-			private MasterMediaInfo masterMediaInfo;
-
 			private QueryMediaInfo queryMediaInfo;
+
+			private MasterMediaInfo masterMediaInfo;
 
 			public List<MediaMatchSegment> getMediaMatchSegments() {
 				return this.mediaMatchSegments;
@@ -399,14 +399,6 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 			public void setMediaMatchSegments(List<MediaMatchSegment> mediaMatchSegments) {
 				this.mediaMatchSegments = mediaMatchSegments;
-			}
-
-			public MasterMediaInfo getMasterMediaInfo() {
-				return this.masterMediaInfo;
-			}
-
-			public void setMasterMediaInfo(MasterMediaInfo masterMediaInfo) {
-				this.masterMediaInfo = masterMediaInfo;
 			}
 
 			public QueryMediaInfo getQueryMediaInfo() {
@@ -417,34 +409,42 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 				this.queryMediaInfo = queryMediaInfo;
 			}
 
+			public MasterMediaInfo getMasterMediaInfo() {
+				return this.masterMediaInfo;
+			}
+
+			public void setMasterMediaInfo(MasterMediaInfo masterMediaInfo) {
+				this.masterMediaInfo = masterMediaInfo;
+			}
+
 			public static class MediaMatchSegment {
-
-				private String queryStartFrame;
-
-				private String queryEndFrame;
-
-				private String masterStartFrame;
-
-				private String masterEndFrame;
 
 				private String queryStartTime;
 
-				private String queryEndTime;
-
-				private String masterStartTime;
-
-				private String masterEndTime;
-
-				private String totalMatchFrameNum;
+				private String queryEndFrame;
 
 				private String score;
 
-				public String getQueryStartFrame() {
-					return this.queryStartFrame;
+				private String totalMatchFrameNum;
+
+				private String masterEndTime;
+
+				private String masterStartTime;
+
+				private String queryStartFrame;
+
+				private String masterEndFrame;
+
+				private String masterStartFrame;
+
+				private String queryEndTime;
+
+				public String getQueryStartTime() {
+					return this.queryStartTime;
 				}
 
-				public void setQueryStartFrame(String queryStartFrame) {
-					this.queryStartFrame = queryStartFrame;
+				public void setQueryStartTime(String queryStartTime) {
+					this.queryStartTime = queryStartTime;
 				}
 
 				public String getQueryEndFrame() {
@@ -455,52 +455,12 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.queryEndFrame = queryEndFrame;
 				}
 
-				public String getMasterStartFrame() {
-					return this.masterStartFrame;
+				public String getScore() {
+					return this.score;
 				}
 
-				public void setMasterStartFrame(String masterStartFrame) {
-					this.masterStartFrame = masterStartFrame;
-				}
-
-				public String getMasterEndFrame() {
-					return this.masterEndFrame;
-				}
-
-				public void setMasterEndFrame(String masterEndFrame) {
-					this.masterEndFrame = masterEndFrame;
-				}
-
-				public String getQueryStartTime() {
-					return this.queryStartTime;
-				}
-
-				public void setQueryStartTime(String queryStartTime) {
-					this.queryStartTime = queryStartTime;
-				}
-
-				public String getQueryEndTime() {
-					return this.queryEndTime;
-				}
-
-				public void setQueryEndTime(String queryEndTime) {
-					this.queryEndTime = queryEndTime;
-				}
-
-				public String getMasterStartTime() {
-					return this.masterStartTime;
-				}
-
-				public void setMasterStartTime(String masterStartTime) {
-					this.masterStartTime = masterStartTime;
-				}
-
-				public String getMasterEndTime() {
-					return this.masterEndTime;
-				}
-
-				public void setMasterEndTime(String masterEndTime) {
-					this.masterEndTime = masterEndTime;
+				public void setScore(String score) {
+					this.score = score;
 				}
 
 				public String getTotalMatchFrameNum() {
@@ -511,111 +471,60 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.totalMatchFrameNum = totalMatchFrameNum;
 				}
 
-				public String getScore() {
-					return this.score;
+				public String getMasterEndTime() {
+					return this.masterEndTime;
 				}
 
-				public void setScore(String score) {
-					this.score = score;
-				}
-			}
-
-			public static class MasterMediaInfo {
-
-				private String duration;
-
-				private String fpNum;
-
-				private String width;
-
-				private String height;
-
-				private String fps;
-
-				private String totalVideoFrame;
-
-				private String audioBitRate;
-
-				private String audioChannels;
-
-				private String audioSampleRate;
-
-				public String getDuration() {
-					return this.duration;
+				public void setMasterEndTime(String masterEndTime) {
+					this.masterEndTime = masterEndTime;
 				}
 
-				public void setDuration(String duration) {
-					this.duration = duration;
+				public String getMasterStartTime() {
+					return this.masterStartTime;
 				}
 
-				public String getFpNum() {
-					return this.fpNum;
+				public void setMasterStartTime(String masterStartTime) {
+					this.masterStartTime = masterStartTime;
 				}
 
-				public void setFpNum(String fpNum) {
-					this.fpNum = fpNum;
+				public String getQueryStartFrame() {
+					return this.queryStartFrame;
 				}
 
-				public String getWidth() {
-					return this.width;
+				public void setQueryStartFrame(String queryStartFrame) {
+					this.queryStartFrame = queryStartFrame;
 				}
 
-				public void setWidth(String width) {
-					this.width = width;
+				public String getMasterEndFrame() {
+					return this.masterEndFrame;
 				}
 
-				public String getHeight() {
-					return this.height;
+				public void setMasterEndFrame(String masterEndFrame) {
+					this.masterEndFrame = masterEndFrame;
 				}
 
-				public void setHeight(String height) {
-					this.height = height;
+				public String getMasterStartFrame() {
+					return this.masterStartFrame;
 				}
 
-				public String getFps() {
-					return this.fps;
+				public void setMasterStartFrame(String masterStartFrame) {
+					this.masterStartFrame = masterStartFrame;
 				}
 
-				public void setFps(String fps) {
-					this.fps = fps;
+				public String getQueryEndTime() {
+					return this.queryEndTime;
 				}
 
-				public String getTotalVideoFrame() {
-					return this.totalVideoFrame;
-				}
-
-				public void setTotalVideoFrame(String totalVideoFrame) {
-					this.totalVideoFrame = totalVideoFrame;
-				}
-
-				public String getAudioBitRate() {
-					return this.audioBitRate;
-				}
-
-				public void setAudioBitRate(String audioBitRate) {
-					this.audioBitRate = audioBitRate;
-				}
-
-				public String getAudioChannels() {
-					return this.audioChannels;
-				}
-
-				public void setAudioChannels(String audioChannels) {
-					this.audioChannels = audioChannels;
-				}
-
-				public String getAudioSampleRate() {
-					return this.audioSampleRate;
-				}
-
-				public void setAudioSampleRate(String audioSampleRate) {
-					this.audioSampleRate = audioSampleRate;
+				public void setQueryEndTime(String queryEndTime) {
+					this.queryEndTime = queryEndTime;
 				}
 			}
 
 			public static class QueryMediaInfo {
 
-				private String duration;
+				private String audioSampleRate;
+
+				private String audioBitRate;
 
 				private String fpNum;
 
@@ -623,22 +532,28 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 
 				private String height;
 
-				private String fps;
-
 				private String totalVideoFrame;
 
-				private String audioBitRate;
+				private String fps;
+
+				private String duration;
 
 				private String audioChannels;
 
-				private String audioSampleRate;
-
-				public String getDuration() {
-					return this.duration;
+				public String getAudioSampleRate() {
+					return this.audioSampleRate;
 				}
 
-				public void setDuration(String duration) {
-					this.duration = duration;
+				public void setAudioSampleRate(String audioSampleRate) {
+					this.audioSampleRate = audioSampleRate;
+				}
+
+				public String getAudioBitRate() {
+					return this.audioBitRate;
+				}
+
+				public void setAudioBitRate(String audioBitRate) {
+					this.audioBitRate = audioBitRate;
 				}
 
 				public String getFpNum() {
@@ -665,6 +580,14 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.height = height;
 				}
 
+				public String getTotalVideoFrame() {
+					return this.totalVideoFrame;
+				}
+
+				public void setTotalVideoFrame(String totalVideoFrame) {
+					this.totalVideoFrame = totalVideoFrame;
+				}
+
 				public String getFps() {
 					return this.fps;
 				}
@@ -673,12 +596,49 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.fps = fps;
 				}
 
-				public String getTotalVideoFrame() {
-					return this.totalVideoFrame;
+				public String getDuration() {
+					return this.duration;
 				}
 
-				public void setTotalVideoFrame(String totalVideoFrame) {
-					this.totalVideoFrame = totalVideoFrame;
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
+				public String getAudioChannels() {
+					return this.audioChannels;
+				}
+
+				public void setAudioChannels(String audioChannels) {
+					this.audioChannels = audioChannels;
+				}
+			}
+
+			public static class MasterMediaInfo {
+
+				private String audioSampleRate;
+
+				private String audioBitRate;
+
+				private String fpNum;
+
+				private String width;
+
+				private String height;
+
+				private String totalVideoFrame;
+
+				private String fps;
+
+				private String duration;
+
+				private String audioChannels;
+
+				public String getAudioSampleRate() {
+					return this.audioSampleRate;
+				}
+
+				public void setAudioSampleRate(String audioSampleRate) {
+					this.audioSampleRate = audioSampleRate;
 				}
 
 				public String getAudioBitRate() {
@@ -689,20 +649,60 @@ public class QueryFpCompareJobListResponse extends AcsResponse {
 					this.audioBitRate = audioBitRate;
 				}
 
+				public String getFpNum() {
+					return this.fpNum;
+				}
+
+				public void setFpNum(String fpNum) {
+					this.fpNum = fpNum;
+				}
+
+				public String getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(String width) {
+					this.width = width;
+				}
+
+				public String getHeight() {
+					return this.height;
+				}
+
+				public void setHeight(String height) {
+					this.height = height;
+				}
+
+				public String getTotalVideoFrame() {
+					return this.totalVideoFrame;
+				}
+
+				public void setTotalVideoFrame(String totalVideoFrame) {
+					this.totalVideoFrame = totalVideoFrame;
+				}
+
+				public String getFps() {
+					return this.fps;
+				}
+
+				public void setFps(String fps) {
+					this.fps = fps;
+				}
+
+				public String getDuration() {
+					return this.duration;
+				}
+
+				public void setDuration(String duration) {
+					this.duration = duration;
+				}
+
 				public String getAudioChannels() {
 					return this.audioChannels;
 				}
 
 				public void setAudioChannels(String audioChannels) {
 					this.audioChannels = audioChannels;
-				}
-
-				public String getAudioSampleRate() {
-					return this.audioSampleRate;
-				}
-
-				public void setAudioSampleRate(String audioSampleRate) {
-					this.audioSampleRate = audioSampleRate;
 				}
 			}
 		}

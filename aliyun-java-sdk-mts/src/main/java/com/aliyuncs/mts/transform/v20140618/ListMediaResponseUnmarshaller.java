@@ -33,21 +33,21 @@ public class ListMediaResponseUnmarshaller {
 		List<Media> mediaList = new ArrayList<Media>();
 		for (int i = 0; i < _ctx.lengthValue("ListMediaResponse.MediaList.Length"); i++) {
 			Media media = new Media();
-			media.setMediaId(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].MediaId"));
-			media.setTitle(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Title"));
-			media.setDescription(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Description"));
-			media.setCoverURL(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CoverURL"));
-			media.setCateId(_ctx.longValue("ListMediaResponse.MediaList["+ i +"].CateId"));
-			media.setDuration(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Duration"));
-			media.setFormat(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Format"));
-			media.setSize(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Size"));
-			media.setBitrate(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Bitrate"));
-			media.setWidth(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Width"));
-			media.setHeight(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Height"));
-			media.setFps(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Fps"));
-			media.setPublishState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].PublishState"));
-			media.setCensorState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CensorState"));
 			media.setCreationTime(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CreationTime"));
+			media.setCateId(_ctx.longValue("ListMediaResponse.MediaList["+ i +"].CateId"));
+			media.setHeight(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Height"));
+			media.setCensorState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CensorState"));
+			media.setBitrate(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Bitrate"));
+			media.setMediaId(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].MediaId"));
+			media.setPublishState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].PublishState"));
+			media.setDescription(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Description"));
+			media.setWidth(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Width"));
+			media.setSize(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Size"));
+			media.setCoverURL(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].CoverURL"));
+			media.setDuration(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Duration"));
+			media.setFps(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Fps"));
+			media.setTitle(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Title"));
+			media.setFormat(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].Format"));
 
 			List<String> tags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListMediaResponse.MediaList["+ i +"].Tags.Length"); j++) {
@@ -62,8 +62,8 @@ public class ListMediaResponseUnmarshaller {
 			media.setRunIdList(runIdList);
 
 			File file = new File();
-			file.setURL(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].File.URL"));
 			file.setState(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].File.State"));
+			file.setURL(_ctx.stringValue("ListMediaResponse.MediaList["+ i +"].File.URL"));
 			media.setFile(file);
 
 			mediaList.add(media);

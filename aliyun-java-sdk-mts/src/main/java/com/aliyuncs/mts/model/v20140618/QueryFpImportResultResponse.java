@@ -67,33 +67,17 @@ public class QueryFpImportResultResponse extends AcsResponse {
 
 	public static class FpResultLogInfo {
 
-		private String logPath;
-
-		private String logName;
-
 		private Long logStartTime;
 
-		private Long logEndTime;
-
-		private Long logSize;
+		private String logPath;
 
 		private Long createTime;
 
-		public String getLogPath() {
-			return this.logPath;
-		}
+		private Long logSize;
 
-		public void setLogPath(String logPath) {
-			this.logPath = logPath;
-		}
+		private String logName;
 
-		public String getLogName() {
-			return this.logName;
-		}
-
-		public void setLogName(String logName) {
-			this.logName = logName;
-		}
+		private Long logEndTime;
 
 		public Long getLogStartTime() {
 			return this.logStartTime;
@@ -103,12 +87,20 @@ public class QueryFpImportResultResponse extends AcsResponse {
 			this.logStartTime = logStartTime;
 		}
 
-		public Long getLogEndTime() {
-			return this.logEndTime;
+		public String getLogPath() {
+			return this.logPath;
 		}
 
-		public void setLogEndTime(Long logEndTime) {
-			this.logEndTime = logEndTime;
+		public void setLogPath(String logPath) {
+			this.logPath = logPath;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
 		}
 
 		public Long getLogSize() {
@@ -119,12 +111,20 @@ public class QueryFpImportResultResponse extends AcsResponse {
 			this.logSize = logSize;
 		}
 
-		public Long getCreateTime() {
-			return this.createTime;
+		public String getLogName() {
+			return this.logName;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setLogName(String logName) {
+			this.logName = logName;
+		}
+
+		public Long getLogEndTime() {
+			return this.logEndTime;
+		}
+
+		public void setLogEndTime(Long logEndTime) {
+			this.logEndTime = logEndTime;
 		}
 	}
 

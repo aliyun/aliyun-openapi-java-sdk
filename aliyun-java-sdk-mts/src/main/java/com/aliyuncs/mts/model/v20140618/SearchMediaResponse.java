@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchMediaResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalNum;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Media> mediaList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalNum() {
 		return this.totalNum;
@@ -51,20 +43,28 @@ public class SearchMediaResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Media> getMediaList() {
@@ -77,33 +77,33 @@ public class SearchMediaResponse extends AcsResponse {
 
 	public static class Media {
 
-		private String mediaId;
-
-		private String title;
-
-		private String description;
-
-		private String coverURL;
+		private String creationTime;
 
 		private Long cateId;
 
-		private String duration;
-
-		private String format;
-
-		private String size;
+		private String height;
 
 		private String bitrate;
 
-		private String width;
-
-		private String height;
-
-		private String fps;
+		private String mediaId;
 
 		private String publishState;
 
-		private String creationTime;
+		private String description;
+
+		private String width;
+
+		private String size;
+
+		private String coverURL;
+
+		private String duration;
+
+		private String fps;
+
+		private String title;
+
+		private String format;
 
 		private List<String> tags;
 
@@ -111,36 +111,12 @@ public class SearchMediaResponse extends AcsResponse {
 
 		private File file;
 
-		public String getMediaId() {
-			return this.mediaId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCoverURL() {
-			return this.coverURL;
-		}
-
-		public void setCoverURL(String coverURL) {
-			this.coverURL = coverURL;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Long getCateId() {
@@ -151,28 +127,12 @@ public class SearchMediaResponse extends AcsResponse {
 			this.cateId = cateId;
 		}
 
-		public String getDuration() {
-			return this.duration;
+		public String getHeight() {
+			return this.height;
 		}
 
-		public void setDuration(String duration) {
-			this.duration = duration;
-		}
-
-		public String getFormat() {
-			return this.format;
-		}
-
-		public void setFormat(String format) {
-			this.format = format;
-		}
-
-		public String getSize() {
-			return this.size;
-		}
-
-		public void setSize(String size) {
-			this.size = size;
+		public void setHeight(String height) {
+			this.height = height;
 		}
 
 		public String getBitrate() {
@@ -183,28 +143,12 @@ public class SearchMediaResponse extends AcsResponse {
 			this.bitrate = bitrate;
 		}
 
-		public String getWidth() {
-			return this.width;
+		public String getMediaId() {
+			return this.mediaId;
 		}
 
-		public void setWidth(String width) {
-			this.width = width;
-		}
-
-		public String getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(String height) {
-			this.height = height;
-		}
-
-		public String getFps() {
-			return this.fps;
-		}
-
-		public void setFps(String fps) {
-			this.fps = fps;
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
 		}
 
 		public String getPublishState() {
@@ -215,12 +159,68 @@ public class SearchMediaResponse extends AcsResponse {
 			this.publishState = publishState;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(String width) {
+			this.width = width;
+		}
+
+		public String getSize() {
+			return this.size;
+		}
+
+		public void setSize(String size) {
+			this.size = size;
+		}
+
+		public String getCoverURL() {
+			return this.coverURL;
+		}
+
+		public void setCoverURL(String coverURL) {
+			this.coverURL = coverURL;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public String getFps() {
+			return this.fps;
+		}
+
+		public void setFps(String fps) {
+			this.fps = fps;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
 		}
 
 		public List<String> getTags() {
@@ -249,17 +249,9 @@ public class SearchMediaResponse extends AcsResponse {
 
 		public static class File {
 
-			private String uRL;
-
 			private String state;
 
-			public String getURL() {
-				return this.uRL;
-			}
-
-			public void setURL(String uRL) {
-				this.uRL = uRL;
-			}
+			private String uRL;
 
 			public String getState() {
 				return this.state;
@@ -267,6 +259,14 @@ public class SearchMediaResponse extends AcsResponse {
 
 			public void setState(String state) {
 				this.state = state;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
 			}
 		}
 	}

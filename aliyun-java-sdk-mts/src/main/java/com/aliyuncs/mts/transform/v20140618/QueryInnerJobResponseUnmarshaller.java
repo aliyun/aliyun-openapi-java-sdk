@@ -32,17 +32,17 @@ public class QueryInnerJobResponseUnmarshaller {
 		queryInnerJobResponse.setSuggestion(_ctx.stringValue("QueryInnerJobResponse.Suggestion"));
 
 		Video video = new Video();
-		video.setCode(_ctx.stringValue("QueryInnerJobResponse.Video.Code"));
 		video.setIndex(_ctx.integerValue("QueryInnerJobResponse.Video.Index"));
 		video.setResult(_ctx.integerValue("QueryInnerJobResponse.Video.Result"));
+		video.setCode(_ctx.stringValue("QueryInnerJobResponse.Video.Code"));
 		queryInnerJobResponse.setVideo(video);
 
 		List<Result> image = new ArrayList<Result>();
 		for (int i = 0; i < _ctx.lengthValue("QueryInnerJobResponse.Image.Length"); i++) {
 			Result result = new Result();
-			result.setCode(_ctx.stringValue("QueryInnerJobResponse.Image["+ i +"].Code"));
 			result.setIndex(_ctx.integerValue("QueryInnerJobResponse.Image["+ i +"].Index"));
 			result.setResult(_ctx.integerValue("QueryInnerJobResponse.Image["+ i +"].Result"));
+			result.setCode(_ctx.stringValue("QueryInnerJobResponse.Image["+ i +"].Code"));
 
 			image.add(result);
 		}

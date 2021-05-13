@@ -40,28 +40,28 @@ public class QueryVideoGifJobListResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryVideoGifJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].CreationTime"));
 			job.setState(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].State"));
+			job.setUserData(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].UserData"));
 			job.setCode(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Object"));
-			job.setInput(input);
+			job.setPipelineId(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setId(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Id"));
 
 			VideoGifResult videoGifResult = new VideoGifResult();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Bucket"));
-			outputFile.setLocation(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Location"));
 			outputFile.setObject(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Object"));
+			outputFile.setLocation(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Location"));
+			outputFile.setBucket(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].VideoGifResult.OutputFile.Bucket"));
 			videoGifResult.setOutputFile(outputFile);
 			job.setVideoGifResult(videoGifResult);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryVideoGifJobListResponse.JobList["+ i +"].Input.Bucket"));
+			job.setInput(input);
 
 			jobList.add(job);
 		}

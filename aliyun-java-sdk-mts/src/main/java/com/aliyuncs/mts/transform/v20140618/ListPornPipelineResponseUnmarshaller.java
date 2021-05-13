@@ -29,16 +29,16 @@ public class ListPornPipelineResponseUnmarshaller {
 		
 		listPornPipelineResponse.setRequestId(_ctx.stringValue("ListPornPipelineResponse.RequestId"));
 		listPornPipelineResponse.setTotalCount(_ctx.longValue("ListPornPipelineResponse.TotalCount"));
-		listPornPipelineResponse.setPageNumber(_ctx.longValue("ListPornPipelineResponse.PageNumber"));
 		listPornPipelineResponse.setPageSize(_ctx.longValue("ListPornPipelineResponse.PageSize"));
+		listPornPipelineResponse.setPageNumber(_ctx.longValue("ListPornPipelineResponse.PageNumber"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("ListPornPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setName(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(_ctx.stringValue("ListPornPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));

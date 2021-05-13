@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchMediaWorkflowResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<MediaWorkflow> mediaWorkflowList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class SearchMediaWorkflowResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<MediaWorkflow> getMediaWorkflowList() {
@@ -77,17 +77,25 @@ public class SearchMediaWorkflowResponse extends AcsResponse {
 
 	public static class MediaWorkflow {
 
+		private String creationTime;
+
 		private String mediaWorkflowId;
+
+		private String state;
+
+		private String triggerMode;
 
 		private String name;
 
 		private String topology;
 
-		private String triggerMode;
+		public String getCreationTime() {
+			return this.creationTime;
+		}
 
-		private String state;
-
-		private String creationTime;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
 
 		public String getMediaWorkflowId() {
 			return this.mediaWorkflowId;
@@ -95,6 +103,22 @@ public class SearchMediaWorkflowResponse extends AcsResponse {
 
 		public void setMediaWorkflowId(String mediaWorkflowId) {
 			this.mediaWorkflowId = mediaWorkflowId;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getTriggerMode() {
+			return this.triggerMode;
+		}
+
+		public void setTriggerMode(String triggerMode) {
+			this.triggerMode = triggerMode;
 		}
 
 		public String getName() {
@@ -111,30 +135,6 @@ public class SearchMediaWorkflowResponse extends AcsResponse {
 
 		public void setTopology(String topology) {
 			this.topology = topology;
-		}
-
-		public String getTriggerMode() {
-			return this.triggerMode;
-		}
-
-		public void setTriggerMode(String triggerMode) {
-			this.triggerMode = triggerMode;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
 		}
 	}
 

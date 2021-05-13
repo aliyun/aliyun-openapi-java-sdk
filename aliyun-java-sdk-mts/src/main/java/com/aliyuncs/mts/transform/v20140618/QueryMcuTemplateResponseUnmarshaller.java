@@ -31,8 +31,8 @@ public class QueryMcuTemplateResponseUnmarshaller {
 		List<Job> templates = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMcuTemplateResponse.Templates.Length"); i++) {
 			Job job = new Job();
-			job.setTemplateId(_ctx.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].TemplateId"));
 			job.setTemplate(_ctx.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].Template"));
+			job.setTemplateId(_ctx.stringValue("QueryMcuTemplateResponse.Templates["+ i +"].TemplateId"));
 
 			templates.add(job);
 		}

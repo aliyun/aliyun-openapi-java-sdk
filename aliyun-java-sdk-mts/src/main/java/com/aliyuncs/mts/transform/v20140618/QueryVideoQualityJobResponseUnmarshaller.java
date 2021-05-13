@@ -24,16 +24,16 @@ public class QueryVideoQualityJobResponseUnmarshaller {
 	public static QueryVideoQualityJobResponse unmarshall(QueryVideoQualityJobResponse queryVideoQualityJobResponse, UnmarshallerContext _ctx) {
 		
 		queryVideoQualityJobResponse.setRequestId(_ctx.stringValue("QueryVideoQualityJobResponse.RequestId"));
-		queryVideoQualityJobResponse.setCode(_ctx.stringValue("QueryVideoQualityJobResponse.Code"));
 		queryVideoQualityJobResponse.setMessage(_ctx.stringValue("QueryVideoQualityJobResponse.Message"));
+		queryVideoQualityJobResponse.setCode(_ctx.stringValue("QueryVideoQualityJobResponse.Code"));
 
 		Job job = new Job();
-		job.setUserId(_ctx.longValue("QueryVideoQualityJobResponse.Job.UserId"));
-		job.setJobId(_ctx.stringValue("QueryVideoQualityJobResponse.Job.JobId"));
 		job.setStatus(_ctx.stringValue("QueryVideoQualityJobResponse.Job.Status"));
-		job.setOutput(_ctx.stringValue("QueryVideoQualityJobResponse.Job.Output"));
-		job.setMessage(_ctx.stringValue("QueryVideoQualityJobResponse.Job.Message"));
+		job.setJobId(_ctx.stringValue("QueryVideoQualityJobResponse.Job.JobId"));
+		job.setUserId(_ctx.longValue("QueryVideoQualityJobResponse.Job.UserId"));
 		job.setVideoQualityResults(_ctx.stringValue("QueryVideoQualityJobResponse.Job.VideoQualityResults"));
+		job.setMessage(_ctx.stringValue("QueryVideoQualityJobResponse.Job.Message"));
+		job.setOutput(_ctx.stringValue("QueryVideoQualityJobResponse.Job.Output"));
 		queryVideoQualityJobResponse.setJob(job);
 	 
 	 	return queryVideoQualityJobResponse;

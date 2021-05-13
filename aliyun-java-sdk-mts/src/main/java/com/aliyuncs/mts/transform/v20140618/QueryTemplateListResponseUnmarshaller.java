@@ -46,35 +46,31 @@ public class QueryTemplateListResponseUnmarshaller {
 		List<Template> templateList = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTemplateListResponse.TemplateList.Length"); i++) {
 			Template template = new Template();
-			template.setId(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Id"));
-			template.setName(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Name"));
 			template.setState(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].State"));
-
-			Container container = new Container();
-			container.setFormat(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Container.Format"));
-			template.setContainer(container);
+			template.setName(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Name"));
+			template.setId(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Id"));
 
 			Video video = new Video();
+			video.setBufsize(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Bufsize"));
+			video.setLongShortMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.LongShortMode"));
+			video.setDegrain(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Degrain"));
+			video.setPixFmt(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.PixFmt"));
+			video.setPad(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Pad"));
 			video.setCodec(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Codec"));
-			video.setProfile(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Profile"));
-			video.setBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Bitrate"));
-			video.setCrf(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crf"));
-			video.setWidth(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Width"));
 			video.setHeight(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Height"));
-			video.setFps(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Fps"));
+			video.setQscale(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Qscale"));
+			video.setCrop(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crop"));
+			video.setBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Bitrate"));
+			video.setMaxrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Maxrate"));
+			video.setMaxFps(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.MaxFps"));
+			video.setProfile(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Profile"));
+			video.setCrf(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crf"));
+			video.setRemove(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Remove"));
 			video.setGop(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Gop"));
+			video.setWidth(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Width"));
+			video.setFps(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Fps"));
 			video.setPreset(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Preset"));
 			video.setScanMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.ScanMode"));
-			video.setBufsize(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Bufsize"));
-			video.setMaxrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Maxrate"));
-			video.setPixFmt(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.PixFmt"));
-			video.setDegrain(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Degrain"));
-			video.setQscale(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Qscale"));
-			video.setLongShortMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.LongShortMode"));
-			video.setRemove(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Remove"));
-			video.setCrop(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Crop"));
-			video.setPad(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.Pad"));
-			video.setMaxFps(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.MaxFps"));
 			video.setResoPriority(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Video.ResoPriority"));
 
 			BitrateBnd bitrateBnd = new BitrateBnd();
@@ -83,44 +79,48 @@ public class QueryTemplateListResponseUnmarshaller {
 			video.setBitrateBnd(bitrateBnd);
 			template.setVideo(video);
 
-			Audio audio = new Audio();
-			audio.setCodec(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Codec"));
-			audio.setProfile(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Profile"));
-			audio.setSamplerate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Samplerate"));
-			audio.setBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Bitrate"));
-			audio.setChannels(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Channels"));
-			audio.setQscale(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Qscale"));
-			audio.setRemove(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Remove"));
-			template.setAudio(audio);
-
 			TransConfig transConfig = new TransConfig();
+			transConfig.setIsCheckAudioBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrate"));
 			transConfig.setTransMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.TransMode"));
 			transConfig.setIsCheckReso(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckReso"));
-			transConfig.setIsCheckResoFail(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckResoFail"));
-			transConfig.setIsCheckVideoBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrate"));
-			transConfig.setIsCheckAudioBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrate"));
-			transConfig.setAdjDarMethod(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.AdjDarMethod"));
 			transConfig.setIsCheckVideoBitrateFail(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrateFail"));
+			transConfig.setAdjDarMethod(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.AdjDarMethod"));
+			transConfig.setIsCheckVideoBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckVideoBitrate"));
+			transConfig.setIsCheckResoFail(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckResoFail"));
 			transConfig.setIsCheckAudioBitrateFail(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].TransConfig.IsCheckAudioBitrateFail"));
 			template.setTransConfig(transConfig);
 
 			MuxConfig muxConfig = new MuxConfig();
 
-			Segment segment = new Segment();
-			segment.setDuration(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Segment.Duration"));
-			muxConfig.setSegment(segment);
-
-			Gif gif = new Gif();
-			gif.setLoop(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.Loop"));
-			gif.setFinalDelay(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.FinalDelay"));
-			gif.setIsCustomPalette(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette"));
-			gif.setDitherMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.DitherMode"));
-			muxConfig.setGif(gif);
-
 			Webp webp = new Webp();
 			webp.setLoop(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Webp.Loop"));
 			muxConfig.setWebp(webp);
+
+			Gif gif = new Gif();
+			gif.setFinalDelay(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.FinalDelay"));
+			gif.setDitherMode(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.DitherMode"));
+			gif.setLoop(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.Loop"));
+			gif.setIsCustomPalette(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Gif.IsCustomPalette"));
+			muxConfig.setGif(gif);
+
+			Segment segment = new Segment();
+			segment.setDuration(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].MuxConfig.Segment.Duration"));
+			muxConfig.setSegment(segment);
 			template.setMuxConfig(muxConfig);
+
+			Audio audio = new Audio();
+			audio.setProfile(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Profile"));
+			audio.setRemove(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Remove"));
+			audio.setCodec(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Codec"));
+			audio.setSamplerate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Samplerate"));
+			audio.setQscale(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Qscale"));
+			audio.setChannels(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Channels"));
+			audio.setBitrate(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Audio.Bitrate"));
+			template.setAudio(audio);
+
+			Container container = new Container();
+			container.setFormat(_ctx.stringValue("QueryTemplateListResponse.TemplateList["+ i +"].Container.Format"));
+			template.setContainer(container);
 
 			templateList.add(template);
 		}

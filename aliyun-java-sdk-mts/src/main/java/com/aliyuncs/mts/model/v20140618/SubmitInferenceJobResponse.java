@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SubmitInferenceJobResponse extends AcsResponse {
 
-	private String code;
+	private String testId;
 
 	private String message;
 
-	private String jobId;
-
 	private String requestId;
 
-	private String testId;
+	private String code;
 
-	public String getCode() {
-		return this.code;
+	private String jobId;
+
+	public String getTestId() {
+		return this.testId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTestId(String testId) {
+		this.testId = testId;
 	}
 
 	public String getMessage() {
@@ -50,14 +50,6 @@ public class SubmitInferenceJobResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getJobId() {
-		return this.jobId;
-	}
-
-	public void setJobId(String jobId) {
-		this.jobId = jobId;
-	}
-
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -66,12 +58,20 @@ public class SubmitInferenceJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getTestId() {
-		return this.testId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTestId(String testId) {
-		this.testId = testId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getJobId() {
+		return this.jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
 	}
 
 	@Override

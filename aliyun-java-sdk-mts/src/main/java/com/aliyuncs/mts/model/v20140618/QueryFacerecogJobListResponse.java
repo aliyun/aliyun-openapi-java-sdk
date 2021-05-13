@@ -57,46 +57,30 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 
 	public static class FacerecogJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
+		private String id;
 
 		private VideoFacerecogResult videoFacerecogResult;
 
-		public String getId() {
-			return this.id;
+		private Input input;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -105,6 +89,14 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -123,20 +115,20 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public VideoFacerecogResult getVideoFacerecogResult() {
@@ -147,37 +139,12 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 			this.videoFacerecogResult = videoFacerecogResult;
 		}
 
-		public static class Input {
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
+		public void setInput(Input input) {
+			this.input = input;
 		}
 
 		public static class VideoFacerecogResult {
@@ -216,19 +183,11 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 
 				public static class Face {
 
-					private String name;
-
 					private String score;
 
+					private String name;
+
 					private String target;
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
 
 					public String getScore() {
 						return this.score;
@@ -236,6 +195,14 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 
 					public void setScore(String score) {
 						this.score = score;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
 					}
 
 					public String getTarget() {
@@ -246,6 +213,39 @@ public class QueryFacerecogJobListResponse extends AcsResponse {
 						this.target = target;
 					}
 				}
+			}
+		}
+
+		public static class Input {
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

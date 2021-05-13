@@ -28,22 +28,22 @@ public class ListCoverPipelineResponseUnmarshaller {
 		
 		listCoverPipelineResponse.setRequestId(_ctx.stringValue("ListCoverPipelineResponse.RequestId"));
 		listCoverPipelineResponse.setTotalCount(_ctx.longValue("ListCoverPipelineResponse.TotalCount"));
-		listCoverPipelineResponse.setPageNumber(_ctx.longValue("ListCoverPipelineResponse.PageNumber"));
 		listCoverPipelineResponse.setPageSize(_ctx.longValue("ListCoverPipelineResponse.PageSize"));
+		listCoverPipelineResponse.setPageNumber(_ctx.longValue("ListCoverPipelineResponse.PageNumber"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("ListCoverPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setUserId(_ctx.longValue("ListCoverPipelineResponse.PipelineList["+ i +"].UserId"));
-			pipeline.setPipelineId(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].PipelineId"));
-			pipeline.setName(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].State"));
-			pipeline.setPriority(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Priority"));
 			pipeline.setQuotaNum(_ctx.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaNum"));
-			pipeline.setQuotaUsed(_ctx.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaUsed"));
+			pipeline.setUserId(_ctx.longValue("ListCoverPipelineResponse.PipelineList["+ i +"].UserId"));
 			pipeline.setNotifyConfig(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].NotifyConfig"));
-			pipeline.setRole(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Role"));
 			pipeline.setExtendConfig(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].ExtendConfig"));
+			pipeline.setPriority(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setRole(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Role"));
+			pipeline.setName(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setPipelineId(_ctx.stringValue("ListCoverPipelineResponse.PipelineList["+ i +"].PipelineId"));
+			pipeline.setQuotaUsed(_ctx.integerValue("ListCoverPipelineResponse.PipelineList["+ i +"].quotaUsed"));
 
 			pipelineList.add(pipeline);
 		}

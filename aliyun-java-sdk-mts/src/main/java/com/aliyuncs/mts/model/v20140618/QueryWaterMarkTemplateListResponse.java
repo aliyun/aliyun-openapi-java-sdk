@@ -57,42 +57,58 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 
 	public static class WaterMarkTemplate {
 
-		private String id;
+		private String type;
 
-		private String name;
+		private String referPos;
+
+		private String state;
+
+		private String dx;
 
 		private String width;
 
 		private String height;
 
-		private String dx;
+		private String name;
 
 		private String dy;
 
-		private String referPos;
-
-		private String type;
-
-		private String state;
-
-		private Timeline timeline;
+		private String id;
 
 		private RatioRefer ratioRefer;
 
-		public String getId() {
-			return this.id;
+		private Timeline timeline;
+
+		public String getType() {
+			return this.type;
 		}
 
-		public void setId(String id) {
-			this.id = id;
+		public void setType(String type) {
+			this.type = type;
 		}
 
-		public String getName() {
-			return this.name;
+		public String getReferPos() {
+			return this.referPos;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setReferPos(String referPos) {
+			this.referPos = referPos;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getDx() {
+			return this.dx;
+		}
+
+		public void setDx(String dx) {
+			this.dx = dx;
 		}
 
 		public String getWidth() {
@@ -111,12 +127,12 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 			this.height = height;
 		}
 
-		public String getDx() {
-			return this.dx;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setDx(String dx) {
-			this.dx = dx;
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public String getDy() {
@@ -127,28 +143,20 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 			this.dy = dy;
 		}
 
-		public String getReferPos() {
-			return this.referPos;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setReferPos(String referPos) {
-			this.referPos = referPos;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getType() {
-			return this.type;
+		public RatioRefer getRatioRefer() {
+			return this.ratioRefer;
 		}
 
-		public void setType(String type) {
-			this.type = type;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
+		public void setRatioRefer(RatioRefer ratioRefer) {
+			this.ratioRefer = ratioRefer;
 		}
 
 		public Timeline getTimeline() {
@@ -159,12 +167,47 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 			this.timeline = timeline;
 		}
 
-		public RatioRefer getRatioRefer() {
-			return this.ratioRefer;
-		}
+		public static class RatioRefer {
 
-		public void setRatioRefer(RatioRefer ratioRefer) {
-			this.ratioRefer = ratioRefer;
+			private String dx;
+
+			private String width;
+
+			private String height;
+
+			private String dy;
+
+			public String getDx() {
+				return this.dx;
+			}
+
+			public void setDx(String dx) {
+				this.dx = dx;
+			}
+
+			public String getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(String width) {
+				this.width = width;
+			}
+
+			public String getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(String height) {
+				this.height = height;
+			}
+
+			public String getDy() {
+				return this.dy;
+			}
+
+			public void setDy(String dy) {
+				this.dy = dy;
+			}
 		}
 
 		public static class Timeline {
@@ -187,49 +230,6 @@ public class QueryWaterMarkTemplateListResponse extends AcsResponse {
 
 			public void setDuration(String duration) {
 				this.duration = duration;
-			}
-		}
-
-		public static class RatioRefer {
-
-			private String dx;
-
-			private String dy;
-
-			private String width;
-
-			private String height;
-
-			public String getDx() {
-				return this.dx;
-			}
-
-			public void setDx(String dx) {
-				this.dx = dx;
-			}
-
-			public String getDy() {
-				return this.dy;
-			}
-
-			public void setDy(String dy) {
-				this.dy = dy;
-			}
-
-			public String getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(String width) {
-				this.width = width;
-			}
-
-			public String getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(String height) {
-				this.height = height;
 			}
 		}
 	}
