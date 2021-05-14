@@ -37,6 +37,8 @@ public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditi
 
 	private String orderTimeLength;
 
+	private Integer autoRenewPeriod;
+
 	private Boolean autoPay;
 
 	private String resourceOwnerAccount;
@@ -48,6 +50,8 @@ public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditi
 	private Long ownerId;
 
 	private String instanceId;
+
+	private Boolean autoRenew;
 	public EnableAdditionalBandwidthRequest() {
 		super("R-kvstore", "2015-01-01", "EnableAdditionalBandwidth", "redisa");
 		setMethod(MethodType.POST);
@@ -123,6 +127,17 @@ public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditi
 		}
 	}
 
+	public Integer getAutoRenewPeriod() {
+		return this.autoRenewPeriod;
+	}
+
+	public void setAutoRenewPeriod(Integer autoRenewPeriod) {
+		this.autoRenewPeriod = autoRenewPeriod;
+		if(autoRenewPeriod != null){
+			putQueryParameter("AutoRenewPeriod", autoRenewPeriod.toString());
+		}
+	}
+
 	public Boolean getAutoPay() {
 		return this.autoPay;
 	}
@@ -186,6 +201,17 @@ public class EnableAdditionalBandwidthRequest extends RpcAcsRequest<EnableAdditi
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putQueryParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getAutoRenew() {
+		return this.autoRenew;
+	}
+
+	public void setAutoRenew(Boolean autoRenew) {
+		this.autoRenew = autoRenew;
+		if(autoRenew != null){
+			putQueryParameter("AutoRenew", autoRenew.toString());
 		}
 	}
 
