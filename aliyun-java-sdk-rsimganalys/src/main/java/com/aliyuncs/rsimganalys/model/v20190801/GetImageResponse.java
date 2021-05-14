@@ -30,8 +30,6 @@ public class GetImageResponse extends AcsResponse {
 
 	private String resultMessage;
 
-	private String downloadPath;
-
 	private Data data;
 
 	public String getRequestId() {
@@ -56,14 +54,6 @@ public class GetImageResponse extends AcsResponse {
 
 	public void setResultMessage(String resultMessage) {
 		this.resultMessage = resultMessage;
-	}
-
-	public String getDownloadPath() {
-		return this.downloadPath;
-	}
-
-	public void setDownloadPath(String downloadPath) {
-		this.downloadPath = downloadPath;
 	}
 
 	public Data getData() {
@@ -97,8 +87,6 @@ public class GetImageResponse extends AcsResponse {
 		private String pixelSize;
 
 		private Integer publishStatus;
-
-		private String downloadPath;
 
 		private String publicResult;
 
@@ -188,14 +176,6 @@ public class GetImageResponse extends AcsResponse {
 
 		public void setPublishStatus(Integer publishStatus) {
 			this.publishStatus = publishStatus;
-		}
-
-		public String getDownloadPath() {
-			return this.downloadPath;
-		}
-
-		public void setDownloadPath(String downloadPath) {
-			this.downloadPath = downloadPath;
 		}
 
 		public String getPublicResult() {

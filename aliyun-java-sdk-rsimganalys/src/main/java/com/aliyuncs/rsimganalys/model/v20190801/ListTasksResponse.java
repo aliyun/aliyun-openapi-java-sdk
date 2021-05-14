@@ -29,15 +29,9 @@ public class ListTasksResponse extends AcsResponse {
 
 	private Integer resultCode;
 
-	private Integer totalCount;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
 	private String resultMessage;
 
-	private List<Contents> data;
+	private Data data;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,30 +49,6 @@ public class ListTasksResponse extends AcsResponse {
 		this.resultCode = resultCode;
 	}
 
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public String getResultMessage() {
 		return this.resultMessage;
 	}
@@ -87,164 +57,247 @@ public class ListTasksResponse extends AcsResponse {
 		this.resultMessage = resultMessage;
 	}
 
-	public List<Contents> getData() {
+	public Data getData() {
 		return this.data;
 	}
 
-	public void setData(List<Contents> data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 
-	public static class Contents {
+	public static class Data {
 
-		private String appkey;
+		private Integer pageNo;
 
-		private String userId;
+		private Integer pageSize;
 
-		private String jobId;
+		private Integer total;
 
-		private String status;
+		private Integer pages;
 
-		private String request;
+		private List<Contents> content;
 
-		private Integer progress;
-
-		private String namespace;
-
-		private String version;
-
-		private Long createTime;
-
-		private Long lastUpdateTime;
-
-		private String response;
-
-		private String statusMessage;
-
-		private Integer statusCode;
-
-		private Integer enableZoneIdentification;
-
-		private Integer publishStatus;
-
-		public String getAppkey() {
-			return this.appkey;
+		public Integer getPageNo() {
+			return this.pageNo;
 		}
 
-		public void setAppkey(String appkey) {
-			this.appkey = appkey;
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
 		}
 
-		public String getUserId() {
-			return this.userId;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setUserId(String userId) {
-			this.userId = userId;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
-		public String getJobId() {
-			return this.jobId;
+		public Integer getTotal() {
+			return this.total;
 		}
 
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
+		public void setTotal(Integer total) {
+			this.total = total;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public Integer getPages() {
+			return this.pages;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setPages(Integer pages) {
+			this.pages = pages;
 		}
 
-		public String getRequest() {
-			return this.request;
+		public List<Contents> getContent() {
+			return this.content;
 		}
 
-		public void setRequest(String request) {
-			this.request = request;
+		public void setContent(List<Contents> content) {
+			this.content = content;
 		}
 
-		public Integer getProgress() {
-			return this.progress;
-		}
+		public static class Contents {
 
-		public void setProgress(Integer progress) {
-			this.progress = progress;
-		}
+			private String appkey;
 
-		public String getNamespace() {
-			return this.namespace;
-		}
+			private Long createTime;
 
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
+			private Integer enableZoneIdentification;
 
-		public String getVersion() {
-			return this.version;
-		}
+			private String jobId;
 
-		public void setVersion(String version) {
-			this.version = version;
-		}
+			private Long lastUpdateTime;
 
-		public Long getCreateTime() {
-			return this.createTime;
-		}
+			private String namespace;
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
+			private Integer progress;
 
-		public Long getLastUpdateTime() {
-			return this.lastUpdateTime;
-		}
+			private Integer publishStatus;
 
-		public void setLastUpdateTime(Long lastUpdateTime) {
-			this.lastUpdateTime = lastUpdateTime;
-		}
+			private String request;
 
-		public String getResponse() {
-			return this.response;
-		}
+			private String response;
 
-		public void setResponse(String response) {
-			this.response = response;
-		}
+			private String status;
 
-		public String getStatusMessage() {
-			return this.statusMessage;
-		}
+			private Integer statusCode;
 
-		public void setStatusMessage(String statusMessage) {
-			this.statusMessage = statusMessage;
-		}
+			private String statusMessage;
 
-		public Integer getStatusCode() {
-			return this.statusCode;
-		}
+			private String userId;
 
-		public void setStatusCode(Integer statusCode) {
-			this.statusCode = statusCode;
-		}
+			private String version;
 
-		public Integer getEnableZoneIdentification() {
-			return this.enableZoneIdentification;
-		}
+			private String jobType;
 
-		public void setEnableZoneIdentification(Integer enableZoneIdentification) {
-			this.enableZoneIdentification = enableZoneIdentification;
-		}
+			private String jobMessage;
 
-		public Integer getPublishStatus() {
-			return this.publishStatus;
-		}
+			private String jobName;
 
-		public void setPublishStatus(Integer publishStatus) {
-			this.publishStatus = publishStatus;
+			public String getAppkey() {
+				return this.appkey;
+			}
+
+			public void setAppkey(String appkey) {
+				this.appkey = appkey;
+			}
+
+			public Long getCreateTime() {
+				return this.createTime;
+			}
+
+			public void setCreateTime(Long createTime) {
+				this.createTime = createTime;
+			}
+
+			public Integer getEnableZoneIdentification() {
+				return this.enableZoneIdentification;
+			}
+
+			public void setEnableZoneIdentification(Integer enableZoneIdentification) {
+				this.enableZoneIdentification = enableZoneIdentification;
+			}
+
+			public String getJobId() {
+				return this.jobId;
+			}
+
+			public void setJobId(String jobId) {
+				this.jobId = jobId;
+			}
+
+			public Long getLastUpdateTime() {
+				return this.lastUpdateTime;
+			}
+
+			public void setLastUpdateTime(Long lastUpdateTime) {
+				this.lastUpdateTime = lastUpdateTime;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public Integer getProgress() {
+				return this.progress;
+			}
+
+			public void setProgress(Integer progress) {
+				this.progress = progress;
+			}
+
+			public Integer getPublishStatus() {
+				return this.publishStatus;
+			}
+
+			public void setPublishStatus(Integer publishStatus) {
+				this.publishStatus = publishStatus;
+			}
+
+			public String getRequest() {
+				return this.request;
+			}
+
+			public void setRequest(String request) {
+				this.request = request;
+			}
+
+			public String getResponse() {
+				return this.response;
+			}
+
+			public void setResponse(String response) {
+				this.response = response;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public Integer getStatusCode() {
+				return this.statusCode;
+			}
+
+			public void setStatusCode(Integer statusCode) {
+				this.statusCode = statusCode;
+			}
+
+			public String getStatusMessage() {
+				return this.statusMessage;
+			}
+
+			public void setStatusMessage(String statusMessage) {
+				this.statusMessage = statusMessage;
+			}
+
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
+			public String getVersion() {
+				return this.version;
+			}
+
+			public void setVersion(String version) {
+				this.version = version;
+			}
+
+			public String getJobType() {
+				return this.jobType;
+			}
+
+			public void setJobType(String jobType) {
+				this.jobType = jobType;
+			}
+
+			public String getJobMessage() {
+				return this.jobMessage;
+			}
+
+			public void setJobMessage(String jobMessage) {
+				this.jobMessage = jobMessage;
+			}
+
+			public String getJobName() {
+				return this.jobName;
+			}
+
+			public void setJobName(String jobName) {
+				this.jobName = jobName;
+			}
 		}
 	}
 

@@ -42,6 +42,8 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 	private String appkey;
 
 	private String dstImageId;
+
+	private String jobName;
 	public CreateTaskRequest() {
 		super("rsimganalys", "2019-08-01", "CreateTask", "rsimganalys");
 		setMethod(MethodType.POST);
@@ -147,6 +149,17 @@ public class CreateTaskRequest extends RpcAcsRequest<CreateTaskResponse> {
 		this.dstImageId = dstImageId;
 		if(dstImageId != null){
 			putQueryParameter("DstImageId", dstImageId);
+		}
+	}
+
+	public String getJobName() {
+		return this.jobName;
+	}
+
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+		if(jobName != null){
+			putQueryParameter("JobName", jobName);
 		}
 	}
 

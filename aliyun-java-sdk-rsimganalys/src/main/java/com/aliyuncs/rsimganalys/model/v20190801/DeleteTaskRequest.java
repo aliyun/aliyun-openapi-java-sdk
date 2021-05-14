@@ -26,8 +26,6 @@ public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 	   
 
 	private String jobId;
-
-	private String appkey;
 	public DeleteTaskRequest() {
 		super("rsimganalys", "2019-08-01", "DeleteTask", "rsimganalys");
 		setMethod(MethodType.POST);
@@ -45,17 +43,6 @@ public class DeleteTaskRequest extends RpcAcsRequest<DeleteTaskResponse> {
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
-		}
-	}
-
-	public String getAppkey() {
-		return this.appkey;
-	}
-
-	public void setAppkey(String appkey) {
-		this.appkey = appkey;
-		if(appkey != null){
-			putQueryParameter("Appkey", appkey);
 		}
 	}
 
