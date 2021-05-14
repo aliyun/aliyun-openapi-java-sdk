@@ -54,6 +54,7 @@ public class DescribeDrdsInstanceResponseUnmarshaller {
 		data.setMysqlVersion(_ctx.integerValue("DescribeDrdsInstanceResponse.Data.MysqlVersion"));
 		data.setStorageType(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.StorageType"));
 		data.setResourceGroupId(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ResourceGroupId"));
+		data.setProductVersion(_ctx.stringValue("DescribeDrdsInstanceResponse.Data.ProductVersion"));
 
 		List<String> readOnlyDBInstanceIds = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDrdsInstanceResponse.Data.ReadOnlyDBInstanceIds.Length"); i++) {

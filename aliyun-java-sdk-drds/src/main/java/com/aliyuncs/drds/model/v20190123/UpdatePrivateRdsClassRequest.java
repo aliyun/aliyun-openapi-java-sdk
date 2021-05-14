@@ -22,18 +22,22 @@ import com.aliyuncs.drds.Endpoint;
  * @author auto create
  * @version 
  */
-public class ManagePrivateRdsRequest extends RpcAcsRequest<ManagePrivateRdsResponse> {
+public class UpdatePrivateRdsClassRequest extends RpcAcsRequest<UpdatePrivateRdsClassResponse> {
 	   
 
-	private String params;
+	private String storage;
+
+	private Boolean autoUseCoupon;
 
 	private String drdsInstanceId;
 
-	private String dBInstanceId;
+	private String rdsClass;
 
-	private String rdsAction;
-	public ManagePrivateRdsRequest() {
-		super("Drds", "2019-01-23", "ManagePrivateRds", "drds");
+	private Integer prePayDuration;
+
+	private String dBInstanceId;
+	public UpdatePrivateRdsClassRequest() {
+		super("Drds", "2019-01-23", "UpdatePrivateRdsClass", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +45,25 @@ public class ManagePrivateRdsRequest extends RpcAcsRequest<ManagePrivateRdsRespo
 		} catch (Exception e) {}
 	}
 
-	public String getParams() {
-		return this.params;
+	public String getStorage() {
+		return this.storage;
 	}
 
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
+	public void setStorage(String storage) {
+		this.storage = storage;
+		if(storage != null){
+			putQueryParameter("Storage", storage);
+		}
+	}
+
+	public Boolean getAutoUseCoupon() {
+		return this.autoUseCoupon;
+	}
+
+	public void setAutoUseCoupon(Boolean autoUseCoupon) {
+		this.autoUseCoupon = autoUseCoupon;
+		if(autoUseCoupon != null){
+			putQueryParameter("AutoUseCoupon", autoUseCoupon.toString());
 		}
 	}
 
@@ -63,6 +78,28 @@ public class ManagePrivateRdsRequest extends RpcAcsRequest<ManagePrivateRdsRespo
 		}
 	}
 
+	public String getRdsClass() {
+		return this.rdsClass;
+	}
+
+	public void setRdsClass(String rdsClass) {
+		this.rdsClass = rdsClass;
+		if(rdsClass != null){
+			putQueryParameter("RdsClass", rdsClass);
+		}
+	}
+
+	public Integer getPrePayDuration() {
+		return this.prePayDuration;
+	}
+
+	public void setPrePayDuration(Integer prePayDuration) {
+		this.prePayDuration = prePayDuration;
+		if(prePayDuration != null){
+			putQueryParameter("PrePayDuration", prePayDuration.toString());
+		}
+	}
+
 	public String getDBInstanceId() {
 		return this.dBInstanceId;
 	}
@@ -74,20 +111,9 @@ public class ManagePrivateRdsRequest extends RpcAcsRequest<ManagePrivateRdsRespo
 		}
 	}
 
-	public String getRdsAction() {
-		return this.rdsAction;
-	}
-
-	public void setRdsAction(String rdsAction) {
-		this.rdsAction = rdsAction;
-		if(rdsAction != null){
-			putQueryParameter("RdsAction", rdsAction);
-		}
-	}
-
 	@Override
-	public Class<ManagePrivateRdsResponse> getResponseClass() {
-		return ManagePrivateRdsResponse.class;
+	public Class<UpdatePrivateRdsClassResponse> getResponseClass() {
+		return UpdatePrivateRdsClassResponse.class;
 	}
 
 }

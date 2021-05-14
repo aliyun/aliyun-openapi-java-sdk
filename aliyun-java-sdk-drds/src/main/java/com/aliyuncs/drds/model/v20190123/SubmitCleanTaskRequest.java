@@ -35,7 +35,7 @@ public class SubmitCleanTaskRequest extends RpcAcsRequest<SubmitCleanTaskRespons
 
 	private String parentJobId;
 	public SubmitCleanTaskRequest() {
-		super("Drds", "2019-01-23", "SubmitCleanTask");
+		super("Drds", "2019-01-23", "SubmitCleanTask", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
