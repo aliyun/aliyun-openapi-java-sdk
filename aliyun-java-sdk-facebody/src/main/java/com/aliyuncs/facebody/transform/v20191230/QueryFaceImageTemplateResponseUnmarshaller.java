@@ -28,19 +28,19 @@ public class QueryFaceImageTemplateResponseUnmarshaller {
 	public static QueryFaceImageTemplateResponse unmarshall(QueryFaceImageTemplateResponse queryFaceImageTemplateResponse, UnmarshallerContext _ctx) {
 		
 		queryFaceImageTemplateResponse.setRequestId(_ctx.stringValue("QueryFaceImageTemplateResponse.RequestId"));
-		queryFaceImageTemplateResponse.setMessage(_ctx.stringValue("QueryFaceImageTemplateResponse.Message"));
 		queryFaceImageTemplateResponse.setCode(_ctx.stringValue("QueryFaceImageTemplateResponse.Code"));
+		queryFaceImageTemplateResponse.setMessage(_ctx.stringValue("QueryFaceImageTemplateResponse.Message"));
 
 		Data data = new Data();
 
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFaceImageTemplateResponse.Data.Elements.Length"); i++) {
 			ElementsItem elementsItem = new ElementsItem();
-			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
-			elementsItem.setUserId(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setCreateTime(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].CreateTime"));
 			elementsItem.setUpdateTime(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].UpdateTime"));
+			elementsItem.setUserId(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].UserId"));
 			elementsItem.setTemplateId(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].TemplateId"));
+			elementsItem.setTemplateURL(_ctx.stringValue("QueryFaceImageTemplateResponse.Data.Elements["+ i +"].TemplateURL"));
 
 			elements.add(elementsItem);
 		}

@@ -14,16 +14,15 @@
 
 package com.aliyuncs.facebody.model.v20191230;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.facebody.transform.v20191230.ListBodyDbsResponseUnmarshaller;
+import com.aliyuncs.facebody.transform.v20191230.ExtractFingerPrintResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListBodyDbsResponse extends AcsResponse {
+public class ExtractFingerPrintResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -67,53 +66,20 @@ public class ListBodyDbsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long total;
+		private String fingerPrint;
 
-		private List<DbListItem> dbList;
-
-		public Long getTotal() {
-			return this.total;
+		public String getFingerPrint() {
+			return this.fingerPrint;
 		}
 
-		public void setTotal(Long total) {
-			this.total = total;
-		}
-
-		public List<DbListItem> getDbList() {
-			return this.dbList;
-		}
-
-		public void setDbList(List<DbListItem> dbList) {
-			this.dbList = dbList;
-		}
-
-		public static class DbListItem {
-
-			private Long id;
-
-			private String name;
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+		public void setFingerPrint(String fingerPrint) {
+			this.fingerPrint = fingerPrint;
 		}
 	}
 
 	@Override
-	public ListBodyDbsResponse getInstance(UnmarshallerContext context) {
-		return	ListBodyDbsResponseUnmarshaller.unmarshall(this, context);
+	public ExtractFingerPrintResponse getInstance(UnmarshallerContext context) {
+		return	ExtractFingerPrintResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

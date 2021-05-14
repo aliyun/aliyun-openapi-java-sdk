@@ -59,20 +59,20 @@ public class DetectIPCPedestrianResponse extends AcsResponse {
 
 		public static class ImageInfoListItem {
 
-			private String dataId;
+			private String errorMessage;
 
 			private String errorCode;
 
-			private String errorMessage;
+			private String dataId;
 
 			private List<Element> elements;
 
-			public String getDataId() {
-				return this.dataId;
+			public String getErrorMessage() {
+				return this.errorMessage;
 			}
 
-			public void setDataId(String dataId) {
-				this.dataId = dataId;
+			public void setErrorMessage(String errorMessage) {
+				this.errorMessage = errorMessage;
 			}
 
 			public String getErrorCode() {
@@ -83,12 +83,12 @@ public class DetectIPCPedestrianResponse extends AcsResponse {
 				this.errorCode = errorCode;
 			}
 
-			public String getErrorMessage() {
-				return this.errorMessage;
+			public String getDataId() {
+				return this.dataId;
 			}
 
-			public void setErrorMessage(String errorMessage) {
-				this.errorMessage = errorMessage;
+			public void setDataId(String dataId) {
+				this.dataId = dataId;
 			}
 
 			public List<Element> getElements() {

@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RecognizeHandGestureResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,6 +48,14 @@ public class RecognizeHandGestureResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -66,25 +66,17 @@ public class RecognizeHandGestureResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Float score;
-
 		private String type;
 
 		private Long x;
 
 		private Long y;
 
-		private Long height;
-
 		private Long width;
 
-		public Float getScore() {
-			return this.score;
-		}
+		private Long height;
 
-		public void setScore(Float score) {
-			this.score = score;
-		}
+		private Float score;
 
 		public String getType() {
 			return this.type;
@@ -110,6 +102,14 @@ public class RecognizeHandGestureResponse extends AcsResponse {
 			this.y = y;
 		}
 
+		public Long getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Long width) {
+			this.width = width;
+		}
+
 		public Long getHeight() {
 			return this.height;
 		}
@@ -118,12 +118,12 @@ public class RecognizeHandGestureResponse extends AcsResponse {
 			this.height = height;
 		}
 
-		public Long getWidth() {
-			return this.width;
+		public Float getScore() {
+			return this.score;
 		}
 
-		public void setWidth(Long width) {
-			this.width = width;
+		public void setScore(Float score) {
+			this.score = score;
 		}
 	}
 

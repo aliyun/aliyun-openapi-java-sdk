@@ -30,10 +30,10 @@ public class CompareFaceResponseUnmarshaller {
 		compareFaceResponse.setCode(_ctx.stringValue("CompareFaceResponse.Code"));
 
 		Data data = new Data();
-		data.setMessageTips(_ctx.stringValue("CompareFaceResponse.Data.MessageTips"));
+		data.setConfidence(_ctx.floatValue("CompareFaceResponse.Data.Confidence"));
 		data.setQualityScoreA(_ctx.floatValue("CompareFaceResponse.Data.QualityScoreA"));
 		data.setQualityScoreB(_ctx.floatValue("CompareFaceResponse.Data.QualityScoreB"));
-		data.setConfidence(_ctx.floatValue("CompareFaceResponse.Data.Confidence"));
+		data.setMessageTips(_ctx.stringValue("CompareFaceResponse.Data.MessageTips"));
 
 		List<Float> thresholds = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.Thresholds.Length"); i++) {
@@ -41,17 +41,17 @@ public class CompareFaceResponseUnmarshaller {
 		}
 		data.setThresholds(thresholds);
 
-		List<Integer> rectAList = new ArrayList<Integer>();
-		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.RectAList.Length"); i++) {
-			rectAList.add(_ctx.integerValue("CompareFaceResponse.Data.RectAList["+ i +"]"));
-		}
-		data.setRectAList(rectAList);
-
 		List<Integer> rectBList = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.RectBList.Length"); i++) {
 			rectBList.add(_ctx.integerValue("CompareFaceResponse.Data.RectBList["+ i +"]"));
 		}
 		data.setRectBList(rectBList);
+
+		List<Integer> rectAList = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("CompareFaceResponse.Data.RectAList.Length"); i++) {
+			rectAList.add(_ctx.integerValue("CompareFaceResponse.Data.RectAList["+ i +"]"));
+		}
+		data.setRectAList(rectAList);
 		compareFaceResponse.setData(data);
 	 
 	 	return compareFaceResponse;

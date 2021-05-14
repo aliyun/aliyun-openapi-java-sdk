@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchBodyTraceResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +47,14 @@ public class SearchBodyTraceResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -79,22 +79,22 @@ public class SearchBodyTraceResponse extends AcsResponse {
 
 		public static class Trace {
 
-			private Float score;
+			private Long dbId;
 
 			private Long personId;
 
 			private Long traceId;
 
-			private Long dbId;
+			private Float score;
 
 			private String extraData;
 
-			public Float getScore() {
-				return this.score;
+			public Long getDbId() {
+				return this.dbId;
 			}
 
-			public void setScore(Float score) {
-				this.score = score;
+			public void setDbId(Long dbId) {
+				this.dbId = dbId;
 			}
 
 			public Long getPersonId() {
@@ -113,12 +113,12 @@ public class SearchBodyTraceResponse extends AcsResponse {
 				this.traceId = traceId;
 			}
 
-			public Long getDbId() {
-				return this.dbId;
+			public Float getScore() {
+				return this.score;
 			}
 
-			public void setDbId(Long dbId) {
-				this.dbId = dbId;
+			public void setScore(Float score) {
+				this.score = score;
 			}
 
 			public String getExtraData() {

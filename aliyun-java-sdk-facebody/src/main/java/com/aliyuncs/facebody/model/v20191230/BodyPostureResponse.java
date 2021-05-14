@@ -151,17 +151,9 @@ public class BodyPostureResponse extends AcsResponse {
 
 		public static class MetaObject {
 
-			private Integer height;
-
 			private Integer width;
 
-			public Integer getHeight() {
-				return this.height;
-			}
-
-			public void setHeight(Integer height) {
-				this.height = height;
-			}
+			private Integer height;
 
 			public Integer getWidth() {
 				return this.width;
@@ -169,6 +161,14 @@ public class BodyPostureResponse extends AcsResponse {
 
 			public void setWidth(Integer width) {
 				this.width = width;
+			}
+
+			public Integer getHeight() {
+				return this.height;
+			}
+
+			public void setHeight(Integer height) {
+				this.height = height;
 			}
 		}
 	}

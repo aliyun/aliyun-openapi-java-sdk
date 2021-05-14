@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DetectPedestrianIntrusionResponse extends AcsResponse {
 
-	private String requestId;
+	private String code;
 
 	private String message;
 
-	private String code;
+	private String requestId;
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class DetectPedestrianIntrusionResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Data getData() {
@@ -67,19 +67,11 @@ public class DetectPedestrianIntrusionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long imageHeight;
-
 		private Long imageWidth;
 
+		private Long imageHeight;
+
 		private List<ElementsItem> elements;
-
-		public Long getImageHeight() {
-			return this.imageHeight;
-		}
-
-		public void setImageHeight(Long imageHeight) {
-			this.imageHeight = imageHeight;
-		}
 
 		public Long getImageWidth() {
 			return this.imageWidth;
@@ -87,6 +79,14 @@ public class DetectPedestrianIntrusionResponse extends AcsResponse {
 
 		public void setImageWidth(Long imageWidth) {
 			this.imageWidth = imageWidth;
+		}
+
+		public Long getImageHeight() {
+			return this.imageHeight;
+		}
+
+		public void setImageHeight(Long imageHeight) {
+			this.imageHeight = imageHeight;
 		}
 
 		public List<ElementsItem> getElements() {
@@ -99,22 +99,22 @@ public class DetectPedestrianIntrusionResponse extends AcsResponse {
 
 		public static class ElementsItem {
 
-			private Long boxId;
+			private Long score;
 
 			private String type;
 
-			private Long score;
-
 			private Boolean isIntrude;
+
+			private Long boxId;
 
 			private Box box;
 
-			public Long getBoxId() {
-				return this.boxId;
+			public Long getScore() {
+				return this.score;
 			}
 
-			public void setBoxId(Long boxId) {
-				this.boxId = boxId;
+			public void setScore(Long score) {
+				this.score = score;
 			}
 
 			public String getType() {
@@ -125,20 +125,20 @@ public class DetectPedestrianIntrusionResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public Long getScore() {
-				return this.score;
-			}
-
-			public void setScore(Long score) {
-				this.score = score;
-			}
-
 			public Boolean getIsIntrude() {
 				return this.isIntrude;
 			}
 
 			public void setIsIntrude(Boolean isIntrude) {
 				this.isIntrude = isIntrude;
+			}
+
+			public Long getBoxId() {
+				return this.boxId;
+			}
+
+			public void setBoxId(Long boxId) {
+				this.boxId = boxId;
 			}
 
 			public Box getBox() {

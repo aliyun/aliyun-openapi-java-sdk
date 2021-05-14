@@ -24,8 +24,8 @@ public class GenerateHumanSketchStyleResponseUnmarshaller {
 	public static GenerateHumanSketchStyleResponse unmarshall(GenerateHumanSketchStyleResponse generateHumanSketchStyleResponse, UnmarshallerContext _ctx) {
 		
 		generateHumanSketchStyleResponse.setRequestId(_ctx.stringValue("GenerateHumanSketchStyleResponse.RequestId"));
-		generateHumanSketchStyleResponse.setMessage(_ctx.stringValue("GenerateHumanSketchStyleResponse.Message"));
 		generateHumanSketchStyleResponse.setCode(_ctx.stringValue("GenerateHumanSketchStyleResponse.Code"));
+		generateHumanSketchStyleResponse.setMessage(_ctx.stringValue("GenerateHumanSketchStyleResponse.Message"));
 
 		Data data = new Data();
 		data.setImageURL(_ctx.stringValue("GenerateHumanSketchStyleResponse.Data.ImageURL"));

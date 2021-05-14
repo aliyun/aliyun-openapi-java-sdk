@@ -24,8 +24,8 @@ public class MergeImageFaceResponseUnmarshaller {
 	public static MergeImageFaceResponse unmarshall(MergeImageFaceResponse mergeImageFaceResponse, UnmarshallerContext _ctx) {
 		
 		mergeImageFaceResponse.setRequestId(_ctx.stringValue("MergeImageFaceResponse.RequestId"));
-		mergeImageFaceResponse.setMessage(_ctx.stringValue("MergeImageFaceResponse.Message"));
 		mergeImageFaceResponse.setCode(_ctx.stringValue("MergeImageFaceResponse.Code"));
+		mergeImageFaceResponse.setMessage(_ctx.stringValue("MergeImageFaceResponse.Message"));
 
 		Data data = new Data();
 		data.setImageURL(_ctx.stringValue("MergeImageFaceResponse.Data.ImageURL"));

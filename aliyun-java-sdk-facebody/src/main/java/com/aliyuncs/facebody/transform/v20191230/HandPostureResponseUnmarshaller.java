@@ -39,8 +39,8 @@ public class HandPostureResponseUnmarshaller {
 		Data data = new Data();
 
 		MetaObject metaObject = new MetaObject();
-		metaObject.setHeight(_ctx.integerValue("HandPostureResponse.Data.MetaObject.Height"));
 		metaObject.setWidth(_ctx.integerValue("HandPostureResponse.Data.MetaObject.Width"));
+		metaObject.setHeight(_ctx.integerValue("HandPostureResponse.Data.MetaObject.Height"));
 		data.setMetaObject(metaObject);
 
 		List<Output> outputs = new ArrayList<Output>();

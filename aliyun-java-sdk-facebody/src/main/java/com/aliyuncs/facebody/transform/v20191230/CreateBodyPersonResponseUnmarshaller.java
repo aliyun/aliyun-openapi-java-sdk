@@ -24,8 +24,8 @@ public class CreateBodyPersonResponseUnmarshaller {
 	public static CreateBodyPersonResponse unmarshall(CreateBodyPersonResponse createBodyPersonResponse, UnmarshallerContext _ctx) {
 		
 		createBodyPersonResponse.setRequestId(_ctx.stringValue("CreateBodyPersonResponse.RequestId"));
-		createBodyPersonResponse.setMessage(_ctx.stringValue("CreateBodyPersonResponse.Message"));
 		createBodyPersonResponse.setCode(_ctx.stringValue("CreateBodyPersonResponse.Code"));
+		createBodyPersonResponse.setMessage(_ctx.stringValue("CreateBodyPersonResponse.Message"));
 
 		Data data = new Data();
 		data.setId(_ctx.longValue("CreateBodyPersonResponse.Data.Id"));

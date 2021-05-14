@@ -28,18 +28,18 @@ public class SearchBodyTraceResponseUnmarshaller {
 	public static SearchBodyTraceResponse unmarshall(SearchBodyTraceResponse searchBodyTraceResponse, UnmarshallerContext _ctx) {
 		
 		searchBodyTraceResponse.setRequestId(_ctx.stringValue("SearchBodyTraceResponse.RequestId"));
-		searchBodyTraceResponse.setMessage(_ctx.stringValue("SearchBodyTraceResponse.Message"));
 		searchBodyTraceResponse.setCode(_ctx.stringValue("SearchBodyTraceResponse.Code"));
+		searchBodyTraceResponse.setMessage(_ctx.stringValue("SearchBodyTraceResponse.Message"));
 
 		Data data = new Data();
 
 		List<Trace> matchList = new ArrayList<Trace>();
 		for (int i = 0; i < _ctx.lengthValue("SearchBodyTraceResponse.Data.MatchList.Length"); i++) {
 			Trace trace = new Trace();
-			trace.setScore(_ctx.floatValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].Score"));
+			trace.setDbId(_ctx.longValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].DbId"));
 			trace.setPersonId(_ctx.longValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].PersonId"));
 			trace.setTraceId(_ctx.longValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].TraceId"));
-			trace.setDbId(_ctx.longValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].DbId"));
+			trace.setScore(_ctx.floatValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].Score"));
 			trace.setExtraData(_ctx.stringValue("SearchBodyTraceResponse.Data.MatchList["+ i +"].ExtraData"));
 
 			matchList.add(trace);

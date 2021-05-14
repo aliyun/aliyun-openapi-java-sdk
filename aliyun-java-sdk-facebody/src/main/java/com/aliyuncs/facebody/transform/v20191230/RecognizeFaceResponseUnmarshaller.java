@@ -30,9 +30,27 @@ public class RecognizeFaceResponseUnmarshaller {
 		recognizeFaceResponse.setRequestId(_ctx.stringValue("RecognizeFaceResponse.RequestId"));
 
 		Data data = new Data();
+		data.setFaceCount(_ctx.integerValue("RecognizeFaceResponse.Data.FaceCount"));
 		data.setLandmarkCount(_ctx.integerValue("RecognizeFaceResponse.Data.LandmarkCount"));
 		data.setDenseFeatureLength(_ctx.integerValue("RecognizeFaceResponse.Data.DenseFeatureLength"));
-		data.setFaceCount(_ctx.integerValue("RecognizeFaceResponse.Data.FaceCount"));
+
+		List<Float> pupils = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Pupils.Length"); i++) {
+			pupils.add(_ctx.floatValue("RecognizeFaceResponse.Data.Pupils["+ i +"]"));
+		}
+		data.setPupils(pupils);
+
+		List<Integer> genderList = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.GenderList.Length"); i++) {
+			genderList.add(_ctx.integerValue("RecognizeFaceResponse.Data.GenderList["+ i +"]"));
+		}
+		data.setGenderList(genderList);
+
+		List<Integer> expressions = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Expressions.Length"); i++) {
+			expressions.add(_ctx.integerValue("RecognizeFaceResponse.Data.Expressions["+ i +"]"));
+		}
+		data.setExpressions(expressions);
 
 		List<String> denseFeatures = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.DenseFeatures.Length"); i++) {
@@ -40,11 +58,11 @@ public class RecognizeFaceResponseUnmarshaller {
 		}
 		data.setDenseFeatures(denseFeatures);
 
-		List<Float> faceProbabilityList = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.FaceProbabilityList.Length"); i++) {
-			faceProbabilityList.add(_ctx.floatValue("RecognizeFaceResponse.Data.FaceProbabilityList["+ i +"]"));
+		List<Float> landmarks = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Landmarks.Length"); i++) {
+			landmarks.add(_ctx.floatValue("RecognizeFaceResponse.Data.Landmarks["+ i +"]"));
 		}
-		data.setFaceProbabilityList(faceProbabilityList);
+		data.setLandmarks(landmarks);
 
 		List<Float> beautyList = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.BeautyList.Length"); i++) {
@@ -58,17 +76,11 @@ public class RecognizeFaceResponseUnmarshaller {
 		}
 		data.setHatList(hatList);
 
-		List<Integer> ageList = new ArrayList<Integer>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.AgeList.Length"); i++) {
-			ageList.add(_ctx.integerValue("RecognizeFaceResponse.Data.AgeList["+ i +"]"));
+		List<Float> faceProbabilityList = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.FaceProbabilityList.Length"); i++) {
+			faceProbabilityList.add(_ctx.floatValue("RecognizeFaceResponse.Data.FaceProbabilityList["+ i +"]"));
 		}
-		data.setAgeList(ageList);
-
-		List<Integer> faceRectangles = new ArrayList<Integer>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.FaceRectangles.Length"); i++) {
-			faceRectangles.add(_ctx.integerValue("RecognizeFaceResponse.Data.FaceRectangles["+ i +"]"));
-		}
-		data.setFaceRectangles(faceRectangles);
+		data.setFaceProbabilityList(faceProbabilityList);
 
 		List<Integer> glasses = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Glasses.Length"); i++) {
@@ -76,23 +88,11 @@ public class RecognizeFaceResponseUnmarshaller {
 		}
 		data.setGlasses(glasses);
 
-		List<Float> landmarks = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Landmarks.Length"); i++) {
-			landmarks.add(_ctx.floatValue("RecognizeFaceResponse.Data.Landmarks["+ i +"]"));
+		List<Integer> faceRectangles = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.FaceRectangles.Length"); i++) {
+			faceRectangles.add(_ctx.integerValue("RecognizeFaceResponse.Data.FaceRectangles["+ i +"]"));
 		}
-		data.setLandmarks(landmarks);
-
-		List<Integer> expressions = new ArrayList<Integer>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Expressions.Length"); i++) {
-			expressions.add(_ctx.integerValue("RecognizeFaceResponse.Data.Expressions["+ i +"]"));
-		}
-		data.setExpressions(expressions);
-
-		List<Long> masks = new ArrayList<Long>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Masks.Length"); i++) {
-			masks.add(_ctx.longValue("RecognizeFaceResponse.Data.Masks["+ i +"]"));
-		}
-		data.setMasks(masks);
+		data.setFaceRectangles(faceRectangles);
 
 		List<Float> poseList = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.PoseList.Length"); i++) {
@@ -100,25 +100,19 @@ public class RecognizeFaceResponseUnmarshaller {
 		}
 		data.setPoseList(poseList);
 
-		List<Integer> genderList = new ArrayList<Integer>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.GenderList.Length"); i++) {
-			genderList.add(_ctx.integerValue("RecognizeFaceResponse.Data.GenderList["+ i +"]"));
+		List<Integer> ageList = new ArrayList<Integer>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.AgeList.Length"); i++) {
+			ageList.add(_ctx.integerValue("RecognizeFaceResponse.Data.AgeList["+ i +"]"));
 		}
-		data.setGenderList(genderList);
+		data.setAgeList(ageList);
 
-		List<Float> pupils = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Pupils.Length"); i++) {
-			pupils.add(_ctx.floatValue("RecognizeFaceResponse.Data.Pupils["+ i +"]"));
+		List<Long> masks = new ArrayList<Long>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Masks.Length"); i++) {
+			masks.add(_ctx.longValue("RecognizeFaceResponse.Data.Masks["+ i +"]"));
 		}
-		data.setPupils(pupils);
+		data.setMasks(masks);
 
 		Qualities qualities = new Qualities();
-
-		List<Float> noiseList = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.NoiseList.Length"); i++) {
-			noiseList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.NoiseList["+ i +"]"));
-		}
-		qualities.setNoiseList(noiseList);
 
 		List<Float> scoreList = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.ScoreList.Length"); i++) {
@@ -132,11 +126,11 @@ public class RecognizeFaceResponseUnmarshaller {
 		}
 		qualities.setBlurList(blurList);
 
-		List<Float> maskList = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.MaskList.Length"); i++) {
-			maskList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.MaskList["+ i +"]"));
+		List<Float> fnfList = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.FnfList.Length"); i++) {
+			fnfList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.FnfList["+ i +"]"));
 		}
-		qualities.setMaskList(maskList);
+		qualities.setFnfList(fnfList);
 
 		List<Float> glassList = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.GlassList.Length"); i++) {
@@ -144,23 +138,29 @@ public class RecognizeFaceResponseUnmarshaller {
 		}
 		qualities.setGlassList(glassList);
 
-		List<Float> fnfList = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.FnfList.Length"); i++) {
-			fnfList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.FnfList["+ i +"]"));
+		List<Float> illuList = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.IlluList.Length"); i++) {
+			illuList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.IlluList["+ i +"]"));
 		}
-		qualities.setFnfList(fnfList);
+		qualities.setIlluList(illuList);
+
+		List<Float> maskList = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.MaskList.Length"); i++) {
+			maskList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.MaskList["+ i +"]"));
+		}
+		qualities.setMaskList(maskList);
+
+		List<Float> noiseList = new ArrayList<Float>();
+		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.NoiseList.Length"); i++) {
+			noiseList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.NoiseList["+ i +"]"));
+		}
+		qualities.setNoiseList(noiseList);
 
 		List<Float> poseList1 = new ArrayList<Float>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.PoseList.Length"); i++) {
 			poseList1.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.PoseList["+ i +"]"));
 		}
 		qualities.setPoseList1(poseList1);
-
-		List<Float> illuList = new ArrayList<Float>();
-		for (int i = 0; i < _ctx.lengthValue("RecognizeFaceResponse.Data.Qualities.IlluList.Length"); i++) {
-			illuList.add(_ctx.floatValue("RecognizeFaceResponse.Data.Qualities.IlluList["+ i +"]"));
-		}
-		qualities.setIlluList(illuList);
 		data.setQualities(qualities);
 		recognizeFaceResponse.setData(data);
 	 

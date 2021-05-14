@@ -24,8 +24,8 @@ public class AddFaceImageTemplateResponseUnmarshaller {
 	public static AddFaceImageTemplateResponse unmarshall(AddFaceImageTemplateResponse addFaceImageTemplateResponse, UnmarshallerContext _ctx) {
 		
 		addFaceImageTemplateResponse.setRequestId(_ctx.stringValue("AddFaceImageTemplateResponse.RequestId"));
-		addFaceImageTemplateResponse.setMessage(_ctx.stringValue("AddFaceImageTemplateResponse.Message"));
 		addFaceImageTemplateResponse.setCode(_ctx.stringValue("AddFaceImageTemplateResponse.Code"));
+		addFaceImageTemplateResponse.setMessage(_ctx.stringValue("AddFaceImageTemplateResponse.Message"));
 
 		Data data = new Data();
 		data.setTemplateId(_ctx.stringValue("AddFaceImageTemplateResponse.Data.TemplateId"));

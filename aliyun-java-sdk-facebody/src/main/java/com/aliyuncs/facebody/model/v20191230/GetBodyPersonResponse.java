@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetBodyPersonResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class GetBodyPersonResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,8 +67,6 @@ public class GetBodyPersonResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long traceCount;
-
 		private Long instanceId;
 
 		private Long dbId;
@@ -77,15 +75,9 @@ public class GetBodyPersonResponse extends AcsResponse {
 
 		private String name;
 
+		private Long traceCount;
+
 		private List<Trace> traceList;
-
-		public Long getTraceCount() {
-			return this.traceCount;
-		}
-
-		public void setTraceCount(Long traceCount) {
-			this.traceCount = traceCount;
-		}
 
 		public Long getInstanceId() {
 			return this.instanceId;
@@ -119,6 +111,14 @@ public class GetBodyPersonResponse extends AcsResponse {
 			this.name = name;
 		}
 
+		public Long getTraceCount() {
+			return this.traceCount;
+		}
+
+		public void setTraceCount(Long traceCount) {
+			this.traceCount = traceCount;
+		}
+
 		public List<Trace> getTraceList() {
 			return this.traceList;
 		}
@@ -129,17 +129,9 @@ public class GetBodyPersonResponse extends AcsResponse {
 
 		public static class Trace {
 
-			private String extraData;
-
 			private Long id;
 
-			public String getExtraData() {
-				return this.extraData;
-			}
-
-			public void setExtraData(String extraData) {
-				this.extraData = extraData;
-			}
+			private String extraData;
 
 			public Long getId() {
 				return this.id;
@@ -147,6 +139,14 @@ public class GetBodyPersonResponse extends AcsResponse {
 
 			public void setId(Long id) {
 				this.id = id;
+			}
+
+			public String getExtraData() {
+				return this.extraData;
+			}
+
+			public void setExtraData(String extraData) {
+				this.extraData = extraData;
 			}
 		}
 	}

@@ -81,23 +81,15 @@ public class SearchFaceResponse extends AcsResponse {
 
 			public static class FaceItemsItem {
 
-				private String faceId;
-
 				private String entityId;
+
+				private String faceId;
 
 				private Float score;
 
-				private String dbName;
-
 				private String extraData;
 
-				public String getFaceId() {
-					return this.faceId;
-				}
-
-				public void setFaceId(String faceId) {
-					this.faceId = faceId;
-				}
+				private String dbName;
 
 				public String getEntityId() {
 					return this.entityId;
@@ -105,6 +97,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 				public void setEntityId(String entityId) {
 					this.entityId = entityId;
+				}
+
+				public String getFaceId() {
+					return this.faceId;
+				}
+
+				public void setFaceId(String faceId) {
+					this.faceId = faceId;
 				}
 
 				public Float getScore() {
@@ -115,14 +115,6 @@ public class SearchFaceResponse extends AcsResponse {
 					this.score = score;
 				}
 
-				public String getDbName() {
-					return this.dbName;
-				}
-
-				public void setDbName(String dbName) {
-					this.dbName = dbName;
-				}
-
 				public String getExtraData() {
 					return this.extraData;
 				}
@@ -130,32 +122,32 @@ public class SearchFaceResponse extends AcsResponse {
 				public void setExtraData(String extraData) {
 					this.extraData = extraData;
 				}
+
+				public String getDbName() {
+					return this.dbName;
+				}
+
+				public void setDbName(String dbName) {
+					this.dbName = dbName;
+				}
 			}
 
 			public static class Location {
 
-				private Integer x;
-
-				private Integer y;
+				private Integer width;
 
 				private Integer height;
 
-				private Integer width;
+				private Integer y;
 
-				public Integer getX() {
-					return this.x;
+				private Integer x;
+
+				public Integer getWidth() {
+					return this.width;
 				}
 
-				public void setX(Integer x) {
-					this.x = x;
-				}
-
-				public Integer getY() {
-					return this.y;
-				}
-
-				public void setY(Integer y) {
-					this.y = y;
+				public void setWidth(Integer width) {
+					this.width = width;
 				}
 
 				public Integer getHeight() {
@@ -166,12 +158,20 @@ public class SearchFaceResponse extends AcsResponse {
 					this.height = height;
 				}
 
-				public Integer getWidth() {
-					return this.width;
+				public Integer getY() {
+					return this.y;
 				}
 
-				public void setWidth(Integer width) {
-					this.width = width;
+				public void setY(Integer y) {
+					this.y = y;
+				}
+
+				public Integer getX() {
+					return this.x;
+				}
+
+				public void setX(Integer x) {
+					this.x = x;
 				}
 			}
 		}

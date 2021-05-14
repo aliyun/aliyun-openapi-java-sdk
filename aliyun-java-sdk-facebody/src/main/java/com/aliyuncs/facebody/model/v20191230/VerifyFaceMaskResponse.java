@@ -47,9 +47,9 @@ public class VerifyFaceMaskResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Float confidence;
-
 		private Integer mask;
+
+		private Float confidence;
 
 		private Integer maskRef;
 
@@ -59,20 +59,20 @@ public class VerifyFaceMaskResponse extends AcsResponse {
 
 		private List<Integer> rectangleRef;
 
-		public Float getConfidence() {
-			return this.confidence;
-		}
-
-		public void setConfidence(Float confidence) {
-			this.confidence = confidence;
-		}
-
 		public Integer getMask() {
 			return this.mask;
 		}
 
 		public void setMask(Integer mask) {
 			this.mask = mask;
+		}
+
+		public Float getConfidence() {
+			return this.confidence;
+		}
+
+		public void setConfidence(Float confidence) {
+			this.confidence = confidence;
 		}
 
 		public Integer getMaskRef() {

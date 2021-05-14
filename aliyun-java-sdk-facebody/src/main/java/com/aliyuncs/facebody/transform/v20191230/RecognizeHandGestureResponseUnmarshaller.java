@@ -24,16 +24,16 @@ public class RecognizeHandGestureResponseUnmarshaller {
 	public static RecognizeHandGestureResponse unmarshall(RecognizeHandGestureResponse recognizeHandGestureResponse, UnmarshallerContext _ctx) {
 		
 		recognizeHandGestureResponse.setRequestId(_ctx.stringValue("RecognizeHandGestureResponse.RequestId"));
-		recognizeHandGestureResponse.setMessage(_ctx.stringValue("RecognizeHandGestureResponse.Message"));
 		recognizeHandGestureResponse.setCode(_ctx.stringValue("RecognizeHandGestureResponse.Code"));
+		recognizeHandGestureResponse.setMessage(_ctx.stringValue("RecognizeHandGestureResponse.Message"));
 
 		Data data = new Data();
-		data.setScore(_ctx.floatValue("RecognizeHandGestureResponse.Data.Score"));
 		data.setType(_ctx.stringValue("RecognizeHandGestureResponse.Data.Type"));
 		data.setX(_ctx.longValue("RecognizeHandGestureResponse.Data.X"));
 		data.setY(_ctx.longValue("RecognizeHandGestureResponse.Data.Y"));
-		data.setHeight(_ctx.longValue("RecognizeHandGestureResponse.Data.Height"));
 		data.setWidth(_ctx.longValue("RecognizeHandGestureResponse.Data.Width"));
+		data.setHeight(_ctx.longValue("RecognizeHandGestureResponse.Data.Height"));
+		data.setScore(_ctx.floatValue("RecognizeHandGestureResponse.Data.Score"));
 		recognizeHandGestureResponse.setData(data);
 	 
 	 	return recognizeHandGestureResponse;

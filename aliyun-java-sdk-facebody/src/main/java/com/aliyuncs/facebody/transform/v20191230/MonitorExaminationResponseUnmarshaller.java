@@ -36,20 +36,6 @@ public class MonitorExaminationResponseUnmarshaller {
 		data.setChatScore(_ctx.floatValue("MonitorExaminationResponse.Data.ChatScore"));
 		data.setThreshold(_ctx.floatValue("MonitorExaminationResponse.Data.Threshold"));
 
-		PersonInfo personInfo = new PersonInfo();
-		personInfo.setPersonNumber(_ctx.longValue("MonitorExaminationResponse.Data.PersonInfo.PersonNumber"));
-
-		EarPhone earPhone = new EarPhone();
-		earPhone.setScore(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.EarPhone.Score"));
-		earPhone.setThreshold(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.EarPhone.Threshold"));
-		personInfo.setEarPhone(earPhone);
-
-		CellPhone cellPhone = new CellPhone();
-		cellPhone.setScore(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.CellPhone.Score"));
-		cellPhone.setThreshold(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.CellPhone.Threshold"));
-		personInfo.setCellPhone(cellPhone);
-		data.setPersonInfo(personInfo);
-
 		FaceInfo faceInfo = new FaceInfo();
 		faceInfo.setCompleteness(_ctx.longValue("MonitorExaminationResponse.Data.FaceInfo.Completeness"));
 		faceInfo.setFaceNumber(_ctx.longValue("MonitorExaminationResponse.Data.FaceInfo.FaceNumber"));
@@ -60,6 +46,20 @@ public class MonitorExaminationResponseUnmarshaller {
 		pose.setYaw(_ctx.floatValue("MonitorExaminationResponse.Data.FaceInfo.Pose.Yaw"));
 		faceInfo.setPose(pose);
 		data.setFaceInfo(faceInfo);
+
+		PersonInfo personInfo = new PersonInfo();
+		personInfo.setPersonNumber(_ctx.longValue("MonitorExaminationResponse.Data.PersonInfo.PersonNumber"));
+
+		CellPhone cellPhone = new CellPhone();
+		cellPhone.setScore(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.CellPhone.Score"));
+		cellPhone.setThreshold(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.CellPhone.Threshold"));
+		personInfo.setCellPhone(cellPhone);
+
+		EarPhone earPhone = new EarPhone();
+		earPhone.setScore(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.EarPhone.Score"));
+		earPhone.setThreshold(_ctx.floatValue("MonitorExaminationResponse.Data.PersonInfo.EarPhone.Threshold"));
+		personInfo.setEarPhone(earPhone);
+		data.setPersonInfo(personInfo);
 		monitorExaminationResponse.setData(data);
 	 
 	 	return monitorExaminationResponse;

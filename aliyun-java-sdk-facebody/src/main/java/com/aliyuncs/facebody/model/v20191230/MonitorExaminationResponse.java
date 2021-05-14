@@ -24,21 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class MonitorExaminationResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private String code;
 
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,6 +38,14 @@ public class MonitorExaminationResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -70,9 +70,9 @@ public class MonitorExaminationResponse extends AcsResponse {
 
 		private Float threshold;
 
-		private PersonInfo personInfo;
-
 		private FaceInfo faceInfo;
+
+		private PersonInfo personInfo;
 
 		public Float getChatScore() {
 			return this.chatScore;
@@ -90,14 +90,6 @@ public class MonitorExaminationResponse extends AcsResponse {
 			this.threshold = threshold;
 		}
 
-		public PersonInfo getPersonInfo() {
-			return this.personInfo;
-		}
-
-		public void setPersonInfo(PersonInfo personInfo) {
-			this.personInfo = personInfo;
-		}
-
 		public FaceInfo getFaceInfo() {
 			return this.faceInfo;
 		}
@@ -106,83 +98,12 @@ public class MonitorExaminationResponse extends AcsResponse {
 			this.faceInfo = faceInfo;
 		}
 
-		public static class PersonInfo {
+		public PersonInfo getPersonInfo() {
+			return this.personInfo;
+		}
 
-			private Long personNumber;
-
-			private EarPhone earPhone;
-
-			private CellPhone cellPhone;
-
-			public Long getPersonNumber() {
-				return this.personNumber;
-			}
-
-			public void setPersonNumber(Long personNumber) {
-				this.personNumber = personNumber;
-			}
-
-			public EarPhone getEarPhone() {
-				return this.earPhone;
-			}
-
-			public void setEarPhone(EarPhone earPhone) {
-				this.earPhone = earPhone;
-			}
-
-			public CellPhone getCellPhone() {
-				return this.cellPhone;
-			}
-
-			public void setCellPhone(CellPhone cellPhone) {
-				this.cellPhone = cellPhone;
-			}
-
-			public static class EarPhone {
-
-				private Float score;
-
-				private Float threshold;
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
-
-				public Float getThreshold() {
-					return this.threshold;
-				}
-
-				public void setThreshold(Float threshold) {
-					this.threshold = threshold;
-				}
-			}
-
-			public static class CellPhone {
-
-				private Float score;
-
-				private Float threshold;
-
-				public Float getScore() {
-					return this.score;
-				}
-
-				public void setScore(Float score) {
-					this.score = score;
-				}
-
-				public Float getThreshold() {
-					return this.threshold;
-				}
-
-				public void setThreshold(Float threshold) {
-					this.threshold = threshold;
-				}
-			}
+		public void setPersonInfo(PersonInfo personInfo) {
+			this.personInfo = personInfo;
 		}
 
 		public static class FaceInfo {
@@ -247,6 +168,85 @@ public class MonitorExaminationResponse extends AcsResponse {
 
 				public void setYaw(Float yaw) {
 					this.yaw = yaw;
+				}
+			}
+		}
+
+		public static class PersonInfo {
+
+			private Long personNumber;
+
+			private CellPhone cellPhone;
+
+			private EarPhone earPhone;
+
+			public Long getPersonNumber() {
+				return this.personNumber;
+			}
+
+			public void setPersonNumber(Long personNumber) {
+				this.personNumber = personNumber;
+			}
+
+			public CellPhone getCellPhone() {
+				return this.cellPhone;
+			}
+
+			public void setCellPhone(CellPhone cellPhone) {
+				this.cellPhone = cellPhone;
+			}
+
+			public EarPhone getEarPhone() {
+				return this.earPhone;
+			}
+
+			public void setEarPhone(EarPhone earPhone) {
+				this.earPhone = earPhone;
+			}
+
+			public static class CellPhone {
+
+				private Float score;
+
+				private Float threshold;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public Float getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(Float threshold) {
+					this.threshold = threshold;
+				}
+			}
+
+			public static class EarPhone {
+
+				private Float score;
+
+				private Float threshold;
+
+				public Float getScore() {
+					return this.score;
+				}
+
+				public void setScore(Float score) {
+					this.score = score;
+				}
+
+				public Float getThreshold() {
+					return this.threshold;
+				}
+
+				public void setThreshold(Float threshold) {
+					this.threshold = threshold;
 				}
 			}
 		}

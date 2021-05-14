@@ -36,21 +36,21 @@ public class DetectLivingFaceResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTaskId(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].TaskId"));
 			element.setImageURL(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setTaskId(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].TaskId"));
 
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
 				result.setSuggestion(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
-				result.setRate(_ctx.floatValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
 				result.setLabel(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
+				result.setRate(_ctx.floatValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
 
 				List<Frame> frames = new ArrayList<Frame>();
 				for (int k = 0; k < _ctx.lengthValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Frames.Length"); k++) {
 					Frame frame = new Frame();
-					frame.setRate(_ctx.floatValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Frames["+ k +"].Rate"));
 					frame.setUrl(_ctx.stringValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Frames["+ k +"].Url"));
+					frame.setRate(_ctx.floatValue("DetectLivingFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Frames["+ k +"].Rate"));
 
 					frames.add(frame);
 				}

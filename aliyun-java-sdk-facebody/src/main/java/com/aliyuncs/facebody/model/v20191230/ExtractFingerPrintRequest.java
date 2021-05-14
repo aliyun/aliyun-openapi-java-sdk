@@ -22,14 +22,14 @@ import com.aliyuncs.facebody.Endpoint;
  * @author auto create
  * @version 
  */
-public class GenerateHumanSketchStyleRequest extends RpcAcsRequest<GenerateHumanSketchStyleResponse> {
+public class ExtractFingerPrintRequest extends RpcAcsRequest<ExtractFingerPrintResponse> {
 	   
 
-	private String returnType;
+	private String imageData;
 
 	private String imageURL;
-	public GenerateHumanSketchStyleRequest() {
-		super("facebody", "2019-12-30", "GenerateHumanSketchStyle");
+	public ExtractFingerPrintRequest() {
+		super("facebody", "2019-12-30", "ExtractFingerPrint");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,14 +37,14 @@ public class GenerateHumanSketchStyleRequest extends RpcAcsRequest<GenerateHuman
 		} catch (Exception e) {}
 	}
 
-	public String getReturnType() {
-		return this.returnType;
+	public String getImageData() {
+		return this.imageData;
 	}
 
-	public void setReturnType(String returnType) {
-		this.returnType = returnType;
-		if(returnType != null){
-			putBodyParameter("ReturnType", returnType);
+	public void setImageData(String imageData) {
+		this.imageData = imageData;
+		if(imageData != null){
+			putBodyParameter("ImageData", imageData);
 		}
 	}
 
@@ -60,8 +60,8 @@ public class GenerateHumanSketchStyleRequest extends RpcAcsRequest<GenerateHuman
 	}
 
 	@Override
-	public Class<GenerateHumanSketchStyleResponse> getResponseClass() {
-		return GenerateHumanSketchStyleResponse.class;
+	public Class<ExtractFingerPrintResponse> getResponseClass() {
+		return ExtractFingerPrintResponse.class;
 	}
 
 }
