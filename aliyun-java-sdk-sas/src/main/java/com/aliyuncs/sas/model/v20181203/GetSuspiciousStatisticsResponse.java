@@ -30,6 +30,8 @@ public class GetSuspiciousStatisticsResponse extends AcsResponse {
 
 	private Integer temindCount;
 
+	private Integer remindCount;
+
 	private Integer suspiciousCount;
 
 	private Integer seriousCount;
@@ -56,6 +58,14 @@ public class GetSuspiciousStatisticsResponse extends AcsResponse {
 
 	public void setTemindCount(Integer temindCount) {
 		this.temindCount = temindCount;
+	}
+
+	public Integer getRemindCount() {
+		return this.remindCount;
+	}
+
+	public void setRemindCount(Integer remindCount) {
+		this.remindCount = remindCount;
 	}
 
 	public Integer getSuspiciousCount() {

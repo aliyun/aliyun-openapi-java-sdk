@@ -22,18 +22,18 @@ import com.aliyuncs.sas.Endpoint;
  * @author auto create
  * @version 
  */
-public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulResponse> {
+public class ModifyWebLockStatusRequest extends RpcAcsRequest<ModifyWebLockStatusResponse> {
 	   
 
-	private String reason;
+	private String uuid;
 
-	private String type;
+	private String sourceIp;
 
-	private String info;
+	private String lang;
 
-	private String operateType;
-	public ModifyOperateVulRequest() {
-		super("Sas", "2018-12-03", "ModifyOperateVul", "sas");
+	private String status;
+	public ModifyWebLockStatusRequest() {
+		super("Sas", "2018-12-03", "ModifyWebLockStatus", "sas");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,53 +41,53 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		} catch (Exception e) {}
 	}
 
-	public String getReason() {
-		return this.reason;
+	public String getUuid() {
+		return this.uuid;
 	}
 
-	public void setReason(String reason) {
-		this.reason = reason;
-		if(reason != null){
-			putQueryParameter("Reason", reason);
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+		if(uuid != null){
+			putQueryParameter("Uuid", uuid);
 		}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getSourceIp() {
+		return this.sourceIp;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setSourceIp(String sourceIp) {
+		this.sourceIp = sourceIp;
+		if(sourceIp != null){
+			putQueryParameter("SourceIp", sourceIp);
 		}
 	}
 
-	public String getInfo() {
-		return this.info;
+	public String getLang() {
+		return this.lang;
 	}
 
-	public void setInfo(String info) {
-		this.info = info;
-		if(info != null){
-			putQueryParameter("Info", info);
+	public void setLang(String lang) {
+		this.lang = lang;
+		if(lang != null){
+			putQueryParameter("Lang", lang);
 		}
 	}
 
-	public String getOperateType() {
-		return this.operateType;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
+	public void setStatus(String status) {
+		this.status = status;
+		if(status != null){
+			putQueryParameter("Status", status);
 		}
 	}
 
 	@Override
-	public Class<ModifyOperateVulResponse> getResponseClass() {
-		return ModifyOperateVulResponse.class;
+	public Class<ModifyWebLockStatusResponse> getResponseClass() {
+		return ModifyWebLockStatusResponse.class;
 	}
 
 }

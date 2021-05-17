@@ -15,20 +15,16 @@
 package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sas.transform.v20181203.DescribeInstallCaptchaResponseUnmarshaller;
+import com.aliyuncs.sas.transform.v20181203.ModifyWebLockStatusResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeInstallCaptchaResponse extends AcsResponse {
+public class ModifyWebLockStatusResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String captchaCode;
-
-	private String deadline;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,25 +34,9 @@ public class DescribeInstallCaptchaResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCaptchaCode() {
-		return this.captchaCode;
-	}
-
-	public void setCaptchaCode(String captchaCode) {
-		this.captchaCode = captchaCode;
-	}
-
-	public String getDeadline() {
-		return this.deadline;
-	}
-
-	public void setDeadline(String deadline) {
-		this.deadline = deadline;
-	}
-
 	@Override
-	public DescribeInstallCaptchaResponse getInstance(UnmarshallerContext context) {
-		return	DescribeInstallCaptchaResponseUnmarshaller.unmarshall(this, context);
+	public ModifyWebLockStatusResponse getInstance(UnmarshallerContext context) {
+		return	ModifyWebLockStatusResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

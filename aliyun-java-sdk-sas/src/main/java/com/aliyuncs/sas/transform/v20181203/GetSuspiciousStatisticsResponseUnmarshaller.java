@@ -25,6 +25,7 @@ public class GetSuspiciousStatisticsResponseUnmarshaller {
 		getSuspiciousStatisticsResponse.setRequestId(_ctx.stringValue("GetSuspiciousStatisticsResponse.RequestId"));
 		getSuspiciousStatisticsResponse.setTotalCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.TotalCount"));
 		getSuspiciousStatisticsResponse.setTemindCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.TemindCount"));
+		getSuspiciousStatisticsResponse.setRemindCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.RemindCount"));
 		getSuspiciousStatisticsResponse.setSuspiciousCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.SuspiciousCount"));
 		getSuspiciousStatisticsResponse.setSeriousCount(_ctx.integerValue("GetSuspiciousStatisticsResponse.SeriousCount"));
 	 

@@ -14,18 +14,16 @@
 
 package com.aliyuncs.sas.transform.v20181203;
 
-import com.aliyuncs.sas.model.v20181203.DescribeInstallCaptchaResponse;
+import com.aliyuncs.sas.model.v20181203.ModifyWebLockStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class DescribeInstallCaptchaResponseUnmarshaller {
+public class ModifyWebLockStatusResponseUnmarshaller {
 
-	public static DescribeInstallCaptchaResponse unmarshall(DescribeInstallCaptchaResponse describeInstallCaptchaResponse, UnmarshallerContext _ctx) {
+	public static ModifyWebLockStatusResponse unmarshall(ModifyWebLockStatusResponse modifyWebLockStatusResponse, UnmarshallerContext _ctx) {
 		
-		describeInstallCaptchaResponse.setRequestId(_ctx.stringValue("DescribeInstallCaptchaResponse.RequestId"));
-		describeInstallCaptchaResponse.setCaptchaCode(_ctx.stringValue("DescribeInstallCaptchaResponse.CaptchaCode"));
-		describeInstallCaptchaResponse.setDeadline(_ctx.stringValue("DescribeInstallCaptchaResponse.Deadline"));
+		modifyWebLockStatusResponse.setRequestId(_ctx.stringValue("ModifyWebLockStatusResponse.RequestId"));
 	 
-	 	return describeInstallCaptchaResponse;
+	 	return modifyWebLockStatusResponse;
 	}
 }
