@@ -29,7 +29,7 @@ public class RefreshDeviceCredentialRequest extends RpcAcsRequest<RefreshDeviceC
 
 	private String instanceId;
 	public RefreshDeviceCredentialRequest() {
-		super("OnsMqtt", "2020-04-20", "RefreshDeviceCredential", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "RefreshDeviceCredential");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

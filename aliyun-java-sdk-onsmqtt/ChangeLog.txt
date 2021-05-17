@@ -1,3 +1,6 @@
+2021-05-17 Version: 1.0.6
+- Supported the mqtt trace query.
+
 2021-02-01 Version: 1.0.5
 - Support device credential for mqtt.
 

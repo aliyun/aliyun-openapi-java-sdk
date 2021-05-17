@@ -33,7 +33,7 @@ public class ApplyTokenRequest extends RpcAcsRequest<ApplyTokenResponse> {
 
 	private String actions;
 	public ApplyTokenRequest() {
-		super("OnsMqtt", "2020-04-20", "ApplyToken", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "ApplyToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

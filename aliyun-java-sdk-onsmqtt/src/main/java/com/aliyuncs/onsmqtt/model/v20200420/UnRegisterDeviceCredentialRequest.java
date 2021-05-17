@@ -29,7 +29,7 @@ public class UnRegisterDeviceCredentialRequest extends RpcAcsRequest<UnRegisterD
 
 	private String instanceId;
 	public UnRegisterDeviceCredentialRequest() {
-		super("OnsMqtt", "2020-04-20", "UnRegisterDeviceCredential", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "UnRegisterDeviceCredential");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
