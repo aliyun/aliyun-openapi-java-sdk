@@ -29,6 +29,10 @@ public class DescribeRegionsResponseUnmarshaller {
 
         List<Region> regions = new ArrayList<Region>();
         for (int i = 0; i < context.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
+            List<String> recommendZones = new ArrayList<String>();
+            for (int j = 0; j < context.lengthValue("DescribeRegionsResponse.Regions["+ i +"].RecommendZones.Length"); j++) {
+                recommendZones.add(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RecommendZones["+ j +"]"));
+            }
             Region region = new Region();
             region.setRegionId(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
             region.setRegionEndpoint(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
@@ -37,6 +41,7 @@ public class DescribeRegionsResponseUnmarshaller {
                 zones.add(context.stringValue("DescribeRegionsResponse.Regions["+ i +"].Zones["+ j +"]"));
             }
             region.setZones(zones);
+            region.setRecommendZones(recommendZones);
 
             regions.add(region);
         }

@@ -1,3 +1,6 @@
+2021-05-17 Version: 1.2.4
+1, fixup RamRoleName request && describeRegions response
+
 2021-03-31 Version: 1.2.3
 1, completion create request args
 

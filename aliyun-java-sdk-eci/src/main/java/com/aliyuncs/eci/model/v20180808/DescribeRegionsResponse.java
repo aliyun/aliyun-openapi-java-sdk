@@ -47,11 +47,21 @@ public class DescribeRegionsResponse extends AcsResponse {
 
     public static class Region {
 
+        private List<String> recommendZones;
+
         private String regionId;
 
         private String regionEndpoint;
 
         private List<String> zones;
+
+        public List<String> getRecommendZones() {
+            return this.recommendZones;
+        }
+
+        public void setRecommendZones(List<String> recommendZones) {
+            this.recommendZones = recommendZones;
+        }
 
         /**
          * @deprecated use setBizRegionId instead of this.

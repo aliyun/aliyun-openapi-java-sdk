@@ -487,7 +487,7 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 	public void setRamRoleName(String ramRoleName) {
 		this.ramRoleName = ramRoleName;
 		if (ramRoleName != null) {
-			putQueryParameter("ramRoleName", ramRoleName);
+			putQueryParameter("RamRoleName", ramRoleName);
 		}
 	}
 
