@@ -31,7 +31,7 @@ public class DeleteDtsJobRequest extends RpcAcsRequest<DeleteDtsJobResponse> {
 
 	private String synchronizationDirection;
 	public DeleteDtsJobRequest() {
-		super("Dts", "2020-01-01", "DeleteDtsJob", "dts");
+		super("Dts", "2020-01-01", "DeleteDtsJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

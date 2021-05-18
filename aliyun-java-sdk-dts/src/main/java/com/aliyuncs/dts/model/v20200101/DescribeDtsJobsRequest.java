@@ -29,23 +29,25 @@ public class DescribeDtsJobsRequest extends RpcAcsRequest<DescribeDtsJobsRespons
 
 	private String type;
 
-	private String params;
-
-	private String jobType;
-
 	private Integer pageNumber;
-
-	private String tags;
 
 	private String orderColumn;
 
 	private Integer pageSize;
 
+	private String groupId;
+
+	private String params;
+
+	private String jobType;
+
+	private String tags;
+
 	private String region;
 
 	private String status;
 	public DescribeDtsJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeDtsJobs", "dts");
+		super("Dts", "2020-01-01", "DescribeDtsJobs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -75,28 +77,6 @@ public class DescribeDtsJobsRequest extends RpcAcsRequest<DescribeDtsJobsRespons
 		}
 	}
 
-	public String getParams() {
-		return this.params;
-	}
-
-	public void setParams(String params) {
-		this.params = params;
-		if(params != null){
-			putQueryParameter("Params", params);
-		}
-	}
-
-	public String getJobType() {
-		return this.jobType;
-	}
-
-	public void setJobType(String jobType) {
-		this.jobType = jobType;
-		if(jobType != null){
-			putQueryParameter("JobType", jobType);
-		}
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
@@ -105,17 +85,6 @@ public class DescribeDtsJobsRequest extends RpcAcsRequest<DescribeDtsJobsRespons
 		this.pageNumber = pageNumber;
 		if(pageNumber != null){
 			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public String getTags() {
-		return this.tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-		if(tags != null){
-			putQueryParameter("Tags", tags);
 		}
 	}
 
@@ -138,6 +107,50 @@ public class DescribeDtsJobsRequest extends RpcAcsRequest<DescribeDtsJobsRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getParams() {
+		return this.params;
+	}
+
+	public void setParams(String params) {
+		this.params = params;
+		if(params != null){
+			putQueryParameter("Params", params);
+		}
+	}
+
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+		if(jobType != null){
+			putQueryParameter("JobType", jobType);
+		}
+	}
+
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+		if(tags != null){
+			putQueryParameter("Tags", tags);
 		}
 	}
 

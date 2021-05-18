@@ -33,7 +33,7 @@ public class ModifyDtsJobRequest extends RpcAcsRequest<ModifyDtsJobResponse> {
 
 	private String synchronizationDirection;
 	public ModifyDtsJobRequest() {
-		super("Dts", "2020-01-01", "ModifyDtsJob", "dts");
+		super("Dts", "2020-01-01", "ModifyDtsJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class DescribeSynchronizationJobAlertRequest extends RpcAcsRequest<Descri
 
 	private String synchronizationDirection;
 	public DescribeSynchronizationJobAlertRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationJobAlert", "dts");
+		super("Dts", "2020-01-01", "DescribeSynchronizationJobAlert");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

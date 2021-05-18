@@ -70,11 +70,35 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	private String synchronizationDirection;
 
+	private String etlCalculator;
+
+	private String groupId;
+
+	private Integer databaseCount;
+
+	private String subscribeTopic;
+
+	private String consumptionCheckpoint;
+
+	private String beginTimestamp;
+
+	private String endTimestamp;
+
+	private String consumptionClient;
+
+	private String appName;
+
+	private String destNetType;
+
 	private SourceEndpoint sourceEndpoint;
 
 	private DestinationEndpoint destinationEndpoint;
 
 	private MigrationMode migrationMode;
+
+	private SubscriptionHost subscriptionHost;
+
+	private SubscriptionDataType subscriptionDataType;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -260,6 +284,86 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 		this.synchronizationDirection = synchronizationDirection;
 	}
 
+	public String getEtlCalculator() {
+		return this.etlCalculator;
+	}
+
+	public void setEtlCalculator(String etlCalculator) {
+		this.etlCalculator = etlCalculator;
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public Integer getDatabaseCount() {
+		return this.databaseCount;
+	}
+
+	public void setDatabaseCount(Integer databaseCount) {
+		this.databaseCount = databaseCount;
+	}
+
+	public String getSubscribeTopic() {
+		return this.subscribeTopic;
+	}
+
+	public void setSubscribeTopic(String subscribeTopic) {
+		this.subscribeTopic = subscribeTopic;
+	}
+
+	public String getConsumptionCheckpoint() {
+		return this.consumptionCheckpoint;
+	}
+
+	public void setConsumptionCheckpoint(String consumptionCheckpoint) {
+		this.consumptionCheckpoint = consumptionCheckpoint;
+	}
+
+	public String getBeginTimestamp() {
+		return this.beginTimestamp;
+	}
+
+	public void setBeginTimestamp(String beginTimestamp) {
+		this.beginTimestamp = beginTimestamp;
+	}
+
+	public String getEndTimestamp() {
+		return this.endTimestamp;
+	}
+
+	public void setEndTimestamp(String endTimestamp) {
+		this.endTimestamp = endTimestamp;
+	}
+
+	public String getConsumptionClient() {
+		return this.consumptionClient;
+	}
+
+	public void setConsumptionClient(String consumptionClient) {
+		this.consumptionClient = consumptionClient;
+	}
+
+	public String getAppName() {
+		return this.appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
+
+	public String getDestNetType() {
+		return this.destNetType;
+	}
+
+	public void setDestNetType(String destNetType) {
+		this.destNetType = destNetType;
+	}
+
 	public SourceEndpoint getSourceEndpoint() {
 		return this.sourceEndpoint;
 	}
@@ -282,6 +386,22 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 	public void setMigrationMode(MigrationMode migrationMode) {
 		this.migrationMode = migrationMode;
+	}
+
+	public SubscriptionHost getSubscriptionHost() {
+		return this.subscriptionHost;
+	}
+
+	public void setSubscriptionHost(SubscriptionHost subscriptionHost) {
+		this.subscriptionHost = subscriptionHost;
+	}
+
+	public SubscriptionDataType getSubscriptionDataType() {
+		return this.subscriptionDataType;
+	}
+
+	public void setSubscriptionDataType(SubscriptionDataType subscriptionDataType) {
+		this.subscriptionDataType = subscriptionDataType;
 	}
 
 	public static class SourceEndpoint {
@@ -518,6 +638,8 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 		private Boolean dataSynchronization;
 
+		private Boolean dataExtractTransformLoad;
+
 		public Boolean getStructureInitialization() {
 			return this.structureInitialization;
 		}
@@ -540,6 +662,70 @@ public class DescribeDtsJobDetailResponse extends AcsResponse {
 
 		public void setDataSynchronization(Boolean dataSynchronization) {
 			this.dataSynchronization = dataSynchronization;
+		}
+
+		public Boolean getDataExtractTransformLoad() {
+			return this.dataExtractTransformLoad;
+		}
+
+		public void setDataExtractTransformLoad(Boolean dataExtractTransformLoad) {
+			this.dataExtractTransformLoad = dataExtractTransformLoad;
+		}
+	}
+
+	public static class SubscriptionHost {
+
+		private String publicHost;
+
+		private String privateHost;
+
+		private String vpcHost;
+
+		public String getPublicHost() {
+			return this.publicHost;
+		}
+
+		public void setPublicHost(String publicHost) {
+			this.publicHost = publicHost;
+		}
+
+		public String getPrivateHost() {
+			return this.privateHost;
+		}
+
+		public void setPrivateHost(String privateHost) {
+			this.privateHost = privateHost;
+		}
+
+		public String getVpcHost() {
+			return this.vpcHost;
+		}
+
+		public void setVpcHost(String vpcHost) {
+			this.vpcHost = vpcHost;
+		}
+	}
+
+	public static class SubscriptionDataType {
+
+		private Boolean ddl;
+
+		private Boolean dml;
+
+		public Boolean getDdl() {
+			return this.ddl;
+		}
+
+		public void setDdl(Boolean ddl) {
+			this.ddl = ddl;
+		}
+
+		public Boolean getDml() {
+			return this.dml;
+		}
+
+		public void setDml(Boolean dml) {
+			this.dml = dml;
 		}
 	}
 

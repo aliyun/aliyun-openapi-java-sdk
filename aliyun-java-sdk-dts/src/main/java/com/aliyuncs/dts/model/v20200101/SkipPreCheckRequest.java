@@ -33,7 +33,7 @@ public class SkipPreCheckRequest extends RpcAcsRequest<SkipPreCheckResponse> {
 
 	private String skipPreCheckNames;
 	public SkipPreCheckRequest() {
-		super("Dts", "2020-01-01", "SkipPreCheck", "dts");
+		super("Dts", "2020-01-01", "SkipPreCheck");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

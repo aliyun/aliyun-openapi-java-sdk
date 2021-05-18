@@ -89,7 +89,7 @@ public class ConfigureMigrationJobRequest extends RpcAcsRequest<ConfigureMigrati
 
 	private String destinationEndpointInstanceType;
 	public ConfigureMigrationJobRequest() {
-		super("Dts", "2020-01-01", "ConfigureMigrationJob", "dts");
+		super("Dts", "2020-01-01", "ConfigureMigrationJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

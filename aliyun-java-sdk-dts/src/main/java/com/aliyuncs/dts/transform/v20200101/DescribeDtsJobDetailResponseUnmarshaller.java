@@ -18,6 +18,8 @@ import com.aliyuncs.dts.model.v20200101.DescribeDtsJobDetailResponse;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobDetailResponse.DestinationEndpoint;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobDetailResponse.MigrationMode;
 import com.aliyuncs.dts.model.v20200101.DescribeDtsJobDetailResponse.SourceEndpoint;
+import com.aliyuncs.dts.model.v20200101.DescribeDtsJobDetailResponse.SubscriptionDataType;
+import com.aliyuncs.dts.model.v20200101.DescribeDtsJobDetailResponse.SubscriptionHost;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -48,6 +50,16 @@ public class DescribeDtsJobDetailResponseUnmarshaller {
 		describeDtsJobDetailResponse.setErrorMessage(_ctx.stringValue("DescribeDtsJobDetailResponse.ErrorMessage"));
 		describeDtsJobDetailResponse.setDbObject(_ctx.stringValue("DescribeDtsJobDetailResponse.DbObject"));
 		describeDtsJobDetailResponse.setSynchronizationDirection(_ctx.stringValue("DescribeDtsJobDetailResponse.SynchronizationDirection"));
+		describeDtsJobDetailResponse.setEtlCalculator(_ctx.stringValue("DescribeDtsJobDetailResponse.EtlCalculator"));
+		describeDtsJobDetailResponse.setGroupId(_ctx.stringValue("DescribeDtsJobDetailResponse.GroupId"));
+		describeDtsJobDetailResponse.setDatabaseCount(_ctx.integerValue("DescribeDtsJobDetailResponse.DatabaseCount"));
+		describeDtsJobDetailResponse.setSubscribeTopic(_ctx.stringValue("DescribeDtsJobDetailResponse.SubscribeTopic"));
+		describeDtsJobDetailResponse.setConsumptionCheckpoint(_ctx.stringValue("DescribeDtsJobDetailResponse.ConsumptionCheckpoint"));
+		describeDtsJobDetailResponse.setBeginTimestamp(_ctx.stringValue("DescribeDtsJobDetailResponse.BeginTimestamp"));
+		describeDtsJobDetailResponse.setEndTimestamp(_ctx.stringValue("DescribeDtsJobDetailResponse.EndTimestamp"));
+		describeDtsJobDetailResponse.setConsumptionClient(_ctx.stringValue("DescribeDtsJobDetailResponse.ConsumptionClient"));
+		describeDtsJobDetailResponse.setAppName(_ctx.stringValue("DescribeDtsJobDetailResponse.AppName"));
+		describeDtsJobDetailResponse.setDestNetType(_ctx.stringValue("DescribeDtsJobDetailResponse.DestNetType"));
 
 		SourceEndpoint sourceEndpoint = new SourceEndpoint();
 		sourceEndpoint.setInstanceID(_ctx.stringValue("DescribeDtsJobDetailResponse.SourceEndpoint.InstanceID"));
@@ -81,7 +93,19 @@ public class DescribeDtsJobDetailResponseUnmarshaller {
 		migrationMode.setStructureInitialization(_ctx.booleanValue("DescribeDtsJobDetailResponse.MigrationMode.StructureInitialization"));
 		migrationMode.setDataInitialization(_ctx.booleanValue("DescribeDtsJobDetailResponse.MigrationMode.DataInitialization"));
 		migrationMode.setDataSynchronization(_ctx.booleanValue("DescribeDtsJobDetailResponse.MigrationMode.DataSynchronization"));
+		migrationMode.setDataExtractTransformLoad(_ctx.booleanValue("DescribeDtsJobDetailResponse.MigrationMode.DataExtractTransformLoad"));
 		describeDtsJobDetailResponse.setMigrationMode(migrationMode);
+
+		SubscriptionHost subscriptionHost = new SubscriptionHost();
+		subscriptionHost.setPublicHost(_ctx.stringValue("DescribeDtsJobDetailResponse.SubscriptionHost.PublicHost"));
+		subscriptionHost.setPrivateHost(_ctx.stringValue("DescribeDtsJobDetailResponse.SubscriptionHost.PrivateHost"));
+		subscriptionHost.setVpcHost(_ctx.stringValue("DescribeDtsJobDetailResponse.SubscriptionHost.VpcHost"));
+		describeDtsJobDetailResponse.setSubscriptionHost(subscriptionHost);
+
+		SubscriptionDataType subscriptionDataType = new SubscriptionDataType();
+		subscriptionDataType.setDdl(_ctx.booleanValue("DescribeDtsJobDetailResponse.SubscriptionDataType.Ddl"));
+		subscriptionDataType.setDml(_ctx.booleanValue("DescribeDtsJobDetailResponse.SubscriptionDataType.Dml"));
+		describeDtsJobDetailResponse.setSubscriptionDataType(subscriptionDataType);
 	 
 	 	return describeDtsJobDetailResponse;
 	}
