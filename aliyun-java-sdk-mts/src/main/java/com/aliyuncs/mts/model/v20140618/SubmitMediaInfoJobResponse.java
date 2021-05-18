@@ -395,6 +395,12 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					private String level;
 
+					private String colorRange;
+
+					private String colorTransfer;
+
+					private String colorPrimaries;
+
 					private NetworkCost networkCost;
 
 					public String getSar() {
@@ -579,6 +585,30 @@ public class SubmitMediaInfoJobResponse extends AcsResponse {
 
 					public void setLevel(String level) {
 						this.level = level;
+					}
+
+					public String getColorRange() {
+						return this.colorRange;
+					}
+
+					public void setColorRange(String colorRange) {
+						this.colorRange = colorRange;
+					}
+
+					public String getColorTransfer() {
+						return this.colorTransfer;
+					}
+
+					public void setColorTransfer(String colorTransfer) {
+						this.colorTransfer = colorTransfer;
+					}
+
+					public String getColorPrimaries() {
+						return this.colorPrimaries;
+					}
+
+					public void setColorPrimaries(String colorPrimaries) {
+						this.colorPrimaries = colorPrimaries;
 					}
 
 					public NetworkCost getNetworkCost() {

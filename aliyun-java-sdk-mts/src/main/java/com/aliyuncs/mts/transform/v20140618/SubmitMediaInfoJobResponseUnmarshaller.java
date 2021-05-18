@@ -96,6 +96,9 @@ public class SubmitMediaInfoJobResponseUnmarshaller {
 			videoStream.setCodecTag(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].CodecTag"));
 			videoStream.setCodecTimeBase(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].CodecTimeBase"));
 			videoStream.setLevel(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].Level"));
+			videoStream.setColorRange(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorRange"));
+			videoStream.setColorTransfer(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorTransfer"));
+			videoStream.setColorPrimaries(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].ColorPrimaries"));
 
 			NetworkCost networkCost = new NetworkCost();
 			networkCost.setPreloadTime(_ctx.stringValue("SubmitMediaInfoJobResponse.MediaInfoJob.Properties.Streams.VideoStreamList["+ i +"].NetworkCost.PreloadTime"));
