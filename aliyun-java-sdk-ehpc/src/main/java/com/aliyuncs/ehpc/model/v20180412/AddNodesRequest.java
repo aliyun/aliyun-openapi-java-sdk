@@ -41,6 +41,8 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 
 	private String systemDiskType;
 
+	private Integer minCount;
+
 	private Integer systemDiskSize;
 
 	private String instanceType;
@@ -172,6 +174,17 @@ public class AddNodesRequest extends RpcAcsRequest<AddNodesResponse> {
 		this.systemDiskType = systemDiskType;
 		if(systemDiskType != null){
 			putQueryParameter("SystemDiskType", systemDiskType);
+		}
+	}
+
+	public Integer getMinCount() {
+		return this.minCount;
+	}
+
+	public void setMinCount(Integer minCount) {
+		this.minCount = minCount;
+		if(minCount != null){
+			putQueryParameter("MinCount", minCount.toString());
 		}
 	}
 

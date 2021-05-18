@@ -25,6 +25,8 @@ import com.aliyuncs.ehpc.Endpoint;
 public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesResponse> {
 	   
 
+	private String clusterId;
+
 	private String imageOwnerAlias;
 
 	private String baseOsTag;
@@ -37,6 +39,17 @@ public class ListCustomImagesRequest extends RpcAcsRequest<ListCustomImagesRespo
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClusterId() {
+		return this.clusterId;
+	}
+
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
+		}
 	}
 
 	public String getImageOwnerAlias() {

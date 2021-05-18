@@ -131,6 +131,8 @@ public class ListClustersResponse extends AcsResponse {
 
 		private String clientVersion;
 
+		private Boolean isComputeEss;
+
 		private Managers managers;
 
 		private Computes computes;
@@ -353,6 +355,14 @@ public class ListClustersResponse extends AcsResponse {
 
 		public void setClientVersion(String clientVersion) {
 			this.clientVersion = clientVersion;
+		}
+
+		public Boolean getIsComputeEss() {
+			return this.isComputeEss;
+		}
+
+		public void setIsComputeEss(Boolean isComputeEss) {
+			this.isComputeEss = isComputeEss;
 		}
 
 		public Managers getManagers() {

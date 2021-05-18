@@ -65,6 +65,7 @@ public class ListClustersResponseUnmarshaller {
 			clusterInfoSimple.setComputeSpotStrategy(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ComputeSpotStrategy"));
 			clusterInfoSimple.setComputeSpotPriceLimit(_ctx.floatValue("ListClustersResponse.Clusters["+ i +"].ComputeSpotPriceLimit"));
 			clusterInfoSimple.setClientVersion(_ctx.stringValue("ListClustersResponse.Clusters["+ i +"].ClientVersion"));
+			clusterInfoSimple.setIsComputeEss(_ctx.booleanValue("ListClustersResponse.Clusters["+ i +"].IsComputeEss"));
 
 			Managers managers = new Managers();
 			managers.setTotal(_ctx.integerValue("ListClustersResponse.Clusters["+ i +"].Managers.Total"));

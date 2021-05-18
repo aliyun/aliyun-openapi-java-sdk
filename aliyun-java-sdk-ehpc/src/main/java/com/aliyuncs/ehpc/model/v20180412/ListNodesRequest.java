@@ -27,19 +27,23 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 
 	private String role;
 
+	private Integer pageNumber;
+
+	private String hostName;
+
+	private Integer pageSize;
+
+	private String hostNamePrefix;
+
 	private String clusterId;
 
-	private Integer pageNumber;
+	private String hostNameSuffix;
 
 	private String filter;
 
 	private String privateIpAddress;
 
 	private String sequence;
-
-	private String hostName;
-
-	private Integer pageSize;
 
 	private String sortBy;
 	public ListNodesRequest() {
@@ -62,6 +66,50 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		}
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
+		}
+	}
+
+	public String getHostName() {
+		return this.hostName;
+	}
+
+	public void setHostName(String hostName) {
+		this.hostName = hostName;
+		if(hostName != null){
+			putQueryParameter("HostName", hostName);
+		}
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getHostNamePrefix() {
+		return this.hostNamePrefix;
+	}
+
+	public void setHostNamePrefix(String hostNamePrefix) {
+		this.hostNamePrefix = hostNamePrefix;
+		if(hostNamePrefix != null){
+			putQueryParameter("HostNamePrefix", hostNamePrefix);
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -73,14 +121,14 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		}
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getHostNameSuffix() {
+		return this.hostNameSuffix;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
+	public void setHostNameSuffix(String hostNameSuffix) {
+		this.hostNameSuffix = hostNameSuffix;
+		if(hostNameSuffix != null){
+			putQueryParameter("HostNameSuffix", hostNameSuffix);
 		}
 	}
 
@@ -114,28 +162,6 @@ public class ListNodesRequest extends RpcAcsRequest<ListNodesResponse> {
 		this.sequence = sequence;
 		if(sequence != null){
 			putQueryParameter("Sequence", sequence);
-		}
-	}
-
-	public String getHostName() {
-		return this.hostName;
-	}
-
-	public void setHostName(String hostName) {
-		this.hostName = hostName;
-		if(hostName != null){
-			putQueryParameter("HostName", hostName);
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
 		}
 	}
 

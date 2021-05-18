@@ -27,11 +27,15 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 
 	private String stderrRedirectPath;
 
+	private String clockTime;
+
 	private String commandLine;
 
 	private String arrayRequest;
 
 	private String packagePath;
+
+	private String mem;
 
 	private String stdoutRedirectPath;
 
@@ -41,9 +45,19 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 
 	private Boolean reRunable;
 
+	private Integer thread;
+
 	private Integer priority;
 
+	private Integer gpu;
+
+	private Integer node;
+
+	private Integer task;
+
 	private String name;
+
+	private String queue;
 	public CreateJobTemplateRequest() {
 		super("EHPC", "2018-04-12", "CreateJobTemplate");
 		setMethod(MethodType.GET);
@@ -61,6 +75,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.stderrRedirectPath = stderrRedirectPath;
 		if(stderrRedirectPath != null){
 			putQueryParameter("StderrRedirectPath", stderrRedirectPath);
+		}
+	}
+
+	public String getClockTime() {
+		return this.clockTime;
+	}
+
+	public void setClockTime(String clockTime) {
+		this.clockTime = clockTime;
+		if(clockTime != null){
+			putQueryParameter("ClockTime", clockTime);
 		}
 	}
 
@@ -94,6 +119,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.packagePath = packagePath;
 		if(packagePath != null){
 			putQueryParameter("PackagePath", packagePath);
+		}
+	}
+
+	public String getMem() {
+		return this.mem;
+	}
+
+	public void setMem(String mem) {
+		this.mem = mem;
+		if(mem != null){
+			putQueryParameter("Mem", mem);
 		}
 	}
 
@@ -141,6 +177,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		}
 	}
 
+	public Integer getThread() {
+		return this.thread;
+	}
+
+	public void setThread(Integer thread) {
+		this.thread = thread;
+		if(thread != null){
+			putQueryParameter("Thread", thread.toString());
+		}
+	}
+
 	public Integer getPriority() {
 		return this.priority;
 	}
@@ -152,6 +199,39 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		}
 	}
 
+	public Integer getGpu() {
+		return this.gpu;
+	}
+
+	public void setGpu(Integer gpu) {
+		this.gpu = gpu;
+		if(gpu != null){
+			putQueryParameter("Gpu", gpu.toString());
+		}
+	}
+
+	public Integer getNode() {
+		return this.node;
+	}
+
+	public void setNode(Integer node) {
+		this.node = node;
+		if(node != null){
+			putQueryParameter("Node", node.toString());
+		}
+	}
+
+	public Integer getTask() {
+		return this.task;
+	}
+
+	public void setTask(Integer task) {
+		this.task = task;
+		if(task != null){
+			putQueryParameter("Task", task.toString());
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -160,6 +240,17 @@ public class CreateJobTemplateRequest extends RpcAcsRequest<CreateJobTemplateRes
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getQueue() {
+		return this.queue;
+	}
+
+	public void setQueue(String queue) {
+		this.queue = queue;
+		if(queue != null){
+			putQueryParameter("Queue", queue);
 		}
 	}
 
