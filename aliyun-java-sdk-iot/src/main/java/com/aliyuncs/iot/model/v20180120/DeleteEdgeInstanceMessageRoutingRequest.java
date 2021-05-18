@@ -31,7 +31,7 @@ public class DeleteEdgeInstanceMessageRoutingRequest extends RpcAcsRequest<Delet
 
 	private Long routeId;
 	public DeleteEdgeInstanceMessageRoutingRequest() {
-		super("Iot", "2018-01-20", "DeleteEdgeInstanceMessageRouting");
+		super("Iot", "2018-01-20", "DeleteEdgeInstanceMessageRouting", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

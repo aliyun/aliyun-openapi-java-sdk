@@ -31,7 +31,7 @@ public class GetDeviceTunnelStatusRequest extends RpcAcsRequest<GetDeviceTunnelS
 
 	private String deviceName;
 	public GetDeviceTunnelStatusRequest() {
-		super("Iot", "2018-01-20", "GetDeviceTunnelStatus");
+		super("Iot", "2018-01-20", "GetDeviceTunnelStatus", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

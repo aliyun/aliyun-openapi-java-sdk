@@ -45,7 +45,7 @@ public class CreateJobRequest extends RpcAcsRequest<CreateJobResponse> {
 
 	private Long scheduledTime;
 	public CreateJobRequest() {
-		super("Iot", "2018-01-20", "CreateJob");
+		super("Iot", "2018-01-20", "CreateJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

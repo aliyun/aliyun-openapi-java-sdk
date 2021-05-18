@@ -31,7 +31,7 @@ public class GetEdgeInstanceMessageRoutingRequest extends RpcAcsRequest<GetEdgeI
 
 	private Long routeId;
 	public GetEdgeInstanceMessageRoutingRequest() {
-		super("Iot", "2018-01-20", "GetEdgeInstanceMessageRouting");
+		super("Iot", "2018-01-20", "GetEdgeInstanceMessageRouting", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

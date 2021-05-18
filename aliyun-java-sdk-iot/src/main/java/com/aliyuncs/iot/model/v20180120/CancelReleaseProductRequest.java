@@ -29,7 +29,7 @@ public class CancelReleaseProductRequest extends RpcAcsRequest<CancelReleaseProd
 
 	private String productKey;
 	public CancelReleaseProductRequest() {
-		super("Iot", "2018-01-20", "CancelReleaseProduct");
+		super("Iot", "2018-01-20", "CancelReleaseProduct", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
