@@ -169,6 +169,8 @@ public class ListFilesResponse extends AcsResponse {
 
 			private Long businessId;
 
+			private Boolean autoParsing;
+
 			public String getConnectionName() {
 				return this.connectionName;
 			}
@@ -327,6 +329,14 @@ public class ListFilesResponse extends AcsResponse {
 
 			public void setBusinessId(Long businessId) {
 				this.businessId = businessId;
+			}
+
+			public Boolean getAutoParsing() {
+				return this.autoParsing;
+			}
+
+			public void setAutoParsing(Boolean autoParsing) {
+				this.autoParsing = autoParsing;
 			}
 		}
 	}

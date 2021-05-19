@@ -70,6 +70,8 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 	private String fileFolderPath;
 
 	private String fileDescription;
+
+	private Boolean autoParsing;
 	public CreateFileRequest() {
 		super("dataworks-public", "2020-05-18", "CreateFile");
 		setMethod(MethodType.POST);
@@ -329,6 +331,17 @@ public class CreateFileRequest extends RpcAcsRequest<CreateFileResponse> {
 		this.fileDescription = fileDescription;
 		if(fileDescription != null){
 			putBodyParameter("FileDescription", fileDescription);
+		}
+	}
+
+	public Boolean getAutoParsing() {
+		return this.autoParsing;
+	}
+
+	public void setAutoParsing(Boolean autoParsing) {
+		this.autoParsing = autoParsing;
+		if(autoParsing != null){
+			putBodyParameter("AutoParsing", autoParsing.toString());
 		}
 	}
 
