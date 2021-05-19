@@ -6,7 +6,6 @@ import com.aliyuncs.http.HttpRequest;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.regions.ProductDomain;
 import com.aliyuncs.utils.ParameterHelper;
-
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.util.HashMap;
