@@ -14,7 +14,11 @@
 
 package com.aliyuncs.onsmqtt.transform.v20200420;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.onsmqtt.model.v20200420.QueryMqttTraceMessageSubscribeResponse;
+import com.aliyuncs.onsmqtt.model.v20200420.QueryMqttTraceMessageSubscribeResponse.MessageTraceListsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,10 +30,23 @@ public class QueryMqttTraceMessageSubscribeResponseUnmarshaller {
 		queryMqttTraceMessageSubscribeResponse.setSuccess(_ctx.booleanValue("QueryMqttTraceMessageSubscribeResponse.Success"));
 		queryMqttTraceMessageSubscribeResponse.setCode(_ctx.integerValue("QueryMqttTraceMessageSubscribeResponse.Code"));
 		queryMqttTraceMessageSubscribeResponse.setMessage(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.Message"));
-		queryMqttTraceMessageSubscribeResponse.setData(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.Data"));
 		queryMqttTraceMessageSubscribeResponse.setTotal(_ctx.longValue("QueryMqttTraceMessageSubscribeResponse.Total"));
 		queryMqttTraceMessageSubscribeResponse.setPageSize(_ctx.integerValue("QueryMqttTraceMessageSubscribeResponse.PageSize"));
 		queryMqttTraceMessageSubscribeResponse.setCurrentPage(_ctx.integerValue("QueryMqttTraceMessageSubscribeResponse.CurrentPage"));
+
+		List<MessageTraceListsItem> messageTraceLists = new ArrayList<MessageTraceListsItem>();
+		for (int i = 0; i < _ctx.lengthValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists.Length"); i++) {
+			MessageTraceListsItem messageTraceListsItem = new MessageTraceListsItem();
+			messageTraceListsItem.setClientId(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists["+ i +"].ClientId"));
+			messageTraceListsItem.setActionInfo(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists["+ i +"].ActionInfo"));
+			messageTraceListsItem.setAction(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists["+ i +"].Action"));
+			messageTraceListsItem.setActionCode(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists["+ i +"].ActionCode"));
+			messageTraceListsItem.setMsgId(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists["+ i +"].MsgId"));
+			messageTraceListsItem.setTime(_ctx.stringValue("QueryMqttTraceMessageSubscribeResponse.MessageTraceLists["+ i +"].Time"));
+
+			messageTraceLists.add(messageTraceListsItem);
+		}
+		queryMqttTraceMessageSubscribeResponse.setMessageTraceLists(messageTraceLists);
 	 
 	 	return queryMqttTraceMessageSubscribeResponse;
 	}

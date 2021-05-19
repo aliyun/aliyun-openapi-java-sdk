@@ -14,6 +14,7 @@
 
 package com.aliyuncs.onsmqtt.model.v20200420;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.onsmqtt.transform.v20200420.QueryMqttTraceMessagePublishResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,13 +33,13 @@ public class QueryMqttTraceMessagePublishResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	private Long total;
 
 	private Integer currentPage;
 
 	private Integer pageSize;
+
+	private List<MessageTraceListsItem> messageTraceLists;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,14 +73,6 @@ public class QueryMqttTraceMessagePublishResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public Long getTotal() {
 		return this.total;
 	}
@@ -102,6 +95,77 @@ public class QueryMqttTraceMessagePublishResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public List<MessageTraceListsItem> getMessageTraceLists() {
+		return this.messageTraceLists;
+	}
+
+	public void setMessageTraceLists(List<MessageTraceListsItem> messageTraceLists) {
+		this.messageTraceLists = messageTraceLists;
+	}
+
+	public static class MessageTraceListsItem {
+
+		private String clientId;
+
+		private String actionInfo;
+
+		private String action;
+
+		private String actionCode;
+
+		private String time;
+
+		private String msgId;
+
+		public String getClientId() {
+			return this.clientId;
+		}
+
+		public void setClientId(String clientId) {
+			this.clientId = clientId;
+		}
+
+		public String getActionInfo() {
+			return this.actionInfo;
+		}
+
+		public void setActionInfo(String actionInfo) {
+			this.actionInfo = actionInfo;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getActionCode() {
+			return this.actionCode;
+		}
+
+		public void setActionCode(String actionCode) {
+			this.actionCode = actionCode;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+		public String getMsgId() {
+			return this.msgId;
+		}
+
+		public void setMsgId(String msgId) {
+			this.msgId = msgId;
+		}
 	}
 
 	@Override

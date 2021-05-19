@@ -25,8 +25,6 @@ import com.aliyuncs.onsmqtt.Endpoint;
 public class QueryMqttTraceMessageOfClientRequest extends RpcAcsRequest<QueryMqttTraceMessageOfClientResponse> {
 	   
 
-	private Long preventCache;
-
 	private String clientId;
 
 	private Boolean reverse;
@@ -53,17 +51,6 @@ public class QueryMqttTraceMessageOfClientRequest extends RpcAcsRequest<QueryMqt
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getPreventCache() {
-		return this.preventCache;
-	}
-
-	public void setPreventCache(Long preventCache) {
-		this.preventCache = preventCache;
-		if(preventCache != null){
-			putQueryParameter("PreventCache", preventCache.toString());
-		}
 	}
 
 	public String getClientId() {

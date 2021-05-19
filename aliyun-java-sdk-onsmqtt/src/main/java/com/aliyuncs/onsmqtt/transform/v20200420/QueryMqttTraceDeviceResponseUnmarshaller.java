@@ -14,7 +14,11 @@
 
 package com.aliyuncs.onsmqtt.transform.v20200420;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.onsmqtt.model.v20200420.QueryMqttTraceDeviceResponse;
+import com.aliyuncs.onsmqtt.model.v20200420.QueryMqttTraceDeviceResponse.DeviceInfoListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -26,10 +30,22 @@ public class QueryMqttTraceDeviceResponseUnmarshaller {
 		queryMqttTraceDeviceResponse.setSuccess(_ctx.booleanValue("QueryMqttTraceDeviceResponse.Success"));
 		queryMqttTraceDeviceResponse.setCode(_ctx.integerValue("QueryMqttTraceDeviceResponse.Code"));
 		queryMqttTraceDeviceResponse.setMessage(_ctx.stringValue("QueryMqttTraceDeviceResponse.Message"));
-		queryMqttTraceDeviceResponse.setData(_ctx.stringValue("QueryMqttTraceDeviceResponse.Data"));
 		queryMqttTraceDeviceResponse.setTotal(_ctx.longValue("QueryMqttTraceDeviceResponse.Total"));
 		queryMqttTraceDeviceResponse.setCurrentPage(_ctx.integerValue("QueryMqttTraceDeviceResponse.CurrentPage"));
 		queryMqttTraceDeviceResponse.setPageSize(_ctx.integerValue("QueryMqttTraceDeviceResponse.PageSize"));
+
+		List<DeviceInfoListItem> deviceInfoList = new ArrayList<DeviceInfoListItem>();
+		for (int i = 0; i < _ctx.lengthValue("QueryMqttTraceDeviceResponse.DeviceInfoList.Length"); i++) {
+			DeviceInfoListItem deviceInfoListItem = new DeviceInfoListItem();
+			deviceInfoListItem.setActionInfo(_ctx.stringValue("QueryMqttTraceDeviceResponse.DeviceInfoList["+ i +"].ActionInfo"));
+			deviceInfoListItem.setAction(_ctx.stringValue("QueryMqttTraceDeviceResponse.DeviceInfoList["+ i +"].Action"));
+			deviceInfoListItem.setActionCode(_ctx.stringValue("QueryMqttTraceDeviceResponse.DeviceInfoList["+ i +"].ActionCode"));
+			deviceInfoListItem.setTime(_ctx.stringValue("QueryMqttTraceDeviceResponse.DeviceInfoList["+ i +"].Time"));
+			deviceInfoListItem.setChannelId(_ctx.stringValue("QueryMqttTraceDeviceResponse.DeviceInfoList["+ i +"].ChannelId"));
+
+			deviceInfoList.add(deviceInfoListItem);
+		}
+		queryMqttTraceDeviceResponse.setDeviceInfoList(deviceInfoList);
 	 
 	 	return queryMqttTraceDeviceResponse;
 	}

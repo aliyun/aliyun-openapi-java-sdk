@@ -14,6 +14,7 @@
 
 package com.aliyuncs.onsmqtt.model.v20200420;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
 import com.aliyuncs.onsmqtt.transform.v20200420.QueryMqttTraceDeviceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -32,13 +33,13 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 
 	private String message;
 
-	private String data;
-
 	private Long total;
 
 	private Integer currentPage;
 
 	private Integer pageSize;
+
+	private List<DeviceInfoListItem> deviceInfoList;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -72,14 +73,6 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
 	public Long getTotal() {
 		return this.total;
 	}
@@ -102,6 +95,67 @@ public class QueryMqttTraceDeviceResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public List<DeviceInfoListItem> getDeviceInfoList() {
+		return this.deviceInfoList;
+	}
+
+	public void setDeviceInfoList(List<DeviceInfoListItem> deviceInfoList) {
+		this.deviceInfoList = deviceInfoList;
+	}
+
+	public static class DeviceInfoListItem {
+
+		private String actionInfo;
+
+		private String action;
+
+		private String actionCode;
+
+		private String time;
+
+		private String channelId;
+
+		public String getActionInfo() {
+			return this.actionInfo;
+		}
+
+		public void setActionInfo(String actionInfo) {
+			this.actionInfo = actionInfo;
+		}
+
+		public String getAction() {
+			return this.action;
+		}
+
+		public void setAction(String action) {
+			this.action = action;
+		}
+
+		public String getActionCode() {
+			return this.actionCode;
+		}
+
+		public void setActionCode(String actionCode) {
+			this.actionCode = actionCode;
+		}
+
+		public String getTime() {
+			return this.time;
+		}
+
+		public void setTime(String time) {
+			this.time = time;
+		}
+
+		public String getChannelId() {
+			return this.channelId;
+		}
+
+		public void setChannelId(String channelId) {
+			this.channelId = channelId;
+		}
 	}
 
 	@Override
