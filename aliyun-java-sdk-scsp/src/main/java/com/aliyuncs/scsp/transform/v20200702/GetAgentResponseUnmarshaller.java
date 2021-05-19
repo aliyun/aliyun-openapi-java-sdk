@@ -30,21 +30,23 @@ public class GetAgentResponseUnmarshaller {
 		getAgentResponse.setRequestId(_ctx.stringValue("GetAgentResponse.RequestId"));
 		getAgentResponse.setCode(_ctx.stringValue("GetAgentResponse.Code"));
 		getAgentResponse.setSuccess(_ctx.booleanValue("GetAgentResponse.Success"));
+		getAgentResponse.setHttpStatusCode(_ctx.longValue("GetAgentResponse.HttpStatusCode"));
+		getAgentResponse.setMessage(_ctx.stringValue("GetAgentResponse.Message"));
 
 		Data data = new Data();
 		data.setStatus(_ctx.integerValue("GetAgentResponse.Data.Status"));
-		data.setTenantId(_ctx.longValue("GetAgentResponse.Data.TenantId"));
 		data.setDisplayName(_ctx.stringValue("GetAgentResponse.Data.DisplayName"));
 		data.setAgentId(_ctx.longValue("GetAgentResponse.Data.AgentId"));
 		data.setAccountName(_ctx.stringValue("GetAgentResponse.Data.AccountName"));
+		data.setTenantId(_ctx.longValue("GetAgentResponse.Data.TenantId"));
 
 		List<GroupListItem> groupList = new ArrayList<GroupListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetAgentResponse.Data.GroupList.Length"); i++) {
 			GroupListItem groupListItem = new GroupListItem();
-			groupListItem.setDescription(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].Description"));
 			groupListItem.setDisplayName(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].DisplayName"));
-			groupListItem.setSkillGroupId(_ctx.longValue("GetAgentResponse.Data.GroupList["+ i +"].SkillGroupId"));
+			groupListItem.setDescription(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].Description"));
 			groupListItem.setChannelType(_ctx.integerValue("GetAgentResponse.Data.GroupList["+ i +"].ChannelType"));
+			groupListItem.setSkillGroupId(_ctx.longValue("GetAgentResponse.Data.GroupList["+ i +"].SkillGroupId"));
 			groupListItem.setName(_ctx.stringValue("GetAgentResponse.Data.GroupList["+ i +"].Name"));
 
 			groupList.add(groupListItem);

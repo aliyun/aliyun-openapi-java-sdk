@@ -29,6 +29,7 @@ public class GetGrantedRoleIdsResponseUnmarshaller {
 		getGrantedRoleIdsResponse.setMessage(_ctx.stringValue("GetGrantedRoleIdsResponse.Message"));
 		getGrantedRoleIdsResponse.setCode(_ctx.stringValue("GetGrantedRoleIdsResponse.Code"));
 		getGrantedRoleIdsResponse.setSuccess(_ctx.booleanValue("GetGrantedRoleIdsResponse.Success"));
+		getGrantedRoleIdsResponse.setHttpStatusCode(_ctx.longValue("GetGrantedRoleIdsResponse.HttpStatusCode"));
 
 		List<Long> data = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("GetGrantedRoleIdsResponse.Data.Length"); i++) {

@@ -15,34 +15,26 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scsp.transform.v20200702.CollectDeploymentArchiveResponseUnmarshaller;
+import com.aliyuncs.scsp.transform.v20200702.CreateThirdSsoAgentResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CollectDeploymentArchiveResponse extends AcsResponse {
-
-	private String requestId;
+public class CreateThirdSsoAgentResponse extends AcsResponse {
 
 	private String message;
 
-	private Integer httpStatusCode;
+	private String requestId;
 
-	private String data;
+	private Long httpStatusCode;
+
+	private Long data;
 
 	private String code;
 
 	private Boolean success;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -52,19 +44,27 @@ public class CollectDeploymentArchiveResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getHttpStatusCode() {
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getHttpStatusCode() {
 		return this.httpStatusCode;
 	}
 
-	public void setHttpStatusCode(Integer httpStatusCode) {
+	public void setHttpStatusCode(Long httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
 	}
 
-	public String getData() {
+	public Long getData() {
 		return this.data;
 	}
 
-	public void setData(String data) {
+	public void setData(Long data) {
 		this.data = data;
 	}
 
@@ -85,8 +85,8 @@ public class CollectDeploymentArchiveResponse extends AcsResponse {
 	}
 
 	@Override
-	public CollectDeploymentArchiveResponse getInstance(UnmarshallerContext context) {
-		return	CollectDeploymentArchiveResponseUnmarshaller.unmarshall(this, context);
+	public CreateThirdSsoAgentResponse getInstance(UnmarshallerContext context) {
+		return	CreateThirdSsoAgentResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

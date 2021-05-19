@@ -25,23 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchTicketByIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -49,6 +43,14 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,6 +69,14 @@ public class SearchTicketByIdResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -77,59 +87,43 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long categoryId;
-
-		private String formData;
-
 		private String carbonCopy;
-
-		private Long creatorId;
-
-		private Integer priority;
-
-		private Long createTime;
-
-		private Integer creatorType;
-
-		private String ticketName;
-
-		private Long serviceId;
-
-		private Long memberId;
-
-		private Long ticketId;
-
-		private Long modifiedTime;
-
-		private Integer caseStatus;
 
 		private String memberName;
 
+		private Long createTime;
+
+		private Long serviceId;
+
+		private Long ticketId;
+
+		private Integer priority;
+
+		private Long creatorId;
+
+		private String formData;
+
 		private String fromInfo;
+
+		private Long modifiedTime;
+
+		private String creatorName;
+
+		private Long categoryId;
+
+		private Integer creatorType;
+
+		private Long memberId;
+
+		private Integer caseStatus;
 
 		private Long templateId;
 
-		private String creatorName;
+		private String ticketName;
 
 		private List<ActivitiesItem> activities;
 
 		private List<ActivityRecordsItem> activityRecords;
-
-		public Long getCategoryId() {
-			return this.categoryId;
-		}
-
-		public void setCategoryId(Long categoryId) {
-			this.categoryId = categoryId;
-		}
-
-		public String getFormData() {
-			return this.formData;
-		}
-
-		public void setFormData(String formData) {
-			this.formData = formData;
-		}
 
 		public String getCarbonCopy() {
 			return this.carbonCopy;
@@ -137,86 +131,6 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 		public void setCarbonCopy(String carbonCopy) {
 			this.carbonCopy = carbonCopy;
-		}
-
-		public Long getCreatorId() {
-			return this.creatorId;
-		}
-
-		public void setCreatorId(Long creatorId) {
-			this.creatorId = creatorId;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public Integer getCreatorType() {
-			return this.creatorType;
-		}
-
-		public void setCreatorType(Integer creatorType) {
-			this.creatorType = creatorType;
-		}
-
-		public String getTicketName() {
-			return this.ticketName;
-		}
-
-		public void setTicketName(String ticketName) {
-			this.ticketName = ticketName;
-		}
-
-		public Long getServiceId() {
-			return this.serviceId;
-		}
-
-		public void setServiceId(Long serviceId) {
-			this.serviceId = serviceId;
-		}
-
-		public Long getMemberId() {
-			return this.memberId;
-		}
-
-		public void setMemberId(Long memberId) {
-			this.memberId = memberId;
-		}
-
-		public Long getTicketId() {
-			return this.ticketId;
-		}
-
-		public void setTicketId(Long ticketId) {
-			this.ticketId = ticketId;
-		}
-
-		public Long getModifiedTime() {
-			return this.modifiedTime;
-		}
-
-		public void setModifiedTime(Long modifiedTime) {
-			this.modifiedTime = modifiedTime;
-		}
-
-		public Integer getCaseStatus() {
-			return this.caseStatus;
-		}
-
-		public void setCaseStatus(Integer caseStatus) {
-			this.caseStatus = caseStatus;
 		}
 
 		public String getMemberName() {
@@ -227,12 +141,108 @@ public class SearchTicketByIdResponse extends AcsResponse {
 			this.memberName = memberName;
 		}
 
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(Long serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public Long getTicketId() {
+			return this.ticketId;
+		}
+
+		public void setTicketId(Long ticketId) {
+			this.ticketId = ticketId;
+		}
+
+		public Integer getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public Long getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(Long creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getFormData() {
+			return this.formData;
+		}
+
+		public void setFormData(String formData) {
+			this.formData = formData;
+		}
+
 		public String getFromInfo() {
 			return this.fromInfo;
 		}
 
 		public void setFromInfo(String fromInfo) {
 			this.fromInfo = fromInfo;
+		}
+
+		public Long getModifiedTime() {
+			return this.modifiedTime;
+		}
+
+		public void setModifiedTime(Long modifiedTime) {
+			this.modifiedTime = modifiedTime;
+		}
+
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
+		}
+
+		public Long getCategoryId() {
+			return this.categoryId;
+		}
+
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
+		}
+
+		public Integer getCreatorType() {
+			return this.creatorType;
+		}
+
+		public void setCreatorType(Integer creatorType) {
+			this.creatorType = creatorType;
+		}
+
+		public Long getMemberId() {
+			return this.memberId;
+		}
+
+		public void setMemberId(Long memberId) {
+			this.memberId = memberId;
+		}
+
+		public Integer getCaseStatus() {
+			return this.caseStatus;
+		}
+
+		public void setCaseStatus(Integer caseStatus) {
+			this.caseStatus = caseStatus;
 		}
 
 		public Long getTemplateId() {
@@ -243,12 +253,12 @@ public class SearchTicketByIdResponse extends AcsResponse {
 			this.templateId = templateId;
 		}
 
-		public String getCreatorName() {
-			return this.creatorName;
+		public String getTicketName() {
+			return this.ticketName;
 		}
 
-		public void setCreatorName(String creatorName) {
-			this.creatorName = creatorName;
+		public void setTicketName(String ticketName) {
+			this.ticketName = ticketName;
 		}
 
 		public List<ActivitiesItem> getActivities() {
@@ -292,31 +302,15 @@ public class SearchTicketByIdResponse extends AcsResponse {
 
 		public static class ActivityRecordsItem {
 
-			private Long gmtCreate;
-
-			private String operatorName;
-
 			private String actionCode;
 
 			private String actionCodeDesc;
 
+			private String operatorName;
+
 			private String memo;
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public String getOperatorName() {
-				return this.operatorName;
-			}
-
-			public void setOperatorName(String operatorName) {
-				this.operatorName = operatorName;
-			}
+			private Long gmtCreate;
 
 			public String getActionCode() {
 				return this.actionCode;
@@ -334,12 +328,28 @@ public class SearchTicketByIdResponse extends AcsResponse {
 				this.actionCodeDesc = actionCodeDesc;
 			}
 
+			public String getOperatorName() {
+				return this.operatorName;
+			}
+
+			public void setOperatorName(String operatorName) {
+				this.operatorName = operatorName;
+			}
+
 			public String getMemo() {
 				return this.memo;
 			}
 
 			public void setMemo(String memo) {
 				this.memo = memo;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
 			}
 		}
 	}

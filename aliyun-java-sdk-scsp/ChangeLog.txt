@@ -1,3 +1,6 @@
+2021-05-19 Version: 1.2.13
+- Publish multi language sdk.
+
 2021-04-14 Version: 1.2.12
 - Add httpStatusCode in reponse.
 

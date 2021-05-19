@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListOutboundPhoneNumberResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
 
-	private Long httpStatusCode;
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private List<String> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -53,12 +45,12 @@ public class ListOutboundPhoneNumberResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Long httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -75,6 +67,14 @@ public class ListOutboundPhoneNumberResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
+	}
+
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public List<String> getData() {

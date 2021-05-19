@@ -33,37 +33,37 @@ public class QueryHotlineSessionResponseUnmarshaller {
 		queryHotlineSessionResponse.setSuccess(_ctx.booleanValue("QueryHotlineSessionResponse.Success"));
 
 		Data data = new Data();
-		data.setTotalCount(_ctx.integerValue("QueryHotlineSessionResponse.Data.TotalCount"));
 		data.setPageSize(_ctx.integerValue("QueryHotlineSessionResponse.Data.PageSize"));
 		data.setPageNumber(_ctx.integerValue("QueryHotlineSessionResponse.Data.PageNumber"));
+		data.setTotalCount(_ctx.integerValue("QueryHotlineSessionResponse.Data.TotalCount"));
 
 		List<CallDetailRecordItem> callDetailRecord = new ArrayList<CallDetailRecordItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryHotlineSessionResponse.Data.CallDetailRecord.Length"); i++) {
 			CallDetailRecordItem callDetailRecordItem = new CallDetailRecordItem();
-			callDetailRecordItem.setGroupName(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].GroupName"));
+			callDetailRecordItem.setCallResult(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallResult"));
+			callDetailRecordItem.setServicerName(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].ServicerName"));
+			callDetailRecordItem.setOutQueueTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].OutQueueTime"));
+			callDetailRecordItem.setCallContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallContinueTime"));
+			callDetailRecordItem.setCreateTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CreateTime"));
+			callDetailRecordItem.setPickUpTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].PickUpTime"));
+			callDetailRecordItem.setRingContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].RingContinueTime"));
+			callDetailRecordItem.setCalledNumber(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CalledNumber"));
+			callDetailRecordItem.setServicerId(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].ServicerId"));
+			callDetailRecordItem.setHangUpTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].HangUpTime"));
+			callDetailRecordItem.setEvaluationLevel(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].EvaluationLevel"));
+			callDetailRecordItem.setHangUpRole(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].HangUpRole"));
+			callDetailRecordItem.setMemberName(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].MemberName"));
 			callDetailRecordItem.setEvaluationScore(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].EvaluationScore"));
 			callDetailRecordItem.setAcid(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].Acid"));
-			callDetailRecordItem.setCalledNumber(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CalledNumber"));
-			callDetailRecordItem.setCallResult(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallResult"));
-			callDetailRecordItem.setCreateTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CreateTime"));
-			callDetailRecordItem.setCallType(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallType"));
-			callDetailRecordItem.setQueueUpContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].QueueUpContinueTime"));
-			callDetailRecordItem.setHangUpTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].HangUpTime"));
-			callDetailRecordItem.setCallingNumber(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallingNumber"));
-			callDetailRecordItem.setGroupId(_ctx.longValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].GroupId"));
-			callDetailRecordItem.setInQueueTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].InQueueTime"));
-			callDetailRecordItem.setMemberId(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].MemberId"));
 			callDetailRecordItem.setRingStartTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].RingStartTime"));
-			callDetailRecordItem.setOutQueueTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].OutQueueTime"));
-			callDetailRecordItem.setServicerName(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].ServicerName"));
+			callDetailRecordItem.setCallType(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallType"));
+			callDetailRecordItem.setGroupName(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].GroupName"));
+			callDetailRecordItem.setGroupId(_ctx.longValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].GroupId"));
 			callDetailRecordItem.setRingEndTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].RingEndTime"));
-			callDetailRecordItem.setHangUpRole(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].HangUpRole"));
-			callDetailRecordItem.setCallContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallContinueTime"));
-			callDetailRecordItem.setPickUpTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].PickUpTime"));
-			callDetailRecordItem.setMemberName(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].MemberName"));
-			callDetailRecordItem.setEvaluationLevel(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].EvaluationLevel"));
-			callDetailRecordItem.setServicerId(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].ServicerId"));
-			callDetailRecordItem.setRingContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].RingContinueTime"));
+			callDetailRecordItem.setInQueueTime(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].InQueueTime"));
+			callDetailRecordItem.setCallingNumber(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].CallingNumber"));
+			callDetailRecordItem.setMemberId(_ctx.stringValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].MemberId"));
+			callDetailRecordItem.setQueueUpContinueTime(_ctx.integerValue("QueryHotlineSessionResponse.Data.CallDetailRecord["+ i +"].QueueUpContinueTime"));
 
 			callDetailRecord.add(callDetailRecordItem);
 		}

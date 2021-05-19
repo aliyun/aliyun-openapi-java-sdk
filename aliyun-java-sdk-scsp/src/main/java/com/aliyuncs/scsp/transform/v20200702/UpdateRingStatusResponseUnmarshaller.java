@@ -24,10 +24,10 @@ public class UpdateRingStatusResponseUnmarshaller {
 		
 		updateRingStatusResponse.setRequestId(_ctx.stringValue("UpdateRingStatusResponse.RequestId"));
 		updateRingStatusResponse.setMessage(_ctx.stringValue("UpdateRingStatusResponse.Message"));
-		updateRingStatusResponse.setHttpStatusCode(_ctx.longValue("UpdateRingStatusResponse.HttpStatusCode"));
 		updateRingStatusResponse.setData(_ctx.stringValue("UpdateRingStatusResponse.Data"));
 		updateRingStatusResponse.setCode(_ctx.stringValue("UpdateRingStatusResponse.Code"));
 		updateRingStatusResponse.setSuccess(_ctx.booleanValue("UpdateRingStatusResponse.Success"));
+		updateRingStatusResponse.setHttpStatusCode(_ctx.longValue("UpdateRingStatusResponse.HttpStatusCode"));
 	 
 	 	return updateRingStatusResponse;
 	}

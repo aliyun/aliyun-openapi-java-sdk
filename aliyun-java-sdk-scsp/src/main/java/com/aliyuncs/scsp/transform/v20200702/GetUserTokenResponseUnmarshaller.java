@@ -29,8 +29,8 @@ public class GetUserTokenResponseUnmarshaller {
 		getUserTokenResponse.setSuccess(_ctx.booleanValue("GetUserTokenResponse.Success"));
 
 		Data data = new Data();
-		data.setToken(_ctx.stringValue("GetUserTokenResponse.Data.Token"));
 		data.setExpires(_ctx.longValue("GetUserTokenResponse.Data.Expires"));
+		data.setToken(_ctx.stringValue("GetUserTokenResponse.Data.Token"));
 		getUserTokenResponse.setData(data);
 	 
 	 	return getUserTokenResponse;

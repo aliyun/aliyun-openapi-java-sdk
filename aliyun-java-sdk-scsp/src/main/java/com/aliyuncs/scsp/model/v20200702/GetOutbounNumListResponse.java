@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOutbounNumListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
 
-	private Long httpStatusCode;
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -53,12 +45,12 @@ public class GetOutbounNumListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Long getHttpStatusCode() {
-		return this.httpStatusCode;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setHttpStatusCode(Long httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,6 +69,14 @@ public class GetOutbounNumListResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -87,17 +87,9 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private List<NumItem> num;
-
 		private List<NumGroupItem> numGroup;
 
-		public List<NumItem> getNum() {
-			return this.num;
-		}
-
-		public void setNum(List<NumItem> num) {
-			this.num = num;
-		}
+		private List<NumItem> num;
 
 		public List<NumGroupItem> getNumGroup() {
 			return this.numGroup;
@@ -107,46 +99,21 @@ public class GetOutbounNumListResponse extends AcsResponse {
 			this.numGroup = numGroup;
 		}
 
-		public static class NumItem {
+		public List<NumItem> getNum() {
+			return this.num;
+		}
 
-			private Integer type;
-
-			private String description;
-
-			private String value;
-
-			public Integer getType() {
-				return this.type;
-			}
-
-			public void setType(Integer type) {
-				this.type = type;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getValue() {
-				return this.value;
-			}
-
-			public void setValue(String value) {
-				this.value = value;
-			}
+		public void setNum(List<NumItem> num) {
+			this.num = num;
 		}
 
 		public static class NumGroupItem {
 
 			private Integer type;
 
-			private String description;
-
 			private String value;
+
+			private String description;
 
 			public Integer getType() {
 				return this.type;
@@ -156,12 +123,37 @@ public class GetOutbounNumListResponse extends AcsResponse {
 				this.type = type;
 			}
 
+			public String getValue() {
+				return this.value;
+			}
+
+			public void setValue(String value) {
+				this.value = value;
+			}
+
 			public String getDescription() {
 				return this.description;
 			}
 
 			public void setDescription(String description) {
 				this.description = description;
+			}
+		}
+
+		public static class NumItem {
+
+			private Integer type;
+
+			private String value;
+
+			private String description;
+
+			public Integer getType() {
+				return this.type;
+			}
+
+			public void setType(Integer type) {
+				this.type = type;
 			}
 
 			public String getValue() {
@@ -170,6 +162,14 @@ public class GetOutbounNumListResponse extends AcsResponse {
 
 			public void setValue(String value) {
 				this.value = value;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
 			}
 		}
 	}

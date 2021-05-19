@@ -30,14 +30,14 @@ public class GetCMSIdByForeignIdResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.integerValue("GetCMSIdByForeignIdResponse.Data.Status"));
-		data.setPhone(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Phone"));
-		data.setNick(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Nick"));
-		data.setUserId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.UserId"));
-		data.setAnonymity(_ctx.booleanValue("GetCMSIdByForeignIdResponse.Data.Anonymity"));
 		data.setCustomerTypeId(_ctx.integerValue("GetCMSIdByForeignIdResponse.Data.CustomerTypeId"));
-		data.setGender(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Gender"));
 		data.setAvatar(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Avatar"));
+		data.setGender(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Gender"));
 		data.setForeignId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.ForeignId"));
+		data.setUserId(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.UserId"));
+		data.setNick(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Nick"));
+		data.setAnonymity(_ctx.booleanValue("GetCMSIdByForeignIdResponse.Data.Anonymity"));
+		data.setPhone(_ctx.stringValue("GetCMSIdByForeignIdResponse.Data.Phone"));
 		getCMSIdByForeignIdResponse.setData(data);
 	 
 	 	return getCMSIdByForeignIdResponse;

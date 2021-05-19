@@ -24,9 +24,9 @@ public class UpdateRoleResponseUnmarshaller {
 		
 		updateRoleResponse.setRequestId(_ctx.stringValue("UpdateRoleResponse.RequestId"));
 		updateRoleResponse.setMessage(_ctx.stringValue("UpdateRoleResponse.Message"));
-		updateRoleResponse.setHttpStatusCode(_ctx.longValue("UpdateRoleResponse.HttpStatusCode"));
 		updateRoleResponse.setCode(_ctx.stringValue("UpdateRoleResponse.Code"));
 		updateRoleResponse.setSuccess(_ctx.booleanValue("UpdateRoleResponse.Success"));
+		updateRoleResponse.setHttpStatusCode(_ctx.longValue("UpdateRoleResponse.HttpStatusCode"));
 	 
 	 	return updateRoleResponse;
 	}

@@ -25,23 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetOuterCallCenterDataListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -49,6 +43,14 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,6 +69,14 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -77,51 +87,27 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String fromPhoneNum;
-
-		private String toPhoneNum;
-
-		private String acid;
-
 		private String endReason;
-
-		private String extInfo;
 
 		private String callType;
 
-		private String bizType;
+		private String acid;
+
+		private String toPhoneNum;
 
 		private String userInfo;
 
-		private String sessionId;
+		private String interveneTime;
 
 		private String bizId;
 
-		private String interveneTime;
+		private String sessionId;
 
-		public String getFromPhoneNum() {
-			return this.fromPhoneNum;
-		}
+		private String fromPhoneNum;
 
-		public void setFromPhoneNum(String fromPhoneNum) {
-			this.fromPhoneNum = fromPhoneNum;
-		}
+		private String extInfo;
 
-		public String getToPhoneNum() {
-			return this.toPhoneNum;
-		}
-
-		public void setToPhoneNum(String toPhoneNum) {
-			this.toPhoneNum = toPhoneNum;
-		}
-
-		public String getAcid() {
-			return this.acid;
-		}
-
-		public void setAcid(String acid) {
-			this.acid = acid;
-		}
+		private String bizType;
 
 		public String getEndReason() {
 			return this.endReason;
@@ -129,14 +115,6 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 
 		public void setEndReason(String endReason) {
 			this.endReason = endReason;
-		}
-
-		public String getExtInfo() {
-			return this.extInfo;
-		}
-
-		public void setExtInfo(String extInfo) {
-			this.extInfo = extInfo;
 		}
 
 		public String getCallType() {
@@ -147,12 +125,20 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 			this.callType = callType;
 		}
 
-		public String getBizType() {
-			return this.bizType;
+		public String getAcid() {
+			return this.acid;
 		}
 
-		public void setBizType(String bizType) {
-			this.bizType = bizType;
+		public void setAcid(String acid) {
+			this.acid = acid;
+		}
+
+		public String getToPhoneNum() {
+			return this.toPhoneNum;
+		}
+
+		public void setToPhoneNum(String toPhoneNum) {
+			this.toPhoneNum = toPhoneNum;
 		}
 
 		public String getUserInfo() {
@@ -163,12 +149,12 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 			this.userInfo = userInfo;
 		}
 
-		public String getSessionId() {
-			return this.sessionId;
+		public String getInterveneTime() {
+			return this.interveneTime;
 		}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
+		public void setInterveneTime(String interveneTime) {
+			this.interveneTime = interveneTime;
 		}
 
 		public String getBizId() {
@@ -179,12 +165,36 @@ public class GetOuterCallCenterDataListResponse extends AcsResponse {
 			this.bizId = bizId;
 		}
 
-		public String getInterveneTime() {
-			return this.interveneTime;
+		public String getSessionId() {
+			return this.sessionId;
 		}
 
-		public void setInterveneTime(String interveneTime) {
-			this.interveneTime = interveneTime;
+		public void setSessionId(String sessionId) {
+			this.sessionId = sessionId;
+		}
+
+		public String getFromPhoneNum() {
+			return this.fromPhoneNum;
+		}
+
+		public void setFromPhoneNum(String fromPhoneNum) {
+			this.fromPhoneNum = fromPhoneNum;
+		}
+
+		public String getExtInfo() {
+			return this.extInfo;
+		}
+
+		public void setExtInfo(String extInfo) {
+			this.extInfo = extInfo;
+		}
+
+		public String getBizType() {
+			return this.bizType;
+		}
+
+		public void setBizType(String bizType) {
+			this.bizType = bizType;
 		}
 	}
 

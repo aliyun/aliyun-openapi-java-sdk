@@ -15,26 +15,26 @@
 package com.aliyuncs.scsp.model.v20200702;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.scsp.transform.v20200702.GetHotlineAgentStatusResponseUnmarshaller;
+import com.aliyuncs.scsp.transform.v20200702.StartChatWorkResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetHotlineAgentStatusResponse extends AcsResponse {
+public class StartChatWorkResponse extends AcsResponse {
 
 	private String message;
 
 	private String requestId;
+
+	private Integer httpStatusCode;
 
 	private String data;
 
 	private String code;
 
 	private Boolean success;
-
-	private Long httpStatusCode;
 
 	public String getMessage() {
 		return this.message;
@@ -50,6 +50,14 @@ public class GetHotlineAgentStatusResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Integer httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
 	}
 
 	public String getData() {
@@ -76,17 +84,9 @@ public class GetHotlineAgentStatusResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Long getHttpStatusCode() {
-		return this.httpStatusCode;
-	}
-
-	public void setHttpStatusCode(Long httpStatusCode) {
-		this.httpStatusCode = httpStatusCode;
-	}
-
 	@Override
-	public GetHotlineAgentStatusResponse getInstance(UnmarshallerContext context) {
-		return	GetHotlineAgentStatusResponseUnmarshaller.unmarshall(this, context);
+	public StartChatWorkResponse getInstance(UnmarshallerContext context) {
+		return	StartChatWorkResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

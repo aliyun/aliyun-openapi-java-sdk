@@ -22,21 +22,34 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetOrgAccountRequest extends RpcAcsRequest<GetOrgAccountResponse> {
+public class ChangeChatAgentStatusRequest extends RpcAcsRequest<ChangeChatAgentStatusResponse> {
 	   
+
+	private String clientToken;
 
 	private String instanceId;
 
-	private String deptCode;
+	private String accountName;
 
-	private String deptName;
-	public GetOrgAccountRequest() {
-		super("scsp", "2020-07-02", "GetOrgAccount");
+	private String method;
+	public ChangeChatAgentStatusRequest() {
+		super("scsp", "2020-07-02", "ChangeChatAgentStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getClientToken() {
+		return this.clientToken;
+	}
+
+	public void setClientToken(String clientToken) {
+		this.clientToken = clientToken;
+		if(clientToken != null){
+			putBodyParameter("ClientToken", clientToken);
+		}
 	}
 
 	public String getInstanceId() {
@@ -46,35 +59,35 @@ public class GetOrgAccountRequest extends RpcAcsRequest<GetOrgAccountResponse> {
 	public void setInstanceId(String instanceId) {
 		this.instanceId = instanceId;
 		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+			putBodyParameter("InstanceId", instanceId);
 		}
 	}
 
-	public String getDeptCode() {
-		return this.deptCode;
+	public String getAccountName() {
+		return this.accountName;
 	}
 
-	public void setDeptCode(String deptCode) {
-		this.deptCode = deptCode;
-		if(deptCode != null){
-			putQueryParameter("DeptCode", deptCode);
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putBodyParameter("AccountName", accountName);
 		}
 	}
 
-	public String getDeptName() {
-		return this.deptName;
+	public String getBizMethod() {
+		return this.method;
 	}
 
-	public void setDeptName(String deptName) {
-		this.deptName = deptName;
-		if(deptName != null){
-			putQueryParameter("DeptName", deptName);
+	public void setBizMethod(String method) {
+		this.method = method;
+		if(method != null){
+			putBodyParameter("Method", method);
 		}
 	}
 
 	@Override
-	public Class<GetOrgAccountResponse> getResponseClass() {
-		return GetOrgAccountResponse.class;
+	public Class<ChangeChatAgentStatusResponse> getResponseClass() {
+		return ChangeChatAgentStatusResponse.class;
 	}
 
 }

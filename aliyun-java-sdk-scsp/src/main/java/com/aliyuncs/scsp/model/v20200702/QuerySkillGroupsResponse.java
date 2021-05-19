@@ -27,9 +27,9 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	private Integer onePageSize;
 
-	private String requestId;
-
 	private Integer totalPage;
+
+	private String requestId;
 
 	private Integer currentPage;
 
@@ -45,20 +45,20 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 		this.onePageSize = onePageSize;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Integer getTotalPage() {
 		return this.totalPage;
 	}
 
 	public void setTotalPage(Integer totalPage) {
 		this.totalPage = totalPage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getCurrentPage() {
@@ -87,22 +87,22 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String skillGroupName;
+		private String displayName;
 
 		private String description;
 
-		private String displayName;
+		private Integer channelType;
+
+		private String skillGroupName;
 
 		private Long skillGroupId;
 
-		private Integer channelType;
-
-		public String getSkillGroupName() {
-			return this.skillGroupName;
+		public String getDisplayName() {
+			return this.displayName;
 		}
 
-		public void setSkillGroupName(String skillGroupName) {
-			this.skillGroupName = skillGroupName;
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public String getDescription() {
@@ -113,12 +113,20 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public Integer getChannelType() {
+			return this.channelType;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
+		public void setChannelType(Integer channelType) {
+			this.channelType = channelType;
+		}
+
+		public String getSkillGroupName() {
+			return this.skillGroupName;
+		}
+
+		public void setSkillGroupName(String skillGroupName) {
+			this.skillGroupName = skillGroupName;
 		}
 
 		public Long getSkillGroupId() {
@@ -127,14 +135,6 @@ public class QuerySkillGroupsResponse extends AcsResponse {
 
 		public void setSkillGroupId(Long skillGroupId) {
 			this.skillGroupId = skillGroupId;
-		}
-
-		public Integer getChannelType() {
-			return this.channelType;
-		}
-
-		public void setChannelType(Integer channelType) {
-			this.channelType = channelType;
 		}
 	}
 

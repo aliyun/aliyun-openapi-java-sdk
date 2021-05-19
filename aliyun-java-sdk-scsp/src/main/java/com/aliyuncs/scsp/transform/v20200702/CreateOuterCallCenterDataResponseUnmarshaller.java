@@ -26,6 +26,7 @@ public class CreateOuterCallCenterDataResponseUnmarshaller {
 		createOuterCallCenterDataResponse.setMessage(_ctx.stringValue("CreateOuterCallCenterDataResponse.Message"));
 		createOuterCallCenterDataResponse.setCode(_ctx.stringValue("CreateOuterCallCenterDataResponse.Code"));
 		createOuterCallCenterDataResponse.setSuccess(_ctx.booleanValue("CreateOuterCallCenterDataResponse.Success"));
+		createOuterCallCenterDataResponse.setHttpStatusCode(_ctx.longValue("CreateOuterCallCenterDataResponse.HttpStatusCode"));
 	 
 	 	return createOuterCallCenterDataResponse;
 	}

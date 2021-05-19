@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAuthInfoResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -34,20 +34,20 @@ public class GetAuthInfoResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -76,62 +76,30 @@ public class GetAuthInfoResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String app;
-
-		private String tenantId;
-
-		private String userName;
-
-		private String userId;
-
-		private String appKey;
+		private String appName;
 
 		private Long time;
 
-		private String sessionId;
+		private String appKey;
+
+		private String app;
+
+		private String userId;
 
 		private String code;
 
-		private String appName;
+		private String sessionId;
 
-		public String getApp() {
-			return this.app;
+		private String userName;
+
+		private String tenantId;
+
+		public String getAppName() {
+			return this.appName;
 		}
 
-		public void setApp(String app) {
-			this.app = app;
-		}
-
-		public String getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(String tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public String getUserName() {
-			return this.userName;
-		}
-
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-
-		public String getUserId() {
-			return this.userId;
-		}
-
-		public void setUserId(String userId) {
-			this.userId = userId;
-		}
-
-		public String getAppKey() {
-			return this.appKey;
-		}
-
-		public void setAppKey(String appKey) {
-			this.appKey = appKey;
+		public void setAppName(String appName) {
+			this.appName = appName;
 		}
 
 		public Long getTime() {
@@ -142,12 +110,28 @@ public class GetAuthInfoResponse extends AcsResponse {
 			this.time = time;
 		}
 
-		public String getSessionId() {
-			return this.sessionId;
+		public String getAppKey() {
+			return this.appKey;
 		}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
+		public void setAppKey(String appKey) {
+			this.appKey = appKey;
+		}
+
+		public String getApp() {
+			return this.app;
+		}
+
+		public void setApp(String app) {
+			this.app = app;
+		}
+
+		public String getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 		public String getCode() {
@@ -158,12 +142,28 @@ public class GetAuthInfoResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getAppName() {
-			return this.appName;
+		public String getSessionId() {
+			return this.sessionId;
 		}
 
-		public void setAppName(String appName) {
-			this.appName = appName;
+		public void setSessionId(String sessionId) {
+			this.sessionId = sessionId;
+		}
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+
+		public String getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(String tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

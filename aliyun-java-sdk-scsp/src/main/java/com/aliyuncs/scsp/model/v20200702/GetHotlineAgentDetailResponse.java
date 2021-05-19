@@ -24,23 +24,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHotlineAgentDetailResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -48,6 +42,14 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -66,6 +68,14 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,51 +86,19 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Boolean assigned;
-
-		private Long tenantId;
-
-		private Integer agentStatus;
-
-		private Integer restType;
-
 		private String agentStatusCode;
 
 		private String token;
 
 		private Long agentId;
 
-		public Boolean getAssigned() {
-			return this.assigned;
-		}
+		private Boolean assigned;
 
-		public void setAssigned(Boolean assigned) {
-			this.assigned = assigned;
-		}
+		private Integer restType;
 
-		public Long getTenantId() {
-			return this.tenantId;
-		}
+		private Integer agentStatus;
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
-		}
-
-		public Integer getAgentStatus() {
-			return this.agentStatus;
-		}
-
-		public void setAgentStatus(Integer agentStatus) {
-			this.agentStatus = agentStatus;
-		}
-
-		public Integer getRestType() {
-			return this.restType;
-		}
-
-		public void setRestType(Integer restType) {
-			this.restType = restType;
-		}
+		private Long tenantId;
 
 		public String getAgentStatusCode() {
 			return this.agentStatusCode;
@@ -144,6 +122,38 @@ public class GetHotlineAgentDetailResponse extends AcsResponse {
 
 		public void setAgentId(Long agentId) {
 			this.agentId = agentId;
+		}
+
+		public Boolean getAssigned() {
+			return this.assigned;
+		}
+
+		public void setAssigned(Boolean assigned) {
+			this.assigned = assigned;
+		}
+
+		public Integer getRestType() {
+			return this.restType;
+		}
+
+		public void setRestType(Integer restType) {
+			this.restType = restType;
+		}
+
+		public Integer getAgentStatus() {
+			return this.agentStatus;
+		}
+
+		public void setAgentStatus(Integer agentStatus) {
+			this.agentStatus = agentStatus;
+		}
+
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

@@ -27,9 +27,9 @@ public class ListOutboundPhoneNumberResponseUnmarshaller {
 		
 		listOutboundPhoneNumberResponse.setRequestId(_ctx.stringValue("ListOutboundPhoneNumberResponse.RequestId"));
 		listOutboundPhoneNumberResponse.setMessage(_ctx.stringValue("ListOutboundPhoneNumberResponse.Message"));
-		listOutboundPhoneNumberResponse.setHttpStatusCode(_ctx.longValue("ListOutboundPhoneNumberResponse.HttpStatusCode"));
 		listOutboundPhoneNumberResponse.setCode(_ctx.stringValue("ListOutboundPhoneNumberResponse.Code"));
 		listOutboundPhoneNumberResponse.setSuccess(_ctx.booleanValue("ListOutboundPhoneNumberResponse.Success"));
+		listOutboundPhoneNumberResponse.setHttpStatusCode(_ctx.longValue("ListOutboundPhoneNumberResponse.HttpStatusCode"));
 
 		List<String> data = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListOutboundPhoneNumberResponse.Data.Length"); i++) {

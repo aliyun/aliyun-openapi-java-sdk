@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCallsPerDayResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetCallsPerDayResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -119,28 +119,36 @@ public class GetCallsPerDayResponse extends AcsResponse {
 
 		public static class CallsPerdayResponseListItem {
 
-			private String callOutCnt;
+			private String dataId;
+
+			private String hourId;
 
 			private String tenantId;
 
-			private String dataId;
+			private String tenantName;
 
 			private String phoneNum;
 
-			private String tenantName;
+			private String callOutCnt;
 
 			private String callInCnt;
 
 			private String minuteId;
 
-			private String hourId;
-
-			public String getCallOutCnt() {
-				return this.callOutCnt;
+			public String getDataId() {
+				return this.dataId;
 			}
 
-			public void setCallOutCnt(String callOutCnt) {
-				this.callOutCnt = callOutCnt;
+			public void setDataId(String dataId) {
+				this.dataId = dataId;
+			}
+
+			public String getHourId() {
+				return this.hourId;
+			}
+
+			public void setHourId(String hourId) {
+				this.hourId = hourId;
 			}
 
 			public String getTenantId() {
@@ -151,12 +159,12 @@ public class GetCallsPerDayResponse extends AcsResponse {
 				this.tenantId = tenantId;
 			}
 
-			public String getDataId() {
-				return this.dataId;
+			public String getTenantName() {
+				return this.tenantName;
 			}
 
-			public void setDataId(String dataId) {
-				this.dataId = dataId;
+			public void setTenantName(String tenantName) {
+				this.tenantName = tenantName;
 			}
 
 			public String getPhoneNum() {
@@ -167,12 +175,12 @@ public class GetCallsPerDayResponse extends AcsResponse {
 				this.phoneNum = phoneNum;
 			}
 
-			public String getTenantName() {
-				return this.tenantName;
+			public String getCallOutCnt() {
+				return this.callOutCnt;
 			}
 
-			public void setTenantName(String tenantName) {
-				this.tenantName = tenantName;
+			public void setCallOutCnt(String callOutCnt) {
+				this.callOutCnt = callOutCnt;
 			}
 
 			public String getCallInCnt() {
@@ -189,14 +197,6 @@ public class GetCallsPerDayResponse extends AcsResponse {
 
 			public void setMinuteId(String minuteId) {
 				this.minuteId = minuteId;
-			}
-
-			public String getHourId() {
-				return this.hourId;
-			}
-
-			public void setHourId(String hourId) {
-				this.hourId = hourId;
 			}
 		}
 	}

@@ -27,6 +27,7 @@ public class GetHotlineWaitingNumberResponseUnmarshaller {
 		getHotlineWaitingNumberResponse.setData(_ctx.longValue("GetHotlineWaitingNumberResponse.Data"));
 		getHotlineWaitingNumberResponse.setCode(_ctx.stringValue("GetHotlineWaitingNumberResponse.Code"));
 		getHotlineWaitingNumberResponse.setSuccess(_ctx.booleanValue("GetHotlineWaitingNumberResponse.Success"));
+		getHotlineWaitingNumberResponse.setHttpStatusCode(_ctx.longValue("GetHotlineWaitingNumberResponse.HttpStatusCode"));
 	 
 	 	return getHotlineWaitingNumberResponse;
 	}

@@ -25,23 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListHotlineRecordResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
 	private List<DataItem> data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -49,6 +43,14 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -67,6 +69,14 @@ public class ListHotlineRecordResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -77,23 +87,15 @@ public class ListHotlineRecordResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String connectionId;
-
 		private Boolean endTime;
-
-		private String callId;
 
 		private Boolean startTime;
 
+		private String connectionId;
+
+		private String callId;
+
 		private String url;
-
-		public String getConnectionId() {
-			return this.connectionId;
-		}
-
-		public void setConnectionId(String connectionId) {
-			this.connectionId = connectionId;
-		}
 
 		public Boolean getEndTime() {
 			return this.endTime;
@@ -103,20 +105,28 @@ public class ListHotlineRecordResponse extends AcsResponse {
 			this.endTime = endTime;
 		}
 
-		public String getCallId() {
-			return this.callId;
-		}
-
-		public void setCallId(String callId) {
-			this.callId = callId;
-		}
-
 		public Boolean getStartTime() {
 			return this.startTime;
 		}
 
 		public void setStartTime(Boolean startTime) {
 			this.startTime = startTime;
+		}
+
+		public String getConnectionId() {
+			return this.connectionId;
+		}
+
+		public void setConnectionId(String connectionId) {
+			this.connectionId = connectionId;
+		}
+
+		public String getCallId() {
+			return this.callId;
+		}
+
+		public void setCallId(String callId) {
+			this.callId = callId;
 		}
 
 		public String getUrl() {

@@ -22,33 +22,46 @@ import com.aliyuncs.scsp.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetDeploymentArchiveRequest extends RpcAcsRequest<GetDeploymentArchiveResponse> {
+public class StartChatWorkRequest extends RpcAcsRequest<StartChatWorkResponse> {
 	   
 
-	private String deploymentArchiveId;
-	public GetDeploymentArchiveRequest() {
-		super("scsp", "2020-07-02", "GetDeploymentArchive");
-		setMethod(MethodType.GET);
+	private String instanceId;
+
+	private String accountName;
+	public StartChatWorkRequest() {
+		super("scsp", "2020-07-02", "StartChatWork");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getDeploymentArchiveId() {
-		return this.deploymentArchiveId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setDeploymentArchiveId(String deploymentArchiveId) {
-		this.deploymentArchiveId = deploymentArchiveId;
-		if(deploymentArchiveId != null){
-			putQueryParameter("deploymentArchiveId", deploymentArchiveId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putBodyParameter("InstanceId", instanceId);
+		}
+	}
+
+	public String getAccountName() {
+		return this.accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+		if(accountName != null){
+			putBodyParameter("AccountName", accountName);
 		}
 	}
 
 	@Override
-	public Class<GetDeploymentArchiveResponse> getResponseClass() {
-		return GetDeploymentArchiveResponse.class;
+	public Class<StartChatWorkResponse> getResponseClass() {
+		return StartChatWorkResponse.class;
 	}
 
 }
