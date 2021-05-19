@@ -25,11 +25,15 @@ import com.aliyuncs.mpaas.Endpoint;
 public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 	   
 
+	private String imageUrls;
+
 	private String taskName;
 
 	private String title;
 
 	private String content;
+
+	private String iconUrls;
 
 	private Long pushAction;
 
@@ -38,6 +42,8 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 	private String notifyType;
 
 	private String targetMsgkey;
+
+	private Integer pushStyle;
 
 	private String extendedParams;
 
@@ -57,6 +63,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getImageUrls() {
+		return this.imageUrls;
+	}
+
+	public void setImageUrls(String imageUrls) {
+		this.imageUrls = imageUrls;
+		if(imageUrls != null){
+			putBodyParameter("ImageUrls", imageUrls);
+		}
 	}
 
 	public String getTaskName() {
@@ -89,6 +106,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
+		}
+	}
+
+	public String getIconUrls() {
+		return this.iconUrls;
+	}
+
+	public void setIconUrls(String iconUrls) {
+		this.iconUrls = iconUrls;
+		if(iconUrls != null){
+			putBodyParameter("IconUrls", iconUrls);
 		}
 	}
 
@@ -133,6 +161,17 @@ public class PushSimpleRequest extends RpcAcsRequest<PushSimpleResponse> {
 		this.targetMsgkey = targetMsgkey;
 		if(targetMsgkey != null){
 			putBodyParameter("TargetMsgkey", targetMsgkey);
+		}
+	}
+
+	public Integer getPushStyle() {
+		return this.pushStyle;
+	}
+
+	public void setPushStyle(Integer pushStyle) {
+		this.pushStyle = pushStyle;
+		if(pushStyle != null){
+			putBodyParameter("PushStyle", pushStyle.toString());
 		}
 	}
 
