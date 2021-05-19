@@ -23,10 +23,10 @@ public class CreateEvaluationResponseUnmarshaller {
 	public static CreateEvaluationResponse unmarshall(CreateEvaluationResponse createEvaluationResponse, UnmarshallerContext _ctx) {
 		
 		createEvaluationResponse.setRequestId(_ctx.stringValue("CreateEvaluationResponse.RequestId"));
-		createEvaluationResponse.setData(_ctx.stringValue("CreateEvaluationResponse.Data"));
-		createEvaluationResponse.setSuccess(_ctx.booleanValue("CreateEvaluationResponse.Success"));
 		createEvaluationResponse.setMessage(_ctx.stringValue("CreateEvaluationResponse.Message"));
+		createEvaluationResponse.setData(_ctx.stringValue("CreateEvaluationResponse.Data"));
 		createEvaluationResponse.setCode(_ctx.stringValue("CreateEvaluationResponse.Code"));
+		createEvaluationResponse.setSuccess(_ctx.booleanValue("CreateEvaluationResponse.Success"));
 	 
 	 	return createEvaluationResponse;
 	}

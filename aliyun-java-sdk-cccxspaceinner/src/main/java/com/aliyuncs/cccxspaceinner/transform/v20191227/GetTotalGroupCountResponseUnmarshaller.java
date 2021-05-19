@@ -22,10 +22,10 @@ public class GetTotalGroupCountResponseUnmarshaller {
 
 	public static GetTotalGroupCountResponse unmarshall(GetTotalGroupCountResponse getTotalGroupCountResponse, UnmarshallerContext _ctx) {
 		
-		getTotalGroupCountResponse.setSuccess(_ctx.booleanValue("GetTotalGroupCountResponse.Success"));
-		getTotalGroupCountResponse.setCode(_ctx.stringValue("GetTotalGroupCountResponse.Code"));
 		getTotalGroupCountResponse.setMessage(_ctx.stringValue("GetTotalGroupCountResponse.Message"));
 		getTotalGroupCountResponse.setData(_ctx.integerValue("GetTotalGroupCountResponse.Data"));
+		getTotalGroupCountResponse.setCode(_ctx.stringValue("GetTotalGroupCountResponse.Code"));
+		getTotalGroupCountResponse.setSuccess(_ctx.booleanValue("GetTotalGroupCountResponse.Success"));
 	 
 	 	return getTotalGroupCountResponse;
 	}

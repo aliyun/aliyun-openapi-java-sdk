@@ -22,10 +22,10 @@ public class QueryAutoTaskInfoResponseUnmarshaller {
 
 	public static QueryAutoTaskInfoResponse unmarshall(QueryAutoTaskInfoResponse queryAutoTaskInfoResponse, UnmarshallerContext _ctx) {
 		
-		queryAutoTaskInfoResponse.setSuccess(_ctx.booleanValue("QueryAutoTaskInfoResponse.Success"));
-		queryAutoTaskInfoResponse.setCode(_ctx.stringValue("QueryAutoTaskInfoResponse.Code"));
 		queryAutoTaskInfoResponse.setMessage(_ctx.stringValue("QueryAutoTaskInfoResponse.Message"));
 		queryAutoTaskInfoResponse.setData(_ctx.stringValue("QueryAutoTaskInfoResponse.Data"));
+		queryAutoTaskInfoResponse.setCode(_ctx.stringValue("QueryAutoTaskInfoResponse.Code"));
+		queryAutoTaskInfoResponse.setSuccess(_ctx.booleanValue("QueryAutoTaskInfoResponse.Success"));
 	 
 	 	return queryAutoTaskInfoResponse;
 	}

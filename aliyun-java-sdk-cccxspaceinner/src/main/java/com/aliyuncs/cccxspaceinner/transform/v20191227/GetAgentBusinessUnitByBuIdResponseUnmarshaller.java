@@ -24,9 +24,9 @@ public class GetAgentBusinessUnitByBuIdResponseUnmarshaller {
 
 	public static GetAgentBusinessUnitByBuIdResponse unmarshall(GetAgentBusinessUnitByBuIdResponse getAgentBusinessUnitByBuIdResponse, UnmarshallerContext _ctx) {
 		
-		getAgentBusinessUnitByBuIdResponse.setSuccess(_ctx.booleanValue("GetAgentBusinessUnitByBuIdResponse.Success"));
-		getAgentBusinessUnitByBuIdResponse.setCode(_ctx.stringValue("GetAgentBusinessUnitByBuIdResponse.Code"));
 		getAgentBusinessUnitByBuIdResponse.setMessage(_ctx.stringValue("GetAgentBusinessUnitByBuIdResponse.Message"));
+		getAgentBusinessUnitByBuIdResponse.setCode(_ctx.stringValue("GetAgentBusinessUnitByBuIdResponse.Code"));
+		getAgentBusinessUnitByBuIdResponse.setSuccess(_ctx.booleanValue("GetAgentBusinessUnitByBuIdResponse.Success"));
 
 		Data data = new Data();
 		data.setBuId(_ctx.longValue("GetAgentBusinessUnitByBuIdResponse.Data.BuId"));

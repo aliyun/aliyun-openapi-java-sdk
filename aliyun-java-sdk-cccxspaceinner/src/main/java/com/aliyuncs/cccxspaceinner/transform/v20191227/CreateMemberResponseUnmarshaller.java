@@ -23,10 +23,10 @@ public class CreateMemberResponseUnmarshaller {
 	public static CreateMemberResponse unmarshall(CreateMemberResponse createMemberResponse, UnmarshallerContext _ctx) {
 		
 		createMemberResponse.setRequestId(_ctx.stringValue("CreateMemberResponse.RequestId"));
-		createMemberResponse.setSuccess(_ctx.booleanValue("CreateMemberResponse.Success"));
-		createMemberResponse.setCode(_ctx.stringValue("CreateMemberResponse.Code"));
 		createMemberResponse.setMessage(_ctx.stringValue("CreateMemberResponse.Message"));
 		createMemberResponse.setData(_ctx.longValue("CreateMemberResponse.Data"));
+		createMemberResponse.setCode(_ctx.stringValue("CreateMemberResponse.Code"));
+		createMemberResponse.setSuccess(_ctx.booleanValue("CreateMemberResponse.Success"));
 	 
 	 	return createMemberResponse;
 	}

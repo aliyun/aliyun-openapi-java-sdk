@@ -23,10 +23,10 @@ public class DeleteChatDispatchRuleResponseUnmarshaller {
 	public static DeleteChatDispatchRuleResponse unmarshall(DeleteChatDispatchRuleResponse deleteChatDispatchRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteChatDispatchRuleResponse.setRequestId(_ctx.stringValue("DeleteChatDispatchRuleResponse.RequestId"));
-		deleteChatDispatchRuleResponse.setCode(_ctx.stringValue("DeleteChatDispatchRuleResponse.Code"));
-		deleteChatDispatchRuleResponse.setSuccess(_ctx.booleanValue("DeleteChatDispatchRuleResponse.Success"));
 		deleteChatDispatchRuleResponse.setMessage(_ctx.stringValue("DeleteChatDispatchRuleResponse.Message"));
 		deleteChatDispatchRuleResponse.setData(_ctx.longValue("DeleteChatDispatchRuleResponse.Data"));
+		deleteChatDispatchRuleResponse.setCode(_ctx.stringValue("DeleteChatDispatchRuleResponse.Code"));
+		deleteChatDispatchRuleResponse.setSuccess(_ctx.booleanValue("DeleteChatDispatchRuleResponse.Success"));
 	 
 	 	return deleteChatDispatchRuleResponse;
 	}

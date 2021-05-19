@@ -26,30 +26,30 @@ public class StartEvaluationRateResponseUnmarshaller {
 	public static StartEvaluationRateResponse unmarshall(StartEvaluationRateResponse startEvaluationRateResponse, UnmarshallerContext _ctx) {
 		
 		startEvaluationRateResponse.setRequestId(_ctx.stringValue("StartEvaluationRateResponse.RequestId"));
-		startEvaluationRateResponse.setSuccess(_ctx.booleanValue("StartEvaluationRateResponse.Success"));
 		startEvaluationRateResponse.setMessage(_ctx.stringValue("StartEvaluationRateResponse.Message"));
 		startEvaluationRateResponse.setCode(_ctx.stringValue("StartEvaluationRateResponse.Code"));
+		startEvaluationRateResponse.setSuccess(_ctx.booleanValue("StartEvaluationRateResponse.Success"));
 
 		Data data = new Data();
 		data.setQuestions(_ctx.mapValue("StartEvaluationRateResponse.Data.Questions"));
 
 		EvaluationInfo evaluationInfo = new EvaluationInfo();
-		evaluationInfo.setId(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.Id"));
-		evaluationInfo.setSenceId(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.SenceId"));
 		evaluationInfo.setStatus(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Status"));
-		evaluationInfo.setTitle(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Title"));
-		evaluationInfo.setDescription(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Description"));
-		evaluationInfo.setCreator(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.Creator"));
-		evaluationInfo.setLastModifier(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.LastModifier"));
 		evaluationInfo.setPurpose(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Purpose"));
-		evaluationInfo.setRuleId(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.RuleId"));
 		evaluationInfo.setType(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Type"));
-		evaluationInfo.setPriority(_ctx.integerValue("StartEvaluationRateResponse.Data.EvaluationInfo.Priority"));
-		evaluationInfo.setExtAttrs(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.ExtAttrs"));
-		evaluationInfo.setExtMap(_ctx.mapValue("StartEvaluationRateResponse.Data.EvaluationInfo.ExtMap"));
+		evaluationInfo.setSenceId(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.SenceId"));
 		evaluationInfo.setIsEmpty(_ctx.booleanValue("StartEvaluationRateResponse.Data.EvaluationInfo.IsEmpty"));
+		evaluationInfo.setPriority(_ctx.integerValue("StartEvaluationRateResponse.Data.EvaluationInfo.Priority"));
 		evaluationInfo.setIsAvailable(_ctx.booleanValue("StartEvaluationRateResponse.Data.EvaluationInfo.IsAvailable"));
+		evaluationInfo.setCreator(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.Creator"));
+		evaluationInfo.setRuleId(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.RuleId"));
+		evaluationInfo.setLastModifier(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.LastModifier"));
+		evaluationInfo.setExtMap(_ctx.mapValue("StartEvaluationRateResponse.Data.EvaluationInfo.ExtMap"));
 		evaluationInfo.setIsSimpleEvaluation(_ctx.booleanValue("StartEvaluationRateResponse.Data.EvaluationInfo.IsSimpleEvaluation"));
+		evaluationInfo.setDescription(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Description"));
+		evaluationInfo.setTitle(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.Title"));
+		evaluationInfo.setExtAttrs(_ctx.stringValue("StartEvaluationRateResponse.Data.EvaluationInfo.ExtAttrs"));
+		evaluationInfo.setId(_ctx.longValue("StartEvaluationRateResponse.Data.EvaluationInfo.Id"));
 		evaluationInfo.setLanguageId(_ctx.integerValue("StartEvaluationRateResponse.Data.EvaluationInfo.LanguageId"));
 		data.setEvaluationInfo(evaluationInfo);
 		startEvaluationRateResponse.setData(data);

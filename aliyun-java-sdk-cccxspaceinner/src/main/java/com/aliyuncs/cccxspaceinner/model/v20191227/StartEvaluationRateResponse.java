@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartEvaluationRateResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Boolean success;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
+	private Boolean success;
+
 	private Data data;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -59,12 +43,28 @@ public class StartEvaluationRateResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getCode() {
 		return this.code;
 	}
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -99,55 +99,39 @@ public class StartEvaluationRateResponse extends AcsResponse {
 
 		public static class EvaluationInfo {
 
-			private Long id;
-
-			private Long senceId;
-
 			private String status;
-
-			private String title;
-
-			private String description;
-
-			private Long creator;
-
-			private Long lastModifier;
 
 			private String purpose;
 
-			private Long ruleId;
-
 			private String type;
 
-			private Integer priority;
-
-			private String extAttrs;
-
-			private Map<Object,Object> extMap;
+			private Long senceId;
 
 			private Boolean isEmpty;
 
+			private Integer priority;
+
 			private Boolean isAvailable;
+
+			private Long creator;
+
+			private Long ruleId;
+
+			private Long lastModifier;
+
+			private Map<Object,Object> extMap;
 
 			private Boolean isSimpleEvaluation;
 
+			private String description;
+
+			private String title;
+
+			private String extAttrs;
+
+			private Long id;
+
 			private Integer languageId;
-
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public Long getSenceId() {
-				return this.senceId;
-			}
-
-			public void setSenceId(Long senceId) {
-				this.senceId = senceId;
-			}
 
 			public String getStatus() {
 				return this.status;
@@ -155,38 +139,6 @@ public class StartEvaluationRateResponse extends AcsResponse {
 
 			public void setStatus(String status) {
 				this.status = status;
-			}
-
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public Long getCreator() {
-				return this.creator;
-			}
-
-			public void setCreator(Long creator) {
-				this.creator = creator;
-			}
-
-			public Long getLastModifier() {
-				return this.lastModifier;
-			}
-
-			public void setLastModifier(Long lastModifier) {
-				this.lastModifier = lastModifier;
 			}
 
 			public String getPurpose() {
@@ -197,14 +149,6 @@ public class StartEvaluationRateResponse extends AcsResponse {
 				this.purpose = purpose;
 			}
 
-			public Long getRuleId() {
-				return this.ruleId;
-			}
-
-			public void setRuleId(Long ruleId) {
-				this.ruleId = ruleId;
-			}
-
 			public String getType() {
 				return this.type;
 			}
@@ -213,28 +157,12 @@ public class StartEvaluationRateResponse extends AcsResponse {
 				this.type = type;
 			}
 
-			public Integer getPriority() {
-				return this.priority;
+			public Long getSenceId() {
+				return this.senceId;
 			}
 
-			public void setPriority(Integer priority) {
-				this.priority = priority;
-			}
-
-			public String getExtAttrs() {
-				return this.extAttrs;
-			}
-
-			public void setExtAttrs(String extAttrs) {
-				this.extAttrs = extAttrs;
-			}
-
-			public Map<Object,Object> getExtMap() {
-				return this.extMap;
-			}
-
-			public void setExtMap(Map<Object,Object> extMap) {
-				this.extMap = extMap;
+			public void setSenceId(Long senceId) {
+				this.senceId = senceId;
 			}
 
 			public Boolean getIsEmpty() {
@@ -245,6 +173,14 @@ public class StartEvaluationRateResponse extends AcsResponse {
 				this.isEmpty = isEmpty;
 			}
 
+			public Integer getPriority() {
+				return this.priority;
+			}
+
+			public void setPriority(Integer priority) {
+				this.priority = priority;
+			}
+
 			public Boolean getIsAvailable() {
 				return this.isAvailable;
 			}
@@ -253,12 +189,76 @@ public class StartEvaluationRateResponse extends AcsResponse {
 				this.isAvailable = isAvailable;
 			}
 
+			public Long getCreator() {
+				return this.creator;
+			}
+
+			public void setCreator(Long creator) {
+				this.creator = creator;
+			}
+
+			public Long getRuleId() {
+				return this.ruleId;
+			}
+
+			public void setRuleId(Long ruleId) {
+				this.ruleId = ruleId;
+			}
+
+			public Long getLastModifier() {
+				return this.lastModifier;
+			}
+
+			public void setLastModifier(Long lastModifier) {
+				this.lastModifier = lastModifier;
+			}
+
+			public Map<Object,Object> getExtMap() {
+				return this.extMap;
+			}
+
+			public void setExtMap(Map<Object,Object> extMap) {
+				this.extMap = extMap;
+			}
+
 			public Boolean getIsSimpleEvaluation() {
 				return this.isSimpleEvaluation;
 			}
 
 			public void setIsSimpleEvaluation(Boolean isSimpleEvaluation) {
 				this.isSimpleEvaluation = isSimpleEvaluation;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
+			}
+
+			public String getExtAttrs() {
+				return this.extAttrs;
+			}
+
+			public void setExtAttrs(String extAttrs) {
+				this.extAttrs = extAttrs;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 
 			public Integer getLanguageId() {

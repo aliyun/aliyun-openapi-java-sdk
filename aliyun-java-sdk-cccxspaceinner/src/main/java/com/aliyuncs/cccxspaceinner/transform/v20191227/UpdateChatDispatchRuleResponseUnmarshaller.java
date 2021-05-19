@@ -23,10 +23,10 @@ public class UpdateChatDispatchRuleResponseUnmarshaller {
 	public static UpdateChatDispatchRuleResponse unmarshall(UpdateChatDispatchRuleResponse updateChatDispatchRuleResponse, UnmarshallerContext _ctx) {
 		
 		updateChatDispatchRuleResponse.setRequestId(_ctx.stringValue("UpdateChatDispatchRuleResponse.RequestId"));
-		updateChatDispatchRuleResponse.setCode(_ctx.stringValue("UpdateChatDispatchRuleResponse.Code"));
-		updateChatDispatchRuleResponse.setSuccess(_ctx.booleanValue("UpdateChatDispatchRuleResponse.Success"));
 		updateChatDispatchRuleResponse.setMessage(_ctx.stringValue("UpdateChatDispatchRuleResponse.Message"));
 		updateChatDispatchRuleResponse.setData(_ctx.stringValue("UpdateChatDispatchRuleResponse.Data"));
+		updateChatDispatchRuleResponse.setCode(_ctx.stringValue("UpdateChatDispatchRuleResponse.Code"));
+		updateChatDispatchRuleResponse.setSuccess(_ctx.booleanValue("UpdateChatDispatchRuleResponse.Success"));
 	 
 	 	return updateChatDispatchRuleResponse;
 	}

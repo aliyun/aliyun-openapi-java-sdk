@@ -23,10 +23,10 @@ public class CustomActionsOrdersResponseUnmarshaller {
 	public static CustomActionsOrdersResponse unmarshall(CustomActionsOrdersResponse customActionsOrdersResponse, UnmarshallerContext _ctx) {
 		
 		customActionsOrdersResponse.setRequestId(_ctx.stringValue("CustomActionsOrdersResponse.RequestId"));
-		customActionsOrdersResponse.setSuccess(_ctx.booleanValue("CustomActionsOrdersResponse.Success"));
-		customActionsOrdersResponse.setCode(_ctx.stringValue("CustomActionsOrdersResponse.Code"));
 		customActionsOrdersResponse.setMessage(_ctx.stringValue("CustomActionsOrdersResponse.Message"));
 		customActionsOrdersResponse.setData(_ctx.stringValue("CustomActionsOrdersResponse.Data"));
+		customActionsOrdersResponse.setCode(_ctx.stringValue("CustomActionsOrdersResponse.Code"));
+		customActionsOrdersResponse.setSuccess(_ctx.booleanValue("CustomActionsOrdersResponse.Success"));
 	 
 	 	return customActionsOrdersResponse;
 	}

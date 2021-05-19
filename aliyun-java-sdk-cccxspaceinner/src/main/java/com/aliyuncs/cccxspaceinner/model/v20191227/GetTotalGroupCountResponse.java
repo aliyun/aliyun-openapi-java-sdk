@@ -24,29 +24,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTotalGroupCountResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private Integer data;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private String code;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -62,6 +46,22 @@ public class GetTotalGroupCountResponse extends AcsResponse {
 
 	public void setData(Integer data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

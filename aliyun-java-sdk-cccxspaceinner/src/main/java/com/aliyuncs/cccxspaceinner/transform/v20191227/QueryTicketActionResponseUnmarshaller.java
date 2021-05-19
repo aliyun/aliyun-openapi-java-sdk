@@ -28,33 +28,33 @@ public class QueryTicketActionResponseUnmarshaller {
 	public static QueryTicketActionResponse unmarshall(QueryTicketActionResponse queryTicketActionResponse, UnmarshallerContext _ctx) {
 		
 		queryTicketActionResponse.setRequestId(_ctx.stringValue("QueryTicketActionResponse.RequestId"));
-		queryTicketActionResponse.setSuccess(_ctx.booleanValue("QueryTicketActionResponse.Success"));
-		queryTicketActionResponse.setCode(_ctx.stringValue("QueryTicketActionResponse.Code"));
 		queryTicketActionResponse.setMessage(_ctx.stringValue("QueryTicketActionResponse.Message"));
+		queryTicketActionResponse.setCode(_ctx.stringValue("QueryTicketActionResponse.Code"));
+		queryTicketActionResponse.setSuccess(_ctx.booleanValue("QueryTicketActionResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("QueryTicketActionResponse.Data.PageSize"));
-		data.setCurrentPage(_ctx.integerValue("QueryTicketActionResponse.Data.CurrentPage"));
 		data.setTotalResults(_ctx.integerValue("QueryTicketActionResponse.Data.TotalResults"));
+		data.setCurrentPage(_ctx.integerValue("QueryTicketActionResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.integerValue("QueryTicketActionResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTicketActionResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setOperator(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].Operator"));
-			listItem.setOperatorRole(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].OperatorRole"));
-			listItem.setHideType(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].HideType"));
+			listItem.setBizTenantId(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].BizTenantId"));
+			listItem.setActionType(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].ActionType"));
 			listItem.setMemo(_ctx.stringValue("QueryTicketActionResponse.Data.List["+ i +"].Memo"));
 			listItem.setBizId(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].BizId"));
-			listItem.setBizIdStr(_ctx.stringValue("QueryTicketActionResponse.Data.List["+ i +"].BizIdStr"));
-			listItem.setBizType(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].BizType"));
-			listItem.setBizTenantId(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].BizTenantId"));
-			listItem.setAcceptor(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].Acceptor"));
 			listItem.setAcceptorRole(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].AcceptorRole"));
-			listItem.setActionType(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].ActionType"));
-			listItem.setActionCode(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].ActionCode"));
-			listItem.setBuId(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].BuId"));
-			listItem.setTaskId(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].TaskId"));
+			listItem.setHideType(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].HideType"));
 			listItem.setBuyerId(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].BuyerId"));
+			listItem.setBizType(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].BizType"));
+			listItem.setBuId(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].BuId"));
+			listItem.setActionCode(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].ActionCode"));
+			listItem.setBizIdStr(_ctx.stringValue("QueryTicketActionResponse.Data.List["+ i +"].BizIdStr"));
+			listItem.setOperatorRole(_ctx.integerValue("QueryTicketActionResponse.Data.List["+ i +"].OperatorRole"));
+			listItem.setAcceptor(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].Acceptor"));
+			listItem.setOperator(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].Operator"));
+			listItem.setTaskId(_ctx.longValue("QueryTicketActionResponse.Data.List["+ i +"].TaskId"));
 
 			list.add(listItem);
 		}

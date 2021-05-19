@@ -26,21 +26,21 @@ public class QueryAgentGroupByBuIdResponseUnmarshaller {
 
 	public static QueryAgentGroupByBuIdResponse unmarshall(QueryAgentGroupByBuIdResponse queryAgentGroupByBuIdResponse, UnmarshallerContext _ctx) {
 		
-		queryAgentGroupByBuIdResponse.setSuccess(_ctx.booleanValue("QueryAgentGroupByBuIdResponse.Success"));
-		queryAgentGroupByBuIdResponse.setCode(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Code"));
 		queryAgentGroupByBuIdResponse.setMessage(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Message"));
+		queryAgentGroupByBuIdResponse.setCode(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Code"));
+		queryAgentGroupByBuIdResponse.setSuccess(_ctx.booleanValue("QueryAgentGroupByBuIdResponse.Success"));
 
 		List<XspaceAgentGroup> data = new ArrayList<XspaceAgentGroup>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAgentGroupByBuIdResponse.Data.Length"); i++) {
 			XspaceAgentGroup xspaceAgentGroup = new XspaceAgentGroup();
+			xspaceAgentGroup.setStatus(_ctx.integerValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].Status"));
 			xspaceAgentGroup.setBuId(_ctx.longValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].BuId"));
-			xspaceAgentGroup.setDepartmentId(_ctx.longValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].DepartmentId"));
+			xspaceAgentGroup.setShowName(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].ShowName"));
+			xspaceAgentGroup.setDescription(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].Description"));
 			xspaceAgentGroup.setGroupId(_ctx.longValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].GroupId"));
 			xspaceAgentGroup.setGroupName(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].GroupName"));
-			xspaceAgentGroup.setShowName(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].ShowName"));
+			xspaceAgentGroup.setDepartmentId(_ctx.longValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].DepartmentId"));
 			xspaceAgentGroup.setIsPublic(_ctx.booleanValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].IsPublic"));
-			xspaceAgentGroup.setStatus(_ctx.integerValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].Status"));
-			xspaceAgentGroup.setDescription(_ctx.stringValue("QueryAgentGroupByBuIdResponse.Data["+ i +"].Description"));
 
 			data.add(xspaceAgentGroup);
 		}

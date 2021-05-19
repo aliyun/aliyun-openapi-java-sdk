@@ -22,10 +22,10 @@ public class EchoResponseUnmarshaller {
 
 	public static EchoResponse unmarshall(EchoResponse echoResponse, UnmarshallerContext _ctx) {
 		
-		echoResponse.setSuccess(_ctx.booleanValue("EchoResponse.Success"));
-		echoResponse.setCode(_ctx.stringValue("EchoResponse.Code"));
 		echoResponse.setMessage(_ctx.stringValue("EchoResponse.Message"));
 		echoResponse.setData(_ctx.stringValue("EchoResponse.Data"));
+		echoResponse.setCode(_ctx.stringValue("EchoResponse.Code"));
+		echoResponse.setSuccess(_ctx.booleanValue("EchoResponse.Success"));
 	 
 	 	return echoResponse;
 	}

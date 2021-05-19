@@ -22,10 +22,10 @@ public class SendMessageResponseUnmarshaller {
 
 	public static SendMessageResponse unmarshall(SendMessageResponse sendMessageResponse, UnmarshallerContext _ctx) {
 		
-		sendMessageResponse.setSuccess(_ctx.booleanValue("SendMessageResponse.Success"));
-		sendMessageResponse.setCode(_ctx.stringValue("SendMessageResponse.Code"));
 		sendMessageResponse.setMessage(_ctx.stringValue("SendMessageResponse.Message"));
 		sendMessageResponse.setData(_ctx.longValue("SendMessageResponse.Data"));
+		sendMessageResponse.setCode(_ctx.stringValue("SendMessageResponse.Code"));
+		sendMessageResponse.setSuccess(_ctx.booleanValue("SendMessageResponse.Success"));
 	 
 	 	return sendMessageResponse;
 	}

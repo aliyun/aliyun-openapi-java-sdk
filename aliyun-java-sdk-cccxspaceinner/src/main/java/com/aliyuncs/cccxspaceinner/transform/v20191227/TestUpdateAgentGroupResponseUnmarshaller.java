@@ -22,9 +22,9 @@ public class TestUpdateAgentGroupResponseUnmarshaller {
 
 	public static TestUpdateAgentGroupResponse unmarshall(TestUpdateAgentGroupResponse testUpdateAgentGroupResponse, UnmarshallerContext _ctx) {
 		
-		testUpdateAgentGroupResponse.setSuccess(_ctx.booleanValue("TestUpdateAgentGroupResponse.Success"));
-		testUpdateAgentGroupResponse.setCode(_ctx.stringValue("TestUpdateAgentGroupResponse.Code"));
 		testUpdateAgentGroupResponse.setMessage(_ctx.stringValue("TestUpdateAgentGroupResponse.Message"));
+		testUpdateAgentGroupResponse.setCode(_ctx.stringValue("TestUpdateAgentGroupResponse.Code"));
+		testUpdateAgentGroupResponse.setSuccess(_ctx.booleanValue("TestUpdateAgentGroupResponse.Success"));
 	 
 	 	return testUpdateAgentGroupResponse;
 	}

@@ -23,9 +23,9 @@ public class CreateOrUpdateRoleResponseUnmarshaller {
 	public static CreateOrUpdateRoleResponse unmarshall(CreateOrUpdateRoleResponse createOrUpdateRoleResponse, UnmarshallerContext _ctx) {
 		
 		createOrUpdateRoleResponse.setRequestId(_ctx.stringValue("CreateOrUpdateRoleResponse.RequestId"));
+		createOrUpdateRoleResponse.setMessage(_ctx.stringValue("CreateOrUpdateRoleResponse.Message"));
 		createOrUpdateRoleResponse.setData(_ctx.stringValue("CreateOrUpdateRoleResponse.Data"));
 		createOrUpdateRoleResponse.setCode(_ctx.stringValue("CreateOrUpdateRoleResponse.Code"));
-		createOrUpdateRoleResponse.setMessage(_ctx.stringValue("CreateOrUpdateRoleResponse.Message"));
 		createOrUpdateRoleResponse.setSuccess(_ctx.booleanValue("CreateOrUpdateRoleResponse.Success"));
 	 
 	 	return createOrUpdateRoleResponse;

@@ -22,9 +22,9 @@ public class DeleteAgentResponseUnmarshaller {
 
 	public static DeleteAgentResponse unmarshall(DeleteAgentResponse deleteAgentResponse, UnmarshallerContext _ctx) {
 		
-		deleteAgentResponse.setSuccess(_ctx.booleanValue("DeleteAgentResponse.Success"));
-		deleteAgentResponse.setCode(_ctx.stringValue("DeleteAgentResponse.Code"));
 		deleteAgentResponse.setMessage(_ctx.stringValue("DeleteAgentResponse.Message"));
+		deleteAgentResponse.setCode(_ctx.stringValue("DeleteAgentResponse.Code"));
+		deleteAgentResponse.setSuccess(_ctx.booleanValue("DeleteAgentResponse.Success"));
 	 
 	 	return deleteAgentResponse;
 	}

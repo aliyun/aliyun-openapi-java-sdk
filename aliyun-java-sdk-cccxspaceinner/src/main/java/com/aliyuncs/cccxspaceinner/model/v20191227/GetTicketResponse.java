@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTicketResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
+	private Boolean success;
+
 	private Data data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -66,6 +50,22 @@ public class GetTicketResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -76,118 +76,62 @@ public class GetTicketResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String id;
-
-		private String questionInfo;
-
-		private Integer caseStatus;
-
-		private String srType;
-
-		private String extAttrs;
-
-		private Long gmtCreate;
-
-		private Long gmtModified;
-
-		private String ownerName;
+		private Long formId;
 
 		private Long responsible;
 
-		private String memberName;
-
-		private Long sopCateId;
+		private Long gmtModified;
 
 		private Long dataId;
 
-		private Integer memberType;
-
-		private Long refCaseId;
-
-		private Long departmentId;
+		private String questionInfo;
 
 		private Long buId;
 
-		private Long touchId;
-
-		private Long templateId;
-
-		private Long formId;
-
-		private String bizId;
-
-		private String formCode;
-
-		private String fromInfo;
-
-		private String createMode;
-
-		private Long contactId;
+		private String srType;
 
 		private String feedback;
 
-		public String getId() {
-			return this.id;
+		private String createMode;
+
+		private Long touchId;
+
+		private String formCode;
+
+		private String memberName;
+
+		private String bizId;
+
+		private Long refCaseId;
+
+		private String ownerName;
+
+		private String fromInfo;
+
+		private Integer memberType;
+
+		private Long contactId;
+
+		private Long departmentId;
+
+		private Long gmtCreate;
+
+		private Long sopCateId;
+
+		private Long templateId;
+
+		private String extAttrs;
+
+		private Integer caseStatus;
+
+		private String id;
+
+		public Long getFormId() {
+			return this.formId;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getQuestionInfo() {
-			return this.questionInfo;
-		}
-
-		public void setQuestionInfo(String questionInfo) {
-			this.questionInfo = questionInfo;
-		}
-
-		public Integer getCaseStatus() {
-			return this.caseStatus;
-		}
-
-		public void setCaseStatus(Integer caseStatus) {
-			this.caseStatus = caseStatus;
-		}
-
-		public String getSrType() {
-			return this.srType;
-		}
-
-		public void setSrType(String srType) {
-			this.srType = srType;
-		}
-
-		public String getExtAttrs() {
-			return this.extAttrs;
-		}
-
-		public void setExtAttrs(String extAttrs) {
-			this.extAttrs = extAttrs;
-		}
-
-		public Long getGmtCreate() {
-			return this.gmtCreate;
-		}
-
-		public void setGmtCreate(Long gmtCreate) {
-			this.gmtCreate = gmtCreate;
-		}
-
-		public Long getGmtModified() {
-			return this.gmtModified;
-		}
-
-		public void setGmtModified(Long gmtModified) {
-			this.gmtModified = gmtModified;
-		}
-
-		public String getOwnerName() {
-			return this.ownerName;
-		}
-
-		public void setOwnerName(String ownerName) {
-			this.ownerName = ownerName;
+		public void setFormId(Long formId) {
+			this.formId = formId;
 		}
 
 		public Long getResponsible() {
@@ -198,20 +142,12 @@ public class GetTicketResponse extends AcsResponse {
 			this.responsible = responsible;
 		}
 
-		public String getMemberName() {
-			return this.memberName;
+		public Long getGmtModified() {
+			return this.gmtModified;
 		}
 
-		public void setMemberName(String memberName) {
-			this.memberName = memberName;
-		}
-
-		public Long getSopCateId() {
-			return this.sopCateId;
-		}
-
-		public void setSopCateId(Long sopCateId) {
-			this.sopCateId = sopCateId;
+		public void setGmtModified(Long gmtModified) {
+			this.gmtModified = gmtModified;
 		}
 
 		public Long getDataId() {
@@ -222,28 +158,12 @@ public class GetTicketResponse extends AcsResponse {
 			this.dataId = dataId;
 		}
 
-		public Integer getMemberType() {
-			return this.memberType;
+		public String getQuestionInfo() {
+			return this.questionInfo;
 		}
 
-		public void setMemberType(Integer memberType) {
-			this.memberType = memberType;
-		}
-
-		public Long getRefCaseId() {
-			return this.refCaseId;
-		}
-
-		public void setRefCaseId(Long refCaseId) {
-			this.refCaseId = refCaseId;
-		}
-
-		public Long getDepartmentId() {
-			return this.departmentId;
-		}
-
-		public void setDepartmentId(Long departmentId) {
-			this.departmentId = departmentId;
+		public void setQuestionInfo(String questionInfo) {
+			this.questionInfo = questionInfo;
 		}
 
 		public Long getBuId() {
@@ -254,52 +174,20 @@ public class GetTicketResponse extends AcsResponse {
 			this.buId = buId;
 		}
 
-		public Long getTouchId() {
-			return this.touchId;
+		public String getSrType() {
+			return this.srType;
 		}
 
-		public void setTouchId(Long touchId) {
-			this.touchId = touchId;
+		public void setSrType(String srType) {
+			this.srType = srType;
 		}
 
-		public Long getTemplateId() {
-			return this.templateId;
+		public String getFeedback() {
+			return this.feedback;
 		}
 
-		public void setTemplateId(Long templateId) {
-			this.templateId = templateId;
-		}
-
-		public Long getFormId() {
-			return this.formId;
-		}
-
-		public void setFormId(Long formId) {
-			this.formId = formId;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getFormCode() {
-			return this.formCode;
-		}
-
-		public void setFormCode(String formCode) {
-			this.formCode = formCode;
-		}
-
-		public String getFromInfo() {
-			return this.fromInfo;
-		}
-
-		public void setFromInfo(String fromInfo) {
-			this.fromInfo = fromInfo;
+		public void setFeedback(String feedback) {
+			this.feedback = feedback;
 		}
 
 		public String getCreateMode() {
@@ -310,6 +198,70 @@ public class GetTicketResponse extends AcsResponse {
 			this.createMode = createMode;
 		}
 
+		public Long getTouchId() {
+			return this.touchId;
+		}
+
+		public void setTouchId(Long touchId) {
+			this.touchId = touchId;
+		}
+
+		public String getFormCode() {
+			return this.formCode;
+		}
+
+		public void setFormCode(String formCode) {
+			this.formCode = formCode;
+		}
+
+		public String getMemberName() {
+			return this.memberName;
+		}
+
+		public void setMemberName(String memberName) {
+			this.memberName = memberName;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public Long getRefCaseId() {
+			return this.refCaseId;
+		}
+
+		public void setRefCaseId(Long refCaseId) {
+			this.refCaseId = refCaseId;
+		}
+
+		public String getOwnerName() {
+			return this.ownerName;
+		}
+
+		public void setOwnerName(String ownerName) {
+			this.ownerName = ownerName;
+		}
+
+		public String getFromInfo() {
+			return this.fromInfo;
+		}
+
+		public void setFromInfo(String fromInfo) {
+			this.fromInfo = fromInfo;
+		}
+
+		public Integer getMemberType() {
+			return this.memberType;
+		}
+
+		public void setMemberType(Integer memberType) {
+			this.memberType = memberType;
+		}
+
 		public Long getContactId() {
 			return this.contactId;
 		}
@@ -318,12 +270,60 @@ public class GetTicketResponse extends AcsResponse {
 			this.contactId = contactId;
 		}
 
-		public String getFeedback() {
-			return this.feedback;
+		public Long getDepartmentId() {
+			return this.departmentId;
 		}
 
-		public void setFeedback(String feedback) {
-			this.feedback = feedback;
+		public void setDepartmentId(Long departmentId) {
+			this.departmentId = departmentId;
+		}
+
+		public Long getGmtCreate() {
+			return this.gmtCreate;
+		}
+
+		public void setGmtCreate(Long gmtCreate) {
+			this.gmtCreate = gmtCreate;
+		}
+
+		public Long getSopCateId() {
+			return this.sopCateId;
+		}
+
+		public void setSopCateId(Long sopCateId) {
+			this.sopCateId = sopCateId;
+		}
+
+		public Long getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(Long templateId) {
+			this.templateId = templateId;
+		}
+
+		public String getExtAttrs() {
+			return this.extAttrs;
+		}
+
+		public void setExtAttrs(String extAttrs) {
+			this.extAttrs = extAttrs;
+		}
+
+		public Integer getCaseStatus() {
+			return this.caseStatus;
+		}
+
+		public void setCaseStatus(Integer caseStatus) {
+			this.caseStatus = caseStatus;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 	}
 

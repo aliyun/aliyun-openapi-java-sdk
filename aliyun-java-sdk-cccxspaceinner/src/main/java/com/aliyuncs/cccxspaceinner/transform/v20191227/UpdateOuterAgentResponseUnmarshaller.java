@@ -23,10 +23,10 @@ public class UpdateOuterAgentResponseUnmarshaller {
 	public static UpdateOuterAgentResponse unmarshall(UpdateOuterAgentResponse updateOuterAgentResponse, UnmarshallerContext _ctx) {
 		
 		updateOuterAgentResponse.setRequestId(_ctx.stringValue("UpdateOuterAgentResponse.RequestId"));
-		updateOuterAgentResponse.setSuccess(_ctx.booleanValue("UpdateOuterAgentResponse.Success"));
-		updateOuterAgentResponse.setCode(_ctx.stringValue("UpdateOuterAgentResponse.Code"));
 		updateOuterAgentResponse.setMessage(_ctx.stringValue("UpdateOuterAgentResponse.Message"));
 		updateOuterAgentResponse.setData(_ctx.stringValue("UpdateOuterAgentResponse.Data"));
+		updateOuterAgentResponse.setCode(_ctx.stringValue("UpdateOuterAgentResponse.Code"));
+		updateOuterAgentResponse.setSuccess(_ctx.booleanValue("UpdateOuterAgentResponse.Success"));
 	 
 	 	return updateOuterAgentResponse;
 	}

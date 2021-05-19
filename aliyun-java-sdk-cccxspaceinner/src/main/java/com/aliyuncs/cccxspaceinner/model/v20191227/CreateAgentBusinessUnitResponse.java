@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateAgentBusinessUnitResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -48,12 +48,12 @@ public class CreateAgentBusinessUnitResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -68,13 +68,13 @@ public class CreateAgentBusinessUnitResponse extends AcsResponse {
 
 		private Long buId;
 
-		private String buName;
-
-		private String buKey;
-
 		private Long departmentId;
 
+		private String buName;
+
 		private Long adminAgentId;
+
+		private String buKey;
 
 		public Long getBuId() {
 			return this.buId;
@@ -82,22 +82,6 @@ public class CreateAgentBusinessUnitResponse extends AcsResponse {
 
 		public void setBuId(Long buId) {
 			this.buId = buId;
-		}
-
-		public String getBuName() {
-			return this.buName;
-		}
-
-		public void setBuName(String buName) {
-			this.buName = buName;
-		}
-
-		public String getBuKey() {
-			return this.buKey;
-		}
-
-		public void setBuKey(String buKey) {
-			this.buKey = buKey;
 		}
 
 		public Long getDepartmentId() {
@@ -108,12 +92,28 @@ public class CreateAgentBusinessUnitResponse extends AcsResponse {
 			this.departmentId = departmentId;
 		}
 
+		public String getBuName() {
+			return this.buName;
+		}
+
+		public void setBuName(String buName) {
+			this.buName = buName;
+		}
+
 		public Long getAdminAgentId() {
 			return this.adminAgentId;
 		}
 
 		public void setAdminAgentId(Long adminAgentId) {
 			this.adminAgentId = adminAgentId;
+		}
+
+		public String getBuKey() {
+			return this.buKey;
+		}
+
+		public void setBuKey(String buKey) {
+			this.buKey = buKey;
 		}
 	}
 

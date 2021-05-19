@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetAgentByAgentIdResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -48,12 +48,12 @@ public class GetAgentByAgentIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -66,19 +66,27 @@ public class GetAgentByAgentIdResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer status;
+
 		private Long buId;
-
-		private Long agentId;
-
-		private String agentName;
 
 		private String showName;
 
-		private Integer agentType;
-
-		private Integer status;
+		private Long agentId;
 
 		private Long departmentId;
+
+		private String agentName;
+
+		private Integer agentType;
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public Long getBuId() {
 			return this.buId;
@@ -86,22 +94,6 @@ public class GetAgentByAgentIdResponse extends AcsResponse {
 
 		public void setBuId(Long buId) {
 			this.buId = buId;
-		}
-
-		public Long getAgentId() {
-			return this.agentId;
-		}
-
-		public void setAgentId(Long agentId) {
-			this.agentId = agentId;
-		}
-
-		public String getAgentName() {
-			return this.agentName;
-		}
-
-		public void setAgentName(String agentName) {
-			this.agentName = agentName;
 		}
 
 		public String getShowName() {
@@ -112,20 +104,12 @@ public class GetAgentByAgentIdResponse extends AcsResponse {
 			this.showName = showName;
 		}
 
-		public Integer getAgentType() {
-			return this.agentType;
+		public Long getAgentId() {
+			return this.agentId;
 		}
 
-		public void setAgentType(Integer agentType) {
-			this.agentType = agentType;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setAgentId(Long agentId) {
+			this.agentId = agentId;
 		}
 
 		public Long getDepartmentId() {
@@ -134,6 +118,22 @@ public class GetAgentByAgentIdResponse extends AcsResponse {
 
 		public void setDepartmentId(Long departmentId) {
 			this.departmentId = departmentId;
+		}
+
+		public String getAgentName() {
+			return this.agentName;
+		}
+
+		public void setAgentName(String agentName) {
+			this.agentName = agentName;
+		}
+
+		public Integer getAgentType() {
+			return this.agentType;
+		}
+
+		public void setAgentType(Integer agentType) {
+			this.agentType = agentType;
 		}
 	}
 

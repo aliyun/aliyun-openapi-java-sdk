@@ -23,16 +23,16 @@ public class CreateAgentBusinessUnitResponseUnmarshaller {
 
 	public static CreateAgentBusinessUnitResponse unmarshall(CreateAgentBusinessUnitResponse createAgentBusinessUnitResponse, UnmarshallerContext _ctx) {
 		
-		createAgentBusinessUnitResponse.setSuccess(_ctx.booleanValue("CreateAgentBusinessUnitResponse.Success"));
-		createAgentBusinessUnitResponse.setCode(_ctx.stringValue("CreateAgentBusinessUnitResponse.Code"));
 		createAgentBusinessUnitResponse.setMessage(_ctx.stringValue("CreateAgentBusinessUnitResponse.Message"));
+		createAgentBusinessUnitResponse.setCode(_ctx.stringValue("CreateAgentBusinessUnitResponse.Code"));
+		createAgentBusinessUnitResponse.setSuccess(_ctx.booleanValue("CreateAgentBusinessUnitResponse.Success"));
 
 		Data data = new Data();
 		data.setBuId(_ctx.longValue("CreateAgentBusinessUnitResponse.Data.BuId"));
-		data.setBuName(_ctx.stringValue("CreateAgentBusinessUnitResponse.Data.BuName"));
-		data.setBuKey(_ctx.stringValue("CreateAgentBusinessUnitResponse.Data.BuKey"));
 		data.setDepartmentId(_ctx.longValue("CreateAgentBusinessUnitResponse.Data.DepartmentId"));
+		data.setBuName(_ctx.stringValue("CreateAgentBusinessUnitResponse.Data.BuName"));
 		data.setAdminAgentId(_ctx.longValue("CreateAgentBusinessUnitResponse.Data.AdminAgentId"));
+		data.setBuKey(_ctx.stringValue("CreateAgentBusinessUnitResponse.Data.BuKey"));
 		createAgentBusinessUnitResponse.setData(data);
 	 
 	 	return createAgentBusinessUnitResponse;

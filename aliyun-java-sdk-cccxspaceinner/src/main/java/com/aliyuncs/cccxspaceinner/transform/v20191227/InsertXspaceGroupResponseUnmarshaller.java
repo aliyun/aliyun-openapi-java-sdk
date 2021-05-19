@@ -23,10 +23,10 @@ public class InsertXspaceGroupResponseUnmarshaller {
 	public static InsertXspaceGroupResponse unmarshall(InsertXspaceGroupResponse insertXspaceGroupResponse, UnmarshallerContext _ctx) {
 		
 		insertXspaceGroupResponse.setRequestId(_ctx.stringValue("InsertXspaceGroupResponse.RequestId"));
-		insertXspaceGroupResponse.setSuccess(_ctx.booleanValue("InsertXspaceGroupResponse.Success"));
-		insertXspaceGroupResponse.setCode(_ctx.stringValue("InsertXspaceGroupResponse.Code"));
 		insertXspaceGroupResponse.setMessage(_ctx.stringValue("InsertXspaceGroupResponse.Message"));
 		insertXspaceGroupResponse.setData(_ctx.longValue("InsertXspaceGroupResponse.Data"));
+		insertXspaceGroupResponse.setCode(_ctx.stringValue("InsertXspaceGroupResponse.Code"));
+		insertXspaceGroupResponse.setSuccess(_ctx.booleanValue("InsertXspaceGroupResponse.Success"));
 	 
 	 	return insertXspaceGroupResponse;
 	}

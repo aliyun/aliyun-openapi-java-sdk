@@ -26,17 +26,17 @@ public class QueryRolesByBuIdResponseUnmarshaller {
 
 	public static QueryRolesByBuIdResponse unmarshall(QueryRolesByBuIdResponse queryRolesByBuIdResponse, UnmarshallerContext _ctx) {
 		
-		queryRolesByBuIdResponse.setSuccess(_ctx.booleanValue("QueryRolesByBuIdResponse.Success"));
-		queryRolesByBuIdResponse.setCode(_ctx.stringValue("QueryRolesByBuIdResponse.Code"));
 		queryRolesByBuIdResponse.setMessage(_ctx.stringValue("QueryRolesByBuIdResponse.Message"));
+		queryRolesByBuIdResponse.setCode(_ctx.stringValue("QueryRolesByBuIdResponse.Code"));
+		queryRolesByBuIdResponse.setSuccess(_ctx.booleanValue("QueryRolesByBuIdResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryRolesByBuIdResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setBuId(_ctx.longValue("QueryRolesByBuIdResponse.Data["+ i +"].BuId"));
-			dataItem.setRoleId(_ctx.longValue("QueryRolesByBuIdResponse.Data["+ i +"].RoleId"));
 			dataItem.setRoleCode(_ctx.stringValue("QueryRolesByBuIdResponse.Data["+ i +"].RoleCode"));
 			dataItem.setRoleName(_ctx.stringValue("QueryRolesByBuIdResponse.Data["+ i +"].RoleName"));
+			dataItem.setRoleId(_ctx.longValue("QueryRolesByBuIdResponse.Data["+ i +"].RoleId"));
 
 			data.add(dataItem);
 		}

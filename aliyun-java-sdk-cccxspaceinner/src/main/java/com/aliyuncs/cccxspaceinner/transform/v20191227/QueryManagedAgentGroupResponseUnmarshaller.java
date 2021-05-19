@@ -26,20 +26,20 @@ public class QueryManagedAgentGroupResponseUnmarshaller {
 
 	public static QueryManagedAgentGroupResponse unmarshall(QueryManagedAgentGroupResponse queryManagedAgentGroupResponse, UnmarshallerContext _ctx) {
 		
-		queryManagedAgentGroupResponse.setSuccess(_ctx.booleanValue("QueryManagedAgentGroupResponse.Success"));
-		queryManagedAgentGroupResponse.setCode(_ctx.stringValue("QueryManagedAgentGroupResponse.Code"));
 		queryManagedAgentGroupResponse.setMessage(_ctx.stringValue("QueryManagedAgentGroupResponse.Message"));
+		queryManagedAgentGroupResponse.setCode(_ctx.stringValue("QueryManagedAgentGroupResponse.Code"));
+		queryManagedAgentGroupResponse.setSuccess(_ctx.booleanValue("QueryManagedAgentGroupResponse.Success"));
 
 		List<XspaceAgentGroup> data = new ArrayList<XspaceAgentGroup>();
 		for (int i = 0; i < _ctx.lengthValue("QueryManagedAgentGroupResponse.Data.Length"); i++) {
 			XspaceAgentGroup xspaceAgentGroup = new XspaceAgentGroup();
+			xspaceAgentGroup.setStatus(_ctx.integerValue("QueryManagedAgentGroupResponse.Data["+ i +"].Status"));
 			xspaceAgentGroup.setBuId(_ctx.longValue("QueryManagedAgentGroupResponse.Data["+ i +"].BuId"));
-			xspaceAgentGroup.setDepartmentId(_ctx.longValue("QueryManagedAgentGroupResponse.Data["+ i +"].DepartmentId"));
+			xspaceAgentGroup.setShowName(_ctx.stringValue("QueryManagedAgentGroupResponse.Data["+ i +"].ShowName"));
 			xspaceAgentGroup.setGroupId(_ctx.longValue("QueryManagedAgentGroupResponse.Data["+ i +"].GroupId"));
 			xspaceAgentGroup.setGroupName(_ctx.stringValue("QueryManagedAgentGroupResponse.Data["+ i +"].GroupName"));
-			xspaceAgentGroup.setShowName(_ctx.stringValue("QueryManagedAgentGroupResponse.Data["+ i +"].ShowName"));
+			xspaceAgentGroup.setDepartmentId(_ctx.longValue("QueryManagedAgentGroupResponse.Data["+ i +"].DepartmentId"));
 			xspaceAgentGroup.setIsPublic(_ctx.booleanValue("QueryManagedAgentGroupResponse.Data["+ i +"].IsPublic"));
-			xspaceAgentGroup.setStatus(_ctx.integerValue("QueryManagedAgentGroupResponse.Data["+ i +"].Status"));
 
 			data.add(xspaceAgentGroup);
 		}

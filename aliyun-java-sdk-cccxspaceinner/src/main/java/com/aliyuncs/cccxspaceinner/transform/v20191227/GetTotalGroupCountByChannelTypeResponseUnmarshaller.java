@@ -22,10 +22,10 @@ public class GetTotalGroupCountByChannelTypeResponseUnmarshaller {
 
 	public static GetTotalGroupCountByChannelTypeResponse unmarshall(GetTotalGroupCountByChannelTypeResponse getTotalGroupCountByChannelTypeResponse, UnmarshallerContext _ctx) {
 		
-		getTotalGroupCountByChannelTypeResponse.setSuccess(_ctx.booleanValue("GetTotalGroupCountByChannelTypeResponse.Success"));
-		getTotalGroupCountByChannelTypeResponse.setCode(_ctx.stringValue("GetTotalGroupCountByChannelTypeResponse.Code"));
 		getTotalGroupCountByChannelTypeResponse.setMessage(_ctx.stringValue("GetTotalGroupCountByChannelTypeResponse.Message"));
 		getTotalGroupCountByChannelTypeResponse.setData(_ctx.integerValue("GetTotalGroupCountByChannelTypeResponse.Data"));
+		getTotalGroupCountByChannelTypeResponse.setCode(_ctx.stringValue("GetTotalGroupCountByChannelTypeResponse.Code"));
+		getTotalGroupCountByChannelTypeResponse.setSuccess(_ctx.booleanValue("GetTotalGroupCountByChannelTypeResponse.Success"));
 	 
 	 	return getTotalGroupCountByChannelTypeResponse;
 	}

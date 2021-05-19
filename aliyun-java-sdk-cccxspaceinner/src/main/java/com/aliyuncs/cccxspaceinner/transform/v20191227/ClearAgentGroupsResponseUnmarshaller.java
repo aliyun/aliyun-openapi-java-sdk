@@ -23,10 +23,10 @@ public class ClearAgentGroupsResponseUnmarshaller {
 	public static ClearAgentGroupsResponse unmarshall(ClearAgentGroupsResponse clearAgentGroupsResponse, UnmarshallerContext _ctx) {
 		
 		clearAgentGroupsResponse.setRequestId(_ctx.stringValue("ClearAgentGroupsResponse.RequestId"));
-		clearAgentGroupsResponse.setSuccess(_ctx.booleanValue("ClearAgentGroupsResponse.Success"));
-		clearAgentGroupsResponse.setCode(_ctx.stringValue("ClearAgentGroupsResponse.Code"));
 		clearAgentGroupsResponse.setMessage(_ctx.stringValue("ClearAgentGroupsResponse.Message"));
 		clearAgentGroupsResponse.setData(_ctx.stringValue("ClearAgentGroupsResponse.Data"));
+		clearAgentGroupsResponse.setCode(_ctx.stringValue("ClearAgentGroupsResponse.Code"));
+		clearAgentGroupsResponse.setSuccess(_ctx.booleanValue("ClearAgentGroupsResponse.Success"));
 	 
 	 	return clearAgentGroupsResponse;
 	}

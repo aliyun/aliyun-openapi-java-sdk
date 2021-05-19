@@ -23,10 +23,10 @@ public class CreateOrUpdateAutoTaskResponseUnmarshaller {
 	public static CreateOrUpdateAutoTaskResponse unmarshall(CreateOrUpdateAutoTaskResponse createOrUpdateAutoTaskResponse, UnmarshallerContext _ctx) {
 		
 		createOrUpdateAutoTaskResponse.setRequestId(_ctx.stringValue("CreateOrUpdateAutoTaskResponse.RequestId"));
-		createOrUpdateAutoTaskResponse.setSuccess(_ctx.booleanValue("CreateOrUpdateAutoTaskResponse.Success"));
-		createOrUpdateAutoTaskResponse.setCode(_ctx.stringValue("CreateOrUpdateAutoTaskResponse.Code"));
 		createOrUpdateAutoTaskResponse.setMessage(_ctx.stringValue("CreateOrUpdateAutoTaskResponse.Message"));
 		createOrUpdateAutoTaskResponse.setData(_ctx.stringValue("CreateOrUpdateAutoTaskResponse.Data"));
+		createOrUpdateAutoTaskResponse.setCode(_ctx.stringValue("CreateOrUpdateAutoTaskResponse.Code"));
+		createOrUpdateAutoTaskResponse.setSuccess(_ctx.booleanValue("CreateOrUpdateAutoTaskResponse.Success"));
 	 
 	 	return createOrUpdateAutoTaskResponse;
 	}
