@@ -231,6 +231,12 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 					private Integer maxEmotionChangeValue2;
 
+					private String notRegex;
+
+					private Float similarity_threshold;
+
+					private Integer delayTime;
+
 					private List<String> operKeyWords;
 
 					private List<String> references;
@@ -238,6 +244,10 @@ public class GetRuleDetailResponse extends AcsResponse {
 					private List<String> similarlySentences;
 
 					private List<String> excludes;
+
+					private List<String> pvalues;
+
+					private List<String> antModelInfo;
 
 					public String getRegex() {
 						return this.regex;
@@ -431,6 +441,30 @@ public class GetRuleDetailResponse extends AcsResponse {
 						this.maxEmotionChangeValue2 = maxEmotionChangeValue2;
 					}
 
+					public String getNotRegex() {
+						return this.notRegex;
+					}
+
+					public void setNotRegex(String notRegex) {
+						this.notRegex = notRegex;
+					}
+
+					public Float getSimilarity_threshold() {
+						return this.similarity_threshold;
+					}
+
+					public void setSimilarity_threshold(Float similarity_threshold) {
+						this.similarity_threshold = similarity_threshold;
+					}
+
+					public Integer getDelayTime() {
+						return this.delayTime;
+					}
+
+					public void setDelayTime(Integer delayTime) {
+						this.delayTime = delayTime;
+					}
+
 					public List<String> getOperKeyWords() {
 						return this.operKeyWords;
 					}
@@ -461,6 +495,22 @@ public class GetRuleDetailResponse extends AcsResponse {
 
 					public void setExcludes(List<String> excludes) {
 						this.excludes = excludes;
+					}
+
+					public List<String> getPvalues() {
+						return this.pvalues;
+					}
+
+					public void setPvalues(List<String> pvalues) {
+						this.pvalues = pvalues;
+					}
+
+					public List<String> getAntModelInfo() {
+						return this.antModelInfo;
+					}
+
+					public void setAntModelInfo(List<String> antModelInfo) {
+						this.antModelInfo = antModelInfo;
 					}
 				}
 			}

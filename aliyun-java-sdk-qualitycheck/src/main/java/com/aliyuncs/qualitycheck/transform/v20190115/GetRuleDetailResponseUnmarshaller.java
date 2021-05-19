@@ -95,6 +95,9 @@ public class GetRuleDetailResponseUnmarshaller {
 				param.setMaxEmotionChangeValue(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
 				param.setCheckType1(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType"));
 				param.setMaxEmotionChangeValue2(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue"));
+				param.setNotRegex(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.NotRegex"));
+				param.setSimilarity_threshold(_ctx.floatValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Similarity_threshold"));
+				param.setDelayTime(_ctx.integerValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.DelayTime"));
 
 				List<String> operKeyWords = new ArrayList<String>();
 				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords.Length"); k++) {
@@ -119,6 +122,18 @@ public class GetRuleDetailResponseUnmarshaller {
 					excludes.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes["+ k +"]"));
 				}
 				param.setExcludes(excludes);
+
+				List<String> pvalues = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues.Length"); k++) {
+					pvalues.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues["+ k +"]"));
+				}
+				param.setPvalues(pvalues);
+
+				List<String> antModelInfo = new ArrayList<String>();
+				for (int k = 0; k < _ctx.lengthValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo.Length"); k++) {
+					antModelInfo.add(_ctx.stringValue("GetRuleDetailResponse.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo["+ k +"]"));
+				}
+				param.setAntModelInfo(antModelInfo);
 				operatorBasicInfo.setParam(param);
 
 				operators.add(operatorBasicInfo);

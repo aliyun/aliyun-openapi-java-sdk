@@ -127,6 +127,14 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 		private String skillGroupsStr;
 
+		private Long callTimeStart;
+
+		private Long callTimeEnd;
+
+		private Integer assignmentType;
+
+		private String ruleName;
+
 		private List<Agent> agents;
 
 		private List<SkillGroup> skillGroups;
@@ -134,6 +142,8 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 		private List<Reviewer> reviewers;
 
 		private List<RuleBasicInfo> rules;
+
+		private SamplingMode samplingMode;
 
 		public Long getRuleId() {
 			return this.ruleId;
@@ -215,6 +225,38 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 			this.skillGroupsStr = skillGroupsStr;
 		}
 
+		public Long getCallTimeStart() {
+			return this.callTimeStart;
+		}
+
+		public void setCallTimeStart(Long callTimeStart) {
+			this.callTimeStart = callTimeStart;
+		}
+
+		public Long getCallTimeEnd() {
+			return this.callTimeEnd;
+		}
+
+		public void setCallTimeEnd(Long callTimeEnd) {
+			this.callTimeEnd = callTimeEnd;
+		}
+
+		public Integer getAssignmentType() {
+			return this.assignmentType;
+		}
+
+		public void setAssignmentType(Integer assignmentType) {
+			this.assignmentType = assignmentType;
+		}
+
+		public String getRuleName() {
+			return this.ruleName;
+		}
+
+		public void setRuleName(String ruleName) {
+			this.ruleName = ruleName;
+		}
+
 		public List<Agent> getAgents() {
 			return this.agents;
 		}
@@ -245,6 +287,14 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 		public void setRules(List<RuleBasicInfo> rules) {
 			this.rules = rules;
+		}
+
+		public SamplingMode getSamplingMode() {
+			return this.samplingMode;
+		}
+
+		public void setSamplingMode(SamplingMode samplingMode) {
+			this.samplingMode = samplingMode;
 		}
 
 		public static class Agent {
@@ -336,6 +386,112 @@ public class ListTaskAssignRulesResponse extends AcsResponse {
 
 			public void setName(String name) {
 				this.name = name;
+			}
+		}
+
+		public static class SamplingMode {
+
+			private Integer dimension;
+
+			private Float proportion;
+
+			private Integer limit;
+
+			private Integer numberOfDraws;
+
+			private Integer anyNumberOfDraws;
+
+			private Boolean designated;
+
+			private Integer randomInspectionNumber;
+
+			private List<SamplingModeAgent> samplingModeAgents;
+
+			public Integer getDimension() {
+				return this.dimension;
+			}
+
+			public void setDimension(Integer dimension) {
+				this.dimension = dimension;
+			}
+
+			public Float getProportion() {
+				return this.proportion;
+			}
+
+			public void setProportion(Float proportion) {
+				this.proportion = proportion;
+			}
+
+			public Integer getLimit() {
+				return this.limit;
+			}
+
+			public void setLimit(Integer limit) {
+				this.limit = limit;
+			}
+
+			public Integer getNumberOfDraws() {
+				return this.numberOfDraws;
+			}
+
+			public void setNumberOfDraws(Integer numberOfDraws) {
+				this.numberOfDraws = numberOfDraws;
+			}
+
+			public Integer getAnyNumberOfDraws() {
+				return this.anyNumberOfDraws;
+			}
+
+			public void setAnyNumberOfDraws(Integer anyNumberOfDraws) {
+				this.anyNumberOfDraws = anyNumberOfDraws;
+			}
+
+			public Boolean getDesignated() {
+				return this.designated;
+			}
+
+			public void setDesignated(Boolean designated) {
+				this.designated = designated;
+			}
+
+			public Integer getRandomInspectionNumber() {
+				return this.randomInspectionNumber;
+			}
+
+			public void setRandomInspectionNumber(Integer randomInspectionNumber) {
+				this.randomInspectionNumber = randomInspectionNumber;
+			}
+
+			public List<SamplingModeAgent> getSamplingModeAgents() {
+				return this.samplingModeAgents;
+			}
+
+			public void setSamplingModeAgents(List<SamplingModeAgent> samplingModeAgents) {
+				this.samplingModeAgents = samplingModeAgents;
+			}
+
+			public static class SamplingModeAgent {
+
+				private String agentId;
+
+				private String agentName;
+
+				public String getAgentId() {
+					return this.agentId;
+				}
+
+				public void setAgentId(String agentId) {
+					this.agentId = agentId;
+				}
+
+				public String getAgentName() {
+					return this.agentName;
+				}
+
+				public void setAgentName(String agentName) {
+					this.agentName = agentName;
+				}
 			}
 		}
 	}
