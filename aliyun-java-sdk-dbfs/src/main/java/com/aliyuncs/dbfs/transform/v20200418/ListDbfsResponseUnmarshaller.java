@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.dbfs.model.v20200418.ListDbfsResponse;
 import com.aliyuncs.dbfs.model.v20200418.ListDbfsResponse.Info;
+import com.aliyuncs.dbfs.model.v20200418.ListDbfsResponse.Info.EbsListItem;
 import com.aliyuncs.dbfs.model.v20200418.ListDbfsResponse.Info.EcsListItem;
 import com.aliyuncs.dbfs.model.v20200418.ListDbfsResponse.Info.TagList;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -37,24 +38,35 @@ public class ListDbfsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListDbfsResponse.DBFSInfo.Length"); i++) {
 			Info info = new Info();
 			info.setStatus(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Status"));
-			info.setKMSKeyId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].KMSKeyId"));
-			info.setCreatedTime(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].CreatedTime"));
-			info.setCategory(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Category"));
-			info.setEnableRaid(_ctx.booleanValue("ListDbfsResponse.DBFSInfo["+ i +"].EnableRaid"));
-			info.setZoneId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].ZoneId"));
-			info.setSizeG(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].SizeG"));
-			info.setPerformanceLevel(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].PerformanceLevel"));
-			info.setDBFSClusterId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].DBFSClusterId"));
-			info.setFsId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].FsId"));
-			info.setLastUmountTime(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].LastUmountTime"));
-			info.setPayType(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].PayType"));
 			info.setEncryption(_ctx.booleanValue("ListDbfsResponse.DBFSInfo["+ i +"].Encryption"));
-			info.setFsName(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].FsName"));
-			info.setUsedScene(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].UsedScene"));
-			info.setRaidStrip(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].RaidStrip"));
-			info.setLastMountTime(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].LastMountTime"));
-			info.setAttachNodeNumber(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].AttachNodeNumber"));
+			info.setPayType(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].PayType"));
+			info.setFsId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].FsId"));
+			info.setSizeG(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].SizeG"));
 			info.setRegionId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].RegionId"));
+			info.setDBFSClusterId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].DBFSClusterId"));
+			info.setZoneId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].ZoneId"));
+			info.setFsName(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].FsName"));
+			info.setCategory(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Category"));
+			info.setCreatedTime(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].CreatedTime"));
+			info.setAttachNodeNumber(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].AttachNodeNumber"));
+			info.setKMSKeyId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].KMSKeyId"));
+			info.setPerformanceLevel(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].PerformanceLevel"));
+			info.setUsedScene(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].UsedScene"));
+			info.setLastMountTime(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].LastMountTime"));
+			info.setLastUmountTime(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].LastUmountTime"));
+			info.setEnableRaid(_ctx.booleanValue("ListDbfsResponse.DBFSInfo["+ i +"].EnableRaid"));
+			info.setRaidStrip(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].RaidStrip"));
+
+			List<TagList> tags = new ArrayList<TagList>();
+			for (int j = 0; j < _ctx.lengthValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags.Length"); j++) {
+				TagList tagList = new TagList();
+				tagList.setTagValue(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags["+ j +"].TagValue"));
+				tagList.setId(_ctx.longValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags["+ j +"].Id"));
+				tagList.setTagKey(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags["+ j +"].TagKey"));
+
+				tags.add(tagList);
+			}
+			info.setTags(tags);
 
 			List<EcsListItem> ecsList = new ArrayList<EcsListItem>();
 			for (int j = 0; j < _ctx.lengthValue("ListDbfsResponse.DBFSInfo["+ i +"].EcsList.Length"); j++) {
@@ -65,16 +77,15 @@ public class ListDbfsResponseUnmarshaller {
 			}
 			info.setEcsList(ecsList);
 
-			List<TagList> tags = new ArrayList<TagList>();
-			for (int j = 0; j < _ctx.lengthValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags.Length"); j++) {
-				TagList tagList = new TagList();
-				tagList.setTagKey(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags["+ j +"].TagKey"));
-				tagList.setId(_ctx.longValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags["+ j +"].Id"));
-				tagList.setTagValue(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].Tags["+ j +"].TagValue"));
+			List<EbsListItem> ebsList = new ArrayList<EbsListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListDbfsResponse.DBFSInfo["+ i +"].EbsList.Length"); j++) {
+				EbsListItem ebsListItem = new EbsListItem();
+				ebsListItem.setEbsId(_ctx.stringValue("ListDbfsResponse.DBFSInfo["+ i +"].EbsList["+ j +"].EbsId"));
+				ebsListItem.setSizeG(_ctx.integerValue("ListDbfsResponse.DBFSInfo["+ i +"].EbsList["+ j +"].SizeG"));
 
-				tags.add(tagList);
+				ebsList.add(ebsListItem);
 			}
-			info.setTags(tags);
+			info.setEbsList(ebsList);
 
 			dBFSInfo.add(info);
 		}

@@ -47,112 +47,48 @@ public class DbfsRecordResponse extends AcsResponse {
 
 	public static class RecordsItem {
 
-		private String targetVersion;
-
-		private String taskId;
-
-		private String accountId;
-
-		private String zoneId;
-
-		private Long createTime;
-
-		private String currentVersion;
-
-		private String ecsId;
-
-		private String taskErrorReason;
-
-		private Long upgradeEndTime;
+		private Long id;
 
 		private String batchStrategyNo;
 
-		private String state;
-
-		private Long updateTime;
+		private String accountId;
 
 		private String dbfsId;
 
-		private String isDel;
+		private String ecsId;
 
-		private Long upgradeStartTime;
+		private String taskId;
 
 		private String regionId;
 
-		private Long id;
+		private String zoneId;
+
+		private String state;
+
+		private String currentVersion;
+
+		private String targetVersion;
+
+		private Long upgradeStartTime;
+
+		private Long upgradeEndTime;
 
 		private Integer taskExecutionCounts;
 
-		public String getTargetVersion() {
-			return this.targetVersion;
+		private String taskErrorReason;
+
+		private Long createTime;
+
+		private Long updateTime;
+
+		private String isDel;
+
+		public Long getId() {
+			return this.id;
 		}
 
-		public void setTargetVersion(String targetVersion) {
-			this.targetVersion = targetVersion;
-		}
-
-		public String getTaskId() {
-			return this.taskId;
-		}
-
-		public void setTaskId(String taskId) {
-			this.taskId = taskId;
-		}
-
-		public String getAccountId() {
-			return this.accountId;
-		}
-
-		public void setAccountId(String accountId) {
-			this.accountId = accountId;
-		}
-
-		public String getZoneId() {
-			return this.zoneId;
-		}
-
-		public void setZoneId(String zoneId) {
-			this.zoneId = zoneId;
-		}
-
-		public Long getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
-		}
-
-		public String getCurrentVersion() {
-			return this.currentVersion;
-		}
-
-		public void setCurrentVersion(String currentVersion) {
-			this.currentVersion = currentVersion;
-		}
-
-		public String getEcsId() {
-			return this.ecsId;
-		}
-
-		public void setEcsId(String ecsId) {
-			this.ecsId = ecsId;
-		}
-
-		public String getTaskErrorReason() {
-			return this.taskErrorReason;
-		}
-
-		public void setTaskErrorReason(String taskErrorReason) {
-			this.taskErrorReason = taskErrorReason;
-		}
-
-		public Long getUpgradeEndTime() {
-			return this.upgradeEndTime;
-		}
-
-		public void setUpgradeEndTime(Long upgradeEndTime) {
-			this.upgradeEndTime = upgradeEndTime;
+		public void setId(Long id) {
+			this.id = id;
 		}
 
 		public String getBatchStrategyNo() {
@@ -163,20 +99,12 @@ public class DbfsRecordResponse extends AcsResponse {
 			this.batchStrategyNo = batchStrategyNo;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getAccountId() {
+			return this.accountId;
 		}
 
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Long getUpdateTime() {
-			return this.updateTime;
-		}
-
-		public void setUpdateTime(Long updateTime) {
-			this.updateTime = updateTime;
+		public void setAccountId(String accountId) {
+			this.accountId = accountId;
 		}
 
 		public String getDbfsId() {
@@ -187,20 +115,20 @@ public class DbfsRecordResponse extends AcsResponse {
 			this.dbfsId = dbfsId;
 		}
 
-		public String getIsDel() {
-			return this.isDel;
+		public String getEcsId() {
+			return this.ecsId;
 		}
 
-		public void setIsDel(String isDel) {
-			this.isDel = isDel;
+		public void setEcsId(String ecsId) {
+			this.ecsId = ecsId;
 		}
 
-		public Long getUpgradeStartTime() {
-			return this.upgradeStartTime;
+		public String getTaskId() {
+			return this.taskId;
 		}
 
-		public void setUpgradeStartTime(Long upgradeStartTime) {
-			this.upgradeStartTime = upgradeStartTime;
+		public void setTaskId(String taskId) {
+			this.taskId = taskId;
 		}
 
 		public String getRegionId() {
@@ -211,12 +139,52 @@ public class DbfsRecordResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public Long getId() {
-			return this.id;
+		public String getZoneId() {
+			return this.zoneId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+		public void setZoneId(String zoneId) {
+			this.zoneId = zoneId;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getCurrentVersion() {
+			return this.currentVersion;
+		}
+
+		public void setCurrentVersion(String currentVersion) {
+			this.currentVersion = currentVersion;
+		}
+
+		public String getTargetVersion() {
+			return this.targetVersion;
+		}
+
+		public void setTargetVersion(String targetVersion) {
+			this.targetVersion = targetVersion;
+		}
+
+		public Long getUpgradeStartTime() {
+			return this.upgradeStartTime;
+		}
+
+		public void setUpgradeStartTime(Long upgradeStartTime) {
+			this.upgradeStartTime = upgradeStartTime;
+		}
+
+		public Long getUpgradeEndTime() {
+			return this.upgradeEndTime;
+		}
+
+		public void setUpgradeEndTime(Long upgradeEndTime) {
+			this.upgradeEndTime = upgradeEndTime;
 		}
 
 		public Integer getTaskExecutionCounts() {
@@ -225,6 +193,38 @@ public class DbfsRecordResponse extends AcsResponse {
 
 		public void setTaskExecutionCounts(Integer taskExecutionCounts) {
 			this.taskExecutionCounts = taskExecutionCounts;
+		}
+
+		public String getTaskErrorReason() {
+			return this.taskErrorReason;
+		}
+
+		public void setTaskErrorReason(String taskErrorReason) {
+			this.taskErrorReason = taskErrorReason;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getUpdateTime() {
+			return this.updateTime;
+		}
+
+		public void setUpdateTime(Long updateTime) {
+			this.updateTime = updateTime;
+		}
+
+		public String getIsDel() {
+			return this.isDel;
+		}
+
+		public void setIsDel(String isDel) {
+			this.isDel = isDel;
 		}
 	}
 

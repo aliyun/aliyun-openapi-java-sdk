@@ -31,23 +31,23 @@ public class GenerateUpgradeRecordResponseUnmarshaller {
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GenerateUpgradeRecordResponse.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setTargetVersion(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].TargetVersion"));
-			recordsItem.setTaskId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].TaskId"));
-			recordsItem.setAccountId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].AccountId"));
-			recordsItem.setZoneId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].ZoneId"));
-			recordsItem.setCreateTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].CreateTime"));
-			recordsItem.setCurrentVersion(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].CurrentVersion"));
-			recordsItem.setEcsId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].EcsId"));
-			recordsItem.setTaskErrorReason(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].TaskErrorReason"));
-			recordsItem.setUpgradeEndTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].UpgradeEndTime"));
-			recordsItem.setBatchStrategyNo(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].BatchStrategyNo"));
-			recordsItem.setState(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].State"));
-			recordsItem.setUpdateTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].UpdateTime"));
-			recordsItem.setDbfsId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].DbfsId"));
-			recordsItem.setUpgradeStartTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].UpgradeStartTime"));
-			recordsItem.setRegionId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].RegionId"));
 			recordsItem.setId(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].Id"));
+			recordsItem.setBatchStrategyNo(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].BatchStrategyNo"));
+			recordsItem.setAccountId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].AccountId"));
+			recordsItem.setDbfsId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].DbfsId"));
+			recordsItem.setEcsId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].EcsId"));
+			recordsItem.setTaskId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].TaskId"));
+			recordsItem.setRegionId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].RegionId"));
+			recordsItem.setZoneId(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].ZoneId"));
+			recordsItem.setState(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].State"));
+			recordsItem.setCurrentVersion(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].CurrentVersion"));
+			recordsItem.setTargetVersion(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].TargetVersion"));
+			recordsItem.setUpgradeStartTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].UpgradeStartTime"));
+			recordsItem.setUpgradeEndTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].UpgradeEndTime"));
 			recordsItem.setTaskExecutionCounts(_ctx.integerValue("GenerateUpgradeRecordResponse.Records["+ i +"].TaskExecutionCounts"));
+			recordsItem.setTaskErrorReason(_ctx.stringValue("GenerateUpgradeRecordResponse.Records["+ i +"].TaskErrorReason"));
+			recordsItem.setCreateTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].CreateTime"));
+			recordsItem.setUpdateTime(_ctx.longValue("GenerateUpgradeRecordResponse.Records["+ i +"].UpdateTime"));
 
 			records.add(recordsItem);
 		}
