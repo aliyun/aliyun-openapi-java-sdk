@@ -195,6 +195,10 @@ public class DefaultAcsClient implements IAcsClient {
         AlibabaCloudCredentials credentials;
         if (null == credentialsProvider) {
             credentials = this.defaultCredentialsProvider.getCredentials();
+            if (this.defaultCredentialsProvider == null) {
+                FormatType format = profile.getFormat();
+                return this.doAction(request, retry, retryNumber, request.getSysRegionId(), credentials, null, format);
+            }
         } else {
             credentials = this.credentialsProvider.getCredentials();
         }
