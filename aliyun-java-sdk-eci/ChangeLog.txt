@@ -1,3 +1,6 @@
+2021-05-20 Version: 1.2.5
+1, create support flexVolume
+
 2021-05-17 Version: 1.2.4
 1, fixup RamRoleName request && describeRegions response
 

@@ -722,6 +722,9 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 				putQueryParameter("Volume." + (depth1 + 1) + ".DiskVolume.DiskId", volumes.get(depth1).getDiskVolumeDiskId());
 				putQueryParameter("Volume." + (depth1 + 1) + ".DiskVolume.FsType", volumes.get(depth1).getDiskVolumeFsType());
 				putQueryParameter("Volume." + (depth1 + 1) + ".DiskVolume.DiskSize", volumes.get(depth1).getDiskVolumeDiskSize());
+				putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.FsType", volumes.get(depth1).getFlexVolumeFsType());
+				putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.Options", volumes.get(depth1).getFlexVolumeOptions());
+				putQueryParameter("Volume." + (depth1 + 1) + ".FlexVolume.Driver", volumes.get(depth1).getFlexVolumeDriver());
 			}
 		}
 	}
@@ -1676,6 +1679,12 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		private Integer diskVolumeDiskSize;
 
+		private String flexVolumeFsType;
+
+		private String flexVolumeOptions;
+
+		private String flexVolumeDriver;
+
 		private String type;
 
 		public String getName() {
@@ -1756,6 +1765,30 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 		public void setConfigFileVolumeDefaultModel(Integer configFileVolumeDefaultModel) {
 			this.configFileVolumeDefaultModel = configFileVolumeDefaultModel;
+		}
+
+		public String getFlexVolumeFsType() {
+			return flexVolumeFsType;
+		}
+
+		public void setFlexVolumeFsType(String flexVolumeFsType) {
+			this.flexVolumeFsType = flexVolumeFsType;
+		}
+
+		public String getFlexVolumeOptions() {
+			return flexVolumeOptions;
+		}
+
+		public void setFlexVolumeOptions(String flexVolumeOptions) {
+			this.flexVolumeOptions = flexVolumeOptions;
+		}
+
+		public String getFlexVolumeDriver() {
+			return flexVolumeDriver;
+		}
+
+		public void setFlexVolumeDriver(String flexVolumeDriver) {
+			this.flexVolumeDriver = flexVolumeDriver;
 		}
 
 		public String getType() {
