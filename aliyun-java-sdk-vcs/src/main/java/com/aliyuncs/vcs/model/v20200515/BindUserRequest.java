@@ -35,7 +35,7 @@ public class BindUserRequest extends RpcAcsRequest<BindUserResponse> {
 
 	private String personId;
 	public BindUserRequest() {
-		super("Vcs", "2020-05-15", "BindUser", "vcs");
+		super("Vcs", "2020-05-15", "BindUser");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

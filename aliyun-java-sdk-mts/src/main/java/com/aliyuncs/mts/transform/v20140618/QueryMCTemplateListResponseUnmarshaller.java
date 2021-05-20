@@ -37,19 +37,19 @@ public class QueryMCTemplateListResponseUnmarshaller {
 		List<Template> templateList = new ArrayList<Template>();
 		for (int i = 0; i < _ctx.lengthValue("QueryMCTemplateListResponse.TemplateList.Length"); i++) {
 			Template template = new Template();
-			template.setTemplateId(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].TemplateId"));
-			template.setName(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Name"));
-			template.setState(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].State"));
-			template.setPorn(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Porn"));
-			template.setTerrorism(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Terrorism"));
-			template.setPolitics(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Politics"));
-			template.setAd(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Ad"));
-			template.setQrcode(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Qrcode"));
-			template.setLive(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Live"));
 			template.setLogo(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Logo"));
 			template.setAbuse(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Abuse"));
-			template.setContraband(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Contraband"));
+			template.setState(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].State"));
+			template.setTerrorism(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Terrorism"));
+			template.setPolitics(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Politics"));
+			template.setQrcode(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Qrcode"));
+			template.setLive(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Live"));
 			template.setSpam(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Spam"));
+			template.setContraband(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Contraband"));
+			template.setAd(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Ad"));
+			template.setPorn(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Porn"));
+			template.setName(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].Name"));
+			template.setTemplateId(_ctx.stringValue("QueryMCTemplateListResponse.TemplateList["+ i +"].TemplateId"));
 
 			templateList.add(template);
 		}

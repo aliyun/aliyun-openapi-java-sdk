@@ -26,18 +26,18 @@ public class AddMCTemplateResponseUnmarshaller {
 		addMCTemplateResponse.setRequestId(_ctx.stringValue("AddMCTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setTemplateId(_ctx.stringValue("AddMCTemplateResponse.Template.TemplateId"));
-		template.setName(_ctx.stringValue("AddMCTemplateResponse.Template.Name"));
-		template.setPorn(_ctx.stringValue("AddMCTemplateResponse.Template.Porn"));
-		template.setTerrorism(_ctx.stringValue("AddMCTemplateResponse.Template.Terrorism"));
-		template.setPolitics(_ctx.stringValue("AddMCTemplateResponse.Template.Politics"));
-		template.setAd(_ctx.stringValue("AddMCTemplateResponse.Template.Ad"));
-		template.setQrcode(_ctx.stringValue("AddMCTemplateResponse.Template.Qrcode"));
-		template.setLive(_ctx.stringValue("AddMCTemplateResponse.Template.Live"));
 		template.setLogo(_ctx.stringValue("AddMCTemplateResponse.Template.Logo"));
 		template.setAbuse(_ctx.stringValue("AddMCTemplateResponse.Template.Abuse"));
-		template.setContraband(_ctx.stringValue("AddMCTemplateResponse.Template.Contraband"));
+		template.setTerrorism(_ctx.stringValue("AddMCTemplateResponse.Template.Terrorism"));
+		template.setPolitics(_ctx.stringValue("AddMCTemplateResponse.Template.Politics"));
+		template.setQrcode(_ctx.stringValue("AddMCTemplateResponse.Template.Qrcode"));
 		template.setSpam(_ctx.stringValue("AddMCTemplateResponse.Template.Spam"));
+		template.setLive(_ctx.stringValue("AddMCTemplateResponse.Template.Live"));
+		template.setContraband(_ctx.stringValue("AddMCTemplateResponse.Template.Contraband"));
+		template.setAd(_ctx.stringValue("AddMCTemplateResponse.Template.Ad"));
+		template.setPorn(_ctx.stringValue("AddMCTemplateResponse.Template.Porn"));
+		template.setName(_ctx.stringValue("AddMCTemplateResponse.Template.Name"));
+		template.setTemplateId(_ctx.stringValue("AddMCTemplateResponse.Template.TemplateId"));
 		addMCTemplateResponse.setTemplate(template);
 	 
 	 	return addMCTemplateResponse;

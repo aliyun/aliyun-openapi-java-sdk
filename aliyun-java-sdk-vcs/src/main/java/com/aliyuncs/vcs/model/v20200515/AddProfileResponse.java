@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddProfileResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class AddProfileResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,37 +66,29 @@ public class AddProfileResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String liveAddress;
-
 		private String sceneType;
 
-		private String bizId;
+		private Integer profileId;
 
-		private String faceUrl;
-
-		private String gender;
+		private String phoneNo;
 
 		private String idNumber;
 
 		private String isvSubId;
 
-		private String phoneNo;
+		private String gender;
 
 		private String plateNo;
 
+		private String bizId;
+
 		private Integer catalogId;
 
-		private Integer profileId;
+		private String liveAddress;
+
+		private String faceUrl;
 
 		private String name;
-
-		public String getLiveAddress() {
-			return this.liveAddress;
-		}
-
-		public void setLiveAddress(String liveAddress) {
-			this.liveAddress = liveAddress;
-		}
 
 		public String getSceneType() {
 			return this.sceneType;
@@ -106,28 +98,20 @@ public class AddProfileResponse extends AcsResponse {
 			this.sceneType = sceneType;
 		}
 
-		public String getBizId() {
-			return this.bizId;
+		public Integer getProfileId() {
+			return this.profileId;
 		}
 
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
+		public void setProfileId(Integer profileId) {
+			this.profileId = profileId;
 		}
 
-		public String getFaceUrl() {
-			return this.faceUrl;
+		public String getPhoneNo() {
+			return this.phoneNo;
 		}
 
-		public void setFaceUrl(String faceUrl) {
-			this.faceUrl = faceUrl;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
+		public void setPhoneNo(String phoneNo) {
+			this.phoneNo = phoneNo;
 		}
 
 		public String getIdNumber() {
@@ -146,12 +130,12 @@ public class AddProfileResponse extends AcsResponse {
 			this.isvSubId = isvSubId;
 		}
 
-		public String getPhoneNo() {
-			return this.phoneNo;
+		public String getGender() {
+			return this.gender;
 		}
 
-		public void setPhoneNo(String phoneNo) {
-			this.phoneNo = phoneNo;
+		public void setGender(String gender) {
+			this.gender = gender;
 		}
 
 		public String getPlateNo() {
@@ -162,6 +146,14 @@ public class AddProfileResponse extends AcsResponse {
 			this.plateNo = plateNo;
 		}
 
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
 		public Integer getCatalogId() {
 			return this.catalogId;
 		}
@@ -170,12 +162,20 @@ public class AddProfileResponse extends AcsResponse {
 			this.catalogId = catalogId;
 		}
 
-		public Integer getProfileId() {
-			return this.profileId;
+		public String getLiveAddress() {
+			return this.liveAddress;
 		}
 
-		public void setProfileId(Integer profileId) {
-			this.profileId = profileId;
+		public void setLiveAddress(String liveAddress) {
+			this.liveAddress = liveAddress;
+		}
+
+		public String getFaceUrl() {
+			return this.faceUrl;
+		}
+
+		public void setFaceUrl(String faceUrl) {
+			this.faceUrl = faceUrl;
 		}
 
 		public String getName() {

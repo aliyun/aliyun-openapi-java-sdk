@@ -37,7 +37,7 @@ public class MakeDoubleCallRequest extends RpcAcsRequest<MakeDoubleCallResponse>
 
 	private String memberPhone;
 	public MakeDoubleCallRequest() {
-		super("aiccs", "2019-10-15", "MakeDoubleCall", "aiccs-service");
+		super("aiccs", "2019-10-15", "MakeDoubleCall");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

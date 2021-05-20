@@ -27,21 +27,21 @@ public class DescribeExportImageInfoResponseUnmarshaller {
 	public static DescribeExportImageInfoResponse unmarshall(DescribeExportImageInfoResponse describeExportImageInfoResponse, UnmarshallerContext _ctx) {
 		
 		describeExportImageInfoResponse.setRequestId(_ctx.stringValue("DescribeExportImageInfoResponse.RequestId"));
-		describeExportImageInfoResponse.setTotalCount(_ctx.integerValue("DescribeExportImageInfoResponse.TotalCount"));
-		describeExportImageInfoResponse.setPageSize(_ctx.integerValue("DescribeExportImageInfoResponse.PageSize"));
 		describeExportImageInfoResponse.setPageNumber(_ctx.integerValue("DescribeExportImageInfoResponse.PageNumber"));
+		describeExportImageInfoResponse.setPageSize(_ctx.integerValue("DescribeExportImageInfoResponse.PageSize"));
+		describeExportImageInfoResponse.setTotalCount(_ctx.integerValue("DescribeExportImageInfoResponse.TotalCount"));
 
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeExportImageInfoResponse.Images.Length"); i++) {
 			Image image = new Image();
-			image.setImageOwnerAlias(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageOwnerAlias"));
-			image.setImageName(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageName"));
-			image.setPlatform(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].Platform"));
 			image.setArchitecture(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].Architecture"));
-			image.setExportedImageURL(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ExportedImageURL"));
-			image.setImageId(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageId"));
 			image.setCreationTime(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].CreationTime"));
+			image.setExportedImageURL(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ExportedImageURL"));
 			image.setImageExportStatus(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageExportStatus"));
+			image.setImageId(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageId"));
+			image.setImageName(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageName"));
+			image.setImageOwnerAlias(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].ImageOwnerAlias"));
+			image.setPlatform(_ctx.stringValue("DescribeExportImageInfoResponse.Images["+ i +"].Platform"));
 
 			images.add(image);
 		}

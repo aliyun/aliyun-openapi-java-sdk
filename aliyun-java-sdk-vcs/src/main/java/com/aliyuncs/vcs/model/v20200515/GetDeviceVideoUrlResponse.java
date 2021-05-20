@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDeviceVideoUrlResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String outProtocol;
+
+	private String code;
 
 	private String url;
 
-	private String outProtocol;
-
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -50,12 +50,20 @@ public class GetDeviceVideoUrlResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getOutProtocol() {
+		return this.outProtocol;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setOutProtocol(String outProtocol) {
+		this.outProtocol = outProtocol;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getUrl() {
@@ -64,14 +72,6 @@ public class GetDeviceVideoUrlResponse extends AcsResponse {
 
 	public void setUrl(String url) {
 		this.url = url;
-	}
-
-	public String getOutProtocol() {
-		return this.outProtocol;
-	}
-
-	public void setOutProtocol(String outProtocol) {
-		this.outProtocol = outProtocol;
 	}
 
 	@Override

@@ -23,10 +23,10 @@ public class DeleteVmResponseUnmarshaller {
 	public static DeleteVmResponse unmarshall(DeleteVmResponse deleteVmResponse, UnmarshallerContext _ctx) {
 		
 		deleteVmResponse.setRequestId(_ctx.stringValue("DeleteVmResponse.RequestId"));
+		deleteVmResponse.setCode(_ctx.integerValue("DeleteVmResponse.Code"));
 		deleteVmResponse.setMsg(_ctx.stringValue("DeleteVmResponse.Msg"));
 		deleteVmResponse.setDesc(_ctx.stringValue("DeleteVmResponse.Desc"));
 		deleteVmResponse.setData(_ctx.stringValue("DeleteVmResponse.Data"));
-		deleteVmResponse.setCode(_ctx.integerValue("DeleteVmResponse.Code"));
 	 
 	 	return deleteVmResponse;
 	}

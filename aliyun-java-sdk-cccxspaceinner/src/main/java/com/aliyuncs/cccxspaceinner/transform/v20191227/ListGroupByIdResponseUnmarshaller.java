@@ -27,22 +27,22 @@ public class ListGroupByIdResponseUnmarshaller {
 	public static ListGroupByIdResponse unmarshall(ListGroupByIdResponse listGroupByIdResponse, UnmarshallerContext _ctx) {
 		
 		listGroupByIdResponse.setRequestId(_ctx.stringValue("ListGroupByIdResponse.RequestId"));
-		listGroupByIdResponse.setSuccess(_ctx.booleanValue("ListGroupByIdResponse.Success"));
-		listGroupByIdResponse.setCode(_ctx.stringValue("ListGroupByIdResponse.Code"));
 		listGroupByIdResponse.setMessage(_ctx.stringValue("ListGroupByIdResponse.Message"));
+		listGroupByIdResponse.setCode(_ctx.stringValue("ListGroupByIdResponse.Code"));
+		listGroupByIdResponse.setSuccess(_ctx.booleanValue("ListGroupByIdResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListGroupByIdResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setBuId(_ctx.longValue("ListGroupByIdResponse.Data["+ i +"].BuId"));
-			dataItem.setGroupId(_ctx.longValue("ListGroupByIdResponse.Data["+ i +"].GroupId"));
-			dataItem.setGroupName(_ctx.stringValue("ListGroupByIdResponse.Data["+ i +"].GroupName"));
 			dataItem.setStatus(_ctx.integerValue("ListGroupByIdResponse.Data["+ i +"].Status"));
+			dataItem.setBuId(_ctx.longValue("ListGroupByIdResponse.Data["+ i +"].BuId"));
 			dataItem.setShowName(_ctx.stringValue("ListGroupByIdResponse.Data["+ i +"].ShowName"));
+			dataItem.setSupportCase(_ctx.booleanValue("ListGroupByIdResponse.Data["+ i +"].SupportCase"));
 			dataItem.setDescription(_ctx.stringValue("ListGroupByIdResponse.Data["+ i +"].Description"));
+			dataItem.setGroupName(_ctx.stringValue("ListGroupByIdResponse.Data["+ i +"].GroupName"));
+			dataItem.setGroupId(_ctx.longValue("ListGroupByIdResponse.Data["+ i +"].GroupId"));
 			dataItem.setSupportIm(_ctx.booleanValue("ListGroupByIdResponse.Data["+ i +"].SupportIm"));
 			dataItem.setSupportPhone(_ctx.booleanValue("ListGroupByIdResponse.Data["+ i +"].SupportPhone"));
-			dataItem.setSupportCase(_ctx.booleanValue("ListGroupByIdResponse.Data["+ i +"].SupportCase"));
 
 			data.add(dataItem);
 		}

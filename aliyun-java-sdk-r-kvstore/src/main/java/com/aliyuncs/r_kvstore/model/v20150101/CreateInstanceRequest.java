@@ -15,6 +15,7 @@
 package com.aliyuncs.r_kvstore.model.v20150101;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.r_kvstore.Endpoint;
 
@@ -26,6 +27,8 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	   
 
 	private Long resourceOwnerId;
+
+	private String secondaryZoneId;
 
 	private String couponNo;
 
@@ -39,11 +42,15 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String securityToken;
 
+	private List<Tag> tags;
+
 	private String businessInfo;
 
 	private String autoRenewPeriod;
 
 	private String period;
+
+	private Boolean dryRun;
 
 	private String backupId;
 
@@ -57,9 +64,9 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String autoRenew;
 
-	private String zoneId;
+	private String port;
 
-	private String nodeType;
+	private String zoneId;
 
 	private String autoUseCoupon;
 
@@ -88,8 +95,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 	private String vpcId;
 
 	private String chargeType;
-
-	private String config;
 	public CreateInstanceRequest() {
 		super("R-kvstore", "2015-01-01", "CreateInstance", "redisa");
 		setMethod(MethodType.POST);
@@ -107,6 +112,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getSecondaryZoneId() {
+		return this.secondaryZoneId;
+	}
+
+	public void setSecondaryZoneId(String secondaryZoneId) {
+		this.secondaryZoneId = secondaryZoneId;
+		if(secondaryZoneId != null){
+			putQueryParameter("SecondaryZoneId", secondaryZoneId);
 		}
 	}
 
@@ -176,6 +192,20 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public List<Tag> getTags() {
+		return this.tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;	
+		if (tags != null) {
+			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
+				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
+			}
+		}	
+	}
+
 	public String getBusinessInfo() {
 		return this.businessInfo;
 	}
@@ -206,6 +236,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.period = period;
 		if(period != null){
 			putQueryParameter("Period", period);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -275,6 +316,17 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
+	public String getPort() {
+		return this.port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+		if(port != null){
+			putQueryParameter("Port", port);
+		}
+	}
+
 	public String getZoneId() {
 		return this.zoneId;
 	}
@@ -283,17 +335,6 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		this.zoneId = zoneId;
 		if(zoneId != null){
 			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
-	public String getNodeType() {
-		return this.nodeType;
-	}
-
-	public void setNodeType(String nodeType) {
-		this.nodeType = nodeType;
-		if(nodeType != null){
-			putQueryParameter("NodeType", nodeType);
 		}
 	}
 
@@ -451,14 +492,26 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 		}
 	}
 
-	public String getConfig() {
-		return this.config;
-	}
+	public static class Tag {
 
-	public void setConfig(String config) {
-		this.config = config;
-		if(config != null){
-			putQueryParameter("Config", config);
+		private String value;
+
+		private String key;
+
+		public String getValue() {
+			return this.value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+
+		public String getKey() {
+			return this.key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
 		}
 	}
 

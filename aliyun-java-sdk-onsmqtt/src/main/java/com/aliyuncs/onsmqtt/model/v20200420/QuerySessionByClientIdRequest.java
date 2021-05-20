@@ -29,7 +29,7 @@ public class QuerySessionByClientIdRequest extends RpcAcsRequest<QuerySessionByC
 
 	private String instanceId;
 	public QuerySessionByClientIdRequest() {
-		super("OnsMqtt", "2020-04-20", "QuerySessionByClientId", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "QuerySessionByClientId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

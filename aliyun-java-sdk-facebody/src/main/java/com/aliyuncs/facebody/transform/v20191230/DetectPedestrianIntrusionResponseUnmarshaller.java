@@ -29,20 +29,20 @@ public class DetectPedestrianIntrusionResponseUnmarshaller {
 	public static DetectPedestrianIntrusionResponse unmarshall(DetectPedestrianIntrusionResponse detectPedestrianIntrusionResponse, UnmarshallerContext _ctx) {
 		
 		detectPedestrianIntrusionResponse.setRequestId(_ctx.stringValue("DetectPedestrianIntrusionResponse.RequestId"));
-		detectPedestrianIntrusionResponse.setMessage(_ctx.stringValue("DetectPedestrianIntrusionResponse.Message"));
 		detectPedestrianIntrusionResponse.setCode(_ctx.stringValue("DetectPedestrianIntrusionResponse.Code"));
+		detectPedestrianIntrusionResponse.setMessage(_ctx.stringValue("DetectPedestrianIntrusionResponse.Message"));
 
 		Data data = new Data();
-		data.setImageHeight(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.ImageHeight"));
 		data.setImageWidth(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.ImageWidth"));
+		data.setImageHeight(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.ImageHeight"));
 
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectPedestrianIntrusionResponse.Data.Elements.Length"); i++) {
 			ElementsItem elementsItem = new ElementsItem();
-			elementsItem.setBoxId(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].BoxId"));
-			elementsItem.setType(_ctx.stringValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].Type"));
 			elementsItem.setScore(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].Score"));
+			elementsItem.setType(_ctx.stringValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].Type"));
 			elementsItem.setIsIntrude(_ctx.booleanValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].IsIntrude"));
+			elementsItem.setBoxId(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].BoxId"));
 
 			Box box = new Box();
 			box.setLeft(_ctx.longValue("DetectPedestrianIntrusionResponse.Data.Elements["+ i +"].Box.Left"));

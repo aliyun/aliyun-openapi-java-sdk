@@ -28,16 +28,16 @@ public class DescribePolicyBasedRoutingsResponseUnmarshaller {
 		
 		describePolicyBasedRoutingsResponse.setRequestId(_ctx.stringValue("DescribePolicyBasedRoutingsResponse.RequestId"));
 		describePolicyBasedRoutingsResponse.setTotalCount(_ctx.integerValue("DescribePolicyBasedRoutingsResponse.TotalCount"));
-		describePolicyBasedRoutingsResponse.setPageNumber(_ctx.integerValue("DescribePolicyBasedRoutingsResponse.PageNumber"));
 		describePolicyBasedRoutingsResponse.setPageSize(_ctx.integerValue("DescribePolicyBasedRoutingsResponse.PageSize"));
+		describePolicyBasedRoutingsResponse.setPageNumber(_ctx.integerValue("DescribePolicyBasedRoutingsResponse.PageNumber"));
 
 		List<PolicyBasedRouting> policyBasedRoutings = new ArrayList<PolicyBasedRouting>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePolicyBasedRoutingsResponse.PolicyBasedRoutings.Length"); i++) {
 			PolicyBasedRouting policyBasedRouting = new PolicyBasedRouting();
 			policyBasedRouting.setPbrInstanceId(_ctx.stringValue("DescribePolicyBasedRoutingsResponse.PolicyBasedRoutings["+ i +"].PbrInstanceId"));
+			policyBasedRouting.setDescription(_ctx.stringValue("DescribePolicyBasedRoutingsResponse.PolicyBasedRoutings["+ i +"].Description"));
 			policyBasedRouting.setPriority(_ctx.integerValue("DescribePolicyBasedRoutingsResponse.PolicyBasedRoutings["+ i +"].Priority"));
 			policyBasedRouting.setName(_ctx.stringValue("DescribePolicyBasedRoutingsResponse.PolicyBasedRoutings["+ i +"].Name"));
-			policyBasedRouting.setDescription(_ctx.stringValue("DescribePolicyBasedRoutingsResponse.PolicyBasedRoutings["+ i +"].Description"));
 
 			policyBasedRoutings.add(policyBasedRouting);
 		}

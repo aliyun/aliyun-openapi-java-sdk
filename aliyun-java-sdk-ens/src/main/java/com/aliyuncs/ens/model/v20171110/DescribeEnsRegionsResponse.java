@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEnsRegionsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
+	private String requestId;
+
 	private List<EnsRegionsItem> ensRegions;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,6 +37,14 @@ public class DescribeEnsRegionsResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EnsRegionsItem> getEnsRegions() {
@@ -63,9 +63,9 @@ public class DescribeEnsRegionsResponse extends AcsResponse {
 
 		private String ensRegionId;
 
-		private String province;
-
 		private String name;
+
+		private String province;
 
 		public String getArea() {
 			return this.area;
@@ -91,20 +91,20 @@ public class DescribeEnsRegionsResponse extends AcsResponse {
 			this.ensRegionId = ensRegionId;
 		}
 
-		public String getProvince() {
-			return this.province;
-		}
-
-		public void setProvince(String province) {
-			this.province = province;
-		}
-
 		public String getName() {
 			return this.name;
 		}
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getProvince() {
+			return this.province;
+		}
+
+		public void setProvince(String province) {
+			this.province = province;
 		}
 	}
 

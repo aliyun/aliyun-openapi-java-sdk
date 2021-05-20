@@ -37,7 +37,7 @@ public class ListMaskDetectionResultsRequest extends RpcAcsRequest<ListMaskDetec
 
 	private Integer pageSize;
 	public ListMaskDetectionResultsRequest() {
-		super("reid_cloud", "2020-10-29", "ListMaskDetectionResults", "1.1.9");
+		super("reid_cloud", "2020-10-29", "ListMaskDetectionResults", "1.2.1");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

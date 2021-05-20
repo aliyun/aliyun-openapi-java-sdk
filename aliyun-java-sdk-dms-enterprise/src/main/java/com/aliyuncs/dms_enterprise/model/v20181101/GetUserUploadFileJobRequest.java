@@ -29,7 +29,7 @@ public class GetUserUploadFileJobRequest extends RpcAcsRequest<GetUserUploadFile
 
 	private Long tid;
 	public GetUserUploadFileJobRequest() {
-		super("dms-enterprise", "2018-11-01", "GetUserUploadFileJob");
+		super("dms-enterprise", "2018-11-01", "GetUserUploadFileJob", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

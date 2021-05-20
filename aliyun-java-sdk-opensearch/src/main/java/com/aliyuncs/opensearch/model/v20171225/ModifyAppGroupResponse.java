@@ -92,6 +92,8 @@ public class ModifyAppGroupResponse extends AcsResponse {
 
 		private String lockMode;
 
+		private String domain;
+
 		private Quota quota;
 
 		public String getId() {
@@ -276,6 +278,14 @@ public class ModifyAppGroupResponse extends AcsResponse {
 
 		public void setLockMode(String lockMode) {
 			this.lockMode = lockMode;
+		}
+
+		public String getDomain() {
+			return this.domain;
+		}
+
+		public void setDomain(String domain) {
+			this.domain = domain;
 		}
 
 		public Quota getQuota() {

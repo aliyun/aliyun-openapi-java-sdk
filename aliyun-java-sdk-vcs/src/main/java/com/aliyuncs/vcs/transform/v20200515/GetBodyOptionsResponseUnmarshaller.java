@@ -28,8 +28,8 @@ public class GetBodyOptionsResponseUnmarshaller {
 	public static GetBodyOptionsResponse unmarshall(GetBodyOptionsResponse getBodyOptionsResponse, UnmarshallerContext _ctx) {
 		
 		getBodyOptionsResponse.setRequestId(_ctx.stringValue("GetBodyOptionsResponse.RequestId"));
-		getBodyOptionsResponse.setCode(_ctx.stringValue("GetBodyOptionsResponse.Code"));
 		getBodyOptionsResponse.setMessage(_ctx.stringValue("GetBodyOptionsResponse.Message"));
+		getBodyOptionsResponse.setCode(_ctx.stringValue("GetBodyOptionsResponse.Code"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetBodyOptionsResponse.Data.Length"); i++) {

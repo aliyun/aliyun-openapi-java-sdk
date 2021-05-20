@@ -26,7 +26,7 @@ public class DeleteSecurityGroupRequest extends RpcAcsRequest<DeleteSecurityGrou
 
 	private String securityGroupId;
 	public DeleteSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "DeleteSecurityGroup");
+		super("Ens", "2017-11-10", "DeleteSecurityGroup", "ens");
 		setMethod(MethodType.POST);
 	}
 

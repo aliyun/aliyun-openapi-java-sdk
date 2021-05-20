@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UploadFileResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class UploadFileResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -79,17 +79,9 @@ public class UploadFileResponse extends AcsResponse {
 
 		public static class OssPath {
 
-			private String ossPath;
-
 			private String sourceId;
 
-			public String getOssPath() {
-				return this.ossPath;
-			}
-
-			public void setOssPath(String ossPath) {
-				this.ossPath = ossPath;
-			}
+			private String ossPath;
 
 			public String getSourceId() {
 				return this.sourceId;
@@ -97,6 +89,14 @@ public class UploadFileResponse extends AcsResponse {
 
 			public void setSourceId(String sourceId) {
 				this.sourceId = sourceId;
+			}
+
+			public String getOssPath() {
+				return this.ossPath;
+			}
+
+			public void setOssPath(String ossPath) {
+				this.ossPath = ossPath;
 			}
 		}
 	}

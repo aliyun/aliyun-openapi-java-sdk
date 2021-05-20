@@ -16,6 +16,7 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -28,12 +29,16 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 
 	private String type;
 
-	private String operateType;
-
 	private String info;
+
+	private String operateType;
 	public ModifyOperateVulRequest() {
 		super("Sas", "2018-12-03", "ModifyOperateVul", "sas");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getReason() {
@@ -58,17 +63,6 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		}
 	}
 
-	public String getOperateType() {
-		return this.operateType;
-	}
-
-	public void setOperateType(String operateType) {
-		this.operateType = operateType;
-		if(operateType != null){
-			putQueryParameter("OperateType", operateType);
-		}
-	}
-
 	public String getInfo() {
 		return this.info;
 	}
@@ -77,6 +71,17 @@ public class ModifyOperateVulRequest extends RpcAcsRequest<ModifyOperateVulRespo
 		this.info = info;
 		if(info != null){
 			putQueryParameter("Info", info);
+		}
+	}
+
+	public String getOperateType() {
+		return this.operateType;
+	}
+
+	public void setOperateType(String operateType) {
+		this.operateType = operateType;
+		if(operateType != null){
+			putQueryParameter("OperateType", operateType);
 		}
 	}
 

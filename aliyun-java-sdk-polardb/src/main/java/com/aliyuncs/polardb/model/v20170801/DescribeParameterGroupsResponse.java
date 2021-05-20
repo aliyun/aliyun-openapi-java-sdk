@@ -51,8 +51,6 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 		private String parameterGroupId;
 
-		private String digitalId;
-
 		private String forceRestart;
 
 		private String parameterGroupName;
@@ -81,14 +79,6 @@ public class DescribeParameterGroupsResponse extends AcsResponse {
 
 		public void setParameterGroupId(String parameterGroupId) {
 			this.parameterGroupId = parameterGroupId;
-		}
-
-		public String getDigitalId() {
-			return this.digitalId;
-		}
-
-		public void setDigitalId(String digitalId) {
-			this.digitalId = digitalId;
 		}
 
 		public String getForceRestart() {

@@ -1,3 +1,18 @@
+2021-05-17 Version: 1.0.28
+- Export new API for predictive dialer.
+
+2021-04-28 Version: 2.0.10
+- Export new API.
+
+2021-04-20 Version: 1.0.27
+- Export predictive dialer API.
+
+2021-04-19 Version: 2.0.9
+- Export StartBack2BackCall API.
+
+2021-04-12 Version: 2.0.8
+- Export config api.
+
 2021-03-25 Version: 2.0.7
 - Change indicator date type of ListHistoriticalAgentReport.
 

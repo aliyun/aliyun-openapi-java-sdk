@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class ListTraceAppsRequest extends RpcAcsRequest<ListTraceAppsResponse> {
 	   
 	public ListTraceAppsRequest() {
-		super("ARMS", "2019-08-08", "ListTraceApps");
+		super("ARMS", "2019-08-08", "ListTraceApps", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

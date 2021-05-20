@@ -23,9 +23,9 @@ public class StopMonitorResponseUnmarshaller {
 	public static StopMonitorResponse unmarshall(StopMonitorResponse stopMonitorResponse, UnmarshallerContext _ctx) {
 		
 		stopMonitorResponse.setRequestId(_ctx.stringValue("StopMonitorResponse.RequestId"));
-		stopMonitorResponse.setCode(_ctx.stringValue("StopMonitorResponse.Code"));
-		stopMonitorResponse.setData(_ctx.stringValue("StopMonitorResponse.Data"));
 		stopMonitorResponse.setMessage(_ctx.stringValue("StopMonitorResponse.Message"));
+		stopMonitorResponse.setData(_ctx.stringValue("StopMonitorResponse.Data"));
+		stopMonitorResponse.setCode(_ctx.stringValue("StopMonitorResponse.Code"));
 	 
 	 	return stopMonitorResponse;
 	}

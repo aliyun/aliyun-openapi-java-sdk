@@ -99,6 +99,8 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		private String deployMode;
 
+		private Boolean isComputeEss;
+
 		public String getId() {
 			return this.id;
 		}
@@ -185,6 +187,14 @@ public class ListClustersMetaResponse extends AcsResponse {
 
 		public void setDeployMode(String deployMode) {
 			this.deployMode = deployMode;
+		}
+
+		public Boolean getIsComputeEss() {
+			return this.isComputeEss;
+		}
+
+		public void setIsComputeEss(Boolean isComputeEss) {
+			this.isComputeEss = isComputeEss;
 		}
 	}
 

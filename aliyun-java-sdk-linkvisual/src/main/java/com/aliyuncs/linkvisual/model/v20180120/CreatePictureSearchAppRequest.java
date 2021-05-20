@@ -25,6 +25,8 @@ import com.aliyuncs.linkvisual.Endpoint;
 public class CreatePictureSearchAppRequest extends RpcAcsRequest<CreatePictureSearchAppResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private String name;
 
 	private String desc;
@@ -35,6 +37,17 @@ public class CreatePictureSearchAppRequest extends RpcAcsRequest<CreatePictureSe
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public String getName() {

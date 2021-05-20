@@ -27,16 +27,16 @@ public class DescribeKeyPairsResponseUnmarshaller {
 	public static DescribeKeyPairsResponse unmarshall(DescribeKeyPairsResponse describeKeyPairsResponse, UnmarshallerContext _ctx) {
 		
 		describeKeyPairsResponse.setRequestId(_ctx.stringValue("DescribeKeyPairsResponse.RequestId"));
-		describeKeyPairsResponse.setTotalCount(_ctx.integerValue("DescribeKeyPairsResponse.TotalCount"));
-		describeKeyPairsResponse.setPageSize(_ctx.integerValue("DescribeKeyPairsResponse.PageSize"));
 		describeKeyPairsResponse.setPageNumber(_ctx.integerValue("DescribeKeyPairsResponse.PageNumber"));
+		describeKeyPairsResponse.setPageSize(_ctx.integerValue("DescribeKeyPairsResponse.PageSize"));
+		describeKeyPairsResponse.setTotalCount(_ctx.integerValue("DescribeKeyPairsResponse.TotalCount"));
 
 		List<KeyPair> keyPairs = new ArrayList<KeyPair>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeKeyPairsResponse.KeyPairs.Length"); i++) {
 			KeyPair keyPair = new KeyPair();
+			keyPair.setCreationTime(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 			keyPair.setKeyPairFingerPrint(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairFingerPrint"));
 			keyPair.setKeyPairName(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].KeyPairName"));
-			keyPair.setCreationTime(_ctx.stringValue("DescribeKeyPairsResponse.KeyPairs["+ i +"].CreationTime"));
 
 			keyPairs.add(keyPair);
 		}

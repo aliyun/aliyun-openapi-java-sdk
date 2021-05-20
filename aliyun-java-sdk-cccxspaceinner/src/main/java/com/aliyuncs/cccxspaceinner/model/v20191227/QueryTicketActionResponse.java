@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTicketActionResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class QueryTicketActionResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class QueryTicketActionResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -77,20 +77,20 @@ public class QueryTicketActionResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
+		private Integer totalResults;
 
 		private Integer currentPage;
 
-		private Integer totalResults;
+		private Integer pageSize;
 
 		private List<ListItem> list;
 
-		public Integer getPageSize() {
-			return this.pageSize;
+		public Integer getTotalResults() {
+			return this.totalResults;
 		}
 
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
+		public void setTotalResults(Integer totalResults) {
+			this.totalResults = totalResults;
 		}
 
 		public Integer getCurrentPage() {
@@ -101,12 +101,12 @@ public class QueryTicketActionResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
-		public Integer getTotalResults() {
-			return this.totalResults;
+		public Integer getPageSize() {
+			return this.pageSize;
 		}
 
-		public void setTotalResults(Integer totalResults) {
-			this.totalResults = totalResults;
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public List<ListItem> getList() {
@@ -119,58 +119,50 @@ public class QueryTicketActionResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private Long operator;
+			private Long bizTenantId;
 
-			private Integer operatorRole;
-
-			private Integer hideType;
+			private Integer actionType;
 
 			private String memo;
 
 			private Long bizId;
 
-			private String bizIdStr;
-
-			private Integer bizType;
-
-			private Long bizTenantId;
-
-			private Long acceptor;
-
 			private Integer acceptorRole;
 
-			private Integer actionType;
-
-			private Integer actionCode;
-
-			private Integer buId;
-
-			private Long taskId;
+			private Integer hideType;
 
 			private Long buyerId;
 
-			public Long getOperator() {
-				return this.operator;
+			private Integer bizType;
+
+			private Integer buId;
+
+			private Integer actionCode;
+
+			private String bizIdStr;
+
+			private Integer operatorRole;
+
+			private Long acceptor;
+
+			private Long operator;
+
+			private Long taskId;
+
+			public Long getBizTenantId() {
+				return this.bizTenantId;
 			}
 
-			public void setOperator(Long operator) {
-				this.operator = operator;
+			public void setBizTenantId(Long bizTenantId) {
+				this.bizTenantId = bizTenantId;
 			}
 
-			public Integer getOperatorRole() {
-				return this.operatorRole;
+			public Integer getActionType() {
+				return this.actionType;
 			}
 
-			public void setOperatorRole(Integer operatorRole) {
-				this.operatorRole = operatorRole;
-			}
-
-			public Integer getHideType() {
-				return this.hideType;
-			}
-
-			public void setHideType(Integer hideType) {
-				this.hideType = hideType;
+			public void setActionType(Integer actionType) {
+				this.actionType = actionType;
 			}
 
 			public String getMemo() {
@@ -189,12 +181,28 @@ public class QueryTicketActionResponse extends AcsResponse {
 				this.bizId = bizId;
 			}
 
-			public String getBizIdStr() {
-				return this.bizIdStr;
+			public Integer getAcceptorRole() {
+				return this.acceptorRole;
 			}
 
-			public void setBizIdStr(String bizIdStr) {
-				this.bizIdStr = bizIdStr;
+			public void setAcceptorRole(Integer acceptorRole) {
+				this.acceptorRole = acceptorRole;
+			}
+
+			public Integer getHideType() {
+				return this.hideType;
+			}
+
+			public void setHideType(Integer hideType) {
+				this.hideType = hideType;
+			}
+
+			public Long getBuyerId() {
+				return this.buyerId;
+			}
+
+			public void setBuyerId(Long buyerId) {
+				this.buyerId = buyerId;
 			}
 
 			public Integer getBizType() {
@@ -205,36 +213,12 @@ public class QueryTicketActionResponse extends AcsResponse {
 				this.bizType = bizType;
 			}
 
-			public Long getBizTenantId() {
-				return this.bizTenantId;
+			public Integer getBuId() {
+				return this.buId;
 			}
 
-			public void setBizTenantId(Long bizTenantId) {
-				this.bizTenantId = bizTenantId;
-			}
-
-			public Long getAcceptor() {
-				return this.acceptor;
-			}
-
-			public void setAcceptor(Long acceptor) {
-				this.acceptor = acceptor;
-			}
-
-			public Integer getAcceptorRole() {
-				return this.acceptorRole;
-			}
-
-			public void setAcceptorRole(Integer acceptorRole) {
-				this.acceptorRole = acceptorRole;
-			}
-
-			public Integer getActionType() {
-				return this.actionType;
-			}
-
-			public void setActionType(Integer actionType) {
-				this.actionType = actionType;
+			public void setBuId(Integer buId) {
+				this.buId = buId;
 			}
 
 			public Integer getActionCode() {
@@ -245,12 +229,36 @@ public class QueryTicketActionResponse extends AcsResponse {
 				this.actionCode = actionCode;
 			}
 
-			public Integer getBuId() {
-				return this.buId;
+			public String getBizIdStr() {
+				return this.bizIdStr;
 			}
 
-			public void setBuId(Integer buId) {
-				this.buId = buId;
+			public void setBizIdStr(String bizIdStr) {
+				this.bizIdStr = bizIdStr;
+			}
+
+			public Integer getOperatorRole() {
+				return this.operatorRole;
+			}
+
+			public void setOperatorRole(Integer operatorRole) {
+				this.operatorRole = operatorRole;
+			}
+
+			public Long getAcceptor() {
+				return this.acceptor;
+			}
+
+			public void setAcceptor(Long acceptor) {
+				this.acceptor = acceptor;
+			}
+
+			public Long getOperator() {
+				return this.operator;
+			}
+
+			public void setOperator(Long operator) {
+				this.operator = operator;
 			}
 
 			public Long getTaskId() {
@@ -259,14 +267,6 @@ public class QueryTicketActionResponse extends AcsResponse {
 
 			public void setTaskId(Long taskId) {
 				this.taskId = taskId;
-			}
-
-			public Long getBuyerId() {
-				return this.buyerId;
-			}
-
-			public void setBuyerId(Long buyerId) {
-				this.buyerId = buyerId;
 			}
 		}
 	}

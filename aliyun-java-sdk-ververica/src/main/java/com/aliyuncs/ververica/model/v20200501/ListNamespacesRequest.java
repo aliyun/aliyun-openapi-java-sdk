@@ -25,7 +25,7 @@ import com.aliyuncs.ververica.Endpoint;
 public class ListNamespacesRequest extends RoaAcsRequest<ListNamespacesResponse> {
 	   
 	public ListNamespacesRequest() {
-		super("ververica", "2020-05-01", "ListNamespaces", "ververica");
+		super("ververica", "2020-05-01", "ListNamespaces");
 		setUriPattern("/pop/namespaces/v1/namespaces");
 		setMethod(MethodType.GET);
 		try {

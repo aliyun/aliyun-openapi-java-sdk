@@ -22,17 +22,17 @@ public class LogicalDeleteResourceResponseUnmarshaller {
 
 	public static LogicalDeleteResourceResponse unmarshall(LogicalDeleteResourceResponse logicalDeleteResourceResponse, UnmarshallerContext _ctx) {
 		
-		logicalDeleteResourceResponse.setInterrupt(_ctx.booleanValue("LogicalDeleteResourceResponse.Interrupt"));
-		logicalDeleteResourceResponse.setInvoker(_ctx.stringValue("LogicalDeleteResourceResponse.Invoker"));
-		logicalDeleteResourceResponse.setPk(_ctx.stringValue("LogicalDeleteResourceResponse.Pk"));
-		logicalDeleteResourceResponse.setBid(_ctx.stringValue("LogicalDeleteResourceResponse.Bid"));
+		logicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("LogicalDeleteResourceResponse.GmtWakeup"));
 		logicalDeleteResourceResponse.setHid(_ctx.longValue("LogicalDeleteResourceResponse.Hid"));
-		logicalDeleteResourceResponse.setCountry(_ctx.stringValue("LogicalDeleteResourceResponse.Country"));
+		logicalDeleteResourceResponse.setInvoker(_ctx.stringValue("LogicalDeleteResourceResponse.Invoker"));
+		logicalDeleteResourceResponse.setMessage(_ctx.stringValue("LogicalDeleteResourceResponse.Message"));
 		logicalDeleteResourceResponse.setTaskIdentifier(_ctx.stringValue("LogicalDeleteResourceResponse.TaskIdentifier"));
 		logicalDeleteResourceResponse.setTaskExtraData(_ctx.stringValue("LogicalDeleteResourceResponse.TaskExtraData"));
-		logicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("LogicalDeleteResourceResponse.GmtWakeup"));
+		logicalDeleteResourceResponse.setCountry(_ctx.stringValue("LogicalDeleteResourceResponse.Country"));
+		logicalDeleteResourceResponse.setPk(_ctx.stringValue("LogicalDeleteResourceResponse.Pk"));
+		logicalDeleteResourceResponse.setBid(_ctx.stringValue("LogicalDeleteResourceResponse.Bid"));
 		logicalDeleteResourceResponse.setSuccess(_ctx.booleanValue("LogicalDeleteResourceResponse.Success"));
-		logicalDeleteResourceResponse.setMessage(_ctx.stringValue("LogicalDeleteResourceResponse.Message"));
+		logicalDeleteResourceResponse.setInterrupt(_ctx.booleanValue("LogicalDeleteResourceResponse.Interrupt"));
 	 
 	 	return logicalDeleteResourceResponse;
 	}

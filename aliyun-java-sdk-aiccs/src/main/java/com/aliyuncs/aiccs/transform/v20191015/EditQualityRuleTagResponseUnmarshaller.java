@@ -23,10 +23,10 @@ public class EditQualityRuleTagResponseUnmarshaller {
 	public static EditQualityRuleTagResponse unmarshall(EditQualityRuleTagResponse editQualityRuleTagResponse, UnmarshallerContext _ctx) {
 		
 		editQualityRuleTagResponse.setRequestId(_ctx.stringValue("EditQualityRuleTagResponse.RequestId"));
-		editQualityRuleTagResponse.setCode(_ctx.stringValue("EditQualityRuleTagResponse.Code"));
 		editQualityRuleTagResponse.setMessage(_ctx.stringValue("EditQualityRuleTagResponse.Message"));
-		editQualityRuleTagResponse.setSuccess(_ctx.booleanValue("EditQualityRuleTagResponse.Success"));
 		editQualityRuleTagResponse.setData(_ctx.stringValue("EditQualityRuleTagResponse.Data"));
+		editQualityRuleTagResponse.setCode(_ctx.stringValue("EditQualityRuleTagResponse.Code"));
+		editQualityRuleTagResponse.setSuccess(_ctx.booleanValue("EditQualityRuleTagResponse.Success"));
 	 
 	 	return editQualityRuleTagResponse;
 	}

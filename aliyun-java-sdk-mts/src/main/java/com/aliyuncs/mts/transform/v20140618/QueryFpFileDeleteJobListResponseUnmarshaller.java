@@ -37,16 +37,16 @@ public class QueryFpFileDeleteJobListResponseUnmarshaller {
 		List<FpFileDeleteJob> fpFileDeleteJobList = new ArrayList<FpFileDeleteJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList.Length"); i++) {
 			FpFileDeleteJob fpFileDeleteJob = new FpFileDeleteJob();
-			fpFileDeleteJob.setId(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].Id"));
-			fpFileDeleteJob.setUserData(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].UserData"));
-			fpFileDeleteJob.setPipelineId(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].PipelineId"));
+			fpFileDeleteJob.setCreationTime(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].CreationTime"));
 			fpFileDeleteJob.setStatus(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].Status"));
+			fpFileDeleteJob.setFinishTime(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].FinishTime"));
+			fpFileDeleteJob.setUserData(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].UserData"));
 			fpFileDeleteJob.setCode(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].Code"));
 			fpFileDeleteJob.setMessage(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].Message"));
-			fpFileDeleteJob.setFileIds(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].FileIds"));
+			fpFileDeleteJob.setPipelineId(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].PipelineId"));
 			fpFileDeleteJob.setFpDBId(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].FpDBId"));
-			fpFileDeleteJob.setCreationTime(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].CreationTime"));
-			fpFileDeleteJob.setFinishTime(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].FinishTime"));
+			fpFileDeleteJob.setId(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].Id"));
+			fpFileDeleteJob.setFileIds(_ctx.stringValue("QueryFpFileDeleteJobListResponse.FpFileDeleteJobList["+ i +"].FileIds"));
 
 			fpFileDeleteJobList.add(fpFileDeleteJob);
 		}

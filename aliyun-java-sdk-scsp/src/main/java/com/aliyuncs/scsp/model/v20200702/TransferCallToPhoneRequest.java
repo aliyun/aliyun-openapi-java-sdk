@@ -46,6 +46,10 @@ public class TransferCallToPhoneRequest extends RpcAcsRequest<TransferCallToPhon
 	private Integer type;
 
 	private Boolean isSingleTransfer;
+
+	private String callerPhone;
+
+	private String calleePhone;
 	public TransferCallToPhoneRequest() {
 		super("scsp", "2020-07-02", "TransferCallToPhone");
 		setMethod(MethodType.POST);
@@ -173,6 +177,28 @@ public class TransferCallToPhoneRequest extends RpcAcsRequest<TransferCallToPhon
 		this.isSingleTransfer = isSingleTransfer;
 		if(isSingleTransfer != null){
 			putBodyParameter("IsSingleTransfer", isSingleTransfer.toString());
+		}
+	}
+
+	public String getCallerPhone() {
+		return this.callerPhone;
+	}
+
+	public void setCallerPhone(String callerPhone) {
+		this.callerPhone = callerPhone;
+		if(callerPhone != null){
+			putBodyParameter("callerPhone", callerPhone);
+		}
+	}
+
+	public String getCalleePhone() {
+		return this.calleePhone;
+	}
+
+	public void setCalleePhone(String calleePhone) {
+		this.calleePhone = calleePhone;
+		if(calleePhone != null){
+			putBodyParameter("calleePhone", calleePhone);
 		}
 	}
 

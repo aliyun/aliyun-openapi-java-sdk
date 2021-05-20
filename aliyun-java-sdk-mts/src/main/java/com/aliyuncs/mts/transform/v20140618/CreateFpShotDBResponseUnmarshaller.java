@@ -26,12 +26,12 @@ public class CreateFpShotDBResponseUnmarshaller {
 		createFpShotDBResponse.setRequestId(_ctx.stringValue("CreateFpShotDBResponse.RequestId"));
 
 		FpShotDB fpShotDB = new FpShotDB();
-		fpShotDB.setFpDBId(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.FpDBId"));
-		fpShotDB.setName(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.Name"));
-		fpShotDB.setModelId(_ctx.integerValue("CreateFpShotDBResponse.FpShotDB.ModelId"));
-		fpShotDB.setState(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.State"));
-		fpShotDB.setConfig(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.Config"));
 		fpShotDB.setDescription(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.Description"));
+		fpShotDB.setState(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.State"));
+		fpShotDB.setName(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.Name"));
+		fpShotDB.setFpDBId(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.FpDBId"));
+		fpShotDB.setModelId(_ctx.integerValue("CreateFpShotDBResponse.FpShotDB.ModelId"));
+		fpShotDB.setConfig(_ctx.stringValue("CreateFpShotDBResponse.FpShotDB.Config"));
 		createFpShotDBResponse.setFpShotDB(fpShotDB);
 	 
 	 	return createFpShotDBResponse;

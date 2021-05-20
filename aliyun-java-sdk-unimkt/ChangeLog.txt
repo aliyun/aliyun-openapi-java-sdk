@@ -1,3 +1,18 @@
+2021-05-12 Version: 2.3.5
+- Supported AAA for BBB.
+
+2021-05-12 Version: 2.3.4
+- Add industry scene param for media list interface.
+
+2021-04-29 Version: 2.3.3
+- Generated 2018-12-12, 2018-12-07 for `UniMkt`.
+
+2021-04-28 Version: 2.2.1
+- Generated 2018-12-12, 2018-12-07 for `UniMkt`.
+
+2021-04-14 Version: 2.3.2
+- Add param QueryType for QueryIncomeTrend and QueryIncomData.
+
 2021-03-25 Version: 2.3.0
 - Support Query Tenant List.
 - Remove Query AdSlot Template List.

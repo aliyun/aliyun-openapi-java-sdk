@@ -15,6 +15,7 @@
 package com.aliyuncs.aiccs.model.v20191015;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.aiccs.Endpoint;
 
@@ -37,11 +38,11 @@ public class CreateThirdSsoAgentRequest extends RpcAcsRequest<CreateThirdSsoAgen
 
 	private String displayName;
 
-	private Array skillGroupIds;
+	private List<Long> skillGroupIds;
 
-	private Array roleIds;
+	private List<Long> roleIds;
 	public CreateThirdSsoAgentRequest() {
-		super("aiccs", "2019-10-15", "CreateThirdSsoAgent", "aiccs-service");
+		super("aiccs", "2019-10-15", "CreateThirdSsoAgent");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,26 +116,30 @@ public class CreateThirdSsoAgentRequest extends RpcAcsRequest<CreateThirdSsoAgen
 		}
 	}
 
-	public Array getSkillGroupIds() {
+	public List<Long> getSkillGroupIds() {
 		return this.skillGroupIds;
 	}
 
-	public void setSkillGroupIds(Array skillGroupIds) {
-		this.skillGroupIds = skillGroupIds;
-		if(skillGroupIds != null){
-			putBodyParameter("SkillGroupIds", skillGroupIds.toString());
-		}
+	public void setSkillGroupIds(List<Long> skillGroupIds) {
+		this.skillGroupIds = skillGroupIds;	
+		if (skillGroupIds != null) {
+			for (int depth1 = 0; depth1 < skillGroupIds.size(); depth1++) {
+				putBodyParameter("SkillGroupIds." + (depth1 + 1) , skillGroupIds.get(depth1));
+			}
+		}	
 	}
 
-	public Array getRoleIds() {
+	public List<Long> getRoleIds() {
 		return this.roleIds;
 	}
 
-	public void setRoleIds(Array roleIds) {
-		this.roleIds = roleIds;
-		if(roleIds != null){
-			putBodyParameter("RoleIds", roleIds.toString());
-		}
+	public void setRoleIds(List<Long> roleIds) {
+		this.roleIds = roleIds;	
+		if (roleIds != null) {
+			for (int depth1 = 0; depth1 < roleIds.size(); depth1++) {
+				putBodyParameter("RoleIds." + (depth1 + 1) , roleIds.get(depth1));
+			}
+		}	
 	}
 
 	@Override

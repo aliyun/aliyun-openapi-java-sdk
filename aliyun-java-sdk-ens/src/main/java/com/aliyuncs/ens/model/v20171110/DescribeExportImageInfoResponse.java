@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeExportImageInfoResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<Image> images;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +51,20 @@ public class DescribeExportImageInfoResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<Image> getImages() {
@@ -77,45 +77,21 @@ public class DescribeExportImageInfoResponse extends AcsResponse {
 
 	public static class Image {
 
-		private String imageOwnerAlias;
-
-		private String imageName;
-
-		private String platform;
-
 		private String architecture;
-
-		private String exportedImageURL;
-
-		private String imageId;
 
 		private String creationTime;
 
+		private String exportedImageURL;
+
 		private String imageExportStatus;
 
-		public String getImageOwnerAlias() {
-			return this.imageOwnerAlias;
-		}
+		private String imageId;
 
-		public void setImageOwnerAlias(String imageOwnerAlias) {
-			this.imageOwnerAlias = imageOwnerAlias;
-		}
+		private String imageName;
 
-		public String getImageName() {
-			return this.imageName;
-		}
+		private String imageOwnerAlias;
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
-		}
-
-		public String getPlatform() {
-			return this.platform;
-		}
-
-		public void setPlatform(String platform) {
-			this.platform = platform;
-		}
+		private String platform;
 
 		public String getArchitecture() {
 			return this.architecture;
@@ -123,22 +99,6 @@ public class DescribeExportImageInfoResponse extends AcsResponse {
 
 		public void setArchitecture(String architecture) {
 			this.architecture = architecture;
-		}
-
-		public String getExportedImageURL() {
-			return this.exportedImageURL;
-		}
-
-		public void setExportedImageURL(String exportedImageURL) {
-			this.exportedImageURL = exportedImageURL;
-		}
-
-		public String getImageId() {
-			return this.imageId;
-		}
-
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
 		}
 
 		public String getCreationTime() {
@@ -149,12 +109,52 @@ public class DescribeExportImageInfoResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
+		public String getExportedImageURL() {
+			return this.exportedImageURL;
+		}
+
+		public void setExportedImageURL(String exportedImageURL) {
+			this.exportedImageURL = exportedImageURL;
+		}
+
 		public String getImageExportStatus() {
 			return this.imageExportStatus;
 		}
 
 		public void setImageExportStatus(String imageExportStatus) {
 			this.imageExportStatus = imageExportStatus;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+
+		public String getImageOwnerAlias() {
+			return this.imageOwnerAlias;
+		}
+
+		public void setImageOwnerAlias(String imageOwnerAlias) {
+			this.imageOwnerAlias = imageOwnerAlias;
+		}
+
+		public String getPlatform() {
+			return this.platform;
+		}
+
+		public void setPlatform(String platform) {
+			this.platform = platform;
 		}
 	}
 

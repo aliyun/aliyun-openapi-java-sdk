@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DecryptKeyResponse extends AcsResponse {
 
+	private String rand;
+
 	private String requestId;
 
 	private String plaintext;
 
-	private String rand;
+	public String getRand() {
+		return this.rand;
+	}
+
+	public void setRand(String rand) {
+		this.rand = rand;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DecryptKeyResponse extends AcsResponse {
 
 	public void setPlaintext(String plaintext) {
 		this.plaintext = plaintext;
-	}
-
-	public String getRand() {
-		return this.rand;
-	}
-
-	public void setRand(String rand) {
-		this.rand = rand;
 	}
 
 	@Override

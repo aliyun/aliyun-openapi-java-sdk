@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetFaceModelResultResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetFaceModelResultResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -81,43 +81,19 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			private String mustacheStyle;
 
+			private Float rightBottomX;
+
 			private String faceStyle;
-
-			private Integer capStyle;
-
-			private Integer skinColor;
 
 			private Float rightBottomY;
 
-			private Float rightBottomX;
-
-			private Integer hairStyle;
-
-			private Integer genderCode;
-
-			private Integer respiratorColor;
-
-			private Integer ethicCode;
-
-			private Integer ageLowerLimit;
-
-			private Float leftTopY;
-
-			private Float leftTopX;
-
-			private Integer hairColor;
-
-			private Integer ageUpLimit;
-
-			private Integer glassStyle;
-
-			private Integer glassColor;
-
-			private Integer capColor;
-
 			private String capColorReliability;
 
+			private Integer capStyle;
+
 			private String respiratorColorReliability;
+
+			private Integer skinColor;
 
 			private String ethicCodeReliability;
 
@@ -125,15 +101,35 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			private String glassColorReliability;
 
+			private Integer hairStyle;
+
+			private Integer genderCode;
+
+			private Integer respiratorColor;
+
 			private String skinColorReliability;
+
+			private Integer ethicCode;
 
 			private String mustacheStyleReliability;
 
 			private String capStyleReliability;
 
+			private Integer ageLowerLimit;
+
 			private String faceStyleReliability;
 
+			private Float leftTopY;
+
+			private Float leftTopX;
+
 			private String glassStyleReliability;
+
+			private Integer hairColor;
+
+			private Integer glassStyle;
+
+			private Integer ageUpLimit;
 
 			private String ageUpLimitReliability;
 
@@ -142,6 +138,10 @@ public class GetFaceModelResultResponse extends AcsResponse {
 			private String ageLowerLimitReliability;
 
 			private String hairColorReliability;
+
+			private Integer glassColor;
+
+			private Integer capColor;
 
 			private List<Float> featureData;
 
@@ -153,28 +153,20 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.mustacheStyle = mustacheStyle;
 			}
 
+			public Float getRightBottomX() {
+				return this.rightBottomX;
+			}
+
+			public void setRightBottomX(Float rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
 			public String getFaceStyle() {
 				return this.faceStyle;
 			}
 
 			public void setFaceStyle(String faceStyle) {
 				this.faceStyle = faceStyle;
-			}
-
-			public Integer getCapStyle() {
-				return this.capStyle;
-			}
-
-			public void setCapStyle(Integer capStyle) {
-				this.capStyle = capStyle;
-			}
-
-			public Integer getSkinColor() {
-				return this.skinColor;
-			}
-
-			public void setSkinColor(Integer skinColor) {
-				this.skinColor = skinColor;
 			}
 
 			public Float getRightBottomY() {
@@ -185,110 +177,6 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.rightBottomY = rightBottomY;
 			}
 
-			public Float getRightBottomX() {
-				return this.rightBottomX;
-			}
-
-			public void setRightBottomX(Float rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
-			public Integer getHairStyle() {
-				return this.hairStyle;
-			}
-
-			public void setHairStyle(Integer hairStyle) {
-				this.hairStyle = hairStyle;
-			}
-
-			public Integer getGenderCode() {
-				return this.genderCode;
-			}
-
-			public void setGenderCode(Integer genderCode) {
-				this.genderCode = genderCode;
-			}
-
-			public Integer getRespiratorColor() {
-				return this.respiratorColor;
-			}
-
-			public void setRespiratorColor(Integer respiratorColor) {
-				this.respiratorColor = respiratorColor;
-			}
-
-			public Integer getEthicCode() {
-				return this.ethicCode;
-			}
-
-			public void setEthicCode(Integer ethicCode) {
-				this.ethicCode = ethicCode;
-			}
-
-			public Integer getAgeLowerLimit() {
-				return this.ageLowerLimit;
-			}
-
-			public void setAgeLowerLimit(Integer ageLowerLimit) {
-				this.ageLowerLimit = ageLowerLimit;
-			}
-
-			public Float getLeftTopY() {
-				return this.leftTopY;
-			}
-
-			public void setLeftTopY(Float leftTopY) {
-				this.leftTopY = leftTopY;
-			}
-
-			public Float getLeftTopX() {
-				return this.leftTopX;
-			}
-
-			public void setLeftTopX(Float leftTopX) {
-				this.leftTopX = leftTopX;
-			}
-
-			public Integer getHairColor() {
-				return this.hairColor;
-			}
-
-			public void setHairColor(Integer hairColor) {
-				this.hairColor = hairColor;
-			}
-
-			public Integer getAgeUpLimit() {
-				return this.ageUpLimit;
-			}
-
-			public void setAgeUpLimit(Integer ageUpLimit) {
-				this.ageUpLimit = ageUpLimit;
-			}
-
-			public Integer getGlassStyle() {
-				return this.glassStyle;
-			}
-
-			public void setGlassStyle(Integer glassStyle) {
-				this.glassStyle = glassStyle;
-			}
-
-			public Integer getGlassColor() {
-				return this.glassColor;
-			}
-
-			public void setGlassColor(Integer glassColor) {
-				this.glassColor = glassColor;
-			}
-
-			public Integer getCapColor() {
-				return this.capColor;
-			}
-
-			public void setCapColor(Integer capColor) {
-				this.capColor = capColor;
-			}
-
 			public String getCapColorReliability() {
 				return this.capColorReliability;
 			}
@@ -297,12 +185,28 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.capColorReliability = capColorReliability;
 			}
 
+			public Integer getCapStyle() {
+				return this.capStyle;
+			}
+
+			public void setCapStyle(Integer capStyle) {
+				this.capStyle = capStyle;
+			}
+
 			public String getRespiratorColorReliability() {
 				return this.respiratorColorReliability;
 			}
 
 			public void setRespiratorColorReliability(String respiratorColorReliability) {
 				this.respiratorColorReliability = respiratorColorReliability;
+			}
+
+			public Integer getSkinColor() {
+				return this.skinColor;
+			}
+
+			public void setSkinColor(Integer skinColor) {
+				this.skinColor = skinColor;
 			}
 
 			public String getEthicCodeReliability() {
@@ -329,12 +233,44 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.glassColorReliability = glassColorReliability;
 			}
 
+			public Integer getHairStyle() {
+				return this.hairStyle;
+			}
+
+			public void setHairStyle(Integer hairStyle) {
+				this.hairStyle = hairStyle;
+			}
+
+			public Integer getGenderCode() {
+				return this.genderCode;
+			}
+
+			public void setGenderCode(Integer genderCode) {
+				this.genderCode = genderCode;
+			}
+
+			public Integer getRespiratorColor() {
+				return this.respiratorColor;
+			}
+
+			public void setRespiratorColor(Integer respiratorColor) {
+				this.respiratorColor = respiratorColor;
+			}
+
 			public String getSkinColorReliability() {
 				return this.skinColorReliability;
 			}
 
 			public void setSkinColorReliability(String skinColorReliability) {
 				this.skinColorReliability = skinColorReliability;
+			}
+
+			public Integer getEthicCode() {
+				return this.ethicCode;
+			}
+
+			public void setEthicCode(Integer ethicCode) {
+				this.ethicCode = ethicCode;
 			}
 
 			public String getMustacheStyleReliability() {
@@ -353,6 +289,14 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.capStyleReliability = capStyleReliability;
 			}
 
+			public Integer getAgeLowerLimit() {
+				return this.ageLowerLimit;
+			}
+
+			public void setAgeLowerLimit(Integer ageLowerLimit) {
+				this.ageLowerLimit = ageLowerLimit;
+			}
+
 			public String getFaceStyleReliability() {
 				return this.faceStyleReliability;
 			}
@@ -361,12 +305,52 @@ public class GetFaceModelResultResponse extends AcsResponse {
 				this.faceStyleReliability = faceStyleReliability;
 			}
 
+			public Float getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Float leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
+			public Float getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(Float leftTopX) {
+				this.leftTopX = leftTopX;
+			}
+
 			public String getGlassStyleReliability() {
 				return this.glassStyleReliability;
 			}
 
 			public void setGlassStyleReliability(String glassStyleReliability) {
 				this.glassStyleReliability = glassStyleReliability;
+			}
+
+			public Integer getHairColor() {
+				return this.hairColor;
+			}
+
+			public void setHairColor(Integer hairColor) {
+				this.hairColor = hairColor;
+			}
+
+			public Integer getGlassStyle() {
+				return this.glassStyle;
+			}
+
+			public void setGlassStyle(Integer glassStyle) {
+				this.glassStyle = glassStyle;
+			}
+
+			public Integer getAgeUpLimit() {
+				return this.ageUpLimit;
+			}
+
+			public void setAgeUpLimit(Integer ageUpLimit) {
+				this.ageUpLimit = ageUpLimit;
 			}
 
 			public String getAgeUpLimitReliability() {
@@ -399,6 +383,22 @@ public class GetFaceModelResultResponse extends AcsResponse {
 
 			public void setHairColorReliability(String hairColorReliability) {
 				this.hairColorReliability = hairColorReliability;
+			}
+
+			public Integer getGlassColor() {
+				return this.glassColor;
+			}
+
+			public void setGlassColor(Integer glassColor) {
+				this.glassColor = glassColor;
+			}
+
+			public Integer getCapColor() {
+				return this.capColor;
+			}
+
+			public void setCapColor(Integer capColor) {
+				this.capColor = capColor;
 			}
 
 			public List<Float> getFeatureData() {

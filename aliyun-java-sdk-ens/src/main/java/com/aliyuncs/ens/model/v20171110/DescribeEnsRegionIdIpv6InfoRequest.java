@@ -26,7 +26,7 @@ public class DescribeEnsRegionIdIpv6InfoRequest extends RpcAcsRequest<DescribeEn
 
 	private String ensRegionId;
 	public DescribeEnsRegionIdIpv6InfoRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsRegionIdIpv6Info");
+		super("Ens", "2017-11-10", "DescribeEnsRegionIdIpv6Info", "ens");
 		setMethod(MethodType.POST);
 	}
 

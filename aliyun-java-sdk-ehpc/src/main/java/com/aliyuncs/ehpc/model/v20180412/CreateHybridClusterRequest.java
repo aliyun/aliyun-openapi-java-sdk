@@ -28,6 +28,8 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 
 	private String keyPairName;
 
+	private Boolean multiOs;
+
 	private String securityGroupName;
 
 	private String onPremiseVolumeRemotePath;
@@ -112,6 +114,17 @@ public class CreateHybridClusterRequest extends RpcAcsRequest<CreateHybridCluste
 		this.keyPairName = keyPairName;
 		if(keyPairName != null){
 			putQueryParameter("KeyPairName", keyPairName);
+		}
+	}
+
+	public Boolean getMultiOs() {
+		return this.multiOs;
+	}
+
+	public void setMultiOs(Boolean multiOs) {
+		this.multiOs = multiOs;
+		if(multiOs != null){
+			putQueryParameter("MultiOs", multiOs.toString());
 		}
 	}
 

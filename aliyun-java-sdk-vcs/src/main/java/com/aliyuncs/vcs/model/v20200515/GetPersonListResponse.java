@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPersonListResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetPersonListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,20 +67,20 @@ public class GetPersonListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNumber;
+		private Long totalCount;
 
 		private Long pageSize;
 
-		private Long totalCount;
+		private Long pageNumber;
 
 		private List<RecordsItem> records;
 
-		public Long getPageNumber() {
-			return this.pageNumber;
+		public Long getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Long pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Long totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Long getPageSize() {
@@ -91,12 +91,12 @@ public class GetPersonListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getTotalCount() {
-			return this.totalCount;
+		public Long getPageNumber() {
+			return this.pageNumber;
 		}
 
-		public void setTotalCount(Long totalCount) {
-			this.totalCount = totalCount;
+		public void setPageNumber(Long pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -109,25 +109,17 @@ public class GetPersonListResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String faceUrl;
-
 			private Long firstShotTime;
 
 			private String personId;
 
 			private String searchMatchingRate;
 
+			private String faceUrl;
+
 			private Long lastShotTime;
 
 			private List<TagList> propertyTagList;
-
-			public String getFaceUrl() {
-				return this.faceUrl;
-			}
-
-			public void setFaceUrl(String faceUrl) {
-				this.faceUrl = faceUrl;
-			}
 
 			public Long getFirstShotTime() {
 				return this.firstShotTime;
@@ -153,6 +145,14 @@ public class GetPersonListResponse extends AcsResponse {
 				this.searchMatchingRate = searchMatchingRate;
 			}
 
+			public String getFaceUrl() {
+				return this.faceUrl;
+			}
+
+			public void setFaceUrl(String faceUrl) {
+				this.faceUrl = faceUrl;
+			}
+
 			public Long getLastShotTime() {
 				return this.lastShotTime;
 			}
@@ -171,21 +171,13 @@ public class GetPersonListResponse extends AcsResponse {
 
 			public static class TagList {
 
-				private String code;
-
 				private String tagCodeName;
 
 				private String tagName;
 
 				private String value;
 
-				public String getCode() {
-					return this.code;
-				}
-
-				public void setCode(String code) {
-					this.code = code;
-				}
+				private String code;
 
 				public String getTagCodeName() {
 					return this.tagCodeName;
@@ -209,6 +201,14 @@ public class GetPersonListResponse extends AcsResponse {
 
 				public void setValue(String value) {
 					this.value = value;
+				}
+
+				public String getCode() {
+					return this.code;
+				}
+
+				public void setCode(String code) {
+					this.code = code;
 				}
 			}
 		}

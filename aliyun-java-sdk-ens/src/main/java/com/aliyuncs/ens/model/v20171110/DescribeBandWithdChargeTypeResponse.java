@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBandWithdChargeTypeResponse extends AcsResponse {
 
-	private String chargeCycleInfo;
-
 	private String bandWithTypeInfo;
-
-	private String requestId;
-
-	private Integer code;
 
 	private String chargeContractType;
 
-	public String getChargeCycleInfo() {
-		return this.chargeCycleInfo;
-	}
+	private String chargeCycleInfo;
 
-	public void setChargeCycleInfo(String chargeCycleInfo) {
-		this.chargeCycleInfo = chargeCycleInfo;
-	}
+	private Integer code;
+
+	private String requestId;
 
 	public String getBandWithTypeInfo() {
 		return this.bandWithTypeInfo;
@@ -50,12 +42,20 @@ public class DescribeBandWithdChargeTypeResponse extends AcsResponse {
 		this.bandWithTypeInfo = bandWithTypeInfo;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getChargeContractType() {
+		return this.chargeContractType;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setChargeContractType(String chargeContractType) {
+		this.chargeContractType = chargeContractType;
+	}
+
+	public String getChargeCycleInfo() {
+		return this.chargeCycleInfo;
+	}
+
+	public void setChargeCycleInfo(String chargeCycleInfo) {
+		this.chargeCycleInfo = chargeCycleInfo;
 	}
 
 	public Integer getCode() {
@@ -66,12 +66,12 @@ public class DescribeBandWithdChargeTypeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getChargeContractType() {
-		return this.chargeContractType;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setChargeContractType(String chargeContractType) {
-		this.chargeContractType = chargeContractType;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

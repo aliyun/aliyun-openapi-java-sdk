@@ -23,8 +23,8 @@ public class UnbindCorpGroupResponseUnmarshaller {
 	public static UnbindCorpGroupResponse unmarshall(UnbindCorpGroupResponse unbindCorpGroupResponse, UnmarshallerContext _ctx) {
 		
 		unbindCorpGroupResponse.setRequestId(_ctx.stringValue("UnbindCorpGroupResponse.RequestId"));
-		unbindCorpGroupResponse.setCode(_ctx.stringValue("UnbindCorpGroupResponse.Code"));
 		unbindCorpGroupResponse.setMessage(_ctx.stringValue("UnbindCorpGroupResponse.Message"));
+		unbindCorpGroupResponse.setCode(_ctx.stringValue("UnbindCorpGroupResponse.Code"));
 		unbindCorpGroupResponse.setSuccess(_ctx.booleanValue("UnbindCorpGroupResponse.Success"));
 	 
 	 	return unbindCorpGroupResponse;

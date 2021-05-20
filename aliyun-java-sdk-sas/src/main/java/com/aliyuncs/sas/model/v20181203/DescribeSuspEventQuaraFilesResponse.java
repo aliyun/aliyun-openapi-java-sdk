@@ -99,6 +99,8 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 		private String uuid;
 
+		private String instanceId;
+
 		private String instanceName;
 
 		private String internetIp;
@@ -110,6 +112,8 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 		private String md5;
 
 		private String modifyTime;
+
+		private String link;
 
 		public String getPath() {
 			return this.path;
@@ -159,6 +163,14 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 			this.uuid = uuid;
 		}
 
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
+		}
+
 		public String getInstanceName() {
 			return this.instanceName;
 		}
@@ -205,6 +217,14 @@ public class DescribeSuspEventQuaraFilesResponse extends AcsResponse {
 
 		public void setModifyTime(String modifyTime) {
 			this.modifyTime = modifyTime;
+		}
+
+		public String getLink() {
+			return this.link;
+		}
+
+		public void setLink(String link) {
+			this.link = link;
 		}
 	}
 

@@ -37,7 +37,7 @@ public class ModifyDBClusterDescriptionRequest extends RpcAcsRequest<ModifyDBClu
 
 	private Long ownerId;
 	public ModifyDBClusterDescriptionRequest() {
-		super("clickhouse", "2019-11-11", "ModifyDBClusterDescription", "clickhouse");
+		super("clickhouse", "2019-11-11", "ModifyDBClusterDescription");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

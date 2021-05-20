@@ -46,8 +46,8 @@ public class GetTagListResponseUnmarshaller {
 				tagValuesItem.setDescription(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].Description"));
 				tagValuesItem.setTagName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagName"));
 				tagValuesItem.setTagGroupCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagGroupCode"));
-				tagValuesItem.setTagGroupName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagGroupName"));
 				tagValuesItem.setTagCode(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagCode"));
+				tagValuesItem.setTagGroupName(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].TagGroupName"));
 				tagValuesItem.setEntityRelationNumber(_ctx.stringValue("GetTagListResponse.Data["+ i +"].TagValues["+ j +"].EntityRelationNumber"));
 
 				tagValues.add(tagValuesItem);

@@ -31,7 +31,7 @@ public class DescribeDrdsShardingDbsRequest extends RpcAcsRequest<DescribeDrdsSh
 
 	private String dbNamePattern;
 	public DescribeDrdsShardingDbsRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsShardingDbs");
+		super("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

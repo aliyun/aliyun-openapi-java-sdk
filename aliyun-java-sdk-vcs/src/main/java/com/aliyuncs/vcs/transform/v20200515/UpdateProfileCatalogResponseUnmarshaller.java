@@ -24,15 +24,15 @@ public class UpdateProfileCatalogResponseUnmarshaller {
 	public static UpdateProfileCatalogResponse unmarshall(UpdateProfileCatalogResponse updateProfileCatalogResponse, UnmarshallerContext _ctx) {
 		
 		updateProfileCatalogResponse.setRequestId(_ctx.stringValue("UpdateProfileCatalogResponse.RequestId"));
-		updateProfileCatalogResponse.setCode(_ctx.stringValue("UpdateProfileCatalogResponse.Code"));
 		updateProfileCatalogResponse.setMessage(_ctx.stringValue("UpdateProfileCatalogResponse.Message"));
+		updateProfileCatalogResponse.setCode(_ctx.stringValue("UpdateProfileCatalogResponse.Code"));
 
 		Data data = new Data();
-		data.setIsvSubId(_ctx.stringValue("UpdateProfileCatalogResponse.Data.IsvSubId"));
 		data.setParentCatalogId(_ctx.stringValue("UpdateProfileCatalogResponse.Data.ParentCatalogId"));
 		data.setProfileCount(_ctx.longValue("UpdateProfileCatalogResponse.Data.ProfileCount"));
-		data.setCatalogId(_ctx.longValue("UpdateProfileCatalogResponse.Data.CatalogId"));
+		data.setIsvSubId(_ctx.stringValue("UpdateProfileCatalogResponse.Data.IsvSubId"));
 		data.setCatalogName(_ctx.stringValue("UpdateProfileCatalogResponse.Data.CatalogName"));
+		data.setCatalogId(_ctx.longValue("UpdateProfileCatalogResponse.Data.CatalogId"));
 		updateProfileCatalogResponse.setData(data);
 	 
 	 	return updateProfileCatalogResponse;

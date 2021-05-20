@@ -23,9 +23,9 @@ public class UpdateCorpResponseUnmarshaller {
 	public static UpdateCorpResponse unmarshall(UpdateCorpResponse updateCorpResponse, UnmarshallerContext _ctx) {
 		
 		updateCorpResponse.setRequestId(_ctx.stringValue("UpdateCorpResponse.RequestId"));
-		updateCorpResponse.setCode(_ctx.stringValue("UpdateCorpResponse.Code"));
 		updateCorpResponse.setMessage(_ctx.stringValue("UpdateCorpResponse.Message"));
 		updateCorpResponse.setData(_ctx.stringValue("UpdateCorpResponse.Data"));
+		updateCorpResponse.setCode(_ctx.stringValue("UpdateCorpResponse.Code"));
 	 
 	 	return updateCorpResponse;
 	}

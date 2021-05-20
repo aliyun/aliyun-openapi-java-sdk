@@ -57,41 +57,41 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 	public static class Media {
 
-		private String mediaId;
-
-		private String title;
-
-		private String description;
-
-		private String coverURL;
+		private String creationTime;
 
 		private Long cateId;
 
-		private String duration;
-
-		private String format;
-
-		private String size;
-
-		private String bitrate;
-
-		private String width;
-
 		private String height;
-
-		private String fps;
-
-		private String publishState;
 
 		private String censorState;
 
-		private String creationTime;
+		private String bitrate;
+
+		private String mediaId;
+
+		private String publishState;
+
+		private String description;
+
+		private String size;
+
+		private String width;
+
+		private String coverURL;
+
+		private String duration;
+
+		private String fps;
+
+		private String title;
+
+		private String format;
 
 		private List<Play> playList;
 
-		private List<Snapshot> snapshotList;
-
 		private List<Summary> summaryList;
+
+		private List<Snapshot> snapshotList;
 
 		private List<String> tags;
 
@@ -101,36 +101,12 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 		private MediaInfo mediaInfo;
 
-		public String getMediaId() {
-			return this.mediaId;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setMediaId(String mediaId) {
-			this.mediaId = mediaId;
-		}
-
-		public String getTitle() {
-			return this.title;
-		}
-
-		public void setTitle(String title) {
-			this.title = title;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getCoverURL() {
-			return this.coverURL;
-		}
-
-		public void setCoverURL(String coverURL) {
-			this.coverURL = coverURL;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public Long getCateId() {
@@ -141,68 +117,12 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 			this.cateId = cateId;
 		}
 
-		public String getDuration() {
-			return this.duration;
-		}
-
-		public void setDuration(String duration) {
-			this.duration = duration;
-		}
-
-		public String getFormat() {
-			return this.format;
-		}
-
-		public void setFormat(String format) {
-			this.format = format;
-		}
-
-		public String getSize() {
-			return this.size;
-		}
-
-		public void setSize(String size) {
-			this.size = size;
-		}
-
-		public String getBitrate() {
-			return this.bitrate;
-		}
-
-		public void setBitrate(String bitrate) {
-			this.bitrate = bitrate;
-		}
-
-		public String getWidth() {
-			return this.width;
-		}
-
-		public void setWidth(String width) {
-			this.width = width;
-		}
-
 		public String getHeight() {
 			return this.height;
 		}
 
 		public void setHeight(String height) {
 			this.height = height;
-		}
-
-		public String getFps() {
-			return this.fps;
-		}
-
-		public void setFps(String fps) {
-			this.fps = fps;
-		}
-
-		public String getPublishState() {
-			return this.publishState;
-		}
-
-		public void setPublishState(String publishState) {
-			this.publishState = publishState;
 		}
 
 		public String getCensorState() {
@@ -213,12 +133,92 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 			this.censorState = censorState;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getBitrate() {
+			return this.bitrate;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setBitrate(String bitrate) {
+			this.bitrate = bitrate;
+		}
+
+		public String getMediaId() {
+			return this.mediaId;
+		}
+
+		public void setMediaId(String mediaId) {
+			this.mediaId = mediaId;
+		}
+
+		public String getPublishState() {
+			return this.publishState;
+		}
+
+		public void setPublishState(String publishState) {
+			this.publishState = publishState;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSize() {
+			return this.size;
+		}
+
+		public void setSize(String size) {
+			this.size = size;
+		}
+
+		public String getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(String width) {
+			this.width = width;
+		}
+
+		public String getCoverURL() {
+			return this.coverURL;
+		}
+
+		public void setCoverURL(String coverURL) {
+			this.coverURL = coverURL;
+		}
+
+		public String getDuration() {
+			return this.duration;
+		}
+
+		public void setDuration(String duration) {
+			this.duration = duration;
+		}
+
+		public String getFps() {
+			return this.fps;
+		}
+
+		public void setFps(String fps) {
+			this.fps = fps;
+		}
+
+		public String getTitle() {
+			return this.title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getFormat() {
+			return this.format;
+		}
+
+		public void setFormat(String format) {
+			this.format = format;
 		}
 
 		public List<Play> getPlayList() {
@@ -229,20 +229,20 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 			this.playList = playList;
 		}
 
-		public List<Snapshot> getSnapshotList() {
-			return this.snapshotList;
-		}
-
-		public void setSnapshotList(List<Snapshot> snapshotList) {
-			this.snapshotList = snapshotList;
-		}
-
 		public List<Summary> getSummaryList() {
 			return this.summaryList;
 		}
 
 		public void setSummaryList(List<Summary> summaryList) {
 			this.summaryList = summaryList;
+		}
+
+		public List<Snapshot> getSnapshotList() {
+			return this.snapshotList;
+		}
+
+		public void setSnapshotList(List<Snapshot> snapshotList) {
+			this.snapshotList = snapshotList;
 		}
 
 		public List<String> getTags() {
@@ -279,92 +279,36 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 		public static class Play {
 
-			private String activityName;
-
-			private String mediaWorkflowId;
-
-			private String mediaWorkflowName;
-
-			private String duration;
-
-			private String format;
-
-			private String size;
-
-			private String bitrate;
-
-			private String width;
+			private String encryption;
 
 			private String height;
 
+			private String bitrate;
+
+			private String mediaWorkflowId;
+
+			private String width;
+
+			private String size;
+
 			private String fps;
 
-			private String encryption;
+			private String duration;
+
+			private String activityName;
+
+			private String format;
+
+			private String mediaWorkflowName;
 
 			private File1 file1;
 
-			public String getActivityName() {
-				return this.activityName;
+			public String getEncryption() {
+				return this.encryption;
 			}
 
-			public void setActivityName(String activityName) {
-				this.activityName = activityName;
-			}
-
-			public String getMediaWorkflowId() {
-				return this.mediaWorkflowId;
-			}
-
-			public void setMediaWorkflowId(String mediaWorkflowId) {
-				this.mediaWorkflowId = mediaWorkflowId;
-			}
-
-			public String getMediaWorkflowName() {
-				return this.mediaWorkflowName;
-			}
-
-			public void setMediaWorkflowName(String mediaWorkflowName) {
-				this.mediaWorkflowName = mediaWorkflowName;
-			}
-
-			public String getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(String duration) {
-				this.duration = duration;
-			}
-
-			public String getFormat() {
-				return this.format;
-			}
-
-			public void setFormat(String format) {
-				this.format = format;
-			}
-
-			public String getSize() {
-				return this.size;
-			}
-
-			public void setSize(String size) {
-				this.size = size;
-			}
-
-			public String getBitrate() {
-				return this.bitrate;
-			}
-
-			public void setBitrate(String bitrate) {
-				this.bitrate = bitrate;
-			}
-
-			public String getWidth() {
-				return this.width;
-			}
-
-			public void setWidth(String width) {
-				this.width = width;
+			public void setEncryption(String encryption) {
+				this.encryption = encryption;
 			}
 
 			public String getHeight() {
@@ -375,6 +319,38 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.height = height;
 			}
 
+			public String getBitrate() {
+				return this.bitrate;
+			}
+
+			public void setBitrate(String bitrate) {
+				this.bitrate = bitrate;
+			}
+
+			public String getMediaWorkflowId() {
+				return this.mediaWorkflowId;
+			}
+
+			public void setMediaWorkflowId(String mediaWorkflowId) {
+				this.mediaWorkflowId = mediaWorkflowId;
+			}
+
+			public String getWidth() {
+				return this.width;
+			}
+
+			public void setWidth(String width) {
+				this.width = width;
+			}
+
+			public String getSize() {
+				return this.size;
+			}
+
+			public void setSize(String size) {
+				this.size = size;
+			}
+
 			public String getFps() {
 				return this.fps;
 			}
@@ -383,12 +359,36 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.fps = fps;
 			}
 
-			public String getEncryption() {
-				return this.encryption;
+			public String getDuration() {
+				return this.duration;
 			}
 
-			public void setEncryption(String encryption) {
-				this.encryption = encryption;
+			public void setDuration(String duration) {
+				this.duration = duration;
+			}
+
+			public String getActivityName() {
+				return this.activityName;
+			}
+
+			public void setActivityName(String activityName) {
+				this.activityName = activityName;
+			}
+
+			public String getFormat() {
+				return this.format;
+			}
+
+			public void setFormat(String format) {
+				this.format = format;
+			}
+
+			public String getMediaWorkflowName() {
+				return this.mediaWorkflowName;
+			}
+
+			public void setMediaWorkflowName(String mediaWorkflowName) {
+				this.mediaWorkflowName = mediaWorkflowName;
 			}
 
 			public File1 getFile1() {
@@ -401,17 +401,9 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			public static class File1 {
 
-				private String uRL;
-
 				private String state;
 
-				public String getURL() {
-					return this.uRL;
-				}
-
-				public void setURL(String uRL) {
-					this.uRL = uRL;
-				}
+				private String uRL;
 
 				public String getState() {
 					return this.state;
@@ -420,20 +412,26 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				public void setState(String state) {
 					this.state = state;
 				}
+
+				public String getURL() {
+					return this.uRL;
+				}
+
+				public void setURL(String uRL) {
+					this.uRL = uRL;
+				}
 			}
 		}
 
-		public static class Snapshot {
+		public static class Summary {
 
 			private String type;
 
 			private String mediaWorkflowId;
 
-			private String mediaWorkflowName;
-
 			private String activityName;
 
-			private String count;
+			private String mediaWorkflowName;
 
 			private File2 file2;
 
@@ -453,14 +451,6 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.mediaWorkflowId = mediaWorkflowId;
 			}
 
-			public String getMediaWorkflowName() {
-				return this.mediaWorkflowName;
-			}
-
-			public void setMediaWorkflowName(String mediaWorkflowName) {
-				this.mediaWorkflowName = mediaWorkflowName;
-			}
-
 			public String getActivityName() {
 				return this.activityName;
 			}
@@ -469,12 +459,12 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.activityName = activityName;
 			}
 
-			public String getCount() {
-				return this.count;
+			public String getMediaWorkflowName() {
+				return this.mediaWorkflowName;
 			}
 
-			public void setCount(String count) {
-				this.count = count;
+			public void setMediaWorkflowName(String mediaWorkflowName) {
+				this.mediaWorkflowName = mediaWorkflowName;
 			}
 
 			public File2 getFile2() {
@@ -487,17 +477,9 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			public static class File2 {
 
-				private String uRL;
-
 				private String state;
 
-				public String getURL() {
-					return this.uRL;
-				}
-
-				public void setURL(String uRL) {
-					this.uRL = uRL;
-				}
+				private String uRL;
 
 				public String getState() {
 					return this.state;
@@ -506,18 +488,28 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				public void setState(String state) {
 					this.state = state;
 				}
+
+				public String getURL() {
+					return this.uRL;
+				}
+
+				public void setURL(String uRL) {
+					this.uRL = uRL;
+				}
 			}
 		}
 
-		public static class Summary {
+		public static class Snapshot {
 
 			private String type;
 
 			private String mediaWorkflowId;
 
-			private String mediaWorkflowName;
-
 			private String activityName;
+
+			private String count;
+
+			private String mediaWorkflowName;
 
 			private File3 file3;
 
@@ -537,20 +529,28 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				this.mediaWorkflowId = mediaWorkflowId;
 			}
 
-			public String getMediaWorkflowName() {
-				return this.mediaWorkflowName;
-			}
-
-			public void setMediaWorkflowName(String mediaWorkflowName) {
-				this.mediaWorkflowName = mediaWorkflowName;
-			}
-
 			public String getActivityName() {
 				return this.activityName;
 			}
 
 			public void setActivityName(String activityName) {
 				this.activityName = activityName;
+			}
+
+			public String getCount() {
+				return this.count;
+			}
+
+			public void setCount(String count) {
+				this.count = count;
+			}
+
+			public String getMediaWorkflowName() {
+				return this.mediaWorkflowName;
+			}
+
+			public void setMediaWorkflowName(String mediaWorkflowName) {
+				this.mediaWorkflowName = mediaWorkflowName;
 			}
 
 			public File3 getFile3() {
@@ -563,17 +563,9 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			public static class File3 {
 
-				private String uRL;
-
 				private String state;
 
-				public String getURL() {
-					return this.uRL;
-				}
-
-				public void setURL(String uRL) {
-					this.uRL = uRL;
-				}
+				private String uRL;
 
 				public String getState() {
 					return this.state;
@@ -582,22 +574,22 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 				public void setState(String state) {
 					this.state = state;
 				}
+
+				public String getURL() {
+					return this.uRL;
+				}
+
+				public void setURL(String uRL) {
+					this.uRL = uRL;
+				}
 			}
 		}
 
 		public static class File {
 
-			private String uRL;
-
 			private String state;
 
-			public String getURL() {
-				return this.uRL;
-			}
-
-			public void setURL(String uRL) {
-				this.uRL = uRL;
-			}
+			private String uRL;
 
 			public String getState() {
 				return this.state;
@@ -605,6 +597,14 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			public void setState(String state) {
 				this.state = state;
+			}
+
+			public String getURL() {
+				return this.uRL;
+			}
+
+			public void setURL(String uRL) {
+				this.uRL = uRL;
 			}
 		}
 
@@ -664,116 +664,60 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 				public static class VideoStream {
 
-					private String index;
-
-					private String codecName;
-
-					private String codecLongName;
-
-					private String profile;
-
-					private String codecTimeBase;
-
-					private String codecTagString;
-
-					private String codecTag;
-
-					private String width;
+					private String sar;
 
 					private String height;
 
-					private String hasBFrames;
+					private String codecTagString;
 
-					private String sar;
+					private String width;
 
-					private String dar;
-
-					private String pixFmt;
-
-					private String level;
-
-					private String fps;
-
-					private String avgFPS;
+					private String index;
 
 					private String timebase;
 
-					private String startTime;
+					private String avgFPS;
 
-					private String duration;
-
-					private String bitrate;
-
-					private String numFrames;
+					private String pixFmt;
 
 					private String lang;
 
+					private String codecLongName;
+
+					private String numFrames;
+
 					private String rotate;
+
+					private String bitrate;
+
+					private String hasBFrames;
+
+					private String profile;
+
+					private String startTime;
+
+					private String dar;
+
+					private String codecName;
+
+					private String duration;
+
+					private String fps;
+
+					private String codecTag;
+
+					private String codecTimeBase;
+
+					private String level;
 
 					private NetworkCost networkCost;
 
-					public String getIndex() {
-						return this.index;
+					public String getSar() {
+						return this.sar;
 					}
 
-					public void setIndex(String index) {
-						this.index = index;
-					}
-
-					public String getCodecName() {
-						return this.codecName;
-					}
-
-					public void setCodecName(String codecName) {
-						this.codecName = codecName;
-					}
-
-					public String getCodecLongName() {
-						return this.codecLongName;
-					}
-
-					public void setCodecLongName(String codecLongName) {
-						this.codecLongName = codecLongName;
-					}
-
-					public String getProfile() {
-						return this.profile;
-					}
-
-					public void setProfile(String profile) {
-						this.profile = profile;
-					}
-
-					public String getCodecTimeBase() {
-						return this.codecTimeBase;
-					}
-
-					public void setCodecTimeBase(String codecTimeBase) {
-						this.codecTimeBase = codecTimeBase;
-					}
-
-					public String getCodecTagString() {
-						return this.codecTagString;
-					}
-
-					public void setCodecTagString(String codecTagString) {
-						this.codecTagString = codecTagString;
-					}
-
-					public String getCodecTag() {
-						return this.codecTag;
-					}
-
-					public void setCodecTag(String codecTag) {
-						this.codecTag = codecTag;
-					}
-
-					public String getWidth() {
-						return this.width;
-					}
-
-					public void setWidth(String width) {
-						this.width = width;
+					public void setSar(String sar) {
+						this.sar = sar;
 					}
 
 					public String getHeight() {
@@ -784,60 +728,28 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						this.height = height;
 					}
 
-					public String getHasBFrames() {
-						return this.hasBFrames;
+					public String getCodecTagString() {
+						return this.codecTagString;
 					}
 
-					public void setHasBFrames(String hasBFrames) {
-						this.hasBFrames = hasBFrames;
+					public void setCodecTagString(String codecTagString) {
+						this.codecTagString = codecTagString;
 					}
 
-					public String getSar() {
-						return this.sar;
+					public String getWidth() {
+						return this.width;
 					}
 
-					public void setSar(String sar) {
-						this.sar = sar;
+					public void setWidth(String width) {
+						this.width = width;
 					}
 
-					public String getDar() {
-						return this.dar;
+					public String getIndex() {
+						return this.index;
 					}
 
-					public void setDar(String dar) {
-						this.dar = dar;
-					}
-
-					public String getPixFmt() {
-						return this.pixFmt;
-					}
-
-					public void setPixFmt(String pixFmt) {
-						this.pixFmt = pixFmt;
-					}
-
-					public String getLevel() {
-						return this.level;
-					}
-
-					public void setLevel(String level) {
-						this.level = level;
-					}
-
-					public String getFps() {
-						return this.fps;
-					}
-
-					public void setFps(String fps) {
-						this.fps = fps;
-					}
-
-					public String getAvgFPS() {
-						return this.avgFPS;
-					}
-
-					public void setAvgFPS(String avgFPS) {
-						this.avgFPS = avgFPS;
+					public void setIndex(String index) {
+						this.index = index;
 					}
 
 					public String getTimebase() {
@@ -848,36 +760,20 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						this.timebase = timebase;
 					}
 
-					public String getStartTime() {
-						return this.startTime;
+					public String getAvgFPS() {
+						return this.avgFPS;
 					}
 
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
+					public void setAvgFPS(String avgFPS) {
+						this.avgFPS = avgFPS;
 					}
 
-					public String getDuration() {
-						return this.duration;
+					public String getPixFmt() {
+						return this.pixFmt;
 					}
 
-					public void setDuration(String duration) {
-						this.duration = duration;
-					}
-
-					public String getBitrate() {
-						return this.bitrate;
-					}
-
-					public void setBitrate(String bitrate) {
-						this.bitrate = bitrate;
-					}
-
-					public String getNumFrames() {
-						return this.numFrames;
-					}
-
-					public void setNumFrames(String numFrames) {
-						this.numFrames = numFrames;
+					public void setPixFmt(String pixFmt) {
+						this.pixFmt = pixFmt;
 					}
 
 					public String getLang() {
@@ -888,12 +784,116 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						this.lang = lang;
 					}
 
+					public String getCodecLongName() {
+						return this.codecLongName;
+					}
+
+					public void setCodecLongName(String codecLongName) {
+						this.codecLongName = codecLongName;
+					}
+
+					public String getNumFrames() {
+						return this.numFrames;
+					}
+
+					public void setNumFrames(String numFrames) {
+						this.numFrames = numFrames;
+					}
+
 					public String getRotate() {
 						return this.rotate;
 					}
 
 					public void setRotate(String rotate) {
 						this.rotate = rotate;
+					}
+
+					public String getBitrate() {
+						return this.bitrate;
+					}
+
+					public void setBitrate(String bitrate) {
+						this.bitrate = bitrate;
+					}
+
+					public String getHasBFrames() {
+						return this.hasBFrames;
+					}
+
+					public void setHasBFrames(String hasBFrames) {
+						this.hasBFrames = hasBFrames;
+					}
+
+					public String getProfile() {
+						return this.profile;
+					}
+
+					public void setProfile(String profile) {
+						this.profile = profile;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getDar() {
+						return this.dar;
+					}
+
+					public void setDar(String dar) {
+						this.dar = dar;
+					}
+
+					public String getCodecName() {
+						return this.codecName;
+					}
+
+					public void setCodecName(String codecName) {
+						this.codecName = codecName;
+					}
+
+					public String getDuration() {
+						return this.duration;
+					}
+
+					public void setDuration(String duration) {
+						this.duration = duration;
+					}
+
+					public String getFps() {
+						return this.fps;
+					}
+
+					public void setFps(String fps) {
+						this.fps = fps;
+					}
+
+					public String getCodecTag() {
+						return this.codecTag;
+					}
+
+					public void setCodecTag(String codecTag) {
+						this.codecTag = codecTag;
+					}
+
+					public String getCodecTimeBase() {
+						return this.codecTimeBase;
+					}
+
+					public void setCodecTimeBase(String codecTimeBase) {
+						this.codecTimeBase = codecTimeBase;
+					}
+
+					public String getLevel() {
+						return this.level;
+					}
+
+					public void setLevel(String level) {
+						this.level = level;
 					}
 
 					public NetworkCost getNetworkCost() {
@@ -908,9 +908,9 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 						private String preloadTime;
 
-						private String costBandwidth;
-
 						private String avgBitrate;
+
+						private String costBandwidth;
 
 						public String getPreloadTime() {
 							return this.preloadTime;
@@ -920,14 +920,6 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 							this.preloadTime = preloadTime;
 						}
 
-						public String getCostBandwidth() {
-							return this.costBandwidth;
-						}
-
-						public void setCostBandwidth(String costBandwidth) {
-							this.costBandwidth = costBandwidth;
-						}
-
 						public String getAvgBitrate() {
 							return this.avgBitrate;
 						}
@@ -935,42 +927,58 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						public void setAvgBitrate(String avgBitrate) {
 							this.avgBitrate = avgBitrate;
 						}
+
+						public String getCostBandwidth() {
+							return this.costBandwidth;
+						}
+
+						public void setCostBandwidth(String costBandwidth) {
+							this.costBandwidth = costBandwidth;
+						}
 					}
 				}
 
 				public static class AudioStream {
 
+					private String timebase;
+
 					private String index;
-
-					private String codecName;
-
-					private String codecTimeBase;
-
-					private String codecLongName;
-
-					private String codecTagString;
-
-					private String codecTag;
 
 					private String sampleFmt;
 
+					private String channelLayout;
+
+					private String lang;
+
 					private String samplerate;
+
+					private String codecLongName;
 
 					private String channels;
 
-					private String channelLayout;
-
-					private String timebase;
-
-					private String startTime;
-
-					private String duration;
+					private String numFrames;
 
 					private String bitrate;
 
-					private String numFrames;
+					private String codecTagString;
 
-					private String lang;
+					private String startTime;
+
+					private String codecName;
+
+					private String duration;
+
+					private String codecTag;
+
+					private String codecTimeBase;
+
+					public String getTimebase() {
+						return this.timebase;
+					}
+
+					public void setTimebase(String timebase) {
+						this.timebase = timebase;
+					}
 
 					public String getIndex() {
 						return this.index;
@@ -978,46 +986,6 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 					public void setIndex(String index) {
 						this.index = index;
-					}
-
-					public String getCodecName() {
-						return this.codecName;
-					}
-
-					public void setCodecName(String codecName) {
-						this.codecName = codecName;
-					}
-
-					public String getCodecTimeBase() {
-						return this.codecTimeBase;
-					}
-
-					public void setCodecTimeBase(String codecTimeBase) {
-						this.codecTimeBase = codecTimeBase;
-					}
-
-					public String getCodecLongName() {
-						return this.codecLongName;
-					}
-
-					public void setCodecLongName(String codecLongName) {
-						this.codecLongName = codecLongName;
-					}
-
-					public String getCodecTagString() {
-						return this.codecTagString;
-					}
-
-					public void setCodecTagString(String codecTagString) {
-						this.codecTagString = codecTagString;
-					}
-
-					public String getCodecTag() {
-						return this.codecTag;
-					}
-
-					public void setCodecTag(String codecTag) {
-						this.codecTag = codecTag;
 					}
 
 					public String getSampleFmt() {
@@ -1028,12 +996,36 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						this.sampleFmt = sampleFmt;
 					}
 
+					public String getChannelLayout() {
+						return this.channelLayout;
+					}
+
+					public void setChannelLayout(String channelLayout) {
+						this.channelLayout = channelLayout;
+					}
+
+					public String getLang() {
+						return this.lang;
+					}
+
+					public void setLang(String lang) {
+						this.lang = lang;
+					}
+
 					public String getSamplerate() {
 						return this.samplerate;
 					}
 
 					public void setSamplerate(String samplerate) {
 						this.samplerate = samplerate;
+					}
+
+					public String getCodecLongName() {
+						return this.codecLongName;
+					}
+
+					public void setCodecLongName(String codecLongName) {
+						this.codecLongName = codecLongName;
 					}
 
 					public String getChannels() {
@@ -1044,36 +1036,12 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						this.channels = channels;
 					}
 
-					public String getChannelLayout() {
-						return this.channelLayout;
+					public String getNumFrames() {
+						return this.numFrames;
 					}
 
-					public void setChannelLayout(String channelLayout) {
-						this.channelLayout = channelLayout;
-					}
-
-					public String getTimebase() {
-						return this.timebase;
-					}
-
-					public void setTimebase(String timebase) {
-						this.timebase = timebase;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getDuration() {
-						return this.duration;
-					}
-
-					public void setDuration(String duration) {
-						this.duration = duration;
+					public void setNumFrames(String numFrames) {
+						this.numFrames = numFrames;
 					}
 
 					public String getBitrate() {
@@ -1084,20 +1052,52 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 						this.bitrate = bitrate;
 					}
 
-					public String getNumFrames() {
-						return this.numFrames;
+					public String getCodecTagString() {
+						return this.codecTagString;
 					}
 
-					public void setNumFrames(String numFrames) {
-						this.numFrames = numFrames;
+					public void setCodecTagString(String codecTagString) {
+						this.codecTagString = codecTagString;
 					}
 
-					public String getLang() {
-						return this.lang;
+					public String getStartTime() {
+						return this.startTime;
 					}
 
-					public void setLang(String lang) {
-						this.lang = lang;
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getCodecName() {
+						return this.codecName;
+					}
+
+					public void setCodecName(String codecName) {
+						this.codecName = codecName;
+					}
+
+					public String getDuration() {
+						return this.duration;
+					}
+
+					public void setDuration(String duration) {
+						this.duration = duration;
+					}
+
+					public String getCodecTag() {
+						return this.codecTag;
+					}
+
+					public void setCodecTag(String codecTag) {
+						this.codecTag = codecTag;
+					}
+
+					public String getCodecTimeBase() {
+						return this.codecTimeBase;
+					}
+
+					public void setCodecTimeBase(String codecTimeBase) {
+						this.codecTimeBase = codecTimeBase;
 					}
 				}
 
@@ -1127,28 +1127,28 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 
 			public static class Format {
 
-				private String numStreams;
+				private String startTime;
 
 				private String numPrograms;
 
-				private String formatName;
+				private String size;
+
+				private String numStreams;
 
 				private String formatLongName;
 
-				private String startTime;
-
 				private String duration;
-
-				private String size;
 
 				private String bitrate;
 
-				public String getNumStreams() {
-					return this.numStreams;
+				private String formatName;
+
+				public String getStartTime() {
+					return this.startTime;
 				}
 
-				public void setNumStreams(String numStreams) {
-					this.numStreams = numStreams;
+				public void setStartTime(String startTime) {
+					this.startTime = startTime;
 				}
 
 				public String getNumPrograms() {
@@ -1159,12 +1159,20 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 					this.numPrograms = numPrograms;
 				}
 
-				public String getFormatName() {
-					return this.formatName;
+				public String getSize() {
+					return this.size;
 				}
 
-				public void setFormatName(String formatName) {
-					this.formatName = formatName;
+				public void setSize(String size) {
+					this.size = size;
+				}
+
+				public String getNumStreams() {
+					return this.numStreams;
+				}
+
+				public void setNumStreams(String numStreams) {
+					this.numStreams = numStreams;
 				}
 
 				public String getFormatLongName() {
@@ -1175,14 +1183,6 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 					this.formatLongName = formatLongName;
 				}
 
-				public String getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(String startTime) {
-					this.startTime = startTime;
-				}
-
 				public String getDuration() {
 					return this.duration;
 				}
@@ -1191,20 +1191,20 @@ public class QueryMediaListByURLResponse extends AcsResponse {
 					this.duration = duration;
 				}
 
-				public String getSize() {
-					return this.size;
-				}
-
-				public void setSize(String size) {
-					this.size = size;
-				}
-
 				public String getBitrate() {
 					return this.bitrate;
 				}
 
 				public void setBitrate(String bitrate) {
 					this.bitrate = bitrate;
+				}
+
+				public String getFormatName() {
+					return this.formatName;
+				}
+
+				public void setFormatName(String formatName) {
+					this.formatName = formatName;
 				}
 			}
 		}

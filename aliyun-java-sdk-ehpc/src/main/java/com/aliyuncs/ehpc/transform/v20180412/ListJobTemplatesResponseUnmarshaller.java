@@ -45,6 +45,13 @@ public class ListJobTemplatesResponseUnmarshaller {
 			jobTemplates.setReRunable(_ctx.booleanValue("ListJobTemplatesResponse.Templates["+ i +"].ReRunable"));
 			jobTemplates.setArrayRequest(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].ArrayRequest"));
 			jobTemplates.setVariables(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Variables"));
+			jobTemplates.setQueue(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Queue"));
+			jobTemplates.setClockTime(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].ClockTime"));
+			jobTemplates.setNode(_ctx.integerValue("ListJobTemplatesResponse.Templates["+ i +"].Node"));
+			jobTemplates.setTask(_ctx.integerValue("ListJobTemplatesResponse.Templates["+ i +"].Task"));
+			jobTemplates.setThread(_ctx.integerValue("ListJobTemplatesResponse.Templates["+ i +"].Thread"));
+			jobTemplates.setMem(_ctx.stringValue("ListJobTemplatesResponse.Templates["+ i +"].Mem"));
+			jobTemplates.setGpu(_ctx.integerValue("ListJobTemplatesResponse.Templates["+ i +"].Gpu"));
 
 			templates.add(jobTemplates);
 		}

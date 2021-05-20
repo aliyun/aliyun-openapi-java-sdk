@@ -95,6 +95,8 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		private String description;
 
+		private Boolean proxyProtocolV2Enabled;
+
 		public String getServerId() {
 			return this.serverId;
 		}
@@ -165,6 +167,14 @@ public class DescribeVServerGroupAttributeResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public Boolean getProxyProtocolV2Enabled() {
+			return this.proxyProtocolV2Enabled;
+		}
+
+		public void setProxyProtocolV2Enabled(Boolean proxyProtocolV2Enabled) {
+			this.proxyProtocolV2Enabled = proxyProtocolV2Enabled;
 		}
 	}
 

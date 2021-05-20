@@ -87,6 +87,12 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 
 		private Float poseScore;
 
+		private Float occlusionScore;
+
+		private Boolean goodForLibrary;
+
+		private Boolean goodForRecognition;
+
 		private List<String> faceRects;
 
 		private List<String> landmarks;
@@ -129,6 +135,30 @@ public class DetectUserFaceByUrlResponse extends AcsResponse {
 
 		public void setPoseScore(Float poseScore) {
 			this.poseScore = poseScore;
+		}
+
+		public Float getOcclusionScore() {
+			return this.occlusionScore;
+		}
+
+		public void setOcclusionScore(Float occlusionScore) {
+			this.occlusionScore = occlusionScore;
+		}
+
+		public Boolean getGoodForLibrary() {
+			return this.goodForLibrary;
+		}
+
+		public void setGoodForLibrary(Boolean goodForLibrary) {
+			this.goodForLibrary = goodForLibrary;
+		}
+
+		public Boolean getGoodForRecognition() {
+			return this.goodForRecognition;
+		}
+
+		public void setGoodForRecognition(Boolean goodForRecognition) {
+			this.goodForRecognition = goodForRecognition;
 		}
 
 		public List<String> getFaceRects() {

@@ -64,6 +64,8 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 
 	private String name;
 
+	private String smartAGId;
+
 	private String status;
 	public DescribeSmartAccessGatewaysRequest() {
 		super("Smartag", "2018-03-13", "DescribeSmartAccessGateways", "smartag");
@@ -282,6 +284,17 @@ public class DescribeSmartAccessGatewaysRequest extends RpcAcsRequest<DescribeSm
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
+		}
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+		if(smartAGId != null){
+			putQueryParameter("SmartAGId", smartAGId);
 		}
 	}
 

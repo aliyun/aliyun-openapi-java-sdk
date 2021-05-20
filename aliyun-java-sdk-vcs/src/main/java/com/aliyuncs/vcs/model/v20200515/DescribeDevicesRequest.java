@@ -30,8 +30,10 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 	private String corpIdList;
 
 	private Integer pageSize;
+
+	private String deviceIdList;
 	public DescribeDevicesRequest() {
-		super("Vcs", "2020-05-15", "DescribeDevices", "vcs");
+		super("Vcs", "2020-05-15", "DescribeDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -69,6 +71,17 @@ public class DescribeDevicesRequest extends RpcAcsRequest<DescribeDevicesRespons
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putBodyParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public String getDeviceIdList() {
+		return this.deviceIdList;
+	}
+
+	public void setDeviceIdList(String deviceIdList) {
+		this.deviceIdList = deviceIdList;
+		if(deviceIdList != null){
+			putBodyParameter("DeviceIdList", deviceIdList);
 		}
 	}
 

@@ -41,11 +41,9 @@ public class QueryPictureSearchAppsResponseUnmarshaller {
 		List<PageDataItem> pageData = new ArrayList<PageDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPictureSearchAppsResponse.Data.PageData.Length"); i++) {
 			PageDataItem pageDataItem = new PageDataItem();
-			pageDataItem.setTenantId(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].TenantId"));
 			pageDataItem.setAppInstanceId(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].AppInstanceId"));
 			pageDataItem.setAppTemplateId(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].AppTemplateId"));
 			pageDataItem.setVersion(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Version"));
-			pageDataItem.setLevel(_ctx.integerValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Level"));
 			pageDataItem.setName(_ctx.stringValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].Name"));
 			pageDataItem.setCreateTime(_ctx.longValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].CreateTime"));
 			pageDataItem.setModifiedTime(_ctx.longValue("QueryPictureSearchAppsResponse.Data.PageData["+ i +"].ModifiedTime"));

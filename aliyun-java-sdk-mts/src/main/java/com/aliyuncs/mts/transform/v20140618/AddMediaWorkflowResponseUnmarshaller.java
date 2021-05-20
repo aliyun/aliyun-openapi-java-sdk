@@ -26,12 +26,12 @@ public class AddMediaWorkflowResponseUnmarshaller {
 		addMediaWorkflowResponse.setRequestId(_ctx.stringValue("AddMediaWorkflowResponse.RequestId"));
 
 		MediaWorkflow mediaWorkflow = new MediaWorkflow();
+		mediaWorkflow.setCreationTime(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.CreationTime"));
 		mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.MediaWorkflowId"));
+		mediaWorkflow.setState(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.State"));
+		mediaWorkflow.setTriggerMode(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.TriggerMode"));
 		mediaWorkflow.setName(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.Name"));
 		mediaWorkflow.setTopology(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.Topology"));
-		mediaWorkflow.setTriggerMode(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.TriggerMode"));
-		mediaWorkflow.setState(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.State"));
-		mediaWorkflow.setCreationTime(_ctx.stringValue("AddMediaWorkflowResponse.MediaWorkflow.CreationTime"));
 		addMediaWorkflowResponse.setMediaWorkflow(mediaWorkflow);
 	 
 	 	return addMediaWorkflowResponse;

@@ -71,6 +71,10 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private Boolean enablePhoenix;
 
+	private String diskUsage;
+
+	private String diskThreshold;
+
 	private List<Engine> engineList;
 
 	public String getRequestId() {
@@ -255,6 +259,22 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setEnablePhoenix(Boolean enablePhoenix) {
 		this.enablePhoenix = enablePhoenix;
+	}
+
+	public String getDiskUsage() {
+		return this.diskUsage;
+	}
+
+	public void setDiskUsage(String diskUsage) {
+		this.diskUsage = diskUsage;
+	}
+
+	public String getDiskThreshold() {
+		return this.diskThreshold;
+	}
+
+	public void setDiskThreshold(String diskThreshold) {
+		this.diskThreshold = diskThreshold;
 	}
 
 	public List<Engine> getEngineList() {

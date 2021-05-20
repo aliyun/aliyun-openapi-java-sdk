@@ -25,8 +25,6 @@ import com.aliyuncs.arms.Endpoint;
 public class CreatePrometheusAlertRuleRequest extends RpcAcsRequest<CreatePrometheusAlertRuleResponse> {
 	   
 
-	private String productCode;
-
 	private String expression;
 
 	private String alertName;
@@ -47,23 +45,12 @@ public class CreatePrometheusAlertRuleRequest extends RpcAcsRequest<CreatePromet
 
 	private String notifyType;
 	public CreatePrometheusAlertRuleRequest() {
-		super("ARMS", "2019-08-08", "CreatePrometheusAlertRule");
+		super("ARMS", "2019-08-08", "CreatePrometheusAlertRule", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getProductCode() {
-		return this.productCode;
-	}
-
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
 	}
 
 	public String getExpression() {

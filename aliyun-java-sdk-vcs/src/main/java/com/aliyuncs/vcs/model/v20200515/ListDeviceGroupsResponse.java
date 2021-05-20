@@ -27,9 +27,9 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private List<DataItem> data;
 
@@ -41,20 +41,20 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<DataItem> getData() {
@@ -89,105 +89,35 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private String deviceGroup;
-
-			private String deviceName;
-
-			private String deviceCode;
-
-			private String bitRate;
-
-			private String codingFormat;
-
-			private String resolvingPower;
-
-			private String dataSourceType;
-
-			private String regionName;
-
-			private String regionId;
-
 			private String installAddress;
-
-			private String deviceSn;
-
-			private String deviceStatus;
-
-			private String deviceStreamStatus;
 
 			private String deviceComputeStatus;
 
-			public String getDeviceGroup() {
-				return this.deviceGroup;
-			}
+			private String deviceSn;
 
-			public void setDeviceGroup(String deviceGroup) {
-				this.deviceGroup = deviceGroup;
-			}
+			private String deviceStreamStatus;
 
-			public String getDeviceName() {
-				return this.deviceName;
-			}
+			private String deviceGroup;
 
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
+			private String codingFormat;
 
-			public String getDeviceCode() {
-				return this.deviceCode;
-			}
+			private String type;
 
-			public void setDeviceCode(String deviceCode) {
-				this.deviceCode = deviceCode;
-			}
+			private String regionName;
 
-			public String getBitRate() {
-				return this.bitRate;
-			}
+			private String dataSourceType;
 
-			public void setBitRate(String bitRate) {
-				this.bitRate = bitRate;
-			}
+			private String deviceCode;
 
-			public String getCodingFormat() {
-				return this.codingFormat;
-			}
+			private String deviceStatus;
 
-			public void setCodingFormat(String codingFormat) {
-				this.codingFormat = codingFormat;
-			}
+			private String regionId;
 
-			public String getResolvingPower() {
-				return this.resolvingPower;
-			}
+			private String bitRate;
 
-			public void setResolvingPower(String resolvingPower) {
-				this.resolvingPower = resolvingPower;
-			}
+			private String resolvingPower;
 
-			public String getDataSourceType() {
-				return this.dataSourceType;
-			}
-
-			public void setDataSourceType(String dataSourceType) {
-				this.dataSourceType = dataSourceType;
-			}
-
-			public String getRegionName() {
-				return this.regionName;
-			}
-
-			public void setRegionName(String regionName) {
-				this.regionName = regionName;
-			}
-
-			public String getRegionId() {
-				return this.regionId;
-			}
-
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+			private String deviceName;
 
 			public String getInstallAddress() {
 				return this.installAddress;
@@ -195,6 +125,14 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 
 			public void setInstallAddress(String installAddress) {
 				this.installAddress = installAddress;
+			}
+
+			public String getDeviceComputeStatus() {
+				return this.deviceComputeStatus;
+			}
+
+			public void setDeviceComputeStatus(String deviceComputeStatus) {
+				this.deviceComputeStatus = deviceComputeStatus;
 			}
 
 			public String getDeviceSn() {
@@ -205,14 +143,6 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 				this.deviceSn = deviceSn;
 			}
 
-			public String getDeviceStatus() {
-				return this.deviceStatus;
-			}
-
-			public void setDeviceStatus(String deviceStatus) {
-				this.deviceStatus = deviceStatus;
-			}
-
 			public String getDeviceStreamStatus() {
 				return this.deviceStreamStatus;
 			}
@@ -221,12 +151,92 @@ public class ListDeviceGroupsResponse extends AcsResponse {
 				this.deviceStreamStatus = deviceStreamStatus;
 			}
 
-			public String getDeviceComputeStatus() {
-				return this.deviceComputeStatus;
+			public String getDeviceGroup() {
+				return this.deviceGroup;
 			}
 
-			public void setDeviceComputeStatus(String deviceComputeStatus) {
-				this.deviceComputeStatus = deviceComputeStatus;
+			public void setDeviceGroup(String deviceGroup) {
+				this.deviceGroup = deviceGroup;
+			}
+
+			public String getCodingFormat() {
+				return this.codingFormat;
+			}
+
+			public void setCodingFormat(String codingFormat) {
+				this.codingFormat = codingFormat;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getRegionName() {
+				return this.regionName;
+			}
+
+			public void setRegionName(String regionName) {
+				this.regionName = regionName;
+			}
+
+			public String getDataSourceType() {
+				return this.dataSourceType;
+			}
+
+			public void setDataSourceType(String dataSourceType) {
+				this.dataSourceType = dataSourceType;
+			}
+
+			public String getDeviceCode() {
+				return this.deviceCode;
+			}
+
+			public void setDeviceCode(String deviceCode) {
+				this.deviceCode = deviceCode;
+			}
+
+			public String getDeviceStatus() {
+				return this.deviceStatus;
+			}
+
+			public void setDeviceStatus(String deviceStatus) {
+				this.deviceStatus = deviceStatus;
+			}
+
+			public String getRegionId() {
+				return this.regionId;
+			}
+
+			public void setRegionId(String regionId) {
+				this.regionId = regionId;
+			}
+
+			public String getBitRate() {
+				return this.bitRate;
+			}
+
+			public void setBitRate(String bitRate) {
+				this.bitRate = bitRate;
+			}
+
+			public String getResolvingPower() {
+				return this.resolvingPower;
+			}
+
+			public void setResolvingPower(String resolvingPower) {
+				this.resolvingPower = resolvingPower;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
 			}
 		}
 	}

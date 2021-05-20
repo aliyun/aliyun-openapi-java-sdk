@@ -23,8 +23,8 @@ public class EditQualityRuleResponseUnmarshaller {
 	public static EditQualityRuleResponse unmarshall(EditQualityRuleResponse editQualityRuleResponse, UnmarshallerContext _ctx) {
 		
 		editQualityRuleResponse.setRequestId(_ctx.stringValue("EditQualityRuleResponse.RequestId"));
-		editQualityRuleResponse.setCode(_ctx.stringValue("EditQualityRuleResponse.Code"));
 		editQualityRuleResponse.setMessage(_ctx.stringValue("EditQualityRuleResponse.Message"));
+		editQualityRuleResponse.setCode(_ctx.stringValue("EditQualityRuleResponse.Code"));
 		editQualityRuleResponse.setSuccess(_ctx.booleanValue("EditQualityRuleResponse.Success"));
 	 
 	 	return editQualityRuleResponse;

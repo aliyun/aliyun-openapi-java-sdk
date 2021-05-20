@@ -39,7 +39,7 @@ public class GetHotlineCallActionRequest extends RpcAcsRequest<GetHotlineCallAct
 
 	private String acc;
 	public GetHotlineCallActionRequest() {
-		super("aiccs", "2019-10-15", "GetHotlineCallAction", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetHotlineCallAction");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,10 +22,10 @@ public class ChangeAgentStatusResponseUnmarshaller {
 
 	public static ChangeAgentStatusResponse unmarshall(ChangeAgentStatusResponse changeAgentStatusResponse, UnmarshallerContext _ctx) {
 		
-		changeAgentStatusResponse.setSuccess(_ctx.booleanValue("ChangeAgentStatusResponse.Success"));
-		changeAgentStatusResponse.setCode(_ctx.stringValue("ChangeAgentStatusResponse.Code"));
 		changeAgentStatusResponse.setMessage(_ctx.stringValue("ChangeAgentStatusResponse.Message"));
 		changeAgentStatusResponse.setData(_ctx.stringValue("ChangeAgentStatusResponse.Data"));
+		changeAgentStatusResponse.setCode(_ctx.stringValue("ChangeAgentStatusResponse.Code"));
+		changeAgentStatusResponse.setSuccess(_ctx.booleanValue("ChangeAgentStatusResponse.Success"));
 	 
 	 	return changeAgentStatusResponse;
 	}

@@ -22,9 +22,9 @@ public class RevokeRoleResponseUnmarshaller {
 
 	public static RevokeRoleResponse unmarshall(RevokeRoleResponse revokeRoleResponse, UnmarshallerContext _ctx) {
 		
-		revokeRoleResponse.setSuccess(_ctx.booleanValue("RevokeRoleResponse.Success"));
-		revokeRoleResponse.setCode(_ctx.stringValue("RevokeRoleResponse.Code"));
 		revokeRoleResponse.setMessage(_ctx.stringValue("RevokeRoleResponse.Message"));
+		revokeRoleResponse.setCode(_ctx.stringValue("RevokeRoleResponse.Code"));
+		revokeRoleResponse.setSuccess(_ctx.booleanValue("RevokeRoleResponse.Success"));
 	 
 	 	return revokeRoleResponse;
 	}

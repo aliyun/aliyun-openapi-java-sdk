@@ -27,7 +27,7 @@ public class ListGroupIdRequest extends RpcAcsRequest<ListGroupIdResponse> {
 
 	private String instanceId;
 	public ListGroupIdRequest() {
-		super("OnsMqtt", "2020-04-20", "ListGroupId", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "ListGroupId");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

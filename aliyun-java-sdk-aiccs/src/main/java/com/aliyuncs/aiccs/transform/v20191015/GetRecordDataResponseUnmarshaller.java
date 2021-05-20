@@ -24,9 +24,9 @@ public class GetRecordDataResponseUnmarshaller {
 	public static GetRecordDataResponse unmarshall(GetRecordDataResponse getRecordDataResponse, UnmarshallerContext _ctx) {
 		
 		getRecordDataResponse.setRequestId(_ctx.stringValue("GetRecordDataResponse.RequestId"));
-		getRecordDataResponse.setSuccess(_ctx.booleanValue("GetRecordDataResponse.Success"));
-		getRecordDataResponse.setCode(_ctx.stringValue("GetRecordDataResponse.Code"));
 		getRecordDataResponse.setMessage(_ctx.stringValue("GetRecordDataResponse.Message"));
+		getRecordDataResponse.setCode(_ctx.stringValue("GetRecordDataResponse.Code"));
+		getRecordDataResponse.setSuccess(_ctx.booleanValue("GetRecordDataResponse.Success"));
 
 		Data data = new Data();
 		data.setAcid(_ctx.stringValue("GetRecordDataResponse.Data.Acid"));

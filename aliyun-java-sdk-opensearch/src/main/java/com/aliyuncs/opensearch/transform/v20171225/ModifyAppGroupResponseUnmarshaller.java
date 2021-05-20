@@ -50,6 +50,7 @@ public class ModifyAppGroupResponseUnmarshaller {
 		result.setUpdated(_ctx.integerValue("ModifyAppGroupResponse.result.updated"));
 		result.setStatus(_ctx.stringValue("ModifyAppGroupResponse.result.status"));
 		result.setLockMode(_ctx.stringValue("ModifyAppGroupResponse.result.lockMode"));
+		result.setDomain(_ctx.stringValue("ModifyAppGroupResponse.result.domain"));
 
 		Quota quota = new Quota();
 		quota.setDocSize(_ctx.integerValue("ModifyAppGroupResponse.result.quota.docSize"));

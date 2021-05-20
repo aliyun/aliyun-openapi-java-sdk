@@ -46,17 +46,9 @@ public class ChangeVideoSizeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String videoCoverUrl;
-
 		private String videoUrl;
 
-		public String getVideoCoverUrl() {
-			return this.videoCoverUrl;
-		}
-
-		public void setVideoCoverUrl(String videoCoverUrl) {
-			this.videoCoverUrl = videoCoverUrl;
-		}
+		private String videoCoverUrl;
 
 		public String getVideoUrl() {
 			return this.videoUrl;
@@ -64,6 +56,14 @@ public class ChangeVideoSizeResponse extends AcsResponse {
 
 		public void setVideoUrl(String videoUrl) {
 			this.videoUrl = videoUrl;
+		}
+
+		public String getVideoCoverUrl() {
+			return this.videoCoverUrl;
+		}
+
+		public void setVideoCoverUrl(String videoCoverUrl) {
+			this.videoCoverUrl = videoCoverUrl;
 		}
 	}
 

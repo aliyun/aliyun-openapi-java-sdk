@@ -23,9 +23,9 @@ public class DeleteProfileResponseUnmarshaller {
 	public static DeleteProfileResponse unmarshall(DeleteProfileResponse deleteProfileResponse, UnmarshallerContext _ctx) {
 		
 		deleteProfileResponse.setRequestId(_ctx.stringValue("DeleteProfileResponse.RequestId"));
-		deleteProfileResponse.setCode(_ctx.stringValue("DeleteProfileResponse.Code"));
-		deleteProfileResponse.setData(_ctx.booleanValue("DeleteProfileResponse.Data"));
 		deleteProfileResponse.setMessage(_ctx.stringValue("DeleteProfileResponse.Message"));
+		deleteProfileResponse.setData(_ctx.booleanValue("DeleteProfileResponse.Data"));
+		deleteProfileResponse.setCode(_ctx.stringValue("DeleteProfileResponse.Code"));
 	 
 	 	return deleteProfileResponse;
 	}

@@ -70,6 +70,8 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 	private String fileFolderPath;
 
 	private String fileDescription;
+
+	private Boolean autoParsing;
 	public UpdateFileRequest() {
 		super("dataworks-public", "2020-05-18", "UpdateFile");
 		setMethod(MethodType.POST);
@@ -329,6 +331,17 @@ public class UpdateFileRequest extends RpcAcsRequest<UpdateFileResponse> {
 		this.fileDescription = fileDescription;
 		if(fileDescription != null){
 			putBodyParameter("FileDescription", fileDescription);
+		}
+	}
+
+	public Boolean getAutoParsing() {
+		return this.autoParsing;
+	}
+
+	public void setAutoParsing(Boolean autoParsing) {
+		this.autoParsing = autoParsing;
+		if(autoParsing != null){
+			putBodyParameter("AutoParsing", autoParsing.toString());
 		}
 	}
 

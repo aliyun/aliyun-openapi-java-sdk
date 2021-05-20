@@ -99,11 +99,21 @@ public class DetectIPCObjectResponse extends AcsResponse {
 
 		public static class Element {
 
+			private Float targetRate;
+
 			private Float score;
 
 			private String type;
 
 			private List<Long> box;
+
+			public Float getTargetRate() {
+				return this.targetRate;
+			}
+
+			public void setTargetRate(Float targetRate) {
+				this.targetRate = targetRate;
+			}
 
 			public Float getScore() {
 				return this.score;

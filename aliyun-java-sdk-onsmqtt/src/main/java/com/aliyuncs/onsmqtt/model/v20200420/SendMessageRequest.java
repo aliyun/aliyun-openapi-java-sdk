@@ -31,7 +31,7 @@ public class SendMessageRequest extends RpcAcsRequest<SendMessageResponse> {
 
 	private String payload;
 	public SendMessageRequest() {
-		super("OnsMqtt", "2020-04-20", "SendMessage", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "SendMessage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

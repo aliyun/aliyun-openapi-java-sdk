@@ -28,28 +28,28 @@ public class ListCorpsResponseUnmarshaller {
 	public static ListCorpsResponse unmarshall(ListCorpsResponse listCorpsResponse, UnmarshallerContext _ctx) {
 		
 		listCorpsResponse.setRequestId(_ctx.stringValue("ListCorpsResponse.RequestId"));
-		listCorpsResponse.setCode(_ctx.stringValue("ListCorpsResponse.Code"));
 		listCorpsResponse.setMessage(_ctx.stringValue("ListCorpsResponse.Message"));
+		listCorpsResponse.setCode(_ctx.stringValue("ListCorpsResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.integerValue("ListCorpsResponse.Data.PageNumber"));
-		data.setPageSize(_ctx.integerValue("ListCorpsResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("ListCorpsResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("ListCorpsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListCorpsResponse.Data.TotalPage"));
+		data.setPageNumber(_ctx.integerValue("ListCorpsResponse.Data.PageNumber"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("ListCorpsResponse.Data.Records.Length"); i++) {
 			Record record = new Record();
-			record.setCorpId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CorpId"));
-			record.setCorpName(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CorpName"));
-			record.setDescription(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].Description"));
-			record.setCreateDate(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CreateDate"));
-			record.setParentCorpId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].ParentCorpId"));
-			record.setAppName(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].AppName"));
-			record.setDeviceCount(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].DeviceCount"));
-			record.setIsvSubId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].IsvSubId"));
-			record.setAcuUsed(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].AcuUsed"));
 			record.setIconPath(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].IconPath"));
+			record.setCorpId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CorpId"));
+			record.setDescription(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].Description"));
+			record.setParentCorpId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].ParentCorpId"));
+			record.setIsvSubId(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].IsvSubId"));
+			record.setCreateDate(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CreateDate"));
+			record.setAcuUsed(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].AcuUsed"));
+			record.setDeviceCount(_ctx.integerValue("ListCorpsResponse.Data.Records["+ i +"].DeviceCount"));
+			record.setCorpName(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].CorpName"));
+			record.setAppName(_ctx.stringValue("ListCorpsResponse.Data.Records["+ i +"].AppName"));
 
 			records.add(record);
 		}

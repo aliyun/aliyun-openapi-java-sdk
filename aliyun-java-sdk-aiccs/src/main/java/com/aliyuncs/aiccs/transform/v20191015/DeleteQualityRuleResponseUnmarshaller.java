@@ -23,10 +23,10 @@ public class DeleteQualityRuleResponseUnmarshaller {
 	public static DeleteQualityRuleResponse unmarshall(DeleteQualityRuleResponse deleteQualityRuleResponse, UnmarshallerContext _ctx) {
 		
 		deleteQualityRuleResponse.setRequestId(_ctx.stringValue("DeleteQualityRuleResponse.RequestId"));
-		deleteQualityRuleResponse.setCode(_ctx.stringValue("DeleteQualityRuleResponse.Code"));
 		deleteQualityRuleResponse.setMessage(_ctx.stringValue("DeleteQualityRuleResponse.Message"));
-		deleteQualityRuleResponse.setSuccess(_ctx.booleanValue("DeleteQualityRuleResponse.Success"));
 		deleteQualityRuleResponse.setData(_ctx.stringValue("DeleteQualityRuleResponse.Data"));
+		deleteQualityRuleResponse.setCode(_ctx.stringValue("DeleteQualityRuleResponse.Code"));
+		deleteQualityRuleResponse.setSuccess(_ctx.booleanValue("DeleteQualityRuleResponse.Success"));
 	 
 	 	return deleteQualityRuleResponse;
 	}

@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetUserDetailResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class GetUserDetailResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,31 +66,39 @@ public class GetUserDetailResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String userName;
+
 		private String address;
-
-		private String age;
-
-		private String attachment;
-
-		private String bizId;
-
-		private String faceImageUrl;
-
-		private String gender;
-
-		private String idNumber;
 
 		private String phoneNo;
 
-		private String plateNo;
-
-		private Integer userGroupId;
+		private String idNumber;
 
 		private Integer userId;
 
-		private String userName;
+		private Integer userGroupId;
 
 		private String isvSubId;
+
+		private String attachment;
+
+		private String gender;
+
+		private String plateNo;
+
+		private String bizId;
+
+		private String age;
+
+		private String faceImageUrl;
+
+		public String getUserName() {
+			return this.userName;
+		}
+
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
 
 		public String getAddress() {
 			return this.address;
@@ -98,54 +106,6 @@ public class GetUserDetailResponse extends AcsResponse {
 
 		public void setAddress(String address) {
 			this.address = address;
-		}
-
-		public String getAge() {
-			return this.age;
-		}
-
-		public void setAge(String age) {
-			this.age = age;
-		}
-
-		public String getAttachment() {
-			return this.attachment;
-		}
-
-		public void setAttachment(String attachment) {
-			this.attachment = attachment;
-		}
-
-		public String getBizId() {
-			return this.bizId;
-		}
-
-		public void setBizId(String bizId) {
-			this.bizId = bizId;
-		}
-
-		public String getFaceImageUrl() {
-			return this.faceImageUrl;
-		}
-
-		public void setFaceImageUrl(String faceImageUrl) {
-			this.faceImageUrl = faceImageUrl;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public String getIdNumber() {
-			return this.idNumber;
-		}
-
-		public void setIdNumber(String idNumber) {
-			this.idNumber = idNumber;
 		}
 
 		public String getPhoneNo() {
@@ -156,20 +116,12 @@ public class GetUserDetailResponse extends AcsResponse {
 			this.phoneNo = phoneNo;
 		}
 
-		public String getPlateNo() {
-			return this.plateNo;
+		public String getIdNumber() {
+			return this.idNumber;
 		}
 
-		public void setPlateNo(String plateNo) {
-			this.plateNo = plateNo;
-		}
-
-		public Integer getUserGroupId() {
-			return this.userGroupId;
-		}
-
-		public void setUserGroupId(Integer userGroupId) {
-			this.userGroupId = userGroupId;
+		public void setIdNumber(String idNumber) {
+			this.idNumber = idNumber;
 		}
 
 		public Integer getUserId() {
@@ -180,12 +132,12 @@ public class GetUserDetailResponse extends AcsResponse {
 			this.userId = userId;
 		}
 
-		public String getUserName() {
-			return this.userName;
+		public Integer getUserGroupId() {
+			return this.userGroupId;
 		}
 
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setUserGroupId(Integer userGroupId) {
+			this.userGroupId = userGroupId;
 		}
 
 		public String getIsvSubId() {
@@ -194,6 +146,54 @@ public class GetUserDetailResponse extends AcsResponse {
 
 		public void setIsvSubId(String isvSubId) {
 			this.isvSubId = isvSubId;
+		}
+
+		public String getAttachment() {
+			return this.attachment;
+		}
+
+		public void setAttachment(String attachment) {
+			this.attachment = attachment;
+		}
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
+
+		public String getPlateNo() {
+			return this.plateNo;
+		}
+
+		public void setPlateNo(String plateNo) {
+			this.plateNo = plateNo;
+		}
+
+		public String getBizId() {
+			return this.bizId;
+		}
+
+		public void setBizId(String bizId) {
+			this.bizId = bizId;
+		}
+
+		public String getAge() {
+			return this.age;
+		}
+
+		public void setAge(String age) {
+			this.age = age;
+		}
+
+		public String getFaceImageUrl() {
+			return this.faceImageUrl;
+		}
+
+		public void setFaceImageUrl(String faceImageUrl) {
+			this.faceImageUrl = faceImageUrl;
 		}
 	}
 

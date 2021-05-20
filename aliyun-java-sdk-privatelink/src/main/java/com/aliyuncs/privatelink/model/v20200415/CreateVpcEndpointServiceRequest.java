@@ -33,6 +33,8 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 	private String payer;
 
+	private Boolean zoneAffinityEnabled;
+
 	private Boolean dryRun;
 
 	private List<Resource> resources;
@@ -81,6 +83,17 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		}
 	}
 
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
+	}
+
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
+		if(zoneAffinityEnabled != null){
+			putQueryParameter("ZoneAffinityEnabled", zoneAffinityEnabled.toString());
+		}
+	}
+
 	public Boolean getDryRun() {
 		return this.dryRun;
 	}
@@ -100,8 +113,8 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 		this.resources = resources;	
 		if (resources != null) {
 			for (int depth1 = 0; depth1 < resources.size(); depth1++) {
-				putQueryParameter("Resource." + (depth1 + 1) + ".ResourceId" , resources.get(depth1).getResourceId());
 				putQueryParameter("Resource." + (depth1 + 1) + ".ResourceType" , resources.get(depth1).getResourceType());
+				putQueryParameter("Resource." + (depth1 + 1) + ".ResourceId" , resources.get(depth1).getResourceId());
 			}
 		}	
 	}
@@ -119,17 +132,9 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 	public static class Resource {
 
-		private String resourceId;
-
 		private String resourceType;
 
-		public String getResourceId() {
-			return this.resourceId;
-		}
-
-		public void setResourceId(String resourceId) {
-			this.resourceId = resourceId;
-		}
+		private String resourceId;
 
 		public String getResourceType() {
 			return this.resourceType;
@@ -137,6 +142,14 @@ public class CreateVpcEndpointServiceRequest extends RpcAcsRequest<CreateVpcEndp
 
 		public void setResourceType(String resourceType) {
 			this.resourceType = resourceType;
+		}
+
+		public String getResourceId() {
+			return this.resourceId;
+		}
+
+		public void setResourceId(String resourceId) {
+			this.resourceId = resourceId;
 		}
 	}
 

@@ -27,18 +27,18 @@ public class UpdatePipelineResponseUnmarshaller {
 		updatePipelineResponse.setRequestId(_ctx.stringValue("UpdatePipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("UpdatePipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("UpdatePipelineResponse.Pipeline.Name"));
-		pipeline.setState(_ctx.stringValue("UpdatePipelineResponse.Pipeline.State"));
 		pipeline.setSpeed(_ctx.stringValue("UpdatePipelineResponse.Pipeline.Speed"));
-		pipeline.setQuotaAllocate(_ctx.longValue("UpdatePipelineResponse.Pipeline.QuotaAllocate"));
+		pipeline.setState(_ctx.stringValue("UpdatePipelineResponse.Pipeline.State"));
+		pipeline.setName(_ctx.stringValue("UpdatePipelineResponse.Pipeline.Name"));
 		pipeline.setRole(_ctx.stringValue("UpdatePipelineResponse.Pipeline.Role"));
+		pipeline.setId(_ctx.stringValue("UpdatePipelineResponse.Pipeline.Id"));
+		pipeline.setQuotaAllocate(_ctx.longValue("UpdatePipelineResponse.Pipeline.QuotaAllocate"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(_ctx.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.Topic"));
-		notifyConfig.setQueueName(_ctx.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.QueueName"));
 		notifyConfig.setMqTopic(_ctx.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.MqTopic"));
+		notifyConfig.setQueueName(_ctx.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.QueueName"));
 		notifyConfig.setMqTag(_ctx.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.MqTag"));
+		notifyConfig.setTopic(_ctx.stringValue("UpdatePipelineResponse.Pipeline.NotifyConfig.Topic"));
 		pipeline.setNotifyConfig(notifyConfig);
 		updatePipelineResponse.setPipeline(pipeline);
 	 

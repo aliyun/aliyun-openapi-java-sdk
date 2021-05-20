@@ -35,7 +35,7 @@ public class ModifySynchronizationObjectRequest extends RpcAcsRequest<ModifySync
 
 	private String synchronizationDirection;
 	public ModifySynchronizationObjectRequest() {
-		super("Dts", "2020-01-01", "ModifySynchronizationObject", "dts");
+		super("Dts", "2020-01-01", "ModifySynchronizationObject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

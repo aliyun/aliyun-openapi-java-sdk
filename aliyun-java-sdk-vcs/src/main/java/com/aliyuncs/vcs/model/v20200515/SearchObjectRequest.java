@@ -15,8 +15,6 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -37,7 +35,7 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 
 	private Integer pageNumber;
 
-	private List<Object> deviceList;
+	private String deviceList;
 
 	private String picUrl;
 
@@ -49,7 +47,7 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 
 	private String conditions;
 	public SearchObjectRequest() {
-		super("Vcs", "2020-05-15", "SearchObject", "vcs");
+		super("Vcs", "2020-05-15", "SearchObject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -112,14 +110,14 @@ public class SearchObjectRequest extends RpcAcsRequest<SearchObjectResponse> {
 		}
 	}
 
-	public List<Object> getDeviceList() {
+	public String getDeviceList() {
 		return this.deviceList;
 	}
 
-	public void setDeviceList(List<Object> deviceList) {
+	public void setDeviceList(String deviceList) {
 		this.deviceList = deviceList;
 		if(deviceList != null){
-			putBodyParameter("DeviceList", new Gson().toJson(deviceList));
+			putBodyParameter("DeviceList", deviceList);
 		}
 	}
 

@@ -35,7 +35,7 @@ public class GetStructSyncJobAnalyzeResultRequest extends RpcAcsRequest<GetStruc
 
 	private Long pageSize;
 	public GetStructSyncJobAnalyzeResultRequest() {
-		super("dms-enterprise", "2018-11-01", "GetStructSyncJobAnalyzeResult");
+		super("dms-enterprise", "2018-11-01", "GetStructSyncJobAnalyzeResult", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

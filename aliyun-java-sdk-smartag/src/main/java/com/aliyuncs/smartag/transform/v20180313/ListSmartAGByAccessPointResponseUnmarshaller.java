@@ -33,12 +33,12 @@ public class ListSmartAGByAccessPointResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListSmartAGByAccessPointResponse.SmartAccessGateways.Length"); i++) {
 			SmartAccessGateway smartAccessGateway = new SmartAccessGateway();
 			smartAccessGateway.setSmartAGName(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGName"));
-			smartAccessGateway.setSmartAGDescription(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGDescription"));
-			smartAccessGateway.setHardwareVersion(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
-			smartAccessGateway.setAssociatedCcnId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].AssociatedCcnId"));
-			smartAccessGateway.setRoutingStrategy(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].RoutingStrategy"));
-			smartAccessGateway.setSmartAGId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGId"));
 			smartAccessGateway.setSmartAGStatus(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGStatus"));
+			smartAccessGateway.setRoutingStrategy(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].RoutingStrategy"));
+			smartAccessGateway.setAssociatedCcnId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].AssociatedCcnId"));
+			smartAccessGateway.setSmartAGId(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGId"));
+			smartAccessGateway.setHardwareVersion(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].HardwareVersion"));
+			smartAccessGateway.setSmartAGDescription(_ctx.stringValue("ListSmartAGByAccessPointResponse.SmartAccessGateways["+ i +"].SmartAGDescription"));
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

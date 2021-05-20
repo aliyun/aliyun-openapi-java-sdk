@@ -26,6 +26,10 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -34,6 +38,22 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -46,17 +66,9 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 
 	public static class Data {
 
-		private FaceResult faceResult;
-
 		private BackResult backResult;
 
-		public FaceResult getFaceResult() {
-			return this.faceResult;
-		}
-
-		public void setFaceResult(FaceResult faceResult) {
-			this.faceResult = faceResult;
-		}
+		private FaceResult faceResult;
 
 		public BackResult getBackResult() {
 			return this.backResult;
@@ -66,23 +78,31 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 			this.backResult = backResult;
 		}
 
-		public static class FaceResult {
+		public FaceResult getFaceResult() {
+			return this.faceResult;
+		}
+
+		public void setFaceResult(FaceResult faceResult) {
+			this.faceResult = faceResult;
+		}
+
+		public static class BackResult {
+
+			private String archiveNumber;
 
 			private String name;
 
-			private String licenseNumber;
+			private String cardNumber;
 
-			private String vehicleType;
+			private String record;
 
-			private String startDate;
+			public String getArchiveNumber() {
+				return this.archiveNumber;
+			}
 
-			private String endDate;
-
-			private String issueDate;
-
-			private String address;
-
-			private String gender;
+			public void setArchiveNumber(String archiveNumber) {
+				this.archiveNumber = archiveNumber;
+			}
 
 			public String getName() {
 				return this.name;
@@ -92,13 +112,42 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 				this.name = name;
 			}
 
-			public String getLicenseNumber() {
-				return this.licenseNumber;
+			public String getCardNumber() {
+				return this.cardNumber;
 			}
 
-			public void setLicenseNumber(String licenseNumber) {
-				this.licenseNumber = licenseNumber;
+			public void setCardNumber(String cardNumber) {
+				this.cardNumber = cardNumber;
 			}
+
+			public String getRecord() {
+				return this.record;
+			}
+
+			public void setRecord(String record) {
+				this.record = record;
+			}
+		}
+
+		public static class FaceResult {
+
+			private String vehicleType;
+
+			private String issueDate;
+
+			private String endDate;
+
+			private String gender;
+
+			private String address;
+
+			private String startDate;
+
+			private String licenseNumber;
+
+			private String name;
+
+			private String issueUnit;
 
 			public String getVehicleType() {
 				return this.vehicleType;
@@ -106,22 +155,6 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 
 			public void setVehicleType(String vehicleType) {
 				this.vehicleType = vehicleType;
-			}
-
-			public String getStartDate() {
-				return this.startDate;
-			}
-
-			public void setStartDate(String startDate) {
-				this.startDate = startDate;
-			}
-
-			public String getEndDate() {
-				return this.endDate;
-			}
-
-			public void setEndDate(String endDate) {
-				this.endDate = endDate;
 			}
 
 			public String getIssueDate() {
@@ -132,12 +165,12 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 				this.issueDate = issueDate;
 			}
 
-			public String getAddress() {
-				return this.address;
+			public String getEndDate() {
+				return this.endDate;
 			}
 
-			public void setAddress(String address) {
-				this.address = address;
+			public void setEndDate(String endDate) {
+				this.endDate = endDate;
 			}
 
 			public String getGender() {
@@ -147,18 +180,45 @@ public class RecognizeDriverLicenseResponse extends AcsResponse {
 			public void setGender(String gender) {
 				this.gender = gender;
 			}
-		}
 
-		public static class BackResult {
-
-			private String archiveNumber;
-
-			public String getArchiveNumber() {
-				return this.archiveNumber;
+			public String getAddress() {
+				return this.address;
 			}
 
-			public void setArchiveNumber(String archiveNumber) {
-				this.archiveNumber = archiveNumber;
+			public void setAddress(String address) {
+				this.address = address;
+			}
+
+			public String getStartDate() {
+				return this.startDate;
+			}
+
+			public void setStartDate(String startDate) {
+				this.startDate = startDate;
+			}
+
+			public String getLicenseNumber() {
+				return this.licenseNumber;
+			}
+
+			public void setLicenseNumber(String licenseNumber) {
+				this.licenseNumber = licenseNumber;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getIssueUnit() {
+				return this.issueUnit;
+			}
+
+			public void setIssueUnit(String issueUnit) {
+				this.issueUnit = issueUnit;
 			}
 		}
 	}

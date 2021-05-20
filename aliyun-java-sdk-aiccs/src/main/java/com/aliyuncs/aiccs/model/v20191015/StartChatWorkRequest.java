@@ -29,7 +29,7 @@ public class StartChatWorkRequest extends RpcAcsRequest<StartChatWorkResponse> {
 
 	private String accountName;
 	public StartChatWorkRequest() {
-		super("aiccs", "2019-10-15", "StartChatWork", "aiccs-service");
+		super("aiccs", "2019-10-15", "StartChatWork");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

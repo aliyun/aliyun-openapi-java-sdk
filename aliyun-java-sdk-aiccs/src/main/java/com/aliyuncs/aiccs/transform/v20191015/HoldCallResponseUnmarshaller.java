@@ -23,9 +23,9 @@ public class HoldCallResponseUnmarshaller {
 	public static HoldCallResponse unmarshall(HoldCallResponse holdCallResponse, UnmarshallerContext _ctx) {
 		
 		holdCallResponse.setRequestId(_ctx.stringValue("HoldCallResponse.RequestId"));
-		holdCallResponse.setSuccess(_ctx.booleanValue("HoldCallResponse.Success"));
-		holdCallResponse.setCode(_ctx.stringValue("HoldCallResponse.Code"));
 		holdCallResponse.setMessage(_ctx.stringValue("HoldCallResponse.Message"));
+		holdCallResponse.setCode(_ctx.stringValue("HoldCallResponse.Code"));
+		holdCallResponse.setSuccess(_ctx.booleanValue("HoldCallResponse.Success"));
 	 
 	 	return holdCallResponse;
 	}

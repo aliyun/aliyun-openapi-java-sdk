@@ -28,19 +28,20 @@ public class DescribeGrantRulesResponseUnmarshaller {
 		
 		describeGrantRulesResponse.setRequestId(_ctx.stringValue("DescribeGrantRulesResponse.RequestId"));
 		describeGrantRulesResponse.setTotalCount(_ctx.integerValue("DescribeGrantRulesResponse.TotalCount"));
-		describeGrantRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantRulesResponse.PageNumber"));
 		describeGrantRulesResponse.setPageSize(_ctx.integerValue("DescribeGrantRulesResponse.PageSize"));
+		describeGrantRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantRulesResponse.PageNumber"));
 
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantRulesResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
-			grantRule.setGrantRuleId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GrantRuleId"));
-			grantRule.setCenUid(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenUid"));
-			grantRule.setCcnUid(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnUid"));
-			grantRule.setCenInstanceId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenInstanceId"));
-			grantRule.setCcnInstanceId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnInstanceId"));
 			grantRule.setGmtCreate(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GmtCreate"));
+			grantRule.setCenUid(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenUid"));
+			grantRule.setGrantTrafficService(_ctx.booleanValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GrantTrafficService"));
+			grantRule.setCcnInstanceId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnInstanceId"));
+			grantRule.setGrantRuleId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GrantRuleId"));
+			grantRule.setCenInstanceId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CenInstanceId"));
 			grantRule.setGmtModified(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].GmtModified"));
+			grantRule.setCcnUid(_ctx.longValue("DescribeGrantRulesResponse.GrantRules["+ i +"].CcnUid"));
 			grantRule.setRegionId(_ctx.stringValue("DescribeGrantRulesResponse.GrantRules["+ i +"].RegionId"));
 
 			grantRules.add(grantRule);

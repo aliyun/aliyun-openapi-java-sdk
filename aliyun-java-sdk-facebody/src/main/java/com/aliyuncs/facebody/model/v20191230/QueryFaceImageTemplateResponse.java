@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryFaceImageTemplateResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +47,14 @@ public class QueryFaceImageTemplateResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -79,31 +79,15 @@ public class QueryFaceImageTemplateResponse extends AcsResponse {
 
 		public static class ElementsItem {
 
-			private String templateURL;
-
-			private String userId;
-
 			private String createTime;
 
 			private String updateTime;
 
+			private String userId;
+
 			private String templateId;
 
-			public String getTemplateURL() {
-				return this.templateURL;
-			}
-
-			public void setTemplateURL(String templateURL) {
-				this.templateURL = templateURL;
-			}
-
-			public String getUserId() {
-				return this.userId;
-			}
-
-			public void setUserId(String userId) {
-				this.userId = userId;
-			}
+			private String templateURL;
 
 			public String getCreateTime() {
 				return this.createTime;
@@ -121,12 +105,28 @@ public class QueryFaceImageTemplateResponse extends AcsResponse {
 				this.updateTime = updateTime;
 			}
 
+			public String getUserId() {
+				return this.userId;
+			}
+
+			public void setUserId(String userId) {
+				this.userId = userId;
+			}
+
 			public String getTemplateId() {
 				return this.templateId;
 			}
 
 			public void setTemplateId(String templateId) {
 				this.templateId = templateId;
+			}
+
+			public String getTemplateURL() {
+				return this.templateURL;
+			}
+
+			public void setTemplateURL(String templateURL) {
+				this.templateURL = templateURL;
 			}
 		}
 	}

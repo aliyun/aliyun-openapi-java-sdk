@@ -99,6 +99,8 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		private String publishDomain;
 
+		private String streamUrlArgs;
+
 		private String publishType;
 
 		private String transcoded;
@@ -169,6 +171,14 @@ public class DescribeLiveStreamsOnlineListResponse extends AcsResponse {
 
 		public void setPublishDomain(String publishDomain) {
 			this.publishDomain = publishDomain;
+		}
+
+		public String getStreamUrlArgs() {
+			return this.streamUrlArgs;
+		}
+
+		public void setStreamUrlArgs(String streamUrlArgs) {
+			this.streamUrlArgs = streamUrlArgs;
 		}
 
 		public String getPublishType() {

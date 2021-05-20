@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Strategy> strategies;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Strategy> getStrategies() {
@@ -77,36 +77,36 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 
 	public static class Strategy {
 
-		private Long createTime;
+		private String status;
 
 		private String instanceId;
 
-		private String smartAGId;
-
 		private String hcInstanceId;
-
-		private String sourceType;
-
-		private String destCidrBlock;
 
 		private String routeSource;
 
+		private String sourceType;
+
+		private Long createTime;
+
 		private String routeDistribution;
 
-		private String status;
-
 		private Boolean isConflict;
+
+		private String smartAGId;
 
 		private String strategyPublishStatus;
 
 		private String conflictInfo;
 
-		public Long getCreateTime() {
-			return this.createTime;
+		private String destCidrBlock;
+
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setCreateTime(Long createTime) {
-			this.createTime = createTime;
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getInstanceId() {
@@ -117,36 +117,12 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getSmartAGId() {
-			return this.smartAGId;
-		}
-
-		public void setSmartAGId(String smartAGId) {
-			this.smartAGId = smartAGId;
-		}
-
 		public String getHcInstanceId() {
 			return this.hcInstanceId;
 		}
 
 		public void setHcInstanceId(String hcInstanceId) {
 			this.hcInstanceId = hcInstanceId;
-		}
-
-		public String getSourceType() {
-			return this.sourceType;
-		}
-
-		public void setSourceType(String sourceType) {
-			this.sourceType = sourceType;
-		}
-
-		public String getDestCidrBlock() {
-			return this.destCidrBlock;
-		}
-
-		public void setDestCidrBlock(String destCidrBlock) {
-			this.destCidrBlock = destCidrBlock;
 		}
 
 		public String getRouteSource() {
@@ -157,6 +133,22 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 			this.routeSource = routeSource;
 		}
 
+		public String getSourceType() {
+			return this.sourceType;
+		}
+
+		public void setSourceType(String sourceType) {
+			this.sourceType = sourceType;
+		}
+
+		public Long getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(Long createTime) {
+			this.createTime = createTime;
+		}
+
 		public String getRouteDistribution() {
 			return this.routeDistribution;
 		}
@@ -165,20 +157,20 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 			this.routeDistribution = routeDistribution;
 		}
 
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
 		public Boolean getIsConflict() {
 			return this.isConflict;
 		}
 
 		public void setIsConflict(Boolean isConflict) {
 			this.isConflict = isConflict;
+		}
+
+		public String getSmartAGId() {
+			return this.smartAGId;
+		}
+
+		public void setSmartAGId(String smartAGId) {
+			this.smartAGId = smartAGId;
 		}
 
 		public String getStrategyPublishStatus() {
@@ -195,6 +187,14 @@ public class DescribeRouteDistributionStrategiesResponse extends AcsResponse {
 
 		public void setConflictInfo(String conflictInfo) {
 			this.conflictInfo = conflictInfo;
+		}
+
+		public String getDestCidrBlock() {
+			return this.destCidrBlock;
+		}
+
+		public void setDestCidrBlock(String destCidrBlock) {
+			this.destCidrBlock = destCidrBlock;
 		}
 	}
 

@@ -32,7 +32,7 @@ public class DescribePrePaidInstanceStockRequest extends RpcAcsRequest<DescribeP
 
 	private Integer dataDiskSize;
 	public DescribePrePaidInstanceStockRequest() {
-		super("Ens", "2017-11-10", "DescribePrePaidInstanceStock");
+		super("Ens", "2017-11-10", "DescribePrePaidInstanceStock", "ens");
 		setMethod(MethodType.POST);
 	}
 

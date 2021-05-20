@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNumber;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNumber;
 
 		private List<RecordsItem> records;
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -119,69 +119,37 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String faceId;
-
-			private String corpId;
-
-			private String dataSourceId;
-
-			private String shotTime;
-
 			private String genderCode;
 
-			private String minAge;
-
-			private String maxAge;
-
-			private String capStyle;
-
-			private String hairStyle;
-
-			private Float leftTopX;
-
-			private Float leftTopY;
-
-			private Float rightBottomX;
-
-			private Float rightBottomY;
+			private String faceId;
 
 			private String picUrlPath;
 
+			private String corpId;
+
+			private Float rightBottomX;
+
 			private String targetPicUrlPath;
+
+			private Float rightBottomY;
 
 			private String sourceId;
 
-			public String getFaceId() {
-				return this.faceId;
-			}
+			private String maxAge;
 
-			public void setFaceId(String faceId) {
-				this.faceId = faceId;
-			}
+			private Float leftTopY;
 
-			public String getCorpId() {
-				return this.corpId;
-			}
+			private Float leftTopX;
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
-			}
+			private String capStyle;
 
-			public String getDataSourceId() {
-				return this.dataSourceId;
-			}
+			private String minAge;
 
-			public void setDataSourceId(String dataSourceId) {
-				this.dataSourceId = dataSourceId;
-			}
+			private String shotTime;
 
-			public String getShotTime() {
-				return this.shotTime;
-			}
+			private String dataSourceId;
 
-			public void setShotTime(String shotTime) {
-				this.shotTime = shotTime;
-			}
+			private String hairStyle;
 
 			public String getGenderCode() {
 				return this.genderCode;
@@ -191,68 +159,12 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 				this.genderCode = genderCode;
 			}
 
-			public String getMinAge() {
-				return this.minAge;
+			public String getFaceId() {
+				return this.faceId;
 			}
 
-			public void setMinAge(String minAge) {
-				this.minAge = minAge;
-			}
-
-			public String getMaxAge() {
-				return this.maxAge;
-			}
-
-			public void setMaxAge(String maxAge) {
-				this.maxAge = maxAge;
-			}
-
-			public String getCapStyle() {
-				return this.capStyle;
-			}
-
-			public void setCapStyle(String capStyle) {
-				this.capStyle = capStyle;
-			}
-
-			public String getHairStyle() {
-				return this.hairStyle;
-			}
-
-			public void setHairStyle(String hairStyle) {
-				this.hairStyle = hairStyle;
-			}
-
-			public Float getLeftTopX() {
-				return this.leftTopX;
-			}
-
-			public void setLeftTopX(Float leftTopX) {
-				this.leftTopX = leftTopX;
-			}
-
-			public Float getLeftTopY() {
-				return this.leftTopY;
-			}
-
-			public void setLeftTopY(Float leftTopY) {
-				this.leftTopY = leftTopY;
-			}
-
-			public Float getRightBottomX() {
-				return this.rightBottomX;
-			}
-
-			public void setRightBottomX(Float rightBottomX) {
-				this.rightBottomX = rightBottomX;
-			}
-
-			public Float getRightBottomY() {
-				return this.rightBottomY;
-			}
-
-			public void setRightBottomY(Float rightBottomY) {
-				this.rightBottomY = rightBottomY;
+			public void setFaceId(String faceId) {
+				this.faceId = faceId;
 			}
 
 			public String getPicUrlPath() {
@@ -263,6 +175,22 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 				this.picUrlPath = picUrlPath;
 			}
 
+			public String getCorpId() {
+				return this.corpId;
+			}
+
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
+			}
+
+			public Float getRightBottomX() {
+				return this.rightBottomX;
+			}
+
+			public void setRightBottomX(Float rightBottomX) {
+				this.rightBottomX = rightBottomX;
+			}
+
 			public String getTargetPicUrlPath() {
 				return this.targetPicUrlPath;
 			}
@@ -271,12 +199,84 @@ public class ListFaceAlgorithmResultsResponse extends AcsResponse {
 				this.targetPicUrlPath = targetPicUrlPath;
 			}
 
+			public Float getRightBottomY() {
+				return this.rightBottomY;
+			}
+
+			public void setRightBottomY(Float rightBottomY) {
+				this.rightBottomY = rightBottomY;
+			}
+
 			public String getSourceId() {
 				return this.sourceId;
 			}
 
 			public void setSourceId(String sourceId) {
 				this.sourceId = sourceId;
+			}
+
+			public String getMaxAge() {
+				return this.maxAge;
+			}
+
+			public void setMaxAge(String maxAge) {
+				this.maxAge = maxAge;
+			}
+
+			public Float getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Float leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
+			public Float getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(Float leftTopX) {
+				this.leftTopX = leftTopX;
+			}
+
+			public String getCapStyle() {
+				return this.capStyle;
+			}
+
+			public void setCapStyle(String capStyle) {
+				this.capStyle = capStyle;
+			}
+
+			public String getMinAge() {
+				return this.minAge;
+			}
+
+			public void setMinAge(String minAge) {
+				this.minAge = minAge;
+			}
+
+			public String getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(String shotTime) {
+				this.shotTime = shotTime;
+			}
+
+			public String getDataSourceId() {
+				return this.dataSourceId;
+			}
+
+			public void setDataSourceId(String dataSourceId) {
+				this.dataSourceId = dataSourceId;
+			}
+
+			public String getHairStyle() {
+				return this.hairStyle;
+			}
+
+			public void setHairStyle(String hairStyle) {
+				this.hairStyle = hairStyle;
 			}
 		}
 	}

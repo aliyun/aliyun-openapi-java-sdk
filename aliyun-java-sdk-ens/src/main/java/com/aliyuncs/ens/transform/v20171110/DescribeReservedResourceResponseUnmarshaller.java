@@ -30,29 +30,6 @@ public class DescribeReservedResourceResponseUnmarshaller {
 		describeReservedResourceResponse.setRequestId(_ctx.stringValue("DescribeReservedResourceResponse.RequestId"));
 		describeReservedResourceResponse.setCode(_ctx.integerValue("DescribeReservedResourceResponse.Code"));
 
-		List<SupportResource> supportResources = new ArrayList<SupportResource>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeReservedResourceResponse.SupportResources.Length"); i++) {
-			SupportResource supportResource = new SupportResource();
-			supportResource.setInstanceSpec(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].InstanceSpec"));
-			supportResource.setSupportResourcesCount(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].SupportResourcesCount"));
-			supportResource.setEnsRegionId(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].EnsRegionId"));
-
-			List<String> systemDiskSizes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeReservedResourceResponse.SupportResources["+ i +"].SystemDiskSizes.Length"); j++) {
-				systemDiskSizes.add(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].SystemDiskSizes["+ j +"]"));
-			}
-			supportResource.setSystemDiskSizes(systemDiskSizes);
-
-			List<String> dataDiskSizes = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("DescribeReservedResourceResponse.SupportResources["+ i +"].DataDiskSizes.Length"); j++) {
-				dataDiskSizes.add(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].DataDiskSizes["+ j +"]"));
-			}
-			supportResource.setDataDiskSizes(dataDiskSizes);
-
-			supportResources.add(supportResource);
-		}
-		describeReservedResourceResponse.setSupportResources(supportResources);
-
 		List<Image> images = new ArrayList<Image>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeReservedResourceResponse.Images.Length"); i++) {
 			Image image = new Image();
@@ -62,6 +39,29 @@ public class DescribeReservedResourceResponseUnmarshaller {
 			images.add(image);
 		}
 		describeReservedResourceResponse.setImages(images);
+
+		List<SupportResource> supportResources = new ArrayList<SupportResource>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeReservedResourceResponse.SupportResources.Length"); i++) {
+			SupportResource supportResource = new SupportResource();
+			supportResource.setEnsRegionId(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].EnsRegionId"));
+			supportResource.setSupportResourcesCount(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].SupportResourcesCount"));
+			supportResource.setInstanceSpec(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].InstanceSpec"));
+
+			List<String> dataDiskSizes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeReservedResourceResponse.SupportResources["+ i +"].DataDiskSizes.Length"); j++) {
+				dataDiskSizes.add(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].DataDiskSizes["+ j +"]"));
+			}
+			supportResource.setDataDiskSizes(dataDiskSizes);
+
+			List<String> systemDiskSizes = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeReservedResourceResponse.SupportResources["+ i +"].SystemDiskSizes.Length"); j++) {
+				systemDiskSizes.add(_ctx.stringValue("DescribeReservedResourceResponse.SupportResources["+ i +"].SystemDiskSizes["+ j +"]"));
+			}
+			supportResource.setSystemDiskSizes(systemDiskSizes);
+
+			supportResources.add(supportResource);
+		}
+		describeReservedResourceResponse.setSupportResources(supportResources);
 	 
 	 	return describeReservedResourceResponse;
 	}

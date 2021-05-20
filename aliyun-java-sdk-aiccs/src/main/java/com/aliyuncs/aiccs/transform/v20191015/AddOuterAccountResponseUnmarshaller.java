@@ -23,9 +23,9 @@ public class AddOuterAccountResponseUnmarshaller {
 	public static AddOuterAccountResponse unmarshall(AddOuterAccountResponse addOuterAccountResponse, UnmarshallerContext _ctx) {
 		
 		addOuterAccountResponse.setRequestId(_ctx.stringValue("AddOuterAccountResponse.RequestId"));
-		addOuterAccountResponse.setCode(_ctx.stringValue("AddOuterAccountResponse.Code"));
 		addOuterAccountResponse.setMessage(_ctx.stringValue("AddOuterAccountResponse.Message"));
 		addOuterAccountResponse.setData(_ctx.stringValue("AddOuterAccountResponse.Data"));
+		addOuterAccountResponse.setCode(_ctx.stringValue("AddOuterAccountResponse.Code"));
 		addOuterAccountResponse.setSuccess(_ctx.booleanValue("AddOuterAccountResponse.Success"));
 	 
 	 	return addOuterAccountResponse;

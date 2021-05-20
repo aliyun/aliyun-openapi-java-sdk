@@ -37,7 +37,7 @@ public class GetDeviceVideoUrlRequest extends RpcAcsRequest<GetDeviceVideoUrlRes
 
 	private String deviceId;
 	public GetDeviceVideoUrlRequest() {
-		super("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs");
+		super("Vcs", "2020-05-15", "GetDeviceVideoUrl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

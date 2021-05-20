@@ -31,7 +31,7 @@ public class ListJobsRequest extends RoaAcsRequest<ListJobsResponse> {
 
 	private String namespace;
 	public ListJobsRequest() {
-		super("ververica", "2020-05-01", "ListJobs", "ververica");
+		super("ververica", "2020-05-01", "ListJobs");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/jobs");
 		setMethod(MethodType.GET);
 		try {

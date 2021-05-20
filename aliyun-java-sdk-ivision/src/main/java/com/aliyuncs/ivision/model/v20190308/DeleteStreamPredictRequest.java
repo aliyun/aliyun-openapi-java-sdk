@@ -29,7 +29,7 @@ public class DeleteStreamPredictRequest extends RpcAcsRequest<DeleteStreamPredic
 
 	private Long ownerId;
 	public DeleteStreamPredictRequest() {
-		super("ivision", "2019-03-08", "DeleteStreamPredict", "ivision");
+		super("ivision", "2019-03-08", "DeleteStreamPredict");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -59,19 +59,11 @@ public class DetectChefCapResponse extends AcsResponse {
 
 		public static class ElementsItem {
 
-			private String category;
-
 			private Float confidence;
 
+			private String category;
+
 			private List<Float> box;
-
-			public String getCategory() {
-				return this.category;
-			}
-
-			public void setCategory(String category) {
-				this.category = category;
-			}
 
 			public Float getConfidence() {
 				return this.confidence;
@@ -79,6 +71,14 @@ public class DetectChefCapResponse extends AcsResponse {
 
 			public void setConfidence(Float confidence) {
 				this.confidence = confidence;
+			}
+
+			public String getCategory() {
+				return this.category;
+			}
+
+			public void setCategory(String category) {
+				this.category = category;
 			}
 
 			public List<Float> getBox() {

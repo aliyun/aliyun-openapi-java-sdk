@@ -16,6 +16,7 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -24,31 +25,26 @@ import com.aliyuncs.http.MethodType;
 public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSuspEventQuaraFilesResponse> {
 	   
 
-	private String currentPage;
-
 	private String sourceIp;
-
-	private String quaraTag;
 
 	private String pageSize;
 
 	private String from;
 
+	private String groupId;
+
+	private String currentPage;
+
+	private String quaraTag;
+
 	private String status;
 	public DescribeSuspEventQuaraFilesRequest() {
 		super("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles", "sas");
 		setMethod(MethodType.POST);
-	}
-
-	public String getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(String currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage);
-		}
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getSourceIp() {
@@ -59,17 +55,6 @@ public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSu
 		this.sourceIp = sourceIp;
 		if(sourceIp != null){
 			putQueryParameter("SourceIp", sourceIp);
-		}
-	}
-
-	public String getQuaraTag() {
-		return this.quaraTag;
-	}
-
-	public void setQuaraTag(String quaraTag) {
-		this.quaraTag = quaraTag;
-		if(quaraTag != null){
-			putQueryParameter("QuaraTag", quaraTag);
 		}
 	}
 
@@ -92,6 +77,39 @@ public class DescribeSuspEventQuaraFilesRequest extends RpcAcsRequest<DescribeSu
 		this.from = from;
 		if(from != null){
 			putQueryParameter("From", from);
+		}
+	}
+
+	public String getGroupId() {
+		return this.groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+		if(groupId != null){
+			putQueryParameter("GroupId", groupId);
+		}
+	}
+
+	public String getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage);
+		}
+	}
+
+	public String getQuaraTag() {
+		return this.quaraTag;
+	}
+
+	public void setQuaraTag(String quaraTag) {
+		this.quaraTag = quaraTag;
+		if(quaraTag != null){
+			putQueryParameter("QuaraTag", quaraTag);
 		}
 	}
 

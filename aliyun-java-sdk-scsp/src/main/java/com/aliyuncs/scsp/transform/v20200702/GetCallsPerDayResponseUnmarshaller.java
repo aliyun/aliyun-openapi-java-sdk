@@ -40,14 +40,14 @@ public class GetCallsPerDayResponseUnmarshaller {
 		List<CallsPerdayResponseListItem> callsPerdayResponseList = new ArrayList<CallsPerdayResponseListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList.Length"); i++) {
 			CallsPerdayResponseListItem callsPerdayResponseListItem = new CallsPerdayResponseListItem();
-			callsPerdayResponseListItem.setCallOutCnt(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].CallOutCnt"));
-			callsPerdayResponseListItem.setTenantId(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].TenantId"));
 			callsPerdayResponseListItem.setDataId(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].DataId"));
-			callsPerdayResponseListItem.setPhoneNum(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].PhoneNum"));
+			callsPerdayResponseListItem.setHourId(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].HourId"));
+			callsPerdayResponseListItem.setTenantId(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].TenantId"));
 			callsPerdayResponseListItem.setTenantName(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].TenantName"));
+			callsPerdayResponseListItem.setPhoneNum(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].PhoneNum"));
+			callsPerdayResponseListItem.setCallOutCnt(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].CallOutCnt"));
 			callsPerdayResponseListItem.setCallInCnt(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].CallInCnt"));
 			callsPerdayResponseListItem.setMinuteId(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].MinuteId"));
-			callsPerdayResponseListItem.setHourId(_ctx.stringValue("GetCallsPerDayResponse.Data.CallsPerdayResponseList["+ i +"].HourId"));
 
 			callsPerdayResponseList.add(callsPerdayResponseListItem);
 		}

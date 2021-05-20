@@ -33,7 +33,7 @@ public class CreateUploadFileJobRequest extends RpcAcsRequest<CreateUploadFileJo
 
 	private String uploadURL;
 	public CreateUploadFileJobRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateUploadFileJob");
+		super("dms-enterprise", "2018-11-01", "CreateUploadFileJob", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

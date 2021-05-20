@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchPipelineResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Pipeline> pipelineList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class SearchPipelineResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Pipeline> getPipelineList() {
@@ -77,36 +77,28 @@ public class SearchPipelineResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private String id;
-
-		private String name;
+		private String speed;
 
 		private String state;
 
-		private String speed;
-
 		private Long speedLevel;
-
-		private Long quotaAllocate;
 
 		private String role;
 
+		private String name;
+
+		private String id;
+
+		private Long quotaAllocate;
+
 		private NotifyConfig notifyConfig;
 
-		public String getId() {
-			return this.id;
+		public String getSpeed() {
+			return this.speed;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setSpeed(String speed) {
+			this.speed = speed;
 		}
 
 		public String getState() {
@@ -117,14 +109,6 @@ public class SearchPipelineResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getSpeed() {
-			return this.speed;
-		}
-
-		public void setSpeed(String speed) {
-			this.speed = speed;
-		}
-
 		public Long getSpeedLevel() {
 			return this.speedLevel;
 		}
@@ -133,20 +117,36 @@ public class SearchPipelineResponse extends AcsResponse {
 			this.speedLevel = speedLevel;
 		}
 
-		public Long getQuotaAllocate() {
-			return this.quotaAllocate;
-		}
-
-		public void setQuotaAllocate(Long quotaAllocate) {
-			this.quotaAllocate = quotaAllocate;
-		}
-
 		public String getRole() {
 			return this.role;
 		}
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
+		public Long getQuotaAllocate() {
+			return this.quotaAllocate;
+		}
+
+		public void setQuotaAllocate(Long quotaAllocate) {
+			this.quotaAllocate = quotaAllocate;
 		}
 
 		public NotifyConfig getNotifyConfig() {
@@ -159,20 +159,20 @@ public class SearchPipelineResponse extends AcsResponse {
 
 		public static class NotifyConfig {
 
-			private String topic;
+			private String mqTopic;
 
 			private String queueName;
 
-			private String mqTopic;
-
 			private String mqTag;
 
-			public String getTopic() {
-				return this.topic;
+			private String topic;
+
+			public String getMqTopic() {
+				return this.mqTopic;
 			}
 
-			public void setTopic(String topic) {
-				this.topic = topic;
+			public void setMqTopic(String mqTopic) {
+				this.mqTopic = mqTopic;
 			}
 
 			public String getQueueName() {
@@ -183,20 +183,20 @@ public class SearchPipelineResponse extends AcsResponse {
 				this.queueName = queueName;
 			}
 
-			public String getMqTopic() {
-				return this.mqTopic;
-			}
-
-			public void setMqTopic(String mqTopic) {
-				this.mqTopic = mqTopic;
-			}
-
 			public String getMqTag() {
 				return this.mqTag;
 			}
 
 			public void setMqTag(String mqTag) {
 				this.mqTag = mqTag;
+			}
+
+			public String getTopic() {
+				return this.topic;
+			}
+
+			public void setTopic(String topic) {
+				this.topic = topic;
 			}
 		}
 	}

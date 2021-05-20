@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data.Plate;
+import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data.Plate.PositionsItem;
 import com.aliyuncs.ocr.model.v20191230.RecognizeLicensePlateResponse.Data.Plate.Roi;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -29,23 +30,35 @@ public class RecognizeLicensePlateResponseUnmarshaller {
 	public static RecognizeLicensePlateResponse unmarshall(RecognizeLicensePlateResponse recognizeLicensePlateResponse, UnmarshallerContext _ctx) {
 		
 		recognizeLicensePlateResponse.setRequestId(_ctx.stringValue("RecognizeLicensePlateResponse.RequestId"));
+		recognizeLicensePlateResponse.setCode(_ctx.stringValue("RecognizeLicensePlateResponse.Code"));
+		recognizeLicensePlateResponse.setMessage(_ctx.stringValue("RecognizeLicensePlateResponse.Message"));
 
 		Data data = new Data();
 
 		List<Plate> plates = new ArrayList<Plate>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizeLicensePlateResponse.Data.Plates.Length"); i++) {
 			Plate plate = new Plate();
+			plate.setPlateTypeConfidence(_ctx.floatValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].PlateTypeConfidence"));
+			plate.setPlateType(_ctx.stringValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].PlateType"));
 			plate.setConfidence(_ctx.floatValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Confidence"));
 			plate.setPlateNumber(_ctx.stringValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].PlateNumber"));
-			plate.setPlateType(_ctx.stringValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].PlateType"));
-			plate.setPlateTypeConfidence(_ctx.floatValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].PlateTypeConfidence"));
 
 			Roi roi = new Roi();
-			roi.setH(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.H"));
 			roi.setW(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.W"));
-			roi.setX(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.X"));
+			roi.setH(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.H"));
 			roi.setY(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.Y"));
+			roi.setX(_ctx.integerValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Roi.X"));
 			plate.setRoi(roi);
+
+			List<PositionsItem> positions = new ArrayList<PositionsItem>();
+			for (int j = 0; j < _ctx.lengthValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Positions.Length"); j++) {
+				PositionsItem positionsItem = new PositionsItem();
+				positionsItem.setX(_ctx.longValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Positions["+ j +"].X"));
+				positionsItem.setY(_ctx.longValue("RecognizeLicensePlateResponse.Data.Plates["+ i +"].Positions["+ j +"].Y"));
+
+				positions.add(positionsItem);
+			}
+			plate.setPositions(positions);
 
 			plates.add(plate);
 		}

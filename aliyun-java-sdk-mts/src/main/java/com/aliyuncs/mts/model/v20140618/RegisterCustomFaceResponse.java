@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RegisterCustomFaceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String faceId;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getFaceId() {
 		return this.faceId;
@@ -42,6 +34,14 @@ public class RegisterCustomFaceResponse extends AcsResponse {
 
 	public void setFaceId(String faceId) {
 		this.faceId = faceId;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

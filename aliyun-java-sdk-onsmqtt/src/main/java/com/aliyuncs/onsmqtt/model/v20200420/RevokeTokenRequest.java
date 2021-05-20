@@ -29,7 +29,7 @@ public class RevokeTokenRequest extends RpcAcsRequest<RevokeTokenResponse> {
 
 	private String instanceId;
 	public RevokeTokenRequest() {
-		super("OnsMqtt", "2020-04-20", "RevokeToken", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "RevokeToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -31,7 +31,7 @@ public class ListDatabasesRequest extends RoaAcsRequest<ListDatabasesResponse> {
 
 	private String namespace;
 	public ListDatabasesRequest() {
-		super("ververica", "2020-05-01", "ListDatabases", "ververica");
+		super("ververica", "2020-05-01", "ListDatabases");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:listDatabases");
 		setMethod(MethodType.GET);
 		try {

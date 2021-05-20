@@ -27,15 +27,21 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 
 	private Long resourceOwnerId;
 
+	private String iSP;
+
 	private String password;
 
 	private String mask;
 
 	private String resourceOwnerAccount;
 
+	private Integer bandwidth;
+
 	private String ownerAccount;
 
 	private String iP;
+
+	private Integer weight;
 
 	private Long ownerId;
 
@@ -72,6 +78,17 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		}
 	}
 
+	public String getISP() {
+		return this.iSP;
+	}
+
+	public void setISP(String iSP) {
+		this.iSP = iSP;
+		if(iSP != null){
+			putQueryParameter("ISP", iSP);
+		}
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
@@ -105,6 +122,17 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		}
 	}
 
+	public Integer getBandwidth() {
+		return this.bandwidth;
+	}
+
+	public void setBandwidth(Integer bandwidth) {
+		this.bandwidth = bandwidth;
+		if(bandwidth != null){
+			putQueryParameter("Bandwidth", bandwidth.toString());
+		}
+	}
+
 	public String getOwnerAccount() {
 		return this.ownerAccount;
 	}
@@ -124,6 +152,17 @@ public class ModifySagWanRequest extends RpcAcsRequest<ModifySagWanResponse> {
 		this.iP = iP;
 		if(iP != null){
 			putQueryParameter("IP", iP);
+		}
+	}
+
+	public Integer getWeight() {
+		return this.weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+		if(weight != null){
+			putQueryParameter("Weight", weight.toString());
 		}
 	}
 

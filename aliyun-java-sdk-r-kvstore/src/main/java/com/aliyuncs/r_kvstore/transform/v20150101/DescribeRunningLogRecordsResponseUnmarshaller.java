@@ -45,6 +45,7 @@ public class DescribeRunningLogRecordsResponseUnmarshaller {
 			logRecords.setConnInfo(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].ConnInfo"));
 			logRecords.setContent(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].Content"));
 			logRecords.setInstanceId(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].InstanceId"));
+			logRecords.setNodeId(_ctx.stringValue("DescribeRunningLogRecordsResponse.Items["+ i +"].NodeId"));
 
 			items.add(logRecords);
 		}

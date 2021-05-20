@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAgentGroupResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<XspaceAgentGroup> data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -49,12 +49,12 @@ public class QueryAgentGroupResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<XspaceAgentGroup> getData() {
@@ -69,9 +69,9 @@ public class QueryAgentGroupResponse extends AcsResponse {
 
 		private Long buId;
 
-		private Long departmentId;
-
 		private Long groupId;
+
+		private Long departmentId;
 
 		public Long getBuId() {
 			return this.buId;
@@ -81,20 +81,20 @@ public class QueryAgentGroupResponse extends AcsResponse {
 			this.buId = buId;
 		}
 
-		public Long getDepartmentId() {
-			return this.departmentId;
-		}
-
-		public void setDepartmentId(Long departmentId) {
-			this.departmentId = departmentId;
-		}
-
 		public Long getGroupId() {
 			return this.groupId;
 		}
 
 		public void setGroupId(Long groupId) {
 			this.groupId = groupId;
+		}
+
+		public Long getDepartmentId() {
+			return this.departmentId;
+		}
+
+		public void setDepartmentId(Long departmentId) {
+			this.departmentId = departmentId;
 		}
 	}
 

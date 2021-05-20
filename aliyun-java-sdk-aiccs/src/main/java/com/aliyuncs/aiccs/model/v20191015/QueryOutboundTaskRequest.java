@@ -55,7 +55,7 @@ public class QueryOutboundTaskRequest extends RpcAcsRequest<QueryOutboundTaskRes
 
 	private String status;
 	public QueryOutboundTaskRequest() {
-		super("aiccs", "2019-10-15", "QueryOutboundTask", "aiccs-service");
+		super("aiccs", "2019-10-15", "QueryOutboundTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

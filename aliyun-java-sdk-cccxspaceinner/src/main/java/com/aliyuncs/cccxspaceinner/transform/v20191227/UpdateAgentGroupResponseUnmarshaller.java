@@ -22,9 +22,9 @@ public class UpdateAgentGroupResponseUnmarshaller {
 
 	public static UpdateAgentGroupResponse unmarshall(UpdateAgentGroupResponse updateAgentGroupResponse, UnmarshallerContext _ctx) {
 		
-		updateAgentGroupResponse.setSuccess(_ctx.booleanValue("UpdateAgentGroupResponse.Success"));
-		updateAgentGroupResponse.setCode(_ctx.stringValue("UpdateAgentGroupResponse.Code"));
 		updateAgentGroupResponse.setMessage(_ctx.stringValue("UpdateAgentGroupResponse.Message"));
+		updateAgentGroupResponse.setCode(_ctx.stringValue("UpdateAgentGroupResponse.Code"));
+		updateAgentGroupResponse.setSuccess(_ctx.booleanValue("UpdateAgentGroupResponse.Success"));
 	 
 	 	return updateAgentGroupResponse;
 	}

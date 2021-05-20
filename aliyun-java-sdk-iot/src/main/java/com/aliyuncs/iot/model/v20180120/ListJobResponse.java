@@ -121,6 +121,8 @@ public class ListJobResponse extends AcsResponse {
 
 		private String type;
 
+		private Long scheduledTime;
+
 		public String getJobId() {
 			return this.jobId;
 		}
@@ -175,6 +177,14 @@ public class ListJobResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+
+		public Long getScheduledTime() {
+			return this.scheduledTime;
+		}
+
+		public void setScheduledTime(Long scheduledTime) {
+			this.scheduledTime = scheduledTime;
 		}
 	}
 

@@ -29,13 +29,15 @@ public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnR
 
 	private String ccnInstanceId;
 
+	private Boolean grantTrafficService;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
 
-	private String cenUid;
+	private Long cenUid;
 
 	private String cenInstanceId;
 	public GrantInstanceToCbnRequest() {
@@ -66,6 +68,17 @@ public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnR
 		this.ccnInstanceId = ccnInstanceId;
 		if(ccnInstanceId != null){
 			putQueryParameter("CcnInstanceId", ccnInstanceId);
+		}
+	}
+
+	public Boolean getGrantTrafficService() {
+		return this.grantTrafficService;
+	}
+
+	public void setGrantTrafficService(Boolean grantTrafficService) {
+		this.grantTrafficService = grantTrafficService;
+		if(grantTrafficService != null){
+			putQueryParameter("GrantTrafficService", grantTrafficService.toString());
 		}
 	}
 
@@ -102,14 +115,14 @@ public class GrantInstanceToCbnRequest extends RpcAcsRequest<GrantInstanceToCbnR
 		}
 	}
 
-	public String getCenUid() {
+	public Long getCenUid() {
 		return this.cenUid;
 	}
 
-	public void setCenUid(String cenUid) {
+	public void setCenUid(Long cenUid) {
 		this.cenUid = cenUid;
 		if(cenUid != null){
-			putQueryParameter("CenUid", cenUid);
+			putQueryParameter("CenUid", cenUid.toString());
 		}
 	}
 

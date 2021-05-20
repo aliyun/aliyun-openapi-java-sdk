@@ -35,7 +35,7 @@ public class GetFunctionRequest extends RoaAcsRequest<GetFunctionResponse> {
 
 	private String namespace;
 	public GetFunctionRequest() {
-		super("ververica", "2020-05-01", "GetFunction", "ververica");
+		super("ververica", "2020-05-01", "GetFunction");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:getFunction");
 		setMethod(MethodType.GET);
 		try {

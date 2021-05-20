@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -49,12 +49,12 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -67,21 +67,13 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageSize;
-
 		private Long lastSortKey;
+
+		private Integer pageSize;
 
 		private Boolean hasNextPage;
 
 		private List<ListItem> list;
-
-		public Integer getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Integer pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Long getLastSortKey() {
 			return this.lastSortKey;
@@ -89,6 +81,14 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 
 		public void setLastSortKey(Long lastSortKey) {
 			this.lastSortKey = lastSortKey;
+		}
+
+		public Integer getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Integer pageSize) {
+			this.pageSize = pageSize;
 		}
 
 		public Boolean getHasNextPage() {
@@ -109,23 +109,31 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 
 		public static class ListItem {
 
+			private Integer status;
+
 			private Long buId;
-
-			private Long departmentId;
-
-			private Long groupId;
-
-			private String groupName;
 
 			private String showName;
 
-			private Boolean isPublic;
-
-			private Integer status;
-
 			private String description;
 
+			private String groupName;
+
+			private Long groupId;
+
 			private Integer channelType;
+
+			private Long departmentId;
+
+			private Boolean isPublic;
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
 
 			public Long getBuId() {
 				return this.buId;
@@ -133,30 +141,6 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 
 			public void setBuId(Long buId) {
 				this.buId = buId;
-			}
-
-			public Long getDepartmentId() {
-				return this.departmentId;
-			}
-
-			public void setDepartmentId(Long departmentId) {
-				this.departmentId = departmentId;
-			}
-
-			public Long getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(Long groupId) {
-				this.groupId = groupId;
-			}
-
-			public String getGroupName() {
-				return this.groupName;
-			}
-
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
 			}
 
 			public String getShowName() {
@@ -167,22 +151,6 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 				this.showName = showName;
 			}
 
-			public Boolean getIsPublic() {
-				return this.isPublic;
-			}
-
-			public void setIsPublic(Boolean isPublic) {
-				this.isPublic = isPublic;
-			}
-
-			public Integer getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(Integer status) {
-				this.status = status;
-			}
-
 			public String getDescription() {
 				return this.description;
 			}
@@ -191,12 +159,44 @@ public class GetPageGroupsByChannelTypeResponse extends AcsResponse {
 				this.description = description;
 			}
 
+			public String getGroupName() {
+				return this.groupName;
+			}
+
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
+			}
+
+			public Long getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(Long groupId) {
+				this.groupId = groupId;
+			}
+
 			public Integer getChannelType() {
 				return this.channelType;
 			}
 
 			public void setChannelType(Integer channelType) {
 				this.channelType = channelType;
+			}
+
+			public Long getDepartmentId() {
+				return this.departmentId;
+			}
+
+			public void setDepartmentId(Long departmentId) {
+				this.departmentId = departmentId;
+			}
+
+			public Boolean getIsPublic() {
+				return this.isPublic;
+			}
+
+			public void setIsPublic(Boolean isPublic) {
+				this.isPublic = isPublic;
 			}
 		}
 	}

@@ -28,27 +28,27 @@ public class AddWaterMarkTemplateResponseUnmarshaller {
 		addWaterMarkTemplateResponse.setRequestId(_ctx.stringValue("AddWaterMarkTemplateResponse.RequestId"));
 
 		WaterMarkTemplate waterMarkTemplate = new WaterMarkTemplate();
-		waterMarkTemplate.setId(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Id"));
-		waterMarkTemplate.setName(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Name"));
+		waterMarkTemplate.setType(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Type"));
+		waterMarkTemplate.setReferPos(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.ReferPos"));
+		waterMarkTemplate.setState(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.State"));
+		waterMarkTemplate.setDx(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Dx"));
 		waterMarkTemplate.setWidth(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Width"));
 		waterMarkTemplate.setHeight(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Height"));
-		waterMarkTemplate.setDx(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Dx"));
+		waterMarkTemplate.setName(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Name"));
 		waterMarkTemplate.setDy(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Dy"));
-		waterMarkTemplate.setReferPos(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.ReferPos"));
-		waterMarkTemplate.setType(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Type"));
-		waterMarkTemplate.setState(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.State"));
+		waterMarkTemplate.setId(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Id"));
+
+		RatioRefer ratioRefer = new RatioRefer();
+		ratioRefer.setDx(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Dx"));
+		ratioRefer.setWidth(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Width"));
+		ratioRefer.setHeight(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Height"));
+		ratioRefer.setDy(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Dy"));
+		waterMarkTemplate.setRatioRefer(ratioRefer);
 
 		Timeline timeline = new Timeline();
 		timeline.setStart(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Timeline.Start"));
 		timeline.setDuration(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.Timeline.Duration"));
 		waterMarkTemplate.setTimeline(timeline);
-
-		RatioRefer ratioRefer = new RatioRefer();
-		ratioRefer.setDx(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Dx"));
-		ratioRefer.setDy(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Dy"));
-		ratioRefer.setWidth(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Width"));
-		ratioRefer.setHeight(_ctx.stringValue("AddWaterMarkTemplateResponse.WaterMarkTemplate.RatioRefer.Height"));
-		waterMarkTemplate.setRatioRefer(ratioRefer);
 		addWaterMarkTemplateResponse.setWaterMarkTemplate(waterMarkTemplate);
 	 
 	 	return addWaterMarkTemplateResponse;

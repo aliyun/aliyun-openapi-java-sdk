@@ -26,13 +26,13 @@ public class GetHotlineWaitingNumberResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String success;
-
-	private String code;
-
 	private String message;
 
 	private Long data;
+
+	private String code;
+
+	private String success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +40,6 @@ public class GetHotlineWaitingNumberResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -72,6 +56,22 @@ public class GetHotlineWaitingNumberResponse extends AcsResponse {
 
 	public void setData(Long data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	@Override

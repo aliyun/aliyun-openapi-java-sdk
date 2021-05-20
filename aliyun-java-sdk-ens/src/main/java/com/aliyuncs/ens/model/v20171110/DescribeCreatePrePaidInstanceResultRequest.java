@@ -26,7 +26,7 @@ public class DescribeCreatePrePaidInstanceResultRequest extends RpcAcsRequest<De
 
 	private String instanceId;
 	public DescribeCreatePrePaidInstanceResultRequest() {
-		super("Ens", "2017-11-10", "DescribeCreatePrePaidInstanceResult");
+		super("Ens", "2017-11-10", "DescribeCreatePrePaidInstanceResult", "ens");
 		setMethod(MethodType.POST);
 	}
 

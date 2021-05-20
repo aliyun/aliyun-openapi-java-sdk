@@ -33,7 +33,7 @@ public class SuspendMigrationJobRequest extends RpcAcsRequest<SuspendMigrationJo
 
 	private String accountId;
 	public SuspendMigrationJobRequest() {
-		super("Dts", "2020-01-01", "SuspendMigrationJob", "dts");
+		super("Dts", "2020-01-01", "SuspendMigrationJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

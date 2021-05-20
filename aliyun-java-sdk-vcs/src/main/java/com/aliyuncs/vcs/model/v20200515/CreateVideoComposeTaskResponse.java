@@ -24,30 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateVideoComposeTaskResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
+	private String bucketName;
 
 	private String requestId;
 
+	private String message;
+
 	private String domainName;
 
-	private String bucketName;
+	private String code;
 
-	public String getCode() {
-		return this.code;
+	public String getBucketName() {
+		return this.bucketName;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setBucketName(String bucketName) {
+		this.bucketName = bucketName;
 	}
 
 	public String getRequestId() {
@@ -58,6 +50,14 @@ public class CreateVideoComposeTaskResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getDomainName() {
 		return this.domainName;
 	}
@@ -66,12 +66,12 @@ public class CreateVideoComposeTaskResponse extends AcsResponse {
 		this.domainName = domainName;
 	}
 
-	public String getBucketName() {
-		return this.bucketName;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setBucketName(String bucketName) {
-		this.bucketName = bucketName;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

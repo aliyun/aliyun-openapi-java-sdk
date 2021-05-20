@@ -23,9 +23,9 @@ public class CreateCorpResponseUnmarshaller {
 	public static CreateCorpResponse unmarshall(CreateCorpResponse createCorpResponse, UnmarshallerContext _ctx) {
 		
 		createCorpResponse.setRequestId(_ctx.stringValue("CreateCorpResponse.RequestId"));
-		createCorpResponse.setCode(_ctx.stringValue("CreateCorpResponse.Code"));
-		createCorpResponse.setMessage(_ctx.stringValue("CreateCorpResponse.Message"));
 		createCorpResponse.setCorpId(_ctx.stringValue("CreateCorpResponse.CorpId"));
+		createCorpResponse.setMessage(_ctx.stringValue("CreateCorpResponse.Message"));
+		createCorpResponse.setCode(_ctx.stringValue("CreateCorpResponse.Code"));
 	 
 	 	return createCorpResponse;
 	}

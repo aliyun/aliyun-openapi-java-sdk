@@ -23,9 +23,9 @@ public class AppMessagePushResponseUnmarshaller {
 	public static AppMessagePushResponse unmarshall(AppMessagePushResponse appMessagePushResponse, UnmarshallerContext _ctx) {
 		
 		appMessagePushResponse.setRequestId(_ctx.stringValue("AppMessagePushResponse.RequestId"));
-		appMessagePushResponse.setMessage(_ctx.stringValue("AppMessagePushResponse.Message"));
 		appMessagePushResponse.setData(_ctx.stringValue("AppMessagePushResponse.Data"));
 		appMessagePushResponse.setCode(_ctx.stringValue("AppMessagePushResponse.Code"));
+		appMessagePushResponse.setMessage(_ctx.stringValue("AppMessagePushResponse.Message"));
 		appMessagePushResponse.setSuccess(_ctx.booleanValue("AppMessagePushResponse.Success"));
 	 
 	 	return appMessagePushResponse;

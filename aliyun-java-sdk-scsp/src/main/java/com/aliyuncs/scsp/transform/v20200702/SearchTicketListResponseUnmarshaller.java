@@ -28,8 +28,8 @@ public class SearchTicketListResponseUnmarshaller {
 		
 		searchTicketListResponse.setRequestId(_ctx.stringValue("SearchTicketListResponse.RequestId"));
 		searchTicketListResponse.setOnePageSize(_ctx.integerValue("SearchTicketListResponse.OnePageSize"));
-		searchTicketListResponse.setTotalPage(_ctx.integerValue("SearchTicketListResponse.TotalPage"));
 		searchTicketListResponse.setMessage(_ctx.stringValue("SearchTicketListResponse.Message"));
+		searchTicketListResponse.setTotalPage(_ctx.integerValue("SearchTicketListResponse.TotalPage"));
 		searchTicketListResponse.setTotalResults(_ctx.integerValue("SearchTicketListResponse.TotalResults"));
 		searchTicketListResponse.setPageNo(_ctx.integerValue("SearchTicketListResponse.PageNo"));
 		searchTicketListResponse.setCode(_ctx.stringValue("SearchTicketListResponse.Code"));
@@ -38,23 +38,23 @@ public class SearchTicketListResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("SearchTicketListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCategoryId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CategoryId"));
-			dataItem.setFormData(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FormData"));
-			dataItem.setCarbonCopy(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CarbonCopy"));
-			dataItem.setCreatorId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreatorId"));
-			dataItem.setPriority(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].Priority"));
-			dataItem.setCreateTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreateTime"));
-			dataItem.setCreatorType(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CreatorType"));
-			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].TaskStatus"));
-			dataItem.setServiceId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ServiceId"));
-			dataItem.setMemberId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].MemberId"));
-			dataItem.setTicketId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TicketId"));
-			dataItem.setModifiedTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ModifiedTime"));
-			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CaseStatus"));
 			dataItem.setMemberName(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].MemberName"));
+			dataItem.setCarbonCopy(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CarbonCopy"));
+			dataItem.setCreateTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreateTime"));
+			dataItem.setServiceId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ServiceId"));
+			dataItem.setTicketId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TicketId"));
+			dataItem.setPriority(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].Priority"));
+			dataItem.setCreatorId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CreatorId"));
+			dataItem.setFormData(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FormData"));
 			dataItem.setFromInfo(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].FromInfo"));
-			dataItem.setTemplateId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TemplateId"));
+			dataItem.setModifiedTime(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].ModifiedTime"));
+			dataItem.setTaskStatus(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].TaskStatus"));
 			dataItem.setCreatorName(_ctx.stringValue("SearchTicketListResponse.Data["+ i +"].CreatorName"));
+			dataItem.setCategoryId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].CategoryId"));
+			dataItem.setCreatorType(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CreatorType"));
+			dataItem.setMemberId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].MemberId"));
+			dataItem.setCaseStatus(_ctx.integerValue("SearchTicketListResponse.Data["+ i +"].CaseStatus"));
+			dataItem.setTemplateId(_ctx.longValue("SearchTicketListResponse.Data["+ i +"].TemplateId"));
 
 			data.add(dataItem);
 		}

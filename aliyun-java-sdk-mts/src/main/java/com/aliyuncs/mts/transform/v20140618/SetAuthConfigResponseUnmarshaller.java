@@ -23,8 +23,8 @@ public class SetAuthConfigResponseUnmarshaller {
 	public static SetAuthConfigResponse unmarshall(SetAuthConfigResponse setAuthConfigResponse, UnmarshallerContext _ctx) {
 		
 		setAuthConfigResponse.setRequestId(_ctx.stringValue("SetAuthConfigResponse.RequestId"));
-		setAuthConfigResponse.setKey1(_ctx.stringValue("SetAuthConfigResponse.Key1"));
 		setAuthConfigResponse.setKey2(_ctx.stringValue("SetAuthConfigResponse.Key2"));
+		setAuthConfigResponse.setKey1(_ctx.stringValue("SetAuthConfigResponse.Key1"));
 	 
 	 	return setAuthConfigResponse;
 	}

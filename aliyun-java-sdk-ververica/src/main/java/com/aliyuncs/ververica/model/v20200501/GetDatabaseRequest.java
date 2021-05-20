@@ -33,7 +33,7 @@ public class GetDatabaseRequest extends RoaAcsRequest<GetDatabaseResponse> {
 
 	private String namespace;
 	public GetDatabaseRequest() {
-		super("ververica", "2020-05-01", "GetDatabase", "ververica");
+		super("ververica", "2020-05-01", "GetDatabase");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:getDatabase");
 		setMethod(MethodType.GET);
 		try {

@@ -31,7 +31,7 @@ public class GetQualityRuleListRequest extends RpcAcsRequest<GetQualityRuleListR
 
 	private Integer pageSize;
 	public GetQualityRuleListRequest() {
-		super("aiccs", "2019-10-15", "GetQualityRuleList", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetQualityRuleList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

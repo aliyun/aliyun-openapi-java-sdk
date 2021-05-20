@@ -23,10 +23,10 @@ public class GetHotlineAgentStatusResponseUnmarshaller {
 	public static GetHotlineAgentStatusResponse unmarshall(GetHotlineAgentStatusResponse getHotlineAgentStatusResponse, UnmarshallerContext _ctx) {
 		
 		getHotlineAgentStatusResponse.setRequestId(_ctx.stringValue("GetHotlineAgentStatusResponse.RequestId"));
-		getHotlineAgentStatusResponse.setSuccess(_ctx.booleanValue("GetHotlineAgentStatusResponse.Success"));
-		getHotlineAgentStatusResponse.setCode(_ctx.stringValue("GetHotlineAgentStatusResponse.Code"));
 		getHotlineAgentStatusResponse.setMessage(_ctx.stringValue("GetHotlineAgentStatusResponse.Message"));
 		getHotlineAgentStatusResponse.setData(_ctx.stringValue("GetHotlineAgentStatusResponse.Data"));
+		getHotlineAgentStatusResponse.setCode(_ctx.stringValue("GetHotlineAgentStatusResponse.Code"));
+		getHotlineAgentStatusResponse.setSuccess(_ctx.booleanValue("GetHotlineAgentStatusResponse.Success"));
 	 
 	 	return getHotlineAgentStatusResponse;
 	}

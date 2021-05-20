@@ -27,17 +27,17 @@ public class DescribeFaceGroupsResponseUnmarshaller {
 	public static DescribeFaceGroupsResponse unmarshall(DescribeFaceGroupsResponse describeFaceGroupsResponse, UnmarshallerContext _ctx) {
 		
 		describeFaceGroupsResponse.setRequestId(_ctx.stringValue("DescribeFaceGroupsResponse.RequestId"));
-		describeFaceGroupsResponse.setCurrentPage(_ctx.longValue("DescribeFaceGroupsResponse.CurrentPage"));
-		describeFaceGroupsResponse.setPageSize(_ctx.longValue("DescribeFaceGroupsResponse.PageSize"));
-		describeFaceGroupsResponse.setNextPageToken(_ctx.stringValue("DescribeFaceGroupsResponse.NextPageToken"));
 		describeFaceGroupsResponse.setTotalNum(_ctx.longValue("DescribeFaceGroupsResponse.TotalNum"));
+		describeFaceGroupsResponse.setPageSize(_ctx.longValue("DescribeFaceGroupsResponse.PageSize"));
+		describeFaceGroupsResponse.setCurrentPage(_ctx.longValue("DescribeFaceGroupsResponse.CurrentPage"));
+		describeFaceGroupsResponse.setNextPageToken(_ctx.stringValue("DescribeFaceGroupsResponse.NextPageToken"));
 
 		List<Group> groups = new ArrayList<Group>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeFaceGroupsResponse.Groups.Length"); i++) {
 			Group group = new Group();
-			group.setGroupId(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].GroupId"));
-			group.setName(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].Name"));
 			group.setCreationTime(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].CreationTime"));
+			group.setName(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].Name"));
+			group.setGroupId(_ctx.stringValue("DescribeFaceGroupsResponse.Groups["+ i +"].GroupId"));
 
 			groups.add(group);
 		}

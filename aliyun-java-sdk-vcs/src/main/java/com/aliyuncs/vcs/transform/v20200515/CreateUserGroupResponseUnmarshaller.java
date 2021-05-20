@@ -24,13 +24,13 @@ public class CreateUserGroupResponseUnmarshaller {
 	public static CreateUserGroupResponse unmarshall(CreateUserGroupResponse createUserGroupResponse, UnmarshallerContext _ctx) {
 		
 		createUserGroupResponse.setRequestId(_ctx.stringValue("CreateUserGroupResponse.RequestId"));
-		createUserGroupResponse.setCode(_ctx.stringValue("CreateUserGroupResponse.Code"));
 		createUserGroupResponse.setMessage(_ctx.stringValue("CreateUserGroupResponse.Message"));
+		createUserGroupResponse.setCode(_ctx.stringValue("CreateUserGroupResponse.Code"));
 
 		Data data = new Data();
 		data.setUserGroupName(_ctx.stringValue("CreateUserGroupResponse.Data.UserGroupName"));
-		data.setIsvSubId(_ctx.stringValue("CreateUserGroupResponse.Data.IsvSubId"));
 		data.setUserGroupId(_ctx.longValue("CreateUserGroupResponse.Data.UserGroupId"));
+		data.setIsvSubId(_ctx.stringValue("CreateUserGroupResponse.Data.IsvSubId"));
 		createUserGroupResponse.setData(data);
 	 
 	 	return createUserGroupResponse;

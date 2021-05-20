@@ -24,19 +24,37 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDeviceAutoUpgradePolicyResponse extends AcsResponse {
 
-	private String requestId;
+	private String upgradeType;
 
-	private String smartAGId;
+	private String timeZone;
+
+	private String requestId;
 
 	private String serialNumber;
 
-	private String upgradeType;
-
-	private String cronExpression;
+	private String jitter;
 
 	private String duration;
 
-	private String timeZone;
+	private String cronExpression;
+
+	private String smartAGId;
+
+	public String getUpgradeType() {
+		return this.upgradeType;
+	}
+
+	public void setUpgradeType(String upgradeType) {
+		this.upgradeType = upgradeType;
+	}
+
+	public String getTimeZone() {
+		return this.timeZone;
+	}
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +62,6 @@ public class DescribeDeviceAutoUpgradePolicyResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
 	}
 
 	public String getSerialNumber() {
@@ -62,20 +72,12 @@ public class DescribeDeviceAutoUpgradePolicyResponse extends AcsResponse {
 		this.serialNumber = serialNumber;
 	}
 
-	public String getUpgradeType() {
-		return this.upgradeType;
+	public String getJitter() {
+		return this.jitter;
 	}
 
-	public void setUpgradeType(String upgradeType) {
-		this.upgradeType = upgradeType;
-	}
-
-	public String getCronExpression() {
-		return this.cronExpression;
-	}
-
-	public void setCronExpression(String cronExpression) {
-		this.cronExpression = cronExpression;
+	public void setJitter(String jitter) {
+		this.jitter = jitter;
 	}
 
 	public String getDuration() {
@@ -86,12 +88,20 @@ public class DescribeDeviceAutoUpgradePolicyResponse extends AcsResponse {
 		this.duration = duration;
 	}
 
-	public String getTimeZone() {
-		return this.timeZone;
+	public String getCronExpression() {
+		return this.cronExpression;
 	}
 
-	public void setTimeZone(String timeZone) {
-		this.timeZone = timeZone;
+	public void setCronExpression(String cronExpression) {
+		this.cronExpression = cronExpression;
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
 	}
 
 	@Override

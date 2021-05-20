@@ -1,3 +1,7 @@
+2021-05-13 Version: 3.0.22
+- Add Indexing-Service support.
+- Remove jsonItem form.
+
 2021-03-22 Version: 3.0.21
 - Add OneConsole support.
 - Add ACK support.

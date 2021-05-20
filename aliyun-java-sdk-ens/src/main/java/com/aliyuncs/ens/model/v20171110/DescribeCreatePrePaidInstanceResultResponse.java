@@ -46,17 +46,9 @@ public class DescribeCreatePrePaidInstanceResultResponse extends AcsResponse {
 
 	public static class InstanceCreateResult {
 
-		private String instanceId;
-
 		private String instanceCreateStatus;
 
-		public String getInstanceId() {
-			return this.instanceId;
-		}
-
-		public void setInstanceId(String instanceId) {
-			this.instanceId = instanceId;
-		}
+		private String instanceId;
 
 		public String getInstanceCreateStatus() {
 			return this.instanceCreateStatus;
@@ -64,6 +56,14 @@ public class DescribeCreatePrePaidInstanceResultResponse extends AcsResponse {
 
 		public void setInstanceCreateStatus(String instanceCreateStatus) {
 			this.instanceCreateStatus = instanceCreateStatus;
+		}
+
+		public String getInstanceId() {
+			return this.instanceId;
+		}
+
+		public void setInstanceId(String instanceId) {
+			this.instanceId = instanceId;
 		}
 	}
 

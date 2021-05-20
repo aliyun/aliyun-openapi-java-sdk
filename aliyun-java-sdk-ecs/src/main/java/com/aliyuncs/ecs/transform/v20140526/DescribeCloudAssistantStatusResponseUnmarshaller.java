@@ -41,6 +41,7 @@ public class DescribeCloudAssistantStatusResponseUnmarshaller {
 			instanceCloudAssistantStatus.setInvocationCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].InvocationCount"));
 			instanceCloudAssistantStatus.setActiveTaskCount(_ctx.longValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].ActiveTaskCount"));
 			instanceCloudAssistantStatus.setLastInvokedTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastInvokedTime"));
+			instanceCloudAssistantStatus.setLastHeartbeatTime(_ctx.stringValue("DescribeCloudAssistantStatusResponse.InstanceCloudAssistantStatusSet["+ i +"].LastHeartbeatTime"));
 
 			instanceCloudAssistantStatusSet.add(instanceCloudAssistantStatus);
 		}

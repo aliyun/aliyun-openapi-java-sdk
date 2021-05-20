@@ -31,7 +31,7 @@ public class ImagePredictRequest extends RpcAcsRequest<ImagePredictResponse> {
 
 	private Long ownerId;
 	public ImagePredictRequest() {
-		super("ivision", "2019-03-08", "ImagePredict", "ivision");
+		super("ivision", "2019-03-08", "ImagePredict");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -46,32 +46,24 @@ public class AddCoverPipelineResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private String id;
-
-		private String name;
+		private String state;
 
 		private String priority;
 
-		private String state;
-
 		private String role;
+
+		private String name;
+
+		private String id;
 
 		private NotifyConfig notifyConfig;
 
-		public String getId() {
-			return this.id;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
+		public void setState(String state) {
+			this.state = state;
 		}
 
 		public String getPriority() {
@@ -82,20 +74,28 @@ public class AddCoverPipelineResponse extends AcsResponse {
 			this.priority = priority;
 		}
 
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
 		public String getRole() {
 			return this.role;
 		}
 
 		public void setRole(String role) {
 			this.role = role;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public NotifyConfig getNotifyConfig() {

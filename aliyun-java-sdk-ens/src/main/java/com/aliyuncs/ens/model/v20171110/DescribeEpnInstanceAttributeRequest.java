@@ -26,7 +26,7 @@ public class DescribeEpnInstanceAttributeRequest extends RpcAcsRequest<DescribeE
 
 	private String ePNInstanceId;
 	public DescribeEpnInstanceAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeEpnInstanceAttribute");
+		super("Ens", "2017-11-10", "DescribeEpnInstanceAttribute", "ens");
 		setMethod(MethodType.POST);
 	}
 

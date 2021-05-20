@@ -24,6 +24,7 @@ public class ListDeploymentsResponseUnmarshaller {
 		
 		listDeploymentsResponse.setData(_ctx.stringValue("ListDeploymentsResponse.data"));
 		listDeploymentsResponse.setRequestId(_ctx.stringValue("ListDeploymentsResponse.requestId"));
+		listDeploymentsResponse.setSuccess(_ctx.booleanValue("ListDeploymentsResponse.success"));
 	 
 	 	return listDeploymentsResponse;
 	}

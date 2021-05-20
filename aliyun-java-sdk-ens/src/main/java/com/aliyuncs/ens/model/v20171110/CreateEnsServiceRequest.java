@@ -28,7 +28,7 @@ public class CreateEnsServiceRequest extends RpcAcsRequest<CreateEnsServiceRespo
 
 	private String orderType;
 	public CreateEnsServiceRequest() {
-		super("Ens", "2017-11-10", "CreateEnsService");
+		super("Ens", "2017-11-10", "CreateEnsService", "ens");
 		setMethod(MethodType.POST);
 	}
 

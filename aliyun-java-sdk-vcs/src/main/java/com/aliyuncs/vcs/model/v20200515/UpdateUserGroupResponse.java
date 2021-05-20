@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateUserGroupResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class UpdateUserGroupResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,15 +66,39 @@ public class UpdateUserGroupResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String parentUserGroupId;
+
+		private Long userCount;
+
+		private String userGroupName;
+
 		private Long userGroupId;
 
 		private String isvSubId;
 
-		private String userGroupName;
+		public String getParentUserGroupId() {
+			return this.parentUserGroupId;
+		}
 
-		private Long userCount;
+		public void setParentUserGroupId(String parentUserGroupId) {
+			this.parentUserGroupId = parentUserGroupId;
+		}
 
-		private String parentUserGroupId;
+		public Long getUserCount() {
+			return this.userCount;
+		}
+
+		public void setUserCount(Long userCount) {
+			this.userCount = userCount;
+		}
+
+		public String getUserGroupName() {
+			return this.userGroupName;
+		}
+
+		public void setUserGroupName(String userGroupName) {
+			this.userGroupName = userGroupName;
+		}
 
 		public Long getUserGroupId() {
 			return this.userGroupId;
@@ -90,30 +114,6 @@ public class UpdateUserGroupResponse extends AcsResponse {
 
 		public void setIsvSubId(String isvSubId) {
 			this.isvSubId = isvSubId;
-		}
-
-		public String getUserGroupName() {
-			return this.userGroupName;
-		}
-
-		public void setUserGroupName(String userGroupName) {
-			this.userGroupName = userGroupName;
-		}
-
-		public Long getUserCount() {
-			return this.userCount;
-		}
-
-		public void setUserCount(Long userCount) {
-			this.userCount = userCount;
-		}
-
-		public String getParentUserGroupId() {
-			return this.parentUserGroupId;
-		}
-
-		public void setParentUserGroupId(String parentUserGroupId) {
-			this.parentUserGroupId = parentUserGroupId;
 		}
 	}
 

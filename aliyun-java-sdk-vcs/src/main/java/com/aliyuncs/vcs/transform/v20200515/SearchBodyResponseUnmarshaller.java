@@ -28,26 +28,26 @@ public class SearchBodyResponseUnmarshaller {
 	public static SearchBodyResponse unmarshall(SearchBodyResponse searchBodyResponse, UnmarshallerContext _ctx) {
 		
 		searchBodyResponse.setRequestId(_ctx.stringValue("SearchBodyResponse.RequestId"));
-		searchBodyResponse.setCode(_ctx.stringValue("SearchBodyResponse.Code"));
 		searchBodyResponse.setMessage(_ctx.stringValue("SearchBodyResponse.Message"));
+		searchBodyResponse.setCode(_ctx.stringValue("SearchBodyResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNo(_ctx.integerValue("SearchBodyResponse.Data.PageNo"));
-		data.setPageSize(_ctx.integerValue("SearchBodyResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("SearchBodyResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("SearchBodyResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("SearchBodyResponse.Data.TotalPage"));
+		data.setPageNo(_ctx.integerValue("SearchBodyResponse.Data.PageNo"));
 
 		List<Record> records = new ArrayList<Record>();
 		for (int i = 0; i < _ctx.lengthValue("SearchBodyResponse.Data.Records.Length"); i++) {
 			Record record = new Record();
-			record.setGbId(_ctx.stringValue("SearchBodyResponse.Data.Records["+ i +"].GbId"));
-			record.setImageUrl(_ctx.stringValue("SearchBodyResponse.Data.Records["+ i +"].ImageUrl"));
-			record.setLeftTopX(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].LeftTopX"));
-			record.setLeftTopY(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].LeftTopY"));
+			record.setTargetImageUrl(_ctx.stringValue("SearchBodyResponse.Data.Records["+ i +"].TargetImageUrl"));
+			record.setScore(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].Score"));
 			record.setRightBottomX(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].RightBottomX"));
 			record.setRightBottomY(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].RightBottomY"));
-			record.setScore(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].Score"));
-			record.setTargetImageUrl(_ctx.stringValue("SearchBodyResponse.Data.Records["+ i +"].TargetImageUrl"));
+			record.setGbId(_ctx.stringValue("SearchBodyResponse.Data.Records["+ i +"].GbId"));
+			record.setImageUrl(_ctx.stringValue("SearchBodyResponse.Data.Records["+ i +"].ImageUrl"));
+			record.setLeftTopY(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].LeftTopY"));
+			record.setLeftTopX(_ctx.floatValue("SearchBodyResponse.Data.Records["+ i +"].LeftTopX"));
 
 			records.add(record);
 		}

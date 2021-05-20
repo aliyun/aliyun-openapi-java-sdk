@@ -28,16 +28,16 @@ public class DescribeSnatEntriesResponseUnmarshaller {
 		
 		describeSnatEntriesResponse.setRequestId(_ctx.stringValue("DescribeSnatEntriesResponse.RequestId"));
 		describeSnatEntriesResponse.setTotalCount(_ctx.integerValue("DescribeSnatEntriesResponse.TotalCount"));
-		describeSnatEntriesResponse.setPageNumber(_ctx.integerValue("DescribeSnatEntriesResponse.PageNumber"));
 		describeSnatEntriesResponse.setPageSize(_ctx.integerValue("DescribeSnatEntriesResponse.PageSize"));
+		describeSnatEntriesResponse.setPageNumber(_ctx.integerValue("DescribeSnatEntriesResponse.PageNumber"));
 
 		List<SnatEntry> snatEntries = new ArrayList<SnatEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSnatEntriesResponse.SnatEntries.Length"); i++) {
 			SnatEntry snatEntry = new SnatEntry();
 			snatEntry.setInstanceId(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].InstanceId"));
+			snatEntry.setCreateTime(_ctx.longValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].CreateTime"));
 			snatEntry.setCidrBlock(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].CidrBlock"));
 			snatEntry.setSnatIp(_ctx.stringValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].SnatIp"));
-			snatEntry.setCreateTime(_ctx.longValue("DescribeSnatEntriesResponse.SnatEntries["+ i +"].CreateTime"));
 
 			snatEntries.add(snatEntry);
 		}

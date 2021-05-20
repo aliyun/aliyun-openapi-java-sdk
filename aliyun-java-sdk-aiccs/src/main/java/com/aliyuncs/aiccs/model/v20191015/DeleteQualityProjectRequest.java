@@ -29,7 +29,7 @@ public class DeleteQualityProjectRequest extends RpcAcsRequest<DeleteQualityProj
 
 	private Long projectId;
 	public DeleteQualityProjectRequest() {
-		super("aiccs", "2019-10-15", "DeleteQualityProject", "aiccs-service");
+		super("aiccs", "2019-10-15", "DeleteQualityProject");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

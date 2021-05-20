@@ -42,35 +42,35 @@ public class QueryCoverJobListResponseUnmarshaller {
 		List<CoverJob> coverJobList = new ArrayList<CoverJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCoverJobListResponse.CoverJobList.Length"); i++) {
 			CoverJob coverJob = new CoverJob();
-			coverJob.setId(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Id"));
-			coverJob.setUserData(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].UserData"));
-			coverJob.setPipelineId(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].PipelineId"));
+			coverJob.setCreationTime(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CreationTime"));
 			coverJob.setState(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].State"));
+			coverJob.setUserData(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].UserData"));
 			coverJob.setCode(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Code"));
 			coverJob.setMessage(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Message"));
-			coverJob.setCreationTime(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CreationTime"));
+			coverJob.setPipelineId(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].PipelineId"));
+			coverJob.setId(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Id"));
 
 			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Input.Location"));
 			input.setObject(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].Input.Bucket"));
 			coverJob.setInput(input);
 
 			CoverConfig coverConfig = new CoverConfig();
 
 			OutputFile outputFile = new OutputFile();
-			outputFile.setBucket(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverConfig.OutputFile.Bucket"));
-			outputFile.setLocation(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverConfig.OutputFile.Location"));
 			outputFile.setObject(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverConfig.OutputFile.Object"));
+			outputFile.setLocation(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverConfig.OutputFile.Location"));
+			outputFile.setBucket(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverConfig.OutputFile.Bucket"));
 			coverConfig.setOutputFile(outputFile);
 			coverJob.setCoverConfig(coverConfig);
 
 			List<CoverImage> coverImageList = new ArrayList<CoverImage>();
 			for (int j = 0; j < _ctx.lengthValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverImageList.Length"); j++) {
 				CoverImage coverImage = new CoverImage();
+				coverImage.setTime(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverImageList["+ j +"].Time"));
 				coverImage.setScore(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverImageList["+ j +"].Score"));
 				coverImage.setUrl(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverImageList["+ j +"].Url"));
-				coverImage.setTime(_ctx.stringValue("QueryCoverJobListResponse.CoverJobList["+ i +"].CoverImageList["+ j +"].Time"));
 
 				coverImageList.add(coverImage);
 			}

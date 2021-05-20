@@ -26,9 +26,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -36,20 +36,20 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -130,17 +130,9 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
 		public static class ColumnsItem {
 
-			private String title;
-
 			private String key;
 
-			public String getTitle() {
-				return this.title;
-			}
-
-			public void setTitle(String title) {
-				this.title = title;
-			}
+			private String title;
 
 			public String getKey() {
 				return this.key;
@@ -148,6 +140,14 @@ public class GetHotlineGroupDetailReportResponse extends AcsResponse {
 
 			public void setKey(String key) {
 				this.key = key;
+			}
+
+			public String getTitle() {
+				return this.title;
+			}
+
+			public void setTitle(String title) {
+				this.title = title;
 			}
 		}
 	}

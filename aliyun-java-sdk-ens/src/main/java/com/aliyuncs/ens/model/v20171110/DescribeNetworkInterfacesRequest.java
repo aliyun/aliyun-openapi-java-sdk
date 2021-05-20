@@ -36,7 +36,7 @@ public class DescribeNetworkInterfacesRequest extends RpcAcsRequest<DescribeNetw
 
 	private String primaryIpAddress;
 	public DescribeNetworkInterfacesRequest() {
-		super("Ens", "2017-11-10", "DescribeNetworkInterfaces");
+		super("Ens", "2017-11-10", "DescribeNetworkInterfaces", "ens");
 		setMethod(MethodType.POST);
 	}
 

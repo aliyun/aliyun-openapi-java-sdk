@@ -27,27 +27,27 @@ public class GetPageGroupsByBuIdResponseUnmarshaller {
 
 	public static GetPageGroupsByBuIdResponse unmarshall(GetPageGroupsByBuIdResponse getPageGroupsByBuIdResponse, UnmarshallerContext _ctx) {
 		
-		getPageGroupsByBuIdResponse.setSuccess(_ctx.booleanValue("GetPageGroupsByBuIdResponse.Success"));
-		getPageGroupsByBuIdResponse.setCode(_ctx.stringValue("GetPageGroupsByBuIdResponse.Code"));
 		getPageGroupsByBuIdResponse.setMessage(_ctx.stringValue("GetPageGroupsByBuIdResponse.Message"));
+		getPageGroupsByBuIdResponse.setCode(_ctx.stringValue("GetPageGroupsByBuIdResponse.Code"));
+		getPageGroupsByBuIdResponse.setSuccess(_ctx.booleanValue("GetPageGroupsByBuIdResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("GetPageGroupsByBuIdResponse.Data.PageSize"));
 		data.setLastSortKey(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.LastSortKey"));
+		data.setPageSize(_ctx.integerValue("GetPageGroupsByBuIdResponse.Data.PageSize"));
 		data.setHasNextPage(_ctx.booleanValue("GetPageGroupsByBuIdResponse.Data.HasNextPage"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPageGroupsByBuIdResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setBuId(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].BuId"));
-			listItem.setDepartmentId(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].DepartmentId"));
-			listItem.setGroupId(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].GroupId"));
-			listItem.setGroupName(_ctx.stringValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].GroupName"));
-			listItem.setShowName(_ctx.stringValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].ShowName"));
-			listItem.setIsPublic(_ctx.booleanValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].IsPublic"));
 			listItem.setStatus(_ctx.integerValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].Status"));
+			listItem.setBuId(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].BuId"));
+			listItem.setShowName(_ctx.stringValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].ShowName"));
 			listItem.setDescription(_ctx.stringValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].Description"));
+			listItem.setGroupName(_ctx.stringValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].GroupName"));
+			listItem.setGroupId(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].GroupId"));
 			listItem.setChannelType(_ctx.integerValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].ChannelType"));
+			listItem.setDepartmentId(_ctx.longValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].DepartmentId"));
+			listItem.setIsPublic(_ctx.booleanValue("GetPageGroupsByBuIdResponse.Data.List["+ i +"].IsPublic"));
 
 			list.add(listItem);
 		}

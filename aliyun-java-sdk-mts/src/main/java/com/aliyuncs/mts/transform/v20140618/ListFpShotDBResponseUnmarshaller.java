@@ -37,11 +37,11 @@ public class ListFpShotDBResponseUnmarshaller {
 		List<FpShotDB> fpShotDBList = new ArrayList<FpShotDB>();
 		for (int i = 0; i < _ctx.lengthValue("ListFpShotDBResponse.FpShotDBList.Length"); i++) {
 			FpShotDB fpShotDB = new FpShotDB();
-			fpShotDB.setFpDBId(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].FpDBId"));
-			fpShotDB.setName(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].Name"));
-			fpShotDB.setModelId(_ctx.integerValue("ListFpShotDBResponse.FpShotDBList["+ i +"].ModelId"));
 			fpShotDB.setStatus(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].Status"));
 			fpShotDB.setDescription(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].Description"));
+			fpShotDB.setName(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].Name"));
+			fpShotDB.setModelId(_ctx.integerValue("ListFpShotDBResponse.FpShotDBList["+ i +"].ModelId"));
+			fpShotDB.setFpDBId(_ctx.stringValue("ListFpShotDBResponse.FpShotDBList["+ i +"].FpDBId"));
 
 			fpShotDBList.add(fpShotDB);
 		}

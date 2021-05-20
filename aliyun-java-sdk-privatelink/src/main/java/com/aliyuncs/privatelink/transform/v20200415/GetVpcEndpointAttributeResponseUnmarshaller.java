@@ -23,21 +23,22 @@ public class GetVpcEndpointAttributeResponseUnmarshaller {
 	public static GetVpcEndpointAttributeResponse unmarshall(GetVpcEndpointAttributeResponse getVpcEndpointAttributeResponse, UnmarshallerContext _ctx) {
 		
 		getVpcEndpointAttributeResponse.setRequestId(_ctx.stringValue("GetVpcEndpointAttributeResponse.RequestId"));
-		getVpcEndpointAttributeResponse.setBandwidth(_ctx.integerValue("GetVpcEndpointAttributeResponse.Bandwidth"));
-		getVpcEndpointAttributeResponse.setConnectionStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.ConnectionStatus"));
+		getVpcEndpointAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointAttributeResponse.Payer"));
+		getVpcEndpointAttributeResponse.setEndpointDomain(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointDomain"));
+		getVpcEndpointAttributeResponse.setResourceOwner(_ctx.booleanValue("GetVpcEndpointAttributeResponse.ResourceOwner"));
 		getVpcEndpointAttributeResponse.setCreateTime(_ctx.stringValue("GetVpcEndpointAttributeResponse.CreateTime"));
 		getVpcEndpointAttributeResponse.setEndpointBusinessStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointBusinessStatus"));
 		getVpcEndpointAttributeResponse.setEndpointDescription(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointDescription"));
-		getVpcEndpointAttributeResponse.setEndpointDomain(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointDomain"));
-		getVpcEndpointAttributeResponse.setEndpointId(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointId"));
-		getVpcEndpointAttributeResponse.setEndpointName(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointName"));
-		getVpcEndpointAttributeResponse.setEndpointStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointStatus"));
 		getVpcEndpointAttributeResponse.setServiceId(_ctx.stringValue("GetVpcEndpointAttributeResponse.ServiceId"));
-		getVpcEndpointAttributeResponse.setServiceName(_ctx.stringValue("GetVpcEndpointAttributeResponse.ServiceName"));
+		getVpcEndpointAttributeResponse.setEndpointStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointStatus"));
+		getVpcEndpointAttributeResponse.setEndpointName(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointName"));
 		getVpcEndpointAttributeResponse.setVpcId(_ctx.stringValue("GetVpcEndpointAttributeResponse.VpcId"));
+		getVpcEndpointAttributeResponse.setServiceName(_ctx.stringValue("GetVpcEndpointAttributeResponse.ServiceName"));
+		getVpcEndpointAttributeResponse.setEndpointId(_ctx.stringValue("GetVpcEndpointAttributeResponse.EndpointId"));
+		getVpcEndpointAttributeResponse.setBandwidth(_ctx.integerValue("GetVpcEndpointAttributeResponse.Bandwidth"));
 		getVpcEndpointAttributeResponse.setRegionId(_ctx.stringValue("GetVpcEndpointAttributeResponse.RegionId"));
-		getVpcEndpointAttributeResponse.setPayer(_ctx.stringValue("GetVpcEndpointAttributeResponse.Payer"));
-		getVpcEndpointAttributeResponse.setResourceOwner(_ctx.booleanValue("GetVpcEndpointAttributeResponse.ResourceOwner"));
+		getVpcEndpointAttributeResponse.setConnectionStatus(_ctx.stringValue("GetVpcEndpointAttributeResponse.ConnectionStatus"));
+		getVpcEndpointAttributeResponse.setZoneAffinityEnabled(_ctx.booleanValue("GetVpcEndpointAttributeResponse.ZoneAffinityEnabled"));
 	 
 	 	return getVpcEndpointAttributeResponse;
 	}

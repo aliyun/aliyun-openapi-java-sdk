@@ -33,7 +33,6 @@ public class DescribeParameterGroupsResponseUnmarshaller {
 			ParameterGroupsItem parameterGroupsItem = new ParameterGroupsItem();
 			parameterGroupsItem.setDBVersion(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].DBVersion"));
 			parameterGroupsItem.setParameterGroupId(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupId"));
-			parameterGroupsItem.setDigitalId(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].DigitalId"));
 			parameterGroupsItem.setForceRestart(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ForceRestart"));
 			parameterGroupsItem.setParameterGroupName(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].ParameterGroupName"));
 			parameterGroupsItem.setCreateTime(_ctx.stringValue("DescribeParameterGroupsResponse.ParameterGroups["+ i +"].CreateTime"));

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListVpcEndpointsResponse extends AcsResponse {
 
-	private String maxResults;
+	private String requestId;
 
 	private String nextToken;
 
-	private String requestId;
+	private String maxResults;
 
 	private List<Endpoint> endpoints;
 
-	public String getMaxResults() {
-		return this.maxResults;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setMaxResults(String maxResults) {
-		this.maxResults = maxResults;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getNextToken() {
@@ -49,12 +49,12 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getMaxResults() {
+		return this.maxResults;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setMaxResults(String maxResults) {
+		this.maxResults = maxResults;
 	}
 
 	public List<Endpoint> getEndpoints() {
@@ -67,73 +67,35 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 
 	public static class Endpoint {
 
-		private String endpointId;
-
-		private String endpointName;
-
-		private String endpointDescription;
-
-		private String endpointStatus;
-
-		private String endpointBusinessStatus;
-
 		private String endpointDomain;
-
-		private Long bandwidth;
-
-		private String connectionStatus;
-
-		private String serviceId;
-
-		private String serviceName;
-
-		private String vpcId;
-
-		private String createTime;
-
-		private String regionId;
 
 		private Boolean resourceOwner;
 
-		public String getEndpointId() {
-			return this.endpointId;
-		}
+		private String createTime;
 
-		public void setEndpointId(String endpointId) {
-			this.endpointId = endpointId;
-		}
+		private String endpointBusinessStatus;
 
-		public String getEndpointName() {
-			return this.endpointName;
-		}
+		private String endpointDescription;
 
-		public void setEndpointName(String endpointName) {
-			this.endpointName = endpointName;
-		}
+		private String serviceId;
 
-		public String getEndpointDescription() {
-			return this.endpointDescription;
-		}
+		private String endpointStatus;
 
-		public void setEndpointDescription(String endpointDescription) {
-			this.endpointDescription = endpointDescription;
-		}
+		private String endpointName;
 
-		public String getEndpointStatus() {
-			return this.endpointStatus;
-		}
+		private String vpcId;
 
-		public void setEndpointStatus(String endpointStatus) {
-			this.endpointStatus = endpointStatus;
-		}
+		private String serviceName;
 
-		public String getEndpointBusinessStatus() {
-			return this.endpointBusinessStatus;
-		}
+		private String endpointId;
 
-		public void setEndpointBusinessStatus(String endpointBusinessStatus) {
-			this.endpointBusinessStatus = endpointBusinessStatus;
-		}
+		private Long bandwidth;
+
+		private String regionId;
+
+		private String connectionStatus;
+
+		private Boolean zoneAffinityEnabled;
 
 		public String getEndpointDomain() {
 			return this.endpointDomain;
@@ -143,44 +105,12 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 			this.endpointDomain = endpointDomain;
 		}
 
-		public Long getBandwidth() {
-			return this.bandwidth;
+		public Boolean getResourceOwner() {
+			return this.resourceOwner;
 		}
 
-		public void setBandwidth(Long bandwidth) {
-			this.bandwidth = bandwidth;
-		}
-
-		public String getConnectionStatus() {
-			return this.connectionStatus;
-		}
-
-		public void setConnectionStatus(String connectionStatus) {
-			this.connectionStatus = connectionStatus;
-		}
-
-		public String getServiceId() {
-			return this.serviceId;
-		}
-
-		public void setServiceId(String serviceId) {
-			this.serviceId = serviceId;
-		}
-
-		public String getServiceName() {
-			return this.serviceName;
-		}
-
-		public void setServiceName(String serviceName) {
-			this.serviceName = serviceName;
-		}
-
-		public String getVpcId() {
-			return this.vpcId;
-		}
-
-		public void setVpcId(String vpcId) {
-			this.vpcId = vpcId;
+		public void setResourceOwner(Boolean resourceOwner) {
+			this.resourceOwner = resourceOwner;
 		}
 
 		public String getCreateTime() {
@@ -191,6 +121,78 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
+		public String getEndpointBusinessStatus() {
+			return this.endpointBusinessStatus;
+		}
+
+		public void setEndpointBusinessStatus(String endpointBusinessStatus) {
+			this.endpointBusinessStatus = endpointBusinessStatus;
+		}
+
+		public String getEndpointDescription() {
+			return this.endpointDescription;
+		}
+
+		public void setEndpointDescription(String endpointDescription) {
+			this.endpointDescription = endpointDescription;
+		}
+
+		public String getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(String serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public String getEndpointStatus() {
+			return this.endpointStatus;
+		}
+
+		public void setEndpointStatus(String endpointStatus) {
+			this.endpointStatus = endpointStatus;
+		}
+
+		public String getEndpointName() {
+			return this.endpointName;
+		}
+
+		public void setEndpointName(String endpointName) {
+			this.endpointName = endpointName;
+		}
+
+		public String getVpcId() {
+			return this.vpcId;
+		}
+
+		public void setVpcId(String vpcId) {
+			this.vpcId = vpcId;
+		}
+
+		public String getServiceName() {
+			return this.serviceName;
+		}
+
+		public void setServiceName(String serviceName) {
+			this.serviceName = serviceName;
+		}
+
+		public String getEndpointId() {
+			return this.endpointId;
+		}
+
+		public void setEndpointId(String endpointId) {
+			this.endpointId = endpointId;
+		}
+
+		public Long getBandwidth() {
+			return this.bandwidth;
+		}
+
+		public void setBandwidth(Long bandwidth) {
+			this.bandwidth = bandwidth;
+		}
+
 		public String getRegionId() {
 			return this.regionId;
 		}
@@ -199,12 +201,20 @@ public class ListVpcEndpointsResponse extends AcsResponse {
 			this.regionId = regionId;
 		}
 
-		public Boolean getResourceOwner() {
-			return this.resourceOwner;
+		public String getConnectionStatus() {
+			return this.connectionStatus;
 		}
 
-		public void setResourceOwner(Boolean resourceOwner) {
-			this.resourceOwner = resourceOwner;
+		public void setConnectionStatus(String connectionStatus) {
+			this.connectionStatus = connectionStatus;
+		}
+
+		public Boolean getZoneAffinityEnabled() {
+			return this.zoneAffinityEnabled;
+		}
+
+		public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+			this.zoneAffinityEnabled = zoneAffinityEnabled;
 		}
 	}
 

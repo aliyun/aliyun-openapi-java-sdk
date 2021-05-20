@@ -38,11 +38,11 @@ public class QuerySubtitleJobListResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySubtitleJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setJobId(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].JobId"));
-			job.setInputConfig(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].InputConfig"));
 			job.setOutputConfig(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].OutputConfig"));
-			job.setUserData(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].UserData"));
 			job.setState(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].State"));
+			job.setJobId(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].JobId"));
+			job.setUserData(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].UserData"));
+			job.setInputConfig(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].InputConfig"));
 
 			MNSMessageResult mNSMessageResult = new MNSMessageResult();
 			mNSMessageResult.setMessageId(_ctx.stringValue("QuerySubtitleJobListResponse.JobList["+ i +"].MNSMessageResult.MessageId"));

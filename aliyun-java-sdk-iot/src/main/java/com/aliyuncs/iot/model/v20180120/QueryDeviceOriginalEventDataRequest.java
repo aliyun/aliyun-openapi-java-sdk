@@ -45,7 +45,7 @@ public class QueryDeviceOriginalEventDataRequest extends RpcAcsRequest<QueryDevi
 
 	private String deviceName;
 	public QueryDeviceOriginalEventDataRequest() {
-		super("Iot", "2018-01-20", "QueryDeviceOriginalEventData");
+		super("Iot", "2018-01-20", "QueryDeviceOriginalEventData", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

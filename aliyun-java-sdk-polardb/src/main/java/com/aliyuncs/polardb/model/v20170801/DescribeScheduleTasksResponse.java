@@ -25,6 +25,8 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeScheduleTasksResponse extends AcsResponse {
 
+	private String requestId;
+
 	private String message;
 
 	private String code;
@@ -32,6 +34,14 @@ public class DescribeScheduleTasksResponse extends AcsResponse {
 	private Boolean success;
 
 	private Data data;
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 	public String getMessage() {
 		return this.message;

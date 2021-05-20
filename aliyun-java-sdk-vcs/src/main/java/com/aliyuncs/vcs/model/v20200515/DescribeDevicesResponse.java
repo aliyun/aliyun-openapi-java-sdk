@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDevicesResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class DescribeDevicesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNum;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNum;
 
 		private List<Record> records;
 
-		public Integer getPageNum() {
-			return this.pageNum;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNum(Integer pageNum) {
-			this.pageNum = pageNum;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class DescribeDevicesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNum() {
+			return this.pageNum;
+		}
+
+		public void setPageNum(Integer pageNum) {
+			this.pageNum = pageNum;
 		}
 
 		public List<Record> getRecords() {
@@ -121,25 +121,27 @@ public class DescribeDevicesResponse extends AcsResponse {
 
 			private String inProtocol;
 
-			private String createTime;
+			private String status;
+
+			private String deviceType;
+
+			private String corpId;
+
+			private String capturedPictureId;
 
 			private String deviceAddress;
 
 			private String deviceId;
 
-			private String deviceName;
-
-			private String deviceType;
+			private String createTime;
 
 			private String latitude;
 
-			private String longitude;
-
-			private String status;
-
 			private String vendor;
 
-			private String corpId;
+			private String longitude;
+
+			private String deviceName;
 
 			public String getInProtocol() {
 				return this.inProtocol;
@@ -149,12 +151,36 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.inProtocol = inProtocol;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setStatus(String status) {
+				this.status = status;
+			}
+
+			public String getDeviceType() {
+				return this.deviceType;
+			}
+
+			public void setDeviceType(String deviceType) {
+				this.deviceType = deviceType;
+			}
+
+			public String getCorpId() {
+				return this.corpId;
+			}
+
+			public void setCorpId(String corpId) {
+				this.corpId = corpId;
+			}
+
+			public String getCapturedPictureId() {
+				return this.capturedPictureId;
+			}
+
+			public void setCapturedPictureId(String capturedPictureId) {
+				this.capturedPictureId = capturedPictureId;
 			}
 
 			public String getDeviceAddress() {
@@ -173,20 +199,12 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.deviceId = deviceId;
 			}
 
-			public String getDeviceName() {
-				return this.deviceName;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
-
-			public String getDeviceType() {
-				return this.deviceType;
-			}
-
-			public void setDeviceType(String deviceType) {
-				this.deviceType = deviceType;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
 			public String getLatitude() {
@@ -197,22 +215,6 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.latitude = latitude;
 			}
 
-			public String getLongitude() {
-				return this.longitude;
-			}
-
-			public void setLongitude(String longitude) {
-				this.longitude = longitude;
-			}
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
-
 			public String getVendor() {
 				return this.vendor;
 			}
@@ -221,12 +223,20 @@ public class DescribeDevicesResponse extends AcsResponse {
 				this.vendor = vendor;
 			}
 
-			public String getCorpId() {
-				return this.corpId;
+			public String getLongitude() {
+				return this.longitude;
 			}
 
-			public void setCorpId(String corpId) {
-				this.corpId = corpId;
+			public void setLongitude(String longitude) {
+				this.longitude = longitude;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
 			}
 		}
 	}

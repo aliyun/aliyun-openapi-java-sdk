@@ -33,7 +33,7 @@ public class DescribeEndpointSwitchStatusRequest extends RpcAcsRequest<DescribeE
 
 	private String taskId;
 	public DescribeEndpointSwitchStatusRequest() {
-		super("Dts", "2020-01-01", "DescribeEndpointSwitchStatus", "dts");
+		super("Dts", "2020-01-01", "DescribeEndpointSwitchStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,9 +22,9 @@ public class KickOutAgentResponseUnmarshaller {
 
 	public static KickOutAgentResponse unmarshall(KickOutAgentResponse kickOutAgentResponse, UnmarshallerContext _ctx) {
 		
-		kickOutAgentResponse.setSuccess(_ctx.booleanValue("KickOutAgentResponse.Success"));
-		kickOutAgentResponse.setCode(_ctx.stringValue("KickOutAgentResponse.Code"));
 		kickOutAgentResponse.setMessage(_ctx.stringValue("KickOutAgentResponse.Message"));
+		kickOutAgentResponse.setCode(_ctx.stringValue("KickOutAgentResponse.Code"));
+		kickOutAgentResponse.setSuccess(_ctx.booleanValue("KickOutAgentResponse.Success"));
 	 
 	 	return kickOutAgentResponse;
 	}

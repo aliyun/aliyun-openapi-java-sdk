@@ -27,15 +27,15 @@ public class GetQualityRuleTagListResponseUnmarshaller {
 	public static GetQualityRuleTagListResponse unmarshall(GetQualityRuleTagListResponse getQualityRuleTagListResponse, UnmarshallerContext _ctx) {
 		
 		getQualityRuleTagListResponse.setRequestId(_ctx.stringValue("GetQualityRuleTagListResponse.RequestId"));
-		getQualityRuleTagListResponse.setCode(_ctx.stringValue("GetQualityRuleTagListResponse.Code"));
 		getQualityRuleTagListResponse.setMessage(_ctx.stringValue("GetQualityRuleTagListResponse.Message"));
+		getQualityRuleTagListResponse.setCode(_ctx.stringValue("GetQualityRuleTagListResponse.Code"));
 		getQualityRuleTagListResponse.setSuccess(_ctx.booleanValue("GetQualityRuleTagListResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityRuleTagListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setRuleTagId(_ctx.longValue("GetQualityRuleTagListResponse.Data["+ i +"].RuleTagId"));
 			dataItem.setRuleTagName(_ctx.stringValue("GetQualityRuleTagListResponse.Data["+ i +"].RuleTagName"));
+			dataItem.setRuleTagId(_ctx.longValue("GetQualityRuleTagListResponse.Data["+ i +"].RuleTagId"));
 
 			data.add(dataItem);
 		}

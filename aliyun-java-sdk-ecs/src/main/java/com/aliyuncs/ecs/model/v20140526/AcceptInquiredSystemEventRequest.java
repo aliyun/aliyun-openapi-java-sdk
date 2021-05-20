@@ -34,6 +34,8 @@ public class AcceptInquiredSystemEventRequest extends RpcAcsRequest<AcceptInquir
 	private String ownerAccount;
 
 	private Long ownerId;
+
+	private String choice;
 	public AcceptInquiredSystemEventRequest() {
 		super("Ecs", "2014-05-26", "AcceptInquiredSystemEvent", "ecs");
 		setMethod(MethodType.POST);
@@ -95,6 +97,17 @@ public class AcceptInquiredSystemEventRequest extends RpcAcsRequest<AcceptInquir
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getChoice() {
+		return this.choice;
+	}
+
+	public void setChoice(String choice) {
+		this.choice = choice;
+		if(choice != null){
+			putQueryParameter("Choice", choice);
 		}
 	}
 

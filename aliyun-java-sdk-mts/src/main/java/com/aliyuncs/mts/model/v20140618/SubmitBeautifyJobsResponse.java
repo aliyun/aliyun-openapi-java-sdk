@@ -47,48 +47,32 @@ public class SubmitBeautifyJobsResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
+		private String id;
 
 		private BeautifyConfig beautifyConfig;
 
+		private Input input;
+
 		private MNSMessageResult mNSMessageResult;
 
-		public String getId() {
-			return this.id;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -97,6 +81,14 @@ public class SubmitBeautifyJobsResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -115,20 +107,20 @@ public class SubmitBeautifyJobsResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public BeautifyConfig getBeautifyConfig() {
@@ -139,55 +131,20 @@ public class SubmitBeautifyJobsResponse extends AcsResponse {
 			this.beautifyConfig = beautifyConfig;
 		}
 
+		public Input getInput() {
+			return this.input;
+		}
+
+		public void setInput(Input input) {
+			this.input = input;
+		}
+
 		public MNSMessageResult getMNSMessageResult() {
 			return this.mNSMessageResult;
 		}
 
 		public void setMNSMessageResult(MNSMessageResult mNSMessageResult) {
 			this.mNSMessageResult = mNSMessageResult;
-		}
-
-		public static class Input {
-
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			private String roleArn;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
-
-			public String getRoleArn() {
-				return this.roleArn;
-			}
-
-			public void setRoleArn(String roleArn) {
-				this.roleArn = roleArn;
-			}
 		}
 
 		public static class BeautifyConfig {
@@ -204,28 +161,20 @@ public class SubmitBeautifyJobsResponse extends AcsResponse {
 
 			public static class OutputFile {
 
-				private String bucket;
-
-				private String location;
+				private String roleArn;
 
 				private String object;
 
-				private String roleArn;
+				private String location;
 
-				public String getBucket() {
-					return this.bucket;
+				private String bucket;
+
+				public String getRoleArn() {
+					return this.roleArn;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
-				}
-
-				public String getLocation() {
-					return this.location;
-				}
-
-				public void setLocation(String location) {
-					this.location = location;
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
 				}
 
 				public String getObject() {
@@ -236,13 +185,64 @@ public class SubmitBeautifyJobsResponse extends AcsResponse {
 					this.object = object;
 				}
 
-				public String getRoleArn() {
-					return this.roleArn;
+				public String getLocation() {
+					return this.location;
 				}
 
-				public void setRoleArn(String roleArn) {
-					this.roleArn = roleArn;
+				public void setLocation(String location) {
+					this.location = location;
 				}
+
+				public String getBucket() {
+					return this.bucket;
+				}
+
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
+				}
+			}
+		}
+
+		public static class Input {
+
+			private String roleArn;
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getRoleArn() {
+				return this.roleArn;
+			}
+
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
+			}
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 

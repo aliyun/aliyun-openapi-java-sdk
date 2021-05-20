@@ -31,6 +31,7 @@ public class DescribeExposedStatisticsResponseUnmarshaller {
 		describeExposedStatisticsResponse.setExposedAsapVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedAsapVulCount"));
 		describeExposedStatisticsResponse.setExposedLaterVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedLaterVulCount"));
 		describeExposedStatisticsResponse.setExposedNntfVulCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedNntfVulCount"));
+		describeExposedStatisticsResponse.setExposedWeekPasswordMachineCount(_ctx.integerValue("DescribeExposedStatisticsResponse.ExposedWeekPasswordMachineCount"));
 	 
 	 	return describeExposedStatisticsResponse;
 	}

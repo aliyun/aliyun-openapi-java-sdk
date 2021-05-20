@@ -39,6 +39,9 @@ public class DetectUserFaceByUrlResponseUnmarshaller {
 			dataItem.setGender(_ctx.integerValue("DetectUserFaceByUrlResponse.Data["+ i +"].Gender"));
 			dataItem.setBlurScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].BlurScore"));
 			dataItem.setPoseScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].PoseScore"));
+			dataItem.setOcclusionScore(_ctx.floatValue("DetectUserFaceByUrlResponse.Data["+ i +"].OcclusionScore"));
+			dataItem.setGoodForLibrary(_ctx.booleanValue("DetectUserFaceByUrlResponse.Data["+ i +"].GoodForLibrary"));
+			dataItem.setGoodForRecognition(_ctx.booleanValue("DetectUserFaceByUrlResponse.Data["+ i +"].GoodForRecognition"));
 
 			List<String> faceRects = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DetectUserFaceByUrlResponse.Data["+ i +"].FaceRects.Length"); j++) {

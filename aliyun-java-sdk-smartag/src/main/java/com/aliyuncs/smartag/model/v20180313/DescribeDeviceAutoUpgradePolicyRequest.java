@@ -35,6 +35,8 @@ public class DescribeDeviceAutoUpgradePolicyRequest extends RpcAcsRequest<Descri
 
 	private Long ownerId;
 
+	private String versionType;
+
 	private String smartAGId;
 	public DescribeDeviceAutoUpgradePolicyRequest() {
 		super("Smartag", "2018-03-13", "DescribeDeviceAutoUpgradePolicy", "smartag");
@@ -97,6 +99,17 @@ public class DescribeDeviceAutoUpgradePolicyRequest extends RpcAcsRequest<Descri
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVersionType() {
+		return this.versionType;
+	}
+
+	public void setVersionType(String versionType) {
+		this.versionType = versionType;
+		if(versionType != null){
+			putQueryParameter("VersionType", versionType);
 		}
 	}
 

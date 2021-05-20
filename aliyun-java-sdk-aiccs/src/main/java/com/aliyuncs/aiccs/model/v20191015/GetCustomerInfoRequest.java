@@ -29,7 +29,7 @@ public class GetCustomerInfoRequest extends RpcAcsRequest<GetCustomerInfoRespons
 
 	private Long memberId;
 	public GetCustomerInfoRequest() {
-		super("aiccs", "2019-10-15", "GetCustomerInfo", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetCustomerInfo");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

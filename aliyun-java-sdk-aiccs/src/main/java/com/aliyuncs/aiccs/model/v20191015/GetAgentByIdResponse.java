@@ -26,9 +26,9 @@ public class GetAgentByIdResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
@@ -42,20 +42,20 @@ public class GetAgentByIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -76,19 +76,27 @@ public class GetAgentByIdResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String foreignNick;
+
 		private Integer servicerType;
-
-		private String createUserName;
-
-		private String showName;
 
 		private Integer agentId;
 
 		private String realName;
 
-		private String foreignNick;
-
 		private String foreignKey;
+
+		private String createUserName;
+
+		private String showName;
+
+		public String getForeignNick() {
+			return this.foreignNick;
+		}
+
+		public void setForeignNick(String foreignNick) {
+			this.foreignNick = foreignNick;
+		}
 
 		public Integer getServicerType() {
 			return this.servicerType;
@@ -96,22 +104,6 @@ public class GetAgentByIdResponse extends AcsResponse {
 
 		public void setServicerType(Integer servicerType) {
 			this.servicerType = servicerType;
-		}
-
-		public String getCreateUserName() {
-			return this.createUserName;
-		}
-
-		public void setCreateUserName(String createUserName) {
-			this.createUserName = createUserName;
-		}
-
-		public String getShowName() {
-			return this.showName;
-		}
-
-		public void setShowName(String showName) {
-			this.showName = showName;
 		}
 
 		public Integer getAgentId() {
@@ -130,20 +122,28 @@ public class GetAgentByIdResponse extends AcsResponse {
 			this.realName = realName;
 		}
 
-		public String getForeignNick() {
-			return this.foreignNick;
-		}
-
-		public void setForeignNick(String foreignNick) {
-			this.foreignNick = foreignNick;
-		}
-
 		public String getForeignKey() {
 			return this.foreignKey;
 		}
 
 		public void setForeignKey(String foreignKey) {
 			this.foreignKey = foreignKey;
+		}
+
+		public String getCreateUserName() {
+			return this.createUserName;
+		}
+
+		public void setCreateUserName(String createUserName) {
+			this.createUserName = createUserName;
+		}
+
+		public String getShowName() {
+			return this.showName;
+		}
+
+		public void setShowName(String showName) {
+			this.showName = showName;
 		}
 	}
 

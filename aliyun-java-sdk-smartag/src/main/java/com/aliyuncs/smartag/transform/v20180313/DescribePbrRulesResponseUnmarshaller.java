@@ -28,20 +28,20 @@ public class DescribePbrRulesResponseUnmarshaller {
 		
 		describePbrRulesResponse.setRequestId(_ctx.stringValue("DescribePbrRulesResponse.RequestId"));
 		describePbrRulesResponse.setTotalCount(_ctx.integerValue("DescribePbrRulesResponse.TotalCount"));
-		describePbrRulesResponse.setPageNumber(_ctx.integerValue("DescribePbrRulesResponse.PageNumber"));
 		describePbrRulesResponse.setPageSize(_ctx.integerValue("DescribePbrRulesResponse.PageSize"));
+		describePbrRulesResponse.setPageNumber(_ctx.integerValue("DescribePbrRulesResponse.PageNumber"));
 
 		List<PbrRule> pbrRules = new ArrayList<PbrRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePbrRulesResponse.PbrRules.Length"); i++) {
 			PbrRule pbrRule = new PbrRule();
-			pbrRule.setPbrRuleId(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].PbrRuleId"));
-			pbrRule.setSrcCidr(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].SrcCidr"));
-			pbrRule.setDstCidr(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].DstCidr"));
 			pbrRule.setSrcPort(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].SrcPort"));
-			pbrRule.setDstPort(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].DstPort"));
-			pbrRule.setBizProtocol(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].Protocol"));
-			pbrRule.setName(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].Name"));
 			pbrRule.setDescription(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].Description"));
+			pbrRule.setSrcCidr(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].SrcCidr"));
+			pbrRule.setDstPort(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].DstPort"));
+			pbrRule.setPbrRuleId(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].PbrRuleId"));
+			pbrRule.setBizProtocol(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].Protocol"));
+			pbrRule.setDstCidr(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].DstCidr"));
+			pbrRule.setName(_ctx.stringValue("DescribePbrRulesResponse.PbrRules["+ i +"].Name"));
 
 			pbrRules.add(pbrRule);
 		}

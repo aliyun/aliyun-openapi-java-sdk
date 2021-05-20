@@ -33,7 +33,7 @@ public class ApproveOrderRequest extends RpcAcsRequest<ApproveOrderResponse> {
 
 	private String comment;
 	public ApproveOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "ApproveOrder");
+		super("dms-enterprise", "2018-11-01", "ApproveOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

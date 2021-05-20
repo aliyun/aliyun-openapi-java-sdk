@@ -25,6 +25,8 @@ import com.aliyuncs.edas.Endpoint;
 public class ListK8sIngressRulesRequest extends RoaAcsRequest<ListK8sIngressRulesResponse> {
 	   
 
+	private String condition;
+
 	private String namespace;
 
 	private String clusterId;
@@ -36,6 +38,17 @@ public class ListK8sIngressRulesRequest extends RoaAcsRequest<ListK8sIngressRule
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCondition() {
+		return this.condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+		if(condition != null){
+			putQueryParameter("Condition", condition);
+		}
 	}
 
 	public String getNamespace() {

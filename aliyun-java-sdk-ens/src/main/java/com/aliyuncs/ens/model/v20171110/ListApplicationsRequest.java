@@ -40,7 +40,7 @@ public class ListApplicationsRequest extends RpcAcsRequest<ListApplicationsRespo
 
 	private String minDate;
 	public ListApplicationsRequest() {
-		super("Ens", "2017-11-10", "ListApplications");
+		super("Ens", "2017-11-10", "ListApplications", "ens");
 		setMethod(MethodType.POST);
 	}
 

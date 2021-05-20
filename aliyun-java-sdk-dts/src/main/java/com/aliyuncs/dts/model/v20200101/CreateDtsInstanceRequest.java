@@ -35,6 +35,8 @@ public class CreateDtsInstanceRequest extends RpcAcsRequest<CreateDtsInstanceRes
 
 	private String jobId;
 
+	private Integer computeUnit;
+
 	private String destinationRegion;
 
 	private String period;
@@ -55,7 +57,7 @@ public class CreateDtsInstanceRequest extends RpcAcsRequest<CreateDtsInstanceRes
 
 	private String sourceEndpointEngineName;
 	public CreateDtsInstanceRequest() {
-		super("Dts", "2020-01-01", "CreateDtsInstance", "dts");
+		super("Dts", "2020-01-01", "CreateDtsInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -115,6 +117,17 @@ public class CreateDtsInstanceRequest extends RpcAcsRequest<CreateDtsInstanceRes
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public Integer getComputeUnit() {
+		return this.computeUnit;
+	}
+
+	public void setComputeUnit(Integer computeUnit) {
+		this.computeUnit = computeUnit;
+		if(computeUnit != null){
+			putQueryParameter("ComputeUnit", computeUnit.toString());
 		}
 	}
 

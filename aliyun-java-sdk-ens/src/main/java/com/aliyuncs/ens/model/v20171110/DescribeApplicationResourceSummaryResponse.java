@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeApplicationResourceSummaryResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String applicationResource;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getApplicationResource() {
 		return this.applicationResource;
@@ -42,6 +34,14 @@ public class DescribeApplicationResourceSummaryResponse extends AcsResponse {
 
 	public void setApplicationResource(String applicationResource) {
 		this.applicationResource = applicationResource;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

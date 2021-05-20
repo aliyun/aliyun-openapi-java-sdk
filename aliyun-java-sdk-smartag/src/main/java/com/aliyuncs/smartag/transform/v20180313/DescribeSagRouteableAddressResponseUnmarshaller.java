@@ -23,8 +23,8 @@ public class DescribeSagRouteableAddressResponseUnmarshaller {
 	public static DescribeSagRouteableAddressResponse unmarshall(DescribeSagRouteableAddressResponse describeSagRouteableAddressResponse, UnmarshallerContext _ctx) {
 		
 		describeSagRouteableAddressResponse.setRequestId(_ctx.stringValue("DescribeSagRouteableAddressResponse.RequestId"));
-		describeSagRouteableAddressResponse.setRouteableAddress(_ctx.stringValue("DescribeSagRouteableAddressResponse.RouteableAddress"));
 		describeSagRouteableAddressResponse.setOrigin(_ctx.stringValue("DescribeSagRouteableAddressResponse.Origin"));
+		describeSagRouteableAddressResponse.setRouteableAddress(_ctx.stringValue("DescribeSagRouteableAddressResponse.RouteableAddress"));
 	 
 	 	return describeSagRouteableAddressResponse;
 	}

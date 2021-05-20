@@ -27,13 +27,13 @@ public class AbstractEcommerceVideoRequest extends RpcAcsRequest<AbstractEcommer
 
 	private Float duration;
 
-	private Integer height;
-
 	private String videoUrl;
 
 	private Integer width;
+
+	private Integer height;
 	public AbstractEcommerceVideoRequest() {
-		super("videoenhan", "2020-03-20", "AbstractEcommerceVideo");
+		super("videoenhan", "2020-03-20", "AbstractEcommerceVideo", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,17 +49,6 @@ public class AbstractEcommerceVideoRequest extends RpcAcsRequest<AbstractEcommer
 		this.duration = duration;
 		if(duration != null){
 			putBodyParameter("Duration", duration.toString());
-		}
-	}
-
-	public Integer getHeight() {
-		return this.height;
-	}
-
-	public void setHeight(Integer height) {
-		this.height = height;
-		if(height != null){
-			putBodyParameter("Height", height.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class AbstractEcommerceVideoRequest extends RpcAcsRequest<AbstractEcommer
 		this.width = width;
 		if(width != null){
 			putBodyParameter("Width", width.toString());
+		}
+	}
+
+	public Integer getHeight() {
+		return this.height;
+	}
+
+	public void setHeight(Integer height) {
+		this.height = height;
+		if(height != null){
+			putBodyParameter("Height", height.toString());
 		}
 	}
 

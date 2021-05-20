@@ -27,9 +27,9 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private Boolean success;
 
@@ -43,20 +43,20 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -77,17 +77,25 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String ruleCreateTime;
+
 		private Integer matchType;
 
 		private Long ruleId;
 
-		private String name;
-
-		private String ruleCreateTime;
-
 		private Integer ruleTag;
 
+		private String name;
+
 		private List<String> keyWords;
+
+		public String getRuleCreateTime() {
+			return this.ruleCreateTime;
+		}
+
+		public void setRuleCreateTime(String ruleCreateTime) {
+			this.ruleCreateTime = ruleCreateTime;
+		}
 
 		public Integer getMatchType() {
 			return this.matchType;
@@ -105,28 +113,20 @@ public class GetQualityRuleDetailResponse extends AcsResponse {
 			this.ruleId = ruleId;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getRuleCreateTime() {
-			return this.ruleCreateTime;
-		}
-
-		public void setRuleCreateTime(String ruleCreateTime) {
-			this.ruleCreateTime = ruleCreateTime;
-		}
-
 		public Integer getRuleTag() {
 			return this.ruleTag;
 		}
 
 		public void setRuleTag(Integer ruleTag) {
 			this.ruleTag = ruleTag;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public List<String> getKeyWords() {

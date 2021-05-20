@@ -33,7 +33,7 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Long ownerId;
 	public DescribeRegionsRequest() {
-		super("clickhouse", "2019-11-11", "DescribeRegions", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeRegions");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

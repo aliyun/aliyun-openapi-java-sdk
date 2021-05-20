@@ -40,15 +40,15 @@ public class ListCustomPersonsResponseUnmarshaller {
 			List<Person> persons = new ArrayList<Person>();
 			for (int j = 0; j < _ctx.lengthValue("ListCustomPersonsResponse.Categories["+ i +"].Persons.Length"); j++) {
 				Person person = new Person();
-				person.setPersonId(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].PersonId"));
 				person.setPersonName(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].PersonName"));
 				person.setPersonDescription(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].PersonDescription"));
+				person.setPersonId(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].PersonId"));
 
 				List<Face> faces = new ArrayList<Face>();
 				for (int k = 0; k < _ctx.lengthValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].Faces.Length"); k++) {
 					Face face = new Face();
-					face.setFaceId(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].Faces["+ k +"].FaceId"));
 					face.setImageUrl(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].Faces["+ k +"].ImageUrl"));
+					face.setFaceId(_ctx.stringValue("ListCustomPersonsResponse.Categories["+ i +"].Persons["+ j +"].Faces["+ k +"].FaceId"));
 
 					faces.add(face);
 				}

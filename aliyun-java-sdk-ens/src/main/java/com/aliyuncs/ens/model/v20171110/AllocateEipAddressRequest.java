@@ -30,7 +30,7 @@ public class AllocateEipAddressRequest extends RpcAcsRequest<AllocateEipAddressR
 
 	private Integer count;
 	public AllocateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AllocateEipAddress");
+		super("Ens", "2017-11-10", "AllocateEipAddress", "ens");
 		setMethod(MethodType.POST);
 	}
 

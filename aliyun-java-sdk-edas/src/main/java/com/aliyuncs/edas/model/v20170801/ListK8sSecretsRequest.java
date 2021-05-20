@@ -25,9 +25,17 @@ import com.aliyuncs.edas.Endpoint;
 public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse> {
 	   
 
+	private String condition;
+
+	private Integer pageNo;
+
 	private String namespace;
 
+	private Integer pageSize;
+
 	private String clusterId;
+
+	private Boolean showRelatedApps;
 	public ListK8sSecretsRequest() {
 		super("Edas", "2017-08-01", "ListK8sSecrets", "Edas");
 		setUriPattern("/pop/v5/k8s/acs/k8s_secret");
@@ -36,6 +44,28 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getCondition() {
+		return this.condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+		if(condition != null){
+			putQueryParameter("Condition", condition);
+		}
+	}
+
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+		if(pageNo != null){
+			putQueryParameter("PageNo", pageNo.toString());
+		}
 	}
 
 	public String getNamespace() {
@@ -49,6 +79,17 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getClusterId() {
 		return this.clusterId;
 	}
@@ -57,6 +98,17 @@ public class ListK8sSecretsRequest extends RoaAcsRequest<ListK8sSecretsResponse>
 		this.clusterId = clusterId;
 		if(clusterId != null){
 			putQueryParameter("ClusterId", clusterId);
+		}
+	}
+
+	public Boolean getShowRelatedApps() {
+		return this.showRelatedApps;
+	}
+
+	public void setShowRelatedApps(Boolean showRelatedApps) {
+		this.showRelatedApps = showRelatedApps;
+		if(showRelatedApps != null){
+			putQueryParameter("ShowRelatedApps", showRelatedApps.toString());
 		}
 	}
 

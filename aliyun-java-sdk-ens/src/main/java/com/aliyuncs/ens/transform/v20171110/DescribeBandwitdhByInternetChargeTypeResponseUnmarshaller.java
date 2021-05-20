@@ -24,8 +24,8 @@ public class DescribeBandwitdhByInternetChargeTypeResponseUnmarshaller {
 		
 		describeBandwitdhByInternetChargeTypeResponse.setRequestId(_ctx.stringValue("DescribeBandwitdhByInternetChargeTypeResponse.RequestId"));
 		describeBandwitdhByInternetChargeTypeResponse.setBandwidthValue(_ctx.longValue("DescribeBandwitdhByInternetChargeTypeResponse.BandwidthValue"));
-		describeBandwitdhByInternetChargeTypeResponse.setTimeStamp(_ctx.stringValue("DescribeBandwitdhByInternetChargeTypeResponse.TimeStamp"));
 		describeBandwitdhByInternetChargeTypeResponse.setInternetChargeType(_ctx.stringValue("DescribeBandwitdhByInternetChargeTypeResponse.InternetChargeType"));
+		describeBandwitdhByInternetChargeTypeResponse.setTimeStamp(_ctx.stringValue("DescribeBandwitdhByInternetChargeTypeResponse.TimeStamp"));
 	 
 	 	return describeBandwitdhByInternetChargeTypeResponse;
 	}

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListSkillGroupResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class ListSkillGroupResponse extends AcsResponse {
 
 	private List<SkillGroups> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,23 +77,15 @@ public class ListSkillGroupResponse extends AcsResponse {
 
 	public static class SkillGroups {
 
-		private String description;
-
 		private String displayName;
 
-		private Long skillGroupId;
+		private String description;
 
 		private Integer channelType;
 
+		private Long skillGroupId;
+
 		private String name;
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
 
 		public String getDisplayName() {
 			return this.displayName;
@@ -103,12 +95,12 @@ public class ListSkillGroupResponse extends AcsResponse {
 			this.displayName = displayName;
 		}
 
-		public Long getSkillGroupId() {
-			return this.skillGroupId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setSkillGroupId(Long skillGroupId) {
-			this.skillGroupId = skillGroupId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Integer getChannelType() {
@@ -117,6 +109,14 @@ public class ListSkillGroupResponse extends AcsResponse {
 
 		public void setChannelType(Integer channelType) {
 			this.channelType = channelType;
+		}
+
+		public Long getSkillGroupId() {
+			return this.skillGroupId;
+		}
+
+		public void setSkillGroupId(Long skillGroupId) {
+			this.skillGroupId = skillGroupId;
 		}
 
 		public String getName() {

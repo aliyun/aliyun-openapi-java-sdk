@@ -23,10 +23,10 @@ public class SubmitInferenceJobResponseUnmarshaller {
 	public static SubmitInferenceJobResponse unmarshall(SubmitInferenceJobResponse submitInferenceJobResponse, UnmarshallerContext _ctx) {
 		
 		submitInferenceJobResponse.setRequestId(_ctx.stringValue("SubmitInferenceJobResponse.RequestId"));
-		submitInferenceJobResponse.setCode(_ctx.stringValue("SubmitInferenceJobResponse.Code"));
-		submitInferenceJobResponse.setMessage(_ctx.stringValue("SubmitInferenceJobResponse.Message"));
-		submitInferenceJobResponse.setJobId(_ctx.stringValue("SubmitInferenceJobResponse.JobId"));
 		submitInferenceJobResponse.setTestId(_ctx.stringValue("SubmitInferenceJobResponse.TestId"));
+		submitInferenceJobResponse.setMessage(_ctx.stringValue("SubmitInferenceJobResponse.Message"));
+		submitInferenceJobResponse.setCode(_ctx.stringValue("SubmitInferenceJobResponse.Code"));
+		submitInferenceJobResponse.setJobId(_ctx.stringValue("SubmitInferenceJobResponse.JobId"));
 	 
 	 	return submitInferenceJobResponse;
 	}

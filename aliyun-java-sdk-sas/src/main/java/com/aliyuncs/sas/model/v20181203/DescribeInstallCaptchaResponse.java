@@ -28,7 +28,7 @@ public class DescribeInstallCaptchaResponse extends AcsResponse {
 
 	private String captchaCode;
 
-	private Integer deadline;
+	private String deadline;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -46,11 +46,11 @@ public class DescribeInstallCaptchaResponse extends AcsResponse {
 		this.captchaCode = captchaCode;
 	}
 
-	public Integer getDeadline() {
+	public String getDeadline() {
 		return this.deadline;
 	}
 
-	public void setDeadline(Integer deadline) {
+	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
 

@@ -31,7 +31,7 @@ public class UpdateAlertContactGroupRequest extends RpcAcsRequest<UpdateAlertCon
 
 	private String contactIds;
 	public UpdateAlertContactGroupRequest() {
-		super("ARMS", "2019-08-08", "UpdateAlertContactGroup");
+		super("ARMS", "2019-08-08", "UpdateAlertContactGroup", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

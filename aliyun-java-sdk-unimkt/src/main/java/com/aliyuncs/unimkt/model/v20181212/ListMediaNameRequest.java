@@ -25,14 +25,6 @@ import com.aliyuncs.unimkt.Endpoint;
 public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 	   
 
-	private Long endCreateTime;
-
-	private String business;
-
-	private String os;
-
-	private String mediaStatus;
-
 	private String userId;
 
 	private String originSiteUserId;
@@ -41,21 +33,33 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 
 	private String mediaName;
 
-	private String environment;
-
 	private String appName;
-
-	private Long startCreateTime;
 
 	private String tenantId;
 
 	private Integer pageSize;
 
+	private String accessStatus;
+
+	private String firstScene;
+
+	private Long endCreateTime;
+
+	private String business;
+
+	private String os;
+
+	private String mediaStatus;
+
+	private String environment;
+
+	private Long startCreateTime;
+
 	private String userSite;
 
-	private String mediaType;
+	private String secondScene;
 
-	private String accessStatus;
+	private String mediaType;
 	public ListMediaNameRequest() {
 		super("UniMkt", "2018-12-12", "ListMediaName");
 		setMethod(MethodType.POST);
@@ -63,50 +67,6 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndCreateTime() {
-		return this.endCreateTime;
-	}
-
-	public void setEndCreateTime(Long endCreateTime) {
-		this.endCreateTime = endCreateTime;
-		if(endCreateTime != null){
-			putQueryParameter("EndCreateTime", endCreateTime.toString());
-		}
-	}
-
-	public String getBusiness() {
-		return this.business;
-	}
-
-	public void setBusiness(String business) {
-		this.business = business;
-		if(business != null){
-			putQueryParameter("Business", business);
-		}
-	}
-
-	public String getOs() {
-		return this.os;
-	}
-
-	public void setOs(String os) {
-		this.os = os;
-		if(os != null){
-			putQueryParameter("Os", os);
-		}
-	}
-
-	public String getMediaStatus() {
-		return this.mediaStatus;
-	}
-
-	public void setMediaStatus(String mediaStatus) {
-		this.mediaStatus = mediaStatus;
-		if(mediaStatus != null){
-			putQueryParameter("MediaStatus", mediaStatus);
-		}
 	}
 
 	public String getUserId() {
@@ -153,17 +113,6 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 		}
 	}
 
-	public String getEnvironment() {
-		return this.environment;
-	}
-
-	public void setEnvironment(String environment) {
-		this.environment = environment;
-		if(environment != null){
-			putQueryParameter("Environment", environment);
-		}
-	}
-
 	public String getAppName() {
 		return this.appName;
 	}
@@ -172,17 +121,6 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 		this.appName = appName;
 		if(appName != null){
 			putQueryParameter("AppName", appName);
-		}
-	}
-
-	public Long getStartCreateTime() {
-		return this.startCreateTime;
-	}
-
-	public void setStartCreateTime(Long startCreateTime) {
-		this.startCreateTime = startCreateTime;
-		if(startCreateTime != null){
-			putQueryParameter("StartCreateTime", startCreateTime.toString());
 		}
 	}
 
@@ -208,6 +146,94 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 		}
 	}
 
+	public String getAccessStatus() {
+		return this.accessStatus;
+	}
+
+	public void setAccessStatus(String accessStatus) {
+		this.accessStatus = accessStatus;
+		if(accessStatus != null){
+			putQueryParameter("AccessStatus", accessStatus);
+		}
+	}
+
+	public String getFirstScene() {
+		return this.firstScene;
+	}
+
+	public void setFirstScene(String firstScene) {
+		this.firstScene = firstScene;
+		if(firstScene != null){
+			putQueryParameter("FirstScene", firstScene);
+		}
+	}
+
+	public Long getEndCreateTime() {
+		return this.endCreateTime;
+	}
+
+	public void setEndCreateTime(Long endCreateTime) {
+		this.endCreateTime = endCreateTime;
+		if(endCreateTime != null){
+			putQueryParameter("EndCreateTime", endCreateTime.toString());
+		}
+	}
+
+	public String getBusiness() {
+		return this.business;
+	}
+
+	public void setBusiness(String business) {
+		this.business = business;
+		if(business != null){
+			putQueryParameter("Business", business);
+		}
+	}
+
+	public String getOs() {
+		return this.os;
+	}
+
+	public void setOs(String os) {
+		this.os = os;
+		if(os != null){
+			putQueryParameter("Os", os);
+		}
+	}
+
+	public String getMediaStatus() {
+		return this.mediaStatus;
+	}
+
+	public void setMediaStatus(String mediaStatus) {
+		this.mediaStatus = mediaStatus;
+		if(mediaStatus != null){
+			putQueryParameter("MediaStatus", mediaStatus);
+		}
+	}
+
+	public String getEnvironment() {
+		return this.environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+		if(environment != null){
+			putQueryParameter("Environment", environment);
+		}
+	}
+
+	public Long getStartCreateTime() {
+		return this.startCreateTime;
+	}
+
+	public void setStartCreateTime(Long startCreateTime) {
+		this.startCreateTime = startCreateTime;
+		if(startCreateTime != null){
+			putQueryParameter("StartCreateTime", startCreateTime.toString());
+		}
+	}
+
 	public String getUserSite() {
 		return this.userSite;
 	}
@@ -219,6 +245,17 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 		}
 	}
 
+	public String getSecondScene() {
+		return this.secondScene;
+	}
+
+	public void setSecondScene(String secondScene) {
+		this.secondScene = secondScene;
+		if(secondScene != null){
+			putQueryParameter("SecondScene", secondScene);
+		}
+	}
+
 	public String getMediaType() {
 		return this.mediaType;
 	}
@@ -227,17 +264,6 @@ public class ListMediaNameRequest extends RpcAcsRequest<ListMediaNameResponse> {
 		this.mediaType = mediaType;
 		if(mediaType != null){
 			putQueryParameter("MediaType", mediaType);
-		}
-	}
-
-	public String getAccessStatus() {
-		return this.accessStatus;
-	}
-
-	public void setAccessStatus(String accessStatus) {
-		this.accessStatus = accessStatus;
-		if(accessStatus != null){
-			putQueryParameter("AccessStatus", accessStatus);
 		}
 	}
 

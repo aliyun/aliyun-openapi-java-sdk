@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddProfileCatalogResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class AddProfileCatalogResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,18 +66,18 @@ public class AddProfileCatalogResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long catalogId;
+		private String isvSubId;
 
 		private String catalogName;
 
-		private String isvSubId;
+		private Long catalogId;
 
-		public Long getCatalogId() {
-			return this.catalogId;
+		public String getIsvSubId() {
+			return this.isvSubId;
 		}
 
-		public void setCatalogId(Long catalogId) {
-			this.catalogId = catalogId;
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
 		}
 
 		public String getCatalogName() {
@@ -88,12 +88,12 @@ public class AddProfileCatalogResponse extends AcsResponse {
 			this.catalogName = catalogName;
 		}
 
-		public String getIsvSubId() {
-			return this.isvSubId;
+		public Long getCatalogId() {
+			return this.catalogId;
 		}
 
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
+		public void setCatalogId(Long catalogId) {
+			this.catalogId = catalogId;
 		}
 	}
 

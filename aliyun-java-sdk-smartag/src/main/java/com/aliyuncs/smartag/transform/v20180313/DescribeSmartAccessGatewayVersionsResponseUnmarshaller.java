@@ -32,9 +32,9 @@ public class DescribeSmartAccessGatewayVersionsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions.Length"); i++) {
 			SmartAGVersion smartAGVersion = new SmartAGVersion();
 			smartAGVersion.setVersionCode(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].VersionCode"));
-			smartAGVersion.setVersionName(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].VersionName"));
-			smartAGVersion.setCreateTime(_ctx.longValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].CreateTime"));
 			smartAGVersion.setType(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].Type"));
+			smartAGVersion.setCreateTime(_ctx.longValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].CreateTime"));
+			smartAGVersion.setVersionName(_ctx.stringValue("DescribeSmartAccessGatewayVersionsResponse.SmartAGVersions["+ i +"].VersionName"));
 
 			smartAGVersions.add(smartAGVersion);
 		}

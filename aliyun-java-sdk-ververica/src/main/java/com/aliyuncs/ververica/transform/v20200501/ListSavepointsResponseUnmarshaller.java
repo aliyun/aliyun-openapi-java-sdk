@@ -24,6 +24,7 @@ public class ListSavepointsResponseUnmarshaller {
 		
 		listSavepointsResponse.setData(_ctx.stringValue("ListSavepointsResponse.data"));
 		listSavepointsResponse.setRequestId(_ctx.stringValue("ListSavepointsResponse.requestId"));
+		listSavepointsResponse.setSuccess(_ctx.booleanValue("ListSavepointsResponse.success"));
 	 
 	 	return listSavepointsResponse;
 	}

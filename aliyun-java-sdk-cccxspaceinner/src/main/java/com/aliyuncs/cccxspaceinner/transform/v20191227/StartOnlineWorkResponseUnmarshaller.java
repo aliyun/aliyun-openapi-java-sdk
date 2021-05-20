@@ -24,9 +24,9 @@ public class StartOnlineWorkResponseUnmarshaller {
 
 	public static StartOnlineWorkResponse unmarshall(StartOnlineWorkResponse startOnlineWorkResponse, UnmarshallerContext _ctx) {
 		
-		startOnlineWorkResponse.setSuccess(_ctx.booleanValue("StartOnlineWorkResponse.Success"));
-		startOnlineWorkResponse.setCode(_ctx.stringValue("StartOnlineWorkResponse.Code"));
 		startOnlineWorkResponse.setMessage(_ctx.stringValue("StartOnlineWorkResponse.Message"));
+		startOnlineWorkResponse.setCode(_ctx.stringValue("StartOnlineWorkResponse.Code"));
+		startOnlineWorkResponse.setSuccess(_ctx.booleanValue("StartOnlineWorkResponse.Success"));
 
 		Data data = new Data();
 

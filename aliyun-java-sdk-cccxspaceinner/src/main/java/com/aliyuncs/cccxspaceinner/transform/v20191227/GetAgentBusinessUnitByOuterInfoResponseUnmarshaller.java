@@ -23,13 +23,13 @@ public class GetAgentBusinessUnitByOuterInfoResponseUnmarshaller {
 
 	public static GetAgentBusinessUnitByOuterInfoResponse unmarshall(GetAgentBusinessUnitByOuterInfoResponse getAgentBusinessUnitByOuterInfoResponse, UnmarshallerContext _ctx) {
 		
-		getAgentBusinessUnitByOuterInfoResponse.setSuccess(_ctx.booleanValue("GetAgentBusinessUnitByOuterInfoResponse.Success"));
-		getAgentBusinessUnitByOuterInfoResponse.setCode(_ctx.stringValue("GetAgentBusinessUnitByOuterInfoResponse.Code"));
 		getAgentBusinessUnitByOuterInfoResponse.setMessage(_ctx.stringValue("GetAgentBusinessUnitByOuterInfoResponse.Message"));
+		getAgentBusinessUnitByOuterInfoResponse.setCode(_ctx.stringValue("GetAgentBusinessUnitByOuterInfoResponse.Code"));
+		getAgentBusinessUnitByOuterInfoResponse.setSuccess(_ctx.booleanValue("GetAgentBusinessUnitByOuterInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setBuId(_ctx.longValue("GetAgentBusinessUnitByOuterInfoResponse.Data.buId"));
 		data.setBuName(_ctx.stringValue("GetAgentBusinessUnitByOuterInfoResponse.Data.buName"));
+		data.setBuId(_ctx.longValue("GetAgentBusinessUnitByOuterInfoResponse.Data.buId"));
 		data.setBuKey(_ctx.stringValue("GetAgentBusinessUnitByOuterInfoResponse.Data.buKey"));
 		getAgentBusinessUnitByOuterInfoResponse.setData(data);
 	 

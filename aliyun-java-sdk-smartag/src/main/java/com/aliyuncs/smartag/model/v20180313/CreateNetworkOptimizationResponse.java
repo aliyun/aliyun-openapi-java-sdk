@@ -26,11 +26,11 @@ public class CreateNetworkOptimizationResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String networkOptId;
+	private String state;
 
 	private String name;
 
-	private String state;
+	private String networkOptId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class CreateNetworkOptimizationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getNetworkOptId() {
-		return this.networkOptId;
+	public String getState() {
+		return this.state;
 	}
 
-	public void setNetworkOptId(String networkOptId) {
-		this.networkOptId = networkOptId;
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getName() {
@@ -56,12 +56,12 @@ public class CreateNetworkOptimizationResponse extends AcsResponse {
 		this.name = name;
 	}
 
-	public String getState() {
-		return this.state;
+	public String getNetworkOptId() {
+		return this.networkOptId;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setNetworkOptId(String networkOptId) {
+		this.networkOptId = networkOptId;
 	}
 
 	@Override

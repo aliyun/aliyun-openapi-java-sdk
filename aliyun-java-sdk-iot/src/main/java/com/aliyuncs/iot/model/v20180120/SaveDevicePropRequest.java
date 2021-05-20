@@ -35,7 +35,7 @@ public class SaveDevicePropRequest extends RpcAcsRequest<SaveDevicePropResponse>
 
 	private String deviceName;
 	public SaveDevicePropRequest() {
-		super("Iot", "2018-01-20", "SaveDeviceProp");
+		super("Iot", "2018-01-20", "SaveDeviceProp", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

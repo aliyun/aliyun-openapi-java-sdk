@@ -23,10 +23,10 @@ public class CreateTicketTypeResponseUnmarshaller {
 	public static CreateTicketTypeResponse unmarshall(CreateTicketTypeResponse createTicketTypeResponse, UnmarshallerContext _ctx) {
 		
 		createTicketTypeResponse.setRequestId(_ctx.stringValue("CreateTicketTypeResponse.RequestId"));
-		createTicketTypeResponse.setSuccess(_ctx.booleanValue("CreateTicketTypeResponse.Success"));
-		createTicketTypeResponse.setCode(_ctx.stringValue("CreateTicketTypeResponse.Code"));
 		createTicketTypeResponse.setMessage(_ctx.stringValue("CreateTicketTypeResponse.Message"));
 		createTicketTypeResponse.setData(_ctx.stringValue("CreateTicketTypeResponse.Data"));
+		createTicketTypeResponse.setCode(_ctx.stringValue("CreateTicketTypeResponse.Code"));
+		createTicketTypeResponse.setSuccess(_ctx.booleanValue("CreateTicketTypeResponse.Success"));
 	 
 	 	return createTicketTypeResponse;
 	}

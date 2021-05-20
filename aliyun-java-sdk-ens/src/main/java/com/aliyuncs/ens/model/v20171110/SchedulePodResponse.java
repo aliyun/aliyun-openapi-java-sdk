@@ -24,15 +24,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SchedulePodResponse extends AcsResponse {
 
+	private String requestId;
+
+	private Long code;
+
 	private String msg;
 
 	private String desc;
 
-	private String requestId;
-
 	private String data;
 
-	private Long code;
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getCode() {
+		return this.code;
+	}
+
+	public void setCode(Long code) {
+		this.code = code;
+	}
 
 	public String getMsg() {
 		return this.msg;
@@ -50,28 +66,12 @@ public class SchedulePodResponse extends AcsResponse {
 		this.desc = desc;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getData() {
 		return this.data;
 	}
 
 	public void setData(String data) {
 		this.data = data;
-	}
-
-	public Long getCode() {
-		return this.code;
-	}
-
-	public void setCode(Long code) {
-		this.code = code;
 	}
 
 	@Override

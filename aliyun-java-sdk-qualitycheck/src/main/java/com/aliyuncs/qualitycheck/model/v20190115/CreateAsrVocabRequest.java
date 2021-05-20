@@ -16,7 +16,6 @@ package com.aliyuncs.qualitycheck.model.v20190115;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
-import com.aliyuncs.qualitycheck.Endpoint;
 
 /**
  * @author auto create
@@ -27,12 +26,8 @@ public class CreateAsrVocabRequest extends RpcAcsRequest<CreateAsrVocabResponse>
 
 	private String jsonStr;
 	public CreateAsrVocabRequest() {
-		super("Qualitycheck", "2019-01-15", "CreateAsrVocab", "Qualitycheck");
+		super("Qualitycheck", "2019-01-15", "CreateAsrVocab");
 		setMethod(MethodType.POST);
-		try {
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
-			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
-		} catch (Exception e) {}
 	}
 
 	public String getJsonStr() {

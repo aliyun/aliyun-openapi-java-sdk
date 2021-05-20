@@ -23,8 +23,8 @@ public class GetDRMLicenseResponseUnmarshaller {
 	public static GetDRMLicenseResponse unmarshall(GetDRMLicenseResponse getDRMLicenseResponse, UnmarshallerContext _ctx) {
 		
 		getDRMLicenseResponse.setRequestId(_ctx.stringValue("GetDRMLicenseResponse.RequestId"));
-		getDRMLicenseResponse.setDRMData(_ctx.stringValue("GetDRMLicenseResponse.DRMData"));
 		getDRMLicenseResponse.setDeviceInfo(_ctx.stringValue("GetDRMLicenseResponse.DeviceInfo"));
+		getDRMLicenseResponse.setDRMData(_ctx.stringValue("GetDRMLicenseResponse.DRMData"));
 	 
 	 	return getDRMLicenseResponse;
 	}

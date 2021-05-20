@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListBodyPersonResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -55,6 +47,14 @@ public class ListBodyPersonResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -89,23 +89,15 @@ public class ListBodyPersonResponse extends AcsResponse {
 
 		public static class Person {
 
-			private Long traceCount;
-
 			private Long instanceId;
 
 			private Long dbId;
 
-			private Long id;
-
 			private String name;
 
-			public Long getTraceCount() {
-				return this.traceCount;
-			}
+			private Long traceCount;
 
-			public void setTraceCount(Long traceCount) {
-				this.traceCount = traceCount;
-			}
+			private Long id;
 
 			public Long getInstanceId() {
 				return this.instanceId;
@@ -123,20 +115,28 @@ public class ListBodyPersonResponse extends AcsResponse {
 				this.dbId = dbId;
 			}
 
-			public Long getId() {
-				return this.id;
-			}
-
-			public void setId(Long id) {
-				this.id = id;
-			}
-
 			public String getName() {
 				return this.name;
 			}
 
 			public void setName(String name) {
 				this.name = name;
+			}
+
+			public Long getTraceCount() {
+				return this.traceCount;
+			}
+
+			public void setTraceCount(Long traceCount) {
+				this.traceCount = traceCount;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

@@ -56,7 +56,7 @@ public class CreateSubscribeRelationRequest extends RpcAcsRequest<CreateSubscrib
 
 	private String mnsConfiguration;
 	public CreateSubscribeRelationRequest() {
-		super("Iot", "2018-01-20", "CreateSubscribeRelation");
+		super("Iot", "2018-01-20", "CreateSubscribeRelation", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

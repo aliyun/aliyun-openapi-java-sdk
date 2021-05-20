@@ -31,7 +31,7 @@ public class BindSceneRuleToEdgeInstanceRequest extends RpcAcsRequest<BindSceneR
 
 	private String ruleId;
 	public BindSceneRuleToEdgeInstanceRequest() {
-		super("Iot", "2018-01-20", "BindSceneRuleToEdgeInstance");
+		super("Iot", "2018-01-20", "BindSceneRuleToEdgeInstance", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

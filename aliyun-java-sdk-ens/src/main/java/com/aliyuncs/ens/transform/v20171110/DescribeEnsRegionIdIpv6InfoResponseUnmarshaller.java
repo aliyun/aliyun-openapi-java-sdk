@@ -26,8 +26,8 @@ public class DescribeEnsRegionIdIpv6InfoResponseUnmarshaller {
 		describeEnsRegionIdIpv6InfoResponse.setRequestId(_ctx.stringValue("DescribeEnsRegionIdIpv6InfoResponse.RequestId"));
 
 		SupportIpv6Info supportIpv6Info = new SupportIpv6Info();
-		supportIpv6Info.setSupportIpv6(_ctx.booleanValue("DescribeEnsRegionIdIpv6InfoResponse.SupportIpv6Info.SupportIpv6"));
 		supportIpv6Info.setEnsRegionId(_ctx.stringValue("DescribeEnsRegionIdIpv6InfoResponse.SupportIpv6Info.EnsRegionId"));
+		supportIpv6Info.setSupportIpv6(_ctx.booleanValue("DescribeEnsRegionIdIpv6InfoResponse.SupportIpv6Info.SupportIpv6"));
 		describeEnsRegionIdIpv6InfoResponse.setSupportIpv6Info(supportIpv6Info);
 	 
 	 	return describeEnsRegionIdIpv6InfoResponse;

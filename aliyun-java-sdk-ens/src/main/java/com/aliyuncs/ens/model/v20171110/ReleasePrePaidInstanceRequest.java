@@ -26,7 +26,7 @@ public class ReleasePrePaidInstanceRequest extends RpcAcsRequest<ReleasePrePaidI
 
 	private String instanceId;
 	public ReleasePrePaidInstanceRequest() {
-		super("Ens", "2017-11-10", "ReleasePrePaidInstance");
+		super("Ens", "2017-11-10", "ReleasePrePaidInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

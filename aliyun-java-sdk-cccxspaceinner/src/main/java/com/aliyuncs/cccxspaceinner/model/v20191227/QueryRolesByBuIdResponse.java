@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryRolesByBuIdResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<DataItem> data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -49,12 +49,12 @@ public class QueryRolesByBuIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<DataItem> getData() {
@@ -69,11 +69,11 @@ public class QueryRolesByBuIdResponse extends AcsResponse {
 
 		private Long buId;
 
-		private Long roleId;
-
 		private String roleCode;
 
 		private String roleName;
+
+		private Long roleId;
 
 		public Long getBuId() {
 			return this.buId;
@@ -81,14 +81,6 @@ public class QueryRolesByBuIdResponse extends AcsResponse {
 
 		public void setBuId(Long buId) {
 			this.buId = buId;
-		}
-
-		public Long getRoleId() {
-			return this.roleId;
-		}
-
-		public void setRoleId(Long roleId) {
-			this.roleId = roleId;
 		}
 
 		public String getRoleCode() {
@@ -105,6 +97,14 @@ public class QueryRolesByBuIdResponse extends AcsResponse {
 
 		public void setRoleName(String roleName) {
 			this.roleName = roleName;
+		}
+
+		public Long getRoleId() {
+			return this.roleId;
+		}
+
+		public void setRoleId(Long roleId) {
+			this.roleId = roleId;
 		}
 	}
 

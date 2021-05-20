@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class SearchFaceResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class SearchFaceResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class SearchFaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNo;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNo;
 
 		private List<Record> records;
 
-		public Integer getPageNo() {
-			return this.pageNo;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class SearchFaceResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
 		}
 
 		public List<Record> getRecords() {
@@ -119,57 +119,25 @@ public class SearchFaceResponse extends AcsResponse {
 
 		public static class Record {
 
-			private String gbId;
-
-			private String imageUrl;
-
-			private Float leftTopX;
-
-			private Float leftTopY;
-
 			private String matchSuggestion;
+
+			private String targetImageUrl;
+
+			private Float score;
 
 			private Float rightBottomX;
 
 			private Float rightBottomY;
 
-			private Float score;
-
-			private String targetImageUrl;
-
 			private String sourceId;
 
-			public String getGbId() {
-				return this.gbId;
-			}
+			private String gbId;
 
-			public void setGbId(String gbId) {
-				this.gbId = gbId;
-			}
+			private String imageUrl;
 
-			public String getImageUrl() {
-				return this.imageUrl;
-			}
+			private Float leftTopY;
 
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
-			}
-
-			public Float getLeftTopX() {
-				return this.leftTopX;
-			}
-
-			public void setLeftTopX(Float leftTopX) {
-				this.leftTopX = leftTopX;
-			}
-
-			public Float getLeftTopY() {
-				return this.leftTopY;
-			}
-
-			public void setLeftTopY(Float leftTopY) {
-				this.leftTopY = leftTopY;
-			}
+			private Float leftTopX;
 
 			public String getMatchSuggestion() {
 				return this.matchSuggestion;
@@ -177,6 +145,22 @@ public class SearchFaceResponse extends AcsResponse {
 
 			public void setMatchSuggestion(String matchSuggestion) {
 				this.matchSuggestion = matchSuggestion;
+			}
+
+			public String getTargetImageUrl() {
+				return this.targetImageUrl;
+			}
+
+			public void setTargetImageUrl(String targetImageUrl) {
+				this.targetImageUrl = targetImageUrl;
+			}
+
+			public Float getScore() {
+				return this.score;
+			}
+
+			public void setScore(Float score) {
+				this.score = score;
 			}
 
 			public Float getRightBottomX() {
@@ -195,28 +179,44 @@ public class SearchFaceResponse extends AcsResponse {
 				this.rightBottomY = rightBottomY;
 			}
 
-			public Float getScore() {
-				return this.score;
-			}
-
-			public void setScore(Float score) {
-				this.score = score;
-			}
-
-			public String getTargetImageUrl() {
-				return this.targetImageUrl;
-			}
-
-			public void setTargetImageUrl(String targetImageUrl) {
-				this.targetImageUrl = targetImageUrl;
-			}
-
 			public String getSourceId() {
 				return this.sourceId;
 			}
 
 			public void setSourceId(String sourceId) {
 				this.sourceId = sourceId;
+			}
+
+			public String getGbId() {
+				return this.gbId;
+			}
+
+			public void setGbId(String gbId) {
+				this.gbId = gbId;
+			}
+
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
+
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
+
+			public Float getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Float leftTopY) {
+				this.leftTopY = leftTopY;
+			}
+
+			public Float getLeftTopX() {
+				return this.leftTopX;
+			}
+
+			public void setLeftTopX(Float leftTopX) {
+				this.leftTopX = leftTopX;
 			}
 		}
 	}

@@ -39,7 +39,7 @@ public class EnhanceVideoQualityRequest extends RpcAcsRequest<EnhanceVideoQualit
 
 	private String videoURL;
 	public EnhanceVideoQualityRequest() {
-		super("videoenhan", "2020-03-20", "EnhanceVideoQuality");
+		super("videoenhan", "2020-03-20", "EnhanceVideoQuality", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

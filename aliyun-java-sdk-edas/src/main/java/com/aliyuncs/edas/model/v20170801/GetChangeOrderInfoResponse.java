@@ -554,6 +554,8 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 					private Integer taskErrorIgnorance;
 
+					private Integer retryType;
+
 					public String getTaskName() {
 						return this.taskName;
 					}
@@ -616,6 +618,14 @@ public class GetChangeOrderInfoResponse extends AcsResponse {
 
 					public void setTaskErrorIgnorance(Integer taskErrorIgnorance) {
 						this.taskErrorIgnorance = taskErrorIgnorance;
+					}
+
+					public Integer getRetryType() {
+						return this.retryType;
+					}
+
+					public void setRetryType(Integer retryType) {
+						this.retryType = retryType;
 					}
 				}
 			}

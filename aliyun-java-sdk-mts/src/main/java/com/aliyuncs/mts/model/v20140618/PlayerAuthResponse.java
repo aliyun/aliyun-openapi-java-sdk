@@ -57,21 +57,13 @@ public class PlayerAuthResponse extends AcsResponse {
 
 	public static class _Switch {
 
-		private String state;
-
 		private String functionId;
-
-		private String switchId;
 
 		private String functionName;
 
-		public String getState() {
-			return this.state;
-		}
+		private String state;
 
-		public void setState(String state) {
-			this.state = state;
-		}
+		private String switchId;
 
 		public String getFunctionId() {
 			return this.functionId;
@@ -81,20 +73,28 @@ public class PlayerAuthResponse extends AcsResponse {
 			this.functionId = functionId;
 		}
 
-		public String getSwitchId() {
-			return this.switchId;
-		}
-
-		public void setSwitchId(String switchId) {
-			this.switchId = switchId;
-		}
-
 		public String getFunctionName() {
 			return this.functionName;
 		}
 
 		public void setFunctionName(String functionName) {
 			this.functionName = functionName;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getSwitchId() {
+			return this.switchId;
+		}
+
+		public void setSwitchId(String switchId) {
+			this.switchId = switchId;
 		}
 	}
 

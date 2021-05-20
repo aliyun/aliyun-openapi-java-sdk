@@ -31,8 +31,6 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 
 	private String ingressConf;
 
-	private String rules;
-
 	private String clusterId;
 	public UpdateK8sIngressRuleRequest() {
 		super("Edas", "2017-08-01", "UpdateK8sIngressRule", "Edas");
@@ -74,17 +72,6 @@ public class UpdateK8sIngressRuleRequest extends RoaAcsRequest<UpdateK8sIngressR
 		this.ingressConf = ingressConf;
 		if(ingressConf != null){
 			putQueryParameter("IngressConf", ingressConf);
-		}
-	}
-
-	public String getRules() {
-		return this.rules;
-	}
-
-	public void setRules(String rules) {
-		this.rules = rules;
-		if(rules != null){
-			putQueryParameter("Rules", rules);
 		}
 	}
 

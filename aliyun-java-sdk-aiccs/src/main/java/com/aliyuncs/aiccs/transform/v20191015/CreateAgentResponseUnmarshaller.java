@@ -23,10 +23,10 @@ public class CreateAgentResponseUnmarshaller {
 	public static CreateAgentResponse unmarshall(CreateAgentResponse createAgentResponse, UnmarshallerContext _ctx) {
 		
 		createAgentResponse.setRequestId(_ctx.stringValue("CreateAgentResponse.RequestId"));
-		createAgentResponse.setSuccess(_ctx.booleanValue("CreateAgentResponse.Success"));
-		createAgentResponse.setCode(_ctx.stringValue("CreateAgentResponse.Code"));
 		createAgentResponse.setMessage(_ctx.stringValue("CreateAgentResponse.Message"));
 		createAgentResponse.setData(_ctx.longValue("CreateAgentResponse.Data"));
+		createAgentResponse.setCode(_ctx.stringValue("CreateAgentResponse.Code"));
+		createAgentResponse.setSuccess(_ctx.booleanValue("CreateAgentResponse.Success"));
 	 
 	 	return createAgentResponse;
 	}

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetMonitorListResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetMonitorListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class GetMonitorListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNo;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNumber;
 
 		private List<Record> records;
 
-		public Integer getPageNo() {
-			return this.pageNo;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class GetMonitorListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<Record> getRecords() {
@@ -119,43 +119,35 @@ public class GetMonitorListResponse extends AcsResponse {
 
 		public static class Record {
 
-			private String taskId;
-
 			private String status;
 
-			private String monitorType;
-
-			private String ruleName;
-
-			private String algorithmVendor;
-
-			private String createDate;
-
-			private String modifiedDate;
-
-			private String deviceList;
-
-			private String attributes;
-
-			private String ruleExpression;
-
-			private String notifierType;
-
-			private String notifierExtra;
+			private String taskId;
 
 			private String description;
 
-			private String expression;
+			private String monitorType;
+
+			private String notifierExtendValues;
 
 			private String imageMatch;
 
-			public String getTaskId() {
-				return this.taskId;
-			}
+			private String attributes;
 
-			public void setTaskId(String taskId) {
-				this.taskId = taskId;
-			}
+			private String deviceList;
+
+			private String modifiedDate;
+
+			private String createDate;
+
+			private String notifierType;
+
+			private String ruleExpression;
+
+			private String algorithmVendor;
+
+			private String expression;
+
+			private String ruleName;
 
 			public String getStatus() {
 				return this.status;
@@ -165,84 +157,12 @@ public class GetMonitorListResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getMonitorType() {
-				return this.monitorType;
+			public String getTaskId() {
+				return this.taskId;
 			}
 
-			public void setMonitorType(String monitorType) {
-				this.monitorType = monitorType;
-			}
-
-			public String getRuleName() {
-				return this.ruleName;
-			}
-
-			public void setRuleName(String ruleName) {
-				this.ruleName = ruleName;
-			}
-
-			public String getAlgorithmVendor() {
-				return this.algorithmVendor;
-			}
-
-			public void setAlgorithmVendor(String algorithmVendor) {
-				this.algorithmVendor = algorithmVendor;
-			}
-
-			public String getCreateDate() {
-				return this.createDate;
-			}
-
-			public void setCreateDate(String createDate) {
-				this.createDate = createDate;
-			}
-
-			public String getModifiedDate() {
-				return this.modifiedDate;
-			}
-
-			public void setModifiedDate(String modifiedDate) {
-				this.modifiedDate = modifiedDate;
-			}
-
-			public String getDeviceList() {
-				return this.deviceList;
-			}
-
-			public void setDeviceList(String deviceList) {
-				this.deviceList = deviceList;
-			}
-
-			public String getAttributes() {
-				return this.attributes;
-			}
-
-			public void setAttributes(String attributes) {
-				this.attributes = attributes;
-			}
-
-			public String getRuleExpression() {
-				return this.ruleExpression;
-			}
-
-			public void setRuleExpression(String ruleExpression) {
-				this.ruleExpression = ruleExpression;
-			}
-
-			public String getNotifierType() {
-				return this.notifierType;
-			}
-
-			public void setNotifierType(String notifierType) {
-				this.notifierType = notifierType;
-			}
-
-			public String getNotifierExtra() {
-				return this.notifierExtra;
-			}
-
-			public void setNotifierExtra(String notifierExtra) {
-				this.notifierExtra = notifierExtra;
+			public void setTaskId(String taskId) {
+				this.taskId = taskId;
 			}
 
 			public String getDescription() {
@@ -253,12 +173,20 @@ public class GetMonitorListResponse extends AcsResponse {
 				this.description = description;
 			}
 
-			public String getExpression() {
-				return this.expression;
+			public String getMonitorType() {
+				return this.monitorType;
 			}
 
-			public void setExpression(String expression) {
-				this.expression = expression;
+			public void setMonitorType(String monitorType) {
+				this.monitorType = monitorType;
+			}
+
+			public String getNotifierExtendValues() {
+				return this.notifierExtendValues;
+			}
+
+			public void setNotifierExtendValues(String notifierExtendValues) {
+				this.notifierExtendValues = notifierExtendValues;
 			}
 
 			public String getImageMatch() {
@@ -267,6 +195,78 @@ public class GetMonitorListResponse extends AcsResponse {
 
 			public void setImageMatch(String imageMatch) {
 				this.imageMatch = imageMatch;
+			}
+
+			public String getAttributes() {
+				return this.attributes;
+			}
+
+			public void setAttributes(String attributes) {
+				this.attributes = attributes;
+			}
+
+			public String getDeviceList() {
+				return this.deviceList;
+			}
+
+			public void setDeviceList(String deviceList) {
+				this.deviceList = deviceList;
+			}
+
+			public String getModifiedDate() {
+				return this.modifiedDate;
+			}
+
+			public void setModifiedDate(String modifiedDate) {
+				this.modifiedDate = modifiedDate;
+			}
+
+			public String getCreateDate() {
+				return this.createDate;
+			}
+
+			public void setCreateDate(String createDate) {
+				this.createDate = createDate;
+			}
+
+			public String getNotifierType() {
+				return this.notifierType;
+			}
+
+			public void setNotifierType(String notifierType) {
+				this.notifierType = notifierType;
+			}
+
+			public String getRuleExpression() {
+				return this.ruleExpression;
+			}
+
+			public void setRuleExpression(String ruleExpression) {
+				this.ruleExpression = ruleExpression;
+			}
+
+			public String getAlgorithmVendor() {
+				return this.algorithmVendor;
+			}
+
+			public void setAlgorithmVendor(String algorithmVendor) {
+				this.algorithmVendor = algorithmVendor;
+			}
+
+			public String getExpression() {
+				return this.expression;
+			}
+
+			public void setExpression(String expression) {
+				this.expression = expression;
+			}
+
+			public String getRuleName() {
+				return this.ruleName;
+			}
+
+			public void setRuleName(String ruleName) {
+				this.ruleName = ruleName;
 			}
 		}
 	}

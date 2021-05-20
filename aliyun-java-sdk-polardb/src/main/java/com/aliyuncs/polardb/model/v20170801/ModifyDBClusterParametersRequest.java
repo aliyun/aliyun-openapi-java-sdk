@@ -29,8 +29,6 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 
 	private String parameterGroupId;
 
-	private String effectiveTime;
-
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -68,17 +66,6 @@ public class ModifyDBClusterParametersRequest extends RpcAcsRequest<ModifyDBClus
 		this.parameterGroupId = parameterGroupId;
 		if(parameterGroupId != null){
 			putQueryParameter("ParameterGroupId", parameterGroupId);
-		}
-	}
-
-	public String getEffectiveTime() {
-		return this.effectiveTime;
-	}
-
-	public void setEffectiveTime(String effectiveTime) {
-		this.effectiveTime = effectiveTime;
-		if(effectiveTime != null){
-			putQueryParameter("EffectiveTime", effectiveTime);
 		}
 	}
 

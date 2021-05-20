@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTicketResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private Data data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -49,12 +49,12 @@ public class QueryTicketResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -67,21 +67,13 @@ public class QueryTicketResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageSize;
-
 		private Integer totalResults;
 
 		private Integer currentPage;
 
+		private Long pageSize;
+
 		private List<ListItem> list;
-
-		public Long getPageSize() {
-			return this.pageSize;
-		}
-
-		public void setPageSize(Long pageSize) {
-			this.pageSize = pageSize;
-		}
 
 		public Integer getTotalResults() {
 			return this.totalResults;
@@ -99,6 +91,14 @@ public class QueryTicketResponse extends AcsResponse {
 			this.currentPage = currentPage;
 		}
 
+		public Long getPageSize() {
+			return this.pageSize;
+		}
+
+		public void setPageSize(Long pageSize) {
+			this.pageSize = pageSize;
+		}
+
 		public List<ListItem> getList() {
 			return this.list;
 		}
@@ -109,28 +109,52 @@ public class QueryTicketResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private Long id;
+			private Long caseId;
+
+			private Long gmtCreate;
+
+			private String srType;
+
+			private Long gmtModified;
 
 			private String questionInfo;
 
 			private String caseStatus;
 
-			private String srType;
-
 			private String extAttrs;
 
-			private Long gmtCreate;
+			private Long id;
 
-			private Long gmtModified;
-
-			private Long caseId;
-
-			public Long getId() {
-				return this.id;
+			public Long getCaseId() {
+				return this.caseId;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
+			public void setCaseId(Long caseId) {
+				this.caseId = caseId;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public String getSrType() {
+				return this.srType;
+			}
+
+			public void setSrType(String srType) {
+				this.srType = srType;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
 			public String getQuestionInfo() {
@@ -149,14 +173,6 @@ public class QueryTicketResponse extends AcsResponse {
 				this.caseStatus = caseStatus;
 			}
 
-			public String getSrType() {
-				return this.srType;
-			}
-
-			public void setSrType(String srType) {
-				this.srType = srType;
-			}
-
 			public String getExtAttrs() {
 				return this.extAttrs;
 			}
@@ -165,28 +181,12 @@ public class QueryTicketResponse extends AcsResponse {
 				this.extAttrs = extAttrs;
 			}
 
-			public Long getGmtCreate() {
-				return this.gmtCreate;
+			public Long getId() {
+				return this.id;
 			}
 
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Long getCaseId() {
-				return this.caseId;
-			}
-
-			public void setCaseId(Long caseId) {
-				this.caseId = caseId;
+			public void setId(Long id) {
+				this.id = id;
 			}
 		}
 	}

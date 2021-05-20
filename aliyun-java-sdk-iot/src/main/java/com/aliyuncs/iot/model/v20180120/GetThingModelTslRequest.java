@@ -27,8 +27,6 @@ public class GetThingModelTslRequest extends RpcAcsRequest<GetThingModelTslRespo
 
 	private Boolean simple;
 
-	private String resourceGroupId;
-
 	private String iotInstanceId;
 
 	private String productKey;
@@ -37,7 +35,7 @@ public class GetThingModelTslRequest extends RpcAcsRequest<GetThingModelTslRespo
 
 	private String functionBlockId;
 	public GetThingModelTslRequest() {
-		super("Iot", "2018-01-20", "GetThingModelTsl");
+		super("Iot", "2018-01-20", "GetThingModelTsl", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -53,17 +51,6 @@ public class GetThingModelTslRequest extends RpcAcsRequest<GetThingModelTslRespo
 		this.simple = simple;
 		if(simple != null){
 			putQueryParameter("Simple", simple.toString());
-		}
-	}
-
-	public String getResourceGroupId() {
-		return this.resourceGroupId;
-	}
-
-	public void setResourceGroupId(String resourceGroupId) {
-		this.resourceGroupId = resourceGroupId;
-		if(resourceGroupId != null){
-			putQueryParameter("ResourceGroupId", resourceGroupId);
 		}
 	}
 

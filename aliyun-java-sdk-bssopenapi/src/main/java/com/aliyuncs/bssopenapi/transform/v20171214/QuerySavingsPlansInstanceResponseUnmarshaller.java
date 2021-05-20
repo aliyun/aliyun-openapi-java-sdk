@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.bssopenapi.model.v20171214.QuerySavingsPlansInstanceResponse;
 import com.aliyuncs.bssopenapi.model.v20171214.QuerySavingsPlansInstanceResponse.Data;
 import com.aliyuncs.bssopenapi.model.v20171214.QuerySavingsPlansInstanceResponse.Data.SavingsPlansDetailResponse;
+import com.aliyuncs.bssopenapi.model.v20171214.QuerySavingsPlansInstanceResponse.Data.SavingsPlansDetailResponse.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -53,7 +54,17 @@ public class QuerySavingsPlansInstanceResponseUnmarshaller {
 			savingsPlansDetailResponse.setPrepayFee(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].PrepayFee"));
 			savingsPlansDetailResponse.setTotalSave(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].TotalSave"));
 			savingsPlansDetailResponse.setUtilization(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Utilization"));
-			savingsPlansDetailResponse.setShare(_ctx.booleanValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Share"));
+			savingsPlansDetailResponse.setAllocationStatus(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].AllocationStatus"));
+
+			List<Tag> tags = new ArrayList<Tag>();
+			for (int j = 0; j < _ctx.lengthValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Tags.Length"); j++) {
+				Tag tag = new Tag();
+				tag.setKey(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Tags["+ j +"].Key"));
+				tag.setValue(_ctx.stringValue("QuerySavingsPlansInstanceResponse.Data.Items["+ i +"].Tags["+ j +"].Value"));
+
+				tags.add(tag);
+			}
+			savingsPlansDetailResponse.setTags(tags);
 
 			items.add(savingsPlansDetailResponse);
 		}

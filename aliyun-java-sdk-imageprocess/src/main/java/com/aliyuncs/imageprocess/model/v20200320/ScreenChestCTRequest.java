@@ -28,6 +28,8 @@ public class ScreenChestCTRequest extends RpcAcsRequest<ScreenChestCTResponse> {
 
 	private String orgName;
 
+	private Long mask;
+
 	private String dataFormat;
 
 	private List<URLList> uRLLists;
@@ -50,6 +52,17 @@ public class ScreenChestCTRequest extends RpcAcsRequest<ScreenChestCTResponse> {
 		this.orgName = orgName;
 		if(orgName != null){
 			putBodyParameter("OrgName", orgName);
+		}
+	}
+
+	public Long getMask() {
+		return this.mask;
+	}
+
+	public void setMask(Long mask) {
+		this.mask = mask;
+		if(mask != null){
+			putBodyParameter("Mask", mask.toString());
 		}
 	}
 

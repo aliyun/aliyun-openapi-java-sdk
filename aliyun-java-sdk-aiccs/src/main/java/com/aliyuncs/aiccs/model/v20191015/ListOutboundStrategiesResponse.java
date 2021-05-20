@@ -27,9 +27,9 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private List<OutboundStrategy> outboundStrategies;
 
@@ -41,20 +41,20 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<OutboundStrategy> getOutboundStrategies() {
@@ -67,144 +67,56 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 
 	public static class OutboundStrategy {
 
-		private Long outboundStrategyId;
-
-		private String gmtCreateStr;
-
-		private String gmtModifiedStr;
-
-		private Long creatorId;
-
-		private String creatorName;
-
-		private Long modifierId;
-
-		private String modifierName;
-
-		private Long buId;
-
-		private Long departmentId;
-
-		private String outboundStrategyName;
-
-		private Integer numType;
-
-		private String outboundNum;
+		private Integer status;
 
 		private Integer robotType;
 
+		private Long outboundStrategyId;
+
+		private Long creatorId;
+
+		private String outboundNum;
+
 		private String robotId;
 
-		private String robotName;
-
-		private Integer resourceAllocation;
-
-		private String sceneName;
-
-		private Long ruleCode;
-
-		private Integer status;
-
 		private String extAttr;
+
+		private String modifierName;
 
 		private Integer process;
 
 		private Integer successRate;
 
-		public Long getOutboundStrategyId() {
-			return this.outboundStrategyId;
+		private Integer resourceAllocation;
+
+		private String gmtCreateStr;
+
+		private String outboundStrategyName;
+
+		private String gmtModifiedStr;
+
+		private Long buId;
+
+		private String sceneName;
+
+		private Integer numType;
+
+		private String robotName;
+
+		private Long departmentId;
+
+		private Long ruleCode;
+
+		private String creatorName;
+
+		private Long modifierId;
+
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setOutboundStrategyId(Long outboundStrategyId) {
-			this.outboundStrategyId = outboundStrategyId;
-		}
-
-		public String getGmtCreateStr() {
-			return this.gmtCreateStr;
-		}
-
-		public void setGmtCreateStr(String gmtCreateStr) {
-			this.gmtCreateStr = gmtCreateStr;
-		}
-
-		public String getGmtModifiedStr() {
-			return this.gmtModifiedStr;
-		}
-
-		public void setGmtModifiedStr(String gmtModifiedStr) {
-			this.gmtModifiedStr = gmtModifiedStr;
-		}
-
-		public Long getCreatorId() {
-			return this.creatorId;
-		}
-
-		public void setCreatorId(Long creatorId) {
-			this.creatorId = creatorId;
-		}
-
-		public String getCreatorName() {
-			return this.creatorName;
-		}
-
-		public void setCreatorName(String creatorName) {
-			this.creatorName = creatorName;
-		}
-
-		public Long getModifierId() {
-			return this.modifierId;
-		}
-
-		public void setModifierId(Long modifierId) {
-			this.modifierId = modifierId;
-		}
-
-		public String getModifierName() {
-			return this.modifierName;
-		}
-
-		public void setModifierName(String modifierName) {
-			this.modifierName = modifierName;
-		}
-
-		public Long getBuId() {
-			return this.buId;
-		}
-
-		public void setBuId(Long buId) {
-			this.buId = buId;
-		}
-
-		public Long getDepartmentId() {
-			return this.departmentId;
-		}
-
-		public void setDepartmentId(Long departmentId) {
-			this.departmentId = departmentId;
-		}
-
-		public String getOutboundStrategyName() {
-			return this.outboundStrategyName;
-		}
-
-		public void setOutboundStrategyName(String outboundStrategyName) {
-			this.outboundStrategyName = outboundStrategyName;
-		}
-
-		public Integer getNumType() {
-			return this.numType;
-		}
-
-		public void setNumType(Integer numType) {
-			this.numType = numType;
-		}
-
-		public String getOutboundNum() {
-			return this.outboundNum;
-		}
-
-		public void setOutboundNum(String outboundNum) {
-			this.outboundNum = outboundNum;
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public Integer getRobotType() {
@@ -215,6 +127,30 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.robotType = robotType;
 		}
 
+		public Long getOutboundStrategyId() {
+			return this.outboundStrategyId;
+		}
+
+		public void setOutboundStrategyId(Long outboundStrategyId) {
+			this.outboundStrategyId = outboundStrategyId;
+		}
+
+		public Long getCreatorId() {
+			return this.creatorId;
+		}
+
+		public void setCreatorId(Long creatorId) {
+			this.creatorId = creatorId;
+		}
+
+		public String getOutboundNum() {
+			return this.outboundNum;
+		}
+
+		public void setOutboundNum(String outboundNum) {
+			this.outboundNum = outboundNum;
+		}
+
 		public String getRobotId() {
 			return this.robotId;
 		}
@@ -223,52 +159,20 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 			this.robotId = robotId;
 		}
 
-		public String getRobotName() {
-			return this.robotName;
-		}
-
-		public void setRobotName(String robotName) {
-			this.robotName = robotName;
-		}
-
-		public Integer getResourceAllocation() {
-			return this.resourceAllocation;
-		}
-
-		public void setResourceAllocation(Integer resourceAllocation) {
-			this.resourceAllocation = resourceAllocation;
-		}
-
-		public String getSceneName() {
-			return this.sceneName;
-		}
-
-		public void setSceneName(String sceneName) {
-			this.sceneName = sceneName;
-		}
-
-		public Long getRuleCode() {
-			return this.ruleCode;
-		}
-
-		public void setRuleCode(Long ruleCode) {
-			this.ruleCode = ruleCode;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
 		public String getExtAttr() {
 			return this.extAttr;
 		}
 
 		public void setExtAttr(String extAttr) {
 			this.extAttr = extAttr;
+		}
+
+		public String getModifierName() {
+			return this.modifierName;
+		}
+
+		public void setModifierName(String modifierName) {
+			this.modifierName = modifierName;
 		}
 
 		public Integer getProcess() {
@@ -285,6 +189,102 @@ public class ListOutboundStrategiesResponse extends AcsResponse {
 
 		public void setSuccessRate(Integer successRate) {
 			this.successRate = successRate;
+		}
+
+		public Integer getResourceAllocation() {
+			return this.resourceAllocation;
+		}
+
+		public void setResourceAllocation(Integer resourceAllocation) {
+			this.resourceAllocation = resourceAllocation;
+		}
+
+		public String getGmtCreateStr() {
+			return this.gmtCreateStr;
+		}
+
+		public void setGmtCreateStr(String gmtCreateStr) {
+			this.gmtCreateStr = gmtCreateStr;
+		}
+
+		public String getOutboundStrategyName() {
+			return this.outboundStrategyName;
+		}
+
+		public void setOutboundStrategyName(String outboundStrategyName) {
+			this.outboundStrategyName = outboundStrategyName;
+		}
+
+		public String getGmtModifiedStr() {
+			return this.gmtModifiedStr;
+		}
+
+		public void setGmtModifiedStr(String gmtModifiedStr) {
+			this.gmtModifiedStr = gmtModifiedStr;
+		}
+
+		public Long getBuId() {
+			return this.buId;
+		}
+
+		public void setBuId(Long buId) {
+			this.buId = buId;
+		}
+
+		public String getSceneName() {
+			return this.sceneName;
+		}
+
+		public void setSceneName(String sceneName) {
+			this.sceneName = sceneName;
+		}
+
+		public Integer getNumType() {
+			return this.numType;
+		}
+
+		public void setNumType(Integer numType) {
+			this.numType = numType;
+		}
+
+		public String getRobotName() {
+			return this.robotName;
+		}
+
+		public void setRobotName(String robotName) {
+			this.robotName = robotName;
+		}
+
+		public Long getDepartmentId() {
+			return this.departmentId;
+		}
+
+		public void setDepartmentId(Long departmentId) {
+			this.departmentId = departmentId;
+		}
+
+		public Long getRuleCode() {
+			return this.ruleCode;
+		}
+
+		public void setRuleCode(Long ruleCode) {
+			this.ruleCode = ruleCode;
+		}
+
+		public String getCreatorName() {
+			return this.creatorName;
+		}
+
+		public void setCreatorName(String creatorName) {
+			this.creatorName = creatorName;
+		}
+
+		public Long getModifierId() {
+			return this.modifierId;
+		}
+
+		public void setModifierId(Long modifierId) {
+			this.modifierId = modifierId;
 		}
 	}
 

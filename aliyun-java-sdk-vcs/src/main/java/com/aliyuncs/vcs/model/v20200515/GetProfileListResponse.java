@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetProfileListResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetProfileListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,23 +67,15 @@ public class GetProfileListResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNumber;
-
 		private Long pageSize;
 
-		private Boolean success;
+		private Long pageNumber;
 
 		private Long total;
 
+		private Boolean success;
+
 		private List<RecordsItem> records;
-
-		public Long getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Long pageNumber) {
-			this.pageNumber = pageNumber;
-		}
 
 		public Long getPageSize() {
 			return this.pageSize;
@@ -93,12 +85,12 @@ public class GetProfileListResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Boolean getSuccess() {
-			return this.success;
+		public Long getPageNumber() {
+			return this.pageNumber;
 		}
 
-		public void setSuccess(Boolean success) {
-			this.success = success;
+		public void setPageNumber(Long pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public Long getTotal() {
@@ -107,6 +99,14 @@ public class GetProfileListResponse extends AcsResponse {
 
 		public void setTotal(Long total) {
 			this.total = total;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -121,11 +121,9 @@ public class GetProfileListResponse extends AcsResponse {
 
 			private String sceneType;
 
-			private String bizId;
+			private Integer profileId;
 
-			private String faceUrl;
-
-			private String gender;
+			private String personId;
 
 			private String idNumber;
 
@@ -133,11 +131,13 @@ public class GetProfileListResponse extends AcsResponse {
 
 			private String searchMatchingRate;
 
-			private String personId;
+			private String gender;
+
+			private String bizId;
 
 			private Integer catalogId;
 
-			private Integer profileId;
+			private String faceUrl;
 
 			private String name;
 
@@ -149,28 +149,20 @@ public class GetProfileListResponse extends AcsResponse {
 				this.sceneType = sceneType;
 			}
 
-			public String getBizId() {
-				return this.bizId;
+			public Integer getProfileId() {
+				return this.profileId;
 			}
 
-			public void setBizId(String bizId) {
-				this.bizId = bizId;
+			public void setProfileId(Integer profileId) {
+				this.profileId = profileId;
 			}
 
-			public String getFaceUrl() {
-				return this.faceUrl;
+			public String getPersonId() {
+				return this.personId;
 			}
 
-			public void setFaceUrl(String faceUrl) {
-				this.faceUrl = faceUrl;
-			}
-
-			public String getGender() {
-				return this.gender;
-			}
-
-			public void setGender(String gender) {
-				this.gender = gender;
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 
 			public String getIdNumber() {
@@ -197,12 +189,20 @@ public class GetProfileListResponse extends AcsResponse {
 				this.searchMatchingRate = searchMatchingRate;
 			}
 
-			public String getPersonId() {
-				return this.personId;
+			public String getGender() {
+				return this.gender;
 			}
 
-			public void setPersonId(String personId) {
-				this.personId = personId;
+			public void setGender(String gender) {
+				this.gender = gender;
+			}
+
+			public String getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(String bizId) {
+				this.bizId = bizId;
 			}
 
 			public Integer getCatalogId() {
@@ -213,12 +213,12 @@ public class GetProfileListResponse extends AcsResponse {
 				this.catalogId = catalogId;
 			}
 
-			public Integer getProfileId() {
-				return this.profileId;
+			public String getFaceUrl() {
+				return this.faceUrl;
 			}
 
-			public void setProfileId(Integer profileId) {
-				this.profileId = profileId;
+			public void setFaceUrl(String faceUrl) {
+				this.faceUrl = faceUrl;
 			}
 
 			public String getName() {

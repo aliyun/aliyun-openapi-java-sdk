@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPersonsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListPersonsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class ListPersonsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String pageNo;
+		private String totalCount;
 
 		private String pageSize;
 
-		private String totalCount;
-
 		private String totalPage;
+
+		private String pageNo;
 
 		private List<RecordsItem> records;
 
-		public String getPageNo() {
-			return this.pageNo;
+		public String getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNo(String pageNo) {
-			this.pageNo = pageNo;
+		public void setTotalCount(String totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public String getPageSize() {
@@ -93,20 +93,20 @@ public class ListPersonsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public String getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(String totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public String getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(String totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public String getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(String pageNo) {
+			this.pageNo = pageNo;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -161,21 +161,13 @@ public class ListPersonsResponse extends AcsResponse {
 
 			public static class TagListItem {
 
-				private String tagCode;
-
 				private String tagName;
-
-				private String tagValue;
 
 				private String tagValueId;
 
-				public String getTagCode() {
-					return this.tagCode;
-				}
+				private String tagCode;
 
-				public void setTagCode(String tagCode) {
-					this.tagCode = tagCode;
-				}
+				private String tagValue;
 
 				public String getTagName() {
 					return this.tagName;
@@ -185,20 +177,28 @@ public class ListPersonsResponse extends AcsResponse {
 					this.tagName = tagName;
 				}
 
-				public String getTagValue() {
-					return this.tagValue;
-				}
-
-				public void setTagValue(String tagValue) {
-					this.tagValue = tagValue;
-				}
-
 				public String getTagValueId() {
 					return this.tagValueId;
 				}
 
 				public void setTagValueId(String tagValueId) {
 					this.tagValueId = tagValueId;
+				}
+
+				public String getTagCode() {
+					return this.tagCode;
+				}
+
+				public void setTagCode(String tagCode) {
+					this.tagCode = tagCode;
+				}
+
+				public String getTagValue() {
+					return this.tagValue;
+				}
+
+				public void setTagValue(String tagValue) {
+					this.tagValue = tagValue;
 				}
 			}
 		}

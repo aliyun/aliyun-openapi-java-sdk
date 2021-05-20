@@ -33,8 +33,8 @@ public class DescribeSagTrafficTopNResponseUnmarshaller {
 			TrafficTopNItem trafficTopNItem = new TrafficTopNItem();
 			trafficTopNItem.setInstanceId(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].InstanceId"));
 			trafficTopNItem.setTrafficRate(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].TrafficRate"));
-			trafficTopNItem.setName(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].Name"));
 			trafficTopNItem.setRegionId(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].RegionId"));
+			trafficTopNItem.setName(_ctx.stringValue("DescribeSagTrafficTopNResponse.TrafficTopN["+ i +"].Name"));
 
 			trafficTopN.add(trafficTopNItem);
 		}

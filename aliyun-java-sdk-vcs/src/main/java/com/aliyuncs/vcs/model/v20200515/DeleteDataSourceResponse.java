@@ -24,18 +24,18 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteDataSourceResponse extends AcsResponse {
 
-	private String code;
+	private String message;
 
 	private String data;
 
-	private String message;
+	private String code;
 
-	public String getCode() {
-		return this.code;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getData() {
@@ -46,12 +46,12 @@ public class DeleteDataSourceResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

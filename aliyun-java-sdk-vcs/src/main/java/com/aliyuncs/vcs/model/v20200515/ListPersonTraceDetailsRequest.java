@@ -41,7 +41,7 @@ public class ListPersonTraceDetailsRequest extends RpcAcsRequest<ListPersonTrace
 
 	private String personId;
 	public ListPersonTraceDetailsRequest() {
-		super("Vcs", "2020-05-15", "ListPersonTraceDetails", "vcs");
+		super("Vcs", "2020-05-15", "ListPersonTraceDetails");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

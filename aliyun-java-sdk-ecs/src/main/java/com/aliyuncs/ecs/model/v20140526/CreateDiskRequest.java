@@ -50,6 +50,8 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private String advancedFeatures;
 
+	private String dedicatedBlockStorageClusterId;
+
 	private String resourceOwnerAccount;
 
 	private String performanceLevel;
@@ -214,6 +216,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.advancedFeatures = advancedFeatures;
 		if(advancedFeatures != null){
 			putQueryParameter("AdvancedFeatures", advancedFeatures);
+		}
+	}
+
+	public String getDedicatedBlockStorageClusterId() {
+		return this.dedicatedBlockStorageClusterId;
+	}
+
+	public void setDedicatedBlockStorageClusterId(String dedicatedBlockStorageClusterId) {
+		this.dedicatedBlockStorageClusterId = dedicatedBlockStorageClusterId;
+		if(dedicatedBlockStorageClusterId != null){
+			putQueryParameter("DedicatedBlockStorageClusterId", dedicatedBlockStorageClusterId);
 		}
 	}
 

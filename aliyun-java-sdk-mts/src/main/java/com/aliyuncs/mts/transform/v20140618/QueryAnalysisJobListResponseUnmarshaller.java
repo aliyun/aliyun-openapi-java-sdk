@@ -52,38 +52,32 @@ public class QueryAnalysisJobListResponseUnmarshaller {
 		List<AnalysisJob> analysisJobList = new ArrayList<AnalysisJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAnalysisJobListResponse.AnalysisJobList.Length"); i++) {
 			AnalysisJob analysisJob = new AnalysisJob();
-			analysisJob.setId(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Id"));
-			analysisJob.setUserData(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].UserData"));
-			analysisJob.setState(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].State"));
-			analysisJob.setCode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Code"));
-			analysisJob.setMessage(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Message"));
-			analysisJob.setPercent(_ctx.longValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Percent"));
 			analysisJob.setCreationTime(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].CreationTime"));
-			analysisJob.setPipelineId(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].PipelineId"));
+			analysisJob.setPercent(_ctx.longValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Percent"));
+			analysisJob.setState(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].State"));
+			analysisJob.setMessage(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Message"));
 			analysisJob.setPriority(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Priority"));
-
-			InputFile inputFile = new InputFile();
-			inputFile.setBucket(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].InputFile.Bucket"));
-			inputFile.setLocation(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].InputFile.Location"));
-			inputFile.setObject(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].InputFile.Object"));
-			analysisJob.setInputFile(inputFile);
+			analysisJob.setUserData(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].UserData"));
+			analysisJob.setCode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Code"));
+			analysisJob.setPipelineId(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].PipelineId"));
+			analysisJob.setId(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].Id"));
 
 			AnalysisConfig analysisConfig = new AnalysisConfig();
 
 			QualityControl qualityControl = new QualityControl();
-			qualityControl.setRateQuality(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.QualityControl.RateQuality"));
 			qualityControl.setMethodStreaming(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.QualityControl.MethodStreaming"));
+			qualityControl.setRateQuality(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.QualityControl.RateQuality"));
 			analysisConfig.setQualityControl(qualityControl);
 
 			PropertiesControl propertiesControl = new PropertiesControl();
 			propertiesControl.setDeinterlace(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Deinterlace"));
 
 			Crop crop = new Crop();
-			crop.setMode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Mode"));
+			crop.setTop(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Top"));
 			crop.setWidth(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Width"));
 			crop.setHeight(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Height"));
-			crop.setTop(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Top"));
 			crop.setLeft(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Left"));
+			crop.setMode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].AnalysisConfig.PropertiesControl.Crop.Mode"));
 			propertiesControl.setCrop(crop);
 			analysisConfig.setPropertiesControl(propertiesControl);
 			analysisJob.setAnalysisConfig(analysisConfig);
@@ -94,33 +88,35 @@ public class QueryAnalysisJobListResponseUnmarshaller {
 			mNSMessageResult.setErrorCode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].MNSMessageResult.ErrorCode"));
 			analysisJob.setMNSMessageResult(mNSMessageResult);
 
+			InputFile inputFile = new InputFile();
+			inputFile.setObject(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].InputFile.Object"));
+			inputFile.setLocation(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].InputFile.Location"));
+			inputFile.setBucket(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].InputFile.Bucket"));
+			analysisJob.setInputFile(inputFile);
+
 			List<Template> templateList = new ArrayList<Template>();
 			for (int j = 0; j < _ctx.lengthValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList.Length"); j++) {
 				Template template = new Template();
-				template.setId(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Id"));
-				template.setName(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Name"));
 				template.setState(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].State"));
-
-				Container container = new Container();
-				container.setFormat(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Container.Format"));
-				template.setContainer(container);
+				template.setName(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Name"));
+				template.setId(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Id"));
 
 				Video video = new Video();
+				video.setBufsize(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Bufsize"));
+				video.setDegrain(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Degrain"));
+				video.setPixFmt(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.PixFmt"));
 				video.setCodec(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Codec"));
-				video.setProfile(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Profile"));
-				video.setBitrate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Bitrate"));
-				video.setCrf(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Crf"));
-				video.setWidth(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Width"));
 				video.setHeight(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Height"));
-				video.setFps(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Fps"));
+				video.setQscale(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Qscale"));
+				video.setBitrate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Bitrate"));
+				video.setMaxrate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Maxrate"));
+				video.setProfile(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Profile"));
+				video.setCrf(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Crf"));
 				video.setGop(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Gop"));
+				video.setWidth(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Width"));
+				video.setFps(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Fps"));
 				video.setPreset(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Preset"));
 				video.setScanMode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.ScanMode"));
-				video.setBufsize(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Bufsize"));
-				video.setMaxrate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Maxrate"));
-				video.setPixFmt(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.PixFmt"));
-				video.setDegrain(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Degrain"));
-				video.setQscale(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.Qscale"));
 
 				BitrateBnd bitrateBnd = new BitrateBnd();
 				bitrateBnd.setMax(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Video.BitrateBnd.Max"));
@@ -128,30 +124,34 @@ public class QueryAnalysisJobListResponseUnmarshaller {
 				video.setBitrateBnd(bitrateBnd);
 				template.setVideo(video);
 
-				Audio audio = new Audio();
-				audio.setCodec(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Codec"));
-				audio.setProfile(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Profile"));
-				audio.setSamplerate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Samplerate"));
-				audio.setBitrate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Bitrate"));
-				audio.setChannels(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Channels"));
-				audio.setQscale(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Qscale"));
-				template.setAudio(audio);
-
 				TransConfig transConfig = new TransConfig();
 				transConfig.setTransMode(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].TransConfig.TransMode"));
 				template.setTransConfig(transConfig);
 
 				MuxConfig muxConfig = new MuxConfig();
 
+				Gif gif = new Gif();
+				gif.setFinalDelay(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Gif.FinalDelay"));
+				gif.setLoop(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Gif.Loop"));
+				muxConfig.setGif(gif);
+
 				Segment segment = new Segment();
 				segment.setDuration(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Segment.Duration"));
 				muxConfig.setSegment(segment);
-
-				Gif gif = new Gif();
-				gif.setLoop(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Gif.Loop"));
-				gif.setFinalDelay(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].MuxConfig.Gif.FinalDelay"));
-				muxConfig.setGif(gif);
 				template.setMuxConfig(muxConfig);
+
+				Audio audio = new Audio();
+				audio.setProfile(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Profile"));
+				audio.setCodec(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Codec"));
+				audio.setSamplerate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Samplerate"));
+				audio.setQscale(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Qscale"));
+				audio.setChannels(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Channels"));
+				audio.setBitrate(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Audio.Bitrate"));
+				template.setAudio(audio);
+
+				Container container = new Container();
+				container.setFormat(_ctx.stringValue("QueryAnalysisJobListResponse.AnalysisJobList["+ i +"].TemplateList["+ j +"].Container.Format"));
+				template.setContainer(container);
 
 				templateList.add(template);
 			}

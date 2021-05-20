@@ -27,26 +27,26 @@ public class QueryTicketResponseUnmarshaller {
 
 	public static QueryTicketResponse unmarshall(QueryTicketResponse queryTicketResponse, UnmarshallerContext _ctx) {
 		
-		queryTicketResponse.setSuccess(_ctx.booleanValue("QueryTicketResponse.Success"));
-		queryTicketResponse.setCode(_ctx.stringValue("QueryTicketResponse.Code"));
 		queryTicketResponse.setMessage(_ctx.stringValue("QueryTicketResponse.Message"));
+		queryTicketResponse.setCode(_ctx.stringValue("QueryTicketResponse.Code"));
+		queryTicketResponse.setSuccess(_ctx.booleanValue("QueryTicketResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.longValue("QueryTicketResponse.Data.PageSize"));
 		data.setTotalResults(_ctx.integerValue("QueryTicketResponse.Data.TotalResults"));
 		data.setCurrentPage(_ctx.integerValue("QueryTicketResponse.Data.CurrentPage"));
+		data.setPageSize(_ctx.longValue("QueryTicketResponse.Data.PageSize"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryTicketResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setId(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].Id"));
+			listItem.setCaseId(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].CaseId"));
+			listItem.setGmtCreate(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].GmtCreate"));
+			listItem.setSrType(_ctx.stringValue("QueryTicketResponse.Data.List["+ i +"].SrType"));
+			listItem.setGmtModified(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].GmtModified"));
 			listItem.setQuestionInfo(_ctx.stringValue("QueryTicketResponse.Data.List["+ i +"].QuestionInfo"));
 			listItem.setCaseStatus(_ctx.stringValue("QueryTicketResponse.Data.List["+ i +"].CaseStatus"));
-			listItem.setSrType(_ctx.stringValue("QueryTicketResponse.Data.List["+ i +"].SrType"));
 			listItem.setExtAttrs(_ctx.stringValue("QueryTicketResponse.Data.List["+ i +"].ExtAttrs"));
-			listItem.setGmtCreate(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].GmtCreate"));
-			listItem.setGmtModified(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].GmtModified"));
-			listItem.setCaseId(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].CaseId"));
+			listItem.setId(_ctx.longValue("QueryTicketResponse.Data.List["+ i +"].Id"));
 
 			list.add(listItem);
 		}

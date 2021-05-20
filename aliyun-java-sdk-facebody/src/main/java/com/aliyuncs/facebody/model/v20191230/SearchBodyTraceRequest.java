@@ -94,12 +94,23 @@ public class SearchBodyTraceRequest extends RpcAcsRequest<SearchBodyTraceRespons
 		@SerializedName("ImageURL")
 		private String imageURL;
 
+		@SerializedName("ImageData")
+		private String imageData;
+
 		public String getImageURL() {
 			return this.imageURL;
 		}
 
 		public void setImageURL(String imageURL) {
 			this.imageURL = imageURL;
+		}
+
+		public String getImageData() {
+			return this.imageData;
+		}
+
+		public void setImageData(String imageData) {
+			this.imageData = imageData;
 		}
 	}
 

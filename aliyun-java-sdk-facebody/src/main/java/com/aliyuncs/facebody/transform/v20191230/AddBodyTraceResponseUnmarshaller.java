@@ -24,8 +24,8 @@ public class AddBodyTraceResponseUnmarshaller {
 	public static AddBodyTraceResponse unmarshall(AddBodyTraceResponse addBodyTraceResponse, UnmarshallerContext _ctx) {
 		
 		addBodyTraceResponse.setRequestId(_ctx.stringValue("AddBodyTraceResponse.RequestId"));
-		addBodyTraceResponse.setMessage(_ctx.stringValue("AddBodyTraceResponse.Message"));
 		addBodyTraceResponse.setCode(_ctx.stringValue("AddBodyTraceResponse.Code"));
+		addBodyTraceResponse.setMessage(_ctx.stringValue("AddBodyTraceResponse.Message"));
 
 		Data data = new Data();
 		data.setId(_ctx.longValue("AddBodyTraceResponse.Data.Id"));

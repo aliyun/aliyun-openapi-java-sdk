@@ -78,23 +78,15 @@ public class GetAgentIndexRealTimeResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer page;
-
 		private Integer pageSize;
 
 		private Integer total;
 
+		private Integer page;
+
 		private List<ColumnsItem> columns;
 
 		private List<Map<Object,Object>> rows;
-
-		public Integer getPage() {
-			return this.page;
-		}
-
-		public void setPage(Integer page) {
-			this.page = page;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -110,6 +102,14 @@ public class GetAgentIndexRealTimeResponse extends AcsResponse {
 
 		public void setTotal(Integer total) {
 			this.total = total;
+		}
+
+		public Integer getPage() {
+			return this.page;
+		}
+
+		public void setPage(Integer page) {
+			this.page = page;
 		}
 
 		public List<ColumnsItem> getColumns() {
@@ -130,17 +130,9 @@ public class GetAgentIndexRealTimeResponse extends AcsResponse {
 
 		public static class ColumnsItem {
 
-			private String key;
-
 			private String title;
 
-			public String getKey() {
-				return this.key;
-			}
-
-			public void setKey(String key) {
-				this.key = key;
-			}
+			private String key;
 
 			public String getTitle() {
 				return this.title;
@@ -148,6 +140,14 @@ public class GetAgentIndexRealTimeResponse extends AcsResponse {
 
 			public void setTitle(String title) {
 				this.title = title;
+			}
+
+			public String getKey() {
+				return this.key;
+			}
+
+			public void setKey(String key) {
+				this.key = key;
 			}
 		}
 	}

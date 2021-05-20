@@ -26,7 +26,7 @@ public class CreateKeyPairRequest extends RpcAcsRequest<CreateKeyPairResponse> {
 
 	private String keyPairName;
 	public CreateKeyPairRequest() {
-		super("Ens", "2017-11-10", "CreateKeyPair");
+		super("Ens", "2017-11-10", "CreateKeyPair", "ens");
 		setMethod(MethodType.POST);
 	}
 

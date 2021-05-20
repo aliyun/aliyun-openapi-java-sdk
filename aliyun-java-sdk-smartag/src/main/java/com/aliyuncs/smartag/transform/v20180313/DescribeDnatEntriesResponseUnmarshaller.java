@@ -28,20 +28,20 @@ public class DescribeDnatEntriesResponseUnmarshaller {
 		
 		describeDnatEntriesResponse.setRequestId(_ctx.stringValue("DescribeDnatEntriesResponse.RequestId"));
 		describeDnatEntriesResponse.setTotalCount(_ctx.integerValue("DescribeDnatEntriesResponse.TotalCount"));
-		describeDnatEntriesResponse.setPageNumber(_ctx.integerValue("DescribeDnatEntriesResponse.PageNumber"));
 		describeDnatEntriesResponse.setPageSize(_ctx.integerValue("DescribeDnatEntriesResponse.PageSize"));
+		describeDnatEntriesResponse.setPageNumber(_ctx.integerValue("DescribeDnatEntriesResponse.PageNumber"));
 
 		List<DnatEntry> dnatEntries = new ArrayList<DnatEntry>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDnatEntriesResponse.DnatEntries.Length"); i++) {
 			DnatEntry dnatEntry = new DnatEntry();
-			dnatEntry.setDnatEntryId(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].DnatEntryId"));
-			dnatEntry.setType(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].Type"));
-			dnatEntry.setSagId(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].SagId"));
-			dnatEntry.setExternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalIp"));
 			dnatEntry.setExternalPort(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalPort"));
-			dnatEntry.setInternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].InternalIp"));
+			dnatEntry.setType(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].Type"));
+			dnatEntry.setExternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].ExternalIp"));
 			dnatEntry.setIpProtocol(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].IpProtocol"));
 			dnatEntry.setInternalPort(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].InternalPort"));
+			dnatEntry.setSagId(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].SagId"));
+			dnatEntry.setInternalIp(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].InternalIp"));
+			dnatEntry.setDnatEntryId(_ctx.stringValue("DescribeDnatEntriesResponse.DnatEntries["+ i +"].DnatEntryId"));
 
 			dnatEntries.add(dnatEntry);
 		}

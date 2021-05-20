@@ -24,8 +24,8 @@ public class InvokeMotorModelResponseUnmarshaller {
 	public static InvokeMotorModelResponse unmarshall(InvokeMotorModelResponse invokeMotorModelResponse, UnmarshallerContext _ctx) {
 		
 		invokeMotorModelResponse.setRequestId(_ctx.stringValue("InvokeMotorModelResponse.RequestId"));
-		invokeMotorModelResponse.setCode(_ctx.stringValue("InvokeMotorModelResponse.Code"));
 		invokeMotorModelResponse.setMessage(_ctx.stringValue("InvokeMotorModelResponse.Message"));
+		invokeMotorModelResponse.setCode(_ctx.stringValue("InvokeMotorModelResponse.Code"));
 
 		Data data = new Data();
 		data.setStructList(_ctx.stringValue("InvokeMotorModelResponse.Data.StructList"));

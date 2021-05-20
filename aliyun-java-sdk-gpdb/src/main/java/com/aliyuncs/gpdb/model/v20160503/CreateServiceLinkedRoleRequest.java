@@ -24,6 +24,8 @@ import com.aliyuncs.gpdb.Endpoint;
  */
 public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceLinkedRoleResponse> {
 	   
+
+	private Long ownerId;
 	public CreateServiceLinkedRoleRequest() {
 		super("gpdb", "2016-05-03", "CreateServiceLinkedRole", "gpdb");
 		setMethod(MethodType.POST);
@@ -31,6 +33,17 @@ public class CreateServiceLinkedRoleRequest extends RpcAcsRequest<CreateServiceL
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
 	}
 
 	@Override

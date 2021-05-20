@@ -28,16 +28,16 @@ public class DescribeQosesResponseUnmarshaller {
 		
 		describeQosesResponse.setRequestId(_ctx.stringValue("DescribeQosesResponse.RequestId"));
 		describeQosesResponse.setTotalCount(_ctx.integerValue("DescribeQosesResponse.TotalCount"));
-		describeQosesResponse.setPageNumber(_ctx.integerValue("DescribeQosesResponse.PageNumber"));
 		describeQosesResponse.setPageSize(_ctx.integerValue("DescribeQosesResponse.PageSize"));
+		describeQosesResponse.setPageNumber(_ctx.integerValue("DescribeQosesResponse.PageNumber"));
 
 		List<Qos> qoses = new ArrayList<Qos>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeQosesResponse.Qoses.Length"); i++) {
 			Qos qos = new Qos();
-			qos.setQosId(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosId"));
-			qos.setQosName(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosName"));
 			qos.setSagCount(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].SagCount"));
+			qos.setQosId(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosId"));
 			qos.setSmartAGIds(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].SmartAGIds"));
+			qos.setQosName(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosName"));
 			qos.setQosDescription(_ctx.stringValue("DescribeQosesResponse.Qoses["+ i +"].QosDescription"));
 
 			qoses.add(qos);

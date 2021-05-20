@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCoverPipelineResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Long totalCount;
-
-	private Long pageNumber;
 
 	private Long pageSize;
 
+	private String requestId;
+
+	private Long pageNumber;
+
 	private List<Pipeline> pipelineList;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Long getTotalCount() {
 		return this.totalCount;
@@ -51,20 +43,28 @@ public class ListCoverPipelineResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Long getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Long pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Long pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Pipeline> getPipelineList() {
@@ -77,49 +77,25 @@ public class ListCoverPipelineResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private Long userId;
-
-		private String pipelineId;
-
-		private String name;
-
 		private String state;
-
-		private String priority;
 
 		private Integer quotaNum;
 
-		private Integer quotaUsed;
+		private Long userId;
 
 		private String notifyConfig;
 
-		private String role;
-
 		private String extendConfig;
 
-		public Long getUserId() {
-			return this.userId;
-		}
+		private String priority;
 
-		public void setUserId(Long userId) {
-			this.userId = userId;
-		}
+		private String role;
 
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
+		private String name;
 
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
-		}
+		private String pipelineId;
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
+		private Integer quotaUsed;
 
 		public String getState() {
 			return this.state;
@@ -127,14 +103,6 @@ public class ListCoverPipelineResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
-		}
-
-		public String getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(String priority) {
-			this.priority = priority;
 		}
 
 		public Integer getQuotaNum() {
@@ -145,12 +113,12 @@ public class ListCoverPipelineResponse extends AcsResponse {
 			this.quotaNum = quotaNum;
 		}
 
-		public Integer getQuotaUsed() {
-			return this.quotaUsed;
+		public Long getUserId() {
+			return this.userId;
 		}
 
-		public void setQuotaUsed(Integer quotaUsed) {
-			this.quotaUsed = quotaUsed;
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 
 		public String getNotifyConfig() {
@@ -161,6 +129,22 @@ public class ListCoverPipelineResponse extends AcsResponse {
 			this.notifyConfig = notifyConfig;
 		}
 
+		public String getExtendConfig() {
+			return this.extendConfig;
+		}
+
+		public void setExtendConfig(String extendConfig) {
+			this.extendConfig = extendConfig;
+		}
+
+		public String getPriority() {
+			return this.priority;
+		}
+
+		public void setPriority(String priority) {
+			this.priority = priority;
+		}
+
 		public String getRole() {
 			return this.role;
 		}
@@ -169,12 +153,28 @@ public class ListCoverPipelineResponse extends AcsResponse {
 			this.role = role;
 		}
 
-		public String getExtendConfig() {
-			return this.extendConfig;
+		public String getName() {
+			return this.name;
 		}
 
-		public void setExtendConfig(String extendConfig) {
-			this.extendConfig = extendConfig;
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPipelineId() {
+			return this.pipelineId;
+		}
+
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
+		}
+
+		public Integer getQuotaUsed() {
+			return this.quotaUsed;
+		}
+
+		public void setQuotaUsed(Integer quotaUsed) {
+			this.quotaUsed = quotaUsed;
 		}
 	}
 

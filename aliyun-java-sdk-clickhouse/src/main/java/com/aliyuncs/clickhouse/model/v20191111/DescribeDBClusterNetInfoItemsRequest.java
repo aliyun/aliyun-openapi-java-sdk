@@ -35,7 +35,7 @@ public class DescribeDBClusterNetInfoItemsRequest extends RpcAcsRequest<Describe
 
 	private Long ownerId;
 	public DescribeDBClusterNetInfoItemsRequest() {
-		super("clickhouse", "2019-11-11", "DescribeDBClusterNetInfoItems", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeDBClusterNetInfoItems");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -110,6 +110,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private String osTag;
 
+	private Boolean isComputeEss;
+
 	private List<Application> applications;
 
 	private String ecsChargeType;
@@ -610,6 +612,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.osTag = osTag;
 		if(osTag != null){
 			putQueryParameter("OsTag", osTag);
+		}
+	}
+
+	public Boolean getIsComputeEss() {
+		return this.isComputeEss;
+	}
+
+	public void setIsComputeEss(Boolean isComputeEss) {
+		this.isComputeEss = isComputeEss;
+		if(isComputeEss != null){
+			putQueryParameter("IsComputeEss", isComputeEss.toString());
 		}
 	}
 

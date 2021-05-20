@@ -35,7 +35,7 @@ public class FunctionExistsRequest extends RoaAcsRequest<FunctionExistsResponse>
 
 	private String namespace;
 	public FunctionExistsRequest() {
-		super("ververica", "2020-05-01", "FunctionExists", "ververica");
+		super("ververica", "2020-05-01", "FunctionExists");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:functionExists");
 		setMethod(MethodType.GET);
 		try {

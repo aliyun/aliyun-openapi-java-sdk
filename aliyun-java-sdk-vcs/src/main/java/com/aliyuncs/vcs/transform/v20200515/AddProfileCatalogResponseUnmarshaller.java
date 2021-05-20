@@ -24,13 +24,13 @@ public class AddProfileCatalogResponseUnmarshaller {
 	public static AddProfileCatalogResponse unmarshall(AddProfileCatalogResponse addProfileCatalogResponse, UnmarshallerContext _ctx) {
 		
 		addProfileCatalogResponse.setRequestId(_ctx.stringValue("AddProfileCatalogResponse.RequestId"));
-		addProfileCatalogResponse.setCode(_ctx.stringValue("AddProfileCatalogResponse.Code"));
 		addProfileCatalogResponse.setMessage(_ctx.stringValue("AddProfileCatalogResponse.Message"));
+		addProfileCatalogResponse.setCode(_ctx.stringValue("AddProfileCatalogResponse.Code"));
 
 		Data data = new Data();
-		data.setCatalogId(_ctx.longValue("AddProfileCatalogResponse.Data.CatalogId"));
-		data.setCatalogName(_ctx.stringValue("AddProfileCatalogResponse.Data.CatalogName"));
 		data.setIsvSubId(_ctx.stringValue("AddProfileCatalogResponse.Data.IsvSubId"));
+		data.setCatalogName(_ctx.stringValue("AddProfileCatalogResponse.Data.CatalogName"));
+		data.setCatalogId(_ctx.longValue("AddProfileCatalogResponse.Data.CatalogId"));
 		addProfileCatalogResponse.setData(data);
 	 
 	 	return addProfileCatalogResponse;

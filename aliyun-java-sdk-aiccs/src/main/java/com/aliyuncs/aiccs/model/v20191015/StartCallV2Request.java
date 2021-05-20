@@ -35,7 +35,7 @@ public class StartCallV2Request extends RpcAcsRequest<StartCallV2Response> {
 
 	private String callee;
 	public StartCallV2Request() {
-		super("aiccs", "2019-10-15", "StartCallV2", "aiccs-service");
+		super("aiccs", "2019-10-15", "StartCallV2");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

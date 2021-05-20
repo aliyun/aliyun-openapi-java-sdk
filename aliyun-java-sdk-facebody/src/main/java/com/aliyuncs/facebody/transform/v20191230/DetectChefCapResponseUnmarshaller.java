@@ -34,8 +34,8 @@ public class DetectChefCapResponseUnmarshaller {
 		List<ElementsItem> elements = new ArrayList<ElementsItem>();
 		for (int i = 0; i < _ctx.lengthValue("DetectChefCapResponse.Data.Elements.Length"); i++) {
 			ElementsItem elementsItem = new ElementsItem();
-			elementsItem.setCategory(_ctx.stringValue("DetectChefCapResponse.Data.Elements["+ i +"].Category"));
 			elementsItem.setConfidence(_ctx.floatValue("DetectChefCapResponse.Data.Elements["+ i +"].Confidence"));
+			elementsItem.setCategory(_ctx.stringValue("DetectChefCapResponse.Data.Elements["+ i +"].Category"));
 
 			List<Float> box = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("DetectChefCapResponse.Data.Elements["+ i +"].Box.Length"); j++) {

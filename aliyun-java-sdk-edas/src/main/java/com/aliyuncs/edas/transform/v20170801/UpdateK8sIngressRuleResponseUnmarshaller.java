@@ -14,11 +14,7 @@
 
 package com.aliyuncs.edas.transform.v20170801;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.aliyuncs.edas.model.v20170801.UpdateK8sIngressRuleResponse;
-import com.aliyuncs.edas.model.v20170801.UpdateK8sIngressRuleResponse.ChangeOrderIdsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -28,16 +24,6 @@ public class UpdateK8sIngressRuleResponseUnmarshaller {
 		
 		updateK8sIngressRuleResponse.setCode(_ctx.integerValue("UpdateK8sIngressRuleResponse.Code"));
 		updateK8sIngressRuleResponse.setMessage(_ctx.stringValue("UpdateK8sIngressRuleResponse.Message"));
-
-		List<ChangeOrderIdsItem> changeOrderIds = new ArrayList<ChangeOrderIdsItem>();
-		for (int i = 0; i < _ctx.lengthValue("UpdateK8sIngressRuleResponse.ChangeOrderIds.Length"); i++) {
-			ChangeOrderIdsItem changeOrderIdsItem = new ChangeOrderIdsItem();
-			changeOrderIdsItem.setAppId(_ctx.stringValue("UpdateK8sIngressRuleResponse.ChangeOrderIds["+ i +"].AppId"));
-			changeOrderIdsItem.setChangeOrderId(_ctx.stringValue("UpdateK8sIngressRuleResponse.ChangeOrderIds["+ i +"].ChangeOrderId"));
-
-			changeOrderIds.add(changeOrderIdsItem);
-		}
-		updateK8sIngressRuleResponse.setChangeOrderIds(changeOrderIds);
 	 
 	 	return updateK8sIngressRuleResponse;
 	}

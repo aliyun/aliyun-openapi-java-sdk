@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeAvailableResourceResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
-	private List<SupportResource> supportResources;
+	private String requestId;
 
 	private List<Image> images;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private List<SupportResource> supportResources;
 
 	public Integer getCode() {
 		return this.code;
@@ -49,12 +41,12 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public List<SupportResource> getSupportResources() {
-		return this.supportResources;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setSupportResources(List<SupportResource> supportResources) {
-		this.supportResources = supportResources;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Image> getImages() {
@@ -65,41 +57,48 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 		this.images = images;
 	}
 
+	public List<SupportResource> getSupportResources() {
+		return this.supportResources;
+	}
+
+	public void setSupportResources(List<SupportResource> supportResources) {
+		this.supportResources = supportResources;
+	}
+
+	public static class Image {
+
+		private String imageId;
+
+		private String imageName;
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public String getImageName() {
+			return this.imageName;
+		}
+
+		public void setImageName(String imageName) {
+			this.imageName = imageName;
+		}
+	}
+
 	public static class SupportResource {
-
-		private String instanceSpec;
-
-		private String systemDiskSize;
-
-		private String supportResourcesCount;
 
 		private String dataDiskSize;
 
 		private String ensRegionId;
 
-		public String getInstanceSpec() {
-			return this.instanceSpec;
-		}
+		private String instanceSpec;
 
-		public void setInstanceSpec(String instanceSpec) {
-			this.instanceSpec = instanceSpec;
-		}
+		private String supportResourcesCount;
 
-		public String getSystemDiskSize() {
-			return this.systemDiskSize;
-		}
-
-		public void setSystemDiskSize(String systemDiskSize) {
-			this.systemDiskSize = systemDiskSize;
-		}
-
-		public String getSupportResourcesCount() {
-			return this.supportResourcesCount;
-		}
-
-		public void setSupportResourcesCount(String supportResourcesCount) {
-			this.supportResourcesCount = supportResourcesCount;
-		}
+		private String systemDiskSize;
 
 		public String getDataDiskSize() {
 			return this.dataDiskSize;
@@ -116,28 +115,29 @@ public class DescribeAvailableResourceResponse extends AcsResponse {
 		public void setEnsRegionId(String ensRegionId) {
 			this.ensRegionId = ensRegionId;
 		}
-	}
 
-	public static class Image {
-
-		private String imageName;
-
-		private String imageId;
-
-		public String getImageName() {
-			return this.imageName;
+		public String getInstanceSpec() {
+			return this.instanceSpec;
 		}
 
-		public void setImageName(String imageName) {
-			this.imageName = imageName;
+		public void setInstanceSpec(String instanceSpec) {
+			this.instanceSpec = instanceSpec;
 		}
 
-		public String getImageId() {
-			return this.imageId;
+		public String getSupportResourcesCount() {
+			return this.supportResourcesCount;
 		}
 
-		public void setImageId(String imageId) {
-			this.imageId = imageId;
+		public void setSupportResourcesCount(String supportResourcesCount) {
+			this.supportResourcesCount = supportResourcesCount;
+		}
+
+		public String getSystemDiskSize() {
+			return this.systemDiskSize;
+		}
+
+		public void setSystemDiskSize(String systemDiskSize) {
+			this.systemDiskSize = systemDiskSize;
 		}
 	}
 

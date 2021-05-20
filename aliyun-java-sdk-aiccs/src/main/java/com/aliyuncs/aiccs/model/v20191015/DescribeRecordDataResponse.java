@@ -24,32 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeRecordDataResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
+	private String acid;
 
 	private String message;
 
-	private String ossLink;
-
-	private String acid;
+	private String requestId;
 
 	private String agentId;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String ossLink;
+
+	private String code;
+
+	public String getAcid() {
+		return this.acid;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setAcid(String acid) {
+		this.acid = acid;
 	}
 
 	public String getMessage() {
@@ -60,20 +52,12 @@ public class DescribeRecordDataResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getOssLink() {
-		return this.ossLink;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setOssLink(String ossLink) {
-		this.ossLink = ossLink;
-	}
-
-	public String getAcid() {
-		return this.acid;
-	}
-
-	public void setAcid(String acid) {
-		this.acid = acid;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getAgentId() {
@@ -82,6 +66,22 @@ public class DescribeRecordDataResponse extends AcsResponse {
 
 	public void setAgentId(String agentId) {
 		this.agentId = agentId;
+	}
+
+	public String getOssLink() {
+		return this.ossLink;
+	}
+
+	public void setOssLink(String ossLink) {
+		this.ossLink = ossLink;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

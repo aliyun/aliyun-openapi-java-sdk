@@ -22,10 +22,10 @@ public class GenerateTokenResponseUnmarshaller {
 
 	public static GenerateTokenResponse unmarshall(GenerateTokenResponse generateTokenResponse, UnmarshallerContext _ctx) {
 		
-		generateTokenResponse.setSuccess(_ctx.booleanValue("GenerateTokenResponse.Success"));
-		generateTokenResponse.setCode(_ctx.stringValue("GenerateTokenResponse.Code"));
 		generateTokenResponse.setMessage(_ctx.stringValue("GenerateTokenResponse.Message"));
 		generateTokenResponse.setData(_ctx.stringValue("GenerateTokenResponse.Data"));
+		generateTokenResponse.setCode(_ctx.stringValue("GenerateTokenResponse.Code"));
+		generateTokenResponse.setSuccess(_ctx.booleanValue("GenerateTokenResponse.Success"));
 	 
 	 	return generateTokenResponse;
 	}

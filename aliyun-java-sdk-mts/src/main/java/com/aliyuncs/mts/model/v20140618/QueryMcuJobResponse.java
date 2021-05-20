@@ -59,25 +59,25 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 		private String jobId;
 
+		private String template;
+
 		private String userData;
 
 		private String templateId;
 
-		private String template;
+		private List<Tag> tagResult;
 
 		private List<Ocr> ocrResult;
 
-		private List<Tag> tagResult;
+		private List<SubTask> subTaskInfo;
 
 		private List<Face> faceResult;
 
-		private List<SubTask> subTaskInfo;
+		private CategoryResult categoryResult;
 
 		private Input input;
 
 		private AsrResult asrResult;
-
-		private CategoryResult categoryResult;
 
 		public String getJobId() {
 			return this.jobId;
@@ -85,6 +85,14 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
+		}
+
+		public String getTemplate() {
+			return this.template;
+		}
+
+		public void setTemplate(String template) {
+			this.template = template;
 		}
 
 		public String getUserData() {
@@ -103,12 +111,12 @@ public class QueryMcuJobResponse extends AcsResponse {
 			this.templateId = templateId;
 		}
 
-		public String getTemplate() {
-			return this.template;
+		public List<Tag> getTagResult() {
+			return this.tagResult;
 		}
 
-		public void setTemplate(String template) {
-			this.template = template;
+		public void setTagResult(List<Tag> tagResult) {
+			this.tagResult = tagResult;
 		}
 
 		public List<Ocr> getOcrResult() {
@@ -119,12 +127,12 @@ public class QueryMcuJobResponse extends AcsResponse {
 			this.ocrResult = ocrResult;
 		}
 
-		public List<Tag> getTagResult() {
-			return this.tagResult;
+		public List<SubTask> getSubTaskInfo() {
+			return this.subTaskInfo;
 		}
 
-		public void setTagResult(List<Tag> tagResult) {
-			this.tagResult = tagResult;
+		public void setSubTaskInfo(List<SubTask> subTaskInfo) {
+			this.subTaskInfo = subTaskInfo;
 		}
 
 		public List<Face> getFaceResult() {
@@ -135,12 +143,12 @@ public class QueryMcuJobResponse extends AcsResponse {
 			this.faceResult = faceResult;
 		}
 
-		public List<SubTask> getSubTaskInfo() {
-			return this.subTaskInfo;
+		public CategoryResult getCategoryResult() {
+			return this.categoryResult;
 		}
 
-		public void setSubTaskInfo(List<SubTask> subTaskInfo) {
-			this.subTaskInfo = subTaskInfo;
+		public void setCategoryResult(CategoryResult categoryResult) {
+			this.categoryResult = categoryResult;
 		}
 
 		public Input getInput() {
@@ -157,57 +165,6 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 		public void setAsrResult(AsrResult asrResult) {
 			this.asrResult = asrResult;
-		}
-
-		public CategoryResult getCategoryResult() {
-			return this.categoryResult;
-		}
-
-		public void setCategoryResult(CategoryResult categoryResult) {
-			this.categoryResult = categoryResult;
-		}
-
-		public static class Ocr {
-
-			private String time;
-
-			private String ocrText;
-
-			private String imageUrl;
-
-			private String imageId;
-
-			public String getTime() {
-				return this.time;
-			}
-
-			public void setTime(String time) {
-				this.time = time;
-			}
-
-			public String getOcrText() {
-				return this.ocrText;
-			}
-
-			public void setOcrText(String ocrText) {
-				this.ocrText = ocrText;
-			}
-
-			public String getImageUrl() {
-				return this.imageUrl;
-			}
-
-			public void setImageUrl(String imageUrl) {
-				this.imageUrl = imageUrl;
-			}
-
-			public String getImageId() {
-				return this.imageId;
-			}
-
-			public void setImageId(String imageId) {
-				this.imageId = imageId;
-			}
 		}
 
 		public static class Tag {
@@ -254,19 +211,11 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 			public static class FrameTagInfo {
 
-				private String tag;
-
 				private String score;
 
 				private String category;
 
-				public String getTag() {
-					return this.tag;
-				}
-
-				public void setTag(String tag) {
-					this.tag = tag;
-				}
+				private String tag;
 
 				public String getScore() {
 					return this.score;
@@ -283,6 +232,90 @@ public class QueryMcuJobResponse extends AcsResponse {
 				public void setCategory(String category) {
 					this.category = category;
 				}
+
+				public String getTag() {
+					return this.tag;
+				}
+
+				public void setTag(String tag) {
+					this.tag = tag;
+				}
+			}
+		}
+
+		public static class Ocr {
+
+			private String time;
+
+			private String imageUrl;
+
+			private String ocrText;
+
+			private String imageId;
+
+			public String getTime() {
+				return this.time;
+			}
+
+			public void setTime(String time) {
+				this.time = time;
+			}
+
+			public String getImageUrl() {
+				return this.imageUrl;
+			}
+
+			public void setImageUrl(String imageUrl) {
+				this.imageUrl = imageUrl;
+			}
+
+			public String getOcrText() {
+				return this.ocrText;
+			}
+
+			public void setOcrText(String ocrText) {
+				this.ocrText = ocrText;
+			}
+
+			public String getImageId() {
+				return this.imageId;
+			}
+
+			public void setImageId(String imageId) {
+				this.imageId = imageId;
+			}
+		}
+
+		public static class SubTask {
+
+			private String type;
+
+			private String code;
+
+			private String message;
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getCode() {
+				return this.code;
+			}
+
+			public void setCode(String code) {
+				this.code = code;
+			}
+
+			public String getMessage() {
+				return this.message;
+			}
+
+			public void setMessage(String message) {
+				this.message = message;
 			}
 		}
 
@@ -330,19 +363,11 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 			public static class Celebrity {
 
-				private String name;
-
 				private String score;
 
+				private String name;
+
 				private String target;
-
-				public String getName() {
-					return this.name;
-				}
-
-				public void setName(String name) {
-					this.name = name;
-				}
 
 				public String getScore() {
 					return this.score;
@@ -352,154 +377,20 @@ public class QueryMcuJobResponse extends AcsResponse {
 					this.score = score;
 				}
 
+				public String getName() {
+					return this.name;
+				}
+
+				public void setName(String name) {
+					this.name = name;
+				}
+
 				public String getTarget() {
 					return this.target;
 				}
 
 				public void setTarget(String target) {
 					this.target = target;
-				}
-			}
-		}
-
-		public static class SubTask {
-
-			private String type;
-
-			private String code;
-
-			private String message;
-
-			public String getType() {
-				return this.type;
-			}
-
-			public void setType(String type) {
-				this.type = type;
-			}
-
-			public String getCode() {
-				return this.code;
-			}
-
-			public void setCode(String code) {
-				this.code = code;
-			}
-
-			public String getMessage() {
-				return this.message;
-			}
-
-			public void setMessage(String message) {
-				this.message = message;
-			}
-		}
-
-		public static class Input {
-
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
-		}
-
-		public static class AsrResult {
-
-			private String duration;
-
-			private List<AsrText> asrTextList;
-
-			public String getDuration() {
-				return this.duration;
-			}
-
-			public void setDuration(String duration) {
-				this.duration = duration;
-			}
-
-			public List<AsrText> getAsrTextList() {
-				return this.asrTextList;
-			}
-
-			public void setAsrTextList(List<AsrText> asrTextList) {
-				this.asrTextList = asrTextList;
-			}
-
-			public static class AsrText {
-
-				private Integer startTime;
-
-				private String endTime;
-
-				private String channelId;
-
-				private String speechRate;
-
-				private String text;
-
-				public Integer getStartTime() {
-					return this.startTime;
-				}
-
-				public void setStartTime(Integer startTime) {
-					this.startTime = startTime;
-				}
-
-				public String getEndTime() {
-					return this.endTime;
-				}
-
-				public void setEndTime(String endTime) {
-					this.endTime = endTime;
-				}
-
-				public String getChannelId() {
-					return this.channelId;
-				}
-
-				public void setChannelId(String channelId) {
-					this.channelId = channelId;
-				}
-
-				public String getSpeechRate() {
-					return this.speechRate;
-				}
-
-				public void setSpeechRate(String speechRate) {
-					this.speechRate = speechRate;
-				}
-
-				public String getText() {
-					return this.text;
-				}
-
-				public void setText(String text) {
-					this.text = text;
 				}
 			}
 		}
@@ -528,9 +419,17 @@ public class QueryMcuJobResponse extends AcsResponse {
 
 			public static class Category {
 
+				private String score;
+
 				private String label;
 
-				private String score;
+				public String getScore() {
+					return this.score;
+				}
+
+				public void setScore(String score) {
+					this.score = score;
+				}
 
 				public String getLabel() {
 					return this.label;
@@ -539,13 +438,114 @@ public class QueryMcuJobResponse extends AcsResponse {
 				public void setLabel(String label) {
 					this.label = label;
 				}
+			}
+		}
 
-				public String getScore() {
-					return this.score;
+		public static class Input {
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
+			}
+		}
+
+		public static class AsrResult {
+
+			private String duration;
+
+			private List<AsrText> asrTextList;
+
+			public String getDuration() {
+				return this.duration;
+			}
+
+			public void setDuration(String duration) {
+				this.duration = duration;
+			}
+
+			public List<AsrText> getAsrTextList() {
+				return this.asrTextList;
+			}
+
+			public void setAsrTextList(List<AsrText> asrTextList) {
+				this.asrTextList = asrTextList;
+			}
+
+			public static class AsrText {
+
+				private String endTime;
+
+				private Integer startTime;
+
+				private String channelId;
+
+				private String text;
+
+				private String speechRate;
+
+				public String getEndTime() {
+					return this.endTime;
 				}
 
-				public void setScore(String score) {
-					this.score = score;
+				public void setEndTime(String endTime) {
+					this.endTime = endTime;
+				}
+
+				public Integer getStartTime() {
+					return this.startTime;
+				}
+
+				public void setStartTime(Integer startTime) {
+					this.startTime = startTime;
+				}
+
+				public String getChannelId() {
+					return this.channelId;
+				}
+
+				public void setChannelId(String channelId) {
+					this.channelId = channelId;
+				}
+
+				public String getText() {
+					return this.text;
+				}
+
+				public void setText(String text) {
+					this.text = text;
+				}
+
+				public String getSpeechRate() {
+					return this.speechRate;
+				}
+
+				public void setSpeechRate(String speechRate) {
+					this.speechRate = speechRate;
 				}
 			}
 		}

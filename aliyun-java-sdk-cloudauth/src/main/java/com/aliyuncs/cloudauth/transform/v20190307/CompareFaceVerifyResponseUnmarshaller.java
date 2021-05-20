@@ -30,6 +30,7 @@ public class CompareFaceVerifyResponseUnmarshaller {
 		ResultObject resultObject = new ResultObject();
 		resultObject.setPassed(_ctx.stringValue("CompareFaceVerifyResponse.ResultObject.Passed"));
 		resultObject.setVerifyScore(_ctx.floatValue("CompareFaceVerifyResponse.ResultObject.VerifyScore"));
+		resultObject.setCertifyId(_ctx.stringValue("CompareFaceVerifyResponse.ResultObject.CertifyId"));
 		compareFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return compareFaceVerifyResponse;

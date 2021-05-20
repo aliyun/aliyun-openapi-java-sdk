@@ -25,31 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListGroupByIdResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private String requestId;
 
+	private String code;
+
+	private Boolean success;
+
 	private List<DataItem> data;
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -67,6 +51,22 @@ public class ListGroupByIdResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	public List<DataItem> getData() {
 		return this.data;
 	}
@@ -77,47 +77,23 @@ public class ListGroupByIdResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private Long buId;
-
-		private Long groupId;
-
-		private String groupName;
-
 		private Integer status;
+
+		private Long buId;
 
 		private String showName;
 
+		private Boolean supportCase;
+
 		private String description;
+
+		private String groupName;
+
+		private Long groupId;
 
 		private Boolean supportIm;
 
 		private Boolean supportPhone;
-
-		private Boolean supportCase;
-
-		public Long getBuId() {
-			return this.buId;
-		}
-
-		public void setBuId(Long buId) {
-			this.buId = buId;
-		}
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getGroupName() {
-			return this.groupName;
-		}
-
-		public void setGroupName(String groupName) {
-			this.groupName = groupName;
-		}
 
 		public Integer getStatus() {
 			return this.status;
@@ -125,6 +101,14 @@ public class ListGroupByIdResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
+		}
+
+		public Long getBuId() {
+			return this.buId;
+		}
+
+		public void setBuId(Long buId) {
+			this.buId = buId;
 		}
 
 		public String getShowName() {
@@ -135,12 +119,36 @@ public class ListGroupByIdResponse extends AcsResponse {
 			this.showName = showName;
 		}
 
+		public Boolean getSupportCase() {
+			return this.supportCase;
+		}
+
+		public void setSupportCase(Boolean supportCase) {
+			this.supportCase = supportCase;
+		}
+
 		public String getDescription() {
 			return this.description;
 		}
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getGroupName() {
+			return this.groupName;
+		}
+
+		public void setGroupName(String groupName) {
+			this.groupName = groupName;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
 		}
 
 		public Boolean getSupportIm() {
@@ -157,14 +165,6 @@ public class ListGroupByIdResponse extends AcsResponse {
 
 		public void setSupportPhone(Boolean supportPhone) {
 			this.supportPhone = supportPhone;
-		}
-
-		public Boolean getSupportCase() {
-			return this.supportCase;
-		}
-
-		public void setSupportCase(Boolean supportCase) {
-			this.supportCase = supportCase;
 		}
 	}
 

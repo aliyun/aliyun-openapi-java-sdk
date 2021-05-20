@@ -27,16 +27,16 @@ public class EditQualityProjectResponseUnmarshaller {
 	public static EditQualityProjectResponse unmarshall(EditQualityProjectResponse editQualityProjectResponse, UnmarshallerContext _ctx) {
 		
 		editQualityProjectResponse.setRequestId(_ctx.stringValue("EditQualityProjectResponse.RequestId"));
-		editQualityProjectResponse.setCode(_ctx.stringValue("EditQualityProjectResponse.Code"));
 		editQualityProjectResponse.setMessage(_ctx.stringValue("EditQualityProjectResponse.Message"));
+		editQualityProjectResponse.setCode(_ctx.stringValue("EditQualityProjectResponse.Code"));
 		editQualityProjectResponse.setSuccess(_ctx.booleanValue("EditQualityProjectResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("EditQualityProjectResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setProjectId(_ctx.longValue("EditQualityProjectResponse.Data["+ i +"].ProjectId"));
-			dataItem.setVersion(_ctx.integerValue("EditQualityProjectResponse.Data["+ i +"].Version"));
 			dataItem.setInstanceId(_ctx.stringValue("EditQualityProjectResponse.Data["+ i +"].InstanceId"));
+			dataItem.setVersion(_ctx.integerValue("EditQualityProjectResponse.Data["+ i +"].Version"));
+			dataItem.setProjectId(_ctx.longValue("EditQualityProjectResponse.Data["+ i +"].ProjectId"));
 
 			data.add(dataItem);
 		}

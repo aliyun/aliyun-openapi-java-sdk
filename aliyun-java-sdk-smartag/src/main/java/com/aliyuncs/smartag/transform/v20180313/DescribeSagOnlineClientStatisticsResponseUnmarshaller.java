@@ -31,8 +31,8 @@ public class DescribeSagOnlineClientStatisticsResponseUnmarshaller {
 		List<Statistics> sagStatistics = new ArrayList<Statistics>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics.Length"); i++) {
 			Statistics statistics = new Statistics();
-			statistics.setSmartAGId(_ctx.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].SmartAGId"));
 			statistics.setOnlineCount(_ctx.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].OnlineCount"));
+			statistics.setSmartAGId(_ctx.stringValue("DescribeSagOnlineClientStatisticsResponse.SagStatistics["+ i +"].SmartAGId"));
 
 			sagStatistics.add(statistics);
 		}

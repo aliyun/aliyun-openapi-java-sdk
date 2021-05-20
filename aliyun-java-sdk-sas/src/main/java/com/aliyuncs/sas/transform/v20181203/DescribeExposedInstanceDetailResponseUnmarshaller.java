@@ -43,6 +43,7 @@ public class DescribeExposedInstanceDetailResponseUnmarshaller {
 			exposedChain.setInstanceId(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].InstanceId"));
 			exposedChain.setInstanceName(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].InstanceName"));
 			exposedChain.setRegionId(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RegionId"));
+			exposedChain.setGroupNo(_ctx.stringValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].GroupNo"));
 
 			List<ScaVulRecord> realVulList = new ArrayList<ScaVulRecord>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeExposedInstanceDetailResponse.ExposedChains["+ i +"].RealVulList.Length"); j++) {

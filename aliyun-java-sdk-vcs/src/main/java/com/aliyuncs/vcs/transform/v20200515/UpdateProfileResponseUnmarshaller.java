@@ -23,9 +23,9 @@ public class UpdateProfileResponseUnmarshaller {
 	public static UpdateProfileResponse unmarshall(UpdateProfileResponse updateProfileResponse, UnmarshallerContext _ctx) {
 		
 		updateProfileResponse.setRequestId(_ctx.stringValue("UpdateProfileResponse.RequestId"));
-		updateProfileResponse.setCode(_ctx.stringValue("UpdateProfileResponse.Code"));
-		updateProfileResponse.setData(_ctx.stringValue("UpdateProfileResponse.Data"));
 		updateProfileResponse.setMessage(_ctx.stringValue("UpdateProfileResponse.Message"));
+		updateProfileResponse.setData(_ctx.stringValue("UpdateProfileResponse.Data"));
+		updateProfileResponse.setCode(_ctx.stringValue("UpdateProfileResponse.Code"));
 	 
 	 	return updateProfileResponse;
 	}

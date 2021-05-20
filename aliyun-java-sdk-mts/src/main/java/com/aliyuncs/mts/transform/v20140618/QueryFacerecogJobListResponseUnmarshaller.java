@@ -41,19 +41,13 @@ public class QueryFacerecogJobListResponseUnmarshaller {
 		List<FacerecogJob> facerecogJobList = new ArrayList<FacerecogJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList.Length"); i++) {
 			FacerecogJob facerecogJob = new FacerecogJob();
-			facerecogJob.setId(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Id"));
-			facerecogJob.setUserData(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].UserData"));
-			facerecogJob.setPipelineId(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].PipelineId"));
+			facerecogJob.setCreationTime(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].CreationTime"));
 			facerecogJob.setState(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].State"));
+			facerecogJob.setUserData(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].UserData"));
 			facerecogJob.setCode(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Code"));
 			facerecogJob.setMessage(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Message"));
-			facerecogJob.setCreationTime(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Object"));
-			facerecogJob.setInput(input);
+			facerecogJob.setPipelineId(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].PipelineId"));
+			facerecogJob.setId(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Id"));
 
 			VideoFacerecogResult videoFacerecogResult = new VideoFacerecogResult();
 
@@ -65,8 +59,8 @@ public class QueryFacerecogJobListResponseUnmarshaller {
 				List<Face> faces = new ArrayList<Face>();
 				for (int k = 0; k < _ctx.lengthValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces.Length"); k++) {
 					Face face = new Face();
-					face.setName(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Name"));
 					face.setScore(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Score"));
+					face.setName(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Name"));
 					face.setTarget(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].VideoFacerecogResult.Facerecogs["+ j +"].Faces["+ k +"].Target"));
 
 					faces.add(face);
@@ -77,6 +71,12 @@ public class QueryFacerecogJobListResponseUnmarshaller {
 			}
 			videoFacerecogResult.setFacerecogs(facerecogs);
 			facerecogJob.setVideoFacerecogResult(videoFacerecogResult);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryFacerecogJobListResponse.FacerecogJobList["+ i +"].Input.Bucket"));
+			facerecogJob.setInput(input);
 
 			facerecogJobList.add(facerecogJob);
 		}

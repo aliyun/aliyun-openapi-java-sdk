@@ -57,48 +57,32 @@ public class QueryTerrorismJobListResponse extends AcsResponse {
 
 	public static class TerrorismJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
-
-		private TerrorismConfig terrorismConfig;
+		private String id;
 
 		private CensorTerrorismResult censorTerrorismResult;
 
-		public String getId() {
-			return this.id;
+		private TerrorismConfig terrorismConfig;
+
+		private Input input;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -107,6 +91,14 @@ public class QueryTerrorismJobListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -125,28 +117,20 @@ public class QueryTerrorismJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
-		}
-
-		public TerrorismConfig getTerrorismConfig() {
-			return this.terrorismConfig;
-		}
-
-		public void setTerrorismConfig(TerrorismConfig terrorismConfig) {
-			this.terrorismConfig = terrorismConfig;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public CensorTerrorismResult getCensorTerrorismResult() {
@@ -157,36 +141,158 @@ public class QueryTerrorismJobListResponse extends AcsResponse {
 			this.censorTerrorismResult = censorTerrorismResult;
 		}
 
-		public static class Input {
+		public TerrorismConfig getTerrorismConfig() {
+			return this.terrorismConfig;
+		}
 
-			private String bucket;
+		public void setTerrorismConfig(TerrorismConfig terrorismConfig) {
+			this.terrorismConfig = terrorismConfig;
+		}
 
-			private String location;
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String object;
+		public void setInput(Input input) {
+			this.input = input;
+		}
 
-			public String getBucket() {
-				return this.bucket;
+		public static class CensorTerrorismResult {
+
+			private String suggestion;
+
+			private String averageScore;
+
+			private String label;
+
+			private String maxScore;
+
+			private List<Top> terrorismTopList;
+
+			private List<Counter> terrorismCounterList;
+
+			public String getSuggestion() {
+				return this.suggestion;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setSuggestion(String suggestion) {
+				this.suggestion = suggestion;
 			}
 
-			public String getLocation() {
-				return this.location;
+			public String getAverageScore() {
+				return this.averageScore;
 			}
 
-			public void setLocation(String location) {
-				this.location = location;
+			public void setAverageScore(String averageScore) {
+				this.averageScore = averageScore;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getLabel() {
+				return this.label;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getMaxScore() {
+				return this.maxScore;
+			}
+
+			public void setMaxScore(String maxScore) {
+				this.maxScore = maxScore;
+			}
+
+			public List<Top> getTerrorismTopList() {
+				return this.terrorismTopList;
+			}
+
+			public void setTerrorismTopList(List<Top> terrorismTopList) {
+				this.terrorismTopList = terrorismTopList;
+			}
+
+			public List<Counter> getTerrorismCounterList() {
+				return this.terrorismCounterList;
+			}
+
+			public void setTerrorismCounterList(List<Counter> terrorismCounterList) {
+				this.terrorismCounterList = terrorismCounterList;
+			}
+
+			public static class Top {
+
+				private String index;
+
+				private String score;
+
+				private String timestamp;
+
+				private String object;
+
+				private String label;
+
+				public String getIndex() {
+					return this.index;
+				}
+
+				public void setIndex(String index) {
+					this.index = index;
+				}
+
+				public String getScore() {
+					return this.score;
+				}
+
+				public void setScore(String score) {
+					this.score = score;
+				}
+
+				public String getTimestamp() {
+					return this.timestamp;
+				}
+
+				public void setTimestamp(String timestamp) {
+					this.timestamp = timestamp;
+				}
+
+				public String getObject() {
+					return this.object;
+				}
+
+				public void setObject(String object) {
+					this.object = object;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+			}
+
+			public static class Counter {
+
+				private String label;
+
+				private Integer count;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
+				}
 			}
 		}
 
@@ -224,18 +330,18 @@ public class QueryTerrorismJobListResponse extends AcsResponse {
 
 			public static class OutputFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -246,152 +352,46 @@ public class QueryTerrorismJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}
 
-		public static class CensorTerrorismResult {
+		public static class Input {
 
-			private String label;
+			private String object;
 
-			private String suggestion;
+			private String location;
 
-			private String maxScore;
+			private String bucket;
 
-			private String averageScore;
-
-			private List<Counter> terrorismCounterList;
-
-			private List<Top> terrorismTopList;
-
-			public String getLabel() {
-				return this.label;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setLabel(String label) {
-				this.label = label;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
-			public String getSuggestion() {
-				return this.suggestion;
+			public String getLocation() {
+				return this.location;
 			}
 
-			public void setSuggestion(String suggestion) {
-				this.suggestion = suggestion;
+			public void setLocation(String location) {
+				this.location = location;
 			}
 
-			public String getMaxScore() {
-				return this.maxScore;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setMaxScore(String maxScore) {
-				this.maxScore = maxScore;
-			}
-
-			public String getAverageScore() {
-				return this.averageScore;
-			}
-
-			public void setAverageScore(String averageScore) {
-				this.averageScore = averageScore;
-			}
-
-			public List<Counter> getTerrorismCounterList() {
-				return this.terrorismCounterList;
-			}
-
-			public void setTerrorismCounterList(List<Counter> terrorismCounterList) {
-				this.terrorismCounterList = terrorismCounterList;
-			}
-
-			public List<Top> getTerrorismTopList() {
-				return this.terrorismTopList;
-			}
-
-			public void setTerrorismTopList(List<Top> terrorismTopList) {
-				this.terrorismTopList = terrorismTopList;
-			}
-
-			public static class Counter {
-
-				private Integer count;
-
-				private String label;
-
-				public Integer getCount() {
-					return this.count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
-			}
-
-			public static class Top {
-
-				private String label;
-
-				private String score;
-
-				private String timestamp;
-
-				private String index;
-
-				private String object;
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
-
-				public String getScore() {
-					return this.score;
-				}
-
-				public void setScore(String score) {
-					this.score = score;
-				}
-
-				public String getTimestamp() {
-					return this.timestamp;
-				}
-
-				public void setTimestamp(String timestamp) {
-					this.timestamp = timestamp;
-				}
-
-				public String getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(String index) {
-					this.index = index;
-				}
-
-				public String getObject() {
-					return this.object;
-				}
-
-				public void setObject(String object) {
-					this.object = object;
-				}
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

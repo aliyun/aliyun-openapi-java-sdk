@@ -29,9 +29,9 @@ public class GetRealPersonVerificationResultResponseUnmarshaller {
 		getRealPersonVerificationResultResponse.setSuccess(_ctx.booleanValue("GetRealPersonVerificationResultResponse.Success"));
 
 		Data data = new Data();
-		data.setMaterialMatch(_ctx.stringValue("GetRealPersonVerificationResultResponse.Data.MaterialMatch"));
-		data.setPass(_ctx.booleanValue("GetRealPersonVerificationResultResponse.Data.Pass"));
+		data.setPassed(_ctx.booleanValue("GetRealPersonVerificationResultResponse.Data.Passed"));
 		data.setIdentityInfo(_ctx.stringValue("GetRealPersonVerificationResultResponse.Data.IdentityInfo"));
+		data.setMaterialMatch(_ctx.stringValue("GetRealPersonVerificationResultResponse.Data.MaterialMatch"));
 		getRealPersonVerificationResultResponse.setData(data);
 	 
 	 	return getRealPersonVerificationResultResponse;

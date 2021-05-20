@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMetricsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListMetricsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class ListMetricsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNumber;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNumber;
 
 		private List<RecordsItem> records;
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class ListMetricsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -119,20 +119,20 @@ public class ListMetricsResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String dateTime;
+			private String tagMetric;
 
 			private String tagCode;
 
 			private String tagValue;
 
-			private String tagMetric;
+			private String dateTime;
 
-			public String getDateTime() {
-				return this.dateTime;
+			public String getTagMetric() {
+				return this.tagMetric;
 			}
 
-			public void setDateTime(String dateTime) {
-				this.dateTime = dateTime;
+			public void setTagMetric(String tagMetric) {
+				this.tagMetric = tagMetric;
 			}
 
 			public String getTagCode() {
@@ -151,12 +151,12 @@ public class ListMetricsResponse extends AcsResponse {
 				this.tagValue = tagValue;
 			}
 
-			public String getTagMetric() {
-				return this.tagMetric;
+			public String getDateTime() {
+				return this.dateTime;
 			}
 
-			public void setTagMetric(String tagMetric) {
-				this.tagMetric = tagMetric;
+			public void setDateTime(String dateTime) {
+				this.dateTime = dateTime;
 			}
 		}
 	}

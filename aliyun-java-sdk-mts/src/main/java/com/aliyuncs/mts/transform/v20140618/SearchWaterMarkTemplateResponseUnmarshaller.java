@@ -30,33 +30,33 @@ public class SearchWaterMarkTemplateResponseUnmarshaller {
 		
 		searchWaterMarkTemplateResponse.setRequestId(_ctx.stringValue("SearchWaterMarkTemplateResponse.RequestId"));
 		searchWaterMarkTemplateResponse.setTotalCount(_ctx.longValue("SearchWaterMarkTemplateResponse.TotalCount"));
-		searchWaterMarkTemplateResponse.setPageNumber(_ctx.longValue("SearchWaterMarkTemplateResponse.PageNumber"));
 		searchWaterMarkTemplateResponse.setPageSize(_ctx.longValue("SearchWaterMarkTemplateResponse.PageSize"));
+		searchWaterMarkTemplateResponse.setPageNumber(_ctx.longValue("SearchWaterMarkTemplateResponse.PageNumber"));
 
 		List<WaterMarkTemplate> waterMarkTemplateList = new ArrayList<WaterMarkTemplate>();
 		for (int i = 0; i < _ctx.lengthValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList.Length"); i++) {
 			WaterMarkTemplate waterMarkTemplate = new WaterMarkTemplate();
-			waterMarkTemplate.setId(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Id"));
-			waterMarkTemplate.setName(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Name"));
+			waterMarkTemplate.setType(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Type"));
+			waterMarkTemplate.setReferPos(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].ReferPos"));
+			waterMarkTemplate.setState(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].State"));
+			waterMarkTemplate.setDx(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Dx"));
 			waterMarkTemplate.setWidth(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Width"));
 			waterMarkTemplate.setHeight(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Height"));
-			waterMarkTemplate.setDx(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Dx"));
+			waterMarkTemplate.setName(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Name"));
 			waterMarkTemplate.setDy(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Dy"));
-			waterMarkTemplate.setReferPos(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].ReferPos"));
-			waterMarkTemplate.setType(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Type"));
-			waterMarkTemplate.setState(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].State"));
+			waterMarkTemplate.setId(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Id"));
+
+			RatioRefer ratioRefer = new RatioRefer();
+			ratioRefer.setDx(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Dx"));
+			ratioRefer.setWidth(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Width"));
+			ratioRefer.setHeight(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Height"));
+			ratioRefer.setDy(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Dy"));
+			waterMarkTemplate.setRatioRefer(ratioRefer);
 
 			Timeline timeline = new Timeline();
 			timeline.setStart(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Timeline.Start"));
 			timeline.setDuration(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].Timeline.Duration"));
 			waterMarkTemplate.setTimeline(timeline);
-
-			RatioRefer ratioRefer = new RatioRefer();
-			ratioRefer.setDx(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Dx"));
-			ratioRefer.setDy(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Dy"));
-			ratioRefer.setWidth(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Width"));
-			ratioRefer.setHeight(_ctx.stringValue("SearchWaterMarkTemplateResponse.WaterMarkTemplateList["+ i +"].RatioRefer.Height"));
-			waterMarkTemplate.setRatioRefer(ratioRefer);
 
 			waterMarkTemplateList.add(waterMarkTemplate);
 		}

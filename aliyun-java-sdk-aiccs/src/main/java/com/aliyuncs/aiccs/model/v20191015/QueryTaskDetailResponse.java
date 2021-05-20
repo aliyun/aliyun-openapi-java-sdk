@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryTaskDetailResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String success;
 
 	private String message;
 
 	private String httpStatusCode;
 
+	private String code;
+
+	private String success;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,14 +43,6 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -75,6 +59,22 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 	public void setHttpStatusCode(String httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -129,138 +129,58 @@ public class QueryTaskDetailResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private String ani;
+			private Integer status;
 
-			private Long buId;
-
-			private Long departmentId;
-
-			private String dnis;
-
-			private Integer endReason;
-
-			private String extAttrs;
-
-			private Long gmtCreate;
-
-			private Long gmtModified;
-
-			private Integer id;
-
-			private Long memberId;
-
-			private String memberName;
-
-			private Integer outboundNum;
+			private Integer skillGroup;
 
 			private Long outboundTaskId;
 
 			private Integer priority;
 
-			private String retryTime;
+			private Integer outboundNum;
 
-			private Long servicerId;
+			private Long gmtModified;
+
+			private Long memberId;
+
+			private Long buId;
+
+			private Long gmtCreate;
+
+			private Integer endReason;
 
 			private String servicerName;
 
-			private Integer skillGroup;
+			private String dnis;
 
-			private Integer status;
+			private String extAttrs;
 
-			public String getAni() {
-				return this.ani;
+			private Integer id;
+
+			private Long departmentId;
+
+			private String retryTime;
+
+			private String memberName;
+
+			private Long servicerId;
+
+			private String ani;
+
+			public Integer getStatus() {
+				return this.status;
 			}
 
-			public void setAni(String ani) {
-				this.ani = ani;
+			public void setStatus(Integer status) {
+				this.status = status;
 			}
 
-			public Long getBuId() {
-				return this.buId;
+			public Integer getSkillGroup() {
+				return this.skillGroup;
 			}
 
-			public void setBuId(Long buId) {
-				this.buId = buId;
-			}
-
-			public Long getDepartmentId() {
-				return this.departmentId;
-			}
-
-			public void setDepartmentId(Long departmentId) {
-				this.departmentId = departmentId;
-			}
-
-			public String getDnis() {
-				return this.dnis;
-			}
-
-			public void setDnis(String dnis) {
-				this.dnis = dnis;
-			}
-
-			public Integer getEndReason() {
-				return this.endReason;
-			}
-
-			public void setEndReason(Integer endReason) {
-				this.endReason = endReason;
-			}
-
-			public String getExtAttrs() {
-				return this.extAttrs;
-			}
-
-			public void setExtAttrs(String extAttrs) {
-				this.extAttrs = extAttrs;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
-			}
-
-			public Long getMemberId() {
-				return this.memberId;
-			}
-
-			public void setMemberId(Long memberId) {
-				this.memberId = memberId;
-			}
-
-			public String getMemberName() {
-				return this.memberName;
-			}
-
-			public void setMemberName(String memberName) {
-				this.memberName = memberName;
-			}
-
-			public Integer getOutboundNum() {
-				return this.outboundNum;
-			}
-
-			public void setOutboundNum(Integer outboundNum) {
-				this.outboundNum = outboundNum;
+			public void setSkillGroup(Integer skillGroup) {
+				this.skillGroup = skillGroup;
 			}
 
 			public Long getOutboundTaskId() {
@@ -279,20 +199,52 @@ public class QueryTaskDetailResponse extends AcsResponse {
 				this.priority = priority;
 			}
 
-			public String getRetryTime() {
-				return this.retryTime;
+			public Integer getOutboundNum() {
+				return this.outboundNum;
 			}
 
-			public void setRetryTime(String retryTime) {
-				this.retryTime = retryTime;
+			public void setOutboundNum(Integer outboundNum) {
+				this.outboundNum = outboundNum;
 			}
 
-			public Long getServicerId() {
-				return this.servicerId;
+			public Long getGmtModified() {
+				return this.gmtModified;
 			}
 
-			public void setServicerId(Long servicerId) {
-				this.servicerId = servicerId;
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
+			}
+
+			public Long getMemberId() {
+				return this.memberId;
+			}
+
+			public void setMemberId(Long memberId) {
+				this.memberId = memberId;
+			}
+
+			public Long getBuId() {
+				return this.buId;
+			}
+
+			public void setBuId(Long buId) {
+				this.buId = buId;
+			}
+
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
+			public Integer getEndReason() {
+				return this.endReason;
+			}
+
+			public void setEndReason(Integer endReason) {
+				this.endReason = endReason;
 			}
 
 			public String getServicerName() {
@@ -303,20 +255,68 @@ public class QueryTaskDetailResponse extends AcsResponse {
 				this.servicerName = servicerName;
 			}
 
-			public Integer getSkillGroup() {
-				return this.skillGroup;
+			public String getDnis() {
+				return this.dnis;
 			}
 
-			public void setSkillGroup(Integer skillGroup) {
-				this.skillGroup = skillGroup;
+			public void setDnis(String dnis) {
+				this.dnis = dnis;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public String getExtAttrs() {
+				return this.extAttrs;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setExtAttrs(String extAttrs) {
+				this.extAttrs = extAttrs;
+			}
+
+			public Integer getId() {
+				return this.id;
+			}
+
+			public void setId(Integer id) {
+				this.id = id;
+			}
+
+			public Long getDepartmentId() {
+				return this.departmentId;
+			}
+
+			public void setDepartmentId(Long departmentId) {
+				this.departmentId = departmentId;
+			}
+
+			public String getRetryTime() {
+				return this.retryTime;
+			}
+
+			public void setRetryTime(String retryTime) {
+				this.retryTime = retryTime;
+			}
+
+			public String getMemberName() {
+				return this.memberName;
+			}
+
+			public void setMemberName(String memberName) {
+				this.memberName = memberName;
+			}
+
+			public Long getServicerId() {
+				return this.servicerId;
+			}
+
+			public void setServicerId(Long servicerId) {
+				this.servicerId = servicerId;
+			}
+
+			public String getAni() {
+				return this.ani;
+			}
+
+			public void setAni(String ani) {
+				this.ani = ani;
 			}
 		}
 	}

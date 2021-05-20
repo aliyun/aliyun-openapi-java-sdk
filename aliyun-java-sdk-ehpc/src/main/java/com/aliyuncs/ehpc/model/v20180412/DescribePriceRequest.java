@@ -55,6 +55,7 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 				putQueryParameter("Commodities." + (depth1 + 1) + ".NodeType" , commoditiess.get(depth1).getNodeType());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".SystemDiskCategory" , commoditiess.get(depth1).getSystemDiskCategory());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".InternetChargeType" , commoditiess.get(depth1).getInternetChargeType());
+				putQueryParameter("Commodities." + (depth1 + 1) + ".SystemDiskPerformanceLevel" , commoditiess.get(depth1).getSystemDiskPerformanceLevel());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".SystemDiskSize" , commoditiess.get(depth1).getSystemDiskSize());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".InternetMaxBandWidthOut" , commoditiess.get(depth1).getInternetMaxBandWidthOut());
 				putQueryParameter("Commodities." + (depth1 + 1) + ".InstanceType" , commoditiess.get(depth1).getInstanceType());
@@ -108,6 +109,8 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 		private String internetChargeType;
 
+		private String systemDiskPerformanceLevel;
+
 		private Integer systemDiskSize;
 
 		private Integer internetMaxBandWidthOut;
@@ -154,6 +157,14 @@ public class DescribePriceRequest extends RpcAcsRequest<DescribePriceResponse> {
 
 		public void setInternetChargeType(String internetChargeType) {
 			this.internetChargeType = internetChargeType;
+		}
+
+		public String getSystemDiskPerformanceLevel() {
+			return this.systemDiskPerformanceLevel;
+		}
+
+		public void setSystemDiskPerformanceLevel(String systemDiskPerformanceLevel) {
+			this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
 		}
 
 		public Integer getSystemDiskSize() {

@@ -72,6 +72,8 @@ public class ElementSmartVerifyResponse extends AcsResponse {
 
 		private String materialInfo;
 
+		private String certifyId;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -94,6 +96,14 @@ public class ElementSmartVerifyResponse extends AcsResponse {
 
 		public void setMaterialInfo(String materialInfo) {
 			this.materialInfo = materialInfo;
+		}
+
+		public String getCertifyId() {
+			return this.certifyId;
+		}
+
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
 		}
 	}
 

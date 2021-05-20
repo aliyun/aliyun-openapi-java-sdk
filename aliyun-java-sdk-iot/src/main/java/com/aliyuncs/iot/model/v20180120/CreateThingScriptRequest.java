@@ -33,7 +33,7 @@ public class CreateThingScriptRequest extends RpcAcsRequest<CreateThingScriptRes
 
 	private String scriptContent;
 	public CreateThingScriptRequest() {
-		super("Iot", "2018-01-20", "CreateThingScript");
+		super("Iot", "2018-01-20", "CreateThingScript", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

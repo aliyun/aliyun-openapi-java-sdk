@@ -33,7 +33,7 @@ public class UpdateDeploymentDesiredStateRequest extends RoaAcsRequest<UpdateDep
 
 	private String namespace;
 	public UpdateDeploymentDesiredStateRequest() {
-		super("ververica", "2020-05-01", "UpdateDeploymentDesiredState", "ververica");
+		super("ververica", "2020-05-01", "UpdateDeploymentDesiredState");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments/[deploymentId]/state");
 		setMethod(MethodType.PUT);
 		try {

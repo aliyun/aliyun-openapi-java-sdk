@@ -29,8 +29,8 @@ public class VerifyFaceMaskResponseUnmarshaller {
 		verifyFaceMaskResponse.setRequestId(_ctx.stringValue("VerifyFaceMaskResponse.RequestId"));
 
 		Data data = new Data();
-		data.setConfidence(_ctx.floatValue("VerifyFaceMaskResponse.Data.Confidence"));
 		data.setMask(_ctx.integerValue("VerifyFaceMaskResponse.Data.Mask"));
+		data.setConfidence(_ctx.floatValue("VerifyFaceMaskResponse.Data.Confidence"));
 		data.setMaskRef(_ctx.integerValue("VerifyFaceMaskResponse.Data.MaskRef"));
 
 		List<Float> thresholds = new ArrayList<Float>();

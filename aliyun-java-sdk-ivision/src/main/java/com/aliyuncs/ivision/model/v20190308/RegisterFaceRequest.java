@@ -33,7 +33,7 @@ public class RegisterFaceRequest extends RpcAcsRequest<RegisterFaceResponse> {
 
 	private Long ownerId;
 	public RegisterFaceRequest() {
-		super("ivision", "2019-03-08", "RegisterFace", "ivision");
+		super("ivision", "2019-03-08", "RegisterFace");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

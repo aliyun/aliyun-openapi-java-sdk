@@ -28,7 +28,7 @@ public class DeleteVmRequest extends RpcAcsRequest<DeleteVmResponse> {
 
 	private String workloadUuid;
 	public DeleteVmRequest() {
-		super("Ens", "2017-11-10", "DeleteVm");
+		super("Ens", "2017-11-10", "DeleteVm", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -24,12 +24,25 @@ import com.aliyuncs.http.MethodType;
 public class DescribeGeoipInstanceDataInfosRequest extends RpcAcsRequest<DescribeGeoipInstanceDataInfosResponse> {
 	   
 
+	private String locationDataType;
+
 	private String instanceId;
 
 	private String lang;
 	public DescribeGeoipInstanceDataInfosRequest() {
 		super("geoip", "2020-01-01", "DescribeGeoipInstanceDataInfos", "geoip");
 		setMethod(MethodType.POST);
+	}
+
+	public String getLocationDataType() {
+		return this.locationDataType;
+	}
+
+	public void setLocationDataType(String locationDataType) {
+		this.locationDataType = locationDataType;
+		if(locationDataType != null){
+			putQueryParameter("LocationDataType", locationDataType);
+		}
 	}
 
 	public String getInstanceId() {

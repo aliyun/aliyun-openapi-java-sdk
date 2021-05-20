@@ -33,7 +33,7 @@ public class ListTablesRequest extends RoaAcsRequest<ListTablesResponse> {
 
 	private String namespace;
 	public ListTablesRequest() {
-		super("ververica", "2020-05-01", "ListTables", "ververica");
+		super("ververica", "2020-05-01", "ListTables");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:listTables");
 		setMethod(MethodType.GET);
 		try {

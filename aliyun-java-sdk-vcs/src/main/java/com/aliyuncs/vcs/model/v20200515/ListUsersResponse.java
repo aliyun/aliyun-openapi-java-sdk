@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUsersResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListUsersResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,23 +67,15 @@ public class ListUsersResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long pageNumber;
-
 		private Long pageSize;
 
-		private Long success;
+		private Long pageNumber;
 
 		private Long total;
 
+		private Long success;
+
 		private List<RecordsItem> records;
-
-		public Long getPageNumber() {
-			return this.pageNumber;
-		}
-
-		public void setPageNumber(Long pageNumber) {
-			this.pageNumber = pageNumber;
-		}
 
 		public Long getPageSize() {
 			return this.pageSize;
@@ -93,12 +85,12 @@ public class ListUsersResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Long getSuccess() {
-			return this.success;
+		public Long getPageNumber() {
+			return this.pageNumber;
 		}
 
-		public void setSuccess(Long success) {
-			this.success = success;
+		public void setPageNumber(Long pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public Long getTotal() {
@@ -107,6 +99,14 @@ public class ListUsersResponse extends AcsResponse {
 
 		public void setTotal(Long total) {
 			this.total = total;
+		}
+
+		public Long getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Long success) {
+			this.success = success;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -119,76 +119,44 @@ public class ListUsersResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private Integer userGroupId;
+			private String userName;
 
-			private String age;
-
-			private String attachment;
-
-			private String bizId;
-
-			private String faceImageUrl;
-
-			private String gender;
+			private String personId;
 
 			private String idNumber;
 
 			private Integer userId;
 
-			private String userName;
-
-			private String isvSubId;
+			private Integer userGroupId;
 
 			private String matchingRate;
 
-			private String personId;
+			private String isvSubId;
 
-			public Integer getUserGroupId() {
-				return this.userGroupId;
+			private String attachment;
+
+			private String gender;
+
+			private String bizId;
+
+			private String age;
+
+			private String faceImageUrl;
+
+			public String getUserName() {
+				return this.userName;
 			}
 
-			public void setUserGroupId(Integer userGroupId) {
-				this.userGroupId = userGroupId;
+			public void setUserName(String userName) {
+				this.userName = userName;
 			}
 
-			public String getAge() {
-				return this.age;
+			public String getPersonId() {
+				return this.personId;
 			}
 
-			public void setAge(String age) {
-				this.age = age;
-			}
-
-			public String getAttachment() {
-				return this.attachment;
-			}
-
-			public void setAttachment(String attachment) {
-				this.attachment = attachment;
-			}
-
-			public String getBizId() {
-				return this.bizId;
-			}
-
-			public void setBizId(String bizId) {
-				this.bizId = bizId;
-			}
-
-			public String getFaceImageUrl() {
-				return this.faceImageUrl;
-			}
-
-			public void setFaceImageUrl(String faceImageUrl) {
-				this.faceImageUrl = faceImageUrl;
-			}
-
-			public String getGender() {
-				return this.gender;
-			}
-
-			public void setGender(String gender) {
-				this.gender = gender;
+			public void setPersonId(String personId) {
+				this.personId = personId;
 			}
 
 			public String getIdNumber() {
@@ -207,20 +175,12 @@ public class ListUsersResponse extends AcsResponse {
 				this.userId = userId;
 			}
 
-			public String getUserName() {
-				return this.userName;
+			public Integer getUserGroupId() {
+				return this.userGroupId;
 			}
 
-			public void setUserName(String userName) {
-				this.userName = userName;
-			}
-
-			public String getIsvSubId() {
-				return this.isvSubId;
-			}
-
-			public void setIsvSubId(String isvSubId) {
-				this.isvSubId = isvSubId;
+			public void setUserGroupId(Integer userGroupId) {
+				this.userGroupId = userGroupId;
 			}
 
 			public String getMatchingRate() {
@@ -231,12 +191,52 @@ public class ListUsersResponse extends AcsResponse {
 				this.matchingRate = matchingRate;
 			}
 
-			public String getPersonId() {
-				return this.personId;
+			public String getIsvSubId() {
+				return this.isvSubId;
 			}
 
-			public void setPersonId(String personId) {
-				this.personId = personId;
+			public void setIsvSubId(String isvSubId) {
+				this.isvSubId = isvSubId;
+			}
+
+			public String getAttachment() {
+				return this.attachment;
+			}
+
+			public void setAttachment(String attachment) {
+				this.attachment = attachment;
+			}
+
+			public String getGender() {
+				return this.gender;
+			}
+
+			public void setGender(String gender) {
+				this.gender = gender;
+			}
+
+			public String getBizId() {
+				return this.bizId;
+			}
+
+			public void setBizId(String bizId) {
+				this.bizId = bizId;
+			}
+
+			public String getAge() {
+				return this.age;
+			}
+
+			public void setAge(String age) {
+				this.age = age;
+			}
+
+			public String getFaceImageUrl() {
+				return this.faceImageUrl;
+			}
+
+			public void setFaceImageUrl(String faceImageUrl) {
+				this.faceImageUrl = faceImageUrl;
 			}
 		}
 	}

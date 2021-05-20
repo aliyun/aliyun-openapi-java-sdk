@@ -82,7 +82,7 @@ public class RequestPasterResponse extends AcsResponse {
 
 		private String downloadUrl;
 
-		private Map<Object,Object> config;
+		private Map<Object,Object> configs;
 
 		public String getResourceUuid() {
 			return this.resourceUuid;
@@ -100,12 +100,12 @@ public class RequestPasterResponse extends AcsResponse {
 			this.downloadUrl = downloadUrl;
 		}
 
-		public Map<Object,Object> getConfig() {
-			return this.config;
+		public Map<Object,Object> getConfigs() {
+			return this.configs;
 		}
 
-		public void setConfig(Map<Object,Object> config) {
-			this.config = config;
+		public void setConfigs(Map<Object,Object> configs) {
+			this.configs = configs;
 		}
 	}
 

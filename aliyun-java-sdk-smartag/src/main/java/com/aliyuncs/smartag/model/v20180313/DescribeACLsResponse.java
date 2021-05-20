@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeACLsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Acl> acls;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeACLsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeACLsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Acl> getAcls() {
@@ -77,11 +77,19 @@ public class DescribeACLsResponse extends AcsResponse {
 
 	public static class Acl {
 
+		private String sagCount;
+
 		private String aclId;
 
 		private String name;
 
-		private String sagCount;
+		public String getSagCount() {
+			return this.sagCount;
+		}
+
+		public void setSagCount(String sagCount) {
+			this.sagCount = sagCount;
+		}
 
 		public String getAclId() {
 			return this.aclId;
@@ -97,14 +105,6 @@ public class DescribeACLsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getSagCount() {
-			return this.sagCount;
-		}
-
-		public void setSagCount(String sagCount) {
-			this.sagCount = sagCount;
 		}
 	}
 

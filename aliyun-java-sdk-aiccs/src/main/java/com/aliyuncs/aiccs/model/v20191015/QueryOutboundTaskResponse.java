@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryOutboundTaskResponse extends AcsResponse {
 
-	private String code;
-
 	private String requestId;
-
-	private String success;
 
 	private String message;
 
 	private String httpStatusCode;
 
+	private String code;
+
+	private String success;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,14 +43,6 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -75,6 +59,22 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 
 	public void setHttpStatusCode(String httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public Data getData() {
@@ -129,152 +129,56 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 
 		public static class ListItem {
 
-			private Long id;
-
-			private Long gmtCreate;
-
-			private Long gmtModified;
-
-			private String name;
-
-			private String description;
-
-			private String startDate;
-
-			private String endDate;
-
-			private String startTime;
-
-			private String endTime;
-
-			private Integer retryTime;
-
-			private Integer retryInterval;
-
-			private Long skillGroup;
-
-			private String callerNum;
+			private String groupName;
 
 			private Integer status;
 
-			private String extAttrs;
+			private Long skillGroup;
 
-			private String groupName;
+			private String description;
 
-			private Integer model;
+			private String endTime;
+
+			private String startTime;
+
+			private Long gmtModified;
 
 			private String creator;
 
-			private String modifier;
+			private String endDate;
+
+			private String name;
+
+			private String callerNum;
+
+			private String startDate;
 
 			private Long buId;
 
+			private Long gmtCreate;
+
 			private Integer type;
+
+			private String extAttrs;
+
+			private Integer model;
+
+			private Long id;
 
 			private Long departmentId;
 
-			public Long getId() {
-				return this.id;
+			private Integer retryInterval;
+
+			private Integer retryTime;
+
+			private String modifier;
+
+			public String getGroupName() {
+				return this.groupName;
 			}
 
-			public void setId(Long id) {
-				this.id = id;
-			}
-
-			public Long getGmtCreate() {
-				return this.gmtCreate;
-			}
-
-			public void setGmtCreate(Long gmtCreate) {
-				this.gmtCreate = gmtCreate;
-			}
-
-			public Long getGmtModified() {
-				return this.gmtModified;
-			}
-
-			public void setGmtModified(Long gmtModified) {
-				this.gmtModified = gmtModified;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getStartDate() {
-				return this.startDate;
-			}
-
-			public void setStartDate(String startDate) {
-				this.startDate = startDate;
-			}
-
-			public String getEndDate() {
-				return this.endDate;
-			}
-
-			public void setEndDate(String endDate) {
-				this.endDate = endDate;
-			}
-
-			public String getStartTime() {
-				return this.startTime;
-			}
-
-			public void setStartTime(String startTime) {
-				this.startTime = startTime;
-			}
-
-			public String getEndTime() {
-				return this.endTime;
-			}
-
-			public void setEndTime(String endTime) {
-				this.endTime = endTime;
-			}
-
-			public Integer getRetryTime() {
-				return this.retryTime;
-			}
-
-			public void setRetryTime(Integer retryTime) {
-				this.retryTime = retryTime;
-			}
-
-			public Integer getRetryInterval() {
-				return this.retryInterval;
-			}
-
-			public void setRetryInterval(Integer retryInterval) {
-				this.retryInterval = retryInterval;
-			}
-
-			public Long getSkillGroup() {
-				return this.skillGroup;
-			}
-
-			public void setSkillGroup(Long skillGroup) {
-				this.skillGroup = skillGroup;
-			}
-
-			public String getCallerNum() {
-				return this.callerNum;
-			}
-
-			public void setCallerNum(String callerNum) {
-				this.callerNum = callerNum;
+			public void setGroupName(String groupName) {
+				this.groupName = groupName;
 			}
 
 			public Integer getStatus() {
@@ -285,28 +189,44 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 				this.status = status;
 			}
 
-			public String getExtAttrs() {
-				return this.extAttrs;
+			public Long getSkillGroup() {
+				return this.skillGroup;
 			}
 
-			public void setExtAttrs(String extAttrs) {
-				this.extAttrs = extAttrs;
+			public void setSkillGroup(Long skillGroup) {
+				this.skillGroup = skillGroup;
 			}
 
-			public String getGroupName() {
-				return this.groupName;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setGroupName(String groupName) {
-				this.groupName = groupName;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
-			public Integer getModel() {
-				return this.model;
+			public String getEndTime() {
+				return this.endTime;
 			}
 
-			public void setModel(Integer model) {
-				this.model = model;
+			public void setEndTime(String endTime) {
+				this.endTime = endTime;
+			}
+
+			public String getStartTime() {
+				return this.startTime;
+			}
+
+			public void setStartTime(String startTime) {
+				this.startTime = startTime;
+			}
+
+			public Long getGmtModified() {
+				return this.gmtModified;
+			}
+
+			public void setGmtModified(Long gmtModified) {
+				this.gmtModified = gmtModified;
 			}
 
 			public String getCreator() {
@@ -317,12 +237,36 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 				this.creator = creator;
 			}
 
-			public String getModifier() {
-				return this.modifier;
+			public String getEndDate() {
+				return this.endDate;
 			}
 
-			public void setModifier(String modifier) {
-				this.modifier = modifier;
+			public void setEndDate(String endDate) {
+				this.endDate = endDate;
+			}
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getCallerNum() {
+				return this.callerNum;
+			}
+
+			public void setCallerNum(String callerNum) {
+				this.callerNum = callerNum;
+			}
+
+			public String getStartDate() {
+				return this.startDate;
+			}
+
+			public void setStartDate(String startDate) {
+				this.startDate = startDate;
 			}
 
 			public Long getBuId() {
@@ -333,6 +277,14 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 				this.buId = buId;
 			}
 
+			public Long getGmtCreate() {
+				return this.gmtCreate;
+			}
+
+			public void setGmtCreate(Long gmtCreate) {
+				this.gmtCreate = gmtCreate;
+			}
+
 			public Integer getType() {
 				return this.type;
 			}
@@ -341,12 +293,60 @@ public class QueryOutboundTaskResponse extends AcsResponse {
 				this.type = type;
 			}
 
+			public String getExtAttrs() {
+				return this.extAttrs;
+			}
+
+			public void setExtAttrs(String extAttrs) {
+				this.extAttrs = extAttrs;
+			}
+
+			public Integer getModel() {
+				return this.model;
+			}
+
+			public void setModel(Integer model) {
+				this.model = model;
+			}
+
+			public Long getId() {
+				return this.id;
+			}
+
+			public void setId(Long id) {
+				this.id = id;
+			}
+
 			public Long getDepartmentId() {
 				return this.departmentId;
 			}
 
 			public void setDepartmentId(Long departmentId) {
 				this.departmentId = departmentId;
+			}
+
+			public Integer getRetryInterval() {
+				return this.retryInterval;
+			}
+
+			public void setRetryInterval(Integer retryInterval) {
+				this.retryInterval = retryInterval;
+			}
+
+			public Integer getRetryTime() {
+				return this.retryTime;
+			}
+
+			public void setRetryTime(Integer retryTime) {
+				this.retryTime = retryTime;
+			}
+
+			public String getModifier() {
+				return this.modifier;
+			}
+
+			public void setModifier(String modifier) {
+				this.modifier = modifier;
 			}
 		}
 	}

@@ -28,7 +28,7 @@ public class DescribeEpnMeasurementDataRequest extends RpcAcsRequest<DescribeEpn
 
 	private String endDate;
 	public DescribeEpnMeasurementDataRequest() {
-		super("Ens", "2017-11-10", "DescribeEpnMeasurementData");
+		super("Ens", "2017-11-10", "DescribeEpnMeasurementData", "ens");
 		setMethod(MethodType.POST);
 	}
 

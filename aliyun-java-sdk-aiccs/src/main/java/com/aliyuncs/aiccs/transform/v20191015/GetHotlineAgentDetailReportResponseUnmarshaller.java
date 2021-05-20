@@ -29,14 +29,14 @@ public class GetHotlineAgentDetailReportResponseUnmarshaller {
 	public static GetHotlineAgentDetailReportResponse unmarshall(GetHotlineAgentDetailReportResponse getHotlineAgentDetailReportResponse, UnmarshallerContext _ctx) {
 		
 		getHotlineAgentDetailReportResponse.setRequestId(_ctx.stringValue("GetHotlineAgentDetailReportResponse.RequestId"));
-		getHotlineAgentDetailReportResponse.setCode(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Code"));
 		getHotlineAgentDetailReportResponse.setMessage(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Message"));
+		getHotlineAgentDetailReportResponse.setCode(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Code"));
 		getHotlineAgentDetailReportResponse.setSuccess(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Success"));
 
 		Data data = new Data();
-		data.setPage(_ctx.integerValue("GetHotlineAgentDetailReportResponse.Data.Page"));
 		data.setPageSize(_ctx.integerValue("GetHotlineAgentDetailReportResponse.Data.PageSize"));
 		data.setTotal(_ctx.integerValue("GetHotlineAgentDetailReportResponse.Data.Total"));
+		data.setPage(_ctx.integerValue("GetHotlineAgentDetailReportResponse.Data.Page"));
 
 		List<Map<Object, Object>> rows = _ctx.listMapValue("GetHotlineAgentDetailReportResponse.Data.Rows");
 		data.setRows(rows);
@@ -44,8 +44,8 @@ public class GetHotlineAgentDetailReportResponseUnmarshaller {
 		List<ColumnsItem> columns = new ArrayList<ColumnsItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetHotlineAgentDetailReportResponse.Data.Columns.Length"); i++) {
 			ColumnsItem columnsItem = new ColumnsItem();
-			columnsItem.setKey(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Data.Columns["+ i +"].Key"));
 			columnsItem.setTitle(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Data.Columns["+ i +"].Title"));
+			columnsItem.setKey(_ctx.stringValue("GetHotlineAgentDetailReportResponse.Data.Columns["+ i +"].Key"));
 
 			columns.add(columnsItem);
 		}

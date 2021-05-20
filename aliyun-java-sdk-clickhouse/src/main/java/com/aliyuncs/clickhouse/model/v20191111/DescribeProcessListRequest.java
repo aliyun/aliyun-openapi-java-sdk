@@ -49,7 +49,7 @@ public class DescribeProcessListRequest extends RpcAcsRequest<DescribeProcessLis
 
 	private Long ownerId;
 	public DescribeProcessListRequest() {
-		super("clickhouse", "2019-11-11", "DescribeProcessList", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeProcessList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

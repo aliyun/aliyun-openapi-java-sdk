@@ -27,7 +27,7 @@ public class UploadImageRequest extends RpcAcsRequest<UploadImageResponse> {
 
 	private String imageUrl;
 	public UploadImageRequest() {
-		super("Vcs", "2020-05-15", "UploadImage", "vcs");
+		super("Vcs", "2020-05-15", "UploadImage");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -25,6 +25,8 @@ import com.aliyuncs.cloudauth.Endpoint;
 public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyResponse> {
 	   
 
+	private String idName;
+
 	private String userId;
 
 	private String certifyId;
@@ -53,6 +55,8 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 
 	private String mobile;
 
+	private String idNo;
+
 	private Long sceneId;
 
 	private String callbackToken;
@@ -67,6 +71,17 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIdName() {
+		return this.idName;
+	}
+
+	public void setIdName(String idName) {
+		this.idName = idName;
+		if(idName != null){
+			putBodyParameter("IdName", idName);
+		}
 	}
 
 	public String getUserId() {
@@ -220,6 +235,17 @@ public class InitSmartVerifyRequest extends RpcAcsRequest<InitSmartVerifyRespons
 		this.mobile = mobile;
 		if(mobile != null){
 			putBodyParameter("Mobile", mobile);
+		}
+	}
+
+	public String getIdNo() {
+		return this.idNo;
+	}
+
+	public void setIdNo(String idNo) {
+		this.idNo = idNo;
+		if(idNo != null){
+			putBodyParameter("IdNo", idNo);
 		}
 	}
 

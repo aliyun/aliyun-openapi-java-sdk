@@ -24,6 +24,7 @@ public class ExecuteSqlScriptResponseUnmarshaller {
 		
 		executeSqlScriptResponse.setRequestId(_ctx.stringValue("ExecuteSqlScriptResponse.requestId"));
 		executeSqlScriptResponse.setData(_ctx.stringValue("ExecuteSqlScriptResponse.data"));
+		executeSqlScriptResponse.setSuccess(_ctx.booleanValue("ExecuteSqlScriptResponse.success"));
 	 
 	 	return executeSqlScriptResponse;
 	}

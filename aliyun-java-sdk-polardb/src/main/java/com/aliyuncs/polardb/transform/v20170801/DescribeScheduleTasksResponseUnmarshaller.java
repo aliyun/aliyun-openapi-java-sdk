@@ -27,6 +27,7 @@ public class DescribeScheduleTasksResponseUnmarshaller {
 
 	public static DescribeScheduleTasksResponse unmarshall(DescribeScheduleTasksResponse describeScheduleTasksResponse, UnmarshallerContext _ctx) {
 		
+		describeScheduleTasksResponse.setRequestId(_ctx.stringValue("DescribeScheduleTasksResponse.RequestId"));
 		describeScheduleTasksResponse.setMessage(_ctx.stringValue("DescribeScheduleTasksResponse.Message"));
 		describeScheduleTasksResponse.setCode(_ctx.stringValue("DescribeScheduleTasksResponse.Code"));
 		describeScheduleTasksResponse.setSuccess(_ctx.booleanValue("DescribeScheduleTasksResponse.Success"));

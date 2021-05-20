@@ -27,6 +27,7 @@ public class GetNumLocationResponseUnmarshaller {
 		getNumLocationResponse.setData(_ctx.stringValue("GetNumLocationResponse.Data"));
 		getNumLocationResponse.setCode(_ctx.stringValue("GetNumLocationResponse.Code"));
 		getNumLocationResponse.setSuccess(_ctx.booleanValue("GetNumLocationResponse.Success"));
+		getNumLocationResponse.setHttpStatusCode(_ctx.longValue("GetNumLocationResponse.HttpStatusCode"));
 	 
 	 	return getNumLocationResponse;
 	}

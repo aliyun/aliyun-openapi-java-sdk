@@ -23,9 +23,9 @@ public class TransferCallToSkillGroupResponseUnmarshaller {
 	public static TransferCallToSkillGroupResponse unmarshall(TransferCallToSkillGroupResponse transferCallToSkillGroupResponse, UnmarshallerContext _ctx) {
 		
 		transferCallToSkillGroupResponse.setRequestId(_ctx.stringValue("TransferCallToSkillGroupResponse.RequestId"));
-		transferCallToSkillGroupResponse.setSuccess(_ctx.booleanValue("TransferCallToSkillGroupResponse.Success"));
-		transferCallToSkillGroupResponse.setCode(_ctx.stringValue("TransferCallToSkillGroupResponse.Code"));
 		transferCallToSkillGroupResponse.setMessage(_ctx.stringValue("TransferCallToSkillGroupResponse.Message"));
+		transferCallToSkillGroupResponse.setCode(_ctx.stringValue("TransferCallToSkillGroupResponse.Code"));
+		transferCallToSkillGroupResponse.setSuccess(_ctx.booleanValue("TransferCallToSkillGroupResponse.Success"));
 	 
 	 	return transferCallToSkillGroupResponse;
 	}

@@ -1,3 +1,10 @@
+2021-04-22 Version: 4.24.0
+- AcceptInquiredSystemEvent adds Choice parameter.
+- DescribeInstanceHistoryEvents supports multiple resource types.
+
+2021-04-09 Version: 4.23.12
+- Add aliyun cloud assistant add lastHeartbeatTime.
+
 2021-03-31 Version: 4.23.11
 - Ecs support hibernation.
 - DescribeSnapshotGroups add ProgressStatus.

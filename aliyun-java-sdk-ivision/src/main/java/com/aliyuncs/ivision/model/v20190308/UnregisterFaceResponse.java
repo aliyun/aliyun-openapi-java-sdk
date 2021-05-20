@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UnregisterFaceResponse extends AcsResponse {
 
+	private String faceToken;
+
 	private String requestId;
 
 	private String groupId;
 
-	private String faceToken;
+	public String getFaceToken() {
+		return this.faceToken;
+	}
+
+	public void setFaceToken(String faceToken) {
+		this.faceToken = faceToken;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class UnregisterFaceResponse extends AcsResponse {
 
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
-	}
-
-	public String getFaceToken() {
-		return this.faceToken;
-	}
-
-	public void setFaceToken(String faceToken) {
-		this.faceToken = faceToken;
 	}
 
 	@Override

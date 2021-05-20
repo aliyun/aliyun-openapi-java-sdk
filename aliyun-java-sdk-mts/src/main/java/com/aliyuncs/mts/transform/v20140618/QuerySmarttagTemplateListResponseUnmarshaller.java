@@ -32,12 +32,12 @@ public class QuerySmarttagTemplateListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QuerySmarttagTemplateListResponse.Templates.Length"); i++) {
 			Template template = new Template();
 			template.setAnalyseTypes(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].AnalyseTypes"));
-			template.setFaceCategoryIds(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].FaceCategoryIds"));
 			template.setIndustry(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].Industry"));
 			template.setIsDefault(_ctx.booleanValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].IsDefault"));
-			template.setScene(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].Scene"));
-			template.setTemplateId(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].TemplateId"));
 			template.setTemplateName(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].TemplateName"));
+			template.setTemplateId(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].TemplateId"));
+			template.setFaceCategoryIds(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].FaceCategoryIds"));
+			template.setScene(_ctx.stringValue("QuerySmarttagTemplateListResponse.Templates["+ i +"].Scene"));
 
 			templates.add(template);
 		}

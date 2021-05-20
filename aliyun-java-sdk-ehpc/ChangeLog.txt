@@ -1,3 +1,7 @@
+2021-05-18 Version: 1.14.2
+- Support MinCount for AddNodes.
+- Support HostNamePreffix and HostNameSuffix for ListNodes.
+
 2020-12-29 Version: 1.14.1
 - ListNodesNoPaging return with instance type.
 

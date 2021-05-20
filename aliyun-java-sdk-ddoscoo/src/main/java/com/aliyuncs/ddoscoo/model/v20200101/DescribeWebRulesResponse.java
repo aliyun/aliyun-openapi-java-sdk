@@ -71,6 +71,20 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		private Boolean http2Enable;
 
+		private Boolean http2HttpsEnable;
+
+		private Boolean https2HttpEnable;
+
+		private String policyMode;
+
+		private Boolean proxyEnabled;
+
+		private Boolean ssl13Enabled;
+
+		private Boolean punishStatus;
+
+		private Integer punishReason;
+
 		private String cname;
 
 		private String certName;
@@ -82,6 +96,8 @@ public class DescribeWebRulesResponse extends AcsResponse {
 		private List<String> whiteList;
 
 		private List<String> blackList;
+
+		private List<String> customCiphers;
 
 		public String getDomain() {
 			return this.domain;
@@ -139,6 +155,62 @@ public class DescribeWebRulesResponse extends AcsResponse {
 			this.http2Enable = http2Enable;
 		}
 
+		public Boolean getHttp2HttpsEnable() {
+			return this.http2HttpsEnable;
+		}
+
+		public void setHttp2HttpsEnable(Boolean http2HttpsEnable) {
+			this.http2HttpsEnable = http2HttpsEnable;
+		}
+
+		public Boolean getHttps2HttpEnable() {
+			return this.https2HttpEnable;
+		}
+
+		public void setHttps2HttpEnable(Boolean https2HttpEnable) {
+			this.https2HttpEnable = https2HttpEnable;
+		}
+
+		public String getPolicyMode() {
+			return this.policyMode;
+		}
+
+		public void setPolicyMode(String policyMode) {
+			this.policyMode = policyMode;
+		}
+
+		public Boolean getProxyEnabled() {
+			return this.proxyEnabled;
+		}
+
+		public void setProxyEnabled(Boolean proxyEnabled) {
+			this.proxyEnabled = proxyEnabled;
+		}
+
+		public Boolean getSsl13Enabled() {
+			return this.ssl13Enabled;
+		}
+
+		public void setSsl13Enabled(Boolean ssl13Enabled) {
+			this.ssl13Enabled = ssl13Enabled;
+		}
+
+		public Boolean getPunishStatus() {
+			return this.punishStatus;
+		}
+
+		public void setPunishStatus(Boolean punishStatus) {
+			this.punishStatus = punishStatus;
+		}
+
+		public Integer getPunishReason() {
+			return this.punishReason;
+		}
+
+		public void setPunishReason(Integer punishReason) {
+			this.punishReason = punishReason;
+		}
+
 		public String getCname() {
 			return this.cname;
 		}
@@ -185,6 +257,14 @@ public class DescribeWebRulesResponse extends AcsResponse {
 
 		public void setBlackList(List<String> blackList) {
 			this.blackList = blackList;
+		}
+
+		public List<String> getCustomCiphers() {
+			return this.customCiphers;
+		}
+
+		public void setCustomCiphers(List<String> customCiphers) {
+			this.customCiphers = customCiphers;
 		}
 
 		public static class ProxyConfig {

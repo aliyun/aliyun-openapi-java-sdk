@@ -36,11 +36,11 @@ public class DescribeEpnBandWidthDataResponseUnmarshaller {
 		List<BandWidthMonitorDataItem> bandWidthMonitorData = new ArrayList<BandWidthMonitorDataItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData.Length"); i++) {
 			BandWidthMonitorDataItem bandWidthMonitorDataItem = new BandWidthMonitorDataItem();
-			bandWidthMonitorDataItem.setUpBandWidth(_ctx.longValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].UpBandWidth"));
-			bandWidthMonitorDataItem.setInternetTX(_ctx.longValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetTX"));
 			bandWidthMonitorDataItem.setDownBandWidth(_ctx.longValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].DownBandWidth"));
 			bandWidthMonitorDataItem.setInternetRX(_ctx.longValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetRX"));
+			bandWidthMonitorDataItem.setInternetTX(_ctx.longValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].InternetTX"));
 			bandWidthMonitorDataItem.setTimeStamp(_ctx.stringValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].TimeStamp"));
+			bandWidthMonitorDataItem.setUpBandWidth(_ctx.longValue("DescribeEpnBandWidthDataResponse.MonitorData.BandWidthMonitorData["+ i +"].UpBandWidth"));
 
 			bandWidthMonitorData.add(bandWidthMonitorDataItem);
 		}

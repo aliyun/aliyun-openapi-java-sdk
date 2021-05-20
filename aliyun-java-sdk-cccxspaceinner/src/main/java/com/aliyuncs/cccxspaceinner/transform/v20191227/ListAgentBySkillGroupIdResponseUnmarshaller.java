@@ -27,18 +27,18 @@ public class ListAgentBySkillGroupIdResponseUnmarshaller {
 	public static ListAgentBySkillGroupIdResponse unmarshall(ListAgentBySkillGroupIdResponse listAgentBySkillGroupIdResponse, UnmarshallerContext _ctx) {
 		
 		listAgentBySkillGroupIdResponse.setRequestId(_ctx.stringValue("ListAgentBySkillGroupIdResponse.RequestId"));
-		listAgentBySkillGroupIdResponse.setSuccess(_ctx.booleanValue("ListAgentBySkillGroupIdResponse.Success"));
-		listAgentBySkillGroupIdResponse.setCode(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Code"));
 		listAgentBySkillGroupIdResponse.setMessage(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Message"));
+		listAgentBySkillGroupIdResponse.setCode(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Code"));
+		listAgentBySkillGroupIdResponse.setSuccess(_ctx.booleanValue("ListAgentBySkillGroupIdResponse.Success"));
 
 		List<Agents> data = new ArrayList<Agents>();
 		for (int i = 0; i < _ctx.lengthValue("ListAgentBySkillGroupIdResponse.Data.Length"); i++) {
 			Agents agents = new Agents();
-			agents.setTenantId(_ctx.longValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].TenantId"));
+			agents.setStatus(_ctx.integerValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].Status"));
+			agents.setDisplayName(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].DisplayName"));
 			agents.setAgentId(_ctx.longValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].AgentId"));
 			agents.setAccountName(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].AccountName"));
-			agents.setDisplayName(_ctx.stringValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].DisplayName"));
-			agents.setStatus(_ctx.integerValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].Status"));
+			agents.setTenantId(_ctx.longValue("ListAgentBySkillGroupIdResponse.Data["+ i +"].TenantId"));
 
 			data.add(agents);
 		}

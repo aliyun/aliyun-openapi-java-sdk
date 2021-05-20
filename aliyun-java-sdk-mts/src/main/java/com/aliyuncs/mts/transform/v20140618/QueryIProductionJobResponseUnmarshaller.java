@@ -23,14 +23,14 @@ public class QueryIProductionJobResponseUnmarshaller {
 	public static QueryIProductionJobResponse unmarshall(QueryIProductionJobResponse queryIProductionJobResponse, UnmarshallerContext _ctx) {
 		
 		queryIProductionJobResponse.setRequestId(_ctx.stringValue("QueryIProductionJobResponse.RequestId"));
-		queryIProductionJobResponse.setJobId(_ctx.stringValue("QueryIProductionJobResponse.JobId"));
 		queryIProductionJobResponse.setFunctionName(_ctx.stringValue("QueryIProductionJobResponse.FunctionName"));
 		queryIProductionJobResponse.setInput(_ctx.stringValue("QueryIProductionJobResponse.Input"));
-		queryIProductionJobResponse.setOutput(_ctx.stringValue("QueryIProductionJobResponse.Output"));
-		queryIProductionJobResponse.setJobParams(_ctx.stringValue("QueryIProductionJobResponse.JobParams"));
-		queryIProductionJobResponse.setPipelineId(_ctx.stringValue("QueryIProductionJobResponse.PipelineId"));
 		queryIProductionJobResponse.setUserData(_ctx.stringValue("QueryIProductionJobResponse.UserData"));
 		queryIProductionJobResponse.setState(_ctx.stringValue("QueryIProductionJobResponse.State"));
+		queryIProductionJobResponse.setOutput(_ctx.stringValue("QueryIProductionJobResponse.Output"));
+		queryIProductionJobResponse.setPipelineId(_ctx.stringValue("QueryIProductionJobResponse.PipelineId"));
+		queryIProductionJobResponse.setJobParams(_ctx.stringValue("QueryIProductionJobResponse.JobParams"));
+		queryIProductionJobResponse.setJobId(_ctx.stringValue("QueryIProductionJobResponse.JobId"));
 		queryIProductionJobResponse.setResult(_ctx.stringValue("QueryIProductionJobResponse.Result"));
 	 
 	 	return queryIProductionJobResponse;

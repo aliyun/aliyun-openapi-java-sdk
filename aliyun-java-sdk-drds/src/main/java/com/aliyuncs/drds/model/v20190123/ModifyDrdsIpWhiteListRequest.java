@@ -37,7 +37,7 @@ public class ModifyDrdsIpWhiteListRequest extends RpcAcsRequest<ModifyDrdsIpWhit
 
 	private String ipWhiteList;
 	public ModifyDrdsIpWhiteListRequest() {
-		super("Drds", "2019-01-23", "ModifyDrdsIpWhiteList");
+		super("Drds", "2019-01-23", "ModifyDrdsIpWhiteList", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

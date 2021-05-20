@@ -33,6 +33,8 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 	private List<K8sSecretsItem> k8sSecrets;
 
+	private List<ResultItem> result;
+
 	public Integer getCode() {
 		return this.code;
 	}
@@ -63,6 +65,14 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 	public void setK8sSecrets(List<K8sSecretsItem> k8sSecrets) {
 		this.k8sSecrets = k8sSecrets;
+	}
+
+	public List<ResultItem> getResult() {
+		return this.result;
+	}
+
+	public void setResult(List<ResultItem> result) {
+		this.result = result;
 	}
 
 	public static class K8sSecretsItem {
@@ -105,6 +115,158 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 		public void setType(String type) {
 			this.type = type;
+		}
+	}
+
+	public static class ResultItem {
+
+		private Integer total;
+
+		private List<SecretsItem> secrets;
+
+		public Integer getTotal() {
+			return this.total;
+		}
+
+		public void setTotal(Integer total) {
+			this.total = total;
+		}
+
+		public List<SecretsItem> getSecrets() {
+			return this.secrets;
+		}
+
+		public void setSecrets(List<SecretsItem> secrets) {
+			this.secrets = secrets;
+		}
+
+		public static class SecretsItem {
+
+			private String name;
+
+			private String namespace;
+
+			private String creationTime;
+
+			private String type;
+
+			private String clusterId;
+
+			private String clusterName;
+
+			private List<DataItem> data;
+
+			private List<RelatedAppsItem> relatedApps;
+
+			public String getName() {
+				return this.name;
+			}
+
+			public void setName(String name) {
+				this.name = name;
+			}
+
+			public String getNamespace() {
+				return this.namespace;
+			}
+
+			public void setNamespace(String namespace) {
+				this.namespace = namespace;
+			}
+
+			public String getCreationTime() {
+				return this.creationTime;
+			}
+
+			public void setCreationTime(String creationTime) {
+				this.creationTime = creationTime;
+			}
+
+			public String getType() {
+				return this.type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public String getClusterId() {
+				return this.clusterId;
+			}
+
+			public void setClusterId(String clusterId) {
+				this.clusterId = clusterId;
+			}
+
+			public String getClusterName() {
+				return this.clusterName;
+			}
+
+			public void setClusterName(String clusterName) {
+				this.clusterName = clusterName;
+			}
+
+			public List<DataItem> getData() {
+				return this.data;
+			}
+
+			public void setData(List<DataItem> data) {
+				this.data = data;
+			}
+
+			public List<RelatedAppsItem> getRelatedApps() {
+				return this.relatedApps;
+			}
+
+			public void setRelatedApps(List<RelatedAppsItem> relatedApps) {
+				this.relatedApps = relatedApps;
+			}
+
+			public static class DataItem {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
+			}
+
+			public static class RelatedAppsItem {
+
+				private String appName;
+
+				private String appId;
+
+				public String getAppName() {
+					return this.appName;
+				}
+
+				public void setAppName(String appName) {
+					this.appName = appName;
+				}
+
+				public String getAppId() {
+					return this.appId;
+				}
+
+				public void setAppId(String appId) {
+					this.appId = appId;
+				}
+			}
 		}
 	}
 

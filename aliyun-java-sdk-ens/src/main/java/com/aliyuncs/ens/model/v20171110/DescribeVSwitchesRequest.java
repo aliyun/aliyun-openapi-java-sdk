@@ -30,13 +30,15 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 
 	private String vSwitchId;
 
+	private String networkId;
+
 	private Integer pageNumber;
 
 	private Integer pageSize;
 
 	private String vSwitchName;
 	public DescribeVSwitchesRequest() {
-		super("Ens", "2017-11-10", "DescribeVSwitches");
+		super("Ens", "2017-11-10", "DescribeVSwitches", "ens");
 		setMethod(MethodType.POST);
 	}
 
@@ -70,6 +72,17 @@ public class DescribeVSwitchesRequest extends RpcAcsRequest<DescribeVSwitchesRes
 		this.vSwitchId = vSwitchId;
 		if(vSwitchId != null){
 			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
+	public String getNetworkId() {
+		return this.networkId;
+	}
+
+	public void setNetworkId(String networkId) {
+		this.networkId = networkId;
+		if(networkId != null){
+			putQueryParameter("NetworkId", networkId);
 		}
 	}
 

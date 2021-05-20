@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDeviceLiveUrlResponse extends AcsResponse {
 
-	private String code;
+	private Integer streamType;
 
 	private String message;
 
 	private String requestId;
 
-	private String url;
-
 	private String outProtocol;
 
-	private Integer streamType;
+	private String code;
 
-	public String getCode() {
-		return this.code;
+	private String url;
+
+	public Integer getStreamType() {
+		return this.streamType;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setStreamType(Integer streamType) {
+		this.streamType = streamType;
 	}
 
 	public String getMessage() {
@@ -60,14 +60,6 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
 	public String getOutProtocol() {
 		return this.outProtocol;
 	}
@@ -76,12 +68,20 @@ public class GetDeviceLiveUrlResponse extends AcsResponse {
 		this.outProtocol = outProtocol;
 	}
 
-	public Integer getStreamType() {
-		return this.streamType;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setStreamType(Integer streamType) {
-		this.streamType = streamType;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	@Override

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListUserGroupsResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private List<DataItem> data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListUserGroupsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<DataItem> getData() {
@@ -67,52 +67,28 @@ public class ListUserGroupsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String creator;
-
-		private String userGroupName;
-
-		private String isvSubId;
-
-		private Long userGroupId;
+		private Long parentUserGroupId;
 
 		private Long userCount;
 
+		private String userGroupName;
+
 		private String createTime;
+
+		private Long userGroupId;
 
 		private String updateTime;
 
-		private Long parentUserGroupId;
+		private String isvSubId;
 
-		public String getCreator() {
-			return this.creator;
+		private String creator;
+
+		public Long getParentUserGroupId() {
+			return this.parentUserGroupId;
 		}
 
-		public void setCreator(String creator) {
-			this.creator = creator;
-		}
-
-		public String getUserGroupName() {
-			return this.userGroupName;
-		}
-
-		public void setUserGroupName(String userGroupName) {
-			this.userGroupName = userGroupName;
-		}
-
-		public String getIsvSubId() {
-			return this.isvSubId;
-		}
-
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
-		}
-
-		public Long getUserGroupId() {
-			return this.userGroupId;
-		}
-
-		public void setUserGroupId(Long userGroupId) {
-			this.userGroupId = userGroupId;
+		public void setParentUserGroupId(Long parentUserGroupId) {
+			this.parentUserGroupId = parentUserGroupId;
 		}
 
 		public Long getUserCount() {
@@ -123,12 +99,28 @@ public class ListUserGroupsResponse extends AcsResponse {
 			this.userCount = userCount;
 		}
 
+		public String getUserGroupName() {
+			return this.userGroupName;
+		}
+
+		public void setUserGroupName(String userGroupName) {
+			this.userGroupName = userGroupName;
+		}
+
 		public String getCreateTime() {
 			return this.createTime;
 		}
 
 		public void setCreateTime(String createTime) {
 			this.createTime = createTime;
+		}
+
+		public Long getUserGroupId() {
+			return this.userGroupId;
+		}
+
+		public void setUserGroupId(Long userGroupId) {
+			this.userGroupId = userGroupId;
 		}
 
 		public String getUpdateTime() {
@@ -139,12 +131,20 @@ public class ListUserGroupsResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
-		public Long getParentUserGroupId() {
-			return this.parentUserGroupId;
+		public String getIsvSubId() {
+			return this.isvSubId;
 		}
 
-		public void setParentUserGroupId(Long parentUserGroupId) {
-			this.parentUserGroupId = parentUserGroupId;
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
+		}
+
+		public String getCreator() {
+			return this.creator;
+		}
+
+		public void setCreator(String creator) {
+			this.creator = creator;
 		}
 	}
 

@@ -33,7 +33,7 @@ public class DescribeSubscriptionInstanceAlertRequest extends RpcAcsRequest<Desc
 
 	private String accountId;
 	public DescribeSubscriptionInstanceAlertRequest() {
-		super("Dts", "2020-01-01", "DescribeSubscriptionInstanceAlert", "dts");
+		super("Dts", "2020-01-01", "DescribeSubscriptionInstanceAlert");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

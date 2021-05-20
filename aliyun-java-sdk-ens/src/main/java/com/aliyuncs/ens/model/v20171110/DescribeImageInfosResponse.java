@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeImageInfosResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
+	private String requestId;
+
 	private List<Image> images;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,6 +37,14 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Image> getImages() {
@@ -59,15 +59,15 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		private String description;
 
-		private String imageVersion;
+		private String imageId;
 
 		private String imageSize;
 
-		private String oSType;
-
-		private String imageId;
+		private String imageVersion;
 
 		private String oSName;
+
+		private String oSType;
 
 		public String getDescription() {
 			return this.description;
@@ -75,30 +75,6 @@ public class DescribeImageInfosResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
-		}
-
-		public String getImageVersion() {
-			return this.imageVersion;
-		}
-
-		public void setImageVersion(String imageVersion) {
-			this.imageVersion = imageVersion;
-		}
-
-		public String getImageSize() {
-			return this.imageSize;
-		}
-
-		public void setImageSize(String imageSize) {
-			this.imageSize = imageSize;
-		}
-
-		public String getOSType() {
-			return this.oSType;
-		}
-
-		public void setOSType(String oSType) {
-			this.oSType = oSType;
 		}
 
 		public String getImageId() {
@@ -109,12 +85,36 @@ public class DescribeImageInfosResponse extends AcsResponse {
 			this.imageId = imageId;
 		}
 
+		public String getImageSize() {
+			return this.imageSize;
+		}
+
+		public void setImageSize(String imageSize) {
+			this.imageSize = imageSize;
+		}
+
+		public String getImageVersion() {
+			return this.imageVersion;
+		}
+
+		public void setImageVersion(String imageVersion) {
+			this.imageVersion = imageVersion;
+		}
+
 		public String getOSName() {
 			return this.oSName;
 		}
 
 		public void setOSName(String oSName) {
 			this.oSName = oSName;
+		}
+
+		public String getOSType() {
+			return this.oSType;
+		}
+
+		public void setOSType(String oSType) {
+			this.oSType = oSType;
 		}
 	}
 

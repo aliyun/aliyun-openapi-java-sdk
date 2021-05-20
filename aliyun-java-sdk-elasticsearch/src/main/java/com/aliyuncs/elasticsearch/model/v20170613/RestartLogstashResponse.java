@@ -38,4 +38,9 @@ public class RestartLogstashResponse extends AcsResponse {
 	public RestartLogstashResponse getInstance(UnmarshallerContext context) {
 		return	RestartLogstashResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

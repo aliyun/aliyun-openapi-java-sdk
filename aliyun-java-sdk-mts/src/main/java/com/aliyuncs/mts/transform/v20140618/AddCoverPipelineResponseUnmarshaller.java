@@ -27,11 +27,11 @@ public class AddCoverPipelineResponseUnmarshaller {
 		addCoverPipelineResponse.setRequestId(_ctx.stringValue("AddCoverPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Priority"));
 		pipeline.setState(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.State"));
+		pipeline.setPriority(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Priority"));
 		pipeline.setRole(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Role"));
+		pipeline.setName(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Name"));
+		pipeline.setId(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.Id"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(_ctx.stringValue("AddCoverPipelineResponse.Pipeline.NotifyConfig.Topic"));

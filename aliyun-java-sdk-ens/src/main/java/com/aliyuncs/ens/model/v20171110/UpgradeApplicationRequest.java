@@ -30,7 +30,7 @@ public class UpgradeApplicationRequest extends RpcAcsRequest<UpgradeApplicationR
 
 	private String appId;
 	public UpgradeApplicationRequest() {
-		super("Ens", "2017-11-10", "UpgradeApplication");
+		super("Ens", "2017-11-10", "UpgradeApplication", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -23,11 +23,11 @@ public class CreateOfficeConversionTaskResponseUnmarshaller {
 	public static CreateOfficeConversionTaskResponse unmarshall(CreateOfficeConversionTaskResponse createOfficeConversionTaskResponse, UnmarshallerContext _ctx) {
 		
 		createOfficeConversionTaskResponse.setRequestId(_ctx.stringValue("CreateOfficeConversionTaskResponse.RequestId"));
-		createOfficeConversionTaskResponse.setTaskId(_ctx.stringValue("CreateOfficeConversionTaskResponse.TaskId"));
-		createOfficeConversionTaskResponse.setTgtLoc(_ctx.stringValue("CreateOfficeConversionTaskResponse.TgtLoc"));
 		createOfficeConversionTaskResponse.setStatus(_ctx.stringValue("CreateOfficeConversionTaskResponse.Status"));
-		createOfficeConversionTaskResponse.setCreateTime(_ctx.stringValue("CreateOfficeConversionTaskResponse.CreateTime"));
+		createOfficeConversionTaskResponse.setTaskId(_ctx.stringValue("CreateOfficeConversionTaskResponse.TaskId"));
 		createOfficeConversionTaskResponse.setPercent(_ctx.integerValue("CreateOfficeConversionTaskResponse.Percent"));
+		createOfficeConversionTaskResponse.setTgtLoc(_ctx.stringValue("CreateOfficeConversionTaskResponse.TgtLoc"));
+		createOfficeConversionTaskResponse.setCreateTime(_ctx.stringValue("CreateOfficeConversionTaskResponse.CreateTime"));
 	 
 	 	return createOfficeConversionTaskResponse;
 	}

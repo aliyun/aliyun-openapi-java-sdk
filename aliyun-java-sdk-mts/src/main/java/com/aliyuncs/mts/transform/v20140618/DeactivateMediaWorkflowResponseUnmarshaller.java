@@ -26,11 +26,11 @@ public class DeactivateMediaWorkflowResponseUnmarshaller {
 		deactivateMediaWorkflowResponse.setRequestId(_ctx.stringValue("DeactivateMediaWorkflowResponse.RequestId"));
 
 		MediaWorkflow mediaWorkflow = new MediaWorkflow();
+		mediaWorkflow.setCreationTime(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.CreationTime"));
 		mediaWorkflow.setMediaWorkflowId(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.MediaWorkflowId"));
+		mediaWorkflow.setState(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.State"));
 		mediaWorkflow.setName(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.Name"));
 		mediaWorkflow.setTopology(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.Topology"));
-		mediaWorkflow.setState(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.State"));
-		mediaWorkflow.setCreationTime(_ctx.stringValue("DeactivateMediaWorkflowResponse.MediaWorkflow.CreationTime"));
 		deactivateMediaWorkflowResponse.setMediaWorkflow(mediaWorkflow);
 	 
 	 	return deactivateMediaWorkflowResponse;

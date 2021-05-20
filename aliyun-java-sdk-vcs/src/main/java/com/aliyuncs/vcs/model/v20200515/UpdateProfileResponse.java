@@ -24,28 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateProfileResponse extends AcsResponse {
 
-	private String code;
-
-	private String data;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String data;
 
-	public String getCode() {
-		return this.code;
+	private String code;
+
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getData() {
-		return this.data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -56,12 +48,20 @@ public class UpdateProfileResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getData() {
+		return this.data;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

@@ -24,24 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateOfficeConversionTaskResponse extends AcsResponse {
 
-	private String requestId;
+	private String status;
 
 	private String taskId;
 
-	private String tgtLoc;
-
-	private String status;
-
-	private String createTime;
+	private String requestId;
 
 	private Integer percent;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String tgtLoc;
+
+	private String createTime;
+
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getTaskId() {
@@ -52,28 +52,12 @@ public class CreateOfficeConversionTaskResponse extends AcsResponse {
 		this.taskId = taskId;
 	}
 
-	public String getTgtLoc() {
-		return this.tgtLoc;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setTgtLoc(String tgtLoc) {
-		this.tgtLoc = tgtLoc;
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPercent() {
@@ -82,6 +66,22 @@ public class CreateOfficeConversionTaskResponse extends AcsResponse {
 
 	public void setPercent(Integer percent) {
 		this.percent = percent;
+	}
+
+	public String getTgtLoc() {
+		return this.tgtLoc;
+	}
+
+	public void setTgtLoc(String tgtLoc) {
+		this.tgtLoc = tgtLoc;
+	}
+
+	public String getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 
 	@Override

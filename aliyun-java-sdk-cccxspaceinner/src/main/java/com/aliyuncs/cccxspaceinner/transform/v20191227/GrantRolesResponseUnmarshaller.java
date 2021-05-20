@@ -23,9 +23,9 @@ public class GrantRolesResponseUnmarshaller {
 	public static GrantRolesResponse unmarshall(GrantRolesResponse grantRolesResponse, UnmarshallerContext _ctx) {
 		
 		grantRolesResponse.setRequestId(_ctx.stringValue("GrantRolesResponse.RequestId"));
+		grantRolesResponse.setMessage(_ctx.stringValue("GrantRolesResponse.Message"));
 		grantRolesResponse.setData(_ctx.integerValue("GrantRolesResponse.Data"));
 		grantRolesResponse.setCode(_ctx.stringValue("GrantRolesResponse.Code"));
-		grantRolesResponse.setMessage(_ctx.stringValue("GrantRolesResponse.Message"));
 		grantRolesResponse.setSuccess(_ctx.booleanValue("GrantRolesResponse.Success"));
 	 
 	 	return grantRolesResponse;

@@ -32,15 +32,21 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String ensServiceId;
 
+	private String vSwitchId;
+
 	private String instanceId;
 
 	private String instanceName;
 
 	private String instanceIds;
 
+	private String networkId;
+
 	private String status;
 
 	private String imageId;
+
+	private String securityGroupId;
 
 	private String searchKey;
 
@@ -50,7 +56,7 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private String ensRegionIds;
 	public DescribeInstancesRequest() {
-		super("Ens", "2017-11-10", "DescribeInstances");
+		super("Ens", "2017-11-10", "DescribeInstances", "ens");
 		setMethod(MethodType.POST);
 	}
 
@@ -98,6 +104,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getVSwitchId() {
+		return this.vSwitchId;
+	}
+
+	public void setVSwitchId(String vSwitchId) {
+		this.vSwitchId = vSwitchId;
+		if(vSwitchId != null){
+			putQueryParameter("VSwitchId", vSwitchId);
+		}
+	}
+
 	public String getInstanceId() {
 		return this.instanceId;
 	}
@@ -131,6 +148,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		}
 	}
 
+	public String getNetworkId() {
+		return this.networkId;
+	}
+
+	public void setNetworkId(String networkId) {
+		this.networkId = networkId;
+		if(networkId != null){
+			putQueryParameter("NetworkId", networkId);
+		}
+	}
+
 	public String getStatus() {
 		return this.status;
 	}
@@ -150,6 +178,17 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.imageId = imageId;
 		if(imageId != null){
 			putQueryParameter("ImageId", imageId);
+		}
+	}
+
+	public String getSecurityGroupId() {
+		return this.securityGroupId;
+	}
+
+	public void setSecurityGroupId(String securityGroupId) {
+		this.securityGroupId = securityGroupId;
+		if(securityGroupId != null){
+			putQueryParameter("SecurityGroupId", securityGroupId);
 		}
 	}
 

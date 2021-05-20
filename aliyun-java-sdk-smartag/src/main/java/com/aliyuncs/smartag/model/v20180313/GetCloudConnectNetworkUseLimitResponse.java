@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCloudConnectNetworkUseLimitResponse extends AcsResponse {
 
+	private Integer usedAmount;
+
 	private String requestId;
 
 	private Integer totalAmount;
 
-	private Integer usedAmount;
+	public Integer getUsedAmount() {
+		return this.usedAmount;
+	}
+
+	public void setUsedAmount(Integer usedAmount) {
+		this.usedAmount = usedAmount;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class GetCloudConnectNetworkUseLimitResponse extends AcsResponse {
 
 	public void setTotalAmount(Integer totalAmount) {
 		this.totalAmount = totalAmount;
-	}
-
-	public Integer getUsedAmount() {
-		return this.usedAmount;
-	}
-
-	public void setUsedAmount(Integer usedAmount) {
-		this.usedAmount = usedAmount;
 	}
 
 	@Override

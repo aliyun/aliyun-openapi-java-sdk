@@ -24,9 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGeoipInstanceDataUrlResponse extends AcsResponse {
 
+	private String fixedDomainDownloadUrl;
+
 	private String requestId;
 
 	private String downloadUrl;
+
+	public String getFixedDomainDownloadUrl() {
+		return this.fixedDomainDownloadUrl;
+	}
+
+	public void setFixedDomainDownloadUrl(String fixedDomainDownloadUrl) {
+		this.fixedDomainDownloadUrl = fixedDomainDownloadUrl;
+	}
 
 	public String getRequestId() {
 		return this.requestId;

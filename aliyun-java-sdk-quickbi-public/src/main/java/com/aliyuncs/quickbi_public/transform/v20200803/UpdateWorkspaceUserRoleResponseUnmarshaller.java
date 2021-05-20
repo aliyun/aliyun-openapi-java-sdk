@@ -23,8 +23,8 @@ public class UpdateWorkspaceUserRoleResponseUnmarshaller {
 	public static UpdateWorkspaceUserRoleResponse unmarshall(UpdateWorkspaceUserRoleResponse updateWorkspaceUserRoleResponse, UnmarshallerContext _ctx) {
 		
 		updateWorkspaceUserRoleResponse.setRequestId(_ctx.stringValue("UpdateWorkspaceUserRoleResponse.RequestId"));
-		updateWorkspaceUserRoleResponse.setSuccess(_ctx.booleanValue("UpdateWorkspaceUserRoleResponse.Success"));
 		updateWorkspaceUserRoleResponse.setResult(_ctx.booleanValue("UpdateWorkspaceUserRoleResponse.Result"));
+		updateWorkspaceUserRoleResponse.setSuccess(_ctx.booleanValue("UpdateWorkspaceUserRoleResponse.Success"));
 	 
 	 	return updateWorkspaceUserRoleResponse;
 	}

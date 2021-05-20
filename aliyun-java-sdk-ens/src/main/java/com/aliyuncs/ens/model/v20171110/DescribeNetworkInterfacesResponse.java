@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<NetworkInterfaceSet> networkInterfaceSets;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +51,20 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<NetworkInterfaceSet> getNetworkInterfaceSets() {
@@ -77,30 +77,38 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 	public static class NetworkInterfaceSet {
 
-		private String status;
-
-		private String instanceId;
-
-		private String vSwitchId;
-
 		private String creationTime;
-
-		private String primaryIpType;
-
-		private String primaryIp;
-
-		private String networkInterfaceId;
-
-		private String macAddress;
 
 		private String ensRegionId;
 
-		public String getStatus() {
-			return this.status;
+		private String instanceId;
+
+		private String macAddress;
+
+		private String networkInterfaceId;
+
+		private String primaryIp;
+
+		private String primaryIpType;
+
+		private String status;
+
+		private String vSwitchId;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getEnsRegionId() {
+			return this.ensRegionId;
+		}
+
+		public void setEnsRegionId(String ensRegionId) {
+			this.ensRegionId = ensRegionId;
 		}
 
 		public String getInstanceId() {
@@ -111,36 +119,12 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.instanceId = instanceId;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public String getMacAddress() {
+			return this.macAddress;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getPrimaryIpType() {
-			return this.primaryIpType;
-		}
-
-		public void setPrimaryIpType(String primaryIpType) {
-			this.primaryIpType = primaryIpType;
-		}
-
-		public String getPrimaryIp() {
-			return this.primaryIp;
-		}
-
-		public void setPrimaryIp(String primaryIp) {
-			this.primaryIp = primaryIp;
+		public void setMacAddress(String macAddress) {
+			this.macAddress = macAddress;
 		}
 
 		public String getNetworkInterfaceId() {
@@ -151,20 +135,36 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 			this.networkInterfaceId = networkInterfaceId;
 		}
 
-		public String getMacAddress() {
-			return this.macAddress;
+		public String getPrimaryIp() {
+			return this.primaryIp;
 		}
 
-		public void setMacAddress(String macAddress) {
-			this.macAddress = macAddress;
+		public void setPrimaryIp(String primaryIp) {
+			this.primaryIp = primaryIp;
 		}
 
-		public String getEnsRegionId() {
-			return this.ensRegionId;
+		public String getPrimaryIpType() {
+			return this.primaryIpType;
 		}
 
-		public void setEnsRegionId(String ensRegionId) {
-			this.ensRegionId = ensRegionId;
+		public void setPrimaryIpType(String primaryIpType) {
+			this.primaryIpType = primaryIpType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getVSwitchId() {
+			return this.vSwitchId;
+		}
+
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 	}
 

@@ -38,19 +38,19 @@ public class QueryPipelineListResponseUnmarshaller {
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("QueryPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].State"));
 			pipeline.setSpeed(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Speed"));
+			pipeline.setState(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].State"));
 			pipeline.setSpeedLevel(_ctx.longValue("QueryPipelineListResponse.PipelineList["+ i +"].SpeedLevel"));
-			pipeline.setQuotaAllocate(_ctx.longValue("QueryPipelineListResponse.PipelineList["+ i +"].QuotaAllocate"));
 			pipeline.setRole(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Role"));
+			pipeline.setName(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].Id"));
+			pipeline.setQuotaAllocate(_ctx.longValue("QueryPipelineListResponse.PipelineList["+ i +"].QuotaAllocate"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueueName(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
 			notifyConfig.setMqTopic(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
+			notifyConfig.setQueueName(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
 			notifyConfig.setMqTag(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
+			notifyConfig.setTopic(_ctx.stringValue("QueryPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

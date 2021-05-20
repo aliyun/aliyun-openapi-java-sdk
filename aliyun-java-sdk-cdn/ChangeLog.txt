@@ -1,3 +1,6 @@
+2021-05-10 Version: 3.6.3
+- Delete live API.
+
 2021-03-03 Version: 3.6.2
 - Delete API.
 

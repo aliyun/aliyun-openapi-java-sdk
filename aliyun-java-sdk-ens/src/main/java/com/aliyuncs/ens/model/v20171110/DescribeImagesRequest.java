@@ -38,7 +38,7 @@ public class DescribeImagesRequest extends RpcAcsRequest<DescribeImagesResponse>
 
 	private String product;
 	public DescribeImagesRequest() {
-		super("Ens", "2017-11-10", "DescribeImages");
+		super("Ens", "2017-11-10", "DescribeImages", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -37,7 +37,7 @@ public class ListChatRecordDetailRequest extends RpcAcsRequest<ListChatRecordDet
 
 	private String instanceId;
 	public ListChatRecordDetailRequest() {
-		super("aiccs", "2019-10-15", "ListChatRecordDetail", "aiccs-service");
+		super("aiccs", "2019-10-15", "ListChatRecordDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

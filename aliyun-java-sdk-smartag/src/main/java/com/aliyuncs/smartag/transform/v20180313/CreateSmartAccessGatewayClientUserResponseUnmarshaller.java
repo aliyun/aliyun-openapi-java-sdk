@@ -23,10 +23,10 @@ public class CreateSmartAccessGatewayClientUserResponseUnmarshaller {
 	public static CreateSmartAccessGatewayClientUserResponse unmarshall(CreateSmartAccessGatewayClientUserResponse createSmartAccessGatewayClientUserResponse, UnmarshallerContext _ctx) {
 		
 		createSmartAccessGatewayClientUserResponse.setRequestId(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.RequestId"));
-		createSmartAccessGatewayClientUserResponse.setClientIp(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.ClientIp"));
-		createSmartAccessGatewayClientUserResponse.setUserMail(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.UserMail"));
 		createSmartAccessGatewayClientUserResponse.setUserName(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.UserName"));
+		createSmartAccessGatewayClientUserResponse.setUserMail(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.UserMail"));
 		createSmartAccessGatewayClientUserResponse.setBandwidth(_ctx.integerValue("CreateSmartAccessGatewayClientUserResponse.Bandwidth"));
+		createSmartAccessGatewayClientUserResponse.setClientIp(_ctx.stringValue("CreateSmartAccessGatewayClientUserResponse.ClientIp"));
 	 
 	 	return createSmartAccessGatewayClientUserResponse;
 	}

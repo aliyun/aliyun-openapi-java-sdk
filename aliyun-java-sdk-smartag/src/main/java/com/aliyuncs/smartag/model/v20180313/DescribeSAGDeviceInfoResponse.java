@@ -24,23 +24,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 
+	private String controllerState;
+
+	private String serviceIP;
+
+	private String smartAGType;
+
+	private String synStatus;
+
 	private String requestId;
 
 	private String version;
 
 	private String vpnState;
 
-	private String smartAGType;
-
-	private String controllerState;
-
 	private String startupTime;
 
 	private String lastConnectedControllerTime;
 
-	private String serviceIP;
+	public String getControllerState() {
+		return this.controllerState;
+	}
 
-	private String synStatus;
+	public void setControllerState(String controllerState) {
+		this.controllerState = controllerState;
+	}
+
+	public String getServiceIP() {
+		return this.serviceIP;
+	}
+
+	public void setServiceIP(String serviceIP) {
+		this.serviceIP = serviceIP;
+	}
+
+	public String getSmartAGType() {
+		return this.smartAGType;
+	}
+
+	public void setSmartAGType(String smartAGType) {
+		this.smartAGType = smartAGType;
+	}
+
+	public String getSynStatus() {
+		return this.synStatus;
+	}
+
+	public void setSynStatus(String synStatus) {
+		this.synStatus = synStatus;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -66,22 +98,6 @@ public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 		this.vpnState = vpnState;
 	}
 
-	public String getSmartAGType() {
-		return this.smartAGType;
-	}
-
-	public void setSmartAGType(String smartAGType) {
-		this.smartAGType = smartAGType;
-	}
-
-	public String getControllerState() {
-		return this.controllerState;
-	}
-
-	public void setControllerState(String controllerState) {
-		this.controllerState = controllerState;
-	}
-
 	public String getStartupTime() {
 		return this.startupTime;
 	}
@@ -96,22 +112,6 @@ public class DescribeSAGDeviceInfoResponse extends AcsResponse {
 
 	public void setLastConnectedControllerTime(String lastConnectedControllerTime) {
 		this.lastConnectedControllerTime = lastConnectedControllerTime;
-	}
-
-	public String getServiceIP() {
-		return this.serviceIP;
-	}
-
-	public void setServiceIP(String serviceIP) {
-		this.serviceIP = serviceIP;
-	}
-
-	public String getSynStatus() {
-		return this.synStatus;
-	}
-
-	public void setSynStatus(String synStatus) {
-		this.synStatus = synStatus;
 	}
 
 	@Override

@@ -45,6 +45,7 @@ public class ListClustersMetaResponseUnmarshaller {
 			clusterInfoSimple.setSchedulerType(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].SchedulerType"));
 			clusterInfoSimple.setVpcId(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].VpcId"));
 			clusterInfoSimple.setDeployMode(_ctx.stringValue("ListClustersMetaResponse.Clusters["+ i +"].DeployMode"));
+			clusterInfoSimple.setIsComputeEss(_ctx.booleanValue("ListClustersMetaResponse.Clusters["+ i +"].IsComputeEss"));
 
 			clusters.add(clusterInfoSimple);
 		}

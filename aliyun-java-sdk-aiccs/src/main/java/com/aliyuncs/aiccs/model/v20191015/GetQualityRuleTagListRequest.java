@@ -27,7 +27,7 @@ public class GetQualityRuleTagListRequest extends RpcAcsRequest<GetQualityRuleTa
 
 	private String instanceId;
 	public GetQualityRuleTagListRequest() {
-		super("aiccs", "2019-10-15", "GetQualityRuleTagList", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetQualityRuleTagList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

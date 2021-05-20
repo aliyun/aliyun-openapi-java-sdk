@@ -23,10 +23,10 @@ public class SchedulePodResponseUnmarshaller {
 	public static SchedulePodResponse unmarshall(SchedulePodResponse schedulePodResponse, UnmarshallerContext _ctx) {
 		
 		schedulePodResponse.setRequestId(_ctx.stringValue("SchedulePodResponse.RequestId"));
+		schedulePodResponse.setCode(_ctx.longValue("SchedulePodResponse.Code"));
 		schedulePodResponse.setMsg(_ctx.stringValue("SchedulePodResponse.Msg"));
 		schedulePodResponse.setDesc(_ctx.stringValue("SchedulePodResponse.Desc"));
 		schedulePodResponse.setData(_ctx.stringValue("SchedulePodResponse.Data"));
-		schedulePodResponse.setCode(_ctx.longValue("SchedulePodResponse.Code"));
 	 
 	 	return schedulePodResponse;
 	}

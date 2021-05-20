@@ -27,13 +27,13 @@ public class DescribeSagRemoteAccessResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
 
 	private String smartAGId;
+
+	private String code;
+
+	private Boolean success;
 
 	private List<RemoteAccess> remoteAccesses;
 
@@ -43,22 +43,6 @@ public class DescribeSagRemoteAccessResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -75,6 +59,22 @@ public class DescribeSagRemoteAccessResponse extends AcsResponse {
 
 	public void setSmartAGId(String smartAGId) {
 		this.smartAGId = smartAGId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<RemoteAccess> getRemoteAccesses() {

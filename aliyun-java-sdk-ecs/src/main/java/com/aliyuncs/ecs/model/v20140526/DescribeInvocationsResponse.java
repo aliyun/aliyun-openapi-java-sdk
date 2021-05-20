@@ -93,6 +93,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 		private Boolean timed;
 
+		private String repeatMode;
+
 		private String invokeStatus;
 
 		private String invocationStatus;
@@ -167,6 +169,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 			this.timed = timed;
 		}
 
+		public String getRepeatMode() {
+			return this.repeatMode;
+		}
+
+		public void setRepeatMode(String repeatMode) {
+			this.repeatMode = repeatMode;
+		}
+
 		public String getInvokeStatus() {
 			return this.invokeStatus;
 		}
@@ -213,6 +223,8 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			private Integer repeats;
 
+			private Boolean timed;
+
 			private String instanceInvokeStatus;
 
 			private String invocationStatus;
@@ -251,6 +263,14 @@ public class DescribeInvocationsResponse extends AcsResponse {
 
 			public void setRepeats(Integer repeats) {
 				this.repeats = repeats;
+			}
+
+			public Boolean getTimed() {
+				return this.timed;
+			}
+
+			public void setTimed(Boolean timed) {
+				this.timed = timed;
 			}
 
 			public String getInstanceInvokeStatus() {

@@ -57,31 +57,15 @@ public class QueryTerrorismPipelineListResponse extends AcsResponse {
 
 	public static class Pipeline {
 
-		private String id;
-
-		private String name;
-
 		private String state;
 
 		private String priority;
 
+		private String name;
+
+		private String id;
+
 		private NotifyConfig notifyConfig;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
 
 		public String getState() {
 			return this.state;
@@ -97,6 +81,22 @@ public class QueryTerrorismPipelineListResponse extends AcsResponse {
 
 		public void setPriority(String priority) {
 			this.priority = priority;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public NotifyConfig getNotifyConfig() {

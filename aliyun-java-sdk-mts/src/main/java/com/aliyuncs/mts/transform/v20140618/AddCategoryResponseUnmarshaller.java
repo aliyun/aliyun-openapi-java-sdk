@@ -26,9 +26,9 @@ public class AddCategoryResponseUnmarshaller {
 		addCategoryResponse.setRequestId(_ctx.stringValue("AddCategoryResponse.RequestId"));
 
 		Category category = new Category();
-		category.setCateId(_ctx.stringValue("AddCategoryResponse.Category.CateId"));
 		category.setCateName(_ctx.stringValue("AddCategoryResponse.Category.CateName"));
 		category.setParentId(_ctx.stringValue("AddCategoryResponse.Category.ParentId"));
+		category.setCateId(_ctx.stringValue("AddCategoryResponse.Category.CateId"));
 		category.setLevel(_ctx.stringValue("AddCategoryResponse.Category.Level"));
 		addCategoryResponse.setCategory(category);
 	 

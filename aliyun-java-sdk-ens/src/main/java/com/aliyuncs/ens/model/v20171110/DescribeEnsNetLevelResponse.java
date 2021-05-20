@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeEnsNetLevelResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer code;
 
+	private String requestId;
+
 	private List<EnsNetLevel> ensNetLevels;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getCode() {
 		return this.code;
@@ -45,6 +37,14 @@ public class DescribeEnsNetLevelResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EnsNetLevel> getEnsNetLevels() {

@@ -1,3 +1,10 @@
+2021-04-15 Version: 1.0.12
+- Support Spark REPL.
+
+2021-04-13 Version: 1.0.11
+- SubmitSparkSQL API.
+- Support SparkJob and SparkSQL jobType in JobTree.
+
 2021-03-30 Version: 2.0.2
 - Supported Open Api.
 

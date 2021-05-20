@@ -22,10 +22,10 @@ public class CreateOuterAdminAgentResponseUnmarshaller {
 
 	public static CreateOuterAdminAgentResponse unmarshall(CreateOuterAdminAgentResponse createOuterAdminAgentResponse, UnmarshallerContext _ctx) {
 		
-		createOuterAdminAgentResponse.setSuccess(_ctx.booleanValue("CreateOuterAdminAgentResponse.Success"));
-		createOuterAdminAgentResponse.setCode(_ctx.stringValue("CreateOuterAdminAgentResponse.Code"));
 		createOuterAdminAgentResponse.setMessage(_ctx.stringValue("CreateOuterAdminAgentResponse.Message"));
 		createOuterAdminAgentResponse.setData(_ctx.longValue("CreateOuterAdminAgentResponse.Data"));
+		createOuterAdminAgentResponse.setCode(_ctx.stringValue("CreateOuterAdminAgentResponse.Code"));
+		createOuterAdminAgentResponse.setSuccess(_ctx.booleanValue("CreateOuterAdminAgentResponse.Success"));
 	 
 	 	return createOuterAdminAgentResponse;
 	}

@@ -39,7 +39,7 @@ public class SearchBodyRequest extends RpcAcsRequest<SearchBodyResponse> {
 
 	private String optionList;
 	public SearchBodyRequest() {
-		super("Vcs", "2020-05-15", "SearchBody", "vcs");
+		super("Vcs", "2020-05-15", "SearchBody");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

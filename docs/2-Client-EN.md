@@ -18,6 +18,15 @@ public class Main {
             "<your-region-id>",          // The region ID
             "<your-access-key-id>",      // The AccessKey ID of the RAM account
             "<your-access-key-secret>"); // The AccessKey Secret of the RAM account
+
+        /** use STS Token
+        DefaultProfile profile = DefaultProfile.getProfile(
+            "<your-region-id>",          // The region ID
+            "<your-access-key-id>",      // The AccessKey ID of the RAM account
+            "<your-access-key-secret>",  // The AccessKey Secret of the RAM account
+            "<your-sts-token>");         // STS Token
+        **/
+        
         IAcsClient client = new DefaultAcsClient(profile);
         // Create an API request and set parameters
         DescribeInstancesRequest request = new DescribeInstancesRequest();

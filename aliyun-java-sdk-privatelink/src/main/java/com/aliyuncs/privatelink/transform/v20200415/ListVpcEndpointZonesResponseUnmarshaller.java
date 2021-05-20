@@ -27,19 +27,20 @@ public class ListVpcEndpointZonesResponseUnmarshaller {
 	public static ListVpcEndpointZonesResponse unmarshall(ListVpcEndpointZonesResponse listVpcEndpointZonesResponse, UnmarshallerContext _ctx) {
 		
 		listVpcEndpointZonesResponse.setRequestId(_ctx.stringValue("ListVpcEndpointZonesResponse.RequestId"));
-		listVpcEndpointZonesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointZonesResponse.MaxResults"));
 		listVpcEndpointZonesResponse.setNextToken(_ctx.stringValue("ListVpcEndpointZonesResponse.NextToken"));
+		listVpcEndpointZonesResponse.setMaxResults(_ctx.stringValue("ListVpcEndpointZonesResponse.MaxResults"));
 
 		List<Zone> zones = new ArrayList<Zone>();
 		for (int i = 0; i < _ctx.lengthValue("ListVpcEndpointZonesResponse.Zones.Length"); i++) {
 			Zone zone = new Zone();
-			zone.setZoneDomain(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneDomain"));
-			zone.setZoneStatus(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneStatus"));
 			zone.setEniId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].EniId"));
-			zone.setEniIp(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].EniIp"));
-			zone.setVSwitchId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].VSwitchId"));
 			zone.setZoneId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneId"));
+			zone.setServiceStatus(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ServiceStatus"));
+			zone.setVSwitchId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].VSwitchId"));
+			zone.setEniIp(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].EniIp"));
+			zone.setZoneStatus(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneStatus"));
 			zone.setRegionId(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].RegionId"));
+			zone.setZoneDomain(_ctx.stringValue("ListVpcEndpointZonesResponse.Zones["+ i +"].ZoneDomain"));
 
 			zones.add(zone);
 		}

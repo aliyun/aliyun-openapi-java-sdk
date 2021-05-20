@@ -43,7 +43,7 @@ public class ChangeVideoSizeRequest extends RpcAcsRequest<ChangeVideoSizeRespons
 
 	private Float tightness;
 	public ChangeVideoSizeRequest() {
-		super("videoenhan", "2020-03-20", "ChangeVideoSize");
+		super("videoenhan", "2020-03-20", "ChangeVideoSize", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

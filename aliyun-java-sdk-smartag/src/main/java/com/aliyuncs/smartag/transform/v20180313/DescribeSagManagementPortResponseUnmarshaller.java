@@ -27,17 +27,17 @@ public class DescribeSagManagementPortResponseUnmarshaller {
 	public static DescribeSagManagementPortResponse unmarshall(DescribeSagManagementPortResponse describeSagManagementPortResponse, UnmarshallerContext _ctx) {
 		
 		describeSagManagementPortResponse.setRequestId(_ctx.stringValue("DescribeSagManagementPortResponse.RequestId"));
+		describeSagManagementPortResponse.setGateway(_ctx.stringValue("DescribeSagManagementPortResponse.Gateway"));
 		describeSagManagementPortResponse.setIP(_ctx.stringValue("DescribeSagManagementPortResponse.IP"));
 		describeSagManagementPortResponse.setMask(_ctx.stringValue("DescribeSagManagementPortResponse.Mask"));
-		describeSagManagementPortResponse.setGateway(_ctx.stringValue("DescribeSagManagementPortResponse.Gateway"));
 
 		List<TaskState> taskStates = new ArrayList<TaskState>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagManagementPortResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
 			taskState.setState(_ctx.stringValue("DescribeSagManagementPortResponse.TaskStates["+ i +"].State"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagManagementPortResponse.TaskStates["+ i +"].CreateTime"));
 			taskState.setErrorCode(_ctx.stringValue("DescribeSagManagementPortResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagManagementPortResponse.TaskStates["+ i +"].ErrorMessage"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagManagementPortResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

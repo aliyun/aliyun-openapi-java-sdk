@@ -33,7 +33,7 @@ public class ConvertHdrVideoRequest extends RpcAcsRequest<ConvertHdrVideoRespons
 
 	private String videoURL;
 	public ConvertHdrVideoRequest() {
-		super("videoenhan", "2020-03-20", "ConvertHdrVideo");
+		super("videoenhan", "2020-03-20", "ConvertHdrVideo", "videoenhan");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

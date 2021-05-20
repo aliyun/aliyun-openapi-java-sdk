@@ -28,8 +28,8 @@ public class GetFaceOptionsResponseUnmarshaller {
 	public static GetFaceOptionsResponse unmarshall(GetFaceOptionsResponse getFaceOptionsResponse, UnmarshallerContext _ctx) {
 		
 		getFaceOptionsResponse.setRequestId(_ctx.stringValue("GetFaceOptionsResponse.RequestId"));
-		getFaceOptionsResponse.setCode(_ctx.stringValue("GetFaceOptionsResponse.Code"));
 		getFaceOptionsResponse.setMessage(_ctx.stringValue("GetFaceOptionsResponse.Message"));
+		getFaceOptionsResponse.setCode(_ctx.stringValue("GetFaceOptionsResponse.Code"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetFaceOptionsResponse.Data.Length"); i++) {

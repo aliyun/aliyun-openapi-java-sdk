@@ -27,18 +27,18 @@ public class QuerySkillGroupsResponseUnmarshaller {
 	public static QuerySkillGroupsResponse unmarshall(QuerySkillGroupsResponse querySkillGroupsResponse, UnmarshallerContext _ctx) {
 		
 		querySkillGroupsResponse.setRequestId(_ctx.stringValue("QuerySkillGroupsResponse.RequestId"));
-		querySkillGroupsResponse.setCurrentPage(_ctx.integerValue("QuerySkillGroupsResponse.CurrentPage"));
 		querySkillGroupsResponse.setOnePageSize(_ctx.integerValue("QuerySkillGroupsResponse.OnePageSize"));
-		querySkillGroupsResponse.setTotalResults(_ctx.integerValue("QuerySkillGroupsResponse.TotalResults"));
 		querySkillGroupsResponse.setTotalPage(_ctx.integerValue("QuerySkillGroupsResponse.TotalPage"));
+		querySkillGroupsResponse.setCurrentPage(_ctx.integerValue("QuerySkillGroupsResponse.CurrentPage"));
+		querySkillGroupsResponse.setTotalResults(_ctx.integerValue("QuerySkillGroupsResponse.TotalResults"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("QuerySkillGroupsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setSkillGroupId(_ctx.longValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupId"));
 			dataItem.setSkillGroupName(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupName"));
 			dataItem.setDescription(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].Description"));
 			dataItem.setDisplayName(_ctx.stringValue("QuerySkillGroupsResponse.Data["+ i +"].DisplayName"));
+			dataItem.setSkillGroupId(_ctx.longValue("QuerySkillGroupsResponse.Data["+ i +"].SkillGroupId"));
 			dataItem.setChannelType(_ctx.integerValue("QuerySkillGroupsResponse.Data["+ i +"].ChannelType"));
 
 			data.add(dataItem);

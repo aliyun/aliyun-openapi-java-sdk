@@ -23,10 +23,10 @@ public class ChangeQualityProjectStatusResponseUnmarshaller {
 	public static ChangeQualityProjectStatusResponse unmarshall(ChangeQualityProjectStatusResponse changeQualityProjectStatusResponse, UnmarshallerContext _ctx) {
 		
 		changeQualityProjectStatusResponse.setRequestId(_ctx.stringValue("ChangeQualityProjectStatusResponse.RequestId"));
-		changeQualityProjectStatusResponse.setCode(_ctx.stringValue("ChangeQualityProjectStatusResponse.Code"));
 		changeQualityProjectStatusResponse.setMessage(_ctx.stringValue("ChangeQualityProjectStatusResponse.Message"));
-		changeQualityProjectStatusResponse.setSuccess(_ctx.booleanValue("ChangeQualityProjectStatusResponse.Success"));
 		changeQualityProjectStatusResponse.setData(_ctx.stringValue("ChangeQualityProjectStatusResponse.Data"));
+		changeQualityProjectStatusResponse.setCode(_ctx.stringValue("ChangeQualityProjectStatusResponse.Code"));
+		changeQualityProjectStatusResponse.setSuccess(_ctx.booleanValue("ChangeQualityProjectStatusResponse.Success"));
 	 
 	 	return changeQualityProjectStatusResponse;
 	}

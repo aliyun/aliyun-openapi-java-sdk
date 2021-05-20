@@ -28,32 +28,32 @@ public class GetQualityProjectListResponseUnmarshaller {
 	public static GetQualityProjectListResponse unmarshall(GetQualityProjectListResponse getQualityProjectListResponse, UnmarshallerContext _ctx) {
 		
 		getQualityProjectListResponse.setRequestId(_ctx.stringValue("GetQualityProjectListResponse.RequestId"));
-		getQualityProjectListResponse.setCode(_ctx.stringValue("GetQualityProjectListResponse.Code"));
 		getQualityProjectListResponse.setMessage(_ctx.stringValue("GetQualityProjectListResponse.Message"));
+		getQualityProjectListResponse.setCode(_ctx.stringValue("GetQualityProjectListResponse.Code"));
 		getQualityProjectListResponse.setSuccess(_ctx.booleanValue("GetQualityProjectListResponse.Success"));
 
 		Data data = new Data();
-		data.setTotal(_ctx.longValue("GetQualityProjectListResponse.Data.Total"));
 		data.setPageSize(_ctx.integerValue("GetQualityProjectListResponse.Data.PageSize"));
+		data.setTotal(_ctx.longValue("GetQualityProjectListResponse.Data.Total"));
 		data.setPageNo(_ctx.integerValue("GetQualityProjectListResponse.Data.PageNo"));
 
 		List<QualityProjectListItem> qualityProjectList = new ArrayList<QualityProjectListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectListResponse.Data.QualityProjectList.Length"); i++) {
 			QualityProjectListItem qualityProjectListItem = new QualityProjectListItem();
-			qualityProjectListItem.setId(_ctx.longValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].Id"));
-			qualityProjectListItem.setProjectName(_ctx.stringValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ProjectName"));
-			qualityProjectListItem.setCheckFreqType(_ctx.integerValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].CheckFreqType"));
-			qualityProjectListItem.setQualityType(_ctx.integerValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].QualityType"));
 			qualityProjectListItem.setStatus(_ctx.integerValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].Status"));
-			qualityProjectListItem.setCreateTime(_ctx.stringValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].CreateTime"));
 			qualityProjectListItem.setModifyTime(_ctx.stringValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ModifyTime"));
+			qualityProjectListItem.setQualityType(_ctx.integerValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].QualityType"));
 			qualityProjectListItem.setVersion(_ctx.integerValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].Version"));
+			qualityProjectListItem.setProjectName(_ctx.stringValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ProjectName"));
+			qualityProjectListItem.setCreateTime(_ctx.stringValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].CreateTime"));
+			qualityProjectListItem.setId(_ctx.longValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].Id"));
+			qualityProjectListItem.setCheckFreqType(_ctx.integerValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].CheckFreqType"));
 
-			List<Long> qualityRuleIds = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].QualityRuleIds.Length"); j++) {
-				qualityRuleIds.add(_ctx.longValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].QualityRuleIds["+ j +"]"));
+			List<Long> servicerList = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ServicerList.Length"); j++) {
+				servicerList.add(_ctx.longValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ServicerList["+ j +"]"));
 			}
-			qualityProjectListItem.setQualityRuleIds(qualityRuleIds);
+			qualityProjectListItem.setServicerList(servicerList);
 
 			List<Long> depList = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].DepList.Length"); j++) {
@@ -67,11 +67,11 @@ public class GetQualityProjectListResponseUnmarshaller {
 			}
 			qualityProjectListItem.setGroupList(groupList);
 
-			List<Long> servicerList = new ArrayList<Long>();
-			for (int j = 0; j < _ctx.lengthValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ServicerList.Length"); j++) {
-				servicerList.add(_ctx.longValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].ServicerList["+ j +"]"));
+			List<Long> qualityRuleIds = new ArrayList<Long>();
+			for (int j = 0; j < _ctx.lengthValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].QualityRuleIds.Length"); j++) {
+				qualityRuleIds.add(_ctx.longValue("GetQualityProjectListResponse.Data.QualityProjectList["+ i +"].QualityRuleIds["+ j +"]"));
 			}
-			qualityProjectListItem.setServicerList(servicerList);
+			qualityProjectListItem.setQualityRuleIds(qualityRuleIds);
 
 			qualityProjectList.add(qualityProjectListItem);
 		}

@@ -25,21 +25,13 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataDownloadURLResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private Long code;
 
+	private String message;
+
 	private Data data;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -57,6 +49,14 @@ public class DescribeDataDownloadURLResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -67,19 +67,11 @@ public class DescribeDataDownloadURLResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String expireTime;
-
 		private String url;
 
+		private String expireTime;
+
 		private List<文件服务器列表> serverList;
-
-		public String getExpireTime() {
-			return this.expireTime;
-		}
-
-		public void setExpireTime(String expireTime) {
-			this.expireTime = expireTime;
-		}
 
 		public String getUrl() {
 			return this.url;
@@ -87,6 +79,14 @@ public class DescribeDataDownloadURLResponse extends AcsResponse {
 
 		public void setUrl(String url) {
 			this.url = url;
+		}
+
+		public String getExpireTime() {
+			return this.expireTime;
+		}
+
+		public void setExpireTime(String expireTime) {
+			this.expireTime = expireTime;
 		}
 
 		public List<文件服务器列表> getServerList() {

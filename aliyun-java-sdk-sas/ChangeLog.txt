@@ -1,3 +1,13 @@
+2021-05-17 Version: 1.1.9
+- Support DescribeInstallCaptcha API.
+
+2021-04-27 Version: 1.1.8
+- Support GetVulStatistics API.
+- Support GetSuspiciousStatistics API.
+
+2021-04-16 Version: 1.1.7
+- Support HandleSecurityEvents API.
+
 2021-03-24 Version: 1.1.5
 - Support DescribeUuidsByVulNames API.
 

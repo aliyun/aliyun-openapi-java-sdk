@@ -53,7 +53,19 @@ public class ListQueuesResponse extends AcsResponse {
 
 		private String resourceGroupId;
 
-		private String computeInstanceType;
+		private String hostNamePrefix;
+
+		private String hostNameSuffix;
+
+		private String spotStrategy;
+
+		private String imageId;
+
+		private Boolean enableAutoGrow;
+
+		private List<Instance> spotInstanceTypes;
+
+		private List<String> computeInstanceType;
 
 		public String getQueueName() {
 			return this.queueName;
@@ -79,12 +91,83 @@ public class ListQueuesResponse extends AcsResponse {
 			this.resourceGroupId = resourceGroupId;
 		}
 
-		public String getComputeInstanceType() {
+		public String getHostNamePrefix() {
+			return this.hostNamePrefix;
+		}
+
+		public void setHostNamePrefix(String hostNamePrefix) {
+			this.hostNamePrefix = hostNamePrefix;
+		}
+
+		public String getHostNameSuffix() {
+			return this.hostNameSuffix;
+		}
+
+		public void setHostNameSuffix(String hostNameSuffix) {
+			this.hostNameSuffix = hostNameSuffix;
+		}
+
+		public String getSpotStrategy() {
+			return this.spotStrategy;
+		}
+
+		public void setSpotStrategy(String spotStrategy) {
+			this.spotStrategy = spotStrategy;
+		}
+
+		public String getImageId() {
+			return this.imageId;
+		}
+
+		public void setImageId(String imageId) {
+			this.imageId = imageId;
+		}
+
+		public Boolean getEnableAutoGrow() {
+			return this.enableAutoGrow;
+		}
+
+		public void setEnableAutoGrow(Boolean enableAutoGrow) {
+			this.enableAutoGrow = enableAutoGrow;
+		}
+
+		public List<Instance> getSpotInstanceTypes() {
+			return this.spotInstanceTypes;
+		}
+
+		public void setSpotInstanceTypes(List<Instance> spotInstanceTypes) {
+			this.spotInstanceTypes = spotInstanceTypes;
+		}
+
+		public List<String> getComputeInstanceType() {
 			return this.computeInstanceType;
 		}
 
-		public void setComputeInstanceType(String computeInstanceType) {
+		public void setComputeInstanceType(List<String> computeInstanceType) {
 			this.computeInstanceType = computeInstanceType;
+		}
+
+		public static class Instance {
+
+			private String instanceType;
+
+			private Float spotPriceLimit;
+
+			public String getInstanceType() {
+				return this.instanceType;
+			}
+
+			public void setInstanceType(String instanceType) {
+				this.instanceType = instanceType;
+			}
+
+			public Float getSpotPriceLimit() {
+				return this.spotPriceLimit;
+			}
+
+			public void setSpotPriceLimit(Float spotPriceLimit) {
+				this.spotPriceLimit = spotPriceLimit;
+			}
 		}
 	}
 

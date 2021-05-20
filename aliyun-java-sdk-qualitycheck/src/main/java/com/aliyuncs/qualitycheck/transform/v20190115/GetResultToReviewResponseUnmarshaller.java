@@ -56,6 +56,7 @@ public class GetResultToReviewResponseUnmarshaller {
 		data.setVid(_ctx.stringValue("GetResultToReviewResponse.Data.Vid"));
 		data.setComments(_ctx.stringValue("GetResultToReviewResponse.Data.Comments"));
 		data.setFileId(_ctx.stringValue("GetResultToReviewResponse.Data.FileId"));
+		data.setStatus(_ctx.integerValue("GetResultToReviewResponse.Data.Status"));
 
 		List<Dialogue> dialogues = new ArrayList<Dialogue>();
 		for (int i = 0; i < _ctx.lengthValue("GetResultToReviewResponse.Data.Dialogues.Length"); i++) {

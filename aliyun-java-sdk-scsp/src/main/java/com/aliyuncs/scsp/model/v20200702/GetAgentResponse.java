@@ -31,6 +31,10 @@ public class GetAgentResponse extends AcsResponse {
 
 	private Boolean success;
 
+	private Long httpStatusCode;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -57,6 +61,22 @@ public class GetAgentResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public Long getHttpStatusCode() {
+		return this.httpStatusCode;
+	}
+
+	public void setHttpStatusCode(Long httpStatusCode) {
+		this.httpStatusCode = httpStatusCode;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Data getData() {
 		return this.data;
 	}
@@ -69,13 +89,13 @@ public class GetAgentResponse extends AcsResponse {
 
 		private Integer status;
 
-		private Long tenantId;
-
 		private String displayName;
 
 		private Long agentId;
 
 		private String accountName;
+
+		private Long tenantId;
 
 		private List<GroupListItem> groupList;
 
@@ -85,14 +105,6 @@ public class GetAgentResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Long getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
 		}
 
 		public String getDisplayName() {
@@ -119,6 +131,14 @@ public class GetAgentResponse extends AcsResponse {
 			this.accountName = accountName;
 		}
 
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
+		}
+
 		public List<GroupListItem> getGroupList() {
 			return this.groupList;
 		}
@@ -129,23 +149,15 @@ public class GetAgentResponse extends AcsResponse {
 
 		public static class GroupListItem {
 
-			private String description;
-
 			private String displayName;
 
-			private Long skillGroupId;
+			private String description;
 
 			private Integer channelType;
 
+			private Long skillGroupId;
+
 			private String name;
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
 
 			public String getDisplayName() {
 				return this.displayName;
@@ -155,12 +167,12 @@ public class GetAgentResponse extends AcsResponse {
 				this.displayName = displayName;
 			}
 
-			public Long getSkillGroupId() {
-				return this.skillGroupId;
+			public String getDescription() {
+				return this.description;
 			}
 
-			public void setSkillGroupId(Long skillGroupId) {
-				this.skillGroupId = skillGroupId;
+			public void setDescription(String description) {
+				this.description = description;
 			}
 
 			public Integer getChannelType() {
@@ -169,6 +181,14 @@ public class GetAgentResponse extends AcsResponse {
 
 			public void setChannelType(Integer channelType) {
 				this.channelType = channelType;
+			}
+
+			public Long getSkillGroupId() {
+				return this.skillGroupId;
+			}
+
+			public void setSkillGroupId(Long skillGroupId) {
+				this.skillGroupId = skillGroupId;
 			}
 
 			public String getName() {

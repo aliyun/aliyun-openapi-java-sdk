@@ -39,12 +39,12 @@ public class QueryFpImportResultResponseUnmarshaller {
 		List<FpResultLogInfo> fpResultLogInfoList = new ArrayList<FpResultLogInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryFpImportResultResponse.FpResultLogInfoList.Length"); i++) {
 			FpResultLogInfo fpResultLogInfo = new FpResultLogInfo();
-			fpResultLogInfo.setLogPath(_ctx.stringValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogPath"));
-			fpResultLogInfo.setLogName(_ctx.stringValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogName"));
 			fpResultLogInfo.setLogStartTime(_ctx.longValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogStartTime"));
-			fpResultLogInfo.setLogEndTime(_ctx.longValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogEndTime"));
-			fpResultLogInfo.setLogSize(_ctx.longValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogSize"));
+			fpResultLogInfo.setLogPath(_ctx.stringValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogPath"));
 			fpResultLogInfo.setCreateTime(_ctx.longValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].CreateTime"));
+			fpResultLogInfo.setLogSize(_ctx.longValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogSize"));
+			fpResultLogInfo.setLogName(_ctx.stringValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogName"));
+			fpResultLogInfo.setLogEndTime(_ctx.longValue("QueryFpImportResultResponse.FpResultLogInfoList["+ i +"].LogEndTime"));
 
 			fpResultLogInfoList.add(fpResultLogInfo);
 		}

@@ -16,6 +16,7 @@ package com.aliyuncs.sas.model.v20181203;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
+import com.aliyuncs.sas.Endpoint;
 
 /**
  * @author auto create
@@ -41,9 +42,15 @@ public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeEx
 	private String instanceId;
 
 	private String instanceName;
+
+	private Boolean healthStatus;
 	public DescribeExposedInstanceListRequest() {
 		super("Sas", "2018-12-03", "DescribeExposedInstanceList", "sas");
 		setMethod(MethodType.POST);
+		try {
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
+			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
+		} catch (Exception e) {}
 	}
 
 	public String getExposurePort() {
@@ -142,6 +149,17 @@ public class DescribeExposedInstanceListRequest extends RpcAcsRequest<DescribeEx
 		this.instanceName = instanceName;
 		if(instanceName != null){
 			putQueryParameter("InstanceName", instanceName);
+		}
+	}
+
+	public Boolean getHealthStatus() {
+		return this.healthStatus;
+	}
+
+	public void setHealthStatus(Boolean healthStatus) {
+		this.healthStatus = healthStatus;
+		if(healthStatus != null){
+			putQueryParameter("HealthStatus", healthStatus.toString());
 		}
 	}
 

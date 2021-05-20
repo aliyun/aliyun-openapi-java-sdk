@@ -19,6 +19,10 @@ import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.K8sSecretsItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.DataItem;
+import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.RelatedAppsItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -41,6 +45,49 @@ public class ListK8sSecretsResponseUnmarshaller {
 			k8sSecrets.add(k8sSecretsItem);
 		}
 		listK8sSecretsResponse.setK8sSecrets(k8sSecrets);
+
+		List<ResultItem> result = new ArrayList<ResultItem>();
+		for (int i = 0; i < _ctx.lengthValue("ListK8sSecretsResponse.Result.Length"); i++) {
+			ResultItem resultItem = new ResultItem();
+			resultItem.setTotal(_ctx.integerValue("ListK8sSecretsResponse.Result["+ i +"].Total"));
+
+			List<SecretsItem> secrets = new ArrayList<SecretsItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets.Length"); j++) {
+				SecretsItem secretsItem = new SecretsItem();
+				secretsItem.setName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Name"));
+				secretsItem.setNamespace(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Namespace"));
+				secretsItem.setCreationTime(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CreationTime"));
+				secretsItem.setType(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Type"));
+				secretsItem.setClusterId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterId"));
+				secretsItem.setClusterName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterName"));
+
+				List<DataItem> data = new ArrayList<DataItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Data.Length"); k++) {
+					DataItem dataItem = new DataItem();
+					dataItem.setKey(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Data["+ k +"].Key"));
+					dataItem.setValue(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Data["+ k +"].Value"));
+
+					data.add(dataItem);
+				}
+				secretsItem.setData(data);
+
+				List<RelatedAppsItem> relatedApps = new ArrayList<RelatedAppsItem>();
+				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps.Length"); k++) {
+					RelatedAppsItem relatedAppsItem = new RelatedAppsItem();
+					relatedAppsItem.setAppName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppName"));
+					relatedAppsItem.setAppId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppId"));
+
+					relatedApps.add(relatedAppsItem);
+				}
+				secretsItem.setRelatedApps(relatedApps);
+
+				secrets.add(secretsItem);
+			}
+			resultItem.setSecrets(secrets);
+
+			result.add(resultItem);
+		}
+		listK8sSecretsResponse.setResult(result);
 	 
 	 	return listK8sSecretsResponse;
 	}

@@ -27,10 +27,10 @@ public class UpdateTerrorismPipelineResponseUnmarshaller {
 		updateTerrorismPipelineResponse.setRequestId(_ctx.stringValue("UpdateTerrorismPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("UpdateTerrorismPipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("UpdateTerrorismPipelineResponse.Pipeline.Name"));
 		pipeline.setState(_ctx.stringValue("UpdateTerrorismPipelineResponse.Pipeline.State"));
 		pipeline.setPriority(_ctx.integerValue("UpdateTerrorismPipelineResponse.Pipeline.Priority"));
+		pipeline.setName(_ctx.stringValue("UpdateTerrorismPipelineResponse.Pipeline.Name"));
+		pipeline.setId(_ctx.stringValue("UpdateTerrorismPipelineResponse.Pipeline.Id"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(_ctx.stringValue("UpdateTerrorismPipelineResponse.Pipeline.NotifyConfig.Topic"));

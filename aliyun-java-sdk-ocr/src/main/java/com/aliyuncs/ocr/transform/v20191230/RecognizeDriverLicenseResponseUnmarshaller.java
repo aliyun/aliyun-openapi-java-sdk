@@ -26,23 +26,29 @@ public class RecognizeDriverLicenseResponseUnmarshaller {
 	public static RecognizeDriverLicenseResponse unmarshall(RecognizeDriverLicenseResponse recognizeDriverLicenseResponse, UnmarshallerContext _ctx) {
 		
 		recognizeDriverLicenseResponse.setRequestId(_ctx.stringValue("RecognizeDriverLicenseResponse.RequestId"));
+		recognizeDriverLicenseResponse.setCode(_ctx.stringValue("RecognizeDriverLicenseResponse.Code"));
+		recognizeDriverLicenseResponse.setMessage(_ctx.stringValue("RecognizeDriverLicenseResponse.Message"));
 
 		Data data = new Data();
 
-		FaceResult faceResult = new FaceResult();
-		faceResult.setName(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Name"));
-		faceResult.setLicenseNumber(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.LicenseNumber"));
-		faceResult.setVehicleType(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.VehicleType"));
-		faceResult.setStartDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.StartDate"));
-		faceResult.setEndDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.EndDate"));
-		faceResult.setIssueDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.IssueDate"));
-		faceResult.setAddress(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Address"));
-		faceResult.setGender(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Gender"));
-		data.setFaceResult(faceResult);
-
 		BackResult backResult = new BackResult();
 		backResult.setArchiveNumber(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.BackResult.ArchiveNumber"));
+		backResult.setName(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.BackResult.Name"));
+		backResult.setCardNumber(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.BackResult.CardNumber"));
+		backResult.setRecord(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.BackResult.Record"));
 		data.setBackResult(backResult);
+
+		FaceResult faceResult = new FaceResult();
+		faceResult.setVehicleType(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.VehicleType"));
+		faceResult.setIssueDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.IssueDate"));
+		faceResult.setEndDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.EndDate"));
+		faceResult.setGender(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Gender"));
+		faceResult.setAddress(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Address"));
+		faceResult.setStartDate(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.StartDate"));
+		faceResult.setLicenseNumber(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.LicenseNumber"));
+		faceResult.setName(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.Name"));
+		faceResult.setIssueUnit(_ctx.stringValue("RecognizeDriverLicenseResponse.Data.FaceResult.IssueUnit"));
+		data.setFaceResult(faceResult);
 		recognizeDriverLicenseResponse.setData(data);
 	 
 	 	return recognizeDriverLicenseResponse;

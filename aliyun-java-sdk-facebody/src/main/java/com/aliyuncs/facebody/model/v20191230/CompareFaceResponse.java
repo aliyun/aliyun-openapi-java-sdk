@@ -57,26 +57,26 @@ public class CompareFaceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String messageTips;
+		private Float confidence;
 
 		private Float qualityScoreA;
 
 		private Float qualityScoreB;
 
-		private Float confidence;
+		private String messageTips;
 
 		private List<Float> thresholds;
 
-		private List<Integer> rectAList;
-
 		private List<Integer> rectBList;
 
-		public String getMessageTips() {
-			return this.messageTips;
+		private List<Integer> rectAList;
+
+		public Float getConfidence() {
+			return this.confidence;
 		}
 
-		public void setMessageTips(String messageTips) {
-			this.messageTips = messageTips;
+		public void setConfidence(Float confidence) {
+			this.confidence = confidence;
 		}
 
 		public Float getQualityScoreA() {
@@ -95,12 +95,12 @@ public class CompareFaceResponse extends AcsResponse {
 			this.qualityScoreB = qualityScoreB;
 		}
 
-		public Float getConfidence() {
-			return this.confidence;
+		public String getMessageTips() {
+			return this.messageTips;
 		}
 
-		public void setConfidence(Float confidence) {
-			this.confidence = confidence;
+		public void setMessageTips(String messageTips) {
+			this.messageTips = messageTips;
 		}
 
 		public List<Float> getThresholds() {
@@ -111,20 +111,20 @@ public class CompareFaceResponse extends AcsResponse {
 			this.thresholds = thresholds;
 		}
 
-		public List<Integer> getRectAList() {
-			return this.rectAList;
-		}
-
-		public void setRectAList(List<Integer> rectAList) {
-			this.rectAList = rectAList;
-		}
-
 		public List<Integer> getRectBList() {
 			return this.rectBList;
 		}
 
 		public void setRectBList(List<Integer> rectBList) {
 			this.rectBList = rectBList;
+		}
+
+		public List<Integer> getRectAList() {
+			return this.rectAList;
+		}
+
+		public void setRectAList(List<Integer> rectAList) {
+			this.rectAList = rectAList;
 		}
 	}
 

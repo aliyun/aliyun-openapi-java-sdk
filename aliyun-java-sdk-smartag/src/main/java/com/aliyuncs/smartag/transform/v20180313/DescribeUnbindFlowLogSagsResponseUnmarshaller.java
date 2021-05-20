@@ -32,8 +32,8 @@ public class DescribeUnbindFlowLogSagsResponseUnmarshaller {
 		List<Sag> sags = new ArrayList<Sag>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeUnbindFlowLogSagsResponse.Sags.Length"); i++) {
 			Sag sag = new Sag();
-			sag.setSmartAGId(_ctx.stringValue("DescribeUnbindFlowLogSagsResponse.Sags["+ i +"].SmartAGId"));
 			sag.setDescription(_ctx.stringValue("DescribeUnbindFlowLogSagsResponse.Sags["+ i +"].Description"));
+			sag.setSmartAGId(_ctx.stringValue("DescribeUnbindFlowLogSagsResponse.Sags["+ i +"].SmartAGId"));
 			sag.setName(_ctx.stringValue("DescribeUnbindFlowLogSagsResponse.Sags["+ i +"].Name"));
 
 			sags.add(sag);

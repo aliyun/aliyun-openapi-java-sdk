@@ -28,20 +28,20 @@ public class DescribeSmartAccessGatewayHaResponseUnmarshaller {
 		
 		describeSmartAccessGatewayHaResponse.setRequestId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.RequestId"));
 		describeSmartAccessGatewayHaResponse.setDeviceLevelBackupState(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.DeviceLevelBackupState"));
-		describeSmartAccessGatewayHaResponse.setDeviceLevelBackupType(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.DeviceLevelBackupType"));
-		describeSmartAccessGatewayHaResponse.setMainDeviceId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.MainDeviceId"));
 		describeSmartAccessGatewayHaResponse.setBackupDeviceId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.BackupDeviceId"));
 		describeSmartAccessGatewayHaResponse.setSmartAGId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.SmartAGId"));
+		describeSmartAccessGatewayHaResponse.setDeviceLevelBackupType(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.DeviceLevelBackupType"));
+		describeSmartAccessGatewayHaResponse.setMainDeviceId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.MainDeviceId"));
 
 		List<LinkBackupInfoListItem> linkBackupInfoList = new ArrayList<LinkBackupInfoListItem>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList.Length"); i++) {
 			LinkBackupInfoListItem linkBackupInfoListItem = new LinkBackupInfoListItem();
-			linkBackupInfoListItem.setLinkLevelBackupState(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].LinkLevelBackupState"));
-			linkBackupInfoListItem.setLinkLevelBackupType(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].LinkLevelBackupType"));
-			linkBackupInfoListItem.setMainLinkId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].MainLinkId"));
+			linkBackupInfoListItem.setBackupLinkState(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].BackupLinkState"));
 			linkBackupInfoListItem.setMainLinkState(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].MainLinkState"));
 			linkBackupInfoListItem.setBackupLinkId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].BackupLinkId"));
-			linkBackupInfoListItem.setBackupLinkState(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].BackupLinkState"));
+			linkBackupInfoListItem.setLinkLevelBackupType(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].LinkLevelBackupType"));
+			linkBackupInfoListItem.setMainLinkId(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].MainLinkId"));
+			linkBackupInfoListItem.setLinkLevelBackupState(_ctx.stringValue("DescribeSmartAccessGatewayHaResponse.LinkBackupInfoList["+ i +"].LinkLevelBackupState"));
 
 			linkBackupInfoList.add(linkBackupInfoListItem);
 		}

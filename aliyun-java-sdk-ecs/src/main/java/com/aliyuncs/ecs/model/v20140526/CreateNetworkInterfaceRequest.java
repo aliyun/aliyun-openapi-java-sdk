@@ -54,9 +54,13 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 
 	private String ownerAccount;
 
+	private Integer queuePairNumber;
+
 	private Long ownerId;
 
 	private List<String> securityGroupIdss;
+
+	private String networkInterfaceTrafficMode;
 
 	private String vSwitchId;
 
@@ -229,6 +233,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 		}
 	}
 
+	public Integer getQueuePairNumber() {
+		return this.queuePairNumber;
+	}
+
+	public void setQueuePairNumber(Integer queuePairNumber) {
+		this.queuePairNumber = queuePairNumber;
+		if(queuePairNumber != null){
+			putQueryParameter("QueuePairNumber", queuePairNumber.toString());
+		}
+	}
+
 	public Long getOwnerId() {
 		return this.ownerId;
 	}
@@ -251,6 +266,17 @@ public class CreateNetworkInterfaceRequest extends RpcAcsRequest<CreateNetworkIn
 				putQueryParameter("SecurityGroupIds." + (i + 1) , securityGroupIdss.get(i));
 			}
 		}	
+	}
+
+	public String getNetworkInterfaceTrafficMode() {
+		return this.networkInterfaceTrafficMode;
+	}
+
+	public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+		this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		if(networkInterfaceTrafficMode != null){
+			putQueryParameter("NetworkInterfaceTrafficMode", networkInterfaceTrafficMode);
+		}
 	}
 
 	public String getVSwitchId() {

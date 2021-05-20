@@ -28,7 +28,7 @@ public class AttachEnsInstancesRequest extends RpcAcsRequest<AttachEnsInstancesR
 
 	private String instanceId;
 	public AttachEnsInstancesRequest() {
-		super("Ens", "2017-11-10", "AttachEnsInstances");
+		super("Ens", "2017-11-10", "AttachEnsInstances", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -1,3 +1,15 @@
+2021-05-20 Version: 1.8.8-beta
+- Support upgrade.
+
+2021-04-26 Version: 1.8.5-beta
+- Support upgrade.
+
+2021-04-25 Version: 1.8.4-beta
+- Support upgrade.
+
+2021-04-21 Version: 1.8.3
+- Support upgrade.
+
 2021-03-30 Version: 1.8.1
 - Support chiji.
 

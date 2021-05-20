@@ -33,7 +33,7 @@ public class ExecuteDataExportRequest extends RpcAcsRequest<ExecuteDataExportRes
 
 	private Map<Object,Object> actionDetail;
 	public ExecuteDataExportRequest() {
-		super("dms-enterprise", "2018-11-01", "ExecuteDataExport");
+		super("dms-enterprise", "2018-11-01", "ExecuteDataExport", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

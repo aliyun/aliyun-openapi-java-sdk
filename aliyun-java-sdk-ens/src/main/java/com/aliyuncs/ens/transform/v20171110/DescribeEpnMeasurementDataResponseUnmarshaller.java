@@ -34,17 +34,17 @@ public class DescribeEpnMeasurementDataResponseUnmarshaller {
 			MeasurementData measurementData = new MeasurementData();
 			measurementData.setChargeModel(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].ChargeModel"));
 			measurementData.setCostCycle(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].CostCycle"));
-			measurementData.setCostStartTime(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].CostStartTime"));
 			measurementData.setCostEndTime(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].CostEndTime"));
+			measurementData.setCostStartTime(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].CostStartTime"));
 
 			List<BandWidthFeeData> bandWidthFeeDatas = new ArrayList<BandWidthFeeData>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas.Length"); j++) {
 				BandWidthFeeData bandWidthFeeData = new BandWidthFeeData();
+				bandWidthFeeData.setCostCode(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostCode"));
+				bandWidthFeeData.setCostName(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostName"));
+				bandWidthFeeData.setCostType(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostType"));
 				bandWidthFeeData.setCostVal(_ctx.integerValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostVal"));
 				bandWidthFeeData.setIspLine(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].IspLine"));
-				bandWidthFeeData.setCostCode(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostCode"));
-				bandWidthFeeData.setCostType(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostType"));
-				bandWidthFeeData.setCostName(_ctx.stringValue("DescribeEpnMeasurementDataResponse.MeasurementDatas["+ i +"].BandWidthFeeDatas["+ j +"].CostName"));
 
 				bandWidthFeeDatas.add(bandWidthFeeData);
 			}

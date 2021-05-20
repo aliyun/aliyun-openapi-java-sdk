@@ -42,6 +42,8 @@ public class DescribeExposedStatisticsResponse extends AcsResponse {
 
 	private Integer exposedNntfVulCount;
 
+	private Integer exposedWeekPasswordMachineCount;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -112,6 +114,14 @@ public class DescribeExposedStatisticsResponse extends AcsResponse {
 
 	public void setExposedNntfVulCount(Integer exposedNntfVulCount) {
 		this.exposedNntfVulCount = exposedNntfVulCount;
+	}
+
+	public Integer getExposedWeekPasswordMachineCount() {
+		return this.exposedWeekPasswordMachineCount;
+	}
+
+	public void setExposedWeekPasswordMachineCount(Integer exposedWeekPasswordMachineCount) {
+		this.exposedWeekPasswordMachineCount = exposedWeekPasswordMachineCount;
 	}
 
 	@Override

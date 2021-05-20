@@ -28,30 +28,30 @@ public class ListUsersResponseUnmarshaller {
 	public static ListUsersResponse unmarshall(ListUsersResponse listUsersResponse, UnmarshallerContext _ctx) {
 		
 		listUsersResponse.setRequestId(_ctx.stringValue("ListUsersResponse.RequestId"));
-		listUsersResponse.setCode(_ctx.stringValue("ListUsersResponse.Code"));
 		listUsersResponse.setMessage(_ctx.stringValue("ListUsersResponse.Message"));
+		listUsersResponse.setCode(_ctx.stringValue("ListUsersResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.longValue("ListUsersResponse.Data.PageNumber"));
 		data.setPageSize(_ctx.longValue("ListUsersResponse.Data.PageSize"));
-		data.setSuccess(_ctx.longValue("ListUsersResponse.Data.Success"));
+		data.setPageNumber(_ctx.longValue("ListUsersResponse.Data.PageNumber"));
 		data.setTotal(_ctx.longValue("ListUsersResponse.Data.Total"));
+		data.setSuccess(_ctx.longValue("ListUsersResponse.Data.Success"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setUserGroupId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserGroupId"));
-			recordsItem.setAge(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Age"));
-			recordsItem.setAttachment(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Attachment"));
-			recordsItem.setBizId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].BizId"));
-			recordsItem.setFaceImageUrl(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].FaceImageUrl"));
-			recordsItem.setGender(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Gender"));
+			recordsItem.setUserName(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].UserName"));
+			recordsItem.setPersonId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].PersonId"));
 			recordsItem.setIdNumber(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].IdNumber"));
 			recordsItem.setUserId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserId"));
-			recordsItem.setUserName(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].UserName"));
-			recordsItem.setIsvSubId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].IsvSubId"));
+			recordsItem.setUserGroupId(_ctx.integerValue("ListUsersResponse.Data.Records["+ i +"].UserGroupId"));
 			recordsItem.setMatchingRate(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].MatchingRate"));
-			recordsItem.setPersonId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].PersonId"));
+			recordsItem.setIsvSubId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].IsvSubId"));
+			recordsItem.setAttachment(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Attachment"));
+			recordsItem.setGender(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Gender"));
+			recordsItem.setBizId(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].BizId"));
+			recordsItem.setAge(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].Age"));
+			recordsItem.setFaceImageUrl(_ctx.stringValue("ListUsersResponse.Data.Records["+ i +"].FaceImageUrl"));
 
 			records.add(recordsItem);
 		}

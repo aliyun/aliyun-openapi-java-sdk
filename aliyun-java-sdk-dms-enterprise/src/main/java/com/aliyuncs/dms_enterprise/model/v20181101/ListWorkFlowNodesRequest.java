@@ -29,7 +29,7 @@ public class ListWorkFlowNodesRequest extends RpcAcsRequest<ListWorkFlowNodesRes
 
 	private Long tid;
 	public ListWorkFlowNodesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListWorkFlowNodes");
+		super("dms-enterprise", "2018-11-01", "ListWorkFlowNodes", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

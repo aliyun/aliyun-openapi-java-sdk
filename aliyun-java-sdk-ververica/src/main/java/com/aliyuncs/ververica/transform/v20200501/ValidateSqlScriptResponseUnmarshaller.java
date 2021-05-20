@@ -24,6 +24,7 @@ public class ValidateSqlScriptResponseUnmarshaller {
 		
 		validateSqlScriptResponse.setRequestId(_ctx.stringValue("ValidateSqlScriptResponse.requestId"));
 		validateSqlScriptResponse.setData(_ctx.stringValue("ValidateSqlScriptResponse.data"));
+		validateSqlScriptResponse.setSuccess(_ctx.booleanValue("ValidateSqlScriptResponse.success"));
 	 
 	 	return validateSqlScriptResponse;
 	}

@@ -37,7 +37,7 @@ public class ListHotlineRecordDetailRequest extends RpcAcsRequest<ListHotlineRec
 
 	private String instanceId;
 	public ListHotlineRecordDetailRequest() {
-		super("aiccs", "2019-10-15", "ListHotlineRecordDetail", "aiccs-service");
+		super("aiccs", "2019-10-15", "ListHotlineRecordDetail");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

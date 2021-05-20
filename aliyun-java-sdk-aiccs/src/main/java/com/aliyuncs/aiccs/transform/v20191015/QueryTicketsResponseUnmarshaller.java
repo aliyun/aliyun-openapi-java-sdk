@@ -23,9 +23,9 @@ public class QueryTicketsResponseUnmarshaller {
 	public static QueryTicketsResponse unmarshall(QueryTicketsResponse queryTicketsResponse, UnmarshallerContext _ctx) {
 		
 		queryTicketsResponse.setRequestId(_ctx.stringValue("QueryTicketsResponse.RequestId"));
-		queryTicketsResponse.setCode(_ctx.stringValue("QueryTicketsResponse.Code"));
-		queryTicketsResponse.setData(_ctx.stringValue("QueryTicketsResponse.Data"));
 		queryTicketsResponse.setMessage(_ctx.stringValue("QueryTicketsResponse.Message"));
+		queryTicketsResponse.setData(_ctx.stringValue("QueryTicketsResponse.Data"));
+		queryTicketsResponse.setCode(_ctx.stringValue("QueryTicketsResponse.Code"));
 		queryTicketsResponse.setSuccess(_ctx.booleanValue("QueryTicketsResponse.Success"));
 	 
 	 	return queryTicketsResponse;

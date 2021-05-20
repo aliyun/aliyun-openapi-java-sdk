@@ -26,6 +26,7 @@ public class TransferCallToPhoneResponseUnmarshaller {
 		transferCallToPhoneResponse.setMessage(_ctx.stringValue("TransferCallToPhoneResponse.Message"));
 		transferCallToPhoneResponse.setCode(_ctx.stringValue("TransferCallToPhoneResponse.Code"));
 		transferCallToPhoneResponse.setSuccess(_ctx.booleanValue("TransferCallToPhoneResponse.Success"));
+		transferCallToPhoneResponse.setHttpStatusCode(_ctx.longValue("TransferCallToPhoneResponse.HttpStatusCode"));
 	 
 	 	return transferCallToPhoneResponse;
 	}

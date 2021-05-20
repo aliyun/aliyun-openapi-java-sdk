@@ -15,6 +15,7 @@
 package com.aliyuncs.aiccs.transform.v20191015;
 
 import com.aliyuncs.aiccs.model.v20191015.GetRtcTokenResponse;
+import com.aliyuncs.aiccs.model.v20191015.GetRtcTokenResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,9 +25,14 @@ public class GetRtcTokenResponseUnmarshaller {
 		
 		getRtcTokenResponse.setRequestId(_ctx.stringValue("GetRtcTokenResponse.RequestId"));
 		getRtcTokenResponse.setMessage(_ctx.stringValue("GetRtcTokenResponse.Message"));
-		getRtcTokenResponse.setData(_ctx.stringValue("GetRtcTokenResponse.Data"));
 		getRtcTokenResponse.setCode(_ctx.stringValue("GetRtcTokenResponse.Code"));
 		getRtcTokenResponse.setSuccess(_ctx.booleanValue("GetRtcTokenResponse.Success"));
+
+		Data data = new Data();
+		data.setRtcId(_ctx.stringValue("GetRtcTokenResponse.Data.RtcId"));
+		data.setToken(_ctx.stringValue("GetRtcTokenResponse.Data.Token"));
+		data.setAccountName(_ctx.stringValue("GetRtcTokenResponse.Data.AccountName"));
+		getRtcTokenResponse.setData(data);
 	 
 	 	return getRtcTokenResponse;
 	}

@@ -29,7 +29,7 @@ public class SubmitStructSyncOrderApprovalRequest extends RpcAcsRequest<SubmitSt
 
 	private Long tid;
 	public SubmitStructSyncOrderApprovalRequest() {
-		super("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval");
+		super("dms-enterprise", "2018-11-01", "SubmitStructSyncOrderApproval", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

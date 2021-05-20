@@ -29,7 +29,7 @@ public class GetDataCorrectTaskDetailRequest extends RpcAcsRequest<GetDataCorrec
 
 	private Long tid;
 	public GetDataCorrectTaskDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDataCorrectTaskDetail");
+		super("dms-enterprise", "2018-11-01", "GetDataCorrectTaskDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

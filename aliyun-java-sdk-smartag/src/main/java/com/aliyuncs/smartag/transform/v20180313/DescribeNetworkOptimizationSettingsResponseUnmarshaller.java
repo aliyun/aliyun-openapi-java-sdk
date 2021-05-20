@@ -28,14 +28,14 @@ public class DescribeNetworkOptimizationSettingsResponseUnmarshaller {
 		
 		describeNetworkOptimizationSettingsResponse.setRequestId(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.RequestId"));
 		describeNetworkOptimizationSettingsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.TotalCount"));
-		describeNetworkOptimizationSettingsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.PageNumber"));
 		describeNetworkOptimizationSettingsResponse.setPageSize(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.PageSize"));
+		describeNetworkOptimizationSettingsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationSettingsResponse.PageNumber"));
 
 		List<Setting> settings = new ArrayList<Setting>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkOptimizationSettingsResponse.Settings.Length"); i++) {
 			Setting setting = new Setting();
-			setting.setDomain(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Domain"));
 			setting.setType(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Type"));
+			setting.setDomain(_ctx.stringValue("DescribeNetworkOptimizationSettingsResponse.Settings["+ i +"].Domain"));
 
 			settings.add(setting);
 		}

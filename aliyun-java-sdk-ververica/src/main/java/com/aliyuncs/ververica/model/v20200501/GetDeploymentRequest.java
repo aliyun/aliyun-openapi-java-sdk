@@ -31,7 +31,7 @@ public class GetDeploymentRequest extends RoaAcsRequest<GetDeploymentResponse> {
 
 	private String namespace;
 	public GetDeploymentRequest() {
-		super("ververica", "2020-05-01", "GetDeployment", "ververica");
+		super("ververica", "2020-05-01", "GetDeployment");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments/[deploymentId]");
 		setMethod(MethodType.GET);
 		try {

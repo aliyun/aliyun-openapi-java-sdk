@@ -33,6 +33,8 @@ public class DescribeSmartAccessGatewayVersionsRequest extends RpcAcsRequest<Des
 
 	private Long ownerId;
 
+	private String versionType;
+
 	private String smartAGId;
 
 	private String smartAGSn;
@@ -86,6 +88,17 @@ public class DescribeSmartAccessGatewayVersionsRequest extends RpcAcsRequest<Des
 		this.ownerId = ownerId;
 		if(ownerId != null){
 			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getVersionType() {
+		return this.versionType;
+	}
+
+	public void setVersionType(String versionType) {
+		this.versionType = versionType;
+		if(versionType != null){
+			putQueryParameter("VersionType", versionType);
 		}
 	}
 

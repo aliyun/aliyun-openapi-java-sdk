@@ -24,8 +24,8 @@ public class CreateBodyDbResponseUnmarshaller {
 	public static CreateBodyDbResponse unmarshall(CreateBodyDbResponse createBodyDbResponse, UnmarshallerContext _ctx) {
 		
 		createBodyDbResponse.setRequestId(_ctx.stringValue("CreateBodyDbResponse.RequestId"));
-		createBodyDbResponse.setMessage(_ctx.stringValue("CreateBodyDbResponse.Message"));
 		createBodyDbResponse.setCode(_ctx.stringValue("CreateBodyDbResponse.Code"));
+		createBodyDbResponse.setMessage(_ctx.stringValue("CreateBodyDbResponse.Message"));
 
 		Data data = new Data();
 		data.setId(_ctx.longValue("CreateBodyDbResponse.Data.Id"));

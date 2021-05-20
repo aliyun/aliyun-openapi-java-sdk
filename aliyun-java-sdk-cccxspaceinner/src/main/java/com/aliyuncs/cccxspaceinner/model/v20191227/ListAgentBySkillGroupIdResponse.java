@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<Agents> data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<Agents> getData() {
@@ -77,22 +77,30 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 	public static class Agents {
 
-		private Long tenantId;
+		private Integer status;
+
+		private String displayName;
 
 		private Long agentId;
 
 		private String accountName;
 
-		private String displayName;
+		private Long tenantId;
 
-		private Integer status;
-
-		public Long getTenantId() {
-			return this.tenantId;
+		public Integer getStatus() {
+			return this.status;
 		}
 
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
+
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
 		}
 
 		public Long getAgentId() {
@@ -111,20 +119,12 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 			this.accountName = accountName;
 		}
 
-		public String getDisplayName() {
-			return this.displayName;
+		public Long getTenantId() {
+			return this.tenantId;
 		}
 
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

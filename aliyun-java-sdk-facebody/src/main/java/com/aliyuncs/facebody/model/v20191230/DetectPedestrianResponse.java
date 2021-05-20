@@ -47,19 +47,11 @@ public class DetectPedestrianResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer height;
-
 		private Integer width;
 
+		private Integer height;
+
 		private List<Element> elements;
-
-		public Integer getHeight() {
-			return this.height;
-		}
-
-		public void setHeight(Integer height) {
-			this.height = height;
-		}
 
 		public Integer getWidth() {
 			return this.width;
@@ -67,6 +59,14 @@ public class DetectPedestrianResponse extends AcsResponse {
 
 		public void setWidth(Integer width) {
 			this.width = width;
+		}
+
+		public Integer getHeight() {
+			return this.height;
+		}
+
+		public void setHeight(Integer height) {
+			this.height = height;
 		}
 
 		public List<Element> getElements() {
@@ -79,19 +79,11 @@ public class DetectPedestrianResponse extends AcsResponse {
 
 		public static class Element {
 
-			private Float score;
-
 			private String type;
 
+			private Float score;
+
 			private List<Integer> boxes;
-
-			public Float getScore() {
-				return this.score;
-			}
-
-			public void setScore(Float score) {
-				this.score = score;
-			}
 
 			public String getType() {
 				return this.type;
@@ -99,6 +91,14 @@ public class DetectPedestrianResponse extends AcsResponse {
 
 			public void setType(String type) {
 				this.type = type;
+			}
+
+			public Float getScore() {
+				return this.score;
+			}
+
+			public void setScore(Float score) {
+				this.score = score;
 			}
 
 			public List<Integer> getBoxes() {

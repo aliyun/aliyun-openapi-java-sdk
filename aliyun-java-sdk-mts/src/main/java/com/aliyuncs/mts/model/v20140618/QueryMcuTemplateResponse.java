@@ -47,17 +47,9 @@ public class QueryMcuTemplateResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String templateId;
-
 		private String template;
 
-		public String getTemplateId() {
-			return this.templateId;
-		}
-
-		public void setTemplateId(String templateId) {
-			this.templateId = templateId;
-		}
+		private String templateId;
 
 		public String getTemplate() {
 			return this.template;
@@ -65,6 +57,14 @@ public class QueryMcuTemplateResponse extends AcsResponse {
 
 		public void setTemplate(String template) {
 			this.template = template;
+		}
+
+		public String getTemplateId() {
+			return this.templateId;
+		}
+
+		public void setTemplateId(String templateId) {
+			this.templateId = templateId;
 		}
 	}
 

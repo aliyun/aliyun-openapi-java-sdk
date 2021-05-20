@@ -40,7 +40,7 @@ public class CreateDataCorrectOrderRequest extends RpcAcsRequest<CreateDataCorre
 	@SerializedName("relatedUserList")
 	private List<Long> relatedUserList;
 	public CreateDataCorrectOrderRequest() {
-		super("dms-enterprise", "2018-11-01", "CreateDataCorrectOrder");
+		super("dms-enterprise", "2018-11-01", "CreateDataCorrectOrder", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

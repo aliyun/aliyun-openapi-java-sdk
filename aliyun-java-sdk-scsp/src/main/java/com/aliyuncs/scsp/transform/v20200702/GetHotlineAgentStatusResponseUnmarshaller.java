@@ -27,6 +27,7 @@ public class GetHotlineAgentStatusResponseUnmarshaller {
 		getHotlineAgentStatusResponse.setData(_ctx.stringValue("GetHotlineAgentStatusResponse.Data"));
 		getHotlineAgentStatusResponse.setCode(_ctx.stringValue("GetHotlineAgentStatusResponse.Code"));
 		getHotlineAgentStatusResponse.setSuccess(_ctx.booleanValue("GetHotlineAgentStatusResponse.Success"));
+		getHotlineAgentStatusResponse.setHttpStatusCode(_ctx.longValue("GetHotlineAgentStatusResponse.HttpStatusCode"));
 	 
 	 	return getHotlineAgentStatusResponse;
 	}

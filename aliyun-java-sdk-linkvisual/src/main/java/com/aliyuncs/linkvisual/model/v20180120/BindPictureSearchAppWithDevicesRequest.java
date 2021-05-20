@@ -26,6 +26,8 @@ import com.aliyuncs.linkvisual.Endpoint;
 public class BindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<BindPictureSearchAppWithDevicesResponse> {
 	   
 
+	private String iotInstanceId;
+
 	private List<String> deviceIotIdss;
 
 	private String appInstanceId;
@@ -36,6 +38,17 @@ public class BindPictureSearchAppWithDevicesRequest extends RpcAcsRequest<BindPi
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getIotInstanceId() {
+		return this.iotInstanceId;
+	}
+
+	public void setIotInstanceId(String iotInstanceId) {
+		this.iotInstanceId = iotInstanceId;
+		if(iotInstanceId != null){
+			putQueryParameter("IotInstanceId", iotInstanceId);
+		}
 	}
 
 	public List<String> getDeviceIotIdss() {

@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEntityTagRelationResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 
 	private List<DataItem> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,33 +77,17 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String entityType;
-
-		private String entityId;
-
 		private String tagName;
 
 		private String tagGroupCode;
 
-		private String tagGroupName;
+		private String entityId;
 
 		private String tagCode;
 
-		public String getEntityType() {
-			return this.entityType;
-		}
+		private String entityType;
 
-		public void setEntityType(String entityType) {
-			this.entityType = entityType;
-		}
-
-		public String getEntityId() {
-			return this.entityId;
-		}
-
-		public void setEntityId(String entityId) {
-			this.entityId = entityId;
-		}
+		private String tagGroupName;
 
 		public String getTagName() {
 			return this.tagName;
@@ -121,12 +105,12 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 			this.tagGroupCode = tagGroupCode;
 		}
 
-		public String getTagGroupName() {
-			return this.tagGroupName;
+		public String getEntityId() {
+			return this.entityId;
 		}
 
-		public void setTagGroupName(String tagGroupName) {
-			this.tagGroupName = tagGroupName;
+		public void setEntityId(String entityId) {
+			this.entityId = entityId;
 		}
 
 		public String getTagCode() {
@@ -135,6 +119,22 @@ public class GetEntityTagRelationResponse extends AcsResponse {
 
 		public void setTagCode(String tagCode) {
 			this.tagCode = tagCode;
+		}
+
+		public String getEntityType() {
+			return this.entityType;
+		}
+
+		public void setEntityType(String entityType) {
+			this.entityType = entityType;
+		}
+
+		public String getTagGroupName() {
+			return this.tagGroupName;
+		}
+
+		public void setTagGroupName(String tagGroupName) {
+			this.tagGroupName = tagGroupName;
 		}
 	}
 

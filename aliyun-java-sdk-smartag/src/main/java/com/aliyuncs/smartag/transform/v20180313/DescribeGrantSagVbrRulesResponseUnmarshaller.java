@@ -28,20 +28,20 @@ public class DescribeGrantSagVbrRulesResponseUnmarshaller {
 		
 		describeGrantSagVbrRulesResponse.setRequestId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.RequestId"));
 		describeGrantSagVbrRulesResponse.setTotalCount(_ctx.integerValue("DescribeGrantSagVbrRulesResponse.TotalCount"));
-		describeGrantSagVbrRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantSagVbrRulesResponse.PageNumber"));
 		describeGrantSagVbrRulesResponse.setPageSize(_ctx.integerValue("DescribeGrantSagVbrRulesResponse.PageSize"));
+		describeGrantSagVbrRulesResponse.setPageNumber(_ctx.integerValue("DescribeGrantSagVbrRulesResponse.PageNumber"));
 
 		List<GrantRule> grantRules = new ArrayList<GrantRule>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGrantSagVbrRulesResponse.GrantRules.Length"); i++) {
 			GrantRule grantRule = new GrantRule();
-			grantRule.setCreateTime(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].CreateTime"));
-			grantRule.setInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].InstanceId"));
 			grantRule.setVbrUid(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrUid"));
-			grantRule.setVbrInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrInstanceId"));
-			grantRule.setVbrRegionId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrRegionId"));
 			grantRule.setSmartAGUid(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].SmartAGUid"));
-			grantRule.setSmartAGId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].SmartAGId"));
+			grantRule.setVbrInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrInstanceId"));
+			grantRule.setInstanceId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].InstanceId"));
+			grantRule.setCreateTime(_ctx.longValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].CreateTime"));
 			grantRule.setBound(_ctx.booleanValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].Bound"));
+			grantRule.setVbrRegionId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].VbrRegionId"));
+			grantRule.setSmartAGId(_ctx.stringValue("DescribeGrantSagVbrRulesResponse.GrantRules["+ i +"].SmartAGId"));
 
 			grantRules.add(grantRule);
 		}

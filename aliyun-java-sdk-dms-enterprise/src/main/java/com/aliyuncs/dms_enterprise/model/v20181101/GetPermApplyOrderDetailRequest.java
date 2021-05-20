@@ -29,7 +29,7 @@ public class GetPermApplyOrderDetailRequest extends RpcAcsRequest<GetPermApplyOr
 
 	private Long tid;
 	public GetPermApplyOrderDetailRequest() {
-		super("dms-enterprise", "2018-11-01", "GetPermApplyOrderDetail");
+		super("dms-enterprise", "2018-11-01", "GetPermApplyOrderDetail", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

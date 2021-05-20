@@ -39,6 +39,11 @@ public class ListDashboardsResponseUnmarshaller {
 			dashboardVosItem.setType(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Type"));
 			dashboardVosItem.setExporter(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Exporter"));
 			dashboardVosItem.setIsArmsExporter(_ctx.booleanValue("ListDashboardsResponse.DashboardVos["+ i +"].IsArmsExporter"));
+			dashboardVosItem.setName(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Name"));
+			dashboardVosItem.setVersion(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Version"));
+			dashboardVosItem.setDashboardType(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].DashboardType"));
+			dashboardVosItem.setKind(_ctx.stringValue("ListDashboardsResponse.DashboardVos["+ i +"].Kind"));
+			dashboardVosItem.setNeedUpdate(_ctx.booleanValue("ListDashboardsResponse.DashboardVos["+ i +"].NeedUpdate"));
 
 			List<String> tags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListDashboardsResponse.DashboardVos["+ i +"].Tags.Length"); j++) {

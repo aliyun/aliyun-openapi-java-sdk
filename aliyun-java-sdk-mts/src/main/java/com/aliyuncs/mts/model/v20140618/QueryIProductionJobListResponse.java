@@ -29,9 +29,9 @@ public class QueryIProductionJobListResponse extends AcsResponse {
 
 	private String nextPageToken;
 
-	private List<String> nonExistIds;
-
 	private List<String> jobs;
+
+	private List<String> nonExistIds;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,20 +49,20 @@ public class QueryIProductionJobListResponse extends AcsResponse {
 		this.nextPageToken = nextPageToken;
 	}
 
-	public List<String> getNonExistIds() {
-		return this.nonExistIds;
-	}
-
-	public void setNonExistIds(List<String> nonExistIds) {
-		this.nonExistIds = nonExistIds;
-	}
-
 	public List<String> getJobs() {
 		return this.jobs;
 	}
 
 	public void setJobs(List<String> jobs) {
 		this.jobs = jobs;
+	}
+
+	public List<String> getNonExistIds() {
+		return this.nonExistIds;
+	}
+
+	public void setNonExistIds(List<String> nonExistIds) {
+		this.nonExistIds = nonExistIds;
 	}
 
 	@Override

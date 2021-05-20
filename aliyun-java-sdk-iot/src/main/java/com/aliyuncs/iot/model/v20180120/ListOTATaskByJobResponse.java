@@ -145,6 +145,8 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 
 		private String utcCreate;
 
+		private String timeout;
+
 		public String getTaskId() {
 			return this.taskId;
 		}
@@ -255,6 +257,14 @@ public class ListOTATaskByJobResponse extends AcsResponse {
 
 		public void setUtcCreate(String utcCreate) {
 			this.utcCreate = utcCreate;
+		}
+
+		public String getTimeout() {
+			return this.timeout;
+		}
+
+		public void setTimeout(String timeout) {
+			this.timeout = timeout;
 		}
 	}
 

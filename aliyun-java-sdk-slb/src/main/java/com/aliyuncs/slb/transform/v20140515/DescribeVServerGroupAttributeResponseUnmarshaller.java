@@ -43,6 +43,7 @@ public class DescribeVServerGroupAttributeResponseUnmarshaller {
 			backendServer.setVbrId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].VbrId"));
 			backendServer.setServerRegionId(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ServerRegionId"));
 			backendServer.setDescription(_ctx.stringValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].Description"));
+			backendServer.setProxyProtocolV2Enabled(_ctx.booleanValue("DescribeVServerGroupAttributeResponse.BackendServers["+ i +"].ProxyProtocolV2Enabled"));
 
 			backendServers.add(backendServer);
 		}

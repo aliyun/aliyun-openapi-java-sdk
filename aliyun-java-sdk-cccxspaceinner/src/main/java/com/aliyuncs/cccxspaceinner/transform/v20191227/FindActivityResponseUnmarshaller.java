@@ -23,10 +23,10 @@ public class FindActivityResponseUnmarshaller {
 
 	public static FindActivityResponse unmarshall(FindActivityResponse findActivityResponse, UnmarshallerContext _ctx) {
 		
-		findActivityResponse.setSuccess(_ctx.booleanValue("FindActivityResponse.Success"));
-		findActivityResponse.setCode(_ctx.stringValue("FindActivityResponse.Code"));
 		findActivityResponse.setMessage(_ctx.stringValue("FindActivityResponse.Message"));
 		findActivityResponse.setData(_ctx.mapValue("FindActivityResponse.Data"));
+		findActivityResponse.setCode(_ctx.stringValue("FindActivityResponse.Code"));
+		findActivityResponse.setSuccess(_ctx.booleanValue("FindActivityResponse.Success"));
 	 
 	 	return findActivityResponse;
 	}

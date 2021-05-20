@@ -27,18 +27,18 @@ public class RunServiceScheduleResponseUnmarshaller {
 	public static RunServiceScheduleResponse unmarshall(RunServiceScheduleResponse runServiceScheduleResponse, UnmarshallerContext _ctx) {
 		
 		runServiceScheduleResponse.setRequestId(_ctx.stringValue("RunServiceScheduleResponse.RequestId"));
+		runServiceScheduleResponse.setIndex(_ctx.integerValue("RunServiceScheduleResponse.Index"));
+		runServiceScheduleResponse.setInstanceId(_ctx.stringValue("RunServiceScheduleResponse.InstanceId"));
+		runServiceScheduleResponse.setInstanceIp(_ctx.stringValue("RunServiceScheduleResponse.InstanceIp"));
+		runServiceScheduleResponse.setInstancePort(_ctx.integerValue("RunServiceScheduleResponse.InstancePort"));
 		runServiceScheduleResponse.setRequestRepeated(_ctx.stringValue("RunServiceScheduleResponse.RequestRepeated"));
 		runServiceScheduleResponse.setTcpPorts(_ctx.booleanValue("RunServiceScheduleResponse.TcpPorts"));
-		runServiceScheduleResponse.setInstanceId(_ctx.stringValue("RunServiceScheduleResponse.InstanceId"));
-		runServiceScheduleResponse.setInstancePort(_ctx.integerValue("RunServiceScheduleResponse.InstancePort"));
-		runServiceScheduleResponse.setInstanceIp(_ctx.stringValue("RunServiceScheduleResponse.InstanceIp"));
-		runServiceScheduleResponse.setIndex(_ctx.integerValue("RunServiceScheduleResponse.Index"));
 
 		List<CommandResult> commandResults = new ArrayList<CommandResult>();
 		for (int i = 0; i < _ctx.lengthValue("RunServiceScheduleResponse.CommandResults.Length"); i++) {
 			CommandResult commandResult = new CommandResult();
-			commandResult.setContainerName(_ctx.stringValue("RunServiceScheduleResponse.CommandResults["+ i +"].ContainerName"));
 			commandResult.setCommand(_ctx.stringValue("RunServiceScheduleResponse.CommandResults["+ i +"].Command"));
+			commandResult.setContainerName(_ctx.stringValue("RunServiceScheduleResponse.CommandResults["+ i +"].ContainerName"));
 			commandResult.setResultMsg(_ctx.stringValue("RunServiceScheduleResponse.CommandResults["+ i +"].ResultMsg"));
 
 			commandResults.add(commandResult);

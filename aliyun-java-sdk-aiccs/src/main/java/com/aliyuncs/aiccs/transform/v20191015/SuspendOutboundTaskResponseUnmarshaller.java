@@ -23,10 +23,10 @@ public class SuspendOutboundTaskResponseUnmarshaller {
 	public static SuspendOutboundTaskResponse unmarshall(SuspendOutboundTaskResponse suspendOutboundTaskResponse, UnmarshallerContext _ctx) {
 		
 		suspendOutboundTaskResponse.setRequestId(_ctx.stringValue("SuspendOutboundTaskResponse.RequestId"));
-		suspendOutboundTaskResponse.setSuccess(_ctx.booleanValue("SuspendOutboundTaskResponse.Success"));
-		suspendOutboundTaskResponse.setCode(_ctx.stringValue("SuspendOutboundTaskResponse.Code"));
 		suspendOutboundTaskResponse.setMessage(_ctx.stringValue("SuspendOutboundTaskResponse.Message"));
 		suspendOutboundTaskResponse.setData(_ctx.stringValue("SuspendOutboundTaskResponse.Data"));
+		suspendOutboundTaskResponse.setCode(_ctx.stringValue("SuspendOutboundTaskResponse.Code"));
+		suspendOutboundTaskResponse.setSuccess(_ctx.booleanValue("SuspendOutboundTaskResponse.Success"));
 	 
 	 	return suspendOutboundTaskResponse;
 	}

@@ -27,10 +27,10 @@ public class AddCensorPipelineResponseUnmarshaller {
 		addCensorPipelineResponse.setRequestId(_ctx.stringValue("AddCensorPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("AddCensorPipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("AddCensorPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(_ctx.integerValue("AddCensorPipelineResponse.Pipeline.Priority"));
 		pipeline.setState(_ctx.stringValue("AddCensorPipelineResponse.Pipeline.State"));
+		pipeline.setPriority(_ctx.integerValue("AddCensorPipelineResponse.Pipeline.Priority"));
+		pipeline.setName(_ctx.stringValue("AddCensorPipelineResponse.Pipeline.Name"));
+		pipeline.setId(_ctx.stringValue("AddCensorPipelineResponse.Pipeline.Id"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(_ctx.stringValue("AddCensorPipelineResponse.Pipeline.NotifyConfig.Topic"));

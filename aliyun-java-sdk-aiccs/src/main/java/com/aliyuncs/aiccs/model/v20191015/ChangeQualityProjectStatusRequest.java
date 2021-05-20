@@ -31,7 +31,7 @@ public class ChangeQualityProjectStatusRequest extends RpcAcsRequest<ChangeQuali
 
 	private Integer status;
 	public ChangeQualityProjectStatusRequest() {
-		super("aiccs", "2019-10-15", "ChangeQualityProjectStatus", "aiccs-service");
+		super("aiccs", "2019-10-15", "ChangeQualityProjectStatus");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

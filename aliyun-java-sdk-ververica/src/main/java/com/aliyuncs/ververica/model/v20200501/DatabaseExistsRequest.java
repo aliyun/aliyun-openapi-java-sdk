@@ -33,7 +33,7 @@ public class DatabaseExistsRequest extends RoaAcsRequest<DatabaseExistsResponse>
 
 	private String namespace;
 	public DatabaseExistsRequest() {
-		super("ververica", "2020-05-01", "DatabaseExists", "ververica");
+		super("ververica", "2020-05-01", "DatabaseExists");
 		setUriPattern("/pop/workspaces/[workspace]/catalog/v1beta2/namespaces/[namespace]/catalogs/[cat]:databaseExists");
 		setMethod(MethodType.GET);
 		try {

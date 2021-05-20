@@ -129,15 +129,11 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 
 		public static class PageDataItem {
 
-			private String tenantId;
-
 			private String appInstanceId;
 
 			private String appTemplateId;
 
 			private String version;
-
-			private Integer level;
 
 			private String name;
 
@@ -146,14 +142,6 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 			private Long modifiedTime;
 
 			private String description;
-
-			public String getTenantId() {
-				return this.tenantId;
-			}
-
-			public void setTenantId(String tenantId) {
-				this.tenantId = tenantId;
-			}
 
 			public String getAppInstanceId() {
 				return this.appInstanceId;
@@ -177,14 +165,6 @@ public class QueryPictureSearchAppsResponse extends AcsResponse {
 
 			public void setVersion(String version) {
 				this.version = version;
-			}
-
-			public Integer getLevel() {
-				return this.level;
-			}
-
-			public void setLevel(Integer level) {
-				this.level = level;
 			}
 
 			public String getName() {

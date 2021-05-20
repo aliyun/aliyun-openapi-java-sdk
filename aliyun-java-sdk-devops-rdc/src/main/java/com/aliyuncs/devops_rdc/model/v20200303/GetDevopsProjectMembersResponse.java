@@ -33,6 +33,10 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 
 	private String requestId;
 
+	private Integer total;
+
+	private String nextPageToken;
+
 	private List<Member> object;
 
 	public Boolean getSuccessful() {
@@ -65,6 +69,22 @@ public class GetDevopsProjectMembersResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
+	public String getNextPageToken() {
+		return this.nextPageToken;
+	}
+
+	public void setNextPageToken(String nextPageToken) {
+		this.nextPageToken = nextPageToken;
 	}
 
 	public List<Member> getObject() {

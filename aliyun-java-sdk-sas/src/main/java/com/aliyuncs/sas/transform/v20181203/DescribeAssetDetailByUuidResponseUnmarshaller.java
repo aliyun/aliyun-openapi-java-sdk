@@ -39,6 +39,7 @@ public class DescribeAssetDetailByUuidResponseUnmarshaller {
 		assetDetail.setOs(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Os"));
 		assetDetail.setClientStatus(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.ClientStatus"));
 		assetDetail.setRegion(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Region"));
+		assetDetail.setRegionId(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.RegionId"));
 		assetDetail.setRegionName(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.RegionName"));
 		assetDetail.setTag(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.Tag"));
 		assetDetail.setGroupTrace(_ctx.stringValue("DescribeAssetDetailByUuidResponse.AssetDetail.GroupTrace"));

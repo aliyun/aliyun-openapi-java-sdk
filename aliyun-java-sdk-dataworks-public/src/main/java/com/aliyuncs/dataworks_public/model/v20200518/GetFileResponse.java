@@ -145,6 +145,12 @@ public class GetFileResponse extends AcsResponse {
 
 			private Integer commitStatus;
 
+			private String deletedStatus;
+
+			private Long businessId;
+
+			private Boolean autoParsing;
+
 			public String getConnectionName() {
 				return this.connectionName;
 			}
@@ -287,6 +293,30 @@ public class GetFileResponse extends AcsResponse {
 
 			public void setCommitStatus(Integer commitStatus) {
 				this.commitStatus = commitStatus;
+			}
+
+			public String getDeletedStatus() {
+				return this.deletedStatus;
+			}
+
+			public void setDeletedStatus(String deletedStatus) {
+				this.deletedStatus = deletedStatus;
+			}
+
+			public Long getBusinessId() {
+				return this.businessId;
+			}
+
+			public void setBusinessId(Long businessId) {
+				this.businessId = businessId;
+			}
+
+			public Boolean getAutoParsing() {
+				return this.autoParsing;
+			}
+
+			public void setAutoParsing(Boolean autoParsing) {
+				this.autoParsing = autoParsing;
 			}
 		}
 
@@ -436,12 +466,22 @@ public class GetFileResponse extends AcsResponse {
 
 				private String input;
 
+				private String parseType;
+
 				public String getInput() {
 					return this.input;
 				}
 
 				public void setInput(String input) {
 					this.input = input;
+				}
+
+				public String getParseType() {
+					return this.parseType;
+				}
+
+				public void setParseType(String parseType) {
+					this.parseType = parseType;
 				}
 			}
 

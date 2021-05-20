@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribePolicyBasedRoutingsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<PolicyBasedRouting> policyBasedRoutings;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribePolicyBasedRoutingsResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribePolicyBasedRoutingsResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<PolicyBasedRouting> getPolicyBasedRoutings() {
@@ -79,11 +79,11 @@ public class DescribePolicyBasedRoutingsResponse extends AcsResponse {
 
 		private String pbrInstanceId;
 
+		private String description;
+
 		private Integer priority;
 
 		private String name;
-
-		private String description;
 
 		public String getPbrInstanceId() {
 			return this.pbrInstanceId;
@@ -91,6 +91,14 @@ public class DescribePolicyBasedRoutingsResponse extends AcsResponse {
 
 		public void setPbrInstanceId(String pbrInstanceId) {
 			this.pbrInstanceId = pbrInstanceId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Integer getPriority() {
@@ -107,14 +115,6 @@ public class DescribePolicyBasedRoutingsResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

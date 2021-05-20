@@ -23,10 +23,10 @@ public class CreateVideoComposeTaskResponseUnmarshaller {
 	public static CreateVideoComposeTaskResponse unmarshall(CreateVideoComposeTaskResponse createVideoComposeTaskResponse, UnmarshallerContext _ctx) {
 		
 		createVideoComposeTaskResponse.setRequestId(_ctx.stringValue("CreateVideoComposeTaskResponse.RequestId"));
-		createVideoComposeTaskResponse.setCode(_ctx.stringValue("CreateVideoComposeTaskResponse.Code"));
+		createVideoComposeTaskResponse.setBucketName(_ctx.stringValue("CreateVideoComposeTaskResponse.BucketName"));
 		createVideoComposeTaskResponse.setMessage(_ctx.stringValue("CreateVideoComposeTaskResponse.Message"));
 		createVideoComposeTaskResponse.setDomainName(_ctx.stringValue("CreateVideoComposeTaskResponse.DomainName"));
-		createVideoComposeTaskResponse.setBucketName(_ctx.stringValue("CreateVideoComposeTaskResponse.BucketName"));
+		createVideoComposeTaskResponse.setCode(_ctx.stringValue("CreateVideoComposeTaskResponse.Code"));
 	 
 	 	return createVideoComposeTaskResponse;
 	}

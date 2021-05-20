@@ -34,7 +34,7 @@ public class ExportImageRequest extends RpcAcsRequest<ExportImageResponse> {
 
 	private String imageId;
 	public ExportImageRequest() {
-		super("Ens", "2017-11-10", "ExportImage");
+		super("Ens", "2017-11-10", "ExportImage", "ens");
 		setMethod(MethodType.POST);
 	}
 

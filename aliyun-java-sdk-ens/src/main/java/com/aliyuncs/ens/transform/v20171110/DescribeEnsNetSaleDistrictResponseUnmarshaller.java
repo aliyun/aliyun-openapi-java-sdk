@@ -32,13 +32,13 @@ public class DescribeEnsNetSaleDistrictResponseUnmarshaller {
 		List<EnsNetDistrict> ensNetDistricts = new ArrayList<EnsNetDistrict>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts.Length"); i++) {
 			EnsNetDistrict ensNetDistrict = new EnsNetDistrict();
-			ensNetDistrict.setNetDistrictEnName(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictEnName"));
-			ensNetDistrict.setInstanceCount(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].InstanceCount"));
-			ensNetDistrict.setNetDistrictName(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictName"));
-			ensNetDistrict.setNetDistrictFatherCode(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictFatherCode"));
-			ensNetDistrict.setNetDistrictCode(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictCode"));
-			ensNetDistrict.setNetDistrictLevel(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictLevel"));
 			ensNetDistrict.setEnsRegionIdCount(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].EnsRegionIdCount"));
+			ensNetDistrict.setInstanceCount(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].InstanceCount"));
+			ensNetDistrict.setNetDistrictCode(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictCode"));
+			ensNetDistrict.setNetDistrictEnName(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictEnName"));
+			ensNetDistrict.setNetDistrictFatherCode(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictFatherCode"));
+			ensNetDistrict.setNetDistrictLevel(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictLevel"));
+			ensNetDistrict.setNetDistrictName(_ctx.stringValue("DescribeEnsNetSaleDistrictResponse.EnsNetDistricts["+ i +"].NetDistrictName"));
 
 			ensNetDistricts.add(ensNetDistrict);
 		}

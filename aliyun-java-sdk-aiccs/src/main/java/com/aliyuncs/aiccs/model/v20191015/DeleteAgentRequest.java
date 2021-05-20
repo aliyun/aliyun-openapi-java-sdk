@@ -31,7 +31,7 @@ public class DeleteAgentRequest extends RpcAcsRequest<DeleteAgentResponse> {
 
 	private String accountName;
 	public DeleteAgentRequest() {
-		super("aiccs", "2019-10-15", "DeleteAgent", "aiccs-service");
+		super("aiccs", "2019-10-15", "DeleteAgent");
 		setMethod(MethodType.DELETE);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

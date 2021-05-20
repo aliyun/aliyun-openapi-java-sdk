@@ -1,7 +1,7 @@
 [← 安装](1-Installation-CN.md) | 客户端与凭证[(English)](2-Client-EN.md) | [连接池 →](3-Pool-CN.md)
 ***
 
-### 使用 AccessKey 调用
+### 使用 AccessKey 调用（包含 STS Token 方式）
 ```java
 package com.testprogram;
 import com.aliyuncs.profile.DefaultProfile;
@@ -17,6 +17,15 @@ public class Main {
             "<your-region-id>",          // 地域ID
             "<your-access-key-id>",      // RAM账号的AccessKey ID
             "<your-access-key-secret>"); // RAM账号Access Key Secret
+
+        /** 使用 STS Token 方式
+        DefaultProfile profile = DefaultProfile.getProfile(
+            "<your-region-id>",          // 地域ID
+            "<your-access-key-id>",      // 以STS开头的AccessKey ID
+            "<your-access-key-secret>",  // RAM账号Access Key Secret
+            "<your-sts-token>");         // STS Token
+        **/
+        
         IAcsClient client = new DefaultAcsClient(profile);
         // 创建API请求并设置参数
         DescribeInstancesRequest request = new DescribeInstancesRequest();

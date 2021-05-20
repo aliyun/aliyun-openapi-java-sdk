@@ -57,48 +57,32 @@ public class QueryFpFileDeleteJobListResponse extends AcsResponse {
 
 	public static class FpFileDeleteJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String status;
+
+		private String finishTime;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String fileIds;
+		private String pipelineId;
 
 		private String fpDBId;
 
-		private String creationTime;
+		private String id;
 
-		private String finishTime;
+		private String fileIds;
 
-		public String getId() {
-			return this.id;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getStatus() {
@@ -107,6 +91,22 @@ public class QueryFpFileDeleteJobListResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getFinishTime() {
+			return this.finishTime;
+		}
+
+		public void setFinishTime(String finishTime) {
+			this.finishTime = finishTime;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -125,12 +125,12 @@ public class QueryFpFileDeleteJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getFileIds() {
-			return this.fileIds;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setFileIds(String fileIds) {
-			this.fileIds = fileIds;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
 		public String getFpDBId() {
@@ -141,20 +141,20 @@ public class QueryFpFileDeleteJobListResponse extends AcsResponse {
 			this.fpDBId = fpDBId;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setId(String id) {
+			this.id = id;
 		}
 
-		public String getFinishTime() {
-			return this.finishTime;
+		public String getFileIds() {
+			return this.fileIds;
 		}
 
-		public void setFinishTime(String finishTime) {
-			this.finishTime = finishTime;
+		public void setFileIds(String fileIds) {
+			this.fileIds = fileIds;
 		}
 	}
 

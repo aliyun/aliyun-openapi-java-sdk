@@ -35,6 +35,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String storageType;
 
+	private String configMountDescs;
+
 	private String appName;
 
 	private Integer requestsmCpu;
@@ -63,6 +65,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 
 	private String webContainer;
 
+	private Boolean enableAsm;
+
 	private Boolean enableAhas;
 
 	private String slsConfigs;
@@ -72,6 +76,8 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 	private String readiness;
 
 	private String liveness;
+
+	private String csClusterId;
 
 	private Integer internetSlbPort;
 
@@ -188,6 +194,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getConfigMountDescs() {
+		return this.configMountDescs;
+	}
+
+	public void setConfigMountDescs(String configMountDescs) {
+		this.configMountDescs = configMountDescs;
+		if(configMountDescs != null){
+			putQueryParameter("ConfigMountDescs", configMountDescs);
 		}
 	}
 
@@ -345,6 +362,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		}
 	}
 
+	public Boolean getEnableAsm() {
+		return this.enableAsm;
+	}
+
+	public void setEnableAsm(Boolean enableAsm) {
+		this.enableAsm = enableAsm;
+		if(enableAsm != null){
+			putQueryParameter("EnableAsm", enableAsm.toString());
+		}
+	}
+
 	public Boolean getEnableAhas() {
 		return this.enableAhas;
 	}
@@ -397,6 +425,17 @@ public class InsertK8sApplicationRequest extends RoaAcsRequest<InsertK8sApplicat
 		this.liveness = liveness;
 		if(liveness != null){
 			putQueryParameter("Liveness", liveness);
+		}
+	}
+
+	public String getCsClusterId() {
+		return this.csClusterId;
+	}
+
+	public void setCsClusterId(String csClusterId) {
+		this.csClusterId = csClusterId;
+		if(csClusterId != null){
+			putQueryParameter("CsClusterId", csClusterId);
 		}
 	}
 

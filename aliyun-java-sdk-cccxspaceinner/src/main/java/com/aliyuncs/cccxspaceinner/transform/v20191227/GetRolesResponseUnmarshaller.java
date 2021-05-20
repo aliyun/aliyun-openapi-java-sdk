@@ -27,17 +27,17 @@ public class GetRolesResponseUnmarshaller {
 	public static GetRolesResponse unmarshall(GetRolesResponse getRolesResponse, UnmarshallerContext _ctx) {
 		
 		getRolesResponse.setRequestId(_ctx.stringValue("GetRolesResponse.RequestId"));
-		getRolesResponse.setCode(_ctx.stringValue("GetRolesResponse.Code"));
 		getRolesResponse.setMessage(_ctx.stringValue("GetRolesResponse.Message"));
+		getRolesResponse.setCode(_ctx.stringValue("GetRolesResponse.Code"));
 		getRolesResponse.setSuccess(_ctx.booleanValue("GetRolesResponse.Success"));
 
 		List<XspaceRole> data = new ArrayList<XspaceRole>();
 		for (int i = 0; i < _ctx.lengthValue("GetRolesResponse.Data.Length"); i++) {
 			XspaceRole xspaceRole = new XspaceRole();
 			xspaceRole.setBuId(_ctx.longValue("GetRolesResponse.Data["+ i +"].BuId"));
-			xspaceRole.setRoleId(_ctx.longValue("GetRolesResponse.Data["+ i +"].RoleId"));
-			xspaceRole.setRoleName(_ctx.stringValue("GetRolesResponse.Data["+ i +"].RoleName"));
 			xspaceRole.setRoleCode(_ctx.stringValue("GetRolesResponse.Data["+ i +"].RoleCode"));
+			xspaceRole.setRoleName(_ctx.stringValue("GetRolesResponse.Data["+ i +"].RoleName"));
+			xspaceRole.setRoleId(_ctx.longValue("GetRolesResponse.Data["+ i +"].RoleId"));
 
 			data.add(xspaceRole);
 		}

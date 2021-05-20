@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEntityRouteListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetEntityRouteListResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,13 +77,21 @@ public class GetEntityRouteListResponse extends AcsResponse {
 
 	public static class Data {
 
+		private Integer pageNo;
+
 		private Integer pageSize;
 
 		private Long total;
 
-		private Integer pageNo;
-
 		private List<EntityRouteListItem> entityRouteList;
+
+		public Integer getPageNo() {
+			return this.pageNo;
+		}
+
+		public void setPageNo(Integer pageNo) {
+			this.pageNo = pageNo;
+		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -101,14 +109,6 @@ public class GetEntityRouteListResponse extends AcsResponse {
 			this.total = total;
 		}
 
-		public Integer getPageNo() {
-			return this.pageNo;
-		}
-
-		public void setPageNo(Integer pageNo) {
-			this.pageNo = pageNo;
-		}
-
 		public List<EntityRouteListItem> getEntityRouteList() {
 			return this.entityRouteList;
 		}
@@ -119,7 +119,17 @@ public class GetEntityRouteListResponse extends AcsResponse {
 
 		public static class EntityRouteListItem {
 
+			private String entityBizCodeType;
+
+			private String groupId;
+
 			private String entityId;
+
+			private String serviceId;
+
+			private String departmentId;
+
+			private String entityBizCode;
 
 			private Long uniqueId;
 
@@ -127,17 +137,23 @@ public class GetEntityRouteListResponse extends AcsResponse {
 
 			private String extInfo;
 
-			private String entityBizCodeType;
-
-			private String entityBizCode;
-
-			private String departmentId;
-
 			private String entityRelationNumber;
 
-			private String serviceId;
+			public String getEntityBizCodeType() {
+				return this.entityBizCodeType;
+			}
 
-			private String groupId;
+			public void setEntityBizCodeType(String entityBizCodeType) {
+				this.entityBizCodeType = entityBizCodeType;
+			}
+
+			public String getGroupId() {
+				return this.groupId;
+			}
+
+			public void setGroupId(String groupId) {
+				this.groupId = groupId;
+			}
 
 			public String getEntityId() {
 				return this.entityId;
@@ -145,6 +161,30 @@ public class GetEntityRouteListResponse extends AcsResponse {
 
 			public void setEntityId(String entityId) {
 				this.entityId = entityId;
+			}
+
+			public String getServiceId() {
+				return this.serviceId;
+			}
+
+			public void setServiceId(String serviceId) {
+				this.serviceId = serviceId;
+			}
+
+			public String getDepartmentId() {
+				return this.departmentId;
+			}
+
+			public void setDepartmentId(String departmentId) {
+				this.departmentId = departmentId;
+			}
+
+			public String getEntityBizCode() {
+				return this.entityBizCode;
+			}
+
+			public void setEntityBizCode(String entityBizCode) {
+				this.entityBizCode = entityBizCode;
 			}
 
 			public Long getUniqueId() {
@@ -171,52 +211,12 @@ public class GetEntityRouteListResponse extends AcsResponse {
 				this.extInfo = extInfo;
 			}
 
-			public String getEntityBizCodeType() {
-				return this.entityBizCodeType;
-			}
-
-			public void setEntityBizCodeType(String entityBizCodeType) {
-				this.entityBizCodeType = entityBizCodeType;
-			}
-
-			public String getEntityBizCode() {
-				return this.entityBizCode;
-			}
-
-			public void setEntityBizCode(String entityBizCode) {
-				this.entityBizCode = entityBizCode;
-			}
-
-			public String getDepartmentId() {
-				return this.departmentId;
-			}
-
-			public void setDepartmentId(String departmentId) {
-				this.departmentId = departmentId;
-			}
-
 			public String getEntityRelationNumber() {
 				return this.entityRelationNumber;
 			}
 
 			public void setEntityRelationNumber(String entityRelationNumber) {
 				this.entityRelationNumber = entityRelationNumber;
-			}
-
-			public String getServiceId() {
-				return this.serviceId;
-			}
-
-			public void setServiceId(String serviceId) {
-				this.serviceId = serviceId;
-			}
-
-			public String getGroupId() {
-				return this.groupId;
-			}
-
-			public void setGroupId(String groupId) {
-				this.groupId = groupId;
 			}
 		}
 	}

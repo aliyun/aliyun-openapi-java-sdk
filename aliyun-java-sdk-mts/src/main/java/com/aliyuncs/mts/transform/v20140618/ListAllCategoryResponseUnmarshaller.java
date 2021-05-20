@@ -31,9 +31,9 @@ public class ListAllCategoryResponseUnmarshaller {
 		List<Category> categoryList = new ArrayList<Category>();
 		for (int i = 0; i < _ctx.lengthValue("ListAllCategoryResponse.CategoryList.Length"); i++) {
 			Category category = new Category();
-			category.setCateId(_ctx.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].CateId"));
 			category.setCateName(_ctx.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].CateName"));
 			category.setParentId(_ctx.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].ParentId"));
+			category.setCateId(_ctx.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].CateId"));
 			category.setLevel(_ctx.stringValue("ListAllCategoryResponse.CategoryList["+ i +"].Level"));
 
 			categoryList.add(category);

@@ -57,19 +57,11 @@ public class ListFpShotFilesResponse extends AcsResponse {
 
 	public static class FpShotFile {
 
-		private String fileId;
-
 		private String primaryKey;
 
+		private String fileId;
+
 		private InputFile inputFile;
-
-		public String getFileId() {
-			return this.fileId;
-		}
-
-		public void setFileId(String fileId) {
-			this.fileId = fileId;
-		}
 
 		public String getPrimaryKey() {
 			return this.primaryKey;
@@ -77,6 +69,14 @@ public class ListFpShotFilesResponse extends AcsResponse {
 
 		public void setPrimaryKey(String primaryKey) {
 			this.primaryKey = primaryKey;
+		}
+
+		public String getFileId() {
+			return this.fileId;
+		}
+
+		public void setFileId(String fileId) {
+			this.fileId = fileId;
 		}
 
 		public InputFile getInputFile() {
@@ -89,18 +89,18 @@ public class ListFpShotFilesResponse extends AcsResponse {
 
 		public static class InputFile {
 
-			private String bucket;
+			private String object;
 
 			private String location;
 
-			private String object;
+			private String bucket;
 
-			public String getBucket() {
-				return this.bucket;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
 			public String getLocation() {
@@ -111,12 +111,12 @@ public class ListFpShotFilesResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

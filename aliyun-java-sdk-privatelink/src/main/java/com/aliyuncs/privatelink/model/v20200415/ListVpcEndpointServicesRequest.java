@@ -34,6 +34,8 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 
 	private String nextToken;
 
+	private Boolean zoneAffinityEnabled;
+
 	private String serviceName;
 
 	private Integer maxResults;
@@ -90,6 +92,17 @@ public class ListVpcEndpointServicesRequest extends RpcAcsRequest<ListVpcEndpoin
 		this.nextToken = nextToken;
 		if(nextToken != null){
 			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
+	}
+
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
+		if(zoneAffinityEnabled != null){
+			putQueryParameter("ZoneAffinityEnabled", zoneAffinityEnabled.toString());
 		}
 	}
 

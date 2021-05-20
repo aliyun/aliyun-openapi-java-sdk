@@ -46,15 +46,31 @@ public class SubmitSubtitleJobResponse extends AcsResponse {
 
 	public static class SubtitleJob {
 
+		private String outputConfig;
+
+		private String state;
+
 		private String jobId;
-
-		private String inputConfig;
-
-		private String inputConfig1;
 
 		private String userData;
 
-		private String state;
+		private String inputConfig;
+
+		public String getOutputConfig() {
+			return this.outputConfig;
+		}
+
+		public void setOutputConfig(String outputConfig) {
+			this.outputConfig = outputConfig;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
 
 		public String getJobId() {
 			return this.jobId;
@@ -62,22 +78,6 @@ public class SubmitSubtitleJobResponse extends AcsResponse {
 
 		public void setJobId(String jobId) {
 			this.jobId = jobId;
-		}
-
-		public String getInputConfig() {
-			return this.inputConfig;
-		}
-
-		public void setInputConfig(String inputConfig) {
-			this.inputConfig = inputConfig;
-		}
-
-		public String getInputConfig1() {
-			return this.inputConfig1;
-		}
-
-		public void setInputConfig1(String inputConfig1) {
-			this.inputConfig1 = inputConfig1;
 		}
 
 		public String getUserData() {
@@ -88,12 +88,12 @@ public class SubmitSubtitleJobResponse extends AcsResponse {
 			this.userData = userData;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getInputConfig() {
+			return this.inputConfig;
 		}
 
-		public void setState(String state) {
-			this.state = state;
+		public void setInputConfig(String inputConfig) {
+			this.inputConfig = inputConfig;
 		}
 	}
 

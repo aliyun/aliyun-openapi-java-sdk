@@ -40,7 +40,7 @@ public class DescribeDataPushResultRequest extends RpcAcsRequest<DescribeDataPus
 
 	private String dataNames;
 	public DescribeDataPushResultRequest() {
-		super("Ens", "2017-11-10", "DescribeDataPushResult");
+		super("Ens", "2017-11-10", "DescribeDataPushResult", "ens");
 		setMethod(MethodType.POST);
 	}
 

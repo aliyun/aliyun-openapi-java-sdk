@@ -29,7 +29,7 @@ public class QueryTokenRequest extends RpcAcsRequest<QueryTokenResponse> {
 
 	private String instanceId;
 	public QueryTokenRequest() {
-		super("OnsMqtt", "2020-04-20", "QueryToken", "onsmqtt");
+		super("OnsMqtt", "2020-04-20", "QueryToken");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

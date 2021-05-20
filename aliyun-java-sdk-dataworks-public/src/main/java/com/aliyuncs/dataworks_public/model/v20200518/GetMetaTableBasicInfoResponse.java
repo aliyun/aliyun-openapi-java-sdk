@@ -134,6 +134,8 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		private Long favoriteCount;
 
+		private Boolean isView;
+
 		public String getTableName() {
 			return this.tableName;
 		}
@@ -324,6 +326,14 @@ public class GetMetaTableBasicInfoResponse extends AcsResponse {
 
 		public void setFavoriteCount(Long favoriteCount) {
 			this.favoriteCount = favoriteCount;
+		}
+
+		public Boolean getIsView() {
+			return this.isView;
+		}
+
+		public void setIsView(Boolean isView) {
+			this.isView = isView;
 		}
 	}
 

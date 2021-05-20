@@ -38,6 +38,7 @@ public class DetectIPCObjectResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("DetectIPCObjectResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
+			element.setTargetRate(_ctx.floatValue("DetectIPCObjectResponse.Data.Elements["+ i +"].TargetRate"));
 			element.setScore(_ctx.floatValue("DetectIPCObjectResponse.Data.Elements["+ i +"].Score"));
 			element.setType(_ctx.stringValue("DetectIPCObjectResponse.Data.Elements["+ i +"].Type"));
 

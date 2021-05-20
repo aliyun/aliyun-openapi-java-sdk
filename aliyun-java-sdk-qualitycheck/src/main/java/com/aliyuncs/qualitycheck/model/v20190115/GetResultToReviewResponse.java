@@ -101,6 +101,8 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 		private String fileId;
 
+		private Integer status;
+
 		private List<Dialogue> dialogues;
 
 		private List<ScorePo> handScoreInfoList;
@@ -205,6 +207,14 @@ public class GetResultToReviewResponse extends AcsResponse {
 
 		public void setFileId(String fileId) {
 			this.fileId = fileId;
+		}
+
+		public Integer getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(Integer status) {
+			this.status = status;
 		}
 
 		public List<Dialogue> getDialogues() {

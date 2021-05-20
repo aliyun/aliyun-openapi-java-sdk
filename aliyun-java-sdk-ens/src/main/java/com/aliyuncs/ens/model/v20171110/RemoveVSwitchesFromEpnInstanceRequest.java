@@ -28,7 +28,7 @@ public class RemoveVSwitchesFromEpnInstanceRequest extends RpcAcsRequest<RemoveV
 
 	private String ePNInstanceId;
 	public RemoveVSwitchesFromEpnInstanceRequest() {
-		super("Ens", "2017-11-10", "RemoveVSwitchesFromEpnInstance");
+		super("Ens", "2017-11-10", "RemoveVSwitchesFromEpnInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

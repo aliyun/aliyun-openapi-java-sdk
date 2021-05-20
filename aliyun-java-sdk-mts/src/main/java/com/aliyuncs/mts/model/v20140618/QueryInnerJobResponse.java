@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryInnerJobResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String status;
 
 	private String suggestion;
 
+	private String requestId;
+
 	private List<Result> image;
 
 	private Video video;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getStatus() {
 		return this.status;
@@ -57,6 +49,14 @@ public class QueryInnerJobResponse extends AcsResponse {
 
 	public void setSuggestion(String suggestion) {
 		this.suggestion = suggestion;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<Result> getImage() {
@@ -77,19 +77,11 @@ public class QueryInnerJobResponse extends AcsResponse {
 
 	public static class Result {
 
-		private String code;
-
 		private Integer index;
 
 		private Integer result;
 
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String code;
 
 		public Integer getIndex() {
 			return this.index;
@@ -105,24 +97,24 @@ public class QueryInnerJobResponse extends AcsResponse {
 
 		public void setResult(Integer result) {
 			this.result = result;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 
 	public static class Video {
 
-		private String code;
-
 		private Integer index;
 
 		private Integer result;
 
-		public String getCode() {
-			return this.code;
-		}
-
-		public void setCode(String code) {
-			this.code = code;
-		}
+		private String code;
 
 		public Integer getIndex() {
 			return this.index;
@@ -138,6 +130,14 @@ public class QueryInnerJobResponse extends AcsResponse {
 
 		public void setResult(Integer result) {
 			this.result = result;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 

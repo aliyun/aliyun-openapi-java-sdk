@@ -30,14 +30,15 @@ public class ListHotlineRecordResponseUnmarshaller {
 		listHotlineRecordResponse.setMessage(_ctx.stringValue("ListHotlineRecordResponse.Message"));
 		listHotlineRecordResponse.setCode(_ctx.stringValue("ListHotlineRecordResponse.Code"));
 		listHotlineRecordResponse.setSuccess(_ctx.booleanValue("ListHotlineRecordResponse.Success"));
+		listHotlineRecordResponse.setHttpStatusCode(_ctx.longValue("ListHotlineRecordResponse.HttpStatusCode"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListHotlineRecordResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setConnectionId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].ConnectionId"));
 			dataItem.setEndTime(_ctx.booleanValue("ListHotlineRecordResponse.Data["+ i +"].EndTime"));
-			dataItem.setCallId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].CallId"));
 			dataItem.setStartTime(_ctx.booleanValue("ListHotlineRecordResponse.Data["+ i +"].StartTime"));
+			dataItem.setConnectionId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].ConnectionId"));
+			dataItem.setCallId(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].CallId"));
 			dataItem.setUrl(_ctx.stringValue("ListHotlineRecordResponse.Data["+ i +"].Url"));
 
 			data.add(dataItem);

@@ -29,20 +29,20 @@ public class ListAsrPipelineResponseUnmarshaller {
 		
 		listAsrPipelineResponse.setRequestId(_ctx.stringValue("ListAsrPipelineResponse.RequestId"));
 		listAsrPipelineResponse.setTotalCount(_ctx.longValue("ListAsrPipelineResponse.TotalCount"));
-		listAsrPipelineResponse.setPageNumber(_ctx.longValue("ListAsrPipelineResponse.PageNumber"));
 		listAsrPipelineResponse.setPageSize(_ctx.longValue("ListAsrPipelineResponse.PageSize"));
+		listAsrPipelineResponse.setPageNumber(_ctx.longValue("ListAsrPipelineResponse.PageNumber"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("ListAsrPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].Priority"));
+			pipeline.setName(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			notifyConfig.setQueueName(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
+			notifyConfig.setTopic(_ctx.stringValue("ListAsrPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

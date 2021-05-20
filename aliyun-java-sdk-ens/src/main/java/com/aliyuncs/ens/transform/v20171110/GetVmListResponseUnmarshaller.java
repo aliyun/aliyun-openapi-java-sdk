@@ -23,10 +23,10 @@ public class GetVmListResponseUnmarshaller {
 	public static GetVmListResponse unmarshall(GetVmListResponse getVmListResponse, UnmarshallerContext _ctx) {
 		
 		getVmListResponse.setRequestId(_ctx.stringValue("GetVmListResponse.RequestId"));
-		getVmListResponse.setMsg(_ctx.stringValue("GetVmListResponse.Msg"));
-		getVmListResponse.setDesc(_ctx.stringValue("GetVmListResponse.Desc"));
-		getVmListResponse.setData(_ctx.stringValue("GetVmListResponse.Data"));
 		getVmListResponse.setCode(_ctx.integerValue("GetVmListResponse.Code"));
+		getVmListResponse.setMsg(_ctx.stringValue("GetVmListResponse.Msg"));
+		getVmListResponse.setData(_ctx.stringValue("GetVmListResponse.Data"));
+		getVmListResponse.setDesc(_ctx.stringValue("GetVmListResponse.Desc"));
 	 
 	 	return getVmListResponse;
 	}

@@ -26,7 +26,7 @@ public class DescribeSecurityGroupAttributeRequest extends RpcAcsRequest<Describ
 
 	private String securityGroupId;
 	public DescribeSecurityGroupAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeSecurityGroupAttribute");
+		super("Ens", "2017-11-10", "DescribeSecurityGroupAttribute", "ens");
 		setMethod(MethodType.POST);
 	}
 

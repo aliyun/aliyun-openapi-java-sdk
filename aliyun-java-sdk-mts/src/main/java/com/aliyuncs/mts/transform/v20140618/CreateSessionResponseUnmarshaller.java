@@ -23,8 +23,8 @@ public class CreateSessionResponseUnmarshaller {
 	public static CreateSessionResponse unmarshall(CreateSessionResponse createSessionResponse, UnmarshallerContext _ctx) {
 		
 		createSessionResponse.setRequestId(_ctx.stringValue("CreateSessionResponse.RequestId"));
-		createSessionResponse.setSessionId(_ctx.stringValue("CreateSessionResponse.SessionId"));
 		createSessionResponse.setTicket(_ctx.stringValue("CreateSessionResponse.Ticket"));
+		createSessionResponse.setSessionId(_ctx.stringValue("CreateSessionResponse.SessionId"));
 	 
 	 	return createSessionResponse;
 	}

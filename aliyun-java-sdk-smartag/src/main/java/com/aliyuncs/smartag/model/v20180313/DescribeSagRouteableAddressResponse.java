@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagRouteableAddressResponse extends AcsResponse {
 
+	private String origin;
+
 	private String requestId;
 
 	private String routeableAddress;
 
-	private String origin;
+	public String getOrigin() {
+		return this.origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class DescribeSagRouteableAddressResponse extends AcsResponse {
 
 	public void setRouteableAddress(String routeableAddress) {
 		this.routeableAddress = routeableAddress;
-	}
-
-	public String getOrigin() {
-		return this.origin;
-	}
-
-	public void setOrigin(String origin) {
-		this.origin = origin;
 	}
 
 	@Override

@@ -27,17 +27,17 @@ public class GetCatalogListResponseUnmarshaller {
 	public static GetCatalogListResponse unmarshall(GetCatalogListResponse getCatalogListResponse, UnmarshallerContext _ctx) {
 		
 		getCatalogListResponse.setRequestId(_ctx.stringValue("GetCatalogListResponse.RequestId"));
-		getCatalogListResponse.setCode(_ctx.stringValue("GetCatalogListResponse.Code"));
 		getCatalogListResponse.setMessage(_ctx.stringValue("GetCatalogListResponse.Message"));
+		getCatalogListResponse.setCode(_ctx.stringValue("GetCatalogListResponse.Code"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetCatalogListResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setIsvSubId(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].IsvSubId"));
 			dataItem.setParentCatalogId(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].ParentCatalogId"));
 			dataItem.setProfileCount(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].ProfileCount"));
-			dataItem.setCatalogId(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].CatalogId"));
+			dataItem.setIsvSubId(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].IsvSubId"));
 			dataItem.setCatalogName(_ctx.stringValue("GetCatalogListResponse.Data["+ i +"].CatalogName"));
+			dataItem.setCatalogId(_ctx.longValue("GetCatalogListResponse.Data["+ i +"].CatalogId"));
 
 			data.add(dataItem);
 		}

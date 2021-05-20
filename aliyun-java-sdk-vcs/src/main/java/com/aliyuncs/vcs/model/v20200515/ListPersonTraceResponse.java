@@ -25,28 +25,36 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPersonTraceResponse extends AcsResponse {
 
-	private String code;
+	private Integer totalCount;
+
+	private Integer pageSize;
 
 	private String message;
 
 	private String requestId;
 
-	private String success;
-
-	private Integer totalCount;
-
-	private Integer pageSize;
-
 	private Integer pageNumber;
+
+	private String code;
+
+	private String success;
 
 	private List<Day> data;
 
-	public String getCode() {
-		return this.code;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public String getMessage() {
@@ -65,36 +73,28 @@ public class ListPersonTraceResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
 	public Integer getPageNumber() {
 		return this.pageNumber;
 	}
 
 	public void setPageNumber(Integer pageNumber) {
 		this.pageNumber = pageNumber;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 	public List<Day> getData() {
@@ -107,67 +107,27 @@ public class ListPersonTraceResponse extends AcsResponse {
 
 	public static class Day {
 
-		private String date;
-
-		private String lastTime;
-
-		private String startTime;
-
-		private String endSourceImage;
-
-		private String deviceId;
-
 		private String startTargetImage;
-
-		private String groupId;
-
-		private String personId;
 
 		private String startSourceImage;
 
 		private String corpId;
 
+		private String personId;
+
+		private String deviceId;
+
 		private String endTargetImage;
 
-		public String getDate() {
-			return this.date;
-		}
+		private String endSourceImage;
 
-		public void setDate(String date) {
-			this.date = date;
-		}
+		private String startTime;
 
-		public String getLastTime() {
-			return this.lastTime;
-		}
+		private String date;
 
-		public void setLastTime(String lastTime) {
-			this.lastTime = lastTime;
-		}
+		private String lastTime;
 
-		public String getStartTime() {
-			return this.startTime;
-		}
-
-		public void setStartTime(String startTime) {
-			this.startTime = startTime;
-		}
-
-		public String getEndSourceImage() {
-			return this.endSourceImage;
-		}
-
-		public void setEndSourceImage(String endSourceImage) {
-			this.endSourceImage = endSourceImage;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
+		private String groupId;
 
 		public String getStartTargetImage() {
 			return this.startTargetImage;
@@ -175,22 +135,6 @@ public class ListPersonTraceResponse extends AcsResponse {
 
 		public void setStartTargetImage(String startTargetImage) {
 			this.startTargetImage = startTargetImage;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
-
-		public String getPersonId() {
-			return this.personId;
-		}
-
-		public void setPersonId(String personId) {
-			this.personId = personId;
 		}
 
 		public String getStartSourceImage() {
@@ -209,12 +153,68 @@ public class ListPersonTraceResponse extends AcsResponse {
 			this.corpId = corpId;
 		}
 
+		public String getPersonId() {
+			return this.personId;
+		}
+
+		public void setPersonId(String personId) {
+			this.personId = personId;
+		}
+
+		public String getDeviceId() {
+			return this.deviceId;
+		}
+
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
+		}
+
 		public String getEndTargetImage() {
 			return this.endTargetImage;
 		}
 
 		public void setEndTargetImage(String endTargetImage) {
 			this.endTargetImage = endTargetImage;
+		}
+
+		public String getEndSourceImage() {
+			return this.endSourceImage;
+		}
+
+		public void setEndSourceImage(String endSourceImage) {
+			this.endSourceImage = endSourceImage;
+		}
+
+		public String getStartTime() {
+			return this.startTime;
+		}
+
+		public void setStartTime(String startTime) {
+			this.startTime = startTime;
+		}
+
+		public String getDate() {
+			return this.date;
+		}
+
+		public void setDate(String date) {
+			this.date = date;
+		}
+
+		public String getLastTime() {
+			return this.lastTime;
+		}
+
+		public void setLastTime(String lastTime) {
+			this.lastTime = lastTime;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

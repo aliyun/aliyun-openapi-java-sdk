@@ -89,21 +89,13 @@ public class ListCustomPersonsResponse extends AcsResponse {
 
 		public static class Person {
 
-			private String personId;
-
 			private String personName;
 
 			private String personDescription;
 
+			private String personId;
+
 			private List<Face> faces;
-
-			public String getPersonId() {
-				return this.personId;
-			}
-
-			public void setPersonId(String personId) {
-				this.personId = personId;
-			}
 
 			public String getPersonName() {
 				return this.personName;
@@ -121,6 +113,14 @@ public class ListCustomPersonsResponse extends AcsResponse {
 				this.personDescription = personDescription;
 			}
 
+			public String getPersonId() {
+				return this.personId;
+			}
+
+			public void setPersonId(String personId) {
+				this.personId = personId;
+			}
+
 			public List<Face> getFaces() {
 				return this.faces;
 			}
@@ -131,17 +131,9 @@ public class ListCustomPersonsResponse extends AcsResponse {
 
 			public static class Face {
 
-				private String faceId;
-
 				private String imageUrl;
 
-				public String getFaceId() {
-					return this.faceId;
-				}
-
-				public void setFaceId(String faceId) {
-					this.faceId = faceId;
-				}
+				private String faceId;
 
 				public String getImageUrl() {
 					return this.imageUrl;
@@ -149,6 +141,14 @@ public class ListCustomPersonsResponse extends AcsResponse {
 
 				public void setImageUrl(String imageUrl) {
 					this.imageUrl = imageUrl;
+				}
+
+				public String getFaceId() {
+					return this.faceId;
+				}
+
+				public void setFaceId(String faceId) {
+					this.faceId = faceId;
 				}
 			}
 		}

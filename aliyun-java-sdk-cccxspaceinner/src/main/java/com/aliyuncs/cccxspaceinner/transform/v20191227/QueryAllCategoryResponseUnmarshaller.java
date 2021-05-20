@@ -23,10 +23,10 @@ public class QueryAllCategoryResponseUnmarshaller {
 	public static QueryAllCategoryResponse unmarshall(QueryAllCategoryResponse queryAllCategoryResponse, UnmarshallerContext _ctx) {
 		
 		queryAllCategoryResponse.setRequestId(_ctx.stringValue("QueryAllCategoryResponse.RequestId"));
-		queryAllCategoryResponse.setSuccess(_ctx.booleanValue("QueryAllCategoryResponse.Success"));
-		queryAllCategoryResponse.setCode(_ctx.stringValue("QueryAllCategoryResponse.Code"));
 		queryAllCategoryResponse.setMessage(_ctx.stringValue("QueryAllCategoryResponse.Message"));
 		queryAllCategoryResponse.setData(_ctx.stringValue("QueryAllCategoryResponse.Data"));
+		queryAllCategoryResponse.setCode(_ctx.stringValue("QueryAllCategoryResponse.Code"));
+		queryAllCategoryResponse.setSuccess(_ctx.booleanValue("QueryAllCategoryResponse.Success"));
 	 
 	 	return queryAllCategoryResponse;
 	}

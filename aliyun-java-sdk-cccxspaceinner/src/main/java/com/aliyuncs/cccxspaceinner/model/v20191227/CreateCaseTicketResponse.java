@@ -24,31 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateCaseTicketResponse extends AcsResponse {
 
-	private Boolean success;
-
-	private String code;
-
 	private String message;
-
-	private Long data;
 
 	private String requestId;
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
+	private Long data;
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
+	private String code;
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+	private Boolean success;
 
 	public String getMessage() {
 		return this.message;
@@ -56,6 +40,14 @@ public class CreateCaseTicketResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getData() {
@@ -66,12 +58,20 @@ public class CreateCaseTicketResponse extends AcsResponse {
 		this.data = data;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

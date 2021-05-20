@@ -69,6 +69,8 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 
 		private String regionId;
 
+		private String groupNo;
+
 		private List<ScaVulRecord> realVulList;
 
 		private List<ScaVulRecord> allVulList;
@@ -159,6 +161,14 @@ public class DescribeExposedInstanceDetailResponse extends AcsResponse {
 
 		public void setRegionId(String regionId) {
 			this.regionId = regionId;
+		}
+
+		public String getGroupNo() {
+			return this.groupNo;
+		}
+
+		public void setGroupNo(String groupNo) {
+			this.groupNo = groupNo;
 		}
 
 		public List<ScaVulRecord> getRealVulList() {

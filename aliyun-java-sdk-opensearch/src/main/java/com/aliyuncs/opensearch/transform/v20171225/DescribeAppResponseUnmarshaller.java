@@ -19,6 +19,8 @@ import java.util.List;
 
 import com.aliyuncs.opensearch.model.v20171225.DescribeAppResponse;
 import com.aliyuncs.opensearch.model.v20171225.DescribeAppResponse.Result;
+import com.aliyuncs.opensearch.model.v20171225.DescribeAppResponse.Result.Domain;
+import com.aliyuncs.opensearch.model.v20171225.DescribeAppResponse.Result.Domain.Functions;
 import com.aliyuncs.opensearch.model.v20171225.DescribeAppResponse.Result.Quota;
 import java.util.Map;
 import com.aliyuncs.transform.UnmarshallerContext;
@@ -54,6 +56,32 @@ public class DescribeAppResponseUnmarshaller {
 		quota.setQps(_ctx.integerValue("DescribeAppResponse.result.quota.qps"));
 		quota.setSpec(_ctx.stringValue("DescribeAppResponse.result.quota.spec"));
 		result.setQuota(quota);
+
+		Domain domain = new Domain();
+		domain.setName(_ctx.stringValue("DescribeAppResponse.result.domain.name"));
+		domain.setCategory(_ctx.stringValue("DescribeAppResponse.result.domain.category"));
+
+		Functions functions = new Functions();
+
+		List<String> qp = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.domain.functions.qp.Length"); i++) {
+			qp.add(_ctx.stringValue("DescribeAppResponse.result.domain.functions.qp["+ i +"]"));
+		}
+		functions.setQp(qp);
+
+		List<String> algo = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.domain.functions.algo.Length"); i++) {
+			algo.add(_ctx.stringValue("DescribeAppResponse.result.domain.functions.algo["+ i +"]"));
+		}
+		functions.setAlgo(algo);
+
+		List<String> service = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeAppResponse.result.domain.functions.service.Length"); i++) {
+			service.add(_ctx.stringValue("DescribeAppResponse.result.domain.functions.service["+ i +"]"));
+		}
+		functions.setService(service);
+		domain.setFunctions(functions);
+		result.setDomain(domain);
 		describeAppResponse.setResult(result);
 	 
 	 	return describeAppResponse;

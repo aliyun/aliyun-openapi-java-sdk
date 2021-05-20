@@ -28,16 +28,16 @@ public class UploadFileResponseUnmarshaller {
 	public static UploadFileResponse unmarshall(UploadFileResponse uploadFileResponse, UnmarshallerContext _ctx) {
 		
 		uploadFileResponse.setRequestId(_ctx.stringValue("UploadFileResponse.RequestId"));
-		uploadFileResponse.setCode(_ctx.stringValue("UploadFileResponse.Code"));
 		uploadFileResponse.setMessage(_ctx.stringValue("UploadFileResponse.Message"));
+		uploadFileResponse.setCode(_ctx.stringValue("UploadFileResponse.Code"));
 
 		Data data = new Data();
 
 		List<OssPath> records = new ArrayList<OssPath>();
 		for (int i = 0; i < _ctx.lengthValue("UploadFileResponse.Data.Records.Length"); i++) {
 			OssPath ossPath = new OssPath();
-			ossPath.setOssPath(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].OssPath"));
 			ossPath.setSourceId(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].SourceId"));
+			ossPath.setOssPath(_ctx.stringValue("UploadFileResponse.Data.Records["+ i +"].OssPath"));
 
 			records.add(ossPath);
 		}

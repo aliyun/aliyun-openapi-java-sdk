@@ -28,7 +28,7 @@ public class DescribeApplicationResourceSummaryRequest extends RpcAcsRequest<Des
 
 	private String resourceType;
 	public DescribeApplicationResourceSummaryRequest() {
-		super("Ens", "2017-11-10", "DescribeApplicationResourceSummary");
+		super("Ens", "2017-11-10", "DescribeApplicationResourceSummary", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -35,6 +35,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String dBClusterCategory;
 
+	private String encryptionType;
+
 	private String dBClusterNetworkType;
 
 	private String period;
@@ -46,6 +48,8 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 	private String dBClusterVersion;
 
 	private String dBClusterClass;
+
+	private String encryptionKey;
 
 	private Long ownerId;
 
@@ -63,7 +67,7 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 
 	private String payType;
 	public CreateDBInstanceRequest() {
-		super("clickhouse", "2019-11-11", "CreateDBInstance", "clickhouse");
+		super("clickhouse", "2019-11-11", "CreateDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -123,6 +127,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBClusterCategory = dBClusterCategory;
 		if(dBClusterCategory != null){
 			putQueryParameter("DBClusterCategory", dBClusterCategory);
+		}
+	}
+
+	public String getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(String encryptionType) {
+		this.encryptionType = encryptionType;
+		if(encryptionType != null){
+			putQueryParameter("EncryptionType", encryptionType);
 		}
 	}
 
@@ -189,6 +204,17 @@ public class CreateDBInstanceRequest extends RpcAcsRequest<CreateDBInstanceRespo
 		this.dBClusterClass = dBClusterClass;
 		if(dBClusterClass != null){
 			putQueryParameter("DBClusterClass", dBClusterClass);
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 

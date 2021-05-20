@@ -28,7 +28,7 @@ public class DescribeInstanceAutoRenewAttributeRequest extends RpcAcsRequest<Des
 
 	private String instanceIds;
 	public DescribeInstanceAutoRenewAttributeRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceAutoRenewAttribute");
+		super("Ens", "2017-11-10", "DescribeInstanceAutoRenewAttribute", "ens");
 		setMethod(MethodType.POST);
 	}
 

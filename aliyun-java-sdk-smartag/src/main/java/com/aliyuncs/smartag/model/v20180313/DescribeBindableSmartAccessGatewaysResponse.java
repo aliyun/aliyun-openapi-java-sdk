@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<SmartAccessGateway> smartAccessGateways;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<SmartAccessGateway> getSmartAccessGateways() {
@@ -77,11 +77,19 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
 	public static class SmartAccessGateway {
 
+		private Long smartAGUid;
+
 		private String smartAGId;
 
 		private String name;
 
-		private Long smartAGUid;
+		public Long getSmartAGUid() {
+			return this.smartAGUid;
+		}
+
+		public void setSmartAGUid(Long smartAGUid) {
+			this.smartAGUid = smartAGUid;
+		}
 
 		public String getSmartAGId() {
 			return this.smartAGId;
@@ -97,14 +105,6 @@ public class DescribeBindableSmartAccessGatewaysResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
-		}
-
-		public Long getSmartAGUid() {
-			return this.smartAGUid;
-		}
-
-		public void setSmartAGUid(Long smartAGUid) {
-			this.smartAGUid = smartAGUid;
 		}
 	}
 

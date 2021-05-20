@@ -126,6 +126,14 @@ public class QueryIncomeDataResponse extends AcsResponse {
 
 		private String ecpmRate;
 
+		private String thisDaysEstIncomeRate;
+
+		private String thisMonEstIncomeRate;
+
+		private String thisYearEstIncomeRate;
+
+		private String accEstIncomeRate;
+
 		public Long getStartTime() {
 			return this.startTime;
 		}
@@ -324,6 +332,38 @@ public class QueryIncomeDataResponse extends AcsResponse {
 
 		public void setEcpmRate(String ecpmRate) {
 			this.ecpmRate = ecpmRate;
+		}
+
+		public String getThisDaysEstIncomeRate() {
+			return this.thisDaysEstIncomeRate;
+		}
+
+		public void setThisDaysEstIncomeRate(String thisDaysEstIncomeRate) {
+			this.thisDaysEstIncomeRate = thisDaysEstIncomeRate;
+		}
+
+		public String getThisMonEstIncomeRate() {
+			return this.thisMonEstIncomeRate;
+		}
+
+		public void setThisMonEstIncomeRate(String thisMonEstIncomeRate) {
+			this.thisMonEstIncomeRate = thisMonEstIncomeRate;
+		}
+
+		public String getThisYearEstIncomeRate() {
+			return this.thisYearEstIncomeRate;
+		}
+
+		public void setThisYearEstIncomeRate(String thisYearEstIncomeRate) {
+			this.thisYearEstIncomeRate = thisYearEstIncomeRate;
+		}
+
+		public String getAccEstIncomeRate() {
+			return this.accEstIncomeRate;
+		}
+
+		public void setAccEstIncomeRate(String accEstIncomeRate) {
+			this.accEstIncomeRate = accEstIncomeRate;
 		}
 	}
 

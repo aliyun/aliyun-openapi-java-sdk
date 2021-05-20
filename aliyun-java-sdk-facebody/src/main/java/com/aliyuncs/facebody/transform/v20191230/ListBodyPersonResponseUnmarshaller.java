@@ -28,8 +28,8 @@ public class ListBodyPersonResponseUnmarshaller {
 	public static ListBodyPersonResponse unmarshall(ListBodyPersonResponse listBodyPersonResponse, UnmarshallerContext _ctx) {
 		
 		listBodyPersonResponse.setRequestId(_ctx.stringValue("ListBodyPersonResponse.RequestId"));
-		listBodyPersonResponse.setMessage(_ctx.stringValue("ListBodyPersonResponse.Message"));
 		listBodyPersonResponse.setCode(_ctx.stringValue("ListBodyPersonResponse.Code"));
+		listBodyPersonResponse.setMessage(_ctx.stringValue("ListBodyPersonResponse.Message"));
 
 		Data data = new Data();
 		data.setTotal(_ctx.longValue("ListBodyPersonResponse.Data.Total"));
@@ -37,11 +37,11 @@ public class ListBodyPersonResponseUnmarshaller {
 		List<Person> personList = new ArrayList<Person>();
 		for (int i = 0; i < _ctx.lengthValue("ListBodyPersonResponse.Data.PersonList.Length"); i++) {
 			Person person = new Person();
-			person.setTraceCount(_ctx.longValue("ListBodyPersonResponse.Data.PersonList["+ i +"].TraceCount"));
 			person.setInstanceId(_ctx.longValue("ListBodyPersonResponse.Data.PersonList["+ i +"].InstanceId"));
 			person.setDbId(_ctx.longValue("ListBodyPersonResponse.Data.PersonList["+ i +"].DbId"));
-			person.setId(_ctx.longValue("ListBodyPersonResponse.Data.PersonList["+ i +"].Id"));
 			person.setName(_ctx.stringValue("ListBodyPersonResponse.Data.PersonList["+ i +"].Name"));
+			person.setTraceCount(_ctx.longValue("ListBodyPersonResponse.Data.PersonList["+ i +"].TraceCount"));
+			person.setId(_ctx.longValue("ListBodyPersonResponse.Data.PersonList["+ i +"].Id"));
 
 			personList.add(person);
 		}

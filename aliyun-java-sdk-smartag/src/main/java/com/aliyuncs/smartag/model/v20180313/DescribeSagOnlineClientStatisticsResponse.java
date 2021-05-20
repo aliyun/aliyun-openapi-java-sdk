@@ -47,17 +47,9 @@ public class DescribeSagOnlineClientStatisticsResponse extends AcsResponse {
 
 	public static class Statistics {
 
-		private String smartAGId;
-
 		private String onlineCount;
 
-		public String getSmartAGId() {
-			return this.smartAGId;
-		}
-
-		public void setSmartAGId(String smartAGId) {
-			this.smartAGId = smartAGId;
-		}
+		private String smartAGId;
 
 		public String getOnlineCount() {
 			return this.onlineCount;
@@ -65,6 +57,14 @@ public class DescribeSagOnlineClientStatisticsResponse extends AcsResponse {
 
 		public void setOnlineCount(String onlineCount) {
 			this.onlineCount = onlineCount;
+		}
+
+		public String getSmartAGId() {
+			return this.smartAGId;
+		}
+
+		public void setSmartAGId(String smartAGId) {
+			this.smartAGId = smartAGId;
 		}
 	}
 

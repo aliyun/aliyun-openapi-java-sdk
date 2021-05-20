@@ -23,8 +23,8 @@ public class SubmitVideoQualityJobResponseUnmarshaller {
 	public static SubmitVideoQualityJobResponse unmarshall(SubmitVideoQualityJobResponse submitVideoQualityJobResponse, UnmarshallerContext _ctx) {
 		
 		submitVideoQualityJobResponse.setRequestId(_ctx.stringValue("SubmitVideoQualityJobResponse.RequestId"));
-		submitVideoQualityJobResponse.setCode(_ctx.stringValue("SubmitVideoQualityJobResponse.Code"));
 		submitVideoQualityJobResponse.setMessage(_ctx.stringValue("SubmitVideoQualityJobResponse.Message"));
+		submitVideoQualityJobResponse.setCode(_ctx.stringValue("SubmitVideoQualityJobResponse.Code"));
 		submitVideoQualityJobResponse.setJobId(_ctx.stringValue("SubmitVideoQualityJobResponse.JobId"));
 	 
 	 	return submitVideoQualityJobResponse;

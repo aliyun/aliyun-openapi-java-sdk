@@ -490,4 +490,9 @@ public class RestartInstanceResponse extends AcsResponse {
 	public RestartInstanceResponse getInstance(UnmarshallerContext context) {
 		return	RestartInstanceResponseUnmarshaller.unmarshall(this, context);
 	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
+	}
 }

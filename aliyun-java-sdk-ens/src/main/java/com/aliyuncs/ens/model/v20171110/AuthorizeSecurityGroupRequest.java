@@ -38,7 +38,7 @@ public class AuthorizeSecurityGroupRequest extends RpcAcsRequest<AuthorizeSecuri
 
 	private String policy;
 	public AuthorizeSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "AuthorizeSecurityGroup");
+		super("Ens", "2017-11-10", "AuthorizeSecurityGroup", "ens");
 		setMethod(MethodType.POST);
 	}
 

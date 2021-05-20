@@ -26,14 +26,8 @@ public class DescribeDrdsRdsInstancesRequest extends RpcAcsRequest<DescribeDrdsR
 	   
 
 	private String drdsInstanceId;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private String dbInstType;
 	public DescribeDrdsRdsInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsRdsInstances");
+		super("Drds", "2019-01-23", "DescribeDrdsRdsInstances", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -49,39 +43,6 @@ public class DescribeDrdsRdsInstancesRequest extends RpcAcsRequest<DescribeDrdsR
 		this.drdsInstanceId = drdsInstanceId;
 		if(drdsInstanceId != null){
 			putQueryParameter("DrdsInstanceId", drdsInstanceId);
-		}
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-		if(pageNumber != null){
-			putQueryParameter("PageNumber", pageNumber.toString());
-		}
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public String getDbInstType() {
-		return this.dbInstType;
-	}
-
-	public void setDbInstType(String dbInstType) {
-		this.dbInstType = dbInstType;
-		if(dbInstType != null){
-			putQueryParameter("DbInstType", dbInstType);
 		}
 	}
 

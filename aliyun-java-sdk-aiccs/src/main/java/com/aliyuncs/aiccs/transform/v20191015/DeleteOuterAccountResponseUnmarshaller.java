@@ -23,9 +23,9 @@ public class DeleteOuterAccountResponseUnmarshaller {
 	public static DeleteOuterAccountResponse unmarshall(DeleteOuterAccountResponse deleteOuterAccountResponse, UnmarshallerContext _ctx) {
 		
 		deleteOuterAccountResponse.setRequestId(_ctx.stringValue("DeleteOuterAccountResponse.RequestId"));
-		deleteOuterAccountResponse.setCode(_ctx.stringValue("DeleteOuterAccountResponse.Code"));
 		deleteOuterAccountResponse.setMessage(_ctx.stringValue("DeleteOuterAccountResponse.Message"));
 		deleteOuterAccountResponse.setData(_ctx.booleanValue("DeleteOuterAccountResponse.Data"));
+		deleteOuterAccountResponse.setCode(_ctx.stringValue("DeleteOuterAccountResponse.Code"));
 		deleteOuterAccountResponse.setSuccess(_ctx.booleanValue("DeleteOuterAccountResponse.Success"));
 	 
 	 	return deleteOuterAccountResponse;

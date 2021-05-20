@@ -37,7 +37,7 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 
 	private Long ownerId;
 	public SearchFaceRequest() {
-		super("ivision", "2019-03-08", "SearchFace", "ivision");
+		super("ivision", "2019-03-08", "SearchFace");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

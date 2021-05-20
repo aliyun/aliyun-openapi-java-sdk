@@ -27,27 +27,27 @@ public class GetPageGroupsByChannelTypeResponseUnmarshaller {
 
 	public static GetPageGroupsByChannelTypeResponse unmarshall(GetPageGroupsByChannelTypeResponse getPageGroupsByChannelTypeResponse, UnmarshallerContext _ctx) {
 		
-		getPageGroupsByChannelTypeResponse.setSuccess(_ctx.booleanValue("GetPageGroupsByChannelTypeResponse.Success"));
-		getPageGroupsByChannelTypeResponse.setCode(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Code"));
 		getPageGroupsByChannelTypeResponse.setMessage(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Message"));
+		getPageGroupsByChannelTypeResponse.setCode(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Code"));
+		getPageGroupsByChannelTypeResponse.setSuccess(_ctx.booleanValue("GetPageGroupsByChannelTypeResponse.Success"));
 
 		Data data = new Data();
-		data.setPageSize(_ctx.integerValue("GetPageGroupsByChannelTypeResponse.Data.PageSize"));
 		data.setLastSortKey(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.LastSortKey"));
+		data.setPageSize(_ctx.integerValue("GetPageGroupsByChannelTypeResponse.Data.PageSize"));
 		data.setHasNextPage(_ctx.booleanValue("GetPageGroupsByChannelTypeResponse.Data.HasNextPage"));
 
 		List<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetPageGroupsByChannelTypeResponse.Data.List.Length"); i++) {
 			ListItem listItem = new ListItem();
-			listItem.setBuId(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].BuId"));
-			listItem.setDepartmentId(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].DepartmentId"));
-			listItem.setGroupId(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].GroupId"));
-			listItem.setGroupName(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].GroupName"));
-			listItem.setShowName(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].ShowName"));
-			listItem.setIsPublic(_ctx.booleanValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].IsPublic"));
 			listItem.setStatus(_ctx.integerValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].Status"));
+			listItem.setBuId(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].BuId"));
+			listItem.setShowName(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].ShowName"));
 			listItem.setDescription(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].Description"));
+			listItem.setGroupName(_ctx.stringValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].GroupName"));
+			listItem.setGroupId(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].GroupId"));
 			listItem.setChannelType(_ctx.integerValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].ChannelType"));
+			listItem.setDepartmentId(_ctx.longValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].DepartmentId"));
+			listItem.setIsPublic(_ctx.booleanValue("GetPageGroupsByChannelTypeResponse.Data.List["+ i +"].IsPublic"));
 
 			list.add(listItem);
 		}

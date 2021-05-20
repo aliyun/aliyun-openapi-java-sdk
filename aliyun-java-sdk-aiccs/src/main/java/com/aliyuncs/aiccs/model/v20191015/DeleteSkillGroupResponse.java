@@ -26,11 +26,11 @@ public class DeleteSkillGroupResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
 
 	private Boolean data;
+
+	private String code;
 
 	private Boolean success;
 
@@ -40,14 +40,6 @@ public class DeleteSkillGroupResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public String getMessage() {
@@ -64,6 +56,14 @@ public class DeleteSkillGroupResponse extends AcsResponse {
 
 	public void setData(Boolean data) {
 		this.data = data;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Boolean getSuccess() {

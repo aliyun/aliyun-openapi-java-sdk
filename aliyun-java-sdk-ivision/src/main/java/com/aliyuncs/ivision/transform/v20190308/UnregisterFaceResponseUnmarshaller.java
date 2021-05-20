@@ -23,8 +23,8 @@ public class UnregisterFaceResponseUnmarshaller {
 	public static UnregisterFaceResponse unmarshall(UnregisterFaceResponse unregisterFaceResponse, UnmarshallerContext _ctx) {
 		
 		unregisterFaceResponse.setRequestId(_ctx.stringValue("UnregisterFaceResponse.RequestId"));
-		unregisterFaceResponse.setGroupId(_ctx.stringValue("UnregisterFaceResponse.GroupId"));
 		unregisterFaceResponse.setFaceToken(_ctx.stringValue("UnregisterFaceResponse.FaceToken"));
+		unregisterFaceResponse.setGroupId(_ctx.stringValue("UnregisterFaceResponse.GroupId"));
 	 
 	 	return unregisterFaceResponse;
 	}

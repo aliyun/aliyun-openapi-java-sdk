@@ -1,3 +1,9 @@
+2021-04-20 Version: 2.0.29
+- LivenessFaceVerify ContrastFaceVerify CompareFaceVerify API Return CertifyId.
+
+2021-04-09 Version: 2.0.28
+- Bank Card Ocr and Verify.
+
 2021-02-24 Version: 2.0.27
 - ALL API.
 

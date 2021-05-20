@@ -27,11 +27,11 @@ public class GetMonitorListRequest extends RpcAcsRequest<GetMonitorListResponse>
 
 	private String corpId;
 
-	private Integer pageNo;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 	public GetMonitorListRequest() {
-		super("Vcs", "2020-05-15", "GetMonitorList", "vcs");
+		super("Vcs", "2020-05-15", "GetMonitorList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -50,14 +50,14 @@ public class GetMonitorListRequest extends RpcAcsRequest<GetMonitorListResponse>
 		}
 	}
 
-	public Integer getPageNo() {
-		return this.pageNo;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setPageNo(Integer pageNo) {
-		this.pageNo = pageNo;
-		if(pageNo != null){
-			putBodyParameter("PageNo", pageNo.toString());
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putBodyParameter("PageNumber", pageNumber.toString());
 		}
 	}
 

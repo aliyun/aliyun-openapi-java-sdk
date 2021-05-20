@@ -69,6 +69,10 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 
 		private String exposureTypeInstanceName;
 
+		private Integer exposedCount;
+
+		private String regionId;
+
 		public String getExposureComponent() {
 			return this.exposureComponent;
 		}
@@ -115,6 +119,22 @@ public class DescribeExposedStatisticsDetailResponse extends AcsResponse {
 
 		public void setExposureTypeInstanceName(String exposureTypeInstanceName) {
 			this.exposureTypeInstanceName = exposureTypeInstanceName;
+		}
+
+		public Integer getExposedCount() {
+			return this.exposedCount;
+		}
+
+		public void setExposedCount(Integer exposedCount) {
+			this.exposedCount = exposedCount;
+		}
+
+		public String getRegionId() {
+			return this.regionId;
+		}
+
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 	}
 

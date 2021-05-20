@@ -24,11 +24,19 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateSessionResponse extends AcsResponse {
 
+	private String ticket;
+
 	private String requestId;
 
 	private String sessionId;
 
-	private String ticket;
+	public String getTicket() {
+		return this.ticket;
+	}
+
+	public void setTicket(String ticket) {
+		this.ticket = ticket;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,14 +52,6 @@ public class CreateSessionResponse extends AcsResponse {
 
 	public void setSessionId(String sessionId) {
 		this.sessionId = sessionId;
-	}
-
-	public String getTicket() {
-		return this.ticket;
-	}
-
-	public void setTicket(String ticket) {
-		this.ticket = ticket;
 	}
 
 	@Override

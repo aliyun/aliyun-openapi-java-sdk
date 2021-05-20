@@ -24,14 +24,14 @@ public class CreateQualityProjectResponseUnmarshaller {
 	public static CreateQualityProjectResponse unmarshall(CreateQualityProjectResponse createQualityProjectResponse, UnmarshallerContext _ctx) {
 		
 		createQualityProjectResponse.setRequestId(_ctx.stringValue("CreateQualityProjectResponse.RequestId"));
-		createQualityProjectResponse.setCode(_ctx.stringValue("CreateQualityProjectResponse.Code"));
 		createQualityProjectResponse.setMessage(_ctx.stringValue("CreateQualityProjectResponse.Message"));
+		createQualityProjectResponse.setCode(_ctx.stringValue("CreateQualityProjectResponse.Code"));
 		createQualityProjectResponse.setSuccess(_ctx.booleanValue("CreateQualityProjectResponse.Success"));
 
 		Data data = new Data();
 		data.setInstanceId(_ctx.stringValue("CreateQualityProjectResponse.Data.InstanceId"));
-		data.setProjectId(_ctx.longValue("CreateQualityProjectResponse.Data.ProjectId"));
 		data.setVersion(_ctx.integerValue("CreateQualityProjectResponse.Data.Version"));
+		data.setProjectId(_ctx.longValue("CreateQualityProjectResponse.Data.ProjectId"));
 		createQualityProjectResponse.setData(data);
 	 
 	 	return createQualityProjectResponse;

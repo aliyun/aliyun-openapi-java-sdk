@@ -40,7 +40,7 @@ public class DescribeDataDistResultRequest extends RpcAcsRequest<DescribeDataDis
 
 	private String dataNames;
 	public DescribeDataDistResultRequest() {
-		super("Ens", "2017-11-10", "DescribeDataDistResult");
+		super("Ens", "2017-11-10", "DescribeDataDistResult", "ens");
 		setMethod(MethodType.POST);
 	}
 

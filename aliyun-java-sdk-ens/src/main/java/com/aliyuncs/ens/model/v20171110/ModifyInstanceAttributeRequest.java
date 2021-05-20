@@ -30,7 +30,7 @@ public class ModifyInstanceAttributeRequest extends RpcAcsRequest<ModifyInstance
 
 	private String instanceName;
 	public ModifyInstanceAttributeRequest() {
-		super("Ens", "2017-11-10", "ModifyInstanceAttribute");
+		super("Ens", "2017-11-10", "ModifyInstanceAttribute", "ens");
 		setMethod(MethodType.POST);
 	}
 

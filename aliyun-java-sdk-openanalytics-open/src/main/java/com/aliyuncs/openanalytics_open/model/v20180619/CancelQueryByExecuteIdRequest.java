@@ -27,7 +27,7 @@ public class CancelQueryByExecuteIdRequest extends RpcAcsRequest<CancelQueryByEx
 
 	private String executeId;
 	public CancelQueryByExecuteIdRequest() {
-		super("openanalytics-open", "2018-06-19", "CancelQueryByExecuteId", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "CancelQueryByExecuteId", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

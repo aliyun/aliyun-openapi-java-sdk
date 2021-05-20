@@ -28,8 +28,8 @@ public class ListBodyDbsResponseUnmarshaller {
 	public static ListBodyDbsResponse unmarshall(ListBodyDbsResponse listBodyDbsResponse, UnmarshallerContext _ctx) {
 		
 		listBodyDbsResponse.setRequestId(_ctx.stringValue("ListBodyDbsResponse.RequestId"));
-		listBodyDbsResponse.setMessage(_ctx.stringValue("ListBodyDbsResponse.Message"));
 		listBodyDbsResponse.setCode(_ctx.stringValue("ListBodyDbsResponse.Code"));
+		listBodyDbsResponse.setMessage(_ctx.stringValue("ListBodyDbsResponse.Message"));
 
 		Data data = new Data();
 		data.setTotal(_ctx.longValue("ListBodyDbsResponse.Data.Total"));

@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSagGlobalRouteProtocolResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String routeProtocol;
 
+	private String requestId;
+
 	private List<TaskState> taskStates;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getRouteProtocol() {
 		return this.routeProtocol;
@@ -45,6 +37,14 @@ public class DescribeSagGlobalRouteProtocolResponse extends AcsResponse {
 
 	public void setRouteProtocol(String routeProtocol) {
 		this.routeProtocol = routeProtocol;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<TaskState> getTaskStates() {
@@ -59,11 +59,11 @@ public class DescribeSagGlobalRouteProtocolResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -71,6 +71,14 @@ public class DescribeSagGlobalRouteProtocolResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -87,14 +95,6 @@ public class DescribeSagGlobalRouteProtocolResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

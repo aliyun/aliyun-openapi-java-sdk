@@ -39,7 +39,7 @@ public class SearchFaceRequest extends RpcAcsRequest<SearchFaceResponse> {
 
 	private String optionList;
 	public SearchFaceRequest() {
-		super("Vcs", "2020-05-15", "SearchFace", "vcs");
+		super("Vcs", "2020-05-15", "SearchFace");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,9 +27,9 @@ public class GetIndexCurrentValueResponseUnmarshaller {
 	public static GetIndexCurrentValueResponse unmarshall(GetIndexCurrentValueResponse getIndexCurrentValueResponse, UnmarshallerContext _ctx) {
 		
 		getIndexCurrentValueResponse.setRequestId(_ctx.stringValue("GetIndexCurrentValueResponse.RequestId"));
-		getIndexCurrentValueResponse.setSuccess(_ctx.booleanValue("GetIndexCurrentValueResponse.Success"));
-		getIndexCurrentValueResponse.setCode(_ctx.stringValue("GetIndexCurrentValueResponse.Code"));
 		getIndexCurrentValueResponse.setMessage(_ctx.stringValue("GetIndexCurrentValueResponse.Message"));
+		getIndexCurrentValueResponse.setCode(_ctx.stringValue("GetIndexCurrentValueResponse.Code"));
+		getIndexCurrentValueResponse.setSuccess(_ctx.booleanValue("GetIndexCurrentValueResponse.Success"));
 
 		List<Map<Object, Object>> data = _ctx.listMapValue("GetIndexCurrentValueResponse.Data");
 		getIndexCurrentValueResponse.setData(data);

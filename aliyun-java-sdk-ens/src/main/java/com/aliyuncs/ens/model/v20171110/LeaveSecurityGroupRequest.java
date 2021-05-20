@@ -28,7 +28,7 @@ public class LeaveSecurityGroupRequest extends RpcAcsRequest<LeaveSecurityGroupR
 
 	private String instanceId;
 	public LeaveSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "LeaveSecurityGroup");
+		super("Ens", "2017-11-10", "LeaveSecurityGroup", "ens");
 		setMethod(MethodType.POST);
 	}
 

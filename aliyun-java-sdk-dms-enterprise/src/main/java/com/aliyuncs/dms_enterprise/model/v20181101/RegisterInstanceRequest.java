@@ -69,7 +69,7 @@ public class RegisterInstanceRequest extends RpcAcsRequest<RegisterInstanceRespo
 
 	private String safeRule;
 	public RegisterInstanceRequest() {
-		super("dms-enterprise", "2018-11-01", "RegisterInstance");
+		super("dms-enterprise", "2018-11-01", "RegisterInstance", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

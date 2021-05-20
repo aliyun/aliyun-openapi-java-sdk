@@ -28,7 +28,7 @@ public class ExportBillDetailDataRequest extends RpcAcsRequest<ExportBillDetailD
 
 	private String endDate;
 	public ExportBillDetailDataRequest() {
-		super("Ens", "2017-11-10", "ExportBillDetailData");
+		super("Ens", "2017-11-10", "ExportBillDetailData", "ens");
 		setMethod(MethodType.POST);
 	}
 

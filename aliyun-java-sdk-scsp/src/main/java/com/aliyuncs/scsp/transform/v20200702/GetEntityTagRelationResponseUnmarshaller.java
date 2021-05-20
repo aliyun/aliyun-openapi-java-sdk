@@ -34,12 +34,12 @@ public class GetEntityTagRelationResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetEntityTagRelationResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setEntityType(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityType"));
-			dataItem.setEntityId(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityId"));
 			dataItem.setTagName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagName"));
 			dataItem.setTagGroupCode(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupCode"));
-			dataItem.setTagGroupName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupName"));
+			dataItem.setEntityId(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityId"));
 			dataItem.setTagCode(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagCode"));
+			dataItem.setEntityType(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].EntityType"));
+			dataItem.setTagGroupName(_ctx.stringValue("GetEntityTagRelationResponse.Data["+ i +"].TagGroupName"));
 
 			data.add(dataItem);
 		}

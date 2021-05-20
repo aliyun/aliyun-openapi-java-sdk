@@ -23,6 +23,7 @@ public class DeleteDeploymentResponseUnmarshaller {
 	public static DeleteDeploymentResponse unmarshall(DeleteDeploymentResponse deleteDeploymentResponse, UnmarshallerContext _ctx) {
 		
 		deleteDeploymentResponse.setRequestId(_ctx.stringValue("DeleteDeploymentResponse.requestId"));
+		deleteDeploymentResponse.setSuccess(_ctx.booleanValue("DeleteDeploymentResponse.success"));
 	 
 	 	return deleteDeploymentResponse;
 	}

@@ -26,8 +26,8 @@ public class ListOuterOrderedNumbersResponseUnmarshaller {
 	public static ListOuterOrderedNumbersResponse unmarshall(ListOuterOrderedNumbersResponse listOuterOrderedNumbersResponse, UnmarshallerContext _ctx) {
 		
 		listOuterOrderedNumbersResponse.setRequestId(_ctx.stringValue("ListOuterOrderedNumbersResponse.RequestId"));
-		listOuterOrderedNumbersResponse.setCode(_ctx.stringValue("ListOuterOrderedNumbersResponse.Code"));
 		listOuterOrderedNumbersResponse.setMessage(_ctx.stringValue("ListOuterOrderedNumbersResponse.Message"));
+		listOuterOrderedNumbersResponse.setCode(_ctx.stringValue("ListOuterOrderedNumbersResponse.Code"));
 
 		List<String> numbers = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListOuterOrderedNumbersResponse.Numbers.Length"); i++) {

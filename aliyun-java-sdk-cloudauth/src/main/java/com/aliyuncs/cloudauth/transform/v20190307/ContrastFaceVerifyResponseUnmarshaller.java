@@ -32,6 +32,7 @@ public class ContrastFaceVerifyResponseUnmarshaller {
 		resultObject.setIdentityInfo(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.IdentityInfo"));
 		resultObject.setMaterialInfo(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.MaterialInfo"));
 		resultObject.setSubCode(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.SubCode"));
+		resultObject.setCertifyId(_ctx.stringValue("ContrastFaceVerifyResponse.ResultObject.CertifyId"));
 		contrastFaceVerifyResponse.setResultObject(resultObject);
 	 
 	 	return contrastFaceVerifyResponse;

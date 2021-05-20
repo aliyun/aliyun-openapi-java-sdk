@@ -161,6 +161,8 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		private String serialNumber;
 
+		private String dedicatedBlockStorageClusterId;
+
 		private List<OperationLock> operationLocks;
 
 		private List<MountInstance> mountInstances;
@@ -461,6 +463,14 @@ public class DescribeDisksResponse extends AcsResponse {
 
 		public void setSerialNumber(String serialNumber) {
 			this.serialNumber = serialNumber;
+		}
+
+		public String getDedicatedBlockStorageClusterId() {
+			return this.dedicatedBlockStorageClusterId;
+		}
+
+		public void setDedicatedBlockStorageClusterId(String dedicatedBlockStorageClusterId) {
+			this.dedicatedBlockStorageClusterId = dedicatedBlockStorageClusterId;
 		}
 
 		public List<OperationLock> getOperationLocks() {

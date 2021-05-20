@@ -1,3 +1,13 @@
+2021-05-18 Version: 1.8.4
+- Support openapi test.
+
+2021-04-13 Version: 5.1.12
+- Supported ConfigureDtsJob SynchronizationDirection.
+- Fixed DescribePreCheckStatus JobProgress bootTime.
+
+2021-04-08 Version: 5.1.11
+- Supported ModifyDtsJob and DeleteDtsJob.
+
 2021-02-26 Version: 5.1.10
 - Add TaskId for DescribeMigrationJobStatus, DescribeSubscriptionInstanceStatus, DescribeSynchronizationJobStatus.
 - Add API CreateDtsInstance, ConfigureDtsJob, StartDtsJob.

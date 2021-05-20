@@ -57,19 +57,31 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 	public static class FaceGroupsItem {
 
-		private String groupId;
-
 		private String groupName;
 
-		private Integer faceCount;
+		private String modifyTime;
+
+		private String externalId;
 
 		private String createTime;
 
-		private String modifyTime;
+		private Float maxAge;
+
+		private String gender;
+
+		private Float averageAge;
 
 		private String remarksA;
 
 		private String remarksB;
+
+		private String groupId;
+
+		private String remarksArrayB;
+
+		private Integer imageCount;
+
+		private Float minAge;
 
 		private String remarksC;
 
@@ -77,29 +89,9 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 		private String remarksArrayA;
 
-		private String remarksArrayB;
-
-		private String externalId;
-
-		private Integer imageCount;
-
-		private String gender;
-
-		private Float maxAge;
-
-		private Float averageAge;
-
-		private Float minAge;
+		private Integer faceCount;
 
 		private GroupCoverFace groupCoverFace;
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
-		}
 
 		public String getGroupName() {
 			return this.groupName;
@@ -109,12 +101,20 @@ public class ListFaceGroupsResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public Integer getFaceCount() {
-			return this.faceCount;
+		public String getModifyTime() {
+			return this.modifyTime;
 		}
 
-		public void setFaceCount(Integer faceCount) {
-			this.faceCount = faceCount;
+		public void setModifyTime(String modifyTime) {
+			this.modifyTime = modifyTime;
+		}
+
+		public String getExternalId() {
+			return this.externalId;
+		}
+
+		public void setExternalId(String externalId) {
+			this.externalId = externalId;
 		}
 
 		public String getCreateTime() {
@@ -125,12 +125,28 @@ public class ListFaceGroupsResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getModifyTime() {
-			return this.modifyTime;
+		public Float getMaxAge() {
+			return this.maxAge;
 		}
 
-		public void setModifyTime(String modifyTime) {
-			this.modifyTime = modifyTime;
+		public void setMaxAge(Float maxAge) {
+			this.maxAge = maxAge;
+		}
+
+		public String getGender() {
+			return this.gender;
+		}
+
+		public void setGender(String gender) {
+			this.gender = gender;
+		}
+
+		public Float getAverageAge() {
+			return this.averageAge;
+		}
+
+		public void setAverageAge(Float averageAge) {
+			this.averageAge = averageAge;
 		}
 
 		public String getRemarksA() {
@@ -147,6 +163,38 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 		public void setRemarksB(String remarksB) {
 			this.remarksB = remarksB;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
+		}
+
+		public String getRemarksArrayB() {
+			return this.remarksArrayB;
+		}
+
+		public void setRemarksArrayB(String remarksArrayB) {
+			this.remarksArrayB = remarksArrayB;
+		}
+
+		public Integer getImageCount() {
+			return this.imageCount;
+		}
+
+		public void setImageCount(Integer imageCount) {
+			this.imageCount = imageCount;
+		}
+
+		public Float getMinAge() {
+			return this.minAge;
+		}
+
+		public void setMinAge(Float minAge) {
+			this.minAge = minAge;
 		}
 
 		public String getRemarksC() {
@@ -173,60 +221,12 @@ public class ListFaceGroupsResponse extends AcsResponse {
 			this.remarksArrayA = remarksArrayA;
 		}
 
-		public String getRemarksArrayB() {
-			return this.remarksArrayB;
+		public Integer getFaceCount() {
+			return this.faceCount;
 		}
 
-		public void setRemarksArrayB(String remarksArrayB) {
-			this.remarksArrayB = remarksArrayB;
-		}
-
-		public String getExternalId() {
-			return this.externalId;
-		}
-
-		public void setExternalId(String externalId) {
-			this.externalId = externalId;
-		}
-
-		public Integer getImageCount() {
-			return this.imageCount;
-		}
-
-		public void setImageCount(Integer imageCount) {
-			this.imageCount = imageCount;
-		}
-
-		public String getGender() {
-			return this.gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
-		public Float getMaxAge() {
-			return this.maxAge;
-		}
-
-		public void setMaxAge(Float maxAge) {
-			this.maxAge = maxAge;
-		}
-
-		public Float getAverageAge() {
-			return this.averageAge;
-		}
-
-		public void setAverageAge(Float averageAge) {
-			this.averageAge = averageAge;
-		}
-
-		public Float getMinAge() {
-			return this.minAge;
-		}
-
-		public void setMinAge(Float minAge) {
-			this.minAge = minAge;
+		public void setFaceCount(Integer faceCount) {
+			this.faceCount = faceCount;
 		}
 
 		public GroupCoverFace getGroupCoverFace() {
@@ -241,9 +241,13 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			private String faceId;
 
-			private String imageUri;
+			private Long imageHeight;
+
+			private Long imageWidth;
 
 			private String externalId;
+
+			private String imageUri;
 
 			private FaceBoundary faceBoundary;
 
@@ -255,12 +259,20 @@ public class ListFaceGroupsResponse extends AcsResponse {
 				this.faceId = faceId;
 			}
 
-			public String getImageUri() {
-				return this.imageUri;
+			public Long getImageHeight() {
+				return this.imageHeight;
 			}
 
-			public void setImageUri(String imageUri) {
-				this.imageUri = imageUri;
+			public void setImageHeight(Long imageHeight) {
+				this.imageHeight = imageHeight;
+			}
+
+			public Long getImageWidth() {
+				return this.imageWidth;
+			}
+
+			public void setImageWidth(Long imageWidth) {
+				this.imageWidth = imageWidth;
 			}
 
 			public String getExternalId() {
@@ -269,6 +281,14 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 			public void setExternalId(String externalId) {
 				this.externalId = externalId;
+			}
+
+			public String getImageUri() {
+				return this.imageUri;
+			}
+
+			public void setImageUri(String imageUri) {
+				this.imageUri = imageUri;
 			}
 
 			public FaceBoundary getFaceBoundary() {
@@ -285,9 +305,9 @@ public class ListFaceGroupsResponse extends AcsResponse {
 
 				private Integer top;
 
-				private Integer width;
-
 				private Integer height;
+
+				private Integer width;
 
 				public Integer getLeft() {
 					return this.left;
@@ -305,20 +325,20 @@ public class ListFaceGroupsResponse extends AcsResponse {
 					this.top = top;
 				}
 
-				public Integer getWidth() {
-					return this.width;
-				}
-
-				public void setWidth(Integer width) {
-					this.width = width;
-				}
-
 				public Integer getHeight() {
 					return this.height;
 				}
 
 				public void setHeight(Integer height) {
 					this.height = height;
+				}
+
+				public Integer getWidth() {
+					return this.width;
+				}
+
+				public void setWidth(Integer width) {
+					this.width = width;
 				}
 			}
 		}

@@ -80,6 +80,14 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 
 		private Integer retryCount;
 
+		private Boolean success;
+
+		private Integer maxRetryCount;
+
+		private String deviceErrorCode;
+
+		private String deviceErrorMessage;
+
 		public String getId() {
 			return this.id;
 		}
@@ -94,6 +102,38 @@ public class SyncSpeechByCombinationResponse extends AcsResponse {
 
 		public void setRetryCount(Integer retryCount) {
 			this.retryCount = retryCount;
+		}
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
+
+		public Integer getMaxRetryCount() {
+			return this.maxRetryCount;
+		}
+
+		public void setMaxRetryCount(Integer maxRetryCount) {
+			this.maxRetryCount = maxRetryCount;
+		}
+
+		public String getDeviceErrorCode() {
+			return this.deviceErrorCode;
+		}
+
+		public void setDeviceErrorCode(String deviceErrorCode) {
+			this.deviceErrorCode = deviceErrorCode;
+		}
+
+		public String getDeviceErrorMessage() {
+			return this.deviceErrorMessage;
+		}
+
+		public void setDeviceErrorMessage(String deviceErrorMessage) {
+			this.deviceErrorMessage = deviceErrorMessage;
 		}
 	}
 

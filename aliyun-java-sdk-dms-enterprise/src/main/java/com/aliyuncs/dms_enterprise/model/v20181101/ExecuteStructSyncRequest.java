@@ -29,7 +29,7 @@ public class ExecuteStructSyncRequest extends RpcAcsRequest<ExecuteStructSyncRes
 
 	private Long tid;
 	public ExecuteStructSyncRequest() {
-		super("dms-enterprise", "2018-11-01", "ExecuteStructSync");
+		super("dms-enterprise", "2018-11-01", "ExecuteStructSync", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

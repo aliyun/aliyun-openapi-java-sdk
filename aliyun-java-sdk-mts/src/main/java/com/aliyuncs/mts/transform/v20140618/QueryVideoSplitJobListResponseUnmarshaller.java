@@ -40,33 +40,33 @@ public class QueryVideoSplitJobListResponseUnmarshaller {
 		List<Job> jobList = new ArrayList<Job>();
 		for (int i = 0; i < _ctx.lengthValue("QueryVideoSplitJobListResponse.JobList.Length"); i++) {
 			Job job = new Job();
-			job.setId(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Id"));
-			job.setUserData(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].UserData"));
-			job.setPipelineId(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setCreationTime(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].CreationTime"));
 			job.setState(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].State"));
+			job.setUserData(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].UserData"));
 			job.setCode(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Code"));
 			job.setMessage(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Message"));
-			job.setCreationTime(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].CreationTime"));
-
-			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Input.Location"));
-			input.setObject(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Input.Object"));
-			job.setInput(input);
+			job.setPipelineId(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].PipelineId"));
+			job.setId(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Id"));
 
 			VideoSplitResult videoSplitResult = new VideoSplitResult();
 
 			List<VideoSplit> videoSplitList = new ArrayList<VideoSplit>();
 			for (int j = 0; j < _ctx.lengthValue("QueryVideoSplitJobListResponse.JobList["+ i +"].VideoSplitResult.VideoSplitList.Length"); j++) {
 				VideoSplit videoSplit = new VideoSplit();
-				videoSplit.setStartTime(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].VideoSplitResult.VideoSplitList["+ j +"].StartTime"));
 				videoSplit.setEndTime(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].VideoSplitResult.VideoSplitList["+ j +"].EndTime"));
+				videoSplit.setStartTime(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].VideoSplitResult.VideoSplitList["+ j +"].StartTime"));
 				videoSplit.setPath(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].VideoSplitResult.VideoSplitList["+ j +"].Path"));
 
 				videoSplitList.add(videoSplit);
 			}
 			videoSplitResult.setVideoSplitList(videoSplitList);
 			job.setVideoSplitResult(videoSplitResult);
+
+			Input input = new Input();
+			input.setObject(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryVideoSplitJobListResponse.JobList["+ i +"].Input.Bucket"));
+			job.setInput(input);
 
 			jobList.add(job);
 		}

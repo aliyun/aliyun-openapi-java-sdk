@@ -145,7 +145,9 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 
 			private String utilization;
 
-			private Boolean share;
+			private String allocationStatus;
+
+			private List<Tag> tags;
 
 			public String getInstanceId() {
 				return this.instanceId;
@@ -251,12 +253,43 @@ public class QuerySavingsPlansInstanceResponse extends AcsResponse {
 				this.utilization = utilization;
 			}
 
-			public Boolean getShare() {
-				return this.share;
+			public String getAllocationStatus() {
+				return this.allocationStatus;
 			}
 
-			public void setShare(Boolean share) {
-				this.share = share;
+			public void setAllocationStatus(String allocationStatus) {
+				this.allocationStatus = allocationStatus;
+			}
+
+			public List<Tag> getTags() {
+				return this.tags;
+			}
+
+			public void setTags(List<Tag> tags) {
+				this.tags = tags;
+			}
+
+			public static class Tag {
+
+				private String key;
+
+				private String value;
+
+				public String getKey() {
+					return this.key;
+				}
+
+				public void setKey(String key) {
+					this.key = key;
+				}
+
+				public String getValue() {
+					return this.value;
+				}
+
+				public void setValue(String value) {
+					this.value = value;
+				}
 			}
 		}
 	}

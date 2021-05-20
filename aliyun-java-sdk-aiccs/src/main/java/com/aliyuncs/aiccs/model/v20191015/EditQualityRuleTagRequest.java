@@ -30,7 +30,7 @@ public class EditQualityRuleTagRequest extends RpcAcsRequest<EditQualityRuleTagR
 
 	private List<AnalysisTypes> analysisTypess;
 	public EditQualityRuleTagRequest() {
-		super("aiccs", "2019-10-15", "EditQualityRuleTag", "aiccs-service");
+		super("aiccs", "2019-10-15", "EditQualityRuleTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -32,6 +32,8 @@ public class UpdateVpcEndpointServiceAttributeRequest extends RpcAcsRequest<Upda
 
 	private Integer connectBandwidth;
 
+	private Boolean zoneAffinityEnabled;
+
 	private Boolean dryRun;
 
 	private String serviceDescription;
@@ -77,6 +79,17 @@ public class UpdateVpcEndpointServiceAttributeRequest extends RpcAcsRequest<Upda
 		this.connectBandwidth = connectBandwidth;
 		if(connectBandwidth != null){
 			putQueryParameter("ConnectBandwidth", connectBandwidth.toString());
+		}
+	}
+
+	public Boolean getZoneAffinityEnabled() {
+		return this.zoneAffinityEnabled;
+	}
+
+	public void setZoneAffinityEnabled(Boolean zoneAffinityEnabled) {
+		this.zoneAffinityEnabled = zoneAffinityEnabled;
+		if(zoneAffinityEnabled != null){
+			putQueryParameter("ZoneAffinityEnabled", zoneAffinityEnabled.toString());
 		}
 	}
 

@@ -28,15 +28,15 @@ public class DescribeBindableSmartAccessGatewaysResponseUnmarshaller {
 		
 		describeBindableSmartAccessGatewaysResponse.setRequestId(_ctx.stringValue("DescribeBindableSmartAccessGatewaysResponse.RequestId"));
 		describeBindableSmartAccessGatewaysResponse.setTotalCount(_ctx.integerValue("DescribeBindableSmartAccessGatewaysResponse.TotalCount"));
-		describeBindableSmartAccessGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeBindableSmartAccessGatewaysResponse.PageNumber"));
 		describeBindableSmartAccessGatewaysResponse.setPageSize(_ctx.integerValue("DescribeBindableSmartAccessGatewaysResponse.PageSize"));
+		describeBindableSmartAccessGatewaysResponse.setPageNumber(_ctx.integerValue("DescribeBindableSmartAccessGatewaysResponse.PageNumber"));
 
 		List<SmartAccessGateway> smartAccessGateways = new ArrayList<SmartAccessGateway>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeBindableSmartAccessGatewaysResponse.SmartAccessGateways.Length"); i++) {
 			SmartAccessGateway smartAccessGateway = new SmartAccessGateway();
+			smartAccessGateway.setSmartAGUid(_ctx.longValue("DescribeBindableSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SmartAGUid"));
 			smartAccessGateway.setSmartAGId(_ctx.stringValue("DescribeBindableSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SmartAGId"));
 			smartAccessGateway.setName(_ctx.stringValue("DescribeBindableSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].Name"));
-			smartAccessGateway.setSmartAGUid(_ctx.longValue("DescribeBindableSmartAccessGatewaysResponse.SmartAccessGateways["+ i +"].SmartAGUid"));
 
 			smartAccessGateways.add(smartAccessGateway);
 		}

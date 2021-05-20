@@ -52,6 +52,7 @@ public class ListOTATaskByJobResponseUnmarshaller {
 			simpleOTATaskInfo.setProgress(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].Progress"));
 			simpleOTATaskInfo.setIotId(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].IotId"));
 			simpleOTATaskInfo.setUtcCreate(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].UtcCreate"));
+			simpleOTATaskInfo.setTimeout(_ctx.stringValue("ListOTATaskByJobResponse.Data["+ i +"].Timeout"));
 
 			data.add(simpleOTATaskInfo);
 		}

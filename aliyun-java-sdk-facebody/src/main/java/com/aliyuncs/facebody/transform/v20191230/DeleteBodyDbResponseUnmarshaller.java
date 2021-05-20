@@ -23,8 +23,8 @@ public class DeleteBodyDbResponseUnmarshaller {
 	public static DeleteBodyDbResponse unmarshall(DeleteBodyDbResponse deleteBodyDbResponse, UnmarshallerContext _ctx) {
 		
 		deleteBodyDbResponse.setRequestId(_ctx.stringValue("DeleteBodyDbResponse.RequestId"));
-		deleteBodyDbResponse.setMessage(_ctx.stringValue("DeleteBodyDbResponse.Message"));
 		deleteBodyDbResponse.setCode(_ctx.stringValue("DeleteBodyDbResponse.Code"));
+		deleteBodyDbResponse.setMessage(_ctx.stringValue("DeleteBodyDbResponse.Message"));
 	 
 	 	return deleteBodyDbResponse;
 	}

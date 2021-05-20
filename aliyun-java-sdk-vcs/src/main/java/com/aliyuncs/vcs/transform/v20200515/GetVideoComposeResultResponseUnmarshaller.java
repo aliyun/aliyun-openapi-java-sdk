@@ -23,10 +23,10 @@ public class GetVideoComposeResultResponseUnmarshaller {
 	public static GetVideoComposeResultResponse unmarshall(GetVideoComposeResultResponse getVideoComposeResultResponse, UnmarshallerContext _ctx) {
 		
 		getVideoComposeResultResponse.setRequestId(_ctx.stringValue("GetVideoComposeResultResponse.RequestId"));
-		getVideoComposeResultResponse.setMessage(_ctx.stringValue("GetVideoComposeResultResponse.Message"));
-		getVideoComposeResultResponse.setVideoUrl(_ctx.stringValue("GetVideoComposeResultResponse.VideoUrl"));
-		getVideoComposeResultResponse.setCode(_ctx.stringValue("GetVideoComposeResultResponse.Code"));
 		getVideoComposeResultResponse.setStatus(_ctx.stringValue("GetVideoComposeResultResponse.Status"));
+		getVideoComposeResultResponse.setMessage(_ctx.stringValue("GetVideoComposeResultResponse.Message"));
+		getVideoComposeResultResponse.setCode(_ctx.stringValue("GetVideoComposeResultResponse.Code"));
+		getVideoComposeResultResponse.setVideoUrl(_ctx.stringValue("GetVideoComposeResultResponse.VideoUrl"));
 	 
 	 	return getVideoComposeResultResponse;
 	}

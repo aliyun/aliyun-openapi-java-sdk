@@ -29,7 +29,7 @@ public class GetRtcTokenRequest extends RpcAcsRequest<GetRtcTokenResponse> {
 
 	private String accountName;
 	public GetRtcTokenRequest() {
-		super("aiccs", "2019-10-15", "GetRtcToken", "aiccs-service");
+		super("aiccs", "2019-10-15", "GetRtcToken");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

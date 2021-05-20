@@ -26,16 +26,16 @@ public class QueryAgentGroupResponseUnmarshaller {
 
 	public static QueryAgentGroupResponse unmarshall(QueryAgentGroupResponse queryAgentGroupResponse, UnmarshallerContext _ctx) {
 		
-		queryAgentGroupResponse.setSuccess(_ctx.booleanValue("QueryAgentGroupResponse.Success"));
-		queryAgentGroupResponse.setCode(_ctx.stringValue("QueryAgentGroupResponse.Code"));
 		queryAgentGroupResponse.setMessage(_ctx.stringValue("QueryAgentGroupResponse.Message"));
+		queryAgentGroupResponse.setCode(_ctx.stringValue("QueryAgentGroupResponse.Code"));
+		queryAgentGroupResponse.setSuccess(_ctx.booleanValue("QueryAgentGroupResponse.Success"));
 
 		List<XspaceAgentGroup> data = new ArrayList<XspaceAgentGroup>();
 		for (int i = 0; i < _ctx.lengthValue("QueryAgentGroupResponse.Data.Length"); i++) {
 			XspaceAgentGroup xspaceAgentGroup = new XspaceAgentGroup();
 			xspaceAgentGroup.setBuId(_ctx.longValue("QueryAgentGroupResponse.Data["+ i +"].BuId"));
-			xspaceAgentGroup.setDepartmentId(_ctx.longValue("QueryAgentGroupResponse.Data["+ i +"].DepartmentId"));
 			xspaceAgentGroup.setGroupId(_ctx.longValue("QueryAgentGroupResponse.Data["+ i +"].GroupId"));
+			xspaceAgentGroup.setDepartmentId(_ctx.longValue("QueryAgentGroupResponse.Data["+ i +"].DepartmentId"));
 
 			data.add(xspaceAgentGroup);
 		}

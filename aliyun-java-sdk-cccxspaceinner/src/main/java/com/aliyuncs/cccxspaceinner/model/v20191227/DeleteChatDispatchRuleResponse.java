@@ -24,15 +24,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DeleteChatDispatchRuleResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
+
+	private Long data;
 
 	private String code;
 
 	private Boolean success;
 
-	private String message;
+	public String getMessage() {
+		return this.message;
+	}
 
-	private Long data;
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,6 +48,14 @@ public class DeleteChatDispatchRuleResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public Long getData() {
+		return this.data;
+	}
+
+	public void setData(Long data) {
+		this.data = data;
 	}
 
 	public String getCode() {
@@ -56,22 +72,6 @@ public class DeleteChatDispatchRuleResponse extends AcsResponse {
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Long getData() {
-		return this.data;
-	}
-
-	public void setData(Long data) {
-		this.data = data;
 	}
 
 	@Override

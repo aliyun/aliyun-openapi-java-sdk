@@ -23,14 +23,15 @@ public class CreateVpcEndpointServiceResponseUnmarshaller {
 	public static CreateVpcEndpointServiceResponse unmarshall(CreateVpcEndpointServiceResponse createVpcEndpointServiceResponse, UnmarshallerContext _ctx) {
 		
 		createVpcEndpointServiceResponse.setRequestId(_ctx.stringValue("CreateVpcEndpointServiceResponse.RequestId"));
-		createVpcEndpointServiceResponse.setAutoAcceptEnabled(_ctx.booleanValue("CreateVpcEndpointServiceResponse.AutoAcceptEnabled"));
-		createVpcEndpointServiceResponse.setCreateTime(_ctx.stringValue("CreateVpcEndpointServiceResponse.CreateTime"));
 		createVpcEndpointServiceResponse.setServiceBusinessStatus(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceBusinessStatus"));
+		createVpcEndpointServiceResponse.setServiceName(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceName"));
 		createVpcEndpointServiceResponse.setServiceDescription(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceDescription"));
+		createVpcEndpointServiceResponse.setServiceStatus(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceStatus"));
+		createVpcEndpointServiceResponse.setCreateTime(_ctx.stringValue("CreateVpcEndpointServiceResponse.CreateTime"));
+		createVpcEndpointServiceResponse.setZoneAffinityEnabled(_ctx.booleanValue("CreateVpcEndpointServiceResponse.ZoneAffinityEnabled"));
 		createVpcEndpointServiceResponse.setServiceDomain(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceDomain"));
 		createVpcEndpointServiceResponse.setServiceId(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceId"));
-		createVpcEndpointServiceResponse.setServiceName(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceName"));
-		createVpcEndpointServiceResponse.setServiceStatus(_ctx.stringValue("CreateVpcEndpointServiceResponse.ServiceStatus"));
+		createVpcEndpointServiceResponse.setAutoAcceptEnabled(_ctx.booleanValue("CreateVpcEndpointServiceResponse.AutoAcceptEnabled"));
 	 
 	 	return createVpcEndpointServiceResponse;
 	}

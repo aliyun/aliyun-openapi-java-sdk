@@ -23,18 +23,18 @@ public class GetAgentByOuterInfoResponseUnmarshaller {
 
 	public static GetAgentByOuterInfoResponse unmarshall(GetAgentByOuterInfoResponse getAgentByOuterInfoResponse, UnmarshallerContext _ctx) {
 		
-		getAgentByOuterInfoResponse.setSuccess(_ctx.booleanValue("GetAgentByOuterInfoResponse.Success"));
-		getAgentByOuterInfoResponse.setCode(_ctx.stringValue("GetAgentByOuterInfoResponse.Code"));
 		getAgentByOuterInfoResponse.setMessage(_ctx.stringValue("GetAgentByOuterInfoResponse.Message"));
+		getAgentByOuterInfoResponse.setCode(_ctx.stringValue("GetAgentByOuterInfoResponse.Code"));
+		getAgentByOuterInfoResponse.setSuccess(_ctx.booleanValue("GetAgentByOuterInfoResponse.Success"));
 
 		Data data = new Data();
-		data.setBuId(_ctx.longValue("GetAgentByOuterInfoResponse.Data.BuId"));
-		data.setAgentId(_ctx.longValue("GetAgentByOuterInfoResponse.Data.AgentId"));
-		data.setAgentName(_ctx.stringValue("GetAgentByOuterInfoResponse.Data.AgentName"));
-		data.setShowName(_ctx.stringValue("GetAgentByOuterInfoResponse.Data.ShowName"));
-		data.setAgentType(_ctx.integerValue("GetAgentByOuterInfoResponse.Data.AgentType"));
 		data.setStatus(_ctx.integerValue("GetAgentByOuterInfoResponse.Data.Status"));
+		data.setBuId(_ctx.longValue("GetAgentByOuterInfoResponse.Data.BuId"));
+		data.setShowName(_ctx.stringValue("GetAgentByOuterInfoResponse.Data.ShowName"));
+		data.setAgentId(_ctx.longValue("GetAgentByOuterInfoResponse.Data.AgentId"));
 		data.setDepartmentId(_ctx.longValue("GetAgentByOuterInfoResponse.Data.DepartmentId"));
+		data.setAgentName(_ctx.stringValue("GetAgentByOuterInfoResponse.Data.AgentName"));
+		data.setAgentType(_ctx.integerValue("GetAgentByOuterInfoResponse.Data.AgentType"));
 		getAgentByOuterInfoResponse.setData(data);
 	 
 	 	return getAgentByOuterInfoResponse;

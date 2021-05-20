@@ -27,10 +27,10 @@ public class AddAsrPipelineResponseUnmarshaller {
 		addAsrPipelineResponse.setRequestId(_ctx.stringValue("AddAsrPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.Name"));
-		pipeline.setPriority(_ctx.integerValue("AddAsrPipelineResponse.Pipeline.Priority"));
 		pipeline.setState(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.State"));
+		pipeline.setPriority(_ctx.integerValue("AddAsrPipelineResponse.Pipeline.Priority"));
+		pipeline.setName(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.Name"));
+		pipeline.setId(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.Id"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
 		notifyConfig.setTopic(_ctx.stringValue("AddAsrPipelineResponse.Pipeline.NotifyConfig.Topic"));

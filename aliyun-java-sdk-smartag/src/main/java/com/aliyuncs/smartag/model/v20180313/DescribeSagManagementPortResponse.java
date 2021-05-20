@@ -27,11 +27,11 @@ public class DescribeSagManagementPortResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String gateway;
+
 	private String iP;
 
 	private String mask;
-
-	private String gateway;
 
 	private List<TaskState> taskStates;
 
@@ -41,6 +41,14 @@ public class DescribeSagManagementPortResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getGateway() {
+		return this.gateway;
+	}
+
+	public void setGateway(String gateway) {
+		this.gateway = gateway;
 	}
 
 	public String getIP() {
@@ -59,14 +67,6 @@ public class DescribeSagManagementPortResponse extends AcsResponse {
 		this.mask = mask;
 	}
 
-	public String getGateway() {
-		return this.gateway;
-	}
-
-	public void setGateway(String gateway) {
-		this.gateway = gateway;
-	}
-
 	public List<TaskState> getTaskStates() {
 		return this.taskStates;
 	}
@@ -79,11 +79,11 @@ public class DescribeSagManagementPortResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -91,6 +91,14 @@ public class DescribeSagManagementPortResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -107,14 +115,6 @@ public class DescribeSagManagementPortResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

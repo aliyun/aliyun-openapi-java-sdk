@@ -24,89 +24,41 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateHealthCheckResponse extends AcsResponse {
 
-	private String requestId;
-
-	private Long createTime;
-
-	private String instanceId;
-
-	private String smartAGId;
-
-	private String name;
-
-	private String regionId;
-
 	private String description;
-
-	private String type;
-
-	private String dstIpAddr;
-
-	private Integer dstPort;
-
-	private String srcIpAddr;
 
 	private Integer srcPort;
 
-	private Integer probeInterval;
+	private String requestId;
+
+	private String instanceId;
+
+	private String srcIpAddr;
+
+	private Long createTime;
+
+	private Integer failCountThreshold;
+
+	private Integer dstPort;
+
+	private String name;
 
 	private Integer probeCount;
+
+	private String type;
 
 	private Integer probeTimeout;
 
 	private Integer rttThreshold;
 
+	private Integer probeInterval;
+
+	private String regionId;
+
+	private String smartAGId;
+
 	private Integer rttFailThreshold;
 
-	private Integer failCountThreshold;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public Long getCreateTime() {
-		return this.createTime;
-	}
-
-	public void setCreateTime(Long createTime) {
-		this.createTime = createTime;
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-	}
-
-	public String getSmartAGId() {
-		return this.smartAGId;
-	}
-
-	public void setSmartAGId(String smartAGId) {
-		this.smartAGId = smartAGId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getRegionId() {
-		return this.regionId;
-	}
-
-	public void setRegionId(String regionId) {
-		this.regionId = regionId;
-	}
+	private String dstIpAddr;
 
 	public String getDescription() {
 		return this.description;
@@ -114,38 +66,6 @@ public class CreateHealthCheckResponse extends AcsResponse {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getDstIpAddr() {
-		return this.dstIpAddr;
-	}
-
-	public void setDstIpAddr(String dstIpAddr) {
-		this.dstIpAddr = dstIpAddr;
-	}
-
-	public Integer getDstPort() {
-		return this.dstPort;
-	}
-
-	public void setDstPort(Integer dstPort) {
-		this.dstPort = dstPort;
-	}
-
-	public String getSrcIpAddr() {
-		return this.srcIpAddr;
-	}
-
-	public void setSrcIpAddr(String srcIpAddr) {
-		this.srcIpAddr = srcIpAddr;
 	}
 
 	public Integer getSrcPort() {
@@ -156,12 +76,60 @@ public class CreateHealthCheckResponse extends AcsResponse {
 		this.srcPort = srcPort;
 	}
 
-	public Integer getProbeInterval() {
-		return this.probeInterval;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setProbeInterval(Integer probeInterval) {
-		this.probeInterval = probeInterval;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getInstanceId() {
+		return this.instanceId;
+	}
+
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+	}
+
+	public String getSrcIpAddr() {
+		return this.srcIpAddr;
+	}
+
+	public void setSrcIpAddr(String srcIpAddr) {
+		this.srcIpAddr = srcIpAddr;
+	}
+
+	public Long getCreateTime() {
+		return this.createTime;
+	}
+
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
+
+	public Integer getFailCountThreshold() {
+		return this.failCountThreshold;
+	}
+
+	public void setFailCountThreshold(Integer failCountThreshold) {
+		this.failCountThreshold = failCountThreshold;
+	}
+
+	public Integer getDstPort() {
+		return this.dstPort;
+	}
+
+	public void setDstPort(Integer dstPort) {
+		this.dstPort = dstPort;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Integer getProbeCount() {
@@ -170,6 +138,14 @@ public class CreateHealthCheckResponse extends AcsResponse {
 
 	public void setProbeCount(Integer probeCount) {
 		this.probeCount = probeCount;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Integer getProbeTimeout() {
@@ -188,6 +164,30 @@ public class CreateHealthCheckResponse extends AcsResponse {
 		this.rttThreshold = rttThreshold;
 	}
 
+	public Integer getProbeInterval() {
+		return this.probeInterval;
+	}
+
+	public void setProbeInterval(Integer probeInterval) {
+		this.probeInterval = probeInterval;
+	}
+
+	public String getRegionId() {
+		return this.regionId;
+	}
+
+	public void setRegionId(String regionId) {
+		this.regionId = regionId;
+	}
+
+	public String getSmartAGId() {
+		return this.smartAGId;
+	}
+
+	public void setSmartAGId(String smartAGId) {
+		this.smartAGId = smartAGId;
+	}
+
 	public Integer getRttFailThreshold() {
 		return this.rttFailThreshold;
 	}
@@ -196,12 +196,12 @@ public class CreateHealthCheckResponse extends AcsResponse {
 		this.rttFailThreshold = rttFailThreshold;
 	}
 
-	public Integer getFailCountThreshold() {
-		return this.failCountThreshold;
+	public String getDstIpAddr() {
+		return this.dstIpAddr;
 	}
 
-	public void setFailCountThreshold(Integer failCountThreshold) {
-		this.failCountThreshold = failCountThreshold;
+	public void setDstIpAddr(String dstIpAddr) {
+		this.dstIpAddr = dstIpAddr;
 	}
 
 	@Override

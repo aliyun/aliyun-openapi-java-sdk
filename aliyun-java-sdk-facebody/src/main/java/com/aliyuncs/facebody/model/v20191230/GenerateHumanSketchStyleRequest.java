@@ -25,6 +25,8 @@ import com.aliyuncs.facebody.Endpoint;
 public class GenerateHumanSketchStyleRequest extends RpcAcsRequest<GenerateHumanSketchStyleResponse> {
 	   
 
+	private String returnType;
+
 	private String imageURL;
 	public GenerateHumanSketchStyleRequest() {
 		super("facebody", "2019-12-30", "GenerateHumanSketchStyle");
@@ -33,6 +35,17 @@ public class GenerateHumanSketchStyleRequest extends RpcAcsRequest<GenerateHuman
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getReturnType() {
+		return this.returnType;
+	}
+
+	public void setReturnType(String returnType) {
+		this.returnType = returnType;
+		if(returnType != null){
+			putBodyParameter("ReturnType", returnType);
+		}
 	}
 
 	public String getImageURL() {

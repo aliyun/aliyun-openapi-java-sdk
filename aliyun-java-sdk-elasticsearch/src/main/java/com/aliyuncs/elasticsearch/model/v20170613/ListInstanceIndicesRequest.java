@@ -27,6 +27,10 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 
 	private String instanceId;
 
+	private Boolean isManaged;
+
+	private String name;
+
 	private String lang;
 	public ListInstanceIndicesRequest() {
 		super("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch");
@@ -46,6 +50,28 @@ public class ListInstanceIndicesRequest extends RoaAcsRequest<ListInstanceIndice
 		this.instanceId = instanceId;
 		if(instanceId != null){
 			putPathParameter("InstanceId", instanceId);
+		}
+	}
+
+	public Boolean getIsManaged() {
+		return this.isManaged;
+	}
+
+	public void setIsManaged(Boolean isManaged) {
+		this.isManaged = isManaged;
+		if(isManaged != null){
+			putQueryParameter("isManaged", isManaged.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("name", name);
 		}
 	}
 

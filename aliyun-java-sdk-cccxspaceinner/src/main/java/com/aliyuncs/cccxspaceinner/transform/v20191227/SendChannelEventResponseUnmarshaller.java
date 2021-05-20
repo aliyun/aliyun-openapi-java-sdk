@@ -22,9 +22,9 @@ public class SendChannelEventResponseUnmarshaller {
 
 	public static SendChannelEventResponse unmarshall(SendChannelEventResponse sendChannelEventResponse, UnmarshallerContext _ctx) {
 		
-		sendChannelEventResponse.setSuccess(_ctx.booleanValue("SendChannelEventResponse.Success"));
-		sendChannelEventResponse.setCode(_ctx.stringValue("SendChannelEventResponse.Code"));
 		sendChannelEventResponse.setMessage(_ctx.stringValue("SendChannelEventResponse.Message"));
+		sendChannelEventResponse.setCode(_ctx.stringValue("SendChannelEventResponse.Code"));
+		sendChannelEventResponse.setSuccess(_ctx.booleanValue("SendChannelEventResponse.Success"));
 	 
 	 	return sendChannelEventResponse;
 	}

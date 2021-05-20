@@ -30,7 +30,7 @@ public class MigrateVmRequest extends RpcAcsRequest<MigrateVmResponse> {
 
 	private String instanceIds;
 	public MigrateVmRequest() {
-		super("Ens", "2017-11-10", "MigrateVm");
+		super("Ens", "2017-11-10", "MigrateVm", "ens");
 		setMethod(MethodType.POST);
 	}
 

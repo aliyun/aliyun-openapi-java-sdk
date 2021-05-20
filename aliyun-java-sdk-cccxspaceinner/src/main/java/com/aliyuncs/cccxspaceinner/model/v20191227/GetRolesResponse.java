@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetRolesResponse extends AcsResponse {
 
+	private String message;
+
 	private String requestId;
 
 	private String code;
 
-	private String message;
-
 	private Boolean success;
 
 	private List<XspaceRole> data;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -49,14 +57,6 @@ public class GetRolesResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public Boolean getSuccess() {
@@ -79,11 +79,11 @@ public class GetRolesResponse extends AcsResponse {
 
 		private Long buId;
 
-		private Long roleId;
+		private String roleCode;
 
 		private String roleName;
 
-		private String roleCode;
+		private Long roleId;
 
 		public Long getBuId() {
 			return this.buId;
@@ -93,12 +93,12 @@ public class GetRolesResponse extends AcsResponse {
 			this.buId = buId;
 		}
 
-		public Long getRoleId() {
-			return this.roleId;
+		public String getRoleCode() {
+			return this.roleCode;
 		}
 
-		public void setRoleId(Long roleId) {
-			this.roleId = roleId;
+		public void setRoleCode(String roleCode) {
+			this.roleCode = roleCode;
 		}
 
 		public String getRoleName() {
@@ -109,12 +109,12 @@ public class GetRolesResponse extends AcsResponse {
 			this.roleName = roleName;
 		}
 
-		public String getRoleCode() {
-			return this.roleCode;
+		public Long getRoleId() {
+			return this.roleId;
 		}
 
-		public void setRoleCode(String roleCode) {
-			this.roleCode = roleCode;
+		public void setRoleId(Long roleId) {
+			this.roleId = roleId;
 		}
 	}
 

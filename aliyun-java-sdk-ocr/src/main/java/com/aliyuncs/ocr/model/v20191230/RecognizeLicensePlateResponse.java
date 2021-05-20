@@ -27,6 +27,10 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String code;
+
+	private String message;
+
 	private Data data;
 
 	public String getRequestId() {
@@ -35,6 +39,22 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Data getData() {
@@ -59,15 +79,33 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 
 		public static class Plate {
 
+			private Float plateTypeConfidence;
+
+			private String plateType;
+
 			private Float confidence;
 
 			private String plateNumber;
 
-			private String plateType;
-
-			private Float plateTypeConfidence;
+			private List<PositionsItem> positions;
 
 			private Roi roi;
+
+			public Float getPlateTypeConfidence() {
+				return this.plateTypeConfidence;
+			}
+
+			public void setPlateTypeConfidence(Float plateTypeConfidence) {
+				this.plateTypeConfidence = plateTypeConfidence;
+			}
+
+			public String getPlateType() {
+				return this.plateType;
+			}
+
+			public void setPlateType(String plateType) {
+				this.plateType = plateType;
+			}
 
 			public Float getConfidence() {
 				return this.confidence;
@@ -85,20 +123,12 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 				this.plateNumber = plateNumber;
 			}
 
-			public String getPlateType() {
-				return this.plateType;
+			public List<PositionsItem> getPositions() {
+				return this.positions;
 			}
 
-			public void setPlateType(String plateType) {
-				this.plateType = plateType;
-			}
-
-			public Float getPlateTypeConfidence() {
-				return this.plateTypeConfidence;
-			}
-
-			public void setPlateTypeConfidence(Float plateTypeConfidence) {
-				this.plateTypeConfidence = plateTypeConfidence;
+			public void setPositions(List<PositionsItem> positions) {
+				this.positions = positions;
 			}
 
 			public Roi getRoi() {
@@ -109,23 +139,38 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 				this.roi = roi;
 			}
 
-			public static class Roi {
+			public static class PositionsItem {
 
-				private Integer h;
+				private Long x;
+
+				private Long y;
+
+				public Long getX() {
+					return this.x;
+				}
+
+				public void setX(Long x) {
+					this.x = x;
+				}
+
+				public Long getY() {
+					return this.y;
+				}
+
+				public void setY(Long y) {
+					this.y = y;
+				}
+			}
+
+			public static class Roi {
 
 				private Integer w;
 
-				private Integer x;
+				private Integer h;
 
 				private Integer y;
 
-				public Integer getH() {
-					return this.h;
-				}
-
-				public void setH(Integer h) {
-					this.h = h;
-				}
+				private Integer x;
 
 				public Integer getW() {
 					return this.w;
@@ -135,12 +180,12 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 					this.w = w;
 				}
 
-				public Integer getX() {
-					return this.x;
+				public Integer getH() {
+					return this.h;
 				}
 
-				public void setX(Integer x) {
-					this.x = x;
+				public void setH(Integer h) {
+					this.h = h;
 				}
 
 				public Integer getY() {
@@ -149,6 +194,14 @@ public class RecognizeLicensePlateResponse extends AcsResponse {
 
 				public void setY(Integer y) {
 					this.y = y;
+				}
+
+				public Integer getX() {
+					return this.x;
+				}
+
+				public void setX(Integer x) {
+					this.x = x;
 				}
 			}
 		}

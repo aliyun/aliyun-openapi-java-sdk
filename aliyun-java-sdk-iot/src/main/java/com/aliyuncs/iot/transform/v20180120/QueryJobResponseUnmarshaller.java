@@ -45,6 +45,7 @@ public class QueryJobResponseUnmarshaller {
 		data.setType(_ctx.stringValue("QueryJobResponse.Data.Type"));
 		data.setJobDocument(_ctx.stringValue("QueryJobResponse.Data.JobDocument"));
 		data.setUtcModified(_ctx.stringValue("QueryJobResponse.Data.UtcModified"));
+		data.setScheduledTime(_ctx.longValue("QueryJobResponse.Data.ScheduledTime"));
 
 		RolloutConfig rolloutConfig = new RolloutConfig();
 		rolloutConfig.setMaximumPerMinute(_ctx.integerValue("QueryJobResponse.Data.RolloutConfig.MaximumPerMinute"));

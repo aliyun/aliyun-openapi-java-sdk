@@ -35,7 +35,7 @@ public class GetDatabaseRequest extends RpcAcsRequest<GetDatabaseResponse> {
 
 	private String host;
 	public GetDatabaseRequest() {
-		super("dms-enterprise", "2018-11-01", "GetDatabase");
+		super("dms-enterprise", "2018-11-01", "GetDatabase", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

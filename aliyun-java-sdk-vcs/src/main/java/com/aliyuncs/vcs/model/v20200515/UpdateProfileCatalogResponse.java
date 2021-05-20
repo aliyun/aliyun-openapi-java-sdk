@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class UpdateProfileCatalogResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class UpdateProfileCatalogResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,23 +66,15 @@ public class UpdateProfileCatalogResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String isvSubId;
-
 		private String parentCatalogId;
 
 		private Long profileCount;
 
-		private Long catalogId;
+		private String isvSubId;
 
 		private String catalogName;
 
-		public String getIsvSubId() {
-			return this.isvSubId;
-		}
-
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
-		}
+		private Long catalogId;
 
 		public String getParentCatalogId() {
 			return this.parentCatalogId;
@@ -100,12 +92,12 @@ public class UpdateProfileCatalogResponse extends AcsResponse {
 			this.profileCount = profileCount;
 		}
 
-		public Long getCatalogId() {
-			return this.catalogId;
+		public String getIsvSubId() {
+			return this.isvSubId;
 		}
 
-		public void setCatalogId(Long catalogId) {
-			this.catalogId = catalogId;
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
 		}
 
 		public String getCatalogName() {
@@ -114,6 +106,14 @@ public class UpdateProfileCatalogResponse extends AcsResponse {
 
 		public void setCatalogName(String catalogName) {
 			this.catalogName = catalogName;
+		}
+
+		public Long getCatalogId() {
+			return this.catalogId;
+		}
+
+		public void setCatalogId(Long catalogId) {
+			this.catalogId = catalogId;
 		}
 	}
 

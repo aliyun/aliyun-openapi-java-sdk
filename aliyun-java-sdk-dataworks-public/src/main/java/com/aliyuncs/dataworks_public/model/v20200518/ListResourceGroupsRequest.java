@@ -25,6 +25,8 @@ import com.aliyuncs.dataworks_public.Endpoint;
 public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsResponse> {
 	   
 
+	private String bizExtKey;
+
 	private Integer resourceGroupType;
 
 	private String keyword;
@@ -35,6 +37,17 @@ public class ListResourceGroupsRequest extends RpcAcsRequest<ListResourceGroupsR
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getBizExtKey() {
+		return this.bizExtKey;
+	}
+
+	public void setBizExtKey(String bizExtKey) {
+		this.bizExtKey = bizExtKey;
+		if(bizExtKey != null){
+			putQueryParameter("BizExtKey", bizExtKey);
+		}
 	}
 
 	public Integer getResourceGroupType() {

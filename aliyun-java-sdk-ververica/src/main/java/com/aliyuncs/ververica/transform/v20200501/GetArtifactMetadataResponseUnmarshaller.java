@@ -24,6 +24,7 @@ public class GetArtifactMetadataResponseUnmarshaller {
 		
 		getArtifactMetadataResponse.setRequestId(_ctx.stringValue("GetArtifactMetadataResponse.requestId"));
 		getArtifactMetadataResponse.setData(_ctx.stringValue("GetArtifactMetadataResponse.data"));
+		getArtifactMetadataResponse.setSuccess(_ctx.booleanValue("GetArtifactMetadataResponse.success"));
 	 
 	 	return getArtifactMetadataResponse;
 	}

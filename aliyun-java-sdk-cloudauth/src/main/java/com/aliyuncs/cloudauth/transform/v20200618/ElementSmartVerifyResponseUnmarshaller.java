@@ -31,6 +31,7 @@ public class ElementSmartVerifyResponseUnmarshaller {
 		resultObject.setPassed(_ctx.stringValue("ElementSmartVerifyResponse.ResultObject.Passed"));
 		resultObject.setSubCode(_ctx.stringValue("ElementSmartVerifyResponse.ResultObject.SubCode"));
 		resultObject.setMaterialInfo(_ctx.stringValue("ElementSmartVerifyResponse.ResultObject.MaterialInfo"));
+		resultObject.setCertifyId(_ctx.stringValue("ElementSmartVerifyResponse.ResultObject.CertifyId"));
 		elementSmartVerifyResponse.setResultObject(resultObject);
 	 
 	 	return elementSmartVerifyResponse;

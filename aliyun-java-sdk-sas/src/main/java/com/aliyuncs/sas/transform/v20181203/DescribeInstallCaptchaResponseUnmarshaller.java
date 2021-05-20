@@ -24,7 +24,7 @@ public class DescribeInstallCaptchaResponseUnmarshaller {
 		
 		describeInstallCaptchaResponse.setRequestId(_ctx.stringValue("DescribeInstallCaptchaResponse.RequestId"));
 		describeInstallCaptchaResponse.setCaptchaCode(_ctx.stringValue("DescribeInstallCaptchaResponse.CaptchaCode"));
-		describeInstallCaptchaResponse.setDeadline(_ctx.integerValue("DescribeInstallCaptchaResponse.Deadline"));
+		describeInstallCaptchaResponse.setDeadline(_ctx.stringValue("DescribeInstallCaptchaResponse.Deadline"));
 	 
 	 	return describeInstallCaptchaResponse;
 	}

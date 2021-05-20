@@ -46,40 +46,24 @@ public class CreateFpShotDBResponse extends AcsResponse {
 
 	public static class FpShotDB {
 
-		private String fpDBId;
-
-		private String name;
-
-		private Integer modelId;
+		private String description;
 
 		private String state;
 
+		private String name;
+
+		private String fpDBId;
+
+		private Integer modelId;
+
 		private String config;
 
-		private String description;
-
-		public String getFpDBId() {
-			return this.fpDBId;
+		public String getDescription() {
+			return this.description;
 		}
 
-		public void setFpDBId(String fpDBId) {
-			this.fpDBId = fpDBId;
-		}
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public Integer getModelId() {
-			return this.modelId;
-		}
-
-		public void setModelId(Integer modelId) {
-			this.modelId = modelId;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getState() {
@@ -90,20 +74,36 @@ public class CreateFpShotDBResponse extends AcsResponse {
 			this.state = state;
 		}
 
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getFpDBId() {
+			return this.fpDBId;
+		}
+
+		public void setFpDBId(String fpDBId) {
+			this.fpDBId = fpDBId;
+		}
+
+		public Integer getModelId() {
+			return this.modelId;
+		}
+
+		public void setModelId(Integer modelId) {
+			this.modelId = modelId;
+		}
+
 		public String getConfig() {
 			return this.config;
 		}
 
 		public void setConfig(String config) {
 			this.config = config;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

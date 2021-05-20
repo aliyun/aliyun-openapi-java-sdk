@@ -28,20 +28,20 @@ public class DescribeStreamPredictResultResponseUnmarshaller {
 		
 		describeStreamPredictResultResponse.setRequestId(_ctx.stringValue("DescribeStreamPredictResultResponse.RequestId"));
 		describeStreamPredictResultResponse.setTotalNum(_ctx.longValue("DescribeStreamPredictResultResponse.TotalNum"));
-		describeStreamPredictResultResponse.setCurrentPage(_ctx.longValue("DescribeStreamPredictResultResponse.CurrentPage"));
 		describeStreamPredictResultResponse.setPageSize(_ctx.longValue("DescribeStreamPredictResultResponse.PageSize"));
+		describeStreamPredictResultResponse.setCurrentPage(_ctx.longValue("DescribeStreamPredictResultResponse.CurrentPage"));
 		describeStreamPredictResultResponse.setNextPageToken(_ctx.stringValue("DescribeStreamPredictResultResponse.NextPageToken"));
 
 		List<StreamPredictData> streamPredictDatas = new ArrayList<StreamPredictData>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeStreamPredictResultResponse.StreamPredictDatas.Length"); i++) {
 			StreamPredictData streamPredictData = new StreamPredictData();
-			streamPredictData.setPredictId(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictId"));
-			streamPredictData.setModelId(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].ModelId"));
-			streamPredictData.setDataUrl(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].DataUrl"));
-			streamPredictData.setTimestamp(_ctx.longValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].Timestamp"));
-			streamPredictData.setPredictTime(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictTime"));
 			streamPredictData.setStatus(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].Status"));
 			streamPredictData.setPredictResult(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictResult"));
+			streamPredictData.setDataUrl(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].DataUrl"));
+			streamPredictData.setPredictTime(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictTime"));
+			streamPredictData.setTimestamp(_ctx.longValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].Timestamp"));
+			streamPredictData.setPredictId(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictId"));
+			streamPredictData.setModelId(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].ModelId"));
 
 			streamPredictDatas.add(streamPredictData);
 		}

@@ -23,9 +23,9 @@ public class RemoveSkillGroupResponseUnmarshaller {
 	public static RemoveSkillGroupResponse unmarshall(RemoveSkillGroupResponse removeSkillGroupResponse, UnmarshallerContext _ctx) {
 		
 		removeSkillGroupResponse.setRequestId(_ctx.stringValue("RemoveSkillGroupResponse.RequestId"));
-		removeSkillGroupResponse.setSuccess(_ctx.booleanValue("RemoveSkillGroupResponse.Success"));
-		removeSkillGroupResponse.setCode(_ctx.stringValue("RemoveSkillGroupResponse.Code"));
 		removeSkillGroupResponse.setMessage(_ctx.stringValue("RemoveSkillGroupResponse.Message"));
+		removeSkillGroupResponse.setCode(_ctx.stringValue("RemoveSkillGroupResponse.Code"));
+		removeSkillGroupResponse.setSuccess(_ctx.booleanValue("RemoveSkillGroupResponse.Success"));
 	 
 	 	return removeSkillGroupResponse;
 	}

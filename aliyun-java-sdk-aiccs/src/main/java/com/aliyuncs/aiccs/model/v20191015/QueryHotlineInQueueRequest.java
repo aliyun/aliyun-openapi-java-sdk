@@ -29,7 +29,7 @@ public class QueryHotlineInQueueRequest extends RpcAcsRequest<QueryHotlineInQueu
 
 	private String outerGroupType;
 	public QueryHotlineInQueueRequest() {
-		super("aiccs", "2019-10-15", "QueryHotlineInQueue", "aiccs-service");
+		super("aiccs", "2019-10-15", "QueryHotlineInQueue");
 		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

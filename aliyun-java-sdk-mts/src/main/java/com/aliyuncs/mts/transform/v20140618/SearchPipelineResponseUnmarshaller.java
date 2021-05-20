@@ -29,25 +29,25 @@ public class SearchPipelineResponseUnmarshaller {
 		
 		searchPipelineResponse.setRequestId(_ctx.stringValue("SearchPipelineResponse.RequestId"));
 		searchPipelineResponse.setTotalCount(_ctx.longValue("SearchPipelineResponse.TotalCount"));
-		searchPipelineResponse.setPageNumber(_ctx.longValue("SearchPipelineResponse.PageNumber"));
 		searchPipelineResponse.setPageSize(_ctx.longValue("SearchPipelineResponse.PageSize"));
+		searchPipelineResponse.setPageNumber(_ctx.longValue("SearchPipelineResponse.PageNumber"));
 
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("SearchPipelineResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
-			pipeline.setState(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setSpeed(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Speed"));
+			pipeline.setState(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].State"));
 			pipeline.setSpeedLevel(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].SpeedLevel"));
-			pipeline.setQuotaAllocate(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].QuotaAllocate"));
 			pipeline.setRole(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Role"));
+			pipeline.setName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].Id"));
+			pipeline.setQuotaAllocate(_ctx.longValue("SearchPipelineResponse.PipelineList["+ i +"].QuotaAllocate"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
-			notifyConfig.setTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
-			notifyConfig.setQueueName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
 			notifyConfig.setMqTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTopic"));
+			notifyConfig.setQueueName(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.QueueName"));
 			notifyConfig.setMqTag(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.MqTag"));
+			notifyConfig.setTopic(_ctx.stringValue("SearchPipelineResponse.PipelineList["+ i +"].NotifyConfig.Topic"));
 			pipeline.setNotifyConfig(notifyConfig);
 
 			pipelineList.add(pipeline);

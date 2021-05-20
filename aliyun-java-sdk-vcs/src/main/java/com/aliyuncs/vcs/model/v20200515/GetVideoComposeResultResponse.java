@@ -24,22 +24,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetVideoComposeResultResponse extends AcsResponse {
 
-	private String message;
+	private String status;
 
 	private String requestId;
 
-	private String videoUrl;
+	private String message;
 
 	private String code;
 
-	private String status;
+	private String videoUrl;
 
-	public String getMessage() {
-		return this.message;
+	public String getStatus() {
+		return this.status;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getRequestId() {
@@ -50,12 +50,12 @@ public class GetVideoComposeResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getVideoUrl() {
-		return this.videoUrl;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -66,12 +66,12 @@ public class GetVideoComposeResultResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getVideoUrl() {
+		return this.videoUrl;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
 	}
 
 	@Override

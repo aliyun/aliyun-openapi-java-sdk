@@ -26,13 +26,13 @@ public class CreateKeyPairResponse extends AcsResponse {
 
 	private String keyPairFingerPrint;
 
-	private String keyPairName;
-
-	private String requestId;
-
 	private String keyPairId;
 
+	private String keyPairName;
+
 	private String privateKeyBody;
+
+	private String requestId;
 
 	public String getKeyPairFingerPrint() {
 		return this.keyPairFingerPrint;
@@ -40,22 +40,6 @@ public class CreateKeyPairResponse extends AcsResponse {
 
 	public void setKeyPairFingerPrint(String keyPairFingerPrint) {
 		this.keyPairFingerPrint = keyPairFingerPrint;
-	}
-
-	public String getKeyPairName() {
-		return this.keyPairName;
-	}
-
-	public void setKeyPairName(String keyPairName) {
-		this.keyPairName = keyPairName;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
 	}
 
 	public String getKeyPairId() {
@@ -66,12 +50,28 @@ public class CreateKeyPairResponse extends AcsResponse {
 		this.keyPairId = keyPairId;
 	}
 
+	public String getKeyPairName() {
+		return this.keyPairName;
+	}
+
+	public void setKeyPairName(String keyPairName) {
+		this.keyPairName = keyPairName;
+	}
+
 	public String getPrivateKeyBody() {
 		return this.privateKeyBody;
 	}
 
 	public void setPrivateKeyBody(String privateKeyBody) {
 		this.privateKeyBody = privateKeyBody;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

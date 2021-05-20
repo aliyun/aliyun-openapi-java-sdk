@@ -26,19 +26,19 @@ public class UpdateMCTemplateResponseUnmarshaller {
 		updateMCTemplateResponse.setRequestId(_ctx.stringValue("UpdateMCTemplateResponse.RequestId"));
 
 		Template template = new Template();
-		template.setTemplateId(_ctx.stringValue("UpdateMCTemplateResponse.Template.TemplateId"));
-		template.setName(_ctx.stringValue("UpdateMCTemplateResponse.Template.Name"));
-		template.setState(_ctx.stringValue("UpdateMCTemplateResponse.Template.State"));
-		template.setPorn(_ctx.stringValue("UpdateMCTemplateResponse.Template.Porn"));
-		template.setTerrorism(_ctx.stringValue("UpdateMCTemplateResponse.Template.Terrorism"));
-		template.setPolitics(_ctx.stringValue("UpdateMCTemplateResponse.Template.Politics"));
-		template.setAd(_ctx.stringValue("UpdateMCTemplateResponse.Template.Ad"));
-		template.setQrcode(_ctx.stringValue("UpdateMCTemplateResponse.Template.Qrcode"));
-		template.setLive(_ctx.stringValue("UpdateMCTemplateResponse.Template.Live"));
 		template.setLogo(_ctx.stringValue("UpdateMCTemplateResponse.Template.Logo"));
 		template.setAbuse(_ctx.stringValue("UpdateMCTemplateResponse.Template.Abuse"));
-		template.setContraband(_ctx.stringValue("UpdateMCTemplateResponse.Template.Contraband"));
+		template.setState(_ctx.stringValue("UpdateMCTemplateResponse.Template.State"));
+		template.setTerrorism(_ctx.stringValue("UpdateMCTemplateResponse.Template.Terrorism"));
+		template.setPolitics(_ctx.stringValue("UpdateMCTemplateResponse.Template.Politics"));
+		template.setQrcode(_ctx.stringValue("UpdateMCTemplateResponse.Template.Qrcode"));
+		template.setLive(_ctx.stringValue("UpdateMCTemplateResponse.Template.Live"));
 		template.setSpam(_ctx.stringValue("UpdateMCTemplateResponse.Template.Spam"));
+		template.setContraband(_ctx.stringValue("UpdateMCTemplateResponse.Template.Contraband"));
+		template.setAd(_ctx.stringValue("UpdateMCTemplateResponse.Template.Ad"));
+		template.setPorn(_ctx.stringValue("UpdateMCTemplateResponse.Template.Porn"));
+		template.setName(_ctx.stringValue("UpdateMCTemplateResponse.Template.Name"));
+		template.setTemplateId(_ctx.stringValue("UpdateMCTemplateResponse.Template.TemplateId"));
 		updateMCTemplateResponse.setTemplate(template);
 	 
 	 	return updateMCTemplateResponse;

@@ -35,7 +35,7 @@ public class ListDevicesRequest extends RpcAcsRequest<ListDevicesResponse> {
 
 	private String deviceName;
 	public ListDevicesRequest() {
-		super("Vcs", "2020-05-15", "ListDevices", "vcs");
+		super("Vcs", "2020-05-15", "ListDevices");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

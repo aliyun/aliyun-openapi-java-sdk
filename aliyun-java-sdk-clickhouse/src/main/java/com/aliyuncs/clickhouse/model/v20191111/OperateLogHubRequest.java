@@ -30,6 +30,8 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 
 	private String description;
 
+	private Boolean useLorne;
+
 	private String deliverName;
 
 	private String deliverTime;
@@ -43,6 +45,8 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 	private Boolean create;
 
 	private String tableName;
+
+	private String taskId;
 
 	private String projectName;
 
@@ -60,13 +64,13 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 
 	private Long ownerId;
 
-	private Boolean filterDirty;
-
 	private List<LogHubStores> logHubStoress;
+
+	private Boolean filterDirtyData;
 
 	private String userName;
 	public OperateLogHubRequest() {
-		super("clickhouse", "2019-11-11", "OperateLogHub", "clickhouse");
+		super("clickhouse", "2019-11-11", "OperateLogHub");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -93,6 +97,17 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public Boolean getUseLorne() {
+		return this.useLorne;
+	}
+
+	public void setUseLorne(Boolean useLorne) {
+		this.useLorne = useLorne;
+		if(useLorne != null){
+			putQueryParameter("UseLorne", useLorne.toString());
 		}
 	}
 
@@ -170,6 +185,17 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 		this.tableName = tableName;
 		if(tableName != null){
 			putQueryParameter("TableName", tableName);
+		}
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+		if(taskId != null){
+			putQueryParameter("TaskId", taskId);
 		}
 	}
 
@@ -261,17 +287,6 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 		}
 	}
 
-	public Boolean getFilterDirty() {
-		return this.filterDirty;
-	}
-
-	public void setFilterDirty(Boolean filterDirty) {
-		this.filterDirty = filterDirty;
-		if(filterDirty != null){
-			putQueryParameter("FilterDirty", filterDirty.toString());
-		}
-	}
-
 	public List<LogHubStores> getLogHubStoress() {
 		return this.logHubStoress;
 	}
@@ -285,6 +300,17 @@ public class OperateLogHubRequest extends RpcAcsRequest<OperateLogHubResponse> {
 				putQueryParameter("LogHubStores." + (depth1 + 1) + ".Type" , logHubStoress.get(depth1).getType());
 			}
 		}	
+	}
+
+	public Boolean getFilterDirtyData() {
+		return this.filterDirtyData;
+	}
+
+	public void setFilterDirtyData(Boolean filterDirtyData) {
+		this.filterDirtyData = filterDirtyData;
+		if(filterDirtyData != null){
+			putQueryParameter("FilterDirtyData", filterDirtyData.toString());
+		}
 	}
 
 	public String getUserName() {

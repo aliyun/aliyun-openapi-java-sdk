@@ -48,7 +48,7 @@ public class CreateOTADynamicUpgradeJobRequest extends RpcAcsRequest<CreateOTADy
 
 	private Integer maximumPerMinute;
 	public CreateOTADynamicUpgradeJobRequest() {
-		super("Iot", "2018-01-20", "CreateOTADynamicUpgradeJob");
+		super("Iot", "2018-01-20", "CreateOTADynamicUpgradeJob", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -28,7 +28,7 @@ public class ExportMeasurementDataRequest extends RpcAcsRequest<ExportMeasuremen
 
 	private String endDate;
 	public ExportMeasurementDataRequest() {
-		super("Ens", "2017-11-10", "ExportMeasurementData");
+		super("Ens", "2017-11-10", "ExportMeasurementData", "ens");
 		setMethod(MethodType.POST);
 	}
 

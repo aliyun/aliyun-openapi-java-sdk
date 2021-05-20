@@ -38,7 +38,7 @@ public class RevokeSecurityGroupRequest extends RpcAcsRequest<RevokeSecurityGrou
 
 	private String policy;
 	public RevokeSecurityGroupRequest() {
-		super("Ens", "2017-11-10", "RevokeSecurityGroup");
+		super("Ens", "2017-11-10", "RevokeSecurityGroup", "ens");
 		setMethod(MethodType.POST);
 	}
 

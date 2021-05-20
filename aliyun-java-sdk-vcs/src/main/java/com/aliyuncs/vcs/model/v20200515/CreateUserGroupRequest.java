@@ -33,7 +33,7 @@ public class CreateUserGroupRequest extends RpcAcsRequest<CreateUserGroupRespons
 
 	private Long parentUserGroupId;
 	public CreateUserGroupRequest() {
-		super("Vcs", "2020-05-15", "CreateUserGroup", "vcs");
+		super("Vcs", "2020-05-15", "CreateUserGroup");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

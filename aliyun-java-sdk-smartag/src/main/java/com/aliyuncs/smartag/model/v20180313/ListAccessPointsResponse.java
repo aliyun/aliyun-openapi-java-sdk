@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAccessPointsResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
+	private String requestId;
+
 	private List<AccessPoint> accessPoints;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -45,6 +37,14 @@ public class ListAccessPointsResponse extends AcsResponse {
 
 	public void setTotalCount(Integer totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<AccessPoint> getAccessPoints() {
@@ -59,13 +59,13 @@ public class ListAccessPointsResponse extends AcsResponse {
 
 		private Integer accessPointId;
 
-		private String latitude;
+		private Integer activeSmartAGCount;
 
-		private String longitude;
+		private String latitude;
 
 		private Integer inactiveSmartAGCount;
 
-		private Integer activeSmartAGCount;
+		private String longitude;
 
 		public Integer getAccessPointId() {
 			return this.accessPointId;
@@ -73,6 +73,14 @@ public class ListAccessPointsResponse extends AcsResponse {
 
 		public void setAccessPointId(Integer accessPointId) {
 			this.accessPointId = accessPointId;
+		}
+
+		public Integer getActiveSmartAGCount() {
+			return this.activeSmartAGCount;
+		}
+
+		public void setActiveSmartAGCount(Integer activeSmartAGCount) {
+			this.activeSmartAGCount = activeSmartAGCount;
 		}
 
 		public String getLatitude() {
@@ -83,14 +91,6 @@ public class ListAccessPointsResponse extends AcsResponse {
 			this.latitude = latitude;
 		}
 
-		public String getLongitude() {
-			return this.longitude;
-		}
-
-		public void setLongitude(String longitude) {
-			this.longitude = longitude;
-		}
-
 		public Integer getInactiveSmartAGCount() {
 			return this.inactiveSmartAGCount;
 		}
@@ -99,12 +99,12 @@ public class ListAccessPointsResponse extends AcsResponse {
 			this.inactiveSmartAGCount = inactiveSmartAGCount;
 		}
 
-		public Integer getActiveSmartAGCount() {
-			return this.activeSmartAGCount;
+		public String getLongitude() {
+			return this.longitude;
 		}
 
-		public void setActiveSmartAGCount(Integer activeSmartAGCount) {
-			this.activeSmartAGCount = activeSmartAGCount;
+		public void setLongitude(String longitude) {
+			this.longitude = longitude;
 		}
 	}
 

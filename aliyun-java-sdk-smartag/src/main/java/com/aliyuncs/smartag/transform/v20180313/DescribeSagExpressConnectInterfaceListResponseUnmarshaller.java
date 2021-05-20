@@ -32,9 +32,9 @@ public class DescribeSagExpressConnectInterfaceListResponseUnmarshaller {
 		List<_Interface> interfaces = new ArrayList<_Interface>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagExpressConnectInterfaceListResponse.Interfaces.Length"); i++) {
 			_Interface _interface = new _Interface();
-			_interface.setVlan(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.Interfaces["+ i +"].Vlan"));
 			_interface.setIP(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.Interfaces["+ i +"].IP"));
 			_interface.setMask(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.Interfaces["+ i +"].Mask"));
+			_interface.setVlan(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.Interfaces["+ i +"].Vlan"));
 
 			interfaces.add(_interface);
 		}
@@ -44,9 +44,9 @@ public class DescribeSagExpressConnectInterfaceListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagExpressConnectInterfaceListResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
 			taskState.setState(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.TaskStates["+ i +"].State"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.TaskStates["+ i +"].CreateTime"));
 			taskState.setErrorCode(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.TaskStates["+ i +"].ErrorMessage"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagExpressConnectInterfaceListResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

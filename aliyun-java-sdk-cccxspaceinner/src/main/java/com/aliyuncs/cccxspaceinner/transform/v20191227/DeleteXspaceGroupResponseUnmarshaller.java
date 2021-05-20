@@ -23,10 +23,10 @@ public class DeleteXspaceGroupResponseUnmarshaller {
 	public static DeleteXspaceGroupResponse unmarshall(DeleteXspaceGroupResponse deleteXspaceGroupResponse, UnmarshallerContext _ctx) {
 		
 		deleteXspaceGroupResponse.setRequestId(_ctx.stringValue("DeleteXspaceGroupResponse.RequestId"));
-		deleteXspaceGroupResponse.setSuccess(_ctx.booleanValue("DeleteXspaceGroupResponse.Success"));
-		deleteXspaceGroupResponse.setCode(_ctx.stringValue("DeleteXspaceGroupResponse.Code"));
 		deleteXspaceGroupResponse.setMessage(_ctx.stringValue("DeleteXspaceGroupResponse.Message"));
 		deleteXspaceGroupResponse.setData(_ctx.longValue("DeleteXspaceGroupResponse.Data"));
+		deleteXspaceGroupResponse.setCode(_ctx.stringValue("DeleteXspaceGroupResponse.Code"));
+		deleteXspaceGroupResponse.setSuccess(_ctx.booleanValue("DeleteXspaceGroupResponse.Success"));
 	 
 	 	return deleteXspaceGroupResponse;
 	}

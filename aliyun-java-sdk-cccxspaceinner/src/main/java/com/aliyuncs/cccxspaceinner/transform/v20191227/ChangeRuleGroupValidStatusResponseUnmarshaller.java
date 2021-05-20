@@ -22,10 +22,10 @@ public class ChangeRuleGroupValidStatusResponseUnmarshaller {
 
 	public static ChangeRuleGroupValidStatusResponse unmarshall(ChangeRuleGroupValidStatusResponse changeRuleGroupValidStatusResponse, UnmarshallerContext _ctx) {
 		
-		changeRuleGroupValidStatusResponse.setSuccess(_ctx.booleanValue("ChangeRuleGroupValidStatusResponse.Success"));
-		changeRuleGroupValidStatusResponse.setCode(_ctx.stringValue("ChangeRuleGroupValidStatusResponse.Code"));
 		changeRuleGroupValidStatusResponse.setMessage(_ctx.stringValue("ChangeRuleGroupValidStatusResponse.Message"));
 		changeRuleGroupValidStatusResponse.setData(_ctx.stringValue("ChangeRuleGroupValidStatusResponse.Data"));
+		changeRuleGroupValidStatusResponse.setCode(_ctx.stringValue("ChangeRuleGroupValidStatusResponse.Code"));
+		changeRuleGroupValidStatusResponse.setSuccess(_ctx.booleanValue("ChangeRuleGroupValidStatusResponse.Success"));
 	 
 	 	return changeRuleGroupValidStatusResponse;
 	}

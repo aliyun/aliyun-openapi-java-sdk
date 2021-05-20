@@ -37,30 +37,30 @@ public class RecognizePublicFaceResponseUnmarshaller {
 		List<Element> elements = new ArrayList<Element>();
 		for (int i = 0; i < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements.Length"); i++) {
 			Element element = new Element();
-			element.setTaskId(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].TaskId"));
 			element.setImageURL(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].ImageURL"));
+			element.setTaskId(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].TaskId"));
 
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
 				result.setSuggestion(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
-				result.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
 				result.setLabel(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
+				result.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
 
 				List<SubResult> subResults = new ArrayList<SubResult>();
 				for (int k = 0; k < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults.Length"); k++) {
 					SubResult subResult = new SubResult();
 					subResult.setW(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].W"));
-					subResult.setX(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].X"));
 					subResult.setH(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].H"));
 					subResult.setY(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Y"));
+					subResult.setX(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].X"));
 
 					List<Face> faces = new ArrayList<Face>();
 					for (int l = 0; l < _ctx.lengthValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces.Length"); l++) {
 						Face face = new Face();
-						face.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Rate"));
-						face.setId(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Id"));
 						face.setName(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Name"));
+						face.setId(_ctx.stringValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Id"));
+						face.setRate(_ctx.floatValue("RecognizePublicFaceResponse.Data.Elements["+ i +"].Results["+ j +"].SubResults["+ k +"].Faces["+ l +"].Rate"));
 
 						faces.add(face);
 					}

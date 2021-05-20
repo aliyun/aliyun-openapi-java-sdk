@@ -27,17 +27,17 @@ public class GetQualityProjectLogResponseUnmarshaller {
 	public static GetQualityProjectLogResponse unmarshall(GetQualityProjectLogResponse getQualityProjectLogResponse, UnmarshallerContext _ctx) {
 		
 		getQualityProjectLogResponse.setRequestId(_ctx.stringValue("GetQualityProjectLogResponse.RequestId"));
-		getQualityProjectLogResponse.setCode(_ctx.stringValue("GetQualityProjectLogResponse.Code"));
 		getQualityProjectLogResponse.setMessage(_ctx.stringValue("GetQualityProjectLogResponse.Message"));
+		getQualityProjectLogResponse.setCode(_ctx.stringValue("GetQualityProjectLogResponse.Code"));
 		getQualityProjectLogResponse.setSuccess(_ctx.booleanValue("GetQualityProjectLogResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("GetQualityProjectLogResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setProjectId(_ctx.longValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectId"));
-			dataItem.setProjectCreateTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectCreateTime"));
 			dataItem.setActionTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionTime"));
 			dataItem.setActionType(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionType"));
+			dataItem.setProjectCreateTime(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectCreateTime"));
+			dataItem.setProjectId(_ctx.longValue("GetQualityProjectLogResponse.Data["+ i +"].ProjectId"));
 			dataItem.setActionData(_ctx.stringValue("GetQualityProjectLogResponse.Data["+ i +"].ActionData"));
 
 			data.add(dataItem);

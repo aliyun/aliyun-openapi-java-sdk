@@ -33,7 +33,7 @@ public class ListDatabasesRequest extends RpcAcsRequest<ListDatabasesResponse> {
 
 	private Integer pageSize;
 	public ListDatabasesRequest() {
-		super("dms-enterprise", "2018-11-01", "ListDatabases");
+		super("dms-enterprise", "2018-11-01", "ListDatabases", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

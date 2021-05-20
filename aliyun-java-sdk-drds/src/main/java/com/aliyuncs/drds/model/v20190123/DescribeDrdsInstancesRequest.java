@@ -28,6 +28,8 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 
 	private String description;
 
+	private String productVersion;
+
 	private String type;
 
 	private Integer pageNumber;
@@ -42,7 +44,7 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 
 	private Boolean mix;
 	public DescribeDrdsInstancesRequest() {
-		super("Drds", "2019-01-23", "DescribeDrdsInstances");
+		super("Drds", "2019-01-23", "DescribeDrdsInstances", "drds");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -58,6 +60,17 @@ public class DescribeDrdsInstancesRequest extends RpcAcsRequest<DescribeDrdsInst
 		this.description = description;
 		if(description != null){
 			putQueryParameter("Description", description);
+		}
+	}
+
+	public String getProductVersion() {
+		return this.productVersion;
+	}
+
+	public void setProductVersion(String productVersion) {
+		this.productVersion = productVersion;
+		if(productVersion != null){
+			putQueryParameter("ProductVersion", productVersion);
 		}
 	}
 

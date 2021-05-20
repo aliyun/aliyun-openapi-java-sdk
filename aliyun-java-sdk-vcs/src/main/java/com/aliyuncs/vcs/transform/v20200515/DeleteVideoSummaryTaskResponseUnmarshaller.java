@@ -23,9 +23,9 @@ public class DeleteVideoSummaryTaskResponseUnmarshaller {
 	public static DeleteVideoSummaryTaskResponse unmarshall(DeleteVideoSummaryTaskResponse deleteVideoSummaryTaskResponse, UnmarshallerContext _ctx) {
 		
 		deleteVideoSummaryTaskResponse.setRequestId(_ctx.stringValue("DeleteVideoSummaryTaskResponse.RequestId"));
-		deleteVideoSummaryTaskResponse.setCode(_ctx.stringValue("DeleteVideoSummaryTaskResponse.Code"));
-		deleteVideoSummaryTaskResponse.setData(_ctx.stringValue("DeleteVideoSummaryTaskResponse.Data"));
 		deleteVideoSummaryTaskResponse.setMessage(_ctx.stringValue("DeleteVideoSummaryTaskResponse.Message"));
+		deleteVideoSummaryTaskResponse.setData(_ctx.stringValue("DeleteVideoSummaryTaskResponse.Data"));
+		deleteVideoSummaryTaskResponse.setCode(_ctx.stringValue("DeleteVideoSummaryTaskResponse.Code"));
 	 
 	 	return deleteVideoSummaryTaskResponse;
 	}

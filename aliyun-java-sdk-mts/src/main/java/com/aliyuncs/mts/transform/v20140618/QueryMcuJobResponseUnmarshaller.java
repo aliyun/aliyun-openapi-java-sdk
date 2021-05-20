@@ -49,14 +49,28 @@ public class QueryMcuJobResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("QueryMcuJobResponse.JobResult.Length"); i++) {
 			Job job = new Job();
 			job.setJobId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].JobId"));
+			job.setTemplate(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Template"));
 			job.setUserData(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].UserData"));
 			job.setTemplateId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].TemplateId"));
-			job.setTemplate(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Template"));
+
+			CategoryResult categoryResult = new CategoryResult();
+			categoryResult.setDetails(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Details"));
+
+			List<Category> categories = new ArrayList<Category>();
+			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Categories.Length"); j++) {
+				Category category = new Category();
+				category.setScore(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Categories["+ j +"].Score"));
+				category.setLabel(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Categories["+ j +"].Label"));
+
+				categories.add(category);
+			}
+			categoryResult.setCategories(categories);
+			job.setCategoryResult(categoryResult);
 
 			Input input = new Input();
-			input.setBucket(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Input.Bucket"));
-			input.setLocation(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Input.Location"));
 			input.setObject(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Input.Object"));
+			input.setLocation(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Input.Location"));
+			input.setBucket(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].Input.Bucket"));
 			job.setInput(input);
 
 			AsrResult asrResult = new AsrResult();
@@ -65,42 +79,16 @@ public class QueryMcuJobResponseUnmarshaller {
 			List<AsrText> asrTextList = new ArrayList<AsrText>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList.Length"); j++) {
 				AsrText asrText = new AsrText();
-				asrText.setStartTime(_ctx.integerValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].StartTime"));
 				asrText.setEndTime(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].EndTime"));
+				asrText.setStartTime(_ctx.integerValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].StartTime"));
 				asrText.setChannelId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].ChannelId"));
-				asrText.setSpeechRate(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].SpeechRate"));
 				asrText.setText(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].Text"));
+				asrText.setSpeechRate(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].AsrResult.AsrTextList["+ j +"].SpeechRate"));
 
 				asrTextList.add(asrText);
 			}
 			asrResult.setAsrTextList(asrTextList);
 			job.setAsrResult(asrResult);
-
-			CategoryResult categoryResult = new CategoryResult();
-			categoryResult.setDetails(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Details"));
-
-			List<Category> categories = new ArrayList<Category>();
-			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Categories.Length"); j++) {
-				Category category = new Category();
-				category.setLabel(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Categories["+ j +"].Label"));
-				category.setScore(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].CategoryResult.Categories["+ j +"].Score"));
-
-				categories.add(category);
-			}
-			categoryResult.setCategories(categories);
-			job.setCategoryResult(categoryResult);
-
-			List<Ocr> ocrResult = new ArrayList<Ocr>();
-			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult.Length"); j++) {
-				Ocr ocr = new Ocr();
-				ocr.setTime(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].Time"));
-				ocr.setOcrText(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].OcrText"));
-				ocr.setImageUrl(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].ImageUrl"));
-				ocr.setImageId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].ImageId"));
-
-				ocrResult.add(ocr);
-			}
-			job.setOcrResult(ocrResult);
 
 			List<Tag> tagResult = new ArrayList<Tag>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].TagResult.Length"); j++) {
@@ -112,9 +100,9 @@ public class QueryMcuJobResponseUnmarshaller {
 				List<FrameTagInfo> frameTagInfos = new ArrayList<FrameTagInfo>();
 				for (int k = 0; k < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].TagResult["+ j +"].FrameTagInfos.Length"); k++) {
 					FrameTagInfo frameTagInfo = new FrameTagInfo();
-					frameTagInfo.setTag(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].TagResult["+ j +"].FrameTagInfos["+ k +"].Tag"));
 					frameTagInfo.setScore(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].TagResult["+ j +"].FrameTagInfos["+ k +"].Score"));
 					frameTagInfo.setCategory(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].TagResult["+ j +"].FrameTagInfos["+ k +"].Category"));
+					frameTagInfo.setTag(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].TagResult["+ j +"].FrameTagInfos["+ k +"].Tag"));
 
 					frameTagInfos.add(frameTagInfo);
 				}
@@ -124,27 +112,17 @@ public class QueryMcuJobResponseUnmarshaller {
 			}
 			job.setTagResult(tagResult);
 
-			List<Face> faceResult = new ArrayList<Face>();
-			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult.Length"); j++) {
-				Face face = new Face();
-				face.setTime(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Time"));
-				face.setImageUrl(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].ImageUrl"));
-				face.setImageId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].ImageId"));
+			List<Ocr> ocrResult = new ArrayList<Ocr>();
+			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult.Length"); j++) {
+				Ocr ocr = new Ocr();
+				ocr.setTime(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].Time"));
+				ocr.setImageUrl(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].ImageUrl"));
+				ocr.setOcrText(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].OcrText"));
+				ocr.setImageId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].OcrResult["+ j +"].ImageId"));
 
-				List<Celebrity> celebrities = new ArrayList<Celebrity>();
-				for (int k = 0; k < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities.Length"); k++) {
-					Celebrity celebrity = new Celebrity();
-					celebrity.setName(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities["+ k +"].Name"));
-					celebrity.setScore(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities["+ k +"].Score"));
-					celebrity.setTarget(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities["+ k +"].Target"));
-
-					celebrities.add(celebrity);
-				}
-				face.setCelebrities(celebrities);
-
-				faceResult.add(face);
+				ocrResult.add(ocr);
 			}
-			job.setFaceResult(faceResult);
+			job.setOcrResult(ocrResult);
 
 			List<SubTask> subTaskInfo = new ArrayList<SubTask>();
 			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].SubTaskInfo.Length"); j++) {
@@ -156,6 +134,28 @@ public class QueryMcuJobResponseUnmarshaller {
 				subTaskInfo.add(subTask);
 			}
 			job.setSubTaskInfo(subTaskInfo);
+
+			List<Face> faceResult = new ArrayList<Face>();
+			for (int j = 0; j < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult.Length"); j++) {
+				Face face = new Face();
+				face.setTime(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Time"));
+				face.setImageUrl(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].ImageUrl"));
+				face.setImageId(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].ImageId"));
+
+				List<Celebrity> celebrities = new ArrayList<Celebrity>();
+				for (int k = 0; k < _ctx.lengthValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities.Length"); k++) {
+					Celebrity celebrity = new Celebrity();
+					celebrity.setScore(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities["+ k +"].Score"));
+					celebrity.setName(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities["+ k +"].Name"));
+					celebrity.setTarget(_ctx.stringValue("QueryMcuJobResponse.JobResult["+ i +"].FaceResult["+ j +"].Celebrities["+ k +"].Target"));
+
+					celebrities.add(celebrity);
+				}
+				face.setCelebrities(celebrities);
+
+				faceResult.add(face);
+			}
+			job.setFaceResult(faceResult);
 
 			jobResult.add(job);
 		}

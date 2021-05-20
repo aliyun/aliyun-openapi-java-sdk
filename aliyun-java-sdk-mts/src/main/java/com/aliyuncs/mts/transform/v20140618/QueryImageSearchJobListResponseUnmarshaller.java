@@ -41,40 +41,40 @@ public class QueryImageSearchJobListResponseUnmarshaller {
 		List<ImageSearchJob> imageSearchJobList = new ArrayList<ImageSearchJob>();
 		for (int i = 0; i < _ctx.lengthValue("QueryImageSearchJobListResponse.ImageSearchJobList.Length"); i++) {
 			ImageSearchJob imageSearchJob = new ImageSearchJob();
-			imageSearchJob.setId(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Id"));
-			imageSearchJob.setUserData(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].UserData"));
-			imageSearchJob.setPipelineId(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].PipelineId"));
-			imageSearchJob.setState(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].State"));
-			imageSearchJob.setCode(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Code"));
-			imageSearchJob.setMessage(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Message"));
 			imageSearchJob.setCreationTime(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].CreationTime"));
 			imageSearchJob.setFinishTime(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].FinishTime"));
-
-			InputVideo inputVideo = new InputVideo();
-			inputVideo.setBucket(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].InputVideo.Bucket"));
-			inputVideo.setLocation(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].InputVideo.Location"));
-			inputVideo.setObject(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].InputVideo.Object"));
-			imageSearchJob.setInputVideo(inputVideo);
-
-			InputImage inputImage = new InputImage();
-			inputImage.setBucket(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].inputImage.Bucket"));
-			inputImage.setLocation(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].inputImage.Location"));
-			inputImage.setObject(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].inputImage.Object"));
-			imageSearchJob.setInputImage(inputImage);
+			imageSearchJob.setState(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].State"));
+			imageSearchJob.setUserData(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].UserData"));
+			imageSearchJob.setCode(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Code"));
+			imageSearchJob.setMessage(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Message"));
+			imageSearchJob.setPipelineId(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].PipelineId"));
+			imageSearchJob.setId(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Id"));
 
 			Result result = new Result();
 
 			List<ImageSearchShotsItem> imageSearchShots = new ArrayList<ImageSearchShotsItem>();
 			for (int j = 0; j < _ctx.lengthValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Result.ImageSearchShots.Length"); j++) {
 				ImageSearchShotsItem imageSearchShotsItem = new ImageSearchShotsItem();
-				imageSearchShotsItem.setMatchedTimestamp(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Result.ImageSearchShots["+ j +"].MatchedTimestamp"));
 				imageSearchShotsItem.setMatchedFrame(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Result.ImageSearchShots["+ j +"].MatchedFrame"));
+				imageSearchShotsItem.setMatchedTimestamp(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Result.ImageSearchShots["+ j +"].MatchedTimestamp"));
 				imageSearchShotsItem.setSimilarity(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].Result.ImageSearchShots["+ j +"].Similarity"));
 
 				imageSearchShots.add(imageSearchShotsItem);
 			}
 			result.setImageSearchShots(imageSearchShots);
 			imageSearchJob.setResult(result);
+
+			InputImage inputImage = new InputImage();
+			inputImage.setObject(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].inputImage.Object"));
+			inputImage.setLocation(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].inputImage.Location"));
+			inputImage.setBucket(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].inputImage.Bucket"));
+			imageSearchJob.setInputImage(inputImage);
+
+			InputVideo inputVideo = new InputVideo();
+			inputVideo.setObject(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].InputVideo.Object"));
+			inputVideo.setLocation(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].InputVideo.Location"));
+			inputVideo.setBucket(_ctx.stringValue("QueryImageSearchJobListResponse.ImageSearchJobList["+ i +"].InputVideo.Bucket"));
+			imageSearchJob.setInputVideo(inputVideo);
 
 			imageSearchJobList.add(imageSearchJob);
 		}

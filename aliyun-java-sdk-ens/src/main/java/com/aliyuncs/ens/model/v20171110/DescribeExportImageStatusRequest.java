@@ -26,7 +26,7 @@ public class DescribeExportImageStatusRequest extends RpcAcsRequest<DescribeExpo
 
 	private String imageId;
 	public DescribeExportImageStatusRequest() {
-		super("Ens", "2017-11-10", "DescribeExportImageStatus");
+		super("Ens", "2017-11-10", "DescribeExportImageStatus", "ens");
 		setMethod(MethodType.POST);
 	}
 

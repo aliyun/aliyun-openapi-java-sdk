@@ -29,26 +29,26 @@ public class SearchMediaResponseUnmarshaller {
 		
 		searchMediaResponse.setRequestId(_ctx.stringValue("SearchMediaResponse.RequestId"));
 		searchMediaResponse.setTotalNum(_ctx.longValue("SearchMediaResponse.TotalNum"));
-		searchMediaResponse.setPageNumber(_ctx.longValue("SearchMediaResponse.PageNumber"));
 		searchMediaResponse.setPageSize(_ctx.longValue("SearchMediaResponse.PageSize"));
+		searchMediaResponse.setPageNumber(_ctx.longValue("SearchMediaResponse.PageNumber"));
 
 		List<Media> mediaList = new ArrayList<Media>();
 		for (int i = 0; i < _ctx.lengthValue("SearchMediaResponse.MediaList.Length"); i++) {
 			Media media = new Media();
-			media.setMediaId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaId"));
-			media.setTitle(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Title"));
-			media.setDescription(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Description"));
-			media.setCoverURL(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].CoverURL"));
-			media.setCateId(_ctx.longValue("SearchMediaResponse.MediaList["+ i +"].CateId"));
-			media.setDuration(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Duration"));
-			media.setFormat(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Format"));
-			media.setSize(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Size"));
-			media.setBitrate(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Bitrate"));
-			media.setWidth(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Width"));
-			media.setHeight(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Height"));
-			media.setFps(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Fps"));
-			media.setPublishState(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].PublishState"));
 			media.setCreationTime(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].CreationTime"));
+			media.setCateId(_ctx.longValue("SearchMediaResponse.MediaList["+ i +"].CateId"));
+			media.setHeight(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Height"));
+			media.setBitrate(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Bitrate"));
+			media.setMediaId(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].MediaId"));
+			media.setPublishState(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].PublishState"));
+			media.setDescription(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Description"));
+			media.setWidth(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Width"));
+			media.setSize(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Size"));
+			media.setCoverURL(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].CoverURL"));
+			media.setDuration(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Duration"));
+			media.setFps(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Fps"));
+			media.setTitle(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Title"));
+			media.setFormat(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].Format"));
 
 			List<String> tags = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("SearchMediaResponse.MediaList["+ i +"].Tags.Length"); j++) {
@@ -63,8 +63,8 @@ public class SearchMediaResponseUnmarshaller {
 			media.setRunIdList(runIdList);
 
 			File file = new File();
-			file.setURL(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].File.URL"));
 			file.setState(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].File.State"));
+			file.setURL(_ctx.stringValue("SearchMediaResponse.MediaList["+ i +"].File.URL"));
 			media.setFile(file);
 
 			mediaList.add(media);

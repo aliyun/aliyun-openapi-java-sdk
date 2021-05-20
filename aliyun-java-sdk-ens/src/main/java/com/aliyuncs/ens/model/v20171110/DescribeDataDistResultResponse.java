@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeDataDistResultResponse extends AcsResponse {
 
-	private Integer totalCount;
-
-	private String requestId;
+	private Integer pageNumber;
 
 	private Integer pageSize;
 
-	private Integer pageNumber;
+	private String requestId;
+
+	private Integer totalCount;
 
 	private List<DistResult> distResults;
 
-	public Integer getTotalCount() {
-		return this.totalCount;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public Integer getPageSize() {
@@ -59,12 +51,20 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public Integer getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DistResult> getDistResults() {
@@ -77,19 +77,11 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 	public static class DistResult {
 
-		private String version;
-
 		private String name;
 
+		private String version;
+
 		private List<StatusStat> statusStats;
-
-		public String getVersion() {
-			return this.version;
-		}
-
-		public void setVersion(String version) {
-			this.version = version;
-		}
 
 		public String getName() {
 			return this.name;
@@ -97,6 +89,14 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public String getVersion() {
+			return this.version;
+		}
+
+		public void setVersion(String version) {
+			this.version = version;
 		}
 
 		public List<StatusStat> getStatusStats() {
@@ -109,19 +109,11 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 		public static class StatusStat {
 
-			private String status;
-
 			private String instanceCount;
 
+			private String status;
+
 			private List<Instance> instances;
-
-			public String getStatus() {
-				return this.status;
-			}
-
-			public void setStatus(String status) {
-				this.status = status;
-			}
 
 			public String getInstanceCount() {
 				return this.instanceCount;
@@ -129,6 +121,14 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 			public void setInstanceCount(String instanceCount) {
 				this.instanceCount = instanceCount;
+			}
+
+			public String getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
 			public List<Instance> getInstances() {
@@ -143,11 +143,11 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 				private String instanceId;
 
-				private String updateTime;
-
 				private String startTime;
 
 				private String statusDescrip;
+
+				private String updateTime;
 
 				public String getInstanceId() {
 					return this.instanceId;
@@ -155,14 +155,6 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 				public void setInstanceId(String instanceId) {
 					this.instanceId = instanceId;
-				}
-
-				public String getUpdateTime() {
-					return this.updateTime;
-				}
-
-				public void setUpdateTime(String updateTime) {
-					this.updateTime = updateTime;
 				}
 
 				public String getStartTime() {
@@ -179,6 +171,14 @@ public class DescribeDataDistResultResponse extends AcsResponse {
 
 				public void setStatusDescrip(String statusDescrip) {
 					this.statusDescrip = statusDescrip;
+				}
+
+				public String getUpdateTime() {
+					return this.updateTime;
+				}
+
+				public void setUpdateTime(String updateTime) {
+					this.updateTime = updateTime;
 				}
 			}
 		}

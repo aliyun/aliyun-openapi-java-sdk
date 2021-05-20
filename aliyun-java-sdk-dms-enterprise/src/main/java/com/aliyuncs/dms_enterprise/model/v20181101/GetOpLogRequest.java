@@ -37,7 +37,7 @@ public class GetOpLogRequest extends RpcAcsRequest<GetOpLogResponse> {
 
 	private Integer pageSize;
 	public GetOpLogRequest() {
-		super("dms-enterprise", "2018-11-01", "GetOpLog");
+		super("dms-enterprise", "2018-11-01", "GetOpLog", "dms-enterprise");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

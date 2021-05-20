@@ -33,8 +33,8 @@ public class DescribeInstanceAutoRenewAttributeResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes.Length"); i++) {
 			InstanceRenewAttribute instanceRenewAttribute = new InstanceRenewAttribute();
 			instanceRenewAttribute.setAutoRenewal(_ctx.booleanValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].AutoRenewal"));
-			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
 			instanceRenewAttribute.setDuration(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].Duration"));
+			instanceRenewAttribute.setInstanceId(_ctx.stringValue("DescribeInstanceAutoRenewAttributeResponse.InstanceRenewAttributes["+ i +"].InstanceId"));
 
 			instanceRenewAttributes.add(instanceRenewAttribute);
 		}

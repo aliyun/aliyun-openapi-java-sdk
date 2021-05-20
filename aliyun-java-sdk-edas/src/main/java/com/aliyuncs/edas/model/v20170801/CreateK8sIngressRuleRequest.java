@@ -31,8 +31,6 @@ public class CreateK8sIngressRuleRequest extends RoaAcsRequest<CreateK8sIngressR
 
 	private String ingressConf;
 
-	private String rules;
-
 	private String clusterId;
 	public CreateK8sIngressRuleRequest() {
 		super("Edas", "2017-08-01", "CreateK8sIngressRule", "Edas");
@@ -74,17 +72,6 @@ public class CreateK8sIngressRuleRequest extends RoaAcsRequest<CreateK8sIngressR
 		this.ingressConf = ingressConf;
 		if(ingressConf != null){
 			putQueryParameter("IngressConf", ingressConf);
-		}
-	}
-
-	public String getRules() {
-		return this.rules;
-	}
-
-	public void setRules(String rules) {
-		this.rules = rules;
-		if(rules != null){
-			putQueryParameter("Rules", rules);
 		}
 	}
 

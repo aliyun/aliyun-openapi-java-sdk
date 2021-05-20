@@ -67,23 +67,47 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 	public static class Job {
 
+		private String creationTime;
+
+		private String resultOutputFile;
+
+		private String state;
+
 		private String jobId;
 
 		private String userData;
-
-		private String pipelineId;
-
-		private String state;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
-
-		private String resultOutputFile;
+		private String pipelineId;
 
 		private Result result;
+
+		public String getCreationTime() {
+			return this.creationTime;
+		}
+
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
+		}
+
+		public String getResultOutputFile() {
+			return this.resultOutputFile;
+		}
+
+		public void setResultOutputFile(String resultOutputFile) {
+			this.resultOutputFile = resultOutputFile;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
 
 		public String getJobId() {
 			return this.jobId;
@@ -99,22 +123,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 		public void setUserData(String userData) {
 			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
 		}
 
 		public String getCode() {
@@ -133,20 +141,12 @@ public class QueryMCJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getResultOutputFile() {
-			return this.resultOutputFile;
-		}
-
-		public void setResultOutputFile(String resultOutputFile) {
-			this.resultOutputFile = resultOutputFile;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
 		public Result getResult() {
@@ -165,23 +165,23 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 			private PornResult pornResult;
 
-			private TerrorismResult terrorismResult;
-
-			private PoliticsResult politicsResult;
-
 			private AdResult adResult;
-
-			private QrcodeResult qrcodeResult;
-
-			private LiveResult liveResult;
 
 			private LogoResult logoResult;
 
+			private QrcodeResult qrcodeResult;
+
+			private PoliticsResult politicsResult;
+
+			private LiveResult liveResult;
+
 			private AbuseResult abuseResult;
+
+			private SpamResult spamResult;
 
 			private ContrabandResult contrabandResult;
 
-			private SpamResult spamResult;
+			private TerrorismResult terrorismResult;
 
 			public String getSuggestion() {
 				return this.suggestion;
@@ -207,44 +207,12 @@ public class QueryMCJobListResponse extends AcsResponse {
 				this.pornResult = pornResult;
 			}
 
-			public TerrorismResult getTerrorismResult() {
-				return this.terrorismResult;
-			}
-
-			public void setTerrorismResult(TerrorismResult terrorismResult) {
-				this.terrorismResult = terrorismResult;
-			}
-
-			public PoliticsResult getPoliticsResult() {
-				return this.politicsResult;
-			}
-
-			public void setPoliticsResult(PoliticsResult politicsResult) {
-				this.politicsResult = politicsResult;
-			}
-
 			public AdResult getAdResult() {
 				return this.adResult;
 			}
 
 			public void setAdResult(AdResult adResult) {
 				this.adResult = adResult;
-			}
-
-			public QrcodeResult getQrcodeResult() {
-				return this.qrcodeResult;
-			}
-
-			public void setQrcodeResult(QrcodeResult qrcodeResult) {
-				this.qrcodeResult = qrcodeResult;
-			}
-
-			public LiveResult getLiveResult() {
-				return this.liveResult;
-			}
-
-			public void setLiveResult(LiveResult liveResult) {
-				this.liveResult = liveResult;
 			}
 
 			public LogoResult getLogoResult() {
@@ -255,20 +223,36 @@ public class QueryMCJobListResponse extends AcsResponse {
 				this.logoResult = logoResult;
 			}
 
+			public QrcodeResult getQrcodeResult() {
+				return this.qrcodeResult;
+			}
+
+			public void setQrcodeResult(QrcodeResult qrcodeResult) {
+				this.qrcodeResult = qrcodeResult;
+			}
+
+			public PoliticsResult getPoliticsResult() {
+				return this.politicsResult;
+			}
+
+			public void setPoliticsResult(PoliticsResult politicsResult) {
+				this.politicsResult = politicsResult;
+			}
+
+			public LiveResult getLiveResult() {
+				return this.liveResult;
+			}
+
+			public void setLiveResult(LiveResult liveResult) {
+				this.liveResult = liveResult;
+			}
+
 			public AbuseResult getAbuseResult() {
 				return this.abuseResult;
 			}
 
 			public void setAbuseResult(AbuseResult abuseResult) {
 				this.abuseResult = abuseResult;
-			}
-
-			public ContrabandResult getContrabandResult() {
-				return this.contrabandResult;
-			}
-
-			public void setContrabandResult(ContrabandResult contrabandResult) {
-				this.contrabandResult = contrabandResult;
 			}
 
 			public SpamResult getSpamResult() {
@@ -279,17 +263,41 @@ public class QueryMCJobListResponse extends AcsResponse {
 				this.spamResult = spamResult;
 			}
 
+			public ContrabandResult getContrabandResult() {
+				return this.contrabandResult;
+			}
+
+			public void setContrabandResult(ContrabandResult contrabandResult) {
+				this.contrabandResult = contrabandResult;
+			}
+
+			public TerrorismResult getTerrorismResult() {
+				return this.terrorismResult;
+			}
+
+			public void setTerrorismResult(TerrorismResult terrorismResult) {
+				this.terrorismResult = terrorismResult;
+			}
+
 			public static class PornResult {
+
+				private List<PornText> pornTexts;
 
 				private List<PornVideo> pornVideos;
 
 				private List<PornAudio> pornAudios;
 
-				private List<PornText> pornTexts;
-
 				private List<PornImage> pornImages;
 
 				private List<PornOcr> pornOcrs;
+
+				public List<PornText> getPornTexts() {
+					return this.pornTexts;
+				}
+
+				public void setPornTexts(List<PornText> pornTexts) {
+					this.pornTexts = pornTexts;
+				}
 
 				public List<PornVideo> getPornVideos() {
 					return this.pornVideos;
@@ -307,14 +315,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 					this.pornAudios = pornAudios;
 				}
 
-				public List<PornText> getPornTexts() {
-					return this.pornTexts;
-				}
-
-				public void setPornTexts(List<PornText> pornTexts) {
-					this.pornTexts = pornTexts;
-				}
-
 				public List<PornImage> getPornImages() {
 					return this.pornImages;
 				}
@@ -329,112 +329,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 				public void setPornOcrs(List<PornOcr> pornOcrs) {
 					this.pornOcrs = pornOcrs;
-				}
-
-				public static class PornVideo {
-
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-				}
-
-				public static class PornAudio {
-
-					private String suggestion;
-
-					private String score;
-
-					private String startTime;
-
-					private String endTime;
-
-					private String text;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getEndTime() {
-						return this.endTime;
-					}
-
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
 				}
 
 				public static class PornText {
@@ -467,6 +361,112 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setText(String text) {
 						this.text = text;
+					}
+				}
+
+				public static class PornVideo {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class PornAudio {
+
+					private String endTime;
+
+					private String startTime;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
 					}
 				}
 
@@ -515,31 +515,15 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 				public static class PornOcr {
 
+					private String time;
+
 					private String suggestion;
 
 					private String score;
 
-					private String time;
-
-					private String object;
-
 					private String text;
 
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
+					private String object;
 
 					public String getTime() {
 						return this.time;
@@ -549,86 +533,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.time = time;
 					}
 
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-			}
-
-			public static class TerrorismResult {
-
-				private List<TerrorismVideo> terrorismVideos;
-
-				private List<TerrorismAudio> terrorismAudios;
-
-				private List<TerrorismText> terrorismTexts;
-
-				private List<TerrorismImage> terrorismImages;
-
-				private List<TerrorismOcr> terrorismOcrs;
-
-				public List<TerrorismVideo> getTerrorismVideos() {
-					return this.terrorismVideos;
-				}
-
-				public void setTerrorismVideos(List<TerrorismVideo> terrorismVideos) {
-					this.terrorismVideos = terrorismVideos;
-				}
-
-				public List<TerrorismAudio> getTerrorismAudios() {
-					return this.terrorismAudios;
-				}
-
-				public void setTerrorismAudios(List<TerrorismAudio> terrorismAudios) {
-					this.terrorismAudios = terrorismAudios;
-				}
-
-				public List<TerrorismText> getTerrorismTexts() {
-					return this.terrorismTexts;
-				}
-
-				public void setTerrorismTexts(List<TerrorismText> terrorismTexts) {
-					this.terrorismTexts = terrorismTexts;
-				}
-
-				public List<TerrorismImage> getTerrorismImages() {
-					return this.terrorismImages;
-				}
-
-				public void setTerrorismImages(List<TerrorismImage> terrorismImages) {
-					this.terrorismImages = terrorismImages;
-				}
-
-				public List<TerrorismOcr> getTerrorismOcrs() {
-					return this.terrorismOcrs;
-				}
-
-				public void setTerrorismOcrs(List<TerrorismOcr> terrorismOcrs) {
-					this.terrorismOcrs = terrorismOcrs;
-				}
-
-				public static class TerrorismVideo {
-
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
 					public String getSuggestion() {
 						return this.suggestion;
 					}
@@ -643,69 +547,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setScore(String score) {
 						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-				}
-
-				public static class TerrorismAudio {
-
-					private String suggestion;
-
-					private String score;
-
-					private String startTime;
-
-					private String endTime;
-
-					private String text;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getEndTime() {
-						return this.endTime;
-					}
-
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
 					}
 
 					public String getText() {
@@ -722,453 +563,28 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setObject(String object) {
 						this.object = object;
-					}
-				}
-
-				public static class TerrorismText {
-
-					private String suggestion;
-
-					private String score;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-
-				public static class TerrorismImage {
-
-					private String suggestion;
-
-					private String score;
-
-					private String url;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getUrl() {
-						return this.url;
-					}
-
-					public void setUrl(String url) {
-						this.url = url;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-
-				public static class TerrorismOcr {
-
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-			}
-
-			public static class PoliticsResult {
-
-				private List<PoliticsVideo> politicsVideos;
-
-				private List<PoliticsAudio> politicsAudios;
-
-				private List<PoliticsText> politicsTexts;
-
-				private List<PoliticsImage> politicsImages;
-
-				private List<PoliticsOcr> politicsOcrs;
-
-				public List<PoliticsVideo> getPoliticsVideos() {
-					return this.politicsVideos;
-				}
-
-				public void setPoliticsVideos(List<PoliticsVideo> politicsVideos) {
-					this.politicsVideos = politicsVideos;
-				}
-
-				public List<PoliticsAudio> getPoliticsAudios() {
-					return this.politicsAudios;
-				}
-
-				public void setPoliticsAudios(List<PoliticsAudio> politicsAudios) {
-					this.politicsAudios = politicsAudios;
-				}
-
-				public List<PoliticsText> getPoliticsTexts() {
-					return this.politicsTexts;
-				}
-
-				public void setPoliticsTexts(List<PoliticsText> politicsTexts) {
-					this.politicsTexts = politicsTexts;
-				}
-
-				public List<PoliticsImage> getPoliticsImages() {
-					return this.politicsImages;
-				}
-
-				public void setPoliticsImages(List<PoliticsImage> politicsImages) {
-					this.politicsImages = politicsImages;
-				}
-
-				public List<PoliticsOcr> getPoliticsOcrs() {
-					return this.politicsOcrs;
-				}
-
-				public void setPoliticsOcrs(List<PoliticsOcr> politicsOcrs) {
-					this.politicsOcrs = politicsOcrs;
-				}
-
-				public static class PoliticsVideo {
-
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-				}
-
-				public static class PoliticsAudio {
-
-					private String suggestion;
-
-					private String score;
-
-					private String startTime;
-
-					private String endTime;
-
-					private String text;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getEndTime() {
-						return this.endTime;
-					}
-
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-				}
-
-				public static class PoliticsText {
-
-					private String suggestion;
-
-					private String score;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-
-				public static class PoliticsImage {
-
-					private String suggestion;
-
-					private String score;
-
-					private String url;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getUrl() {
-						return this.url;
-					}
-
-					public void setUrl(String url) {
-						this.url = url;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-
-				public static class PoliticsOcr {
-
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
 					}
 				}
 			}
 
 			public static class AdResult {
 
-				private List<AdVideo> adVideos;
-
-				private List<AdAudio> adAudios;
+				private List<AdOcr> adOcrs;
 
 				private List<AdText> adTexts;
 
 				private List<AdImage> adImages;
 
-				private List<AdOcr> adOcrs;
+				private List<AdAudio> adAudios;
 
-				public List<AdVideo> getAdVideos() {
-					return this.adVideos;
+				private List<AdVideo> adVideos;
+
+				public List<AdOcr> getAdOcrs() {
+					return this.adOcrs;
 				}
 
-				public void setAdVideos(List<AdVideo> adVideos) {
-					this.adVideos = adVideos;
-				}
-
-				public List<AdAudio> getAdAudios() {
-					return this.adAudios;
-				}
-
-				public void setAdAudios(List<AdAudio> adAudios) {
-					this.adAudios = adAudios;
+				public void setAdOcrs(List<AdOcr> adOcrs) {
+					this.adOcrs = adOcrs;
 				}
 
 				public List<AdText> getAdTexts() {
@@ -1187,39 +603,33 @@ public class QueryMCJobListResponse extends AcsResponse {
 					this.adImages = adImages;
 				}
 
-				public List<AdOcr> getAdOcrs() {
-					return this.adOcrs;
+				public List<AdAudio> getAdAudios() {
+					return this.adAudios;
 				}
 
-				public void setAdOcrs(List<AdOcr> adOcrs) {
-					this.adOcrs = adOcrs;
+				public void setAdAudios(List<AdAudio> adAudios) {
+					this.adAudios = adAudios;
 				}
 
-				public static class AdVideo {
+				public List<AdVideo> getAdVideos() {
+					return this.adVideos;
+				}
+
+				public void setAdVideos(List<AdVideo> adVideos) {
+					this.adVideos = adVideos;
+				}
+
+				public static class AdOcr {
+
+					private String time;
 
 					private String suggestion;
 
 					private String score;
 
-					private String time;
+					private String text;
 
 					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
 
 					public String getTime() {
 						return this.time;
@@ -1229,29 +639,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.time = time;
 					}
 
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-				}
-
-				public static class AdAudio {
-
-					private String suggestion;
-
-					private String score;
-
-					private String startTime;
-
-					private String endTime;
-
-					private String text;
-
-					private String object;
-
 					public String getSuggestion() {
 						return this.suggestion;
 					}
@@ -1266,22 +653,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setScore(String score) {
 						this.score = score;
-					}
-
-					public String getStartTime() {
-						return this.startTime;
-					}
-
-					public void setStartTime(String startTime) {
-						this.startTime = startTime;
-					}
-
-					public String getEndTime() {
-						return this.endTime;
-					}
-
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
 					}
 
 					public String getText() {
@@ -1377,17 +748,35 @@ public class QueryMCJobListResponse extends AcsResponse {
 					}
 				}
 
-				public static class AdOcr {
+				public static class AdAudio {
+
+					private String endTime;
+
+					private String startTime;
 
 					private String suggestion;
 
 					private String score;
 
-					private String time;
+					private String text;
 
 					private String object;
 
-					private String text;
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
 
 					public String getSuggestion() {
 						return this.suggestion;
@@ -1403,22 +792,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setScore(String score) {
 						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
 					}
 
 					public String getText() {
@@ -1427,64 +800,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setText(String text) {
 						this.text = text;
-					}
-				}
-			}
-
-			public static class QrcodeResult {
-
-				private List<QrcodeVideo> qrcodeVideos;
-
-				private List<QrcodeImage> qrcodeImages;
-
-				public List<QrcodeVideo> getQrcodeVideos() {
-					return this.qrcodeVideos;
-				}
-
-				public void setQrcodeVideos(List<QrcodeVideo> qrcodeVideos) {
-					this.qrcodeVideos = qrcodeVideos;
-				}
-
-				public List<QrcodeImage> getQrcodeImages() {
-					return this.qrcodeImages;
-				}
-
-				public void setQrcodeImages(List<QrcodeImage> qrcodeImages) {
-					this.qrcodeImages = qrcodeImages;
-				}
-
-				public static class QrcodeVideo {
-
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
 					}
 
 					public String getObject() {
@@ -1496,97 +811,15 @@ public class QueryMCJobListResponse extends AcsResponse {
 					}
 				}
 
-				public static class QrcodeImage {
-
-					private String suggestion;
-
-					private String score;
-
-					private String url;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getUrl() {
-						return this.url;
-					}
-
-					public void setUrl(String url) {
-						this.url = url;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-			}
-
-			public static class LiveResult {
-
-				private List<LiveVideo> liveVideos;
-
-				private List<LiveImage> liveImages;
-
-				public List<LiveVideo> getLiveVideos() {
-					return this.liveVideos;
-				}
-
-				public void setLiveVideos(List<LiveVideo> liveVideos) {
-					this.liveVideos = liveVideos;
-				}
-
-				public List<LiveImage> getLiveImages() {
-					return this.liveImages;
-				}
-
-				public void setLiveImages(List<LiveImage> liveImages) {
-					this.liveImages = liveImages;
-				}
-
-				public static class LiveVideo {
-
-					private String suggestion;
-
-					private String score;
+				public static class AdVideo {
 
 					private String time;
 
+					private String suggestion;
+
+					private String score;
+
 					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
 
 					public String getTime() {
 						return this.time;
@@ -1596,25 +829,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.time = time;
 					}
 
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-				}
-
-				public static class LiveImage {
-
-					private String suggestion;
-
-					private String score;
-
-					private String url;
-
-					private String text;
-
 					public String getSuggestion() {
 						return this.suggestion;
 					}
@@ -1631,37 +845,21 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.score = score;
 					}
 
-					public String getUrl() {
-						return this.url;
+					public String getObject() {
+						return this.object;
 					}
 
-					public void setUrl(String url) {
-						this.url = url;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
+					public void setObject(String object) {
+						this.object = object;
 					}
 				}
 			}
 
 			public static class LogoResult {
 
-				private List<LogoVideo> logoVideos;
-
 				private List<LogoImage> logoImages;
 
-				public List<LogoVideo> getLogoVideos() {
-					return this.logoVideos;
-				}
-
-				public void setLogoVideos(List<LogoVideo> logoVideos) {
-					this.logoVideos = logoVideos;
-				}
+				private List<LogoVideo> logoVideos;
 
 				public List<LogoImage> getLogoImages() {
 					return this.logoImages;
@@ -1671,47 +869,12 @@ public class QueryMCJobListResponse extends AcsResponse {
 					this.logoImages = logoImages;
 				}
 
-				public static class LogoVideo {
+				public List<LogoVideo> getLogoVideos() {
+					return this.logoVideos;
+				}
 
-					private String suggestion;
-
-					private String score;
-
-					private String time;
-
-					private String object;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
+				public void setLogoVideos(List<LogoVideo> logoVideos) {
+					this.logoVideos = logoVideos;
 				}
 
 				public static class LogoImage {
@@ -1756,53 +919,24 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.text = text;
 					}
 				}
-			}
 
-			public static class AbuseResult {
+				public static class LogoVideo {
 
-				private List<AbuseAudio> abuseAudios;
-
-				private List<AbuseText> abuseTexts;
-
-				private List<AbuseOcr> abuseOcrs;
-
-				public List<AbuseAudio> getAbuseAudios() {
-					return this.abuseAudios;
-				}
-
-				public void setAbuseAudios(List<AbuseAudio> abuseAudios) {
-					this.abuseAudios = abuseAudios;
-				}
-
-				public List<AbuseText> getAbuseTexts() {
-					return this.abuseTexts;
-				}
-
-				public void setAbuseTexts(List<AbuseText> abuseTexts) {
-					this.abuseTexts = abuseTexts;
-				}
-
-				public List<AbuseOcr> getAbuseOcrs() {
-					return this.abuseOcrs;
-				}
-
-				public void setAbuseOcrs(List<AbuseOcr> abuseOcrs) {
-					this.abuseOcrs = abuseOcrs;
-				}
-
-				public static class AbuseAudio {
+					private String time;
 
 					private String suggestion;
 
 					private String score;
 
-					private String startTime;
-
-					private String endTime;
-
-					private String text;
-
 					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
 
 					public String getSuggestion() {
 						return this.suggestion;
@@ -1820,6 +954,371 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.score = score;
 					}
 
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+			}
+
+			public static class QrcodeResult {
+
+				private List<QrcodeImage> qrcodeImages;
+
+				private List<QrcodeVideo> qrcodeVideos;
+
+				public List<QrcodeImage> getQrcodeImages() {
+					return this.qrcodeImages;
+				}
+
+				public void setQrcodeImages(List<QrcodeImage> qrcodeImages) {
+					this.qrcodeImages = qrcodeImages;
+				}
+
+				public List<QrcodeVideo> getQrcodeVideos() {
+					return this.qrcodeVideos;
+				}
+
+				public void setQrcodeVideos(List<QrcodeVideo> qrcodeVideos) {
+					this.qrcodeVideos = qrcodeVideos;
+				}
+
+				public static class QrcodeImage {
+
+					private String suggestion;
+
+					private String score;
+
+					private String url;
+
+					private String text;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+				}
+
+				public static class QrcodeVideo {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+			}
+
+			public static class PoliticsResult {
+
+				private List<PoliticsOcr> politicsOcrs;
+
+				private List<PoliticsVideo> politicsVideos;
+
+				private List<PoliticsImage> politicsImages;
+
+				private List<PoliticsText> politicsTexts;
+
+				private List<PoliticsAudio> politicsAudios;
+
+				public List<PoliticsOcr> getPoliticsOcrs() {
+					return this.politicsOcrs;
+				}
+
+				public void setPoliticsOcrs(List<PoliticsOcr> politicsOcrs) {
+					this.politicsOcrs = politicsOcrs;
+				}
+
+				public List<PoliticsVideo> getPoliticsVideos() {
+					return this.politicsVideos;
+				}
+
+				public void setPoliticsVideos(List<PoliticsVideo> politicsVideos) {
+					this.politicsVideos = politicsVideos;
+				}
+
+				public List<PoliticsImage> getPoliticsImages() {
+					return this.politicsImages;
+				}
+
+				public void setPoliticsImages(List<PoliticsImage> politicsImages) {
+					this.politicsImages = politicsImages;
+				}
+
+				public List<PoliticsText> getPoliticsTexts() {
+					return this.politicsTexts;
+				}
+
+				public void setPoliticsTexts(List<PoliticsText> politicsTexts) {
+					this.politicsTexts = politicsTexts;
+				}
+
+				public List<PoliticsAudio> getPoliticsAudios() {
+					return this.politicsAudios;
+				}
+
+				public void setPoliticsAudios(List<PoliticsAudio> politicsAudios) {
+					this.politicsAudios = politicsAudios;
+				}
+
+				public static class PoliticsOcr {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class PoliticsVideo {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class PoliticsImage {
+
+					private String suggestion;
+
+					private String score;
+
+					private String url;
+
+					private String text;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+				}
+
+				public static class PoliticsText {
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+				}
+
+				public static class PoliticsAudio {
+
+					private String endTime;
+
+					private String startTime;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
 					public String getStartTime() {
 						return this.startTime;
 					}
@@ -1828,12 +1327,278 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.startTime = startTime;
 					}
 
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+			}
+
+			public static class LiveResult {
+
+				private List<LiveImage> liveImages;
+
+				private List<LiveVideo> liveVideos;
+
+				public List<LiveImage> getLiveImages() {
+					return this.liveImages;
+				}
+
+				public void setLiveImages(List<LiveImage> liveImages) {
+					this.liveImages = liveImages;
+				}
+
+				public List<LiveVideo> getLiveVideos() {
+					return this.liveVideos;
+				}
+
+				public void setLiveVideos(List<LiveVideo> liveVideos) {
+					this.liveVideos = liveVideos;
+				}
+
+				public static class LiveImage {
+
+					private String suggestion;
+
+					private String score;
+
+					private String url;
+
+					private String text;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+				}
+
+				public static class LiveVideo {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+			}
+
+			public static class AbuseResult {
+
+				private List<AbuseOcr> abuseOcrs;
+
+				private List<AbuseAudio> abuseAudios;
+
+				private List<AbuseText> abuseTexts;
+
+				public List<AbuseOcr> getAbuseOcrs() {
+					return this.abuseOcrs;
+				}
+
+				public void setAbuseOcrs(List<AbuseOcr> abuseOcrs) {
+					this.abuseOcrs = abuseOcrs;
+				}
+
+				public List<AbuseAudio> getAbuseAudios() {
+					return this.abuseAudios;
+				}
+
+				public void setAbuseAudios(List<AbuseAudio> abuseAudios) {
+					this.abuseAudios = abuseAudios;
+				}
+
+				public List<AbuseText> getAbuseTexts() {
+					return this.abuseTexts;
+				}
+
+				public void setAbuseTexts(List<AbuseText> abuseTexts) {
+					this.abuseTexts = abuseTexts;
+				}
+
+				public static class AbuseOcr {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class AbuseAudio {
+
+					private String endTime;
+
+					private String startTime;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
 					public String getEndTime() {
 						return this.endTime;
 					}
 
 					public void setEndTime(String endTime) {
 						this.endTime = endTime;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
 					}
 
 					public String getText() {
@@ -1885,16 +1650,45 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.text = text;
 					}
 				}
+			}
 
-				public static class AbuseOcr {
+			public static class SpamResult {
+
+				private List<SpamText> spamTexts;
+
+				private List<SpamAudio> spamAudios;
+
+				private List<SpamOcr> spamOcrs;
+
+				public List<SpamText> getSpamTexts() {
+					return this.spamTexts;
+				}
+
+				public void setSpamTexts(List<SpamText> spamTexts) {
+					this.spamTexts = spamTexts;
+				}
+
+				public List<SpamAudio> getSpamAudios() {
+					return this.spamAudios;
+				}
+
+				public void setSpamAudios(List<SpamAudio> spamAudios) {
+					this.spamAudios = spamAudios;
+				}
+
+				public List<SpamOcr> getSpamOcrs() {
+					return this.spamOcrs;
+				}
+
+				public void setSpamOcrs(List<SpamOcr> spamOcrs) {
+					this.spamOcrs = spamOcrs;
+				}
+
+				public static class SpamText {
 
 					private String suggestion;
 
 					private String score;
-
-					private String time;
-
-					private String object;
 
 					private String text;
 
@@ -1912,22 +1706,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setScore(String score) {
 						this.score = score;
-					}
-
-					public String getTime() {
-						return this.time;
-					}
-
-					public void setTime(String time) {
-						this.time = time;
-					}
-
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
 					}
 
 					public String getText() {
@@ -1938,53 +1716,36 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.text = text;
 					}
 				}
-			}
 
-			public static class ContrabandResult {
+				public static class SpamAudio {
 
-				private List<ContrabandAudio> contrabandAudios;
+					private String endTime;
 
-				private List<ContrabandText> contrabandTexts;
-
-				private List<ContrabandOcr> contrabandOcrs;
-
-				public List<ContrabandAudio> getContrabandAudios() {
-					return this.contrabandAudios;
-				}
-
-				public void setContrabandAudios(List<ContrabandAudio> contrabandAudios) {
-					this.contrabandAudios = contrabandAudios;
-				}
-
-				public List<ContrabandText> getContrabandTexts() {
-					return this.contrabandTexts;
-				}
-
-				public void setContrabandTexts(List<ContrabandText> contrabandTexts) {
-					this.contrabandTexts = contrabandTexts;
-				}
-
-				public List<ContrabandOcr> getContrabandOcrs() {
-					return this.contrabandOcrs;
-				}
-
-				public void setContrabandOcrs(List<ContrabandOcr> contrabandOcrs) {
-					this.contrabandOcrs = contrabandOcrs;
-				}
-
-				public static class ContrabandAudio {
+					private String startTime;
 
 					private String suggestion;
 
 					private String score;
 
-					private String startTime;
-
-					private String endTime;
-
 					private String text;
 
 					private String object;
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
+					public String getStartTime() {
+						return this.startTime;
+					}
+
+					public void setStartTime(String startTime) {
+						this.startTime = startTime;
+					}
 
 					public String getSuggestion() {
 						return this.suggestion;
@@ -2002,6 +1763,131 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.score = score;
 					}
 
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class SpamOcr {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+			}
+
+			public static class ContrabandResult {
+
+				private List<ContrabandAudio> contrabandAudios;
+
+				private List<ContrabandOcr> contrabandOcrs;
+
+				private List<ContrabandText> contrabandTexts;
+
+				public List<ContrabandAudio> getContrabandAudios() {
+					return this.contrabandAudios;
+				}
+
+				public void setContrabandAudios(List<ContrabandAudio> contrabandAudios) {
+					this.contrabandAudios = contrabandAudios;
+				}
+
+				public List<ContrabandOcr> getContrabandOcrs() {
+					return this.contrabandOcrs;
+				}
+
+				public void setContrabandOcrs(List<ContrabandOcr> contrabandOcrs) {
+					this.contrabandOcrs = contrabandOcrs;
+				}
+
+				public List<ContrabandText> getContrabandTexts() {
+					return this.contrabandTexts;
+				}
+
+				public void setContrabandTexts(List<ContrabandText> contrabandTexts) {
+					this.contrabandTexts = contrabandTexts;
+				}
+
+				public static class ContrabandAudio {
+
+					private String endTime;
+
+					private String startTime;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
+					}
+
 					public String getStartTime() {
 						return this.startTime;
 					}
@@ -2010,12 +1896,73 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.startTime = startTime;
 					}
 
-					public String getEndTime() {
-						return this.endTime;
+					public String getSuggestion() {
+						return this.suggestion;
 					}
 
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class ContrabandOcr {
+
+					private String time;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getTime() {
+						return this.time;
+					}
+
+					public void setTime(String time) {
+						this.time = time;
+					}
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
 					}
 
 					public String getText() {
@@ -2067,34 +2014,71 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.text = text;
 					}
 				}
+			}
 
-				public static class ContrabandOcr {
+			public static class TerrorismResult {
+
+				private List<TerrorismOcr> terrorismOcrs;
+
+				private List<TerrorismAudio> terrorismAudios;
+
+				private List<TerrorismVideo> terrorismVideos;
+
+				private List<TerrorismText> terrorismTexts;
+
+				private List<TerrorismImage> terrorismImages;
+
+				public List<TerrorismOcr> getTerrorismOcrs() {
+					return this.terrorismOcrs;
+				}
+
+				public void setTerrorismOcrs(List<TerrorismOcr> terrorismOcrs) {
+					this.terrorismOcrs = terrorismOcrs;
+				}
+
+				public List<TerrorismAudio> getTerrorismAudios() {
+					return this.terrorismAudios;
+				}
+
+				public void setTerrorismAudios(List<TerrorismAudio> terrorismAudios) {
+					this.terrorismAudios = terrorismAudios;
+				}
+
+				public List<TerrorismVideo> getTerrorismVideos() {
+					return this.terrorismVideos;
+				}
+
+				public void setTerrorismVideos(List<TerrorismVideo> terrorismVideos) {
+					this.terrorismVideos = terrorismVideos;
+				}
+
+				public List<TerrorismText> getTerrorismTexts() {
+					return this.terrorismTexts;
+				}
+
+				public void setTerrorismTexts(List<TerrorismText> terrorismTexts) {
+					this.terrorismTexts = terrorismTexts;
+				}
+
+				public List<TerrorismImage> getTerrorismImages() {
+					return this.terrorismImages;
+				}
+
+				public void setTerrorismImages(List<TerrorismImage> terrorismImages) {
+					this.terrorismImages = terrorismImages;
+				}
+
+				public static class TerrorismOcr {
+
+					private String time;
 
 					private String suggestion;
 
 					private String score;
 
-					private String time;
-
-					private String object;
-
 					private String text;
 
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
+					private String object;
 
 					public String getTime() {
 						return this.time;
@@ -2104,70 +2088,6 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.time = time;
 					}
 
-					public String getObject() {
-						return this.object;
-					}
-
-					public void setObject(String object) {
-						this.object = object;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-			}
-
-			public static class SpamResult {
-
-				private List<SpamAudio> spamAudios;
-
-				private List<SpamText> spamTexts;
-
-				private List<SpamOcr> spamOcrs;
-
-				public List<SpamAudio> getSpamAudios() {
-					return this.spamAudios;
-				}
-
-				public void setSpamAudios(List<SpamAudio> spamAudios) {
-					this.spamAudios = spamAudios;
-				}
-
-				public List<SpamText> getSpamTexts() {
-					return this.spamTexts;
-				}
-
-				public void setSpamTexts(List<SpamText> spamTexts) {
-					this.spamTexts = spamTexts;
-				}
-
-				public List<SpamOcr> getSpamOcrs() {
-					return this.spamOcrs;
-				}
-
-				public void setSpamOcrs(List<SpamOcr> spamOcrs) {
-					this.spamOcrs = spamOcrs;
-				}
-
-				public static class SpamAudio {
-
-					private String suggestion;
-
-					private String score;
-
-					private String startTime;
-
-					private String endTime;
-
-					private String text;
-
-					private String object;
-
 					public String getSuggestion() {
 						return this.suggestion;
 					}
@@ -2182,6 +2102,45 @@ public class QueryMCJobListResponse extends AcsResponse {
 
 					public void setScore(String score) {
 						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+
+					public String getObject() {
+						return this.object;
+					}
+
+					public void setObject(String object) {
+						this.object = object;
+					}
+				}
+
+				public static class TerrorismAudio {
+
+					private String endTime;
+
+					private String startTime;
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					private String object;
+
+					public String getEndTime() {
+						return this.endTime;
+					}
+
+					public void setEndTime(String endTime) {
+						this.endTime = endTime;
 					}
 
 					public String getStartTime() {
@@ -2192,12 +2151,20 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.startTime = startTime;
 					}
 
-					public String getEndTime() {
-						return this.endTime;
+					public String getSuggestion() {
+						return this.suggestion;
 					}
 
-					public void setEndTime(String endTime) {
-						this.endTime = endTime;
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
 					}
 
 					public String getText() {
@@ -2217,66 +2184,15 @@ public class QueryMCJobListResponse extends AcsResponse {
 					}
 				}
 
-				public static class SpamText {
-
-					private String suggestion;
-
-					private String score;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getText() {
-						return this.text;
-					}
-
-					public void setText(String text) {
-						this.text = text;
-					}
-				}
-
-				public static class SpamOcr {
-
-					private String suggestion;
-
-					private String score;
+				public static class TerrorismVideo {
 
 					private String time;
 
+					private String suggestion;
+
+					private String score;
+
 					private String object;
-
-					private String text;
-
-					public String getSuggestion() {
-						return this.suggestion;
-					}
-
-					public void setSuggestion(String suggestion) {
-						this.suggestion = suggestion;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
 
 					public String getTime() {
 						return this.time;
@@ -2286,12 +2202,96 @@ public class QueryMCJobListResponse extends AcsResponse {
 						this.time = time;
 					}
 
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
 					public String getObject() {
 						return this.object;
 					}
 
 					public void setObject(String object) {
 						this.object = object;
+					}
+				}
+
+				public static class TerrorismText {
+
+					private String suggestion;
+
+					private String score;
+
+					private String text;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getText() {
+						return this.text;
+					}
+
+					public void setText(String text) {
+						this.text = text;
+					}
+				}
+
+				public static class TerrorismImage {
+
+					private String suggestion;
+
+					private String score;
+
+					private String url;
+
+					private String text;
+
+					public String getSuggestion() {
+						return this.suggestion;
+					}
+
+					public void setSuggestion(String suggestion) {
+						this.suggestion = suggestion;
+					}
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getUrl() {
+						return this.url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
 					}
 
 					public String getText() {

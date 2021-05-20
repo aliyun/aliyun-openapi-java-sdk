@@ -24,23 +24,23 @@ public class GetUserDetailResponseUnmarshaller {
 	public static GetUserDetailResponse unmarshall(GetUserDetailResponse getUserDetailResponse, UnmarshallerContext _ctx) {
 		
 		getUserDetailResponse.setRequestId(_ctx.stringValue("GetUserDetailResponse.RequestId"));
-		getUserDetailResponse.setCode(_ctx.stringValue("GetUserDetailResponse.Code"));
 		getUserDetailResponse.setMessage(_ctx.stringValue("GetUserDetailResponse.Message"));
+		getUserDetailResponse.setCode(_ctx.stringValue("GetUserDetailResponse.Code"));
 
 		Data data = new Data();
-		data.setAddress(_ctx.stringValue("GetUserDetailResponse.Data.Address"));
-		data.setAge(_ctx.stringValue("GetUserDetailResponse.Data.Age"));
-		data.setAttachment(_ctx.stringValue("GetUserDetailResponse.Data.Attachment"));
-		data.setBizId(_ctx.stringValue("GetUserDetailResponse.Data.BizId"));
-		data.setFaceImageUrl(_ctx.stringValue("GetUserDetailResponse.Data.FaceImageUrl"));
-		data.setGender(_ctx.stringValue("GetUserDetailResponse.Data.Gender"));
-		data.setIdNumber(_ctx.stringValue("GetUserDetailResponse.Data.IdNumber"));
-		data.setPhoneNo(_ctx.stringValue("GetUserDetailResponse.Data.PhoneNo"));
-		data.setPlateNo(_ctx.stringValue("GetUserDetailResponse.Data.PlateNo"));
-		data.setUserGroupId(_ctx.integerValue("GetUserDetailResponse.Data.UserGroupId"));
-		data.setUserId(_ctx.integerValue("GetUserDetailResponse.Data.UserId"));
 		data.setUserName(_ctx.stringValue("GetUserDetailResponse.Data.UserName"));
+		data.setAddress(_ctx.stringValue("GetUserDetailResponse.Data.Address"));
+		data.setPhoneNo(_ctx.stringValue("GetUserDetailResponse.Data.PhoneNo"));
+		data.setIdNumber(_ctx.stringValue("GetUserDetailResponse.Data.IdNumber"));
+		data.setUserId(_ctx.integerValue("GetUserDetailResponse.Data.UserId"));
+		data.setUserGroupId(_ctx.integerValue("GetUserDetailResponse.Data.UserGroupId"));
 		data.setIsvSubId(_ctx.stringValue("GetUserDetailResponse.Data.IsvSubId"));
+		data.setAttachment(_ctx.stringValue("GetUserDetailResponse.Data.Attachment"));
+		data.setGender(_ctx.stringValue("GetUserDetailResponse.Data.Gender"));
+		data.setPlateNo(_ctx.stringValue("GetUserDetailResponse.Data.PlateNo"));
+		data.setBizId(_ctx.stringValue("GetUserDetailResponse.Data.BizId"));
+		data.setAge(_ctx.stringValue("GetUserDetailResponse.Data.Age"));
+		data.setFaceImageUrl(_ctx.stringValue("GetUserDetailResponse.Data.FaceImageUrl"));
 		getUserDetailResponse.setData(data);
 	 
 	 	return getUserDetailResponse;

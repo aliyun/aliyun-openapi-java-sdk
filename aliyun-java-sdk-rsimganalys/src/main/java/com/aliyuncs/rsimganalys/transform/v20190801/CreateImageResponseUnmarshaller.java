@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.rsimganalys.model.v20190801.CreateImageResponse;
-import com.aliyuncs.rsimganalys.model.v20190801.CreateImageResponse.Data;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -38,22 +37,6 @@ public class CreateImageResponseUnmarshaller {
 			items.add(_ctx.integerValue("CreateImageResponse.Items["+ i +"]"));
 		}
 		createImageResponse.setItems(items);
-
-		Data data = new Data();
-		data.setAliyunPK(_ctx.stringValue("CreateImageResponse.Data.AliyunPK"));
-		data.setDescription(_ctx.stringValue("CreateImageResponse.Data.Description"));
-		data.setDownloadPath(_ctx.stringValue("CreateImageResponse.Data.DownloadPath"));
-		data.setGmtCreate(_ctx.stringValue("CreateImageResponse.Data.GmtCreate"));
-		data.setGmtModified(_ctx.stringValue("CreateImageResponse.Data.GmtModified"));
-		data.setImageId(_ctx.integerValue("CreateImageResponse.Data.ImageId"));
-		data.setJobId(_ctx.stringValue("CreateImageResponse.Data.JobId"));
-		data.setImageName(_ctx.stringValue("CreateImageResponse.Data.ImageName"));
-		data.setRunStatus(_ctx.integerValue("CreateImageResponse.Data.RunStatus"));
-		data.setUrlUploadPath(_ctx.stringValue("CreateImageResponse.Data.UrlUploadPath"));
-		data.setFileTime(_ctx.longValue("CreateImageResponse.Data.FileTime"));
-		data.setStatusCode(_ctx.stringValue("CreateImageResponse.Data.StatusCode"));
-		data.setStatusMessage(_ctx.stringValue("CreateImageResponse.Data.StatusMessage"));
-		createImageResponse.setData(data);
 	 
 	 	return createImageResponse;
 	}

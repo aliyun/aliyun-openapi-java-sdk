@@ -25,19 +25,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AllocateEipAddressResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String bizStatusCode;
 
+	private String requestId;
+
 	private List<EipAddress> eipAddresses;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public String getBizStatusCode() {
 		return this.bizStatusCode;
@@ -45,6 +37,14 @@ public class AllocateEipAddressResponse extends AcsResponse {
 
 	public void setBizStatusCode(String bizStatusCode) {
 		this.bizStatusCode = bizStatusCode;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public List<EipAddress> getEipAddresses() {

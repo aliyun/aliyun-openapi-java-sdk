@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AppMessagePushResponse extends AcsResponse {
 
-	private String message;
-
 	private String requestId;
 
 	private String data;
 
 	private String code;
 
+	private String message;
+
 	private Boolean success;
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -64,6 +56,14 @@ public class AppMessagePushResponse extends AcsResponse {
 
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public Boolean getSuccess() {

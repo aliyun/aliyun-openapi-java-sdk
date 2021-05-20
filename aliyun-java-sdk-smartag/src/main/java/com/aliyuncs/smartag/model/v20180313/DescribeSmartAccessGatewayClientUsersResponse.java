@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<User> users;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<User> getUsers() {
@@ -77,22 +77,22 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 
 	public static class User {
 
-		private String clientIp;
+		private String userName;
 
 		private String userMail;
 
-		private String userName;
+		private Integer state;
 
 		private Integer bandwidth;
 
-		private Integer state;
+		private String clientIp;
 
-		public String getClientIp() {
-			return this.clientIp;
+		public String getUserName() {
+			return this.userName;
 		}
 
-		public void setClientIp(String clientIp) {
-			this.clientIp = clientIp;
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 
 		public String getUserMail() {
@@ -103,12 +103,12 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 			this.userMail = userMail;
 		}
 
-		public String getUserName() {
-			return this.userName;
+		public Integer getState() {
+			return this.state;
 		}
 
-		public void setUserName(String userName) {
-			this.userName = userName;
+		public void setState(Integer state) {
+			this.state = state;
 		}
 
 		public Integer getBandwidth() {
@@ -119,12 +119,12 @@ public class DescribeSmartAccessGatewayClientUsersResponse extends AcsResponse {
 			this.bandwidth = bandwidth;
 		}
 
-		public Integer getState() {
-			return this.state;
+		public String getClientIp() {
+			return this.clientIp;
 		}
 
-		public void setState(Integer state) {
-			this.state = state;
+		public void setClientIp(String clientIp) {
+			this.clientIp = clientIp;
 		}
 	}
 

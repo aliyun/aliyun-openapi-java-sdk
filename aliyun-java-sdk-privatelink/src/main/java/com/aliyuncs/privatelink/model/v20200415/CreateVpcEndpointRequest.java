@@ -88,6 +88,7 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 			for (int depth1 = 0; depth1 < zones.size(); depth1++) {
 				putQueryParameter("Zone." + (depth1 + 1) + ".VSwitchId" , zones.get(depth1).getVSwitchId());
 				putQueryParameter("Zone." + (depth1 + 1) + ".ZoneId" , zones.get(depth1).getZoneId());
+				putQueryParameter("Zone." + (depth1 + 1) + ".ip" , zones.get(depth1).getIp());
 			}
 		}	
 	}
@@ -164,6 +165,8 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 
 		private String zoneId;
 
+		private String ip;
+
 		public String getVSwitchId() {
 			return this.vSwitchId;
 		}
@@ -178,6 +181,14 @@ public class CreateVpcEndpointRequest extends RpcAcsRequest<CreateVpcEndpointRes
 
 		public void setZoneId(String zoneId) {
 			this.zoneId = zoneId;
+		}
+
+		public String getIp() {
+			return this.ip;
+		}
+
+		public void setIp(String ip) {
+			this.ip = ip;
 		}
 	}
 

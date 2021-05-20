@@ -30,7 +30,7 @@ public class AssociateEipAddressRequest extends RpcAcsRequest<AssociateEipAddres
 
 	private String instanceIdInternetIp;
 	public AssociateEipAddressRequest() {
-		super("Ens", "2017-11-10", "AssociateEipAddress");
+		super("Ens", "2017-11-10", "AssociateEipAddress", "ens");
 		setMethod(MethodType.POST);
 	}
 

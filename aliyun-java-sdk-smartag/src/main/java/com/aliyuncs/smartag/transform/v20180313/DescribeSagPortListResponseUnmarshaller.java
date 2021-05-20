@@ -32,10 +32,11 @@ public class DescribeSagPortListResponseUnmarshaller {
 		List<Port> ports = new ArrayList<Port>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagPortListResponse.Ports.Length"); i++) {
 			Port port = new Port();
-			port.setPortName(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].PortName"));
 			port.setRole(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].Role"));
-			port.setMac(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].Mac"));
 			port.setStatus(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].Status"));
+			port.setVlan(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].Vlan"));
+			port.setPortName(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].PortName"));
+			port.setMac(_ctx.stringValue("DescribeSagPortListResponse.Ports["+ i +"].Mac"));
 
 			ports.add(port);
 		}
@@ -45,9 +46,9 @@ public class DescribeSagPortListResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("DescribeSagPortListResponse.TaskStates.Length"); i++) {
 			TaskState taskState = new TaskState();
 			taskState.setState(_ctx.stringValue("DescribeSagPortListResponse.TaskStates["+ i +"].State"));
+			taskState.setCreateTime(_ctx.stringValue("DescribeSagPortListResponse.TaskStates["+ i +"].CreateTime"));
 			taskState.setErrorCode(_ctx.stringValue("DescribeSagPortListResponse.TaskStates["+ i +"].ErrorCode"));
 			taskState.setErrorMessage(_ctx.stringValue("DescribeSagPortListResponse.TaskStates["+ i +"].ErrorMessage"));
-			taskState.setCreateTime(_ctx.stringValue("DescribeSagPortListResponse.TaskStates["+ i +"].CreateTime"));
 
 			taskStates.add(taskState);
 		}

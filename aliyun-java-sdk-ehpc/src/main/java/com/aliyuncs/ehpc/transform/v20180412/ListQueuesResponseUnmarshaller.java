@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.ehpc.model.v20180412.ListQueuesResponse;
 import com.aliyuncs.ehpc.model.v20180412.ListQueuesResponse.QueueInfo;
+import com.aliyuncs.ehpc.model.v20180412.ListQueuesResponse.QueueInfo.Instance;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,7 +35,27 @@ public class ListQueuesResponseUnmarshaller {
 			queueInfo.setQueueName(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].QueueName"));
 			queueInfo.setType(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].Type"));
 			queueInfo.setResourceGroupId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ResourceGroupId"));
-			queueInfo.setComputeInstanceType(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ComputeInstanceType"));
+			queueInfo.setHostNamePrefix(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].HostNamePrefix"));
+			queueInfo.setHostNameSuffix(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].HostNameSuffix"));
+			queueInfo.setSpotStrategy(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].SpotStrategy"));
+			queueInfo.setImageId(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ImageId"));
+			queueInfo.setEnableAutoGrow(_ctx.booleanValue("ListQueuesResponse.Queues["+ i +"].EnableAutoGrow"));
+
+			List<String> computeInstanceType = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListQueuesResponse.Queues["+ i +"].ComputeInstanceType.Length"); j++) {
+				computeInstanceType.add(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].ComputeInstanceType["+ j +"]"));
+			}
+			queueInfo.setComputeInstanceType(computeInstanceType);
+
+			List<Instance> spotInstanceTypes = new ArrayList<Instance>();
+			for (int j = 0; j < _ctx.lengthValue("ListQueuesResponse.Queues["+ i +"].SpotInstanceTypes.Length"); j++) {
+				Instance instance = new Instance();
+				instance.setInstanceType(_ctx.stringValue("ListQueuesResponse.Queues["+ i +"].SpotInstanceTypes["+ j +"].InstanceType"));
+				instance.setSpotPriceLimit(_ctx.floatValue("ListQueuesResponse.Queues["+ i +"].SpotInstanceTypes["+ j +"].SpotPriceLimit"));
+
+				spotInstanceTypes.add(instance);
+			}
+			queueInfo.setSpotInstanceTypes(spotInstanceTypes);
 
 			queues.add(queueInfo);
 		}

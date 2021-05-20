@@ -39,10 +39,10 @@ public class RecognizeExpressionResponseUnmarshaller {
 			element.setFaceProbability(_ctx.floatValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceProbability"));
 
 			FaceRectangle faceRectangle = new FaceRectangle();
-			faceRectangle.setLeft(_ctx.integerValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceRectangle.Left"));
 			faceRectangle.setTop(_ctx.integerValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceRectangle.Top"));
-			faceRectangle.setHeight(_ctx.integerValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceRectangle.Height"));
 			faceRectangle.setWidth(_ctx.integerValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceRectangle.Width"));
+			faceRectangle.setHeight(_ctx.integerValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceRectangle.Height"));
+			faceRectangle.setLeft(_ctx.integerValue("RecognizeExpressionResponse.Data.Elements["+ i +"].FaceRectangle.Left"));
 			element.setFaceRectangle(faceRectangle);
 
 			elements.add(element);

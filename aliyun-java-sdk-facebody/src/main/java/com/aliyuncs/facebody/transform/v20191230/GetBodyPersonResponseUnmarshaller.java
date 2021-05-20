@@ -28,21 +28,21 @@ public class GetBodyPersonResponseUnmarshaller {
 	public static GetBodyPersonResponse unmarshall(GetBodyPersonResponse getBodyPersonResponse, UnmarshallerContext _ctx) {
 		
 		getBodyPersonResponse.setRequestId(_ctx.stringValue("GetBodyPersonResponse.RequestId"));
-		getBodyPersonResponse.setMessage(_ctx.stringValue("GetBodyPersonResponse.Message"));
 		getBodyPersonResponse.setCode(_ctx.stringValue("GetBodyPersonResponse.Code"));
+		getBodyPersonResponse.setMessage(_ctx.stringValue("GetBodyPersonResponse.Message"));
 
 		Data data = new Data();
-		data.setTraceCount(_ctx.longValue("GetBodyPersonResponse.Data.TraceCount"));
 		data.setInstanceId(_ctx.longValue("GetBodyPersonResponse.Data.InstanceId"));
 		data.setDbId(_ctx.longValue("GetBodyPersonResponse.Data.DbId"));
 		data.setId(_ctx.longValue("GetBodyPersonResponse.Data.Id"));
 		data.setName(_ctx.stringValue("GetBodyPersonResponse.Data.Name"));
+		data.setTraceCount(_ctx.longValue("GetBodyPersonResponse.Data.TraceCount"));
 
 		List<Trace> traceList = new ArrayList<Trace>();
 		for (int i = 0; i < _ctx.lengthValue("GetBodyPersonResponse.Data.TraceList.Length"); i++) {
 			Trace trace = new Trace();
-			trace.setExtraData(_ctx.stringValue("GetBodyPersonResponse.Data.TraceList["+ i +"].ExtraData"));
 			trace.setId(_ctx.longValue("GetBodyPersonResponse.Data.TraceList["+ i +"].Id"));
+			trace.setExtraData(_ctx.stringValue("GetBodyPersonResponse.Data.TraceList["+ i +"].ExtraData"));
 
 			traceList.add(trace);
 		}

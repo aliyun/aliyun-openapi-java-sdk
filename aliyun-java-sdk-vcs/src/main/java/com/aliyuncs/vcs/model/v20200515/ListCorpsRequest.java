@@ -31,7 +31,7 @@ public class ListCorpsRequest extends RpcAcsRequest<ListCorpsResponse> {
 
 	private String corpName;
 	public ListCorpsRequest() {
-		super("Vcs", "2020-05-15", "ListCorps", "vcs");
+		super("Vcs", "2020-05-15", "ListCorps");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

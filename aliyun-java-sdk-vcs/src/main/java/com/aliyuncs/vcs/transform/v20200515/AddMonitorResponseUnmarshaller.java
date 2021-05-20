@@ -24,8 +24,8 @@ public class AddMonitorResponseUnmarshaller {
 	public static AddMonitorResponse unmarshall(AddMonitorResponse addMonitorResponse, UnmarshallerContext _ctx) {
 		
 		addMonitorResponse.setRequestId(_ctx.stringValue("AddMonitorResponse.RequestId"));
-		addMonitorResponse.setCode(_ctx.stringValue("AddMonitorResponse.Code"));
 		addMonitorResponse.setMessage(_ctx.stringValue("AddMonitorResponse.Message"));
+		addMonitorResponse.setCode(_ctx.stringValue("AddMonitorResponse.Code"));
 
 		Data data = new Data();
 		data.setTaskId(_ctx.stringValue("AddMonitorResponse.Data.TaskId"));

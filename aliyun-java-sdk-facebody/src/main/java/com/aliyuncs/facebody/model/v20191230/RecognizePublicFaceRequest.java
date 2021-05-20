@@ -45,6 +45,7 @@ public class RecognizePublicFaceRequest extends RpcAcsRequest<RecognizePublicFac
 		if (tasks != null) {
 			for (int depth1 = 0; depth1 < tasks.size(); depth1++) {
 				putBodyParameter("Task." + (depth1 + 1) + ".ImageURL" , tasks.get(depth1).getImageURL());
+				putBodyParameter("Task." + (depth1 + 1) + ".ImageData" , tasks.get(depth1).getImageData());
 			}
 		}	
 	}
@@ -53,12 +54,22 @@ public class RecognizePublicFaceRequest extends RpcAcsRequest<RecognizePublicFac
 
 		private String imageURL;
 
+		private String imageData;
+
 		public String getImageURL() {
 			return this.imageURL;
 		}
 
 		public void setImageURL(String imageURL) {
 			this.imageURL = imageURL;
+		}
+
+		public String getImageData() {
+			return this.imageData;
+		}
+
+		public void setImageData(String imageData) {
+			this.imageData = imageData;
 		}
 	}
 

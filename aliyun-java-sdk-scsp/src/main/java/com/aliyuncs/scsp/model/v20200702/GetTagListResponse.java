@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetTagListResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class GetTagListResponse extends AcsResponse {
 
 	private List<DataItem> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -127,9 +127,9 @@ public class GetTagListResponse extends AcsResponse {
 
 			private String tagGroupCode;
 
-			private String tagGroupName;
-
 			private String tagCode;
+
+			private String tagGroupName;
 
 			private String entityRelationNumber;
 
@@ -165,20 +165,20 @@ public class GetTagListResponse extends AcsResponse {
 				this.tagGroupCode = tagGroupCode;
 			}
 
-			public String getTagGroupName() {
-				return this.tagGroupName;
-			}
-
-			public void setTagGroupName(String tagGroupName) {
-				this.tagGroupName = tagGroupName;
-			}
-
 			public String getTagCode() {
 				return this.tagCode;
 			}
 
 			public void setTagCode(String tagCode) {
 				this.tagCode = tagCode;
+			}
+
+			public String getTagGroupName() {
+				return this.tagGroupName;
+			}
+
+			public void setTagGroupName(String tagGroupName) {
+				this.tagGroupName = tagGroupName;
 			}
 
 			public String getEntityRelationNumber() {

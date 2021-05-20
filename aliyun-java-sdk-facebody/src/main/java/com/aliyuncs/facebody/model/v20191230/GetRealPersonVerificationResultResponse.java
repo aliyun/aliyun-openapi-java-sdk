@@ -76,26 +76,18 @@ public class GetRealPersonVerificationResultResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String materialMatch;
-
-		private Boolean pass;
+		private Boolean passed;
 
 		private String identityInfo;
 
-		public String getMaterialMatch() {
-			return this.materialMatch;
+		private String materialMatch;
+
+		public Boolean getPassed() {
+			return this.passed;
 		}
 
-		public void setMaterialMatch(String materialMatch) {
-			this.materialMatch = materialMatch;
-		}
-
-		public Boolean getPass() {
-			return this.pass;
-		}
-
-		public void setPass(Boolean pass) {
-			this.pass = pass;
+		public void setPassed(Boolean passed) {
+			this.passed = passed;
 		}
 
 		public String getIdentityInfo() {
@@ -104,6 +96,14 @@ public class GetRealPersonVerificationResultResponse extends AcsResponse {
 
 		public void setIdentityInfo(String identityInfo) {
 			this.identityInfo = identityInfo;
+		}
+
+		public String getMaterialMatch() {
+			return this.materialMatch;
+		}
+
+		public void setMaterialMatch(String materialMatch) {
+			this.materialMatch = materialMatch;
 		}
 	}
 

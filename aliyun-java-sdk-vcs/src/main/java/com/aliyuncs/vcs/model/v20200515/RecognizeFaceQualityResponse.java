@@ -24,20 +24,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class RecognizeFaceQualityResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -48,12 +48,12 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -66,19 +66,11 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String qualityScore;
-
 		private String description;
 
+		private String qualityScore;
+
 		private Attributes attributes;
-
-		public String getQualityScore() {
-			return this.qualityScore;
-		}
-
-		public void setQualityScore(String qualityScore) {
-			this.qualityScore = qualityScore;
-		}
 
 		public String getDescription() {
 			return this.description;
@@ -86,6 +78,14 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 		public void setDescription(String description) {
 			this.description = description;
+		}
+
+		public String getQualityScore() {
+			return this.qualityScore;
+		}
+
+		public void setQualityScore(String qualityScore) {
+			this.qualityScore = qualityScore;
 		}
 
 		public Attributes getAttributes() {
@@ -98,36 +98,28 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 
 		public static class Attributes {
 
-			private Integer leftTopX;
-
-			private Integer leftTopY;
+			private String faceQuality;
 
 			private Integer rightBottomX;
 
+			private String faceStyle;
+
 			private Integer rightBottomY;
+
+			private Integer leftTopY;
 
 			private String targetImageStoragePath;
 
-			private String faceStyle;
-
-			private String faceQuality;
+			private Integer leftTopX;
 
 			private String faceScore;
 
-			public Integer getLeftTopX() {
-				return this.leftTopX;
+			public String getFaceQuality() {
+				return this.faceQuality;
 			}
 
-			public void setLeftTopX(Integer leftTopX) {
-				this.leftTopX = leftTopX;
-			}
-
-			public Integer getLeftTopY() {
-				return this.leftTopY;
-			}
-
-			public void setLeftTopY(Integer leftTopY) {
-				this.leftTopY = leftTopY;
+			public void setFaceQuality(String faceQuality) {
+				this.faceQuality = faceQuality;
 			}
 
 			public Integer getRightBottomX() {
@@ -138,12 +130,28 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 				this.rightBottomX = rightBottomX;
 			}
 
+			public String getFaceStyle() {
+				return this.faceStyle;
+			}
+
+			public void setFaceStyle(String faceStyle) {
+				this.faceStyle = faceStyle;
+			}
+
 			public Integer getRightBottomY() {
 				return this.rightBottomY;
 			}
 
 			public void setRightBottomY(Integer rightBottomY) {
 				this.rightBottomY = rightBottomY;
+			}
+
+			public Integer getLeftTopY() {
+				return this.leftTopY;
+			}
+
+			public void setLeftTopY(Integer leftTopY) {
+				this.leftTopY = leftTopY;
 			}
 
 			public String getTargetImageStoragePath() {
@@ -154,20 +162,12 @@ public class RecognizeFaceQualityResponse extends AcsResponse {
 				this.targetImageStoragePath = targetImageStoragePath;
 			}
 
-			public String getFaceStyle() {
-				return this.faceStyle;
+			public Integer getLeftTopX() {
+				return this.leftTopX;
 			}
 
-			public void setFaceStyle(String faceStyle) {
-				this.faceStyle = faceStyle;
-			}
-
-			public String getFaceQuality() {
-				return this.faceQuality;
-			}
-
-			public void setFaceQuality(String faceQuality) {
-				this.faceQuality = faceQuality;
+			public void setLeftTopX(Integer leftTopX) {
+				this.leftTopX = leftTopX;
 			}
 
 			public String getFaceScore() {

@@ -46,52 +46,36 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 	public static class SnapshotJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
 
-		private String code;
+		private String message;
 
 		private String count;
 
 		private String tileCount;
 
-		private String message;
+		private String userData;
 
-		private String creationTime;
+		private String code;
 
-		private Input input;
+		private String pipelineId;
+
+		private String id;
 
 		private SnapshotConfig snapshotConfig;
 
 		private MNSMessageResult mNSMessageResult;
 
-		public String getId() {
-			return this.id;
+		private Input input;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -102,12 +86,12 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getCode() {
-			return this.code;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getCount() {
@@ -126,28 +110,36 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 			this.tileCount = tileCount;
 		}
 
-		public String getMessage() {
-			return this.message;
+		public String getUserData() {
+			return this.userData;
 		}
 
-		public void setMessage(String message) {
-			this.message = message;
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getCode() {
+			return this.code;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setCode(String code) {
+			this.code = code;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public SnapshotConfig getSnapshotConfig() {
@@ -166,47 +158,12 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 			this.mNSMessageResult = mNSMessageResult;
 		}
 
-		public static class Input {
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String bucket;
-
-			private String location;
-
-			private String object;
-
-			private String roleArn;
-
-			public String getBucket() {
-				return this.bucket;
-			}
-
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
-			}
-
-			public String getLocation() {
-				return this.location;
-			}
-
-			public void setLocation(String location) {
-				this.location = location;
-			}
-
-			public String getObject() {
-				return this.object;
-			}
-
-			public void setObject(String object) {
-				this.object = object;
-			}
-
-			public String getRoleArn() {
-				return this.roleArn;
-			}
-
-			public void setRoleArn(String roleArn) {
-				this.roleArn = roleArn;
-			}
+		public void setInput(Input input) {
+			this.input = input;
 		}
 
 		public static class SnapshotConfig {
@@ -215,19 +172,19 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			private String interval;
 
-			private String num;
+			private String frameType;
 
 			private String width;
 
 			private String height;
 
-			private String frameType;
+			private String num;
+
+			private TileOut tileOut;
 
 			private OutputFile outputFile;
 
 			private TileOutputFile tileOutputFile;
-
-			private TileOut tileOut;
 
 			public String getTime() {
 				return this.time;
@@ -245,12 +202,12 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 				this.interval = interval;
 			}
 
-			public String getNum() {
-				return this.num;
+			public String getFrameType() {
+				return this.frameType;
 			}
 
-			public void setNum(String num) {
-				this.num = num;
+			public void setFrameType(String frameType) {
+				this.frameType = frameType;
 			}
 
 			public String getWidth() {
@@ -269,12 +226,20 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 				this.height = height;
 			}
 
-			public String getFrameType() {
-				return this.frameType;
+			public String getNum() {
+				return this.num;
 			}
 
-			public void setFrameType(String frameType) {
-				this.frameType = frameType;
+			public void setNum(String num) {
+				this.num = num;
+			}
+
+			public TileOut getTileOut() {
+				return this.tileOut;
+			}
+
+			public void setTileOut(TileOut tileOut) {
+				this.tileOut = tileOut;
 			}
 
 			public OutputFile getOutputFile() {
@@ -293,159 +258,25 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 				this.tileOutputFile = tileOutputFile;
 			}
 
-			public TileOut getTileOut() {
-				return this.tileOut;
-			}
-
-			public void setTileOut(TileOut tileOut) {
-				this.tileOut = tileOut;
-			}
-
-			public static class OutputFile {
-
-				private String bucket;
-
-				private String location;
-
-				private String object;
-
-				private String roleArn;
-
-				public String getBucket() {
-					return this.bucket;
-				}
-
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
-				}
-
-				public String getLocation() {
-					return this.location;
-				}
-
-				public void setLocation(String location) {
-					this.location = location;
-				}
-
-				public String getObject() {
-					return this.object;
-				}
-
-				public void setObject(String object) {
-					this.object = object;
-				}
-
-				public String getRoleArn() {
-					return this.roleArn;
-				}
-
-				public void setRoleArn(String roleArn) {
-					this.roleArn = roleArn;
-				}
-			}
-
-			public static class TileOutputFile {
-
-				private String bucket;
-
-				private String location;
-
-				private String object;
-
-				private String roleArn;
-
-				public String getBucket() {
-					return this.bucket;
-				}
-
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
-				}
-
-				public String getLocation() {
-					return this.location;
-				}
-
-				public void setLocation(String location) {
-					this.location = location;
-				}
-
-				public String getObject() {
-					return this.object;
-				}
-
-				public void setObject(String object) {
-					this.object = object;
-				}
-
-				public String getRoleArn() {
-					return this.roleArn;
-				}
-
-				public void setRoleArn(String roleArn) {
-					this.roleArn = roleArn;
-				}
-			}
-
 			public static class TileOut {
-
-				private String lines;
-
-				private String columns;
-
-				private String cellWidth;
-
-				private String cellHeight;
-
-				private String margin;
 
 				private String padding;
 
 				private String color;
 
-				private String isKeepCellPic;
-
 				private String cellSelStep;
 
-				public String getLines() {
-					return this.lines;
-				}
+				private String cellHeight;
 
-				public void setLines(String lines) {
-					this.lines = lines;
-				}
+				private String cellWidth;
 
-				public String getColumns() {
-					return this.columns;
-				}
+				private String margin;
 
-				public void setColumns(String columns) {
-					this.columns = columns;
-				}
+				private String columns;
 
-				public String getCellWidth() {
-					return this.cellWidth;
-				}
+				private String isKeepCellPic;
 
-				public void setCellWidth(String cellWidth) {
-					this.cellWidth = cellWidth;
-				}
-
-				public String getCellHeight() {
-					return this.cellHeight;
-				}
-
-				public void setCellHeight(String cellHeight) {
-					this.cellHeight = cellHeight;
-				}
-
-				public String getMargin() {
-					return this.margin;
-				}
-
-				public void setMargin(String margin) {
-					this.margin = margin;
-				}
+				private String lines;
 
 				public String getPadding() {
 					return this.padding;
@@ -463,6 +294,46 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 					this.color = color;
 				}
 
+				public String getCellSelStep() {
+					return this.cellSelStep;
+				}
+
+				public void setCellSelStep(String cellSelStep) {
+					this.cellSelStep = cellSelStep;
+				}
+
+				public String getCellHeight() {
+					return this.cellHeight;
+				}
+
+				public void setCellHeight(String cellHeight) {
+					this.cellHeight = cellHeight;
+				}
+
+				public String getCellWidth() {
+					return this.cellWidth;
+				}
+
+				public void setCellWidth(String cellWidth) {
+					this.cellWidth = cellWidth;
+				}
+
+				public String getMargin() {
+					return this.margin;
+				}
+
+				public void setMargin(String margin) {
+					this.margin = margin;
+				}
+
+				public String getColumns() {
+					return this.columns;
+				}
+
+				public void setColumns(String columns) {
+					this.columns = columns;
+				}
+
 				public String getIsKeepCellPic() {
 					return this.isKeepCellPic;
 				}
@@ -471,12 +342,98 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 					this.isKeepCellPic = isKeepCellPic;
 				}
 
-				public String getCellSelStep() {
-					return this.cellSelStep;
+				public String getLines() {
+					return this.lines;
 				}
 
-				public void setCellSelStep(String cellSelStep) {
-					this.cellSelStep = cellSelStep;
+				public void setLines(String lines) {
+					this.lines = lines;
+				}
+			}
+
+			public static class OutputFile {
+
+				private String roleArn;
+
+				private String object;
+
+				private String location;
+
+				private String bucket;
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+
+				public String getObject() {
+					return this.object;
+				}
+
+				public void setObject(String object) {
+					this.object = object;
+				}
+
+				public String getLocation() {
+					return this.location;
+				}
+
+				public void setLocation(String location) {
+					this.location = location;
+				}
+
+				public String getBucket() {
+					return this.bucket;
+				}
+
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
+				}
+			}
+
+			public static class TileOutputFile {
+
+				private String roleArn;
+
+				private String object;
+
+				private String location;
+
+				private String bucket;
+
+				public String getRoleArn() {
+					return this.roleArn;
+				}
+
+				public void setRoleArn(String roleArn) {
+					this.roleArn = roleArn;
+				}
+
+				public String getObject() {
+					return this.object;
+				}
+
+				public void setObject(String object) {
+					this.object = object;
+				}
+
+				public String getLocation() {
+					return this.location;
+				}
+
+				public void setLocation(String location) {
+					this.location = location;
+				}
+
+				public String getBucket() {
+					return this.bucket;
+				}
+
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}
@@ -511,6 +468,49 @@ public class SubmitSnapshotJobResponse extends AcsResponse {
 
 			public void setErrorCode(String errorCode) {
 				this.errorCode = errorCode;
+			}
+		}
+
+		public static class Input {
+
+			private String roleArn;
+
+			private String object;
+
+			private String location;
+
+			private String bucket;
+
+			public String getRoleArn() {
+				return this.roleArn;
+			}
+
+			public void setRoleArn(String roleArn) {
+				this.roleArn = roleArn;
+			}
+
+			public String getObject() {
+				return this.object;
+			}
+
+			public void setObject(String object) {
+				this.object = object;
+			}
+
+			public String getLocation() {
+				return this.location;
+			}
+
+			public void setLocation(String location) {
+				this.location = location;
+			}
+
+			public String getBucket() {
+				return this.bucket;
+			}
+
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

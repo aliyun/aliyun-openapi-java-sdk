@@ -33,6 +33,8 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 
 	private Boolean pdfVector;
 
+	private String userData;
+
 	private String password;
 
 	private Long startPage;
@@ -122,6 +124,17 @@ public class CreateOfficeConversionTaskRequest extends RpcAcsRequest<CreateOffic
 		this.pdfVector = pdfVector;
 		if(pdfVector != null){
 			putQueryParameter("PdfVector", pdfVector.toString());
+		}
+	}
+
+	public String getUserData() {
+		return this.userData;
+	}
+
+	public void setUserData(String userData) {
+		this.userData = userData;
+		if(userData != null){
+			putQueryParameter("UserData", userData);
 		}
 	}
 

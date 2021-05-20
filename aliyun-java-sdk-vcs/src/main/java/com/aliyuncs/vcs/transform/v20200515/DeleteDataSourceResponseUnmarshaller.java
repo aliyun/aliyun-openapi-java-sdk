@@ -22,9 +22,9 @@ public class DeleteDataSourceResponseUnmarshaller {
 
 	public static DeleteDataSourceResponse unmarshall(DeleteDataSourceResponse deleteDataSourceResponse, UnmarshallerContext _ctx) {
 		
-		deleteDataSourceResponse.setCode(_ctx.stringValue("DeleteDataSourceResponse.Code"));
-		deleteDataSourceResponse.setData(_ctx.stringValue("DeleteDataSourceResponse.Data"));
 		deleteDataSourceResponse.setMessage(_ctx.stringValue("DeleteDataSourceResponse.Message"));
+		deleteDataSourceResponse.setData(_ctx.stringValue("DeleteDataSourceResponse.Data"));
+		deleteDataSourceResponse.setCode(_ctx.stringValue("DeleteDataSourceResponse.Code"));
 	 
 	 	return deleteDataSourceResponse;
 	}

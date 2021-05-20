@@ -57,29 +57,31 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 	public static class CensorJob {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
 
-		private String code;
+		private String titleCensorResult;
 
 		private String message;
 
-		private String creationTime;
-
-		private String titleCensorResult;
+		private String barrageCensorResult;
 
 		private String descCensorResult;
 
-		private String barrageCensorResult;
-
 		private String resultSaveObject;
 
+		private String userData;
+
+		private String code;
+
+		private String pipelineId;
+
+		private String id;
+
 		private List<ImageCensorResult> imageCensorResults;
+
+		private CensorTerrorismResult censorTerrorismResult;
 
 		private Input input;
 
@@ -87,30 +89,12 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 		private CensorPornResult censorPornResult;
 
-		private CensorTerrorismResult censorTerrorismResult;
-
-		public String getId() {
-			return this.id;
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -121,12 +105,12 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			this.state = state;
 		}
 
-		public String getCode() {
-			return this.code;
+		public String getTitleCensorResult() {
+			return this.titleCensorResult;
 		}
 
-		public void setCode(String code) {
-			this.code = code;
+		public void setTitleCensorResult(String titleCensorResult) {
+			this.titleCensorResult = titleCensorResult;
 		}
 
 		public String getMessage() {
@@ -137,20 +121,12 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getBarrageCensorResult() {
+			return this.barrageCensorResult;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getTitleCensorResult() {
-			return this.titleCensorResult;
-		}
-
-		public void setTitleCensorResult(String titleCensorResult) {
-			this.titleCensorResult = titleCensorResult;
+		public void setBarrageCensorResult(String barrageCensorResult) {
+			this.barrageCensorResult = barrageCensorResult;
 		}
 
 		public String getDescCensorResult() {
@@ -161,14 +137,6 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			this.descCensorResult = descCensorResult;
 		}
 
-		public String getBarrageCensorResult() {
-			return this.barrageCensorResult;
-		}
-
-		public void setBarrageCensorResult(String barrageCensorResult) {
-			this.barrageCensorResult = barrageCensorResult;
-		}
-
 		public String getResultSaveObject() {
 			return this.resultSaveObject;
 		}
@@ -177,12 +145,52 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			this.resultSaveObject = resultSaveObject;
 		}
 
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
+		}
+
+		public String getCode() {
+			return this.code;
+		}
+
+		public void setCode(String code) {
+			this.code = code;
+		}
+
+		public String getPipelineId() {
+			return this.pipelineId;
+		}
+
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
+		}
+
+		public String getId() {
+			return this.id;
+		}
+
+		public void setId(String id) {
+			this.id = id;
+		}
+
 		public List<ImageCensorResult> getImageCensorResults() {
 			return this.imageCensorResults;
 		}
 
 		public void setImageCensorResults(List<ImageCensorResult> imageCensorResults) {
 			this.imageCensorResults = imageCensorResults;
+		}
+
+		public CensorTerrorismResult getCensorTerrorismResult() {
+			return this.censorTerrorismResult;
+		}
+
+		public void setCensorTerrorismResult(CensorTerrorismResult censorTerrorismResult) {
+			this.censorTerrorismResult = censorTerrorismResult;
 		}
 
 		public Input getInput() {
@@ -209,31 +217,15 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			this.censorPornResult = censorPornResult;
 		}
 
-		public CensorTerrorismResult getCensorTerrorismResult() {
-			return this.censorTerrorismResult;
-		}
-
-		public void setCensorTerrorismResult(CensorTerrorismResult censorTerrorismResult) {
-			this.censorTerrorismResult = censorTerrorismResult;
-		}
-
 		public static class ImageCensorResult {
-
-			private String imageLocation;
 
 			private String imageBucket;
 
-			private String imageObject;
-
 			private String result;
 
-			public String getImageLocation() {
-				return this.imageLocation;
-			}
+			private String imageLocation;
 
-			public void setImageLocation(String imageLocation) {
-				this.imageLocation = imageLocation;
-			}
+			private String imageObject;
 
 			public String getImageBucket() {
 				return this.imageBucket;
@@ -243,14 +235,6 @@ public class QueryCensorJobListResponse extends AcsResponse {
 				this.imageBucket = imageBucket;
 			}
 
-			public String getImageObject() {
-				return this.imageObject;
-			}
-
-			public void setImageObject(String imageObject) {
-				this.imageObject = imageObject;
-			}
-
 			public String getResult() {
 				return this.result;
 			}
@@ -258,22 +242,177 @@ public class QueryCensorJobListResponse extends AcsResponse {
 			public void setResult(String result) {
 				this.result = result;
 			}
+
+			public String getImageLocation() {
+				return this.imageLocation;
+			}
+
+			public void setImageLocation(String imageLocation) {
+				this.imageLocation = imageLocation;
+			}
+
+			public String getImageObject() {
+				return this.imageObject;
+			}
+
+			public void setImageObject(String imageObject) {
+				this.imageObject = imageObject;
+			}
+		}
+
+		public static class CensorTerrorismResult {
+
+			private String suggestion;
+
+			private String averageScore;
+
+			private String label;
+
+			private String maxScore;
+
+			private List<Top> terrorismTopList;
+
+			private List<Counter> terrorismCounterList;
+
+			public String getSuggestion() {
+				return this.suggestion;
+			}
+
+			public void setSuggestion(String suggestion) {
+				this.suggestion = suggestion;
+			}
+
+			public String getAverageScore() {
+				return this.averageScore;
+			}
+
+			public void setAverageScore(String averageScore) {
+				this.averageScore = averageScore;
+			}
+
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getMaxScore() {
+				return this.maxScore;
+			}
+
+			public void setMaxScore(String maxScore) {
+				this.maxScore = maxScore;
+			}
+
+			public List<Top> getTerrorismTopList() {
+				return this.terrorismTopList;
+			}
+
+			public void setTerrorismTopList(List<Top> terrorismTopList) {
+				this.terrorismTopList = terrorismTopList;
+			}
+
+			public List<Counter> getTerrorismCounterList() {
+				return this.terrorismCounterList;
+			}
+
+			public void setTerrorismCounterList(List<Counter> terrorismCounterList) {
+				this.terrorismCounterList = terrorismCounterList;
+			}
+
+			public static class Top {
+
+				private String index;
+
+				private String score;
+
+				private String timestamp;
+
+				private String object;
+
+				private String label;
+
+				public String getIndex() {
+					return this.index;
+				}
+
+				public void setIndex(String index) {
+					this.index = index;
+				}
+
+				public String getScore() {
+					return this.score;
+				}
+
+				public void setScore(String score) {
+					this.score = score;
+				}
+
+				public String getTimestamp() {
+					return this.timestamp;
+				}
+
+				public void setTimestamp(String timestamp) {
+					this.timestamp = timestamp;
+				}
+
+				public String getObject() {
+					return this.object;
+				}
+
+				public void setObject(String object) {
+					this.object = object;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+			}
+
+			public static class Counter {
+
+				private String label;
+
+				private Integer count;
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
+				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
+				}
+			}
 		}
 
 		public static class Input {
 
-			private String bucket;
+			private String object;
 
 			private String location;
 
-			private String object;
+			private String bucket;
 
-			public String getBucket() {
-				return this.bucket;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
 			public String getLocation() {
@@ -284,12 +423,12 @@ public class QueryCensorJobListResponse extends AcsResponse {
 				this.location = location;
 			}
 
-			public String getObject() {
-				return this.object;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 
@@ -297,11 +436,11 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 			private String interval;
 
-			private String bizType;
-
 			private String saveType;
 
 			private String scenes;
+
+			private String bizType;
 
 			private OutputFile outputFile;
 
@@ -311,14 +450,6 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 			public void setInterval(String interval) {
 				this.interval = interval;
-			}
-
-			public String getBizType() {
-				return this.bizType;
-			}
-
-			public void setBizType(String bizType) {
-				this.bizType = bizType;
 			}
 
 			public String getSaveType() {
@@ -337,6 +468,14 @@ public class QueryCensorJobListResponse extends AcsResponse {
 				this.scenes = scenes;
 			}
 
+			public String getBizType() {
+				return this.bizType;
+			}
+
+			public void setBizType(String bizType) {
+				this.bizType = bizType;
+			}
+
 			public OutputFile getOutputFile() {
 				return this.outputFile;
 			}
@@ -347,18 +486,18 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 			public static class OutputFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -369,37 +508,29 @@ public class QueryCensorJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}
 
 		public static class CensorPornResult {
 
-			private String label;
-
 			private String suggestion;
-
-			private String maxScore;
 
 			private String averageScore;
 
-			private List<Counter> pornCounterList;
+			private String label;
 
-			private List<Top> pornTopList;
+			private String maxScore;
 
-			public String getLabel() {
-				return this.label;
-			}
+			private List<Counter1> pornCounterList;
 
-			public void setLabel(String label) {
-				this.label = label;
-			}
+			private List<Top2> pornTopList;
 
 			public String getSuggestion() {
 				return this.suggestion;
@@ -407,14 +538,6 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 			public void setSuggestion(String suggestion) {
 				this.suggestion = suggestion;
-			}
-
-			public String getMaxScore() {
-				return this.maxScore;
-			}
-
-			public void setMaxScore(String maxScore) {
-				this.maxScore = maxScore;
 			}
 
 			public String getAverageScore() {
@@ -425,174 +548,43 @@ public class QueryCensorJobListResponse extends AcsResponse {
 				this.averageScore = averageScore;
 			}
 
-			public List<Counter> getPornCounterList() {
+			public String getLabel() {
+				return this.label;
+			}
+
+			public void setLabel(String label) {
+				this.label = label;
+			}
+
+			public String getMaxScore() {
+				return this.maxScore;
+			}
+
+			public void setMaxScore(String maxScore) {
+				this.maxScore = maxScore;
+			}
+
+			public List<Counter1> getPornCounterList() {
 				return this.pornCounterList;
 			}
 
-			public void setPornCounterList(List<Counter> pornCounterList) {
+			public void setPornCounterList(List<Counter1> pornCounterList) {
 				this.pornCounterList = pornCounterList;
 			}
 
-			public List<Top> getPornTopList() {
+			public List<Top2> getPornTopList() {
 				return this.pornTopList;
 			}
 
-			public void setPornTopList(List<Top> pornTopList) {
+			public void setPornTopList(List<Top2> pornTopList) {
 				this.pornTopList = pornTopList;
-			}
-
-			public static class Counter {
-
-				private Integer count;
-
-				private String label;
-
-				public Integer getCount() {
-					return this.count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
-			}
-
-			public static class Top {
-
-				private String label;
-
-				private String score;
-
-				private String timestamp;
-
-				private String index;
-
-				private String object;
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
-
-				public String getScore() {
-					return this.score;
-				}
-
-				public void setScore(String score) {
-					this.score = score;
-				}
-
-				public String getTimestamp() {
-					return this.timestamp;
-				}
-
-				public void setTimestamp(String timestamp) {
-					this.timestamp = timestamp;
-				}
-
-				public String getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(String index) {
-					this.index = index;
-				}
-
-				public String getObject() {
-					return this.object;
-				}
-
-				public void setObject(String object) {
-					this.object = object;
-				}
-			}
-		}
-
-		public static class CensorTerrorismResult {
-
-			private String label;
-
-			private String suggestion;
-
-			private String maxScore;
-
-			private String averageScore;
-
-			private List<Counter1> terrorismCounterList;
-
-			private List<Top2> terrorismTopList;
-
-			public String getLabel() {
-				return this.label;
-			}
-
-			public void setLabel(String label) {
-				this.label = label;
-			}
-
-			public String getSuggestion() {
-				return this.suggestion;
-			}
-
-			public void setSuggestion(String suggestion) {
-				this.suggestion = suggestion;
-			}
-
-			public String getMaxScore() {
-				return this.maxScore;
-			}
-
-			public void setMaxScore(String maxScore) {
-				this.maxScore = maxScore;
-			}
-
-			public String getAverageScore() {
-				return this.averageScore;
-			}
-
-			public void setAverageScore(String averageScore) {
-				this.averageScore = averageScore;
-			}
-
-			public List<Counter1> getTerrorismCounterList() {
-				return this.terrorismCounterList;
-			}
-
-			public void setTerrorismCounterList(List<Counter1> terrorismCounterList) {
-				this.terrorismCounterList = terrorismCounterList;
-			}
-
-			public List<Top2> getTerrorismTopList() {
-				return this.terrorismTopList;
-			}
-
-			public void setTerrorismTopList(List<Top2> terrorismTopList) {
-				this.terrorismTopList = terrorismTopList;
 			}
 
 			public static class Counter1 {
 
-				private Integer count;
-
 				private String label;
 
-				public Integer getCount() {
-					return this.count;
-				}
-
-				public void setCount(Integer count) {
-					this.count = count;
-				}
+				private Integer count;
 
 				public String getLabel() {
 					return this.label;
@@ -600,27 +592,35 @@ public class QueryCensorJobListResponse extends AcsResponse {
 
 				public void setLabel(String label) {
 					this.label = label;
+				}
+
+				public Integer getCount() {
+					return this.count;
+				}
+
+				public void setCount(Integer count) {
+					this.count = count;
 				}
 			}
 
 			public static class Top2 {
 
-				private String label;
+				private String index;
 
 				private String score;
 
 				private String timestamp;
 
-				private String index;
-
 				private String object;
 
-				public String getLabel() {
-					return this.label;
+				private String label;
+
+				public String getIndex() {
+					return this.index;
 				}
 
-				public void setLabel(String label) {
-					this.label = label;
+				public void setIndex(String index) {
+					this.index = index;
 				}
 
 				public String getScore() {
@@ -639,20 +639,20 @@ public class QueryCensorJobListResponse extends AcsResponse {
 					this.timestamp = timestamp;
 				}
 
-				public String getIndex() {
-					return this.index;
-				}
-
-				public void setIndex(String index) {
-					this.index = index;
-				}
-
 				public String getObject() {
 					return this.object;
 				}
 
 				public void setObject(String object) {
 					this.object = object;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
 				}
 			}
 		}

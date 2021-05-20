@@ -31,7 +31,7 @@ public class CreateConsumerGroupSubscribeRelationRequest extends RpcAcsRequest<C
 
 	private String productKey;
 	public CreateConsumerGroupSubscribeRelationRequest() {
-		super("Iot", "2018-01-20", "CreateConsumerGroupSubscribeRelation");
+		super("Iot", "2018-01-20", "CreateConsumerGroupSubscribeRelation", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

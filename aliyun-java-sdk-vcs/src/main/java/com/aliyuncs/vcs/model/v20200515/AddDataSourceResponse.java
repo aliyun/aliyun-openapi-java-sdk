@@ -24,19 +24,11 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class AddDataSourceResponse extends AcsResponse {
 
-	private String code;
-
 	private String message;
 
+	private String code;
+
 	private Data data;
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getMessage() {
 		return this.message;
@@ -44,6 +36,14 @@ public class AddDataSourceResponse extends AcsResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -56,18 +56,18 @@ public class AddDataSourceResponse extends AcsResponse {
 
 	public static class Data {
 
-		private String dataSourceId;
+		private String ossPath;
 
 		private String kafkaTopic;
 
-		private String ossPath;
+		private String dataSourceId;
 
-		public String getDataSourceId() {
-			return this.dataSourceId;
+		public String getOssPath() {
+			return this.ossPath;
 		}
 
-		public void setDataSourceId(String dataSourceId) {
-			this.dataSourceId = dataSourceId;
+		public void setOssPath(String ossPath) {
+			this.ossPath = ossPath;
 		}
 
 		public String getKafkaTopic() {
@@ -78,12 +78,12 @@ public class AddDataSourceResponse extends AcsResponse {
 			this.kafkaTopic = kafkaTopic;
 		}
 
-		public String getOssPath() {
-			return this.ossPath;
+		public String getDataSourceId() {
+			return this.dataSourceId;
 		}
 
-		public void setOssPath(String ossPath) {
-			this.ossPath = ossPath;
+		public void setDataSourceId(String dataSourceId) {
+			this.dataSourceId = dataSourceId;
 		}
 	}
 

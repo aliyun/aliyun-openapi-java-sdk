@@ -49,19 +49,19 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		private String dBEndpointId;
 
-		private String endpointType;
-
-		private String nodes;
-
-		private String readWriteMode;
+		private String nodeWithRoles;
 
 		private String autoAddNewNodes;
 
-		private String endpointConfig;
-
-		private String nodeWithRoles;
+		private String endpointType;
 
 		private String dBEndpointDescription;
+
+		private String endpointConfig;
+
+		private String readWriteMode;
+
+		private String nodes;
 
 		private List<Address> addressItems;
 
@@ -73,28 +73,12 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 			this.dBEndpointId = dBEndpointId;
 		}
 
-		public String getEndpointType() {
-			return this.endpointType;
+		public String getNodeWithRoles() {
+			return this.nodeWithRoles;
 		}
 
-		public void setEndpointType(String endpointType) {
-			this.endpointType = endpointType;
-		}
-
-		public String getNodes() {
-			return this.nodes;
-		}
-
-		public void setNodes(String nodes) {
-			this.nodes = nodes;
-		}
-
-		public String getReadWriteMode() {
-			return this.readWriteMode;
-		}
-
-		public void setReadWriteMode(String readWriteMode) {
-			this.readWriteMode = readWriteMode;
+		public void setNodeWithRoles(String nodeWithRoles) {
+			this.nodeWithRoles = nodeWithRoles;
 		}
 
 		public String getAutoAddNewNodes() {
@@ -105,20 +89,12 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 			this.autoAddNewNodes = autoAddNewNodes;
 		}
 
-		public String getEndpointConfig() {
-			return this.endpointConfig;
+		public String getEndpointType() {
+			return this.endpointType;
 		}
 
-		public void setEndpointConfig(String endpointConfig) {
-			this.endpointConfig = endpointConfig;
-		}
-
-		public String getNodeWithRoles() {
-			return this.nodeWithRoles;
-		}
-
-		public void setNodeWithRoles(String nodeWithRoles) {
-			this.nodeWithRoles = nodeWithRoles;
+		public void setEndpointType(String endpointType) {
+			this.endpointType = endpointType;
 		}
 
 		public String getDBEndpointDescription() {
@@ -127,6 +103,30 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public void setDBEndpointDescription(String dBEndpointDescription) {
 			this.dBEndpointDescription = dBEndpointDescription;
+		}
+
+		public String getEndpointConfig() {
+			return this.endpointConfig;
+		}
+
+		public void setEndpointConfig(String endpointConfig) {
+			this.endpointConfig = endpointConfig;
+		}
+
+		public String getReadWriteMode() {
+			return this.readWriteMode;
+		}
+
+		public void setReadWriteMode(String readWriteMode) {
+			this.readWriteMode = readWriteMode;
+		}
+
+		public String getNodes() {
+			return this.nodes;
+		}
+
+		public void setNodes(String nodes) {
+			this.nodes = nodes;
 		}
 
 		public List<Address> getAddressItems() {
@@ -139,52 +139,28 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 		public static class Address {
 
-			private String connectionString;
-
-			private String iPAddress;
-
-			private String netType;
-
-			private String port;
+			private String privateZoneConnectionString;
 
 			private String vPCId;
+
+			private String port;
 
 			private String vSwitchId;
 
 			private String vpcInstanceId;
 
-			private String privateZoneConnectionString;
+			private String iPAddress;
 
-			public String getConnectionString() {
-				return this.connectionString;
+			private String connectionString;
+
+			private String netType;
+
+			public String getPrivateZoneConnectionString() {
+				return this.privateZoneConnectionString;
 			}
 
-			public void setConnectionString(String connectionString) {
-				this.connectionString = connectionString;
-			}
-
-			public String getIPAddress() {
-				return this.iPAddress;
-			}
-
-			public void setIPAddress(String iPAddress) {
-				this.iPAddress = iPAddress;
-			}
-
-			public String getNetType() {
-				return this.netType;
-			}
-
-			public void setNetType(String netType) {
-				this.netType = netType;
-			}
-
-			public String getPort() {
-				return this.port;
-			}
-
-			public void setPort(String port) {
-				this.port = port;
+			public void setPrivateZoneConnectionString(String privateZoneConnectionString) {
+				this.privateZoneConnectionString = privateZoneConnectionString;
 			}
 
 			public String getVPCId() {
@@ -193,6 +169,14 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 
 			public void setVPCId(String vPCId) {
 				this.vPCId = vPCId;
+			}
+
+			public String getPort() {
+				return this.port;
+			}
+
+			public void setPort(String port) {
+				this.port = port;
 			}
 
 			public String getVSwitchId() {
@@ -211,12 +195,28 @@ public class DescribeDBClusterEndpointsResponse extends AcsResponse {
 				this.vpcInstanceId = vpcInstanceId;
 			}
 
-			public String getPrivateZoneConnectionString() {
-				return this.privateZoneConnectionString;
+			public String getIPAddress() {
+				return this.iPAddress;
 			}
 
-			public void setPrivateZoneConnectionString(String privateZoneConnectionString) {
-				this.privateZoneConnectionString = privateZoneConnectionString;
+			public void setIPAddress(String iPAddress) {
+				this.iPAddress = iPAddress;
+			}
+
+			public String getConnectionString() {
+				return this.connectionString;
+			}
+
+			public void setConnectionString(String connectionString) {
+				this.connectionString = connectionString;
+			}
+
+			public String getNetType() {
+				return this.netType;
+			}
+
+			public void setNetType(String netType) {
+				this.netType = netType;
 			}
 		}
 	}

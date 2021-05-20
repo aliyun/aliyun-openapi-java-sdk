@@ -23,8 +23,8 @@ public class DeleteFaceImageTemplateResponseUnmarshaller {
 	public static DeleteFaceImageTemplateResponse unmarshall(DeleteFaceImageTemplateResponse deleteFaceImageTemplateResponse, UnmarshallerContext _ctx) {
 		
 		deleteFaceImageTemplateResponse.setRequestId(_ctx.stringValue("DeleteFaceImageTemplateResponse.RequestId"));
-		deleteFaceImageTemplateResponse.setMessage(_ctx.stringValue("DeleteFaceImageTemplateResponse.Message"));
 		deleteFaceImageTemplateResponse.setCode(_ctx.stringValue("DeleteFaceImageTemplateResponse.Code"));
+		deleteFaceImageTemplateResponse.setMessage(_ctx.stringValue("DeleteFaceImageTemplateResponse.Message"));
 	 
 	 	return deleteFaceImageTemplateResponse;
 	}

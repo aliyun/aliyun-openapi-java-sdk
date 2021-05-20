@@ -23,9 +23,9 @@ public class UpdateOuterAccountResponseUnmarshaller {
 	public static UpdateOuterAccountResponse unmarshall(UpdateOuterAccountResponse updateOuterAccountResponse, UnmarshallerContext _ctx) {
 		
 		updateOuterAccountResponse.setRequestId(_ctx.stringValue("UpdateOuterAccountResponse.RequestId"));
-		updateOuterAccountResponse.setCode(_ctx.stringValue("UpdateOuterAccountResponse.Code"));
 		updateOuterAccountResponse.setMessage(_ctx.stringValue("UpdateOuterAccountResponse.Message"));
 		updateOuterAccountResponse.setData(_ctx.stringValue("UpdateOuterAccountResponse.Data"));
+		updateOuterAccountResponse.setCode(_ctx.stringValue("UpdateOuterAccountResponse.Code"));
 		updateOuterAccountResponse.setSuccess(_ctx.booleanValue("UpdateOuterAccountResponse.Success"));
 	 
 	 	return updateOuterAccountResponse;

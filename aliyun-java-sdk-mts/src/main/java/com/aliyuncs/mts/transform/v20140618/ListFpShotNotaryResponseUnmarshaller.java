@@ -32,13 +32,13 @@ public class ListFpShotNotaryResponseUnmarshaller {
 		List<FpShotNotary> fpShotNotaryList = new ArrayList<FpShotNotary>();
 		for (int i = 0; i < _ctx.lengthValue("ListFpShotNotaryResponse.FpShotNotaryList.Length"); i++) {
 			FpShotNotary fpShotNotary = new FpShotNotary();
-			fpShotNotary.setTransactionId(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].TransactionId"));
-			fpShotNotary.setTxHash(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].TxHash"));
-			fpShotNotary.setFpDBId(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].FpDBId"));
-			fpShotNotary.setJobId(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].JobId"));
-			fpShotNotary.setDetail(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].Detail"));
 			fpShotNotary.setCreationTime(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].CreationTime"));
 			fpShotNotary.setFinishTime(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].FinishTime"));
+			fpShotNotary.setJobId(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].JobId"));
+			fpShotNotary.setTxHash(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].TxHash"));
+			fpShotNotary.setTransactionId(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].TransactionId"));
+			fpShotNotary.setFpDBId(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].FpDBId"));
+			fpShotNotary.setDetail(_ctx.stringValue("ListFpShotNotaryResponse.FpShotNotaryList["+ i +"].Detail"));
 
 			fpShotNotaryList.add(fpShotNotary);
 		}

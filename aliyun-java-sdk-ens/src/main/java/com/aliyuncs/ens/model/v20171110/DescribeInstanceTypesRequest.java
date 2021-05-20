@@ -24,7 +24,7 @@ import com.aliyuncs.http.MethodType;
 public class DescribeInstanceTypesRequest extends RpcAcsRequest<DescribeInstanceTypesResponse> {
 	   
 	public DescribeInstanceTypesRequest() {
-		super("Ens", "2017-11-10", "DescribeInstanceTypes");
+		super("Ens", "2017-11-10", "DescribeInstanceTypes", "ens");
 		setMethod(MethodType.POST);
 	}
 

@@ -99,6 +99,20 @@ public class ListJobTemplatesResponse extends AcsResponse {
 
 		private String variables;
 
+		private String queue;
+
+		private String clockTime;
+
+		private Integer node;
+
+		private Integer task;
+
+		private Integer thread;
+
+		private String mem;
+
+		private Integer gpu;
+
 		public String getId() {
 			return this.id;
 		}
@@ -185,6 +199,62 @@ public class ListJobTemplatesResponse extends AcsResponse {
 
 		public void setVariables(String variables) {
 			this.variables = variables;
+		}
+
+		public String getQueue() {
+			return this.queue;
+		}
+
+		public void setQueue(String queue) {
+			this.queue = queue;
+		}
+
+		public String getClockTime() {
+			return this.clockTime;
+		}
+
+		public void setClockTime(String clockTime) {
+			this.clockTime = clockTime;
+		}
+
+		public Integer getNode() {
+			return this.node;
+		}
+
+		public void setNode(Integer node) {
+			this.node = node;
+		}
+
+		public Integer getTask() {
+			return this.task;
+		}
+
+		public void setTask(Integer task) {
+			this.task = task;
+		}
+
+		public Integer getThread() {
+			return this.thread;
+		}
+
+		public void setThread(Integer thread) {
+			this.thread = thread;
+		}
+
+		public String getMem() {
+			return this.mem;
+		}
+
+		public void setMem(String mem) {
+			this.mem = mem;
+		}
+
+		public Integer getGpu() {
+			return this.gpu;
+		}
+
+		public void setGpu(Integer gpu) {
+			this.gpu = gpu;
 		}
 	}
 

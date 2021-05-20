@@ -23,10 +23,10 @@ public class InsertTaskDetailResponseUnmarshaller {
 	public static InsertTaskDetailResponse unmarshall(InsertTaskDetailResponse insertTaskDetailResponse, UnmarshallerContext _ctx) {
 		
 		insertTaskDetailResponse.setRequestId(_ctx.stringValue("InsertTaskDetailResponse.RequestId"));
-		insertTaskDetailResponse.setSuccess(_ctx.booleanValue("InsertTaskDetailResponse.Success"));
-		insertTaskDetailResponse.setCode(_ctx.stringValue("InsertTaskDetailResponse.Code"));
 		insertTaskDetailResponse.setMessage(_ctx.stringValue("InsertTaskDetailResponse.Message"));
 		insertTaskDetailResponse.setData(_ctx.stringValue("InsertTaskDetailResponse.Data"));
+		insertTaskDetailResponse.setCode(_ctx.stringValue("InsertTaskDetailResponse.Code"));
+		insertTaskDetailResponse.setSuccess(_ctx.booleanValue("InsertTaskDetailResponse.Success"));
 	 
 	 	return insertTaskDetailResponse;
 	}

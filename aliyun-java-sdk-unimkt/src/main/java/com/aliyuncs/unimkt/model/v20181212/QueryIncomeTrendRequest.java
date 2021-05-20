@@ -51,6 +51,8 @@ public class QueryIncomeTrendRequest extends RpcAcsRequest<QueryIncomeTrendRespo
 
 	private String dimension;
 
+	private String queryType;
+
 	private String business;
 
 	private Long endTime;
@@ -211,6 +213,17 @@ public class QueryIncomeTrendRequest extends RpcAcsRequest<QueryIncomeTrendRespo
 		this.dimension = dimension;
 		if(dimension != null){
 			putQueryParameter("Dimension", dimension);
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 

@@ -38,8 +38,8 @@ public class RegisterFaceResponseUnmarshaller {
 			Rect rect = new Rect();
 			rect.setLeft(_ctx.integerValue("RegisterFaceResponse.Faces["+ i +"].Rect.Left"));
 			rect.setTop(_ctx.integerValue("RegisterFaceResponse.Faces["+ i +"].Rect.Top"));
-			rect.setWidth(_ctx.integerValue("RegisterFaceResponse.Faces["+ i +"].Rect.Width"));
 			rect.setHeight(_ctx.integerValue("RegisterFaceResponse.Faces["+ i +"].Rect.Height"));
+			rect.setWidth(_ctx.integerValue("RegisterFaceResponse.Faces["+ i +"].Rect.Width"));
 			face.setRect(rect);
 
 			faces.add(face);

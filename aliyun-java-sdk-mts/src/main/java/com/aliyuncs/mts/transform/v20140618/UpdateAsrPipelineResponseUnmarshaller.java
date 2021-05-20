@@ -27,14 +27,14 @@ public class UpdateAsrPipelineResponseUnmarshaller {
 		updateAsrPipelineResponse.setRequestId(_ctx.stringValue("UpdateAsrPipelineResponse.RequestId"));
 
 		Pipeline pipeline = new Pipeline();
-		pipeline.setId(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.Id"));
-		pipeline.setName(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.Name"));
 		pipeline.setState(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.State"));
 		pipeline.setPriority(_ctx.integerValue("UpdateAsrPipelineResponse.Pipeline.Priority"));
+		pipeline.setName(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.Name"));
+		pipeline.setId(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.Id"));
 
 		NotifyConfig notifyConfig = new NotifyConfig();
-		notifyConfig.setTopic(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.NotifyConfig.Topic"));
 		notifyConfig.setQueueName(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.NotifyConfig.QueueName"));
+		notifyConfig.setTopic(_ctx.stringValue("UpdateAsrPipelineResponse.Pipeline.NotifyConfig.Topic"));
 		pipeline.setNotifyConfig(notifyConfig);
 		updateAsrPipelineResponse.setPipeline(pipeline);
 	 

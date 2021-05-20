@@ -28,31 +28,34 @@ public class ListEventAlgorithmResultsResponseUnmarshaller {
 	public static ListEventAlgorithmResultsResponse unmarshall(ListEventAlgorithmResultsResponse listEventAlgorithmResultsResponse, UnmarshallerContext _ctx) {
 		
 		listEventAlgorithmResultsResponse.setRequestId(_ctx.stringValue("ListEventAlgorithmResultsResponse.RequestId"));
-		listEventAlgorithmResultsResponse.setCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Code"));
-		listEventAlgorithmResultsResponse.setMessage(_ctx.stringValue("ListEventAlgorithmResultsResponse.Message"));
 		listEventAlgorithmResultsResponse.setExtendValue(_ctx.stringValue("ListEventAlgorithmResultsResponse.ExtendValue"));
+		listEventAlgorithmResultsResponse.setMessage(_ctx.stringValue("ListEventAlgorithmResultsResponse.Message"));
+		listEventAlgorithmResultsResponse.setCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageNumber"));
-		data.setPageSize(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.TotalPage"));
+		data.setPageNumber(_ctx.integerValue("ListEventAlgorithmResultsResponse.Data.PageNumber"));
 
 		List<RecordsItem> records = new ArrayList<RecordsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListEventAlgorithmResultsResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
-			recordsItem.setCapStyle(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
-			recordsItem.setCorpId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
-			recordsItem.setDataSourceId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
-			recordsItem.setEventType(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].EventType"));
-			recordsItem.setFaceCount(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].FaceCount"));
 			recordsItem.setPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].PicUrlPath"));
-			recordsItem.setShotTime(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setUuidCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].UuidCode"));
+			recordsItem.setCorpId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CorpId"));
+			recordsItem.setEventType(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].EventType"));
+			recordsItem.setExtendValueThree(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueThree"));
 			recordsItem.setTargetPicUrlPath(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TargetPicUrlPath"));
-			recordsItem.setRecordId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].RecordId"));
+			recordsItem.setCapStyle(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].CapStyle"));
 			recordsItem.setExtendValue(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValue"));
 			recordsItem.setExtendValueTwo(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueTwo"));
-			recordsItem.setExtendValueThree(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ExtendValueThree"));
+			recordsItem.setTagCode(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TagCode"));
+			recordsItem.setShotTime(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].ShotTime"));
+			recordsItem.setRecordId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].RecordId"));
+			recordsItem.setTagCodeReliability(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].TagCodeReliability"));
+			recordsItem.setFaceCount(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].FaceCount"));
+			recordsItem.setDataSourceId(_ctx.stringValue("ListEventAlgorithmResultsResponse.Data.Records["+ i +"].DataSourceId"));
 
 			records.add(recordsItem);
 		}

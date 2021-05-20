@@ -26,9 +26,9 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Boolean success;
-
 	private Boolean result;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class UpdateWorkspaceUserRoleResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
 	public Boolean getResult() {
 		return this.result;
 	}
 
 	public void setResult(Boolean result) {
 		this.result = result;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override

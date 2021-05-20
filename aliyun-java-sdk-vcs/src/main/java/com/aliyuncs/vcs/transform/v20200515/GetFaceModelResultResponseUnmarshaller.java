@@ -28,8 +28,8 @@ public class GetFaceModelResultResponseUnmarshaller {
 	public static GetFaceModelResultResponse unmarshall(GetFaceModelResultResponse getFaceModelResultResponse, UnmarshallerContext _ctx) {
 		
 		getFaceModelResultResponse.setRequestId(_ctx.stringValue("GetFaceModelResultResponse.RequestId"));
-		getFaceModelResultResponse.setCode(_ctx.stringValue("GetFaceModelResultResponse.Code"));
 		getFaceModelResultResponse.setMessage(_ctx.stringValue("GetFaceModelResultResponse.Message"));
+		getFaceModelResultResponse.setCode(_ctx.stringValue("GetFaceModelResultResponse.Code"));
 
 		Data data = new Data();
 
@@ -37,37 +37,37 @@ public class GetFaceModelResultResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("GetFaceModelResultResponse.Data.Records.Length"); i++) {
 			RecordsItem recordsItem = new RecordsItem();
 			recordsItem.setMustacheStyle(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].MustacheStyle"));
-			recordsItem.setFaceStyle(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].FaceStyle"));
-			recordsItem.setCapStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapStyle"));
-			recordsItem.setSkinColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].SkinColor"));
-			recordsItem.setRightBottomY(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].RightBottomY"));
 			recordsItem.setRightBottomX(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].RightBottomX"));
-			recordsItem.setHairStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairStyle"));
-			recordsItem.setGenderCode(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GenderCode"));
-			recordsItem.setRespiratorColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].RespiratorColor"));
-			recordsItem.setEthicCode(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].EthicCode"));
-			recordsItem.setAgeLowerLimit(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeLowerLimit"));
-			recordsItem.setLeftTopY(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].LeftTopY"));
-			recordsItem.setLeftTopX(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].LeftTopX"));
-			recordsItem.setHairColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairColor"));
-			recordsItem.setAgeUpLimit(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeUpLimit"));
-			recordsItem.setGlassStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassStyle"));
-			recordsItem.setGlassColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassColor"));
-			recordsItem.setCapColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapColor"));
+			recordsItem.setFaceStyle(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].FaceStyle"));
+			recordsItem.setRightBottomY(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].RightBottomY"));
 			recordsItem.setCapColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapColorReliability"));
+			recordsItem.setCapStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapStyle"));
 			recordsItem.setRespiratorColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].RespiratorColorReliability"));
+			recordsItem.setSkinColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].SkinColor"));
 			recordsItem.setEthicCodeReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].EthicCodeReliability"));
 			recordsItem.setGenderCodeReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].GenderCodeReliability"));
 			recordsItem.setGlassColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassColorReliability"));
+			recordsItem.setHairStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairStyle"));
+			recordsItem.setGenderCode(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GenderCode"));
+			recordsItem.setRespiratorColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].RespiratorColor"));
 			recordsItem.setSkinColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].SkinColorReliability"));
+			recordsItem.setEthicCode(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].EthicCode"));
 			recordsItem.setMustacheStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].MustacheStyleReliability"));
 			recordsItem.setCapStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapStyleReliability"));
+			recordsItem.setAgeLowerLimit(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeLowerLimit"));
 			recordsItem.setFaceStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].FaceStyleReliability"));
+			recordsItem.setLeftTopY(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].LeftTopY"));
+			recordsItem.setLeftTopX(_ctx.floatValue("GetFaceModelResultResponse.Data.Records["+ i +"].LeftTopX"));
 			recordsItem.setGlassStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassStyleReliability"));
+			recordsItem.setHairColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairColor"));
+			recordsItem.setGlassStyle(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassStyle"));
+			recordsItem.setAgeUpLimit(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeUpLimit"));
 			recordsItem.setAgeUpLimitReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeUpLimitReliability"));
 			recordsItem.setHairStyleReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairStyleReliability"));
 			recordsItem.setAgeLowerLimitReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].AgeLowerLimitReliability"));
 			recordsItem.setHairColorReliability(_ctx.stringValue("GetFaceModelResultResponse.Data.Records["+ i +"].HairColorReliability"));
+			recordsItem.setGlassColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].GlassColor"));
+			recordsItem.setCapColor(_ctx.integerValue("GetFaceModelResultResponse.Data.Records["+ i +"].CapColor"));
 
 			List<Float> featureData = new ArrayList<Float>();
 			for (int j = 0; j < _ctx.lengthValue("GetFaceModelResultResponse.Data.Records["+ i +"].FeatureData.Length"); j++) {

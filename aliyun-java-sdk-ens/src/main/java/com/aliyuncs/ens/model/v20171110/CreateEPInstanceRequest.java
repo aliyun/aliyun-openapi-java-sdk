@@ -34,7 +34,7 @@ public class CreateEPInstanceRequest extends RpcAcsRequest<CreateEPInstanceRespo
 
 	private Integer internetMaxBandwidthOut;
 	public CreateEPInstanceRequest() {
-		super("Ens", "2017-11-10", "CreateEPInstance");
+		super("Ens", "2017-11-10", "CreateEPInstance", "ens");
 		setMethod(MethodType.POST);
 	}
 

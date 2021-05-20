@@ -25,30 +25,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
+	private String extendValue;
 
 	private String requestId;
 
-	private String extendValue;
+	private String message;
+
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getExtendValue() {
+		return this.extendValue;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setExtendValue(String extendValue) {
+		this.extendValue = extendValue;
 	}
 
 	public String getRequestId() {
@@ -59,12 +51,20 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getExtendValue() {
-		return this.extendValue;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setExtendValue(String extendValue) {
-		this.extendValue = extendValue;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -77,22 +77,22 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNumber;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNumber;
 
 		private List<RecordsItem> records;
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -103,20 +103,20 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<RecordsItem> getRecords() {
@@ -129,36 +129,50 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 
 		public static class RecordsItem {
 
-			private String capStyle;
+			private String picUrlPath;
+
+			private String uuidCode;
 
 			private String corpId;
 
-			private String dataSourceId;
-
 			private String eventType;
 
-			private String faceCount;
-
-			private String picUrlPath;
-
-			private String shotTime;
+			private String extendValueThree;
 
 			private String targetPicUrlPath;
 
-			private String recordId;
+			private String capStyle;
 
 			private String extendValue;
 
 			private String extendValueTwo;
 
-			private String extendValueThree;
+			private String tagCode;
 
-			public String getCapStyle() {
-				return this.capStyle;
+			private String shotTime;
+
+			private String recordId;
+
+			private String tagCodeReliability;
+
+			private String faceCount;
+
+			private String dataSourceId;
+
+			public String getPicUrlPath() {
+				return this.picUrlPath;
 			}
 
-			public void setCapStyle(String capStyle) {
-				this.capStyle = capStyle;
+			public void setPicUrlPath(String picUrlPath) {
+				this.picUrlPath = picUrlPath;
+			}
+
+			public String getUuidCode() {
+				return this.uuidCode;
+			}
+
+			public void setUuidCode(String uuidCode) {
+				this.uuidCode = uuidCode;
 			}
 
 			public String getCorpId() {
@@ -169,14 +183,6 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 				this.corpId = corpId;
 			}
 
-			public String getDataSourceId() {
-				return this.dataSourceId;
-			}
-
-			public void setDataSourceId(String dataSourceId) {
-				this.dataSourceId = dataSourceId;
-			}
-
 			public String getEventType() {
 				return this.eventType;
 			}
@@ -185,28 +191,12 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 				this.eventType = eventType;
 			}
 
-			public String getFaceCount() {
-				return this.faceCount;
+			public String getExtendValueThree() {
+				return this.extendValueThree;
 			}
 
-			public void setFaceCount(String faceCount) {
-				this.faceCount = faceCount;
-			}
-
-			public String getPicUrlPath() {
-				return this.picUrlPath;
-			}
-
-			public void setPicUrlPath(String picUrlPath) {
-				this.picUrlPath = picUrlPath;
-			}
-
-			public String getShotTime() {
-				return this.shotTime;
-			}
-
-			public void setShotTime(String shotTime) {
-				this.shotTime = shotTime;
+			public void setExtendValueThree(String extendValueThree) {
+				this.extendValueThree = extendValueThree;
 			}
 
 			public String getTargetPicUrlPath() {
@@ -217,12 +207,12 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 				this.targetPicUrlPath = targetPicUrlPath;
 			}
 
-			public String getRecordId() {
-				return this.recordId;
+			public String getCapStyle() {
+				return this.capStyle;
 			}
 
-			public void setRecordId(String recordId) {
-				this.recordId = recordId;
+			public void setCapStyle(String capStyle) {
+				this.capStyle = capStyle;
 			}
 
 			public String getExtendValue() {
@@ -241,12 +231,52 @@ public class ListEventAlgorithmResultsResponse extends AcsResponse {
 				this.extendValueTwo = extendValueTwo;
 			}
 
-			public String getExtendValueThree() {
-				return this.extendValueThree;
+			public String getTagCode() {
+				return this.tagCode;
 			}
 
-			public void setExtendValueThree(String extendValueThree) {
-				this.extendValueThree = extendValueThree;
+			public void setTagCode(String tagCode) {
+				this.tagCode = tagCode;
+			}
+
+			public String getShotTime() {
+				return this.shotTime;
+			}
+
+			public void setShotTime(String shotTime) {
+				this.shotTime = shotTime;
+			}
+
+			public String getRecordId() {
+				return this.recordId;
+			}
+
+			public void setRecordId(String recordId) {
+				this.recordId = recordId;
+			}
+
+			public String getTagCodeReliability() {
+				return this.tagCodeReliability;
+			}
+
+			public void setTagCodeReliability(String tagCodeReliability) {
+				this.tagCodeReliability = tagCodeReliability;
+			}
+
+			public String getFaceCount() {
+				return this.faceCount;
+			}
+
+			public void setFaceCount(String faceCount) {
+				this.faceCount = faceCount;
+			}
+
+			public String getDataSourceId() {
+				return this.dataSourceId;
+			}
+
+			public void setDataSourceId(String dataSourceId) {
+				this.dataSourceId = dataSourceId;
 			}
 		}
 	}

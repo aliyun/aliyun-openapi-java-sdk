@@ -28,7 +28,7 @@ public class DescribeEnsNetSaleDistrictRequest extends RpcAcsRequest<DescribeEns
 
 	private String netDistrictCode;
 	public DescribeEnsNetSaleDistrictRequest() {
-		super("Ens", "2017-11-10", "DescribeEnsNetSaleDistrict");
+		super("Ens", "2017-11-10", "DescribeEnsNetSaleDistrict", "ens");
 		setMethod(MethodType.POST);
 	}
 

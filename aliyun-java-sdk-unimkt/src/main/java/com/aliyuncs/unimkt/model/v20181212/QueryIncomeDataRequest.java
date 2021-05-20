@@ -54,6 +54,8 @@ public class QueryIncomeDataRequest extends RpcAcsRequest<QueryIncomeDataRespons
 	private String adSlotName;
 
 	private String dimension;
+
+	private String queryType;
 	public QueryIncomeDataRequest() {
 		super("UniMkt", "2018-12-12", "QueryIncomeData");
 		setMethod(MethodType.POST);
@@ -225,6 +227,17 @@ public class QueryIncomeDataRequest extends RpcAcsRequest<QueryIncomeDataRespons
 		this.dimension = dimension;
 		if(dimension != null){
 			putQueryParameter("Dimension", dimension);
+		}
+	}
+
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+		if(queryType != null){
+			putQueryParameter("QueryType", queryType);
 		}
 	}
 

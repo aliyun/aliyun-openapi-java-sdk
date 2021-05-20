@@ -25,23 +25,55 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ImportSpecialPersonnelResponse extends AcsResponse {
 
+	private String message;
+
+	private String requestId;
+
+	private String dynamicCode;
+
+	private String dynamicMessage;
+
 	private String errorCode;
 
 	private String errorMessage;
 
-	private String message;
-
 	private String code;
-
-	private String dynamicCode;
-
-	private String requestId;
 
 	private Boolean success;
 
-	private String dynamicMessage;
-
 	private List<SpecialPersonnelMap> specialPersonnelMaps;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getDynamicCode() {
+		return this.dynamicCode;
+	}
+
+	public void setDynamicCode(String dynamicCode) {
+		this.dynamicCode = dynamicCode;
+	}
+
+	public String getDynamicMessage() {
+		return this.dynamicMessage;
+	}
+
+	public void setDynamicMessage(String dynamicMessage) {
+		this.dynamicMessage = dynamicMessage;
+	}
 
 	public String getErrorCode() {
 		return this.errorCode;
@@ -59,14 +91,6 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getCode() {
 		return this.code;
 	}
@@ -75,36 +99,12 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
-	}
-
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
-	}
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(Boolean success) {
 		this.success = success;
-	}
-
-	public String getDynamicMessage() {
-		return this.dynamicMessage;
-	}
-
-	public void setDynamicMessage(String dynamicMessage) {
-		this.dynamicMessage = dynamicMessage;
 	}
 
 	public List<SpecialPersonnelMap> getSpecialPersonnelMaps() {
@@ -117,17 +117,9 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 
 	public static class SpecialPersonnelMap {
 
-		private Long ukId;
-
 		private Long storeId;
 
-		public Long getUkId() {
-			return this.ukId;
-		}
-
-		public void setUkId(Long ukId) {
-			this.ukId = ukId;
-		}
+		private Long ukId;
 
 		public Long getStoreId() {
 			return this.storeId;
@@ -135,6 +127,14 @@ public class ImportSpecialPersonnelResponse extends AcsResponse {
 
 		public void setStoreId(Long storeId) {
 			this.storeId = storeId;
+		}
+
+		public Long getUkId() {
+			return this.ukId;
+		}
+
+		public void setUkId(Long ukId) {
+			this.ukId = ukId;
 		}
 	}
 

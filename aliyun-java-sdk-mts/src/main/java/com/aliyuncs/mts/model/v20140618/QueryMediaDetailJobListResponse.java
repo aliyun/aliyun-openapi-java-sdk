@@ -57,48 +57,32 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 
 	public static class Job {
 
-		private String id;
-
-		private String userData;
-
-		private String pipelineId;
+		private String creationTime;
 
 		private String state;
+
+		private String userData;
 
 		private String code;
 
 		private String message;
 
-		private String creationTime;
+		private String pipelineId;
 
-		private Input input;
-
-		private MediaDetailConfig mediaDetailConfig;
+		private String id;
 
 		private MediaDetailResult mediaDetailResult;
 
-		public String getId() {
-			return this.id;
+		private MediaDetailConfig mediaDetailConfig;
+
+		private Input input;
+
+		public String getCreationTime() {
+			return this.creationTime;
 		}
 
-		public void setId(String id) {
-			this.id = id;
-		}
-
-		public String getUserData() {
-			return this.userData;
-		}
-
-		public void setUserData(String userData) {
-			this.userData = userData;
-		}
-
-		public String getPipelineId() {
-			return this.pipelineId;
-		}
-
-		public void setPipelineId(String pipelineId) {
-			this.pipelineId = pipelineId;
+		public void setCreationTime(String creationTime) {
+			this.creationTime = creationTime;
 		}
 
 		public String getState() {
@@ -107,6 +91,14 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getUserData() {
+			return this.userData;
+		}
+
+		public void setUserData(String userData) {
+			this.userData = userData;
 		}
 
 		public String getCode() {
@@ -125,28 +117,20 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 			this.message = message;
 		}
 
-		public String getCreationTime() {
-			return this.creationTime;
+		public String getPipelineId() {
+			return this.pipelineId;
 		}
 
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
+		public void setPipelineId(String pipelineId) {
+			this.pipelineId = pipelineId;
 		}
 
-		public Input getInput() {
-			return this.input;
+		public String getId() {
+			return this.id;
 		}
 
-		public void setInput(Input input) {
-			this.input = input;
-		}
-
-		public MediaDetailConfig getMediaDetailConfig() {
-			return this.mediaDetailConfig;
-		}
-
-		public void setMediaDetailConfig(MediaDetailConfig mediaDetailConfig) {
-			this.mediaDetailConfig = mediaDetailConfig;
+		public void setId(String id) {
+			this.id = id;
 		}
 
 		public MediaDetailResult getMediaDetailResult() {
@@ -157,36 +141,373 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 			this.mediaDetailResult = mediaDetailResult;
 		}
 
-		public static class Input {
+		public MediaDetailConfig getMediaDetailConfig() {
+			return this.mediaDetailConfig;
+		}
 
-			private String bucket;
+		public void setMediaDetailConfig(MediaDetailConfig mediaDetailConfig) {
+			this.mediaDetailConfig = mediaDetailConfig;
+		}
 
-			private String location;
+		public Input getInput() {
+			return this.input;
+		}
 
-			private String object;
+		public void setInput(Input input) {
+			this.input = input;
+		}
 
-			public String getBucket() {
-				return this.bucket;
+		public static class MediaDetailResult {
+
+			private String status;
+
+			private List<MediaDetailRecgResult> mediaDetailRecgResults;
+
+			private List<String> tags;
+
+			public String getStatus() {
+				return this.status;
 			}
 
-			public void setBucket(String bucket) {
-				this.bucket = bucket;
+			public void setStatus(String status) {
+				this.status = status;
 			}
 
-			public String getLocation() {
-				return this.location;
+			public List<MediaDetailRecgResult> getMediaDetailRecgResults() {
+				return this.mediaDetailRecgResults;
 			}
 
-			public void setLocation(String location) {
-				this.location = location;
+			public void setMediaDetailRecgResults(List<MediaDetailRecgResult> mediaDetailRecgResults) {
+				this.mediaDetailRecgResults = mediaDetailRecgResults;
 			}
 
-			public String getObject() {
-				return this.object;
+			public List<String> getTags() {
+				return this.tags;
 			}
 
-			public void setObject(String object) {
-				this.object = object;
+			public void setTags(List<String> tags) {
+				this.tags = tags;
+			}
+
+			public static class MediaDetailRecgResult {
+
+				private String time;
+
+				private String imageUrl;
+
+				private String ocrText;
+
+				private List<Sensitive> sensitives;
+
+				private List<Politician> politicians;
+
+				private List<Custom> customs;
+
+				private List<FrameTagInfo> frameTagInfos;
+
+				private List<Celebrity> celebrities;
+
+				private List<String> frameTags;
+
+				public String getTime() {
+					return this.time;
+				}
+
+				public void setTime(String time) {
+					this.time = time;
+				}
+
+				public String getImageUrl() {
+					return this.imageUrl;
+				}
+
+				public void setImageUrl(String imageUrl) {
+					this.imageUrl = imageUrl;
+				}
+
+				public String getOcrText() {
+					return this.ocrText;
+				}
+
+				public void setOcrText(String ocrText) {
+					this.ocrText = ocrText;
+				}
+
+				public List<Sensitive> getSensitives() {
+					return this.sensitives;
+				}
+
+				public void setSensitives(List<Sensitive> sensitives) {
+					this.sensitives = sensitives;
+				}
+
+				public List<Politician> getPoliticians() {
+					return this.politicians;
+				}
+
+				public void setPoliticians(List<Politician> politicians) {
+					this.politicians = politicians;
+				}
+
+				public List<Custom> getCustoms() {
+					return this.customs;
+				}
+
+				public void setCustoms(List<Custom> customs) {
+					this.customs = customs;
+				}
+
+				public List<FrameTagInfo> getFrameTagInfos() {
+					return this.frameTagInfos;
+				}
+
+				public void setFrameTagInfos(List<FrameTagInfo> frameTagInfos) {
+					this.frameTagInfos = frameTagInfos;
+				}
+
+				public List<Celebrity> getCelebrities() {
+					return this.celebrities;
+				}
+
+				public void setCelebrities(List<Celebrity> celebrities) {
+					this.celebrities = celebrities;
+				}
+
+				public List<String> getFrameTags() {
+					return this.frameTags;
+				}
+
+				public void setFrameTags(List<String> frameTags) {
+					this.frameTags = frameTags;
+				}
+
+				public static class Sensitive {
+
+					private String score;
+
+					private String name;
+
+					private String target;
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public String getTarget() {
+						return this.target;
+					}
+
+					public void setTarget(String target) {
+						this.target = target;
+					}
+				}
+
+				public static class Politician {
+
+					private String score;
+
+					private String name;
+
+					private String target;
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public String getTarget() {
+						return this.target;
+					}
+
+					public void setTarget(String target) {
+						this.target = target;
+					}
+				}
+
+				public static class Custom {
+
+					private String name;
+
+					private List<Clip> clips;
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public List<Clip> getClips() {
+						return this.clips;
+					}
+
+					public void setClips(List<Clip> clips) {
+						this.clips = clips;
+					}
+
+					public static class Clip {
+
+						private String endTime;
+
+						private String minScore;
+
+						private String startTime;
+
+						private String avgScore;
+
+						private String maxScore;
+
+						private String endTarget;
+
+						private String startTarget;
+
+						public String getEndTime() {
+							return this.endTime;
+						}
+
+						public void setEndTime(String endTime) {
+							this.endTime = endTime;
+						}
+
+						public String getMinScore() {
+							return this.minScore;
+						}
+
+						public void setMinScore(String minScore) {
+							this.minScore = minScore;
+						}
+
+						public String getStartTime() {
+							return this.startTime;
+						}
+
+						public void setStartTime(String startTime) {
+							this.startTime = startTime;
+						}
+
+						public String getAvgScore() {
+							return this.avgScore;
+						}
+
+						public void setAvgScore(String avgScore) {
+							this.avgScore = avgScore;
+						}
+
+						public String getMaxScore() {
+							return this.maxScore;
+						}
+
+						public void setMaxScore(String maxScore) {
+							this.maxScore = maxScore;
+						}
+
+						public String getEndTarget() {
+							return this.endTarget;
+						}
+
+						public void setEndTarget(String endTarget) {
+							this.endTarget = endTarget;
+						}
+
+						public String getStartTarget() {
+							return this.startTarget;
+						}
+
+						public void setStartTarget(String startTarget) {
+							this.startTarget = startTarget;
+						}
+					}
+				}
+
+				public static class FrameTagInfo {
+
+					private String score;
+
+					private String category;
+
+					private String tag;
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getCategory() {
+						return this.category;
+					}
+
+					public void setCategory(String category) {
+						this.category = category;
+					}
+
+					public String getTag() {
+						return this.tag;
+					}
+
+					public void setTag(String tag) {
+						this.tag = tag;
+					}
+				}
+
+				public static class Celebrity {
+
+					private String score;
+
+					private String name;
+
+					private String target;
+
+					public String getScore() {
+						return this.score;
+					}
+
+					public void setScore(String score) {
+						this.score = score;
+					}
+
+					public String getName() {
+						return this.name;
+					}
+
+					public void setName(String name) {
+						this.name = name;
+					}
+
+					public String getTarget() {
+						return this.target;
+					}
+
+					public void setTarget(String target) {
+						this.target = target;
+					}
+				}
 			}
 		}
 
@@ -224,18 +545,18 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 
 			public static class OutputFile {
 
-				private String bucket;
+				private String object;
 
 				private String location;
 
-				private String object;
+				private String bucket;
 
-				public String getBucket() {
-					return this.bucket;
+				public String getObject() {
+					return this.object;
 				}
 
-				public void setBucket(String bucket) {
-					this.bucket = bucket;
+				public void setObject(String object) {
+					this.object = object;
 				}
 
 				public String getLocation() {
@@ -246,367 +567,46 @@ public class QueryMediaDetailJobListResponse extends AcsResponse {
 					this.location = location;
 				}
 
-				public String getObject() {
-					return this.object;
+				public String getBucket() {
+					return this.bucket;
 				}
 
-				public void setObject(String object) {
-					this.object = object;
+				public void setBucket(String bucket) {
+					this.bucket = bucket;
 				}
 			}
 		}
 
-		public static class MediaDetailResult {
+		public static class Input {
 
-			private String status;
+			private String object;
 
-			private List<MediaDetailRecgResult> mediaDetailRecgResults;
+			private String location;
 
-			private List<String> tags;
+			private String bucket;
 
-			public String getStatus() {
-				return this.status;
+			public String getObject() {
+				return this.object;
 			}
 
-			public void setStatus(String status) {
-				this.status = status;
+			public void setObject(String object) {
+				this.object = object;
 			}
 
-			public List<MediaDetailRecgResult> getMediaDetailRecgResults() {
-				return this.mediaDetailRecgResults;
+			public String getLocation() {
+				return this.location;
 			}
 
-			public void setMediaDetailRecgResults(List<MediaDetailRecgResult> mediaDetailRecgResults) {
-				this.mediaDetailRecgResults = mediaDetailRecgResults;
+			public void setLocation(String location) {
+				this.location = location;
 			}
 
-			public List<String> getTags() {
-				return this.tags;
+			public String getBucket() {
+				return this.bucket;
 			}
 
-			public void setTags(List<String> tags) {
-				this.tags = tags;
-			}
-
-			public static class MediaDetailRecgResult {
-
-				private String imageUrl;
-
-				private String time;
-
-				private String ocrText;
-
-				private List<Celebrity> celebrities;
-
-				private List<Sensitive> sensitives;
-
-				private List<Politician> politicians;
-
-				private List<FrameTagInfo> frameTagInfos;
-
-				private List<Custom> customs;
-
-				private List<String> frameTags;
-
-				public String getImageUrl() {
-					return this.imageUrl;
-				}
-
-				public void setImageUrl(String imageUrl) {
-					this.imageUrl = imageUrl;
-				}
-
-				public String getTime() {
-					return this.time;
-				}
-
-				public void setTime(String time) {
-					this.time = time;
-				}
-
-				public String getOcrText() {
-					return this.ocrText;
-				}
-
-				public void setOcrText(String ocrText) {
-					this.ocrText = ocrText;
-				}
-
-				public List<Celebrity> getCelebrities() {
-					return this.celebrities;
-				}
-
-				public void setCelebrities(List<Celebrity> celebrities) {
-					this.celebrities = celebrities;
-				}
-
-				public List<Sensitive> getSensitives() {
-					return this.sensitives;
-				}
-
-				public void setSensitives(List<Sensitive> sensitives) {
-					this.sensitives = sensitives;
-				}
-
-				public List<Politician> getPoliticians() {
-					return this.politicians;
-				}
-
-				public void setPoliticians(List<Politician> politicians) {
-					this.politicians = politicians;
-				}
-
-				public List<FrameTagInfo> getFrameTagInfos() {
-					return this.frameTagInfos;
-				}
-
-				public void setFrameTagInfos(List<FrameTagInfo> frameTagInfos) {
-					this.frameTagInfos = frameTagInfos;
-				}
-
-				public List<Custom> getCustoms() {
-					return this.customs;
-				}
-
-				public void setCustoms(List<Custom> customs) {
-					this.customs = customs;
-				}
-
-				public List<String> getFrameTags() {
-					return this.frameTags;
-				}
-
-				public void setFrameTags(List<String> frameTags) {
-					this.frameTags = frameTags;
-				}
-
-				public static class Celebrity {
-
-					private String name;
-
-					private String score;
-
-					private String target;
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTarget() {
-						return this.target;
-					}
-
-					public void setTarget(String target) {
-						this.target = target;
-					}
-				}
-
-				public static class Sensitive {
-
-					private String name;
-
-					private String score;
-
-					private String target;
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTarget() {
-						return this.target;
-					}
-
-					public void setTarget(String target) {
-						this.target = target;
-					}
-				}
-
-				public static class Politician {
-
-					private String name;
-
-					private String score;
-
-					private String target;
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getTarget() {
-						return this.target;
-					}
-
-					public void setTarget(String target) {
-						this.target = target;
-					}
-				}
-
-				public static class FrameTagInfo {
-
-					private String tag;
-
-					private String score;
-
-					private String category;
-
-					public String getTag() {
-						return this.tag;
-					}
-
-					public void setTag(String tag) {
-						this.tag = tag;
-					}
-
-					public String getScore() {
-						return this.score;
-					}
-
-					public void setScore(String score) {
-						this.score = score;
-					}
-
-					public String getCategory() {
-						return this.category;
-					}
-
-					public void setCategory(String category) {
-						this.category = category;
-					}
-				}
-
-				public static class Custom {
-
-					private String name;
-
-					private List<Clip> clips;
-
-					public String getName() {
-						return this.name;
-					}
-
-					public void setName(String name) {
-						this.name = name;
-					}
-
-					public List<Clip> getClips() {
-						return this.clips;
-					}
-
-					public void setClips(List<Clip> clips) {
-						this.clips = clips;
-					}
-
-					public static class Clip {
-
-						private String minScore;
-
-						private String maxScore;
-
-						private String avgScore;
-
-						private String startTarget;
-
-						private String endTarget;
-
-						private String startTime;
-
-						private String endTime;
-
-						public String getMinScore() {
-							return this.minScore;
-						}
-
-						public void setMinScore(String minScore) {
-							this.minScore = minScore;
-						}
-
-						public String getMaxScore() {
-							return this.maxScore;
-						}
-
-						public void setMaxScore(String maxScore) {
-							this.maxScore = maxScore;
-						}
-
-						public String getAvgScore() {
-							return this.avgScore;
-						}
-
-						public void setAvgScore(String avgScore) {
-							this.avgScore = avgScore;
-						}
-
-						public String getStartTarget() {
-							return this.startTarget;
-						}
-
-						public void setStartTarget(String startTarget) {
-							this.startTarget = startTarget;
-						}
-
-						public String getEndTarget() {
-							return this.endTarget;
-						}
-
-						public void setEndTarget(String endTarget) {
-							this.endTarget = endTarget;
-						}
-
-						public String getStartTime() {
-							return this.startTime;
-						}
-
-						public void setStartTime(String startTime) {
-							this.startTime = startTime;
-						}
-
-						public String getEndTime() {
-							return this.endTime;
-						}
-
-						public void setEndTime(String endTime) {
-							this.endTime = endTime;
-						}
-					}
-				}
+			public void setBucket(String bucket) {
+				this.bucket = bucket;
 			}
 		}
 	}

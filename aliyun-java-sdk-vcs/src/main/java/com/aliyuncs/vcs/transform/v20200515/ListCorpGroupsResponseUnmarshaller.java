@@ -27,14 +27,14 @@ public class ListCorpGroupsResponseUnmarshaller {
 	public static ListCorpGroupsResponse unmarshall(ListCorpGroupsResponse listCorpGroupsResponse, UnmarshallerContext _ctx) {
 		
 		listCorpGroupsResponse.setRequestId(_ctx.stringValue("ListCorpGroupsResponse.RequestId"));
-		listCorpGroupsResponse.setCode(_ctx.stringValue("ListCorpGroupsResponse.Code"));
 		listCorpGroupsResponse.setMessage(_ctx.stringValue("ListCorpGroupsResponse.Message"));
+		listCorpGroupsResponse.setCode(_ctx.stringValue("ListCorpGroupsResponse.Code"));
 
 		Data data = new Data();
-		data.setPageNumber(_ctx.longValue("ListCorpGroupsResponse.Data.PageNumber"));
-		data.setPageSize(_ctx.longValue("ListCorpGroupsResponse.Data.PageSize"));
 		data.setTotalCount(_ctx.longValue("ListCorpGroupsResponse.Data.TotalCount"));
+		data.setPageSize(_ctx.longValue("ListCorpGroupsResponse.Data.PageSize"));
 		data.setTotalPage(_ctx.longValue("ListCorpGroupsResponse.Data.TotalPage"));
+		data.setPageNumber(_ctx.longValue("ListCorpGroupsResponse.Data.PageNumber"));
 
 		List<String> records = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("ListCorpGroupsResponse.Data.Records.Length"); i++) {

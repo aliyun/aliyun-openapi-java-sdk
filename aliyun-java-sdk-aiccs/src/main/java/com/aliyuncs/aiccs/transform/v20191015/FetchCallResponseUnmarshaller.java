@@ -23,9 +23,9 @@ public class FetchCallResponseUnmarshaller {
 	public static FetchCallResponse unmarshall(FetchCallResponse fetchCallResponse, UnmarshallerContext _ctx) {
 		
 		fetchCallResponse.setRequestId(_ctx.stringValue("FetchCallResponse.RequestId"));
-		fetchCallResponse.setSuccess(_ctx.booleanValue("FetchCallResponse.Success"));
-		fetchCallResponse.setCode(_ctx.stringValue("FetchCallResponse.Code"));
 		fetchCallResponse.setMessage(_ctx.stringValue("FetchCallResponse.Message"));
+		fetchCallResponse.setCode(_ctx.stringValue("FetchCallResponse.Code"));
+		fetchCallResponse.setSuccess(_ctx.booleanValue("FetchCallResponse.Success"));
 	 
 	 	return fetchCallResponse;
 	}

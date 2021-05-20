@@ -76,7 +76,7 @@ public class CreateShardingDBInstanceRequest extends RpcAcsRequest<CreateShardin
 
 	private String chargeType;
 	public CreateShardingDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds");
+		super("Dds", "2015-12-01", "CreateShardingDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -22,17 +22,17 @@ public class PhysicalDeleteResourceResponseUnmarshaller {
 
 	public static PhysicalDeleteResourceResponse unmarshall(PhysicalDeleteResourceResponse physicalDeleteResourceResponse, UnmarshallerContext _ctx) {
 		
-		physicalDeleteResourceResponse.setInterrupt(_ctx.booleanValue("PhysicalDeleteResourceResponse.Interrupt"));
-		physicalDeleteResourceResponse.setInvoker(_ctx.stringValue("PhysicalDeleteResourceResponse.Invoker"));
-		physicalDeleteResourceResponse.setPk(_ctx.stringValue("PhysicalDeleteResourceResponse.Pk"));
-		physicalDeleteResourceResponse.setBid(_ctx.stringValue("PhysicalDeleteResourceResponse.Bid"));
+		physicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("PhysicalDeleteResourceResponse.GmtWakeup"));
 		physicalDeleteResourceResponse.setHid(_ctx.longValue("PhysicalDeleteResourceResponse.Hid"));
-		physicalDeleteResourceResponse.setCountry(_ctx.stringValue("PhysicalDeleteResourceResponse.Country"));
+		physicalDeleteResourceResponse.setInvoker(_ctx.stringValue("PhysicalDeleteResourceResponse.Invoker"));
+		physicalDeleteResourceResponse.setMessage(_ctx.stringValue("PhysicalDeleteResourceResponse.Message"));
 		physicalDeleteResourceResponse.setTaskIdentifier(_ctx.stringValue("PhysicalDeleteResourceResponse.TaskIdentifier"));
 		physicalDeleteResourceResponse.setTaskExtraData(_ctx.stringValue("PhysicalDeleteResourceResponse.TaskExtraData"));
-		physicalDeleteResourceResponse.setGmtWakeup(_ctx.stringValue("PhysicalDeleteResourceResponse.GmtWakeup"));
+		physicalDeleteResourceResponse.setCountry(_ctx.stringValue("PhysicalDeleteResourceResponse.Country"));
+		physicalDeleteResourceResponse.setPk(_ctx.stringValue("PhysicalDeleteResourceResponse.Pk"));
+		physicalDeleteResourceResponse.setBid(_ctx.stringValue("PhysicalDeleteResourceResponse.Bid"));
 		physicalDeleteResourceResponse.setSuccess(_ctx.booleanValue("PhysicalDeleteResourceResponse.Success"));
-		physicalDeleteResourceResponse.setMessage(_ctx.stringValue("PhysicalDeleteResourceResponse.Message"));
+		physicalDeleteResourceResponse.setInterrupt(_ctx.booleanValue("PhysicalDeleteResourceResponse.Interrupt"));
 	 
 	 	return physicalDeleteResourceResponse;
 	}

@@ -55,7 +55,7 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String orderType;
 	public ModifyNodeSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyNodeSpec", "Dds");
+		super("Dds", "2015-12-01", "ModifyNodeSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

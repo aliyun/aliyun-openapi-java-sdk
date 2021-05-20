@@ -35,7 +35,7 @@ public class UpdateSceneRuleRequest extends RpcAcsRequest<UpdateSceneRuleRespons
 
 	private String ruleId;
 	public UpdateSceneRuleRequest() {
-		super("Iot", "2018-01-20", "UpdateSceneRule");
+		super("Iot", "2018-01-20", "UpdateSceneRule", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

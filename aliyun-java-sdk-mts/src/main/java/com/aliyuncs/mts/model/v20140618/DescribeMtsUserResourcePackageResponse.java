@@ -47,17 +47,41 @@ public class DescribeMtsUserResourcePackageResponse extends AcsResponse {
 
 	public static class ResourcePackageInfo {
 
+		private String displayName;
+
+		private String status;
+
+		private String commodityCode;
+
 		private String currCapacity;
 
 		private String initCapacity;
 
-		private String commodityCode;
-
-		private String displayName;
-
 		private String instanceId;
 
-		private String status;
+		public String getDisplayName() {
+			return this.displayName;
+		}
+
+		public void setDisplayName(String displayName) {
+			this.displayName = displayName;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getCommodityCode() {
+			return this.commodityCode;
+		}
+
+		public void setCommodityCode(String commodityCode) {
+			this.commodityCode = commodityCode;
+		}
 
 		public String getCurrCapacity() {
 			return this.currCapacity;
@@ -75,36 +99,12 @@ public class DescribeMtsUserResourcePackageResponse extends AcsResponse {
 			this.initCapacity = initCapacity;
 		}
 
-		public String getCommodityCode() {
-			return this.commodityCode;
-		}
-
-		public void setCommodityCode(String commodityCode) {
-			this.commodityCode = commodityCode;
-		}
-
-		public String getDisplayName() {
-			return this.displayName;
-		}
-
-		public void setDisplayName(String displayName) {
-			this.displayName = displayName;
-		}
-
 		public String getInstanceId() {
 			return this.instanceId;
 		}
 
 		public void setInstanceId(String instanceId) {
 			this.instanceId = instanceId;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
 		}
 	}
 

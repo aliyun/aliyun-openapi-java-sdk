@@ -25,23 +25,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeQosesResponse extends AcsResponse {
 
-	private String requestId;
-
 	private Integer totalCount;
 
-	private Integer pageNumber;
+	private String requestId;
 
 	private Integer pageSize;
 
+	private Integer pageNumber;
+
 	private List<Qos> qoses;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
 
 	public Integer getTotalCount() {
 		return this.totalCount;
@@ -51,12 +43,12 @@ public class DescribeQosesResponse extends AcsResponse {
 		this.totalCount = totalCount;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Integer getPageSize() {
@@ -65,6 +57,14 @@ public class DescribeQosesResponse extends AcsResponse {
 
 	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
 	public List<Qos> getQoses() {
@@ -77,31 +77,15 @@ public class DescribeQosesResponse extends AcsResponse {
 
 	public static class Qos {
 
-		private String qosId;
-
-		private String qosName;
-
 		private String sagCount;
+
+		private String qosId;
 
 		private String smartAGIds;
 
+		private String qosName;
+
 		private String qosDescription;
-
-		public String getQosId() {
-			return this.qosId;
-		}
-
-		public void setQosId(String qosId) {
-			this.qosId = qosId;
-		}
-
-		public String getQosName() {
-			return this.qosName;
-		}
-
-		public void setQosName(String qosName) {
-			this.qosName = qosName;
-		}
 
 		public String getSagCount() {
 			return this.sagCount;
@@ -111,12 +95,28 @@ public class DescribeQosesResponse extends AcsResponse {
 			this.sagCount = sagCount;
 		}
 
+		public String getQosId() {
+			return this.qosId;
+		}
+
+		public void setQosId(String qosId) {
+			this.qosId = qosId;
+		}
+
 		public String getSmartAGIds() {
 			return this.smartAGIds;
 		}
 
 		public void setSmartAGIds(String smartAGIds) {
 			this.smartAGIds = smartAGIds;
+		}
+
+		public String getQosName() {
+			return this.qosName;
+		}
+
+		public void setQosName(String qosName) {
+			this.qosName = qosName;
 		}
 
 		public String getQosDescription() {

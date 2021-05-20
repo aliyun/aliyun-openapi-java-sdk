@@ -57,26 +57,34 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 	public static class Port {
 
-		private String portName;
+		private String remoteAs;
+
+		private String status;
 
 		private String routeProtocol;
 
 		private String remoteIp;
 
-		private String remoteAs;
+		private String neighborIp;
 
 		private String vlan;
 
-		private String status;
+		private String portName;
 
-		private String neighborIp;
-
-		public String getPortName() {
-			return this.portName;
+		public String getRemoteAs() {
+			return this.remoteAs;
 		}
 
-		public void setPortName(String portName) {
-			this.portName = portName;
+		public void setRemoteAs(String remoteAs) {
+			this.remoteAs = remoteAs;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 
 		public String getRouteProtocol() {
@@ -95,12 +103,12 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 			this.remoteIp = remoteIp;
 		}
 
-		public String getRemoteAs() {
-			return this.remoteAs;
+		public String getNeighborIp() {
+			return this.neighborIp;
 		}
 
-		public void setRemoteAs(String remoteAs) {
-			this.remoteAs = remoteAs;
+		public void setNeighborIp(String neighborIp) {
+			this.neighborIp = neighborIp;
 		}
 
 		public String getVlan() {
@@ -111,20 +119,12 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 			this.vlan = vlan;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getPortName() {
+			return this.portName;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getNeighborIp() {
-			return this.neighborIp;
-		}
-
-		public void setNeighborIp(String neighborIp) {
-			this.neighborIp = neighborIp;
+		public void setPortName(String portName) {
+			this.portName = portName;
 		}
 	}
 
@@ -132,11 +132,11 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 		private String state;
 
+		private String createTime;
+
 		private String errorCode;
 
 		private String errorMessage;
-
-		private String createTime;
 
 		public String getState() {
 			return this.state;
@@ -144,6 +144,14 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 		public void setState(String state) {
 			this.state = state;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
 		}
 
 		public String getErrorCode() {
@@ -160,14 +168,6 @@ public class DescribeSagPortRouteProtocolListResponse extends AcsResponse {
 
 		public void setErrorMessage(String errorMessage) {
 			this.errorMessage = errorMessage;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 	}
 

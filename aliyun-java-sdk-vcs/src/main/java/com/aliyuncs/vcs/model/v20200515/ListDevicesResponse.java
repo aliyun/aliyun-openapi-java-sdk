@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDevicesResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private Data data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class ListDevicesResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public Data getData() {
@@ -67,22 +67,22 @@ public class ListDevicesResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer pageNumber;
+		private Integer totalCount;
 
 		private Integer pageSize;
 
-		private Integer totalCount;
-
 		private Integer totalPage;
+
+		private Integer pageNumber;
 
 		private List<Record> records;
 
-		public Integer getPageNumber() {
-			return this.pageNumber;
+		public Integer getTotalCount() {
+			return this.totalCount;
 		}
 
-		public void setPageNumber(Integer pageNumber) {
-			this.pageNumber = pageNumber;
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
 		}
 
 		public Integer getPageSize() {
@@ -93,20 +93,20 @@ public class ListDevicesResponse extends AcsResponse {
 			this.pageSize = pageSize;
 		}
 
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
-
 		public Integer getTotalPage() {
 			return this.totalPage;
 		}
 
 		public void setTotalPage(Integer totalPage) {
 			this.totalPage = totalPage;
+		}
+
+		public Integer getPageNumber() {
+			return this.pageNumber;
+		}
+
+		public void setPageNumber(Integer pageNumber) {
+			this.pageNumber = pageNumber;
 		}
 
 		public List<Record> getRecords() {
@@ -119,43 +119,51 @@ public class ListDevicesResponse extends AcsResponse {
 
 		public static class Record {
 
+			private Integer status;
+
 			private String accessProtocolType;
-
-			private String bitRate;
-
-			private String coverImageUrl;
-
-			private String gbId;
-
-			private String deviceAddress;
-
-			private String deviceDirection;
-
-			private String deviceSite;
-
-			private String latitude;
-
-			private String longitude;
-
-			private String deviceName;
-
-			private String resolution;
-
-			private String sipGBId;
-
-			private String sipPassword;
 
 			private String sipServerIp;
 
-			private String sipServerPort;
+			private String coverImageUrl;
 
-			private Integer status;
+			private String createTime;
 
-			private String deviceType;
+			private String latitude;
 
 			private String vendor;
 
-			private String createTime;
+			private String longitude;
+
+			private String sipGBId;
+
+			private String deviceDirection;
+
+			private String sipPassword;
+
+			private String deviceType;
+
+			private String deviceAddress;
+
+			private String gbId;
+
+			private String bitRate;
+
+			private String deviceSite;
+
+			private String sipServerPort;
+
+			private String resolution;
+
+			private String deviceName;
+
+			public Integer getStatus() {
+				return this.status;
+			}
+
+			public void setStatus(Integer status) {
+				this.status = status;
+			}
 
 			public String getAccessProtocolType() {
 				return this.accessProtocolType;
@@ -163,102 +171,6 @@ public class ListDevicesResponse extends AcsResponse {
 
 			public void setAccessProtocolType(String accessProtocolType) {
 				this.accessProtocolType = accessProtocolType;
-			}
-
-			public String getBitRate() {
-				return this.bitRate;
-			}
-
-			public void setBitRate(String bitRate) {
-				this.bitRate = bitRate;
-			}
-
-			public String getCoverImageUrl() {
-				return this.coverImageUrl;
-			}
-
-			public void setCoverImageUrl(String coverImageUrl) {
-				this.coverImageUrl = coverImageUrl;
-			}
-
-			public String getGbId() {
-				return this.gbId;
-			}
-
-			public void setGbId(String gbId) {
-				this.gbId = gbId;
-			}
-
-			public String getDeviceAddress() {
-				return this.deviceAddress;
-			}
-
-			public void setDeviceAddress(String deviceAddress) {
-				this.deviceAddress = deviceAddress;
-			}
-
-			public String getDeviceDirection() {
-				return this.deviceDirection;
-			}
-
-			public void setDeviceDirection(String deviceDirection) {
-				this.deviceDirection = deviceDirection;
-			}
-
-			public String getDeviceSite() {
-				return this.deviceSite;
-			}
-
-			public void setDeviceSite(String deviceSite) {
-				this.deviceSite = deviceSite;
-			}
-
-			public String getLatitude() {
-				return this.latitude;
-			}
-
-			public void setLatitude(String latitude) {
-				this.latitude = latitude;
-			}
-
-			public String getLongitude() {
-				return this.longitude;
-			}
-
-			public void setLongitude(String longitude) {
-				this.longitude = longitude;
-			}
-
-			public String getDeviceName() {
-				return this.deviceName;
-			}
-
-			public void setDeviceName(String deviceName) {
-				this.deviceName = deviceName;
-			}
-
-			public String getResolution() {
-				return this.resolution;
-			}
-
-			public void setResolution(String resolution) {
-				this.resolution = resolution;
-			}
-
-			public String getSipGBId() {
-				return this.sipGBId;
-			}
-
-			public void setSipGBId(String sipGBId) {
-				this.sipGBId = sipGBId;
-			}
-
-			public String getSipPassword() {
-				return this.sipPassword;
-			}
-
-			public void setSipPassword(String sipPassword) {
-				this.sipPassword = sipPassword;
 			}
 
 			public String getSipServerIp() {
@@ -269,28 +181,28 @@ public class ListDevicesResponse extends AcsResponse {
 				this.sipServerIp = sipServerIp;
 			}
 
-			public String getSipServerPort() {
-				return this.sipServerPort;
+			public String getCoverImageUrl() {
+				return this.coverImageUrl;
 			}
 
-			public void setSipServerPort(String sipServerPort) {
-				this.sipServerPort = sipServerPort;
+			public void setCoverImageUrl(String coverImageUrl) {
+				this.coverImageUrl = coverImageUrl;
 			}
 
-			public Integer getStatus() {
-				return this.status;
+			public String getCreateTime() {
+				return this.createTime;
 			}
 
-			public void setStatus(Integer status) {
-				this.status = status;
+			public void setCreateTime(String createTime) {
+				this.createTime = createTime;
 			}
 
-			public String getDeviceType() {
-				return this.deviceType;
+			public String getLatitude() {
+				return this.latitude;
 			}
 
-			public void setDeviceType(String deviceType) {
-				this.deviceType = deviceType;
+			public void setLatitude(String latitude) {
+				this.latitude = latitude;
 			}
 
 			public String getVendor() {
@@ -301,12 +213,100 @@ public class ListDevicesResponse extends AcsResponse {
 				this.vendor = vendor;
 			}
 
-			public String getCreateTime() {
-				return this.createTime;
+			public String getLongitude() {
+				return this.longitude;
 			}
 
-			public void setCreateTime(String createTime) {
-				this.createTime = createTime;
+			public void setLongitude(String longitude) {
+				this.longitude = longitude;
+			}
+
+			public String getSipGBId() {
+				return this.sipGBId;
+			}
+
+			public void setSipGBId(String sipGBId) {
+				this.sipGBId = sipGBId;
+			}
+
+			public String getDeviceDirection() {
+				return this.deviceDirection;
+			}
+
+			public void setDeviceDirection(String deviceDirection) {
+				this.deviceDirection = deviceDirection;
+			}
+
+			public String getSipPassword() {
+				return this.sipPassword;
+			}
+
+			public void setSipPassword(String sipPassword) {
+				this.sipPassword = sipPassword;
+			}
+
+			public String getDeviceType() {
+				return this.deviceType;
+			}
+
+			public void setDeviceType(String deviceType) {
+				this.deviceType = deviceType;
+			}
+
+			public String getDeviceAddress() {
+				return this.deviceAddress;
+			}
+
+			public void setDeviceAddress(String deviceAddress) {
+				this.deviceAddress = deviceAddress;
+			}
+
+			public String getGbId() {
+				return this.gbId;
+			}
+
+			public void setGbId(String gbId) {
+				this.gbId = gbId;
+			}
+
+			public String getBitRate() {
+				return this.bitRate;
+			}
+
+			public void setBitRate(String bitRate) {
+				this.bitRate = bitRate;
+			}
+
+			public String getDeviceSite() {
+				return this.deviceSite;
+			}
+
+			public void setDeviceSite(String deviceSite) {
+				this.deviceSite = deviceSite;
+			}
+
+			public String getSipServerPort() {
+				return this.sipServerPort;
+			}
+
+			public void setSipServerPort(String sipServerPort) {
+				this.sipServerPort = sipServerPort;
+			}
+
+			public String getResolution() {
+				return this.resolution;
+			}
+
+			public void setResolution(String resolution) {
+				this.resolution = resolution;
+			}
+
+			public String getDeviceName() {
+				return this.deviceName;
+			}
+
+			public void setDeviceName(String deviceName) {
+				this.deviceName = deviceName;
 			}
 		}
 	}

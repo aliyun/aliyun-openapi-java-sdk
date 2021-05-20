@@ -26,7 +26,7 @@ public class ScanOpenSourceComplianceRequest extends RpcAcsRequest<ScanOpenSourc
 
 	private String data;
 	public ScanOpenSourceComplianceRequest() {
-		super("CRO", "2020-01-02", "ScanOpenSourceCompliance");
+		super("CRO", "2020-01-02", "ScanOpenSourceCompliance", "cro");
 		setMethod(MethodType.POST);
 	}
 

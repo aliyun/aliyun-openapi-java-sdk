@@ -38,11 +38,11 @@ public class QueryCoverPipelineListResponseUnmarshaller {
 		List<Pipeline> pipelineList = new ArrayList<Pipeline>();
 		for (int i = 0; i < _ctx.lengthValue("QueryCoverPipelineListResponse.PipelineList.Length"); i++) {
 			Pipeline pipeline = new Pipeline();
-			pipeline.setId(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Id"));
-			pipeline.setName(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Name"));
 			pipeline.setState(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].State"));
 			pipeline.setPriority(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Priority"));
 			pipeline.setRole(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Role"));
+			pipeline.setName(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Name"));
+			pipeline.setId(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].Id"));
 
 			NotifyConfig notifyConfig = new NotifyConfig();
 			notifyConfig.setTopic(_ctx.stringValue("QueryCoverPipelineListResponse.PipelineList["+ i +"].NotifyConfig.Topic"));

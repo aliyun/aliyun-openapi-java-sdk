@@ -57,22 +57,30 @@ public class ListFpShotDBResponse extends AcsResponse {
 
 	public static class FpShotDB {
 
-		private String fpDBId;
+		private String status;
+
+		private String description;
 
 		private String name;
 
 		private Integer modelId;
 
-		private String status;
+		private String fpDBId;
 
-		private String description;
-
-		public String getFpDBId() {
-			return this.fpDBId;
+		public String getStatus() {
+			return this.status;
 		}
 
-		public void setFpDBId(String fpDBId) {
-			this.fpDBId = fpDBId;
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public String getName() {
@@ -91,20 +99,12 @@ public class ListFpShotDBResponse extends AcsResponse {
 			this.modelId = modelId;
 		}
 
-		public String getStatus() {
-			return this.status;
+		public String getFpDBId() {
+			return this.fpDBId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
+		public void setFpDBId(String fpDBId) {
+			this.fpDBId = fpDBId;
 		}
 	}
 

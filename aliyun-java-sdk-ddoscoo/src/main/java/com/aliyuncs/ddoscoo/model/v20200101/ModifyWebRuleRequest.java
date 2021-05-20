@@ -26,6 +26,8 @@ import com.aliyuncs.ddoscoo.Endpoint;
 public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 	   
 
+	private String httpsExt;
+
 	private String resourceGroupId;
 
 	private Integer rsType;
@@ -44,6 +46,17 @@ public class ModifyWebRuleRequest extends RpcAcsRequest<ModifyWebRuleResponse> {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getHttpsExt() {
+		return this.httpsExt;
+	}
+
+	public void setHttpsExt(String httpsExt) {
+		this.httpsExt = httpsExt;
+		if(httpsExt != null){
+			putQueryParameter("HttpsExt", httpsExt);
+		}
 	}
 
 	public String getResourceGroupId() {

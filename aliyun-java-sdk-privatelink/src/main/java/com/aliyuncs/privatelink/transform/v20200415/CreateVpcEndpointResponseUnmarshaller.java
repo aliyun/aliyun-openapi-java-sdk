@@ -23,18 +23,18 @@ public class CreateVpcEndpointResponseUnmarshaller {
 	public static CreateVpcEndpointResponse unmarshall(CreateVpcEndpointResponse createVpcEndpointResponse, UnmarshallerContext _ctx) {
 		
 		createVpcEndpointResponse.setRequestId(_ctx.stringValue("CreateVpcEndpointResponse.RequestId"));
-		createVpcEndpointResponse.setEndpointId(_ctx.stringValue("CreateVpcEndpointResponse.EndpointId"));
-		createVpcEndpointResponse.setCreateTime(_ctx.stringValue("CreateVpcEndpointResponse.CreateTime"));
+		createVpcEndpointResponse.setEndpointStatus(_ctx.stringValue("CreateVpcEndpointResponse.EndpointStatus"));
 		createVpcEndpointResponse.setEndpointName(_ctx.stringValue("CreateVpcEndpointResponse.EndpointName"));
 		createVpcEndpointResponse.setVpcId(_ctx.stringValue("CreateVpcEndpointResponse.VpcId"));
-		createVpcEndpointResponse.setEndpointDescription(_ctx.stringValue("CreateVpcEndpointResponse.EndpointDescription"));
-		createVpcEndpointResponse.setServiceId(_ctx.stringValue("CreateVpcEndpointResponse.ServiceId"));
-		createVpcEndpointResponse.setServiceName(_ctx.stringValue("CreateVpcEndpointResponse.ServiceName"));
-		createVpcEndpointResponse.setEndpointBusinessStatus(_ctx.stringValue("CreateVpcEndpointResponse.EndpointBusinessStatus"));
-		createVpcEndpointResponse.setEndpointStatus(_ctx.stringValue("CreateVpcEndpointResponse.EndpointStatus"));
-		createVpcEndpointResponse.setConnectionStatus(_ctx.stringValue("CreateVpcEndpointResponse.ConnectionStatus"));
 		createVpcEndpointResponse.setEndpointDomain(_ctx.stringValue("CreateVpcEndpointResponse.EndpointDomain"));
+		createVpcEndpointResponse.setServiceName(_ctx.stringValue("CreateVpcEndpointResponse.ServiceName"));
+		createVpcEndpointResponse.setEndpointId(_ctx.stringValue("CreateVpcEndpointResponse.EndpointId"));
 		createVpcEndpointResponse.setBandwidth(_ctx.longValue("CreateVpcEndpointResponse.Bandwidth"));
+		createVpcEndpointResponse.setCreateTime(_ctx.stringValue("CreateVpcEndpointResponse.CreateTime"));
+		createVpcEndpointResponse.setEndpointBusinessStatus(_ctx.stringValue("CreateVpcEndpointResponse.EndpointBusinessStatus"));
+		createVpcEndpointResponse.setEndpointDescription(_ctx.stringValue("CreateVpcEndpointResponse.EndpointDescription"));
+		createVpcEndpointResponse.setConnectionStatus(_ctx.stringValue("CreateVpcEndpointResponse.ConnectionStatus"));
+		createVpcEndpointResponse.setServiceId(_ctx.stringValue("CreateVpcEndpointResponse.ServiceId"));
 	 
 	 	return createVpcEndpointResponse;
 	}

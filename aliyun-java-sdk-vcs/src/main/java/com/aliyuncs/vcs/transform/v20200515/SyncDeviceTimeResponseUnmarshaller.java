@@ -23,11 +23,11 @@ public class SyncDeviceTimeResponseUnmarshaller {
 	public static SyncDeviceTimeResponse unmarshall(SyncDeviceTimeResponse syncDeviceTimeResponse, UnmarshallerContext _ctx) {
 		
 		syncDeviceTimeResponse.setRequestId(_ctx.stringValue("SyncDeviceTimeResponse.RequestId"));
-		syncDeviceTimeResponse.setCode(_ctx.stringValue("SyncDeviceTimeResponse.Code"));
+		syncDeviceTimeResponse.setSyncInterval(_ctx.stringValue("SyncDeviceTimeResponse.SyncInterval"));
 		syncDeviceTimeResponse.setMessage(_ctx.stringValue("SyncDeviceTimeResponse.Message"));
 		syncDeviceTimeResponse.setNTPServer(_ctx.stringValue("SyncDeviceTimeResponse.NTPServer"));
 		syncDeviceTimeResponse.setRetryInterval(_ctx.stringValue("SyncDeviceTimeResponse.RetryInterval"));
-		syncDeviceTimeResponse.setSyncInterval(_ctx.stringValue("SyncDeviceTimeResponse.SyncInterval"));
+		syncDeviceTimeResponse.setCode(_ctx.stringValue("SyncDeviceTimeResponse.Code"));
 		syncDeviceTimeResponse.setTimeStamp(_ctx.stringValue("SyncDeviceTimeResponse.TimeStamp"));
 	 
 	 	return syncDeviceTimeResponse;

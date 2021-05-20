@@ -121,6 +121,10 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		private String ownerId;
 
+		private String networkInterfaceTrafficMode;
+
+		private Integer queuePairNumber;
+
 		private List<PrivateIpSet> privateIpSets;
 
 		private List<Ipv6Set> ipv6Sets;
@@ -267,6 +271,22 @@ public class DescribeNetworkInterfacesResponse extends AcsResponse {
 
 		public void setOwnerId(String ownerId) {
 			this.ownerId = ownerId;
+		}
+
+		public String getNetworkInterfaceTrafficMode() {
+			return this.networkInterfaceTrafficMode;
+		}
+
+		public void setNetworkInterfaceTrafficMode(String networkInterfaceTrafficMode) {
+			this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+		}
+
+		public Integer getQueuePairNumber() {
+			return this.queuePairNumber;
+		}
+
+		public void setQueuePairNumber(Integer queuePairNumber) {
+			this.queuePairNumber = queuePairNumber;
 		}
 
 		public List<PrivateIpSet> getPrivateIpSets() {

@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetCatalogListResponse extends AcsResponse {
 
-	private String code;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String code;
 
 	private List<DataItem> data;
 
-	public String getCode() {
-		return this.code;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getMessage() {
@@ -49,12 +49,12 @@ public class GetCatalogListResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public List<DataItem> getData() {
@@ -67,23 +67,15 @@ public class GetCatalogListResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String isvSubId;
-
 		private Long parentCatalogId;
 
 		private Long profileCount;
 
-		private Long catalogId;
+		private String isvSubId;
 
 		private String catalogName;
 
-		public String getIsvSubId() {
-			return this.isvSubId;
-		}
-
-		public void setIsvSubId(String isvSubId) {
-			this.isvSubId = isvSubId;
-		}
+		private Long catalogId;
 
 		public Long getParentCatalogId() {
 			return this.parentCatalogId;
@@ -101,12 +93,12 @@ public class GetCatalogListResponse extends AcsResponse {
 			this.profileCount = profileCount;
 		}
 
-		public Long getCatalogId() {
-			return this.catalogId;
+		public String getIsvSubId() {
+			return this.isvSubId;
 		}
 
-		public void setCatalogId(Long catalogId) {
-			this.catalogId = catalogId;
+		public void setIsvSubId(String isvSubId) {
+			this.isvSubId = isvSubId;
 		}
 
 		public String getCatalogName() {
@@ -115,6 +107,14 @@ public class GetCatalogListResponse extends AcsResponse {
 
 		public void setCatalogName(String catalogName) {
 			this.catalogName = catalogName;
+		}
+
+		public Long getCatalogId() {
+			return this.catalogId;
+		}
+
+		public void setCatalogId(Long catalogId) {
+			this.catalogId = catalogId;
 		}
 	}
 

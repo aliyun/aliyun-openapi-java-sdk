@@ -24,58 +24,34 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class LogicalDeleteResourceResponse extends AcsResponse {
 
-	private Boolean interrupt;
-
-	private String invoker;
-
-	private String pk;
-
-	private String bid;
+	private String gmtWakeup;
 
 	private Long hid;
 
-	private String country;
+	private String invoker;
+
+	private String message;
 
 	private String taskIdentifier;
 
 	private String taskExtraData;
 
-	private String gmtWakeup;
+	private String country;
+
+	private String pk;
+
+	private String bid;
 
 	private Boolean success;
 
-	private String message;
+	private Boolean interrupt;
 
-	public Boolean getInterrupt() {
-		return this.interrupt;
+	public String getGmtWakeup() {
+		return this.gmtWakeup;
 	}
 
-	public void setInterrupt(Boolean interrupt) {
-		this.interrupt = interrupt;
-	}
-
-	public String getInvoker() {
-		return this.invoker;
-	}
-
-	public void setInvoker(String invoker) {
-		this.invoker = invoker;
-	}
-
-	public String getPk() {
-		return this.pk;
-	}
-
-	public void setPk(String pk) {
-		this.pk = pk;
-	}
-
-	public String getBid() {
-		return this.bid;
-	}
-
-	public void setBid(String bid) {
-		this.bid = bid;
+	public void setGmtWakeup(String gmtWakeup) {
+		this.gmtWakeup = gmtWakeup;
 	}
 
 	public Long getHid() {
@@ -86,12 +62,20 @@ public class LogicalDeleteResourceResponse extends AcsResponse {
 		this.hid = hid;
 	}
 
-	public String getCountry() {
-		return this.country;
+	public String getInvoker() {
+		return this.invoker;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setInvoker(String invoker) {
+		this.invoker = invoker;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getTaskIdentifier() {
@@ -110,12 +94,28 @@ public class LogicalDeleteResourceResponse extends AcsResponse {
 		this.taskExtraData = taskExtraData;
 	}
 
-	public String getGmtWakeup() {
-		return this.gmtWakeup;
+	public String getCountry() {
+		return this.country;
 	}
 
-	public void setGmtWakeup(String gmtWakeup) {
-		this.gmtWakeup = gmtWakeup;
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getPk() {
+		return this.pk;
+	}
+
+	public void setPk(String pk) {
+		this.pk = pk;
+	}
+
+	public String getBid() {
+		return this.bid;
+	}
+
+	public void setBid(String bid) {
+		this.bid = bid;
 	}
 
 	public Boolean getSuccess() {
@@ -126,12 +126,12 @@ public class LogicalDeleteResourceResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getInterrupt() {
+		return this.interrupt;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setInterrupt(Boolean interrupt) {
+		this.interrupt = interrupt;
 	}
 
 	@Override

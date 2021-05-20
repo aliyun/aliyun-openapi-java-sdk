@@ -24,33 +24,81 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CheckResourceResponse extends AcsResponse {
 
+	private String gmtWakeup;
+
+	private Long hid;
+
+	private String message;
+
+	private String taskIdentifier;
+
+	private Boolean success;
+
+	private String url;
+
 	private Boolean interrupt;
 
 	private String invoker;
+
+	private String taskExtraData;
+
+	private String country;
+
+	private String prompt;
+
+	private Long level;
 
 	private String pk;
 
 	private String bid;
 
-	private Long hid;
+	public String getGmtWakeup() {
+		return this.gmtWakeup;
+	}
 
-	private String country;
+	public void setGmtWakeup(String gmtWakeup) {
+		this.gmtWakeup = gmtWakeup;
+	}
 
-	private String taskIdentifier;
+	public Long getHid() {
+		return this.hid;
+	}
 
-	private String taskExtraData;
+	public void setHid(Long hid) {
+		this.hid = hid;
+	}
 
-	private String gmtWakeup;
+	public String getMessage() {
+		return this.message;
+	}
 
-	private Boolean success;
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-	private String message;
+	public String getTaskIdentifier() {
+		return this.taskIdentifier;
+	}
 
-	private Long level;
+	public void setTaskIdentifier(String taskIdentifier) {
+		this.taskIdentifier = taskIdentifier;
+	}
 
-	private String url;
+	public Boolean getSuccess() {
+		return this.success;
+	}
 
-	private String prompt;
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
+	public String getUrl() {
+		return this.url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
 	public Boolean getInterrupt() {
 		return this.interrupt;
@@ -68,6 +116,38 @@ public class CheckResourceResponse extends AcsResponse {
 		this.invoker = invoker;
 	}
 
+	public String getTaskExtraData() {
+		return this.taskExtraData;
+	}
+
+	public void setTaskExtraData(String taskExtraData) {
+		this.taskExtraData = taskExtraData;
+	}
+
+	public String getCountry() {
+		return this.country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getPrompt() {
+		return this.prompt;
+	}
+
+	public void setPrompt(String prompt) {
+		this.prompt = prompt;
+	}
+
+	public Long getLevel() {
+		return this.level;
+	}
+
+	public void setLevel(Long level) {
+		this.level = level;
+	}
+
 	public String getPk() {
 		return this.pk;
 	}
@@ -82,86 +162,6 @@ public class CheckResourceResponse extends AcsResponse {
 
 	public void setBid(String bid) {
 		this.bid = bid;
-	}
-
-	public Long getHid() {
-		return this.hid;
-	}
-
-	public void setHid(Long hid) {
-		this.hid = hid;
-	}
-
-	public String getCountry() {
-		return this.country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getTaskIdentifier() {
-		return this.taskIdentifier;
-	}
-
-	public void setTaskIdentifier(String taskIdentifier) {
-		this.taskIdentifier = taskIdentifier;
-	}
-
-	public String getTaskExtraData() {
-		return this.taskExtraData;
-	}
-
-	public void setTaskExtraData(String taskExtraData) {
-		this.taskExtraData = taskExtraData;
-	}
-
-	public String getGmtWakeup() {
-		return this.gmtWakeup;
-	}
-
-	public void setGmtWakeup(String gmtWakeup) {
-		this.gmtWakeup = gmtWakeup;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Long getLevel() {
-		return this.level;
-	}
-
-	public void setLevel(Long level) {
-		this.level = level;
-	}
-
-	public String getUrl() {
-		return this.url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getPrompt() {
-		return this.prompt;
-	}
-
-	public void setPrompt(String prompt) {
-		this.prompt = prompt;
 	}
 
 	@Override

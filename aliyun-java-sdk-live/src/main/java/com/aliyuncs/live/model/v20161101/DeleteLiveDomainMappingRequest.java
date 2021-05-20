@@ -25,13 +25,13 @@ import com.aliyuncs.live.Endpoint;
 public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDomainMappingResponse> {
 	   
 
-	private Long ownerId;
-
-	private String pullDomain;
-
 	private String securityToken;
 
 	private String pushDomain;
+
+	private Long ownerId;
+
+	private String pullDomain;
 	public DeleteLiveDomainMappingRequest() {
 		super("live", "2016-11-01", "DeleteLiveDomainMapping", "live");
 		setMethod(MethodType.POST);
@@ -39,28 +39,6 @@ public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDoma
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getOwnerId() {
-		return this.ownerId;
-	}
-
-	public void setOwnerId(Long ownerId) {
-		this.ownerId = ownerId;
-		if(ownerId != null){
-			putQueryParameter("OwnerId", ownerId.toString());
-		}
-	}
-
-	public String getPullDomain() {
-		return this.pullDomain;
-	}
-
-	public void setPullDomain(String pullDomain) {
-		this.pullDomain = pullDomain;
-		if(pullDomain != null){
-			putQueryParameter("PullDomain", pullDomain);
-		}
 	}
 
 	public String getSecurityToken() {
@@ -82,6 +60,28 @@ public class DeleteLiveDomainMappingRequest extends RpcAcsRequest<DeleteLiveDoma
 		this.pushDomain = pushDomain;
 		if(pushDomain != null){
 			putQueryParameter("PushDomain", pushDomain);
+		}
+	}
+
+	public Long getOwnerId() {
+		return this.ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+		if(ownerId != null){
+			putQueryParameter("OwnerId", ownerId.toString());
+		}
+	}
+
+	public String getPullDomain() {
+		return this.pullDomain;
+	}
+
+	public void setPullDomain(String pullDomain) {
+		this.pullDomain = pullDomain;
+		if(pullDomain != null){
+			putQueryParameter("PullDomain", pullDomain);
 		}
 	}
 

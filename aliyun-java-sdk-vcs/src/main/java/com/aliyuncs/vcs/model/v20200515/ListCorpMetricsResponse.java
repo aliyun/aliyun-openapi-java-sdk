@@ -25,44 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListCorpMetricsResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
-
-	private Integer pageNumber;
+	private Integer totalCount;
 
 	private Integer pageSize;
 
+	private String message;
+
 	private String requestId;
+
+	private Integer pageNumber;
+
+	private String code;
 
 	private String success;
 
-	private Integer totalCount;
-
 	private List<DataItem> data;
 
-	public String getCode() {
-		return this.code;
+	public Integer getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setTotalCount(Integer totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public Integer getPageSize() {
@@ -73,6 +57,14 @@ public class ListCorpMetricsResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -81,20 +73,28 @@ public class ListCorpMetricsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public Integer getPageNumber() {
+		return this.pageNumber;
+	}
+
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public Integer getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Integer totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public List<DataItem> getData() {
@@ -109,11 +109,7 @@ public class ListCorpMetricsResponse extends AcsResponse {
 
 		private String corpId;
 
-		private String tagCode;
-
-		private String tagMetrics;
-
-		private String tagValue;
+		private String personId;
 
 		private String deviceGroupId;
 
@@ -121,7 +117,11 @@ public class ListCorpMetricsResponse extends AcsResponse {
 
 		private String userGroupId;
 
-		private String personId;
+		private String tagMetrics;
+
+		private String tagCode;
+
+		private String tagValue;
 
 		private String dateId;
 
@@ -133,28 +133,12 @@ public class ListCorpMetricsResponse extends AcsResponse {
 			this.corpId = corpId;
 		}
 
-		public String getTagCode() {
-			return this.tagCode;
+		public String getPersonId() {
+			return this.personId;
 		}
 
-		public void setTagCode(String tagCode) {
-			this.tagCode = tagCode;
-		}
-
-		public String getTagMetrics() {
-			return this.tagMetrics;
-		}
-
-		public void setTagMetrics(String tagMetrics) {
-			this.tagMetrics = tagMetrics;
-		}
-
-		public String getTagValue() {
-			return this.tagValue;
-		}
-
-		public void setTagValue(String tagValue) {
-			this.tagValue = tagValue;
+		public void setPersonId(String personId) {
+			this.personId = personId;
 		}
 
 		public String getDeviceGroupId() {
@@ -181,12 +165,28 @@ public class ListCorpMetricsResponse extends AcsResponse {
 			this.userGroupId = userGroupId;
 		}
 
-		public String getPersonId() {
-			return this.personId;
+		public String getTagMetrics() {
+			return this.tagMetrics;
 		}
 
-		public void setPersonId(String personId) {
-			this.personId = personId;
+		public void setTagMetrics(String tagMetrics) {
+			this.tagMetrics = tagMetrics;
+		}
+
+		public String getTagCode() {
+			return this.tagCode;
+		}
+
+		public void setTagCode(String tagCode) {
+			this.tagCode = tagCode;
+		}
+
+		public String getTagValue() {
+			return this.tagValue;
+		}
+
+		public void setTagValue(String tagValue) {
+			this.tagValue = tagValue;
 		}
 
 		public String getDateId() {

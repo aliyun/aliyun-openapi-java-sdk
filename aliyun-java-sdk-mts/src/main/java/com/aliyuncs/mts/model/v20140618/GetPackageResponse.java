@@ -24,17 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetPackageResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String certPackage;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	private String requestId;
 
 	public String getCertPackage() {
 		return this.certPackage;
@@ -42,6 +34,14 @@ public class GetPackageResponse extends AcsResponse {
 
 	public void setCertPackage(String certPackage) {
 		this.certPackage = certPackage;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	@Override

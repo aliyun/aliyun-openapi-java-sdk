@@ -24,9 +24,9 @@ public class UpdateAgentResponseUnmarshaller {
 		
 		updateAgentResponse.setRequestId(_ctx.stringValue("UpdateAgentResponse.RequestId"));
 		updateAgentResponse.setMessage(_ctx.stringValue("UpdateAgentResponse.Message"));
-		updateAgentResponse.setHttpStatusCode(_ctx.longValue("UpdateAgentResponse.HttpStatusCode"));
 		updateAgentResponse.setCode(_ctx.stringValue("UpdateAgentResponse.Code"));
 		updateAgentResponse.setSuccess(_ctx.booleanValue("UpdateAgentResponse.Success"));
+		updateAgentResponse.setHttpStatusCode(_ctx.longValue("UpdateAgentResponse.HttpStatusCode"));
 	 
 	 	return updateAgentResponse;
 	}

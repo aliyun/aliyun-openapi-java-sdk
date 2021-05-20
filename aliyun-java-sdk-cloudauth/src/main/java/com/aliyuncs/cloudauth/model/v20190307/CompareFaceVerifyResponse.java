@@ -70,6 +70,8 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 
 		private Float verifyScore;
 
+		private String certifyId;
+
 		public String getPassed() {
 			return this.passed;
 		}
@@ -84,6 +86,14 @@ public class CompareFaceVerifyResponse extends AcsResponse {
 
 		public void setVerifyScore(Float verifyScore) {
 			this.verifyScore = verifyScore;
+		}
+
+		public String getCertifyId() {
+			return this.certifyId;
+		}
+
+		public void setCertifyId(String certifyId) {
+			this.certifyId = certifyId;
 		}
 	}
 

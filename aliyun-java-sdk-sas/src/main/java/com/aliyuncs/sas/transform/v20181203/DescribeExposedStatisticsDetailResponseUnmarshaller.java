@@ -45,6 +45,8 @@ public class DescribeExposedStatisticsDetailResponseUnmarshaller {
 			statisticsDetail.setExposurePort(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposurePort"));
 			statisticsDetail.setExposureIp(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureIp"));
 			statisticsDetail.setExposureTypeInstanceName(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposureTypeInstanceName"));
+			statisticsDetail.setExposedCount(_ctx.integerValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].ExposedCount"));
+			statisticsDetail.setRegionId(_ctx.stringValue("DescribeExposedStatisticsDetailResponse.StatisticsDetails["+ i +"].RegionId"));
 
 			statisticsDetails.add(statisticsDetail);
 		}

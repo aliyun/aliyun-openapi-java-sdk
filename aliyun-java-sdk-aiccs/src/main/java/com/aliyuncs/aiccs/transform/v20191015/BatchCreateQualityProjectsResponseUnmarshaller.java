@@ -27,16 +27,16 @@ public class BatchCreateQualityProjectsResponseUnmarshaller {
 	public static BatchCreateQualityProjectsResponse unmarshall(BatchCreateQualityProjectsResponse batchCreateQualityProjectsResponse, UnmarshallerContext _ctx) {
 		
 		batchCreateQualityProjectsResponse.setRequestId(_ctx.stringValue("BatchCreateQualityProjectsResponse.RequestId"));
-		batchCreateQualityProjectsResponse.setCode(_ctx.stringValue("BatchCreateQualityProjectsResponse.Code"));
 		batchCreateQualityProjectsResponse.setMessage(_ctx.stringValue("BatchCreateQualityProjectsResponse.Message"));
+		batchCreateQualityProjectsResponse.setCode(_ctx.stringValue("BatchCreateQualityProjectsResponse.Code"));
 		batchCreateQualityProjectsResponse.setSuccess(_ctx.booleanValue("BatchCreateQualityProjectsResponse.Success"));
 
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("BatchCreateQualityProjectsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
 			dataItem.setInstanceId(_ctx.stringValue("BatchCreateQualityProjectsResponse.Data["+ i +"].InstanceId"));
-			dataItem.setProjectId(_ctx.longValue("BatchCreateQualityProjectsResponse.Data["+ i +"].ProjectId"));
 			dataItem.setVersion(_ctx.integerValue("BatchCreateQualityProjectsResponse.Data["+ i +"].Version"));
+			dataItem.setProjectId(_ctx.longValue("BatchCreateQualityProjectsResponse.Data["+ i +"].ProjectId"));
 
 			data.add(dataItem);
 		}

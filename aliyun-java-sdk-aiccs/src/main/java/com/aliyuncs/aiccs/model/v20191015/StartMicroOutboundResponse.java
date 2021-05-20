@@ -24,32 +24,24 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class StartMicroOutboundResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String code;
+	private String invokeCreateTime;
 
 	private String message;
 
-	private String customerInfo;
+	private String requestId;
 
 	private String invokeCmdId;
 
-	private String invokeCreateTime;
+	private String customerInfo;
 
-	public String getRequestId() {
-		return this.requestId;
+	private String code;
+
+	public String getInvokeCreateTime() {
+		return this.invokeCreateTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
+	public void setInvokeCreateTime(String invokeCreateTime) {
+		this.invokeCreateTime = invokeCreateTime;
 	}
 
 	public String getMessage() {
@@ -60,12 +52,12 @@ public class StartMicroOutboundResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public String getCustomerInfo() {
-		return this.customerInfo;
+	public String getRequestId() {
+		return this.requestId;
 	}
 
-	public void setCustomerInfo(String customerInfo) {
-		this.customerInfo = customerInfo;
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getInvokeCmdId() {
@@ -76,12 +68,20 @@ public class StartMicroOutboundResponse extends AcsResponse {
 		this.invokeCmdId = invokeCmdId;
 	}
 
-	public String getInvokeCreateTime() {
-		return this.invokeCreateTime;
+	public String getCustomerInfo() {
+		return this.customerInfo;
 	}
 
-	public void setInvokeCreateTime(String invokeCreateTime) {
-		this.invokeCreateTime = invokeCreateTime;
+	public void setCustomerInfo(String customerInfo) {
+		this.customerInfo = customerInfo;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	@Override

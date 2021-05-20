@@ -26,9 +26,9 @@ public class GetDRMLicenseResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String dRMData;
-
 	private String deviceInfo;
+
+	private String dRMData;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -38,20 +38,20 @@ public class GetDRMLicenseResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getDRMData() {
-		return this.dRMData;
-	}
-
-	public void setDRMData(String dRMData) {
-		this.dRMData = dRMData;
-	}
-
 	public String getDeviceInfo() {
 		return this.deviceInfo;
 	}
 
 	public void setDeviceInfo(String deviceInfo) {
 		this.deviceInfo = deviceInfo;
+	}
+
+	public String getDRMData() {
+		return this.dRMData;
+	}
+
+	public void setDRMData(String dRMData) {
+		this.dRMData = dRMData;
 	}
 
 	@Override

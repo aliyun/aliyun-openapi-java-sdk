@@ -61,6 +61,8 @@ public class ConfigureDtsJobRequest extends RpcAcsRequest<ConfigureDtsJobRespons
 
 	private String dtsInstanceId;
 
+	private String synchronizationDirection;
+
 	private String sourceEndpointRegion;
 
 	private Boolean delayNotice;
@@ -101,7 +103,7 @@ public class ConfigureDtsJobRequest extends RpcAcsRequest<ConfigureDtsJobRespons
 
 	private String sourceEndpointEngineName;
 	public ConfigureDtsJobRequest() {
-		super("Dts", "2020-01-01", "ConfigureDtsJob", "dts");
+		super("Dts", "2020-01-01", "ConfigureDtsJob");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -304,6 +306,17 @@ public class ConfigureDtsJobRequest extends RpcAcsRequest<ConfigureDtsJobRespons
 		this.dtsInstanceId = dtsInstanceId;
 		if(dtsInstanceId != null){
 			putQueryParameter("DtsInstanceId", dtsInstanceId);
+		}
+	}
+
+	public String getSynchronizationDirection() {
+		return this.synchronizationDirection;
+	}
+
+	public void setSynchronizationDirection(String synchronizationDirection) {
+		this.synchronizationDirection = synchronizationDirection;
+		if(synchronizationDirection != null){
+			putQueryParameter("SynchronizationDirection", synchronizationDirection);
 		}
 	}
 

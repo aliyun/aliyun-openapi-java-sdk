@@ -30,6 +30,7 @@ public class GetDeviceStatusResponseUnmarshaller {
 
 		Data data = new Data();
 		data.setStatus(_ctx.stringValue("GetDeviceStatusResponse.Data.Status"));
+		data.setTimestamp(_ctx.longValue("GetDeviceStatusResponse.Data.Timestamp"));
 		getDeviceStatusResponse.setData(data);
 	 
 	 	return getDeviceStatusResponse;

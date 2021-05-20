@@ -27,17 +27,18 @@ public class ListInferenceJobResponseUnmarshaller {
 	public static ListInferenceJobResponse unmarshall(ListInferenceJobResponse listInferenceJobResponse, UnmarshallerContext _ctx) {
 		
 		listInferenceJobResponse.setRequestId(_ctx.stringValue("ListInferenceJobResponse.RequestId"));
-		listInferenceJobResponse.setCode(_ctx.stringValue("ListInferenceJobResponse.Code"));
 		listInferenceJobResponse.setMessage(_ctx.stringValue("ListInferenceJobResponse.Message"));
+		listInferenceJobResponse.setCode(_ctx.stringValue("ListInferenceJobResponse.Code"));
 
 		List<JobsItem> jobs = new ArrayList<JobsItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListInferenceJobResponse.Jobs.Length"); i++) {
 			JobsItem jobsItem = new JobsItem();
-			jobsItem.setUserId(_ctx.longValue("ListInferenceJobResponse.Jobs["+ i +"].UserId"));
-			jobsItem.setJobId(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].JobId"));
 			jobsItem.setStatus(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].Status"));
-			jobsItem.setMessage(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].Message"));
 			jobsItem.setResult(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].Result"));
+			jobsItem.setJobId(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].JobId"));
+			jobsItem.setUserId(_ctx.longValue("ListInferenceJobResponse.Jobs["+ i +"].UserId"));
+			jobsItem.setMessage(_ctx.stringValue("ListInferenceJobResponse.Jobs["+ i +"].Message"));
+			jobsItem.setJobTime(_ctx.longValue("ListInferenceJobResponse.Jobs["+ i +"].JobTime"));
 
 			jobs.add(jobsItem);
 		}

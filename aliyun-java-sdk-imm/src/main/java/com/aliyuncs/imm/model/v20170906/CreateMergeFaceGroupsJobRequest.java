@@ -29,6 +29,8 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 
 	private String notifyEndpoint;
 
+	private String customMessage;
+
 	private String groupIdFrom;
 
 	private String notifyTopicName;
@@ -64,6 +66,17 @@ public class CreateMergeFaceGroupsJobRequest extends RpcAcsRequest<CreateMergeFa
 		this.notifyEndpoint = notifyEndpoint;
 		if(notifyEndpoint != null){
 			putQueryParameter("NotifyEndpoint", notifyEndpoint);
+		}
+	}
+
+	public String getCustomMessage() {
+		return this.customMessage;
+	}
+
+	public void setCustomMessage(String customMessage) {
+		this.customMessage = customMessage;
+		if(customMessage != null){
+			putQueryParameter("CustomMessage", customMessage);
 		}
 	}
 

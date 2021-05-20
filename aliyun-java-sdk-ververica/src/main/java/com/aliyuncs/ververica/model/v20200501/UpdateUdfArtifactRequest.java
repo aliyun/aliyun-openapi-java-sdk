@@ -33,7 +33,7 @@ public class UpdateUdfArtifactRequest extends RoaAcsRequest<UpdateUdfArtifactRes
 
 	private String udfArtifactName;
 	public UpdateUdfArtifactRequest() {
-		super("ververica", "2020-05-01", "UpdateUdfArtifact", "ververica");
+		super("ververica", "2020-05-01", "UpdateUdfArtifact");
 		setUriPattern("/pop/workspaces/[workspace]/sql/v1beta1/namespaces/[namespace]/udfartifacts/[udfArtifactName]");
 		setMethod(MethodType.PUT);
 		try {

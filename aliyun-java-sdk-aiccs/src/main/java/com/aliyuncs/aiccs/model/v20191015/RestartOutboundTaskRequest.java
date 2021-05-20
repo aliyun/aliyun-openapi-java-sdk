@@ -29,7 +29,7 @@ public class RestartOutboundTaskRequest extends RpcAcsRequest<RestartOutboundTas
 
 	private Long outboundTaskId;
 	public RestartOutboundTaskRequest() {
-		super("aiccs", "2019-10-15", "RestartOutboundTask", "aiccs-service");
+		super("aiccs", "2019-10-15", "RestartOutboundTask");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

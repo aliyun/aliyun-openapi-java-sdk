@@ -28,18 +28,18 @@ public class DescribeNetworkOptimizationsResponseUnmarshaller {
 		
 		describeNetworkOptimizationsResponse.setRequestId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.RequestId"));
 		describeNetworkOptimizationsResponse.setTotalCount(_ctx.integerValue("DescribeNetworkOptimizationsResponse.TotalCount"));
-		describeNetworkOptimizationsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationsResponse.PageNumber"));
 		describeNetworkOptimizationsResponse.setPageSize(_ctx.integerValue("DescribeNetworkOptimizationsResponse.PageSize"));
+		describeNetworkOptimizationsResponse.setPageNumber(_ctx.integerValue("DescribeNetworkOptimizationsResponse.PageNumber"));
 
 		List<NetworkOptimization> networkOptimizations = new ArrayList<NetworkOptimization>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations.Length"); i++) {
 			NetworkOptimization networkOptimization = new NetworkOptimization();
-			networkOptimization.setInstanceId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].InstanceId"));
-			networkOptimization.setName(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].Name"));
-			networkOptimization.setState(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].State"));
-			networkOptimization.setCreateTime(_ctx.longValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CreateTime"));
 			networkOptimization.setSagCount(_ctx.integerValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].SagCount"));
+			networkOptimization.setInstanceId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].InstanceId"));
+			networkOptimization.setState(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].State"));
 			networkOptimization.setCcnId(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CcnId"));
+			networkOptimization.setCreateTime(_ctx.longValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].CreateTime"));
+			networkOptimization.setName(_ctx.stringValue("DescribeNetworkOptimizationsResponse.NetworkOptimizations["+ i +"].Name"));
 
 			networkOptimizations.add(networkOptimization);
 		}

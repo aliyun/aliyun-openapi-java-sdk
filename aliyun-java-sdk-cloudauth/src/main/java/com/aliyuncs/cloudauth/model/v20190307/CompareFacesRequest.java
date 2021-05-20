@@ -32,8 +32,6 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 
 	private String targetImageValue;
 
-	private String bizType;
-
 	private String sourceImageValue;
 	public CompareFacesRequest() {
 		super("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth");
@@ -75,17 +73,6 @@ public class CompareFacesRequest extends RpcAcsRequest<CompareFacesResponse> {
 		this.targetImageValue = targetImageValue;
 		if(targetImageValue != null){
 			putBodyParameter("TargetImageValue", targetImageValue);
-		}
-	}
-
-	public String getBizType() {
-		return this.bizType;
-	}
-
-	public void setBizType(String bizType) {
-		this.bizType = bizType;
-		if(bizType != null){
-			putBodyParameter("BizType", bizType);
 		}
 	}
 

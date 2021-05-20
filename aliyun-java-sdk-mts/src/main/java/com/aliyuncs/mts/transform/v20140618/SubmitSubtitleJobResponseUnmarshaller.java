@@ -26,11 +26,11 @@ public class SubmitSubtitleJobResponseUnmarshaller {
 		submitSubtitleJobResponse.setRequestId(_ctx.stringValue("SubmitSubtitleJobResponse.RequestId"));
 
 		SubtitleJob subtitleJob = new SubtitleJob();
-		subtitleJob.setJobId(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.JobId"));
-		subtitleJob.setInputConfig(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
-		subtitleJob.setInputConfig1(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
-		subtitleJob.setUserData(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.UserData"));
+		subtitleJob.setOutputConfig(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.OutputConfig"));
 		subtitleJob.setState(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.State"));
+		subtitleJob.setJobId(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.JobId"));
+		subtitleJob.setUserData(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.UserData"));
+		subtitleJob.setInputConfig(_ctx.stringValue("SubmitSubtitleJobResponse.SubtitleJob.InputConfig"));
 		submitSubtitleJobResponse.setSubtitleJob(subtitleJob);
 	 
 	 	return submitSubtitleJobResponse;

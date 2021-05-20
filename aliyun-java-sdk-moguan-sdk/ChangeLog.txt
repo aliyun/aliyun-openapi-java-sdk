@@ -1,0 +1,6 @@
+2021-05-11 Version: 1.0.1
+- SDK device authorization API.
+
+2021-05-11 Version: 1.0.0
+- SDK device authorization API.
+

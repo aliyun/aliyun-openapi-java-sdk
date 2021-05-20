@@ -27,9 +27,9 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private String message;
+
+	private String code;
 
 	private String success;
 
@@ -43,20 +43,20 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getSuccess() {
@@ -77,61 +77,29 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Long id;
-
-		private String projectName;
-
-		private Integer checkFreqType;
-
-		private Integer qualityType;
-
 		private Integer status;
-
-		private String createTime;
 
 		private String modifyTime;
 
+		private Integer qualityType;
+
 		private Integer version;
 
-		private List<Long> qualityRuleIds;
+		private String projectName;
+
+		private String createTime;
+
+		private Long id;
+
+		private Integer checkFreqType;
+
+		private List<Long> servicerList;
 
 		private List<Long> depList;
 
 		private List<Long> groupList;
 
-		private List<Long> servicerList;
-
-		public Long getId() {
-			return this.id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
-		}
-
-		public String getProjectName() {
-			return this.projectName;
-		}
-
-		public void setProjectName(String projectName) {
-			this.projectName = projectName;
-		}
-
-		public Integer getCheckFreqType() {
-			return this.checkFreqType;
-		}
-
-		public void setCheckFreqType(Integer checkFreqType) {
-			this.checkFreqType = checkFreqType;
-		}
-
-		public Integer getQualityType() {
-			return this.qualityType;
-		}
-
-		public void setQualityType(Integer qualityType) {
-			this.qualityType = qualityType;
-		}
+		private List<Long> qualityRuleIds;
 
 		public Integer getStatus() {
 			return this.status;
@@ -139,14 +107,6 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public String getCreateTime() {
-			return this.createTime;
-		}
-
-		public void setCreateTime(String createTime) {
-			this.createTime = createTime;
 		}
 
 		public String getModifyTime() {
@@ -157,6 +117,14 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 			this.modifyTime = modifyTime;
 		}
 
+		public Integer getQualityType() {
+			return this.qualityType;
+		}
+
+		public void setQualityType(Integer qualityType) {
+			this.qualityType = qualityType;
+		}
+
 		public Integer getVersion() {
 			return this.version;
 		}
@@ -165,12 +133,44 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 			this.version = version;
 		}
 
-		public List<Long> getQualityRuleIds() {
-			return this.qualityRuleIds;
+		public String getProjectName() {
+			return this.projectName;
 		}
 
-		public void setQualityRuleIds(List<Long> qualityRuleIds) {
-			this.qualityRuleIds = qualityRuleIds;
+		public void setProjectName(String projectName) {
+			this.projectName = projectName;
+		}
+
+		public String getCreateTime() {
+			return this.createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public Long getId() {
+			return this.id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public Integer getCheckFreqType() {
+			return this.checkFreqType;
+		}
+
+		public void setCheckFreqType(Integer checkFreqType) {
+			this.checkFreqType = checkFreqType;
+		}
+
+		public List<Long> getServicerList() {
+			return this.servicerList;
+		}
+
+		public void setServicerList(List<Long> servicerList) {
+			this.servicerList = servicerList;
 		}
 
 		public List<Long> getDepList() {
@@ -189,12 +189,12 @@ public class GetQualityProjectDetailResponse extends AcsResponse {
 			this.groupList = groupList;
 		}
 
-		public List<Long> getServicerList() {
-			return this.servicerList;
+		public List<Long> getQualityRuleIds() {
+			return this.qualityRuleIds;
 		}
 
-		public void setServicerList(List<Long> servicerList) {
-			this.servicerList = servicerList;
+		public void setQualityRuleIds(List<Long> qualityRuleIds) {
+			this.qualityRuleIds = qualityRuleIds;
 		}
 	}
 

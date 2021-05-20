@@ -57,59 +57,19 @@ public class ListFpShotNotaryResponse extends AcsResponse {
 
 	public static class FpShotNotary {
 
-		private String transactionId;
-
-		private String txHash;
-
-		private String fpDBId;
-
-		private String jobId;
-
-		private String detail;
-
 		private String creationTime;
 
 		private String finishTime;
 
-		public String getTransactionId() {
-			return this.transactionId;
-		}
+		private String jobId;
 
-		public void setTransactionId(String transactionId) {
-			this.transactionId = transactionId;
-		}
+		private String txHash;
 
-		public String getTxHash() {
-			return this.txHash;
-		}
+		private String transactionId;
 
-		public void setTxHash(String txHash) {
-			this.txHash = txHash;
-		}
+		private String fpDBId;
 
-		public String getFpDBId() {
-			return this.fpDBId;
-		}
-
-		public void setFpDBId(String fpDBId) {
-			this.fpDBId = fpDBId;
-		}
-
-		public String getJobId() {
-			return this.jobId;
-		}
-
-		public void setJobId(String jobId) {
-			this.jobId = jobId;
-		}
-
-		public String getDetail() {
-			return this.detail;
-		}
-
-		public void setDetail(String detail) {
-			this.detail = detail;
-		}
+		private String detail;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -125,6 +85,46 @@ public class ListFpShotNotaryResponse extends AcsResponse {
 
 		public void setFinishTime(String finishTime) {
 			this.finishTime = finishTime;
+		}
+
+		public String getJobId() {
+			return this.jobId;
+		}
+
+		public void setJobId(String jobId) {
+			this.jobId = jobId;
+		}
+
+		public String getTxHash() {
+			return this.txHash;
+		}
+
+		public void setTxHash(String txHash) {
+			this.txHash = txHash;
+		}
+
+		public String getTransactionId() {
+			return this.transactionId;
+		}
+
+		public void setTransactionId(String transactionId) {
+			this.transactionId = transactionId;
+		}
+
+		public String getFpDBId() {
+			return this.fpDBId;
+		}
+
+		public void setFpDBId(String fpDBId) {
+			this.fpDBId = fpDBId;
+		}
+
+		public String getDetail() {
+			return this.detail;
+		}
+
+		public void setDetail(String detail) {
+			this.detail = detail;
 		}
 	}
 

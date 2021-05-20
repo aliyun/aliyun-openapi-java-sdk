@@ -33,7 +33,7 @@ public class CheckServiceLinkedRoleRequest extends RpcAcsRequest<CheckServiceLin
 
 	private Long ownerId;
 	public CheckServiceLinkedRoleRequest() {
-		super("clickhouse", "2019-11-11", "CheckServiceLinkedRole", "clickhouse");
+		super("clickhouse", "2019-11-11", "CheckServiceLinkedRole");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

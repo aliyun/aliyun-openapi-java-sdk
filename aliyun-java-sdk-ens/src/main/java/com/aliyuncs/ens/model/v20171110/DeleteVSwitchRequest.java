@@ -26,7 +26,7 @@ public class DeleteVSwitchRequest extends RpcAcsRequest<DeleteVSwitchResponse> {
 
 	private String vSwitchId;
 	public DeleteVSwitchRequest() {
-		super("Ens", "2017-11-10", "DeleteVSwitch");
+		super("Ens", "2017-11-10", "DeleteVSwitch", "ens");
 		setMethod(MethodType.POST);
 	}
 

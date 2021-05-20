@@ -23,8 +23,8 @@ public class DescribeSagCurrentDnsResponseUnmarshaller {
 	public static DescribeSagCurrentDnsResponse unmarshall(DescribeSagCurrentDnsResponse describeSagCurrentDnsResponse, UnmarshallerContext _ctx) {
 		
 		describeSagCurrentDnsResponse.setRequestId(_ctx.stringValue("DescribeSagCurrentDnsResponse.RequestId"));
-		describeSagCurrentDnsResponse.setMasterDns(_ctx.stringValue("DescribeSagCurrentDnsResponse.MasterDns"));
 		describeSagCurrentDnsResponse.setSlaveDns(_ctx.stringValue("DescribeSagCurrentDnsResponse.SlaveDns"));
+		describeSagCurrentDnsResponse.setMasterDns(_ctx.stringValue("DescribeSagCurrentDnsResponse.MasterDns"));
 	 
 	 	return describeSagCurrentDnsResponse;
 	}

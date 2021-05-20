@@ -23,16 +23,16 @@ public class CreateQosCarResponseUnmarshaller {
 	public static CreateQosCarResponse unmarshall(CreateQosCarResponse createQosCarResponse, UnmarshallerContext _ctx) {
 		
 		createQosCarResponse.setRequestId(_ctx.stringValue("CreateQosCarResponse.RequestId"));
-		createQosCarResponse.setQosId(_ctx.stringValue("CreateQosCarResponse.QosId"));
-		createQosCarResponse.setQosCarId(_ctx.stringValue("CreateQosCarResponse.QosCarId"));
-		createQosCarResponse.setDescription(_ctx.stringValue("CreateQosCarResponse.Description"));
-		createQosCarResponse.setPriority(_ctx.integerValue("CreateQosCarResponse.Priority"));
-		createQosCarResponse.setLimitType(_ctx.stringValue("CreateQosCarResponse.LimitType"));
 		createQosCarResponse.setMinBandwidthAbs(_ctx.integerValue("CreateQosCarResponse.MinBandwidthAbs"));
-		createQosCarResponse.setMaxBandwidthAbs(_ctx.integerValue("CreateQosCarResponse.MaxBandwidthAbs"));
-		createQosCarResponse.setMinBandwidthPercent(_ctx.integerValue("CreateQosCarResponse.MinBandwidthPercent"));
+		createQosCarResponse.setDescription(_ctx.stringValue("CreateQosCarResponse.Description"));
+		createQosCarResponse.setQosCarId(_ctx.stringValue("CreateQosCarResponse.QosCarId"));
+		createQosCarResponse.setPriority(_ctx.integerValue("CreateQosCarResponse.Priority"));
 		createQosCarResponse.setMaxBandwidthPercent(_ctx.integerValue("CreateQosCarResponse.MaxBandwidthPercent"));
+		createQosCarResponse.setMaxBandwidthAbs(_ctx.integerValue("CreateQosCarResponse.MaxBandwidthAbs"));
+		createQosCarResponse.setQosId(_ctx.stringValue("CreateQosCarResponse.QosId"));
 		createQosCarResponse.setPercentSourceType(_ctx.stringValue("CreateQosCarResponse.PercentSourceType"));
+		createQosCarResponse.setMinBandwidthPercent(_ctx.integerValue("CreateQosCarResponse.MinBandwidthPercent"));
+		createQosCarResponse.setLimitType(_ctx.stringValue("CreateQosCarResponse.LimitType"));
 	 
 	 	return createQosCarResponse;
 	}

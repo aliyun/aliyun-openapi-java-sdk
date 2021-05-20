@@ -26,6 +26,7 @@ public class CloseTicketResponseUnmarshaller {
 		closeTicketResponse.setMessage(_ctx.stringValue("CloseTicketResponse.Message"));
 		closeTicketResponse.setCode(_ctx.stringValue("CloseTicketResponse.Code"));
 		closeTicketResponse.setSuccess(_ctx.booleanValue("CloseTicketResponse.Success"));
+		closeTicketResponse.setHttpStatusCode(_ctx.longValue("CloseTicketResponse.HttpStatusCode"));
 	 
 	 	return closeTicketResponse;
 	}

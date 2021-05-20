@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 	private List<Agents> data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -79,13 +79,13 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 		private Integer status;
 
-		private Long tenantId;
-
 		private String displayName;
 
 		private Long agentId;
 
 		private String accountName;
+
+		private Long tenantId;
 
 		public Integer getStatus() {
 			return this.status;
@@ -93,14 +93,6 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 		public void setStatus(Integer status) {
 			this.status = status;
-		}
-
-		public Long getTenantId() {
-			return this.tenantId;
-		}
-
-		public void setTenantId(Long tenantId) {
-			this.tenantId = tenantId;
 		}
 
 		public String getDisplayName() {
@@ -125,6 +117,14 @@ public class ListAgentBySkillGroupIdResponse extends AcsResponse {
 
 		public void setAccountName(String accountName) {
 			this.accountName = accountName;
+		}
+
+		public Long getTenantId() {
+			return this.tenantId;
+		}
+
+		public void setTenantId(Long tenantId) {
+			this.tenantId = tenantId;
 		}
 	}
 

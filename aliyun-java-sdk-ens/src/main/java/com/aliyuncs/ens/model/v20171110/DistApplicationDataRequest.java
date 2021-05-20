@@ -30,7 +30,7 @@ public class DistApplicationDataRequest extends RpcAcsRequest<DistApplicationDat
 
 	private String appId;
 	public DistApplicationDataRequest() {
-		super("Ens", "2017-11-10", "DistApplicationData");
+		super("Ens", "2017-11-10", "DistApplicationData", "ens");
 		setMethod(MethodType.POST);
 	}
 

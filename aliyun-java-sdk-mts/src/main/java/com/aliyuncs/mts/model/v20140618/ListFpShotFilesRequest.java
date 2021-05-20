@@ -31,7 +31,7 @@ public class ListFpShotFilesRequest extends RpcAcsRequest<ListFpShotFilesRespons
 
 	private String nextPageToken;
 
-	private Long pageSize;
+	private Integer pageSize;
 
 	private String resourceOwnerAccount;
 
@@ -80,11 +80,11 @@ public class ListFpShotFilesRequest extends RpcAcsRequest<ListFpShotFilesRespons
 		}
 	}
 
-	public Long getPageSize() {
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(Long pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());

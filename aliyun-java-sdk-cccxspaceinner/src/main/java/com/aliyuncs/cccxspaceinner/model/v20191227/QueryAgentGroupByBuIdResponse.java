@@ -25,20 +25,20 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class QueryAgentGroupByBuIdResponse extends AcsResponse {
 
-	private Boolean success;
+	private String message;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<XspaceAgentGroup> data;
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getMessage() {
+		return this.message;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public String getCode() {
@@ -49,12 +49,12 @@ public class QueryAgentGroupByBuIdResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<XspaceAgentGroup> getData() {
@@ -67,21 +67,29 @@ public class QueryAgentGroupByBuIdResponse extends AcsResponse {
 
 	public static class XspaceAgentGroup {
 
+		private Integer status;
+
 		private Long buId;
 
-		private Long departmentId;
+		private String showName;
+
+		private String description;
 
 		private Long groupId;
 
 		private String groupName;
 
-		private String showName;
+		private Long departmentId;
 
 		private Boolean isPublic;
 
-		private Integer status;
+		public Integer getStatus() {
+			return this.status;
+		}
 
-		private String description;
+		public void setStatus(Integer status) {
+			this.status = status;
+		}
 
 		public Long getBuId() {
 			return this.buId;
@@ -91,12 +99,20 @@ public class QueryAgentGroupByBuIdResponse extends AcsResponse {
 			this.buId = buId;
 		}
 
-		public Long getDepartmentId() {
-			return this.departmentId;
+		public String getShowName() {
+			return this.showName;
 		}
 
-		public void setDepartmentId(Long departmentId) {
-			this.departmentId = departmentId;
+		public void setShowName(String showName) {
+			this.showName = showName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
 		}
 
 		public Long getGroupId() {
@@ -115,12 +131,12 @@ public class QueryAgentGroupByBuIdResponse extends AcsResponse {
 			this.groupName = groupName;
 		}
 
-		public String getShowName() {
-			return this.showName;
+		public Long getDepartmentId() {
+			return this.departmentId;
 		}
 
-		public void setShowName(String showName) {
-			this.showName = showName;
+		public void setDepartmentId(Long departmentId) {
+			this.departmentId = departmentId;
 		}
 
 		public Boolean getIsPublic() {
@@ -129,22 +145,6 @@ public class QueryAgentGroupByBuIdResponse extends AcsResponse {
 
 		public void setIsPublic(Boolean isPublic) {
 			this.isPublic = isPublic;
-		}
-
-		public Integer getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(Integer status) {
-			this.status = status;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 

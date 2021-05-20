@@ -15,8 +15,6 @@
 package com.aliyuncs.vcs.model.v20200515;
 
 import com.aliyuncs.RpcAcsRequest;
-import java.util.List;
-import com.google.gson.Gson;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.vcs.Endpoint;
 
@@ -33,15 +31,15 @@ public class GetPersonListRequest extends RpcAcsRequest<GetPersonListResponse> {
 
 	private Long pageNumber;
 
-	private List<Object> corpIdList;
+	private String corpIdList;
 
 	private String faceUrl;
 
 	private Long pageSize;
 
-	private List<Object> personIdList;
+	private String personIdList;
 	public GetPersonListRequest() {
-		super("Vcs", "2020-05-15", "GetPersonList", "vcs");
+		super("Vcs", "2020-05-15", "GetPersonList");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -82,14 +80,14 @@ public class GetPersonListRequest extends RpcAcsRequest<GetPersonListResponse> {
 		}
 	}
 
-	public List<Object> getCorpIdList() {
+	public String getCorpIdList() {
 		return this.corpIdList;
 	}
 
-	public void setCorpIdList(List<Object> corpIdList) {
+	public void setCorpIdList(String corpIdList) {
 		this.corpIdList = corpIdList;
 		if(corpIdList != null){
-			putBodyParameter("CorpIdList", new Gson().toJson(corpIdList));
+			putBodyParameter("CorpIdList", corpIdList);
 		}
 	}
 
@@ -115,14 +113,14 @@ public class GetPersonListRequest extends RpcAcsRequest<GetPersonListResponse> {
 		}
 	}
 
-	public List<Object> getPersonIdList() {
+	public String getPersonIdList() {
 		return this.personIdList;
 	}
 
-	public void setPersonIdList(List<Object> personIdList) {
+	public void setPersonIdList(String personIdList) {
 		this.personIdList = personIdList;
 		if(personIdList != null){
-			putBodyParameter("PersonIdList", new Gson().toJson(personIdList));
+			putBodyParameter("PersonIdList", personIdList);
 		}
 	}
 

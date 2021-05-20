@@ -24,9 +24,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetEntityRouteResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -34,20 +34,20 @@ public class GetEntityRouteResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -76,7 +76,17 @@ public class GetEntityRouteResponse extends AcsResponse {
 
 	public static class Data {
 
+		private String entityBizCodeType;
+
+		private Long groupId;
+
 		private String entityId;
+
+		private Long serviceId;
+
+		private String entityBizCode;
+
+		private String departmentId;
 
 		private Long uniqueId;
 
@@ -84,17 +94,23 @@ public class GetEntityRouteResponse extends AcsResponse {
 
 		private String extInfo;
 
-		private String entityBizCodeType;
-
-		private String departmentId;
-
-		private String entityBizCode;
-
 		private String entityRelationNumber;
 
-		private Long serviceId;
+		public String getEntityBizCodeType() {
+			return this.entityBizCodeType;
+		}
 
-		private Long groupId;
+		public void setEntityBizCodeType(String entityBizCodeType) {
+			this.entityBizCodeType = entityBizCodeType;
+		}
+
+		public Long getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(Long groupId) {
+			this.groupId = groupId;
+		}
 
 		public String getEntityId() {
 			return this.entityId;
@@ -102,6 +118,30 @@ public class GetEntityRouteResponse extends AcsResponse {
 
 		public void setEntityId(String entityId) {
 			this.entityId = entityId;
+		}
+
+		public Long getServiceId() {
+			return this.serviceId;
+		}
+
+		public void setServiceId(Long serviceId) {
+			this.serviceId = serviceId;
+		}
+
+		public String getEntityBizCode() {
+			return this.entityBizCode;
+		}
+
+		public void setEntityBizCode(String entityBizCode) {
+			this.entityBizCode = entityBizCode;
+		}
+
+		public String getDepartmentId() {
+			return this.departmentId;
+		}
+
+		public void setDepartmentId(String departmentId) {
+			this.departmentId = departmentId;
 		}
 
 		public Long getUniqueId() {
@@ -128,52 +168,12 @@ public class GetEntityRouteResponse extends AcsResponse {
 			this.extInfo = extInfo;
 		}
 
-		public String getEntityBizCodeType() {
-			return this.entityBizCodeType;
-		}
-
-		public void setEntityBizCodeType(String entityBizCodeType) {
-			this.entityBizCodeType = entityBizCodeType;
-		}
-
-		public String getDepartmentId() {
-			return this.departmentId;
-		}
-
-		public void setDepartmentId(String departmentId) {
-			this.departmentId = departmentId;
-		}
-
-		public String getEntityBizCode() {
-			return this.entityBizCode;
-		}
-
-		public void setEntityBizCode(String entityBizCode) {
-			this.entityBizCode = entityBizCode;
-		}
-
 		public String getEntityRelationNumber() {
 			return this.entityRelationNumber;
 		}
 
 		public void setEntityRelationNumber(String entityRelationNumber) {
 			this.entityRelationNumber = entityRelationNumber;
-		}
-
-		public Long getServiceId() {
-			return this.serviceId;
-		}
-
-		public void setServiceId(Long serviceId) {
-			this.serviceId = serviceId;
-		}
-
-		public Long getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(Long groupId) {
-			this.groupId = groupId;
 		}
 	}
 

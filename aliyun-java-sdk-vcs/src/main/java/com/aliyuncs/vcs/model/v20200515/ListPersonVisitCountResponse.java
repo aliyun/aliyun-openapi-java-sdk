@@ -25,44 +25,28 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListPersonVisitCountResponse extends AcsResponse {
 
-	private String code;
-
-	private String message;
-
-	private String pageNo;
+	private String totalCount;
 
 	private String pageSize;
 
+	private String message;
+
 	private String requestId;
+
+	private String pageNo;
+
+	private String code;
 
 	private String success;
 
-	private String totalCount;
-
 	private List<Datas> data;
 
-	public String getCode() {
-		return this.code;
+	public String getTotalCount() {
+		return this.totalCount;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public String getPageNo() {
-		return this.pageNo;
-	}
-
-	public void setPageNo(String pageNo) {
-		this.pageNo = pageNo;
+	public void setTotalCount(String totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public String getPageSize() {
@@ -73,6 +57,14 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 		this.pageSize = pageSize;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -81,20 +73,28 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String getSuccess() {
 		return this.success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
-	}
-
-	public String getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
 	}
 
 	public List<Datas> getData() {
@@ -109,19 +109,19 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 
 		private String corpId;
 
-		private String deviceId;
-
-		private String groupId;
-
 		private String personId;
 
-		private String tagCode;
+		private String deviceId;
 
 		private String tagMetrics;
 
-		private String hourId;
+		private String tagCode;
 
 		private String dayId;
+
+		private String hourId;
+
+		private String groupId;
 
 		public String getCorpId() {
 			return this.corpId;
@@ -129,22 +129,6 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 
 		public void setCorpId(String corpId) {
 			this.corpId = corpId;
-		}
-
-		public String getDeviceId() {
-			return this.deviceId;
-		}
-
-		public void setDeviceId(String deviceId) {
-			this.deviceId = deviceId;
-		}
-
-		public String getGroupId() {
-			return this.groupId;
-		}
-
-		public void setGroupId(String groupId) {
-			this.groupId = groupId;
 		}
 
 		public String getPersonId() {
@@ -155,12 +139,12 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 			this.personId = personId;
 		}
 
-		public String getTagCode() {
-			return this.tagCode;
+		public String getDeviceId() {
+			return this.deviceId;
 		}
 
-		public void setTagCode(String tagCode) {
-			this.tagCode = tagCode;
+		public void setDeviceId(String deviceId) {
+			this.deviceId = deviceId;
 		}
 
 		public String getTagMetrics() {
@@ -171,12 +155,12 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 			this.tagMetrics = tagMetrics;
 		}
 
-		public String getHourId() {
-			return this.hourId;
+		public String getTagCode() {
+			return this.tagCode;
 		}
 
-		public void setHourId(String hourId) {
-			this.hourId = hourId;
+		public void setTagCode(String tagCode) {
+			this.tagCode = tagCode;
 		}
 
 		public String getDayId() {
@@ -185,6 +169,22 @@ public class ListPersonVisitCountResponse extends AcsResponse {
 
 		public void setDayId(String dayId) {
 			this.dayId = dayId;
+		}
+
+		public String getHourId() {
+			return this.hourId;
+		}
+
+		public void setHourId(String hourId) {
+			this.hourId = hourId;
+		}
+
+		public String getGroupId() {
+			return this.groupId;
+		}
+
+		public void setGroupId(String groupId) {
+			this.groupId = groupId;
 		}
 	}
 

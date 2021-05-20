@@ -32,7 +32,7 @@ public class GetVmListRequest extends RpcAcsRequest<GetVmListResponse> {
 
 	private Long aliUid;
 	public GetVmListRequest() {
-		super("Ens", "2017-11-10", "GetVmList");
+		super("Ens", "2017-11-10", "GetVmList", "ens");
 		setMethod(MethodType.GET);
 	}
 

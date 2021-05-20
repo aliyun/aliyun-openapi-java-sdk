@@ -29,7 +29,7 @@ public class QueryCertUrlByApplyIdRequest extends RpcAcsRequest<QueryCertUrlByAp
 
 	private Long applyId;
 	public QueryCertUrlByApplyIdRequest() {
-		super("Iot", "2018-01-20", "QueryCertUrlByApplyId");
+		super("Iot", "2018-01-20", "QueryCertUrlByApplyId", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

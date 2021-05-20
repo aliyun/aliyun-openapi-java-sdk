@@ -29,7 +29,7 @@ public class GetJobStatusRequest extends RpcAcsRequest<GetJobStatusResponse> {
 
 	private String vcName;
 	public GetJobStatusRequest() {
-		super("openanalytics-open", "2018-06-19", "GetJobStatus", "openanalytics");
+		super("openanalytics-open", "2018-06-19", "GetJobStatus", "openanalytics-cap");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

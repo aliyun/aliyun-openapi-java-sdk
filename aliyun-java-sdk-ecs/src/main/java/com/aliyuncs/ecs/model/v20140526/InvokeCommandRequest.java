@@ -34,6 +34,8 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 
 	private String frequency;
 
+	private String repeatMode;
+
 	private String windowsPasswordName;
 
 	private Boolean timed;
@@ -88,6 +90,17 @@ public class InvokeCommandRequest extends RpcAcsRequest<InvokeCommandResponse> {
 		this.frequency = frequency;
 		if(frequency != null){
 			putQueryParameter("Frequency", frequency);
+		}
+	}
+
+	public String getRepeatMode() {
+		return this.repeatMode;
+	}
+
+	public void setRepeatMode(String repeatMode) {
+		this.repeatMode = repeatMode;
+		if(repeatMode != null){
+			putQueryParameter("RepeatMode", repeatMode);
 		}
 	}
 

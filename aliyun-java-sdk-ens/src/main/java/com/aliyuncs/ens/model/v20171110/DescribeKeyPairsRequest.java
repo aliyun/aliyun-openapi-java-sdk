@@ -30,7 +30,7 @@ public class DescribeKeyPairsRequest extends RpcAcsRequest<DescribeKeyPairsRespo
 
 	private String pageSize;
 	public DescribeKeyPairsRequest() {
-		super("Ens", "2017-11-10", "DescribeKeyPairs");
+		super("Ens", "2017-11-10", "DescribeKeyPairs", "ens");
 		setMethod(MethodType.POST);
 	}
 

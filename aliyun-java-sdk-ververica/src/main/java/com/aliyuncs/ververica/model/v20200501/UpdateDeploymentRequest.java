@@ -33,7 +33,7 @@ public class UpdateDeploymentRequest extends RoaAcsRequest<UpdateDeploymentRespo
 
 	private String namespace;
 	public UpdateDeploymentRequest() {
-		super("ververica", "2020-05-01", "UpdateDeployment", "ververica");
+		super("ververica", "2020-05-01", "UpdateDeployment");
 		setUriPattern("/pop/workspaces/[workspace]/api/v1/namespaces/[namespace]/deployments/[deploymentId]/patch");
 		setMethod(MethodType.PUT);
 		try {

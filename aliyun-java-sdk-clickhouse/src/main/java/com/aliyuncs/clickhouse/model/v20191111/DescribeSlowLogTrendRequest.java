@@ -41,7 +41,7 @@ public class DescribeSlowLogTrendRequest extends RpcAcsRequest<DescribeSlowLogTr
 
 	private Long ownerId;
 	public DescribeSlowLogTrendRequest() {
-		super("clickhouse", "2019-11-11", "DescribeSlowLogTrend", "clickhouse");
+		super("clickhouse", "2019-11-11", "DescribeSlowLogTrend");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
