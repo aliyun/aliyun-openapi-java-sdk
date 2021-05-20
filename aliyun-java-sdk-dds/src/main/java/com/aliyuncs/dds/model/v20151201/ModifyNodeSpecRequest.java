@@ -31,8 +31,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private Integer readonlyReplicas;
 
-	private String couponNo;
-
 	private String nodeClass;
 
 	private String securityToken;
@@ -41,11 +39,7 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String dBInstanceId;
 
-	private String switchTime;
-
 	private String nodeId;
-
-	private String businessInfo;
 
 	private Boolean autoPay;
 
@@ -61,7 +55,7 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 
 	private String orderType;
 	public ModifyNodeSpecRequest() {
-		super("Dds", "2015-12-01", "ModifyNodeSpec", "Dds");
+		super("Dds", "2015-12-01", "ModifyNodeSpec");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -99,17 +93,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.readonlyReplicas = readonlyReplicas;
 		if(readonlyReplicas != null){
 			putQueryParameter("ReadonlyReplicas", readonlyReplicas.toString());
-		}
-	}
-
-	public String getCouponNo() {
-		return this.couponNo;
-	}
-
-	public void setCouponNo(String couponNo) {
-		this.couponNo = couponNo;
-		if(couponNo != null){
-			putQueryParameter("CouponNo", couponNo);
 		}
 	}
 
@@ -157,17 +140,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		}
 	}
 
-	public String getSwitchTime() {
-		return this.switchTime;
-	}
-
-	public void setSwitchTime(String switchTime) {
-		this.switchTime = switchTime;
-		if(switchTime != null){
-			putQueryParameter("SwitchTime", switchTime);
-		}
-	}
-
 	public String getNodeId() {
 		return this.nodeId;
 	}
@@ -176,17 +148,6 @@ public class ModifyNodeSpecRequest extends RpcAcsRequest<ModifyNodeSpecResponse>
 		this.nodeId = nodeId;
 		if(nodeId != null){
 			putQueryParameter("NodeId", nodeId);
-		}
-	}
-
-	public String getBusinessInfo() {
-		return this.businessInfo;
-	}
-
-	public void setBusinessInfo(String businessInfo) {
-		this.businessInfo = businessInfo;
-		if(businessInfo != null){
-			putQueryParameter("BusinessInfo", businessInfo);
 		}
 	}
 

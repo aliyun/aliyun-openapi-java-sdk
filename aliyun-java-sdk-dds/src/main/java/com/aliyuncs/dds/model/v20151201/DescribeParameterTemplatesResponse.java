@@ -25,15 +25,31 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeParameterTemplatesResponse extends AcsResponse {
 
+	private String parameterCount;
+
+	private String engineVersion;
+
 	private String requestId;
 
 	private String engine;
 
-	private String engineVersion;
-
-	private String parameterCount;
-
 	private List<TemplateRecord> parameters;
+
+	public String getParameterCount() {
+		return this.parameterCount;
+	}
+
+	public void setParameterCount(String parameterCount) {
+		this.parameterCount = parameterCount;
+	}
+
+	public String getEngineVersion() {
+		return this.engineVersion;
+	}
+
+	public void setEngineVersion(String engineVersion) {
+		this.engineVersion = engineVersion;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -51,22 +67,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 		this.engine = engine;
 	}
 
-	public String getEngineVersion() {
-		return this.engineVersion;
-	}
-
-	public void setEngineVersion(String engineVersion) {
-		this.engineVersion = engineVersion;
-	}
-
-	public String getParameterCount() {
-		return this.parameterCount;
-	}
-
-	public void setParameterCount(String parameterCount) {
-		this.parameterCount = parameterCount;
-	}
-
 	public List<TemplateRecord> getParameters() {
 		return this.parameters;
 	}
@@ -77,6 +77,8 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 	public static class TemplateRecord {
 
+		private String checkingCode;
+
 		private String parameterName;
 
 		private String parameterValue;
@@ -85,9 +87,15 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		private Boolean forceRestart;
 
-		private String checkingCode;
-
 		private String parameterDescription;
+
+		public String getCheckingCode() {
+			return this.checkingCode;
+		}
+
+		public void setCheckingCode(String checkingCode) {
+			this.checkingCode = checkingCode;
+		}
 
 		public String getParameterName() {
 			return this.parameterName;
@@ -119,14 +127,6 @@ public class DescribeParameterTemplatesResponse extends AcsResponse {
 
 		public void setForceRestart(Boolean forceRestart) {
 			this.forceRestart = forceRestart;
-		}
-
-		public String getCheckingCode() {
-			return this.checkingCode;
-		}
-
-		public void setCheckingCode(String checkingCode) {
-			this.checkingCode = checkingCode;
 		}
 
 		public String getParameterDescription() {

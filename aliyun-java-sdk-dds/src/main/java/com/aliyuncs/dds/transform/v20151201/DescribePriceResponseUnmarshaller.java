@@ -34,10 +34,10 @@ public class DescribePriceResponseUnmarshaller {
 		describePriceResponse.setOrderParams(_ctx.stringValue("DescribePriceResponse.OrderParams"));
 
 		Order order = new Order();
-		order.setCurrency(_ctx.stringValue("DescribePriceResponse.Order.Currency"));
-		order.setTradeAmount(_ctx.stringValue("DescribePriceResponse.Order.TradeAmount"));
 		order.setOriginalAmount(_ctx.stringValue("DescribePriceResponse.Order.OriginalAmount"));
 		order.setDiscountAmount(_ctx.stringValue("DescribePriceResponse.Order.DiscountAmount"));
+		order.setTradeAmount(_ctx.stringValue("DescribePriceResponse.Order.TradeAmount"));
+		order.setCurrency(_ctx.stringValue("DescribePriceResponse.Order.Currency"));
 
 		List<String> ruleIds1 = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Order.RuleIds.Length"); i++) {
@@ -48,9 +48,9 @@ public class DescribePriceResponseUnmarshaller {
 		List<Coupon> coupons = new ArrayList<Coupon>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.Order.Coupons.Length"); i++) {
 			Coupon coupon = new Coupon();
-			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].CouponNo"));
 			coupon.setDescription(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].Description"));
 			coupon.setIsSelected(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].IsSelected"));
+			coupon.setCouponNo(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].CouponNo"));
 			coupon.setName(_ctx.stringValue("DescribePriceResponse.Order.Coupons["+ i +"].Name"));
 
 			coupons.add(coupon);
@@ -61,10 +61,10 @@ public class DescribePriceResponseUnmarshaller {
 		List<SubOrder> subOrders = new ArrayList<SubOrder>();
 		for (int i = 0; i < _ctx.lengthValue("DescribePriceResponse.SubOrders.Length"); i++) {
 			SubOrder subOrder = new SubOrder();
-			subOrder.setInstanceId(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].InstanceId"));
-			subOrder.setTradeAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].TradeAmount"));
 			subOrder.setOriginalAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].OriginalAmount"));
 			subOrder.setDiscountAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].DiscountAmount"));
+			subOrder.setTradeAmount(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].TradeAmount"));
+			subOrder.setInstanceId(_ctx.stringValue("DescribePriceResponse.SubOrders["+ i +"].InstanceId"));
 
 			List<String> ruleIds = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribePriceResponse.SubOrders["+ i +"].RuleIds.Length"); j++) {

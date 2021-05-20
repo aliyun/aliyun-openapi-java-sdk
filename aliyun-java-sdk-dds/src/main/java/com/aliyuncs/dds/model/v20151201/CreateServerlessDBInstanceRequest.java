@@ -65,7 +65,7 @@ public class CreateServerlessDBInstanceRequest extends RpcAcsRequest<CreateServe
 
 	private String zoneId;
 	public CreateServerlessDBInstanceRequest() {
-		super("Dds", "2015-12-01", "CreateServerlessDBInstance", "Dds");
+		super("Dds", "2015-12-01", "CreateServerlessDBInstance");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

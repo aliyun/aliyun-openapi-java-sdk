@@ -37,7 +37,7 @@ public class DescribeMongoDBLogConfigRequest extends RpcAcsRequest<DescribeMongo
 
 	private Long ownerId;
 	public DescribeMongoDBLogConfigRequest() {
-		super("Dds", "2015-12-01", "DescribeMongoDBLogConfig", "Dds");
+		super("Dds", "2015-12-01", "DescribeMongoDBLogConfig");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
