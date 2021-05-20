@@ -2,6 +2,8 @@ package com.aliyuncs.auth;
 
 import static org.mockito.Mockito.mock;
 
+import com.aliyuncs.DefaultAcsClient;
+import com.aliyuncs.profile.DefaultProfile;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -40,6 +42,13 @@ public class StaticCredentialsProviderTest {
 
         StaticCredentialsProvider provider = new StaticCredentialsProvider(profile);
         Assert.assertTrue(provider.getCredentials() instanceof BasicSessionCredentials);
+    }
+
+    @Test
+    public void testNullCredential() {
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou");
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+        Assert.assertTrue(client != null);
     }
 
 }

@@ -44,6 +44,7 @@ import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -912,4 +913,9 @@ public class DefaultAcsClientTest {
         return tracer;
     }
 
+    @Test
+    public void testNullDefaultClient() throws ClientException {
+        DefaultAcsClient client = new DefaultAcsClient();
+        Assert.assertTrue(null != client);
+    }
 }
