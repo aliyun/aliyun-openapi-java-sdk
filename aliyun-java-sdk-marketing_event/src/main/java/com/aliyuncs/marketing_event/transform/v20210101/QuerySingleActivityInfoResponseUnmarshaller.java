@@ -43,6 +43,7 @@ public class QuerySingleActivityInfoResponseUnmarshaller {
 			dataItem.setChannelName(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].ChannelName"));
 			dataItem.setIsVipCustomer(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].IsVipCustomer"));
 			dataItem.setReportFields(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].ReportFields"));
+			dataItem.setEmail(_ctx.stringValue("QuerySingleActivityInfoResponse.Data["+ i +"].Email"));
 
 			data.add(dataItem);
 		}

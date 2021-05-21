@@ -95,6 +95,8 @@ public class QuerySingleActivityInfoResponse extends AcsResponse {
 
 		private String reportFields;
 
+		private String email;
+
 		public Long getId() {
 			return this.id;
 		}
@@ -165,6 +167,14 @@ public class QuerySingleActivityInfoResponse extends AcsResponse {
 
 		public void setReportFields(String reportFields) {
 			this.reportFields = reportFields;
+		}
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public void setEmail(String email) {
+			this.email = email;
 		}
 	}
 
