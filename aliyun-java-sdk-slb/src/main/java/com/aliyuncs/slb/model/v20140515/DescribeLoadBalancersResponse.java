@@ -125,6 +125,8 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		private String loadBalancerSpec;
 
+		private String deleteProtection;
+
 		private List<Tag> tags;
 
 		public String getLoadBalancerId() {
@@ -317,6 +319,14 @@ public class DescribeLoadBalancersResponse extends AcsResponse {
 
 		public void setLoadBalancerSpec(String loadBalancerSpec) {
 			this.loadBalancerSpec = loadBalancerSpec;
+		}
+
+		public String getDeleteProtection() {
+			return this.deleteProtection;
+		}
+
+		public void setDeleteProtection(String deleteProtection) {
+			this.deleteProtection = deleteProtection;
 		}
 
 		public List<Tag> getTags() {

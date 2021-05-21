@@ -1,3 +1,6 @@
+2021-05-21 Version: 3.3.7
+- Supported DescribeLoadBalancers with DeleteProtection and so on.
+
 2021-05-08 Version: 3.3.6
 - Support SLB DescribeLoadBalancerListeners.
 
