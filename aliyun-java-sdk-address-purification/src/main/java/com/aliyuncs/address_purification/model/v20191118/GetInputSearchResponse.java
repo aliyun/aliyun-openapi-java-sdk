@@ -15,22 +15,16 @@
 package com.aliyuncs.address_purification.model.v20191118;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.address_purification.transform.v20191118.DescribeProductResponseUnmarshaller;
+import com.aliyuncs.address_purification.transform.v20191118.GetInputSearchResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DescribeProductResponse extends AcsResponse {
+public class GetInputSearchResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String success;
-
-	private String code;
-
-	private String errMessage;
 
 	private String data;
 
@@ -42,30 +36,6 @@ public class DescribeProductResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(String success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -75,8 +45,8 @@ public class DescribeProductResponse extends AcsResponse {
 	}
 
 	@Override
-	public DescribeProductResponse getInstance(UnmarshallerContext context) {
-		return	DescribeProductResponseUnmarshaller.unmarshall(this, context);
+	public GetInputSearchResponse getInstance(UnmarshallerContext context) {
+		return	GetInputSearchResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

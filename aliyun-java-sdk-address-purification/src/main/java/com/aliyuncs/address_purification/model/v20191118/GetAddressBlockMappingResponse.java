@@ -15,22 +15,16 @@
 package com.aliyuncs.address_purification.model.v20191118;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.address_purification.transform.v20191118.GetAlgorithmResultResponseUnmarshaller;
+import com.aliyuncs.address_purification.transform.v20191118.GetAddressBlockMappingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetAlgorithmResultResponse extends AcsResponse {
+public class GetAddressBlockMappingResponse extends AcsResponse {
 
 	private String requestId;
-
-	private Boolean success;
-
-	private String code;
-
-	private String errMessage;
 
 	private String data;
 
@@ -42,30 +36,6 @@ public class GetAlgorithmResultResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -75,8 +45,8 @@ public class GetAlgorithmResultResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetAlgorithmResultResponse getInstance(UnmarshallerContext context) {
-		return	GetAlgorithmResultResponseUnmarshaller.unmarshall(this, context);
+	public GetAddressBlockMappingResponse getInstance(UnmarshallerContext context) {
+		return	GetAddressBlockMappingResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

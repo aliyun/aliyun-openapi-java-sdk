@@ -15,14 +15,14 @@
 package com.aliyuncs.address_purification.model.v20191118;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.address_purification.transform.v20191118.CompleteAddressResponseUnmarshaller;
+import com.aliyuncs.address_purification.transform.v20191118.GetAddressEvaluateResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CompleteAddressResponse extends AcsResponse {
+public class GetAddressEvaluateResponse extends AcsResponse {
 
 	private String requestId;
 
@@ -45,8 +45,8 @@ public class CompleteAddressResponse extends AcsResponse {
 	}
 
 	@Override
-	public CompleteAddressResponse getInstance(UnmarshallerContext context) {
-		return	CompleteAddressResponseUnmarshaller.unmarshall(this, context);
+	public GetAddressEvaluateResponse getInstance(UnmarshallerContext context) {
+		return	GetAddressEvaluateResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

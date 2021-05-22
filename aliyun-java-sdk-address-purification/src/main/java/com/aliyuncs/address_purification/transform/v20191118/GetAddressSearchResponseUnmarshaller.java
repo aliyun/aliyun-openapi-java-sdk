@@ -14,19 +14,17 @@
 
 package com.aliyuncs.address_purification.transform.v20191118;
 
-import com.aliyuncs.address_purification.model.v20191118.GetConsoleResultResponse;
+import com.aliyuncs.address_purification.model.v20191118.GetAddressSearchResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class GetConsoleResultResponseUnmarshaller {
+public class GetAddressSearchResponseUnmarshaller {
 
-	public static GetConsoleResultResponse unmarshall(GetConsoleResultResponse getConsoleResultResponse, UnmarshallerContext _ctx) {
+	public static GetAddressSearchResponse unmarshall(GetAddressSearchResponse getAddressSearchResponse, UnmarshallerContext _ctx) {
 		
-		getConsoleResultResponse.setRequestId(_ctx.stringValue("GetConsoleResultResponse.RequestId"));
-		getConsoleResultResponse.setErrCode(_ctx.stringValue("GetConsoleResultResponse.ErrCode"));
-		getConsoleResultResponse.setErrMessage(_ctx.stringValue("GetConsoleResultResponse.ErrMessage"));
-		getConsoleResultResponse.setData(_ctx.stringValue("GetConsoleResultResponse.Data"));
+		getAddressSearchResponse.setRequestId(_ctx.stringValue("GetAddressSearchResponse.RequestId"));
+		getAddressSearchResponse.setData(_ctx.stringValue("GetAddressSearchResponse.Data"));
 	 
-	 	return getConsoleResultResponse;
+	 	return getAddressSearchResponse;
 	}
 }

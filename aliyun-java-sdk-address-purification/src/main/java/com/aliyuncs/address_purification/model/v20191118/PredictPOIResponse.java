@@ -15,20 +15,16 @@
 package com.aliyuncs.address_purification.model.v20191118;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.address_purification.transform.v20191118.GetUserInfomationResponseUnmarshaller;
+import com.aliyuncs.address_purification.transform.v20191118.PredictPOIResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetUserInfomationResponse extends AcsResponse {
+public class PredictPOIResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String errCode;
-
-	private String errMessage;
 
 	private String data;
 
@@ -40,22 +36,6 @@ public class GetUserInfomationResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrCode() {
-		return this.errCode;
-	}
-
-	public void setErrCode(String errCode) {
-		this.errCode = errCode;
-	}
-
-	public String getErrMessage() {
-		return this.errMessage;
-	}
-
-	public void setErrMessage(String errMessage) {
-		this.errMessage = errMessage;
-	}
-
 	public String getData() {
 		return this.data;
 	}
@@ -65,8 +45,8 @@ public class GetUserInfomationResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetUserInfomationResponse getInstance(UnmarshallerContext context) {
-		return	GetUserInfomationResponseUnmarshaller.unmarshall(this, context);
+	public PredictPOIResponse getInstance(UnmarshallerContext context) {
+		return	PredictPOIResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override
