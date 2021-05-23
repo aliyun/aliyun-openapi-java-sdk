@@ -1,3 +1,6 @@
+2021-05-23 Version: 1.0.7
+- Supported Email.
+
 2021-05-21 Version: 1.0.8
 - Supported Email.
 
