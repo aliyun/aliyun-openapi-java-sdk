@@ -1,3 +1,6 @@
+2021-05-24 Version: 1.8.6
+- Support TransformDBClusterPayType.
+
 2021-05-06 Version: 1.8.5
 - Support DescribePolarSQLCollectorPolicy.
 
