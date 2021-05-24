@@ -33,7 +33,7 @@ public class SuspendSynchronizationJobRequest extends RpcAcsRequest<SuspendSynch
 
 	private String synchronizationDirection;
 	public SuspendSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "SuspendSynchronizationJob");
+		super("Dts", "2020-01-01", "SuspendSynchronizationJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

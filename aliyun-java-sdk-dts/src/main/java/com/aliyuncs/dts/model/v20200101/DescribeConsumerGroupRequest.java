@@ -35,7 +35,7 @@ public class DescribeConsumerGroupRequest extends RpcAcsRequest<DescribeConsumer
 
 	private Integer pageSize;
 	public DescribeConsumerGroupRequest() {
-		super("Dts", "2020-01-01", "DescribeConsumerGroup");
+		super("Dts", "2020-01-01", "DescribeConsumerGroup", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

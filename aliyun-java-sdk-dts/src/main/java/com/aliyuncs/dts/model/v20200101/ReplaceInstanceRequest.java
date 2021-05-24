@@ -22,14 +22,16 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpgradeTwoWayRequest extends RpcAcsRequest<UpgradeTwoWayResponse> {
+public class ReplaceInstanceRequest extends RpcAcsRequest<ReplaceInstanceResponse> {
 	   
 
-	private String instanceClass;
+	private String newInstanceId;
 
-	private String instanceId;
-	public UpgradeTwoWayRequest() {
-		super("Dts", "2020-01-01", "UpgradeTwoWay", "dts");
+	private String dtsJobId;
+
+	private String chargeType;
+	public ReplaceInstanceRequest() {
+		super("Dts", "2020-01-01", "ReplaceInstance", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class UpgradeTwoWayRequest extends RpcAcsRequest<UpgradeTwoWayResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceClass() {
-		return this.instanceClass;
+	public String getNewInstanceId() {
+		return this.newInstanceId;
 	}
 
-	public void setInstanceClass(String instanceClass) {
-		this.instanceClass = instanceClass;
-		if(instanceClass != null){
-			putQueryParameter("InstanceClass", instanceClass);
+	public void setNewInstanceId(String newInstanceId) {
+		this.newInstanceId = newInstanceId;
+		if(newInstanceId != null){
+			putQueryParameter("NewInstanceId", newInstanceId);
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getDtsJobId() {
+		return this.dtsJobId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
+		if(dtsJobId != null){
+			putQueryParameter("DtsJobId", dtsJobId);
+		}
+	}
+
+	public String getChargeType() {
+		return this.chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+		if(chargeType != null){
+			putQueryParameter("ChargeType", chargeType);
 		}
 	}
 
 	@Override
-	public Class<UpgradeTwoWayResponse> getResponseClass() {
-		return UpgradeTwoWayResponse.class;
+	public Class<ReplaceInstanceResponse> getResponseClass() {
+		return ReplaceInstanceResponse.class;
 	}
 
 }

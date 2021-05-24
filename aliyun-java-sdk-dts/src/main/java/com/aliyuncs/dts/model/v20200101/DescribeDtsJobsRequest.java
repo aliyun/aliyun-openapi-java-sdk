@@ -47,7 +47,7 @@ public class DescribeDtsJobsRequest extends RpcAcsRequest<DescribeDtsJobsRespons
 
 	private String status;
 	public DescribeDtsJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeDtsJobs");
+		super("Dts", "2020-01-01", "DescribeDtsJobs", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

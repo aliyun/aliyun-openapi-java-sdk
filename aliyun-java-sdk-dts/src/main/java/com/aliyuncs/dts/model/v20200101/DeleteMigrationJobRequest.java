@@ -31,7 +31,7 @@ public class DeleteMigrationJobRequest extends RpcAcsRequest<DeleteMigrationJobR
 
 	private String accountId;
 	public DeleteMigrationJobRequest() {
-		super("Dts", "2020-01-01", "DeleteMigrationJob");
+		super("Dts", "2020-01-01", "DeleteMigrationJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

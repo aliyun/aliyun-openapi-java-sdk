@@ -33,7 +33,7 @@ public class ResetSynchronizationJobRequest extends RpcAcsRequest<ResetSynchroni
 
 	private String synchronizationDirection;
 	public ResetSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "ResetSynchronizationJob");
+		super("Dts", "2020-01-01", "ResetSynchronizationJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

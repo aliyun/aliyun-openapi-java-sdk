@@ -35,7 +35,7 @@ public class CreateMigrationJobRequest extends RpcAcsRequest<CreateMigrationJobR
 
 	private String migrationJobClass;
 	public CreateMigrationJobRequest() {
-		super("Dts", "2020-01-01", "CreateMigrationJob");
+		super("Dts", "2020-01-01", "CreateMigrationJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

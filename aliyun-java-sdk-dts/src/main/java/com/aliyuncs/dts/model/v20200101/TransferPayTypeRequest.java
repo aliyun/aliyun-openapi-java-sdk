@@ -35,7 +35,7 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 
 	private String chargeType;
 	public TransferPayTypeRequest() {
-		super("Dts", "2020-01-01", "TransferPayType");
+		super("Dts", "2020-01-01", "TransferPayType", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

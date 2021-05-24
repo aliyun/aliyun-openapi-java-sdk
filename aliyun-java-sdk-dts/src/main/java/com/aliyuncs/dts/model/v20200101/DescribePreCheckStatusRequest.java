@@ -35,7 +35,7 @@ public class DescribePreCheckStatusRequest extends RpcAcsRequest<DescribePreChec
 
 	private String dtsJobId;
 	public DescribePreCheckStatusRequest() {
-		super("Dts", "2020-01-01", "DescribePreCheckStatus");
+		super("Dts", "2020-01-01", "DescribePreCheckStatus", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

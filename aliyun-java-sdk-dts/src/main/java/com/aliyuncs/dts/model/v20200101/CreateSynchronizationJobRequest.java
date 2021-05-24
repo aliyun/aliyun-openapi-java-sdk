@@ -53,7 +53,7 @@ public class CreateSynchronizationJobRequest extends RpcAcsRequest<CreateSynchro
 
 	private String destinationEndpointInstanceType;
 	public CreateSynchronizationJobRequest() {
-		super("Dts", "2020-01-01", "CreateSynchronizationJob");
+		super("Dts", "2020-01-01", "CreateSynchronizationJob", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

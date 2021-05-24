@@ -22,20 +22,20 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateJobMonitorRuleRequest extends RpcAcsRequest<CreateJobMonitorRuleResponse> {
+public class DescribeJobDiffStatusRequest extends RpcAcsRequest<DescribeJobDiffStatusResponse> {
 	   
 
-	private String type;
+	private String pageNumber;
 
-	private Long delayRuleTime;
+	private String tbName;
 
-	private String phone;
+	private String dbName;
+
+	private String pageSize;
 
 	private String dtsJobId;
-
-	private String state;
-	public CreateJobMonitorRuleRequest() {
-		super("Dts", "2020-01-01", "CreateJobMonitorRule", "dts");
+	public DescribeJobDiffStatusRequest() {
+		super("Dts", "2020-01-01", "DescribeJobDiffStatus", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,36 +43,47 @@ public class CreateJobMonitorRuleRequest extends RpcAcsRequest<CreateJobMonitorR
 		} catch (Exception e) {}
 	}
 
-	public String getType() {
-		return this.type;
+	public String getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber);
 		}
 	}
 
-	public Long getDelayRuleTime() {
-		return this.delayRuleTime;
+	public String getTbName() {
+		return this.tbName;
 	}
 
-	public void setDelayRuleTime(Long delayRuleTime) {
-		this.delayRuleTime = delayRuleTime;
-		if(delayRuleTime != null){
-			putQueryParameter("DelayRuleTime", delayRuleTime.toString());
+	public void setTbName(String tbName) {
+		this.tbName = tbName;
+		if(tbName != null){
+			putQueryParameter("TbName", tbName);
 		}
 	}
 
-	public String getPhone() {
-		return this.phone;
+	public String getDbName() {
+		return this.dbName;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-		if(phone != null){
-			putQueryParameter("Phone", phone);
+	public void setDbName(String dbName) {
+		this.dbName = dbName;
+		if(dbName != null){
+			putQueryParameter("DbName", dbName);
+		}
+	}
+
+	public String getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize);
 		}
 	}
 
@@ -87,20 +98,9 @@ public class CreateJobMonitorRuleRequest extends RpcAcsRequest<CreateJobMonitorR
 		}
 	}
 
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-		if(state != null){
-			putQueryParameter("State", state);
-		}
-	}
-
 	@Override
-	public Class<CreateJobMonitorRuleResponse> getResponseClass() {
-		return CreateJobMonitorRuleResponse.class;
+	public Class<DescribeJobDiffStatusResponse> getResponseClass() {
+		return DescribeJobDiffStatusResponse.class;
 	}
 
 }

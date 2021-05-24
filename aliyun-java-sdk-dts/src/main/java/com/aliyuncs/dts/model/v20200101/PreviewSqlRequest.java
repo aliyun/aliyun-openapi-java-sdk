@@ -27,7 +27,7 @@ public class PreviewSqlRequest extends RpcAcsRequest<PreviewSqlResponse> {
 
 	private String etlCalculator;
 	public PreviewSqlRequest() {
-		super("Dts", "2020-01-01", "PreviewSql");
+		super("Dts", "2020-01-01", "PreviewSql", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

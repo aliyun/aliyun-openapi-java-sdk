@@ -43,7 +43,7 @@ public class DescribeMigrationJobDetailRequest extends RpcAcsRequest<DescribeMig
 
 	private Boolean migrationModeStructureInitialization;
 	public DescribeMigrationJobDetailRequest() {
-		super("Dts", "2020-01-01", "DescribeMigrationJobDetail");
+		super("Dts", "2020-01-01", "DescribeMigrationJobDetail", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

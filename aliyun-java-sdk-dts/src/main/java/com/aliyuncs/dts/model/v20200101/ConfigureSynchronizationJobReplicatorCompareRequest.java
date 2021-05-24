@@ -37,7 +37,7 @@ public class ConfigureSynchronizationJobReplicatorCompareRequest extends RpcAcsR
 
 	private String synchronizationDirection;
 	public ConfigureSynchronizationJobReplicatorCompareRequest() {
-		super("Dts", "2020-01-01", "ConfigureSynchronizationJobReplicatorCompare");
+		super("Dts", "2020-01-01", "ConfigureSynchronizationJobReplicatorCompare", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

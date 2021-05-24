@@ -40,7 +40,7 @@ public class DescribeSynchronizationJobsRequest extends RpcAcsRequest<DescribeSy
 
 	private List<Tag> tags;
 	public DescribeSynchronizationJobsRequest() {
-		super("Dts", "2020-01-01", "DescribeSynchronizationJobs");
+		super("Dts", "2020-01-01", "DescribeSynchronizationJobs", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
