@@ -37,6 +37,7 @@ public class RescaleDeviceServiceResponseUnmarshaller {
 			resourceDetailInfo.setServer(_ctx.stringValue("RescaleDeviceServiceResponse.ResourceDetailInfos["+ i +"].Server"));
 			resourceDetailInfo.setType(_ctx.stringValue("RescaleDeviceServiceResponse.ResourceDetailInfos["+ i +"].Type"));
 			resourceDetailInfo.setStatus(_ctx.stringValue("RescaleDeviceServiceResponse.ResourceDetailInfos["+ i +"].Status"));
+			resourceDetailInfo.setMac(_ctx.stringValue("RescaleDeviceServiceResponse.ResourceDetailInfos["+ i +"].Mac"));
 
 			resourceDetailInfos.add(resourceDetailInfo);
 		}

@@ -1,3 +1,6 @@
+2021-05-25 Version: 1.6.1
+- Support EIP.
+
 2021-05-13 Version: 1.6.0
 - Support EIP.
 

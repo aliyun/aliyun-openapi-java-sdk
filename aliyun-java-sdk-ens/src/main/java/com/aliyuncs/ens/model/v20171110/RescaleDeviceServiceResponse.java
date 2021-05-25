@@ -59,6 +59,8 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 
 		private String status;
 
+		private String mac;
+
 		public String getRegionID() {
 			return this.regionID;
 		}
@@ -105,6 +107,14 @@ public class RescaleDeviceServiceResponse extends AcsResponse {
 
 		public void setStatus(String status) {
 			this.status = status;
+		}
+
+		public String getMac() {
+			return this.mac;
+		}
+
+		public void setMac(String mac) {
+			this.mac = mac;
 		}
 	}
 
