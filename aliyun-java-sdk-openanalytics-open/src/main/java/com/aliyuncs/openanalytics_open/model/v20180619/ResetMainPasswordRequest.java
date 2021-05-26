@@ -37,7 +37,7 @@ public class ResetMainPasswordRequest extends RpcAcsRequest<ResetMainPasswordRes
 
 	private String externalBizAliyunUid;
 	public ResetMainPasswordRequest() {
-		super("openanalytics-open", "2018-06-19", "ResetMainPassword", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "ResetMainPassword", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

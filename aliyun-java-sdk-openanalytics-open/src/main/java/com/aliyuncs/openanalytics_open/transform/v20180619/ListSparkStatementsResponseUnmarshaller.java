@@ -35,7 +35,7 @@ public class ListSparkStatementsResponseUnmarshaller {
 			statementsItem.setCode(_ctx.stringValue("ListSparkStatementsResponse.Statements["+ i +"].Code"));
 			statementsItem.setState(_ctx.stringValue("ListSparkStatementsResponse.Statements["+ i +"].State"));
 			statementsItem.setOutput(_ctx.stringValue("ListSparkStatementsResponse.Statements["+ i +"].Output"));
-			statementsItem.setProgress(_ctx.integerValue("ListSparkStatementsResponse.Statements["+ i +"].Progress"));
+			statementsItem.setProgress(_ctx.floatValue("ListSparkStatementsResponse.Statements["+ i +"].Progress"));
 			statementsItem.setStartedTime(_ctx.longValue("ListSparkStatementsResponse.Statements["+ i +"].StartedTime"));
 			statementsItem.setCompletedTime(_ctx.longValue("ListSparkStatementsResponse.Statements["+ i +"].CompletedTime"));
 

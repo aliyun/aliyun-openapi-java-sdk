@@ -41,6 +41,7 @@ public class GetJobDetailResponseUnmarshaller {
 		jobDetail.setDriverResourceSpec(_ctx.stringValue("GetJobDetailResponse.JobDetail.DriverResourceSpec"));
 		jobDetail.setExecutorResourceSpec(_ctx.stringValue("GetJobDetailResponse.JobDetail.ExecutorResourceSpec"));
 		jobDetail.setExecutorInstances(_ctx.stringValue("GetJobDetailResponse.JobDetail.ExecutorInstances"));
+		jobDetail.setLastJobAttemptId(_ctx.stringValue("GetJobDetailResponse.JobDetail.LastJobAttemptId"));
 		getJobDetailResponse.setJobDetail(jobDetail);
 	 
 	 	return getJobDetailResponse;

@@ -27,7 +27,7 @@ public class RemoveEndPointRequest extends RpcAcsRequest<RemoveEndPointResponse>
 
 	private String endPointID;
 	public RemoveEndPointRequest() {
-		super("openanalytics-open", "2018-06-19", "RemoveEndPoint", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "RemoveEndPoint", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

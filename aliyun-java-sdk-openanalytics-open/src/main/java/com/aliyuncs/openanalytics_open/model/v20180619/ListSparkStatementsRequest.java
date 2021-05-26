@@ -27,7 +27,7 @@ public class ListSparkStatementsRequest extends RpcAcsRequest<ListSparkStatement
 
 	private String jobId;
 	public ListSparkStatementsRequest() {
-		super("openanalytics-open", "2018-06-19", "ListSparkStatements", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "ListSparkStatements", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

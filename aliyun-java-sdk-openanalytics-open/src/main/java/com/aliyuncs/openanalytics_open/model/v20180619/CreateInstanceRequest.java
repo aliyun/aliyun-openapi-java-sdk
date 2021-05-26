@@ -31,7 +31,7 @@ public class CreateInstanceRequest extends RpcAcsRequest<CreateInstanceResponse>
 
 	private String component;
 	public CreateInstanceRequest() {
-		super("openanalytics-open", "2018-06-19", "CreateInstance", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "CreateInstance", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -27,7 +27,7 @@ public class GetSparkSessionStateRequest extends RpcAcsRequest<GetSparkSessionSt
 
 	private String jobId;
 	public GetSparkSessionStateRequest() {
-		super("openanalytics-open", "2018-06-19", "GetSparkSessionState", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "GetSparkSessionState", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -55,7 +55,7 @@ public class ListSparkStatementsResponse extends AcsResponse {
 
 		private String output;
 
-		private Integer progress;
+		private Float progress;
 
 		private Long startedTime;
 
@@ -93,11 +93,11 @@ public class ListSparkStatementsResponse extends AcsResponse {
 			this.output = output;
 		}
 
-		public Integer getProgress() {
+		public Float getProgress() {
 			return this.progress;
 		}
 
-		public void setProgress(Integer progress) {
+		public void setProgress(Float progress) {
 			this.progress = progress;
 		}
 

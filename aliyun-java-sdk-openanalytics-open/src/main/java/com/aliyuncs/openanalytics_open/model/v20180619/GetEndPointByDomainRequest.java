@@ -27,7 +27,7 @@ public class GetEndPointByDomainRequest extends RpcAcsRequest<GetEndPointByDomai
 
 	private String domainURL;
 	public GetEndPointByDomainRequest() {
-		super("openanalytics-open", "2018-06-19", "GetEndPointByDomain", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "GetEndPointByDomain", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

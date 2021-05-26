@@ -25,7 +25,7 @@ import com.aliyuncs.openanalytics_open.Endpoint;
 public class UnSubscribeRegionRequest extends RpcAcsRequest<UnSubscribeRegionResponse> {
 	   
 	public UnSubscribeRegionRequest() {
-		super("openanalytics-open", "2018-06-19", "UnSubscribeRegion", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "UnSubscribeRegion", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

@@ -35,7 +35,7 @@ public class AddEndPointRequest extends RpcAcsRequest<AddEndPointResponse> {
 
 	private String vpcID;
 	public AddEndPointRequest() {
-		super("openanalytics-open", "2018-06-19", "AddEndPoint", "openanalytics-cap");
+		super("openanalytics-open", "2018-06-19", "AddEndPoint", "openanalytics");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
