@@ -1,3 +1,6 @@
+2021-05-26 Version: 1.0.16-SNAPSHOOT
+- Add QueryServicerByPage api.
+
 2021-05-26 Version: 1.0.15-SNAPSHOOT
 - Add QueryServicerByPage api.
 
