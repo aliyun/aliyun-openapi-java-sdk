@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-cccxspaceinner</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.16-SNAPSHOOT</version>
+  <version>1.0.17-SNAPSHOT</version>
   <name>aliyun-java-sdk-cccxspaceinner</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
