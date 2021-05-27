@@ -1,3 +1,6 @@
+2021-05-27 Version: 1.0.18
+- Add QueryServicerByPage api.
+
 2021-05-27 Version: 1.0.17
 - Add QueryServicerByPage api.
 
