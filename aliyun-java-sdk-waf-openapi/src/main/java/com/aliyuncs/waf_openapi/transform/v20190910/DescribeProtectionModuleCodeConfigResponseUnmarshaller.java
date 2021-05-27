@@ -14,16 +14,17 @@
 
 package com.aliyuncs.waf_openapi.transform.v20190910;
 
-import com.aliyuncs.waf_openapi.model.v20190910.ModifyDomainClusterTypeResponse;
+import com.aliyuncs.waf_openapi.model.v20190910.DescribeProtectionModuleCodeConfigResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class ModifyDomainClusterTypeResponseUnmarshaller {
+public class DescribeProtectionModuleCodeConfigResponseUnmarshaller {
 
-	public static ModifyDomainClusterTypeResponse unmarshall(ModifyDomainClusterTypeResponse modifyDomainClusterTypeResponse, UnmarshallerContext _ctx) {
+	public static DescribeProtectionModuleCodeConfigResponse unmarshall(DescribeProtectionModuleCodeConfigResponse describeProtectionModuleCodeConfigResponse, UnmarshallerContext _ctx) {
 		
-		modifyDomainClusterTypeResponse.setRequestId(_ctx.stringValue("ModifyDomainClusterTypeResponse.RequestId"));
+		describeProtectionModuleCodeConfigResponse.setRequestId(_ctx.stringValue("DescribeProtectionModuleCodeConfigResponse.RequestId"));
+		describeProtectionModuleCodeConfigResponse.setCodeConfigs(_ctx.stringValue("DescribeProtectionModuleCodeConfigResponse.CodeConfigs"));
 	 
-	 	return modifyDomainClusterTypeResponse;
+	 	return describeProtectionModuleCodeConfigResponse;
 	}
 }

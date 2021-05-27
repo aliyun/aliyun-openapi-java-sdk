@@ -15,16 +15,18 @@
 package com.aliyuncs.waf_openapi.model.v20190910;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.waf_openapi.transform.v20190910.ModifyDomainClusterTypeResponseUnmarshaller;
+import com.aliyuncs.waf_openapi.transform.v20190910.DescribeProtectionModuleCodeConfigResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ModifyDomainClusterTypeResponse extends AcsResponse {
+public class DescribeProtectionModuleCodeConfigResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String codeConfigs;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +36,21 @@ public class ModifyDomainClusterTypeResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCodeConfigs() {
+		return this.codeConfigs;
+	}
+
+	public void setCodeConfigs(String codeConfigs) {
+		this.codeConfigs = codeConfigs;
+	}
+
 	@Override
-	public ModifyDomainClusterTypeResponse getInstance(UnmarshallerContext context) {
-		return	ModifyDomainClusterTypeResponseUnmarshaller.unmarshall(this, context);
+	public DescribeProtectionModuleCodeConfigResponse getInstance(UnmarshallerContext context) {
+		return	DescribeProtectionModuleCodeConfigResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
