@@ -25,17 +25,15 @@ import com.aliyuncs.onsmqtt.Endpoint;
 public class QueryMqttTraceMessagePublishRequest extends RpcAcsRequest<QueryMqttTraceMessagePublishResponse> {
 	   
 
+	private String mqttRegionId;
+
 	private String msgId;
 
-	private String onsRegionId;
+	private Long endTime;
 
-	private Long from;
+	private Long beginTime;
 
-	private Long to;
-
-	private String mqttInstanceId;
-
-	private String onsSessionId;
+	private String instanceId;
 	public QueryMqttTraceMessagePublishRequest() {
 		super("OnsMqtt", "2020-04-20", "QueryMqttTraceMessagePublish");
 		setMethod(MethodType.POST);
@@ -43,6 +41,17 @@ public class QueryMqttTraceMessagePublishRequest extends RpcAcsRequest<QueryMqtt
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getMqttRegionId() {
+		return this.mqttRegionId;
+	}
+
+	public void setMqttRegionId(String mqttRegionId) {
+		this.mqttRegionId = mqttRegionId;
+		if(mqttRegionId != null){
+			putQueryParameter("MqttRegionId", mqttRegionId);
+		}
 	}
 
 	public String getMsgId() {
@@ -56,58 +65,36 @@ public class QueryMqttTraceMessagePublishRequest extends RpcAcsRequest<QueryMqtt
 		}
 	}
 
-	public String getOnsRegionId() {
-		return this.onsRegionId;
+	public Long getEndTime() {
+		return this.endTime;
 	}
 
-	public void setOnsRegionId(String onsRegionId) {
-		this.onsRegionId = onsRegionId;
-		if(onsRegionId != null){
-			putQueryParameter("OnsRegionId", onsRegionId);
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
 		}
 	}
 
-	public Long getFrom() {
-		return this.from;
+	public Long getBeginTime() {
+		return this.beginTime;
 	}
 
-	public void setFrom(Long from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from.toString());
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
 		}
 	}
 
-	public Long getTo() {
-		return this.to;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setTo(Long to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to.toString());
-		}
-	}
-
-	public String getMqttInstanceId() {
-		return this.mqttInstanceId;
-	}
-
-	public void setMqttInstanceId(String mqttInstanceId) {
-		this.mqttInstanceId = mqttInstanceId;
-		if(mqttInstanceId != null){
-			putQueryParameter("MqttInstanceId", mqttInstanceId);
-		}
-	}
-
-	public String getOnsSessionId() {
-		return this.onsSessionId;
-	}
-
-	public void setOnsSessionId(String onsSessionId) {
-		this.onsSessionId = onsSessionId;
-		if(onsSessionId != null){
-			putQueryParameter("OnsSessionId", onsSessionId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 

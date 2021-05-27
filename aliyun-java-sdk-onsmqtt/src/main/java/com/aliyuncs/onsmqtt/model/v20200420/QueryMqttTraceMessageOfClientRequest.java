@@ -27,23 +27,19 @@ public class QueryMqttTraceMessageOfClientRequest extends RpcAcsRequest<QueryMqt
 
 	private String clientId;
 
+	private String mqttRegionId;
+
+	private Long endTime;
+
+	private Long beginTime;
+
+	private Integer currentPage;
+
 	private Boolean reverse;
 
-	private String onsRegionId;
+	private String instanceId;
 
 	private Integer pageSize;
-
-	private Long from;
-
-	private Long to;
-
-	private Integer page;
-
-	private String mqttInstanceId;
-
-	private String queryType;
-
-	private String onsSessionId;
 	public QueryMqttTraceMessageOfClientRequest() {
 		super("OnsMqtt", "2020-04-20", "QueryMqttTraceMessageOfClient");
 		setMethod(MethodType.POST);
@@ -64,6 +60,50 @@ public class QueryMqttTraceMessageOfClientRequest extends RpcAcsRequest<QueryMqt
 		}
 	}
 
+	public String getMqttRegionId() {
+		return this.mqttRegionId;
+	}
+
+	public void setMqttRegionId(String mqttRegionId) {
+		this.mqttRegionId = mqttRegionId;
+		if(mqttRegionId != null){
+			putQueryParameter("MqttRegionId", mqttRegionId);
+		}
+	}
+
+	public Long getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
+		if(endTime != null){
+			putQueryParameter("EndTime", endTime.toString());
+		}
+	}
+
+	public Long getBeginTime() {
+		return this.beginTime;
+	}
+
+	public void setBeginTime(Long beginTime) {
+		this.beginTime = beginTime;
+		if(beginTime != null){
+			putQueryParameter("BeginTime", beginTime.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
+		}
+	}
+
 	public Boolean getReverse() {
 		return this.reverse;
 	}
@@ -75,14 +115,14 @@ public class QueryMqttTraceMessageOfClientRequest extends RpcAcsRequest<QueryMqt
 		}
 	}
 
-	public String getOnsRegionId() {
-		return this.onsRegionId;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setOnsRegionId(String onsRegionId) {
-		this.onsRegionId = onsRegionId;
-		if(onsRegionId != null){
-			putQueryParameter("OnsRegionId", onsRegionId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
@@ -94,72 +134,6 @@ public class QueryMqttTraceMessageOfClientRequest extends RpcAcsRequest<QueryMqt
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Long getFrom() {
-		return this.from;
-	}
-
-	public void setFrom(Long from) {
-		this.from = from;
-		if(from != null){
-			putQueryParameter("From", from.toString());
-		}
-	}
-
-	public Long getTo() {
-		return this.to;
-	}
-
-	public void setTo(Long to) {
-		this.to = to;
-		if(to != null){
-			putQueryParameter("To", to.toString());
-		}
-	}
-
-	public Integer getPage() {
-		return this.page;
-	}
-
-	public void setPage(Integer page) {
-		this.page = page;
-		if(page != null){
-			putQueryParameter("Page", page.toString());
-		}
-	}
-
-	public String getMqttInstanceId() {
-		return this.mqttInstanceId;
-	}
-
-	public void setMqttInstanceId(String mqttInstanceId) {
-		this.mqttInstanceId = mqttInstanceId;
-		if(mqttInstanceId != null){
-			putQueryParameter("MqttInstanceId", mqttInstanceId);
-		}
-	}
-
-	public String getQueryType() {
-		return this.queryType;
-	}
-
-	public void setQueryType(String queryType) {
-		this.queryType = queryType;
-		if(queryType != null){
-			putQueryParameter("QueryType", queryType);
-		}
-	}
-
-	public String getOnsSessionId() {
-		return this.onsSessionId;
-	}
-
-	public void setOnsSessionId(String onsSessionId) {
-		this.onsSessionId = onsSessionId;
-		if(onsSessionId != null){
-			putQueryParameter("OnsSessionId", onsSessionId);
 		}
 	}
 
