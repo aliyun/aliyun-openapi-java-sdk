@@ -22,18 +22,18 @@ import com.aliyuncs.sgw.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
+public class ModifyGatewayFileShareWatermarkRequest extends RpcAcsRequest<ModifyGatewayFileShareWatermarkResponse> {
 	   
 
-	private String reasonDetail;
+	private Integer watermark;
 
 	private String securityToken;
 
-	private String gatewayId;
+	private String indexId;
 
-	private String reasonType;
-	public DeleteGatewayRequest() {
-		super("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw");
+	private String gatewayId;
+	public ModifyGatewayFileShareWatermarkRequest() {
+		super("sgw", "2018-05-11", "ModifyGatewayFileShareWatermark", "hcs_sgw");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +41,14 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getReasonDetail() {
-		return this.reasonDetail;
+	public Integer getWatermark() {
+		return this.watermark;
 	}
 
-	public void setReasonDetail(String reasonDetail) {
-		this.reasonDetail = reasonDetail;
-		if(reasonDetail != null){
-			putQueryParameter("ReasonDetail", reasonDetail);
+	public void setWatermark(Integer watermark) {
+		this.watermark = watermark;
+		if(watermark != null){
+			putQueryParameter("Watermark", watermark.toString());
 		}
 	}
 
@@ -63,6 +63,17 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
+	public String getIndexId() {
+		return this.indexId;
+	}
+
+	public void setIndexId(String indexId) {
+		this.indexId = indexId;
+		if(indexId != null){
+			putQueryParameter("IndexId", indexId);
+		}
+	}
+
 	public String getGatewayId() {
 		return this.gatewayId;
 	}
@@ -74,20 +85,9 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
-	public String getReasonType() {
-		return this.reasonType;
-	}
-
-	public void setReasonType(String reasonType) {
-		this.reasonType = reasonType;
-		if(reasonType != null){
-			putQueryParameter("ReasonType", reasonType);
-		}
-	}
-
 	@Override
-	public Class<DeleteGatewayResponse> getResponseClass() {
-		return DeleteGatewayResponse.class;
+	public Class<ModifyGatewayFileShareWatermarkResponse> getResponseClass() {
+		return ModifyGatewayFileShareWatermarkResponse.class;
 	}
 
 }

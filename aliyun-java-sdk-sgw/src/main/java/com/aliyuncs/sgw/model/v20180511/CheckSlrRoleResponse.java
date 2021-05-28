@@ -15,40 +15,26 @@
 package com.aliyuncs.sgw.model.v20180511;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sgw.transform.v20180511.UpdateGatewayFileShareResponseUnmarshaller;
+import com.aliyuncs.sgw.transform.v20180511.CheckSlrRoleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateGatewayFileShareResponse extends AcsResponse {
-
-	private String taskId;
-
-	private String message;
+public class CheckSlrRoleResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private Boolean success;
 
-	public String getTaskId() {
-		return this.taskId;
-	}
+	private String code;
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
+	private String message;
 
-	public String getMessage() {
-		return this.message;
-	}
+	private Boolean exist;
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private Boolean requireOldWayCheck;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,14 +42,6 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -74,8 +52,45 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getExist() {
+		return this.exist;
+	}
+
+	public void setExist(Boolean exist) {
+		this.exist = exist;
+	}
+
+	public Boolean getRequireOldWayCheck() {
+		return this.requireOldWayCheck;
+	}
+
+	public void setRequireOldWayCheck(Boolean requireOldWayCheck) {
+		this.requireOldWayCheck = requireOldWayCheck;
+	}
+
 	@Override
-	public UpdateGatewayFileShareResponse getInstance(UnmarshallerContext context) {
-		return	UpdateGatewayFileShareResponseUnmarshaller.unmarshall(this, context);
+	public CheckSlrRoleResponse getInstance(UnmarshallerContext context) {
+		return	CheckSlrRoleResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -14,6 +14,9 @@
 
 package com.aliyuncs.sgw.transform.v20180511;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.aliyuncs.sgw.model.v20180511.DescribeGatewayResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -54,6 +57,20 @@ public class DescribeGatewayResponseUnmarshaller {
 		describeGatewayResponse.setExpireStatus(_ctx.integerValue("DescribeGatewayResponse.ExpireStatus"));
 		describeGatewayResponse.setCommonBuyInstanceId(_ctx.stringValue("DescribeGatewayResponse.CommonBuyInstanceId"));
 		describeGatewayResponse.setPublicNetworkBandwidth(_ctx.integerValue("DescribeGatewayResponse.PublicNetworkBandwidth"));
+		describeGatewayResponse.setGatewayType(_ctx.stringValue("DescribeGatewayResponse.GatewayType"));
+		describeGatewayResponse.setElasticGateway(_ctx.booleanValue("DescribeGatewayResponse.ElasticGateway"));
+		describeGatewayResponse.setMaxThroughput(_ctx.integerValue("DescribeGatewayResponse.MaxThroughput"));
+		describeGatewayResponse.setCapacity(_ctx.integerValue("DescribeGatewayResponse.Capacity"));
+		describeGatewayResponse.setDataLoadType(_ctx.stringValue("DescribeGatewayResponse.DataLoadType"));
+		describeGatewayResponse.setDataLoadInterval(_ctx.integerValue("DescribeGatewayResponse.DataLoadInterval"));
+		describeGatewayResponse.setLastErrorKey(_ctx.stringValue("DescribeGatewayResponse.LastErrorKey"));
+		describeGatewayResponse.setInnerIpv6Ip(_ctx.stringValue("DescribeGatewayResponse.InnerIpv6Ip"));
+
+		List<String> elasticNodes = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeGatewayResponse.ElasticNodes.Length"); i++) {
+			elasticNodes.add(_ctx.stringValue("DescribeGatewayResponse.ElasticNodes["+ i +"]"));
+		}
+		describeGatewayResponse.setElasticNodes(elasticNodes);
 	 
 	 	return describeGatewayResponse;
 	}

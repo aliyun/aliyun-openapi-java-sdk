@@ -15,31 +15,31 @@
 package com.aliyuncs.sgw.model.v20180511;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sgw.transform.v20180511.UpdateGatewayFileShareResponseUnmarshaller;
+import com.aliyuncs.sgw.transform.v20180511.TriggerGatewayRemoteSyncResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateGatewayFileShareResponse extends AcsResponse {
+public class TriggerGatewayRemoteSyncResponse extends AcsResponse {
 
-	private String taskId;
+	private String code;
 
 	private String message;
 
 	private String requestId;
 
-	private String code;
+	private String taskId;
 
 	private Boolean success;
 
-	public String getTaskId() {
-		return this.taskId;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getMessage() {
@@ -58,12 +58,12 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getTaskId() {
+		return this.taskId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
 	}
 
 	public Boolean getSuccess() {
@@ -75,7 +75,12 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 	}
 
 	@Override
-	public UpdateGatewayFileShareResponse getInstance(UnmarshallerContext context) {
-		return	UpdateGatewayFileShareResponseUnmarshaller.unmarshall(this, context);
+	public TriggerGatewayRemoteSyncResponse getInstance(UnmarshallerContext context) {
+		return	TriggerGatewayRemoteSyncResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

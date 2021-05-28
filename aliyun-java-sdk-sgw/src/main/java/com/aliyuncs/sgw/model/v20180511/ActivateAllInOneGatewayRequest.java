@@ -22,18 +22,22 @@ import com.aliyuncs.sgw.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
+public class ActivateAllInOneGatewayRequest extends RpcAcsRequest<ActivateAllInOneGatewayResponse> {
 	   
 
-	private String reasonDetail;
+	private String clientUUID;
+
+	private String serialNumber;
+
+	private String deviceNumber;
 
 	private String securityToken;
 
-	private String gatewayId;
+	private String model;
 
-	private String reasonType;
-	public DeleteGatewayRequest() {
-		super("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw");
+	private String gatewayId;
+	public ActivateAllInOneGatewayRequest() {
+		super("sgw", "2018-05-11", "ActivateAllInOneGateway", "hcs_sgw");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +45,36 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getReasonDetail() {
-		return this.reasonDetail;
+	public String getClientUUID() {
+		return this.clientUUID;
 	}
 
-	public void setReasonDetail(String reasonDetail) {
-		this.reasonDetail = reasonDetail;
-		if(reasonDetail != null){
-			putQueryParameter("ReasonDetail", reasonDetail);
+	public void setClientUUID(String clientUUID) {
+		this.clientUUID = clientUUID;
+		if(clientUUID != null){
+			putQueryParameter("ClientUUID", clientUUID);
+		}
+	}
+
+	public String getSerialNumber() {
+		return this.serialNumber;
+	}
+
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
+		if(serialNumber != null){
+			putQueryParameter("SerialNumber", serialNumber);
+		}
+	}
+
+	public String getDeviceNumber() {
+		return this.deviceNumber;
+	}
+
+	public void setDeviceNumber(String deviceNumber) {
+		this.deviceNumber = deviceNumber;
+		if(deviceNumber != null){
+			putQueryParameter("DeviceNumber", deviceNumber);
 		}
 	}
 
@@ -63,6 +89,17 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
+	public String getModel() {
+		return this.model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+		if(model != null){
+			putQueryParameter("Model", model);
+		}
+	}
+
 	public String getGatewayId() {
 		return this.gatewayId;
 	}
@@ -74,20 +111,9 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
-	public String getReasonType() {
-		return this.reasonType;
-	}
-
-	public void setReasonType(String reasonType) {
-		this.reasonType = reasonType;
-		if(reasonType != null){
-			putQueryParameter("ReasonType", reasonType);
-		}
-	}
-
 	@Override
-	public Class<DeleteGatewayResponse> getResponseClass() {
-		return DeleteGatewayResponse.class;
+	public Class<ActivateAllInOneGatewayResponse> getResponseClass() {
+		return ActivateAllInOneGatewayResponse.class;
 	}
 
 }

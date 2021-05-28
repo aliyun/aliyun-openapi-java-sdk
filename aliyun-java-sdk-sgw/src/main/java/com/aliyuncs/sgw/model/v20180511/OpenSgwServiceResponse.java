@@ -15,40 +15,18 @@
 package com.aliyuncs.sgw.model.v20180511;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sgw.transform.v20180511.UpdateGatewayFileShareResponseUnmarshaller;
+import com.aliyuncs.sgw.transform.v20180511.OpenSgwServiceResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateGatewayFileShareResponse extends AcsResponse {
-
-	private String taskId;
-
-	private String message;
+public class OpenSgwServiceResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
-	private Boolean success;
-
-	public String getTaskId() {
-		return this.taskId;
-	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String orderId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -58,24 +36,21 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getCode() {
-		return this.code;
+	public String getOrderId() {
+		return this.orderId;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 
 	@Override
-	public UpdateGatewayFileShareResponse getInstance(UnmarshallerContext context) {
-		return	UpdateGatewayFileShareResponseUnmarshaller.unmarshall(this, context);
+	public OpenSgwServiceResponse getInstance(UnmarshallerContext context) {
+		return	OpenSgwServiceResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

@@ -41,6 +41,7 @@ public class DescribeGatewayActionsResponseUnmarshaller {
 			action.setCache(_ctx.stringValue("DescribeGatewayActionsResponse.Actions["+ i +"].Cache"));
 			action.setSmbUser(_ctx.stringValue("DescribeGatewayActionsResponse.Actions["+ i +"].SmbUser"));
 			action.setAdLdap(_ctx.stringValue("DescribeGatewayActionsResponse.Actions["+ i +"].AdLdap"));
+			action.setTarget(_ctx.stringValue("DescribeGatewayActionsResponse.Actions["+ i +"].Target"));
 
 			actions.add(action);
 		}

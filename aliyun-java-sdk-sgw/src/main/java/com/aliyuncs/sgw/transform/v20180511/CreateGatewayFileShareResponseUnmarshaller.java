@@ -23,10 +23,10 @@ public class CreateGatewayFileShareResponseUnmarshaller {
 	public static CreateGatewayFileShareResponse unmarshall(CreateGatewayFileShareResponse createGatewayFileShareResponse, UnmarshallerContext _ctx) {
 		
 		createGatewayFileShareResponse.setRequestId(_ctx.stringValue("CreateGatewayFileShareResponse.RequestId"));
-		createGatewayFileShareResponse.setSuccess(_ctx.booleanValue("CreateGatewayFileShareResponse.Success"));
-		createGatewayFileShareResponse.setCode(_ctx.stringValue("CreateGatewayFileShareResponse.Code"));
-		createGatewayFileShareResponse.setMessage(_ctx.stringValue("CreateGatewayFileShareResponse.Message"));
 		createGatewayFileShareResponse.setTaskId(_ctx.stringValue("CreateGatewayFileShareResponse.TaskId"));
+		createGatewayFileShareResponse.setMessage(_ctx.stringValue("CreateGatewayFileShareResponse.Message"));
+		createGatewayFileShareResponse.setCode(_ctx.stringValue("CreateGatewayFileShareResponse.Code"));
+		createGatewayFileShareResponse.setSuccess(_ctx.booleanValue("CreateGatewayFileShareResponse.Success"));
 	 
 	 	return createGatewayFileShareResponse;
 	}

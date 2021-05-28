@@ -25,15 +25,23 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class DescribeGatewayFileSharesResponse extends AcsResponse {
 
-	private String requestId;
+	private String message;
 
-	private Boolean success;
+	private String requestId;
 
 	private String code;
 
-	private String message;
+	private Boolean success;
 
 	private List<FileShare> fileShares;
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -41,14 +49,6 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getCode() {
@@ -59,12 +59,12 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 		this.code = code;
 	}
 
-	public String getMessage() {
-		return this.message;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public List<FileShare> getFileShares() {
@@ -77,142 +77,192 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 
 	public static class FileShare {
 
-		private String name;
+		private String serialNumber;
+
+		private String clientSideCmk;
+
+		private String partialSyncPaths;
+
+		private String pathPrefix;
+
+		private Boolean bucketsStub;
+
+		private Long uploadQueue;
 
 		private String diskId;
 
-		private String diskType;
+		private Long ossUsed;
 
-		private String protocol;
+		private Long downloadQueue;
 
-		private Long size;
-
-		private Boolean enabled;
-
-		private String state;
-
-		private Long totalUpload;
-
-		private Long totalDownload;
-
-		private String ossBucketName;
-
-		private String ossEndpoint;
-
-		private Boolean ossBucketSsl;
-
-		private String localPath;
-
-		private String cacheMode;
-
-		private String address;
-
-		private String serialNumber;
+		private Long activeMessages;
 
 		private String indexId;
 
-		private Boolean remoteSync;
+		private String mnsHealth;
 
-		private Integer pollingInterval;
+		private Boolean accessBasedEnumeration;
 
-		private Boolean ignoreDelete;
+		private Long downloadRate;
 
 		private Integer feLimit;
 
-		private Integer beLimit;
+		private Boolean supportArchive;
 
-		private Boolean inPlace;
+		private String ossEndpoint;
 
-		private Boolean browsable;
+		private String ossHealth;
 
-		private String squash;
+		private Long outRate;
 
-		private String rwUserList;
-
-		private String roUserList;
+		private String serverSideCmk;
 
 		private String rwClientList;
 
-		private String roClientList;
+		private String state;
 
-		private Long ossUsed;
+		private String protocol;
+
+		private Boolean ossBucketSsl;
+
+		private Integer downloadLimit;
+
+		private Boolean inPlace;
+
+		private Boolean remoteSync;
+
+		private Long fileNumLimit;
+
+		private String squash;
+
+		private String nfsFullPath;
+
+		private Long remainingMetaSpace;
+
+		private Boolean transferAcceleration;
+
+		private Long size;
+
+		private Boolean serverSideEncryption;
+
+		private Boolean windowsAcl;
+
+		private Boolean remoteSyncDownload;
+
+		private Boolean clientSideEncryption;
+
+		private String bucketInfos;
+
+		private Boolean nfsV4Optimization;
+
+		private Long totalUpload;
+
+		private String diskType;
 
 		private Long used;
 
-		private Long inRate;
+		private Boolean ignoreDelete;
 
-		private Long outRate;
+		private String roUserList;
+
+		private Long fsSizeLimit;
+
+		private Long totalDownload;
+
+		private Boolean enabled;
+
+		private Integer highWatermark;
+
+		private String kmsRotatePeriod;
+
+		private String address;
+
+		private Integer pollingInterval;
+
+		private String name;
+
+		private String ossBucketName;
+
+		private String expressSyncId;
 
 		private Long lagPeriod;
 
 		private Boolean directIO;
 
-		private String nfsFullPath;
+		private String cacheMode;
 
-		private Long fileNumLimit;
+		private Long inRate;
 
-		private Long fsSizeLimit;
-
-		private Boolean serverSideEncryption;
-
-		private String serverSideCmk;
-
-		private Boolean clientSideEncryption;
-
-		private String clientSideCmk;
-
-		private String kmsRotatePeriod;
-
-		private String ossHealth;
-
-		private String pathPrefix;
-
-		private Boolean fastReclaim;
-
-		private Boolean supportArchive;
-
-		private Long remainingMetaSpace;
-
-		private String mnsHealth;
-
-		private String expressSyncId;
-
-		private Boolean windowsAcl;
-
-		private Boolean accessBasedEnumeration;
-
-		private Boolean nfsV4Optimization;
-
-		private Boolean bucketsStub;
-
-		private String bucketInfos;
-
-		private String obsoleteBuckets;
-
-		private Boolean transferAcceleration;
-
-		private Integer downloadLimit;
-
-		private Boolean remoteSyncDownload;
-
-		private String partialSyncPaths;
+		private Integer lowWatermark;
 
 		private Integer syncProgress;
 
-		private Long uploadQueue;
+		private String serverSideAlgorithm;
 
-		private Long downloadQueue;
+		private String obsoleteBuckets;
 
-		private Long downloadRate;
+		private Integer beLimit;
 
-		private Long activeMessages;
+		private String localPath;
 
-		public String getName() {
-			return this.name;
+		private String roClientList;
+
+		private String rwUserList;
+
+		private Boolean fastReclaim;
+
+		private Boolean browsable;
+
+		private Boolean throttling;
+
+		private Boolean bypassCacheRead;
+
+		public String getSerialNumber() {
+			return this.serialNumber;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setSerialNumber(String serialNumber) {
+			this.serialNumber = serialNumber;
+		}
+
+		public String getClientSideCmk() {
+			return this.clientSideCmk;
+		}
+
+		public void setClientSideCmk(String clientSideCmk) {
+			this.clientSideCmk = clientSideCmk;
+		}
+
+		public String getPartialSyncPaths() {
+			return this.partialSyncPaths;
+		}
+
+		public void setPartialSyncPaths(String partialSyncPaths) {
+			this.partialSyncPaths = partialSyncPaths;
+		}
+
+		public String getPathPrefix() {
+			return this.pathPrefix;
+		}
+
+		public void setPathPrefix(String pathPrefix) {
+			this.pathPrefix = pathPrefix;
+		}
+
+		public Boolean getBucketsStub() {
+			return this.bucketsStub;
+		}
+
+		public void setBucketsStub(Boolean bucketsStub) {
+			this.bucketsStub = bucketsStub;
+		}
+
+		public Long getUploadQueue() {
+			return this.uploadQueue;
+		}
+
+		public void setUploadQueue(Long uploadQueue) {
+			this.uploadQueue = uploadQueue;
 		}
 
 		public String getDiskId() {
@@ -223,116 +273,28 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.diskId = diskId;
 		}
 
-		public String getDiskType() {
-			return this.diskType;
+		public Long getOssUsed() {
+			return this.ossUsed;
 		}
 
-		public void setDiskType(String diskType) {
-			this.diskType = diskType;
+		public void setOssUsed(Long ossUsed) {
+			this.ossUsed = ossUsed;
 		}
 
-		public String getBizProtocol() {
-			return this.protocol;
+		public Long getDownloadQueue() {
+			return this.downloadQueue;
 		}
 
-		public void setBizProtocol(String protocol) {
-			this.protocol = protocol;
+		public void setDownloadQueue(Long downloadQueue) {
+			this.downloadQueue = downloadQueue;
 		}
 
-		public Long getSize() {
-			return this.size;
+		public Long getActiveMessages() {
+			return this.activeMessages;
 		}
 
-		public void setSize(Long size) {
-			this.size = size;
-		}
-
-		public Boolean getEnabled() {
-			return this.enabled;
-		}
-
-		public void setEnabled(Boolean enabled) {
-			this.enabled = enabled;
-		}
-
-		public String getState() {
-			return this.state;
-		}
-
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public Long getTotalUpload() {
-			return this.totalUpload;
-		}
-
-		public void setTotalUpload(Long totalUpload) {
-			this.totalUpload = totalUpload;
-		}
-
-		public Long getTotalDownload() {
-			return this.totalDownload;
-		}
-
-		public void setTotalDownload(Long totalDownload) {
-			this.totalDownload = totalDownload;
-		}
-
-		public String getOssBucketName() {
-			return this.ossBucketName;
-		}
-
-		public void setOssBucketName(String ossBucketName) {
-			this.ossBucketName = ossBucketName;
-		}
-
-		public String getOssEndpoint() {
-			return this.ossEndpoint;
-		}
-
-		public void setOssEndpoint(String ossEndpoint) {
-			this.ossEndpoint = ossEndpoint;
-		}
-
-		public Boolean getOssBucketSsl() {
-			return this.ossBucketSsl;
-		}
-
-		public void setOssBucketSsl(Boolean ossBucketSsl) {
-			this.ossBucketSsl = ossBucketSsl;
-		}
-
-		public String getLocalPath() {
-			return this.localPath;
-		}
-
-		public void setLocalPath(String localPath) {
-			this.localPath = localPath;
-		}
-
-		public String getCacheMode() {
-			return this.cacheMode;
-		}
-
-		public void setCacheMode(String cacheMode) {
-			this.cacheMode = cacheMode;
-		}
-
-		public String getAddress() {
-			return this.address;
-		}
-
-		public void setAddress(String address) {
-			this.address = address;
-		}
-
-		public String getSerialNumber() {
-			return this.serialNumber;
-		}
-
-		public void setSerialNumber(String serialNumber) {
-			this.serialNumber = serialNumber;
+		public void setActiveMessages(Long activeMessages) {
+			this.activeMessages = activeMessages;
 		}
 
 		public String getIndexId() {
@@ -343,28 +305,28 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.indexId = indexId;
 		}
 
-		public Boolean getRemoteSync() {
-			return this.remoteSync;
+		public String getMnsHealth() {
+			return this.mnsHealth;
 		}
 
-		public void setRemoteSync(Boolean remoteSync) {
-			this.remoteSync = remoteSync;
+		public void setMnsHealth(String mnsHealth) {
+			this.mnsHealth = mnsHealth;
 		}
 
-		public Integer getPollingInterval() {
-			return this.pollingInterval;
+		public Boolean getAccessBasedEnumeration() {
+			return this.accessBasedEnumeration;
 		}
 
-		public void setPollingInterval(Integer pollingInterval) {
-			this.pollingInterval = pollingInterval;
+		public void setAccessBasedEnumeration(Boolean accessBasedEnumeration) {
+			this.accessBasedEnumeration = accessBasedEnumeration;
 		}
 
-		public Boolean getIgnoreDelete() {
-			return this.ignoreDelete;
+		public Long getDownloadRate() {
+			return this.downloadRate;
 		}
 
-		public void setIgnoreDelete(Boolean ignoreDelete) {
-			this.ignoreDelete = ignoreDelete;
+		public void setDownloadRate(Long downloadRate) {
+			this.downloadRate = downloadRate;
 		}
 
 		public Integer getFeLimit() {
@@ -375,52 +337,44 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.feLimit = feLimit;
 		}
 
-		public Integer getBeLimit() {
-			return this.beLimit;
+		public Boolean getSupportArchive() {
+			return this.supportArchive;
 		}
 
-		public void setBeLimit(Integer beLimit) {
-			this.beLimit = beLimit;
+		public void setSupportArchive(Boolean supportArchive) {
+			this.supportArchive = supportArchive;
 		}
 
-		public Boolean getInPlace() {
-			return this.inPlace;
+		public String getOssEndpoint() {
+			return this.ossEndpoint;
 		}
 
-		public void setInPlace(Boolean inPlace) {
-			this.inPlace = inPlace;
+		public void setOssEndpoint(String ossEndpoint) {
+			this.ossEndpoint = ossEndpoint;
 		}
 
-		public Boolean getBrowsable() {
-			return this.browsable;
+		public String getOssHealth() {
+			return this.ossHealth;
 		}
 
-		public void setBrowsable(Boolean browsable) {
-			this.browsable = browsable;
+		public void setOssHealth(String ossHealth) {
+			this.ossHealth = ossHealth;
 		}
 
-		public String getSquash() {
-			return this.squash;
+		public Long getOutRate() {
+			return this.outRate;
 		}
 
-		public void setSquash(String squash) {
-			this.squash = squash;
+		public void setOutRate(Long outRate) {
+			this.outRate = outRate;
 		}
 
-		public String getRwUserList() {
-			return this.rwUserList;
+		public String getServerSideCmk() {
+			return this.serverSideCmk;
 		}
 
-		public void setRwUserList(String rwUserList) {
-			this.rwUserList = rwUserList;
-		}
-
-		public String getRoUserList() {
-			return this.roUserList;
-		}
-
-		public void setRoUserList(String roUserList) {
-			this.roUserList = roUserList;
+		public void setServerSideCmk(String serverSideCmk) {
+			this.serverSideCmk = serverSideCmk;
 		}
 
 		public String getRwClientList() {
@@ -431,20 +385,164 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.rwClientList = rwClientList;
 		}
 
-		public String getRoClientList() {
-			return this.roClientList;
+		public String getState() {
+			return this.state;
 		}
 
-		public void setRoClientList(String roClientList) {
-			this.roClientList = roClientList;
+		public void setState(String state) {
+			this.state = state;
 		}
 
-		public Long getOssUsed() {
-			return this.ossUsed;
+		public String getBizProtocol() {
+			return this.protocol;
 		}
 
-		public void setOssUsed(Long ossUsed) {
-			this.ossUsed = ossUsed;
+		public void setBizProtocol(String protocol) {
+			this.protocol = protocol;
+		}
+
+		public Boolean getOssBucketSsl() {
+			return this.ossBucketSsl;
+		}
+
+		public void setOssBucketSsl(Boolean ossBucketSsl) {
+			this.ossBucketSsl = ossBucketSsl;
+		}
+
+		public Integer getDownloadLimit() {
+			return this.downloadLimit;
+		}
+
+		public void setDownloadLimit(Integer downloadLimit) {
+			this.downloadLimit = downloadLimit;
+		}
+
+		public Boolean getInPlace() {
+			return this.inPlace;
+		}
+
+		public void setInPlace(Boolean inPlace) {
+			this.inPlace = inPlace;
+		}
+
+		public Boolean getRemoteSync() {
+			return this.remoteSync;
+		}
+
+		public void setRemoteSync(Boolean remoteSync) {
+			this.remoteSync = remoteSync;
+		}
+
+		public Long getFileNumLimit() {
+			return this.fileNumLimit;
+		}
+
+		public void setFileNumLimit(Long fileNumLimit) {
+			this.fileNumLimit = fileNumLimit;
+		}
+
+		public String getSquash() {
+			return this.squash;
+		}
+
+		public void setSquash(String squash) {
+			this.squash = squash;
+		}
+
+		public String getNfsFullPath() {
+			return this.nfsFullPath;
+		}
+
+		public void setNfsFullPath(String nfsFullPath) {
+			this.nfsFullPath = nfsFullPath;
+		}
+
+		public Long getRemainingMetaSpace() {
+			return this.remainingMetaSpace;
+		}
+
+		public void setRemainingMetaSpace(Long remainingMetaSpace) {
+			this.remainingMetaSpace = remainingMetaSpace;
+		}
+
+		public Boolean getTransferAcceleration() {
+			return this.transferAcceleration;
+		}
+
+		public void setTransferAcceleration(Boolean transferAcceleration) {
+			this.transferAcceleration = transferAcceleration;
+		}
+
+		public Long getSize() {
+			return this.size;
+		}
+
+		public void setSize(Long size) {
+			this.size = size;
+		}
+
+		public Boolean getServerSideEncryption() {
+			return this.serverSideEncryption;
+		}
+
+		public void setServerSideEncryption(Boolean serverSideEncryption) {
+			this.serverSideEncryption = serverSideEncryption;
+		}
+
+		public Boolean getWindowsAcl() {
+			return this.windowsAcl;
+		}
+
+		public void setWindowsAcl(Boolean windowsAcl) {
+			this.windowsAcl = windowsAcl;
+		}
+
+		public Boolean getRemoteSyncDownload() {
+			return this.remoteSyncDownload;
+		}
+
+		public void setRemoteSyncDownload(Boolean remoteSyncDownload) {
+			this.remoteSyncDownload = remoteSyncDownload;
+		}
+
+		public Boolean getClientSideEncryption() {
+			return this.clientSideEncryption;
+		}
+
+		public void setClientSideEncryption(Boolean clientSideEncryption) {
+			this.clientSideEncryption = clientSideEncryption;
+		}
+
+		public String getBucketInfos() {
+			return this.bucketInfos;
+		}
+
+		public void setBucketInfos(String bucketInfos) {
+			this.bucketInfos = bucketInfos;
+		}
+
+		public Boolean getNfsV4Optimization() {
+			return this.nfsV4Optimization;
+		}
+
+		public void setNfsV4Optimization(Boolean nfsV4Optimization) {
+			this.nfsV4Optimization = nfsV4Optimization;
+		}
+
+		public Long getTotalUpload() {
+			return this.totalUpload;
+		}
+
+		public void setTotalUpload(Long totalUpload) {
+			this.totalUpload = totalUpload;
+		}
+
+		public String getDiskType() {
+			return this.diskType;
+		}
+
+		public void setDiskType(String diskType) {
+			this.diskType = diskType;
 		}
 
 		public Long getUsed() {
@@ -455,20 +553,100 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.used = used;
 		}
 
-		public Long getInRate() {
-			return this.inRate;
+		public Boolean getIgnoreDelete() {
+			return this.ignoreDelete;
 		}
 
-		public void setInRate(Long inRate) {
-			this.inRate = inRate;
+		public void setIgnoreDelete(Boolean ignoreDelete) {
+			this.ignoreDelete = ignoreDelete;
 		}
 
-		public Long getOutRate() {
-			return this.outRate;
+		public String getRoUserList() {
+			return this.roUserList;
 		}
 
-		public void setOutRate(Long outRate) {
-			this.outRate = outRate;
+		public void setRoUserList(String roUserList) {
+			this.roUserList = roUserList;
+		}
+
+		public Long getFsSizeLimit() {
+			return this.fsSizeLimit;
+		}
+
+		public void setFsSizeLimit(Long fsSizeLimit) {
+			this.fsSizeLimit = fsSizeLimit;
+		}
+
+		public Long getTotalDownload() {
+			return this.totalDownload;
+		}
+
+		public void setTotalDownload(Long totalDownload) {
+			this.totalDownload = totalDownload;
+		}
+
+		public Boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public void setEnabled(Boolean enabled) {
+			this.enabled = enabled;
+		}
+
+		public Integer getHighWatermark() {
+			return this.highWatermark;
+		}
+
+		public void setHighWatermark(Integer highWatermark) {
+			this.highWatermark = highWatermark;
+		}
+
+		public String getKmsRotatePeriod() {
+			return this.kmsRotatePeriod;
+		}
+
+		public void setKmsRotatePeriod(String kmsRotatePeriod) {
+			this.kmsRotatePeriod = kmsRotatePeriod;
+		}
+
+		public String getAddress() {
+			return this.address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public Integer getPollingInterval() {
+			return this.pollingInterval;
+		}
+
+		public void setPollingInterval(Integer pollingInterval) {
+			this.pollingInterval = pollingInterval;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getOssBucketName() {
+			return this.ossBucketName;
+		}
+
+		public void setOssBucketName(String ossBucketName) {
+			this.ossBucketName = ossBucketName;
+		}
+
+		public String getExpressSyncId() {
+			return this.expressSyncId;
+		}
+
+		public void setExpressSyncId(String expressSyncId) {
+			this.expressSyncId = expressSyncId;
 		}
 
 		public Long getLagPeriod() {
@@ -487,204 +665,28 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.directIO = directIO;
 		}
 
-		public String getNfsFullPath() {
-			return this.nfsFullPath;
+		public String getCacheMode() {
+			return this.cacheMode;
 		}
 
-		public void setNfsFullPath(String nfsFullPath) {
-			this.nfsFullPath = nfsFullPath;
+		public void setCacheMode(String cacheMode) {
+			this.cacheMode = cacheMode;
 		}
 
-		public Long getFileNumLimit() {
-			return this.fileNumLimit;
+		public Long getInRate() {
+			return this.inRate;
 		}
 
-		public void setFileNumLimit(Long fileNumLimit) {
-			this.fileNumLimit = fileNumLimit;
+		public void setInRate(Long inRate) {
+			this.inRate = inRate;
 		}
 
-		public Long getFsSizeLimit() {
-			return this.fsSizeLimit;
+		public Integer getLowWatermark() {
+			return this.lowWatermark;
 		}
 
-		public void setFsSizeLimit(Long fsSizeLimit) {
-			this.fsSizeLimit = fsSizeLimit;
-		}
-
-		public Boolean getServerSideEncryption() {
-			return this.serverSideEncryption;
-		}
-
-		public void setServerSideEncryption(Boolean serverSideEncryption) {
-			this.serverSideEncryption = serverSideEncryption;
-		}
-
-		public String getServerSideCmk() {
-			return this.serverSideCmk;
-		}
-
-		public void setServerSideCmk(String serverSideCmk) {
-			this.serverSideCmk = serverSideCmk;
-		}
-
-		public Boolean getClientSideEncryption() {
-			return this.clientSideEncryption;
-		}
-
-		public void setClientSideEncryption(Boolean clientSideEncryption) {
-			this.clientSideEncryption = clientSideEncryption;
-		}
-
-		public String getClientSideCmk() {
-			return this.clientSideCmk;
-		}
-
-		public void setClientSideCmk(String clientSideCmk) {
-			this.clientSideCmk = clientSideCmk;
-		}
-
-		public String getKmsRotatePeriod() {
-			return this.kmsRotatePeriod;
-		}
-
-		public void setKmsRotatePeriod(String kmsRotatePeriod) {
-			this.kmsRotatePeriod = kmsRotatePeriod;
-		}
-
-		public String getOssHealth() {
-			return this.ossHealth;
-		}
-
-		public void setOssHealth(String ossHealth) {
-			this.ossHealth = ossHealth;
-		}
-
-		public String getPathPrefix() {
-			return this.pathPrefix;
-		}
-
-		public void setPathPrefix(String pathPrefix) {
-			this.pathPrefix = pathPrefix;
-		}
-
-		public Boolean getFastReclaim() {
-			return this.fastReclaim;
-		}
-
-		public void setFastReclaim(Boolean fastReclaim) {
-			this.fastReclaim = fastReclaim;
-		}
-
-		public Boolean getSupportArchive() {
-			return this.supportArchive;
-		}
-
-		public void setSupportArchive(Boolean supportArchive) {
-			this.supportArchive = supportArchive;
-		}
-
-		public Long getRemainingMetaSpace() {
-			return this.remainingMetaSpace;
-		}
-
-		public void setRemainingMetaSpace(Long remainingMetaSpace) {
-			this.remainingMetaSpace = remainingMetaSpace;
-		}
-
-		public String getMnsHealth() {
-			return this.mnsHealth;
-		}
-
-		public void setMnsHealth(String mnsHealth) {
-			this.mnsHealth = mnsHealth;
-		}
-
-		public String getExpressSyncId() {
-			return this.expressSyncId;
-		}
-
-		public void setExpressSyncId(String expressSyncId) {
-			this.expressSyncId = expressSyncId;
-		}
-
-		public Boolean getWindowsAcl() {
-			return this.windowsAcl;
-		}
-
-		public void setWindowsAcl(Boolean windowsAcl) {
-			this.windowsAcl = windowsAcl;
-		}
-
-		public Boolean getAccessBasedEnumeration() {
-			return this.accessBasedEnumeration;
-		}
-
-		public void setAccessBasedEnumeration(Boolean accessBasedEnumeration) {
-			this.accessBasedEnumeration = accessBasedEnumeration;
-		}
-
-		public Boolean getNfsV4Optimization() {
-			return this.nfsV4Optimization;
-		}
-
-		public void setNfsV4Optimization(Boolean nfsV4Optimization) {
-			this.nfsV4Optimization = nfsV4Optimization;
-		}
-
-		public Boolean getBucketsStub() {
-			return this.bucketsStub;
-		}
-
-		public void setBucketsStub(Boolean bucketsStub) {
-			this.bucketsStub = bucketsStub;
-		}
-
-		public String getBucketInfos() {
-			return this.bucketInfos;
-		}
-
-		public void setBucketInfos(String bucketInfos) {
-			this.bucketInfos = bucketInfos;
-		}
-
-		public String getObsoleteBuckets() {
-			return this.obsoleteBuckets;
-		}
-
-		public void setObsoleteBuckets(String obsoleteBuckets) {
-			this.obsoleteBuckets = obsoleteBuckets;
-		}
-
-		public Boolean getTransferAcceleration() {
-			return this.transferAcceleration;
-		}
-
-		public void setTransferAcceleration(Boolean transferAcceleration) {
-			this.transferAcceleration = transferAcceleration;
-		}
-
-		public Integer getDownloadLimit() {
-			return this.downloadLimit;
-		}
-
-		public void setDownloadLimit(Integer downloadLimit) {
-			this.downloadLimit = downloadLimit;
-		}
-
-		public Boolean getRemoteSyncDownload() {
-			return this.remoteSyncDownload;
-		}
-
-		public void setRemoteSyncDownload(Boolean remoteSyncDownload) {
-			this.remoteSyncDownload = remoteSyncDownload;
-		}
-
-		public String getPartialSyncPaths() {
-			return this.partialSyncPaths;
-		}
-
-		public void setPartialSyncPaths(String partialSyncPaths) {
-			this.partialSyncPaths = partialSyncPaths;
+		public void setLowWatermark(Integer lowWatermark) {
+			this.lowWatermark = lowWatermark;
 		}
 
 		public Integer getSyncProgress() {
@@ -695,36 +697,84 @@ public class DescribeGatewayFileSharesResponse extends AcsResponse {
 			this.syncProgress = syncProgress;
 		}
 
-		public Long getUploadQueue() {
-			return this.uploadQueue;
+		public String getServerSideAlgorithm() {
+			return this.serverSideAlgorithm;
 		}
 
-		public void setUploadQueue(Long uploadQueue) {
-			this.uploadQueue = uploadQueue;
+		public void setServerSideAlgorithm(String serverSideAlgorithm) {
+			this.serverSideAlgorithm = serverSideAlgorithm;
 		}
 
-		public Long getDownloadQueue() {
-			return this.downloadQueue;
+		public String getObsoleteBuckets() {
+			return this.obsoleteBuckets;
 		}
 
-		public void setDownloadQueue(Long downloadQueue) {
-			this.downloadQueue = downloadQueue;
+		public void setObsoleteBuckets(String obsoleteBuckets) {
+			this.obsoleteBuckets = obsoleteBuckets;
 		}
 
-		public Long getDownloadRate() {
-			return this.downloadRate;
+		public Integer getBeLimit() {
+			return this.beLimit;
 		}
 
-		public void setDownloadRate(Long downloadRate) {
-			this.downloadRate = downloadRate;
+		public void setBeLimit(Integer beLimit) {
+			this.beLimit = beLimit;
 		}
 
-		public Long getActiveMessages() {
-			return this.activeMessages;
+		public String getLocalPath() {
+			return this.localPath;
 		}
 
-		public void setActiveMessages(Long activeMessages) {
-			this.activeMessages = activeMessages;
+		public void setLocalPath(String localPath) {
+			this.localPath = localPath;
+		}
+
+		public String getRoClientList() {
+			return this.roClientList;
+		}
+
+		public void setRoClientList(String roClientList) {
+			this.roClientList = roClientList;
+		}
+
+		public String getRwUserList() {
+			return this.rwUserList;
+		}
+
+		public void setRwUserList(String rwUserList) {
+			this.rwUserList = rwUserList;
+		}
+
+		public Boolean getFastReclaim() {
+			return this.fastReclaim;
+		}
+
+		public void setFastReclaim(Boolean fastReclaim) {
+			this.fastReclaim = fastReclaim;
+		}
+
+		public Boolean getBrowsable() {
+			return this.browsable;
+		}
+
+		public void setBrowsable(Boolean browsable) {
+			this.browsable = browsable;
+		}
+
+		public Boolean getThrottling() {
+			return this.throttling;
+		}
+
+		public void setThrottling(Boolean throttling) {
+			this.throttling = throttling;
+		}
+
+		public Boolean getBypassCacheRead() {
+			return this.bypassCacheRead;
+		}
+
+		public void setBypassCacheRead(Boolean bypassCacheRead) {
+			this.bypassCacheRead = bypassCacheRead;
 		}
 	}
 

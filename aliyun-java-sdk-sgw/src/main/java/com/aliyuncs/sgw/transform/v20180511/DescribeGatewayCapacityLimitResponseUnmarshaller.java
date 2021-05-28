@@ -23,12 +23,12 @@ public class DescribeGatewayCapacityLimitResponseUnmarshaller {
 	public static DescribeGatewayCapacityLimitResponse unmarshall(DescribeGatewayCapacityLimitResponse describeGatewayCapacityLimitResponse, UnmarshallerContext _ctx) {
 		
 		describeGatewayCapacityLimitResponse.setRequestId(_ctx.stringValue("DescribeGatewayCapacityLimitResponse.RequestId"));
-		describeGatewayCapacityLimitResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCapacityLimitResponse.Success"));
-		describeGatewayCapacityLimitResponse.setCode(_ctx.stringValue("DescribeGatewayCapacityLimitResponse.Code"));
-		describeGatewayCapacityLimitResponse.setMessage(_ctx.stringValue("DescribeGatewayCapacityLimitResponse.Message"));
-		describeGatewayCapacityLimitResponse.setFileNumber(_ctx.longValue("DescribeGatewayCapacityLimitResponse.FileNumber"));
 		describeGatewayCapacityLimitResponse.setFileSystemSizeInTB(_ctx.longValue("DescribeGatewayCapacityLimitResponse.FileSystemSizeInTB"));
+		describeGatewayCapacityLimitResponse.setMessage(_ctx.stringValue("DescribeGatewayCapacityLimitResponse.Message"));
 		describeGatewayCapacityLimitResponse.setIsMetadataSeparate(_ctx.booleanValue("DescribeGatewayCapacityLimitResponse.IsMetadataSeparate"));
+		describeGatewayCapacityLimitResponse.setFileNumber(_ctx.longValue("DescribeGatewayCapacityLimitResponse.FileNumber"));
+		describeGatewayCapacityLimitResponse.setCode(_ctx.stringValue("DescribeGatewayCapacityLimitResponse.Code"));
+		describeGatewayCapacityLimitResponse.setSuccess(_ctx.booleanValue("DescribeGatewayCapacityLimitResponse.Success"));
 	 
 	 	return describeGatewayCapacityLimitResponse;
 	}

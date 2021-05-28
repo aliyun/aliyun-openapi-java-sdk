@@ -32,6 +32,7 @@ public class DescribeOssBucketInfoResponseUnmarshaller {
 		describeOssBucketInfoResponse.setIsSupportServerSideEncryption(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsSupportServerSideEncryption"));
 		describeOssBucketInfoResponse.setIsFresh(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsFresh"));
 		describeOssBucketInfoResponse.setStorageSize(_ctx.longValue("DescribeOssBucketInfoResponse.StorageSize"));
+		describeOssBucketInfoResponse.setIsVersioning(_ctx.booleanValue("DescribeOssBucketInfoResponse.IsVersioning"));
 	 
 	 	return describeOssBucketInfoResponse;
 	}

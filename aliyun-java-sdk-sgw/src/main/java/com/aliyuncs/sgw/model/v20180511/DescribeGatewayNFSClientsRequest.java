@@ -22,18 +22,18 @@ import com.aliyuncs.sgw.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
+public class DescribeGatewayNFSClientsRequest extends RpcAcsRequest<DescribeGatewayNFSClientsResponse> {
 	   
 
-	private String reasonDetail;
+	private Integer pageNumber;
 
 	private String securityToken;
 
-	private String gatewayId;
+	private Integer pageSize;
 
-	private String reasonType;
-	public DeleteGatewayRequest() {
-		super("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw");
+	private String gatewayId;
+	public DescribeGatewayNFSClientsRequest() {
+		super("sgw", "2018-05-11", "DescribeGatewayNFSClients", "hcs_sgw");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +41,14 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getReasonDetail() {
-		return this.reasonDetail;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setReasonDetail(String reasonDetail) {
-		this.reasonDetail = reasonDetail;
-		if(reasonDetail != null){
-			putQueryParameter("ReasonDetail", reasonDetail);
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
+		if(pageNumber != null){
+			putQueryParameter("PageNumber", pageNumber.toString());
 		}
 	}
 
@@ -63,6 +63,17 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
 	public String getGatewayId() {
 		return this.gatewayId;
 	}
@@ -74,20 +85,9 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
-	public String getReasonType() {
-		return this.reasonType;
-	}
-
-	public void setReasonType(String reasonType) {
-		this.reasonType = reasonType;
-		if(reasonType != null){
-			putQueryParameter("ReasonType", reasonType);
-		}
-	}
-
 	@Override
-	public Class<DeleteGatewayResponse> getResponseClass() {
-		return DeleteGatewayResponse.class;
+	public Class<DescribeGatewayNFSClientsResponse> getResponseClass() {
+		return DescribeGatewayNFSClientsResponse.class;
 	}
 
 }

@@ -38,6 +38,8 @@ public class DescribeAccountConfigResponse extends AcsResponse {
 
 	private Boolean isSupportGatewayLogging;
 
+	private Boolean isSupportElasticGatewayBeta;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -92,6 +94,14 @@ public class DescribeAccountConfigResponse extends AcsResponse {
 
 	public void setIsSupportGatewayLogging(Boolean isSupportGatewayLogging) {
 		this.isSupportGatewayLogging = isSupportGatewayLogging;
+	}
+
+	public Boolean getIsSupportElasticGatewayBeta() {
+		return this.isSupportElasticGatewayBeta;
+	}
+
+	public void setIsSupportElasticGatewayBeta(Boolean isSupportElasticGatewayBeta) {
+		this.isSupportElasticGatewayBeta = isSupportElasticGatewayBeta;
 	}
 
 	@Override

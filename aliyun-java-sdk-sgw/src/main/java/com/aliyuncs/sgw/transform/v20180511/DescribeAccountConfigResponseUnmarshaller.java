@@ -29,6 +29,7 @@ public class DescribeAccountConfigResponseUnmarshaller {
 		describeAccountConfigResponse.setIsSupportServerSideEncryption(_ctx.booleanValue("DescribeAccountConfigResponse.IsSupportServerSideEncryption"));
 		describeAccountConfigResponse.setIsSupportClientSideEncryption(_ctx.booleanValue("DescribeAccountConfigResponse.IsSupportClientSideEncryption"));
 		describeAccountConfigResponse.setIsSupportGatewayLogging(_ctx.booleanValue("DescribeAccountConfigResponse.IsSupportGatewayLogging"));
+		describeAccountConfigResponse.setIsSupportElasticGatewayBeta(_ctx.booleanValue("DescribeAccountConfigResponse.IsSupportElasticGatewayBeta"));
 	 
 	 	return describeAccountConfigResponse;
 	}

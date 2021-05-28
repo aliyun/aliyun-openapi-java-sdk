@@ -22,18 +22,16 @@ import com.aliyuncs.sgw.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
+public class DisableGatewayNFSVersionRequest extends RpcAcsRequest<DisableGatewayNFSVersionResponse> {
 	   
 
-	private String reasonDetail;
+	private String nFSVersion;
 
 	private String securityToken;
 
 	private String gatewayId;
-
-	private String reasonType;
-	public DeleteGatewayRequest() {
-		super("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw");
+	public DisableGatewayNFSVersionRequest() {
+		super("sgw", "2018-05-11", "DisableGatewayNFSVersion", "hcs_sgw");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,14 +39,14 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getReasonDetail() {
-		return this.reasonDetail;
+	public String getNFSVersion() {
+		return this.nFSVersion;
 	}
 
-	public void setReasonDetail(String reasonDetail) {
-		this.reasonDetail = reasonDetail;
-		if(reasonDetail != null){
-			putQueryParameter("ReasonDetail", reasonDetail);
+	public void setNFSVersion(String nFSVersion) {
+		this.nFSVersion = nFSVersion;
+		if(nFSVersion != null){
+			putQueryParameter("NFSVersion", nFSVersion);
 		}
 	}
 
@@ -74,20 +72,9 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
-	public String getReasonType() {
-		return this.reasonType;
-	}
-
-	public void setReasonType(String reasonType) {
-		this.reasonType = reasonType;
-		if(reasonType != null){
-			putQueryParameter("ReasonType", reasonType);
-		}
-	}
-
 	@Override
-	public Class<DeleteGatewayResponse> getResponseClass() {
-		return DeleteGatewayResponse.class;
+	public Class<DisableGatewayNFSVersionResponse> getResponseClass() {
+		return DisableGatewayNFSVersionResponse.class;
 	}
 
 }

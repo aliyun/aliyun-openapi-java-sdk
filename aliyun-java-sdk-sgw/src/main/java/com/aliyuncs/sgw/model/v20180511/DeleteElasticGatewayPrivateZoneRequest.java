@@ -22,34 +22,19 @@ import com.aliyuncs.sgw.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
+public class DeleteElasticGatewayPrivateZoneRequest extends RpcAcsRequest<DeleteElasticGatewayPrivateZoneResponse> {
 	   
-
-	private String reasonDetail;
 
 	private String securityToken;
 
 	private String gatewayId;
-
-	private String reasonType;
-	public DeleteGatewayRequest() {
-		super("sgw", "2018-05-11", "DeleteGateway", "hcs_sgw");
+	public DeleteElasticGatewayPrivateZoneRequest() {
+		super("sgw", "2018-05-11", "DeleteElasticGatewayPrivateZone", "hcs_sgw");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getReasonDetail() {
-		return this.reasonDetail;
-	}
-
-	public void setReasonDetail(String reasonDetail) {
-		this.reasonDetail = reasonDetail;
-		if(reasonDetail != null){
-			putQueryParameter("ReasonDetail", reasonDetail);
-		}
 	}
 
 	public String getSecurityToken() {
@@ -74,20 +59,9 @@ public class DeleteGatewayRequest extends RpcAcsRequest<DeleteGatewayResponse> {
 		}
 	}
 
-	public String getReasonType() {
-		return this.reasonType;
-	}
-
-	public void setReasonType(String reasonType) {
-		this.reasonType = reasonType;
-		if(reasonType != null){
-			putQueryParameter("ReasonType", reasonType);
-		}
-	}
-
 	@Override
-	public Class<DeleteGatewayResponse> getResponseClass() {
-		return DeleteGatewayResponse.class;
+	public Class<DeleteElasticGatewayPrivateZoneResponse> getResponseClass() {
+		return DeleteElasticGatewayPrivateZoneResponse.class;
 	}
 
 }

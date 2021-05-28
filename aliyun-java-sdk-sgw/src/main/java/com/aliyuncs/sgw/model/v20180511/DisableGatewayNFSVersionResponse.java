@@ -15,40 +15,24 @@
 package com.aliyuncs.sgw.model.v20180511;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.sgw.transform.v20180511.UpdateGatewayFileShareResponseUnmarshaller;
+import com.aliyuncs.sgw.transform.v20180511.DisableGatewayNFSVersionResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class UpdateGatewayFileShareResponse extends AcsResponse {
-
-	private String taskId;
-
-	private String message;
+public class DisableGatewayNFSVersionResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String code;
-
 	private Boolean success;
 
-	public String getTaskId() {
-		return this.taskId;
-	}
+	private String code;
 
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
-	}
+	private String message;
 
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
+	private String taskId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -56,14 +40,6 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public Boolean getSuccess() {
@@ -74,8 +50,32 @@ public class UpdateGatewayFileShareResponse extends AcsResponse {
 		this.success = success;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getTaskId() {
+		return this.taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
 	@Override
-	public UpdateGatewayFileShareResponse getInstance(UnmarshallerContext context) {
-		return	UpdateGatewayFileShareResponseUnmarshaller.unmarshall(this, context);
+	public DisableGatewayNFSVersionResponse getInstance(UnmarshallerContext context) {
+		return	DisableGatewayNFSVersionResponseUnmarshaller.unmarshall(this, context);
 	}
 }
