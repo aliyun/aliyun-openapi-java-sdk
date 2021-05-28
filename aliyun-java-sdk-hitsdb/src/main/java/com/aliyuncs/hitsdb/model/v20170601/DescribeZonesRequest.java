@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20200615;
+package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,10 +22,12 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstanceIpWhiteListResponse> {
+public class DescribeZonesRequest extends RpcAcsRequest<DescribeZonesResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private String language;
 
 	private String securityToken;
 
@@ -34,14 +36,8 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private String groupName;
-
-	private String securityIpList;
-
-	private String instanceId;
-	public UpdateInstanceIpWhiteListRequest() {
-		super("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList", "hitsdb");
+	public DescribeZonesRequest() {
+		super("hitsdb", "2017-06-01", "DescribeZones", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -57,6 +53,17 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+		if(language != null){
+			putQueryParameter("Language", language);
 		}
 	}
 
@@ -104,42 +111,9 @@ public class UpdateInstanceIpWhiteListRequest extends RpcAcsRequest<UpdateInstan
 		}
 	}
 
-	public String getGroupName() {
-		return this.groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-		if(groupName != null){
-			putQueryParameter("GroupName", groupName);
-		}
-	}
-
-	public String getSecurityIpList() {
-		return this.securityIpList;
-	}
-
-	public void setSecurityIpList(String securityIpList) {
-		this.securityIpList = securityIpList;
-		if(securityIpList != null){
-			putQueryParameter("SecurityIpList", securityIpList);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
-		}
-	}
-
 	@Override
-	public Class<UpdateInstanceIpWhiteListResponse> getResponseClass() {
-		return UpdateInstanceIpWhiteListResponse.class;
+	public Class<DescribeZonesResponse> getResponseClass() {
+		return DescribeZonesResponse.class;
 	}
 
 }

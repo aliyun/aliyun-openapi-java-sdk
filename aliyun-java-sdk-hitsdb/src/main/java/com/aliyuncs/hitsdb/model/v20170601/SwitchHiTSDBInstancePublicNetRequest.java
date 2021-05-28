@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.hitsdb.model.v20200615;
+package com.aliyuncs.hitsdb.model.v20170601;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,14 @@ import com.aliyuncs.hitsdb.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
+public class SwitchHiTSDBInstancePublicNetRequest extends RpcAcsRequest<SwitchHiTSDBInstancePublicNetResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String securityToken;
+
+	private Long switchAction;
 
 	private String resourceOwnerAccount;
 
@@ -35,9 +37,9 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 
 	private Long ownerId;
 
-	private String acceptLanguage;
-	public DescribeRegionsRequest() {
-		super("hitsdb", "2020-06-15", "DescribeRegions", "hitsdb");
+	private String instanceId;
+	public SwitchHiTSDBInstancePublicNetRequest() {
+		super("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "hitsdb");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -64,6 +66,17 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		this.securityToken = securityToken;
 		if(securityToken != null){
 			putQueryParameter("SecurityToken", securityToken);
+		}
+	}
+
+	public Long getSwitchAction() {
+		return this.switchAction;
+	}
+
+	public void setSwitchAction(Long switchAction) {
+		this.switchAction = switchAction;
+		if(switchAction != null){
+			putQueryParameter("SwitchAction", switchAction.toString());
 		}
 	}
 
@@ -100,20 +113,20 @@ public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsRespons
 		}
 	}
 
-	public String getAcceptLanguage() {
-		return this.acceptLanguage;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setAcceptLanguage(String acceptLanguage) {
-		this.acceptLanguage = acceptLanguage;
-		if(acceptLanguage != null){
-			putQueryParameter("AcceptLanguage", acceptLanguage);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeRegionsResponse> getResponseClass() {
-		return DescribeRegionsResponse.class;
+	public Class<SwitchHiTSDBInstancePublicNetResponse> getResponseClass() {
+		return SwitchHiTSDBInstancePublicNetResponse.class;
 	}
 
 }
