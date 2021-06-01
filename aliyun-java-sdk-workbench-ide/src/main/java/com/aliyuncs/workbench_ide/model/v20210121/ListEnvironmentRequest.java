@@ -21,27 +21,29 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
+public class ListEnvironmentRequest extends RpcAcsRequest<ListEnvironmentResponse> {
 	   
 
-	private Long appId;
+	private Long productId;
 
 	private String currentOrgId;
 
-	private Boolean isCleanCodeRepo;
-	public DeleteAppRequest() {
-		super("Workbench-ide", "2021-01-21", "DeleteApp");
+	private Integer pageSize;
+
+	private Integer page;
+	public ListEnvironmentRequest() {
+		super("Workbench-ide", "2021-01-21", "ListEnvironment");
 		setMethod(MethodType.POST);
 	}
 
-	public Long getAppId() {
-		return this.appId;
+	public Long getProductId() {
+		return this.productId;
 	}
 
-	public void setAppId(Long appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId.toString());
+	public void setProductId(Long productId) {
+		this.productId = productId;
+		if(productId != null){
+			putQueryParameter("ProductId", productId.toString());
 		}
 	}
 
@@ -56,20 +58,31 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		}
 	}
 
-	public Boolean getIsCleanCodeRepo() {
-		return this.isCleanCodeRepo;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setIsCleanCodeRepo(Boolean isCleanCodeRepo) {
-		this.isCleanCodeRepo = isCleanCodeRepo;
-		if(isCleanCodeRepo != null){
-			putQueryParameter("IsCleanCodeRepo", isCleanCodeRepo.toString());
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+		if(pageSize != null){
+			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getPage() {
+		return this.page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+		if(page != null){
+			putQueryParameter("Page", page.toString());
 		}
 	}
 
 	@Override
-	public Class<DeleteAppResponse> getResponseClass() {
-		return DeleteAppResponse.class;
+	public Class<ListEnvironmentResponse> getResponseClass() {
+		return ListEnvironmentResponse.class;
 	}
 
 }

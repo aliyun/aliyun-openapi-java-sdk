@@ -21,28 +21,17 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
+public class SyncEnvironmentResourceRequest extends RpcAcsRequest<SyncEnvironmentResourceResponse> {
 	   
-
-	private Long appId;
 
 	private String currentOrgId;
 
-	private Boolean isCleanCodeRepo;
-	public DeleteAppRequest() {
-		super("Workbench-ide", "2021-01-21", "DeleteApp");
+	private Long envId;
+
+	private String cloudServiceName;
+	public SyncEnvironmentResourceRequest() {
+		super("Workbench-ide", "2021-01-21", "SyncEnvironmentResource");
 		setMethod(MethodType.POST);
-	}
-
-	public Long getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(Long appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId.toString());
-		}
 	}
 
 	public String getCurrentOrgId() {
@@ -56,20 +45,31 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		}
 	}
 
-	public Boolean getIsCleanCodeRepo() {
-		return this.isCleanCodeRepo;
+	public Long getEnvId() {
+		return this.envId;
 	}
 
-	public void setIsCleanCodeRepo(Boolean isCleanCodeRepo) {
-		this.isCleanCodeRepo = isCleanCodeRepo;
-		if(isCleanCodeRepo != null){
-			putQueryParameter("IsCleanCodeRepo", isCleanCodeRepo.toString());
+	public void setEnvId(Long envId) {
+		this.envId = envId;
+		if(envId != null){
+			putQueryParameter("EnvId", envId.toString());
+		}
+	}
+
+	public String getCloudServiceName() {
+		return this.cloudServiceName;
+	}
+
+	public void setCloudServiceName(String cloudServiceName) {
+		this.cloudServiceName = cloudServiceName;
+		if(cloudServiceName != null){
+			putQueryParameter("CloudServiceName", cloudServiceName);
 		}
 	}
 
 	@Override
-	public Class<DeleteAppResponse> getResponseClass() {
-		return DeleteAppResponse.class;
+	public Class<SyncEnvironmentResourceResponse> getResponseClass() {
+		return SyncEnvironmentResourceResponse.class;
 	}
 
 }

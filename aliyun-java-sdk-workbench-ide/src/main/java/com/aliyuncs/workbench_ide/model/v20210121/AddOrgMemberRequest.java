@@ -21,27 +21,40 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
+public class AddOrgMemberRequest extends RpcAcsRequest<AddOrgMemberResponse> {
 	   
 
-	private Long appId;
+	private Long uid;
+
+	private String role;
 
 	private String currentOrgId;
 
-	private Boolean isCleanCodeRepo;
-	public DeleteAppRequest() {
-		super("Workbench-ide", "2021-01-21", "DeleteApp");
+	private String accountType;
+	public AddOrgMemberRequest() {
+		super("Workbench-ide", "2021-01-21", "AddOrgMember");
 		setMethod(MethodType.POST);
 	}
 
-	public Long getAppId() {
-		return this.appId;
+	public Long getUid() {
+		return this.uid;
 	}
 
-	public void setAppId(Long appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId.toString());
+	public void setUid(Long uid) {
+		this.uid = uid;
+		if(uid != null){
+			putQueryParameter("Uid", uid.toString());
+		}
+	}
+
+	public String getRole() {
+		return this.role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+		if(role != null){
+			putQueryParameter("Role", role);
 		}
 	}
 
@@ -56,20 +69,20 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		}
 	}
 
-	public Boolean getIsCleanCodeRepo() {
-		return this.isCleanCodeRepo;
+	public String getAccountType() {
+		return this.accountType;
 	}
 
-	public void setIsCleanCodeRepo(Boolean isCleanCodeRepo) {
-		this.isCleanCodeRepo = isCleanCodeRepo;
-		if(isCleanCodeRepo != null){
-			putQueryParameter("IsCleanCodeRepo", isCleanCodeRepo.toString());
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+		if(accountType != null){
+			putQueryParameter("AccountType", accountType);
 		}
 	}
 
 	@Override
-	public Class<DeleteAppResponse> getResponseClass() {
-		return DeleteAppResponse.class;
+	public Class<AddOrgMemberResponse> getResponseClass() {
+		return AddOrgMemberResponse.class;
 	}
 
 }

@@ -21,28 +21,15 @@ import com.aliyuncs.http.MethodType;
  * @author auto create
  * @version 
  */
-public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
+public class RemoveOrgMemberRequest extends RpcAcsRequest<RemoveOrgMemberResponse> {
 	   
-
-	private Long appId;
 
 	private String currentOrgId;
 
-	private Boolean isCleanCodeRepo;
-	public DeleteAppRequest() {
-		super("Workbench-ide", "2021-01-21", "DeleteApp");
+	private String memberId;
+	public RemoveOrgMemberRequest() {
+		super("Workbench-ide", "2021-01-21", "RemoveOrgMember");
 		setMethod(MethodType.POST);
-	}
-
-	public Long getAppId() {
-		return this.appId;
-	}
-
-	public void setAppId(Long appId) {
-		this.appId = appId;
-		if(appId != null){
-			putQueryParameter("AppId", appId.toString());
-		}
 	}
 
 	public String getCurrentOrgId() {
@@ -56,20 +43,20 @@ public class DeleteAppRequest extends RpcAcsRequest<DeleteAppResponse> {
 		}
 	}
 
-	public Boolean getIsCleanCodeRepo() {
-		return this.isCleanCodeRepo;
+	public String getMemberId() {
+		return this.memberId;
 	}
 
-	public void setIsCleanCodeRepo(Boolean isCleanCodeRepo) {
-		this.isCleanCodeRepo = isCleanCodeRepo;
-		if(isCleanCodeRepo != null){
-			putQueryParameter("IsCleanCodeRepo", isCleanCodeRepo.toString());
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+		if(memberId != null){
+			putQueryParameter("MemberId", memberId);
 		}
 	}
 
 	@Override
-	public Class<DeleteAppResponse> getResponseClass() {
-		return DeleteAppResponse.class;
+	public Class<RemoveOrgMemberResponse> getResponseClass() {
+		return RemoveOrgMemberResponse.class;
 	}
 
 }
