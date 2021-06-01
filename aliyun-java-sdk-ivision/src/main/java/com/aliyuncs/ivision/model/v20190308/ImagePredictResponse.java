@@ -48,17 +48,17 @@ public class ImagePredictResponse extends AcsResponse {
 
 		private String status;
 
-		private String message;
-
 		private String predictResult;
 
-		private String dataUrl;
+		private String predictId;
 
 		private String predictTime;
 
+		private String dataUrl;
+
 		private String code;
 
-		private String predictId;
+		private String message;
 
 		private String modelId;
 
@@ -70,14 +70,6 @@ public class ImagePredictResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getMessage() {
-			return this.message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
-
 		public String getPredictResult() {
 			return this.predictResult;
 		}
@@ -86,12 +78,12 @@ public class ImagePredictResponse extends AcsResponse {
 			this.predictResult = predictResult;
 		}
 
-		public String getDataUrl() {
-			return this.dataUrl;
+		public String getPredictId() {
+			return this.predictId;
 		}
 
-		public void setDataUrl(String dataUrl) {
-			this.dataUrl = dataUrl;
+		public void setPredictId(String predictId) {
+			this.predictId = predictId;
 		}
 
 		public String getPredictTime() {
@@ -102,6 +94,14 @@ public class ImagePredictResponse extends AcsResponse {
 			this.predictTime = predictTime;
 		}
 
+		public String getDataUrl() {
+			return this.dataUrl;
+		}
+
+		public void setDataUrl(String dataUrl) {
+			this.dataUrl = dataUrl;
+		}
+
 		public String getCode() {
 			return this.code;
 		}
@@ -110,12 +110,12 @@ public class ImagePredictResponse extends AcsResponse {
 			this.code = code;
 		}
 
-		public String getPredictId() {
-			return this.predictId;
+		public String getMessage() {
+			return this.message;
 		}
 
-		public void setPredictId(String predictId) {
-			this.predictId = predictId;
+		public void setMessage(String message) {
+			this.message = message;
 		}
 
 		public String getModelId() {

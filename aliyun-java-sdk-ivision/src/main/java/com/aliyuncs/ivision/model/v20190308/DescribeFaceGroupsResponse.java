@@ -27,9 +27,9 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 
 	private Long totalNum;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long currentPage;
 
@@ -45,20 +45,20 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getCurrentPage() {
@@ -89,9 +89,9 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 
 		private String creationTime;
 
-		private String name;
-
 		private String groupId;
+
+		private String name;
 
 		public String getCreationTime() {
 			return this.creationTime;
@@ -101,20 +101,20 @@ public class DescribeFaceGroupsResponse extends AcsResponse {
 			this.creationTime = creationTime;
 		}
 
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
 		public String getGroupId() {
 			return this.groupId;
 		}
 
 		public void setGroupId(String groupId) {
 			this.groupId = groupId;
+		}
+
+		public String getName() {
+			return this.name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 	}
 

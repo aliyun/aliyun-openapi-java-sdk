@@ -31,10 +31,10 @@ public class SearchFaceResponseUnmarshaller {
 		searchFaceResponse.setGroupId(_ctx.stringValue("SearchFaceResponse.GroupId"));
 
 		Rect rect = new Rect();
-		rect.setLeft(_ctx.integerValue("SearchFaceResponse.Rect.Left"));
 		rect.setTop(_ctx.integerValue("SearchFaceResponse.Rect.Top"));
-		rect.setHeight(_ctx.integerValue("SearchFaceResponse.Rect.Height"));
 		rect.setWidth(_ctx.integerValue("SearchFaceResponse.Rect.Width"));
+		rect.setHeight(_ctx.integerValue("SearchFaceResponse.Rect.Height"));
+		rect.setLeft(_ctx.integerValue("SearchFaceResponse.Rect.Left"));
 		searchFaceResponse.setRect(rect);
 
 		List<FaceResult> faceResults = new ArrayList<FaceResult>();

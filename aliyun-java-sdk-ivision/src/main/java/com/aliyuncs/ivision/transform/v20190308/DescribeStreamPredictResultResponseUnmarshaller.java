@@ -37,10 +37,10 @@ public class DescribeStreamPredictResultResponseUnmarshaller {
 			StreamPredictData streamPredictData = new StreamPredictData();
 			streamPredictData.setStatus(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].Status"));
 			streamPredictData.setPredictResult(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictResult"));
-			streamPredictData.setDataUrl(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].DataUrl"));
-			streamPredictData.setPredictTime(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictTime"));
-			streamPredictData.setTimestamp(_ctx.longValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].Timestamp"));
 			streamPredictData.setPredictId(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictId"));
+			streamPredictData.setPredictTime(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].PredictTime"));
+			streamPredictData.setDataUrl(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].DataUrl"));
+			streamPredictData.setTimestamp(_ctx.longValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].Timestamp"));
 			streamPredictData.setModelId(_ctx.stringValue("DescribeStreamPredictResultResponse.StreamPredictDatas["+ i +"].ModelId"));
 
 			streamPredictDatas.add(streamPredictData);

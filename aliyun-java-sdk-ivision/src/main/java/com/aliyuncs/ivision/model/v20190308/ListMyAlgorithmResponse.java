@@ -25,9 +25,9 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListMyAlgorithmResponse extends AcsResponse {
 
-	private String requestId;
-
 	private String message;
+
+	private String requestId;
 
 	private String code;
 
@@ -35,20 +35,20 @@ public class ListMyAlgorithmResponse extends AcsResponse {
 
 	private Data data;
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public String getMessage() {
 		return this.message;
 	}
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public String getCode() {
@@ -77,21 +77,13 @@ public class ListMyAlgorithmResponse extends AcsResponse {
 
 	public static class Data {
 
-		private Integer totalCount;
-
 		private Integer pageSize;
 
 		private Integer pageNumber;
 
+		private Integer totalCount;
+
 		private List<AlgorithmListItem> algorithmList;
-
-		public Integer getTotalCount() {
-			return this.totalCount;
-		}
-
-		public void setTotalCount(Integer totalCount) {
-			this.totalCount = totalCount;
-		}
 
 		public Integer getPageSize() {
 			return this.pageSize;
@@ -109,6 +101,14 @@ public class ListMyAlgorithmResponse extends AcsResponse {
 			this.pageNumber = pageNumber;
 		}
 
+		public Integer getTotalCount() {
+			return this.totalCount;
+		}
+
+		public void setTotalCount(Integer totalCount) {
+			this.totalCount = totalCount;
+		}
+
 		public List<AlgorithmListItem> getAlgorithmList() {
 			return this.algorithmList;
 		}
@@ -119,42 +119,26 @@ public class ListMyAlgorithmResponse extends AcsResponse {
 
 		public static class AlgorithmListItem {
 
-			private Integer algorithmOrder;
-
-			private Integer yesterdayCount;
-
-			private String apiDocUrl;
+			private String algorithmName;
 
 			private String deployRegion;
 
 			private Integer currentMonthCount;
 
-			private String algorithmName;
-
 			private String algorithmCode;
 
-			public Integer getAlgorithmOrder() {
-				return this.algorithmOrder;
+			private String apiDocUrl;
+
+			private Integer yesterdayCount;
+
+			private Integer algorithmOrder;
+
+			public String getAlgorithmName() {
+				return this.algorithmName;
 			}
 
-			public void setAlgorithmOrder(Integer algorithmOrder) {
-				this.algorithmOrder = algorithmOrder;
-			}
-
-			public Integer getYesterdayCount() {
-				return this.yesterdayCount;
-			}
-
-			public void setYesterdayCount(Integer yesterdayCount) {
-				this.yesterdayCount = yesterdayCount;
-			}
-
-			public String getApiDocUrl() {
-				return this.apiDocUrl;
-			}
-
-			public void setApiDocUrl(String apiDocUrl) {
-				this.apiDocUrl = apiDocUrl;
+			public void setAlgorithmName(String algorithmName) {
+				this.algorithmName = algorithmName;
 			}
 
 			public String getDeployRegion() {
@@ -173,20 +157,36 @@ public class ListMyAlgorithmResponse extends AcsResponse {
 				this.currentMonthCount = currentMonthCount;
 			}
 
-			public String getAlgorithmName() {
-				return this.algorithmName;
-			}
-
-			public void setAlgorithmName(String algorithmName) {
-				this.algorithmName = algorithmName;
-			}
-
 			public String getAlgorithmCode() {
 				return this.algorithmCode;
 			}
 
 			public void setAlgorithmCode(String algorithmCode) {
 				this.algorithmCode = algorithmCode;
+			}
+
+			public String getApiDocUrl() {
+				return this.apiDocUrl;
+			}
+
+			public void setApiDocUrl(String apiDocUrl) {
+				this.apiDocUrl = apiDocUrl;
+			}
+
+			public Integer getYesterdayCount() {
+				return this.yesterdayCount;
+			}
+
+			public void setYesterdayCount(Integer yesterdayCount) {
+				this.yesterdayCount = yesterdayCount;
+			}
+
+			public Integer getAlgorithmOrder() {
+				return this.algorithmOrder;
+			}
+
+			public void setAlgorithmOrder(Integer algorithmOrder) {
+				this.algorithmOrder = algorithmOrder;
 			}
 		}
 	}

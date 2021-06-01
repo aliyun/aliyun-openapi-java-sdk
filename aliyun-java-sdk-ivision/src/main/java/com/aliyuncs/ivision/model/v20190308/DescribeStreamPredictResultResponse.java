@@ -27,9 +27,9 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 
 	private Long totalNum;
 
-	private String requestId;
-
 	private Long pageSize;
+
+	private String requestId;
 
 	private Long currentPage;
 
@@ -45,20 +45,20 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 		this.totalNum = totalNum;
 	}
 
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
 	public Long getPageSize() {
 		return this.pageSize;
 	}
 
 	public void setPageSize(Long pageSize) {
 		this.pageSize = pageSize;
+	}
+
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
 	}
 
 	public Long getCurrentPage() {
@@ -91,13 +91,13 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 
 		private String predictResult;
 
-		private String dataUrl;
+		private String predictId;
 
 		private String predictTime;
 
-		private Long timestamp;
+		private String dataUrl;
 
-		private String predictId;
+		private Long timestamp;
 
 		private String modelId;
 
@@ -117,12 +117,12 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 			this.predictResult = predictResult;
 		}
 
-		public String getDataUrl() {
-			return this.dataUrl;
+		public String getPredictId() {
+			return this.predictId;
 		}
 
-		public void setDataUrl(String dataUrl) {
-			this.dataUrl = dataUrl;
+		public void setPredictId(String predictId) {
+			this.predictId = predictId;
 		}
 
 		public String getPredictTime() {
@@ -133,20 +133,20 @@ public class DescribeStreamPredictResultResponse extends AcsResponse {
 			this.predictTime = predictTime;
 		}
 
+		public String getDataUrl() {
+			return this.dataUrl;
+		}
+
+		public void setDataUrl(String dataUrl) {
+			this.dataUrl = dataUrl;
+		}
+
 		public Long getTimestamp() {
 			return this.timestamp;
 		}
 
 		public void setTimestamp(Long timestamp) {
 			this.timestamp = timestamp;
-		}
-
-		public String getPredictId() {
-			return this.predictId;
-		}
-
-		public void setPredictId(String predictId) {
-			this.predictId = predictId;
 		}
 
 		public String getModelId() {

@@ -90,21 +90,13 @@ public class SearchFaceResponse extends AcsResponse {
 
 	public static class Rect {
 
-		private Integer left;
-
 		private Integer top;
-
-		private Integer height;
 
 		private Integer width;
 
-		public Integer getLeft() {
-			return this.left;
-		}
+		private Integer height;
 
-		public void setLeft(Integer left) {
-			this.left = left;
-		}
+		private Integer left;
 
 		public Integer getTop() {
 			return this.top;
@@ -112,6 +104,14 @@ public class SearchFaceResponse extends AcsResponse {
 
 		public void setTop(Integer top) {
 			this.top = top;
+		}
+
+		public Integer getWidth() {
+			return this.width;
+		}
+
+		public void setWidth(Integer width) {
+			this.width = width;
 		}
 
 		public Integer getHeight() {
@@ -122,12 +122,12 @@ public class SearchFaceResponse extends AcsResponse {
 			this.height = height;
 		}
 
-		public Integer getWidth() {
-			return this.width;
+		public Integer getLeft() {
+			return this.left;
 		}
 
-		public void setWidth(Integer width) {
-			this.width = width;
+		public void setLeft(Integer left) {
+			this.left = left;
 		}
 	}
 
