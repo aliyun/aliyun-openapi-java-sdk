@@ -30,7 +30,6 @@ public class DescribeCertificateResponseUnmarshaller {
 		describeCertificateResponse.setCertificateId(_ctx.stringValue("DescribeCertificateResponse.CertificateId"));
 		describeCertificateResponse.setArn(_ctx.stringValue("DescribeCertificateResponse.Arn"));
 		describeCertificateResponse.setKeySpec(_ctx.stringValue("DescribeCertificateResponse.KeySpec"));
-		describeCertificateResponse.setProtectionLevel(_ctx.stringValue("DescribeCertificateResponse.ProtectionLevel"));
 		describeCertificateResponse.setStatus(_ctx.stringValue("DescribeCertificateResponse.Status"));
 		describeCertificateResponse.setCreatedAt(_ctx.stringValue("DescribeCertificateResponse.CreatedAt"));
 		describeCertificateResponse.setUpdatedAt(_ctx.stringValue("DescribeCertificateResponse.UpdatedAt"));
@@ -43,6 +42,8 @@ public class DescribeCertificateResponseUnmarshaller {
 		describeCertificateResponse.setSubjectPublicKey(_ctx.stringValue("DescribeCertificateResponse.SubjectPublicKey"));
 		describeCertificateResponse.setSubjectKeyIdentifier(_ctx.stringValue("DescribeCertificateResponse.SubjectKeyIdentifier"));
 		describeCertificateResponse.setTags(_ctx.mapValue("DescribeCertificateResponse.Tags"));
+		describeCertificateResponse.setExportablePrivateKey(_ctx.booleanValue("DescribeCertificateResponse.ExportablePrivateKey"));
+		describeCertificateResponse.setProtectionLevel(_ctx.stringValue("DescribeCertificateResponse.ProtectionLevel"));
 
 		List<String> subjectAlternativeNames = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeCertificateResponse.SubjectAlternativeNames.Length"); i++) {

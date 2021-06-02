@@ -80,6 +80,10 @@ public class DescribeKeyResponse extends AcsResponse {
 
 		private String keySpec;
 
+		private String deletionProtection;
+
+		private String deletionProtectionDescription;
+
 		public String getCreationDate() {
 			return this.creationDate;
 		}
@@ -214,6 +218,22 @@ public class DescribeKeyResponse extends AcsResponse {
 
 		public void setKeySpec(String keySpec) {
 			this.keySpec = keySpec;
+		}
+
+		public String getDeletionProtection() {
+			return this.deletionProtection;
+		}
+
+		public void setDeletionProtection(String deletionProtection) {
+			this.deletionProtection = deletionProtection;
+		}
+
+		public String getDeletionProtectionDescription() {
+			return this.deletionProtectionDescription;
+		}
+
+		public void setDeletionProtectionDescription(String deletionProtectionDescription) {
+			this.deletionProtectionDescription = deletionProtectionDescription;
 		}
 	}
 

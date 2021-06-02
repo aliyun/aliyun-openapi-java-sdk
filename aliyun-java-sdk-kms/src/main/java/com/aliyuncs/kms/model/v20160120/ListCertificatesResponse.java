@@ -35,6 +35,8 @@ public class ListCertificatesResponse extends AcsResponse {
 
 	private List<CertificateSummary> certificateSummaryList;
 
+	private List<Certificate> certificates;
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -75,23 +77,17 @@ public class ListCertificatesResponse extends AcsResponse {
 		this.certificateSummaryList = certificateSummaryList;
 	}
 
+	public List<Certificate> getCertificates() {
+		return this.certificates;
+	}
+
+	public void setCertificates(List<Certificate> certificates) {
+		this.certificates = certificates;
+	}
+
 	public static class CertificateSummary {
 
 		private String certificateId;
-
-		private String subject;
-
-		private String issuer;
-
-		private String keySpec;
-
-		private String protectionLevel;
-
-		private String notBefore;
-
-		private String notAfter;
-
-		private String status;
 
 		public String getCertificateId() {
 			return this.certificateId;
@@ -100,61 +96,18 @@ public class ListCertificatesResponse extends AcsResponse {
 		public void setCertificateId(String certificateId) {
 			this.certificateId = certificateId;
 		}
+	}
 
-		public String getSubject() {
-			return this.subject;
+	public static class Certificate {
+
+		private String certificateId;
+
+		public String getCertificateId() {
+			return this.certificateId;
 		}
 
-		public void setSubject(String subject) {
-			this.subject = subject;
-		}
-
-		public String getIssuer() {
-			return this.issuer;
-		}
-
-		public void setIssuer(String issuer) {
-			this.issuer = issuer;
-		}
-
-		public String getKeySpec() {
-			return this.keySpec;
-		}
-
-		public void setKeySpec(String keySpec) {
-			this.keySpec = keySpec;
-		}
-
-		public String getProtectionLevel() {
-			return this.protectionLevel;
-		}
-
-		public void setProtectionLevel(String protectionLevel) {
-			this.protectionLevel = protectionLevel;
-		}
-
-		public String getNotBefore() {
-			return this.notBefore;
-		}
-
-		public void setNotBefore(String notBefore) {
-			this.notBefore = notBefore;
-		}
-
-		public String getNotAfter() {
-			return this.notAfter;
-		}
-
-		public void setNotAfter(String notAfter) {
-			this.notAfter = notAfter;
-		}
-
-		public String getStatus() {
-			return this.status;
-		}
-
-		public void setStatus(String status) {
-			this.status = status;
+		public void setCertificateId(String certificateId) {
+			this.certificateId = certificateId;
 		}
 	}
 

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.kms.model.v20160120.ListCertificatesResponse;
+import com.aliyuncs.kms.model.v20160120.ListCertificatesResponse.Certificate;
 import com.aliyuncs.kms.model.v20160120.ListCertificatesResponse.CertificateSummary;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -35,17 +36,19 @@ public class ListCertificatesResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListCertificatesResponse.CertificateSummaryList.Length"); i++) {
 			CertificateSummary certificateSummary = new CertificateSummary();
 			certificateSummary.setCertificateId(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].CertificateId"));
-			certificateSummary.setSubject(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].Subject"));
-			certificateSummary.setIssuer(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].Issuer"));
-			certificateSummary.setKeySpec(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].KeySpec"));
-			certificateSummary.setProtectionLevel(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].ProtectionLevel"));
-			certificateSummary.setNotBefore(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].NotBefore"));
-			certificateSummary.setNotAfter(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].NotAfter"));
-			certificateSummary.setStatus(_ctx.stringValue("ListCertificatesResponse.CertificateSummaryList["+ i +"].Status"));
 
 			certificateSummaryList.add(certificateSummary);
 		}
 		listCertificatesResponse.setCertificateSummaryList(certificateSummaryList);
+
+		List<Certificate> certificates = new ArrayList<Certificate>();
+		for (int i = 0; i < _ctx.lengthValue("ListCertificatesResponse.Certificates.Length"); i++) {
+			Certificate certificate = new Certificate();
+			certificate.setCertificateId(_ctx.stringValue("ListCertificatesResponse.Certificates["+ i +"].CertificateId"));
+
+			certificates.add(certificate);
+		}
+		listCertificatesResponse.setCertificates(certificates);
 	 
 	 	return listCertificatesResponse;
 	}
