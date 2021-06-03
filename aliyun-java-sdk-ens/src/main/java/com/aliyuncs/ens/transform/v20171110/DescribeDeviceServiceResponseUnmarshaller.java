@@ -38,6 +38,7 @@ public class DescribeDeviceServiceResponseUnmarshaller {
 			resourceDetailInfo.setStatus(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Status"));
 			resourceDetailInfo.setType(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Type"));
 			resourceDetailInfo.setMac(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].Mac"));
+			resourceDetailInfo.setISP(_ctx.stringValue("DescribeDeviceServiceResponse.ResourceDetailInfos["+ i +"].ISP"));
 
 			resourceDetailInfos.add(resourceDetailInfo);
 		}
