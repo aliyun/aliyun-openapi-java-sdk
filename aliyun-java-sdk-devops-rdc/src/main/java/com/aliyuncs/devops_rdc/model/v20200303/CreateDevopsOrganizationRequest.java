@@ -32,7 +32,7 @@ public class CreateDevopsOrganizationRequest extends RpcAcsRequest<CreateDevopsO
 
 	private Integer desiredMemberCount;
 	public CreateDevopsOrganizationRequest() {
-		super("devops-rdc", "2020-03-03", "CreateDevopsOrganization", "1.9.6");
+		super("devops-rdc", "2020-03-03", "CreateDevopsOrganization");
 		setMethod(MethodType.POST);
 	}
 

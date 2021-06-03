@@ -81,6 +81,10 @@ public class GetProjectOptionResponse extends AcsResponse {
 
 		private String value;
 
+		private String kind;
+
+		private String scopeName;
+
 		public String getName() {
 			return this.name;
 		}
@@ -95,6 +99,22 @@ public class GetProjectOptionResponse extends AcsResponse {
 
 		public void setValue(String value) {
 			this.value = value;
+		}
+
+		public String getKind() {
+			return this.kind;
+		}
+
+		public void setKind(String kind) {
+			this.kind = kind;
+		}
+
+		public String getScopeName() {
+			return this.scopeName;
+		}
+
+		public void setScopeName(String scopeName) {
+			this.scopeName = scopeName;
 		}
 	}
 

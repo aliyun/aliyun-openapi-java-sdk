@@ -32,7 +32,7 @@ public class CancelPipelineRequest extends RpcAcsRequest<CancelPipelineResponse>
 
 	private Long pipelineId;
 	public CancelPipelineRequest() {
-		super("devops-rdc", "2020-03-03", "CancelPipeline", "1.9.6");
+		super("devops-rdc", "2020-03-03", "CancelPipeline");
 		setMethod(MethodType.POST);
 	}
 

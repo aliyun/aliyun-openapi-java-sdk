@@ -36,7 +36,7 @@ public class UpdateCommonGroupRequest extends RpcAcsRequest<UpdateCommonGroupRes
 
 	private String projectId;
 	public UpdateCommonGroupRequest() {
-		super("devops-rdc", "2020-03-03", "UpdateCommonGroup", "1.9.6");
+		super("devops-rdc", "2020-03-03", "UpdateCommonGroup");
 		setMethod(MethodType.POST);
 	}
 

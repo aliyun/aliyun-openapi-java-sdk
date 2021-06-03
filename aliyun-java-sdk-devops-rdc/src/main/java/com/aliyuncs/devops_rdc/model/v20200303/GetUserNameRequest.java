@@ -28,7 +28,7 @@ public class GetUserNameRequest extends RpcAcsRequest<GetUserNameResponse> {
 
 	private String orgId;
 	public GetUserNameRequest() {
-		super("devops-rdc", "2020-03-03", "GetUserName", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetUserName");
 		setMethod(MethodType.POST);
 	}
 

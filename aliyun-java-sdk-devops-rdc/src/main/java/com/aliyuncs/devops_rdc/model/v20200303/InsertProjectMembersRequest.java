@@ -30,7 +30,7 @@ public class InsertProjectMembersRequest extends RpcAcsRequest<InsertProjectMemb
 
 	private String orgId;
 	public InsertProjectMembersRequest() {
-		super("devops-rdc", "2020-03-03", "InsertProjectMembers", "1.9.6");
+		super("devops-rdc", "2020-03-03", "InsertProjectMembers");
 		setMethod(MethodType.POST);
 	}
 

@@ -28,7 +28,7 @@ public class ListDevopsScenarioFieldConfigRequest extends RpcAcsRequest<ListDevo
 
 	private String orgId;
 	public ListDevopsScenarioFieldConfigRequest() {
-		super("devops-rdc", "2020-03-03", "ListDevopsScenarioFieldConfig", "1.9.6");
+		super("devops-rdc", "2020-03-03", "ListDevopsScenarioFieldConfig");
 		setMethod(MethodType.POST);
 	}
 

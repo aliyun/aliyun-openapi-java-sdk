@@ -36,6 +36,8 @@ public class GetProjectOptionResponseUnmarshaller {
 			Option option = new Option();
 			option.setName(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Name"));
 			option.setValue(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Value"));
+			option.setKind(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].Kind"));
+			option.setScopeName(_ctx.stringValue("GetProjectOptionResponse.Object["+ i +"].ScopeName"));
 
 			object.add(option);
 		}

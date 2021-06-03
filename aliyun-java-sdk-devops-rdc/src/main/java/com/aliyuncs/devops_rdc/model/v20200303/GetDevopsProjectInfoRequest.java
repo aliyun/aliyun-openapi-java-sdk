@@ -28,7 +28,7 @@ public class GetDevopsProjectInfoRequest extends RpcAcsRequest<GetDevopsProjectI
 
 	private String orgId;
 	public GetDevopsProjectInfoRequest() {
-		super("devops-rdc", "2020-03-03", "GetDevopsProjectInfo", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetDevopsProjectInfo");
 		setMethod(MethodType.POST);
 	}
 

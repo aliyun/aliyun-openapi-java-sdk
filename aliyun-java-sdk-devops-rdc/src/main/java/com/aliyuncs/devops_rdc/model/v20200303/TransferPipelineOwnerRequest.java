@@ -32,7 +32,7 @@ public class TransferPipelineOwnerRequest extends RpcAcsRequest<TransferPipeline
 
 	private String newOwnerId;
 	public TransferPipelineOwnerRequest() {
-		super("devops-rdc", "2020-03-03", "TransferPipelineOwner", "1.9.6");
+		super("devops-rdc", "2020-03-03", "TransferPipelineOwner");
 		setMethod(MethodType.POST);
 	}
 

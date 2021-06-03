@@ -28,7 +28,7 @@ public class GetLastWorkspaceRequest extends RpcAcsRequest<GetLastWorkspaceRespo
 
 	private String orgId;
 	public GetLastWorkspaceRequest() {
-		super("devops-rdc", "2020-03-03", "GetLastWorkspace", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetLastWorkspace");
 		setMethod(MethodType.POST);
 	}
 

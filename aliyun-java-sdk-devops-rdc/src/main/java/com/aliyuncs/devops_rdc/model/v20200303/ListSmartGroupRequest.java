@@ -28,7 +28,7 @@ public class ListSmartGroupRequest extends RpcAcsRequest<ListSmartGroupResponse>
 
 	private String orgId;
 	public ListSmartGroupRequest() {
-		super("devops-rdc", "2020-03-03", "ListSmartGroup", "1.9.6");
+		super("devops-rdc", "2020-03-03", "ListSmartGroup");
 		setMethod(MethodType.POST);
 	}
 

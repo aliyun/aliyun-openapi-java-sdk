@@ -30,7 +30,7 @@ public class GetPipleineLatestInstanceStatusRequest extends RpcAcsRequest<GetPip
 
 	private Long pipelineId;
 	public GetPipleineLatestInstanceStatusRequest() {
-		super("devops-rdc", "2020-03-03", "GetPipleineLatestInstanceStatus", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetPipleineLatestInstanceStatus");
 		setMethod(MethodType.POST);
 	}
 

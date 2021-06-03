@@ -26,7 +26,7 @@ public class ListUserOrganizationRequest extends RpcAcsRequest<ListUserOrganizat
 
 	private String realPk;
 	public ListUserOrganizationRequest() {
-		super("devops-rdc", "2020-03-03", "ListUserOrganization", "1.9.6");
+		super("devops-rdc", "2020-03-03", "ListUserOrganization");
 		setMethod(MethodType.POST);
 	}
 

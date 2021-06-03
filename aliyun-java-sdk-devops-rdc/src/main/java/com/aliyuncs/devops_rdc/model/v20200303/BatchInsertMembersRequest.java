@@ -30,7 +30,7 @@ public class BatchInsertMembersRequest extends RpcAcsRequest<BatchInsertMembersR
 
 	private String orgId;
 	public BatchInsertMembersRequest() {
-		super("devops-rdc", "2020-03-03", "BatchInsertMembers", "1.9.6");
+		super("devops-rdc", "2020-03-03", "BatchInsertMembers");
 		setMethod(MethodType.POST);
 	}
 

@@ -30,7 +30,7 @@ public class ListServiceConnectionsRequest extends RpcAcsRequest<ListServiceConn
 
 	private String orgId;
 	public ListServiceConnectionsRequest() {
-		super("devops-rdc", "2020-03-03", "ListServiceConnections", "1.9.6");
+		super("devops-rdc", "2020-03-03", "ListServiceConnections");
 		setMethod(MethodType.POST);
 	}
 

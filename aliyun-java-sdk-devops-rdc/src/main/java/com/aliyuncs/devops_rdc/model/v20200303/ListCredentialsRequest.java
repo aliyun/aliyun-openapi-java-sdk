@@ -28,7 +28,7 @@ public class ListCredentialsRequest extends RpcAcsRequest<ListCredentialsRespons
 
 	private String orgId;
 	public ListCredentialsRequest() {
-		super("devops-rdc", "2020-03-03", "ListCredentials", "1.9.6");
+		super("devops-rdc", "2020-03-03", "ListCredentials");
 		setMethod(MethodType.POST);
 	}
 

@@ -32,7 +32,7 @@ public class GetPipelineInstanceBuildNumberStatusRequest extends RpcAcsRequest<G
 
 	private Long pipelineId;
 	public GetPipelineInstanceBuildNumberStatusRequest() {
-		super("devops-rdc", "2020-03-03", "GetPipelineInstanceBuildNumberStatus", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetPipelineInstanceBuildNumberStatus");
 		setMethod(MethodType.POST);
 	}
 

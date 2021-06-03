@@ -36,7 +36,7 @@ public class CreateCredentialRequest extends RpcAcsRequest<CreateCredentialRespo
 
 	private String userName;
 	public CreateCredentialRequest() {
-		super("devops-rdc", "2020-03-03", "CreateCredential", "1.9.6");
+		super("devops-rdc", "2020-03-03", "CreateCredential");
 		setMethod(MethodType.POST);
 	}
 

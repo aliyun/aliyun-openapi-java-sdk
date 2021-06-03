@@ -26,7 +26,7 @@ public class GetDevopsOrganizationMembersRequest extends RpcAcsRequest<GetDevops
 
 	private String orgId;
 	public GetDevopsOrganizationMembersRequest() {
-		super("devops-rdc", "2020-03-03", "GetDevopsOrganizationMembers", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetDevopsOrganizationMembers");
 		setMethod(MethodType.POST);
 	}
 

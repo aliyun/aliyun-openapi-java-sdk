@@ -30,7 +30,7 @@ public class DeleteCommonGroupRequest extends RpcAcsRequest<DeleteCommonGroupRes
 
 	private String orgId;
 	public DeleteCommonGroupRequest() {
-		super("devops-rdc", "2020-03-03", "DeleteCommonGroup", "1.9.6");
+		super("devops-rdc", "2020-03-03", "DeleteCommonGroup");
 		setMethod(MethodType.POST);
 	}
 

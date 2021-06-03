@@ -28,7 +28,7 @@ public class DeleteDevopsProjectSprintRequest extends RpcAcsRequest<DeleteDevops
 
 	private String orgId;
 	public DeleteDevopsProjectSprintRequest() {
-		super("devops-rdc", "2020-03-03", "DeleteDevopsProjectSprint", "1.9.6");
+		super("devops-rdc", "2020-03-03", "DeleteDevopsProjectSprint");
 		setMethod(MethodType.POST);
 	}
 

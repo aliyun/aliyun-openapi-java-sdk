@@ -40,7 +40,7 @@ public class UpdateDevopsProjectSprintRequest extends RpcAcsRequest<UpdateDevops
 
 	private String projectId;
 	public UpdateDevopsProjectSprintRequest() {
-		super("devops-rdc", "2020-03-03", "UpdateDevopsProjectSprint", "1.9.6");
+		super("devops-rdc", "2020-03-03", "UpdateDevopsProjectSprint");
 		setMethod(MethodType.POST);
 	}
 

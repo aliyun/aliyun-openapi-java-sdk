@@ -34,7 +34,7 @@ public class InsertPipelineMemberRequest extends RpcAcsRequest<InsertPipelineMem
 
 	private Long pipelineId;
 	public InsertPipelineMemberRequest() {
-		super("devops-rdc", "2020-03-03", "InsertPipelineMember", "1.9.6");
+		super("devops-rdc", "2020-03-03", "InsertPipelineMember");
 		setMethod(MethodType.POST);
 	}
 

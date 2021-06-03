@@ -38,7 +38,7 @@ public class GetPipelineInstHistoryRequest extends RpcAcsRequest<GetPipelineInst
 
 	private Long pageStart;
 	public GetPipelineInstHistoryRequest() {
-		super("devops-rdc", "2020-03-03", "GetPipelineInstHistory", "1.9.6");
+		super("devops-rdc", "2020-03-03", "GetPipelineInstHistory");
 		setMethod(MethodType.POST);
 	}
 

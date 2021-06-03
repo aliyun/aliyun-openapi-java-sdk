@@ -34,7 +34,7 @@ public class UpdatePipelineMemberRequest extends RpcAcsRequest<UpdatePipelineMem
 
 	private Long pipelineId;
 	public UpdatePipelineMemberRequest() {
-		super("devops-rdc", "2020-03-03", "UpdatePipelineMember", "1.9.6");
+		super("devops-rdc", "2020-03-03", "UpdatePipelineMember");
 		setMethod(MethodType.POST);
 	}
 
