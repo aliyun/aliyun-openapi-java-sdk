@@ -52,7 +52,7 @@ public class CreateDevopsProjectTaskRequest extends RpcAcsRequest<CreateDevopsPr
 
 	private String taskListId;
 	public CreateDevopsProjectTaskRequest() {
-		super("devops-rdc", "2020-03-03", "CreateDevopsProjectTask");
+		super("devops-rdc", "2020-03-03", "CreateDevopsProjectTask", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

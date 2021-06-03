@@ -32,7 +32,7 @@ public class ExecutePipelineRequest extends RpcAcsRequest<ExecutePipelineRespons
 
 	private Long pipelineId;
 	public ExecutePipelineRequest() {
-		super("devops-rdc", "2020-03-03", "ExecutePipeline");
+		super("devops-rdc", "2020-03-03", "ExecutePipeline", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

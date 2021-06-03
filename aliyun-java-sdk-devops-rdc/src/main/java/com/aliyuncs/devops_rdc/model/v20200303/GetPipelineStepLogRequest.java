@@ -38,7 +38,7 @@ public class GetPipelineStepLogRequest extends RpcAcsRequest<GetPipelineStepLogR
 
 	private Long limit;
 	public GetPipelineStepLogRequest() {
-		super("devops-rdc", "2020-03-03", "GetPipelineStepLog");
+		super("devops-rdc", "2020-03-03", "GetPipelineStepLog", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

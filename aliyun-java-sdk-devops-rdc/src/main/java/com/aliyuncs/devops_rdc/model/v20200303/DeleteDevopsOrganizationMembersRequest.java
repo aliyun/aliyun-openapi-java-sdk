@@ -30,7 +30,7 @@ public class DeleteDevopsOrganizationMembersRequest extends RpcAcsRequest<Delete
 
 	private String orgId;
 	public DeleteDevopsOrganizationMembersRequest() {
-		super("devops-rdc", "2020-03-03", "DeleteDevopsOrganizationMembers");
+		super("devops-rdc", "2020-03-03", "DeleteDevopsOrganizationMembers", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

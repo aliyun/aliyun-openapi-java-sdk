@@ -30,7 +30,7 @@ public class CreateServiceConnectionRequest extends RpcAcsRequest<CreateServiceC
 
 	private String orgId;
 	public CreateServiceConnectionRequest() {
-		super("devops-rdc", "2020-03-03", "CreateServiceConnection");
+		super("devops-rdc", "2020-03-03", "CreateServiceConnection", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

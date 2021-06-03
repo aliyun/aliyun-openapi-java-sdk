@@ -28,7 +28,7 @@ public class ListProjectCustomFieldsRequest extends RpcAcsRequest<ListProjectCus
 
 	private String orgId;
 	public ListProjectCustomFieldsRequest() {
-		super("devops-rdc", "2020-03-03", "ListProjectCustomFields");
+		super("devops-rdc", "2020-03-03", "ListProjectCustomFields", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

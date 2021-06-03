@@ -32,7 +32,7 @@ public class GetDevopsProjectMembersRequest extends RpcAcsRequest<GetDevopsProje
 
 	private String pageToken;
 	public GetDevopsProjectMembersRequest() {
-		super("devops-rdc", "2020-03-03", "GetDevopsProjectMembers");
+		super("devops-rdc", "2020-03-03", "GetDevopsProjectMembers", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

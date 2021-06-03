@@ -32,7 +32,7 @@ public class InsertDevopsUserRequest extends RpcAcsRequest<InsertDevopsUserRespo
 
 	private String userName;
 	public InsertDevopsUserRequest() {
-		super("devops-rdc", "2020-03-03", "InsertDevopsUser");
+		super("devops-rdc", "2020-03-03", "InsertDevopsUser", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

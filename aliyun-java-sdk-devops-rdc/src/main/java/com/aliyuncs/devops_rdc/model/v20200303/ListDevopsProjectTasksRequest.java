@@ -28,7 +28,7 @@ public class ListDevopsProjectTasksRequest extends RpcAcsRequest<ListDevopsProje
 
 	private String orgId;
 	public ListDevopsProjectTasksRequest() {
-		super("devops-rdc", "2020-03-03", "ListDevopsProjectTasks");
+		super("devops-rdc", "2020-03-03", "ListDevopsProjectTasks", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

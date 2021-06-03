@@ -38,7 +38,7 @@ public class CreateDevopsProjectSprintRequest extends RpcAcsRequest<CreateDevops
 
 	private String projectId;
 	public CreateDevopsProjectSprintRequest() {
-		super("devops-rdc", "2020-03-03", "CreateDevopsProjectSprint");
+		super("devops-rdc", "2020-03-03", "CreateDevopsProjectSprint", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

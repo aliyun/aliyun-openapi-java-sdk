@@ -32,7 +32,7 @@ public class ListCommonGroupRequest extends RpcAcsRequest<ListCommonGroupRespons
 
 	private String orgId;
 	public ListCommonGroupRequest() {
-		super("devops-rdc", "2020-03-03", "ListCommonGroup");
+		super("devops-rdc", "2020-03-03", "ListCommonGroup", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

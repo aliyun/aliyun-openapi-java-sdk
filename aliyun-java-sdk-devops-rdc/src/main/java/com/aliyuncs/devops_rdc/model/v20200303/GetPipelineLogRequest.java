@@ -32,7 +32,7 @@ public class GetPipelineLogRequest extends RpcAcsRequest<GetPipelineLogResponse>
 
 	private Long jobId;
 	public GetPipelineLogRequest() {
-		super("devops-rdc", "2020-03-03", "GetPipelineLog");
+		super("devops-rdc", "2020-03-03", "GetPipelineLog", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

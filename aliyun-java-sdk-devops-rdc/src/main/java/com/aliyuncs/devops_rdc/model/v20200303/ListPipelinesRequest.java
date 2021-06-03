@@ -48,7 +48,7 @@ public class ListPipelinesRequest extends RpcAcsRequest<ListPipelinesResponse> {
 
 	private String createEndTime;
 	public ListPipelinesRequest() {
-		super("devops-rdc", "2020-03-03", "ListPipelines");
+		super("devops-rdc", "2020-03-03", "ListPipelines", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

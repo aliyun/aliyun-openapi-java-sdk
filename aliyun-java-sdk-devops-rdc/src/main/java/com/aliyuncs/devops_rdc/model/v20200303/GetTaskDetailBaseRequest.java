@@ -30,7 +30,7 @@ public class GetTaskDetailBaseRequest extends RpcAcsRequest<GetTaskDetailBaseRes
 
 	private String taskId;
 	public GetTaskDetailBaseRequest() {
-		super("devops-rdc", "2020-03-03", "GetTaskDetailBase");
+		super("devops-rdc", "2020-03-03", "GetTaskDetailBase", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

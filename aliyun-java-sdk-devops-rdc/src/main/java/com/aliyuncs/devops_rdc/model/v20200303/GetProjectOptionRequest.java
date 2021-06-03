@@ -32,7 +32,7 @@ public class GetProjectOptionRequest extends RpcAcsRequest<GetProjectOptionRespo
 
 	private String orgId;
 	public GetProjectOptionRequest() {
-		super("devops-rdc", "2020-03-03", "GetProjectOption");
+		super("devops-rdc", "2020-03-03", "GetProjectOption", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

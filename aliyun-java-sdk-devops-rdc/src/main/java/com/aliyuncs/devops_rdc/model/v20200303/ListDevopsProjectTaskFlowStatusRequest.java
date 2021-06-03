@@ -28,7 +28,7 @@ public class ListDevopsProjectTaskFlowStatusRequest extends RpcAcsRequest<ListDe
 
 	private String orgId;
 	public ListDevopsProjectTaskFlowStatusRequest() {
-		super("devops-rdc", "2020-03-03", "ListDevopsProjectTaskFlowStatus");
+		super("devops-rdc", "2020-03-03", "ListDevopsProjectTaskFlowStatus", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

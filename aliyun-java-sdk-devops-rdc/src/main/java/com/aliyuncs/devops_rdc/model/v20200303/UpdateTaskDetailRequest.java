@@ -60,7 +60,7 @@ public class UpdateTaskDetailRequest extends RpcAcsRequest<UpdateTaskDetailRespo
 
 	private String customFieldValues;
 	public UpdateTaskDetailRequest() {
-		super("devops-rdc", "2020-03-03", "UpdateTaskDetail");
+		super("devops-rdc", "2020-03-03", "UpdateTaskDetail", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

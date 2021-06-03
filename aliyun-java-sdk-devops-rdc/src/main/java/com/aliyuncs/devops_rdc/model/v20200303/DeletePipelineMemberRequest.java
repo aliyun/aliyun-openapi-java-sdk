@@ -32,7 +32,7 @@ public class DeletePipelineMemberRequest extends RpcAcsRequest<DeletePipelineMem
 
 	private Long pipelineId;
 	public DeletePipelineMemberRequest() {
-		super("devops-rdc", "2020-03-03", "DeletePipelineMember");
+		super("devops-rdc", "2020-03-03", "DeletePipelineMember", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

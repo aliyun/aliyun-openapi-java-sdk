@@ -34,7 +34,7 @@ public class CreateCommonGroupRequest extends RpcAcsRequest<CreateCommonGroupRes
 
 	private String orgId;
 	public CreateCommonGroupRequest() {
-		super("devops-rdc", "2020-03-03", "CreateCommonGroup");
+		super("devops-rdc", "2020-03-03", "CreateCommonGroup", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

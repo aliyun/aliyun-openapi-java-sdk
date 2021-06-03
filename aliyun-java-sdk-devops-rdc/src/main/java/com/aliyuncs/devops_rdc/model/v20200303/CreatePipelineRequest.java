@@ -30,7 +30,7 @@ public class CreatePipelineRequest extends RpcAcsRequest<CreatePipelineResponse>
 
 	private String orgId;
 	public CreatePipelineRequest() {
-		super("devops-rdc", "2020-03-03", "CreatePipeline");
+		super("devops-rdc", "2020-03-03", "CreatePipeline", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

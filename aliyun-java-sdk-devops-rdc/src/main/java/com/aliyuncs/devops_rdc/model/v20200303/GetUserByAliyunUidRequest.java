@@ -28,7 +28,7 @@ public class GetUserByAliyunUidRequest extends RpcAcsRequest<GetUserByAliyunUidR
 
 	private String orgId;
 	public GetUserByAliyunUidRequest() {
-		super("devops-rdc", "2020-03-03", "GetUserByAliyunUid");
+		super("devops-rdc", "2020-03-03", "GetUserByAliyunUid", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

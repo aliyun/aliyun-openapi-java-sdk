@@ -28,7 +28,7 @@ public class GetDevopsProjectTaskInfoRequest extends RpcAcsRequest<GetDevopsProj
 
 	private String taskId;
 	public GetDevopsProjectTaskInfoRequest() {
-		super("devops-rdc", "2020-03-03", "GetDevopsProjectTaskInfo");
+		super("devops-rdc", "2020-03-03", "GetDevopsProjectTaskInfo", "1.9.6");
 		setMethod(MethodType.POST);
 	}
 

@@ -36,6 +36,7 @@ public class ListDevopsScenarioFieldConfigResponseUnmarshaller {
 			ScenarioFieldConfig scenarioFieldConfig = new ScenarioFieldConfig();
 			scenarioFieldConfig.setId(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Id"));
 			scenarioFieldConfig.setType(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Type"));
+			scenarioFieldConfig.setName(_ctx.stringValue("ListDevopsScenarioFieldConfigResponse.Object["+ i +"].Name"));
 
 			object.add(scenarioFieldConfig);
 		}
