@@ -80,6 +80,8 @@ public class ListInstanceResponse extends AcsResponse {
 
 		private String updatedAt;
 
+		private String postpaidServiceStatus;
+
 		private List<Tag> tags;
 
 		private List<Map<Object,Object>> extendConfigs;
@@ -182,6 +184,14 @@ public class ListInstanceResponse extends AcsResponse {
 
 		public void setUpdatedAt(String updatedAt) {
 			this.updatedAt = updatedAt;
+		}
+
+		public String getPostpaidServiceStatus() {
+			return this.postpaidServiceStatus;
+		}
+
+		public void setPostpaidServiceStatus(String postpaidServiceStatus) {
+			this.postpaidServiceStatus = postpaidServiceStatus;
 		}
 
 		public List<Tag> getTags() {

@@ -22,15 +22,15 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class RollbackInstanceRequest extends RoaAcsRequest<RollbackInstanceResponse> {
+public class PostEmonTryAlarmRuleRequest extends RoaAcsRequest<PostEmonTryAlarmRuleResponse> {
 	   
 
-	private String instanceId;
+	private String alarmGroupId;
 
-	private String clientToken;
-	public RollbackInstanceRequest() {
-		super("elasticsearch", "2017-06-13", "RollbackInstance", "elasticsearch");
-		setUriPattern("/openapi/instances/[InstanceId]/actions/rollback");
+	private String projectId;
+	public PostEmonTryAlarmRuleRequest() {
+		super("elasticsearch", "2017-06-13", "PostEmonTryAlarmRule", "elasticsearch");
+		setUriPattern("/openapi/emon/projects/[ProjectId]/alarm-groups/[AlarmGroupId]/alarm-rules/_test");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -38,31 +38,31 @@ public class RollbackInstanceRequest extends RoaAcsRequest<RollbackInstanceRespo
 		} catch (Exception e) {}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getAlarmGroupId() {
+		return this.alarmGroupId;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putPathParameter("InstanceId", instanceId);
+	public void setAlarmGroupId(String alarmGroupId) {
+		this.alarmGroupId = alarmGroupId;
+		if(alarmGroupId != null){
+			putPathParameter("AlarmGroupId", alarmGroupId);
 		}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getProjectId() {
+		return this.projectId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("clientToken", clientToken);
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId);
 		}
 	}
 
 	@Override
-	public Class<RollbackInstanceResponse> getResponseClass() {
-		return RollbackInstanceResponse.class;
+	public Class<PostEmonTryAlarmRuleResponse> getResponseClass() {
+		return PostEmonTryAlarmRuleResponse.class;
 	}
 
 }

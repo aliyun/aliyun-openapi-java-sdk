@@ -22,34 +22,34 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateProjectRequest extends RoaAcsRequest<CreateProjectResponse> {
+public class GetEmonGrafanaAlertsRequest extends RoaAcsRequest<GetEmonGrafanaAlertsResponse> {
 	   
 
-	private String clientToken;
-	public CreateProjectRequest() {
-		super("elasticsearch", "2017-06-13", "CreateProject", "elasticsearch");
-		setUriPattern("/openapi/projects");
-		setMethod(MethodType.POST);
+	private String projectId;
+	public GetEmonGrafanaAlertsRequest() {
+		super("elasticsearch", "2017-06-13", "GetEmonGrafanaAlerts", "elasticsearch");
+		setUriPattern("/openapi/emon/projects/[ProjectId]/grafana/proxy/api/alerts");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getProjectId() {
+		return this.projectId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("clientToken", clientToken);
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId);
 		}
 	}
 
 	@Override
-	public Class<CreateProjectResponse> getResponseClass() {
-		return CreateProjectResponse.class;
+	public Class<GetEmonGrafanaAlertsResponse> getResponseClass() {
+		return GetEmonGrafanaAlertsResponse.class;
 	}
 
 }

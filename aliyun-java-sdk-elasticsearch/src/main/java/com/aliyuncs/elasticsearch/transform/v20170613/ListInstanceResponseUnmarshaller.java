@@ -55,6 +55,7 @@ public class ListInstanceResponseUnmarshaller {
 			instance.setResourceGroupId(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].resourceGroupId"));
 			instance.setStatus(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].status"));
 			instance.setUpdatedAt(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].updatedAt"));
+			instance.setPostpaidServiceStatus(_ctx.stringValue("ListInstanceResponse.Result["+ i +"].postpaidServiceStatus"));
 
 			List<Map<Object, Object>> extendConfigs = _ctx.listMapValue("ListInstanceResponse.Result["+ i +"].extendConfigs");
 			instance.setExtendConfigs(extendConfigs);

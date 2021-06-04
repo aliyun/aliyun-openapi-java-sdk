@@ -15,16 +15,22 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.DeleteProjectResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.PostEmonTryAlarmRuleResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class DeleteProjectResponse extends AcsResponse {
+public class PostEmonTryAlarmRuleResponse extends AcsResponse {
 
 	private String requestId;
+
+	private String code;
+
+	private String message;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -34,8 +40,37 @@ public class DeleteProjectResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public DeleteProjectResponse getInstance(UnmarshallerContext context) {
-		return	DeleteProjectResponseUnmarshaller.unmarshall(this, context);
+	public PostEmonTryAlarmRuleResponse getInstance(UnmarshallerContext context) {
+		return	PostEmonTryAlarmRuleResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }

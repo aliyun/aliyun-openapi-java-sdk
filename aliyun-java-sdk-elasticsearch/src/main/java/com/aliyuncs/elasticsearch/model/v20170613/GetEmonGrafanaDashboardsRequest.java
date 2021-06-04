@@ -22,47 +22,34 @@ import com.aliyuncs.elasticsearch.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteProjectRequest extends RoaAcsRequest<DeleteProjectResponse> {
+public class GetEmonGrafanaDashboardsRequest extends RoaAcsRequest<GetEmonGrafanaDashboardsResponse> {
 	   
 
-	private String clientToken;
-
-	private String id;
-	public DeleteProjectRequest() {
-		super("elasticsearch", "2017-06-13", "DeleteProject", "elasticsearch");
-		setUriPattern("/openapi/projects/[Id]");
-		setMethod(MethodType.DELETE);
+	private String projectId;
+	public GetEmonGrafanaDashboardsRequest() {
+		super("elasticsearch", "2017-06-13", "GetEmonGrafanaDashboards", "elasticsearch");
+		setUriPattern("/openapi/emon/projects/[ProjectId]/grafana/proxy/api/search");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getClientToken() {
-		return this.clientToken;
+	public String getProjectId() {
+		return this.projectId;
 	}
 
-	public void setClientToken(String clientToken) {
-		this.clientToken = clientToken;
-		if(clientToken != null){
-			putQueryParameter("clientToken", clientToken);
-		}
-	}
-
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-		if(id != null){
-			putPathParameter("Id", id);
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+		if(projectId != null){
+			putPathParameter("ProjectId", projectId);
 		}
 	}
 
 	@Override
-	public Class<DeleteProjectResponse> getResponseClass() {
-		return DeleteProjectResponse.class;
+	public Class<GetEmonGrafanaDashboardsResponse> getResponseClass() {
+		return GetEmonGrafanaDashboardsResponse.class;
 	}
 
 }

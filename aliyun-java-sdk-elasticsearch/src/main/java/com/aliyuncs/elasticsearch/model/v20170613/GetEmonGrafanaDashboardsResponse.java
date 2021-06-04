@@ -15,18 +15,22 @@
 package com.aliyuncs.elasticsearch.model.v20170613;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.elasticsearch.transform.v20170613.CreateProjectResponseUnmarshaller;
+import com.aliyuncs.elasticsearch.transform.v20170613.GetEmonGrafanaDashboardsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateProjectResponse extends AcsResponse {
+public class GetEmonGrafanaDashboardsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Result result;
+	private String code;
+
+	private String message;
+
+	private Boolean success;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,29 +40,37 @@ public class CreateProjectResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Result getResult() {
-		return this.result;
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setResult(Result result) {
-		this.result = result;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public static class Result {
+	public String getMessage() {
+		return this.message;
+	}
 
-		private String id;
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-		public String getId() {
-			return this.id;
-		}
+	public Boolean getSuccess() {
+		return this.success;
+	}
 
-		public void setId(String id) {
-			this.id = id;
-		}
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	@Override
-	public CreateProjectResponse getInstance(UnmarshallerContext context) {
-		return	CreateProjectResponseUnmarshaller.unmarshall(this, context);
+	public GetEmonGrafanaDashboardsResponse getInstance(UnmarshallerContext context) {
+		return	GetEmonGrafanaDashboardsResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
