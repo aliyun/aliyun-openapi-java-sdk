@@ -33,6 +33,8 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 
 	private String clientToken;
 
+	private String destPrefixListId;
+
 	private String securityGroupId;
 
 	private String description;
@@ -114,6 +116,17 @@ public class ModifySecurityGroupEgressRuleRequest extends RpcAcsRequest<ModifySe
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDestPrefixListId() {
+		return this.destPrefixListId;
+	}
+
+	public void setDestPrefixListId(String destPrefixListId) {
+		this.destPrefixListId = destPrefixListId;
+		if(destPrefixListId != null){
+			putQueryParameter("DestPrefixListId", destPrefixListId);
 		}
 	}
 

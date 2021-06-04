@@ -14,19 +14,17 @@
 
 package com.aliyuncs.ecs.transform.v20140526;
 
-import com.aliyuncs.ecs.model.v20140526.CreateInstanceResponse;
+import com.aliyuncs.ecs.model.v20140526.CreatePrefixListResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateInstanceResponseUnmarshaller {
+public class CreatePrefixListResponseUnmarshaller {
 
-	public static CreateInstanceResponse unmarshall(CreateInstanceResponse createInstanceResponse, UnmarshallerContext _ctx) {
+	public static CreatePrefixListResponse unmarshall(CreatePrefixListResponse createPrefixListResponse, UnmarshallerContext _ctx) {
 		
-		createInstanceResponse.setRequestId(_ctx.stringValue("CreateInstanceResponse.RequestId"));
-		createInstanceResponse.setInstanceId(_ctx.stringValue("CreateInstanceResponse.InstanceId"));
-		createInstanceResponse.setOrderId(_ctx.stringValue("CreateInstanceResponse.OrderId"));
-		createInstanceResponse.setTradePrice(_ctx.floatValue("CreateInstanceResponse.TradePrice"));
+		createPrefixListResponse.setRequestId(_ctx.stringValue("CreatePrefixListResponse.RequestId"));
+		createPrefixListResponse.setPrefixListId(_ctx.stringValue("CreatePrefixListResponse.PrefixListId"));
 	 
-	 	return createInstanceResponse;
+	 	return createPrefixListResponse;
 	}
 }

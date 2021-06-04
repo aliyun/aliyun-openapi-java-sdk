@@ -15,26 +15,18 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CreateDedicatedHostClusterResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.CreatePrefixListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDedicatedHostClusterResponse extends AcsResponse {
-
-	private String dedicatedHostClusterId;
+public class CreatePrefixListResponse extends AcsResponse {
 
 	private String requestId;
 
-	public String getDedicatedHostClusterId() {
-		return this.dedicatedHostClusterId;
-	}
-
-	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
-		this.dedicatedHostClusterId = dedicatedHostClusterId;
-	}
+	private String prefixListId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -44,8 +36,16 @@ public class CreateDedicatedHostClusterResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getPrefixListId() {
+		return this.prefixListId;
+	}
+
+	public void setPrefixListId(String prefixListId) {
+		this.prefixListId = prefixListId;
+	}
+
 	@Override
-	public CreateDedicatedHostClusterResponse getInstance(UnmarshallerContext context) {
-		return	CreateDedicatedHostClusterResponseUnmarshaller.unmarshall(this, context);
+	public CreatePrefixListResponse getInstance(UnmarshallerContext context) {
+		return	CreatePrefixListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

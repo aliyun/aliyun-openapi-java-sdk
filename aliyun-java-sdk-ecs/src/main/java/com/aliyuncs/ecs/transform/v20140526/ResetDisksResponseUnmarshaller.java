@@ -32,9 +32,9 @@ public class ResetDisksResponseUnmarshaller {
 		List<OperationProgress> operationProgressSet = new ArrayList<OperationProgress>();
 		for (int i = 0; i < _ctx.lengthValue("ResetDisksResponse.OperationProgressSet.Length"); i++) {
 			OperationProgress operationProgress = new OperationProgress();
-			operationProgress.setOperationStatus(_ctx.stringValue("ResetDisksResponse.OperationProgressSet["+ i +"].OperationStatus"));
-			operationProgress.setErrorCode(_ctx.stringValue("ResetDisksResponse.OperationProgressSet["+ i +"].ErrorCode"));
 			operationProgress.setErrorMsg(_ctx.stringValue("ResetDisksResponse.OperationProgressSet["+ i +"].ErrorMsg"));
+			operationProgress.setErrorCode(_ctx.stringValue("ResetDisksResponse.OperationProgressSet["+ i +"].ErrorCode"));
+			operationProgress.setOperationStatus(_ctx.stringValue("ResetDisksResponse.OperationProgressSet["+ i +"].OperationStatus"));
 
 			List<RelatedItem> relatedItemSet = new ArrayList<RelatedItem>();
 			for (int j = 0; j < _ctx.lengthValue("ResetDisksResponse.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {

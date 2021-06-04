@@ -23,10 +23,16 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
+public class DescribePrefixListsRequest extends RpcAcsRequest<DescribePrefixListsResponse> {
 	   
 
 	private Long resourceOwnerId;
+
+	private List<String> prefixListIds;
+
+	private String nextToken;
+
+	private String addressFamily;
 
 	private String resourceOwnerAccount;
 
@@ -34,9 +40,11 @@ public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
 
 	private Long ownerId;
 
-	private List<Disk> disks;
-	public ResetDisksRequest() {
-		super("Ecs", "2014-05-26", "ResetDisks", "ecs");
+	private String prefixListName;
+
+	private Integer maxResults;
+	public DescribePrefixListsRequest() {
+		super("Ecs", "2014-05-26", "DescribePrefixLists", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -52,6 +60,41 @@ public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
+		}
+	}
+
+	public List<String> getPrefixListIds() {
+		return this.prefixListIds;
+	}
+
+	public void setPrefixListIds(List<String> prefixListIds) {
+		this.prefixListIds = prefixListIds;	
+		if (prefixListIds != null) {
+			for (int i = 0; i < prefixListIds.size(); i++) {
+				putQueryParameter("PrefixListId." + (i + 1) , prefixListIds.get(i));
+			}
+		}	
+	}
+
+	public String getNextToken() {
+		return this.nextToken;
+	}
+
+	public void setNextToken(String nextToken) {
+		this.nextToken = nextToken;
+		if(nextToken != null){
+			putQueryParameter("NextToken", nextToken);
+		}
+	}
+
+	public String getAddressFamily() {
+		return this.addressFamily;
+	}
+
+	public void setAddressFamily(String addressFamily) {
+		this.addressFamily = addressFamily;
+		if(addressFamily != null){
+			putQueryParameter("AddressFamily", addressFamily);
 		}
 	}
 
@@ -88,46 +131,31 @@ public class ResetDisksRequest extends RpcAcsRequest<ResetDisksResponse> {
 		}
 	}
 
-	public List<Disk> getDisks() {
-		return this.disks;
+	public String getPrefixListName() {
+		return this.prefixListName;
 	}
 
-	public void setDisks(List<Disk> disks) {
-		this.disks = disks;	
-		if (disks != null) {
-			for (int depth1 = 0; depth1 < disks.size(); depth1++) {
-				putQueryParameter("Disk." + (depth1 + 1) + ".SnapshotId" , disks.get(depth1).getSnapshotId());
-				putQueryParameter("Disk." + (depth1 + 1) + ".DiskId" , disks.get(depth1).getDiskId());
-			}
-		}	
+	public void setPrefixListName(String prefixListName) {
+		this.prefixListName = prefixListName;
+		if(prefixListName != null){
+			putQueryParameter("PrefixListName", prefixListName);
+		}
 	}
 
-	public static class Disk {
+	public Integer getMaxResults() {
+		return this.maxResults;
+	}
 
-		private String snapshotId;
-
-		private String diskId;
-
-		public String getSnapshotId() {
-			return this.snapshotId;
-		}
-
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
-		}
-
-		public String getDiskId() {
-			return this.diskId;
-		}
-
-		public void setDiskId(String diskId) {
-			this.diskId = diskId;
+	public void setMaxResults(Integer maxResults) {
+		this.maxResults = maxResults;
+		if(maxResults != null){
+			putQueryParameter("MaxResults", maxResults.toString());
 		}
 	}
 
 	@Override
-	public Class<ResetDisksResponse> getResponseClass() {
-		return ResetDisksResponse.class;
+	public Class<DescribePrefixListsResponse> getResponseClass() {
+		return DescribePrefixListsResponse.class;
 	}
 
 }

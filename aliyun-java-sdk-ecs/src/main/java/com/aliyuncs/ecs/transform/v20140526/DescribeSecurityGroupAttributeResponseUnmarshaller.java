@@ -44,6 +44,8 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setSourceGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupName"));
 			permission.setSourceCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceCidrIp"));
 			permission.setIpv6SourceCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6SourceCidrIp"));
+			permission.setSourcePrefixListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePrefixListId"));
+			permission.setSourcePrefixListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourcePrefixListName"));
 			permission.setPolicy(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Policy"));
 			permission.setNicType(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].NicType"));
 			permission.setSourceGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].SourceGroupOwnerAccount"));
@@ -51,6 +53,8 @@ public class DescribeSecurityGroupAttributeResponseUnmarshaller {
 			permission.setDestGroupName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupName"));
 			permission.setDestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestCidrIp"));
 			permission.setIpv6DestCidrIp(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Ipv6DestCidrIp"));
+			permission.setDestPrefixListId(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestPrefixListId"));
+			permission.setDestPrefixListName(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestPrefixListName"));
 			permission.setDestGroupOwnerAccount(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].DestGroupOwnerAccount"));
 			permission.setPriority(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Priority"));
 			permission.setDirection(_ctx.stringValue("DescribeSecurityGroupAttributeResponse.Permissions["+ i +"].Direction"));

@@ -44,11 +44,13 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 
 	private Integer storageSetPartitionNumber;
 
+	private String multiAttach;
+
 	private List<Tag> tags;
 
-	private List<Arn> arns;
-
 	private String advancedFeatures;
+
+	private List<Arn> arns;
 
 	private String dedicatedBlockStorageClusterId;
 
@@ -179,6 +181,17 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		}
 	}
 
+	public String getMultiAttach() {
+		return this.multiAttach;
+	}
+
+	public void setMultiAttach(String multiAttach) {
+		this.multiAttach = multiAttach;
+		if(multiAttach != null){
+			putQueryParameter("MultiAttach", multiAttach);
+		}
+	}
+
 	public List<Tag> getTags() {
 		return this.tags;
 	}
@@ -187,10 +200,21 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
+	}
+
+	public String getAdvancedFeatures() {
+		return this.advancedFeatures;
+	}
+
+	public void setAdvancedFeatures(String advancedFeatures) {
+		this.advancedFeatures = advancedFeatures;
+		if(advancedFeatures != null){
+			putQueryParameter("AdvancedFeatures", advancedFeatures);
+		}
 	}
 
 	public List<Arn> getArns() {
@@ -206,17 +230,6 @@ public class CreateDiskRequest extends RpcAcsRequest<CreateDiskResponse> {
 				putQueryParameter("Arn." + (depth1 + 1) + ".AssumeRoleFor" , arns.get(depth1).getAssumeRoleFor());
 			}
 		}	
-	}
-
-	public String getAdvancedFeatures() {
-		return this.advancedFeatures;
-	}
-
-	public void setAdvancedFeatures(String advancedFeatures) {
-		this.advancedFeatures = advancedFeatures;
-		if(advancedFeatures != null){
-			putQueryParameter("AdvancedFeatures", advancedFeatures);
-		}
 	}
 
 	public String getDedicatedBlockStorageClusterId() {

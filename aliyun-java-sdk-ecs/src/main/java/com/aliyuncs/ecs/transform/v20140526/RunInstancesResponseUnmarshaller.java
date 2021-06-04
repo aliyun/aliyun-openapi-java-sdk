@@ -26,8 +26,8 @@ public class RunInstancesResponseUnmarshaller {
 	public static RunInstancesResponse unmarshall(RunInstancesResponse runInstancesResponse, UnmarshallerContext _ctx) {
 		
 		runInstancesResponse.setRequestId(_ctx.stringValue("RunInstancesResponse.RequestId"));
-		runInstancesResponse.setTradePrice(_ctx.floatValue("RunInstancesResponse.TradePrice"));
 		runInstancesResponse.setOrderId(_ctx.stringValue("RunInstancesResponse.OrderId"));
+		runInstancesResponse.setTradePrice(_ctx.floatValue("RunInstancesResponse.TradePrice"));
 
 		List<String> instanceIdSets = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("RunInstancesResponse.InstanceIdSets.Length"); i++) {

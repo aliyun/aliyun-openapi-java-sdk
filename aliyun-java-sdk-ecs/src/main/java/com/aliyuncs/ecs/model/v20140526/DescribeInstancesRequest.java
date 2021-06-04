@@ -74,6 +74,8 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 
 	private Integer maxResults;
 
+	private List<String> ipv6Addresss;
+
 	private String instanceNetworkType;
 
 	private String status;
@@ -257,7 +259,7 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		this.tags = tags;	
 		if (tags != null) {
 			for (int depth1 = 0; depth1 < tags.size(); depth1++) {
-				putQueryParameter("Tag." + (depth1 + 1) + ".Value" , tags.get(depth1).getValue());
+				putQueryParameter("Tag." + (depth1 + 1) + ".value" , tags.get(depth1).getValue());
 				putQueryParameter("Tag." + (depth1 + 1) + ".Key" , tags.get(depth1).getKey());
 			}
 		}	
@@ -395,6 +397,19 @@ public class DescribeInstancesRequest extends RpcAcsRequest<DescribeInstancesRes
 		if(maxResults != null){
 			putQueryParameter("MaxResults", maxResults.toString());
 		}
+	}
+
+	public List<String> getIpv6Addresss() {
+		return this.ipv6Addresss;
+	}
+
+	public void setIpv6Addresss(List<String> ipv6Addresss) {
+		this.ipv6Addresss = ipv6Addresss;	
+		if (ipv6Addresss != null) {
+			for (int i = 0; i < ipv6Addresss.size(); i++) {
+				putQueryParameter("Ipv6Address." + (i + 1) , ipv6Addresss.get(i));
+			}
+		}	
 	}
 
 	public String getInstanceNetworkType() {

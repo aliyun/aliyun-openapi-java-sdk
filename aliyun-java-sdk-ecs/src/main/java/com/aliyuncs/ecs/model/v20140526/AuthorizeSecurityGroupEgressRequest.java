@@ -33,6 +33,8 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 
 	private String clientToken;
 
+	private String destPrefixListId;
+
 	private String securityGroupId;
 
 	private String description;
@@ -114,6 +116,17 @@ public class AuthorizeSecurityGroupEgressRequest extends RpcAcsRequest<Authorize
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
+		}
+	}
+
+	public String getDestPrefixListId() {
+		return this.destPrefixListId;
+	}
+
+	public void setDestPrefixListId(String destPrefixListId) {
+		this.destPrefixListId = destPrefixListId;
+		if(destPrefixListId != null){
+			putQueryParameter("DestPrefixListId", destPrefixListId);
 		}
 	}
 

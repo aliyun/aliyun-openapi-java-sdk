@@ -15,26 +15,16 @@
 package com.aliyuncs.ecs.model.v20140526;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.ecs.transform.v20140526.CreateDedicatedHostClusterResponseUnmarshaller;
+import com.aliyuncs.ecs.transform.v20140526.ModifyPrefixListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateDedicatedHostClusterResponse extends AcsResponse {
-
-	private String dedicatedHostClusterId;
+public class ModifyPrefixListResponse extends AcsResponse {
 
 	private String requestId;
-
-	public String getDedicatedHostClusterId() {
-		return this.dedicatedHostClusterId;
-	}
-
-	public void setDedicatedHostClusterId(String dedicatedHostClusterId) {
-		this.dedicatedHostClusterId = dedicatedHostClusterId;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -45,7 +35,7 @@ public class CreateDedicatedHostClusterResponse extends AcsResponse {
 	}
 
 	@Override
-	public CreateDedicatedHostClusterResponse getInstance(UnmarshallerContext context) {
-		return	CreateDedicatedHostClusterResponseUnmarshaller.unmarshall(this, context);
+	public ModifyPrefixListResponse getInstance(UnmarshallerContext context) {
+		return	ModifyPrefixListResponseUnmarshaller.unmarshall(this, context);
 	}
 }

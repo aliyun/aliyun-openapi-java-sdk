@@ -23,18 +23,16 @@ import com.aliyuncs.ecs.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGroupResponse> {
+public class ModifyPrefixListRequest extends RpcAcsRequest<ModifyPrefixListResponse> {
 	   
 
 	private Long resourceOwnerId;
 
-	private Boolean instantAccess;
-
-	private List<String> excludeDiskIds;
-
 	private String description;
 
-	private Integer instantAccessRetentionDays;
+	private String prefixListId;
+
+	private List<AddEntry> addEntrys;
 
 	private String resourceOwnerAccount;
 
@@ -42,11 +40,11 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 
 	private Long ownerId;
 
-	private String instanceId;
+	private String prefixListName;
 
-	private String name;
-	public CreateSnapshotGroupRequest() {
-		super("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs");
+	private List<RemoveEntry> removeEntrys;
+	public ModifyPrefixListRequest() {
+		super("Ecs", "2014-05-26", "ModifyPrefixList", "ecs");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -65,30 +63,6 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		}
 	}
 
-	public Boolean getInstantAccess() {
-		return this.instantAccess;
-	}
-
-	public void setInstantAccess(Boolean instantAccess) {
-		this.instantAccess = instantAccess;
-		if(instantAccess != null){
-			putQueryParameter("InstantAccess", instantAccess.toString());
-		}
-	}
-
-	public List<String> getExcludeDiskIds() {
-		return this.excludeDiskIds;
-	}
-
-	public void setExcludeDiskIds(List<String> excludeDiskIds) {
-		this.excludeDiskIds = excludeDiskIds;	
-		if (excludeDiskIds != null) {
-			for (int i = 0; i < excludeDiskIds.size(); i++) {
-				putQueryParameter("ExcludeDiskId." + (i + 1) , excludeDiskIds.get(i));
-			}
-		}	
-	}
-
 	public String getDescription() {
 		return this.description;
 	}
@@ -100,15 +74,29 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		}
 	}
 
-	public Integer getInstantAccessRetentionDays() {
-		return this.instantAccessRetentionDays;
+	public String getPrefixListId() {
+		return this.prefixListId;
 	}
 
-	public void setInstantAccessRetentionDays(Integer instantAccessRetentionDays) {
-		this.instantAccessRetentionDays = instantAccessRetentionDays;
-		if(instantAccessRetentionDays != null){
-			putQueryParameter("InstantAccessRetentionDays", instantAccessRetentionDays.toString());
+	public void setPrefixListId(String prefixListId) {
+		this.prefixListId = prefixListId;
+		if(prefixListId != null){
+			putQueryParameter("PrefixListId", prefixListId);
 		}
+	}
+
+	public List<AddEntry> getAddEntrys() {
+		return this.addEntrys;
+	}
+
+	public void setAddEntrys(List<AddEntry> addEntrys) {
+		this.addEntrys = addEntrys;	
+		if (addEntrys != null) {
+			for (int depth1 = 0; depth1 < addEntrys.size(); depth1++) {
+				putQueryParameter("AddEntry." + (depth1 + 1) + ".Cidr" , addEntrys.get(depth1).getCidr());
+				putQueryParameter("AddEntry." + (depth1 + 1) + ".Description" , addEntrys.get(depth1).getDescription());
+			}
+		}	
 	}
 
 	public String getResourceOwnerAccount() {
@@ -144,31 +132,69 @@ public class CreateSnapshotGroupRequest extends RpcAcsRequest<CreateSnapshotGrou
 		}
 	}
 
-	public String getInstanceId() {
-		return this.instanceId;
+	public String getPrefixListName() {
+		return this.prefixListName;
 	}
 
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
+	public void setPrefixListName(String prefixListName) {
+		this.prefixListName = prefixListName;
+		if(prefixListName != null){
+			putQueryParameter("PrefixListName", prefixListName);
 		}
 	}
 
-	public String getName() {
-		return this.name;
+	public List<RemoveEntry> getRemoveEntrys() {
+		return this.removeEntrys;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setRemoveEntrys(List<RemoveEntry> removeEntrys) {
+		this.removeEntrys = removeEntrys;	
+		if (removeEntrys != null) {
+			for (int depth1 = 0; depth1 < removeEntrys.size(); depth1++) {
+				putQueryParameter("RemoveEntry." + (depth1 + 1) + ".Cidr" , removeEntrys.get(depth1).getCidr());
+			}
+		}	
+	}
+
+	public static class AddEntry {
+
+		private String cidr;
+
+		private String description;
+
+		public String getCidr() {
+			return this.cidr;
+		}
+
+		public void setCidr(String cidr) {
+			this.cidr = cidr;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+	}
+
+	public static class RemoveEntry {
+
+		private String cidr;
+
+		public String getCidr() {
+			return this.cidr;
+		}
+
+		public void setCidr(String cidr) {
+			this.cidr = cidr;
 		}
 	}
 
 	@Override
-	public Class<CreateSnapshotGroupResponse> getResponseClass() {
-		return CreateSnapshotGroupResponse.class;
+	public Class<ModifyPrefixListResponse> getResponseClass() {
+		return ModifyPrefixListResponse.class;
 	}
 
 }
