@@ -4,7 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-workorder</artifactId>
   <packaging>jar</packaging>
-  <version>4.6.0</version>
+  <version>4.6.1</version>
   <name>aliyun-java-sdk-workorder</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
