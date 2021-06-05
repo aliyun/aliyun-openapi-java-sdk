@@ -12,25 +12,27 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20200326.CloseTicketResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210510.CreateTicketResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CloseTicketResponse extends AcsResponse {
+public class CreateTicketResponse extends AcsResponse {
 
 	private Integer code;
 
-	private Boolean success;
+	private String requestId;
 
 	private String message;
 
-	private String requestId;
+	private String data;
+
+	private Boolean success;
 
 	public Integer getCode() {
 		return this.code;
@@ -38,22 +40,6 @@ public class CloseTicketResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -64,9 +50,33 @@ public class CloseTicketResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public CloseTicketResponse getInstance(UnmarshallerContext context) {
-		return	CloseTicketResponseUnmarshaller.unmarshall(this, context);
+	public CreateTicketResponse getInstance(UnmarshallerContext context) {
+		return	CreateTicketResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

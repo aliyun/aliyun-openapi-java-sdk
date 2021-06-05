@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20200326;
+package com.aliyuncs.workorder.transform.v20210510;
 
-import com.aliyuncs.workorder.model.v20200326.CloseTicketResponse;
+import com.aliyuncs.workorder.model.v20210510.CloseTicketResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -24,8 +24,8 @@ public class CloseTicketResponseUnmarshaller {
 		
 		closeTicketResponse.setRequestId(_ctx.stringValue("CloseTicketResponse.RequestId"));
 		closeTicketResponse.setCode(_ctx.integerValue("CloseTicketResponse.Code"));
-		closeTicketResponse.setSuccess(_ctx.booleanValue("CloseTicketResponse.Success"));
 		closeTicketResponse.setMessage(_ctx.stringValue("CloseTicketResponse.Message"));
+		closeTicketResponse.setSuccess(_ctx.booleanValue("CloseTicketResponse.Success"));
 	 
 	 	return closeTicketResponse;
 	}

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,12 +22,10 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
+public class GetMessageTagRequest extends RpcAcsRequest<GetMessageTagResponse> {
 	   
-
-	private String language;
-	public ListProductsRequest() {
-		super("Workorder", "2020-03-26", "ListProducts", "workorder");
+	public GetMessageTagRequest() {
+		super("Workorder", "2021-05-10", "GetMessageTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,20 +33,9 @@ public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getLanguage() {
-		return this.language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
-		}
-	}
-
 	@Override
-	public Class<ListProductsResponse> getResponseClass() {
-		return ListProductsResponse.class;
+	public Class<GetMessageTagResponse> getResponseClass() {
+		return GetMessageTagResponse.class;
 	}
 
 }

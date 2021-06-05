@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,16 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class CloseTicketRequest extends RpcAcsRequest<CloseTicketResponse> {
+public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 	   
 
-	private String language;
+	private Integer severity;
 
-	private String ticketId;
-	public CloseTicketRequest() {
-		super("Workorder", "2020-03-26", "CloseTicket", "workorder");
+	private String description;
+
+	private String categoryId;
+	public CreateTicketRequest() {
+		super("Workorder", "2021-05-10", "CreateTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +39,42 @@ public class CloseTicketRequest extends RpcAcsRequest<CloseTicketResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getLanguage() {
-		return this.language;
+	public Integer getSeverity() {
+		return this.severity;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
+	public void setSeverity(Integer severity) {
+		this.severity = severity;
+		if(severity != null){
+			putBodyParameter("Severity", severity.toString());
 		}
 	}
 
-	public String getTicketId() {
-		return this.ticketId;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setTicketId(String ticketId) {
-		this.ticketId = ticketId;
-		if(ticketId != null){
-			putQueryParameter("TicketId", ticketId);
+	public void setDescription(String description) {
+		this.description = description;
+		if(description != null){
+			putBodyParameter("Description", description);
+		}
+	}
+
+	public String getCategoryId() {
+		return this.categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+		if(categoryId != null){
+			putBodyParameter("CategoryId", categoryId);
 		}
 	}
 
 	@Override
-	public Class<CloseTicketResponse> getResponseClass() {
-		return CloseTicketResponse.class;
+	public Class<CreateTicketResponse> getResponseClass() {
+		return CreateTicketResponse.class;
 	}
 
 }

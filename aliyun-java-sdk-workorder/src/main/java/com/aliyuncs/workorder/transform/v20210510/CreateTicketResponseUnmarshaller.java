@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20200326;
+package com.aliyuncs.workorder.transform.v20210510;
 
-import com.aliyuncs.workorder.model.v20200326.CreateTicketResponse;
+import com.aliyuncs.workorder.model.v20210510.CreateTicketResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,10 +23,10 @@ public class CreateTicketResponseUnmarshaller {
 	public static CreateTicketResponse unmarshall(CreateTicketResponse createTicketResponse, UnmarshallerContext _ctx) {
 		
 		createTicketResponse.setRequestId(_ctx.stringValue("CreateTicketResponse.RequestId"));
-		createTicketResponse.setCode(_ctx.stringValue("CreateTicketResponse.Code"));
-		createTicketResponse.setSuccess(_ctx.booleanValue("CreateTicketResponse.Success"));
+		createTicketResponse.setCode(_ctx.integerValue("CreateTicketResponse.Code"));
 		createTicketResponse.setMessage(_ctx.stringValue("CreateTicketResponse.Message"));
 		createTicketResponse.setData(_ctx.stringValue("CreateTicketResponse.Data"));
+		createTicketResponse.setSuccess(_ctx.booleanValue("CreateTicketResponse.Success"));
 	 
 	 	return createTicketResponse;
 	}

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -25,15 +25,13 @@ import com.aliyuncs.workorder.Endpoint;
 public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	   
 
-	private String language;
-
-	private String ticketId;
+	private String secContent;
 
 	private String content;
 
-	private String secretContent;
+	private String ticketId;
 	public ReplyTicketRequest() {
-		super("Workorder", "2020-03-26", "ReplyTicket", "workorder");
+		super("Workorder", "2021-05-10", "ReplyTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +39,14 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getLanguage() {
-		return this.language;
+	public String getSecContent() {
+		return this.secContent;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
-		}
-	}
-
-	public String getTicketId() {
-		return this.ticketId;
-	}
-
-	public void setTicketId(String ticketId) {
-		this.ticketId = ticketId;
-		if(ticketId != null){
-			putQueryParameter("TicketId", ticketId);
+	public void setSecContent(String secContent) {
+		this.secContent = secContent;
+		if(secContent != null){
+			putBodyParameter("SecContent", secContent);
 		}
 	}
 
@@ -70,18 +57,18 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	public void setContent(String content) {
 		this.content = content;
 		if(content != null){
-			putQueryParameter("Content", content);
+			putBodyParameter("Content", content);
 		}
 	}
 
-	public String getSecretContent() {
-		return this.secretContent;
+	public String getTicketId() {
+		return this.ticketId;
 	}
 
-	public void setSecretContent(String secretContent) {
-		this.secretContent = secretContent;
-		if(secretContent != null){
-			putQueryParameter("SecretContent", secretContent);
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+		if(ticketId != null){
+			putBodyParameter("TicketId", ticketId);
 		}
 	}
 

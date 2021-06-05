@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20200326.ListCategoriesResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210510.ListCategoriesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -27,13 +27,13 @@ public class ListCategoriesResponse extends AcsResponse {
 
 	private Integer code;
 
-	private String message;
-
 	private String requestId;
+
+	private String message;
 
 	private Boolean success;
 
-	private Data data;
+	private List<DataItem> data;
 
 	public Integer getCode() {
 		return this.code;
@@ -41,14 +41,6 @@ public class ListCategoriesResponse extends AcsResponse {
 
 	public void setCode(Integer code) {
 		this.code = code;
-	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 	public String getRequestId() {
@@ -59,6 +51,14 @@ public class ListCategoriesResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -67,47 +67,34 @@ public class ListCategoriesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public Data getData() {
+	public List<DataItem> getData() {
 		return this.data;
 	}
 
-	public void setData(Data data) {
+	public void setData(List<DataItem> data) {
 		this.data = data;
 	}
 
-	public static class Data {
+	public static class DataItem {
 
-		private List<ListItem> list;
+		private String categoryName;
 
-		public List<ListItem> getList() {
-			return this.list;
+		private Long categoryId;
+
+		public String getCategoryName() {
+			return this.categoryName;
 		}
 
-		public void setList(List<ListItem> list) {
-			this.list = list;
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
 		}
 
-		public static class ListItem {
+		public Long getCategoryId() {
+			return this.categoryId;
+		}
 
-			private Integer id;
-
-			private String name;
-
-			public Integer getId() {
-				return this.id;
-			}
-
-			public void setId(Integer id) {
-				this.id = id;
-			}
-
-			public String getName() {
-				return this.name;
-			}
-
-			public void setName(String name) {
-				this.name = name;
-			}
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
 		}
 	}
 

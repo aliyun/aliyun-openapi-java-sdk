@@ -12,27 +12,35 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20200326.CreateTicketResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210510.GetMessageTagResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateTicketResponse extends AcsResponse {
+public class GetMessageTagResponse extends AcsResponse {
+
+	private Integer code;
 
 	private String requestId;
-
-	private String code;
-
-	private Boolean success;
 
 	private String message;
 
 	private String data;
+
+	private Boolean success;
+
+	public Integer getCode() {
+		return this.code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,22 +48,6 @@ public class CreateTicketResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getCode() {
-		return this.code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Boolean getSuccess() {
-		return this.success;
-	}
-
-	public void setSuccess(Boolean success) {
-		this.success = success;
 	}
 
 	public String getMessage() {
@@ -74,9 +66,17 @@ public class CreateTicketResponse extends AcsResponse {
 		this.data = data;
 	}
 
+	public Boolean getSuccess() {
+		return this.success;
+	}
+
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
+
 	@Override
-	public CreateTicketResponse getInstance(UnmarshallerContext context) {
-		return	CreateTicketResponseUnmarshaller.unmarshall(this, context);
+	public GetMessageTagResponse getInstance(UnmarshallerContext context) {
+		return	GetMessageTagResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse> {
+public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
 	   
 
-	private String productCode;
-
-	private String language;
-	public ListCategoriesRequest() {
-		super("Workorder", "2020-03-26", "ListCategories", "workorder");
+	private String name;
+	public ListProductsRequest() {
+		super("Workorder", "2021-05-10", "ListProducts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse>
 		} catch (Exception e) {}
 	}
 
-	public String getProductCode() {
-		return this.productCode;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setProductCode(String productCode) {
-		this.productCode = productCode;
-		if(productCode != null){
-			putQueryParameter("ProductCode", productCode);
-		}
-	}
-
-	public String getLanguage() {
-		return this.language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<ListCategoriesResponse> getResponseClass() {
-		return ListCategoriesResponse.class;
+	public Class<ListProductsResponse> getResponseClass() {
+		return ListProductsResponse.class;
 	}
 
 }

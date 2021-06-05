@@ -12,14 +12,13 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20200326;
+package com.aliyuncs.workorder.transform.v20210510;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.workorder.model.v20200326.ListCategoriesResponse;
-import com.aliyuncs.workorder.model.v20200326.ListCategoriesResponse.Data;
-import com.aliyuncs.workorder.model.v20200326.ListCategoriesResponse.Data.ListItem;
+import com.aliyuncs.workorder.model.v20210510.ListCategoriesResponse;
+import com.aliyuncs.workorder.model.v20210510.ListCategoriesResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -32,17 +31,14 @@ public class ListCategoriesResponseUnmarshaller {
 		listCategoriesResponse.setMessage(_ctx.stringValue("ListCategoriesResponse.Message"));
 		listCategoriesResponse.setSuccess(_ctx.booleanValue("ListCategoriesResponse.Success"));
 
-		Data data = new Data();
+		List<DataItem> data = new ArrayList<DataItem>();
+		for (int i = 0; i < _ctx.lengthValue("ListCategoriesResponse.Data.Length"); i++) {
+			DataItem dataItem = new DataItem();
+			dataItem.setCategoryName(_ctx.stringValue("ListCategoriesResponse.Data["+ i +"].CategoryName"));
+			dataItem.setCategoryId(_ctx.longValue("ListCategoriesResponse.Data["+ i +"].CategoryId"));
 
-		List<ListItem> list = new ArrayList<ListItem>();
-		for (int i = 0; i < _ctx.lengthValue("ListCategoriesResponse.Data.List.Length"); i++) {
-			ListItem listItem = new ListItem();
-			listItem.setId(_ctx.integerValue("ListCategoriesResponse.Data.List["+ i +"].Id"));
-			listItem.setName(_ctx.stringValue("ListCategoriesResponse.Data.List["+ i +"].Name"));
-
-			list.add(listItem);
+			data.add(dataItem);
 		}
-		data.setList(list);
 		listCategoriesResponse.setData(data);
 	 
 	 	return listCategoriesResponse;

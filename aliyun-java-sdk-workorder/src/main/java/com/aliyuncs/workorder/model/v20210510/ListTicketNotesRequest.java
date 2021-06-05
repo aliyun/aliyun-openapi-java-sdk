@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20200326;
+package com.aliyuncs.workorder.model.v20210510;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -25,27 +25,14 @@ import com.aliyuncs.workorder.Endpoint;
 public class ListTicketNotesRequest extends RpcAcsRequest<ListTicketNotesResponse> {
 	   
 
-	private String language;
-
 	private String ticketId;
 	public ListTicketNotesRequest() {
-		super("Workorder", "2020-03-26", "ListTicketNotes", "workorder");
+		super("Workorder", "2021-05-10", "ListTicketNotes");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getLanguage() {
-		return this.language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
-		if(language != null){
-			putQueryParameter("Language", language);
-		}
 	}
 
 	public String getTicketId() {
