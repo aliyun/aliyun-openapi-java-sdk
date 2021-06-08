@@ -55,6 +55,7 @@ public class GetMetaTableBasicInfoResponseUnmarshaller {
 		data.setViewCount(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.ViewCount"));
 		data.setFavoriteCount(_ctx.longValue("GetMetaTableBasicInfoResponse.Data.FavoriteCount"));
 		data.setIsView(_ctx.booleanValue("GetMetaTableBasicInfoResponse.Data.IsView"));
+		data.setColumnCount(_ctx.integerValue("GetMetaTableBasicInfoResponse.Data.ColumnCount"));
 		getMetaTableBasicInfoResponse.setData(data);
 	 
 	 	return getMetaTableBasicInfoResponse;
