@@ -1,3 +1,6 @@
+2021-06-08 Version: 4.24.3
+- Support input parameter LaunchConfigurationHostNames and MinTargetCapacity for CreateAutoProvisioningGroup.
+
 2021-06-04 Version: 4.24.2
 - Supported multi attach feature for disk.
 

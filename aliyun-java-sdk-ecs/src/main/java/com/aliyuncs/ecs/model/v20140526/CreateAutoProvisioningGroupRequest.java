@@ -36,6 +36,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	private String launchConfigurationSystemDiskPerformanceLevel;
 
+	private List<String> launchConfigurationHostNamess;
+
 	private String resourceGroupId;
 
 	private String launchConfigurationImageId;
@@ -63,6 +65,8 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 	private Integer launchConfigurationInternetMaxBandwidthOut;
 
 	private String launchConfigurationHostName;
+
+	private String minTargetCapacity;
 
 	private Float maxSpotPrice;
 
@@ -146,16 +150,16 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchConfigurationDataDisks = launchConfigurationDataDisks;	
 		if (launchConfigurationDataDisks != null) {
 			for (int depth1 = 0; depth1 < launchConfigurationDataDisks.size(); depth1++) {
-				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Size" , launchConfigurationDataDisks.get(depth1).getSize());
-				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".PerformanceLevel" , launchConfigurationDataDisks.get(depth1).getPerformanceLevel());
-				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Device" , launchConfigurationDataDisks.get(depth1).getDevice());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".KmsKeyId" , launchConfigurationDataDisks.get(depth1).getKmsKeyId());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Description" , launchConfigurationDataDisks.get(depth1).getDescription());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".SnapshotId" , launchConfigurationDataDisks.get(depth1).getSnapshotId());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Size" , launchConfigurationDataDisks.get(depth1).getSize());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Device" , launchConfigurationDataDisks.get(depth1).getDevice());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DiskName" , launchConfigurationDataDisks.get(depth1).getDiskName());
+				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Category" , launchConfigurationDataDisks.get(depth1).getCategory());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DeleteWithInstance" , launchConfigurationDataDisks.get(depth1).getDeleteWithInstance());
 				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Encrypted" , launchConfigurationDataDisks.get(depth1).getEncrypted());
-				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".KmsKeyId" , launchConfigurationDataDisks.get(depth1).getKmsKeyId());
-				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".DiskName" , launchConfigurationDataDisks.get(depth1).getDiskName());
-				putQueryParameter("LaunchConfiguration.DataDisk." + (depth1 + 1) + ".Description" , launchConfigurationDataDisks.get(depth1).getDescription());
 			}
 		}	
 	}
@@ -202,6 +206,19 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		if(launchConfigurationSystemDiskPerformanceLevel != null){
 			putQueryParameter("LaunchConfiguration.SystemDiskPerformanceLevel", launchConfigurationSystemDiskPerformanceLevel);
 		}
+	}
+
+	public List<String> getLaunchConfigurationHostNamess() {
+		return this.launchConfigurationHostNamess;
+	}
+
+	public void setLaunchConfigurationHostNamess(List<String> launchConfigurationHostNamess) {
+		this.launchConfigurationHostNamess = launchConfigurationHostNamess;	
+		if (launchConfigurationHostNamess != null) {
+			for (int i = 0; i < launchConfigurationHostNamess.size(); i++) {
+				putQueryParameter("LaunchConfiguration.HostNames." + (i + 1) , launchConfigurationHostNamess.get(i));
+			}
+		}	
 	}
 
 	public String getResourceGroupId() {
@@ -359,6 +376,17 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchConfigurationHostName = launchConfigurationHostName;
 		if(launchConfigurationHostName != null){
 			putQueryParameter("LaunchConfiguration.HostName", launchConfigurationHostName);
+		}
+	}
+
+	public String getMinTargetCapacity() {
+		return this.minTargetCapacity;
+	}
+
+	public void setMinTargetCapacity(String minTargetCapacity) {
+		this.minTargetCapacity = minTargetCapacity;
+		if(minTargetCapacity != null){
+			putQueryParameter("MinTargetCapacity", minTargetCapacity);
 		}
 	}
 
@@ -535,11 +563,11 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 		this.launchTemplateConfigs = launchTemplateConfigs;	
 		if (launchTemplateConfigs != null) {
 			for (int depth1 = 0; depth1 < launchTemplateConfigs.size(); depth1++) {
-				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
-				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxPrice" , launchTemplateConfigs.get(depth1).getMaxPrice());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".VSwitchId" , launchTemplateConfigs.get(depth1).getVSwitchId());
-				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".MaxPrice" , launchTemplateConfigs.get(depth1).getMaxPrice());
 				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".Priority" , launchTemplateConfigs.get(depth1).getPriority());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".InstanceType" , launchTemplateConfigs.get(depth1).getInstanceType());
+				putQueryParameter("LaunchTemplateConfig." + (depth1 + 1) + ".WeightedCapacity" , launchTemplateConfigs.get(depth1).getWeightedCapacity());
 			}
 		}	
 	}
@@ -736,41 +764,25 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	public static class LaunchConfigurationDataDisk {
 
-		private Integer size;
-
-		private String category;
-
 		private String performanceLevel;
+
+		private String kmsKeyId;
+
+		private String description;
+
+		private String snapshotId;
+
+		private Integer size;
 
 		private String device;
 
-		private String snapshotId;
+		private String diskName;
+
+		private String category;
 
 		private Boolean deleteWithInstance;
 
 		private Boolean encrypted;
-
-		private String kmsKeyId;
-
-		private String diskName;
-
-		private String description;
-
-		public Integer getSize() {
-			return this.size;
-		}
-
-		public void setSize(Integer size) {
-			this.size = size;
-		}
-
-		public String getCategory() {
-			return this.category;
-		}
-
-		public void setCategory(String category) {
-			this.category = category;
-		}
 
 		public String getPerformanceLevel() {
 			return this.performanceLevel;
@@ -778,6 +790,38 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setPerformanceLevel(String performanceLevel) {
 			this.performanceLevel = performanceLevel;
+		}
+
+		public String getKmsKeyId() {
+			return this.kmsKeyId;
+		}
+
+		public void setKmsKeyId(String kmsKeyId) {
+			this.kmsKeyId = kmsKeyId;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getSnapshotId() {
+			return this.snapshotId;
+		}
+
+		public void setSnapshotId(String snapshotId) {
+			this.snapshotId = snapshotId;
+		}
+
+		public Integer getSize() {
+			return this.size;
+		}
+
+		public void setSize(Integer size) {
+			this.size = size;
 		}
 
 		public String getDevice() {
@@ -788,12 +832,20 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 			this.device = device;
 		}
 
-		public String getSnapshotId() {
-			return this.snapshotId;
+		public String getDiskName() {
+			return this.diskName;
 		}
 
-		public void setSnapshotId(String snapshotId) {
-			this.snapshotId = snapshotId;
+		public void setDiskName(String diskName) {
+			this.diskName = diskName;
+		}
+
+		public String getCategory() {
+			return this.category;
+		}
+
+		public void setCategory(String category) {
+			this.category = category;
 		}
 
 		public Boolean getDeleteWithInstance() {
@@ -810,30 +862,6 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setEncrypted(Boolean encrypted) {
 			this.encrypted = encrypted;
-		}
-
-		public String getKmsKeyId() {
-			return this.kmsKeyId;
-		}
-
-		public void setKmsKeyId(String kmsKeyId) {
-			this.kmsKeyId = kmsKeyId;
-		}
-
-		public String getDiskName() {
-			return this.diskName;
-		}
-
-		public void setDiskName(String diskName) {
-			this.diskName = diskName;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
 		}
 	}
 
@@ -865,22 +893,22 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 	public static class LaunchTemplateConfig {
 
-		private String instanceType;
+		private String vSwitchId;
 
 		private Double maxPrice;
 
-		private String vSwitchId;
+		private Integer priority;
+
+		private String instanceType;
 
 		private Double weightedCapacity;
 
-		private Integer priority;
-
-		public String getInstanceType() {
-			return this.instanceType;
+		public String getVSwitchId() {
+			return this.vSwitchId;
 		}
 
-		public void setInstanceType(String instanceType) {
-			this.instanceType = instanceType;
+		public void setVSwitchId(String vSwitchId) {
+			this.vSwitchId = vSwitchId;
 		}
 
 		public Double getMaxPrice() {
@@ -891,12 +919,20 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 			this.maxPrice = maxPrice;
 		}
 
-		public String getVSwitchId() {
-			return this.vSwitchId;
+		public Integer getPriority() {
+			return this.priority;
 		}
 
-		public void setVSwitchId(String vSwitchId) {
-			this.vSwitchId = vSwitchId;
+		public void setPriority(Integer priority) {
+			this.priority = priority;
+		}
+
+		public String getInstanceType() {
+			return this.instanceType;
+		}
+
+		public void setInstanceType(String instanceType) {
+			this.instanceType = instanceType;
 		}
 
 		public Double getWeightedCapacity() {
@@ -905,14 +941,6 @@ public class CreateAutoProvisioningGroupRequest extends RpcAcsRequest<CreateAuto
 
 		public void setWeightedCapacity(Double weightedCapacity) {
 			this.weightedCapacity = weightedCapacity;
-		}
-
-		public Integer getPriority() {
-			return this.priority;
-		}
-
-		public void setPriority(Integer priority) {
-			this.priority = priority;
 		}
 	}
 
