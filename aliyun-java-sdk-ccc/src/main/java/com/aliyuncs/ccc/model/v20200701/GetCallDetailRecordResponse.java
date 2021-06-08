@@ -115,11 +115,11 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 
 		private Boolean recordingReady;
 
-		private List<CdrAgentEventsItem> cdrAgentEvents;
+		private List<AgentEventsItem> agentEvents;
 
-		private List<CdrIvrEventsItem> cdrIvrEvents;
+		private List<IvrEventsItem> ivrEvents;
 
-		private List<CdrQueueEventsItem> cdrQueueEvents;
+		private List<QueueEventsItem> queueEvents;
 
 		public String getAgentIds() {
 			return this.agentIds;
@@ -273,31 +273,31 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			this.recordingReady = recordingReady;
 		}
 
-		public List<CdrAgentEventsItem> getCdrAgentEvents() {
-			return this.cdrAgentEvents;
+		public List<AgentEventsItem> getAgentEvents() {
+			return this.agentEvents;
 		}
 
-		public void setCdrAgentEvents(List<CdrAgentEventsItem> cdrAgentEvents) {
-			this.cdrAgentEvents = cdrAgentEvents;
+		public void setAgentEvents(List<AgentEventsItem> agentEvents) {
+			this.agentEvents = agentEvents;
 		}
 
-		public List<CdrIvrEventsItem> getCdrIvrEvents() {
-			return this.cdrIvrEvents;
+		public List<IvrEventsItem> getIvrEvents() {
+			return this.ivrEvents;
 		}
 
-		public void setCdrIvrEvents(List<CdrIvrEventsItem> cdrIvrEvents) {
-			this.cdrIvrEvents = cdrIvrEvents;
+		public void setIvrEvents(List<IvrEventsItem> ivrEvents) {
+			this.ivrEvents = ivrEvents;
 		}
 
-		public List<CdrQueueEventsItem> getCdrQueueEvents() {
-			return this.cdrQueueEvents;
+		public List<QueueEventsItem> getQueueEvents() {
+			return this.queueEvents;
 		}
 
-		public void setCdrQueueEvents(List<CdrQueueEventsItem> cdrQueueEvents) {
-			this.cdrQueueEvents = cdrQueueEvents;
+		public void setQueueEvents(List<QueueEventsItem> queueEvents) {
+			this.queueEvents = queueEvents;
 		}
 
-		public static class CdrAgentEventsItem {
+		public static class AgentEventsItem {
 
 			private String agentId;
 
@@ -363,7 +363,7 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			}
 		}
 
-		public static class CdrIvrEventsItem {
+		public static class IvrEventsItem {
 
 			private String flowId;
 
@@ -409,7 +409,7 @@ public class GetCallDetailRecordResponse extends AcsResponse {
 			}
 		}
 
-		public static class CdrQueueEventsItem {
+		public static class QueueEventsItem {
 
 			private String flowId;
 

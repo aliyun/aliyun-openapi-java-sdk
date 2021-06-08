@@ -19,12 +19,12 @@ import java.util.List;
 
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse;
 import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data;
-import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CdrAgentEventsItem;
-import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CdrAgentEventsItem.EventSequenceItem;
-import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CdrIvrEventsItem;
-import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CdrIvrEventsItem.EventSequenceItem2;
-import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CdrQueueEventsItem;
-import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.CdrQueueEventsItem.EventSequenceItem4;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.AgentEventsItem;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.AgentEventsItem.EventSequenceItem;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.IvrEventsItem;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.IvrEventsItem.EventSequenceItem2;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.QueueEventsItem;
+import com.aliyuncs.ccc.model.v20200701.GetCallDetailRecordResponse.Data.QueueEventsItem.EventSequenceItem4;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -58,67 +58,67 @@ public class GetCallDetailRecordResponseUnmarshaller {
 		data.setReleaseInitiator(_ctx.stringValue("GetCallDetailRecordResponse.Data.ReleaseInitiator"));
 		data.setRecordingReady(_ctx.booleanValue("GetCallDetailRecordResponse.Data.RecordingReady"));
 
-		List<CdrAgentEventsItem> cdrAgentEvents = new ArrayList<CdrAgentEventsItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CdrAgentEvents.Length"); i++) {
-			CdrAgentEventsItem cdrAgentEventsItem = new CdrAgentEventsItem();
-			cdrAgentEventsItem.setAgentId(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrAgentEvents["+ i +"].AgentId"));
-			cdrAgentEventsItem.setAgentName(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrAgentEvents["+ i +"].AgentName"));
-			cdrAgentEventsItem.setSkillGroupId(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrAgentEvents["+ i +"].SkillGroupId"));
+		List<AgentEventsItem> agentEvents = new ArrayList<AgentEventsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.AgentEvents.Length"); i++) {
+			AgentEventsItem agentEventsItem = new AgentEventsItem();
+			agentEventsItem.setAgentId(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].AgentId"));
+			agentEventsItem.setAgentName(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].AgentName"));
+			agentEventsItem.setSkillGroupId(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].SkillGroupId"));
 
 			List<EventSequenceItem> eventSequence = new ArrayList<EventSequenceItem>();
-			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CdrAgentEvents["+ i +"].EventSequence.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].EventSequence.Length"); j++) {
 				EventSequenceItem eventSequenceItem = new EventSequenceItem();
-				eventSequenceItem.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrAgentEvents["+ i +"].EventSequence["+ j +"].Event"));
-				eventSequenceItem.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.CdrAgentEvents["+ i +"].EventSequence["+ j +"].EventTime"));
+				eventSequenceItem.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].EventSequence["+ j +"].Event"));
+				eventSequenceItem.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.AgentEvents["+ i +"].EventSequence["+ j +"].EventTime"));
 
 				eventSequence.add(eventSequenceItem);
 			}
-			cdrAgentEventsItem.setEventSequence(eventSequence);
+			agentEventsItem.setEventSequence(eventSequence);
 
-			cdrAgentEvents.add(cdrAgentEventsItem);
+			agentEvents.add(agentEventsItem);
 		}
-		data.setCdrAgentEvents(cdrAgentEvents);
+		data.setAgentEvents(agentEvents);
 
-		List<CdrIvrEventsItem> cdrIvrEvents = new ArrayList<CdrIvrEventsItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CdrIvrEvents.Length"); i++) {
-			CdrIvrEventsItem cdrIvrEventsItem = new CdrIvrEventsItem();
-			cdrIvrEventsItem.setFlowId(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrIvrEvents["+ i +"].FlowId"));
+		List<IvrEventsItem> ivrEvents = new ArrayList<IvrEventsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.IvrEvents.Length"); i++) {
+			IvrEventsItem ivrEventsItem = new IvrEventsItem();
+			ivrEventsItem.setFlowId(_ctx.stringValue("GetCallDetailRecordResponse.Data.IvrEvents["+ i +"].FlowId"));
 
 			List<EventSequenceItem2> eventSequence1 = new ArrayList<EventSequenceItem2>();
-			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CdrIvrEvents["+ i +"].EventSequence.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.IvrEvents["+ i +"].EventSequence.Length"); j++) {
 				EventSequenceItem2 eventSequenceItem2 = new EventSequenceItem2();
-				eventSequenceItem2.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrIvrEvents["+ i +"].EventSequence["+ j +"].Event"));
-				eventSequenceItem2.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.CdrIvrEvents["+ i +"].EventSequence["+ j +"].EventTime"));
+				eventSequenceItem2.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.IvrEvents["+ i +"].EventSequence["+ j +"].Event"));
+				eventSequenceItem2.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.IvrEvents["+ i +"].EventSequence["+ j +"].EventTime"));
 
 				eventSequence1.add(eventSequenceItem2);
 			}
-			cdrIvrEventsItem.setEventSequence1(eventSequence1);
+			ivrEventsItem.setEventSequence1(eventSequence1);
 
-			cdrIvrEvents.add(cdrIvrEventsItem);
+			ivrEvents.add(ivrEventsItem);
 		}
-		data.setCdrIvrEvents(cdrIvrEvents);
+		data.setIvrEvents(ivrEvents);
 
-		List<CdrQueueEventsItem> cdrQueueEvents = new ArrayList<CdrQueueEventsItem>();
-		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CdrQueueEvents.Length"); i++) {
-			CdrQueueEventsItem cdrQueueEventsItem = new CdrQueueEventsItem();
-			cdrQueueEventsItem.setFlowId(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].FlowId"));
-			cdrQueueEventsItem.setQueueId(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].QueueId"));
-			cdrQueueEventsItem.setQueueName(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].QueueName"));
-			cdrQueueEventsItem.setQueueType(_ctx.integerValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].QueueType"));
+		List<QueueEventsItem> queueEvents = new ArrayList<QueueEventsItem>();
+		for (int i = 0; i < _ctx.lengthValue("GetCallDetailRecordResponse.Data.QueueEvents.Length"); i++) {
+			QueueEventsItem queueEventsItem = new QueueEventsItem();
+			queueEventsItem.setFlowId(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].FlowId"));
+			queueEventsItem.setQueueId(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].QueueId"));
+			queueEventsItem.setQueueName(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].QueueName"));
+			queueEventsItem.setQueueType(_ctx.integerValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].QueueType"));
 
 			List<EventSequenceItem4> eventSequence3 = new ArrayList<EventSequenceItem4>();
-			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].EventSequence.Length"); j++) {
+			for (int j = 0; j < _ctx.lengthValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].EventSequence.Length"); j++) {
 				EventSequenceItem4 eventSequenceItem4 = new EventSequenceItem4();
-				eventSequenceItem4.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].EventSequence["+ j +"].Event"));
-				eventSequenceItem4.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.CdrQueueEvents["+ i +"].EventSequence["+ j +"].EventTime"));
+				eventSequenceItem4.setEvent(_ctx.stringValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].EventSequence["+ j +"].Event"));
+				eventSequenceItem4.setEventTime(_ctx.longValue("GetCallDetailRecordResponse.Data.QueueEvents["+ i +"].EventSequence["+ j +"].EventTime"));
 
 				eventSequence3.add(eventSequenceItem4);
 			}
-			cdrQueueEventsItem.setEventSequence3(eventSequence3);
+			queueEventsItem.setEventSequence3(eventSequence3);
 
-			cdrQueueEvents.add(cdrQueueEventsItem);
+			queueEvents.add(queueEventsItem);
 		}
-		data.setCdrQueueEvents(cdrQueueEvents);
+		data.setQueueEvents(queueEvents);
 		getCallDetailRecordResponse.setData(data);
 	 
 	 	return getCallDetailRecordResponse;
