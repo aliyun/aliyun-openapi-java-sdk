@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -25,9 +25,11 @@ import com.aliyuncs.workorder.Endpoint;
 public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse> {
 	   
 
-	private Long parentId;
+	private Long productId;
+
+	private String name;
 	public ListCategoriesRequest() {
-		super("Workorder", "2021-05-10", "ListCategories");
+		super("Workorder", "2021-06-10", "ListCategories");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -35,14 +37,25 @@ public class ListCategoriesRequest extends RpcAcsRequest<ListCategoriesResponse>
 		} catch (Exception e) {}
 	}
 
-	public Long getParentId() {
-		return this.parentId;
+	public Long getProductId() {
+		return this.productId;
 	}
 
-	public void setParentId(Long parentId) {
-		this.parentId = parentId;
-		if(parentId != null){
-			putQueryParameter("ParentId", parentId.toString());
+	public void setProductId(Long productId) {
+		this.productId = productId;
+		if(productId != null){
+			putBodyParameter("ProductId", productId.toString());
+		}
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putBodyParameter("Name", name);
 		}
 	}
 

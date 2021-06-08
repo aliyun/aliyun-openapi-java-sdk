@@ -12,14 +12,14 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20210510;
+package com.aliyuncs.workorder.transform.v20210610;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.workorder.model.v20210510.ListProductsResponse;
-import com.aliyuncs.workorder.model.v20210510.ListProductsResponse.DataItem;
-import com.aliyuncs.workorder.model.v20210510.ListProductsResponse.DataItem.RootsItem;
+import com.aliyuncs.workorder.model.v20210610.ListProductsResponse;
+import com.aliyuncs.workorder.model.v20210610.ListProductsResponse.DataItem;
+import com.aliyuncs.workorder.model.v20210610.ListProductsResponse.DataItem.ProductListItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -35,19 +35,18 @@ public class ListProductsResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListProductsResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setTopCategoryName(_ctx.stringValue("ListProductsResponse.Data["+ i +"].TopCategoryName"));
-			dataItem.setTopCategoryId(_ctx.longValue("ListProductsResponse.Data["+ i +"].TopCategoryId"));
-			dataItem.setOrderNumber(_ctx.integerValue("ListProductsResponse.Data["+ i +"].OrderNumber"));
+			dataItem.setDirectoryName(_ctx.stringValue("ListProductsResponse.Data["+ i +"].DirectoryName"));
+			dataItem.setDirectoryId(_ctx.longValue("ListProductsResponse.Data["+ i +"].DirectoryId"));
 
-			List<RootsItem> roots = new ArrayList<RootsItem>();
-			for (int j = 0; j < _ctx.lengthValue("ListProductsResponse.Data["+ i +"].Roots.Length"); j++) {
-				RootsItem rootsItem = new RootsItem();
-				rootsItem.setCategoryId(_ctx.longValue("ListProductsResponse.Data["+ i +"].Roots["+ j +"].CategoryId"));
-				rootsItem.setCategoryName(_ctx.stringValue("ListProductsResponse.Data["+ i +"].Roots["+ j +"].CategoryName"));
+			List<ProductListItem> productList = new ArrayList<ProductListItem>();
+			for (int j = 0; j < _ctx.lengthValue("ListProductsResponse.Data["+ i +"].ProductList.Length"); j++) {
+				ProductListItem productListItem = new ProductListItem();
+				productListItem.setProductId(_ctx.longValue("ListProductsResponse.Data["+ i +"].ProductList["+ j +"].ProductId"));
+				productListItem.setProductName(_ctx.stringValue("ListProductsResponse.Data["+ i +"].ProductList["+ j +"].ProductName"));
 
-				roots.add(rootsItem);
+				productList.add(productListItem);
 			}
-			dataItem.setRoots(roots);
+			dataItem.setProductList(productList);
 
 			data.add(dataItem);
 		}

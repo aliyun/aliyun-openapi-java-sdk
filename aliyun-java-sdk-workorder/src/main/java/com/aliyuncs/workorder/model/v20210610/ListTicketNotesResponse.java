@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210510.ListTicketNotesResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.ListTicketNotesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -87,9 +87,9 @@ public class ListTicketNotesResponse extends AcsResponse {
 
 		private String tip;
 
-		private DataInfo dataInfo;
+		private Dialog dialog;
 
-		private UserInfo userInfo;
+		private User user;
 
 		public Integer getStatus() {
 			return this.status;
@@ -131,23 +131,23 @@ public class ListTicketNotesResponse extends AcsResponse {
 			this.tip = tip;
 		}
 
-		public DataInfo getDataInfo() {
-			return this.dataInfo;
+		public Dialog getDialog() {
+			return this.dialog;
 		}
 
-		public void setDataInfo(DataInfo dataInfo) {
-			this.dataInfo = dataInfo;
+		public void setDialog(Dialog dialog) {
+			this.dialog = dialog;
 		}
 
-		public UserInfo getUserInfo() {
-			return this.userInfo;
+		public User getUser() {
+			return this.user;
 		}
 
-		public void setUserInfo(UserInfo userInfo) {
-			this.userInfo = userInfo;
+		public void setUser(User user) {
+			this.user = user;
 		}
 
-		public static class DataInfo {
+		public static class Dialog {
 
 			private String content;
 
@@ -170,18 +170,18 @@ public class ListTicketNotesResponse extends AcsResponse {
 			}
 		}
 
-		public static class UserInfo {
+		public static class User {
 
-			private String userName;
+			private String name;
 
 			private Integer role;
 
-			public String getUserName() {
-				return this.userName;
+			public String getName() {
+				return this.name;
 			}
 
-			public void setUserName(String userName) {
-				this.userName = userName;
+			public void setName(String name) {
+				this.name = name;
 			}
 
 			public Integer getRole() {

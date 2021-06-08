@@ -12,30 +12,24 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210510.ListTicketsResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.ListProductsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListTicketsResponse extends AcsResponse {
+public class ListProductsResponse extends AcsResponse {
 
 	private Integer code;
 
 	private String requestId;
 
 	private String message;
-
-	private Integer pageNumber;
-
-	private Integer pageSize;
-
-	private Long totalCount;
 
 	private Boolean success;
 
@@ -65,30 +59,6 @@ public class ListTicketsResponse extends AcsResponse {
 		this.message = message;
 	}
 
-	public Integer getPageNumber() {
-		return this.pageNumber;
-	}
-
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
-	}
-
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
-
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -107,63 +77,63 @@ public class ListTicketsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String title;
+		private String directoryName;
 
-		private String ticketId;
+		private Long directoryId;
 
-		private Status status;
+		private List<ProductListItem> productList;
 
-		public String getTitle() {
-			return this.title;
+		public String getDirectoryName() {
+			return this.directoryName;
 		}
 
-		public void setTitle(String title) {
-			this.title = title;
+		public void setDirectoryName(String directoryName) {
+			this.directoryName = directoryName;
 		}
 
-		public String getTicketId() {
-			return this.ticketId;
+		public Long getDirectoryId() {
+			return this.directoryId;
 		}
 
-		public void setTicketId(String ticketId) {
-			this.ticketId = ticketId;
+		public void setDirectoryId(Long directoryId) {
+			this.directoryId = directoryId;
 		}
 
-		public Status getStatus() {
-			return this.status;
+		public List<ProductListItem> getProductList() {
+			return this.productList;
 		}
 
-		public void setStatus(Status status) {
-			this.status = status;
+		public void setProductList(List<ProductListItem> productList) {
+			this.productList = productList;
 		}
 
-		public static class Status {
+		public static class ProductListItem {
 
-			private String label;
+			private Long productId;
 
-			private String value;
+			private String productName;
 
-			public String getLabel() {
-				return this.label;
+			public Long getProductId() {
+				return this.productId;
 			}
 
-			public void setLabel(String label) {
-				this.label = label;
+			public void setProductId(Long productId) {
+				this.productId = productId;
 			}
 
-			public String getValue() {
-				return this.value;
+			public String getProductName() {
+				return this.productName;
 			}
 
-			public void setValue(String value) {
-				this.value = value;
+			public void setProductName(String productName) {
+				this.productName = productName;
 			}
 		}
 	}
 
 	@Override
-	public ListTicketsResponse getInstance(UnmarshallerContext context) {
-		return	ListTicketsResponseUnmarshaller.unmarshall(this, context);
+	public ListProductsResponse getInstance(UnmarshallerContext context) {
+		return	ListProductsResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

@@ -12,15 +12,15 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20210510;
+package com.aliyuncs.workorder.transform.v20210610;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.workorder.model.v20210510.ListTicketNotesResponse;
-import com.aliyuncs.workorder.model.v20210510.ListTicketNotesResponse.DataItem;
-import com.aliyuncs.workorder.model.v20210510.ListTicketNotesResponse.DataItem.DataInfo;
-import com.aliyuncs.workorder.model.v20210510.ListTicketNotesResponse.DataItem.UserInfo;
+import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse;
+import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem;
+import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem.Dialog;
+import com.aliyuncs.workorder.model.v20210610.ListTicketNotesResponse.DataItem.User;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -42,15 +42,15 @@ public class ListTicketNotesResponseUnmarshaller {
 			dataItem.setDialogId(_ctx.longValue("ListTicketNotesResponse.Data["+ i +"].DialogId"));
 			dataItem.setTip(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Tip"));
 
-			DataInfo dataInfo = new DataInfo();
-			dataInfo.setContent(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].DataInfo.Content"));
-			dataInfo.setSchema(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].DataInfo.Schema"));
-			dataItem.setDataInfo(dataInfo);
+			Dialog dialog = new Dialog();
+			dialog.setContent(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Dialog.Content"));
+			dialog.setSchema(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].Dialog.Schema"));
+			dataItem.setDialog(dialog);
 
-			UserInfo userInfo = new UserInfo();
-			userInfo.setUserName(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].UserInfo.UserName"));
-			userInfo.setRole(_ctx.integerValue("ListTicketNotesResponse.Data["+ i +"].UserInfo.Role"));
-			dataItem.setUserInfo(userInfo);
+			User user = new User();
+			user.setName(_ctx.stringValue("ListTicketNotesResponse.Data["+ i +"].User.Name"));
+			user.setRole(_ctx.integerValue("ListTicketNotesResponse.Data["+ i +"].User.Role"));
+			dataItem.setUser(user);
 
 			data.add(dataItem);
 		}

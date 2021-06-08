@@ -12,18 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210510.ListCategoriesResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.GetMqConsumerTagResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListCategoriesResponse extends AcsResponse {
+public class GetMqConsumerTagResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -31,9 +30,9 @@ public class ListCategoriesResponse extends AcsResponse {
 
 	private String message;
 
-	private Boolean success;
+	private String data;
 
-	private List<DataItem> data;
+	private Boolean success;
 
 	public Integer getCode() {
 		return this.code;
@@ -59,6 +58,14 @@ public class ListCategoriesResponse extends AcsResponse {
 		this.message = message;
 	}
 
+	public String getData() {
+		return this.data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+
 	public Boolean getSuccess() {
 		return this.success;
 	}
@@ -67,40 +74,9 @@ public class ListCategoriesResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public List<DataItem> getData() {
-		return this.data;
-	}
-
-	public void setData(List<DataItem> data) {
-		this.data = data;
-	}
-
-	public static class DataItem {
-
-		private String categoryName;
-
-		private Long categoryId;
-
-		public String getCategoryName() {
-			return this.categoryName;
-		}
-
-		public void setCategoryName(String categoryName) {
-			this.categoryName = categoryName;
-		}
-
-		public Long getCategoryId() {
-			return this.categoryId;
-		}
-
-		public void setCategoryId(Long categoryId) {
-			this.categoryId = categoryId;
-		}
-	}
-
 	@Override
-	public ListCategoriesResponse getInstance(UnmarshallerContext context) {
-		return	ListCategoriesResponseUnmarshaller.unmarshall(this, context);
+	public GetMqConsumerTagResponse getInstance(UnmarshallerContext context) {
+		return	GetMqConsumerTagResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

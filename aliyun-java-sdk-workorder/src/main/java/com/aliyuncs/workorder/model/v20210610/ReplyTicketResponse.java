@@ -12,17 +12,17 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210510.GetMessageTagResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.ReplyTicketResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class GetMessageTagResponse extends AcsResponse {
+public class ReplyTicketResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -75,8 +75,8 @@ public class GetMessageTagResponse extends AcsResponse {
 	}
 
 	@Override
-	public GetMessageTagResponse getInstance(UnmarshallerContext context) {
-		return	GetMessageTagResponseUnmarshaller.unmarshall(this, context);
+	public ReplyTicketResponse getInstance(UnmarshallerContext context) {
+		return	ReplyTicketResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

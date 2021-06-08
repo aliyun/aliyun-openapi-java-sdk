@@ -12,13 +12,13 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20210510;
+package com.aliyuncs.workorder.transform.v20210610;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.workorder.model.v20210510.ListCategoriesResponse;
-import com.aliyuncs.workorder.model.v20210510.ListCategoriesResponse.DataItem;
+import com.aliyuncs.workorder.model.v20210610.ListCategoriesResponse;
+import com.aliyuncs.workorder.model.v20210610.ListCategoriesResponse.DataItem;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -34,8 +34,8 @@ public class ListCategoriesResponseUnmarshaller {
 		List<DataItem> data = new ArrayList<DataItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListCategoriesResponse.Data.Length"); i++) {
 			DataItem dataItem = new DataItem();
-			dataItem.setCategoryName(_ctx.stringValue("ListCategoriesResponse.Data["+ i +"].CategoryName"));
 			dataItem.setCategoryId(_ctx.longValue("ListCategoriesResponse.Data["+ i +"].CategoryId"));
+			dataItem.setCategoryName(_ctx.stringValue("ListCategoriesResponse.Data["+ i +"].CategoryName"));
 
 			data.add(dataItem);
 		}

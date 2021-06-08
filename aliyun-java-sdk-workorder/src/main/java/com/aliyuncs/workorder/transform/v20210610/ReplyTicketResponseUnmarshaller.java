@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.transform.v20210510;
+package com.aliyuncs.workorder.transform.v20210610;
 
-import com.aliyuncs.workorder.model.v20210510.ReplyTicketResponse;
+import com.aliyuncs.workorder.model.v20210610.ReplyTicketResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 

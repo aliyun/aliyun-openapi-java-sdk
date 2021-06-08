@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
 import java.util.List;
@@ -26,9 +26,9 @@ import com.aliyuncs.workorder.Endpoint;
 public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 	   
 
-	private Long beginDate;
-
 	private List<String> statusLists;
+
+	private Long startDate;
 
 	private Integer pageNumber;
 
@@ -40,23 +40,12 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 
 	private String ticketId;
 	public ListTicketsRequest() {
-		super("Workorder", "2021-05-10", "ListTickets");
+		super("Workorder", "2021-06-10", "ListTickets");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getBeginDate() {
-		return this.beginDate;
-	}
-
-	public void setBeginDate(Long beginDate) {
-		this.beginDate = beginDate;
-		if(beginDate != null){
-			putQueryParameter("BeginDate", beginDate.toString());
-		}
 	}
 
 	public List<String> getStatusLists() {
@@ -67,9 +56,20 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 		this.statusLists = statusLists;	
 		if (statusLists != null) {
 			for (int i = 0; i < statusLists.size(); i++) {
-				putQueryParameter("StatusList." + (i + 1) , statusLists.get(i));
+				putBodyParameter("StatusList." + (i + 1) , statusLists.get(i));
 			}
 		}	
+	}
+
+	public Long getStartDate() {
+		return this.startDate;
+	}
+
+	public void setStartDate(Long startDate) {
+		this.startDate = startDate;
+		if(startDate != null){
+			putBodyParameter("StartDate", startDate.toString());
+		}
 	}
 
 	public Integer getPageNumber() {
@@ -90,7 +90,7 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 	public void setEndDate(Long endDate) {
 		this.endDate = endDate;
 		if(endDate != null){
-			putQueryParameter("EndDate", endDate.toString());
+			putBodyParameter("EndDate", endDate.toString());
 		}
 	}
 
@@ -112,7 +112,7 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 		if(keyword != null){
-			putQueryParameter("Keyword", keyword);
+			putBodyParameter("Keyword", keyword);
 		}
 	}
 
@@ -123,7 +123,7 @@ public class ListTicketsRequest extends RpcAcsRequest<ListTicketsResponse> {
 	public void setTicketId(String ticketId) {
 		this.ticketId = ticketId;
 		if(ticketId != null){
-			putQueryParameter("TicketId", ticketId);
+			putBodyParameter("TicketId", ticketId);
 		}
 	}
 

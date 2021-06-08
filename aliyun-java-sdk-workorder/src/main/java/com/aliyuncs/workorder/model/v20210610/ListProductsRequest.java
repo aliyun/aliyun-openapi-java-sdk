@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -27,7 +27,7 @@ public class ListProductsRequest extends RpcAcsRequest<ListProductsResponse> {
 
 	private String name;
 	public ListProductsRequest() {
-		super("Workorder", "2021-05-10", "ListProducts");
+		super("Workorder", "2021-06-10", "ListProducts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

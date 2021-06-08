@@ -12,18 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.workorder.transform.v20210510.ListProductsResponseUnmarshaller;
+import com.aliyuncs.workorder.transform.v20210610.ListCategoriesResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class ListProductsResponse extends AcsResponse {
+public class ListCategoriesResponse extends AcsResponse {
 
 	private Integer code;
 
@@ -77,73 +77,30 @@ public class ListProductsResponse extends AcsResponse {
 
 	public static class DataItem {
 
-		private String topCategoryName;
+		private Long categoryId;
 
-		private Long topCategoryId;
+		private String categoryName;
 
-		private Integer orderNumber;
-
-		private List<RootsItem> roots;
-
-		public String getTopCategoryName() {
-			return this.topCategoryName;
+		public Long getCategoryId() {
+			return this.categoryId;
 		}
 
-		public void setTopCategoryName(String topCategoryName) {
-			this.topCategoryName = topCategoryName;
+		public void setCategoryId(Long categoryId) {
+			this.categoryId = categoryId;
 		}
 
-		public Long getTopCategoryId() {
-			return this.topCategoryId;
+		public String getCategoryName() {
+			return this.categoryName;
 		}
 
-		public void setTopCategoryId(Long topCategoryId) {
-			this.topCategoryId = topCategoryId;
-		}
-
-		public Integer getOrderNumber() {
-			return this.orderNumber;
-		}
-
-		public void setOrderNumber(Integer orderNumber) {
-			this.orderNumber = orderNumber;
-		}
-
-		public List<RootsItem> getRoots() {
-			return this.roots;
-		}
-
-		public void setRoots(List<RootsItem> roots) {
-			this.roots = roots;
-		}
-
-		public static class RootsItem {
-
-			private Long categoryId;
-
-			private String categoryName;
-
-			public Long getCategoryId() {
-				return this.categoryId;
-			}
-
-			public void setCategoryId(Long categoryId) {
-				this.categoryId = categoryId;
-			}
-
-			public String getCategoryName() {
-				return this.categoryName;
-			}
-
-			public void setCategoryName(String categoryName) {
-				this.categoryName = categoryName;
-			}
+		public void setCategoryName(String categoryName) {
+			this.categoryName = categoryName;
 		}
 	}
 
 	@Override
-	public ListProductsResponse getInstance(UnmarshallerContext context) {
-		return	ListProductsResponseUnmarshaller.unmarshall(this, context);
+	public ListCategoriesResponse getInstance(UnmarshallerContext context) {
+		return	ListCategoriesResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

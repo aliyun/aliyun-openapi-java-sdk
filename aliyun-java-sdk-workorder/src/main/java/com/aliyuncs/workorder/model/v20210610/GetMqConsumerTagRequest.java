@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,10 +22,10 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetMessageTagRequest extends RpcAcsRequest<GetMessageTagResponse> {
+public class GetMqConsumerTagRequest extends RpcAcsRequest<GetMqConsumerTagResponse> {
 	   
-	public GetMessageTagRequest() {
-		super("Workorder", "2021-05-10", "GetMessageTag");
+	public GetMqConsumerTagRequest() {
+		super("Workorder", "2021-06-10", "GetMqConsumerTag");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -34,8 +34,8 @@ public class GetMessageTagRequest extends RpcAcsRequest<GetMessageTagResponse> {
 	}
 
 	@Override
-	public Class<GetMessageTagResponse> getResponseClass() {
-		return GetMessageTagResponse.class;
+	public Class<GetMqConsumerTagResponse> getResponseClass() {
+		return GetMqConsumerTagResponse.class;
 	}
 
 }

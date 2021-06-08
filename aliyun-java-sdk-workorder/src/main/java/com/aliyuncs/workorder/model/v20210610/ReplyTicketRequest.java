@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.workorder.model.v20210510;
+package com.aliyuncs.workorder.model.v20210610;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,16 +22,16 @@ import com.aliyuncs.workorder.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
+public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	   
 
-	private Integer severity;
+	private String secContent;
 
-	private String description;
+	private String content;
 
-	private String categoryId;
-	public CreateTicketRequest() {
-		super("Workorder", "2021-05-10", "CreateTicket");
+	private String ticketId;
+	public ReplyTicketRequest() {
+		super("Workorder", "2021-06-10", "ReplyTicket");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class CreateTicketRequest extends RpcAcsRequest<CreateTicketResponse> {
 		} catch (Exception e) {}
 	}
 
-	public Integer getSeverity() {
-		return this.severity;
+	public String getSecContent() {
+		return this.secContent;
 	}
 
-	public void setSeverity(Integer severity) {
-		this.severity = severity;
-		if(severity != null){
-			putBodyParameter("Severity", severity.toString());
+	public void setSecContent(String secContent) {
+		this.secContent = secContent;
+		if(secContent != null){
+			putBodyParameter("SecContent", secContent);
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getContent() {
+		return this.content;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putBodyParameter("Description", description);
+	public void setContent(String content) {
+		this.content = content;
+		if(content != null){
+			putBodyParameter("Content", content);
 		}
 	}
 
-	public String getCategoryId() {
-		return this.categoryId;
+	public String getTicketId() {
+		return this.ticketId;
 	}
 
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
-		if(categoryId != null){
-			putBodyParameter("CategoryId", categoryId);
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+		if(ticketId != null){
+			putBodyParameter("TicketId", ticketId);
 		}
 	}
 
 	@Override
-	public Class<CreateTicketResponse> getResponseClass() {
-		return CreateTicketResponse.class;
+	public Class<ReplyTicketResponse> getResponseClass() {
+		return ReplyTicketResponse.class;
 	}
 
 }
