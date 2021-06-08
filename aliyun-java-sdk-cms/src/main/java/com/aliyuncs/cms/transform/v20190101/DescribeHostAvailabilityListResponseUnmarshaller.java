@@ -60,6 +60,7 @@ public class DescribeHostAvailabilityListResponseUnmarshaller {
 			taskOption.setHttpKeyword(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpKeyword"));
 			taskOption.setHttpMethod(_ctx.stringValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpMethod"));
 			taskOption.setHttpNegative(_ctx.booleanValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.HttpNegative"));
+			taskOption.setInterval(_ctx.integerValue("DescribeHostAvailabilityListResponse.TaskList["+ i +"].TaskOption.Interval"));
 			nodeTaskConfig.setTaskOption(taskOption);
 
 			AlertConfig alertConfig = new AlertConfig();

@@ -70,6 +70,8 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 		private String suitInfo;
 
+		private String cRMType;
+
 		private String instanceId;
 
 		private SiteMonitorEcsProbe siteMonitorEcsProbe;
@@ -90,6 +92,8 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 		private Phone phone;
 
+		private EnterpriseQuota enterpriseQuota;
+
 		public String getExpireTime() {
 			return this.expireTime;
 		}
@@ -104,6 +108,14 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 		public void setSuitInfo(String suitInfo) {
 			this.suitInfo = suitInfo;
+		}
+
+		public String getCRMType() {
+			return this.cRMType;
+		}
+
+		public void setCRMType(String cRMType) {
+			this.cRMType = cRMType;
 		}
 
 		public String getInstanceId() {
@@ -184,6 +196,14 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 		public void setPhone(Phone phone) {
 			this.phone = phone;
+		}
+
+		public EnterpriseQuota getEnterpriseQuota() {
+			return this.enterpriseQuota;
+		}
+
+		public void setEnterpriseQuota(EnterpriseQuota enterpriseQuota) {
+			this.enterpriseQuota = enterpriseQuota;
 		}
 
 		public static class SiteMonitorEcsProbe {
@@ -480,6 +500,29 @@ public class DescribeMonitorResourceQuotaAttributeResponse extends AcsResponse {
 
 			public void setQuotaUsed(Integer quotaUsed) {
 				this.quotaUsed = quotaUsed;
+			}
+		}
+
+		public static class EnterpriseQuota {
+
+			private String suitInfo;
+
+			private String instanceId;
+
+			public String getSuitInfo() {
+				return this.suitInfo;
+			}
+
+			public void setSuitInfo(String suitInfo) {
+				this.suitInfo = suitInfo;
+			}
+
+			public String getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(String instanceId) {
+				this.instanceId = instanceId;
 			}
 		}
 	}

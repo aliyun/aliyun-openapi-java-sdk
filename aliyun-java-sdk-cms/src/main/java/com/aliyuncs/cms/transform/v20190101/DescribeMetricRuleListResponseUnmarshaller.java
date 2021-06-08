@@ -57,6 +57,7 @@ public class DescribeMetricRuleListResponseUnmarshaller {
 			alarm.setGroupName(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupName"));
 			alarm.setDimensions(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].Dimensions"));
 			alarm.setSourceType(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].SourceType"));
+			alarm.setGroupBy(_ctx.stringValue("DescribeMetricRuleListResponse.Alarms["+ i +"].GroupBy"));
 
 			Escalations escalations = new Escalations();
 

@@ -203,6 +203,8 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			private Boolean httpNegative;
 
+			private Integer interval;
+
 			public String getHttpURI() {
 				return this.httpURI;
 			}
@@ -257,6 +259,14 @@ public class DescribeHostAvailabilityListResponse extends AcsResponse {
 
 			public void setHttpNegative(Boolean httpNegative) {
 				this.httpNegative = httpNegative;
+			}
+
+			public Integer getInterval() {
+				return this.interval;
+			}
+
+			public void setInterval(Integer interval) {
+				this.interval = interval;
 			}
 		}
 

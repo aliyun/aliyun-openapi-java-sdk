@@ -41,6 +41,7 @@ public class DescribeSiteMonitorAttributeResponseUnmarshaller {
 		siteMonitors.setTaskName(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.TaskName"));
 		siteMonitors.setInterval(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.Interval"));
 		siteMonitors.setTaskId(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.TaskId"));
+		siteMonitors.setEndTime(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.EndTime"));
 
 		OptionJson optionJson = new OptionJson();
 		optionJson.setDns_type(_ctx.stringValue("DescribeSiteMonitorAttributeResponse.SiteMonitors.OptionJson.dns_type"));

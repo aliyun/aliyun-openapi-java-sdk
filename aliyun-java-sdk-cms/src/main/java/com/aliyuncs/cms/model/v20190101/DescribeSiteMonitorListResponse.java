@@ -123,6 +123,8 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 		private String updateTime;
 
+		private String endTime;
+
 		private OptionsJson optionsJson;
 
 		public String getTaskId() {
@@ -189,6 +191,14 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 			this.updateTime = updateTime;
 		}
 
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
+		}
+
 		public OptionsJson getOptionsJson() {
 			return this.optionsJson;
 		}
@@ -202,6 +212,8 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 			private String dns_type;
 
 			private String dns_server;
+
+			private String group_id;
 
 			private String expect_value;
 
@@ -251,6 +263,14 @@ public class DescribeSiteMonitorListResponse extends AcsResponse {
 
 			public void setDns_server(String dns_server) {
 				this.dns_server = dns_server;
+			}
+
+			public String getGroup_id() {
+				return this.group_id;
+			}
+
+			public void setGroup_id(String group_id) {
+				this.group_id = group_id;
 			}
 
 			public String getExpect_value() {

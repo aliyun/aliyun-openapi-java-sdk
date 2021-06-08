@@ -123,6 +123,8 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		private String sourceType;
 
+		private String groupBy;
+
 		private Escalations escalations;
 
 		public String getRuleId() {
@@ -267,6 +269,14 @@ public class DescribeMetricRuleListResponse extends AcsResponse {
 
 		public void setSourceType(String sourceType) {
 			this.sourceType = sourceType;
+		}
+
+		public String getGroupBy() {
+			return this.groupBy;
+		}
+
+		public void setGroupBy(String groupBy) {
+			this.groupBy = groupBy;
 		}
 
 		public Escalations getEscalations() {

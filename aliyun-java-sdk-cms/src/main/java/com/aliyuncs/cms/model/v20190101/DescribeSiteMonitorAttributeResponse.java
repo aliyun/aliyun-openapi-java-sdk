@@ -262,6 +262,8 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		private String taskId;
 
+		private String endTime;
+
 		private List<IspCity> ispCities;
 
 		private OptionJson optionJson;
@@ -312,6 +314,14 @@ public class DescribeSiteMonitorAttributeResponse extends AcsResponse {
 
 		public void setTaskId(String taskId) {
 			this.taskId = taskId;
+		}
+
+		public String getEndTime() {
+			return this.endTime;
+		}
+
+		public void setEndTime(String endTime) {
+			this.endTime = endTime;
 		}
 
 		public List<IspCity> getIspCities() {
