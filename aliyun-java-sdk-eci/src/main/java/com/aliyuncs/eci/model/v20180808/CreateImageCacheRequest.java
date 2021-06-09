@@ -57,6 +57,8 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 
 	private Boolean autoMatchImageCache;
 
+	private Boolean flash;
+
 	public CreateImageCacheRequest() {
 		super("Eci", "2018-08-08", "CreateImageCache", "eci");
 		setMethod(MethodType.POST);
@@ -243,6 +245,17 @@ public class CreateImageCacheRequest extends RpcAcsRequest<CreateImageCacheRespo
 		this.autoMatchImageCache = autoMatchImageCache;
 		if (autoMatchImageCache != null) {
 			putQueryParameter("AutoMatchImageCache", autoMatchImageCache.toString());
+		}
+	}
+
+	public Boolean getFlash() {
+		return this.flash;
+	}
+
+	public void setFlash(Boolean flash) {
+		this.flash = flash;
+		if (null != flash) {
+			putQueryParameter("Flash", flash.toString());
 		}
 	}
 

@@ -36,6 +36,7 @@ public class DescribeImageCachesResponseUnmarshaller {
 			imageCache.setImageCacheId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].ImageCacheId"));
 			imageCache.setImageCacheName(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].ImageCacheName"));
 			imageCache.setSnapshotId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].SnapshotId"));
+			imageCache.setFlashSnapshotId(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].FlashSnapshotId"));
 			imageCache.setProgress(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Progress"));
 			imageCache.setStatus(_ctx.stringValue("DescribeImageCachesResponse.ImageCaches["+ i +"].Status"));
 

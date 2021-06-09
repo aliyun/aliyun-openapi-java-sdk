@@ -56,6 +56,8 @@ public class DescribeImageCachesResponse extends AcsResponse {
 
 		private String snapshotId;
 
+		private String flashSnapshotId;
+
 		private String progress;
 
 		private String status;
@@ -104,6 +106,14 @@ public class DescribeImageCachesResponse extends AcsResponse {
 
 		public void setSnapshotId(String snapshotId) {
 			this.snapshotId = snapshotId;
+		}
+
+		public String getFlashSnapshotId() {
+			return this.flashSnapshotId;
+		}
+
+		public void setFlashSnapshotId(String flashSnapshotId) {
+			this.flashSnapshotId = flashSnapshotId;
 		}
 
 		public String getProgress() {
