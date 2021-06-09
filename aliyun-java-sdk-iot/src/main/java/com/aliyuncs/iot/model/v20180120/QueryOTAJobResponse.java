@@ -123,6 +123,10 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		private Integer dynamicMode;
 
+		private Boolean needPush;
+
+		private Boolean needConfirm;
+
 		private List<OtaTagDTO> tags;
 
 		private List<String> srcVersions;
@@ -309,6 +313,22 @@ public class QueryOTAJobResponse extends AcsResponse {
 
 		public void setDynamicMode(Integer dynamicMode) {
 			this.dynamicMode = dynamicMode;
+		}
+
+		public Boolean getNeedPush() {
+			return this.needPush;
+		}
+
+		public void setNeedPush(Boolean needPush) {
+			this.needPush = needPush;
+		}
+
+		public Boolean getNeedConfirm() {
+			return this.needConfirm;
+		}
+
+		public void setNeedConfirm(Boolean needConfirm) {
+			this.needConfirm = needConfirm;
 		}
 
 		public List<OtaTagDTO> getTags() {

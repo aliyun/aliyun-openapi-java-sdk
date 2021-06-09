@@ -1,3 +1,9 @@
+2021-06-09 Version: 7.25.0
+- Update TMP API, including QueryDevice, CreateThingModel, UpdateThingModel, ImportThingModelTsl, BatchPickThingModel, ListDeviceDistributeJob.
+- Add TMP API, including QueryDeviceInfo.
+- Update OTA API, including CreateOTAVerifyJob, CreateOTAStaticUpgradeJob, CreateOTADynamicUpgradeJob, CancelOTATaskByJob, QueryOTAJob.
+- Add OTA API, including ListOTAUnfinishedTaskByDevice,ConfirmOTATask.
+
 2021-05-18 Version: 7.24.0
 - Add IoT Studio SetStudioProjectCooperation API.
 - Add IoT Studio QueryStudioProjectList API.

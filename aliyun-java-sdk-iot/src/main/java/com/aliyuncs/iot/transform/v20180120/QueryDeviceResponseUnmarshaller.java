@@ -34,6 +34,7 @@ public class QueryDeviceResponseUnmarshaller {
 		queryDeviceResponse.setPageSize(_ctx.integerValue("QueryDeviceResponse.PageSize"));
 		queryDeviceResponse.setPageCount(_ctx.integerValue("QueryDeviceResponse.PageCount"));
 		queryDeviceResponse.setPage(_ctx.integerValue("QueryDeviceResponse.Page"));
+		queryDeviceResponse.setNextToken(_ctx.stringValue("QueryDeviceResponse.NextToken"));
 
 		List<DeviceInfo> data = new ArrayList<DeviceInfo>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDeviceResponse.Data.Length"); i++) {

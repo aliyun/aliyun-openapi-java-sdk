@@ -56,6 +56,8 @@ public class QueryOTAJobResponseUnmarshaller {
 		data.setUtcScheduleFinishTime(_ctx.stringValue("QueryOTAJobResponse.Data.UtcScheduleFinishTime"));
 		data.setOverwriteMode(_ctx.integerValue("QueryOTAJobResponse.Data.OverwriteMode"));
 		data.setDynamicMode(_ctx.integerValue("QueryOTAJobResponse.Data.DynamicMode"));
+		data.setNeedPush(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedPush"));
+		data.setNeedConfirm(_ctx.booleanValue("QueryOTAJobResponse.Data.NeedConfirm"));
 
 		List<String> srcVersions = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("QueryOTAJobResponse.Data.SrcVersions.Length"); i++) {

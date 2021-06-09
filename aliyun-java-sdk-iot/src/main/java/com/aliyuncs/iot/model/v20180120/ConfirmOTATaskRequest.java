@@ -15,6 +15,7 @@
 package com.aliyuncs.iot.model.v20180120;
 
 import com.aliyuncs.RpcAcsRequest;
+import java.util.List;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.iot.Endpoint;
 
@@ -22,36 +23,19 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
+public class ConfirmOTATaskRequest extends RpcAcsRequest<ConfirmOTATaskResponse> {
 	   
-
-	private String nextToken;
 
 	private String iotInstanceId;
 
-	private Integer pageSize;
-
-	private Integer currentPage;
-
-	private String productKey;
-	public QueryDeviceRequest() {
-		super("Iot", "2018-01-20", "QueryDevice", "iot");
+	private List<String> taskIds;
+	public ConfirmOTATaskRequest() {
+		super("Iot", "2018-01-20", "ConfirmOTATask", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public String getNextToken() {
-		return this.nextToken;
-	}
-
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
-		}
 	}
 
 	public String getIotInstanceId() {
@@ -65,42 +49,22 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
+	public List<String> getTaskIds() {
+		return this.taskIds;
 	}
 
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
-	public String getProductKey() {
-		return this.productKey;
-	}
-
-	public void setProductKey(String productKey) {
-		this.productKey = productKey;
-		if(productKey != null){
-			putQueryParameter("ProductKey", productKey);
-		}
+	public void setTaskIds(List<String> taskIds) {
+		this.taskIds = taskIds;	
+		if (taskIds != null) {
+			for (int i = 0; i < taskIds.size(); i++) {
+				putQueryParameter("TaskId." + (i + 1) , taskIds.get(i));
+			}
+		}	
 	}
 
 	@Override
-	public Class<QueryDeviceResponse> getResponseClass() {
-		return QueryDeviceResponse.class;
+	public Class<ConfirmOTATaskResponse> getResponseClass() {
+		return ConfirmOTATaskResponse.class;
 	}
 
 }

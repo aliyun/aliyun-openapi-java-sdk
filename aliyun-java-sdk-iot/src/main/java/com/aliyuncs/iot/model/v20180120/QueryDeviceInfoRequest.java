@@ -22,20 +22,18 @@ import com.aliyuncs.iot.Endpoint;
  * @author auto create
  * @version 
  */
-public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
+public class QueryDeviceInfoRequest extends RpcAcsRequest<QueryDeviceInfoResponse> {
 	   
 
-	private String nextToken;
+	private String iotId;
 
 	private String iotInstanceId;
 
-	private Integer pageSize;
-
-	private Integer currentPage;
-
 	private String productKey;
-	public QueryDeviceRequest() {
-		super("Iot", "2018-01-20", "QueryDevice", "iot");
+
+	private String deviceName;
+	public QueryDeviceInfoRequest() {
+		super("Iot", "2018-01-20", "QueryDeviceInfo", "iot");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -43,14 +41,14 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getNextToken() {
-		return this.nextToken;
+	public String getIotId() {
+		return this.iotId;
 	}
 
-	public void setNextToken(String nextToken) {
-		this.nextToken = nextToken;
-		if(nextToken != null){
-			putQueryParameter("NextToken", nextToken);
+	public void setIotId(String iotId) {
+		this.iotId = iotId;
+		if(iotId != null){
+			putQueryParameter("IotId", iotId);
 		}
 	}
 
@@ -65,28 +63,6 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 		}
 	}
 
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-		if(pageSize != null){
-			putQueryParameter("PageSize", pageSize.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
-		}
-	}
-
 	public String getProductKey() {
 		return this.productKey;
 	}
@@ -98,9 +74,20 @@ public class QueryDeviceRequest extends RpcAcsRequest<QueryDeviceResponse> {
 		}
 	}
 
+	public String getDeviceName() {
+		return this.deviceName;
+	}
+
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+		if(deviceName != null){
+			putQueryParameter("DeviceName", deviceName);
+		}
+	}
+
 	@Override
-	public Class<QueryDeviceResponse> getResponseClass() {
-		return QueryDeviceResponse.class;
+	public Class<QueryDeviceInfoResponse> getResponseClass() {
+		return QueryDeviceInfoResponse.class;
 	}
 
 }

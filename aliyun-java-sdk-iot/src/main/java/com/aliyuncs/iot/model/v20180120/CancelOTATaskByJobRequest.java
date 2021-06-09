@@ -29,6 +29,8 @@ public class CancelOTATaskByJobRequest extends RpcAcsRequest<CancelOTATaskByJobR
 
 	private String jobId;
 
+	private Boolean cancelUnconfirmedTask;
+
 	private String iotInstanceId;
 
 	private Boolean cancelQueuedTask;
@@ -64,6 +66,17 @@ public class CancelOTATaskByJobRequest extends RpcAcsRequest<CancelOTATaskByJobR
 		this.jobId = jobId;
 		if(jobId != null){
 			putQueryParameter("JobId", jobId);
+		}
+	}
+
+	public Boolean getCancelUnconfirmedTask() {
+		return this.cancelUnconfirmedTask;
+	}
+
+	public void setCancelUnconfirmedTask(Boolean cancelUnconfirmedTask) {
+		this.cancelUnconfirmedTask = cancelUnconfirmedTask;
+		if(cancelUnconfirmedTask != null){
+			putQueryParameter("CancelUnconfirmedTask", cancelUnconfirmedTask.toString());
 		}
 	}
 
