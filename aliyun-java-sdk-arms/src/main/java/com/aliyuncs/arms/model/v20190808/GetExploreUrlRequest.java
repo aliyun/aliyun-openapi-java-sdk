@@ -22,16 +22,16 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
+public class GetExploreUrlRequest extends RpcAcsRequest<GetExploreUrlResponse> {
 	   
 
-	private String traceID;
+	private String expression;
 
-	private Long endTime;
+	private String clusterId;
 
-	private Long startTime;
-	public GetTraceRequest() {
-		super("ARMS", "2019-08-08", "GetTrace", "arms");
+	private String type;
+	public GetExploreUrlRequest() {
+		super("ARMS", "2019-08-08", "GetExploreUrl", "arms");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -39,42 +39,42 @@ public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getTraceID() {
-		return this.traceID;
+	public String getExpression() {
+		return this.expression;
 	}
 
-	public void setTraceID(String traceID) {
-		this.traceID = traceID;
-		if(traceID != null){
-			putQueryParameter("TraceID", traceID);
+	public void setExpression(String expression) {
+		this.expression = expression;
+		if(expression != null){
+			putQueryParameter("Expression", expression);
 		}
 	}
 
-	public Long getEndTime() {
-		return this.endTime;
+	public String getClusterId() {
+		return this.clusterId;
 	}
 
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
+	public void setClusterId(String clusterId) {
+		this.clusterId = clusterId;
+		if(clusterId != null){
+			putQueryParameter("ClusterId", clusterId);
 		}
 	}
 
-	public Long getStartTime() {
-		return this.startTime;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
+	public void setType(String type) {
+		this.type = type;
+		if(type != null){
+			putQueryParameter("Type", type);
 		}
 	}
 
 	@Override
-	public Class<GetTraceResponse> getResponseClass() {
-		return GetTraceResponse.class;
+	public Class<GetExploreUrlResponse> getResponseClass() {
+		return GetExploreUrlResponse.class;
 	}
 
 }

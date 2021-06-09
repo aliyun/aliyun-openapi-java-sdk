@@ -22,59 +22,20 @@ import com.aliyuncs.arms.Endpoint;
  * @author auto create
  * @version 
  */
-public class GetTraceRequest extends RpcAcsRequest<GetTraceResponse> {
+public class GetArmsConsoleUrlRequest extends RpcAcsRequest<GetArmsConsoleUrlResponse> {
 	   
-
-	private String traceID;
-
-	private Long endTime;
-
-	private Long startTime;
-	public GetTraceRequest() {
-		super("ARMS", "2019-08-08", "GetTrace", "arms");
-		setMethod(MethodType.POST);
+	public GetArmsConsoleUrlRequest() {
+		super("ARMS", "2019-08-08", "GetArmsConsoleUrl", "arms");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getTraceID() {
-		return this.traceID;
-	}
-
-	public void setTraceID(String traceID) {
-		this.traceID = traceID;
-		if(traceID != null){
-			putQueryParameter("TraceID", traceID);
-		}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
 	@Override
-	public Class<GetTraceResponse> getResponseClass() {
-		return GetTraceResponse.class;
+	public Class<GetArmsConsoleUrlResponse> getResponseClass() {
+		return GetArmsConsoleUrlResponse.class;
 	}
 
 }
