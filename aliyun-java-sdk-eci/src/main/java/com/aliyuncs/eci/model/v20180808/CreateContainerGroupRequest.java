@@ -78,6 +78,8 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 
 	private Float spotPriceLimit;
 
+	private Integer spotDuration;
+
 	private String scheduleStrategy;
 
 	private String corePattern;
@@ -172,6 +174,17 @@ public class CreateContainerGroupRequest extends RpcAcsRequest<CreateContainerGr
 		this.spotPriceLimit = spotPriceLimit;
 		if (spotPriceLimit != null) {
 			putQueryParameter("SpotPriceLimit", spotPriceLimit);
+		}
+	}
+
+	public Integer getSpotDuration() {
+		return this.spotDuration;
+	}
+
+	public void setSpotDuration(Integer spotDuration) {
+		this.spotDuration = spotDuration;
+		if (null != spotDuration) {
+			putQueryParameter("SpotDuration", spotDuration);
 		}
 	}
 
