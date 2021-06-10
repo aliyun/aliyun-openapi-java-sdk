@@ -32,40 +32,40 @@ public class GetInstanceResponseUnmarshaller {
 		getInstanceResponse.setSuccess(_ctx.booleanValue("GetInstanceResponse.Success"));
 
 		Instance instance = new Instance();
-		instance.setInstanceSource(_ctx.stringValue("GetInstanceResponse.Instance.InstanceSource"));
-		instance.setInstanceId(_ctx.stringValue("GetInstanceResponse.Instance.InstanceId"));
-		instance.setDatabasePassword(_ctx.stringValue("GetInstanceResponse.Instance.DatabasePassword"));
+		instance.setVpcId(_ctx.stringValue("GetInstanceResponse.Instance.VpcId"));
+		instance.setDatabaseUser(_ctx.stringValue("GetInstanceResponse.Instance.DatabaseUser"));
+		instance.setDbaId(_ctx.stringValue("GetInstanceResponse.Instance.DbaId"));
+		instance.setUseDsql(_ctx.integerValue("GetInstanceResponse.Instance.UseDsql"));
 		instance.setPort(_ctx.integerValue("GetInstanceResponse.Instance.Port"));
-		instance.setHost(_ctx.stringValue("GetInstanceResponse.Instance.Host"));
-		instance.setExportTimeout(_ctx.integerValue("GetInstanceResponse.Instance.ExportTimeout"));
-		instance.setDdlOnline(_ctx.integerValue("GetInstanceResponse.Instance.DdlOnline"));
+		instance.setEcsInstanceId(_ctx.stringValue("GetInstanceResponse.Instance.EcsInstanceId"));
 		instance.setEnvType(_ctx.stringValue("GetInstanceResponse.Instance.EnvType"));
 		instance.setSid(_ctx.stringValue("GetInstanceResponse.Instance.Sid"));
-		instance.setUseDsql(_ctx.integerValue("GetInstanceResponse.Instance.UseDsql"));
-		instance.setEcsInstanceId(_ctx.stringValue("GetInstanceResponse.Instance.EcsInstanceId"));
-		instance.setDbaId(_ctx.stringValue("GetInstanceResponse.Instance.DbaId"));
-		instance.setVpcId(_ctx.stringValue("GetInstanceResponse.Instance.VpcId"));
-		instance.setEcsRegion(_ctx.stringValue("GetInstanceResponse.Instance.EcsRegion"));
-		instance.setInstanceAlias(_ctx.stringValue("GetInstanceResponse.Instance.InstanceAlias"));
-		instance.setState(_ctx.stringValue("GetInstanceResponse.Instance.State"));
-		instance.setDatabaseUser(_ctx.stringValue("GetInstanceResponse.Instance.DatabaseUser"));
-		instance.setInstanceType(_ctx.stringValue("GetInstanceResponse.Instance.InstanceType"));
-		instance.setDbaNickName(_ctx.stringValue("GetInstanceResponse.Instance.DbaNickName"));
-		instance.setDataLinkName(_ctx.stringValue("GetInstanceResponse.Instance.DataLinkName"));
-		instance.setQueryTimeout(_ctx.integerValue("GetInstanceResponse.Instance.QueryTimeout"));
 		instance.setSafeRuleId(_ctx.stringValue("GetInstanceResponse.Instance.SafeRuleId"));
-
-		List<String> ownerNameList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Instance.OwnerNameList.Length"); i++) {
-			ownerNameList.add(_ctx.stringValue("GetInstanceResponse.Instance.OwnerNameList["+ i +"]"));
-		}
-		instance.setOwnerNameList(ownerNameList);
+		instance.setDbaNickName(_ctx.stringValue("GetInstanceResponse.Instance.DbaNickName"));
+		instance.setQueryTimeout(_ctx.integerValue("GetInstanceResponse.Instance.QueryTimeout"));
+		instance.setInstanceSource(_ctx.stringValue("GetInstanceResponse.Instance.InstanceSource"));
+		instance.setHost(_ctx.stringValue("GetInstanceResponse.Instance.Host"));
+		instance.setState(_ctx.stringValue("GetInstanceResponse.Instance.State"));
+		instance.setDataLinkName(_ctx.stringValue("GetInstanceResponse.Instance.DataLinkName"));
+		instance.setExportTimeout(_ctx.integerValue("GetInstanceResponse.Instance.ExportTimeout"));
+		instance.setInstanceId(_ctx.stringValue("GetInstanceResponse.Instance.InstanceId"));
+		instance.setInstanceType(_ctx.stringValue("GetInstanceResponse.Instance.InstanceType"));
+		instance.setDatabasePassword(_ctx.stringValue("GetInstanceResponse.Instance.DatabasePassword"));
+		instance.setInstanceAlias(_ctx.stringValue("GetInstanceResponse.Instance.InstanceAlias"));
+		instance.setDdlOnline(_ctx.integerValue("GetInstanceResponse.Instance.DdlOnline"));
+		instance.setEcsRegion(_ctx.stringValue("GetInstanceResponse.Instance.EcsRegion"));
 
 		List<String> ownerIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Instance.OwnerIdList.Length"); i++) {
 			ownerIdList.add(_ctx.stringValue("GetInstanceResponse.Instance.OwnerIdList["+ i +"]"));
 		}
 		instance.setOwnerIdList(ownerIdList);
+
+		List<String> ownerNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetInstanceResponse.Instance.OwnerNameList.Length"); i++) {
+			ownerNameList.add(_ctx.stringValue("GetInstanceResponse.Instance.OwnerNameList["+ i +"]"));
+		}
+		instance.setOwnerNameList(ownerNameList);
 		getInstanceResponse.setInstance(instance);
 	 
 	 	return getInstanceResponse;

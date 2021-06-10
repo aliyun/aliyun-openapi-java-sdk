@@ -26,9 +26,9 @@ public class CreateStructSyncOrderResponseUnmarshaller {
 	public static CreateStructSyncOrderResponse unmarshall(CreateStructSyncOrderResponse createStructSyncOrderResponse, UnmarshallerContext _ctx) {
 		
 		createStructSyncOrderResponse.setRequestId(_ctx.stringValue("CreateStructSyncOrderResponse.RequestId"));
-		createStructSyncOrderResponse.setErrorCode(_ctx.stringValue("CreateStructSyncOrderResponse.ErrorCode"));
-		createStructSyncOrderResponse.setErrorMessage(_ctx.stringValue("CreateStructSyncOrderResponse.ErrorMessage"));
 		createStructSyncOrderResponse.setSuccess(_ctx.booleanValue("CreateStructSyncOrderResponse.Success"));
+		createStructSyncOrderResponse.setErrorMessage(_ctx.stringValue("CreateStructSyncOrderResponse.ErrorMessage"));
+		createStructSyncOrderResponse.setErrorCode(_ctx.stringValue("CreateStructSyncOrderResponse.ErrorCode"));
 
 		List<Long> createOrderResult = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateStructSyncOrderResponse.CreateOrderResult.Length"); i++) {

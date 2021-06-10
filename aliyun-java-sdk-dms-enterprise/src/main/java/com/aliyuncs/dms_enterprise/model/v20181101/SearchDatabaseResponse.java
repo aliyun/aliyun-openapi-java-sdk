@@ -87,35 +87,51 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 	public static class SearchDatabase {
 
+		private String databaseId;
+
+		private String host;
+
 		private String dbaId;
+
+		private String schemaName;
+
+		private Boolean logic;
+
+		private String datalinkName;
+
+		private Integer port;
+
+		private String envType;
+
+		private String sid;
+
+		private String encoding;
+
+		private String dbType;
 
 		private String searchName;
 
 		private String alias;
 
-		private Integer port;
-
-		private String datalinkName;
-
-		private String encoding;
-
-		private String host;
-
-		private String databaseId;
-
-		private Boolean logic;
-
-		private String dbType;
-
-		private String envType;
-
-		private String schemaName;
-
-		private String sid;
+		private List<String> ownerIdList;
 
 		private List<String> ownerNameList;
 
-		private List<String> ownerIdList;
+		public String getDatabaseId() {
+			return this.databaseId;
+		}
+
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
 
 		public String getDbaId() {
 			return this.dbaId;
@@ -123,6 +139,70 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 		public void setDbaId(String dbaId) {
 			this.dbaId = dbaId;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
+		}
+
+		public Boolean getLogic() {
+			return this.logic;
+		}
+
+		public void setLogic(Boolean logic) {
+			this.logic = logic;
+		}
+
+		public String getDatalinkName() {
+			return this.datalinkName;
+		}
+
+		public void setDatalinkName(String datalinkName) {
+			this.datalinkName = datalinkName;
+		}
+
+		public Integer getPort() {
+			return this.port;
+		}
+
+		public void setPort(Integer port) {
+			this.port = port;
+		}
+
+		public String getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(String envType) {
+			this.envType = envType;
+		}
+
+		public String getSid() {
+			return this.sid;
+		}
+
+		public void setSid(String sid) {
+			this.sid = sid;
+		}
+
+		public String getEncoding() {
+			return this.encoding;
+		}
+
+		public void setEncoding(String encoding) {
+			this.encoding = encoding;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
 		public String getSearchName() {
@@ -141,84 +221,12 @@ public class SearchDatabaseResponse extends AcsResponse {
 			this.alias = alias;
 		}
 
-		public Integer getPort() {
-			return this.port;
+		public List<String> getOwnerIdList() {
+			return this.ownerIdList;
 		}
 
-		public void setPort(Integer port) {
-			this.port = port;
-		}
-
-		public String getDatalinkName() {
-			return this.datalinkName;
-		}
-
-		public void setDatalinkName(String datalinkName) {
-			this.datalinkName = datalinkName;
-		}
-
-		public String getEncoding() {
-			return this.encoding;
-		}
-
-		public void setEncoding(String encoding) {
-			this.encoding = encoding;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public String getDatabaseId() {
-			return this.databaseId;
-		}
-
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
-		}
-
-		public Boolean getLogic() {
-			return this.logic;
-		}
-
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public String getSid() {
-			return this.sid;
-		}
-
-		public void setSid(String sid) {
-			this.sid = sid;
+		public void setOwnerIdList(List<String> ownerIdList) {
+			this.ownerIdList = ownerIdList;
 		}
 
 		public List<String> getOwnerNameList() {
@@ -227,14 +235,6 @@ public class SearchDatabaseResponse extends AcsResponse {
 
 		public void setOwnerNameList(List<String> ownerNameList) {
 			this.ownerNameList = ownerNameList;
-		}
-
-		public List<String> getOwnerIdList() {
-			return this.ownerIdList;
-		}
-
-		public void setOwnerIdList(List<String> ownerIdList) {
-			this.ownerIdList = ownerIdList;
 		}
 	}
 

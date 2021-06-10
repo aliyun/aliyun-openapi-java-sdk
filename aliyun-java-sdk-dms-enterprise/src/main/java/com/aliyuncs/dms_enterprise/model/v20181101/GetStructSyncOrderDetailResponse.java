@@ -27,11 +27,11 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private StructSyncOrderDetail structSyncOrderDetail;
 
@@ -43,12 +43,12 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public StructSyncOrderDetail getStructSyncOrderDetail() {
@@ -182,23 +182,15 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 
 		public static class SourceDatabaseInfo {
 
-			private String searchName;
-
 			private Long dbId;
 
-			private Boolean logic;
-
-			private String envType;
+			private String searchName;
 
 			private String dbType;
 
-			public String getSearchName() {
-				return this.searchName;
-			}
+			private String envType;
 
-			public void setSearchName(String searchName) {
-				this.searchName = searchName;
-			}
+			private Boolean logic;
 
 			public Long getDbId() {
 				return this.dbId;
@@ -208,12 +200,20 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 				this.dbId = dbId;
 			}
 
-			public Boolean getLogic() {
-				return this.logic;
+			public String getSearchName() {
+				return this.searchName;
 			}
 
-			public void setLogic(Boolean logic) {
-				this.logic = logic;
+			public void setSearchName(String searchName) {
+				this.searchName = searchName;
+			}
+
+			public String getDbType() {
+				return this.dbType;
+			}
+
+			public void setDbType(String dbType) {
+				this.dbType = dbType;
 			}
 
 			public String getEnvType() {
@@ -224,34 +224,26 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 				this.envType = envType;
 			}
 
-			public String getDbType() {
-				return this.dbType;
+			public Boolean getLogic() {
+				return this.logic;
 			}
 
-			public void setDbType(String dbType) {
-				this.dbType = dbType;
+			public void setLogic(Boolean logic) {
+				this.logic = logic;
 			}
 		}
 
 		public static class TargetDatabaseInfo {
 
-			private String searchName;
-
 			private Long dbId;
 
-			private Boolean logic;
-
-			private String envType;
+			private String searchName;
 
 			private String dbType;
 
-			public String getSearchName() {
-				return this.searchName;
-			}
+			private String envType;
 
-			public void setSearchName(String searchName) {
-				this.searchName = searchName;
-			}
+			private Boolean logic;
 
 			public Long getDbId() {
 				return this.dbId;
@@ -261,12 +253,20 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 				this.dbId = dbId;
 			}
 
-			public Boolean getLogic() {
-				return this.logic;
+			public String getSearchName() {
+				return this.searchName;
 			}
 
-			public void setLogic(Boolean logic) {
-				this.logic = logic;
+			public void setSearchName(String searchName) {
+				this.searchName = searchName;
+			}
+
+			public String getDbType() {
+				return this.dbType;
+			}
+
+			public void setDbType(String dbType) {
+				this.dbType = dbType;
 			}
 
 			public String getEnvType() {
@@ -277,12 +277,12 @@ public class GetStructSyncOrderDetailResponse extends AcsResponse {
 				this.envType = envType;
 			}
 
-			public String getDbType() {
-				return this.dbType;
+			public Boolean getLogic() {
+				return this.logic;
 			}
 
-			public void setDbType(String dbType) {
-				this.dbType = dbType;
+			public void setLogic(Boolean logic) {
+				this.logic = logic;
 			}
 		}
 

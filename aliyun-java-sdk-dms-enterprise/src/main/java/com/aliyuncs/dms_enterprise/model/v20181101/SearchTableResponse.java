@@ -87,42 +87,42 @@ public class SearchTableResponse extends AcsResponse {
 
 	public static class SearchTable {
 
-		private String tableId;
+		private String databaseId;
 
 		private String tableName;
 
-		private String tableGuid;
-
-		private String description;
-
-		private String tableSchemaName;
-
-		private String encoding;
-
-		private String dbName;
-
-		private String databaseId;
+		private String dBSearchName;
 
 		private Boolean logic;
 
-		private String dBSearchName;
+		private String envType;
 
-		private String engine;
+		private String dbName;
+
+		private String description;
+
+		private String encoding;
 
 		private String dbType;
 
-		private String envType;
+		private String tableSchemaName;
 
-		private List<String> ownerNameList;
+		private String tableGuid;
+
+		private String engine;
+
+		private String tableId;
 
 		private List<String> ownerIdList;
 
-		public String getTableId() {
-			return this.tableId;
+		private List<String> ownerNameList;
+
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setTableId(String tableId) {
-			this.tableId = tableId;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
 		}
 
 		public String getTableName() {
@@ -133,52 +133,12 @@ public class SearchTableResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getTableGuid() {
-			return this.tableGuid;
+		public String getDBSearchName() {
+			return this.dBSearchName;
 		}
 
-		public void setTableGuid(String tableGuid) {
-			this.tableGuid = tableGuid;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
-
-		public String getTableSchemaName() {
-			return this.tableSchemaName;
-		}
-
-		public void setTableSchemaName(String tableSchemaName) {
-			this.tableSchemaName = tableSchemaName;
-		}
-
-		public String getEncoding() {
-			return this.encoding;
-		}
-
-		public void setEncoding(String encoding) {
-			this.encoding = encoding;
-		}
-
-		public String getDbName() {
-			return this.dbName;
-		}
-
-		public void setDbName(String dbName) {
-			this.dbName = dbName;
-		}
-
-		public String getDatabaseId() {
-			return this.databaseId;
-		}
-
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
+		public void setDBSearchName(String dBSearchName) {
+			this.dBSearchName = dBSearchName;
 		}
 
 		public Boolean getLogic() {
@@ -189,20 +149,36 @@ public class SearchTableResponse extends AcsResponse {
 			this.logic = logic;
 		}
 
-		public String getDBSearchName() {
-			return this.dBSearchName;
+		public String getEnvType() {
+			return this.envType;
 		}
 
-		public void setDBSearchName(String dBSearchName) {
-			this.dBSearchName = dBSearchName;
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 
-		public String getEngine() {
-			return this.engine;
+		public String getDbName() {
+			return this.dbName;
 		}
 
-		public void setEngine(String engine) {
-			this.engine = engine;
+		public void setDbName(String dbName) {
+			this.dbName = dbName;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getEncoding() {
+			return this.encoding;
+		}
+
+		public void setEncoding(String encoding) {
+			this.encoding = encoding;
 		}
 
 		public String getDbType() {
@@ -213,20 +189,36 @@ public class SearchTableResponse extends AcsResponse {
 			this.dbType = dbType;
 		}
 
-		public String getEnvType() {
-			return this.envType;
+		public String getTableSchemaName() {
+			return this.tableSchemaName;
 		}
 
-		public void setEnvType(String envType) {
-			this.envType = envType;
+		public void setTableSchemaName(String tableSchemaName) {
+			this.tableSchemaName = tableSchemaName;
 		}
 
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
+		public String getTableGuid() {
+			return this.tableGuid;
 		}
 
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
+		}
+
+		public String getEngine() {
+			return this.engine;
+		}
+
+		public void setEngine(String engine) {
+			this.engine = engine;
+		}
+
+		public String getTableId() {
+			return this.tableId;
+		}
+
+		public void setTableId(String tableId) {
+			this.tableId = tableId;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -235,6 +227,14 @@ public class SearchTableResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
+		}
+
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
+		}
+
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 	}
 

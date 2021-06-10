@@ -25,25 +25,17 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
-	private Long totalCount;
-
 	private String requestId;
-
-	private String errorCode;
-
-	private String errorMessage;
 
 	private Boolean success;
 
+	private String errorMessage;
+
+	private String errorCode;
+
+	private Long totalCount;
+
 	private List<DBTaskSQLJobDetail> dBTaskSQLJobDetailList;
-
-	public Long getTotalCount() {
-		return this.totalCount;
-	}
-
-	public void setTotalCount(Long totalCount) {
-		this.totalCount = totalCount;
-	}
 
 	public String getRequestId() {
 		return this.requestId;
@@ -53,12 +45,12 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -69,12 +61,20 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
 	}
 
 	public List<DBTaskSQLJobDetail> getDBTaskSQLJobDetailList() {
@@ -87,70 +87,30 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
 	public static class DBTaskSQLJobDetail {
 
-		private String status;
-
-		private Boolean skip;
-
-		private Long dbId;
-
-		private String sqlType;
-
-		private Long executeCount;
-
-		private Boolean logic;
+		private Long jobDetailId;
 
 		private String currentSql;
 
-		private Long jobDetailId;
+		private Long executeCount;
 
 		private Long jobId;
 
-		public String getStatus() {
-			return this.status;
+		private Long dbId;
+
+		private Boolean logic;
+
+		private Boolean skip;
+
+		private String sqlType;
+
+		private String status;
+
+		public Long getJobDetailId() {
+			return this.jobDetailId;
 		}
 
-		public void setStatus(String status) {
-			this.status = status;
-		}
-
-		public Boolean getSkip() {
-			return this.skip;
-		}
-
-		public void setSkip(Boolean skip) {
-			this.skip = skip;
-		}
-
-		public Long getDbId() {
-			return this.dbId;
-		}
-
-		public void setDbId(Long dbId) {
-			this.dbId = dbId;
-		}
-
-		public String getSqlType() {
-			return this.sqlType;
-		}
-
-		public void setSqlType(String sqlType) {
-			this.sqlType = sqlType;
-		}
-
-		public Long getExecuteCount() {
-			return this.executeCount;
-		}
-
-		public void setExecuteCount(Long executeCount) {
-			this.executeCount = executeCount;
-		}
-
-		public Boolean getLogic() {
-			return this.logic;
-		}
-
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
+		public void setJobDetailId(Long jobDetailId) {
+			this.jobDetailId = jobDetailId;
 		}
 
 		public String getCurrentSql() {
@@ -161,12 +121,12 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 			this.currentSql = currentSql;
 		}
 
-		public Long getJobDetailId() {
-			return this.jobDetailId;
+		public Long getExecuteCount() {
+			return this.executeCount;
 		}
 
-		public void setJobDetailId(Long jobDetailId) {
-			this.jobDetailId = jobDetailId;
+		public void setExecuteCount(Long executeCount) {
+			this.executeCount = executeCount;
 		}
 
 		public Long getJobId() {
@@ -175,6 +135,46 @@ public class ListDBTaskSQLJobDetailResponse extends AcsResponse {
 
 		public void setJobId(Long jobId) {
 			this.jobId = jobId;
+		}
+
+		public Long getDbId() {
+			return this.dbId;
+		}
+
+		public void setDbId(Long dbId) {
+			this.dbId = dbId;
+		}
+
+		public Boolean getLogic() {
+			return this.logic;
+		}
+
+		public void setLogic(Boolean logic) {
+			this.logic = logic;
+		}
+
+		public Boolean getSkip() {
+			return this.skip;
+		}
+
+		public void setSkip(Boolean skip) {
+			this.skip = skip;
+		}
+
+		public String getSqlType() {
+			return this.sqlType;
+		}
+
+		public void setSqlType(String sqlType) {
+			this.sqlType = sqlType;
+		}
+
+		public String getStatus() {
+			return this.status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
 		}
 	}
 

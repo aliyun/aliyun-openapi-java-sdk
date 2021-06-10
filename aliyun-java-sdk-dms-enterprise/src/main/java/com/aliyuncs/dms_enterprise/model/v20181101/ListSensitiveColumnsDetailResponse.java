@@ -77,32 +77,32 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 
 	public static class SensitiveColumnsDetail {
 
-		private String tableName;
+		private Long dbId;
 
 		private String columnName;
 
-		private String columnType;
-
-		private String searchName;
-
 		private String columnDescription;
 
-		private Long dbId;
-
-		private Boolean logic;
-
-		private String envType;
-
-		private String schemaName;
+		private String tableName;
 
 		private String dbType;
 
-		public String getTableName() {
-			return this.tableName;
+		private String columnType;
+
+		private Boolean logic;
+
+		private String schemaName;
+
+		private String searchName;
+
+		private String envType;
+
+		public Long getDbId() {
+			return this.dbId;
 		}
 
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
+		public void setDbId(Long dbId) {
+			this.dbId = dbId;
 		}
 
 		public String getColumnName() {
@@ -113,22 +113,6 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.columnName = columnName;
 		}
 
-		public String getColumnType() {
-			return this.columnType;
-		}
-
-		public void setColumnType(String columnType) {
-			this.columnType = columnType;
-		}
-
-		public String getSearchName() {
-			return this.searchName;
-		}
-
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
-		}
-
 		public String getColumnDescription() {
 			return this.columnDescription;
 		}
@@ -137,12 +121,28 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.columnDescription = columnDescription;
 		}
 
-		public Long getDbId() {
-			return this.dbId;
+		public String getTableName() {
+			return this.tableName;
 		}
 
-		public void setDbId(Long dbId) {
-			this.dbId = dbId;
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
+		}
+
+		public String getDbType() {
+			return this.dbType;
+		}
+
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
+		}
+
+		public String getColumnType() {
+			return this.columnType;
+		}
+
+		public void setColumnType(String columnType) {
+			this.columnType = columnType;
 		}
 
 		public Boolean getLogic() {
@@ -153,14 +153,6 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.logic = logic;
 		}
 
-		public String getEnvType() {
-			return this.envType;
-		}
-
-		public void setEnvType(String envType) {
-			this.envType = envType;
-		}
-
 		public String getSchemaName() {
 			return this.schemaName;
 		}
@@ -169,12 +161,20 @@ public class ListSensitiveColumnsDetailResponse extends AcsResponse {
 			this.schemaName = schemaName;
 		}
 
-		public String getDbType() {
-			return this.dbType;
+		public String getSearchName() {
+			return this.searchName;
 		}
 
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
+		}
+
+		public String getEnvType() {
+			return this.envType;
+		}
+
+		public void setEnvType(String envType) {
+			this.envType = envType;
 		}
 	}
 

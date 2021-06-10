@@ -23,10 +23,10 @@ public class GetDataCorrectSQLFileResponseUnmarshaller {
 	public static GetDataCorrectSQLFileResponse unmarshall(GetDataCorrectSQLFileResponse getDataCorrectSQLFileResponse, UnmarshallerContext _ctx) {
 		
 		getDataCorrectSQLFileResponse.setRequestId(_ctx.stringValue("GetDataCorrectSQLFileResponse.RequestId"));
-		getDataCorrectSQLFileResponse.setFileUrl(_ctx.stringValue("GetDataCorrectSQLFileResponse.FileUrl"));
-		getDataCorrectSQLFileResponse.setErrorCode(_ctx.stringValue("GetDataCorrectSQLFileResponse.ErrorCode"));
-		getDataCorrectSQLFileResponse.setErrorMessage(_ctx.stringValue("GetDataCorrectSQLFileResponse.ErrorMessage"));
 		getDataCorrectSQLFileResponse.setSuccess(_ctx.booleanValue("GetDataCorrectSQLFileResponse.Success"));
+		getDataCorrectSQLFileResponse.setErrorMessage(_ctx.stringValue("GetDataCorrectSQLFileResponse.ErrorMessage"));
+		getDataCorrectSQLFileResponse.setErrorCode(_ctx.stringValue("GetDataCorrectSQLFileResponse.ErrorCode"));
+		getDataCorrectSQLFileResponse.setFileUrl(_ctx.stringValue("GetDataCorrectSQLFileResponse.FileUrl"));
 	 
 	 	return getDataCorrectSQLFileResponse;
 	}

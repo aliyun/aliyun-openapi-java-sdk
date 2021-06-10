@@ -34,18 +34,18 @@ public class GetMetaTableColumnResponseUnmarshaller {
 		List<Column> columnList = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableColumnResponse.ColumnList.Length"); i++) {
 			Column column = new Column();
+			column.setColumnType(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnType"));
+			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].AutoIncrement"));
 			column.setColumnId(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnId"));
 			column.setColumnName(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnName"));
-			column.setDescription(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Description"));
-			column.setColumnType(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].ColumnType"));
-			column.setPosition(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Position"));
-			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].AutoIncrement"));
 			column.setSecurityLevel(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].SecurityLevel"));
-			column.setDataLength(_ctx.longValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataLength"));
-			column.setDataScale(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataScale"));
-			column.setDataPrecision(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataPrecision"));
 			column.setPrimaryKey(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].PrimaryKey"));
+			column.setDescription(_ctx.stringValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Description"));
+			column.setDataPrecision(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataPrecision"));
+			column.setDataScale(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataScale"));
+			column.setPosition(_ctx.integerValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Position"));
 			column.setNullable(_ctx.booleanValue("GetMetaTableColumnResponse.ColumnList["+ i +"].Nullable"));
+			column.setDataLength(_ctx.longValue("GetMetaTableColumnResponse.ColumnList["+ i +"].DataLength"));
 
 			columnList.add(column);
 		}

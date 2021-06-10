@@ -28,28 +28,28 @@ public class GetTableTopologyResponseUnmarshaller {
 	public static GetTableTopologyResponse unmarshall(GetTableTopologyResponse getTableTopologyResponse, UnmarshallerContext _ctx) {
 		
 		getTableTopologyResponse.setRequestId(_ctx.stringValue("GetTableTopologyResponse.RequestId"));
-		getTableTopologyResponse.setErrorCode(_ctx.stringValue("GetTableTopologyResponse.ErrorCode"));
-		getTableTopologyResponse.setErrorMessage(_ctx.stringValue("GetTableTopologyResponse.ErrorMessage"));
 		getTableTopologyResponse.setSuccess(_ctx.booleanValue("GetTableTopologyResponse.Success"));
+		getTableTopologyResponse.setErrorMessage(_ctx.stringValue("GetTableTopologyResponse.ErrorMessage"));
+		getTableTopologyResponse.setErrorCode(_ctx.stringValue("GetTableTopologyResponse.ErrorCode"));
 
 		TableTopology tableTopology = new TableTopology();
-		tableTopology.setTableName(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableName"));
 		tableTopology.setTableGuid(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableGuid"));
+		tableTopology.setTableName(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableName"));
 		tableTopology.setLogic(_ctx.booleanValue("GetTableTopologyResponse.TableTopology.Logic"));
 
 		List<TableTopologyInfo> tableTopologyInfoList = new ArrayList<TableTopologyInfo>();
 		for (int i = 0; i < _ctx.lengthValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList.Length"); i++) {
 			TableTopologyInfo tableTopologyInfo = new TableTopologyInfo();
-			tableTopologyInfo.setTableNameExpr(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].TableNameExpr"));
-			tableTopologyInfo.setDbSearchName(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].DbSearchName"));
-			tableTopologyInfo.setInstanceSource(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].InstanceSource"));
-			tableTopologyInfo.setInstanceResourceId(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].InstanceResourceId"));
-			tableTopologyInfo.setInstanceId(_ctx.longValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].InstanceId"));
 			tableTopologyInfo.setTableNameList(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].TableNameList"));
+			tableTopologyInfo.setTableNameExpr(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].TableNameExpr"));
 			tableTopologyInfo.setTableCount(_ctx.longValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].TableCount"));
 			tableTopologyInfo.setDbId(_ctx.longValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].DbId"));
-			tableTopologyInfo.setDbName(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].DbName"));
+			tableTopologyInfo.setDbSearchName(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].DbSearchName"));
+			tableTopologyInfo.setInstanceId(_ctx.longValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].InstanceId"));
 			tableTopologyInfo.setRegionId(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].RegionId"));
+			tableTopologyInfo.setInstanceResourceId(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].InstanceResourceId"));
+			tableTopologyInfo.setInstanceSource(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].InstanceSource"));
+			tableTopologyInfo.setDbName(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].DbName"));
 			tableTopologyInfo.setDbType(_ctx.stringValue("GetTableTopologyResponse.TableTopology.TableTopologyInfoList["+ i +"].DbType"));
 
 			tableTopologyInfoList.add(tableTopologyInfo);

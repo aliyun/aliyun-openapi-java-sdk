@@ -24,16 +24,16 @@ public class GetStructSyncJobDetailResponseUnmarshaller {
 	public static GetStructSyncJobDetailResponse unmarshall(GetStructSyncJobDetailResponse getStructSyncJobDetailResponse, UnmarshallerContext _ctx) {
 		
 		getStructSyncJobDetailResponse.setRequestId(_ctx.stringValue("GetStructSyncJobDetailResponse.RequestId"));
-		getStructSyncJobDetailResponse.setErrorCode(_ctx.stringValue("GetStructSyncJobDetailResponse.ErrorCode"));
-		getStructSyncJobDetailResponse.setErrorMessage(_ctx.stringValue("GetStructSyncJobDetailResponse.ErrorMessage"));
 		getStructSyncJobDetailResponse.setSuccess(_ctx.booleanValue("GetStructSyncJobDetailResponse.Success"));
+		getStructSyncJobDetailResponse.setErrorMessage(_ctx.stringValue("GetStructSyncJobDetailResponse.ErrorMessage"));
+		getStructSyncJobDetailResponse.setErrorCode(_ctx.stringValue("GetStructSyncJobDetailResponse.ErrorCode"));
 
 		StructSyncJobDetail structSyncJobDetail = new StructSyncJobDetail();
-		structSyncJobDetail.setSqlCount(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.SqlCount"));
 		structSyncJobDetail.setJobStatus(_ctx.stringValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.JobStatus"));
 		structSyncJobDetail.setMessage(_ctx.stringValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.Message"));
 		structSyncJobDetail.setTableAnalyzed(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.TableAnalyzed"));
 		structSyncJobDetail.setTableCount(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.TableCount"));
+		structSyncJobDetail.setSqlCount(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.SqlCount"));
 		structSyncJobDetail.setExecuteCount(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.ExecuteCount"));
 		structSyncJobDetail.setSecurityRule(_ctx.stringValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.SecurityRule"));
 		structSyncJobDetail.setDBTaskGroupId(_ctx.longValue("GetStructSyncJobDetailResponse.StructSyncJobDetail.DBTaskGroupId"));

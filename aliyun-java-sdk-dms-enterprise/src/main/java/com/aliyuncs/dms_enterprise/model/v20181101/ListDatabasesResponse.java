@@ -87,44 +87,92 @@ public class ListDatabasesResponse extends AcsResponse {
 
 	public static class Database {
 
-		private String searchName;
+		private String databaseId;
+
+		private String host;
+
+		private String catalogName;
+
+		private String dbaName;
+
+		private String state;
+
+		private String dbaId;
+
+		private String schemaName;
 
 		private String instanceId;
 
 		private Integer port;
 
-		private String encoding;
-
-		private String host;
-
-		private String databaseId;
-
-		private String dbType;
-
 		private String envType;
 
 		private String sid;
 
-		private String dbaName;
+		private String encoding;
 
-		private String dbaId;
+		private String dbType;
 
-		private String state;
-
-		private String catalogName;
-
-		private String schemaName;
-
-		private List<String> ownerNameList;
+		private String searchName;
 
 		private List<String> ownerIdList;
 
-		public String getSearchName() {
-			return this.searchName;
+		private List<String> ownerNameList;
+
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setSearchName(String searchName) {
-			this.searchName = searchName;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
+		}
+
+		public String getHost() {
+			return this.host;
+		}
+
+		public void setHost(String host) {
+			this.host = host;
+		}
+
+		public String getCatalogName() {
+			return this.catalogName;
+		}
+
+		public void setCatalogName(String catalogName) {
+			this.catalogName = catalogName;
+		}
+
+		public String getDbaName() {
+			return this.dbaName;
+		}
+
+		public void setDbaName(String dbaName) {
+			this.dbaName = dbaName;
+		}
+
+		public String getState() {
+			return this.state;
+		}
+
+		public void setState(String state) {
+			this.state = state;
+		}
+
+		public String getDbaId() {
+			return this.dbaId;
+		}
+
+		public void setDbaId(String dbaId) {
+			this.dbaId = dbaId;
+		}
+
+		public String getSchemaName() {
+			return this.schemaName;
+		}
+
+		public void setSchemaName(String schemaName) {
+			this.schemaName = schemaName;
 		}
 
 		public String getInstanceId() {
@@ -143,38 +191,6 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.port = port;
 		}
 
-		public String getEncoding() {
-			return this.encoding;
-		}
-
-		public void setEncoding(String encoding) {
-			this.encoding = encoding;
-		}
-
-		public String getHost() {
-			return this.host;
-		}
-
-		public void setHost(String host) {
-			this.host = host;
-		}
-
-		public String getDatabaseId() {
-			return this.databaseId;
-		}
-
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
-		}
-
-		public String getDbType() {
-			return this.dbType;
-		}
-
-		public void setDbType(String dbType) {
-			this.dbType = dbType;
-		}
-
 		public String getEnvType() {
 			return this.envType;
 		}
@@ -191,52 +207,28 @@ public class ListDatabasesResponse extends AcsResponse {
 			this.sid = sid;
 		}
 
-		public String getDbaName() {
-			return this.dbaName;
+		public String getEncoding() {
+			return this.encoding;
 		}
 
-		public void setDbaName(String dbaName) {
-			this.dbaName = dbaName;
+		public void setEncoding(String encoding) {
+			this.encoding = encoding;
 		}
 
-		public String getDbaId() {
-			return this.dbaId;
+		public String getDbType() {
+			return this.dbType;
 		}
 
-		public void setDbaId(String dbaId) {
-			this.dbaId = dbaId;
+		public void setDbType(String dbType) {
+			this.dbType = dbType;
 		}
 
-		public String getState() {
-			return this.state;
+		public String getSearchName() {
+			return this.searchName;
 		}
 
-		public void setState(String state) {
-			this.state = state;
-		}
-
-		public String getCatalogName() {
-			return this.catalogName;
-		}
-
-		public void setCatalogName(String catalogName) {
-			this.catalogName = catalogName;
-		}
-
-		public String getSchemaName() {
-			return this.schemaName;
-		}
-
-		public void setSchemaName(String schemaName) {
-			this.schemaName = schemaName;
-		}
-
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
-		}
-
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
+		public void setSearchName(String searchName) {
+			this.searchName = searchName;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -245,6 +237,14 @@ public class ListDatabasesResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
+		}
+
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
+		}
+
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 	}
 

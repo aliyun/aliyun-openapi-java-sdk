@@ -78,9 +78,9 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 
 		private String status;
 
-		private String tenantName;
-
 		private Long tid;
+
+		private String tenantName;
 
 		public String getStatus() {
 			return this.status;
@@ -90,20 +90,20 @@ public class GetUserActiveTenantResponse extends AcsResponse {
 			this.status = status;
 		}
 
-		public String getTenantName() {
-			return this.tenantName;
-		}
-
-		public void setTenantName(String tenantName) {
-			this.tenantName = tenantName;
-		}
-
 		public Long getTid() {
 			return this.tid;
 		}
 
 		public void setTid(Long tid) {
 			this.tid = tid;
+		}
+
+		public String getTenantName() {
+			return this.tenantName;
+		}
+
+		public void setTenantName(String tenantName) {
+			this.tenantName = tenantName;
 		}
 	}
 

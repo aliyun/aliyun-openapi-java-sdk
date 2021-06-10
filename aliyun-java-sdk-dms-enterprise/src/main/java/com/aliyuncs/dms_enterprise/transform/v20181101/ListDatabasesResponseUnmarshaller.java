@@ -35,32 +35,32 @@ public class ListDatabasesResponseUnmarshaller {
 		List<Database> databaseList = new ArrayList<Database>();
 		for (int i = 0; i < _ctx.lengthValue("ListDatabasesResponse.DatabaseList.Length"); i++) {
 			Database database = new Database();
-			database.setSearchName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SearchName"));
+			database.setDatabaseId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DatabaseId"));
+			database.setHost(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Host"));
+			database.setCatalogName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].CatalogName"));
+			database.setDbaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbaName"));
+			database.setState(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].State"));
+			database.setDbaId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbaId"));
+			database.setSchemaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SchemaName"));
 			database.setInstanceId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].InstanceId"));
 			database.setPort(_ctx.integerValue("ListDatabasesResponse.DatabaseList["+ i +"].Port"));
-			database.setEncoding(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Encoding"));
-			database.setHost(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Host"));
-			database.setDatabaseId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DatabaseId"));
-			database.setDbType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbType"));
 			database.setEnvType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].EnvType"));
 			database.setSid(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Sid"));
-			database.setDbaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbaName"));
-			database.setDbaId(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbaId"));
-			database.setState(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].State"));
-			database.setCatalogName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].CatalogName"));
-			database.setSchemaName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SchemaName"));
-
-			List<String> ownerNameList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerNameList.Length"); j++) {
-				ownerNameList.add(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerNameList["+ j +"]"));
-			}
-			database.setOwnerNameList(ownerNameList);
+			database.setEncoding(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].Encoding"));
+			database.setDbType(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].DbType"));
+			database.setSearchName(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].SearchName"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerIdList.Length"); j++) {
 				ownerIdList.add(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerIdList["+ j +"]"));
 			}
 			database.setOwnerIdList(ownerIdList);
+
+			List<String> ownerNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerNameList.Length"); j++) {
+				ownerNameList.add(_ctx.stringValue("ListDatabasesResponse.DatabaseList["+ i +"].OwnerNameList["+ j +"]"));
+			}
+			database.setOwnerNameList(ownerNameList);
 
 			databaseList.add(database);
 		}

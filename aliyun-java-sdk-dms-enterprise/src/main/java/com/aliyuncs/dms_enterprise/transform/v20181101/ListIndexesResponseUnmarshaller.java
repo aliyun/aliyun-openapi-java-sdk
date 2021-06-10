@@ -34,11 +34,11 @@ public class ListIndexesResponseUnmarshaller {
 		List<Index> indexList = new ArrayList<Index>();
 		for (int i = 0; i < _ctx.lengthValue("ListIndexesResponse.IndexList.Length"); i++) {
 			Index index = new Index();
-			index.setTableId(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].TableId"));
 			index.setIndexName(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexName"));
+			index.setIndexType(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexType"));
+			index.setTableId(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].TableId"));
 			index.setIndexId(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexId"));
 			index.setIndexComment(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexComment"));
-			index.setIndexType(_ctx.stringValue("ListIndexesResponse.IndexList["+ i +"].IndexType"));
 
 			indexList.add(index);
 		}

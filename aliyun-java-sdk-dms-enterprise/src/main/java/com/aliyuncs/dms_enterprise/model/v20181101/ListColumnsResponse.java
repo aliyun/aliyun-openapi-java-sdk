@@ -77,63 +77,31 @@ public class ListColumnsResponse extends AcsResponse {
 
 	public static class Column {
 
-		private String columnId;
-
-		private String columnName;
-
-		private String defaultValue;
-
-		private String description;
-
 		private String columnType;
 
 		private Boolean autoIncrement;
 
-		private String functionType;
+		private String columnId;
 
-		private String securityLevel;
-
-		private Long dataLength;
-
-		private Integer dataScale;
-
-		private Integer dataPrecision;
+		private String defaultValue;
 
 		private Boolean sensitive;
 
+		private String columnName;
+
+		private String securityLevel;
+
+		private String description;
+
+		private Integer dataPrecision;
+
+		private Integer dataScale;
+
+		private String functionType;
+
 		private Boolean nullable;
 
-		public String getColumnId() {
-			return this.columnId;
-		}
-
-		public void setColumnId(String columnId) {
-			this.columnId = columnId;
-		}
-
-		public String getColumnName() {
-			return this.columnName;
-		}
-
-		public void setColumnName(String columnName) {
-			this.columnName = columnName;
-		}
-
-		public String getDefaultValue() {
-			return this.defaultValue;
-		}
-
-		public void setDefaultValue(String defaultValue) {
-			this.defaultValue = defaultValue;
-		}
-
-		public String getDescription() {
-			return this.description;
-		}
-
-		public void setDescription(String description) {
-			this.description = description;
-		}
+		private Long dataLength;
 
 		public String getColumnType() {
 			return this.columnType;
@@ -151,44 +119,20 @@ public class ListColumnsResponse extends AcsResponse {
 			this.autoIncrement = autoIncrement;
 		}
 
-		public String getFunctionType() {
-			return this.functionType;
+		public String getColumnId() {
+			return this.columnId;
 		}
 
-		public void setFunctionType(String functionType) {
-			this.functionType = functionType;
+		public void setColumnId(String columnId) {
+			this.columnId = columnId;
 		}
 
-		public String getSecurityLevel() {
-			return this.securityLevel;
+		public String getDefaultValue() {
+			return this.defaultValue;
 		}
 
-		public void setSecurityLevel(String securityLevel) {
-			this.securityLevel = securityLevel;
-		}
-
-		public Long getDataLength() {
-			return this.dataLength;
-		}
-
-		public void setDataLength(Long dataLength) {
-			this.dataLength = dataLength;
-		}
-
-		public Integer getDataScale() {
-			return this.dataScale;
-		}
-
-		public void setDataScale(Integer dataScale) {
-			this.dataScale = dataScale;
-		}
-
-		public Integer getDataPrecision() {
-			return this.dataPrecision;
-		}
-
-		public void setDataPrecision(Integer dataPrecision) {
-			this.dataPrecision = dataPrecision;
+		public void setDefaultValue(String defaultValue) {
+			this.defaultValue = defaultValue;
 		}
 
 		public Boolean getSensitive() {
@@ -199,12 +143,68 @@ public class ListColumnsResponse extends AcsResponse {
 			this.sensitive = sensitive;
 		}
 
+		public String getColumnName() {
+			return this.columnName;
+		}
+
+		public void setColumnName(String columnName) {
+			this.columnName = columnName;
+		}
+
+		public String getSecurityLevel() {
+			return this.securityLevel;
+		}
+
+		public void setSecurityLevel(String securityLevel) {
+			this.securityLevel = securityLevel;
+		}
+
+		public String getDescription() {
+			return this.description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public Integer getDataPrecision() {
+			return this.dataPrecision;
+		}
+
+		public void setDataPrecision(Integer dataPrecision) {
+			this.dataPrecision = dataPrecision;
+		}
+
+		public Integer getDataScale() {
+			return this.dataScale;
+		}
+
+		public void setDataScale(Integer dataScale) {
+			this.dataScale = dataScale;
+		}
+
+		public String getFunctionType() {
+			return this.functionType;
+		}
+
+		public void setFunctionType(String functionType) {
+			this.functionType = functionType;
+		}
+
 		public Boolean getNullable() {
 			return this.nullable;
 		}
 
 		public void setNullable(Boolean nullable) {
 			this.nullable = nullable;
+		}
+
+		public Long getDataLength() {
+			return this.dataLength;
+		}
+
+		public void setDataLength(Long dataLength) {
+			this.dataLength = dataLength;
 		}
 	}
 

@@ -32,32 +32,32 @@ public class GetPhysicalDatabaseResponseUnmarshaller {
 		getPhysicalDatabaseResponse.setSuccess(_ctx.booleanValue("GetPhysicalDatabaseResponse.Success"));
 
 		Database database = new Database();
-		database.setSearchName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.SearchName"));
+		database.setDatabaseId(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DatabaseId"));
+		database.setHost(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.Host"));
+		database.setCatalogName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.CatalogName"));
+		database.setDbaName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbaName"));
+		database.setState(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.State"));
+		database.setDbaId(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbaId"));
+		database.setSchemaName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.SchemaName"));
 		database.setInstanceId(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.InstanceId"));
 		database.setPort(_ctx.integerValue("GetPhysicalDatabaseResponse.Database.Port"));
-		database.setEncoding(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.Encoding"));
-		database.setHost(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.Host"));
-		database.setDatabaseId(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DatabaseId"));
-		database.setDbType(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbType"));
 		database.setEnvType(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.EnvType"));
 		database.setSid(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.Sid"));
-		database.setDbaName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbaName"));
-		database.setDbaId(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbaId"));
-		database.setState(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.State"));
-		database.setCatalogName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.CatalogName"));
-		database.setSchemaName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.SchemaName"));
-
-		List<String> ownerNameList = new ArrayList<String>();
-		for (int i = 0; i < _ctx.lengthValue("GetPhysicalDatabaseResponse.Database.OwnerNameList.Length"); i++) {
-			ownerNameList.add(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.OwnerNameList["+ i +"]"));
-		}
-		database.setOwnerNameList(ownerNameList);
+		database.setEncoding(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.Encoding"));
+		database.setDbType(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.DbType"));
+		database.setSearchName(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.SearchName"));
 
 		List<String> ownerIdList = new ArrayList<String>();
 		for (int i = 0; i < _ctx.lengthValue("GetPhysicalDatabaseResponse.Database.OwnerIdList.Length"); i++) {
 			ownerIdList.add(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.OwnerIdList["+ i +"]"));
 		}
 		database.setOwnerIdList(ownerIdList);
+
+		List<String> ownerNameList = new ArrayList<String>();
+		for (int i = 0; i < _ctx.lengthValue("GetPhysicalDatabaseResponse.Database.OwnerNameList.Length"); i++) {
+			ownerNameList.add(_ctx.stringValue("GetPhysicalDatabaseResponse.Database.OwnerNameList["+ i +"]"));
+		}
+		database.setOwnerNameList(ownerNameList);
 		getPhysicalDatabaseResponse.setDatabase(database);
 	 
 	 	return getPhysicalDatabaseResponse;

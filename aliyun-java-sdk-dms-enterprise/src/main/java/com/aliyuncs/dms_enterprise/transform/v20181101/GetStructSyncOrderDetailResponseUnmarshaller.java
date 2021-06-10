@@ -32,9 +32,9 @@ public class GetStructSyncOrderDetailResponseUnmarshaller {
 	public static GetStructSyncOrderDetailResponse unmarshall(GetStructSyncOrderDetailResponse getStructSyncOrderDetailResponse, UnmarshallerContext _ctx) {
 		
 		getStructSyncOrderDetailResponse.setRequestId(_ctx.stringValue("GetStructSyncOrderDetailResponse.RequestId"));
-		getStructSyncOrderDetailResponse.setErrorCode(_ctx.stringValue("GetStructSyncOrderDetailResponse.ErrorCode"));
-		getStructSyncOrderDetailResponse.setErrorMessage(_ctx.stringValue("GetStructSyncOrderDetailResponse.ErrorMessage"));
 		getStructSyncOrderDetailResponse.setSuccess(_ctx.booleanValue("GetStructSyncOrderDetailResponse.Success"));
+		getStructSyncOrderDetailResponse.setErrorMessage(_ctx.stringValue("GetStructSyncOrderDetailResponse.ErrorMessage"));
+		getStructSyncOrderDetailResponse.setErrorCode(_ctx.stringValue("GetStructSyncOrderDetailResponse.ErrorCode"));
 
 		StructSyncOrderDetail structSyncOrderDetail = new StructSyncOrderDetail();
 		structSyncOrderDetail.setSourceType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceType"));
@@ -42,19 +42,19 @@ public class GetStructSyncOrderDetailResponseUnmarshaller {
 		structSyncOrderDetail.setIgnoreError(_ctx.booleanValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.IgnoreError"));
 
 		SourceDatabaseInfo sourceDatabaseInfo = new SourceDatabaseInfo();
-		sourceDatabaseInfo.setSearchName(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.SearchName"));
 		sourceDatabaseInfo.setDbId(_ctx.longValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.DbId"));
-		sourceDatabaseInfo.setLogic(_ctx.booleanValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.Logic"));
-		sourceDatabaseInfo.setEnvType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.EnvType"));
+		sourceDatabaseInfo.setSearchName(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.SearchName"));
 		sourceDatabaseInfo.setDbType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.DbType"));
+		sourceDatabaseInfo.setEnvType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.EnvType"));
+		sourceDatabaseInfo.setLogic(_ctx.booleanValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.SourceDatabaseInfo.Logic"));
 		structSyncOrderDetail.setSourceDatabaseInfo(sourceDatabaseInfo);
 
 		TargetDatabaseInfo targetDatabaseInfo = new TargetDatabaseInfo();
-		targetDatabaseInfo.setSearchName(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.SearchName"));
 		targetDatabaseInfo.setDbId(_ctx.longValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.DbId"));
-		targetDatabaseInfo.setLogic(_ctx.booleanValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.Logic"));
-		targetDatabaseInfo.setEnvType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.EnvType"));
+		targetDatabaseInfo.setSearchName(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.SearchName"));
 		targetDatabaseInfo.setDbType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.DbType"));
+		targetDatabaseInfo.setEnvType(_ctx.stringValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.EnvType"));
+		targetDatabaseInfo.setLogic(_ctx.booleanValue("GetStructSyncOrderDetailResponse.StructSyncOrderDetail.TargetDatabaseInfo.Logic"));
 		structSyncOrderDetail.setTargetDatabaseInfo(targetDatabaseInfo);
 
 		SourceVersionInfo sourceVersionInfo = new SourceVersionInfo();

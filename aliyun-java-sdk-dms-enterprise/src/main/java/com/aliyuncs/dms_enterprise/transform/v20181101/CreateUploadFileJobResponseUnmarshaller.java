@@ -23,10 +23,10 @@ public class CreateUploadFileJobResponseUnmarshaller {
 	public static CreateUploadFileJobResponse unmarshall(CreateUploadFileJobResponse createUploadFileJobResponse, UnmarshallerContext _ctx) {
 		
 		createUploadFileJobResponse.setRequestId(_ctx.stringValue("CreateUploadFileJobResponse.RequestId"));
-		createUploadFileJobResponse.setJobKey(_ctx.stringValue("CreateUploadFileJobResponse.JobKey"));
-		createUploadFileJobResponse.setErrorCode(_ctx.stringValue("CreateUploadFileJobResponse.ErrorCode"));
-		createUploadFileJobResponse.setErrorMessage(_ctx.stringValue("CreateUploadFileJobResponse.ErrorMessage"));
 		createUploadFileJobResponse.setSuccess(_ctx.booleanValue("CreateUploadFileJobResponse.Success"));
+		createUploadFileJobResponse.setErrorMessage(_ctx.stringValue("CreateUploadFileJobResponse.ErrorMessage"));
+		createUploadFileJobResponse.setErrorCode(_ctx.stringValue("CreateUploadFileJobResponse.ErrorCode"));
+		createUploadFileJobResponse.setJobKey(_ctx.stringValue("CreateUploadFileJobResponse.JobKey"));
 	 
 	 	return createUploadFileJobResponse;
 	}

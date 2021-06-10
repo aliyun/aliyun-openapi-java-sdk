@@ -26,11 +26,11 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private StructSyncJobDetail structSyncJobDetail;
 
@@ -42,12 +42,12 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -58,12 +58,12 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public StructSyncJobDetail getStructSyncJobDetail() {
@@ -76,8 +76,6 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 	public static class StructSyncJobDetail {
 
-		private Long sqlCount;
-
 		private String jobStatus;
 
 		private String message;
@@ -86,19 +84,13 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 		private Long tableCount;
 
+		private Long sqlCount;
+
 		private Long executeCount;
 
 		private String securityRule;
 
 		private Long dBTaskGroupId;
-
-		public Long getSqlCount() {
-			return this.sqlCount;
-		}
-
-		public void setSqlCount(Long sqlCount) {
-			this.sqlCount = sqlCount;
-		}
 
 		public String getJobStatus() {
 			return this.jobStatus;
@@ -130,6 +122,14 @@ public class GetStructSyncJobDetailResponse extends AcsResponse {
 
 		public void setTableCount(Long tableCount) {
 			this.tableCount = tableCount;
+		}
+
+		public Long getSqlCount() {
+			return this.sqlCount;
+		}
+
+		public void setSqlCount(Long sqlCount) {
+			this.sqlCount = sqlCount;
 		}
 
 		public Long getExecuteCount() {

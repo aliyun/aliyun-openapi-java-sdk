@@ -77,17 +77,9 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 
 	public static class DetailInfo {
 
-		private List<Column> columnList;
-
 		private List<Index> indexList;
 
-		public List<Column> getColumnList() {
-			return this.columnList;
-		}
-
-		public void setColumnList(List<Column> columnList) {
-			this.columnList = columnList;
-		}
+		private List<Column> columnList;
 
 		public List<Index> getIndexList() {
 			return this.indexList;
@@ -97,118 +89,23 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 			this.indexList = indexList;
 		}
 
-		public static class Column {
+		public List<Column> getColumnList() {
+			return this.columnList;
+		}
 
-			private String columnId;
-
-			private String columnName;
-
-			private String columnType;
-
-			private String description;
-
-			private String position;
-
-			private Boolean autoIncrement;
-
-			private Long dataLength;
-
-			private Integer dataScale;
-
-			private Integer dataPrecision;
-
-			private Boolean nullable;
-
-			public String getColumnId() {
-				return this.columnId;
-			}
-
-			public void setColumnId(String columnId) {
-				this.columnId = columnId;
-			}
-
-			public String getColumnName() {
-				return this.columnName;
-			}
-
-			public void setColumnName(String columnName) {
-				this.columnName = columnName;
-			}
-
-			public String getColumnType() {
-				return this.columnType;
-			}
-
-			public void setColumnType(String columnType) {
-				this.columnType = columnType;
-			}
-
-			public String getDescription() {
-				return this.description;
-			}
-
-			public void setDescription(String description) {
-				this.description = description;
-			}
-
-			public String getPosition() {
-				return this.position;
-			}
-
-			public void setPosition(String position) {
-				this.position = position;
-			}
-
-			public Boolean getAutoIncrement() {
-				return this.autoIncrement;
-			}
-
-			public void setAutoIncrement(Boolean autoIncrement) {
-				this.autoIncrement = autoIncrement;
-			}
-
-			public Long getDataLength() {
-				return this.dataLength;
-			}
-
-			public void setDataLength(Long dataLength) {
-				this.dataLength = dataLength;
-			}
-
-			public Integer getDataScale() {
-				return this.dataScale;
-			}
-
-			public void setDataScale(Integer dataScale) {
-				this.dataScale = dataScale;
-			}
-
-			public Integer getDataPrecision() {
-				return this.dataPrecision;
-			}
-
-			public void setDataPrecision(Integer dataPrecision) {
-				this.dataPrecision = dataPrecision;
-			}
-
-			public Boolean getNullable() {
-				return this.nullable;
-			}
-
-			public void setNullable(Boolean nullable) {
-				this.nullable = nullable;
-			}
+		public void setColumnList(List<Column> columnList) {
+			this.columnList = columnList;
 		}
 
 		public static class Index {
 
 			private String indexName;
 
-			private String indexId;
-
 			private Boolean unique;
 
 			private String indexType;
+
+			private String indexId;
 
 			private List<String> indexColumns;
 
@@ -218,14 +115,6 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 
 			public void setIndexName(String indexName) {
 				this.indexName = indexName;
-			}
-
-			public String getIndexId() {
-				return this.indexId;
-			}
-
-			public void setIndexId(String indexId) {
-				this.indexId = indexId;
 			}
 
 			public Boolean getUnique() {
@@ -244,12 +133,123 @@ public class GetMetaTableDetailInfoResponse extends AcsResponse {
 				this.indexType = indexType;
 			}
 
+			public String getIndexId() {
+				return this.indexId;
+			}
+
+			public void setIndexId(String indexId) {
+				this.indexId = indexId;
+			}
+
 			public List<String> getIndexColumns() {
 				return this.indexColumns;
 			}
 
 			public void setIndexColumns(List<String> indexColumns) {
 				this.indexColumns = indexColumns;
+			}
+		}
+
+		public static class Column {
+
+			private String columnName;
+
+			private String description;
+
+			private Integer dataScale;
+
+			private Integer dataPrecision;
+
+			private String columnType;
+
+			private Boolean autoIncrement;
+
+			private String position;
+
+			private Boolean nullable;
+
+			private String columnId;
+
+			private Long dataLength;
+
+			public String getColumnName() {
+				return this.columnName;
+			}
+
+			public void setColumnName(String columnName) {
+				this.columnName = columnName;
+			}
+
+			public String getDescription() {
+				return this.description;
+			}
+
+			public void setDescription(String description) {
+				this.description = description;
+			}
+
+			public Integer getDataScale() {
+				return this.dataScale;
+			}
+
+			public void setDataScale(Integer dataScale) {
+				this.dataScale = dataScale;
+			}
+
+			public Integer getDataPrecision() {
+				return this.dataPrecision;
+			}
+
+			public void setDataPrecision(Integer dataPrecision) {
+				this.dataPrecision = dataPrecision;
+			}
+
+			public String getColumnType() {
+				return this.columnType;
+			}
+
+			public void setColumnType(String columnType) {
+				this.columnType = columnType;
+			}
+
+			public Boolean getAutoIncrement() {
+				return this.autoIncrement;
+			}
+
+			public void setAutoIncrement(Boolean autoIncrement) {
+				this.autoIncrement = autoIncrement;
+			}
+
+			public String getPosition() {
+				return this.position;
+			}
+
+			public void setPosition(String position) {
+				this.position = position;
+			}
+
+			public Boolean getNullable() {
+				return this.nullable;
+			}
+
+			public void setNullable(Boolean nullable) {
+				this.nullable = nullable;
+			}
+
+			public String getColumnId() {
+				return this.columnId;
+			}
+
+			public void setColumnId(String columnId) {
+				this.columnId = columnId;
+			}
+
+			public Long getDataLength() {
+				return this.dataLength;
+			}
+
+			public void setDataLength(Long dataLength) {
+				this.dataLength = dataLength;
 			}
 		}
 	}

@@ -24,13 +24,13 @@ public class GetStructSyncExecSqlDetailResponseUnmarshaller {
 	public static GetStructSyncExecSqlDetailResponse unmarshall(GetStructSyncExecSqlDetailResponse getStructSyncExecSqlDetailResponse, UnmarshallerContext _ctx) {
 		
 		getStructSyncExecSqlDetailResponse.setRequestId(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.RequestId"));
-		getStructSyncExecSqlDetailResponse.setErrorCode(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.ErrorCode"));
-		getStructSyncExecSqlDetailResponse.setErrorMessage(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.ErrorMessage"));
 		getStructSyncExecSqlDetailResponse.setSuccess(_ctx.booleanValue("GetStructSyncExecSqlDetailResponse.Success"));
+		getStructSyncExecSqlDetailResponse.setErrorMessage(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.ErrorMessage"));
+		getStructSyncExecSqlDetailResponse.setErrorCode(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.ErrorCode"));
 
 		StructSyncExecSqlDetail structSyncExecSqlDetail = new StructSyncExecSqlDetail();
-		structSyncExecSqlDetail.setExecSql(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.StructSyncExecSqlDetail.ExecSql"));
 		structSyncExecSqlDetail.setTotalSqlCount(_ctx.longValue("GetStructSyncExecSqlDetailResponse.StructSyncExecSqlDetail.TotalSqlCount"));
+		structSyncExecSqlDetail.setExecSql(_ctx.stringValue("GetStructSyncExecSqlDetailResponse.StructSyncExecSqlDetail.ExecSql"));
 		getStructSyncExecSqlDetailResponse.setStructSyncExecSqlDetail(structSyncExecSqlDetail);
 	 
 	 	return getStructSyncExecSqlDetailResponse;

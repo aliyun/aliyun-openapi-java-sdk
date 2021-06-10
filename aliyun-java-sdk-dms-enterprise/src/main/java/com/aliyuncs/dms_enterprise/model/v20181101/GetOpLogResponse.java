@@ -87,9 +87,11 @@ public class GetOpLogResponse extends AcsResponse {
 
 	public static class OpLogDetail {
 
-		private Long userId;
+		private String module;
 
 		private String database;
+
+		private Long userId;
 
 		private String opContent;
 
@@ -97,16 +99,14 @@ public class GetOpLogResponse extends AcsResponse {
 
 		private Long orderId;
 
-		private String module;
-
 		private String opTime;
 
-		public Long getUserId() {
-			return this.userId;
+		public String getModule() {
+			return this.module;
 		}
 
-		public void setUserId(Long userId) {
-			this.userId = userId;
+		public void setModule(String module) {
+			this.module = module;
 		}
 
 		public String getDatabase() {
@@ -115,6 +115,14 @@ public class GetOpLogResponse extends AcsResponse {
 
 		public void setDatabase(String database) {
 			this.database = database;
+		}
+
+		public Long getUserId() {
+			return this.userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
 		}
 
 		public String getOpContent() {
@@ -139,14 +147,6 @@ public class GetOpLogResponse extends AcsResponse {
 
 		public void setOrderId(Long orderId) {
 			this.orderId = orderId;
-		}
-
-		public String getModule() {
-			return this.module;
-		}
-
-		public void setModule(String module) {
-			this.module = module;
 		}
 
 		public String getOpTime() {

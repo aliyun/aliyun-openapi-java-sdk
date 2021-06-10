@@ -35,24 +35,24 @@ public class ListLogicDatabasesResponseUnmarshaller {
 		List<LogicDatabase> logicDatabaseList = new ArrayList<LogicDatabase>();
 		for (int i = 0; i < _ctx.lengthValue("ListLogicDatabasesResponse.LogicDatabaseList.Length"); i++) {
 			LogicDatabase logicDatabase = new LogicDatabase();
-			logicDatabase.setSearchName(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].SearchName"));
 			logicDatabase.setDatabaseId(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].DatabaseId"));
-			logicDatabase.setLogic(_ctx.booleanValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].Logic"));
-			logicDatabase.setEnvType(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].EnvType"));
-			logicDatabase.setSchemaName(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].SchemaName"));
 			logicDatabase.setDbType(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].DbType"));
-
-			List<String> ownerNameList = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
-				ownerNameList.add(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
-			}
-			logicDatabase.setOwnerNameList(ownerNameList);
+			logicDatabase.setLogic(_ctx.booleanValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].Logic"));
+			logicDatabase.setSchemaName(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].SchemaName"));
+			logicDatabase.setSearchName(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].SearchName"));
+			logicDatabase.setEnvType(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].EnvType"));
 
 			List<String> ownerIdList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerIdList.Length"); j++) {
 				ownerIdList.add(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerIdList["+ j +"]"));
 			}
 			logicDatabase.setOwnerIdList(ownerIdList);
+
+			List<String> ownerNameList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
+				ownerNameList.add(_ctx.stringValue("ListLogicDatabasesResponse.LogicDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
+			}
+			logicDatabase.setOwnerNameList(ownerNameList);
 
 			logicDatabaseList.add(logicDatabase);
 		}

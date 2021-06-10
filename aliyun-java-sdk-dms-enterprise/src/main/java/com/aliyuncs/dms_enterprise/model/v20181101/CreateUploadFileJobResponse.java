@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateUploadFileJobResponse extends AcsResponse {
 
-	private String jobKey;
-
 	private String requestId;
-
-	private String errorCode;
-
-	private String errorMessage;
 
 	private Boolean success;
 
-	public String getJobKey() {
-		return this.jobKey;
-	}
+	private String errorMessage;
 
-	public void setJobKey(String jobKey) {
-		this.jobKey = jobKey;
-	}
+	private String errorCode;
+
+	private String jobKey;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,12 +42,12 @@ public class CreateUploadFileJobResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -66,12 +58,20 @@ public class CreateUploadFileJobResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getJobKey() {
+		return this.jobKey;
+	}
+
+	public void setJobKey(String jobKey) {
+		this.jobKey = jobKey;
 	}
 
 	@Override

@@ -27,11 +27,11 @@ public class GetTableTopologyResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private TableTopology tableTopology;
 
@@ -43,12 +43,12 @@ public class GetTableTopologyResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetTableTopologyResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public TableTopology getTableTopology() {
@@ -77,21 +77,13 @@ public class GetTableTopologyResponse extends AcsResponse {
 
 	public static class TableTopology {
 
-		private String tableName;
-
 		private String tableGuid;
+
+		private String tableName;
 
 		private Boolean logic;
 
 		private List<TableTopologyInfo> tableTopologyInfoList;
-
-		public String getTableName() {
-			return this.tableName;
-		}
-
-		public void setTableName(String tableName) {
-			this.tableName = tableName;
-		}
 
 		public String getTableGuid() {
 			return this.tableGuid;
@@ -99,6 +91,14 @@ public class GetTableTopologyResponse extends AcsResponse {
 
 		public void setTableGuid(String tableGuid) {
 			this.tableGuid = tableGuid;
+		}
+
+		public String getTableName() {
+			return this.tableName;
+		}
+
+		public void setTableName(String tableName) {
+			this.tableName = tableName;
 		}
 
 		public Boolean getLogic() {
@@ -119,67 +119,27 @@ public class GetTableTopologyResponse extends AcsResponse {
 
 		public static class TableTopologyInfo {
 
-			private String tableNameExpr;
-
-			private String dbSearchName;
-
-			private String instanceSource;
-
-			private String instanceResourceId;
-
-			private Long instanceId;
-
 			private String tableNameList;
+
+			private String tableNameExpr;
 
 			private Long tableCount;
 
 			private Long dbId;
 
-			private String dbName;
+			private String dbSearchName;
+
+			private Long instanceId;
 
 			private String regionId;
 
+			private String instanceResourceId;
+
+			private String instanceSource;
+
+			private String dbName;
+
 			private String dbType;
-
-			public String getTableNameExpr() {
-				return this.tableNameExpr;
-			}
-
-			public void setTableNameExpr(String tableNameExpr) {
-				this.tableNameExpr = tableNameExpr;
-			}
-
-			public String getDbSearchName() {
-				return this.dbSearchName;
-			}
-
-			public void setDbSearchName(String dbSearchName) {
-				this.dbSearchName = dbSearchName;
-			}
-
-			public String getInstanceSource() {
-				return this.instanceSource;
-			}
-
-			public void setInstanceSource(String instanceSource) {
-				this.instanceSource = instanceSource;
-			}
-
-			public String getInstanceResourceId() {
-				return this.instanceResourceId;
-			}
-
-			public void setInstanceResourceId(String instanceResourceId) {
-				this.instanceResourceId = instanceResourceId;
-			}
-
-			public Long getInstanceId() {
-				return this.instanceId;
-			}
-
-			public void setInstanceId(Long instanceId) {
-				this.instanceId = instanceId;
-			}
 
 			public String getTableNameList() {
 				return this.tableNameList;
@@ -187,6 +147,14 @@ public class GetTableTopologyResponse extends AcsResponse {
 
 			public void setTableNameList(String tableNameList) {
 				this.tableNameList = tableNameList;
+			}
+
+			public String getTableNameExpr() {
+				return this.tableNameExpr;
+			}
+
+			public void setTableNameExpr(String tableNameExpr) {
+				this.tableNameExpr = tableNameExpr;
 			}
 
 			public Long getTableCount() {
@@ -205,12 +173,20 @@ public class GetTableTopologyResponse extends AcsResponse {
 				this.dbId = dbId;
 			}
 
-			public String getDbName() {
-				return this.dbName;
+			public String getDbSearchName() {
+				return this.dbSearchName;
 			}
 
-			public void setDbName(String dbName) {
-				this.dbName = dbName;
+			public void setDbSearchName(String dbSearchName) {
+				this.dbSearchName = dbSearchName;
+			}
+
+			public Long getInstanceId() {
+				return this.instanceId;
+			}
+
+			public void setInstanceId(Long instanceId) {
+				this.instanceId = instanceId;
 			}
 
 			public String getRegionId() {
@@ -219,6 +195,30 @@ public class GetTableTopologyResponse extends AcsResponse {
 
 			public void setRegionId(String regionId) {
 				this.regionId = regionId;
+			}
+
+			public String getInstanceResourceId() {
+				return this.instanceResourceId;
+			}
+
+			public void setInstanceResourceId(String instanceResourceId) {
+				this.instanceResourceId = instanceResourceId;
+			}
+
+			public String getInstanceSource() {
+				return this.instanceSource;
+			}
+
+			public void setInstanceSource(String instanceSource) {
+				this.instanceSource = instanceSource;
+			}
+
+			public String getDbName() {
+				return this.dbName;
+			}
+
+			public void setDbName(String dbName) {
+				this.dbName = dbName;
 			}
 
 			public String getDbType() {

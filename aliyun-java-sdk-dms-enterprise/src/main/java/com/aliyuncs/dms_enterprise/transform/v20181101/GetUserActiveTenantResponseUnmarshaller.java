@@ -30,8 +30,8 @@ public class GetUserActiveTenantResponseUnmarshaller {
 
 		Tenant tenant = new Tenant();
 		tenant.setStatus(_ctx.stringValue("GetUserActiveTenantResponse.Tenant.Status"));
-		tenant.setTenantName(_ctx.stringValue("GetUserActiveTenantResponse.Tenant.TenantName"));
 		tenant.setTid(_ctx.longValue("GetUserActiveTenantResponse.Tenant.Tid"));
+		tenant.setTenantName(_ctx.stringValue("GetUserActiveTenantResponse.Tenant.TenantName"));
 		getUserActiveTenantResponse.setTenant(tenant);
 	 
 	 	return getUserActiveTenantResponse;

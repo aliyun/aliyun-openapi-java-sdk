@@ -35,12 +35,12 @@ public class ListSensitiveColumnsResponseUnmarshaller {
 		List<SensitiveColumn> sensitiveColumnList = new ArrayList<SensitiveColumn>();
 		for (int i = 0; i < _ctx.lengthValue("ListSensitiveColumnsResponse.SensitiveColumnList.Length"); i++) {
 			SensitiveColumn sensitiveColumn = new SensitiveColumn();
-			sensitiveColumn.setTableName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].TableName"));
 			sensitiveColumn.setColumnName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].ColumnName"));
-			sensitiveColumn.setColumnCount(_ctx.longValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].ColumnCount"));
-			sensitiveColumn.setFunctionType(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].FunctionType"));
+			sensitiveColumn.setTableName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].TableName"));
 			sensitiveColumn.setSecurityLevel(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].SecurityLevel"));
+			sensitiveColumn.setColumnCount(_ctx.longValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].ColumnCount"));
 			sensitiveColumn.setSchemaName(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].SchemaName"));
+			sensitiveColumn.setFunctionType(_ctx.stringValue("ListSensitiveColumnsResponse.SensitiveColumnList["+ i +"].FunctionType"));
 
 			sensitiveColumnList.add(sensitiveColumn);
 		}

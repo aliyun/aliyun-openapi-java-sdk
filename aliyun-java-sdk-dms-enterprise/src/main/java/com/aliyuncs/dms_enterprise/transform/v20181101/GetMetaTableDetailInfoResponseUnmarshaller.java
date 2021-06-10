@@ -35,31 +35,13 @@ public class GetMetaTableDetailInfoResponseUnmarshaller {
 
 		DetailInfo detailInfo = new DetailInfo();
 
-		List<Column> columnList = new ArrayList<Column>();
-		for (int i = 0; i < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList.Length"); i++) {
-			Column column = new Column();
-			column.setColumnId(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnId"));
-			column.setColumnName(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnName"));
-			column.setColumnType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnType"));
-			column.setDescription(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Description"));
-			column.setPosition(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Position"));
-			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].AutoIncrement"));
-			column.setDataLength(_ctx.longValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataLength"));
-			column.setDataScale(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataScale"));
-			column.setDataPrecision(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataPrecision"));
-			column.setNullable(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Nullable"));
-
-			columnList.add(column);
-		}
-		detailInfo.setColumnList(columnList);
-
 		List<Index> indexList = new ArrayList<Index>();
 		for (int i = 0; i < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList.Length"); i++) {
 			Index index = new Index();
 			index.setIndexName(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexName"));
-			index.setIndexId(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexId"));
 			index.setUnique(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].Unique"));
 			index.setIndexType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexType"));
+			index.setIndexId(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexId"));
 
 			List<String> indexColumns = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.IndexList["+ i +"].IndexColumns.Length"); j++) {
@@ -70,6 +52,24 @@ public class GetMetaTableDetailInfoResponseUnmarshaller {
 			indexList.add(index);
 		}
 		detailInfo.setIndexList(indexList);
+
+		List<Column> columnList = new ArrayList<Column>();
+		for (int i = 0; i < _ctx.lengthValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList.Length"); i++) {
+			Column column = new Column();
+			column.setColumnName(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnName"));
+			column.setDescription(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Description"));
+			column.setDataScale(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataScale"));
+			column.setDataPrecision(_ctx.integerValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataPrecision"));
+			column.setColumnType(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnType"));
+			column.setAutoIncrement(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].AutoIncrement"));
+			column.setPosition(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Position"));
+			column.setNullable(_ctx.booleanValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].Nullable"));
+			column.setColumnId(_ctx.stringValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].ColumnId"));
+			column.setDataLength(_ctx.longValue("GetMetaTableDetailInfoResponse.DetailInfo.ColumnList["+ i +"].DataLength"));
+
+			columnList.add(column);
+		}
+		detailInfo.setColumnList(columnList);
 		getMetaTableDetailInfoResponse.setDetailInfo(detailInfo);
 	 
 	 	return getMetaTableDetailInfoResponse;

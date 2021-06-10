@@ -26,11 +26,11 @@ public class ExecuteStructSyncResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -40,12 +40,12 @@ public class ExecuteStructSyncResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -56,12 +56,12 @@ public class ExecuteStructSyncResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	@Override

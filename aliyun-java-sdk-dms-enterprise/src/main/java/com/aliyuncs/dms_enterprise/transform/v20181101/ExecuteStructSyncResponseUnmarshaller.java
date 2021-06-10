@@ -23,9 +23,9 @@ public class ExecuteStructSyncResponseUnmarshaller {
 	public static ExecuteStructSyncResponse unmarshall(ExecuteStructSyncResponse executeStructSyncResponse, UnmarshallerContext _ctx) {
 		
 		executeStructSyncResponse.setRequestId(_ctx.stringValue("ExecuteStructSyncResponse.RequestId"));
-		executeStructSyncResponse.setErrorCode(_ctx.stringValue("ExecuteStructSyncResponse.ErrorCode"));
-		executeStructSyncResponse.setErrorMessage(_ctx.stringValue("ExecuteStructSyncResponse.ErrorMessage"));
 		executeStructSyncResponse.setSuccess(_ctx.booleanValue("ExecuteStructSyncResponse.Success"));
+		executeStructSyncResponse.setErrorMessage(_ctx.stringValue("ExecuteStructSyncResponse.ErrorMessage"));
+		executeStructSyncResponse.setErrorCode(_ctx.stringValue("ExecuteStructSyncResponse.ErrorCode"));
 	 
 	 	return executeStructSyncResponse;
 	}

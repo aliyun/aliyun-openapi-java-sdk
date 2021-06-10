@@ -35,12 +35,12 @@ public class GetOpLogResponseUnmarshaller {
 		List<OpLogDetail> opLogDetails = new ArrayList<OpLogDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetOpLogResponse.OpLogDetails.Length"); i++) {
 			OpLogDetail opLogDetail = new OpLogDetail();
-			opLogDetail.setUserId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].UserId"));
+			opLogDetail.setModule(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Module"));
 			opLogDetail.setDatabase(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Database"));
+			opLogDetail.setUserId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].UserId"));
 			opLogDetail.setOpContent(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpContent"));
 			opLogDetail.setUserNick(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].UserNick"));
 			opLogDetail.setOrderId(_ctx.longValue("GetOpLogResponse.OpLogDetails["+ i +"].OrderId"));
-			opLogDetail.setModule(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].Module"));
 			opLogDetail.setOpTime(_ctx.stringValue("GetOpLogResponse.OpLogDetails["+ i +"].OpTime"));
 
 			opLogDetails.add(opLogDetail);

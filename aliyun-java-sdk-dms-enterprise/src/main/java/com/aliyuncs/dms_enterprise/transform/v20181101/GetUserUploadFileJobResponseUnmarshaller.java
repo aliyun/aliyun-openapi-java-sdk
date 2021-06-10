@@ -25,25 +25,25 @@ public class GetUserUploadFileJobResponseUnmarshaller {
 	public static GetUserUploadFileJobResponse unmarshall(GetUserUploadFileJobResponse getUserUploadFileJobResponse, UnmarshallerContext _ctx) {
 		
 		getUserUploadFileJobResponse.setRequestId(_ctx.stringValue("GetUserUploadFileJobResponse.RequestId"));
-		getUserUploadFileJobResponse.setErrorCode(_ctx.stringValue("GetUserUploadFileJobResponse.ErrorCode"));
-		getUserUploadFileJobResponse.setErrorMessage(_ctx.stringValue("GetUserUploadFileJobResponse.ErrorMessage"));
 		getUserUploadFileJobResponse.setSuccess(_ctx.booleanValue("GetUserUploadFileJobResponse.Success"));
+		getUserUploadFileJobResponse.setErrorMessage(_ctx.stringValue("GetUserUploadFileJobResponse.ErrorMessage"));
+		getUserUploadFileJobResponse.setErrorCode(_ctx.stringValue("GetUserUploadFileJobResponse.ErrorCode"));
 
 		UploadFileJobDetail uploadFileJobDetail = new UploadFileJobDetail();
-		uploadFileJobDetail.setJobStatus(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.JobStatus"));
-		uploadFileJobDetail.setAttachmentKey(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.AttachmentKey"));
 		uploadFileJobDetail.setJobKey(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.JobKey"));
+		uploadFileJobDetail.setFileName(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.FileName"));
+		uploadFileJobDetail.setFileSize(_ctx.longValue("GetUserUploadFileJobResponse.UploadFileJobDetail.FileSize"));
+		uploadFileJobDetail.setFileSource(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.FileSource"));
+		uploadFileJobDetail.setUploadType(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadType"));
 		uploadFileJobDetail.setUploadURL(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadURL"));
 		uploadFileJobDetail.setUploadedSize(_ctx.longValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadedSize"));
+		uploadFileJobDetail.setJobStatus(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.JobStatus"));
 		uploadFileJobDetail.setJobStatusDesc(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.JobStatusDesc"));
-		uploadFileJobDetail.setFileSource(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.FileSource"));
-		uploadFileJobDetail.setFileName(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.FileName"));
-		uploadFileJobDetail.setUploadType(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadType"));
-		uploadFileJobDetail.setFileSize(_ctx.longValue("GetUserUploadFileJobResponse.UploadFileJobDetail.FileSize"));
+		uploadFileJobDetail.setAttachmentKey(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.AttachmentKey"));
 
 		UploadOSSParam uploadOSSParam = new UploadOSSParam();
-		uploadOSSParam.setBucketName(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadOSSParam.BucketName"));
 		uploadOSSParam.setEndpoint(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadOSSParam.Endpoint"));
+		uploadOSSParam.setBucketName(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadOSSParam.BucketName"));
 		uploadOSSParam.setObjectName(_ctx.stringValue("GetUserUploadFileJobResponse.UploadFileJobDetail.UploadOSSParam.ObjectName"));
 		uploadFileJobDetail.setUploadOSSParam(uploadOSSParam);
 		getUserUploadFileJobResponse.setUploadFileJobDetail(uploadFileJobDetail);

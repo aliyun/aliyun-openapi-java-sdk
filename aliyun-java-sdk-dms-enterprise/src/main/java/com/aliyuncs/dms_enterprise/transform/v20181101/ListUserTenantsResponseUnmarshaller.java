@@ -35,8 +35,8 @@ public class ListUserTenantsResponseUnmarshaller {
 		for (int i = 0; i < _ctx.lengthValue("ListUserTenantsResponse.TenantList.Length"); i++) {
 			Tenant tenant = new Tenant();
 			tenant.setStatus(_ctx.stringValue("ListUserTenantsResponse.TenantList["+ i +"].Status"));
-			tenant.setTenantName(_ctx.stringValue("ListUserTenantsResponse.TenantList["+ i +"].TenantName"));
 			tenant.setTid(_ctx.longValue("ListUserTenantsResponse.TenantList["+ i +"].Tid"));
+			tenant.setTenantName(_ctx.stringValue("ListUserTenantsResponse.TenantList["+ i +"].TenantName"));
 
 			tenantList.add(tenant);
 		}

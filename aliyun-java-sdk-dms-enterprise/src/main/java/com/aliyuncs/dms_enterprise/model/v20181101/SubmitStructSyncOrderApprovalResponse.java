@@ -26,13 +26,13 @@ public class SubmitStructSyncOrderApprovalResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Long workflowInstanceId;
-
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
+
+	private Long workflowInstanceId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -42,20 +42,12 @@ public class SubmitStructSyncOrderApprovalResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Long getWorkflowInstanceId() {
-		return this.workflowInstanceId;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setWorkflowInstanceId(Long workflowInstanceId) {
-		this.workflowInstanceId = workflowInstanceId;
-	}
-
-	public String getErrorCode() {
-		return this.errorCode;
-	}
-
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -66,12 +58,20 @@ public class SubmitStructSyncOrderApprovalResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public Long getWorkflowInstanceId() {
+		return this.workflowInstanceId;
+	}
+
+	public void setWorkflowInstanceId(Long workflowInstanceId) {
+		this.workflowInstanceId = workflowInstanceId;
 	}
 
 	@Override

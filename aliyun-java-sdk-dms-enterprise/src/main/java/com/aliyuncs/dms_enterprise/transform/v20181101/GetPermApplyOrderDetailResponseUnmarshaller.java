@@ -32,69 +32,69 @@ public class GetPermApplyOrderDetailResponseUnmarshaller {
 	public static GetPermApplyOrderDetailResponse unmarshall(GetPermApplyOrderDetailResponse getPermApplyOrderDetailResponse, UnmarshallerContext _ctx) {
 		
 		getPermApplyOrderDetailResponse.setRequestId(_ctx.stringValue("GetPermApplyOrderDetailResponse.RequestId"));
-		getPermApplyOrderDetailResponse.setErrorCode(_ctx.stringValue("GetPermApplyOrderDetailResponse.ErrorCode"));
-		getPermApplyOrderDetailResponse.setErrorMessage(_ctx.stringValue("GetPermApplyOrderDetailResponse.ErrorMessage"));
 		getPermApplyOrderDetailResponse.setSuccess(_ctx.booleanValue("GetPermApplyOrderDetailResponse.Success"));
+		getPermApplyOrderDetailResponse.setErrorMessage(_ctx.stringValue("GetPermApplyOrderDetailResponse.ErrorMessage"));
+		getPermApplyOrderDetailResponse.setErrorCode(_ctx.stringValue("GetPermApplyOrderDetailResponse.ErrorCode"));
 
 		PermApplyOrderDetail permApplyOrderDetail = new PermApplyOrderDetail();
-		permApplyOrderDetail.setApplyType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.ApplyType"));
 		permApplyOrderDetail.setPermType(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.PermType"));
 		permApplyOrderDetail.setSeconds(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Seconds"));
+		permApplyOrderDetail.setApplyType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.ApplyType"));
 
 		List<Resource> resources = new ArrayList<Resource>();
 		for (int i = 0; i < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources.Length"); i++) {
 			Resource resource = new Resource();
 
 			DatabaseInfo databaseInfo = new DatabaseInfo();
-			databaseInfo.setSearchName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.SearchName"));
 			databaseInfo.setDbId(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.DbId"));
 			databaseInfo.setLogic(_ctx.booleanValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.Logic"));
-			databaseInfo.setEnvType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.EnvType"));
 			databaseInfo.setDbType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.DbType"));
-
-			List<String> ownerNickNames = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames.Length"); j++) {
-				ownerNickNames.add(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames["+ j +"]"));
-			}
-			databaseInfo.setOwnerNickNames(ownerNickNames);
+			databaseInfo.setSearchName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.SearchName"));
+			databaseInfo.setEnvType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.EnvType"));
 
 			List<Long> ownerIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerIds.Length"); j++) {
 				ownerIds.add(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerIds["+ j +"]"));
 			}
 			databaseInfo.setOwnerIds(ownerIds);
-			resource.setDatabaseInfo(databaseInfo);
 
-			ColumnInfo columnInfo = new ColumnInfo();
-			columnInfo.setColumnName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.ColumnName"));
-			columnInfo.setTableName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.TableName"));
-			resource.setColumnInfo(columnInfo);
+			List<String> ownerNickNames = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames.Length"); j++) {
+				ownerNickNames.add(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames["+ j +"]"));
+			}
+			databaseInfo.setOwnerNickNames(ownerNickNames);
+			resource.setDatabaseInfo(databaseInfo);
 
 			TableInfo tableInfo = new TableInfo();
 			tableInfo.setTableName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].TableInfo.TableName"));
 			resource.setTableInfo(tableInfo);
 
-			InstanceInfo instanceInfo = new InstanceInfo();
-			instanceInfo.setDbaId(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaId"));
-			instanceInfo.setSearchName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.SearchName"));
-			instanceInfo.setInstanceId(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.InstanceId"));
-			instanceInfo.setPort(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Port"));
-			instanceInfo.setHost(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Host"));
-			instanceInfo.setDbaNickName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaNickName"));
-			instanceInfo.setEnvType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.EnvType"));
-			instanceInfo.setDbType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbType"));
+			ColumnInfo columnInfo = new ColumnInfo();
+			columnInfo.setTableName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.TableName"));
+			columnInfo.setColumnName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.ColumnName"));
+			resource.setColumnInfo(columnInfo);
 
-			List<String> ownerNickName = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName.Length"); j++) {
-				ownerNickName.add(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName["+ j +"]"));
-			}
-			instanceInfo.setOwnerNickName(ownerNickName);
+			InstanceInfo instanceInfo = new InstanceInfo();
+			instanceInfo.setInstanceId(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.InstanceId"));
+			instanceInfo.setSearchName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.SearchName"));
+			instanceInfo.setDbType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbType"));
+			instanceInfo.setEnvType(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.EnvType"));
+			instanceInfo.setHost(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Host"));
+			instanceInfo.setPort(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Port"));
+			instanceInfo.setDbaId(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaId"));
+			instanceInfo.setDbaNickName(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaNickName"));
 
 			List<Long> ownerIds1 = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerIds.Length"); j++) {
 				ownerIds1.add(_ctx.longValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerIds["+ j +"]"));
 			}
 			instanceInfo.setOwnerIds1(ownerIds1);
+
+			List<String> ownerNickName = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName.Length"); j++) {
+				ownerNickName.add(_ctx.stringValue("GetPermApplyOrderDetailResponse.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName["+ j +"]"));
+			}
+			instanceInfo.setOwnerNickName(ownerNickName);
 			resource.setInstanceInfo(instanceInfo);
 
 			resources.add(resource);

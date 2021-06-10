@@ -23,10 +23,10 @@ public class CreateUploadOSSFileJobResponseUnmarshaller {
 	public static CreateUploadOSSFileJobResponse unmarshall(CreateUploadOSSFileJobResponse createUploadOSSFileJobResponse, UnmarshallerContext _ctx) {
 		
 		createUploadOSSFileJobResponse.setRequestId(_ctx.stringValue("CreateUploadOSSFileJobResponse.RequestId"));
-		createUploadOSSFileJobResponse.setJobKey(_ctx.stringValue("CreateUploadOSSFileJobResponse.JobKey"));
-		createUploadOSSFileJobResponse.setErrorCode(_ctx.stringValue("CreateUploadOSSFileJobResponse.ErrorCode"));
-		createUploadOSSFileJobResponse.setErrorMessage(_ctx.stringValue("CreateUploadOSSFileJobResponse.ErrorMessage"));
 		createUploadOSSFileJobResponse.setSuccess(_ctx.booleanValue("CreateUploadOSSFileJobResponse.Success"));
+		createUploadOSSFileJobResponse.setErrorMessage(_ctx.stringValue("CreateUploadOSSFileJobResponse.ErrorMessage"));
+		createUploadOSSFileJobResponse.setErrorCode(_ctx.stringValue("CreateUploadOSSFileJobResponse.ErrorCode"));
+		createUploadOSSFileJobResponse.setJobKey(_ctx.stringValue("CreateUploadOSSFileJobResponse.JobKey"));
 	 
 	 	return createUploadOSSFileJobResponse;
 	}

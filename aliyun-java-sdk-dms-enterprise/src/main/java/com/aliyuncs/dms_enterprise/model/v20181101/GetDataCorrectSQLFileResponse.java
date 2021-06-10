@@ -24,23 +24,15 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class GetDataCorrectSQLFileResponse extends AcsResponse {
 
-	private String fileUrl;
-
 	private String requestId;
-
-	private String errorCode;
-
-	private String errorMessage;
 
 	private Boolean success;
 
-	public String getFileUrl() {
-		return this.fileUrl;
-	}
+	private String errorMessage;
 
-	public void setFileUrl(String fileUrl) {
-		this.fileUrl = fileUrl;
-	}
+	private String errorCode;
+
+	private String fileUrl;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -50,12 +42,12 @@ public class GetDataCorrectSQLFileResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -66,12 +58,20 @@ public class GetDataCorrectSQLFileResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getFileUrl() {
+		return this.fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
 	}
 
 	@Override

@@ -27,11 +27,11 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private PermApplyOrderDetail permApplyOrderDetail;
 
@@ -43,12 +43,12 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public PermApplyOrderDetail getPermApplyOrderDetail() {
@@ -77,21 +77,13 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 
 	public static class PermApplyOrderDetail {
 
-		private String applyType;
-
 		private Long permType;
 
 		private Long seconds;
 
+		private String applyType;
+
 		private List<Resource> resources;
-
-		public String getApplyType() {
-			return this.applyType;
-		}
-
-		public void setApplyType(String applyType) {
-			this.applyType = applyType;
-		}
 
 		public Long getPermType() {
 			return this.permType;
@@ -109,6 +101,14 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 			this.seconds = seconds;
 		}
 
+		public String getApplyType() {
+			return this.applyType;
+		}
+
+		public void setApplyType(String applyType) {
+			this.applyType = applyType;
+		}
+
 		public List<Resource> getResources() {
 			return this.resources;
 		}
@@ -121,9 +121,9 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 
 			private DatabaseInfo databaseInfo;
 
-			private ColumnInfo columnInfo;
-
 			private TableInfo tableInfo;
+
+			private ColumnInfo columnInfo;
 
 			private InstanceInfo instanceInfo;
 
@@ -135,20 +135,20 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 				this.databaseInfo = databaseInfo;
 			}
 
-			public ColumnInfo getColumnInfo() {
-				return this.columnInfo;
-			}
-
-			public void setColumnInfo(ColumnInfo columnInfo) {
-				this.columnInfo = columnInfo;
-			}
-
 			public TableInfo getTableInfo() {
 				return this.tableInfo;
 			}
 
 			public void setTableInfo(TableInfo tableInfo) {
 				this.tableInfo = tableInfo;
+			}
+
+			public ColumnInfo getColumnInfo() {
+				return this.columnInfo;
+			}
+
+			public void setColumnInfo(ColumnInfo columnInfo) {
+				this.columnInfo = columnInfo;
 			}
 
 			public InstanceInfo getInstanceInfo() {
@@ -161,27 +161,19 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 
 			public static class DatabaseInfo {
 
-				private String searchName;
-
 				private Long dbId;
 
 				private Boolean logic;
 
-				private String envType;
-
 				private String dbType;
 
-				private List<String> ownerNickNames;
+				private String searchName;
+
+				private String envType;
 
 				private List<Long> ownerIds;
 
-				public String getSearchName() {
-					return this.searchName;
-				}
-
-				public void setSearchName(String searchName) {
-					this.searchName = searchName;
-				}
+				private List<String> ownerNickNames;
 
 				public Long getDbId() {
 					return this.dbId;
@@ -199,14 +191,6 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 					this.logic = logic;
 				}
 
-				public String getEnvType() {
-					return this.envType;
-				}
-
-				public void setEnvType(String envType) {
-					this.envType = envType;
-				}
-
 				public String getDbType() {
 					return this.dbType;
 				}
@@ -215,12 +199,20 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 					this.dbType = dbType;
 				}
 
-				public List<String> getOwnerNickNames() {
-					return this.ownerNickNames;
+				public String getSearchName() {
+					return this.searchName;
 				}
 
-				public void setOwnerNickNames(List<String> ownerNickNames) {
-					this.ownerNickNames = ownerNickNames;
+				public void setSearchName(String searchName) {
+					this.searchName = searchName;
+				}
+
+				public String getEnvType() {
+					return this.envType;
+				}
+
+				public void setEnvType(String envType) {
+					this.envType = envType;
 				}
 
 				public List<Long> getOwnerIds() {
@@ -230,28 +222,13 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 				public void setOwnerIds(List<Long> ownerIds) {
 					this.ownerIds = ownerIds;
 				}
-			}
 
-			public static class ColumnInfo {
-
-				private String columnName;
-
-				private String tableName;
-
-				public String getColumnName() {
-					return this.columnName;
+				public List<String> getOwnerNickNames() {
+					return this.ownerNickNames;
 				}
 
-				public void setColumnName(String columnName) {
-					this.columnName = columnName;
-				}
-
-				public String getTableName() {
-					return this.tableName;
-				}
-
-				public void setTableName(String tableName) {
-					this.tableName = tableName;
+				public void setOwnerNickNames(List<String> ownerNickNames) {
+					this.ownerNickNames = ownerNickNames;
 				}
 			}
 
@@ -268,34 +245,57 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 				}
 			}
 
+			public static class ColumnInfo {
+
+				private String tableName;
+
+				private String columnName;
+
+				public String getTableName() {
+					return this.tableName;
+				}
+
+				public void setTableName(String tableName) {
+					this.tableName = tableName;
+				}
+
+				public String getColumnName() {
+					return this.columnName;
+				}
+
+				public void setColumnName(String columnName) {
+					this.columnName = columnName;
+				}
+			}
+
 			public static class InstanceInfo {
-
-				private Long dbaId;
-
-				private String searchName;
 
 				private String instanceId;
 
-				private Long port;
-
-				private String host;
-
-				private String dbaNickName;
-
-				private String envType;
+				private String searchName;
 
 				private String dbType;
 
-				private List<String> ownerNickName;
+				private String envType;
+
+				private String host;
+
+				private Long port;
+
+				private Long dbaId;
+
+				private String dbaNickName;
 
 				private List<Long> ownerIds1;
 
-				public Long getDbaId() {
-					return this.dbaId;
+				private List<String> ownerNickName;
+
+				public String getInstanceId() {
+					return this.instanceId;
 				}
 
-				public void setDbaId(Long dbaId) {
-					this.dbaId = dbaId;
+				public void setInstanceId(String instanceId) {
+					this.instanceId = instanceId;
 				}
 
 				public String getSearchName() {
@@ -306,36 +306,12 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 					this.searchName = searchName;
 				}
 
-				public String getInstanceId() {
-					return this.instanceId;
+				public String getDbType() {
+					return this.dbType;
 				}
 
-				public void setInstanceId(String instanceId) {
-					this.instanceId = instanceId;
-				}
-
-				public Long getPort() {
-					return this.port;
-				}
-
-				public void setPort(Long port) {
-					this.port = port;
-				}
-
-				public String getHost() {
-					return this.host;
-				}
-
-				public void setHost(String host) {
-					this.host = host;
-				}
-
-				public String getDbaNickName() {
-					return this.dbaNickName;
-				}
-
-				public void setDbaNickName(String dbaNickName) {
-					this.dbaNickName = dbaNickName;
+				public void setDbType(String dbType) {
+					this.dbType = dbType;
 				}
 
 				public String getEnvType() {
@@ -346,20 +322,36 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 					this.envType = envType;
 				}
 
-				public String getDbType() {
-					return this.dbType;
+				public String getHost() {
+					return this.host;
 				}
 
-				public void setDbType(String dbType) {
-					this.dbType = dbType;
+				public void setHost(String host) {
+					this.host = host;
 				}
 
-				public List<String> getOwnerNickName() {
-					return this.ownerNickName;
+				public Long getPort() {
+					return this.port;
 				}
 
-				public void setOwnerNickName(List<String> ownerNickName) {
-					this.ownerNickName = ownerNickName;
+				public void setPort(Long port) {
+					this.port = port;
+				}
+
+				public Long getDbaId() {
+					return this.dbaId;
+				}
+
+				public void setDbaId(Long dbaId) {
+					this.dbaId = dbaId;
+				}
+
+				public String getDbaNickName() {
+					return this.dbaNickName;
+				}
+
+				public void setDbaNickName(String dbaNickName) {
+					this.dbaNickName = dbaNickName;
 				}
 
 				public List<Long> getOwnerIds1() {
@@ -368,6 +360,14 @@ public class GetPermApplyOrderDetailResponse extends AcsResponse {
 
 				public void setOwnerIds1(List<Long> ownerIds1) {
 					this.ownerIds1 = ownerIds1;
+				}
+
+				public List<String> getOwnerNickName() {
+					return this.ownerNickName;
+				}
+
+				public void setOwnerNickName(List<String> ownerNickName) {
+					this.ownerNickName = ownerNickName;
 				}
 			}
 		}

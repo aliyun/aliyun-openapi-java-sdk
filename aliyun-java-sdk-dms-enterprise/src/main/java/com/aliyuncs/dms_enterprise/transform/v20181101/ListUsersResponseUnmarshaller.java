@@ -35,17 +35,17 @@ public class ListUsersResponseUnmarshaller {
 		List<User> userList = new ArrayList<User>();
 		for (int i = 0; i < _ctx.lengthValue("ListUsersResponse.UserList.Length"); i++) {
 			User user = new User();
-			user.setUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Uid"));
-			user.setLastLoginTime(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LastLoginTime"));
-			user.setCurResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurResultCount"));
-			user.setMaxResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxResultCount"));
-			user.setUserId(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
 			user.setState(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].State"));
-			user.setCurExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurExecuteCount"));
-			user.setNickName(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].NickName"));
-			user.setMobile(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Mobile"));
-			user.setMaxExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxExecuteCount"));
+			user.setCurResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurResultCount"));
+			user.setUserId(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].UserId"));
+			user.setLastLoginTime(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].LastLoginTime"));
+			user.setMaxResultCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxResultCount"));
 			user.setParentUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].ParentUid"));
+			user.setNickName(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].NickName"));
+			user.setMaxExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].MaxExecuteCount"));
+			user.setCurExecuteCount(_ctx.longValue("ListUsersResponse.UserList["+ i +"].CurExecuteCount"));
+			user.setMobile(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Mobile"));
+			user.setUid(_ctx.stringValue("ListUsersResponse.UserList["+ i +"].Uid"));
 
 			List<Integer> roleIdList = new ArrayList<Integer>();
 			for (int j = 0; j < _ctx.lengthValue("ListUsersResponse.UserList["+ i +"].RoleIdList.Length"); j++) {

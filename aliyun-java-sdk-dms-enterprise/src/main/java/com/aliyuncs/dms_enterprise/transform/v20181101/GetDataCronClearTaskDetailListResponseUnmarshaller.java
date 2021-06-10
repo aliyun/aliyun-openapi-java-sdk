@@ -27,18 +27,18 @@ public class GetDataCronClearTaskDetailListResponseUnmarshaller {
 	public static GetDataCronClearTaskDetailListResponse unmarshall(GetDataCronClearTaskDetailListResponse getDataCronClearTaskDetailListResponse, UnmarshallerContext _ctx) {
 		
 		getDataCronClearTaskDetailListResponse.setRequestId(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.RequestId"));
-		getDataCronClearTaskDetailListResponse.setTotalCount(_ctx.longValue("GetDataCronClearTaskDetailListResponse.TotalCount"));
-		getDataCronClearTaskDetailListResponse.setErrorCode(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.ErrorCode"));
-		getDataCronClearTaskDetailListResponse.setErrorMessage(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.ErrorMessage"));
 		getDataCronClearTaskDetailListResponse.setSuccess(_ctx.booleanValue("GetDataCronClearTaskDetailListResponse.Success"));
+		getDataCronClearTaskDetailListResponse.setErrorMessage(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.ErrorMessage"));
+		getDataCronClearTaskDetailListResponse.setErrorCode(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.ErrorCode"));
+		getDataCronClearTaskDetailListResponse.setTotalCount(_ctx.longValue("GetDataCronClearTaskDetailListResponse.TotalCount"));
 
 		List<DataCronClearTaskDetail> dataCronClearTaskDetailList = new ArrayList<DataCronClearTaskDetail>();
 		for (int i = 0; i < _ctx.lengthValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList.Length"); i++) {
 			DataCronClearTaskDetail dataCronClearTaskDetail = new DataCronClearTaskDetail();
-			dataCronClearTaskDetail.setJobStatus(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].jobStatus"));
-			dataCronClearTaskDetail.setCreateTime(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].CreateTime"));
-			dataCronClearTaskDetail.setActualAffectRows(_ctx.longValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].ActualAffectRows"));
 			dataCronClearTaskDetail.setDBTaskGroupId(_ctx.longValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].DBTaskGroupId"));
+			dataCronClearTaskDetail.setJobStatus(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].jobStatus"));
+			dataCronClearTaskDetail.setActualAffectRows(_ctx.longValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].ActualAffectRows"));
+			dataCronClearTaskDetail.setCreateTime(_ctx.stringValue("GetDataCronClearTaskDetailListResponse.DataCronClearTaskDetailList["+ i +"].CreateTime"));
 
 			dataCronClearTaskDetailList.add(dataCronClearTaskDetail);
 		}

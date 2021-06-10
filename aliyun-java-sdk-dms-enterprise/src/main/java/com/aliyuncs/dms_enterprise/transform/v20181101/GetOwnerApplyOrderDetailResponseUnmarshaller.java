@@ -29,9 +29,9 @@ public class GetOwnerApplyOrderDetailResponseUnmarshaller {
 	public static GetOwnerApplyOrderDetailResponse unmarshall(GetOwnerApplyOrderDetailResponse getOwnerApplyOrderDetailResponse, UnmarshallerContext _ctx) {
 		
 		getOwnerApplyOrderDetailResponse.setRequestId(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.RequestId"));
-		getOwnerApplyOrderDetailResponse.setErrorCode(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.ErrorCode"));
-		getOwnerApplyOrderDetailResponse.setErrorMessage(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.ErrorMessage"));
 		getOwnerApplyOrderDetailResponse.setSuccess(_ctx.booleanValue("GetOwnerApplyOrderDetailResponse.Success"));
+		getOwnerApplyOrderDetailResponse.setErrorMessage(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.ErrorMessage"));
+		getOwnerApplyOrderDetailResponse.setErrorCode(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.ErrorCode"));
 
 		OwnerApplyOrderDetail ownerApplyOrderDetail = new OwnerApplyOrderDetail();
 		ownerApplyOrderDetail.setApplyType(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.ApplyType"));
@@ -43,22 +43,22 @@ public class GetOwnerApplyOrderDetailResponseUnmarshaller {
 			resource.setTargetId(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].TargetId"));
 
 			ResourceDetail resourceDetail = new ResourceDetail();
-			resourceDetail.setTableName(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.TableName"));
 			resourceDetail.setSearchName(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.SearchName"));
-			resourceDetail.setEnvType(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.EnvType"));
 			resourceDetail.setDbType(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.DbType"));
-
-			List<String> ownerNickNames = new ArrayList<String>();
-			for (int j = 0; j < _ctx.lengthValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames.Length"); j++) {
-				ownerNickNames.add(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames["+ j +"]"));
-			}
-			resourceDetail.setOwnerNickNames(ownerNickNames);
+			resourceDetail.setEnvType(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.EnvType"));
+			resourceDetail.setTableName(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.TableName"));
 
 			List<Long> ownerIds = new ArrayList<Long>();
 			for (int j = 0; j < _ctx.lengthValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerIds.Length"); j++) {
 				ownerIds.add(_ctx.longValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerIds["+ j +"]"));
 			}
 			resourceDetail.setOwnerIds(ownerIds);
+
+			List<String> ownerNickNames = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames.Length"); j++) {
+				ownerNickNames.add(_ctx.stringValue("GetOwnerApplyOrderDetailResponse.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames["+ j +"]"));
+			}
+			resourceDetail.setOwnerNickNames(ownerNickNames);
 			resource.setResourceDetail(resourceDetail);
 
 			resources.add(resource);

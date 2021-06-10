@@ -87,38 +87,38 @@ public class ListTablesResponse extends AcsResponse {
 
 	public static class Table {
 
-		private String tableId;
+		private String databaseId;
 
 		private String tableName;
 
-		private String tableGuid;
-
-		private String tableType;
+		private Long storeCapacity;
 
 		private String description;
 
-		private String tableSchemaName;
-
 		private String encoding;
 
-		private String databaseId;
+		private String tableSchemaName;
 
-		private Long numRows;
+		private String tableType;
 
-		private Long storeCapacity;
+		private String tableGuid;
 
 		private String engine;
 
-		private List<String> ownerNameList;
+		private Long numRows;
+
+		private String tableId;
 
 		private List<String> ownerIdList;
 
-		public String getTableId() {
-			return this.tableId;
+		private List<String> ownerNameList;
+
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setTableId(String tableId) {
-			this.tableId = tableId;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
 		}
 
 		public String getTableName() {
@@ -129,20 +129,12 @@ public class ListTablesResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getTableGuid() {
-			return this.tableGuid;
+		public Long getStoreCapacity() {
+			return this.storeCapacity;
 		}
 
-		public void setTableGuid(String tableGuid) {
-			this.tableGuid = tableGuid;
-		}
-
-		public String getTableType() {
-			return this.tableType;
-		}
-
-		public void setTableType(String tableType) {
-			this.tableType = tableType;
+		public void setStoreCapacity(Long storeCapacity) {
+			this.storeCapacity = storeCapacity;
 		}
 
 		public String getDescription() {
@@ -153,14 +145,6 @@ public class ListTablesResponse extends AcsResponse {
 			this.description = description;
 		}
 
-		public String getTableSchemaName() {
-			return this.tableSchemaName;
-		}
-
-		public void setTableSchemaName(String tableSchemaName) {
-			this.tableSchemaName = tableSchemaName;
-		}
-
 		public String getEncoding() {
 			return this.encoding;
 		}
@@ -169,28 +153,28 @@ public class ListTablesResponse extends AcsResponse {
 			this.encoding = encoding;
 		}
 
-		public String getDatabaseId() {
-			return this.databaseId;
+		public String getTableSchemaName() {
+			return this.tableSchemaName;
 		}
 
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
+		public void setTableSchemaName(String tableSchemaName) {
+			this.tableSchemaName = tableSchemaName;
 		}
 
-		public Long getNumRows() {
-			return this.numRows;
+		public String getTableType() {
+			return this.tableType;
 		}
 
-		public void setNumRows(Long numRows) {
-			this.numRows = numRows;
+		public void setTableType(String tableType) {
+			this.tableType = tableType;
 		}
 
-		public Long getStoreCapacity() {
-			return this.storeCapacity;
+		public String getTableGuid() {
+			return this.tableGuid;
 		}
 
-		public void setStoreCapacity(Long storeCapacity) {
-			this.storeCapacity = storeCapacity;
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
 		}
 
 		public String getEngine() {
@@ -201,12 +185,20 @@ public class ListTablesResponse extends AcsResponse {
 			this.engine = engine;
 		}
 
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
+		public Long getNumRows() {
+			return this.numRows;
 		}
 
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
+		public void setNumRows(Long numRows) {
+			this.numRows = numRows;
+		}
+
+		public String getTableId() {
+			return this.tableId;
+		}
+
+		public void setTableId(String tableId) {
+			this.tableId = tableId;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -215,6 +207,14 @@ public class ListTablesResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
+		}
+
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
+		}
+
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 	}
 

@@ -87,32 +87,32 @@ public class ListLogicTablesResponse extends AcsResponse {
 
 	public static class LogicTable {
 
-		private String tableId;
+		private String databaseId;
 
 		private String tableName;
 
-		private String tableGuid;
-
-		private String tableExpr;
-
 		private String tableCount;
-
-		private String databaseId;
-
-		private Boolean logic;
 
 		private String schemaName;
 
-		private List<String> ownerNameList;
+		private Boolean logic;
+
+		private String tableExpr;
+
+		private String tableGuid;
+
+		private String tableId;
 
 		private List<String> ownerIdList;
 
-		public String getTableId() {
-			return this.tableId;
+		private List<String> ownerNameList;
+
+		public String getDatabaseId() {
+			return this.databaseId;
 		}
 
-		public void setTableId(String tableId) {
-			this.tableId = tableId;
+		public void setDatabaseId(String databaseId) {
+			this.databaseId = databaseId;
 		}
 
 		public String getTableName() {
@@ -123,44 +123,12 @@ public class ListLogicTablesResponse extends AcsResponse {
 			this.tableName = tableName;
 		}
 
-		public String getTableGuid() {
-			return this.tableGuid;
-		}
-
-		public void setTableGuid(String tableGuid) {
-			this.tableGuid = tableGuid;
-		}
-
-		public String getTableExpr() {
-			return this.tableExpr;
-		}
-
-		public void setTableExpr(String tableExpr) {
-			this.tableExpr = tableExpr;
-		}
-
 		public String getTableCount() {
 			return this.tableCount;
 		}
 
 		public void setTableCount(String tableCount) {
 			this.tableCount = tableCount;
-		}
-
-		public String getDatabaseId() {
-			return this.databaseId;
-		}
-
-		public void setDatabaseId(String databaseId) {
-			this.databaseId = databaseId;
-		}
-
-		public Boolean getLogic() {
-			return this.logic;
-		}
-
-		public void setLogic(Boolean logic) {
-			this.logic = logic;
 		}
 
 		public String getSchemaName() {
@@ -171,12 +139,36 @@ public class ListLogicTablesResponse extends AcsResponse {
 			this.schemaName = schemaName;
 		}
 
-		public List<String> getOwnerNameList() {
-			return this.ownerNameList;
+		public Boolean getLogic() {
+			return this.logic;
 		}
 
-		public void setOwnerNameList(List<String> ownerNameList) {
-			this.ownerNameList = ownerNameList;
+		public void setLogic(Boolean logic) {
+			this.logic = logic;
+		}
+
+		public String getTableExpr() {
+			return this.tableExpr;
+		}
+
+		public void setTableExpr(String tableExpr) {
+			this.tableExpr = tableExpr;
+		}
+
+		public String getTableGuid() {
+			return this.tableGuid;
+		}
+
+		public void setTableGuid(String tableGuid) {
+			this.tableGuid = tableGuid;
+		}
+
+		public String getTableId() {
+			return this.tableId;
+		}
+
+		public void setTableId(String tableId) {
+			this.tableId = tableId;
 		}
 
 		public List<String> getOwnerIdList() {
@@ -185,6 +177,14 @@ public class ListLogicTablesResponse extends AcsResponse {
 
 		public void setOwnerIdList(List<String> ownerIdList) {
 			this.ownerIdList = ownerIdList;
+		}
+
+		public List<String> getOwnerNameList() {
+			return this.ownerNameList;
+		}
+
+		public void setOwnerNameList(List<String> ownerNameList) {
+			this.ownerNameList = ownerNameList;
 		}
 	}
 

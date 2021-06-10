@@ -78,15 +78,23 @@ public class ExecuteScriptResponse extends AcsResponse {
 
 	public static class Result {
 
+		private Boolean success;
+
 		private String message;
 
 		private Long rowCount;
 
-		private Boolean success;
-
 		private List<String> columnNames;
 
 		private List<Map<Object,Object>> rows;
+
+		public Boolean getSuccess() {
+			return this.success;
+		}
+
+		public void setSuccess(Boolean success) {
+			this.success = success;
+		}
 
 		public String getMessage() {
 			return this.message;
@@ -102,14 +110,6 @@ public class ExecuteScriptResponse extends AcsResponse {
 
 		public void setRowCount(Long rowCount) {
 			this.rowCount = rowCount;
-		}
-
-		public Boolean getSuccess() {
-			return this.success;
-		}
-
-		public void setSuccess(Boolean success) {
-			this.success = success;
 		}
 
 		public List<String> getColumnNames() {

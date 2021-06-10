@@ -32,22 +32,22 @@ public class GetDataExportOrderDetailResponseUnmarshaller {
 
 		DataExportOrderDetail dataExportOrderDetail = new DataExportOrderDetail();
 
+		KeyInfo keyInfo = new KeyInfo();
+		keyInfo.setPreCheckId(_ctx.longValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.PreCheckId"));
+		keyInfo.setJobStatus(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.JobStatus"));
+		dataExportOrderDetail.setKeyInfo(keyInfo);
+
 		OrderDetail orderDetail = new OrderDetail();
-		orderDetail.setIgnoreAffectRows(_ctx.booleanValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.IgnoreAffectRows"));
-		orderDetail.setExeSQL(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.ExeSQL"));
-		orderDetail.setClassify(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.Classify"));
-		orderDetail.setIgnoreAffectRowsReason(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.IgnoreAffectRowsReason"));
-		orderDetail.setDatabase(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.Database"));
 		orderDetail.setDbId(_ctx.integerValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.DbId"));
-		orderDetail.setActualAffectRows(_ctx.longValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.ActualAffectRows"));
+		orderDetail.setDatabase(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.Database"));
+		orderDetail.setClassify(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.Classify"));
+		orderDetail.setExeSQL(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.ExeSQL"));
 		orderDetail.setLogic(_ctx.booleanValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.Logic"));
+		orderDetail.setActualAffectRows(_ctx.longValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.ActualAffectRows"));
+		orderDetail.setIgnoreAffectRows(_ctx.booleanValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.IgnoreAffectRows"));
+		orderDetail.setIgnoreAffectRowsReason(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.IgnoreAffectRowsReason"));
 		orderDetail.setEnvType(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.OrderDetail.EnvType"));
 		dataExportOrderDetail.setOrderDetail(orderDetail);
-
-		KeyInfo keyInfo = new KeyInfo();
-		keyInfo.setJobStatus(_ctx.stringValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.JobStatus"));
-		keyInfo.setPreCheckId(_ctx.longValue("GetDataExportOrderDetailResponse.DataExportOrderDetail.KeyInfo.PreCheckId"));
-		dataExportOrderDetail.setKeyInfo(keyInfo);
 		getDataExportOrderDetailResponse.setDataExportOrderDetail(dataExportOrderDetail);
 	 
 	 	return getDataExportOrderDetailResponse;

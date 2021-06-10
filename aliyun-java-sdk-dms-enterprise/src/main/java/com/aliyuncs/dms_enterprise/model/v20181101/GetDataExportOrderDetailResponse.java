@@ -76,17 +76,9 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 
 	public static class DataExportOrderDetail {
 
-		private OrderDetail orderDetail;
-
 		private KeyInfo keyInfo;
 
-		public OrderDetail getOrderDetail() {
-			return this.orderDetail;
-		}
-
-		public void setOrderDetail(OrderDetail orderDetail) {
-			this.orderDetail = orderDetail;
-		}
+		private OrderDetail orderDetail;
 
 		public KeyInfo getKeyInfo() {
 			return this.keyInfo;
@@ -96,56 +88,63 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 			this.keyInfo = keyInfo;
 		}
 
+		public OrderDetail getOrderDetail() {
+			return this.orderDetail;
+		}
+
+		public void setOrderDetail(OrderDetail orderDetail) {
+			this.orderDetail = orderDetail;
+		}
+
+		public static class KeyInfo {
+
+			private Long preCheckId;
+
+			private String jobStatus;
+
+			public Long getPreCheckId() {
+				return this.preCheckId;
+			}
+
+			public void setPreCheckId(Long preCheckId) {
+				this.preCheckId = preCheckId;
+			}
+
+			public String getJobStatus() {
+				return this.jobStatus;
+			}
+
+			public void setJobStatus(String jobStatus) {
+				this.jobStatus = jobStatus;
+			}
+		}
+
 		public static class OrderDetail {
-
-			private Boolean ignoreAffectRows;
-
-			private String exeSQL;
-
-			private String classify;
-
-			private String ignoreAffectRowsReason;
-
-			private String database;
 
 			private Integer dbId;
 
-			private Long actualAffectRows;
+			private String database;
+
+			private String classify;
+
+			private String exeSQL;
 
 			private Boolean logic;
 
+			private Long actualAffectRows;
+
+			private Boolean ignoreAffectRows;
+
+			private String ignoreAffectRowsReason;
+
 			private String envType;
 
-			public Boolean getIgnoreAffectRows() {
-				return this.ignoreAffectRows;
+			public Integer getDbId() {
+				return this.dbId;
 			}
 
-			public void setIgnoreAffectRows(Boolean ignoreAffectRows) {
-				this.ignoreAffectRows = ignoreAffectRows;
-			}
-
-			public String getExeSQL() {
-				return this.exeSQL;
-			}
-
-			public void setExeSQL(String exeSQL) {
-				this.exeSQL = exeSQL;
-			}
-
-			public String getClassify() {
-				return this.classify;
-			}
-
-			public void setClassify(String classify) {
-				this.classify = classify;
-			}
-
-			public String getIgnoreAffectRowsReason() {
-				return this.ignoreAffectRowsReason;
-			}
-
-			public void setIgnoreAffectRowsReason(String ignoreAffectRowsReason) {
-				this.ignoreAffectRowsReason = ignoreAffectRowsReason;
+			public void setDbId(Integer dbId) {
+				this.dbId = dbId;
 			}
 
 			public String getDatabase() {
@@ -156,20 +155,20 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 				this.database = database;
 			}
 
-			public Integer getDbId() {
-				return this.dbId;
+			public String getClassify() {
+				return this.classify;
 			}
 
-			public void setDbId(Integer dbId) {
-				this.dbId = dbId;
+			public void setClassify(String classify) {
+				this.classify = classify;
 			}
 
-			public Long getActualAffectRows() {
-				return this.actualAffectRows;
+			public String getExeSQL() {
+				return this.exeSQL;
 			}
 
-			public void setActualAffectRows(Long actualAffectRows) {
-				this.actualAffectRows = actualAffectRows;
+			public void setExeSQL(String exeSQL) {
+				this.exeSQL = exeSQL;
 			}
 
 			public Boolean getLogic() {
@@ -180,35 +179,36 @@ public class GetDataExportOrderDetailResponse extends AcsResponse {
 				this.logic = logic;
 			}
 
+			public Long getActualAffectRows() {
+				return this.actualAffectRows;
+			}
+
+			public void setActualAffectRows(Long actualAffectRows) {
+				this.actualAffectRows = actualAffectRows;
+			}
+
+			public Boolean getIgnoreAffectRows() {
+				return this.ignoreAffectRows;
+			}
+
+			public void setIgnoreAffectRows(Boolean ignoreAffectRows) {
+				this.ignoreAffectRows = ignoreAffectRows;
+			}
+
+			public String getIgnoreAffectRowsReason() {
+				return this.ignoreAffectRowsReason;
+			}
+
+			public void setIgnoreAffectRowsReason(String ignoreAffectRowsReason) {
+				this.ignoreAffectRowsReason = ignoreAffectRowsReason;
+			}
+
 			public String getEnvType() {
 				return this.envType;
 			}
 
 			public void setEnvType(String envType) {
 				this.envType = envType;
-			}
-		}
-
-		public static class KeyInfo {
-
-			private String jobStatus;
-
-			private Long preCheckId;
-
-			public String getJobStatus() {
-				return this.jobStatus;
-			}
-
-			public void setJobStatus(String jobStatus) {
-				this.jobStatus = jobStatus;
-			}
-
-			public Long getPreCheckId() {
-				return this.preCheckId;
-			}
-
-			public void setPreCheckId(Long preCheckId) {
-				this.preCheckId = preCheckId;
 			}
 		}
 	}

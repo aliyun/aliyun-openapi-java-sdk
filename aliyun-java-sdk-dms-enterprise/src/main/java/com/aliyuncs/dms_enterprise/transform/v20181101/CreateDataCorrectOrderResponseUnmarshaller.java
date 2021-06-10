@@ -26,9 +26,9 @@ public class CreateDataCorrectOrderResponseUnmarshaller {
 	public static CreateDataCorrectOrderResponse unmarshall(CreateDataCorrectOrderResponse createDataCorrectOrderResponse, UnmarshallerContext _ctx) {
 		
 		createDataCorrectOrderResponse.setRequestId(_ctx.stringValue("CreateDataCorrectOrderResponse.RequestId"));
-		createDataCorrectOrderResponse.setErrorCode(_ctx.stringValue("CreateDataCorrectOrderResponse.ErrorCode"));
-		createDataCorrectOrderResponse.setErrorMessage(_ctx.stringValue("CreateDataCorrectOrderResponse.ErrorMessage"));
 		createDataCorrectOrderResponse.setSuccess(_ctx.booleanValue("CreateDataCorrectOrderResponse.Success"));
+		createDataCorrectOrderResponse.setErrorMessage(_ctx.stringValue("CreateDataCorrectOrderResponse.ErrorMessage"));
+		createDataCorrectOrderResponse.setErrorCode(_ctx.stringValue("CreateDataCorrectOrderResponse.ErrorCode"));
 
 		List<Long> createOrderResult = new ArrayList<Long>();
 		for (int i = 0; i < _ctx.lengthValue("CreateDataCorrectOrderResponse.CreateOrderResult.Length"); i++) {

@@ -27,11 +27,11 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String errorCode;
+	private Boolean success;
 
 	private String errorMessage;
 
-	private Boolean success;
+	private String errorCode;
 
 	private OwnerApplyOrderDetail ownerApplyOrderDetail;
 
@@ -43,12 +43,12 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getErrorCode() {
-		return this.errorCode;
+	public Boolean getSuccess() {
+		return this.success;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setSuccess(Boolean success) {
+		this.success = success;
 	}
 
 	public String getErrorMessage() {
@@ -59,12 +59,12 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 		this.errorMessage = errorMessage;
 	}
 
-	public Boolean getSuccess() {
-		return this.success;
+	public String getErrorCode() {
+		return this.errorCode;
 	}
 
-	public void setSuccess(Boolean success) {
-		this.success = success;
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
 	}
 
 	public OwnerApplyOrderDetail getOwnerApplyOrderDetail() {
@@ -131,25 +131,17 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 
 			public static class ResourceDetail {
 
-				private String tableName;
-
 				private String searchName;
-
-				private String envType;
 
 				private String dbType;
 
-				private List<String> ownerNickNames;
+				private String envType;
+
+				private String tableName;
 
 				private List<Long> ownerIds;
 
-				public String getTableName() {
-					return this.tableName;
-				}
-
-				public void setTableName(String tableName) {
-					this.tableName = tableName;
-				}
+				private List<String> ownerNickNames;
 
 				public String getSearchName() {
 					return this.searchName;
@@ -157,14 +149,6 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 
 				public void setSearchName(String searchName) {
 					this.searchName = searchName;
-				}
-
-				public String getEnvType() {
-					return this.envType;
-				}
-
-				public void setEnvType(String envType) {
-					this.envType = envType;
 				}
 
 				public String getDbType() {
@@ -175,12 +159,20 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 					this.dbType = dbType;
 				}
 
-				public List<String> getOwnerNickNames() {
-					return this.ownerNickNames;
+				public String getEnvType() {
+					return this.envType;
 				}
 
-				public void setOwnerNickNames(List<String> ownerNickNames) {
-					this.ownerNickNames = ownerNickNames;
+				public void setEnvType(String envType) {
+					this.envType = envType;
+				}
+
+				public String getTableName() {
+					return this.tableName;
+				}
+
+				public void setTableName(String tableName) {
+					this.tableName = tableName;
 				}
 
 				public List<Long> getOwnerIds() {
@@ -189,6 +181,14 @@ public class GetOwnerApplyOrderDetailResponse extends AcsResponse {
 
 				public void setOwnerIds(List<Long> ownerIds) {
 					this.ownerIds = ownerIds;
+				}
+
+				public List<String> getOwnerNickNames() {
+					return this.ownerNickNames;
+				}
+
+				public void setOwnerNickNames(List<String> ownerNickNames) {
+					this.ownerNickNames = ownerNickNames;
 				}
 			}
 		}

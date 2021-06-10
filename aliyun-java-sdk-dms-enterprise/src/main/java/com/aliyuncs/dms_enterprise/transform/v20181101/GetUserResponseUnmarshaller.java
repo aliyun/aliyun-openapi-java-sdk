@@ -32,17 +32,17 @@ public class GetUserResponseUnmarshaller {
 		getUserResponse.setSuccess(_ctx.booleanValue("GetUserResponse.Success"));
 
 		User user = new User();
-		user.setUid(_ctx.stringValue("GetUserResponse.User.Uid"));
-		user.setLastLoginTime(_ctx.stringValue("GetUserResponse.User.LastLoginTime"));
-		user.setCurResultCount(_ctx.longValue("GetUserResponse.User.CurResultCount"));
-		user.setMaxResultCount(_ctx.longValue("GetUserResponse.User.MaxResultCount"));
-		user.setUserId(_ctx.stringValue("GetUserResponse.User.UserId"));
 		user.setState(_ctx.stringValue("GetUserResponse.User.State"));
-		user.setCurExecuteCount(_ctx.longValue("GetUserResponse.User.CurExecuteCount"));
-		user.setNickName(_ctx.stringValue("GetUserResponse.User.NickName"));
-		user.setMobile(_ctx.stringValue("GetUserResponse.User.Mobile"));
-		user.setMaxExecuteCount(_ctx.longValue("GetUserResponse.User.MaxExecuteCount"));
+		user.setCurResultCount(_ctx.longValue("GetUserResponse.User.CurResultCount"));
+		user.setUserId(_ctx.stringValue("GetUserResponse.User.UserId"));
+		user.setLastLoginTime(_ctx.stringValue("GetUserResponse.User.LastLoginTime"));
+		user.setMaxResultCount(_ctx.longValue("GetUserResponse.User.MaxResultCount"));
 		user.setParentUid(_ctx.longValue("GetUserResponse.User.ParentUid"));
+		user.setNickName(_ctx.stringValue("GetUserResponse.User.NickName"));
+		user.setMaxExecuteCount(_ctx.longValue("GetUserResponse.User.MaxExecuteCount"));
+		user.setCurExecuteCount(_ctx.longValue("GetUserResponse.User.CurExecuteCount"));
+		user.setMobile(_ctx.stringValue("GetUserResponse.User.Mobile"));
+		user.setUid(_ctx.stringValue("GetUserResponse.User.Uid"));
 
 		List<Integer> roleIdList = new ArrayList<Integer>();
 		for (int i = 0; i < _ctx.lengthValue("GetUserResponse.User.RoleIdList.Length"); i++) {

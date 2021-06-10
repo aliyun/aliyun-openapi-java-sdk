@@ -34,19 +34,19 @@ public class ListColumnsResponseUnmarshaller {
 		List<Column> columnList = new ArrayList<Column>();
 		for (int i = 0; i < _ctx.lengthValue("ListColumnsResponse.ColumnList.Length"); i++) {
 			Column column = new Column();
-			column.setColumnId(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnId"));
-			column.setColumnName(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnName"));
-			column.setDefaultValue(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].DefaultValue"));
-			column.setDescription(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].Description"));
 			column.setColumnType(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnType"));
 			column.setAutoIncrement(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].AutoIncrement"));
-			column.setFunctionType(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].FunctionType"));
-			column.setSecurityLevel(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].SecurityLevel"));
-			column.setDataLength(_ctx.longValue("ListColumnsResponse.ColumnList["+ i +"].DataLength"));
-			column.setDataScale(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataScale"));
-			column.setDataPrecision(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataPrecision"));
+			column.setColumnId(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnId"));
+			column.setDefaultValue(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].DefaultValue"));
 			column.setSensitive(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].Sensitive"));
+			column.setColumnName(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].ColumnName"));
+			column.setSecurityLevel(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].SecurityLevel"));
+			column.setDescription(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].Description"));
+			column.setDataPrecision(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataPrecision"));
+			column.setDataScale(_ctx.integerValue("ListColumnsResponse.ColumnList["+ i +"].DataScale"));
+			column.setFunctionType(_ctx.stringValue("ListColumnsResponse.ColumnList["+ i +"].FunctionType"));
 			column.setNullable(_ctx.booleanValue("ListColumnsResponse.ColumnList["+ i +"].Nullable"));
+			column.setDataLength(_ctx.longValue("ListColumnsResponse.ColumnList["+ i +"].DataLength"));
 
 			columnList.add(column);
 		}

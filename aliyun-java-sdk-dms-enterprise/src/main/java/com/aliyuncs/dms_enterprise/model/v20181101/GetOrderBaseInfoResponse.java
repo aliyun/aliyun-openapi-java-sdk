@@ -77,47 +77,31 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 	public static class OrderBaseInfo {
 
-		private String statusDesc;
-
-		private String workflowStatusDesc;
-
 		private String comment;
 
 		private String createTime;
 
-		private Long workflowInstanceId;
-
 		private String committer;
 
-		private Long orderId;
-
-		private String lastModifyTime;
-
-		private String pluginType;
-
-		private String statusCode;
+		private Long workflowInstanceId;
 
 		private Long committerId;
 
-		private List<String> relatedUserList;
+		private String lastModifyTime;
+
+		private String statusCode;
+
+		private String workflowStatusDesc;
+
+		private String statusDesc;
+
+		private String pluginType;
+
+		private Long orderId;
 
 		private List<String> relatedUserNickList;
 
-		public String getStatusDesc() {
-			return this.statusDesc;
-		}
-
-		public void setStatusDesc(String statusDesc) {
-			this.statusDesc = statusDesc;
-		}
-
-		public String getWorkflowStatusDesc() {
-			return this.workflowStatusDesc;
-		}
-
-		public void setWorkflowStatusDesc(String workflowStatusDesc) {
-			this.workflowStatusDesc = workflowStatusDesc;
-		}
+		private List<String> relatedUserList;
 
 		public String getComment() {
 			return this.comment;
@@ -135,14 +119,6 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public Long getWorkflowInstanceId() {
-			return this.workflowInstanceId;
-		}
-
-		public void setWorkflowInstanceId(Long workflowInstanceId) {
-			this.workflowInstanceId = workflowInstanceId;
-		}
-
 		public String getCommitter() {
 			return this.committer;
 		}
@@ -151,36 +127,12 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 			this.committer = committer;
 		}
 
-		public Long getOrderId() {
-			return this.orderId;
+		public Long getWorkflowInstanceId() {
+			return this.workflowInstanceId;
 		}
 
-		public void setOrderId(Long orderId) {
-			this.orderId = orderId;
-		}
-
-		public String getLastModifyTime() {
-			return this.lastModifyTime;
-		}
-
-		public void setLastModifyTime(String lastModifyTime) {
-			this.lastModifyTime = lastModifyTime;
-		}
-
-		public String getPluginType() {
-			return this.pluginType;
-		}
-
-		public void setPluginType(String pluginType) {
-			this.pluginType = pluginType;
-		}
-
-		public String getStatusCode() {
-			return this.statusCode;
-		}
-
-		public void setStatusCode(String statusCode) {
-			this.statusCode = statusCode;
+		public void setWorkflowInstanceId(Long workflowInstanceId) {
+			this.workflowInstanceId = workflowInstanceId;
 		}
 
 		public Long getCommitterId() {
@@ -191,12 +143,52 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 			this.committerId = committerId;
 		}
 
-		public List<String> getRelatedUserList() {
-			return this.relatedUserList;
+		public String getLastModifyTime() {
+			return this.lastModifyTime;
 		}
 
-		public void setRelatedUserList(List<String> relatedUserList) {
-			this.relatedUserList = relatedUserList;
+		public void setLastModifyTime(String lastModifyTime) {
+			this.lastModifyTime = lastModifyTime;
+		}
+
+		public String getStatusCode() {
+			return this.statusCode;
+		}
+
+		public void setStatusCode(String statusCode) {
+			this.statusCode = statusCode;
+		}
+
+		public String getWorkflowStatusDesc() {
+			return this.workflowStatusDesc;
+		}
+
+		public void setWorkflowStatusDesc(String workflowStatusDesc) {
+			this.workflowStatusDesc = workflowStatusDesc;
+		}
+
+		public String getStatusDesc() {
+			return this.statusDesc;
+		}
+
+		public void setStatusDesc(String statusDesc) {
+			this.statusDesc = statusDesc;
+		}
+
+		public String getPluginType() {
+			return this.pluginType;
+		}
+
+		public void setPluginType(String pluginType) {
+			this.pluginType = pluginType;
+		}
+
+		public Long getOrderId() {
+			return this.orderId;
+		}
+
+		public void setOrderId(Long orderId) {
+			this.orderId = orderId;
 		}
 
 		public List<String> getRelatedUserNickList() {
@@ -205,6 +197,14 @@ public class GetOrderBaseInfoResponse extends AcsResponse {
 
 		public void setRelatedUserNickList(List<String> relatedUserNickList) {
 			this.relatedUserNickList = relatedUserNickList;
+		}
+
+		public List<String> getRelatedUserList() {
+			return this.relatedUserList;
+		}
+
+		public void setRelatedUserList(List<String> relatedUserList) {
+			this.relatedUserList = relatedUserList;
 		}
 	}
 
