@@ -41,6 +41,8 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 
 	private Integer diskSize;
 
+	private String encryptionKey;
+
 	private String masterInstanceType;
 
 	private String diskType;
@@ -156,6 +158,17 @@ public class CreateClusterRequest extends RpcAcsRequest<CreateClusterResponse> {
 		this.diskSize = diskSize;
 		if(diskSize != null){
 			putQueryParameter("DiskSize", diskSize.toString());
+		}
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
+		if(encryptionKey != null){
+			putQueryParameter("EncryptionKey", encryptionKey);
 		}
 	}
 

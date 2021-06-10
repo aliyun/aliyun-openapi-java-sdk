@@ -113,6 +113,10 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	private String resourceGroupId;
 
+	private Boolean encryptionType;
+
+	private String encryptionKey;
+
 	private List<Tag> tags;
 
 	public String getRequestId() {
@@ -465,6 +469,22 @@ public class DescribeInstanceResponse extends AcsResponse {
 
 	public void setResourceGroupId(String resourceGroupId) {
 		this.resourceGroupId = resourceGroupId;
+	}
+
+	public Boolean getEncryptionType() {
+		return this.encryptionType;
+	}
+
+	public void setEncryptionType(Boolean encryptionType) {
+		this.encryptionType = encryptionType;
+	}
+
+	public String getEncryptionKey() {
+		return this.encryptionKey;
+	}
+
+	public void setEncryptionKey(String encryptionKey) {
+		this.encryptionKey = encryptionKey;
 	}
 
 	public List<Tag> getTags() {
