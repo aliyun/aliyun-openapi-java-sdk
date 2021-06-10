@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse;
-import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.K8sSecretsItem;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem;
 import com.aliyuncs.edas.model.v20170801.ListK8sSecretsResponse.ResultItem.SecretsItem.DataItem;
@@ -34,18 +33,6 @@ public class ListK8sSecretsResponseUnmarshaller {
 		listK8sSecretsResponse.setCode(_ctx.integerValue("ListK8sSecretsResponse.Code"));
 		listK8sSecretsResponse.setMessage(_ctx.stringValue("ListK8sSecretsResponse.Message"));
 
-		List<K8sSecretsItem> k8sSecrets = new ArrayList<K8sSecretsItem>();
-		for (int i = 0; i < _ctx.lengthValue("ListK8sSecretsResponse.K8sSecrets.Length"); i++) {
-			K8sSecretsItem k8sSecretsItem = new K8sSecretsItem();
-			k8sSecretsItem.setName(_ctx.stringValue("ListK8sSecretsResponse.K8sSecrets["+ i +"].Name"));
-			k8sSecretsItem.setNamespace(_ctx.stringValue("ListK8sSecretsResponse.K8sSecrets["+ i +"].Namespace"));
-			k8sSecretsItem.setCreationTime(_ctx.stringValue("ListK8sSecretsResponse.K8sSecrets["+ i +"].CreationTime"));
-			k8sSecretsItem.setType(_ctx.stringValue("ListK8sSecretsResponse.K8sSecrets["+ i +"].Type"));
-
-			k8sSecrets.add(k8sSecretsItem);
-		}
-		listK8sSecretsResponse.setK8sSecrets(k8sSecrets);
-
 		List<ResultItem> result = new ArrayList<ResultItem>();
 		for (int i = 0; i < _ctx.lengthValue("ListK8sSecretsResponse.Result.Length"); i++) {
 			ResultItem resultItem = new ResultItem();
@@ -60,6 +47,8 @@ public class ListK8sSecretsResponseUnmarshaller {
 				secretsItem.setType(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Type"));
 				secretsItem.setClusterId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterId"));
 				secretsItem.setClusterName(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].ClusterName"));
+				secretsItem.setCertId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertId"));
+				secretsItem.setCertRegionId(_ctx.stringValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].CertRegionId"));
 
 				List<DataItem> data = new ArrayList<DataItem>();
 				for (int k = 0; k < _ctx.lengthValue("ListK8sSecretsResponse.Result["+ i +"].Secrets["+ j +"].Data.Length"); k++) {

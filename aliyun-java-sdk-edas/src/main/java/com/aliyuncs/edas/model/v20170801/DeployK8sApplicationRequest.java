@@ -49,6 +49,8 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 
 	private String storageType;
 
+	private String envFroms;
+
 	private String configMountDescs;
 
 	private String edasContainerVersion;
@@ -251,6 +253,17 @@ public class DeployK8sApplicationRequest extends RoaAcsRequest<DeployK8sApplicat
 		this.storageType = storageType;
 		if(storageType != null){
 			putQueryParameter("StorageType", storageType);
+		}
+	}
+
+	public String getEnvFroms() {
+		return this.envFroms;
+	}
+
+	public void setEnvFroms(String envFroms) {
+		this.envFroms = envFroms;
+		if(envFroms != null){
+			putQueryParameter("EnvFroms", envFroms);
 		}
 	}
 

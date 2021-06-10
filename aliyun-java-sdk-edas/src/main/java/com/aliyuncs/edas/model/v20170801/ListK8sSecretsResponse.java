@@ -31,8 +31,6 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private List<K8sSecretsItem> k8sSecrets;
-
 	private List<ResultItem> result;
 
 	public Integer getCode() {
@@ -59,63 +57,12 @@ public class ListK8sSecretsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public List<K8sSecretsItem> getK8sSecrets() {
-		return this.k8sSecrets;
-	}
-
-	public void setK8sSecrets(List<K8sSecretsItem> k8sSecrets) {
-		this.k8sSecrets = k8sSecrets;
-	}
-
 	public List<ResultItem> getResult() {
 		return this.result;
 	}
 
 	public void setResult(List<ResultItem> result) {
 		this.result = result;
-	}
-
-	public static class K8sSecretsItem {
-
-		private String name;
-
-		private String namespace;
-
-		private String creationTime;
-
-		private String type;
-
-		public String getName() {
-			return this.name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getNamespace() {
-			return this.namespace;
-		}
-
-		public void setNamespace(String namespace) {
-			this.namespace = namespace;
-		}
-
-		public String getCreationTime() {
-			return this.creationTime;
-		}
-
-		public void setCreationTime(String creationTime) {
-			this.creationTime = creationTime;
-		}
-
-		public String getType() {
-			return this.type;
-		}
-
-		public void setType(String type) {
-			this.type = type;
-		}
 	}
 
 	public static class ResultItem {
@@ -153,6 +100,10 @@ public class ListK8sSecretsResponse extends AcsResponse {
 			private String clusterId;
 
 			private String clusterName;
+
+			private String certId;
+
+			private String certRegionId;
 
 			private List<DataItem> data;
 
@@ -204,6 +155,22 @@ public class ListK8sSecretsResponse extends AcsResponse {
 
 			public void setClusterName(String clusterName) {
 				this.clusterName = clusterName;
+			}
+
+			public String getCertId() {
+				return this.certId;
+			}
+
+			public void setCertId(String certId) {
+				this.certId = certId;
+			}
+
+			public String getCertRegionId() {
+				return this.certRegionId;
+			}
+
+			public void setCertRegionId(String certRegionId) {
+				this.certRegionId = certRegionId;
 			}
 
 			public List<DataItem> getData() {
