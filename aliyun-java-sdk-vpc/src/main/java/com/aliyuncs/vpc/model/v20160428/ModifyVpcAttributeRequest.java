@@ -33,6 +33,8 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 
 	private String vpcName;
 
+	private String ipv6Isp;
+
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
@@ -94,6 +96,17 @@ public class ModifyVpcAttributeRequest extends RpcAcsRequest<ModifyVpcAttributeR
 		this.vpcName = vpcName;
 		if(vpcName != null){
 			putQueryParameter("VpcName", vpcName);
+		}
+	}
+
+	public String getIpv6Isp() {
+		return this.ipv6Isp;
+	}
+
+	public void setIpv6Isp(String ipv6Isp) {
+		this.ipv6Isp = ipv6Isp;
+		if(ipv6Isp != null){
+			putQueryParameter("Ipv6Isp", ipv6Isp);
 		}
 	}
 

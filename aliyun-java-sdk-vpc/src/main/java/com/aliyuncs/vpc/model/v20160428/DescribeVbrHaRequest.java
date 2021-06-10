@@ -22,34 +22,26 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
+public class DescribeVbrHaRequest extends RpcAcsRequest<DescribeVbrHaResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
 
-	private String description;
+	private String vbrHaId;
+
+	private String vbrId;
+
+	private Boolean dryRun;
 
 	private String resourceOwnerAccount;
 
 	private String ownerAccount;
 
 	private Long ownerId;
-
-	private Integer ipv6CidrBlock;
-
-	private String vpcIpv6CidrBlock;
-
-	private String vpcId;
-
-	private String vSwitchName;
-
-	private String cidrBlock;
-
-	private String zoneId;
-	public CreateVSwitchRequest() {
-		super("Vpc", "2016-04-28", "CreateVSwitch", "vpc");
+	public DescribeVbrHaRequest() {
+		super("Vpc", "2016-04-28", "DescribeVbrHa", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -79,14 +71,36 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		}
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getVbrHaId() {
+		return this.vbrHaId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
+	public void setVbrHaId(String vbrHaId) {
+		this.vbrHaId = vbrHaId;
+		if(vbrHaId != null){
+			putQueryParameter("VbrHaId", vbrHaId);
+		}
+	}
+
+	public String getVbrId() {
+		return this.vbrId;
+	}
+
+	public void setVbrId(String vbrId) {
+		this.vbrId = vbrId;
+		if(vbrId != null){
+			putQueryParameter("VbrId", vbrId);
+		}
+	}
+
+	public Boolean getDryRun() {
+		return this.dryRun;
+	}
+
+	public void setDryRun(Boolean dryRun) {
+		this.dryRun = dryRun;
+		if(dryRun != null){
+			putQueryParameter("DryRun", dryRun.toString());
 		}
 	}
 
@@ -123,75 +137,9 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		}
 	}
 
-	public Integer getIpv6CidrBlock() {
-		return this.ipv6CidrBlock;
-	}
-
-	public void setIpv6CidrBlock(Integer ipv6CidrBlock) {
-		this.ipv6CidrBlock = ipv6CidrBlock;
-		if(ipv6CidrBlock != null){
-			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock.toString());
-		}
-	}
-
-	public String getVpcIpv6CidrBlock() {
-		return this.vpcIpv6CidrBlock;
-	}
-
-	public void setVpcIpv6CidrBlock(String vpcIpv6CidrBlock) {
-		this.vpcIpv6CidrBlock = vpcIpv6CidrBlock;
-		if(vpcIpv6CidrBlock != null){
-			putQueryParameter("VpcIpv6CidrBlock", vpcIpv6CidrBlock);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getVSwitchName() {
-		return this.vSwitchName;
-	}
-
-	public void setVSwitchName(String vSwitchName) {
-		this.vSwitchName = vSwitchName;
-		if(vSwitchName != null){
-			putQueryParameter("VSwitchName", vSwitchName);
-		}
-	}
-
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		if(cidrBlock != null){
-			putQueryParameter("CidrBlock", cidrBlock);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
-		}
-	}
-
 	@Override
-	public Class<CreateVSwitchResponse> getResponseClass() {
-		return CreateVSwitchResponse.class;
+	public Class<DescribeVbrHaResponse> getResponseClass() {
+		return DescribeVbrHaResponse.class;
 	}
 
 }

@@ -101,6 +101,8 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 		private String allocationTime;
 
+		private String ipv6Isp;
+
 		private Ipv6InternetBandwidth ipv6InternetBandwidth;
 
 		public String getIpv6AddressId() {
@@ -197,6 +199,14 @@ public class DescribeIpv6AddressesResponse extends AcsResponse {
 
 		public void setAllocationTime(String allocationTime) {
 			this.allocationTime = allocationTime;
+		}
+
+		public String getIpv6Isp() {
+			return this.ipv6Isp;
+		}
+
+		public void setIpv6Isp(String ipv6Isp) {
+			this.ipv6Isp = ipv6Isp;
 		}
 
 		public Ipv6InternetBandwidth getIpv6InternetBandwidth() {

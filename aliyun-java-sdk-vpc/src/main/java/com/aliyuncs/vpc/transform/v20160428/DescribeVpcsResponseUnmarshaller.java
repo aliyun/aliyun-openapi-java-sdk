@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse.Vpc;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse.Vpc.Ipv6CidrBlock;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcsResponse.Vpc.Tag;
 import com.aliyuncs.transform.UnmarshallerContext;
 
@@ -93,6 +94,16 @@ public class DescribeVpcsResponseUnmarshaller {
 				tags.add(tag);
 			}
 			vpc.setTags(tags);
+
+			List<Ipv6CidrBlock> ipv6CidrBlocks = new ArrayList<Ipv6CidrBlock>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeVpcsResponse.Vpcs["+ i +"].Ipv6CidrBlocks.Length"); j++) {
+				Ipv6CidrBlock ipv6CidrBlock = new Ipv6CidrBlock();
+				ipv6CidrBlock.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Ipv6CidrBlocks["+ j +"].Ipv6CidrBlock"));
+				ipv6CidrBlock.setIpv6Isp(_ctx.stringValue("DescribeVpcsResponse.Vpcs["+ i +"].Ipv6CidrBlocks["+ j +"].Ipv6Isp"));
+
+				ipv6CidrBlocks.add(ipv6CidrBlock);
+			}
+			vpc.setIpv6CidrBlocks(ipv6CidrBlocks);
 
 			vpcs.add(vpc);
 		}

@@ -15,18 +15,16 @@
 package com.aliyuncs.vpc.model.v20160428;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.vpc.transform.v20160428.CreateRouteEntryResponseUnmarshaller;
+import com.aliyuncs.vpc.transform.v20160428.DeleteVbrHaResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class CreateRouteEntryResponse extends AcsResponse {
+public class DeleteVbrHaResponse extends AcsResponse {
 
 	private String requestId;
-
-	private String routeEntryId;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -36,16 +34,8 @@ public class CreateRouteEntryResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public String getRouteEntryId() {
-		return this.routeEntryId;
-	}
-
-	public void setRouteEntryId(String routeEntryId) {
-		this.routeEntryId = routeEntryId;
-	}
-
 	@Override
-	public CreateRouteEntryResponse getInstance(UnmarshallerContext context) {
-		return	CreateRouteEntryResponseUnmarshaller.unmarshall(this, context);
+	public DeleteVbrHaResponse getInstance(UnmarshallerContext context) {
+		return	DeleteVbrHaResponseUnmarshaller.unmarshall(this, context);
 	}
 }

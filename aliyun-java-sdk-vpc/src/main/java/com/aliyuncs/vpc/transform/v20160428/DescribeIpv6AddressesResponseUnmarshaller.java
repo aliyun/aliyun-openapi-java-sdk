@@ -47,6 +47,7 @@ public class DescribeIpv6AddressesResponseUnmarshaller {
 			ipv6Address.setNetworkType(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].NetworkType"));
 			ipv6Address.setRealBandwidth(_ctx.integerValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].RealBandwidth"));
 			ipv6Address.setAllocationTime(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].AllocationTime"));
+			ipv6Address.setIpv6Isp(_ctx.stringValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6Isp"));
 
 			Ipv6InternetBandwidth ipv6InternetBandwidth = new Ipv6InternetBandwidth();
 			ipv6InternetBandwidth.setBandwidth(_ctx.integerValue("DescribeIpv6AddressesResponse.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.Bandwidth"));

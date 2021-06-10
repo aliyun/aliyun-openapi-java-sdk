@@ -22,14 +22,12 @@ import com.aliyuncs.vpc.Endpoint;
  * @author auto create
  * @version 
  */
-public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
+public class DeleteVbrHaRequest extends RpcAcsRequest<DeleteVbrHaResponse> {
 	   
 
 	private Long resourceOwnerId;
 
 	private String clientToken;
-
-	private String description;
 
 	private String resourceOwnerAccount;
 
@@ -37,19 +35,9 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 
 	private Long ownerId;
 
-	private Integer ipv6CidrBlock;
-
-	private String vpcIpv6CidrBlock;
-
-	private String vpcId;
-
-	private String vSwitchName;
-
-	private String cidrBlock;
-
-	private String zoneId;
-	public CreateVSwitchRequest() {
-		super("Vpc", "2016-04-28", "CreateVSwitch", "vpc");
+	private String instanceId;
+	public DeleteVbrHaRequest() {
+		super("Vpc", "2016-04-28", "DeleteVbrHa", "vpc");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -76,17 +64,6 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		this.clientToken = clientToken;
 		if(clientToken != null){
 			putQueryParameter("ClientToken", clientToken);
-		}
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-		if(description != null){
-			putQueryParameter("Description", description);
 		}
 	}
 
@@ -123,75 +100,20 @@ public class CreateVSwitchRequest extends RpcAcsRequest<CreateVSwitchResponse> {
 		}
 	}
 
-	public Integer getIpv6CidrBlock() {
-		return this.ipv6CidrBlock;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setIpv6CidrBlock(Integer ipv6CidrBlock) {
-		this.ipv6CidrBlock = ipv6CidrBlock;
-		if(ipv6CidrBlock != null){
-			putQueryParameter("Ipv6CidrBlock", ipv6CidrBlock.toString());
-		}
-	}
-
-	public String getVpcIpv6CidrBlock() {
-		return this.vpcIpv6CidrBlock;
-	}
-
-	public void setVpcIpv6CidrBlock(String vpcIpv6CidrBlock) {
-		this.vpcIpv6CidrBlock = vpcIpv6CidrBlock;
-		if(vpcIpv6CidrBlock != null){
-			putQueryParameter("VpcIpv6CidrBlock", vpcIpv6CidrBlock);
-		}
-	}
-
-	public String getVpcId() {
-		return this.vpcId;
-	}
-
-	public void setVpcId(String vpcId) {
-		this.vpcId = vpcId;
-		if(vpcId != null){
-			putQueryParameter("VpcId", vpcId);
-		}
-	}
-
-	public String getVSwitchName() {
-		return this.vSwitchName;
-	}
-
-	public void setVSwitchName(String vSwitchName) {
-		this.vSwitchName = vSwitchName;
-		if(vSwitchName != null){
-			putQueryParameter("VSwitchName", vSwitchName);
-		}
-	}
-
-	public String getCidrBlock() {
-		return this.cidrBlock;
-	}
-
-	public void setCidrBlock(String cidrBlock) {
-		this.cidrBlock = cidrBlock;
-		if(cidrBlock != null){
-			putQueryParameter("CidrBlock", cidrBlock);
-		}
-	}
-
-	public String getZoneId() {
-		return this.zoneId;
-	}
-
-	public void setZoneId(String zoneId) {
-		this.zoneId = zoneId;
-		if(zoneId != null){
-			putQueryParameter("ZoneId", zoneId);
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
+		if(instanceId != null){
+			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
 	@Override
-	public Class<CreateVSwitchResponse> getResponseClass() {
-		return CreateVSwitchResponse.class;
+	public Class<DeleteVbrHaResponse> getResponseClass() {
+		return DeleteVbrHaResponse.class;
 	}
 
 }

@@ -14,17 +14,16 @@
 
 package com.aliyuncs.vpc.transform.v20160428;
 
-import com.aliyuncs.vpc.model.v20160428.CreateRouteEntryResponse;
+import com.aliyuncs.vpc.model.v20160428.DeleteVbrHaResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class CreateRouteEntryResponseUnmarshaller {
+public class DeleteVbrHaResponseUnmarshaller {
 
-	public static CreateRouteEntryResponse unmarshall(CreateRouteEntryResponse createRouteEntryResponse, UnmarshallerContext _ctx) {
+	public static DeleteVbrHaResponse unmarshall(DeleteVbrHaResponse deleteVbrHaResponse, UnmarshallerContext _ctx) {
 		
-		createRouteEntryResponse.setRequestId(_ctx.stringValue("CreateRouteEntryResponse.RequestId"));
-		createRouteEntryResponse.setRouteEntryId(_ctx.stringValue("CreateRouteEntryResponse.RouteEntryId"));
+		deleteVbrHaResponse.setRequestId(_ctx.stringValue("DeleteVbrHaResponse.RequestId"));
 	 
-	 	return createRouteEntryResponse;
+	 	return deleteVbrHaResponse;
 	}
 }

@@ -20,6 +20,7 @@ import java.util.List;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.AssociatedCen;
 import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.CloudResourceSetType;
+import com.aliyuncs.vpc.model.v20160428.DescribeVpcAttributeResponse.Ipv6CidrBlock;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -83,6 +84,16 @@ public class DescribeVpcAttributeResponseUnmarshaller {
 			cloudResources.add(cloudResourceSetType);
 		}
 		describeVpcAttributeResponse.setCloudResources(cloudResources);
+
+		List<Ipv6CidrBlock> ipv6CidrBlocks = new ArrayList<Ipv6CidrBlock>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks.Length"); i++) {
+			Ipv6CidrBlock ipv6CidrBlock = new Ipv6CidrBlock();
+			ipv6CidrBlock.setIpv6CidrBlock(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock"));
+			ipv6CidrBlock.setIpv6Isp(_ctx.stringValue("DescribeVpcAttributeResponse.Ipv6CidrBlocks["+ i +"].Ipv6Isp"));
+
+			ipv6CidrBlocks.add(ipv6CidrBlock);
+		}
+		describeVpcAttributeResponse.setIpv6CidrBlocks(ipv6CidrBlocks);
 	 
 	 	return describeVpcAttributeResponse;
 	}
