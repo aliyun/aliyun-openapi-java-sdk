@@ -12,25 +12,32 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.agency.model.v20200324;
+package com.aliyuncs.agency.model.v20210609;
 
+import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.agency.transform.v20200324.TransferUserToResellerResponseUnmarshaller;
+import com.aliyuncs.agency.transform.v20210609.QueryFusionOrderListResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class TransferUserToResellerResponse extends AcsResponse {
+public class QueryFusionOrderListResponse extends AcsResponse {
 
 	private String msg;
 
+	private Integer total;
+
 	private String code;
+
+	private Integer pageNo;
 
 	private String requestId;
 
-	private Boolean data;
+	private Integer pageSize;
+
+	private List<String> data;
 
 	public String getMsg() {
 		return this.msg;
@@ -38,6 +45,14 @@ public class TransferUserToResellerResponse extends AcsResponse {
 
 	public void setMsg(String msg) {
 		this.msg = msg;
+	}
+
+	public Integer getTotal() {
+		return this.total;
+	}
+
+	public void setTotal(Integer total) {
+		this.total = total;
 	}
 
 	public String getCode() {
@@ -48,6 +63,14 @@ public class TransferUserToResellerResponse extends AcsResponse {
 		this.code = code;
 	}
 
+	public Integer getPageNo() {
+		return this.pageNo;
+	}
+
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+	}
+
 	public String getRequestId() {
 		return this.requestId;
 	}
@@ -56,16 +79,29 @@ public class TransferUserToResellerResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Boolean getData() {
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public List<String> getData() {
 		return this.data;
 	}
 
-	public void setData(Boolean data) {
+	public void setData(List<String> data) {
 		this.data = data;
 	}
 
 	@Override
-	public TransferUserToResellerResponse getInstance(UnmarshallerContext context) {
-		return	TransferUserToResellerResponseUnmarshaller.unmarshall(this, context);
+	public QueryFusionOrderListResponse getInstance(UnmarshallerContext context) {
+		return	QueryFusionOrderListResponseUnmarshaller.unmarshall(this, context);
+	}
+
+	@Override
+	public boolean checkShowJsonItemName() {
+		return false;
 	}
 }
