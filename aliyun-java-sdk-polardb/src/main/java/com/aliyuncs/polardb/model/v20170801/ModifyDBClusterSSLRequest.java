@@ -29,6 +29,8 @@ public class ModifyDBClusterSSLRequest extends RpcAcsRequest<ModifyDBClusterSSLR
 
 	private String dBEndpointId;
 
+	private String sSLAutoRotate;
+
 	private String resourceOwnerAccount;
 
 	private String dBClusterId;
@@ -68,6 +70,17 @@ public class ModifyDBClusterSSLRequest extends RpcAcsRequest<ModifyDBClusterSSLR
 		this.dBEndpointId = dBEndpointId;
 		if(dBEndpointId != null){
 			putQueryParameter("DBEndpointId", dBEndpointId);
+		}
+	}
+
+	public String getSSLAutoRotate() {
+		return this.sSLAutoRotate;
+	}
+
+	public void setSSLAutoRotate(String sSLAutoRotate) {
+		this.sSLAutoRotate = sSLAutoRotate;
+		if(sSLAutoRotate != null){
+			putQueryParameter("SSLAutoRotate", sSLAutoRotate);
 		}
 	}
 

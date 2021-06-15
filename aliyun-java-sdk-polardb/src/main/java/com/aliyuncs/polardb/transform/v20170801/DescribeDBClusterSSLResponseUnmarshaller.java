@@ -27,14 +27,15 @@ public class DescribeDBClusterSSLResponseUnmarshaller {
 	public static DescribeDBClusterSSLResponse unmarshall(DescribeDBClusterSSLResponse describeDBClusterSSLResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterSSLResponse.setRequestId(_ctx.stringValue("DescribeDBClusterSSLResponse.RequestId"));
+		describeDBClusterSSLResponse.setSSLAutoRotate(_ctx.stringValue("DescribeDBClusterSSLResponse.SSLAutoRotate"));
 
 		List<Item> items = new ArrayList<Item>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeDBClusterSSLResponse.Items.Length"); i++) {
 			Item item = new Item();
-			item.setDBEndpointId(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].DBEndpointId"));
+			item.setSSLExpireTime(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].SSLExpireTime"));
 			item.setSSLEnabled(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].SSLEnabled"));
 			item.setSSLConnectionString(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].SSLConnectionString"));
-			item.setSSLExpireTime(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].SSLExpireTime"));
+			item.setDBEndpointId(_ctx.stringValue("DescribeDBClusterSSLResponse.Items["+ i +"].DBEndpointId"));
 
 			items.add(item);
 		}

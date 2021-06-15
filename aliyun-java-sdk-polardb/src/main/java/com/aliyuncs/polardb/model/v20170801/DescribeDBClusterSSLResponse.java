@@ -27,6 +27,8 @@ public class DescribeDBClusterSSLResponse extends AcsResponse {
 
 	private String requestId;
 
+	private String sSLAutoRotate;
+
 	private List<Item> items;
 
 	public String getRequestId() {
@@ -35,6 +37,14 @@ public class DescribeDBClusterSSLResponse extends AcsResponse {
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
+	}
+
+	public String getSSLAutoRotate() {
+		return this.sSLAutoRotate;
+	}
+
+	public void setSSLAutoRotate(String sSLAutoRotate) {
+		this.sSLAutoRotate = sSLAutoRotate;
 	}
 
 	public List<Item> getItems() {
@@ -47,20 +57,20 @@ public class DescribeDBClusterSSLResponse extends AcsResponse {
 
 	public static class Item {
 
-		private String dBEndpointId;
+		private String sSLExpireTime;
 
 		private String sSLEnabled;
 
 		private String sSLConnectionString;
 
-		private String sSLExpireTime;
+		private String dBEndpointId;
 
-		public String getDBEndpointId() {
-			return this.dBEndpointId;
+		public String getSSLExpireTime() {
+			return this.sSLExpireTime;
 		}
 
-		public void setDBEndpointId(String dBEndpointId) {
-			this.dBEndpointId = dBEndpointId;
+		public void setSSLExpireTime(String sSLExpireTime) {
+			this.sSLExpireTime = sSLExpireTime;
 		}
 
 		public String getSSLEnabled() {
@@ -79,12 +89,12 @@ public class DescribeDBClusterSSLResponse extends AcsResponse {
 			this.sSLConnectionString = sSLConnectionString;
 		}
 
-		public String getSSLExpireTime() {
-			return this.sSLExpireTime;
+		public String getDBEndpointId() {
+			return this.dBEndpointId;
 		}
 
-		public void setSSLExpireTime(String sSLExpireTime) {
-			this.sSLExpireTime = sSLExpireTime;
+		public void setDBEndpointId(String dBEndpointId) {
+			this.dBEndpointId = dBEndpointId;
 		}
 	}
 

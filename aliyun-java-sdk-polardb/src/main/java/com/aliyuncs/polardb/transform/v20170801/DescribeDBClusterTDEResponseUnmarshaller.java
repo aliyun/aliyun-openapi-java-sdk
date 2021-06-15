@@ -23,9 +23,10 @@ public class DescribeDBClusterTDEResponseUnmarshaller {
 	public static DescribeDBClusterTDEResponse unmarshall(DescribeDBClusterTDEResponse describeDBClusterTDEResponse, UnmarshallerContext _ctx) {
 		
 		describeDBClusterTDEResponse.setRequestId(_ctx.stringValue("DescribeDBClusterTDEResponse.RequestId"));
-		describeDBClusterTDEResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterTDEResponse.DBClusterId"));
 		describeDBClusterTDEResponse.setTDEStatus(_ctx.stringValue("DescribeDBClusterTDEResponse.TDEStatus"));
+		describeDBClusterTDEResponse.setDBClusterId(_ctx.stringValue("DescribeDBClusterTDEResponse.DBClusterId"));
 		describeDBClusterTDEResponse.setEncryptionKey(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptionKey"));
+		describeDBClusterTDEResponse.setEncryptNewTables(_ctx.stringValue("DescribeDBClusterTDEResponse.EncryptNewTables"));
 	 
 	 	return describeDBClusterTDEResponse;
 	}

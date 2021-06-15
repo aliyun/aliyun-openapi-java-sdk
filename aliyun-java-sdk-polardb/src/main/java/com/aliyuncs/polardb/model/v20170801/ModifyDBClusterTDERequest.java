@@ -39,6 +39,8 @@ public class ModifyDBClusterTDERequest extends RpcAcsRequest<ModifyDBClusterTDER
 
 	private String roleArn;
 
+	private String encryptNewTables;
+
 	private String tDEStatus;
 	public ModifyDBClusterTDERequest() {
 		super("polardb", "2017-08-01", "ModifyDBClusterTDE", "polardb");
@@ -123,6 +125,17 @@ public class ModifyDBClusterTDERequest extends RpcAcsRequest<ModifyDBClusterTDER
 		this.roleArn = roleArn;
 		if(roleArn != null){
 			putQueryParameter("RoleArn", roleArn);
+		}
+	}
+
+	public String getEncryptNewTables() {
+		return this.encryptNewTables;
+	}
+
+	public void setEncryptNewTables(String encryptNewTables) {
+		this.encryptNewTables = encryptNewTables;
+		if(encryptNewTables != null){
+			putQueryParameter("EncryptNewTables", encryptNewTables);
 		}
 	}
 
