@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.actiontrail.transform.v20171204.DescribeRegionsResponseUnmarshaller;
+import com.aliyuncs.actiontrail.transform.v20200706.DescribeRegionsResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -27,7 +27,7 @@ public class DescribeRegionsResponse extends AcsResponse {
 
 	private String requestId;
 
-	private Regions regions;
+	private List<Region> regions;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -37,47 +37,49 @@ public class DescribeRegionsResponse extends AcsResponse {
 		this.requestId = requestId;
 	}
 
-	public Regions getRegions() {
+	public List<Region> getRegions() {
 		return this.regions;
 	}
 
-	public void setRegions(Regions regions) {
+	public void setRegions(List<Region> regions) {
 		this.regions = regions;
 	}
 
-	public static class Regions {
+	public static class Region {
 
-		private List<RegionItem> region;
+		private String regionId;
 
-		public List<RegionItem> getRegion() {
-			return this.region;
+		private String regionEndpoint;
+
+		private String localName;
+
+		public String getRegionId() {
+			return this.regionId;
 		}
 
-		public void setRegion(List<RegionItem> region) {
-			this.region = region;
+		public void setRegionId(String regionId) {
+			this.regionId = regionId;
 		}
 
-		public static class RegionItem {
+		public String getRegionEndpoint() {
+			return this.regionEndpoint;
+		}
 
-			private String regionId;
+		public void setRegionEndpoint(String regionEndpoint) {
+			this.regionEndpoint = regionEndpoint;
+		}
 
-			public String getRegionId() {
-				return this.regionId;
-			}
+		public String getLocalName() {
+			return this.localName;
+		}
 
-			public void setRegionId(String regionId) {
-				this.regionId = regionId;
-			}
+		public void setLocalName(String localName) {
+			this.localName = localName;
 		}
 	}
 
 	@Override
 	public DescribeRegionsResponse getInstance(UnmarshallerContext context) {
 		return	DescribeRegionsResponseUnmarshaller.unmarshall(this, context);
-	}
-
-	@Override
-	public boolean checkShowJsonItemName() {
-		return false;
 	}
 }

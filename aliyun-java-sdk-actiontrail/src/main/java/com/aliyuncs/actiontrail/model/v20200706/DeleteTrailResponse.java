@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.actiontrail.transform.v20171204.DeleteTrailResponseUnmarshaller;
+import com.aliyuncs.actiontrail.transform.v20200706.DeleteTrailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**

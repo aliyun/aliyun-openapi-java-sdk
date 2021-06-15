@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.actiontrail.transform.v20171204.StartLoggingResponseUnmarshaller;
+import com.aliyuncs.actiontrail.transform.v20200706.StartLoggingResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -26,32 +26,12 @@ public class StartLoggingResponse extends AcsResponse {
 
 	private String requestId;
 
-	private String param;
-
-	private String result;
-
 	public String getRequestId() {
 		return this.requestId;
 	}
 
 	public void setRequestId(String requestId) {
 		this.requestId = requestId;
-	}
-
-	public String getParam() {
-		return this.param;
-	}
-
-	public void setParam(String param) {
-		this.param = param;
-	}
-
-	public String getResult() {
-		return this.result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
 	}
 
 	@Override

@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.transform.v20171204;
+package com.aliyuncs.actiontrail.transform.v20200706;
 
-import com.aliyuncs.actiontrail.model.v20171204.CreateTrailResponse;
+import com.aliyuncs.actiontrail.model.v20200706.CreateTrailResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,16 +23,15 @@ public class CreateTrailResponseUnmarshaller {
 	public static CreateTrailResponse unmarshall(CreateTrailResponse createTrailResponse, UnmarshallerContext _ctx) {
 		
 		createTrailResponse.setRequestId(_ctx.stringValue("CreateTrailResponse.RequestId"));
-		createTrailResponse.setName(_ctx.stringValue("CreateTrailResponse.Name"));
-		createTrailResponse.setHomeRegion(_ctx.stringValue("CreateTrailResponse.HomeRegion"));
-		createTrailResponse.setOssBucketName(_ctx.stringValue("CreateTrailResponse.OssBucketName"));
-		createTrailResponse.setOssKeyPrefix(_ctx.stringValue("CreateTrailResponse.OssKeyPrefix"));
-		createTrailResponse.setRoleName(_ctx.stringValue("CreateTrailResponse.RoleName"));
 		createTrailResponse.setSlsProjectArn(_ctx.stringValue("CreateTrailResponse.SlsProjectArn"));
-		createTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("CreateTrailResponse.SlsWriteRoleArn"));
 		createTrailResponse.setEventRW(_ctx.stringValue("CreateTrailResponse.EventRW"));
+		createTrailResponse.setHomeRegion(_ctx.stringValue("CreateTrailResponse.HomeRegion"));
+		createTrailResponse.setOssKeyPrefix(_ctx.stringValue("CreateTrailResponse.OssKeyPrefix"));
+		createTrailResponse.setOssBucketName(_ctx.stringValue("CreateTrailResponse.OssBucketName"));
+		createTrailResponse.setSlsWriteRoleArn(_ctx.stringValue("CreateTrailResponse.SlsWriteRoleArn"));
+		createTrailResponse.setOssWriteRoleArn(_ctx.stringValue("CreateTrailResponse.OssWriteRoleArn"));
 		createTrailResponse.setTrailRegion(_ctx.stringValue("CreateTrailResponse.TrailRegion"));
-		createTrailResponse.setMnsTopicArn(_ctx.stringValue("CreateTrailResponse.MnsTopicArn"));
+		createTrailResponse.setName(_ctx.stringValue("CreateTrailResponse.Name"));
 	 
 	 	return createTrailResponse;
 	}

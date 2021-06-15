@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.transform.v20171204;
+package com.aliyuncs.actiontrail.transform.v20200706;
 
-import com.aliyuncs.actiontrail.model.v20171204.GetTrailStatusResponse;
+import com.aliyuncs.actiontrail.model.v20200706.GetTrailStatusResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -23,11 +23,15 @@ public class GetTrailStatusResponseUnmarshaller {
 	public static GetTrailStatusResponse unmarshall(GetTrailStatusResponse getTrailStatusResponse, UnmarshallerContext _ctx) {
 		
 		getTrailStatusResponse.setRequestId(_ctx.stringValue("GetTrailStatusResponse.RequestId"));
-		getTrailStatusResponse.setIsLogging(_ctx.booleanValue("GetTrailStatusResponse.IsLogging"));
-		getTrailStatusResponse.setLatestDeliveryError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryError"));
-		getTrailStatusResponse.setLatestDeliveryTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryTime"));
+		getTrailStatusResponse.setLatestDeliveryLogServiceTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryLogServiceTime"));
+		getTrailStatusResponse.setLatestDeliveryLogServiceError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryLogServiceError"));
 		getTrailStatusResponse.setStartLoggingTime(_ctx.stringValue("GetTrailStatusResponse.StartLoggingTime"));
+		getTrailStatusResponse.setOssBucketStatus(_ctx.booleanValue("GetTrailStatusResponse.OssBucketStatus"));
+		getTrailStatusResponse.setLatestDeliveryError(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryError"));
 		getTrailStatusResponse.setStopLoggingTime(_ctx.stringValue("GetTrailStatusResponse.StopLoggingTime"));
+		getTrailStatusResponse.setSlsLogStoreStatus(_ctx.booleanValue("GetTrailStatusResponse.SlsLogStoreStatus"));
+		getTrailStatusResponse.setLatestDeliveryTime(_ctx.stringValue("GetTrailStatusResponse.LatestDeliveryTime"));
+		getTrailStatusResponse.setIsLogging(_ctx.booleanValue("GetTrailStatusResponse.IsLogging"));
 	 
 	 	return getTrailStatusResponse;
 	}

@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.actiontrail.transform.v20171204.CreateTrailResponseUnmarshaller;
+import com.aliyuncs.actiontrail.transform.v20200706.CreateTrailResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
@@ -24,75 +24,25 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class CreateTrailResponse extends AcsResponse {
 
-	private String requestId;
-
-	private String name;
-
-	private String homeRegion;
-
-	private String ossBucketName;
-
-	private String ossKeyPrefix;
-
-	private String roleName;
-
 	private String slsProjectArn;
-
-	private String slsWriteRoleArn;
 
 	private String eventRW;
 
+	private String requestId;
+
+	private String homeRegion;
+
+	private String ossKeyPrefix;
+
+	private String ossBucketName;
+
+	private String slsWriteRoleArn;
+
+	private String ossWriteRoleArn;
+
 	private String trailRegion;
 
-	private String mnsTopicArn;
-
-	public String getRequestId() {
-		return this.requestId;
-	}
-
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getHomeRegion() {
-		return this.homeRegion;
-	}
-
-	public void setHomeRegion(String homeRegion) {
-		this.homeRegion = homeRegion;
-	}
-
-	public String getOssBucketName() {
-		return this.ossBucketName;
-	}
-
-	public void setOssBucketName(String ossBucketName) {
-		this.ossBucketName = ossBucketName;
-	}
-
-	public String getOssKeyPrefix() {
-		return this.ossKeyPrefix;
-	}
-
-	public void setOssKeyPrefix(String ossKeyPrefix) {
-		this.ossKeyPrefix = ossKeyPrefix;
-	}
-
-	public String getRoleName() {
-		return this.roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+	private String name;
 
 	public String getSlsProjectArn() {
 		return this.slsProjectArn;
@@ -100,14 +50,6 @@ public class CreateTrailResponse extends AcsResponse {
 
 	public void setSlsProjectArn(String slsProjectArn) {
 		this.slsProjectArn = slsProjectArn;
-	}
-
-	public String getSlsWriteRoleArn() {
-		return this.slsWriteRoleArn;
-	}
-
-	public void setSlsWriteRoleArn(String slsWriteRoleArn) {
-		this.slsWriteRoleArn = slsWriteRoleArn;
 	}
 
 	public String getEventRW() {
@@ -118,6 +60,54 @@ public class CreateTrailResponse extends AcsResponse {
 		this.eventRW = eventRW;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
+	public String getHomeRegion() {
+		return this.homeRegion;
+	}
+
+	public void setHomeRegion(String homeRegion) {
+		this.homeRegion = homeRegion;
+	}
+
+	public String getOssKeyPrefix() {
+		return this.ossKeyPrefix;
+	}
+
+	public void setOssKeyPrefix(String ossKeyPrefix) {
+		this.ossKeyPrefix = ossKeyPrefix;
+	}
+
+	public String getOssBucketName() {
+		return this.ossBucketName;
+	}
+
+	public void setOssBucketName(String ossBucketName) {
+		this.ossBucketName = ossBucketName;
+	}
+
+	public String getSlsWriteRoleArn() {
+		return this.slsWriteRoleArn;
+	}
+
+	public void setSlsWriteRoleArn(String slsWriteRoleArn) {
+		this.slsWriteRoleArn = slsWriteRoleArn;
+	}
+
+	public String getOssWriteRoleArn() {
+		return this.ossWriteRoleArn;
+	}
+
+	public void setOssWriteRoleArn(String ossWriteRoleArn) {
+		this.ossWriteRoleArn = ossWriteRoleArn;
+	}
+
 	public String getTrailRegion() {
 		return this.trailRegion;
 	}
@@ -126,12 +116,12 @@ public class CreateTrailResponse extends AcsResponse {
 		this.trailRegion = trailRegion;
 	}
 
-	public String getMnsTopicArn() {
-		return this.mnsTopicArn;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setMnsTopicArn(String mnsTopicArn) {
-		this.mnsTopicArn = mnsTopicArn;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override

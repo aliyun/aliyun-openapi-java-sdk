@@ -12,20 +12,18 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.transform.v20171204;
+package com.aliyuncs.actiontrail.transform.v20200706;
 
-import com.aliyuncs.actiontrail.model.v20171204.StartLoggingResponse;
+import com.aliyuncs.actiontrail.model.v20200706.DeleteTrailResponse;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
-public class StartLoggingResponseUnmarshaller {
+public class DeleteTrailResponseUnmarshaller {
 
-	public static StartLoggingResponse unmarshall(StartLoggingResponse startLoggingResponse, UnmarshallerContext _ctx) {
+	public static DeleteTrailResponse unmarshall(DeleteTrailResponse deleteTrailResponse, UnmarshallerContext _ctx) {
 		
-		startLoggingResponse.setRequestId(_ctx.stringValue("StartLoggingResponse.RequestId"));
-		startLoggingResponse.setParam(_ctx.stringValue("StartLoggingResponse.Param"));
-		startLoggingResponse.setResult(_ctx.stringValue("StartLoggingResponse.Result"));
+		deleteTrailResponse.setRequestId(_ctx.stringValue("DeleteTrailResponse.RequestId"));
 	 
-	 	return startLoggingResponse;
+	 	return deleteTrailResponse;
 	}
 }

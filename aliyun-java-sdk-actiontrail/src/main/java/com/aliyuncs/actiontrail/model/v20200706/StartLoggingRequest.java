@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,14 +22,12 @@ import com.aliyuncs.actiontrail.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeTrailsRequest extends RpcAcsRequest<DescribeTrailsResponse> {
+public class StartLoggingRequest extends RpcAcsRequest<StartLoggingResponse> {
 	   
 
-	private Boolean includeShadowTrails;
-
-	private String nameList;
-	public DescribeTrailsRequest() {
-		super("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail");
+	private String name;
+	public StartLoggingRequest() {
+		super("Actiontrail", "2020-07-06", "StartLogging", "actiontrail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -37,31 +35,20 @@ public class DescribeTrailsRequest extends RpcAcsRequest<DescribeTrailsResponse>
 		} catch (Exception e) {}
 	}
 
-	public Boolean getIncludeShadowTrails() {
-		return this.includeShadowTrails;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setIncludeShadowTrails(Boolean includeShadowTrails) {
-		this.includeShadowTrails = includeShadowTrails;
-		if(includeShadowTrails != null){
-			putQueryParameter("IncludeShadowTrails", includeShadowTrails.toString());
-		}
-	}
-
-	public String getNameList() {
-		return this.nameList;
-	}
-
-	public void setNameList(String nameList) {
-		this.nameList = nameList;
-		if(nameList != null){
-			putQueryParameter("NameList", nameList);
+	public void setName(String name) {
+		this.name = name;
+		if(name != null){
+			putQueryParameter("Name", name);
 		}
 	}
 
 	@Override
-	public Class<DescribeTrailsResponse> getResponseClass() {
-		return DescribeTrailsResponse.class;
+	public Class<StartLoggingResponse> getResponseClass() {
+		return StartLoggingResponse.class;
 	}
 
 }

@@ -26,22 +26,22 @@ import com.aliyuncs.transform.UnmarshallerContext;
  */
 public class LookupEventsResponse extends AcsResponse {
 
-	private String requestId;
+	private String endTime;
 
 	private String nextToken;
 
-	private String startTime;
+	private String requestId;
 
-	private String endTime;
+	private String startTime;
 
 	private List<Map<Object,Object>> events;
 
-	public String getRequestId() {
-		return this.requestId;
+	public String getEndTime() {
+		return this.endTime;
 	}
 
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getNextToken() {
@@ -52,20 +52,20 @@ public class LookupEventsResponse extends AcsResponse {
 		this.nextToken = nextToken;
 	}
 
+	public String getRequestId() {
+		return this.requestId;
+	}
+
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
+
 	public String getStartTime() {
 		return this.startTime;
 	}
 
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
-	}
-
-	public String getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
 	}
 
 	public List<Map<Object,Object>> getEvents() {

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,13 +22,13 @@ import com.aliyuncs.actiontrail.Endpoint;
  * @author auto create
  * @version 
  */
-public class DeleteTrailRequest extends RpcAcsRequest<DeleteTrailResponse> {
+public class StopLoggingRequest extends RpcAcsRequest<StopLoggingResponse> {
 	   
 
 	private String name;
-	public DeleteTrailRequest() {
-		super("Actiontrail", "2017-12-04", "DeleteTrail", "actiontrail");
-		setMethod(MethodType.POST);
+	public StopLoggingRequest() {
+		super("Actiontrail", "2020-07-06", "StopLogging", "actiontrail");
+		setMethod(MethodType.GET);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
@@ -47,8 +47,8 @@ public class DeleteTrailRequest extends RpcAcsRequest<DeleteTrailResponse> {
 	}
 
 	@Override
-	public Class<DeleteTrailResponse> getResponseClass() {
-		return DeleteTrailResponse.class;
+	public Class<StopLoggingResponse> getResponseClass() {
+		return StopLoggingResponse.class;
 	}
 
 }

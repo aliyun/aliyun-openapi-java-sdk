@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,18 +22,18 @@ import com.aliyuncs.actiontrail.Endpoint;
  * @author auto create
  * @version 
  */
-public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
+public class CreateTrailRequest extends RpcAcsRequest<CreateTrailResponse> {
 	   
 
 	private String slsProjectArn;
 
 	private String slsWriteRoleArn;
 
+	private Boolean isOrganizationTrail;
+
 	private String ossKeyPrefix;
 
-	private String mnsTopicArn;
-
-	private String roleName;
+	private String ossWriteRoleArn;
 
 	private String eventRW;
 
@@ -42,8 +42,8 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 	private String ossBucketName;
 
 	private String trailRegion;
-	public UpdateTrailRequest() {
-		super("Actiontrail", "2017-12-04", "UpdateTrail", "actiontrail");
+	public CreateTrailRequest() {
+		super("Actiontrail", "2020-07-06", "CreateTrail", "actiontrail");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -73,6 +73,17 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 		}
 	}
 
+	public Boolean getIsOrganizationTrail() {
+		return this.isOrganizationTrail;
+	}
+
+	public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+		this.isOrganizationTrail = isOrganizationTrail;
+		if(isOrganizationTrail != null){
+			putQueryParameter("IsOrganizationTrail", isOrganizationTrail.toString());
+		}
+	}
+
 	public String getOssKeyPrefix() {
 		return this.ossKeyPrefix;
 	}
@@ -84,25 +95,14 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 		}
 	}
 
-	public String getMnsTopicArn() {
-		return this.mnsTopicArn;
+	public String getOssWriteRoleArn() {
+		return this.ossWriteRoleArn;
 	}
 
-	public void setMnsTopicArn(String mnsTopicArn) {
-		this.mnsTopicArn = mnsTopicArn;
-		if(mnsTopicArn != null){
-			putQueryParameter("MnsTopicArn", mnsTopicArn);
-		}
-	}
-
-	public String getRoleName() {
-		return this.roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-		if(roleName != null){
-			putQueryParameter("RoleName", roleName);
+	public void setOssWriteRoleArn(String ossWriteRoleArn) {
+		this.ossWriteRoleArn = ossWriteRoleArn;
+		if(ossWriteRoleArn != null){
+			putQueryParameter("OssWriteRoleArn", ossWriteRoleArn);
 		}
 	}
 
@@ -151,8 +151,8 @@ public class UpdateTrailRequest extends RpcAcsRequest<UpdateTrailResponse> {
 	}
 
 	@Override
-	public Class<UpdateTrailResponse> getResponseClass() {
-		return UpdateTrailResponse.class;
+	public Class<CreateTrailResponse> getResponseClass() {
+		return CreateTrailResponse.class;
 	}
 
 }

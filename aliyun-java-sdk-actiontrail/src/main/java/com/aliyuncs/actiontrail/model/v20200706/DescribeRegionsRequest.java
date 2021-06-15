@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.model.v20171204;
+package com.aliyuncs.actiontrail.model.v20200706;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,33 +22,33 @@ import com.aliyuncs.actiontrail.Endpoint;
  * @author auto create
  * @version 
  */
-public class StartLoggingRequest extends RpcAcsRequest<StartLoggingResponse> {
+public class DescribeRegionsRequest extends RpcAcsRequest<DescribeRegionsResponse> {
 	   
 
-	private String name;
-	public StartLoggingRequest() {
-		super("Actiontrail", "2017-12-04", "StartLogging", "actiontrail");
-		setMethod(MethodType.GET);
+	private String acceptLanguage;
+	public DescribeRegionsRequest() {
+		super("Actiontrail", "2020-07-06", "DescribeRegions", "actiontrail");
+		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
 	}
 
-	public String getName() {
-		return this.name;
+	public String getAcceptLanguage() {
+		return this.acceptLanguage;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-		if(name != null){
-			putQueryParameter("Name", name);
+	public void setAcceptLanguage(String acceptLanguage) {
+		this.acceptLanguage = acceptLanguage;
+		if(acceptLanguage != null){
+			putQueryParameter("AcceptLanguage", acceptLanguage);
 		}
 	}
 
 	@Override
-	public Class<StartLoggingResponse> getResponseClass() {
-		return StartLoggingResponse.class;
+	public Class<DescribeRegionsResponse> getResponseClass() {
+		return DescribeRegionsResponse.class;
 	}
 
 }

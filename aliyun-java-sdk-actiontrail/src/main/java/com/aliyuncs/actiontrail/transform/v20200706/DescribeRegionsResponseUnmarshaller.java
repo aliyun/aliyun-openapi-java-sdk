@@ -12,14 +12,13 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.actiontrail.transform.v20171204;
+package com.aliyuncs.actiontrail.transform.v20200706;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aliyuncs.actiontrail.model.v20171204.DescribeRegionsResponse;
-import com.aliyuncs.actiontrail.model.v20171204.DescribeRegionsResponse.Regions;
-import com.aliyuncs.actiontrail.model.v20171204.DescribeRegionsResponse.Regions.RegionItem;
+import com.aliyuncs.actiontrail.model.v20200706.DescribeRegionsResponse;
+import com.aliyuncs.actiontrail.model.v20200706.DescribeRegionsResponse.Region;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 
@@ -29,16 +28,15 @@ public class DescribeRegionsResponseUnmarshaller {
 		
 		describeRegionsResponse.setRequestId(_ctx.stringValue("DescribeRegionsResponse.RequestId"));
 
-		Regions regions = new Regions();
+		List<Region> regions = new ArrayList<Region>();
+		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Length"); i++) {
+			Region region = new Region();
+			region.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionId"));
+			region.setRegionEndpoint(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].RegionEndpoint"));
+			region.setLocalName(_ctx.stringValue("DescribeRegionsResponse.Regions["+ i +"].LocalName"));
 
-		List<RegionItem> region = new ArrayList<RegionItem>();
-		for (int i = 0; i < _ctx.lengthValue("DescribeRegionsResponse.Regions.Region.Length"); i++) {
-			RegionItem regionItem = new RegionItem();
-			regionItem.setRegionId(_ctx.stringValue("DescribeRegionsResponse.Regions.Region["+ i +"].RegionId"));
-
-			region.add(regionItem);
+			regions.add(region);
 		}
-		regions.setRegion(region);
 		describeRegionsResponse.setRegions(regions);
 	 
 	 	return describeRegionsResponse;
