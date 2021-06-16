@@ -81,21 +81,13 @@ public class ScanTextResponse extends AcsResponse {
 
 			public static class Result {
 
-				private String label;
-
 				private String suggestion;
 
 				private Float rate;
 
+				private String label;
+
 				private List<Detail> details;
-
-				public String getLabel() {
-					return this.label;
-				}
-
-				public void setLabel(String label) {
-					this.label = label;
-				}
 
 				public String getSuggestion() {
 					return this.suggestion;
@@ -111,6 +103,14 @@ public class ScanTextResponse extends AcsResponse {
 
 				public void setRate(Float rate) {
 					this.rate = rate;
+				}
+
+				public String getLabel() {
+					return this.label;
+				}
+
+				public void setLabel(String label) {
+					this.label = label;
 				}
 
 				public List<Detail> getDetails() {

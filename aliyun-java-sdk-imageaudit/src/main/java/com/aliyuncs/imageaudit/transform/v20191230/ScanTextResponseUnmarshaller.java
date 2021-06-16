@@ -42,9 +42,9 @@ public class ScanTextResponseUnmarshaller {
 			List<Result> results = new ArrayList<Result>();
 			for (int j = 0; j < _ctx.lengthValue("ScanTextResponse.Data.Elements["+ i +"].Results.Length"); j++) {
 				Result result = new Result();
-				result.setLabel(_ctx.stringValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 				result.setSuggestion(_ctx.stringValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Suggestion"));
 				result.setRate(_ctx.floatValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Rate"));
+				result.setLabel(_ctx.stringValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Label"));
 
 				List<Detail> details = new ArrayList<Detail>();
 				for (int k = 0; k < _ctx.lengthValue("ScanTextResponse.Data.Elements["+ i +"].Results["+ j +"].Details.Length"); k++) {
