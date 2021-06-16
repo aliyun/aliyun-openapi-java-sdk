@@ -25,9 +25,9 @@ import com.aliyuncs.workorder.Endpoint;
 public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 	   
 
-	private String secContent;
-
 	private String content;
+
+	private Boolean encrypt;
 
 	private String ticketId;
 	public ReplyTicketRequest() {
@@ -39,17 +39,6 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 		} catch (Exception e) {}
 	}
 
-	public String getSecContent() {
-		return this.secContent;
-	}
-
-	public void setSecContent(String secContent) {
-		this.secContent = secContent;
-		if(secContent != null){
-			putBodyParameter("SecContent", secContent);
-		}
-	}
-
 	public String getContent() {
 		return this.content;
 	}
@@ -58,6 +47,17 @@ public class ReplyTicketRequest extends RpcAcsRequest<ReplyTicketResponse> {
 		this.content = content;
 		if(content != null){
 			putBodyParameter("Content", content);
+		}
+	}
+
+	public Boolean getEncrypt() {
+		return this.encrypt;
+	}
+
+	public void setEncrypt(Boolean encrypt) {
+		this.encrypt = encrypt;
+		if(encrypt != null){
+			putBodyParameter("Encrypt", encrypt.toString());
 		}
 	}
 
