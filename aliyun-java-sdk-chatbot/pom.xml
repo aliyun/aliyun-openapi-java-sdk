@@ -41,7 +41,7 @@ http://www.aliyun.com</description>
 	<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>fastjson</artifactId>
-		<version>1.2.48</version>
+		<version>1.2.69</version>
 	</dependency>
     <dependency>
         <groupId>org.testng</groupId>
