@@ -27,8 +27,6 @@ public class DescribeBackupDirsRequest extends RpcAcsRequest<DescribeBackupDirsR
 
 	private Long resourceOwnerId;
 
-	private Integer currentPage;
-
 	private String uuid;
 
 	private String sourceIp;
@@ -36,6 +34,8 @@ public class DescribeBackupDirsRequest extends RpcAcsRequest<DescribeBackupDirsR
 	private Long policyId;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeBackupDirsRequest() {
 		super("Sas", "2018-12-03", "DescribeBackupDirs", "sas");
 		setMethod(MethodType.POST);
@@ -53,17 +53,6 @@ public class DescribeBackupDirsRequest extends RpcAcsRequest<DescribeBackupDirsR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -108,6 +97,17 @@ public class DescribeBackupDirsRequest extends RpcAcsRequest<DescribeBackupDirsR
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

@@ -27,11 +27,11 @@ public class DescribeUserBackupMachinesRequest extends RpcAcsRequest<DescribeUse
 
 	private Long resourceOwnerId;
 
-	private Integer currentPage;
-
 	private String sourceIp;
 
 	private Integer pageSize;
+
+	private Integer currentPage;
 	public DescribeUserBackupMachinesRequest() {
 		super("Sas", "2018-12-03", "DescribeUserBackupMachines", "sas");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class DescribeUserBackupMachinesRequest extends RpcAcsRequest<DescribeUse
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public Integer getCurrentPage() {
-		return this.currentPage;
-	}
-
-	public void setCurrentPage(Integer currentPage) {
-		this.currentPage = currentPage;
-		if(currentPage != null){
-			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 
@@ -82,6 +71,17 @@ public class DescribeUserBackupMachinesRequest extends RpcAcsRequest<DescribeUse
 		this.pageSize = pageSize;
 		if(pageSize != null){
 			putQueryParameter("PageSize", pageSize.toString());
+		}
+	}
+
+	public Integer getCurrentPage() {
+		return this.currentPage;
+	}
+
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
+		if(currentPage != null){
+			putQueryParameter("CurrentPage", currentPage.toString());
 		}
 	}
 

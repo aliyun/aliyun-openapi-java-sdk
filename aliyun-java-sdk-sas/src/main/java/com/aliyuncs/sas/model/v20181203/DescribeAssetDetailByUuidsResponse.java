@@ -75,6 +75,8 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 
 		private String osName;
 
+		private Integer flag;
+
 		public String getInternetIp() {
 			return this.internetIp;
 		}
@@ -185,6 +187,14 @@ public class DescribeAssetDetailByUuidsResponse extends AcsResponse {
 
 		public void setOsName(String osName) {
 			this.osName = osName;
+		}
+
+		public Integer getFlag() {
+			return this.flag;
+		}
+
+		public void setFlag(Integer flag) {
+			this.flag = flag;
 		}
 	}
 

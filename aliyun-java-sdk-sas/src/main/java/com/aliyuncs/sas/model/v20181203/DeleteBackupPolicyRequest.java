@@ -27,11 +27,11 @@ public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyR
 
 	private Long resourceOwnerId;
 
-	private String policyVersion;
-
 	private String sourceIp;
 
 	private Long id;
+
+	private String policyVersion;
 	public DeleteBackupPolicyRequest() {
 		super("Sas", "2018-12-03", "DeleteBackupPolicy", "sas");
 		setMethod(MethodType.POST);
@@ -49,17 +49,6 @@ public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyR
 		this.resourceOwnerId = resourceOwnerId;
 		if(resourceOwnerId != null){
 			putQueryParameter("ResourceOwnerId", resourceOwnerId.toString());
-		}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 
@@ -82,6 +71,17 @@ public class DeleteBackupPolicyRequest extends RpcAcsRequest<DeleteBackupPolicyR
 		this.id = id;
 		if(id != null){
 			putQueryParameter("Id", id.toString());
+		}
+	}
+
+	public String getPolicyVersion() {
+		return this.policyVersion;
+	}
+
+	public void setPolicyVersion(String policyVersion) {
+		this.policyVersion = policyVersion;
+		if(policyVersion != null){
+			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 

@@ -64,6 +64,10 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	private Long slsCapacity;
 
+	private Long gmtCreate;
+
+	private Long lastInstanceReleaseTime;
+
 	private Boolean isOverBalance;
 
 	private Long lastTrailEndTime;
@@ -75,6 +79,14 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 	private Integer vmCores;
 
 	private Boolean isPaidUser;
+
+	private Integer highestVersion;
+
+	private Integer mVAuthCount;
+
+	private Integer mVUnusedAuthCount;
+
+	private Integer allowPartialBuy;
 
 	public String getRequestId() {
 		return this.requestId;
@@ -236,6 +248,22 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 		this.slsCapacity = slsCapacity;
 	}
 
+	public Long getGmtCreate() {
+		return this.gmtCreate;
+	}
+
+	public void setGmtCreate(Long gmtCreate) {
+		this.gmtCreate = gmtCreate;
+	}
+
+	public Long getLastInstanceReleaseTime() {
+		return this.lastInstanceReleaseTime;
+	}
+
+	public void setLastInstanceReleaseTime(Long lastInstanceReleaseTime) {
+		this.lastInstanceReleaseTime = lastInstanceReleaseTime;
+	}
+
 	public Boolean getIsOverBalance() {
 		return this.isOverBalance;
 	}
@@ -282,6 +310,38 @@ public class DescribeVersionConfigResponse extends AcsResponse {
 
 	public void setIsPaidUser(Boolean isPaidUser) {
 		this.isPaidUser = isPaidUser;
+	}
+
+	public Integer getHighestVersion() {
+		return this.highestVersion;
+	}
+
+	public void setHighestVersion(Integer highestVersion) {
+		this.highestVersion = highestVersion;
+	}
+
+	public Integer getMVAuthCount() {
+		return this.mVAuthCount;
+	}
+
+	public void setMVAuthCount(Integer mVAuthCount) {
+		this.mVAuthCount = mVAuthCount;
+	}
+
+	public Integer getMVUnusedAuthCount() {
+		return this.mVUnusedAuthCount;
+	}
+
+	public void setMVUnusedAuthCount(Integer mVUnusedAuthCount) {
+		this.mVUnusedAuthCount = mVUnusedAuthCount;
+	}
+
+	public Integer getAllowPartialBuy() {
+		return this.allowPartialBuy;
+	}
+
+	public void setAllowPartialBuy(Integer allowPartialBuy) {
+		this.allowPartialBuy = allowPartialBuy;
 	}
 
 	@Override

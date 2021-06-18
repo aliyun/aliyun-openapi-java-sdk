@@ -44,6 +44,7 @@ public class DescribeBackupPoliciesResponseUnmarshaller {
 			backupPolicy.setStatus(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].Status"));
 			backupPolicy.setPolicy(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].Policy"));
 			backupPolicy.setPolicyVersion(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].PolicyVersion"));
+			backupPolicy.setPolicyRegionId(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].PolicyRegionId"));
 			backupPolicy.setClientStatus(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].ClientStatus"));
 			backupPolicy.setClientErrorCount(_ctx.integerValue("DescribeBackupPoliciesResponse.Policies["+ i +"].ClientErrorCount"));
 			backupPolicy.setServiceErrorCount(_ctx.integerValue("DescribeBackupPoliciesResponse.Policies["+ i +"].ServiceErrorCount"));
@@ -54,6 +55,12 @@ public class DescribeBackupPoliciesResponseUnmarshaller {
 				uuidList.add(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].UuidList["+ j +"]"));
 			}
 			backupPolicy.setUuidList(uuidList);
+
+			List<String> remarkedUuidList = new ArrayList<String>();
+			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPoliciesResponse.Policies["+ i +"].RemarkedUuidList.Length"); j++) {
+				remarkedUuidList.add(_ctx.stringValue("DescribeBackupPoliciesResponse.Policies["+ i +"].RemarkedUuidList["+ j +"]"));
+			}
+			backupPolicy.setRemarkedUuidList(remarkedUuidList);
 
 			List<String> clientErrorUuidList = new ArrayList<String>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeBackupPoliciesResponse.Policies["+ i +"].ClientErrorUuidList.Length"); j++) {

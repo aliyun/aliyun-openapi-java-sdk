@@ -44,6 +44,8 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 	private String apiVersion;
 
 	private String machineRegion;
+
+	private String isAliYunEcs;
 	public DescribeSnapshotsRequest() {
 		super("Sas", "2018-12-03", "DescribeSnapshots", "sas");
 		setMethod(MethodType.POST);
@@ -160,6 +162,17 @@ public class DescribeSnapshotsRequest extends RpcAcsRequest<DescribeSnapshotsRes
 		this.machineRegion = machineRegion;
 		if(machineRegion != null){
 			putQueryParameter("MachineRegion", machineRegion);
+		}
+	}
+
+	public String getIsAliYunEcs() {
+		return this.isAliYunEcs;
+	}
+
+	public void setIsAliYunEcs(String isAliYunEcs) {
+		this.isAliYunEcs = isAliYunEcs;
+		if(isAliYunEcs != null){
+			putQueryParameter("IsAliYunEcs", isAliYunEcs);
 		}
 	}
 

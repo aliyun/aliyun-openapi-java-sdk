@@ -36,9 +36,9 @@ public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyR
 
 	private String policyVersion;
 
-	private String name;
+	private String policyRegionId;
 
-	private String status;
+	private String name;
 	public CreateBackupPolicyRequest() {
 		super("Sas", "2018-12-03", "CreateBackupPolicy", "sas");
 		setMethod(MethodType.POST);
@@ -105,6 +105,17 @@ public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyR
 		}
 	}
 
+	public String getPolicyRegionId() {
+		return this.policyRegionId;
+	}
+
+	public void setPolicyRegionId(String policyRegionId) {
+		this.policyRegionId = policyRegionId;
+		if(policyRegionId != null){
+			putQueryParameter("PolicyRegionId", policyRegionId);
+		}
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -113,17 +124,6 @@ public class CreateBackupPolicyRequest extends RpcAcsRequest<CreateBackupPolicyR
 		this.name = name;
 		if(name != null){
 			putQueryParameter("Name", name);
-		}
-	}
-
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
 		}
 	}
 

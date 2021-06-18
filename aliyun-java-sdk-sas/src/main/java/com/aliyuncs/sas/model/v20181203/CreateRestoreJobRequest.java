@@ -29,21 +29,21 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 
 	private String snapshotId;
 
+	private String vaultId;
+
 	private String uuid;
 
 	private String snapshotHash;
 
 	private String sourceIp;
 
-	private String snapshotVersion;
+	private String sourceType;
 
-	private String policyVersion;
+	private String snapshotVersion;
 
 	private String includes;
 
 	private String target;
-
-	private String instanceId;
 	public CreateRestoreJobRequest() {
 		super("Sas", "2018-12-03", "CreateRestoreJob", "sas");
 		setMethod(MethodType.POST);
@@ -72,6 +72,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.snapshotId = snapshotId;
 		if(snapshotId != null){
 			putQueryParameter("SnapshotId", snapshotId);
+		}
+	}
+
+	public String getVaultId() {
+		return this.vaultId;
+	}
+
+	public void setVaultId(String vaultId) {
+		this.vaultId = vaultId;
+		if(vaultId != null){
+			putQueryParameter("VaultId", vaultId);
 		}
 	}
 
@@ -108,6 +119,17 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		}
 	}
 
+	public String getSourceType() {
+		return this.sourceType;
+	}
+
+	public void setSourceType(String sourceType) {
+		this.sourceType = sourceType;
+		if(sourceType != null){
+			putQueryParameter("SourceType", sourceType);
+		}
+	}
+
 	public String getSnapshotVersion() {
 		return this.snapshotVersion;
 	}
@@ -116,17 +138,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.snapshotVersion = snapshotVersion;
 		if(snapshotVersion != null){
 			putQueryParameter("SnapshotVersion", snapshotVersion);
-		}
-	}
-
-	public String getPolicyVersion() {
-		return this.policyVersion;
-	}
-
-	public void setPolicyVersion(String policyVersion) {
-		this.policyVersion = policyVersion;
-		if(policyVersion != null){
-			putQueryParameter("PolicyVersion", policyVersion);
 		}
 	}
 
@@ -149,17 +160,6 @@ public class CreateRestoreJobRequest extends RpcAcsRequest<CreateRestoreJobRespo
 		this.target = target;
 		if(target != null){
 			putQueryParameter("Target", target);
-		}
-	}
-
-	public String getInstanceId() {
-		return this.instanceId;
-	}
-
-	public void setInstanceId(String instanceId) {
-		this.instanceId = instanceId;
-		if(instanceId != null){
-			putQueryParameter("InstanceId", instanceId);
 		}
 	}
 
