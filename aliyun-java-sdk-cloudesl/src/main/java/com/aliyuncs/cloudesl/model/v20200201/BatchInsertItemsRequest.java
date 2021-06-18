@@ -30,6 +30,8 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 	private String storeId;
 
+	private Boolean syncByItemId;
+
 	private List<ItemInfo> itemInfos;
 	public BatchInsertItemsRequest() {
 		super("cloudesl", "2020-02-01", "BatchInsertItems", "cloudesl");
@@ -59,6 +61,17 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 		this.storeId = storeId;
 		if(storeId != null){
 			putBodyParameter("StoreId", storeId);
+		}
+	}
+
+	public Boolean getSyncByItemId() {
+		return this.syncByItemId;
+	}
+
+	public void setSyncByItemId(Boolean syncByItemId) {
+		this.syncByItemId = syncByItemId;
+		if(syncByItemId != null){
+			putBodyParameter("SyncByItemId", syncByItemId.toString());
 		}
 	}
 
@@ -106,6 +119,8 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".Manufacturer" , itemInfos.get(depth1).getManufacturer());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SourceCode" , itemInfos.get(depth1).getSourceCode());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemId" , itemInfos.get(depth1).getItemId());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".BeMember" , itemInfos.get(depth1).getBeMember());
+				putBodyParameter("ItemInfo." + (depth1 + 1) + ".TemplateSceneId" , itemInfos.get(depth1).getTemplateSceneId());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".SalesPrice" , itemInfos.get(depth1).getSalesPrice());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".OriginalPrice" , itemInfos.get(depth1).getOriginalPrice());
 				putBodyParameter("ItemInfo." + (depth1 + 1) + ".ItemShortTitle" , itemInfos.get(depth1).getItemShortTitle());
@@ -197,6 +212,10 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 		private String sourceCode;
 
 		private String itemId;
+
+		private Boolean beMember;
+
+		private String templateSceneId;
 
 		private Integer salesPrice;
 
@@ -512,6 +531,22 @@ public class BatchInsertItemsRequest extends RpcAcsRequest<BatchInsertItemsRespo
 
 		public void setItemId(String itemId) {
 			this.itemId = itemId;
+		}
+
+		public Boolean getBeMember() {
+			return this.beMember;
+		}
+
+		public void setBeMember(Boolean beMember) {
+			this.beMember = beMember;
+		}
+
+		public String getTemplateSceneId() {
+			return this.templateSceneId;
+		}
+
+		public void setTemplateSceneId(String templateSceneId) {
+			this.templateSceneId = templateSceneId;
 		}
 
 		public Integer getSalesPrice() {

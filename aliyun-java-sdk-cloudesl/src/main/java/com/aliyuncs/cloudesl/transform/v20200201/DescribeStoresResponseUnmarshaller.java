@@ -49,6 +49,7 @@ public class DescribeStoresResponseUnmarshaller {
 			storeInfo.setGmtModified(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].GmtModified"));
 			storeInfo.setPhone(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].Phone"));
 			storeInfo.setLevel(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].Level"));
+			storeInfo.setTemplateVersion(_ctx.stringValue("DescribeStoresResponse.Stores["+ i +"].TemplateVersion"));
 
 			stores.add(storeInfo);
 		}

@@ -37,6 +37,7 @@ public class DescribeItemsResponseUnmarshaller {
 		describeItemsResponse.setDynamicMessage(_ctx.stringValue("DescribeItemsResponse.DynamicMessage"));
 		describeItemsResponse.setTotalCount(_ctx.integerValue("DescribeItemsResponse.TotalCount"));
 		describeItemsResponse.setSuccess(_ctx.booleanValue("DescribeItemsResponse.Success"));
+		describeItemsResponse.setTemplateSceneId(_ctx.stringValue("DescribeItemsResponse.TemplateSceneId"));
 
 		List<ItemInfo> items = new ArrayList<ItemInfo>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeItemsResponse.Items.Length"); i++) {
@@ -93,6 +94,7 @@ public class DescribeItemsResponseUnmarshaller {
 			itemInfo.setPromotionStart(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].PromotionStart"));
 			itemInfo.setGmtCreate(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].GmtCreate"));
 			itemInfo.setGmtModified(_ctx.stringValue("DescribeItemsResponse.Items["+ i +"].GmtModified"));
+			itemInfo.setBeMember(_ctx.booleanValue("DescribeItemsResponse.Items["+ i +"].BeMember"));
 
 			items.add(itemInfo);
 		}

@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-package com.aliyuncs.cloudesl.model.v20180801;
+package com.aliyuncs.cloudesl.model.v20200201;
 
 import com.aliyuncs.RpcAcsRequest;
 import com.aliyuncs.http.MethodType;
@@ -22,21 +22,34 @@ import com.aliyuncs.cloudesl.Endpoint;
  * @author auto create
  * @version 
  */
-public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
+public class DescribeStoreStatisticsRequest extends RpcAcsRequest<DescribeStoreStatisticsResponse> {
 	   
+
+	private String extraParams;
 
 	private String storeId;
 
-	private String eslBarCode;
+	private String fromDate;
 
-	private String itemBarCode;
-	public BindEslDeviceRequest() {
-		super("cloudesl", "2018-08-01", "BindEslDevice", "cloudesl");
+	private String toDate;
+	public DescribeStoreStatisticsRequest() {
+		super("cloudesl", "2020-02-01", "DescribeStoreStatistics", "cloudesl");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
+	}
+
+	public String getExtraParams() {
+		return this.extraParams;
+	}
+
+	public void setExtraParams(String extraParams) {
+		this.extraParams = extraParams;
+		if(extraParams != null){
+			putBodyParameter("ExtraParams", extraParams);
+		}
 	}
 
 	public String getStoreId() {
@@ -46,35 +59,35 @@ public class BindEslDeviceRequest extends RpcAcsRequest<BindEslDeviceResponse> {
 	public void setStoreId(String storeId) {
 		this.storeId = storeId;
 		if(storeId != null){
-			putQueryParameter("StoreId", storeId);
+			putBodyParameter("StoreId", storeId);
 		}
 	}
 
-	public String getEslBarCode() {
-		return this.eslBarCode;
+	public String getFromDate() {
+		return this.fromDate;
 	}
 
-	public void setEslBarCode(String eslBarCode) {
-		this.eslBarCode = eslBarCode;
-		if(eslBarCode != null){
-			putQueryParameter("EslBarCode", eslBarCode);
+	public void setFromDate(String fromDate) {
+		this.fromDate = fromDate;
+		if(fromDate != null){
+			putBodyParameter("FromDate", fromDate);
 		}
 	}
 
-	public String getItemBarCode() {
-		return this.itemBarCode;
+	public String getToDate() {
+		return this.toDate;
 	}
 
-	public void setItemBarCode(String itemBarCode) {
-		this.itemBarCode = itemBarCode;
-		if(itemBarCode != null){
-			putQueryParameter("ItemBarCode", itemBarCode);
+	public void setToDate(String toDate) {
+		this.toDate = toDate;
+		if(toDate != null){
+			putBodyParameter("ToDate", toDate);
 		}
 	}
 
 	@Override
-	public Class<BindEslDeviceResponse> getResponseClass() {
-		return BindEslDeviceResponse.class;
+	public Class<DescribeStoreStatisticsResponse> getResponseClass() {
+		return DescribeStoreStatisticsResponse.class;
 	}
 
 }
