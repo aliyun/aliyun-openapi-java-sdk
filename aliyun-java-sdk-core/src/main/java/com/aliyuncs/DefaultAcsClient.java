@@ -340,7 +340,7 @@ public class DefaultAcsClient implements IAcsClient {
             }
             try {
                 HttpRequest httpRequest = request.signRequest(signer, credentials, format, domain);
-                HttpUtil.debugHttpRequest(request);
+                HttpUtil.debugHttpRequest(httpRequest);
                 startTime = LogUtils.localeNow();
                 long start = System.nanoTime();
 
