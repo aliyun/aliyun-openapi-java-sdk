@@ -77,27 +77,19 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 	public static class GlobalDatabaseNetwork {
 
-		private String gDNStatus;
-
 		private String dBVersion;
 
 		private String gDNId;
 
 		private String createTime;
 
-		private String gDNDescription;
+		private String gDNStatus;
 
 		private String dBType;
 
+		private String gDNDescription;
+
 		private List<DBCluster> dBClusters;
-
-		public String getGDNStatus() {
-			return this.gDNStatus;
-		}
-
-		public void setGDNStatus(String gDNStatus) {
-			this.gDNStatus = gDNStatus;
-		}
 
 		public String getDBVersion() {
 			return this.dBVersion;
@@ -123,12 +115,12 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 			this.createTime = createTime;
 		}
 
-		public String getGDNDescription() {
-			return this.gDNDescription;
+		public String getGDNStatus() {
+			return this.gDNStatus;
 		}
 
-		public void setGDNDescription(String gDNDescription) {
-			this.gDNDescription = gDNDescription;
+		public void setGDNStatus(String gDNStatus) {
+			this.gDNStatus = gDNStatus;
 		}
 
 		public String getDBType() {
@@ -137,6 +129,14 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 		public void setDBType(String dBType) {
 			this.dBType = dBType;
+		}
+
+		public String getGDNDescription() {
+			return this.gDNDescription;
+		}
+
+		public void setGDNDescription(String gDNDescription) {
+			this.gDNDescription = gDNDescription;
 		}
 
 		public List<DBCluster> getDBClusters() {
@@ -149,19 +149,11 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 		public static class DBCluster {
 
-			private String role;
-
 			private String dBClusterId;
 
+			private String role;
+
 			private String regionId;
-
-			public String getRole() {
-				return this.role;
-			}
-
-			public void setRole(String role) {
-				this.role = role;
-			}
 
 			public String getDBClusterId() {
 				return this.dBClusterId;
@@ -169,6 +161,14 @@ public class DescribeGlobalDatabaseNetworksResponse extends AcsResponse {
 
 			public void setDBClusterId(String dBClusterId) {
 				this.dBClusterId = dBClusterId;
+			}
+
+			public String getRole() {
+				return this.role;
+			}
+
+			public void setRole(String role) {
+				this.role = role;
 			}
 
 			public String getRegionId() {

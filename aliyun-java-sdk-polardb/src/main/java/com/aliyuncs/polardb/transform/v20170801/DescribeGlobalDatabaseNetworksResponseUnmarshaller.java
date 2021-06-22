@@ -35,18 +35,18 @@ public class DescribeGlobalDatabaseNetworksResponseUnmarshaller {
 		List<GlobalDatabaseNetwork> items = new ArrayList<GlobalDatabaseNetwork>();
 		for (int i = 0; i < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items.Length"); i++) {
 			GlobalDatabaseNetwork globalDatabaseNetwork = new GlobalDatabaseNetwork();
-			globalDatabaseNetwork.setGDNStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNStatus"));
 			globalDatabaseNetwork.setDBVersion(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBVersion"));
 			globalDatabaseNetwork.setGDNId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNId"));
 			globalDatabaseNetwork.setCreateTime(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].CreateTime"));
-			globalDatabaseNetwork.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNDescription"));
+			globalDatabaseNetwork.setGDNStatus(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNStatus"));
 			globalDatabaseNetwork.setDBType(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBType"));
+			globalDatabaseNetwork.setGDNDescription(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].GDNDescription"));
 
 			List<DBCluster> dBClusters = new ArrayList<DBCluster>();
 			for (int j = 0; j < _ctx.lengthValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters.Length"); j++) {
 				DBCluster dBCluster = new DBCluster();
-				dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].Role"));
 				dBCluster.setDBClusterId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].DBClusterId"));
+				dBCluster.setRole(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].Role"));
 				dBCluster.setRegionId(_ctx.stringValue("DescribeGlobalDatabaseNetworksResponse.Items["+ i +"].DBClusters["+ j +"].RegionId"));
 
 				dBClusters.add(dBCluster);
