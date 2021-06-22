@@ -1,4 +1,7 @@
-﻿2021-03-29 Version:4.5.20
+﻿2021-06-22 Version:4.5.21
+1, Add more HTTP request logs
+
+2021-03-29 Version:4.5.20
 1, Fix signature error when RegionId null
 
 2021-03-23 Version:4.5.19
