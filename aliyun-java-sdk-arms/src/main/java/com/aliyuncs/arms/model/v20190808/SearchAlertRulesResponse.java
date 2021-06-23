@@ -121,6 +121,8 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			private String contactGroupIds;
 
+			private Boolean hostByAlertManager;
+
 			private List<String> alertWays;
 
 			private List<String> alertWay;
@@ -259,6 +261,14 @@ public class SearchAlertRulesResponse extends AcsResponse {
 
 			public void setContactGroupIds(String contactGroupIds) {
 				this.contactGroupIds = contactGroupIds;
+			}
+
+			public Boolean getHostByAlertManager() {
+				return this.hostByAlertManager;
+			}
+
+			public void setHostByAlertManager(Boolean hostByAlertManager) {
+				this.hostByAlertManager = hostByAlertManager;
 			}
 
 			public List<String> getAlertWays() {

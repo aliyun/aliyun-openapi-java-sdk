@@ -43,7 +43,7 @@ public class UpdateAlertTemplateRequest extends RpcAcsRequest<UpdateAlertTemplat
 
 	private Boolean status;
 	public UpdateAlertTemplateRequest() {
-		super("ARMS", "2019-08-08", "UpdateAlertTemplate", "arms");
+		super("ARMS", "2019-08-08", "UpdateAlertTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

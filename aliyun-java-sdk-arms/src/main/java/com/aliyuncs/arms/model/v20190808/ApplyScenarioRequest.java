@@ -45,7 +45,7 @@ public class ApplyScenarioRequest extends RpcAcsRequest<ApplyScenarioResponse> {
 
 	private String config;
 	public ApplyScenarioRequest() {
-		super("ARMS", "2019-08-08", "ApplyScenario", "arms");
+		super("ARMS", "2019-08-08", "ApplyScenario");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

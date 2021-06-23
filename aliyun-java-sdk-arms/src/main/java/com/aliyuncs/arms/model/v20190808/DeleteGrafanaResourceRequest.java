@@ -31,7 +31,7 @@ public class DeleteGrafanaResourceRequest extends RpcAcsRequest<DeleteGrafanaRes
 
 	private String userId;
 	public DeleteGrafanaResourceRequest() {
-		super("ARMS", "2019-08-08", "DeleteGrafanaResource", "arms");
+		super("ARMS", "2019-08-08", "DeleteGrafanaResource");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

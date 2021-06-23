@@ -27,7 +27,7 @@ public class OpenArmsServiceSecondVersionRequest extends RpcAcsRequest<OpenArmsS
 
 	private String type;
 	public OpenArmsServiceSecondVersionRequest() {
-		super("ARMS", "2019-08-08", "OpenArmsServiceSecondVersion", "arms");
+		super("ARMS", "2019-08-08", "OpenArmsServiceSecondVersion");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

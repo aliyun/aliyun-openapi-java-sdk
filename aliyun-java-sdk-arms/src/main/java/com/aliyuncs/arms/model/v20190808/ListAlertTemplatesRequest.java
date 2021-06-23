@@ -37,7 +37,7 @@ public class ListAlertTemplatesRequest extends RpcAcsRequest<ListAlertTemplatesR
 
 	private Boolean status;
 	public ListAlertTemplatesRequest() {
-		super("ARMS", "2019-08-08", "ListAlertTemplates", "arms");
+		super("ARMS", "2019-08-08", "ListAlertTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

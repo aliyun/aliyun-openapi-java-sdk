@@ -29,7 +29,7 @@ public class ListDispatchRuleRequest extends RpcAcsRequest<ListDispatchRuleRespo
 
 	private String name;
 	public ListDispatchRuleRequest() {
-		super("ARMS", "2019-08-08", "ListDispatchRule", "arms");
+		super("ARMS", "2019-08-08", "ListDispatchRule");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

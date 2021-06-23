@@ -37,7 +37,7 @@ public class CreateWebhookRequest extends RpcAcsRequest<CreateWebhookResponse> {
 
 	private String contactName;
 	public CreateWebhookRequest() {
-		super("ARMS", "2019-08-08", "CreateWebhook", "arms");
+		super("ARMS", "2019-08-08", "CreateWebhook");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

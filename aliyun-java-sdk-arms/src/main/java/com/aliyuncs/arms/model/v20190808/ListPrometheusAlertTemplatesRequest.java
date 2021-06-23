@@ -27,7 +27,7 @@ public class ListPrometheusAlertTemplatesRequest extends RpcAcsRequest<ListProme
 
 	private String clusterId;
 	public ListPrometheusAlertTemplatesRequest() {
-		super("ARMS", "2019-08-08", "ListPrometheusAlertTemplates", "arms");
+		super("ARMS", "2019-08-08", "ListPrometheusAlertTemplates");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

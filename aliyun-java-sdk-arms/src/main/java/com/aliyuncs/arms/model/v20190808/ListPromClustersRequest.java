@@ -25,7 +25,7 @@ import com.aliyuncs.arms.Endpoint;
 public class ListPromClustersRequest extends RpcAcsRequest<ListPromClustersResponse> {
 	   
 	public ListPromClustersRequest() {
-		super("ARMS", "2019-08-08", "ListPromClusters", "arms");
+		super("ARMS", "2019-08-08", "ListPromClusters");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

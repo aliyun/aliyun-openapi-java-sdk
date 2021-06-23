@@ -27,7 +27,7 @@ public class DeleteAlertTemplateRequest extends RpcAcsRequest<DeleteAlertTemplat
 
 	private Long id;
 	public DeleteAlertTemplateRequest() {
-		super("ARMS", "2019-08-08", "DeleteAlertTemplate", "arms");
+		super("ARMS", "2019-08-08", "DeleteAlertTemplate");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);

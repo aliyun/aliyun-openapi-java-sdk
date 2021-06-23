@@ -1,3 +1,6 @@
+2021-06-23 Version: 2.7.25
+- Support alerts with new notification rules.
+
 2021-06-09 Version: 2.7.24
 - Edit GetTrace.
 
