@@ -14,18 +14,17 @@
 
 package com.aliyuncs.dts.model.v20200101;
 
-import java.util.List;
 import com.aliyuncs.AcsResponse;
-import com.aliyuncs.dts.transform.v20200101.PreviewSqlResponseUnmarshaller;
+import com.aliyuncs.dts.transform.v20200101.TransferInstanceClassResponseUnmarshaller;
 import com.aliyuncs.transform.UnmarshallerContext;
 
 /**
  * @author auto create
  * @version 
  */
-public class PreviewSqlResponse extends AcsResponse {
+public class TransferInstanceClassResponse extends AcsResponse {
 
-	private String dynamicCode;
+	private String code;
 
 	private String dynamicMessage;
 
@@ -39,18 +38,20 @@ public class PreviewSqlResponse extends AcsResponse {
 
 	private Boolean success;
 
-	private String streamGraph;
+	private String dtsJobId;
 
-	private String validationException;
+	private String instanceId;
 
-	private List<String> sqlList;
+	private String chargeType;
 
-	public String getDynamicCode() {
-		return this.dynamicCode;
+	private String endTime;
+
+	public String getCode() {
+		return this.code;
 	}
 
-	public void setDynamicCode(String dynamicCode) {
-		this.dynamicCode = dynamicCode;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getDynamicMessage() {
@@ -101,33 +102,41 @@ public class PreviewSqlResponse extends AcsResponse {
 		this.success = success;
 	}
 
-	public String getStreamGraph() {
-		return this.streamGraph;
+	public String getDtsJobId() {
+		return this.dtsJobId;
 	}
 
-	public void setStreamGraph(String streamGraph) {
-		this.streamGraph = streamGraph;
+	public void setDtsJobId(String dtsJobId) {
+		this.dtsJobId = dtsJobId;
 	}
 
-	public String getValidationException() {
-		return this.validationException;
+	public String getInstanceId() {
+		return this.instanceId;
 	}
 
-	public void setValidationException(String validationException) {
-		this.validationException = validationException;
+	public void setInstanceId(String instanceId) {
+		this.instanceId = instanceId;
 	}
 
-	public List<String> getSqlList() {
-		return this.sqlList;
+	public String getChargeType() {
+		return this.chargeType;
 	}
 
-	public void setSqlList(List<String> sqlList) {
-		this.sqlList = sqlList;
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+	}
+
+	public String getEndTime() {
+		return this.endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 
 	@Override
-	public PreviewSqlResponse getInstance(UnmarshallerContext context) {
-		return	PreviewSqlResponseUnmarshaller.unmarshall(this, context);
+	public TransferInstanceClassResponse getInstance(UnmarshallerContext context) {
+		return	TransferInstanceClassResponseUnmarshaller.unmarshall(this, context);
 	}
 
 	@Override

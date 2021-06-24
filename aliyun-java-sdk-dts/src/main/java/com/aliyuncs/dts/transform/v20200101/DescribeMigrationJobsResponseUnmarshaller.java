@@ -51,6 +51,8 @@ public class DescribeMigrationJobsResponseUnmarshaller {
 			migrationJob.setMigrationJobName(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobName"));
 			migrationJob.setMigrationJobStatus(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].MigrationJobStatus"));
 			migrationJob.setPayType(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].PayType"));
+			migrationJob.setJobCreateTime(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].JobCreateTime"));
+			migrationJob.setInstanceCreateTime(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].InstanceCreateTime"));
 
 			DataInitialization dataInitialization = new DataInitialization();
 			dataInitialization.setErrorMessage(_ctx.stringValue("DescribeMigrationJobsResponse.MigrationJobs["+ i +"].DataInitialization.ErrorMessage"));

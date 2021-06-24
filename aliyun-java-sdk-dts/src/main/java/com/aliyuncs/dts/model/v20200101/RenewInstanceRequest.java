@@ -22,7 +22,7 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeResponse> {
+public class RenewInstanceRequest extends RpcAcsRequest<RenewInstanceResponse> {
 	   
 
 	private String period;
@@ -32,8 +32,8 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 	private String dtsJobId;
 
 	private String chargeType;
-	public TransferPayTypeRequest() {
-		super("Dts", "2020-01-01", "TransferPayType", "dts");
+	public RenewInstanceRequest() {
+		super("Dts", "2020-01-01", "RenewInstance", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -86,8 +86,8 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 	}
 
 	@Override
-	public Class<TransferPayTypeResponse> getResponseClass() {
-		return TransferPayTypeResponse.class;
+	public Class<RenewInstanceResponse> getResponseClass() {
+		return RenewInstanceResponse.class;
 	}
 
 }

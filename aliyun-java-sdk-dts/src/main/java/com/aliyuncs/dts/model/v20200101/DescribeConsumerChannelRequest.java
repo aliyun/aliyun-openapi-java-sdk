@@ -22,14 +22,8 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class DescribeDtsJobLogsRequest extends RpcAcsRequest<DescribeDtsJobLogsResponse> {
+public class DescribeConsumerChannelRequest extends RpcAcsRequest<DescribeConsumerChannelResponse> {
 	   
-
-	private Long endTime;
-
-	private Long startTime;
-
-	private String type;
 
 	private Integer pageNumber;
 
@@ -37,47 +31,14 @@ public class DescribeDtsJobLogsRequest extends RpcAcsRequest<DescribeDtsJobLogsR
 
 	private String dtsJobId;
 
-	private String status;
-	public DescribeDtsJobLogsRequest() {
-		super("Dts", "2020-01-01", "DescribeDtsJobLogs", "dts");
+	private String dtsInstanceId;
+	public DescribeConsumerChannelRequest() {
+		super("Dts", "2020-01-01", "DescribeConsumerChannel", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointRegional").set(this, Endpoint.endpointRegionalType);
 		} catch (Exception e) {}
-	}
-
-	public Long getEndTime() {
-		return this.endTime;
-	}
-
-	public void setEndTime(Long endTime) {
-		this.endTime = endTime;
-		if(endTime != null){
-			putQueryParameter("EndTime", endTime.toString());
-		}
-	}
-
-	public Long getStartTime() {
-		return this.startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-		if(startTime != null){
-			putQueryParameter("StartTime", startTime.toString());
-		}
-	}
-
-	public String getType() {
-		return this.type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-		if(type != null){
-			putQueryParameter("Type", type);
-		}
 	}
 
 	public Integer getPageNumber() {
@@ -113,20 +74,20 @@ public class DescribeDtsJobLogsRequest extends RpcAcsRequest<DescribeDtsJobLogsR
 		}
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getDtsInstanceId() {
+		return this.dtsInstanceId;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
-		if(status != null){
-			putQueryParameter("Status", status);
+	public void setDtsInstanceId(String dtsInstanceId) {
+		this.dtsInstanceId = dtsInstanceId;
+		if(dtsInstanceId != null){
+			putQueryParameter("DtsInstanceId", dtsInstanceId);
 		}
 	}
 
 	@Override
-	public Class<DescribeDtsJobLogsResponse> getResponseClass() {
-		return DescribeDtsJobLogsResponse.class;
+	public Class<DescribeConsumerChannelResponse> getResponseClass() {
+		return DescribeConsumerChannelResponse.class;
 	}
 
 }

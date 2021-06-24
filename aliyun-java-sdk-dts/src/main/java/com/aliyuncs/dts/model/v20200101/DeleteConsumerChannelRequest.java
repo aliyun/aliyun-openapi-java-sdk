@@ -22,18 +22,16 @@ import com.aliyuncs.dts.Endpoint;
  * @author auto create
  * @version 
  */
-public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeResponse> {
+public class DeleteConsumerChannelRequest extends RpcAcsRequest<DeleteConsumerChannelResponse> {
 	   
 
-	private String period;
-
-	private String buyCount;
+	private String consumerGroupId;
 
 	private String dtsJobId;
 
-	private String chargeType;
-	public TransferPayTypeRequest() {
-		super("Dts", "2020-01-01", "TransferPayType", "dts");
+	private String dtsInstanceId;
+	public DeleteConsumerChannelRequest() {
+		super("Dts", "2020-01-01", "DeleteConsumerChannel", "dts");
 		setMethod(MethodType.POST);
 		try {
 			com.aliyuncs.AcsRequest.class.getDeclaredField("productEndpointMap").set(this, Endpoint.endpointMap);
@@ -41,25 +39,14 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 		} catch (Exception e) {}
 	}
 
-	public String getPeriod() {
-		return this.period;
+	public String getConsumerGroupId() {
+		return this.consumerGroupId;
 	}
 
-	public void setPeriod(String period) {
-		this.period = period;
-		if(period != null){
-			putQueryParameter("Period", period);
-		}
-	}
-
-	public String getBuyCount() {
-		return this.buyCount;
-	}
-
-	public void setBuyCount(String buyCount) {
-		this.buyCount = buyCount;
-		if(buyCount != null){
-			putQueryParameter("BuyCount", buyCount);
+	public void setConsumerGroupId(String consumerGroupId) {
+		this.consumerGroupId = consumerGroupId;
+		if(consumerGroupId != null){
+			putQueryParameter("ConsumerGroupId", consumerGroupId);
 		}
 	}
 
@@ -74,20 +61,20 @@ public class TransferPayTypeRequest extends RpcAcsRequest<TransferPayTypeRespons
 		}
 	}
 
-	public String getChargeType() {
-		return this.chargeType;
+	public String getDtsInstanceId() {
+		return this.dtsInstanceId;
 	}
 
-	public void setChargeType(String chargeType) {
-		this.chargeType = chargeType;
-		if(chargeType != null){
-			putQueryParameter("ChargeType", chargeType);
+	public void setDtsInstanceId(String dtsInstanceId) {
+		this.dtsInstanceId = dtsInstanceId;
+		if(dtsInstanceId != null){
+			putQueryParameter("DtsInstanceId", dtsInstanceId);
 		}
 	}
 
 	@Override
-	public Class<TransferPayTypeResponse> getResponseClass() {
-		return TransferPayTypeResponse.class;
+	public Class<DeleteConsumerChannelResponse> getResponseClass() {
+		return DeleteConsumerChannelResponse.class;
 	}
 
 }
