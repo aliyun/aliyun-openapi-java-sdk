@@ -33,9 +33,7 @@ public class QueryDPUtilizationDetailResponseUnmarshaller {
 		queryDPUtilizationDetailResponse.setMessage(_ctx.stringValue("QueryDPUtilizationDetailResponse.Message"));
 
 		Data data = new Data();
-		data.setPageNum(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.PageNum"));
-		data.setPageSize(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.PageSize"));
-		data.setTotalCount(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.TotalCount"));
+		data.setNextToken(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.NextToken"));
 
 		List<DetailListItem> detailList = new ArrayList<DetailListItem>();
 		for (int i = 0; i < _ctx.lengthValue("QueryDPUtilizationDetailResponse.Data.DetailList.Length"); i++) {
@@ -50,9 +48,10 @@ public class QueryDPUtilizationDetailResponseUnmarshaller {
 			detailListItem.setDeductDate(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductDate"));
 			detailListItem.setDeductQuantity(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductQuantity"));
 			detailListItem.setDeductMeasure(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductMeasure"));
-			detailListItem.setDeductHours(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
+			detailListItem.setDeductHours(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductHours"));
 			detailListItem.setDeductFactorTotal(_ctx.floatValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].DeductFactorTotal"));
 			detailListItem.setRegion(_ctx.stringValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].Region"));
+			detailListItem.setShareUid(_ctx.longValue("QueryDPUtilizationDetailResponse.Data.DetailList["+ i +"].ShareUid"));
 
 			detailList.add(detailListItem);
 		}

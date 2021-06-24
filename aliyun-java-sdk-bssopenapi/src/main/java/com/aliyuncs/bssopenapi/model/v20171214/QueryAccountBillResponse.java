@@ -183,6 +183,12 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			private String billingDate;
 
+			private String billAccountID;
+
+			private String billAccountName;
+
+			private String bizType;
+
 			public String getCostUnit() {
 				return this.costUnit;
 			}
@@ -317,6 +323,30 @@ public class QueryAccountBillResponse extends AcsResponse {
 
 			public void setBillingDate(String billingDate) {
 				this.billingDate = billingDate;
+			}
+
+			public String getBillAccountID() {
+				return this.billAccountID;
+			}
+
+			public void setBillAccountID(String billAccountID) {
+				this.billAccountID = billAccountID;
+			}
+
+			public String getBillAccountName() {
+				return this.billAccountName;
+			}
+
+			public void setBillAccountName(String billAccountName) {
+				this.billAccountName = billAccountName;
+			}
+
+			public String getBizType() {
+				return this.bizType;
+			}
+
+			public void setBizType(String bizType) {
+				this.bizType = bizType;
 			}
 		}
 	}
