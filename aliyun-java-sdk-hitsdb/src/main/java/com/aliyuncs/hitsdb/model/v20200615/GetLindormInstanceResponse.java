@@ -75,6 +75,10 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	private String diskThreshold;
 
+	private Long createMilliseconds;
+
+	private Long expiredMilliseconds;
+
 	private List<Engine> engineList;
 
 	public String getRequestId() {
@@ -275,6 +279,22 @@ public class GetLindormInstanceResponse extends AcsResponse {
 
 	public void setDiskThreshold(String diskThreshold) {
 		this.diskThreshold = diskThreshold;
+	}
+
+	public Long getCreateMilliseconds() {
+		return this.createMilliseconds;
+	}
+
+	public void setCreateMilliseconds(Long createMilliseconds) {
+		this.createMilliseconds = createMilliseconds;
+	}
+
+	public Long getExpiredMilliseconds() {
+		return this.expiredMilliseconds;
+	}
+
+	public void setExpiredMilliseconds(Long expiredMilliseconds) {
+		this.expiredMilliseconds = expiredMilliseconds;
 	}
 
 	public List<Engine> getEngineList() {

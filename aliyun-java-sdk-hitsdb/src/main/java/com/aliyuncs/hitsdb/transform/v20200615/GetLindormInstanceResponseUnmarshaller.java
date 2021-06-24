@@ -51,6 +51,8 @@ public class GetLindormInstanceResponseUnmarshaller {
 		getLindormInstanceResponse.setEnablePhoenix(_ctx.booleanValue("GetLindormInstanceResponse.EnablePhoenix"));
 		getLindormInstanceResponse.setDiskUsage(_ctx.stringValue("GetLindormInstanceResponse.DiskUsage"));
 		getLindormInstanceResponse.setDiskThreshold(_ctx.stringValue("GetLindormInstanceResponse.DiskThreshold"));
+		getLindormInstanceResponse.setCreateMilliseconds(_ctx.longValue("GetLindormInstanceResponse.CreateMilliseconds"));
+		getLindormInstanceResponse.setExpiredMilliseconds(_ctx.longValue("GetLindormInstanceResponse.ExpiredMilliseconds"));
 
 		List<Engine> engineList = new ArrayList<Engine>();
 		for (int i = 0; i < _ctx.lengthValue("GetLindormInstanceResponse.EngineList.Length"); i++) {

@@ -4,11 +4,7 @@
   <groupId>com.aliyun</groupId>
   <artifactId>aliyun-java-sdk-hitsdb</artifactId>
   <packaging>jar</packaging>
-<<<<<<< Updated upstream
-  <version>1.6.1</version>
-=======
-  <version>1.6.11</version>
->>>>>>> Stashed changes
+  <version>1.7.1</version>
   <name>aliyun-java-sdk-hitsdb</name>
   <url>http://www.aliyun.com</url>
   <description>Aliyun Open API SDK for Java
